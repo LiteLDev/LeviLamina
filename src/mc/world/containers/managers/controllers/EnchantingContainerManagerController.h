@@ -40,11 +40,7 @@ public:
     // NOLINTBEGIN
     virtual ~EnchantingContainerManagerController() /*override*/ = default;
 
-#ifdef LL_PLAT_S
-    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
-#else // LL_PLAT_C
-    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
-#endif
+    virtual bool handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
 
     virtual void registerContainerCallbacks() /*override*/;
     // NOLINTEND
@@ -63,23 +59,17 @@ public:
 
     MCNAPI void enchantResult(int option);
 
-    MCNAPI int getCostForOption(int option);
-
     MCNAPI ::std::string getEnchantHint(int option);
 
     MCNAPI ::std::string getHoverText(int option);
 
     MCNAPI int getInputItemId();
 
-    MCNAPI int getOutputItemId();
-
     MCNAPI int getPlayerLevels();
 
     MCNAPI ::std::string getRunesForOption(int option);
 
     MCNAPI ::EnchantingContainerManagerController::OptionStatus getStatusForOption(int option);
-
-    MCNAPI bool shouldBookBeOpen();
 #endif
     // NOLINTEND
 
@@ -95,7 +85,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
     MCNAPI void $registerContainerCallbacks();
 #endif

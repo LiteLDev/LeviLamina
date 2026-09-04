@@ -8,6 +8,7 @@
 #include "mc/network/packet/ToastRequestPacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
+#include <string>
 
 // auto generated forward declare list
 // clang-format off
@@ -22,6 +23,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
+
+public:
+    ToastRequestPacket() : mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
+    ToastRequestPacket(std::string const& title, std::string const& content)
+    : ll::PayloadPacket<ToastRequestPacketPayload>(title, content),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
 
 public:
     // virtual functions
@@ -64,16 +71,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ToastRequestPacket();
-
     MCAPI explicit ToastRequestPacket(::ToastRequestPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ToastRequestPacketPayload payload);
     // NOLINTEND
 
@@ -114,11 +117,5 @@ public:
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

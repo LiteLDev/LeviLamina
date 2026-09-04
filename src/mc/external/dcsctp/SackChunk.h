@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/Chunk.h"
 #include "mc/external/dcsctp/TLVTrait.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -60,7 +61,7 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~SackChunk() /*override*/;
+    virtual ~SackChunk() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -77,7 +78,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::SackChunk> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::SackChunk> Parse(::webrtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:

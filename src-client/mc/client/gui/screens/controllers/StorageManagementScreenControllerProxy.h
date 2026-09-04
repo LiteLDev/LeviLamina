@@ -18,10 +18,4 @@ public:
     // NOLINTBEGIN
     virtual ~StorageManagementScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ItemDescriptor;
 class ItemStack;
 struct ChemistryIngredient;
 // clang-format on
@@ -63,8 +62,6 @@ public:
         ::CompoundContainerType                     containerOverride,
         int                                         stackCount
     );
-
-    MCNAPI ::std::vector<::ItemStack> const* getComponents(::ItemDescriptor const& compound) const;
 
     MCNAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
 

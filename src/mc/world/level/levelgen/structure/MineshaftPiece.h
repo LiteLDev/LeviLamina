@@ -37,19 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isSupportingBox(int x0, int x1, ::BlockSource& region, int y1, int z);
-
-    MCAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(
-        ::MineshaftData&                                    metadata,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 genDepth
-    );
-
     MCAPI ::StructurePiece* generateAndAddPiece(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,

@@ -17,10 +17,4 @@ public:
 
     virtual bool destroyBlock(::BlockPos const& pos, uchar face) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

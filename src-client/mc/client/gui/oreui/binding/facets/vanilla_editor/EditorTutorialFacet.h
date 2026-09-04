@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -15,7 +15,7 @@ namespace Editor::Services { class ClientTutorialServiceProvider; }
 
 namespace OreUI {
 
-class EditorTutorialFacet : public ::OreUI::FacetBase<::OreUI::EditorTutorialFacet> {
+class EditorTutorialFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorTutorialFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorTutorialFacet() /*override*/;
+    virtual ~EditorTutorialFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -55,6 +55,8 @@ public:
     MCFOLD ::std::unordered_map<::HashedString, bool> const& getCurrentStageConditions() const;
 
     MCFOLD ::HashedString const& getCurrentStageId() const;
+
+    MCAPI bool isTutorialActivatedOnLaunch() const;
 
     MCAPI bool isTutorialActive() const;
 
@@ -78,21 +80,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

@@ -26,10 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PumpkinBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -47,19 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PumpkinBlock(::std::string const& nameId, int id, bool lit, bool carved);
-
-    MCAPI bool _canDispense(::BlockSource& region, ::Vec3 const& pos, uchar) const;
-
-    MCAPI bool _canSpawnGolem(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit, bool carved);
     // NOLINTEND
 
 public:

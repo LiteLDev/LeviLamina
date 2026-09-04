@@ -40,23 +40,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~BlockRandomOffsetDescription() /*override*/;
-#else // LL_PLAT_C
     virtual ~BlockRandomOffsetDescription() /*override*/ = default;
-#endif
 
     virtual ::std::string const& getName() const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockRandomOffsetDescription();
     // NOLINTEND
 
 public:
@@ -69,18 +59,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

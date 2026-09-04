@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ServerStructureServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -116,8 +116,12 @@ public:
 
     MCNAPI void
     _handleUpdateFromClipboardPayload(::Editor::Network::StructureUpdateFromClipboardPayload const& payload);
+    // NOLINTEND
 
-    MCNAPI void _makeStructureTemplateFromVolume(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _makeStructureTemplateFromVolume(
         ::Editor::EditorStructureTemplate&             structureTemplate,
         ::BlockSource*                                 region,
         ::Editor::RelativeVolumeListBlockVolume const& volume

@@ -9,7 +9,6 @@
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
-namespace cereal::ext::internal { struct OutRefsMap; }
 // clang-format on
 
 namespace cereal::ext {
@@ -41,11 +40,6 @@ public:
 
     MCAPI JSONSchema(::cereal::ext::JSONSchema const&);
 
-    MCAPI void makeAndNormalizeDefs(
-        ::cereal::ext::internal::OutRefsMap&              outRefs,
-        ::std::vector<::cereal::SchemaDescription> const& descriptions
-    );
-
     MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
 
     MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
@@ -60,11 +54,6 @@ public:
 
     MCAPI static ::cereal::ext::JSONSchema
     fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::cereal::ext::JSONSchema
-    fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, ::entt::type_info const& type);
-#endif
     // NOLINTEND
 
 public:

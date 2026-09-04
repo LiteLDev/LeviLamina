@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-class ReadOnlyBinaryStream;
-// clang-format on
-
 struct ContainerMixDataEntry {
 public:
     // member variables
@@ -17,13 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, int> fromItemId;
     ::ll::TypedStorage<4, 4, int> reagentItemId;
     ::ll::TypedStorage<4, 4, int> toItemId;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-#endif
     // NOLINTEND
 };

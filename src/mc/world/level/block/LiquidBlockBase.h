@@ -25,13 +25,9 @@ struct BlockGraphicsModeChangeContext;
 
 class LiquidBlockBase : public ::BlockType {
 public:
-    // prevent constructor by default
-    LiquidBlockBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool mayPick(::BlockSource const& block, ::Block const& liquid, bool) const /*override*/;
+    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
     virtual ::AABB getCollisionShape(
         ::Block const&,
@@ -45,7 +41,8 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
     // NOLINTEND
@@ -53,19 +50,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LiquidBlockBase(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void _solidify(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& changedNeighbor) const;
-
-    MCAPI void emitFizzParticle(::BlockSource& region, ::BlockPos const& p) const;
-
-    MCAPI int getTickDelay(::BlockSource& region) const;
 
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void solidify(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& changedNeighbor) const;
-
-    MCAPI void trySpreadFire(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
@@ -73,32 +62,21 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Vec3 _getFlow(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
 
-    MCAPI static int getDepth(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
+    MCAPI static void emitFizzParticle(::BlockSource& region, ::BlockPos const& p);
 
-    MCAPI static float getHeightFromDepth(int depth);
+    MCAPI static int getDepth(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
 
 #ifdef LL_PLAT_C
     MCAPI static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);
 #endif
 
-    MCAPI static void handleEntityInside(
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::Vec3&                    current,
-        ::Material const&          material
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI static void trySpreadFire(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPick(::BlockSource const& block, ::Block const& liquid, bool) const;
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
@@ -111,7 +89,7 @@ public:
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 

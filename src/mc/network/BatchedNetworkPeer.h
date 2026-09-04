@@ -34,26 +34,6 @@ public:
         ::ll::TypedStorage<4, 4, ::Compressibility>        compressible;
         ::ll::TypedStorage<8, 64, ::std::function<void()>> callback;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DataCallback& operator=(DataCallback const&);
-        DataCallback(DataCallback const&);
-        DataCallback();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::BatchedNetworkPeer::DataCallback& operator=(::BatchedNetworkPeer::DataCallback&&);
-
-        MCAPI ~DataCallback();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -78,12 +58,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BatchedNetworkPeer() /*override*/;
+    virtual ~BatchedNetworkPeer() /*override*/ = default;
 
     virtual void flush(::std::function<void()>&& callback) /*override*/;
 
-    virtual void
-    sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility) /*override*/;
+    virtual void sendPacket(
+        ::std::string const&       data,
+        ::NetworkPeer::Reliability reliability,
+        ::Compressibility          compressible
+    ) /*override*/;
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
@@ -99,10 +82,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
-
-    MCAPI void _startSendTask();
-
-    MCAPI void setAsyncEnabled(bool val);
     // NOLINTEND
 
 public:
@@ -112,17 +91,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $flush(::std::function<void()>&& callback);
 
-    MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility);
+    MCAPI void
+    $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
     MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
@@ -134,11 +108,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

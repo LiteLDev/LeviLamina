@@ -89,8 +89,6 @@ public:
     MCAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
     MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
-
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> takeJigsawStructureData();
     // NOLINTEND
 
 public:

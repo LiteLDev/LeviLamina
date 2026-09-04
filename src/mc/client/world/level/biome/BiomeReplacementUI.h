@@ -17,16 +17,4 @@ public:
     BiomeReplacementUI& operator=(BiomeReplacementUI const&);
     BiomeReplacementUI(BiomeReplacementUI const&);
     BiomeReplacementUI();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~BiomeReplacementUI();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

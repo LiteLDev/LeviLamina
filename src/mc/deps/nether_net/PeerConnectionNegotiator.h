@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ESessionError.h"
-#include "mc/external/rtc/RefCountedObject.h"
 #include "mc/external/webrtc/CreateSessionDescriptionObserver.h"
 #include "mc/external/webrtc/RTCErrorOr.h"
+#include "mc/external/webrtc/RefCountedObject.h"
 #include "mc/external/webrtc/SetLocalDescriptionObserverInterface.h"
 #include "mc/external/webrtc/SetRemoteDescriptionObserverInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
@@ -37,7 +37,7 @@ public:
     // clang-format on
 
     // PeerConnectionNegotiator inner types define
-    struct CreateSessionObserver : public ::rtc::RefCountedObject<::webrtc::CreateSessionDescriptionObserver> {
+    struct CreateSessionObserver : public ::webrtc::RefCountedObject<::webrtc::CreateSessionDescriptionObserver> {
     public:
         // member variables
         // NOLINTBEGIN
@@ -67,16 +67,10 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct SetLocalDescriptionObserver
-    : public ::rtc::RefCountedObject<::webrtc::SetLocalDescriptionObserverInterface> {
+    : public ::webrtc::RefCountedObject<::webrtc::SetLocalDescriptionObserverInterface> {
     public:
         // member variables
         // NOLINTBEGIN
@@ -102,16 +96,10 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct SetRemoteDescriptionObserver
-    : public ::rtc::RefCountedObject<::webrtc::SetRemoteDescriptionObserverInterface> {
+    : public ::webrtc::RefCountedObject<::webrtc::SetRemoteDescriptionObserverInterface> {
     public:
         // member variables
         // NOLINTBEGIN
@@ -137,12 +125,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -152,6 +134,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkae16cc;
     ::ll::UntypedStorage<8, 64> mUnk7c4ecf;
     ::ll::UntypedStorage<8, 8>  mUnk26e020;
+    ::ll::UntypedStorage<8, 16> mUnk5cf15d;
     ::ll::UntypedStorage<8, 8>  mUnk56df10;
     ::ll::UntypedStorage<8, 8>  mUnk6816fa;
     ::ll::UntypedStorage<8, 8>  mUnkea39ee;
@@ -168,7 +151,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerConnectionNegotiator() /*override*/;
+    virtual ~PeerConnectionNegotiator() /*override*/ = default;
 
     virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds timeout) const;
 
@@ -218,12 +201,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds timeout) const;
@@ -233,12 +210,6 @@ public:
     MCNAPI void $onRemoteError(::NetherNet::ConnectError const& error);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -8,9 +8,4 @@ namespace OreUI::EntryPoints::SignInAchievements {
 MCAPI ::std::string composeRoute(::std::string const& redirectTo);
 // NOLINTEND
 
-// static variables
-// NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
-// NOLINTEND
-
 } // namespace OreUI::EntryPoints::SignInAchievements

@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleSystemInterfaceProxy() /*override*/;
+    virtual ~ParticleSystemInterfaceProxy() /*override*/ = default;
 
     virtual float getDistanceToCameraSqr(::Vec3 const& pos) const /*override*/;
 
@@ -87,12 +87,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $getDistanceToCameraSqr(::Vec3 const& pos) const;
@@ -109,11 +103,5 @@ public:
         ::Vec3 const&              emitterPosition,
         ::MolangVariableMap const& molangVariables
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

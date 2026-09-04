@@ -19,10 +19,4 @@ public:
 
     virtual ::Block const& getUnknownBlock(::CompoundTag const& serId) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

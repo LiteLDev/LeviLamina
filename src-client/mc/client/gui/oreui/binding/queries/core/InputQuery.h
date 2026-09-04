@@ -60,14 +60,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $update(double const time);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
-    // NOLINTEND
 };
 
 } // namespace OreUI

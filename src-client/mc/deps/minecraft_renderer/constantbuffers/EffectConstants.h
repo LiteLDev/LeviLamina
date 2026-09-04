@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class RenderContext; }
 namespace mce { class ShaderConstantFloat2; }
 // clang-format on
 
@@ -24,20 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void init() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EffectConstants();
-
-    MCAPI void setUVOffset(::mce::RenderContext& renderContext, float uvOffset1, float uvOffset2);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

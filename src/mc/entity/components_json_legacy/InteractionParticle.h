@@ -5,14 +5,6 @@
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class BlockSource;
-class ItemStack;
-class Player;
-// clang-format on
-
 struct InteractionParticle {
 public:
     // InteractionParticle inner types define
@@ -38,8 +30,5 @@ public:
     MCAPI void setCopperEventType(::std::string const& name);
 
     MCAPI void setParticleType(::std::string const& name);
-
-    MCAPI void
-    spawnParticle(::BlockSource& region, ::Actor& owner, ::Player& player, ::ItemStack const& usedItemCopy) const;
     // NOLINTEND
 };

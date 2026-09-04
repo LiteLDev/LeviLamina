@@ -40,8 +40,6 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::ActiveDirectoryModalArgs                args
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -56,13 +54,5 @@ public:
     MCAPI void $onOpen();
 
     MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

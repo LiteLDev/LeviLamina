@@ -20,16 +20,4 @@ public:
     ActorUpgradeTriggeredEvent& operator=(ActorUpgradeTriggeredEvent const&);
     ActorUpgradeTriggeredEvent(ActorUpgradeTriggeredEvent const&);
     ActorUpgradeTriggeredEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorUpgradeTriggeredEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

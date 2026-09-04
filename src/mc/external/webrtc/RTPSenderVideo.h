@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RTPVideoFrameSenderInterface.h"
 #include "mc/external/webrtc/VideoCodecType.h"
 
@@ -91,7 +92,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnke273bd;
     ::ll::UntypedStorage<8, 8>   mUnka3b120;
-    ::ll::UntypedStorage<4, 8>   mUnke0e624;
+    ::ll::UntypedStorage<4, 8>   mUnkf995c4;
     ::ll::UntypedStorage<4, 4>   mUnk1208b5;
     ::ll::UntypedStorage<4, 4>   mUnk757e7f;
     ::ll::UntypedStorage<4, 72>  mUnkf2ff94;
@@ -135,7 +136,7 @@ public:
         ::std::optional<::webrtc::VideoCodecType> codec_type,
         uint                                      rtp_timestamp,
         ::webrtc::Timestamp                       capture_time,
-        ::rtc::ArrayView<uchar const>             payload,
+        ::webrtc::ArrayView<uchar const>          payload,
         uint64                                    encoder_output_size,
         ::webrtc::RTPVideoHeader                  video_header,
         ::webrtc::TimeDelta                       expected_retransmission_time,
@@ -173,7 +174,8 @@ public:
         uint                                      rtp_timestamp,
         ::webrtc::EncodedImage const&             encoded_image,
         ::webrtc::RTPVideoHeader                  video_header,
-        ::webrtc::TimeDelta                       expected_retransmission_time
+        ::webrtc::TimeDelta                       expected_retransmission_time,
+        ::std::vector<uint> const&                csrcs
     );
 
     MCNAPI void SetRetransmissionSetting(int retransmission_settings);
@@ -209,7 +211,7 @@ public:
         ::std::optional<::webrtc::VideoCodecType> codec_type,
         uint                                      rtp_timestamp,
         ::webrtc::Timestamp                       capture_time,
-        ::rtc::ArrayView<uchar const>             payload,
+        ::webrtc::ArrayView<uchar const>          payload,
         uint64                                    encoder_output_size,
         ::webrtc::RTPVideoHeader                  video_header,
         ::webrtc::TimeDelta                       expected_retransmission_time,

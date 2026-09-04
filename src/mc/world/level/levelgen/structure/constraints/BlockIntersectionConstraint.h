@@ -18,8 +18,10 @@ class BlockIntersectionConstraint : public ::IStructureConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>        mVolumeOffsets;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBlockDescriptorAllowlist;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBlockDescriptorAllowList;
+    ::ll::TypedStorage<1, 1, bool>                              mOnlyCheckIntersectionForMotionBlockingBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>        mMotionBlockingVolumeOffsets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>        mNonMotionBlockingVolumeOffsets;
     // NOLINTEND
 
 public:
@@ -31,9 +33,12 @@ public:
     // NOLINTBEGIN
     virtual ~BlockIntersectionConstraint() /*override*/;
 
-    virtual bool
-    isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const
-        /*override*/;
+    virtual bool isSatisfied(
+        ::IBlockWorldGenAPI const& target,
+        ::BlockPos const&          structurePos,
+        ::Rotation const&          structureRot,
+        ::BlockPos const&          centeringOffset
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -60,15 +65,10 @@ public:
     MCAPI bool $isSatisfied(
         ::IBlockWorldGenAPI const& target,
         ::BlockPos const&          structurePos,
-        ::Rotation const&          structureRot
+        ::Rotation const&          structureRot,
+        ::BlockPos const&          centeringOffset
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

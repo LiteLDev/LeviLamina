@@ -20,13 +20,8 @@ public:
     virtual bool isSatisfied(
         ::IBlockWorldGenAPI const& target,
         ::BlockPos const&          structurePos,
-        ::Rotation const&          structureRot
+        ::Rotation const&          structureRot,
+        ::BlockPos const&          centeringOffset
     ) const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

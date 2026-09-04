@@ -68,12 +68,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applySelectedPacksCache(
-        ::PackManagerContentSourceData& packData,
-        ::std::vector<::PackModel>&     selected,
-        ::std::vector<::PackModel>&     available
-    ) const;
-
     MCAPI ::std::shared_ptr<::PackContentItem> _copyAndSetValuesFromPackContentItemAndData(
         ::std::shared_ptr<::PackContentItem const> const& baseItem,
         ::PackManagerContentSourceData const&             packData
@@ -90,6 +84,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _applySelectedPacksCache(
+        ::PackManagerContentSourceData& packData,
+        ::std::vector<::PackModel>&     selected,
+        ::std::vector<::PackModel>&     available
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $load();
@@ -101,11 +105,5 @@ public:
 
     MCAPI void
     $_createAvailablePackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& available);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

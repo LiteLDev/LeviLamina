@@ -17,15 +17,26 @@ public:
     ::ll::UntypedStorage<8, 72> mUnk50693a;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    InheritedReference& operator=(InheritedReference const&);
+    InheritedReference(InheritedReference const&);
+    InheritedReference();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     InheritedReference& operator=(InheritedReference const&);
     InheritedReference();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI InheritedReference(::CerealHelpers::InheritedReference const&);
+#endif
     // NOLINTEND
 
 public:
@@ -37,7 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::CerealHelpers::InheritedReference const&);
+#endif
     // NOLINTEND
 };
 

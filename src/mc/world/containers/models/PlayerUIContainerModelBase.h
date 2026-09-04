@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerUIContainerModelBase() /*override*/;
+    virtual ~PlayerUIContainerModelBase() /*override*/ = default;
 
     virtual void postInit() /*override*/;
 
@@ -46,18 +46,6 @@ public:
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
 
     virtual ::Container* _getContainer() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _refreshSlot(bool initial, int modelSlot);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

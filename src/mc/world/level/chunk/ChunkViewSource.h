@@ -6,18 +6,17 @@
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
-#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class ChunkPos;
 class LevelChunk;
-class LevelChunkBlockActorAccessToken;
 class Random;
 struct Bounds;
-struct DimensionType;
 struct LevelChunkFinalDeleter;
+namespace br::worldgen { class StructureInstance; }
+namespace br::worldgen { struct Structure; }
 // clang-format on
 
 class ChunkViewSource : public ::ChunkSource {
@@ -49,6 +48,11 @@ public:
     virtual bool isWithinWorldLimit(::ChunkPos const& cp) const /*override*/;
 
     virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
+
+    virtual ::std::shared_ptr<::br::worldgen::StructureInstance>
+    _tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure) /*override*/;
+
+    virtual ~ChunkViewSource() /*override*/;
     // NOLINTEND
 
 public:
@@ -57,28 +61,6 @@ public:
     MCAPI ChunkViewSource(::ChunkViewSource const& otherChunkViewSource);
 
     MCAPI ChunkViewSource(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
-
-    MCAPI ChunkViewSource(
-        ::ChunkSource&                                              mainSource,
-        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
-        ::Bounds const&                                             bounds
-    );
-
-#ifdef LL_PLAT_C
-    MCAPI void addChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
-#endif
-
-    MCAPI void clear();
-
-    MCAPI void clearEntryAtChunkPos(::ChunkPos const& chunkPos);
-
-    MCFOLD ::std::vector<::LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
-
-    MCFOLD ::GridArea<::std::shared_ptr<::LevelChunk>>& getArea();
-
-#ifdef LL_PLAT_C
-    MCAPI ::DimensionType getDimensionId() const;
-#endif
 
     MCAPI void move(
         ::Bounds const&                                                     bounds,
@@ -114,23 +96,17 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool isClientSideGenerationEnabled);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkViewSource const& otherChunkViewSource);
 
     MCAPI void* $ctor(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
+    // NOLINTEND
 
-    MCAPI void* $ctor(
-        ::ChunkSource&                                              mainSource,
-        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
-        ::Bounds const&                                             bounds
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -148,6 +124,9 @@ public:
     MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
     MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 
     // NOLINTEND

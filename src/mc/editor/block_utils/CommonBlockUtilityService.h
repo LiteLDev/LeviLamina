@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/ContiguousSelectionType.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/CommonBlockUtilityServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -15,7 +15,6 @@
 class AABB;
 class Block;
 class BlockPos;
-class BlockSource;
 class BlockVolumeBase;
 class BoundingBox;
 class ChunkPos;
@@ -150,8 +149,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit CommonBlockUtilityService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI ::BlockSource& _getBlockSource() const;
     // NOLINTEND
 
 public:

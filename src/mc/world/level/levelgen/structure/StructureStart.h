@@ -38,18 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void calculateBoundingBox();
-
-    MCAPI void moveBoundingBoxes(int yOffset);
-
-    MCAPI void moveInsideHeights(::Random& random, short lowestAllowed, short highestAllowed);
-
-    MCAPI void moveToBelowSeaLevel(short seaLevel, short minYPos, ::Random& random, int offset);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

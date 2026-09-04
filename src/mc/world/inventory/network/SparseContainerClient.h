@@ -7,13 +7,9 @@
 #include "mc/world/inventory/network/SparseContainer.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
-#include "mc/world/inventory/simulation/SparseContainerBackingSetType.h"
 
 // auto generated forward declare list
 // clang-format off
-class Container;
-class IPlayerContainerSetter;
-class ISparseContainerSetListener;
 class ItemStack;
 class Player;
 struct ItemStackNetIdTag;
@@ -30,13 +26,6 @@ public:
         FailedWithError            = 2,
     };
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    SparseContainerClient();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,16 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI SparseContainerClient(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        bool                                             isItemStackNetManagerEnabled,
-        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
-#endif
-
     MCNAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
 
 #ifdef LL_PLAT_C
@@ -100,20 +79,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&
     pushSlotPredictionResultMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        bool                                             isItemStackNetManagerEnabled,
-        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
-#endif
     // NOLINTEND
 
 public:

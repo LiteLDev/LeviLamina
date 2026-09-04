@@ -24,11 +24,11 @@ namespace MobMovementLevitate {
 MCAPI void forSystem(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
 MCAPI void tickApplyLevitate(
-    ::entt::type_list<::Include<::MobTravelComponent>, ::Exclude<::PlayerFlyingTravelComponent>> entity,
-    ::StrictEntityContext const&                                                                 mobEffects,
-    ::MobEffectsComponent const&                                                                 stateVector,
-    ::StateVectorComponent&                                                                      levitateModifier,
-    ::EntityModifier<::LevitateTravelFlagComponent>
+    ::entt::type_list<::Include<::MobTravelComponent>, ::Exclude<::PlayerFlyingTravelComponent>>,
+    ::StrictEntityContext const&                    entity,
+    ::MobEffectsComponent const&                    mobEffects,
+    ::StateVectorComponent&                         stateVector,
+    ::EntityModifier<::LevitateTravelFlagComponent> levitateModifier
 );
 // NOLINTEND
 

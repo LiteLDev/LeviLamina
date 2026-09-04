@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BossEventUpdateType : int {
+enum class BossEventUpdateType : uchar {
     Add              = 0,
     PlayerAdded      = 1,
     Remove           = 2,

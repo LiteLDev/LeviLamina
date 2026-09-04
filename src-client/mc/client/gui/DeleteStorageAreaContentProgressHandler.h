@@ -87,16 +87,6 @@ public:
         ::std::function<void()> const&&                             onCompleteCallback
     );
 
-    MCAPI DeleteStorageAreaContentProgressHandler(
-        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
-        ::std::function<void()> const&&                             onCompleteCallback,
-        ::std::string&&                                             deleteStorageContentTitle
-    );
-
-    MCAPI void _checkUserStorageList();
-
-    MCAPI void _onComplete(::MinecraftScreenModel& minecraftScreenModel);
-
     MCAPI void deleteDirectoryContentsRecursively(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& rootPath,
         ::std::string const&                                      dirToDelete
@@ -109,12 +99,6 @@ public:
     MCAPI void* $ctor(
         ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
         ::std::function<void()> const&&                             onCompleteCallback
-    );
-
-    MCAPI void* $ctor(
-        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
-        ::std::function<void()> const&&                             onCompleteCallback,
-        ::std::string&&                                             deleteStorageContentTitle
     );
     // NOLINTEND
 

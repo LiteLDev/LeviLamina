@@ -30,10 +30,10 @@ public:
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
         ::IBlockSource& region,
-        ::BlockPos      processedBlockInfo,
+        ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
@@ -43,22 +43,14 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::ProtectedBlock from(::std::string_view cannotReplace);
-
-    MCAPI static ::br::worldgen::processors::ProtectedBlock from(::HashedString cannotReplace);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource& region,
-        ::BlockPos      processedBlockInfo,
+        ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
@@ -67,12 +59,6 @@ public:
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

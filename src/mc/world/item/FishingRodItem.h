@@ -83,7 +83,7 @@ public:
 
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
-    MCFOLD int $getEnchantSlot() const;
+    MCAPI int $getEnchantSlot() const;
 
     MCFOLD int $getEnchantValue() const;
 
@@ -98,11 +98,5 @@ public:
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

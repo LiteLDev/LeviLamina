@@ -7,11 +7,6 @@
 #include "mc/deps/input/InputEvent.h"
 #include "mc/deps/input/enums/ButtonState.h"
 
-// auto generated forward declare list
-// clang-format off
-class InputEventQueue;
-// clang-format on
-
 class ButtonRepeater {
 public:
     // ButtonRepeater inner types declare
@@ -38,19 +33,5 @@ public:
     ::ll::
         TypedStorage<8, 64, ::std::unordered_map<int, ::std::unordered_map<uint, ::ButtonRepeater::ButtonTimeTracker>>>
             mPerIdTrackerData;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ButtonRepeater();
-
-    MCAPI void tick(::InputEventQueue& queue);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

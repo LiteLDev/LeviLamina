@@ -62,19 +62,13 @@ public:
 
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const /*override*/;
 
-    virtual void flushImmediately() /*override*/;
+    virtual void flushImmediately(::Core::PathView flushPath) /*override*/;
 
     virtual void enableFlushToDisk(bool) /*override*/;
 
     virtual bool checkCorrupt(bool) /*override*/;
 
     virtual void _onTeardown() /*override*/;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

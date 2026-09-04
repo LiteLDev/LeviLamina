@@ -18,7 +18,6 @@ class CompoundTag;
 class Dimension;
 class Level;
 class NetworkIdentifier;
-class ServerLevel;
 class Vec2;
 struct CommandOriginIdentity;
 // clang-format on
@@ -112,14 +111,6 @@ public:
         ::CommandPositionFloat const&      commandPosition,
         int                                version
     );
-
-    MCFOLD ::CommandOrigin* getOrigin() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::VirtualCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
     // NOLINTEND
 
 public:

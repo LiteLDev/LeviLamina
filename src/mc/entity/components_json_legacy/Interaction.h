@@ -47,17 +47,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Interaction& operator=(Interaction const&);
-    Interaction();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Interaction(::Interaction&&);
-
-    MCAPI Interaction(::Interaction const&);
-
     MCAPI void addActorDefinitionIdentifierByName(::std::string const& name);
 
     MCAPI void addLevelSoundEventByName(::std::string const& name);
@@ -79,14 +70,6 @@ public:
     MCAPI void setVibrationByName(::std::string const& name);
 
     MCAPI ~Interaction();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Interaction&&);
-
-    MCAPI void* $ctor(::Interaction const&);
     // NOLINTEND
 
 public:

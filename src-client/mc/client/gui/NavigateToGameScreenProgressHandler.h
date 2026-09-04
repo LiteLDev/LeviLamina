@@ -22,13 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NavigateToGameScreenProgressHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NavigateToGameScreenProgressHandler() /*override*/;
+    virtual ~NavigateToGameScreenProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -47,26 +43,6 @@ public:
     virtual ::std::string getTitleText() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NavigateToGameScreenProgressHandler(
-        ::std::unique_ptr<::ILocalPlayerEntityGetter const> localPlayerEntityGetter
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ILocalPlayerEntityGetter const> localPlayerEntityGetter);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

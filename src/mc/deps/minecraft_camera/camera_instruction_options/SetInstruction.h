@@ -6,11 +6,6 @@
 #include "mc/deps/core/math/EasingType.h"
 #include "mc/deps/core/math/Vec3.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace CameraInstructionOptions {
 
 struct SetInstruction {
@@ -33,18 +28,6 @@ public:
         ::ll::TypedStorage<4, 4, ::EasingType> mEasingType;
         ::ll::TypedStorage<4, 4, float>        mEasingTime;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::CameraInstructionOptions::SetInstruction::EaseOption const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     struct EntityOffsetOption {
@@ -55,18 +38,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mEntityOffsetY;
         ::ll::TypedStorage<4, 4, float> mEntityOffsetZ;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD bool operator==(::CameraInstructionOptions::SetInstruction::EntityOffsetOption const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     struct FacingOption {
@@ -75,18 +46,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::Vec3> mFacingPos;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD bool operator==(::CameraInstructionOptions::SetInstruction::FacingOption const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     struct PosOption {
@@ -94,18 +53,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::Vec3> mPos;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD bool operator==(::CameraInstructionOptions::SetInstruction::PosOption const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 
@@ -116,18 +63,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mRotX;
         ::ll::TypedStorage<4, 4, float> mRotY;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD bool operator==(::CameraInstructionOptions::SetInstruction::RotOption const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
     };
 
     struct ViewOffsetOption {
@@ -136,18 +71,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float> mViewOffsetX;
         ::ll::TypedStorage<4, 4, float> mViewOffsetY;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD bool operator==(::CameraInstructionOptions::SetInstruction::ViewOffsetOption const& other) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 
@@ -171,12 +94,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator==(::CameraInstructionOptions::SetInstruction const& other) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

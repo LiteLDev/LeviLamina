@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ class Level;
 class SaveContext;
 // clang-format on
 
-class CreakingHeartBlockActor : public ::BlockActor {
+class CreakingHeartBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,15 +30,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CreakingHeartBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void load(::ILevel& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -50,8 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CreakingHeartBlockActor(::BlockPos const& pos);
-
     MCAPI void despawnSpawnedCreaking(::Level& level);
 
     MCAPI void executeEvent(
@@ -62,23 +56,15 @@ public:
         ::Actor&             actor
     );
 
-    MCAPI int getComparatorSignal(::Level& level) const;
-
     MCAPI void onSpawnedCreakingDamaged(::BlockSource& region, ::Actor& creaking);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCFOLD bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -92,6 +78,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

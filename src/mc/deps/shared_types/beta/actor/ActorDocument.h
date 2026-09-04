@@ -4,17 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/beta/actor/ActorDefinitions.h"
-#include "mc/deps/shared_types/v1_26_20/actor/ActorDocument.h"
+#include "mc/deps/shared_types/v1_26_30/actor/ActorDocument.h"
 
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::Beta {
 
-struct ActorDocument : public ::SharedTypes::v1_26_20::ActorDocument {
+struct ActorDocument : public ::SharedTypes::v1_26_30::ActorDocument {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,12 +32,6 @@ public:
     MCAPI ::SharedTypes::Beta::ActorDocument& operator=(::SharedTypes::Beta::ActorDocument const&);
 
     MCAPI ~ActorDocument();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

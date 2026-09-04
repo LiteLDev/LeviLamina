@@ -46,8 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudContainerModel(::ContainerEnumName containerName, ::Player& player);
-
-    MCAPI void _refreshContainer();
     // NOLINTEND
 
 public:

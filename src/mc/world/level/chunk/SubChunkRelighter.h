@@ -71,40 +71,27 @@ public:
 
     MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(::SubChunkLightIndex const& coordIndex);
 
-    MCAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex coordIndex, uint& subChunkIndex);
-
-    MCAPI ::SubChunk* _getAbsorption(
-        ::SubChunkLightIndex coordIndex,
-        uchar&               absorption,
-        uint&                subChunkIndex,
-        bool                 shouldCheckSkyLightInclusion
-    );
+    MCAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex const coordIndex, uint& subChunkIndex);
 
     MCAPI ::SubChunk*
     _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
 
     MCAPI ::SubChunk* _getBlock(
-        ::SubChunkLightIndex coordIndex,
-        ::Block const*&      block,
-        ::Block const*&      extraBlock,
-        uint&                subChunkIndex
+        ::SubChunkLightIndex const coordIndex,
+        ::Block const*&            block,
+        ::Block const*&            extraBlock,
+        uint&                      subChunkIndex
     ) const;
 
+#ifdef LL_PLAT_S
     MCAPI void _propagateBlockLight();
-
-    MCAPI void _propagateBlockLight(::SubChunkLightIndex coordIndex, uchar brightness);
 
     MCAPI void _propagateSkyLight();
 
-    MCAPI void _propagateSkyLight(::SubChunkLightIndex coordIndex, uchar brightness);
-
     MCAPI void _propagateSubtractiveBlockLight();
 
-    MCAPI void _propagateSubtractiveBlockLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
-
     MCAPI void _propagateSubtractiveSkyLight(bool shouldCheckForIgnoredAbsorptionValues);
-
-    MCAPI void _propagateSubtractiveSkyLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
+#endif
 
     MCAPI void _setLightHelper(
         ::SubChunkLightIndex coordIndex,
@@ -128,10 +115,6 @@ public:
         ::Brightness         newAbsorption
     );
 
-    MCAPI void getBlock(::Pos const& pos, ::Block const*& block, ::Block const*& extraBlock);
-
-    MCAPI ::Pos getCentralSubchunkOrigin();
-
     MCAPI ::SubChunkBrightnessStorage::LightPair getLightPair(::Pos const& coord) const;
 
     MCAPI ::SubChunkBrightnessStorage::LightPair getLightPairWithPlaceholderCheck(
@@ -139,31 +122,15 @@ public:
         ::SubChunkBrightnessStorage::LightPair const& defaultLightPairIfPlaceholderSubChunk
     ) const;
 
-    MCAPI void getTouchedSubChunks(::std::vector<::Pos>& subChunkPosList);
-
+#ifdef LL_PLAT_C
     MCAPI void relightSubChunk(
         ::LevelChunk const&                         levelChunk,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList,
         ::std::vector<::BlockPos>&                  brightnessChangedList
     );
 
-    MCAPI void setBlockLight(
-        ::Pos const& pos,
-        ::Brightness oldBrightness,
-        ::Brightness newBrightness,
-        ::Brightness oldAbsorption,
-        ::Brightness newAbsorption
-    );
-
-    MCAPI void setSkyLight(
-        ::Pos const& pos,
-        ::Brightness oldBrightness,
-        ::Brightness newBrightness,
-        ::Brightness oldAbsorption,
-        ::Brightness newAbsorption
-    );
-
     MCAPI void update(::BlockPos const&, uint64);
+#endif
 
     MCAPI ~SubChunkRelighter();
     // NOLINTEND

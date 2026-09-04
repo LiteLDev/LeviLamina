@@ -12,6 +12,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class EntityContext;
 class Level;
 class Player;
 struct CommandOriginIdentity;
@@ -34,13 +35,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _sendEvent(
+        ::Level&                              level,
+        ::std::string const&                  sender,
+        ::std::vector<::EntityContext> const& targets,
+        ::std::string const&                  message,
+        ::std::optional<::std::string> const& filteredMessage
+    );
+
     MCAPI static void _sendMessageToPlayer(
-        ::Player&                      player,
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage,
-        ::std::string const&           sender,
-        ::CommandOriginIdentity const& identity,
-        ::Level&                       level
+        ::Player&                            player,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage,
+        ::std::string const&                 sender,
+        ::CommandOriginIdentity const&       identity,
+        ::Level&                             level
     );
 
     MCAPI static void setup(::CommandRegistry& registry);
@@ -52,11 +61,5 @@ public:
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

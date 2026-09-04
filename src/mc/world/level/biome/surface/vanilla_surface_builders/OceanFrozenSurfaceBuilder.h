@@ -10,6 +10,7 @@
 // clang-format off
 class Block;
 class FrozenOceanBuilderNoises;
+class LevelSeed64;
 class SurfaceBuilderData;
 // clang-format on
 
@@ -28,11 +29,12 @@ public:
     // prevent constructor by default
     OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&);
     OceanFrozenSurfaceBuilder(OceanFrozenSurfaceBuilder const&);
+    OceanFrozenSurfaceBuilder();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initBuilder(uint levelSeed) /*override*/;
+    virtual void initBuilder(::LevelSeed64 levelSeed) /*override*/;
 
     virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
@@ -42,21 +44,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OceanFrozenSurfaceBuilder();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(::LevelSeed64 levelSeed);
 
     MCFOLD void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 

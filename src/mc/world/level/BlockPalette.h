@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/platform/threading/Mutex.h"
 
@@ -11,7 +10,6 @@
 // clang-format off
 class Block;
 class BlockType;
-class IUnknownBlockTypeRegistry;
 class Level;
 struct BlockID;
 struct NewBlockID;
@@ -63,17 +61,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockPalette(::BlockPalette::ConstructorToken);
-
     MCAPI explicit BlockPalette(::Level& level);
 
     MCAPI void cacheBlockComponentData();
 
     MCAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
-
-    MCAPI void initFromBlockDefinitions();
 
     MCAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
 
@@ -96,8 +88,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPalette::ConstructorToken);
-
     MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 

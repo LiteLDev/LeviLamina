@@ -3,28 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/input/InputMethod.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
-#include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/OperationMode.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
 class IAppPlatform;
 class IClientInstance;
+class IContentManager;
 namespace OreUI { class IStorageInfoUpdater; }
 // clang-format on
 
 namespace OreUI {
 
-class DeviceInformationFacet : public ::OreUI::FacetBase<::OreUI::DeviceInformationFacet>,
+class DeviceInformationFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::DeviceInformationFacet>,
                                public ::Core::StorageAreaStateListener,
                                public ::AppPlatformListener {
 public:
@@ -74,6 +75,7 @@ public:
     ::ll::TypedStorage<4, 4, ::FileStorageDirectory>                                 mStorageType;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>           mChangeStorageTask;
     ::ll::TypedStorage<8, 24, ::std::vector<::Social::MultiplayerServiceIdentifier>> mActiveServices;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mDeleteContentSubscription;
     // NOLINTEND
 
 public:
@@ -83,7 +85,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeviceInformationFacet() /*override*/;
+    virtual ~DeviceInformationFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
 
@@ -100,20 +102,11 @@ public:
     MCAPI DeviceInformationFacet(
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                   appPlatform,
+        ::IContentManager&                                                  contentManager,
         ::std::unique_ptr<::OreUI::IStorageInfoUpdater>                     storageInfoUpdater
     );
 
-    MCAPI void _checkCellularDataFee();
-
-    MCAPI void _fillInputMethods();
-
-    MCAPI void _fillMemory();
-
-    MCAPI void _fillPlatform(::BuildPlatform buildPlatform);
-
     MCAPI void _fillStorageInfo();
-
-    MCAPI void _fillSupportsManualAddedServers();
 
     MCAPI int _getAppDisplayHeight() const;
 
@@ -123,33 +116,33 @@ public:
 
     MCAPI void changeStorage();
 
-    MCFOLD int defaultNetworkMaxPlayers() const;
+    MCAPI int defaultNetworkMaxPlayers() const;
 
     MCFOLD ::std::vector<::Social::MultiplayerServiceIdentifier> const& getActiveMultiplayerServiceIds() const;
 
-    MCFOLD ::OreUI::FacetTaskState getChangeStorageProgress() const;
+    MCAPI ::OreUI::FacetTaskState getChangeStorageProgress() const;
 
-    MCFOLD int getDisplayHeight() const;
+    MCAPI int getDisplayHeight() const;
 
-    MCFOLD int getDisplayWidth() const;
+    MCAPI int getDisplayWidth() const;
 
     MCFOLD int getGuiScaleBase() const;
 
-    MCFOLD int getGuiScaleModifier() const;
+    MCAPI int getGuiScaleModifier() const;
 
-    MCFOLD ::std::vector<::OreUI::InputMethod> const& getInputMethods() const;
+    MCAPI ::std::vector<::OreUI::InputMethod> const& getInputMethods() const;
 
-    MCAPI bool getIsLowMemoryDevice() const;
+    MCFOLD bool getIsLowMemoryDevice() const;
 
     MCAPI float getPixelsPerMillimeter() const;
 
-    MCFOLD ::OreUI::DeviceInformationFacet::Platform getPlatform() const;
+    MCAPI ::OreUI::DeviceInformationFacet::Platform getPlatform() const;
 
     MCFOLD ::std::string const& getStorageAvailableSize() const;
 
     MCAPI uint64 getStorageSize() const;
 
-    MCFOLD ::FileStorageDirectory getStorageType() const;
+    MCAPI ::FileStorageDirectory getStorageType() const;
 
     MCFOLD uint64 getStorageUsed() const;
 
@@ -159,7 +152,7 @@ public:
 
     MCAPI bool isOnline() const;
 
-    MCFOLD bool isStorageFull() const;
+    MCAPI bool isStorageFull() const;
 
     MCAPI bool isStorageLow() const;
 
@@ -182,14 +175,9 @@ public:
     MCAPI void* $ctor(
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                   appPlatform,
+        ::IContentManager&                                                  contentManager,
         ::std::unique_ptr<::OreUI::IStorageInfoUpdater>                     storageInfoUpdater
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -199,19 +187,9 @@ public:
 
     MCAPI void $onOperationModeChanged(::OperationMode operationMode);
 
-    MCFOLD void $onLowDiskSpace(bool const);
+    MCAPI void $onLowDiskSpace(bool const);
 
-    MCFOLD void $onOutOfDiskSpace(bool const);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForFacetBase();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
-
-    MCNAPI static void** $vftableForStorageAreaStateListener();
+    MCAPI void $onOutOfDiskSpace(bool const);
     // NOLINTEND
 };
 

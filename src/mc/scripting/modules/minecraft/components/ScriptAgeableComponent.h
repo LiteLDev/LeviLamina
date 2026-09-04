@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
 class AgeableDefinition;
-struct ActorDefinitionFeedItem;
 struct AgeableComponent;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -24,8 +23,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
-
     MCAPI ::Scripting::Result_deprecated<::ActorDefinitionTrigger> getGrowUp() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getTransformToItem() const;
@@ -35,18 +32,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

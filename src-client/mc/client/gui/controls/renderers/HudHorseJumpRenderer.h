@@ -15,7 +15,6 @@ class UIControl;
 class UICustomRenderer;
 class UIResolvedDef;
 class UIScene;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class HudHorseJumpRenderer : public ::MinecraftUICustomRenderer {
@@ -39,18 +38,20 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
+    virtual void render(
+        ::MinecraftUIRenderContext& renderContext,
+        ::IClientInstance&          client,
+        ::UIControl&                owner,
+        int                         pass
+    ) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit HudHorseJumpRenderer(::UIResolvedDef const& def);
-
-    MCAPI void _loadHorseJumpTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
@@ -71,9 +72,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCAPI void
+    $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 
 public:

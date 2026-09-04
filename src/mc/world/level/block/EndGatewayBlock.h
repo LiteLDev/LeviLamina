@@ -22,10 +22,6 @@ struct BlockAnimateTickData;
 
 class EndGatewayBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    EndGatewayBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool addCollisionShapes(
@@ -42,21 +38,6 @@ public:
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
-
-    virtual ::std::shared_ptr<::BlockActor> newBlockEntity(::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EndGatewayBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -76,8 +57,6 @@ public:
     MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
-
-    MCAPI ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
 
 
     // NOLINTEND

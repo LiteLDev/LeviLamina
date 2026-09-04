@@ -20,10 +20,4 @@ public:
     virtual ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
     getOnReadyForCustomDimensionRegistrationConnector() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

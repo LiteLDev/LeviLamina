@@ -19,10 +19,6 @@ class Vec3;
 
 class BrushItem : public ::Item {
 public:
-    // prevent constructor by default
-    BrushItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
@@ -36,18 +32,6 @@ public:
 
     virtual ::InteractionResult
     _useOn(::ItemStack& item, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BrushItem(::std::string const& nameId, short id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, short id);
     // NOLINTEND
 
 public:

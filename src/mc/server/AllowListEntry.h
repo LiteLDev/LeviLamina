@@ -23,11 +23,19 @@ public:
     ::ll::TypedStorage<1, 1, bool>           mIgnoresPlayerLimit;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     AllowListEntry& operator=(AllowListEntry const&);
+    AllowListEntry(AllowListEntry const&);
     AllowListEntry();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AllowListEntry();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,8 +47,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AllowListEntry(::AllowListEntry const&);
-
     MCNAPI AllowListEntry(
         ::std::string name,
         ::mce::UUID   uuid,
@@ -50,14 +56,14 @@ public:
         bool          ignorePLayerLimit
     );
 
+#ifdef LL_PLAT_S
     MCNAPI ::AllowListEntry& operator=(::AllowListEntry&&);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AllowListEntry const&);
-
     MCNAPI void* $ctor(
         ::std::string name,
         ::mce::UUID   uuid,
@@ -76,11 +82,5 @@ public:
     MCNAPI void $deserialize(::Json::Value const& root);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

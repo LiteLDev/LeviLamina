@@ -15,6 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mSectionHeader;
+    ::ll::TypedStorage<1, 1, bool>           mIgnoreChildrenEnumeration;
     // NOLINTEND
 
 public:
@@ -33,11 +34,5 @@ public:
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
     MCFOLD void $reset();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

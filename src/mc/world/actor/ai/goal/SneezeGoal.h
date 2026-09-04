@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSneezeSound;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mPreSneezeSound;
     ::ll::TypedStorage<4, 4, float>                                  mPrepareTime;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const>  mReactMobFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>>        mReactMobFilters;
     ::ll::TypedStorage<4, 4, float>                                  mReactWithin;
     ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
     // NOLINTEND
@@ -50,40 +50,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SneezeGoal(
-        ::Mob&                                mob,
-        float                                 cooldownTime,
-        float                                 probability,
-        float                                 dropItemChance,
-        ::std::string const&                  lootTable,
-        ::std::string const&                  sneezeSound,
-        ::std::string const&                  preSneezeSound,
-        float                                 prepareTime,
-        ::std::vector<::MobDescriptor> const& reactMobFilters,
-        float                                 reactWithin
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                mob,
-        float                                 cooldownTime,
-        float                                 probability,
-        float                                 dropItemChance,
-        ::std::string const&                  lootTable,
-        ::std::string const&                  sneezeSound,
-        ::std::string const&                  preSneezeSound,
-        float                                 prepareTime,
-        ::std::vector<::MobDescriptor> const& reactMobFilters,
-        float                                 reactWithin
-    );
     // NOLINTEND
 
 public:

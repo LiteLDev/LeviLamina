@@ -43,12 +43,6 @@ public:
             ::Json::Value const&                     sessionSummary
         ) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -66,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Connector();
+    virtual ~Connector() = default;
 
     virtual ::std::string getLocalIp();
 
@@ -83,24 +77,6 @@ public:
     virtual ushort getIPv6Port() const;
 
     virtual ::TransportLayer getNetworkType() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Connector(::Connector::ConnectionCallbacks& callbacks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

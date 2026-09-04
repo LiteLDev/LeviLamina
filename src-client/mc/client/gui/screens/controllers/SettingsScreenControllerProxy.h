@@ -16,18 +16,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsScreenControllerProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    virtual ~SettingsScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 };

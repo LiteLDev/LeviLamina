@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -20,7 +20,7 @@ namespace Screenshots { class ShowcasedScreenshots; }
 
 namespace OreUI {
 
-class PlayerShowcasedGalleryFacet : public ::OreUI::FacetBase<::OreUI::PlayerShowcasedGalleryFacet> {
+class PlayerShowcasedGalleryFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerShowcasedGalleryFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,11 +56,11 @@ public:
 
     MCAPI uint64 getCount() const;
 
-    MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
+    MCAPI ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
 
     MCAPI uint64 getMaxScreenshots() const;
 
-    MCFOLD ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
+    MCAPI ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
 
     MCAPI bool isLoadingCount() const;
 
@@ -96,12 +96,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

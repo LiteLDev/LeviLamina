@@ -18,8 +18,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void initialize(
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager,
-        ::FeatureRegistry&                                         jigsawRegistry,
-        ::JigsawStructureRegistry&
+        ::FeatureRegistry&                                         featureRegistry,
+        ::JigsawStructureRegistry&                                 jigsawRegistry
     );
     // NOLINTEND
 };

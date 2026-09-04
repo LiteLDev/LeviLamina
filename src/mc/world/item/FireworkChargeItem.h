@@ -30,10 +30,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FireworkChargeItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void appendFormattedHovertext(
@@ -50,12 +46,6 @@ public:
     virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const /*override*/;
 
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FireworkChargeItem(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -96,8 +86,6 @@ public:
         bool                        hasTrail,
         bool                        hasFlicker
     );
-
-    MCAPI static void setColor(::ItemStackBase& instance);
     // NOLINTEND
 
 public:
@@ -114,12 +102,6 @@ public:
     MCAPI static ::std::string const& TAG_E_TRAIL();
 
     MCAPI static ::std::string const& TAG_E_TYPE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

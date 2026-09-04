@@ -79,3 +79,10 @@ ll::Expected<CompoundTag> CompoundTag::fromNetworkNbt(std::string const& data) n
 } catch (...) {
     return ll::makeExceptionError();
 }
+
+bool CompoundTag::contains(std::string_view name, Type type) const {
+    if (auto it = mTags.find(name); it != mTags.end()) {
+        return it->second.getId() == type;
+    }
+    return false;
+}

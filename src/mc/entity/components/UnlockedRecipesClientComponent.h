@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/item/CreativeItemCategory.h"
-
 // auto generated forward declare list
 // clang-format off
 class Recipe;
@@ -22,14 +19,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mNewlyUnlockedRecipes;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    UnlockedRecipesClientComponent& operator=(UnlockedRecipesClientComponent const&);
-    UnlockedRecipesClientComponent(UnlockedRecipesClientComponent const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -41,14 +30,6 @@ public:
         ::std::vector<::std::string> const& unlockedRecipeIds,
         bool                                newlyUnlocked
     );
-
-    MCAPI void clearNewlyUnlockedData();
-
-    MCFOLD ::std::unordered_set<::std::string> const& getNewlyUnlockedRecipes() const;
-
-    MCAPI bool isCategoryUnlocked(::SharedTypes::CreativeItemCategory category) const;
-
-    MCAPI bool isItemUnlocked(int idAux) const;
 #endif
 
     MCAPI bool isRecipeUnlocked(::Recipe const& recipe) const;
@@ -56,13 +37,9 @@ public:
     MCAPI bool isRecipeUnlocked(::std::string const& recipeId) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::UnlockedRecipesClientComponent& operator=(::UnlockedRecipesClientComponent&&);
-
     MCAPI void removeAllRecipes();
 
     MCAPI void removeRecipes(::Recipes const& recipes, ::std::vector<::std::string> const& unlockedRecipeIds);
-
-    MCAPI ~UnlockedRecipesClientComponent();
 #endif
     // NOLINTEND
 
@@ -71,14 +48,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

@@ -5,8 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/WaypointGroup.h"
 #include "mc/world/actor/player/ServerLocatorBar.h"
 
@@ -15,11 +14,8 @@
 namespace ScriptModuleMinecraft { class ScriptRGB; }
 namespace ScriptModuleMinecraft { class ScriptWaypoint; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
-namespace ScriptModuleMinecraft { struct ScriptInvalidWaypointError; }
-namespace ScriptModuleMinecraft { struct ScriptLocatorBarError; }
 namespace ScriptModuleMinecraft { struct ScriptWaypointTextureSelector; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -41,18 +37,6 @@ public:
         ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnWaypointSetProperty;
         ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRemove;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~WaypointEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -71,17 +55,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptLocatorBar();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptLocatorBar(::WeakEntityRef playerRef);
-
-    MCAPI bool
-    _hasWaypoint(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWaypoint> const& waypoint) const;
-
     MCAPI void _initializeGroupHandle();
 
     MCAPI void _onWaypointPropertyUpdate(
@@ -96,33 +71,12 @@ public:
     MCAPI void _onWaypointRemoveEvent(::WaypointGroup::WaypointHandle handle);
 
     MCAPI void _removeInvalidWaypoints(::std::vector<::WaypointGroup::WaypointHandle> const& handles);
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptLocatorBarError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::Scripting::EngineError>
-    addWaypoint(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWaypoint>& waypoint);
-
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWaypoint>>
-    getAllWaypoints();
-
-    MCAPI ::Scripting::Result<void, ::Scripting::EngineError> removeAllWaypoints();
-
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocatorBarError, ::Scripting::EngineError>
-    removeWaypoint(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWaypoint> const& waypoint);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakEntityRef playerRef);
     // NOLINTEND
 };
 

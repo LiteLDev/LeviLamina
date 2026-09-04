@@ -34,11 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI int _getLootingEnchantLevel(::LootTableContext& context) const;
-
-    MCFOLD ::RandomValueBounds getDamage() const;
+    MCAPI static int _getLootingEnchantLevel(::LootTableContext& context);
     // NOLINTEND
 
 public:
@@ -51,11 +49,5 @@ public:
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -15,8 +15,6 @@ namespace IsValidSpawn {
 // NOLINTBEGIN
 MCFOLD bool always(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
 
-MCAPI bool canStandOn(::BlockSource const&, ::Block const& state, ::BlockPos, ::br::spawn::EntityType const&);
-
 MCAPI bool fireImmune(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
 
 MCFOLD bool never(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);

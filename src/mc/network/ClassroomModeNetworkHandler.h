@@ -37,13 +37,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClassroomModeNetworkHandler() /*override*/;
+    virtual ~ClassroomModeNetworkHandler() /*override*/ = default;
 
-    virtual ::IncomingPacketFilterResult
-    allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64) /*override*/;
+    virtual ::IncomingPacketFilterResult allowIncomingPacketId(
+        ::NetworkIdentifierWithSubId const& id,
+        ::MinecraftPacketIds                packetId,
+        uint64                              packetSize
+    ) /*override*/;
 
     virtual ::OutgoingPacketFilterResult
-    allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) /*override*/;
+    allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
     virtual void onWebsocketRequest(
         ::std::string const&    serverAddress,
@@ -71,19 +74,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::IncomingPacketFilterResult
-    $allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64);
+    $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);
 
     MCNAPI ::OutgoingPacketFilterResult
-    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&);
+    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
     MCNAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,

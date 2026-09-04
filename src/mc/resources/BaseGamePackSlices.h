@@ -9,7 +9,6 @@
 // clang-format off
 class BaseGameVersion;
 class IResourcePackRepository;
-class ResourcePack;
 class ResourcePackStack;
 namespace mce { class UUID; }
 // clang-format on
@@ -35,18 +34,6 @@ public:
         BaseGameVersionPack& operator=(BaseGameVersionPack const&);
         BaseGameVersionPack(BaseGameVersionPack const&);
         BaseGameVersionPack();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~BaseGameVersionPack();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -59,12 +46,11 @@ public:
     // prevent constructor by default
     BaseGamePackSlices& operator=(BaseGamePackSlices const&);
     BaseGamePackSlices(BaseGamePackSlices const&);
+    BaseGamePackSlices();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseGamePackSlices();
-
     MCNAPI void addFromVersions(
         ::std::vector<::BaseGameVersion> const&                               baseGameVersions,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
@@ -76,21 +62,5 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
         ::ResourcePackStack&                                                  packStack
     ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void _add(
-        ::std::vector<::BaseGamePackSlices::BaseGameVersionPack>& baseGameVersionPacks,
-        ::BaseGameVersion const&                                  baseGameVersion,
-        ::gsl::not_null<::std::shared_ptr<::ResourcePack>>        pack
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };

@@ -32,7 +32,7 @@ public:
 
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
     virtual ::BlockShape getBlockShape() const /*override*/;
@@ -47,7 +47,7 @@ public:
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& entity, ::Actor& face, uchar& pos, ::BlockPos&) const /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     MCFOLD ::BlockShape $getBlockShape() const;
 
@@ -72,7 +72,7 @@ public:
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& entity, ::Actor& face, uchar& pos, ::BlockPos&) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
 
     // NOLINTEND

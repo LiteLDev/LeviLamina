@@ -57,7 +57,7 @@ public:
         ::ll::TypedStorage<2, 2, ::cereal::ResultCode>                           mResultCode;
         ::ll::TypedStorage<8, 16, ::cereal::BasicSerializerContext::TokenHolder> mMessage;
         ::ll::TypedStorage<4, 4, uint>                                           mContextIndex;
-        ::ll::TypedStorage<8, 8, ::Bedrock::small_vector<::cereal::BasicSerializerContext::Context, 1> const*> mStack;
+        ::ll::TypedStorage<8, 8, ::Bedrock::small_vector<::cereal::BasicSerializerContext::Context, 8> const*> mStack;
         ::ll::TypedStorage<4, 4, uint> mGeneration;
         // NOLINTEND
     };
@@ -65,56 +65,30 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                                                                    mCurrentIndex;
-    ::ll::TypedStorage<8, 48, ::Bedrock::small_vector<::cereal::BasicSerializerContext::Context, 1>>  mStack;
-    ::ll::TypedStorage<8, 64, ::Bedrock::small_vector<::cereal::BasicSerializerContext::LogEntry, 1>> mLog;
-    ::ll::TypedStorage<2, 2, ::cereal::ResultCode>                                                    mErrorCodes;
-    ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                                                   mContextArea;
+    ::ll::TypedStorage<4, 4, uint>                                                                     mCurrentIndex;
+    ::ll::TypedStorage<8, 272, ::Bedrock::small_vector<::cereal::BasicSerializerContext::Context, 8>>  mStack;
+    ::ll::TypedStorage<8, 400, ::Bedrock::small_vector<::cereal::BasicSerializerContext::LogEntry, 8>> mLog;
+    ::ll::TypedStorage<2, 2, ::cereal::ResultCode>                                                     mErrorCodes;
+    ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                                                    mContextArea;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BasicSerializerContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BasicSerializerContext(::cereal::ResultCode errorCodes);
-
     MCAPI ::std::string _getContextString(uint index) const;
-
-    MCFOLD ::cereal::ContextArea contextArea() const;
-
-    MCAPI void contextArea(::cereal::ContextArea area);
 
     MCAPI ::std::vector<::cereal::BasicSerializerContext::Context>
     contextFor(::cereal::BasicSerializerContext::LogEntry const& entry) const;
 
-    MCAPI ::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string_view> currentContext() const;
-
-    MCAPI ::std::string currentContextString() const;
-
-    MCAPI ::cereal::ResultCode errorCodes() const;
-
     MCAPI ::std::vector<::std::string> errors() const;
-
-    MCAPI ::gsl::span<::cereal::BasicSerializerContext::LogEntry const> logEntries() const;
-
-    MCAPI void treatAsError(::cereal::ResultCode res, bool isError);
 
     MCAPI ~BasicSerializerContext();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ResultCode errorCodes);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

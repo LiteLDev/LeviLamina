@@ -13,24 +13,18 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkdcc79d;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PrivateKeyManager& operator=(PrivateKeyManager const&);
     PrivateKeyManager(PrivateKeyManager const&);
     PrivateKeyManager();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PrivateKeyManager(PrivateKeyManager const&);
-    PrivateKeyManager();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
+
+    virtual ~PrivateKeyManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -47,10 +41,6 @@ public:
 #endif
 
     MCNAPI ::std::string computeSecret(::KeyManager const& peer) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::PrivateKeyManager& operator=(::PrivateKeyManager const& rhs);
-#endif
     // NOLINTEND
 
 public:
@@ -62,6 +52,12 @@ public:
     MCNAPI void*
     $ctor(::std::string const& publicKey, ::std::string const& privateKey, ::Crypto::Asymmetric::System system);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

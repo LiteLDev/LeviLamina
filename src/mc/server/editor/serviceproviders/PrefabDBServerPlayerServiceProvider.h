@@ -103,12 +103,6 @@ public:
         ::std::function<void(::std::string_view)> logger
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Prefabs

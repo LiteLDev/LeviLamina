@@ -20,22 +20,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InventoryTransactionItemGroup();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryTransactionItemGroup(::ItemStack const& item, int count);
-
-    MCAPI bool equals(::ItemStack const& item) const;
-
     MCAPI ::ItemStack getItemInstance() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStack const& item, int count);
     // NOLINTEND
 };

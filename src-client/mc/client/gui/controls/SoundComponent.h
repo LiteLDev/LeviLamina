@@ -92,10 +92,10 @@ public:
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree& screenEvent,
-        ::ScreenInputContext&,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
     // NOLINTEND
 
@@ -121,13 +121,11 @@ public:
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
     // NOLINTEND
 };

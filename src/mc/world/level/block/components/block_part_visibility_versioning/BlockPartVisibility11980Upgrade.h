@@ -29,12 +29,6 @@ public:
         ::SemVersion const&
     ) const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace BlockPartVisibilityVersioning

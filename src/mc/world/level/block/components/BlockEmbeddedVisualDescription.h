@@ -18,14 +18,9 @@ struct BlockEmbeddedVisualDescription : public ::NetworkedBlockComponentDescript
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 264, ::BlockGeometryDescription>          mGeometry;
+    ::ll::TypedStorage<8, 280, ::BlockGeometryDescription>          mGeometry;
     ::ll::TypedStorage<8, 144, ::BlockMaterialInstancesDescription> mMaterialInstances;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEmbeddedVisualDescription(BlockEmbeddedVisualDescription const&);
-    BlockEmbeddedVisualDescription();
 
 public:
     // virtual functions
@@ -40,19 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockEmbeddedVisualDescription(
-        ::BlockGeometryDescription const&          geometryDescription,
-        ::BlockMaterialInstancesDescription const& materialInstanceDescription
-    );
-
-    MCFOLD ::BlockEmbeddedVisualDescription& operator=(::BlockEmbeddedVisualDescription&&);
-
-    MCFOLD ::BlockEmbeddedVisualDescription& operator=(::BlockEmbeddedVisualDescription const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -62,15 +44,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockGeometryDescription const&          geometryDescription,
-        ::BlockMaterialInstancesDescription const& materialInstanceDescription
-    );
     // NOLINTEND
 
 public:

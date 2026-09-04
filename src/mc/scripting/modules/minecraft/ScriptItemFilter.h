@@ -3,12 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/item/query/ItemQueryOptions.h"
 
 // auto generated forward declare list
 // clang-format off
-class ItemStack;
 namespace ScriptModuleMinecraft { class ScriptItemFilterError; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -44,13 +43,9 @@ public:
     MCAPI ::nonstd::expected<::ItemQueryOptions, ::std::vector<::ScriptModuleMinecraft::ScriptItemFilterError>>
     getItemQueryOptions(::Scripting::WeakLifetimeScope const& scope) const;
 
-    MCAPI bool operator()(::ItemStack const& item) const;
-
     MCAPI ::ScriptModuleMinecraft::ScriptItemFilter& operator=(::ScriptModuleMinecraft::ScriptItemFilter&&);
 
     MCAPI void processItemQueryOptions(::Scripting::WeakLifetimeScope const& scope);
-
-    MCAPI ~ScriptItemFilter();
     // NOLINTEND
 
 public:
@@ -63,12 +58,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

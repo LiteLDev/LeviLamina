@@ -32,26 +32,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void render(::ScreenContext& screenContext) /*override*/;
+
+    virtual ~ShieldModel() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ShieldModel(::GeometryPtr source);
-
-    MCFOLD void setDefaultMaterial();
-
-    MCFOLD void setGlintMaterial();
-
-    MCAPI void setGlintPatternMaterial();
-
-    MCAPI void setPatternMaterial();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::GeometryPtr source);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

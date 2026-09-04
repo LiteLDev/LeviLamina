@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class ContainerScreenContext;
-class ItemInstance;
 class Player;
 struct ActorUniqueID;
 // clang-format on
@@ -48,14 +47,6 @@ public:
         ::BlockPos const& blockPos,
         ::BlockActorType  blockActorType
     );
-
-#ifdef LL_PLAT_C
-    MCAPI void fireFullCobbleStoneEvent();
-
-    MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
-
-    MCFOLD ::BlockActorType getBlockActorType() const;
-#endif
     // NOLINTEND
 
 public:

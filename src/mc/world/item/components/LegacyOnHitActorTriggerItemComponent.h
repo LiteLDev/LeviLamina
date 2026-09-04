@@ -9,11 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ComponentItem;
-class HashedString;
-class ItemStack;
-class Mob;
 namespace SharedTypes::Legacy { struct OnHitActorTriggerItemComponent; }
 // clang-format on
 
@@ -42,14 +38,6 @@ public:
     MCAPI explicit LegacyOnHitActorTriggerItemComponent(
         ::SharedTypes::Legacy::OnHitActorTriggerItemComponent&& componentData
     );
-
-    MCAPI void _onHitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

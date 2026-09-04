@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { struct EditorStructureMetadataQueryParams; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -24,40 +23,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptEditorStructureSearchOptions& operator=(ScriptEditorStructureSearchOptions const&);
+    ScriptEditorStructureSearchOptions(ScriptEditorStructureSearchOptions const&);
     ScriptEditorStructureSearchOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
-    operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
-    operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
-
-    MCNAPI ::Editor::EditorStructureMetadataQueryParams toQueryParams() const;
-
-    MCNAPI ~ScriptEditorStructureSearchOptions();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

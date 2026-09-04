@@ -11,9 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class GameDependencies; }
-namespace OreUI { class InvocationStatus; }
 namespace Realms { class IRealmsMembers; }
-namespace Realms { struct RealmId; }
 // clang-format on
 
 namespace OreUI {
@@ -35,20 +33,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsMembersCommandGroup() /*override*/;
+    virtual ~RealmsMembersCommandGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsMembersCommandGroup(::OreUI::GameDependencies const& game);
-
-    MCAPI void _addMembersImpl(
-        ::OreUI::InvocationStatus           status,
-        ::Realms::RealmId                   realmId,
-        ::std::string const&                initiatorXuid,
-        ::std::vector<::std::string> const& xuidsToAdd
-    );
     // NOLINTEND
 
 public:
@@ -61,18 +52,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

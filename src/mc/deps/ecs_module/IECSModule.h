@@ -21,12 +21,6 @@ public:
 
     virtual void registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ECSModule

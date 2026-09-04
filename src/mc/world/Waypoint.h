@@ -48,22 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD ::std::optional<::mce::Color> const& getColor() const;
-
-    MCFOLD ::Vec2 const& getIconSize() const;
-
-    MCFOLD ::std::optional<::std::string> const& getTexturePath() const;
-
-    MCFOLD ::WorldPosition const& getWorldPosition() const;
-
-    MCFOLD bool isVisible() const;
-#endif
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -78,7 +62,11 @@ public:
 
     MCAPI void $setIsVisible(bool isVisible);
 
+#ifdef LL_PLAT_S
     MCAPI void $setClientPositionAuthority(bool clientPositionAuthority);
+#else // LL_PLAT_C
+    MCFOLD void $setClientPositionAuthority(bool clientPositionAuthority);
+#endif
 
     MCAPI void $setTexturePath(::std::optional<::std::string> const& texturePath);
 

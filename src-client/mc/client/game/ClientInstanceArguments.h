@@ -35,18 +35,6 @@ public:
         CreateLevelRendererArguments& operator=(CreateLevelRendererArguments const&);
         CreateLevelRendererArguments(CreateLevelRendererArguments const&);
         CreateLevelRendererArguments();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CreateLevelRendererArguments();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct CreateLegacyClientNetworkHandlerArguments {
@@ -90,16 +78,4 @@ public:
     ClientInstanceArguments& operator=(ClientInstanceArguments const&);
     ClientInstanceArguments(ClientInstanceArguments const&);
     ClientInstanceArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ClientInstanceArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

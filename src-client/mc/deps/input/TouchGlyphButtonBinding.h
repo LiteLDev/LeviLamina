@@ -31,6 +31,7 @@ public:
 
 public:
     // prevent constructor by default
+    TouchGlyphButtonBinding& operator=(TouchGlyphButtonBinding const&);
     TouchGlyphButtonBinding();
 
 public:
@@ -56,8 +57,6 @@ public:
         float                 innerPaddingX,
         float                 innerPaddingY
     );
-
-    MCAPI ::TouchGlyphButtonBinding& operator=(::TouchGlyphButtonBinding const&);
 
     MCAPI ~TouchGlyphButtonBinding();
     // NOLINTEND

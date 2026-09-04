@@ -41,10 +41,8 @@ public:
     MCAPI ::std::unique_ptr<::CompoundTag> createTag() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::PageContent::PageType getType() const;
-#endif
-
     MCAPI ::PageContent& operator=(::PageContent&&);
+#endif
 
     MCAPI ::PageContent& operator=(::PageContent const&);
 

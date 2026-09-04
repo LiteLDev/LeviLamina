@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EditorNetworkPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -65,16 +69,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorNetworkPacket();
-
     MCAPI explicit EditorNetworkPacket(::EditorNetworkPacketVariantPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::EditorNetworkPacketVariantPayload payload);
     // NOLINTEND
 

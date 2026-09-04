@@ -12,13 +12,13 @@ namespace VanillaBlockTypeGroups {
 // NOLINTBEGIN
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AliveCoralBlockIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AllSlabIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AnvilIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CandleBlockIds();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CandleCakeBlockIds();
+#endif
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CarpetBlockIds();
 
@@ -52,10 +52,6 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Coral
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralWallFanIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperStairsBlockIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralBlockIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralFanIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralWallFanIds();
@@ -63,8 +59,6 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadC
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DecayingBlocks();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DirtIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoubleCutCopperSlabBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoublePlantIds();
 
@@ -92,9 +86,11 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LushG
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& MossBlockIds();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& NewStoneSlabIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OccludesLiquidNotFacingUp();
+#endif
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLeavesBlockIds();
 
@@ -118,7 +114,9 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Prism
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& RedSandstoneIds();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& RemovedBlockIds();
+#endif
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SandIds();
 
@@ -138,6 +136,8 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Shulk
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SkullIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Speleothem();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SpongeIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StainedGlassIds();
@@ -148,11 +148,17 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Stone
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBricksIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SulfurPoolProhibited();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SulfurSpikeReplaceable();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SulfurSpringReplaceable();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsBigDripLeaf();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsCrops();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsForestRock();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsVegetation();
 
@@ -164,7 +170,9 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Tulip
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodAndStrippedWoodBlockIds();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodBlockIds();
+#endif
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodenDoubleSlabIds();
 

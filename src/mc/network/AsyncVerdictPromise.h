@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/threading/AsyncStatus.h"
-
 // auto generated forward declare list
 // clang-format off
 struct AsyncJoinAllow;
@@ -27,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::AsyncStatus getStatus();
-
     MCNAPI void setPromise(::std::variant<::std::monostate, ::AsyncJoinAllow, ::AsyncJoinDeny> verdict);
     // NOLINTEND
 };

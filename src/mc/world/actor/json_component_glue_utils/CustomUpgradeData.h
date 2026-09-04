@@ -19,18 +19,6 @@ public:
     ::ll::TypedStorage<8, 64, ::DeserializeDataSettings>                               mDeserializeDataSettings;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorMigratedDefinitionFactory const*>> mFactory;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CustomUpgradeData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace JsonComponentGlueUtils

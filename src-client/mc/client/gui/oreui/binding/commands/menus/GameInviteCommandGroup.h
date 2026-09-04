@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class GameDependencies; }
-namespace OreUI { class InvocationStatus; }
 namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
@@ -34,23 +33,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit GameInviteCommandGroup(::OreUI::GameDependencies const& game);
-
-    MCAPI void
-    _invitePlatformPlayers(::OreUI::InvocationStatus status, ::std::vector<::std::string> const& uuids) const;
-
-    MCAPI void _inviteXboxPlayers(::OreUI::InvocationStatus status, ::std::vector<::std::string> const& xuids) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

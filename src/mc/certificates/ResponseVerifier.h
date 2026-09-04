@@ -17,10 +17,4 @@ public:
 
     virtual ::std::optional<::Json::Value> verify(::Json::Value&& response) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

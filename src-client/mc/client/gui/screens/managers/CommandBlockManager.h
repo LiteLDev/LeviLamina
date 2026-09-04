@@ -91,9 +91,9 @@ public:
 
     MCAPI ::CommandBlockMode $getCommandBlockTypeMode() const;
 
-    MCFOLD bool $isConditionalMode() const;
+    MCAPI bool $isConditionalMode() const;
 
-    MCFOLD bool $isRedstoneMode() const;
+    MCAPI bool $isRedstoneMode() const;
 
     MCAPI bool $getLastPerformedConditionalMode();
 

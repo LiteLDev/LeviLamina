@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Bedrock::PubSub { class Subscription; }
 
 namespace OreUI {
 
-class OptionsFacet_DEPRECATED : public ::OreUI::FacetBase<::OreUI::OptionsFacet_DEPRECATED> {
+class OptionsFacet_DEPRECATED : public ::OreUI::FacetBase_DEPRECATED<::OreUI::OptionsFacet_DEPRECATED> {
 public:
     // member variables
     // NOLINTBEGIN

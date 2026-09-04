@@ -7,12 +7,6 @@
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/level/Tick.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class Vec3;
-// clang-format on
-
 class EntitySubsensor {
 public:
     // member variables
@@ -37,28 +31,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EntitySubsensor(::EntitySubsensor const&);
-
-    MCAPI void senseEntities(
-        ::Actor&                                      actor,
-        ::gsl::span<::gsl::not_null<::Actor*>> const& nearbyActors,
-        ::Tick const&                                 currentTick,
-        ::Vec3 const&                                 searchAreaPos,
-        ::Vec3 const&                                 searchAreaGrowth,
-        bool                                          canFireEventWithNoEntities
-    );
-
-    MCAPI ~EntitySubsensor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::EntitySubsensor const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

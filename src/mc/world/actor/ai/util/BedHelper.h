@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
-
 class BedHelper {
 public:
     // member variables
@@ -21,13 +16,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mMobOffsetEastX;
     ::ll::TypedStorage<4, 4, float> mMobOffsetSouthZ;
     ::ll::TypedStorage<4, 4, float> mMobOffsetNorthZ;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI float getBedRotation(int direction) const;
-
-    MCAPI void setBedPositionOffsets(int direction, float& mobOffsetX, float& mobOffsetZ, ::Vec3& bedOffset);
     // NOLINTEND
 };

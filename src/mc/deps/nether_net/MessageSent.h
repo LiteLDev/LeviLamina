@@ -19,18 +19,6 @@ public:
     MessageSent& operator=(MessageSent const&);
     MessageSent(MessageSent const&);
     MessageSent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~MessageSent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace NetherNet::LanEvents

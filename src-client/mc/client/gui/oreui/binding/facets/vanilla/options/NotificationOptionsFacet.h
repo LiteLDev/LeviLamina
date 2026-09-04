@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class IOptionRegistry;
 
 namespace OreUI {
 
-class NotificationOptionsFacet : public ::OreUI::FacetBase<::OreUI::NotificationOptionsFacet> {
+class NotificationOptionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::NotificationOptionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NotificationOptionsFacet(::IOptionRegistry& options);
-
     MCAPI bool getDoNotAddonStackingWarning() const;
 
     MCAPI bool getDoNotShowAlternativeStorageHasWorlds() const;
@@ -71,7 +69,11 @@ public:
 
     MCAPI bool getDoNotShowPartyPermissionRequiredRealmsWarning() const;
 
+    MCAPI bool getDoNotShowPartyTabFTUE() const;
+
     MCAPI bool getDoNotShowPartyWorldCapacityRealmsWarning() const;
+
+    MCAPI bool getDoNotShowStorageLowWarning() const;
 
     MCAPI bool getDoNotShowUsingExternalStorageWarning() const;
 
@@ -87,7 +89,7 @@ public:
 
     MCAPI void setDoNotShowEntitlementWarning(bool newValue);
 
-    MCAPI void setDoNotShowExperimentalWorldWarning(::std::string const& worldID, bool shouldNotShow);
+    MCAPI void setDoNotShowExperimentalWorldWarning(::std::string const& worldID, bool const shouldNotShow);
 
     MCAPI void setDoNotShowFriendsListFTUE(bool newValue);
 
@@ -115,7 +117,11 @@ public:
 
     MCAPI void setDoNotShowPartyPermissionRequiredRealmsWarning(bool newValue);
 
+    MCAPI void setDoNotShowPartyTabFTUE(bool newValue);
+
     MCAPI void setDoNotShowPartyWorldCapacityRealmsWarning(bool newValue);
+
+    MCAPI void setDoNotShowStorageLowWarning(bool newValue);
 
     MCAPI void setDoNotShowUsingExternalStorageWarning(bool newValue);
 
@@ -126,12 +132,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IOptionRegistry& options);
     // NOLINTEND
 
 public:

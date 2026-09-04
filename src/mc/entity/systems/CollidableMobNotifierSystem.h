@@ -7,7 +7,6 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,9 +14,6 @@ class LocalSpatialEntityFetcher;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorIsFirstTickFlagComponent;
-struct ActorMovementTickNeededComponent;
-struct ActorRemovedFlagComponent;
-struct CollidableMobFlagComponent;
 struct CollidableMobNearFlagComponent;
 struct DimensionTypeComponent;
 struct FallingBlockFlagComponent;
@@ -32,28 +28,14 @@ namespace CollidableMobNotifierSystem {
 MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void tickNotifier(
-    ::StrictEntityContext const&    aabbShapeComponent,
-    ::AABBShapeComponent const&     dimensionComponent,
-    ::DimensionTypeComponent const& mobView,
-    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>>
-                                                                           fallingBlockView,
-    ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> mod,
-    ::EntityModifier<::CollidableMobNearFlagComponent>                     spatialEntityFetcherFactory,
-    ::LocalSpatialEntityFetcherFactoryComponent&                           spatialEntityFetcher,
-    ::LocalSpatialEntityFetcher&
-);
-
-MCAPI void tickSystem(
-    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factory,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::CollidableMobFlagComponent>,
-        ::Exclude<::ActorRemovedFlagComponent>,
-        ::AABBShapeComponent const,
-        ::DimensionTypeComponent const>                                                                       view,
+    ::StrictEntityContext const&,
+    ::AABBShapeComponent const&     aabbShapeComponent,
+    ::DimensionTypeComponent const& dimensionComponent,
     ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>> mobView,
     ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
-    ::EntityModifier<::CollidableMobNearFlagComponent>                     mod
+    ::EntityModifier<::CollidableMobNearFlagComponent>                     mod,
+    ::LocalSpatialEntityFetcherFactoryComponent&                           spatialEntityFetcherFactory,
+    ::LocalSpatialEntityFetcher&                                           spatialEntityFetcher
 );
 // NOLINTEND
 

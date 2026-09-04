@@ -19,7 +19,6 @@ class PackAccessStrategy;
 class PackManifest;
 class ResourceLoadManager;
 class ResourcePackManager;
-namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -171,13 +170,6 @@ public:
 
     MCAPI void _chooseLanguage(::std::shared_ptr<::ImmutableLocalization> chosen, ::I18nImpl::NotifyMode notify);
 
-    MCAPI void _findAvailableLanguageNames(
-        ::Json::Value const&                                root,
-        ::std::unordered_map<::std::string, ::std::string>& destination
-    );
-
-    MCAPI void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
-
     MCAPI ::std::shared_ptr<::ImmutableLocalization> _findLocaleFor(::std::string const& code);
 
     MCAPI ::std::string _generatePackKeyPrefix(::PackManifest const& manifest);
@@ -186,8 +178,12 @@ public:
 
     MCAPI ::gsl::not_null<::std::shared_ptr<::ImmutableLocalization>>
     _getPackKeywordLocale(::std::string const& langCode);
+    // NOLINTEND
 
-    MCAPI void _setLanguageSupportsHypenSplitting(::Localization const& localization);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
     // NOLINTEND
 
 public:
@@ -273,7 +269,11 @@ public:
 
     MCAPI ::gsl::not_null<::std::shared_ptr<::Localization const>> $getCurrentLanguage();
 
+#ifdef LL_PLAT_S
     MCAPI bool $languageSupportsHypenSplitting();
+#else // LL_PLAT_C
+    MCFOLD bool $languageSupportsHypenSplitting();
+#endif
 
     MCAPI ::std::string
     $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);
@@ -281,11 +281,5 @@ public:
     MCAPI bool $isPackKeyword(::std::string const& key);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

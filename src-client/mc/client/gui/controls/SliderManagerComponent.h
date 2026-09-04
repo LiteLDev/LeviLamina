@@ -34,19 +34,11 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _gatherSliderGroupState(::VisualTree& visualTree);
-
-    MCAPI void setGroupNames(::std::vector<uint> collectionName);
     // NOLINTEND
 
 public:
@@ -57,16 +49,10 @@ public:
     MCFOLD void $reset();
 
     MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

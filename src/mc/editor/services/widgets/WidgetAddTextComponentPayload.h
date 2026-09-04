@@ -6,14 +6,6 @@
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
-namespace mce { class UUID; }
-// clang-format on
-
 namespace Editor::Network {
 
 class WidgetAddTextComponentPayload
@@ -36,46 +28,14 @@ public:
     // NOLINTBEGIN
     MCNAPI WidgetAddTextComponentPayload(::Editor::Network::WidgetAddTextComponentPayload const&);
 
-    MCNAPI WidgetAddTextComponentPayload(
-        ::mce::UUID const&   serviceId,
-        ::mce::UUID const&   groupId,
-        ::mce::UUID const&   widgetId,
-        ::mce::UUID const&   componentId,
-        ::std::string const& componentName,
-        ::Vec3 const&        pos,
-        bool                 visible,
-        bool                 lockToSurface,
-        ::std::string const& textString,
-        ::mce::Color const&  color
-    );
-
     MCNAPI ::Editor::Network::WidgetAddTextComponentPayload&
     operator=(::Editor::Network::WidgetAddTextComponentPayload&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::WidgetAddTextComponentPayload const&);
-
-    MCNAPI void* $ctor(
-        ::mce::UUID const&   serviceId,
-        ::mce::UUID const&   groupId,
-        ::mce::UUID const&   widgetId,
-        ::mce::UUID const&   componentId,
-        ::std::string const& componentName,
-        ::Vec3 const&        pos,
-        bool                 visible,
-        bool                 lockToSurface,
-        ::std::string const& textString,
-        ::mce::Color const&  color
-    );
     // NOLINTEND
 
 public:

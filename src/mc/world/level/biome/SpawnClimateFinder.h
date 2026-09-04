@@ -56,10 +56,6 @@ public:
     MCAPI int64 _calculateClimateMinFitness(::BlockPos pos) const;
 
     MCAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
-
-    MCAPI ::BlockPos findSpawnPosition() const;
-
-    MCAPI ~SpawnClimateFinder();
     // NOLINTEND
 
 public:
@@ -70,11 +66,5 @@ public:
         ::OverworldNoises3d const&         noiseSampler,
         ::DimensionHeightRange const&      dimensionHeightRange
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DirectoryPackWithEncryptionAccessStrategy() /*override*/;
+    virtual ~DirectoryPackWithEncryptionAccessStrategy() /*override*/ = default;
 
     virtual uint64 getPackSize() const /*override*/;
 
@@ -93,8 +93,6 @@ public:
         ::IFileAccess&                                                    fileAccess,
         ::IPackIOProvider const&                                          io
     );
-
-    MCNAPI bool _getUnencryptedAsset(::Core::Path const& packRelativePath, ::std::string& result) const;
     // NOLINTEND
 
 public:
@@ -107,12 +105,6 @@ public:
         ::IFileAccess&                                                    fileAccess,
         ::IPackIOProvider const&                                          io
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -151,11 +143,5 @@ public:
     $getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

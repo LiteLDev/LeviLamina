@@ -32,20 +32,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>   mOneWayPhysicsBlocks;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mTemporaryOverride;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~DepenetrationComponent();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
-    // NOLINTEND
 };

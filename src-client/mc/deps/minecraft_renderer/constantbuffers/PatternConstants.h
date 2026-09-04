@@ -24,15 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PatternConstants();
-
     MCAPI void init();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };
 

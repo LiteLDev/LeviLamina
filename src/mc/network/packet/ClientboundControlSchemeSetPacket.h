@@ -62,22 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ClientboundControlSchemeSetPacket();
-
-    MCAPI explicit ClientboundControlSchemeSetPacket(::ClientboundControlSchemeSetPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ClientboundControlSchemeSetPacketPayload payload);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

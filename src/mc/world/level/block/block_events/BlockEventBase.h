@@ -21,35 +21,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockEventBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockEventBase();
+    virtual ~BlockEventBase() = default;
 
     virtual ::Block const& getBlock() const;
 
     virtual ::BlockSource const& getBlockSource() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockEventBase(::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -58,12 +36,6 @@ public:
     MCAPI ::Block const& $getBlock() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

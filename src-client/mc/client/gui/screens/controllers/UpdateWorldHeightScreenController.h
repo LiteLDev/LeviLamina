@@ -40,10 +40,6 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void(bool)>               startWorldCallback
     );
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerProgressBindings();
     // NOLINTEND
 
 public:
@@ -58,13 +54,5 @@ public:
     MCAPI void $onOpen();
 
     MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -41,22 +41,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
-
-    MCNAPI ::Puv::LoadResultAny parse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
-
-    MCNAPI ::SemVersion const& parserVersion() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

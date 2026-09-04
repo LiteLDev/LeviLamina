@@ -24,19 +24,28 @@ public:
     ::ll::TypedStorage<8, 184, ::std::optional<::SharedTypes::v1_20_80::FlipBook>>    mFlipBook;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     UV& operator=(UV const&);
     UV();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI UV(::SharedTypes::v1_20_80::UV&&);
 
     MCAPI UV(::SharedTypes::v1_20_80::UV const&);
+#endif
 
+    MCAPI bool operator==(::SharedTypes::v1_20_80::UV const&) const;
+
+#ifdef LL_PLAT_C
     MCAPI ~UV();
+#endif
     // NOLINTEND
 
 public:
@@ -48,15 +57,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::UV&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::UV const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

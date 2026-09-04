@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActorHealSource.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealAfterEventIntermediateData; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -30,31 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorHealAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptActorHealAfterEvent(
-        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData> const& eventData,
-        ::Scripting::WeakLifetimeScope&                                                              scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData> const& eventData,
-        ::Scripting::WeakLifetimeScope&                                                              scope
-    );
     // NOLINTEND
 };
 

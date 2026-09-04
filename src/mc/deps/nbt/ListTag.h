@@ -6,11 +6,9 @@
 // auto generated inclusion list
 #include "mc/deps/nbt/Tag.h"
 #include "mc/platform/Result.h"
-#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class IDataInput;
 class IDataOutput;
 class PrintStream;
@@ -54,6 +52,8 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual void deleteChildren() /*override*/;
+
+    virtual ~ListTag() /*override*/;
     // NOLINTEND
 
 public:
@@ -62,38 +62,12 @@ public:
     MCAPI void add(::std::unique_ptr<::Tag> tag);
 
     MCAPI ::std::unique_ptr<::ListTag> copyList() const;
-
-    MCAPI void forEachCompoundTag(::brstd::function_ref<void(::CompoundTag const&)> func) const;
-
-    MCAPI void forEachTag(::brstd::function_ref<void(::Tag const&)> func) const;
-
-    MCAPI ::Tag* get(int index) const;
-
-    MCAPI uchar getByte(int index) const;
-
-    MCFOLD ::CompoundTag const* getCompound(uint64 index) const;
-
-    MCFOLD ::CompoundTag* getCompound(uint64 index);
-
-    MCAPI double getDouble(int index) const;
-
-    MCAPI float getFloat(int index) const;
-
-    MCAPI int getInt(int index) const;
-
-    MCAPI int64 getInt64(int index) const;
-
-    MCAPI ::std::string const& getString(int index) const;
-
-    MCFOLD ::Tag::Type getType() const;
-
-    MCAPI int size() const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -115,7 +89,7 @@ public:
 
     MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCFOLD void $deleteChildren();
+    MCAPI void $deleteChildren();
 
 
     // NOLINTEND

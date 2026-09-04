@@ -62,22 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetDefaultGameTypePacket();
-
-    MCAPI explicit SetDefaultGameTypePacket(::SetDefaultGameTypePacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SetDefaultGameTypePacketPayload payload);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

@@ -11,7 +11,6 @@
 #include "mc/deps/nether_net/ISignalingEventHandler.h"
 #include "mc/deps/nether_net/SignalingChannelId.h"
 #include "mc/deps/nether_net/utils/ErrorOr.h"
-#include "mc/external/webrtc/PeerConnectionInterface.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,6 +19,7 @@ namespace NetherNet { class CandidateAdd; }
 namespace NetherNet { class ConnectError; }
 namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
+namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
 namespace NetherNet { class ISignalingInterface; }
 namespace NetherNet { struct NetworkID; }
@@ -47,7 +47,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk407f9c;
     ::ll::UntypedStorage<8, 8>   mUnkb5d73e;
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
-    ::ll::UntypedStorage<8, 384> mUnkcf1ee0;
+    ::ll::UntypedStorage<8, 416> mUnkcf1ee0;
     ::ll::UntypedStorage<1, 1>   mUnk49643d;
     ::ll::UntypedStorage<1, 1>   mUnkbea55f;
     ::ll::UntypedStorage<8, 16>  mUnk6e9a1e;
@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleNetworkInterfaceImpl() /*override*/;
+    virtual ~SimpleNetworkInterfaceImpl() /*override*/ = default;
 
     virtual bool SendPacket(
         ::NetherNet::NetworkID remoteId,
@@ -86,7 +86,10 @@ public:
         uint*                  pcbMessageSize
     ) /*override*/;
 
-    virtual bool OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote) /*override*/;
+    virtual bool OpenSessionWithUser(
+        ::NetherNet::NetworkID                                      networkIDRemote,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
+    ) /*override*/;
 
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) /*override*/;
 
@@ -137,12 +140,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
+    MCNAPI void Finalize();
 
-    MCNAPI void InitializeConfiguration(
-        ::NetherNet::TransportConfiguration const*           pConfiguration,
-        ::webrtc::PeerConnectionInterface::RTCConfiguration* pRtcConfigOut
-    );
+    MCNAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 
     MCNAPI void ReceiveFromSignalingChannel(
         ::NetherNet::NetworkID          from,
@@ -161,9 +161,9 @@ public:
     );
 
     MCNAPI SimpleNetworkInterfaceImpl(
-        ::NetherNet::ContextProxy const&     ctx,
-        ::NetherNet::NetworkID               networkID,
-        ::NetherNet::TransportConfiguration* pConfiguration
+        ::NetherNet::ContextProxy const&           ctx,
+        ::NetherNet::NetworkID const&              networkID,
+        ::NetherNet::TransportConfiguration const& configuration
     );
     // NOLINTEND
 
@@ -171,16 +171,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::NetherNet::ContextProxy const&     ctx,
-        ::NetherNet::NetworkID               networkID,
-        ::NetherNet::TransportConfiguration* pConfiguration
+        ::NetherNet::ContextProxy const&           ctx,
+        ::NetherNet::NetworkID const&              networkID,
+        ::NetherNet::TransportConfiguration const& configuration
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -198,7 +192,10 @@ public:
     MCNAPI bool
     $ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
 
-    MCNAPI bool $OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote);
+    MCNAPI bool $OpenSessionWithUser(
+        ::NetherNet::NetworkID                                      networkIDRemote,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
+    );
 
     MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
@@ -244,18 +241,6 @@ public:
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForISignalingEventHandler();
-
-    MCNAPI static void** $vftableForILanEventHandler();
-
-    MCNAPI static void** $vftableForContextProxy();
-
-    MCNAPI static void** $vftableForINetherNetTransportInterface();
     // NOLINTEND
 };
 

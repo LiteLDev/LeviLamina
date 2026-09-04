@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct ComponentItemData_v1_21_30 {
@@ -23,45 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComponentItemData_v1_21_30& operator=(ComponentItemData_v1_21_30 const&);
-    ComponentItemData_v1_21_30();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_21_30(::ComponentItemData_v1_21_30&&);
-
-    MCAPI ComponentItemData_v1_21_30(::ComponentItemData_v1_21_30 const&);
-
-    MCAPI ::ComponentItemData_v1_21_30& operator=(::ComponentItemData_v1_21_30&&);
-
-    MCAPI ~ComponentItemData_v1_21_30();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemData_v1_21_30&&);
-
-    MCAPI void* $ctor(::ComponentItemData_v1_21_30 const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

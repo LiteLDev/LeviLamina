@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/services/signaling/json_rpc/JsonRpcNotificationBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 class JsonWebRtcNotification : public ::JsonRpc::JsonRpcNotificationBase {
@@ -31,29 +26,8 @@ public:
     public:
         // prevent constructor by default
         Params& operator=(Params const&);
+        Params(Params const&);
         Params();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Params(::JsonRpc::JsonWebRtcNotification::Params const&);
-
-        MCNAPI ::JsonRpc::JsonWebRtcNotification::Params& operator=(::JsonRpc::JsonWebRtcNotification::Params&&);
-
-        MCNAPI ~Params();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::JsonRpc::JsonWebRtcNotification::Params const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -64,36 +38,9 @@ public:
 
 public:
     // prevent constructor by default
+    JsonWebRtcNotification& operator=(JsonWebRtcNotification const&);
     JsonWebRtcNotification(JsonWebRtcNotification const&);
     JsonWebRtcNotification();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI JsonWebRtcNotification(::std::string const& toPlayerId, ::std::string const& innerMessage);
-
-    MCNAPI ::JsonRpc::JsonWebRtcNotification& operator=(::JsonRpc::JsonWebRtcNotification const&);
-
-    MCNAPI ~JsonWebRtcNotification();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& toPlayerId, ::std::string const& innerMessage);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

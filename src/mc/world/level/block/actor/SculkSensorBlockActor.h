@@ -4,8 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListener.h"
-#include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,10 +14,9 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
-class SculkSensorVibrationConfig;
 // clang-format on
 
-class SculkSensorBlockActor : public ::BlockActor {
+class SculkSensorBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,34 +38,26 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     virtual void onRemoved(::BlockSource& region) /*override*/;
+
+    virtual ~SculkSensorBlockActor() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
-
-    MCAPI SculkSensorBlockActor(
-        ::BlockActorType                                  type,
-        ::BlockPos const&                                 pos,
-        uint                                              listenerRange,
-        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
-    );
-
-    MCAPI int getLatestReceivedVibrationFrequency() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void* $ctor(
-        ::BlockActorType                                  type,
-        ::BlockPos const&                                 pos,
-        uint                                              listenerRange,
-        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -87,6 +77,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

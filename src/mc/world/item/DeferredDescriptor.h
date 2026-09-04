@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
-#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -13,7 +12,6 @@ class BinaryStream;
 class BlockType;
 class CompoundTag;
 class Item;
-class ReadOnlyBinaryStream;
 // clang-format on
 
 struct DeferredDescriptor : public ::ItemDescriptor::BaseDescriptor {
@@ -53,14 +51,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor>
     _initFromBlockType(::BlockType const& block, ::WeakPtr<::Item>&& item) const;
-
-    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> _initFromItem(::WeakPtr<::Item>&& item, short aux) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::DeferredDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 128, ::ItemInstance const>           mArmor;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot> mSlot;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorEquippedArmorEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

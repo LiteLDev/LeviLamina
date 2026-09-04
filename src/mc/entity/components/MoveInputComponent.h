@@ -41,12 +41,4 @@ public:
     ::ll::TypedStorage<2, 2, ::brstd::bitset<11, ushort>> mFlagValues;
     ::ll::TypedStorage<1, 2, ::std::array<bool, 2>>       mIsPaddling;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool checkFlag(::MoveInputComponent::Flag flag) const;
-
-    MCAPI void setFlag(::MoveInputComponent::Flag flag, bool value);
-    // NOLINTEND
 };

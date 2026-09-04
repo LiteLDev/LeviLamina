@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI Herd(::SharedTypes::Legacy::Spawn::Herd const&);
 
-    MCFOLD ::SharedTypes::Legacy::Spawn::Herd& operator=(::SharedTypes::Legacy::Spawn::Herd&&);
+    MCAPI bool operator==(::SharedTypes::Legacy::Spawn::Herd const&) const;
     // NOLINTEND
 
 public:

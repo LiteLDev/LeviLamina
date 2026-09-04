@@ -97,17 +97,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RandomSearchAndDigGoal(::Mob& mob);
 
-    MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
-
-    MCAPI void _digUpItems();
-
-    MCAPI void _emitDiggingParticles();
-
     MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
 
-    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
-
-    MCAPI void _resetCooldownEndTick();
+    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos const pos) const;
     // NOLINTEND
 
 public:
@@ -132,11 +124,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -25,19 +25,13 @@ public:
     // NOLINTBEGIN
     MCFOLD ::ui::OreUIScreenConfiguration const* _getConfiguration(::std::string const& screenName) const;
 
-    MCAPI ::ui::TechStack getPreferredTechStackForScreen(::std::string const& screenName) const;
-
     MCAPI ::ui::TechStack getTechStackForScreen(::std::string const& screenName) const;
-
-    MCAPI bool isOreUISupportedForScreen(::std::string const& screenName) const;
 
     MCAPI ::ui::OreUIScreenConfiguration& registerScreen(
         ::std::string const&       screenName,
         ::std::optional<::Option*> isSelectedOption,
         ::std::optional<::Option*> isForceEnabledOption
     );
-
-    MCAPI void selectPreferredTechStackForScreen(::std::string const& screenName, ::ui::TechStack tech);
     // NOLINTEND
 };
 

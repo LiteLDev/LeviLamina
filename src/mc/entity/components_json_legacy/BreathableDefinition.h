@@ -32,15 +32,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BreathableDefinition();
-
     MCAPI void addBreathableBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
     MCAPI void addNonBreathableBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
     MCAPI void initialize(::EntityContext& entity, ::BreathableComponent& component) const;
-
-    MCAPI ~BreathableDefinition();
     // NOLINTEND
 
 public:
@@ -49,17 +45,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreathableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

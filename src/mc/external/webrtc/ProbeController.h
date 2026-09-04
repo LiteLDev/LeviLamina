@@ -31,6 +31,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>    mUnk7d1f7b;
+    ::ll::UntypedStorage<1, 1>    mUnk6c6803;
+    ::ll::UntypedStorage<8, 8>    mUnk1d70bd;
     ::ll::UntypedStorage<4, 4>    mUnk2b746e;
     ::ll::UntypedStorage<4, 4>    mUnk38904c;
     ::ll::UntypedStorage<8, 8>    mUnk1a2a22;
@@ -49,7 +51,7 @@ public:
     ::ll::UntypedStorage<1, 1>    mUnkeb988c;
     ::ll::UntypedStorage<8, 8>    mUnk376917;
     ::ll::UntypedStorage<4, 4>    mUnk62ef54;
-    ::ll::UntypedStorage<8, 1632> mUnkd25453;
+    ::ll::UntypedStorage<8, 2104> mUnkd25453;
     // NOLINTEND
 
 public:
@@ -62,6 +64,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void EnablePeriodicAlrProbing(bool enable);
+
+    MCNAPI void EnableRepeatedInitialProbing(bool enable);
 
     MCNAPI ::std::vector<::webrtc::ProbeClusterConfig> InitiateExponentialProbing(::webrtc::Timestamp at_time);
 
@@ -81,9 +85,9 @@ public:
 
     MCNAPI void Reset(::webrtc::Timestamp at_time);
 
-    MCNAPI void SetAlrEndedTimeMs(int64 alr_end_time_ms);
+    MCNAPI void SetAlrEndedTime(::webrtc::Timestamp alr_end_time);
 
-    MCNAPI void SetAlrStartTimeMs(::std::optional<int64> alr_start_time_ms);
+    MCNAPI void SetAlrStartTime(::std::optional<::webrtc::Timestamp> alr_start_time);
 
     MCNAPI ::std::vector<::webrtc::ProbeClusterConfig> SetBitrates(
         ::webrtc::DataRate  min_bitrate,

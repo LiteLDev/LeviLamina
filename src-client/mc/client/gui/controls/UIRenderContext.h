@@ -136,10 +136,4 @@ public:
 
     virtual void notifyImageEstimate(uint64 imageCount) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

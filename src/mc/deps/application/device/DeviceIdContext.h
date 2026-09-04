@@ -19,18 +19,6 @@ public:
     DeviceIdContext& operator=(DeviceIdContext const&);
     DeviceIdContext(DeviceIdContext const&);
     DeviceIdContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DeviceIdContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

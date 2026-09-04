@@ -17,14 +17,8 @@ class DeferredSubscriptionHubBase : public ::Bedrock::PubSub::DeferredSubscripti
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5fdd14;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::DeferredSubscription>> mSubscriptions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DeferredSubscriptionHubBase& operator=(DeferredSubscriptionHubBase const&);
-    DeferredSubscriptionHubBase(DeferredSubscriptionHubBase const&);
-    DeferredSubscriptionHubBase();
 
 public:
     // virtual functions
@@ -51,25 +45,29 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint64 $runDeferredEvents(uint64 maxToRun);
+    MCAPI uint64 $runDeferredEvents(uint64 maxToRun);
 
-    MCNAPI uint64 $runDeferredEventsForDuration(::std::chrono::milliseconds msec);
+    MCAPI uint64 $runDeferredEventsForDuration(::std::chrono::milliseconds msec);
 
-    MCNAPI void $clear();
+    MCAPI void $clear();
 
-    MCNAPI uint64 $erase(::Bedrock::PubSub::RawSubscription& subscription);
+    MCAPI uint64 $erase(::Bedrock::PubSub::RawSubscription& subscription);
 
-    MCNAPI uint64 $size() const;
+    MCAPI uint64 $size() const;
 
-    MCNAPI bool $empty() const;
+#ifdef LL_PLAT_S
+    MCAPI bool $empty() const;
+#else // LL_PLAT_C
+    MCFOLD bool $empty() const;
+#endif
 
-    MCNAPI void $_join(::Bedrock::PubSub::DeferredSubscription&& subscription);
+    MCAPI void $_join(::Bedrock::PubSub::DeferredSubscription&& subscription);
 
 
     // NOLINTEND

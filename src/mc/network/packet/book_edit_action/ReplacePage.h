@@ -22,8 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ReplacePage(::BookEditAction::ReplacePage const&);
-
-    MCFOLD ::BookEditAction::ReplacePage& operator=(::BookEditAction::ReplacePage&&);
     // NOLINTEND
 
 public:

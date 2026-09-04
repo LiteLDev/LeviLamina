@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HorseScreenController() /*override*/;
+    virtual ~HorseScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -62,12 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
@@ -77,13 +71,5 @@ public:
     MCAPI void $_registerCoalesceOrder();
 
     MCAPI void $_registerAutoPlaceOrder();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

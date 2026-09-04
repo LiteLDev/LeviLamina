@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/VideoCodecType.h"
 
 // auto generated forward declare list
@@ -25,7 +26,7 @@ public:
         ::std::optional<::webrtc::VideoCodecType> codec_type,
         uint                                      rtp_timestamp,
         ::webrtc::Timestamp                       capture_time,
-        ::rtc::ArrayView<uchar const>             payload,
+        ::webrtc::ArrayView<uchar const>          payload,
         uint64                                    encoder_output_size,
         ::webrtc::RTPVideoHeader                  video_header,
         ::webrtc::TimeDelta                       expected_retransmission_time,
@@ -37,12 +38,6 @@ public:
     virtual void SetVideoLayersAllocationAfterTransformation(::webrtc::VideoLayersAllocation allocation) = 0;
 
     virtual ~RTPVideoFrameSenderInterface() = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

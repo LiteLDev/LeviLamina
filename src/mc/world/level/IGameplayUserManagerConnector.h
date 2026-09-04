@@ -27,10 +27,4 @@ public:
 
     virtual ::Bedrock::PubSub::Connector<void()>& getAnyGameplayUsersRemovedConnector() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

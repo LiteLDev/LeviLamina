@@ -24,10 +24,4 @@ public:
 
     virtual ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& getDimensionOwnerPtrFactory() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

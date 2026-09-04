@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
 
 // auto generated forward declare list
@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void>
-    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const /*override*/;
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
     // NOLINTEND
 
 public:
@@ -48,15 +48,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void>
-    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

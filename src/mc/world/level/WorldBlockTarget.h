@@ -91,25 +91,13 @@ public:
 
     virtual bool isInBounds(::Pos const& pos) const /*override*/;
 
-    virtual short getLocalWaterLevel(::BlockPos const&) const /*override*/;
+    virtual short getLocalWaterLevel(::BlockPos const& pos) const /*override*/;
 
     virtual ::LevelData const& getLevelData() const /*override*/;
 
     virtual ::WorldGenContext const& getContext() /*override*/;
 
     virtual void disableBlockSimple() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldBlockTarget(::BlockSource& region, ::WorldGenContext const& context);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::WorldGenContext const& context);
     // NOLINTEND
 
 public:
@@ -160,7 +148,7 @@ public:
 
     MCAPI bool $isInBounds(::Pos const& pos) const;
 
-    MCAPI short $getLocalWaterLevel(::BlockPos const&) const;
+    MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
 
     MCAPI ::LevelData const& $getLevelData() const;
 

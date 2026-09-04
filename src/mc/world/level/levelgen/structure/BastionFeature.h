@@ -57,10 +57,10 @@ public:
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& random,
-        ::Random&            chunkPos,
-        ::ChunkPos const&,
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& chunkPos,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
     // NOLINTEND
@@ -104,10 +104,10 @@ public:
     MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& random,
-        ::Random&            chunkPos,
-        ::ChunkPos const&,
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& chunkPos,
         ::IPreliminarySurfaceProvider const&
     );
 

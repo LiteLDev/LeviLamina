@@ -21,36 +21,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptPrefabServiceCreateTemplateOptions& operator=(ScriptPrefabServiceCreateTemplateOptions const&);
+    ScriptPrefabServiceCreateTemplateOptions(ScriptPrefabServiceCreateTemplateOptions const&);
     ScriptPrefabServiceCreateTemplateOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    ScriptPrefabServiceCreateTemplateOptions(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions&
-    operator=(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions const&);
-
-    MCNAPI ~ScriptPrefabServiceCreateTemplateOptions();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

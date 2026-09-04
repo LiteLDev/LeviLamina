@@ -17,18 +17,6 @@ public:
     SdpParseError& operator=(SdpParseError const&);
     SdpParseError(SdpParseError const&);
     SdpParseError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SdpParseError();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace webrtc

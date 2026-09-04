@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class ContentGroup; }
-namespace cricket { class SessionDescription; }
+namespace webrtc { class ContentGroup; }
+namespace webrtc { class SessionDescription; }
 // clang-format on
 
 namespace webrtc {
@@ -19,9 +19,9 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnkec5072;
     ::ll::UntypedStorage<4, 4>  mUnkd745be;
-    ::ll::UntypedStorage<8, 24> mUnk668c18;
-    ::ll::UntypedStorage<8, 24> mUnkea960a;
-    ::ll::UntypedStorage<8, 16> mUnkf2406f;
+    ::ll::UntypedStorage<8, 24> mUnk3106ac;
+    ::ll::UntypedStorage<8, 24> mUnk7b489b;
+    ::ll::UntypedStorage<8, 16> mUnk236369;
     // NOLINTEND
 
 public:
@@ -35,19 +35,19 @@ public:
     // NOLINTBEGIN
     MCNAPI void Commit();
 
-    MCNAPI void DeleteGroup(::cricket::ContentGroup const* bundle_group);
+    MCNAPI void DeleteGroup(::webrtc::ContentGroup const* bundle_group);
 
-    MCNAPI void DeleteMid(::cricket::ContentGroup const* bundle_group, ::std::string const& mid);
+    MCNAPI void DeleteMid(::webrtc::ContentGroup const* bundle_group, ::std::string const& mid);
 
     MCNAPI bool IsFirstMidInGroup(::std::string const& mid) const;
 
-    MCNAPI ::cricket::ContentGroup* LookupGroupByMid(::std::string const& mid);
+    MCNAPI ::webrtc::ContentGroup* LookupGroupByMid(::std::string const& mid);
 
     MCNAPI void RefreshEstablishedBundleGroupsByMid();
 
     MCNAPI void Rollback();
 
-    MCNAPI void Update(::cricket::SessionDescription const* description, ::webrtc::SdpType type);
+    MCNAPI void Update(::webrtc::SessionDescription const* description, ::webrtc::SdpType type);
 
     MCNAPI ~BundleManager();
     // NOLINTEND

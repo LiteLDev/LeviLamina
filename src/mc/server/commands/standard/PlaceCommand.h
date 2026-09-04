@@ -60,47 +60,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _placeFeature(
-        ::IFeature const*        feature,
-        ::CommandPosition const& pos,
-        ::CommandOrigin const&   origin,
-        ::CommandOutput&         output
-    ) const;
-
-    MCAPI void _placeFeatureRule(
-        ::std::string const&     featureRuleName,
-        ::CommandPosition const& pos,
-        ::CommandOrigin const&   origin,
-        ::CommandOutput&         output
-    ) const;
-
-    MCAPI void _placeJigsaw(
-        ::std::string const&           pool,
-        ::std::string const&           target,
-        schar                          maxDepth,
-        ::CommandPosition const&       pos,
-        bool                           keepJigsaws,
-        bool                           includeEntities,
-        ::br::worldgen::LiquidSettings liquidSettings,
-        ::CommandOrigin const&         origin,
-        ::CommandOutput&               output
-    ) const;
-
-    MCAPI void _placeStructure(
-        ::std::string const&           id,
-        ::CommandPosition const&       pos,
-        bool                           ignoreStartHeight,
-        bool                           keepJigsaws,
-        bool                           includeEntities,
-        ::br::worldgen::LiquidSettings liquidSettings,
-        ::CommandOrigin const&         origin,
-        ::CommandOutput&               output
-    ) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeJigsaw(
@@ -138,15 +97,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::PlaceCommand::PlaceAction>();
-// clang-format on

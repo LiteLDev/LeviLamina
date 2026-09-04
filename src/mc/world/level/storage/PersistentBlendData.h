@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class StringByteInput;
-// clang-format on
-
 struct PersistentBlendData {
 public:
     // member variables
@@ -22,16 +17,4 @@ public:
     PersistentBlendData& operator=(PersistentBlendData const&);
     PersistentBlendData(PersistentBlendData const&);
     PersistentBlendData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit PersistentBlendData(::StringByteInput& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::StringByteInput& stream);
-    // NOLINTEND
 };

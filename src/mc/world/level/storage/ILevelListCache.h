@@ -36,6 +36,8 @@ public:
 
     virtual void refreshLevel(::std::string const& levelId) = 0;
 
+    virtual void ensureLevelInitialized(::std::string const& levelId) = 0;
+
     virtual void deleteLevelFiles(::std::string const& levelId) = 0;
 
     virtual void postDeleteLevel(::std::string const& levelId) = 0;
@@ -113,17 +115,5 @@ public:
     virtual void onStorageChanged() = 0;
 
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

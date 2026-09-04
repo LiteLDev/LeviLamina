@@ -43,53 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Path();
-
-    MCNAPI void buildFromNodes(::std::vector<::Path::Node>&& nodeArray, ::PathCompletionType completionType);
-
-    MCNAPI ::BlockPos const& currentPos() const;
-
     MCNAPI ::Vec3 currentPos(::Actor const* actor) const;
-
-    MCNAPI bool endsInXZ(::Vec3 const& pos);
-
-    MCNAPI ::PathCompletionType getCompletionType() const;
-
-    MCNAPI ::Vec3 getEndPos() const;
-
-    MCNAPI uint64 getIndex() const;
-
-    MCNAPI ::BlockPos const& getLastPos() const;
-
-    MCNAPI ::BlockPos const& getNodePos(uint64 index) const;
-
-    MCNAPI ::NodeType getNodeType(uint64 index) const;
 
     MCNAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
 
-    MCNAPI uint64 getSize() const;
-
-    MCNAPI bool isDone() const;
-
-    MCNAPI bool isValid() const;
-
     MCNAPI ::std::unique_ptr<::Path> makeCopy() const;
-
-    MCNAPI void next();
-
-    MCNAPI bool sameAs(::Path* path) const;
-
-    MCNAPI void setIndex(uint64 index);
 
     MCNAPI void setSize(uint64 length);
 
     MCNAPI ~Path();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

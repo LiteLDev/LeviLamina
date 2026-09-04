@@ -7,16 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseLightData;
 class BaseLightTextureImageBuilder;
 class Dimension;
 class FrameUpdateContext;
 class IClientInstance;
 class MinecraftGameplayGraphicsResources;
-class Vec2;
-struct BrightnessPair;
 namespace mce { class Color; }
-namespace mce { struct ClientTexture; }
 // clang-format on
 
 class LightTexture {
@@ -29,7 +25,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk4bdd8d;
     ::ll::UntypedStorage<1, 1>  mUnkf5db3e;
     ::ll::UntypedStorage<1, 1>  mUnkddd289;
-    ::ll::UntypedStorage<4, 64> mUnk3dfec9;
+    ::ll::UntypedStorage<4, 68> mUnk3dfec9;
     ::ll::UntypedStorage<8, 16> mUnkd3656a;
     // NOLINTEND
 
@@ -47,13 +43,7 @@ public:
 
     MCNAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
 
-    MCNAPI ::mce::ClientTexture const& getClientHandle() const;
-
     MCNAPI ::mce::Color getColorForUV(::glm::vec2 const& lightColor) const;
-
-    MCNAPI ::mce::Color getColorForUV(::BrightnessPair lightColor) const;
-
-    MCNAPI ::BaseLightData const& getLightData() const;
 
     MCNAPI void refresh(
         ::Dimension const&,
@@ -63,12 +53,6 @@ public:
         float                           ambientBoost,
         bool                            clampToMinimum
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Vec2 brightnessToUV(::BrightnessPair brightness);
     // NOLINTEND
 
 public:

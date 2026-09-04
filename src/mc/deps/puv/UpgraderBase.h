@@ -36,10 +36,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI UpgraderBase(::SemVersion const& from, ::SemVersion const& to);
-
-    MCNAPI ::SemVersion const& targetVersion() const;
-
-    MCNAPI ::Puv::LoadResultAny upgrade(::Puv::LoadResultAny source) const;
     // NOLINTEND
 
 public:
@@ -52,12 +48,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

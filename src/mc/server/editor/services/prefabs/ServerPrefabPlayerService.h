@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/server/editor/serviceproviders/ServerPrefabPlayerServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
@@ -55,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPrefabPlayerService() /*override*/;
+    virtual ~ServerPrefabPlayerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -85,15 +84,6 @@ public:
     MCNAPI void
     _buildAndSendVisibilityPayload(::DimensionType const& oldDimension, ::DimensionType const& newDimension);
 
-    MCNAPI ::std::unordered_set<::ChunkPos> _calculateChunkListInRange();
-
-    MCNAPI void _diffChunkLists(
-        ::std::unordered_set<::ChunkPos> const& currentList,
-        ::std::unordered_set<::ChunkPos> const& newList,
-        ::std::unordered_set<::ChunkPos>&       added,
-        ::std::unordered_set<::ChunkPos>&       removed
-    );
-
     MCNAPI void _handleClientInitializedPayload(::Editor::Network::PrefabDBClientInitializedPayload const& payload);
 
     MCNAPI void _handleClientPlayerPositionUpdatePayload(
@@ -105,7 +95,7 @@ public:
 
     MCNAPI void _handlePrefabDBInstanceChange(::Editor::Prefabs::PrefabDBInstanceChangeEvent const& event);
 
-    MCNAPI void _handlePrefabDBTemplateChange(::Editor::Prefabs::PrefabDBTemplateChangeEvent const&);
+    MCNAPI void _handlePrefabDBTemplateChange(::Editor::Prefabs::PrefabDBTemplateChangeEvent const& event);
 
     MCNAPI void _processPendingEvents();
     // NOLINTEND
@@ -114,12 +104,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

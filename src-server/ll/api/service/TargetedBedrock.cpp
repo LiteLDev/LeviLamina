@@ -4,11 +4,11 @@
 
 #include "mc/common/IMinecraftApp.h"
 #include "mc/deps/raknet/RakPeer.h"
-#include "mc/network/IPacketLimitAlgorithm.h"
 #include "mc/network/NetworkSystem.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/IRepositoryFactory.h"
 #include "mc/resources/ResourcePackRepository.h"
+#include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/DedicatedServer.h"
 #include "mc/server/PropertiesSettings.h"
 #include "mc/server/ServerInstance.h"
@@ -16,12 +16,14 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/CommandRegistryArguments.h"
 #include "mc/world/Minecraft.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 namespace ll::service::inline bedrock {
 
 // PropertiesSettings
 static std::atomic<PropertiesSettings*> propertiesSettings;
+
+// DedicatedServer
+static std::atomic<DedicatedServer*> dedicatedServer;
 
 LL_TYPE_INSTANCE_HOOK(
     PropertiesSettingsInit,
@@ -38,7 +40,8 @@ LL_TYPE_INSTANCE_HOOK(
     ::Bedrock::ActivationArguments const&                        args,
     ::TestConfig&                                                testConfig
 ) {
-    propertiesSettings                  = const_cast<PropertiesSettings*>(&properties);
+    propertiesSettings = const_cast<PropertiesSettings*>(&properties);
+    dedicatedServer    = this;
     ServerExitCode res = origin(
         filePathManager,
         properties,
@@ -50,6 +53,7 @@ LL_TYPE_INSTANCE_HOOK(
         testConfig
     );
     propertiesSettings = nullptr;
+    dedicatedServer    = nullptr;
     return res;
 }
 
@@ -82,16 +86,6 @@ LL_TYPE_INSTANCE_HOOK(
     unhook();
     origin(a1, a2);
 }
-LL_TYPE_INSTANCE_HOOK(
-    ServerNetworkHandlerDestructor,
-    HookPriority::High,
-    ServerNetworkHandler,
-    &ServerNetworkHandler::$dtor,
-    void
-) {
-    serverNetworkHandler = nullptr;
-    origin();
-}
 
 // NetworkSystem
 static std::atomic<NetworkSystem*> networkSystem;
@@ -118,14 +112,14 @@ static std::atomic<Level*> level;
 
 LL_TYPE_INSTANCE_HOOK(
     ServerLevelInit,
-    HookPriority::High,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
-    ServerInstance& ins
+    ll::memory::HookPriority::Highest,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
+    ::ServerInstance& ins
 ) {
     level = ins.mMinecraft->getLevel();
-    origin(ins);
+    return origin(ins);
 }
 LL_TYPE_INSTANCE_HOOK(LevelDestructor, HookPriority::High, Level, &Level::$dtor, void) {
     level = nullptr;
@@ -140,11 +134,6 @@ LL_TYPE_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, RakNet::RakP
     auto res = origin();
     rakPeer  = this;
     return res;
-}
-
-LL_TYPE_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, RakNet::RakPeer, &RakNet::RakPeer::$dtor, void) {
-    if ((void*)this == (void*)getRakPeer()) rakPeer = nullptr;
-    origin();
 }
 
 // ResourcePackRepository
@@ -247,18 +236,18 @@ optional_ref<ServerInstance> getServerInstance() { return serverInstance.load();
 
 optional_ref<PropertiesSettings> getPropertiesSettings() { return propertiesSettings.load(); }
 
+optional_ref<DedicatedServer> getDedicatedServer() { return dedicatedServer.load(); }
+
 using HookReg = memory::HookRegistrar<
     PropertiesSettingsInit,
     MinecraftInit,
     MinecraftDestructor,
     ServerNetworkHandlerInit,
-    ServerNetworkHandlerDestructor,
     NetworkSystemConstructor,
     NetworkSystemDestructor,
     ServerLevelInit,
     LevelDestructor,
     RakNetRakPeerConstructor,
-    RakNetRakPeerDestructor,
     ResourcePackRepositoryInit,
     ResourcePackRepositoryDestructor,
     CommandRegistryConstructor,

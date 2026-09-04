@@ -39,19 +39,7 @@ public:
         ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
     );
 
-    MCAPI void _setValue(::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var);
-
-    MCFOLD ::cg::TextureSetLayerType const& getLayerType() const;
-
     MCAPI ::std::optional<::std::string> hasValidationError() const;
-
-    MCAPI bool isColor() const;
-
-    MCAPI bool isColorChannel() const;
-
-    MCAPI bool isResourceLocation() const;
-
-    MCAPI bool isUniform() const;
 #endif
     // NOLINTEND
 
@@ -63,6 +51,14 @@ public:
         ::cg::TextureSetLayerType const&                                            type,
         ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
     );
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 

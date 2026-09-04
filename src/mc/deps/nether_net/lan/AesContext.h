@@ -33,14 +33,6 @@ public:
     MCNAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Open(::NetherNet::View envelope);
 
     MCNAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Seal(::NetherNet::View plaintext);
-
-    MCNAPI ~AesContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

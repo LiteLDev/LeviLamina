@@ -20,12 +20,6 @@ public:
 
     virtual void onXboxUserUnblocked(::std::string const& xuid) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Social

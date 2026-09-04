@@ -147,7 +147,7 @@ public:
 
     virtual bool interact(::Actor& entity, ::Vec3 const& location);
 
-    virtual bool attack(::Actor& entity);
+    virtual bool attack(::Actor& entity, ::Vec3 const& hitPosition);
 
     virtual void releaseUsingItem();
 
@@ -167,25 +167,31 @@ public:
         ::std::unique_ptr<::IGameModeMessenger> messenger
     );
 
-    MCAPI bool _attack(::Actor& entity, bool playPredictiveSound);
-
-    MCAPI bool _canUseBlock(::Block const& block);
-
-#ifdef LL_PLAT_C
-    MCAPI bool _continueDestroyBlock(
-        ::BlockPos const&              hitPos,
-        ::Vec3 const&                  playerPos,
-        uchar                          hitFace,
-        bool&                          hasDestroyedBlock,
-        ::std::function<void()> const& crackBlock
-    );
-#endif
+    MCAPI bool _attack(::Actor& entity, bool playPredictiveSound, ::Vec3 const& hitPosition);
 
     MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
 
     MCAPI bool _enableBlockBreakDelay() const;
 
-    MCAPI void _sendPlayerInteractWithBlockAfterEvent(
+#ifdef LL_PLAT_C
+    MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
+#endif
+
+    MCAPI bool baseUseItem(::ItemStack const& item);
+
+    MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection);
+
+    MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
+
+    MCAPI float getDestroyRate(::Block const& block);
+
+    MCAPI float getMaxPickRange();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _sendPlayerInteractWithBlockAfterEvent(
         ::ItemStack const& beforeItem,
         ::ItemStack const& afterItem,
         ::Player&          player,
@@ -194,70 +200,6 @@ public:
         ::Vec3 const&      hit,
         bool               isFirstEvent
     );
-
-    MCAPI void _sendPlayerInteractWithEntityAfterEvent(
-        ::ItemStack const& beforeItem,
-        ::ItemStack const& afterItem,
-        ::Player&          player,
-        ::Actor const&     entity
-    );
-
-    MCAPI bool _sendTryDestroyBlock(::BlockPos const& pos, uchar face);
-
-    MCAPI ::std::optional<::ItemStack>
-    _sendTryDestroyBlockEvent(::Block const& block, ::BlockPos const& pos, ::ItemStack itemBeforeEvent) const;
-
-    MCAPI ::InteractionResult _sendUseItemOnEvents(
-        ::ItemStack&      item,
-        ::BlockPos const& at,
-        uchar             face,
-        ::Vec3 const&     hit,
-        bool              isFirstEvent
-    ) const;
-
-    MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
-
-    MCAPI bool _tickContinueDestroyBlock(
-        ::BlockPos const&              hitPos,
-        ::Vec3 const&                  playerPos,
-        uchar                          hitFace,
-        bool&                          hasDestroyedBlock,
-        ::std::function<void()> const& crackBlock
-    );
-
-    MCAPI bool baseUseItem(::ItemStack const& item);
-
-    MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection);
-
-    MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
-
-    MCAPI ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
-        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
-    );
-
-    MCFOLD uchar getDestroyBlockFace() const;
-
-    MCFOLD ::BlockPos const& getDestroyBlockPos() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD float getDestroyProgress();
-#endif
-
-    MCAPI float getDestroyRate(::Block const& block);
-
-    MCAPI float getMaxPickRange();
-
-    MCAPI float getMaxPickRangeSqr();
-
-#ifdef LL_PLAT_C
-    MCFOLD float getOldDestroyProgress();
-#endif
-
-    MCFOLD bool isLastBuildBlockInteractive() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void updateContinueBreakBlockCount();
-#endif
     // NOLINTEND
 
 public:
@@ -309,7 +251,7 @@ public:
 
     MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
 
-    MCAPI bool $attack(::Actor& entity);
+    MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
     MCAPI void $releaseUsingItem();
 
@@ -320,11 +262,5 @@ public:
     MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

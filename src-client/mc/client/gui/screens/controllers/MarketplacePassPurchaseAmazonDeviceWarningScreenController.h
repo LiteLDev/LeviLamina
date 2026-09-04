@@ -27,8 +27,6 @@ public:
     MCAPI explicit MarketplacePassPurchaseAmazonDeviceWarningScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

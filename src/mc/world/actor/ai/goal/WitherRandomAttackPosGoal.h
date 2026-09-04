@@ -5,21 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class WitherRandomAttackPosGoal : public ::RandomStrollGoal {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mIsPathing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WitherRandomAttackPosGoal();
 
 public:
     // virtual functions
@@ -34,18 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WitherRandomAttackPosGoal(::Mob& mob, float speed, int xzDist, int yDist);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $start();
@@ -54,7 +33,7 @@ public:
 
     MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
 
     // NOLINTEND

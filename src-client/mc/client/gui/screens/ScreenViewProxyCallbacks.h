@@ -20,29 +20,4 @@ public:
                                                        mTestAutomationHandleRawInputEvent;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>> mIsAnyFocusControlHovered;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScreenViewProxyCallbacks& operator=(ScreenViewProxyCallbacks const&);
-    ScreenViewProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScreenViewProxyCallbacks(::ScreenViewProxyCallbacks const&);
-
-    MCAPI ~ScreenViewProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScreenViewProxyCallbacks const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -7,13 +7,11 @@
 #include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
-#include "mc/world/level/levelgen/v1/OverworldGeneratorMultinoise.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
 class BiomeRegistry;
-class BlockPos;
 struct TerrainInfo;
 namespace ChunkBlenderUtil { struct AttenuationData; }
 // clang-format on
@@ -38,11 +36,6 @@ public:
         ::DividedPos<4> const&                                                               worldQuartPos,
         ::BiomeRegistry const&                                                               biomeRegistry,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const& shiftNoise
-    ) const;
-
-    MCAPI ::OverworldGeneratorMultinoise::BlockGenerationResult const tryMoveWaterEdges(
-        ::BlockPos const&                                     blockPos,
-        ::OverworldGeneratorMultinoise::BlockGenerationResult defaultBlockGenerationResult
     ) const;
     // NOLINTEND
 };

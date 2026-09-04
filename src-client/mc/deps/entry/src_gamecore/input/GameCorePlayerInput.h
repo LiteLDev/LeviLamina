@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class GameControllerHandler_GameCore;
 class GameCoreGamepadSupport;
 class GameCoreKeyboardSupport;
 class GameCoreMouseSupport;
@@ -37,30 +36,12 @@ public:
     // NOLINTBEGIN
     MCAPI GameCorePlayerInput(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
 
-    MCAPI bool removeHardwareDeviceMapping(::APP_LOCAL_DEVICE_ID const& deviceId);
-
     MCAPI bool tryAddHardwareDeviceMapping(::GameInput::v2::IGameInputDevice* device);
-
-    MCAPI void update(
-        int const&                        gamePadId,
-        ::GameControllerHandler_GameCore& handler,
-        ::std::unique_ptr<
-            ::GameInput::v2::IGameInput,
-            ::Bedrock::ComAdapter<::GameInput::v2::IGameInput>::Deleter> const& gameInput
-    );
-
-    MCAPI ~GameCorePlayerInput();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

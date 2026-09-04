@@ -47,14 +47,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& id);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
-    // NOLINTEND
 };
 
 } // namespace OreUI

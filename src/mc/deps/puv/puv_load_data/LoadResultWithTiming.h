@@ -19,12 +19,6 @@ public:
     LoadResultWithTiming& operator=(LoadResultWithTiming const&);
     LoadResultWithTiming(LoadResultWithTiming const&);
     LoadResultWithTiming();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit operator bool() const;
-    // NOLINTEND
 };
 
 } // namespace PuvLoadData

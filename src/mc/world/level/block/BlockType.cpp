@@ -5,7 +5,7 @@
 
 std::string const&      BlockType::getTypeName() const { return mNameInfo->mFullName->getString(); }
 optional_ref<BlockType> BlockType::tryGetFromRegistry(HashedString const& name) {
-    auto blockTypePtr = BlockTypeRegistry::get().lookupByName(name);
+    auto blockTypePtr = BlockTypeRegistry::mBlockTypeRegistry().mValue.lookupByName(name);
     return blockTypePtr.get();
 }
 optional_ref<BlockType const> BlockType::tryGetFromRegistry(uint legacyBlockID) {

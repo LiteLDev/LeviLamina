@@ -19,10 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BeaconBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BeaconBlock() /*override*/ = default;
@@ -33,17 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BeaconBlock(::std::string const& nameId, int id, bool permanentlyRendered);
-
-    MCFOLD bool isPermanentlyRendered() const;
-
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool permanentlyRendered);
     // NOLINTEND
 
 public:

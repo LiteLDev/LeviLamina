@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
-#include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
 #include "mc/world/SimulationType.h"
 
 // auto generated forward declare list
@@ -14,8 +13,8 @@ class ScriptDeferredEventCoordinator;
 class ScriptDeferredFlushTracker;
 namespace Editor { class ServiceProviderCollection; }
 namespace Json { class Value; }
+namespace ScriptModuleMinecraft { struct ScriptAfterEventMetadata; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
@@ -46,12 +45,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -73,11 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptProjectAfterEvents(::Editor::ScriptModule::ScriptProjectAfterEvents&&);
-
-    MCNAPI explicit ScriptProjectAfterEvents(::Scripting::WeakLifetimeScope const& scope);
-
-    MCNAPI void _handleSimulationTypeChanged(::SimulationType to, ::SimulationType);
+    MCNAPI void _handleSimulationTypeChanged(::SimulationType, ::SimulationType to);
 
     MCNAPI ::Editor::ScriptModule::ScriptProjectAfterEvents&
     operator=(::Editor::ScriptModule::ScriptProjectAfterEvents&& rhs);
@@ -100,17 +89,7 @@ public:
         ::Json::Value&                       eventOrderArray
     );
 
-    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
-        ::Editor::ScriptModule::ScriptProjectAfterEvents> const&
-    getMetadata();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptProjectAfterEvents&&);
-
-    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata const& getMetadata();
     // NOLINTEND
 
 public:

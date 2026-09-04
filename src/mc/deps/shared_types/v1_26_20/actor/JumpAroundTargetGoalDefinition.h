@@ -46,7 +46,7 @@ public:
 
     MCAPI JumpAroundTargetGoalDefinition(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&);
 
-    MCAPI ~JumpAroundTargetGoalDefinition();
+    MCAPI bool operator==(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -81,12 +81,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

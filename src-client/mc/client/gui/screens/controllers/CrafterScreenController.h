@@ -54,10 +54,6 @@ public:
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _setToggledStateForSlot(int slot, bool shouldEnable);
     // NOLINTEND
 
@@ -78,13 +74,5 @@ public:
     MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
     MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

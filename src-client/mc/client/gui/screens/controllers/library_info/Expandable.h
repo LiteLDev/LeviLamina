@@ -33,12 +33,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string_view $getType() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace LibraryInfo

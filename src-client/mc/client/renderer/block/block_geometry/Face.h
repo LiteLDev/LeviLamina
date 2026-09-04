@@ -17,18 +17,6 @@ public:
     ::ll::TypedStorage<4, 4, int>            textureIndex;
     ::ll::TypedStorage<1, 1, bool>           enabled;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~Face();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace BlockGeometry

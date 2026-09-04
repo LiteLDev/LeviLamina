@@ -88,12 +88,6 @@ public:
 
     MCAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace History

@@ -25,13 +25,6 @@
 #include "mc/util/MolangTempVariable.h"
 #include "mc/util/MolangTextureVariable.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-struct MolangActorPtr;
-struct MolangItemStackBasePtr;
-// clang-format on
-
 struct MolangScriptArg {
 public:
     using MolangScriptArgData = std::variant<
@@ -63,6 +56,7 @@ public:
     MolangScriptArg(ItemStackBase const& item)
     : mType(MolangScriptArgType::MolangItemStackBasePtr),
       mPOD(std::addressof(item)) {}
+    MolangScriptArg(float val) : mType(MolangScriptArgType::Float), mPOD(val) {}
 
     template <ll::concepts::IsInTypes<MolangScriptArgData> T>
     MolangScriptArg(T const& val) : mType(MolangScriptArgType::Variant),
@@ -78,42 +72,35 @@ public:
 
 public:
     // prevent constructor by default
-    MolangScriptArg& operator=(MolangScriptArg const&);
+    MolangScriptArg& operator=(MolangScriptArg const& other) {
+        if (this != &other) {
+            mType = other.mType;
+            if (other.mType != MolangScriptArgType::Unset) {
+                if (other.mType != MolangScriptArgType::Variant) {
+                    mPOD = other.mPOD;
+                } else {
+                    mData = other.mData;
+                }
+            }
+        }
+        return *this;
+    }
+    MolangScriptArg() = default;
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangScriptArg();
-
-    MCAPI MolangScriptArg(::MolangScriptArg&& other);
-
     MCAPI MolangScriptArg(::MolangScriptArg const& other);
-
-    MCAPI MolangScriptArg(float value);
-
-    MCAPI void _setPOD(float value);
-
-#ifdef LL_PLAT_C
-    MCAPI void _setPOD(::MolangActorPtr value);
-#endif
-
-    MCAPI void _setPOD(::MolangItemStackBasePtr value);
-
-    MCAPI void _setPOD(uint64 value);
-
-    MCAPI ::HashedString const& getName() const;
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
-    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
-
-    MCAPI bool operator==(::MolangScriptArg const& rhs) const;
-
+#ifdef LL_PLAT_C
     MCAPI void reportGetFailure() const;
+#endif
 
-    MCFOLD void setType(::MolangScriptArgType type);
-
-    MCAPI ~MolangScriptArg();
+#ifdef LL_PLAT_S
+    MCAPI void reportGetFailure() const;
+#endif
     // NOLINTEND
 
 public:
@@ -137,18 +124,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::MolangScriptArg&& other);
-
     MCAPI void* $ctor(::MolangScriptArg const& other);
-
-    MCAPI void* $ctor(float value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

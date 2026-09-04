@@ -5,32 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/block/actor/FurnaceBlockActor.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
-
 class SmokerBlockActor : public ::FurnaceBlockActor {
-public:
-    // prevent constructor by default
-    SmokerBlockActor();
-
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SmokerBlockActor(::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -44,7 +23,13 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftable();
 
     MCAPI static void** $vftableForBlockActor();
     // NOLINTEND

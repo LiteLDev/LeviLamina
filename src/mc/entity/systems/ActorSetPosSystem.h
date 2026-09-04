@@ -15,12 +15,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class ActorOwnerComponent;
 class EntityContext;
 class HitboxComponent;
 class StrictEntityContext;
-class Vec2;
 class Vec3;
 struct AABBShapeComponent;
 struct ActorAddedFlagComponent;
@@ -165,9 +163,7 @@ public:
 
     MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCFOLD static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
-
-    MCAPI static ::AABB refreshAABB(float heightOffset, ::Vec3 const& pos, ::Vec2 const& aabbDim);
+    MCAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
 
     MCAPI static void setPosition(::EntityContext& entity, ::Vec3 const& position, bool isClientSide);
     // NOLINTEND

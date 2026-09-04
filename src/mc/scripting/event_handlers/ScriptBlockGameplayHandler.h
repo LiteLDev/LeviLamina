@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/BlockGameplayHandler.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
@@ -16,7 +15,6 @@ struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ExplosionStartedEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 class ScriptBlockGameplayHandler : public ::EventHandlerDispatcher<::BlockGameplayHandler>,
@@ -35,28 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _handleBlockTryDestroyByPlayerEvent(
-        ::BlockTryDestroyByPlayerEvent&                                                   eventData,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
-
-    MCAPI bool _handleBlockTryPlaceByPlayerEvent(
-        ::BlockTryPlaceByPlayerEvent const&                                               eventData,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
-
-    MCAPI bool _handleExplosionStartedEvent(
-        ::ExplosionStartedEvent&                                                          explosionStartedEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ExplosionStartedEvent& explosionStartedEvent);
@@ -66,11 +42,5 @@ public:
     MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BlockTryPlaceByPlayerEvent const& eventData);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

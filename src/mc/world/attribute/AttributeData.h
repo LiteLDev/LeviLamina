@@ -29,10 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AttributeData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributeData();
-
     MCAPI explicit AttributeData(::AttributeInstance const& instance);
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
@@ -45,8 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::AttributeInstance const& instance);
     // NOLINTEND
 

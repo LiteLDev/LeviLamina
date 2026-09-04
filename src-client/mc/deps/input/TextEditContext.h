@@ -49,19 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _feedDelete(::std::string_view text) const;
-
-    MCAPI void _feedDiff(::std::string_view oldText, ::std::string_view newText) const;
-
-    MCAPI void _feedInsert(::std::string_view text) const;
-
     MCAPI void _onBackspace();
 
     MCAPI void _onCopy();
-
-    MCAPI void _onPaste(::std::wstring const& cbText);
-
-    MCAPI void _replaceSelection(::std::string_view replacementUtf8Text);
 
     MCAPI void _setText(::std::string_view newUtf8Text);
 
@@ -71,20 +61,6 @@ public:
 
     MCAPI void feedText(::std::string_view utf8Text);
 
-    MCAPI ::TextRange getSelection() const;
-
     MCFOLD ::std::string const getText() const;
-
-    MCAPI void setCaretLocation(int location);
-
-    MCAPI void setSelection(::TextRange range);
-
-    MCAPI ~TextEditContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -19,24 +19,4 @@ public:
     LevelEventHandlerRegistrar& operator=(LevelEventHandlerRegistrar const&);
     LevelEventHandlerRegistrar(LevelEventHandlerRegistrar const&);
     LevelEventHandlerRegistrar();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit LevelEventHandlerRegistrar(::ServerLevel& level);
-
-    MCNAPI ~LevelEventHandlerRegistrar();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerLevel& level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

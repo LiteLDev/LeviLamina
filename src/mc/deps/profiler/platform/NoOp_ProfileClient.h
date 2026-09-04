@@ -13,12 +13,6 @@ public:
     // NOLINTBEGIN
     virtual ~NoOp_ProfileClient() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace Core::Profile

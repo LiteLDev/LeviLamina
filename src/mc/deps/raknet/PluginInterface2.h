@@ -69,12 +69,6 @@ public:
 
     virtual void OnPushBackPacket(char const*, uint const, ::RakNet::SystemAddress);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RakNet

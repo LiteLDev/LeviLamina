@@ -10,7 +10,6 @@
 // clang-format off
 class DlcUIWrapper;
 class PlayScreenModel;
-struct PackIdVersion;
 struct WorldTemplateInfo;
 // clang-format on
 
@@ -48,13 +47,7 @@ public:
         ::std::vector<::WorldTemplateInfo> const& customTemplates
     );
 
-    MCAPI void _createWorldTemplate(::PackIdVersion const& packId, ::std::function<void()> failureCallback);
-
     MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEvents();
     // NOLINTEND
 
 public:

@@ -2,20 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Exclude.h"
-#include "mc/deps/ecs/strict/Include.h"
-#include "mc/deps/ecs/strict/OptionalGlobal.h"
-
 // auto generated forward declare list
 // clang-format off
-class ActorTickNeededComponent;
-class LevelTickTrackingComponent;
-class StrictEntityContext;
-struct ActorComponent;
-struct CurrentTickComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -24,17 +12,6 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static void _trackAddedActors(
-        ::EntityModifier<::LevelTickTrackingComponent> entityModifier,
-        ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
-        ::ViewT<::StrictEntityContext, ::Include<::ActorComponent>, ::Exclude<::LevelTickTrackingComponent>> view
-    );
-
-    MCNAPI static void _trackTickingActors(
-        ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
-        ::ViewT<::StrictEntityContext, ::Include<::ActorTickNeededComponent>, ::LevelTickTrackingComponent> view
-    );
-
     MCNAPI static ::TickingSystemWithInfo createTrackAddedActors();
 
     MCNAPI static ::TickingSystemWithInfo createTrackTickingActors();

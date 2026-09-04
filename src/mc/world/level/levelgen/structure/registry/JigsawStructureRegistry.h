@@ -32,7 +32,7 @@ public:
     ::ll::TypedStorage<8, 152, ::JigsawStructureBlockRulesRegistry>   mJigsawBlockRulesRegistry;
     ::ll::TypedStorage<8, 88, ::JigsawStructureBlockTagRulesRegistry> mJigsawBlockTagRulesRegistry;
     ::ll::TypedStorage<8, 88, ::JigsawStructureActorRulesRegistry>    mJigsawActorRulesRegistry;
-    ::ll::TypedStorage<8, 88, ::JigsawStructureElementRegistry>       mJigsawElementRegistry;
+    ::ll::TypedStorage<8, 64, ::JigsawStructureElementRegistry>       mJigsawElementRegistry;
     ::ll::TypedStorage<8, 72, ::br::worldgen::StructureRegistry>      mStructureRegistry;
     ::ll::TypedStorage<8, 72, ::br::worldgen::StructureSetRegistry>   mStructureSetRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
@@ -43,34 +43,13 @@ public:
     // NOLINTBEGIN
     MCAPI JigsawStructureRegistry();
 
-    MCFOLD ::JigsawStructureActorRulesRegistry& getJigsawStructureActorRulesRegistry();
-
-    MCFOLD ::JigsawStructureBlockRulesRegistry& getJigsawStructureBlockRulesRegistry();
-
-    MCFOLD ::JigsawStructureBlockTagRulesRegistry& getJigsawStructureBlockTagRulesRegistry();
-
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureData const* getJigsawStructureData() const;
-
-    MCFOLD ::JigsawStructureElementRegistry& getJigsawStructureElementRegistry();
-
     MCAPI void initialize(
         ::StructureSpawnRegistry&   structureSpawnRegistry,
         ::BaseGameVersion const&    baseGameVersion,
         ::IWorldRegistriesProvider& registries
     );
 
-    MCAPI ::StructureTemplatePool const* lookupByName(::std::string const& name) const;
-
     MCAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
-
-    MCAPI void
-    setJigsawStructureData(::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>&& jigsawStructureData);
-
-    MCFOLD ::br::worldgen::StructureRegistry const& structureRegistry() const;
-
-    MCFOLD ::br::worldgen::StructureRegistry& structureRegistry();
-
-    MCFOLD ::br::worldgen::StructureSetRegistry& structureSetRegistry();
 
     MCAPI ~JigsawStructureRegistry();
     // NOLINTEND

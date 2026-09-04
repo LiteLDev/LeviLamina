@@ -30,26 +30,17 @@ public:
 
 public:
     // prevent constructor by default
-    MeshInstanceConstants& operator=(MeshInstanceConstants const&);
     MeshInstanceConstants();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeshInstanceConstants(::MeshInstanceConstants&&);
-
-    MCAPI MeshInstanceConstants(::MeshInstanceConstants const&);
-
     MCAPI explicit MeshInstanceConstants(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::MeshInstanceConstants&&);
-
-    MCFOLD void* $ctor(::MeshInstanceConstants const&);
-
     MCAPI void* $ctor(::ScreenContext& screenContext);
     // NOLINTEND
 };

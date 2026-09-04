@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/script_engine/Generator.h"
+#include "mc/deps/script_core/script_engine/scripting/Generator.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,13 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptAsyncJobCoordinator(::ServerScriptManagerEvents& events);
 
-    MCNAPI void _addPendingGenerators(::IScriptGeneratorStats* stats);
-
-    MCNAPI void _removeExpiredGenerators(::IScriptGeneratorStats* stats);
-
     MCNAPI uint addGenerator(::Scripting::Generator<void, void, void>&& generator);
-
-    MCNAPI void clear();
 
     MCNAPI void process(::std::chrono::microseconds timeSlice, ::IScriptGeneratorStats* stats);
 

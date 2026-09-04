@@ -29,10 +29,4 @@ public:
         ::Factory<::ActorEventResponse> const& factory
     ) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

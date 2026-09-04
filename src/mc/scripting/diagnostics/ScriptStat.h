@@ -31,13 +31,12 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptStat(ScriptStat const&);
     ScriptStat();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStat(::ScriptStat const&);
-
     MCNAPI ScriptStat(
         ::std::string                                name,
         ::std::variant<int64, ::std::string>         value,
@@ -54,11 +53,7 @@ public:
 
     MCNAPI ::ScriptStat& addChild(::ScriptStat&& child);
 
-    MCNAPI ::ScriptStat& operator=(::ScriptStat&&);
-
     MCNAPI ::ScriptStat& operator=(::ScriptStat const&);
-
-    MCNAPI ~ScriptStat();
     // NOLINTEND
 
 public:
@@ -70,8 +65,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptStat const&);
-
     MCNAPI void* $ctor(
         ::std::string                                name,
         ::std::variant<int64, ::std::string>         value,
@@ -85,12 +78,6 @@ public:
         ::std::optional<::ScriptStat::Type>                                  type,
         ::std::optional<::std::vector<::ScriptStat>>                         children
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

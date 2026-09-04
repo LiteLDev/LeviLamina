@@ -18,7 +18,6 @@ class ADPopupButtonAction;
 class ActiveDirectoryAuthenticationInterface;
 class ClickSourceContext;
 class MinecraftScreenModel;
-struct Purchase;
 namespace Json { class Value; }
 namespace Progress { class ProgressTips; }
 // clang-format on
@@ -47,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActiveDirectoryAuthenticationScreenController() /*override*/;
+    virtual ~ActiveDirectoryAuthenticationScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -70,27 +69,11 @@ public:
 
     MCAPI void _announceModalDialog() const;
 
-    MCAPI bool _checkAndFulfillPurchase();
-
     MCAPI void _closeModalDialog(bool doPostAction);
 
     MCAPI void _dialogPurchaseFailed();
 
-    MCAPI bool _fulfillPriorPurchase(::std::weak_ptr<::Purchase> purchase);
-
-    MCAPI void _handleAuthenticationPendingPresentation();
-
     MCAPI void _handlePopupButton(::ADPopupButtonAction const& action);
-
-    MCAPI void _openModalDialog(::std::string const& dialogId);
-
-    MCAPI void _openProgressDialog();
-
-    MCAPI void _purchaseLicense();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -105,12 +88,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
@@ -120,13 +97,5 @@ public:
     MCAPI ::ui::DirtyFlag $tick();
 
     MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

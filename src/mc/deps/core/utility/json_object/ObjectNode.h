@@ -28,13 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0> begin();
-
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> begin() const;
-
-    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0> end();
-
-    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> end() const;
 
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> find(::std::string_view keyStr) const;
 

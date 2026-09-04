@@ -19,18 +19,6 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*>                                              mBlock;
     ::ll::TypedStorage<8, 104, ::std::optional<::ScriptModuleMinecraft::ScriptActorData>> mAccessSourceActorData;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptBlockContainerAccessEventFilterData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft::EventFilters

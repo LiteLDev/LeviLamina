@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 struct PrimitiveShapeDataPayload;
-namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -35,27 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ScriptArrowPrimitive();
-
-#ifdef LL_PLAT_S
-    MCAPI ScriptArrowPrimitive(
-        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
-        ::Vec3 const&                                                                   endLocation,
-        bool                                                                            isDebugShape
-    );
 #endif
-
-    MCAPI float getHeadLength() const;
-
-    MCAPI float getHeadRadius() const;
-
-    MCFOLD int getNumSegments() const;
-
-    MCAPI void setHeadLength(float length);
-
-    MCAPI void setHeadRadius(float radius);
-
-    MCAPI void setNumSegments(int segments);
     // NOLINTEND
 
 public:
@@ -67,14 +47,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor();
-
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(
-        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
-        ::Vec3 const&                                                                   endLocation,
-        bool                                                                            isDebugShape
-    );
 #endif
     // NOLINTEND
 

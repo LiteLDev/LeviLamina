@@ -32,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NearestAttackableTargetGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -52,19 +48,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NearestAttackableTargetGoal(::Mob& mob);
-
     MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
 
     MCAPI bool _selectTarget();
 
     MCAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

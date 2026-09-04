@@ -24,10 +24,4 @@ public:
 
     virtual ::ResourcePackStack createStack(::std::vector<::PackInstanceId> const& identities) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

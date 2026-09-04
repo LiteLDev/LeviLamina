@@ -1,19 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/image/Image.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/AlphaUsage.h"
 #include "mc/deps/core_graphics/ImageType.h"
 #include "mc/deps/core_graphics/enums/ColorSpace.h"
 #include "mc/deps/core_graphics/enums/TextureFormat.h"
-
-// auto generated forward declare list
-#include "mc/deps/core_graphics/ImageType.h"
-#include "mc/deps/core_graphics/enums/ColorSpace.h"
-
-// clang-format off
-namespace mce { struct Image; }
-// clang-format on
 
 namespace cg {
 
@@ -48,6 +42,7 @@ struct ImageDescription {
     mce::TextureFormat mTextureFormat;
     cg::ColorSpace     mColorSpace{cg::ColorSpace::Unknown};
     cg::ImageType      mImageType{cg::ImageType::Texture2D};
+    mce::AlphaUsage    mAlphaUsage{mce::AlphaUsage::Unknown};
 
 private:
     uint32 mArraySizeOrDepth{1};

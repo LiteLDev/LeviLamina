@@ -29,12 +29,6 @@ public:
 
     virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

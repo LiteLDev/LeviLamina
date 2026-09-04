@@ -36,18 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MultiplayerGameDataProvider(::Settings::RegistryBuilder::IBuilderContext& context);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Settings::RegistryBuilder::IBuilderContext& context);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $getValue() const;

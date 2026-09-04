@@ -20,6 +20,7 @@ class EntityContext;
 class InteractionResult;
 class Player;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class ArmorStand : public ::Mob {
@@ -71,7 +72,8 @@ public:
 
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void normalTick() /*override*/;
 
@@ -100,10 +102,6 @@ public:
     MCAPI void _hurtByProjectile(::Actor& sourceActor);
 
     MCAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
-
-    MCAPI void _updatePoseFromSynchedData();
-
-    MCAPI ::std::unique_ptr<::CompoundTag> _writePose() const;
 
     MCAPI void setPoseIndex(int poseIndex);
     // NOLINTEND
@@ -164,7 +162,8 @@ public:
 
     MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI void $normalTick();
 
@@ -173,11 +172,5 @@ public:
     MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

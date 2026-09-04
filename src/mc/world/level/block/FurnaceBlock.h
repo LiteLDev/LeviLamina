@@ -26,10 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FurnaceBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
@@ -55,8 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceBlock(::std::string const& nameId, int id, bool lit);
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -71,12 +65,6 @@ public:
         ::Block const&    unlitFurnace,
         ::Block const&    litFurnace
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
     // NOLINTEND
 
 public:

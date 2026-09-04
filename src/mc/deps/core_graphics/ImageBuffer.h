@@ -48,31 +48,9 @@ public:
 
     MCAPI void allocateStorage(::cg::ImageDescription const& imageDesc);
 
-    MCFOLD ::cg::ImageBuffer clone() const;
-
-    MCAPI uchar const* get(uint arrayIndex) const;
-
-    MCAPI uchar* get(uint arrayIndex);
-
-    MCFOLD ::cg::ImageDescription const& getImageDescription() const;
-
-    MCAPI ::gsl::span<uchar const> getSpan() const;
-
-    MCAPI ::gsl::span<uchar> getSpan();
-
-    MCFOLD uint64 getStorageSize() const;
-
-    MCAPI bool isEmpty() const;
-
-    MCAPI bool isValid() const;
-
     MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer&& other);
 
     MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer const& other);
-
-    MCAPI ::mce::Blob releaseStorage();
-
-    MCAPI void zeroImage();
 #endif
     // NOLINTEND
 

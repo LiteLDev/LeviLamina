@@ -32,11 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI SentryEnvelopePayloadDebugMetadataSourcemapImage(::SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
-
-    MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
-    operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage&&);
-
-    MCNAPI ~SentryEnvelopePayloadDebugMetadataSourcemapImage();
     // NOLINTEND
 
 public:
@@ -49,11 +44,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

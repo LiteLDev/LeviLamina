@@ -34,10 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureDataLoadHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Vec3 loadPosition(::Vec3 const& position) /*override*/;
@@ -78,34 +74,14 @@ public:
     virtual ::DataLoadHelperType getType() const /*override*/;
 
     virtual ::ActorUniqueID _generateNewID();
+
+    virtual ~StructureDataLoadHelper() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI StructureDataLoadHelper(
-        ::BlockPos const& structurePlacementLocation,
-        ::BlockPos const& structureWorldOrigin,
-        ::Vec3 const&     rotationPivot,
-        ::ActorUniqueID   ownerID,
-        ::Rotation        rotation,
-        ::Mirror          mirror,
-        ::Level&          level
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockPos const& structurePlacementLocation,
-        ::BlockPos const& structureWorldOrigin,
-        ::Vec3 const&     rotationPivot,
-        ::ActorUniqueID   ownerID,
-        ::Rotation        rotation,
-        ::Mirror          mirror,
-        ::Level&          level
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

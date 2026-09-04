@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/DerivedMovementScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptMovementGlideComponent : public ::ScriptModuleMinecraft::DerivedMovementScriptActorComponent<696> {
+class ScriptMovementGlideComponent : public ::ScriptModuleMinecraft::DerivedMovementScriptActorComponent<768> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -30,12 +30,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

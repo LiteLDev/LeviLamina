@@ -9,7 +9,6 @@ class Block;
 class BlockGraphics;
 class BlockPos;
 class BlockTessellatorCache;
-struct AirAndSimpleBlockBits;
 // clang-format on
 
 class BlockOccluder {
@@ -29,28 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockOccluder(
-        ::BlockTessellatorCache&       cache,
-        ::Block const&                 block,
-        ::BlockPos const&              blockPos,
-        ::AABB const&                  shape,
-        ::gsl::span<uchar const>       checkFace,
-        bool                           renderingGUI,
-        ::AirAndSimpleBlockBits const* airAndSimpleBlocks
-    );
-
-    MCAPI bool _isHalfCubeOpaque(::Block const& block, ::BlockGraphics const& blockGraphics) const;
-
-    MCAPI bool _shouldOccludeCactus(uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
-
-    MCAPI bool _shouldOccludeLeaves(uchar face, ::AABB const& shape, ::BlockPos const& p) const;
-
-    MCAPI bool _shouldOccludeLiquid(uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
-
-    MCAPI bool _shouldOccludePortal(uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
-
-    MCAPI bool _shouldOccludeSlab(uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
-
     MCAPI bool
     _shouldRenderFace(::BlockPos const& neighborPos, uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
 
@@ -58,16 +35,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockTessellatorCache&       cache,
-        ::Block const&                 block,
-        ::BlockPos const&              blockPos,
-        ::AABB const&                  shape,
-        ::gsl::span<uchar const>       checkFace,
-        bool                           renderingGUI,
-        ::AirAndSimpleBlockBits const* airAndSimpleBlocks
-    );
+    MCAPI static bool _isHalfCubeOpaque(::Block const& block, ::BlockGraphics const& blockGraphics);
     // NOLINTEND
 };

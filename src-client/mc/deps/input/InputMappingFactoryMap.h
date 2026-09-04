@@ -15,10 +15,4 @@ public:
 
     virtual ::InputMappingFactory& getInputMappingFactory(int controllerId) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

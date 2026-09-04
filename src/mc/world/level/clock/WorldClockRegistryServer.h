@@ -9,11 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+class LevelData;
 class LevelStorage;
 class NetworkIdentifier;
 class PacketSender;
-class TimeMarker;
 class WorldClock;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -32,18 +31,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::WorldClock>> mClocks;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~WorldClockRegistryData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -59,9 +46,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldClockRegistryServer() /*override*/;
+    virtual ~WorldClockRegistryServer() /*override*/ = default;
 
-    virtual void tick(::PacketSender&) /*override*/;
+    virtual void tick(::PacketSender& packetSender, ::LevelData const& levelData) /*override*/;
     // NOLINTEND
 
 public:
@@ -71,32 +58,15 @@ public:
 
     MCAPI bool loadData(::LevelStorage const& levelStorage);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::WorldClock> const
-    registerClock(::HashedString const& name, ::std::initializer_list<::TimeMarker> timeMarkers);
-
     MCAPI void saveData(::LevelStorage& levelStorage) const;
 
-    MCFOLD void sendInitializationToClient(
+    MCAPI void sendInitializationToClient(
         ::NetworkIdentifier const& source,
         ::SubClientId              subClientId,
         ::PacketSender&            packetSender
     ) const;
 
-    MCFOLD void syncClocksWithClients(::PacketSender& packetSender) const;
-
-    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock> const tryGetClock(uint64 clockId);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint const& MAX_CLOCKS_CAPACITY();
+    MCAPI void syncClocksWithClients(::PacketSender& packetSender) const;
     // NOLINTEND
 
 public:
@@ -106,15 +76,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::PacketSender&);
+    MCAPI void $tick(::PacketSender& packetSender, ::LevelData const& levelData);
 
 
     // NOLINTEND

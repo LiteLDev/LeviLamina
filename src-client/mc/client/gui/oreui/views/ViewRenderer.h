@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class RectangleArea;
 class ScreenContext;
 namespace OreUI { class FramesToPaintQueue; }
 namespace OreUI { class LayoutScheduler; }
@@ -46,47 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ViewRenderer(
-        ::cohtml::ViewRenderer*      viewRenderer,
-        ::OreUI::LayoutScheduler&    layoutScheduler,
-        ::OreUI::FramesToPaintQueue& framesToPaintQueue,
-        ::OreUI::ViewId              viewId
-    );
-
     MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
-
-    MCAPI void _destroyGamefaceTexture();
-
-    MCAPI void _resolve(
-        ::ScreenContext& screenContext,
-        ::std::optional<::RectangleArea> const&,
-        ::std::optional<::RectangleArea> const&
-    );
-
-    MCAPI void render(
-        ::ScreenContext&                        screenContext,
-        ::std::optional<::RectangleArea> const& caretArea,
-        ::std::optional<::RectangleArea> const& textInputControlArea
-    );
-
-    MCAPI ~ViewRenderer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::cohtml::ViewRenderer*      viewRenderer,
-        ::OreUI::LayoutScheduler&    layoutScheduler,
-        ::OreUI::FramesToPaintQueue& framesToPaintQueue,
-        ::OreUI::ViewId              viewId
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ResolvedTextObject;
-// clang-format on
-
 struct SetTitlePacketPayload {
 public:
     // SetTitlePacketPayload inner types define
@@ -36,18 +31,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SetTitlePacketPayload& operator=(SetTitlePacketPayload const&);
+    SetTitlePacketPayload();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetTitlePacketPayload();
-
     MCAPI SetTitlePacketPayload(::SetTitlePacketPayload const&);
-
-    MCAPI explicit SetTitlePacketPayload(::SetTitlePacketPayload::TitleType type);
-
-    MCAPI
-    SetTitlePacketPayload(::SetTitlePacketPayload::TitleType type, ::ResolvedTextObject const& resolvedTextObject);
-
-    MCAPI SetTitlePacketPayload(int fadeInTime, int stayTime, int fadeOutTime);
 
     MCAPI SetTitlePacketPayload(
         ::SetTitlePacketPayload::TitleType type,
@@ -57,23 +48,13 @@ public:
 
     MCAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload&&);
 
-    MCAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload const&);
-
     MCAPI ~SetTitlePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SetTitlePacketPayload const&);
-
-    MCAPI void* $ctor(::SetTitlePacketPayload::TitleType type);
-
-    MCAPI void* $ctor(::SetTitlePacketPayload::TitleType type, ::ResolvedTextObject const& resolvedTextObject);
-
-    MCAPI void* $ctor(int fadeInTime, int stayTime, int fadeOutTime);
 
     MCAPI void* $ctor(
         ::SetTitlePacketPayload::TitleType type,

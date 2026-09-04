@@ -26,8 +26,8 @@ public:
     ::ll::TypedStorage<4, 4, float>                                   mHealthPercent;
     ::ll::TypedStorage<1, 1, bool>                                    mShouldDarkenSky;
     ::ll::TypedStorage<1, 1, bool>                                    mCreateWorldFog;
-    ::ll::TypedStorage<4, 4, ::BossBarColor>                          mColor;
-    ::ll::TypedStorage<4, 4, ::BossBarOverlay>                        mOverlay;
+    ::ll::TypedStorage<1, 1, ::BossBarColor>                          mColor;
+    ::ll::TypedStorage<1, 1, ::BossBarOverlay>                        mOverlay;
     ::ll::TypedStorage<4, 4, int>                                     mPlayersRegistered;
     ::ll::TypedStorage<4, 4, int>                                     mLastHealth;
     ::ll::TypedStorage<4, 4, int>                                     mHudRangeSquared;
@@ -42,8 +42,6 @@ public:
 
     MCAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
 
-    MCAPI void addPlayerToParty(::mce::UUID id, int damage);
-
     MCAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
 
     MCAPI void handleRegisterPlayers(::Actor& owner);
@@ -56,30 +54,14 @@ public:
 
     MCAPI void sendDeathTelemetry(::Actor& owner);
 
-    MCAPI void setColor(::Actor& owner, ::BossBarColor color);
-
-    MCAPI void setHealthBarVisible(::Actor& owner, bool visible);
-
-    MCAPI void setHealthPercent(::Actor& owner, float percent);
-
-    MCAPI void setName(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
-
     MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
     MCAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
-
-    MCAPI ~BossComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

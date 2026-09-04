@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI {
+namespace OreUI::Debug {
 
 class DevServerListener {
 public:
@@ -18,4 +18,4 @@ public:
     class BroadcastListener {};
 };
 
-} // namespace OreUI
+} // namespace OreUI::Debug

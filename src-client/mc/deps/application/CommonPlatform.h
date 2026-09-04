@@ -42,10 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommonPlatform();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CommonPlatform();
@@ -86,11 +82,16 @@ public:
 
     virtual void feedKeyPress(char const key);
 
-    virtual void setTextboxText(::std::string const&);
+    virtual void setTextboxText(::std::string const& text);
 
-    virtual void setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
+    virtual void setStorageDirectory(
+        ::FileStorageDirectory dir,
+        bool                   isCallback,
+        ::PropertyBag const&   extraData,
+        ::std::function<void(bool)>
+    );
 
-    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory);
+    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory dir);
 
     virtual ::FileStorageDirectory getStorageDirectory() const;
 
@@ -116,25 +117,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommonPlatform(::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
-
     MCAPI bool _createApp();
-
-    MCAPI void activate(::Bedrock::ActivationArguments const& actArgs);
-
-    MCAPI bool hasInitialized() const;
-
-    MCAPI bool init(::Bedrock::ActivationArguments const& actArgs);
-
-    MCAPI bool startApp(::Bedrock::ActivationArguments const& actArgs);
-
-    MCAPI int update(bool canRender);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
     // NOLINTEND
 
 public:
@@ -178,11 +161,16 @@ public:
 
     MCAPI void $feedKeyPress(char const key);
 
-    MCFOLD void $setTextboxText(::std::string const&);
+    MCFOLD void $setTextboxText(::std::string const& text);
 
-    MCFOLD void $setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
+    MCFOLD void $setStorageDirectory(
+        ::FileStorageDirectory dir,
+        bool                   isCallback,
+        ::PropertyBag const&   extraData,
+        ::std::function<void(bool)>
+    );
 
-    MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory);
+    MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
 
     MCFOLD ::FileStorageDirectory $getStorageDirectory() const;
     // NOLINTEND

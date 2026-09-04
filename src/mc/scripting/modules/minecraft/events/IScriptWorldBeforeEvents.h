@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 #include "mc/world/level/GameType.h"
 
@@ -23,8 +23,7 @@ struct ItemUseEvent;
 struct ItemUseOnEvent;
 struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityBeforeEvent;
-namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
-namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
+struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtBeforeEvent; }
@@ -52,12 +51,7 @@ public:
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player);
 
-    virtual void onBeforeWorldInitialize(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
-            blockComponentRegistry,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
-            itemComponentRegistry
-    );
+    virtual void onBeforeWorldInitialize(::ScriptingWorldInitializeEvent const& eventData);
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
@@ -126,12 +120,7 @@ public:
     MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     $onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player);
 
-    MCFOLD void $onBeforeWorldInitialize(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
-            blockComponentRegistry,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
-            itemComponentRegistry
-    );
+    MCFOLD void $onBeforeWorldInitialize(::ScriptingWorldInitializeEvent const& eventData);
 
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>

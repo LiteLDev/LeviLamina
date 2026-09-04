@@ -61,7 +61,5 @@ public:
     MCAPI static void convertZombie(::Actor& entity, ::CompoundTag const& tag);
 
     MCAPI static void convertZombieVillager(::Actor& entity, ::CompoundTag const& tag);
-
-    MCAPI static void genericConvert(::Actor& entity, ::CompoundTag const& tag);
     // NOLINTEND
 };

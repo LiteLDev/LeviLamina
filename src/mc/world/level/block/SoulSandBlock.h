@@ -31,12 +31,12 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
@@ -79,12 +79,12 @@ public:
     // NOLINTBEGIN
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 

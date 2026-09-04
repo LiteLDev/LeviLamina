@@ -24,22 +24,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IFileChunkDownloader() = default;
-#else // LL_PLAT_C
-    virtual ~IFileChunkDownloader();
-#endif
 
     virtual void update() = 0;
 
     virtual void initRealmsFileDownloader(
-        ::std::string const&,
-        int const,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
+        ::std::string const&                      downloadId,
+        int const                                 slotIndex,
+        ::std::string const&                      downloadUrl,
+        ::FileInfo const&                         file,
+        uint64                                    fromByteOffset,
+        ::std::string const&                      downloadVersion,
+        ::std::function<void(::DownloaderResult)> callback
     ) = 0;
 
     virtual void initFileDownloader(
@@ -71,18 +67,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const* const[]> DownloaderResultStrings();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::add_lvalue_reference_t<char const* const[9]> DownloaderResultStrings();
+#endif
     // NOLINTEND
 };

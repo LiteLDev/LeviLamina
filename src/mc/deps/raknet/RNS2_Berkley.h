@@ -42,11 +42,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::RakNet::RNS2BindResult
-    BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const*, uint);
-
-    MCAPI uint RecvFromLoopInt();
-
-    MCAPI void SetBroadcastSocket(int broadcast);
+    BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
     // NOLINTEND
 
 public:
@@ -63,12 +59,6 @@ public:
     MCAPI void $SetMulticastInterface(int interfaceIndex);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

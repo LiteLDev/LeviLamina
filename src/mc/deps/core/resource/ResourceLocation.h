@@ -45,17 +45,20 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ResourceLocation();
+
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
     ResourceLocation& operator=(ResourceLocation const&);
+    ResourceLocation();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceLocation();
-
     MCAPI explicit ResourceLocation(::Core::PathView path);
 
 #ifdef LL_PLAT_C
@@ -68,11 +71,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::HashedString getHashedPath() const;
-#endif
 
-    MCFOLD ::Core::PathBuffer<::std::string> const& getRelativePath() const;
-
-#ifdef LL_PLAT_C
     MCAPI bool operator==(::ResourceLocation const& rhs) const;
 #endif
 
@@ -82,18 +81,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::ResourceLocation const& getEmptyLocation();
-#endif
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Core::PathView path);
 
 #ifdef LL_PLAT_C

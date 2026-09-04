@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/scores/ScoreInfo.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -8,10 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class ObjectiveCriteria;
-class Scoreboard;
-struct ScoreInfo;
 // clang-format on
 
 class Objective : public ::Bedrock::EnableNonOwnerReferences {
@@ -25,6 +23,15 @@ public:
     // NOLINTEND
 
 public:
+    [[nodiscard]] ScoreInfo getPlayerScore(::ScoreboardId const& id) const {
+        auto it = mScores->find(id);
+        if (it == mScores->end()) {
+            return ScoreInfo{nullptr, false, 0};
+        }
+        return ScoreInfo{this, true, it->second};
+    }
+
+public:
     // prevent constructor by default
     Objective& operator=(Objective const&);
     Objective(Objective const&);
@@ -35,38 +42,14 @@ public:
     // NOLINTBEGIN
     MCAPI Objective(::std::string const& name, ::ObjectiveCriteria const& criteria);
 
-    MCFOLD ::ObjectiveCriteria const& getCriteria() const;
-
-    MCFOLD ::std::string const& getDisplayName() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCAPI ::ScoreInfo getPlayerScore(::ScoreboardId const& id) const;
-
+#ifdef LL_PLAT_C
     MCAPI ::std::vector<::ScoreboardId> getPlayers() const;
-
-    MCFOLD ::std::unordered_map<::ScoreboardId, int> const& getScores() const;
-
-    MCAPI bool hasScore(::ScoreboardId const& id) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Objective> deserialize(::CompoundTag const& dataTag, ::Scoreboard& owner);
-
-    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::Objective const& toSave);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& name, ::ObjectiveCriteria const& criteria);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

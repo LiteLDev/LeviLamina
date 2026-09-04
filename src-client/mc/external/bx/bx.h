@@ -87,10 +87,6 @@ MCAPI void mtxOrthoRh(
 
 MCAPI void mtxProjRh(float* _result, float _fovy, float _aspect, float _near, float _far, bool _oglNdc);
 
-MCAPI void packBgr5a1(void* _dst, float const* _src);
-
-MCAPI void packBgra4(void* _dst, float const* _src);
-
 MCAPI void packBgra8(void* _dst, float const* _src);
 
 MCAPI void packR16(void* _dst, float const* _src);
@@ -195,7 +191,7 @@ MCAPI void quickSort(void* _data, uint _num, uint _stride, int (*const_fn)(void 
 
 MCAPI void radixSort(uint* _keys, uint* _tempKeys, uint _size);
 
-MCAPI int snprintf(char*, int, char const*, ...);
+MCAPI int snprintf(char* _out, int max, char const* _format, ...);
 
 MCAPI int strCat(char* _dst, int _dstSize, ::bx::StringView const& _str, int _num);
 

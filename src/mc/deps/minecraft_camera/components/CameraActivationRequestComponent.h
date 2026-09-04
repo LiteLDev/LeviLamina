@@ -10,12 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint> mActivationPriority;
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint const& TRIPOD_CAMERA_MODE_PRIORITY();
-    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

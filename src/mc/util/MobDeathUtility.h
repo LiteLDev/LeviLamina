@@ -41,15 +41,6 @@ struct WingFlapDataComponent;
 namespace MobDeathUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI void clientEnderDragonTickDeath(
-    ::EnderDragonDeathWrapper&                                       dragonDeath,
-    ::DeathTickingComponent const&                                   deathTicking,
-    ::StateVectorComponent&                                          stateVector,
-    ::WingFlapDataComponent&                                         wingFlapData,
-    ::OptionalComponentWrapper<::RandomComponent>                    random,
-    ::OptionalComponentWrapper<::ParticleEventRequestQueueComponent> particleRequestQueue
-);
-
 MCNAPI void clientMobTickDeath(
     ::MobDeathWrapper&                                            mobDeath,
     ::StrictEntityContext const&                                  entity,
@@ -106,16 +97,6 @@ MCNAPI void serverMobTickDeath(
     ::Optional<::PlayerComponent>                                 player,
     ::Optional<::SpawnOnDeathComponent>                           spawnOnDeath,
     ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue
-);
-
-MCNAPI void serverTickWitherDie(
-    ::WitherBossDeathWrapper&                     witherWrapper,
-    ::StrictEntityContext const&                  entity,
-    ::DimensionTypeComponent const&               dimensionType,
-    ::StateVectorComponent const&                 stateVector,
-    ::SpawnExperienceOrbRequestQueueComponent&    experienceOrbRequestQueue,
-    ::Optional<::ExperienceRewardComponent const> experienceReward,
-    ::EntityModifier<::IsDeadFlagComponent>&      modifier
 );
 
 MCNAPI void serverWitherBossTickDeath(

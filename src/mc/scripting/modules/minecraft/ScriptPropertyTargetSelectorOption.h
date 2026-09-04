@@ -62,9 +62,6 @@ public:
     MCAPI ScriptPropertyTargetSelectorOption(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
 
     MCAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
-    operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
     // NOLINTEND
 

@@ -18,17 +18,15 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class TargetBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    TargetBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool isSignalSource() const /*override*/;
 
-    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
         /*override*/;
@@ -37,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TargetBlock(::std::string const& nameId, int id);
-
     MCAPI void _processHitByProjectileAtPos(
         ::Vec3 const&     hitPos,
         ::BlockSource&    region,
@@ -52,19 +48,14 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 

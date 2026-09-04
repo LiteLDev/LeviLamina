@@ -27,20 +27,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EventMessage(::Util::CodeBuilder::Event const& event);
-
-    MCNAPI ~EventMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Util::CodeBuilder::Event const& event);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

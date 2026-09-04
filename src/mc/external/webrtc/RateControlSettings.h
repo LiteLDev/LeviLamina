@@ -33,7 +33,7 @@ public:
 
     MCNAPI int64 GetCongestionWindowAdditionalTimeMs() const;
 
-    MCNAPI explicit RateControlSettings(::webrtc::FieldTrialsView const* const key_value_config);
+    MCNAPI explicit RateControlSettings(::webrtc::FieldTrialsView const& key_value_config);
 
     MCNAPI bool UseCongestionWindow() const;
 
@@ -45,16 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::webrtc::RateControlSettings
-    ParseFromKeyValueConfig(::webrtc::FieldTrialsView const* const key_value_config);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* const key_value_config);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const& key_value_config);
     // NOLINTEND
 
 public:

@@ -30,34 +30,4 @@ public:
     ::ll::TypedStorage<1, 1, ::CameraAimAssistPacketPayload::Action>     mAction;
     ::ll::TypedStorage<1, 1, bool>                                       mShowDebugRender;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAimAssistPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CameraAimAssistPacketPayload(::CameraAimAssistPacketPayload::Action action);
-
-    MCAPI CameraAimAssistPacketPayload(
-        ::std::string                              presetId,
-        ::Vec2 const&                              viewAngle,
-        float                                      distance,
-        ::CameraAimAssistPacketPayload::TargetMode targetMode
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CameraAimAssistPacketPayload::Action action);
-
-    MCAPI void* $ctor(
-        ::std::string                              presetId,
-        ::Vec2 const&                              viewAngle,
-        float                                      distance,
-        ::CameraAimAssistPacketPayload::TargetMode targetMode
-    );
-    // NOLINTEND
 };

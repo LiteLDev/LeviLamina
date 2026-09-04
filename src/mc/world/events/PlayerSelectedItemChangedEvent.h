@@ -11,20 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~PlayerSelectedItemChangedEvent();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
-    // NOLINTEND
 };

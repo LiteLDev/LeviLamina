@@ -50,17 +50,9 @@ MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion();
 
 MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U1();
 
-MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U2();
-
 MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U3();
 
-MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U4();
-
-MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U5();
-
 MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U6();
-
-MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U7();
 
 MCNAPI ::BaseGameVersion const& TrailsAndTalesVersion_U8();
 
@@ -68,7 +60,9 @@ MCNAPI ::BaseGameVersion const& WildUpdateVersion();
 
 MCNAPI ::BaseGameVersion const& WildUpdateVersion_U1();
 
+#ifdef LL_PLAT_C
 MCNAPI ::BaseGameVersion const& WildUpdateVersion_U3();
+#endif
 
 MCNAPI ::BaseGameVersion const& WildUpdateVersion_U4();
 
@@ -85,6 +79,8 @@ MCNAPI ::BaseGameVersion const& Y2025Drop3Version();
 MCNAPI ::BaseGameVersion const& Y2025Drop4Version();
 
 MCNAPI ::BaseGameVersion const& Y2026Drop1Version();
+
+MCNAPI ::BaseGameVersion const& Y2026Drop2Version();
 // NOLINTEND
 
 } // namespace VanillaGameVersions

@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/v1_26_20/block/GeometryComponent.h"
-
 // auto generated forward declare list
 // clang-format off
 struct BlockComponentGroupDescription;
@@ -23,6 +20,11 @@ internalTransformGeometry(::SharedTypes::v1_26_20::BlockDefinition::GeometryComp
 
 MCNAPI ::BlockMaterialInstancesDescription internalTransformMaterialInstances(
     ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent const& materialInstancesComponent
+);
+
+MCNAPI void transformBlockEntity(
+    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponents,
+    ::BlockComponentGroupDescription&                                blockComponentGroupDescription
 );
 
 MCNAPI void transformBreathability(
@@ -91,8 +93,8 @@ MCNAPI void transformFlammable(
 );
 
 MCNAPI void transformFlowerPottable(
-    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponentGroupDescription,
-    ::BlockComponentGroupDescription&
+    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponents,
+    ::BlockComponentGroupDescription&                                blockComponentGroupDescription
 );
 
 MCNAPI void transformFriction(
@@ -101,6 +103,11 @@ MCNAPI void transformFriction(
 );
 
 MCNAPI void transformGeometry(
+    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponents,
+    ::BlockComponentGroupDescription&                                blockComponentGroupDescription
+);
+
+MCNAPI void transformInstrument(
     ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponents,
     ::BlockComponentGroupDescription&                                blockComponentGroupDescription
 );
@@ -211,8 +218,8 @@ MCNAPI void transformRedstoneProducer(
 );
 
 MCNAPI void transformReplaceable(
-    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponentGroupDescription,
-    ::BlockComponentGroupDescription&
+    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const&,
+    ::BlockComponentGroupDescription& blockComponentGroupDescription
 );
 
 MCNAPI void transformSelectionBox(
@@ -251,23 +258,9 @@ MCNAPI void transformTransformation(
 );
 
 MCNAPI void transformUnitCube(
-    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponentGroupDescription,
-    ::BlockComponentGroupDescription&
+    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const&,
+    ::BlockComponentGroupDescription& blockComponentGroupDescription
 );
-
-MCNAPI void visitDetailedGeometry(
-    ::BlockGeometryDescription&                                                          geometryDescription,
-    ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const& detailedGeometry
-);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCNAPI ::std::unordered_map<
-    ::std::string_view,
-    ::std::function<
-        void(::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const&, ::BlockComponentGroupDescription&)>>&
-transformers();
 // NOLINTEND
 
 } // namespace BlockDefinitionDocumentTransformerUtils

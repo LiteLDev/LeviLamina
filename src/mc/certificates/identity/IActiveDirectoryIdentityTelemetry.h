@@ -15,24 +15,18 @@ public:
     virtual ~IActiveDirectoryIdentityTelemetry() = default;
 
     virtual void fireEventSignInEdu(
-        ::std::string const&,
-        ::edu::Role,
-        ::Identity::EduSignInStage,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::vector<::std::pair<::std::string, ::std::string>> const&
+        ::std::string const&                                            mutsUserId,
+        ::edu::Role                                                     role,
+        ::Identity::EduSignInStage                                      stage,
+        ::std::string const&                                            tenantType,
+        ::std::string const&                                            error,
+        ::std::vector<::std::pair<::std::string, ::std::string>> const& details
     ) = 0;
 
-    virtual void fireEventEduDemoConversion(::edu::Role, ::LastClickedSource) = 0;
+    virtual void fireEventEduDemoConversion(::edu::Role role, ::LastClickedSource lastClickedSource) = 0;
 
-    virtual void fireCodeBuilderLoadPerformanceEvent(::CodeBuilderPerformance::Stage) = 0;
+    virtual void fireCodeBuilderLoadPerformanceEvent(::CodeBuilderPerformance::Stage stage) = 0;
 
     virtual ::std::string getAppSessionId() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

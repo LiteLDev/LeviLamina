@@ -15,10 +15,4 @@ public:
 
     virtual ::BindingFactory const& getBindingFactory(int controllerId) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

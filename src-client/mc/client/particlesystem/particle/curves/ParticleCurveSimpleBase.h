@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleCurveSimpleBase() /*override*/;
+    virtual ~ParticleCurveSimpleBase() /*override*/ = default;
 
     virtual void parseJson(
         ::ConstDeserializeDataParams const& deserializeDataParams,
@@ -44,24 +44,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void
     $parseJson(::ConstDeserializeDataParams const& deserializeDataParams, ::HashedString const& molangVariableName);
 
     MCAPI void $evaluateCurve(::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

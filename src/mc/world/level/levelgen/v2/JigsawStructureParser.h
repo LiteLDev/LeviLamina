@@ -55,25 +55,5 @@ public:
         ::JigsawStructureRegistry&                                                           registry,
         ::FeatureRegistry&                                                                   features
     );
-
-    MCAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(
-        ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const& jigsawData,
-        ::IWorldRegistriesProvider&                                         registries
-    );
-
-    MCAPI static ::std::shared_ptr<::br::worldgen::StructureSet> processJigsawSet(
-        ::SharedTypes::v1_21_20::JigsawStructureSet::Contents const& setData,
-        ::br::worldgen::StructureRegistry const&                     structureRegistry
-    );
-
-    MCAPI static ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>
-    processProcessorList(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents document);
-
-    MCAPI static ::StructureTemplatePool processTemplatePool(
-        ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const& templatePool,
-        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>            structureManager,
-        ::JigsawStructureRegistry&                                            registry,
-        ::FeatureRegistry&                                                    features
-    );
     // NOLINTEND
 };

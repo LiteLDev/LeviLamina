@@ -14,12 +14,6 @@ namespace SharedTypes::v1_26_20 {
 
 struct MoveOutdoorsGoalDefinition : public ::SharedTypes::BaseMoveToBlockGoalDefinition {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MoveOutdoorsGoalDefinition();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -41,12 +35,6 @@ public:
     MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
 
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };
 

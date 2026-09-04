@@ -7,13 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class ActorOwnerComponent;
-class BlockSource;
 class EntityRegistry;
 class LevelChunk;
-class LoadedChunksComponent;
-struct Tick;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -36,29 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
-
-    MCAPI void _tickLevelChunksAroundActorView(
-        ::ActorOwnerComponent&   actorOwnerComponent,
-        ::LoadedChunksComponent& loadedChunksComponent
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _determineLevelChunksToTick(
-        ::Actor const&                                  actor,
-        ::BlockSource&                                  region,
-        ::LoadedChunksComponent&                        loadedChunksComponent,
-        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksToTick,
-        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksBlockEntitiesToTick,
-        ::Tick const&                                   currentTick
-    );
-
     MCAPI static ::TickingSystemWithInfo createPlayerPassengerSystem();
     // NOLINTEND
 
@@ -68,11 +42,5 @@ public:
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -64,8 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody&&);
-
     MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
 
     MCAPI void fill(::cereal::internal::ConstraintDescription const& constraint);
@@ -93,8 +91,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody&&);
-
     MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody const&);
     // NOLINTEND
 

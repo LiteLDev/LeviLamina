@@ -12,7 +12,6 @@
 // clang-format off
 class Keymapping;
 struct DuplicateKey;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -36,6 +35,10 @@ public:
                                                          mRefreshKeymappingsPublisher;
     ::ll::TypedStorage<8, 32, ::RemappingLayoutRawIndex> mLayoutRawIndex;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RemappingLayout(RemappingLayout const&);
 
 public:
     // virtual functions
@@ -68,28 +71,13 @@ public:
 
     MCAPI void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
 
-    MCAPI void clearAllInstancesOfKey(int keyVal, ::RawInputType type);
-
     MCAPI void defaultKeyAtIndex(uint64 index);
 
     MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
-    MCAPI ::Keymapping const* getKeyMappingByRawInput(int rawKeyIndex, ::RawInputType rawKeyType) const;
-
     MCAPI ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
 
-    MCAPI ::Keymapping const& getKeymappingByIndex(uint64 index) const;
-
-    MCAPI uint64 getNumKeymappings() const;
-
-    MCFOLD ::RemappingLayoutRawIndex const& getRawLayout() const;
-
-    MCFOLD ::RemappingLayoutRawIndex& getRawLayout();
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    registerRefreshKeymappingsListener(::std::function<void(::std::optional<uint64>)> callback);
-
-    MCAPI void resetToDefaultMapping();
+    MCAPI ::RemappingLayout& operator=(::RemappingLayout const& other);
 
     MCAPI void setMapping(::std::string const& action, ::std::vector<int> const& keys);
 

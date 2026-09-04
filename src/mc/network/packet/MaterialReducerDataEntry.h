@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 struct MaterialReducerEntryOutput;
 // clang-format on
 
@@ -24,17 +19,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-#endif
-
-    MCAPI void write(::BinaryStream& stream) const;
-
     MCAPI ~MaterialReducerDataEntry();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

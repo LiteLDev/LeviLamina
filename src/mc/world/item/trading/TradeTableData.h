@@ -6,7 +6,6 @@
 // clang-format off
 class ItemRegistryRef;
 struct TradeTier;
-namespace Puv { class Logger; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
 // clang-format on
 
@@ -26,15 +25,9 @@ public:
     // NOLINTBEGIN
     MCAPI TradeTableData(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
-        ::ItemRegistryRef                       itemRegistry,
+        ::ItemRegistryRef const                 itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::SharedTypes::v1_21_30::TradeTableData parseJson(::std::string const& input, ::Puv::Logger& logger);
     // NOLINTEND
 
 public:
@@ -42,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
-        ::ItemRegistryRef                       itemRegistry,
+        ::ItemRegistryRef const                 itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment
     );
     // NOLINTEND

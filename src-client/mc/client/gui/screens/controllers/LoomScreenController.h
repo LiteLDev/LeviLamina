@@ -73,14 +73,6 @@ public:
 
     MCAPI void _changeLeftTab(int dir);
 
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
-
-    MCAPI void _selectPattern(int collectionIndex);
-
     MCAPI void _updateVisualPatternItem();
     // NOLINTEND
 
@@ -110,13 +102,5 @@ public:
 
     MCAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

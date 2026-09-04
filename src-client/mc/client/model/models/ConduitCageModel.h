@@ -47,12 +47,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $render(::ScreenContext& screenContext);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 };

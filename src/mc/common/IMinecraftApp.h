@@ -50,10 +50,4 @@ public:
 
     virtual bool requestInGamePause(::SubClientId const& subClient, bool status) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

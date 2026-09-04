@@ -7,18 +7,6 @@
 
 class Trade2ContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Trade2ContainerScreenValidator();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

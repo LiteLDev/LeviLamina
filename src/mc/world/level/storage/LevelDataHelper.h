@@ -13,7 +13,6 @@ class ILevel;
 class IMinecraftEventing;
 class LevelData;
 class LevelSettings;
-class Player;
 // clang-format on
 
 namespace LevelDataHelper {
@@ -21,9 +20,6 @@ namespace LevelDataHelper {
 // NOLINTBEGIN
 MCAPI ::Bedrock::UniqueOwnerPointer<::LevelData>
 createLevelDataFromLevelSettings(::LevelSettings const& levelSettings, ::std::string const& levelName);
-
-MCAPI void
-setCommandsEnabled(::LevelData& levelData, bool commandsEnabled, ::IMinecraftEventing* eventing, ::Player* player);
 
 MCAPI void setDefaultGameType(::LevelData& levelData, ::GameType gameType, ::IMinecraftEventing* eventing);
 

@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTagUpdaterNodeBuilder& addCompound(::std::string const& tagName);
-
     MCAPI ::CompoundTagUpdaterNodeBuilder&
     edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 

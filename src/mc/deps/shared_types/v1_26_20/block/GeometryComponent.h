@@ -4,12 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Legacy { struct ExpressionNode; }
-namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
@@ -18,11 +19,83 @@ struct GeometryComponent {
 public:
     // GeometryComponent inner types declare
     // clang-format off
+    class DetailedGeometryConstraint;
+    struct NWayVisualRotationStateMapping;
     struct DetailedGeometry;
-    struct DetailedGeometryConstraint;
     // clang-format on
 
     // GeometryComponent inner types define
+    class DetailedGeometryConstraint
+    : public ::cereal::ConstraintHandle<
+          ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometryConstraint> {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::string_view const& ConstraintDescription();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
+        // NOLINTEND
+    };
+
+    struct NWayVisualRotationStateMapping {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> mXStateName;
+        ::ll::TypedStorage<8, 32, ::std::string> mYStateName;
+        ::ll::TypedStorage<8, 32, ::std::string> mZStateName;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NWayVisualRotationStateMapping();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI NWayVisualRotationStateMapping(
+            ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&
+        );
+
+        MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&
+        operator=(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&&);
+
+        MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&
+        operator=(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&);
+
+        MCAPI bool operator==(
+            ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&
+        ) const;
+
+        MCAPI ~NWayVisualRotationStateMapping();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void*
+        $ctor(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
     struct DetailedGeometry {
     public:
         // member variables
@@ -33,6 +106,12 @@ public:
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                   mCullingLayer;
         ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>> mBoneVisibilities;
         ::ll::TypedStorage<8, 32, ::std::variant<bool, ::std::vector<::std::string>>>               mUVsLocked;
+        ::ll::TypedStorage<
+            8,
+            104,
+            ::std::optional<
+                ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping>>
+            mNWayVisualRotation;
         // NOLINTEND
 
     public:
@@ -73,37 +152,12 @@ public:
         // NOLINTEND
     };
 
-    struct DetailedGeometryConstraint
-    : public ::cereal::ConstraintHandle<
-          ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometryConstraint> {
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void validateValue(
-            ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const& detail,
-            ::cereal::SerializerContext&                                                         context
-        );
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::std::string_view const& ConstraintDescription();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        192,
+        296,
         ::std::variant<::std::string, ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry>>
         mGeometry;
     // NOLINTEND
@@ -136,6 +190,10 @@ public:
     MCAPI static ::std::string const& GeoNameDocumentation();
 
     MCAPI static ::std::string_view const& IdentifierId();
+
+    MCAPI static ::std::array<::std::string_view, 3> const& InvalidVanillaGeometryForBoneVis();
+
+    MCAPI static ::std::string_view const& NWayVisualRotationId();
 
     MCAPI static ::std::string_view const& NameId();
 

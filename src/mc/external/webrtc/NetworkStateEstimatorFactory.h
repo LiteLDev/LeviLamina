@@ -18,12 +18,6 @@ public:
 
     virtual ~NetworkStateEstimatorFactory() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -34,26 +34,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouterEventing(
-        ::IScreenChangedEventing&                               screenChangedEventing,
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
-        ::Social::IGameConnectionInfoProvider&                  gameConnectionInfoProvider
-    );
-
     MCAPI void fireScreenChangedEvent(
         ::std::optional<::OreUI::RouterLocation> const& oldLocation,
         ::std::optional<::OreUI::RouterLocation> const& currentLocation,
         ::OreUI::RouterAction                           action
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IScreenChangedEventing&                               screenChangedEventing,
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
-        ::Social::IGameConnectionInfoProvider&                  gameConnectionInfoProvider
     );
     // NOLINTEND
 };

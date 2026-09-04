@@ -22,7 +22,6 @@ struct TargetedConfig {
     struct {
         bool enable                      = true;
         bool subChunkRequest             = true;
-        bool rakNet                      = true;
         bool itemReadUserData            = true;
         bool disconnectClient            = true;
         bool limitIPFrequency            = true;

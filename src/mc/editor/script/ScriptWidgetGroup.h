@@ -3,21 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetGroup_ServiceInterface.h"
 #include "mc/editor/script/ScriptWidgetGroup_WidgetInterface.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidget; }
-namespace Editor::ScriptModule { class ScriptWidgetCreateOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetGroupCreateOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetGroupErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
@@ -54,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetGroup();
+    virtual ~ScriptWidgetGroup() = default;
 
     virtual void _performDeleteGroup() /*override*/;
 
@@ -77,18 +75,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI ScriptWidgetGroup(
         ::Editor::ServiceProviderCollection&                                           serviceProviders,
         ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
-
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
-    _createWidget(
-        ::Vec3 const&                                                             position,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const& options
-    );
+#endif
 
     MCNAPI void _forEachWidget(
         ::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn
@@ -113,8 +107,6 @@ public:
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptSetVisible(bool visible);
 
-    MCNAPI void _setVisible(bool visible);
-
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
     getWidget(::mce::UUID const& widgetId) const;
     // NOLINTEND
@@ -128,18 +120,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                           serviceProviders,
         ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -160,14 +148,6 @@ public:
     $_deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScriptWidgetGroupWidgetInterface();
-
-    MCNAPI static void** $vftableForScriptWidgetGroupServiceInterface();
     // NOLINTEND
 };
 

@@ -63,15 +63,9 @@ public:
 
     MCAPI void _findRearRetreatPosition(::Actor const& target, ::SharedTypes::FloatRange distance);
 
-    MCAPI void _startAttacking();
-
     MCAPI void _startCooldown(::Actor const& target);
 
     MCAPI void _startRepositioning(::Actor const& target);
-
-    MCAPI void _tickAttacking(::Actor const& target);
-
-    MCAPI void _tickRepositioning(::Actor const& target);
 
     MCAPI void _tryFindRandomRetreatPosition(::SharedTypes::FloatRange distance);
 
@@ -94,11 +88,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

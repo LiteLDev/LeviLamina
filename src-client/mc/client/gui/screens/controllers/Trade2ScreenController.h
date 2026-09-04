@@ -101,7 +101,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Trade2ScreenController() /*override*/;
+    virtual ~Trade2ScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -149,27 +149,13 @@ public:
 
     MCAPI bool _hasAdjustedBuyCount(::Trade2ScreenController::TradeItemCollections const& tic) const;
 
-    MCAPI void _makeEnchantmentDetails() const;
-
     MCAPI void _makeTradeDetails(bool itemA) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -183,7 +169,7 @@ public:
 
     MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 
-    MCAPI bool $_getGestureControlEnabled() const;
+    MCFOLD bool $_getGestureControlEnabled() const;
 
     MCAPI void $_registerCoalesceOrder();
 
@@ -204,13 +190,5 @@ public:
     );
 
     MCAPI ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

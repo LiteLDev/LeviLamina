@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SnackGoal() /*override*/;
+    virtual ~SnackGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
@@ -58,25 +58,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    SnackGoal(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
-
     MCAPI bool _hasSnackableItems();
 
-    MCFOLD void _updateHand(::ItemStack const& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void _updateHand(::ItemStack const& item);
     // NOLINTEND
 
 public:

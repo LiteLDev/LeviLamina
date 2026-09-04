@@ -16,22 +16,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                     value;
     ::ll::TypedStorage<4, 4, ::ui::LayoutAxisOperation> operation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AxisOffset();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AxisOffset(::ui::LayoutAxisType aType, float aValue, ::ui::LayoutAxisOperation aOperation);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ui::LayoutAxisType aType, float aValue, ::ui::LayoutAxisOperation aOperation);
-    // NOLINTEND
 };
 
 } // namespace ui

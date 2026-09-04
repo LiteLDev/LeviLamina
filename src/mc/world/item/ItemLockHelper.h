@@ -15,9 +15,16 @@ namespace Json { class Value; }
 
 class ItemLockHelper {
 public:
+#ifdef LL_PLAT_S
+    LLNDAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
+#endif
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
+
+    MCAPI static bool addItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
 
     MCAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
 
@@ -34,18 +41,12 @@ public:
     MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
 
 #ifdef LL_PLAT_C
-    MCAPI static bool canPlayerDropItem(::ItemStackBase const& item);
-#endif
-
     MCAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
+#endif
 
     MCAPI static bool isItemLocked(::ItemStackBase const& item);
 
-    MCAPI static bool isItemLockedInSlot(::ItemStackBase const& item);
-
     MCAPI static void setItemLockMode(::ItemStackBase& item, ::ItemLockMode lockMode);
-
-    MCAPI static void setKeepOnDeath(::ItemStackBase& item, bool value);
 
     MCAPI static bool shouldKeepOnDeath(::ItemStackBase const& item);
 

@@ -22,12 +22,6 @@ public:
 
     virtual void SetLegacyConferenceMode(bool);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

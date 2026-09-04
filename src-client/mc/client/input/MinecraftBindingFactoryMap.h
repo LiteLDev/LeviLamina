@@ -69,12 +69,6 @@ public:
 
         MCFOLD ::std::vector<uint> $getCustomAreaBindingNames() const;
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -94,11 +88,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::BindingFactory const& $getBindingFactory(int controllerId) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

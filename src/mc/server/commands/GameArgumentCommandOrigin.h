@@ -62,22 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI GameArgumentCommandOrigin();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

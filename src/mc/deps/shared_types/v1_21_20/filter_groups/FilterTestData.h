@@ -38,6 +38,8 @@ public:
 
     MCAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData&&);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_20::FilterTestData const&) const;
+
     MCAPI ~FilterTestData();
     // NOLINTEND
 

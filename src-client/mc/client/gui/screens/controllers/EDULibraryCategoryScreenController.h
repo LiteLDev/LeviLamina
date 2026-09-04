@@ -55,12 +55,6 @@ public:
     );
 
     MCAPI ::EDULibraryCategory* _getCategory(::UIPropertyBag const& bag);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -84,13 +78,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI void $onOpen();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

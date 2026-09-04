@@ -68,7 +68,7 @@ public:
 
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual bool pushesUpFallingBlocks() const /*override*/;
     // NOLINTEND
@@ -125,7 +125,7 @@ public:
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCFOLD bool $pushesUpFallingBlocks() const;
 

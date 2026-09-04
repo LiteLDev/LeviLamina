@@ -4,16 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/selection/SelectionServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
-class HashedString;
-class TaskResult;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class SelectionVolumeUpdate; }
@@ -50,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionServiceServer() /*override*/;
+    virtual ~SelectionServiceServer() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -101,14 +98,9 @@ public:
 
     MCNAPI void _completeManifestWithEmptyState();
 
-    MCNAPI ::std::vector<::Editor::Services::SelectionServiceProvider::ManifestEntry>
-    _createSortedEntries(::std::unordered_map<::HashedString, uint64> const& blockCounts) const;
-
     MCNAPI void _handleRegionUpdate(::Editor::Selection::SelectionVolumeEvent const& evt);
 
     MCNAPI void _handleVolumeUpdate(::Editor::Network::SelectionVolumeUpdate const& payload);
-
-    MCNAPI ::TaskResult _processBlocksInChunks(::BlockSource& region, uint64 generationId);
 
     MCNAPI void _startManifestGeneration();
     // NOLINTEND
@@ -117,12 +109,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -168,14 +154,6 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorService();
-
-    MCNAPI static void** $vftableForSelectionServiceProvider();
     // NOLINTEND
 };
 

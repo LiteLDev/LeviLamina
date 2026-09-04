@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/Mode.h"
 #include "mc/editor/serviceproviders/ModeServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -57,10 +57,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ModeService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _dispatchModeChangedEvent(::Editor::Mode from, ::Editor::Mode to);
-
-    MCNAPI void _setCurrentMode(::Editor::Mode mode);
     // NOLINTEND
 
 public:

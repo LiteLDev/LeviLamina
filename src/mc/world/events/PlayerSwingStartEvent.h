@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 152, ::ItemStack>      mHeldItem;
     ::ll::TypedStorage<1, 1, ::ActorSwingSource> mSwingSource;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerSwingStartEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

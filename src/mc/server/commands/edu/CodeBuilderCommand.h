@@ -80,21 +80,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CodeBuilderCommand::Action>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CodeBuilderCommand::CodeBuilderRuntimeAction>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CodeBuilderCommand::CommandKeyword>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CodeBuilderCommand::SubscriptionType>();
-// clang-format on

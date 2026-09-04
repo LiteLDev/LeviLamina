@@ -25,14 +25,25 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk518bc7;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    DataTransferServiceSendDataPayload& operator=(DataTransferServiceSendDataPayload const&);
+    DataTransferServiceSendDataPayload(DataTransferServiceSendDataPayload const&);
+    DataTransferServiceSendDataPayload();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     DataTransferServiceSendDataPayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI DataTransferServiceSendDataPayload(::Editor::Network::DataTransferServiceSendDataPayload const&);
+#endif
 
     MCNAPI DataTransferServiceSendDataPayload(
         ::std::string const&                                                      collectionName,
@@ -42,11 +53,13 @@ public:
         ::std::optional<::Editor::Network::DataTransferServiceSendNewDataOptions> options
     );
 
+#ifdef LL_PLAT_C
     MCNAPI ::Editor::Network::DataTransferServiceSendDataPayload&
     operator=(::Editor::Network::DataTransferServiceSendDataPayload&&);
 
     MCNAPI ::Editor::Network::DataTransferServiceSendDataPayload&
     operator=(::Editor::Network::DataTransferServiceSendDataPayload const&);
+#endif
     // NOLINTEND
 
 public:
@@ -58,7 +71,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Editor::Network::DataTransferServiceSendDataPayload const&);
+#endif
 
     MCNAPI void* $ctor(
         ::std::string const&                                                      collectionName,
@@ -67,6 +82,14 @@ public:
         bool                                                                      lockToBiome,
         ::std::optional<::Editor::Network::DataTransferServiceSendNewDataOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

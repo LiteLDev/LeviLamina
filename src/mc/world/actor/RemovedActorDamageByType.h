@@ -21,17 +21,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
-    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
-
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
     virtual ::ActorType getEntityType() const /*override*/;
-    // NOLINTEND
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    _getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const /*override*/;
     // NOLINTEND
 };

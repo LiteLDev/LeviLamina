@@ -25,24 +25,6 @@ public:
     WorldRecoveryTelemetryEvent& operator=(WorldRecoveryTelemetryEvent const&);
     WorldRecoveryTelemetryEvent(WorldRecoveryTelemetryEvent const&);
     WorldRecoveryTelemetryEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::WorldRecoveryTelemetryEvent& operator=(::Bedrock::WorldRecoveryTelemetryEvent&&);
-
-    MCNAPI ~WorldRecoveryTelemetryEvent();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock

@@ -72,6 +72,8 @@ public:
 
     virtual uint64 getTotalParticleCount() const = 0;
 
+    virtual ::Vec3 const& getLastCameraPosition() const = 0;
+
     virtual void tick(::std::chrono::nanoseconds const& dtIn, float const a) = 0;
 
     virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext) = 0;
@@ -97,12 +99,6 @@ public:
     MCAPI static ::std::atomic<int64>& mParticleLifetimeCounter();
 
     MCAPI static ::std::atomic<int64>& mParticleMotionCounter();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

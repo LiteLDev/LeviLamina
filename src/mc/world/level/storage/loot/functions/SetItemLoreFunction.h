@@ -35,12 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::string> const& getLore() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
@@ -50,18 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

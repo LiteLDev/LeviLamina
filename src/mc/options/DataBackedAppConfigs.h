@@ -166,10 +166,4 @@ public:
 
     virtual void applyLevelDataOverride(::LevelData&) const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -6,11 +6,6 @@
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
 
-// auto generated forward declare list
-// clang-format off
-class XoroshiroPositionalRandomFactory;
-// clang-format on
-
 class MesaSurfaceBuilderNoises {
 public:
     // member variables
@@ -26,42 +21,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MesaSurfaceBuilderNoises();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MesaSurfaceBuilderNoises(
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> clayBandsOffsetNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> surfaceNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> pillarNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> pillarRoofNoise
-    );
-
     MCAPI ~MesaSurfaceBuilderNoises();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::MesaSurfaceBuilderNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> clayBandsOffsetNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> surfaceNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> pillarNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> pillarRoofNoise
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

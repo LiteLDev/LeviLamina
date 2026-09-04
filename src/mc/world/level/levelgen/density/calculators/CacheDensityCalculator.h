@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/InstancedThreadLocal.h"
 #include "mc/world/Pos.h"
 #include "mc/world/level/levelgen/density/DensityVolume.h"
 #include "mc/world/level/levelgen/density/calculators/IDensityCalculator.h"
@@ -36,9 +37,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                            mCalculatorMutex;
-    ::ll::TypedStorage<2, 2, ushort>                                                         mInput;
-    ::ll::TypedStorage<8, 64, ::std::optional<::CacheDensityCalculator::CachedVolume const>> mCachedVolume;
+    ::ll::TypedStorage<2, 2, ushort> mInput;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::Bedrock::Threading::InstancedThreadLocal<
+            ::std::optional<::CacheDensityCalculator::CachedVolume const>,
+            ::std::allocator<::std::optional<::CacheDensityCalculator::CachedVolume const>>>>
+        mLocalCachedVolume;
     // NOLINTEND
 
 public:
@@ -47,11 +53,5 @@ public:
     virtual ~CacheDensityCalculator() /*override*/ = default;
 
     virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

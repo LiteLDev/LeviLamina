@@ -24,7 +24,9 @@ MCNAPI ::Core::Result transferDirectory(
 
 // static variables
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::std::string const& sLockBlobName();
+#endif
 
 MCNAPI ::std::shared_ptr<::Core::FileStorageArea>& sRootStorageArea();
 // NOLINTEND

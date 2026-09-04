@@ -35,19 +35,11 @@ public:
         ::BlockPos const&               worldPos,
         float                           brightness
     );
-
-    MCAPI ~ActorBlockRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

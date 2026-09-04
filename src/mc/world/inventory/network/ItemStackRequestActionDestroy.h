@@ -11,11 +11,16 @@ struct ItemStackRequestSlotInfo;
 // clang-format on
 
 class ItemStackRequestActionDestroy : public ::ItemStackRequestActionTransferBase {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemStackRequestActionDestroy();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionDestroy();
-
 #ifdef LL_PLAT_C
     MCNAPI ItemStackRequestActionDestroy(uchar amount, ::ItemStackRequestSlotInfo const& src);
 #endif
@@ -24,8 +29,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(uchar amount, ::ItemStackRequestSlotInfo const& src);
 #endif

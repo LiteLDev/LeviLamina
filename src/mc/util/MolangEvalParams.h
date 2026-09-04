@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class HashedString;
 class RenderParams;
 struct MolangEvalStackState;
@@ -34,18 +33,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor*
-    getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
-
     MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
     MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
 
     MCAPI void pushReturnValue();
+    // NOLINTEND
 
-    MCAPI void restoreStackState(::MolangEvalStackState&& state);
-
-    MCAPI ~MolangEvalParams();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void restoreStackState(::MolangEvalStackState&& state);
     // NOLINTEND
 
 public:
@@ -54,11 +52,5 @@ public:
     MCAPI static ::RenderParams& mErrorRenderParams();
 
     MCAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

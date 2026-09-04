@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerDeathManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PlayerDeathManager() /*override*/;
@@ -45,17 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerDeathManager(::std::unique_ptr<::IPlayerDeathManagerProxy> playerDeathManagerProxy);
-
     MCAPI void playerDied(::Player& player, ::ActorDamageSource const& source);
-
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::IPlayerDeathManagerProxy> playerDeathManagerProxy);
     // NOLINTEND
 
 public:

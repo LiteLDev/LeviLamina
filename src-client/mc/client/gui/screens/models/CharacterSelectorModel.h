@@ -18,7 +18,6 @@ class StoreDataDrivenScreenController;
 class UIPropertyBag;
 struct CharacterSelectorData;
 struct LinksToStyle;
-struct ToggleChangeEventData;
 // clang-format on
 
 class CharacterSelectorModel : public ::Bedrock::EnableNonOwnerReferences {
@@ -58,12 +57,6 @@ public:
 
         MCAPI bool prevPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -95,7 +88,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CharacterSelectorModel() /*override*/;
+    virtual ~CharacterSelectorModel() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -122,47 +115,27 @@ public:
 
     MCAPI void castRight(::StoreDataDrivenScreenController& controller);
 
-    MCAPI void castSelect();
-
     MCAPI void closeCharacterSelectModal();
 
     MCAPI void closeDialog(::StoreDataDrivenScreenController& controller);
-
-    MCAPI void closeEditPersona();
 
     MCAPI void createSelectedPersona();
 
     MCAPI ::std::string getAppearanceName() const;
 
-    MCAPI ::glm::ivec2 getGridParams() const;
-
-    MCAPI bool getIsFirstLoading() const;
-
     MCAPI ::std::string getPersonaConfirmText() const;
 
     MCAPI ::std::string getPreviewImageFilePath(int index) const;
 
-    MCAPI bool getTypeToggleState(int index) const;
-
-    MCAPI bool isCastCharacterScreenModalOpen() const;
-
-    MCAPI bool isPreviewVisible(int index) const;
-
-    MCAPI bool isSectionVisible(int index) const;
-
     MCAPI bool isSelectedCharacterReady() const;
 
     MCAPI void launchDifferenceInformationPopup();
-
-    MCAPI void loadSkinBasedOnSelection(::UIPropertyBag const& bag);
 
     MCAPI void openCharacterSelectModal(::CharacterSelectorVisibility previewMode);
 
     MCAPI void openDefaultSelector(::StoreDataDrivenScreenController& controller);
 
     MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
-
-    MCAPI bool toggleCreatePersonaChoice(::ToggleChangeEventData const& toggleData);
     // NOLINTEND
 
 public:
@@ -180,17 +153,5 @@ public:
         ::LinksToStyle const&                                      classicSkinLinksToStyle,
         ::LinksToStyle const&                                      personaLinksToStyle
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

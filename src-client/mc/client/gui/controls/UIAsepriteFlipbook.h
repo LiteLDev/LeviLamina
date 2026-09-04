@@ -37,18 +37,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UIAnim> $clone();
 
-    MCFOLD char const* $getInitialValueKey() const;
+    MCAPI char const* $getInitialValueKey() const;
 
     MCAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
 
     MCAPI void $onResourcesLoaded(::UIAnimationComponent& animComponent);
 
     MCAPI void $_reset(::UIControl& ownerControl);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

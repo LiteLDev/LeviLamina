@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 #include "mc/scripting/modules/minecraft/ErrorMemberType.h"
 
 // auto generated forward declare list

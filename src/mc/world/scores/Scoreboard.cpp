@@ -19,3 +19,12 @@ int Scoreboard::modifyPlayerScore(
     result = ScoreboardOperationResult::UnknownId;
     return 0;
 }
+
+ScoreboardId Scoreboard::getId(PlayerScoreboardId const& playerId) const {
+    auto& dict  = mIdentityDict->mPlayers;
+    auto  found = dict->find(playerId);
+    if (found != dict->end()) {
+        return found->second;
+    }
+    return ScoreboardId::INVALID();
+}

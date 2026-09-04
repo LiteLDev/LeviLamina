@@ -32,9 +32,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getMinCost(int level) const;
+    MCAPI int $getMinCost(int level) const;
 
-    MCFOLD int $getMaxCost(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
     MCFOLD int $getMaxLevel() const;
 
@@ -47,11 +47,5 @@ public:
     MCFOLD bool $isDiscoverable() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

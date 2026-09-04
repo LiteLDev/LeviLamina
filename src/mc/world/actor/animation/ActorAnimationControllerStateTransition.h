@@ -23,9 +23,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorAnimationControllerStateTransition(
-        ::std::string const& targetStateName,
-        ::std::string const& expression,
-        ::MolangVersion      molangVersion
+        ::std::string const&  targetStateName,
+        ::std::string const&  expression,
+        ::MolangVersion const molangVersion
     );
     // NOLINTEND
 
@@ -33,6 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    $ctor(::std::string const& targetStateName, ::std::string const& expression, ::MolangVersion molangVersion);
+    $ctor(::std::string const& targetStateName, ::std::string const& expression, ::MolangVersion const molangVersion);
     // NOLINTEND
 };

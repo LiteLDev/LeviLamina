@@ -64,12 +64,6 @@ public:
 
     virtual ::Editor::Services::EditorRealmsServiceAvailability const isRealmsServiceAvailable() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

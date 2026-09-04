@@ -3,13 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/RelaxedSemVersion.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/VersionSelectType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
@@ -21,7 +16,9 @@ public:
     ::ll::TypedStorage<
         8,
         32,
-        ::std::variant<::SharedTypes::v3_0_0::PackManifestDefinition::VersionSelectType, ::SemVersion>>
+        ::std::variant<
+            ::SharedTypes::v3_0_0::PackManifestDefinition::VersionSelectType,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::RelaxedSemVersion>>
                                    mVersion;
     ::ll::TypedStorage<1, 1, bool> mOptional;
     // NOLINTEND
@@ -35,26 +32,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI NativeModuleDependency(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
-
-    MCAPI ~NativeModuleDependency();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

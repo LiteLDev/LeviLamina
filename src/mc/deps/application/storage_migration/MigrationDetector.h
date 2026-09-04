@@ -21,21 +21,6 @@ public:
 
     virtual void _runDetector(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>) = 0;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::std::function<::TaskResult()>
-    createDetectionTask(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData> manifest);
-#endif
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::StorageMigration

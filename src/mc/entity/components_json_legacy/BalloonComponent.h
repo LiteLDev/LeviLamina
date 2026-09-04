@@ -25,17 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BalloonComponent();
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void computeMaxHeight(::Actor& owner);
-
     MCAPI void detach(::Actor& owner);
-
-    MCAPI ::Actor* getAttachedActor(::Actor& owner);
-
-    MCFOLD float getMaxHeight() const;
 
     MCAPI void integrate(::Actor& owner);
 
@@ -59,16 +51,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& ATTACHED_TAG();
 
-    MCAPI static float const& FENCE_BALLOON_RANGE();
-
     MCAPI static ::std::string const& MAX_HEIGHT_TAG();
 
     MCAPI static ::std::string const& SHOULD_DROP_TAG();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

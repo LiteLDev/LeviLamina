@@ -15,9 +15,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doUpdateRenderPosSystem(
-        ::StrictEntityContext const&  stateVectorComponent,
-        ::StateVectorComponent const& renderPositionComponent,
-        ::RenderPositionComponent&
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const& stateVectorComponent,
+        ::RenderPositionComponent&    renderPositionComponent
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

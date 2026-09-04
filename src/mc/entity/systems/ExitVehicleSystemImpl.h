@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
@@ -22,11 +21,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class GetCollisionShapeInterface;
 class IConstBlockSource;
 class StrictEntityContext;
-class Vec3;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorDataSeatOffsetComponent;
@@ -286,51 +282,6 @@ public:
             ::EntityFactoryT<>>&   executionContext,
         bool                       isClientSide,
         ::IConstBlockSource const& region
-    );
-
-    MCAPI static auto createViews(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::StopRidingRequestComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::EjectedByActivatorRailFlagComponent,
-                ::PostTickPositionDeltaComponent>,
-            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
-            ::AddRemove<::ActorSetPositionRequestComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
-
-    MCAPI static bool tryPlaceAt(
-        ::Vec3 const&                                      groundPos,
-        ::AABB const&                                      aabbEntity,
-        ::IConstBlockSource const&                         region,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
     );
     // NOLINTEND
 

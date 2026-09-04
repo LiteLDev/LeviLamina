@@ -23,7 +23,6 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ArmorTrimIconGenerationInfo& operator=(ArmorTrimIconGenerationInfo const&);
     ArmorTrimIconGenerationInfo();
 
 #endif
@@ -31,8 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ArmorTrimIconGenerationInfo(::ArmorTrimIconGenerationInfo const&);
-
     MCAPI ArmorTrimIconGenerationInfo(
         ::std::string const&      armorName,
         ::std::string const&      armorType,
@@ -42,51 +39,19 @@ public:
         ::std::string const&      trimMaterial,
         ::std::string const&      trimPalette
     );
-
-    MCFOLD ::ResourceLocation const& getArmorTextureLocation() const;
-
-    MCFOLD ::ResourceLocation const& getTrimKeyPaletteLocation() const;
-
-    MCFOLD ::ResourceLocation const& getTrimTextureLocation() const;
-
-    MCFOLD ::ResourceLocation const& getTrimValuePaletteLocation() const;
-
-    MCFOLD ::ResourceLocation const& getTrimmedArmorLocation() const;
-
-    MCFOLD ::std::string const& getTrimmedArmorName() const;
-
-    MCFOLD bool isLeatherArmor() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI ~ArmorTrimIconGenerationInfo();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::std::string buildPaletteName(::std::string const& trimMaterial, ::std::string const& armorMaterial);
-#endif
-
     MCAPI static ::std::string buildTrimmedArmorName(::std::string const& trimMaterial, ::std::string const& armorName);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::std::string buildTrimmedArmorName(
-        ::std::string const& trimMaterial,
-        ::std::string const& armorMaterial,
-        ::std::string const& armorType
-    );
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ArmorTrimIconGenerationInfo const&);
-
     MCAPI void* $ctor(
         ::std::string const&      armorName,
         ::std::string const&      armorType,
@@ -96,14 +61,6 @@ public:
         ::std::string const&      trimMaterial,
         ::std::string const&      trimPalette
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

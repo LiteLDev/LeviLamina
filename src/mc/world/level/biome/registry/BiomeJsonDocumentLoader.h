@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/shared_types/beta/biome/BiomeJsonDocument.h"
-#include "mc/deps/shared_types/v1_26_0/biome/BiomeJsonDocument.h"
+#include "mc/deps/shared_types/v1_26_30/biome/BiomeJsonDocument.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,6 @@ class LinkedAssetValidator;
 struct BiomeJsonDocumentGlue;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
 namespace Core { class Path; }
-namespace Puv { class Input; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,7 +26,7 @@ public:
         8,
         256,
         ::Puv::SlicedLoader<
-            ::SharedTypes::v1_26_0::BiomeJsonDocument::BiomeJsonObject,
+            ::SharedTypes::v1_26_30::BiomeJsonDocument::BiomeJsonObject,
             ::BedrockLoadContext,
             nullptr_t,
             ::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject>>
@@ -52,8 +51,6 @@ public:
              biomeIdToResolvedData,
         bool betaApis
     );
-
-    MCAPI void load(::Puv::Input const& input) const;
     // NOLINTEND
 
 public:

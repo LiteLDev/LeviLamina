@@ -19,10 +19,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class HangingRootsBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    HangingRootsBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
@@ -43,15 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HangingRootsBlock(::std::string const& nameId, int id);
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

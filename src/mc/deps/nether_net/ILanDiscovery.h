@@ -7,7 +7,7 @@
 namespace Bedrock::PubSub { class Subscription; }
 namespace NetherNet { struct ILanEventHandler; }
 namespace NetherNet { struct NetworkID; }
-namespace rtc { class SocketAddress; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace NetherNet {
@@ -29,9 +29,9 @@ public:
     virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID networkId) = 0;
 
     virtual void SendLanBroadcastResponse(
-        ::rtc::SocketAddress const& destination,
-        ::NetherNet::NetworkID      from,
-        ::std::vector<::std::byte>  data
+        ::webrtc::SocketAddress const& destination,
+        ::NetherNet::NetworkID         from,
+        ::std::vector<::std::byte>     data
     ) = 0;
 
     virtual void SendSignalingMessageTo(
@@ -45,12 +45,6 @@ public:
     virtual void Suspend() = 0;
 
     virtual void Resume() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

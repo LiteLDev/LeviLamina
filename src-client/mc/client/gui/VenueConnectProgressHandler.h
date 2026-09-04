@@ -34,7 +34,7 @@ public:
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -68,16 +68,10 @@ public:
 
     MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getName() const;
 
     MCAPI ::std::string $getTitleText() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

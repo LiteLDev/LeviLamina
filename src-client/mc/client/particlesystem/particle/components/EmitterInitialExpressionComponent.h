@@ -34,9 +34,10 @@ public:
     virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual void
-    setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&) /*override*/;
+    setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams) /*override*/;
 
-    virtual void update(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&) /*override*/;
+    virtual void
+    update(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams) /*override*/;
     // NOLINTEND
 
 public:
@@ -48,15 +49,9 @@ public:
 
     MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI void $setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&);
+    MCAPI void $setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
 
-    MCAPI void $update(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $update(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 };
 

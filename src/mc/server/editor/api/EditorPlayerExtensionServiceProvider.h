@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,12 +34,6 @@ public:
     virtual ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
     getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

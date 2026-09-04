@@ -54,9 +54,9 @@ public:
         char const* buffer,
         uint64      bufferSize,
         char const* path,
-        bool        errorBuffer,
-        char*       errorBufferSize,
-        uint64
+        bool,
+        char*  errorBuffer,
+        uint64 errorBufferSize
     ) /*override*/;
 
     virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadFromCustomRoot(
@@ -90,9 +90,9 @@ public:
         char const* buffer,
         uint64      bufferSize,
         char const* path,
-        bool        errorBuffer,
-        char*       errorBufferSize,
-        uint64
+        bool,
+        char*  errorBuffer,
+        uint64 errorBufferSize
     );
 
     MCNAPI ::Bedrock::PlatformBootstrap::LoadResult $rawLoadFromCustomRoot(
@@ -105,12 +105,6 @@ public:
 
     MCNAPI ::Bedrock::PlatformBootstrap::CreateDirectoryResult
     $rawCreateDirectory(char const* path, char* errorBuffer, uint64 errorBufferSize);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

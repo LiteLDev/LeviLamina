@@ -21,12 +21,6 @@ public:
 
     virtual void Decoded(::webrtc::VideoFrame&, ::std::optional<int>, ::std::optional<uchar>);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

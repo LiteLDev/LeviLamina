@@ -62,23 +62,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void tick(
-        ::StrictExecutionContext<
-            ::Filter<::InterpolateMovementNeededComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent>,
-            ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>&
-    ) /*override*/;
-#else // LL_PLAT_C
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<::InterpolateMovementNeededComponent>,
@@ -94,8 +77,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

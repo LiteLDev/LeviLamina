@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/RefCountedNonVirtual.h"
+#include "mc/external/webrtc/RefCountedNonVirtual.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -14,23 +14,23 @@ namespace webrtc { struct PeerConnectionFactoryDependencies; }
 
 namespace webrtc {
 
-class ConnectionContext : public ::rtc::RefCountedNonVirtual<::webrtc::ConnectionContext> {
+class ConnectionContext : public ::webrtc::RefCountedNonVirtual<::webrtc::ConnectionContext> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnkd10b43;
-    ::ll::UntypedStorage<8, 8>  mUnk4efd62;
-    ::ll::UntypedStorage<8, 8>  mUnk3f3b70;
-    ::ll::UntypedStorage<8, 8>  mUnk949300;
-    ::ll::UntypedStorage<8, 16> mUnkca2db6;
-    ::ll::UntypedStorage<8, 8>  mUnk301f31;
+    ::ll::UntypedStorage<8, 8>  mUnkf35a6c;
+    ::ll::UntypedStorage<8, 8>  mUnk3668e0;
+    ::ll::UntypedStorage<8, 8>  mUnk38b700;
+    ::ll::UntypedStorage<8, 16> mUnkf7b628;
+    ::ll::UntypedStorage<8, 8>  mUnk9b277f;
     ::ll::UntypedStorage<8, 40> mUnkcdc30f;
-    ::ll::UntypedStorage<8, 8>  mUnkb34e88;
-    ::ll::UntypedStorage<8, 56> mUnke1da77;
-    ::ll::UntypedStorage<8, 8>  mUnk579b2c;
-    ::ll::UntypedStorage<8, 8>  mUnk715c4d;
+    ::ll::UntypedStorage<8, 8>  mUnk240e2e;
+    ::ll::UntypedStorage<8, 56> mUnk647fec;
+    ::ll::UntypedStorage<8, 8>  mUnkc617e3;
+    ::ll::UntypedStorage<8, 8>  mUnk7f3a61;
     ::ll::UntypedStorage<8, 8>  mUnkb0ad00;
-    ::ll::UntypedStorage<8, 8>  mUnkb74e90;
+    ::ll::UntypedStorage<8, 8>  mUnk2e2e6d;
     ::ll::UntypedStorage<8, 8>  mUnkf57cee;
     ::ll::UntypedStorage<1, 1>  mUnk510df9;
     // NOLINTEND

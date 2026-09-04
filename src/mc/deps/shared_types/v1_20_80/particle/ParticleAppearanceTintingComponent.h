@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -28,15 +27,17 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

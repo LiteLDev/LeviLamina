@@ -29,6 +29,7 @@ public:
 
 public:
     // prevent constructor by default
+    DefinitionEvent& operator=(DefinitionEvent const&);
     DefinitionEvent();
 
 public:
@@ -42,8 +43,6 @@ public:
     fromSharedType(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const& definitionEvent);
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent getSharedType() const;
-
-    MCAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
 
     MCAPI ~DefinitionEvent();
     // NOLINTEND

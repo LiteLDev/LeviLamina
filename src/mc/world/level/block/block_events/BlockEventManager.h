@@ -23,22 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::BlockEvents::IBlockEventExecutor>
-    _createSpecializedExecutor(::BlockEvents::EventType type) const;
-
     MCAPI ::BlockEvents::IBlockEventExecutor* _tryGetExecutor(::BlockEvents::EventType type) const;
 
-    MCFOLD void finalize();
-
     MCAPI bool hasExecutor(::BlockEvents::EventType type) const;
-
-    MCAPI ~BlockEventManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

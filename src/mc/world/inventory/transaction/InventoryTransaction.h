@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPalette;
 class InventoryAction;
 class InventoryTransactionItemGroup;
 class ItemStack;
@@ -30,25 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _logTransaction(bool isClientSide) const;
-
     MCAPI void addAction(::InventoryAction const& action);
 
     MCAPI void addItemToContent(::ItemStack const& item, int count);
 
+#ifdef LL_PLAT_C
     MCAPI ::InventoryTransactionError executeFull(::Player& p, bool isSenderAuthority) const;
+#endif
 
     MCAPI void forceBalanceTransaction();
 
-    MCAPI ::std::vector<::InventoryAction> const& getActions(::InventorySource const& source) const;
-
-    MCAPI void markValidActionsForSerialization(bool isClientSide) const;
-
-    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
-
+#ifdef LL_PLAT_C
     MCAPI void recalculateBalance();
 
     MCAPI ::InventoryTransactionError verifyFull(::Player& p, bool isSenderAuthority) const;
+#endif
 
     MCAPI void write(::BinaryStream& stream) const;
 

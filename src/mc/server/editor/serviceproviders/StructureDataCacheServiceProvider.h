@@ -33,12 +33,6 @@ public:
             ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const& data
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

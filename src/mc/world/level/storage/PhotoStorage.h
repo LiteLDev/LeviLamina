@@ -40,26 +40,12 @@ public:
 
     MCAPI bool _isValidFile(::Core::Path file);
 
-    MCAPI bool _readFile(::Core::Path path, ::std::string& resultData);
-#endif
-
-    MCAPI void _readManifest();
-
-#ifdef LL_PLAT_C
-    MCAPI bool _writeFile(::Core::Path path, ::std::string const& photoData);
-
-    MCAPI void _writeManifest();
-
-    MCAPI ::Core::PathBuffer<::std::string> getBookPath(::std::string const& bookId);
-
     MCAPI void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
 
     MCAPI ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
 
     MCAPI void
     getPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName, ::std::string& resultData);
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getPhotoItemPath();
 
     MCAPI ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
 
@@ -83,14 +69,8 @@ public:
     );
 #endif
 
+#ifdef LL_PLAT_S
     MCAPI ~PhotoStorage();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::Core::PathBuffer<::std::string> getScreenshotFilename();
 #endif
     // NOLINTEND
 
@@ -115,6 +95,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

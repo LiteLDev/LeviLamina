@@ -38,18 +38,6 @@ public:
         ::ll::TypedStorage<4, 16, float[4]>                          mCol;
         ::ll::TypedStorage<4, 16, float[4]>                          mParticleColorFloat;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ParticleColors();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -102,12 +90,6 @@ public:
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

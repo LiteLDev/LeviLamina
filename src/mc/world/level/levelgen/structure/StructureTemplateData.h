@@ -72,21 +72,9 @@ public:
 
     MCAPI ::StructureLoadResult _validateSizeAndBlockIndicesSize() const;
 
-    MCAPI void addPalette(::std::string const& name, ::StructureBlockPalette blockPalette);
-
     MCAPI void clear();
 
-    MCFOLD ::std::unordered_map<::std::string, ::StructureBlockPalette> const& getAllPalettes() const;
-
-    MCFOLD ::std::vector<int> const& getBlockIndices() const;
-
-    MCFOLD ::std::vector<int> const& getExtraBlockIndices() const;
-
     MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
-
-    MCFOLD ::BlockPos const& getSize() const;
-
-    MCFOLD ::BlockPos const& getStructureWorldOrigin() const;
 
     MCAPI bool load(::CompoundTag const& tag);
 
@@ -99,10 +87,6 @@ public:
     MCAPI void setBlockIndices(::std::vector<int> blockIndices);
 
     MCAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
-
-    MCFOLD void setSize(::BlockPos const& size);
-
-    MCAPI void setStructureWorldOrigin(::BlockPos const& structureWorldOrigin);
     // NOLINTEND
 
 public:

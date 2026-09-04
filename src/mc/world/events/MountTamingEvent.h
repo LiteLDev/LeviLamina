@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPassenger;
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mMount;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MountTamingEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

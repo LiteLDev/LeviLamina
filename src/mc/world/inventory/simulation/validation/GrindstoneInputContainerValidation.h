@@ -19,7 +19,7 @@ public:
     isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
         /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
     // NOLINTEND
 
 public:
@@ -33,14 +33,8 @@ public:
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

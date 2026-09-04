@@ -20,22 +20,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI uchar _randomDirection(::Random& random, ::BlockSource const& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

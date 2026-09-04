@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>             mActorContext;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorKilledEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

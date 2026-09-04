@@ -28,19 +28,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsProgressHandler() /*override*/;
+    virtual ~RealmsProgressHandler() /*override*/ = default;
 
-    virtual void onStart(::MinecraftScreenModel&) /*override*/;
+    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel&) /*override*/;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -65,34 +65,22 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel&);
+    MCFOLD void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $tick(::MinecraftScreenModel&);
+    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel&);
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
     MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getName() const;
 
     MCFOLD ::std::string $getTitleText() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

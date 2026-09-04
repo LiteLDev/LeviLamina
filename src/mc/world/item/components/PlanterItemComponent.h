@@ -12,16 +12,13 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Block;
 class BlockPos;
 class BlockType;
 class ComponentItem;
 class CompoundTag;
-class HashedString;
 class ItemStack;
 class ItemStackBase;
 class SemVersion;
-class Vec3;
 namespace SharedTypes::v1_26_0 { struct PlanterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -56,8 +53,6 @@ public:
 
 public:
     // prevent constructor by default
-    PlanterItemComponent& operator=(PlanterItemComponent const&);
-    PlanterItemComponent(PlanterItemComponent const&);
     PlanterItemComponent();
 
 public:
@@ -75,38 +70,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlanterItemComponent(::Block const& block);
-
     MCAPI explicit PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent component);
-
-    MCAPI bool _placeBlock(
-        ::ItemStack&      item,
-        ::Actor&          entity,
-        ::Block const&    block,
-        ::BlockPos const& placePos,
-        uchar             face,
-        ::Vec3 const&     clickPos
-    ) const;
-
-    MCAPI void _useOn(
-        bool&              result,
-        ::ItemStack const& currentItemStack,
-        ::ItemStack&       entity,
-        ::Actor&           blockPos,
-        ::BlockPos const&  face,
-        uchar              clickPos,
-        ::Vec3 const&
-    );
 
     MCAPI bool calculatePlacePos(::ItemStackBase const& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
+#ifdef LL_PLAT_C
     MCAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
-
-    MCAPI ::HashedString const& getBlockIdentifier() const;
-
-    MCFOLD bool isReplacingBlockItem() const;
-
-    MCAPI ::PlanterItemComponent& operator=(::PlanterItemComponent&&);
+#endif
     // NOLINTEND
 
 public:
@@ -119,15 +89,11 @@ public:
     );
 
     MCAPI static ::PlanterItemComponent::BlockPlacementContext getBlockPlacementContext(::ItemStackBase const& item);
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block);
-
     MCAPI void* $ctor(::SharedTypes::v1_26_0::PlanterItemComponent component);
     // NOLINTEND
 

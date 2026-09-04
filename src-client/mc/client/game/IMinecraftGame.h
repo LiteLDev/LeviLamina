@@ -52,7 +52,7 @@ class EmoticonManager;
 class EntityContext;
 class ExternalContentManager;
 class FlightingService;
-class FontHandle;
+class FontRepository;
 class GameRenderer;
 class GatheringManager;
 class GeometryGroup;
@@ -169,7 +169,7 @@ public:
     // NOLINTBEGIN
     virtual void initialize() = 0;
 
-    virtual ~IMinecraftGame() /*override*/;
+    virtual ~IMinecraftGame() /*override*/ = default;
 
     virtual void update() = 0;
 
@@ -227,8 +227,6 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> getTextBoxController() = 0;
 
-    virtual void openPauseMenu() = 0;
-
     virtual void setIsInGame(bool isInGame) = 0;
 
     virtual void createClientItemRegistry() = 0;
@@ -250,6 +248,7 @@ public:
         ::std::string const&         serverName,
         ::std::string const&         worldName,
         ::NetworkType                networkTypeOverride,
+        ::std::shared_ptr<bool>      userCancelled,
         ::PlayerJoinWorldContext     context
     ) = 0;
 
@@ -314,15 +313,7 @@ public:
 
     virtual void setUseFontOverrides(bool useOverrides) = 0;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle() const = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getUIFontHandle() const = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getRuneFontHandle() const = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getUnicodeFontHandle() const = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getSmoothFontHandle() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> getFontRepository() const = 0;
 
     virtual void onClientLevelExit(::IClientInstance& exitClient, uint exitCode) = 0;
 
@@ -391,7 +382,12 @@ public:
 
     virtual void onClientCreatedLevel(::IClientInstance& client) = 0;
 
-    virtual uint64 generateClientId(bool, bool&, uint64, ::std::shared_ptr<::Social::User>) = 0;
+    virtual uint64 generateClientId(
+        bool                              forceReset,
+        bool&                             generatedNewId,
+        uint64                            clientIdModifier,
+        ::std::shared_ptr<::Social::User> user
+    ) = 0;
 
     virtual ::std::weak_ptr<::RealmsAPI> getRealms() = 0;
 
@@ -641,8 +637,6 @@ public:
 
     virtual ::std::shared_ptr<::OptionRegistry const> getPrimaryUserOptions() const = 0;
 
-    virtual void tryShowXblFirstLaunchScreen(bool isUserConnectedToPlatform) = 0;
-
     virtual ::Bedrock::PubSub::Subscription
     registerSplitScreenChangedListener(::std::function<void(uchar)> callback) const = 0;
 
@@ -686,43 +680,5 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() = 0;
 
     virtual double getGameUpdateDurationInSeconds() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIMinecraftApp();
-
-    MCNAPI static void** $vftableForINetworkGameConnector();
-
-    MCNAPI static void** $vftableForIClientInstances();
-
-    MCNAPI static void** $vftableForAppIsland();
-
-    MCNAPI static void** $vftableForIGameServerStartup();
-
-    MCNAPI static void** $vftableForISplitScreenChangedPublisher();
-
-    MCNAPI static void** $vftableForAppExtensionsOwner();
-
-    MCNAPI static void** $vftableForIGameEventNotifier();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForIWorldTransfer();
-
-    MCNAPI static void** $vftableForIGameServerShutdown();
     // NOLINTEND
 };

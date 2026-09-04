@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/SeeMoreRouteData.h"
@@ -18,7 +18,7 @@ namespace World { class FeaturedWorldTemplateManager; }
 
 namespace OreUI {
 
-class FeaturedWorldTemplateListFacet : public ::OreUI::FacetBase<::OreUI::FeaturedWorldTemplateListFacet> {
+class FeaturedWorldTemplateListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::FeaturedWorldTemplateListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -53,10 +53,6 @@ public:
 
     MCAPI ::OreUI::SeeMoreRouteData _getSeeMoreRouteData() const;
 
-    MCAPI void _initWorldTemplates();
-
-    MCAPI bool _tryReadWorldTemplates();
-
     MCAPI void clearRefreshTaskState();
 
     MCFOLD ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> const& getFeaturedWorldTemplates() const;
@@ -87,12 +83,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

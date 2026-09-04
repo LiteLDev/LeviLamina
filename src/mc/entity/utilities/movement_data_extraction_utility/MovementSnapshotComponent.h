@@ -32,6 +32,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk7e2d1a;
     ::ll::UntypedStorage<4, 4>   mUnkc22eef;
     ::ll::UntypedStorage<4, 4>   mUnk9a7831;
+    ::ll::UntypedStorage<4, 4>   mUnkb0450e;
     ::ll::UntypedStorage<4, 8>   mUnkec4f09;
     ::ll::UntypedStorage<8, 8>   mUnk7e8ad0;
     ::ll::UntypedStorage<4, 8>   mUnk9f5e3f;
@@ -44,7 +45,6 @@ public:
     ::ll::UntypedStorage<4, 8>   mUnkb451ea;
     ::ll::UntypedStorage<4, 8>   mUnkf726d8;
     ::ll::UntypedStorage<4, 8>   mUnk615382;
-    ::ll::UntypedStorage<4, 4>   mUnkb0450e;
     ::ll::UntypedStorage<4, 12>  mUnkbe52e5;
     ::ll::UntypedStorage<4, 12>  mUnk5739c3;
     ::ll::UntypedStorage<4, 12>  mUnk92d17b;
@@ -83,55 +83,11 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkc8b5f1;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     MovementSnapshotComponent& operator=(MovementSnapshotComponent const&);
     MovementSnapshotComponent(MovementSnapshotComponent const&);
     MovementSnapshotComponent();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    MovementSnapshotComponent& operator=(MovementSnapshotComponent const&);
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI MovementSnapshotComponent();
-
-    MCNAPI MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent const&);
-
-    MCNAPI ::MovementDataExtractionUtility::MovementSnapshotComponent&
-    operator=(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI ~MovementSnapshotComponent();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI void* $ctor(::MovementDataExtractionUtility::MovementSnapshotComponent const&);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace MovementDataExtractionUtility

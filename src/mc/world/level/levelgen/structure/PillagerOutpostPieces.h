@@ -16,7 +16,6 @@ class Dimension;
 class LevelChunk;
 class Random;
 class StructureManager;
-class StructurePiece;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -55,7 +54,8 @@ public:
         // NOLINTBEGIN
         virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-        virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
+        virtual void
+        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
         virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
@@ -80,15 +80,17 @@ public:
             bool                                              isSatellite,
             ::Dimension&                                      dimension
         );
+        // NOLINTEND
 
-        MCAPI void _addMobsFromPositions(
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void _addMobsFromPositions(
             ::BoundingBox const&               chunkBB,
             ::ActorDefinitionIdentifier const& definition,
             ::BlockSource&                     region,
             ::std::vector<::BlockPos> const&   entityPositions
         );
-
-        MCAPI void _loadTemplate();
         // NOLINTEND
 
     public:
@@ -110,7 +112,7 @@ public:
         // NOLINTBEGIN
         MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
         MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
@@ -124,56 +126,11 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _addPiece(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::BlockPos const&                                   position,
-        ::Rotation const&                                   rotation,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        ::Dimension&                                        dimension
-    );
-
-    MCAPI static void _addScatteredPieces(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::Random&                                           random,
-        ::Rotation const&                                   rotation,
-        ::BlockPos const&                                   parentPos,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Dimension&                                        dimension
-    );
-
-    MCAPI static ::std::vector<::BlockPos> _getPiecePositions(::Random& random);
-
-    MCAPI static void addPieces(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::BlockPos const&                                   position,
-        ::Rotation const&                                   rotation,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        ::Dimension&                                        dimension
-    );
-    // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
-
-    MCAPI static ::std::string_view& PILLAGER_LOOT();
-
-    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER();
-
-    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
     // NOLINTEND
 };

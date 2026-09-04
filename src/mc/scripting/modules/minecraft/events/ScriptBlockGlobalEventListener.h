@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/events/BlockEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -26,6 +26,7 @@ struct PressurePlatePushEvent;
 struct TargetBlockHitEvent;
 struct TripWireTripEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
+namespace ScriptModuleMinecraft { class ScriptBlockBreakingEventListener; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -53,11 +54,18 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener::Listener>>
         mListeners;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::gsl::not_null<::std::unique_ptr<::ScriptModuleMinecraft::ScriptBlockBreakingEventListener>>>
+        mBlockBreakingListener;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ~ScriptBlockGlobalEventListener() /*override*/ = default;
+
     virtual ::EventResult onEvent(::PistonActionEvent const& eventData) /*override*/;
 
     virtual ::EventResult onEvent(::LeverActionEvent const& eventData) /*override*/;
@@ -105,20 +113,20 @@ public:
         ::Player&         player,
         ::BlockPos const& pos,
         ::Block const&    hitBlock,
-        uchar const       face
+        uchar const       face,
+        int const         previousProgress
     ) /*override*/;
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void registerListener(
-        ::Scripting::WeakLifetimeScope const&                                            scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
-    );
+    virtual ::EventResult
+    onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress) /*override*/;
 
-    MCAPI void
-    unregisterListener(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle);
+    virtual ::EventResult onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -147,8 +155,13 @@ public:
         ::Actor*          source
     );
 
+#ifdef LL_PLAT_S
     MCAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool);
+#else // LL_PLAT_C
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#endif
 
     MCAPI ::EventResult $onBlockDestroyedByPlayer(
         ::Player&              player,
@@ -158,16 +171,25 @@ public:
         ::ItemStackBase const& itemBeforeBlockBreak
     );
 
-    MCAPI ::EventResult
-    $onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
+    MCAPI ::EventResult $onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face,
+        int const         previousProgress
+    );
+
+    MCAPI ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
+
+    MCAPI ::EventResult $onBlockDestructionContinued(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        uchar const       face,
+        int const         previousProgress
+    );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

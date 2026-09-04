@@ -17,6 +17,7 @@ class ActorHurtResult;
 class EntityContext;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -36,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
@@ -57,7 +58,8 @@ public:
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -70,16 +72,12 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI float getBubbleAngle(float a) const;
-
     MCAPI ::std::string getExitText(bool isPocket) const;
 
     MCAPI float getRowingTime(::SharedTypes::Side side, float alpha) const;
 #endif
 
     MCAPI uchar getWoodID() const;
-
-    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
@@ -95,7 +93,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
@@ -115,14 +113,8 @@ public:
 
     MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

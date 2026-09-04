@@ -24,24 +24,34 @@ public:
     ::ll::UntypedStorage<8, 272> mUnk9a82ab;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    DataTransferServiceRequestBiomeConfigResponsePayload&
+    operator=(DataTransferServiceRequestBiomeConfigResponsePayload const&);
+    DataTransferServiceRequestBiomeConfigResponsePayload(DataTransferServiceRequestBiomeConfigResponsePayload const&);
+    DataTransferServiceRequestBiomeConfigResponsePayload();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     DataTransferServiceRequestBiomeConfigResponsePayload(DataTransferServiceRequestBiomeConfigResponsePayload const&);
     DataTransferServiceRequestBiomeConfigResponsePayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI DataTransferServiceRequestBiomeConfigResponsePayload(
-        ::mce::UUID                                             requestId,
+        ::mce::UUID const                                       requestId,
         ::std::string const&                                    biomeIdentifier,
         ::Editor::Network::BiomeConfigIdentifierMappings const& mappings
     );
-#endif
 
     MCNAPI ::Editor::Network::DataTransferServiceRequestBiomeConfigResponsePayload&
     operator=(::Editor::Network::DataTransferServiceRequestBiomeConfigResponsePayload const&);
+#endif
     // NOLINTEND
 
 public:
@@ -55,7 +65,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(
-        ::mce::UUID                                             requestId,
+        ::mce::UUID const                                       requestId,
         ::std::string const&                                    biomeIdentifier,
         ::Editor::Network::BiomeConfigIdentifierMappings const& mappings
     );

@@ -12,7 +12,6 @@
 class ContainerScreenContext;
 class ItemStack;
 class Player;
-struct FullContainerName;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -43,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudContainerManagerModel() /*override*/;
+    virtual ~HudContainerManagerModel() /*override*/ = default;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -51,7 +50,7 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int, int) /*override*/;
+    virtual void setData(int id, int value) /*override*/;
 
     virtual void broadcastChanges() /*override*/;
 
@@ -64,13 +63,7 @@ public:
     MCAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::unordered_set<::FullContainerName> _getDynamicContainersInHotbar();
-
     MCAPI void cleanUpDynamicContainers();
-
-    MCFOLD ::Bedrock::PubSub::
-        Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&
-        getDynamicContainerRemovalConnector();
 
     MCAPI void refreshHotbar();
 #endif
@@ -83,12 +76,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
@@ -97,7 +84,7 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int, int);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI void $broadcastChanges();
 

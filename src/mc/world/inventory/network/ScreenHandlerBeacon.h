@@ -11,8 +11,6 @@
 class BeaconBlockActor;
 class ContainerScreenContext;
 class ItemStackRequestAction;
-class ItemStackRequestActionBeaconPayment;
-class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerBeacon : public ::ScreenHandlerBase {
@@ -45,21 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    ScreenHandlerBeacon(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
-
-    MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(::ItemStackRequestActionBeaconPayment const& requestAction);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
@@ -69,11 +52,5 @@ public:
     MCAPI void $postRequest(bool const wasSuccess);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -41,8 +41,6 @@ public:
         ::std::vector<::FlatteningUtils::BlockNameRefAuxVariant> newBlockNameAuxVariants_,
         int                                                      startVariant
     );
-
-    MCAPI ~LegacyBlockInfo();
     // NOLINTEND
 
 public:
@@ -56,12 +54,6 @@ public:
         ::std::vector<::FlatteningUtils::BlockNameRefAuxVariant> newBlockNameAuxVariants_,
         int                                                      startVariant
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

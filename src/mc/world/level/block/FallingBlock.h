@@ -10,7 +10,6 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -18,10 +17,6 @@ namespace mce { class Color; }
 // clang-format on
 
 class FallingBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    FallingBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,8 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FallingBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
 
     MCAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
@@ -56,14 +49,6 @@ public:
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-
-    MCAPI void triggerFallCheck(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

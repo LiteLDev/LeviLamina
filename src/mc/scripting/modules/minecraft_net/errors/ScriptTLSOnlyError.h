@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,8 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptTLSOnlyError(::std::string uri);
-
-    MCNAPI ~ScriptTLSOnlyError();
     // NOLINTEND
 
 public:
@@ -43,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string uri);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

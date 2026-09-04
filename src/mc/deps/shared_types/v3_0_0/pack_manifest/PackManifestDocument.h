@@ -59,8 +59,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManifestDocument(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&&);
-
     MCAPI PackManifestDocument(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
 
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&
@@ -87,8 +85,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&&);
-
     MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
     // NOLINTEND
 

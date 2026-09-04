@@ -45,6 +45,7 @@ public:
 public:
     // prevent constructor by default
     SafetyServiceTextFilteringConfig& operator=(SafetyServiceTextFilteringConfig const&);
+    SafetyServiceTextFilteringConfig();
 
 #else // LL_PLAT_C
 public:
@@ -58,13 +59,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI SafetyServiceTextFilteringConfig();
-
     MCNAPI SafetyServiceTextFilteringConfig(::Safety::SafetyServiceTextFilteringConfig const&);
 
     MCNAPI ::Safety::SafetyServiceTextFilteringConfig& operator=(::Safety::SafetyServiceTextFilteringConfig&&);
-
-    MCNAPI ~SafetyServiceTextFilteringConfig();
 #endif
     // NOLINTEND
 
@@ -81,17 +78,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Safety::SafetyServiceTextFilteringConfig const&);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

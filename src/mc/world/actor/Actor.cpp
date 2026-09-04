@@ -4,17 +4,17 @@
 #include <optional>
 #include <string>
 
-#include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityRegistry.h"
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/vanilla_components/OnGroundFlagComponent.h"
 #include "mc/deps/vanilla_components/PlayerComponent.h"
 #include "mc/entity/components/ActorOwnerComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
+#include "mc/entity/components/IsDeadFlagComponent.h"
+#include "mc/entity/components/IsOnHotBlockFlagComponent.h"
 #include "mc/entity/components/OnFireComponent.h"
 #include "mc/entity/components/PostTickPositionDeltaComponent.h"
 #include "mc/entity/systems/OnFireSystem.h"
@@ -29,15 +29,24 @@
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorHurtResult.h"
 #include "mc/world/actor/BuiltInActorComponents.h"
+#include "mc/world/actor/HurtParameters.h"
 #include "mc/world/actor/animation/AnimationComponent.h"
+#include "mc/world/actor/provider/ActorAttribute.h"
+#include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
+#include "mc/world/level/ChunkBlockPos.h"
 #include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/Block.h"
+#include "mc/world/level/chunk/LevelChunk.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
+#include "provider/ActorEquipment.h"
+
 
 void Actor::refresh() { _sendDirtyActorData(); }
 
@@ -63,11 +72,15 @@ optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> d
 
 std::string const& Actor::getTypeName() const { return getActorIdentifier().mCanonicalName->getString(); }
 
-class Vec3 Actor::getFeetPos() const { return CommandUtils::getFeetPos(this); }
+class Vec3 Actor::getFeetPos() const {
+    return CommandSelectorBase::getFeetPos(static_cast<int>(CurrentCmdVersion::Latest), *this);
+}
 
 class Vec3 Actor::getHeadPos() const { return getAttachPos(SharedTypes::Legacy::ActorLocation::Head); }
 
-class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
+class BlockPos Actor::getFeetBlockPos() const {
+    return {CommandSelectorBase::getFeetPos(static_cast<int>(CurrentCmdVersion::Latest), *this)};
+}
 
 bool Actor::isSimulatedPlayer() const {
     return getEntityTypeId() == ActorType::Player && static_cast<Player const*>(this)->isSimulated();
@@ -87,7 +100,7 @@ void Actor::setOnFire(int time, bool hasEffect) {
 void Actor::stopFire() {
     if (!isClientSide()) {
         getEntityContext().removeComponent<OnFireComponent>();
-        setStatusFlag(ActorFlags::Onfire, false);
+        SynchedActorDataAccess::setActorFlag(getEntityContext(), ActorFlags::Onfire, false);
     }
 }
 
@@ -108,10 +121,10 @@ float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getVelo
 
 bool Actor::hurtByCause(float damage, ::SharedTypes::Legacy::ActorDamageCause cause, optional_ref<Actor> attacker) {
     if (attacker) {
-        return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, true, false);
+        return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, HurtParameters(true, false));
     }
     ActorDamageSource src(cause, {});
-    return _hurt(src, damage, true, false);
+    return _hurt(src, damage, HurtParameters(true, false));
 }
 
 class HitResult Actor::traceRay(
@@ -206,6 +219,63 @@ Actor* Actor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
 
 ::DimensionType Actor::getDimensionId() const { return getDimension().getDimensionId(); }
 
-bool Actor::isType(::ActorType type) const { return getEntityTypeId() == type; }
-
 bool Actor::isPlayer() const { return mEntityContext->hasComponent<PlayerComponent>(); }
+
+bool Actor::isTouchingDamageBlock() const {
+    AABB const& aabb = mBuiltInComponents->mAABBShapeComponent->mAABB;
+    if (!mDimension->lock()) {
+        return false;
+    }
+    auto&       blockSource = mDimension->lock()->getBlockSourceFromMainChunkSource();
+    float const minY        = aabb.min.y - 0.2f;
+    BlockPos    minPos(Vec3(aabb.min.x - 1.0f, minY - 1.0f, aabb.min.z - 1.0f));
+    BlockPos    maxPos(Vec3(aabb.max.x + 1.0f, minY + 1.0f, aabb.max.z + 1.0f));
+    minPos.y = std::max(minPos.y, static_cast<int>(blockSource.getMinHeight()));
+    maxPos.y = std::min(maxPos.y, static_cast<int>(blockSource.getMaxHeight()));
+    if (minPos.y > maxPos.y) {
+        return false;
+    }
+    for (int x = minPos.x; x <= maxPos.x; ++x) {
+        for (int z = minPos.z; z <= maxPos.z; ++z) {
+            BlockPos    pos(x, minPos.y, z);
+            ChunkPos    chunkPos(pos);
+            LevelChunk* chunk = blockSource.getChunk(chunkPos);
+            if (!chunk) {
+                continue;
+            }
+            for (int y = minPos.y; y <= maxPos.y; ++y) {
+                pos.y = y;
+                ChunkBlockPos chunkBlockPos(pos, blockSource.getMinHeight());
+                Block const&  block = chunk->getBlock(chunkBlockPos);
+                auto const    val =
+                    static_cast<uint64>(BlockProperty::CausesDamage) | static_cast<uint64>(BlockProperty::Scaffolding);
+                if (block.hasProperty(static_cast<BlockProperty>(val))) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+int Actor::getHealth() const { return ActorAttribute::getHealth(getEntityContext()); }
+
+int Actor::getMaxHealth() const { return ActorAttribute::getMaxHealth(getEntityContext()); }
+
+bool Actor::isInWorld() const { return mAdded && mDimension->lock() && !mRemoved; }
+
+ItemStack const& Actor::getArmor(::SharedTypes::Legacy::ArmorSlot slot) const {
+    return ActorEquipment::getArmorContainer(getEntityContext()).getItem(static_cast<int>(slot));
+}
+
+bool Actor::getStatusFlag(::ActorFlags flag) const {
+    return SynchedActorDataAccess::getActorFlag(getEntityContext(), flag);
+}
+
+bool Actor::isOnHotBlock() const { return getEntityContext().hasComponent<IsOnHotBlockFlagComponent>(); }
+
+::ItemStack const& Actor::getOffhandSlot() const {
+    return ActorEquipment::getHandContainer(getEntityContext()).getItem(1);
+}
+
+bool Actor::isDead() const { return getEntityContext().hasComponent<IsDeadFlagComponent>(); }

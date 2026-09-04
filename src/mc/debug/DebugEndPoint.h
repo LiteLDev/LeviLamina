@@ -40,24 +40,23 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) /*override*/;
-#else // LL_PLAT_C
-        virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
         virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr) /*override*/;
-#else // LL_PLAT_C
-        virtual void onResourceManagerDestroyed(::ResourcePackManager&) /*override*/;
-#endif
-
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void checkWorldData(::Core::Path const& levelPath);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
 
     public:
@@ -90,25 +89,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
-#else // LL_PLAT_C
-    virtual void log(::LogArea const, ::LogLevel const, char const*) /*override*/;
-#endif
 
     virtual void flush() /*override*/;
 
-#ifdef LL_PLAT_S
     virtual void setEnabled(bool newState) /*override*/;
-#else // LL_PLAT_C
-    virtual void setEnabled(bool) /*override*/;
-#endif
 
     virtual bool isEnabled() const /*override*/;
 
     virtual bool logOnlyOnce() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
+#else // LL_PLAT_C
     virtual void contentAssert(::LogArea const, ::LogLevel const, char const*);
+#endif
+
     // NOLINTEND
 
 public:
@@ -149,7 +145,7 @@ public:
 
     MCNAPI bool $logOnlyOnce() const;
 
-    MCNAPI void $contentAssert(::LogArea const, ::LogLevel const, char const*);
+    MCNAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
 #endif
 
 

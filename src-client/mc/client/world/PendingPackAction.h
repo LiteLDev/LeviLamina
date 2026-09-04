@@ -19,33 +19,6 @@ public:
     ::ll::TypedStorage<1, 1, ::World::PackAction>                       mPackActionType;
     ::ll::TypedStorage<1, 2, ::std::optional<::World::PackActionError>> mPackActionError;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PendingPackAction& operator=(PendingPackAction const&);
-    PendingPackAction();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PendingPackAction(::World::PendingPackAction const&);
-
-    MCAPI ::World::PendingPackAction& operator=(::World::PendingPackAction&&);
-
-    MCAPI ~PendingPackAction();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::World::PendingPackAction const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace World

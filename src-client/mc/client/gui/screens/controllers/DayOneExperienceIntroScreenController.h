@@ -42,8 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DayOneExperienceIntroScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

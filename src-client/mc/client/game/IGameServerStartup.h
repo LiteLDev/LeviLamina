@@ -48,10 +48,4 @@ public:
         ::StartIntent            startIntent
     );
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

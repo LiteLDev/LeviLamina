@@ -6,13 +6,11 @@
 #include "mc/util/ChanceInformation.h"
 #include "mc/util/IntRange.h"
 #include "mc/world/level/block/BlockDescriptor.h"
-#include "mc/world/level/levelgen/feature/helpers/ITreeCanopy.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeTrunk.h"
 #include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
 class ITreeCanopy;
@@ -40,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MangroveTreeTrunk() /*override*/;
+    virtual ~MangroveTreeTrunk() /*override*/ = default;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
@@ -53,32 +51,6 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*            canopy
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _placeBranch(
-        ::IBlockWorldGenAPI&                      target,
-        ::std::vector<::BlockPos>*                canopyAttachmentPositions,
-        ::std::vector<::ITreeCanopy::BranchSize>* canopyAttachmentSizes,
-        ::Random&                                 random,
-        int                                       treeHeight,
-        ::RenderParams&                           treeParams,
-        ::TreeHelper::TreeParams const&           logPos,
-        ::BlockPos&                               currentHeight,
-        int                                       branchDir,
-        uchar                                     branchPos,
-        int                                       branchSteps,
-        int                                       trunkBlock,
-        ::Block const*
-    ) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -97,11 +69,5 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

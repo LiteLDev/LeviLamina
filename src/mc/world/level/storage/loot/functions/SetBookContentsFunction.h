@@ -10,10 +10,8 @@
 class CompoundTag;
 class ItemInstance;
 class ItemStack;
-class LootItemCondition;
 class LootTableContext;
 class Random;
-namespace Json { class Value; }
 // clang-format on
 
 class SetBookContentsFunction : public ::LootItemFunction {
@@ -26,13 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetBookContentsFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetBookContentsFunction() /*override*/;
+    virtual ~SetBookContentsFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
 
@@ -44,61 +38,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetBookContentsFunction(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::std::string const&                                   title,
-        ::std::string const&                                   author,
-        ::std::vector<::std::string> const&                    pages
-    );
-
     MCAPI void _fillUserData(::CompoundTag& tag);
-
-    MCFOLD ::std::string const& getAuthor() const;
-
-    MCFOLD ::std::vector<::std::string> const& getPages() const;
-
-    MCFOLD ::std::string const& getTitle() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
-    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::std::string const&                                   title,
-        ::std::string const&                                   author,
-        ::std::vector<::std::string> const&                    pages
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

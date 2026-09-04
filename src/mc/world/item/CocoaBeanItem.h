@@ -25,10 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CocoaBeanItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
@@ -44,18 +40,6 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CocoaBeanItem(::std::string const& name, int id, bool allowLegacyUseAsDye);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, bool allowLegacyUseAsDye);
     // NOLINTEND
 
 public:

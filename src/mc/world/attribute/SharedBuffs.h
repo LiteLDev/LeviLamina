@@ -23,8 +23,6 @@ public:
 
     MCAPI static ::std::shared_ptr<::AttributeBuff>& POISON();
 
-    MCAPI static ::std::shared_ptr<::AttributeBuff>& PUFFER_POSIONING();
-
     MCAPI static ::std::shared_ptr<::AttributeBuff>& REGENERATION();
 
     MCAPI static ::std::shared_ptr<::AttributeBuff>& SATURATION();

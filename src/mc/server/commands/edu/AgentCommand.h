@@ -88,31 +88,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void collect(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
     MCAPI void createAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void directionCommand(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void drop(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI ::std::string errorName() const;
-
-    MCAPI void getPosition(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void itemCommand(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void place(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
     MCAPI void reportSuccess(bool success, ::CommandOutput& output) const;
-
-    MCAPI void setItem(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI ::std::string successName() const;
-
-    MCAPI void tpAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void transfer(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -128,17 +106,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::AgentCommand::FacingResult>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::AgentCommand::Mode>();
-// clang-format on

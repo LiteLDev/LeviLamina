@@ -30,12 +30,6 @@ public:
     // NOLINTBEGIN
     virtual ::Core::Result _write(void const*, uint64) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

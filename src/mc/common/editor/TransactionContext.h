@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Transactions { class IOperation; }
-namespace Editor::Transactions { class IPendingOperation; }
-// clang-format on
-
 namespace Editor::Transactions {
 
 class TransactionContext {
@@ -45,22 +35,6 @@ public:
         ::std::string                                                      name,
         ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling
     );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& serviceProviders) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& serviceProviders) const;
-
-    MCNAPI void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
-
-    MCNAPI void addPendingOperation(::std::unique_ptr<::Editor::Transactions::IPendingOperation> operation);
-
-    MCNAPI ::Scripting::Result_deprecated<int>
-    commitPendingOperations(::Editor::ServiceProviderCollection& serviceProviders);
-
-    MCNAPI ::Scripting::Result_deprecated<int>
-    discardPendingOperations(::Editor::ServiceProviderCollection& serviceProviders);
-
-    MCNAPI bool empty() const;
 
     MCNAPI ~TransactionContext();
     // NOLINTEND

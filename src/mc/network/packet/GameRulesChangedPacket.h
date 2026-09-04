@@ -62,22 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameRulesChangedPacket();
-
-    MCAPI explicit GameRulesChangedPacket(::GameRulesChangedPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::GameRulesChangedPacketPayload payload);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

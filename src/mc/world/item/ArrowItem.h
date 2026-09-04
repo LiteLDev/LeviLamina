@@ -20,7 +20,6 @@ class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
-class MobEffectInstance;
 class Vec3;
 namespace Bedrock::Safety { class RedactableString; }
 namespace cereal { struct ReflectionCtx; }
@@ -78,8 +77,6 @@ public:
     MCAPI ArrowItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
 
     MCAPI void applyEffect(::Arrow* arrow, ::ItemInstance const& slotItem) const;
-
-    MCAPI ::std::vector<::MobEffectInstance> getMobEffects(int auxValue) const;
     // NOLINTEND
 
 public:
@@ -120,11 +117,5 @@ public:
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

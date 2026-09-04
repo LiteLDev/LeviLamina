@@ -43,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _breed(::VillagerBase& partner) const;
-
     MCAPI ::VillagerBase* _findMate() const;
     // NOLINTEND
 
@@ -64,11 +62,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

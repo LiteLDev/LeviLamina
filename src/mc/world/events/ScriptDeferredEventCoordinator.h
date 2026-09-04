@@ -71,22 +71,7 @@ public:
 
     MCAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCFOLD ::Bedrock::PubSub::
-        Publisher<void(::ScriptDeferredFlushTracker&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&
-        getFlushingCoroutinePublisher();
-
     MCAPI void sendAllDeferredEvents();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
-#endif
     // NOLINTEND
 
 public:

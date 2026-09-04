@@ -68,8 +68,6 @@ public:
         int&                 outAux,
         ::WeakPtr<::Item>&   outItem
     );
-
-    MCFOLD ::RandomValueBounds getValue() const;
     // NOLINTEND
 
 public:
@@ -86,7 +84,7 @@ public:
 
     MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

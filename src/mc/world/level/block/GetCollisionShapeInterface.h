@@ -36,10 +36,4 @@ public:
 
     virtual bool hasPassenger() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

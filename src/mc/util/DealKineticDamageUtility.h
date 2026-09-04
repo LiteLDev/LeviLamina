@@ -23,8 +23,6 @@ MCNAPI void onKineticDamageDealt(::Mob& owner, ::ActorUniqueID const& target, ::
 
 MCNAPI void startDealingKineticDamage(::EntityContext& entityContext, ::KineticDamageSettings const& settings);
 
-MCNAPI void stopDealingKineticDamage(::EntityContext& entityContext);
-
 #ifdef LL_PLAT_C
 MCNAPI void updateFromActorFlags(::Actor& owner);
 #endif

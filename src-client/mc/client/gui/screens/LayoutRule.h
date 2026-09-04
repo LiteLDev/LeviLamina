@@ -27,11 +27,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAnchorTerm(
-        ::UIControl&         relativeTo,
-        ::LayoutVariableType type,
-        ::ui::AnchorPoint    anchorPoint,
-        float                signFactor,
-        ::LayoutRuleTermType termType
+        ::UIControl&               relativeTo,
+        ::LayoutVariableType const type,
+        ::ui::AnchorPoint const    anchorPoint,
+        float const                signFactor,
+        ::LayoutRuleTermType       termType
     );
 
     MCAPI void
@@ -39,29 +39,12 @@ public:
 
     MCAPI void addDependsOnMeEntriesForInvalidation(::VariableRef const& variable, bool checkForDuplicates);
 
-    MCAPI void addDynamicGridItemGridPositionTerm(
-        ::UIControl&          parent,
-        ::UIControl&          control,
-        ::LayoutVariableType  rescalingType,
-        ::ui::OrientationType collectionIndex,
-        int
-    );
-
     MCAPI void addFillGridDimensionTerm(
         ::UIControl&          control,
         ::UIControl&          itemTemplate,
         ::LayoutVariableType  dimensionType,
         ::ui::OrientationType rescalingType
     );
-
-    MCAPI void addGridItemPositionTerms(
-        ::UIControl&          parent,
-        ::UIControl&          control,
-        ::LayoutVariableType  positionType,
-        ::ui::OrientationType rescalingType
-    );
-
-    MCAPI void addGridItemSizeTerms(::UIControl& parent, ::LayoutVariableType sizeType);
 
     MCAPI void
     addGridSizeTerms(::UIControl& control, ::UIControl& gridItemTemplate, ::LayoutVariableType sizeType, float scale);
@@ -74,19 +57,5 @@ public:
         ::LayoutVariableType  dimensionType,
         ::ui::OrientationType rescalingType
     );
-
-    MCAPI void addStackPanelItemPositionTerms(
-        ::UIControl& priorSibling,
-        ::UIControl& positionType,
-        ::LayoutVariableType,
-        ::ui::OrientationType
-    );
-
-    MCAPI void
-    addStackPanelItemRemainderSizeTerms(::UIControl& parent, ::UIControl& control, ::LayoutVariableType sizeType);
-
-    MCAPI void addStackPanelVisibilityTerm(::UIControl& control, ::LayoutVariableType sizeType);
-
-    MCAPI ::std::string toString(::UIControl& control) const;
     // NOLINTEND
 };

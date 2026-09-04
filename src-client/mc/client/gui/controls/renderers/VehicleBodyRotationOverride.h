@@ -15,28 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, float>  mSavedYBodyRot;
     ::ll::TypedStorage<4, 4, float>  mSavedYBodyRotO;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VehicleBodyRotationOverride();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI VehicleBodyRotationOverride(::Mob const& rider, float yBodyRot, float yBodyRotO);
-
-    MCAPI ~VehicleBodyRotationOverride();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob const& rider, float yBodyRot, float yBodyRotO);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

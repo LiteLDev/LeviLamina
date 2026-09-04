@@ -30,10 +30,6 @@ public:
 
     MCNAPI void changeOption(::std::variant<bool, int, float, ::std::string> currentValue);
 
-    MCNAPI bool checkIfOptionChanged() const;
-
-    MCNAPI int getNumberOfChanges() const;
-
     MCNAPI ~OptionChange();
 #endif
     // NOLINTEND

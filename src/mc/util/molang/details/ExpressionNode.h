@@ -52,33 +52,17 @@ public:
 
     MCNAPI ExpressionNode(::Molang::details::ExpressionNode const& rhs);
 
-#ifdef LL_PLAT_C
-    MCNAPI explicit ExpressionNode(float value);
-#endif
-
-    MCNAPI ExpressionNode(::MolangScriptArg value, ::ExpressionOp op);
-
-    MCNAPI bool _buildTree(::brstd::bitset<109, uint64> const& usedTokenFlags, ::MolangVersion molangVersion);
-
     MCNAPI bool _checkAllOperationsAreValid() const;
 
-    MCNAPI bool _optimize(::MolangVersion version, ::RenderParams& outRenderParams, int recursionDepth);
+    MCNAPI bool _optimize(::MolangVersion const version, ::RenderParams& outRenderParams, int recursionDepth);
 
     MCNAPI bool _processBinaryExpressions(::brstd::function_ref<bool(::ExpressionOp)> predicate);
 
     MCNAPI bool _processTernaryAndConditionalExpressions();
 
-    MCNAPI bool _readNextToken(char const*& expression, ::MolangParseConfig const& parseConfig);
+    MCNAPI bool _validate(::MolangVersion const version, bool inLoop, int inAssignmentLHSDepth) const;
 
-    MCNAPI bool _tokenize(
-        char const*                   expression,
-        ::brstd::bitset<109, uint64>& usedTokenFlags,
-        ::MolangParseConfig const&    parseConfig
-    );
-
-    MCNAPI bool _validate(::MolangVersion version, bool inLoop, int inAssignmentLHSDepth) const;
-
-    MCNAPI bool _validateChildrenAreNumerical(::MolangVersion version) const;
+    MCNAPI bool _validateChildrenAreNumerical(::MolangVersion const version) const;
 
     MCNAPI bool areAllChildrenEqual() const;
 
@@ -89,8 +73,6 @@ public:
     MCNAPI uint64 getTreeHash(bool sideEffectsReturnZero) const;
 
     MCNAPI bool getTreeString(::std::string& dest, bool sideEffectsReturnZero) const;
-
-    MCNAPI bool isInitialized() const;
 
     MCNAPI bool isValid() const;
 
@@ -120,8 +102,6 @@ public:
     MCNAPI bool processBinaryExpression(::ExpressionOp op);
 
     MCNAPI bool processMathFuncs();
-
-    MCNAPI bool processMemberAccessors();
 
     MCNAPI bool processNegativesAndLogicalNots();
 
@@ -159,14 +139,6 @@ public:
         ::Molang::details::ExpressionNode const& memberAccessorNode
     );
 
-    MCNAPI static ::std::optional<::MolangScriptArg>
-    _getQueryFunctionAccessor(::std::string const& functionName, ::MolangParseConfig const& parseConfig);
-
-    MCNAPI static ::MolangScriptArg const* _getReferencedMemberVariableScriptArg(
-        ::MolangEvalParams&                      state,
-        ::Molang::details::ExpressionNode const& memberAccessorNode
-    );
-
     MCNAPI static ::MolangScriptArg const* _getScriptArgFromMemberAccessedVariable(
         ::MolangEvalParams&                      state,
         ::Molang::details::ExpressionNode const& memberAccessorNode
@@ -177,10 +149,6 @@ public:
         ::Molang::details::ExpressionNode const& memberAccessorNode,
         ::MolangScriptArg const&                 value
     );
-
-#ifdef LL_PLAT_C
-    MCNAPI static ::std::string& toLowerInPlaceExceptStrings(::std::string& expression);
-#endif
     // NOLINTEND
 
 public:
@@ -189,12 +157,6 @@ public:
     MCNAPI void* $ctor(::Molang::details::ExpressionNode&& rhs);
 
     MCNAPI void* $ctor(::Molang::details::ExpressionNode const& rhs);
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(float value);
-#endif
-
-    MCNAPI void* $ctor(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
 
 public:

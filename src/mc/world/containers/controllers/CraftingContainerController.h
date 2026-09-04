@@ -40,28 +40,15 @@ public:
 
     virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
 
-#ifdef LL_PLAT_S
-    virtual void onRecipeSelected(::Recipe const*, uint64, bool);
-#else // LL_PLAT_C
     virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
-#endif
 
     virtual void clearSelectedRecipe();
 
     virtual ::Recipe const* getSelectedRecipe() const;
 
-#ifdef LL_PLAT_S
-    virtual void setGhostItem(::ItemInstance const&, int, bool);
-#else // LL_PLAT_C
     virtual void setGhostItem(::ItemInstance const& item, int slot, bool showStackSize);
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::ItemInstance const& getGhostItem(int) const;
-#else // LL_PLAT_C
     virtual ::ItemInstance const& getGhostItem(int slot) const;
-#endif
-
     // NOLINTEND
 
 public:
@@ -83,7 +70,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

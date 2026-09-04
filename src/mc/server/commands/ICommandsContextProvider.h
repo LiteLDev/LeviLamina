@@ -29,10 +29,4 @@ public:
         ::std::string const& commandString
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

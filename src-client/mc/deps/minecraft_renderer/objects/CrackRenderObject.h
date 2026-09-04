@@ -16,16 +16,4 @@ public:
     ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>       mCrackMat;
     ::ll::TypedStorage<1, 1, bool>                            mAlphaTest;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CrackRenderObject();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

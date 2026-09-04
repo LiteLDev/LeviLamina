@@ -46,12 +46,6 @@ public:
 
     MCAPI void $applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ParticleSystem

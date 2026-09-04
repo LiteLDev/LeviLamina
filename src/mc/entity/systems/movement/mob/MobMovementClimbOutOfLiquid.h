@@ -6,7 +6,6 @@
 // clang-format off
 class IConstBlockSource;
 class StrictEntityContext;
-class Vec3;
 struct AABBShapeComponent;
 struct MobTravelComponent;
 struct StateVectorComponent;
@@ -17,20 +16,14 @@ namespace MobMovementClimbOutOfLiquid {
 // functions
 // NOLINTBEGIN
 MCAPI void climbOutOfLiquid(
-    ::StrictEntityContext const& aabbShape,
-    ::AABBShapeComponent const&  mobTravel,
-    ::MobTravelComponent const&  stateVector,
-    ::StateVectorComponent&      region,
-    ::IConstBlockSource const&
+    ::StrictEntityContext const&,
+    ::AABBShapeComponent const& aabbShape,
+    ::MobTravelComponent const& mobTravel,
+    ::StateVectorComponent&     stateVector,
+    ::IConstBlockSource const&  region
 );
 
 MCAPI void forSystem(::std::function<void(::TickingSystemWithInfo&&)> const& func);
-
-MCAPI bool isBoxAtOffsetInBlocksOrLiquid(
-    ::AABBShapeComponent const& aabbShape,
-    ::Vec3 const&               offset,
-    ::IConstBlockSource const&  region
-);
 // NOLINTEND
 
 } // namespace MobMovementClimbOutOfLiquid

@@ -60,14 +60,6 @@ public:
         bool                                     processingUpdates,
         bool                                     disableExitWhileInProgress
     );
-
-    MCAPI ::std::string const _getLocalizedImportProgress() const;
-
-    MCAPI ::std::string _getTitleLabel();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -91,13 +83,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI bool $canExit();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

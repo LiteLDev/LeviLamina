@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShieldRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
@@ -46,21 +42,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShieldRecipe(::std::string const& recipeId, ::mce::UUID const* uuid);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID& ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const* uuid);
     // NOLINTEND
 
 public:

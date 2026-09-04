@@ -11,14 +11,11 @@
 // clang-format off
 class IClientInstance;
 class MinecraftUIRenderContext;
-class RectangleArea;
 class Stopwatch;
-class Tessellator;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
 namespace mce { class Mesh; }
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class BohrModelRenderer : public ::MinecraftUICustomRenderer {
@@ -90,18 +87,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BohrModelRenderer();
-
-    MCAPI void _extractElectrons(::Tessellator& t, int electrons, ::RectangleArea const& rect);
-
-    MCAPI void _extractParticleClump(::Tessellator& t, int protons, int neutrons, ::RectangleArea const& rect);
-
-    MCAPI void _extractRings(::Tessellator& t, int rings, ::RectangleArea const& rect);
-
-    MCAPI void _loadTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI void _renderTick(::MinecraftUIRenderContext& renderContext);
-
-    MCAPI void _updateState(::UIControl& owner);
     // NOLINTEND
 
 public:
@@ -118,11 +103,5 @@ public:
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl&, int);
 
     MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

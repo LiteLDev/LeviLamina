@@ -30,42 +30,4 @@ public:
     ::ll::TypedStorage<2, 2, ::MolangVersion>                 mFirstAvailableMolangVersion;
     ::ll::TypedStorage<2, 2, ::MolangVersion>                 mLastAvailableMolangVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangQueryFunction();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MolangQueryFunction(
-        ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor,
-        ::std::string_view                  documentation,
-        uint64                              minArgumentCount,
-        uint64                              maxArgumentCount,
-        ::std::initializer_list<int> const& experiments,
-        ::MolangQueryFunctionReturnType     functionReturnType
-    );
-
-    MCAPI ~MolangQueryFunction();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor,
-        ::std::string_view                  documentation,
-        uint64                              minArgumentCount,
-        uint64                              maxArgumentCount,
-        ::std::initializer_list<int> const& experiments,
-        ::MolangQueryFunctionReturnType     functionReturnType
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

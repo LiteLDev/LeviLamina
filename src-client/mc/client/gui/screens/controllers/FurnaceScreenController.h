@@ -45,18 +45,6 @@ public:
         ::ll::TypedStorage<1, 1, ::ContainerEnumName>   containerEnum;
         ::ll::TypedStorage<8, 32, ::std::string>        tabName;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CategoryTabInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -69,7 +57,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                             mStartHeldFurnaceResultTime;
     ::ll::TypedStorage<1, 1, bool>                            mPocket;
     ::ll::TypedStorage<1, 1, bool>                            mEntered;
-    ::ll::TypedStorage<1, 1, bool>                            mRecipeLocked;
     ::ll::TypedStorage<1, 1, bool>                            mUseRecipeUnlocking;
     ::ll::TypedStorage<4, 4, int>                             mLayout;
     ::ll::TypedStorage<4, 4, int>                             mSavedLayout;
@@ -81,8 +68,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                             mTabFiltersDirty;
     ::ll::TypedStorage<8, 48, ::HashedString>                 mRecipeTag;
     ::ll::TypedStorage<4, 4, int>                             mSelectedLeftTab;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mSelectedCollectionName;
-    ::ll::TypedStorage<4, 4, int>                             mSelectedCollectionIndex;
     // NOLINTEND
 
 public:
@@ -92,7 +77,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FurnaceScreenController() /*override*/;
+    virtual ~FurnaceScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -161,27 +146,11 @@ public:
 
     MCAPI int _findNextLeftSideTab(int dir) const;
 
-    MCAPI ::std::string _getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
-
-    MCAPI ::std::string _getRecipeHoverText(::std::string const& collectionName, int collectionIndex);
-
     MCAPI void _handleClearGrid();
-
-    MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex);
 
     MCAPI bool _isRecipeIngredientSelected(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI bool _isRecipeLocked(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI void _loadPlayerOptions();
-
     MCAPI void _refreshFilters(int tabIndex, bool forceRefresh);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
 
     MCAPI void _savePlayerOptions();
 
@@ -206,12 +175,6 @@ public:
         ::ActorUniqueID                                uniqueId,
         ::HashedString const&                          recipeTag
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -269,13 +232,5 @@ public:
         int                    toIndex,
         ::FadeInIconBehavior   fadeInIconBehavior
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

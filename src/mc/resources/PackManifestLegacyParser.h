@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/resource/PackType.h"
 #include "mc/resources/PackManifestFormat.h"
 
 // auto generated forward declare list
@@ -13,7 +12,6 @@ class PackCapabilityRegistry;
 class PackManifest;
 class PackReport;
 class SemVersion;
-class SubpackInfoCollection;
 namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
@@ -23,40 +21,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static bool isHiddenPack(::mce::UUID const& packUuid);
-
-    MCNAPI static void parseBaseGameVersionRequired(
-        ::Json::Value const&         header,
-        ::std::vector<::std::string> errorPath,
-        ::PackManifest&              manifest,
-        ::PackReport&                report,
-        ::PackManifestFormat         formatVersion
-    );
-
-    MCNAPI static void parseCapabilities(
-        ::PackCapabilityRegistry const& packCapabilityRegistry,
-        ::Json::Value const&            root,
-        ::std::vector<::std::string>    errorPath,
-        ::PackManifest&                 manifest,
-        ::PackReport&                   report,
-        bool
-    );
-
-    MCNAPI static void parseDependencies(
-        ::Json::Value const&         root,
-        ::std::vector<::std::string> errorPath,
-        ::PackManifest&              manifest,
-        ::PackReport&                report,
-        bool                         allowWarnings,
-        bool                         allowVersionStrings
-    );
-
-    MCNAPI static void parseHasEducationMetadata(
-        ::Json::Value const&          root,
-        ::std::vector<::std::string>& errorPath,
-        ::PackManifest&               manifest,
-        ::PackReport&                 report,
-        bool
-    );
 
     MCNAPI static ::Json::Value parseHeader(
         ::Json::Value const&         root,
@@ -79,15 +43,12 @@ public:
         ::std::string const&         dependenciesKey
     );
 
-    MCNAPI static ::PackManifestFormat
-    parseManifestSyntax(::std::string const& manifestContent, ::Json::Value& root, ::PackReport& report);
-
     MCNAPI static void parseMetadata(
         ::Json::Value const&          root,
         ::std::vector<::std::string>& errorPath,
         ::PackManifest&               manifest,
         ::PackReport&                 report,
-        bool
+        bool                          allowWarnings
     );
 
     MCNAPI static void parseModules(
@@ -97,28 +58,6 @@ public:
         ::PackReport&                report,
         bool                         allowWarnings,
         bool                         allowVersionStrings
-    );
-
-    MCNAPI static void parseOptionLockedStateRequired(
-        ::Json::Value const&         header,
-        ::std::vector<::std::string> errorPath,
-        ::PackManifest&              manifest,
-        ::PackReport&                report,
-        ::PackManifestFormat         formatVersion
-    );
-
-    MCNAPI static void parseSettings(
-        ::Json::Value const&         root,
-        ::std::vector<::std::string> errorPath,
-        ::PackManifest&              manifest,
-        ::PackReport&                report
-    );
-
-    MCNAPI static void parseSubpacks(
-        ::Json::Value const&         root,
-        ::std::vector<::std::string> errorPath,
-        ::SubpackInfoCollection&     subpackInfoStack,
-        ::PackReport&                report
     );
 
     MCNAPI static void processBaseGameVersion(
@@ -132,24 +71,8 @@ public:
     MCNAPI static void processCapability(
         ::PackManifest&                 manifest,
         ::PackReport&                   report,
-        ::std::string                   capability,
+        ::std::string const             capability,
         ::PackCapabilityRegistry const& packCapabilityRegistry
-    );
-
-    MCNAPI static ::SemVersion readEngineVersion(
-        ::Json::Value const&          parent,
-        ::std::string const&          element,
-        ::std::vector<::std::string>& errorPath,
-        ::PackReport&                 report,
-        ::PackManifestFormat          formatVersion,
-        ::PackType                    packType
-    );
-
-    MCNAPI static ::BaseGameVersion readRequiredBaseGameVersion(
-        ::Json::Value const&          parent,
-        ::std::string const&          element,
-        ::std::vector<::std::string>& errorPath,
-        ::PackReport&                 report
     );
 
     MCNAPI static ::mce::UUID readUUIDAndReport(

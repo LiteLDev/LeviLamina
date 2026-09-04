@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos const>                       mButtonBlockPos;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>                        mSource;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ButtonPushEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

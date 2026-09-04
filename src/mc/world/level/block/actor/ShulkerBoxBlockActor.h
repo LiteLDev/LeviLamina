@@ -19,7 +19,6 @@ class ILevel;
 class ItemStack;
 class ItemStackBase;
 class SaveContext;
-class Vec3;
 // clang-format on
 
 class ShulkerBoxBlockActor : public ::ChestBlockActor {
@@ -53,7 +52,7 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
@@ -67,36 +66,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Vec3 _calculateActorMovementIntoShulker(
-        ::std::vector<::AABB> const& intersectingAABBs,
-        ::AABB const&                actorAabbAfterMovement
-    ) const;
-
-    MCAPI void _calculateBB();
-
-    MCAPI ::Vec3 _calculateMovementWithCollisions(::BlockSource& region, ::Actor* actor) const;
-
-    MCAPI void _moveCollidedEntities(::BlockSource& region) const;
-
-#ifdef LL_PLAT_C
-    MCAPI uchar getFacingDir();
-#endif
-
-    MCAPI void setFacingDir(uchar facing);
-
-    MCFOLD void setupRedstoneComponent(::BlockSource& region) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
 
     MCAPI static bool itemAllowed(::ItemStackBase const& item);
 
+#ifdef LL_PLAT_C
     MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
+#endif
     // NOLINTEND
 
 public:
@@ -106,7 +84,7 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCFOLD void $onPlace(::BlockSource& region);
+    MCAPI void $onPlace(::BlockSource& region);
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
@@ -114,13 +92,13 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCFOLD bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
     MCAPI void $startOpen(::Actor& actor);
 
     MCAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
@@ -138,8 +116,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

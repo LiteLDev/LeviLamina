@@ -31,36 +31,4 @@ public:
     BlockComponentFinalizerForRendererContext& operator=(BlockComponentFinalizerForRendererContext const&);
     BlockComponentFinalizerForRendererContext(BlockComponentFinalizerForRendererContext const&);
     BlockComponentFinalizerForRendererContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI BlockComponentFinalizerForRendererContext(
-        ::ClientBlockPipeline::SchematicsRepository& schematicsRepo,
-        ::GeometryGroup&                             geometryGroup,
-        ::BlockCullingGroup&                         blockCullingGroup,
-        ::AtlasItemManager const&                    atlasItemManager,
-        ::ClientBlockPipeline::MaterialRepository&   materialRepository,
-        ::Experiments const&                         experiments,
-        ::TextureShiftManager const&                 textureShiftManager
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::ClientBlockPipeline::SchematicsRepository& schematicsRepo,
-        ::GeometryGroup&                             geometryGroup,
-        ::BlockCullingGroup&                         blockCullingGroup,
-        ::AtlasItemManager const&                    atlasItemManager,
-        ::ClientBlockPipeline::MaterialRepository&   materialRepository,
-        ::Experiments const&                         experiments,
-        ::TextureShiftManager const&                 textureShiftManager
-    );
-#endif
-    // NOLINTEND
 };

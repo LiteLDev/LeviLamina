@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/v2/PoolElementStructureSection.h"
+
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
@@ -34,29 +36,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    JigsawStructurePostprocessAction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::ServerLevel& level, ::Dimension& dimension) /*override*/;
 
     virtual void serialize(::CompoundTag& tag) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI JigsawStructurePostprocessAction(
-        ::std::unique_ptr<::br::worldgen::PoolElementStructureSection> section,
-        ::BlockPos                                                     structureOrigin,
-        ::BoundingBox                                                  chunkBounds,
-        ::br::worldgen::JigsawReplacement                              jigsawReplacement,
-        bool                                                           includeEntities,
-        ::br::worldgen::LiquidSettings                                 liquidSettings,
-        ::BlockSource*                                                 regionOverride
-    );
     // NOLINTEND
 
 public:
@@ -72,20 +56,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::br::worldgen::PoolElementStructureSection> section,
-        ::BlockPos                                                     structureOrigin,
-        ::BoundingBox                                                  chunkBounds,
-        ::br::worldgen::JigsawReplacement                              jigsawReplacement,
-        bool                                                           includeEntities,
-        ::br::worldgen::LiquidSettings                                 liquidSettings,
-        ::BlockSource*                                                 regionOverride
-    );
     // NOLINTEND
 
 public:

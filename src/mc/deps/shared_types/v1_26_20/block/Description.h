@@ -34,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
-
     MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
@@ -56,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
     // NOLINTEND
 

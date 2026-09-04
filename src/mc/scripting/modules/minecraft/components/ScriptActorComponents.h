@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorComponents();
-
     MCAPI ::std::unordered_map<
         ::std::string_view,
         ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory>> const&
@@ -53,12 +51,6 @@ public:
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&                 actorComponentTypesEnum,
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };
 

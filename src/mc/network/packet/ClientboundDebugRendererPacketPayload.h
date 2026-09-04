@@ -38,30 +38,4 @@ public:
     ::ll::TypedStorage<8, 80, ::std::optional<::ClientboundDebugRendererPacketPayload::DebugMarkerData>>
         mDebugMarkerData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientboundDebugRendererPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ClientboundDebugRendererPacketPayload(::ClientboundDebugRendererPacketPayload::PayloadType type);
-
-    MCAPI ClientboundDebugRendererPacketPayload(
-        ::std::string               text,
-        ::mce::Color const&         color,
-        ::Vec3 const&               position,
-        ::std::chrono::milliseconds duration
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientboundDebugRendererPacketPayload::PayloadType type);
-
-    MCAPI void*
-    $ctor(::std::string text, ::mce::Color const& color, ::Vec3 const& position, ::std::chrono::milliseconds duration);
-    // NOLINTEND
 };

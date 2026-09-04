@@ -39,10 +39,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mFinishFlick;
     ::ll::TypedStorage<4, 4, float>                                   mTargetPntMovedDist;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void update(float dt);
-    // NOLINTEND
 };

@@ -5,9 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Level;
-struct ActorUniqueID;
-struct TransformationDescription;
 // clang-format on
 
 class TransformationComponent {
@@ -20,30 +17,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransformationComponent();
-
-    MCFOLD int getDelayTicks() const;
-
-    MCAPI void initFromDefinition(::Actor& actor);
-
-    MCAPI void maintainOldData(
-        ::Actor&                           originalActor,
-        ::Actor&                           transformed,
-        ::TransformationDescription const& transformation,
-        ::ActorUniqueID const&             ownerID,
-        ::Level const&                     level
-    );
-
     MCAPI void reloadComponent(::Actor& actor);
 
-    MCFOLD void setDelayTicks(int delayTicks);
-
     MCAPI void transformIfAble(::Actor& actor, bool shouldRemove);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

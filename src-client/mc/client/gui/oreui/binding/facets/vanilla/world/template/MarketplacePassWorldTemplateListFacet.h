@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/SeeMoreRouteData.h"
@@ -21,7 +21,7 @@ namespace World { class MarketplacePassWorldTemplateManager; }
 namespace OreUI {
 
 class MarketplacePassWorldTemplateListFacet
-: public ::OreUI::FacetBase<::OreUI::MarketplacePassWorldTemplateListFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::MarketplacePassWorldTemplateListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,10 +64,6 @@ public:
 
     MCAPI ::OreUI::SeeMoreRouteData _getSeeMoreRouteData() const;
 
-    MCAPI void _initWorldTemplates();
-
-    MCAPI bool _tryReadWorldTemplates();
-
     MCAPI void _updateBindings(
         ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings>&& templateBindings,
         ::OreUI::SeeMoreRouteData&&                                    seeMoreRouteData
@@ -105,12 +101,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -53,18 +53,6 @@ public:
         Reference& operator=(Reference const&);
         Reference(Reference const&);
         Reference();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Reference();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct AssetCollection {
@@ -83,18 +71,6 @@ public:
         AssetCollection& operator=(AssetCollection const&);
         AssetCollection(AssetCollection const&);
         AssetCollection();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~AssetCollection();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -127,12 +103,6 @@ public:
     MCNAPI void addIdentifier(int assetType, ::std::string const& identifier);
 
     MCNAPI void addReference(int assetType, ::std::string const& identifier, ::std::string contextString);
-
-#ifdef LL_PLAT_C
-    MCNAPI void finishLoading();
-
-    MCNAPI bool isClient() const;
-#endif
 
     MCNAPI void reset();
 

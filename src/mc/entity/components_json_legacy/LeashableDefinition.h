@@ -21,6 +21,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::LeashablePreset>> mPresets;
     ::ll::TypedStorage<1, 1, bool>                              mCanBeCut;
     ::ll::TypedStorage<1, 1, bool>                              mCanBeStolen;
+    ::ll::TypedStorage<1, 1, bool>                              mUnleashOnRemoval;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnLeash;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnUnleash;
     ::ll::TypedStorage<1, 1, bool>                              mOnUnleashInteractOnly;
@@ -32,8 +33,6 @@ public:
     MCAPI void initialize(::EntityContext& entity, ::LeashableComponent& component) const;
 
     MCAPI void uninitialize(::EntityContext& entity, ::LeashableComponent&) const;
-
-    MCAPI ~LeashableDefinition();
     // NOLINTEND
 
 public:
@@ -42,11 +41,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LeashableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

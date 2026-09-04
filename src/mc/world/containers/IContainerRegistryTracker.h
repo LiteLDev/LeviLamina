@@ -33,10 +33,4 @@ public:
 
     virtual ~IContainerRegistryTracker() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

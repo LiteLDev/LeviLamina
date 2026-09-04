@@ -14,7 +14,6 @@ struct TargetedConfig {
     struct {
         bool enable                      = true;
         bool subChunkRequest             = true;
-        bool rakNet                      = true;
         bool simulatedPlayerChunkLoading = true;
     } vulnerabilityFixes;
 };

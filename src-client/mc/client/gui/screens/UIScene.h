@@ -29,7 +29,6 @@ class ScreenContext;
 class ScreenController;
 class ScreenView;
 class TaskGroup;
-class UIControl;
 class UIControlFactory;
 class UIMeasureStrategy;
 class VisualTree;
@@ -127,7 +126,7 @@ public:
         ::FocusImpact                     focusImpact
     ) /*override*/;
 
-    virtual void handlePointerPressed(bool) /*override*/;
+    virtual void handlePointerPressed(bool pressed) /*override*/;
 
     virtual void handleLicenseChanged() /*override*/;
 
@@ -145,9 +144,9 @@ public:
 
     virtual void frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
-    virtual void applyInput(float) /*override*/;
+    virtual void applyInput(float a) /*override*/;
 
     virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
@@ -232,13 +231,7 @@ public:
         ::std::weak_ptr<::ITTSEventManager>                     ttsEventManager
     );
 
-    MCAPI ::ScreenController& getController();
-
-    MCAPI ::std::shared_ptr<::UIControl> getFocusedControl() const;
-
     MCAPI void setInitializedCallback(::std::function<void()> initializedCallback);
-
-    MCAPI bool wasDirectionalButtonPressed() const;
     // NOLINTEND
 
 public:
@@ -329,7 +322,7 @@ public:
 
     MCAPI bool $handlePointerLocation(::PointerLocationEventData const& pointerLocationData, ::FocusImpact focusImpact);
 
-    MCFOLD void $handlePointerPressed(bool);
+    MCFOLD void $handlePointerPressed(bool pressed);
 
     MCAPI void $handleLicenseChanged();
 
@@ -347,9 +340,9 @@ public:
 
     MCAPI void $frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext);
 
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCAPI void $applyInput(float);
+    MCAPI void $applyInput(float a);
 
     MCAPI void $handleInputModeChanged(::InputMode inputMode);
 
@@ -414,11 +407,5 @@ public:
     MCAPI int $getScreenVersion() const;
 
     MCAPI void $onDelete(::CachedScenes& cache, ::TaskGroup& taskGroup);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

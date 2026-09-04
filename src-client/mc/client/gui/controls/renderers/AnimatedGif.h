@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
-namespace mce { struct Image; }
 // clang-format on
 
 class AnimatedGif {
@@ -23,37 +22,5 @@ public:
     ::ll::TypedStorage<4, 4, ::gif::FrameDisposalMethod>              mFrameDisposal;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::Color>>            mFrameCache;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::Color>>            mPrevFrameCache;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnimatedGif();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AnimatedGif(::AnimatedGif const&);
-
-    MCAPI ::mce::Image makeCurrentFrame();
-
-    MCAPI ::AnimatedGif& operator=(::AnimatedGif&&);
-
-    MCAPI ::AnimatedGif& operator=(::AnimatedGif const&);
-
-    MCAPI bool setAnimationProgress(::std::chrono::steady_clock::time_point now);
-
-    MCAPI ~AnimatedGif();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AnimatedGif const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

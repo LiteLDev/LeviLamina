@@ -135,7 +135,7 @@ Expected<Subscription> detail::ScreenSessionImpl::listen(BindingSlot& binding, L
     if (player == nullptr) {
         return makeI18nStringError<"DDUI player is no longer available">();
     }
-    auto& sync = player->getDataStoreSync();
+    auto& sync = *player->mDataStoreSync;
     ensureNativeSubscription(binding, sync);
 
     auto subscription = std::make_unique<Subscription::Impl>(weak_from_this(), binding, sync, std::move(callback));
@@ -170,7 +170,7 @@ Expected<> detail::ScreenSessionImpl::setClientWritable(BindingSlot& binding, bo
         }
         return makeI18nStringError<"DDUI player is no longer available">();
     }
-    auto& sync = player->getDataStoreSync();
+    auto& sync = *player->mDataStoreSync;
 
     if (!writable) {
         sync.setPropertyUpdateAllowed(binding.property->datastore, binding.property->property, binding.path, false);
@@ -276,8 +276,8 @@ void detail::ScreenSessionImpl::restoreLastGood(BindingSlot& binding) noexcept {
         return;
     }
 
-    player->getDataStoreSync()
-        .setPropertyUpdateAllowed(binding.property->datastore, binding.property->property, binding.path, false);
+    player->mDataStoreSync
+        ->setPropertyUpdateAllowed(binding.property->datastore, binding.property->property, binding.path, false);
     binding.clientWriteState = BindingSlot::ClientWriteState::Disabled;
     binding.resetLastGood();
     releaseNativeSubscriptionIfUnused(binding);

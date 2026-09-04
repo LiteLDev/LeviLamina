@@ -35,13 +35,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CatalogPackCollector() /*override*/;
+    virtual ~CatalogPackCollector() /*override*/ = default;
 
     virtual void start(bool allowed) /*override*/;
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int end, int) /*override*/;
+    virtual ::HandleRangeResult handleRange(int, int end) /*override*/;
     // NOLINTEND
 
 public:
@@ -59,24 +59,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $start(bool allowed);
 
     MCAPI bool $exhausted() const;
 
-    MCAPI ::HandleRangeResult $handleRange(int end, int);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::HandleRangeResult $handleRange(int, int end);
     // NOLINTEND
 };

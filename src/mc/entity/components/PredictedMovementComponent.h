@@ -107,12 +107,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct PredictionDbgWindowData {
@@ -156,20 +150,6 @@ public:
         PredictionDbgData& operator=(PredictionDbgData const&);
         PredictionDbgData(PredictionDbgData const&);
         PredictionDbgData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::std::string toString() const;
-
-        MCAPI ~PredictionDbgData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct RuntimePredictionData {
@@ -229,14 +209,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI void reset();
-
-#ifdef LL_PLAT_C
-        MCAPI void updateRuntimeData(
-            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& newItem,
-            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& prevNewItem,
-            uint64                                                                    currentHistoryItemSize
-        );
-#endif
         // NOLINTEND
 
     public:
@@ -265,7 +237,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
+#endif
 
         MCAPI void _clearHistory();
 
@@ -288,22 +262,6 @@ public:
             ::MoveActorAbsoluteData const&                 moveData,
             ::std::chrono::steady_clock::time_point const& receiveTimepoint
         );
-
-        MCFOLD ::std::deque<::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>> const&
-        getHistory() const;
-
-#ifdef LL_PLAT_C
-        MCFOLD uint64 getHistorySize() const;
-
-        MCAPI ::std::tuple<
-            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>,
-            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>>
-        getLastTwoHistoryItems() const;
-#endif
-
-        MCAPI void pruneHistory(uint beforeSequenceId);
-
-        MCAPI ::std::string toString();
         // NOLINTEND
     };
 
@@ -388,24 +346,18 @@ public:
 
         MCAPI bool $isAddedActorItem() const;
 
-        MCFOLD bool $isMotionHintItem() const;
+        MCAPI bool $isMotionHintItem() const;
 
-        MCFOLD ::Vec3 const& $getPos() const;
+        MCAPI ::Vec3 const& $getPos() const;
 
         MCFOLD ::Vec2 const& $getRot() const;
 
-        MCFOLD float $getYHeadRot() const;
+        MCAPI float $getYHeadRot() const;
 
         MCFOLD bool $isOnGround() const;
 #endif
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -457,17 +409,11 @@ public:
 
         MCAPI ::Vec2 const& $getRot() const;
 
-        MCFOLD float $getYHeadRot() const;
+        MCAPI float $getYHeadRot() const;
 
         MCFOLD bool $isOnGround() const;
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -505,29 +451,12 @@ public:
         ::PredictedMovementComponent::PredictionDbgData const& debugData
     ) const;
 
-    MCAPI void _debugLog(
-        ::PredictedMovementSystemParams&                       params,
-        ::MovePredictionType                                   type,
-        ::PredictedMovementComponent::PredictionDbgWindowData& debugWindowData
-    ) const;
-
-    MCAPI bool _tryInterpolate(
-        ::PredictedMovementSystemParams&               params,
-        ::std::chrono::steady_clock::time_point const& renderTimepoint
-    );
-
     MCAPI void reset();
 
     MCAPI void
     tickNextPosition(::PredictedMovementSystemParams& params, ::std::chrono::steady_clock::time_point const& timepoint);
 
     MCAPI ~PredictedMovementComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isPredictedMovementEnabled(::PredictedMovementComponent const* component);
     // NOLINTEND
 
 public:

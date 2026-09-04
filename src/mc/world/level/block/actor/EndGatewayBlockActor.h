@@ -4,11 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockActorDataPacket;
 class BlockSource;
 class BlockVolume;
@@ -19,7 +18,7 @@ class SaveContext;
 class WorldGenerator;
 // clang-format on
 
-class EndGatewayBlockActor : public ::BlockActor {
+class EndGatewayBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,29 +47,7 @@ public:
 
     virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI float getCooldownPercentage() const;
-#endif
-
-    MCAPI int getParticleAmount(::BlockSource& region, ::BlockPos const& pos) const;
-
-#ifdef LL_PLAT_C
-    MCAPI float getSpawnPercentage() const;
-
-    MCAPI bool isCoolingDown() const;
-
-    MCAPI bool isSpawning() const;
-#endif
-
-    MCAPI void setExitPosition(::BlockPos const& exitPosition);
-
-    MCAPI void teleportEntity(::Actor& entity);
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
@@ -78,12 +55,7 @@ public:
     // NOLINTBEGIN
     MCAPI static int _getHighestSection(::WorldGenerator& endGenerator, ::BlockVolume& box, ::BlockPos const& pos);
 
-    MCAPI static bool _isSafeToTeleport(::BlockSource const& region, ::BlockPos const& pos);
-
     MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
-
-    MCAPI static ::BlockPos
-    findTallestBlock(::BlockSource& region, ::BlockPos const& around, int dist, bool allowBedrock);
 
     MCAPI static ::BlockPos findValidSpawnAround(
         ::BlockSource&    region,
@@ -109,14 +81,8 @@ public:
 
     MCAPI void $triggerEvent(int b0, int b1);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncOptionsDataProvider() /*override*/;
+    virtual ~AsyncOptionsDataProvider() /*override*/ = default;
 
     virtual void setChangeListener(::std::function<void()> callback) /*override*/;
 
@@ -61,12 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setChangeListener(::std::function<void()> callback);
@@ -77,7 +71,7 @@ public:
 
     MCAPI int $getValue() const;
 
-    MCFOLD void $setValue(int value);
+    MCAPI void $setValue(int value);
 
     MCFOLD ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&

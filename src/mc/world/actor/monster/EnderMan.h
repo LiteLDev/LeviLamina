@@ -18,6 +18,7 @@ class EntityContext;
 class MobEffectInstance;
 struct ActorDefinitionIdentifier;
 struct HurtEffectsSettings;
+struct HurtParameters;
 // clang-format on
 
 class EnderMan : public ::Monster {
@@ -49,7 +50,7 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -89,18 +90,13 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

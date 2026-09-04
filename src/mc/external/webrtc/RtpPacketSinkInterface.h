@@ -17,12 +17,6 @@ public:
 
     virtual void OnRtpPacket(::webrtc::RtpPacketReceived const& parsed_packet) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

@@ -11,7 +11,6 @@
 class Actor;
 class BlockPos;
 class CompoundTag;
-class Item;
 class ItemStack;
 class Player;
 class Vec3;
@@ -48,10 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraItemComponentLegacy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CameraItemComponentLegacy() /*override*/ = default;
@@ -60,7 +55,7 @@ public:
 
     virtual void use(::ItemStack& instance, ::Player& player) /*override*/;
 
-    virtual void releaseUsing(::ItemStack& instance, ::Player& player, int) /*override*/;
+    virtual void releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft) /*override*/;
 
     virtual bool
     useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&) /*override*/;
@@ -86,16 +81,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CameraItemComponentLegacy(::Item& owner);
-
-    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
-        ::ItemStack const& instance,
-        ::Actor&           actor,
-        ::BlockPos const&  blockPos,
-        uchar              face,
-        ::Vec3&            spawnPos
-    ) const;
-
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion);
@@ -104,13 +89,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
-    // NOLINTEND
+    MCAPI static ::CameraItemComponentLegacy::UseAction
+    _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Item& owner);
+    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
@@ -120,23 +102,27 @@ public:
 
     MCAPI void $use(::ItemStack& instance, ::Player& player);
 
-    MCAPI void $releaseUsing(::ItemStack& instance, ::Player& player, int);
+    MCAPI void $releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft);
 
     MCAPI bool $useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&);
 
     MCAPI bool $canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const;
 
-    MCFOLD float $blackBarsDuration() const;
+    MCAPI float $blackBarsDuration() const;
 
     MCFOLD float $blackBarsScreenRatio() const;
 
-    MCFOLD float $shutterScreenRatio() const;
+    MCAPI float $shutterScreenRatio() const;
 
+#ifdef LL_PLAT_S
+    MCAPI float $shutterDuration() const;
+#else // LL_PLAT_C
     MCFOLD float $shutterDuration() const;
+#endif
 
-    MCFOLD float $pictureDuration() const;
+    MCAPI float $pictureDuration() const;
 
-    MCFOLD float $slideAwayDuration() const;
+    MCAPI float $slideAwayDuration() const;
 
     MCAPI void $registerCallbacks(::CameraCallbacks* callbacks);
 

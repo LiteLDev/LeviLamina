@@ -17,18 +17,13 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingServiceTelemetry() = default;
 
-    virtual void fireEventSignalServiceConnect(::SignalServiceConnectStage, ::Json::Value const&) const = 0;
+    virtual void
+    fireEventSignalServiceConnect(::SignalServiceConnectStage stage, ::Json::Value const& properties) const = 0;
 
-    virtual void fireEventSignalMessagePerformance(::MessagePerformance const&) const = 0;
+    virtual void fireEventSignalMessagePerformance(::MessagePerformance const& event) const = 0;
 
     virtual ::std::string getAppSessionId() const = 0;
 
     virtual ::std::string getCorrelationId() const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

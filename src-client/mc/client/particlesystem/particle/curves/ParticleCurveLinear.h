@@ -48,12 +48,6 @@ public:
 
     MCFOLD ::ParticleSystem::ParticleCurveType $getCurveType() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ParticleSystem

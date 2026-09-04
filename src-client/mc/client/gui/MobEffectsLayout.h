@@ -47,21 +47,11 @@ public:
 
     MCAPI void _updatePositions();
 
-    MCFOLD ::std::vector<::EffectDisplayInfo>& getEffectsDisplayInfo();
-
-    MCFOLD ::RectangleArea const& getTouchArea() const;
-
     MCAPI void onConfigChanged(::Config const& c);
 
     MCAPI void setHeight(int val);
 
-    MCFOLD void setOffsetToStartingPositionX(int val);
-
-    MCFOLD void setOffsetToStartingPositionY(int val);
-
     MCAPI void setWidth(int val);
-
-    MCAPI void tick();
     // NOLINTEND
 
 public:

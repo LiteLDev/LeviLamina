@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isModuleAllowed(::std::string const& moduleName) const;
-
 #ifdef LL_PLAT_C
     MCNAPI void setAllModulesAllowed();
 #endif
@@ -35,7 +33,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::std::string const& sWildCardModuleName();
+#endif
     // NOLINTEND
 
 public:

@@ -60,10 +60,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReplaceItemCommand();
-
-    MCAPI void
-    _outputError(::CommandOutput& output, ::Util::ReplacementResults errorDetails, ::std::string const& itemName) const;
+    MCAPI void _outputError(
+        ::CommandOutput&                 output,
+        ::Util::ReplacementResults const errorDetails,
+        ::std::string const&             itemName
+    ) const;
     // NOLINTEND
 
 public:
@@ -73,29 +74,10 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ReplaceItemCommand::ReplaceMode>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ReplaceItemCommand::TargetType>();
-// clang-format on

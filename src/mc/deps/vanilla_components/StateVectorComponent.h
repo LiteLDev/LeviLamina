@@ -13,10 +13,4 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mPosPrev;
     ::ll::TypedStorage<4, 12, ::Vec3> mPosDelta;
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Vec3 const& ABS_LIMIT();
-    // NOLINTEND
 };

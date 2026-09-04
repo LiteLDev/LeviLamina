@@ -30,9 +30,7 @@ LL_STATIC_HOOK(
     char const*               pszFormat,
     char*                     va
 ) {
-    if (getLeviConfig().modules.disableAutoCompactionLog
-        && std::string_view{func}.starts_with("DBStorage::_scheduleNextAutoCompaction")) {
-        static_assert(&DBStorage::_scheduleNextAutoCompaction); // make sure function exist
+    if (getLeviConfig().modules.disableAutoCompactionLog && std::string_view{func}.starts_with("DBStorage::")) {
         return;
     }
     origin(category, channelMask, rule, area, priority, func, line, pszFormat, va);
@@ -40,35 +38,16 @@ LL_STATIC_HOOK(
 
 auto serverLogger = io::LoggerRegistry::getInstance().getOrCreate("Server");
 
-int printfbufc(char const* format, va_list pargs) {
-    int     retval;
-    va_list argcopy;
-    va_copy(argcopy, pargs);
-    retval = vsnprintf(nullptr, 0, format, argcopy);
-    va_end(argcopy);
-    return retval;
-}
-
 LL_STATIC_HOOK(BedrockLogOutHook, HookPriority::Normal, BedrockLogOut, void, uint priority, char const* pszFormat, ...)
 try {
-    bool        success = false;
     std::string buffer;
     va_list     va;
     va_start(va, pszFormat);
-    auto bufferCount = printfbufc(pszFormat, va);
-    if (bufferCount >= 0) {
-        success = true;
-    }
-    if (success && bufferCount > 0) {
-        buffer = std::string(bufferCount, '\0');
-        vsnprintf(buffer.data(), buffer.size() + 1, pszFormat, va);
+    if (auto msg = va_arg(va, char const*); msg) {
+        buffer = msg;
     }
     va_end(va);
 
-    if (!success) {
-        serverLogger->fatal("!!! Unable to format log output message !!!");
-        return;
-    }
     if (buffer.ends_with('\n')) {
         buffer.pop_back();
         if (buffer.ends_with('\r')) {
@@ -119,17 +98,18 @@ LL_TYPE_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,
     HookPriority::Normal,
     ::BedrockLog::LogDetails,
-    &::BedrockLog::LogDetails::_appendLogEntryMetadata,
-    void,
-    std::string&,
+    &::BedrockLog::LogDetails::_makeLogString,
     std::string,
-    ::LogAreaID,
-    uint,
-    std::string,
-    int,
-    int
+    std::string        timestamp,
+    LogAreaID          area,
+    uint               priority,
+    std::string        functionName,
+    int                lineNumber,
+    int                messageId,
+    std::string const& logMessage
 ) {
     // Block from adding LOG metadata
+    return logMessage;
 }
 
 LL_TYPE_INSTANCE_HOOK(
@@ -154,7 +134,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 using HookReg = memory::
-    HookRegistrar<DiagnosticsLogHook, BedrockLogOutHook, AppendLogEntryMetadataHook, SetOfflinePingResponseHook>;
+    HookRegistrar<DiagnosticsLogHook, SetOfflinePingResponseHook, BedrockLogOutHook, AppendLogEntryMetadataHook>;
 
 static HookReg hookRegister;
 

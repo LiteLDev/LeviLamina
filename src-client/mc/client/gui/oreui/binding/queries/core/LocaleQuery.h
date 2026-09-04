@@ -38,14 +38,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
-    // NOLINTEND
 };
 
 } // namespace OreUI

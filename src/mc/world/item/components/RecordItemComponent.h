@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/sound/SoundEventIdentifier.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -12,7 +12,7 @@
 class HashedString;
 class SemVersion;
 namespace Bedrock::Safety { class RedactableString; }
-namespace SharedTypes::v1_20_50 { struct RecordItemComponent; }
+namespace SharedTypes::Beta { struct RecordItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,29 +20,23 @@ class RecordItemComponent : public ::NetworkedItemComponent<::RecordItemComponen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
-    ::ll::TypedStorage<4, 4, float>                                  mDuration;
-    ::ll::TypedStorage<4, 4, int>                                    mComparatorSignal;
+    ::ll::TypedStorage<8, 40, ::SoundEventIdentifier> mSoundEvent;
+    ::ll::TypedStorage<4, 4, float>                   mDuration;
+    ::ll::TypedStorage<4, 4, int>                     mComparatorSignal;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RecordItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecordItemComponent();
-
-    MCAPI explicit RecordItemComponent(::SharedTypes::v1_20_50::RecordItemComponent component);
-
-    MCAPI RecordItemComponent(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
+    MCAPI explicit RecordItemComponent(::SharedTypes::Beta::RecordItemComponent component);
 
     MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
-    MCFOLD int getComparatorSignal() const;
-
-    MCFOLD float getDuration() const;
-
     MCAPI ::std::string getRecordDescription() const;
-
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent getSound() const;
     // NOLINTEND
 
 public:
@@ -55,18 +49,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-
-    MCAPI static ::std::string getRecordNameNoPrefix(::SharedTypes::Legacy::LevelSoundEvent sound);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::RecordItemComponent component);
-
-    MCAPI void* $ctor(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
+    MCAPI void* $ctor(::SharedTypes::Beta::RecordItemComponent component);
     // NOLINTEND
 
 public:

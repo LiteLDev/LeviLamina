@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class BlockPaletteSelectedIndexChangedPayload
@@ -30,24 +25,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BlockPaletteSelectedIndexChangedPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit BlockPaletteSelectedIndexChangedPayload(int index);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(int index);
     // NOLINTEND
 
 public:

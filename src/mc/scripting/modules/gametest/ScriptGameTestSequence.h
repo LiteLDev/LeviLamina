@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptGameTestSequence(::gametest::GameTestSequence& sequence, ::Scripting::WeakLifetimeScope scope);
-
     MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenExecute(::Scripting::Closure<void()> fn);
 
@@ -49,19 +47,11 @@ public:
 
     MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int tickDelay);
 
-    MCAPI void thenSucceed();
-
     MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenWait(::Scripting::Closure<void()> fn);
 
     MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenWaitAfter(int tickDelay, ::Scripting::Closure<void()> fn);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::gametest::GameTestSequence& sequence, ::Scripting::WeakLifetimeScope scope);
     // NOLINTEND
 };
 

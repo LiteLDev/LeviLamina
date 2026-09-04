@@ -69,12 +69,6 @@ public:
 
     virtual void remove(::OreUI::Detail::IdType const& id) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI::Detail

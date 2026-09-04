@@ -55,9 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _parseEvent(::Json::Value const& event, ::std::vector<::HashedString>& eventList);
+    MCAPI static void _parseEvent(::Json::Value const& event, ::std::vector<::HashedString>& eventList);
     // NOLINTEND
 
 public:
@@ -85,12 +85,6 @@ public:
         ::std::chrono::nanoseconds const                  lastAge,
         ::std::chrono::nanoseconds                        age
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

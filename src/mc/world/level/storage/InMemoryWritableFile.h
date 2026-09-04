@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class InMemoryFile;
-// clang-format on
-
 class InMemoryWritableFile : public ::leveldb::WritableFile {
 public:
     // member variables
@@ -35,18 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit InMemoryWritableFile(::std::shared_ptr<::InMemoryFile> file);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::InMemoryFile> file);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::leveldb::Status $Append(::leveldb::Slice const& data);
@@ -58,11 +41,5 @@ public:
     MCNAPI ::leveldb::Status $Sync();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

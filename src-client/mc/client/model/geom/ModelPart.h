@@ -21,7 +21,6 @@ class BoneOrientation;
 class Cube;
 class DataDrivenGeometry;
 class GeometryPtr;
-class MaterialVariants;
 class Matrix;
 class MinecraftGameplayGraphicsResources;
 class Model;
@@ -57,19 +56,8 @@ public:
     public:
         // prevent constructor by default
         TextureMesh& operator=(TextureMesh const&);
+        TextureMesh(TextureMesh const&);
         TextureMesh();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI TextureMesh(::ModelPart::TextureMesh const&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::ModelPart::TextureMesh const&);
-        // NOLINTEND
     };
 
 public:
@@ -131,15 +119,6 @@ public:
 
     MCAPI ModelPart(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
 
-    MCAPI void _addBoxMapTexWithFaceUVs(::Vec3 const& point0, ::Geometry::Box const& box);
-
-    MCAPI void _adjustUVsInward(
-        ::std::vector<::Vec2>&                                        uvs,
-        ::std::vector<::std::array<::Geometry::NodeVertex, 3>> const& tris,
-        ::std::vector<::std::array<::Geometry::NodeVertex, 4>> const& quads,
-        ::Vec2 const&                                                 textureSize
-    );
-
     MCAPI void _copyBoneMatricesToSkinnedMeshes(
         ::RenderParams&                      renderParams,
         ::gsl::span<::BoneOrientation const> boneOrientations,
@@ -149,9 +128,6 @@ public:
     );
 
     MCAPI void addBox(::Vec3 const& point0, ::Vec3 const& extents, bool mirror, float g, ::mce::Color const& color);
-
-    MCAPI ::ModelPart&
-    addBoxMapTex(::Vec3 const& point0, ::Vec3 const& extents, ::TextureOffset const& inTexOffset, bool mirror, float g);
 
     MCAPI void assignPartToGroup(::Model& model, bool forceToUniqueGroup, ::DataDrivenGeometry* owningGeometry);
 
@@ -177,34 +153,22 @@ public:
 
     MCAPI void expandAABB(::AABB& bb) const;
 
-    MCAPI void expandAABBWithCompiledGeometry(::AABB& bb) const;
-
     MCAPI void LL_CC_V generateBoneTransformMatrices(
         ::RenderParams&                renderParams,
         ::gsl::span<::BoneOrientation> boneOrientations,
         ::RenderController const*      renderControllerId,
-        ::DirectX::XMMATRIX            boneToEntitySpaceMatrix
+        ::DirectX::XMMATRIX const      boneToEntitySpaceMatrix
     );
-
-    MCFOLD bool getNeverRender() const;
-
-    MCAPI ::Vec3 const& getOrigin() const;
-
-    MCFOLD ::ModelPart* getParent() const;
-
-    MCAPI void getPolyCounts(int& triVertexCount, int& quadVertexCount);
-
-    MCAPI void getTotalPolyCounts(uint64& triVertexCount, uint64& quadVertexCount) const;
 
     MCAPI bool isVisible(::RenderParams& renderParams, ::RenderController const* renderControllerId) const;
 
     MCAPI bool load(::GeometryPtr source, ::std::string_view nodeName, ::ModelPart* parentPart);
 
     MCAPI bool load(
-        ::std::shared_ptr<::ActorResourceDefinition> resourceDefinition,
-        ::GeometryPtr                                source,
-        ::std::string_view                           nodeName,
-        ::ModelPart*                                 parentPart
+        ::std::shared_ptr<::ActorResourceDefinition> const resourceDefinition,
+        ::GeometryPtr const                                source,
+        ::std::string_view                                 nodeName,
+        ::ModelPart*                                       parentPart
     );
 
     MCAPI void loadBoxes(
@@ -217,31 +181,22 @@ public:
     MCAPI void
     loadPolyMesh(::Vec3 const& newPivot, ::Vec3 const& bindPoseRotation, ::Geometry::NodePolyMesh const& sourceMesh);
 
-    MCAPI void loadTextureMeshes(
-        ::std::shared_ptr<::ActorResourceDefinition> resourceDefinition,
-        ::Vec3 const&                                newPivot,
-        ::Vec3 const&                                sourceTextureMeshes,
-        ::std::vector<::Geometry::NodeTextureMesh> const&
-    );
-
     MCAPI bool loadWithOrientation(
-        ::std::shared_ptr<::ActorResourceDefinition> resourceDefinition,
-        ::GeometryPtr                                source,
-        ::std::string_view                           nodeName,
-        ::Vec3 const&                                basePos,
-        ::Vec3 const&                                pivot,
-        ::ModelPart*                                 parentPart
+        ::std::shared_ptr<::ActorResourceDefinition> const resourceDefinition,
+        ::GeometryPtr const                                source,
+        ::std::string_view                                 nodeName,
+        ::Vec3 const&                                      basePos,
+        ::Vec3 const&                                      pivot,
+        ::ModelPart*                                       parentPart
     );
 
     MCAPI bool loadWithOrientation_(
-        ::GeometryPtr      source,
-        ::std::string_view nodeName,
-        ::Vec3 const&      basePos,
-        ::Vec3 const&      pivot,
-        ::ModelPart*       parentPart
+        ::GeometryPtr const source,
+        ::std::string_view  nodeName,
+        ::Vec3 const&       basePos,
+        ::Vec3 const&       pivot,
+        ::ModelPart*        parentPart
     );
-
-    MCAPI bool needsColourVertexFormatField(::MaterialVariants const& defaultMaterialVariants) const;
 
     MCAPI uint64 numCubes() const;
 
@@ -269,22 +224,6 @@ public:
     MCAPI void reset();
 
     MCAPI void setModelPartMaterial(::mce::MaterialPtr const& mat, ::RenderController const* renderControllerId);
-
-    MCAPI void setModelPartMaterial(
-        ::ExpressionNode const&   materialExpression,
-        ::RenderController const* renderControllerId,
-        bool                      needsColor
-    );
-
-    MCAPI void setOrigin(::Vec3 const& origin);
-
-    MCFOLD void setPos(::Vec3 const& inPos);
-
-    MCAPI ::ModelPart& setTexSize(int xs, int ys);
-
-    MCAPI void setVisibility(::ExpressionNode const& visibility, ::RenderController const* renderControllerId);
-
-    MCAPI void setVisible(bool isVisible);
 
     MCAPI void translateTo(::Matrix& mv, float scale);
 

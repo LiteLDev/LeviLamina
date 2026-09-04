@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -21,7 +21,7 @@ namespace Editor::Settings { struct GraphicsProps; }
 
 namespace OreUI {
 
-class EditorLoggingFacet : public ::OreUI::FacetBase<::OreUI::EditorLoggingFacet> {
+class EditorLoggingFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorLoggingFacet> {
 public:
     // EditorLoggingFacet inner types declare
     // clang-format off
@@ -49,14 +49,6 @@ public:
         MCAPI ::std::string getTagListString() const;
 
         MCFOLD ::std::string const& getTimeStamp() const;
-
-        MCAPI ~LogMessage();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -68,30 +60,6 @@ public:
         ::ll::TypedStorage<1, 1, ::Editor::LogLevel>              mLevel;
         ::ll::TypedStorage<1, 1, ::Editor::LogContext>            mContext;
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mSubMessage;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LogNotification();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit LogNotification(::Editor::LogMessage const& logMessage);
-
-        MCAPI ~LogNotification();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Editor::LogMessage const& logMessage);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -125,7 +93,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorLoggingFacet() /*override*/;
+    virtual ~EditorLoggingFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -134,8 +102,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorLoggingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-
-    MCAPI bool _addMessage(::Editor::LogMessage const& message);
 
     MCAPI void _handleGraphicSettingsChanged(::Editor::Settings::GraphicsProps const& graphicProp);
 
@@ -161,7 +127,7 @@ public:
 
     MCFOLD ::HashedString const& getTagFilter() const;
 
-    MCFOLD ::std::vector<::HashedString> const& getTagList() const;
+    MCAPI ::std::vector<::HashedString> const& getTagList() const;
 
     MCAPI void setLogLevelFilter(::Editor::LogLevelFilter filter);
 
@@ -183,21 +149,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

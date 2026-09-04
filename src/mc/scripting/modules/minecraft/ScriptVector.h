@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,12 +14,6 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 class ScriptVector : public ::Vec3 {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptVector const& rhs) const;
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN

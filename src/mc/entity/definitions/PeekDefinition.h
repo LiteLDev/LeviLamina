@@ -30,8 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;
-
-    MCAPI ~PeekDefinition();
     // NOLINTEND
 
 public:
@@ -39,11 +37,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PeekDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -20,31 +20,19 @@ MCAPI ::HashedString const& AcaciaHangingSign();
 
 MCAPI ::HashedString const& AcaciaSign();
 
-MCAPI ::HashedString const& AgentSpawnEgg();
-
-MCAPI ::HashedString const& AllaySpawnEgg();
-
 MCAPI ::HashedString const& AmethystShard();
-
-MCAPI ::HashedString const& AnglerPotterySherd();
 
 MCAPI ::HashedString const& Apple();
 
-MCAPI ::HashedString const& ArcherPotterySherd();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& ArmadilloScute();
-
-MCAPI ::HashedString const& ArmadilloSpawnEgg();
+#endif
 
 MCAPI ::HashedString const& ArmorStand();
-
-MCAPI ::HashedString const& ArmsUpPotterySherd();
 
 MCAPI ::HashedString const& Arrow();
 
 MCAPI ::HashedString const& AxolotlBucket();
-
-MCAPI ::HashedString const& AxolotlSpawnEgg();
 
 MCAPI ::HashedString const& BakedPotato();
 
@@ -62,21 +50,11 @@ MCAPI ::HashedString const& BambooSign();
 
 MCAPI ::HashedString const& Banner();
 
-MCAPI ::HashedString const& BannerLegacy();
-
-MCAPI ::HashedString const& BatSpawnEgg();
-
 MCAPI ::HashedString const& Bed();
-
-MCAPI ::HashedString const& BeeSpawnEgg();
-
-MCAPI ::HashedString const& Beef();
 
 MCAPI ::HashedString const& Beetroot();
 
 MCAPI ::HashedString const& BeetrootSeeds();
-
-MCAPI ::HashedString const& BeetrootSoup();
 
 MCAPI ::HashedString const& BirchBoat();
 
@@ -94,13 +72,7 @@ MCAPI ::HashedString const& BlackDye();
 
 MCAPI ::HashedString const& BlackHarness();
 
-MCAPI ::HashedString const& BladePotterySherd();
-
 MCAPI ::HashedString const& BlazePowder();
-
-MCAPI ::HashedString const& BlazeRod();
-
-MCAPI ::HashedString const& BlazeSpawnEgg();
 
 MCAPI ::HashedString const& Bleach();
 
@@ -108,17 +80,7 @@ MCAPI ::HashedString const& BlueBundle();
 
 MCAPI ::HashedString const& BlueDye();
 
-MCAPI ::HashedString const& BlueEgg();
-
 MCAPI ::HashedString const& BlueHarness();
-
-MCAPI ::HashedString const& BoatLegacy();
-
-MCAPI ::HashedString const& BoggedSpawnEgg();
-
-MCAPI ::HashedString const& BoltArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& Bone();
 
 MCAPI ::HashedString const& BoneMeal();
 
@@ -136,10 +98,6 @@ MCAPI ::HashedString const& Bread();
 
 MCAPI ::HashedString const& BreezeRod();
 
-MCAPI ::HashedString const& BreezeSpawnEgg();
-
-MCAPI ::HashedString const& BrewerPotterySherd();
-
 MCAPI ::HashedString const& BrewingStand();
 
 MCAPI ::HashedString const& Brick();
@@ -148,23 +106,17 @@ MCAPI ::HashedString const& BrownBundle();
 
 MCAPI ::HashedString const& BrownDye();
 
-MCAPI ::HashedString const& BrownEgg();
-
 MCAPI ::HashedString const& BrownHarness();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& Brush();
+#endif
 
 MCAPI ::HashedString const& Bucket();
 
 MCAPI ::HashedString const& Bundle();
 
-MCAPI ::HashedString const& BurnPotterySherd();
-
 MCAPI ::HashedString const& Cake();
-
-MCAPI ::HashedString const& CamelHuskSpawnEgg();
-
-MCAPI ::HashedString const& CamelSpawnEgg();
 
 MCAPI ::HashedString const& Camera();
 
@@ -174,19 +126,7 @@ MCAPI ::HashedString const& Carrot();
 
 MCAPI ::HashedString const& CarrotOnAStick();
 
-MCAPI ::HashedString const& CatSpawnEgg();
-
 MCAPI ::HashedString const& Cauldron();
-
-MCAPI ::HashedString const& CaveSpiderSpawnEgg();
-
-MCAPI ::HashedString const& ChainmailBoots();
-
-MCAPI ::HashedString const& ChainmailChestplate();
-
-MCAPI ::HashedString const& ChainmailHelmet();
-
-MCAPI ::HashedString const& ChainmailLeggings();
 
 MCAPI ::HashedString const& ChalkBoard();
 
@@ -204,10 +144,6 @@ MCAPI ::HashedString const& CherrySign();
 
 MCAPI ::HashedString const& ChestMinecart();
 
-MCAPI ::HashedString const& Chicken();
-
-MCAPI ::HashedString const& ChickenSpawnEgg();
-
 MCAPI ::HashedString const& ChorusFruit();
 
 MCAPI ::HashedString const& ClayBall();
@@ -216,15 +152,9 @@ MCAPI ::HashedString const& Clock();
 
 MCAPI ::HashedString const& Coal();
 
-MCAPI ::HashedString const& CoastArmorTrimSmithingTemplate();
-
 MCAPI ::HashedString const& CocoaBeans();
 
-MCAPI ::HashedString const& Cod();
-
 MCAPI ::HashedString const& CodBucket();
-
-MCAPI ::HashedString const& CodSpawnEgg();
 
 MCAPI ::HashedString const& CommandBlockMinecart();
 
@@ -234,61 +164,13 @@ MCAPI ::HashedString const& Compass();
 
 MCAPI ::HashedString const& Compound();
 
-MCAPI ::HashedString const& CookedBeef();
-
-MCAPI ::HashedString const& CookedChicken();
-
-MCAPI ::HashedString const& CookedCod();
-
-MCAPI ::HashedString const& CookedMutton();
-
-MCAPI ::HashedString const& CookedPorkchop();
-
-MCAPI ::HashedString const& CookedRabbit();
-
-MCAPI ::HashedString const& CookedSalmon();
-
 MCAPI ::HashedString const& Cookie();
-
-MCAPI ::HashedString const& CopperAxe();
-
-MCAPI ::HashedString const& CopperBoots();
-
-MCAPI ::HashedString const& CopperChestplate();
 
 MCAPI ::HashedString const& CopperDoor();
 
-MCAPI ::HashedString const& CopperGolemSpawnEgg();
-
-MCAPI ::HashedString const& CopperHelmet();
-
-MCAPI ::HashedString const& CopperHoe();
-
-MCAPI ::HashedString const& CopperHorseArmor();
-
 MCAPI ::HashedString const& CopperIngot();
 
-MCAPI ::HashedString const& CopperLeggings();
-
-MCAPI ::HashedString const& CopperNautilusArmor();
-
-MCAPI ::HashedString const& CopperNugget();
-
-MCAPI ::HashedString const& CopperPickaxe();
-
-MCAPI ::HashedString const& CopperShovel();
-
-MCAPI ::HashedString const& CopperSpear();
-
-MCAPI ::HashedString const& CopperSword();
-
-MCAPI ::HashedString const& CowSpawnEgg();
-
-MCAPI ::HashedString const& CreakingSpawnEgg();
-
 MCAPI ::HashedString const& CreeperBannerPattern();
-
-MCAPI ::HashedString const& CreeperSpawnEgg();
 
 MCAPI ::HashedString const& CrimsonDoor();
 
@@ -304,8 +186,6 @@ MCAPI ::HashedString const& CyanDye();
 
 MCAPI ::HashedString const& CyanHarness();
 
-MCAPI ::HashedString const& DangerPotterySherd();
-
 MCAPI ::HashedString const& DarkOakBoat();
 
 MCAPI ::HashedString const& DarkOakChestBoat();
@@ -316,55 +196,15 @@ MCAPI ::HashedString const& DarkOakHangingSign();
 
 MCAPI ::HashedString const& DarkOakSign();
 
-MCAPI ::HashedString const& DebugStick();
-
 MCAPI ::HashedString const& Diamond();
 
-MCAPI ::HashedString const& DiamondAxe();
-
-MCAPI ::HashedString const& DiamondBoots();
-
-MCAPI ::HashedString const& DiamondChestplate();
-
-MCAPI ::HashedString const& DiamondHelmet();
-
 MCAPI ::HashedString const& DiamondHoe();
-
-MCAPI ::HashedString const& DiamondHorseArmor();
-
-MCAPI ::HashedString const& DiamondLeggings();
-
-MCAPI ::HashedString const& DiamondNautilusArmor();
-
-MCAPI ::HashedString const& DiamondPickaxe();
-
-MCAPI ::HashedString const& DiamondShovel();
-
-MCAPI ::HashedString const& DiamondSpear();
-
-MCAPI ::HashedString const& DiamondSword();
-
-MCAPI ::HashedString const& DiscFragment5();
-
-MCAPI ::HashedString const& DolphinSpawnEgg();
-
-MCAPI ::HashedString const& DonkeySpawnEgg();
 
 MCAPI ::HashedString const& DragonBreath();
 
 MCAPI ::HashedString const& DriedKelp();
 
-MCAPI ::HashedString const& DrownedSpawnEgg();
-
-MCAPI ::HashedString const& DuneArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& DyeLegacy();
-
-MCAPI ::HashedString const& EchoShard();
-
 MCAPI ::HashedString const& Egg();
-
-MCAPI ::HashedString const& ElderGuardianSpawnEgg();
 
 MCAPI ::HashedString const& Elytra();
 
@@ -374,33 +214,21 @@ MCAPI ::HashedString const& EmptyMap();
 
 MCAPI ::HashedString const& EnchantedBook();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& EnchantedGoldenApple();
+#endif
 
 MCAPI ::HashedString const& EndCrystal();
-
-MCAPI ::HashedString const& EnderDragonSpawnEgg();
 
 MCAPI ::HashedString const& EnderEye();
 
 MCAPI ::HashedString const& EnderPearl();
 
-MCAPI ::HashedString const& EndermanSpawnEgg();
-
-MCAPI ::HashedString const& EndermiteSpawnEgg();
-
-MCAPI ::HashedString const& EvokerSpawnEgg();
-
 MCAPI ::HashedString const& ExperienceBottle();
-
-MCAPI ::HashedString const& ExplorerPotterySherd();
 
 MCAPI ::HashedString const& ExposedCopperDoor();
 
-MCAPI ::HashedString const& EyeArmorTrimSmithingTemplate();
-
 MCAPI ::HashedString const& Feather();
-
-MCAPI ::HashedString const& FermentedSpiderEye();
 
 MCAPI ::HashedString const& FieldMasonedBannerPattern();
 
@@ -418,29 +246,13 @@ MCAPI ::HashedString const& Flint();
 
 MCAPI ::HashedString const& FlintAndSteel();
 
-MCAPI ::HashedString const& FlowArmorTrimSmithingTemplate();
-
 MCAPI ::HashedString const& FlowBannerPattern();
-
-MCAPI ::HashedString const& FlowPotterySherd();
 
 MCAPI ::HashedString const& FlowerBannerPattern();
 
 MCAPI ::HashedString const& FlowerPot();
 
-MCAPI ::HashedString const& FoxSpawnEgg();
-
-MCAPI ::HashedString const& FriendPotterySherd();
-
-MCAPI ::HashedString const& FrogSpawnEgg();
-
-MCAPI ::HashedString const& GhastSpawnEgg();
-
-MCAPI ::HashedString const& GhastTear();
-
 MCAPI ::HashedString const& GlassBottle();
-
-MCAPI ::HashedString const& GlisteringMelonSlice();
 
 MCAPI ::HashedString const& GlobeBannerPattern();
 
@@ -450,47 +262,19 @@ MCAPI ::HashedString const& GlowInkSac();
 
 MCAPI ::HashedString const& GlowItemFrame();
 
-MCAPI ::HashedString const& GlowSquidSpawnEgg();
-
 MCAPI ::HashedString const& GlowStick();
 
 MCAPI ::HashedString const& GlowStoneDust();
 
 MCAPI ::HashedString const& GoatHorn();
 
-MCAPI ::HashedString const& GoatSpawnEgg();
-
 MCAPI ::HashedString const& GoldIngot();
 
 MCAPI ::HashedString const& GoldNugget();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& GoldenApple();
-
-MCAPI ::HashedString const& GoldenAxe();
-
-MCAPI ::HashedString const& GoldenBoots();
-
-MCAPI ::HashedString const& GoldenCarrot();
-
-MCAPI ::HashedString const& GoldenChestplate();
-
-MCAPI ::HashedString const& GoldenHelmet();
-
-MCAPI ::HashedString const& GoldenHoe();
-
-MCAPI ::HashedString const& GoldenHorseArmor();
-
-MCAPI ::HashedString const& GoldenLeggings();
-
-MCAPI ::HashedString const& GoldenNautilusArmor();
-
-MCAPI ::HashedString const& GoldenPickaxe();
-
-MCAPI ::HashedString const& GoldenShovel();
-
-MCAPI ::HashedString const& GoldenSpear();
-
-MCAPI ::HashedString const& GoldenSword();
+#endif
 
 MCAPI ::HashedString const& GrayBundle();
 
@@ -504,23 +288,13 @@ MCAPI ::HashedString const& GreenDye();
 
 MCAPI ::HashedString const& GreenHarness();
 
-MCAPI ::HashedString const& GuardianSpawnEgg();
-
 MCAPI ::HashedString const& Gunpowder();
 
 MCAPI ::HashedString const& GusterBannerPattern();
 
-MCAPI ::HashedString const& GusterPotterySherd();
-
-MCAPI ::HashedString const& HappyGhastSpawnEgg();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& HeartOfTheSea();
-
-MCAPI ::HashedString const& HeartPotterySherd();
-
-MCAPI ::HashedString const& HeartbreakPotterySherd();
-
-MCAPI ::HashedString const& HoglinSpawnEgg();
+#endif
 
 MCAPI ::HashedString const& HoneyBottle();
 
@@ -530,49 +304,25 @@ MCAPI ::HashedString const& Hopper();
 
 MCAPI ::HashedString const& HopperMinecart();
 
-MCAPI ::HashedString const& HorseSpawnEgg();
-
-MCAPI ::HashedString const& HostArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& HowlPotterySherd();
-
-MCAPI ::HashedString const& HuskSpawnEgg();
-
 MCAPI ::HashedString const& IceBomb();
 
 MCAPI ::HashedString const& InkSac();
 
-MCAPI ::HashedString const& IronAxe();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& IronBoots();
 
 MCAPI ::HashedString const& IronChestplate();
+#endif
 
 MCAPI ::HashedString const& IronDoor();
 
-MCAPI ::HashedString const& IronGolemSpawnEgg();
-
 MCAPI ::HashedString const& IronHelmet();
-
-MCAPI ::HashedString const& IronHoe();
-
-MCAPI ::HashedString const& IronHorseArmor();
 
 MCAPI ::HashedString const& IronIngot();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& IronLeggings();
-
-MCAPI ::HashedString const& IronNautilusArmor();
-
-MCAPI ::HashedString const& IronNugget();
-
-MCAPI ::HashedString const& IronPickaxe();
-
-MCAPI ::HashedString const& IronShovel();
-
-MCAPI ::HashedString const& IronSpear();
-
-MCAPI ::HashedString const& IronSword();
+#endif
 
 MCAPI ::HashedString const& ItemFrame();
 
@@ -626,8 +376,6 @@ MCAPI ::HashedString const& LimeHarness();
 
 MCAPI ::HashedString const& LingeringPotion();
 
-MCAPI ::HashedString const& LlamaSpawnEgg();
-
 MCAPI ::HashedString const& LodestoneCompass();
 
 MCAPI ::HashedString const& Mace();
@@ -637,10 +385,6 @@ MCAPI ::HashedString const& MagentaBundle();
 MCAPI ::HashedString const& MagentaDye();
 
 MCAPI ::HashedString const& MagentaHarness();
-
-MCAPI ::HashedString const& MagmaCream();
-
-MCAPI ::HashedString const& MagmaCubeSpawnEgg();
 
 MCAPI ::HashedString const& MangroveBoat();
 
@@ -652,7 +396,9 @@ MCAPI ::HashedString const& MangroveHangingSign();
 
 MCAPI ::HashedString const& MangroveSign();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& Medicine();
+#endif
 
 MCAPI ::HashedString const& MelonSeeds();
 
@@ -662,77 +408,41 @@ MCAPI ::HashedString const& MilkBucket();
 
 MCAPI ::HashedString const& Minecart();
 
-MCAPI ::HashedString const& MinerPotterySherd();
-
 MCAPI ::HashedString const& MojangBannerPattern();
 
-MCAPI ::HashedString const& MooshroomSpawnEgg();
-
-MCAPI ::HashedString const& MournerPotterySherd();
-
-MCAPI ::HashedString const& MuleSpawnEgg();
-
-MCAPI ::HashedString const& MushroomStew();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& MusicDisc11();
 
 MCAPI ::HashedString const& MusicDisc13();
 
-MCAPI ::HashedString const& MusicDisc5();
-
 MCAPI ::HashedString const& MusicDiscBlocks();
+
+MCAPI ::HashedString const& MusicDiscBounce();
 
 MCAPI ::HashedString const& MusicDiscCat();
 
 MCAPI ::HashedString const& MusicDiscChirp();
 
-MCAPI ::HashedString const& MusicDiscCreator();
-
-MCAPI ::HashedString const& MusicDiscCreatorMusicBox();
-
 MCAPI ::HashedString const& MusicDiscFar();
-
-MCAPI ::HashedString const& MusicDiscLavaChicken();
 
 MCAPI ::HashedString const& MusicDiscMall();
 
 MCAPI ::HashedString const& MusicDiscMellohi();
 
-MCAPI ::HashedString const& MusicDiscOtherside();
-
-MCAPI ::HashedString const& MusicDiscPigstep();
-
-MCAPI ::HashedString const& MusicDiscPrecipice();
-
-MCAPI ::HashedString const& MusicDiscRelic();
-
 MCAPI ::HashedString const& MusicDiscStal();
 
 MCAPI ::HashedString const& MusicDiscStrad();
 
-MCAPI ::HashedString const& MusicDiscTears();
-
 MCAPI ::HashedString const& MusicDiscWait();
 
 MCAPI ::HashedString const& MusicDiscWard();
-
-MCAPI ::HashedString const& Mutton();
+#endif
 
 MCAPI ::HashedString const& NameTag();
 
-MCAPI ::HashedString const& NautilusShell();
-
-MCAPI ::HashedString const& NautilusSpawnEgg();
-
-MCAPI ::HashedString const& NetherBrickItemName();
-
 MCAPI ::HashedString const& NetherSprouts();
 
-MCAPI ::HashedString const& NetherStar();
-
 MCAPI ::HashedString const& NetherWart();
-
-MCAPI ::HashedString const& NetheriteAxe();
 
 MCAPI ::HashedString const& NetheriteBoots();
 
@@ -740,29 +450,11 @@ MCAPI ::HashedString const& NetheriteChestplate();
 
 MCAPI ::HashedString const& NetheriteHelmet();
 
-MCAPI ::HashedString const& NetheriteHoe();
-
-MCAPI ::HashedString const& NetheriteHorseArmor();
-
 MCAPI ::HashedString const& NetheriteIngot();
 
 MCAPI ::HashedString const& NetheriteLeggings();
 
-MCAPI ::HashedString const& NetheriteNautilusArmor();
-
-MCAPI ::HashedString const& NetheritePickaxe();
-
-MCAPI ::HashedString const& NetheriteScrap();
-
-MCAPI ::HashedString const& NetheriteShovel();
-
-MCAPI ::HashedString const& NetheriteSpear();
-
-MCAPI ::HashedString const& NetheriteSword();
-
 MCAPI ::HashedString const& NetheriteUpgradeSmithingTemplate();
-
-MCAPI ::HashedString const& NpcSpawnEgg();
 
 MCAPI ::HashedString const& OakBoat();
 
@@ -774,11 +466,11 @@ MCAPI ::HashedString const& OakHangingSign();
 
 MCAPI ::HashedString const& OakSign();
 
-MCAPI ::HashedString const& OcelotSpawnEgg();
-
 MCAPI ::HashedString const& OminousBottle();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& OminousTrialKey();
+#endif
 
 MCAPI ::HashedString const& OrangeBundle();
 
@@ -800,29 +492,13 @@ MCAPI ::HashedString const& PaleOakHangingSign();
 
 MCAPI ::HashedString const& PaleOakSign();
 
-MCAPI ::HashedString const& PandaSpawnEgg();
-
 MCAPI ::HashedString const& Paper();
-
-MCAPI ::HashedString const& ParchedSpawnEgg();
-
-MCAPI ::HashedString const& ParrotSpawnEgg();
 
 MCAPI ::HashedString const& PhantomMembrane();
 
-MCAPI ::HashedString const& PhantomSpawnEgg();
-
 MCAPI ::HashedString const& PhotoItem();
 
-MCAPI ::HashedString const& PigSpawnEgg();
-
 MCAPI ::HashedString const& PiglinBannerPattern();
-
-MCAPI ::HashedString const& PiglinBruteSpawnEgg();
-
-MCAPI ::HashedString const& PiglinSpawnEgg();
-
-MCAPI ::HashedString const& PillagerSpawnEgg();
 
 MCAPI ::HashedString const& PinkBundle();
 
@@ -832,17 +508,11 @@ MCAPI ::HashedString const& PinkHarness();
 
 MCAPI ::HashedString const& PitcherPod();
 
-MCAPI ::HashedString const& PlentyPotterySherd();
-
 MCAPI ::HashedString const& PoisonousPotato();
 
-MCAPI ::HashedString const& PolarBearSpawnEgg();
-
-MCAPI ::HashedString const& PoppedChorusFruit();
-
-MCAPI ::HashedString const& PorkChop();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& PortfolioBook();
+#endif
 
 MCAPI ::HashedString const& Potato();
 
@@ -852,15 +522,7 @@ MCAPI ::HashedString const& PowderSnowBucket();
 
 MCAPI ::HashedString const& PrismarineCrystals();
 
-MCAPI ::HashedString const& PrismarineShard();
-
-MCAPI ::HashedString const& PrizePotterySherd();
-
-MCAPI ::HashedString const& Pufferfish();
-
 MCAPI ::HashedString const& PufferfishBucket();
-
-MCAPI ::HashedString const& PufferfishSpawnEgg();
 
 MCAPI ::HashedString const& PumpkinPie();
 
@@ -874,21 +536,7 @@ MCAPI ::HashedString const& PurpleHarness();
 
 MCAPI ::HashedString const& Quartz();
 
-MCAPI ::HashedString const& Rabbit();
-
-MCAPI ::HashedString const& RabbitFoot();
-
-MCAPI ::HashedString const& RabbitHide();
-
-MCAPI ::HashedString const& RabbitSpawnEgg();
-
-MCAPI ::HashedString const& RabbitStew();
-
-MCAPI ::HashedString const& RaiserArmorTrimSmithingTemplate();
-
 MCAPI ::HashedString const& RapidFertilizer();
-
-MCAPI ::HashedString const& RavagerSpawnEgg();
 
 MCAPI ::HashedString const& RawCopper();
 
@@ -910,75 +558,33 @@ MCAPI ::HashedString const& Repeater();
 
 MCAPI ::HashedString const& ResinBrick();
 
-MCAPI ::HashedString const& RibArmorTrimSmithingTemplate();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& RottenFlesh();
+#endif
 
 MCAPI ::HashedString const& Saddle();
 
-MCAPI ::HashedString const& Salmon();
-
 MCAPI ::HashedString const& SalmonBucket();
 
-MCAPI ::HashedString const& SalmonSpawnEgg();
-
-MCAPI ::HashedString const& ScrapePotterySherd();
-
-MCAPI ::HashedString const& SentryArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& ShaperArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& SheafPotterySherd();
-
 MCAPI ::HashedString const& Shears();
-
-MCAPI ::HashedString const& SheepSpawnEgg();
-
-MCAPI ::HashedString const& ShelterPotterySherd();
 
 MCAPI ::HashedString const& Shield();
 
 MCAPI ::HashedString const& ShulkerShell();
 
-MCAPI ::HashedString const& ShulkerSpawnEgg();
-
-MCAPI ::HashedString const& SilenceArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& SilverfishSpawnEgg();
-
-MCAPI ::HashedString const& SkeletonHorseSpawnEgg();
-
-MCAPI ::HashedString const& SkeletonSpawnEgg();
-
 MCAPI ::HashedString const& SkullBannerPattern();
 
-MCAPI ::HashedString const& SkullPotterySherd();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& SlimeBall();
-
-MCAPI ::HashedString const& SlimeSpawnEgg();
-
-MCAPI ::HashedString const& SnifferSpawnEgg();
-
-MCAPI ::HashedString const& SnortPotterySherd();
-
-MCAPI ::HashedString const& SnoutArmorTrimSmithingTemplate();
+#endif
 
 MCAPI ::HashedString const& SnowBall();
-
-MCAPI ::HashedString const& SnowGolemSpawnEgg();
 
 MCAPI ::HashedString const& SoulCampfire();
 
 MCAPI ::HashedString const& Sparkler();
 
 MCAPI ::HashedString const& SpawnEggLegacy();
-
-MCAPI ::HashedString const& SpiderEye();
-
-MCAPI ::HashedString const& SpiderSpawnEgg();
-
-MCAPI ::HashedString const& SpireArmorTrimSmithingTemplate();
 
 MCAPI ::HashedString const& SplashPotion();
 
@@ -994,25 +600,7 @@ MCAPI ::HashedString const& SpruceSign();
 
 MCAPI ::HashedString const& Spyglass();
 
-MCAPI ::HashedString const& SquidSpawnEgg();
-
 MCAPI ::HashedString const& Stick();
-
-MCAPI ::HashedString const& StoneAxe();
-
-MCAPI ::HashedString const& StoneHoe();
-
-MCAPI ::HashedString const& StonePickaxe();
-
-MCAPI ::HashedString const& StoneShovel();
-
-MCAPI ::HashedString const& StoneSpear();
-
-MCAPI ::HashedString const& StoneSword();
-
-MCAPI ::HashedString const& StraySpawnEgg();
-
-MCAPI ::HashedString const& StriderSpawnEgg();
 
 MCAPI ::HashedString const& String();
 
@@ -1022,17 +610,11 @@ MCAPI ::HashedString const& SugarCane();
 
 MCAPI ::HashedString const& SulfurCubeBucket();
 
-MCAPI ::HashedString const& SulfurCubeSpawnEgg();
-
 MCAPI ::HashedString const& SuspiciousStew();
 
 MCAPI ::HashedString const& SweetBerries();
 
 MCAPI ::HashedString const& TadpoleBucket();
-
-MCAPI ::HashedString const& TadpoleSpawnEgg();
-
-MCAPI ::HashedString const& TideArmorTrimSmithingTemplate();
 
 MCAPI ::HashedString const& TntMinecart();
 
@@ -1040,37 +622,15 @@ MCAPI ::HashedString const& TorchflowerSeeds();
 
 MCAPI ::HashedString const& TotemOfUndying();
 
-MCAPI ::HashedString const& TraderLlamaSpawnEgg();
-
 MCAPI ::HashedString const& TrialKey();
 
 MCAPI ::HashedString const& Trident();
 
-MCAPI ::HashedString const& TropicalFish();
-
 MCAPI ::HashedString const& TropicalFishBucket();
-
-MCAPI ::HashedString const& TropicalFishSpawnEgg();
 
 MCAPI ::HashedString const& TurtleHelmet();
 
 MCAPI ::HashedString const& TurtleScute();
-
-MCAPI ::HashedString const& TurtleSpawnEgg();
-
-MCAPI ::HashedString const& VexArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& VexSpawnEgg();
-
-MCAPI ::HashedString const& VillagerSpawnEgg();
-
-MCAPI ::HashedString const& VindicatorSpawnEgg();
-
-MCAPI ::HashedString const& WanderingTraderSpawnEgg();
-
-MCAPI ::HashedString const& WardArmorTrimSmithingTemplate();
-
-MCAPI ::HashedString const& WardenSpawnEgg();
 
 MCAPI ::HashedString const& WarpedDoor();
 
@@ -1090,8 +650,6 @@ MCAPI ::HashedString const& WaxedOxidizedCopperDoor();
 
 MCAPI ::HashedString const& WaxedWeatheredCopperDoor();
 
-MCAPI ::HashedString const& WayfinderArmorTrimSmithingTemplate();
-
 MCAPI ::HashedString const& WeatheredCopperDoor();
 
 MCAPI ::HashedString const& Wheat();
@@ -1104,31 +662,9 @@ MCAPI ::HashedString const& WhiteDye();
 
 MCAPI ::HashedString const& WhiteHarness();
 
-MCAPI ::HashedString const& WildArmorTrimSmithingTemplate();
-
 MCAPI ::HashedString const& WindCharge();
 
-MCAPI ::HashedString const& WitchSpawnEgg();
-
-MCAPI ::HashedString const& WitherSkeletonSpawnEgg();
-
-MCAPI ::HashedString const& WitherSpawnEgg();
-
 MCAPI ::HashedString const& WolfArmor();
-
-MCAPI ::HashedString const& WolfSpawnEgg();
-
-MCAPI ::HashedString const& WoodenAxe();
-
-MCAPI ::HashedString const& WoodenHoe();
-
-MCAPI ::HashedString const& WoodenPickaxe();
-
-MCAPI ::HashedString const& WoodenShovel();
-
-MCAPI ::HashedString const& WoodenSpear();
-
-MCAPI ::HashedString const& WoodenSword();
 
 MCAPI ::HashedString const& WrittenBook();
 
@@ -1137,18 +673,6 @@ MCAPI ::HashedString const& YellowBundle();
 MCAPI ::HashedString const& YellowDye();
 
 MCAPI ::HashedString const& YellowHarness();
-
-MCAPI ::HashedString const& ZoglinSpawnEgg();
-
-MCAPI ::HashedString const& ZombieHorseSpawnEgg();
-
-MCAPI ::HashedString const& ZombieNautilusSpawnEgg();
-
-MCAPI ::HashedString const& ZombiePigmanSpawnEgg();
-
-MCAPI ::HashedString const& ZombieSpawnEgg();
-
-MCAPI ::HashedString const& ZombieVillagerSpawnEgg();
 // NOLINTEND
 
 } // namespace VanillaItemNames

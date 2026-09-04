@@ -29,12 +29,6 @@ public:
         ::std::optional<::Block const*> const                     optBlock
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::BlockUtils

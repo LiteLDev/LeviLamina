@@ -19,14 +19,11 @@ public:
 
     virtual bool isInitialized() const = 0;
 
-    virtual void
-    send(::TaskGroup&, ::Bedrock::Http::Request&, ::std::function<void(::Bedrock::Http::Response const&)>) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual void send(
+        ::TaskGroup&                                            taskGroup,
+        ::Bedrock::Http::Request&                               request,
+        ::std::function<void(::Bedrock::Http::Response const&)> callback
+    ) = 0;
     // NOLINTEND
 };
 

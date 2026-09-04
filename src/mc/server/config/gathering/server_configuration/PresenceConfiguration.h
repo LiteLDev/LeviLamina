@@ -13,13 +13,13 @@ struct PresenceConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc868b1;
-    ::ll::UntypedStorage<8, 32> mUnk20866c;
+    ::ll::UntypedStorage<8, 40> mUnkd28823;
+    ::ll::UntypedStorage<8, 40> mUnk21a237;
+    ::ll::UntypedStorage<8, 32> mUnk679773;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PresenceConfiguration& operator=(PresenceConfiguration const&);
     PresenceConfiguration();
 
 public:
@@ -27,7 +27,7 @@ public:
     // NOLINTBEGIN
     MCNAPI PresenceConfiguration(::ServerConfiguration::PresenceConfiguration const&);
 
-    MCNAPI ::ServerConfiguration::PresenceConfiguration& operator=(::ServerConfiguration::PresenceConfiguration&&);
+    MCNAPI ::ServerConfiguration::PresenceConfiguration& operator=(::ServerConfiguration::PresenceConfiguration const&);
 
     MCNAPI ~PresenceConfiguration();
     // NOLINTEND

@@ -29,6 +29,9 @@ namespace Bedrock::Safety { class RedactableString; }
 namespace EnchantUtils {
 // functions
 // NOLINTBEGIN
+LLNDAPI ::std::vector<::std::pair<::EnchantmentInstance, int>>
+getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
+
 MCAPI void appendEnchantToFormattedText(
     ::Enchant::Type                      type,
     ::std::string_view                   enchantName,
@@ -36,8 +39,6 @@ MCAPI void appendEnchantToFormattedText(
 );
 
 MCAPI bool applyEnchant(::ItemStackBase& out, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
-
-MCAPI bool applyEnchant(::ItemStackBase& out, ::Enchant::Type type, int level, bool allowNonVanilla);
 
 MCAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
 
@@ -47,23 +48,14 @@ calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const
 MCAPI ::EnchantResult
 canEnchant(::ItemStackBase const& item, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
 
-MCAPI ::EnchantResult canEnchant(::ItemStackBase const& item, ::Enchant::Type type, int level, bool allowNonVanilla);
-
 MCAPI int
 combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
 
 MCAPI void doPostHurtEffects(::Mob& victim, ::Mob& attacker);
 
-MCAPI void doPostItemHurtActorEffects(::Actor& victim, ::Actor& attacker, ::ItemEnchants const& preHurtEnchantments);
-
 MCAPI void doPostPiercingAttackEffects(::Actor& attacker);
 
 MCAPI void doPreDamageEffects(::Actor& victim, ::Actor& attacker);
-
-MCAPI ::ItemInstance generateEnchantedBook(::EnchantmentInstance const& enchant);
-
-MCAPI ::std::vector<::std::pair<::EnchantmentInstance, int>>
-getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
 
 MCAPI ::std::vector<::Vec3> getBookCasePositions(::BlockSource& source, ::Vec3 const& pos);
 
@@ -85,8 +77,6 @@ MCAPI ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, :
 
 MCAPI ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
 
-MCAPI ::std::string getLevelString(int level);
-
 MCAPI float getMeleeDamageBonus(::Actor const& victim, ::Actor const& attacker);
 
 MCAPI ::ItemStack const& getRandomDamagedItemWithMending(::Mob const& equipped);
@@ -99,11 +89,7 @@ MCAPI int getTotalProtectionLevels(::Enchant::Type type, ::Mob const& target);
 
 MCAPI int getTradeableRandomEnchantIndex(::Random& random);
 
-MCAPI bool hasCurse(::ItemStackBase const& item);
-
 MCAPI bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
-
-MCAPI bool isCurse(::Enchant::Type enchantType);
 
 MCFOLD void randomlyEnchant(::ItemInstance& out, int cost, int valueBuff, bool treasure);
 

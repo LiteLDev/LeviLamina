@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/shared_types/Color255RGB.h"
 #include "mc/deps/shared_types/v1_26_20/block/TintMethod.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct MapColorComponent {
@@ -40,12 +35,6 @@ public:
             ::SharedTypes::Color255RGB,
             ::SharedTypes::v1_26_20::BlockDefinition::MapColorComponent::DetailedMapColor>>
         mMapColor;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

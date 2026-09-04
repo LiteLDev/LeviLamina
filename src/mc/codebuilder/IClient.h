@@ -32,12 +32,6 @@ public:
 
     virtual void send(::CodeBuilder::ChatMessage const& message) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

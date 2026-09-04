@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -29,21 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HugeMushroomFeature();
-
-    MCAPI explicit HugeMushroomFeature(int forcedType);
-
-    MCAPI bool _canSurvive(::Block const& belowBlock) const;
-
     MCAPI bool placeFixed(::BlockSource& region, ::BlockPos const& pos, int mushroomType, int height) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(int forcedType);
     // NOLINTEND
 
 public:

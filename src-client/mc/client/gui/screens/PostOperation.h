@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<float()>> mOperation;
     ::ll::TypedStorage<4, 4, float>                     postOpValue;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PostOperation();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

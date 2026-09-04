@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _setLootTable(::std::string const& lootTable);
+    MCAPI void _setLootTable(::std::string const& lootTable);
     // NOLINTEND
 
 public:

@@ -8,10 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-class MinecraftUIRenderContext;
 class NinePatchLayer;
 class UIControl;
-class UIPropertyBag;
 class UIScene;
 // clang-format on
 
@@ -31,31 +29,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) = 0;
+
+    virtual ~HoverRenderer() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HoverRenderer();
-
-    MCAPI ::std::string _getNewContent(::UIPropertyBag const& bag) const;
-
     MCAPI ::glm::vec2
     _getNewCursorPosition(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) const;
-
-    MCAPI void _renderHoverBox(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, float alpha);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

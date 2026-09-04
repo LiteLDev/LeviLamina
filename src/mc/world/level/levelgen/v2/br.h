@@ -11,13 +11,11 @@
 class BlockPos;
 class BoundingBox;
 class IDataOutput;
-class StructurePiece;
 class StructureStart;
 class Vec3;
 namespace br { class LevelChunkDataRegistry; }
 namespace br { struct StructureKey; }
 namespace br::worldgen { class StructureInstance; }
-namespace br::worldgen { class StructureSection; }
 namespace br::worldgen { struct SpawnerData; }
 // clang-format on
 
@@ -29,9 +27,6 @@ dynamicStructureMobs(::br::LevelChunkDataRegistry const& reg, ::BlockPos pos, ::
 
 MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
 findMobsPiece(::br::LevelChunkDataRegistry const& reg, ::br::StructureKey key, ::SpawnCategory::Type category);
-
-MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
-findMobsStructure(::br::LevelChunkDataRegistry const& reg, ::br::StructureKey key, ::SpawnCategory::Type category);
 
 MCAPI ::std::vector<::std::string> getStructureTypes(::br::LevelChunkDataRegistry const& reg, ::Vec3 pos);
 
@@ -47,21 +42,6 @@ MCAPI void insertStructure(
     ::BoundingBox                 chunkBB,
     ::br::StructureKey            key,
     ::StructureStart const&       instance
-);
-
-MCAPI void insertStructurePiece(
-    ::br::LevelChunkDataRegistry&           reg,
-    ::BoundingBox                           chunkBB,
-    ::br::StructureKey                      key,
-    ::br::worldgen::StructureSection const& piece
-);
-
-MCAPI void insertStructurePiece(
-    ::br::LevelChunkDataRegistry& reg,
-    ::BoundingBox                 chunkBB,
-    ::br::StructureKey            key,
-    ::StructurePiece const&       piece,
-    int                           offset
 );
 
 MCAPI bool serialize(::IDataOutput& stream, ::br::LevelChunkDataRegistry const& val);

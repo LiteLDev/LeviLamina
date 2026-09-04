@@ -8,16 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<bool(int&, int&, int)>> mIsFinished;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BrewingStandScreenControllerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };

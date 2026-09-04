@@ -63,10 +63,6 @@ public:
             registerLevelChangeCallback
     );
 
-    MCAPI uint _computeDefaultValue() const;
-
-    MCAPI void _computeLabels();
-
     MCAPI void _updateData();
     // NOLINTEND
 
@@ -94,12 +90,6 @@ public:
     MCFOLD ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

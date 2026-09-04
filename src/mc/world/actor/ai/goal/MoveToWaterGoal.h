@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/MoveToLiquidGoal.h"
 
-class MoveToWaterGoal : public ::MoveToLiquidGoal {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class MoveToWaterGoal : public ::MoveToLiquidGoal {};

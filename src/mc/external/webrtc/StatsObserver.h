@@ -20,12 +20,6 @@ public:
 
     virtual ~StatsObserver() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

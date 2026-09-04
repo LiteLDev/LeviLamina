@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class PackInstance;
-struct PackSettingValueAndDefault;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace mce { class UUID; }
@@ -36,22 +35,6 @@ public:
         CachedSettingsByPackId& operator=(CachedSettingsByPackId const&);
         CachedSettingsByPackId(CachedSettingsByPackId const&);
         CachedSettingsByPackId();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI CachedSettingsByPackId(
-            ::mce::UUID                                                       packId,
-            ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> values
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::mce::UUID packId, ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> values);
-        // NOLINTEND
     };
 
 public:
@@ -64,18 +47,12 @@ public:
     // prevent constructor by default
     ScriptPackSettingsCache& operator=(ScriptPackSettingsCache const&);
     ScriptPackSettingsCache(ScriptPackSettingsCache const&);
+    ScriptPackSettingsCache();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPackSettingsCache();
-
-    MCNAPI explicit ScriptPackSettingsCache(::std::vector<::PackInstance> const& stack);
-
     MCNAPI void _initFromPackStack(::std::vector<::PackInstance> const& stack);
-
-    MCNAPI ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const*
-    getPackSettingsNameValueMap(::mce::UUID packId) const;
 
     MCNAPI ::Bedrock::PubSub::Subscription registerObserver(
         ::mce::UUID                                                                                    packId,
@@ -87,13 +64,5 @@ public:
         ::std::string const&                              name,
         ::std::variant<float, bool, ::std::string> const& value
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::std::vector<::PackInstance> const& stack);
     // NOLINTEND
 };

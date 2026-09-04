@@ -68,28 +68,12 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
     MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI void $_moveToBlock();
 
     MCAPI bool $_canReach(::BlockPos const& pos);
 
-    MCFOLD void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCFOLD void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
-
-    MCFOLD void $_playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos);
-
-    MCFOLD void $_playDestroySound(::Level&, ::BlockSource&, ::BlockPos);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

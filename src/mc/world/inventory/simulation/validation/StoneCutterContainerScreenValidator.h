@@ -11,7 +11,6 @@
 class ContainerScreenContext;
 class ContainerScreenValidation;
 class ItemInstance;
-class ItemStack;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
 struct RecipeNetIdTag;
@@ -34,22 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StoneCutterContainerScreenValidator();
-
     MCAPI ::ItemInstance
     _getResultFromId(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId);
-
-    MCAPI bool _recipeMatches(
-        ::ContainerScreenContext const& screenContext,
-        ::RecipeNetId const&            recipeNetId,
-        ::ItemStack const&              inputStack
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

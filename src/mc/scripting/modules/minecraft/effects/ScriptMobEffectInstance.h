@@ -4,13 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -46,9 +43,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>
-    getHandle(::Actor const& actor, uint effectIdx, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

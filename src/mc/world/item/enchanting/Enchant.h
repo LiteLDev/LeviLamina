@@ -120,7 +120,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Enchant();
+    virtual ~Enchant() = default;
 
     virtual bool isCompatibleWith(::Enchant::Type type) const;
 
@@ -134,7 +134,7 @@ public:
 
     virtual int getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    virtual float getAfterBreachArmorFraction(int level, float armorFraction) const;
+    virtual float getAfterBreachArmorFraction(int, float) const;
 
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
@@ -163,27 +163,15 @@ public:
     MCAPI Enchant(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
-        ::std::string_view         stringId,
-        ::std::string_view         scriptStringId,
-        ::std::string_view         description,
+        ::std::string_view const   stringId,
+        ::std::string_view const   scriptStringId,
+        ::std::string_view const   description,
         ::Enchant::VillagerTrading isAvailableForVillagerTraining,
         int                        primarySlots,
         int                        secondarySlots
     );
 
     MCAPI ::std::string getDescriptionId() const;
-
-    MCFOLD ::Enchant::Type getEnchantType() const;
-
-#ifdef LL_PLAT_S
-    MCFOLD ::HashedString const& getScriptStringId() const;
-#endif
-
-    MCFOLD ::HashedString const& getStringId() const;
-
-    MCAPI bool isAvailable() const;
-
-    MCFOLD bool isDisabled() const;
     // NOLINTEND
 
 public:
@@ -191,15 +179,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::EnchantSlot enchantSlotFromString(::std::string_view str);
 
-    MCAPI static ::Enchant const* getEnchant(::Enchant::Type const& type);
-
     MCAPI static ::Enchant const* getEnchantFromName(::HashedString const& name);
 
     MCAPI static ::Enchant::Type getEnchantTypeFromName(::HashedString const& name);
 
     MCAPI static void initEnchants(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
-
-    MCAPI static void shutdownEnchants();
 
     MCAPI static ::std::string stringFromEnchantSlot(::SharedTypes::EnchantSlot const& enchantSlot);
     // NOLINTEND
@@ -227,19 +211,13 @@ public:
     MCAPI void* $ctor(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
-        ::std::string_view         stringId,
-        ::std::string_view         scriptStringId,
-        ::std::string_view         description,
+        ::std::string_view const   stringId,
+        ::std::string_view const   scriptStringId,
+        ::std::string_view const   description,
         ::Enchant::VillagerTrading isAvailableForVillagerTraining,
         int                        primarySlots,
         int                        secondarySlots
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -257,7 +235,7 @@ public:
 
     MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCFOLD float $getAfterBreachArmorFraction(int level, float armorFraction) const;
+    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
 
     MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
@@ -280,12 +258,6 @@ public:
     MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

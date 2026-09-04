@@ -10,18 +10,12 @@
 class EntityContext;
 namespace AgentComponents::Actions { struct Attack; }
 namespace AgentComponents::Actions { struct Collect; }
-namespace AgentComponents::Actions { struct Destroy; }
-namespace AgentComponents::Actions { struct DetectObstacle; }
-namespace AgentComponents::Actions { struct DetectRedstone; }
 namespace AgentComponents::Actions { struct Drop; }
 namespace AgentComponents::Actions { struct DropAll; }
-namespace AgentComponents::Actions { struct Inspect; }
 namespace AgentComponents::Actions { struct InspectData; }
 namespace AgentComponents::Actions { struct InspectItemCount; }
 namespace AgentComponents::Actions { struct InspectItemDetail; }
 namespace AgentComponents::Actions { struct InspectItemSpace; }
-namespace AgentComponents::Actions { struct Interact; }
-namespace AgentComponents::Actions { struct Move; }
 namespace AgentComponents::Actions { struct PlaceBlock; }
 namespace AgentComponents::Actions { struct QueueItem; }
 namespace AgentComponents::Actions { struct Till; }
@@ -36,12 +30,6 @@ MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentCom
 
 MCAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Collect const& action);
-
-MCAPI void
-_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::DetectObstacle const& action);
-
-MCAPI void
-_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::DetectRedstone const& action);
 
 MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Drop const& action);
 
@@ -60,8 +48,6 @@ _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Ac
 MCAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectItemSpace const& action);
 
-MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Move const& action);
-
 MCAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::PlaceBlock const& action);
 
@@ -71,24 +57,6 @@ MCAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::TransferItemTo const& action);
 
 MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Turn const& action);
-
-MCAPI void _startAction(
-    ::EntityContext&                           entity,
-    ::CurrentCmdVersion                        cmdVersion,
-    ::AgentComponents::Actions::Destroy const& action
-);
-
-MCAPI void _startAction(
-    ::EntityContext&                           entity,
-    ::CurrentCmdVersion                        cmdVersion,
-    ::AgentComponents::Actions::Inspect const& action
-);
-
-MCAPI void _startAction(
-    ::EntityContext&                            entity,
-    ::CurrentCmdVersion                         cmdVersion,
-    ::AgentComponents::Actions::Interact const& action
-);
 
 MCAPI void startAction(::EntityContext& entity, ::AgentComponents::Actions::QueueItem const& item);
 // NOLINTEND

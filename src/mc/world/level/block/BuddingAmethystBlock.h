@@ -9,18 +9,11 @@
 // clang-format off
 class Block;
 class BlockActor;
-class BlockPos;
-class BlockSource;
 class ItemInstance;
-class Material;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class BuddingAmethystBlock : public ::AmethystBlock {
-public:
-    // prevent constructor by default
-    BuddingAmethystBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,21 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BuddingAmethystBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool canBudGrowAtPos(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

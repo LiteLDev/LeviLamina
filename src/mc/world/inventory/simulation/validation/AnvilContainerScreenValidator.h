@@ -23,7 +23,7 @@ public:
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
-        uchar const
+        uchar const                                         numCrafts
     ) /*override*/;
     // NOLINTEND
 
@@ -36,15 +36,9 @@ public:
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
-        uchar const
+        uchar const                                         numCrafts
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

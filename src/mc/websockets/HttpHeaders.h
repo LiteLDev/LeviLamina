@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class BitStream; }
-// clang-format on
-
 class HttpHeaders {
 public:
     // HttpHeaders inner types define
@@ -43,17 +38,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool getHeader(::std::string const& name, ::std::string& outValue) const;
-
-    MCNAPI ::std::string getStatusCode() const;
-
-    MCNAPI ::HttpHeaders::ParseState parse(::RakNet::BitStream& data);
-
-    MCNAPI ~HttpHeaders();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

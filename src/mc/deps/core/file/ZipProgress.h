@@ -16,27 +16,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ZipProgress();
+    virtual ~ZipProgress() = default;
 
     virtual void clear();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ZipProgress();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -71,7 +71,7 @@ public:
 
     MCAPI ::GameControllerEvent $getNextEvent(void const* token);
 
-    MCFOLD int $getId() const;
+    MCAPI int $getId() const;
 
     MCFOLD bool $isConnected() const;
 
@@ -81,14 +81,8 @@ public:
 
     MCFOLD void $unpairControllerFromClient();
 
-    MCFOLD bool $isControllerPairedToClient() const;
+    MCAPI bool $isControllerPairedToClient() const;
 
     MCAPI ::std::optional<::SubClientId> $getPairedClientId() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

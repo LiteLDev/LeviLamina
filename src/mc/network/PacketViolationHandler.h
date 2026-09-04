@@ -36,13 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::PacketViolationResponse
-    _handleViolation(::MinecraftPacketIds packetId, ::std::error_code const& result, bool* outIsNewOrUpdatedViolation);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::PacketViolationResponse $checkForViolation(
@@ -54,11 +47,5 @@ public:
     MCNAPI uint $getTelemetryData();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

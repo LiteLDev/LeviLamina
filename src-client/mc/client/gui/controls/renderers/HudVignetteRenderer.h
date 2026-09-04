@@ -33,26 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HudVignetteRenderer();
-
-    MCAPI bool _renderVignette(
-        ::MinecraftUIRenderContext& renderContext,
-        ::IClientInstance&          client,
-        float                       undergroundness,
-        int                         w,
-        int                         h
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;

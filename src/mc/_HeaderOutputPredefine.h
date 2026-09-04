@@ -26,6 +26,7 @@
 #include <cmath>              // Common mathematics functions
 #include <complex>            // Complex number type
 #include <condition_variable> // condition variable
+#include <cstddef>            // Standard size and pointer difference types
 #include <cstdio>             // C Standard Input/Output library
 #include <cstdlib>            // C Standard General Utilities Library
 #include <cstring>            // C string handling
@@ -223,6 +224,33 @@ struct D3D12_FEATURE_DATA_ARCHITECTURE {};
 struct D3D12_FEATURE_DATA_D3D12_OPTIONS {};
 #endif
 
+// Nvidia SDK definitions
+typedef enum NVSDK_NGX_Logging_Level;
+typedef enum NVSDK_NGX_Feature;
+
+// OpenSSL definitions
+struct ssl_ctx_st;
+struct ssl_st;
+struct ssl_session_st;
+struct x509_store_ctx_st;
+struct x509_st;
+struct evp_md_st;
+struct ssl_session_st;
+
+// abseil definitions
+namespace absl::hash_internal {
+template <typename T>
+struct Hash;
+}
+
+// Ungenerated cereal definitions
+namespace cereal {
+namespace internal {
+template<typename It, typename Type>
+class ComponentStorageIterator;
+}
+}
+
 namespace GameInput::v2 {
     class IGameInput;
 }
@@ -377,7 +405,12 @@ public:
 }
 
 namespace rtc {
-template<class T, size_t N = size_t(-4711ll)>
+template<class T, ::std::ptrdiff_t N = -4711>
+class ArrayView;
+}
+
+namespace webrtc {
+template<class T, ::std::ptrdiff_t N = -4711>
 class ArrayView;
 }
 

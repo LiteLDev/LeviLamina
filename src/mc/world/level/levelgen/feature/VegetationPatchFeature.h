@@ -11,9 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class VegetationPatchFeature : public ::IFeature {
@@ -43,41 +40,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VegetationPatchFeature() /*override*/;
+    virtual ~VegetationPatchFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _distributeVegetation(
-        ::IBlockWorldGenAPI&             target,
-        ::Random&                        random,
-        ::std::vector<::BlockPos> const& coveredSurface,
-        ::RenderParams&                  renderParams,
-        int,
-        int
-    ) const;
-
-    MCAPI bool _isExposed(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
-
-    MCAPI ::std::vector<::BlockPos> _placeGroundPatch(
-        ::IBlockWorldGenAPI& target,
-        ::Random&            random,
-        ::BlockPos const&    origin,
-        int                  xRadius,
-        int                  zRadius
-    ) const;
-
-    MCAPI ::std::vector<::BlockPos>
-    _placeWaterOnSurface(::IBlockWorldGenAPI& target, ::std::vector<::BlockPos> const& surface) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -86,11 +51,5 @@ public:
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

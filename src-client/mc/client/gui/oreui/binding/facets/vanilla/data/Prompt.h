@@ -30,12 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int consumeChosenAction();
-
-    MCFOLD bool hasChosenAction() const;
-
-    MCAPI void hide();
-
     MCAPI ::OreUI::Prompt& operator=(::OreUI::Prompt&&);
 
     MCAPI void

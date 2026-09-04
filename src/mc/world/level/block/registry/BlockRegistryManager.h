@@ -15,11 +15,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::SubClientId, ::std::weak_ptr<::BlockTypeRegistry>>& mClientIdRegistryMap();
-
-    MCAPI static ::std::weak_ptr<::BlockTypeRegistry>& mClientRegistry();
-
-    MCAPI static ::std::weak_ptr<::BlockTypeRegistry>& mServerRegistry();
-
-    MCAPI static ::std::weak_ptr<::BlockTypeRegistry>& mThreadLocalRegistry();
     // NOLINTEND
 };

@@ -21,10 +21,4 @@ public:
 
     virtual ::Seed128Bit seed128() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

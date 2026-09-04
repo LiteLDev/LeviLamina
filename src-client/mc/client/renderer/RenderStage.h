@@ -25,6 +25,7 @@ public:
     // prevent constructor by default
     RenderStage& operator=(RenderStage const&);
     RenderStage(RenderStage const&);
+    RenderStage();
 
 public:
     // virtual functions
@@ -46,18 +47,6 @@ public:
     virtual bool shouldSkip() const;
 
     virtual bool shouldRender() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI RenderStage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

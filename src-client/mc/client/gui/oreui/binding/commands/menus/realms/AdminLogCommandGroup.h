@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class GameDependencies; }
-namespace OreUI { class InvocationStatus; }
 namespace Realms { class AdminLogManager; }
 // clang-format on
 
@@ -34,16 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void fetchAdminLogsImpl(
-        ::Realms::AdminLogManager& adminLogManager,
-        ::OreUI::InvocationStatus  commandStatus,
-        ::std::string const&       realmId
-    );
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
@@ -53,12 +42,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

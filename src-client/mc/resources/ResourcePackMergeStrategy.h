@@ -1,0 +1,18 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+class LoadedResourceData;
+// clang-format on
+
+class ResourcePackMergeStrategy {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ResourcePackMergeStrategy() = default;
+
+    virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) = 0;
+    // NOLINTEND
+};

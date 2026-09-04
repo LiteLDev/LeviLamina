@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/network/packet/GraphicsOverrideParameterType.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace ScriptModuleMinecraft { class ScriptRGB; }
+namespace ScriptModuleServerGraphics { struct BiomeKey; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -19,67 +19,22 @@ namespace ScriptModuleServerGraphics {
 
 class ScriptBiomeAtmospherics {
 public:
-    // ScriptBiomeAtmospherics inner types declare
-    // clang-format off
-    struct BiomeKey;
-    // clang-format on
-
-    // ScriptBiomeAtmospherics inner types define
-    struct BiomeKey {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk9ace14;
-        ::ll::UntypedStorage<8, 32> mUnk6fc362;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BiomeKey& operator=(BiomeKey const&);
-        BiomeKey(BiomeKey const&);
-        BiomeKey();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~BiomeKey();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkc1823b;
     ::ll::UntypedStorage<8, 32> mUnk7a17e6;
+    ::ll::UntypedStorage<8, 8>  mUnk847794;
+    ::ll::UntypedStorage<8, 40> mUnkfeed04;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptBiomeAtmospherics& operator=(ScriptBiomeAtmospherics const&);
     ScriptBiomeAtmospherics(ScriptBiomeAtmospherics const&);
     ScriptBiomeAtmospherics();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::unordered_map<float, ::Vec3>> _getKeyframesFromVariant(
-        ::std::variant<
-            ::ScriptModuleMinecraft::ScriptRGB,
-            ::std::unordered_map<float, ::ScriptModuleMinecraft::ScriptRGB>> inVariant
-    );
-
-    MCNAPI ::std::optional<::std::unordered_map<float, ::Vec3>> _getKeyframesFromVariant(
-        ::std::variant<float, ::std::unordered_map<float, float>> inVariant,
-        float                                                     minValue,
-        float                                                     maxValue
-    );
-
     MCNAPI ::Scripting::Result<void, ::Scripting::EngineError>
     _sendResetPacket(::GraphicsOverrideParameterType parameterType);
 
@@ -96,6 +51,9 @@ public:
         float                                                            minValue,
         float                                                            maxValue
     );
+
+    MCNAPI ::ScriptModuleServerGraphics::ScriptBiomeAtmospherics&
+    operator=(::ScriptModuleServerGraphics::ScriptBiomeAtmospherics const&);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> resetHorizonBlendMax();
 
@@ -152,12 +110,20 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError>
     setSunMieStrength(::std::variant<float, ::std::unordered_map<float, float>> const& sunMieStrength);
+
+    MCNAPI ~ScriptBiomeAtmospherics();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

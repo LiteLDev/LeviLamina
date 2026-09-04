@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/Optional.h"
 #include "mc/entity/systems/OnFireSystem.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorOwnerComponent;
 class EntityContext;
 class EntityRegistry;
@@ -33,14 +31,6 @@ public:
         ::OnFireComponent&                     onFireComponent,
         ::Optional<::AbilitiesComponent const> abilities
     );
-
-    MCAPI static void _tickServerImpl(
-        bool                                       isFireImmune,
-        ::EntityContext&                           entity,
-        ::Actor&                                   actor,
-        ::OnFireComponent&                         onFireComponent,
-        ::optional_ref<::AbilitiesComponent const> abilities
-    );
     // NOLINTEND
 
 public:
@@ -49,11 +39,5 @@ public:
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

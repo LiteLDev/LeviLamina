@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/item/registry/ItemVersion.h"
 
 // auto generated forward declare list
@@ -25,18 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, ::ItemParseContext::LoadMode>                                   mLoadMode;
     ::ll::TypedStorage<8, 8, ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)> mItemIconFactory;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                           mParsedDefinitions;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mUnverifiedItemOverrideNames;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ItemParseContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                 mUnverifiedItemOverrideNames;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ItemVersion>> mVanillaItemVersionMap;
     // NOLINTEND
 };

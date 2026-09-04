@@ -26,12 +26,6 @@ public:
             ::cg::TextureSetDefinition>& description
     );
 
-    MCNAPI static void _buildTextureSetLayerSchema_v1_21_30(
-        ::JsonUtil::JsonSchemaObjectNode<
-            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::cg::TextureSetDefinition>,
-            ::cg::TextureSetDefinition>& description
-    );
-
     MCNAPI static void _schemaAddChildColor(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::cg::TextureSetDefinition>,

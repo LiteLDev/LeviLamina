@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/RefCountedNonVirtual.h"
+#include "mc/external/webrtc/RefCountedNonVirtual.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace webrtc { class Timestamp; }
 
 namespace webrtc {
 
-class RTCStatsReport : public ::rtc::RefCountedNonVirtual<::webrtc::RTCStatsReport> {
+class RTCStatsReport : public ::webrtc::RefCountedNonVirtual<::webrtc::RTCStatsReport> {
 public:
     // RTCStatsReport inner types declare
     // clang-format off

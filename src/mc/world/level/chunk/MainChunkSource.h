@@ -21,13 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MainChunkSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MainChunkSource() /*override*/;
+    virtual ~MainChunkSource() /*override*/ = default;
 
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& cp) /*override*/;
 
@@ -49,24 +45,6 @@ public:
     virtual bool canCreateViews() const /*override*/;
 
     virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MainChunkSource(::std::unique_ptr<::ChunkSource> storage);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> storage);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

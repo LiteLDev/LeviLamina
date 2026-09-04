@@ -14,30 +14,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NameAction& operator=(NameAction const&);
-    NameAction(NameAction const&);
-    NameAction();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NameAction(::NameAction&&);
-
     MCAPI void addNameFilterByName(::std::string const& name);
-
-    MCAPI ~NameAction();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NameAction&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

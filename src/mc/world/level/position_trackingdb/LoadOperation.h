@@ -49,16 +49,10 @@ public:
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCFOLD bool
+    MCAPI bool
     $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

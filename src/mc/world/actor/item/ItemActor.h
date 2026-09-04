@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
@@ -22,9 +21,9 @@ class ListTag;
 class Packet;
 class Player;
 class Vec3;
-struct AABBShapeComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -102,7 +101,7 @@ public:
 
     virtual bool isFireImmune() const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& damage, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
@@ -120,13 +119,7 @@ public:
 
     MCAPI void _addComponents();
 
-    MCAPI void _dropContents();
-
     MCAPI void _dropItemList(::ListTag* itemList);
-
-    MCAPI bool _merge(::ItemActor* target);
-
-    MCAPI void _mergeWithNeighbours();
 
     MCAPI void _validateItem();
 
@@ -139,21 +132,11 @@ public:
         bool               isInItemFrame,
         bool               isFromFishing
     );
-
-    MCFOLD ::std::optional<::ItemActor::ItemRenderAdjustments> const& getRenderAdjustments() const;
-
-    MCFOLD ::std::optional<::ItemActor::ItemRenderAdjustments>& getRenderAdjustments();
 #endif
 
     MCAPI void postNormalTick();
 
     MCAPI void setSourceEntity(::Actor const* owner);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::AABB getLiquidAABB(::AABBShapeComponent const& aabbShapeComponent);
     // NOLINTEND
 
 public:
@@ -179,24 +162,18 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool $canSynchronizeNewEntity() const;
+    MCFOLD bool $canSynchronizeNewEntity() const;
 
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isFireImmune() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& damage, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

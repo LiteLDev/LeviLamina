@@ -6,11 +6,9 @@
 #include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
-#include "mc/platform/brstd/future.h"
 
 // auto generated forward declare list
 // clang-format off
-struct XAsyncBlock;
 namespace Bedrock::Http { class HeaderCollection; }
 struct HC_WEBSOCKET_OBSERVER;
 // clang-format on
@@ -30,6 +28,7 @@ public:
     // prevent constructor by default
     WebSocket& operator=(WebSocket const&);
     WebSocket(WebSocket const&);
+    WebSocket();
 
 public:
     // virtual functions
@@ -48,43 +47,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WebSocket();
-
-    MCNAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket(::brstd::future<void> connectCompleted);
-
     MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
     connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
-
-    MCNAPI bool disconnect();
-
-    MCNAPI bool isConnected() const;
-
-    MCNAPI void setPingInterval(::std::chrono::seconds interval);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static long _deallocateSocket(::HC_WEBSOCKET_OBSERVER* handle);
-
     MCNAPI static void _deallocateSocketAsync(::HC_WEBSOCKET_OBSERVER* handle);
-
-    MCNAPI static void _onConnect(
-        ::XAsyncBlock*                              asyncConnect,
-        ::std::weak_ptr<::Bedrock::Http::WebSocket> weakThis,
-        ::Bedrock::Threading::AsyncPromise<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
-                                 onComplete,
-        ::HC_WEBSOCKET_OBSERVER* connectHandle
-    );
-
-    MCNAPI static void
-    _onSend(::XAsyncBlock* asyncSend, ::Bedrock::Threading::AsyncPromise<::std::error_code> onComplete);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

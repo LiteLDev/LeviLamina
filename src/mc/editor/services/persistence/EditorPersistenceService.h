@@ -9,7 +9,7 @@
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPersistenceServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -21,8 +21,6 @@ namespace Editor::Network { class PersistenceRequestGroupPayload; }
 namespace Editor::Network { class PersistenceResponseGroupPayload; }
 namespace Editor::Network { class SavePersistenceGroupPayload; }
 namespace Editor::Services { class PersistenceGroup; }
-namespace Editor::Services { struct PersistenceGroupManifest; }
-namespace Editor::Services { struct PersistenceGroupMetadata; }
 // clang-format on
 
 namespace Editor::Services {
@@ -120,12 +118,6 @@ public:
         ::std::optional<int>                 version
     );
 
-    MCNAPI ::std::optional<::Editor::Services::PersistenceGroupMetadata> _getGroupMetaData(
-        ::std::string const&                 namespacedName,
-        ::Editor::Services::PersistenceScope scope,
-        ::std::optional<int>                 version
-    );
-
     MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     _getManifestFilePath(::Editor::Services::PersistenceScope scope);
 
@@ -144,8 +136,6 @@ public:
     MCNAPI void _handleSaveGroupPayload(::Editor::Network::SavePersistenceGroupPayload const& payload);
 
     MCNAPI void _loadGroupMetaData(::Editor::Services::PersistenceScope scope);
-
-    MCNAPI ::std::optional<::Editor::Services::PersistenceGroupManifest> _parseJsonToGroupManifest(::std::string value);
 
     MCNAPI bool _saveGroupMetaData(::Editor::Services::PersistenceScope scope);
     // NOLINTEND
@@ -207,14 +197,6 @@ public:
     $syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEditorPersistenceServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

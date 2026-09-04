@@ -42,19 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
-    _addTag(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
-
-    MCAPI ::std::vector<::std::reference_wrapper<::Actor>>
-    _getSelectorResults(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
     MCAPI ::std::string _getTagWithPercentageFixed() const;
-
-    MCAPI void
-    _listTags(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
-
-    MCAPI void
-    _removeTag(::CommandOutput& output, ::std::vector<::std::reference_wrapper<::Actor>> const& selectorResults) const;
     // NOLINTEND
 
 public:
@@ -70,15 +58,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::TagCommand::Action>();
-// clang-format on

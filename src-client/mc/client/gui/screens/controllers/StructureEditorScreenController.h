@@ -8,7 +8,6 @@
 #include "mc/client/gui/screens/controllers/BlockScreenController.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/StructureBlockType.h"
 #include "mc/world/level/levelgen/structure/StructureEditorData.h"
 #include "mc/world/level/levelgen/structure/StructureTelemetryClientData.h"
 
@@ -68,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureEditorScreenController() /*override*/;
+    virtual ~StructureEditorScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -95,43 +94,19 @@ public:
 
     MCAPI void _filePicker(::StructureEditorScreenController::FilePickerType op);
 
-    MCAPI ::std::string _getBlockTypeIcon();
-
-    MCFOLD ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI void _initiateDetect();
-
-    MCAPI void _initiateExport();
+    MCAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
 
     MCAPI void _initiateFileGeneration();
 
-    MCAPI void _initiateImport();
-
-    MCAPI void _initiateLoad();
-
-    MCAPI void _initiateSave();
-
-    MCAPI void _onStructureTypeChanged(::StructureBlockType newMode);
-
-    MCAPI void _registerAnimationModeDropdown();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerModeDropdown();
-
-    MCAPI void _registerRedstoneDropdown();
-
-    MCAPI void _resetChanges();
-
     MCAPI void _setSeedFromString();
+    // NOLINTEND
 
-    MCAPI void _setStructureEditorData(::StructureEditorData const& structureEditorData);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent);
+
+    MCAPI static int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent);
     // NOLINTEND
 
 public:
@@ -143,12 +118,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -165,13 +134,5 @@ public:
     MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

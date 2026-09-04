@@ -36,6 +36,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Modifier();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const
@@ -47,20 +51,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Modifier();
-
-    MCAPI explicit Modifier(::br::worldgen::processors::BlockEntity::Passthrough);
-
     MCAPI explicit Modifier(::br::worldgen::processors::BlockEntity::AppendLoot match);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::br::worldgen::processors::BlockEntity::Passthrough);
-
     MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::AppendLoot match);
     // NOLINTEND
 

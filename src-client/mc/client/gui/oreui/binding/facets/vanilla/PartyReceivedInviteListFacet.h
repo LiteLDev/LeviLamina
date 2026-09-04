@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -20,7 +20,7 @@ namespace World { class WorldPlayerListTracker; }
 
 namespace OreUI {
 
-class PartyReceivedInviteListFacet : public ::OreUI::FacetBase<::OreUI::PartyReceivedInviteListFacet> {
+class PartyReceivedInviteListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PartyReceivedInviteListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PartyReceivedInviteListFacet() /*override*/;
+    virtual ~PartyReceivedInviteListFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -88,21 +88,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

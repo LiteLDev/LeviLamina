@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
@@ -16,7 +15,6 @@
 struct LevelWeatherChangedEvent;
 struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 class ScriptLevelGameplayHandler : public ::EventHandlerDispatcher<::LevelGameplayHandler>,
@@ -30,16 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _handleWeatherChangedEvent(
-        ::LevelWeatherChangedEvent&                                                       weatherChangedEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::LevelWeatherChangedEvent& event);
@@ -47,11 +35,5 @@ public:
     MCAPI ::HandlerResult $handleEvent(::ScriptingWorldInitializeEvent const& event);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

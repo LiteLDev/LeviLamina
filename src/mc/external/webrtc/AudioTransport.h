@@ -30,12 +30,6 @@ public:
 
     virtual ~AudioTransport() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

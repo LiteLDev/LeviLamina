@@ -16,22 +16,6 @@ public:
     PredeclaredAnnotation& operator=(PredeclaredAnnotation const&);
     PredeclaredAnnotation(PredeclaredAnnotation const&);
     PredeclaredAnnotation();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~PredeclaredAnnotation();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Profiler::details

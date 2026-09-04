@@ -16,7 +16,7 @@ public:
 
     virtual uint64 threadId() /*override*/;
 
-    virtual void writeToDebugger(char const*, ::HCTraceLevel, char const*) /*override*/;
+    virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message) /*override*/;
     // NOLINTEND
 
 public:
@@ -24,15 +24,9 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 $threadId();
 
-    MCNAPI void $writeToDebugger(char const*, ::HCTraceLevel, char const*);
+    MCNAPI void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

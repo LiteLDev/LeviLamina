@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/network/EditorConnectionJoinIntent.h"
 
 // auto generated forward declare list
 // clang-format off
 class LevelData;
-class PackCapability;
 namespace Bedrock { class ActivationArguments; }
 // clang-format on
 
@@ -29,36 +29,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorBootstrapper() /*override*/;
+    virtual ~EditorBootstrapper() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isEditorModeEnabled() const;
+#ifdef LL_PLAT_S
+    MCNAPI void logLoadedLevelType(::LevelData const& levelData, bool levelLoadSucceeded) const;
+#endif
 
     MCNAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
 
 #ifdef LL_PLAT_S
-    MCNAPI void processLoadedLevel(::LevelData& levelData, bool levelLoadSucceeded);
+    MCNAPI void processLoadedLevel(::LevelData& levelData, bool levelLoadSucceeded, bool convertWorldToEditorProject);
 #endif
     // NOLINTEND
 
 public:
-    // static functions
+    // static variables
     // NOLINTBEGIN
-    MCNAPI static ::PackCapability getPackCapability(::std::optional<bool> creator_editor_override);
-    // NOLINTEND
+    MCNAPI static ::std::string const& JOIN_INTENT_ARGUMENT_KEY();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::optional<::EditorConnectionJoinIntent>& msGlobalEditorJoinIntentOverride();
+#endif
     // NOLINTEND
 };

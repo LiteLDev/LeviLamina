@@ -35,10 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorPlacerItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tearDown() /*override*/;
@@ -70,17 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorPlacerItem(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
-
     MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
-
-    MCAPI ::Actor* _spawnActorAt(
-        ::BlockSource&     region,
-        ::Vec3 const&      pos,
-        ::Vec3 const&      playerFeetPos,
-        ::ItemStack const& item,
-        ::Actor*           spawner
-    ) const;
     // NOLINTEND
 
 public:
@@ -106,12 +92,6 @@ public:
     MCAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
 
     MCAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
     // NOLINTEND
 
 public:

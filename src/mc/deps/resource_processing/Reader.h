@@ -20,13 +20,10 @@ public:
     // NOLINTBEGIN
     virtual bool isValid() const = 0;
 
-    virtual void forEachIn(::brstd::function_ref<void(::std::string_view, ::gsl::span<uchar const>)>) const = 0;
-    // NOLINTEND
+    virtual void
+    forEachIn(::brstd::function_ref<void(::std::string_view, ::gsl::span<uchar const>)> callback) const = 0;
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual void forEachIn(::brstd::function_ref<void(::std::string_view, ::gsl::span<uchar>)> callback) = 0;
     // NOLINTEND
 };
 

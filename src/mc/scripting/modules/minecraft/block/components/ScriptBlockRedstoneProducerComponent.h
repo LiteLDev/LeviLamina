@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/scripting/modules/minecraft/ScriptFacing.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
@@ -24,17 +23,7 @@ class ScriptBlockRedstoneProducerComponent : public ::ScriptModuleMinecraft::Bas
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
-        ::std::vector<::ScriptModuleMinecraft::ScriptFacing>,
-        ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError>
-    getConnectedFaces() const;
-
     MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError> getPower() const;
-
-    MCAPI ::Scripting::Result<
-        ::std::optional<::ScriptModuleMinecraft::ScriptFacing>,
-        ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError>
-    getStronglyPoweredFace() const;
     // NOLINTEND
 
 public:
@@ -53,12 +42,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

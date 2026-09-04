@@ -15,4 +15,5 @@ enum class PackOrigin : uchar {
     PremiumTempCache = 9,
     RealmsService    = 10,
     Test             = 11,
+    System           = 12,
 };

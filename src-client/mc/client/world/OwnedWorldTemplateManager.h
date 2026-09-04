@@ -108,16 +108,12 @@ public:
         ::std::function<void(::std::optional<::std::string const>)> callback
     );
 
-    MCFOLD ::std::vector<::World::OwnedWorldTemplateData> const& getOwnedTemplateDataList();
-
     MCAPI void
     importWorldTemplate(::std::function<void(::std::optional<::ImportFailure>, ::std::string const&)> callback);
 
     MCAPI void isTemplateOwned(::std::string const& templateId, ::std::function<void(bool)> callback);
 
     MCAPI void refresh();
-
-    MCFOLD ::Bedrock::PubSub::Subscription subscribeToRefresh(::std::function<void()> func);
     // NOLINTEND
 
 public:
@@ -147,12 +143,6 @@ public:
     );
 
     MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

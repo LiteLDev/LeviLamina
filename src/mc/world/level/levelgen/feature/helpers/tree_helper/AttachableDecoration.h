@@ -69,11 +69,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _placeMultiDecoration(
-        ::IBlockWorldGenAPI& target,
-        ::Random&            random,
-        ::BlockPos const&    pos,
-        ::CommonDirection    dir,
-        ::BlockPos const&    origin
+        ::IBlockWorldGenAPI&    target,
+        ::Random&               random,
+        ::BlockPos const&       pos,
+        ::CommonDirection const dir,
+        ::BlockPos const&       origin
     ) const;
 
     MCAPI void placeDecoration(

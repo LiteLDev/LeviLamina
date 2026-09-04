@@ -88,12 +88,6 @@ public:
 
     MCAPI bool $flush();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace Settings

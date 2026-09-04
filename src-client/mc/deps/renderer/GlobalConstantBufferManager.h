@@ -18,30 +18,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::ConstantBufferContainer>> mConstantBufferContainers;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlobalConstantBufferManager();
-
-    MCAPI ::mce::ConstantBufferContainer& findConstantBufferContainer(::std::string const& constantBufferName);
-
-    MCAPI void setDirty();
-
-    MCAPI ~GlobalConstantBufferManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace mce

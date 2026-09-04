@@ -84,13 +84,12 @@ public:
 
     public:
         // prevent constructor by default
+        Advanced(Advanced const&);
         Advanced();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Advanced(::OreUI::LevelDataBindings::Advanced const&);
-
         MCAPI ::std::optional<::std::string> const& getFlatWorldPreset();
 
         MCAPI ::GeneratorType getGeneratorType() const;
@@ -117,7 +116,7 @@ public:
 
         MCAPI bool getUseFlatWorld() const;
 
-        MCFOLD bool getUseFriendlyFire() const;
+        MCAPI bool getUseFriendlyFire() const;
 
         MCAPI bool getUseImmediateRespawn() const;
 
@@ -163,7 +162,7 @@ public:
 
         MCAPI void setUseFlatWorld(bool useFlatWorld);
 
-        MCFOLD void setUseFriendlyFire(bool useFriendlyFire);
+        MCAPI void setUseFriendlyFire(bool useFriendlyFire);
 
         MCAPI void setUseImmediateRespawn(bool useImmediateRespawn);
 
@@ -180,12 +179,6 @@ public:
         MCAPI void setWorldSeed(::std::string const& worldSeedString);
 
         MCAPI ~Advanced();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::LevelDataBindings::Advanced const&);
         // NOLINTEND
 
     public:
@@ -227,27 +220,25 @@ public:
 
         MCAPI int getPlatformPlayerAccess() const;
 
-        MCFOLD bool getPlatformPlayerAccessEnabled() const;
+        MCAPI bool getPlatformPlayerAccessEnabled() const;
 
-        MCFOLD bool getPlatformPlayerAccessSupported() const;
+        MCAPI bool getPlatformPlayerAccessSupported() const;
 
-        MCFOLD bool getPlatformPlayerFriendsOfFriendsAccessSupported() const;
+        MCAPI bool getPlatformPlayerFriendsOfFriendsAccessSupported() const;
 
         MCAPI bool getPlatformPlayerInviteAccessSupported() const;
 
         MCAPI int getPlayerPermissions() const;
 
-        MCFOLD bool getUseFriendlyFire() const;
+        MCAPI int getPlayerWaypointsMode() const;
+
+        MCAPI bool getUseFriendlyFire() const;
 
         MCAPI bool getVisibleToLanPlayers() const;
-
-        MCAPI bool isLocatorBarEnabled() const;
 
         MCAPI ::OreUI::LevelDataBindings::Multiplayer& operator=(::OreUI::LevelDataBindings::Multiplayer const& rhs);
 
         MCAPI bool operator==(::OreUI::LevelDataBindings::Multiplayer const& rhs) const;
-
-        MCAPI void setLocatorBarEnabled(bool isLocatorBarEnabled);
 
         MCAPI void setMsPlayerAccess(int intMsPlayerAccess);
 
@@ -257,7 +248,9 @@ public:
 
         MCAPI void setPlayerPermissions(int intPlayerPermissionLevel);
 
-        MCFOLD void setUseFriendlyFire(bool useFriendlyFire);
+        MCAPI void setPlayerWaypointsMode(int playerWaypointsMode);
+
+        MCAPI void setUseFriendlyFire(bool useFriendlyFire);
 
         MCAPI void setVisibleToLanPlayers(bool useVisibleToLanPlayers);
         // NOLINTEND
@@ -374,16 +367,13 @@ public:
 
 public:
     // prevent constructor by default
+    LevelDataBindings(LevelDataBindings const&);
     LevelDataBindings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelDataBindings(::OreUI::LevelDataBindings const&);
-
     MCAPI LevelDataBindings(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
-
-    MCFOLD bool getHasBehaviourPacksForAchievements() const;
 
     MCAPI ::std::string getInitialTemplateLoadID() const;
 
@@ -395,17 +385,11 @@ public:
 
     MCAPI bool isUsingTemplate() const;
 
-    MCAPI bool operator!=(::OreUI::LevelDataBindings const& rhs) const;
-
     MCAPI ::OreUI::LevelDataBindings& operator=(::OreUI::LevelDataBindings const& rhs);
 
     MCAPI bool operator==(::OreUI::LevelDataBindings const& rhs) const;
 
     MCAPI void reset(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
-
-    MCAPI bool setHasBehaviourPacksForAchievements(bool hasBehaviourPacks);
-
-    MCFOLD void setInitialTemplateLoadID(::std::string const& templateId);
 
     MCAPI void setWorldTemplateOptionLocked(bool worldTemplateOptionLocked);
 
@@ -417,8 +401,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::LevelDataBindings const&);
-
     MCAPI void* $ctor(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
     // NOLINTEND
 

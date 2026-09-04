@@ -18,18 +18,4 @@ public:
     LevelCache& operator=(LevelCache const&);
     LevelCache(LevelCache const&);
     LevelCache();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::LevelCache& moveAssignKeepLevelDataMemory(::LevelCache&& other);
-
-    MCNAPI ~LevelCache();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

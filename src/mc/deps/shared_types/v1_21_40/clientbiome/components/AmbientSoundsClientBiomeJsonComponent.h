@@ -31,6 +31,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
+
+    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -61,6 +63,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

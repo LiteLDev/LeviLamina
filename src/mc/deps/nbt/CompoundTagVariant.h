@@ -198,11 +198,11 @@ public:
             mTagStorage = Int64Tag{integer};
         }
     }
-    [[nodiscard]] constexpr CompoundTagVariant(std::byte b) : mTagStorage(ByteTag{b}) {}
+    [[nodiscard]] CompoundTagVariant(std::byte b) : mTagStorage(ByteTag{b}) {}
 
-    [[nodiscard]] constexpr CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {}
+    [[nodiscard]] CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {}
 
-    [[nodiscard]] constexpr CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {}
+    [[nodiscard]] CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {}
 
     [[nodiscard]] constexpr CompoundTagVariant(std::string s)
     : mTagStorage(std::in_place_type<StringTag>, std::move(s)) {}
@@ -407,10 +407,10 @@ public:
             throw std::runtime_error("tag not hold an number");
         }
     }
-    [[nodiscard]] operator std::string const&() const { return get<StringTag>(); }
-    [[nodiscard]] operator std::string&() { return get<StringTag>(); }
-    [[nodiscard]] operator std::string&&() && { return std::move(get<StringTag>()); }
-    [[nodiscard]] operator std::string_view() const { return get<StringTag>(); }
+    [[nodiscard]]             operator std::string const&() const { return get<StringTag>(); }
+    [[nodiscard]]             operator std::string&() { return get<StringTag>(); }
+    [[nodiscard]]             operator std::string&&() && { return std::move(get<StringTag>()); }
+    [[nodiscard]]             operator std::string_view() const { return get<StringTag>(); }
     static CompoundTagVariant object(std::initializer_list<CompoundTag::TagMap::value_type> init = {}) {
         return CompoundTagVariant{std::in_place_type<CompoundTag>, init};
     }

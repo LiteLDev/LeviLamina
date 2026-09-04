@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 namespace ClientBlockPipeline { struct BlockSchematicPart; }
 namespace ClientBlockPipeline::ItemTransforms { struct Transform; }
 // clang-format on
@@ -35,12 +34,6 @@ public:
     MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> getCopy() const;
 
     MCAPI ~BlockSchematic();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ClientBlockPipeline::BlockSchematic const* tryGetSchematic(::Block const& block);
     // NOLINTEND
 
 public:

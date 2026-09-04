@@ -29,7 +29,5 @@ public:
     MCAPI void checkAndSerialize(::std::function<void(::std::string const&)> postSerializeWriteCallback) const;
 
     MCAPI void deserialize(::IDataInput& stream);
-
-    MCAPI ::std::shared_ptr<::LevelChunkMetaData> registerMetaData(::LevelChunkMetaData const& candidateMetaData);
     // NOLINTEND
 };

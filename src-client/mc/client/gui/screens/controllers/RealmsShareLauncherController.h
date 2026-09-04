@@ -5,12 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
-#include "mc/client/network/realms/GenericStatus.h"
 
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-struct ModalScreenData;
 // clang-format on
 
 class RealmsShareLauncherController : public ::MinecraftScreenController {
@@ -35,15 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RealmsShareLauncherController(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string realmInvite);
-
-    MCAPI void _findAndJoinRealm();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ModalScreenData
-    DetermineErrorDialog(::Realms::GenericStatus status, ::std::string const& errorMessage);
     // NOLINTEND
 
 public:

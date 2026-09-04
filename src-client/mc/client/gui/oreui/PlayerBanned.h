@@ -13,9 +13,4 @@ namespace OreUI::EntryPoints::PlayerBanned {
 MCAPI ::std::string composeRoute(::Social::UserBanDetails const& ban);
 // NOLINTEND
 
-// static variables
-// NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
-// NOLINTEND
-
 } // namespace OreUI::EntryPoints::PlayerBanned

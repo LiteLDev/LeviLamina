@@ -10,6 +10,7 @@
 class Block;
 class BlockType;
 class CompoundTagUpdaterContext;
+class SemVersionConstant;
 struct ItemRegistryComplexAlias;
 namespace FlatteningUtils { class RemovedState; }
 namespace FlatteningUtils { struct LegacyBlockInfo; }
@@ -31,7 +32,7 @@ assignPreFlatteningDestructionParticlesTexture(::Block const& block, ::std::stri
 #endif
 
 MCAPI ::std::vector<::WeakPtr<::BlockType const>>
-getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64);
+getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
 MCAPI ::ItemRegistryComplexAlias
 getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, bool allowCommands);
@@ -39,6 +40,16 @@ getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& lega
 
 // static variables
 // NOLINTBEGIN
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_20_50();
+
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_10();
+
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_20();
+
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_30();
+
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_40();
+
 MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyAnvilInfo();
 
 MCAPI ::std::vector<::std::reference_wrapper<::FlatteningUtils::LegacyBlockInfo const>> const& LegacyBlockInfos();

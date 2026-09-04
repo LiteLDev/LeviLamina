@@ -33,26 +33,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD float getChance() const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

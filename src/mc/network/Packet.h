@@ -16,8 +16,6 @@
 // clang-format off
 class BinaryStream;
 class IPacketHandlerDispatcher;
-class NetEventCallback;
-class NetworkIdentifier;
 class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -120,7 +118,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     virtual void write(::BinaryStream& stream) const = 0;
 
@@ -139,28 +137,16 @@ public:
 
     virtual ::std::string toString() const;
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) = 0;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    handle(::NetworkIdentifier const& source, ::NetEventCallback& callback, ::std::shared_ptr<::Packet>& packet);
-
-    MCAPI ::Bedrock::Result<void> readNoHeader(
-        ::ReadOnlyBinaryStream&        bitstream,
-        ::cereal::ReflectionCtx const& reflectionCtx,
-        ::SubClientId const&           subid
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getMaxSize() const;
+    MCFOLD uint64 $getMaxSize() const;
 
     MCAPI ::Bedrock::Result<void> $checkSize(uint64 packetSize, bool receiverIsServer) const;
 
@@ -170,7 +156,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCAPI void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCFOLD ::Bedrock::Result<void>
     $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
@@ -187,7 +173,8 @@ public:
 
     MCFOLD ::std::string $toString() const;
 
-    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCFOLD ::Bedrock::Result<void>
+    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

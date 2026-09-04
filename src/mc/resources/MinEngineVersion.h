@@ -22,25 +22,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MinEngineVersion();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinEngineVersion();
-
     MCAPI explicit MinEngineVersion(::SemVersion const& version);
 
-    MCAPI ::std::string asString() const;
-
+#ifdef LL_PLAT_C
     MCAPI ::Json::Value createJsonValue() const;
 
-    MCFOLD ::CurrentCmdVersion getCommandVersion() const;
-
-    MCAPI ::MolangVersion getMolangVersion() const;
-
-#ifdef LL_PLAT_C
     MCAPI ::SemVersion getSemVersion() const;
 #endif
-
-    MCFOLD bool isValid() const;
 
     MCAPI bool operator==(::MinEngineVersion const& rhs) const;
     // NOLINTEND
@@ -54,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SemVersion const& version);
     // NOLINTEND
 };

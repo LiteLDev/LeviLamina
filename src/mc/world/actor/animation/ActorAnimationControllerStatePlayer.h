@@ -19,6 +19,7 @@ class ExpressionNode;
 class HashedString;
 class RenderParams;
 struct AnimationVisitor;
+namespace Util { struct HashStringHashGreater; }
 // clang-format on
 
 class ActorAnimationControllerStatePlayer : public ::ActorAnimationPlayer {
@@ -67,41 +68,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ActorAnimationControllerStatePlayer(
-        ::HashedString const&                                    friendlyName,
-        ::ActorAnimationControllerPlayer&                        owner,
-        ::std::shared_ptr<::ActorAnimationControllerState>       animationControllerState,
-        ::AnimationComponent&                                    animationComponent,
-        ::ExpressionNode const&                                  blendExpression,
-        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
+        ::HashedString const&                                      friendlyName,
+        ::ActorAnimationControllerPlayer&                          owner,
+        ::std::shared_ptr<::ActorAnimationControllerState>         animationControllerState,
+        ::AnimationComponent&                                      animationComponent,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
 
-#ifdef LL_PLAT_C
     MCAPI void addAnimation(
         ::AnimationComponent&       animationComponent,
         ::HashedString const&       friendlyName,
         ::ActorSkeletalAnimationPtr animation
     );
 #endif
-
-    MCAPI bool allAnimationsFinished() const;
-
-    MCAPI bool anyAnimationsFinished() const;
-
-    MCFOLD float getStateTime() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
-        ::HashedString const&                                    friendlyName,
-        ::ActorAnimationControllerPlayer&                        owner,
-        ::std::shared_ptr<::ActorAnimationControllerState>       animationControllerState,
-        ::AnimationComponent&                                    animationComponent,
-        ::ExpressionNode const&                                  blendExpression,
-        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
+        ::HashedString const&                                      friendlyName,
+        ::ActorAnimationControllerPlayer&                          owner,
+        ::std::shared_ptr<::ActorAnimationControllerState>         animationControllerState,
+        ::AnimationComponent&                                      animationComponent,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
+#endif
     // NOLINTEND
 
 public:
@@ -131,11 +128,5 @@ public:
     MCAPI void $visit(::AnimationVisitor&& dispatcher);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

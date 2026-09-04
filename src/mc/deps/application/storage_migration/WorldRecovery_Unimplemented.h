@@ -53,14 +53,6 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForImplBase();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

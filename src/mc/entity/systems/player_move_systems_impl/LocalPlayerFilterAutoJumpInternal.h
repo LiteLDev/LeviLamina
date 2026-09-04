@@ -10,7 +10,6 @@
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
-#include "mc/deps/ecs/strict/OptionalGlobal.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -182,56 +181,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void commonTick(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::ActorMovementTickNeededComponent,
-                ::LocalPlayerComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::MovementAttributesComponent,
-                ::DimensionTypeComponent,
-                ::OnGroundFlagComponent,
-                ::StateVectorComponent,
-                ::ClientInputLockComponent>,
-            ::Write<::MoveInputComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context,
-        ::StrictEntityContext*   entity
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isAutoJumpEnabledGlobally(::OptionalGlobal<::ExternalDataComponent const> data);
-
     MCAPI static void _setJumpingIfPlayerCanAutoJump(
         ::StrictEntityContext const&              entity,
         ::AABBShapeComponent const&               aabbShape,
@@ -282,6 +233,48 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>&   executionContext,
         ::IConstBlockSource const& region
+    );
+
+    MCAPI static void commonTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::ActorMovementTickNeededComponent,
+                ::LocalPlayerComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::MovementAttributesComponent,
+                ::DimensionTypeComponent,
+                ::OnGroundFlagComponent,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
+            ::Write<::MoveInputComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext*   entity
     );
     // NOLINTEND
 

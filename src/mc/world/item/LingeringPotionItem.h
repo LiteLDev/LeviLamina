@@ -32,18 +32,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LingeringPotionItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Potion::PotionType getPotionType() const /*override*/;
 
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
-        /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -52,7 +48,8 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
@@ -70,25 +67,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LingeringPotionItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Potion::PotionType $getPotionType() const;
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -97,7 +83,8 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 

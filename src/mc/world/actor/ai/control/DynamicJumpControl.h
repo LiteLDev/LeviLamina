@@ -17,7 +17,7 @@ class DynamicJumpControl : public ::JumpControl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeInternal(::Mob&, ::JumpControlDescription const*) /*override*/;
+    virtual void initializeInternal(::Mob& mob, ::JumpControlDescription const* description) /*override*/;
 
     virtual ::std::unique_ptr<::JumpControl> clone() const /*override*/;
 
@@ -35,21 +35,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DynamicJumpControl();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob&, ::JumpControlDescription const*);
+    MCFOLD void $initializeInternal(::Mob& mob, ::JumpControlDescription const* description);
 
     MCAPI ::std::unique_ptr<::JumpControl> $clone() const;
 

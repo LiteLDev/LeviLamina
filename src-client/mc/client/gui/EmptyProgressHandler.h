@@ -15,7 +15,7 @@ class EmptyProgressHandler : public ::ProgressHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EmptyProgressHandler() /*override*/;
+    virtual ~EmptyProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -30,12 +30,6 @@ public:
     virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

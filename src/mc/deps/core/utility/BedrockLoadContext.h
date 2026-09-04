@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/molang/MolangVersion.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-class LinkedAssetValidator;
-// clang-format on
-
 class BedrockLoadContext {
 public:
     // member variables
@@ -32,32 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BedrockLoadContext(::MolangVersion molangVersion);
-
-    MCNAPI
-    BedrockLoadContext(::MolangVersion molangVersion, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
-
-    MCNAPI bool canLoadBeta() const;
-
-    MCNAPI ::std::unordered_map<::HashedString, uchar>* getBrainMemoryValidationContext();
-
-    MCNAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> getLinkedAssetValidator();
-
-    MCNAPI ::MolangVersion getMolangVersion() const;
-
-    MCNAPI bool hasBetaPermissionContext() const;
-
-    MCNAPI void setBetaLoadPermissionPolicy(bool isBaseGamePack, bool betaApis);
-
     MCNAPI ~BedrockLoadContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::MolangVersion molangVersion);
-
-    MCNAPI void* $ctor(::MolangVersion molangVersion, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:

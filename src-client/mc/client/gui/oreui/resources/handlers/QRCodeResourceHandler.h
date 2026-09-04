@@ -41,19 +41,12 @@ public:
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::Gameface::ResourceHandlerStatus
-    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const& request,
+        ::Gameface::ResourceStreamResponse&
+    ) /*override*/;
 
     virtual void update() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI QRCodeResourceHandler(
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
     // NOLINTEND
 
 public:
@@ -66,22 +59,13 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
     MCFOLD ::Gameface::ResourceHandlerStatus
-    $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
+    $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse&);
 
     MCFOLD void $update();
     // NOLINTEND

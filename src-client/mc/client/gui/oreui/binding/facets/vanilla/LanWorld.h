@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/GameType.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PingedCompatibleServer;
-// clang-format on
-
 namespace OreUI {
 
 struct LanWorld {
@@ -30,25 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LanWorld& operator=(LanWorld const&);
-    LanWorld(LanWorld const&);
-    LanWorld();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LanWorld(::PingedCompatibleServer const& worldInfo);
-
-    MCAPI ::OreUI::LanWorld& operator=(::OreUI::LanWorld&&);
-
     MCAPI ~LanWorld();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PingedCompatibleServer const& worldInfo);
     // NOLINTEND
 
 public:

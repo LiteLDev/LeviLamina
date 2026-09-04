@@ -25,7 +25,7 @@ public:
 
     virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* a1) = 0;
 
-    virtual bool GetSignalLevel(int* level);
+    virtual bool GetSignalLevel(int* a1);
 
     virtual ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> GetAudioProcessor();
 
@@ -41,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $GetSignalLevel(int* level);
+    MCNAPI bool $GetSignalLevel(int* a1);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> $GetAudioProcessor();
 

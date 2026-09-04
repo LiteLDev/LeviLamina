@@ -25,20 +25,20 @@ LL_TYPE_INSTANCE_HOOK(
     BlockChangedEventHook,
     HookPriority::Normal,
     BlockSource,
-    &BlockSource::_blockChanged,
+    &BlockSource::$fireBlockChanged,
     void,
-    BlockPos const&              pos,
-    uint                         layer,
-    Block const&                 block,
-    Block const&                 previousBlock,
-    int                          updateFlags,
-    bool                         fireEvent,
-    ActorBlockSyncMessage const* syncMsg,
-    Actor*                       blockChangeSource
+    ::BlockPos const&              pos,
+    uint                           layer,
+    ::Block const&                 block,
+    ::Block const&                 oldBlock,
+    int                            flags,
+    ::BlockChangedEventTarget      eventTarget,
+    ::ActorBlockSyncMessage const* syncMsg,
+    ::Actor*                       source
 ) {
-    auto event = BlockChangedEvent{*this, layer, previousBlock, block, pos};
+    auto event = BlockChangedEvent{*this, layer, oldBlock, block, pos};
     EventBus::getInstance().publish(event);
-    return origin(pos, layer, block, previousBlock, updateFlags, fireEvent, syncMsg, blockChangeSource);
+    return origin(pos, layer, block, oldBlock, flags, eventTarget, syncMsg, source);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

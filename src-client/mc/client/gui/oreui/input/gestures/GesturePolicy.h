@@ -12,7 +12,6 @@
 // clang-format off
 namespace OreUI { class ITouchSystem; }
 namespace OreUI { struct GestureParameters; }
-namespace OreUI { struct TouchEventData; }
 // clang-format on
 
 namespace OreUI {
@@ -64,8 +63,6 @@ public:
         ::std::function<::std::chrono::milliseconds()> const& getTime,
         bool                                                  isTTSEnabled
     );
-
-    MCAPI void onTouchesUpdate(::std::vector<::OreUI::TouchEventData> const& events);
     // NOLINTEND
 
 public:
@@ -91,12 +88,6 @@ public:
     $onFlingCompleted(::Vec2 const& endPos, ::Vec2 const& flingStart, ::std::chrono::milliseconds flingDuration);
 
     MCAPI void $onTapRecognized(::Vec2 const& position);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

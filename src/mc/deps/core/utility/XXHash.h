@@ -41,41 +41,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit XXHash(uint64 seed);
-
     MCNAPI void _updateImpl(void const* input, uint64 length);
 
     MCNAPI uint64 digest();
-
-    MCNAPI void update(uchar);
-
-    MCNAPI void update(int data);
-
-    MCNAPI void update(uint data);
-
-    MCNAPI void update(float data);
-
-    MCNAPI void update(bool data);
-
-    MCNAPI ~XXHash();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static uint64 _hash64Impl(void const* input, uint64 len, uint64 seed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(uint64 seed);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

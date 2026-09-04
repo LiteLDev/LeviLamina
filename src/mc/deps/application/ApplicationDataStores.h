@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 namespace Bedrock { class DataStore; }
 // clang-format on
 
@@ -33,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ApplicationDataStores() /*override*/;
+    virtual ~ApplicationDataStores() /*override*/ = default;
 
     virtual void init() /*override*/;
 
@@ -47,21 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ApplicationDataStores(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
-
     MCNAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -76,12 +61,6 @@ public:
     $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

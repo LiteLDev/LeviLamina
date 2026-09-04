@@ -16,15 +16,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUsedOnEvent();
-
     MCAPI ~ItemUsedOnEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

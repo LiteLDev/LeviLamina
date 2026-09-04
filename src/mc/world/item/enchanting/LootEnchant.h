@@ -21,16 +21,10 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getMinCost(int level) const;
 
-    MCFOLD int $getMaxCost(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
     MCFOLD int $getMaxLevel() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

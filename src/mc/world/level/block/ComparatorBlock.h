@@ -58,7 +58,9 @@ public:
 
     virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const /*override*/;
 
-    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const /*override*/;
     // NOLINTEND
@@ -72,13 +74,17 @@ public:
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength);
     // NOLINTEND
 
 public:
@@ -98,9 +104,9 @@ public:
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
@@ -112,7 +118,8 @@ public:
 
     MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCFOLD bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 

@@ -53,27 +53,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GrowingPlantFeature() /*override*/;
+    virtual ~GrowingPlantFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GrowingPlantFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

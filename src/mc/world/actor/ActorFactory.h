@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -53,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorFactory();
+    virtual ~ActorFactory() = default;
     // NOLINTEND
 
 public:
@@ -77,19 +76,7 @@ public:
 
     MCAPI void _loadDefinitionsHelper();
 
-    MCAPI bool _validateActorData(
-        ::CompoundTag&               tag,
-        ::ActorDefinitionIdentifier& outDefinition,
-        ::Vec3&                      outPosition,
-        ::LevelChunk const*          levelChunk
-    ) const;
-
     MCAPI void applyEntityInitializer(::std::unique_ptr<::Actor> actor, ::EntityContext& entity) const;
-
-    MCAPI ::std::vector<::std::pair<::std::string, ::ActorDefinitionIdentifier const*>>
-    buildSummonEntityTypeEnum(::Experiments const& experiments) const;
-
-    MCAPI void clearDefinitionGroup();
 
     MCAPI ::OwnerPtr<::EntityContext> clientCreateDisplayActor(
         ::ActorDefinitionIdentifier const& identifier,
@@ -119,27 +106,13 @@ public:
     );
 
     MCAPI ::OwnerPtr<::EntityContext>
-    createSummonedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* spawner, ::Vec3 const& position);
-
-    MCAPI ::OwnerPtr<::EntityContext>
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
 
 #ifdef LL_PLAT_C
     MCAPI void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
-
-    MCAPI ::std::vector<::std::string> generateActorIdentifierList() const;
 #endif
 
-    MCFOLD ::ActorGoalFactory& getGoalFactory();
-
-    MCFOLD ::ActorMigratedDefinitionFactory& getMigratedDefinitionFactory();
-
     MCAPI void init(::Experiments const& experiments);
-
-    MCAPI ::OwnerPtr<::EntityContext> loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI ::OwnerPtr<::EntityContext>
-    loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper, ::DimensionHeightRange const& heightRange);
 
     MCAPI ::OwnerPtr<::EntityContext> loadActor(
         ::CompoundTag*                tag,
@@ -148,24 +121,20 @@ public:
         ::LevelChunk const*           levelChunk
     );
 
-    MCAPI ::ActorType lookupEntityType(::ActorDefinitionIdentifier const& identifier) const;
-
-    MCAPI void setDefinitionGroup(::ActorDefinitionGroup* group);
-
-    MCFOLD void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
-
     MCAPI void setVanillaActors(::std::vector<::ActorFactoryData> vanillaActors);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static void fillFactoryData(
         ::ActorDefinitionIdentifier const&                             identifier,
         ::ActorDefinitionIdentifier const&                             baseIdentifier,
         ::std::unordered_map<::std::string, ::ActorFactoryData> const& factoryFunctions,
         ::ActorFactoryData&                                            data
     );
+#endif
 
     MCAPI static ::Actor* fixLegacyEntity(::BlockSource& region, ::CompoundTag const* tag);
     // NOLINTEND
@@ -174,17 +143,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level, ::Experiments const& experiments);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

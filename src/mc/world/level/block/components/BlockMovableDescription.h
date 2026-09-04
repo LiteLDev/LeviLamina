@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockMovableDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -33,14 +29,6 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockMovableDescription(::MovementType movableType);
-
-    MCAPI BlockMovableDescription(::MovementType movableType, ::StickyType stickyType);
     // NOLINTEND
 
 public:
@@ -52,19 +40,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MovementType const& DEFAULT_MOVEMENT_TYPE();
-
-    MCAPI static ::StickyType const& DEFAULT_STICKY_TYPE();
-
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MovementType movableType);
-
-    MCAPI void* $ctor(::MovementType movableType, ::StickyType stickyType);
     // NOLINTEND
 
 public:

@@ -25,16 +25,4 @@ public:
     ::ll::TypedStorage<4, 16, ::RectangleArea>                controlBoundary;
     ::ll::TypedStorage<4, 16, ::RectangleArea>                sweepBoundary;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SweepDescription();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

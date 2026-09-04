@@ -28,12 +28,12 @@ enum class SnbtFormat : uint {
     PrettyChatPrint    = PrettyFilePrint | Colored,
     PrettyConsolePrint = PrettyFilePrint | Colored | Console,
 };
-[[nodiscard]] constexpr SnbtFormat operator|(const SnbtFormat l, const SnbtFormat r) noexcept {
+[[nodiscard]] constexpr SnbtFormat operator|(SnbtFormat const l, SnbtFormat const r) noexcept {
     return static_cast<SnbtFormat>(
         static_cast<std::underlying_type_t<SnbtFormat>>(l) | static_cast<std::underlying_type_t<SnbtFormat>>(r)
     );
 }
-[[nodiscard]] constexpr SnbtFormat operator&(const SnbtFormat l, const SnbtFormat r) noexcept {
+[[nodiscard]] constexpr SnbtFormat operator&(SnbtFormat const l, SnbtFormat const r) noexcept {
     return static_cast<SnbtFormat>(
         static_cast<std::underlying_type_t<SnbtFormat>>(l) & static_cast<std::underlying_type_t<SnbtFormat>>(r)
     );
@@ -46,18 +46,19 @@ protected:
 public:
     // Tag inner types define
     enum class Type : uchar {
-        End       = 0x0,
-        Byte      = 0x1,
-        Short     = 0x2,
-        Int       = 0x3,
-        Int64     = 0x4,
-        Float     = 0x5,
-        Double    = 0x6,
-        ByteArray = 0x7,
-        String    = 0x8,
-        List      = 0x9,
-        Compound  = 0xA,
-        IntArray  = 0xB,
+        End         = 0x0,
+        Byte        = 0x1,
+        Short       = 0x2,
+        Int         = 0x3,
+        Int64       = 0x4,
+        Float       = 0x5,
+        Double      = 0x6,
+        ByteArray   = 0x7,
+        String      = 0x8,
+        List        = 0x9,
+        Compound    = 0xA,
+        IntArray    = 0xB,
+        NumTagTypes = 0xC,
     };
     using enum Type;
 
@@ -97,7 +98,7 @@ public:
 
     virtual ::Tag::Type getId() const = 0;
 
-    virtual bool equals(::Tag const& rhs) const;
+    virtual bool equals(::Tag const& rhs) const = 0;
 
     virtual void print(::PrintStream& out) const;
 
@@ -115,28 +116,14 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $deleteChildren();
-
-    MCFOLD bool $equals(::Tag const& rhs) const;
 
     MCAPI void $print(::PrintStream& out) const;
 
     MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

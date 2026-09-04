@@ -45,7 +45,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~AggregationEventListener() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~AggregationEventListener() /*override*/;
+#endif
 
     virtual void recordEvent(
         ::Social::Events::Event const&                   event,
@@ -68,7 +72,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
+#endif
+
+#ifdef LL_PLAT_S
+    MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
+#endif
 
 #ifdef LL_PLAT_C
     MCNAPI AggregationEventListener(
@@ -79,17 +89,10 @@ public:
     );
 #endif
 
-    MCNAPI void _handleAggregation(
-        ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
-        ::Social::Events::Event const&         event
-    );
-
     MCNAPI void _recordAggregatedEvent(
         ::Social::Events::Event const&                                              event,
         ::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& eventQueue
     );
-
-    MCNAPI void _sendCustomAggregatedEvents(bool forceSend);
 
     MCNAPI void _sendNextEvent(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
     // NOLINTEND
@@ -97,7 +100,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Core::Path const& logFileName);
+#endif
+
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::Core::Path const& logFileName);
+#endif
 
 #ifdef LL_PLAT_C
     MCNAPI void*
@@ -108,7 +117,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -128,12 +139,6 @@ public:
     MCNAPI bool $_isListenerReadyForEvents() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

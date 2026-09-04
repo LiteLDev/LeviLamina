@@ -59,10 +59,6 @@ public:
         ::SignTextSide                                 signSide
     );
 
-    MCAPI void _finalizeMessage();
-
-    MCAPI void _registerEventHandlers();
-
     MCAPI void _setMessageToSign(::std::string message);
     // NOLINTEND
 
@@ -91,13 +87,5 @@ public:
     MCAPI void $onTerminate();
 
     MCAPI bool $_isStillValid() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -21,12 +21,6 @@ public:
 
     virtual ::renoir::IStreamReader* OpenFile(char const* path) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace renoir

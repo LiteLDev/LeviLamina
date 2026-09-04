@@ -34,58 +34,19 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackSettings(
-        ::mce::UUID const&                                                           packId,
+    MCNAPI void applyDefinitions(
         ::std::vector<::std::variant<
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const&  packSettingDef,
-        ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* userOverrides,
-        ::std::weak_ptr<::Bedrock::PubSub::Publisher<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-            0>>                                                                      publisher,
-        uint64                                                                       lastUsed
+        ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* userOverrides
     );
-
-    MCNAPI ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const& getNameValueMap() const;
 
 #ifdef LL_PLAT_C
     MCNAPI void setValue(::std::string const& name, ::std::variant<float, bool, ::std::string> const& value);
 #endif
-
-    MCNAPI ~PackSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::mce::UUID const&                                                           packId,
-        ::std::vector<::std::variant<
-            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const&  packSettingDef,
-        ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* userOverrides,
-        ::std::weak_ptr<::Bedrock::PubSub::Publisher<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-            0>>                                                                      publisher,
-        uint64                                                                       lastUsed
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

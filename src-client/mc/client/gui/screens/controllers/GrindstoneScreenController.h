@@ -61,8 +61,6 @@ public:
         ::BlockPos const& pos,
         ::ActorUniqueID
     );
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -81,16 +79,8 @@ public:
 
     MCAPI void $_registerAutoPlaceOrder();
 
-    MCFOLD ::std::string $_getButtonXDescription();
+    MCAPI ::std::string $_getButtonXDescription();
 
     MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

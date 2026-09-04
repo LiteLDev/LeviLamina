@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CerealSchemaUpgradeSet;
 class ComponentItem;
 class CompoundTag;
 class SemVersion;
@@ -39,26 +38,6 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
     virtual void _initializeComponent(::ComponentItem& owner);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initializeComponent(::ComponentItem* owner);
-
-    MCAPI bool initializeComponentFromNetwork(
-        ::CompoundTag const&           tag,
-        ::cereal::ReflectionCtx const& ctx,
-        ::ComponentItem*               owner
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindItemComponentType(::cereal::ReflectionCtx& ctx);
-
-    MCFOLD static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

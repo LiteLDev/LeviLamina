@@ -76,10 +76,4 @@ public:
 
     virtual void capture(::MovementInterpolatorComponent const& interpolator) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

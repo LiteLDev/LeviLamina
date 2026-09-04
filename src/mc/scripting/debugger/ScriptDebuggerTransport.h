@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/IDebuggerTransport.h"
-
-// auto generated forward declare list
-// clang-format off
-class IScriptDebuggerWatchdog;
-// clang-format on
+#include "mc/deps/script_core/runtime/scripting/IDebuggerTransport.h"
 
 class ScriptDebuggerTransport : public ::Scripting::IDebuggerTransport {
 public:
@@ -56,18 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptDebuggerTransport(::IScriptDebuggerWatchdog& debuggerWatchdog);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IScriptDebuggerWatchdog& debuggerWatchdog);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $listen(ushort port);
@@ -93,11 +76,5 @@ public:
     MCNAPI void $send(char const* buffer, uint64 length);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

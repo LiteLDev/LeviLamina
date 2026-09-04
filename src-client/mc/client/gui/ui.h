@@ -17,8 +17,6 @@ namespace ui {
 // NOLINTBEGIN
 MCAPI ::ui::TextAlignment getTextAlignmentFromString(::std::string const& alignment);
 
-MCAPI ::ui::AxisOffsetContainer parseLayoutAxis(::std::string const& str, ::ui::LayoutAxisType defaultRelativeAxis);
-
 MCAPI ::ui::AxisOffsetContainer
 parseLayoutAxis(::Json::Value const& val, int index, ::ui::LayoutAxisType defaultRelativeAxis);
 // NOLINTEND

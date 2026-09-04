@@ -15,10 +15,6 @@ class Vec3;
 
 class GlazedTerracottaBlock : public ::FaceDirectionalBlock {
 public:
-    // prevent constructor by default
-    GlazedTerracottaBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const&
@@ -26,18 +22,6 @@ public:
         /*override*/;
 
     virtual bool isValidAuxValue(int value) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlazedTerracottaBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

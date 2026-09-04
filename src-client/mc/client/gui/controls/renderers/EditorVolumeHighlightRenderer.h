@@ -24,7 +24,6 @@ class EditorVolumeHighlightRendererInstanceData;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class RenderChunkCoordinator;
-class RenderChunkInstanced;
 class Tessellator;
 class UIControl;
 class UICustomRenderer;
@@ -74,11 +73,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorVolumeHighlightRenderer();
-
     MCAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area) const;
-
-    MCAPI ::RenderChunkInstanced& _getRenderChunkInstanced(::BlockPos const& chunkPos);
 
     MCAPI void _initializeChunkBuilder(
         ::ClientBlockPipeline::TessellatorContext& pipelineContext,
@@ -87,14 +82,6 @@ public:
         ::WeakRef<::RenderChunkCoordinator>        coordinator,
         ::AABB const&                              area
     );
-
-    MCAPI bool _renderBlockEntities(
-        ::BaseActorRenderContext& renderContext,
-        ::BlockSource&            region,
-        ::AABB const&             area,
-        ::Vec3 const&             offset,
-        bool                      renderAlphaLayer
-    ) const;
 
     MCAPI bool _renderBlocks(
         ::BaseActorRenderContext& renderContext,
@@ -105,9 +92,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI static bool _renderBlockEntities(
+        ::BaseActorRenderContext& renderContext,
+        ::BlockSource&            region,
+        ::AABB const&             area,
+        ::Vec3 const&             offset,
+        bool                      renderAlphaLayer
+    );
     // NOLINTEND
 
 public:

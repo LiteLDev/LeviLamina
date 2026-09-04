@@ -14,7 +14,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _doSquidPreAiStepSystem(::StrictEntityContext const& localMoveVelocityComponent, ::LocalMoveVelocityComponent&);
+    _doSquidPreAiStepSystem(::StrictEntityContext const&, ::LocalMoveVelocityComponent& localMoveVelocityComponent);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

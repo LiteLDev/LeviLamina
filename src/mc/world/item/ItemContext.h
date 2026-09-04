@@ -42,10 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemContext(::WeakEntityRef const& entityRef, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
-
-    MCAPI ItemContext(::WeakEntityRef const& entityRef, int slot);
-
     MCAPI ItemContext(::ItemStack const& item, int slot);
 
     MCAPI ItemContext(::BlockSource& region, ::BlockPos const& containerPos, int slot);
@@ -61,8 +57,6 @@ public:
     MCAPI ::std::optional<::std::vector<::std::string>> getCanDestroy() const;
 
     MCAPI ::std::optional<::std::vector<::std::string>> getCanPlaceOn() const;
-
-    MCAPI ::Container const* getContainer() const;
 
     MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::std::string const& collection, ::std::string const& key) const;
@@ -84,8 +78,6 @@ public:
     MCAPI ::std::optional<int> getMaxAmount() const;
 
     MCAPI ::std::optional<::std::string> getNameTag() const;
-
-    MCAPI int getSlot() const;
 
     MCAPI ::std::optional<::std::vector<::ItemTag>> getTags() const;
 
@@ -115,8 +107,6 @@ public:
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCAPI bool setItem(::ItemStack const& stack);
-
     MCAPI bool setKeepOnDeath(bool value);
 
     MCAPI bool setLockMode(::ItemLockMode lockMode);
@@ -132,21 +122,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
-    _trySetEquippedSlot(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
-
-    MCAPI static ::ItemContext createPlayerEnderInventoryContext(::WeakEntityRef const& entityRef, int slot);
-
-    MCAPI static bool
     setEquipment(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakEntityRef const& entityRef, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
-
-    MCAPI void* $ctor(::WeakEntityRef const& entityRef, int slot);
-
     MCAPI void* $ctor(::ItemStack const& item, int slot);
 
     MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& containerPos, int slot);

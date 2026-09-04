@@ -44,10 +44,12 @@ public:
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* fType, ::FertilizerType) const
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
     virtual bool isStemBlock() const /*override*/;
     // NOLINTEND
@@ -56,10 +58,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StemBlock(::std::string const& nameId, int id, ::BlockType const& fruit);
-
-    MCFOLD ::BlockType const& getFruitBlock() const;
-
-    MCAPI float getGrowthSpeed(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
@@ -81,9 +79,10 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* fType, ::FertilizerType) const;
+    MCAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $isStemBlock() const;
 

@@ -28,18 +28,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI PersonaCharacterHandle(::std::string const& skinName, ::persona::ProfileType type);
 
-    MCFOLD ::std::string const& getSkinName() const;
-
-    MCFOLD ::persona::ProfileType getType() const;
-
-    MCAPI void invalidate();
-
-    MCAPI bool isValid() const;
-
-    MCAPI bool operator!=(::persona::PersonaCharacterHandle const& handle) const;
-
-    MCAPI bool operator==(::persona::PersonaCharacterHandle const& handle) const;
-
     MCAPI ~PersonaCharacterHandle();
 #endif
     // NOLINTEND

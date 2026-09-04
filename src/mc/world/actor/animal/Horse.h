@@ -15,11 +15,9 @@ class ActorHurtResult;
 class EntityContext;
 class Player;
 class Vec3;
-struct ActorDataDirtyFlagsComponent;
-struct ActorDataHorseFlagComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct RenderPositionComponent;
+struct HurtParameters;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
 struct VariantParameterList;
@@ -71,7 +69,8 @@ public:
 
     virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
@@ -101,21 +100,6 @@ public:
         ::RenderRotationComponent const& renderRotationComponent,
         ::StandAnimationComponent const& standAnimationComponent,
         float                            alpha
-    );
-
-    MCAPI static ::Vec3 getNewPassengerPos(
-        ::RenderPositionComponent const& horseRenderPosComponent,
-        ::RenderRotationComponent const& horseRenderRotComponent,
-        ::StandAnimationComponent const& horseStandAnimComponent,
-        float                            alpha,
-        float                            passengerPosY
-    );
-
-    MCAPI static void setHorseFlag(
-        ::ActorDataHorseFlagComponent&  actorDataHorseFlag,
-        ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags,
-        ::HorseFlags                    flag,
-        bool                            shouldAddFlag
     );
     // NOLINTEND
 
@@ -168,16 +152,11 @@ public:
 
     MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

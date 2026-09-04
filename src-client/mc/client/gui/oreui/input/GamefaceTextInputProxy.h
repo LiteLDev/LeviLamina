@@ -56,19 +56,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    GamefaceTextInputProxy(::Bedrock::NotNullNonOwnerPtr<::OreUI::IView> view, ::OreUI::ViewInputHandler& inputHandler);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::OreUI::IView> view, ::OreUI::ViewInputHandler& inputHandler);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $imeStartComposition();

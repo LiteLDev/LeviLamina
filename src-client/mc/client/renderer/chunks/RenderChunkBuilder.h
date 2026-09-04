@@ -4,18 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/BakedBlockLightType.h"
-#include "mc/client/renderer/chunks/RenderChunkPerformanceTrackingData.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/game/RangeIndices.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
-class BlockSource;
 class BlockTessellator;
 class ChunkSource;
 class ChunkViewSource;
@@ -24,7 +19,6 @@ class MinecraftGameplayGraphicsResources;
 class RenderChunkCoordinator;
 class RenderChunkGeometry;
 class RuntimeLocalLightingConfig;
-class SubChunkPos;
 class Tessellator;
 struct AirAndSimpleBlockBits;
 struct BlockQueueEntry;
@@ -99,52 +93,13 @@ public:
         ::WeakRef<::RenderChunkCoordinator>        coordinator
     );
 
-    MCAPI void _buildRanges(::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&);
-
-    MCAPI void _overrideStaticBlockLighting(
-        ::BlockSource&                 region,
-        ::SubChunkPos const&           subChunkPos,
-        ::AirAndSimpleBlockBits const& airAndSimpleBlocks
-    );
-
-    MCAPI bool _sortBlocks(
-        ::BlockSource&         region,
-        ::RenderChunkGeometry& renderChunkGeometry,
-        bool                   airAndSimpleBlocks,
-        ::AirAndSimpleBlockBits&,
-        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&
-    );
-
-    MCAPI bool _tessellateNewPipeline(
-        ::RenderChunkGeometry& renderChunkGeometry,
-        ::BlockSource&,
-        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&
-    );
-
-    MCAPI bool _tessellateQueues(
-        ::RenderChunkGeometry&   renderChunkGeometry,
-        ::BlockSource&           region,
-        ::AirAndSimpleBlockBits& airAndSimpleBlocks,
-        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&
-    );
-
-    MCAPI void _updateFacesMetadata();
-
-    MCAPI ::mce::MeshData acquireMeshData();
-
-    MCAPI void applyBuildBoundingBox(::AABB const& buildBoundingBox);
-
     MCAPI void build(
-        ::RenderChunkGeometry& renderChunkGeometry,
-        bool                   lightingType,
-        ::BakedBlockLightType  forExport,
-        bool                   lightingModelCapabilities,
-        ::mce::framebuilder::FrameLightingModelCapabilities const&
+        ::RenderChunkGeometry&                                     renderChunkGeometry,
+        bool                                                       transparentLeaves,
+        ::BakedBlockLightType                                      lightingType,
+        bool                                                       forExport,
+        ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
-
-    MCAPI void prepareWorldData(::BlockPos const& pos, ::ChunkSourceViewGenerateMode viewMoveMode);
-
-    MCAPI void setGUIRendering(bool guiRendering);
 
     MCAPI ~RenderChunkBuilder();
     // NOLINTEND
@@ -152,16 +107,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool checkAndSetSimpleBlockInfo(
-        ::BlockRenderLayer       renderLayer,
-        ::Block const&           block,
-        uint64                   blockBitsetIndex,
-        ::AirAndSimpleBlockBits& airAndSimpleBlocks
-    );
-
     MCAPI static void checkNeighborBlockIsAirOrSimpleBlock(
         ::Block const&           block,
-        uint64                   blockBitsetIndex,
+        uint64 const             blockBitsetIndex,
         ::AirAndSimpleBlockBits& airAndSimpleBlocks
     );
     // NOLINTEND

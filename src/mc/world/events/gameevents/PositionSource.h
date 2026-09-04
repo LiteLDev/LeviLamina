@@ -11,7 +11,6 @@
 // clang-format off
 class BlockSource;
 class CompoundTag;
-class IBlockSource;
 // clang-format on
 
 namespace GameEvents {
@@ -32,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Vec3> getPosition(::IBlockSource const& region) const;
-
     MCAPI void serializeTo(::CompoundTag& tag) const;
     // NOLINTEND
 
@@ -41,16 +38,9 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::GameEvents::PositionSource> deserializeFrom(::CompoundTag const& tag);
-
     MCAPI static ::std::optional<::Vec3>
     extractPosition(::CompoundTag const& data, char const* tagName, ::BlockSource const& region);
 #endif
-
-    MCAPI static ::GameEvents::PositionSource
-    forActor(::ActorUniqueID id, ::SharedTypes::Legacy::ActorLocation attachPos);
-
-    MCAPI static ::GameEvents::PositionSource forFixedPos(::Vec3 const& pos);
     // NOLINTEND
 };
 

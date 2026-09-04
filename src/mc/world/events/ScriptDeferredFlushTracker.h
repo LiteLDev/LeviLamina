@@ -29,14 +29,4 @@ public:
     ScriptDeferredFlushTracker& operator=(ScriptDeferredFlushTracker const&);
     ScriptDeferredFlushTracker(ScriptDeferredFlushTracker const&);
     ScriptDeferredFlushTracker();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void onCoroutineExecuted();
-
-    MCFOLD void onEventSignalExecuted();
-
-    MCFOLD void onSystemRunTaskExecuted();
-    // NOLINTEND
 };

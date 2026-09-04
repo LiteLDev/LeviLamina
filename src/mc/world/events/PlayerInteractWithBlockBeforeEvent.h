@@ -23,16 +23,4 @@ public:
     ::ll::TypedStorage<8, 152, ::ItemStack>               mItem;
     ::ll::TypedStorage<1, 1, bool>                        mIsFirstEvent;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerInteractWithBlockBeforeEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

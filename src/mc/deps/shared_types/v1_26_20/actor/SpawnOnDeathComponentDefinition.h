@@ -38,6 +38,8 @@ public:
     MCAPI ::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition&
     operator=(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition&&);
 
+    MCAPI bool operator==(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition const&) const;
+
     MCAPI ~SpawnOnDeathComponentDefinition();
     // NOLINTEND
 

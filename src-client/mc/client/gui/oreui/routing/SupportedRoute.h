@@ -16,18 +16,6 @@ public:
     ::ll::TypedStorage<4, 4, ::OreUI::RouteMode>         mModes;
     ::ll::TypedStorage<4, 4, ::OreUI::RoutePrerequisite> mPrerequisites;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SupportedRoute();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

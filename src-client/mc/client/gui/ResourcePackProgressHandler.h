@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackProgressHandler() /*override*/;
+    virtual ~ResourcePackProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -53,9 +53,9 @@ public:
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -68,20 +68,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ResourcePackProgressHandler(bool localServer);
-
-    MCAPI void _resetCDNState(::MinecraftScreenModel& minecraftScreenModel, bool revertToServerBackend);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(bool localServer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -100,11 +92,11 @@ public:
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getTitleText() const;
 

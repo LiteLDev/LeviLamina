@@ -39,12 +39,6 @@ public:
 
     MCAPI void $removeStateListener(::Core::StorageAreaStateListener* listener);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

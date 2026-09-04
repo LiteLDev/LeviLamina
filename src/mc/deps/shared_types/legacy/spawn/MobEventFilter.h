@@ -14,13 +14,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~MobEventFilter();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD bool operator==(::SharedTypes::Legacy::Spawn::MobEventFilter const&) const;
     // NOLINTEND
 };
 

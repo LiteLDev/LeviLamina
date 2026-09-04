@@ -63,7 +63,7 @@ MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseComparis
 );
 
 MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string>
-parseValueParams(::ScriptModuleMinecraft::ValueParams const& params, bool isExclude);
+parseValueParams(::ScriptModuleMinecraft::ValueParams const& params, bool const isExclude);
 // NOLINTEND
 
 } // namespace ActorHasPropertySelectorUtils

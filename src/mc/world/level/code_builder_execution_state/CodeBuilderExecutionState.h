@@ -11,4 +11,9 @@ namespace CodeBuilderExecutionState {
 MCNAPI ::CodeBuilderExecutionState::CodeStatus toCodeStatus(::std::string_view status);
 // NOLINTEND
 
+// static variables
+// NOLINTBEGIN
+MCNAPI ::std::unordered_map<::std::string_view, ::CodeBuilderExecutionState::CodeStatus> const& statusMap();
+// NOLINTEND
+
 } // namespace CodeBuilderExecutionState

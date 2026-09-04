@@ -18,14 +18,6 @@ public:
     ActiveTransfer& operator=(ActiveTransfer const&);
     ActiveTransfer(ActiveTransfer const&);
     ActiveTransfer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI uint64 getNumberOfIdsWaitingForAck() const;
-#endif
-    // NOLINTEND
 };
 
 } // namespace ClientBlobCache::Server

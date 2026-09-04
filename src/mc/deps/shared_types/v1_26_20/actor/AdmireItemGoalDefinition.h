@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20 {
 
 struct AdmireItemGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -26,6 +21,8 @@ public:
 
 public:
     // prevent constructor by default
+    AdmireItemGoalDefinition& operator=(AdmireItemGoalDefinition const&);
+    AdmireItemGoalDefinition(AdmireItemGoalDefinition const&);
     AdmireItemGoalDefinition();
 
 public:
@@ -33,21 +30,10 @@ public:
     // NOLINTBEGIN
     MCAPI AdmireItemGoalDefinition(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
 
-    MCAPI AdmireItemGoalDefinition(::SharedTypes::v1_26_20::AdmireItemGoalDefinition const&);
-
     MCAPI ::SharedTypes::v1_26_20::AdmireItemGoalDefinition&
     operator=(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_20::AdmireItemGoalDefinition&
-    operator=(::SharedTypes::v1_26_20::AdmireItemGoalDefinition const&);
-
     MCAPI ~AdmireItemGoalDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -60,8 +46,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::AdmireItemGoalDefinition const&);
     // NOLINTEND
 
 public:

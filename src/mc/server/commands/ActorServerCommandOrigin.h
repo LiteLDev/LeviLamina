@@ -38,14 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ActorUniqueID getTargetOther() const;
-
-    MCFOLD void setTargetOther(::ActorUniqueID targetOther);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isSelectorExpansionAllowed() const;

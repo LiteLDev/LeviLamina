@@ -24,18 +24,4 @@ public:
     WorkerPoolGlobalState& operator=(WorkerPoolGlobalState const&);
     WorkerPoolGlobalState(WorkerPoolGlobalState const&);
     WorkerPoolGlobalState();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::WorkerPoolGlobalState& operator=(::WorkerPoolGlobalState&&);
-
-    MCNAPI ~WorkerPoolGlobalState();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

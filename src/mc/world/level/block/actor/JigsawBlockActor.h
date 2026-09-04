@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 #include "mc/world/level/levelgen/structure/JigsawEditorData.h"
 
 // auto generated forward declare list
@@ -17,7 +17,7 @@ class ILevel;
 class SaveContext;
 // clang-format on
 
-class JigsawBlockActor : public ::BlockActor {
+class JigsawBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
 
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
@@ -50,10 +50,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit JigsawBlockActor(::BlockPos const& pos);
-
-    MCFOLD ::JigsawEditorData const& getJigsawData() const;
-
-    MCAPI void setJigsawData(::JigsawEditorData const& data);
     // NOLINTEND
 
 public:
@@ -75,16 +71,10 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

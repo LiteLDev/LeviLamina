@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ class PersonaClient;
 
 namespace OreUI {
 
-class NewPlayerChoicesFacet : public ::OreUI::FacetBase<::OreUI::NewPlayerChoicesFacet> {
+class NewPlayerChoicesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::NewPlayerChoicesFacet> {
 public:
     // NewPlayerChoicesFacet inner types declare
     // clang-format off
@@ -28,18 +28,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> mName;
         ::ll::TypedStorage<8, 32, ::std::string> mId;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~SelectableCharacter();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 

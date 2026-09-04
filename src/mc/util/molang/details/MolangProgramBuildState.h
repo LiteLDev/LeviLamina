@@ -30,11 +30,11 @@ public:
     MCNAPI uint64 allocateInstruction();
 
     MCNAPI void insertJumpWithMaddAtIndex(
-        uint64 instructionIndexToPutThisInstruction,
-        uint64 instructionToJumpTo,
-        float  mulValue,
-        float  addValue,
-        ::brstd::source_location
+        uint64                   instructionIndexToPutThisInstruction,
+        uint64                   instructionToJumpTo,
+        float                    mulValue,
+        float                    addValue,
+        ::brstd::source_location source
     );
 
     MCNAPI void popForEachScope(uint64 instructionIndex);
@@ -42,26 +42,18 @@ public:
     MCNAPI void popLoopScope(uint64 instructionIndex);
 
     MCNAPI void pushLoopScope(
-        uint64 loopScopeInitializationInstructionIndex,
-        uint64 loopRepeatLogicInstructionIndex,
-        uint64 loopCleanupInstructionIndex,
-        uint64 nextStatementIndex,
-        ::brstd::source_location
+        uint64                   loopScopeInitializationInstructionIndex,
+        uint64                   loopRepeatLogicInstructionIndex,
+        uint64                   loopCleanupInstructionIndex,
+        uint64                   nextStatementIndex,
+        ::brstd::source_location source
     );
 
-    MCNAPI void pushReturnValue(::brstd::source_location);
+    MCNAPI void pushReturnValue(::brstd::source_location source);
 
-    MCNAPI void pushValue(float value, ::brstd::source_location);
+    MCNAPI void pushValue(float value, ::brstd::source_location source);
 
-    MCNAPI void setReturnValue(float value, ::brstd::source_location);
-
-    MCNAPI ~MolangProgramBuildState();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void setReturnValue(float value, ::brstd::source_location source);
     // NOLINTEND
 };
 

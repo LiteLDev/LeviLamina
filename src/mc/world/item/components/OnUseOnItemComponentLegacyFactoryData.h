@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
 namespace SharedTypes::Legacy { struct OnUseOnTriggerItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -40,8 +39,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

@@ -26,10 +26,4 @@ public:
 
     virtual ::std::unique_ptr<::ScreenController> makeScreenController(::std::shared_ptr<::MainMenuScreenModel>);
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

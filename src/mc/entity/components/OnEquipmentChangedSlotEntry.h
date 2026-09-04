@@ -14,17 +14,6 @@ public:
 public:
     // prevent constructor by default
     OnEquipmentChangedSlotEntry& operator=(OnEquipmentChangedSlotEntry const&);
+    OnEquipmentChangedSlotEntry(OnEquipmentChangedSlotEntry const&);
     OnEquipmentChangedSlotEntry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OnEquipmentChangedSlotEntry(::OnEquipmentChangedSlotEntry const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::OnEquipmentChangedSlotEntry const&);
-    // NOLINTEND
 };

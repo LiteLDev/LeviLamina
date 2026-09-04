@@ -23,16 +23,4 @@ public:
     GameEventPair& operator=(GameEventPair const&);
     GameEventPair(GameEventPair const&);
     GameEventPair();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~GameEventPair();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

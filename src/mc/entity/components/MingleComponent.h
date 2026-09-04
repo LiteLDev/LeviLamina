@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-// clang-format on
-
 class MingleComponent {
 public:
     // MingleComponent inner types define
@@ -27,27 +22,5 @@ public:
     ::ll::TypedStorage<4, 4, ::MingleComponent::MingleState> mMingleState;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mPartnerId;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mPreviousPartnerId;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MingleComponent();
-
-    MCAPI ::MingleComponent& clearPreviousPartnerId();
-
-    MCAPI ::Actor* fetchCurrentPartner(::Actor const& actorInLevel) const;
-
-    MCAPI void resetState();
-
-    MCFOLD ::MingleComponent& setMingleState(::MingleComponent::MingleState val);
-
-    MCAPI ::MingleComponent& setPartnerId(::ActorUniqueID val);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

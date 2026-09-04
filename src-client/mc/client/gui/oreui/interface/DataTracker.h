@@ -14,14 +14,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                  mPreviousScreenName;
     ::ll::TypedStorage<8, 32, ::std::string>                                  mScreenName;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>                          mContentfulPaint;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>                          mMeaningfulPaint;
-    ::ll::TypedStorage<4, 20, ::std::optional<::OreUI::ScopedFPSDataTracker>> mLoading;
-    ::ll::TypedStorage<4, 20, ::std::optional<::OreUI::ScopedFPSDataTracker>> mAverage;
-    ::ll::TypedStorage<4, 20, ::std::optional<::OreUI::ScopedFPSDataTracker>> mIdle;
-    ::ll::TypedStorage<4, 20, ::std::optional<::OreUI::ScopedFPSDataTracker>> mInteraction;
-    ::ll::TypedStorage<8, 48, ::std::optional<::OreUI::ScopedActiveTracker>>  mDataChanged;
-    ::ll::TypedStorage<4, 4, float>                                           mPercentTimeSpentInOreUIVM;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::nanoseconds>>    mContentfulPaint;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::nanoseconds>>    mMeaningfulPaintWithRendering;
+    ::ll::TypedStorage<8, 40, ::std::optional<::OreUI::ScopedFPSDataTracker>> mLoading;
+    ::ll::TypedStorage<8, 40, ::std::optional<::OreUI::ScopedFPSDataTracker>> mAverage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::OreUI::ScopedFPSDataTracker>> mIdle;
+    ::ll::TypedStorage<8, 40, ::std::optional<::OreUI::ScopedFPSDataTracker>> mInteraction;
+    ::ll::TypedStorage<8, 64, ::std::optional<::OreUI::ScopedActiveTracker>>  mDataChanged;
     // NOLINTEND
 
 public:

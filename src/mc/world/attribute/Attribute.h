@@ -24,12 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Attribute(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
-
-    MCFOLD uint const getIDValue() const;
-
-    MCFOLD ::HashedString const& getName() const;
-
-    MCFOLD ::RedefinitionMode getRedefinitionMode() const;
     // NOLINTEND
 
 public:

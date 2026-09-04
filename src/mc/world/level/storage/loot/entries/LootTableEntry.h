@@ -11,7 +11,6 @@ class ItemStack;
 class LootTable;
 class LootTableContext;
 class Random;
-namespace Json { class Value; }
 // clang-format on
 
 class LootTableEntry : public ::LootPoolEntry {
@@ -31,19 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::LootTable const& getLootTable() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootPoolEntry>
-    deserialize(::Json::Value entry, bool usingUpcomingCreatorFeaturesExperiment);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
@@ -51,11 +37,5 @@ public:
     MCFOLD ::LootPoolEntry::EntryType $getEntryType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

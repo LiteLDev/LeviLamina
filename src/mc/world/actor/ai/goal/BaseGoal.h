@@ -6,6 +6,7 @@
 // clang-format off
 class Player;
 struct DimensionType;
+struct GoalId;
 // clang-format on
 
 class BaseGoal {
@@ -39,24 +40,10 @@ public:
     virtual bool isTargetGoal() const;
 
     virtual void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseGoal();
+    virtual void setInfo(::std::string const& name, ::GoalId const& goalId);
 
-    MCFOLD int getRequiredControlFlags() const;
-
-    MCAPI ushort getTypeId() const;
-
-    MCFOLD void setRequiredControlFlags(int requiredControlFlags);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    virtual ::GoalId getGoalId() const;
     // NOLINTEND
 
 public:
@@ -81,6 +68,10 @@ public:
     MCFOLD bool $isTargetGoal() const;
 
     MCFOLD void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+
+    MCAPI void $setInfo(::std::string const& name, ::GoalId const& goalId);
+
+    MCAPI ::GoalId $getGoalId() const;
 
 
     // NOLINTEND

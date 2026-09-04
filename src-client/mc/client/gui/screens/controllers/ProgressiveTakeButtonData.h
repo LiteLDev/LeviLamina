@@ -36,16 +36,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool isActiveContainerSlot(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void reset();
-
     MCAPI void updateStoredValuePointer();
-
-    MCAPI ~ProgressiveTakeButtonData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

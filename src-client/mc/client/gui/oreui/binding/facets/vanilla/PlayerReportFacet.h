@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -15,7 +15,7 @@ namespace OreUI { class IResourceAllowList; }
 
 namespace OreUI {
 
-class PlayerReportFacet : public ::OreUI::FacetBase<::OreUI::PlayerReportFacet> {
+class PlayerReportFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerReportFacet> {
 public:
     // PlayerReportFacet inner types declare
     // clang-format off
@@ -38,15 +38,13 @@ public:
 
     public:
         // prevent constructor by default
+        ChatMessageData& operator=(ChatMessageData const&);
         ChatMessageData();
 
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ChatMessageData(::OreUI::PlayerReportFacet::ChatMessageData const&);
-
-        MCAPI ::OreUI::PlayerReportFacet::ChatMessageData&
-        operator=(::OreUI::PlayerReportFacet::ChatMessageData const&);
 
         MCAPI ~ChatMessageData();
         // NOLINTEND
@@ -80,20 +78,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI DropdownOption(::std::string label, int value);
-
-        MCAPI ~DropdownOption();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::std::string label, int value);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -147,7 +137,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerReportFacet() /*override*/;
+    virtual ~PlayerReportFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -190,21 +180,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

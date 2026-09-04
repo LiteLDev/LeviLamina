@@ -46,6 +46,7 @@ public:
     // prevent constructor by default
     HuffmanEncodingTree& operator=(HuffmanEncodingTree const&);
     HuffmanEncodingTree(HuffmanEncodingTree const&);
+    HuffmanEncodingTree();
 
 public:
     // member functions
@@ -53,27 +54,15 @@ public:
     MCAPI void FreeMemory();
 
     MCAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
+    // NOLINTEND
 
-    MCAPI HuffmanEncodingTree();
-
-    MCAPI void InsertNodeIntoSortedList(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void InsertNodeIntoSortedList(
         ::HuffmanEncodingTreeNode*                                node,
         ::DataStructures::LinkedList<::HuffmanEncodingTreeNode*>* huffmanEncodingTreeNodeList
-    ) const;
-
-    MCAPI ~HuffmanEncodingTree();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    );
     // NOLINTEND
 };
 

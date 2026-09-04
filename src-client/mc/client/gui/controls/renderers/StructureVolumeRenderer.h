@@ -20,24 +20,20 @@
 class Actor;
 class BaseActorRenderContext;
 class Block;
-class BlockActor;
 class BlockSource;
 class IClientInstance;
 class IRenderChunkGarbage;
+class IVanillaRenderBlockActorComponent;
 class MinecraftUIRenderContext;
 class RenderChunkBuilder;
 class RenderChunkInstanced;
 class RenderChunkSorterSharedInfo;
-class ScreenContext;
 class Tessellator;
 class UIControl;
 class UICustomRenderer;
 class UIPropertyBag;
 struct ActorBlockSyncMessage;
-struct UIActorOffscreenCaptureDescription;
-struct UIMeshOffscreenCaptureDescription;
-struct UIStructureVolumeOffscreenCaptureDescription;
-struct UIThumbnailMeshOffscreenCaptureDescription;
+struct OffscreenCaptureDescription;
 namespace ClientBlockPipeline { class TessellatorContext; }
 namespace mce::StructureVolumeOffscreenUtils { struct StructureVolumeCaptureRequestInfo; }
 // clang-format on
@@ -70,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureVolumeRenderer() /*override*/;
+    virtual ~StructureVolumeRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -105,14 +101,6 @@ public:
     // NOLINTBEGIN
     MCAPI StructureVolumeRenderer();
 
-    MCAPI float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key) const;
-
-    MCAPI ::BlockPos _getBlockPosition(::UIPropertyBag const& bag) const;
-
-    MCAPI ::RenderChunkInstanced& _getRenderChunkInstanced(::BlockPos const& chunkPos);
-
-    MCAPI ::AABB _getStructureArea(::UIPropertyBag const& bag) const;
-
     MCAPI void _initializeChunkBuilder(
         ::ClientBlockPipeline::TessellatorContext& pipelineContext,
         ::BlockSource&                             region,
@@ -127,69 +115,33 @@ public:
         ::BlockSource&              region,
         ::IClientInstance&          client,
         ::UIControl&                owner,
-        int                         captureDescription,
-        ::std::variant<
-            ::std::monostate,
-            ::UIActorOffscreenCaptureDescription,
-            ::UIThumbnailMeshOffscreenCaptureDescription,
-            ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const& requestInfo,
-        ::std::optional<::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo>
+        int,
+        ::OffscreenCaptureDescription const&                                                     captureDescription,
+        ::std::optional<::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo> requestInfo
     );
-
-    MCAPI void _renderAxisHelpers(::ScreenContext& screenContext, ::UIControl const& owner) const;
 
     MCAPI bool _renderBlocks(::BaseActorRenderContext& renderContext, ::BlockSource& region, ::AABB const& area);
 
-    MCAPI bool
-    _renderEntities(::BaseActorRenderContext& renderContext, ::BlockSource& region, ::AABB const& area) const;
-
-    MCAPI bool _renderPlayers(::BaseActorRenderContext& renderContext, ::BlockSource& region, ::AABB const& area) const;
-
-    MCAPI bool _renderStructureWireframes(
-        ::BaseActorRenderContext& renderContext,
-        ::IClientInstance const&  clientInstance,
-        ::BlockPos const&         blockPos
-    ) const;
-
     MCAPI void _renderThumbnailOffscreen(
-        ::MinecraftUIRenderContext& renderContext,
-        ::BlockSource&              region,
-        ::IClientInstance&          client,
-        ::std::variant<
-            ::std::monostate,
-            ::UIActorOffscreenCaptureDescription,
-            ::UIThumbnailMeshOffscreenCaptureDescription,
-            ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const&                     captureDescription,
+        ::MinecraftUIRenderContext&                                                    renderContext,
+        ::BlockSource&                                                                 region,
+        ::IClientInstance&                                                             client,
+        ::OffscreenCaptureDescription const&                                           captureDescription,
         ::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo const& requestInfo
-    );
-
-    MCAPI void _updatePreviewRotation(::UIControl& owner, float dt);
-
-    MCAPI void offscreenThumbnailCapture(
-        ::MinecraftUIRenderContext& renderContext,
-        ::BlockSource&              region,
-        ::IClientInstance&          client,
-        ::std::variant<
-            ::std::monostate,
-            ::UIActorOffscreenCaptureDescription,
-            ::UIThumbnailMeshOffscreenCaptureDescription,
-            ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const&              captureDescription,
-        ::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo requestInfo
     );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
+    MCAPI static ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
+
+    MCAPI static float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key);
 
     MCAPI static void _iterateOverBlockEntities(
-        ::BlockSource&                              region,
-        ::AABB const&                               area,
-        ::std::function<void(::BlockActor&)> const& processBlockActor
+        ::BlockSource&                                                     region,
+        ::AABB const&                                                      area,
+        ::std::function<void(::IVanillaRenderBlockActorComponent&)> const& processBlockActor
     );
     // NOLINTEND
 
@@ -197,12 +149,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -227,18 +173,8 @@ public:
         ::Actor*                       blockChangeSource
     );
 
-    MCFOLD void $onAppResumed();
+    MCAPI void $onAppResumed();
 
     MCAPI void $onAppSuspended();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForBlockSourceListener();
-
-    MCNAPI static void** $vftableForMinecraftUICustomRenderer();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };

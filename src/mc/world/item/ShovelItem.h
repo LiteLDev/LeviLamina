@@ -12,9 +12,14 @@ class BlockPos;
 class InteractionResult;
 class ItemStack;
 class Vec3;
+struct ItemTier;
 // clang-format on
 
 class ShovelItem : public ::DiggerItem {
+public:
+    // prevent constructor by default
+    ShovelItem();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,15 +31,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ShovelItem(::std::string const& name, int id, ::ItemTier const& tier);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::InteractionResult useShovelOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face);
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI int $getEnchantSlot() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEnchantSlot() const;
+#endif
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;

@@ -51,15 +51,9 @@ public:
 
     MCAPI void _fetchPendingInvites();
 
-    MCAPI ::ui::ViewRequest _handleInvitationAccept(::UIPropertyBag* bag);
-
     MCAPI ::ui::ViewRequest _handleInvitationDecline(::UIPropertyBag* bag);
 
-    MCAPI void _initialize();
-
     MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

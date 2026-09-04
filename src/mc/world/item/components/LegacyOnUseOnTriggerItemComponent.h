@@ -9,13 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class BlockPos;
 class ComponentItem;
-class HashedString;
-class ItemStack;
-class OnUseOnItemComponentLegacyFactoryData;
-class Vec3;
 // clang-format on
 
 class LegacyOnUseOnTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -27,41 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LegacyOnUseOnTriggerItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LegacyOnUseOnTriggerItemComponent(::OnUseOnItemComponentLegacyFactoryData&& data);
-
-    MCAPI void _useOn(
-        bool&              result,
-        ::ItemStack const& currentItemStack,
-        ::ItemStack&       entity,
-        ::Actor&           pos,
-        ::BlockPos const&  face,
-        uchar              clickPos,
-        ::Vec3 const&
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OnUseOnItemComponentLegacyFactoryData&& data);
     // NOLINTEND
 
 public:

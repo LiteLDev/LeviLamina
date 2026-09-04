@@ -29,17 +29,13 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ChiseledBookshelfBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -50,12 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChiseledBookshelfBlock(::std::string const& nameId, int id);
-
-    MCAPI bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int hitSlot) const;
-
-    MCAPI void
-    _setBook(::Player& player, ::ItemStack heldItem, ::ChiseledBookshelfBlockActor& bookshelfActor, int hitSlot) const;
+    MCAPI void _setBook(
+        ::Player&                      player,
+        ::ItemStack                    heldItem,
+        ::ChiseledBookshelfBlockActor& bookshelfActor,
+        int const                      hitSlot
+    ) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
@@ -63,16 +59,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot);
+
 #ifdef LL_PLAT_C
     MCAPI static ::ChiseledBookshelfBlock::SlotState
     getBlockSlotState(::BlockPos const& blockPos, ::Vec3 const& blockHit, uchar faceHit, ::BlockSource const& region);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -82,7 +74,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

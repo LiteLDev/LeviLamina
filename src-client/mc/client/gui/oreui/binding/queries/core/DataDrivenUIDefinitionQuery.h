@@ -58,14 +58,6 @@ public:
         ::std::string const&             definitionId
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
-    // NOLINTEND
 };
 
 } // namespace OreUI

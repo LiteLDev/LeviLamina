@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -14,7 +14,7 @@ class IOfferRepository;
 
 namespace OreUI {
 
-class OfferRepositoryFacet : public ::OreUI::FacetBase<::OreUI::OfferRepositoryFacet> {
+class OfferRepositoryFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::OfferRepositoryFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,15 +48,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit OfferRepositoryFacet(::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> offerRepository);
 
-    MCFOLD ::std::string const& getCoreSubscriptionPrice() const;
+    MCAPI ::std::string const& getCoreSubscriptionPrice() const;
 
     MCFOLD ::std::string const& getCoreTerms() const;
 
     MCFOLD ::std::string const& getCoreTermsExtra() const;
 
-    MCFOLD ::std::string const& getPlusSubscriptionPrice() const;
+    MCAPI ::std::string const& getPlusSubscriptionPrice() const;
 
-    MCFOLD ::std::string const& getPlusTerms() const;
+    MCAPI ::std::string const& getPlusTerms() const;
 
     MCFOLD ::std::string const& getPlusTermsExtra() const;
 
@@ -64,9 +64,9 @@ public:
 
     MCFOLD bool isRealmsCoreOfferAvailable() const;
 
-    MCFOLD bool isRealmsPlusOfferAvailable() const;
+    MCAPI bool isRealmsPlusOfferAvailable() const;
 
-    MCFOLD bool isRealmsTrialOfferAvailable() const;
+    MCAPI bool isRealmsTrialOfferAvailable() const;
 
     MCAPI void setFacetDirty();
     // NOLINTEND
@@ -87,12 +87,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

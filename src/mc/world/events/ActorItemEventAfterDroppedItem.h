@@ -23,22 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorItemEventAfterDroppedItem& operator=(ActorItemEventAfterDroppedItem const&);
-    ActorItemEventAfterDroppedItem();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorItemEventAfterDroppedItem(::ActorItemEventAfterDroppedItem const&);
-
     MCAPI ~ActorItemEventAfterDroppedItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorItemEventAfterDroppedItem const&);
     // NOLINTEND
 
 public:

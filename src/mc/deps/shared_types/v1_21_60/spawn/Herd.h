@@ -31,27 +31,19 @@ public:
     // NOLINTBEGIN
     MCAPI Herd(::SharedTypes::v1_21_60::Spawn::Herd const&);
 
-    MCFOLD ::SharedTypes::v1_21_60::Spawn::Herd& operator=(::SharedTypes::v1_21_60::Spawn::Herd&&);
-
-    MCAPI ~Herd();
+    MCAPI bool operator==(::SharedTypes::v1_21_60::Spawn::Herd const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::SharedTypes::v1_21_60::Spawn::Herd from(::SharedTypes::Legacy::Spawn::Herd const& val);
+    MCAPI static ::SharedTypes::v1_21_60::Spawn::Herd from(::SharedTypes::Legacy::Spawn::Herd const& val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::SharedTypes::v1_21_60::Spawn::Herd const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

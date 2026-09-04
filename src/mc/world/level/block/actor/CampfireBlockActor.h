@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ItemInstance.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,12 +13,11 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class HashedString;
 class ILevel;
 class SaveContext;
 // clang-format on
 
-class CampfireBlockActor : public ::BlockActor {
+class CampfireBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,7 +36,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -59,10 +58,6 @@ public:
 
     MCAPI void dropAllItems(::BlockSource& region);
 
-    MCAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
-
-    MCAPI ::ItemInstance const& getCookingItem(int slot);
-
     MCAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
     // NOLINTEND
 
@@ -77,7 +72,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -95,6 +90,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
     // NOLINTEND
 };

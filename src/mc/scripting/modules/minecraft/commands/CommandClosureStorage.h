@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/script_engine/ClosureGeneric.h"
+#include "mc/deps/script_core/script_engine/scripting/ClosureGeneric.h"
 #include "mc/scripting/modules/minecraft/commands/ScriptCustomCommandInterface.h"
 
 // auto generated forward declare list

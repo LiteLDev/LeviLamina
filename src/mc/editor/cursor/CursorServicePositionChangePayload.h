@@ -5,13 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Editor::Cursor { struct Position; }
-namespace Editor::Cursor { struct Ray; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class CursorServicePositionChangePayload
@@ -33,29 +26,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CursorServicePositionChangePayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI
-    CursorServicePositionChangePayload(::Editor::Cursor::Ray ray, ::std::optional<::Editor::Cursor::Position> newPos);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Editor::Cursor::Ray ray, ::std::optional<::Editor::Cursor::Position> newPos);
-#endif
     // NOLINTEND
 
 public:

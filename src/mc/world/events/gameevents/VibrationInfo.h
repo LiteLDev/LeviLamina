@@ -11,7 +11,6 @@
 class CompoundTag;
 class DataLoadHelper;
 class GameEvent;
-struct GameEventContext;
 // clang-format on
 
 class VibrationInfo {
@@ -28,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _setActorIDs(::GameEventContext const& gameEventContext);
-
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void save(::CompoundTag& tag) const;

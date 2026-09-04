@@ -15,27 +15,8 @@ public:
 public:
     // prevent constructor by default
     EventEnvelope& operator=(EventEnvelope const&);
+    EventEnvelope(EventEnvelope const&);
     EventEnvelope();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EventEnvelope(::ScriptDebuggerMessages::EventEnvelope const&);
-
-    MCNAPI ~EventEnvelope();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebuggerMessages::EventEnvelope const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

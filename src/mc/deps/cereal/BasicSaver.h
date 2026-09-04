@@ -9,8 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class BasicSerializerContext; }
-namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal::internal { class BasicSchema; }
 // clang-format on
@@ -21,13 +19,9 @@ class BasicSaver : public ::cereal::BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 144, ::cereal::internal::Schema> mSchema;
+    ::ll::TypedStorage<8, 704, ::cereal::internal::Schema> mSchema;
     ::ll::TypedStorage<1, 2, ::cereal::SaverConfig>        mConfig;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BasicSaver();
 
 public:
     // virtual functions
@@ -38,22 +32,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BasicSaver(::cereal::ReflectionCtx const& reflectionCtx, ::cereal::SaverConfig const& config);
-
-    MCFOLD ::cereal::BasicSerializerContext& getLog();
-
     MCAPI bool saveImpl(
         ::cereal::SchemaWriter&                writer,
         ::entt::meta_handle                    handle,
-        ::cereal::internal::BasicSchema const& fallback,
-        ::cereal::SaverConfig const&           config
+        ::cereal::internal::BasicSchema const& fallback
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& reflectionCtx, ::cereal::SaverConfig const& config);
     // NOLINTEND
 
 public:

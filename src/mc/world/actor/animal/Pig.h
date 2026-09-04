@@ -12,6 +12,7 @@ class ActorDefinitionGroup;
 class ActorHurtResult;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class Pig : public ::Animal {
@@ -22,7 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -47,7 +49,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 
     // NOLINTEND

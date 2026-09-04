@@ -7,23 +7,19 @@
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/deps/ecs/systems/IEntitySystems.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/profiler/PredeclaredAnnotation.h"
 
 // auto generated forward declare list
 // clang-format off
 class EcsEventDispatcher;
-class EntityContext;
 class EntityRegistry;
 class ITickingSystem;
 class PlayerInteractionSystem;
-class StrictEntityContext;
 struct EntitySystemTickingMode;
 struct IEntitySystemsCollection;
 struct SystemCategory;
 struct SystemInfo;
 struct TickingSystemId;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class EntitySystems : public ::IEntitySystems, public ::Bedrock::EnableNonOwnerReferences {
@@ -86,7 +82,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EntitySystems() /*override*/;
+    virtual ~EntitySystems() /*override*/ = default;
 
     virtual void tickMovementCatchup(::EntityRegistry& registry) /*override*/;
 
@@ -105,44 +101,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EntitySystems(::std::string_view name);
-
     MCAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
 
-    MCAPI void _singleTickCategory(::Bedrock::typeid_t<::SystemCategory> category, ::EntityContext& context);
-
-    MCAPI void _singleTickCategory(
-        ::Bedrock::typeid_t<::SystemCategory> category,
-        ::StrictEntityContext&                entity,
-        ::EntityRegistry&                     registry
-    );
-
-#ifdef LL_PLAT_C
-    MCFOLD ::StackRefResult<::EcsEventDispatcher> getDispatcher();
-#endif
-
-    MCFOLD ::PlayerInteractionSystem& getPlayerInteractionSystem();
-
-    MCAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
-    getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::SystemInfo const* getSystemInfoForTickingSystemId(::TickingSystemId id) const;
-
-    MCAPI ::TickingSystemId getTickingSystemIdFromIndex(uint64 index) const;
-#endif
-
-    MCAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
-
     MCAPI void registerEvents(::EntityRegistry& registry);
-
-    MCAPI void registerGameOnlyMovementTickingSystem(::TickingSystemWithInfo&& system);
-
-    MCAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
-
-    MCAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);
-
-    MCAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
 
 #ifdef LL_PLAT_C
     MCAPI ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
@@ -165,15 +126,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view name);
-
     MCAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -193,13 +146,5 @@ public:
     MCAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForIEntitySystems();
     // NOLINTEND
 };

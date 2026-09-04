@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,45 +31,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptBiomeTypes& operator=(ScriptBiomeTypes const&);
-    ScriptBiomeTypes(ScriptBiomeTypes const&);
-    ScriptBiomeTypes();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBiomeTypes(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
-
     MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
-
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
-    get(::std::string const& biomeName, ::Scripting::WeakLifetimeScope& scope);
-
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
-    getAllBiomeTypes(::Scripting::WeakLifetimeScope& scope);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
-
-    MCAPI ~ScriptBiomeTypes();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -6,13 +6,7 @@ struct TextureResourceSpan {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke913f8;
-    ::ll::UntypedStorage<4, 4> mUnk24d336;
+    ::ll::TypedStorage<4, 4, uint> mTextureOffset;
+    ::ll::TypedStorage<4, 4, uint> mTextureCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextureResourceSpan& operator=(TextureResourceSpan const&);
-    TextureResourceSpan(TextureResourceSpan const&);
-    TextureResourceSpan();
 };

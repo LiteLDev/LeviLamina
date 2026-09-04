@@ -10,13 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_40 {
 // functions
 // NOLINTBEGIN
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
-
-MCAPI void bindClientBiomeFoliageColorMapEnum(::cereal::ReflectionCtx& ctx);
-
 MCAPI void bindClientBiomeGrassColorMapEnum(::cereal::ReflectionCtx& ctx);
-
-MCAPI void bindItemComponentTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_40

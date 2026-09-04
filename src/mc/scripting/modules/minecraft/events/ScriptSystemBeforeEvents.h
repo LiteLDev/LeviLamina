@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/events/ScriptFilteredEventSignal.h"
 
 // auto generated forward declare list
@@ -36,18 +36,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> name;
         ::ll::TypedStorage<8, 8, uint64>         count;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~SignalNameSubscriberCount();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -108,9 +96,6 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>
             beforeWatchdogTerminateEvent
     );
-
-    MCAPI void
-    registerHandler(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> handle);
 
     MCAPI ~ScriptSystemBeforeEvents();
     // NOLINTEND

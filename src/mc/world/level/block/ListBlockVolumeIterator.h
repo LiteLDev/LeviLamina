@@ -44,39 +44,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ListBlockVolumeIterator(
-        ::ListBlockVolume const&                                                                    volume,
-        ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>> const& currentIterator,
-        ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>> const& endIterator,
-        bool                                                                                        begin
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(
-        ::ListBlockVolume const&                                                                    volume,
-        ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>> const& currentIterator,
-        ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>> const& endIterator,
-        bool                                                                                        begin
-    );
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isValid() const;
 
     MCAPI void $_begin();
 
-    MCFOLD void $_end();
+    MCAPI void $_end();
 
 
     // NOLINTEND

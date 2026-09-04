@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/entity/components/AttributeRequestComponent.h"
-
 // auto generated forward declare list
 // clang-format off
 struct AttributesComponent;
@@ -24,12 +21,6 @@ public:
     RequestVisitor& operator=(RequestVisitor const&);
     RequestVisitor(RequestVisitor const&);
     RequestVisitor();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void operator()(::AttributeRequestComponent::AddBuffModifier const& request) const;
-    // NOLINTEND
 };
 
 } // namespace UpdateAttributesSystemImpl

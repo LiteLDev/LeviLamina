@@ -4,6 +4,7 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/server/sim/LookDuration.h"
+#include "mc/world/actor/player/PlayerInventory.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
 
 // auto generated inclusion list
@@ -54,13 +55,13 @@ public:
 
     bool simulateSneaking() {
         setSneaking(true);
-        return SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
+        return SynchedActorDataAccess::getActorFlag(mEntityContext, ActorFlags::Sneaking);
     }
     bool simulateStopSneaking() {
         setSneaking(false);
-        return !SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
+        return !SynchedActorDataAccess::getActorFlag(mEntityContext, ActorFlags::Sneaking);
     }
-    bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); }
+    bool simulateUseItem() { return simulateUseItemInSlot(mInventory->mSelected); }
 
     LLAPI bool simulateDestroyBlock(BlockPos const&, ScriptModuleMinecraft::ScriptFacing);
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
@@ -85,6 +86,9 @@ public:
     LLAPI void simulateWorldMove(::Vec3 const& worldDirection, float = 1.0f);
     LLAPI void simulateLocalMove(::Vec3 const& localDirection, float = 1.0f);
     LLAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
+    LLAPI void simulateStopDestroyingBlock();
+    LLAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
+
 
     LLAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
@@ -169,15 +173,9 @@ public:
 
     MCAPI void _updateRidingComponents();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> getGameTestHelper() const;
-
-    MCAPI void postAiStep();
-
     MCAPI void preAiStep();
 
     MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);
-
-    MCAPI void setXuid(::std::string const& xuid);
 
     MCAPI bool simulateAttack();
 
@@ -185,13 +183,9 @@ public:
 
     MCAPI bool simulateInteract();
 
-    MCAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
-
     MCAPI bool simulateJump();
 
-    MCAPI void simulateLookAt(::Vec3 const& pos);
-
-    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType = sim::LookDuration::Instant);
+    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType);
 
     MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType = sim::LookDuration::Instant);
 
@@ -203,10 +197,6 @@ public:
     MCAPI void simulateNavigateToLocations(::std::vector<::Vec3>&& positions, float speed);
 
     MCAPI void simulateSetBodyRotation(float degY);
-
-    MCAPI bool simulateSetItem(::ItemStack& item, bool selectSlot, int slot);
-
-    MCAPI void simulateStopDestroyingBlock();
 
     MCAPI bool simulateUseItem(::ItemStack& item);
 
@@ -297,11 +287,5 @@ public:
     MCFOLD void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

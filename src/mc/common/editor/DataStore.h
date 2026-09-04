@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -21,8 +20,6 @@ MCNAPI ::Json::Value _createClientActionEvent(
 
 MCNAPI ::Json::Value
 _createServerUXEvent(::Editor::DataStore::DeprecatedEventFactory::ServerUXEventType type, ::Json::Value const& payload);
-
-MCNAPI bool operator==(::Editor::DataStore::PayloadDescription const&, ::Editor::DataStore::PayloadDescription const&);
 // NOLINTEND
 
 } // namespace Editor::DataStore

@@ -17,12 +17,6 @@ public:
 
     virtual ~BiplanarYuv8Buffer() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

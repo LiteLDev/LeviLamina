@@ -13,10 +13,4 @@ public:
 
     virtual void onGameEventNotification(::ui::GameEventNotification notification) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

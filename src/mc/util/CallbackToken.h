@@ -21,12 +21,7 @@ public:
         }
     }
 
-    void release() {
-        mCancelState.reset();
-    }
+    void release() { mCancelState.reset(); }
 
-    bool isEmpty() const {
-        return mCancelState.expired();
-    }
-
+    bool isEmpty() const { return mCancelState.expired(); }
 };

@@ -4,12 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/RelaxedSemVersion.h"
 #include "mc/platform/UUID.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
@@ -27,7 +23,8 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mPlatformLocked;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mAllowRandomSeed;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mLockTemplateOptions;
-    ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>  mOptimizationVersion;
+    ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v3_0_0::PackManifestDefinition::RelaxedSemVersion>>
+        mOptimizationVersion;
     // NOLINTEND
 
 public:
@@ -37,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Header(::SharedTypes::v3_0_0::PackManifestDefinition::Header&&);
-
     MCAPI Header(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
 
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
@@ -51,16 +46,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Header&&);
-
     MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
     // NOLINTEND
 

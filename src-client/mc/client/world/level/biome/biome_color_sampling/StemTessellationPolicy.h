@@ -29,15 +29,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $get(::Block const& block, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const;
+    MCAPI ::mce::Color $get(::Block const& block, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const;
 
-    MCFOLD ::mce::Color $get(::Block const& block) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::mce::Color $get(::Block const& block) const;
     // NOLINTEND
 };
 

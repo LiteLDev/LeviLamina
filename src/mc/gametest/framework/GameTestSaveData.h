@@ -16,16 +16,4 @@ public:
     GameTestSaveData& operator=(GameTestSaveData const&);
     GameTestSaveData(GameTestSaveData const&);
     GameTestSaveData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~GameTestSaveData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

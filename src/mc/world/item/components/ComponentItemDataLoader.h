@@ -5,16 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/resources/PackLoadInfo.h"
 #include "mc/world/item/components/CerealComponentItemDataLoader.h"
 
 // auto generated forward declare list
 // clang-format off
-class PackLoadContext;
+class BedrockLoadContext;
 class SemVersion;
 struct ComponentItemDataAll_Latest;
-struct ComponentItemData_v1_26_0;
 namespace Json { class Value; }
-namespace SharedTypes::Legacy { struct ComponentItemData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,64 +25,38 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
-    ::ll::TypedStorage<8, 280, ::CerealComponentItemDataLoader>                             mLoader;
-    ::ll::TypedStorage<8, 8, ::PackLoadContext const&>                                      mPackLoadContext;
-    ::ll::TypedStorage<1, 1, bool>                                                          mIsServer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>>             mCtx;
+    ::ll::TypedStorage<8, 256, ::CerealComponentItemDataLoader>                                         mLoader;
+    ::ll::TypedStorage<8, 96, ::PackLoadInfo>                                                           mPackLoadInfo;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)>> mValidatorFn;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ComponentItemDataLoader& operator=(ComponentItemDataLoader const&);
-    ComponentItemDataLoader(ComponentItemDataLoader const&);
     ComponentItemDataLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComponentItemDataLoader(
-        ::SemVersion const&                                                      documentVersion,
-        ::PackLoadContext const&                                                 packLoadContext,
-        bool                                                                     isServer,
+        ::BedrockLoadContext const&                                              bedrockLoadContext,
+        ::PackLoadInfo const&                                                    packLoadInfo,
         ::cereal::ReflectionCtx const&                                           ctx,
         ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
     );
 
-    MCAPI ::Puv::LoadResult<::ComponentItemData_v1_26_0> _parseCereal(::Json::Value const& input) const;
-
-    MCAPI ::std::pair<::SharedTypes::Legacy::ComponentItemData, bool> _parseLegacyComponents(::Json::Value input) const;
-
-    MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest> load(::Json::Value const& input) const;
-
-    MCAPI ~ComponentItemDataLoader();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool validateResult(
-        ::Puv::LoadResult<::ComponentItemDataAll_Latest> const& result,
-        ::std::string const&                                    itemFullName,
-        ::SemVersion const&                                     documentVersion
-    );
+    MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
+    load(::Json::Value const& input, ::SemVersion const& documentVersion) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::SemVersion const&                                                      documentVersion,
-        ::PackLoadContext const&                                                 packLoadContext,
-        bool                                                                     isServer,
+        ::BedrockLoadContext const&                                              bedrockLoadContext,
+        ::PackLoadInfo const&                                                    packLoadInfo,
         ::cereal::ReflectionCtx const&                                           ctx,
         ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

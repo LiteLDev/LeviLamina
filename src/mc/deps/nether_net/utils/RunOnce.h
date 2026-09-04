@@ -4,6 +4,7 @@
 
 namespace NetherNet {
 
+template <typename T0>
 class RunOnce {};
 
 } // namespace NetherNet

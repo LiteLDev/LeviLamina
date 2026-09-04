@@ -22,18 +22,6 @@ public:
     LoadTaskData& operator=(LoadTaskData const&);
     LoadTaskData(LoadTaskData const&);
     LoadTaskData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~LoadTaskData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace RepositoryLoading

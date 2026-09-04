@@ -32,8 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     GroupInfoComponent(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
-
-    MCAPI bool flush();
     // NOLINTEND
 
 public:
@@ -46,12 +44,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Settings::ComponentState $getDefaultState() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

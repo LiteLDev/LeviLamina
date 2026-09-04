@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +13,6 @@ struct EventingDispatcherComponent;
 struct EventingRequestQueueComponent;
 struct FallDamageResultComponent;
 struct PassengerComponent;
-struct ServerPlayerComponent;
 struct ServerPlayerCurrentMovementComponent;
 struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
@@ -32,19 +30,6 @@ MCAPI void doValidateFallDamage(
     ::Optional<::PassengerComponent const> const&                   passengerComponent,
     ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView,
     ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
-);
-
-MCAPI void tick(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ServerPlayerComponent>,
-        ::EventingDispatcherComponent const,
-        ::Optional<::ServerPlayerCurrentMovementComponent const>,
-        ::Optional<::FallDamageResultComponent const>,
-        ::Optional<::PassengerComponent const>>                                                            mainView,
-    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView,
-    ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>   requestQueueView,
-    ::ViewT<::StrictEntityContext, ::FallDamageResultComponent const> fallDamageView
 );
 // NOLINTEND
 

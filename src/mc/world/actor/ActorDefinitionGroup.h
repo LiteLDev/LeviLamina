@@ -6,7 +6,6 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/LoadDataRefVariant.h"
 #include "mc/deps/puv/LoadResultBetaVariant.h"
 #include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
 #include "mc/platform/threading/Mutex.h"
@@ -18,20 +17,16 @@
 // clang-format off
 class ActorComponentFactory;
 class ActorDefinition;
-class ActorMigratedDefinitionFactory;
 class IMinecraftEventing;
 class Level;
 class LinkedAssetValidator;
-class PackInstance;
 class PackLoadContext;
 class ResourcePackManager;
 class SemVersion;
-class SemVersionView;
-namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Puv { class Input; }
 namespace SharedTypes::Beta { struct ActorDocument; }
-namespace SharedTypes::v1_26_20 { struct ActorDocument; }
+namespace SharedTypes::v1_26_30 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -69,18 +64,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                 mIsVanillaOverride;
         ::ll::TypedStorage<8, 32, ::PuvLoadData::LoadResultWithTiming> mLoadTime;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~LoadActorResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -106,7 +89,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorDefinitionGroup() /*override*/;
+    virtual ~ActorDefinitionGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -120,20 +103,23 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
+#ifdef LL_PLAT_S
     MCAPI void _getResources(::Level& level);
 
-    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
+    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_30::ActorDocument, ::SharedTypes::Beta::ActorDocument>
     _initActorDefinition(
-        ::Puv::Input const&  input,
-        ::SemVersion const&  formatVersion,
-        ::PackLoadContext&   packLoadContext,
-        ::std::string const& relativeResourceFilepath,
-        ::JsonBetaState      useBetaFeatures,
-        ::std::string const& identifier,
-        ::Level&             level,
-        ::LogArea            logArea
+        ::Puv::Input const&   input,
+        ::SemVersion const&   formatVersion,
+        ::PackLoadContext&    packLoadContext,
+        ::std::string const&  relativeResourceFilepath,
+        ::JsonBetaState const useBetaFeatures,
+        ::std::string const&  identifier,
+        ::Level&              level,
+        ::LogArea             logArea
     );
+#endif
 
+#ifdef LL_PLAT_C
     MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
         ::PackLoadContext&                   packLoadContext,
@@ -142,44 +128,7 @@ public:
         ::std::unordered_set<::std::string>& definitions,
         ::LogArea                            logArea
     );
-
-    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
-    _loadDefinitionFromJSON(
-        ::SemVersion const&  formatVersion,
-        ::PackLoadContext&   packLoadContext,
-        ::std::string const& relativeResourceFilepath,
-        ::Json::Value        minecraftEntityNode,
-        ::JsonBetaState      useBetaFeatures,
-        ::std::string const& identifier,
-        ::Level&             level,
-        ::LogArea            logArea
-    );
-
-    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
-    _loadEntityNode(
-        ::Puv::Input const&                     input,
-        ::SemVersion const&                     formatVersion,
-        ::PackLoadContext const&                packLoadContext,
-        ::JsonBetaState                         useBetaFeatures,
-        ::ActorMigratedDefinitionFactory const& factory
-    ) const;
-
-    MCAPI bool _parseEntityJsonFromActorDocument(
-        ::Puv::LoadDataRefVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
-                                              actorDocumentRefVariant,
-        ::std::unique_ptr<::ActorDefinition>& def,
-        ::SemVersion const&                   formatVersion,
-        ::PackLoadContext&                    packLoadContext,
-        ::std::string const&                  relativeResourceFilepath,
-        ::JsonBetaState                       useBetaFeatures,
-        ::std::string const&                  identifier,
-        ::Level&                              level,
-        ::LogArea                             logArea
-    );
-
-    MCAPI void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
-
-    MCAPI void _setupPropertyGroups(::Level& level, ::ActorDefinition const& def);
+#endif
 
     MCAPI ::std::vector<::std::string> buildActorEventList() const;
 
@@ -191,6 +140,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
+
+#ifdef LL_PLAT_C
     MCAPI static void loadActorDefinitionFormatVersion(::Json::Value& root, ::SemVersion& formatVersion);
 
     MCAPI static bool loadActorDefinitionIdentifier(
@@ -198,15 +150,7 @@ public:
         ::SemVersion const&  formatVersion,
         ::std::string&       identifier
     );
-
-    MCAPI static bool loadActorDefinitionRuntimeIdentifier(
-        ::Json::Value const&    root,
-        ::SemVersionView const& formatVersion,
-        ::std::string&          runtimeIdentifier
-    );
-
-    MCAPI static bool
-    tryReadEntityResourceFile(::PackInstance& packInstance, ::Core::Path const& resource, ::Json::Value& outputRoot);
+#endif
     // NOLINTEND
 
 public:
@@ -219,17 +163,5 @@ public:
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -97,37 +97,15 @@ public:
 
     MCNAPI ::Core::Result _writeOperation(::Core::Result&& result, uint64 numBytesWritten);
 
-    MCNAPI ::Core::Result close();
-
     MCNAPI void detachFromTransaction();
 
     MCNAPI ::Core::Result flush();
-
-    MCNAPI ::Core::FileOpenMode const& getOpenMode() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Core::PathBuffer<::std::string> getPath() const;
-#endif
-
-    MCNAPI ::Core::Result getPosition(uint64* pPosition);
-
-    MCNAPI ::Core::Result getRemainingSize(uint64* pSize);
-
-    MCNAPI ::Core::Result getSize(uint64* pSize);
-
-    MCNAPI ::Core::FileSystemImpl* getTransaction();
-
-    MCNAPI bool isOpen();
 
     MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCNAPI ::Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
-
-    MCNAPI ::Core::Result setPosition(uint64 position);
-
-    MCNAPI ::Core::Result skip(uint64 numBytes);
 
     MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
     // NOLINTEND
@@ -150,12 +128,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

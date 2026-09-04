@@ -32,7 +32,7 @@ public:
         ::Random&                                           random
     ) /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
+    virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
     // NOLINTEND
@@ -48,16 +48,10 @@ public:
         ::Random&                                           random
     );
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
 
     MCAPI void $moveBoundingBox(int dx, int dy, int dz);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -19,16 +19,4 @@ public:
     MolangContextVariableMapWithCleanup& operator=(MolangContextVariableMapWithCleanup const&);
     MolangContextVariableMapWithCleanup(MolangContextVariableMapWithCleanup const&);
     MolangContextVariableMapWithCleanup();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MolangContextVariableMapWithCleanup();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

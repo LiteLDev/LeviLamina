@@ -22,6 +22,10 @@ public:
     // BlockDescription inner types define
     struct BlockTraits {
     public:
+        // BlockTraits inner types define
+        using CerealDefaultValueOptOut = void;
+
+    public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::BlockTrait::ITrait>>> mMap;
@@ -46,8 +50,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDescription(::BlockDescription&&);
-
     MCAPI BlockDescription(::BlockDescription const&);
 
     MCAPI ::BlockDescription& operator=(::BlockDescription&&);
@@ -60,8 +62,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockDescription&&);
-
     MCAPI void* $ctor(::BlockDescription const&);
     // NOLINTEND
 

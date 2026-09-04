@@ -12,10 +12,8 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class ActorHurtResult;
-class EntityContext;
-struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class Warden : public ::Monster {
@@ -25,10 +23,6 @@ public:
     ::ll::TypedStorage<8, 8, ::Tick>                           mTouchAngerCooldownExpiryTick;
     ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mSonicBoomCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Warden();
 
 public:
     // virtual functions
@@ -50,30 +44,10 @@ public:
     virtual bool checkSpawnObstruction() const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual ::ActorHurtResult
     doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Warden(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -95,7 +69,8 @@ public:
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 

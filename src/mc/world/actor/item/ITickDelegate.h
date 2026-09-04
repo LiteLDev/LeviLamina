@@ -20,10 +20,4 @@ public:
 
     virtual void breakBlock(::FallingBlockActor& fallingBlock) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

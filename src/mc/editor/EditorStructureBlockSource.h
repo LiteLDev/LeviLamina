@@ -67,6 +67,16 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::BlockChangeContext const&    changeSourceContext
     ) /*override*/;
+
+    virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
+
+    virtual ::Block const& getBlock(::BlockPos const& pos, uint layer) const /*override*/;
+
+    virtual ::Block const& getExtraBlock(::BlockPos const& pos) const /*override*/;
+
+    virtual ::Block const& getLiquidBlock(::BlockPos const& pos) const /*override*/;
+
+    virtual bool hasBlock(::BlockPos const& pos) const /*override*/;
     // NOLINTEND
 
 public:
@@ -79,8 +89,6 @@ public:
         ::AABB const&  bounds,
         ::BlockPos     offset
     );
-
-    MCNAPI ::Editor::EditorStructureTemplate const& getTemplate();
     // NOLINTEND
 
 public:
@@ -120,6 +128,16 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::BlockChangeContext const&    changeSourceContext
     );
+
+    MCNAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+
+    MCNAPI ::Block const& $getBlock(::BlockPos const& pos, uint layer) const;
+
+    MCNAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+
+    MCNAPI ::Block const& $getLiquidBlock(::BlockPos const& pos) const;
+
+    MCNAPI bool $hasBlock(::BlockPos const& pos) const;
 
 
     // NOLINTEND

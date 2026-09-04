@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PermissionsScreenController() /*override*/;
+    virtual ~PermissionsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -69,29 +69,15 @@ public:
 
     MCAPI void _closeEduPermissionsPopup();
 
-    MCAPI void _confirmationBanningPlayerDialog(
-        ::std::string const&                         selectedPlayerName,
-        ::std::function<void(::ModalScreenButtonId)> callback
-    );
-
     MCAPI void _confirmationDeoppingOtherDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void _confirmationDeoppingSelfDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _confirmationKickingPlayerDialog(
-        ::std::string const&                         selectedPlayerName,
-        ::std::function<void(::ModalScreenButtonId)> callback
-    );
-
     MCAPI void _confirmationNoCheatsDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _confirmationRemovingPlayerDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void _decidePermissions();
 
     MCAPI void _evaluateCanEdit();
-
-    MCAPI void _handleOperatorAbility();
 
     MCAPI bool _isLocalPlayerSelected() const;
 
@@ -99,23 +85,9 @@ public:
 
     MCAPI void _populateClientIds();
 
-    MCAPI void _processAbilityChange(int index, bool checked);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
-
     MCAPI void _setCurrentPermissionLevel(::PlayerPermissionLevel permissionLevel, bool checkDefaultCustomAbilities);
 
-    MCAPI void _setPermissionLevelEdu(::PlayerPermissionLevel permissionLevel);
-
-    MCAPI void _setPermissionLevelRealms(::PlayerPermissionLevel permissionLevel);
-
     MCAPI void _syncAbilities();
-
-    MCAPI void openEduPermissionsPopup(::ActorUniqueID id);
     // NOLINTEND
 
 public:
@@ -130,12 +102,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
@@ -147,13 +113,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI void $onLeave();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

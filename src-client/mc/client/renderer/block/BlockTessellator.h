@@ -7,7 +7,6 @@
 #include "mc/client/renderer/block/BlockTessellatorBlockInWorld.h"
 #include "mc/client/renderer/block/BlockTessellatorCache.h"
 #include "mc/client/renderer/block/block_geo_type/GeoTypeResolver.h"
-#include "mc/client/renderer/block/block_geometry/Axis.h"
 #include "mc/client/renderer/block/block_tessellator_custom_extra_data/Map.h"
 #include "mc/client/renderer/texture/TextureUVCoordinateSet.h"
 #include "mc/client/world/level/biome/BiomeTintCache.h"
@@ -20,7 +19,6 @@
 #include "mc/world/Flip.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/AnvilPart.h"
-#include "mc/world/level/block/BigDripleafTilt.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockShape.h"
 #include "mc/world/level/block/BrightnessPair.h"
@@ -41,9 +39,9 @@ class Tessellator;
 class Vec2;
 class Vec3;
 struct AirAndSimpleBlockBits;
+struct OffscreenCaptureDescription;
 namespace mce { class Mesh; }
 namespace mce { class TexturePtr; }
-namespace mce { struct Radian; }
 // clang-format on
 
 class BlockTessellator {
@@ -158,12 +156,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BlockTessellator(::BlockSource* level);
 
-    MCAPI void
-    _applyCrossTextureAmbientOcclusion(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
-
     MCAPI void _flipAllFaces(::Facing::Rotation rotation);
-
-    MCAPI ::TextureUVCoordinateSet const& _getMappedTexture(::Block const& block, uchar face) const;
 
     MCAPI ::TextureUVCoordinateSet const& _getTexture(
         ::BlockPos const&      pos,
@@ -175,16 +168,7 @@ public:
 
     MCAPI void _modifyCurrentShapeAccordingToAttachmentDirection(::Direction::Type attachmentDir);
 
-    MCAPI void _prepareFixedColorsWithFlatAO(::Block const& block, ::BlockPos const&);
-
     MCAPI void _preparePolyCross(::Tessellator& tessellator, ::BlockPos const& p, ::Block const& block);
-
-    MCAPI void _rotateVertsAroundPoint(
-        ::std::array<::Vec3, 4>& vertices,
-        ::Vec3 const&            rotationPoint,
-        ::BlockGeometry::Axis    axis,
-        ::mce::Radian            angle
-    );
 
     MCAPI void _setBambooFencePostTexture(::TextureUVCoordinateSet const& bambooFenceTex);
 
@@ -206,8 +190,6 @@ public:
         float             c2
     );
 
-    MCAPI void _tessellateBambooFencePostInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
-
     MCAPI void _tessellateBambooFenceSlatsInWorld(
         ::Tessellator&    tessellator,
         ::Block const&    block,
@@ -216,23 +198,23 @@ public:
     );
 
     MCAPI bool _tessellateBlockInWorldFlat(
-        ::Tessellator&      tessellator,
-        ::Block const&      block,
-        ::BlockPos const&   pos,
-        ::mce::Color const& base,
-        ::BlockOccluder*    occluder,
-        ::std::bitset<6>    faces,
-        int                 forcedVariant
+        ::Tessellator&         tessellator,
+        ::Block const&         block,
+        ::BlockPos const&      pos,
+        ::mce::Color const&    base,
+        ::BlockOccluder*       occluder,
+        ::std::bitset<6> const faces,
+        int                    forcedVariant
     );
 
     MCAPI bool _tessellateBlockInWorldWithAmbienceOcclusion(
-        ::Tessellator&      tessellator,
-        ::Block const&      block,
-        ::BlockPos          p,
-        ::mce::Color const& base,
-        ::BlockOccluder*    occluder,
-        ::std::bitset<6>    faces,
-        int                 forcedVariant
+        ::Tessellator&         tessellator,
+        ::Block const&         block,
+        ::BlockPos             p,
+        ::mce::Color const&    base,
+        ::BlockOccluder*       occluder,
+        ::std::bitset<6> const faces,
+        int                    forcedVariant
     );
 
     MCAPI void _tessellateCalibratedSculkSensorAmethystCrystalInWorld(
@@ -250,14 +232,6 @@ public:
         float             alphaMultiplier,
         float             c10,
         float             c2
-    );
-
-    MCAPI bool _tessellateFixedCrossTexture(
-        ::TextureUVCoordinateSet const& tex,
-        ::Tessellator&                  tessellator,
-        ::Block const&                  block,
-        ::AABB const&                   boundingBox,
-        ::BlockPos const&               pos
     );
 
     MCAPI void _tessellateForInventory(
@@ -284,15 +258,9 @@ public:
 
     MCAPI void appendTessellatedBlock(::Tessellator& tessellator, ::Block const& block);
 
-    MCAPI void buildBiomeWeights(::BlockPos const& pointPos);
-
     MCAPI void clearBlockCache();
 
-    MCAPI ::BiomeTintCache& getBiomeTintCache();
-
     MCAPI ::AABB const& getCurrentShape();
-
-    MCAPI ::BrightnessPair getLightColor(::BlockPos const& pos);
 
     MCAPI ::mce::Mesh& getMeshForBlock(::Tessellator& tessellator, ::Block const& block);
 
@@ -307,43 +275,23 @@ public:
         ::LightTexture const& lightTexture
     );
 
-    MCFOLD ::BlockSource& getRegion() const;
-
     MCAPI float getWaterHeight(::BlockPos const& pos, ::Material const& material, ::BlockPos const& originalBlockPos);
 
     MCAPI void moveCurrentShape(::Vec3 const& offset);
 
     MCAPI void renderGuiBlock(
-        ::ScreenContext&         screenContext,
-        ::Block const&           block,
-        ::BlockGraphics const&   blockGraphics,
-        ::mce::TexturePtr const& texture,
-        float                    lightMultiplier,
-        float                    alphaMultiplier
+        ::ScreenContext&                     screenContext,
+        ::Block const&                       block,
+        ::BlockGraphics const&               blockGraphics,
+        ::mce::TexturePtr const&             texture,
+        float                                lightMultiplier,
+        float                                alphaMultiplier,
+        ::OffscreenCaptureDescription const& capture
     );
-
-    MCAPI void resetCache(::BlockPos const& pos);
-
-    MCAPI void resetCacheToAir(::BlockPos const& pos);
-
-    MCAPI void resetRegion();
 
     MCAPI bool rotateCommandBlockFaces(::Block const& block);
 
-    MCAPI void setBakedLighting(::BakedBlockLightType type);
-
-    MCAPI void setBlockExtraDataMap(::BlockTessellatorCustomExtraData::Map map);
-
-    MCAPI void setForceOpaque(bool forceOpaque);
-
-    MCAPI void
-    setLightingModelCapabilities(::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities);
-
     MCAPI void setRegion(::BlockSource& region);
-
-    MCFOLD void setRenderLayer(int layer);
-
-    MCAPI void setTextureShiftsEnabled(bool enabled);
 
     MCAPI void tessellateAll(
         ::Tessellator&                  tessellator,
@@ -380,22 +328,8 @@ public:
 
     MCAPI bool tessellateBambooBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
-    MCAPI void tessellateBambooLargeLeafInWorld(
-        ::Tessellator&                  tessellator,
-        ::TextureUVCoordinateSet const& leafTex,
-        ::Vec3 const&                   topCenter,
-        float                           diameter
-    );
-
     MCAPI bool
     tessellateBambooSaplingBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
-
-    MCAPI void tessellateBambooSmallLeafInWorld(
-        ::Tessellator&                  tessellator,
-        ::TextureUVCoordinateSet const& leafSmallTex,
-        ::Vec3 const&                   topCenter,
-        float                           diameter
-    );
 
     MCAPI bool tessellateBambooStalkBlockInWorld(
         ::Tessellator&    tessellator,
@@ -409,92 +343,30 @@ public:
         ::Block const&         block,
         ::BlockPos const&      pos,
         ::BlockGraphics const& blockGraphics,
-        float                  diameter,
-        float                  sideVariantOffset,
-        float                  verticalPortion
-    );
-
-    MCAPI void tessellateBeacon(
-        ::Tessellator& tessellator,
-        ::Block const& block,
-        float          lightMultiplier,
-        float          alphaMultiplier,
-        ::Vec3 const&  vOffset
+        float const            diameter,
+        float const            sideVariantOffset,
+        float const            verticalPortion
     );
 
     MCAPI bool tessellateBeaconInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI bool tessellateBellBlockHangingBetweenInWorld(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& pos,
-        bool              rotate,
-        ::Direction::Type dir
-    );
-
-    MCAPI bool tessellateBellBlockHangingOneSideInWorld(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& pos,
-        bool              rotate,
-        ::Direction::Type dir
-    );
-
-    MCAPI bool
-    tessellateBellBlockHangingTopInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
-
     MCAPI bool tessellateBellBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
-
-    MCAPI bool tessellateBellBlockStandingInWorld(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& pos,
-        bool              rotate,
-        ::Direction::Type dir
-    );
 
     MCAPI void tessellateBellBlockStandingLegInWorld(
         ::Tessellator&         tessellator,
         ::Block const&         block,
         ::BlockPos const&      pos,
         ::BlockGraphics const& blockGraphics,
-        bool                   rotate
+        bool const             rotate
     );
 
     MCAPI bool tessellateBigDripleafBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
-
-    MCAPI void tessellateBigDripleafFront(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& p,
-        ::BigDripleafTilt tilt,
-        int               facing
-    );
-
-    MCAPI void tessellateBigDripleafSide(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& p,
-        ::BigDripleafTilt tilt,
-        int               facing
-    );
-
-    MCAPI void
-    tessellateBigDripleafStem(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p, int facing);
-
-    MCAPI void tessellateBigDripleafTop(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& p,
-        ::BigDripleafTilt tilt,
-        int               facing
-    );
 
     MCAPI bool tessellateBlockInWorld(
         ::Tessellator&                 tessellator,
         ::Block const&                 block,
         ::BlockPos const&              pos,
-        ::std::bitset<6>               faces,
+        ::std::bitset<6> const         faces,
         ::AirAndSimpleBlockBits const* airAndSimpleBlocks
     );
 
@@ -542,17 +414,15 @@ public:
 
     MCAPI void tessellateCompoundCreatorFace(
         ::Tessellator&                  tessellator,
-        ::Block const&                  p,
-        ::Vec3 const&                   tex,
-        ::TextureUVCoordinateSet const& uv0,
+        ::Block const&                  block,
+        ::Vec3 const&                   p,
+        ::TextureUVCoordinateSet const& tex,
+        ::Vec2                          uv0,
         ::Vec2                          uv1,
-        ::Vec2                          face,
-        int                             inward,
-        bool                            mat,
-        ::Matrix*
+        int const                       face,
+        bool                            inward,
+        ::Matrix*                       mat
     );
-
-    MCAPI bool tessellateCompoundCreatorInWorld(::Tessellator& t, ::Block const& b, ::BlockPos const& p);
 
     MCAPI bool tessellateCoralFanHangInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
 
@@ -562,7 +432,7 @@ public:
         ::Tessellator&                                     tessellator,
         ::Block const&                                     block,
         ::BlockPos const&                                  p,
-        bool                                               forceDoubleSide,
+        bool const                                         forceDoubleSide,
         ::BlockTessellator::CrossTextureReverseSideMapping reverseSideMapping,
         float                                              scale,
         ::BlockTessellator::CrossTextureWidth              width
@@ -577,51 +447,7 @@ public:
         float                                              scale,
         ::BlockTessellator::CrossTextureWidth              width,
         ::BlockTessellator::CrossTextureReverseSideMapping reverseSideMapping,
-        bool                                               forceDoubleSided
-    );
-
-    MCAPI void tessellateCrossTextureDown(
-        ::Tessellator&                        tessellator,
-        ::TextureUVCoordinateSet const&       tex1,
-        ::TextureUVCoordinateSet const&       tex2,
-        ::Vec3 const&                         pos,
-        bool                                  renderBothSides,
-        ::Block const&                        block,
-        float                                 scale,
-        ::BlockTessellator::CrossTextureWidth width
-    );
-
-    MCAPI void tessellateCrossTextureEast(
-        ::Tessellator&                        tessellator,
-        ::TextureUVCoordinateSet const&       tex1,
-        ::TextureUVCoordinateSet const&       tex2,
-        ::Vec3 const&                         pos,
-        bool                                  renderBothSides,
-        ::Block const&                        block,
-        float                                 scale,
-        ::BlockTessellator::CrossTextureWidth width
-    );
-
-    MCAPI void tessellateCrossTextureNorth(
-        ::Tessellator&                        tessellator,
-        ::TextureUVCoordinateSet const&       tex1,
-        ::TextureUVCoordinateSet const&       tex2,
-        ::Vec3 const&                         pos,
-        bool                                  renderBothSides,
-        ::Block const&                        block,
-        float                                 scale,
-        ::BlockTessellator::CrossTextureWidth width
-    );
-
-    MCAPI void tessellateCrossTextureSouth(
-        ::Tessellator&                        tessellator,
-        ::TextureUVCoordinateSet const&       tex1,
-        ::TextureUVCoordinateSet const&       tex2,
-        ::Vec3 const&                         pos,
-        bool                                  renderBothSides,
-        ::Block const&                        block,
-        float                                 scale,
-        ::BlockTessellator::CrossTextureWidth width
+        bool const                                         forceDoubleSided
     );
 
     MCAPI void tessellateCrossTextureUp(
@@ -629,22 +455,11 @@ public:
         ::TextureUVCoordinateSet const&                    tex1,
         ::TextureUVCoordinateSet const&                    tex2,
         ::Vec3 const&                                      pos,
-        bool                                               renderBothSides,
+        bool const                                         renderBothSides,
         ::Block const&                                     block,
         float                                              scale,
         ::BlockTessellator::CrossTextureWidth              width,
         ::BlockTessellator::CrossTextureReverseSideMapping reverseSideMapping
-    );
-
-    MCAPI void tessellateCrossTextureWest(
-        ::Tessellator&                        tessellator,
-        ::TextureUVCoordinateSet const&       tex1,
-        ::TextureUVCoordinateSet const&       tex2,
-        ::Vec3 const&                         pos,
-        bool                                  renderBothSides,
-        ::Block const&                        block,
-        float                                 scale,
-        ::BlockTessellator::CrossTextureWidth width
     );
 
     MCAPI bool tessellateDiodeInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
@@ -654,9 +469,9 @@ public:
     MCAPI bool tessellateDoublePlantInWorld(
         ::Tessellator&                                     tessellator,
         ::Block const&                                     block,
-        ::BlockShape                                       blockShape,
+        ::BlockShape const                                 blockShape,
         ::BlockPos const&                                  p,
-        bool                                               forceDoubleSided,
+        bool const                                         forceDoubleSided,
         ::Vec3                                             offset,
         bool                                               applyAmbientOcclusion,
         ::BlockTessellator::CrossTextureReverseSideMapping reverseSideMapping,
@@ -668,14 +483,6 @@ public:
         ::Block const&    block,
         ::BlockPos const& p,
         bool              singleSide
-    );
-
-    MCAPI bool tessellateDragonEgg(
-        ::Tessellator&    tessellator,
-        ::Block const&    block,
-        ::BlockPos const& pos,
-        bool              render,
-        int               allowedFaces
     );
 
     MCAPI bool
@@ -692,7 +499,7 @@ public:
         ::TextureUVCoordinateSet const& intex
     );
 
-    MCAPI bool tessellateEndGatewayInWorld(::Tessellator& tessellator, ::Block const& pos, ::BlockPos const&);
+    MCAPI bool tessellateEndGatewayInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
 
     MCAPI bool tessellateEndPortalFrameInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
 
@@ -702,28 +509,9 @@ public:
     tessellateEndRodAppended(::Tessellator& tessellator, ::Block const& block, ::BlockGraphics const& blockGraphics);
 
     MCAPI void
-    tessellateEndRodDown(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
-    tessellateEndRodEast(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
     tessellateEndRodGui(::Tessellator& tessellator, ::Block const& block, ::BlockGraphics const& blockGraphics);
 
     MCAPI bool tessellateEndRodInWorld(::Tessellator& tessellator, ::Block const& b, ::BlockPos const& p);
-
-    MCAPI void
-    tessellateEndRodNorth(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
-    tessellateEndRodSouth(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void tessellateEndRodUp(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
-    tessellateEndRodWest(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI bool tessellateExtraDataInWorld(::Tessellator& tessellator, ::Block const& p, ::BlockPos const&);
 
     MCAPI bool tessellateEyeblossomInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
@@ -746,11 +534,11 @@ public:
         ::Block const&                  block,
         ::Vec3 const&                   p,
         ::TextureUVCoordinateSet const& tex,
-        float                           u0,
-        float                           v0,
-        float                           u1,
-        float                           v1,
-        int                             face
+        float const                     u0,
+        float const                     v0,
+        float const                     u1,
+        float const                     v1,
+        int const                       face
     );
 
     MCAPI bool tessellateFacingBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
@@ -796,43 +584,36 @@ public:
     MCAPI bool
     tessellateInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos, bool useCalcWithCache);
 
-    MCAPI void tessellateInWorld(
-        ::Tessellator&                  tessellator,
-        ::Block const&                  block,
-        ::BlockPos const&               pos,
-        ::TextureUVCoordinateSet const& fixedTexture
-    );
-
     MCAPI bool tessellateIndividualCandleInWorld(
         ::Tessellator& tessellator,
         ::Block const& block,
         ::Vec3 const&  p,
-        float          height,
-        ::Vec3         offset
+        float const    height,
+        ::Vec3 const   offset
     );
 
     MCAPI bool tessellateIndividualSeaPickleInWorld(
         ::Tessellator& tessellator,
         ::Block const& block,
         ::Vec3 const&  p,
-        double         height,
-        ::Vec3         offset
+        double const   height,
+        ::Vec3 const   offset
     );
 
     MCAPI bool tessellateIndividualTurtleEggInWorld(
         ::Tessellator& tessellator,
         ::Block const& block,
         ::Vec3 const&  p,
-        ::Vec3         from,
-        ::Vec3         to,
-        int            eggNum
+        ::Vec3 const   from,
+        ::Vec3 const   to,
+        int const      eggNum
     );
 
     MCAPI bool tessellateItemFrameInWorld(
         ::Tessellator&    tessellator,
         ::Block const&    block,
         ::BlockPos const& pos,
-        bool              ignoreLighting
+        bool const        ignoreLighting
     );
 
     MCAPI bool tessellateKelpInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
@@ -846,27 +627,9 @@ public:
     MCAPI bool tessellateLeverInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
 
     MCAPI void
-    tessellateLightningRodDown(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
-    tessellateLightningRodEast(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
     tessellateLightningRodGui(::Tessellator& tessellator, ::Block const& block, ::BlockGraphics const& blockGraphics);
 
     MCAPI bool tessellateLightningRodInWorld(::Tessellator& tessellator, ::Block const& b, ::BlockPos const& p);
-
-    MCAPI void
-    tessellateLightningRodNorth(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
-    tessellateLightningRodSouth(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
-    tessellateLightningRodUp(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
-
-    MCAPI void
-    tessellateLightningRodWest(::Tessellator& tessellator, ::BlockPos const& p, ::TextureUVCoordinateSet const& tex);
 
     MCAPI bool tessellateLilypadInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
@@ -899,14 +662,6 @@ public:
 
     MCAPI bool tessellatePitcherCropInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
-    MCAPI void tessellatePitcherCropPodInWorld(
-        ::Tessellator&         tessellator,
-        ::Block const&         block,
-        ::BlockPos const&      p,
-        int                    growthStage,
-        ::BlockGraphics const& blockGraphics
-    );
-
     MCAPI bool tessellatePitcherPlantInWorld(
         ::Tessellator&      tessellator,
         ::Block const&      block,
@@ -920,18 +675,22 @@ public:
 
     MCAPI bool tessellateRepeaterInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
-    MCAPI bool
-    tessellateRowInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p, bool forceDoubleSide);
+    MCAPI bool tessellateRowInWorld(
+        ::Tessellator&    tessellator,
+        ::Block const&    block,
+        ::BlockPos const& p,
+        bool const        forceDoubleSide
+    );
 
     MCAPI void tessellateRowTexture(
         ::Tessellator&                  tessellator,
-        ::Block const&                  tex,
-        ::BlockPos const&               x,
-        ::TextureUVCoordinateSet const& y,
+        ::Block const&                  block,
+        ::BlockPos const&               p,
+        ::TextureUVCoordinateSet const& tex,
+        float                           x,
+        float                           y,
         float                           z,
-        float                           forceDoubleSide,
-        float,
-        bool
+        bool const                      forceDoubleSide
     );
 
     MCAPI void tessellateRowTexture(
@@ -956,7 +715,7 @@ public:
         ::BlockPos const&               blockPos,
         ::Flip                          faceFlip,
         ::Vec3 const&                   offset,
-        bool                            isSupportPole
+        bool const                      isSupportPole
     );
 
     MCAPI void tessellateScaffoldingVerticalPoleInWorld(
@@ -964,7 +723,7 @@ public:
         ::Block const&                  block,
         ::TextureUVCoordinateSet const& tex,
         ::BlockPos const&               pos,
-        ::Flip                          flip
+        ::Flip const                    flip
     );
 
     MCAPI bool tessellateSculkSensorBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
@@ -979,8 +738,6 @@ public:
 
     MCAPI bool tessellateShelfBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
-    MCAPI void tessellateShulkerBoxFacade(::Tessellator& tessellator, ::Vec3 const& pos);
-
     MCAPI void tessellateSimpleBlockInWorld(
         ::Tessellator&                 tessellator,
         ::Block const&                 block,
@@ -993,15 +750,6 @@ public:
     MCAPI bool
     tessellateSmallDripleafBlockInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
-    MCAPI void
-    tessellateSmallDripleafLeaves(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p, int facing);
-
-    MCAPI void
-    tessellateSmallDripleafSides(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p, int facing);
-
-    MCAPI void
-    tessellateSmallDripleafStem(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p, int facing);
-
     MCAPI void tessellateSouth(
         ::Tessellator&                  tessellator,
         ::Block const&                  block,
@@ -1012,14 +760,6 @@ public:
     MCAPI bool tessellateSporeBlossomInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
     MCAPI bool tessellateStairsInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos);
-
-    MCAPI void tessellateStemDirTexture(
-        ::Tessellator&                  tessellator,
-        ::TextureUVCoordinateSet const& tex,
-        int                             dir,
-        float                           h,
-        ::Vec3 const&                   pos
-    );
 
     MCAPI bool tessellateStemInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
@@ -1082,14 +822,14 @@ public:
         ::TextureUVCoordinateSet const& intex
     );
 
-    MCAPI void updateCache(::Block const& block, ::BlockPos const& pos);
-
     MCAPI ~BlockTessellator();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TextureUVCoordinateSet const& _getMappedTexture(::Block const& block, uchar face);
+
     MCAPI static bool canRender(::BlockShape blockShape);
     // NOLINTEND
 

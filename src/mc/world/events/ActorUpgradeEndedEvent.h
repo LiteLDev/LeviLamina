@@ -20,25 +20,6 @@ public:
 public:
     // prevent constructor by default
     ActorUpgradeEndedEvent& operator=(ActorUpgradeEndedEvent const&);
+    ActorUpgradeEndedEvent(ActorUpgradeEndedEvent const&);
     ActorUpgradeEndedEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorUpgradeEndedEvent(::ActorUpgradeEndedEvent const&);
-
-    MCAPI ~ActorUpgradeEndedEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ActorUpgradeEndedEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

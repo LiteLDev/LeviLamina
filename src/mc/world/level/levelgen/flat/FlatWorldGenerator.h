@@ -21,7 +21,6 @@ class ChunkPos;
 class ChunkViewSource;
 class Dimension;
 class FixedBiomeSource;
-class FlatWorldOptions;
 class HashedString;
 class LevelChunk;
 class Random;
@@ -70,7 +69,7 @@ public:
     ) /*override*/;
 
     virtual void
-    prepareHeights(::BlockVolume& box, ::ChunkPos const& zxHeights, ::std::vector<short>*, bool) /*override*/;
+    prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool) /*override*/;
 
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks) /*override*/;
 
@@ -94,8 +93,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FlatWorldGenerator(::Dimension& dimension, uint, ::Json::Value const& generationOptionsJSON);
-
-    MCAPI void _generatePrototypeBlockValues(::FlatWorldOptions const& layersDesc, short minHeight);
     // NOLINTEND
 
 public:
@@ -113,7 +110,11 @@ public:
 
     MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
+#ifdef LL_PLAT_S
+    MCAPI ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
+#else // LL_PLAT_C
     MCFOLD ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
+#endif
 
     MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
@@ -125,7 +126,7 @@ public:
         ::std::optional<::HashedString> biomeTag
     );
 
-    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& zxHeights, ::std::vector<short>*, bool);
+    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool);
 
     MCFOLD void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 
@@ -133,7 +134,7 @@ public:
 
     MCAPI ::BlockPos $findSpawnPosition() const;
 
-    MCFOLD ::BiomeSource const& $getBiomeSource() const;
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
@@ -143,13 +144,5 @@ public:
     MCFOLD void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
-
-    MCNAPI static void** $vftableForChunkSource();
     // NOLINTEND
 };

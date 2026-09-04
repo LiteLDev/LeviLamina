@@ -25,67 +25,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InsideBlockEventMap(InsideBlockEventMap const&);
-    InsideBlockEventMap();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InsideBlockEventMap(::InsideBlockEventMap&&);
-
-    MCAPI InsideBlockEventMap(
-        ::Block const&                  block,
-        bool                            watchEnter,
-        bool                            watchExit,
-        bool                            ignoreStates,
-        ::ActorDefinitionTrigger const& enteredEvent,
-        ::ActorDefinitionTrigger const& exitedEvent
-    );
-
-    MCAPI ::gsl::not_null<::Block const*> getBlock() const;
-
-    MCFOLD ::ActorDefinitionTrigger const& getEnteredEvent() const;
-
-    MCFOLD ::ActorDefinitionTrigger const& getExitedEvent() const;
-
-    MCAPI bool isActorCurrentlyInside() const;
-
-    MCAPI bool isIgnoringStates() const;
-
-    MCFOLD bool isWatchingIfActorEnters() const;
-
-    MCFOLD bool isWatchingIfActorExits() const;
-
-    MCAPI ::InsideBlockEventMap& operator=(::InsideBlockEventMap const&);
-
-    MCAPI void setCurrentlyInside(bool isInside);
-
-    MCAPI void setWasInside(bool wasInside);
-
-    MCAPI bool wasActorInsideLastTick() const;
-
     MCAPI ~InsideBlockEventMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::InsideBlockEventMap&&);
-
-    MCAPI void* $ctor(
-        ::Block const&                  block,
-        bool                            watchEnter,
-        bool                            watchExit,
-        bool                            ignoreStates,
-        ::ActorDefinitionTrigger const& enteredEvent,
-        ::ActorDefinitionTrigger const& exitedEvent
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

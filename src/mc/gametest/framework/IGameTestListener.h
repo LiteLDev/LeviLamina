@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~IGameTestListener() = default;
 
-    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
 
-    virtual void onTestPassed(::gametest::BaseGameTestInstance& test);
+    virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-    virtual void onTestFailed(::gametest::BaseGameTestInstance& test);
+    virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance);
 
 #ifdef LL_PLAT_S
     virtual void onTestStarted(::gametest::BaseGameTestInstance& testInstance);
@@ -35,13 +35,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
 
-    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& test);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& test);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
 
+#ifdef LL_PLAT_S
     MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
+#else // LL_PLAT_C
+    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
+#endif
 
     MCNAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 

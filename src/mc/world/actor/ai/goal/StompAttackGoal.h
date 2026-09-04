@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/MeleeAttackGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class Mob;
-// clang-format on
-
 class StompAttackGoal : public ::MeleeAttackGoal {
 public:
     // member variables
@@ -18,10 +12,6 @@ public:
     ::ll::TypedStorage<4, 4, float> mStompRangeMultiplier;
     ::ll::TypedStorage<4, 4, float> mNoDamageRangeMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StompAttackGoal();
 
 public:
     // virtual functions
@@ -37,20 +27,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit StompAttackGoal(::Mob& mob);
-
-    MCAPI void _attemptAttack(::Actor& target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

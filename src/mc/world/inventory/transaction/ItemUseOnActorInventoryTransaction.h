@@ -14,7 +14,6 @@
 // clang-format off
 class BinaryStream;
 class BlockPalette;
-class InventoryTransaction;
 class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
@@ -41,6 +40,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemUseOnActorInventoryTransaction(ItemUseOnActorInventoryTransaction const&);
+    ItemUseOnActorInventoryTransaction();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ItemUseOnActorInventoryTransaction() /*override*/;
@@ -51,7 +55,7 @@ public:
 
     virtual void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) /*override*/;
 
-    virtual void onTransactionError(::Player& player, ::InventoryTransactionError) const /*override*/;
+    virtual void onTransactionError(::Player& player, ::InventoryTransactionError error) const /*override*/;
 
     virtual ::InventoryTransactionError handle(::Player& player, bool isSenderAuthority) const /*override*/;
     // NOLINTEND
@@ -59,19 +63,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUseOnActorInventoryTransaction();
-
-    MCAPI explicit ItemUseOnActorInventoryTransaction(::InventoryTransaction const& transaction);
+    MCAPI ::ItemUseOnActorInventoryTransaction& operator=(::ItemUseOnActorInventoryTransaction const&);
 
     MCAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::InventoryTransaction const& transaction);
     // NOLINTEND
 
 public:
@@ -89,7 +83,7 @@ public:
 
     MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError) const;
+    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
     MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
@@ -102,3 +96,8 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCAPI bool operator==(::ItemUseOnActorInventoryTransaction const& lhs, ::ItemUseOnActorInventoryTransaction const& rhs);
+// NOLINTEND

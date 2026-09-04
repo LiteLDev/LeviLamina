@@ -9,6 +9,8 @@
 // clang-format off
 struct DiagnosticsEvent;
 struct MessageEvent;
+struct PartyChangedEvent;
+struct PartyDestinationCookieResponseEvent;
 struct ServerNetworkGameplayNotificationEvent;
 // clang-format on
 
@@ -27,6 +29,10 @@ public:
     virtual ::EventResult onMessage(::MessageEvent const& messageEvent);
 
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
+
+    virtual ::EventResult onPartyChanged(::PartyChangedEvent const&);
+
+    virtual ::EventResult onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const&);
     // NOLINTEND
 
 public:
@@ -37,6 +43,10 @@ public:
     MCFOLD ::EventResult $onMessage(::MessageEvent const& messageEvent);
 
     MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
+
+    MCFOLD ::EventResult $onPartyChanged(::PartyChangedEvent const&);
+
+    MCFOLD ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const&);
 
 
     // NOLINTEND

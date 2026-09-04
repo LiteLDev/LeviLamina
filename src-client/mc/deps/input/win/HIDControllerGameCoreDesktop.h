@@ -76,8 +76,6 @@ public:
     MCAPI void _enableCoreTextEdit();
 
     MCAPI void _notifyCoreTextEdit(bool textChanged);
-
-    MCAPI void setCaretScreenPosition(int x, int y);
     // NOLINTEND
 
 public:

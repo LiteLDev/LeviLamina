@@ -14,7 +14,6 @@
 // clang-format off
 class Player;
 class PlayerAbilitiesManager;
-class PlayerListEntry;
 class PlayerListManager;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
@@ -54,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerPermissionsManager();
+    virtual ~PlayerPermissionsManager() = default;
 
     virtual bool hasPlayerPermissions(::ActorUniqueID playerId) const;
     // NOLINTEND
@@ -71,9 +70,6 @@ public:
     MCAPI void _loadLocalPermissionsList();
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::unordered_map<int, bool>
-    _playerAbilitiesListToMap(::std::vector<::std::pair<::AbilitiesIndex, bool>> playerAbilitiesList);
-
     MCAPI void _updatePermissionLevel();
 
     MCAPI void _updatePermissionsList();
@@ -91,38 +87,12 @@ public:
 
     MCAPI bool evaluateCanKickPlayer(::ActorUniqueID playerId, ::ActorUniqueID localPlayerId);
 
-    MCFOLD ::Bedrock::PubSub::Publisher<
-        void(::ActorUniqueID const&, ::std::optional<::PlayerPermissionLevel>),
-        ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-        0>&
-    getCachedPlayerPermissionLevelChangedPublisher();
-
-    MCFOLD ::ActorUniqueID getCurrentPlayerId() const;
-
-    MCAPI ::std::optional<::PlayerPermissionLevel> getCurrentPlayerPermissionLevel(::ActorUniqueID playerId) const;
-
     MCAPI ::std::optional<::std::vector<::std::pair<::AbilitiesIndex, bool>>>
     getCurrentPlayerPermissionsList(::ActorUniqueID playerId) const;
 
-    MCAPI ::PlayerListEntry* getPlayerFromAUID(::ActorUniqueID playerId) const;
-
-    MCFOLD ::Bedrock::PubSub::
-        Publisher<void(::ActorUniqueID const&, bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>&
-        getPlayerPermissionsChangedPublisher();
-
-    MCAPI bool isPlayerInList(::ActorUniqueID playerId) const;
-
-    MCAPI bool isPlayerValid(::ActorUniqueID playerId) const;
-#endif
-
     MCAPI bool loadPlayerPermissions(::ActorUniqueID playerId);
 
-#ifdef LL_PLAT_C
     MCAPI bool savePlayerPermissions(::ActorUniqueID playerId);
-
-    MCAPI bool setPlayerPermission(::ActorUniqueID playerId, ::AbilitiesIndex index, bool value);
-
-    MCAPI bool setPlayerPermissionLevel(::ActorUniqueID playerId, ::PlayerPermissionLevel permissionLevel);
 #endif
     // NOLINTEND
 
@@ -137,22 +107,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $hasPlayerPermissions(::ActorUniqueID playerId) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

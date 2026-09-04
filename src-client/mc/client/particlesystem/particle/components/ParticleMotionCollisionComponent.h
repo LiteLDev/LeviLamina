@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class RenderParams;
 struct ConstDeserializeDataParams;
 namespace Json { class Value; }
@@ -76,25 +75,11 @@ public:
     // NOLINTBEGIN
     MCAPI void _extractEvent(::Json::Value const& event);
 
-    MCAPI void _handleCollisions(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::std::chrono::nanoseconds const&                 dt
-    );
-
     MCAPI ::ParticleSystem::ParticleMotionCollisionComponent::SweepResult _sweep(
         ::ParticleSystem::ComponentAccessParticleEmitter&                      emitter,
         ::ParticleSystem::ParticleMotionCollisionComponent::SweepResult const& previousRay,
         ::Vec3 const&                                                          collisionRadius,
         uint                                                                   iteration
-    );
-
-    MCAPI void _sweepBB(
-        ::Vec3 const& currentPosition,
-        ::Vec3 const& lastPosition,
-        ::AABB const& aabb,
-        float&        hitAlpha,
-        uchar&        hitAxis
     );
     // NOLINTEND
 
@@ -115,12 +100,6 @@ public:
     );
 
     MCFOLD int $getSortOrderNumber() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

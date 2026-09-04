@@ -4,12 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptDebuggerMessages { struct MessageEnvelope; }
-namespace ScriptDebuggerMessages { struct NotificationEvent; }
-namespace ScriptDebuggerMessages { struct PrintEvent; }
-namespace ScriptDebuggerMessages { struct ProfilerCapture; }
-namespace ScriptDebuggerMessages { struct ProtocolEvent; }
-namespace ScriptDebuggerMessages { struct ProtocolResponse; }
+namespace ScriptDebuggerMessages { struct DebuggeeResponse; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -30,22 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool
-    parseMessageEnvelope(::std::string const& json, ::ScriptDebuggerMessages::MessageEnvelope& commandEvent);
-
-    MCNAPI ::std::string receive();
-
-    MCNAPI bool receiveProtocolResponse(::ScriptDebuggerMessages::ProtocolResponse& protocolResponse);
-
     MCNAPI void send(::std::string const& message);
 
-    MCNAPI void sendNotificationEvent(::ScriptDebuggerMessages::NotificationEvent&& notificationEvent);
-
-    MCNAPI void sendPrintEvent(::ScriptDebuggerMessages::PrintEvent&& printEvent);
-
-    MCNAPI void sendProfilerCapture(::ScriptDebuggerMessages::ProfilerCapture&& profilerCapture);
-
-    MCNAPI void sendProtocolEvent(::ScriptDebuggerMessages::ProtocolEvent&& protocolEvent);
+    MCNAPI void sendDebuggeeResponse(::ScriptDebuggerMessages::DebuggeeResponse&& debuggeeResponse);
     // NOLINTEND
 
 public:

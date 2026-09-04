@@ -37,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcDialoguePacketPayload(::NpcDialoguePacketPayload const&);
-
     MCAPI explicit NpcDialoguePacketPayload(::ActorUniqueID npcID);
 
     MCAPI NpcDialoguePacketPayload(
@@ -49,10 +47,6 @@ public:
         ::std::string const&                              npcName,
         ::std::string const&                              actionJSON
     );
-
-    MCAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload&&);
-
-    MCAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload const&);
 
     MCAPI ~NpcDialoguePacketPayload();
     // NOLINTEND
@@ -70,8 +64,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NpcDialoguePacketPayload const&);
-
     MCAPI void* $ctor(::ActorUniqueID npcID);
 
     MCAPI void* $ctor(

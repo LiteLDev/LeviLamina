@@ -16,14 +16,12 @@ class BlockPos;
 class BlockSource;
 class ChunkPos;
 class IMinecraftEventing;
-class IRandom;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
 class Level;
 class LevelChunkVolumeData;
 class Mob;
-class MobSpawnRules;
 class Random;
 class ResourcePackManager;
 class SpawnConditions;
@@ -62,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BedrockSpawner() /*override*/;
+    virtual ~BedrockSpawner() /*override*/ = default;
 
     virtual void initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries) /*override*/;
 
@@ -117,21 +115,6 @@ public:
     // NOLINTBEGIN
     MCAPI BedrockSpawner(::Level& level, ::IMinecraftEventing& eventing);
 
-    MCAPI void
-    _permuteId(::ActorDefinitionIdentifier& actualId, ::MobSpawnRules const& spawnRules, ::Random& random) const;
-
-    MCAPI void _postProcessSpawnMobs(
-        ::BlockSource&                                                      region,
-        int                                                                 xo,
-        int                                                                 zo,
-        ::IRandom&                                                          random,
-        bool                                                                doMobSpawning,
-        ::std::function<void(::BlockPos const&, ::SpawnConditions&)> const& spawnMobClusterCallback,
-        ::std::function<bool(::BlockSource const&, ::BlockPos)> const&      isInsideAncientCity
-    );
-
-    MCAPI void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup) const;
-
     MCAPI void _spawnMobCluster(::BlockSource& region, ::BlockPos const& pos, ::SpawnConditions& conditions);
 
     MCAPI void _spawnMobInCluster(
@@ -149,6 +132,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _isInsideAncientCity(::BlockSource const& region, ::BlockPos pos);
+
+    MCAPI static void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup);
     // NOLINTEND
 
 public:
@@ -161,12 +146,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Level& level, ::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -212,11 +191,5 @@ public:
     MCFOLD ::br::spawn::SpawnPlacements& $getSpawnPlacements();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

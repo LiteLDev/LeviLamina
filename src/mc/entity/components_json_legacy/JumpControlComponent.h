@@ -11,7 +11,6 @@
 class ActorDefinitionDescriptor;
 class JumpControl;
 class Mob;
-struct JumpControlDescription;
 // clang-format on
 
 class JumpControlComponent {
@@ -27,52 +26,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JumpControlComponent& operator=(JumpControlComponent const&);
+    JumpControlComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JumpControlComponent();
-
     MCAPI JumpControlComponent(::JumpControlComponent const& other);
 
-    MCAPI float _getDelayInternal() const;
-
-    MCAPI float _getHeightInternal() const;
-
-    MCAPI int getAnimationDuration() const;
-
-    MCAPI float getDistanceScale() const;
-
-    MCAPI int getJumpDelay() const;
-
-    MCAPI float getJumpPower() const;
-
-    MCFOLD bool getJumping() const;
-
-    MCFOLD bool getSwimming() const;
-
     MCAPI void initMultiTypeJumpComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
-
-    MCAPI void initializeFromDefinition(::Mob& owner, ::JumpControlDescription const* description);
-
-    MCAPI ::JumpControlComponent& operator=(::JumpControlComponent const& other);
-
-    MCAPI void resetSpeedModifier(::Mob& owner);
-
-    MCFOLD void setInternalType(::std::unique_ptr<::JumpControl> type);
-
-    MCAPI void setJumpType(::JumpType type);
-
-    MCFOLD void setJumping(bool jumping);
-
-    MCFOLD void setSwimming(bool swimming);
-
-    MCAPI void update(::Mob& owner);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::JumpControlComponent const& other);
     // NOLINTEND
 };

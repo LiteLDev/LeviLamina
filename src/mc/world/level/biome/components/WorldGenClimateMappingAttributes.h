@@ -29,10 +29,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::WorldGenClimateMappingAttributes::WeightedTemperatureCategory>>
         mClimateMappings;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

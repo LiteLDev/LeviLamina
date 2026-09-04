@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_80/particle/VectorEvents.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct DistanceEvent {
@@ -18,12 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                                  mDistanceInterval;
     ::ll::TypedStorage<8, 24, ::SharedTypes::v1_20_80::VectorEvents> mEventNames;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

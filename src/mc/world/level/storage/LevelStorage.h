@@ -18,7 +18,6 @@ class LevelData;
 class LevelStorageObserver;
 class LevelStorageWriteBatch;
 class Player;
-struct PlayerStorageIds;
 struct SnapshotFilenameAndLength;
 namespace Core { struct LevelStorageResult; }
 // clang-format on
@@ -37,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelStorage();
+    virtual ~LevelStorage() = default;
 
     virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer) = 0;
 
@@ -46,7 +45,7 @@ public:
     virtual ::std::unique_ptr<::CompoundTag>
     getCompoundTag(::std::string const& key, ::DBHelpers::Category category) = 0;
 
-    virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const = 0;
+    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category category) const = 0;
 
     virtual void forEachKeyWithPrefix(
         ::std::string_view                                                   prefix,
@@ -71,7 +70,7 @@ public:
 
     virtual void getStatistics(::std::string& outStats, ::LevelStorage::StatsType statsType) const = 0;
 
-    virtual bool clonePlayerData(::std::string_view fromKey, ::std::string_view toKey);
+    virtual bool clonePlayerData(::std::string_view fromKey, ::std::string_view toKey, bool isEditorPlayer);
 
     virtual ::Core::LevelStorageResult getLevelStorageState() const = 0;
 
@@ -118,15 +117,9 @@ public:
     MCAPI ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
 #endif
 
-    MCAPI ::std::string getServerId(::PlayerStorageIds const& playerId);
-
     MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 
     MCAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
-
-    MCAPI ::std::unique_ptr<::CompoundTag> loadLocalPlayerData();
-
-    MCAPI ::std::unique_ptr<::CompoundTag> loadPlayerDataFromTag(::std::string_view saveTag);
 
     MCAPI ::std::unique_ptr<::CompoundTag> loadServerPlayerData(::Player const& client, bool isXboxLive);
 
@@ -141,19 +134,15 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
 
-    MCAPI static ::std::string const& LOCAL_PLAYER_TAG();
-    // NOLINTEND
+    MCAPI static ::std::string const& LOCAL_PLAYER_EDITOR_TAG();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static ::std::string const& LOCAL_PLAYER_TAG();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $clonePlayerData(::std::string_view fromKey, ::std::string_view toKey);
+    MCAPI bool $clonePlayerData(::std::string_view fromKey, ::std::string_view toKey, bool isEditorPlayer);
 
     MCFOLD void $corruptLevel();
 

@@ -12,10 +12,8 @@
 // auto generated forward declare list
 // clang-format off
 class LinkedAssetValidator;
-class MinEngineVersion;
 class ResourcePackManager;
 struct FogDefinition;
-namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -35,21 +33,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FogDefinitionRegistry() /*override*/;
+    virtual ~FogDefinitionRegistry() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI FogDefinitionRegistry();
-
-    MCAPI void bindFogTypes(::cereal::ReflectionCtx& ctx);
-
-    MCAPI void clearBackCompatFogDefinitionMap();
-
-    MCAPI void clearDefaultFogDefinition();
-
-    MCAPI void clearMergedFogDefinitionMap();
 
     MCAPI void load(
         ::cereal::ReflectionCtx&                           ctx,
@@ -60,16 +50,6 @@ public:
     MCAPI ::WeakRef<::FogDefinition const>
     registerBackCompatFogDefinition(::OwnerPtr<::FogDefinition const> definition);
 
-    MCAPI ::WeakRef<::FogDefinition const> registerFogDefinition(::OwnerPtr<::FogDefinition const> definition);
-
-    MCAPI void registerFogFromJson(
-        ::cereal::ReflectionCtx&                           ctx,
-        ::std::string const&                               rawJson,
-        ::MinEngineVersion const&                          minEngineVersion,
-        bool                                               isBaseGamePack,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
-
     MCAPI ::WeakRef<::FogDefinition const> registerMergedFogDefinition(
         ::std::vector<::WeakRef<::FogDefinition const>> fogReferences,
         ::std::string const&                            biome
@@ -77,29 +57,13 @@ public:
 
     MCAPI void setDefaultFogDefinition(::HashedString const& name, bool useBackCompatMap);
 
-    MCAPI void setDefaultMergedFogDefinition(::WeakRef<::FogDefinition const> const& fogRef);
-
-    MCFOLD ::WeakRef<::FogDefinition const> tryGetDefaultFogDefinition() const;
-
     MCAPI ::WeakRef<::FogDefinition const> tryGetFogDefinition(::HashedString const& name) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::string> parseFogDefinitionIdentifier(::Json::Value const& root);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

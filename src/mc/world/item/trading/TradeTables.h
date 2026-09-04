@@ -31,18 +31,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                       mPackName;
         ::ll::TypedStorage<8, 32, ::PuvLoadData::LoadResultWithTiming> mLoadTime;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~TradeTableLoadData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -55,11 +43,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::TradeTables::TradeTableLoadData _parseAndStoreTradeTable(
-        ::Level&                                           level,
-        ::ResourcePackManager*                             resourceLoader,
-        ::Core::Path const&                                tradeTablePath,
-        bool                                               usingUpcomingCreatorFeaturesExperiment,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+        ::Level&                                                 level,
+        ::ResourcePackManager*                                   resourceLoader,
+        ::Core::Path const&                                      tradeTablePath,
+        bool                                                     usingUpcomingCreatorFeaturesExperiment,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const validator
     );
 
     MCAPI ::TradeTable* fetchTable(::std::string const& path);

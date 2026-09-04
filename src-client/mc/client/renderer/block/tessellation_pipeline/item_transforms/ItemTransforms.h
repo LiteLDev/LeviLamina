@@ -16,6 +16,8 @@ namespace Json { class Value; }
 namespace ClientBlockPipeline::ItemTransforms {
 // functions
 // NOLINTBEGIN
+MCAPI ::Matrix _constructFixSpaceTransform(::ClientBlockPipeline::ItemTransforms::Type const& type);
+
 MCAPI ::Matrix constructTransform(
     ::ClientBlockPipeline::ItemTransforms::Type const& type,
     ::Vec3 const&                                      translation,
@@ -37,6 +39,11 @@ MCAPI ::std::string getTypeName(::ClientBlockPipeline::ItemTransforms::Type cons
 
 MCAPI ::Geometry::ItemDisplayTransform
 parseItemDisplayTransform(::Json::Value const& itemTransform, ::ClientBlockPipeline::ItemTransforms::Type const& type);
+// NOLINTEND
+
+// static variables
+// NOLINTBEGIN
+MCAPI ::std::vector<::std::string> const& mTypeNames();
 // NOLINTEND
 
 } // namespace ClientBlockPipeline::ItemTransforms

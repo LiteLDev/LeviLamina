@@ -26,25 +26,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::vector<::Motif const*> _getBaseMotifs() const;
-
-        MCAPI ::std::vector<::Motif const*> _getR21Motifs() const;
-
-        MCAPI void clear();
-
-        MCAPI ::Motif const& getMotifByName(::std::string const& name) const;
-
 #ifdef LL_PLAT_C
-        MCFOLD ::std::vector<::Motif const*> const& getSplitMeshMotifsAsList() const;
+        MCAPI ::Motif const& getMotifByName(::std::string const& name) const;
 #endif
 
         MCAPI void init(::BaseGameVersion const& baseGameVersion);
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Motif::Registry& get();
         // NOLINTEND
     };
 
@@ -68,19 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI Motif(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
 
-#ifdef LL_PLAT_C
-    MCFOLD int getHeight() const;
-#endif
-
     MCFOLD ::std::string const getName() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::glm::vec4 const& getUVs() const;
-
-    MCFOLD int getWidth() const;
-
-    MCFOLD bool isSplitMeshPainting() const;
-#endif
     // NOLINTEND
 
 public:

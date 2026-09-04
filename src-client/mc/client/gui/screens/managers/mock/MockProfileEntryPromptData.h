@@ -25,10 +25,4 @@ public:
 
     virtual void callOnClose() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

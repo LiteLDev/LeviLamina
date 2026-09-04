@@ -14,11 +14,9 @@ class BaseGameVersion;
 class Block;
 class BlockActor;
 class BlockPos;
-class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Level;
 class Material;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
@@ -31,13 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          entity,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     virtual bool causesFreezeEffect() const /*override*/;
@@ -58,16 +56,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool canWalkOnTop(::GetCollisionShapeInterface const& actor);
-
-    MCAPI static void clearFire(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
-
-    MCAPI static void spawnPowderSnowParticles(::Level& level, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
@@ -76,13 +64,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          entity,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
     MCFOLD bool $causesFreezeEffect() const;

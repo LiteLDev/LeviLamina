@@ -36,8 +36,6 @@ public:
 
     MCAPI ::StructureTemplateDataResponsePacketPayload&
     operator=(::StructureTemplateDataResponsePacketPayload const& other);
-
-    MCAPI ~StructureTemplateDataResponsePacketPayload();
     // NOLINTEND
 
 public:
@@ -50,11 +48,5 @@ public:
         ::std::unique_ptr<::CompoundTag> structureTag,
         ::StructureTemplateResponseType  type
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

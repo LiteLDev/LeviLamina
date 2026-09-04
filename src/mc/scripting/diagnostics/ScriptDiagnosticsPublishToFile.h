@@ -40,27 +40,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~StreamFlusher() /*override*/;
+        virtual ~StreamFlusher() /*override*/ = default;
 
         virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit StreamFlusher(::Core::Path const& streamPath);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Core::Path const& streamPath);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -69,12 +51,6 @@ public:
         MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -99,7 +75,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDiagnosticsPublishToFile() /*override*/;
+    virtual ~ScriptDiagnosticsPublishToFile() /*override*/ = default;
 
     virtual bool isStatPublisherEnabled() const /*override*/;
 
@@ -117,8 +93,6 @@ public:
     );
 
     MCNAPI bool _createNewCapture(::Core::Path capturePath);
-
-    MCNAPI bool _cyclePreviousCaptures();
 
     MCNAPI ::Core::Path _getCapturePath(int captureIndex) const;
 
@@ -138,12 +112,6 @@ public:
         ::std::optional<uint>    maxCaptureFiles,
         ::std::optional<uint>    maxCaptureFileSize
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

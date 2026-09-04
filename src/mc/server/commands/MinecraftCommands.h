@@ -21,7 +21,6 @@ class CommandOutput;
 class CommandOutputSender;
 class CommandRegistry;
 class DeferredCommandBase;
-class DeferredScriptCommand;
 class Experiments;
 class ICommandsContextProvider;
 class ItemRegistryRef;
@@ -30,7 +29,6 @@ class Packet;
 class Recipes;
 struct MCRESULT;
 struct MinecraftCommandsArguments;
-namespace br::worldgen { class StructureRegistry; }
 // clang-format on
 
 class MinecraftCommands {
@@ -56,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftCommands();
+    virtual ~MinecraftCommands() = default;
     // NOLINTEND
 
 public:
@@ -81,17 +79,7 @@ public:
     MCAPI void
     enqueueDeferredCompiledCommand(::gsl::not_null<::Command*> command, ::std::unique_ptr<::CommandOrigin> origin);
 
-    MCAPI bool enqueueDeferredScriptCommand(::std::unique_ptr<::DeferredScriptCommand> scriptCommand);
-
     MCAPI ::MCRESULT executeCommand(::CommandContext& context, bool suppressOutput) const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::CommandOutputSender& getOutputSender() const;
-#endif
-
-    MCFOLD ::CommandRegistry const& getRegistry() const;
-
-    MCFOLD ::CommandRegistry& getRegistry();
 
     MCAPI void handleOutput(::CommandOrigin const& origin, ::CommandOutput const& output) const;
 
@@ -110,12 +98,10 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCFOLD void registerChatPermissionsCallback(::std::function<bool()> callback);
-#endif
+    MCAPI void registerChatPermissionsCallback(::std::function<bool()> callback);
 
     MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
 
-#ifdef LL_PLAT_C
     MCAPI ::MCRESULT requestCommandExecution(
         ::std::unique_ptr<::CommandOrigin> origin,
         ::std::string const&               commandLine,
@@ -124,14 +110,8 @@ public:
     );
 #endif
 
-    MCAPI void runCommand(::Command& command, ::CommandOrigin& origin);
-
     MCAPI void
     runCommand(::HashedString const& commandStr, ::CommandOrigin& origin, ::CurrentCmdVersion commandVersion);
-
-#ifdef LL_PLAT_C
-    MCAPI void setOutputSender(::std::unique_ptr<::CommandOutputSender> outputSender);
-#endif
 
     MCAPI void setRegistryNetworkUpdateCallback(::std::function<void(::Packet const&)> callback) const;
 
@@ -143,29 +123,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::CommandOutputType getOutputType(::CommandOrigin const& origin);
 
-    MCAPI static void initBlockEnum(::CommandRegistry& registry, ::BaseGameVersion const& worldBaseGameVersion);
-
-    MCAPI static void
-    initEntityEnum(::CommandRegistry& registry, ::ActorFactory const& actorFactory, ::Experiments const& experiments);
-
-    MCAPI static void initEntityPropertyEnum(::CommandRegistry& registry, ::Level const& level);
-
-    MCAPI static void initItemEnum(
-        ::ItemRegistryRef        itemRegistry,
-        ::CommandRegistry&       registry,
-        ::BaseGameVersion const& worldBaseGameVersion
-    );
-
-    MCAPI static void initItemTagEnum(::ItemRegistryRef itemRegistry, ::CommandRegistry& registry);
-
-    MCAPI static void initStructureFeatureEnum(
-        ::CommandRegistry&                       registry,
-        ::Experiments const&                     experiments,
-        ::br::worldgen::StructureRegistry const& structureRegistry
-    );
-
-    MCAPI static void initUnlockableRecipesEnum(::CommandRegistry& registry, ::Recipes const& recipes);
-
     MCAPI static void registerSharedClientServerEnums(::CommandRegistry& registry);
     // NOLINTEND
 
@@ -173,12 +130,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::MinecraftCommandsArguments&& args);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

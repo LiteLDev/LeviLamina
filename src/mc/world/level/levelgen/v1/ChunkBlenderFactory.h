@@ -9,10 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlendingData;
 class ChunkBlender;
 class ChunkSource;
-namespace ChunkBlenderUtil { struct AttenuationData; }
 // clang-format on
 
 class ChunkBlenderFactory {
@@ -63,40 +61,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkBlenderFactory();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkBlenderFactory(bool isClientSide, short dimensionMinHeight);
-
-    MCAPI ::std::shared_ptr<::ChunkBlender> _createChunkBlendingAttenuator(::ChunkPos const& lcPosition) const;
-
-    MCAPI ::std::vector<::std::array<::ChunkBlenderUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(
-        ::std::vector<::std::array<::ChunkBlenderFactory::IntermediateAttenuationData, 4>> const&
-            chunkIntermediateAttenuationData
-    ) const;
-
-    MCAPI void _updateIntermediateAttenuationData(
-        ::std::vector<::std::array<::ChunkBlenderFactory::IntermediateAttenuationData, 4>>&
-                              chunkIntermediateAttenuationData,
-        ::ChunkPos const&     oldChunkPosition,
-        ::ChunkPos const&     newChunkPosition,
-        ::BlendingData const& blendingData,
-        bool                  adjacentChunk
-    ) const;
-
     MCAPI void freeChunkBlenderCache();
 
     MCAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
-
-    MCFOLD bool isClientSide() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool isClientSide, short dimensionMinHeight);
     // NOLINTEND
 };

@@ -10,13 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPerformanceHandler() = default;
 
-    virtual void WriteLog(char const*, uint64) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual void WriteLog(char const* message, uint64 length) = 0;
     // NOLINTEND
 };
 

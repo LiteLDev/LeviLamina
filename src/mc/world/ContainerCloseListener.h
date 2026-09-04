@@ -15,10 +15,4 @@ public:
 
     virtual ~ContainerCloseListener() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -49,9 +49,9 @@ public:
 
     virtual void offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea& localArea) const /*override*/;
 
-    virtual ::BlockPos getRelativeMin(::BlockPos const&) const /*override*/;
+    virtual ::BlockPos getRelativeMin(::BlockPos const& worldMin) const /*override*/;
 
-    virtual ::BlockPos getRelativeMax(::BlockPos const&) const /*override*/;
+    virtual ::BlockPos getRelativeMax(::BlockPos const& worldMin) const /*override*/;
 
     virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const&) const /*override*/;
     // NOLINTEND
@@ -81,9 +81,9 @@ public:
 
     MCAPI void $offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea& localArea) const;
 
-    MCAPI ::BlockPos $getRelativeMin(::BlockPos const&) const;
+    MCAPI ::BlockPos $getRelativeMin(::BlockPos const& worldMin) const;
 
-    MCAPI ::BlockPos $getRelativeMax(::BlockPos const&) const;
+    MCAPI ::BlockPos $getRelativeMax(::BlockPos const& worldMin) const;
 
     MCAPI bool $isInBounds(::BlockPos const& relativePos, ::BlockPos const&) const;
     // NOLINTEND

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IPendingOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,21 +42,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockChangedPendingOperation(::std::vector<::Editor::Transactions::BlockChangeIntentData>&& blocks);
-
-    MCNAPI void _processBlockChangeIntent(
+    MCNAPI static void _processBlockChangeIntent(
         ::BlockSource const&                                              region,
         ::Editor::Transactions::BlockChangeIntentData&                    blockIntentData,
         ::std::vector<::Editor::Transactions::BlockChangedOperationData>& changedBlocks
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::Editor::Transactions::BlockChangeIntentData>&& blocks);
+    );
     // NOLINTEND
 
 public:
@@ -68,12 +60,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> $_discard(::Editor::ServiceProviderCollection&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

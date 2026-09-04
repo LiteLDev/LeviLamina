@@ -5,14 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/minecraft_renderer/resources/MERSTextureMode.h"
+#include "mc/deps/minecraft_renderer/resources/MERSUniformData.h"
 #include "mc/deps/minecraft_renderer/resources/NormalTextureMode.h"
 
 // auto generated forward declare list
 // clang-format off
 struct BedrockTextureData;
-struct MERSUniformData;
 namespace mce { class TexturePtr; }
-namespace mce { struct ClientTexture; }
 // clang-format on
 
 struct MolangClientTextureSet {
@@ -23,7 +22,17 @@ public:
     // clang-format on
 
     // MolangClientTextureSet inner types define
-    struct ExtraPBRData {};
+    struct ExtraPBRData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BedrockTextureData const>> mMERSTextureDataWeakPtr;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BedrockTextureData const>> mNormalTextureDataWeakPtr;
+        ::ll::TypedStorage<4, 20, ::std::optional<::MERSUniformData>>          mMERSUniforms;
+        ::ll::TypedStorage<1, 1, ::MERSTextureMode>                            mMERSTextureMode;
+        ::ll::TypedStorage<1, 1, ::NormalTextureMode>                          mNormalTextureMode;
+        // NOLINTEND
+    };
 
 public:
 // member variables
@@ -37,12 +46,25 @@ public:
 #endif
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MolangClientTextureSet& operator=(MolangClientTextureSet const& rhs) {
+        if (this != &rhs) {
+            mColorTextureDataWeakPtr = rhs.mColorTextureDataWeakPtr;
+            mPBRData                 = rhs.mPBRData ? std::make_unique<ExtraPBRData>(*rhs.mPBRData) : nullptr;
+            mName                    = rhs.mName;
+        }
+        return *this;
+    }
+    MolangClientTextureSet();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI MolangClientTextureSet();
-
     MCAPI explicit MolangClientTextureSet(::HashedString const& name);
 
     MCAPI MolangClientTextureSet(::MolangClientTextureSet const& rhs);
@@ -81,22 +103,6 @@ public:
         ::std::optional<::MERSUniformData> const& uniformData
     );
 
-    MCAPI ::mce::ClientTexture const& getClientMERSTexture() const;
-
-    MCAPI ::MERSTextureMode getClientMERSTextureMode() const;
-
-    MCAPI ::mce::ClientTexture const& getClientNormalTexture() const;
-
-    MCAPI ::NormalTextureMode getClientNormalTextureMode() const;
-
-    MCAPI ::mce::ClientTexture const& getClientTexture() const;
-
-    MCAPI ::std::optional<::MERSUniformData> getMERSUniforms() const;
-
-    MCAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet&& rhs);
-
-    MCAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet const& rhs);
-
     MCAPI ~MolangClientTextureSet();
 #endif
     // NOLINTEND
@@ -105,8 +111,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::HashedString const& name);
 
     MCAPI void* $ctor(::MolangClientTextureSet const& rhs);

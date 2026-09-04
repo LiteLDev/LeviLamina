@@ -22,14 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI float getHistoricalAverageFrameTime(uint64 numHistoricalFrames) const;
-
-    MCNAPI float getHistoricalMaximumFrameTime(uint64 numHistoricalFrames) const;
-
-    MCNAPI float getHistoricalMinimumFrameTime(uint64 numHistoricalFrames) const;
-
-    MCNAPI float getLastFrameTime(uint64 historicalFrameOffset) const;
-
     MCNAPI void setCurrentFrameTime(float frameTime);
     // NOLINTEND
 };

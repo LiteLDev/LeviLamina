@@ -47,10 +47,4 @@ public:
 
     virtual void flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

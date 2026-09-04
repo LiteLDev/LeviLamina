@@ -10,8 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
-struct DimensionType;
 struct TickingAreaDescription;
 // clang-format on
 
@@ -32,72 +30,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PendingArea();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PendingArea(
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::Bounds const&       bounds,
-        bool                  circle,
-        ::TickingAreaLoadMode loadMode
-    );
-
     MCAPI ::TickingAreaDescription getDescription() const;
-
-    MCFOLD bool isScoped() const;
-
-    MCAPI bool isStandalone() const;
-
-    MCAPI ::CompoundTag serialize(::DimensionType dimensionId) const;
-
-    MCAPI void setScope(uint64 scope);
-
-    MCAPI ~PendingArea();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::PendingArea createEntityTickingArea(
-        ::mce::UUID     uniqueId,
-        ::ActorUniqueID entityId,
-        ::Bounds const& bounds,
-        bool            alwaysActive,
-        float           maxDistToPlayers
-    );
-
-    MCAPI static ::PendingArea createTickingArea(
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::Bounds const&       bounds,
-        bool                  circle,
-        ::TickingAreaLoadMode loadMode
-    );
-
-    MCAPI static ::PendingArea load(::std::string const& key, ::CompoundTag const& tag);
-
-    MCAPI static bool validTag(::CompoundTag const& tag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::Bounds const&       bounds,
-        bool                  circle,
-        ::TickingAreaLoadMode loadMode
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

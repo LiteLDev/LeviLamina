@@ -28,10 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RedstoneTorchBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -40,7 +36,9 @@ public:
 
     virtual int getTickDelay();
 
-    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
@@ -57,19 +55,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedstoneTorchBlock(::std::string const& nameId, int id, bool on);
-
-    MCAPI void _installCircuit(::BlockSource& source, ::BlockPos const& pos) const;
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void onPlaceRedstoneTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
     // NOLINTEND
 
 public:
@@ -81,7 +69,8 @@ public:
 
     MCFOLD int $getTickDelay();
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
@@ -91,7 +80,7 @@ public:
 
     MCFOLD bool $canSpawnOn(::Actor*) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

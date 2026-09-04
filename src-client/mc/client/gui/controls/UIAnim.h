@@ -43,13 +43,12 @@ public:
 
 public:
     // prevent constructor by default
-    UIAnim& operator=(UIAnim const&);
     UIAnim();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIAnim();
+    virtual ~UIAnim() = default;
 
     virtual ::std::shared_ptr<::UIAnim> clone();
 
@@ -69,8 +68,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIAnim(::UIAnim const&);
-
     MCAPI UIAnim(::ui::AnimationType animType, ::UIResolvedDef const& def);
 
     MCAPI bool _hasEndEventId(uint id, ::std::set<void const*>& otherAnimations) const;
@@ -83,15 +80,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIAnim const&);
-
     MCAPI void* $ctor(::ui::AnimationType animType, ::UIResolvedDef const& def);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -110,11 +99,5 @@ public:
     MCAPI void $_reset(::UIControl& ownerControl);
 
     MCAPI void $_play();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

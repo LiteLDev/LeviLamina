@@ -24,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerSuspendLevelStorageSaveToken(::PlayerSuspendLevelStorageSaveToken&&);
-
     MCNAPI explicit PlayerSuspendLevelStorageSaveToken(::EntityContext& entity);
 
     MCNAPI ~PlayerSuspendLevelStorageSaveToken();
@@ -34,8 +32,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PlayerSuspendLevelStorageSaveToken&&);
-
     MCNAPI void* $ctor(::EntityContext& entity);
     // NOLINTEND
 

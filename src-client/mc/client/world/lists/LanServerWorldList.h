@@ -12,7 +12,6 @@ class ServerLocator;
 class TrialManager;
 struct ExternalServer;
 struct PingedCompatibleServer;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Network { struct ServerID; }
 namespace World { class ExternalServerWorldList; }
@@ -48,50 +47,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LanServerWorldList(
-        ::ServerLocator&                           serverLocator,
-        ::World::ExternalServerWorldList&          externalWorldList,
-        ::World::FriendServerWorldList&            friendWorldList,
-        ::World::ThirdPartyWorldList&              thirdPartyWorldList,
-        ::std::shared_ptr<::OptionRegistry> const& options,
-        bool                                       isEditorMode
-    );
-
-    MCAPI bool
-    _compareFutureIP(::ExternalServer const& externalServer, ::PingedCompatibleServer const& lanServer) const;
-
-    MCAPI bool _isThirdPartyServer(::PingedCompatibleServer const& lanServer) const;
-
     MCAPI bool _refreshWorlds();
 
     MCAPI ::PingedCompatibleServer const* getWorld(::Network::ServerID const& lookupId) const;
 
-    MCFOLD ::std::vector<::PingedCompatibleServer> const& getWorlds() const;
-
-    MCFOLD ::Bedrock::PubSub::Subscription registerChangeListener(::std::function<void()> callback);
-
     MCAPI void update(double timestampMs, ::TrialManager const& trialManager);
-
-    MCAPI ~LanServerWorldList();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ServerLocator&                           serverLocator,
-        ::World::ExternalServerWorldList&          externalWorldList,
-        ::World::FriendServerWorldList&            friendWorldList,
-        ::World::ThirdPartyWorldList&              thirdPartyWorldList,
-        ::std::shared_ptr<::OptionRegistry> const& options,
-        bool                                       isEditorMode
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static bool
+    _compareFutureIP(::ExternalServer const& externalServer, ::PingedCompatibleServer const& lanServer);
     // NOLINTEND
 };
 

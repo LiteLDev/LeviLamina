@@ -11,13 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorOwnerComponent;
-class BlockPos;
 class FreezingComponent;
 class LocalConstBlockSource;
 class StrictEntityContext;
-class Vec2;
 class Vec3;
 struct AABBShapeComponent;
 struct ActorGameTypeComponent;
@@ -49,14 +46,7 @@ struct WaterlilyBlockFlag;
 namespace EntityInsideSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createCleanupSystem();
-
 MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
-
-MCAPI bool
-isSlidingDown(::BlockPos const& blockPos, ::Vec3 const& entityPos, ::Vec3 const& entityPosDelta, ::Vec2 const& aabbDim);
-
-MCAPI void onBoatAboveBubbleColumn(::Actor& actor);
 
 MCAPI void tickBoatInsideBubbleColumnBlock(
     ::InsideBubbleColumnBlockComponent const& insideBlocks,
@@ -105,11 +95,6 @@ MCAPI void tickInsidePowderSnowBlock(
         ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
         ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
         ::InsideWebBlockComponent> modifier
-);
-
-MCAPI void tickInsideWaterLilyBlock(
-    ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent,
-    ::StateVectorComponent&                                    stateVectorComponent
 );
 
 MCAPI void tickMovementSlowdown(

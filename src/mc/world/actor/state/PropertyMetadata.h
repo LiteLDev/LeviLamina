@@ -26,16 +26,4 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                            mTypeArrayIndex;
     ::ll::TypedStorage<1, 1, bool>                              mClientSync;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PropertyMetadata();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

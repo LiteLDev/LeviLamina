@@ -58,7 +58,8 @@ public:
         // NOLINTBEGIN
         virtual ::StructurePieceType getType() const /*override*/;
 
-        virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
+        virtual void
+        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
         virtual void _handleDataMarker(
             ::std::string const& markerId,
@@ -79,8 +80,6 @@ public:
             ::Rotation                                        rotation,
             bool                                              overwrite
         );
-
-        MCAPI void _loadAndSetup(::BlockPos const& position);
         // NOLINTEND
 
     public:
@@ -100,7 +99,7 @@ public:
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
         MCAPI void $_handleDataMarker(
             ::std::string const& markerId,
@@ -111,12 +110,6 @@ public:
         );
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -136,12 +129,6 @@ public:
 
         virtual ~SectionGenerator() = default;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
     class FatTowerGenerator : public ::EndCityPieces::SectionGenerator {
@@ -153,9 +140,9 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
         ) /*override*/;
         // NOLINTEND
 
@@ -167,18 +154,12 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
         );
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -212,12 +193,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     class TowerBridgeGenerator : public ::EndCityPieces::SectionGenerator {
@@ -235,9 +210,9 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
         ) /*override*/;
         // NOLINTEND
 
@@ -249,18 +224,12 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
         );
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -273,9 +242,9 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
         ) /*override*/;
         // NOLINTEND
 
@@ -287,18 +256,12 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          pieces,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
-            ::Random&
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
         );
 
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -327,14 +290,6 @@ public:
         ::BlockPos const&                                                          offset,
         ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
         ::Random&                                                                  random
-    );
-
-    MCAPI static void startHouseTower(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::BlockPos const&                                   origin,
-        ::Rotation                                          rotation,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
     );
     // NOLINTEND
 };

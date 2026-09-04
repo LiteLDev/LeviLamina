@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EffectComponentBase();
+    virtual ~EffectComponentBase() = default;
 
     virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) = 0;
 
@@ -48,12 +48,6 @@ public:
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const;
 
     virtual int getSortOrderNumber() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

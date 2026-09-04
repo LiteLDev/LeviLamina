@@ -16,10 +16,7 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class ItemRegistryRef;
-class ItemStack;
-class Level;
 class Player;
-struct DimensionType;
 namespace Util { struct ReplacementResults; }
 // clang-format on
 
@@ -76,40 +73,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LootCommand();
-
-    MCAPI ::std::optional<::std::vector<::ItemStack>> _getItemsFromSource(
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::ItemStack const&     tool,
-        ::Level&               level,
-        ::DimensionType        dimensionId
-    ) const;
-
     MCAPI void
-    _outputError(::CommandOutput& output, ::Util::ReplacementResults errorDetails, ::Actor const* entity) const;
-
-    MCAPI void _outputSuccess(::CommandOutput& output, int numItemsDropped) const;
-
-    MCAPI void _placeItemsInTarget(
-        ::CommandOrigin const&      origin,
-        ::CommandOutput&            output,
-        ::std::vector<::ItemStack>& items
-    ) const;
-
-    MCAPI ::std::optional<::ItemStack> getToolItemStack(::CommandOrigin const& origin) const;
+    _outputError(::CommandOutput& output, ::Util::ReplacementResults const errorDetails, ::Actor const* entity) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::ItemRegistryRef itemRegistry);
-    // NOLINTEND
+    MCAPI static void _outputSuccess(::CommandOutput& output, int numItemsDropped);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI static void setup(::CommandRegistry& registry, ::ItemRegistryRef itemRegistry);
     // NOLINTEND
 
 public:
@@ -119,19 +92,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::LootCommand::Source>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::LootCommand::Target>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::LootCommand::TargetIdentifier>();
-// clang-format on

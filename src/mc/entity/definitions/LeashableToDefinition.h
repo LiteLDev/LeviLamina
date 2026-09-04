@@ -17,6 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1> mUnk9978b7;
+    ::ll::UntypedStorage<1, 1> mUnkbb08c4;
     // NOLINTEND
 
 public:
@@ -28,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::LeashableToComponent& component) const;
+    MCAPI void uninitialize(::EntityContext& entity, ::LeashableToComponent&) const;
     // NOLINTEND
 
 public:

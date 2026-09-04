@@ -40,32 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayerUpdateEntityOverridesPacket();
-
-    MCAPI PlayerUpdateEntityOverridesPacket(
-        ::ActorUniqueID                              id,
-        uint                                         propertyIndex,
-        ::UpdateType                                 updateType,
-        ::std::variant<::std::monostate, int, float> value
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::ActorUniqueID                              id,
-        uint                                         propertyIndex,
-        ::UpdateType                                 updateType,
-        ::std::variant<::std::monostate, int, float> value
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

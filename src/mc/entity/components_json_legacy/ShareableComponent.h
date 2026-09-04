@@ -17,11 +17,7 @@ public:
     // NOLINTBEGIN
     MCAPI int getCountToPickUp(::Actor const& owner, ::ItemStack const& item) const;
 
-    MCAPI int getCountToPickUp(::Actor const& owner, ::ItemActor const& itemActor) const;
-
     MCAPI int getSlotToSwap(::Actor const& owner, ::ItemActor const& itemActor) const;
-
-    MCAPI int hasSurplus(::Actor const& owner, ::ItemStack const& item, bool includeStackSizeofItem) const;
 
     MCAPI int hasSurplus(
         ::Actor const&     owner,

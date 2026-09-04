@@ -51,12 +51,6 @@ public:
     MCAPI explicit TemplateStructurePiece(int depth);
 
     MCAPI void _setBoundingBoxFromTemplate();
-
-    MCAPI void _setup(
-        ::LegacyStructureTemplate&       structTemplate,
-        ::LegacyStructureSettings const& settings,
-        ::BlockPos const&                templatePosition
-    );
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class IOptionRegistry;
 
 namespace OreUI {
 
-class DeveloperOptionsFacet : public ::OreUI::FacetBase<::OreUI::DeveloperOptionsFacet> {
+class DeveloperOptionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::DeveloperOptionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DeveloperOptionsFacet(::IOptionRegistry& options);
-
     MCFOLD bool isRealmsPreproductionEnvironment() const;
     // NOLINTEND
 
@@ -45,12 +43,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IOptionRegistry& options);
     // NOLINTEND
 
 public:

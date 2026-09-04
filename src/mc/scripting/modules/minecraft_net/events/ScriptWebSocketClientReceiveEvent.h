@@ -4,12 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraftNet { struct ScriptWebSocketClientReceiveEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
 
-class ScriptWebSocketClientReceiveEvent {
+struct ScriptWebSocketClientReceiveEvent {
 public:
     // member variables
     // NOLINTBEGIN
@@ -23,21 +24,9 @@ public:
     ScriptWebSocketClientReceiveEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptWebSocketClientReceiveEvent(::std::string const& data);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& data);
     // NOLINTEND
 };
 

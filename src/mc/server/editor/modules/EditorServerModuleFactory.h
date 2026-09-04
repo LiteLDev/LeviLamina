@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,9 +38,6 @@ public:
         bool,
         ::std::vector<::std::string> const&
     );
-
-    MCNAPI ::Scripting::Result_deprecated<::std::string>
-    _loadScriptFromResourcePack(::Editor::ServiceProviderCollection& serviceProviders, ::std::string const& scriptPath);
     // NOLINTEND
 
 public:

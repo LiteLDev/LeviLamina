@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FocusContainerComponent() /*override*/;
+    virtual ~FocusContainerComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -53,18 +53,7 @@ public:
 
     MCAPI ::FocusContainerComponent* _getParentFocusContainer();
 
-    MCAPI void addFocusContainerDataToDirection(::ui::CardinalDirection dir, ::FocusContainerCustomData const& data);
-
     MCAPI void addRecentFocusControl(::std::weak_ptr<::UIControl> weakControl);
-
-    MCAPI void addSubFocusContainer(::std::shared_ptr<::UIControl const> focusContainerControl);
-
-    MCAPI ::std::shared_ptr<::UIControl> gainFocus(bool includeMagnetControls);
-
-    MCAPI bool getFocusContainerDataFromDirection(
-        ::ui::CardinalDirection                    dir,
-        ::std::vector<::FocusContainerCustomData>& outData
-    ) const;
 
     MCAPI ::std::string getFocusNavigationModeName(::ui::CardinalDirection dir) const;
 
@@ -72,46 +61,21 @@ public:
 
     MCAPI ::std::string getLastFocusedControlName() const;
 
-    MCAPI ::std::shared_ptr<::UIControl> getLastGoodFocusedControl(::std::shared_ptr<::UIControl> lastFocusedControl);
-
-    MCFOLD bool getUseLastFocus() const;
-
     MCAPI void initialize();
 
     MCAPI bool isAncestorFocusContainer(::FocusContainerComponent& focusContainerComp) const;
 
-    MCAPI bool
-    isFocusNavigationModeContained(::ui::CardinalDirection dir, ::FocusContainerComponent* toFocusContainerComp) const;
-
-    MCAPI bool isFocusNavigationModeCustom(::ui::CardinalDirection dir) const;
-
-    MCAPI bool isFocusNavigationModeStop(::ui::CardinalDirection dir) const;
-
-    MCFOLD bool isWrappingAllowed() const;
-
     MCAPI void loseFocus(::std::weak_ptr<::UIControl> lastControl);
-
-    MCAPI void removeInvalidSubFocusContainer();
 
     MCAPI void setFocusNavigationModeOverride(::ui::CardinalDirection dir, ::std::string const& str);
 
     MCAPI void setLastFocusedControl(::std::weak_ptr<::UIControl> control);
-
-    MCFOLD void setUseLastFocus(bool useLastFocus);
-
-    MCAPI void setWrappingAllowed(bool isAllowed);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

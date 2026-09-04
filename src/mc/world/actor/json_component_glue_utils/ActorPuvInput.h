@@ -21,27 +21,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorPuvInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::SemVersion version() const /*override*/;
 
     virtual ::Puv::Input::Data data() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ActorPuvInput(::Json::Value value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::Value value);
     // NOLINTEND
 
 public:

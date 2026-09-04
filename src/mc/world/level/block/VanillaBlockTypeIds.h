@@ -2118,6 +2118,8 @@ MCAPI ::HashedString const& SulfurDoubleSlab();
 
 MCAPI ::HashedString const& SulfurSlab();
 
+MCAPI ::HashedString const& SulfurSpike();
+
 MCAPI ::HashedString const& SulfurStairs();
 
 MCAPI ::HashedString const& SulfurWall();

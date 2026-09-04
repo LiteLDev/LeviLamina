@@ -40,8 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInventoryItemEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&&);
-
     MCAPI ScriptInventoryItemEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter const&);
 
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&
@@ -66,8 +64,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter const&);
     // NOLINTEND
 

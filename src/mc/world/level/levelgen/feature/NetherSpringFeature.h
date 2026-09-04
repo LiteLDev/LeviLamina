@@ -30,25 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NetherSpringFeature(::Block const& block, bool insideRock);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block, bool insideRock);
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

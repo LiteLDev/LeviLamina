@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,8 @@ namespace Realms::Stories { class RealmsFeedModeration; }
 
 namespace OreUI {
 
-class RealmsStoriesReportsCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesReportsCommandsFacet> {
+class RealmsStoriesReportsCommandsFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesReportsCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN

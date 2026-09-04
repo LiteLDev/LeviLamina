@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ServerDataTransferServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -18,6 +18,7 @@ namespace Editor::Network { class DataTransferServiceDeferredExperimentEnabledPa
 namespace Editor::Network { class DataTransferServiceIdentifiersRequestResponsePayload; }
 namespace Editor::Network { class DataTransferServiceRegisterCollectionPayload; }
 namespace Editor::Network { class DataTransferServiceRequestBiomeConfigResponsePayload; }
+namespace Editor::Network { class DataTransferServiceRequestDefaultBiomeConfigResponsePayload; }
 namespace Editor::ScriptModule { class ScriptTransferCollectionNameData; }
 namespace mce { class UUID; }
 // clang-format on
@@ -51,18 +52,6 @@ public:
         PendingBiomeConfigRequest& operator=(PendingBiomeConfigRequest const&);
         PendingBiomeConfigRequest(PendingBiomeConfigRequest const&);
         PendingBiomeConfigRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingBiomeConfigRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PendingCreateSettingRequest {
@@ -76,23 +65,9 @@ public:
 
     public:
         // prevent constructor by default
+        PendingCreateSettingRequest& operator=(PendingCreateSettingRequest const&);
         PendingCreateSettingRequest(PendingCreateSettingRequest const&);
         PendingCreateSettingRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Editor::Services::ServerDataTransferService::PendingCreateSettingRequest&
-        operator=(::Editor::Services::ServerDataTransferService::PendingCreateSettingRequest const&);
-
-        MCNAPI ~PendingCreateSettingRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PendingDataRequest {
@@ -108,18 +83,6 @@ public:
         PendingDataRequest& operator=(PendingDataRequest const&);
         PendingDataRequest(PendingDataRequest const&);
         PendingDataRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingDataRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PendingIdentifiersRequest {
@@ -135,18 +98,6 @@ public:
         PendingIdentifiersRequest& operator=(PendingIdentifiersRequest const&);
         PendingIdentifiersRequest(PendingIdentifiersRequest const&);
         PendingIdentifiersRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingIdentifiersRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct RegisteredCollection {
@@ -163,21 +114,6 @@ public:
         RegisteredCollection& operator=(RegisteredCollection const&);
         RegisteredCollection(RegisteredCollection const&);
         RegisteredCollection();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Editor::Services::ServerDataTransferService::RegisteredCollection&
-        operator=(::Editor::Services::ServerDataTransferService::RegisteredCollection&&);
-
-        MCNAPI ~RegisteredCollection();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -188,6 +124,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk35f4bc;
     ::ll::UntypedStorage<8, 64> mUnk705e89;
     ::ll::UntypedStorage<8, 64> mUnke70eae;
+    ::ll::UntypedStorage<8, 64> mUnkdc0560;
     ::ll::UntypedStorage<1, 1>  mUnkb9da73;
     // NOLINTEND
 
@@ -200,7 +137,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerDataTransferService() /*override*/;
+    virtual ~ServerDataTransferService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -209,6 +146,18 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual void requestBiomeConfigs(
+        ::std::string const& biomeIdentifier,
+        ::std::function<void(
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&
+        )> const&            callback
+    ) /*override*/;
+
+    virtual void requestDefaultBiomeConfigs(
         ::std::string const& biomeIdentifier,
         ::std::function<void(
             ::std::string const&,
@@ -298,6 +247,10 @@ public:
         ::Editor::Network::DataTransferServiceRequestBiomeConfigResponsePayload const& payload
     );
 
+    MCNAPI void _onRequestDefaultBiomeConfigResponseReceived(
+        ::Editor::Network::DataTransferServiceRequestDefaultBiomeConfigResponsePayload const& payload
+    );
+
     MCNAPI void _onRequestIdentifiersResponseReceived(
         ::Editor::Network::DataTransferServiceIdentifiersRequestResponsePayload const& payload
     );
@@ -310,12 +263,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> $init();
@@ -325,6 +272,18 @@ public:
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI void $requestBiomeConfigs(
+        ::std::string const& biomeIdentifier,
+        ::std::function<void(
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&,
+            ::std::string const&
+        )> const&            callback
+    );
+
+    MCNAPI void $requestDefaultBiomeConfigs(
         ::std::string const& biomeIdentifier,
         ::std::function<void(
             ::std::string const&,
@@ -388,14 +347,6 @@ public:
     MCNAPI bool $isDeferredExperimentEnabled() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForServerDataTransferServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

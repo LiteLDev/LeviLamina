@@ -10,8 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { struct AudioOptions; }
 namespace webrtc { class AudioTrackSinkInterface; }
+namespace webrtc { struct AudioOptions; }
 // clang-format on
 
 namespace webrtc {
@@ -20,7 +20,7 @@ class LocalAudioSource : public ::webrtc::Notifier<::webrtc::AudioSourceInterfac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnk865185;
+    ::ll::UntypedStorage<8, 88> mUnkd1027f;
     // NOLINTEND
 
 public:
@@ -36,7 +36,7 @@ public:
 
     virtual bool remote() const /*override*/;
 
-    virtual ::cricket::AudioOptions const options() const /*override*/;
+    virtual ::webrtc::AudioOptions const options() const /*override*/;
 
     virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink) /*override*/;
 
@@ -49,7 +49,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::LocalAudioSource>
-    Create(::cricket::AudioOptions const* audio_options);
+    Create(::webrtc::AudioOptions const* audio_options);
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 
     MCNAPI bool $remote() const;
 
-    MCNAPI ::cricket::AudioOptions const $options() const;
+    MCNAPI ::webrtc::AudioOptions const $options() const;
 
     MCNAPI void $AddSink(::webrtc::AudioTrackSinkInterface* sink);
 

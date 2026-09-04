@@ -51,12 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _parseFilterInputs(
-        ::SharedTypes::v1_21_20::FilterTestData const& filterTestData,
-        ::FilterTest::Definition const&                filterDef,
-        ::FilterInputs&                                inputs
-    );
-
     MCAPI bool _parseFilterParam(
         ::std::string const&                                             filter,
         ::std::string const&                                             member,
@@ -74,19 +68,9 @@ public:
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCAPI bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
-
-    MCAPI bool empty() const;
-
     MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 
     MCAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
-
-    MCFOLD ::std::vector<::std::shared_ptr<::FilterGroup>> const& getChildren() const;
-
-    MCFOLD ::FilterGroup::CollectionType getCollectionType() const;
-
-    MCFOLD ::std::vector<::std::shared_ptr<::FilterTest>> const& getMembers() const;
 
     MCAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND

@@ -62,19 +62,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI PacketViolationWarningPacket();
-
-    MCAPI explicit PacketViolationWarningPacket(::PacketViolationWarningPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::PacketViolationWarningPacketPayload payload);
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

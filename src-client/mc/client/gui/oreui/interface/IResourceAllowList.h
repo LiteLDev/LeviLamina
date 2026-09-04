@@ -36,12 +36,6 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription addProfileImageStateSubscriber(::std::function<void()> const& callback) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

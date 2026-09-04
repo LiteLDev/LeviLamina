@@ -36,7 +36,7 @@ public:
 
     MCAPI ::SharedTypes::v1_21_100::EatMobGoalDefinition& operator=(::SharedTypes::v1_21_100::EatMobGoalDefinition&&);
 
-    MCAPI ~EatMobGoalDefinition();
+    MCAPI bool operator==(::SharedTypes::v1_21_100::EatMobGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -63,12 +63,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_100::EatMobGoalDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

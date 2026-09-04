@@ -37,18 +37,6 @@ public:
             Failed& operator=(Failed const&);
             Failed(Failed const&);
             Failed();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ~Failed();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
         };
 
         struct NotFound {};
@@ -66,18 +54,6 @@ public:
             Succeeded& operator=(Succeeded const&);
             Succeeded(Succeeded const&);
             Succeeded();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ~Succeeded();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
         };
     };
 

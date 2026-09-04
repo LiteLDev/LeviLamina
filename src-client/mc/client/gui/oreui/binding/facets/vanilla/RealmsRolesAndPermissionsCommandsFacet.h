@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/PlayerRole.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ namespace Realms { class RealmsRolesAndPermissions; }
 namespace OreUI {
 
 class RealmsRolesAndPermissionsCommandsFacet
-: public ::OreUI::FacetBase<::OreUI::RealmsRolesAndPermissionsCommandsFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsRolesAndPermissionsCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN

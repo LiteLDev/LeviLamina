@@ -10,24 +10,17 @@
 namespace Bedrock::Diagnostics {
 // functions
 // NOLINTBEGIN
-MCNAPI void debugBreak();
-
-MCNAPI bool handleAssert(char const*, char const*, int, char const*, char const*, ...);
-
-#ifdef LL_PLAT_S
-MCNAPI void
-interceptAsserts(::std::function<void()> const& f, ::std::function<void(::std::string)> const& handleAssert);
-#endif
+MCNAPI bool handleAssert(char const* msgFormat, char const* arg, int line, char const* file, char const* function, ...);
 
 MCNAPI void
-log(::BedrockLog::LogCategory,
-    ::std::bitset<3>,
-    ::BedrockLog::LogRule,
-    ::LogAreaID,
-    uint,
-    char const*,
-    int,
-    char const*,
+log(::BedrockLog::LogCategory category,
+    ::std::bitset<3>          channelMask,
+    ::BedrockLog::LogRule     rule,
+    ::LogAreaID               area,
+    uint                      priority,
+    char const*               function,
+    int                       line,
+    char const*               pszFormat,
     ...);
 // NOLINTEND
 

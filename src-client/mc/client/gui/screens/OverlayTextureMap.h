@@ -40,19 +40,11 @@ public:
     MCAPI ::mce::TexturePtr _getTextureHandle(::std::string effectTextureName) const;
 
     MCAPI ::mce::TexturePtr get(::OverlayTextureMap::TextureId textureId) const;
-
-    MCAPI ~OverlayTextureMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> textureGroup);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

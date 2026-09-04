@@ -19,17 +19,28 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkb8fe4c;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    WorldTemplateData& operator=(WorldTemplateData const&);
+    WorldTemplateData(WorldTemplateData const&);
+    WorldTemplateData();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     WorldTemplateData& operator=(WorldTemplateData const&);
     WorldTemplateData();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI WorldTemplateData(::WorldTemplateData&&);
 
+#ifdef LL_PLAT_C
     MCNAPI WorldTemplateData(::WorldTemplateData const&);
+#endif
 
     MCNAPI ~WorldTemplateData();
     // NOLINTEND
@@ -39,7 +50,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::WorldTemplateData&&);
 
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::WorldTemplateData const&);
+#endif
     // NOLINTEND
 
 public:

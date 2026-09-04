@@ -19,10 +19,4 @@ public:
 
     virtual ~IToastEventListener() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

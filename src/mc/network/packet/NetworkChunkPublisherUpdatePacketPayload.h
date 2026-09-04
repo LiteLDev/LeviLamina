@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<4, 4, uint>                       mRadius;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkPos>> mServerBuiltChunks;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~NetworkChunkPublisherUpdatePacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

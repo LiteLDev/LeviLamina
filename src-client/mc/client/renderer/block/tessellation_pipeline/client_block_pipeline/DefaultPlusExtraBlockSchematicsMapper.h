@@ -54,11 +54,11 @@ public:
         ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
         ::ClientBlockPipeline::BlockVolumeArea const&             area,
         ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const*  relativePos,
-        ::ClientBlockPipeline::CustomGeometryBlock const&         blockPosTransform,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
+        ::ClientBlockPipeline::CustomGeometryBlock const&,
         ::ClientBlockPipeline::BlockLookupData const&,
-        ::BlockPos const&,
-        ::Matrix const&
+        ::BlockPos const& relativePos,
+        ::Matrix const&   blockPosTransform
     ) const /*override*/;
     // NOLINTEND
 
@@ -71,8 +71,9 @@ public:
         ::ClientBlockPipeline::ITintResolver&                                                          tintResolver,
         ::BiomeTintCache*                                                                              biomeTintCache,
         ::BlockPos const&                                                                              relativePos,
-        ::Matrix const& transformationMatrix,
-        ::Block const&  extraBlock
+        ::Matrix const&   transformationMatrix,
+        ::Block const&    extraBlock,
+        ::BlockPos const& blockWorldPos
     );
     // NOLINTEND
 
@@ -85,8 +86,9 @@ public:
         ::ClientBlockPipeline::ITintResolver&                                                          tintResolver,
         ::BiomeTintCache*                                                                              biomeTintCache,
         ::BlockPos const&                                                                              relativePos,
-        ::Matrix const& transformationMatrix,
-        ::Block const&  extraBlock
+        ::Matrix const&   transformationMatrix,
+        ::Block const&    extraBlock,
+        ::BlockPos const& blockWorldPos
     );
     // NOLINTEND
 
@@ -98,18 +100,12 @@ public:
         ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
         ::ClientBlockPipeline::BlockVolumeArea const&             area,
         ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const*  relativePos,
-        ::ClientBlockPipeline::CustomGeometryBlock const&         blockPosTransform,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
+        ::ClientBlockPipeline::CustomGeometryBlock const&,
         ::ClientBlockPipeline::BlockLookupData const&,
-        ::BlockPos const&,
-        ::Matrix const&
+        ::BlockPos const& relativePos,
+        ::Matrix const&   blockPosTransform
     ) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

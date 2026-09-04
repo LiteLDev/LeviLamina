@@ -11,17 +11,18 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class CandidateStats; }
-namespace cricket { struct ConnectionInfo; }
-namespace cricket { struct TransportStats; }
-namespace rtc { struct SSLCertificateStats; }
 namespace webrtc { class AudioTrackInterface; }
+namespace webrtc { class CandidateStats; }
+namespace webrtc { class Clock; }
 namespace webrtc { class MediaStreamInterface; }
 namespace webrtc { class MediaStreamTrackInterface; }
 namespace webrtc { class PeerConnectionInternal; }
 namespace webrtc { class RtpTransceiver; }
 namespace webrtc { class StatsCollection; }
 namespace webrtc { class StatsReport; }
+namespace webrtc { struct ConnectionInfo; }
+namespace webrtc { struct SSLCertificateStats; }
+namespace webrtc { struct TransportStats; }
 // clang-format on
 
 namespace webrtc {
@@ -40,9 +41,9 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkde992f;
-        ::ll::UntypedStorage<8, 56> mUnk6765fb;
-        ::ll::UntypedStorage<8, 8>  mUnkcb7aa1;
-        ::ll::UntypedStorage<8, 8>  mUnkee8ec7;
+        ::ll::UntypedStorage<8, 56> mUnkb91a9a;
+        ::ll::UntypedStorage<8, 8>  mUnke05143;
+        ::ll::UntypedStorage<8, 8>  mUnk870fe9;
         // NOLINTEND
 
     public:
@@ -54,13 +55,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI TransportStats(::std::string transport_name, ::cricket::TransportStats transport_stats);
+        MCNAPI TransportStats(::std::string transport_name, ::webrtc::TransportStats transport_stats);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::string transport_name, ::cricket::TransportStats transport_stats);
+        MCNAPI void* $ctor(::std::string transport_name, ::webrtc::TransportStats transport_stats);
         // NOLINTEND
     };
 
@@ -68,7 +69,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk8ae9ec;
+        ::ll::UntypedStorage<8, 24> mUnkdcfbce;
         ::ll::UntypedStorage<8, 24> mUnk57b8ec;
         ::ll::UntypedStorage<8, 16> mUnkfc2869;
         // NOLINTEND
@@ -105,6 +106,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk1a38a8;
     ::ll::UntypedStorage<8, 16> mUnkfbf2fd;
     ::ll::UntypedStorage<8, 8>  mUnka2a452;
+    ::ll::UntypedStorage<8, 8>  mUnk2dc88b;
     ::ll::UntypedStorage<8, 8>  mUnk55f8dd;
     ::ll::UntypedStorage<8, 8>  mUnke85b01;
     ::ll::UntypedStorage<1, 1>  mUnk56a9e3;
@@ -137,16 +139,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::StatsReport* AddCandidateReport(::cricket::CandidateStats const& candidate_stats, bool local);
+    MCNAPI ::webrtc::StatsReport* AddCandidateReport(::webrtc::CandidateStats const& candidate_stats, bool local);
 
-    MCNAPI ::webrtc::StatsReport* AddCertificateReports(::std::unique_ptr<::rtc::SSLCertificateStats> cert_stats);
+    MCNAPI ::webrtc::StatsReport* AddCertificateReports(::std::unique_ptr<::webrtc::SSLCertificateStats> cert_stats);
 
     MCNAPI ::webrtc::StatsReport* AddConnectionInfoReport(
         ::std::string const&                                          content_name,
         int                                                           component,
         int                                                           connection_id,
         ::webrtc::scoped_refptr<::webrtc::StatsReport::IdBase> const& channel_report_id,
-        ::cricket::ConnectionInfo const&                              info
+        ::webrtc::ConnectionInfo const&                               info
     );
 
     MCNAPI void AddStream(::webrtc::MediaStreamInterface* stream);
@@ -176,7 +178,7 @@ public:
 
     MCNAPI bool IsValidTrack(::std::string const& track_id);
 
-    MCNAPI explicit LegacyStatsCollector(::webrtc::PeerConnectionInternal* pc);
+    MCNAPI LegacyStatsCollector(::webrtc::PeerConnectionInternal* pc, ::webrtc::Clock& clock);
 
     MCNAPI ::webrtc::StatsReport* PrepareReport(
         bool                                                          local,
@@ -194,7 +196,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::PeerConnectionInternal* pc);
+    MCNAPI void* $ctor(::webrtc::PeerConnectionInternal* pc, ::webrtc::Clock& clock);
     // NOLINTEND
 
 public:

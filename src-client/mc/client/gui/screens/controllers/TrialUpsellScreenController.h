@@ -40,10 +40,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     TrialUpsellScreenController(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -60,13 +56,5 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

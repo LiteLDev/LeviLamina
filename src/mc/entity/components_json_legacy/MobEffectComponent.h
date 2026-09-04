@@ -30,18 +30,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEffectComponent();
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI void tick(::Actor& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

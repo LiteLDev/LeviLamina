@@ -14,7 +14,6 @@ class IMinecraftEventing;
 class ResourceLoadManager;
 class ResourcePackManager;
 struct BlockCullingData;
-namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -42,14 +41,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockCullingGroup(::IMinecraftEventing& eventing);
-
-    MCAPI ::PuvLoadData::LoadResultWithTiming _parseBlockCullingData(
-        ::std::string_view             fileWithExtension,
-        ::std::string const&           fileData,
-        ::MolangVersion                molangVersion,
-        bool                           isBaseGamePack,
-        ::cereal::ReflectionCtx const& ctx
-    );
 
     MCAPI void loadBlockCullingDataAsync(
         ::ResourcePackManager&                               resourcePackManager,

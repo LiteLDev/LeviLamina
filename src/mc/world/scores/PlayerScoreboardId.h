@@ -11,13 +11,13 @@ public:
     // NOLINTEND
 
 public:
-    bool operator==(PlayerScoreboardId const& rhs) const { return mActorUniqueId == rhs.mActorUniqueId; }
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::PlayerScoreboardId const& INVALID();
     // NOLINTEND
+
+public:
+    bool operator==(PlayerScoreboardId const& rhs) const { return mActorUniqueId == rhs.mActorUniqueId; }
 };
 
 namespace std {

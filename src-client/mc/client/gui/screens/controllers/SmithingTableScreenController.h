@@ -66,14 +66,6 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID
     );
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSmithingTable2UIBindings();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -98,16 +90,8 @@ public:
 
     MCAPI void $_registerAutoPlaceOrder();
 
-    MCFOLD ::std::string $_getButtonXDescription();
+    MCAPI ::std::string $_getButtonXDescription();
 
     MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

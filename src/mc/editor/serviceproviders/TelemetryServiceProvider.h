@@ -16,7 +16,7 @@ public:
 
     virtual void fireRedoEvent(::std::string const& transactionName) = 0;
 
-    virtual void fireEditorKeybindUpdate(::std::string const&, int const, int const) = 0;
+    virtual void fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) = 0;
 
     virtual void fireEditorScriptEvent(
         ::std::string const& source,
@@ -30,12 +30,6 @@ public:
         ::std::string const&                  currentStage,
         ::std::optional<::std::string> const& previousStage
     ) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

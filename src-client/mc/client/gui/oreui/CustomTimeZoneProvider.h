@@ -27,12 +27,6 @@ public:
 
     MCAPI double $GetLocalTimeOffset(double timeMs, bool isTimeUtc);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

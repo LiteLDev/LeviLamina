@@ -16,13 +16,10 @@ class Biome;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
-class Experiments;
-class IMinecraftEventing;
 class IRandom;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
-class Level;
 class LevelChunk;
 class LevelChunkVolumeData;
 class Mob;
@@ -60,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Spawner();
+    virtual ~Spawner() = default;
 
     virtual void initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries) = 0;
 
@@ -143,21 +140,12 @@ public:
         ::SpawnBlockRequirements                               spawnBlockRequirements
     );
 
-    MCAPI static ::std::unique_ptr<::Spawner>
-    from(::Level& level, ::Experiments const& experiments, ::IMinecraftEventing& eventing);
-
     MCAPI static bool isSpawnPositionOk(
         ::MobSpawnRules const& rules,
         ::BlockSource&         region,
         ::BlockPos const&      pos,
         bool                   validateDistToPlayer
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

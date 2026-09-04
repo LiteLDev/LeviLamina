@@ -25,6 +25,9 @@ public:
     // NOLINTEND
 
 public:
+    ClientboundDataDrivenUICloseScreenPacket() : mSerializationMode(::SerializationMode::CerealOnly) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -60,22 +63,6 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ClientboundDataDrivenUICloseScreenPacket();
-
-    MCAPI explicit ClientboundDataDrivenUICloseScreenPacket(::ClientboundDataDrivenUICloseScreenPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ClientboundDataDrivenUICloseScreenPacketPayload payload);
     // NOLINTEND
 
 public:

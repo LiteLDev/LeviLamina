@@ -6,12 +6,12 @@
 #include "mc/deps/application/storage_migration/WorldRecovery.h"
 #include "mc/deps/core/utility/pub_sub/DeferralType.h"
 #include "mc/deps/core/utility/pub_sub/deferred/SubscriptionBody.h"
+#include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off
 class SpinLockImpl;
-namespace Bedrock::PubSub { class SubscriptionContext; }
 // clang-format on
 
 namespace Bedrock::PubSub::DeferralPolicy {

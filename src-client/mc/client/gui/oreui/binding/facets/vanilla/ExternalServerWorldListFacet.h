@@ -3,20 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/world/lists/ExternalServerWorldError.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-struct NetworkWorldInfo;
 namespace OreUI { struct NetworkWorldData; }
 namespace World { class ExternalServerWorldList; }
 // clang-format on
 
 namespace OreUI {
 
-class ExternalServerWorldListFacet : public ::OreUI::FacetBase<::OreUI::ExternalServerWorldListFacet> {
+class ExternalServerWorldListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ExternalServerWorldListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,16 +43,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ExternalServerWorldListFacet(::World::ExternalServerWorldList& externalServerWorldList);
 
-    MCAPI bool _areWorldsDifferent(
-        ::OreUI::NetworkWorldData const& externalServerWorldData,
-        ::NetworkWorldInfo const&        externalServerWorld
-    ) const;
-
     MCAPI void _onWorldListUpdated();
 
     MCAPI void _refresh();
-
-    MCAPI bool _shouldRefresh();
 
     MCAPI ::std::optional<::World::ExternalServerWorldError>
     addExternalServerWorld(::std::string const& name, ::std::string const& address, int port);

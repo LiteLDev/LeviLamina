@@ -57,6 +57,8 @@ public:
     MCAPI ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&
     operator=(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&) const;
+
     MCAPI ~MeleeAttackBaseGoalDefinition();
     // NOLINTEND
 
@@ -64,12 +66,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

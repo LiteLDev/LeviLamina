@@ -42,7 +42,5 @@ public:
     MCAPI float compute(::UIControl& control, ::LayoutVariableType sizeType) const;
 
     MCAPI void removeDependsOnMeEntries();
-
-    MCAPI ::std::string toString(::UIControl& control) const;
     // NOLINTEND
 };

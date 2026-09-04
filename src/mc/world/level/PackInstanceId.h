@@ -25,8 +25,6 @@ public:
 
     MCAPI PackInstanceId(::PackIdVersion const& packId, ::std::string const& subpackName);
 
-    MCAPI bool operator==(::PackInstanceId const& rhs) const;
-
     MCAPI ~PackInstanceId();
     // NOLINTEND
 

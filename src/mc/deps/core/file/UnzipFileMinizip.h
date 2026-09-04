@@ -4,14 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/UnzipFile.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/UnzipResult.h"
-
-// auto generated forward declare list
-// clang-format off
-class IFileAccess;
-namespace Core { class PathView; }
-// clang-format on
 
 namespace Core {
 
@@ -19,9 +12,8 @@ class UnzipFileMinizip : public ::Core::UnzipFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9c298d;
-    ::ll::UntypedStorage<8, 8>  mUnkb4dede;
-    ::ll::UntypedStorage<8, 32> mUnk25a3ca;
+    ::ll::UntypedStorage<8, 8> mUnk9c298d;
+    ::ll::UntypedStorage<8, 8> mUnkb4dede;
     // NOLINTEND
 
 public:
@@ -33,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UnzipFileMinizip() /*override*/;
+    virtual ~UnzipFileMinizip() /*override*/ = default;
 
     virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) /*override*/;
 
@@ -57,24 +49,6 @@ public:
     virtual uint64 getCurrentFileUncompressedSize() /*override*/;
 
     virtual bool _isGood() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI UnzipFileMinizip(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess, ::Core::PathView zipPath);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess, ::Core::PathView zipPath);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -103,12 +77,6 @@ public:
     MCNAPI bool $_isGood() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

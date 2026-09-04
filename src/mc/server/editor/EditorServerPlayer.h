@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/EditorPlayerCommon.h"
 
 // auto generated forward declare list
@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerPlayer() /*override*/;
+    virtual ~EditorServerPlayer() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -43,12 +43,6 @@ public:
     virtual ::optional_ref<::PlayerEventCoordinator> getPlayerEventCoordinator() /*override*/;
 
     virtual bool isClientSide() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -65,18 +59,6 @@ public:
     MCNAPI bool $isClientSide() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorPlayer();
-
-    MCNAPI static void** $vftableForEditorPlayerServiceProvider();
-
-    MCNAPI static void** $vftableForEventListenerDispatcher();
-
-    MCNAPI static void** $vftableForEditorServiceList();
     // NOLINTEND
 };
 

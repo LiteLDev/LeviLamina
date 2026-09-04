@@ -19,10 +19,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class ObserverBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    ObserverBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ObserverBlock() /*override*/ = default;
@@ -46,7 +42,8 @@ public:
 
     virtual bool isSignalSource() const /*override*/;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
 
     virtual ::Block const& getRenderBlock() const /*override*/;
 
@@ -58,11 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ObserverBlock(::std::string const& nameId, int id);
-
     MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
-
-    MCAPI void _startSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
     _updateState(::BlockSource& region, ::BlockPos const& pos, ::PulseCapacitor& component, bool turnOn) const;
@@ -70,12 +63,6 @@ public:
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -98,7 +85,7 @@ public:
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
     MCAPI ::Block const& $getRenderBlock() const;
 

@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/math/Color.h"
-#include "mc/world/level/block/BlockProperty.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
@@ -17,7 +17,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class HashedString;
 class Vec3;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockRandomTickEvent; }
@@ -58,14 +57,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                            mHasTransparentLeaves;
-    ::ll::TypedStorage<8, 8, ::HashedString const&>                           mSapling;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                 mSapling;
     ::ll::TypedStorage<4, 28, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    LeavesBlock& operator=(LeavesBlock const&);
-    LeavesBlock(LeavesBlock const&);
     LeavesBlock();
 
 public:
@@ -77,14 +74,14 @@ public:
 
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const /*override*/;
 
-    virtual ::BlockRenderLayer getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const
+    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
     virtual ::HashedString const& getCullingLayer() const /*override*/;
 
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
@@ -108,14 +105,6 @@ public:
     );
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static bool _isDeepLeavesInducing(::Block const& block, ::BlockProperty const& propertyCheck);
-#endif
     // NOLINTEND
 
 public:
@@ -144,13 +133,13 @@ public:
 
     MCAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::HashedString const& $getCullingLayer() const;
 
     MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,

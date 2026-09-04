@@ -9,7 +9,6 @@
 // clang-format off
 class Biome;
 struct BiomeNoiseTarget;
-struct ClimateParameters;
 namespace ClimateUtils { struct TargetSpace; }
 // clang-format on
 
@@ -43,10 +42,6 @@ public:
         // static functions
         // NOLINTBEGIN
         MCAPI static ::std::optional<::RTree::Node> branch(::std::vector<::RTree::Node>&& children);
-
-        MCAPI static ::std::vector<::RTree::Node> bucketize(::std::vector<::RTree::Node>&& nodes);
-
-        MCAPI static ::RTree::Node leaf(::ClimateParameters const& climateParameters, ::Biome const* biome);
 
         MCAPI static void sort(::std::vector<::RTree::Node>& children, int dimension, bool absolute);
         // NOLINTEND

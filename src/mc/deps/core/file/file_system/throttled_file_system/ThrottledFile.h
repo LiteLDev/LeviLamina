@@ -62,12 +62,6 @@ public:
 
     virtual ::Core::Result _getRemainingSize(uint64*) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Core

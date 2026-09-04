@@ -11,19 +11,8 @@ class AppPlatform;
 class FeatureToggles;
 class FlightingService;
 class IAdvancedGraphicsOptions;
-class IContentManager;
 class IDataDrivenUIRepository;
-class IGameModuleApp;
 class IMinecraftGame;
-class ISplitScreenChangedPublisher;
-class MarketplaceServicesManager;
-class ProfanityContext;
-namespace OreUI { class IResourceAllowList; }
-namespace Parties { class PartySystem; }
-namespace Realms { class RealmsSystem; }
-namespace Social { class MultiplayerServiceManager; }
-namespace Social { class SocialSystem; }
-namespace World { class WorldSystem; }
 namespace flighting { class TreatmentToggles; }
 // clang-format on
 
@@ -64,44 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI GameDependencies(::OreUI::GameDependencies&&);
 
-    MCAPI GameDependencies(
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&           game,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& graphicsOptions,
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&              platform,
-        ::flighting::TreatmentToggles&                                   flighting,
-        ::Bedrock::NotNullNonOwnerPtr<::FeatureToggles> const&           features,
-        ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository> const&  dataDrivenUIRepository
-    );
-
-    MCAPI ::IContentManager& getContentManager() const;
-
-    MCAPI ::IDataDrivenUIRepository& getDataDrivenUIRepository() const;
-
-    MCAPI ::FeatureToggles& getFeatureToggles() const;
-
     MCAPI ::FlightingService& getFlightingService() const;
-
-    MCAPI ::IGameModuleApp& getGameModule() const;
-
-    MCAPI ::MarketplaceServicesManager& getMarketplaceServicesManager() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> getMultiplayerServiceManager() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> getOreUIResourceAllowList() const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::Parties::PartySystem> getPartySystem() const;
-
-    MCAPI ::AppPlatform& getPlatform() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSystem> getRealmsSystem() const;
-
-    MCAPI ::Social::SocialSystem& getSocialSystem() const;
-
-    MCAPI ::ISplitScreenChangedPublisher& getSplitScreenPublisher() const;
-
-    MCAPI ::World::WorldSystem& getWorldSystem() const;
 
     MCAPI ~GameDependencies();
     // NOLINTEND
@@ -110,15 +62,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies&&);
-
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&           game,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& graphicsOptions,
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&              platform,
-        ::flighting::TreatmentToggles&                                   flighting,
-        ::Bedrock::NotNullNonOwnerPtr<::FeatureToggles> const&           features,
-        ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository> const&  dataDrivenUIRepository
-    );
     // NOLINTEND
 
 public:

@@ -7,11 +7,11 @@
 #include "mc/deps/core/utility/pub_sub/ConnectPosition.h"
 #include "mc/deps/core/utility/pub_sub/DeferralType.h"
 #include "mc/deps/core/utility/pub_sub/deferred/SubscriptionBody.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class DeferredSubscriptionHub; }
-namespace Bedrock::PubSub { class SubscriptionContext; }
 // clang-format on
 
 namespace Bedrock::PubSub::DeferralPolicy {

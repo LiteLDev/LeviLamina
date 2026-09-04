@@ -24,20 +24,4 @@ public:
     LowMemoryReport& operator=(LowMemoryReport const&);
     LowMemoryReport(LowMemoryReport const&);
     LowMemoryReport();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~LowMemoryReport();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };

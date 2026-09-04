@@ -4,9 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/editor/script/ScriptWidgetComponent_WidgetInterface.h"
 
 // auto generated forward declare list
@@ -16,7 +15,6 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentBaseOptions; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
@@ -44,12 +42,13 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentBase& operator=(ScriptWidgetComponentBase const&);
+    ScriptWidgetComponentBase(ScriptWidgetComponentBase const&);
     ScriptWidgetComponentBase();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentBase();
+    virtual ~ScriptWidgetComponentBase() = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const = 0;
 
@@ -62,8 +61,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentBase(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
-
     MCNAPI ScriptWidgetComponentBase(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -73,16 +70,7 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions> options
     );
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _deleteComponent();
-
-    MCNAPI void _setLockToSurface(bool lockToSurface);
-
-    MCNAPI void _setVisible(bool visible);
-
     MCNAPI ::Vec3 const getWorldPosition() const;
-
-    MCNAPI void setPositionOffset(::Vec3 const& offset);
     // NOLINTEND
 
 public:
@@ -94,8 +82,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -107,12 +93,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
@@ -120,12 +100,6 @@ public:
     MCNAPI void $_onOwnerPositionUpdate();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

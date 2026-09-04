@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/level/levelgen/structure/StructureBlockPaletteLoadResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,8 +48,6 @@ public:
         // NOLINTBEGIN
         MCAPI BlockPositionData(::StructureBlockPalette::BlockPositionData const& rhs);
 
-        MCAPI bool isValid() const;
-
         MCAPI ~BlockPositionData();
         // NOLINTEND
 
@@ -63,7 +60,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -78,22 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(::CompoundTag const& tag);
-
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionData(::CompoundTag const& tag, int index);
-
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionDataList(::CompoundTag const& tag);
-
-    MCAPI void _saveBlockPalette(::CompoundTag& tag) const;
-
-    MCAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
-
     MCAPI void addBlockPositionData(uint64 id, ::StructureBlockPalette::BlockPositionData blockPositionData);
-
-    MCAPI uint64 addMapping(::std::unique_ptr<::CompoundTag> serializationId);
-
-    MCFOLD ::std::unordered_map<uint64, ::StructureBlockPalette::BlockPositionData> const&
-    getAllBlockPositionData() const;
 
     MCAPI ::Block const& getBlock(
         ::BlockPalette const&                                   blockPalette,
@@ -102,14 +84,6 @@ public:
     ) const;
 
     MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
-
-    MCFOLD uint64 getSize() const;
-
-    MCAPI bool load(::CompoundTag const& tag, int formatVersion);
-
-    MCAPI void removeBlockPositionData(uint64 id);
-
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
     MCAPI ::Block const*
     tryGetBlock(uint64 paletteId, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry) const;

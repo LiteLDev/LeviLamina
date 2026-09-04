@@ -17,33 +17,22 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class EnchantingTableBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    EnchantingTableBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual bool isCraftingBlock() const /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
-    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnchantingTableBlock(::std::string const& nameId, int id);
-
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -53,9 +42,9 @@ public:
 
     MCFOLD bool $isCraftingBlock() const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
 
     // NOLINTEND

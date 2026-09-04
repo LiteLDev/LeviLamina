@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActorData.h"
 
 // auto generated forward declare list

@@ -31,29 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TelemetryBatcher(::OreUI::ITelemetry& telemetry);
-
-    MCAPI void discardTrackedOptions();
-
     MCAPI ::std::unordered_map<::std::string, ::Social::Events::OptionChange> getTrackedOptionChanges() const;
 
     MCAPI void sendTrackedTelemetry(::std::string const& optionsGroupName);
 
     MCAPI void sendTrackedTelemetryAlt(::std::string const& optionsGroupName);
-
-    MCAPI ~TelemetryBatcher();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ITelemetry& telemetry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

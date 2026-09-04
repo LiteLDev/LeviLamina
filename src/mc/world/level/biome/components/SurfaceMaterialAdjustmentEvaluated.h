@@ -32,10 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool empty() const;
-
-    MCAPI void makeAdjustments(::SurfaceMaterialBlocks& blockPalette, int height) const;
-
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
     // NOLINTEND
 

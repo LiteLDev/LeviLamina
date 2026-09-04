@@ -12,27 +12,11 @@ class Block;
 
 class DeepslateBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    DeepslateBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DeepslateBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

@@ -12,11 +12,9 @@
 // clang-format off
 class IClientInstance;
 class MinecraftUIRenderContext;
-class ScreenContext;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class HudArmorRenderer : public ::MinecraftUICustomRenderer {
@@ -38,7 +36,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                              mNumEmptyIcons;
     ::ll::TypedStorage<4, 4, float>                               mArmorHeightOffset;
     ::ll::TypedStorage<8, 96, ::std::array<::mce::TexturePtr, 3>> mArmorTextures;
-    ::ll::TypedStorage<8, 1656, ::std::array<::mce::Mesh, 3>>     mArmorMeshes;
+    ::ll::TypedStorage<8, 1776, ::std::array<::mce::Mesh, 3>>     mArmorMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>     mIconPosition;
     ::ll::TypedStorage<4, 16, ::RectangleArea>                    mRenderAABB;
     // NOLINTEND
@@ -51,21 +49,15 @@ public:
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudArmorRenderer();
-
-    MCFOLD bool _areTexturesValid() const;
-
-    MCAPI void _loadArmorTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCFOLD bool _validateArmorMeshes(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:
@@ -79,14 +71,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 };

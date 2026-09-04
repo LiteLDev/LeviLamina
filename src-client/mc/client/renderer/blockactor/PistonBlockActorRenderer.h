@@ -11,7 +11,6 @@
 // clang-format off
 class BaseActorRenderContext;
 struct BlockActorRenderData;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class PistonBlockActorRenderer : public ::BlockActorRenderer {
@@ -24,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PistonBlockActorRenderer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void
@@ -35,26 +30,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PistonBlockActorRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

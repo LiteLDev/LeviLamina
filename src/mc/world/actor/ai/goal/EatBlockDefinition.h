@@ -31,10 +31,14 @@ public:
     // NOLINTEND
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~EatBlockDefinition() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EatBlockDefinition();
-
     MCAPI void addSuccessChanceExpressionNode(::ExpressionNode const& node);
 
     MCAPI void initialize(::EntityContext& entity, ::EatBlockGoal& goal) const;
@@ -50,9 +54,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

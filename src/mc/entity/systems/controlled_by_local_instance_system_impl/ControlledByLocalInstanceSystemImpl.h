@@ -31,7 +31,7 @@ MCAPI void _calculateBoatControlledByLocalInstanceSystem(
     ::StrictEntityContext const& entity,
     ::VehicleComponent const&    vehicleComponent,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
-    ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
+    ::EntityModifier<::ControlledByLocalInstanceComponent> const                                            modifier,
     void (*setCBLI)(
         ::StrictEntityContext const&,
         ::std::optional<::StrictEntityContext> const&,
@@ -45,7 +45,7 @@ MCAPI void _calculateHorseControlledByLocalInstanceSystem(
     ::VehicleComponent const&       vehicleComponent,
     ::ActorDataFlagComponent const& actorData,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
-    ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
+    ::EntityModifier<::ControlledByLocalInstanceComponent> const                                            modifier,
     void (*setCBLI)(
         ::StrictEntityContext const&,
         ::std::optional<::StrictEntityContext> const&,

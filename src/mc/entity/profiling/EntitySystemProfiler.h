@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/container/small_vector.h"
-#include "mc/platform/brstd/flat_map.h"
-
 // auto generated forward declare list
 // clang-format off
-class EntityId;
 class EntityRegistry;
 class EntitySystems;
 // clang-format on
@@ -39,16 +34,11 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI EntitySystemProfiler(::EntityRegistry& entityRegistry, ::EntitySystems& entitySystems);
 
-    MCNAPI ::brstd::flat_map<
-        ::EntityId,
-        ::Bedrock::small_vector<::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>, 400>,
-        ::std::less<::EntityId>,
-        ::std::vector<::EntityId>,
-        ::std::vector<
-            ::Bedrock::small_vector<::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>, 400>>>
-    ExportData() const;
+    MCNAPI void InstallHooks();
 
     MCNAPI void UninstallHooks();
+
+    MCNAPI void ZeroAllTimes();
 
     MCNAPI ~EntitySystemProfiler();
 #endif

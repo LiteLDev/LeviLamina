@@ -22,8 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint GetNumberOfAddresses();
-
     MCAPI NetworkAdapter();
     // NOLINTEND
 

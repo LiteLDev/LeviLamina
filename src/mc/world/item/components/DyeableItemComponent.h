@@ -10,12 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class HashedString;
 class ItemDescriptor;
 class ItemStackBase;
 class SemVersion;
 namespace Bedrock::Safety { class RedactableString; }
-namespace SharedTypes::v1_21_30 { struct DyeableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -30,22 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DyeableItemComponent();
-
-    MCAPI explicit DyeableItemComponent(::mce::Color const& color);
-
-    MCAPI explicit DyeableItemComponent(::SharedTypes::v1_21_30::DyeableItemComponent component);
-
     MCAPI void
     appendFormattedHovertext(::ItemStackBase const& item, ::Bedrock::Safety::RedactableString& hovertext, bool) const;
 
-    MCAPI void clearColor(::ItemStackBase& instance) const;
-
     MCAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
-
-    MCFOLD ::mce::Color const& getDefaultColor() const;
-
-    MCAPI bool hasCustomColor(::ItemStackBase const& instance) const;
 
     MCAPI void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
     // NOLINTEND
@@ -58,18 +44,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCFOLD void* $ctor(::mce::Color const& color);
-
-    MCFOLD void* $ctor(::SharedTypes::v1_21_30::DyeableItemComponent component);
     // NOLINTEND
 
 public:

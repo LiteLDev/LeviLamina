@@ -41,18 +41,6 @@ public:
     DeviceIdEnvironment& operator=(DeviceIdEnvironment const&);
     DeviceIdEnvironment(DeviceIdEnvironment const&);
     DeviceIdEnvironment();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DeviceIdEnvironment();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

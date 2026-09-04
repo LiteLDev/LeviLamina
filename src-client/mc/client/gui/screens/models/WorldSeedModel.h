@@ -26,41 +26,22 @@ public:
 
 public:
     // prevent constructor by default
-    WorldSeedModel& operator=(WorldSeedModel const&);
     WorldSeedModel();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSeedModel(::WorldSeedModel const&);
-
     MCAPI WorldSeedModel(::std::string const& productId, ::std::string const& title, ::std::string const& seed);
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getImagePath() const;
-
-    MCFOLD ::std::string const& getSeed() const;
-
-    MCFOLD ::std::string const& getTitle() const;
 
     MCAPI void setImagePath(
         ::Core::Path const&                                               fullpath,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
-
-    MCAPI ~WorldSeedModel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorldSeedModel const&);
-
     MCAPI void* $ctor(::std::string const& productId, ::std::string const& title, ::std::string const& seed);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

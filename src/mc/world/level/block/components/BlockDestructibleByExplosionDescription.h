@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -18,10 +17,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mExplosionResistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockDestructibleByExplosionDescription();
 
 public:
     // virtual functions
@@ -34,29 +29,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockDestructibleByExplosionDescription(float explosionResistance);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(float explosionResistance);
     // NOLINTEND
 
 public:

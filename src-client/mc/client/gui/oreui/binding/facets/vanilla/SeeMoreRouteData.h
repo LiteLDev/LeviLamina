@@ -22,14 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::OreUI::SeeMoreRouteData& operator=(::OreUI::SeeMoreRouteData&&);
-
-    MCAPI ~SeeMoreRouteData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

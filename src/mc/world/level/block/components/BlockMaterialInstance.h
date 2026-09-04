@@ -27,19 +27,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockMaterialInstance(BlockMaterialInstance const&);
-    BlockMaterialInstance();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
-
-    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
-
-    MCAPI ::std::string renderLayerToString(::std::string const& defaultValue) const;
-
     MCAPI ~BlockMaterialInstance();
     // NOLINTEND
 
@@ -52,6 +41,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

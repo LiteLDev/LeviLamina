@@ -33,22 +33,6 @@ public:
         Data& operator=(Data const&);
         Data(Data const&);
         Data();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::std::string_view toBinary() const;
-
-        MCNAPI ::cereal::DynamicValue const& toDynamicValue() const;
-
-        MCNAPI ::Json::Value const& toJsonCpp() const;
-
-        MCNAPI ::std::string const& toJsonString() const;
-
-        MCNAPI ::rapidjson::
-            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
-            toRapidjson() const;
-        // NOLINTEND
     };
 
 public:

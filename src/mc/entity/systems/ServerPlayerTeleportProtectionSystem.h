@@ -23,11 +23,11 @@ namespace ServerPlayerTeleportProtectionSystem {
 MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void tickTeleportProtection(
-    ::StrictEntityContext const&                                 context,
-    ::StateVectorComponent const&                                stateVector,
-    ::ServerPlayerMovementComponent&                             serverPlayerMovement,
-    ::ServerPlayerTeleportingFlagComponent&                      serverPlayerTeleporting,
-    ::Optional<::InvalidChunkFoundWhileTeleportingFlagComponent> hadInvalidChunkFound,
+    ::StrictEntityContext const&                                       context,
+    ::StateVectorComponent const&                                      stateVector,
+    ::ServerPlayerMovementComponent&                                   serverPlayerMovement,
+    ::ServerPlayerTeleportingFlagComponent&                            serverPlayerTeleporting,
+    ::Optional<::InvalidChunkFoundWhileTeleportingFlagComponent> const hadInvalidChunkFound,
     ::EntityModifier<::InvalidChunkFoundWhileTeleportingFlagComponent, ::ServerPlayerTeleportingFlagComponent> modifier,
     ::IConstBlockSource const&                                                                                 region
 );

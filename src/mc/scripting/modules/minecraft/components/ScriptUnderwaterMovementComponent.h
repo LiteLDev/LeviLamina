@@ -24,12 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

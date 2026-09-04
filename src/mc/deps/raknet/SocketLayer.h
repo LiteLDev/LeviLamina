@@ -18,12 +18,6 @@ public:
 
     MCAPI static ::RakNet::RakString GetSubNetForSocketAndIp(::RakNet::RakString inIpString);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::function<::std::vector<::std::string>()>& mPlatformAdapterOverride();
-    // NOLINTEND
 };
 
 } // namespace RakNet

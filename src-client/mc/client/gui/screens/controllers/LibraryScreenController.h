@@ -68,7 +68,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryScreenController() /*override*/;
+    virtual ~LibraryScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -107,21 +107,11 @@ public:
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
 
-    MCAPI void _fireEventLibrarySearch();
-
     MCAPI ::LibraryItem* _getItem(::UIPropertyBag& bag) const;
-
-    MCAPI void _handleFetchCompletion();
-
-    MCAPI void _handleFetchErrors();
 
     MCAPI void _initialize();
 
     MCAPI void _initializeLibraryCollection(::std::shared_ptr<::LibraryCollection> libraryCollection);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -154,12 +144,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
@@ -169,13 +153,5 @@ public:
     MCAPI void $onInit();
 
     MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

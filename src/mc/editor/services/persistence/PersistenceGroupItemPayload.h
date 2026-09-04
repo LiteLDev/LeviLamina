@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/PersistenceGroupItemChangeAction.h"
 #include "mc/editor/network/NetworkPayload.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::Services { struct PersistenceGroupItemMetadata; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -30,27 +28,9 @@ public:
     PersistenceGroupItemPayload();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PersistenceGroupItemPayload(
-        ::Editor::Services::PersistenceGroupItemMetadata     groupItemMetadata,
-        ::Editor::Services::PersistenceGroupItemChangeAction action
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::Services::PersistenceGroupItemMetadata     groupItemMetadata,
-        ::Editor::Services::PersistenceGroupItemChangeAction action
-    );
     // NOLINTEND
 
 public:

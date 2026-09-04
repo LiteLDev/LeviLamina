@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
-class BiomeComponentFactory;
 class BiomeRegistry;
 class Experiments;
 class IWorldRegistriesProvider;
@@ -24,15 +23,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void initBiomeComponentGlue(::BiomeJsonDocumentGlue& biomeJsonDocumentGlue);
 
-    MCAPI static void initBiomeComponents(::BiomeComponentFactory& factory);
-
     MCAPI static void initBiomeDimensionComponent(::BiomeRegistry& registry);
 
     MCAPI static void initBiomes(
         ::BiomeRegistry&         registry,
         ::SpawnSettings const&   spawnSettings,
         ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&     experiments
+        ::Experiments const&
     );
 
     MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
@@ -40,8 +37,6 @@ public:
     MCAPI static void initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
 
     MCAPI static void initVanillaBiomeTypeComponent(::BiomeRegistry& registry);
-
-    MCAPI static void shutdownBiomes();
     // NOLINTEND
 
 public:

@@ -26,34 +26,13 @@ public:
 
 public:
     // prevent constructor by default
+    EmotePacketPayload& operator=(EmotePacketPayload const&);
     EmotePacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI EmotePacketPayload(::EmotePacketPayload const&);
-
-#ifdef LL_PLAT_C
-    MCAPI EmotePacketPayload(
-        ::ActorRuntimeID     runtimeId,
-        ::std::string const& pieceId,
-        uint                 emoteTicks,
-        ::std::string const& xuid,
-        ::std::string const& platformId
-    );
-
-    MCAPI bool isEmoteChatMuted() const;
-#endif
-
-    MCAPI bool isServerSide() const;
-
-    MCAPI ::EmotePacketPayload& operator=(::EmotePacketPayload&&);
-
-    MCAPI ::EmotePacketPayload& operator=(::EmotePacketPayload const&);
-
-    MCAPI void setEmoteChatMute();
-
-    MCAPI void setServerSide();
 
     MCAPI ~EmotePacketPayload();
     // NOLINTEND
@@ -62,16 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::EmotePacketPayload const&);
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::ActorRuntimeID     runtimeId,
-        ::std::string const& pieceId,
-        uint                 emoteTicks,
-        ::std::string const& xuid,
-        ::std::string const& platformId
-    );
-#endif
     // NOLINTEND
 
 public:

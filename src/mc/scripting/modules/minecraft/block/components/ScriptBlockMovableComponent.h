@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 #include "mc/scripting/modules/minecraft/block/components/ScriptMovementType.h"
 #include "mc/scripting/modules/minecraft/block/components/ScriptStickyType.h"
@@ -12,8 +12,6 @@
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
-namespace Scripting { class Release; }
-namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
 
@@ -39,25 +37,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
-
     MCAPI static ::Scripting::EnumBinding bindMovementType();
 
     MCAPI static ::Scripting::EnumBinding bindStickyType();
-
-    MCFOLD static ::std::optional<::Scripting::Release> overrideEnumVersion();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -24,43 +24,16 @@ public:
     ::ll::TypedStorage<8, 8, ::WeakPtr<::Item const>> mItem;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ScriptItemType();
-
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI explicit ScriptItemType(::WeakPtr<::Item const> item);
-#endif
-
-    MCFOLD ::Item const& getItem() const;
-
-    MCFOLD ::WeakPtr<::Item const> const& getItemWeakPtr() const;
-
     MCAPI ::std::string getName() const;
-
-#ifdef LL_PLAT_S
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptItemType const& other) const;
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(::WeakPtr<::Item const> item);
-#endif
     // NOLINTEND
 };
 

@@ -18,10 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DebugComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DebugComponent() /*override*/ = default;
@@ -29,22 +25,6 @@ public:
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DebugComponent(::UIControl& owner);
-
-    MCFOLD ::std::string const& getDescription() const;
-
-    MCFOLD void setDescription(::std::string const& description);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

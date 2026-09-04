@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class IDeferredDebugUpdate; }
-// clang-format on
-
 namespace mce {
 
 struct FlushedTransactions {
@@ -27,25 +22,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI FlushedTransactions(
-        uint64                                                          count,
-        ::std::vector<::std::unique_ptr<::mce::IDeferredDebugUpdate>>&& deferredDebugUpdates
-    );
-
-    MCNAPI uint64 flushDeferredDebugUpdates();
-
-    MCNAPI uint64 getCount() const;
-
     MCNAPI ~FlushedTransactions();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void*
-    $ctor(uint64 count, ::std::vector<::std::unique_ptr<::mce::IDeferredDebugUpdate>>&& deferredDebugUpdates);
 #endif
     // NOLINTEND
 

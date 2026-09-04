@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
 class ItemDescriptor;
 class Mob;
 class MoveControlComponent;
@@ -111,15 +110,7 @@ public:
 
     MCAPI bool _findTargetBlock();
 
-    MCAPI bool _isValidTargetBlock(
-        ::BlockPos const&      blockPos,
-        ::BlockSource const&   region,
-        ::NavigationComponent& navigation
-    ) const;
-
     MCAPI bool _turnToTarget(::MoveControlComponent const& moveControl) const;
-
-    MCAPI void resetCooldown();
     // NOLINTEND
 
 public:

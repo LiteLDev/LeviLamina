@@ -14,16 +14,8 @@ namespace VibrationListenerUtils {
 // NOLINTBEGIN
 MCNAPI int getGameEventFrequency(::GameEvent const& gameEvent);
 
-MCNAPI ::GameEvent const& getResonateEventByFrequency(int frequency);
-
-MCNAPI bool ignoreVibrationIfOnVibrationDampeningBlock(
-    ::BlockSource&            region,
-    ::GameEvent const&        gameEvent,
-    ::GameEventContext const& gameEventContext
-);
-
 MCNAPI bool
-ignoreVibrationIfSneaking(::BlockSource& gameEvent, ::GameEvent const& gameEventContext, ::GameEventContext const&);
+ignoreVibrationIfSneaking(::BlockSource&, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
 // NOLINTEND
 
 } // namespace VibrationListenerUtils

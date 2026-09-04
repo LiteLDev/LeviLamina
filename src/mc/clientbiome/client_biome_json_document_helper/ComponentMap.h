@@ -16,6 +16,22 @@ public:
     ComponentMap& operator=(ComponentMap const&);
     ComponentMap(ComponentMap const&);
     ComponentMap();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ~ComponentMap();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
 };
 
 } // namespace ClientBiomeJsonDocumentHelper

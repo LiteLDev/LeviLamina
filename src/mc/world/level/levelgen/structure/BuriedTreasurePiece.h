@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Random;
@@ -30,14 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _buryChest(::BlockSource& region, ::Random& random, ::BlockPos& blockPos) const;
-
-    MCAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;
@@ -45,11 +36,5 @@ public:
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

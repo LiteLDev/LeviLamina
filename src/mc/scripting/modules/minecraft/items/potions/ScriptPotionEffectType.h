@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,8 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<::std::optional<int>, ::Scripting::EngineError> _getDurationTicks() const;
-
-    MCAPI ::std::string getPotionNameIdWithPrefix();
     // NOLINTEND
 
 public:

@@ -5,44 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/actor/monster/Spider.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
-// clang-format on
-
 class CaveSpider : public ::Spider {
-public:
-    // prevent constructor by default
-    CaveSpider();
-
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual float getModelScale() const /*override*/;
 
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CaveSpider(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

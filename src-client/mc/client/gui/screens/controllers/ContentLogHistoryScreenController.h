@@ -29,10 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ContentLogHistoryScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-
-    MCAPI void _handleCopyToClipboard();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

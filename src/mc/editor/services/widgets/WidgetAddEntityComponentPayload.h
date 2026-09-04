@@ -6,13 +6,6 @@
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
-// clang-format on
-
 namespace Editor::Network {
 
 class WidgetAddEntityComponentPayload
@@ -32,24 +25,15 @@ public:
     WidgetAddEntityComponentPayload();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~WidgetAddEntityComponentPayload() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI WidgetAddEntityComponentPayload(::Editor::Network::WidgetAddEntityComponentPayload const&);
-
-    MCNAPI WidgetAddEntityComponentPayload(
-        ::mce::UUID const&             serviceId,
-        ::mce::UUID const&             groupId,
-        ::mce::UUID const&             widgetId,
-        ::mce::UUID const&             componentId,
-        ::std::string const&           componentName,
-        ::Vec3 const&                  pos,
-        bool                           visible,
-        bool                           lockToSurface,
-        ::std::string const&           entityName,
-        bool                           clickable,
-        ::std::optional<::std::string> selectedAnimation,
-        ::std::optional<::std::string> deselectedAnimation
-    );
 
     MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
     operator=(::Editor::Network::WidgetAddEntityComponentPayload&&);
@@ -59,30 +43,15 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::WidgetAddEntityComponentPayload const&);
+    // NOLINTEND
 
-    MCNAPI void* $ctor(
-        ::mce::UUID const&             serviceId,
-        ::mce::UUID const&             groupId,
-        ::mce::UUID const&             widgetId,
-        ::mce::UUID const&             componentId,
-        ::std::string const&           componentName,
-        ::Vec3 const&                  pos,
-        bool                           visible,
-        bool                           lockToSurface,
-        ::std::string const&           entityName,
-        bool                           clickable,
-        ::std::optional<::std::string> selectedAnimation,
-        ::std::optional<::std::string> deselectedAnimation
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

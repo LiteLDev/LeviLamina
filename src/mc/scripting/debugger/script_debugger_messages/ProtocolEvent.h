@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ModuleDescriptor; }
-// clang-format on
-
 namespace ScriptDebuggerMessages {
 
 struct ProtocolEvent {
@@ -22,33 +17,8 @@ public:
 public:
     // prevent constructor by default
     ProtocolEvent& operator=(ProtocolEvent const&);
+    ProtocolEvent(ProtocolEvent const&);
     ProtocolEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ProtocolEvent(::ScriptDebuggerMessages::ProtocolEvent const&);
-
-    MCNAPI ProtocolEvent(::std::vector<::Scripting::ModuleDescriptor>&& pluginDescriptors, bool requirePasscode);
-
-    MCNAPI ::ScriptDebuggerMessages::ProtocolEvent& operator=(::ScriptDebuggerMessages::ProtocolEvent&&);
-
-    MCNAPI ~ProtocolEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebuggerMessages::ProtocolEvent const&);
-
-    MCNAPI void* $ctor(::std::vector<::Scripting::ModuleDescriptor>&& pluginDescriptors, bool requirePasscode);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

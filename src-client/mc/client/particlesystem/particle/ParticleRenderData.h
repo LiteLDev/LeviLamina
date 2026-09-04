@@ -77,26 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleRenderData();
-
-    MCAPI ushort addMaterial(::mce::MaterialPtr const& materialPtr);
-
-    MCAPI ushort addTexture(::PBRTexturePtrs const& texturePtr, ::std::optional<::MERSUniformData> const& mersUniform);
-
     MCAPI void reset();
-
-    MCAPI ~ParticleRenderData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

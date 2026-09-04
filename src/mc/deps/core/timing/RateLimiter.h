@@ -21,17 +21,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI RateLimiter(uint64 limit, ::std::chrono::seconds timeIntervalSeconds);
-
     MCNAPI bool tryAddInstance();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(uint64 limit, ::std::chrono::seconds timeIntervalSeconds);
 #endif
     // NOLINTEND
 };

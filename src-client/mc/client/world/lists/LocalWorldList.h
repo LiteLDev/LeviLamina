@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -49,9 +48,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalWorldList() /*override*/;
+    virtual ~LocalWorldList() /*override*/ = default;
 
-    virtual void onLevelAdded(::std::string const& levelId) /*override*/;
+    virtual void onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type) /*override*/;
 
     virtual void onLevelUpdated(::std::string const& levelId) /*override*/;
 
@@ -77,15 +76,7 @@ public:
     MCAPI void
     _filterWorlds(::std::vector<::LevelSummary>& worlds, ::TrialManager const& trialManager, bool isEditorMode);
 
-    MCFOLD bool const getOtherStorageContainsWorlds() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const getWorldDirectoryPath() const;
-
-    MCFOLD ::std::vector<::LevelSummary> const& getWorlds() const;
-
-    MCFOLD bool isDirty() const;
-
-    MCFOLD void onEntitlementRefresh();
+    MCAPI void onEntitlementRefresh();
 
     MCAPI void update(::TrialManager const& trialManager);
     // NOLINTEND
@@ -102,29 +93,17 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onLevelAdded(::std::string const& levelId);
+    MCAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
-    MCFOLD void $onLevelUpdated(::std::string const& levelId);
+    MCAPI void $onLevelUpdated(::std::string const& levelId);
 
-    MCFOLD void $onLevelDeleted(::std::string const& levelId);
+    MCAPI void $onLevelDeleted(::std::string const& levelId);
 
-    MCFOLD void $onSummaryUpdated(::std::string const& levelId);
+    MCAPI void $onSummaryUpdated(::std::string const& levelId);
 
-    MCFOLD void $onStorageChanged();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $onStorageChanged();
     // NOLINTEND
 };
 

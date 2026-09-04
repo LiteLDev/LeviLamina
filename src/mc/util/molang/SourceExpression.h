@@ -75,16 +75,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SourceExpression(::Molang::details::SourceTree node);
-
     MCNAPI SourceExpression(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Molang::details::SourceTree node);
-
     MCNAPI void* $ctor(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
 

@@ -45,7 +45,7 @@ public:
 
     MCAPI void $advanceLiveFrame(::Actor& actor, ::std::optional<uint64>);
 
-    MCFOLD ::std::bitset<2> $getCorrectionTypeBitset() const;
+    MCAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
     // NOLINTEND
 
 public:

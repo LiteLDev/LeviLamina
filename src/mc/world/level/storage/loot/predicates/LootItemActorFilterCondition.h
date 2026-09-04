@@ -31,10 +31,4 @@ public:
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -33,11 +33,7 @@ public:
 
     MCAPI static ::std::string getStringFromType(::persona::BodySize::Type bodySizeType);
 
-    MCAPI static ::std::string_view getTexturePathByType(::persona::BodySize::Type bodySizeType);
-
     MCAPI static ::persona::BodySize::Type getTypeFromString(::std::string_view bodySizeStr);
-
-    MCAPI static bool isValidType(::persona::BodySize::Type bodySizeType);
 #endif
     // NOLINTEND
 

@@ -43,6 +43,8 @@ public:
     // NOLINTBEGIN
     MCAPI ModalScreenData(::ModalScreenData const&);
 
+    MCAPI ::ModalScreenData& operator=(::ModalScreenData&&);
+
     MCAPI ~ModalScreenData();
     // NOLINTEND
 

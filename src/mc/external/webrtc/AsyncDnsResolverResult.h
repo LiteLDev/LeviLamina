@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SocketAddress; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace webrtc {
@@ -15,15 +15,9 @@ public:
     // NOLINTBEGIN
     virtual ~AsyncDnsResolverResult() = default;
 
-    virtual bool GetResolvedAddress(int family, ::rtc::SocketAddress* addr) const = 0;
+    virtual bool GetResolvedAddress(int family, ::webrtc::SocketAddress* addr) const = 0;
 
     virtual int GetError() const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

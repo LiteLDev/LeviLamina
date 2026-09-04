@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourcePackDataInfoPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -64,16 +68,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackDataInfoPacket();
-
     MCAPI explicit ResourcePackDataInfoPacket(::ResourcePackDataInfoPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ResourcePackDataInfoPacketPayload payload);
     // NOLINTEND
 

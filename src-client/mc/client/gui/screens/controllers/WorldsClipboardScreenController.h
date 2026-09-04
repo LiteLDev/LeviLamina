@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/gui/screens/controllers/WorldsClipboardCallbacks.h"
 
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-namespace Core { class FileStorageArea; }
 // clang-format on
 
 class WorldsClipboardScreenController : public ::MainMenuScreenController {
@@ -28,18 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WorldsClipboardScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
-
-    MCAPI bool _checkAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea);
-
-    MCAPI ::ui::ViewRequest _copyWorld();
-
-    MCAPI ::ui::ViewRequest _deleteWorld();
-
-    MCAPI void _displayCopyFailedModal();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void setCallbacks(::WorldsClipboardCallbacks callbacks);
     // NOLINTEND
 
 public:

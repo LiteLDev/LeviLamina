@@ -9,13 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class ClientInstanceScreenModel;
 class Player;
 struct ActorUniqueID;
 struct INpcDialogueData;
 namespace Json { class Value; }
-namespace npc { struct CommandAction; }
-namespace npc { struct UrlAction; }
 // clang-format on
 
 class NpcDialogScreenController : public ::ClientInstanceScreenController, public ::NpcEventListener {
@@ -59,31 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcDialogScreenController(
-        ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::Player&                                      player,
-        ::std::shared_ptr<::INpcDialogueData>          dialogueData
-    );
-
     MCAPI void _leaveScreen(bool performClosingActions);
-
-    MCAPI void _openUrl(::std::string const& url);
-
-    MCAPI void _performAction(::std::variant<::npc::CommandAction, ::npc::UrlAction> const* action, int index);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::Player&                                      player,
-        ::std::shared_ptr<::INpcDialogueData>          dialogueData
-    );
     // NOLINTEND
 
 public:
@@ -91,20 +64,10 @@ public:
     // NOLINTBEGIN
     MCAPI void $onCreation();
 
-    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
 
     MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

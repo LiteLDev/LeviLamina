@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptTickListener() /*override*/;
+    virtual ~ScriptTickListener() /*override*/ = default;
 
     virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
 
@@ -58,33 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTickListener(
-        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
-        ::LevelEventCoordinator&          levelEventCoordinator,
-        ::ScriptPluginManager&            pluginManager,
-        ::ScriptDiagnostics&              diagnostics,
-        ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
-    );
-
     MCAPI ::ServerPerformanceData& _getServerPerfData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
-        ::LevelEventCoordinator&          levelEventCoordinator,
-        ::ScriptPluginManager&            pluginManager,
-        ::ScriptDiagnostics&              diagnostics,
-        ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -99,13 +73,5 @@ public:
     MCAPI void $onScriptTickEnd();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScriptDeferredEventListener();
-
-    MCNAPI static void** $vftableForLevelEventListener();
     // NOLINTEND
 };

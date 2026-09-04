@@ -58,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MarketplacePassPDPScreenController() /*override*/;
+    virtual ~MarketplacePassPDPScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -96,21 +96,9 @@ public:
 
     MCAPI ::std::string const _getMarketplacePassOfferString(::std::string const& locKey);
 
-    MCAPI void _getMarketplacePassVisualStyle();
-
-    MCFOLD bool _isCsbSubscribed() const;
+    MCAPI bool _isCsbSubscribed() const;
 
     MCAPI bool _isRealmsPlusSubscriptionActive() const;
-
-    MCFOLD void _openPurchaseInProgress();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerCollection();
-
-    MCAPI void _registerContentSectionBindings();
-
-    MCAPI void _registerEvents();
     // NOLINTEND
 
 public:
@@ -123,12 +111,6 @@ public:
         ::StoreNavigationOrigin                              origin,
         ::sidebar::navigationLayout::Type                    sidebarLayoutType
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -151,15 +133,5 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCAPI ::sidebar::navigationLayout::Type $getSidebarLayoutType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

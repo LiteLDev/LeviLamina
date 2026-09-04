@@ -62,22 +62,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI SettingsCommandPacket();
-
 #ifdef LL_PLAT_C
-    MCAPI explicit SettingsCommandPacket(::SettingsCommandPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SettingsCommandPacketPayload payload);
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 

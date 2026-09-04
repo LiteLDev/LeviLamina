@@ -11,10 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mIsHumid;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

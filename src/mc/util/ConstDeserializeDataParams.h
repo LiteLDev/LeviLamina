@@ -32,11 +32,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI ConstDeserializeDataParams(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
-#endif
 
-    MCNAPI ConstDeserializeDataParams(::Json::Value const& value, ::DeserializeDataParams const& parent);
-
-#ifdef LL_PLAT_C
     MCNAPI ConstDeserializeDataParams(
         ::Json::Value const&      value,
         ::SemVersion const&       formatVersion,
@@ -54,11 +50,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
-#endif
 
-    MCNAPI void* $ctor(::Json::Value const& value, ::DeserializeDataParams const& parent);
-
-#ifdef LL_PLAT_C
     MCNAPI void*
     $ctor(::Json::Value const& value, ::SemVersion const& formatVersion, ::MinEngineVersion const& minEngineVersion);
 #endif

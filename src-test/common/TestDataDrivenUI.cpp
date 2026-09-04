@@ -478,7 +478,7 @@ void runSecurity(Player& player, CommandOutput& output) {
     }
 
     auto  state            = std::make_shared<SecurityState>(player);
-    auto& sync             = static_cast<ServerPlayer&>(player).getDataStoreSync();
+    auto& sync             = *static_cast<ServerPlayer&>(player).mDataStoreSync;
     auto  beforeProperties = customFormProperties(sync);
 
     state->form.label(state->readOnly)
@@ -560,7 +560,7 @@ coro::CoroTask<void> runStress(mce::UUID uuid, int count) {
         report(uuid, "stress: player unavailable", true);
         co_return;
     }
-    auto const baseline = snapshot(initialPlayer->getDataStoreSync());
+    auto const baseline = snapshot(*initialPlayer->mDataStoreSync);
 
     for (int iteration = 0; iteration < count; ++iteration) {
         auto* player = findPlayer(uuid);
@@ -590,7 +590,7 @@ coro::CoroTask<void> runStress(mce::UUID uuid, int count) {
         report(uuid, "stress: player unavailable for final snapshot", true);
         co_return;
     }
-    auto const final  = snapshot(finalPlayer->getDataStoreSync());
+    auto const final  = snapshot(*finalPlayer->mDataStoreSync);
     auto const passed = final.activeProperties == baseline.activeProperties
                      && final.writablePathEntries == baseline.writablePathEntries;
     report(

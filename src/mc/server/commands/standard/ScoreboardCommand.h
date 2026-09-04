@@ -18,7 +18,6 @@ class CommandOutput;
 class CommandRegistry;
 class Objective;
 class Scoreboard;
-class ServerLevel;
 struct ActorUniqueID;
 struct ScoreboardId;
 // clang-format on
@@ -62,18 +61,6 @@ public:
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit InitProxy(::ServerLevel& level);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ServerLevel& level);
-        // NOLINTEND
     };
 
     struct SetScoreOutput {
@@ -83,18 +70,6 @@ public:
         ::ll::TypedStorage<4, 4, int>            mSuccessCount;
         ::ll::TypedStorage<4, 4, int>            mFirstNewScore;
         ::ll::TypedStorage<8, 32, ::std::string> mFirstSuccess;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~SetScoreOutput();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -129,14 +104,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScoreboardCommand();
-
-    MCAPI void _generateCumulativeOutput(
-        ::ScoreboardCommand::SetScoreOutput const& cumulativeOutput,
-        ::Objective const&                         objective,
-        ::CommandOutput&                           output
-    ) const;
-
     MCAPI ::Objective* _getObjective(
         ::Scoreboard const&  scoreboard,
         ::std::string const& name,
@@ -152,24 +119,6 @@ public:
         bool                                      shouldCreateMissingId
     ) const;
 
-    MCAPI bool _getSelectorResultsForObjective(
-        ::std::vector<::ScoreboardId>&            results,
-        ::Scoreboard&                             scoreboard,
-        ::WildcardCommandSelector<::Actor> const& selector,
-        ::Objective&                              objective,
-        ::CommandOrigin const&                    origin,
-        ::CommandOutput&                          output,
-        bool                                      shouldCreateMissingId
-    ) const;
-
-    MCAPI void addObjective(
-        ::Scoreboard&        scoreboard,
-        ::std::string const& name,
-        ::std::string const& criteriaName,
-        ::std::string const& displayName,
-        ::CommandOutput&     output
-    ) const;
-
     MCAPI void addPlayerScore(
         ::Scoreboard&                                                 scoreboard,
         ::PlayerScoreSetFunction                                      fn,
@@ -180,79 +129,15 @@ public:
         ::ScoreboardCommand::SetScoreOutput&                          cumulativeOutput
     ) const;
 
-    MCAPI bool applyPlayerOperation(
-        ::Scoreboard&                                                 scoreboard,
-        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver,
-        ::ScoreboardId const&                                         targetId,
-        ::Objective&                                                  targetObjective,
-        ::Objective&                                                  objective,
-        ::CommandOrigin const&                                        origin,
-        ::CommandOutput&                                              output,
-        ::ScoreboardCommand::SetScoreOutput&                          cumulativeOutput
-    ) const;
-
-    MCAPI void listObjectives(::Scoreboard const& scoreboard, ::CommandOutput& output) const;
-
-    MCAPI void listPlayers(
-        ::Scoreboard&                                                 scoreboard,
-        ::ScoreboardId const&                                         targetId,
-        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver,
-        ::CommandOutput&                                              output
-    ) const;
-
-    MCAPI void objectives(::Scoreboard& scoreboard, ::CommandOrigin const& output, ::CommandOutput&) const;
-
     MCAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void removeObjective(::Scoreboard& scoreboard, ::std::string const& name, ::CommandOutput& output) const;
-
-    MCAPI void resetPlayer(
-        ::Scoreboard&                                                 scoreboard,
-        ::ScoreboardId const&                                         targetId,
-        ::Objective*                                                  objective,
-        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver,
-        ::CommandOutput&                                              output
-    ) const;
-
-    MCAPI void setDisplayObjective(
-        ::Scoreboard&        scoreboard,
-        ::std::string const& displaySlotName,
-        ::std::string const& objectiveName,
-        ::ObjectiveSortOrder order,
-        ::CommandOutput&     output
-    ) const;
-
-    MCAPI bool setPlayerRandomScore(
-        ::Scoreboard&                                                 scoreboard,
-        ::ScoreboardId const&                                         targetId,
-        ::Objective&                                                  targetObjective,
-        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver,
-        ::CommandOutput&                                              output,
-        ::ScoreboardCommand::SetScoreOutput&                          cumulativeOutput
-    ) const;
-
-    MCAPI void testPlayerScore(
-        ::ScoreboardId const&                                         targetId,
-        ::Objective&                                                  objective,
-        ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver,
-        ::CommandOutput&                                              output
-    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> _getNonSortableDisplaySlots(::Scoreboard&);
-
-    MCAPI static ::std::vector<::std::string> _getSortableDisplaySlots(::Scoreboard& scoreboard);
+    MCAPI static ::std::vector<::std::string> _getNonSortableDisplaySlots(::Scoreboard& scoreboard);
 
     MCAPI static void setup(::CommandRegistry& registry, ::ScoreboardCommand::InitProxy&& dependencies);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -262,17 +147,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ScoreboardCommand::Action>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ScoreboardCommand::Category>();
-// clang-format on

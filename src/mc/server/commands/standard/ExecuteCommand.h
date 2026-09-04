@@ -15,7 +15,6 @@ class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-struct ExecuteCommandPositionData;
 // clang-format on
 
 class ExecuteCommand : public ::Command {
@@ -45,29 +44,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ExecuteCommand();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ExecuteCommandPositionData getExecutePositionData(
-        int                           version,
-        ::Actor&                      actor,
-        ::CommandPositionFloat const& commandPosition,
-        ::CommandPosition const&      detectCommandPosition,
-        ::ExecuteCommand::Mode        mode
-    );
-
     MCAPI static void setup(::CommandRegistry& registry, bool isLegacyActive, int newExecuteStartVersion);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -77,15 +56,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ExecuteCommand::Mode>();
-// clang-format on

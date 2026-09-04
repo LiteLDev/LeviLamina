@@ -31,26 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionCraftGrindstone();
-
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionCraftGrindstone(::ItemStackNetIdVariant const& netId, int repairCost);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::ItemStackNetIdVariant const& netId, int repairCost);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_write(::BinaryStream& stream) const;

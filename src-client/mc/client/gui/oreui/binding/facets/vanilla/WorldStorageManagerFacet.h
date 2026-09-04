@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/world/ClearPlayerDataType.h"
@@ -21,7 +21,7 @@ namespace World { class WorldEditor; }
 
 namespace OreUI {
 
-class WorldStorageManagerFacet : public ::OreUI::FacetBase<::OreUI::WorldStorageManagerFacet> {
+class WorldStorageManagerFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldStorageManagerFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,9 +56,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    WorldStorageManagerFacet(::World::WorldEditor& worldEditor, ::World::InfiniteWorldConverter& worldSizeConverter);
-
     MCAPI void clearDuplicateWorldTaskState();
 
     MCAPI void clearExportWorldResult();
@@ -79,9 +76,9 @@ public:
 
     MCFOLD ::OreUI::FacetTaskState getDuplicateWorldTaskState() const;
 
-    MCFOLD ::std::optional<::World::IWorldStorageHandler::ExportWorldResult> const& getExportWorldTaskResult() const;
+    MCAPI ::std::optional<::World::IWorldStorageHandler::ExportWorldResult> const& getExportWorldTaskResult() const;
 
-    MCFOLD ::std::optional<::World::InfiniteWorldConverter::Result> const& getMakeWorldInfiniteError() const;
+    MCAPI ::std::optional<::World::InfiniteWorldConverter::Result> const& getMakeWorldInfiniteError() const;
 
     MCAPI float getMakeWorldInfiniteProgress() const;
 
@@ -103,12 +100,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::World::WorldEditor& worldEditor, ::World::InfiniteWorldConverter& worldSizeConverter);
     // NOLINTEND
 
 public:

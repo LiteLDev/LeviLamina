@@ -16,12 +16,6 @@ public:
 
     virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const = 0;
 
-    virtual ::std::unique_ptr<::IRandom> forString(::std::string const& string) const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    virtual ::std::unique_ptr<::IRandom> forString(::std::string const& s) const = 0;
     // NOLINTEND
 };

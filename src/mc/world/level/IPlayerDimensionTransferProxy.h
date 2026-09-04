@@ -62,10 +62,4 @@ public:
 
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

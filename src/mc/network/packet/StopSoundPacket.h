@@ -72,22 +72,14 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual ~StopSoundPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI StopSoundPacket();
-
-    MCAPI explicit StopSoundPacket(::StopSoundPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::StopSoundPacketPayload payload);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

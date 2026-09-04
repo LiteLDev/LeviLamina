@@ -47,7 +47,7 @@ public:
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& model) const = 0;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const = 0;
 
     virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 

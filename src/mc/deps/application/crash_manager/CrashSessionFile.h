@@ -20,12 +20,6 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const& configure(::Core::Path const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock

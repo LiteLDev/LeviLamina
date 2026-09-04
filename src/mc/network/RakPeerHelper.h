@@ -46,18 +46,6 @@ public:
 
         virtual ushort getDefaultGamePortv6() const = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -78,8 +66,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
-
     MCAPI ::RakNet::StartupResult _startupInternal(
         ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
         ::ConnectionDefinition const&                definition,

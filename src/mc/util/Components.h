@@ -33,14 +33,6 @@ public:
     MCNAPI explicit Components(::Util::Url::ComponentsView const& other);
 #endif
 
-    MCNAPI Components(
-        ::std::string const& scheme,
-        ::std::string const& authority,
-        ::std::string const& path,
-        ::std::string const& query,
-        ::std::string const& fragment
-    );
-
     MCNAPI ~Components();
     // NOLINTEND
 
@@ -50,14 +42,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Util::Url::ComponentsView const& other);
 #endif
-
-    MCNAPI void* $ctor(
-        ::std::string const& scheme,
-        ::std::string const& authority,
-        ::std::string const& path,
-        ::std::string const& query,
-        ::std::string const& fragment
-    );
     // NOLINTEND
 
 public:

@@ -22,12 +22,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual bool canBePulledIntoVehicle() const /*override*/;
+
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     virtual bool canStartJumpSquish() const /*override*/;
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
 
 public:
@@ -53,11 +57,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $canBePulledIntoVehicle() const;
+
     MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
     MCAPI bool $canStartJumpSquish() const;
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
 
     // NOLINTEND

@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Pack;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 // clang-format on
@@ -43,16 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI int64 getRealmId() const;
-
-    MCNAPI void setPackContent(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackContent);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::PackOrigin $getPackOrigin() const;
@@ -62,12 +51,6 @@ public:
     MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

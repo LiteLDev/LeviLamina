@@ -14,22 +14,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameTestRequestPacketPayload& operator=(GameTestRequestPacketPayload const&);
-    GameTestRequestPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameTestRequestPacketPayload(::GameTestRequestPacketPayload const&);
-
     MCAPI ~GameTestRequestPacketPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::GameTestRequestPacketPayload const&);
     // NOLINTEND
 
 public:

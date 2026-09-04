@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -35,9 +32,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
 
     MCAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
-
-    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
-    setSkinIndex(int skinIndex);
     // NOLINTEND
 
 public:
@@ -58,12 +52,6 @@ public:
     MCAPI bool $_isValid() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

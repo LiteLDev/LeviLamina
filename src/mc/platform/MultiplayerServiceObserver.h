@@ -26,7 +26,7 @@ public:
 
     virtual void onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
 
-    virtual void onPlayerLeftLobby(::Social::OnlineId const& player);
+    virtual void onPlayerLeftLobby(::Social::OnlineId const&);
     // NOLINTEND
 
 public:
@@ -39,7 +39,7 @@ public:
 
     MCFOLD void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
 
-    MCFOLD void $onPlayerLeftLobby(::Social::OnlineId const& player);
+    MCFOLD void $onPlayerLeftLobby(::Social::OnlineId const&);
 #endif
 
 

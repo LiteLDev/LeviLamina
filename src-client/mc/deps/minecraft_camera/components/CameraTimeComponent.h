@@ -21,26 +21,13 @@ public:
         // NOLINTEND
     };
 
-    struct DeltaTime {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                  mDeltaTime;
-        ::ll::TypedStorage<4, 8, ::std::optional<float>> mElapsedTime;
-        // NOLINTEND
-    };
+    struct DeltaTime {};
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mUpdatedAt;
     ::ll::TypedStorage<4, 4, float> mDeltaTime;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void updateDeltaTime(::MinecraftCamera::CameraTimeComponent::ElapsedTime const& time);
     // NOLINTEND
 };
 

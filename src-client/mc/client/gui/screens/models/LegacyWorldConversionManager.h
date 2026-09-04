@@ -7,15 +7,22 @@
 
 // auto generated forward declare list
 // clang-format off
+class IContentAcquisition;
 class IDlcBatchModel;
-class MainMenuScreenModel;
+class IDlcValidation;
+class ILevelListCache;
+struct PackIdVersion;
 // clang-format on
 
 class LegacyWorldConversionManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::MainMenuScreenModel&>   mMainMenuScreenModel;
+    ::ll::TypedStorage<8, 8, ::ILevelListCache&>     mLevelListCache;
+    ::ll::TypedStorage<8, 8, ::IContentAcquisition&> mContentAcquisition;
+    ::ll::TypedStorage<8, 8, ::IDlcValidation&>      mDlcValidation;
+    ::ll::TypedStorage<8, 64, ::std::function<::IDlcBatchModel&(::std::vector<::PackIdVersion> const&)>>
+                                                       mDlcBatchModelProvider;
     ::ll::TypedStorage<4, 4, ::LoadingState>           mConversionState;
     ::ll::TypedStorage<4, 4, float>                    mLegacyWorldConversionProgress;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>> mExistenceTracker;
@@ -37,15 +44,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyWorldConversionManager(::MainMenuScreenModel& screenModel);
-
-    MCAPI ::LoadingState getConversionState() const;
-
-    MCAPI float getProgress() const;
-
-    MCAPI void reset();
-
-    MCFOLD void setLegacyWorldConversionProgress(float progress);
+    MCAPI LegacyWorldConversionManager(
+        ::ILevelListCache&                                                        levelListCache,
+        ::IContentAcquisition&                                                    contentAcquisition,
+        ::IDlcValidation&                                                         dlcValidation,
+        ::std::function<::IDlcBatchModel&(::std::vector<::PackIdVersion> const&)> dlcBatchModelProvider
+    );
 
     MCAPI void tryAcquireMissingDlc(::std::string const& levelId, ::std::function<void(bool)> downloadCompleteCallback);
     // NOLINTEND
@@ -53,7 +57,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MainMenuScreenModel& screenModel);
+    MCAPI void* $ctor(
+        ::ILevelListCache&                                                        levelListCache,
+        ::IContentAcquisition&                                                    contentAcquisition,
+        ::IDlcValidation&                                                         dlcValidation,
+        ::std::function<::IDlcBatchModel&(::std::vector<::PackIdVersion> const&)> dlcBatchModelProvider
+    );
     // NOLINTEND
 
 public:

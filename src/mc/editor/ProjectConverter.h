@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProjectConverter() /*override*/;
+    virtual ~ProjectConverter() /*override*/ = default;
 
     virtual void enqueueConvertImportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
@@ -76,20 +76,20 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     );
+    // NOLINTEND
 
-    MCNAPI void _fixupPackHistoryFile(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _fixupPackHistoryFile(
         ::Core::PathBuffer<::std::string> const& filePath,
         ::std::unordered_set<::mce::UUID> const& packsToRemove
-    ) const;
+    );
 
-    MCNAPI void _fixupPacksFile(
+    MCNAPI static void _fixupPacksFile(
         ::Core::PathBuffer<::std::string> const& filePath,
         ::std::unordered_set<::mce::UUID> const& packsToRemove
-    ) const;
-
-    MCNAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
-
-    MCNAPI ::std::string _getLevelIdFromFolderPath(::Core::PathBuffer<::std::string> const& levelFolder) const;
+    );
     // NOLINTEND
 
 public:
@@ -112,12 +112,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $enqueueConvertImportingWorldTasks(
@@ -137,12 +131,6 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

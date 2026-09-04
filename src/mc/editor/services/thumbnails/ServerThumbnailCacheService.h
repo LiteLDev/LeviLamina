@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ServerThumbnailCacheServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor { class ThumbnailFileBytes; }
 namespace Editor::Network { class ThumbnailCacheFetchRequestPayload; }
 namespace Editor::Network { class ThumbnailCacheStorePayload; }
 namespace mce { class UUID; }
@@ -39,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerThumbnailCacheService() /*override*/;
+    virtual ~ServerThumbnailCacheService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -55,15 +54,9 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ServerThumbnailCacheService(::Editor::ServiceProviderCollection& serviceProviders);
 
-    MCNAPI ::std::optional<::Editor::ThumbnailFileBytes> _findThumbnail(::std::string_view filename) const;
-
     MCNAPI void _handleFetchRequest(::Editor::Network::ThumbnailCacheFetchRequestPayload const& evt) const;
 
     MCNAPI void _handleStoreRequest(::Editor::Network::ThumbnailCacheStorePayload const& evt);
-
-    MCNAPI bool _removeThumbnailFile(::mce::UUID id, ::std::optional<uint> hash);
-
-    MCNAPI void _saveThumbnail(::std::string_view filename, ::Editor::ThumbnailFileBytes const& data);
 
     MCNAPI void _scanFileCache();
     // NOLINTEND
@@ -81,12 +74,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> $init();
@@ -98,14 +85,6 @@ public:
     MCNAPI bool $remove(::mce::UUID id, ::std::optional<uint> hash);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForServerThumbnailCacheServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

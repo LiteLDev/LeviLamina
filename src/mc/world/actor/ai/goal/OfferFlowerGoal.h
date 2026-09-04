@@ -55,8 +55,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit OfferFlowerGoal(::Mob& mob);
-
-    MCFOLD int getMaxOfferFlowerDurationTicks() const;
     // NOLINTEND
 
 public:
@@ -81,11 +79,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

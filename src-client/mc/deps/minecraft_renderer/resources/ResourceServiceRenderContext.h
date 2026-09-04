@@ -16,18 +16,6 @@ public:
     ResourceServiceRenderContext& operator=(ResourceServiceRenderContext const&);
     ResourceServiceRenderContext(ResourceServiceRenderContext const&);
     ResourceServiceRenderContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ResourceServiceRenderContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace mce

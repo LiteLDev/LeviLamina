@@ -19,10 +19,4 @@ public:
     virtual ::std::string const*
     getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

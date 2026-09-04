@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_0 {
 
 struct AquaticChargeAttackGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -24,12 +19,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                     mChargeSpeed;
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mChargeCooldownTime;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>    mChargeSpeedMultiplierDeprecated;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

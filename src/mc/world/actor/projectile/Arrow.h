@@ -76,19 +76,9 @@ public:
 
     MCAPI void addMobEffect(::MobEffectInstance effect);
 
+#ifdef LL_PLAT_C
     MCAPI int getAuxValue() const;
-
-    MCAPI int getEnchantPunch() const;
-
-    MCAPI void setCritical(bool isCrit);
-
-    MCAPI void setEnchantFlame(int level);
-
-    MCAPI void setEnchantInfinity(int level);
-
-    MCAPI void setEnchantPower(int level);
-
-    MCAPI void setEnchantPunch(int level);
+#endif
     // NOLINTEND
 
 public:
@@ -123,11 +113,5 @@ public:
     MCAPI ::mce::Color $getEffectColor();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

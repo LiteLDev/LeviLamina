@@ -27,12 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~GoAndGiveItemsToOwnerGoalDefinition();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -50,12 +44,6 @@ public:
     MCAPI static float const& DEFAULT_VERTICAL_THROW_MUL();
 
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

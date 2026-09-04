@@ -23,7 +23,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~SecureStorage() = default;
+#else // LL_PLAT_C
     virtual ~SecureStorage();
+#endif
 
     virtual bool add(::std::string const& key, ::std::string const& value) = 0;
 
@@ -37,25 +41,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI explicit SecureStorage(::Core::PathView settingsPath);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Core::PathView settingsPath);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+#endif
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/network/realms/RealmsAPI.h"
 #include "mc/client/realms/RealmsListError.h"
 #include "mc/client/realms/RealmsListState.h"
@@ -17,7 +17,7 @@ namespace Realms { class RealmsList; }
 
 namespace OreUI {
 
-class RealmsListFacet : public ::OreUI::FacetBase<::OreUI::RealmsListFacet> {
+class RealmsListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,15 +41,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RealmsListFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
 
-    MCFOLD void forceFetchRealmsList();
+    MCAPI void forceFetchRealmsList();
 
     MCAPI ::Realms::RealmsListError getError() const;
 
     MCAPI ::RealmsAPI::Compatibility getRealmsCompatibility() const;
 
-    MCFOLD ::Realms::RealmsListState getState() const;
+    MCAPI ::Realms::RealmsListState getState() const;
 
-    MCFOLD ::std::vector<::RealmsWorldInfo> const& getWorldList() const;
+    MCAPI ::std::vector<::RealmsWorldInfo> const& getWorldList() const;
     // NOLINTEND
 
 public:
@@ -67,13 +67,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

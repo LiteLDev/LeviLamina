@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-class Player;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -35,13 +33,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptServerMessageAfterEvent(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent const&);
 
-    MCAPI ScriptServerMessageAfterEvent(
-        ::std::string const&                  id,
-        ::std::string const&                  value,
-        ::Player const&                       player,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCAPI ::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
 
@@ -58,13 +49,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::std::string const&                  id,
-        ::std::string const&                  value,
-        ::Player const&                       player,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 
 public:

@@ -17,12 +17,6 @@ public:
 
     virtual void RtcpPacketTypesCounterUpdated(uint, ::webrtc::RtcpPacketTypeCounter const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

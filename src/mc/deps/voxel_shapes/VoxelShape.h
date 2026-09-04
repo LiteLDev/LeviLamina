@@ -47,17 +47,9 @@ public:
 
     MCNAPI ::VoxelShapes::VoxelShape computeFaceShape(uchar face) const;
 
-#ifdef LL_PLAT_C
-    MCNAPI bool isEmpty() const;
-
-    MCNAPI bool isUnitCube() const;
-#endif
-
     MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
 
     MCNAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
-
-    MCNAPI void rotate(::Vec3 const& rotationDegrees, ::Vec3 const& rotationPivot);
 
     MCNAPI ::VoxelShapes::SerializableVoxelShape toSerializable() const;
 
@@ -75,12 +67,6 @@ public:
     MCNAPI static ::VoxelShapes::VoxelShape createShapeFromAabbs(::gsl::span<::AABB const> boxes);
 
     MCNAPI static ::VoxelShapes::VoxelShape fromSerializable(::VoxelShapes::SerializableVoxelShape const& serializable);
-
-    MCNAPI static ::VoxelShapes::VoxelShape join(
-        ::VoxelShapes::VoxelShape const& first,
-        ::VoxelShapes::VoxelShape const& second,
-        ::VoxelShapes::JoinOperation     operation
-    );
 
 #ifdef LL_PLAT_C
     MCNAPI static bool joinIsNotEmpty(

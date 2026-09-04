@@ -25,12 +25,6 @@ public:
     // NOLINTBEGIN
     virtual ~GlobalTransportFactory() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace NetherNet

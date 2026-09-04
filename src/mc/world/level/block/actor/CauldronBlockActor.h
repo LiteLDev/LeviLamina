@@ -6,7 +6,7 @@
 #include "mc/world/Container.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/item/alchemy/Potion.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,7 +21,7 @@ class SaveContext;
 namespace mce { class Color; }
 // clang-format on
 
-class CauldronBlockActor : public ::BlockActor, public ::Container {
+class CauldronBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CauldronBlockActor() /*override*/;
+    virtual ~CauldronBlockActor() /*override*/ = default;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
@@ -59,7 +59,7 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual void load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -83,21 +83,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CauldronBlockActor(::BlockPos const& pos);
 
-    MCAPI ::mce::Color getColor() const;
-
-    MCAPI ::mce::Color getCustomColor() const;
-
     MCAPI ::mce::Color getMixDyeColor();
 
     MCAPI ::mce::Color getPotionColor() const;
 
-    MCFOLD ::Potion::PotionType getPotionType() const;
-
     MCAPI void mixDyes();
 
     MCAPI void setCustomColor(::mce::Color const& color);
-
-    MCFOLD void setPotionType(::Potion::PotionType type);
     // NOLINTEND
 
 public:
@@ -110,12 +102,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -139,7 +125,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -163,8 +149,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftable();
+
     MCAPI static void** $vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

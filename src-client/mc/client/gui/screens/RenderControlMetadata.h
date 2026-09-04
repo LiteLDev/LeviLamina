@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 20, ::BatchClippingState>           clippingState;
     ::ll::TypedStorage<4, 8, ::BatchVisualState>              visualState;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~RenderControlMetadata();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

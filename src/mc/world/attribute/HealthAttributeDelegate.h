@@ -9,7 +9,6 @@
 // clang-format off
 class AttributeBuff;
 class AttributeInstance;
-class AttributeInstanceConstRef;
 class Mob;
 struct AttributeModificationContext;
 // clang-format on
@@ -23,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HealthAttributeDelegate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context) /*override*/;
@@ -36,18 +31,6 @@ public:
     virtual ::std::optional<float> change(float oldValue, float newValue, ::AttributeBuff const& buff) /*override*/;
 
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HealthAttributeDelegate(::AttributeInstanceConstRef attribute, ::Mob* mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributeInstanceConstRef attribute, ::Mob* mob);
     // NOLINTEND
 
 public:

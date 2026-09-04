@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChangeMobPropertyPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -64,16 +68,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChangeMobPropertyPacket();
-
     MCAPI explicit ChangeMobPropertyPacket(::ChangeMobPropertyPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ChangeMobPropertyPacketPayload payload);
     // NOLINTEND
 
@@ -114,11 +114,5 @@ public:
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

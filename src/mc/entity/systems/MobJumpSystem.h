@@ -33,15 +33,11 @@ struct WasInWaterFlagComponent;
 namespace MobJumpSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createCleanupSystem();
-
 MCAPI ::TickingSystemWithInfo createDecrementNoJumpDelaySystem();
 
 MCAPI ::TickingSystemWithInfo createMobJumpSystem();
 
 MCAPI ::TickingSystemWithInfo createResetNoJumpDelaySystem();
-
-MCAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
 
 MCAPI void doJumpFromGround(
     ::StrictEntityContext const&                       context,
@@ -71,7 +67,7 @@ MCAPI void doMobJumpSystem(
     ::IConstBlockSource const&                            region
 );
 
-MCAPI void doResetNoJumpDelaySystem(::StrictEntityContext const& mobJumpComponent, ::MobJumpComponent&);
+MCAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
 
 MCAPI void doSwimmerSwimUp(
     ::Optional<::JumpControlComponent const> const& jumpControl,
@@ -80,26 +76,6 @@ MCAPI void doSwimmerSwimUp(
     ::MobJumpComponent&                             mobJump,
     ::StateVectorComponent&                         stateVector
 );
-
-MCAPI bool shouldAscendLadder(
-    ::Optional<::PlayerComponent const> const&                   isPlayer,
-    ::Optional<::CanStandOnSnowFlagComponent const> const&       canStandOnSnow,
-    ::Optional<::HasLightweightFamilyFlagComponent const> const& isLightweightFamily,
-    ::AABBShapeComponent const&                                  aabbShapeComponent,
-    ::ActorDataFlagComponent const&                              synchedActorDataComponent,
-    ::StateVectorComponent const&                                stateVectorComponent,
-    ::IConstBlockSource const&                                   region
-);
-
-MCAPI bool shouldDoLavaSwimUp(
-    ::Optional<::ImmuneToLavaDragComponent const> const& isImmuneToLavaDrag,
-    ::AABBShapeComponent const&                          aabbShape,
-    ::SubBBsComponent const&                             subBBs,
-    ::IConstBlockSource const&                           region
-);
-
-MCAPI bool
-shouldJumpFromGround(::Optional<::OnGroundFlagComponent const> const& onGround, ::MobJumpComponent const& mobJump);
 // NOLINTEND
 
 } // namespace MobJumpSystem

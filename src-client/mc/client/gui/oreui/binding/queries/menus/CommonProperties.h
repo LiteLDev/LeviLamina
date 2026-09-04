@@ -31,20 +31,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommonProperties(::std::string_view id, ::OreUI::Detail::IPropertyObject* parent);
-
-    MCAPI ~CommonProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view id, ::OreUI::Detail::IPropertyObject* parent);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -9,10 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class MediaSendChannelInterface; }
-namespace cricket { struct Codec; }
 namespace webrtc { class DtlsTransportInterface; }
+namespace webrtc { class MediaSendChannelInterface; }
 namespace webrtc { class RTCError; }
+namespace webrtc { struct Codec; }
 namespace webrtc { struct RtpEncodingParameters; }
 namespace webrtc { struct RtpParameters; }
 // clang-format on
@@ -23,7 +23,7 @@ class RtpSenderInternal : public ::webrtc::RtpSenderInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void SetMediaChannel(::cricket::MediaSendChannelInterface* media_channel) = 0;
+    virtual void SetMediaChannel(::webrtc::MediaSendChannelInterface* media_channel) = 0;
 
     virtual void SetSsrc(uint ssrc) = 0;
 
@@ -55,21 +55,19 @@ public:
 
     virtual void SetTransceiverAsStopped() = 0;
 
-    virtual void SetSendCodecs(::std::vector<::cricket::Codec> send_codecs) = 0;
+    virtual void SetSendCodecs(::std::vector<::webrtc::Codec> send_codecs) = 0;
 
-    virtual ~RtpSenderInternal() /*override*/;
+    virtual ::std::vector<::webrtc::Codec> GetSendCodecs() const = 0;
+
+    virtual void NotifyFirstPacketSent() = 0;
+
+    virtual ~RtpSenderInternal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

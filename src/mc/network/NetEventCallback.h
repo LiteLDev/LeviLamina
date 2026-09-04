@@ -71,6 +71,7 @@ class ClientboundDataStorePacket;
 class ClientboundDebugRendererPacket;
 class ClientboundMapItemDataPacket;
 class ClientboundTextureShiftPacket;
+class ClientboundUpdateSoundDataPacket;
 class CodeBuilderPacket;
 class CodeBuilderSourcePacket;
 class CommandBlockUpdatePacket;
@@ -147,6 +148,7 @@ class OpenSignPacket;
 class Packet;
 class PacketViolationWarningPacket;
 class PartyChangedPacket;
+class PartyDestinationCookieResponsePacket;
 class PhotoTransferPacket;
 class PlaySoundPacket;
 class PlayStatusPacket;
@@ -185,6 +187,7 @@ class ResourcePacksInfoPacket;
 class ResourcePacksReadyForValidationPacket;
 class RespawnPacket;
 class ScriptMessagePacket;
+class SendPartyDestinationCookiePacket;
 class ServerPlayerPostMovePositionPacket;
 class ServerPresenceInfoPacket;
 class ServerSettingsRequestPacket;
@@ -261,11 +264,7 @@ class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual void onPlayerReady(::Player&);
-#else // LL_PLAT_C
     virtual void onPlayerReady(::Player& player);
-#endif
 
     virtual ~NetEventCallback() /*override*/ = default;
 
@@ -294,20 +293,17 @@ public:
 #endif
 
     virtual void onDisconnect(
-        ::NetworkIdentifier const&,
-        ::Connection::DisconnectFailReason const,
-        ::Connection::DisconnectionStage const,
-        ::std::string const& messageFromServer,
-        ::std::string const& messageBodyOverride,
-        bool                 skipMessage,
-        ::std::string const& telemetryOverride
+        ::NetworkIdentifier const&               id,
+        ::Connection::DisconnectFailReason const discoReason,
+        ::Connection::DisconnectionStage const   disconnectStage,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
+        bool                                     skipMessage,
+        ::std::string const&                     telemetryOverride
     );
 
-    virtual ::IncomingPacketFilterResult allowIncomingPacketId(
-        ::NetworkIdentifierWithSubId const& sender,
-        ::MinecraftPacketIds                packetId,
-        uint64                              packetSize
-    ) = 0;
+    virtual ::IncomingPacketFilterResult
+    allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize) = 0;
 
     virtual ::OutgoingPacketFilterResult
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) = 0;
@@ -357,9 +353,13 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::PartyChangedPacket const& packet);
 
+    virtual void handle(::NetworkIdentifier const& source, ::PartyDestinationCookieResponsePacket const& packet);
+
+    virtual void handle(::NetworkIdentifier const&, ::SendPartyDestinationCookiePacket const&);
+
     virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::SubClientLoginPacket> packet);
 
-    virtual void handle(::NetworkIdentifier const&, ::ClientToServerHandshakePacket const&);
+    virtual void handle(::NetworkIdentifier const& source, ::ClientToServerHandshakePacket const& packet);
 
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&);
@@ -367,7 +367,11 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::ServerToClientHandshakePacket const& packet);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ResourcePacksInfoPacket const& packet);
+#endif
 
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&);
@@ -377,9 +381,13 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
 
-    virtual void handle(::NetworkIdentifier const&, ::PositionTrackingDBClientRequestPacket const&);
+    virtual void handle(::NetworkIdentifier const& source, ::PositionTrackingDBClientRequestPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::PositionTrackingDBServerBroadcastPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::PositionTrackingDBServerBroadcastPacket const& packet);
+#endif
 
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::PlayStatusPacket const&);
@@ -387,7 +395,11 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::PlayStatusPacket const& packet);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetTimePacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetTimePacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::TextPacket const& packet);
 
@@ -397,9 +409,17 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::StartGamePacket const& packet);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::AddItemActorPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::AddItemActorPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::AddPaintingPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::AddPaintingPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::TakeItemActorPacket const&);
 
@@ -417,13 +437,29 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::AddPlayerPacket const& packet);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::RemoveActorPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::RemoveActorPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::MoveActorAbsolutePacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::MoveActorAbsolutePacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::MoveActorDeltaPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::MoveActorDeltaPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::MovePlayerPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::MovePlayerPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::SetPlayerGameTypePacket const& packet);
 
@@ -443,13 +479,25 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockSyncedPacket> packet);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SpawnParticleEffectPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SpawnParticleEffectPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::LevelEventPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::LevelEventPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::LevelEventGenericPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::LevelEventGenericPacket const& packet);
+#endif
 
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::BlockEventPacket const&);
@@ -461,7 +509,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::ActorPickRequestPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::GuiDataPickItemPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet);
 
@@ -471,19 +523,43 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::MobArmorEquipmentPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::MobArmorEquipmentPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetActorDataPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetActorDataPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::SetActorMotionPacket const&);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::MotionPredictionHintsPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::MotionPredictionHintsPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetHealthPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetHealthPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetActorLinkPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetActorLinkPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetSpawnPositionPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetSpawnPositionPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::InteractPacket const& packet);
 
@@ -491,13 +567,25 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ActorFallPacket const&);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::HurtArmorPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::HurtArmorPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::PlayerArmorDamagePacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerArmorDamagePacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::ItemStackRequestPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ItemStackResponsePacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ItemStackResponsePacket const& packet);
+#endif
 
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ContainerOpenPacket const&);
@@ -507,15 +595,31 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ContainerRegistryCleanupPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ContainerRegistryCleanupPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ContainerSetDataPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ContainerSetDataPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::InventoryContentPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::InventoryContentPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::InventorySlotPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::InventorySlotPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::CraftingDataPacket const&);
 
@@ -549,17 +653,29 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ClientCacheMissResponsePacket> packet);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetCommandsEnabledPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetCommandsEnabledPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet);
 
     virtual void handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ChangeDimensionPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ChangeDimensionPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket>);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::PlayerListPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerListPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const&);
 
@@ -567,7 +683,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::ClientCameraAimAssistPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ClientboundDebugRendererPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const&);
 
@@ -583,7 +703,7 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const&);
 
-    virtual void handle(::NetworkIdentifier const&, ::BossEventPacket const&);
+    virtual void handle(::NetworkIdentifier const& source, ::BossEventPacket const& packet);
 
     virtual void handle(::NetworkIdentifier const&, ::UpdateTradePacket const&);
 
@@ -591,7 +711,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::UpdateEquipPacket const&);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::AvailableCommandsPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::AvailableCommandsPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
 
@@ -603,7 +727,7 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::CommandBlockUpdatePacket const& packet);
 
-    virtual void handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const&);
+    virtual void handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
 
     virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const&);
 
@@ -625,7 +749,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::InventoryActionPacket const&);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::GameRulesChangedPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::GameRulesChangedPacket const& packet);
+#endif
 
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackDataInfoPacket const&);
@@ -661,7 +789,7 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const&);
 
-    virtual void handle(::NetworkIdentifier const&, ::PurchaseReceiptPacket const&);
+    virtual void handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet);
 
     virtual void handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const&);
 
@@ -705,7 +833,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::EditorNetworkPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::RefreshEntitlementsPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::RefreshEntitlementsPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const&);
 
@@ -715,7 +847,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::PlayerStartItemCooldownPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerStartItemCooldownPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::PlayerToggleCrafterSlotRequestPacket const& packet);
 
@@ -735,7 +871,7 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::NpcRequestPacket const& packet);
 
-    virtual void handle(::NetworkIdentifier const&, ::PhotoTransferPacket const&);
+    virtual void handle(::NetworkIdentifier const& source, ::PhotoTransferPacket const& packet);
 
     virtual void handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet);
 
@@ -747,7 +883,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ServerStatsPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ServerStatsPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::SetLocalPlayerAsInitializedPacket const& packet);
 
@@ -769,7 +909,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::AnvilDamagePacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::CreativeContentPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::CreativeContentPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::CodeBuilderPacket const&);
 
@@ -797,7 +941,7 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::NpcDialoguePacket const&);
 
-    virtual void handle(::NetworkIdentifier const&, ::CreatePhotoPacket const&);
+    virtual void handle(::NetworkIdentifier const& source, ::CreatePhotoPacket const& packet);
 
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::UpdateSubChunkBlocksPacket const&);
@@ -815,9 +959,17 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::RequestPermissionsPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::UpdateAbilitiesPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::UpdateAbilitiesPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::UpdateAdventureSettingsPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::UpdateAdventureSettingsPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const& source, ::RequestNetworkSettingsPacket const& packet);
 
@@ -825,7 +977,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::UpdateClientInputLocksPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::UpdateClientInputLocksPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const&);
 
@@ -837,7 +993,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetHudPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetHudPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::AwardAchievementPacket const&);
 
@@ -851,7 +1011,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::UpdateClientOptionsPacket const& packet);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::PlayerVideoCapturePacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const&);
 
@@ -886,16 +1050,26 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::ServerStoreInfoPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::ServerPresenceInfoPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onPlayerReady(::Player&);
+    MCFOLD void $onPlayerReady(::Player& player);
 
     MCFOLD void $onConnect(::NetworkIdentifier const& id);
 
+#ifdef LL_PLAT_S
     MCFOLD void $onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&, ::std::string const&);
+#else // LL_PLAT_C
+    MCFOLD void $onUnableToConnect(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               messageFromServer,
+        ::std::string const&               messageBodyOverride
+    );
+#endif
 
     MCFOLD void $onTick();
 
@@ -903,16 +1077,20 @@ public:
 
     MCFOLD void $onValidPacketReceived(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
 
+#ifdef LL_PLAT_S
     MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const, ::std::string const& offerID);
+#else // LL_PLAT_C
+    MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
+#endif
 
     MCFOLD void $onDisconnect(
-        ::NetworkIdentifier const&,
-        ::Connection::DisconnectFailReason const,
-        ::Connection::DisconnectionStage const,
-        ::std::string const& messageFromServer,
-        ::std::string const& messageBodyOverride,
-        bool                 skipMessage,
-        ::std::string const& telemetryOverride
+        ::NetworkIdentifier const&               id,
+        ::Connection::DisconnectFailReason const discoReason,
+        ::Connection::DisconnectionStage const   disconnectStage,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
+        bool                                     skipMessage,
+        ::std::string const&                     telemetryOverride
     );
 
     MCFOLD void $onWebsocketRequest(
@@ -960,49 +1138,113 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::PartyChangedPacket const& packet);
 
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PartyDestinationCookieResponsePacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::SendPartyDestinationCookiePacket const&);
+
     MCFOLD void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::SubClientLoginPacket> packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientToServerHandshakePacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientToServerHandshakePacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ServerToClientHandshakePacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ResourcePacksInfoPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ResourcePackStackPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::PositionTrackingDBClientRequestPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBClientRequestPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::PositionTrackingDBServerBroadcastPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBServerBroadcastPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayStatusPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayStatusPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetTimePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetTimePacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::TextPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::StartGamePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::StartGamePacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::AddItemActorPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::AddItemActorPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::AddPaintingPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::AddPaintingPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::TakeItemActorPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::AddActorPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::AddActorPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::AddMobPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::AddPlayerPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::AddPlayerPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::RemoveActorPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::RemoveActorPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::MoveActorAbsolutePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::MoveActorAbsolutePacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::MoveActorDeltaPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::MoveActorDeltaPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::MovePlayerPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::MovePlayerPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SetPlayerGameTypePacket const& packet);
 
@@ -1010,25 +1252,53 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SetDefaultGameTypePacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockPacket>);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockPacket> packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockSyncedPacket>);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockSyncedPacket> packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SpawnParticleEffectPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SpawnParticleEffectPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::LevelEventPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::LevelEventPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::LevelEventGenericPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::LevelEventGenericPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::BlockEventPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::BlockEventPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::BlockPickRequestPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ActorPickRequestPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::GuiDataPickItemPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet);
 
@@ -1038,19 +1308,43 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::MobArmorEquipmentPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::MobArmorEquipmentPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetActorDataPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetActorDataPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetActorMotionPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::MotionPredictionHintsPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::MotionPredictionHintsPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetHealthPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetHealthPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetActorLinkPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetActorLinkPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetSpawnPositionPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetSpawnPositionPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::InteractPacket const& packet);
 
@@ -1058,27 +1352,59 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ActorFallPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::HurtArmorPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::HurtArmorPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerArmorDamagePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerArmorDamagePacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ItemStackRequestPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ItemStackResponsePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ItemStackResponsePacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ContainerOpenPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ContainerOpenPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ContainerRegistryCleanupPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ContainerRegistryCleanupPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ContainerSetDataPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ContainerSetDataPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::InventoryContentPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::InventoryContentPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::InventorySlotPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::InventorySlotPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::CraftingDataPacket const&);
 
@@ -1090,27 +1416,51 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientMovementPredictionSyncPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::LevelChunkPacket>);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LevelChunkPacket> packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SubChunkPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SubChunkPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SubChunkRequestPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientCacheBlobStatusPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::ClientCacheMissResponsePacket>);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ClientCacheMissResponsePacket> packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetCommandsEnabledPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetCommandsEnabledPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ChangeDimensionPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ChangeDimensionPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket>);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerListPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerListPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const&);
 
@@ -1118,7 +1468,11 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientCameraAimAssistPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDebugRendererPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const&);
 
@@ -1134,7 +1488,7 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::BossEventPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::BossEventPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateTradePacket const&);
 
@@ -1142,15 +1496,23 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateEquipPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::AvailableCommandsPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::AvailableCommandsPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::CommandOutputPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::CommandBlockUpdatePacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const&);
 
@@ -1172,9 +1534,17 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::InventoryActionPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::GameRulesChangedPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::GameRulesChangedPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackDataInfoPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ResourcePackDataInfoPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const&);
 
@@ -1204,7 +1574,7 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::PurchaseReceiptPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const&);
 
@@ -1240,11 +1610,19 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::RemoveVolumeEntityPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::DimensionDataPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::DimensionDataPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::EditorNetworkPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::RefreshEntitlementsPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::RefreshEntitlementsPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const&);
 
@@ -1254,7 +1632,11 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerStartItemCooldownPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerStartItemCooldownPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerToggleCrafterSlotRequestPacket const& packet);
 
@@ -1274,21 +1656,33 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::NpcRequestPacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::PhotoTransferPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PhotoTransferPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::NetworkSettingsPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::NetworkSettingsPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerStatsPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ServerStatsPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SetLocalPlayerAsInitializedPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ScriptMessagePacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::BiomeDefinitionListPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::BiomeDefinitionListPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::EducationSettingsPacket const&);
 
@@ -1300,7 +1694,11 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::AnvilDamagePacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::CreativeContentPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CreativeContentPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::CodeBuilderPacket const&);
 
@@ -1328,9 +1726,13 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::NpcDialoguePacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::CreatePhotoPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CreatePhotoPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateSubChunkBlocksPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::UpdateSubChunkBlocksPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::CodeBuilderSourcePacket const& packet);
 
@@ -1342,9 +1744,17 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::RequestPermissionsPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateAbilitiesPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::UpdateAbilitiesPacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateAdventureSettingsPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::UpdateAdventureSettingsPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::RequestNetworkSettingsPacket const& packet);
 
@@ -1352,7 +1762,11 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateClientInputLocksPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::UpdateClientInputLocksPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const&);
 
@@ -1364,7 +1778,11 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetHudPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetHudPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::AwardAchievementPacket const&);
 
@@ -1378,7 +1796,11 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::UpdateClientOptionsPacket const& packet);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerVideoCapturePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const&);
 
@@ -1413,6 +1835,8 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerStoreInfoPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerPresenceInfoPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const&);
 
 
     // NOLINTEND

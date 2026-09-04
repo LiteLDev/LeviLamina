@@ -29,18 +29,29 @@ public:
     ::ll::UntypedStorage<8, 40>  mUnkc53364;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ScriptWidgetCreateOptions& operator=(ScriptWidgetCreateOptions const&);
+    ScriptWidgetCreateOptions(ScriptWidgetCreateOptions const&);
+    ScriptWidgetCreateOptions();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ScriptWidgetCreateOptions(ScriptWidgetCreateOptions const&);
     ScriptWidgetCreateOptions();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
 
     MCNAPI ~ScriptWidgetCreateOptions();
+#endif
     // NOLINTEND
 
 public:
@@ -52,7 +63,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

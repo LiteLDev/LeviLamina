@@ -15,10 +15,4 @@ public:
 
     virtual void execute(::MinecraftCommands& commands) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

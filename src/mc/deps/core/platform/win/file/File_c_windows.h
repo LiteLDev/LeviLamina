@@ -3,14 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/FileBufferingMode.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/file_system/FileImpl.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class FileOpenMode; }
-namespace Core { class FileSystem_windows; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
@@ -34,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~File_c_windows() /*override*/;
+    virtual ~File_c_windows() /*override*/ = default;
 
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 
@@ -67,47 +64,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI File_c_windows(
-        ::Core::FileSystem_windows* pTransaction,
-        ::_iobuf*                   pFile,
-        ::Core::PathView            path,
-        ::Core::FileOpenMode        fileOpenMode
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result _open(
-        ::Core::FileSystem_windows*          pTransaction,
-        ::std::unique_ptr<::Core::FileImpl>& uptFile,
-        ::Core::PathView                     filePath,
-        ::Core::FileOpenMode                 fileOpenMode,
-        ::Core::FileBufferingMode            bufferingMode
-    );
-
     MCNAPI static ::std::string getExtendedLengthPath(::Core::PathView path);
-
-    MCNAPI static void initialize();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Core::FileSystem_windows* pTransaction,
-        ::_iobuf*                   pFile,
-        ::Core::PathView            path,
-        ::Core::FileOpenMode        fileOpenMode
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -142,12 +101,6 @@ public:
     MCNAPI ::Core::Result $_getRemainingSize(uint64* pSizeOut);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

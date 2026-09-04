@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,12 +23,6 @@ public:
     virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) = 0;
 
     virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

@@ -28,14 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySensorComponent();
-
     MCAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

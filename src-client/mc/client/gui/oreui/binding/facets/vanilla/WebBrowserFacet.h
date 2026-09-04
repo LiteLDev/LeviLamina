@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 namespace OreUI {
 
-class WebBrowserFacet : public ::OreUI::FacetBase<::OreUI::WebBrowserFacet> {
+class WebBrowserFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WebBrowserFacet> {
 public:
     // WebBrowserFacet inner types define
     enum class WebBrowserLink : int {
@@ -26,7 +26,6 @@ public:
         ServersTabFeedbackPage             = 13,
         PlayerFeedbackMain                 = 14,
         PlayerFeedbackIdeas                = 15,
-        ProfileFeedbackMain                = 16,
         StartFromTemplateFeedbackPage      = 17,
         RealmsTabFeedbackPage              = 18,
         TermsAndServicePage                = 19,
@@ -45,6 +44,7 @@ public:
         RealmsFeedbackPage                 = 32,
         InboxFeedbackBugs                  = 33,
         InboxFeedbackIdeas                 = 34,
+        RealmsManageSavesHelpPage          = 35,
     };
 
     using LaunchUri = ::std::function<void(::std::string const&)>;
@@ -89,12 +89,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

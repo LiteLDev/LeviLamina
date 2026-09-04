@@ -19,6 +19,40 @@ public:
     SdpAudioFormat& operator=(SdpAudioFormat const&);
     SdpAudioFormat(SdpAudioFormat const&);
     SdpAudioFormat();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI SdpAudioFormat(::std::string_view name, int clockrate_hz, uint64 num_channels);
+
+    MCNAPI SdpAudioFormat(
+        ::std::string_view                         name,
+        int                                        clockrate_hz,
+        uint64                                     num_channels,
+        ::std::map<::std::string, ::std::string>&& param
+    );
+
+    MCNAPI ~SdpAudioFormat();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string_view name, int clockrate_hz, uint64 num_channels);
+
+    MCNAPI void* $ctor(
+        ::std::string_view                         name,
+        int                                        clockrate_hz,
+        uint64                                     num_channels,
+        ::std::map<::std::string, ::std::string>&& param
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace webrtc

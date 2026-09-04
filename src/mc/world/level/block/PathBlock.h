@@ -40,14 +40,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -60,19 +60,12 @@ public:
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
         /*override*/;
 
-    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PathBlock(
-        ::std::string const&  nameId,
-        int                   id,
-        ::HashedString const& blockToTillInto,
-        ::HashedString const& baseBlock
-    );
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -85,24 +78,17 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::HashedString const& blockToTillInto, ::HashedString const& baseBlock);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -112,7 +98,7 @@ public:
 
     MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
 
     // NOLINTEND

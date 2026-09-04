@@ -43,12 +43,6 @@ public:
 
     virtual void Send(::dcsctp::SctpPacket::Builder& builder) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace dcsctp

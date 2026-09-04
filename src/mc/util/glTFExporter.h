@@ -2,15 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace glTF { struct Accessor; }
-namespace glTF { struct Asset; }
 namespace glTF { struct Buffer; }
 namespace glTF { struct BufferView; }
 namespace glTF { struct Image; }
@@ -76,8 +72,6 @@ public:
 
     MCNAPI void _serialize(::Json::Value& root);
 
-    MCNAPI void _serializeBinaryData(::Json::Value& glTF);
-
     MCNAPI int addAccessor(::glTF::Accessor& accessor);
 
     MCNAPI uint64 addBinaryBuffer(::Core::Path const& filePath, uchar const* data, uint64 size);
@@ -104,36 +98,12 @@ public:
 
     MCNAPI int addTexture(::glTF::Texture& texture);
 
-    MCNAPI ::std::string const& getBinaryFileName() const;
-
-    MCNAPI ::Core::PathBuffer<::std::string> const& getBinaryFilePath() const;
-
     MCNAPI int getMaterialID(::std::string const& materialName);
 
     MCNAPI glTFExporter(::Core::Path const& folderPath, ::std::string const& modelName);
 
-    MCNAPI bool hasBuffer(int bufferID);
-
-    MCNAPI bool hasMaterial(::std::string const& materialName);
-
     MCNAPI void serialize();
-
-    MCNAPI void setAsset(::glTF::Asset const& asset);
-
-    MCNAPI void setDefaultScene(int sceneName);
-
-    MCNAPI int updateBufferSize(int bufferID, int bufferSize);
-
-    MCNAPI bool useBinary() const;
 #endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& GLB_BUFFER_URI();
-
-    MCNAPI static ::std::string_view const& GLB_EXTENSION();
     // NOLINTEND
 
 public:
@@ -147,12 +117,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#endif
     // NOLINTEND
 };

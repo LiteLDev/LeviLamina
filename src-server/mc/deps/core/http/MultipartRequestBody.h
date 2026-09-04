@@ -35,12 +35,6 @@ public:
 
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

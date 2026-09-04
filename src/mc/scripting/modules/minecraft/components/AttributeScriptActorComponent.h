@@ -3,16 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Attribute;
-class WeakEntityRef;
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -25,10 +23,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::Attribute const>> mSharedAttribute;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttributeScriptActorComponent();
 
 public:
     // virtual functions
@@ -59,31 +53,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AttributeScriptActorComponent(
-        ::WeakEntityRef const&                entity,
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::std::string const&                  id,
-        ::Attribute const&                    sharedAttribute
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::WeakEntityRef const&                entity,
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::std::string const&                  id,
-        ::Attribute const&                    sharedAttribute
-    );
     // NOLINTEND
 
 public:

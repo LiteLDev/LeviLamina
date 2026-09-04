@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/platform/Result.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/item/ItemDescriptor.h"
 
@@ -13,7 +12,6 @@
 class BinaryStream;
 class CompoundTag;
 class Item;
-class ReadOnlyBinaryStream;
 // clang-format on
 
 struct ComplexAliasDescriptor : public ::ItemDescriptor::BaseDescriptor {
@@ -61,13 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ComplexAliasDescriptor>>
-    deserialize(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& fullName);
@@ -96,14 +87,8 @@ public:
 
     MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
-    MCAPI uint64 $getHash() const;
+    MCFOLD uint64 $getHash() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

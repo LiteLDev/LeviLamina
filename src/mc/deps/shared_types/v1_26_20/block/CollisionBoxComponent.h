@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
@@ -28,31 +27,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CollisionBoxComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Vec3 const& MAX_BOUNDS();
 
-    MCAPI static ::Vec3 const& MIN_BOUNDS();
-
     MCAPI static ::std::string_view const& NameId();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/LogChannel.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/logging/LogLevel.h"
 
 // auto generated forward declare list
@@ -46,12 +46,6 @@ public:
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

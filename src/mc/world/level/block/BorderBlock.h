@@ -26,10 +26,10 @@ public:
     // NOLINTBEGIN
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
-    virtual ::AABB const& getVisualShape(::Block const& bufferAABB, ::AABB&) const /*override*/;
+    virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
 
     virtual ::AABB const&
-    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const& bufferAABB, ::BlockPos const&, ::AABB&) const
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
         /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -60,13 +60,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& bufferAABB, ::AABB&) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
 
     MCFOLD ::AABB const& $getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& bufferAABB,
+        ::Block const& block,
+        ::IConstBlockSource const&,
         ::BlockPos const&,
-        ::AABB&
+        ::AABB& bufferAABB
     ) const;
 
     MCFOLD int $getVariant(::Block const& block) const;

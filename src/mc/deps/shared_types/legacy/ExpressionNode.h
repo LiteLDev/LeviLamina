@@ -24,18 +24,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mValue;
         ::ll::TypedStorage<2, 2, short>          mMolangVersion;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI StringRepresentation();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
     };
 
 public:
@@ -52,8 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ExpressionNode(float f);
-
     MCAPI ExpressionNode(::std::string string, short molangVersion);
 
     MCAPI ~ExpressionNode();
@@ -68,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float f);
-
     MCAPI void* $ctor(::std::string string, short molangVersion);
     // NOLINTEND
 

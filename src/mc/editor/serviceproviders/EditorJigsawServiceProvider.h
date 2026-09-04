@@ -43,15 +43,15 @@ public:
     getJigsawRegistryJson(::std::string const& registryName) = 0;
 
     virtual void generateJigsawPreview(
-        ::std::string const&                               registryName,
-        ::std::string const&                               startPool,
-        ::std::string const&                               startTarget,
-        ::BlockPos const&                                  seed,
-        int                                                depth,
-        int const                                          maxHorizontalDistanceFromCenter,
-        bool const                                         validateRegistry,
-        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
-        ::WeakEntityRef                                    playerRef
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::BlockPos const&,
+        int,
+        int const,
+        bool const,
+        ::Editor::ScriptModule::ScriptClipboardItem const&,
+        ::WeakEntityRef
     ) = 0;
 
     virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef) = 0;
@@ -66,12 +66,6 @@ public:
     virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(
         ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
     ) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

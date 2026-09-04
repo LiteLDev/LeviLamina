@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockSupportDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -31,12 +27,6 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockSupportDescription(::SupportShape shapeType);
     // NOLINTEND
 
 public:
@@ -49,12 +39,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SupportShape shapeType);
     // NOLINTEND
 
 public:

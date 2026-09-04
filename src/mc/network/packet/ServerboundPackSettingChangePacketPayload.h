@@ -15,43 +15,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerboundPackSettingChangePacketPayload& operator=(ServerboundPackSettingChangePacketPayload const&);
-    ServerboundPackSettingChangePacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerboundPackSettingChangePacketPayload(::ServerboundPackSettingChangePacketPayload const&);
-
 #ifdef LL_PLAT_C
-    MCAPI ServerboundPackSettingChangePacketPayload(
-        ::mce::UUID const&                         packId,
-        ::std::string const&                       settingName,
-        ::std::variant<float, bool, ::std::string> settingValue
-    );
-#endif
-
     MCAPI ~ServerboundPackSettingChangePacketPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerboundPackSettingChangePacketPayload const&);
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::mce::UUID const&                         packId,
-        ::std::string const&                       settingName,
-        ::std::variant<float, bool, ::std::string> settingValue
-    );
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -9,7 +9,6 @@
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/flat_set.h"
-#include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/storage/DBStoragePerformanceTelemetry.h"
 #include "mc/world/level/storage/LevelStorage.h"
@@ -57,40 +56,6 @@ public:
         ::ll::TypedStorage<4, 4, ::DBHelpers::Category>             mCategory;
         ::ll::TypedStorage<1, 1, bool>                              mIsDelete;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CommitOperation();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI CommitOperation(
-            ::std::string const&             key,
-            ::std::shared_ptr<::std::string> value,
-            bool                             isDelete,
-            ::DBHelpers::Category            category
-        );
-
-        MCNAPI ~CommitOperation();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::std::string const&             key,
-            ::std::shared_ptr<::std::string> value,
-            bool                             isDelete,
-            ::DBHelpers::Category            category
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class DBStorageToken {
@@ -117,18 +82,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::string const>> mLatestValue;
         ::ll::TypedStorage<1, 1, bool>                                    mIsDeleted;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PendingWriteResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -193,7 +146,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DBStorage() /*override*/;
+    virtual ~DBStorage() /*override*/ = default;
 
     virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer) /*override*/;
 
@@ -209,7 +162,7 @@ public:
     virtual ::std::unique_ptr<::CompoundTag>
     getCompoundTag(::std::string const& key, ::DBHelpers::Category category) /*override*/;
 
-    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category) const /*override*/;
+    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category category) const /*override*/;
 
     virtual bool loadLevelData(::LevelData& data) /*override*/;
 
@@ -273,46 +226,10 @@ public:
 
     MCAPI ::TaskResult _flushWriteCacheToLevelDB();
 
-    MCAPI ::std::map<::std::string, ::DBStorage::PendingWriteResult> _getAllPendingWrites() const;
-
     MCAPI ::std::string _getTelemetryMessage(::leveldb::Status const& status) const;
 
-    MCAPI void _handleErrorStatus(::leveldb::Status const& status);
-
-    MCAPI bool _isMarkedAsCorrupted() const;
-
-    MCAPI void _markAsCorrupted(::std::string_view message) const;
-
-    MCAPI void _mergeIntoDeleteCache(::std::string const& key, ::DBHelpers::Category category);
-
-    MCAPI void _mergeIntoWriteCache(::LevelStorageWriteBatch const& batchToMerge);
-
-    MCAPI void _mergeIntoWriteCache(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
-
-    MCAPI void _queueSaveCallback(bool invokeImmediately);
-
-    MCAPI void _read(
-        ::std::string_view                                                   prefix,
-        ::DBHelpers::Category                                                category,
-        ::std::function<void(::std::string_view, ::std::string_view)> const& callback
-    ) const;
-
-    MCAPI ::DBStorage::PendingWriteResult _readPendingWrite(::std::string const& key, ::DBHelpers::Category) const;
-
-    MCAPI void _removeCorruptedMark() const;
-
-    MCAPI void _scheduleNextAutoCompaction();
-
-    MCAPI bool _suspendAndPerformSaveAction(
-        ::brstd::move_only_function<::TaskResult()> action,
-        ::brstd::move_only_function<void()>         callback
-    );
-
-    MCAPI void _write(::leveldb::WriteBatch& batch, uint batchSizeInBytes, uint writesInBatch);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::TaskGroup& getTaskGroup();
-#endif
+    MCAPI ::DBStorage::PendingWriteResult
+    _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
 
     MCAPI bool tryRepair(::Core::Path const& path) const;
     // NOLINTEND
@@ -324,28 +241,26 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer);
 
     MCFOLD bool $loadedSuccessfully() const;
 
-    MCFOLD ::Core::LevelStorageResult $getState() const;
+    MCAPI ::Core::LevelStorageResult $getState() const;
 
     MCAPI ::std::unique_ptr<::ChunkSource>
     $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
 
+#ifdef LL_PLAT_S
+    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+#else // LL_PLAT_C
     MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+#endif
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 
-    MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category) const;
+    MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category category) const;
 
     MCAPI bool $loadLevelData(::LevelData& data);
 
@@ -366,7 +281,7 @@ public:
         ::std::function<void(::std::string_view, ::std::string_view)> const& callback
     ) const;
 
-    MCFOLD ::Core::LevelStorageResult $getLevelStorageState() const;
+    MCAPI ::Core::LevelStorageResult $getLevelStorageState() const;
 
     MCFOLD ::ContentIdentity const* $getContentIdentity() const;
 
@@ -400,11 +315,5 @@ public:
     MCAPI void $setCriticalSyncSaveCallback(::std::function<void()> callback);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

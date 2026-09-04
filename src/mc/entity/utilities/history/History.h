@@ -25,7 +25,7 @@ namespace History {
 MCNAPI void addMovementEffectsToEntity(
     ::History::EntityWithCache&                        entity,
     ::MovementEffectsComponent&                        movementEffects,
-    ::Bedrock::EnumSet<::MovementEffectType, 2> const& toSet
+    ::Bedrock::EnumSet<::MovementEffectType, 3> const& toSet
 );
 
 #ifdef LL_PLAT_C

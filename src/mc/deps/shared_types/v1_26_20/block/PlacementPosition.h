@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/container/EnumSet.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct PlacementPosition {
@@ -32,17 +27,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& BLOCK_FACE_ID();
-
-    MCAPI static ::std::string_view const& ENABLED_STATES_ID();
 
     MCAPI static ::std::string_view const& VERTICAL_HALF_ID();
     // NOLINTEND

@@ -35,12 +35,6 @@ public:
 
     virtual ~I444BufferInterface() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

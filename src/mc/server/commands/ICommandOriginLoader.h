@@ -16,10 +16,4 @@ public:
 
     virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

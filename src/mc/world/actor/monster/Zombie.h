@@ -52,8 +52,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCFOLD void setZombieType(::Zombie::ZombieType type);
     // NOLINTEND
 
 public:
@@ -86,11 +84,5 @@ public:
     MCFOLD int $getArmorValue() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

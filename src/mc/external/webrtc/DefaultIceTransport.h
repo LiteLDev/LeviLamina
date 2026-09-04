@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class IceTransportInternal; }
+namespace webrtc { class IceTransportInternal; }
 // clang-format on
 
 namespace webrtc {
@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1> mUnkd64eca;
-    ::ll::UntypedStorage<8, 8> mUnk56e661;
+    ::ll::UntypedStorage<8, 8> mUnk5039b5;
     // NOLINTEND
 
 public:
@@ -31,13 +31,13 @@ public:
     // NOLINTBEGIN
     virtual ~DefaultIceTransport() /*override*/ = default;
 
-    virtual ::cricket::IceTransportInternal* internal() /*override*/;
+    virtual ::webrtc::IceTransportInternal* internal() /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cricket::IceTransportInternal* $internal();
+    MCNAPI ::webrtc::IceTransportInternal* $internal();
 
 
     // NOLINTEND

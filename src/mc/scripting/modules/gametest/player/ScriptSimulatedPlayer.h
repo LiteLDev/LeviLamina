@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/player/ScriptPlayer.h"
 #include "mc/server/sim/LookDuration.h"
@@ -23,7 +23,6 @@ namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace ScriptModuleGameTest { struct ScriptPlayerSkinData; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -37,10 +36,6 @@ namespace ScriptModuleGameTest {
 
 class ScriptSimulatedPlayer : public ::ScriptModuleMinecraft::ScriptPlayer {
 public:
-    // prevent constructor by default
-    ScriptSimulatedPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::
@@ -53,13 +48,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSimulatedPlayer(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
-
-    MCAPI ScriptSimulatedPlayer(
-        ::ScriptModuleMinecraft::ScriptActorData const& playerData,
-        ::Scripting::WeakLifetimeScope const&           scope
-    );
-
     MCAPI ::Scripting::Result_deprecated<bool> attack(::SimulatedPlayer& self);
 
     MCAPI ::Scripting::Result_deprecated<bool>
@@ -215,10 +203,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float _getTestRotationAngle(::SimulatedPlayer const& player);
-
-    MCAPI static ::Vec3 _getWorldDirection(::SimulatedPlayer const& player, ::Vec3 const& relativeDirection);
-
     MCAPI static ::std::optional<::gametest::GameTestError>
     _toWorld(::SimulatedPlayer& player, ::BlockPos* blockPos, uchar* face, ::Vec3* pos);
 
@@ -234,18 +218,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
-
-    MCAPI void*
-    $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $remove(::Actor& self);
 
     MCAPI bool $isValid() const;

@@ -37,12 +37,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> $tryGetExtensions() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace AppExtensions

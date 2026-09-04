@@ -19,7 +19,6 @@ class BoundingBox;
 class CompoundTag;
 class IUnknownBlockTypeRegistry;
 class StructureSettings;
-class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
 // clang-format on
 
@@ -101,18 +100,6 @@ public:
         ::BlockPos const&                              span
     );
 
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume const& getBlockVolume() const;
-#endif
-
-    MCNAPI ::Vec3 const& getNormalizedOrigin() const;
-
-    MCNAPI ::Vec3 getOriginalWorldLocation() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::vector<::std::string> getTags() const;
-#endif
-
     MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,
         ::BlockPalette const&      globalBlockPalette,
@@ -120,14 +107,6 @@ public:
         ::StructureSettings const& structureSettings,
         bool                       excludeAirBlocks
     ) const;
-
-    MCNAPI void setBounds(::BlockVolumeBase const& volume);
-
-    MCNAPI void setBounds(::Editor::RelativeVolumeListBlockVolume const& volume);
-
-    MCNAPI void setBounds(::BlockPos const& from, ::BlockPos const& to);
-
-    MCNAPI bool setNormalizedOrigin(::Vec3 newOrigin);
     // NOLINTEND
 
 public:

@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -102,7 +102,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptFormPromiseTracker() /*override*/;
+    virtual ~ScriptFormPromiseTracker() /*override*/ = default;
 
     virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
 
@@ -122,12 +122,6 @@ public:
         ::ServerPlayerEventCoordinator& playerEventCooordinator
     );
 
-    MCAPI void handleFormClose(::PlayerFormCloseEvent const& formResponse);
-
-    MCAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
-
-    MCAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
-
     MCAPI void rejectAll();
 
     MCAPI void showDataDrivenScreenToPlayer(
@@ -141,8 +135,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NetworkIdentifier _getPlayerNetworkId(::Player const& player);
-
     MCAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
     // NOLINTEND
 
@@ -157,12 +149,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
@@ -174,15 +160,5 @@ public:
     MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
-
-    MCNAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
     // NOLINTEND
 };

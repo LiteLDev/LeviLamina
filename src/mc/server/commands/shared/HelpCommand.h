@@ -27,16 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    getCommandHelp(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void
-    getHelpPage(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
@@ -48,11 +38,5 @@ public:
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

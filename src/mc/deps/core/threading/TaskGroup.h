@@ -131,27 +131,9 @@ public:
     MCAPI uint64 count() const;
 #endif
 
-    MCAPI void disableOwnerThreadChecks();
-
     MCAPI void flush(::std::function<void()> waitFn);
 
-#ifdef LL_PLAT_C
-    MCAPI uint64 getMaxConcurrency() const;
-#endif
-
-    MCFOLD ::std::string_view getName() const;
-
-    MCAPI ::std::thread::id getOwnerThreadID() const;
-
-    MCAPI ::Scheduler& getScheduler();
-
     MCAPI bool isEmpty() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void kick(uint count);
-#endif
-
-    MCAPI void pause();
 
 #ifdef LL_PLAT_C
     MCAPI void resume();
@@ -163,8 +145,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::IBackgroundTaskOwner* getCurrentTaskGroup();
-
     MCAPI static ::Bedrock::Threading::Async<void>
     queueChildSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
 
@@ -212,11 +192,5 @@ public:
     MCAPI bool $_workerPoolIsAsync() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

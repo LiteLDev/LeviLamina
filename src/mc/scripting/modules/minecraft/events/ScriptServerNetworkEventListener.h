@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ServerNetworkEventListener.h"
@@ -28,33 +28,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptServerNetworkEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ChatEvent const& chatEvent) /*override*/;
 
     virtual ::EventResult onMessage(::MessageEvent const& messageEvent) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptServerNetworkEventListener(
-        ::Scripting::WeakLifetimeScope const&                                            scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const&                                            scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
-    );
     // NOLINTEND
 
 public:

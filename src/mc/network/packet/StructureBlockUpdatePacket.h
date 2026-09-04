@@ -38,26 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructureBlockUpdatePacket();
-
-#ifdef LL_PLAT_C
-    MCAPI StructureBlockUpdatePacket(::BlockPos blockPos, ::StructureEditorData const& data, bool trigger);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::BlockPos blockPos, ::StructureEditorData const& data, bool trigger);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::MinecraftPacketIds $getId() const;

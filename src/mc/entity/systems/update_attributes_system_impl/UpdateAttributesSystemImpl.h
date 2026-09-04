@@ -20,17 +20,17 @@ namespace UpdateAttributesSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void tickProcessRequests(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>> entity,
-    ::StrictEntityContext const&                                     attributes,
-    ::AttributesComponent&                                           request,
-    ::AttributeRequestComponent const&                               modifier,
-    ::EntityModifier<::AttributeRequestComponent>
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::StrictEntityContext const&                  entity,
+    ::AttributesComponent&                        attributes,
+    ::AttributeRequestComponent const&            request,
+    ::EntityModifier<::AttributeRequestComponent> modifier
 );
 
 MCAPI void tickUpdateAttributesSystem(
-    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>> attributes,
-    ::AttributesComponent const&                                       movementAttributes,
-    ::MovementAttributesComponent&
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
+    ::AttributesComponent const&   attributes,
+    ::MovementAttributesComponent& movementAttributes
 );
 // NOLINTEND
 

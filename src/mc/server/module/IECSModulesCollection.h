@@ -25,10 +25,4 @@ public:
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     ) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

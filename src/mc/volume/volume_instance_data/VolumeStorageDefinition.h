@@ -20,43 +20,17 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk5328d3;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     VolumeStorageDefinition& operator=(VolumeStorageDefinition const&);
     VolumeStorageDefinition(VolumeStorageDefinition const&);
     VolumeStorageDefinition();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    VolumeStorageDefinition& operator=(VolumeStorageDefinition const&);
-    VolumeStorageDefinition();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI VolumeStorageDefinition(::VolumeInstanceData::VolumeStorageDefinition const&);
-
-    MCNAPI ::VolumeInstanceData::VolumeStorageDefinition& operator=(::VolumeInstanceData::VolumeStorageDefinition&&);
-#endif
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::VolumeInstanceData::VolumeStorageDefinition const&);
 #endif
     // NOLINTEND
 };

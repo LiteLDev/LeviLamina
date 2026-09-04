@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 struct ConstDeserializeDataParams;
-namespace Json { class Value; }
 namespace ParticleSystem { class EmitterInitialComponentBase; }
 namespace ParticleSystem { class EmitterLifetimeComponentBase; }
 namespace ParticleSystem { class EmitterRateComponentBase; }
@@ -92,18 +91,7 @@ public:
 
     MCAPI ParticleEffectData_Legacy(::ParticleSystem::ParticleEffectData_Legacy&& other);
 
-    MCAPI bool _extractBasicRenderParameters(::Json::Value const& node);
-
     MCAPI void _extractComponents(
-        ::ConstDeserializeDataParams const&                      deserializeDataParams,
-        ::ParticleSystem::ParticleEffectComponentRegistry const& particleComponentRegistry
-    );
-
-    MCAPI void _extractCurves(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void _extractEvents(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI bool parseJson(
         ::ConstDeserializeDataParams const&                      deserializeDataParams,
         ::ParticleSystem::ParticleEffectComponentRegistry const& particleComponentRegistry
     );

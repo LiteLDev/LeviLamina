@@ -10,8 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-class UIPropertyBag;
-namespace EDUDiscovery { struct Button; }
 namespace EDUDiscovery { struct Dialog; }
 // clang-format on
 
@@ -41,17 +39,9 @@ public:
         ::EDUDiscoveryDialogCallbacks             callbacks
     );
 
-    MCAPI void _closePopup();
-
-    MCAPI ::EDUDiscovery::Button const* _getButton(::UIPropertyBag& bag);
-
     MCAPI void _openPopup();
 
     MCAPI void _performButtonAction(::EDUDiscovery::ButtonAction action);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
 
     MCAPI bool presentIfNeeded();
     // NOLINTEND
@@ -60,13 +50,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::EDUDiscoveryDialogCallbacks callbacks);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

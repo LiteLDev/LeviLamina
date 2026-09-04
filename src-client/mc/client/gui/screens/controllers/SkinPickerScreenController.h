@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkinPickerScreenController() /*override*/;
+    virtual ~SkinPickerScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -73,19 +73,7 @@ public:
         ::std::shared_ptr<::SkinRepository>      skinRepository
     );
 
-    MCAPI ::ui::ViewRequest _equipPreviewedSkin();
-
-    MCAPI ::std::string _getSkinName(::SkinHandle const& handle) const;
-
-    MCAPI ::std::string _getSkinPackName(int index) const;
-
     MCAPI bool _isCustomSkin(::SkinHandle const& skin) const;
-
-    MCAPI void _pickCustomSkin();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
 
     MCAPI void setPreviewSkin(::SkinHandle const& newSkin);
     // NOLINTEND
@@ -106,12 +94,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
@@ -125,13 +107,5 @@ public:
     MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI ::std::string $_getButtonBDescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

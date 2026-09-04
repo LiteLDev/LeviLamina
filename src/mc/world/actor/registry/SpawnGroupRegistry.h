@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/puv/LoadResult.h"
-
 // auto generated forward declare list
 // clang-format off
 class BiomeFilterGroup;
@@ -13,7 +10,6 @@ class MobSpawnRules;
 class ResourcePackManager;
 class SemVersion;
 class SpawnGroupData;
-struct ActorSpawnRuleData;
 // clang-format on
 
 class SpawnGroupRegistry {
@@ -49,29 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnGroupRegistry(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
-
-    MCAPI void _addSpawnRules(::std::string const& identifier, ::MobSpawnRules& spawnRules);
-
     MCAPI void _getResources(
         ::ResourcePackManager& resourcePackManager,
         ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
             callback
     );
 
-    MCAPI ::Puv::LoadResult<::ActorSpawnRuleData>
-    _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
-
     MCAPI ::SpawnGroupData const* getSpawnGroup(::std::string const& identifier) const;
-
-    MCAPI void
-    readResourceFiles(::ResourcePackManager& dataMap, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

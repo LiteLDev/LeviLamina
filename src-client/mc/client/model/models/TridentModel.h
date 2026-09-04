@@ -31,18 +31,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    render(::ScreenContext& screenContext, ::Actor& scale, float, float, float, float, float, float) /*override*/;
+    virtual void render(
+        ::ScreenContext& screenContext,
+        ::Actor&         e,
+        float            time,
+        float            r,
+        float            bob,
+        float            yRot,
+        float            xRot,
+        float            scale
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit TridentModel(::GeometryPtr source);
-
-    MCFOLD void setDefaultMaterial();
-
-    MCFOLD void setGlintMaterial();
     // NOLINTEND
 
 public:
@@ -54,7 +58,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext, ::Actor& scale, float, float, float, float, float, float);
+    MCAPI void $render(
+        ::ScreenContext& screenContext,
+        ::Actor&         e,
+        float            time,
+        float            r,
+        float            bob,
+        float            yRot,
+        float            xRot,
+        float            scale
+    );
     // NOLINTEND
 
 public:

@@ -27,14 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void process();
-
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptPlayerSwingEventFilterData const& data) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();

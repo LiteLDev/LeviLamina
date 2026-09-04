@@ -20,10 +20,4 @@ public:
 
     virtual ~CameraCallbacks() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

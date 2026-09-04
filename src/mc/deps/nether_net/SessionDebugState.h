@@ -21,18 +21,6 @@ public:
     SessionDebugState& operator=(SessionDebugState const&);
     SessionDebugState(SessionDebugState const&);
     SessionDebugState();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SessionDebugState();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace NetherNet

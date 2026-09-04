@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-class AppPlatform;
-// clang-format on
-
 class NetworkEnableDisableListener {
 public:
     // NetworkEnableDisableListener inner types define
@@ -43,35 +35,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit NetworkEnableDisableListener(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
-
-    MCNAPI void disable();
-
-    MCNAPI bool isDisabled() const;
-
-    MCNAPI bool isEnabled() const;
-
-    MCNAPI void tryEnable();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

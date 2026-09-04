@@ -26,18 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
 
-#ifdef LL_PLAT_C
-    MCAPI void insertStructure(::std::string const& name, ::StructureTemplate const& temp);
-#endif
-
     MCAPI bool const isSpecificStructureDirty(::std::string const& name);
-
-    MCAPI void setSpecificStructureDirty(::std::string const& name, bool dirty);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftScreenModel;
 class MinecraftScreenModel;
 // clang-format on
 
@@ -69,8 +68,6 @@ public:
             ::ExperienceConnectionData,
             ::Realms::RealmId> cookie
     );
-
-    MCAPI void doTick(::IMinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:
@@ -96,7 +93,7 @@ public:
 
     MCFOLD void $onExit(::MinecraftScreenModel&);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 

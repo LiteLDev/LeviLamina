@@ -26,12 +26,6 @@ public:
 
     virtual void clear() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::DataStore

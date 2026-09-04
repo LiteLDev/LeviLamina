@@ -52,11 +52,11 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnka3b2d9;
     ::ll::UntypedStorage<8, 8>   mUnkad9e35;
     ::ll::UntypedStorage<4, 4>   mUnka0bc4e;
-    ::ll::UntypedStorage<8, 904> mUnk3a4ad2;
+    ::ll::UntypedStorage<8, 816> mUnk3a4ad2;
     ::ll::UntypedStorage<8, 8>   mUnka95a72;
     ::ll::UntypedStorage<1, 1>   mUnk5d7aa4;
     ::ll::UntypedStorage<1, 1>   mUnka92525;
-    ::ll::UntypedStorage<4, 12>  mUnk215241;
+    ::ll::UntypedStorage<4, 12>  mUnk6f4d7c;
     ::ll::UntypedStorage<1, 1>   mUnke2a810;
     ::ll::UntypedStorage<8, 40>  mUnk432df5;
     ::ll::UntypedStorage<1, 1>   mUnk9930b7;
@@ -112,6 +112,8 @@ public:
     MCNAPI void EnsureStarted();
 
     MCNAPI void MaybeProcessPackets(::webrtc::Timestamp scheduled_process_time);
+
+    MCNAPI void PostMaybeProcessPackets();
 
     MCNAPI void SetAllowProbeWithoutMediaPacket(bool allow);
 

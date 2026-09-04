@@ -12,7 +12,6 @@ class BlockSource;
 class BoundingBox;
 class LevelChunk;
 class NBStartPiece;
-class PieceWeight;
 class Random;
 // clang-format on
 
@@ -66,29 +65,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit NetherFortressPiece(int genDepth);
 
-    MCAPI ::std::unique_ptr<::NetherFortressPiece> findAndCreateBridgePieceFactory(
-        ::std::string const&                                pieceClass,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 depth
-    );
-
-    MCAPI ::StructurePiece* generateAndAddPiece(
-        ::NBStartPiece&                                     startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 depth,
-        bool                                                isCastle
-    );
-
     MCAPI ::StructurePiece* generateChildForward(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
@@ -106,17 +82,21 @@ public:
         int                                                 zOff,
         bool                                                isCastle
     );
+    // NOLINTEND
 
-    MCAPI ::std::unique_ptr<::NetherFortressPiece> generatePiece(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::StructurePiece* generateAndAddPiece(
         ::NBStartPiece&                                     startPiece,
-        ::std::vector<::PieceWeight>&                       currentPieces,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
         int                                                 footY,
         int                                                 footZ,
         int                                                 direction,
-        int                                                 depth
+        int                                                 depth,
+        bool                                                isCastle
     );
     // NOLINTEND
 
@@ -134,11 +114,5 @@ public:
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

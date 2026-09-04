@@ -19,15 +19,9 @@ class IWebService {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> sendRawRequest(::Bedrock::Http::Request) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> sendRawRequest(::Bedrock::Http::Request request) = 0;
 
     virtual ::Bedrock::Threading::DelayableTaskGroup& getTaskGroup() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

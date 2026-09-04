@@ -18,44 +18,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScreenControllerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenControllerProxy();
+    virtual ~ScreenControllerProxy() = default;
 
     virtual ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScreenControllerProxy(::ScreenControllerProxyType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScreenControllerProxyType type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/api/EditorExtensionServiceProvider.h"
@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExtensionService() /*override*/;
+    virtual ~EditorExtensionService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -96,28 +96,23 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    createExtensionContexts(::Scripting::ContextId finalEvent, bool) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> createExtensionContexts() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI explicit EditorExtensionService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _sortExtensionListIntoExecutionOrder();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -166,17 +161,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts(::Scripting::ContextId finalEvent, bool);
+    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorService();
-
-    MCNAPI static void** $vftableForEditorExtensionServiceProvider();
     // NOLINTEND
 };
 

@@ -4,13 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Prefabs {
@@ -35,20 +32,6 @@ public:
         InstanceList& operator=(InstanceList const&);
         InstanceList(InstanceList const&);
         InstanceList();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool deleteInstance(::mce::UUID const& instanceId);
-
-        MCNAPI ~InstanceList();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -68,9 +51,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addInstance(::OwnerPtr<::Editor::Prefabs::PrefabDBPrefabInstance> instance);
-
-    MCNAPI ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
-    getInstancesInChunk(::ChunkPos const& chunkPos) const;
     // NOLINTEND
 };
 

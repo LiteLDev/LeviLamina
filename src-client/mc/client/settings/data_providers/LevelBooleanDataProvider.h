@@ -52,8 +52,6 @@ public:
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
         ::std::unique_ptr<::Settings::IBooleanPropertyHandler>                                   delegate
     );
-
-    MCAPI void _updateSubscriptions();
     // NOLINTEND
 
 public:
@@ -70,17 +68,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canModify() const;
+    MCAPI bool $canModify() const;
 
     MCFOLD bool $getValue() const;
 
     MCAPI void $setValue(bool value);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

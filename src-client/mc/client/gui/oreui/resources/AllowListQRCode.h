@@ -15,31 +15,18 @@ public:
 
 public:
     // prevent constructor by default
-    AllowListQRCode(AllowListQRCode const&);
     AllowListQRCode();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI AllowListQRCode(::std::string id, ::std::string target);
-
-    MCFOLD ::OreUI::AllowListQRCode& operator=(::OreUI::AllowListQRCode const&);
-
-    MCFOLD ::std::string const& url() const;
-
-    MCAPI ~AllowListQRCode();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string id, ::std::string target);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

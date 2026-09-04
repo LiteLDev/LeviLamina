@@ -17,25 +17,6 @@ public:
 public:
     // prevent constructor by default
     AssertHandlerContext& operator=(AssertHandlerContext const&);
+    AssertHandlerContext(AssertHandlerContext const&);
     AssertHandlerContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI AssertHandlerContext(::AssertHandlerContext const&);
-
-    MCNAPI ~AssertHandlerContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::AssertHandlerContext const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

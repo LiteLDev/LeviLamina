@@ -21,10 +21,10 @@ public:
     MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static void removePassengersWithoutSeat(
-        ::StrictEntityContext&     rideableComponent,
-        ::RideableComponent const& vehicleComponent,
-        ::VehicleComponent&        modifier,
-        ::EntityModifier<::StopRidingRequestComponent>&
+        ::StrictEntityContext&,
+        ::RideableComponent const&                      rideableComponent,
+        ::VehicleComponent&                             vehicleComponent,
+        ::EntityModifier<::StopRidingRequestComponent>& modifier
     );
     // NOLINTEND
 };

@@ -5,9 +5,7 @@
 namespace Automation {
 // static variables
 // NOLINTBEGIN
-MCNAPI char const*& BodyData();
-
-MCNAPI char const*& HeaderData();
+MCNAPI ::std::string const& EncryptionSubprotocol();
 // NOLINTEND
 
 } // namespace Automation

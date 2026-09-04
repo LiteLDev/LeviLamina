@@ -45,12 +45,6 @@ public:
         // NOLINTEND
 
     public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
         // static variables
         // NOLINTBEGIN
         MCAPI static ::SemVersionConstant const& VERSION();
@@ -74,19 +68,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject> mBiomeJsonObject;
     ::ll::TypedStorage<8, 32, ::std::string>                                                mFormatVersion;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeJsonDocument(BiomeJsonDocument const&);
-    BiomeJsonDocument();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument& operator=(::SharedTypes::v1_21_120::BiomeJsonDocument&&);
-
-    MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument& operator=(::SharedTypes::v1_21_120::BiomeJsonDocument const&);
     // NOLINTEND
 
 public:

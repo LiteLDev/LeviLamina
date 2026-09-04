@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::KeyFrameTransform& addKeyFrame(float time);
+
     MCAPI void animate(
         ::RenderParams&               renderParams,
         ::BoneOrientation&            destBoneOrientation,

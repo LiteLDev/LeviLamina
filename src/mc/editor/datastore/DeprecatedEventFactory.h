@@ -47,13 +47,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI ~SerializedEvent();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -64,17 +68,9 @@ public:
 
     MCNAPI static ::Json::Value buildNotificationPayload(::std::string const& dataTag, ::std::string const& payload);
 
-    MCNAPI static ::Json::Value buildServerPayloadBindControlToAction(::Json::Value const& payload);
-
-    MCNAPI static ::Json::Value buildServerPayloadCreateOrUpdateMenu(::Json::Value const& payload);
-
-    MCNAPI static ::Json::Value buildServerPayloadCreateOrUpdateModalTool(::Json::Value const& payload);
-
     MCNAPI static ::Json::Value buildServerPayloadDestroyMenu(::std::string const& id);
 
     MCNAPI static ::Json::Value buildServerPayloadDestroyModalTool(::std::string const& id);
-
-    MCNAPI static ::Json::Value buildServerPayloadRemoveActionFromControl(::Json::Value const& payload);
 
     MCNAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent
     getSerializedEvent(::Json::Value const& payload);

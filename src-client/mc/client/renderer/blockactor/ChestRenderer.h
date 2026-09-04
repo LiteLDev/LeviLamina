@@ -12,13 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
-class Block;
-class BlockPos;
-class BlockSource;
-class ChestBlockActor;
 struct BlockActorRenderData;
-struct BrightnessPair;
-namespace LightPropagation { class LightVolumeManager; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -52,21 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChestRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI ::glm::vec3 getBlockLightColor(
-        ::ChestBlockActor const&                                       actor,
-        ::Block const&                                                 block,
-        ::BlockSource&                                                 renderSource,
-        ::std::weak_ptr<::LightPropagation::LightVolumeManager> const& lightVolumeManager,
-        ::BlockPos const&                                              pos
-    );
-
-    MCAPI ::BrightnessPair getBrightness(
-        ::ChestBlockActor const& actor,
-        ::Block const&           block,
-        ::BlockSource&           renderSource,
-        ::BlockPos const&        pos
-    );
     // NOLINTEND
 
 public:
@@ -79,11 +58,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

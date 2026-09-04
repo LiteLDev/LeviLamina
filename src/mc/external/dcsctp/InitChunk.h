@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/Chunk.h"
 #include "mc/external/dcsctp/TLVTrait.h"
+#include "mc/external/webrtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,13 +39,13 @@ public:
 
     virtual ::std::string ToString() const /*override*/;
 
-    virtual ~InitChunk() /*override*/;
+    virtual ~InitChunk() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::InitChunk> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::InitChunk> Parse(::webrtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:

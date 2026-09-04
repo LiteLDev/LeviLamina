@@ -23,8 +23,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ResourcePackChunkRequestPacketPayload(::std::string const& name, int chunk);
 #endif
-
-    MCAPI ~ResourcePackChunkRequestPacketPayload();
     // NOLINTEND
 
 public:
@@ -33,11 +31,5 @@ public:
 #ifdef LL_PLAT_C
     MCFOLD void* $ctor(::std::string const& name, int chunk);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

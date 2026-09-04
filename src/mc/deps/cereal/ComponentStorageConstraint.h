@@ -32,19 +32,25 @@ public:
     // NOLINTEND
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
     MCAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::initializer_list<::std::string> keys);
 
     MCAPI void validateValue(::cereal::ComponentStorage const& storage, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 };
 

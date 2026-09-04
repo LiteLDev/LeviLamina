@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/server/FileReadResult.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -21,69 +22,54 @@ class PermissionsFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk795f1e;
-    ::ll::UntypedStorage<8, 64> mUnk60e0b4;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const>                      mFilePath;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PlayerPermissionLevel>> mPermissions;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
-    PermissionsFile& operator=(PermissionsFile const&);
-    PermissionsFile(PermissionsFile const&);
     PermissionsFile();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI explicit PermissionsFile(::Core::Path const& filePath);
+    MCAPI explicit PermissionsFile(::Core::Path const& filePath);
 #endif
 
-    MCNAPI void applyPlayerPermissionsFromDisk(
+    MCAPI void applyPlayerPermissionsFromDisk(
         ::Player&                              player,
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::CommandPermissionLevel               opCommandPermissionLevel
     );
 
-    MCNAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& getPermissions() const;
+    MCAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;
 
-    MCNAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
-
-    MCNAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;
-
-    MCNAPI void persistPlayerPermissionsToDisk(
+    MCAPI void persistPlayerPermissionsToDisk(
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::PlayerPermissionLevel                permission
     );
 
-    MCNAPI void persistPlayerPermissionsToDisk(::std::string const& xuid, ::PlayerPermissionLevel permission);
+    MCAPI void persistPlayerPermissionsToDisk(::std::string const& xuid, ::PlayerPermissionLevel permission);
 
-    MCNAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
+    MCAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
 
-    MCNAPI ::FileReadResult reload();
+    MCAPI ::FileReadResult reload();
 
-    MCNAPI ::FileReadResult reloadAndApply(
+    MCAPI ::FileReadResult reloadAndApply(
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> userManager,
         ::CommandPermissionLevel                             opCommandPermissionLevel
     );
-
-#ifdef LL_PLAT_S
-    MCNAPI ~PermissionsFile();
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI void* $ctor(::Core::Path const& filePath);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
+    MCAPI void* $ctor(::Core::Path const& filePath);
 #endif
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/Async.h"
 #include "mc/resources/pack_command/IPackCommandPipeline.h"
 
 // auto generated forward declare list
@@ -46,12 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<void> submitAll(::PackCommand::IPackCommandPipeline& pipeline);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::PackCommand::PackCommandHandle $submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands);
@@ -64,12 +57,6 @@ public:
     MCNAPI ::TaskGroup& $getTaskGroup();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -6,13 +6,25 @@ namespace NetherNet {
 
 struct TransportConfiguration {
 public:
+    // TransportConfiguration inner types declare
+    // clang-format off
+    struct Http;
+    // clang-format on
+
     // TransportConfiguration inner types define
-    enum class SignalingHost : uchar {
-        WebSocket          = 0,
-        Deferred           = 1,
-        TcpClientPrototype = 2,
-        TcpServerPrototype = 3,
-        None               = 4,
+    struct Http {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk7c12e9;
+        ::ll::UntypedStorage<2, 2>  mUnk9cb90c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Http& operator=(Http const&);
+        Http(Http const&);
+        Http();
     };
 
 public:
@@ -20,12 +32,12 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 1536> mUnkd35e7d;
     ::ll::UntypedStorage<4, 4>    mUnkec821a;
-    ::ll::UntypedStorage<8, 1280> mUnk580367;
-    ::ll::UntypedStorage<4, 4>    mUnka25415;
-    ::ll::UntypedStorage<1, 1>    mUnk6988db;
-    ::ll::UntypedStorage<1, 1>    mUnk78ec5f;
+    ::ll::UntypedStorage<8, 1536> mUnkcfa76d;
+    ::ll::UntypedStorage<4, 4>    mUnked4e91;
+    ::ll::UntypedStorage<8, 48>   mUnkd16d38;
     ::ll::UntypedStorage<4, 4>    mUnk358d77;
-    ::ll::UntypedStorage<2, 2>    mUnkbeaf83;
+    ::ll::UntypedStorage<2, 2>    mUnkf9436b;
+    ::ll::UntypedStorage<2, 2>    mUnkf11f51;
     ::ll::UntypedStorage<1, 1>    mUnka03b86;
     // NOLINTEND
 
@@ -34,18 +46,6 @@ public:
     TransportConfiguration& operator=(TransportConfiguration const&);
     TransportConfiguration(TransportConfiguration const&);
     TransportConfiguration();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~TransportConfiguration();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace NetherNet

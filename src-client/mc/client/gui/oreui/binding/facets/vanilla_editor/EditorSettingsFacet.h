@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/common/editor/ThemeSettingsColorKey.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -21,7 +21,7 @@ namespace mce { class Color; }
 
 namespace OreUI {
 
-class EditorSettingsFacet : public ::OreUI::FacetBase<::OreUI::EditorSettingsFacet> {
+class EditorSettingsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorSettingsFacet> {
 public:
     // EditorSettingsFacet inner types define
     enum class EditorOperatorType : int {
@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorSettingsFacet() /*override*/;
+    virtual ~EditorSettingsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -88,8 +88,6 @@ public:
 
     MCAPI void _handleThemeSettingsChanged(::Editor::Settings::ThemeProps const& themeProp);
 
-    MCAPI void _loadSettings();
-
     MCAPI void _saveSettings();
 
     MCAPI void addNewTheme(
@@ -110,7 +108,7 @@ public:
 
     MCFOLD ::std::string const& getSelectedTool() const;
 
-    MCFOLD ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> const& getThemesMap() const;
+    MCAPI ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> const& getThemesMap() const;
 
     MCAPI bool hasKey(::std::string const& key) const;
 
@@ -142,21 +140,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

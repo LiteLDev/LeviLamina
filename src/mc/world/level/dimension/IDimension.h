@@ -58,20 +58,14 @@ public:
         ::std::vector<::NetworkIdentifierWithSubId>& result
     ) const = 0;
 
-    virtual void updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
+    virtual void updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
+    MCFOLD void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

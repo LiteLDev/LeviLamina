@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
 class EntityRegistry;
-class MobEffectComponent;
 // clang-format on
 
 class MobEffectSystem : public ::ITickingSystem {
@@ -20,23 +18,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::MobEffectComponent& mobEffectComponent);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

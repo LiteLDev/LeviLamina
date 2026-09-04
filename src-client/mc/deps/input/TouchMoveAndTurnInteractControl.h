@@ -13,7 +13,6 @@ class InputEventQueue;
 class InputRenderContext;
 class RectangleArea;
 class TouchPointResults;
-struct TouchControlConfig;
 // clang-format on
 
 class TouchMoveAndTurnInteractControl : public ::TouchControl {
@@ -47,13 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TouchMoveAndTurnInteractControl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchMoveAndTurnInteractControl() /*override*/;
+    virtual ~TouchMoveAndTurnInteractControl() /*override*/ = default;
 
     virtual void
     tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
@@ -64,11 +59,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchMoveAndTurnInteractControl(
-        ::TouchControlConfig const&                       touchControlConfig,
-        ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
-    );
-
     MCAPI bool _isClientCurrentActivePointer(int processedPointerId) const;
 
     MCAPI void _renderJoystick(
@@ -89,53 +79,6 @@ public:
 
     MCAPI void _setPreviousActionPointer(int processedPointerId);
 
-    MCAPI void _tickAltTurn(
-        ::InputEventQueue&     eventQueue,
-        ::TouchPointResults&   touchPointResults,
-        ::RectangleArea const& altTurnArea,
-        ::RectangleArea const& defaultAltTurnArea,
-        float                  maxAltTurnZone,
-        bool                   staticJoystick,
-        bool                   joystickAlwaysVisible,
-        bool                   joystickVisibleWhenUnused
-    );
-
-    MCAPI void _tickHold(
-        ::InputEventQueue&     eventQueue,
-        ::TouchPointResults&   touchPointResults,
-        int                    yAxisInversionFactor,
-        ::RectangleArea const& moveArea,
-        ::RectangleArea const& turnArea,
-        ::RectangleArea const& altTurnArea,
-        ::RectangleArea const& defaultMoveArea,
-        ::RectangleArea const& defaultAltTurnArea,
-        float                  maxMovementZone,
-        bool                   staticJoystick,
-        bool                   staticAltJoystick,
-        bool                   altStickEnabled
-    );
-
-    MCAPI void _tickMove(
-        ::InputEventQueue&     eventQueue,
-        ::TouchPointResults&   touchPointResults,
-        ::RectangleArea const& moveArea,
-        ::RectangleArea const& defaultMoveArea,
-        float                  maxMovementZone,
-        bool                   staticJoystick,
-        bool                   joystickAlwaysVisible,
-        bool                   joystickVisibleWhenUnused
-    );
-
-    MCAPI void _tickTurn(
-        ::InputEventQueue&     eventQueue,
-        ::TouchPointResults&   touchPointResults,
-        int                    yAxisInversionFactor,
-        ::RectangleArea const& turnArea,
-        float                  maxMovementZone
-    );
-
-    MCAPI void calibrateMoveDelta(float& dx, float& dy);
-
     MCAPI void drawJoystick(
         ::InputRenderContext& context,
         ::JoystickState       joystickState,
@@ -148,18 +91,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::TouchControlConfig const&                       touchControlConfig,
-        ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static void calibrateMoveDelta(float& dx, float& dy);
     // NOLINTEND
 
 public:
@@ -168,11 +102,5 @@ public:
     MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
     MCAPI void $render(::InputRenderContext& context) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

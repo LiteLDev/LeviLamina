@@ -53,8 +53,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CraftingContainer(int w, int h);
-
-    MCAPI ::ItemStack const& getItem(int x, int y) const;
     // NOLINTEND
 
 public:

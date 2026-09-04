@@ -17,7 +17,8 @@ public:
     // NOLINTBEGIN
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -25,14 +26,8 @@ public:
     // NOLINTBEGIN
     MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const;
+    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -10,6 +10,7 @@
 #include "mc/deps/minecraft_renderer/framebuilder/AsyncLoadResult.h"
 #include "mc/deps/minecraft_renderer/game/FrustumCullerType.h"
 #include "mc/deps/minecraft_renderer/game/LevelCullerType.h"
+#include "mc/deps/minecraft_renderer/game/TerrainLayerLOD.h"
 #include "mc/deps/renderer/hal/enums/RenderFeature.h"
 #include "mc/external/render_dragon/mesh/IndexSize.h"
 #include "mc/external/render_dragon/platform/DebugModeFlags.h"
@@ -19,6 +20,7 @@
 #include "mc/external/render_dragon/rendering/LightingModels.h"
 #include "mc/external/render_dragon/resources/ServerResourcePointer.h"
 #include "mc/external/render_dragon/tasks/DeferredResult.h"
+#include "mc/external/render_dragon/texture_streaming/DebugPolicy.h"
 #include "mc/external/render_dragon/texture_streaming/texture_cache/TextureCache.h"
 
 // auto generated forward declare list
@@ -26,6 +28,7 @@
 struct RangeIndices;
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
+struct TerrainLayer;
 namespace cg { struct ImageDescription; }
 namespace dragon { class ResolvedImageResource; }
 namespace dragon { class ResolvedMaterialResource; }
@@ -42,6 +45,7 @@ namespace dragon::rendering { class RayTracingFeatureConfiguration; }
 namespace dragon::rendering { class RayTracingResources; }
 namespace dragon::rendering { struct SharedTextureHandle; }
 namespace dragon::texturestreaming { struct DragonTextureCacheContext; }
+namespace mce { class VertexFormat; }
 namespace mce { struct ClientTexture; }
 namespace mce { struct TextureShiftBuffer; }
 namespace mce { struct VertexLayout; }
@@ -49,6 +53,7 @@ namespace mce::framebuilder { class DynamicResolutionController; }
 namespace mce::framebuilder { class FrameBuilderContext; }
 namespace mce::framebuilder { class PBRTextureDataManager; }
 namespace mce::framebuilder { class RenderingFeatureConfiguration; }
+namespace mce::framebuilder { struct ActiveShadowTileInfo; }
 namespace mce::framebuilder { struct BiomeBlendingData; }
 namespace mce::framebuilder { struct BlitFlipbookTextureDescription; }
 namespace mce::framebuilder { struct BlockChangesDescription; }
@@ -58,6 +63,7 @@ namespace mce::framebuilder { struct CameraDescriptionPerspective; }
 namespace mce::framebuilder { struct FadeToBlackDescription; }
 namespace mce::framebuilder { struct FrameBuilderInitDependencies; }
 namespace mce::framebuilder { struct FrameLightingModelCapabilities; }
+namespace mce::framebuilder { struct FramePacingConfig; }
 namespace mce::framebuilder { struct FullscreenEffectDescription; }
 namespace mce::framebuilder { struct LightAmbientDescription; }
 namespace mce::framebuilder { struct LightDirectionalDescription; }
@@ -77,6 +83,7 @@ namespace mce::framebuilder { struct RenderEditorBlockVolumeOutlineDescription; 
 namespace mce::framebuilder { struct RenderEditorGizmoHandleArrowDescription; }
 namespace mce::framebuilder { struct RenderEditorGizmoHandleCubeDescription; }
 namespace mce::framebuilder { struct RenderEditorGizmoHandlePaneDescription; }
+namespace mce::framebuilder { struct RenderEditorRenderPlaneDescription; }
 namespace mce::framebuilder { struct RenderEditorSelectionCursorDescription; }
 namespace mce::framebuilder { struct RenderEndSkyDescription; }
 namespace mce::framebuilder { struct RenderEnvironmentalTextDescription; }
@@ -84,6 +91,7 @@ namespace mce::framebuilder { struct RenderFlameBillboardDescription; }
 namespace mce::framebuilder { struct RenderItemInHandDescription; }
 namespace mce::framebuilder { struct RenderLegacyCubemapDescription; }
 namespace mce::framebuilder { struct RenderMeshFallbackDescription; }
+namespace mce::framebuilder { struct RenderNametagDescription; }
 namespace mce::framebuilder { struct RenderParticleDescription; }
 namespace mce::framebuilder { struct RenderPlayerVisionDescription; }
 namespace mce::framebuilder { struct RenderShadowDescription; }
@@ -97,6 +105,7 @@ namespace mce::framebuilder { struct RenderUIMeshDescription; }
 namespace mce::framebuilder { struct RenderUITextDescription; }
 namespace mce::framebuilder { struct RenderVolumetricFogDescription; }
 namespace mce::framebuilder { struct RenderWeatherDescription; }
+namespace mce::framebuilder { struct ShadowAtlasFrameDescription; }
 namespace mce::framebuilder { struct ShadowProbeDescription; }
 namespace mce::framebuilder { struct SkyAmbientSamplesDescription; }
 namespace mce::framebuilder { struct VoxelVolumeDescription; }
@@ -136,6 +145,8 @@ public:
     };
 
     using InitializationStatePointer = ::std::shared_ptr<::mce::framebuilder::FrameBuilder::InitializationState>;
+
+    using LayerRanges = ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)>;
 
 public:
     // virtual functions
@@ -183,6 +194,12 @@ public:
 
     virtual void setTerrainAtlasTexture(::mce::ClientTexture const& texture) = 0;
 
+    virtual float getTargetFrameTime() const = 0;
+
+    virtual ::mce::framebuilder::FramePacingConfig getFramePacingConfig() const = 0;
+
+    virtual void setFramePacingConfig(::mce::framebuilder::FramePacingConfig const& config) = 0;
+
     virtual void setDefaultActorMERSUniforms(
         float const metalnessUniform,
         float const emissiveUniform,
@@ -198,6 +215,8 @@ public:
     ) = 0;
 
     virtual void setBiomeBlendingData(::mce::framebuilder::BiomeBlendingData const& biomeBlendingData) = 0;
+
+    virtual void setActiveShadowTiles(::std::vector<::mce::framebuilder::ActiveShadowTileInfo> const& activeTiles) = 0;
 
     virtual void updateSurfaceParameters(::std::variant<::HWND__*, ::std::monostate> const& surfaceParams) = 0;
 
@@ -242,19 +261,26 @@ public:
     virtual void destroyRenderChunk(::dragon::RenderMetadata const& renderMetadata) = 0;
 
     virtual void generateRenderChunkVertexData(
-        ::RenderChunkDirectVertexData&          renderChunkDirectVertexData,
-        ::std::array<::RangeIndices, 24> const& layerRanges,
-        ::gsl::span<uchar const> const&         chunkData,
-        uint64 const&                           vertexCount,
-        ::mce::VertexLayout const&              mceLayout,
-        int const*                              absoluteBlockPosition
+        ::RenderChunkDirectVertexData&                                            renderChunkDirectVertexData,
+        ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)> layerRanges,
+        ::gsl::span<uchar const> const&                                           chunkData,
+        uint64 const&                                                             vertexCount,
+        ::mce::VertexLayout const&                                                mceLayout,
+        int const*                                                                absoluteBlockPosition
     ) = 0;
 
     virtual void generateRenderChunkIndexData(
-        ::RenderChunkDirectIndexData&           renderChunkDirectIndexData,
-        ::std::array<::RangeIndices, 24> const& layerRanges,
-        ::gsl::span<uchar const> const&         indexData,
-        ::dragon::mesh::IndexSize const         indexSize
+        ::RenderChunkDirectIndexData&                                             renderChunkDirectIndexData,
+        ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)> layerRanges,
+        ::gsl::span<uchar const> const&                                           indexData,
+        ::dragon::mesh::IndexSize const                                           indexSize
+    ) = 0;
+
+    virtual void generateRenderChunkAdditionalVertexData(
+        ::RenderChunkDirectVertexData&  renderChunkDirectVertexData,
+        ::gsl::span<uchar const> const& additionalData,
+        uint64 const&                   vertexCount,
+        ::mce::VertexFormat const&      additionalDataFormat
     ) = 0;
 
     virtual void freeRenderChunkVertexData(::RenderChunkDirectVertexData& renderChunkDirectVertexData) = 0;
@@ -297,7 +323,8 @@ public:
         ::dragon::texturestreaming::TextureCache<::dragon::texturestreaming::DragonTextureCacheContext>>
     getTextureCache() = 0;
 
-    virtual ::std::monostate getTextureStreamingDebugControl() = 0;
+    virtual ::dragon::texturestreaming::unimplemented::DebugPolicy::TextureStreamingDebugControl
+    getTextureStreamingDebugControl() = 0;
 
     virtual ::dragon::materials::MaterialResourceManager* getMaterialResourceManager() = 0;
 
@@ -375,12 +402,8 @@ public:
 
     virtual void queueMaterialReload() = 0;
 
-    virtual void registerWindowHandle(
-        ::std::variant<::HWND__*, ::std::monostate> const& windowHandle,
-        ushort const                                       viewId,
-        int const                                          width,
-        int const                                          height
-    ) = 0;
+    virtual void
+    registerWindowHandle(::std::variant<::HWND__*, ::std::monostate> const&, ushort const, int const, int const) = 0;
 
     virtual void unregisterWindowHandle(ushort const viewId) = 0;
 
@@ -400,6 +423,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::gamecomponents::GameplayMetadata const>,
             ::std::reference_wrapper<::mce::framebuilder::LightPointDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::ShadowProbeDescription const>,
+            ::std::reference_wrapper<::mce::framebuilder::ShadowAtlasFrameDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::gamecomponents::ServerGraphicsOverrideParameters const>,
             ::std::reference_wrapper<::mce::framebuilder::VoxelVolumeDescription const>> description
     ) = 0;
@@ -407,6 +431,7 @@ public:
     virtual void _insert(
         ::std::variant<
             ::std::reference_wrapper<::mce::framebuilder::RenderEnvironmentalTextDescription const>,
+            ::std::reference_wrapper<::mce::framebuilder::RenderNametagDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderMeshFallbackDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderChunkGeometryDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderChunkOccludersDescription const>,
@@ -463,16 +488,11 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorGizmoHandleCubeDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorGizmoHandlePaneDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorSelectionCursorDescription const>,
-            ::std::reference_wrapper<::mce::framebuilder::RenderEditorBlockVolumeOutlineDescription const>> description
+            ::std::reference_wrapper<::mce::framebuilder::RenderEditorBlockVolumeOutlineDescription const>,
+            ::std::reference_wrapper<::mce::framebuilder::RenderEditorRenderPlaneDescription const>> description
     ) = 0;
 
     virtual void _initiateTDR() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

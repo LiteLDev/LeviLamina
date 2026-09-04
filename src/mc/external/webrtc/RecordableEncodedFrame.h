@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/VideoCodecType.h"
+#include "mc/external/webrtc/VideoRotation.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -47,6 +48,8 @@ public:
 
     virtual ::std::optional<::webrtc::ColorSpace> color_space() const = 0;
 
+    virtual ::std::optional<::webrtc::VideoRotation> video_rotation() const = 0;
+
     virtual ::webrtc::VideoCodecType codec() const = 0;
 
     virtual bool is_key_frame() const = 0;
@@ -54,12 +57,6 @@ public:
     virtual ::webrtc::RecordableEncodedFrame::EncodedResolution resolution() const = 0;
 
     virtual ::webrtc::Timestamp render_time() const = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

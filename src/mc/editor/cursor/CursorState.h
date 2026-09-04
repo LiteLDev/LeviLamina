@@ -29,12 +29,6 @@ public:
     CursorState();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void sanitizeState();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

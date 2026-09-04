@@ -9,7 +9,6 @@
 // clang-format off
 class ChunkPos;
 class Dimension;
-class Random;
 // clang-format on
 
 class EndCityStart : public ::StructureStart {
@@ -30,12 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
@@ -49,11 +42,5 @@ public:
     MCAPI ::std::string_view $getStructureName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

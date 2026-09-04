@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Random;
 struct ConstDeserializeDataParams;
 namespace ParticleSystem { class ParticleEvent; }
 namespace SharedTypes::v1_20_80 { struct ParticleEventNode; }
@@ -33,12 +32,6 @@ public:
     MCAPI explicit ParticleEventNode(::ConstDeserializeDataParams const& deserializeDataParams);
 
     MCAPI explicit ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode const& nodeData);
-
-    MCFOLD ::ParticleSystem::ParticleEvent const* getEvent() const;
-
-    MCAPI ::ParticleSystem::ParticleEventNode const* getRandomNode(::Random& random) const;
-
-    MCFOLD ::std::vector<::std::unique_ptr<::ParticleSystem::ParticleEventNode>> const& getSequenceNodes() const;
 
     MCAPI void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEventNode& data);
 

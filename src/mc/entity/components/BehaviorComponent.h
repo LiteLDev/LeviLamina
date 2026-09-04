@@ -19,31 +19,4 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mRoot;
     ::ll::TypedStorage<8, 88, ::BehaviorData>                   mBehaviorData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BehaviorComponent& operator=(BehaviorComponent const&);
-    BehaviorComponent(BehaviorComponent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BehaviorComponent();
-
-    MCAPI ::BehaviorComponent& operator=(::BehaviorComponent&&);
-
-    MCAPI ~BehaviorComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

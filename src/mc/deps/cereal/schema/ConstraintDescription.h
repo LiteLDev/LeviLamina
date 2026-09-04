@@ -33,6 +33,7 @@ public:
 
 public:
     // prevent constructor by default
+    ConstraintDescription& operator=(ConstraintDescription const&);
     ConstraintDescription();
 
 public:
@@ -45,8 +46,6 @@ public:
     MCAPI void merge(::cereal::internal::ConstraintDescription const& other);
 
     MCAPI ::cereal::internal::ConstraintDescription& operator=(::cereal::internal::ConstraintDescription&&);
-
-    MCAPI ::cereal::internal::ConstraintDescription& operator=(::cereal::internal::ConstraintDescription const&);
 
     MCAPI ~ConstraintDescription();
     // NOLINTEND

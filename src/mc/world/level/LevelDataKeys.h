@@ -16,7 +16,9 @@ MCNAPI ::HashedString& EDUCATION_OID();
 
 MCNAPI ::HashedString& EDUCATION_SHARED_RESOURCE();
 
+#ifdef LL_PLAT_C
 MCNAPI ::HashedString& FLAT_WORLD_PRESET();
+#endif
 
 MCNAPI ::HashedString& FLAT_WORLD_VERSION();
 
@@ -31,8 +33,6 @@ MCNAPI ::HashedString& LIMITED_WORLD_WIDTH();
 MCNAPI ::HashedString& LOADED_PLAYER_TAG();
 
 MCNAPI ::HashedString& SEED();
-
-MCNAPI ::HashedString& SERVER_AUTH_OPT_OUT_VERSION();
 
 MCNAPI ::HashedString& SPAWN_POS();
 // NOLINTEND

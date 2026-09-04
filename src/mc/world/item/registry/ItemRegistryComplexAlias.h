@@ -17,15 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemRegistryComplexAlias(ItemRegistryComplexAlias const&);
-    ItemRegistryComplexAlias();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemRegistryComplexAlias& operator=(::ItemRegistryComplexAlias const&);
-
     MCAPI ~ItemRegistryComplexAlias();
     // NOLINTEND
 

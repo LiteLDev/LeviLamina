@@ -58,6 +58,7 @@ public:
         ZipDepthError    = 7,
         UnknownError     = 8,
         Cancelled        = 9,
+        NotEnoughSpace   = 10,
     };
 
     enum class StartClearPlayerDataError : int {
@@ -142,18 +143,6 @@ public:
         ::World::ClearPlayerDataType                                               type,
         ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>& error
     ) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

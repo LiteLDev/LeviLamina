@@ -9,7 +9,6 @@
 // clang-format off
 class Actor;
 class CompoundTag;
-class ItemDescriptor;
 class ItemStack;
 class UpdateEquipPacket;
 struct SlotDescriptor;
@@ -31,15 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EquippableComponent(::EquippableComponent&& other);
-
     MCAPI ::UpdateEquipPacket createDataPacket(::Actor& owner, ::ContainerID containerID) const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> createTag(::Actor& owner) const;
-
-    MCAPI int getSlotCount() const;
-
-    MCAPI bool hasSlotAllowedItems(int slotNumber) const;
 
     MCAPI bool onItemChanged(::Actor& owner, uint64 slotIdx, ::ItemStack const& item) const;
 
@@ -48,21 +41,5 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void setDataFromPacket(::UpdateEquipPacket const& packet);
 #endif
-
-    MCAPI ::std::vector<::ItemDescriptor> const* tryGetSlotAllowedItems(int slotNumber) const;
-
-    MCAPI ~EquippableComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::EquippableComponent&& other);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

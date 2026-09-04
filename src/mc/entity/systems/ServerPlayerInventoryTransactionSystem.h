@@ -2,22 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
-
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
 class BlockPalette;
 class EntityContext;
 class InventoryTransactionPacket;
 class ServerPlayer;
-class StrictEntityContext;
-struct ActorRotationComponent;
-struct CameraAimAssistComponent;
-struct MoveInputComponent;
-struct ServerPlayerInventoryTransactionComponent;
 struct ServerPlayerMovementComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -26,16 +16,6 @@ namespace ServerPlayerInventoryTransactionSystem {
 // functions
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createSystem();
-
-MCAPI void tickInventoryTransactionSystem(
-    ::StrictEntityContext const&                                  entity,
-    ::ServerPlayerInventoryTransactionComponent const&            inventoryTransaction,
-    ::MoveInputComponent const&                                   moveInput,
-    ::ActorRotationComponent&                                     actorRotation,
-    ::ActorOwnerComponent&                                        actorOwnerComponent,
-    ::Optional<::CameraAimAssistComponent const>                  cameraAimAssist,
-    ::EntityModifier<::ServerPlayerInventoryTransactionComponent> modifier
-);
 
 MCAPI void transactInventoryPacket(
     ::InventoryTransactionPacket const& packet,

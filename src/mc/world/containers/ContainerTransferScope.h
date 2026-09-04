@@ -14,12 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerTransferScope() = default;
 
-#ifdef LL_PLAT_S
-    virtual void createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>);
-#else // LL_PLAT_C
     virtual void createItem(::ItemStack const& item, ::std::shared_ptr<::SimpleSparseContainer> createdOutputContainer);
-#endif
-
     // NOLINTEND
 
 public:
@@ -30,11 +25,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

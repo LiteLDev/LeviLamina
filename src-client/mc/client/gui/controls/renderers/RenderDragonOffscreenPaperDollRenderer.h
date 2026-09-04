@@ -25,7 +25,7 @@ class RenderDragonOffscreenPaperDollRenderer : public ::IOffscreenPaperDollRende
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 280, ::PaperDollRenderer>                                          mPaperDollRenderer;
+    ::ll::TypedStorage<8, 336, ::PaperDollRenderer>                                          mPaperDollRenderer;
     ::ll::TypedStorage<8, 240, ::VisualTree>                                                 mVisualTree;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UIControl>>                                 mUIControl;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftUIRenderContext>>                  mRenderContext;

@@ -16,22 +16,6 @@ public:
     ClientAssertion& operator=(ClientAssertion const&);
     ClientAssertion(ClientAssertion const&);
     ClientAssertion();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ~ClientAssertion();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Services

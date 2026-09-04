@@ -47,7 +47,7 @@ public:
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
@@ -94,18 +94,12 @@ public:
 
     MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getTitleText() const;
 
     MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
     MCAPI ::std::string $getName() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

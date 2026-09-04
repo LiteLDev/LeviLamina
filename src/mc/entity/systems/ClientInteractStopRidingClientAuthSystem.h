@@ -28,21 +28,6 @@ namespace ClientInteractStopRidingClientAuthSystem {
 // functions
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createSystem();
-
-MCAPI void tick(
-    ::entt::type_list<
-        ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,
-        ::Exclude<::ActorRemovedFlagComponent, ::SwitchingVehiclesFlagComponent>> entity,
-    ::StrictEntityContext const&                                                  passengerComponent,
-    ::PassengerComponent const&                                                   stateVectorComponent,
-    ::StateVectorComponent const&                                                 modifier,
-    ::EntityModifier<::SendPacketsComponent>                                      vehicleView,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::VehicleComponent>,
-        ::Exclude<::DoesServerAuthOnlyDismountFlagComponent>,
-        ::RuntimeIDComponent const>
-);
 // NOLINTEND
 
 } // namespace ClientInteractStopRidingClientAuthSystem

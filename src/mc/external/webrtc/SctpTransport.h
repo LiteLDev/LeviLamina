@@ -10,14 +10,16 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class SctpTransportInternal; }
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class DataChannelSink; }
 namespace webrtc { class DtlsTransport; }
 namespace webrtc { class DtlsTransportInterface; }
+namespace webrtc { class PriorityValue; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class SctpTransportInformation; }
+namespace webrtc { class SctpTransportInternal; }
 namespace webrtc { class SctpTransportObserverInterface; }
+namespace webrtc { struct SctpOptions; }
 namespace webrtc { struct SendDataParams; }
 // clang-format on
 
@@ -27,9 +29,9 @@ class SctpTransport : public ::webrtc::SctpTransportInterface, public ::webrtc::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke8b820;
+    ::ll::UntypedStorage<8, 8>  mUnk9854a3;
     ::ll::UntypedStorage<8, 40> mUnk1fa385;
-    ::ll::UntypedStorage<8, 8>  mUnkfaa902;
+    ::ll::UntypedStorage<8, 8>  mUnk5d91c0;
     ::ll::UntypedStorage<8, 8>  mUnk494399;
     ::ll::UntypedStorage<8, 8>  mUnk4ed708;
     // NOLINTEND
@@ -51,12 +53,12 @@ public:
 
     virtual void UnregisterObserver() /*override*/;
 
-    virtual ::webrtc::RTCError OpenChannel(int channel_id) /*override*/;
+    virtual ::webrtc::RTCError OpenChannel(int channel_id, ::webrtc::PriorityValue priority) /*override*/;
 
     virtual ::webrtc::RTCError SendData(
-        int                             channel_id,
-        ::webrtc::SendDataParams const& params,
-        ::rtc::CopyOnWriteBuffer const& buffer
+        int                                channel_id,
+        ::webrtc::SendDataParams const&    params,
+        ::webrtc::CopyOnWriteBuffer const& buffer
     ) /*override*/;
 
     virtual ::webrtc::RTCError CloseChannel(int channel_id) /*override*/;
@@ -80,11 +82,11 @@ public:
     MCNAPI void Clear();
 
     MCNAPI SctpTransport(
-        ::std::unique_ptr<::cricket::SctpTransportInternal> internal,
-        ::webrtc::scoped_refptr<::webrtc::DtlsTransport>    dtls_transport
+        ::std::unique_ptr<::webrtc::SctpTransportInternal> internal,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransport>   dtls_transport
     );
 
-    MCNAPI void Start(int local_port, int remote_port, int max_message_size);
+    MCNAPI void Start(::webrtc::SctpOptions const& options);
 
     MCNAPI void UpdateInformation(::webrtc::SctpTransportState state);
     // NOLINTEND
@@ -93,8 +95,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::std::unique_ptr<::cricket::SctpTransportInternal> internal,
-        ::webrtc::scoped_refptr<::webrtc::DtlsTransport>    dtls_transport
+        ::std::unique_ptr<::webrtc::SctpTransportInternal> internal,
+        ::webrtc::scoped_refptr<::webrtc::DtlsTransport>   dtls_transport
     );
     // NOLINTEND
 
@@ -115,10 +117,10 @@ public:
 
     MCNAPI void $UnregisterObserver();
 
-    MCNAPI ::webrtc::RTCError $OpenChannel(int channel_id);
+    MCNAPI ::webrtc::RTCError $OpenChannel(int channel_id, ::webrtc::PriorityValue priority);
 
     MCNAPI ::webrtc::RTCError
-    $SendData(int channel_id, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& buffer);
+    $SendData(int channel_id, ::webrtc::SendDataParams const& params, ::webrtc::CopyOnWriteBuffer const& buffer);
 
     MCNAPI ::webrtc::RTCError $CloseChannel(int channel_id);
 

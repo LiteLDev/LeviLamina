@@ -25,14 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptAimAssistPresetSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptAimAssistPresetSettings(::std::string identifier);
-
     MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTagTargets() const;
 
     MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTargets() const;
@@ -40,8 +34,6 @@ public:
     MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTargets() const;
 
     MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTypeFamilyTargets() const;
-
-    MCAPI ::std::unordered_map<::std::string, ::std::string> _getItemSettings() const;
 
     MCAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
 
@@ -54,29 +46,13 @@ public:
     MCAPI void
     setExcludedEntityTypeFamilyTargets(::std::optional<::std::vector<::std::string>> entityTypeFamilyTargets);
 
-    MCAPI void setItemSettings(::std::unordered_map<::std::string, ::std::string> itemSettings);
-
     MCAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
-
-    MCAPI ~ScriptAimAssistPresetSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string identifier);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

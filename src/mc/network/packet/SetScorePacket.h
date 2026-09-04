@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/ScorePacketInfo.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -26,8 +27,7 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetScorePacket();
+    SetScorePacket() : mType(ScorePacketType::Change) {}
 
 public:
     // virtual functions
@@ -47,16 +47,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SetScorePacket(::ScorePacketType type, ::ScoreboardId const& id, ::Objective const& objective);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::SetScorePacket change(::std::vector<::ScorePacketInfo> info);
-
-    MCAPI static ::SetScorePacket change(::ScoreboardId const& id, ::Objective const& objective);
-
-    MCAPI static ::SetScorePacket remove(::ScoreboardId const& id, ::Objective const& objective);
     // NOLINTEND
 
 public:

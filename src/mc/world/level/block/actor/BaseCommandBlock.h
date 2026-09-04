@@ -38,37 +38,26 @@ public:
     // prevent constructor by default
     BaseCommandBlock& operator=(BaseCommandBlock const&);
     BaseCommandBlock(BaseCommandBlock const&);
+    BaseCommandBlock();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseCommandBlock();
-
     MCAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
 
     MCAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
 
     MCAPI void compile(::CommandOrigin const& origin, ::Level& level);
 
-    MCFOLD ::std::string const& getCommand() const;
-
     MCAPI ::std::string getLastOutput() const;
-
-    MCAPI ::Bedrock::Safety::RedactableString const& getName() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::Bedrock::Safety::RedactableString const& getRawName() const;
-#endif
-
-    MCFOLD int getTickDelay() const;
-
-    MCAPI bool getTrackOutput() const;
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
 
     MCAPI bool performCommand(::BlockSource& region, ::ActorUniqueID const& minecartId);
+
+    MCAPI bool performCommand(::BlockSource& region, ::BlockPos const& pos, bool& markForSaving);
 
     MCAPI bool save(::CompoundTag& tag) const;
 
@@ -78,15 +67,7 @@ public:
 
     MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
 
-    MCAPI void setName(::Bedrock::Safety::RedactableString const& name);
-
-    MCFOLD void setShouldExecuteOnFirstTick(bool shouldExecute);
-
-    MCAPI void setTickDelay(int tickDelay);
-
     MCAPI void setTrackOutput(bool trackOutput);
-
-    MCFOLD bool shouldExecuteOnFirstTick() const;
 
     MCAPI ~BaseCommandBlock();
     // NOLINTEND
@@ -95,12 +76,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Safety::RedactableString const& DefaultCommandBlockName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

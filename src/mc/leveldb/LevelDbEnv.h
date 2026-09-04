@@ -51,17 +51,17 @@ public:
 
     virtual ::leveldb::Status RenameFile(::std::string const& src, ::std::string const& target) /*override*/;
 
-    virtual ::leveldb::Status LockFile(::std::string const& lock, ::leveldb::FileLock**) /*override*/;
+    virtual ::leveldb::Status LockFile(::std::string const& fname, ::leveldb::FileLock** lock) /*override*/;
 
     virtual ::leveldb::Status UnlockFile(::leveldb::FileLock* lock) /*override*/;
 
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
-    virtual void StartThread(void (*)(void*), void*) /*override*/;
+    virtual void StartThread(void (*function)(void*), void* arg) /*override*/;
 
-    virtual ::leveldb::Status GetTestDirectory(::std::string*) /*override*/;
+    virtual ::leveldb::Status GetTestDirectory(::std::string* result) /*override*/;
 
-    virtual ::leveldb::Status NewLogger(::std::string const& result, ::leveldb::Logger**) /*override*/;
+    virtual ::leveldb::Status NewLogger(::std::string const& fname, ::leveldb::Logger** result) /*override*/;
 
     virtual uint64 NowMicros() /*override*/;
 
@@ -71,8 +71,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool IsComplete() const;
-
     MCNAPI explicit LevelDbEnv(int maxOpenFiles);
     // NOLINTEND
 
@@ -119,17 +117,17 @@ public:
 
     MCNAPI ::leveldb::Status $RenameFile(::std::string const& src, ::std::string const& target);
 
-    MCNAPI ::leveldb::Status $LockFile(::std::string const& lock, ::leveldb::FileLock**);
+    MCNAPI ::leveldb::Status $LockFile(::std::string const& fname, ::leveldb::FileLock** lock);
 
     MCNAPI ::leveldb::Status $UnlockFile(::leveldb::FileLock* lock);
 
     MCNAPI void $Schedule(void (*function)(void*), void* arg);
 
-    MCNAPI void $StartThread(void (*)(void*), void*);
+    MCNAPI void $StartThread(void (*function)(void*), void* arg);
 
-    MCNAPI ::leveldb::Status $GetTestDirectory(::std::string*);
+    MCNAPI ::leveldb::Status $GetTestDirectory(::std::string* result);
 
-    MCNAPI ::leveldb::Status $NewLogger(::std::string const& result, ::leveldb::Logger**);
+    MCNAPI ::leveldb::Status $NewLogger(::std::string const& fname, ::leveldb::Logger** result);
 
     MCNAPI uint64 $NowMicros();
 

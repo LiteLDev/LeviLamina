@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/SceneType.h"
-#include "mc/client/gui/WorldCopyProgressHandler.h"
 #include "mc/client/gui/screens/SelectWorldResult.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
@@ -55,20 +54,9 @@ public:
             callback
     );
 
-    MCAPI void _copyLocalWorld(
-        ::LevelSummary const&                                     world,
-        ::std::function<void(::WorldCopyProgressHandler::Result)> callback
-    ) const;
-
     MCAPI void _displayCopyFailedModal(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _downloadLatestRealmsBackup(::Realms::World const& world);
-
     MCAPI void _exit(::SelectWorldResult result);
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _triggerCallback(::SelectWorldResult result);
     // NOLINTEND
 
 public:
@@ -88,13 +76,5 @@ public:
     MCAPI void $onEntered();
 
     MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

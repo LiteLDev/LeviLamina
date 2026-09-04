@@ -11,8 +11,6 @@
 class PacketSender;
 namespace Bedrock::DDUI { class DataStoreSyncClient; }
 namespace GameplayUI { class DataDrivenScreenAPI; }
-namespace OreUI { class ClientDependencies; }
-namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -40,20 +38,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataStoreSetCommandGroup();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataStoreSetCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-
-    MCAPI DataStoreSetCommandGroup(
-        ::Bedrock::DDUI::DataStoreSyncClient* dataStore,
-        ::GameplayUI::DataDrivenScreenAPI*    dataDrivenScreenAPI,
-        ::PacketSender*                       packetSender
-    );
-
     MCAPI void buttonPress(::std::string dataStore, ::std::string property, ::std::string path);
 
     MCAPI void closeButtonPress(::std::string dataStore, ::std::string property, ::std::string path);
@@ -68,25 +54,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-
-    MCAPI void* $ctor(
-        ::Bedrock::DDUI::DataStoreSyncClient* dataStore,
-        ::GameplayUI::DataDrivenScreenAPI*    dataDrivenScreenAPI,
-        ::PacketSender*                       packetSender
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static ::std::add_lvalue_reference_t<char const[36]> NAME();
     // NOLINTEND
 };
 

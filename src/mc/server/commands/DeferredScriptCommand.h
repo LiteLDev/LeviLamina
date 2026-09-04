@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 #include "mc/server/commands/DeferredCommandBase.h"
 
 // auto generated forward declare list
@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeferredScriptCommand() /*override*/;
+    virtual ~DeferredScriptCommand() /*override*/ = default;
 
     virtual void execute(::MinecraftCommands& commands) /*override*/;
     // NOLINTEND
@@ -69,12 +69,6 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
             ::ScriptModuleMinecraft::ScriptCommandError> promise
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

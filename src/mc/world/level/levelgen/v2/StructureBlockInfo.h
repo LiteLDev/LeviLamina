@@ -26,6 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::br::worldgen::StructureBlockInfo clone() const;
+
     MCAPI ~StructureBlockInfo();
     // NOLINTEND
 
@@ -34,15 +36,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::StructureBlockInfo
     from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState);
-
-    MCAPI static ::br::worldgen::StructureBlockInfo
-    from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState, ::std::unique_ptr<::CompoundTag>&& nbt);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

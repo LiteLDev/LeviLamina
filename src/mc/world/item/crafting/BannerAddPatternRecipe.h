@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BannerAddPatternRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
@@ -47,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerAddPatternRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
-
     MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const
     matchPatterns(::CraftingContainer const& craftSlots) const;
     // NOLINTEND
@@ -57,12 +51,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 
 public:

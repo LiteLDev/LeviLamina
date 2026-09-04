@@ -42,12 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FunctionAction(::std::string const& filePath, ::std::unique_ptr<::CommandOrigin> commandOrigin);
-
-    MCAPI void _printOriginInvalidError(::ServerLevel& level);
-
-    MCAPI void _printOutput(::ServerLevel& level, int successCount);
-
-    MCFOLD ::std::string const& getFilePath() const;
     // NOLINTEND
 
 public:

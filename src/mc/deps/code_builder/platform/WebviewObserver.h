@@ -58,7 +58,11 @@ public:
 
     MCNAPI void $onLoadingEnd();
 
+#ifdef LL_PLAT_S
     MCNAPI void $onError(::WebviewError const&);
+#else // LL_PLAT_C
+    MCNAPI void $onError(::WebviewError const& error);
+#endif
 
     MCNAPI void $onWebviewChanged();
 

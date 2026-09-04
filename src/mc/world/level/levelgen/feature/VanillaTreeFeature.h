@@ -13,7 +13,6 @@
 // clang-format off
 class BlockPos;
 class ITreeCanopyWrapper;
-class ITreeRootWrapper;
 class ITreeTrunkWrapper;
 namespace FeatureLoading { struct FeatureRootParseContext; }
 namespace JsonUtil { class EmptyClass; }
@@ -32,26 +31,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _buildSchema(
-        ::JsonUtil::JsonSchemaObjectNode<
-            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
-            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode
-    );
-
     MCAPI static void _buildVanillaCanopyVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
             ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
         ::std::function<::ITreeCanopyWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)>
             canopyAccessor
-    );
-
-    MCAPI static void _buildVanillaRootVariants(
-        ::JsonUtil::JsonSchemaObjectNode<
-            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
-            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
-        ::std::function<::ITreeRootWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)>
-            rootAccessor
     );
 
     MCAPI static void _buildVanillaTrunkVariants(
@@ -69,11 +54,5 @@ public:
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/AttributeScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void notifyHealthChange(float oldValue, float newValue) const;
+    MCAPI void notifyHealthChange(float const oldValue, float const newValue) const;
     // NOLINTEND
 
 public:
@@ -67,12 +67,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<void> $resetToDefaultValue() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

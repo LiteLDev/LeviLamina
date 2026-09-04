@@ -12,8 +12,6 @@
 // clang-format off
 namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
-namespace Core { class FileSystemImpl; }
-namespace Core { class FlatFileManifestTracker; }
 namespace Core { class FlatFileSearchResult; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
@@ -40,11 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlatFileSystemImpl(
-        ::Core::FileSystemImpl&                            fileSystemImplementation,
-        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
-    );
-
     MCNAPI ::Core::FlatFileSearchResult
     _findFileOrDirectoryEntry(::Core::PathView filePath, ::Core::PathView manifestPath, bool skipDeleted);
 
@@ -71,13 +64,7 @@ public:
         bool             deleteRecursively
     );
 
-    MCNAPI bool directoryExists(::Core::PathView directoryPath, ::Core::PathView manifestPath);
-
-    MCNAPI bool fileExists(::Core::PathView filePath, ::Core::PathView manifestPath);
-
     MCNAPI bool fileOrDirectoryExists(::Core::PathView path, ::Core::PathView manifestPath);
-
-    MCNAPI ::Core::Result getFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
 
     MCNAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
@@ -100,15 +87,6 @@ public:
         ::Core::PathView                   path,
         ::Core::PathBuffer<::std::string>& manifestFilePath,
         bool                               shouldIncludeParentDir
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Core::FileSystemImpl&                            fileSystemImplementation,
-        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
     );
     // NOLINTEND
 };

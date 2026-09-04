@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/resources/PackWriteStrategy.h"
 
-// auto generated forward declare list
-// clang-format off
-class ResourceLocation;
-// clang-format on
-
 class DirectoryPackWriteStrategy : public ::PackWriteStrategy {
 public:
     // member variables
@@ -27,20 +22,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void writeAsset(::PackWriteStrategy::FileName path, ::std::string const& fileContent) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DirectoryPackWriteStrategy(::ResourceLocation const& location);
-
-    MCNAPI void generateContentsJSON(::std::string const& contents);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourceLocation const& location);
     // NOLINTEND
 
 public:

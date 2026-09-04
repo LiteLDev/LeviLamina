@@ -107,7 +107,7 @@ public:
         ::StateVectorComponent const&                                     stateVectorComponent,
         ::AABBShapeComponent const&                                       aabbShapeComponent,
         ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView,
-        ::PlayJumpSoundSystem::SoundType                                  jumpType,
+        ::PlayJumpSoundSystem::SoundType const                            jumpType,
         ::IConstBlockSource const&                                        region
     );
     // NOLINTEND

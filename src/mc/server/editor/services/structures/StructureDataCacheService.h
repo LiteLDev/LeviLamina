@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/server/editor/serviceproviders/StructureDataCacheServiceProvider.h"
@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureDataCacheService() /*override*/;
+    virtual ~StructureDataCacheService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -76,22 +76,12 @@ public:
     MCNAPI void _handleStructureDataCacheRequestStructurePayload(
         ::Editor::Network::StructureDataCacheRequestStructurePayload const& payload
     );
-
-    MCNAPI void _recordClientOwnership(::mce::UUID const& structureId, ::mce::UUID const& clientId);
-
-    MCNAPI void _recordClientOwnershipRelease(::mce::UUID const& structureId, ::mce::UUID const& clientId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

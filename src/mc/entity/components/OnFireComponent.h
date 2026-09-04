@@ -20,16 +20,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::Actor const&, ::CompoundTag& tag) const;
-
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void convertFromLegacyData(::CompoundTag const& tag, ::CompoundTag& outTag);
-
-    MCAPI static bool needsLegacyConversion(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

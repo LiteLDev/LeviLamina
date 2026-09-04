@@ -38,6 +38,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkda10a3;
     ::ll::UntypedStorage<8, 32> mUnk7daadb;
     ::ll::UntypedStorage<8, 32> mUnkedd544;
+    ::ll::UntypedStorage<8, 32> mUnk45e7c8;
     ::ll::UntypedStorage<8, 32> mUnk39e4e1;
     ::ll::UntypedStorage<8, 32> mUnk5d75b6;
     ::ll::UntypedStorage<8, 32> mUnke39f9e;
@@ -58,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExtensionContext() /*override*/;
+    virtual ~EditorExtensionContext() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -84,8 +85,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
 
+#ifdef LL_PLAT_S
     MCNAPI static ::std::optional<::std::unique_ptr<::Editor::API::EditorExtensionContext>>
     tryCreate(::Player& player, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
+#endif
     // NOLINTEND
 
 public:
@@ -104,18 +107,6 @@ public:
         ::Scripting::WeakLifetimeScope                                      scope,
         ::Editor::API::EditorExtension&                                     extension
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

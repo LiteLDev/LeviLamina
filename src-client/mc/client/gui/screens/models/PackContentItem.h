@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ManifestContentItem.h"
-#include "mc/client/gui/screens/models/PackListType.h"
 #include "mc/client/gui/screens/models/PackReportState.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/PackReport.h"
@@ -25,16 +24,7 @@ public:
     // clang-format on
 
     // PackContentItem inner types define
-    struct PositionSort {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator()(
-            ::std::shared_ptr<::PackContentItem const> const& lhs,
-            ::std::shared_ptr<::PackContentItem const> const& rhs
-        ) const;
-        // NOLINTEND
-    };
+    struct PositionSort {};
 
 public:
     // member variables
@@ -59,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PackContentItem() /*override*/;
+    virtual ~PackContentItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,24 +58,12 @@ public:
     MCAPI explicit PackContentItem(::ContentSource* src);
 
     MCAPI ::std::vector<::std::shared_ptr<::PackContentItem const>> getDependentContent() const;
-
-    MCAPI ::PackListType getListType() const;
-
-    MCAPI uint64 getPosition() const;
-
-    MCAPI int getSubpackIndex() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContentSource* src);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

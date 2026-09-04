@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/events/PlayerEventCoordinator.h"
 
-class ServerPlayerEventCoordinator : public ::PlayerEventCoordinator {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class ServerPlayerEventCoordinator : public ::PlayerEventCoordinator {};

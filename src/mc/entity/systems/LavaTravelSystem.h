@@ -14,9 +14,9 @@ namespace LavaTravelSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void copyLavaSpeedToMobTravel(
-    ::StrictEntityContext&               attributesComponent,
-    ::MovementAttributesComponent const& mobTravelComponent,
-    ::MobTravelComponent&
+    ::StrictEntityContext&,
+    ::MovementAttributesComponent const& attributesComponent,
+    ::MobTravelComponent&                mobTravelComponent
 );
 
 MCAPI ::TickingSystemWithInfo createLavaTravelSystem();

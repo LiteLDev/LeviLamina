@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DimensionDataPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -35,18 +31,14 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ~DimensionDataPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit DimensionDataPacket(::DimensionDefinitionGroup const& dimensionDefinitionGroup);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionDefinitionGroup const& dimensionDefinitionGroup);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

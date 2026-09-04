@@ -38,10 +38,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $mergeFiles(::std::vector<::LoadedResourceData> const& fileStack);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

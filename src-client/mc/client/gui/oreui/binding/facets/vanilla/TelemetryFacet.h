@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/TelemetryBatcher.h"
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,7 @@ namespace OreUI { struct EventProperty; }
 
 namespace OreUI {
 
-class TelemetryFacet : public ::OreUI::FacetBase<::OreUI::TelemetryFacet> {
+class TelemetryFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::TelemetryFacet> {
 public:
     // member variables
     // NOLINTBEGIN

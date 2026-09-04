@@ -46,7 +46,7 @@ public:
 
     MCNAPI void _getReportJsonHandler(::PlayerReportingSignal::GetReportJson const& signal);
 
-    MCNAPI void _resetAll(::PlayerReportingSignal::ResetAll const&);
+    MCNAPI void _resetAll(::PlayerReportingSignal::ResetAll const& signal);
 
     MCNAPI void _sendReport(::PlayerReportingSignal::SendReport const& signal);
 
@@ -62,12 +62,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Bedrock::SignalReceiver* listener, bool isTestHandler);
 #endif
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

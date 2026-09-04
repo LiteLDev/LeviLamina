@@ -9,7 +9,6 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
-class CommandRegistry;
 class Level;
 struct SnapshotFilenameAndLength;
 namespace Bedrock::Threading { class Mutex; }
@@ -39,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& output, ::CommandOutput&) const /*override*/;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
     // NOLINTEND
 
 public:
@@ -48,8 +47,6 @@ public:
     MCAPI static bool saveHold(::Level& level);
 
     MCAPI static bool saveResume(::Level& level);
-
-    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
@@ -65,17 +62,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& output, ::CommandOutput&) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::SaveCommand::Mode>();
-// clang-format on

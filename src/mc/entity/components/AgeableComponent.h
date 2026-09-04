@@ -31,19 +31,13 @@ public:
         ::ActorInteraction&        interaction,
         ::AgeableDefinition const& definition,
         ::ItemStack const&         item,
-        bool                       growthPaused
+        bool const                 growthPaused
     );
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCFOLD int getAge() const;
-
     MCAPI ::InteractionResult getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
 
-    MCFOLD bool isGrowthPaused() const;
-
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI void setAge(int age);
     // NOLINTEND
 };

@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class Level;
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Transactions { struct EntityOperationData; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
 
@@ -53,11 +52,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EntityOperation(
-        ::Editor::Transactions::EntityOperationData&&          entityData,
-        ::Editor::Transactions::EntityOperation::OperationType type
-    );
-
     MCNAPI ::Scripting::Result_deprecated<void> _loadEntity(::Level* level);
 
     MCNAPI ::Scripting::Result_deprecated<void>
@@ -79,15 +73,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::Transactions::EntityOperationData&&          entityData,
-        ::Editor::Transactions::EntityOperation::OperationType type
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName();
@@ -97,12 +82,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection& services);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorIndex;
+// clang-format on
+
 struct DataDrivenRendererDerivitiveData {
 public:
     // DataDrivenRendererDerivitiveData inner types declare
@@ -14,40 +19,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk5f3296;
-        ::ll::UntypedStorage<4, 4> mUnk902a24;
-        ::ll::UntypedStorage<4, 4> mUnk1c912e;
+        ::ll::TypedStorage<4, 4, uint> mRenderControllerIdx;
+        ::ll::TypedStorage<4, 4, uint> mSubRenderLayerIndex;
+        ::ll::TypedStorage<4, 4, uint> mCount;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RenderControllerEntry& operator=(RenderControllerEntry const&);
-        RenderControllerEntry(RenderControllerEntry const&);
-        RenderControllerEntry();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3e664a;
-    ::ll::UntypedStorage<8, 24> mUnk62bd1e;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRendererDerivitiveData& operator=(DataDrivenRendererDerivitiveData const&);
-    DataDrivenRendererDerivitiveData(DataDrivenRendererDerivitiveData const&);
-    DataDrivenRendererDerivitiveData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DataDrivenRendererDerivitiveData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    ::ll::TypedStorage<8, 24, ::std::vector<::DataDrivenRendererDerivitiveData::RenderControllerEntry>>
+                                                           mRenderControllers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorIndex>> mRenderControllerToActorIdx;
     // NOLINTEND
 };

@@ -16,24 +16,13 @@ public:
 public:
     // prevent constructor by default
     ActiveDirectoryScreenCapabilities& operator=(ActiveDirectoryScreenCapabilities const&);
+    ActiveDirectoryScreenCapabilities(ActiveDirectoryScreenCapabilities const&);
     ActiveDirectoryScreenCapabilities();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ActiveDirectoryScreenCapabilities() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ActiveDirectoryScreenCapabilities(::ActiveDirectoryScreenCapabilities const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActiveDirectoryScreenCapabilities const&);
     // NOLINTEND
 
 public:

@@ -144,7 +144,7 @@ public:
 
         virtual uint64 bytes_to_send_in_next_message() const /*override*/;
 
-        virtual ~OutgoingStream() /*override*/;
+        virtual ~OutgoingStream() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -257,7 +257,7 @@ public:
 
     virtual void EnableMessageInterleaving(bool enabled) /*override*/;
 
-    virtual ~RRSendQueue() /*override*/;
+    virtual ~RRSendQueue() /*override*/ = default;
     // NOLINTEND
 
 public:

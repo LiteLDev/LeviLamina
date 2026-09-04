@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/network/realms/OptInState.h"
 #include "mc/client/realms/PostStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
@@ -15,7 +15,7 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesSettingsFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesSettingsFacet> {
+class RealmsStoriesSettingsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesSettingsFacet> {
 public:
     // member variables
     // NOLINTBEGIN

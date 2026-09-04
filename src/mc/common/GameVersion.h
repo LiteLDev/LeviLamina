@@ -29,46 +29,26 @@ public:
 
 public:
     // prevent constructor by default
-    GameVersion& operator=(GameVersion const&);
+    GameVersion();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameVersion();
-
-    MCAPI GameVersion(::GameVersion const&);
-
     MCAPI explicit GameVersion(::ListTag const& tag);
 
     MCAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
 
-    MCFOLD ::std::string const& asString() const;
-
 #ifdef LL_PLAT_C
-    MCAPI uint octet(::GameVersion::Octet octet) const;
-
     MCAPI bool operator!=(::GameVersion const& other) const;
 #endif
 
     MCAPI bool operator<(::GameVersion const& other) const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool operator<=(::GameVersion const& other) const;
-
-    MCAPI bool operator>(::GameVersion const& other) const;
-#endif
 
     MCAPI bool operator>=(::GameVersion const& other) const;
 
     MCAPI ::std::unique_ptr<::ListTag> serialize() const;
 
     MCAPI ~GameVersion();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::GameVersion current();
     // NOLINTEND
 
 public:
@@ -80,10 +60,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::GameVersion const&);
-
     MCAPI void* $ctor(::ListTag const& tag);
 
     MCAPI void* $ctor(uint major, uint minor, uint patch, uint revision, uint isBeta);

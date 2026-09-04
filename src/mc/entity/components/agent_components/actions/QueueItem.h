@@ -22,20 +22,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI QueueItem(::AgentComponents::Actions::QueueItem const&);
-
-    MCAPI ~QueueItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::AgentComponents::Actions::QueueItem const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

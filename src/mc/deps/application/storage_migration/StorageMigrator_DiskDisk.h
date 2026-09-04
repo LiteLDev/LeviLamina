@@ -43,12 +43,6 @@ public:
         ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
     ) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::StorageMigration

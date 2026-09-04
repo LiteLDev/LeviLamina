@@ -11,7 +11,6 @@
 // clang-format off
 class SemVersionConstant;
 struct ComponentItemData_v1_20_30;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct ComponentItemData_v1_20_40 {
@@ -19,29 +18,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 96, ::SharedTypes::v1_20_20::ItemDescription>              mDescription;
-    ::ll::TypedStorage<8, 1776, ::ComponentItemComponentData_v1_20_40>               mItemComponents;
+    ::ll::TypedStorage<8, 1808, ::ComponentItemComponentData_v1_20_40>               mItemComponents;
     ::ll::TypedStorage<8, 768, ::SharedTypes::v1_20_40::ItemDeprecatedComponentData> mDeprecatedItemComponents;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ComponentItemData_v1_20_40& operator=(ComponentItemData_v1_20_40 const&);
-    ComponentItemData_v1_20_40(ComponentItemData_v1_20_40 const&);
-    ComponentItemData_v1_20_40();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ComponentItemData_v1_20_40& operator=(::ComponentItemData_v1_20_40&&);
-
-    MCAPI ~ComponentItemData_v1_20_40();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static void
     upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_20_30, ::ComponentItemData_v1_20_40, nullptr_t>& upgrader);
     // NOLINTEND
@@ -50,11 +33,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/JSONSchemaOutput.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace cereal::internal {
 
 struct ReflectionContext {
@@ -26,14 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ReflectionContext();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static ::cereal::internal::ReflectionContext const& from(::cereal::ReflectionCtx const& ctx);
-
-    MCFOLD static ::cereal::internal::ReflectionContext& from(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

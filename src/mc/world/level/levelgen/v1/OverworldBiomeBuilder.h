@@ -13,7 +13,6 @@ class Biome;
 class BiomeRegistry;
 class Experiments;
 struct BiomeNoiseTarget;
-struct ClimateParameters;
 // clang-format on
 
 class OverworldBiomeBuilder {
@@ -55,8 +54,6 @@ public:
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI void _addInlandBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
-
     MCAPI void _addLowSlice(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   weirdness,
@@ -68,9 +65,6 @@ public:
         ::ClimateUtils::Parameter const&   weirdness,
         ::BiomeRegistry const&             biomeRegistry
     ) const;
-
-    MCAPI void
-    _addOffCoastBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
 
     MCAPI void _addPeaks(
         ::std::vector<::BiomeNoiseTarget>& biomes,
@@ -89,18 +83,7 @@ public:
         ::Biome const*                     second
     ) const;
 
-    MCAPI void
-    _addUndergroundBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
-
-    MCAPI void _addValleys(
-        ::std::vector<::BiomeNoiseTarget>& biomes,
-        ::ClimateUtils::Parameter const&   weirdness,
-        ::BiomeRegistry const&             biomeRegistry
-    ) const;
-
     MCAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
-
-    MCAPI ::std::vector<::ClimateParameters> getWorldSpawnParameters() const;
     // NOLINTEND
 
 public:
@@ -133,6 +116,10 @@ public:
     MCAPI static ::ClimateUtils::Parameter const& nearInlandContinentalness();
 
     MCAPI static ::ClimateUtils::Parameter const& oceanContinentalness();
+
+    MCAPI static ::ClimateUtils::Parameter const& sulfurCavesContinentalness();
+
+    MCAPI static ::ClimateUtils::Parameter const& sulfurCavesErosion();
 
     MCAPI static ::ClimateUtils::Parameter const& sulfurCavesWeirdness();
     // NOLINTEND

@@ -40,18 +40,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance>>> mInstances;
         ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                                  mMutex;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~StructureTempOwner();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     using StructureMap = ::std::unordered_map<::ChunkPos, ::std::vector<::br::worldgen::StructureCache::StructurePair>>;
@@ -77,7 +65,7 @@ public:
     MCAPI ::std::vector<::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
     collectGroupByStep() const;
 
-    MCAPI void setInstanceForStructure(
+    MCAPI bool setInstanceForStructure(
         ::br::worldgen::Structure const&                       structure,
         ::std::shared_ptr<::br::worldgen::StructureInstance>&& instance,
         ::ChunkPos                                             chunkPos

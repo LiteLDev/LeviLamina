@@ -6,14 +6,13 @@
 #include "mc/common/editor/EditorReplicationServiceProvider.h"
 #include "mc/common/editor/ReplicationPolicy.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace Editor { class IReplicatedBaseEventData; }
 namespace Editor { class IReplicatedContainerBase; }
 namespace Editor { class IReplicatedObjectBase; }
 namespace Editor { class ServiceProviderCollection; }
@@ -50,7 +49,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~EditorReplicationService() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EditorReplicationService() /*override*/;
+#endif
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -91,8 +94,6 @@ public:
 
     MCNAPI ::Editor::IReplicatedContainerBase* _getContainerPointerById(::HashedString const& id) const;
 
-    MCNAPI ::Editor::IReplicatedBaseEventData* _getEventDataPointerById(::HashedString const& id) const;
-
     MCNAPI void _handleEditorReplicationContainerAddObjectPayload(
         ::Editor::Network::EditorReplicationContainerAddObjectPayload const& payload
     );
@@ -109,8 +110,6 @@ public:
 
     MCNAPI void _handleEditorReplicationUpdatePayload(::Editor::Network::EditorReplicationUpdatePayload const& payload);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _removeAndSyncObject(::HashedString const& id, uint typeHash);
-
     MCNAPI ::Scripting::Result_deprecated<void> _removeObject(::HashedString const& id, uint typeHash);
     // NOLINTEND
 
@@ -124,7 +123,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

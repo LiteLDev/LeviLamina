@@ -31,10 +31,10 @@ public:
     virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
 
     virtual void spawnAfterBreak(
-        ::BlockSource&    region,
-        ::Block const&    pos,
-        ::BlockPos const& resourceDropsContext,
-        ::ResourceDropsContext const&
+        ::BlockSource& region,
+        ::Block const&,
+        ::BlockPos const&             pos,
+        ::ResourceDropsContext const& resourceDropsContext
     ) const /*override*/;
     // NOLINTEND
 
@@ -62,10 +62,10 @@ public:
     MCFOLD ::Block const* $tryGetUninfested(::Block const& block) const;
 
     MCAPI void $spawnAfterBreak(
-        ::BlockSource&    region,
-        ::Block const&    pos,
-        ::BlockPos const& resourceDropsContext,
-        ::ResourceDropsContext const&
+        ::BlockSource& region,
+        ::Block const&,
+        ::BlockPos const&             pos,
+        ::ResourceDropsContext const& resourceDropsContext
     ) const;
 
 

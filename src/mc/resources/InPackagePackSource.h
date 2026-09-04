@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct InPackagePackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 // clang-format on
@@ -42,18 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit InPackagePackSource(::InPackagePackSourceOptions options);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::InPackagePackSourceOptions options);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::PackOrigin $getPackOrigin() const;
@@ -63,11 +50,5 @@ public:
     MCNAPI ::PackType $getPackType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

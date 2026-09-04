@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/v1_21_130/clientbiome/ClientBiomeJsonDocument.h"
-
-// auto generated forward declare list
-// clang-format off
-class FogDefinitionRegistry;
-struct DeferredRenderingBiomeRegistry;
-// clang-format on
-
 struct ClientBiomeJsonDocumentGlue {
 public:
     // ClientBiomeJsonDocumentGlue inner types declare
@@ -24,6 +15,7 @@ public:
         // ResolvedClientBiomeData inner types declare
         // clang-format off
         struct ResolvedComponent;
+        struct ResolvedEnvironmentAttribute;
         // clang-format on
 
         // ResolvedClientBiomeData inner types define
@@ -40,24 +32,29 @@ public:
             ResolvedComponent& operator=(ResolvedComponent const&);
             ResolvedComponent(ResolvedComponent const&);
             ResolvedComponent();
+        };
 
+        struct ResolvedEnvironmentAttribute {
         public:
-            // member functions
+            // member variables
             // NOLINTBEGIN
-            MCNAPI ~ResolvedComponent();
+            ::ll::UntypedStorage<8, 32> mUnk566e95;
+            ::ll::UntypedStorage<8, 16> mUnkae4184;
+            ::ll::UntypedStorage<8, 64> mUnk8ac22e;
             // NOLINTEND
 
         public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
+            // prevent constructor by default
+            ResolvedEnvironmentAttribute& operator=(ResolvedEnvironmentAttribute const&);
+            ResolvedEnvironmentAttribute(ResolvedEnvironmentAttribute const&);
+            ResolvedEnvironmentAttribute();
         };
 
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnkfe04c5;
+        ::ll::UntypedStorage<8, 24> mUnk4a3f30;
         // NOLINTEND
 
     public:
@@ -71,6 +68,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkfbd184;
+    ::ll::UntypedStorage<8, 16> mUnkadf5b0;
     // NOLINTEND
 
 public:
@@ -78,22 +76,4 @@ public:
     ClientBiomeJsonDocumentGlue& operator=(ClientBiomeJsonDocumentGlue const&);
     ClientBiomeJsonDocumentGlue(ClientBiomeJsonDocumentGlue const&);
     ClientBiomeJsonDocumentGlue();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::optional<::ClientBiomeJsonDocumentGlue::ResolvedClientBiomeData> getResolvedBiomeData(
-        ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject const& clientBiomeJsonObject,
-        ::FogDefinitionRegistry const&                                                  fogRegistry,
-        ::DeferredRenderingBiomeRegistry const&                                         deferredBiomeRegistry
-    ) const;
-
-    MCNAPI ~ClientBiomeJsonDocumentGlue();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

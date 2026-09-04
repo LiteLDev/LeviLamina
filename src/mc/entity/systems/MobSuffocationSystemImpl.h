@@ -81,14 +81,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isShulkerInWall(
-        ::StateVectorComponent const&      stateVectorComponent,
-        ::AABBShapeComponent const&        aabbShapeComponent,
-        ::SynchedActorDataComponent const& synchedActorDataComponent,
-        ::OffsetsComponent const&          offsetsComponent,
-        ::IConstBlockSource const&         region
-    );
-
     MCAPI static void _tickCheckSuffocation(
         ::StrictEntityContext const&           entity,
         ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,

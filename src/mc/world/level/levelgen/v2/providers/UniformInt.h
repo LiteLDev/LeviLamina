@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class IRandom;
-struct IntProvider;
 // clang-format on
 
 struct UniformInt : public ::IntProviderType {
@@ -30,17 +29,15 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::IntProvider of(int minInclusive, int maxInclusive);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $sample(::IRandom& random) const;
 
+#ifdef LL_PLAT_S
+    MCAPI int $maxValue() const;
+#else // LL_PLAT_C
     MCFOLD int $maxValue() const;
+#endif
 
     MCFOLD int $minValue() const;
 

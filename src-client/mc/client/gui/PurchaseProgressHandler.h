@@ -19,17 +19,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PurchaseProgressHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PurchaseProgressHandler() /*override*/;
+    virtual ~PurchaseProgressHandler() /*override*/ = default;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
@@ -37,29 +33,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PurchaseProgressHandler(bool showTitle);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool showTitle);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getTitleText() const;
 

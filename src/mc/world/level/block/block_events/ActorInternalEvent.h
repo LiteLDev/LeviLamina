@@ -32,22 +32,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
+
+    virtual ~ActorInternalEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorInternalEvent(::BlockPos pos, ::Actor& entity, ::std::string const& name);
-
-    MCFOLD ::Actor& getEntity() const;
-
-    MCFOLD ::std::string const& getName() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::BlockPos pos, ::Actor& entity, ::std::string const& name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

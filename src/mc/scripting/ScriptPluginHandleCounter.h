@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/ILifetimeObjectListener.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/ILifetimeObjectListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScriptPlugin;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ObjectHandle; }
 // clang-format on
@@ -39,18 +38,6 @@ public:
         TypeStats& operator=(TypeStats const&);
         TypeStats(TypeStats const&);
         TypeStats();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~TypeStats();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -71,55 +58,39 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onMakeObject(
-        ::Scripting::LifetimeRegistry& type,
-        ::Scripting::ObjectHandle      size,
-        ::entt::meta_type const&,
-        uint
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
     ) /*override*/;
 
     virtual void onDestroyObject(
-        ::Scripting::LifetimeRegistry& type,
-        ::Scripting::ObjectHandle      size,
-        ::entt::meta_type const&,
-        uint
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
     ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptPluginHandleCounter(::ScriptPlugin& plugin);
-
     MCNAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
-
-    MCNAPI ::ScriptPluginHandleCounter::TypeStats const* getStatsById(uint id) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptPlugin& plugin);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void
-    $onMakeObject(::Scripting::LifetimeRegistry& type, ::Scripting::ObjectHandle size, ::entt::meta_type const&, uint);
+    $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
 
     MCNAPI void $onDestroyObject(
-        ::Scripting::LifetimeRegistry& type,
-        ::Scripting::ObjectHandle      size,
-        ::entt::meta_type const&,
-        uint
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

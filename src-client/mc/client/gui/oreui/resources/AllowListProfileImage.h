@@ -28,15 +28,11 @@ public:
 
     MCAPI AllowListProfileImage(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
 
-    MCFOLD ::Social::ProfileImageOptions const& imageOptions() const;
-
     MCAPI void invalidate();
 
     MCAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage const&);
 
     MCAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage&&);
-
-    MCFOLD ::std::string const& url() const;
 
     MCAPI ~AllowListProfileImage();
     // NOLINTEND

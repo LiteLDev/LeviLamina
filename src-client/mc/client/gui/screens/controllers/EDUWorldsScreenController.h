@@ -14,10 +14,8 @@ class IContentManager;
 class PlayScreenModel;
 class UIPropertyBag;
 class WorldsClipboardScreenController;
-struct LevelSummary;
 struct LocalWorldInfo;
 struct PackManagerContentSource;
-struct WorldsClipboardCallbacks;
 namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Json { class Value; }
 // clang-format on
@@ -62,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldsScreenController() /*override*/;
+    virtual ~EDUWorldsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -84,10 +82,6 @@ public:
 
     MCAPI void _closeEduCloudConflictPopup(bool keepLocal);
 
-    MCAPI ::WorldsClipboardCallbacks _createWorldClipboardCallbacks(::LevelSummary& levelSummary);
-
-    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
-
     MCAPI void _openWorldSettings(::std::string const& levelId);
 
     MCAPI void _openWorldSettings(::LocalWorldInfo* worldInfo);
@@ -100,9 +94,7 @@ public:
 
     MCAPI void _registerSubControllers();
 
-    MCAPI void _showCloudNeedsUploadModal(::LocalWorldInfo* worldInfo);
-
-    MCFOLD void _showEduCloudConflictPopup();
+    MCAPI void _showEduCloudConflictPopup();
 
     MCAPI void _startWorld(::std::string const& levelId, ::EDUWorldsScreenController::StartWorldCaller caller);
 
@@ -110,15 +102,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
+    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:

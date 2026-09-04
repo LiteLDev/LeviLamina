@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DlcDependency;
 class IClientInstance;
 class IContentAcquisition;
 class IDlcBatchModel;
@@ -80,44 +79,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldResourcePackDownloader(
-        ::IDlcValidation&                                    dlcValidation,
-        ::IContentAcquisition&                               contentAcquisition,
-        ::IStoreCatalogRepository&                           storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
-        ::IClientInstance&                                   clientInstance,
-        ::ILevelListCache&                                   levelListCache
-    );
-
-    MCAPI void _checkPacks();
-
-    MCAPI void _downloadPacks();
-
-    MCFOLD bool
-    _hasExpiredRealmsPlusSubscription(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
-
-    MCAPI bool _hasRealmsPlusDlcDependencies(
-        ::std::vector<::DlcDependency> const& dependencies,
-        ::IStoreCatalogRepository const&      storeCatalogRepository
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IDlcValidation&                                    dlcValidation,
-        ::IContentAcquisition&                               contentAcquisition,
-        ::IStoreCatalogRepository&                           storeCatalogRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
-        ::IClientInstance&                                   clientInstance,
-        ::ILevelListCache&                                   levelListCache
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $downloadPacks(
@@ -137,12 +98,6 @@ public:
 
     MCAPI ::World::PackCheckResult
     $checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -12,7 +12,6 @@ class ItemStack;
 class ItemStackBase;
 class LootTableContext;
 class Random;
-namespace mce { class Color; }
 // clang-format on
 
 class RandomDyeFunction : public ::LootItemFunction {
@@ -29,28 +28,20 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
-
-    MCAPI ::mce::Color _getRandomArmorColor(::Random& random) const;
+    MCAPI static void _applyBase(::ItemStackBase& item, ::Random& random);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

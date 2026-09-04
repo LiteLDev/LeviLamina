@@ -22,12 +22,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $WriteLog(::cohtml::Logging::Severity severity, char const* message, uint64 length);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

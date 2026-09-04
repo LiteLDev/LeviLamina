@@ -57,7 +57,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnk5900c0;
+    ::ll::UntypedStorage<4, 8>   mUnk46204c;
     ::ll::UntypedStorage<8, 8>   mUnk3e3b00;
     ::ll::UntypedStorage<8, 8>   mUnk43dc17;
     ::ll::UntypedStorage<8, 16>  mUnked2a33;
@@ -112,12 +112,12 @@ public:
     );
 
     MCNAPI ::webrtc::DelayBasedBwe::Result MaybeUpdateEstimate(
-        ::std::optional<::webrtc::DataRate>             acked_bitrate,
-        ::std::optional<::webrtc::DataRate>             probe_bitrate,
-        ::std::optional<::webrtc::NetworkStateEstimate> state_estimate,
-        bool                                            recovered_from_overuse,
-        bool                                            in_alr,
-        ::webrtc::Timestamp                             at_time
+        ::std::optional<::webrtc::DataRate> acked_bitrate,
+        ::std::optional<::webrtc::DataRate> probe_bitrate,
+        ::std::optional<::webrtc::NetworkStateEstimate>,
+        bool recovered_from_overuse,
+        bool,
+        ::webrtc::Timestamp at_time
     );
 
     MCNAPI void OnRttUpdate(::webrtc::TimeDelta avg_rtt);

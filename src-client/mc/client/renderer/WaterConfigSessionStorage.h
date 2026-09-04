@@ -17,10 +17,4 @@ public:
     WaterConfigSessionStorage& operator=(WaterConfigSessionStorage const&);
     WaterConfigSessionStorage(WaterConfigSessionStorage const&);
     WaterConfigSessionStorage();
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

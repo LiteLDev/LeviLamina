@@ -19,12 +19,6 @@ public:
 
     virtual ::mce::Color get(::BlockSource& region, ::BlockPos const& pos) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace BiomeColorSampling

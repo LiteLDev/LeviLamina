@@ -36,9 +36,6 @@ public:
     MCAPI DeprecatedDefinitionEvent(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const&);
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&
-    operator=(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&&);
-
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const&);
 
     MCAPI ~DeprecatedDefinitionEvent();

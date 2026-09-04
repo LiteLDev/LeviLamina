@@ -20,18 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClockSpriteCalculator();
-
-#ifdef LL_PLAT_C
-    MCFOLD int getFrame() const;
-#endif
-
-    MCAPI int update(::BlockSource const& region, ::Vec3 const& instant, bool);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI int update(::BlockSource const& region, ::Vec3 const& pos, bool instant);
     // NOLINTEND
 };

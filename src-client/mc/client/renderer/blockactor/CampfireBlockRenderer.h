@@ -9,9 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
-class BlockPos;
-class BlockSource;
-class CampfireBlockActor;
 struct BlockActorRenderData;
 // clang-format on
 
@@ -31,35 +28,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CampfireBlockRenderer();
-
-    MCAPI void _drawItem(
-        ::BaseActorRenderContext& renderContext,
-        ::BlockSource&            region,
-        ::CampfireBlockActor&     entity,
-        ::BlockPos const&         worldPos,
-        float                     a,
-        int                       slot
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

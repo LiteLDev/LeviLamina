@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class GameDependencies; }
-namespace OreUI { class InvocationStatus; }
 namespace Parties { class PartySystem; }
 // clang-format on
 
@@ -34,24 +33,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PartyChatCommandGroup(::OreUI::GameDependencies const& game);
-
-    MCAPI void _sendComposedMessage(::OreUI::InvocationStatus status) const;
-
-    MCAPI void _setComposedMessage(::OreUI::InvocationStatus status, ::std::string const& message) const;
-
-    MCAPI void _setIsOpen(::OreUI::InvocationStatus status, bool isOpen) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

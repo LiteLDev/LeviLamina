@@ -62,12 +62,6 @@ public:
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                  parameterCache
     );
 
-    MCFOLD bool hasPlayerInteractEvent() const;
-
-    MCFOLD bool hasPlayerPlacingEvent() const;
-
-    MCFOLD bool isV1() const;
-
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>

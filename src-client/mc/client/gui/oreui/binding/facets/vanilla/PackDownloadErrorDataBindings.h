@@ -16,14 +16,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::std::vector<::std::string> const& getPackTitles() const;
-
-    MCAPI ~PackDownloadErrorDataBindings();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

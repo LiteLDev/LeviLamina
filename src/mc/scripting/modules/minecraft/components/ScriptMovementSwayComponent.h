@@ -12,7 +12,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptMovementSwayComponent : public ::ScriptModuleMinecraft::DerivedMovementScriptActorComponent<768> {
+class ScriptMovementSwayComponent : public ::ScriptModuleMinecraft::DerivedMovementScriptActorComponent<840> {
 public:
     // static functions
     // NOLINTBEGIN
@@ -23,12 +23,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

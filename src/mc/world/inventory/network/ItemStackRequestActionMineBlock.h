@@ -11,7 +11,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct ItemStackRequestSlotInfo;
 // clang-format on
 
 class ItemStackRequestActionMineBlock : public ::ItemStackRequestAction {
@@ -37,30 +36,6 @@ public:
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionMineBlock();
-
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionMineBlock(int slot, int predictedDurability, ::ItemStackNetIdVariant netId);
-#endif
-
-    MCNAPI ::ItemStackRequestSlotInfo getSrc() const;
-
-    MCNAPI void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus status) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(int slot, int predictedDurability, ::ItemStackNetIdVariant netId);
-#endif
     // NOLINTEND
 
 public:

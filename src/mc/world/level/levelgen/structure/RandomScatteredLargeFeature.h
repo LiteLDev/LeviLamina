@@ -60,11 +60,11 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&         dimension,
-        ::BiomeSource const& biomeSource,
-        ::Random&            cp,
-        ::ChunkPos const&    preliminarySurfaceLevel,
-        ::IPreliminarySurfaceProvider const&
+        ::Dimension&                         dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
     // NOLINTEND
 
@@ -109,19 +109,13 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&         dimension,
-        ::BiomeSource const& biomeSource,
-        ::Random&            cp,
-        ::ChunkPos const&    preliminarySurfaceLevel,
-        ::IPreliminarySurfaceProvider const&
+        ::Dimension&                         dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

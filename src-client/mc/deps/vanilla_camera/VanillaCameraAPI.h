@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class EntityContext;
 class IClientInstance;
 class Mob;
@@ -54,17 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit VanillaCameraAPI(::IClientInstance& client);
-
-    MCFOLD ::Actor* _getActor(::WeakRef<::EntityContext> actorRef) const;
-
-    MCAPI ::Mob* _getMob(::WeakRef<::EntityContext> actorRef) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& client);
+    MCAPI ::Mob* _getMob(::WeakRef<::EntityContext> const actorRef) const;
     // NOLINTEND
 
 public:

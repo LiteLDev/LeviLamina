@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/ConnectPosition.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,6 +22,8 @@ public:
         Fifo          = 1,
         RecursiveFIFO = 2,
     };
+
+    using FunctionType = ::brstd::move_only_function<void()>;
 
 public:
     // virtual functions
@@ -45,20 +48,17 @@ public:
 
     virtual void _join(::Bedrock::PubSub::DeferredSubscription&& subscription) = 0;
 
-    virtual void
-    _enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group) = 0;
+    virtual void _enqueue(
+        ::brstd::move_only_function<void()> fn,
+        ::Bedrock::PubSub::ConnectPosition  at,
+        ::std::optional<int>                group
+    ) = 0;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    MCAPI static ::std::unique_ptr<::Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub();
     // NOLINTEND
 };
 

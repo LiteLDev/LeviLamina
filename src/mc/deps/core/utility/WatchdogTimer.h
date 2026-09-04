@@ -45,13 +45,9 @@ public:
         bool                                                       assertOnDeadline
     );
 
-    MCNAPI void _queueTaskWithoutLock();
-
     MCNAPI ::TaskResult _watchdogTimerThreadRoutine();
 
     MCNAPI void terminateWatchdogTimer();
-
-    MCNAPI ~WatchdogTimer();
 #endif
     // NOLINTEND
 
@@ -68,14 +64,6 @@ public:
         ::std::chrono::nanoseconds                                 deadline,
         bool                                                       assertOnDeadline
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

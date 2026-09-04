@@ -219,20 +219,6 @@ public:
 
     MCNAPI void _addFile(::Core::FileImpl* pFile);
 
-    MCNAPI ::Core::Result _flatFileOpenFlatFile(
-        ::std::unique_ptr<::Core::FileImpl>& fileOut,
-        ::Core::PathView                     filePath,
-        ::Core::PathView                     manifestPath,
-        ::Core::FileOpenMode                 openMode,
-        ::Core::FileBufferingMode            fileBufferingMode
-    );
-
-    MCNAPI ::Core::Result _flatFileUnloadManifest(::Core::PathView filePath);
-
-    MCNAPI void _initialize();
-
-    MCNAPI ::Core::Result _readOperation(::Core::Result&& result, uint64 numBytesRead);
-
     MCNAPI ::Core::Result _readWriteOperation(
         ::Core::Result&&                                result,
         ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
@@ -240,12 +226,7 @@ public:
         uint64                                          numBytesWritten
     );
 
-    MCNAPI ::Core::Result addIgnoredThrottlePath(::Core::PathView path);
-
     MCNAPI ::Core::Result commit();
-
-    MCNAPI ::Core::Result
-    copyDirectoryAndContentsRecursively(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result copyFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
@@ -257,18 +238,9 @@ public:
         uint64&          outBytesRemaining
     );
 
-    MCNAPI ::Core::Result copyFlatFile(
-        ::Core::PathView                           flatFileParentDirectory,
-        ::Core::PathView                           targetDirectory,
-        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
-        ::std::vector<::Core::ExcludedPath> const& excludedFiles
-    );
-
     MCNAPI ::Core::Result createDirectoryRecursively(::Core::PathView directoryPath);
 
     MCNAPI ::Core::Result createEmptyFile(::Core::PathView filePath);
-
-    MCNAPI ::Core::Result createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result createOneDirectory(::Core::PathView directoryPath);
 
@@ -282,39 +254,13 @@ public:
 
     MCNAPI ::Core::Result deleteFile(::Core::PathView filePath);
 
-    MCNAPI ::Core::Result deleteFilePriority(::Core::PathView filePath);
-
     MCNAPI bool directoryExists(::Core::PathView directoryPath);
-
-    MCNAPI void enumerateFiles(::std::function<void(::Core::FileImpl*)> const& fx);
 
     MCNAPI bool fileExists(::Core::PathView filePath);
 
     MCNAPI bool fileOrDirectoryExists(::Core::PathView entryPath);
 
-    MCNAPI ::Core::Result
-    getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
-
-    MCNAPI ::Core::Result getDirectoryFilesAllocatedSizeRecursively(
-        uint64&          totalSize,
-        uint64&          totalAllocatedSize,
-        ::Core::PathView directoryPath
-    );
-
-    MCNAPI ::Core::Result getDirectoryFilesRecursively(
-        ::std::vector<::Core::PathBuffer<::std::string>>& files,
-        ::Core::PathView                                  directoryPath
-    );
-
-    MCNAPI ::Core::Result getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
-
-    MCNAPI ::Core::Result getFileOrDirectorySize(::Core::PathView entryPath, uint64* pFileSizeOut);
-
     MCNAPI ::Core::Result getFileSize(::Core::PathView filePath, uint64* pFileSize);
-
-    MCNAPI ::std::shared_ptr<::Core::FlatFileManifestTracker> getFlatFileManifestTracker() const;
-
-    MCNAPI ::std::shared_ptr<::Core::FileStorageArea> getStorageArea();
 
     MCNAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
@@ -331,15 +277,9 @@ public:
         ::Core::FileBufferingMode            fileBufferingMode
     );
 
-    MCNAPI ::Core::Result readFileData(::Core::PathView filePath, ::brstd::function_ref<void*(uint64)> data);
-
-    MCNAPI ::Core::Result removeIgnoredThrottlePath(::Core::PathView path);
-
     MCNAPI ::Core::Result renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
-
-    MCNAPI ::Core::Result writeFileData(::Core::PathView filePath, void const* data, uint64 size);
     // NOLINTEND
 
 public:

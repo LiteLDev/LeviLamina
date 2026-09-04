@@ -12,7 +12,6 @@
 class Block;
 class BlockSource;
 class BoundingBox;
-class Dimension;
 class Random;
 // clang-format on
 
@@ -33,11 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _create(::Dimension& dimension, ::Random& random, int x, int z);
-
-    MCAPI void _makeStairs(
+    MCAPI static void _makeStairs(
         ::BlockPos const&    startPos,
         ::Block const&       stairBlock,
         uchar                xStepDir,
@@ -48,12 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _fillCobblestone(::BlockPos const& startPos, ::BlockSource& region);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
@@ -61,11 +52,5 @@ public:
     MCAPI ::std::string_view $getStructureName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

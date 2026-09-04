@@ -26,15 +26,6 @@ public:
 
     MCNAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
 
-#ifdef LL_PLAT_C
-    MCNAPI static ::JsonValidator::Property getElementItemProperty(
-        ::JsonValidator::Property const& buttonType,
-        ::JsonValidator::Property const& headerType,
-        ::JsonValidator::Property const& labelType,
-        ::JsonValidator::Property const& dividerType
-    );
-#endif
-
     MCNAPI static ::JsonValidator::Property getHeaderProperty();
 
     MCNAPI static ::JsonValidator::Property getLabelProperty();

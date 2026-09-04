@@ -20,37 +20,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptSystemInfo();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptSystemInfo();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptSystemInfo(::DeviceMemoryTier memoryTier);
+    virtual ~ScriptSystemInfo() = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DeviceMemoryTier memoryTier);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

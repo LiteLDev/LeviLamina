@@ -13,8 +13,3 @@ enum class Scheme : uchar {
 };
 
 }
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ControlScheme::Scheme>();
-// clang-format on

@@ -9,7 +9,6 @@
 // clang-format off
 class ContentIdentity;
 class IContentKeyProvider;
-class PackAccessStrategy;
 namespace Core { class Path; }
 // clang-format on
 
@@ -34,10 +33,6 @@ public:
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy() const;
-#endif
     // NOLINTEND
 
 public:

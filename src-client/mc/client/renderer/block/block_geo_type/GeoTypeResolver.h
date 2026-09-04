@@ -19,20 +19,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GeoTypeResolver();
-
-    MCAPI ~GeoTypeResolver();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

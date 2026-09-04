@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandSelector.h"
-#include "mc/server/commands/CommandSelectorResults.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +12,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Player;
-class Recipes;
 // clang-format on
 
 class UnlockRecipeCommand : public ::Command {
@@ -39,18 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _handleAllRecipes(::CommandOutput& output, ::CommandSelectorResults<::Player> const& players) const;
-
-    MCAPI void _handleSpecificRecipe(
-        ::CommandOutput&                          output,
-        ::CommandSelectorResults<::Player> const& players,
-        ::Recipes const&                          recipes
-    ) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
@@ -63,15 +49,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::UnlockRecipeCommand::RecipeAction>();
-// clang-format on

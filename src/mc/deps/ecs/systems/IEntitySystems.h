@@ -33,16 +33,4 @@ public:
 
     virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

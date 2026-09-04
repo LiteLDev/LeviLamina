@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MultifaceSpreader();
+    virtual ~MultifaceSpreader() = default;
 
     virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const;
 
@@ -60,13 +60,6 @@ public:
         ::BlockPos const&    pos,
         uchar                startingFace,
         uchar                spreadDirection
-    ) const;
-
-    MCAPI int spreadFromAllFacesTowardAllDirections(
-        ::IBlockWorldGenAPI& target,
-        ::Block const&       self,
-        ::Block const&       block,
-        ::BlockPos const&    pos
     ) const;
 
     MCAPI int spreadFromFaceTowardAllDirections(
@@ -114,12 +107,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

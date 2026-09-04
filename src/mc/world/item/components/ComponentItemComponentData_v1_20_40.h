@@ -41,6 +41,10 @@ namespace cereal { struct ReflectionCtx; }
 
 struct ComponentItemComponentData_v1_20_40 {
 public:
+    // ComponentItemComponentData_v1_20_40 inner types define
+    using CerealDefaultValueOptOut = void;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::std::optional<::ChargeableItemComponentLegacyFactoryData>>    chargeableItemComponent;
@@ -58,7 +62,7 @@ public:
     ::ll::TypedStorage<8, 48, ::std::optional<::ShooterItemComponentLegacyFactoryData>>       shooterItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::ThrowableItemComponentLegacyFactoryData>>     throwableItemComponent;
     ::ll::TypedStorage<8, 24, ::std::optional<::WearableItemComponentLegacyFactoryData>>      wearableItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::RecordItemComponent>>                         recordItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::RecordItemComponent>>                         recordItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::MaxStackSizeItemComponent>>                   maxStackSizeItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::CanDestroyInCreativeItemComponent>> canDestroyInCreativeItemComponent;
     ::ll::TypedStorage<8, 72, ::std::optional<::HoverTextColorItemComponent>>       hoverTextColorItemComponent;
@@ -76,40 +80,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComponentItemComponentData_v1_20_40();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40&&);
-
-    MCAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40 const&);
-
-    MCAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40&&);
-
-    MCAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40 const&);
-
-    MCAPI ~ComponentItemComponentData_v1_20_40();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_40&&);
-
-    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_40 const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

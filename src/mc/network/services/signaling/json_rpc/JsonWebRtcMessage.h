@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/services/signaling/json_rpc/JsonRpcRequestBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 class JsonWebRtcMessage : public ::JsonRpc::JsonRpcRequestBase {
@@ -31,31 +26,9 @@ public:
 
     public:
         // prevent constructor by default
+        Params& operator=(Params const&);
+        Params(Params const&);
         Params();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Params(::JsonRpc::JsonWebRtcMessage::Params const&);
-
-        MCNAPI ::JsonRpc::JsonWebRtcMessage::Params& operator=(::JsonRpc::JsonWebRtcMessage::Params&&);
-
-        MCNAPI ::JsonRpc::JsonWebRtcMessage::Params& operator=(::JsonRpc::JsonWebRtcMessage::Params const&);
-
-        MCNAPI ~Params();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::JsonRpc::JsonWebRtcMessage::Params const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -74,12 +47,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI JsonWebRtcMessage(::std::string const& toPlayerId, ::std::string const& innerMessage);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

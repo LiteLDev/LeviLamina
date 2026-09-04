@@ -32,13 +32,12 @@ public:
 public:
     // prevent constructor by default
     AgeableDefinition& operator=(AgeableDefinition const&);
+    AgeableDefinition(AgeableDefinition const&);
     AgeableDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AgeableDefinition(::AgeableDefinition const&);
-
     MCAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
 
     MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
@@ -48,10 +47,6 @@ public:
     MCAPI void addPauseGrowthItem(::ItemDescriptor const& itemDescriptor);
 
     MCAPI void addResetGrowthItem(::ItemDescriptor const& itemDescriptor);
-
-    MCAPI bool canGrowUp() const;
-
-    MCAPI int getTicksAsBaby() const;
 
     MCAPI void initialize(::EntityContext& entity, ::AgeableComponent& component) const;
 
@@ -63,12 +58,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AgeableDefinition const&);
     // NOLINTEND
 
 public:

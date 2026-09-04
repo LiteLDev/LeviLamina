@@ -38,10 +38,6 @@ public:
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
 
-    MCFOLD void process();
-
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilterData const& data) const;
-
     MCAPI ~ScriptActorHealEventFilter();
     // NOLINTEND
 
@@ -60,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

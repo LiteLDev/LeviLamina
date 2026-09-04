@@ -70,14 +70,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::std::string_view const& PBR_TAG();
+#endif
 
     MCNAPI static ::std::string_view const& RAY_TRACING_TAG();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

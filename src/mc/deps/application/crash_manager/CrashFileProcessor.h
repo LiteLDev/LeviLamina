@@ -65,12 +65,6 @@ public:
 
         virtual void notifyDoneWithSession(::std::string_view sessionId) = 0;
         // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
     };
 
 public:
@@ -78,23 +72,18 @@ public:
     // NOLINTBEGIN
     virtual ~CrashFileProcessor() = default;
 
-    virtual bool getSessionIDFromFile(::std::string&, ::Core::PathBuffer<::std::string> const&) const = 0;
+    virtual bool
+    getSessionIDFromFile(::std::string& outSessionID, ::Core::PathBuffer<::std::string> const& filePath) const = 0;
 
     virtual ::Bedrock::CrashFileProcessor::ProcessMode
     beginCrashProcessing(uint64, ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&) = 0;
 
     virtual ::Bedrock::Threading::Async<bool> processCrash(
-        ::gsl::not_null<::std::shared_ptr<::Bedrock::CrashFileProcessor::CrashHandler>> const&,
-        ::Core::PathBuffer<::std::string> const&
+        ::gsl::not_null<::std::shared_ptr<::Bedrock::CrashFileProcessor::CrashHandler>> const& handler,
+        ::Core::PathBuffer<::std::string> const&                                               filePath
     ) = 0;
 
     virtual void doneCrashProcessing() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

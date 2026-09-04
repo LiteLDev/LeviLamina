@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RandomizableBlockActorFillingContainer() /*override*/;
+    virtual ~RandomizableBlockActorFillingContainer() /*override*/ = default;
 
     virtual void setContainerChanged(int slot) /*override*/;
 
@@ -65,12 +65,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $setContainerChanged(int slot);
@@ -91,8 +85,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

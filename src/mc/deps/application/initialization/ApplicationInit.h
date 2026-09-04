@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class ApplicationInitHandler; }
 namespace Bedrock { class DeviceIdManager; }
 // clang-format on
 
@@ -71,8 +70,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit ApplicationInit(::gsl::not_null<::Bedrock::ApplicationInitHandler*> handler);
-
     MCNAPI void run();
 
     MCNAPI ~ApplicationInit();
@@ -82,15 +79,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI static ::Bedrock::UniqueService<::Bedrock::DeviceIdManager>
     createAndInitDeviceIdManager(::std::unique_ptr<::Bedrock::DeviceIdManager> manager);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::gsl::not_null<::Bedrock::ApplicationInitHandler*> handler);
 #endif
     // NOLINTEND
 

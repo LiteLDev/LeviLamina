@@ -73,6 +73,8 @@ public:
 
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const = 0;
 
+    virtual void addSystemPacksToStack(::ResourcePackStack& stack) const = 0;
+
     virtual void
     addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) = 0;
 
@@ -112,6 +114,10 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const getTreatmentPacksPath() const = 0;
 
+    virtual ::Core::PathBuffer<::std::string> const getSystemResourcePacksPath() const = 0;
+
+    virtual ::Core::PathBuffer<::std::string> const getSystemBehaviorPacksPath() const = 0;
+
     virtual void refreshPacks() = 0;
 
     virtual ::Bedrock::Threading::Async<void> refreshPacksAsync() = 0;
@@ -150,11 +156,5 @@ public:
     virtual bool isInitialized() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> getContentSourceRepository() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

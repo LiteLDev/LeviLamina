@@ -47,8 +47,12 @@ public:
     ) const;
 
     MCAPI void members(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    // NOLINTEND
 
-    MCAPI bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor);
     // NOLINTEND
 
 public:

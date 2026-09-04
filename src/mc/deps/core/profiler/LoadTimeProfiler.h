@@ -27,40 +27,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LoadTimeProfiler() /*override*/;
+    virtual ~LoadTimeProfiler() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LoadTimeProfiler();
-
-#ifdef LL_PLAT_C
-    MCNAPI void endLogging();
-
-    MCNAPI bool isLogging() const;
-#endif
-
-    MCNAPI void setEnabled(bool enabled);
-
-#ifdef LL_PLAT_C
-    MCNAPI void
-    startLogging(::std::string_view loggingFolder, ::std::string_view fileName, ::std::string_view timeStamp);
-
-    MCNAPI void update();
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

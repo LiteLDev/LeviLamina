@@ -3,23 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/RealmsWorldUploadResult.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class EditorPlayerServiceProvider; }
-namespace Editor::ScriptModule { class ScriptGameOptions; }
 namespace Editor::Services { class EditorRealmsServiceProvider; }
-namespace Editor::Services { struct EditorRealmsWorld; }
-namespace Editor::Services { struct EditorRealmsWorldSlot; }
-namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
-namespace Scripting { struct Error; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -54,26 +46,6 @@ public:
         ::Editor::EditorPlayerServiceProvider*           playerService,
         ::Scripting::WeakLifetimeScope const&            scope
     );
-
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::string const, ::Scripting::Error>>
-    beginDownloadFromRealms(::std::string realmsWorldId, int slotId, ::Scripting::ScriptObjectFactory& factory);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::Editor::Services::RealmsWorldUploadResult, ::Scripting::Error>>
-    beginUploadToRealms(
-        ::std::string                             realmsWorldId,
-        int                                       slotId,
-        ::Editor::ScriptModule::ScriptGameOptions gameOptions,
-        ::Scripting::ScriptObjectFactory&         factory
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorld>, ::Scripting::Error>>
-    getRealmWorldlist(::Scripting::ScriptObjectFactory& factory);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error>>
-    getSlots(::std::string const& worldId, ::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Editor::ScriptModule::ScriptRealmsService& operator=(::Editor::ScriptModule::ScriptRealmsService&& other);
 

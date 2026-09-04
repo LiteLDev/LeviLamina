@@ -1,3 +1,4 @@
+#include "ll/api/service/TargetedBedrock.h"
 #include "ll/core/LeviLamina.h"
 
 #include <chrono>
@@ -32,7 +33,6 @@
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
-#include "mc/server/commands/StopCommand.h"
 
 #include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/resource/PackOrigin.h"
@@ -136,8 +136,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     case CTRL_C_EVENT:
     case CTRL_CLOSE_EVENT:
     case CTRL_SHUTDOWN_EVENT: {
-        if (StopCommand::mServer() && ll::getGamingStatus() != GamingStatus::Stopping) {
-            StopCommand::mServer()->stop();
+        if (ll::service::getDedicatedServer() && ll::getGamingStatus() != GamingStatus::Stopping) {
+            ll::service::getDedicatedServer()->stop();
         } else {
             std::terminate();
         }
@@ -153,8 +153,11 @@ void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
-        if (StopCommand::mServer() && ll::getGamingStatus() != GamingStatus::Stopping) StopCommand::mServer()->stop();
-        else std::terminate();
+        if (ll::service::getDedicatedServer() && ll::getGamingStatus() != GamingStatus::Stopping) {
+            ll::service::getDedicatedServer()->stop();
+        } else {
+            std::terminate();
+        }
         break;
     }
     default:

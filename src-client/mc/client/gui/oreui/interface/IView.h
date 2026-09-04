@@ -72,18 +72,6 @@ public:
 
     virtual ::OreUI::IViewTestHelper* getViewTestHelper() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

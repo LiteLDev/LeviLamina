@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/player/LocalPlayer.h"
 #include "mc/client/renderer/game/LevelRendererCamera.h"
 #include "mc/deps/minecraft_renderer/game/LevelCullerType.h"
 #include "mc/world/actor/player/PlayerListener.h"
@@ -11,32 +12,49 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkSource;
+class IClientInstance;
+class Level;
 class LevelChunk;
+class LevelRenderer;
 class Player;
 // clang-format on
 
 class LevelRendererCameraListeners : public ::LevelRendererCamera,
                                      public ::LevelListener,
                                      public ::PlayerListener,
+                                     public ::LocalPlayer::RegionListener,
                                      public ::std::enable_shared_from_this<::LevelRendererCamera> {
+public:
+    // prevent constructor by default
+    LevelRendererCameraListeners();
+
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererCameraListeners() /*override*/;
+    virtual ~LevelRendererCameraListeners() /*override*/ = default;
 
     virtual void onWillChangeDimension(::Player& player) /*override*/;
 
     virtual void onDimensionChanged(::Player& player) /*override*/;
 
-    virtual void onChunkReloaded(::ChunkSource& lc, ::LevelChunk&) /*override*/;
+    virtual void onRegionDestroyed() /*override*/;
+
+    virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk& lc) /*override*/;
 
     virtual void updateLevelCullerType(::LevelCullerType const newLevelCullerType) /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI
+    LevelRendererCameraListeners(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
     // NOLINTEND
 
 public:
@@ -46,18 +64,10 @@ public:
 
     MCNAPI void $onDimensionChanged(::Player& player);
 
-    MCNAPI void $onChunkReloaded(::ChunkSource& lc, ::LevelChunk&);
+    MCNAPI void $onRegionDestroyed();
+
+    MCNAPI void $onChunkReloaded(::ChunkSource&, ::LevelChunk& lc);
 
     MCNAPI void $updateLevelCullerType(::LevelCullerType const newLevelCullerType);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPlayerListener();
-
-    MCNAPI static void** $vftableForLevelRendererCamera();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

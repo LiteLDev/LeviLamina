@@ -24,12 +24,6 @@ public:
 
     virtual ::std::shared_ptr<::RepositoryPacks const> getPacks() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace RepositoryLoading

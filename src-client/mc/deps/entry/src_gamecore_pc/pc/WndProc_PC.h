@@ -106,12 +106,6 @@ public:
 
     MCAPI ::std::optional<int64> $onChar(::MainGameCore::WndProc::WndProcParams params);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace MainGameCore

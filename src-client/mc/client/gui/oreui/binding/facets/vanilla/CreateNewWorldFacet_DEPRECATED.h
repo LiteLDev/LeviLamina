@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/CreateOnRealmsError.h"
@@ -29,7 +29,7 @@ namespace OreUI { struct LevelDataBindings; }
 
 namespace OreUI {
 
-class CreateNewWorldFacet_DEPRECATED : public ::OreUI::FacetBase<::OreUI::CreateNewWorldFacet_DEPRECATED>,
+class CreateNewWorldFacet_DEPRECATED : public ::OreUI::FacetBase_DEPRECATED<::OreUI::CreateNewWorldFacet_DEPRECATED>,
                                        public ::LevelListCacheObserver {
 public:
     // CreateNewWorldFacet_DEPRECATED inner types define
@@ -91,7 +91,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreateNewWorldFacet_DEPRECATED() /*override*/;
+    virtual ~CreateNewWorldFacet_DEPRECATED() /*override*/ = default;
 
     virtual bool update() /*override*/;
 
@@ -109,28 +109,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition>          contentAcquisition,
         ::ui::ProgressScreenNavigation                               progressScreenNavigation
     );
-
-    MCFOLD void _handleCheckingDlc();
-
-    MCAPI void _handleEnsureSignIn();
-
-    MCAPI void _handleJoinRealm();
-
-    MCAPI void _handleLoadingWorldTemplate();
-
-    MCAPI void _handleSelectRealmsSlot();
-
-    MCAPI void _handleStartCreatingWorld();
-
-    MCAPI void _handleStartLocalServer();
-
-    MCAPI void _handleUploadToRealm();
-
-    MCAPI void _handleWaitForServerStart();
-
-    MCAPI bool _isWorldPlatformLocked() const;
-
-    MCFOLD void _waitForDlcImport();
 
     MCAPI void applyTemplate(::std::string const& worldTemplateId);
 
@@ -154,6 +132,8 @@ public:
 
     MCAPI ::std::string const& getWorldPreviewImagePath() const;
 
+    MCAPI bool hasConfirmedPlatformLockedContent() const;
+
     MCAPI bool hasUserChangedSettings() const;
 
     MCAPI bool isCreatingWorld() const;
@@ -162,7 +142,9 @@ public:
 
     MCAPI bool isRandomSeedAllowed() const;
 
-    MCAPI void selectRealmToCreateOn(::std::string const& realmId);
+    MCFOLD void selectRealmToCreateOn(::std::string const& realmId);
+
+    MCAPI void setConfirmedPlatformLockedContent(bool value);
 
     MCAPI void setWorldPreviewImagePath(::std::string const& worldPreviewImagePath);
 
@@ -191,25 +173,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
 
     MCAPI void $onStorageChanged();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForFacetBase();
-
-    MCNAPI static void** $vftableForLevelListCacheObserver();
     // NOLINTEND
 };
 

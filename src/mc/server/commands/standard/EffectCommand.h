@@ -49,12 +49,6 @@ public:
     MCAPI void
     _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
 
-    MCAPI bool _checkIsValidAmplifierRange(::CommandOutput& output) const;
-
-    MCAPI bool _checkIsValidDuration(::CommandOutput& output) const;
-
-    MCAPI void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output) const;
-
     MCAPI void _clearEffect(
         ::CommandSelectorResults<::Actor>& targets,
         ::CommandOutput&                   output,
@@ -66,6 +60,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output);
+
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
@@ -76,15 +72,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::EffectCommand::Mode>();
-// clang-format on

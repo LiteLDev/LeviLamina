@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
 class Mob;
 class Random;
 // clang-format on
@@ -54,56 +53,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FloatWanderGoal(
-        ::Mob&       mob,
-        float        targetXZDist,
-        float        targetYDist,
-        float        yOffset,
-        float        surfaceXZDist,
-        float        surfaceYDist,
-        bool         mustReach,
-        bool         randomReselect,
-        bool         additionalCollisionBuffer,
-        bool         navigateAroundSurface,
-        bool         useHomePositionRestriction,
-        bool         allowNavigatingThroughLiquids,
-        ::FloatRange floatDurationRange,
-        bool         hasMoveControlFlag
-    );
-
     MCAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
 
     MCAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
-
-    MCAPI ::Vec3 const _getSuitableTargetPosition();
-
-    MCAPI bool const _isPosCloseToSurface(
-        ::BlockSource& region,
-        ::Vec3 const&  targetPos,
-        int            distanceToBlocksY,
-        int            distanceToBlocksXZ
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&       mob,
-        float        targetXZDist,
-        float        targetYDist,
-        float        yOffset,
-        float        surfaceXZDist,
-        float        surfaceYDist,
-        bool         mustReach,
-        bool         randomReselect,
-        bool         additionalCollisionBuffer,
-        bool         navigateAroundSurface,
-        bool         useHomePositionRestriction,
-        bool         allowNavigatingThroughLiquids,
-        ::FloatRange floatDurationRange,
-        bool         hasMoveControlFlag
-    );
     // NOLINTEND
 
 public:

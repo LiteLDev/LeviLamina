@@ -41,6 +41,11 @@ public:
 
     virtual bool
     encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
+
+    virtual uint64 getDecryptionBufferSize(uint64 inputSize) const /*override*/;
+
+    virtual bool
+    decryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
     // NOLINTEND
 
 public:
@@ -71,6 +76,10 @@ public:
     MCNAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
 
     MCNAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
+
+    MCNAPI uint64 $getDecryptionBufferSize(uint64 inputSize) const;
+
+    MCNAPI bool $decryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
 
 
     // NOLINTEND

@@ -12,35 +12,26 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 2304, ::ComponentItemData_v1_26_0>             mCerealData;
-    ::ll::TypedStorage<8, 224, ::SharedTypes::Legacy::ComponentItemData> mLegacyData;
+    ::ll::TypedStorage<8, 264, ::SharedTypes::Legacy::ComponentItemData> mLegacyData;
     ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>>            mEvents;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ComponentItemDataAll_Latest(ComponentItemDataAll_Latest const&);
     ComponentItemDataAll_Latest();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemDataAll_Latest(::ComponentItemDataAll_Latest const&);
-
-    MCAPI ::ComponentItemDataAll_Latest& operator=(::ComponentItemDataAll_Latest&&);
+    MCAPI ComponentItemDataAll_Latest(::ComponentItemDataAll_Latest&&);
 
     MCAPI ::ComponentItemDataAll_Latest& operator=(::ComponentItemDataAll_Latest const&);
-
-    MCAPI ~ComponentItemDataAll_Latest();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemDataAll_Latest const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::ComponentItemDataAll_Latest&&);
     // NOLINTEND
 };

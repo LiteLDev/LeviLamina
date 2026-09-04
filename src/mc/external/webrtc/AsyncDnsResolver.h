@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
-#include "mc/external/rtc/RefCountedBase.h"
 #include "mc/external/webrtc/AsyncDnsResolverInterface.h"
+#include "mc/external/webrtc/RefCountedBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SocketAddress; }
 namespace webrtc { class AsyncDnsResolverResult; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace webrtc {
@@ -23,7 +23,7 @@ public:
     // clang-format on
 
     // AsyncDnsResolver inner types define
-    class State : public ::rtc::RefCountedBase {
+    class State : public ::webrtc::RefCountedBase {
     public:
         // State inner types define
         enum class Status : int {
@@ -78,9 +78,9 @@ public:
     virtual ~AsyncDnsResolver() /*override*/ = default;
 
     virtual void
-    Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
+    Start(::webrtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
 
-    virtual void Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
+    virtual void Start(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
     virtual ::webrtc::AsyncDnsResolverResult const& result() const /*override*/;
     // NOLINTEND
@@ -100,9 +100,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
+    MCNAPI void $Start(::webrtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
 
-    MCNAPI void $Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
+    MCNAPI void $Start(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
 
     MCNAPI ::webrtc::AsyncDnsResolverResult const& $result() const;
 

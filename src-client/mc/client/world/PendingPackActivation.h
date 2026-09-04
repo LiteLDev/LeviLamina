@@ -18,18 +18,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>              isEduMode;
     ::ll::TypedStorage<1, 1, bool>              force;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PendingPackActivation();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace World

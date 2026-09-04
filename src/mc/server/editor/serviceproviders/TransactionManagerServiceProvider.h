@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/EntityOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -41,7 +41,7 @@ public:
     virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const& volume) = 0;
 
     virtual ::Scripting::Result_deprecated<bool>
-    addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType const type) = 0;
+    addEntityOperation(::Actor*, ::Editor::Transactions::EntityOperation::OperationType const) = 0;
 
     virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() = 0;
 
@@ -72,15 +72,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_BUSY_SERVICE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[79]> ERROR_BUSY_SERVICE();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_NO_OPEN_TRANSACTION();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

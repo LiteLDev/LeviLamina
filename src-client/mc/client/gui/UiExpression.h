@@ -20,15 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool empty() const;
-
     MCAPI ::Json::Value evaluate(::UIPropertyBag* bag) const;
 
     MCAPI uint64 forEachPropertyName(::std::function<void(::std::string const&)> callback) const;
 
     MCAPI uint64 forEachPropertyToken(::std::function<void(::ExprToken&)> callback);
-
-    MCFOLD bool isStatic() const;
 
     MCAPI ~UiExpression();
     // NOLINTEND

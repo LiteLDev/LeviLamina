@@ -130,12 +130,6 @@ public:
         int                     traderEmeraldCount
     ) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

@@ -22,58 +22,26 @@ public:
     ::ll::TypedStorage<1, 1, ::SubClientId>                mClientSubId;
     ::ll::TypedStorage<8, 16, ::mce::UUID>                 mClientUUID;
     ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>   mAuthenticationType;
-    ::ll::TypedStorage<8, 320, ::PlayerAuthenticationInfo> mTrustedPlayerInfo;
+    ::ll::TypedStorage<8, 384, ::PlayerAuthenticationInfo> mTrustedPlayerInfo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UserEntityIdentifierComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UserEntityIdentifierComponent(
-        ::NetworkIdentifier const&        networkId,
-        ::SubClientId                     clientSubId,
-        ::mce::UUID                       clientUUID,
-        ::PlayerAuthenticationType        authType,
-        ::PlayerAuthenticationInfo const& trustedInfo
-    );
-
-    MCFOLD ::PlayerAuthenticationType getAuthenticationType() const;
-
-    MCAPI ::mce::UUID getClientUUID() const;
-
     MCAPI ::std::string getIdentityName() const;
 
-    MCFOLD ::NetworkIdentifier const& getNetworkId() const;
+    MCAPI ::std::string getMessOId() const;
 
     MCAPI ::std::string getPlayFabId() const;
 
-    MCFOLD ::SubClientId getSubClientId() const;
+    MCAPI ::std::string getTenantId() const;
 
-    MCFOLD ::std::string getXuid() const;
-
-    MCAPI bool isLoggedIntoXboxLive() const;
-
-    MCAPI bool isPrimaryClient() const;
+    MCAPI ::std::string getXuid() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::UserEntityIdentifierComponent* tryGetFromEntity(::EntityContext& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::NetworkIdentifier const&        networkId,
-        ::SubClientId                     clientSubId,
-        ::mce::UUID                       clientUUID,
-        ::PlayerAuthenticationType        authType,
-        ::PlayerAuthenticationInfo const& trustedInfo
-    );
     // NOLINTEND
 };

@@ -32,32 +32,6 @@ public:
     MCAPI Timer(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
 
     MCAPI void advanceTime(float preferredFrameStep);
-
-#ifdef LL_PLAT_C
-    MCFOLD float getAlpha() const;
-#endif
-
-    MCAPI uint64 getTicks() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD float getTime() const;
-#endif
-
-    MCFOLD float getTimeScale() const;
-
-    MCAPI int popOverflowTicks();
-
-    MCAPI void resetTimePassed();
-
-    MCAPI void setTimeScale(float timeScale);
-
-    MCAPI void stepTick(int numSteps);
-
-#ifdef LL_PLAT_C
-    MCAPI void stepTick(float numSteps);
-#endif
-
-    MCAPI bool stepping() const;
     // NOLINTEND
 
 public:

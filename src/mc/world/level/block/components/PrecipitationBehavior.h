@@ -6,5 +6,5 @@ enum class PrecipitationBehavior : uchar {
     None                       = 0,
     ObstructRain               = 1,
     ObstructRainAccumulateSnow = 2,
-    SnowLogNoCollision         = 3,
+    Snowlogging                = 3,
 };

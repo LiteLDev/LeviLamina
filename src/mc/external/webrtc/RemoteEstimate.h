@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RemoteEstimate() /*override*/;
+    virtual ~RemoteEstimate() /*override*/ = default;
     // NOLINTEND
 
 public:

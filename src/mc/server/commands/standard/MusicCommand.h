@@ -47,16 +47,6 @@ public:
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
         MCAPI bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
-
-        MCAPI ~CommandData();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD void $dtor();
 #endif
         // NOLINTEND
     };
@@ -100,15 +90,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::MusicCommand::Action>();
-// clang-format on

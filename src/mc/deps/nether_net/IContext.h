@@ -43,19 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void logMessage(::NetherNet::LogSeverity, char const*, ...) const;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void logMessage(::NetherNet::LogSeverity level, char const* fmt, ...) const;
     // NOLINTEND
 };
 

@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
-class BarrelContainerScreenValidator : public ::ContainerScreenValidatorBase {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class BarrelContainerScreenValidator : public ::ContainerScreenValidatorBase {};

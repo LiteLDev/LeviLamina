@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 
@@ -13,8 +13,6 @@
 class BlockActor;
 class BlockPos;
 class BlockSource;
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -33,21 +31,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<int> _tryGetFillLevel() const;
 
-    MCAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
-
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getCustomColor() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getFillLevel() const;
-
-    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptFluidType> getFluidType() const;
-
-    MCAPI ::Scripting::Result_deprecated<void> setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCAPI ::Scripting::Result_deprecated<void> setFillLevel(int level) const;
-
-    MCAPI ::Scripting::Result_deprecated<void> setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType);
-
-    MCAPI ::Scripting::Result_deprecated<void> setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
     // NOLINTEND
 
 public:
@@ -72,12 +58,6 @@ public:
     MCFOLD bool $_isValid() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

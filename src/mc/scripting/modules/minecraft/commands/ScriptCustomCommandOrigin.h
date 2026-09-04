@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/commands/ScriptCustomCommandSource.h"
 
 // auto generated forward declare list
@@ -32,31 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCustomCommandOrigin();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptCustomCommandOrigin(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandOrigin&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandOrigin&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
     // NOLINTEND
 };
 

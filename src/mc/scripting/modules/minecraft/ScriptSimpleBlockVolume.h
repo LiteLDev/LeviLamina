@@ -3,16 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeBase.h"
-#include "mc/world/level/block/SimpleBlockVolume.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
-class SimpleBlockVolume;
+class BlockSource;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptBlockFilter; }
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
+namespace ScriptModuleMinecraft { class ScriptChunkValidator; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
@@ -22,42 +23,37 @@ namespace ScriptModuleMinecraft {
 
 class ScriptSimpleBlockVolume : public ::ScriptModuleMinecraft::ScriptBlockVolumeBase {
 public:
+    // prevent constructor by default
+    ScriptSimpleBlockVolume& operator=(ScriptSimpleBlockVolume const&);
+    ScriptSimpleBlockVolume();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() /*override*/;
+
+    virtual ::std::vector<::Vec3> getFoundBlocks(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const /*override*/;
+
+    virtual bool containsBlock(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSimpleBlockVolume();
-
     MCAPI ScriptSimpleBlockVolume(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
 
-    MCAPI explicit ScriptSimpleBlockVolume(::SimpleBlockVolume const& rhs);
-
     MCAPI ScriptSimpleBlockVolume(::Vec3 const& from, ::Vec3 const& to);
-
-    MCAPI bool doesLocationTouchFaces(::Vec3 const& pos);
-
-    MCAPI bool doesVolumeTouchFaces(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
-
-    MCAPI ::Vec3 getFrom() const;
-
-    MCAPI ::Vec3 getTo() const;
-
-    MCAPI ::SimpleBlockVolume::IntersectionResult
-    intersects(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptSimpleBlockVolume&
-    operator=(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
-
-    MCAPI void setFrom(::Vec3 const& from);
-
-    MCAPI void setTo(::Vec3 const& to);
     // NOLINTEND
 
 public:
@@ -71,11 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
-
-    MCAPI void* $ctor(::SimpleBlockVolume const& rhs);
 
     MCAPI void* $ctor(::Vec3 const& from, ::Vec3 const& to);
     // NOLINTEND
@@ -87,6 +79,18 @@ public:
     $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
     MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
+
+    MCAPI ::std::vector<::Vec3> $getFoundBlocks(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const;
+
+    MCAPI bool $containsBlock(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const;
 
 
     // NOLINTEND

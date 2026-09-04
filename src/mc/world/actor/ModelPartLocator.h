@@ -23,42 +23,13 @@ public:
     ::ll::TypedStorage<4, 64, ::Matrix>                mWorldAbsoluteTransform;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ModelPartLocator();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ModelPartLocator(
-        ::std::string const& name,
-        ::std::string const& boneName,
-        ::Vec3 const&        localOffset,
-        bool                 ignoreInheritedScale
-    );
-
     MCAPI bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
 
-    MCFOLD ::Matrix const& getWorldAbsoluteTransform() const;
-
     MCAPI void setWorldAbsoluteTransform(::Matrix const& transform);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::std::string const& name,
-        ::std::string const& boneName,
-        ::Vec3 const&        localOffset,
-        bool                 ignoreInheritedScale
-    );
 #endif
     // NOLINTEND
 };

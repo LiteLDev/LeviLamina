@@ -46,18 +46,6 @@ public:
         CreateLevelArguments& operator=(CreateLevelArguments const&);
         CreateLevelArguments(CreateLevelArguments const&);
         CreateLevelArguments();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CreateLevelArguments();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct CreateMinecraftArguments {
@@ -106,18 +94,6 @@ public:
         HostMultiplayerArguments& operator=(HostMultiplayerArguments const&);
         HostMultiplayerArguments(HostMultiplayerArguments const&);
         HostMultiplayerArguments();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~HostMultiplayerArguments();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -127,7 +103,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk5df3b1;
     ::ll::UntypedStorage<8, 32>  mUnkd20537;
     ::ll::UntypedStorage<8, 8>   mUnkedee79;
-    ::ll::UntypedStorage<8, 360> mUnkd99218;
+    ::ll::UntypedStorage<8, 408> mUnkd99218;
     ::ll::UntypedStorage<8, 128> mUnke58fc0;
     ::ll::UntypedStorage<4, 20>  mUnk431c02;
     ::ll::UntypedStorage<8, 8>   mUnkb4db5c;
@@ -157,6 +133,7 @@ public:
     ::ll::UntypedStorage<8, 272> mUnk1abde8;
     ::ll::UntypedStorage<1, 2>   mUnk930f2b;
     ::ll::UntypedStorage<8, 64>  mUnk88818e;
+    ::ll::UntypedStorage<1, 1>   mUnkf0f0b6;
     ::ll::UntypedStorage<8, 16>  mUnk698fc4;
     ::ll::UntypedStorage<8, 16>  mUnk8b2973;
     ::ll::UntypedStorage<8, 16>  mUnk87b043;
@@ -170,16 +147,4 @@ public:
     ServerInstanceInitArguments& operator=(ServerInstanceInitArguments const&);
     ServerInstanceInitArguments(ServerInstanceInitArguments const&);
     ServerInstanceInitArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ServerInstanceInitArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

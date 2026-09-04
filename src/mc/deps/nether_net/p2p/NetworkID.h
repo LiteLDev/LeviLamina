@@ -8,14 +8,8 @@ struct NetworkID {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9df456;
+    ::ll::TypedStorage<8, 8, uint64> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkID& operator=(NetworkID const&);
-    NetworkID(NetworkID const&);
-    NetworkID();
 };
 
 } // namespace NetherNet::P2P

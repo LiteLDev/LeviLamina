@@ -5,50 +5,8 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/debugdrawer/ScriptDebugShape.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace ScriptModuleDebugUtilities {
 
-class ScriptBoxShape : public ::ScriptModuleDebugUtilities::ScriptDebugShape {
-public:
-    // prevent constructor by default
-    ScriptBoxShape();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptBoxShape(
-        ::Scripting::WeakLifetimeScope const&                                           scope,
-        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const&                                           scope,
-        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
-    // NOLINTEND
-};
+class ScriptBoxShape : public ::ScriptModuleDebugUtilities::ScriptDebugShape {};
 
 } // namespace ScriptModuleDebugUtilities

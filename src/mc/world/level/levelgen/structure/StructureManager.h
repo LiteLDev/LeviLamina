@@ -6,10 +6,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/Loader.h"
-#include "mc/network/packet/StructureTemplateResponseType.h"
 #include "mc/platform/threading/Mutex.h"
-#include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplateManager.h"
 #include "mc/world/level/levelgen/structure/StructureDeleteResult.h"
@@ -18,9 +15,7 @@
 // clang-format off
 class BlockPos;
 class BoundingBox;
-class ChunkLoadActionList;
 class CommandArea;
-class CompoundTag;
 class Dimension;
 class IUnknownBlockTypeRegistry;
 class LegacyStructureTemplate;
@@ -33,12 +28,8 @@ class StructureAnimationData;
 class StructurePoolElement;
 class StructureSettings;
 class StructureTemplate;
-class StructureTemplateDataResponsePacket;
-struct Tick;
 namespace Core { class Path; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
-namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataFile; }
-namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataRegistry; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
@@ -72,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureManager() /*override*/;
+    virtual ~StructureManager() /*override*/ = default;
 
     virtual ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName) /*override*/;
 
@@ -99,59 +90,10 @@ public:
 
     MCAPI ::std::string _createLevelStorageId(::std::string const& dimensionPrefix, ::std::string const& saveId);
 
-    MCAPI bool _findResource(
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
-        ::PackInstance const&                                           pack,
-        ::std::string&                                                  resourceStream
-    );
-
-    MCAPI bool _findResource(
-        ::std::string_view                                              structureNamespace,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& rootStructurePath,
-        ::PackInstance const&                                           pack,
-        ::std::string&                                                  resourceStream
-    );
-
-    MCAPI ::LegacyStructureTemplate* _getLegacy(::std::string const& structurePath);
-
-    MCAPI bool _placeSegment(::StructureAnimationData& structureAnimationData);
-
-    MCAPI bool _placeSegment(
-        ::Dimension&                                         dimension,
-        ::StructureAnimationData&                            structureAnimationData,
-        ::ChunkLoadActionList&                               chunkLoadActionList,
-        ::BoundingBox const&                                 boundingBox,
-        ::std::function<::ChunksLoadedStatus(::Tick)> const& areChunksLoaded
-    );
-
-    MCAPI ::LegacyStructureTemplate* _readLegacyStructure(::std::string const& name);
-
-    MCAPI void
-    _removePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
-
-    MCAPI void
-    _savePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
-
-    MCAPI void clearAndShutdownStructurePlacement();
-
     MCAPI ::StructureTemplate&
     cloneStructure(::StructureTemplate const& structureTemplate, ::std::string const& structureName);
 
-    MCAPI ::StructureTemplateDataResponsePacket createStructureDataExportPacket(
-        ::std::string const&            structureName,
-        ::ResourcePackManager const*    packManager,
-        ::LevelStorage*                 levelStorage,
-        ::StructureTemplateResponseType responseType
-    );
-
     MCAPI ::StructureDeleteResult deleteStructure(::std::string const& structureName, ::LevelStorage& levelStorage);
-
-    MCAPI ::StructureTemplate* getOrLoadStructure(
-        ::std::string const&         structureName,
-        ::ResourcePackManager const* packManager,
-        ::LevelStorage*              levelStorage
-    );
 
     MCAPI ::std::vector<::std::string> getPackStructureNames(::mce::UUID const& packUUID);
 
@@ -169,14 +111,9 @@ public:
         ::LevelStorage*              levelStorage
     );
 
-    MCAPI bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
-
     MCAPI void loadMetadataRegistries();
 
     MCAPI void loadPlacementQueue(::LevelStorage& storage, ::Level& level, ::Dimension& dimension);
-
-    MCAPI void
-    loadPlacementQueueItem(::std::string const& key, ::CompoundTag const& tag, ::Level& level, ::Dimension& dimension);
 
     MCAPI void reset();
 
@@ -201,18 +138,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry>
-    _loadMetadataRegistries(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& packManager, bool excludeLatest);
-
-    MCAPI static void _metadataPackForEachCallback(
-        ::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry& registry,
-        ::Puv::Loader<
-            ::SharedTypes::v1_21_80::JigsawStructureMetadataFile,
-            ::SharedTypes::v1_21_80::JigsawStructureMetadataFile>& loader,
-        ::PackInstance const&                                      pack,
-        ::std::string&                                             fileData,
-        ::Core::Path const&                                        filenameWithExtension
+    MCAPI static bool _findResource(
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
+        ::PackInstance const&                                           pack,
+        ::std::string&                                                  resourceStream
     );
+
+    MCAPI static void
+    _removePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
 
 #ifdef LL_PLAT_C
     MCAPI static bool exportStructure(::StructureTemplate const& structureTemplate, ::Core::Path const& filePath);
@@ -223,26 +156,14 @@ public:
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);
-    // NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& BEHAVIOR_PACK_STRUCTURES_FOLDER();
-
-    MCAPI static char const*& LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX();
+    MCAPI static bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ResourcePackManager& packManager);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -260,11 +181,5 @@ public:
     $getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

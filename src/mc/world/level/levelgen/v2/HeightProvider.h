@@ -18,12 +18,6 @@ public:
 
     virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

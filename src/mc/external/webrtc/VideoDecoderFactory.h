@@ -46,12 +46,6 @@ public:
     virtual ::std::unique_ptr<::webrtc::VideoDecoder>
     Create(::webrtc::Environment const&, ::webrtc::SdpVideoFormat const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

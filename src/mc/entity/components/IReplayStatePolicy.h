@@ -20,20 +20,9 @@ public:
 
     virtual bool isReplayNeeded(::AdvanceFrameResult result) const = 0;
 
-    virtual ::MovementCorrection shouldCorrectMovement(
-        ::EntityContext&               entity,
-        ::PlayerAuthInputPacket const& packet,
-        uint64                         frame,
-        uchar                          currentCounter,
-        bool                           isStrictMovement
-    ) = 0;
+    virtual ::MovementCorrection
+    shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) = 0;
 
     virtual void notifyOfExternalCorrection(uint64 frame) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

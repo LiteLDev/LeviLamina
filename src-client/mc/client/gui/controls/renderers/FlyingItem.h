@@ -22,18 +22,6 @@ public:
     ::ll::TypedStorage<4, 4, float>         destScale;
     ::ll::TypedStorage<1, 1, bool>          forceFoil;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~FlyingItem();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ui

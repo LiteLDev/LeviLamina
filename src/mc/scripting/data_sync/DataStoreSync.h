@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/data_sync/DDUI.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
@@ -70,9 +71,18 @@ public:
     // NOLINTEND
 
 public:
+    [[nodiscard]] cereal::DynamicValue const* get(std::string const& datastoreName, std::string const& property) const {
+        return getNestedMapValueConst(mDataStores.get(), datastoreName, property);
+    }
+
+public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~DataStoreSync() = default;
+#else // LL_PLAT_C
     virtual ~DataStoreSync();
+#endif
 
     virtual void clear(::std::string const& datastoreName, bool addToOutgoingChanges);
 
@@ -82,9 +92,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI DataStoreSync();
-
-    MCAPI ::cereal::DynamicValue const* get(::std::string const& datastoreName, ::std::string const& property) const;
+#endif
 
     MCAPI ::nonstd::
         expected<::gsl::not_null<::cereal::DynamicValue const*>, ::Bedrock::DDUI::PathUtility::PathQueryError>
@@ -103,14 +113,6 @@ public:
         ::cereal::DynamicValue const& obj,
         bool                          addToOutgoingChanges);
 
-    MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setObjectPath(
-        ::std::string const&          dataStoreName,
-        ::std::string const&          propertyName,
-        ::std::string const&          path,
-        ::cereal::DynamicValue const& currentData,
-        ::std::string const&          newDataString
-    );
-
     MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
         ::std::string const&                               dataStoreName,
         ::std::string const&                               propertyName,
@@ -124,13 +126,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

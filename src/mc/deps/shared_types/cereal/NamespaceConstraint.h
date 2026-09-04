@@ -22,17 +22,33 @@ public:
     // NOLINTEND
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+
+    virtual ~NamespaceConstraint() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
-    MCAPI ::SharedTypes::NamespaceConstraint& disallowMinecraft();
-
-    MCAPI ::SharedTypes::NamespaceConstraint& disallowNamespace(::std::string const& disallowedNamespace);
-
     MCAPI ::std::string getRegexString(::std::optional<::std::string> disallowedNamespace) const;
 
     MCAPI void validateValue(::std::string_view value, ::cereal::SerializerContext& context) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 
 public:

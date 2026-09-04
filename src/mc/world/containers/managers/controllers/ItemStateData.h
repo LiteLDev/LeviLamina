@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemStack;
-// clang-format on
-
 struct ItemStateData {
 public:
     // member variables
@@ -23,20 +18,4 @@ public:
     ItemStateData& operator=(ItemStateData const&);
     ItemStateData(ItemStateData const&);
     ItemStateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ItemStateData(::ItemStack const& item, ::std::string const& collectionName, int collectionIndex);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::ItemStack const& item, ::std::string const& collectionName, int collectionIndex);
-#endif
-    // NOLINTEND
 };

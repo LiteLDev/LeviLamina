@@ -18,48 +18,32 @@ class IConstBlockSource;
 
 class MobSpawnerBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    MobSpawnerBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MobSpawnerBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::AABB $getCollisionShape(
-        ::Block const& pos,
+        ::Block const&,
         ::IConstBlockSource const&,
-        ::BlockPos const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
 
     // NOLINTEND

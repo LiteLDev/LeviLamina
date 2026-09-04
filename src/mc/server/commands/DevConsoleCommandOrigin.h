@@ -89,8 +89,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI explicit DevConsoleCommandOrigin(::Player& player);
-
-    MCAPI DevConsoleCommandOrigin(::ActorUniqueID id, ::Level* level, ::NetworkIdentifier source, ::SubClientId sub);
 #endif
     // NOLINTEND
 
@@ -99,8 +97,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::Player& player);
-
-    MCAPI void* $ctor(::ActorUniqueID id, ::Level* level, ::NetworkIdentifier source, ::SubClientId sub);
 #endif
     // NOLINTEND
 
@@ -134,7 +130,7 @@ public:
 
     MCFOLD ::NetworkIdentifier const& $getSourceId() const;
 
-    MCFOLD ::SubClientId $getSourceSubId() const;
+    MCAPI ::SubClientId $getSourceSubId() const;
 
     MCFOLD ::CommandOriginType $getOriginType() const;
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class BlockEntityFallOnConfigurationComponentDescription : public ::BlockComponentDescription {
@@ -24,12 +23,6 @@ public:
     virtual ::std::string const& getName() const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

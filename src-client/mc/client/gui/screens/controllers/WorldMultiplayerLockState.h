@@ -44,10 +44,4 @@ public:
 
     MCAPI void $setLockedByResourcePack(bool isLocked);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

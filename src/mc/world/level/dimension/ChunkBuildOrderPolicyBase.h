@@ -34,10 +34,4 @@ public:
 
     virtual void updateInfluences() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

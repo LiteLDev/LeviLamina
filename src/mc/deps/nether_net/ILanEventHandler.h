@@ -34,7 +34,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
+#else // LL_PLAT_C
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const& event);
+#endif
 
 #ifdef LL_PLAT_C
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);

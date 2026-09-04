@@ -24,7 +24,6 @@ struct PackSettingsInfo;
 namespace Core { class FileSystem; }
 namespace Core { class Path; }
 namespace OreUI { class RouterConfiguration; }
-namespace OreUI { struct DebugData; }
 namespace Realms { class IRealmsUGCPackUploader; }
 namespace Realms { class RealmsList; }
 namespace Realms { class RealmsWorldContext; }
@@ -66,8 +65,7 @@ MCAPI ::OreUI::RouterConfiguration createRouterConfiguration(
     ::std::function<void()>                                                              clearAllRequiredTTSEvents,
     ::std::function<bool()>                                                              isInGame,
     ::std::function<bool()>                                                              isInServer,
-    ::std::function<bool()>                                                              isInRealm,
-    ::OreUI::DebugData&                                                                  debugData
+    ::std::function<bool()>                                                              isInRealm
 );
 // NOLINTEND
 

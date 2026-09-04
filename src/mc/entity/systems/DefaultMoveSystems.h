@@ -27,28 +27,28 @@ namespace DefaultMoveSystems {
 // functions
 // NOLINTBEGIN
 MCAPI void doDefaultMoveSystems(
-    ::StrictEntityContext const&                          onGroundFlagComponent,
-    ::Optional<::OnGroundFlagComponent const>             canStandOnSnowFlagComponent,
-    ::Optional<::CanStandOnSnowFlagComponent const>       hasLightweightFamilyFlagComponent,
-    ::Optional<::HasLightweightFamilyFlagComponent const> moveInputComponent,
-    ::Optional<::MoveInputComponent const>                aabbShapeComponent,
-    ::AABBShapeComponent const&                           actorRotationComponent,
-    ::ActorRotationComponent const&                       synchedActorDataComponent,
-    ::ActorDataFlagComponent const&                       fallDistanceComponent,
-    ::FallDistanceComponent&                              mobTravelComponent,
-    ::MobTravelComponent&                                 stateVectorComponent,
-    ::StateVectorComponent&                               region,
-    ::IConstBlockSource const&
+    ::StrictEntityContext const&,
+    ::Optional<::OnGroundFlagComponent const>             onGroundFlagComponent,
+    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
+    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent,
+    ::Optional<::MoveInputComponent const>                moveInputComponent,
+    ::AABBShapeComponent const&                           aabbShapeComponent,
+    ::ActorRotationComponent const&                       actorRotationComponent,
+    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
+    ::FallDistanceComponent&                              fallDistanceComponent,
+    ::MobTravelComponent&                                 mobTravelComponent,
+    ::StateVectorComponent&                               stateVectorComponent,
+    ::IConstBlockSource const&                            region
 );
 
 MCAPI void doFlyingPlayerMoveSystems(
-    ::StrictEntityContext const&              onGroundFlagComponent,
-    ::Optional<::OnGroundFlagComponent const> aabbShapeComponent,
-    ::AABBShapeComponent const&               actorRotationComponent,
-    ::ActorRotationComponent const&           mobTravelComponent,
-    ::MobTravelComponent&                     stateVectorComponent,
-    ::StateVectorComponent&                   region,
-    ::IConstBlockSource const&
+    ::StrictEntityContext const&,
+    ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
+    ::AABBShapeComponent const&               aabbShapeComponent,
+    ::ActorRotationComponent const&           actorRotationComponent,
+    ::MobTravelComponent&                     mobTravelComponent,
+    ::StateVectorComponent&                   stateVectorComponent,
+    ::IConstBlockSource const&                region
 );
 
 MCAPI void forSystems(::brstd::function_ref<void(::TickingSystemWithInfo&&)> func);
@@ -60,17 +60,6 @@ MCAPI void horizontalMovement(
     ::MobTravelComponent&                     mobTravelComponent,
     ::StateVectorComponent&                   stateVectorComponent,
     ::IConstBlockSource const&                region
-);
-
-MCAPI void verticalMovement(
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent,
-    ::Optional<::MoveInputComponent const>                moveInputComponent,
-    ::AABBShapeComponent const&                           aabbShapeComponent,
-    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
-    ::FallDistanceComponent&                              fallDistanceComponent,
-    ::StateVectorComponent&                               stateVectorComponent,
-    ::IConstBlockSource const&                            region
 );
 // NOLINTEND
 

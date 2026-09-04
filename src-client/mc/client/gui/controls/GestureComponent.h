@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GestureComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
@@ -35,25 +31,11 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree& screenEvent,
-        ::ScreenInputContext&,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GestureComponent(::UIControl& owner);
-
-    MCFOLD void setTrackpadButtonId(uint buttonId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
@@ -63,8 +45,12 @@ public:
 
     MCFOLD void $reset();
 
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
     // NOLINTEND
 
 public:

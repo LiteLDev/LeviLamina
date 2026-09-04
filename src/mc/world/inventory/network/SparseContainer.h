@@ -70,41 +70,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~SparseContainer() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~SparseContainer() /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual ::ItemStack const& getItem(int) const /*override*/;
-#else // LL_PLAT_C
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
-#endif
 
     virtual int getContainerSize() const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void containerContentChanged(int) /*override*/;
-#else // LL_PLAT_C
     virtual void containerContentChanged(int slot) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void setItem(int, ::ItemStack const&) /*override*/;
-#else // LL_PLAT_C
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
-#endif
 
     virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual void startOpen(::Actor&) /*override*/;
-#else // LL_PLAT_C
     virtual void startOpen(::Actor& actor) /*override*/;
-#endif
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
@@ -124,15 +104,11 @@ public:
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
 
-    MCFOLD void _clearCreatedItem(int slot);
-
     MCAPI int _getAvailableAddCount(
-        ::ContainerScreenContext const& name,
-        ::ContainerEnumName             itemInSlot,
-        ::ItemStack const&
+        ::ContainerScreenContext const& context,
+        ::ContainerEnumName             name,
+        ::ItemStack const&              itemInSlot
     ) const;
-
-    MCAPI bool _isSlotInRange(int slot) const;
 
     MCAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
@@ -181,12 +157,6 @@ public:
         int                             amount
     ) const;
 
-    MCFOLD bool canConsume(::ContainerEnumName name, int slot, int amount) const;
-
-    MCFOLD bool canDestroy(::ContainerEnumName name, int slot, int amount) const;
-
-    MCFOLD bool canDrop(::ContainerEnumName name, int slot, int amount) const;
-
     MCAPI bool canRemove(::ContainerEnumName name, int slot, int amount) const;
 
     MCAPI ::ItemSetType canSet(
@@ -197,7 +167,7 @@ public:
         int                             amount
     ) const;
 
-    MCAPI int getAvailableAddCount(::ContainerScreenContext const& name, ::ContainerEnumName slot, int) const;
+    MCAPI int getAvailableAddCount(::ContainerScreenContext const& context, ::ContainerEnumName name, int slot) const;
 
     MCAPI int getAvailableAddCount(
         ::ContainerScreenContext const& context,
@@ -212,14 +182,6 @@ public:
         int                             slot,
         ::ItemStackBase const&          item
     ) const;
-
-    MCAPI bool isClientSide() const;
-#endif
-
-    MCAPI bool isUsingLegacyScreenTransactions() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isValidSlot(::ContainerEnumName name, int slot) const;
 #endif
 
     MCAPI void removeItemNetworkChangedCallback(::ContainerEnumName name);
@@ -238,12 +200,6 @@ public:
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -270,13 +226,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
-
-    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

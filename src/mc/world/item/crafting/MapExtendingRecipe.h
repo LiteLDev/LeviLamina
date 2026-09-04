@@ -38,7 +38,7 @@ public:
 
     virtual int getCraftingSize() const /*override*/;
 
-    virtual ::RecipeIngredient const& getIngredient(int, int) const /*override*/;
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
     virtual int size() const /*override*/;
     // NOLINTEND
@@ -47,8 +47,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MapExtendingRecipe(::std::string const& recipeId, ::mce::UUID const& id);
-
-    MCAPI void _updateMapInstance(::ItemInstance& mapInstance, ::CraftingContext& craftingContext) const;
     // NOLINTEND
 
 public:
@@ -77,7 +75,7 @@ public:
 
     MCFOLD int $getCraftingSize() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int, int) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
     MCFOLD int $size() const;
 

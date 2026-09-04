@@ -15,10 +15,4 @@ public:
 
     virtual ::InputMapping const* getMapping(::std::string const& mappingName) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

@@ -50,12 +50,6 @@ public:
         ::ActorUniqueID                                uniqueID,
         ::InteractionModel                             interactionModel
     );
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -75,18 +69,10 @@ public:
 
     MCAPI void $onLeave();
 
-    MCFOLD bool $_isStillValid() const;
+    MCAPI bool $_isStillValid() const;
 
     MCAPI void $_registerCoalesceOrder();
 
     MCAPI void $_registerAutoPlaceOrder();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

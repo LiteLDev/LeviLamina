@@ -13,8 +13,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseActorRenderContext;
-class CompoundTag;
 class CustomParticle;
 class HashedString;
 class Level;
@@ -74,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleEngine() /*override*/;
+    virtual ~ParticleEngine() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -85,8 +83,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons,
         ::LightTexture&                                  lightTexture
     );
-
-    MCAPI ::std::unique_ptr<::Particle> _create(::ParticleType type);
 
     MCAPI void _emitParticleNew(
         ::ParticleSystemEngine& particleSystemEngine,
@@ -112,21 +108,6 @@ public:
 
     MCAPI ::ParticleRenderObjectCollection extractEmptyCollection(::ScreenContext& screenContext) const;
 
-    MCAPI ::gsl::final_action<::std::function<void()>> forceTessellationForTemporaryCamera();
-
-    MCAPI ::Particle* instance(
-        ::ParticleType          type,
-        ::Vec3 const&           pos,
-        ::Vec3 const&           dir,
-        int                     data,
-        ::ParticleSystemEngine* particleSystemEngine,
-        ::CompoundTag const*    tag
-    );
-
-    MCAPI void onDimensionChanged();
-
-    MCAPI void renderCustomParticles(::BaseActorRenderContext& renderContext, ::Vec3 const& viewOff, float minDist);
-
     MCAPI void tick();
     // NOLINTEND
 
@@ -141,17 +122,5 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::Level& level, ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons, ::LightTexture& lightTexture);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

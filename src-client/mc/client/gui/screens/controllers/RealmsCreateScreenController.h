@@ -67,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsCreateScreenController() /*override*/;
+    virtual ~RealmsCreateScreenController() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 
@@ -99,33 +99,13 @@ public:
 
     MCAPI void _errorDialogInvalidName(::std::string realmName, bool genericError);
 
-    MCAPI void _errorDialogPaymentServiceDown();
-
-    MCAPI void _errorDialogPurchaseFailed();
-
     MCAPI void _fulfillPriorRealmPurchase(::std::weak_ptr<::Purchase> purchase);
 
     MCAPI ::ProductSku const& _getProductSku() const;
 
-    MCFOLD void _openPurchaseInProgress();
-
-    MCAPI void _playNowModalPopup(::std::function<void()> actionAfterCreate);
-
-    MCAPI void _promptForAutoFulfillment(::std::weak_ptr<::Purchase>& purchase);
+    MCAPI void _openPurchaseInProgress();
 
     MCAPI void _promptForIntentMismatchOverride(::std::string const& contentId);
-
-    MCAPI void _promptForUnknownIntentOverrideAndFulfillment(::std::weak_ptr<::Purchase>& purchase);
-
-    MCAPI void _promptForXuidOverrideAndFulfillment(::std::weak_ptr<::Purchase>& purchase);
-
-    MCAPI void _promptPrepareAppStore(::std::function<void(bool)> callback);
-
-    MCAPI void _purchaseRealm();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
 
     MCAPI void _verifyAppStoreReady(::std::function<void()> readyCallback);
     // NOLINTEND
@@ -143,12 +123,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onCreation();
@@ -160,13 +134,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -11,6 +11,7 @@
 // clang-format off
 class NetworkIdentifier;
 struct ConnectionDefinition;
+namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -23,8 +24,9 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) = 0;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& primaryConnection,
-        ::Social::GameConnectionInfo const& backupConnection
+        ::Social::GameConnectionInfo const&                         primaryConnection,
+        ::Social::GameConnectionInfo const&                         backupConnection,
+        ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
     ) = 0;
 
     virtual void disconnect() = 0;
@@ -42,21 +44,13 @@ public:
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) = 0;
 
     virtual void setDisableLanSignaling(bool disableLanSignaling) = 0;
+
+    virtual ~RemoteConnector() /*override*/;
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForConnector();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForNetworkEnableDisableListener();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

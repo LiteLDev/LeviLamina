@@ -4,14 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/MessageImage.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ImageData;
-struct MessagePatchnoteData;
-namespace OreUI { class IResourceAllowList; }
-// clang-format on
 
 namespace OreUI {
 
@@ -34,12 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI MessagePatchnote(::OreUI::MessagePatchnote const&);
 
-    MCAPI MessagePatchnote(
-        ::MessagePatchnoteData const&                              item,
-        ::std::function<::ImageData(::std::string)>                imageLookup,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
-    );
-
     MCAPI ~MessagePatchnote();
     // NOLINTEND
 
@@ -47,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::MessagePatchnote const&);
-
-    MCAPI void* $ctor(
-        ::MessagePatchnoteData const&                              item,
-        ::std::function<::ImageData(::std::string)>                imageLookup,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
-    );
     // NOLINTEND
 
 public:

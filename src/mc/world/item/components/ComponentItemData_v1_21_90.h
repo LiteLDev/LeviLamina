@@ -23,23 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComponentItemData_v1_21_90& operator=(ComponentItemData_v1_21_90 const&);
-    ComponentItemData_v1_21_90();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_21_90(::ComponentItemData_v1_21_90&&);
-
-    MCAPI ComponentItemData_v1_21_90(::ComponentItemData_v1_21_90 const&);
-
-    MCFOLD ::ComponentItemData_v1_21_90& operator=(::ComponentItemData_v1_21_90&&);
-
-    MCAPI ~ComponentItemData_v1_21_90();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -49,19 +32,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ComponentItemData_v1_21_90&&);
-
-    MCFOLD void* $ctor(::ComponentItemData_v1_21_90 const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

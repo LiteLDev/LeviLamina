@@ -30,10 +30,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class MapItem : public ::ComplexItem {
 public:
-    // prevent constructor by default
-    MapItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
@@ -51,7 +47,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const
     ) const /*override*/;
 
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
@@ -66,11 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapItem(::std::string const& itemName, short itemId);
-
     MCAPI void blockTick(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void updateMap(::Level& level, ::Actor& player, ::MapItemSavedData& map) const;
     // NOLINTEND
 
 public:
@@ -129,12 +121,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& itemName, short itemId);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
@@ -150,7 +136,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool const
     ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;

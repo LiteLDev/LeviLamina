@@ -54,16 +54,7 @@ MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindIntRange(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindMceUUID(::cereal::ReflectionCtx& ctx);
-
-MCNAPI ::std::array<int, 3> blockPosAsArray(::BlockPos const& instance);
-
 MCNAPI void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);
-
-MCNAPI bool checkBoolSchema(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
-);
 
 MCNAPI bool checkBrightnessSchema(
     ::rapidjson::
@@ -77,11 +68,6 @@ MCNAPI bool checkColor255RGBSchema(
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
 );
 
-MCNAPI bool checkDefinitionTriggerSchema(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
-);
-
 MCNAPI bool checkEnumSchema(
     ::rapidjson::
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value,
@@ -89,23 +75,6 @@ MCNAPI bool checkEnumSchema(
 );
 
 MCNAPI bool checkExpressionNodeSchema(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
-);
-
-MCNAPI bool checkFloatSchema(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value,
-    ::std::optional<float> const&                                                                                 min,
-    ::std::optional<float> const&                                                                                 max
-);
-
-MCNAPI bool checkIdentifierStringSchema(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
-);
-
-MCNAPI bool checkIntRangeSchema(
     ::rapidjson::
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
 );
@@ -137,10 +106,8 @@ legacyParseFilterTestData(::SharedTypes::v1_21_20::FilterTestData& data, ::Json:
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_MATERIAL_NAME();
-
 #ifdef LL_PLAT_C
-MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_NO_MINECRAFT_NAMESPACE_NAME();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_NAMESPACE_NAME();
 #endif
 // NOLINTEND
 

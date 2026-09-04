@@ -39,11 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI ThumbnailCacheFetchReplyPayload(
         ::mce::UUID const&                                          id,
         uint                                                        hash,
         ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data
     );
+#endif
     // NOLINTEND
 
 public:
@@ -55,8 +57,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void*
     $ctor(::mce::UUID const& id, uint hash, ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data);
+#endif
     // NOLINTEND
 
 public:

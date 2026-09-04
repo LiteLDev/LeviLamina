@@ -23,21 +23,9 @@ public:
     ScriptCurrentThemeChangeAfterEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptCurrentThemeChangeAfterEvent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

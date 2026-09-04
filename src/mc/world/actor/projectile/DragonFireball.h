@@ -9,17 +9,11 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class ActorHurtResult;
-class EntityContext;
-struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class DragonFireball : public ::Fireball {
-public:
-    // prevent constructor by default
-    DragonFireball();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,27 +21,7 @@ public:
 
     virtual bool shouldBurn() /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DragonFireball(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, ::HurtParameters const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -57,7 +31,7 @@ public:
 
     MCFOLD bool $shouldBurn();
 
-    MCFOLD ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, ::HurtParameters const&);
 
 
     // NOLINTEND

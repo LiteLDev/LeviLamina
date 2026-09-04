@@ -24,16 +24,8 @@ public:
         bool          allowAlpha
     );
 
-    MCNAPI static bool isPremiumGeometry(::std::string const& geometryName);
-
-    MCNAPI static bool isValidCapeImage(::mce::Image const& image);
-
     MCNAPI static bool isValidImage(::mce::Image const& image);
-#endif
 
-    MCNAPI static bool isValidSize(uint64 skinSize);
-
-#ifdef LL_PLAT_C
     MCNAPI static void resizeHalfSkinData(::mce::Image& image);
 
     MCNAPI static void validateAlpha(::mce::Image& image, bool isPremium);

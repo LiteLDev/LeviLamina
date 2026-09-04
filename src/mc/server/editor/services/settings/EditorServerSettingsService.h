@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/ThemeSettingsColorKey.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/settings/EditorSettingsService.h"
 #include "mc/options/GraphicsMode.h"
 
@@ -105,8 +105,6 @@ public:
 
     MCNAPI void _handleThemeSettingsModified(::Editor::Settings::ThemeProps const& props);
 
-    MCNAPI void _loadGraphicsMode();
-
     MCNAPI void _saveGraphicsMode(::GraphicsMode mode);
     // NOLINTEND
 
@@ -151,14 +149,6 @@ public:
     $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEditorSettingsServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

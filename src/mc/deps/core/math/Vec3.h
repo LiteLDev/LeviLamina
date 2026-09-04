@@ -14,39 +14,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 abs() const;
-
-    MCAPI ::Vec3 ceil() const;
-
-    MCAPI float distanceToLineSquared(::Vec3 const& p0, ::Vec3 const& p1) const;
-
-    MCAPI ::Vec3 floor(float offset) const;
-
-    MCAPI bool isNan() const;
-
-    MCAPI bool isNear(::Vec3 const& rhs, float e) const;
-
-    MCAPI float maxComponent() const;
-
-    MCAPI ::Vec3 round() const;
-
-    MCAPI ::std::string toJsonString() const;
-
     MCAPI ::std::string toString() const;
-
-    MCAPI ::Vec3 xz() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 clamp(::Vec3 const& v, ::Vec3 const& clipMin, ::Vec3 const& clipMax);
-
     MCAPI static ::Vec3 directionFromRotation(::Vec2 const& rot);
 
     MCAPI static ::Vec3 directionFromRotation(float rotX, float rotY);
-
-    MCAPI static ::Vec3 fromXZ(::Vec2 const& xz, float y);
 
 #ifdef LL_PLAT_C
     MCAPI static ::std::optional<::Vec3> getIntersection(
@@ -57,26 +33,28 @@ public:
         bool          allowBehind
     );
 #endif
-
-    MCAPI static ::Vec2 rotationFromDirection(::Vec3 const& dir);
-
-    MCAPI static ::Vec2 toXZ(::Vec3 const& vec);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::Vec3 const& HALF();
+#endif
 
     MCAPI static ::Vec3 const& MAX();
 
     MCAPI static ::Vec3 const& MIN();
 
+#ifdef LL_PLAT_C
     MCAPI static ::Vec3 const& NEG_UNIT_X();
+#endif
 
     MCAPI static ::Vec3 const& NEG_UNIT_Y();
 
+#ifdef LL_PLAT_C
     MCAPI static ::Vec3 const& NEG_UNIT_Z();
+#endif
 
     MCAPI static ::Vec3 const& ONE();
 

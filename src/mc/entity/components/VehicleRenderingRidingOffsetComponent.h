@@ -13,20 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::RenderingRidingOffsetInfo>> mOffsetsInfo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VehicleRenderingRidingOffsetComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit VehicleRenderingRidingOffsetComponent(::std::vector<::RenderingRidingOffsetInfo> const& offsetsInfo);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::RenderingRidingOffsetInfo> const& offsetsInfo);
-    // NOLINTEND
 };

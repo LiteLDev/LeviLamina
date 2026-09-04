@@ -76,15 +76,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderChunkCoordinator() /*override*/;
+    virtual ~RenderChunkCoordinator() /*override*/ = default;
 
-    virtual void onChunkLoaded(::ChunkSource& lc, ::LevelChunk&) /*override*/;
+    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk& lc) /*override*/;
 
     virtual void onSubChunkLoaded(
-        ::ChunkSource& lc,
-        ::LevelChunk&  absoluteSubChunkIndex,
-        short          subChunkVisibilityChanged,
-        bool
+        ::ChunkSource&,
+        ::LevelChunk& lc,
+        short         absoluteSubChunkIndex,
+        bool          subChunkVisibilityChanged
     ) /*override*/;
 
     virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos) /*override*/;
@@ -118,36 +118,13 @@ public:
     MCAPI void
     _setDirty(::BlockPos const& min, ::BlockPos const& max, bool immediate, bool changesVisibility, bool canInterlock);
 
-    MCAPI void addLevelRendererCameraListener(::LevelRendererCamera* levelRendererCamera);
-
     MCAPI ::std::shared_ptr<::RenderChunkShared> getOrCreateChunkAtPos(::SubChunkPos const& pos);
-
-    MCFOLD ::RenderChunkCoordinatorProxy* getProxy();
 
     MCAPI uint64 getRenderChunkGeometryFaceMetadataMemoryUsed() const;
 
-    MCAPI void preRenderTick();
-
-    MCAPI void rebuildAllRenderChunkGeometry();
-
     MCAPI void relightAllRenderChunkGeometry();
 
-    MCAPI void removeLevelRendererCameraListener(::LevelRendererCamera* levelRendererCamera);
-
     MCAPI void tick();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool shouldSetBlockAsDirty(
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        ::Block const&    oldBlock,
-        ::BlockPos&       min,
-        ::BlockPos&       max,
-        bool&             changesVisibility
-    );
     // NOLINTEND
 
 public:
@@ -157,18 +134,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onChunkLoaded(::ChunkSource& lc, ::LevelChunk&);
+    MCAPI void $onChunkLoaded(::ChunkSource&, ::LevelChunk& lc);
 
     MCAPI void
-    $onSubChunkLoaded(::ChunkSource& lc, ::LevelChunk& absoluteSubChunkIndex, short subChunkVisibilityChanged, bool);
+    $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
     MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
@@ -185,11 +156,5 @@ public:
         ::BlockChangedEventTarget      eventTarget,
         ::Actor*                       blockChangeSource
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

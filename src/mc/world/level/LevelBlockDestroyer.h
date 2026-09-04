@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockChangeContext;
-class BlockPos;
-class BlockSource;
 class ILevelBlockDestroyerProxy;
 class LevelEventManager;
 // clang-format on
@@ -21,34 +18,5 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> const> mLevelEventManager;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelBlockDestroyerProxy>> const>
         mLevelBlockDestroyerProxy;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelBlockDestroyer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI LevelBlockDestroyer(
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
-        ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
-    );
-
-    MCNAPI bool destroyBlock(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        bool                        dropResources,
-        ::BlockChangeContext const& changeSourceContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
-        ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
-    );
     // NOLINTEND
 };

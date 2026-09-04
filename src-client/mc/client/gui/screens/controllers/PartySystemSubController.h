@@ -5,9 +5,11 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/social/IToastEventListener.h"
+#include "mc/client/social/ToastMessageType.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/network/packet/PartyDestinationCookieIntent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,37 +17,39 @@ class MinecraftScreenModel;
 class ToastManager;
 class ToastMessage;
 namespace Parties { class PartySystem; }
-namespace Parties { struct PartyDestinationGathering; }
-namespace Parties { struct PartyDestinationMenus; }
-namespace Parties { struct PartyDestinationRealm; }
-namespace Parties { struct PartyDestinationXblP2P; }
-namespace Parties { struct PartyEventAcceptInviteFailed; }
-namespace Parties { struct PartyEventCreateFailed; }
-namespace Parties { struct PartyEventInviteExpired; }
-namespace Parties { struct PartyEventJoinFailed; }
-namespace Parties { struct PartyEventJoinablePartyExpired; }
-namespace Parties { struct PartyEventJoinedParty; }
-namespace Parties { struct PartyEventLeaderChanged; }
-namespace Parties { struct PartyEventLeaveFailed; }
-namespace Parties { struct PartyEventLeftParty; }
-namespace Parties { struct PartyEventMemberJoined; }
-namespace Parties { struct PartyEventMemberLeft; }
-namespace Parties { struct PartyEventRemoveMemberFailed; }
-namespace Parties { struct PartyEventSendInviteFailed; }
-namespace Parties { struct PartyEventSetLeaderFailed; }
 // clang-format on
 
 class PartySystemSubController : public ::MinecraftScreenController, public ::IToastEventListener {
 public:
+    // PartySystemSubController inner types declare
+    // clang-format off
+    struct DestinationCookieToastRequest;
+    // clang-format on
+
+    // PartySystemSubController inner types define
+    struct DestinationCookieToastRequest {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::PartyDestinationCookieIntent> mIntent;
+        ::ll::TypedStorage<8, 32, ::std::string>                 mDestinationName;
+        // NOLINTEND
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartyInviteUpdateSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartyEventSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartyTravelSubscription;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                          mTaskGroup;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyInviteUpdateSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyEventSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyTravelSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyDestinationCookieUpdatedSubscription;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                    mTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> mPartySystem;
     ::ll::TypedStorage<8, 8, ::ToastManager&>                                        mToastManager;
     ::ll::TypedStorage<4, 4, ::std::chrono::minutes>                                 mServerSlotReservationTime;
+    ::ll::TypedStorage<8, 48, ::std::optional<::PartySystemSubController::DestinationCookieToastRequest>>
+                                   mPendingDestinationCookieToast;
+    ::ll::TypedStorage<1, 1, bool> mHasActiveDestinationCookieToast;
     // NOLINTEND
 
 public:
@@ -57,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PartySystemSubController() /*override*/;
+    virtual ~PartySystemSubController() /*override*/ = default;
 
     virtual void
     handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg) /*override*/;
@@ -74,50 +78,16 @@ public:
 
     MCAPI void _handleTravelToastDeclined();
 
-    MCAPI void _onDestinationChange(::Parties::PartyDestinationGathering destGathering);
+    MCAPI void _showDestinationCookieToast(::PartySystemSubController::DestinationCookieToastRequest const& request);
 
-    MCAPI void _onDestinationChange(::Parties::PartyDestinationRealm destRealm);
+    MCAPI void _showSnackbar(::std::string const locStringKey, ::std::string const localizationString);
 
-    MCAPI void _onDestinationChange(::Parties::PartyDestinationXblP2P destXbl);
-
-    MCAPI void _onEvent(::Parties::PartyEventMemberLeft const& event);
-
-    MCAPI void _onEvent(::Parties::PartyEventLeaderChanged const& event);
-
-    MCAPI void _onEvent(::Parties::PartyEventMemberJoined const& event);
-
-    MCAPI void _onPartyEvent(
-        ::std::variant<
-            ::Parties::PartyEventMemberJoined,
-            ::Parties::PartyEventMemberLeft,
-            ::Parties::PartyEventJoinedParty,
-            ::Parties::PartyEventLeftParty,
-            ::Parties::PartyEventLeaderChanged,
-            ::Parties::PartyEventLeaveFailed,
-            ::Parties::PartyEventJoinFailed,
-            ::Parties::PartyEventInviteExpired,
-            ::Parties::PartyEventJoinablePartyExpired,
-            ::Parties::PartyEventAcceptInviteFailed,
-            ::Parties::PartyEventCreateFailed,
-            ::Parties::PartyEventSendInviteFailed,
-            ::Parties::PartyEventRemoveMemberFailed,
-            ::Parties::PartyEventSetLeaderFailed> event
+    MCAPI void _showTravelToast(
+        ::ToastMessageType   toastType,
+        ::std::string const& toastTitle,
+        ::std::string const& toastSubtitle,
+        bool                 showWorldIcon
     );
-
-    MCAPI void _onPendingDestination(
-        ::std::variant<
-            ::Parties::PartyDestinationXblP2P,
-            ::Parties::PartyDestinationMenus,
-            ::Parties::PartyDestinationRealm,
-            ::Parties::PartyDestinationGathering> destination
-    );
-
-    MCAPI void _showInviteToast(::std::string inviterXuid);
-
-    MCAPI void _showSnackbar(::std::string locStringKey, ::std::string localizationString);
-
-    MCAPI void
-    _showTravelToast(::std::string const& toastTitle, ::std::string const& toastSubtitle, bool showWorldIcon);
     // NOLINTEND
 
 public:
@@ -131,24 +101,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

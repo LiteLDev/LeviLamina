@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CubemapBackgroundResources() /*override*/;
+    virtual ~CubemapBackgroundResources() /*override*/ = default;
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
     // NOLINTEND
@@ -72,39 +72,14 @@ public:
 
     MCAPI void _unloadPanoramaTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void _updateIsVanillaCubemap();
-
     MCAPI bool arePanoramaTexturesLoadedInGroup(::std::shared_ptr<::mce::TextureGroup> textures) const;
 
-    MCAPI void ensurePanoramaTexturesLoadedInGroup(::std::shared_ptr<::mce::TextureGroup> textures) const;
-
     MCAPI void frameUpdate(::IClientInstance& clientInstance, ::FrameUpdateContext& frameUpdateContext);
-
-    MCAPI ::mce::ClientTexture getCubemapTexture() const;
-
-    MCAPI ::mce::Color const& getFadeInColor() const;
-
-    MCFOLD ::mce::TexturePtr const& getOverlayTexture() const;
-
-    MCAPI ::gsl::span<::mce::TexturePtr const, 6> getPanoramaImages() const;
-
-    MCAPI bool isPanoramaLoaded() const;
-
-    MCFOLD bool isVanillaCubemap() const;
 
     MCAPI void loadAssets(
         ::mce::TextureResourceService&         textureResourceService,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
-
-    MCAPI void primaryClientLoadAssets(
-        ::mce::TextureResourceService&         textureResourceService,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup
-    );
-
-    MCAPI void primaryClientUnloadAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI void setFadeInColor(::mce::Color const& color);
 
     MCAPI void unloadAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
@@ -127,22 +102,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForResourcePackListener();
     // NOLINTEND
 };

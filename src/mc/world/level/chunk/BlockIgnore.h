@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class BlockType;
-class HashedString;
 class IBlockSource;
 namespace Util { class XXHash; }
 namespace br::worldgen { struct StructureBlockInfo; }
@@ -31,17 +30,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource& processedBlockInfo,
+        ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+
+    virtual ~BlockIgnore() /*override*/;
     // NOLINTEND
 
 public:
@@ -51,8 +52,6 @@ public:
 
     MCAPI static ::br::worldgen::processors::BlockIgnore
     from(::std::vector<::SharedTypes::Reference<0>> const& toIgnore);
-
-    MCAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
     // NOLINTEND
 
 public:
@@ -62,14 +61,20 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource& processedBlockInfo,
+        ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

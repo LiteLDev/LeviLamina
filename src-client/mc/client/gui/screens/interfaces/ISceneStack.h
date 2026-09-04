@@ -37,19 +37,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SceneElement();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        virtual ~SceneElement() = default;
         // NOLINTEND
     };
 
@@ -230,11 +218,5 @@ public:
     virtual void setScreenThreshold(::ScreenThreshold const& screenThreshold) = 0;
 
     virtual ::Bedrock::PubSub::Subscription registerSceneStackDestroyedListener(::std::function<void()> callback) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };

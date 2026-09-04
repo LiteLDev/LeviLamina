@@ -27,10 +27,4 @@ public:
 
     virtual ~IContainerRegistryAccess() = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

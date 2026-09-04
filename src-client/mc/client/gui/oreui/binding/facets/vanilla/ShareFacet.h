@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/ServiceReference.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ class AppPlatform;
 
 namespace OreUI {
 
-class ShareFacet : public ::OreUI::FacetBase<::OreUI::ShareFacet> {
+class ShareFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ShareFacet> {
 public:
     // member variables
     // NOLINTBEGIN

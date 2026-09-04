@@ -50,10 +50,6 @@ public:
         ::FilterInput            def,
         ::FilterStringMap        stringMap
     );
-
-    MCNAPI ::FilterParamDefinition& operator=(::FilterParamDefinition&&);
-
-    MCNAPI ~FilterParamDefinition();
     // NOLINTEND
 
 public:
@@ -75,11 +71,5 @@ public:
         ::FilterInput            def,
         ::FilterStringMap        stringMap
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

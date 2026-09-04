@@ -8,12 +8,6 @@ public:
     // NOLINTBEGIN
     ::std::string mText;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::string const& getText() const;
-    // NOLINTEND
 };
 
 // clang-format off

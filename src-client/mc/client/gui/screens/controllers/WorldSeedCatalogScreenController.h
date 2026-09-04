@@ -38,10 +38,6 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>                                               model,
         ::std::function<void(::std::string const&, ::std::string const&, ::Core::Path const&)> closeCallback
     );
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -57,13 +53,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

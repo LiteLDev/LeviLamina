@@ -25,16 +25,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                mEntity;
     ::ll::TypedStorage<4, 4, ::PlayerUpdateInteractionEvent::ActionType> mAction;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerUpdateInteractionEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

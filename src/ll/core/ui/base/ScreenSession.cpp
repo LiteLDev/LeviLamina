@@ -65,7 +65,7 @@ void ScreenSessionImpl::failStart() noexcept {
 
 void ScreenSessionImpl::cleanupDataStore() noexcept {
     auto*                player = getPlayer();
-    auto*                sync   = player == nullptr ? nullptr : &player->getDataStoreSync();
+    auto*                sync   = player == nullptr ? nullptr : &*player->mDataStoreSync;
     cereal::DynamicValue nullValue{};
 
     for (auto& datastoreEntry : mProperties) {
@@ -97,7 +97,7 @@ Expected<> ScreenSessionImpl::beginShow() {
     }
 
     auto  serverInstance = ll::service::getServerInstance();
-    auto* scriptManager  = serverInstance ? serverInstance->getScriptManager() : nullptr;
+    auto* scriptManager  = serverInstance ? serverInstance->mServerScriptManager.get() : nullptr;
     auto* tracker        = scriptManager != nullptr && scriptManager->mFormPromiseTracker
                              ? scriptManager->mFormPromiseTracker.get()
                              : nullptr;

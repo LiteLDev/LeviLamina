@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ItemStack.h"
+
 // auto generated forward declare list
 // clang-format off
 class ItemDescriptor;
-class ItemStack;
 class ItemStackBase;
 // clang-format on
 
@@ -21,27 +23,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 152> mUnkd6e80f;
-        ::ll::UntypedStorage<8, 24>  mUnkcbddf5;
+        ::ll::TypedStorage<8, 152, ::ItemStack>               mInput;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mOutput;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Reduction& operator=(Reduction const&);
-        Reduction(Reduction const&);
-        Reduction();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk6c1281;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::vector<::ItemStack>>> mBlockToElements;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockReducer& operator=(BlockReducer const&);
-    BlockReducer(BlockReducer const&);
 
 public:
     // virtual functions
@@ -54,25 +45,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockReducer();
+    MCAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
 
-    MCNAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
-
-    MCNAPI ::std::unordered_map<int, ::std::vector<::ItemStack>> const& getReductionMap() const;
-
-    MCNAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
+    MCAPI void $registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
 
 
     // NOLINTEND

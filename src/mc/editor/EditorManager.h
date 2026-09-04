@@ -4,9 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorManagerServiceProvider.h"
 #include "mc/editor/services/EditorServiceList.h"
+#include "mc/network/EditorConnectionJoinIntent.h"
 #include "mc/server/editor/IEditorManager.h"
 #include "mc/world/level/FileArchiver.h"
 
@@ -21,7 +22,6 @@ class Scheduler;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorInitParams; }
-namespace Scripting { struct ContextId; }
 // clang-format on
 
 namespace Editor {
@@ -36,6 +36,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkb39dbf;
     ::ll::UntypedStorage<8, 48> mUnkdce6e6;
     ::ll::UntypedStorage<8, 48> mUnk64e7d8;
+    ::ll::UntypedStorage<1, 1>  mUnkc4bfc9;
     // NOLINTEND
 
 public:
@@ -62,8 +63,7 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> scriptingRebuild() /*override*/;
 
     virtual void tryClearPlaytestRoundtripInfo() /*override*/;
 
@@ -73,7 +73,18 @@ public:
     virtual ::Bedrock::PubSub::Subscription
     registerLevelTickSubscriber(::std::function<void(::Editor::EditorManager&)> func) /*override*/;
 
+    virtual bool isEditorModeEnabled() const /*override*/;
+
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() /*override*/;
+
+    virtual ::EditorConnectionJoinIntent getEditorConnectionJoinIntent() const /*override*/;
+
+#ifdef LL_PLAT_S
+    virtual void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent) /*override*/;
+#else // LL_PLAT_C
+    virtual void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent intent) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -81,6 +92,7 @@ public:
     // NOLINTBEGIN
     MCNAPI EditorManager(
         bool                                         isClient,
+        bool                                         isEditorModeEnabled,
         ::PacketSender&                              packetSender,
         ::IMinecraftEventing&                        eventing,
         ::gsl::not_null<::Editor::EditorInitParams*> params
@@ -92,6 +104,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         bool                                         isClient,
+        bool                                         isEditorModeEnabled,
         ::PacketSender&                              packetSender,
         ::IMinecraftEventing&                        eventing,
         ::gsl::not_null<::Editor::EditorInitParams*> params
@@ -120,7 +133,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $scriptingTeardown();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild();
 
     MCNAPI void $tryClearPlaytestRoundtripInfo();
 
@@ -130,7 +143,17 @@ public:
     MCNAPI ::Bedrock::PubSub::Subscription
     $registerLevelTickSubscriber(::std::function<void(::Editor::EditorManager&)> func);
 
+    MCNAPI bool $isEditorModeEnabled() const;
+
     MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
+
+    MCNAPI ::EditorConnectionJoinIntent $getEditorConnectionJoinIntent() const;
+
+#ifdef LL_PLAT_S
+    MCNAPI void $setEditorConnectionJoinIntent(::EditorConnectionJoinIntent);
+#else // LL_PLAT_C
+    MCNAPI void $setEditorConnectionJoinIntent(::EditorConnectionJoinIntent intent);
+#endif
 
 
     // NOLINTEND

@@ -26,18 +26,6 @@ public:
             ::sim::ContinuousLookAtEntityIntent>>
         mType;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LookAtIntent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace sim

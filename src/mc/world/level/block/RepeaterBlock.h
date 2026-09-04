@@ -82,9 +82,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<int const[]> DELAYS();
+    MCAPI static ::std::add_lvalue_reference_t<int const[4]> DELAYS();
 
+#ifdef LL_PLAT_S
+    MCAPI static ::std::add_lvalue_reference_t<float const[4]> DELAY_RENDER_OFFSETS();
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI static ::std::add_lvalue_reference_t<float const[]> DELAY_RENDER_OFFSETS();
+#endif
     // NOLINTEND
 
 public:

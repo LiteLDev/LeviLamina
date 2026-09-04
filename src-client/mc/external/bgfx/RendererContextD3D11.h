@@ -33,12 +33,10 @@
 namespace bgfx { class UniformBuffer; }
 namespace bgfx { struct Attachment; }
 namespace bgfx { struct BlitState; }
-namespace bgfx { struct Clear; }
 namespace bgfx { struct ClearQuad; }
 namespace bgfx { struct Frame; }
 namespace bgfx { struct Handle; }
 namespace bgfx { struct IndexBufferHandle; }
-namespace bgfx { struct Init; }
 namespace bgfx { struct Memory; }
 namespace bgfx { struct OcclusionQueryHandle; }
 namespace bgfx { struct ProgramHandle; }
@@ -126,7 +124,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RendererContextD3D11() /*override*/;
+    virtual ~RendererContextD3D11() /*override*/ = default;
 
     virtual ::bgfx::RendererType::Enum getRendererType() const /*override*/;
 
@@ -302,30 +300,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RendererContextD3D11();
-
-    MCAPI void capture();
-
-    MCAPI void capturePostReset();
-
-    MCAPI void clear(::bgfx::Clear const& _clear, float (*const _palette)[4]);
-
-    MCAPI void clearQuad(
-        ::bgfx::ClearQuad&   _clearQuad,
-        ::bgfx::Rect const&  _rect,
-        ::bgfx::Clear const& _clear,
-        float (*const _palette)[4]
-    );
-
     MCAPI void commit(::bgfx::UniformBuffer& _uniformBuffer);
 
-    MCAPI ::ID3D11ShaderResourceView* getCachedSrv(::bgfx::TextureHandle _handle, uchar _mip, bool _compute);
-
-    MCAPI ::ID3D11UnorderedAccessView* getCachedUav(::bgfx::TextureHandle _handle, uchar _mip);
-
-    MCAPI ::ID3D11SamplerState* getSamplerState(uint _flags, float const* const _rgba);
-
-    MCAPI bool init(::bgfx::Init const& _init);
+    MCAPI ::ID3D11SamplerState* getSamplerState(uint _flags, float const* _rgba);
 
     MCAPI void postReset();
 
@@ -353,25 +330,9 @@ public:
         bool   _scissor
     );
 
-    MCAPI void shutdown();
-
     MCAPI void submitBlit(::bgfx::BlitState& _bs, ushort _view);
 
     MCAPI void updateMsaa(::DXGI_FORMAT _format) const;
-
-    MCAPI bool updateResolution(::bgfx::Resolution const& _resolution);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -381,13 +342,13 @@ public:
 
     MCAPI uint64 $getRendererVersion() const;
 
-    MCFOLD uint64 $getShaderVersion() const;
+    MCAPI uint64 $getShaderVersion() const;
 
     MCAPI char const* $getRendererName() const;
 
     MCAPI void $createIndexBuffer(::bgfx::IndexBufferHandle _handle, ::bgfx::Memory const* _mem, ushort _flags);
 
-    MCFOLD void $destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
+    MCAPI void $destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
 
     MCAPI void $createVertexDecl(::bgfx::VertexDeclHandle _handle, ::bgfx::VertexDecl const& _decl);
 
@@ -400,14 +361,14 @@ public:
         ushort                     _flags
     );
 
-    MCFOLD void $destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
+    MCAPI void $destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
 
     MCAPI void $createDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _size, ushort _flags);
 
     MCAPI void
     $updateDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _offset, uint _size, ::bgfx::Memory const* _mem);
 
-    MCFOLD void $destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle);
+    MCAPI void $destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle);
 
     MCAPI void $createDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle, uint _size, ushort _flags);
 
@@ -418,7 +379,7 @@ public:
         ::bgfx::Memory const*      _mem
     );
 
-    MCFOLD void $destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle);
+    MCAPI void $destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle);
 
     MCAPI void $createShader(::bgfx::ShaderHandle _handle, ::bgfx::Memory const* _mem);
 
@@ -522,12 +483,6 @@ public:
     MCAPI void $flip();
 
     MCFOLD void $waitForFlipQueue();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

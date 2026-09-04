@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/events/NetworkType.h"
-
 class ThirdPartyInfo {
 public:
     // member variables
@@ -18,10 +15,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ThirdPartyInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ThirdPartyInfo();
-
     MCNAPI ThirdPartyInfo(::ThirdPartyInfo const&);
 
 #ifdef LL_PLAT_C
@@ -34,26 +33,6 @@ public:
         ::std::string const&                       experienceId
     );
 
-    MCNAPI ::std::string const& getCreatorId() const;
-
-    MCNAPI ::std::string const& getCreatorName() const;
-
-    MCNAPI ::std::string const& getExperienceId() const;
-
-    MCNAPI ::NetworkType getNetworkTypeOverride() const;
-
-    MCNAPI ::std::string const& getReportingType() const;
-
-    MCNAPI ::std::string const& getStorePageId() const;
-
-    MCNAPI bool isEligible(::std::string const& urlToMatch) const;
-#endif
-
-    MCNAPI bool isExperience() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI bool isValid() const;
-
     MCNAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo&&);
 #endif
 
@@ -65,8 +44,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::ThirdPartyInfo const&);
 
 #ifdef LL_PLAT_C

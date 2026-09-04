@@ -12,7 +12,6 @@
 // clang-format off
 class SignalingService;
 struct NetherNetConnector;
-namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct StunRelayServer; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
 namespace NetherNet::LanEvents { struct MessageSent; }
@@ -26,7 +25,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5e1ef6;
     ::ll::UntypedStorage<8, 16> mUnk503029;
-    ::ll::UntypedStorage<8, 88> mUnk7fb513;
+    ::ll::UntypedStorage<8, 72> mUnk7fb513;
     ::ll::UntypedStorage<8, 8>  mUnk83278f;
     ::ll::UntypedStorage<8, 16> mUnk3ab861;
     // NOLINTEND
@@ -40,24 +39,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~SignalingServiceSignInJob() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~SignalingServiceSignInJob() /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&) /*override*/;
-#else // LL_PLAT_C
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const& event) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const&) /*override*/;
-#else // LL_PLAT_C
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -76,18 +62,6 @@ public:
         ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise
     ) const;
 
-    MCNAPI void _handleSignInResult(
-        ::std::error_code                                       error,
-        ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise,
-        bool                                                    fetchRelayConfig
-    ) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::variant<::PlayerMessaging::NetworkID, ::NetherNet::NetworkID> getSigninId() const;
-
-    MCNAPI bool isSignedIn() const;
-#endif
-
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> signin(bool fetchRelayConfig);
     // NOLINTEND
 
@@ -104,12 +78,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -119,11 +87,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

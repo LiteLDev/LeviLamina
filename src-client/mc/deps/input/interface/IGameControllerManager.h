@@ -47,10 +47,4 @@ public:
 
     virtual void addClientHasAdequateConnectedController(int id, bool const isAdequate, ::SubClientId clientId) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

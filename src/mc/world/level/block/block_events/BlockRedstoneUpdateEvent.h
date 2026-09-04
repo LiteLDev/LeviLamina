@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 // clang-format on
 
@@ -33,27 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockRedstoneUpdateEvent(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        short             signalLevel,
-        short             previousSignalLevel,
-        bool              isFirstTime
-    );
-
-    MCAPI bool isClientSide() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::BlockSource& region, ::BlockPos const& pos, short signalLevel, short previousSignalLevel, bool isFirstTime);
     // NOLINTEND
 
 public:

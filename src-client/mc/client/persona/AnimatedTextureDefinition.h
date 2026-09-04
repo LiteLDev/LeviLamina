@@ -32,12 +32,6 @@ public:
         ::std::string const&           geoID,
         ::std::string const&           textureID
     );
-
-    MCNAPI float getFrames() const;
-
-    MCNAPI ::AnimatedTextureDefinition& operator=(::AnimatedTextureDefinition&&);
-
-    MCNAPI void setFrames(float frames);
     // NOLINTEND
 
 public:

@@ -20,16 +20,12 @@ namespace mce { class Color; }
 
 class BalloonItem : public ::ChemistryItem {
 public:
-    // prevent constructor by default
-    BalloonItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 
-    virtual ::mce::Color getColor(::CompoundTag const* instance, ::ItemDescriptor const&) const /*override*/;
+    virtual ::mce::Color getColor(::CompoundTag const*, ::ItemDescriptor const& instance) const /*override*/;
 
     virtual bool isDyeable() const /*override*/;
 
@@ -39,21 +35,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BalloonItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static bool canAttachToBlock(::BlockPos const& blockPos, ::BlockSource const& region);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+#endif
     // NOLINTEND
 
 public:
@@ -61,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* instance, ::ItemDescriptor const&) const;
+    MCAPI ::mce::Color $getColor(::CompoundTag const*, ::ItemDescriptor const& instance) const;
 
     MCFOLD bool $isDyeable() const;
 

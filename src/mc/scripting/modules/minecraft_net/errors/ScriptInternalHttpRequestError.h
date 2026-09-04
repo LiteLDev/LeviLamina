@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,21 +26,9 @@ public:
     ScriptInternalHttpRequestError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptInternalHttpRequestError(::std::error_code const& error);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::error_code const& error);
     // NOLINTEND
 };
 

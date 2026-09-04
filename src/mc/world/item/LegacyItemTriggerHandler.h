@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LegacyItemTriggerHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool executeTrigger(
@@ -41,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyItemTriggerHandler(::LegacyItemTriggerHandlerConfig&& config);
-
     MCAPI void _executeEvent(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const&   eventHandlers,
         ::ItemStackBase&                                                item,
@@ -50,12 +44,6 @@ public:
         ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>& eventStack,
         ::RenderParams&                                                 params
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyItemTriggerHandlerConfig&& config);
     // NOLINTEND
 
 public:

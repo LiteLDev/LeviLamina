@@ -17,12 +17,6 @@ public:
 
     virtual void OnBitrateAllocationUpdated(::webrtc::VideoBitrateAllocation const&) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

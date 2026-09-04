@@ -25,12 +25,6 @@ public:
 
     virtual void _servicePendingStateChanges() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

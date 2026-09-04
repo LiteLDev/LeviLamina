@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ItemColor.h"
-#include "mc/world/level/block/BlockColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,19 +13,12 @@ namespace mce { class Color; }
 namespace ItemColorUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI ::ItemColor fromBlockColor(::BlockColor color);
-
 MCNAPI ::ItemColor fromColor(::mce::Color const& color);
+// NOLINTEND
 
-MCNAPI ::ItemColor fromInt(int auxValue);
-
-MCNAPI ::mce::Color getColor(::ItemColor color);
-
-MCNAPI ::std::string const& getName(::ItemColor color);
-
-MCNAPI ::std::string const& getNameMixedCase(::ItemColor color);
-
-MCNAPI int getRGBColor(::ItemColor color);
+// static variables
+// NOLINTBEGIN
+MCNAPI ::std::array<::std::pair<::ItemColor, int>, 16> const& itemColorToRGB();
 // NOLINTEND
 
 } // namespace ItemColorUtil

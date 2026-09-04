@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDimensionTransferer() /*override*/;
+    virtual ~PlayerDimensionTransferer() /*override*/ = default;
 
     virtual void playerSaveLimboActors(
         ::Player&                  player,
@@ -148,12 +148,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $playerSaveLimboActors(
@@ -210,11 +204,5 @@ public:
     MCAPI void $setPacketSender(::PacketSender& packetSender);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

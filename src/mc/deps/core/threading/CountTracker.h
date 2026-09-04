@@ -14,21 +14,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CountTracker();
-
-    MCFOLD ::std::shared_ptr<void*> acquire();
-
-    MCAPI void clear();
-
-    MCAPI uint get() const;
-
     MCAPI ~CountTracker();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -50,15 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InvestigateSuspiciousLocationGoal(::Mob& mob);
-
     MCAPI ::std::optional<::BlockPos> _findPosToInvestigate() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

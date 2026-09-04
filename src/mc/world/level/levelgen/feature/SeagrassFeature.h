@@ -35,25 +35,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    _tryPlaceSeagrass(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isColdEnoughForIce) const;
-
-    MCAPI void _tryPlaceTallSeagrass(::BlockSource& region, ::BlockPos const& pos, bool isColdEnoughForIce) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

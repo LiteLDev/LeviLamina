@@ -24,18 +24,6 @@ public:
 
     virtual void sendCrashStatusTelemetry(::Bedrock::CrashUploadStatus const& status) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

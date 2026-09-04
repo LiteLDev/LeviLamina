@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/UserPermissions.h"
@@ -23,7 +23,7 @@ namespace Social { class User; }
 
 namespace OreUI {
 
-class UserAccountFacet : public ::OreUI::FacetBase<::OreUI::UserAccountFacet> {
+class UserAccountFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::UserAccountFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UserAccountFacet() /*override*/;
+    virtual ~UserAccountFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -83,19 +83,17 @@ public:
 
     MCAPI void _onEntitlementsInventoryRefreshed();
 
-    MCAPI bool _updatePermissions();
-
     MCAPI void clearAccountUnlinkState();
 
     MCAPI ::OreUI::FacetTaskState getAccountUnlinkState();
 
     MCFOLD ::std::string const& getBanExpiration() const;
 
-    MCFOLD ::std::string const& getBanReason() const;
+    MCAPI ::std::string const& getBanReason() const;
 
     MCFOLD ::std::string const& getCurrentPlatformId() const;
 
-    MCFOLD ::std::string const& getCurrentXuid() const;
+    MCAPI ::std::string const& getCurrentXuid() const;
 
     MCAPI ::std::string getMarketplaceDisabledReason() const;
 
@@ -107,21 +105,21 @@ public:
 
     MCFOLD bool hasPremiumNetworkAccess() const;
 
-    MCFOLD bool hasValidCrossPlatformSkin() const;
+    MCAPI bool hasValidCrossPlatformSkin() const;
 
     MCAPI bool isBanned() const;
 
-    MCFOLD bool isLoggedInWithMicrosoftAccount() const;
+    MCAPI bool isLoggedInWithMicrosoftAccount() const;
 
-    MCFOLD bool isMarketplaceDisabled() const;
+    MCAPI bool isMarketplaceDisabled() const;
 
-    MCFOLD bool isMarketplacePassSubscriptionActive() const;
+    MCAPI bool isMarketplacePassSubscriptionActive() const;
 
-    MCFOLD bool isRealmsPlusSubscriptionActive() const;
+    MCAPI bool isRealmsPlusSubscriptionActive() const;
 
-    MCFOLD bool isSignInInProgress() const;
+    MCAPI bool isSignInInProgress() const;
 
-    MCFOLD bool isSignedInPlatformNetwork() const;
+    MCAPI bool isSignedInPlatformNetwork() const;
 
     MCAPI void manageMicrosoftAccount();
 
@@ -155,21 +153,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

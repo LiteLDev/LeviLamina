@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorRenderData;
 class BaseActorRenderContext;
 class BoneOrientation;
@@ -17,6 +16,7 @@ class DataDrivenRenderer;
 class HashedString;
 class ItemStack;
 class Mob;
+class ModelPart;
 class RenderParams;
 // clang-format on
 
@@ -24,22 +24,13 @@ class DataDrivenRenderer_tempComponent_VexAdditionalRendering : public ::DataDri
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk670796;
-    ::ll::UntypedStorage<8, 8>  mUnka1eb46;
-    ::ll::UntypedStorage<8, 8>  mUnkdf6bee;
-    ::ll::UntypedStorage<8, 8>  mUnka253f2;
-    ::ll::UntypedStorage<1, 2>  mUnka0782d;
-    ::ll::UntypedStorage<1, 2>  mUnk4bb823;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenRenderer>> mRenderer;
+    ::ll::TypedStorage<8, 8, ::ModelPart*>                           mRightArm;
+    ::ll::TypedStorage<8, 8, ::ModelPart*>                           mRightItem;
+    ::ll::TypedStorage<8, 8, ::ModelPart*>                           mLeftArm;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                  mHeldItemIgnoresLighting;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                  mRenderLeftHandItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_VexAdditionalRendering&
-    operator=(DataDrivenRenderer_tempComponent_VexAdditionalRendering const&);
-    DataDrivenRenderer_tempComponent_VexAdditionalRendering(
-        DataDrivenRenderer_tempComponent_VexAdditionalRendering const&
-    );
-    DataDrivenRenderer_tempComponent_VexAdditionalRendering();
 
 public:
     // virtual functions
@@ -56,11 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DataDrivenRenderer_tempComponent_VexAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-
-    MCNAPI void _renderParentedItemInHand(
+    MCAPI void _renderParentedItemInHand(
         ::Mob&                                  mob,
         ::HashedString const&                   boneName,
         ::ItemStack const&                      item,
@@ -71,29 +58,11 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool _doesHeldItemIgnoreLighting(::BaseActorRenderContext const& renderContext, ::Actor const& actor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
+    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void
+    MCAPI void
     $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/chunks/point_lighting/ILightLODResourceProvider.h"
-#include "mc/deps/minecraft_renderer/framebuilder/ShadowProbeDescription.h"
 #include "mc/deps/minecraft_renderer/resources/ClientTexture.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -15,9 +14,13 @@ class Block;
 class BlockSource;
 namespace PointLighting { class PointLightShadowProbe; }
 namespace PointLighting { struct AnalyticLightResources; }
+namespace dragon::atlas { class IAtlasHandle; }
+namespace dragon::atlas { class IAtlasUserOperations; }
+namespace dragon::atlas { struct AtlasTileHandle; }
 namespace mce { struct PointLightParameters; }
 namespace mce { struct TextureResourceService; }
 namespace mce::framebuilder { struct PointLightShadowParameters; }
+namespace mce::framebuilder { struct ShadowAtlasFrameDescription; }
 namespace mce::framebuilder { struct ShadowProbeDescription; }
 // clang-format on
 
@@ -34,21 +37,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>>                   mAtlasOps;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::PointLighting::PointLightShadowProbe>> mActiveProbes;
     ::ll::TypedStorage<
         8,
         8,
         ::std::_List_iterator<::std::_List_val<
             ::std::_List_simple_types<::std::pair<::BlockPos const, ::PointLighting::PointLightShadowProbe>>>>>
-                                                                      mNextToQueue;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>>                     mFreeShadowTextureIndices;
-    ::ll::TypedStorage<2, 2, ushort>                                  mPointLightShadowTextureDimension;
-    ::ll::TypedStorage<2, 2, ushort>                                  mPointLightShadowTextureArraySize;
-    ::ll::TypedStorage<8, 32, ::std::optional<::mce::ClientTexture>>  mPointLightShadowTextureArray;
-    ::ll::TypedStorage<4, 4, uint>                                    mCachedFrameCount;
-    ::ll::TypedStorage<1, 1, bool>                                    mGeneratingProbeJobs;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, uint>> mPartialProbeUpdates;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>                  mBlockRegionChanges;
+                                                                                mNextToQueue;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                               mFreeShadowTextureIndices;
+    ::ll::TypedStorage<2, 2, ushort>                                            mPointLightShadowTextureDimension;
+    ::ll::TypedStorage<2, 2, ushort>                                            mPointLightShadowTextureArraySize;
+    ::ll::TypedStorage<8, 32, ::std::optional<::mce::ClientTexture>>            mPointLightShadowTextureArray;
+    ::ll::TypedStorage<4, 4, uint>                                              mCachedFrameCount;
+    ::ll::TypedStorage<1, 1, bool>                                              mGeneratingProbeJobs;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, uint>>           mPartialProbeUpdates;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>                            mBlockRegionChanges;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::dragon::atlas::IAtlasHandle>> mShadowAtlas;
+    ::ll::TypedStorage<4, 4, uint>                                              mShadowAtlasWidth;
+    ::ll::TypedStorage<4, 4, uint>                                              mShadowAtlasHeight;
     // NOLINTEND
 
 public:
@@ -79,11 +86,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::mce::framebuilder::ShadowProbeDescription::ProbeUpdateWorkItem> _createFrameJobs();
+    MCAPI ::std::optional<::dragon::atlas::AtlasTileHandle>
+    _invalidateProbeFaceTile(::PointLighting::PointLightShadowProbe& probe, int faceIdx);
 
-    MCAPI void _createTextureArray(::mce::TextureResourceService& textureResourceService);
-
-    MCAPI ::mce::framebuilder::ShadowProbeDescription getShadowFrameData(
+    MCAPI ::std::pair<
+        ::std::optional<::mce::framebuilder::ShadowProbeDescription>,
+        ::mce::framebuilder::ShadowAtlasFrameDescription>
+    getShadowFrameData(
         ::mce::framebuilder::PointLightShadowParameters const& shadowParameters,
         ::glm::vec3                                            worldOrigin
     );
@@ -99,14 +108,9 @@ public:
     MCAPI void update(
         bool                                                   pointLightShadowsEnabled,
         ::mce::framebuilder::PointLightShadowParameters const& shadowParameters,
-        ::mce::TextureResourceService&                         textureResourceService
+        ::mce::TextureResourceService&                         textureResourceService,
+        ::glm::vec3 const&                                     worldOrigin
     );
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

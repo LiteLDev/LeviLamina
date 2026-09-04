@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ActorDefinitionEndedEvent;
 struct ActorDefinitionModifier;
 // clang-format on
 
@@ -20,30 +19,6 @@ public:
     ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData>       mActor;
     ::ll::TypedStorage<8, 32, ::std::string const>                            mEvent;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionModifier> const> mDefinitionModifiers;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptDataDrivenActorTriggerAfterEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptDataDrivenActorTriggerAfterEventIntermediateData(::ActorDefinitionEndedEvent const& evt);
-
-    MCAPI ~ScriptDataDrivenActorTriggerAfterEventIntermediateData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionEndedEvent const& evt);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

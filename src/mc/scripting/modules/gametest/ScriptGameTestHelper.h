@@ -1,16 +1,17 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/modules/gametest/ScriptGameTestSequence.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/world/level/GameType.h"
@@ -247,9 +248,6 @@ public:
     );
 
     MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
-    setFluidContainer(::Vec3 const& position, int type);
-
-    MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
     setFluidContainer(::Vec3 const& position, ::ScriptModuleMinecraft::ScriptFluidType type);
 
     MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
@@ -349,24 +347,12 @@ public:
 
     MCAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
     worldPosition(::Vec3 const& relativePos) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ~ScriptGameTestHelper();
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

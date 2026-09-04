@@ -15,6 +15,7 @@ enum class WidgetComponentType : int {
     BoundingBox   = 7,
     VolumeOutline = 8,
     Grid          = 9,
+    RenderPlane   = 10,
 };
 
 }

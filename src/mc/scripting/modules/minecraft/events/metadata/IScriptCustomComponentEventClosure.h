@@ -12,12 +12,6 @@ public:
 
     virtual bool allowsParameters() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

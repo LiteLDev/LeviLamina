@@ -21,18 +21,6 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mPath;
     ::ll::TypedStorage<8, 8, ::PackInstance const*>              mPack;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~HybridResourceLocation();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

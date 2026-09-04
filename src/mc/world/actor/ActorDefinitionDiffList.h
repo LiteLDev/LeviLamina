@@ -53,9 +53,7 @@ public:
 
     MCAPI ::std::string definitionListToString(::std::string const& delimiter) const;
 
-    MCFOLD ::ActorDefinitionDescriptor& getChangedDescription();
-
-    MCFOLD ::std::vector<::DiffListPair> const& getDefinitionStack() const;
+    MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
 
     MCAPI bool hasDefinition(::std::string const& def) const;
 
@@ -64,19 +62,11 @@ public:
     MCAPI void setDefinitionStack(::std::vector<::DiffListPair>& stack);
 
     MCAPI void unlockChanges();
-
-    MCAPI ~ActorDefinitionDiffList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorDefinitionGroup& definitions);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

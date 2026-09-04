@@ -35,17 +35,13 @@ public:
     virtual void applyToPose(
         ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap,
         float                                                                             blendWeight
     ) = 0;
 
     virtual void resetAnimation() = 0;
 
-#ifdef LL_PLAT_S
-    virtual void buildBoneToPartMapping(::AnimationComponent&);
-#else // LL_PLAT_C
     virtual void buildBoneToPartMapping(::AnimationComponent& animationComponent);
-#endif
 
     virtual void
     bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
@@ -72,14 +68,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $buildBoneToPartMapping(::AnimationComponent&);
+    MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
 
     MCFOLD void
     $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
     MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
+#ifdef LL_PLAT_S
     MCAPI void $visit(::AnimationVisitor&& dispatcher);
+#else // LL_PLAT_C
+    MCFOLD void $visit(::AnimationVisitor&& dispatcher);
+#endif
 
 
     // NOLINTEND

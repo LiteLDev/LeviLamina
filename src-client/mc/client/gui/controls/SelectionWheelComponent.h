@@ -13,7 +13,6 @@ class ScreenInputContext;
 class UIAnimationController;
 class UIControl;
 class VisualTree;
-struct PointerMoveScreenEventData;
 struct ScreenEvent;
 // clang-format on
 
@@ -70,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SelectionWheelComponent() /*override*/;
+    virtual ~SelectionWheelComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -79,10 +78,10 @@ public:
     virtual void reload(::UIComponent const& rhs) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&         context,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
@@ -97,36 +96,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SelectionWheelComponent(::UIControl& owner);
 
-    MCAPI void _broadcastNewHoverSliceButtonEvent(
-        ::ScreenInputContext&                                   context,
-        ::SelectionWheelComponent::ButtonInteractionInfo const& buttonInteractionInfo
-    );
-
-    MCAPI uint64 _computeHoverSliceDeflection(::PointerMoveScreenEventData const& moveData);
-
-    MCAPI bool _isGamepadDeflectionEnabled();
-
-    MCFOLD void _setVisible(::std::weak_ptr<::UIControl> const& control, bool visible);
-
     MCAPI void _updateControlVisibility();
-
-    MCAPI void addStateControl(::std::shared_ptr<::UIControl> control);
-
-    MCFOLD ::InputMode getInputMode() const;
-
-    MCAPI void setInputMode(::InputMode const& inputMode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -138,19 +114,17 @@ public:
 
     MCAPI void $reload(::UIComponent const& rhs);
 
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& context, ::ScreenInputContext& screenEvent, ::UIAnimationController&, ::ScreenEvent const&);
+    MCAPI ::ComponentReceiveActionType $receive(
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
+    );
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
     MCAPI void $onVisibilityChanged(bool visible);
 
     MCAPI void $onEnabledChanged(bool enabled);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

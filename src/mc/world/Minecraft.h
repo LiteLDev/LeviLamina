@@ -1,11 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/ecs/gamerefs_entity/IEntityRegistryOwner.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
@@ -14,11 +14,9 @@
 #include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/world/MinecraftArguments.h"
-#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
-class ClientNetworkSystem;
 class DefaultCommandsContextProvider;
 class EntityContext;
 class EntityRegistry;
@@ -44,7 +42,6 @@ class ResourcePackManager;
 class Scheduler;
 class ScriptPackSettingsCache;
 class ServerNetworkHandler;
-class ServerNetworkSystem;
 class StructureManager;
 class TextFilteringProcessor;
 class Timer;
@@ -88,7 +85,7 @@ public:
     ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef>                   mNetwork;
     ::ll::TypedStorage<8, 8, ::PacketSender&>                                     mPacketSender;
     ::ll::TypedStorage<1, 1, ::SubClientId>                                       mClientSubId;
-    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EntityRegistry>>                       mEntityRegistry;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::EntityRegistry>>>      mEntityRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ITickingSystem>>                 mAddMovementTickForCatchup;
     ::ll::TypedStorage<
         8,
@@ -114,6 +111,9 @@ public:
     // NOLINTEND
 
 public:
+    LLAPI Level* getLevel() const;
+
+public:
     // prevent constructor by default
     Minecraft& operator=(Minecraft const&);
     Minecraft(Minecraft const&);
@@ -122,7 +122,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Minecraft() /*override*/;
+    virtual ~Minecraft() /*override*/ = default;
 
     virtual void setSimTimePause(bool pause);
 
@@ -144,57 +144,18 @@ public:
 
     MCAPI void _tryCatchupMovementTicks();
 
-    MCAPI void clientReset();
-
     MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
     MCAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
 
-    MCAPI void earlyShutdownMainthread();
-
-    MCAPI ::ClientNetworkSystem& getClientNetworkSystem();
-
-    MCFOLD ::MinecraftCommands& getCommands();
-
-    MCFOLD ::IMinecraftEventing& getEventing() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const;
-
-    MCFOLD ::GameModuleServer& getGameModuleServer();
-
-    MCAPI ::optional_ref<::MinecraftGameTest> getGameTest();
-
-    MCAPI double getLastTimestep();
-
-    MCAPI ::Level* getLevel() const;
-
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::NonOwnerPointer<::MinecraftServiceKeyManager> getMinecraftServiceKeyManager();
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
-#endif
-
-    MCFOLD ::ResourcePackManager& getResourceLoader();
-
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
-    MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::Timer const& getTimer();
-#endif
-
-    MCAPI bool hasCommands();
 
     MCAPI bool hostMultiplayer(
         ::std::string const&                                                 serverName,
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
         ::std::string const&                                                 hostPublicKey,
-        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
         int                                                                  maxChunkRadius,
         bool                                                                 shouldAnnounce,
         ::ConnectionDefinition const&                                        connectionDefinition,
@@ -212,30 +173,12 @@ public:
 
     MCAPI void initCommands();
 
-    MCFOLD bool isDedicatedServer() const;
-
-    MCAPI bool isLeaveGameDone() const;
-
 #ifdef LL_PLAT_C
-    MCFOLD bool isModded();
-
     MCAPI void onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 
     MCAPI ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
 
-    MCAPI bool requestInGamePause(bool status);
-#endif
-
-    MCAPI void requestResourceReload();
-
-#ifdef LL_PLAT_S
-    MCAPI void requestServerShutdown();
-#endif
-
     MCAPI void resetGameSession();
-
-#ifdef LL_PLAT_C
-    MCAPI void setGameModeReal(::GameType gameType);
 
     MCAPI void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
 #endif
@@ -243,10 +186,6 @@ public:
     MCAPI void startLeaveGame(bool stopNetwork);
 
     MCAPI bool update();
-
-#ifdef LL_PLAT_C
-    MCAPI void updateScreens();
-#endif
     // NOLINTEND
 
 public:
@@ -266,12 +205,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setSimTimePause(bool pause);
@@ -282,16 +215,10 @@ public:
 
     MCAPI bool $isOnlineClient() const;
 
-    MCFOLD ::StackRefResult<::EntityRegistry> $getEntityRegistry();
+    MCAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
 
-    MCFOLD ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
+    MCAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

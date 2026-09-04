@@ -20,7 +20,5 @@ public:
     MCAPI static ::Vec4 const& MIN();
 
     MCAPI static ::Vec4 const& ONE();
-
-    MCAPI static ::Vec4 const& ZERO();
     // NOLINTEND
 };

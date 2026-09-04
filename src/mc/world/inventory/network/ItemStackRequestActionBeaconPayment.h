@@ -29,26 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionBeaconPayment();
-
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionBeaconPayment(int primaryEffectId, int secondaryEffectId);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(int primaryEffectId, int secondaryEffectId);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_write(::BinaryStream& stream) const;

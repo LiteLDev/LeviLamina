@@ -20,12 +20,6 @@ public:
 
     MCNAPI bool IsEnabled(::std::string_view key) const;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

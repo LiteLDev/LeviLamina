@@ -36,8 +36,6 @@ public:
     // NOLINTBEGIN
     MCAPI BlockDefinitionDocument();
 
-    MCAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
-
     MCAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
@@ -65,8 +63,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
     // NOLINTEND

@@ -30,32 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    JigsawSectionData& operator=(JigsawSectionData const&);
-    JigsawSectionData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawSectionData(::br::worldgen::JigsawSectionData const&);
-
     MCAPI ::br::worldgen::JigsawSectionDataKey push(::StructurePoolElement const* element, int depth);
-
-    MCAPI void reserve(uint64 size);
-
-    MCAPI ~JigsawSectionData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::JigsawSectionData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

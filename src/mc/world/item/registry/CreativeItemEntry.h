@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CreativeGroupInfo;
 class CreativeItemRegistry;
 struct CreativeItemNetIdTag;
 // clang-format on
@@ -38,16 +37,6 @@ public:
         ::ItemInstance const&      item,
         uint                       index
     );
-
-    MCFOLD ::CreativeItemNetId const& getCreativeNetId() const;
-
-    MCAPI ::CreativeGroupInfo* getGroup() const;
-
-    MCFOLD uint getGroupIndex() const;
-
-    MCFOLD uint getIndex() const;
-
-    MCFOLD ::ItemInstance const& getItemInstance() const;
     // NOLINTEND
 
 public:

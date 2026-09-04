@@ -15,9 +15,12 @@ public:
         // ResolvedClientBiomeData inner types declare
         // clang-format off
         struct ResolvedComponent;
+        struct ResolvedEnvironmentAttribute;
         // clang-format on
 
         // ResolvedClientBiomeData inner types define
         struct ResolvedComponent {};
+
+        struct ResolvedEnvironmentAttribute {};
     };
 };

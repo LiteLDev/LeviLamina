@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::Legacy {
@@ -32,20 +31,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocumentCorrected(::SharedTypes::Legacy::ActorDocumentCorrected&&);
-
     MCAPI ActorDocumentCorrected(::SharedTypes::Legacy::ActorDocumentCorrected const&);
 
     MCFOLD ::SharedTypes::Legacy::ActorDocumentCorrected&
     operator=(::SharedTypes::Legacy::ActorDocumentCorrected const&);
 
     MCAPI ~ActorDocumentCorrected();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -57,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Legacy::ActorDocumentCorrected&&);
-
     MCFOLD void* $ctor(::SharedTypes::Legacy::ActorDocumentCorrected const&);
     // NOLINTEND
 

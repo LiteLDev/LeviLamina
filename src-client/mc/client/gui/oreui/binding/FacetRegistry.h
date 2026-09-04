@@ -31,35 +31,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string const>                                         name;
         ::ll::TypedStorage<8, 64, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const> constructor;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FacetPrototype& operator=(FacetPrototype const&);
-        FacetPrototype();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI FacetPrototype(::OreUI::FacetRegistry::FacetPrototype&&);
-
-        MCAPI FacetPrototype(::OreUI::FacetRegistry::FacetPrototype const&);
-
-        MCAPI ~FacetPrototype();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::OreUI::FacetRegistry::FacetPrototype&&);
-
-        MCFOLD void* $ctor(::OreUI::FacetRegistry::FacetPrototype const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct FacetEntry {
@@ -70,26 +41,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                     id;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IFacet>> facet;
         ::ll::TypedStorage<1, 1, bool>                               isSuspended;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FacetEntry& operator=(FacetEntry const&);
-        FacetEntry(FacetEntry const&);
-        FacetEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::OreUI::FacetRegistry::FacetEntry& operator=(::OreUI::FacetRegistry::FacetEntry&&);
-
-        MCAPI ~FacetEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -106,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FacetRegistry() /*override*/;
+    virtual ~FacetRegistry() /*override*/ = default;
 
     virtual void registerFacet(
         ::std::string const&                                         name,
@@ -138,12 +89,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void
@@ -170,12 +115,6 @@ public:
     MCAPI ::std::vector<::std::string> const& $update(::OreUI::FacetBinder& binder);
 
     MCAPI ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>> $getActiveFacets();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

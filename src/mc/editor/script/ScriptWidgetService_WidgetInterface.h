@@ -15,12 +15,6 @@ public:
     // NOLINTBEGIN
     virtual ::AABB const& _getDimensionBounds() const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

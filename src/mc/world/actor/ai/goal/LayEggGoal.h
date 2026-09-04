@@ -13,7 +13,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class LayEggGoal : public ::BaseMoveToBlockGoal {
@@ -30,10 +29,6 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>                mLayEggSound;
     ::ll::TypedStorage<4, 4, int>                                                   mLayEggCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LayEggGoal();
 
 public:
     // virtual functions
@@ -56,20 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LayEggGoal(::Mob& mob);
-
-    MCAPI void _layEgg(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $findTargetBlock();
@@ -89,11 +70,5 @@ public:
     MCAPI void $_moveToBlock();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

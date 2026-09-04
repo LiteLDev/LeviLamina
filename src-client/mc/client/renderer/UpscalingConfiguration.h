@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/options/UpscalingMode.h"
 #include "mc/client/options/UpscalingQuality.h"
 #include "mc/external/render_dragon/frame_renderer/modules/UpscalingParameters.h"
 
@@ -56,8 +55,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::dragon::framerenderer::modules::UpscalingParameters getUpscalingParameters(::UpscalingMode mode) const;
-
     MCAPI ::dragon::framerenderer::modules::UpscalingParameters
     getUpscalingParameters(::UpscalingQuality quality, ::glm::vec<2, ushort> const& targetResolution) const;
     // NOLINTEND

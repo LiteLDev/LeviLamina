@@ -40,7 +40,7 @@ public:
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int end, int) /*override*/;
+    virtual ::HandleRangeResult handleRange(int, int end) /*override*/;
 
     virtual void collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
@@ -53,9 +53,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $exhausted() const;
+    MCAPI bool $exhausted() const;
 
-    MCFOLD ::HandleRangeResult $handleRange(int end, int);
+    MCAPI ::HandleRangeResult $handleRange(int, int end);
 
     MCAPI void $collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
@@ -63,11 +63,5 @@ public:
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

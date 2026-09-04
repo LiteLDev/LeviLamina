@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
 class StrictEntityContext;
 struct GlidingCollisionDamageComponent;
 struct GlidingTravelFlagComponent;
@@ -23,19 +22,11 @@ namespace GlidingMoveFinalizeSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _tickCollisionDamageCalculate(
-    ::entt::type_list<::Include<::GlidingTravelFlagComponent, ::HorizontalCollisionFlagComponent, ::MobFlagComponent>>
-                                  entity,
-    ::StrictEntityContext const&  moveRequest,
-    ::MoveRequestComponent const& stateVectorComponent,
-    ::StateVectorComponent const& modifier,
-    ::EntityModifier<::GlidingCollisionDamageComponent>&
-);
-
-MCAPI void _tickCollisionDamageHurt(
-    ::StrictEntityContext const&                        entity,
-    ::ActorOwnerComponent&                              actorOwnerComponent,
-    ::GlidingCollisionDamageComponent const&            glidingCollisionDamageComponent,
-    ::EntityModifier<::GlidingCollisionDamageComponent> modifier
+    ::entt::type_list<::Include<::GlidingTravelFlagComponent, ::HorizontalCollisionFlagComponent, ::MobFlagComponent>>,
+    ::StrictEntityContext const&                         entity,
+    ::MoveRequestComponent const&                        moveRequest,
+    ::StateVectorComponent const&                        stateVectorComponent,
+    ::EntityModifier<::GlidingCollisionDamageComponent>& modifier
 );
 
 MCAPI ::TickingSystemWithInfo createCollisionDamageCalculateSystem();

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,12 +20,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mOffsetFromTargetCenter;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mTargetEntity;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraTargetOptions const& other) const;
     // NOLINTEND
 
 public:

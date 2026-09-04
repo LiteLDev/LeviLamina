@@ -47,14 +47,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static void clearFirstSessionLaunch();
-
-    MCNAPI static void clearFirstWorldLaunch();
-#endif
-
-    MCNAPI static void clearTutorialCached();
-
     MCNAPI static void fireCodeBuilderLoadPerformanceEvent(
         ::WebviewObserver const*        eventing,
         ::CodeBuilderPerformance::Stage stage,
@@ -71,8 +63,6 @@ public:
         ::std::chrono::milliseconds     duration
     );
 
-    MCNAPI static uchar getCacheState();
-
     MCNAPI static ::std::string const getCodeBuilderSessionId();
 
     MCNAPI static ::std::string const getCodeProjectId();
@@ -81,25 +71,11 @@ public:
 
     MCNAPI static ::std::chrono::milliseconds getElapsedTime(::CodeBuilderPerformance::Stage stage);
 
-    MCNAPI static bool isAwaitingFirstCommandReceived();
-
-    MCNAPI static bool isFirstSessionLaunch();
-
-    MCNAPI static bool isFirstWorldLaunch();
-
 #ifdef LL_PLAT_C
-    MCNAPI static void resetFirstWorldLaunch();
-
     MCNAPI static void setCodeBuilderSessionId();
-
-    MCNAPI static void setCodeScreenCached();
-
-    MCNAPI static void setEditorName(::std::string const& editorName);
 #endif
 
     MCNAPI static void setTimeStart(::CodeBuilderPerformance::Stage stage);
-
-    MCNAPI static void setTutorialCached();
 
     MCNAPI static ::std::string toString(::CodeBuilderPerformance::Stage stage);
     // NOLINTEND
@@ -114,8 +90,6 @@ public:
     MCNAPI static ::std::string& mCodeBuilderSessionId();
 
     MCNAPI static ::std::optional<::std::chrono::steady_clock::time_point>& mCodeRunStart();
-
-    MCNAPI static ::std::optional<::std::chrono::steady_clock::time_point>& mCreateNewProjectTimeStart();
 
     MCNAPI static ::std::string& mEditorName();
 

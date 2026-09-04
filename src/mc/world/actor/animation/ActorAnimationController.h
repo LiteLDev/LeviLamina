@@ -8,10 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorAnimationControllerPlayer;
 class ActorAnimationControllerState;
-class ApplyAnimationContext;
-class RenderParams;
 // clang-format on
 
 class ActorAnimationController {
@@ -38,26 +35,11 @@ public:
         ::std::string const&  sourceFilePathWithExtension
     );
 
+#ifdef LL_PLAT_C
     MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
-
-    MCAPI uint64 findStateIndex(::std::string const& name, bool missingIsOkay, uint64 defaultState) const;
+#endif
 
     MCAPI void resolveTransitionStateIndices();
-
-    MCAPI void updateActiveParticleState(
-        ::ApplyAnimationContext const&    applyContext,
-        ::RenderParams&                   renderParams,
-        int                               oldStateIndex,
-        int                               newStateIndex,
-        ::ActorAnimationControllerPlayer& player
-    ) const;
-
-    MCAPI void updateActiveSoundEffectState(
-        ::RenderParams& renderParams,
-        int             newStateIndex,
-        int             player,
-        ::ActorAnimationControllerPlayer&
-    ) const;
 
     MCAPI ~ActorAnimationController();
     // NOLINTEND

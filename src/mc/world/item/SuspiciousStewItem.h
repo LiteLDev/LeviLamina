@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ItemStack;
 class ItemStackBase;
 class Level;
@@ -62,8 +61,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::array<::MobEffectInstance, 13> const& _getStewEffects();
-
-    MCAPI static void applyStewEffect(::ItemStack const& inOutInstance, ::Actor& actor);
     // NOLINTEND
 
 public:

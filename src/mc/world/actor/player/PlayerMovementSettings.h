@@ -6,11 +6,6 @@
 #include "mc/entity/components/PlayerTickConfig.h"
 #include "mc/entity/components/ReplayStateConfig.h"
 
-// auto generated forward declare list
-// clang-format off
-struct SyncedPlayerMovementSettings;
-// clang-format on
-
 struct PlayerMovementSettings {
 public:
     // member variables
@@ -20,20 +15,6 @@ public:
     ::ll::TypedStorage<8, 32, ::PlayerTickConfig>  mPlayerTickConfig;
     ::ll::TypedStorage<1, 1, bool>                 ServerAuthBlockBreaking;
     ::ll::TypedStorage<4, 4, float>                mServerPlayerPickRangeScalar;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void syncSettingsWithServerSettings(::SyncedPlayerMovementSettings const& settings);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::PlayerMovementSettings getDefault();
     // NOLINTEND
 
 public:

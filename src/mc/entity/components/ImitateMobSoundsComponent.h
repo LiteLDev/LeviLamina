@@ -16,8 +16,6 @@ class ImitateMobSoundsComponent {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getRandomImitatedSound(::IRandom& random);
-
     MCAPI static bool imitateNearbyMobs(::Actor& actor, ::IRandom& random);
     // NOLINTEND
 

@@ -57,7 +57,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                  mExistenceTracker;
     ::ll::TypedStorage<4, 4, ::WorldCreationHelper::WorldCreationMode>                  mCreationMode;
     ::ll::TypedStorage<1, 1, bool>                                                      mCreatingFromTemplate;
-    ::ll::TypedStorage<8, 1336, ::LevelSettings>                                        mLevelSettings;
+    ::ll::TypedStorage<8, 1344, ::LevelSettings>                                        mLevelSettings;
     ::ll::TypedStorage<8, 32, ::std::string>                                            mLevelName;
     ::ll::TypedStorage<8, 48, ::PackIdVersion>                                          mPackIdVersion;
     ::ll::TypedStorage<8, 8, ::PackManagerContentSource*>                               mWorldContentSource;
@@ -93,25 +93,9 @@ public:
     MCAPI ::WorldCreationUtils::WorldCreationResult
     _createWorldImpl(::LevelDataWrapper& levelData, ::LevelSummary& levelSummary);
 
-    MCFOLD bool canStartLocalServer() const;
-
     MCAPI ::DlcCheckResult checkDlc();
 
-    MCAPI ::CopyResourcePacksResult checkPackCopyProgress();
-
-    MCAPI ::WorldCreationUtils::WorldCreationResult
-    createOnRealms(::LevelDataWrapper& levelData, ::LevelSummary& levelSummary);
-
-    MCAPI ::WorldCreationUtils::WorldCreationResult
-    createWorld(::LevelDataWrapper& levelData, ::LevelSummary& levelSummary);
-
-    MCFOLD ::LevelSettings const& getLevelSettings() const;
-
-    MCAPI ::Bedrock::Threading::Async<void> getStartResult();
-
     MCAPI ::CopyResourcePacksResult startCopyingResourcePacks();
-
-    MCAPI bool startLocalServer();
 
     MCAPI ~WorldCreationHelper();
     // NOLINTEND

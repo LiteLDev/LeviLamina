@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/CreateWorldOrRealm.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/deps/core/file/PathBuffer.h"
@@ -16,7 +15,6 @@ class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
 class ResourceLocation;
-class UIPropertyBag;
 struct PackIdVersion;
 struct WorldTemplateInfo;
 namespace Json { class Value; }
@@ -52,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldTemplatesScreenController() /*override*/;
+    virtual ~WorldTemplatesScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -76,17 +74,7 @@ public:
 
     MCAPI void _fetchDownloadedWorldTemplates();
 
-    MCAPI ::ResourceLocation _getInvalidResource(int slot) const;
-
-    MCAPI ::ui::ViewRequest _handleGenerateRandomRealmClicked();
-
-    MCAPI ::ui::ViewRequest _handleInvalidPackClicked(::UIPropertyBag* bag);
-
     MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -108,12 +96,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
@@ -123,13 +105,5 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCFOLD int $getScreenVersion() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -18,8 +18,7 @@ class DataLoadHelper;
 class EntityContext;
 class SynchedActorDataWriter;
 struct ActorDefinitionIdentifier;
-struct ShulkerBounds;
-struct ShulkerBoundsInput;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -52,7 +51,7 @@ public:
     virtual float getMaxHeadXRot() /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -74,8 +73,6 @@ public:
 
     MCAPI bool _trySetNewAttachPosition(::BlockPos pos);
 
-    MCAPI void _trySpawnShulker();
-
     MCAPI bool _tryTeleportSomewhere();
 
     MCAPI void postNormalTick();
@@ -84,10 +81,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void applyShulkerBounds(::ShulkerBounds const& bounds, ::EntityContext& shulker);
-
-    MCAPI static ::ShulkerBounds computeShulkerBounds(::ShulkerBoundsInput const& input);
-
     MCAPI static void
     postSetPosSetShulkerAttachPosAndPeekAmount(::SynchedActorDataWriter data, ::BlockPos const& newAttachPos);
 
@@ -125,16 +118,11 @@ public:
 
     MCFOLD float $getShadowRadius() const;
 
-    MCFOLD float $getMaxHeadXRot();
+    MCAPI float $getMaxHeadXRot();
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

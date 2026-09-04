@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BannerDuplicateRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
@@ -43,21 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BannerDuplicateRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 
 public:

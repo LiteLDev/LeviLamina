@@ -70,7 +70,6 @@ class ActorDefinitionEvent;
 class ActorEventResponseFactory;
 class ActorFactory;
 class CommonResourceDefinitionMap;
-class DefinitionInstanceGroup;
 class Experiments;
 class MinEngineVersion;
 class PackLoadContext;
@@ -84,7 +83,7 @@ class ActorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 960, ::ActorDefinitionDescriptor>                                mDescription;
+    ::ll::TypedStorage<8, 1032, ::ActorDefinitionDescriptor>                               mDescription;
     ::ll::TypedStorage<8, 40, ::IdentifierDescription>                                     mIdentifier;
     ::ll::TypedStorage<8, 40, ::RuntimeIdentifierDescription>                              mRuntimeIdentifier;
     ::ll::TypedStorage<8, 16, ::IsSpawnableDescription>                                    mIsSpawnable;
@@ -132,7 +131,7 @@ public:
     ::ll::TypedStorage<8, 88, ::NavigationWalkDescription>                                 mNavigation;
     ::ll::TypedStorage<8, 8, ::PersistentDescription>                                      mPersistent;
     ::ll::TypedStorage<8, 48, ::PreferredPathDescription>                                  mPreferredPath;
-    ::ll::TypedStorage<8, 360, ::ProjectileDescription>                                    mProjectile;
+    ::ll::TypedStorage<8, 368, ::ProjectileDescription>                                    mProjectile;
     ::ll::TypedStorage<8, 24, ::SlimeMoveControlDescription>                               mSlimeMoveControl;
     ::ll::TypedStorage<8, 24, ::StrengthDescription>                                       mStrength;
     ::ll::TypedStorage<8, 136, ::TrailDescription>                                         mTrail;
@@ -157,25 +156,19 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorDefinition(::std::string const& id);
 
-    MCFOLD ::DefinitionInstanceGroup const& getDefinitionGroup() const;
-
     MCAPI ::ActorDefinitionParseStatus parse(
         ::ActorDocumentDataParams    deserializeDataParams,
         ::ActorDefinitionDescriptor& desc,
         ::ActorFactory&              actorFactory,
-        ::Experiments const&         logArea,
-        ::LogArea
+        ::Experiments const&         experiments,
+        ::LogArea                    logArea
     );
-
-    MCAPI void parseAttributes(::ActorDocumentDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
 
     MCAPI bool parseEntityDescription(
         ::cereal::DynamicValue const& description,
         ::SemVersion const&           formatVersion,
         ::PackLoadContext const&      packLoadContext
     );
-
-    MCAPI ~ActorDefinition();
     // NOLINTEND
 
 public:
@@ -187,8 +180,8 @@ public:
         ::MinEngineVersion const&                                    minEngineVersion,
         ::SemVersion const&                                          formatVersion,
         ::ActorEventResponseFactory*                                 responseFactory,
-        ::Experiments const&                                         useBetaFeatures,
-        ::JsonBetaState
+        ::Experiments const&                                         experiments,
+        ::JsonBetaState                                              useBetaFeatures
     );
     // NOLINTEND
 
@@ -196,11 +189,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& id);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -19,16 +19,4 @@ public:
     WitherBossDeathWrapper& operator=(WitherBossDeathWrapper const&);
     WitherBossDeathWrapper(WitherBossDeathWrapper const&);
     WitherBossDeathWrapper();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit WitherBossDeathWrapper(::WitherBoss& wither);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::WitherBoss& wither);
-    // NOLINTEND
 };

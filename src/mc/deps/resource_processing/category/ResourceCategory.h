@@ -12,6 +12,7 @@ enum class ResourceCategory : ushort {
     TradeTable   = 4,
     CameraSpline = 5,
     Actor        = 6,
+    Item         = 7,
 };
 
 }

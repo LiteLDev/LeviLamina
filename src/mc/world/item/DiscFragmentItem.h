@@ -16,10 +16,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class DiscFragmentItem : public ::Item {
 public:
-    // prevent constructor by default
-    DiscFragmentItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
@@ -30,18 +26,6 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DiscFragmentItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

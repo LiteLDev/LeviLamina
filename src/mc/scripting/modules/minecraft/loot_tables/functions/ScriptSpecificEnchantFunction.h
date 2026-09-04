@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/loot_tables/functions/ScriptLootItemFunction.h"
 
 // auto generated forward declare list
@@ -32,6 +32,7 @@ public:
 public:
     // prevent constructor by default
     ScriptSpecificEnchantFunction& operator=(ScriptSpecificEnchantFunction const&);
+    ScriptSpecificEnchantFunction(ScriptSpecificEnchantFunction const&);
     ScriptSpecificEnchantFunction();
 
 public:
@@ -41,24 +42,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptSpecificEnchantFunction(::ScriptModuleMinecraft::ScriptSpecificEnchantFunction const&);
-
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
-    getEnchantInfo();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSpecificEnchantFunction const&);
     // NOLINTEND
 
 public:

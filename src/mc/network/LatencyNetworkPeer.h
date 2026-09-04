@@ -43,10 +43,4 @@ public:
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

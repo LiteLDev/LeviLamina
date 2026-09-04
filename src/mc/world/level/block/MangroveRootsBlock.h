@@ -5,28 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BlockType.h"
 
-// auto generated forward declare list
-// clang-format off
-class Material;
-// clang-format on
-
 class MangroveRootsBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    MangroveRootsBlock();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MangroveRootsBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

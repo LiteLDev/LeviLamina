@@ -73,20 +73,11 @@ public:
     MCAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
 
     MCAPI bool updateAverageGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
-
-    MCAPI bool
-    updateHeightPositionToLowestGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(int west, int floor, int north, int width, int height, int depth);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

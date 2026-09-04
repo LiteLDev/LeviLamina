@@ -5,11 +5,14 @@
 // auto generated inclusion list
 #include "mc/client/renderer/actor/DataDrivenRenderer_tempComponent.h"
 #include "mc/client/renderer/actor/V2TempComponentRequirements.h"
+#include "mc/deps/core/math/Matrix.h"
+#include "mc/deps/minecraft_renderer/renderer/Mesh.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
+class BlockTessellator;
 class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
@@ -18,20 +21,11 @@ class DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering : public ::D
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk761f9d;
-    ::ll::UntypedStorage<8, 552> mUnkbe2fcc;
-    ::ll::UntypedStorage<8, 8>   mUnkda6eb3;
-    ::ll::UntypedStorage<4, 64>  mUnkd5039e;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenRenderer>> mRenderer;
+    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mHead;
+    ::ll::TypedStorage<8, 8, ::BlockTessellator*>                    mTessellator;
+    ::ll::TypedStorage<4, 64, ::Matrix>                              mobTransform;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering&
-    operator=(DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering const&);
-    DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering(
-        DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering const&
-    );
-    DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering();
 
 public:
     // virtual functions
@@ -46,31 +40,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
+    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void
+    MCAPI void
     $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -34,20 +34,16 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _defaultToggleGroupState(::VisualTree& visualTree);
-
-    MCAPI void _gatherToggleGroupState(::VisualTree& visualTree);
-
     MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
     // NOLINTEND
 
@@ -59,16 +55,10 @@ public:
     MCFOLD void $reset();
 
     MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&         visualTree,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

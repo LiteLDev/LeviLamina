@@ -55,12 +55,6 @@ public:
         ::std::chrono::nanoseconds const&                 dt
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ParticleSystem

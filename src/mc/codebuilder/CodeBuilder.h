@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/codebuilder/EncryptionCipherMode.h"
-#include "mc/codebuilder/RequestPurpose.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,8 +24,6 @@ namespace CodeBuilder {
 // NOLINTBEGIN
 MCNAPI ::MCRESULT deserialize(::Json::Value const& json, ::CodeBuilder::RequestHeader& result);
 
-MCNAPI bool fromString(::std::string const& messagePurpose, ::CodeBuilder::RequestPurpose& outPurpose);
-
 MCNAPI bool fromString(::std::string const& modeString, ::CodeBuilder::EncryptionCipherMode& mode);
 
 MCNAPI ::std::string serialize(::CodeBuilder::AgentMessage const& message);
@@ -42,8 +39,6 @@ MCNAPI ::std::string serialize(::CodeBuilder::EncryptionResult const& message);
 MCNAPI ::std::string serialize(::CodeBuilder::ErrorMessage const& message);
 
 MCNAPI ::std::string serialize(::CodeBuilder::EventMessage const& message);
-
-MCNAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message, ::std::string const& requestId);
 // NOLINTEND
 
 } // namespace CodeBuilder

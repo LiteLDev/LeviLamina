@@ -7,12 +7,6 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<14> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isEmpty() const;
-    // NOLINTEND
-};
+class ScriptBlockCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<14> {};
 
 } // namespace ScriptModuleMinecraft

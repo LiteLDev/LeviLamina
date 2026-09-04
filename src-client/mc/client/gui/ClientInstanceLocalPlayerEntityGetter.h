@@ -20,27 +20,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientInstanceLocalPlayerEntityGetter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ClientInstanceLocalPlayerEntityGetter() /*override*/ = default;
 
     virtual ::EntityContext* getLocalPlayerEntityContext() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ClientInstanceLocalPlayerEntityGetter(::IClientInstance const& clientInstance);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance const& clientInstance);
     // NOLINTEND
 
 public:

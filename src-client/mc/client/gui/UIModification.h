@@ -32,25 +32,6 @@ public:
     MCAPI UIModification(::Json::Value& baseArray, bool isControlsArray);
 
     MCAPI int _findIndex(::UICondition const& condition, ::UIOperation operation, ::PackReportInfo& packReportInfo);
-
-    MCAPI void applyModification();
-
-    MCAPI void insert(
-        ::UICondition const& condition,
-        ::UIOperation        operation,
-        ::Json::Value const& value,
-        ::PackReportInfo&    packReportInfo
-    );
-
-    MCAPI void move(
-        ::UICondition const& condition,
-        ::UIOperation        operation,
-        ::Json::Value const& target,
-        ::PackReportInfo&    packReportInfo
-    );
-
-    MCAPI void
-    replace(::UICondition const& condition, ::Json::Value const& replaceValue, ::PackReportInfo& packReportInfo);
     // NOLINTEND
 
 public:

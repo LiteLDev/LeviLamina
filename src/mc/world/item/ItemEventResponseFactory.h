@@ -8,20 +8,19 @@
 
 // auto generated forward declare list
 // clang-format off
-class PackLoadContext;
+class SemVersion;
+struct LegacyEventItemComponentData;
+struct PackLoadInfo;
+namespace SharedTypes::v1_26_30 { struct ItemDocument; }
 // clang-format on
 
 class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
 public:
-    // prevent constructor by default
-    ItemEventResponseFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemEventResponseFactory() /*override*/;
+    virtual ~ItemEventResponseFactory() /*override*/ = default;
 
-    virtual void initializeFactory(::PackLoadContext const& packLoadContext) /*override*/;
+    virtual void initializeFactory(::PackLoadInfo const& packLoadInfo) /*override*/;
 
     virtual void initSchema() /*override*/;
     // NOLINTEND
@@ -29,25 +28,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemEventResponseFactory(::PackLoadContext const& packLoadContext);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PackLoadContext const& packLoadContext);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI ::std::optional<::LegacyEventItemComponentData> makeLegacyEvents(
+        ::SemVersion const&                          documentVersion,
+        ::SharedTypes::v1_26_30::ItemDocument const& itemDocument
+    ) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFactory(::PackLoadContext const& packLoadContext);
+    MCAPI void $initializeFactory(::PackLoadInfo const& packLoadInfo);
 
     MCAPI void $initSchema();
 

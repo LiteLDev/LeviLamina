@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/datastore/container/Container.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 // clang-format on
@@ -33,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActionContainer() /*override*/;
+    virtual ~ActionContainer() /*override*/ = default;
 
     virtual void clear() /*override*/;
     // NOLINTEND
@@ -41,12 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActionContainer(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
-
-    MCNAPI void _onControlActionCreated(::std::string const& id);
-
-    MCNAPI void _onControlActionDestroyed(::Json::Value const& payload);
-
     MCNAPI ::Json::Value getControlActionPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> handleControlActionEvent(
@@ -66,20 +59,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_CONTROL_DATA();
-
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_INVOKE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

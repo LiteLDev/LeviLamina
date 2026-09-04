@@ -19,16 +19,6 @@ namespace PublisherItemComponent {
 struct OnUseAsAttack
 : public ::ItemComponent,
   public ::Bedrock::PubSub::
-      Publisher<void(::ItemStack&, ::Player&, ::Vec3 const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForConnector();
-
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
-    // NOLINTEND
-};
+      Publisher<void(::ItemStack&, ::Player&, ::Vec3 const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {};
 
 } // namespace PublisherItemComponent

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class RakWebSocketDataFrame;
-namespace RakNet { class BitStream; }
 // clang-format on
 
 class RakWebSocketDataFrameParser {
@@ -33,15 +32,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame>
     _failReadFrame(::std::string const& error, ::CloseStatusCode code);
-
-    MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame> readFrame(::RakNet::BitStream& data);
-
-    MCNAPI ~RakWebSocketDataFrameParser();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

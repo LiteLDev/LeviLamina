@@ -8,16 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mJsonInput;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~AddBehaviorTreePacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

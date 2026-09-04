@@ -54,7 +54,7 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
     // NOLINTEND
@@ -112,7 +112,7 @@ public:
         ::AABB&                    bufferValue
     ) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 

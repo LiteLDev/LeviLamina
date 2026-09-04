@@ -55,10 +55,4 @@ public:
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

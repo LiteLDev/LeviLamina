@@ -18,6 +18,7 @@ class DataLoadHelper;
 class EntityContext;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -60,9 +61,9 @@ public:
     ) /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
     // NOLINTEND
@@ -106,12 +107,13 @@ public:
 
     MCAPI ::ActorType $getOwnerEntityType();
 
-    MCFOLD void
+    MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

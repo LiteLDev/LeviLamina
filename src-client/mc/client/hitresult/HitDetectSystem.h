@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HitDetectSystem();
+    virtual ~HitDetectSystem() = default;
 
     virtual void reset();
 
@@ -72,12 +72,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $reset();
@@ -95,11 +89,5 @@ public:
         ::HitResult&       hitResult,
         ::HitResult&       liquidHitResult
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

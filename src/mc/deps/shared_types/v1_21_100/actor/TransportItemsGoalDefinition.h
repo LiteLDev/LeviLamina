@@ -64,6 +64,8 @@ public:
     MCAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition&
     operator=(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_100::TransportItemsGoalDefinition const&) const;
+
     MCAPI ~TransportItemsGoalDefinition();
     // NOLINTEND
 

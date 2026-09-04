@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
@@ -51,12 +51,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

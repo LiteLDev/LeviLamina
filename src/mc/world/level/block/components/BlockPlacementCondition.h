@@ -13,31 +13,4 @@ public:
     ::ll::TypedStorage<1, 1, ::BlockPlacementDirectionalFilter> directionalFilter;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> blockFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPlacementCondition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockPlacementCondition(
-        ::BlockPlacementDirectionalFilter filterMask,
-        ::std::vector<::BlockDescriptor>  blockDescriptors
-    );
-
-    MCAPI ~BlockPlacementCondition();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPlacementDirectionalFilter filterMask, ::std::vector<::BlockDescriptor> blockDescriptors);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

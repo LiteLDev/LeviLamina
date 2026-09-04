@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/item/enchanting/Enchant.h"
 
 // auto generated forward declare list
@@ -37,15 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateAllEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
-
-    MCAPI void _generateRemainingEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
-
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& enchantmentId);
-
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
-    getAllEnchantmentTypes(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:

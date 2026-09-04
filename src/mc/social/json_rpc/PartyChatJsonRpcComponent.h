@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/network/services/signaling/IJsonRpcComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonRpc { class JsonRpcProvider; }
-namespace JsonRpc { struct ReceiveChatResult; }
 // clang-format on
 
 namespace JsonRpc {
@@ -43,18 +41,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~PartyChatJsonRpcComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~PartyChatJsonRpcComponent() /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider>) /*override*/;
-#else // LL_PLAT_C
     virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -62,10 +51,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI PartyChatJsonRpcComponent();
-
-    MCNAPI void _registerReceiveMessageHandler();
-
-    MCNAPI ::Bedrock::PubSub::Connector<void(::JsonRpc::ReceiveChatResult const&)>& getReceiveChatConnector();
 
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> joinChannel(::std::string const& partyId);
 
@@ -82,12 +67,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor();
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

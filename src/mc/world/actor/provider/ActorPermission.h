@@ -15,8 +15,6 @@ namespace ActorPermission {
 // NOLINTBEGIN
 MCAPI ::GameType getUnmappedGameType(::EntityContext const& provider);
 
-MCAPI void initialize(::EntityContext& provider);
-
 MCAPI void setUnmappedGameType(::EntityContext& provider, ::GameType gameType);
 // NOLINTEND
 

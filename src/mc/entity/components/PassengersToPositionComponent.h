@@ -36,24 +36,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::PassengersToPositionComponent::Data>> mData;
     ::ll::TypedStorage<8, 24, ::std::vector<::StrictEntityContext>>                 mStack;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PassengersToPositionComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PassengersToPositionComponent(::PassengersToPositionComponent const&);
-
-    MCFOLD ::PassengersToPositionComponent& operator=(::PassengersToPositionComponent&&);
-
-    MCAPI ::PassengersToPositionComponent& operator=(::PassengersToPositionComponent const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PassengersToPositionComponent const&);
-    // NOLINTEND
 };

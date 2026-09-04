@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/v1_26_20/block/MovementType.h"
 #include "mc/deps/shared_types/v1_26_20/block/StickyType.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct MovableComponent {
@@ -19,12 +14,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::MovementType> mMovementType;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::StickyType>   mStickyType;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

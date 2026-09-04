@@ -22,16 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NameableComponent();
-
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

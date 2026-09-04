@@ -17,7 +17,6 @@
 // clang-format off
 class IClientInstance;
 class IGamefaceTextInputProxy;
-class IOptionRegistry;
 class KeyboardManager;
 class Option;
 class ScreenContext;
@@ -33,7 +32,6 @@ namespace OreUI { class ViewInputHandler; }
 namespace OreUI { class ViewRenderer; }
 namespace OreUI::Detail { class Binder; }
 namespace OreUI::Detail { class ViewContext; }
-namespace OreUI::Detail { class ViewContextFactory; }
 namespace cohtml { class IClientSideSocket; }
 namespace cohtml { class ISocketListener; }
 namespace cohtml { class View; }
@@ -49,7 +47,7 @@ public:
     ::ll::TypedStorage<8, 8, ::cohtml::View*>                                           mGamefaceView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewRenderer>>                  mRenderer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewInputHandler>>              mInputHandler;
-    ::ll::TypedStorage<8, 32, ::std::string const>                                      mUrl;
+    ::ll::TypedStorage<8, 32, ::std::string>                                            mUrl;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::OreUI::IScene>>> mScenes;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::BedrockInputSource>>            mBedrockInputSource;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>         mClientInstance;
@@ -59,7 +57,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::Binder>>                mBinder;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::ViewContext>>           mViewContext;
     ::ll::TypedStorage<8, 8, ::OreUI::ITelemetry&>                                      mTelemetry;
-    ::ll::TypedStorage<8, 256, ::std::optional<::OreUI::ScreenPerformanceTelemetry>>    mScreenPerformanceTelemetry;
+    ::ll::TypedStorage<8, 400, ::std::optional<::OreUI::ScreenPerformanceTelemetry>>    mScreenPerformanceTelemetry;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                             mUpdatedFacets;
     ::ll::TypedStorage<1, 1, ::OreUI::ViewState>                                        mState;
     ::ll::TypedStorage<4, 4, ::OreUI::RouteMode>                                        mRouteMode;
@@ -80,7 +78,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~View() /*override*/;
+    virtual ~View() /*override*/ = default;
 
     virtual void pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode) /*override*/;
 
@@ -142,8 +140,12 @@ public:
     virtual void
     OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*) /*override*/;
 
-    virtual ::cohtml::IClientSideSocket*
-    OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint) /*override*/;
+    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(
+        ::cohtml::ISocketListener* listener,
+        char const*                url,
+        char const**               protocols,
+        uint                       protocolsCount
+    ) /*override*/;
 
     virtual void OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate) /*override*/;
 
@@ -164,48 +166,6 @@ public:
     virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject) /*override*/;
 
     virtual ::OreUI::IViewTestHelper* getViewTestHelper() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI View(
-        ::std::string                                    url,
-        ::std::unique_ptr<::OreUI::BedrockInputSource>   bedrockInputSource,
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> clientInstance,
-        ::KeyboardManager&                               keyboardManager,
-        ::std::unique_ptr<::OreUI::IFacetRegistry>       facetRegistry,
-        ::OreUI::ITelemetry&                             telemetry
-    );
-
-    MCAPI void flushAudioStreams();
-
-    MCAPI void initialize(
-        ::cohtml::View&                              gamefaceView,
-        ::std::unique_ptr<::OreUI::ViewRenderer>     renderer,
-        ::std::unique_ptr<::OreUI::ViewInputHandler> inputHandler,
-        ::OreUI::Detail::ViewContextFactory&         contextFactory,
-        ::IOptionRegistry&                           options
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string                                    url,
-        ::std::unique_ptr<::OreUI::BedrockInputSource>   bedrockInputSource,
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> clientInstance,
-        ::KeyboardManager&                               keyboardManager,
-        ::std::unique_ptr<::OreUI::IFacetRegistry>       facetRegistry,
-        ::OreUI::ITelemetry&                             telemetry
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -236,15 +196,15 @@ public:
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
 
-    MCFOLD ::std::string_view $getUrl() const;
+    MCAPI ::std::string_view $getUrl() const;
 
-    MCFOLD ::OreUI::RouteMode $getRouteMode() const;
+    MCAPI ::OreUI::RouteMode $getRouteMode() const;
 
     MCAPI uint $getWidth() const;
 
     MCAPI uint $getHeight() const;
 
-    MCFOLD ::OreUI::ViewState $getState() const;
+    MCAPI ::OreUI::ViewState $getState() const;
 
     MCAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
 
@@ -270,7 +230,12 @@ public:
 
     MCAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*);
 
-    MCFOLD ::cohtml::IClientSideSocket* $OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint);
+    MCFOLD ::cohtml::IClientSideSocket* $OnCreateWebSocket(
+        ::cohtml::ISocketListener* listener,
+        char const*                url,
+        char const**               protocols,
+        uint                       protocolsCount
+    );
 
     MCAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
 
@@ -291,14 +256,6 @@ public:
     MCAPI void $OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
 
     MCFOLD ::OreUI::IViewTestHelper* $getViewTestHelper();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIView();
-
-    MCNAPI static void** $vftableForIViewListener();
     // NOLINTEND
 };
 

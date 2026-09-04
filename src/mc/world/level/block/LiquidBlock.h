@@ -27,7 +27,7 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual void entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const /*override*/;
+    virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
     // NOLINTEND
 
 public:
@@ -36,17 +36,6 @@ public:
     MCAPI LiquidBlock(::std::string const& nameId, int id, ::Material const& material);
 
     MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
-
-    MCAPI int _getStartingPass(::BlockSource const& region, ::BlockPos const& blockPos) const;
-
-    MCAPI bool _isLiquidBlocking(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::BlockPos const& flowFromPos,
-        uchar             flowFromDirection
-    ) const;
-
-    MCAPI void _spread(::BlockSource& region, ::BlockPos const& pos, int depth, bool preserveExisting) const;
 
     MCAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
 
@@ -58,13 +47,20 @@ public:
         uchar             flowFromDirection
     ) const;
 
-    MCAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCAPI bool shouldBecomeStatic(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isLiquidBlocking(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
+    );
     // NOLINTEND
 
 public:
@@ -78,7 +74,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD void $entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const;
+    MCFOLD void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
 
     // NOLINTEND

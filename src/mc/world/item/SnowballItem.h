@@ -69,10 +69,10 @@ public:
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCFOLD ::std::string
+    MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::SnowballItem& $setDescriptionId(::std::string const& descriptionId);
+    MCAPI ::SnowballItem& $setDescriptionId(::std::string const& descriptionId);
 
     MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
@@ -84,11 +84,5 @@ public:
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

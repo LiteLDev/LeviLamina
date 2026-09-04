@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,8 +45,6 @@ public:
                                               actorDefinitionEvent,
         ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCAPI ::std::vector<::ActorDefinitionModifier> getModifiers() const;
     // NOLINTEND
 
 public:
@@ -60,9 +58,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>
                                               actorDefinitionEvent,
         ::Scripting::WeakLifetimeScope const& scope

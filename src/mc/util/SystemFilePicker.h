@@ -32,20 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI SystemFilePicker();
-
-    MCNAPI ::FileInfo _fillFileInfo(::Core::Path const& filePath);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback);

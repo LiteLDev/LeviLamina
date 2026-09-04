@@ -10,11 +10,11 @@
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
-class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class EnderCrystal : public ::Actor {
@@ -43,7 +43,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -54,8 +54,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCFOLD void setBeamTarget(::BlockPos const& target);
 
     MCAPI void setCrystalDamagedCallback(::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)> onDamaged);
     // NOLINTEND
@@ -83,7 +81,8 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 
     // NOLINTEND

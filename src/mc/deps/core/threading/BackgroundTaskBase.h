@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/memory/MemoryCategory.h"
 #include "mc/deps/core/threading/TaskRunResult.h"
-#include "mc/resources/TaskGroupState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,68 +27,31 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk209247;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CurrentTaskAutoScope& operator=(CurrentTaskAutoScope const&);
-        CurrentTaskAutoScope(CurrentTaskAutoScope const&);
-        CurrentTaskAutoScope();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit CurrentTaskAutoScope(::BackgroundTaskBase* curr);
-
-        MCNAPI ~CurrentTaskAutoScope();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::BackgroundTaskBase* curr);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        ::ll::TypedStorage<8, 8, ::BackgroundTaskBase*> mPrev;
         // NOLINTEND
     };
 
-    class PendingComparer {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool operator()(
-            ::std::shared_ptr<::BackgroundTaskBase> const& lhs,
-            ::std::shared_ptr<::BackgroundTaskBase> const& rhs
-        ) const;
-        // NOLINTEND
-    };
+    class PendingComparer {};
 
     class PriorityComparer {};
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk2ebc0e;
-    ::ll::UntypedStorage<8, 8>  mUnk7e9993;
-    ::ll::UntypedStorage<8, 8>  mUnk2e5c7a;
-    ::ll::UntypedStorage<8, 16> mUnk2bac6e;
-    ::ll::UntypedStorage<4, 4>  mUnkb3642a;
-    ::ll::UntypedStorage<4, 4>  mUnk96ebbd;
-    ::ll::UntypedStorage<4, 4>  mUnkcad031;
-    ::ll::UntypedStorage<8, 8>  mUnk8b825b;
-    ::ll::UntypedStorage<8, 32> mUnk855f70;
-    ::ll::UntypedStorage<1, 1>  mUnk3605cd;
+    ::ll::TypedStorage<1, 1, bool const>                               mIsAsync;
+    ::ll::TypedStorage<8, 8, ::IBackgroundTaskOwner*>                  mGroup;
+    ::ll::TypedStorage<8, 8, ::BackgroundTaskBase*>                    mPrevTask;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BackgroundTaskBase>> mNextTask;
+    ::ll::TypedStorage<4, 4, int>                                      mPriority;
+    ::ll::TypedStorage<4, 4, ::std::thread::id>                        mAffinity;
+    ::ll::TypedStorage<4, 4, int const>                                mBackDownPriorityAmount;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>  mStartAfterTime;
+    ::ll::TypedStorage<8, 32, ::std::string>                           mTaskName;
+    ::ll::TypedStorage<1, 1, ::Memory::MemoryCategory>                 mMemoryCategory;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BackgroundTaskBase& operator=(BackgroundTaskBase const&);
-    BackgroundTaskBase(BackgroundTaskBase const&);
     BackgroundTaskBase();
 
 public:
@@ -106,72 +69,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     BackgroundTaskBase(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfo const& startInfo, bool isAsync);
-
-    MCNAPI void _makeOrphan();
-
-    MCNAPI void backDownPriority();
-
-    MCNAPI bool canBeRunBy(::std::thread::id workerId) const;
-
-    MCNAPI ::IBackgroundTaskOwner* getGroup();
-
-    MCNAPI ::TaskGroupState getGroupState() const;
-
-    MCNAPI ::std::shared_ptr<::BackgroundTaskBase> getNext();
-
-    MCNAPI ::BackgroundTaskBase* getPrev();
-
-    MCNAPI ::std::chrono::steady_clock::time_point getStartAfterTime() const;
-
-    MCNAPI bool hasAffinity() const;
-
-    MCNAPI bool isAsync() const;
-
-    MCNAPI bool isOrphaned() const;
-
-    MCNAPI bool isReadyToStart(::std::chrono::steady_clock::time_point t) const;
-
-    MCNAPI void setNext(::std::shared_ptr<::BackgroundTaskBase> next);
-
-    MCNAPI void setPrev(::BackgroundTaskBase* prev);
-
-    MCNAPI void setStartAfterTime(::std::chrono::steady_clock::time_point t);
-
-    MCNAPI void setSyncPriority();
-
-    MCNAPI void taskComplete();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::BackgroundTaskBase* getCurrent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BackgroundTaskBase*& gCurrentTask();
+    MCAPI static ::BackgroundTaskBase*& gCurrentTask();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfo const& startInfo, bool isAsync);
+    MCAPI void* $ctor(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfo const& startInfo, bool isAsync);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

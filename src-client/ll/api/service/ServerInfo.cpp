@@ -18,7 +18,7 @@ std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_vi
 
 std::optional<fs::path> getWorldDataRoot() {
     if (auto client = service::getClientInstance()) {
-        if (auto& info = client->mUnkcc66f1.as<std::optional<Social::GameConnectionInfo>>();
+        if (auto& info = client->mUnk58b85f.as<std::optional<Social::GameConnectionInfo>>();
             info && info->mType != Social::ConnectionType::Local) {
             return createAndReturnPath(
                 worldStoragePath::dataPath,
@@ -34,7 +34,7 @@ std::optional<fs::path> getWorldDataRoot() {
 
 std::optional<fs::path> getWorldConfigRoot() {
     if (auto client = service::getClientInstance()) {
-        if (auto& info = client->mUnkcc66f1.as<std::optional<Social::GameConnectionInfo>>();
+        if (auto& info = client->mUnk58b85f.as<std::optional<Social::GameConnectionInfo>>();
             info && info->mType != Social::ConnectionType::Local) {
             return createAndReturnPath(
                 worldStoragePath::configPath,

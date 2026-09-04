@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DropdownComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DropdownComponent() /*override*/ = default;
@@ -35,26 +31,6 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DropdownComponent(::UIControl& owner);
-
-    MCAPI void _positionContent();
-
-    MCAPI void setDropdownAreaControl(::std::weak_ptr<::UIControl> control);
-
-    MCAPI void setDropdownContentControl(::std::weak_ptr<::UIControl> control);
-
-    MCFOLD void setDropdownNameId(uint nameId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

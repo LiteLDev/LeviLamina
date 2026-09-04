@@ -29,13 +29,15 @@ public:
     EduHeadlessConnectionHandshake();
 
 #else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EduHeadlessConnectionHandshake();
+
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI EduHeadlessConnectionHandshake();
-
     MCNAPI EduHeadlessConnectionHandshake(::Social::EduHeadlessConnectionHandshake const& other);
 
     MCNAPI EduHeadlessConnectionHandshake(::std::string const& id, ::Json::Value const& json);
@@ -50,8 +52,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Social::EduHeadlessConnectionHandshake const& other);
 
     MCNAPI void* $ctor(::std::string const& id, ::Json::Value const& json);

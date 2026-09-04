@@ -87,20 +87,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerCommandOrigin(::Player& origin);
-
 #ifdef LL_PLAT_C
-    MCAPI PlayerCommandOrigin(::ActorUniqueID playerId, ::Level& level);
+    MCAPI explicit PlayerCommandOrigin(::Player& origin);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& origin);
-
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ActorUniqueID playerId, ::Level& level);
+    MCAPI void* $ctor(::Player& origin);
 #endif
     // NOLINTEND
 

@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ImageCyclingComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ImageCyclingComponent() /*override*/ = default;
@@ -33,22 +29,6 @@ public:
     virtual void _postCreate() /*override*/;
 
     virtual void _updateSubPage() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ImageCyclingComponent(::UIControl& owner);
-
-    MCAPI void _initSpriteComponent();
-
-    MCAPI void setImageLocations(::std::vector<::ResourceLocation>&& imageLocations);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

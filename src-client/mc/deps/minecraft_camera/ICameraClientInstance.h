@@ -30,10 +30,4 @@ public:
 
     virtual float getSecondsSinceProgramStart() = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

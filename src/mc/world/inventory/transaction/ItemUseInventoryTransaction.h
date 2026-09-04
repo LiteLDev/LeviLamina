@@ -14,11 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Block;
 class BlockPalette;
-class IItemUseTransactionSubject;
-class ILegacyItemUseTransactionSubject;
-class InventoryTransaction;
 class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
@@ -67,6 +63,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemUseInventoryTransaction();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ItemUseInventoryTransaction() /*override*/;
@@ -85,30 +85,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUseInventoryTransaction();
-
     MCAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const& transaction);
-
-    MCAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
-
-    MCAPI ::InventoryTransactionError handle(
-        ::IItemUseTransactionSubject&       player,
-        ::ILegacyItemUseTransactionSubject& legacy,
-        bool                                isSenderAuthority
-    ) const;
 
     MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 
     MCAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
-
-    MCAPI ::ItemUseInventoryTransaction& setTargetBlock(::Block const& targetBlock);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const getActionTypeName(::ItemUseInventoryTransaction::ActionType type);
-
     MCAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
 
     MCAPI static void resendPlayerState(::Player& player);
@@ -124,11 +110,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ItemUseInventoryTransaction const& transaction);
-
-    MCAPI void* $ctor(::InventoryTransaction const& transaction);
     // NOLINTEND
 
 public:
@@ -159,3 +141,8 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCAPI bool operator==(::ItemUseInventoryTransaction const& lhs, ::ItemUseInventoryTransaction const& rhs);
+// NOLINTEND

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/network/realms/World.h"
@@ -16,7 +16,7 @@ namespace Realms { class RealmsMembership; }
 
 namespace OreUI {
 
-class RealmsMembershipFacet : public ::OreUI::FacetBase<::OreUI::RealmsMembershipFacet> {
+class RealmsMembershipFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsMembershipFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -68,7 +68,7 @@ public:
 
     MCAPI ::std::string const& getJoinedRealmName() const;
 
-    MCFOLD ::Realms::RealmsMembership::LeaveRealmResult const& getLeaveRealmResult() const;
+    MCAPI ::Realms::RealmsMembership::LeaveRealmResult const& getLeaveRealmResult() const;
 
     MCAPI ::OreUI::FacetTaskState getLeaveRealmTaskProgress() const;
 

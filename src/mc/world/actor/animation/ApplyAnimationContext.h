@@ -20,18 +20,12 @@ public:
     ::ll::TypedStorage<1, 8, ::ApplyAnimationCache const> mCache;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ApplyAnimationContext();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ApplyAnimationContext() = default;
 
+#ifdef LL_PLAT_S
     virtual void fireParticleEvents(
         ::ActorSkeletalAnimation const&,
         ::std::unordered_map<::HashedString, ::HashedString> const&,
@@ -40,33 +34,41 @@ public:
         float,
         ::RenderParams&
     ) const;
+#else // LL_PLAT_C
+    virtual void fireParticleEvents(
+        ::ActorSkeletalAnimation const&                             animationData,
+        ::std::unordered_map<::HashedString, ::HashedString> const& effectsRef,
+        ::BaseActorRenderContext&                                   baseActorRenderContext,
+        float                                                       animTime,
+        float                                                       lastAnimTime,
+        ::RenderParams&                                             renderParams
+    ) const;
+#endif
 
+#ifdef LL_PLAT_S
     virtual bool shouldAnimateBones(::RenderParams const&) const;
+#else // LL_PLAT_C
+    virtual bool shouldAnimateBones(::RenderParams const& renderParams) const;
+#endif
 
+#ifdef LL_PLAT_S
     virtual bool shouldActorRenderUpdateEffects(::BaseActorRenderContext const&) const;
+#else // LL_PLAT_C
+    virtual bool shouldActorRenderUpdateEffects(::BaseActorRenderContext const& context) const;
+#endif
 
+#ifdef LL_PLAT_S
     virtual bool hasParticleSystemEngine(::RenderParams const&) const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit ApplyAnimationContext(::ApplyAnimationCache const& cache);
+#else // LL_PLAT_C
+    virtual bool hasParticleSystemEngine(::RenderParams const& renderParams) const;
 #endif
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ApplyAnimationCache const& cache);
-#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCFOLD void $fireParticleEvents(
         ::ActorSkeletalAnimation const&,
         ::std::unordered_map<::HashedString, ::HashedString> const&,
@@ -75,12 +77,34 @@ public:
         float,
         ::RenderParams&
     ) const;
+#else // LL_PLAT_C
+    MCFOLD void $fireParticleEvents(
+        ::ActorSkeletalAnimation const&                             animationData,
+        ::std::unordered_map<::HashedString, ::HashedString> const& effectsRef,
+        ::BaseActorRenderContext&                                   baseActorRenderContext,
+        float                                                       animTime,
+        float                                                       lastAnimTime,
+        ::RenderParams&                                             renderParams
+    ) const;
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD bool $shouldAnimateBones(::RenderParams const&) const;
+#else // LL_PLAT_C
+    MCFOLD bool $shouldAnimateBones(::RenderParams const& renderParams) const;
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD bool $shouldActorRenderUpdateEffects(::BaseActorRenderContext const&) const;
+#else // LL_PLAT_C
+    MCFOLD bool $shouldActorRenderUpdateEffects(::BaseActorRenderContext const& context) const;
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD bool $hasParticleSystemEngine(::RenderParams const&) const;
+#else // LL_PLAT_C
+    MCFOLD bool $hasParticleSystemEngine(::RenderParams const& renderParams) const;
+#endif
 
 
     // NOLINTEND

@@ -15,16 +15,4 @@ public:
     WorldTemplateManagerProxyCallbacks& operator=(WorldTemplateManagerProxyCallbacks const&);
     WorldTemplateManagerProxyCallbacks(WorldTemplateManagerProxyCallbacks const&);
     WorldTemplateManagerProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~WorldTemplateManagerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

@@ -17,18 +17,6 @@ MCAPI ::std::vector<::ItemStack> getTierItems(::ItemTier const& tier, ::BaseGame
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::ItemTier const& COPPER();
-
-MCAPI ::ItemTier const& DIAMOND();
-
-MCAPI ::ItemTier const& GOLD();
-
-MCAPI ::ItemTier const& IRON();
-
-MCAPI ::ItemTier const& NETHERITE();
-
-MCAPI ::ItemTier const& STONE();
-
 MCAPI ::ItemTier const& WOOD();
 // NOLINTEND
 

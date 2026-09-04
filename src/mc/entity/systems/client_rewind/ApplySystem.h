@@ -116,12 +116,6 @@ public:
             ::Optional<::ActorDataSeatOffsetComponent>> const& tracked
     );
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ClientRewind

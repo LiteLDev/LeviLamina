@@ -35,18 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _blendCubeCorners(
-        ::Vec3 const& origin,
-        int           X,
-        int           Y,
-        int           Z,
-        float         u,
-        float&        vv0,
-        float&        vv1,
-        float&        vv2,
-        float&        vv3
-    ) const;
-
     MCAPI void readArea(
         float*        buffer,
         ::Vec3 const& pos,

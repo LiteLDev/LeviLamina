@@ -5,19 +5,8 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft_ui/ddui/ScriptObservable.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace ScriptModuleMinecraftServerUI {
 
-class ScriptObservableBoolean : public ::ScriptModuleMinecraftServerUI::ScriptObservable<bool> {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-};
+class ScriptObservableBoolean : public ::ScriptModuleMinecraftServerUI::ScriptObservable<bool> {};
 
 } // namespace ScriptModuleMinecraftServerUI

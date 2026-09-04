@@ -19,7 +19,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/Result.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
-#include "mc/world/level/FileArchiver.h"
 #include "mc/world/level/LevelListCacheObserver.h"
 #include "mc/world/level/NetherWorldType.h"
 #include "mc/world/level/SpawnSettings.h"
@@ -65,7 +64,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                       mRespawnRadiusString;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                   mWorldImagePath;
     ::ll::TypedStorage<8, 848, ::LevelSummary>                                     mEditedLevel;
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                mLevelData;
+    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                mLevelData;
     ::ll::TypedStorage<8, 72, ::ExperimentStorage>                                 mOriginalExperiments;
     ::ll::TypedStorage<4, 4, ::EduCloud::WorldSyncState const>                     mEditedLevelSyncState;
     ::ll::TypedStorage<1, 1, bool>                                                 mEditedLevelDeleted;
@@ -120,7 +119,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldSettingsScreenController() /*override*/;
+    virtual ~WorldSettingsScreenController() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 
@@ -167,29 +166,15 @@ public:
         bool                                     unhideServerSettings
     );
 
-    MCAPI void _cacheGameRuleValues();
-
-    MCAPI void _calculateSleepPercentageOptions();
-
-    MCAPI bool _canBroadcastOnXBL() const;
-
     MCAPI bool _canChangeWorldOption() const;
 
     MCAPI bool _canEditDifficulty();
-
-    MCAPI void _confirmationUnlockTemplatedWorldOptionsDialog();
 
     MCAPI void _copyAndSetDataHelper(::std::function<void(::LevelData&)> setDataCallback);
 
     MCAPI ::ui::ViewRequest _copyWorld(::std::function<void(::LevelData&)> setDataCallback, bool leaveScreen);
 
     MCAPI ::ui::ViewRequest _createWorld(::PostCreateWorldAction postCreateWorldAction);
-
-    MCAPI void _createWorldOnRealms();
-
-    MCAPI ::ui::ViewRequest _exportWorld(::FileArchiver::ExportType type);
-
-    MCAPI void _fireCachedGameRuleTelemetryEventsOnExit();
 
     MCAPI int _getDifficulty();
 
@@ -203,85 +188,29 @@ public:
 
     MCAPI void _init();
 
-    MCAPI bool _isAlwaysDayEnabled();
-
-    MCAPI bool _isEducationToggleEnabled();
-
     MCAPI bool _isGameRuleEnabled() const;
-
-    MCAPI bool _isPlayerGameModeEnabled();
-
-    MCAPI bool _isServerVisibilityEnabled() const;
-
-    MCAPI bool _isWorldGameModeEnabled();
-
-    MCAPI bool _isWorldSeedEnabled();
-
-    MCAPI void _limitSpawnRadiusAgainstWorldType();
-
-    MCAPI ::ui::ViewRequest _makeWorldInfinite();
 
     MCAPI bool _passedLockedContentCheck();
 
-    MCAPI void _playWorldOnRealms();
-
-    MCAPI void _registerWorldsClipboardSubController();
-
-    MCAPI ::ui::ViewRequest _resetRandomTickSpeed();
-
     MCAPI void _selectRealm(::std::function<void(::Realms::World)> callback);
-
-    MCAPI void _setAllowCheats(bool value);
 
     MCAPI void _setAllowCheatsHelper(bool value);
 
-    MCAPI void _setAlwaysDay(bool value);
-
-    MCAPI void _setDefaultPermissionLevel(::PlayerPermissionLevel newPermission);
-
     MCAPI void _setDefaultPermissionLevelHelper(::PlayerPermissionLevel value);
-
-    MCAPI void _setDifficulty(int value);
-
-    MCAPI void _setEducationFeaturesEnabled(bool value);
-
-    MCAPI void _setExperimentalToggleHelper(bool value, int experimentIndex);
-
-    MCAPI void _setGameRule(int value, ::GameRuleId gameRuleId, bool suppressOuput);
 
     MCAPI void _setGameRule(bool value, ::GameRuleId gameRuleId, bool suppressOuput);
 
-    MCAPI void _setHasUserRealms();
-
-    MCAPI void _setImmutableWorld(bool value);
+    MCAPI void _setGameRule(int value, ::GameRuleId gameRuleId, bool suppressOuput);
 
     MCAPI void _setLevelEditorWorldFlag();
 
     MCAPI void _setMultiplayerEnabled(bool value);
 
-    MCAPI void _setNEXVisible(bool value);
-
-    MCAPI void _setPSNVisible(bool value);
-
-    MCAPI void _setPerfectWeather(bool value);
-
-    MCAPI void _setPlayerGameMode(int value);
-
-    MCAPI void _setServerVisible(bool value);
-
-    MCAPI void _setWorldGameMode(int value);
-
     MCAPI void _setWorldGameModeHelper(int value);
 
     MCAPI void _setWorldName(::std::string value);
 
-    MCAPI void _setWorldType(int value);
-
     MCAPI void _setWorldTypeHelper(int value);
-
-    MCAPI void _setupCloudBindings();
-
-    MCAPI void _showConfirmationNoCrossPlatformPlaySkinPopup();
 
     MCAPI ::ui::ViewRequest _startEducationWorld(bool shouldHost);
 
@@ -289,8 +218,6 @@ public:
         ::std::string const&                         messageId,
         ::std::function<void(::ModalScreenButtonId)> callback
     );
-
-    MCAPI ::WorldSettingsScreenControllerProxy* getWorldSettingsScreenControllerProxy();
     // NOLINTEND
 
 public:
@@ -312,12 +239,6 @@ public:
         ::std::string                            initialPackId,
         bool                                     unhideServerSettings
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -348,17 +269,5 @@ public:
     MCAPI void $_registerControllerCallbacks();
 
     MCAPI void $_displayLockedWorldPopup();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForLevelListCacheObserver();
-
-    MCNAPI static void** $vftableForIWorldSettingsStorage();
     // NOLINTEND
 };

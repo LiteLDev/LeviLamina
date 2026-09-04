@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     virtual int updateDecayDelay(int const) const /*override*/;
 
-    virtual int updateFacingData(int const block, ::Block const&) const /*override*/;
+    virtual int updateFacingData(int const, ::Block const& block) const /*override*/;
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
@@ -36,13 +36,13 @@ public:
     virtual int attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
-        ::BlockPos const&    pos,
-        ::BlockPos const&    charge,
-        int                  random,
-        int                  spreader,
-        ::Random&            spreadVeins,
-        ::SculkSpreader&,
-        bool const
+        ::BlockPos const&,
+        ::BlockPos const& pos,
+        int               charge,
+        int,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
+        bool const       spreadVeins
     ) const /*override*/;
 
     virtual void onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const
@@ -52,14 +52,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _attemptPlaceSculk(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    pos,
-        ::SculkSpreader&     spreader,
-        ::Random&            random
-    );
-
     MCAPI static void
     _cleanUpVeinsWithSculkSubstrate(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos);
     // NOLINTEND
@@ -69,11 +61,11 @@ public:
     // NOLINTBEGIN
     MCFOLD int $updateDecayDelay(int const) const;
 
-    MCAPI int $updateFacingData(int const block, ::Block const&) const;
+    MCAPI int $updateFacingData(int const, ::Block const& block) const;
 
     MCFOLD bool $canChangeBlockOnSpread() const;
 
-    MCFOLD bool $attemptSpreadVeins(
+    MCAPI bool $attemptSpreadVeins(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Block const&       block,
@@ -84,23 +76,17 @@ public:
     MCAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
-        ::BlockPos const&    pos,
-        ::BlockPos const&    charge,
-        int                  random,
-        int                  spreader,
-        ::Random&            spreadVeins,
-        ::SculkSpreader&,
-        bool const
+        ::BlockPos const&,
+        ::BlockPos const& pos,
+        int               charge,
+        int,
+        ::Random&        random,
+        ::SculkSpreader& spreader,
+        bool const       spreadVeins
     ) const;
 
     MCAPI void $onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -110,10 +110,8 @@ class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class IEntityRegistryOwner;
-class ILevelChunkEventManagerConnector;
 class ILevelRandom;
 class IMinecraftEventing;
-class IPlayerDimensionTransferConnector;
 class IRandom;
 class ISubChunkLighter;
 class IUnknownBlockTypeRegistry;
@@ -162,7 +160,6 @@ class PlayerAbilitiesManager;
 class PlayerDeathManager;
 class PlayerDimensionTransferManager;
 class PlayerEventCoordinator;
-class PlayerLimboActorManager;
 class PlayerListEntry;
 class PlayerListManager;
 class PlayerLocationReceiver;
@@ -229,6 +226,7 @@ struct LevelTagIDType;
 struct LevelTagSetIDType;
 struct PlayerMovementSettings;
 struct PlayerSleepStatus;
+struct PlayerSpawnDimensionResolution;
 struct ResolvedItemIconInfo;
 struct ScreenshotOptions;
 struct Tick;
@@ -455,7 +453,8 @@ public:
 
     virtual ::WeakRef<::Dimension> getDimension(::DimensionType id) const /*override*/;
 
-    virtual ::DimensionType resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const /*override*/;
+    virtual ::PlayerSpawnDimensionResolution resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const
+        /*override*/;
 
     virtual void forEachDimension(::std::function<bool(::Dimension&)> callback) /*override*/;
 
@@ -1193,13 +1192,13 @@ public:
     virtual ::TradeTables* getTradeTables() /*override*/;
 
     virtual void decrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) /*override*/;
 
     virtual void incrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
@@ -1361,6 +1360,8 @@ public:
 
     virtual bool isEditorWorld() const /*override*/;
 
+    virtual bool getAllowAnonymousBlockDropsInEditorWorlds() const /*override*/;
+
     virtual bool isHardcore() const /*override*/;
 
     virtual ::Abilities& getDefaultAbilities() /*override*/;
@@ -1459,36 +1460,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Level(::LevelArguments&& args);
 
-    MCAPI ::Bedrock::UniqueOwnerPointer<::PhotoManager> _createPhotoManager();
-
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> _getActorGarbageCollector();
-#endif
-
-    MCAPI ::GameplayUserManager& _getGameplayUserManager();
-
-    MCAPI ::ILevelChunkEventManagerConnector& _getLevelChunkEventManagerConnector();
-
-    MCFOLD ::LevelStorageManager* _getLevelStorageManager();
-
-    MCAPI ::IPlayerDimensionTransferConnector& _getPlayerDimensionTransferConnector();
-
-    MCAPI ::PlayerListManager& _getPlayerListManager();
-
-    MCAPI void _initializeActorManager();
-
-    MCAPI void _initializeBiomeManager();
-
-    MCAPI void _initializeEventCoordinatorManager();
-
-    MCAPI void _initializeGameplayUserManager();
-
-    MCAPI void _initializeLevelChunkEventManager();
-
-    MCAPI void _initializeLevelEventManager();
-
-    MCAPI void _initializeParticleProvider();
-
     MCAPI void _onAddBreakingItemParticleEffect(
         ::Vec3 const&                     pos,
         ::BreakingItemParticleData const& data,
@@ -1544,31 +1515,15 @@ public:
     MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addEntityWithError(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI bool canChangeDimension(::Actor& actor, ::DimensionType toId);
-
     MCAPI void earlyShutdownMainthread();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorManager> getActorManager();
-
-    MCAPI ::AutonomousActorManager const& getAutonomousActorManager() const;
-
     MCAPI ::LinkedAssetValidator& getLinkedAssetValidator();
-
-    MCAPI ::NpcDialogueStorage* getNpcDialogueStorage();
 
 #ifdef LL_PLAT_C
     MCAPI ::NpcEventCoordinator& getNpcEventCoordinator();
 #endif
 
-    MCAPI ::ParticleProvider& getParticleProvider();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::PhotoItemSavedDataCollection& getPhotoItemSavedDataCollection();
-#endif
-
     MCAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
-
-    MCAPI double getTickDeltaTime() const;
 
     MCAPI ::NodeType isFree(
         ::NavigationComponent& navigation,
@@ -1579,15 +1534,9 @@ public:
         ::CanJumpIntoNode      jumpIntoNode
     );
 
-    MCAPI void loadShapeRegistry(::Experiments const& experiments);
-
-#ifdef LL_PLAT_C
-    MCAPI void setMolangPackSettingsCache(::std::shared_ptr<::MolangPackSettingsCache> molangPackSettingsCache);
-#endif
+    MCAPI void loadShapeRegistry();
 
     MCAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
-
-    MCAPI void transferActorToOwnedEntityLimbo(::Player const& player, ::Actor& actor);
     // NOLINTEND
 
 public:
@@ -1598,24 +1547,6 @@ public:
         ::Scheduler&                                  scheduler,
         ::IMinecraftEventing&                         eventing
     );
-
-    MCAPI static ::std::unique_ptr<::PlayerLimboActorManager> _createPlayerLimboActorManager(
-        ::LevelStorageManager*                        levelStorageManager,
-        ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager,
-        ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
-    );
-
-#ifdef LL_PLAT_C
-    MCAPI static ::LevelSeed64 createLevelSeed64();
-#endif
-
-    MCAPI static uint createRandomSeed();
-
-    MCAPI static ::std::string createUniqueLevelID(int modifier);
-
-    MCAPI static bool isUsableLevel(::ILevel const& level);
-
-    MCAPI static ::LevelSeed64 parseLevelSeed64(::std::string const& seedString);
     // NOLINTEND
 
 public:
@@ -1653,7 +1584,7 @@ public:
 
     MCAPI ::WeakRef<::Dimension> $getDimension(::DimensionType id) const;
 
-    MCAPI ::DimensionType $resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const;
+    MCAPI ::PlayerSpawnDimensionResolution $resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const;
 
     MCFOLD void $forEachDimension(::std::function<bool(::Dimension&)> callback);
 
@@ -1673,11 +1604,15 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> $getActorDimensionTransferManager();
 
+#ifdef LL_PLAT_S
     MCFOLD ::Spawner& $getSpawner() const;
+#else // LL_PLAT_C
+    MCAPI ::Spawner& $getSpawner() const;
+#endif
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::BossEventSubscriptionManager> $getBossEventSubscriptionManager();
 
-    MCFOLD ::ProjectileFactory& $getProjectileFactory() const;
+    MCAPI ::ProjectileFactory& $getProjectileFactory() const;
 
     MCFOLD ::ActorDefinitionGroup* $getEntityDefinitions() const;
 
@@ -1685,7 +1620,11 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::ActorAnimationControllerGroup> $getActorAnimationControllerGroup() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::BlockDefinitionGroup* $getBlockDefinitions() const;
+#else // LL_PLAT_C
+    MCFOLD ::BlockDefinitionGroup* $getBlockDefinitions() const;
+#endif
 
     MCFOLD ::PropertyGroupManager& $getActorPropertyGroup() const;
 
@@ -1699,9 +1638,9 @@ public:
 
     MCAPI void $setDisablePlayerInteractions(bool const disable);
 
-    MCFOLD ::AutomationBehaviorTreeGroup& $getAutomationBehaviorTreeGroup() const;
+    MCAPI ::AutomationBehaviorTreeGroup& $getAutomationBehaviorTreeGroup() const;
 
-    MCFOLD ::BehaviorFactory& $getBehaviorFactory() const;
+    MCAPI ::BehaviorFactory& $getBehaviorFactory() const;
 
     MCAPI ::SharedTypes::Legacy::Difficulty $getDifficulty() const;
 
@@ -1732,9 +1671,17 @@ public:
 
     MCAPI void $addUser(::OwnerPtr<::EntityContext> userEntity);
 
+#ifdef LL_PLAT_S
     MCAPI ::Actor* $addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
+#else // LL_PLAT_C
+    MCAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $removeDisplayEntity(::WeakEntityRef);
+#else // LL_PLAT_C
+    MCFOLD void $removeDisplayEntity(::WeakEntityRef entity);
+#endif
 
     MCFOLD ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
 
@@ -2309,9 +2256,9 @@ public:
 
     MCAPI ::MapItemSavedData* $getMapSavedData(::ActorUniqueID const uuid);
 
-    MCFOLD ::MapItemSavedData* $getMapSavedData(::CompoundTag const& instance);
+    MCAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const& instance);
 
-    MCFOLD ::MapItemSavedData* $getMapSavedData(::CompoundTag const* instance);
+    MCAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const* instance);
 
     MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
@@ -2339,9 +2286,9 @@ public:
 
     MCAPI void $setLevelId(::std::string LevelId);
 
-    MCAPI ::TaskGroup& $getSyncTasksGroup();
+    MCFOLD ::TaskGroup& $getSyncTasksGroup();
 
-    MCFOLD ::TaskGroup& $getIOTasksGroup();
+    MCAPI ::TaskGroup& $getIOTasksGroup();
 
     MCFOLD ::ResourcePackManager* $getClientResourcePackManager() const;
 
@@ -2349,11 +2296,15 @@ public:
 
     MCFOLD ::TradeTables* $getTradeTables();
 
-    MCFOLD void
-    $decrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
+    MCFOLD void $decrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+    );
 
-    MCFOLD void
-    $incrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
+    MCFOLD void $incrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+    );
 
     MCFOLD ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 
@@ -2429,7 +2380,7 @@ public:
 
     MCAPI bool $isClientSideGenerationEnabled();
 
-    MCFOLD bool $blockNetworkIdsAreHashes();
+    MCAPI bool $blockNetworkIdsAreHashes();
 
     MCAPI ::ItemRegistryRef $getItemRegistry() const;
 
@@ -2453,9 +2404,17 @@ public:
 
     MCFOLD ::StackRefResult<::PauseManager const> $getPauseManager() const;
 
+#ifdef LL_PLAT_S
     MCFOLD bool $isClientSide() const;
+#else // LL_PLAT_C
+    MCAPI bool $isClientSide() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD ::SubClientId $getSubClientId() const;
+#else // LL_PLAT_C
+    MCAPI ::SubClientId $getSubClientId() const;
+#endif
 
     MCAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& $getPlayerList() const;
 
@@ -2487,7 +2446,7 @@ public:
 
     MCAPI ::Random& $getRandom() const;
 
-    MCFOLD ::Random& $getThreadRandom() const;
+    MCAPI ::Random& $getThreadRandom() const;
 
     MCAPI ::HitResult& $getHitResult();
 
@@ -2495,7 +2454,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::HitResultWrapper> $getHitResultWrapper();
 
-    MCFOLD ::std::string const& $getImmersiveReaderString() const;
+    MCAPI ::std::string const& $getImmersiveReaderString() const;
 
     MCAPI void $setImmersiveReaderString(::std::string newString);
 
@@ -2510,6 +2469,8 @@ public:
     MCAPI bool $hasStartWithMapEnabled() const;
 
     MCAPI bool $isEditorWorld() const;
+
+    MCAPI bool $getAllowAnonymousBlockDropsInEditorWorlds() const;
 
     MCAPI bool $isHardcore() const;
 
@@ -2529,7 +2490,7 @@ public:
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
     );
 
-    MCFOLD ::LevelSoundManager& $getLevelSoundManager();
+    MCAPI ::LevelSoundManager& $getLevelSoundManager();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> $getSoundPlayer() const;
 
@@ -2539,7 +2500,7 @@ public:
 
     MCAPI void $setFinishedInitializing();
 
-    MCFOLD ::LootTables& $getLootTables();
+    MCAPI ::LootTables& $getLootTables();
 
     MCAPI void $updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
@@ -2563,7 +2524,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsSynchroniser> $getPlayerPermissionsSynchroniser();
 
-    MCFOLD ::Recipes& $getRecipes() const;
+    MCAPI ::Recipes& $getRecipes() const;
 
     MCAPI ::BlockReducer* $getBlockReducer() const;
 
@@ -2602,15 +2563,5 @@ public:
     MCAPI void $_onLowMemory();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIWorldRegistriesProvider();
-
-    MCAPI static void** $vftableForBlockSourceListener();
-
-    MCNAPI static void** $vftableForILevel();
     // NOLINTEND
 };

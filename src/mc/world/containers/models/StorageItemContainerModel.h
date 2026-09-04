@@ -58,10 +58,6 @@ public:
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
-
-    MCFOLD ::StorageItemComponent const* getStorageItemComponent() const;
-
-    MCAPI ::StorageWeightLimitItemComponent const* getStorageWeightLimitComponent() const;
     // NOLINTEND
 
 public:
@@ -94,11 +90,5 @@ public:
     MCAPI ::Container* $_getContainer() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

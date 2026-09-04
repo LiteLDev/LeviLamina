@@ -17,31 +17,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ColorProxy& operator=(ColorProxy const&);
-    ColorProxy();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ColorProxy(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
-
     MCAPI bool
     operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other) const;
-
-    MCAPI ~ColorProxy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

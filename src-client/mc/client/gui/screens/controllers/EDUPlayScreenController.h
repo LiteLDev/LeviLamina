@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUPlayScreenController() /*override*/;
+    virtual ~EDUPlayScreenController() /*override*/ = default;
 
     virtual void onEntered() /*override*/;
 
@@ -51,22 +51,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EDUPlayScreenController(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -81,15 +71,5 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCAPI bool $onJoincodeReceived(::std::string const& encodedJoincode);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

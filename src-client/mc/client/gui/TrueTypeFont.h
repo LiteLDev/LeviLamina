@@ -17,7 +17,6 @@ class ScreenContext;
 namespace Core { class Path; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class TrueTypeFont : public ::Font {
@@ -39,18 +38,6 @@ public:
         ::ll::TypedStorage<4, 4, int>                descent;
         ::ll::TypedStorage<4, 4, int>                lineGap;
         ::ll::TypedStorage<8, 32, ::std::string>     resourceData;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~LoadedFontInformation();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,19 +69,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TrueTypeFont();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrueTypeFont() /*override*/;
+    virtual ~TrueTypeFont() /*override*/ = default;
 
     virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
-    virtual ::mce::MaterialPtr& getMaterial(int, bool) const /*override*/;
+    virtual ::mce::MaterialPtr& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
     virtual void uploadTextureToGPU() /*override*/;
 
@@ -128,7 +111,7 @@ public:
 
     virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
 
-    virtual ::mce::Font::Type getType(int) const /*override*/;
+    virtual ::mce::Font::Type getType(int glyphSheet) const /*override*/;
 
     virtual void fetchPage(int page) /*override*/;
 
@@ -154,32 +137,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrueTypeFont(
-        ::std::string const&                   ttfFile,
-        uint                                   version,
-        uchar                                  defaultRenderPixelHeight,
-        ushort                                 atlasPageSize,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        bool                                   uploadTextureOnConstruction
-    );
-
-    MCAPI void _cacheAtlas(
-        ::Core::Path const&                   atlasPath,
-        ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture,
-        ::Core::Path const&                   glyphInfoPath,
-        ::TrueTypeFont::PageOfGlyphs&         atlasGlyphInfo
-    );
-
-    MCAPI void
-    _convertAtlas(::std::vector<uchar> const& data, ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture, int atlasSize);
-
-    MCAPI bool _loadCache(
-        ::Core::Path const&                   atlasPath,
-        ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture,
-        ::Core::Path const&                   glyphInfoPath,
-        ::TrueTypeFont::PageOfGlyphs&         atlasGlyphInfo
-    );
-
     MCAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
 
     MCAPI void
@@ -190,27 +147,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static uint const& CACHE_VERSION();
-
-    MCAPI static ushort const& DEFAULT_ATLAS_PAGE_SIZE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                   ttfFile,
-        uint                                   version,
-        uchar                                  defaultRenderPixelHeight,
-        ushort                                 atlasPageSize,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        bool                                   uploadTextureOnConstruction
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -220,7 +156,7 @@ public:
 
     MCFOLD bool $_supportsShadowInSingleDraw();
 
-    MCAPI ::mce::MaterialPtr& $getMaterial(int, bool) const;
+    MCAPI ::mce::MaterialPtr& $getMaterial(int sheet, bool isOddGuiScale) const;
 
     MCAPI void $uploadTextureToGPU();
 
@@ -253,7 +189,7 @@ public:
 
     MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
-    MCFOLD ::mce::Font::Type $getType(int) const;
+    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
 
     MCAPI void $fetchPage(int page);
 
@@ -267,18 +203,12 @@ public:
         bool                              unicode
     );
 
-    MCFOLD ::Core::PathBuffer<::std::string>
+    MCAPI ::Core::PathBuffer<::std::string>
     $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
     MCFOLD void $switchFontsource(::Core::Path const&, ::Core::Path const&);
 
     MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

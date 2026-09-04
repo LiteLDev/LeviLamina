@@ -5,16 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/actor/DefinitionTrigger.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
-class HashedString;
-class ItemStack;
-class Level;
-class Player;
 namespace SharedTypes::Legacy { struct OnCompleteTriggerItemComponent; }
 // clang-format on
 
@@ -42,20 +37,6 @@ public:
     MCAPI explicit LegacyOnCompleteTriggerItemComponent(
         ::SharedTypes::Legacy::OnCompleteTriggerItemComponent&& componentData
     );
-
-    MCAPI void _onUseTimeDepleted(
-        ::ItemUseMethod&   itemUseMethod,
-        ::ItemStack const& item,
-        ::ItemStack&       player,
-        ::Player&          level,
-        ::Level&
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

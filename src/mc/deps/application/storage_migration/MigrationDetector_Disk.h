@@ -39,12 +39,6 @@ public:
 
     virtual void _runDetector(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::StorageMigration

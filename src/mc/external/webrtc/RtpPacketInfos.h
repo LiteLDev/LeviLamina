@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/RefCountedNonVirtual.h"
+#include "mc/external/webrtc/RefCountedNonVirtual.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,7 +20,7 @@ public:
     // clang-format on
 
     // RtpPacketInfos inner types define
-    class Data : public ::rtc::RefCountedNonVirtual<::webrtc::RtpPacketInfos::Data> {
+    class Data : public ::webrtc::RefCountedNonVirtual<::webrtc::RtpPacketInfos::Data> {
     public:
         // member variables
         // NOLINTBEGIN

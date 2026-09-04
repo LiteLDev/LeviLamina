@@ -44,7 +44,7 @@ public:
         int                         threadPriority
     ) = 0;
 
-    virtual bool InitializeSecurity(char const*, char const*, bool) = 0;
+    virtual bool InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey) = 0;
 
     virtual void DisableSecurity() = 0;
 
@@ -151,11 +151,7 @@ public:
 
     virtual ::RakNet::ConnectionState GetConnectionState(::RakNet::AddressOrGUID const systemIdentifier) = 0;
 
-    virtual void CancelConnectionAttempt(::RakNet::SystemAddress const target) = 0;
-
     virtual int GetIndexFromSystemAddress(::RakNet::SystemAddress const systemAddress) const = 0;
-
-    virtual ::RakNet::SystemAddress GetSystemAddressFromIndex(uint index) = 0;
 
     virtual ::RakNet::RakNetGUID GetGUIDFromIndex(uint index) = 0;
 
@@ -172,14 +168,10 @@ public:
 
     virtual bool IsBanned(char const* IP) = 0;
 
-    virtual void SetLimitIPConnectionFrequency(bool b) = 0;
-
     virtual void Ping(::RakNet::SystemAddress const target) = 0;
 
     virtual bool
     Ping(char const* host, ushort remotePort, bool onlyReplyOnAcceptingConnections, uint connectionSocketIndex) = 0;
-
-    virtual void SendNatTraversalMessage(::RakNet::SystemAddress const target) = 0;
 
     virtual int GetAveragePing(::RakNet::AddressOrGUID const systemIdentifier) = 0;
 
@@ -197,12 +189,8 @@ public:
 
     virtual void SetOfflinePingResponse(char const* data, uint const length) = 0;
 
-    virtual void GetOfflinePingResponse(char** data, uint* length) = 0;
-
     virtual ::RakNet::SystemAddress
     GetInternalID(::RakNet::SystemAddress const systemAddress, int const index) const = 0;
-
-    virtual void SetInternalID(::RakNet::SystemAddress systemAddress, int index) = 0;
 
     virtual ::RakNet::SystemAddress GetExternalID(::RakNet::SystemAddress const target) const = 0;
 
@@ -215,8 +203,6 @@ public:
     virtual ::RakNet::RakNetGUID const& GetGuidFromSystemAddress(::RakNet::SystemAddress const input) const = 0;
 
     virtual ::RakNet::SystemAddress GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const = 0;
-
-    virtual bool GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const, char*) const = 0;
 
     virtual void SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target) = 0;
 
@@ -277,7 +263,7 @@ public:
 
     virtual void SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*)) = 0;
 
-    virtual void ApplyNetworkSimulator(float, ushort, ushort) = 0;
+    virtual void ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance) = 0;
 
     virtual void SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond) = 0;
 
@@ -310,17 +296,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void DestroyInstance(::RakNet::RakPeerInterface* i);
-
     MCAPI static uint64 Get64BitUniqueRandomNumber();
-
-    MCAPI static ::RakNet::RakPeerInterface* GetInstance();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 };
 

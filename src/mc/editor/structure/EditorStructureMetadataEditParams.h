@@ -33,8 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI EditorStructureMetadataEditParams(::Editor::EditorStructureMetadataEditParams const&);
 
-    MCNAPI ::Editor::EditorStructureMetadataEditParams& operator=(::Editor::EditorStructureMetadataEditParams&&);
-
     MCNAPI ::Editor::EditorStructureMetadataEditParams& operator=(::Editor::EditorStructureMetadataEditParams const&);
 
     MCNAPI ~EditorStructureMetadataEditParams();

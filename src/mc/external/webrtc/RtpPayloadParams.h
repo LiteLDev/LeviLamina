@@ -67,6 +67,8 @@ public:
 
     MCNAPI RtpPayloadParams(uint ssrc, ::webrtc::RtpPayloadState const* state, ::webrtc::FieldTrialsView const& trials);
 
+    MCNAPI void SetCodecSpecific(::webrtc::RTPVideoHeader* rtp_video_header, bool first_frame_in_picture);
+
     MCNAPI void SetDependenciesVp8Deprecated(
         ::webrtc::CodecSpecificInfoVP8 const&            vp8_info,
         int64                                            frame_id,
@@ -78,10 +80,10 @@ public:
     );
 
     MCNAPI void SetDependenciesVp8New(
-        ::webrtc::CodecSpecificInfoVP8 const&            vp8_info,
-        int64                                            frame_id,
-        bool                                             is_keyframe,
-        bool                                             layer_sync,
+        ::webrtc::CodecSpecificInfoVP8 const& vp8_info,
+        int64                                 frame_id,
+        bool                                  is_keyframe,
+        bool,
         ::webrtc::RTPVideoHeader::GenericDescriptorInfo* generic
     );
 
@@ -99,11 +101,8 @@ public:
         ::webrtc::RTPVideoHeader*             rtp_video_header
     );
 
-    MCNAPI void Vp9ToGeneric(
-        ::webrtc::CodecSpecificInfoVP9 const& vp9_info,
-        int64                                 frame_id,
-        ::webrtc::RTPVideoHeader&             rtp_video_header
-    );
+    MCNAPI void
+    Vp9ToGeneric(::webrtc::CodecSpecificInfoVP9 const&, int64 frame_id, ::webrtc::RTPVideoHeader& rtp_video_header);
 
     MCNAPI uint ssrc() const;
 

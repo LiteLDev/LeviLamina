@@ -53,14 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DoorInteractGoal(::Mob& mob);
-
-    MCAPI bool _mobHasExited();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(
@@ -70,12 +62,6 @@ public:
         ::Direction::Type& dirIn,
         ::Direction::Type& dirOut
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -21,20 +21,6 @@ class PersonaTextureComposer {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _findMatchingTextureSet(
-        ::std::vector<::AnimatedTextureContainer>& animatedTextures,
-        ::persona::TextureTintCollection&          textureCollection
-    );
-
-    MCNAPI static int _findOrCreateAnimatedTextureComposer(
-        ::std::vector<::AnimatedTextureContainer>& animatedTextures,
-        ::std::string const&                       skinName,
-        bool                                       isFace,
-        uint                                       width,
-        uint                                       height,
-        int                                        frames
-    );
-
     MCNAPI static ::cg::ImageBuffer const* _loadImage(
         ::PackAccessStrategy const& strategy,
         ::std::string const&        path,

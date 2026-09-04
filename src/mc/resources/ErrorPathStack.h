@@ -18,15 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ErrorPathStack(::std::vector<::std::string>& errorPath, ::std::string const& element);
-
     MCNAPI ~ErrorPathStack();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::std::string>& errorPath, ::std::string const& element);
     // NOLINTEND
 
 public:

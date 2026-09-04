@@ -29,12 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual bool isItemAllowed(::ItemStackBase const&) const /*override*/;
-#else // LL_PLAT_C
     virtual bool isItemAllowed(::ItemStackBase const& item) const /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

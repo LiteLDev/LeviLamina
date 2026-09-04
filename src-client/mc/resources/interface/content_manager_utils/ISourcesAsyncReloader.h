@@ -15,12 +15,6 @@ public:
 
     virtual ::Bedrock::Threading::Async<void> reloadSourcesAsync(bool saveSources) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace ContentManagerUtils

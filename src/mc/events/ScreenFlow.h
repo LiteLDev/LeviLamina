@@ -39,6 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void AddScreen(
         ::std::string const&                                      screenName,
         double                                                    timestamp,
@@ -49,19 +50,8 @@ public:
 
     MCNAPI void PopulateEvent(::Social::Events::Event& event, bool clear);
 
-#ifdef LL_PLAT_C
-    MCNAPI void SetApplicationId(::std::string const& appId);
-#endif
-
     MCNAPI bool ShouldSendEvent() const;
-
-    MCNAPI ~ScreenFlow();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/network/realms/RealmId.h"
 #include "mc/client/network/realms/World.h"
 
@@ -15,7 +15,7 @@ namespace OreUI { struct RealmSlot; }
 
 namespace OreUI {
 
-class RealmSlotsFacet : public ::OreUI::FacetBase<::OreUI::RealmSlotsFacet> {
+class RealmSlotsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmSlotsFacet> {
 public:
     // RealmSlotsFacet inner types define
     enum class FacetStatus : uchar {

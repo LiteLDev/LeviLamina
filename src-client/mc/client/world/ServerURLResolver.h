@@ -32,12 +32,6 @@ public:
 
     MCAPI void $fromString(::RakNet::RakNetGUID& guid, char const* source);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace World

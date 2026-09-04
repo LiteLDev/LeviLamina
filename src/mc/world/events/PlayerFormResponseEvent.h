@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, uint>                        mFormId;
     ::ll::TypedStorage<8, 16, ::Json::Value>              mFormResponse;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerFormResponseEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

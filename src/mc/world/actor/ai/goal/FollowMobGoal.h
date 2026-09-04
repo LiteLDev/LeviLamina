@@ -64,8 +64,6 @@ public:
     );
 
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>> _findCandidateMobs();
-
-    MCAPI void setFilters(::ActorFilterGroup& filters);
     // NOLINTEND
 
 public:
@@ -98,11 +96,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

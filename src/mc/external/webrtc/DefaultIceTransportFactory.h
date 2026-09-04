@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class IceTransportInit; }
 namespace webrtc { class IceTransportInterface; }
-namespace webrtc { struct IceTransportInit; }
 // clang-format on
 
 namespace webrtc {

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/util/WeightedRandom.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/level/levelgen/v2/OverrideState.h"
 
 namespace br::worldgen {
@@ -52,32 +51,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::br::worldgen::SpawnerData inBrightness(short minBrightness, short maxBrightness) const;
-
-    MCAPI ::br::worldgen::SpawnerData inRawBrightness(short minBrightness, short maxBrightness) const;
-
-    MCAPI ::br::worldgen::SpawnerData spawnsOnSurface(::br::worldgen::OverrideState state) const;
-
-    MCAPI ::br::worldgen::SpawnerData spawnsUnderground(::br::worldgen::OverrideState state) const;
-
-    MCAPI ::br::worldgen::SpawnerData spawnsUnderwater(::br::worldgen::OverrideState state) const;
-
-    MCAPI ::br::worldgen::SpawnerData withPopulation(short surfacePop, short undergroundPop) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::SpawnerData
-    make(::ActorDefinitionIdentifier entity, short probabilityWeight, short minCount, short maxCount);
-
-    MCAPI static ::br::worldgen::SpawnerData
     make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
-
-    MCAPI static ::br::worldgen::SpawnerData
-    make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 };
 

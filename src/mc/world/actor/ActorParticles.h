@@ -9,8 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class Block;
-class BlockPos;
 class ILevel;
 class Random;
 class Vec2;
@@ -20,10 +18,6 @@ class Vec3;
 namespace ActorParticles {
 // functions
 // NOLINTBEGIN
-MCAPI uint calculateDustParticleNumberFromFall(float fallDistance);
-
-MCAPI ::Vec3 getDustParticlePosition(::Vec3 const& position, ::AABB const& aabb);
-
 MCAPI void spawnBalloonPopParticles(
     uint                                particleCount,
     ::AABB                              aabb,
@@ -33,14 +27,6 @@ MCAPI void spawnBalloonPopParticles(
 );
 
 MCAPI void spawnDeathParticles(::Vec3 position, ::Vec2 aabbDim, float heightOffset, ::ILevel& level);
-
-MCAPI void spawnDustParticlesFromFalling(
-    uint           particleCount,
-    ::Vec3         position,
-    ::ILevel&      level,
-    ::Block const& block,
-    ::BlockPos     blockPos
-);
 
 MCAPI void spawnParticlesInArea(
     ::ILevel&      level,

@@ -3,36 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/certificates/identity/LastClickedSource.h"
-#include "mc/certificates/identity/edu/Role.h"
-#include "mc/deps/code_builder/CodeBuilderPerformance.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/identity/edu_common/ActiveDirectoryAuthenticationState.h"
-#include "mc/options/EducationServicesEnvironment.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class ADPopupTelemetryEvent;
-class ActiveDirectoryPopup;
-class IActiveDirectoryIdentityTelemetry;
 class IEDUSystems;
-class ResponseVerifier;
 struct AccessTokenInfo;
-struct ServicePack;
 namespace Identity { class IEduAuth; }
-namespace Identity { class IEduSsoStrategy; }
 namespace Identity { struct ActiveDirectoryIdentityParameters; }
 namespace Identity { struct AuthError; }
 namespace Identity { struct AuthToken; }
 namespace Identity { struct EduAuthParameters; }
 namespace Identity { struct ServiceResponse; }
 namespace WebServices::EduSignin { struct SigninResponse; }
-namespace Identity { struct ISettingStorageStrategy; }
 namespace Identity { struct SignOutResult; }
-namespace edu::auth { struct CredentialsObserver; }
 // clang-format on
 
 class ActiveDirectoryIdentity : public ::Bedrock::EnableNonOwnerReferences,
@@ -64,12 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ActiveDirectoryIdentity() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ActiveDirectoryIdentity() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -79,17 +62,6 @@ public:
     MCNAPI ActiveDirectoryIdentity(
         ::Bedrock::NotNullNonOwnerPtr<::IEDUSystems>    eduSystems,
         ::Identity::ActiveDirectoryIdentityParameters&& parameters
-    );
-
-    MCNAPI ActiveDirectoryIdentity(
-        ::Bedrock::NonOwnerPointer<::IEDUSystems>                                                 eduSystems,
-        ::std::optional<::EducationServicesEnvironment>                                           environment,
-        ::std::unique_ptr<::IActiveDirectoryIdentityTelemetry>&&                                  eventing,
-        ::std::unique_ptr<::Identity::ISettingStorageStrategy>&&                                  settings,
-        ::std::unique_ptr<::Identity::IEduSsoStrategy>&&                                          sso,
-        ::std::function<::std::unique_ptr<::Identity::IEduAuth>(::Identity::EduAuthParameters&&)> createAuth,
-        ::std::unique_ptr<::ResponseVerifier>                                                     verifier,
-        ::std::string                                                                             appSessionId
     );
 
     MCNAPI void _authenticateDemoWithService();
@@ -126,71 +98,13 @@ public:
         bool                                                                             isRefresh
     );
 
-    MCNAPI void addObserver(::edu::auth::CredentialsObserver& observer);
-
-    MCNAPI void fireCodeBuilderLoadPerformanceEvent(::CodeBuilderPerformance::Stage stage) const;
-
-    MCNAPI void fireEventADPopupEvent(::ADPopupTelemetryEvent const& popupEvent) const;
-
-    MCNAPI ::std::string const& getAADIdentityToken() const;
-
-    MCNAPI ::ActiveDirectoryAuthenticationState getAuthenticationState() const;
-
-    MCNAPI void getDemo();
-
-    MCNAPI ::std::shared_ptr<::Identity::IEduAuth> getEduAuth() const;
-
-    MCNAPI ::std::string const& getEmail() const;
-
-    MCNAPI ::std::optional<::Identity::AuthToken> getGraphToken() const;
-
     MCNAPI void getIdentity();
 
-    MCNAPI ::std::string const& getName() const;
-
-    MCNAPI ::std::string const& getNickname() const;
-
-    MCNAPI ::std::string const& getOid() const;
-
-    MCNAPI ::std::optional<::ActiveDirectoryPopup> const getPopup() const;
-
-    MCNAPI ::edu::Role getRole() const;
-
-    MCNAPI ::std::string const& getTenantId() const;
-
-    MCNAPI ::std::string const& getTenantType() const;
-
-    MCNAPI void initialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback);
-
-    MCNAPI bool isDemo() const;
-
     MCNAPI void resetAuthenticationState();
-
-    MCNAPI void setAuthenticationStateComplete();
-
-    MCNAPI void setAuthenticationStateDemo();
-
-    MCNAPI void setAuthenticationStateOfferPurchase();
-
-    MCNAPI void setEulaAccepted();
-
-    MCNAPI void setLastClickedSource(::LastClickedSource buttonName);
-
-    MCNAPI void setPurchaseReceipt(::std::string const& receipt, ::std::function<void(bool)> const& callback);
 
     MCNAPI void signOut(::std::function<void(::Identity::SignOutResult)> callback) const;
 
     MCNAPI void tick();
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::std::string const getPublicKeysEndpoint();
-
-    MCNAPI static ::std::string const& getServiceEndpoint();
 #endif
     // NOLINTEND
 
@@ -222,31 +136,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IEDUSystems>    eduSystems,
         ::Identity::ActiveDirectoryIdentityParameters&& parameters
     );
-
-    MCNAPI void* $ctor(
-        ::Bedrock::NonOwnerPointer<::IEDUSystems>                                                 eduSystems,
-        ::std::optional<::EducationServicesEnvironment>                                           environment,
-        ::std::unique_ptr<::IActiveDirectoryIdentityTelemetry>&&                                  eventing,
-        ::std::unique_ptr<::Identity::ISettingStorageStrategy>&&                                  settings,
-        ::std::unique_ptr<::Identity::IEduSsoStrategy>&&                                          sso,
-        ::std::function<::std::unique_ptr<::Identity::IEduAuth>(::Identity::EduAuthParameters&&)> createAuth,
-        ::std::unique_ptr<::ResponseVerifier>                                                     verifier,
-        ::std::string                                                                             appSessionId
-    );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };

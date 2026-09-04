@@ -20,12 +20,6 @@ public:
 
     virtual ~DebugWriter() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace bx

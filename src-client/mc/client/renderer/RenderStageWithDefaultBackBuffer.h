@@ -20,14 +20,6 @@ public:
 
     virtual void postRender(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI void $preRender(::ScreenContext& screenContext);
-
-    MCNAPI void $postRender(::ScreenContext& screenContext);
-    // NOLINTEND
 };
 
 } // namespace mce

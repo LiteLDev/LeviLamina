@@ -10,9 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
-namespace SharedTypes::Legacy { struct RenderOffsetsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -41,22 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RenderOffsetsItemComponent();
-
-    MCAPI explicit RenderOffsetsItemComponent(::SharedTypes::Legacy::RenderOffsetsItemComponent const& data);
-
-#ifdef LL_PLAT_C
-    MCAPI void buildMatrixFromData(
-        ::MatrixStack::MatrixStackRef&            mvs,
-        ::RenderOffsetsItemComponent::Hand        hand,
-        ::RenderOffsetsItemComponent::Perspective perspective
-    ) const;
-#endif
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -67,24 +49,11 @@ public:
     );
 #endif
 
-    MCFOLD static void _fromString(::RenderOffsetsItemComponent&, ::std::string const&);
-
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-#ifdef LL_PLAT_C
-    MCAPI static void buildMatrixFromDefaults(
-        ::MatrixStack::MatrixStackRef&            mvs,
-        ::RenderOffsetsItemComponent::Hand        hand,
-        ::RenderOffsetsItemComponent::Perspective perspective,
-        float                                     textureScale
-    );
-#endif
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
@@ -93,14 +62,6 @@ public:
     MCAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
 
     MCAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::Legacy::RenderOffsetsItemComponent const& data);
     // NOLINTEND
 
 public:

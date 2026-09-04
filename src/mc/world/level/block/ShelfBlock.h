@@ -71,21 +71,21 @@ public:
         /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&,
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
+    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
     virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          bufferAABB,
-        ::AABB&
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::AABB&           bufferAABB
     ) const /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
@@ -108,12 +108,6 @@ public:
     // NOLINTBEGIN
     MCAPI ShelfBlock(::std::string const& nameId, int id);
 
-    MCAPI bool
-    _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type) const;
-
-    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
-    _getPoweredShelfBlockActors(::BlockPos const& pos, ::BlockSource& region) const;
-
     MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
     _getPoweredShelfBlockActorsForDoubleShelf(
         ::BlockSource&    region,
@@ -129,46 +123,10 @@ public:
         ::BlockPos const& shelfRight
     ) const;
 
-    MCAPI ::ShelfBlock::SwapItemResult
-    _getSwapItemWithHandResult(::ShelfBlockActor& shelfActor, int hitSlot, ::Player const& player) const;
-
-    MCAPI bool _isMatchingPoweredShelfInMatchingDirection(
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::BlockPos const&    neighbor
-    ) const;
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void _powerOnAndTryConnectNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void
-    _swapItemWithHand(::ShelfBlockActor& shelfActor, int hitSlot, ::Player& player, ::BlockSource const& region) const;
-
-    MCAPI ::ShelfBlock::SwapItemResult _swapItemsWithHotbar(
-        ::ShelfBlockActor&   shelfActor,
-        int                  shelfSlot,
-        ::Player&            player,
-        int                  inventorySlot,
-        ::BlockSource const& region
-    ) const;
-
-    MCAPI bool _swapItemsWithPoweredShelf(::Player& player, ::BlockPos const& pos, ::BlockSource& region) const;
-
-    MCAPI bool _swapItemsWithUnpoweredShelf(
-        ::Player&          player,
-        ::BlockPos const&  pos,
-        ::BlockSource&     region,
-        ::ShelfBlockActor& blockActor,
-        ::Vec3 const&      blockHit,
-        uchar              hitFace
-    ) const;
-
-    MCAPI void _unpowerAndDisconnectFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void _updatePoweredShelf(::BlockSource& region, ::BlockPos const& pos, bool isPowered) const;
-
-    MCAPI void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
+    _setShelfData(::BlockSource& region, ::BlockPos const& pos, bool powered, ::ShelfBlock::PoweredType type) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -178,7 +136,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool
+    _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type);
+
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+
+    MCAPI static bool _isMatchingPoweredShelfInMatchingDirection(
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockPos const&    neighbor
+    );
+
+    MCAPI static bool _swapItemsWithUnpoweredShelf(
+        ::Player&          player,
+        ::BlockPos const&  pos,
+        ::BlockSource&     region,
+        ::ShelfBlockActor& blockActor,
+        ::Vec3 const&      blockHit,
+        uchar              hitFace
+    );
+
+    MCAPI static void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos);
 
 #ifdef LL_PLAT_C
     MCAPI static ::ShelfBlock::SlotState
@@ -195,7 +173,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -204,20 +182,20 @@ public:
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&,
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCFOLD ::AABB const& $getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          bufferAABB,
-        ::AABB&
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::AABB&           bufferAABB
     ) const;
 
     MCFOLD bool $isInteractiveBlock() const;

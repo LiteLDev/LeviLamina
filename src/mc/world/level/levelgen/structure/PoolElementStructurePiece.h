@@ -93,34 +93,14 @@ public:
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
 
     virtual bool _needsPostProcessing(::BlockSource& region);
+
+    virtual ~PoolElementStructurePiece() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void _fillWithSupportBlock(
-        ::BlockPos const&    startPos,
-        ::BlockSource&       region,
-        ::BoundingBox const& chunkBB,
-        ::Block const&       blockToFill,
-        ::Random&            random
-    );
-
-    MCAPI void _stabilizeBeard(::BlockPos const& startPos, ::BlockSource& region, ::Block const& blockToFill);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::StructurePoolElement const& element,
-        ::BlockPos                    position,
-        ::Rotation                    rotation,
-        int                           genDepth,
-        ::JigsawJunction&             junction,
-        ::BoundingBox const&          box,
-        ::BlockPos                    refPos
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

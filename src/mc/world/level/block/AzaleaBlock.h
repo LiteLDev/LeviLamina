@@ -16,7 +16,6 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
 // clang-format on
 
 class AzaleaBlock : public ::FoliageBlock {
@@ -38,7 +37,8 @@ public:
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
 
@@ -51,8 +51,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AzaleaBlock(::std::string const& nameId, int id);
-
-    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
@@ -74,7 +72,7 @@ public:
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 

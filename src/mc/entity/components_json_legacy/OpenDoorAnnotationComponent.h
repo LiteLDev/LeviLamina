@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class EntityContext;
 class Mob;
@@ -23,22 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OpenDoorAnnotationComponent();
-
     MCAPI void _cleanUp(::Mob& mob);
 
-    MCAPI void _tryToggleDoorState(::Block const& block, ::Mob& mob, ::BlockPos doorPos) const;
+    MCAPI void _tryToggleDoorState(::Block const& block, ::Mob& mob, ::BlockPos const doorPos) const;
 
     MCAPI void checkPath(::Mob& mob);
 
-    MCAPI void initFromDefinition(::Actor& owner);
-
     MCAPI void onComponentRemoved(::EntityContext& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

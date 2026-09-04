@@ -18,12 +18,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

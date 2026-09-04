@@ -23,14 +23,6 @@ public:
     FileStats& operator=(FileStats const&);
     FileStats(FileStats const&);
     FileStats();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI uint64 getAllocatedUsedFileSystemSize() const;
-
-    MCNAPI void setFileSystemUsedSize(int64 newSize, int64 newAllocatedSize);
-    // NOLINTEND
 };
 
 } // namespace Core

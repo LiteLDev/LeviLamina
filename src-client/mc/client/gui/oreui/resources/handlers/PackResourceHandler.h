@@ -51,20 +51,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackResourceHandler(
-        ::ResourcePackManager const&        packManager,
-        ::Gameface::TemporaryTextureHolder& temporaryTextureHolder
-    );
-
     MCAPI ::std::optional<::ResourceLocation>
     _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
     // NOLINTEND
 
 public:

@@ -34,7 +34,6 @@ namespace renoir { struct PipelineState; }
 namespace renoir { struct RendererCaps; }
 namespace renoir { struct Sampler2D; }
 namespace renoir { struct Sampler2DObject; }
-namespace renoir { struct SetPipelineStateCmd; }
 namespace renoir { struct Texture2D; }
 namespace renoir { struct Texture2DObject; }
 namespace renoir { struct TextureObject; }
@@ -68,7 +67,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 184, ::dragon::mesh::VertexFormat> dragonFormat;
+            ::ll::TypedStorage<8, 200, ::dragon::mesh::VertexFormat> dragonFormat;
             ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>>
                 dragonVertexBuffer;
             // NOLINTEND
@@ -103,36 +102,11 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
         ::ll::TypedStorage<
             8,
-            216,
+            232,
             ::std::variant<
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonVertexBuffer,
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonInstanceData>>
             mDragonStorage;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        VertexBuffer& operator=(VertexBuffer const&);
-        VertexBuffer();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI VertexBuffer(::OreUI::RenderDragonRenderingBackend::VertexBuffer const&);
-
-        MCAPI ~VertexBuffer();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::RenderDragonRenderingBackend::VertexBuffer const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -147,18 +121,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
         ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>>
             dragonIndexBuffer;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~IndexBuffer();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -205,7 +167,7 @@ public:
         mConstantBuffers;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::Gameface::IRenderingBackendTextureStorage>>> mTextures;
     ::ll::TypedStorage<8, 144, ::mce::framebuilder::GamefacePipelineState> mCurrentPipelineState;
-    ::ll::TypedStorage<8, 464, ::mce::framebuilder::GamefaceBatchDrawMesh> mMesh;
+    ::ll::TypedStorage<8, 424, ::mce::framebuilder::GamefaceBatchDrawMesh> mMesh;
     ::ll::TypedStorage<8, 24, ::mce::framebuilder::GamefaceBatchDraw>      mBatch;
     // NOLINTEND
 
@@ -218,7 +180,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RenderDragonRenderingBackend() /*override*/;
+    virtual ~RenderDragonRenderingBackend() /*override*/ = default;
 
     virtual void initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&) /*override*/;
 
@@ -232,9 +194,9 @@ public:
         void*                                userObject,
         ::renoir::Texture2D const&           description,
         ::renoir::Texture2DObject            object,
-        void*                                dsDescription,
-        ::renoir::DepthStencilTexture const& dsObject,
-        ::renoir::DepthStencilTextureObject
+        void*                                depthStencil,
+        ::renoir::DepthStencilTexture const& dsDescription,
+        ::renoir::DepthStencilTextureObject  dsObject
     ) /*override*/;
 
     virtual void WrapUserTexture(
@@ -340,8 +302,6 @@ public:
     MCAPI void _drawIndexedInstanced(uint indexCount, uint indexOffset, uint instanceCount, uint instanceOffset);
 
     MCAPI void _flush();
-
-    MCAPI void _setPipelineState(::renoir::SetPipelineStateCmd const& cmd);
     // NOLINTEND
 
 public:
@@ -349,12 +309,6 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::OreUI::FrameDebugData& frameDebugData, ::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -372,9 +326,9 @@ public:
         void*                                userObject,
         ::renoir::Texture2D const&           description,
         ::renoir::Texture2DObject            object,
-        void*                                dsDescription,
-        ::renoir::DepthStencilTexture const& dsObject,
-        ::renoir::DepthStencilTextureObject
+        void*                                depthStencil,
+        ::renoir::DepthStencilTexture const& dsDescription,
+        ::renoir::DepthStencilTextureObject  dsObject
     );
 
     MCAPI void
@@ -457,12 +411,6 @@ public:
     );
 
     MCAPI void $EndCommands();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

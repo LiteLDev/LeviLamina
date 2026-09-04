@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ConditionalBandwidthOptimizationComponent;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -27,10 +25,6 @@ public:
     MCAPI void addConditionalBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
 
     MCAPI void addDefaultBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
-
-    MCAPI void initialize(::EntityContext&, ::ConditionalBandwidthOptimizationComponent& component) const;
-
-    MCAPI ~ConditionalBandwidthOptimizationDefinition();
     // NOLINTEND
 
 public:
@@ -41,11 +35,5 @@ public:
             ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ConditionalBandwidthOptimizationDefinition>>&
             root
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

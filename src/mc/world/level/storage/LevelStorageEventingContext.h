@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mLastOpenedWithVersion;
     ::ll::TypedStorage<8, 8, int64>          mLastSavedTime;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~LevelStorageEventingContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

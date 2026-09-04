@@ -29,13 +29,7 @@ MCNAPI void extractPackedSnapshot(
     bool                         removeWhenMissing
 );
 
-MCNAPI ::MovementDataExtractionUtility::Extractors const& getOrCreateInitialRewindExtractors();
-
 MCNAPI ::MovementDataExtractionUtility::Extractors const& getOrCreateSnapshotExtractors();
-
-MCNAPI ::gsl::not_null<
-    void (*)(::EntityRegistry&, ::EntityRegistry&, ::StrictEntityContext const&, ::StrictEntityContext const&, bool)>
-getSnapshotUnpacker();
 
 MCNAPI void tryStoreImmutableDataSnapshotOnEntity(::EntityContext& liveEntity);
 

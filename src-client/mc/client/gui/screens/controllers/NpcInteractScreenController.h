@@ -19,7 +19,6 @@ class UIPropertyBag;
 struct ActorUniqueID;
 struct INpcDialogueData;
 struct NpcGUIOffset;
-struct TextEditScreenEventData;
 namespace Json { class Value; }
 // clang-format on
 
@@ -61,18 +60,6 @@ public:
         ::ll::TypedStorage<8, 104, ::DeferredTextObject>                            text;
         ::ll::TypedStorage<1, 1, ::NpcInteractScreenController::NpcTextErrorStatus> state;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~NpcActionEditData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -107,7 +94,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NpcInteractScreenController() /*override*/;
+    virtual ~NpcInteractScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -135,21 +122,11 @@ public:
 
     MCAPI void _addNewDeferredButtonTexts(uint64 actionIndex);
 
-    MCAPI ::std::string _getDialogText() const;
-
-    MCFOLD ::std::string _getText(::TextEditScreenEventData& textEditEvent);
-
     MCAPI void _handleTextChanged(::NpcInteractScreenController::NpcTextEdit edit, int index);
 
     MCAPI bool _isAddActionAllowed();
 
-    MCAPI bool _isCommandEditAllowed();
-
     MCAPI ::ui::ViewRequest _leaveFrom(::NpcInteractScreenController::Section fromSection);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
 
     MCAPI void _saveEditsToServer();
     // NOLINTEND
@@ -157,7 +134,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void _bagVecs(::UIPropertyBag& bag, ::NpcGUIOffset const& offsets);
+    MCAPI static void _bagVecs(::UIPropertyBag& bag, ::NpcGUIOffset const& offsets);
     // NOLINTEND
 
 public:
@@ -171,12 +148,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
@@ -185,22 +156,12 @@ public:
 
     MCAPI void $onCreation();
 
-    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData);
 
     MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool);
 
     MCAPI bool $_isStillValid() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

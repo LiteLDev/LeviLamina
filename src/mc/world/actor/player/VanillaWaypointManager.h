@@ -23,13 +23,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void update(::Player& self, ::ServerLocatorBar& serverLocatorBar, bool isLocatorBarEnabled);
-
-    MCAPI ~VanillaWaypointManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

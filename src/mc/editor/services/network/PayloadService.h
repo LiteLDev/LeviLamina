@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/selection/PayloadServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
@@ -59,18 +59,6 @@ public:
         CachedPacket& operator=(CachedPacket const&);
         CachedPacket(CachedPacket const&);
         CachedPacket();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CachedPacket();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PayloadFactory {
@@ -116,18 +104,6 @@ public:
         PayloadInfo& operator=(PayloadInfo const&);
         PayloadInfo(PayloadInfo const&);
         PayloadInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PayloadInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -151,7 +127,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PayloadService() /*override*/;
+    virtual ~PayloadService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -225,18 +201,10 @@ public:
         bool                                 collectMetrics
     );
 
-    MCNAPI ::Editor::Network::PayloadService::PayloadInfo* _createPayloadInfo(
-        char const*                                                              payloadName,
-        ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
-    );
-
-    MCNAPI ::std::shared_ptr<::Editor::Network::INetworkPayload>
-    _load(::std::string_view payloadName, ::std::string_view payloadRawData);
-
     MCNAPI ::Scripting::Result_deprecated<::EditorNetworkPacket> _populatePacket(
-        ::Editor::Network::INetworkPayload*           payload,
-        ::Editor::Network::PayloadService::SendTarget target,
-        ::Editor::Network::PayloadMetrics*            metrics
+        ::Editor::Network::INetworkPayload*                 payload,
+        ::Editor::Network::PayloadService::SendTarget const target,
+        ::Editor::Network::PayloadMetrics*                  metrics
     );
 
     MCNAPI void _sendCachedPacketToTarget(::Editor::Network::PayloadService::CachedPacket& packet);
@@ -245,12 +213,6 @@ public:
         ::Editor::Network::INetworkPayload&           payload,
         ::Editor::Network::PayloadService::SendTarget target,
         ::Editor::Network::PayloadMetrics*            metrics
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _sendToClientTargets(
-        ::std::vector<::Actor*>            actorList,
-        ::EditorNetworkPacket&             outPacket,
-        ::Editor::Network::PayloadMetrics* metrics
     );
 
     MCNAPI ::Scripting::Result_deprecated<void> _sendToServer(
@@ -277,12 +239,6 @@ public:
         bool                                 isClientSide,
         bool                                 collectMetrics
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -341,14 +297,6 @@ public:
     $_listenFor(char const* payloadName, ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPayloadServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

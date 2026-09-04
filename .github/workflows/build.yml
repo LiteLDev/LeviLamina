@@ -51,7 +51,10 @@ jobs:
           restore-keys: |
             xmake-
 
-      - uses: microsoft/setup-msbuild@v3
+      - name: Setup LLVM
+        uses: ZhongRuoyu/setup-llvm@v0
+        with:
+          llvm-version: 22
 
       - run: |
           xmake repo -u
@@ -87,7 +90,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: matbour/setup-sentry-cli@v2
+      - uses: matbour/setup-sentry-cli@v3
         with:
           token: ${{ SECRETS.SENTRY_TOKEN }}
           organization: ${{ SECRETS.SENTRY_ORG }}

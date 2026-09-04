@@ -51,16 +51,6 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
-
-    MCNAPI static void** $vftableForConnector();
-    // NOLINTEND
 };
 
 } // namespace PublisherItemComponent

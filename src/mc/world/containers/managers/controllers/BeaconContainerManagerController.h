@@ -59,12 +59,7 @@ public:
     // NOLINTBEGIN
     virtual ~BeaconContainerManagerController() /*override*/ = default;
 
-#ifdef LL_PLAT_S
-    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
-#else // LL_PLAT_C
-    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
-#endif
-
+    virtual bool handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
     // NOLINTEND
 
 public:
@@ -108,7 +103,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 #endif
 
 

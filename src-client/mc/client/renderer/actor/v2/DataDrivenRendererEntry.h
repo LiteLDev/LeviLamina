@@ -6,13 +6,7 @@ struct DataDrivenRendererEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkca4365;
-    ::ll::UntypedStorage<4, 4> mUnk8e153e;
+    ::ll::TypedStorage<4, 4, uint> mDataDrivenRendererOffset;
+    ::ll::TypedStorage<4, 4, uint> mCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRendererEntry& operator=(DataDrivenRendererEntry const&);
-    DataDrivenRendererEntry(DataDrivenRendererEntry const&);
-    DataDrivenRendererEntry();
 };

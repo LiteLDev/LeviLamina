@@ -4,18 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct ProjectRegionManagerChunkProcessingState; }
-namespace Editor::ScriptModule { class ScriptProjectRegionExtents; }
-namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -49,23 +45,6 @@ public:
 
     MCNAPI void _handleChunkProcessingChangeEvent(
         ::Scripting::Result_deprecated<::Editor::ProjectRegionManagerChunkProcessingState> const& state
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::Editor::ProjectRegionManagerChunkProcessingState, ::Scripting::Error>>
-    pruneRegion(
-        ::std::string const&                                                     dimensionId,
-        ::std::vector<::Editor::ScriptModule::ScriptProjectRegionExtents> const& boundsList,
-        ::Scripting::ScriptObjectFactory&                                        factory
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::Editor::ProjectRegionManagerChunkProcessingState, ::Scripting::Error>>
-    regenerateRegion(
-        ::std::string const&                                                     dimensionId,
-        ::std::vector<::Editor::ScriptModule::ScriptProjectRegionExtents> const& boundsList,
-        bool                                                                     areBoundsExcluded,
-        ::Scripting::ScriptObjectFactory&                                        factory
     );
 
     MCNAPI ~ScriptProjectRegionManagerService();

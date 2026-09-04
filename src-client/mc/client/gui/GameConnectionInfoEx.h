@@ -26,8 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI GameConnectionInfoEx(::GameConnectionInfoEx const&);
 
-    MCAPI ::GameConnectionInfoEx& operator=(::GameConnectionInfoEx&&);
-
     MCAPI ~GameConnectionInfoEx();
     // NOLINTEND
 

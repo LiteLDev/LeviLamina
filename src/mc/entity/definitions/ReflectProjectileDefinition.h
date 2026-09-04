@@ -31,8 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _addProjectileToReflect(::std::string const& projectileName);
-
-    MCAPI ~ReflectProjectileDefinition();
     // NOLINTEND
 
 public:
@@ -41,11 +39,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ReflectProjectileDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

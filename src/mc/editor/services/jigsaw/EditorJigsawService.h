@@ -4,20 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/JigsawJsonType.h"
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorJigsawServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class FeatureRegistry;
-class IStructureTemplateManager;
 class JigsawEditorData;
 class JigsawStructureRegistry;
-class ResourcePackManager;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class IEditorPlayer; }
@@ -50,27 +46,8 @@ public:
     public:
         // prevent constructor by default
         TemplatePoolData& operator=(TemplatePoolData const&);
+        TemplatePoolData(TemplatePoolData const&);
         TemplatePoolData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI TemplatePoolData(::Editor::Services::EditorJigsawService::TemplatePoolData const&);
-
-        MCNAPI ~TemplatePoolData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Editor::Services::EditorJigsawService::TemplatePoolData const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -95,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorJigsawService() /*override*/;
+    virtual ~EditorJigsawService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -154,25 +131,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorJigsawService(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI void _bootstrapJigsawRegistry(
-        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
-        ::FeatureRegistry&                                         featureRegistry,
-        ::JigsawStructureRegistry&                                 jigsawStructureRegistry
-    );
-
-    MCNAPI void _loadBehaviorPackJigsawRegistries(::ResourcePackManager& packManager);
-
-    MCNAPI void _loadWorldJigsawRegistries();
-
-    MCNAPI void _saveFile(
-        ::Editor::Services::EditorRegistryFile& regFile,
-        ::Core::PathBuffer<::std::string>       jigsawPath,
-        ::Editor::Services::JigsawJsonType      fileType,
-        ::std::vector<::std::string>&           outErrors
-    );
-
-    MCNAPI void _saveJigsawRegistryFiles(::std::string const& registryName);
-
     MCNAPI bool
     _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);
     // NOLINTEND
@@ -181,12 +139,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -243,14 +195,6 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEditorJigsawServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

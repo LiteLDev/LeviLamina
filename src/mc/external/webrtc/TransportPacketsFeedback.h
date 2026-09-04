@@ -15,6 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkc96d46;
     ::ll::UntypedStorage<8, 8>  mUnkafc205;
+    ::ll::UntypedStorage<1, 1>  mUnk8435a1;
     ::ll::UntypedStorage<8, 24> mUnk340868;
     ::ll::UntypedStorage<8, 24> mUnke454ef;
     // NOLINTEND
@@ -26,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::webrtc::PacketResult> PacketsWithFeedback() const;
-
     MCNAPI ::std::vector<::webrtc::PacketResult> ReceivedWithSendInfo() const;
 
     MCNAPI ::std::vector<::webrtc::PacketResult> SortedByReceiveTime() const;

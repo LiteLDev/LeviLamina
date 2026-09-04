@@ -12,7 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class DataChannelInterface; }
 namespace webrtc { struct DataBuffer; }
 // clang-format on
@@ -33,7 +33,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnkd0c200;
         ::ll::UntypedStorage<8, 64> mUnk7022e3;
-        ::ll::UntypedStorage<8, 40> mUnk193d2a;
+        ::ll::UntypedStorage<8, 40> mUnk8ff5a6;
         ::ll::UntypedStorage<4, 4>  mUnkea7403;
         ::ll::UntypedStorage<8, 8>  mUnk6efd8f;
         ::ll::UntypedStorage<8, 8>  mUnk6bd75c;
@@ -48,7 +48,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~DataChannel() /*override*/;
+        virtual ~DataChannel() /*override*/ = default;
 
         virtual void OnStateChange() /*override*/;
 
@@ -70,9 +70,7 @@ public:
 
         MCNAPI void _trySend();
 
-        MCNAPI void _updateState();
-
-        MCNAPI void send(::rtc::CopyOnWriteBuffer buffer);
+        MCNAPI void send(::webrtc::CopyOnWriteBuffer buffer);
 
         MCNAPI void setChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> channel);
         // NOLINTEND
@@ -88,12 +86,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnStateChange();
@@ -106,19 +98,12 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftableForContextProxy();
-
-        MCNAPI static void** $vftableForDataChannelObserver();
-        // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnkc5324e;
     ::ll::UntypedStorage<8, 120> mUnkd1700a;
     ::ll::UntypedStorage<8, 64>  mUnk9b0d07;
     ::ll::UntypedStorage<8, 24>  mUnk236963;
@@ -140,11 +125,7 @@ public:
         ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose
     );
 
-    MCNAPI void _onOrderedPacket(uchar const* data, uint64 size);
-
     MCNAPI void _sendFragment(uchar header, uchar const* payload, uint64 payloadSize, ::NetherNet::ESendType type);
-
-    MCNAPI ::std::optional<uint64> pop(uchar* destination, uint64 size);
     // NOLINTEND
 
 public:
@@ -152,12 +133,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::NetherNet::ContextProxy const& ctx, ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

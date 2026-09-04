@@ -25,13 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PageIndicatorGridComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PageIndicatorGridComponent() /*override*/;
+    virtual ~PageIndicatorGridComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -41,9 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PageIndicatorGridComponent(::UIControl& owner);
-
-    MCAPI void _findCorrespondingDescendant(::std::shared_ptr<::UIControl> child, bool isSelected, uint64& countFound);
+    MCAPI void
+    _findCorrespondingDescendant(::std::shared_ptr<::UIControl> child, bool const isSelected, uint64& countFound);
 
     MCAPI void _registerWithManager();
 
@@ -52,24 +47,6 @@ public:
     MCAPI void notifyGridCompletedConstruction(uint64);
 
     MCAPI void notifySubPageChanged(uint64 newPage);
-
-    MCAPI void setTarget(::std::shared_ptr<::UIControl> target);
-
-    MCFOLD void setTargetWhenIsCurrentPage(::std::string const& targetName);
-
-    MCFOLD void setTargetWhenNotCurrentPage(::std::string const& targetName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

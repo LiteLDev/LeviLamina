@@ -20,10 +20,4 @@ public:
     virtual void
     execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };

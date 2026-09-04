@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct FrameRenderObject;
 struct ParticleTypeRenderObject;
 namespace mce { class MaterialPtr; }
 // clang-format on
@@ -22,31 +21,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleLayerRenderObject();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleLayerRenderObject(
-        ::LinearAllocator<::FrameRenderObject>& alloc,
-        ::mce::MaterialPtr const*               layerMaterial,
-        uint64                                  particleCount
-    );
-
     MCAPI ~ParticleLayerRenderObject();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::LinearAllocator<::FrameRenderObject>& alloc, ::mce::MaterialPtr const* layerMaterial, uint64 particleCount);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

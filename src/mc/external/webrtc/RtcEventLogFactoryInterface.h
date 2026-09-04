@@ -18,12 +18,6 @@ public:
 
     virtual ::std::unique_ptr<::webrtc::RtcEventLog> Create(::webrtc::Environment const&) const = 0;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace webrtc

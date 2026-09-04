@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/input/ButtonIndiciesEnum.h"
 #include "mc/platform/UUID.h"
 
 // auto generated forward declare list
@@ -57,19 +56,9 @@ public:
 
     MCAPI void _registerBindings(::MinecraftScreenController& mScreen);
 
-    MCAPI void _registerEvents(::MinecraftScreenController& mScreen);
-
     MCAPI void _setHoverIndex(int hoverIndex);
 
-    MCAPI void clearHover();
-
-    MCAPI int getEmoteWheelIndexAsUserFacingValue(::ButtonIndiciesEnum const& buttonIndex) const;
-
-    MCFOLD int getInvalidEmoteIndex() const;
-
     MCAPI void setOnEmoteSlotSelected(::std::function<void(int)> callback);
-
-    MCFOLD void update(::ui::DirtyFlag& dirtyFlags);
 
     MCAPI ~EmoteWheelCommonModel();
     // NOLINTEND
@@ -89,6 +78,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

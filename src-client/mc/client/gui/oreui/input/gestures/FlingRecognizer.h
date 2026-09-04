@@ -34,8 +34,9 @@ public:
 
     virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches) /*override*/;
 
-    virtual void
-    onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&) /*override*/;
+    virtual void onTouchesMoved(
+        ::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches
+    ) /*override*/;
 
     virtual void onTouchesEnded(
         ::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches
@@ -49,18 +50,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 
-    MCAPI void $onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&);
+    MCAPI void
+    $onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
     MCAPI void
     $onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
     MCFOLD void $onGestureRecognized();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

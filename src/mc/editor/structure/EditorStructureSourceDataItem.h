@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/structure/StructureSource.h"
-
 // auto generated forward declare list
 // clang-format off
 class LevelStorage;
@@ -51,10 +48,6 @@ public:
 
     MCNAPI ::std::string getStructureNamespace() const;
 
-    MCNAPI ::Editor::EditorStructureTemplate const* getStructureTemplate() const;
-
-    MCNAPI bool isSource(::Editor::StructureSource const& source) const;
-
     MCNAPI ::std::optional<::Editor::EditorStructureTemplate>
     load(::ResourcePackStack const& packStack, ::LevelStorage& levelStorage) const;
 
@@ -74,8 +67,6 @@ public:
 
     MCNAPI bool
     verifyResource(::mce::UUID const& guid, ::ResourcePackStack const& packStack, ::LevelStorage& levelStorage);
-
-    MCNAPI ~EditorStructureSourceDataItem();
     // NOLINTEND
 
 public:
@@ -88,12 +79,6 @@ public:
             ::Editor::EditorLevelStructureData,
             ::Editor::EditorProjectStructureData> const& dataSource
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -16,7 +16,6 @@
 class ResourceLoadManager;
 class ResourcePackManager;
 struct PackIdVersion;
-namespace mce { class MaterialPtr; }
 namespace mce { class RenderMaterialInfo; }
 namespace mce { class ShaderGroup; }
 // clang-format on
@@ -57,11 +56,6 @@ public:
     MCAPI bool
     _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
 
-    MCAPI ::mce::MaterialPtr getMaterial(::HashedString const& name);
-
-    MCFOLD ::std::unordered_map<::HashedString, ::std::shared_ptr<::mce::RenderMaterialInfo>> const&
-    getMaterialMap() const;
-
     MCAPI bool loadList(
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>       shaderGroup,
         ::ResourceLocation const&                            listPath,
@@ -71,8 +65,6 @@ public:
     );
 
     MCAPI void reset();
-
-    MCAPI void setShaderGroup(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const& shaderGroup);
     // NOLINTEND
 
 public:
@@ -103,14 +95,6 @@ public:
     MCAPI ::mce::RenderMaterialInfo& $getMaterialInfo(::HashedString const& name);
 
     MCAPI void $clearMaterial(::HashedString const& name);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForRenderMaterialGroupBase();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };
 

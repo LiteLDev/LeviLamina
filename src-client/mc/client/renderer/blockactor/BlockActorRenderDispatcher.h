@@ -13,7 +13,6 @@ class ActorResourceDefinitionGroup;
 class BaseActorRenderContext;
 class BaseGameVersion;
 class Block;
-class BlockActor;
 class BlockActorRenderer;
 class BlockPos;
 class BlockSource;
@@ -21,8 +20,7 @@ class BlockTessellator;
 class Experiments;
 class Font;
 class GeometryGroup;
-class HashedString;
-class ItemStack;
+class IVanillaRenderBlockActorComponent;
 class ResourceLoadManager;
 class ResourcePackManager;
 class Tessellator;
@@ -60,21 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockActorRenderDispatcher();
-
-    MCAPI void clearEntityRenderers();
-
     MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
-        ::Font&              font,
-        ::Tessellator&       tessellator,
-        ::BlockActor&        entity,
-        ::std::string const& str,
-        ::Vec3               camTargetPos
+        ::Font&                              font,
+        ::Tessellator&                       tessellator,
+        ::IVanillaRenderBlockActorComponent& renderComponent,
+        ::std::string const&                 str,
+        ::Vec3                               camTargetPos
     );
-
-    MCAPI ::BlockActorRenderer* getRenderer(::BlockActor& entity);
-
-    MCAPI ::BlockActorRenderer* getRenderer(::BlockActorRendererId rendererId);
 
     MCAPI void initializeBlockEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
@@ -87,11 +77,6 @@ public:
         ::Experiments const&                                                       experiments
     );
 
-    MCAPI void registerAdditionalBlockActorRenderers(
-        ::BlockActorRendererId const&           id,
-        ::std::unique_ptr<::BlockActorRenderer> blockActorRenderer
-    );
-
     MCAPI void registerGameSpecificBlockActorRendererCallback(
         ::std::function<void(
             ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const&,
@@ -102,7 +87,7 @@ public:
     MCAPI void render(
         ::BaseActorRenderContext&                 entityRenderContext,
         ::BlockSource&                            renderSource,
-        ::BlockActor&                             e,
+        ::IVanillaRenderBlockActorComponent&      renderComponent,
         ::Block const&                            block,
         bool                                      renderAlphaLayer,
         ::mce::MaterialPtr const&                 forcedMat,
@@ -114,7 +99,7 @@ public:
     MCAPI void render(
         ::BaseActorRenderContext&                 entityRenderContext,
         ::BlockSource&                            renderSource,
-        ::BlockActor&                             e,
+        ::IVanillaRenderBlockActorComponent&      renderComponent,
         ::Block const&                            block,
         ::Vec3 const&                             renderPos,
         ::BlockPos const&                         worldPos,
@@ -124,38 +109,5 @@ public:
         int                                       breakingAmount,
         ::std::optional<::dragon::RenderMetadata> renderMetadata
     );
-
-    MCAPI void renderBanner(
-        ::BaseActorRenderContext&       entityRenderContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::ItemStack const&              instance,
-        bool                            longPole
-    );
-
-    MCAPI void renderShulkerBox(
-        ::BaseActorRenderContext&       entityRenderContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::ItemStack const&              instance
-    );
-
-    MCAPI void renderSkull(
-        ::BaseActorRenderContext&       entityRenderContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Vec3 const&                   pos,
-        int                             face,
-        float                           rot,
-        ::HashedString const&           hashedString,
-        ::mce::MaterialPtr const*       forcedMat,
-        ::mce::ClientTexture const*     forceTex,
-        int                             breakingAmount,
-        float                           animationValue,
-        bool                            isGlint
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

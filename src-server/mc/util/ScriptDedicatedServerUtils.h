@@ -90,10 +90,4 @@ public:
 
     MCNAPI bool $reloadCDNConfig();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

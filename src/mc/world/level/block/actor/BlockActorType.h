@@ -62,5 +62,6 @@ enum class BlockActorType : uchar {
     Shelf                 = 59,
     CopperGolemStatue     = 60,
     PotentSulfurBlock     = 61,
-    Count                 = 62,
+    DataDriven            = 62,
+    Count                 = 63,
 };

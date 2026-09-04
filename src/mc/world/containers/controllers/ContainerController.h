@@ -26,47 +26,20 @@ public:
     ::ll::TypedStorage<1, 1, bool>                               mDrop;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ContainerController();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ContainerController() = default;
 
-#ifdef LL_PLAT_S
-    virtual ::ItemInstance const& getRecipeItem(int) const;
-#else // LL_PLAT_C
     virtual ::ItemInstance const& getRecipeItem(int slot) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool canRemove(int, int) const;
-#else // LL_PLAT_C
     virtual bool canRemove(int slot, int removeCount) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool isItemAllowed(::ItemStackBase const&) const;
-#else // LL_PLAT_C
     virtual bool isItemAllowed(::ItemStackBase const& item) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
-#else // LL_PLAT_C
     virtual bool isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual int getBackgroundStyle(int, bool) const;
-#else // LL_PLAT_C
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const;
-#endif
 
 #ifdef LL_PLAT_S
     virtual ::ItemSetType
@@ -93,15 +66,18 @@ public:
     virtual bool _canRemove(int modelSlot, int removeCount) const;
 #endif
 
+#ifdef LL_PLAT_S
     virtual void _onItemChanged(int);
+#else // LL_PLAT_C
+    virtual void _onItemChanged(int modelSlot);
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ContainerController(::std::weak_ptr<::ContainerModel> containerModel, bool shouldDrop);
-
     MCAPI int _addItem(::ContainerScreenContext const& context, int modelSlot, int addCount);
 
     MCAPI ::ItemAddType _canAdd(
@@ -128,21 +104,14 @@ public:
     MCAPI int
     getAvailableAddCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& fillItem) const;
 
-    MCAPI ::std::weak_ptr<::ContainerModel> getContainerModel() const;
-
-    MCAPI ::std::string const& getContainerName() const;
-
-    MCAPI int getContainerSize() const;
-
-    MCFOLD ::ItemInstance const& getItemInstance(int slot) const;
+    MCAPI int getAvailableAutoPlaceCount(
+        ::ContainerScreenContext const& context,
+        int                             slot,
+        ::ItemStackBase const&          fillItem,
+        bool                            allowClobber
+    ) const;
 
     MCAPI ::ItemStack const& getItemStack(int slot) const;
-
-    MCAPI ::ItemStackBase const& getItemStackBase(int slot) const;
-
-    MCAPI bool isExpandableItemFiltered(int slot) const;
-
-    MCAPI bool isItemInstanceBased() const;
 
     MCAPI ::ItemStack removeItem(int slot, int removeCount);
 
@@ -153,14 +122,6 @@ public:
         ::ItemPlaceType                 type,
         bool                            allowSwap
     );
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::weak_ptr<::ContainerModel> containerModel, bool shouldDrop);
 #endif
     // NOLINTEND
 
@@ -190,7 +151,7 @@ public:
 
     MCAPI bool $_canRemove(int modelSlot, int removeCount) const;
 
-    MCFOLD void $_onItemChanged(int);
+    MCFOLD void $_onItemChanged(int modelSlot);
 #endif
 
 

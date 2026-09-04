@@ -19,8 +19,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
 
-    MCAPI static ::std::string_view const& TITLE();
-
     MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };

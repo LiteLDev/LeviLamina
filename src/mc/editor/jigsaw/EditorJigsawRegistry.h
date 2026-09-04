@@ -34,8 +34,6 @@ public:
         ::std::unique_ptr<::JigsawStructureRegistry>                                                          registry,
         ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> jigsawJson
     );
-
-    MCNAPI ~EditorJigsawRegistry();
     // NOLINTEND
 
 public:
@@ -45,12 +43,6 @@ public:
         ::std::unique_ptr<::JigsawStructureRegistry>                                                          registry,
         ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> jigsawJson
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

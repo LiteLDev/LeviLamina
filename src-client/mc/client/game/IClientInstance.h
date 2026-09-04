@@ -16,7 +16,6 @@
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/store/StoreErrorCodes.h"
 #include "mc/client/util/ClipboardProxy.h"
-#include "mc/client/world/JoinServerWorldResult.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/Async.h"
@@ -57,6 +56,7 @@ class CameraRegistry;
 class ClientHitDetectCoordinator;
 class ClientInputHandler;
 class ClientInstanceEventCoordinator;
+class ClientLevel;
 class ClientMoveInputHandler;
 class ClientNetworkEventCoordinator;
 class ClientNetworkSystem;
@@ -91,6 +91,7 @@ class IGameConnectionListener;
 class IMinecraftEventing;
 class IMinecraftGame;
 class IOptionRegistry;
+class IReadWriteOptions;
 class IResourcePackRepository;
 class ISceneStack;
 class ITTSEventManager;
@@ -111,7 +112,6 @@ class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
 class MobEffectsLayout;
-class MultiPlayerLevel;
 class MusicManager;
 class Option;
 class OptionRegistry;
@@ -124,7 +124,6 @@ class Player;
 class PlayerAuthentication;
 class PlayerReportHandler;
 class ProfanityContext;
-class ProgressHandler;
 class ResourcePackManager;
 class SceneFactory;
 class ScreenContext;
@@ -145,13 +144,12 @@ class WeakEntityRef;
 class WorldTransferAgent;
 struct ActorUniqueID;
 struct ClientInstanceInitArguments;
+struct ConnectionContextInfo;
 struct DisconnectionScreenParams;
-struct ExperienceConnectionData;
 struct ListenerState;
 struct LocalPlayerChangedConnector;
 struct PacksInfoData;
 struct PlayerJoinWorldContext;
-struct PlayerJoinWorldTelemetryInfo;
 struct ScreenshotOptions;
 struct ServerSupportedAuthenticationTypes;
 struct SplitScreenInfo;
@@ -225,11 +223,11 @@ public:
     virtual ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo() = 0;
 
     virtual void onStartJoinGame(
-        bool                                   isJoiningLocalServer,
+        bool                                   isLocalServer,
         ::std::string const&                   multiplayerCorrelationId,
         ::std::string const&                   serverName,
         ::std::string const&                   worldName,
-        ::NetworkType                          networkTypeOverride,
+        ::NetworkType                          networkType,
         ::Social::MultiplayerServiceIdentifier service,
         ::PlayerJoinWorldContext               context
     ) = 0;
@@ -265,9 +263,9 @@ public:
     virtual float getFrameAlpha() = 0;
 
     virtual void startSubClientLateJoin(
-        bool                                            hasXBLBroadcast,
-        ::std::unique_ptr<::GameModuleClient>           gameModuleClient,
-        ::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo
+        bool                                     hasXBLBroadcast,
+        ::std::unique_ptr<::GameModuleClient>    gameModuleClient,
+        ::std::optional<::ConnectionContextInfo> primaryConnectionInfo
     ) = 0;
 
     virtual ::Bedrock::Threading::Async<::ClientGameSetupResult> setupClientGame(
@@ -557,9 +555,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> getServerData() const = 0;
 
-    virtual ::MultiPlayerLevel* getLevel() = 0;
+    virtual ::ClientLevel* getLevel() = 0;
 
-    virtual ::MultiPlayerLevel const* getLevel() const = 0;
+    virtual ::ClientLevel const* getLevel() const = 0;
 
     virtual bool hasLevel() const = 0;
 
@@ -572,6 +570,8 @@ public:
     virtual ::IOptionRegistry& getOptions() = 0;
 
     virtual ::IOptionRegistry const& getOptions() const = 0;
+
+    virtual ::IReadWriteOptions const& getReadWriteOptions() const = 0;
 
     virtual ::std::shared_ptr<::OptionRegistry> getOptionsPtr() = 0;
 
@@ -605,7 +605,7 @@ public:
 
     virtual ::LightTexture* getLightTexture() = 0;
 
-    virtual void setupLevelRendering(::MultiPlayerLevel& level, ::WeakEntityRef cameraTargetEntity) = 0;
+    virtual void setupLevelRendering(::ClientLevel& level, ::WeakEntityRef cameraTargetEntity) = 0;
 
     virtual ::mce::ViewportInfo const& getViewportInfo() const = 0;
 
@@ -651,7 +651,7 @@ public:
 
     virtual void setGuiScaleOffset(int guiScale) = 0;
 
-    virtual void renderImGui(::ScreenContext&, bool) = 0;
+    virtual void renderImGui(::ScreenContext& screenContext, bool drawMenuBar) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() = 0;
 
@@ -894,13 +894,6 @@ public:
 
     virtual void connectToThirdPartyServer(::std::string const& ipAddress, int port) = 0;
 
-    virtual void connectToExperience(
-        ::ExperienceConnectionData                                                      data,
-        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> joinServerCallback,
-        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
-        ::PlayerJoinWorldContext                                                        context
-    ) = 0;
-
     virtual void startExternalNetworkWorld(
         ::Social::GameConnectionInfo connection,
         ::std::string const&         serverName,
@@ -936,8 +929,6 @@ public:
     virtual void postInitRenderResources() = 0;
 
     virtual void onAppSuspended() = 0;
-
-    virtual void onAppSuspensionDisconnect() = 0;
 
     virtual void onAppResumed() = 0;
 
@@ -1102,7 +1093,7 @@ public:
 
     virtual double getGameUpdateDurationInSeconds() const = 0;
 
-    virtual ::std::optional<::PlayerJoinWorldTelemetryInfo> getPlayerJoinWorldTelemetryInfo() const = 0;
+    virtual ::std::optional<::ConnectionContextInfo> getConnectionContextInfo() const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> getLinkedAssetValidator() = 0;
     // NOLINTEND
@@ -1113,11 +1104,5 @@ public:
     MCFOLD void $reloadEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& actorResourceDefinitionGroup
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

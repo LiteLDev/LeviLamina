@@ -17,6 +17,7 @@ namespace OreUI { class GameDependencies; }
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class StorageContentItem; }
 namespace StorageManager { class ContentItemProvider; }
+namespace World { class IWorldCloudSyncer; }
 // clang-format on
 
 namespace OreUI {
@@ -27,6 +28,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageManager::ContentItemProvider>>   mStorageContentItemProvider;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
+    ::ll::TypedStorage<8, 8, ::World::IWorldCloudSyncer&>                                 mWorldCloudSyncer;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mStorageCollectionReloadSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mContentItemSelectionSubscription;
     ::ll::TypedStorage<
@@ -50,40 +52,26 @@ public:
 
 public:
     // prevent constructor by default
+    StorageContentQuery& operator=(StorageContentQuery const&);
+    StorageContentQuery(StorageContentQuery const&);
     StorageContentQuery();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageContentQuery() /*override*/;
+    virtual ~StorageContentQuery() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI StorageContentQuery(::OreUI::GameDependencies const& game, ::std::string const& type);
-
-    MCAPI void _select(::std::optional<uint64> id, bool selected, uint64 numOfSelectedItems);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
     // NOLINTEND
 };
 

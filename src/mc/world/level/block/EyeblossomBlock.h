@@ -28,7 +28,7 @@ public:
 
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    virtual void entityInside(::BlockSource& region, ::BlockPos const& entity, ::Actor&) const /*override*/;
+    virtual void entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const /*override*/;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 
     MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& entity, ::Actor&) const;
+    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
 
 
     // NOLINTEND

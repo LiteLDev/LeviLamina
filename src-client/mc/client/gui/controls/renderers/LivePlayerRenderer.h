@@ -10,7 +10,6 @@
 // clang-format off
 class GuiData;
 class IClientInstance;
-class Matrix;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
@@ -47,12 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LivePlayerRenderer();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _getMousePosition(
@@ -64,16 +57,6 @@ public:
         ::IClientInstance const&                              client,
         ::UIControl const&                                    owner
     );
-
-    MCAPI static void setupCameraMatrixGliding(::Matrix& worldMatrix, float xo, float yo, float ownerScale);
-
-    MCAPI static void setupMatrixRotation(bool isGliding, ::Matrix& worldMatrix, float yMouse);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

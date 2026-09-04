@@ -56,28 +56,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         MCAPI void addPacketAlgorithm(
             ::std::vector<::MinecraftPacketIds> const& packetIds,
             ::std::unique_ptr<::IPacketLimitAlgorithm> algorithm
         );
-#endif
-
-        MCAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
-
-#ifdef LL_PLAT_S
-        MCAPI void setDefaultAlgorithm(::std::unique_ptr<::IPacketLimitAlgorithm> algorithm);
-
-        MCAPI ~PacketGroupBuilder();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCFOLD void $dtor();
-#endif
         // NOLINTEND
     };
 
@@ -87,17 +69,5 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::MinecraftPacketIds, ::std::unique_ptr<::IPacketLimitAlgorithm>>>
                                                                          mPacketGroups;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> mDefaultAlgorithm;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PacketGroupDefinition();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

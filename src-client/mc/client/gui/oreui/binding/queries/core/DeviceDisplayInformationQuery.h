@@ -38,12 +38,6 @@ public:
     // NOLINTBEGIN
     virtual void onResizeEnd() /*override*/;
     // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace OreUI

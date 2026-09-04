@@ -28,45 +28,33 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool carveEllipsoidVolume(
-        ::IBlockWorldGenAPI&                           target,
-        ::CaveFeatureUtils::CarverConfiguration const& random,
-        ::Random&                                      pos,
-        ::ChunkPos const&                              startPos,
-        ::Vec3 const&                                  volume,
-        ::BoundingBox const&                           rad,
-        float                                          yRad,
-        float                                          carveValues,
-        ::CaveFeatureUtils::CarvingParameters const&
+        ::IBlockWorldGenAPI& target,
+        ::CaveFeatureUtils::CarverConfiguration const&,
+        ::Random&                                    random,
+        ::ChunkPos const&                            pos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carveValues
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isDiggable(::Block const& block);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $carveEllipsoidVolume(
-        ::IBlockWorldGenAPI&                           target,
-        ::CaveFeatureUtils::CarverConfiguration const& random,
-        ::Random&                                      pos,
-        ::ChunkPos const&                              startPos,
-        ::Vec3 const&                                  volume,
-        ::BoundingBox const&                           rad,
-        float                                          yRad,
-        float                                          carveValues,
-        ::CaveFeatureUtils::CarvingParameters const&
+        ::IBlockWorldGenAPI& target,
+        ::CaveFeatureUtils::CarverConfiguration const&,
+        ::Random&                                    random,
+        ::ChunkPos const&                            pos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carveValues
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

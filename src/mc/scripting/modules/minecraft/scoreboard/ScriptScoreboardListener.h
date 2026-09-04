@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
@@ -39,12 +39,6 @@ public:
     MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class LocalConnectivitySystem;
-class LocalNetworkPeer;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -26,13 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LocalConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalConnector() /*override*/;
+    virtual ~LocalConnector() /*override*/ = default;
 
     virtual ::std::string getLocalIp() /*override*/;
 
@@ -54,19 +49,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LocalConnector(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
-
 #ifdef LL_PLAT_C
     MCNAPI bool connect(::NetworkIdentifier const& id);
-
-    MCNAPI void connectToClient(::LocalConnector& clientConnector, ::std::shared_ptr<::LocalNetworkPeer> clientPeer);
 #endif
 
     MCNAPI void disconnect();
-
-    MCNAPI void host(::NetworkIdentifier const& id);
-
-    MCNAPI void onRemoteDisconnected(::LocalConnector& otherConnector);
 
     MCNAPI void runEvents();
     // NOLINTEND
@@ -75,18 +62,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::LocalConnectivitySystem& sLocalConnectivitySystem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

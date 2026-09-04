@@ -68,18 +68,6 @@ public:
         CreateServerNetworkHandlerArgs& operator=(CreateServerNetworkHandlerArgs const&);
         CreateServerNetworkHandlerArgs(CreateServerNetworkHandlerArgs const&);
         CreateServerNetworkHandlerArgs();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CreateServerNetworkHandlerArgs();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct MinecraftCommandsFactoryArguments {
@@ -103,7 +91,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>   mUnk63a19e;
         ::ll::UntypedStorage<8, 8>   mUnkc09c5e;
-        ::ll::UntypedStorage<8, 368> mUnk130965;
+        ::ll::UntypedStorage<8, 416> mUnk130965;
         ::ll::UntypedStorage<8, 128> mUnk757f1a;
         // NOLINTEND
 
@@ -116,13 +104,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI ~ServerNetworkHandlerFactoryArguments();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -162,16 +154,14 @@ public:
         ::std::unique_ptr<::ServerNetworkHandler>(::MinecraftArguments::CreateServerNetworkHandlerArgs&&)>
     createServerNetworkHandlerFactory(::MinecraftArguments::ServerNetworkHandlerFactoryArguments&& args);
 
+#ifdef LL_PLAT_C
     MCNAPI ~MinecraftArguments();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::brstd::move_only_function<
-        ::std::unique_ptr<::MinecraftCommands>(::MinecraftArguments::CreateMinecraftCommandsArgs&&) const>
-    createMinecraftCommandsFactory(::MinecraftArguments::MinecraftCommandsFactoryArguments&& factoryArgs);
-
     MCNAPI static ::std::unique_ptr<::ResourcePackManager> createResourcePackManager(
         ::Core::FilePathManager const& filePathManager,
         ::IContentTierManager const&   contentTierManager
@@ -181,6 +171,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

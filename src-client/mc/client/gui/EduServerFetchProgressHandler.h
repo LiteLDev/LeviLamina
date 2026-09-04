@@ -36,7 +36,7 @@ public:
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
@@ -44,7 +44,7 @@ public:
 
     virtual ::ProgressAnimation showLoadingBar() const /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 
     MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getTitleText() const;
 
@@ -76,7 +76,7 @@ public:
 
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
     // NOLINTEND
 
 public:

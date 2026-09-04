@@ -11,7 +11,6 @@
 class DataDrivenGeometry;
 class DataDrivenModel;
 class ExpressionNode;
-class HashedString;
 class RenderParams;
 class Vec4;
 namespace Json { class Value; }
@@ -45,36 +44,16 @@ public:
 public:
     // prevent constructor by default
     RenderController& operator=(RenderController const&);
+    RenderController();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RenderController();
-
     MCNAPI RenderController(::RenderController const&);
-
-    MCNAPI explicit RenderController(::std::string const& name);
-
-    MCNAPI bool _parseColor(
-        ::Json::Value const& root,
-        ::ExpressionNode*    colorNode,
-        ::MolangVersion      molangVersion,
-        float                defaultAlpha
-    );
 
     MCNAPI ::std::vector<::std::shared_ptr<::DataDrivenGeometry const>> getDataDrivenGeometries() const;
 
-    MCNAPI bool getFilterLighting() const;
-
     MCNAPI ::std::shared_ptr<::DataDrivenGeometry> getGeometry(::RenderParams& renderParams) const;
-
-    MCNAPI ::mce::Color getHurtColor(::RenderParams& renderParams) const;
-
-    MCNAPI bool getIgnoreLighting() const;
-
-    MCNAPI float getLightColorMultiplier(::RenderParams& renderParams, float const& defaultValue) const;
-
-    MCNAPI ::HashedString const& getName() const;
 
     MCNAPI ::mce::Color getOnFireColor(::RenderParams& renderParams) const;
 
@@ -89,21 +68,7 @@ public:
     MCNAPI bool parse(::Json::Value const& root, ::MolangVersion molangVersion);
 
     MCNAPI bool
-    parseArray(::Json::Value const& root, ::RenderControllerArrayType arrayType, ::MolangVersion molangVersion);
-
-    MCNAPI bool parseArrays(::Json::Value const& root, ::MolangVersion molangVersion);
-
-    MCNAPI bool parseGeometry(::Json::Value const& root, ::MolangVersion molangVersion);
-
-    MCNAPI bool parseLightColorMultiplier(::Json::Value const& root, ::MolangVersion molangVersion);
-
-    MCNAPI bool parseMaterials(::Json::Value const& root, ::MolangVersion molangVersion);
-
-    MCNAPI bool parsePartVisibility(::Json::Value const& root, ::MolangVersion molangVersion);
-
-    MCNAPI bool parseTextures(::Json::Value const& root, ::MolangVersion molangVersion);
-
-    MCNAPI bool parseUVAnim(::Json::Value const& root, ::MolangVersion molangVersion);
+    parseArray(::Json::Value const& root, ::RenderControllerArrayType arrayType, ::MolangVersion const molangVersion);
 
     MCNAPI void render(::RenderParams& renderParams, ::DataDrivenGeometry& geo);
 
@@ -119,17 +84,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static bool _parseColor(
+        ::Json::Value const&  root,
+        ::ExpressionNode*     colorNode,
+        ::MolangVersion const molangVersion,
+        float const           defaultAlpha
+    );
+
     MCNAPI static ::std::string nameToRegExStr(::std::string const& sourceName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::RenderController const&);
-
-    MCNAPI void* $ctor(::std::string const& name);
     // NOLINTEND
 
 public:

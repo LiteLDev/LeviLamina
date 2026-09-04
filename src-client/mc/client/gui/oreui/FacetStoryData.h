@@ -6,12 +6,9 @@
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/client/realms/PostStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class DateManager;
-class ProfanityContext;
 namespace Clubs { struct FeedItem; }
 namespace Realms::Stories { class FacetStateManager; }
 // clang-format on
@@ -40,23 +37,12 @@ public:
 public:
     // prevent constructor by default
     FacetStoryData& operator=(FacetStoryData const&);
+    FacetStoryData(FacetStoryData const&);
     FacetStoryData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FacetStoryData(::OreUI::RealmsStories::FacetStoryData const&);
-
-    MCAPI FacetStoryData(::OreUI::RealmsStories::FacetStoryData&&);
-
-    MCAPI FacetStoryData(
-        ::Clubs::FeedItem&                                    feedItem,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>    dateManager,
-        ::OreUI::AllowListPath                                imagePath,
-        ::std::weak_ptr<::Realms::Stories::FacetStateManager> provider,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>     profanityContext
-    );
-
     MCAPI ::std::string const& getAuthorXuid() const;
 
     MCAPI ::Realms::Stories::FetchStatus getCommentsStatus() const;
@@ -100,36 +86,12 @@ public:
     MCAPI int getTotalLikes() const;
 
     MCAPI void setHasViewed(bool value);
-
-    MCAPI ~FacetStoryData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RealmsStories::FacetStoryData const&);
-
-    MCAPI void* $ctor(::OreUI::RealmsStories::FacetStoryData&&);
-
-    MCAPI void* $ctor(
-        ::Clubs::FeedItem&                                    feedItem,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>    dateManager,
-        ::OreUI::AllowListPath                                imagePath,
-        ::std::weak_ptr<::Realms::Stories::FacetStateManager> provider,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>     profanityContext
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static ::std::add_lvalue_reference_t<char const[28]> NAME();
     // NOLINTEND
 };
 

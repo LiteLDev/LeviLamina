@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 struct AttributesComponent;
-struct MovementAttributesComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -20,12 +19,5 @@ public:
     MCAPI static ::TickingSystemWithInfo createProcessRequestSystem();
 
     MCAPI static ::TickingSystemWithInfo createUpdateSystem();
-
-#ifdef LL_PLAT_C
-    MCAPI static void updateMovementAttribute(
-        ::MovementAttributesComponent const& sourceMovement,
-        ::MovementAttributesComponent&       targetMovement
-    );
-#endif
     // NOLINTEND
 };

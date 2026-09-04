@@ -29,7 +29,17 @@ public:
     // NOLINTBEGIN
     MCAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
 
+#ifdef LL_PLAT_S
     MCAPI void parse(::Json::Value& root, bool isVanilla);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

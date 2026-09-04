@@ -14,20 +14,23 @@ struct ActorDataFlagComponent;
 struct BoatMovementComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace BoatMoveFrictionSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void boatMoveFriction(
-    ::StrictEntityContext const&              synchedActorDataComponent,
-    ::ActorDataFlagComponent const&           boatMovementComponent,
-    ::BoatMovementComponent&                  stateVectorComponent,
-    ::StateVectorComponent&                   buoyancyComponent,
-    ::Optional<::BuoyancyComponent const>     isOnGround,
-    ::Optional<::OnGroundFlagComponent const> region,
-    ::IConstBlockSource const&
+    ::StrictEntityContext const&,
+    ::ActorDataFlagComponent const&           synchedActorDataComponent,
+    ::BoatMovementComponent&                  boatMovementComponent,
+    ::StateVectorComponent&                   stateVectorComponent,
+    ::Optional<::BuoyancyComponent const>     buoyancyComponent,
+    ::Optional<::OnGroundFlagComponent const> isOnGround,
+    ::IConstBlockSource const&                region
 );
+
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace BoatMoveFrictionSystem

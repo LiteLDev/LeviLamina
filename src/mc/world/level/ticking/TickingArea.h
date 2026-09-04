@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickingArea() /*override*/;
+    virtual ~TickingArea() /*override*/ = default;
 
     virtual ::mce::UUID const& getId() const /*override*/;
 
@@ -124,25 +124,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TickingArea(::Dimension& dimension, ::mce::UUID uniqueId, ::Bounds const& bounds, ::ActorUniqueID entityId);
-
-    MCAPI TickingArea(
-        ::Dimension&    dimension,
-        ::mce::UUID     uniqueId,
-        ::Bounds const& bounds,
-        ::ActorUniqueID entityId,
-        float           maxDistToPlayers
-    );
-
-    MCAPI TickingArea(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        ::TickingAreaLoadMode loadMode
-    );
-
     MCAPI TickingArea(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -155,35 +136,12 @@ public:
         ::TickingAreaLoadMode loadMode
     );
 
-    MCAPI void _center(::LevelStorage& levelStorage);
-
     MCAPI void _save(::LevelStorage& levelStorage);
-
-    MCAPI void addScope(::std::optional<uint64> scope);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::mce::UUID uniqueId, ::Bounds const& bounds, ::ActorUniqueID entityId);
-
-    MCAPI void* $ctor(
-        ::Dimension&    dimension,
-        ::mce::UUID     uniqueId,
-        ::Bounds const& bounds,
-        ::ActorUniqueID entityId,
-        float           maxDistToPlayers
-    );
-
-    MCAPI void* $ctor(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        ::TickingAreaLoadMode loadMode
-    );
-
     MCAPI void* $ctor(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -195,12 +153,6 @@ public:
         bool                  alwaysActive,
         ::TickingAreaLoadMode loadMode
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -216,17 +168,21 @@ public:
 
     MCAPI bool $isEntityOwned() const;
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isAlwaysActive() const;
+#else // LL_PLAT_C
     MCFOLD bool $isAlwaysActive() const;
+#endif
 
     MCAPI float $getMaxDistToPlayers() const;
 
-    MCFOLD ::ITickingAreaView const& $getView() const;
+    MCAPI ::ITickingAreaView const& $getView() const;
 
-    MCFOLD ::ITickingAreaView& $getView();
+    MCAPI ::ITickingAreaView& $getView();
 
-    MCFOLD ::WeakRef<::BlockSource> const $getBlockSource() const;
+    MCAPI ::WeakRef<::BlockSource> const $getBlockSource() const;
 
-    MCFOLD ::WeakRef<::BlockSource> $getBlockSource();
+    MCAPI ::WeakRef<::BlockSource> $getBlockSource();
 
     MCAPI ::TickingAreaDescription $getDescription() const;
 
@@ -246,9 +202,9 @@ public:
 
     MCAPI ::Actor* $findOwner(uchar& pendingChunks);
 
-    MCFOLD bool $entityHasBeenFound() const;
+    MCAPI bool $entityHasBeenFound() const;
 
-    MCFOLD void $setEntityFound();
+    MCAPI void $setEntityFound();
 
     MCAPI bool $isRemoved();
 
@@ -266,11 +222,5 @@ public:
     MCAPI bool $isStandalone() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

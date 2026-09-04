@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/commands/PlayerPermissionsCommandsUtils.h"
 #include "mc/client/commands/PlayerPermissionsLevelListener.h"
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/world/level/PlayerPermissionsActionState.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/world/level/PlayerPermissionsError.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -28,7 +28,7 @@ namespace World { class WorldPlayerListTracker; }
 
 namespace OreUI {
 
-class PlayerPermissionsFacet : public ::OreUI::FacetBase<::OreUI::PlayerPermissionsFacet> {
+class PlayerPermissionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerPermissionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,7 +70,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerPermissionsFacet() /*override*/;
+    virtual ~PlayerPermissionsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -89,8 +89,6 @@ public:
         ::std::function<bool()>              isHostingLocalDedicatedServer
     );
 
-    MCAPI bool _evaluateCanEditPermissions();
-
     MCAPI bool _evaluateCanKickPlayer(::ActorUniqueID playerId);
 
     MCAPI void _evaluateStates();
@@ -99,21 +97,19 @@ public:
 
     MCAPI void _reloadPermissions();
 
-    MCAPI void _syncFromManager(::ActorUniqueID playerId);
-
     MCAPI bool _validateLocalPlayer();
 
     MCAPI bool areCheatsEnabled() const;
 
     MCAPI bool canEditPermissions() const;
 
-    MCFOLD bool canKickPlayer() const;
+    MCAPI bool canKickPlayer() const;
 
     MCAPI void clearErrorFlag(::OreUI::PlayerPermissionsError error);
 
     MCAPI void enableCheats();
 
-    MCFOLD ::std::optional<::PlayerPermissionLevel> const& getCurrentPlayerPermissionLevel() const;
+    MCAPI ::std::optional<::PlayerPermissionLevel> const& getCurrentPlayerPermissionLevel() const;
 
     MCAPI ::OreUI::PlayerPermissionsActionState const& getKickCommandState() const;
 
@@ -164,21 +160,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

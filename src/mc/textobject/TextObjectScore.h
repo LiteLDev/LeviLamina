@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TextObjectScore(::std::string name, ::std::string objective);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& RAW_TEXT_SCORE_KEY();
@@ -49,12 +43,6 @@ public:
     MCNAPI static ::std::string const& RAW_TEXT_SCORE_NAME_KEY();
 
     MCNAPI static ::std::string const& RAW_TEXT_SCORE_OBJECTIVE_KEY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, ::std::string objective);
     // NOLINTEND
 
 public:
@@ -67,11 +55,5 @@ public:
     MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

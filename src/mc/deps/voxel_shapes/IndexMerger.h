@@ -30,8 +30,6 @@ public:
         bool                                      canTrimExcessOfFirst,
         bool                                      canTrimExcessOfSecond
     );
-
-    MCNAPI ~IndexMerger();
     // NOLINTEND
 
 public:
@@ -49,12 +47,6 @@ public:
         bool                                      canTrimExcessOfFirst,
         bool                                      canTrimExcessOfSecond
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

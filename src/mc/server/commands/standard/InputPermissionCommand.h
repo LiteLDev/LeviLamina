@@ -45,16 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _executeQuery(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void _executeQueryVerbose(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void _executeSet(::CommandOrigin const& origin, ::CommandOutput& output) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
@@ -67,17 +57,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::InputPermissionCommand::CommandActionType>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::InputPermissionCommand::CommandValueType>();
-// clang-format on

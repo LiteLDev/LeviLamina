@@ -9,8 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class MoveActorDeltaData;
-class Vec2;
 // clang-format on
 
 class MoveActorAbsoluteData {
@@ -41,34 +39,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MoveActorAbsoluteData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveActorAbsoluteData();
-
     MCAPI explicit MoveActorAbsoluteData(::Actor const& entity);
 
-    MCAPI ::MoveActorDeltaData calculateDelta(::MoveActorAbsoluteData const& previousAbsoluteMoveData) const;
-
-    MCAPI ::Vec2 getRot() const;
-
-    MCAPI float getYBodyRot() const;
-
-    MCAPI float getYHeadRot() const;
-
     MCAPI bool isDifferenceSignificant(::MoveActorAbsoluteData const& old, ::Vec3 const& velocity) const;
-
-    MCAPI void setRot(::Vec2 const& rot);
-
-    MCAPI void setYBodyRot(float rot);
-
-    MCAPI void setYHeadRot(float rot);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
 };

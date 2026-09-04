@@ -15,30 +15,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FogSetting();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FogSetting(
-        ::std::optional<::FogDistanceSetting>&&   distanceSetting,
-        ::std::optional<::FogTransitionSetting>&& transitionSetting
-    );
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogSetting const& ZERO_SETTING();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::optional<::FogDistanceSetting>&&   distanceSetting,
-        ::std::optional<::FogTransitionSetting>&& transitionSetting
-    );
     // NOLINTEND
 };

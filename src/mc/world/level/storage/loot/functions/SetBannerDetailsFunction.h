@@ -12,7 +12,6 @@
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
-class LootItemCondition;
 class LootTableContext;
 class Random;
 namespace Json { class Value; }
@@ -34,11 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetBannerDetailsFunction() /*override*/;
+    virtual ~SetBannerDetailsFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext&) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -46,13 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _apply(::ItemStackBase& item, ::Random&, ::LootTableContext&) const;
-
-    MCFOLD ::BannerBlockType getBannerType() const;
-
-    MCFOLD ::ItemColor getBaseColor() const;
-
-    MCFOLD ::std::vector<::std::pair<uchar, ::ItemColor>> const& getPatterns() const;
+    MCAPI void _apply(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) const;
     // NOLINTEND
 
 public:
@@ -60,32 +53,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _parseBannerPattern(::std::vector<::std::pair<uchar, ::ItemColor>>& patternVec, ::Json::Value const& object);
-
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
-    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

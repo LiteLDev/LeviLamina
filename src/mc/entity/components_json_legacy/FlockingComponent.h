@@ -49,10 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlockingComponent();
-
-    MCAPI void breakFlock(::Actor const& owner);
-
     MCAPI void calculateFlockVector(::Actor const& owner);
 
     MCAPI void calculateGoalHeading(::Mob& owner);
@@ -68,11 +64,5 @@ public:
     MCAPI void updateNeighborhoodData(::Actor const& owner);
 
     MCAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

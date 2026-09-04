@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { struct ScriptProjectileShootOptions; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -79,18 +77,9 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<void> setOnFireTime(float value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setOwner(
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& scriptActor
-    );
-
     MCAPI ::Scripting::Result_deprecated<void> setShouldBounceOnHit(bool value);
 
     MCAPI ::Scripting::Result_deprecated<void> setStopOnHit(bool value);
-
-    MCAPI ::Scripting::Result_deprecated<void> shoot(
-        ::Vec3 const&                                                                 velocity,
-        ::std::optional<::ScriptModuleMinecraft::ScriptProjectileShootOptions> const& options
-    );
     // NOLINTEND
 
 public:
@@ -111,12 +100,6 @@ public:
     MCAPI bool $_isValid() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-struct BlockRedstoneConsumerConstructionOptions;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockRedstoneConsumerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -36,12 +31,6 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockRedstoneConsumerDescription(::BlockRedstoneConsumerConstructionOptions constructionOptions);
     // NOLINTEND
 
 public:
@@ -54,12 +43,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockRedstoneConsumerConstructionOptions constructionOptions);
     // NOLINTEND
 
 public:

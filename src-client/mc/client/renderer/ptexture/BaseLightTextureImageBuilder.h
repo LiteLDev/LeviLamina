@@ -7,8 +7,6 @@
 class BaseLightData;
 class Dimension;
 class IClientInstance;
-class IOptionRegistry;
-class Player;
 namespace mce { struct Image; }
 // clang-format on
 
@@ -48,29 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseLightTextureImageBuilder();
-
-    MCAPI bool refreshData(::IClientInstance* client, ::BaseLightData& lightData);
-
-    MCFOLD void setDimension(::Dimension* d);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    _updateDarknessLightData(::BaseLightData& baseLightData, ::Player const& player, ::IOptionRegistry const& options);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $init(::Dimension* d);
@@ -94,11 +69,5 @@ public:
 
     MCAPI ::std::unique_ptr<::BaseLightData>
     $createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

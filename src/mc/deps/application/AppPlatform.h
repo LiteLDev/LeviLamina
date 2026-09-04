@@ -33,12 +33,10 @@
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/Subject.h"
 #include "mc/deps/core/utility/UniqueService.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/PointerType.h"
-#include "mc/options/UIProfile.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/threading/Mutex.h"
 
@@ -380,8 +378,8 @@ public:
     virtual void pushNotificationReceived(::PushNotificationMessage const& msg);
 
     virtual void openStoragePermissionRequest(
-        ::PermissionRequestReason resultCallback,
-        ::std::function<void(::StoragePermissionResult)>
+        ::PermissionRequestReason,
+        ::std::function<void(::StoragePermissionResult)> resultCallback
     );
 
     virtual void setStorageDirectory(
@@ -406,7 +404,11 @@ public:
 
     virtual bool delayOptionSaveUntilCloudSync() const;
 
-    virtual void updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const&, float const);
+    virtual void updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
+        ::RectangleArea const& selectionPosition,
+        float const            guiScale
+    );
 
     virtual ::BatteryMonitorInterface const& getBatteryMonitorInterface() const;
 
@@ -425,9 +427,9 @@ public:
 #endif
     virtual ::Bedrock::Threading::Async<::IntegrityTokenResult> requestIntegrityToken(::std::string const& nonceToken);
 
-    virtual void setIntegrityToken(::std::string const&);
+    virtual void setIntegrityToken(::std::string const& integrityToken);
 
-    virtual void setIntegrityTokenErrorMessage(::std::string const&);
+    virtual void setIntegrityTokenErrorMessage(::std::string const& errorMessage);
 
     virtual bool supportsInPackageRecursion() const;
 
@@ -507,11 +509,19 @@ public:
 
     virtual int getDisplayHeight();
 
+#ifdef LL_PLAT_S
+    virtual void setScreenSize(int, int);
+#else // LL_PLAT_C
     virtual void setScreenSize(int width, int height);
+#endif
 
     virtual void setWindowSize(int width, int height);
 
+#ifdef LL_PLAT_S
     virtual void setWindowText(::std::string const& title);
+#else // LL_PLAT_C
+    virtual void setWindowText(::std::string const&);
+#endif
 
     virtual ::std::optional<::OperationMode> getOperationMode() const;
 
@@ -612,7 +622,7 @@ public:
 
     virtual void finish();
 
-    virtual bool canLaunchUri(::std::string const&);
+    virtual bool canLaunchUri(::std::string const& uri);
 
     virtual void launchUri(::std::string const& uri);
 
@@ -685,8 +695,6 @@ public:
     virtual bool useAppPlatformForTelemetryIPAddress();
 
     virtual ::std::string getModelName();
-
-    virtual bool usesHDRBrightness() const;
 
     virtual void updateBootstrapSettingsFromTreatmentsAsync();
 
@@ -768,11 +776,15 @@ public:
 
     virtual ::mce::UUID const& getThirdPartyPackUUID() const;
 
+    virtual ::mce::UUID const& getPlatformBetaPackUUID() const;
+
     virtual bool saveTreatmentPacksAsZips() const;
 
     virtual bool saveEncryptedPacksAsZips() const;
 
     virtual bool saveEncryptedWorldTemplatePacksAsZips() const;
+
+    virtual bool saveEncryptedPersonaPacksAsZips() const;
 
     virtual bool allowsResourcePackDevelopment() const;
 
@@ -817,7 +829,7 @@ public:
     virtual ::std::shared_ptr<::Core::FileStorageArea>
     createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    virtual void handlePlatformSpecificCommerceError(uint);
+    virtual void handlePlatformSpecificCommerceError(uint error);
 
     virtual bool isEduMode() const;
 
@@ -825,7 +837,11 @@ public:
 
     virtual bool isWebviewSupported() const;
 
+#ifdef LL_PLAT_S
+    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const;
+#else // LL_PLAT_C
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const;
+#endif
 
     virtual bool canAppSelfTerminate() const = 0;
 
@@ -845,7 +861,7 @@ public:
 
     virtual bool usesAsyncOptionSaving() const;
 
-    virtual void showPlatformStoreIcon(bool);
+    virtual void showPlatformStoreIcon(bool shouldShow);
 
     virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback) /*override*/;
 
@@ -924,56 +940,24 @@ public:
 
     MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
-    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const&);
+    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
 #endif
 
 #ifdef LL_PLAT_S
     MCAPI void _fireAppTerminated();
-#endif
 
-#ifdef LL_PLAT_C
-    MCAPI ::IAppPlatformImpl& _getImpl();
-#endif
-
-    MCAPI void _initializeLoadProfiler();
-
-#ifdef LL_PLAT_S
     MCAPI void _terminateListeners();
-
-    MCFOLD ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void addNetworkChangeObserver(::NetworkChangeObserver& observer);
-
     MCAPI void checkAndTriggerOnLowMemory();
 
-    MCAPI void disableCPUBoost();
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
-#endif
-
-    MCFOLD ::Core::PathBuffer<::std::string> getCurrentStoragePath() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::UIProfile getDefaultUIProfile() const;
-
     MCAPI ::std::string getDeviceIdWarning() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> getExternalStoragePath() const;
-
-    MCAPI uint64 getFreeMemoryTestable() const;
 #endif
 
     MCAPI ::std::string getGraphicsDeviceTier() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
-
     MCAPI ::std::optional<::std::locale> getLocaleForDateTimeFormatting() const;
-
-    MCAPI ::gsl::not_null<::Bedrock::PubSub::Connector<void(::LowMemorySeverity)>*> getOnLowMemoryConnector();
-
-    MCAPI ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getShareText() const;
@@ -983,26 +967,8 @@ public:
     MCAPI ::std::string getShareUri() const;
 
     MCAPI double getTotalActiveSeconds();
-#endif
 
-    MCFOLD ::Core::PathBuffer<::std::string> getUserdataPath() const;
-
-    MCAPI bool isTerminating() const;
-
-#ifdef LL_PLAT_C
     MCAPI void loadImage(::mce::Image& out, ::Core::Path const& filename);
-
-    MCAPI ::mce::Image loadTexture(::Core::Path const& filename);
-
-    MCAPI ::mce::Image loadTextureFromStream(::std::string const& fileStream);
-
-    MCAPI void notifyElapsedSeconds(double seconds);
-#endif
-
-    MCAPI void notifyUserStorageInitialized();
-
-#ifdef LL_PLAT_C
-    MCAPI void processSignals();
 #endif
 
     MCAPI ::Bedrock::Result<::std::string>
@@ -1014,26 +980,20 @@ public:
     MCAPI void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
 
     MCAPI void setShareMetaData(::std::string const& shareTitle, ::std::string const& shareText);
-
-    MCAPI bool tryEnableCPUBoost();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static ::Bedrock::Result<::std::string> _readAssetFileGeneric(::Core::PathView filename);
+#endif
 
 #ifdef LL_PLAT_C
-    MCAPI static bool hasPendingProtocolActivation();
-
     MCAPI static void imGuiAddInputChar(ushort c);
 
-    MCAPI static bool isInitialized();
-
     MCAPI static bool mouseInputHandledByImGui();
-
-    MCAPI static void setPendingProtocolActivation(::ActivationUri const& uri);
 
     MCAPI static bool updateImGuiKeyboard(uchar param, bool isDown);
 
@@ -1056,11 +1016,13 @@ public:
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SHADERCACHE_PATH();
 
+#ifdef LL_PLAT_C
     MCAPI static bool& mIsInitialized();
 
     MCAPI static ::ActivationUri& mPendingProtocolActivation();
 
     MCAPI static ::Bedrock::Threading::Mutex& mProtocolMutex();
+#endif
     // NOLINTEND
 
 public:
@@ -1096,9 +1058,9 @@ public:
 
     MCAPI ::ProcessExecutionState $getProcessExecutionState() const;
 
-    MCFOLD void $restartApp(bool restart);
+    MCAPI void $restartApp(bool restart);
 
-    MCFOLD bool $restartRequested();
+    MCAPI bool $restartRequested();
 
     MCFOLD int const $numberOfThrottledTreatmentPacksToImportPerMinute() const;
 
@@ -1108,9 +1070,9 @@ public:
 
     MCAPI ::Bedrock::Threading::Async<::IntegrityTokenResult> $requestIntegrityToken(::std::string const& nonceToken);
 
-    MCFOLD void $setIntegrityToken(::std::string const&);
+    MCFOLD void $setIntegrityToken(::std::string const& integrityToken);
 
-    MCFOLD void $setIntegrityTokenErrorMessage(::std::string const&);
+    MCFOLD void $setIntegrityTokenErrorMessage(::std::string const& errorMessage);
 
     MCFOLD bool $supportsInPackageRecursion() const;
 
@@ -1130,7 +1092,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $getScratchPath();
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getInternalPackStoragePath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getInternalPackStoragePath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getSettingsPath();
 
@@ -1152,7 +1114,7 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $getCatalogSearchScratchPath();
 
-    MCFOLD ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
 
     MCFOLD ::std::shared_ptr<::Core::FileStorageArea> $getOrCreateStorageAreaForUser(::Social::UserCreationData const&);
 
@@ -1160,7 +1122,7 @@ public:
 
     MCFOLD uint64 $getOptimalLDBSize();
 
-    MCFOLD int $getMaxLDBFilesOpen() const;
+    MCAPI int $getMaxLDBFilesOpen() const;
 
     MCFOLD bool $getDisableLDBSeekCompactions() const;
 
@@ -1186,15 +1148,27 @@ public:
 
     MCAPI int $getScreenHeight() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD int $getDisplayWidth();
+#else // LL_PLAT_C
     MCAPI int $getDisplayWidth();
+#endif
 
-    MCFOLD int $getDisplayHeight();
+    MCAPI int $getDisplayHeight();
 
+#ifdef LL_PLAT_S
+    MCFOLD void $setScreenSize(int, int);
+#else // LL_PLAT_C
     MCFOLD void $setScreenSize(int width, int height);
+#endif
 
     MCFOLD void $setWindowSize(int width, int height);
 
+#ifdef LL_PLAT_S
     MCFOLD void $setWindowText(::std::string const& title);
+#else // LL_PLAT_C
+    MCFOLD void $setWindowText(::std::string const&);
+#endif
 
     MCFOLD ::std::optional<::OperationMode> $getOperationMode() const;
 
@@ -1281,7 +1255,7 @@ public:
 
     MCFOLD void $finish();
 
-    MCFOLD bool $canLaunchUri(::std::string const&);
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
 
     MCFOLD void $launchUri(::std::string const& uri);
 
@@ -1321,9 +1295,17 @@ public:
 
     MCAPI void $calculateIfLowMemoryDevice();
 
+#ifdef LL_PLAT_S
     MCFOLD bool $isLowMemoryDevice() const;
+#else // LL_PLAT_C
+    MCAPI bool $isLowMemoryDevice() const;
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD bool $isLowPhysicalMemoryDevice() const;
+#else // LL_PLAT_C
+    MCAPI bool $isLowPhysicalMemoryDevice() const;
+#endif
 
     MCFOLD uint64 $getTextureMemoryBudget() const;
 
@@ -1343,8 +1325,6 @@ public:
 
     MCAPI ::std::string $getModelName();
 
-    MCFOLD bool $usesHDRBrightness() const;
-
     MCFOLD void $updateBootstrapSettingsFromTreatmentsAsync();
 
     MCFOLD void $setFullscreenMode(::FullscreenMode const fullscreenMode);
@@ -1355,7 +1335,11 @@ public:
 
     MCFOLD bool $doesLANRequireMultiplayerRestrictions() const;
 
+#ifdef LL_PLAT_S
     MCAPI void $collectGraphicsHardwareDetails();
+#else // LL_PLAT_C
+    MCFOLD void $collectGraphicsHardwareDetails();
+#endif
 
     MCAPI ::std::string $getEdition() const;
 
@@ -1375,7 +1359,11 @@ public:
 
     MCFOLD float $getDefaultScreenPositionY() const;
 
+#ifdef LL_PLAT_S
     MCAPI bool $isQuitCapable() const;
+#else // LL_PLAT_C
+    MCFOLD bool $isQuitCapable() const;
+#endif
 
     MCFOLD bool $requireControllerAtStartup() const;
 
@@ -1387,7 +1375,7 @@ public:
 
     MCAPI ::AppFocusState $getFocusState();
 
-    MCFOLD ::AppLifecycleContext& $getAppLifecycleContext();
+    MCAPI ::AppLifecycleContext& $getAppLifecycleContext();
 
     MCFOLD bool $supportsFliteTTS() const;
 
@@ -1403,13 +1391,17 @@ public:
 
     MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const&);
 
-    MCAPI ::mce::UUID const& $getThirdPartyPackUUID() const;
+    MCFOLD ::mce::UUID const& $getThirdPartyPackUUID() const;
+
+    MCFOLD ::mce::UUID const& $getPlatformBetaPackUUID() const;
 
     MCFOLD bool $saveTreatmentPacksAsZips() const;
 
     MCFOLD bool $saveEncryptedPacksAsZips() const;
 
     MCFOLD bool $saveEncryptedWorldTemplatePacksAsZips() const;
+
+    MCFOLD bool $saveEncryptedPersonaPacksAsZips() const;
 
     MCFOLD bool $allowsResourcePackDevelopment() const;
 
@@ -1454,7 +1446,7 @@ public:
     MCAPI ::std::shared_ptr<::Core::FileStorageArea>
     $createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    MCFOLD void $handlePlatformSpecificCommerceError(uint);
+    MCFOLD void $handlePlatformSpecificCommerceError(uint error);
 
     MCFOLD bool $isEduMode() const;
 
@@ -1462,7 +1454,11 @@ public:
 
     MCFOLD bool $isWebviewSupported() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
+#else // LL_PLAT_C
     MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&&) const;
+#endif
 
     MCFOLD bool $getPlatformTTSExists() const;
 
@@ -1480,7 +1476,7 @@ public:
 
     MCFOLD bool $usesAsyncOptionSaving() const;
 
-    MCFOLD void $showPlatformStoreIcon(bool);
+    MCFOLD void $showPlatformStoreIcon(bool shouldShow);
 
     MCAPI void $showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback);
 
@@ -1512,7 +1508,11 @@ public:
 
     MCFOLD ::Bedrock::CommonPlatform* $getPlatformShim() const;
 
+#ifdef LL_PLAT_S
     MCFOLD void $_initializeFileStorageAreas();
+#else // LL_PLAT_C
+    MCAPI void $_initializeFileStorageAreas();
+#endif
 
     MCAPI void $_teardownFileStorageAreas();
 
@@ -1555,7 +1555,7 @@ public:
         ::InputMode          inputMode
     );
 
-    MCFOLD void $hideKeyboard();
+    MCAPI void $hideKeyboard();
 
     MCAPI bool $blankLineDismissesChat() const;
 
@@ -1585,9 +1585,9 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $getCustomSoftwareCursorAsset() const;
 
-    MCFOLD bool $getPointerFocus();
+    MCAPI bool $getPointerFocus();
 
-    MCFOLD void $setPointerFocus(bool lostFocus);
+    MCAPI void $setPointerFocus(bool lostFocus);
 
     MCFOLD bool $isInvertScrollEnabled() const;
 
@@ -1674,8 +1674,8 @@ public:
     MCAPI void $pushNotificationReceived(::PushNotificationMessage const& msg);
 
     MCAPI void $openStoragePermissionRequest(
-        ::PermissionRequestReason resultCallback,
-        ::std::function<void(::StoragePermissionResult)>
+        ::PermissionRequestReason,
+        ::std::function<void(::StoragePermissionResult)> resultCallback
     );
 
     MCFOLD void $setStorageDirectory(
@@ -1700,7 +1700,11 @@ public:
 
     MCFOLD bool $delayOptionSaveUntilCloudSync() const;
 
-    MCFOLD void $updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const&, float const);
+    MCFOLD void $updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
+        ::RectangleArea const& selectionPosition,
+        float const            guiScale
+    );
 
     MCAPI ::BatteryMonitorInterface const& $getBatteryMonitorInterface() const;
 
@@ -1734,13 +1738,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIAppPlatform();
-
-    MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
 };

@@ -3,21 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/VideoSinkInterface.h"
-#include "mc/external/rtc/VideoSourceInterface.h"
 #include "mc/external/webrtc/MediaStreamTrackInterface.h"
+#include "mc/external/webrtc/VideoSinkInterface.h"
+#include "mc/external/webrtc/VideoSourceInterface.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { struct VideoSinkWants; }
 namespace webrtc { class VideoFrame; }
 namespace webrtc { class VideoTrackSourceInterface; }
+namespace webrtc { struct VideoSinkWants; }
 // clang-format on
 
 namespace webrtc {
 
 class VideoTrackInterface : public ::webrtc::MediaStreamTrackInterface,
-                            public ::rtc::VideoSourceInterface<::webrtc::VideoFrame> {
+                            public ::webrtc::VideoSourceInterface<::webrtc::VideoFrame> {
 public:
     // VideoTrackInterface inner types define
     enum class ContentHint : int {
@@ -31,17 +31,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void AddOrUpdateSink(
-        ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
-        ::rtc::VideoSinkWants const&                     wants
+        ::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* a1,
+        ::webrtc::VideoSinkWants const&                     a2
     ) /*override*/;
 
-    virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
+    virtual void RemoveSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* a1) /*override*/;
 
     virtual ::webrtc::VideoTrackSourceInterface* GetSource() const = 0;
 
     virtual ::webrtc::VideoTrackInterface::ContentHint content_hint() const;
 
-    virtual void set_content_hint(::webrtc::VideoTrackInterface::ContentHint hint);
+    virtual void set_content_hint(::webrtc::VideoTrackInterface::ContentHint a1);
 
     virtual ~VideoTrackInterface() /*override*/;
     // NOLINTEND
@@ -56,13 +56,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void
-    $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
+    $AddOrUpdateSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* a1, ::webrtc::VideoSinkWants const& a2);
 
-    MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
+    MCNAPI void $RemoveSink(::webrtc::VideoSinkInterface<::webrtc::VideoFrame>* a1);
 
     MCNAPI ::webrtc::VideoTrackInterface::ContentHint $content_hint() const;
 
-    MCNAPI void $set_content_hint(::webrtc::VideoTrackInterface::ContentHint hint);
+    MCNAPI void $set_content_hint(::webrtc::VideoTrackInterface::ContentHint a1);
 
 
     // NOLINTEND

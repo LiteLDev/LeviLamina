@@ -5,7 +5,7 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/deps/nbt/CompoundTag.h"
-#include "mc/world/events/BlockEventCoordinator.h"
+#include "mc/scripting/event_handlers/ScriptBlockGameplayHandler.h"
 #include "mc/world/gamemode/GameMode.h"
 #include "mc/world/gamemode/InteractionResult.h"
 #include "mc/world/level/BlockSource.h"
@@ -74,17 +74,19 @@ LL_TYPE_INSTANCE_HOOK(
 LL_TYPE_INSTANCE_HOOK(
     PlayerPlacedBlockEventHook,
     HookPriority::Normal,
-    BlockEventCoordinator,
-    &BlockEventCoordinator::sendBlockPlacedByPlayer,
-    void,
-    Player&         player,
-    Block const&    placedBlock,
-    BlockPos const& blockpos,
-    bool            isUnderwater
+    ScriptBlockGameplayHandler,
+    &ScriptBlockGameplayHandler::$handleEvent,
+    GameplayHandlerResult<::CoordinatorResult>,
+    BlockTryPlaceByPlayerEvent const& eventData
 ) {
-    auto event = PlayerPlacedBlockEvent{player, blockpos, placedBlock};
+    auto actor = eventData.mPlayer->tryUnwrap();
+    if (!actor) {
+        return origin(eventData);
+    }
+    auto& player = static_cast<Player&>(actor.value());
+    auto  event  = PlayerPlacedBlockEvent{player, eventData.mPos, eventData.mPermutationToPlace};
     EventBus::getInstance().publish(event);
-    return origin(player, placedBlock, blockpos, isUnderwater);
+    return origin(eventData);
 }
 
 

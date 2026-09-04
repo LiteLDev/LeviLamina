@@ -22,19 +22,11 @@ public:
     MCAPI EditorNetworkPacketVariantPayload(::EditorNetworkPacketVariantPayload const&);
 
     MCFOLD ::EditorNetworkPacketVariantPayload& operator=(::EditorNetworkPacketVariantPayload&&);
-
-    MCAPI ~EditorNetworkPacketVariantPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::EditorNetworkPacketVariantPayload const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

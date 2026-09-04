@@ -17,6 +17,7 @@ class WorldGenerator;
 struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
+namespace mce { class Color; }
 // clang-format on
 
 class CustomDimension : public ::Dimension {
@@ -46,10 +47,15 @@ public:
 
     virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) /*override*/;
 
+    virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
+        /*override*/;
+
     virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) /*override*/;
 
-    virtual ::std::unique_ptr<::ChunkSource>
-    _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion) /*override*/;
+    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
+        ::std::unique_ptr<::ChunkSource> storageSource,
+        ::StorageVersion                 levelVersion
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -67,7 +73,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
     MCAPI ::std::unique_ptr<::WorldGenerator> $createGenerator(::br::worldgen::StructureSetRegistry const&);
 
@@ -77,10 +83,12 @@ public:
 
     MCFOLD void $fixWallChunk(::ChunkSource&, ::LevelChunk&);
 
+    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion);
 
-    MCFOLD ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion);
+    MCAPI ::std::unique_ptr<::ChunkSource>
+    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 
     // NOLINTEND
