@@ -28,9 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
+    MCAPI static void _applyBase(::ItemStackBase& item, ::Random& random);
     // NOLINTEND
 
 public:

@@ -239,8 +239,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool _cleanEdges(::WoodlandMansionPieces::SimpleGrid& grid);
-
         MCAPI void
         _identifyRooms(::WoodlandMansionPieces::SimpleGrid& fromGrid, ::WoodlandMansionPieces::SimpleGrid& roomGrid);
 
@@ -254,6 +252,12 @@ public:
             int                                        floorNum,
             int                                        roomId
         ) const;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static bool _cleanEdges(::WoodlandMansionPieces::SimpleGrid& grid);
         // NOLINTEND
     };
 

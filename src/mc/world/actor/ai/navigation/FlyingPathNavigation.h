@@ -49,11 +49,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _disableGravity(::Mob& mob);
-
     MCAPI void _restorePreviousGravityFlag(::Mob& mob);
 
     MCAPI void _storePreviousGravityFlag(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _disableGravity(::Mob& mob);
     // NOLINTEND
 
 public:

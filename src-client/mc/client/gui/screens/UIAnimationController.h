@@ -60,9 +60,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _tick(
+    MCAPI static bool _tick(
         ::std::vector<::UIAnimationController::AnimationUIControlFunctionCallback>& animationList,
         ::mce::TimeStep const&                                                      timeStep,
         ::std::vector<::ScreenEvent>&                                               screenEvents

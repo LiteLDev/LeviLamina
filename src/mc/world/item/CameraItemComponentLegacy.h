@@ -81,14 +81,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
-        ::ItemStack const& instance,
-        ::Actor&           actor,
-        ::BlockPos const&  blockPos,
-        uchar              face,
-        ::Vec3&            spawnPos
-    ) const;
-
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion);
@@ -97,6 +89,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::CameraItemComponentLegacy::UseAction
+    _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos);
+
     MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 

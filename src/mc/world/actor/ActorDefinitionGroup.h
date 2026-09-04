@@ -130,8 +130,6 @@ public:
     );
 #endif
 
-    MCAPI void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
-
     MCAPI ::std::vector<::std::string> buildActorEventList() const;
 
     MCAPI ::ActorDefinitionPtr tryGetDefinition(::std::string const& definitionId);
@@ -142,6 +140,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
+
 #ifdef LL_PLAT_C
     MCAPI static void loadActorDefinitionFormatVersion(::Json::Value& root, ::SemVersion& formatVersion);
 

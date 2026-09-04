@@ -34,10 +34,6 @@ public:
         bool                                           notTall
     ) const;
 
-    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color) const;
-
-    MCAPI int _getColor(::Block const& block) const;
-
     MCAPI void _placeCoral(
         ::BlockSource&                                 region,
         ::BlockPos const&                              pos,
@@ -56,6 +52,14 @@ public:
         int                             iteration,
         bool                            negateChance
     ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color);
+
+    MCAPI static int _getColor(::Block const& block);
     // NOLINTEND
 
 public:

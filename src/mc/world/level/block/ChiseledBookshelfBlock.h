@@ -46,8 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot) const;
-
     MCAPI void _setBook(
         ::Player&                      player,
         ::ItemStack                    heldItem,
@@ -61,6 +59,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot);
+
 #ifdef LL_PLAT_C
     MCAPI static ::ChiseledBookshelfBlock::SlotState
     getBlockSlotState(::BlockPos const& blockPos, ::Vec3 const& blockHit, uchar faceHit, ::BlockSource const& region);

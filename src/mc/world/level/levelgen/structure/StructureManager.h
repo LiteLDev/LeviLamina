@@ -90,15 +90,6 @@ public:
 
     MCAPI ::std::string _createLevelStorageId(::std::string const& dimensionPrefix, ::std::string const& saveId);
 
-    MCAPI bool _findResource(
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
-        ::PackInstance const&                                           pack,
-        ::std::string&                                                  resourceStream
-    );
-
-    MCAPI void
-    _removePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
-
     MCAPI ::StructureTemplate&
     cloneStructure(::StructureTemplate const& structureTemplate, ::std::string const& structureName);
 
@@ -119,8 +110,6 @@ public:
         ::ResourcePackManager const* packManager,
         ::LevelStorage*              levelStorage
     );
-
-    MCAPI bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
 
     MCAPI void loadMetadataRegistries();
 
@@ -149,6 +138,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _findResource(
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
+        ::PackInstance const&                                           pack,
+        ::std::string&                                                  resourceStream
+    );
+
+    MCAPI static void
+    _removePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
+
 #ifdef LL_PLAT_C
     MCAPI static bool exportStructure(::StructureTemplate const& structureTemplate, ::Core::Path const& filePath);
 #endif
@@ -158,6 +156,8 @@ public:
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);
+
+    MCAPI static bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
     // NOLINTEND
 
 public:

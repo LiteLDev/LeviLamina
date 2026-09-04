@@ -109,32 +109,6 @@ public:
 
     MCAPI void _explodeCauldronContents(::BlockSource& region, ::BlockPos const& pos, ushort) const;
 
-    MCAPI void _sendCauldronUsedEventToClient(
-        ::Player const&                              player,
-        short                                        itemId,
-        ::MinecraftEventing::POIBlockInteractionType interactionType
-    ) const;
-
-    MCAPI void _spawnCauldronEvent(
-        ::BlockSource&                    region,
-        ::BlockPos const&                 pos,
-        ::SharedTypes::Legacy::LevelEvent levelEvent
-    ) const;
-
-    MCAPI bool _useDyeableComponent(
-        ::ItemStack&          itemInstance,
-        ::Player&             player,
-        ::BlockPos const&     pos,
-        ::CauldronBlockActor& blockEntity,
-        ::BlockSource&        region,
-        int                   fillLevel,
-        bool                  isEmpty,
-        bool                  isWater,
-        bool                  isCleanWater
-    ) const;
-
-    MCAPI void _useInventory(::Player& player, ::ItemStack& current, ::ItemStack& replaceWith, int useCount) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void
@@ -148,6 +122,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _sendCauldronUsedEventToClient(
+        ::Player const&                              player,
+        short                                        itemId,
+        ::MinecraftEventing::POIBlockInteractionType interactionType
+    );
+
+    MCAPI static void
+    _spawnCauldronEvent(::BlockSource& region, ::BlockPos const& pos, ::SharedTypes::Legacy::LevelEvent levelEvent);
+
+    MCAPI static bool _useDyeableComponent(
+        ::ItemStack&          itemInstance,
+        ::Player&             player,
+        ::BlockPos const&     pos,
+        ::CauldronBlockActor& blockEntity,
+        ::BlockSource&        region,
+        int                   fillLevel,
+        bool                  isEmpty,
+        bool                  isWater,
+        bool                  isCleanWater
+    );
+
+    MCAPI static void _useInventory(::Player& player, ::ItemStack& current, ::ItemStack& replaceWith, int useCount);
+
     MCAPI static bool canReceiveStalactiteDrip(
         ::BlockSource&                        region,
         ::BlockPos const&                     pos,

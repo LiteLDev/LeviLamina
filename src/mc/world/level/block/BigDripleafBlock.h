@@ -76,11 +76,6 @@ public:
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void _resetTilt(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void
-    _setTiltAndScheduleTick(::BigDripleafTilt bigDripleafTilt, ::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -89,6 +84,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _resetTilt(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static void
+    _setTiltAndScheduleTick(::BigDripleafTilt bigDripleafTilt, ::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static void placeWithRandomHeight(::BlockSource& region, ::Random& random, ::BlockPos stemPos, int facing);
     // NOLINTEND
 

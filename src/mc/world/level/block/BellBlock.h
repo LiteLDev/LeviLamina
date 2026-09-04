@@ -56,13 +56,17 @@ public:
     // NOLINTBEGIN
     MCAPI short _getItemId(::BlockSource const& region, ::std::string_view const itemName) const;
 
-    MCAPI void _sendBellUsedEventToClient(::BlockSource const& region, ::Actor const& sourceActor) const;
-
     MCAPI bool hasValidAttachment(::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _sendBellUsedEventToClient(::BlockSource const& region, ::Actor const& sourceActor);
     // NOLINTEND
 
 public:

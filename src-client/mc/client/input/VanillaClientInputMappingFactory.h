@@ -53,10 +53,6 @@ public:
         ::MouseInputMapping&    screenMouseMapping
     );
 
-    MCAPI void _addCommandMacrosKeyboardAndMouseMappingChord(::std::vector<::ChordButtonMapping>& result);
-
-    MCAPI void _addDebugChords(::std::vector<::ChordButtonMapping>& result);
-
     MCAPI void
     _addDebugKeyboardControls(::KeyboardInputMapping& keyboardMapping, ::MouseInputMapping& mouseMapping) const;
 
@@ -85,18 +81,7 @@ public:
         bool                    isEmoteMapping
     ) const;
 
-    MCAPI void _addNewTouchControlsActionButtons(::TouchInputMapping& touchMapping) const;
-
     MCAPI void _addSharedGamePlayGameControllerControls(::GameControllerInputMapping& gameControllerMapping);
-
-    MCAPI void _bindActionToGameControllerInput(
-        ::GameControllerInputMapping&   map,
-        ::GamePadRemappingLayout const& layout,
-        ::std::string const&            buttonID,
-        ::Remapping::ActionEnum         action,
-        float                           triggerThreshold,
-        float                           repeatInterval
-    ) const;
 
     MCAPI void _bindActionToKeyboardAndMouseInput(
         ::KeyboardInputMapping& keyboardMap,
@@ -198,6 +183,25 @@ public:
     MCAPI void _populateFullKeyboardDefaults(::RemappingLayout& layout) const;
 
     MCAPI void _populateKeyboardDefaults(::RemappingLayout& layout) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _addCommandMacrosKeyboardAndMouseMappingChord(::std::vector<::ChordButtonMapping>& result);
+
+    MCAPI static void _addDebugChords(::std::vector<::ChordButtonMapping>& result);
+
+    MCAPI static void _addNewTouchControlsActionButtons(::TouchInputMapping& touchMapping);
+
+    MCAPI static void _bindActionToGameControllerInput(
+        ::GameControllerInputMapping&   map,
+        ::GamePadRemappingLayout const& layout,
+        ::std::string const&            buttonID,
+        ::Remapping::ActionEnum         action,
+        float                           triggerThreshold,
+        float                           repeatInterval
+    );
     // NOLINTEND
 
 public:

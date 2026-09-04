@@ -55,8 +55,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
 
-    MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
-
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     MCAPI ::EntityPlacerItemComponent& operator=(::EntityPlacerItemComponent&&);
@@ -65,6 +63,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _setActorCustomName(::Actor& actor, ::ItemStack const& item);
+
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,

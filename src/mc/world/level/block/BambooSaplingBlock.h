@@ -53,9 +53,13 @@ public:
     // NOLINTBEGIN
     MCAPI BambooSaplingBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _grow(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _grow(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

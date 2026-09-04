@@ -170,8 +170,6 @@ public:
 
     MCAPI void _chooseLanguage(::std::shared_ptr<::ImmutableLocalization> chosen, ::I18nImpl::NotifyMode notify);
 
-    MCAPI void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
-
     MCAPI ::std::shared_ptr<::ImmutableLocalization> _findLocaleFor(::std::string const& code);
 
     MCAPI ::std::string _generatePackKeyPrefix(::PackManifest const& manifest);
@@ -180,6 +178,12 @@ public:
 
     MCAPI ::gsl::not_null<::std::shared_ptr<::ImmutableLocalization>>
     _getPackKeywordLocale(::std::string const& langCode);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
     // NOLINTEND
 
 public:

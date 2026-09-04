@@ -265,9 +265,6 @@ public:
         ::ContentType                              contentType
     );
 
-    MCAPI void
-    _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
-
     MCAPI void _showNoInternetPrompt();
 
     MCAPI void _showPackActivationErrorPrompt();
@@ -338,6 +335,9 @@ public:
         ::OreUI::ResourcePacksFacet_DEPRECATED::PromptActionType type,
         ::OreUI::PromptActionVariant                             variant
     );
+
+    MCAPI static void
+    _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
     // NOLINTEND
 
 public:

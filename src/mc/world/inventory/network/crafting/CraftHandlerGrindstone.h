@@ -60,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _getExperienceFromItem(::ItemStack const& stack) const;
-
     MCAPI bool
     _resolveNetIdAndValidate(::ContainerEnumName containerNetId, uchar slot, ::ItemStackNetIdVariant const& netId);
     // NOLINTEND
@@ -69,6 +67,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static int _getExperienceFromItem(::ItemStack const& stack);
+
     MCAPI static ::ItemStack _getResultItemWithNoEnchants(
         ::ItemStack&                      result,
         ::std::vector<::ItemStack> const& inputItems,

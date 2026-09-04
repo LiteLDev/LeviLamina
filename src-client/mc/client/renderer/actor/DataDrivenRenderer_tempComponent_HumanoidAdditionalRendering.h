@@ -127,8 +127,6 @@ public:
         ::std::vector<::BoneOrientation>* boneOrientations
     );
 
-    MCAPI bool _shouldRenderOffHandItem(::Mob const& mob, ::ItemStack const& offhandItemInstance);
-
     MCAPI void prepareCarriedOffhandItem(::Mob&, ::ItemStack const& item);
     // NOLINTEND
 
@@ -147,6 +145,8 @@ public:
         ::Block const&                 block,
         bool const                     isMainHand
     );
+
+    MCAPI static bool _shouldRenderOffHandItem(::Mob const& mob, ::ItemStack const& offhandItemInstance);
     // NOLINTEND
 
 public:

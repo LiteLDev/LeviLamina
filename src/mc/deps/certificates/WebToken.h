@@ -35,8 +35,6 @@ public:
 
     MCAPI explicit WebToken(::std::string_view token);
 
-    MCAPI void _parse(::Json::Value& value, ::std::string const& data);
-
     MCAPI ::std::string getKeyId() const;
 
 #ifdef LL_PLAT_C
@@ -53,6 +51,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _parse(::Json::Value& value, ::std::string const& data);
+
     MCAPI static ::std::unique_ptr<::WebToken> createFromData(
         ::Json::Value const&                                           dataInfo,
         ::PrivateKeyManager const&                                     manager,

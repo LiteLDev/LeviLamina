@@ -96,13 +96,17 @@ public:
 
     MCAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
 
-    MCAPI float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent) const;
-
-    MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
-
     MCAPI void _initiateFileGeneration();
 
     MCAPI void _setSeedFromString();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent);
+
+    MCAPI static int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent);
     // NOLINTEND
 
 public:

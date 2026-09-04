@@ -451,12 +451,6 @@ public:
 
     MCAPI void _printMessage(::std::string const& message);
 
-    MCAPI void _revertPremiumUpgradePacks(::Core::Path const& filePath);
-
-#ifdef LL_PLAT_C
-    MCAPI void _sanitizeWorld(::Core::Path const& newWorldPath);
-#endif
-
     MCAPI ::FileArchiver::Result _tryBeginExportLevel(
         ::std::string const&            levelId,
         ::Core::Path const&             exportFilePath,
@@ -530,6 +524,16 @@ public:
         ::std::string const& oid,
         bool                 allowMultiplayer
     );
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _revertPremiumUpgradePacks(::Core::Path const& filePath);
+
+#ifdef LL_PLAT_C
+    MCAPI static void _sanitizeWorld(::Core::Path const& newWorldPath);
 #endif
     // NOLINTEND
 

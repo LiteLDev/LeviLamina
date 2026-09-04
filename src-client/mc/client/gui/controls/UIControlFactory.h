@@ -94,21 +94,11 @@ public:
         bool                             isTemplateControl
     );
 
-    MCAPI void _createGradientRenderer(::CustomRenderComponent& customRenderComponent, ::UIResolvedDef const& def);
-
-    MCAPI void _populateButtonComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
-
-    MCAPI void _populateCollectionComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
-
     MCAPI void _populateControl(::UIResolvedDef const& def, ::UIControl& control);
 
     MCAPI void _populateDataBindingComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI void _populateDebugRendererComponent(::UIResolvedDef const& def, ::UIControl& control);
-
     MCAPI void _populateFocusComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
-
-    MCAPI void _populateGestureComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI void _populateGridComponent(
         ::UIControlFactoryContext const& context,
@@ -120,18 +110,11 @@ public:
 
     MCAPI void _populateLayoutComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI void _populatePageIndicatorManagerComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
-
     MCAPI void _populateSoundComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, bool alwaysCreate);
 
     MCAPI void _populateSpriteComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI void _populateTextComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
-
-    MCAPI void
-    _populateTextToSpeechComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, int controlPriorityDefault);
-
-    MCAPI void _populateToggleComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI ::std::shared_ptr<::UIControl> createControlTree(
         ::UIControl const&        templateControl,
@@ -152,6 +135,28 @@ public:
     createControlTreeRootOnly(::std::string_view name, ::ControlScreenAction& controlScreenAction);
 
     MCAPI ~UIControlFactory();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _createGradientRenderer(::CustomRenderComponent& customRenderComponent, ::UIResolvedDef const& def);
+
+    MCAPI static void _populateButtonComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI static void _populateCollectionComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI static void _populateDebugRendererComponent(::UIResolvedDef const& def, ::UIControl& control);
+
+    MCAPI static void _populateGestureComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI static void _populatePageIndicatorManagerComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
+    MCAPI static void
+    _populateTextToSpeechComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, int controlPriorityDefault);
+
+    MCAPI static void _populateToggleComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
     // NOLINTEND
 
 public:

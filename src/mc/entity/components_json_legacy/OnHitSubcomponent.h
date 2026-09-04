@@ -25,8 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor) const;
+    MCAPI static bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor);
     // NOLINTEND
 };

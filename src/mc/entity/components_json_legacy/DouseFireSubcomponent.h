@@ -30,9 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

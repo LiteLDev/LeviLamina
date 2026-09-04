@@ -65,18 +65,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit NetherFortressPiece(int genDepth);
 
-    MCAPI ::StructurePiece* generateAndAddPiece(
-        ::NBStartPiece&                                     startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 depth,
-        bool                                                isCastle
-    );
-
     MCAPI ::StructurePiece* generateChildForward(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
@@ -92,6 +80,22 @@ public:
         ::Random&                                           random,
         int                                                 yOff,
         int                                                 zOff,
+        bool                                                isCastle
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::StructurePiece* generateAndAddPiece(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 depth,
         bool                                                isCastle
     );
     // NOLINTEND

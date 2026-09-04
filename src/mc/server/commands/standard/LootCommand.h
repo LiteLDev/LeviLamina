@@ -75,13 +75,13 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _outputError(::CommandOutput& output, ::Util::ReplacementResults const errorDetails, ::Actor const* entity) const;
-
-    MCAPI void _outputSuccess(::CommandOutput& output, int numItemsDropped) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _outputSuccess(::CommandOutput& output, int numItemsDropped);
+
     MCAPI static void setup(::CommandRegistry& registry, ::ItemRegistryRef itemRegistry);
     // NOLINTEND
 

@@ -29,9 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _applyImpl(
+    MCAPI static bool _applyImpl(
         ::Item const*&       inOutItemDef,
         ::Actor const*       thisEntity,
         ::std::string const& originalItemName,

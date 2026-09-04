@@ -71,8 +71,6 @@ public:
     // NOLINTBEGIN
     MCAPI ItemRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
 
-    MCAPI void _getGuiItemColors(::ItemStack const& item, int& color, int& secondaryColor) const;
-
     MCAPI void _renderBannerItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
@@ -142,13 +140,6 @@ public:
         bool const                useMatrixAsIs
     ) const;
 
-    MCAPI void _renderShieldItem(
-        ::BaseActorRenderContext& renderContext,
-        ::ItemStack const&        item,
-        ::ItemActor&              itemEntity,
-        float                     actorFrameAlpha
-    );
-
     MCAPI void forceGraphicsLoad();
 
     MCAPI ::ItemGraphics& getGraphics(::ItemStack const& item);
@@ -204,6 +195,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _getGuiItemColors(::ItemStack const& item, int& color, int& secondaryColor);
+
+    MCAPI static void _renderShieldItem(
+        ::BaseActorRenderContext& renderContext,
+        ::ItemStack const&        item,
+        ::ItemActor&              itemEntity,
+        float                     actorFrameAlpha
+    );
+
     MCAPI static float getRenderYOffset(::ItemActor const& itemEntity, ::BlockType const* block, float ageInSeconds);
     // NOLINTEND
 

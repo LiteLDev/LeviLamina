@@ -158,8 +158,6 @@ public:
 
     MCAPI void _flipAllFaces(::Facing::Rotation rotation);
 
-    MCAPI ::TextureUVCoordinateSet const& _getMappedTexture(::Block const& block, uchar face) const;
-
     MCAPI ::TextureUVCoordinateSet const& _getTexture(
         ::BlockPos const&      pos,
         ::Block const&         block,
@@ -830,6 +828,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TextureUVCoordinateSet const& _getMappedTexture(::Block const& block, uchar face);
+
     MCAPI static bool canRender(::BlockShape blockShape);
     // NOLINTEND
 

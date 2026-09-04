@@ -90,8 +90,12 @@ public:
     MCAPI void _requestJoinEduServer(::std::string const& serverId);
 
     MCAPI ::Bedrock::Threading::Async<void> _thirdPartyServersFetched();
+    // NOLINTEND
 
-    MCAPI bool _validateJsonMember(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _validateJsonMember(
         ::Json::Value const&     jsonBody,
         ::std::string const&     memberName,
         ::Json::ValueType const& valueType

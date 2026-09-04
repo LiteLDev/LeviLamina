@@ -79,8 +79,6 @@ public:
 
     MCAPI void _setPreviousActionPointer(int processedPointerId);
 
-    MCAPI void calibrateMoveDelta(float& dx, float& dy);
-
     MCAPI void drawJoystick(
         ::InputRenderContext& context,
         ::JoystickState       joystickState,
@@ -90,6 +88,12 @@ public:
         float                 y0,
         float                 joystickRadius
     ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void calibrateMoveDelta(float& dx, float& dy);
     // NOLINTEND
 
 public:

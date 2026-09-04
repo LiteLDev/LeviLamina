@@ -51,13 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI RenderController(::RenderController const&);
 
-    MCNAPI bool _parseColor(
-        ::Json::Value const&  root,
-        ::ExpressionNode*     colorNode,
-        ::MolangVersion const molangVersion,
-        float const           defaultAlpha
-    );
-
     MCNAPI ::std::vector<::std::shared_ptr<::DataDrivenGeometry const>> getDataDrivenGeometries() const;
 
     MCNAPI ::std::shared_ptr<::DataDrivenGeometry> getGeometry(::RenderParams& renderParams) const;
@@ -91,6 +84,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static bool _parseColor(
+        ::Json::Value const&  root,
+        ::ExpressionNode*     colorNode,
+        ::MolangVersion const molangVersion,
+        float const           defaultAlpha
+    );
+
     MCNAPI static ::std::string nameToRegExStr(::std::string const& sourceName);
     // NOLINTEND
 

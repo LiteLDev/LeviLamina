@@ -34,9 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI int _getLootingEnchantLevel(::LootTableContext& context) const;
+    MCAPI static int _getLootingEnchantLevel(::LootTableContext& context);
     // NOLINTEND
 
 public:

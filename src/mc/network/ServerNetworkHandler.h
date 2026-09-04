@@ -617,8 +617,6 @@ public:
         ::ServerNetworkHandlerDependencies&&                                       dependencies
     );
 
-    MCAPI void _decideIfSkinIsTrusted(::SerializedSkinRef& skin);
-
     MCAPI ::std::string _extractFirstConnectionData(::NetworkIdentifierWithSubId const& source);
 
     MCAPI int _getActiveAndInProgressPlayerCount(::mce::UUID excludePlayer) const;
@@ -640,8 +638,6 @@ public:
     );
 
     MCAPI bool _isPrimaryOrSecondaryPlayerInServer(::mce::UUID const& playerId) const;
-
-    MCAPI bool _isServerTextEnabled(::ServerTextEvent const& textEvent) const;
 
     MCAPI void _onClientAuthenticated(::NetworkIdentifier const& source, ::PlayerAuthenticationInfo const& playerInfo);
 
@@ -758,6 +754,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _decideIfSkinIsTrusted(::SerializedSkinRef& skin);
+
+    MCAPI static bool _isServerTextEnabled(::ServerTextEvent const& textEvent);
+
     MCAPI static void _populateCDNValues(
         ::std::vector<::PackInfoData>&                            resourcePacksData,
         ::std::vector<::std::pair<::std::string, ::std::string>>& cdnUrls,
