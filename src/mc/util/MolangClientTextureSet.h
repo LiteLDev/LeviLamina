@@ -11,8 +11,6 @@
 // clang-format off
 struct BedrockTextureData;
 struct MERSUniformData {
-    MERSUniformData();
-    MERSUniformData(const float, const float, const float, const float);
     float mMetalness;
     float mEmissive;
     float mRoughness;
@@ -26,7 +24,6 @@ public:
     // MolangClientTextureSet inner types declare
     // clang-format off
     struct ExtraPBRData {
-        ExtraPBRData(std::weak_ptr<const BedrockTextureData> mer, std::weak_ptr<const BedrockTextureData> normal, const std::optional<MERSUniformData> & uniformOverrides, MERSTextureMode mersMode, NormalTextureMode normalMode);
         std::weak_ptr<const BedrockTextureData> mMERSTextureDataWeakPtr;
         std::weak_ptr<const BedrockTextureData> mNormalTextureDataWeakPtr;
         std::optional<MERSUniformData> mMERSUniforms;
