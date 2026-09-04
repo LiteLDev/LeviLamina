@@ -63,16 +63,6 @@ public:
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void ejectItem(
-        ::BlockSource&     region,
-        ::Vec3 const&      pos,
-        uchar              face,
-        ::ItemStack const& item,
-        ::Container&       container,
-        int                slot,
-        int                countLimit
-    ) const;
-
     MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -87,6 +77,16 @@ public:
 
     MCAPI static void
     ejectItem(::BlockSource& region, ::Vec3 const& pos, uchar face, ::ItemStack const& item, int countLimit);
+
+    MCAPI static void ejectItem(
+        ::BlockSource&     region,
+        ::Vec3 const&      pos,
+        uchar              face,
+        ::ItemStack const& item,
+        ::Container&       container,
+        int                slot,
+        int                countLimit
+    );
 
     MCAPI static void openInventoryContainer(::Player& player, ::BlockPos const& pos);
     // NOLINTEND

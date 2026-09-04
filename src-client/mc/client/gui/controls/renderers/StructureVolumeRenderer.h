@@ -101,8 +101,6 @@ public:
     // NOLINTBEGIN
     MCAPI StructureVolumeRenderer();
 
-    MCAPI float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key) const;
-
     MCAPI void _initializeChunkBuilder(
         ::ClientBlockPipeline::TessellatorContext& pipelineContext,
         ::BlockSource&                             region,
@@ -137,6 +135,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
+
+    MCAPI static float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key);
 
     MCAPI static void _iterateOverBlockEntities(
         ::BlockSource&                                                     region,

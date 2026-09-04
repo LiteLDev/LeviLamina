@@ -115,8 +115,6 @@ public:
     // NOLINTBEGIN
     MCAPI BedrockSpawner(::Level& level, ::IMinecraftEventing& eventing);
 
-    MCAPI void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup) const;
-
     MCAPI void _spawnMobCluster(::BlockSource& region, ::BlockPos const& pos, ::SpawnConditions& conditions);
 
     MCAPI void _spawnMobInCluster(
@@ -134,6 +132,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _isInsideAncientCity(::BlockSource const& region, ::BlockPos pos);
+
+    MCAPI static void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup);
     // NOLINTEND
 
 public:

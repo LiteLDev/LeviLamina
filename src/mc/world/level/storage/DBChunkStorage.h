@@ -200,9 +200,6 @@ public:
 
     MCAPI ::std::string _upgradeActorStorage(::ChunkKey chunkKey, ::std::string_view& legacyActorData);
 
-    MCAPI void
-    _writeActorDigest(::LevelStorageWriteBatch& batch, ::ChunkKey const& chunkKey, ::std::string const& digestBuffer);
-
     MCAPI void _writeDiscardChunksBatch();
 
     MCAPI void freeCaches();
@@ -212,6 +209,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::string> _deserializeChunkActorStorageKeys(::IDataInput& digestStream);
+
+    MCAPI static void
+    _writeActorDigest(::LevelStorageWriteBatch& batch, ::ChunkKey const& chunkKey, ::std::string const& digestBuffer);
 
     MCAPI static ::std::string deserializeActorStorageToString(
         bool                                                      hasActorDigestVersionTag,

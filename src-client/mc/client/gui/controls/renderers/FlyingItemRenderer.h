@@ -41,9 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _renderGuiIcon(
+    MCAPI static void _renderGuiIcon(
         ::MinecraftUIRenderContext& renderContext,
         ::IClientInstance&          client,
         ::ui::FlyingItem&           item,
@@ -54,7 +54,7 @@ public:
         int                         zOrder
     );
 
-    MCAPI void _renderMesh(
+    MCAPI static void _renderMesh(
         ::MinecraftUIRenderContext& renderContext,
         ::BaseActorRenderContext&   entityRenderContext,
         ::UIItemRenderInfo const&   itemRenderInfo

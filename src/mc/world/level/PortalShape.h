@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _getDistanceUntilEdge(::BlockPos const& pos, ::Facing::Name direction, ::BlockSource const& source) const;
-
     MCAPI void createPortalBlocks(::WorldChangeTransaction& transaction) const;
 
     MCAPI void evaluate(::BlockPos const& originalPosition, ::BlockSource const& source);
@@ -40,5 +38,12 @@ public:
     MCAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
 
     MCAPI void updateNeighboringBlocks(::BlockSource& source, ::Vec3 const& perpendicularAxis) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int
+    _getDistanceUntilEdge(::BlockPos const& pos, ::Facing::Name direction, ::BlockSource const& source);
     // NOLINTEND
 };

@@ -250,10 +250,6 @@ public:
 
     MCAPI void _handleStickScrolling(::DirectionId directionId);
 
-    MCAPI bool _isFocusEnabled(::std::shared_ptr<::UIControl> const& control) const;
-
-    MCAPI bool _isFocusMagnetEnabled(::std::shared_ptr<::UIControl> const& control) const;
-
     MCAPI void _passViewCommand();
 
     MCAPI void _processControllerCursorMove(::DirectionId directionId);
@@ -330,6 +326,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _isFocusEnabled(::std::shared_ptr<::UIControl> const& control);
+
+    MCAPI static bool _isFocusMagnetEnabled(::std::shared_ptr<::UIControl> const& control);
+
     MCAPI static bool _shouldBindChildren(bool doAllBinds, ::UIControl& control, ::DataBindingComponent& dataBinding);
     // NOLINTEND
 

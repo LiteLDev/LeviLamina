@@ -87,8 +87,6 @@ public:
 
     MCAPI void _addPhotoPageAt(int index, ::std::string const& photoName);
 
-    MCAPI int _getPickIndex(char const* collectionPrefix, ::UIPropertyBag& bag);
-
     MCAPI void _parsePageText(int index);
 
     MCAPI void _setPageText(int index, ::std::string const& text);
@@ -96,6 +94,12 @@ public:
     MCAPI void _swapPages(int page1Index, int page2Index);
 
     MCAPI void _tryFirePageTurnSound(::UIPropertyBag const& bag) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int _getPickIndex(char const* collectionPrefix, ::UIPropertyBag& bag);
     // NOLINTEND
 
 public:

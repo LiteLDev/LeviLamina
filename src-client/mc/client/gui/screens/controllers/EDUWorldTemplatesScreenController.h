@@ -48,13 +48,17 @@ public:
 
     MCAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EDUScreenHelpers::InstanceType instanceType);
 
-    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
-
     MCAPI void _useTemplate(
         ::PackManifest const&            manifest,
         ::EDUScreenHelpers::InstanceType type,
         ::std::string_view               templateName
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:

@@ -173,16 +173,6 @@ public:
 
     MCAPI bool _enableBlockBreakDelay() const;
 
-    MCAPI void _sendPlayerInteractWithBlockAfterEvent(
-        ::ItemStack const& beforeItem,
-        ::ItemStack const& afterItem,
-        ::Player&          player,
-        ::BlockPos const&  at,
-        uchar              face,
-        ::Vec3 const&      hit,
-        bool               isFirstEvent
-    );
-
 #ifdef LL_PLAT_C
     MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 #endif
@@ -196,6 +186,20 @@ public:
     MCAPI float getDestroyRate(::Block const& block);
 
     MCAPI float getMaxPickRange();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _sendPlayerInteractWithBlockAfterEvent(
+        ::ItemStack const& beforeItem,
+        ::ItemStack const& afterItem,
+        ::Player&          player,
+        ::BlockPos const&  at,
+        uchar              face,
+        ::Vec3 const&      hit,
+        bool               isFirstEvent
+    );
     // NOLINTEND
 
 public:

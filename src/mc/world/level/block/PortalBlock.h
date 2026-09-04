@@ -71,8 +71,6 @@ public:
     // NOLINTBEGIN
     MCAPI PortalBlock(::std::string const& nameId, int id);
 
-    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
@@ -85,6 +83,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
+
     MCAPI static bool trySpawnPortal(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 

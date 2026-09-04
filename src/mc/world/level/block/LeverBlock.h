@@ -67,13 +67,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uchar _getFacing(::Block const& block) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void toggle(::BlockSource& region, ::BlockPos const& pos, ::Player* player) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static uchar _getFacing(::Block const& block);
     // NOLINTEND
 
 public:

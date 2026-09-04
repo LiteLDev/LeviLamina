@@ -36,17 +36,14 @@ public:
     // NOLINTBEGIN
     MCAPI bool
     _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
-
-    MCAPI void _generateSuccessOutput(
-        ::CommandOutput&     output,
-        ::std::string const& playerNameTag,
-        ::std::string const& reason
-    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void
+    _generateSuccessOutput(::CommandOutput& output, ::std::string const& playerNameTag, ::std::string const& reason);
+
     MCAPI static void _kickPlayer(
         ::Minecraft*                   game,
         ::Player const&                matchingPlayer,

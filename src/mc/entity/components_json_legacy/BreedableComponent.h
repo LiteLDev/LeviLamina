@@ -35,10 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _spawnExperienceOrbs(::Actor& owner);
-
-    MCAPI void _spawnLoveParticles(::Actor& owner);
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
@@ -47,8 +43,16 @@ public:
 
     MCAPI ::std::vector<::WeakEntityRef> mate(::Actor& owner, ::Actor& partner);
 
-    MCAPI bool meetsSittingRequirements(::Actor const& actor) const;
-
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _spawnExperienceOrbs(::Actor& owner);
+
+    MCAPI static void _spawnLoveParticles(::Actor& owner);
+
+    MCAPI static bool meetsSittingRequirements(::Actor const& actor);
     // NOLINTEND
 };

@@ -55,9 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _parseEvent(::Json::Value const& event, ::std::vector<::HashedString>& eventList);
+    MCAPI static void _parseEvent(::Json::Value const& event, ::std::vector<::HashedString>& eventList);
     // NOLINTEND
 
 public:

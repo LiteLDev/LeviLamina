@@ -42,13 +42,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void _processBlockChangeIntent(
+    MCNAPI static void _processBlockChangeIntent(
         ::BlockSource const&                                              region,
         ::Editor::Transactions::BlockChangeIntentData&                    blockIntentData,
         ::std::vector<::Editor::Transactions::BlockChangedOperationData>& changedBlocks
-    ) const;
+    );
     // NOLINTEND
 
 public:

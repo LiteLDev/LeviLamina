@@ -31,7 +31,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool _saveReport();
+    // NOLINTEND
 
-    MCNAPI bool _writeFile(::std::string const& fileName, ::std::string const& contents);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool _writeFile(::std::string const& fileName, ::std::string const& contents);
     // NOLINTEND
 };

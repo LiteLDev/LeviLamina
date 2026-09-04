@@ -33,14 +33,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void containerContentChanged(::Actor& actor);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void containerContentChanged(::Actor& actor);
+
     MCNAPI static void initializeEntity(::EntityContext& entity);
     // NOLINTEND
 

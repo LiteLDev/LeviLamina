@@ -116,8 +116,12 @@ public:
 
     MCNAPI void
     _handleUpdateFromClipboardPayload(::Editor::Network::StructureUpdateFromClipboardPayload const& payload);
+    // NOLINTEND
 
-    MCNAPI void _makeStructureTemplateFromVolume(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _makeStructureTemplateFromVolume(
         ::Editor::EditorStructureTemplate&             structureTemplate,
         ::BlockSource*                                 region,
         ::Editor::RelativeVolumeListBlockVolume const& volume

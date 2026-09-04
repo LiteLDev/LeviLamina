@@ -33,14 +33,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void _setGameOptions(::LevelData const& levelData, ::Editor::ScriptModule::ScriptGameOptions& gameOptions);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void
+    _setGameOptions(::LevelData const& levelData, ::Editor::ScriptModule::ScriptGameOptions& gameOptions);
+
     MCNAPI static ::Scripting::ClassBinding bindClass();
 
     MCNAPI static ::Scripting::EnumBinding bindExportResultEnums();

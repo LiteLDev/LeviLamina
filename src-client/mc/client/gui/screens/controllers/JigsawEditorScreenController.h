@@ -48,11 +48,15 @@ public:
 
     MCAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
 
-    MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
-
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent);
     // NOLINTEND
 
 public:

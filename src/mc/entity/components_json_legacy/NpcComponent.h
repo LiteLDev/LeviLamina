@@ -59,16 +59,11 @@ public:
     // NOLINTBEGIN
     MCAPI NpcComponent(::NpcComponent&& rhs);
 
-    MCAPI void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
-
     MCAPI void _deserializeData(::Json::Value const& npcData);
 
     MCAPI void _loadData(::Actor& owner);
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
-
-    MCAPI void
-    executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
 
     MCAPI ::std::vector<int> getCommandCounts() const;
 
@@ -126,6 +121,15 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void syncActionsWithServer(::Actor& owner) const;
 #endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
+
+    MCAPI static void
+    executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
     // NOLINTEND
 
 public:

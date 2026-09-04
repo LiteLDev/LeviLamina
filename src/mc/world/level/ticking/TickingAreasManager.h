@@ -98,17 +98,12 @@ public:
         ::LevelStorage&                       levelStorage
     );
 
-    MCAPI void _deletePendingArea(::LevelStorage& levelStorage, ::PendingArea const& pendingArea);
-
     MCAPI ::std::vector<::TickingAreaDescription> _getPendingAreaDescriptionsFiltered(
         ::DimensionType                             dimensionId,
         ::std::function<bool(::PendingArea const&)> includeInList
     ) const;
 
     MCAPI void _postReloadActorAdded(::Actor& actor);
-
-    MCAPI void
-    _savePendingArea(::LevelStorage& levelStorage, ::DimensionType dimensionId, ::PendingArea const& pendingArea);
 
     MCAPI void addEntityArea(::DimensionType dimensionId, ::Actor const& actor, ::LevelStorage& levelStorage);
 
@@ -168,6 +163,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _deletePendingArea(::LevelStorage& levelStorage, ::PendingArea const& pendingArea);
+
+    MCAPI static void
+    _savePendingArea(::LevelStorage& levelStorage, ::DimensionType dimensionId, ::PendingArea const& pendingArea);
+
     MCAPI static ::TickingAreasManager::AreaLimitCheck getLimitCheck(::Level const& level, bool enforce);
     // NOLINTEND
 

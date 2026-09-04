@@ -38,8 +38,12 @@ public:
     MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
 
     MCAPI void pushReturnValue();
+    // NOLINTEND
 
-    MCAPI void restoreStackState(::MolangEvalStackState&& state);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void restoreStackState(::MolangEvalStackState&& state);
     // NOLINTEND
 
 public:

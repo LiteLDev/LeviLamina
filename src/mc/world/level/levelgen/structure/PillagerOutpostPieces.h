@@ -80,8 +80,12 @@ public:
             bool                                              isSatellite,
             ::Dimension&                                      dimension
         );
+        // NOLINTEND
 
-        MCAPI void _addMobsFromPositions(
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void _addMobsFromPositions(
             ::BoundingBox const&               chunkBB,
             ::ActorDefinitionIdentifier const& definition,
             ::BlockSource&                     region,

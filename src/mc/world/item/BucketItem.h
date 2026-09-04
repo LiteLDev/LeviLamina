@@ -106,8 +106,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _broadcastBucketEmptySound(::BlockSource& region, ::Actor& entity, ::BlockPos const& pos) const;
 
-    MCAPI void _broadcastBucketFillSound(::BlockSource& region, ::Actor& entity, ::Material const& material) const;
-
     MCAPI bool _emptyBucket(
         ::BlockSource&     region,
         ::Block const&     contents,
@@ -116,8 +114,6 @@ public:
         ::ItemStack const& instance,
         uchar              face
     ) const;
-
-    MCAPI void _replaceWithEmptyBucket(::ItemStack& instance, ::Actor& entity) const;
 
     MCAPI bool
     _supportsWaterlessEntity(::Actor const& entity, ::HashedString& bucketType, bool const onlyCheckActorType) const;
@@ -128,6 +124,14 @@ public:
         ::BlockPos            pos,
         ::ItemInstance const& instance
     ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _broadcastBucketFillSound(::BlockSource& region, ::Actor& entity, ::Material const& material);
+
+    MCAPI static void _replaceWithEmptyBucket(::ItemStack& instance, ::Actor& entity);
     // NOLINTEND
 
 public:

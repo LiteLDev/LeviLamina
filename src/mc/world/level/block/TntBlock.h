@@ -39,14 +39,14 @@ public:
     // NOLINTBEGIN
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void _setAllowUnderwater(::Actor* e) const;
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _setAllowUnderwater(::Actor* e);
+
     MCAPI static bool tryLightTnt(::Player& player, ::BlockPos const& pos);
     // NOLINTEND
 

@@ -251,8 +251,6 @@ public:
 
     MCAPI void _resetServerScriptManager();
 
-    MCAPI bool _useClientSideChunkGeneration(::LevelData* levelData) const;
-
 #ifdef LL_PLAT_C
     MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
 #endif
@@ -281,6 +279,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _useClientSideChunkGeneration(::LevelData* levelData);
+
     MCAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
     createServerLevelCallback(::ServerInstance::CreateServerLevelOps&& ops);

@@ -105,8 +105,12 @@ public:
         bool                 isBaby,
         bool                 hadPassenger
     );
+    // NOLINTEND
 
-    MCNAPI void onMobDroppedItem(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void onMobDroppedItem(
         ::std::string const& mobNamespace,
         ::std::string const& mobName,
         ::std::string const& itemNamespace,
@@ -114,7 +118,7 @@ public:
         uint                 stackSize
     );
 
-    MCNAPI void onMobPickedUpItem(
+    MCNAPI static void onMobPickedUpItem(
         ::std::string const& mobNamespace,
         ::std::string const& mobName,
         ::std::string const& itemNamespace,

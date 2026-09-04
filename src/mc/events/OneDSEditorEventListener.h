@@ -54,7 +54,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addDynamicPropertiesFromEvent(
+    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
+        ::std::vector<::Social::Events::Event>                            events,
+        ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
+    );
+
+    MCNAPI bool _sendBatch();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _addDynamicPropertiesFromEvent(
         ::Json::Value& properties,
         ::brstd::flat_map<
             ::std::string,
@@ -63,13 +74,6 @@ public:
             ::std::vector<::std::string>,
             ::std::vector<::std::vector<::Social::Events::Property>>> const& dynamicProperties
     );
-
-    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
-        ::std::vector<::Social::Events::Event>                            events,
-        ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
-    );
-
-    MCNAPI bool _sendBatch();
     // NOLINTEND
 
 public:

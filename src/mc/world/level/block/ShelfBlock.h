@@ -108,9 +108,6 @@ public:
     // NOLINTBEGIN
     MCAPI ShelfBlock(::std::string const& nameId, int id);
 
-    MCAPI bool
-    _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type) const;
-
     MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
     _getPoweredShelfBlockActorsForDoubleShelf(
         ::BlockSource&    region,
@@ -126,27 +123,10 @@ public:
         ::BlockPos const& shelfRight
     ) const;
 
-    MCAPI bool _isMatchingPoweredShelfInMatchingDirection(
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::BlockPos const&    neighbor
-    ) const;
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void
     _setShelfData(::BlockSource& region, ::BlockPos const& pos, bool powered, ::ShelfBlock::PoweredType type) const;
-
-    MCAPI bool _swapItemsWithUnpoweredShelf(
-        ::Player&          player,
-        ::BlockPos const&  pos,
-        ::BlockSource&     region,
-        ::ShelfBlockActor& blockActor,
-        ::Vec3 const&      blockHit,
-        uchar              hitFace
-    ) const;
-
-    MCAPI void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -156,7 +136,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool
+    _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type);
+
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
+
+    MCAPI static bool _isMatchingPoweredShelfInMatchingDirection(
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockPos const&    neighbor
+    );
+
+    MCAPI static bool _swapItemsWithUnpoweredShelf(
+        ::Player&          player,
+        ::BlockPos const&  pos,
+        ::BlockSource&     region,
+        ::ShelfBlockActor& blockActor,
+        ::Vec3 const&      blockHit,
+        uchar              hitFace
+    );
+
+    MCAPI static void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos);
 
 #ifdef LL_PLAT_C
     MCAPI static ::ShelfBlock::SlotState

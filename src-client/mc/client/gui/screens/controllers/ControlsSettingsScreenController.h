@@ -119,11 +119,6 @@ public:
         ::std::vector<::std::string> const&      disabledInputMappings
     );
 
-    MCAPI bool _canSetCommandMacroCommandAtIndex(
-        int                                                     collectionIndex,
-        ::ControlsSettingsScreenController::KeyboardLayoutInfo& layout
-    ) const;
-
     MCFOLD bool _commandMacrosAllowed() const;
 
     MCAPI void _generateBindingInfo(
@@ -157,6 +152,15 @@ public:
 
     MCAPI void
     setUpCallbacksForFloatInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& sliderName);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canSetCommandMacroCommandAtIndex(
+        int                                                     collectionIndex,
+        ::ControlsSettingsScreenController::KeyboardLayoutInfo& layout
+    );
     // NOLINTEND
 
 public:

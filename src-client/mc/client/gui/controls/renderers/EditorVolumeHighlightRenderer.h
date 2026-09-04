@@ -83,19 +83,23 @@ public:
         ::AABB const&                              area
     );
 
-    MCAPI bool _renderBlockEntities(
-        ::BaseActorRenderContext& renderContext,
-        ::BlockSource&            region,
-        ::AABB const&             area,
-        ::Vec3 const&             offset,
-        bool                      renderAlphaLayer
-    ) const;
-
     MCAPI bool _renderBlocks(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
         ::AABB const&             area,
         ::Vec3 const&             offset
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _renderBlockEntities(
+        ::BaseActorRenderContext& renderContext,
+        ::BlockSource&            region,
+        ::AABB const&             area,
+        ::Vec3 const&             offset,
+        bool                      renderAlphaLayer
     );
     // NOLINTEND
 

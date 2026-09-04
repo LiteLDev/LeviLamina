@@ -68,12 +68,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applySelectedPacksCache(
-        ::PackManagerContentSourceData& packData,
-        ::std::vector<::PackModel>&     selected,
-        ::std::vector<::PackModel>&     available
-    ) const;
-
     MCAPI ::std::shared_ptr<::PackContentItem> _copyAndSetValuesFromPackContentItemAndData(
         ::std::shared_ptr<::PackContentItem const> const& baseItem,
         ::PackManagerContentSourceData const&             packData
@@ -86,6 +80,16 @@ public:
         uint64                                             position,
         ::std::optional<::std::string>                     worldId,
         ::std::optional<::Core::PathBuffer<::std::string>> worldPath
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _applySelectedPacksCache(
+        ::PackManagerContentSourceData& packData,
+        ::std::vector<::PackModel>&     selected,
+        ::std::vector<::PackModel>&     available
     );
     // NOLINTEND
 

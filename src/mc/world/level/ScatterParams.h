@@ -113,14 +113,6 @@ public:
 
     MCAPI ScatterParams(::ScatterParams const&);
 
-    MCAPI void _fillCoordinateRangeFromData(
-        ::std::string const&                                coordinateName,
-        ::ScatterParams::CoordinateRange&                   coordinateRange,
-        ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData,
-        ::MolangVersion const&                              molangVersion,
-        ::LogArea                                           logArea
-    );
-
     MCAPI void fillFromData(
         ::SharedTypes::v1_21_10::ScatterParamsData const& data,
         ::MolangVersion                                   molangVersion,
@@ -140,6 +132,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _fillCoordinateRangeFromData(
+        ::std::string const&                                coordinateName,
+        ::ScatterParams::CoordinateRange&                   coordinateRange,
+        ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData,
+        ::MolangVersion const&                              molangVersion,
+        ::LogArea                                           logArea
+    );
+
     MCAPI static void _parseExpressionNodeFloat(
         ::ExpressionOp       op,
         ::std::string const& expression,

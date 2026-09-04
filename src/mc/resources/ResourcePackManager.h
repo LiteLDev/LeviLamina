@@ -130,12 +130,6 @@ public:
         ::brstd::move_only_function<bool(::std::unique_ptr<::ResourcePackStack>*) const> operation
     );
 
-    MCAPI void _getResourcesOfGroup(
-        ::PackInstance const&        packInstance,
-        ::std::string const&         group,
-        ::std::vector<::Core::Path>& resources
-    ) const;
-
 #ifdef LL_PLAT_C
     MCAPI void _updateLanguageSubpacks();
 
@@ -206,6 +200,16 @@ public:
     MCAPI void setPackSourceReport(::PackSourceReport&& report);
 
     MCAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _getResourcesOfGroup(
+        ::PackInstance const&        packInstance,
+        ::std::string const&         group,
+        ::std::vector<::Core::Path>& resources
+    );
     // NOLINTEND
 
 public:

@@ -53,8 +53,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CameraAimAssistDataRegistryComponent(::IMinecraftEventing& eventing);
 
-    MCAPI bool _validatePresetCategorySetting(::std::string const& categoryId) const;
-
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&
     addCategory(::EntityContext& levelEntity, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&& category);
 
@@ -90,6 +88,12 @@ public:
         ::CameraAimAssistRegistryComponent&                aimAssistRegistry,
         ::PacketSender&                                    packetSender
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _validatePresetCategorySetting(::std::string const& categoryId);
     // NOLINTEND
 
 public:

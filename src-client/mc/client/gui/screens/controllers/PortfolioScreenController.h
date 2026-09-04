@@ -68,11 +68,15 @@ public:
 
     MCAPI void _deletePhoto(uint64 index);
 
-    MCAPI int _getPickIndex(::UIPropertyBag& bag);
-
     MCAPI void _loadCaptionIfUnloaded(::PhotoRecord& record);
 
     MCAPI void _saveCaptions(bool forceSaveAll);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int _getPickIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:

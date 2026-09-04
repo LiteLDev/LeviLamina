@@ -168,8 +168,6 @@ public:
         bool                           posAndRotSetByJSON
     );
 
-    MCAPI bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
-
     MCAPI ::ItemRenderCall* _getRenderCall(::Mob* mob, ::ItemStack const& itemInstance, int fallbackFrame);
 
     MCAPI void _pushSparklerParticles(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Level& level);
@@ -321,6 +319,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
+
     MCAPI static ::dragon::RenderMetadata _createRenderMetadata(
         ::BaseActorRenderContext const& renderContext,
         ::Actor const&                  entity,
