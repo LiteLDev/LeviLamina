@@ -26,6 +26,10 @@ public:
     constexpr MolangScriptArgPOD(Actor const* val) : mActorPtr(const_cast<Actor*>(val)) {}
     constexpr MolangScriptArgPOD(ActorUniqueID val) : mActorId(val.rawID) {}
     constexpr MolangScriptArgPOD(ItemStackBase const* val) : mItemStackBasePtr(const_cast<ItemStackBase*>(val)) {}
+    constexpr MolangScriptArgPOD& operator=(MolangScriptArgPOD const& other) {
+        if (this != &other) _mData = other._mData;
+        return *this;
+    }
     constexpr bool operator==(MolangScriptArgPOD const& rhs) const { return _mData == rhs._mData; }
     void           clear() { _mData = 0; }
 
