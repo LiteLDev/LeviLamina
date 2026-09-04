@@ -16,6 +16,22 @@ struct MolangScriptArg;
 
 class MolangVariableMap {
 public:
+    LLAPI void setMolangVariable(::MolangVariableIndex molangVariableIndex, ::MolangScriptArg const& value);
+
+#ifdef LL_PLAT_S
+    LLAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
+
+    LLAPI void setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value);
+#endif
+
+    LLAPI void setMolangVariable(
+        uint64                   variableNameHash,
+        char const*              variableName,
+        ::MolangScriptArg const& value,
+        bool                     allowSpecialCharacters
+    );
+
+public:
     // MolangVariableMap inner types define
     enum class MissingVariableHandling : int {
         Error   = 0,

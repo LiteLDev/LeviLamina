@@ -9,6 +9,7 @@
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/UUID.h"
 #include "mc/world/actor/ai/village/POIType.h"
+#include "mc/world/actor/ai/village/Raid.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/phys/AABB.h"
