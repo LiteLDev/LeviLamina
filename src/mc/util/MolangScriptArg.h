@@ -72,7 +72,19 @@ public:
 
 public:
     // prevent constructor by default
-    MolangScriptArg& operator=(MolangScriptArg const&);
+    MolangScriptArg& operator=(MolangScriptArg const& other) {
+        if (this != &other) {
+            mType = other.mType;
+            if (other.mType != MolangScriptArgType::Unset) {
+                if (other.mType != MolangScriptArgType::Variant) {
+                    mPOD = other.mPOD;
+                } else {
+                    mData = other.mData;
+                }
+            }
+        }
+        return *this;
+    }
     MolangScriptArg() = default;
 
 public:

@@ -16,10 +16,15 @@ struct MolangScriptArg;
 
 class MolangVariableMap {
 public:
-    LLNDAPI void setMolangVariable(::MolangVariableIndex molangVariableIndex, ::MolangScriptArg const& value);
-    LLNDAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
-    LLNDAPI void setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value);
-    LLNDAPI void setMolangVariable(
+    LLAPI void setMolangVariable(::MolangVariableIndex molangVariableIndex, ::MolangScriptArg const& value);
+
+#ifdef LL_PLAT_S
+    LLAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
+
+    LLAPI void setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value);
+#endif
+
+    LLAPI void setMolangVariable(
         uint64                   variableNameHash,
         char const*              variableName,
         ::MolangScriptArg const& value,

@@ -10,7 +10,14 @@
 // auto generated forward declare list
 // clang-format off
 struct BedrockTextureData;
-struct MERSUniformData;
+struct MERSUniformData {
+    MERSUniformData();
+    MERSUniformData(const float, const float, const float, const float);
+    float mMetalness;
+    float mEmissive;
+    float mRoughness;
+    float mSubsurface;
+};;
 namespace mce { class TexturePtr; }
 // clang-format on
 
@@ -18,11 +25,14 @@ struct MolangClientTextureSet {
 public:
     // MolangClientTextureSet inner types declare
     // clang-format off
-    struct ExtraPBRData;
-    // clang-format on
-
-    // MolangClientTextureSet inner types define
-    struct ExtraPBRData {};
+    struct ExtraPBRData {
+        ExtraPBRData(std::weak_ptr<const BedrockTextureData> mer, std::weak_ptr<const BedrockTextureData> normal, const std::optional<MERSUniformData> & uniformOverrides, MERSTextureMode mersMode, NormalTextureMode normalMode);
+        std::weak_ptr<const BedrockTextureData> mMERSTextureDataWeakPtr;
+        std::weak_ptr<const BedrockTextureData> mNormalTextureDataWeakPtr;
+        std::optional<MERSUniformData> mMERSUniforms;
+        MERSTextureMode mMERSTextureMode;
+        NormalTextureMode mNormalTextureMode;
+};
 
 public:
 // member variables
@@ -40,7 +50,14 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    MolangClientTextureSet& operator=(MolangClientTextureSet const&);
+    MolangClientTextureSet& operator=(MolangClientTextureSet const& rhs) {
+    if (this != &rhs) {
+        mColorTextureDataWeakPtr = rhs.mColorTextureDataWeakPtr;
+        mPBRData = rhs.mPBRData ? std::make_unique<ExtraPBRData>(*rhs.mPBRData) : nullptr;
+        mName    = rhs.mName;
+    }
+    return *this;
+}
     MolangClientTextureSet();
 
 #endif
