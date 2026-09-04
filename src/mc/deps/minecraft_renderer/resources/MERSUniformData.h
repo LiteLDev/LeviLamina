@@ -2,4 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MERSUniformData {};
+struct MERSUniformData {
+    float mMetalness;
+    float mEmissive;
+    float mRoughness;
+    float mSubsurface;
+};

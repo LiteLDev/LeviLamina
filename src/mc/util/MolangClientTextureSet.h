@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/minecraft_renderer/resources/MERSUniformData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
@@ -10,12 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 struct BedrockTextureData;
-struct MERSUniformData {
-    float mMetalness;
-    float mEmissive;
-    float mRoughness;
-    float mSubsurface;
-};;
+struct MERSUniformData;
 namespace mce { class TexturePtr; }
 // clang-format on
 
