@@ -13,6 +13,7 @@
 #include "ll/core/CrashLogger.h"
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/mod/ModRegistrar.h"
+#include "ll/core/protocol/ClientProtocolRuntime.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/client/game/ClientInstance.h"
@@ -87,6 +88,13 @@ void leviLaminaMain() {
     CrashLogger::init();
 
     command::registerCommands();
+
+    if (config.targeted.protocol.enabled) {
+        if (auto initialized = protocol::client::initialize(); !initialized) {
+            getLogger().error("Protocol initialization failed");
+            initialized.error().log(getLogger());
+        }
+    }
 
     mod::ModRegistrar::getInstance().loadAllMods();
 
@@ -229,6 +237,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     MainGameCore::WndProc::WndProcParams params
 ) {
     setGamingStatus(GamingStatus::Stopping);
+    protocol::client::shutdown();
     mod::ModRegistrar::getInstance().disableAllMods();
     setGamingStatus(GamingStatus::Default);
     return origin(params);
