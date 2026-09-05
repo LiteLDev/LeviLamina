@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/ActorLink.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec2.h"
