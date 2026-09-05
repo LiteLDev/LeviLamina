@@ -1,15 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/DataItem.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/world/actor/DataItem.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockPos;
+class DataItem;
 class EntityContext;
 class Vec3;
 struct ActorDataDirtyFlagsComponent;

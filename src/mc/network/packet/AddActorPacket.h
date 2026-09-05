@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/ActorLink.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec2.h"
@@ -11,9 +12,7 @@
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
-#include "mc/world/actor/ActorLink.h"
 #include "mc/world/actor/state/PropertySyncData.h"
-
 
 // auto generated forward declare list
 // clang-format off
@@ -24,6 +23,7 @@ class BinaryStream;
 class DataItem;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
+struct ActorLink;
 struct SyncedAttribute;
 // clang-format on
 
