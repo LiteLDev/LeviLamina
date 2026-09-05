@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AttributeInstanceDelegate();
+    virtual ~AttributeInstanceDelegate() = default;
 
     virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
@@ -33,12 +33,6 @@ public:
     virtual ::std::optional<float> change(float oldValue, float newValue, ::AttributeBuff const& buff);
 
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

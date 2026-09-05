@@ -49,11 +49,15 @@ public:
     // NOLINTBEGIN
     MCAPI MangrovePropaguleBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI bool _isHanging(::Block const& block) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
+
+    MCAPI static bool _isHanging(::Block const& block);
     // NOLINTEND
 
 public:

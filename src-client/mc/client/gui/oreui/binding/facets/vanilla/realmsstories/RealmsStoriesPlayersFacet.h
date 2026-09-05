@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesPlayersFacet() /*override*/;
+    virtual ~RealmsStoriesPlayersFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -70,12 +70,6 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> provider,
         ::Bedrock::NonOwnerPointer<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

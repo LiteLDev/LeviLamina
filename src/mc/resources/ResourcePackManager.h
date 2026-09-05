@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackManager() /*override*/;
+    virtual ~ResourcePackManager() /*override*/ = default;
 
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
@@ -129,12 +129,6 @@ public:
         ::ResourcePackStackType                                                          stackType,
         ::brstd::move_only_function<bool(::std::unique_ptr<::ResourcePackStack>*) const> operation
     );
-
-    MCAPI void _getResourcesOfGroup(
-        ::PackInstance const&        packInstance,
-        ::std::string const&         group,
-        ::std::vector<::Core::Path>& resources
-    ) const;
 
 #ifdef LL_PLAT_C
     MCAPI void _updateLanguageSubpacks();
@@ -209,6 +203,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _getResourcesOfGroup(
+        ::PackInstance const&        packInstance,
+        ::std::string const&         group,
+        ::std::vector<::Core::Path>& resources
+    );
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
@@ -216,12 +220,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
         bool                                                              needsToInitialize
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

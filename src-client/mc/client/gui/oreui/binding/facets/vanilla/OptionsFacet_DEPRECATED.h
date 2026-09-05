@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OptionsFacet_DEPRECATED() /*override*/;
+    virtual ~OptionsFacet_DEPRECATED() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -79,12 +79,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::OptionRegistry> options);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

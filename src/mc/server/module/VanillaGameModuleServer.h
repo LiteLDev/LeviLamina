@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VanillaGameModuleServer() /*override*/;
+    virtual ~VanillaGameModuleServer() /*override*/ = default;
 
     virtual void init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
 
@@ -81,12 +81,6 @@ public:
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

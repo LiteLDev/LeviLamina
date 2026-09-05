@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EnchantingScreenControllerProxy() /*override*/;
+    virtual ~EnchantingScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -33,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::EnchantingScreenControllerProxyCallbacks& callbacks);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

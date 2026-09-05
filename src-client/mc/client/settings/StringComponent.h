@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StringComponent() /*override*/;
+    virtual ~StringComponent() /*override*/ = default;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
     // NOLINTEND
@@ -46,12 +46,6 @@ public:
     MCAPI ::std::optional<::std::string> getPlaceholder() const;
 
     MCAPI bool updateValue(::std::string const& value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

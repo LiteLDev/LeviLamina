@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenSettings() /*override*/;
+    virtual ~ScreenSettings() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -89,12 +89,6 @@ public:
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
     virtual bool getShouldBeSkippedDuringAutomation() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

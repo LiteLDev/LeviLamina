@@ -62,11 +62,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         virtual ~BlockChangeListener() /*override*/ = default;
-#else // LL_PLAT_C
-        virtual ~BlockChangeListener() /*override*/;
-#endif
 
         virtual void onBlockChanged(
             ::BlockSource&                 source,
@@ -81,14 +77,6 @@ public:
         ) /*override*/;
 
         virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
         // NOLINTEND
 
     public:
@@ -148,11 +136,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CraftingContainerManagerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CraftingContainerManagerController() /*override*/;
-#endif
 
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
 
@@ -278,14 +262,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::weak_ptr<::CraftingContainerManagerModel> containerManagerModel);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

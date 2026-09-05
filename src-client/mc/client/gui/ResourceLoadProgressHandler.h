@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourceLoadProgressHandler() /*override*/;
+    virtual ~ResourceLoadProgressHandler() /*override*/ = default;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -32,12 +32,6 @@ public:
     virtual ::std::string getName() const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

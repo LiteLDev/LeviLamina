@@ -21,15 +21,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StartMenuScreenControllerProxy() /*override*/;
+    virtual ~StartMenuScreenControllerProxy() /*override*/ = default;
 
     virtual ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

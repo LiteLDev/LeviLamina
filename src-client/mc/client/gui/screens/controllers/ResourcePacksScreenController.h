@@ -132,8 +132,6 @@ public:
 
     MCAPI ::ui::ViewRequest _handleSortPackClicked(::UIPropertyBag* bag, int dir);
 
-    MCAPI bool _hasRestrictedContent(::ContentView& view) const;
-
     MCAPI bool _launchPlatformLockedDialogIfNeeded(
         ::PackContentItem&      packItem,
         ::ContentView&          contentView,
@@ -170,6 +168,12 @@ public:
     );
 
     MCAPI void activatePack(::std::string const packId);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _hasRestrictedContent(::ContentView& view);
     // NOLINTEND
 
 public:

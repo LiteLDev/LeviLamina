@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerStructureService() /*override*/;
+    virtual ~ServerStructureService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -116,8 +116,12 @@ public:
 
     MCNAPI void
     _handleUpdateFromClipboardPayload(::Editor::Network::StructureUpdateFromClipboardPayload const& payload);
+    // NOLINTEND
 
-    MCNAPI void _makeStructureTemplateFromVolume(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _makeStructureTemplateFromVolume(
         ::Editor::EditorStructureTemplate&             structureTemplate,
         ::BlockSource*                                 region,
         ::Editor::RelativeVolumeListBlockVolume const& volume
@@ -128,12 +132,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, bool isHostInstance);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

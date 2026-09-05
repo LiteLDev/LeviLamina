@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SpawnGroupRegistry();
+    virtual ~SpawnGroupRegistry() = default;
     // NOLINTEND
 
 public:
@@ -52,12 +52,6 @@ public:
     );
 
     MCAPI ::SpawnGroupData const* getSpawnGroup(::std::string const& identifier) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

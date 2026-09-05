@@ -16,15 +16,9 @@ class LegacyEmeraldOreFeature : public ::Feature {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LegacyEmeraldOreFeature() /*override*/;
+    virtual ~LegacyEmeraldOreFeature() /*override*/ = default;
 
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -53,8 +53,12 @@ public:
     );
 
     MCNAPI void _prepInterpTable();
+    // NOLINTEND
 
-    MCNAPI void _shiftColumnBySetBlocks(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _shiftColumnBySetBlocks(
         ::LevelChunk&                                lc,
         int                                          x,
         int                                          z,
@@ -64,13 +68,5 @@ public:
         ::ConsoleChunkBlender::ShiftBlockTypes const shiftBlockType,
         ::OverworldBlendRules const&                 blendRules
     );
-
-    MCNAPI ~ConsoleChunkBlender();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

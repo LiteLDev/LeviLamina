@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchGuiConditionalPassthroughControl() /*override*/;
+    virtual ~TouchGuiConditionalPassthroughControl() /*override*/ = default;
 
     virtual void
     tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
@@ -52,12 +52,6 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::function<::RectangleArea()> area, uint buttonId, ::std::function<bool()> condition, bool consumeInput);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

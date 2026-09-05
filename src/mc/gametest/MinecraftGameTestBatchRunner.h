@@ -29,19 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGameTestBatchRunner() /*override*/;
+    virtual ~MinecraftGameTestBatchRunner() /*override*/ = default;
 
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
     _createGameTestInstance(::gametest::BaseGameTestFunction& function) /*override*/;
 
     virtual void
     _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

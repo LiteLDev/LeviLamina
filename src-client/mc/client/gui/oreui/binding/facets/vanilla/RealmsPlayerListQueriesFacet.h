@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPlayerListQueriesFacet() /*override*/;
+    virtual ~RealmsPlayerListQueriesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -70,12 +70,6 @@ public:
         ::std::shared_ptr<::Realms::RealmsPlayerList>       realmsPlayerList,
         ::std::shared_ptr<::Realms::RealmsPlayerManagement> realmsManagePlayer
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

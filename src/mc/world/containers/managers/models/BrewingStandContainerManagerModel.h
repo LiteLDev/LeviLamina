@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandContainerManagerModel() /*override*/;
+    virtual ~BrewingStandContainerManagerModel() /*override*/ = default;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -64,12 +64,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -110,8 +110,6 @@ public:
 
     MCAPI ::std::optional<::Social::EduDedicatedServerDetails> _getServerDetails(::UIPropertyBag& bag) const;
 
-    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
-
     MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
 
     MCAPI void _refreshServerInfo(::std::vector<::std::string> serverIds, ::Social::EduRefreshType const& refreshType);
@@ -125,6 +123,12 @@ public:
     MCAPI void _showFetchErrorMessage(::Social::EduResponseError& error);
 
     MCAPI void _showPasscodeEntryModal(::Social::EduDedicatedServerDetails const& details);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:

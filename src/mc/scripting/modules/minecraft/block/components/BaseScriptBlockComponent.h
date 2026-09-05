@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseScriptBlockComponent() /*override*/;
+    virtual ~BaseScriptBlockComponent() /*override*/ = default;
 
     virtual bool _isValid() const /*override*/;
     // NOLINTEND
@@ -36,12 +36,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

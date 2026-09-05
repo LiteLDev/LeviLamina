@@ -73,11 +73,15 @@ public:
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI bool shouldGrow(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool shouldGrow(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

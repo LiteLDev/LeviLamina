@@ -43,13 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubscriptionBodyBase();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~SubscriptionBodyBase() = default;
     // NOLINTEND
 
 public:

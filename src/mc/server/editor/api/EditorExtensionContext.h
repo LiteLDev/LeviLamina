@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExtensionContext() /*override*/;
+    virtual ~EditorExtensionContext() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -107,12 +107,6 @@ public:
         ::Scripting::WeakLifetimeScope                                      scope,
         ::Editor::API::EditorExtension&                                     extension
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -131,8 +131,6 @@ public:
 
     MCAPI ProjectileComponent(::ProjectileComponent const&);
 
-    MCAPI bool _isLoyaltyTrident(::Actor const& owner) const;
-
     MCAPI void _selectNextMoveDirection(::Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
 
     MCAPI void _tryReflectOnHurt(::Actor& owner, ::ActorDamageSource const& damageSource);
@@ -174,6 +172,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _isLoyaltyTrident(::Actor const& owner);
+
     MCAPI static ::Vec2 dampenShooterAngle(::Vec2 const& angle, float angleOffset, ::BaseGameVersion const& currVer);
     // NOLINTEND
 

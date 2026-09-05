@@ -41,18 +41,6 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
         ::ll::TypedStorage<4, 12, ::BlockPos>                          mPosition;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~GateWayGenerator();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -91,8 +79,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canSpawnNewGateway(::ChunkViewSource* source, ::BlockPos const& pos) const;
-
     MCAPI void _createNewDragon();
 
     MCAPI void _initializeDragon(::EnderDragon& enderDragon);
@@ -100,14 +86,6 @@ public:
     MCAPI void _makeEndIslandFeature(::BlockSource& region, ::BlockPos const position);
 
     MCAPI ::ActorSoundIdentifier _makeSoundIdentifier() const;
-
-    MCAPI bool _setEndGatewayBlockActorExitPosition(
-        ::BlockSource&    entrySource,
-        ::BlockSource&    exitSource,
-        ::BlockPos const& endGatewayActorPos,
-        ::BlockPos const& destinationPos,
-        bool              lookForGateway
-    );
 
     MCAPI void _spawnExitPortal(bool activated);
 
@@ -134,5 +112,19 @@ public:
     MCAPI void spawnNewGatewayChunks(::BlockPos const& pos, bool placeEntryBlocks, bool placeExitBlocks);
 
     MCAPI void tryRespawn();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canSpawnNewGateway(::ChunkViewSource* source, ::BlockPos const& pos);
+
+    MCAPI static bool _setEndGatewayBlockActorExitPosition(
+        ::BlockSource&    entrySource,
+        ::BlockSource&    exitSource,
+        ::BlockPos const& endGatewayActorPos,
+        ::BlockPos const& destinationPos,
+        bool              lookForGateway
+    );
     // NOLINTEND
 };

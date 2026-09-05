@@ -11,13 +11,7 @@ class ClientPlayerReadyPayload : public ::Editor::Network::NetworkPayload<::Edit
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientPlayerReadyPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~ClientPlayerReadyPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

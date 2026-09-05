@@ -34,9 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region) const;
+    MCAPI static bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region);
     // NOLINTEND
 
 public:

@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~QRCodeResourceHandler() /*override*/;
+    virtual ~QRCodeResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
@@ -56,12 +56,6 @@ public:
         ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& queryParameters,
         ::std::string const&                                                      parameterName
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

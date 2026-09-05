@@ -53,8 +53,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void checkBurn(
         ::BlockSource&    region,
         ::BlockPos const& pos,
@@ -64,11 +62,17 @@ public:
         ::BlockPos const& firePos
     ) const;
 
-    MCAPI bool isValidFireLocation(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool isValidFireLocation(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

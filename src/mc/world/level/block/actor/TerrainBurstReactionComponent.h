@@ -27,15 +27,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TerrainBurstReactionComponent() /*override*/;
+    virtual ~TerrainBurstReactionComponent() /*override*/ = default;
 
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

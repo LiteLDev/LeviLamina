@@ -119,7 +119,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameRenderer();
+    virtual ~GameRenderer() = default;
     // NOLINTEND
 
 public:
@@ -180,11 +180,5 @@ public:
         ::MinecraftGraphics&                                         graphics,
         ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

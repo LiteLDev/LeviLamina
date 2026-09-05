@@ -22,15 +22,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SharedSpawnGetter() /*override*/;
+    virtual ~SharedSpawnGetter() /*override*/ = default;
 
     virtual ::BlockPos const& getSharedSpawnPosition() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

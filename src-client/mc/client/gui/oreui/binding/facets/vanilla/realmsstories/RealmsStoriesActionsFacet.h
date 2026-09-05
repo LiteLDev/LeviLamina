@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesActionsFacet() /*override*/;
+    virtual ~RealmsStoriesActionsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -161,12 +161,6 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::std::shared_ptr<::MainMenuScreenModel>                mainMenuScreenModel
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

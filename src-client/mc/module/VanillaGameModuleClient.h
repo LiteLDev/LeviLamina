@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VanillaGameModuleClient() /*override*/;
+    virtual ~VanillaGameModuleClient() /*override*/ = default;
 
     virtual void init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
 
@@ -109,12 +109,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _onLevelBiomesRegistered(::BiomeRegistry& biomeRegistry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ class BlockEventListenerService : public ::Editor::Services::IEditorService,
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockEventListenerService() /*override*/;
+    virtual ~BlockEventListenerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -44,12 +44,6 @@ public:
 #endif
 
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

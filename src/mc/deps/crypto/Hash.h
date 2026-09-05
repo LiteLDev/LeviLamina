@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Hash() /*override*/;
+    virtual ~Hash() /*override*/ = default;
 
     virtual void reset() /*override*/;
 
@@ -39,12 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::mce::UUID getUUID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

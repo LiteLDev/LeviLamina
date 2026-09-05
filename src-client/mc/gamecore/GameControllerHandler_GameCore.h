@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameControllerHandler_GameCore() /*override*/;
+    virtual ~GameControllerHandler_GameCore() /*override*/ = default;
 
     virtual void refresh() /*override*/;
 
@@ -64,12 +64,6 @@ public:
     );
 
     MCAPI static void _taskSubmittedCallback(void* context, ::XTaskQueueObject* taskQueue, ::XTaskQueuePort port);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

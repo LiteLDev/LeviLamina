@@ -24,19 +24,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemEventCoordinator() /*override*/;
+    virtual ~ItemEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableItemGameplayEvent<::CoordinatorResult>> event);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

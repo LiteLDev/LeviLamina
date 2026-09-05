@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RuntimeLightingManager();
+    virtual ~RuntimeLightingManager() = default;
     // NOLINTEND
 
 public:
@@ -83,12 +83,6 @@ public:
         ::Brightness      newAbsorption,
         bool              isSkyLight
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

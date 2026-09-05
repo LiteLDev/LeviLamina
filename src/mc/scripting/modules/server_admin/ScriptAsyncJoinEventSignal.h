@@ -56,14 +56,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void tick();
-
-    MCNAPI ~ScriptAsyncJoinEventSignal();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

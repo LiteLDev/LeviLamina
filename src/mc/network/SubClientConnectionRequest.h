@@ -17,7 +17,7 @@ class SubClientConnectionRequest : public ::BaseConnectionRequest {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubClientConnectionRequest() /*override*/;
+    virtual ~SubClientConnectionRequest() /*override*/ = default;
 
     virtual bool _isAuthTypeWellFormed() const /*override*/;
     // NOLINTEND
@@ -43,12 +43,6 @@ public:
 #endif
 
     MCAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

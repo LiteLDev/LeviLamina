@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CombatRegenerationListener() /*override*/;
+    virtual ~CombatRegenerationListener() /*override*/ = default;
 
     virtual ::EventResult onEvent(::ActorNotificationEvent const& event) /*override*/;
     // NOLINTEND
@@ -47,12 +47,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorEventCoordinator& coordinator);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

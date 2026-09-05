@@ -81,8 +81,6 @@ public:
     // NOLINTBEGIN
     MCAPI CaveVinesBlock(::std::string const& nameId, int id, ::CaveVinesVariant variant);
 
-    MCAPI bool _pickBerries(::BlockSource& region, ::BlockPos const& pos, ::Actor& sourceEntity) const;
-
     MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -92,6 +90,12 @@ public:
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _pickBerries(::BlockSource& region, ::BlockPos const& pos, ::Actor& sourceEntity);
     // NOLINTEND
 
 public:

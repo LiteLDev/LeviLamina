@@ -18,7 +18,7 @@ class PathNavigation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PathNavigation();
+    virtual ~PathNavigation() = default;
 
     virtual void initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
@@ -46,17 +46,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI float _getHighestBlockHeight(::BlockSource& region, ::Mob& mob, ::Vec3 const& pos, ::Vec2 const& aabb) const;
+    MCAPI static float _getHighestBlockHeight(::BlockSource& region, ::Mob& mob, ::Vec3 const& pos, ::Vec2 const& aabb);
 
-    MCAPI bool _isPositionOnlyInAir(::BlockSource const& region, ::Vec3 const& pos, ::Vec2 const& aabb) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static bool _isPositionOnlyInAir(::BlockSource const& region, ::Vec3 const& pos, ::Vec2 const& aabb);
     // NOLINTEND
 
 public:

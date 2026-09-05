@@ -17,7 +17,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~KeyboardRemappingLayout() /*override*/;
+    virtual ~KeyboardRemappingLayout() /*override*/ = default;
 
     virtual void
     setMappingWithRawInput(::std::string const& action, int rawKeyIndex, ::RawInputType rawKeyType) /*override*/;
@@ -31,12 +31,6 @@ public:
     virtual ::std::string getSaveString(::std::string const& action) const /*override*/;
 
     virtual int _rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

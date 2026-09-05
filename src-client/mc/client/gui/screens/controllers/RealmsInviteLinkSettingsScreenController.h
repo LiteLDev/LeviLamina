@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsInviteLinkSettingsScreenController() /*override*/;
+    virtual ~RealmsInviteLinkSettingsScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -74,12 +74,6 @@ public:
         ::Realms::World const&                   world,
         ::Realms::InviteLink const&              link
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

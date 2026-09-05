@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptCommandOrigin() /*override*/;
+    virtual ~ScriptCommandOrigin() /*override*/ = default;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -90,12 +90,6 @@ public:
         ::std::function<void(int, ::std::string&&)> outputCallback,
         ::std::optional<::CommandPermissionLevel>   permissionLevel
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

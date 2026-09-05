@@ -18,7 +18,7 @@ class DouseFireSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DouseFireSubcomponent() /*override*/;
+    virtual ~DouseFireSubcomponent() /*override*/ = default;
 
     virtual void readfromJSON(::Json::Value&) /*override*/;
 
@@ -30,15 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

@@ -29,11 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ContainerController() = default;
-#else // LL_PLAT_C
-    virtual ~ContainerController();
-#endif
 
     virtual ::ItemInstance const& getRecipeItem(int slot) const;
 
@@ -126,14 +122,6 @@ public:
         ::ItemPlaceType                 type,
         bool                            allowSwap
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 

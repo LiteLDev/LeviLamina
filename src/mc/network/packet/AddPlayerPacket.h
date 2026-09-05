@@ -12,10 +12,12 @@
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/UUID.h"
+#include "mc/world/actor/ActorLink.h"
 #include "mc/world/actor/player/LayeredAbilities.h"
 #include "mc/world/actor/state/PropertySyncData.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"
 #include "mc/world/level/GameType.h"
+
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +26,6 @@ class DataItem;
 class Player;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
-struct ActorLink;
 // clang-format on
 
 class AddPlayerPacket : public ::Packet {
@@ -54,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddPlayerPacket() /*override*/;
+    virtual ~AddPlayerPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -79,12 +80,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::Player& p);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

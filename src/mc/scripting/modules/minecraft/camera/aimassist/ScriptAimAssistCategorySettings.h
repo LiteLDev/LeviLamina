@@ -40,20 +40,12 @@ public:
     MCAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
 
     MCAPI void setEntityTypeFamilyPriorities(::std::unordered_map<::std::string, int> entityTypeFamilyPriorities);
-
-    MCAPI ~ScriptAimAssistCategorySettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

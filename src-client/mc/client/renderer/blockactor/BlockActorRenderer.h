@@ -52,24 +52,28 @@ public:
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
     ) const;
+    // NOLINTEND
 
-    MCAPI void _renderModel(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
         ::PBRTexturePtrs const&         actorTexturePtrs,
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
-    ) const;
+    );
 
-    MCAPI void _renderModel(
+    MCAPI static void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
         ::mce::ClientTexture const&     texture,
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
-    ) const;
+    );
     // NOLINTEND
 
 public:

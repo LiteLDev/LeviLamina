@@ -180,7 +180,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~FirstFloorRoomCollection() /*override*/;
+        virtual ~FirstFloorRoomCollection() /*override*/ = default;
 
         virtual ::std::string get1x1(::Random& random) /*override*/;
 
@@ -195,12 +195,6 @@ public:
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
         virtual ::std::string get2x2Secret(::Random& random) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -245,8 +239,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool _cleanEdges(::WoodlandMansionPieces::SimpleGrid& grid);
-
         MCAPI void
         _identifyRooms(::WoodlandMansionPieces::SimpleGrid& fromGrid, ::WoodlandMansionPieces::SimpleGrid& roomGrid);
 
@@ -260,6 +252,12 @@ public:
             int                                        floorNum,
             int                                        roomId
         ) const;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static bool _cleanEdges(::WoodlandMansionPieces::SimpleGrid& grid);
         // NOLINTEND
     };
 
@@ -319,7 +317,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SecondFloorRoomCollection() /*override*/;
+        virtual ~SecondFloorRoomCollection() /*override*/ = default;
 
         virtual ::std::string get1x1(::Random& random) /*override*/;
 
@@ -334,12 +332,6 @@ public:
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
         virtual ::std::string get2x2Secret(::Random& random) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

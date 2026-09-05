@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FancyTreeTrunk() /*override*/;
+    virtual ~FancyTreeTrunk() /*override*/ = default;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
@@ -63,12 +63,6 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*            canopy
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

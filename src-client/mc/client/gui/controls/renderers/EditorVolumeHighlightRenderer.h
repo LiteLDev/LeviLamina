@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorVolumeHighlightRenderer() /*override*/;
+    virtual ~EditorVolumeHighlightRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -83,14 +83,6 @@ public:
         ::AABB const&                              area
     );
 
-    MCAPI bool _renderBlockEntities(
-        ::BaseActorRenderContext& renderContext,
-        ::BlockSource&            region,
-        ::AABB const&             area,
-        ::Vec3 const&             offset,
-        bool                      renderAlphaLayer
-    ) const;
-
     MCAPI bool _renderBlocks(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
@@ -100,9 +92,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static bool _renderBlockEntities(
+        ::BaseActorRenderContext& renderContext,
+        ::BlockSource&            region,
+        ::AABB const&             area,
+        ::Vec3 const&             offset,
+        bool                      renderAlphaLayer
+    );
     // NOLINTEND
 
 public:

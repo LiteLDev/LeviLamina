@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetBookContentsFunction() /*override*/;
+    virtual ~SetBookContentsFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
 
@@ -39,12 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _fillUserData(::CompoundTag& tag);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

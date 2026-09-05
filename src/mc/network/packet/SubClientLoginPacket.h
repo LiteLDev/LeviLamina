@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubClientLoginPacket() /*override*/;
+    virtual ~SubClientLoginPacket() /*override*/ = default;
 
     virtual ::std::string_view getName() const /*override*/;
 
@@ -36,12 +36,6 @@ public:
     virtual bool disallowBatching() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

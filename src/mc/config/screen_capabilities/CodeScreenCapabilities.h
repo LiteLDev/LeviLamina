@@ -9,13 +9,7 @@ struct CodeScreenCapabilities : public ::TypedScreenCapabilities<::CodeScreenCap
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CodeScreenCapabilities() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~CodeScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 
 public:

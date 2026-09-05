@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandResponseBase();
+    virtual ~CommandResponseBase() = default;
 
     virtual ::CommandOriginSystem _getCommandOriginSystem() const;
     // NOLINTEND
@@ -48,12 +48,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

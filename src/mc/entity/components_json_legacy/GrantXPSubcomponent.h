@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GrantXPSubcomponent() /*override*/;
+    virtual ~GrantXPSubcomponent() /*override*/ = default;
 
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
@@ -32,12 +32,6 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     virtual char const* getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

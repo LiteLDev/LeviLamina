@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageItemContainerModel() /*override*/;
+    virtual ~StorageItemContainerModel() /*override*/ = default;
 
     virtual void postInit() /*override*/;
 
@@ -70,12 +70,6 @@ public:
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

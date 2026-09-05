@@ -42,7 +42,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~WorldTemplateManager() /*override*/;
+#else // LL_PLAT_C
+    virtual ~WorldTemplateManager() /*override*/ = default;
+#endif
 
     virtual void flushResourceLoaderTasks() /*override*/;
 
@@ -114,7 +118,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

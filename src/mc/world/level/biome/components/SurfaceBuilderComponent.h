@@ -20,13 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SurfaceBuilderComponent() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~SurfaceBuilderComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

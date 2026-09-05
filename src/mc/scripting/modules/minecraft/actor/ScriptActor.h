@@ -159,12 +159,6 @@ public:
     MCAPI
     ScriptActor(::ScriptModuleMinecraft::ScriptActorData const& actorData, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI ::MobEffect const* _getEffectHelper(
-        ::std::variant<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effect
-    ) const;
-
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     _teleport(
         ::Actor&                                                               self,
@@ -606,6 +600,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::MobEffect const* _getEffectHelper(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effect
+    );
+
     MCAPI static ::Scripting::ClassBinding
     bind(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents);
 

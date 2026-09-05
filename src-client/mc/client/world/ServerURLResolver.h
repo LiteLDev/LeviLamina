@@ -17,18 +17,12 @@ class ServerURLResolver : public ::World::IServerURLResolver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerURLResolver() /*override*/;
+    virtual ~ServerURLResolver() /*override*/ = default;
 
     virtual bool
     fromStringExplicitPort(::PingedCompatibleServer& server, char const* str, ushort port, int ipVersion) /*override*/;
 
     virtual void fromString(::RakNet::RakNetGUID& guid, char const* source) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

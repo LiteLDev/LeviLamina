@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BackgroundWorker() /*override*/;
+    virtual ~BackgroundWorker() /*override*/ = default;
 
     virtual bool isAsync() const /*override*/;
 
@@ -117,12 +117,6 @@ public:
         ::std::optional<int>                          idealCore,
         ::WorkerPool&                                 workerPool
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

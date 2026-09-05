@@ -15,7 +15,7 @@ class BlockActorLevelListener : public ::LevelListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockActorLevelListener() /*override*/;
+    virtual ~BlockActorLevelListener() /*override*/ = default;
 
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
@@ -27,12 +27,6 @@ public:
     ) /*override*/;
 
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

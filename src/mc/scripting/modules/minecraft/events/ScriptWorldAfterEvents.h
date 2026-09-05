@@ -173,7 +173,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWorldAfterEvents() /*override*/;
+    virtual ~ScriptWorldAfterEvents() /*override*/ = default;
 
     virtual ::Level& getLevel() const /*override*/;
 
@@ -476,12 +476,6 @@ public:
         ::Scripting::ContextConfig const&     config,
         ::Scripting::Version                  serverModuleVersion
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

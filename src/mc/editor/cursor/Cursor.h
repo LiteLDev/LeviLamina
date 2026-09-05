@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Cursor();
+    virtual ~Cursor() = default;
 
     virtual void setCursorState(::Editor::Cursor::CursorState&& state);
 
@@ -45,12 +45,6 @@ public:
     virtual void setAttachmentProperties(::Editor::Cursor::AttachmentProperties const& props);
 
     virtual ::Scripting::Result_deprecated<::BlockPos> moveCursor(::glm::ivec3 const& offset);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

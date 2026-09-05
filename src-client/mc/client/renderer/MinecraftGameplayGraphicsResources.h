@@ -46,13 +46,5 @@ public:
     MCAPI void reloadTickingTextures();
 
     MCAPI void resume();
-
-    MCAPI ~MinecraftGameplayGraphicsResources();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

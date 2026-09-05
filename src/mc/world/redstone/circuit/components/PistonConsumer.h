@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PistonConsumer() /*override*/;
+    virtual ~PistonConsumer() /*override*/ = default;
 
     virtual bool canConsumePowerAnyDirection() const /*override*/;
 
@@ -50,12 +50,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

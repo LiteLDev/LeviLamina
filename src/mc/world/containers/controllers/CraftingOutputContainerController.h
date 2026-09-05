@@ -22,11 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CraftingOutputContainerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CraftingOutputContainerController() /*override*/;
-#endif
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
 
@@ -37,14 +33,6 @@ public:
     virtual void clearSelectedRecipe() /*override*/;
 
     virtual bool _canRemove(int slot, int removeCount) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

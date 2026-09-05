@@ -548,9 +548,6 @@ public:
         bool                                               useSecurity
     );
 
-    MCAPI void
-    CallPluginCallbacks(::DataStructures::List<::RakNet::PluginInterface2*>& pluginList, ::RakNet::Packet* packet);
-
     MCAPI void ClearBufferedCommands();
 
     MCAPI void ClearBufferedPackets();
@@ -627,6 +624,13 @@ public:
         uint64                        currentTime,
         uint                          receipt
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    CallPluginCallbacks(::DataStructures::List<::RakNet::PluginInterface2*>& pluginList, ::RakNet::Packet* packet);
     // NOLINTEND
 
 public:

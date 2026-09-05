@@ -23,7 +23,6 @@ class Dimension;
 class LevelStorage;
 class POIInstance;
 class Player;
-class Raid;
 class Vec3;
 class VillageManager;
 // clang-format on

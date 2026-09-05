@@ -105,7 +105,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~EditorImpl() /*override*/;
+        virtual ~EditorImpl() /*override*/ = default;
 
         virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const /*override*/;
 
@@ -117,12 +117,6 @@ public:
 
         virtual ::Bedrock::JSONObject::Node*
         setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:

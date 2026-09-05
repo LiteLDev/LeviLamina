@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OneDSEventListener() /*override*/;
+    virtual ~OneDSEventListener() /*override*/ = default;
 
     virtual void sendEvent(::Social::Events::Event const& event) /*override*/;
 
@@ -58,16 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addDynamicPropertiesFromEvent(
-        ::Json::Value& properties,
-        ::brstd::flat_map<
-            ::std::string,
-            ::std::vector<::Social::Events::Property>,
-            ::std::less<::std::string>,
-            ::std::vector<::std::string>,
-            ::std::vector<::std::vector<::Social::Events::Property>>> const& dynamicProperties
-    );
-
     MCNAPI ::std::vector<::std::string> _buildEventPayloads(
         ::std::vector<::Social::Events::Event>                            events,
         ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
@@ -76,6 +66,20 @@ public:
     MCNAPI bool _sendBatch();
 
     MCNAPI void _sendEvents(::std::string const& eventPayload, ::std::string const& endpoint);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void _addDynamicPropertiesFromEvent(
+        ::Json::Value& properties,
+        ::brstd::flat_map<
+            ::std::string,
+            ::std::vector<::Social::Events::Property>,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::std::vector<::Social::Events::Property>>> const& dynamicProperties
+    );
     // NOLINTEND
 
 public:
@@ -90,12 +94,6 @@ public:
     MCNAPI static ::std::string const& SAFETY_ENDPOINT_IDENTIFIER();
 
     MCNAPI static ::std::string const& SAFETY_PARTA_IDENTIFIER();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

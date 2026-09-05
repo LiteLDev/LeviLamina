@@ -22,34 +22,34 @@ struct LeashablePreset;
 namespace LeashableUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI ::InteractionResult attemptCutInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+MCAPI ::InteractionResult attemptCutInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-MCNAPI bool canLeashBeStolen(::Actor& actor);
+MCAPI bool canLeashBeStolen(::Actor& actor);
 
-MCNAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, float maxDistance);
+MCAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, float maxDistance);
 
-MCNAPI void forEachLeashedActor(::Actor const& leashHolder, ::brstd::function_ref<void(::Actor&)> callback);
+MCAPI void forEachLeashedActor(::Actor const& leashHolder, ::brstd::function_ref<void(::Actor&)> callback);
 
-MCNAPI float getDistanceSquared(::Actor const& actor, ::Vec3 const& position);
+MCAPI float getDistanceSquared(::Actor const& actor, ::Vec3 const& position);
 
-MCNAPI uint getLeashedActorCount(::Actor const& leashHolder);
+MCAPI uint getLeashedActorCount(::Actor const& leashHolder);
 
-MCNAPI ::LeashablePreset const&
+MCAPI ::LeashablePreset const&
 getPreset(::Actor const& leashedActor, ::LeashableComponent const& leashableComponent, ::Actor const* leashHolder);
 
-MCNAPI bool isAboveHardDistance(::Actor const& actor);
+MCAPI bool isAboveHardDistance(::Actor const& actor);
 
-MCNAPI void leash(::Actor& entityToLeash, ::Actor& leashHolder, bool emitGameEvent, bool executeEntityEvent);
+MCAPI void leash(::Actor& entityToLeash, ::Actor& leashHolder, bool emitGameEvent, bool executeEntityEvent);
 
-MCNAPI void onLeashHolderSet(::ActorUniqueID const& newLeashHolderID, ::Actor& actor);
+MCAPI void onLeashHolderSet(::ActorUniqueID const& newLeashHolderID, ::Actor& actor);
 
-MCNAPI bool tryTransferLeashedActors(
+MCAPI bool tryTransferLeashedActors(
     ::brstd::flat_set<::ActorUniqueID, ::std::less<::ActorUniqueID>, ::std::vector<::ActorUniqueID>> const&
              leashedActorIDs,
     ::Actor& newLeashHolder
 );
 
-MCNAPI void unleash(::Actor& entityToUnleash, ::LeashableUtility::UnleashReason unleashReason);
+MCAPI void unleash(::Actor& entityToUnleash, ::LeashableUtility::UnleashReason unleashReason);
 // NOLINTEND
 
 } // namespace LeashableUtility

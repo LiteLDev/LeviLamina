@@ -60,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BinaryStream() /*override*/;
+    virtual ~BinaryStream() /*override*/ = default;
 
     virtual void writeBool(bool value, char const* docFieldName, char const*);
 
@@ -140,12 +140,6 @@ public:
         char const*,
         char const*
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

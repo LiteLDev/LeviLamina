@@ -49,15 +49,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsSavesCommandGroup() /*override*/;
+    virtual ~RealmsSavesCommandGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsSavesCommandGroup(::OreUI::GameDependencies const& game);
+    // NOLINTEND
 
-    MCAPI void _resolveStatus(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _resolveStatus(
         ::std::shared_ptr<::OreUI::InvocationStatus> const& commandStatus,
         ::Realms::GenericStatus                             responseStatus
     );
@@ -73,12 +77,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -128,8 +128,6 @@ public:
 
     MCAPI void _serializeModules(::Json::Value& destination) const;
 
-    MCAPI void _serializeVersion(::Json::Value& destination, ::SemVersion const& version) const;
-
 #ifdef LL_PLAT_C
     MCAPI ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
 
@@ -173,6 +171,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::PackScope StringToPackScope(::std::string const& str);
+
+    MCAPI static void _serializeVersion(::Json::Value& destination, ::SemVersion const& version);
     // NOLINTEND
 
 public:

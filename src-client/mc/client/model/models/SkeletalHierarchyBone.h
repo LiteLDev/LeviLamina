@@ -18,12 +18,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkeletalHierarchyBone();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~SkeletalHierarchyBone() = default;
     // NOLINTEND
 };

@@ -23,15 +23,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImmersiveReaderToken() /*override*/;
+    virtual ~ImmersiveReaderToken() /*override*/ = default;
 
     virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

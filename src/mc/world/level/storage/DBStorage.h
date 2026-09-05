@@ -146,7 +146,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DBStorage() /*override*/;
+    virtual ~DBStorage() /*override*/ = default;
 
     virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer) /*override*/;
 
@@ -238,12 +238,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -14,16 +14,4 @@ public:
     BeforeLevelForLevelHoldingOwnership& operator=(BeforeLevelForLevelHoldingOwnership const&);
     BeforeLevelForLevelHoldingOwnership(BeforeLevelForLevelHoldingOwnership const&);
     BeforeLevelForLevelHoldingOwnership();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~BeforeLevelForLevelHoldingOwnership();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

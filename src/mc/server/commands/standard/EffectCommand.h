@@ -49,8 +49,6 @@ public:
     MCAPI void
     _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
 
-    MCAPI void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output) const;
-
     MCAPI void _clearEffect(
         ::CommandSelectorResults<::Actor>& targets,
         ::CommandOutput&                   output,
@@ -62,6 +60,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output);
+
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 

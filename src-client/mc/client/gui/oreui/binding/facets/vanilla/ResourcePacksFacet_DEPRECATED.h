@@ -213,7 +213,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePacksFacet_DEPRECATED() /*override*/;
+    virtual ~ResourcePacksFacet_DEPRECATED() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -264,9 +264,6 @@ public:
         ::ContentView*                             view,
         ::ContentType                              contentType
     );
-
-    MCAPI void
-    _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
 
     MCAPI void _showNoInternetPrompt();
 
@@ -338,6 +335,9 @@ public:
         ::OreUI::ResourcePacksFacet_DEPRECATED::PromptActionType type,
         ::OreUI::PromptActionVariant                             variant
     );
+
+    MCAPI static void
+    _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
     // NOLINTEND
 
 public:
@@ -364,12 +364,6 @@ public:
         ::OreUI::Router&                                                  router,
         ::std::shared_ptr<::MainMenuScreenModel>                          mainMenuScreenModel
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

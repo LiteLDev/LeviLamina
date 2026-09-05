@@ -40,9 +40,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _shouldOccludeAgainst(
+    MCAPI static bool _shouldOccludeAgainst(
         ::BlockPos const&                                                 relativePos,
         uchar                                                             neighborDirection,
         ::ClientBlockPipeline::BlockVolumeArea const&                     area,
@@ -50,7 +50,7 @@ public:
         ::ClientBlockPipeline::ArrayCache<::Block const*> const&          cullingBlocksCache,
         ::std::optional<::BlockCullingData::CullingRule::Condition> const condition,
         bool const                                                        cullAgainstFullAndOpaque
-    ) const;
+    );
     // NOLINTEND
 
 public:

@@ -19,7 +19,7 @@ class SetDataFromColorIndexFunction : public ::LootItemFunction {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetDataFromColorIndexFunction() /*override*/;
+    virtual ~SetDataFromColorIndexFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -29,20 +29,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _applyImpl(
+    MCAPI static bool _applyImpl(
         ::Item const*&       inOutItemDef,
         ::Actor const*       thisEntity,
         ::std::string const& originalItemName,
         int&                 outResultAux
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

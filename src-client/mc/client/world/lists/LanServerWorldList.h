@@ -47,22 +47,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
-    _compareFutureIP(::ExternalServer const& externalServer, ::PingedCompatibleServer const& lanServer) const;
-
     MCAPI bool _refreshWorlds();
 
     MCAPI ::PingedCompatibleServer const* getWorld(::Network::ServerID const& lookupId) const;
 
     MCAPI void update(double timestampMs, ::TrialManager const& trialManager);
-
-    MCAPI ~LanServerWorldList();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static bool
+    _compareFutureIP(::ExternalServer const& externalServer, ::PingedCompatibleServer const& lanServer);
     // NOLINTEND
 };
 

@@ -34,17 +34,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerCursor() /*override*/;
+    virtual ~ServerCursor() /*override*/ = default;
 
     virtual void setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     virtual ::Scripting::Result_deprecated<::BlockPos> moveCursor(::glm::ivec3 const& offset) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

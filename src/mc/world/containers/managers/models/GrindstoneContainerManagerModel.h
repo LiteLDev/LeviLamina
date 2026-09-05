@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GrindstoneContainerManagerModel() /*override*/;
+    virtual ~GrindstoneContainerManagerModel() /*override*/ = default;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -46,12 +46,6 @@ public:
 #ifdef LL_PLAT_C
     MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

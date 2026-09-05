@@ -40,15 +40,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~StreamFlusher() /*override*/;
+        virtual ~StreamFlusher() /*override*/ = default;
 
         virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -81,7 +75,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDiagnosticsPublishToFile() /*override*/;
+    virtual ~ScriptDiagnosticsPublishToFile() /*override*/ = default;
 
     virtual bool isStatPublisherEnabled() const /*override*/;
 
@@ -118,12 +112,6 @@ public:
         ::std::optional<uint>    maxCaptureFiles,
         ::std::optional<uint>    maxCaptureFileSize
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

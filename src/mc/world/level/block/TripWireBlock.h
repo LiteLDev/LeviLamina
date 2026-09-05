@@ -59,10 +59,6 @@ public:
 
     MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _isEntityInsideTriggerable(::BlockSource const& region, ::BlockPos const& pos, ::Actor& entity) const;
-
-    MCAPI void _updateSource(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
 #ifdef LL_PLAT_C
@@ -70,6 +66,14 @@ public:
 #endif
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isEntityInsideTriggerable(::BlockSource const& region, ::BlockPos const& pos, ::Actor& entity);
+
+    MCAPI static void _updateSource(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

@@ -53,14 +53,6 @@ public:
     );
 
     MCNAPI void resetParseContextUntilVariant(bool removeVariant);
-
-    MCNAPI ~ContextUserData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

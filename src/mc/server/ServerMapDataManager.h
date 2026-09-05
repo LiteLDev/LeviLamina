@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerMapDataManager() /*override*/;
+    virtual ~ServerMapDataManager() /*override*/ = default;
 
     virtual void
     registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
@@ -51,12 +51,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -46,14 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
-
-    MCAPI ~ViewRenderer();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

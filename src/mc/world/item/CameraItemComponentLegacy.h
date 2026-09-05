@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CameraItemComponentLegacy() /*override*/;
+    virtual ~CameraItemComponentLegacy() /*override*/ = default;
 
     virtual void takePictureNow(::Player& player, ::Actor* camera, ::Actor* target) /*override*/;
 
@@ -81,14 +81,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
-        ::ItemStack const& instance,
-        ::Actor&           actor,
-        ::BlockPos const&  blockPos,
-        uchar              face,
-        ::Vec3&            spawnPos
-    ) const;
-
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion);
@@ -97,13 +89,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
-    // NOLINTEND
+    MCAPI static ::CameraItemComponentLegacy::UseAction
+    _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

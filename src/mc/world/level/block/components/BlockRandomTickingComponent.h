@@ -16,12 +16,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockRandomTickingComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~BlockRandomTickingComponent() = default;
     // NOLINTEND
 };

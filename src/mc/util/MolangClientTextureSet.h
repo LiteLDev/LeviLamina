@@ -5,17 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/minecraft_renderer/resources/MERSTextureMode.h"
+#include "mc/deps/minecraft_renderer/resources/MERSUniformData.h"
 #include "mc/deps/minecraft_renderer/resources/NormalTextureMode.h"
 
 // auto generated forward declare list
 // clang-format off
 struct BedrockTextureData;
-struct MERSUniformData {
-    float mMetalness;
-    float mEmissive;
-    float mRoughness;
-    float mSubsurface;
-};;
 namespace mce { class TexturePtr; }
 // clang-format on
 
@@ -23,13 +18,21 @@ struct MolangClientTextureSet {
 public:
     // MolangClientTextureSet inner types declare
     // clang-format off
+    struct ExtraPBRData;
+    // clang-format on
+
+    // MolangClientTextureSet inner types define
     struct ExtraPBRData {
-        std::weak_ptr<const BedrockTextureData> mMERSTextureDataWeakPtr;
-        std::weak_ptr<const BedrockTextureData> mNormalTextureDataWeakPtr;
-        std::optional<MERSUniformData> mMERSUniforms;
-        MERSTextureMode mMERSTextureMode;
-        NormalTextureMode mNormalTextureMode;
-};
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BedrockTextureData const>> mMERSTextureDataWeakPtr;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BedrockTextureData const>> mNormalTextureDataWeakPtr;
+        ::ll::TypedStorage<4, 20, ::std::optional<::MERSUniformData>>          mMERSUniforms;
+        ::ll::TypedStorage<1, 1, ::MERSTextureMode>                            mMERSTextureMode;
+        ::ll::TypedStorage<1, 1, ::NormalTextureMode>                          mNormalTextureMode;
+        // NOLINTEND
+    };
 
 public:
 // member variables
@@ -48,13 +51,13 @@ public:
 public:
     // prevent constructor by default
     MolangClientTextureSet& operator=(MolangClientTextureSet const& rhs) {
-    if (this != &rhs) {
-        mColorTextureDataWeakPtr = rhs.mColorTextureDataWeakPtr;
-        mPBRData = rhs.mPBRData ? std::make_unique<ExtraPBRData>(*rhs.mPBRData) : nullptr;
-        mName    = rhs.mName;
+        if (this != &rhs) {
+            mColorTextureDataWeakPtr = rhs.mColorTextureDataWeakPtr;
+            mPBRData                 = rhs.mPBRData ? std::make_unique<ExtraPBRData>(*rhs.mPBRData) : nullptr;
+            mName                    = rhs.mName;
+        }
+        return *this;
     }
-    return *this;
-}
     MolangClientTextureSet();
 
 #endif

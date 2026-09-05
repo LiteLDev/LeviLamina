@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SnackGoal() /*override*/;
+    virtual ~SnackGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
@@ -61,12 +61,6 @@ public:
     MCAPI bool _hasSnackableItems();
 
     MCAPI void _updateHand(::ItemStack const& item);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetArmorTrimFunction() /*override*/;
+    virtual ~SetArmorTrimFunction() /*override*/ = default;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
@@ -39,12 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

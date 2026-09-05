@@ -47,11 +47,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCFOLD void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _poofParticles(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

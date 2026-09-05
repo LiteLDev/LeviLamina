@@ -55,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AutomationSession() /*override*/;
+    virtual ~AutomationSession() /*override*/ = default;
 
     virtual void onMessageRecieved(::std::string const& message) /*override*/;
 
@@ -142,12 +142,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Automation::AutomationClient& owner);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

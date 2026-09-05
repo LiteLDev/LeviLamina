@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DelayActionList();
+    virtual ~DelayActionList() = default;
     // NOLINTEND
 
 public:
@@ -68,12 +68,6 @@ public:
     );
 
     MCAPI void tick(::ServerLevel& level, ::Dimension& dimension, uint64 currentTick);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

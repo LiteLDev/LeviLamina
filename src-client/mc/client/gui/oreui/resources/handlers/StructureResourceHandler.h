@@ -77,7 +77,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureResourceHandler() /*override*/;
+    virtual ~StructureResourceHandler() /*override*/ = default;
 
     virtual void update() /*override*/;
 
@@ -108,12 +108,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& textureHolder);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

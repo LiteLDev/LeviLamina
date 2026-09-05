@@ -109,7 +109,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameMode();
+    virtual ~GameMode() = default;
 
     virtual bool startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
@@ -173,16 +173,6 @@ public:
 
     MCAPI bool _enableBlockBreakDelay() const;
 
-    MCAPI void _sendPlayerInteractWithBlockAfterEvent(
-        ::ItemStack const& beforeItem,
-        ::ItemStack const& afterItem,
-        ::Player&          player,
-        ::BlockPos const&  at,
-        uchar              face,
-        ::Vec3 const&      hit,
-        bool               isFirstEvent
-    );
-
 #ifdef LL_PLAT_C
     MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 #endif
@@ -199,6 +189,20 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _sendPlayerInteractWithBlockAfterEvent(
+        ::ItemStack const& beforeItem,
+        ::ItemStack const& afterItem,
+        ::Player&          player,
+        ::BlockPos const&  at,
+        uchar              face,
+        ::Vec3 const&      hit,
+        bool               isFirstEvent
+    );
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
@@ -206,12 +210,6 @@ public:
         ::std::unique_ptr<::IGameModeTimer>     timer,
         ::std::unique_ptr<::IGameModeMessenger> messenger
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

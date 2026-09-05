@@ -23,16 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandFunctionEntry() /*override*/;
+    virtual ~CommandFunctionEntry() /*override*/ = default;
 
     virtual void
     execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -56,11 +56,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canBeGrass(::BlockSource const& region, ::BlockPos const& pos) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canBeGrass(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

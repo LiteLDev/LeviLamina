@@ -15,17 +15,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MeleeBoxAttackGoal() /*override*/;
+    virtual ~MeleeBoxAttackGoal() /*override*/ = default;
 
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

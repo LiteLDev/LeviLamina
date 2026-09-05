@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultCommandsContextProvider() /*override*/;
+    virtual ~DefaultCommandsContextProvider() /*override*/ = default;
 
     virtual ::ILevel* getLevel() /*override*/;
 
@@ -42,12 +42,6 @@ public:
         ::std::string const& commandName,
         ::std::string const& commandString
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

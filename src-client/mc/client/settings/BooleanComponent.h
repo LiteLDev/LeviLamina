@@ -32,15 +32,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BooleanComponent() /*override*/;
+    virtual ~BooleanComponent() /*override*/ = default;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

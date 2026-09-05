@@ -145,7 +145,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemInHandRenderer() /*override*/;
+    virtual ~ItemInHandRenderer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -167,8 +167,6 @@ public:
         float                          heldItemScale,
         bool                           posAndRotSetByJSON
     );
-
-    MCAPI bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
 
     MCAPI ::ItemRenderCall* _getRenderCall(::Mob* mob, ::ItemStack const& itemInstance, int fallbackFrame);
 
@@ -321,6 +319,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
+
     MCAPI static ::dragon::RenderMetadata _createRenderMetadata(
         ::BaseActorRenderContext const& renderContext,
         ::Actor const&                  entity,
@@ -338,11 +338,5 @@ public:
         ::BlockTessellator&                    commonRenderer,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

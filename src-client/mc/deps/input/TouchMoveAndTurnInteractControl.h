@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchMoveAndTurnInteractControl() /*override*/;
+    virtual ~TouchMoveAndTurnInteractControl() /*override*/ = default;
 
     virtual void
     tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
@@ -79,8 +79,6 @@ public:
 
     MCAPI void _setPreviousActionPointer(int processedPointerId);
 
-    MCAPI void calibrateMoveDelta(float& dx, float& dy);
-
     MCAPI void drawJoystick(
         ::InputRenderContext& context,
         ::JoystickState       joystickState,
@@ -93,9 +91,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static void calibrateMoveDelta(float& dx, float& dy);
     // NOLINTEND
 
 public:

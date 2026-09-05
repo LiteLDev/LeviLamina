@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptSentryLogger() /*override*/;
+    virtual ~ScriptSentryLogger() /*override*/ = default;
 
     virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const
         /*override*/;
@@ -33,12 +33,6 @@ public:
         ::entt::meta_any const&,
         bool isHandled
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

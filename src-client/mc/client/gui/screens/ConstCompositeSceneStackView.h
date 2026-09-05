@@ -22,13 +22,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string getTopScreenName() const;
-
-    MCAPI ~ConstCompositeSceneStackView();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

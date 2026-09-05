@@ -21,17 +21,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextToSpeechContainerComponent() /*override*/;
+    virtual ~TextToSpeechContainerComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -22,15 +22,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SurfaceRelativeThresholdFeature() /*override*/;
+    virtual ~SurfaceRelativeThresholdFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

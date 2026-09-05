@@ -16,7 +16,7 @@ class MemoryTracker {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MemoryTracker();
+    virtual ~MemoryTracker() = default;
 
     virtual bool isTracking() const;
 
@@ -49,12 +49,6 @@ public:
     ) const;
 #endif
 
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

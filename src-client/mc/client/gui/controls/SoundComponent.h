@@ -83,7 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SoundComponent() /*override*/;
+    virtual ~SoundComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -110,12 +110,6 @@ public:
         ::ScreenEventType             screenEventType,
         ::SoundEventConditions const& screenEventConditions
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

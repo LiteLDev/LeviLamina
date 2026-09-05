@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandBlockManager() /*override*/;
+    virtual ~CommandBlockManager() /*override*/ = default;
 
     virtual void init() /*override*/;
 
@@ -74,12 +74,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Player& player, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

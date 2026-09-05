@@ -11,7 +11,9 @@
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ActorLink.h"
 #include "mc/world/actor/state/PropertySyncData.h"
+
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +24,6 @@ class BinaryStream;
 class DataItem;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
-struct ActorLink;
 struct SyncedAttribute;
 // clang-format on
 
@@ -54,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddActorPacket() /*override*/;
+    virtual ~AddActorPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -75,12 +76,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor& e);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

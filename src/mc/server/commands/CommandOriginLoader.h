@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandOriginLoader() /*override*/;
+    virtual ~CommandOriginLoader() /*override*/ = default;
 
     virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag) /*override*/;
     // NOLINTEND
@@ -37,12 +37,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

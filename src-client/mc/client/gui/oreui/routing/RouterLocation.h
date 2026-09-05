@@ -42,8 +42,6 @@ public:
         ::OreUI::RouteType               routeType
     );
 
-    MCAPI bool _isRealmsStoriesScreen(::std::string const& routeName) const;
-
     MCFOLD ::std::string const& getFragment() const;
 
     MCFOLD ::std::string const& getPath() const;
@@ -59,6 +57,12 @@ public:
     MCAPI ::OreUI::RouterLocation& operator=(::OreUI::RouterLocation&&);
 
     MCAPI ~RouterLocation();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isRealmsStoriesScreen(::std::string const& routeName);
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemComponent() /*override*/;
+    virtual ~ItemComponent() /*override*/ = default;
 
     virtual bool checkComponentDataForContentErrors() const;
 
@@ -38,12 +38,6 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
     virtual void _initializeComponent(::ComponentItem& owner);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientInstanceModel() /*override*/;
+    virtual ~ClientInstanceModel() /*override*/ = default;
 
     virtual bool hasCommandsEnabled() const /*override*/;
 
@@ -86,12 +86,6 @@ public:
     virtual ::FontHandle getFontHandle() const /*override*/;
 
     virtual void notifyForLeaveGame() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

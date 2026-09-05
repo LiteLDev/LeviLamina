@@ -80,13 +80,17 @@ public:
     // NOLINTBEGIN
     MCAPI ScaffoldingBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _updateBlockStability(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI int calculateStability(::BlockSource const& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _updateBlockStability(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static int calculateStability(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

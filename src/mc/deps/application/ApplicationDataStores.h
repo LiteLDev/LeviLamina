@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ApplicationDataStores() /*override*/;
+    virtual ~ApplicationDataStores() /*override*/ = default;
 
     virtual void init() /*override*/;
 
@@ -47,12 +47,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

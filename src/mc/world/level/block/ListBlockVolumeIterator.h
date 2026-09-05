@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ListBlockVolumeIterator() /*override*/;
+    virtual ~ListBlockVolumeIterator() /*override*/ = default;
 
     virtual ::BaseBlockLocationIterator& operator++() /*override*/;
 
@@ -41,12 +41,6 @@ public:
     virtual void _begin() /*override*/;
 
     virtual void _end() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

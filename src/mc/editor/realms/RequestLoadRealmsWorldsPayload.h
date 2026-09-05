@@ -12,13 +12,7 @@ class RequestLoadRealmsWorldsPayload
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RequestLoadRealmsWorldsPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~RequestLoadRealmsWorldsPayload() /*override*/ = default;
     // NOLINTEND
 
 public:

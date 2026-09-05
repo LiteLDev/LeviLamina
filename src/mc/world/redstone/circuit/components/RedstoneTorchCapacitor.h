@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RedstoneTorchCapacitor() /*override*/;
+    virtual ~RedstoneTorchCapacitor() /*override*/ = default;
 
     virtual uchar getPoweroutDirection() const /*override*/;
 
@@ -88,12 +88,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorServerCommandOrigin() /*override*/;
+    virtual ~ActorServerCommandOrigin() /*override*/ = default;
 
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
@@ -35,12 +35,6 @@ public:
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
     virtual ::CompoundTag serialize() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

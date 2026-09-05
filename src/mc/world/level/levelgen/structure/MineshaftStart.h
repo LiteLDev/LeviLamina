@@ -9,15 +9,9 @@ class MineshaftStart : public ::StructureStart {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MineshaftStart() /*override*/;
+    virtual ~MineshaftStart() /*override*/ = default;
 
     virtual ::std::string_view getStructureName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ThumbnailCacheFetchReplyPayload() /*override*/;
+    virtual ~ThumbnailCacheFetchReplyPayload() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,12 +61,6 @@ public:
     MCNAPI void*
     $ctor(::mce::UUID const& id, uint hash, ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

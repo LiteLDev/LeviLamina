@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageSpaceWarningScreenController() /*override*/;
+    virtual ~StorageSpaceWarningScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
     // NOLINTEND
@@ -40,12 +40,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& message);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

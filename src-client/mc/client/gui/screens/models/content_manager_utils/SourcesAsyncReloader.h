@@ -32,15 +32,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SourcesAsyncReloader() /*override*/;
+    virtual ~SourcesAsyncReloader() /*override*/ = default;
 
     virtual ::Bedrock::Threading::Async<void> reloadSourcesAsync(bool saveSources) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

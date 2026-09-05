@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockChangedPendingOperation() /*override*/;
+    virtual ~BlockChangedPendingOperation() /*override*/ = default;
 
     virtual ::std::unique_ptr<::Editor::Transactions::IOperation>
     _commit(::Editor::ServiceProviderCollection& services) /*override*/;
@@ -42,19 +42,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void _processBlockChangeIntent(
+    MCNAPI static void _processBlockChangeIntent(
         ::BlockSource const&                                              region,
         ::Editor::Transactions::BlockChangeIntentData&                    blockIntentData,
         ::std::vector<::Editor::Transactions::BlockChangedOperationData>& changedBlocks
-    ) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    );
     // NOLINTEND
 
 public:

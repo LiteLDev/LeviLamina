@@ -22,11 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~MippedImageResource() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~MippedImageResource() /*override*/;
-#endif
 
     virtual bool isEmpty() const /*override*/;
 
@@ -42,14 +38,6 @@ public:
 
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EncryptedNetworkPeer() /*override*/;
+    virtual ~EncryptedNetworkPeer() /*override*/ = default;
 
     virtual void sendPacket(
         ::std::string const&       data,
@@ -55,12 +55,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void enableEncryption(::std::string const& symmetricKey);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

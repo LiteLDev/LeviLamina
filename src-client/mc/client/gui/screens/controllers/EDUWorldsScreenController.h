@@ -82,8 +82,6 @@ public:
 
     MCAPI void _closeEduCloudConflictPopup(bool keepLocal);
 
-    MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
-
     MCAPI void _openWorldSettings(::std::string const& levelId);
 
     MCAPI void _openWorldSettings(::LocalWorldInfo* worldInfo);
@@ -101,6 +99,12 @@ public:
     MCAPI void _startWorld(::std::string const& levelId, ::EDUWorldsScreenController::StartWorldCaller caller);
 
     MCAPI void _startWorld(::LocalWorldInfo* worldInfo, ::EDUWorldsScreenController::StartWorldCaller caller);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:

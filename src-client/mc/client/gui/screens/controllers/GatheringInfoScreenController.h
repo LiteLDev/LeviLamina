@@ -53,11 +53,15 @@ public:
 
     MCAPI bool _isConsolePlatform() const;
 
-    MCAPI bool _locKeyValid(::std::string const& key) const;
-
     MCAPI bool _shouldShowQRCode() const;
 
     MCAPI void _updateRequiredBuild(::ServicesManager* servicesManager);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _locKeyValid(::std::string const& key);
     // NOLINTEND
 
 public:

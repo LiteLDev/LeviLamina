@@ -17,7 +17,7 @@ class ActorDimensionTransferProxy : public ::IActorDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorDimensionTransferProxy() /*override*/;
+    virtual ~ActorDimensionTransferProxy() /*override*/ = default;
 
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) const /*override*/;
 
@@ -29,12 +29,6 @@ public:
         ::Vec3 const&                    targetPosition,
         ::std::unique_ptr<::CompoundTag> saveTag
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -76,15 +76,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SingleBlockFeature() /*override*/;
+    virtual ~SingleBlockFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

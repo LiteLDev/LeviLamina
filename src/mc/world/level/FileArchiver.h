@@ -395,7 +395,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileArchiver() /*override*/;
+    virtual ~FileArchiver() /*override*/ = default;
 
     virtual ::std::shared_ptr<::FilePickerSettings>
     generateFilePickerSettings(::std::vector<::FileArchiver::ExportType> const& types, ::std::string const&) const;
@@ -450,12 +450,6 @@ public:
 #endif
 
     MCAPI void _printMessage(::std::string const& message);
-
-    MCAPI void _revertPremiumUpgradePacks(::Core::Path const& filePath);
-
-#ifdef LL_PLAT_C
-    MCAPI void _sanitizeWorld(::Core::Path const& newWorldPath);
-#endif
 
     MCAPI ::FileArchiver::Result _tryBeginExportLevel(
         ::std::string const&            levelId,
@@ -534,6 +528,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _revertPremiumUpgradePacks(::Core::Path const& filePath);
+
+#ifdef LL_PLAT_C
+    MCAPI static void _sanitizeWorld(::Core::Path const& newWorldPath);
+#endif
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -566,12 +570,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                     levelDbEnv,
         ::std::function<void(::std::string const&)>                     displayMessageFunction
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

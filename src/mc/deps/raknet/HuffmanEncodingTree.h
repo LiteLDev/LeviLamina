@@ -54,11 +54,15 @@ public:
     MCAPI void FreeMemory();
 
     MCAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
+    // NOLINTEND
 
-    MCAPI void InsertNodeIntoSortedList(
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void InsertNodeIntoSortedList(
         ::HuffmanEncodingTreeNode*                                node,
         ::DataStructures::LinkedList<::HuffmanEncodingTreeNode*>* huffmanEncodingTreeNodeList
-    ) const;
+    );
     // NOLINTEND
 };
 

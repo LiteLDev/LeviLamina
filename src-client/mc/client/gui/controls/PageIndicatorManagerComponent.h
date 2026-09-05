@@ -47,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PageIndicatorManagerComponent() /*override*/;
+    virtual ~PageIndicatorManagerComponent() /*override*/ = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -68,12 +68,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::Bedrock::PubSub::Subscription
     registerListenerWithExpectedPageCount(uint64 expectedPageCount, ::std::function<void(uint64)> callback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

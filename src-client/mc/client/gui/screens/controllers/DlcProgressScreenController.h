@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DlcProgressScreenController() /*override*/;
+    virtual ~DlcProgressScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -73,12 +73,6 @@ public:
         bool                                     processingUpdates,
         bool                                     disableExitWhileInProgress
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

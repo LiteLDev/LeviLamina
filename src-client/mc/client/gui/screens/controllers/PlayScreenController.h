@@ -142,8 +142,6 @@ public:
 
     MCAPI ::std::string _getGeneralMultiplayerWarningText();
 
-    MCAPI ::NetworkWorldType _getNetworkWorldTypeFromCollection(::std::string const& collectionName) const;
-
     MCAPI ::ui::ViewRequest _handleStartNetworkItem(int index, ::NetworkWorldType nwt);
 
     MCAPI void _navigatePlayScreenTechStack(::PlayScreenDefaultTab tab);
@@ -167,6 +165,12 @@ public:
     MCAPI bool _worldHasHeader(::NetworkWorldType type, int collectionIndex);
 
     MCAPI bool _worldHasImage(::NetworkWorldType type, int collectionIndex);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::NetworkWorldType _getNetworkWorldTypeFromCollection(::std::string const& collectionName);
     // NOLINTEND
 
 public:

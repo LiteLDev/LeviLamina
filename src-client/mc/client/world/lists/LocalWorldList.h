@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalWorldList() /*override*/;
+    virtual ~LocalWorldList() /*override*/ = default;
 
     virtual void onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type) /*override*/;
 
@@ -90,12 +90,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
         bool                                                 isEditorMode
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

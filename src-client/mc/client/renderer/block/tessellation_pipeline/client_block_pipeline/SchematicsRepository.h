@@ -66,13 +66,6 @@ public:
     MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>
     _createUnitCube(::Matrix const& postModelSpaceTransform, uchar rotX, uchar rotY, uchar rotZ, bool isV1);
 
-    MCAPI bool _hasAllPartsWithinBufferLimit(
-        ::Vec3 const&                 schematicMin,
-        ::Vec3 const&                 schematicMax,
-        ::HashedString const&         schematicName,
-        ::std::vector<::std::string>& errorMessages
-    ) const;
-
     MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> _loadSchematic(
         ::GeometryPtr const                                     geoPtr,
         ::BlockCullingData const*                               cullingDataPtr,
@@ -95,6 +88,17 @@ public:
     );
 
     MCAPI bool validateTransformedBounds(::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _hasAllPartsWithinBufferLimit(
+        ::Vec3 const&                 schematicMin,
+        ::Vec3 const&                 schematicMax,
+        ::HashedString const&         schematicName,
+        ::std::vector<::std::string>& errorMessages
+    );
     // NOLINTEND
 
 public:

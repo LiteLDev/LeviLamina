@@ -25,20 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~RealmWorldListDownloadPayload() /*override*/;
-#else // LL_PLAT_C
     virtual ~RealmWorldListDownloadPayload() /*override*/ = default;
-#endif
-
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:
