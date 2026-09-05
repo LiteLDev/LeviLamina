@@ -34,7 +34,8 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerAuthInputPacket const& packet
 ) {
     origin(source, packet);
-    if (auto player = _getServerPlayer(source, packet.mSenderSubId);
+    auto handle = thisFor<NetEventCallback>();
+    if (auto player = handle->_getServerPlayer(source, packet.mSenderSubId);
         player && packet.mInputData->test(static_cast<size_t>(PlayerAuthInputPacket::InputData::Jumping))
         && player->isOnGround() && *packet.mPos - player->getPosition() > 0.0f) {
         auto event = PlayerJumpEvent(*player, player->getPosition(), *packet.mPos);
@@ -48,7 +49,7 @@ LL_TYPE_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> emitterFactory();
 class PlayerJumpEventEmitter : public Emitter<emitterFactory, PlayerJumpEvent> {
-    // memory::HookRegistrar<PlayerJumpEventHook> hook;
+    memory::HookRegistrar<PlayerJumpEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerJumpEventEmitter>(); }
