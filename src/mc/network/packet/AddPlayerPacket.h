@@ -18,7 +18,6 @@
 #include "mc/world/item/NetworkItemStackDescriptor.h"
 #include "mc/world/level/GameType.h"
 
-
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
