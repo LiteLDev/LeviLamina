@@ -42,8 +42,13 @@
 #include "mc/world/events/PlayerSleepStateChangeEvent.h"
 #include "mc/world/events/PlayerStopLoadingEvent.h"
 #include "mc/world/events/PlayerSwingStartEvent.h"
+#include "mc/world/events/PlayerTellCommandEvent.h"
+#include "mc/world/events/PlayerTellRawCommandEvent.h"
+#include "mc/world/events/PlayerTitleCommandEvent.h"
+#include "mc/world/events/PlayerTitleRawCommandEvent.h"
 #include "mc/world/events/PlayerUpdateInteractionEvent.h"
 #include "mc/world/events/PlayerUseNameTagEvent.h"
+
 
 
 template <typename Return>
@@ -92,6 +97,10 @@ struct PlayerGameplayEvent<void> : ConstEventVariant<
 template <>
 struct PlayerGameplayEvent<CoordinatorResult> : ConstEventVariant<
                                                     PlayerSayCommandEvent,
+                                                    PlayerTellCommandEvent,
+                                                    PlayerTellRawCommandEvent,
+                                                    PlayerTitleCommandEvent,
+                                                    PlayerTitleRawCommandEvent,
                                                     PlayerGetExperienceOrbEvent,
                                                     PlayerInteractEvent,
                                                     PlayerInteractWithEntityBeforeEvent,

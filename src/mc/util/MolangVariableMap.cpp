@@ -5,6 +5,7 @@ void MolangVariableMap::setMolangVariable(::MolangVariableIndex molangVariableIn
     _getOrAddMolangVariable(molangVariableIndex)->mValue = value;
 }
 
+#ifdef LL_PLAT_S
 void MolangVariableMap::setMolangVariable(
     uint64                   variableNameHash,
     char const*              variableName,
@@ -16,6 +17,7 @@ void MolangVariableMap::setMolangVariable(
 void MolangVariableMap::setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value) {
     setMolangVariable(variableName.getHash(), variableName.c_str(), value, false);
 }
+#endif
 
 void MolangVariableMap::setMolangVariable(
     uint64                   variableNameHash,
