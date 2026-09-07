@@ -18,6 +18,33 @@ namespace cereal { struct ReflectionCtx; }
 
 class TextPacket : public ::ll::PayloadPacket<::TextPacketPayload> {
 public:
+    LLAPI static void segmentAndSendTo(std::string const& text, TextPacketType textType, Player const& player);
+
+    LLAPI static void segmentAndSendTo(
+        std::string const&         text,
+        TextPacketType             textType,
+        BlockPos const&            pos,
+        DimensionType              dimId,
+        optional_ref<Player const> except = std::nullopt
+    );
+
+    LLAPI static void segmentAndSendTo(
+        std::string const&         text,
+        TextPacketType             textType,
+        Actor const&               actor,
+        optional_ref<Player const> except = std::nullopt
+    );
+
+    LLAPI static void segmentAndSendToClient(
+        std::string const&       text,
+        TextPacketType           textType,
+        NetworkIdentifier const& identifier,
+        ::SubClientId            clientId
+    );
+
+    LLAPI static void segmentAndSendToClients(std::string const& text, TextPacketType textType);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
