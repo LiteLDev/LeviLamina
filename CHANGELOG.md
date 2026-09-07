@@ -7,12 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [26.32.0] - 2026-08-31
+## [26.32.2] - 2026-09-07
+
+### Changed
+
+- Bumped bedrock-runtime-data version
+
+## [26.32.1] - 2026-09-06
+
+### Fixed
+
+- Fixed lip installaion
+
+## [26.32.0] - 2026-09-06
 
 ### Added
 
 - Added ll::Stacktrace::fromThread @zimuya4153
 - Added ll::Stacktrace::fromThreadId @zimuya4153
+- Implemented a bunch of inlined but useful functions @ShrBox
 
 ### Changed
 
@@ -1717,7 +1730,9 @@ For lip and tooth-hub test only.
 [#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
 [#1824]: https://github.com/LiteLDev/LeviLamina/issues/1824
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.2...HEAD
+[26.32.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.1...v26.32.2
+[26.32.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.0...v26.32.1
 [26.32.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.7...v26.32.0
 [26.20.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.6...v26.20.7
 [26.20.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.5...v26.20.6

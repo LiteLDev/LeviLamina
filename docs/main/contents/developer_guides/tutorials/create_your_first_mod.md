@@ -72,7 +72,6 @@ Next, it is recommended to manually pin the LeviLamina version used by your mod.
 ```lua
 -- add_requires("levilamina x.x.x") for a specific version
 -- add_requires("levilamina develop") to use develop version
--- please note that you should add bdslibrary yourself if using dev version
 add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
 ```
 

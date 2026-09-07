@@ -55,8 +55,7 @@ void LayeredAbilities::setPlayerPermissions(::PlayerPermissionLevel permissions)
     auto oldPermissions              = mPermissions->mPlayerPermissions;
     mPermissions->mPlayerPermissions = permissions;
 
-    // TODO: uncomment this after added MCAPI
-    // mPermissions->mClientPlayerPermissionsPublisher->dispatch();
+    mPermissions->mClientPlayerPermissionsPublisher->dispatch();
 
     if (oldPermissions == PlayerPermissionLevel::Custom) {
         auto& customAbilities = *mLayers->at(1).mAbilities;

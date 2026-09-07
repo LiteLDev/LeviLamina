@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/DataItem.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"

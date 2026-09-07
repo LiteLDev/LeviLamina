@@ -178,26 +178,26 @@ option("target_type")
 
 ### Compilation Differences
 
-| Aspect | Server Build | Client Build |
-|--------|--------------|--------------|
-| **Source Files** | `src/` + `src-server/` | `src/` + `src-client/` |
-| **BDS Headers** | `bedrockdata:server.8` | `bedrockdata:client.9` |
-| **Entry Point** | `DllMain` (server) | `DllMain` (client) |
-| **API Surface** | Common + Server | Common + Client |
-| **Output** | `LeviLamina.dll` (server) | `LeviLamina.dll` (client) |
+| Aspect           | Server Build              | Client Build              |
+| ---------------- | ------------------------- | ------------------------- |
+| **Source Files** | `src/` + `src-server/`    | `src/` + `src-client/`    |
+| **MC Headers**   | `bedrockdata:server`      | `bedrockdata:client`      |
+| **Entry Point**  | `DllMain` (server)        | `DllMain` (client)        |
+| **API Surface**  | Common + Server           | Common + Client           |
+| **Output**       | `LeviLamina.dll` (server) | `LeviLamina.dll` (client) |
 
 ### API Availability
 
-| Module | Server | Client | Notes |
-|--------|:------:|:------:|-------|
-| Base | ✅ | ✅ | Common |
-| Command | ✅ | ✅ | Common |
-| Event (Player/World) | ✅ | ✅ | Common |
-| Event (Server) | ✅ | ❌ | Server-only |
-| Event (Client/Input/Render) | ❌ | ✅ | Client-only |
-| Form | ✅ | ✅ | Common |
-| Input | ❌ | ✅ | Client-only |
-| Service (Bedrock) | ✅ | ✅ | Common (different implementations) |
+| Module                      | Server | Client | Notes                              |
+| --------------------------- | :----: | :----: | ---------------------------------- |
+| Base                        |   ✅    |   ✅    | Common                             |
+| Command                     |   ✅    |   ✅    | Common                             |
+| Event (Player/World)        |   ✅    |   ✅    | Common                             |
+| Event (Server)              |   ✅    |   ❌    | Server-only                        |
+| Event (Client/Input/Render) |   ❌    |   ✅    | Client-only                        |
+| Form                        |   ✅    |   ✅    | Common                             |
+| Input                       |   ❌    |   ✅    | Client-only                        |
+| Service (Bedrock)           |   ✅    |   ✅    | Common (different implementations) |
 
 ### Runtime Behavior
 

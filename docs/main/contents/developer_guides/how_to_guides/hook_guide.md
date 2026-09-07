@@ -6,7 +6,7 @@ Hook is a technique for modifying the behavior of functions at runtime. It is co
 
 Explanation of Hook on Wikipedia: [Hooking](https://en.wikipedia.org/wiki/Hooking)
 
-In LeviLamina, we provide well-packaged Hook APIs, allowing you to quickly and conveniently modify the behavior of game functions in Minecraft Bedrock Dedicated Servers (referred to as `BDS`).
+In LeviLamina, we provide well-packaged Hook APIs, allowing you to quickly and conveniently modify the behavior of game functions in Minecraft Bedrock Edition.
 
 ## Defines of Hooks
 
@@ -103,10 +103,10 @@ For non-automatically registered Hooks, you need to call the `hook()` function t
 
 #### Unloading
 
-All Hooks will automatically unload when BDS unloads. You can also call the `unhook()` function to unload when your mod needs to unload the Hook.
+All Hooks will automatically unload when Minecraft unloads. You can also call the `unhook()` function to unload when your mod needs to unload the Hook.
 
 ## In Conclusion
 
-Hook is a very powerful technique but also a double-edged sword. If used improperly, it can cause crashes of the BDS core or mods, and in severe cases, affect the game saves.
+Hook is a very powerful technique but also a double-edged sword. If used improperly, it can cause crashes of the Minecraft core or mods, and in severe cases, affect the game saves.
 
 Therefore, please be cautious when using Hooks, and check your code carefully to avoid unnecessary errors.
