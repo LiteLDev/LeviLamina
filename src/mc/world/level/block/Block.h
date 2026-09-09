@@ -65,6 +65,8 @@ public:
 
     [[nodiscard]] ushort getData() const { return mData; }
 
+    [[nodiscard]] Material const& getMaterial() const { return getBlockType().mMaterial; }
+
     template <typename T>
     std::optional<T> getState(uint64 id) const {
         return mBlockType->getState<T>(id, mData);
