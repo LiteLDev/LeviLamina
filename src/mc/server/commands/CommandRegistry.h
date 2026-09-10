@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/typeid_t.h"
+#include "mc/platform/UUID.h"
+#include "mc/platform/brstd/associative_adapter.h"
 #include "mc/platform/brstd/copyable_function.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandLexer.h"
@@ -32,7 +34,6 @@ struct AutoCompleteInformation;
 struct CommandRegistryArguments;
 struct CommandSyntaxInformation;
 namespace Json { class Value; }
-namespace mce { class UUID; }
 // clang-format on
 
 class CommandRegistry {

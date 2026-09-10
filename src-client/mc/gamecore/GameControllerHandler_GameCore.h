@@ -15,6 +15,7 @@
 class GameCorePlayerInput;
 class HIDController;
 struct XTaskQueueObject;
+namespace GameInput::v2 { struct IGameInput; }
 namespace GameInput::v2 { struct IGameInputDevice; }
 // clang-format on
 

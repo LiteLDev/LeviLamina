@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/UUID.h"
+
 // auto generated forward declare list
 // clang-format off
 class PlayerListEntry;
 struct AutoCompleteInformation;
-namespace mce { class UUID; }
 // clang-format on
 
 struct CommandRegistryArguments {
