@@ -11,8 +11,10 @@
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class SetArmorTrimFunction : public ::LootItemFunction {
@@ -39,6 +41,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+#endif
     // NOLINTEND
 
 public:

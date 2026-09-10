@@ -15,13 +15,11 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class ClientScratchContainer;
 class Container;
 class ContainerModel;
 class EntityContext;
 class IPlayerContainerSetter;
 class ISparseContainerSetListener;
-class ItemStack;
 class ItemStackNetManagerScreen;
 class ItemStackRequestAction;
 class ItemStackRequestBatch;
@@ -32,6 +30,8 @@ struct FullContainerName;
 struct HistoricPredictionData;
 struct ItemStackRequestIdTag;
 struct ItemStackResponseInfo;
+struct OwnedItemStackRequestScope;
+class ClientScratchContainer;
 // clang-format on
 
 class ItemStackNetManagerClient : public ::ItemStackNetManagerBase {
@@ -233,33 +233,20 @@ public:
         bool                                              shouldBeEmpty
     );
 
-    MCNAPI void _endRequest();
-
     MCNAPI ::std::unique_ptr<::ItemStackRequestData> _endTakeRequest();
 
     MCNAPI ::ItemStackNetManagerClient::ClientScreenData const* _tryGetCurrentClientScreen() const;
 
     MCNAPI ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
 
-    MCNAPI void addContainerToRequest(::ItemStackRequestId requestId, ::Container* container);
-
     MCNAPI void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction);
-
-    MCNAPI void cacheHistoricPrediction(
-        ::Container*                container,
-        ::ItemStackRequestId const& requestId,
-        int                         slot,
-        ::ItemStack&&               item
-    );
-
-    MCNAPI void
-    cacheZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot, ::ItemStack&& item);
-
-    MCNAPI void clearZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot);
 
     MCNAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> getPredictiveContainers();
 
     MCNAPI void handleItemStackResponse(::std::vector<::ItemStackResponseInfo> const& responses);
+
+    MCNAPI ::OwnedItemStackRequestScope
+    tryBeginOwnedRequest(::std::shared_ptr<::ItemStackRequestData> result, ::ItemStackRequestScreen screen);
 
     MCNAPI void trySendBatch();
 #endif

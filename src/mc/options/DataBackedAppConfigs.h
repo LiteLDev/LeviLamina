@@ -60,6 +60,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnkf0c77b;
         ::ll::UntypedStorage<1, 1>  mUnk7a6716;
         ::ll::UntypedStorage<8, 32> mUnk32a255;
+        ::ll::UntypedStorage<8, 24> mUnk3aaed8;
         ::ll::UntypedStorage<1, 1>  mUnkeff0d7;
         ::ll::UntypedStorage<1, 1>  mUnkafa516;
         ::ll::UntypedStorage<1, 1>  mUnk4b7f87;
@@ -84,7 +85,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 136> mUnk83fb84;
+    ::ll::UntypedStorage<8, 160> mUnk83fb84;
     // NOLINTEND
 
 public:
@@ -139,6 +140,8 @@ public:
     virtual void setEduDedicatedServerRefreshed() /*override*/;
 
     virtual void setEduDedicatedServerRefreshAfterSeconds(::std::chrono::seconds) /*override*/;
+
+    virtual ::std::vector<::std::string> getExcludedCatalogueTags() const /*override*/;
 
     virtual bool requireEduLevelSettings() const /*override*/;
 

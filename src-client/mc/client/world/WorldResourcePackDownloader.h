@@ -79,6 +79,32 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WorldResourcePackDownloader(
+        ::IDlcValidation&                                    dlcValidation,
+        ::IContentAcquisition&                               contentAcquisition,
+        ::IStoreCatalogRepository&                           storeCatalogRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
+        ::IClientInstance&                                   clientInstance,
+        ::ILevelListCache&                                   levelListCache
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IDlcValidation&                                    dlcValidation,
+        ::IContentAcquisition&                               contentAcquisition,
+        ::IStoreCatalogRepository&                           storeCatalogRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
+        ::IClientInstance&                                   clientInstance,
+        ::ILevelListCache&                                   levelListCache
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $downloadPacks(

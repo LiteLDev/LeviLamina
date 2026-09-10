@@ -18,6 +18,7 @@ class Vec2;
 class Vec4;
 struct Brightness;
 struct BrightnessPair;
+struct TextureUVCoordinateSet;
 namespace LightPropagation { class LightVolumeManager; }
 namespace mce { class ActorConstants; }
 namespace mce { class Color; }
@@ -63,21 +64,6 @@ public:
         bool                                allowOverlay
     ) const;
 
-    MCAPI void setupFoilShaderParameters(
-        ::ScreenContext&                    screenContext,
-        ::BaseActorRenderContext&           entityContext,
-        ::Actor&                            entity,
-        ::mce::Color const&                 overlayColor,
-        ::mce::Color const&                 changeColor,
-        ::mce::Color const&                 changeColor2,
-        ::Vec2 const&                       uvScale,
-        ::Vec4 const&                       uvAnim,
-        float                               br,
-        ::Brightness                        lightEmission,
-        ::std::optional<::glm::vec3> const& lightEmissionColor,
-        bool                                allowOverlay
-    ) const;
-
     MCAPI void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
@@ -106,6 +92,8 @@ public:
         float                  uvRot1,
         float                  uvRot2
     );
+
+    MCAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
 
     MCAPI static void setupFoilShaderParameters(
         ::ScreenContext&    screenContext,

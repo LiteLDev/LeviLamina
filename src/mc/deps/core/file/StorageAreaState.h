@@ -45,9 +45,9 @@ public:
         uint64                                          freeSpace,
         ::std::function<void()>                         onHandledEventCallback
     );
+#endif
 
     MCNAPI void addListener(::Core::StorageAreaStateListener* l);
-#endif
 
     MCNAPI void checkUserStorage(
         ::std::shared_ptr<::Core::FileStorageArea> const& fileStorageArea,

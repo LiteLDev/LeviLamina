@@ -59,6 +59,8 @@ public:
 
     MCAPI bool getDoNotShowMultiplayerOnlineSafetyWarning() const;
 
+    MCAPI bool getDoNotShowNonPublicServerWarning() const;
+
     MCAPI bool getDoNotShowNotFollowingPartyWarning() const;
 
     MCAPI bool getDoNotShowOldWorldsWarning() const;
@@ -74,6 +76,8 @@ public:
     MCAPI bool getDoNotShowPartyWorldCapacityRealmsWarning() const;
 
     MCAPI bool getDoNotShowStorageLowWarning() const;
+
+    MCFOLD bool getDoNotShowUnavailableDependenciesBeta() const;
 
     MCAPI bool getDoNotShowUsingExternalStorageWarning() const;
 
@@ -107,6 +111,8 @@ public:
 
     MCAPI void setDoNotShowMultiplayerOnlineSafetyWarning(bool newValue);
 
+    MCAPI void setDoNotShowNonPublicServerWarning(bool newValue);
+
     MCAPI void setDoNotShowNotFollowingPartyWarning(bool newValue);
 
     MCAPI void setDoNotShowOldWorldsWarning(bool newValue);
@@ -122,6 +128,8 @@ public:
     MCAPI void setDoNotShowPartyWorldCapacityRealmsWarning(bool newValue);
 
     MCAPI void setDoNotShowStorageLowWarning(bool newValue);
+
+    MCAPI void setDoNotShowUnavailableDependenciesBeta(bool newValue);
 
     MCAPI void setDoNotShowUsingExternalStorageWarning(bool newValue);
 

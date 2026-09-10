@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
+struct WorldBlockPosition;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,9 +21,12 @@ struct FindNearestBlockSensorEntryDefinition
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::BlockPos>>>
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>>
         mSearchBlockPosMemory;
-    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::BlockPos>>
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>
                                                                                      mFoundBlockPosMemory;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mBlockDescriptors;
     ::ll::TypedStorage<4, 4, int>                                                    mSearchRange;

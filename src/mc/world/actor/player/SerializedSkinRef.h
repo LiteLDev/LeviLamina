@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/persona/ArmSizeType.h"
+#include "mc/deps/shared_types/persona/PieceType.h"
 #include "mc/util/ThreadOwner.h"
-#include "mc/world/actor/player/persona/ArmSize.h"
-#include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -91,10 +91,10 @@ public:
 #endif
 
     MCAPI void setPersonaAppearanceData(
-        ::persona::ArmSize::Type const&                                   armSizeType,
-        ::mce::Color const&                                               skinColor,
-        ::std::vector<::SerializedPersonaPieceHandle>                     personaPieces,
-        ::std::unordered_map<::persona::PieceType, ::TintMapColor> const& pieceTintColors
+        ::SharedTypes::persona::ArmSizeType const&                                     armSizeType,
+        ::mce::Color const&                                                            skinColor,
+        ::std::vector<::SerializedPersonaPieceHandle>                                  personaPieces,
+        ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors
     );
 
     MCAPI ~SerializedSkinRef();

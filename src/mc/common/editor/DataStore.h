@@ -13,11 +13,6 @@ namespace Json { class Value; }
 namespace Editor::DataStore {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Json::Value _createClientActionEvent(
-    ::Editor::DataStore::DeprecatedEventFactory::ClientActionEventType type,
-    ::Json::Value const&                                               payload
-);
-
 MCNAPI ::Json::Value
 _createServerUXEvent(::Editor::DataStore::DeprecatedEventFactory::ServerUXEventType type, ::Json::Value const& payload);
 // NOLINTEND

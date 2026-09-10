@@ -72,6 +72,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual bool isTypeOrDerived(::BlockActorType type) const /*override*/;
+
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
@@ -210,6 +212,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+
     MCFOLD ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);

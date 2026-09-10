@@ -18,7 +18,7 @@ class PersonaCommands : public ::OreUI::CommandGroupBase<::OreUI::PersonaCommand
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void>> mEquipDefaultSkin;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mEquipDefaultSkin;
     ::ll::TypedStorage<8, 8, ::PersonaClient&>                      mPersonaClient;
     // NOLINTEND
 

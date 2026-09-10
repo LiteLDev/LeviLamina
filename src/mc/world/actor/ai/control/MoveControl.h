@@ -27,22 +27,22 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI float
-    calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
+    MCAPI static float calculateMoveSpeed(
+        ::MoveControlComponent const& parent,
+        ::Mob&                        mob,
+        ::Vec3 const&                 endPosition,
+        float const                   maxMoveSpeed
+    );
 
-    MCAPI float calculateYRotation(
+    MCAPI static float calculateYRotation(
         ::MoveControlComponent const& parent,
         ::Mob const&                  mob,
         ::Vec3 const&                 positionDifference,
-        float                         maxMoveSpeed
+        float const                   maxMoveSpeed
     );
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
     MCAPI static bool
     shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float const endDistanceSqr);
     // NOLINTEND

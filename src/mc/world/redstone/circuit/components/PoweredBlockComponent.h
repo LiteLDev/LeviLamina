@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PoweredBlockComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool
@@ -49,18 +45,6 @@ public:
     virtual int getStrength() const /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PoweredBlockComponent(uchar connections);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uchar connections);
     // NOLINTEND
 
 public:

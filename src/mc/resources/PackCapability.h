@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/resources/PackCapabilityTrustLevel.h"
+
 class PackCapability {
 public:
     // PackCapability inner types declare
@@ -10,11 +13,6 @@ public:
     // clang-format on
 
     // PackCapability inner types define
-    enum class TrustLevel : int {
-        NotTrusted = 0,
-        Trusted    = 1,
-    };
-
     struct ValidationResult {
     public:
         // ValidationResult inner types declare
@@ -45,7 +43,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 4>  mUnkdc70c4;
+            ::ll::UntypedStorage<4, 4>  mUnkc8a8bf;
             ::ll::UntypedStorage<8, 16> mUnkebceb3;
             // NOLINTEND
 

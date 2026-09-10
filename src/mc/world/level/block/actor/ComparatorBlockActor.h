@@ -44,7 +44,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCFOLD int $getOutputSignal();
+    MCAPI int $getOutputSignal();
 
     MCAPI void $setOutputSignal(int value);
 

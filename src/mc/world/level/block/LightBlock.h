@@ -67,10 +67,10 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     virtual bool canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const /*override*/;
     // NOLINTEND
 
@@ -123,10 +123,10 @@ public:
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCAPI bool $canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const;
 
 

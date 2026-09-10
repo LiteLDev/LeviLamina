@@ -20,28 +20,14 @@ public:
 
 public:
     // prevent constructor by default
+    EditorExtensionOptionalParameters& operator=(EditorExtensionOptionalParameters const&);
     EditorExtensionOptionalParameters(EditorExtensionOptionalParameters const&);
     EditorExtensionOptionalParameters();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
-    operator=(::Editor::API::EditorExtensionOptionalParameters const&);
-
-    MCNAPI ~EditorExtensionOptionalParameters();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindInterface();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

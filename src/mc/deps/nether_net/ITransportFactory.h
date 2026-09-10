@@ -9,6 +9,7 @@
 // clang-format off
 namespace NetherNet { class INetherNetTransportInterface; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
+namespace NetherNet { class IUdpSocketFactory; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct TransportConfiguration; }
 // clang-format on
@@ -34,6 +35,8 @@ public:
     ) = 0;
 
     virtual void destroyTransportInterface(::NetherNet::INetherNetTransportInterface* pSimpleNetworkInterface) = 0;
+
+    virtual ::std::unique_ptr<::NetherNet::IUdpSocketFactory> createUdpSocketFactory() = 0;
     // NOLINTEND
 };
 

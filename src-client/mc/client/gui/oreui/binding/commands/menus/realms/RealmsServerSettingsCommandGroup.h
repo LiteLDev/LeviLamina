@@ -24,12 +24,12 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServerSettingsManager>>
                                                                            mRealmsServerSettingsManager;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                mTaskGroup;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64>> mFetchRealmsServerMode;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, ::Realms::RealmsServerMode>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64>> mFetchRealmsServerMode;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, ::Realms::RealmsServerMode>>
                                                                                 mSetRealmsServerMode;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int>> mSetRealmsServerMaxPlayerCount;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int>> mSetRealmsServerRenderDist;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int>> mSetRealmsServerSimDist;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int>> mSetRealmsServerMaxPlayerCount;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int>> mSetRealmsServerRenderDist;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int>> mSetRealmsServerSimDist;
     // NOLINTEND
 
 public:

@@ -6,7 +6,7 @@ struct MinecraftServiceKeyInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb14665;
+    ::ll::UntypedStorage<8, 64> mUnka8d15e;
     ::ll::UntypedStorage<8, 32> mUnk8f5a62;
     ::ll::UntypedStorage<8, 8>  mUnkdf1e25;
     ::ll::UntypedStorage<1, 1>  mUnk3f3d2a;

@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/deps/shared_types/v1_21_130/actor/brain/MemoryIdentifierDefinition.h"
-#include "mc/deps/shared_types/v1_26_10/actor/MemoryGoalDefinition.h"
+#include "mc/deps/shared_types/v1_26_10/actor/BaseGenericGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +16,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace SharedTypes::v1_26_10::Brain::MemoryGoals {
 
-struct LookAtEntityGoalDefinition : public ::SharedTypes::v1_26_10::Brain::MemoryGoalDefinition {
+struct LookAtEntityGoalDefinition : public ::SharedTypes::v1_26_10::Brain::BaseGenericGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN

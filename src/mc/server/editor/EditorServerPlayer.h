@@ -19,7 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkbbe1db;
+    ::ll::UntypedStorage<8, 16> mUnk9f012f;
     ::ll::UntypedStorage<8, 16> mUnk788873;
+    ::ll::UntypedStorage<1, 1>  mUnk976dc4;
     ::ll::UntypedStorage<8, 8>  mUnk696781;
     // NOLINTEND
 
@@ -38,6 +40,8 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
+    virtual bool canStart() const /*override*/;
+
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     virtual ::optional_ref<::PlayerEventCoordinator> getPlayerEventCoordinator() /*override*/;
@@ -51,6 +55,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
+    MCNAPI bool $canStart() const;
 
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 

@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataDrivenGeometry();
+    virtual ~DataDrivenGeometry() = default;
     // NOLINTEND
 
 public:
@@ -54,17 +54,5 @@ public:
     MCAPI void copyTransformMatricesToModelParts(::RenderParams& renderParams);
 
     MCAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -56,9 +56,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SkullBlockRenderer(
-        ::std::shared_ptr<::ActorResourceDefinition> const definition,
-        ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
-        ::BaseGameVersion const&                           baseGameVersion,
+        ::std::shared_ptr<::ActorResourceDefinition> definition,
+        ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
+        ::BaseGameVersion const&                     baseGameVersion,
         ::Experiments const&
     );
 
@@ -93,9 +93,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::shared_ptr<::ActorResourceDefinition> const definition,
-        ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
-        ::BaseGameVersion const&                           baseGameVersion,
+        ::std::shared_ptr<::ActorResourceDefinition> definition,
+        ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
+        ::BaseGameVersion const&                     baseGameVersion,
         ::Experiments const&
     );
     // NOLINTEND

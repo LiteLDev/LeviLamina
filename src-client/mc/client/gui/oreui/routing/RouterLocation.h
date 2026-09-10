@@ -48,13 +48,13 @@ public:
 
     MCFOLD ::std::string const& getQuery() const;
 
+    MCAPI ::std::unordered_map<::std::string, ::std::string> getTelemetryEventProperties() const;
+
     MCAPI ::std::string getTelemetryId() const;
 
     MCAPI bool isValid() const;
 
     MCAPI ::OreUI::RouterLocation& operator=(::OreUI::RouterLocation const&);
-
-    MCAPI ::OreUI::RouterLocation& operator=(::OreUI::RouterLocation&&);
 
     MCAPI ~RouterLocation();
     // NOLINTEND

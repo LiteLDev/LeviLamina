@@ -29,6 +29,12 @@ public:
     CursorState();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Cursor::CursorState const& rhs) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

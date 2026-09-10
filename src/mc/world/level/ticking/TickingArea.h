@@ -124,6 +124,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI TickingArea(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -135,6 +136,21 @@ public:
         bool                  alwaysActive,
         ::TickingAreaLoadMode loadMode
     );
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI TickingArea(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::ActorUniqueID       entityId,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
+#endif
 
     MCAPI void _save(::LevelStorage& levelStorage);
     // NOLINTEND
@@ -142,6 +158,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -153,6 +170,21 @@ public:
         bool                  alwaysActive,
         ::TickingAreaLoadMode loadMode
     );
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::ActorUniqueID       entityId,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
+#endif
     // NOLINTEND
 
 public:

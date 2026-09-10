@@ -24,6 +24,8 @@
 #include "mc/deps/application/storage_migration/WorldRecoveryTelemetryHandler.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
@@ -51,8 +53,8 @@
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/network/TransportLayer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/connection/ReconnectionType.h"
 #include "mc/network/services/signaling/SignalServiceConnectStage.h"
-#include "mc/platform/brstd/flat_map.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/Mutex.h"
@@ -135,10 +137,8 @@ namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
 namespace Bedrock { struct WorldRecoveryTelemetryEvent; }
 namespace Bedrock::Http { class Status; }
-namespace Bedrock::Profile::Whisker { struct ScopeData; }
-namespace Bedrock::Profiling::Orchestrator { struct PerformanceContext; }
-namespace Bedrock::Profiling::Orchestrator { struct TriggerContext; }
-namespace Bedrock::Profiling::WhiskerLists { struct ScopeEntry; }
+namespace Bedrock::Profiling::Orchestrator { struct ProfilerCaptureParams; }
+namespace Bedrock::Profiling::Orchestrator { struct ProfilerMetadataParams; }
 namespace Core { class Path; }
 namespace Core::Profile { struct FileCounters; }
 namespace Identity { struct EduDSTelemetryIdentifier; }
@@ -156,7 +156,6 @@ namespace Social::Events { class MobTelemetry; }
 namespace Social::Events { class OptionChange; }
 namespace Social::Events { class PlayerTelemetry; }
 namespace Social::Events { class Property; }
-namespace Social::Events { class RealtimeRoute; }
 namespace Social::Events { class ScreenFlow; }
 namespace Social::Events { class TelemetryHeartbeat; }
 namespace Social::Events { struct ServerTelemetryData; }
@@ -165,9 +164,11 @@ namespace dragon::texturestreaming { struct TextureStreamingPerformanceTelemetry
 namespace mce { class UUID; }
 class IPurchaseEventing;
 class IRealmsTelemetry;
+class IResourceLoadEventing;
 class PushNotificationMessage;
 struct ExtraLicenseData;
 namespace Social::Events { struct InboxSummaryData; }
+namespace Social::Events { struct PageDisplayRecord; }
 // clang-format on
 
 class MinecraftEventing : public ::IMinecraftEventing,
@@ -260,7 +261,16 @@ public:
         MobKabob                        = 115,
         AdventuringTime                 = 116,
         UhOh                            = 117,
-        Count                           = 118,
+        GettingWood                     = 118,
+        BenchMaking                     = 119,
+        TimeToMine                      = 120,
+        HotTopic                        = 121,
+        AcquireHardware                 = 122,
+        GettingAnUpgrade                = 123,
+        MonsterHunter                   = 124,
+        Diamonds                        = 125,
+        PlethoraOfCats                  = 126,
+        Count                           = 127,
     };
 
     enum class BlockPlacementMethod : int {
@@ -420,6 +430,8 @@ public:
     virtual ~MinecraftEventing() /*override*/ = default;
 
     virtual ::IPurchaseEventing& getPurchaseEventing() /*override*/;
+
+    virtual ::IResourceLoadEventing& getResourceLoadEventing() /*override*/;
 
     virtual void init(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform) /*override*/;
 
@@ -617,7 +629,7 @@ public:
         bool                                                     isPartyLeader,
         bool                                                     isPartyDestination,
         bool                                                     isServerTransfer,
-        bool                                                     isReconnect,
+        ::Connection::ReconnectionType                           reconnectionType,
         bool                                                     isDueToSuspend,
         uint64                                                   connectionDurationMs,
         ::Social::GameConnectionInfo const&                      connectionInfo
@@ -976,6 +988,12 @@ public:
         bool                 success
     ) /*override*/;
 
+    virtual void fireEventCreatorFollowedUnfollowed(
+        ::std::string const& creatorId,
+        ::std::string const& operation,
+        bool                 success
+    ) /*override*/;
+
     virtual void fireEventUgcAcquisitionStateChanged(
         ::std::string const& ugcProductId,
         uint64               downloadSize,
@@ -987,7 +1005,8 @@ public:
         ::std::string const& result,
         ::std::string const& resultDetails,
         int                  httpStatus,
-        int                  errorCode
+        int                  errorCode,
+        bool                 optimizedPack
     ) /*override*/;
 
     virtual void fireEventSearchCatalogRequest(
@@ -1051,6 +1070,15 @@ public:
     virtual void fireEventFatalClientPackError(
         ::FatalClientPackErrorType       errorType,
         ::gsl::span<::std::string const> packIds
+    ) /*override*/;
+
+    virtual void fireEventPackActivationError(
+        ::std::string const& errorType,
+        ::std::string const& errorDetail,
+        ::std::string const& packAction,
+        ::std::string const& packId,
+        ::std::string const& contentType,
+        bool                 isFatal
     ) /*override*/;
 
     virtual void fireEventStoreErrorPage(
@@ -1130,22 +1158,11 @@ public:
         int                                                                                         fpsThrottle
     ) /*override*/;
 
-    virtual void fireEventProfilerMetadata(
-        ::gsl::span<::Bedrock::Profiling::WhiskerLists::ScopeEntry const> whiskerScopeEntries
-    ) /*override*/;
+    virtual void
+    fireEventProfilerMetadata(::Bedrock::Profiling::Orchestrator::ProfilerMetadataParams const& params) /*override*/;
 
-    virtual void fireEventProfilerCapture(
-        ::Bedrock::Profiling::Orchestrator::TriggerContext const&     triggerContext,
-        ::Bedrock::Profiling::Orchestrator::PerformanceContext const& performanceContext,
-        ::std::optional<::gsl::span<::gsl::not_null<::Bedrock::Profile::Whisker::ScopeData const*>> const> const&
-                                                 whiskerScopes,
-        ::std::optional<::brstd::flat_map<
-            ::std::string,
-            uint64,
-            ::std::less<::std::string>,
-            ::std::vector<::std::string>,
-            ::std::vector<uint64>> const> const& actorCounts
-    ) /*override*/;
+    virtual void
+    fireEventProfilerCapture(::Bedrock::Profiling::Orchestrator::ProfilerCaptureParams const& params) /*override*/;
 
     virtual void fireTextureStreamingPerf(
         ::dragon::texturestreaming::TextureStreamingPerformanceTelemetryData const& perfData
@@ -1247,6 +1264,15 @@ public:
     ) /*override*/;
 
     virtual void fireEventTreatmentPackRemoved(::std::string packId) /*override*/;
+
+    virtual void fireEventPackDeleted(
+        ::std::string_view   reason,
+        ::std::string const& packId,
+        ::PackType           packType,
+        ::PackOrigin         packLocation,
+        ::std::string const& packOptimizationVersion,
+        int64                freedBytes
+    ) /*override*/;
 
     virtual void fireCDNDownloadEvent(
         ::std::string const&                                packId,
@@ -1562,6 +1588,14 @@ public:
         int const            fileSizeKB
     ) /*override*/;
 
+    virtual void fireEventRealmBackupDownloadFailed(
+        int const                        realmId,
+        ::std::string const&             reason,
+        int64 const                      worldSizeBytes,
+        int64 const                      availableStorageBytes,
+        ::gsl::span<::std::string const> packIds
+    ) /*override*/;
+
     virtual void fireEventRealmUpload(
         ::std::string const& correlationId,
         ::std::string const& uploadStage,
@@ -1569,6 +1603,21 @@ public:
         int const            realmId,
         int const            fileSizeKB,
         bool const           isPack
+    ) /*override*/;
+
+    virtual void fireEventRealmsPackUpload(
+        int const            realmId,
+        int const            slotIndex,
+        ::std::string const& packId,
+        ::std::string const& packVersion,
+        ::PackType           packType,
+        ::std::string const& packClassification,
+        ::std::string const& packOptimizationVersion,
+        bool const           hasContentIdentity,
+        bool const           isPremium,
+        ::PackOrigin         packOrigin,
+        int const            stackPosition,
+        uint64 const         packSizeBytes
     ) /*override*/;
 
     virtual void
@@ -1779,6 +1828,15 @@ public:
     fireEventPersonaGeneralError(::std::string const& personaErrorName, uint duplicateErrorsFired) /*override*/;
 
     virtual void fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds) /*override*/;
+
+    virtual void fireEventPersonaPiecePackEviction(
+        uint   cacheSizeBeforeEviction,
+        uint   evictedCount,
+        uint   failedCount,
+        uint   protectedCount,
+        bool   evictionLimitedByBatch,
+        double passDurationInSeconds
+    ) /*override*/;
 
     virtual void fireEventPersonaCreationFailed(
         ::std::string_view errorName,
@@ -1999,7 +2057,8 @@ public:
     virtual void fireDelayedEventReportOfflineAction(::std::string const& offlineAction) /*override*/;
 
     virtual void fireEventFeedbackSubmitted(
-        ::std::string const& productId,
+        ::std::string const& feedbackType,
+        ::std::string const& identifier,
         bool                 safetyCheckSuccessful,
         bool                 isValidText
     ) /*override*/;
@@ -2120,6 +2179,12 @@ public:
 
     virtual void fireEventDimensionTransfer(::DimensionTransferTelemetryData const& data) /*override*/;
 
+    virtual void fireEventMarketplaceImpressions(
+        ::std::string const&                 destinationQuery,
+        ::std::string const&                 destinationPage,
+        ::Social::Events::PageDisplayRecord& data
+    ) /*override*/;
+
     virtual ::Social::Events::EventManager& getEventManager() const /*override*/;
 
     virtual uint getPrimaryLocalUserId() const /*override*/;
@@ -2183,6 +2248,9 @@ public:
     MCAPI static void fireEventAwardAchievement(::Player* player, ::MinecraftEventing::AchievementIds achievementId);
 
 #ifdef LL_PLAT_C
+    MCAPI static void
+    fireEventAwardAchievementNoXBLTelemetry(::Player* player, ::MinecraftEventing::AchievementIds achievementId);
+
     MCAPI static void fireEventBarrelBlockUsed(
         ::Player*                                    player,
         ::std::string const&                         itemUsed,
@@ -2447,8 +2515,6 @@ public:
 
     MCAPI static ::std::unordered_map<uint, ::Social::Events::PlayerTelemetry>& mPlayerTelemetry();
 
-    MCAPI static ::Social::Events::RealtimeRoute& mRealtimeRoute();
-
     MCAPI static ::Social::Events::ScreenFlow& mScreenFlow();
 
     MCAPI static ::Bedrock::Threading::Mutex& sHeartbeatMutex();
@@ -2468,6 +2534,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::IPurchaseEventing& $getPurchaseEventing();
+
+    MCAPI ::IResourceLoadEventing& $getResourceLoadEventing();
 
     MCAPI void $init(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
 
@@ -2671,7 +2739,7 @@ public:
         bool                                                     isPartyLeader,
         bool                                                     isPartyDestination,
         bool                                                     isServerTransfer,
-        bool                                                     isReconnect,
+        ::Connection::ReconnectionType                           reconnectionType,
         bool                                                     isDueToSuspend,
         uint64                                                   connectionDurationMs,
         ::Social::GameConnectionInfo const&                      connectionInfo
@@ -2699,7 +2767,7 @@ public:
         bool                                                     isPartyLeader,
         bool                                                     isPartyDestination,
         bool                                                     isServerTransfer,
-        bool                                                     isReconnect,
+        ::Connection::ReconnectionType                           reconnectionType,
         bool                                                     isDueToSuspend,
         uint64                                                   connectionDurationMs,
         ::Social::GameConnectionInfo const&                      connectionInfo
@@ -3090,6 +3158,9 @@ public:
         bool                 success
     );
 
+    MCAPI void
+    $fireEventCreatorFollowedUnfollowed(::std::string const& creatorId, ::std::string const& operation, bool success);
+
     MCAPI void $fireEventUgcAcquisitionStateChanged(
         ::std::string const& ugcProductId,
         uint64               downloadSize,
@@ -3101,7 +3172,8 @@ public:
         ::std::string const& result,
         ::std::string const& resultDetails,
         int                  httpStatus,
-        int                  errorCode
+        int                  errorCode,
+        bool                 optimizedPack
     );
 
     MCAPI void $fireEventSearchCatalogRequest(
@@ -3159,6 +3231,15 @@ public:
 
     MCAPI void
     $fireEventFatalClientPackError(::FatalClientPackErrorType errorType, ::gsl::span<::std::string const> packIds);
+
+    MCAPI void $fireEventPackActivationError(
+        ::std::string const& errorType,
+        ::std::string const& errorDetail,
+        ::std::string const& packAction,
+        ::std::string const& packId,
+        ::std::string const& contentType,
+        bool                 isFatal
+    );
 
     MCAPI void $fireEventStoreErrorPage(
         ::std::string const& errorCode,
@@ -3267,21 +3348,9 @@ public:
     );
 #endif
 
-    MCAPI void
-    $fireEventProfilerMetadata(::gsl::span<::Bedrock::Profiling::WhiskerLists::ScopeEntry const> whiskerScopeEntries);
+    MCAPI void $fireEventProfilerMetadata(::Bedrock::Profiling::Orchestrator::ProfilerMetadataParams const& params);
 
-    MCAPI void $fireEventProfilerCapture(
-        ::Bedrock::Profiling::Orchestrator::TriggerContext const&     triggerContext,
-        ::Bedrock::Profiling::Orchestrator::PerformanceContext const& performanceContext,
-        ::std::optional<::gsl::span<::gsl::not_null<::Bedrock::Profile::Whisker::ScopeData const*>> const> const&
-                                                 whiskerScopes,
-        ::std::optional<::brstd::flat_map<
-            ::std::string,
-            uint64,
-            ::std::less<::std::string>,
-            ::std::vector<::std::string>,
-            ::std::vector<uint64>> const> const& actorCounts
-    );
+    MCAPI void $fireEventProfilerCapture(::Bedrock::Profiling::Orchestrator::ProfilerCaptureParams const& params);
 
     MCAPI void
     $fireTextureStreamingPerf(::dragon::texturestreaming::TextureStreamingPerformanceTelemetryData const& perfData);
@@ -3385,6 +3454,15 @@ public:
     );
 
     MCAPI void $fireEventTreatmentPackRemoved(::std::string packId);
+
+    MCAPI void $fireEventPackDeleted(
+        ::std::string_view   reason,
+        ::std::string const& packId,
+        ::PackType           packType,
+        ::PackOrigin         packLocation,
+        ::std::string const& packOptimizationVersion,
+        int64                freedBytes
+    );
 
     MCAPI void $fireCDNDownloadEvent(
         ::std::string const&                                packId,
@@ -3695,6 +3773,14 @@ public:
         int const            fileSizeKB
     );
 
+    MCAPI void $fireEventRealmBackupDownloadFailed(
+        int const                        realmId,
+        ::std::string const&             reason,
+        int64 const                      worldSizeBytes,
+        int64 const                      availableStorageBytes,
+        ::gsl::span<::std::string const> packIds
+    );
+
     MCAPI void $fireEventRealmUpload(
         ::std::string const& correlationId,
         ::std::string const& uploadStage,
@@ -3702,6 +3788,21 @@ public:
         int const            realmId,
         int const            fileSizeKB,
         bool const           isPack
+    );
+
+    MCAPI void $fireEventRealmsPackUpload(
+        int const            realmId,
+        int const            slotIndex,
+        ::std::string const& packId,
+        ::std::string const& packVersion,
+        ::PackType           packType,
+        ::std::string const& packClassification,
+        ::std::string const& packOptimizationVersion,
+        bool const           hasContentIdentity,
+        bool const           isPremium,
+        ::PackOrigin         packOrigin,
+        int const            stackPosition,
+        uint64 const         packSizeBytes
     );
 
     MCAPI void $fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow);
@@ -3912,6 +4013,15 @@ public:
 
     MCAPI void $fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds);
 
+    MCAPI void $fireEventPersonaPiecePackEviction(
+        uint   cacheSizeBeforeEviction,
+        uint   evictedCount,
+        uint   failedCount,
+        uint   protectedCount,
+        bool   evictionLimitedByBatch,
+        double passDurationInSeconds
+    );
+
     MCAPI void $fireEventPersonaCreationFailed(
         ::std::string_view errorName,
         ::std::string_view pieceId,
@@ -4113,8 +4223,12 @@ public:
 
     MCAPI void $fireDelayedEventReportOfflineAction(::std::string const& offlineAction);
 
-    MCAPI void
-    $fireEventFeedbackSubmitted(::std::string const& productId, bool safetyCheckSuccessful, bool isValidText);
+    MCAPI void $fireEventFeedbackSubmitted(
+        ::std::string const& feedbackType,
+        ::std::string const& identifier,
+        bool                 safetyCheckSuccessful,
+        bool                 isValidText
+    );
 
     MCAPI void $fireEventTrackDeeplinks(
         ::std::string const& deeplinkDestination,
@@ -4227,6 +4341,12 @@ public:
     MCAPI void $fireEventOnlineAudioStreamEnded(::OnlineAudioStreamEnded const& telemetry);
 
     MCAPI void $fireEventDimensionTransfer(::DimensionTransferTelemetryData const& data);
+
+    MCAPI void $fireEventMarketplaceImpressions(
+        ::std::string const&                 destinationQuery,
+        ::std::string const&                 destinationPage,
+        ::Social::Events::PageDisplayRecord& data
+    );
 
     MCAPI ::Social::Events::EventManager& $getEventManager() const;
 

@@ -891,8 +891,6 @@ public:
         ::std::set<::CommandRegistry::Symbol>& workingSet
     ) const;
 
-    MCAPI void buildParseTable(uint version) const;
-
     MCAPI ::CommandRegistry::Symbol buildRules(
         ::CommandRegistry::Signature&                                       signature,
         ::std::vector<::gsl::not_null<::CommandRegistry::Overload*>> const& overloads,
@@ -1042,7 +1040,7 @@ public:
 
     MCAPI void setCommandRegistrationOverride(CommandOverrideFunctor functor);
 
-    MCFOLD void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
+    MCAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
 
     MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
@@ -1127,8 +1125,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& CODE_STATUS_PROPERTY_NAME();
-
     MCAPI static char const*& COMMAND_NAME_ENUM_NAME();
 
     MCAPI static char const*& TAG_VALUES_SOFTENUM_NAME();

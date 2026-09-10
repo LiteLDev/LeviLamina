@@ -33,15 +33,11 @@ public:
 
     MCAPI void _setTagData(::CompoundTag& tag) const;
 
-#ifdef LL_PLAT_C
     MCAPI void setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
-#endif
 
     MCAPI void setMaxBaseGameVersion(::BaseGameVersion const& maxBaseGameVersion);
 
-#ifdef LL_PLAT_C
     MCAPI void setWorldTemplateIdentity(::PackIdVersion const& identity);
-#endif
     // NOLINTEND
 
 public:

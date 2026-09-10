@@ -4,19 +4,7 @@
 
 namespace ScriptDebuggerMessages {
 
-struct EventEnvelope {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk7a4d7d;
-    ::ll::UntypedStorage<8, 104> mUnk58698e;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EventEnvelope& operator=(EventEnvelope const&);
-    EventEnvelope(EventEnvelope const&);
-    EventEnvelope();
-};
+template <typename T0>
+class EventEnvelope {};
 
 } // namespace ScriptDebuggerMessages

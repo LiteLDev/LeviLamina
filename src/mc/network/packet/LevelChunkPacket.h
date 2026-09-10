@@ -5,59 +5,76 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/LevelChunkPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/world/level/ChunkPos.h"
-#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class LevelChunkPacket : public ::Packet {
-public:
-    // LevelChunkPacket inner types declare
-    // clang-format off
-    struct SubChunkMetadata;
-    // clang-format on
-
-    // LevelChunkPacket inner types define
-    struct SubChunkMetadata {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64> blobId;
-        // NOLINTEND
-    };
-
+class LevelChunkPacket : public ::ll::PayloadPacket<::LevelChunkPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ChunkPos>                                           mPos;
-    ::ll::TypedStorage<4, 4, ::DimensionType>                                      mDimensionId;
-    ::ll::TypedStorage<1, 1, bool>                                                 mCacheEnabled;
-    ::ll::TypedStorage<1, 1, bool>                                                 mIsChunkInTickRange;
-    ::ll::TypedStorage<8, 32, ::std::string>                                       mSerializedChunk;
-    ::ll::TypedStorage<8, 8, uint64>                                               mSubChunksCount;
-    ::ll::TypedStorage<1, 1, bool>                                                 isClientPacket;
-    ::ll::TypedStorage<1, 1, bool>                                                 mClientNeedsToRequestSubchunks;
-    ::ll::TypedStorage<4, 4, int>                                                  mClientRequestSubChunkLimit;
-    ::ll::TypedStorage<8, 24, ::std::vector<::LevelChunkPacket::SubChunkMetadata>> mCacheMetadata;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LevelChunkPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelChunkPacket() /*override*/ = default;
-
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LevelChunkPacket(::LevelChunkPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LevelChunkPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -67,16 +84,35 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCAPI bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

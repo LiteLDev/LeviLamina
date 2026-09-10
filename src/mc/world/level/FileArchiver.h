@@ -268,6 +268,11 @@ public:
             ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
             ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
         ) = 0;
+
+        virtual bool prepareEditorProjectForSaveSnapshot(
+            ::Level&                           level,
+            ::Core::PathBuffer<::std::string>& generatedLevelDataFile
+        ) = 0;
         // NOLINTEND
     };
 
@@ -433,6 +438,13 @@ public:
         ::std::function<void(::FileArchiver::Result&)>                             cleanupTask,
         ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting,
         ::Core::Path const&                                                        targetFolder
+    );
+
+    MCAPI void _exportLevelFiles(
+        ::Core::Path const&                           outputFilePath,
+        bool                                          isBundle,
+        ::std::shared_ptr<::FileArchiver::ExportData> exportData,
+        ::Core::Path const&                           worldPath
     );
 
 #ifdef LL_PLAT_C

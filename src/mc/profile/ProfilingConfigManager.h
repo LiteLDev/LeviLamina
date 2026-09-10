@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/threading/LockGuard.h"
 
 // auto generated forward declare list
@@ -13,7 +12,7 @@ namespace Bedrock::Threading { class Mutex; }
 namespace Core::Profile { class ProfileGroupManager; }
 // clang-format on
 
-class ProfilingConfigManager : public ::Bedrock::EnableNonOwnerReferences {
+class ProfilingConfigManager {
 public:
     // ProfilingConfigManager inner types declare
     // clang-format off
@@ -45,6 +44,14 @@ public:
             ::Core::Profile::ProfileGroupManager&    profileGroupManager,
             ::Bedrock::JSONObject::ObjectNode const& profileObject
         );
+
+        MCNAPI ~Impl();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -58,12 +65,6 @@ public:
     // prevent constructor by default
     ProfilingConfigManager& operator=(ProfilingConfigManager const&);
     ProfilingConfigManager(ProfilingConfigManager const&);
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ProfilingConfigManager() /*override*/ = default;
-    // NOLINTEND
 
 public:
     // member functions
@@ -81,11 +82,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

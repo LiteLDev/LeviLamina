@@ -95,10 +95,6 @@ public:
     MCNAPI bool needsFramePriority(::AbstractScene* activeScene) const;
 
     MCNAPI void onInitFinished();
-
-    MCNAPI void setReferrerId(::std::string referrerId);
-
-    MCNAPI void setReferrerType(::std::string referrerType);
 #endif
     // NOLINTEND
 

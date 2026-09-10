@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/DirtyFlag.h"
+
 // auto generated forward declare list
 // clang-format off
+class RectangleArea;
 struct FlyingItemCommand;
 struct SelectNavigationTabCommand;
 // clang-format on
@@ -35,12 +39,17 @@ public:
                                                                            scrollToCollectionItem;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> resetScrollWithin;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::std::string const&, int)>>
-                                                                           setFocusToFocusIdWhenVisible;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>>                     prepareFocusForModalPopup;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>>                     updateTTSForSlider;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>>                     forceRepeatTTS;
-    ::ll::TypedStorage<8, 64, ::std::function<void(float)>>                setCustomObfuscatedTime;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> triggerAnimationEvent;
+                                                                                      setFocusToFocusIdWhenVisible;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                prepareFocusForModalPopup;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                updateTTSForSlider;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                forceRepeatTTS;
+    ::ll::TypedStorage<8, 64, ::std::function<void(float)>>                           setCustomObfuscatedTime;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>            triggerAnimationEvent;
+    ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea(::std::string const&)>> getEnclosingScrollViewportArea;
+    ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea(::std::string const&, int)>> getCollectionItemArea;
+    ::ll::TypedStorage<8, 64, ::std::function<float(::std::string const&)>>                getEnclosingScrollVelocity;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::function<::std::pair<::ui::DirtyFlag, bool>()>)>>
+        runOncePostLayout;
     // NOLINTEND
 
 public:

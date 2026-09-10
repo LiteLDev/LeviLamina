@@ -31,11 +31,13 @@ MCNAPI void _breakIntoWordsAndFindProfanity(
     ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
     ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
 );
-
-MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
 #endif
 
 #ifdef LL_PLAT_S
+MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
+#endif
+
+#ifdef LL_PLAT_C
 MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
 #endif
 
@@ -51,7 +53,9 @@ MCNAPI void _recordProfanityLocationInWord(
     ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
     ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
 );
+#endif
 
+#ifdef LL_PLAT_S
 MCNAPI int _splitInto(
     ::std::string const&                str,
     ::std::vector<::std::string> const& delims,
@@ -60,7 +64,7 @@ MCNAPI int _splitInto(
 );
 #endif
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
 MCNAPI int _splitInto(
     ::std::string const&                str,
     ::std::vector<::std::string> const& delims,
@@ -81,12 +85,14 @@ MCNAPI ::std::string caseFold(::std::string_view str);
 
 #ifdef LL_PLAT_C
 MCNAPI uint64 countSplitAndDiscardEmpty(::std::string const& str, char delim);
+#endif
 
+#ifdef LL_PLAT_S
 MCNAPI ::std::string
 cpToUTF8(::std::unordered_map<uchar, ::std::string> const& codePageMap, ::std::string_view content);
 #endif
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
 MCNAPI ::std::string
 cpToUTF8(::std::unordered_map<uchar, ::std::string> const& codePageMap, ::std::string_view content);
 #endif
@@ -101,8 +107,6 @@ MCNAPI ::std::string filterProfanityFromString(
     ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& profanityExactMap,
     ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      profanityContainsSet
 );
-
-MCNAPI ::std::string findLastColorCode(::std::string_view s, bool includeResetCode);
 
 MCNAPI ::std::set<::std::pair<int, int>> findProfanityInString(
     ::std::string_view                                                                          inputStr,
@@ -141,6 +145,10 @@ MCNAPI ::std::string getVirtualCurrencyStringTTS(::std::string const& currency);
 
 MCNAPI bool isValidNamespaceFormat(::std::string_view name);
 
+#ifdef LL_PLAT_C
+MCNAPI bool isValidPfid(::std::string const& inputStr);
+#endif
+
 MCNAPI bool isVanillaNamespace(::std::string const& identifier);
 
 #ifdef LL_PLAT_C
@@ -173,9 +181,9 @@ MCNAPI ::std::istream& safeGetline(::std::istream& inputStream, ::std::string& o
 
 #ifdef LL_PLAT_C
 MCNAPI ::std::string safeString(char const* text);
+#endif
 
 MCNAPI ::std::string simpleFormat(::std::string const& format, ::std::vector<::std::string> const& parameters);
-#endif
 
 MCNAPI ::std::vector<::std::string> split(::std::string_view view, char delim);
 
@@ -278,6 +286,10 @@ MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP437_TO_UTF8();
 MCNAPI ::std::string const& EMPTY_GUID();
 
 MCNAPI ::std::string const& EMPTY_STRING();
+
+#ifdef LL_PLAT_C
+MCNAPI ::std::string const& HEX_CHARS();
+#endif
 
 MCNAPI ::std::string const& NEW_LINE();
 // NOLINTEND

@@ -57,9 +57,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::SemVersionConstant const& VERSION();
-#endif
     // NOLINTEND
 
 public:

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class I18n;
+// clang-format on
+
 class ContentTierIncompatibleReason {
 public:
     // member variables
@@ -19,6 +24,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::string getExpandedI18nErrorList(
+        ::I18n&                             loc,
         uint                                errorValue,
         ::std::string const&                i18nContextPrefix,
         ::std::vector<::std::string> const& arguments

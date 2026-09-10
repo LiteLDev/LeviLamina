@@ -11,6 +11,7 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class BlockActor;
 class ILevel;
 class ItemStack;
 class Player;
@@ -38,6 +39,7 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>             mOriginalItemName;
         ::ll::TypedStorage<8, 8, ::ItemStack const*>         mTool;
         ::ll::TypedStorage<4, 4, ::DimensionType>            mDimensionId;
+        ::ll::TypedStorage<8, 8, ::BlockActor const*>        mSourceBlockActor;
         // NOLINTEND
 
     public:
@@ -67,6 +69,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                            mOriginalItemName;
     ::ll::TypedStorage<8, 8, ::ItemStack const*>                        mTool;
     ::ll::TypedStorage<4, 4, ::DimensionType>                           mDimensionId;
+    ::ll::TypedStorage<8, 8, ::BlockActor const*>                       mSourceBlockActor;
     // NOLINTEND
 
 public:

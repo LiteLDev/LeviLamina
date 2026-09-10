@@ -44,16 +44,6 @@ public:
     MCAPI explicit AllowList(::std::function<void()> syncCallback);
 #endif
 
-#ifdef LL_PLAT_S
-    MCAPI bool addByName(::std::string_view name);
-#endif
-
-    MCAPI bool addByNsaId(::std::string_view nsaId);
-
-    MCAPI bool addByPsnId(::std::string_view psnId);
-
-    MCAPI bool addByXuid(::std::string_view xuid);
-
     MCAPI bool isAllowed(
         ::mce::UUID const& uuid,
         ::std::string_view xuid,
@@ -63,6 +53,8 @@ public:
 
 #ifdef LL_PLAT_S
     MCAPI bool removeByName(::std::string_view name);
+
+    MCAPI bool removeByXuid(::std::string_view xuid);
 #endif
 
     MCAPI void tryUpdateEntries(

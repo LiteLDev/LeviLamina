@@ -6,6 +6,7 @@
 // clang-format off
 class TaskGroup;
 namespace Core { class IFileStorageAreaFetcher; }
+namespace Core { class PathView; }
 // clang-format on
 
 class UserStorageChecker {
@@ -29,6 +30,8 @@ public:
         ::std::unique_ptr<::TaskGroup>                     taskGroup,
         ::std::unique_ptr<::Core::IFileStorageAreaFetcher> fileStorageFetcher
     );
+
+    MCNAPI void queueCheckUserStorage(::Core::PathView storagePath);
     // NOLINTEND
 
 public:

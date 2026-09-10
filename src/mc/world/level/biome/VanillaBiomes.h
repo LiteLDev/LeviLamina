@@ -29,7 +29,7 @@ public:
         ::BiomeRegistry&         registry,
         ::SpawnSettings const&   spawnSettings,
         ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&
+        ::Experiments const&     experiments
     );
 
     MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);

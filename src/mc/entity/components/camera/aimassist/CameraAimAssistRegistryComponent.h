@@ -31,7 +31,7 @@ public:
     MCAPI ::CameraAimAssist::PriorityPreset const& getPriorityPreset(::HashedString const& id) const;
 
 #ifdef LL_PLAT_C
-    MCFOLD bool hasPriorityPreset(::HashedString const& id) const;
+    MCAPI bool hasPriorityPreset(::HashedString const& id) const;
 
     MCAPI void loadRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
 #endif

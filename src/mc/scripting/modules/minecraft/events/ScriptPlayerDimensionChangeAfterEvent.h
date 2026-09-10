@@ -10,12 +10,18 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerDimensionChangeIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerDimensionChangeAfterEvent {
+public:
+    // ScriptPlayerDimensionChangeAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPlayerDimensionChangeIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,9 +36,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptPlayerDimensionChangeAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPlayerDimensionChangeAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
+    );
     // NOLINTEND
 };
 

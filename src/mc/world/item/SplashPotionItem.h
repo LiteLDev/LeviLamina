@@ -31,10 +31,13 @@ public:
     ::ll::TypedStorage<4, 120, ::Potion::PotionVariant[30]> mSplashPotionVariants;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     SplashPotionItem();
 
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -73,13 +76,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI SplashPotionItem(::std::string const& name, int id);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::std::string const& name, int id);
+#endif
     // NOLINTEND
 
 public:

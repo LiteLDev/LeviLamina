@@ -67,6 +67,8 @@ public:
     virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const
         /*override*/;
 
+    virtual bool isWorldTemplateInstalled(::mce::UUID const& uuid) const /*override*/;
+
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
 
     virtual bool isInitialized() const /*override*/;
@@ -142,6 +144,8 @@ public:
     MCNAPI ::WorldTemplateInfo const* $findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const;
 
     MCNAPI void $forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const;
+
+    MCNAPI bool $isWorldTemplateInstalled(::mce::UUID const& uuid) const;
 
     MCNAPI void $deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity);
 

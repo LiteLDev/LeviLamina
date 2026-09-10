@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class Experiments;
 class Item;
 class ItemDescriptor;
 class ItemInstance;
@@ -34,19 +33,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
-
-    MCAPI void _registerSpecialCompounds(::Experiments const& experiments);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static ::std::string _getName(::CompoundType type);
+#endif
 
+    MCAPI static void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
+
+#ifdef LL_PLAT_C
     MCAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
 #endif
 
@@ -57,6 +52,8 @@ public:
     MCAPI static ::ItemInstance getItemForCompound(::CompoundType type, int stackCount);
 
     MCAPI static bool isCompoundItem(::ItemStackBase const& instance);
+
+    MCAPI static void registerSpecialCompounds();
 
     MCAPI static void unregisterSpecialCompounds();
     // NOLINTEND

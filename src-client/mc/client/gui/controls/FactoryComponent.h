@@ -56,7 +56,7 @@ public:
 
     MCAPI void destroyAll();
 
-    MCAPI void destroyAllStartingAtIndex(uint index);
+    MCAPI void destroyAllStartingAtIndex(uint const index);
     // NOLINTEND
 
 public:

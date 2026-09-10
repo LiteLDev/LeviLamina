@@ -26,12 +26,20 @@ public:
 
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    virtual bool canStartJumpSquish() const /*override*/;
+    virtual bool isDarkEnoughToSpawn() const /*override*/;
+
+    virtual bool canFreeze() const /*override*/;
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+
+    virtual bool _shouldSquish() const /*override*/;
+
+    virtual bool _shouldPlayJumpSound() const /*override*/;
+
+    virtual bool _shouldPlayLandSound() const /*override*/;
     // NOLINTEND
 
 public:
@@ -61,18 +69,20 @@ public:
 
     MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool $canStartJumpSquish() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
+
+    MCAPI bool $canFreeze() const;
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
+    MCAPI bool $_shouldSquish() const;
 
-    // NOLINTEND
+    MCAPI bool $_shouldPlayJumpSound() const;
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI bool $_shouldPlayLandSound() const;
+
+
     // NOLINTEND
 };

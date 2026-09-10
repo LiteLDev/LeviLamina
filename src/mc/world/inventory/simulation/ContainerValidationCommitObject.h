@@ -14,6 +14,7 @@ public:
         DropItem         = 0,
         ExperienceCost   = 1,
         ExperienceReward = 2,
+        AnvilDamage      = 3,
     };
 
 public:

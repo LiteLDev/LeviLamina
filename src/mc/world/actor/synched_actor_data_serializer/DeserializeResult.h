@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                           mReadValue;
     ::ll::TypedStorage<1, 1, bool>                                           mWasDifferent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::brstd::bitset<130, uint64>>> mChangedFlags;
+    ::ll::TypedStorage<8, 32, ::std::optional<::brstd::bitset<131, uint64>>> mChangedFlags;
     // NOLINTEND
 };
 

@@ -51,10 +51,13 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     FoodItemComponent();
 
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -84,7 +87,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
+#endif
 
     MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
     // NOLINTEND
@@ -102,7 +107,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
+#endif
     // NOLINTEND
 
 public:
@@ -129,13 +136,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForNetworkedItemComponent();
-
-    MCNAPI static void** $vftableForIFoodItemComponent();
     // NOLINTEND
 };

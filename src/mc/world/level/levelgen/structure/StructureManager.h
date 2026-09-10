@@ -157,7 +157,9 @@ public:
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);
 
+#ifdef LL_PLAT_S
     MCAPI static bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
+#endif
     // NOLINTEND
 
 public:

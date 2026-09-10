@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/ResourceInformation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/reflection/scripting/Privilege.h"
 #include "mc/scripting/PluginExecutionGroup.h"
 #include "mc/scripting/modules/FilterResult.h"
@@ -15,6 +16,9 @@ class PackManifest;
 class ScriptPlugin;
 class ScriptPluginManagerResult;
 class ScriptPluginResult;
+class ScriptStat;
+class ServerLevel;
+namespace Scripting { class DependencyLocator; }
 namespace Scripting { class IRuntime; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct RuntimeStats; }
@@ -52,6 +56,10 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk49bd90;
     ::ll::UntypedStorage<8, 24> mUnk6c8a4d;
     ::ll::UntypedStorage<8, 24> mUnk174121;
+    ::ll::UntypedStorage<8, 8>  mUnke00494;
+    ::ll::UntypedStorage<8, 8>  mUnk904f06;
+    ::ll::UntypedStorage<8, 8>  mUnk221d43;
+    ::ll::UntypedStorage<8, 8>  mUnk117c4d;
     // NOLINTEND
 
 public:
@@ -68,14 +76,40 @@ public:
         ::ScriptPluginResult&                   pluginResult
     );
 
-    MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+    MCNAPI ::std::optional<::ScriptStat> _collectHandleCountStats(uint64, uint64, uint64);
 
+    MCNAPI ::std::optional<::ScriptStat> _collectMemoryStats(uint64, uint64, uint64);
+
+    MCNAPI ::std::optional<::ScriptStat> _collectQuickJsStats(uint64, uint64, uint64);
+
+    MCNAPI ::std::optional<::ScriptStat> _collectSubscriberCountStats(
+        ::Bedrock::NotNullNonOwnerPtr<::ServerLevel>     serverLevel,
+        ::gsl::not_null<::Scripting::DependencyLocator*> locator,
+        uint64,
+        uint64,
+        uint64
+    );
+
+#ifdef LL_PLAT_C
+    MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+#endif
+
+    MCNAPI void _disableHandleCounter();
+
+    MCNAPI void _enableHandleCounter();
+
+    MCNAPI void _reloadHandleCounter(bool publisherEnabled);
+
+#ifdef LL_PLAT_C
     MCNAPI void
     _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
+#endif
 
     MCNAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
 
+#ifdef LL_PLAT_C
     MCNAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
+#endif
 
     MCNAPI ::ScriptPluginManagerResult discoverPlugins(
         ::ResourceInformation::ResourceType moduleType,
@@ -93,11 +127,9 @@ public:
 
     MCNAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
 
-    MCNAPI ::std::vector<::Scripting::ModuleDescriptor> getPluginModuleDescriptors() const;
-
-    MCNAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
-
+#ifdef LL_PLAT_C
     MCNAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
+#endif
 
     MCNAPI ~ScriptPluginManager();
     // NOLINTEND

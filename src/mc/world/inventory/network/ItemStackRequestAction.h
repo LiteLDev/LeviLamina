@@ -41,7 +41,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::std::string const getActionTypeName(::ItemStackRequestActionType type);
+#endif
     // NOLINTEND
 
 public:

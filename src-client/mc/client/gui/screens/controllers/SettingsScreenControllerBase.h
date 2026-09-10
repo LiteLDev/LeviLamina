@@ -96,8 +96,6 @@ public:
 
     MCAPI void _removeResourcePacks();
 
-    MCAPI void confirmationHardcoreDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
     MCAPI void confirmationNoAchievementsDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void setUpCallbacksForBooleanOption(::OptionID optionID, ::std::string const& toggleName);

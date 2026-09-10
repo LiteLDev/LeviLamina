@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/controls/renderers/PaperDollBaseActorRenderContext.h"
 #include "mc/client/gui/geometry_atlas/IPaperDollRenderContext.h"
 
 // auto generated forward declare list
@@ -17,6 +18,27 @@ struct PaperDollUpdateOwnerData;
 namespace GeometryAtlas {
 
 class DollRenderContextImpl : public ::GeometryAtlas::details::IPaperDollRenderContext {
+public:
+    // DollRenderContextImpl inner types declare
+    // clang-format off
+    struct NoOffsetRenderContext;
+    // clang-format on
+
+    // DollRenderContextImpl inner types define
+    struct NoOffsetRenderContext : public ::PaperDollBaseActorRenderContext {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual float getYOffset(float screenScale) /*override*/;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCFOLD float $getYOffset(float screenScale);
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN

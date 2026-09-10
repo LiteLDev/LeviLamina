@@ -42,19 +42,20 @@
 #include "mc/resources/IResourcePackRepository.h"
 #include "mc/resources/Pack.h"
 #include "mc/resources/PackInstance.h"
-#include "mc/resources/PackManifest.h"
 #include "mc/resources/PackSettingsFactory.h"
 #include "mc/resources/PackSourceFactory.h"
 #include "mc/resources/RepositorySources.h"
 #include "mc/resources/ResourcePack.h"
 #include "mc/resources/ResourcePackStack.h"
 #include "mc/scripting/ServerScriptManager.h"
+#include "mc/scripting/modules/PackManifest.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/module/VanillaGameModuleServer.h"
 #include <mc/events/IMinecraftEventing.h>
 #include <mc/util/BaseGameVersion.h>
 #include <mc/world/events/EventResult.h>
 #include <mc/world/level/block/BlockType.h>
+
 
 #include "windows.h"
 

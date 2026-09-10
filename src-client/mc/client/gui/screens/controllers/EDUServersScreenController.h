@@ -52,11 +52,21 @@ public:
     ::ll::TypedStorage<8, 40, ::std::queue<::Social::EduResponseError, ::std::deque<::Social::EduResponseError>>>
         mFetchErrorQueue;
     ::ll::TypedStorage<8, 40, ::std::queue<::Social::EduResponseError, ::std::deque<::Social::EduResponseError>>>
-                                                                                     mAddErrorQueue;
-    ::ll::TypedStorage<8, 32, ::std::string>                                         mBannerErrorString;
-    ::ll::TypedStorage<1, 1, bool>                                                   mPopupOpen;
-    ::ll::TypedStorage<8, 32, ::std::string>                                         mAddServerId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                         mJoinServerId;
+                                             mAddErrorQueue;
+    ::ll::TypedStorage<8, 32, ::std::string> mBannerErrorString;
+    ::ll::TypedStorage<1, 1, bool>           mPopupOpen;
+    ::ll::TypedStorage<8, 32, ::std::string> mAddServerId;
+    ::ll::TypedStorage<8, 32, ::std::string> mJoinServerId;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::brstd::flat_map<
+            ::std::string,
+            ::std::string,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::std::string>>>
+                                                                                     mUnmatchedServers;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUAddServerScreenController>>     mAddServerScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUPasscodeEntryScreenController>> mPasscodeEntryScreenController;
     ::ll::TypedStorage<

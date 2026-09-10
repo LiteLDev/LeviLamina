@@ -63,7 +63,7 @@ public:
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:

@@ -67,9 +67,7 @@ public:
         ::std::string const&           photoName,
         ::std::string const&           photoData
     );
-#endif
 
-#ifdef LL_PLAT_S
     MCAPI ~PhotoStorage();
 #endif
     // NOLINTEND
@@ -95,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
 #endif
     // NOLINTEND

@@ -10,7 +10,6 @@
 // clang-format off
 class Block;
 class OreVeinifierNoises;
-class Vec3;
 // clang-format on
 
 class OreVeinifier {
@@ -59,10 +58,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit OreVeinifier(::OreVeinifierNoises const& noiseSource);
-
-    MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
-
-    MCAPI ::Block const* getVeinBlockOrFallback(::Vec3 worldPos, ::Block const* defaultBlock) const;
     // NOLINTEND
 
 public:

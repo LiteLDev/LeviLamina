@@ -128,6 +128,7 @@ public:
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mDestructorInProgress;
     ::ll::TypedStorage<1, 1, bool>                                                         mForceCorrupt;
     ::ll::TypedStorage<1, 1, bool const>                                                   mStorageEnabled;
+    ::ll::TypedStorage<1, 1, bool const>                                                   mJigsawPersistenceToggle;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                           mDbSubfolder;
     ::ll::TypedStorage<8, 128, ::LevelStorageWriteBatch>                                   mSingleKeyWrites;
     ::ll::TypedStorage<8, 24, ::std::vector<::LevelStorageWriteBatch>>                     mBatchWrites;
@@ -252,11 +253,7 @@ public:
     MCAPI ::std::unique_ptr<::ChunkSource>
     $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
 
-#ifdef LL_PLAT_S
     MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
-#else // LL_PLAT_C
-    MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
-#endif
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 

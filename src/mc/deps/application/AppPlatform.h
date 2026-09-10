@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/binding/queries/core/PlatformType.h"
 #include "mc/deps/application/AppAction.h"
 #include "mc/deps/application/ClipboardFeatureFlags.h"
 #include "mc/deps/application/DeviceSunsetTier.h"
@@ -22,7 +23,6 @@
 #include "mc/deps/core/platform/FullscreenMode.h"
 #include "mc/deps/core/platform/OperationMode.h"
 #include "mc/deps/core/platform/PermissionRequestReason.h"
-#include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/deps/core/secure_storage/ISecureStorageKeySystem.h"
@@ -66,6 +66,7 @@ namespace Bedrock { class SignalReceiver; }
 namespace Bedrock { struct PlatformBuildInfo; }
 namespace Bedrock { struct PlatformRuntimeInfo; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Core { class FileHandlePool; }
 namespace Core { class FileStorageArea; }
 namespace Core { class LoadTimeProfiler; }
 namespace Core { class Path; }
@@ -82,6 +83,7 @@ namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPaste; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Bedrock { class CommonPlatform; }
+namespace MarketplaceErrorUtils { struct StoreErrorResult; }
 namespace Social { struct UserCreationData; }
 namespace Webview { class PlatformArguments; }
 // clang-format on
@@ -179,6 +181,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ThrottledFileWriteManager>> mThrottledFileWriteManager;
 #endif
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IAppPlatformImpl>>> mImpl;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                           mArchiveHandlePoolMutex;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Core::FileHandlePool>>               mArchiveHandlePool;
     // NOLINTEND
 
 public:
@@ -463,6 +467,8 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> getCacheStoragePath();
 
+    virtual ::Core::PathBuffer<::std::string> getTextureCacheStoragePath();
+
     virtual ::Core::PathBuffer<::std::string> getOnDiskScratchPath();
 
     virtual ::Core::PathBuffer<::std::string> getOnDiskPackScratchPath();
@@ -696,6 +702,8 @@ public:
 
     virtual ::std::string getModelName();
 
+    virtual ::std::string getModelNameForUI();
+
     virtual void updateBootstrapSettingsFromTreatmentsAsync();
 
 #ifdef LL_PLAT_C
@@ -829,7 +837,9 @@ public:
     virtual ::std::shared_ptr<::Core::FileStorageArea>
     createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    virtual void handlePlatformSpecificCommerceError(uint error);
+    virtual uint getPlatformErrorCodeForStoreError(::MarketplaceErrorUtils::StoreErrorResult const&);
+
+    virtual void handlePlatformSpecificCommerceError(uint, ::std::string const&);
 
     virtual bool isEduMode() const;
 
@@ -944,14 +954,16 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _fireAppTerminated();
-
     MCAPI void _terminateListeners();
 #endif
 
 #ifdef LL_PLAT_C
     MCAPI void checkAndTriggerOnLowMemory();
+#endif
 
+    MCAPI ::std::shared_ptr<::Core::FileHandlePool> getArchiveHandlePool() const;
+
+#ifdef LL_PLAT_C
     MCAPI ::std::string getDeviceIdWarning() const;
 #endif
 
@@ -1106,6 +1118,8 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $getCacheStoragePath();
 
+    MCAPI ::Core::PathBuffer<::std::string> $getTextureCacheStoragePath();
+
     MCFOLD ::Core::PathBuffer<::std::string> $getOnDiskScratchPath();
 
     MCAPI ::Core::PathBuffer<::std::string> $getOnDiskPackScratchPath();
@@ -1148,11 +1162,7 @@ public:
 
     MCAPI int $getScreenHeight() const;
 
-#ifdef LL_PLAT_S
-    MCFOLD int $getDisplayWidth();
-#else // LL_PLAT_C
     MCAPI int $getDisplayWidth();
-#endif
 
     MCAPI int $getDisplayHeight();
 
@@ -1325,6 +1335,8 @@ public:
 
     MCAPI ::std::string $getModelName();
 
+    MCAPI ::std::string $getModelNameForUI();
+
     MCFOLD void $updateBootstrapSettingsFromTreatmentsAsync();
 
     MCFOLD void $setFullscreenMode(::FullscreenMode const fullscreenMode);
@@ -1446,7 +1458,9 @@ public:
     MCAPI ::std::shared_ptr<::Core::FileStorageArea>
     $createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    MCFOLD void $handlePlatformSpecificCommerceError(uint error);
+    MCFOLD uint $getPlatformErrorCodeForStoreError(::MarketplaceErrorUtils::StoreErrorResult const&);
+
+    MCFOLD void $handlePlatformSpecificCommerceError(uint, ::std::string const&);
 
     MCFOLD bool $isEduMode() const;
 
@@ -1629,7 +1643,7 @@ public:
 
     MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
 
-    MCFOLD void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
+    MCAPI void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
 
     MCFOLD bool $hasHardwareBackButton();
 

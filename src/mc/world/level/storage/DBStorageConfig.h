@@ -35,6 +35,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                     enableCompactionListener;
     ::ll::TypedStorage<1, 1, bool>                                                     enableStorage;
     ::ll::TypedStorage<1, 1, bool>                                                     enableSnapshots;
+    ::ll::TypedStorage<1, 1, bool>                                                     jigsawPersistenceToggle;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageEventing>>                levelStorageEventing;
     // NOLINTEND
 

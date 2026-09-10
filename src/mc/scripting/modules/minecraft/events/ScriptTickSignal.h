@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/script_engine/scripting/Closure.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScriptDeferredFlushTracker;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptTickSignal {
@@ -94,6 +99,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void processTick(uint currentTick, ::ScriptDeferredFlushTracker& deferredTracker);
+
     MCAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
 
     MCAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);

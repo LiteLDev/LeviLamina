@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/audio/SoundPauseSource.h"
 #include "mc/deps/audio/SoundPlayerInterface.h"
 #include "mc/deps/core/file/PathBuffer.h"
 
@@ -12,12 +13,12 @@ class ServerSoundHandle;
 class Vec3;
 struct LoopingSoundAttributes;
 struct LoopingSoundState;
+struct PlaySoundOptions;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 class SoundItem;
-struct PlaySoundOptions;
 // clang-format on
 
 class NullSoundPlayer : public ::SoundPlayerInterface {
@@ -43,7 +44,7 @@ public:
 
     virtual bool isPlayingMusic(::Core::PathView) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicPath() /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicPath() /*override*/;
 
     virtual bool getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const /*override*/;
 
@@ -66,13 +67,25 @@ public:
 
     virtual void stop(::ServerSoundHandle) /*override*/;
 
+    virtual void setVolume(::ServerSoundHandle, float) /*override*/;
+
+    virtual void setPitch(::ServerSoundHandle, float) /*override*/;
+
+    virtual void fade(::ServerSoundHandle, float, float) /*override*/;
+
+    virtual void setPlaybackPosition(::ServerSoundHandle, float) /*override*/;
+
+    virtual void pause(::ServerSoundHandle, ::SoundPauseSource) /*override*/;
+
+    virtual void resume(::ServerSoundHandle, ::SoundPauseSource) /*override*/;
+
     virtual void fadeOut(uint64, float) /*override*/;
 
     virtual void stopAllSounds() /*override*/;
 
-    virtual void pauseAllPlayingSounds() /*override*/;
+    virtual void pauseAllPlayingSounds(::SoundPauseSource) /*override*/;
 
-    virtual void resumeAllPreviouslyPlayingSounds() /*override*/;
+    virtual void resumeAllPreviouslyPlayingSounds(::SoundPauseSource) /*override*/;
 
     virtual bool isPlayingSound(uint64) const /*override*/;
 
@@ -108,7 +121,7 @@ public:
 
     MCNAPI bool $isPlayingMusic(::Core::PathView) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const $getCurrentlyPlayingMusicPath();
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getCurrentlyPlayingMusicPath();
 
     MCNAPI bool $getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const;
 
@@ -130,13 +143,25 @@ public:
 
     MCNAPI void $stop(::ServerSoundHandle);
 
+    MCNAPI void $setVolume(::ServerSoundHandle, float);
+
+    MCNAPI void $setPitch(::ServerSoundHandle, float);
+
+    MCNAPI void $fade(::ServerSoundHandle, float, float);
+
+    MCNAPI void $setPlaybackPosition(::ServerSoundHandle, float);
+
+    MCNAPI void $pause(::ServerSoundHandle, ::SoundPauseSource);
+
+    MCNAPI void $resume(::ServerSoundHandle, ::SoundPauseSource);
+
     MCNAPI void $fadeOut(uint64, float);
 
     MCNAPI void $stopAllSounds();
 
-    MCNAPI void $pauseAllPlayingSounds();
+    MCNAPI void $pauseAllPlayingSounds(::SoundPauseSource);
 
-    MCNAPI void $resumeAllPreviouslyPlayingSounds();
+    MCNAPI void $resumeAllPreviouslyPlayingSounds(::SoundPauseSource);
 
     MCNAPI bool $isPlayingSound(uint64) const;
 

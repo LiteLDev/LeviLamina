@@ -12,7 +12,7 @@ struct DebugData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::OreUI::FrameDebugData> mFrameDebugData;
+    ::ll::TypedStorage<8, 88, ::OreUI::FrameDebugData> mFrameDebugData;
     // NOLINTEND
 };
 

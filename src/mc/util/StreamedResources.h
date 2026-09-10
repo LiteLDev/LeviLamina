@@ -21,7 +21,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_set<uint64>& streamedDirectories();
+    MCNAPI static ::std::unordered_set<uint64>& mNonStreamableLocations();
+
+    MCNAPI static ::std::unordered_set<uint64>& mStreamedDirectories();
     // NOLINTEND
 };
 

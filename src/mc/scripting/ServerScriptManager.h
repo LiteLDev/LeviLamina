@@ -43,6 +43,7 @@ class ScriptContentLogEndPoint;
 class ScriptDebugger;
 class ScriptDebuggerWatchdog;
 class ScriptDiagnostics;
+class ScriptDiagnosticsCollectors;
 class ScriptDiagnosticsPublishToFile;
 class ScriptFormPromiseTracker;
 class ScriptPackSettingsCache;
@@ -113,8 +114,9 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptFormPromiseTracker>>            mFormPromiseTracker;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDebuggerWatchdog>>              mScriptDebuggerWatchdog;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDebugger>>                      mScriptDebugger;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ScriptDiagnostics>>         mDiagnostics;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDiagnosticsPublishToFile>>      mDiagnosticsPublishToFile;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDiagnostics>>                   mScriptDiagnostics;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDiagnosticsCollectors>>         mScriptDiagnosticsCollectors;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptTickListener>>                  mScriptTickListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptTaskGroup>>                     mScriptTaskGroup;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptContentLogEndPoint>>            mScriptContentLogEndPoint;
@@ -169,7 +171,8 @@ public:
         ::ServerInstance&                                        server,
         ::Scripting::RegistryManager&                            registry,
         ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> localProfilerControlBroker,
-        ::std::unique_ptr<::AsyncJoinRegistrar>&&                asyncJoinRegistrar
+        ::std::unique_ptr<::AsyncJoinRegistrar>&&                asyncJoinRegistrar,
+        ::Bedrock::NonOwnerPointer<::ScriptDiagnostics>          diagnostics
     );
 
     MCAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
@@ -204,7 +207,8 @@ public:
         ::ServerInstance&                                        server,
         ::Scripting::RegistryManager&                            registry,
         ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> localProfilerControlBroker,
-        ::std::unique_ptr<::AsyncJoinRegistrar>&&                asyncJoinRegistrar
+        ::std::unique_ptr<::AsyncJoinRegistrar>&&                asyncJoinRegistrar,
+        ::Bedrock::NonOwnerPointer<::ScriptDiagnostics>          diagnostics
     );
     // NOLINTEND
 

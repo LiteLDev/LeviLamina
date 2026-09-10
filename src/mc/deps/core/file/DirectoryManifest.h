@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
 namespace Core { class PathView; }
 // clang-format on
 
@@ -26,7 +26,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnka68f2b;
+        ::ll::UntypedStorage<8, 64> mUnk17db1d;
         // NOLINTEND
 
     public:

@@ -113,6 +113,8 @@ public:
 
     MCAPI void goBack();
 
+    MCAPI bool isCurrentRoute(::std::string_view route) const;
+
     MCAPI bool replaceRoute(::std::string const& route);
 
     MCAPI void replaceRouteMatcher(::std::unique_ptr<::OreUI::IRouteMatcher> newRouteMatcher);

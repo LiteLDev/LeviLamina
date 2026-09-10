@@ -84,6 +84,8 @@ public:
 
     MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData saveToFileData() const;
 
+    MCNAPI void setDisplayName(::std::string const& displayName);
+
     MCNAPI void setName(::std::string const& name);
     // NOLINTEND
 

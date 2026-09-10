@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/file/PathPart.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
@@ -21,8 +20,6 @@ public:
     Path(std::u8string const& path) { value = *reinterpret_cast<std::string const*>(&path); }
     Path(std::string const& path) { value = path; }
     Path(char const* path) { value = path; }
-
-    Path(PathPart const& part) : Base{std::move(part.mUtf8StdString)} {}
 
     Path(Path const& other) = default;
 

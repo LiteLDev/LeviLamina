@@ -45,18 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PulseCapacitor();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canConsumePowerAnyDirection() const;

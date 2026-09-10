@@ -11,12 +11,18 @@
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptItemStartUseOnIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemStartUseOnAfterEvent {
+public:
+    // ScriptItemStartUseOnAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptItemStartUseOnIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,9 +37,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptItemStartUseOnAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptItemStartUseOnAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStartUseOnIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                   scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStartUseOnIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                   scope
+    );
     // NOLINTEND
 };
 

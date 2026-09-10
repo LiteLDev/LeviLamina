@@ -8,7 +8,6 @@
 #include "mc/world/level/biome/BiomeIdType.h"
 #include "mc/world/level/biome/OceanRuinConfiguration.h"
 #include "mc/world/level/biome/components/BiomeComponentStorage.h"
-#include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -77,8 +76,6 @@ public:
     // NOLINTBEGIN
     MCAPI Biome(::BiomeIdType id, ::std::string_view name);
 
-    MCAPI ::VanillaBiomeTypes getBiomeType() const;
-
     MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
@@ -100,13 +97,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::mce::Color const& BIRCH_FOLIAGE_TINT();
 
     MCAPI static ::mce::Color const& DEFAULT_FOLIAGE_TINT();
 
     MCAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
-
-    MCAPI static ::mce::Color const& DEFAULT_UNDERWATER_COLOR();
 
     MCAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 
@@ -115,11 +111,18 @@ public:
     MCAPI static ::mce::Color const& DRY_FOLIAGE_TINT();
 
     MCAPI static ::mce::Color const& EVERGREEN_FOLIAGE_TINT();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BiomeIdType id, ::std::string_view name);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

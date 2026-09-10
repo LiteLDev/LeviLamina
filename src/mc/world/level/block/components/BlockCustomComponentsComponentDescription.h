@@ -74,9 +74,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
+#endif
     // NOLINTEND
 
 public:

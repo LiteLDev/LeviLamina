@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/Result.h"
+#include "mc/resources/AssetEncryptionMode.h"
 #include "mc/resources/DirectoryPackAccessStrategy.h"
 #include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategyType.h"
@@ -13,8 +14,10 @@
 // clang-format off
 class ContentIdentity;
 class IContentKeyProvider;
+class IPackIOProvider;
 class PackAccessStrategy;
 class ResourceLocation;
+struct EncryptedAssetInfo;
 struct StreamableAssetSource;
 namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
@@ -25,6 +28,7 @@ class EncryptedFileAccessStrategy : public ::DirectoryPackAccessStrategy {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk564fc9;
     ::ll::UntypedStorage<8, 24> mUnkcc53ff;
     ::ll::UntypedStorage<8, 24> mUnk265e3d;
     // NOLINTEND
@@ -64,6 +68,8 @@ public:
 
     virtual ::std::string _getContentsFile();
 
+    virtual ::std::string _getRawContentsFile() const;
+
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
 
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
@@ -74,12 +80,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EncryptedFileAccessStrategy(
-        ::ResourceLocation const&                                          resourceLocation,
-        ::ContentIdentity const&                                           contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&  keyProvider,
-        bool                                                               canRecurse,
-        ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
+        ::ResourceLocation const&                                                 resourceLocation,
+        ::ContentIdentity const&                                                  contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&         keyProvider,
+        bool                                                                      canRecurse,
+        ::IPackIOProvider const&                                                  io,
+        ::std::optional<::std::unordered_map<::Core::Path, ::EncryptedAssetInfo>> assetSet
     );
+
+    MCNAPI ::std::string _decryptContentsFile(::std::string contents);
 
     MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     _loadArchive(::Core::PathView packRelativeArchiveFile, ::std::string const& key) const;
@@ -95,13 +104,15 @@ public:
         ::gsl::span<char const> input,
         ::gsl::span<char>       output,
         ::std::string const&    key,
-        uint64&                 bytesWritten
+        uint64&                 bytesWritten,
+        ::AssetEncryptionMode   mode
     );
 
-    MCNAPI static void _transformStream(
+    MCNAPI static bool _transformStream(
         ::std::string&           stream,
         ::std::string const&     key,
         ::ContentIdentity const& contentIdentity,
+        ::AssetEncryptionMode    mode,
         uint64                   offset
     );
 
@@ -116,11 +127,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::ResourceLocation const&                                          resourceLocation,
-        ::ContentIdentity const&                                           contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&  keyProvider,
-        bool                                                               canRecurse,
-        ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
+        ::ResourceLocation const&                                                 resourceLocation,
+        ::ContentIdentity const&                                                  contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&         keyProvider,
+        bool                                                                      canRecurse,
+        ::IPackIOProvider const&                                                  io,
+        ::std::optional<::std::unordered_map<::Core::Path, ::EncryptedAssetInfo>> assetSet
     );
     // NOLINTEND
 
@@ -149,6 +161,8 @@ public:
     MCNAPI ::ContentIdentity $readContentIdentity() const;
 
     MCNAPI ::std::string $_getContentsFile();
+
+    MCNAPI ::std::string $_getRawContentsFile() const;
 
     MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
 

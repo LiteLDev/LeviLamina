@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::AppPlatform&>                             mAppPlatform;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int>> mVibrate;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int>> mVibrate;
     // NOLINTEND
 
 public:
@@ -38,12 +38,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

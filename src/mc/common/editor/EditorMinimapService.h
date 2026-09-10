@@ -150,9 +150,9 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    virtual ::std::string generateMinimapImage(::mce::UUID const&, ::Vec3 const&) /*override*/;
+    virtual uint updateMinimapImage(::mce::UUID const&, ::Vec3 const&) /*override*/;
 #else // LL_PLAT_C
-    virtual ::std::string generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition) /*override*/;
+    virtual uint updateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition) /*override*/;
 #endif
 
 #ifdef LL_PLAT_S
@@ -314,9 +314,9 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCNAPI ::std::string $generateMinimapImage(::mce::UUID const&, ::Vec3 const&);
+    MCNAPI uint $updateMinimapImage(::mce::UUID const&, ::Vec3 const&);
 #else // LL_PLAT_C
-    MCNAPI ::std::string $generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition);
+    MCNAPI uint $updateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition);
 #endif
 
 #ifdef LL_PLAT_S

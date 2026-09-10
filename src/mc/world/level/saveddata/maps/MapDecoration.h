@@ -52,34 +52,4 @@ public:
     ::ll::TypedStorage<1, 1, schar>                 mRotation;
     ::ll::TypedStorage<4, 16, ::mce::Color>         mColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MapDecoration();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MapDecoration(
-        ::MapDecoration::Type img,
-        schar                 x,
-        schar                 y,
-        schar                 rot,
-        ::std::string const&  label,
-        ::mce::Color const&   color
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::MapDecoration::Type img,
-        schar                 x,
-        schar                 y,
-        schar                 rot,
-        ::std::string const&  label,
-        ::mce::Color const&   color
-    );
-    // NOLINTEND
 };

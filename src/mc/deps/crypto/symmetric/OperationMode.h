@@ -11,6 +11,7 @@ enum class OperationMode : int {
     Cfb128 = 3,
     Ofb    = 4,
     Gcm    = 5,
+    Ctr    = 6,
 };
 
 }

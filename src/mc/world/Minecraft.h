@@ -29,6 +29,7 @@ class GameSession;
 class GameTestLevelListener;
 class IMinecraftEventing;
 class ITickingSystem;
+class KeyManager;
 class Level;
 class MinecraftCommands;
 class MinecraftGameTest;
@@ -57,36 +58,46 @@ class ServerMetrics;
 
 class Minecraft : public ::IEntityRegistryOwner {
 public:
+    // Minecraft inner types declare
+    // clang-format off
+    struct Impl;
+    // clang-format on
+
+    // Minecraft inner types define
+    struct Impl {};
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::GameCallbacks&>                                    mGameCallbacks;
-    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                               mEventing;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackManager>>            mResourceLoader;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureManager>>               mStructureManager;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameModuleServer>>              mGameModuleServer;
-    ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                  mPermissionsFile;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PrivateKeyManager>>              mServerKeys;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftServiceKeyManager>>     mMinecraftServiceKeys;
-    ::ll::TypedStorage<8, 32, ::std::string const>                                mSaveGamePath;
-    ::ll::TypedStorage<8, 8, ::ServerMetrics*>                                    mServerMetrics;
-    ::ll::TypedStorage<1, 1, bool const>                                          mIsDedicatedServer;
-    ::ll::TypedStorage<1, 1, bool>                                                mCorruptionDetected;
-    ::ll::TypedStorage<1, 1, bool>                                                mFireOnLevelCorrupt;
-    ::ll::TypedStorage<8, 8, double>                                              mFrameDuration;
-    ::ll::TypedStorage<8, 8, double>                                              mLastFrameStart;
-    ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                              mMaxPlayerIdleTime;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DefaultCommandsContextProvider>> mDefaultCommandsContextProvider;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftCommands>>              mCommands;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameSession>>                    mGameSession;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameTestLevelListener>>          mGameTestLevelListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftGameTest>>              mGameTest;
-    ::ll::TypedStorage<8, 8, ::Timer&>                                            mSimTimer;
-    ::ll::TypedStorage<8, 8, ::Timer&>                                            mRealTimer;
-    ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef>                   mNetwork;
-    ::ll::TypedStorage<8, 8, ::PacketSender&>                                     mPacketSender;
-    ::ll::TypedStorage<1, 1, ::SubClientId>                                       mClientSubId;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::EntityRegistry>>>      mEntityRegistry;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ITickingSystem>>                 mAddMovementTickForCatchup;
+    ::ll::TypedStorage<8, 8, ::GameCallbacks&>                                      mGameCallbacks;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                 mEventing;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackManager>>              mResourceLoader;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureManager>>                 mStructureManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameModuleServer>>                mGameModuleServer;
+    ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                    mPermissionsFile;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PrivateKeyManager>>                mServerKeys;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MinecraftServiceKeyManager>>      mMinecraftServiceKeys;
+    ::ll::TypedStorage<8, 32, ::std::string const>                                  mSaveGamePath;
+    ::ll::TypedStorage<8, 8, ::ServerMetrics*>                                      mServerMetrics;
+    ::ll::TypedStorage<1, 1, bool const>                                            mIsDedicatedServer;
+    ::ll::TypedStorage<1, 1, bool>                                                  mCorruptionDetected;
+    ::ll::TypedStorage<1, 1, bool>                                                  mFireOnLevelCorrupt;
+    ::ll::TypedStorage<8, 8, double>                                                mFrameDuration;
+    ::ll::TypedStorage<8, 8, double>                                                mLastFrameStart;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                                mMaxPlayerIdleTime;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DefaultCommandsContextProvider>>   mDefaultCommandsContextProvider;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftCommands>>                mCommands;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameSession>>                      mGameSession;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameTestLevelListener>>            mGameTestLevelListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftGameTest>>                mGameTest;
+    ::ll::TypedStorage<8, 8, ::Timer&>                                              mSimTimer;
+    ::ll::TypedStorage<8, 8, ::Timer&>                                              mRealTimer;
+    ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef>                     mNetwork;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>                                       mPacketSender;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                                         mClientSubId;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::Minecraft::Impl>>> mImpl;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::EntityRegistry>>>        mEntityRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ITickingSystem>>                   mAddMovementTickForCatchup;
     ::ll::TypedStorage<
         8,
         8,
@@ -155,7 +166,7 @@ public:
     MCAPI bool hostMultiplayer(
         ::std::string const&                                                 serverName,
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
-        ::std::string const&                                                 hostPublicKey,
+        ::KeyManager const&                                                  hostPublicKey,
         int                                                                  maxChunkRadius,
         bool                                                                 shouldAnnounce,
         ::ConnectionDefinition const&                                        connectionDefinition,

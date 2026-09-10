@@ -9,6 +9,6 @@ class SceneFactoryProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1344, ::SceneFactoryProxyCallbacks const> mCallbacks;
+    ::ll::TypedStorage<8, 1280, ::SceneFactoryProxyCallbacks const> mCallbacks;
     // NOLINTEND
 };

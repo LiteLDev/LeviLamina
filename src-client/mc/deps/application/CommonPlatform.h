@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/platform/DisplayOrientation.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
@@ -15,8 +14,6 @@ class IMinecraftGame;
 class PropertyBag;
 class PushNotificationMessage;
 namespace Bedrock { class ActivationArguments; }
-namespace Bedrock { class IIslandCore; }
-namespace Bedrock { class IIslandManager; }
 namespace Bedrock { struct PlatformBuildInfo; }
 namespace Bedrock { struct PlatformRuntimeInfo; }
 // clang-format on
@@ -33,9 +30,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo>>                   mPlatformRuntimeInfo;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PlatformBuildInfo>>                     mPlatformBuildInfo;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::IIslandManager>>                        mIslandMgr;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::IIslandCore>>                           mApp;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IMinecraftGame>>                       mMinecraftGame_Shim;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IMinecraftGame>>                                 mApp;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()>> mCreateGame;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mbQueueRenderParameterSignal;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mHasInitialized;
@@ -117,7 +112,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _createApp();
+    MCAPI bool startApp(::Bedrock::ActivationArguments const& actArgs);
     // NOLINTEND
 
 public:

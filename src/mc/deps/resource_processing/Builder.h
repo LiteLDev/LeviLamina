@@ -11,11 +11,11 @@ class Builder : public ::Bedrock::ImplBase<::Bedrock::Resources::Archive::Builde
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Bedrock::Result<void> addEntry(::std::string_view, ::gsl::span<uchar const>) = 0;
+    virtual ::Bedrock::Result<void> addEntry(::std::string_view name, ::gsl::span<uchar const> data) = 0;
 
     virtual uint64 getSize() const = 0;
 
-    virtual ::Bedrock::Result<void> toBuffer(::gsl::span<uchar>) const = 0;
+    virtual ::Bedrock::Result<void> toBuffer(::gsl::span<uchar> buffer) const = 0;
     // NOLINTEND
 };
 

@@ -20,6 +20,7 @@ class ISceneStack;
 class SceneFactory;
 namespace Core { class FileSystem; }
 namespace Gameface { class ResourceHandlerBroker; }
+namespace Input::Debug { class ISplitscreenRedirect; }
 namespace OreUI { class FacetRegistryFactory; }
 namespace OreUI { class IRoutePrerequisiteHandler; }
 namespace OreUI { class Library; }
@@ -94,6 +95,8 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::DebugData>>         mDebugData;
         ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>    mShowDebugToast;
         ::ll::TypedStorage<8, 24, ::OreUI::LiveViewCollection>                  mLiveViewCollection;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect>>
+            mDebugSplitscreenInputRedirect;
         // NOLINTEND
 
     public:

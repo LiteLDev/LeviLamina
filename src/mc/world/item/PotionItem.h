@@ -21,7 +21,6 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Player;
-class ThrownPotion;
 class Vec3;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
@@ -82,12 +81,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PotionItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void applyEffect(::ThrownPotion* potion, ::ItemStack const& slotItem);
     // NOLINTEND
 
 public:

@@ -26,6 +26,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk317f91;
     ::ll::UntypedStorage<1, 1>   mUnk30edaa;
     ::ll::UntypedStorage<1, 2>   mUnke83298;
+    ::ll::UntypedStorage<8, 32>  mUnk11d9ac;
     // NOLINTEND
 
 #ifdef LL_PLAT_S

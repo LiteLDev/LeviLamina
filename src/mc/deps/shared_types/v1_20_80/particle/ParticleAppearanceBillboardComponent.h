@@ -9,6 +9,11 @@
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleEffectComponent.h"
 #include "mc/deps/shared_types/v1_20_80/particle/UV.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleAppearanceBillboardComponent : public ::SharedTypes::v1_20_80::ParticleEffectComponent {
@@ -48,6 +53,12 @@ public:
 
     MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&) const;
 #endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

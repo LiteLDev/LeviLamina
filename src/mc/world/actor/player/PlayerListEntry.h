@@ -6,15 +6,12 @@
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/platform/Result.h"
 #include "mc/platform/UUID.h"
 #include "mc/world/actor/player/SerializedSkinRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class Player;
-class ReadOnlyBinaryStream;
 // clang-format on
 
 class PlayerListEntry {
@@ -47,19 +44,11 @@ public:
 
     MCAPI explicit PlayerListEntry(::Player const& player);
 
-    MCAPI explicit PlayerListEntry(::mce::UUID uuid);
-
 #ifdef LL_PLAT_C
     MCAPI ::PlayerListEntry cloneExceptSkin() const;
 
     MCAPI ::PlayerListEntry& operator=(::PlayerListEntry&&);
 #endif
-
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
-    MCAPI ::Bedrock::Result<void> readRemove(::ReadOnlyBinaryStream& stream);
-
-    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~PlayerListEntry();
     // NOLINTEND
@@ -72,8 +61,6 @@ public:
     MCAPI void* $ctor(::PlayerListEntry const&);
 
     MCAPI void* $ctor(::Player const& player);
-
-    MCAPI void* $ctor(::mce::UUID uuid);
     // NOLINTEND
 
 public:

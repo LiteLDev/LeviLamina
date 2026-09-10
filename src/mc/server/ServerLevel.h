@@ -37,6 +37,7 @@ class Player;
 class PlayerSleepManager;
 class Random;
 class ResourcePackManager;
+class ServerLevelStatCollectors;
 class ServerMapDataManager;
 class ServerPlayerSleepManager;
 class ServerSubChunkLighter;
@@ -79,8 +80,9 @@ public:
     ::ll::TypedStorage<8, 168, ::PlayerDeathManager>           mPlayerDeathManager;
     ::ll::TypedStorage<8, 48, ::LevelChunkMetaDataManager>     mLevelChunkMetaDataManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerMapDataManager>>> mMapDataManager;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>     mNextTelemetrySendTime;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ServerSubChunkLighter>> mServerSubChunkLighter;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mNextTelemetrySendTime;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ServerSubChunkLighter>>    mServerSubChunkLighter;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerLevelStatCollectors>> mScriptStatCollectors;
     // NOLINTEND
 
 public:

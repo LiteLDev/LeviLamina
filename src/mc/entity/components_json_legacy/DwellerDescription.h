@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
 #endif
     // NOLINTEND
@@ -49,5 +49,11 @@ public:
     MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

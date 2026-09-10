@@ -11,7 +11,6 @@
 // clang-format off
 class Block;
 class BlockVolumeBase;
-class CompoundBlockVolume;
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::BlockUtils { class CommonBlockUtilityServiceProvider; }
 // clang-format on
@@ -28,11 +27,8 @@ public:
     virtual ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& getCommonInterface() /*override*/;
 
     virtual void fillVolume(
-        ::std::variant<
-            ::BlockVolumeBase const*,
-            ::CompoundBlockVolume const*,
-            ::Editor::RelativeVolumeListBlockVolume const*> const volume,
-        ::std::optional<::Block const*> const                     optBlock
+        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const volume,
+        ::std::optional<::Block const*> const                                                          optBlock
     ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> _implInit() /*override*/;
@@ -48,11 +44,8 @@ public:
     MCNAPI ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& $getCommonInterface();
 
     MCNAPI void $fillVolume(
-        ::std::variant<
-            ::BlockVolumeBase const*,
-            ::CompoundBlockVolume const*,
-            ::Editor::RelativeVolumeListBlockVolume const*> const volume,
-        ::std::optional<::Block const*> const                     optBlock
+        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const volume,
+        ::std::optional<::Block const*> const                                                          optBlock
     );
 
     MCNAPI ::Scripting::Result_deprecated<void> $_implInit();
@@ -62,16 +55,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $_implQuit();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForCommonBlockUtilityServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

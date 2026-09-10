@@ -88,6 +88,12 @@ public:
     LinkedAssetValidator();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~LinkedAssetValidator() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit LinkedAssetValidator(bool isClient);
@@ -121,6 +127,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(bool isClient);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

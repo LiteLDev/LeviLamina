@@ -30,7 +30,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 656, ::Realms::World>                                              mWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                                              mWorld;
     ::ll::TypedStorage<8, 152, ::Realms::InviteLink>                                         mInviteLink;
     ::ll::TypedStorage<4, 4, ::RealmsInviteLinkSettingsScreenController::ExpirationDuration> mPendingExpirationDuration;
     ::ll::TypedStorage<4, 4, ::RealmsInviteLinkSettingsScreenController::ExpirationDuration> mExpirationDuration;

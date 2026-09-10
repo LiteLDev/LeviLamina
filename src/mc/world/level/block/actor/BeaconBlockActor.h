@@ -31,20 +31,20 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BeaconBeamSection>>         mBeamSections;
-    ::ll::TypedStorage<4, 4, float>                                       mBeamRot;
-    ::ll::TypedStorage<4, 4, int>                                         mNumLevels;
-    ::ll::TypedStorage<4, 4, int>                                         mNumLevelsSet;
-    ::ll::TypedStorage<4, 4, int>                                         mBlockRefreshCounter;
-    ::ll::TypedStorage<4, 4, int>                                         mPrimaryEffectId;
-    ::ll::TypedStorage<4, 4, int>                                         mSecondaryEffectId;
-    ::ll::TypedStorage<4, 4, int>                                         mPrimaryEffectTier;
-    ::ll::TypedStorage<4, 4, int>                                         mSecondaryEffectTier;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffect*>>                mBeaconEffects;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::MobEffect*>>> mTierEffects;
-    ::ll::TypedStorage<1, 1, bool>                                        mPermanentlyRendered;
-    ::ll::TypedStorage<1, 1, bool>                                        mClientRenderingNeedsUpdate;
-    ::ll::TypedStorage<1, 1, bool>                                        mIsBlockBaseLoaded;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BeaconBeamSection>>               mBeamSections;
+    ::ll::TypedStorage<4, 4, float>                                             mBeamRot;
+    ::ll::TypedStorage<4, 4, int>                                               mNumLevels;
+    ::ll::TypedStorage<4, 4, int>                                               mNumLevelsSet;
+    ::ll::TypedStorage<4, 4, int>                                               mBlockRefreshCounter;
+    ::ll::TypedStorage<4, 4, int>                                               mPrimaryEffectId;
+    ::ll::TypedStorage<4, 4, int>                                               mSecondaryEffectId;
+    ::ll::TypedStorage<4, 4, int>                                               mPrimaryEffectTier;
+    ::ll::TypedStorage<4, 4, int>                                               mSecondaryEffectTier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffect const*>>                mBeaconEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::MobEffect const*>>> mTierEffects;
+    ::ll::TypedStorage<1, 1, bool>                                              mPermanentlyRendered;
+    ::ll::TypedStorage<1, 1, bool>                                              mClientRenderingNeedsUpdate;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsBlockBaseLoaded;
     // NOLINTEND
 
 public:

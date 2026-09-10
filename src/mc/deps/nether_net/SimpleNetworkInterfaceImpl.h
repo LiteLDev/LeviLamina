@@ -91,6 +91,9 @@ public:
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
     ) /*override*/;
 
+    virtual void
+    SetIdentityGenerator(::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator) /*override*/;
+
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) /*override*/;
 
     virtual bool GetSessionState(
@@ -196,6 +199,8 @@ public:
         ::NetherNet::NetworkID                                      networkIDRemote,
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
     );
+
+    MCNAPI void $SetIdentityGenerator(::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator);
 
     MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 

@@ -5,19 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/json/Value.h"
-#include "mc/platform/Result.h"
+#include "mc/deps/shared_types/persona/ArmSizeType.h"
+#include "mc/deps/shared_types/persona/PieceType.h"
 #include "mc/resources/MinEngineVersion.h"
 #include "mc/world/actor/player/SkinImage.h"
 #include "mc/world/actor/player/TrustedSkinFlag.h"
-#include "mc/world/actor/player/persona/ArmSize.h"
-#include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AnimatedImageData;
-class BinaryStream;
 class ConnectionRequest;
-class ReadOnlyBinaryStream;
 class SerializedPersonaPieceHandle;
 class SubClientConnectionRequest;
 class TintMapColor;
@@ -28,29 +25,30 @@ class SerializedSkinImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                                              mId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                              mPlayFabId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                              mFullId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                              mResourcePatch;
-    ::ll::TypedStorage<8, 32, ::std::string>                                              mDefaultGeometryName;
-    ::ll::TypedStorage<8, 48, ::SkinImage>                                                mSkinImage;
-    ::ll::TypedStorage<8, 48, ::SkinImage>                                                mCapeImage;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AnimatedImageData>>                         mSkinAnimatedImages;
-    ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryData;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion>                                         mGeometryDataMinEngineVersion;
-    ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryDataMutable;
-    ::ll::TypedStorage<8, 32, ::std::string>                                              mAnimationData;
-    ::ll::TypedStorage<8, 32, ::std::string>                                              mCapeId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SerializedPersonaPieceHandle>>              mPersonaPieces;
-    ::ll::TypedStorage<1, 1, ::persona::ArmSize::Type>                                    mArmSizeType;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::persona::PieceType, ::TintMapColor>> mPieceTintColors;
-    ::ll::TypedStorage<4, 16, ::mce::Color>                                               mSkinColor;
-    ::ll::TypedStorage<1, 1, ::TrustedSkinFlag>                                           mIsTrustedSkin;
-    ::ll::TypedStorage<1, 1, bool>                                                        mIsPremium;
-    ::ll::TypedStorage<1, 1, bool>                                                        mIsPersona;
-    ::ll::TypedStorage<1, 1, bool>                                                        mIsPersonaCapeOnClassicSkin;
-    ::ll::TypedStorage<1, 1, bool>                                                        mIsPrimaryUser;
-    ::ll::TypedStorage<1, 1, bool>                                                        mOverridesPlayerAppearance;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mPlayFabId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mFullId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mResourcePatch;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mDefaultGeometryName;
+    ::ll::TypedStorage<8, 48, ::SkinImage>                                   mSkinImage;
+    ::ll::TypedStorage<8, 48, ::SkinImage>                                   mCapeImage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AnimatedImageData>>            mSkinAnimatedImages;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                 mGeometryData;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>                            mGeometryDataMinEngineVersion;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                 mGeometryDataMutable;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mAnimationData;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mCapeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SerializedPersonaPieceHandle>> mPersonaPieces;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::persona::ArmSizeType>            mArmSizeType;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor>> mPieceTintColors;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                                                            mSkinColor;
+    ::ll::TypedStorage<1, 1, ::TrustedSkinFlag>                                                        mIsTrustedSkin;
+    ::ll::TypedStorage<1, 1, bool>                                                                     mIsPremium;
+    ::ll::TypedStorage<1, 1, bool>                                                                     mIsPersona;
+    ::ll::TypedStorage<1, 1, bool>           mIsPersonaCapeOnClassicSkin;
+    ::ll::TypedStorage<1, 1, bool>           mIsPrimaryUser;
+    ::ll::TypedStorage<1, 1, bool>           mOverridesPlayerAppearance;
+    ::ll::TypedStorage<8, 32, ::std::string> mProfileHash;
     // NOLINTEND
 
 public:
@@ -86,8 +84,6 @@ public:
 
     MCAPI bool operator==(::SerializedSkinImpl const& rhs) const;
 
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
     MCAPI void setCapeId(::std::string const& capeId);
 
 #ifdef LL_PLAT_C
@@ -101,15 +97,13 @@ public:
 #endif
 
     MCAPI void setPersonaAppearanceData(
-        ::persona::ArmSize::Type const&                                   armSizeType,
-        ::mce::Color const&                                               skinColor,
-        ::std::vector<::SerializedPersonaPieceHandle>                     personaPieces,
-        ::std::unordered_map<::persona::PieceType, ::TintMapColor> const& pieceTintColors
+        ::SharedTypes::persona::ArmSizeType const&                                     armSizeType,
+        ::mce::Color const&                                                            skinColor,
+        ::std::vector<::SerializedPersonaPieceHandle>                                  personaPieces,
+        ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors
     );
 
     MCAPI void updateGeometryName();
-
-    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:

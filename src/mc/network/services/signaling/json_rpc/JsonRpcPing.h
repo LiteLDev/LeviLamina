@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/services/signaling/json_rpc/JsonRpcRequestBase.h"
+#include "mc/network/services/signaling/json_rpc/JsonRpcNotificationBase.h"
 
 namespace JsonRpc {
 
-class JsonRpcPing : public ::JsonRpc::JsonRpcRequestBase {
+class JsonRpcPing : public ::JsonRpc::JsonRpcNotificationBase {
 public:
     // JsonRpcPing inner types declare
     // clang-format off

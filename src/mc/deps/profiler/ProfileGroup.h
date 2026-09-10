@@ -2,23 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/profiler/ProfileCategory.h"
+
 namespace Core::Profile {
 
-class ProfileGroup {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke94a67;
-    ::ll::UntypedStorage<4, 4>  mUnk247682;
-    ::ll::UntypedStorage<1, 1>  mUnk391bc6;
-    ::ll::UntypedStorage<8, 8>  mUnkdb2d47;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProfileGroup& operator=(ProfileGroup const&);
-    ProfileGroup(ProfileGroup const&);
-    ProfileGroup();
-};
+class ProfileGroup : public ::Core::Profile::ProfileCategory {};
 
 } // namespace Core::Profile

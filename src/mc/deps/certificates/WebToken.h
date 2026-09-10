@@ -4,6 +4,7 @@
 #include "mc/deps/json/Value.h"
 
 // auto generated inclusion list
+#include "mc/deps/crypto/asymmetric/system/System.h"
 #include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
@@ -25,8 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WebToken& operator=(WebToken const&) = default;
     WebToken() = default;
 
 public:
@@ -34,15 +33,20 @@ public:
     // NOLINTBEGIN
     MCAPI WebToken(::WebToken const&);
 
-    MCAPI explicit WebToken(::std::string_view token);
-
     MCAPI ::std::string getKeyId() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getSignerPublicKey() const;
 #endif
 
-    MCAPI bool verifyWithExternalKey(::std::string const& publicKey) const;
+    MCAPI ::WebToken& operator=(::WebToken&&);
+
+    MCAPI ::WebToken& operator=(::WebToken const&);
+
+    MCAPI bool verifyWithExternalKey(
+        ::std::string const&                          publicKey,
+        ::std::optional<::Crypto::Asymmetric::System> expectedSystem
+    ) const;
 
     MCAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
 
@@ -52,22 +56,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _parse(::Json::Value& value, ::std::string const& data);
+    MCAPI static ::std::optional<::WebToken>
+    createFromData(::Json::Value const& dataInfo, ::PrivateKeyManager const& manager);
 
-    MCAPI static ::std::unique_ptr<::WebToken> createFromData(
-        ::Json::Value const&                                           dataInfo,
-        ::PrivateKeyManager const&                                     manager,
-        ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType,
-        ::Json::Value const&                                           additionalHeaderClaims
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::WebToken> createFromData(
+        ::Json::Value const&       dataInfo,
+        ::PrivateKeyManager const& manager,
+        ::Json::Value const&       extraHeaders
     );
+#endif
+
+    MCAPI static ::std::optional<::WebToken> createFromData(
+        ::Json::Value const&                                                  dataInfo,
+        ::PrivateKeyManager const&                                            manager,
+        ::Json::Value const&                                                  extraHeaders,
+        ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> const& signatureType
+    );
+
+    MCAPI static ::std::optional<::WebToken> parse(::std::string_view token, uint64 maxLength);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::WebToken const&);
-
-    MCAPI void* $ctor(::std::string_view token);
     // NOLINTEND
 
 public:

@@ -30,14 +30,16 @@ public:
 
     MCNAPI void logMessages() const;
 
-    MCNAPI void logPlugins() const;
-
+#ifdef LL_PLAT_C
     MCNAPI ~ScriptPluginManagerResult();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

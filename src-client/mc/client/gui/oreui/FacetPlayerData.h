@@ -46,7 +46,7 @@ public:
 
     MCAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
 
-    MCFOLD ::Realms::PlayerRole getRealmsRole() const;
+    MCAPI ::Realms::PlayerRole getRealmsRole() const;
 
     MCFOLD ::std::string const& getXuid() const;
     // NOLINTEND

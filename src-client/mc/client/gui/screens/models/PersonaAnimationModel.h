@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/world/actor/player/persona/PieceType.h"
+#include "mc/deps/shared_types/persona/PieceType.h"
 #include "mc/world/actor/player/persona/ReactAnimationType.h"
 
 // auto generated forward declare list
@@ -79,7 +79,7 @@ public:
 
     MCAPI void playEmote(::persona::PieceOfferWrapper const& emoteCatalogOffer);
 
-    MCAPI void playReactAnimations(::persona::PieceType pieceType, bool offer);
+    MCAPI void playReactAnimations(::SharedTypes::persona::PieceType pieceType, bool offer);
 
     MCAPI void updateAppearanceData(::persona::PieceOfferWrapper const& offer, bool isOwned);
 

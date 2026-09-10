@@ -193,8 +193,6 @@ public:
         int                                        rank
     );
 
-    MCAPI void _destroyQuery(::OreUI::Detail::IdType const& id);
-
     MCAPI void _syncQueries();
     // NOLINTEND
 

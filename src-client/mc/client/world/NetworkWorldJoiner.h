@@ -46,10 +46,11 @@ class NetworkWorldJoiner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 528, ::World::RealmWorldJoiner>  mRealmWorldJoiner;
-    ::ll::TypedStorage<8, 256, ::World::ServerWorldJoiner> mServerWorldJoiner;
-    ::ll::TypedStorage<8, 8, ::World::ServerURLResolver>   mServerURLResolver;
-    ::ll::TypedStorage<8, 8, ::OreUI::Router&>             mRouter;
+    ::ll::TypedStorage<8, 528, ::World::RealmWorldJoiner>       mRealmWorldJoiner;
+    ::ll::TypedStorage<8, 264, ::World::ServerWorldJoiner>      mServerWorldJoiner;
+    ::ll::TypedStorage<8, 8, ::World::ServerURLResolver>        mServerURLResolver;
+    ::ll::TypedStorage<8, 8, ::World::ExternalServerWorldList&> mExternalServerWorldList;
+    ::ll::TypedStorage<8, 8, ::OreUI::Router&>                  mRouter;
     // NOLINTEND
 
 public:

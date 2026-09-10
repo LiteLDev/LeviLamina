@@ -25,7 +25,7 @@ public:
 
     virtual ::MatrixStack& getWorldMatrixStack() = 0;
 
-    virtual float getInvGuiScale() = 0;
+    virtual float getYOffset(float screenScale) = 0;
 
     virtual void renderGui(
         ::HashedString const&                rendererName,

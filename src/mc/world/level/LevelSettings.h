@@ -146,11 +146,11 @@ public:
     MCAPI ::LevelSettings& setEducationCreatorWorldID(::std::string id);
 #endif
 
-    MCAPI ::LevelSettings& setEducationProductID(::std::string id);
-
     MCAPI ::LevelSettings& setExperiments(::ExperimentStorage const& experiments);
 
+#ifdef LL_PLAT_C
     MCAPI ::LevelSettings& setSpawnSettings(::SpawnSettings spawnSettings);
+#endif
 
     MCAPI ~LevelSettings();
     // NOLINTEND

@@ -33,7 +33,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::DataDrivenRendererEntry>>                   mRendererEntries;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                                      mSortedActorPointers;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                                      mSortedActorIDs;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::mat4x4>>                               mSortedActorTransforms;
     ::ll::TypedStorage<8, 24, ::std::vector<::AnimationRemappingInfo>>                    mSortedActorRemappingInfo;
     ::ll::TypedStorage<8, 24, ::std::vector<::PreviousTransformationData::BoneRemapping>> mBoneRemapping;
@@ -41,8 +41,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PreviousTransformationData& operator=(PreviousTransformationData const&);
+    PreviousTransformationData(PreviousTransformationData const&);
+    PreviousTransformationData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::PreviousTransformationData& operator=(::PreviousTransformationData&&);
+
     MCAPI ~PreviousTransformationData();
     // NOLINTEND
 

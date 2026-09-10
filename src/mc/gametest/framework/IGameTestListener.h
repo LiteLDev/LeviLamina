@@ -15,7 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~IGameTestListener() = default;
 
+#ifdef LL_PLAT_S
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
+#else // LL_PLAT_C
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
+#endif
 
     virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
@@ -35,7 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
+#else // LL_PLAT_C
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
+#endif
 
     MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 

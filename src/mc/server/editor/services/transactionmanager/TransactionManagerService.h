@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/EntityOperation.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/TransactionManagerServiceProvider.h"
@@ -13,15 +13,13 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class BlockPos;
-class BlockSource;
-class BlockVolumeBase;
 struct PlayerDimensionChangeBeforeEvent;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class RedoOperationPayload; }
 namespace Editor::Network { class UndoOperationPayload; }
+namespace Editor::Transactions { class PendingTransaction; }
 namespace Editor::Transactions { class TransactionContext; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
@@ -30,15 +28,69 @@ class TransactionManagerService : public ::Editor::Services::IEditorService,
                                   public ::Editor::Services::TransactionManagerServiceProvider,
                                   public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
+    // TransactionManagerService inner types declare
+    // clang-format off
+    struct Request;
+    struct TransactionCount;
+    // clang-format on
+
+    // TransactionManagerService inner types define
+    struct Request {
+    public:
+        // Request inner types define
+        enum class State : int {
+            Waiting    = 0,
+            Processing = 1,
+            Completed  = 2,
+        };
+
+        enum class Type : int {
+            Undo = 0,
+            Redo = 1,
+            Add  = 2,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk5abdf3;
+        ::ll::UntypedStorage<4, 4>  mUnkdb1165;
+        ::ll::UntypedStorage<8, 8>  mUnk786087;
+        ::ll::UntypedStorage<8, 72> mUnkcdb86a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Request& operator=(Request const&);
+        Request(Request const&);
+        Request();
+    };
+
+    struct TransactionCount {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk641be8;
+        ::ll::UntypedStorage<8, 8> mUnkb087f5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TransactionCount& operator=(TransactionCount const&);
+        TransactionCount(TransactionCount const&);
+        TransactionCount();
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk805093;
     ::ll::UntypedStorage<8, 16> mUnk5f5816;
     ::ll::UntypedStorage<8, 24> mUnk436aea;
     ::ll::UntypedStorage<8, 24> mUnkf990cc;
-    ::ll::UntypedStorage<8, 8>  mUnkb7c54c;
-    ::ll::UntypedStorage<1, 1>  mUnkaf2e0d;
-    ::ll::UntypedStorage<1, 1>  mUnk3ff6c6;
+    ::ll::UntypedStorage<8, 40> mUnk7c3256;
+    ::ll::UntypedStorage<8, 24> mUnka9cde2;
+    ::ll::UntypedStorage<8, 16> mUnkfe14d9;
     // NOLINTEND
 
 public:
@@ -60,6 +112,21 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
+    virtual ::WeakRef<::Editor::Transactions::PendingTransaction>
+    createPendingTransaction(::std::string const& name) /*override*/;
+
+    virtual ::WeakRef<::Editor::Transactions::PendingTransaction>
+    getPendingTransaction(::mce::UUID const& id) /*override*/;
+
+    virtual ::std::vector<::WeakRef<::Editor::Transactions::PendingTransaction>>
+    getPendingTransactionsByName(::std::string const& name) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> discardPendingTransaction(::mce::UUID const& id) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> finalizePendingTransaction(::mce::UUID const& id) /*override*/;
+
+    virtual uint64 pendingTransactionCount() const /*override*/;
+
     virtual void
     addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext) /*override*/;
 
@@ -73,41 +140,7 @@ public:
 
     virtual uint64 redoSize() const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<bool>
-    trackBlockChangeList(::std::vector<::BlockPos> const& locations) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool>
-    trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const& volume) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool>
-    addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType type) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() /*override*/;
-
-    virtual ::Scripting::Result_deprecated<int> discardTrackedChanges() /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool> commitOpenTransaction() /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool> discardOpenTransaction() /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(
-        ::std::string const&                                                        payload,
-        ::std::string const&                                                        operationName,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
-    ) /*override*/;
-
-    virtual uint64 pendingOperationsSize() const /*override*/;
-
-    virtual bool hasOpenTransaction() const /*override*/;
-
     virtual void clearAllTransactionData() /*override*/;
-
-    virtual bool isBusy() const /*override*/;
 
     virtual ::EventResult onEvent(::PlayerDimensionChangeBeforeEvent const&) /*override*/;
     // NOLINTEND
@@ -117,16 +150,14 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit TransactionManagerService(::Editor::ServiceProviderCollection& providers);
 
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext);
+
     MCNAPI void _handleRedoMessage(::Editor::Network::RedoOperationPayload const&);
 
     MCNAPI void _handleUndoMessage(::Editor::Network::UndoOperationPayload const&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _redo();
-
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    _trackBlockChanges(::BlockSource const& region, ::std::vector<::BlockPos> const& locations);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _undo();
+    MCNAPI void tick(::Editor::ServiceProviderCollection&);
     // NOLINTEND
 
 public:
@@ -146,6 +177,19 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
+    MCNAPI ::WeakRef<::Editor::Transactions::PendingTransaction> $createPendingTransaction(::std::string const& name);
+
+    MCNAPI ::WeakRef<::Editor::Transactions::PendingTransaction> $getPendingTransaction(::mce::UUID const& id);
+
+    MCNAPI ::std::vector<::WeakRef<::Editor::Transactions::PendingTransaction>>
+    $getPendingTransactionsByName(::std::string const& name);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $discardPendingTransaction(::mce::UUID const& id);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $finalizePendingTransaction(::mce::UUID const& id);
+
+    MCNAPI uint64 $pendingTransactionCount() const;
+
     MCNAPI void $addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext);
 
     MCNAPI void $clearTransactions();
@@ -158,39 +202,7 @@ public:
 
     MCNAPI uint64 $redoSize() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeList(::std::vector<::BlockPos> const& locations);
-
-    MCNAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to);
-
-    MCNAPI ::Scripting::Result_deprecated<bool> $trackBlockChangeVolume(::BlockVolumeBase const& volume);
-
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    $addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType type);
-
-    MCNAPI ::Scripting::Result_deprecated<int> $commitTrackedChanges();
-
-    MCNAPI ::Scripting::Result_deprecated<int> $discardTrackedChanges();
-
-    MCNAPI ::Scripting::Result_deprecated<bool> $openTransaction(::std::string const& name);
-
-    MCNAPI ::Scripting::Result_deprecated<bool> $commitOpenTransaction();
-
-    MCNAPI ::Scripting::Result_deprecated<bool> $discardOpenTransaction();
-
-    MCNAPI ::Scripting::Result_deprecated<bool> $addUserDefinedOperation(
-        ::std::string const&                                                        payload,
-        ::std::string const&                                                        operationName,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
-    );
-
-    MCNAPI uint64 $pendingOperationsSize() const;
-
-    MCNAPI bool $hasOpenTransaction() const;
-
     MCNAPI void $clearAllTransactionData();
-
-    MCNAPI bool $isBusy() const;
 
     MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeBeforeEvent const&);
 

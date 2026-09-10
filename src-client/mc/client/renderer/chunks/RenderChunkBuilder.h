@@ -6,11 +6,13 @@
 #include "mc/client/renderer/block/BakedBlockLightType.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/game/RangeIndices.h"
+#include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
 class BlockTessellator;
 class ChunkSource;
 class ChunkViewSource;
@@ -100,6 +102,8 @@ public:
         bool                                                       forExport,
         ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
+
+    MCAPI void prepareWorldData(::BlockPos const& pos, ::ChunkSourceViewGenerateMode viewMoveMode);
 
     MCAPI ~RenderChunkBuilder();
     // NOLINTEND

@@ -32,21 +32,23 @@ class BlockSource;
 class BlockTessellator;
 class ClientFrameUpdateContext;
 class ClientLevel;
+class DataDrivenRenderer;
 class DataDrivenRendererV2RequiredData;
 class GameRenderer;
 class GeometryEditorGui;
 class GeometryGroup;
+class HashedString;
 class IClientInstance;
 class LevelChunk;
 class LevelRendererPlayer;
 class LevelRendererProxy;
 class LevelRendererShadowCamera;
+class MinecraftGameplayGraphicsResources;
 class OptionRegistry;
 class ParticleEngine;
 class ParticleSystemEngine;
 class PlayerRenderView;
 class RenderChunkCoordinator;
-class RenderChunkShared;
 class RuntimeLocalLightingConfig;
 class ScreenContext;
 class SoundMapping;
@@ -55,6 +57,7 @@ class TaskGroup;
 class Tessellator;
 class TextureAtlas;
 class TextureShiftManager;
+class UniversalEntityRenderer;
 struct ActorBlockSyncMessage;
 struct FrameRenderObject;
 struct LevelRenderPreRenderUpdateParameters;
@@ -77,9 +80,8 @@ public:
                                                                                         mRenderChunkCoordinators;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PointLighting::PointLightCoordinator>> mPointLightCoordinator;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PointLighting::PointLightShadowProbeManager>>
-                                                               mPointLightShadowProbeManager;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPointLightLODOptionSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPointLightShadowOptionSubscription;
+                                                                                         mPointLightShadowProbeManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                           mPointLightOptionSubscription;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightVolumeManager>> mLightVolumeManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightPropagationCoordinator>>
                                                                                   mLightPropagationCoordinator;
@@ -127,6 +129,7 @@ public:
     ::ll::TypedStorage<4, 16, ::mce::Color>                                         mClearBufferColor;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PlayerRenderView>>                  mPlayerView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererV2RequiredData>> mDataDrivenRendererV2RequiredData;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UniversalEntityRenderer>>          mUniversalEntityRenderer;
     // NOLINTEND
 
 public:
@@ -192,9 +195,12 @@ public:
 
     MCAPI void _createMeshes(::Tessellator& tessellator);
 
-    MCAPI void _setLevelRendererCameras();
+    MCAPI void _initDataDrivenRendererResources(
+        ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
+        ::MinecraftGameplayGraphicsResources&                                                graphicsResources
+    );
 
-    MCAPI void extractPointLightCandidates(::RenderChunkShared const& renderChunkShared);
+    MCAPI void _setLevelRendererCameras();
 
     MCAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 

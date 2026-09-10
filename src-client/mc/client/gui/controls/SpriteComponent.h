@@ -139,4 +139,10 @@ public:
 
     MCFOLD void $reset();
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

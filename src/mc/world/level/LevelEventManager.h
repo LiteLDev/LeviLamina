@@ -80,8 +80,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     $getLevelEventDataConnector();
+#else // LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    $getLevelEventDataConnector();
+#endif
 
 #ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&

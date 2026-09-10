@@ -18,9 +18,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindNoteBlockInstrument(::cereal::ReflectionCtx& ctx);
 
-#ifdef LL_PLAT_C
     MCAPI static ::std::string noteBlockInstrumentToString(::SharedTypes::v1_26_20::NoteBlockInstrument instrument);
-#endif
     // NOLINTEND
 };
 

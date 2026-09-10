@@ -40,6 +40,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkcb9508;
     ::ll::UntypedStorage<8, 16> mUnk33240b;
     ::ll::UntypedStorage<8, 16> mUnk436b59;
+    ::ll::UntypedStorage<8, 16> mUnk67ec4f;
     ::ll::UntypedStorage<8, 24> mUnk31c50a;
     ::ll::UntypedStorage<8, 24> mUnkeda6d9;
     ::ll::UntypedStorage<8, 8>  mUnkd23d66;
@@ -82,7 +83,7 @@ public:
     virtual void
     configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry) /*override*/;
 
-    virtual void tick() /*override*/;
+    virtual void tick(::IClientInstance const& client) /*override*/;
 
     virtual void setupStandardCommands(::CommandRegistry& commandRegistry) /*override*/;
 
@@ -136,7 +137,7 @@ public:
 
     MCFOLD void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
 
-    MCAPI void $tick();
+    MCAPI void $tick(::IClientInstance const& client);
 
     MCAPI void $setupStandardCommands(::CommandRegistry& commandRegistry);
 

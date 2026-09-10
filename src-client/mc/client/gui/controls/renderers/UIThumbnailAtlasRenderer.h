@@ -90,7 +90,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseActorRenderContext>>                      mRenderContext;
     ::ll::TypedStorage<4, 24, ::AABB>                                                          mArea;
     ::ll::TypedStorage<4, 64, ::Matrix>                                                        mWorldMatrix;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                                                    mMesh;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                                                    mMesh;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::framebuilder::RenderUIMeshDescription>> mMeshDescription;
     ::ll::TypedStorage<4, 16, ::mce::Color>                                                    mTint;
     ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>                                    mClipRegion;

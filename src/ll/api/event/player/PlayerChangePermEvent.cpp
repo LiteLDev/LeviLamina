@@ -34,19 +34,18 @@ LL_TYPE_INSTANCE_HOOK(
     PermissionsFile,
     &PermissionsFile::persistPlayerPermissionsToDisk,
     void,
-    UserEntityIdentifierComponent const& userIdentifier,
-    PlayerPermissionLevel                permission
+    Player&               player,
+    PlayerPermissionLevel permission
 ) {
     auto level = ll::service::getLevel();
     if (level) {
-        auto player = level->getPlayer(userIdentifier.mClientUUID);
-        auto event  = PlayerChangePermEvent{*player, permission};
+        auto event = PlayerChangePermEvent{player, permission};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {
             return;
         }
     }
-    origin(userIdentifier, permission);
+    origin(player, permission);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

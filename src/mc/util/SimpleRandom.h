@@ -4,16 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
-#include "mc/deps/core/math/IRandomSeeded.h"
 #include "mc/util/random/MarsagliaPolarGaussian.h"
 
 // auto generated forward declare list
 // clang-format off
 class IPositionalRandomFactory;
-struct Seed128Bit;
 // clang-format on
 
-class SimpleRandom : public ::IRandom, public ::IRandomSeeded {
+class SimpleRandom : public ::IRandom {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,14 +41,6 @@ public:
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
     virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
-
-    virtual void setSeed(int64 seed) /*override*/;
-
-    virtual void setSeed(::Seed128Bit seed) /*override*/;
-
-    virtual int64 seed64() const /*override*/;
-
-    virtual ::Seed128Bit seed128() const /*override*/;
     // NOLINTEND
 
 public:
@@ -76,22 +66,12 @@ public:
 
     MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCAPI void $setSeed(int64 seed);
-
-    MCAPI void $setSeed(::Seed128Bit seed);
-
-    MCFOLD int64 $seed64() const;
-
-    MCAPI ::Seed128Bit $seed128() const;
-
 
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForIRandomSeeded();
-
-    MCNAPI static void** $vftableForIRandom();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

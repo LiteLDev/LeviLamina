@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 struct BiomeCappedSurfaceData {
 public:
     // member variables
@@ -25,5 +34,17 @@ public:
     MCAPI ::BiomeCappedSurfaceData& operator=(::BiomeCappedSurfaceData&&);
 
     MCAPI bool operator==(::BiomeCappedSurfaceData const& other) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void write(::BinaryStream& stream) const;
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::Bedrock::Result<::BiomeCappedSurfaceData> read(::ReadOnlyBinaryStream& stream);
+#endif
     // NOLINTEND
 };

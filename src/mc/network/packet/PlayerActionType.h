@@ -42,5 +42,6 @@ enum class PlayerActionType : int {
     StopFlying                      = 35,
     DeprecatedClientAckServerData   = 36,
     StartUsingItem                  = 37,
-    Count                           = 38,
+    InternalUpdate                  = 38,
+    Count                           = 39,
 };

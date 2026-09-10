@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class KnockbackRoarGoalMinEngineVersionUtils {};
+// auto generated forward declare list
+// clang-format off
+class MinEngineVersion;
+// clang-format on
+
+class KnockbackRoarGoalMinEngineVersionUtils {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool shouldDoFilterEvaluateFix(::MinEngineVersion const& minEngineVersion);
+    // NOLINTEND
+};

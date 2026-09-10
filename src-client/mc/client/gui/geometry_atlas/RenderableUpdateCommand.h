@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        72,
+        80,
         ::std::variant<
             ::GeometryAtlas::AllocateAtlasPayload,
             ::GeometryAtlas::AllocateBackendPayload,

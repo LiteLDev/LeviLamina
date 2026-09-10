@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/PackManifest.h"
+#include "mc/scripting/modules/PackManifest.h"
 
 class WorldTemplatePackManifest : public ::PackManifest {
 public:

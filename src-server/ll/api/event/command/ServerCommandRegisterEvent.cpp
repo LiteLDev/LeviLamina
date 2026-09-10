@@ -19,9 +19,10 @@ LL_TYPE_STATIC_HOOK(
     ::LevelStorage&                                   levelStorage,
     ::DedicatedServer&                                dedicatedServer,
     ::AllowListFile&                                  allowListFile,
+    ::EditorAllowList&                                editorAllowList,
     ::ScriptSettings*                                 scriptSettings
 ) {
-    origin(minecraft, app, level, levelStorage, dedicatedServer, allowListFile, scriptSettings);
+    origin(minecraft, app, level, levelStorage, dedicatedServer, allowListFile, editorAllowList, scriptSettings);
     if (auto registry = ll::service::getCommandRegistry(false)) {
         EventBus::getInstance().publish(ServerCommandRegisterEvent(*registry, false));
     }

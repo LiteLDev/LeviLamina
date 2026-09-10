@@ -18,7 +18,7 @@ struct FollowTargetGoalDefinition : public ::SharedTypes::v1_26_10::Brain::BaseG
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mSpeedMod;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
     ::ll::TypedStorage<
         8,
         48,

@@ -26,6 +26,7 @@
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/attribute/AttributeInstance.h"
 #include "mc/world/attribute/AttributeInstanceConstRef.h"
+#include <string>
 
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
@@ -64,7 +65,10 @@ std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAn
 
 std::string Player::getLocaleCode() const {
     return getConnectionRequest().and_then([](auto& request) {
-        return std::as_const(request.mRawToken->mDataInfo)["LanguageCode"].asString({});
+        if (request.mRawToken->has_value()) {
+            return std::as_const(request.mRawToken.get()->mDataInfo)["LanguageCode"].asString({});
+        }
+        return std::string();
     });
 }
 

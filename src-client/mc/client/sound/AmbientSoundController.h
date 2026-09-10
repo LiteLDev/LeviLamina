@@ -12,15 +12,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Player;
 class SoundMapping;
 class Vec3;
+struct BrightnessPair;
 // clang-format on
 
 class AmbientSoundController : public ::PlayerListener {
 public:
     // AmbientSoundController inner types define
     using PlaySoundFunc = ::brstd::function_ref<void(::HashedString const&, ::Vec3 const&)>;
+
+    using LightThresholdFunc = ::brstd::function_ref<bool(::BrightnessPair, ::BlockPos const&, ::BrightnessPair)>;
 
 public:
     // member variables
@@ -77,8 +81,9 @@ public:
     MCAPI void _tryPlayLoopSounds(::Vec3 const& listenerPos);
 
     MCAPI void _tryPlayMoodSound(
-        ::Vec3 const&                                                            listenerPos,
-        ::brstd::function_ref<void(::HashedString const&, ::Vec3 const&)> const& playSoundFunc
+        ::Vec3 const&                                                                      listenerPos,
+        ::brstd::function_ref<void(::HashedString const&, ::Vec3 const&)> const&           playSoundFunc,
+        ::brstd::function_ref<bool(::BrightnessPair, ::BlockPos const&, ::BrightnessPair)> lightThresholdFunc
     );
     // NOLINTEND
 

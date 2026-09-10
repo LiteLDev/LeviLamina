@@ -15,13 +15,16 @@
 class BlockPos;
 class Dimension;
 class Level;
-class ServerSoundHandle;
 class Vec2;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorType; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
+namespace ScriptModuleMinecraft { class ScriptBlockFilter; }
+namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
+namespace ScriptModuleMinecraft { class ScriptSoundInstance; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnError; }
 namespace ScriptModuleMinecraft { struct ScriptBlockRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCommandError; }
@@ -29,12 +32,18 @@ namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
+namespace ScriptModuleMinecraft { struct ScriptUnloadedChunksError; }
+namespace ScriptModuleMinecraft { struct ScriptWorldSoundOptions; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct EngineError; }
 namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
+namespace Scripting { struct PropertyOutOfBoundsError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -54,6 +63,13 @@ public:
         ::ll::TypedStorage<4, 4, ::DimensionType> mId;
         // NOLINTEND
     };
+
+    using GetBlocksResult = ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>,
+        ::ScriptModuleMinecraft::ScriptUnloadedChunksError,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::ArgumentOutOfBoundsError,
+        ::Scripting::Error>;
 
     using SpawnEntityResult = ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
@@ -85,13 +101,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _playSoundInternal(
-        ::std::string const&                 soundID,
-        ::Vec3 const&                        location,
-        float                                volume,
-        float                                pitch,
-        ::std::optional<::ServerSoundHandle> serverSoundHandle
-    );
+    MCAPI ::nonstd::expected<
+        ::std::vector<::Vec3>,
+        ::std::variant<::ScriptModuleMinecraft::ScriptUnloadedChunksError, ::Scripting::Error>>
+    _getBlockPositions(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const& blockVolumeBase,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&                                           filter,
+        bool                                                                                        allowUnloadedChunks
+    ) const;
 
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
@@ -139,6 +156,17 @@ public:
     MCAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getSkyLightLevel(::Vec3 const& location) const;
+
+    MCAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundInstance>,
+        ::Scripting::PropertyOutOfBoundsError,
+        ::Scripting::EngineError>
+    playSound(
+        ::Scripting::WeakLifetimeScope const&                             scope,
+        ::std::string const&                                              soundID,
+        ::Vec3 const&                                                     location,
+        ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
+    );
 
     MCAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,

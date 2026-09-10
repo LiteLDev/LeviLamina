@@ -13,6 +13,7 @@
 // clang-format off
 namespace OreUI { class GameDependencies; }
 namespace OreUI { class InvocationStatus; }
+namespace Realms { class RealmsBackupDownloader; }
 namespace Realms { class RealmsSavesManager; }
 // clang-format on
 
@@ -22,24 +23,31 @@ class RealmsSavesCommandGroup : public ::OreUI::CommandGroupBase<::OreUI::Realms
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSavesManager>> mRealmsSavesManager;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                mTaskGroup;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int>>            mFetchBackupList;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int>>            mFetchActiveWorldSize;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSavesManager>>     mRealmsSavesManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsBackupDownloader>> mBackupDownloader;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                    mTaskGroup;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int>>                mFetchBackupList;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int>>                mFetchActiveWorldSize;
     ::ll::TypedStorage<
         8,
-        136,
+        168,
         ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::vector<::std::string>>>
         mSaveBackup;
     ::ll::TypedStorage<
         8,
-        136,
+        168,
         ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string, ::std::vector<::std::string>>>
                                                                                                mSaveAutoBackup;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string>> mRestoreBackup;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string>> mDeleteBackup;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string>> mRestoreBackup;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string>> mDeleteBackup;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string>>
         mRenameBackup;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string, ::std::string>>
+                                                                    mDownloadBackup;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mCancelBackupDownload;
     // NOLINTEND
 
 public:

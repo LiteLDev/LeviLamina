@@ -13,6 +13,7 @@ public:
     struct PendingBehaviourPackRemoval;
     struct PackActivationRequest;
     struct PackViewAndItem;
+    struct SelectedPackState;
     // clang-format on
 
     // ResourcePacksFacet_DEPRECATED inner types define
@@ -31,6 +32,8 @@ public:
     struct PackActivationRequest {};
 
     struct PackViewAndItem {};
+
+    struct SelectedPackState {};
 };
 
 } // namespace OreUI

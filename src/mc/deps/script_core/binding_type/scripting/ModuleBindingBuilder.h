@@ -13,6 +13,8 @@ namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct TaggedBinding; }
+namespace Scripting { struct Version; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -48,6 +50,18 @@ public:
         BuilderData& operator=(BuilderData const&);
         BuilderData(BuilderData const&);
         BuilderData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~BuilderData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -65,6 +79,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ModuleBindingBuilder(
+        ::mce::UUID                 uuid,
+        ::std::string const&        name,
+        ::Scripting::Version const& version,
+        bool                        importRestricted
+    );
+
     MCNAPI bool _allowed(
         ::std::vector<::Scripting::Release> const& releases,
         bool                                       allowUntagged,
@@ -104,6 +125,13 @@ public:
     MCNAPI static ::Scripting::FunctionBinding& mEmptyFunctionBinding();
 
     MCNAPI static ::Scripting::ObjectFactory& mEmptyObjectFactory();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::mce::UUID uuid, ::std::string const& name, ::Scripting::Version const& version, bool importRestricted);
     // NOLINTEND
 };
 

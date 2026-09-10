@@ -10,8 +10,10 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class LootingEnchantFunction : public ::LootItemFunction {
@@ -37,6 +39,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int _getLootingEnchantLevel(::LootTableContext& context);
+
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+#endif
     // NOLINTEND
 
 public:

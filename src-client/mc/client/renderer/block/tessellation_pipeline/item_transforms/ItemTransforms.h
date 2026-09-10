@@ -35,15 +35,8 @@ MCAPI ::Matrix getFixSpaceTransformMatrix(::ClientBlockPipeline::ItemTransforms:
 
 MCAPI ::ClientBlockPipeline::ItemTransforms::Type getTypeFromString(::std::string const& type);
 
-MCAPI ::std::string getTypeName(::ClientBlockPipeline::ItemTransforms::Type const& type);
-
 MCAPI ::Geometry::ItemDisplayTransform
 parseItemDisplayTransform(::Json::Value const& itemTransform, ::ClientBlockPipeline::ItemTransforms::Type const& type);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCAPI ::std::vector<::std::string> const& mTypeNames();
 // NOLINTEND
 
 } // namespace ClientBlockPipeline::ItemTransforms

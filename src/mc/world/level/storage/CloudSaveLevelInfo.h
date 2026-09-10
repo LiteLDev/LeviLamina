@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+// clang-format on
+
 class CloudSaveLevelInfo {
 public:
     // member variables
@@ -23,6 +28,8 @@ public:
     // NOLINTBEGIN
     MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
 
+    MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
+
 #ifdef LL_PLAT_C
     MCAPI CloudSaveLevelInfo(
         ::std::string driveItemId,
@@ -42,6 +49,8 @@ public:
     MCAPI bool operator==(::CloudSaveLevelInfo const& other) const;
 #endif
 
+    MCAPI void serialize(::CompoundTag& tag) const;
+
     MCAPI ~CloudSaveLevelInfo();
     // NOLINTEND
 
@@ -49,6 +58,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CloudSaveLevelInfo const&);
+
+    MCAPI void* $ctor(::CompoundTag const& tag);
 
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(

@@ -185,7 +185,9 @@ MCAPI ::BlockStateVariant<::StoneSlabType4> const& DEPRECATED_StoneSlabType4();
 
 MCAPI ::BlockStateVariant<::StoneType> const& DEPRECATED_StoneType();
 
+#ifdef LL_PLAT_C
 MCAPI ::BlockStateVariant<bool> const& DEPRECATED_StrippedBit();
+#endif
 
 MCAPI ::BlockStateVariant<::StructureVoidType> const& DEPRECATED_StructureVoidType();
 

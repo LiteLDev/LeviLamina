@@ -24,5 +24,7 @@ enum class AllExperiments : int {
     Lwe                                    = 18,
     GameplayUi                             = 19,
     GameEventSystemRefactor                = 20,
-    Count                                  = 21,
+    OffhandParity                          = 21,
+    Y2026Drop3                             = 22,
+    Count                                  = 23,
 };

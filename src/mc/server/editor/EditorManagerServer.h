@@ -42,6 +42,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkf4abda;
     ::ll::UntypedStorage<8, 24> mUnk62d704;
     ::ll::UntypedStorage<8, 8>  mUnke15a95;
+    ::ll::UntypedStorage<8, 24> mUnk3f337b;
     ::ll::UntypedStorage<8, 8>  mUnkdddb22;
     // NOLINTEND
 
@@ -86,10 +87,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EditorManagerServer(
-        ::ServerInstance&                                      server,
-        bool                                                   isEditorModeEnabled,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
-        ::std::unique_ptr<::Editor::EditorInitParams>          editorInitParams
+        ::ServerInstance&                                        server,
+        bool                                                     isEditorModeEnabled,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>   fileManager,
+        ::std::unique_ptr<::Editor::EditorInitParams>            editorInitParams,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> resourcePackRepository
     );
 
     MCNAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
@@ -101,10 +103,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::ServerInstance&                                      server,
-        bool                                                   isEditorModeEnabled,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
-        ::std::unique_ptr<::Editor::EditorInitParams>          editorInitParams
+        ::ServerInstance&                                        server,
+        bool                                                     isEditorModeEnabled,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>   fileManager,
+        ::std::unique_ptr<::Editor::EditorInitParams>            editorInitParams,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> resourcePackRepository
     );
     // NOLINTEND
 

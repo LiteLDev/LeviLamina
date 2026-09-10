@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/binding/queries/core/PlatformType.h"
 #include "mc/deps/application/OsVersion.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/platform/FullscreenMode.h"
-#include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/platform/OSInformation.h"
 #include "mc/platform/Result.h"

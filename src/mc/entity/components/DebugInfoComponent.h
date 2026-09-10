@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -12,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class NetworkIdentifier;
 struct ActorDefinitionTriggeredEvent;
 // clang-format on
 
@@ -38,18 +36,6 @@ public:
         Listener& operator=(Listener const&);
         Listener(Listener const&);
         Listener();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Listener();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -63,45 +49,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DebugInfoComponent& operator=(DebugInfoComponent const&);
-    DebugInfoComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DebugInfoComponent(::DebugInfoComponent const&);
-
-    MCAPI void addListener(::HashedString const& messageType, ::NetworkIdentifier source, ::SubClientId subClientId);
-
-    MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
-
-    MCAPI void removeListener(::HashedString const&, ::NetworkIdentifier networkIdentifier, ::SubClientId subClientId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DebugInfoComponent const&);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    virtual ::EventResult onEvent(::ActorDefinitionTriggeredEvent const&) /*override*/;
     // NOLINTEND
 };

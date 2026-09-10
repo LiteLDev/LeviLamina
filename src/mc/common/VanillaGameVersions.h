@@ -81,6 +81,8 @@ MCNAPI ::BaseGameVersion const& Y2025Drop4Version();
 MCNAPI ::BaseGameVersion const& Y2026Drop1Version();
 
 MCNAPI ::BaseGameVersion const& Y2026Drop2Version();
+
+MCNAPI ::BaseGameVersion const& Y2026Drop2Version_U4();
 // NOLINTEND
 
 } // namespace VanillaGameVersions

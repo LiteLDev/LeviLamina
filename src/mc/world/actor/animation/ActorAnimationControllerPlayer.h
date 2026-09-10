@@ -85,8 +85,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer>
     getStatePlayer(::HashedString const& stateName, ::AnimationComponent& animationComponent, bool createIfMissing);
-
-    MCAPI void setNextState(::HashedString const& stateName);
 #endif
     // NOLINTEND
 

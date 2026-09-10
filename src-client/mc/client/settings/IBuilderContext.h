@@ -6,6 +6,7 @@
 #include "mc/client/game/MinecraftGameFeatures.h"
 #include "mc/client/gui/SettingsModalType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
+#include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/client/storagemanager/ContentType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
@@ -42,6 +43,7 @@ namespace SDL { class SessionBinaries; }
 namespace Settings { class Eventing; }
 namespace Social { class IGameConnectionInfoProvider; }
 namespace Social { class User; }
+namespace StorageManager { class WorldConverter; }
 // clang-format on
 
 namespace Settings::RegistryBuilder {
@@ -175,6 +177,8 @@ public:
 
     virtual bool isRealmsFeatureEnabled(::std::string_view featureName) const = 0;
 
+    virtual bool canUserDoActionForCurrentRealm(::Realms::PlayerRoleActions action) const = 0;
+
     virtual bool isConfigurableRealmsEnvironment() const = 0;
 
     virtual bool isPartySystemAvailable() const = 0;
@@ -280,6 +284,11 @@ public:
     virtual ::std::optional<::std::reference_wrapper<::ContentItemCollection>> const
     getVisibleContentItemCollection(::StorageManager::ContentType type) const = 0;
 
+    virtual ::std::optional<::std::reference_wrapper<::StorageManager::WorldConverter>>
+    getStorageWorldConverter() const = 0;
+
+    virtual void navigateToFetchLegacyWorldsScreen() = 0;
+
     virtual bool isCloudStorageManagerEnabled() const = 0;
 
     virtual ::TaskGroup& getIOTaskGroup() = 0;
@@ -287,8 +296,6 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint const> getContentLogFileEndPoint() const = 0;
 
     virtual ::std::string getCurrentContentLogFileName() = 0;
-
-    virtual bool isSupportingLegacyWorlds() const = 0;
     // NOLINTEND
 };
 

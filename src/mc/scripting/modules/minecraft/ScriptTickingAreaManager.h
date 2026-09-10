@@ -19,6 +19,7 @@ class ServerLevel;
 struct LevelTickingAreaFinishedLoadingEvent;
 namespace ScriptModuleMinecraft { struct ScriptTickingArea; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -51,6 +52,23 @@ public:
         ::ll::TypedStorage<4, 4, ::DimensionType>                                 mDimensionType;
         ::ll::TypedStorage<1, 1, bool>                                            mFinishedLoading;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PromiseContext& operator=(PromiseContext const&);
+        PromiseContext();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI PromiseContext(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const&);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const&);
+        // NOLINTEND
     };
 
 public:
@@ -74,9 +92,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptTickingAreaManager();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptTickingAreaManager() /*override*/ = default;
+    virtual ~ScriptTickingAreaManager() /*override*/;
 
     virtual ::EventResult onEvent(::LevelTickingAreaFinishedLoadingEvent const& event) /*override*/;
     // NOLINTEND
@@ -84,6 +106,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptTickingAreaManager(
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::gsl::not_null<::ServerLevel*>       level,
+        ::Scripting::ContextConfig const&     contextConfig
+    );
+
     MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>
     _getTickingArea(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const& context) const;
 
@@ -99,11 +127,33 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::gsl::not_null<::ServerLevel*>       level,
+        ::Scripting::ContextConfig const&     contextConfig
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::LevelTickingAreaFinishedLoadingEvent const& event);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

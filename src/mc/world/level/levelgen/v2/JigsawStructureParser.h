@@ -16,6 +16,7 @@ namespace SharedTypes::v1_21_20::JigsawStructureDefinition { struct Contents; }
 namespace SharedTypes::v1_21_20::JigsawStructureProcessorList { struct Contents; }
 namespace SharedTypes::v1_21_20::JigsawStructureSet { struct Contents; }
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct Contents; }
+namespace br::worldgen { class StructureInstance; }
 namespace br::worldgen { class StructureRegistry; }
 namespace br::worldgen { struct JigsawStructure; }
 namespace br::worldgen { struct StructureProcessor; }
@@ -31,6 +32,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::br::worldgen::StructureInstance>
+    parseStructureInstanceFromLevelStorage(::std::string_view data, ::JigsawStructureRegistry const& registry);
+
     MCAPI static ::std::vector<::br::worldgen::JigsawStructure> prepareJigsawDefinitionData(
         ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const& jigsawsData,
         ::IWorldRegistriesProvider&                                                        registries
@@ -55,5 +59,15 @@ public:
         ::JigsawStructureRegistry&                                                           registry,
         ::FeatureRegistry&                                                                   features
     );
+
+#ifdef LL_PLAT_C
+    MCAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(
+        ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const& jigsawData,
+        ::IWorldRegistriesProvider&                                         registries
+    );
+#endif
+
+    MCAPI static ::std::string
+    serializeStructureInstanceForLevelStorage(::br::worldgen::StructureInstance const& instance);
     // NOLINTEND
 };

@@ -19,4 +19,16 @@ public:
     DirectoryPackSourceOptions& operator=(DirectoryPackSourceOptions const&);
     DirectoryPackSourceOptions(DirectoryPackSourceOptions const&);
     DirectoryPackSourceOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~DirectoryPackSourceOptions();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

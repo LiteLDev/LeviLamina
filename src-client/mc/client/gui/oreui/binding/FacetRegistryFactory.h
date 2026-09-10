@@ -15,6 +15,7 @@ class IAppPlatform;
 class IClientInstance;
 class IMinecraftGame;
 namespace OreUI { class IFacet; }
+namespace OreUI { class IFacetRegistry; }
 // clang-format on
 
 namespace OreUI {
@@ -92,11 +93,9 @@ public:
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                appPlatform
     );
 
-    MCAPI void _registerCoreFacets();
-
     MCAPI void _registerVanillaFacets();
 
-    MCAPI void _registerVanillaGameplayFacets();
+    MCAPI ::std::unique_ptr<::OreUI::IFacetRegistry> createFacetRegistry(::OreUI::FacetRegistryLocation location);
 
     MCAPI ~FacetRegistryFactory();
     // NOLINTEND

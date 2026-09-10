@@ -12,7 +12,6 @@
 // clang-format off
 class Vec3;
 namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidTemplateStructure; }
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -65,12 +64,6 @@ public:
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplateStructure>
     _getStructureSize() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

@@ -109,7 +109,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mTextureShiftEnabled;
     ::ll::TypedStorage<8, 8, ::BlockSource*>                                      mRegion;
     ::ll::TypedStorage<4, 8, ::mce::framebuilder::FrameLightingModelCapabilities> mLightingModelCapabilities;
-    ::ll::TypedStorage<8, 88, ::TextureUVCoordinateSet>                           mFixedTexture;
+    ::ll::TypedStorage<8, 96, ::TextureUVCoordinateSet>                           mFixedTexture;
     ::ll::TypedStorage<1, 1, bool>                                                mSupportsNewVertexFormat;
     ::ll::TypedStorage<1, 1, bool>                                                mUseFixedTexture;
     ::ll::TypedStorage<1, 1, bool>                                                mUseOccluder;

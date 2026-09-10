@@ -51,7 +51,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                             mFollowUpActionAfterCreation;
     ::ll::TypedStorage<1, 1, bool>                                                 mRefreshUI;
     ::ll::TypedStorage<1, 1, bool>                                                 mClickedRefresh;
-    ::ll::TypedStorage<8, 656, ::Realms::World>                                    mWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                                    mWorld;
     ::ll::TypedStorage<1, 1, bool>                                                 mInvitesSent;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>              mLastRefreshUpdate;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>              mLastFriendListUpdate;
@@ -178,6 +178,8 @@ public:
         ::PlayerPermissionLevel const permission,
         ::PlayerPermissionLevel const oldPermission
     );
+
+    MCAPI void updateWorld(::Realms::World const& world, ::std::function<void()> callback);
     // NOLINTEND
 
 public:

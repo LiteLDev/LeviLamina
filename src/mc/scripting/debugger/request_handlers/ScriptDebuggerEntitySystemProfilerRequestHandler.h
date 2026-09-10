@@ -10,6 +10,7 @@
 // clang-format off
 class LocalProfilerControlBroker;
 class ScriptDebugger;
+namespace ScriptDebuggerMessages { struct DebuggerRequestMessage; }
 // clang-format on
 
 class ScriptDebuggerEntitySystemProfilerRequestHandler : public ::ScriptDebuggerBaseProfilerRequestHandler {
@@ -21,6 +22,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void registerHandlers(::ScriptDebugger& debugger) /*override*/;
+
+    virtual void onDisconnect(::ScriptDebugger& debugger) /*override*/;
     // NOLINTEND
 
 public:
@@ -29,6 +32,9 @@ public:
     MCNAPI explicit ScriptDebuggerEntitySystemProfilerRequestHandler(
         ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> profilerControlBroker
     );
+
+    MCNAPI ::std::optional<::std::vector<uint>>
+    _parseIdsFromRequest(::ScriptDebuggerMessages::DebuggerRequestMessage const& request, ::std::string const argName);
     // NOLINTEND
 
 public:
@@ -41,6 +47,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $registerHandlers(::ScriptDebugger& debugger);
+
+    MCNAPI void $onDisconnect(::ScriptDebugger& debugger);
 
 
     // NOLINTEND

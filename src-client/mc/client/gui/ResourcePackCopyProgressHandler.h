@@ -59,7 +59,7 @@ public:
     MCAPI ResourcePackCopyProgressHandler(::std::string const& levelID, ::std::function<void()> callback);
 
     MCAPI ::Bedrock::Threading::Async<void> start(
-        ::Core::PathBuffer<::std::string> const&             levelBasePath,
+        ::Core::PathBuffer<::std::string> const&             worldPath,
         ::IResourcePackRepository&                           resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     ) const;

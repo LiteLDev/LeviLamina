@@ -6,11 +6,6 @@
 #include "mc/client/gui/screens/models/ManifestContentItem.h"
 #include "mc/world/level/GameType.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ContentSource;
-// clang-format on
-
 struct WorldTemplateItem : public ::ManifestContentItem {
 public:
     // member variables
@@ -21,30 +16,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldTemplateItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorldTemplateItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit WorldTemplateItem(::ContentSource* src);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentSource* src);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,7 +13,7 @@ class BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mDebugName;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
     ::ll::TypedStorage<4, 4, int>            mRequiredControlFlags;
     ::ll::TypedStorage<2, 2, ushort>         mTypeId;
     // NOLINTEND
@@ -41,7 +41,7 @@ public:
 
     virtual void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    virtual void setInfo(::std::string const& name, ::GoalId const& goalId);
+    virtual void setInfo(::std::string name, ::GoalId const& goalId);
 
     virtual ::GoalId getGoalId() const;
     // NOLINTEND
@@ -69,7 +69,7 @@ public:
 
     MCFOLD void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCAPI void $setInfo(::std::string const& name, ::GoalId const& goalId);
+    MCAPI void $setInfo(::std::string name, ::GoalId const& goalId);
 
     MCAPI ::GoalId $getGoalId() const;
 

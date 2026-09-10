@@ -62,6 +62,10 @@ public:
     MCAPI void add(::std::unique_ptr<::Tag> tag);
 
     MCAPI ::std::unique_ptr<::ListTag> copyList() const;
+
+    MCAPI ::Bedrock::Result<void> load(::IDataInput& dis, int depth);
+
+    MCAPI void write(::IDataOutput& dos, int depth) const;
     // NOLINTEND
 
 public:

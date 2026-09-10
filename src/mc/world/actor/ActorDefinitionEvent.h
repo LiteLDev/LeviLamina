@@ -39,15 +39,25 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
 
+#ifdef LL_PLAT_C
     MCAPI void _evaluateGroups(
         ::Actor&                                  entity,
         ::std::vector<::ActorDefinitionModifier>& modifications,
         ::VariantParameterListConst const&        list
     ) const;
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void _evaluateGroups(
+        ::Actor&                                  entity,
+        ::std::vector<::ActorDefinitionModifier>& modifications,
+        ::VariantParameterListConst const&        list
+    ) const;
+#endif
 
     MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void setName(::std::string name);
 #endif
 

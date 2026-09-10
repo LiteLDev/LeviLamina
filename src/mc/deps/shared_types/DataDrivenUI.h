@@ -15,11 +15,15 @@ MCAPI void bindComponentTypeType(::cereal::ReflectionCtx& ctx);
 
 // static variables
 // NOLINTBEGIN
+MCAPI ::std::string_view const& COMPONENT_FIELD_NAME();
+
 MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerFixedGridLayoutName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerLayoutName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerSlotName();
+
+MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerTextFieldName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> ContextListName();
 
@@ -32,6 +36,8 @@ MCAPI ::std::add_lvalue_reference_t<char const[]> FormButtonName();
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormDividerName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormDropdownName();
+
+MCAPI ::std::add_lvalue_reference_t<char const[]> FormImageName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormScrollViewName();
 
@@ -52,6 +58,8 @@ MCAPI ::std::add_lvalue_reference_t<char const[]> PanelSpacingName();
 MCAPI ::std::add_lvalue_reference_t<char const[]> PanelTextName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> ScrollableGridLayoutName();
+
+MCAPI ::std::add_lvalue_reference_t<char const[]> VisibilityName();
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_130::DataDrivenUI

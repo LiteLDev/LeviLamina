@@ -38,8 +38,6 @@ public:
     // NOLINTBEGIN
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    virtual bool hasVariableLighting() const /*override*/;
-
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
@@ -93,8 +91,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
-
-    MCFOLD bool $hasVariableLighting() const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 

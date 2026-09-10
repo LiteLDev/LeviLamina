@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace GeometryAtlas { struct RenderableUpdateCommand; }
-namespace dragon::atlas { struct AtlasTileHandle; }
 // clang-format on
 
 namespace GeometryAtlas {
@@ -27,8 +26,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::GeometryAtlas::RenderableUpdateCommand&&)>>
             mDispatch;
-        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::dragon::atlas::AtlasTileHandle(uint const&) const>>
-            mGetBackendID;
         // NOLINTEND
     };
 

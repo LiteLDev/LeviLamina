@@ -20,7 +20,10 @@ class DateManager;
 class IEntitlementManager;
 class PlatformMultiplayerRestrictions;
 namespace Editor { class IEditorManager; }
+namespace OreUI { class Router; }
 namespace OreUI { struct NetworkWorldJoinerSharedData; }
+namespace Parties { class PartySystem; }
+namespace Social { class User; }
 namespace World { class NetworkWorldJoiner; }
 namespace ui { class ProgressScreenNavigation; }
 // clang-format on
@@ -38,6 +41,9 @@ public:
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool()>>                  mIsUsingUnifiedJoinRealmFlow;
     ::ll::TypedStorage<8, 80, ::std::optional<::OreUI::RealmJoinFailureData>>       mRealmJoinFailureData;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Editor::IEditorManager>> mEditorManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>>   mPartySystem;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::User>>                    mCurrentUser;
+    ::ll::TypedStorage<8, 8, ::OreUI::Router&>                                      mUiRouter;
     ::ll::TypedStorage<1, 1, bool>                                                  mIsDirty;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::NetworkWorldJoinerSharedData>> mSharedData;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mRealmsWorldJoinerJoinRealmWorldResultSubscription;
@@ -67,7 +73,10 @@ public:
         ::IEntitlementManager&                               entitlementManager,
         ::std::unique_ptr<::PlatformMultiplayerRestrictions> platformMultiplayerRestrictions,
         ::brstd::move_only_function<bool()>                  isUsingUnifiedJoinRealmFlow,
-        ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager
+        ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem>   partySystem,
+        ::std::shared_ptr<::Social::User>                    user,
+        ::OreUI::Router&                                     uiRouter
     );
 
     MCAPI void clearJoinExternalServerTaskState();
@@ -131,7 +140,10 @@ public:
         ::IEntitlementManager&                               entitlementManager,
         ::std::unique_ptr<::PlatformMultiplayerRestrictions> platformMultiplayerRestrictions,
         ::brstd::move_only_function<bool()>                  isUsingUnifiedJoinRealmFlow,
-        ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager
+        ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem>   partySystem,
+        ::std::shared_ptr<::Social::User>                    user,
+        ::OreUI::Router&                                     uiRouter
     );
     // NOLINTEND
 

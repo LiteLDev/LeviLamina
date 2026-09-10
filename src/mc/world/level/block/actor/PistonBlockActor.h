@@ -11,6 +11,7 @@
 // clang-format off
 class AABB;
 class Actor;
+class BlockActor;
 class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
@@ -47,7 +48,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& tag) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -92,13 +93,21 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCFOLD static ::PistonBlockActor const* getOwningPiston(::BlockActor const& blockActor, ::BlockSource& region);
+
+    MCFOLD static ::PistonBlockActor* getOwningPiston(::BlockActor& blockActor, ::BlockSource& region);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& tag) const;
 
     MCAPI void $tick(::BlockSource& region);
 

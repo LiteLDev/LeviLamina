@@ -137,7 +137,6 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mBuildGameListSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartySubscription;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>> mPartyProvider;
-    ::ll::TypedStorage<4, 4, int>                                                    mSocialChangeToken;
     // NOLINTEND
 
 public:

@@ -310,7 +310,6 @@ public:
     upgradeJson(
         ::cereal::ReflectionCtx const& ctx,
         ::std::string_view             document,
-        bool                           isBaseGamePack,
         bool                           betaApis,
         ::std::optional<::SemVersion>  minVersion
     );
@@ -402,11 +401,7 @@ public:
     MCAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
-#ifdef LL_PLAT_S
     MCAPI int $getEnchantSlot() const;
-#else // LL_PLAT_C
-    MCFOLD int $getEnchantSlot() const;
-#endif
 
     MCFOLD int $getEnchantValue() const;
 

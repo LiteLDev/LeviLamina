@@ -87,6 +87,7 @@ class UpdateBlockSyncedPacket;
 struct ActorBlockSyncMessage;
 struct ClientCreateLevelArguments;
 struct LegacyClientNetworkHandlerArguments;
+namespace Parties { class PartySystem; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
@@ -115,8 +116,9 @@ public:
         8,
         64,
         ::brstd::move_only_function<::std::unique_ptr<::ClientLevel>(::ClientCreateLevelArguments&&) const>>
-                                                                            mCreateLevel;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>> mAppPlatform;
+                                                                                  mCreateLevel;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>>       mAppPlatform;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>> mPartySystem;
     // NOLINTEND
 
 public:

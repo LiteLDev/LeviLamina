@@ -17,25 +17,25 @@ public:
 
     virtual uint64 GetCommitPageSize() const /*override*/;
 
-    virtual void* Allocate(void*, uint64, uint64, int, int) /*override*/;
+    virtual void* Allocate(void* address, uint64 size, uint64 alignment, int protection, int flags) /*override*/;
 
-    virtual bool Free(void*, uint64, int) /*override*/;
+    virtual bool Free(void* address, uint64 size, int flags) /*override*/;
 
-    virtual bool PartialFree(void*, uint64, uint64, int) /*override*/;
+    virtual bool PartialFree(void* address, uint64 oldSize, uint64 newSize, int) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uint64 $GetAllocationPageSize() const;
+    MCAPI uint64 $GetAllocationPageSize() const;
 
-    MCFOLD uint64 $GetCommitPageSize() const;
+    MCAPI uint64 $GetCommitPageSize() const;
 
-    MCFOLD void* $Allocate(void*, uint64, uint64, int, int);
+    MCAPI void* $Allocate(void* address, uint64 size, uint64 alignment, int protection, int flags);
 
-    MCFOLD bool $Free(void*, uint64, int);
+    MCAPI bool $Free(void* address, uint64 size, int flags);
 
-    MCFOLD bool $PartialFree(void*, uint64, uint64, int);
+    MCAPI bool $PartialFree(void* address, uint64 oldSize, uint64 newSize, int);
     // NOLINTEND
 };
 

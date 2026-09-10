@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms { class RealmsPurchase; }
+namespace Realms { class LegacyRealmsPurchase; }
 // clang-format on
 
 namespace OreUI {
@@ -19,12 +19,12 @@ class RealmsPurchaseQueriesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsPurchase>> mRealmsPurchase;
-    ::ll::TypedStorage<1, 1, bool>                                         mPurchaseDisabledDueToStoreVersion;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseState>                mState;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseFailureReason>        mFailureReason;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mStateChangedSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                         mIsDirty;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::LegacyRealmsPurchase>> mRealmsPurchase;
+    ::ll::TypedStorage<1, 1, bool>                                               mPurchaseDisabledDueToStoreVersion;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseState>                      mState;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseFailureReason>              mFailureReason;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mStateChangedSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                               mIsDirty;
     // NOLINTEND
 
 public:
@@ -42,8 +42,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    RealmsPurchaseQueriesFacet(::std::shared_ptr<::Realms::RealmsPurchase> realmsPurchase, int expectedStoreVersion);
+    MCAPI RealmsPurchaseQueriesFacet(
+        ::std::shared_ptr<::Realms::LegacyRealmsPurchase> realmsPurchase,
+        int                                               expectedStoreVersion
+    );
 
     MCFOLD ::Realms::RealmsPurchaseFailureReason getFailureReason() const;
 
@@ -61,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsPurchase> realmsPurchase, int expectedStoreVersion);
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::LegacyRealmsPurchase> realmsPurchase, int expectedStoreVersion);
     // NOLINTEND
 
 public:

@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SkinBanCheckProgressHandler::State>    mState;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mInitTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                  mTimeoutTime;
     // NOLINTEND
 
 public:

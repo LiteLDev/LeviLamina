@@ -12,6 +12,7 @@ class NetworkIdentifier;
 class NetworkPeer;
 namespace Json { class Value; }
 namespace Social { class GameConnectionInfo; }
+namespace Social { struct ResolvedExperienceInfo; }
 // clang-format on
 
 class Connector {
@@ -68,6 +69,9 @@ public:
 
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const;
 
+    virtual void
+    setConnectedResolvedExperienceInfo(::std::optional<::Social::ResolvedExperienceInfo> const& resolvedExperienceInfo);
+
     virtual bool isIPv4Supported() const;
 
     virtual bool isIPv6Supported() const;
@@ -87,6 +91,10 @@ public:
     MCFOLD ushort $getPort() const;
 
     MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+
+    MCFOLD void $setConnectedResolvedExperienceInfo(
+        ::std::optional<::Social::ResolvedExperienceInfo> const& resolvedExperienceInfo
+    );
 
     MCFOLD bool $isIPv4Supported() const;
 

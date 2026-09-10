@@ -28,7 +28,8 @@ MCAPI void normalizeVerticesToOrthogonalFrame(
     ::glm::vec2 const& frameMin,
     ::glm::vec2 const& frameMax,
     float              zOffset,
-    bool               downscaleOnly
+    bool               downscaleDisabled,
+    bool               upscaleCapped
 );
 // NOLINTEND
 

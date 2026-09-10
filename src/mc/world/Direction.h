@@ -10,6 +10,7 @@ public:
         West      = 1,
         North     = 2,
         East      = 3,
+        Count     = 4,
         Undefined = 255,
     };
 

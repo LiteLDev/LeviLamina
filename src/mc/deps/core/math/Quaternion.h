@@ -14,4 +14,12 @@ public:
     Quaternion& operator=(Quaternion const&);
     Quaternion(Quaternion const&);
     Quaternion();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::glm::qua<float> eulerAnglesToQuaternion(float pitch, float yaw, float roll);
+#endif
+    // NOLINTEND
 };

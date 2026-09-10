@@ -19,7 +19,7 @@ class WorldSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>            mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>            mLevelDataWrapper;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLevelChangedSubscription;
     ::ll::TypedStorage<
         8,

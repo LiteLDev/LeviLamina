@@ -9,10 +9,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class PackAssetSet;
 class ResourceLocation;
 struct StreamableAssetSource;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
+namespace Core { class FileHandlePool; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
 // clang-format on
@@ -63,10 +65,6 @@ public:
         bool                                       recurseAnyways
     ) const /*override*/;
 
-    virtual void
-    forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const
-        /*override*/;
-
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
@@ -90,9 +88,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI DirectoryPackAccessStrategy(
-        ::ResourceLocation const&                           packLocation,
-        bool                                                recurse,
-        ::std::function<::std::string(::Core::Path const&)> reader
+        ::ResourceLocation const&                                  packLocation,
+        bool                                                       recurse,
+        ::std::function<::std::string(::Core::Path const&)>        reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+    );
+
+    MCNAPI DirectoryPackAccessStrategy(
+        ::std::unique_ptr<::PackAssetSet>&&                        assetSet,
+        ::ResourceLocation const&                                  packLocation,
+        bool                                                       recurse,
+        ::std::function<::std::string(::Core::Path const&)>        reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
     );
     // NOLINTEND
 
@@ -100,9 +107,18 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::ResourceLocation const&                           packLocation,
-        bool                                                recurse,
-        ::std::function<::std::string(::Core::Path const&)> reader
+        ::ResourceLocation const&                                  packLocation,
+        bool                                                       recurse,
+        ::std::function<::std::string(::Core::Path const&)>        reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+    );
+
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::PackAssetSet>&&                        assetSet,
+        ::ResourceLocation const&                                  packLocation,
+        bool                                                       recurse,
+        ::std::function<::std::string(::Core::Path const&)>        reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
     );
     // NOLINTEND
 
@@ -136,9 +152,6 @@ public:
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       recurseAnyways
     ) const;
-
-    MCNAPI void
-    $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
     MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 

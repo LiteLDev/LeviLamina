@@ -15,7 +15,6 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
-namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
@@ -64,19 +63,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
-
-#ifdef LL_PLAT_C
-    MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
-#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static char const*& ModuleName();
-#endif
-
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 

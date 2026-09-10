@@ -67,6 +67,7 @@ enum class FeatureOptionID : int {
     GraniteBayPerformance                  = 61,
     GraniteBayVisual                       = 62,
     DensityWorldGeneration                 = 63,
-    EnableJigsawStructureBlueprint         = 64,
-    Count                                  = 65,
+    JigsawPersistenceOverride              = 64,
+    JigsawPersistenceEnabled               = 65,
+    Count                                  = 66,
 };

@@ -37,7 +37,7 @@ public:
 
     virtual ::MatrixStack& getWorldMatrixStack() /*override*/;
 
-    virtual float getInvGuiScale() /*override*/;
+    virtual float getYOffset(float screenScale) /*override*/;
 
     virtual void renderGui(
         ::HashedString const&                rendererName,
@@ -61,7 +61,7 @@ public:
 
     MCAPI ::MatrixStack& $getWorldMatrixStack();
 
-    MCAPI float $getInvGuiScale();
+    MCAPI float $getYOffset(float screenScale);
 
     MCAPI void $renderGui(
         ::HashedString const&                rendererName,
@@ -74,11 +74,5 @@ public:
     MCAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
 
     MCAPI ::SubClientId $getClientSubId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

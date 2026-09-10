@@ -23,16 +23,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#endif
     // NOLINTEND
 };

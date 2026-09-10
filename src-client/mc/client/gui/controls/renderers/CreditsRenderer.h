@@ -12,7 +12,6 @@ class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
-class UIResolvedDef;
 class UIScene;
 struct ScreenEvent;
 // clang-format on
@@ -84,10 +83,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CreditsRenderer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CreditsRenderer() /*override*/ = default;
@@ -106,16 +101,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CreditsRenderer(::UIResolvedDef const& def);
-
     MCAPI void
     _parseFiles(::IClientInstance& client, ::UIControl& owner, ::std::vector<::std::string> const& filePaths);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
@@ -128,11 +115,5 @@ public:
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
     MCAPI void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

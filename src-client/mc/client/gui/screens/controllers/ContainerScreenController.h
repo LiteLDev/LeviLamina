@@ -85,6 +85,9 @@ public:
     ::ll::TypedStorage<2, 2, short>                                                                mLastPointerY;
     ::ll::TypedStorage<2, 2, short>                                            mStartDraggingPointerX;
     ::ll::TypedStorage<2, 2, short>                                            mStartDraggingPointerY;
+    ::ll::TypedStorage<1, 1, bool>                                             mDecidingSelectionScroll;
+    ::ll::TypedStorage<2, 2, short>                                            mSelectionScrollStartX;
+    ::ll::TypedStorage<2, 2, short>                                            mSelectionScrollStartY;
     ::ll::TypedStorage<8, 32, ::std::string>                                   mDraggingCollectionName;
     ::ll::TypedStorage<4, 4, int>                                              mDraggingCollectionIndex;
     ::ll::TypedStorage<8, 32, ::std::string>                                   mInteractingCollectionName;
@@ -158,6 +161,8 @@ public:
     virtual ::ui::ViewRequest _onContainerSlotPressed(::std::string const& collectionName, int index);
 
     virtual ::ui::ViewRequest _onHotbarSlotHotkeyUsed(::SlotData const& dstSlot);
+
+    virtual bool _onTouchScrollStartedWithSelectedSlot();
 
     virtual bool _shouldSwap(
         ::std::string const& collectionName,
@@ -236,6 +241,8 @@ public:
 
     MCAPI void _handleUnselectSlot();
 
+    MCAPI bool _hasItems(::std::string const& collectionName, int collectionIndex) const;
+
     MCAPI bool _isCursorSelectedActive() const;
 
     MCAPI bool _isInValidCraftingResultContainer(::std::string_view collectionName, int collectionIndex) const;
@@ -273,6 +280,8 @@ public:
     MCAPI void _registerEventHandlersForStateMachine(uint buttonId);
 
     MCAPI void _saveLastSelectedSlot();
+
+    MCAPI void _showSelectedItemDetailsPopup(::ItemStackBase const& item);
 
     MCAPI void _stopSplitting();
 
@@ -351,6 +360,8 @@ public:
     MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 
     MCAPI ::ui::ViewRequest $_onHotbarSlotHotkeyUsed(::SlotData const& dstSlot);
+
+    MCFOLD bool $_onTouchScrollStartedWithSelectedSlot();
 
     MCAPI bool $_shouldSwap(
         ::std::string const& collectionName,

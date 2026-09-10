@@ -33,8 +33,6 @@ public:
     MCNAPI bool manifestExists(::Core::PathView manifestPath) const;
 
     MCNAPI bool tryUnloadManifest(::Core::PathView manifestPath);
-
-    MCNAPI void updateManifest(::std::shared_ptr<::Core::FlatFileManifest> manifest, bool keepCached);
     // NOLINTEND
 };
 

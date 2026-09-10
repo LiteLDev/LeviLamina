@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_100 { struct CameraAvoidanceRay; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_100 {
@@ -18,12 +17,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_100::CameraAvoidanceRay>> mAvoidanceRaysVertical;
     ::ll::TypedStorage<4, 4, float> mRelaxDistanceSmoothingStiffness;
     ::ll::TypedStorage<4, 4, float> mDistanceConstraintMin;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

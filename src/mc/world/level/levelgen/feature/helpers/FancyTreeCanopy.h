@@ -45,6 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::std::optional<::BlockPos> _fillLayer(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
@@ -52,6 +53,7 @@ public:
         int                             radius,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
+#endif
     // NOLINTEND
 
 public:

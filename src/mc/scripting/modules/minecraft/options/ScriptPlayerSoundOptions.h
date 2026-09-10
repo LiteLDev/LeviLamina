@@ -20,6 +20,7 @@ public:
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mLocation;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>   mVolume;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>   mPitch;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>     mLoopCount;
     // NOLINTEND
 
 public:

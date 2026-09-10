@@ -13,4 +13,7 @@ enum class FatalClientPackErrorType : int {
     DownloadFailureCouldNotWriteToDisk   = 7,
     DownloadFailureCouldNotUnzipFiles    = 8,
     DownloadFailureLogicError            = 9,
+    EncryptedMissingContents             = 10,
+    EncryptedInvalidContents             = 11,
+    EncryptedMissingContentKey           = 12,
 };

@@ -37,8 +37,6 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool isAuxValueRelevantForPicking() const /*override*/;
-
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -79,8 +77,6 @@ public:
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCFOLD bool $isAuxValueRelevantForPicking() const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -14,6 +14,7 @@ class Block;
 class BlockType;
 class CompoundTag;
 class Item;
+class ItemInstance;
 class ItemStack;
 class ReadOnlyBinaryStream;
 struct ItemTag;
@@ -168,6 +169,10 @@ public:
     MCAPI bool isNull() const;
 
     MCAPI bool isValid(bool shouldResolve) const;
+
+#ifdef LL_PLAT_C
+    MCAPI explicit operator ::ItemInstance() const;
+#endif
 
     MCAPI void operator=(::ItemDescriptor const& rhs);
 

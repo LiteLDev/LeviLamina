@@ -23,10 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::std::vector<::std::reference_wrapper<::IGameEventListener>> getListeners() const;
-#endif
-
     MCAPI ::gsl::final_action<::std::function<void()>> registerListener(::IGameEventListener& gameEventListener);
     // NOLINTEND
 };

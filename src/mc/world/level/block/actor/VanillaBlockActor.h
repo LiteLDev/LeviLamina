@@ -206,7 +206,7 @@ public:
 
     MCFOLD ::BlockActor const& $getBlockActor() const;
 
-    MCAPI ::BlockPos const& $getBlockActorPosition() const;
+    MCFOLD ::BlockPos const& $getBlockActorPosition() const;
 
     MCAPI ::BlockActorType $getBlockActorType() const;
 

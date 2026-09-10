@@ -34,7 +34,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ConduitBaseModel>> mModel;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConduitCageModel>>  mCage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConduitWindModel>>  mOuterWind;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mHeartMesh;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                          mHeartMesh;
     // NOLINTEND
 
 public:

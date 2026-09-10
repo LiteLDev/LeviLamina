@@ -17,8 +17,8 @@ class SelectionContainerVolume : public ::Editor::Selection::SelectionContainer 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnkd9382c;
-    ::ll::UntypedStorage<8, 48> mUnk236616;
+    ::ll::UntypedStorage<8, 112> mUnkd9382c;
+    ::ll::UntypedStorage<8, 48>  mUnk236616;
     // NOLINTEND
 
 public:

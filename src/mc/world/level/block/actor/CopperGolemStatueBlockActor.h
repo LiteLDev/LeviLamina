@@ -8,10 +8,10 @@ class BlockPos;
 class SerializedActorBlockActor;
 // clang-format on
 
-namespace CopperGolemStatueBlockActor {
-// functions
-// NOLINTBEGIN
-MCAPI ::std::unique_ptr<::SerializedActorBlockActor> create(::BlockPos const& pos);
-// NOLINTEND
-
-} // namespace CopperGolemStatueBlockActor
+class CopperGolemStatueBlockActor {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::SerializedActorBlockActor> create(::BlockPos const& pos);
+    // NOLINTEND
+};

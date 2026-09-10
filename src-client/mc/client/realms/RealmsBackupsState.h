@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-enum class RealmsBackupsState : int {};
+enum class RealmsBackupsState : uchar {};
 
 }

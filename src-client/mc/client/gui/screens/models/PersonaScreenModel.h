@@ -10,7 +10,7 @@
 #include "mc/client/persona/SkinHandle.h"
 #include "mc/client/services/persona/DownloadImportManager.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/world/actor/player/persona/PieceSide.h"
+#include "mc/deps/shared_types/persona/PieceSide.h"
 #include "mc/world/actor/player/persona/ProfileType.h"
 
 // auto generated forward declare list
@@ -34,14 +34,14 @@ class PersonaScreenModel : public ::MainMenuScreenModel,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float const>                  DEFAULT_PAPERDOLL_ROTATION;
-    ::ll::TypedStorage<4, 4, float const>                  PAPERDOLL_BACK_ROTATION;
-    ::ll::TypedStorage<8, 32, ::persona::SizeSectionModel> mSizeSectionModel;
-    ::ll::TypedStorage<8, 112, ::SkinHandle>               mSelectedSkinHandle;
-    ::ll::TypedStorage<4, 4, ::persona::PieceSide>         mCurrentPieceSide;
-    ::ll::TypedStorage<4, 4, int>                          mSelectedSkinPackCollectorIndex;
-    ::ll::TypedStorage<4, 4, int>                          mSelectedSkinPackModelIndex;
-    ::ll::TypedStorage<4, 4, int>                          mSelectedSkinIndex;
+    ::ll::TypedStorage<4, 4, float const>                       DEFAULT_PAPERDOLL_ROTATION;
+    ::ll::TypedStorage<4, 4, float const>                       PAPERDOLL_BACK_ROTATION;
+    ::ll::TypedStorage<8, 24, ::persona::SizeSectionModel>      mSizeSectionModel;
+    ::ll::TypedStorage<8, 112, ::SkinHandle>                    mSelectedSkinHandle;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::persona::PieceSide> mCurrentPieceSide;
+    ::ll::TypedStorage<4, 4, int>                               mSelectedSkinPackCollectorIndex;
+    ::ll::TypedStorage<4, 4, int>                               mSelectedSkinPackModelIndex;
+    ::ll::TypedStorage<4, 4, int>                               mSelectedSkinIndex;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::SkinPackCollectionModel>>>    mSkinPackCollectors;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Social::eventData::PersonaOfferClickedData>> mOfferClickedData;
     ::ll::TypedStorage<8, 8, int64>                                         mNextPossibleEventClickedTime;
@@ -75,6 +75,8 @@ public:
 
     MCAPI ::SkinPackCollectionModel& _getInvalidSkinPackCollectionModel();
 
+    MCAPI void _initializeSkinPackCollectors();
+
     MCAPI bool _playerHasContentSubscription() const;
 
     MCAPI bool checkPersonaServiceSavedToCacheFlag();
@@ -87,7 +89,8 @@ public:
         bool                                exclusiveDownload
     );
 
-    MCAPI void cycleCurrentPieceSide(::IStoreCatalogItem const& pieceOffer, ::persona::PieceSide direction);
+    MCAPI void
+    cycleCurrentPieceSide(::IStoreCatalogItem const& pieceOffer, ::SharedTypes::persona::PieceSide direction);
 
     MCAPI ::std::string getAchievementOfferLockStateTexture(::persona::PieceOfferWrapper const& pieceOffer) const;
 

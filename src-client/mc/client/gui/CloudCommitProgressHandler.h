@@ -28,13 +28,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CloudCommitProgressHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onRetry(::MinecraftScreenModel&) /*override*/;
+    virtual void onRetry(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -51,5 +55,49 @@ public:
     virtual ::std::string getTitleText() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit CloudCommitProgressHandler(::std::string const& levelId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& levelId);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCFOLD void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onRetry(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+
+    MCFOLD ::ProgressAnimation $showLoadingBar() const;
+
+    MCAPI ::std::string $getTitleText() const;
+
+    MCAPI ::std::string $getName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

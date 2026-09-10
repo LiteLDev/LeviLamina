@@ -121,6 +121,12 @@ public:
 
     class UpdateRotationGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float const> mRotationOffset;
+        // NOLINTEND
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::gsl::not_null<::Block const*> getPlacementBlock(

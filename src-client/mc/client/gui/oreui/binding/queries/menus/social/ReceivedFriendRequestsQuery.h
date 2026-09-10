@@ -50,6 +50,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ReceivedFriendRequestsQuery(::OreUI::GameDependencies const& game);
+
+    MCAPI void _fetchData();
     // NOLINTEND
 
 public:

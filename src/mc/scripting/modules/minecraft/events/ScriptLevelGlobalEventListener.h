@@ -1,10 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/modules/minecraft/Listener.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
-#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -16,34 +15,16 @@ class Level;
 class Player;
 struct LevelGameRuleChangeEvent;
 struct ScriptingWorldInitializeEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
+namespace ScriptModuleMinecraft::ScriptGlobalEventListenerUtils { struct Listener; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptLevelGlobalEventListener : public ::EventListenerDispatcher<::LevelEventListener> {
 public:
-    // ScriptLevelGlobalEventListener inner types declare
-    // clang-format off
-    struct Listener;
-    // clang-format on
-
-    // ScriptLevelGlobalEventListener inner types define
-    struct Listener {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-                                       mScriptEventsHandle;
-        ::ll::TypedStorage<1, 1, bool> mIsV010;
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptLevelGlobalEventListener::Listener>>
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptGlobalEventListenerUtils::Listener>>
         mListeners;
     // NOLINTEND
 

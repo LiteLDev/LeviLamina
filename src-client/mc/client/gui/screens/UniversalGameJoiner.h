@@ -9,7 +9,7 @@
 // clang-format off
 class IClientInstance;
 class INetworkGameConnector;
-struct ExperienceConnectionData;
+struct ExperienceJoinRequestInfo;
 struct GameConnectionInfoEx;
 struct PlayerJoinWorldContext;
 namespace Realms { struct RealmId; }
@@ -26,7 +26,7 @@ public:
         ::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
-            ::ExperienceConnectionData,
+            ::ExperienceJoinRequestInfo,
             ::Realms::RealmId> const& joinInfo,
         ::PlayerJoinWorldContext      context
     );

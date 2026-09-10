@@ -152,11 +152,6 @@ public:
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache
     );
 
-    MCAPI void _bindComponentToCereal(
-        ::HashedString const&                                               compName,
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
-    );
-
     MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,

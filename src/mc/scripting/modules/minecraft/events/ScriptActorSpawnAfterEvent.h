@@ -9,12 +9,17 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorSpawnAfterEvent {
+public:
+    // ScriptActorSpawnAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptActorSpawnAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN

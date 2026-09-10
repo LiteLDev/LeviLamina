@@ -113,7 +113,7 @@ public:
 
     MCAPI ::std::vector<::World::PackDetails> const& getSelectedBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getSelectedResourcePacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getSelectedResourcePacks() const;
     // NOLINTEND
 
 public:

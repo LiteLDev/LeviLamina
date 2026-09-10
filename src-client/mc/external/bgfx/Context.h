@@ -204,7 +204,7 @@ public:
     ::ll::TypedStorage<8, 8, ::bgfx::Encoder*>                           m_encoder0;
     ::ll::TypedStorage<8, 8, ::bgfx::EncoderImpl*>                       m_encoder;
     ::ll::TypedStorage<8, 40, ::bx::HandleAlloc*>                        m_encoderHandle;
-    ::ll::TypedStorage<8, 206541568, ::bgfx::Frame[2]>                   m_frame;
+    ::ll::TypedStorage<8, 206574336, ::bgfx::Frame[2]>                   m_frame;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_render;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_submit;
     ::ll::TypedStorage<8, 524280, uint64[65535]>                         m_tempKeys;
@@ -247,7 +247,7 @@ public:
     ::ll::TypedStorage<4, 17288, ::bgfx::VertexDeclRef>                   m_declRef;
     ::ll::TypedStorage<2, 512, ushort[256]>                               m_viewRemap;
     ::ll::TypedStorage<4, 1056, uint[256]>                                m_seq;
-    ::ll::TypedStorage<4, 114688, ::bgfx::View[256]>                      m_view;
+    ::ll::TypedStorage<8, 131072, ::bgfx::View[256]>                      m_view;
     ::ll::TypedStorage<4, 256, float[16][4]>                              m_clearColor;
     ::ll::TypedStorage<1, 1, uchar>                                       m_colorPaletteDirty;
     ::ll::TypedStorage<8, 64, ::bgfx::Init>                               m_init;

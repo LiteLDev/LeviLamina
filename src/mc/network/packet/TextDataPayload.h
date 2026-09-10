@@ -16,4 +16,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                           mShowBackface;
     ::ll::TypedStorage<1, 1, bool>                           mShowTextBackface;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::TextDataPayload const&) const;
+    // NOLINTEND
 };

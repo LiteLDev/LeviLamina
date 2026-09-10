@@ -18,11 +18,9 @@ class IPaperDollRenderContext;
 class IPaperDollUIDefSource;
 class IPaperDollUpdateContext;
 class MinecraftUIRenderContext;
-class SerializedSkinRef;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
-struct OffscreenCaptureData;
 struct OffscreenCaptureDescription;
 struct PaperDollRenderOwnerData;
 struct PaperDollUpdateOwnerData;
@@ -45,9 +43,8 @@ public:
     ::ll::TypedStorage<4, 4, ::PaperDollRenderer::RotationStyle>                           mRotationStyle;
     ::ll::TypedStorage<4, 4, ::PaperDollRenderer::RotationStyle>                           mPreviousRotationStyle;
     ::ll::TypedStorage<1, 1, bool>                                                         mUseSelectedSkin;
-    ::ll::TypedStorage<1, 1, bool>                                                         mPlayerPaperDoll;
+    ::ll::TypedStorage<1, 1, bool>                                                         mUseSkinByName;
     ::ll::TypedStorage<1, 1, bool>                                                         mUseUUID;
-    ::ll::TypedStorage<1, 1, bool>                                                         mRespectSkinGuiScale;
     ::ll::TypedStorage<4, 4, float>                                                        mDeltaTime;
     ::ll::TypedStorage<4, 4, float>                                                        mElapsedTime;
     ::ll::TypedStorage<4, 4, float>                                                        mRotation;
@@ -70,16 +67,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PaperDollRenderer() /*override*/;
+    virtual ~PaperDollRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(
-        ::MinecraftUIRenderContext& renderContext,
-        ::IClientInstance&          client,
-        ::UIControl&                owner,
-        int                         pass
-    ) /*override*/;
+    virtual void
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
 
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
     // NOLINTEND
@@ -104,25 +97,7 @@ public:
         ::OffscreenCaptureDescription const* capture
     );
 
-    MCAPI void _render(
-        ::MinecraftUIRenderContext& renderContext,
-        ::IClientInstance&          client,
-        ::UIControl&                owner,
-        int,
-        ::OffscreenCaptureData const* uiActorCaptureData
-    );
-
     MCAPI void _update(::IPaperDollUpdateContext& context, ::PaperDollUpdateOwnerData const& data);
-
-    MCAPI void offscreenCapture(
-        ::MinecraftUIRenderContext&   renderContext,
-        ::IClientInstance&            client,
-        ::UIControl&                  owner,
-        int                           pass,
-        ::OffscreenCaptureData const& uiActorCaptureData,
-        ::SerializedSkinRef const&    skin,
-        float                         yRotation
-    );
     // NOLINTEND
 
 public:
@@ -134,25 +109,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void
-    $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
     MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

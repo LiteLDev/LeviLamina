@@ -13,7 +13,6 @@ class LootPoolEntry;
 class LootPoolTiers;
 class LootTableContext;
 class Random;
-namespace Json { class Value; }
 // clang-format on
 
 class LootPool {
@@ -30,11 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
-
     MCAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
-
-    MCAPI void deserialize(::Json::Value const& pool, bool usingUpcomingCreatorFeaturesExperiment);
 
     MCAPI ~LootPool();
     // NOLINTEND

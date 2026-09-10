@@ -53,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getTreeHeight(::Random& random) const;
+    MCFOLD int $getTreeHeight(::Random& random) const;
 
     MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,

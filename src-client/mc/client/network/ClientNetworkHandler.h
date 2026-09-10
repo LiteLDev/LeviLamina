@@ -172,7 +172,6 @@ class VoxelShapesPacket;
 struct NetworkIdentifierWithSubId;
 struct ToastIconData;
 namespace ClientBlobCache { class Cache; }
-namespace ServerConfiguration { struct PresenceConfiguration; }
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
@@ -212,7 +211,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                            mHasHandshaked;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                        mExistenceTracker;
     ::ll::TypedStorage<1, 1, bool>                                                            mPacketTelemetryEnabled;
-    ::ll::TypedStorage<1, 1, bool> mEventSynchronizationEnabled;
     ::ll::TypedStorage<
         8,
         64,
@@ -286,7 +284,7 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet) /*override*/;
 
@@ -371,9 +369,9 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetScoreboardIdentityPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetScorePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::SetScorePacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::SetTitlePacket const& packet) /*override*/;
 
@@ -467,7 +465,7 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerLocationPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerLocationPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const& packet) /*override*/;
 
@@ -564,10 +562,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyServerRichPresenceOverride(
-        ::std::optional<::ServerConfiguration::PresenceConfiguration> const& presenceConfig
-    );
-
     MCAPI void queueHandleWorldChangePacket(
         ::NetworkIdentifier const&              source,
         ::BlockPos const&                       requiredPos,
@@ -629,7 +623,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet);
 
@@ -713,9 +707,9 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetScoreboardIdentityPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetScorePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetScorePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::SetTitlePacket const& packet);
 
@@ -809,7 +803,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerLocationPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerLocationPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const& packet);
 

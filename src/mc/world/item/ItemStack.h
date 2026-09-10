@@ -28,15 +28,6 @@ public:
     ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant> mNetIdVariant;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    ItemStack() {
-        mValid_DeprecatedSeeComment = true;
-        setNull(std::nullopt);
-    }
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,15 +49,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ItemStack();
-#endif
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
     MCAPI ::ItemStack clone() const;
-
-    MCAPI float getDestroySpeed(::Block const& block) const;
 
 #ifdef LL_PLAT_C
     MCAPI ::Brightness getLightEmission() const;
@@ -98,10 +85,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI static ::ItemStack
     fromDescriptor(::NetworkItemStackDescriptor const& descriptor, ::BlockPalette& blockPalette, bool isClientSide);
-#endif
 
     MCAPI static ::ItemStack fromTag(::CompoundTag const& tag);
 
@@ -117,9 +102,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor();
-#endif
 
     MCAPI void* $ctor(::ItemStack const& rhs);
     // NOLINTEND

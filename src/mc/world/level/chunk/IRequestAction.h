@@ -17,6 +17,7 @@ public:
         TestAction                       = 1,
         StructureAnimationAction         = 2,
         JigsawStructurePostprocessAction = 3,
+        MultiBlockDelayedPlacement       = 4,
     };
 
 public:

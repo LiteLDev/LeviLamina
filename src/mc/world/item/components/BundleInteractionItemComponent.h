@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/NetworkedItemComponent.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class BundleInteractionItemComponent : public ::NetworkedItemComponent<::BundleInteractionItemComponent> {
@@ -21,7 +24,19 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
+
     MCAPI static ::HashedString const& getIdentifier();
 #endif
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -20,9 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void refreshContainer(::DynamicContainerManager const& menu) const;
 
     MCAPI void
     slotChanged(::DynamicContainerManager& menu, ::Container& container, int slot, ::ItemStack const& newItem) const;
+#endif
     // NOLINTEND
 };

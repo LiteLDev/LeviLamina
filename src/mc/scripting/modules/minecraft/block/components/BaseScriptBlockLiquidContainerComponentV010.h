@@ -13,6 +13,7 @@
 class BlockActor;
 class BlockPos;
 class BlockSource;
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -51,6 +52,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronLiquidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
+
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

@@ -12,10 +12,13 @@ class CompressedNetworkPeer : public ::NetworkPeer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>           mSendBuffer;
-    ::ll::TypedStorage<8, 32, ::std::string>           mReceiveBuffer;
-    ::ll::TypedStorage<1, 1, bool>                     mCompressionEnabled;
-    ::ll::TypedStorage<1, 1, bool>                     mHybridCompressionEnabled;
+    ::ll::TypedStorage<8, 32, ::std::string> mSendBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string> mReceiveBuffer;
+    ::ll::TypedStorage<1, 1, bool>           mCompressionEnabled;
+    ::ll::TypedStorage<1, 1, bool>           mHybridCompressionEnabled;
+#ifdef LL_PLAT_S
+    ::ll::TypedStorage<8, 8, uint64> mMaxDecompressedSize;
+#endif
     ::ll::TypedStorage<4, 20, ::NetworkSettingOptions> mNetworkSettings;
     // NOLINTEND
 

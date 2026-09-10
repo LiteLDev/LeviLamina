@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                     mCameraOffset;
     ::ll::TypedStorage<4, 4, int>                       mLifetime;
-    ::ll::TypedStorage<8, 88, ::TextureUVCoordinateSet> mTex;
+    ::ll::TypedStorage<8, 96, ::TextureUVCoordinateSet> mTex;
     ::ll::TypedStorage<4, 4, float>                     mU0;
     ::ll::TypedStorage<4, 4, float>                     mV0;
     ::ll::TypedStorage<4, 4, int>                       mAge;

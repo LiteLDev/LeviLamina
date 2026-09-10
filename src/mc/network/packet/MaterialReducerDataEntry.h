@@ -14,20 +14,4 @@ public:
     ::ll::TypedStorage<4, 4, int>                                          fromItemKey;
     ::ll::TypedStorage<8, 24, ::std::vector<::MaterialReducerEntryOutput>> toItemIdsAndCounts;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~MaterialReducerDataEntry();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
-    // NOLINTEND
 };

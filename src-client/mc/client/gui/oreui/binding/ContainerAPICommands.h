@@ -7,6 +7,7 @@
 #include "mc/client/gui/oreui/binding/methods/CallableImpl.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/InventoryLeftTabIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,76 +21,88 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void>>                           mCloseContainer;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                           mCloseContainer;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, ::ContainerEnumName, int, bool, bool>>
+        mHandleSlotMousePress;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, ::ContainerEnumName, int>>
+        mHandleSlotMouseRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, ::ContainerEnumName, int>> mHandleSlotMouseDrag;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>      mHandlePanelMouseRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int>> mHandleBackgroundMouseRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
         mTakeAllItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
         mTakeOneItem;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
         mTakeHalfItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
         mPlaceAllItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
         mPlaceOneItem;
     ::ll::TypedStorage<
         8,
-        136,
+        168,
         ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int, int>>
                                                                                               mPlaceAmountOfItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mDropAllItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mDropOneItem;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mDropAllItems;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mDropOneItem;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName>>
                                                                                               mCoalesceItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mCoalesceOrAutoPlaceItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mAutoPlaceItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mCoalesceOrAutoPlaceItems;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mAutoPlaceItems;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
         mSplitMultipleItems;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
         mSplitMultipleItemsTouch;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
                                                                                               mSplitSingleItem;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void>>                           mResetSplitStack;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mSetDistributeAllSource;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, bool>> mRecipeSelect;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>>       mAutoCraftOne;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>>       mAutoCraftAll;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>> mSetRecipeBookSearchString;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, bool>>          mSetRecipeBookFiltering;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int, int>>      mSelectTrade;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void>>                mPullInIngredientsForSelectedTrade;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int, int>>      mPerformAutoTrade;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>> mSetPreviewItemName;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                           mResetSplitStack;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mSetDistributeAllSource;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>           mSetRecipeBookSearchString;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, bool>>                    mSetRecipeBookFiltering;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::InventoryLeftTabIndex>> mSetRecipeBookTab;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, int>>                mSelectTrade;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                mPullInIngredientsForSelectedTrade;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, int>>      mPerformAutoTrade;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>> mSetPreviewItemName;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void autoCraftAllItemsFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
-
-    MCAPI void autoCraftOneItemFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
-
-    MCAPI void autoPlaceItems(::ContainerEnumName sourceName, int sourceIndex);
+    MCAPI void autoPlaceItems_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
 
     MCAPI void closeContainer();
 
     MCAPI void coalesceItems(::ContainerEnumName destinationName, int destinationIndex, ::ContainerEnumName sourceName);
 
-    MCAPI void coalesceOrAutoPlaceItems(::ContainerEnumName destinationName, int destinationIndex);
+    MCAPI void coalesceOrAutoPlaceItems_DEPRECATED(::ContainerEnumName destinationName, int destinationIndex);
 
-    MCAPI void dropAllItems(::ContainerEnumName sourceName, int sourceIndex);
+    MCAPI void dropAllItems_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
 
-    MCAPI void dropOneItem(::ContainerEnumName sourceName, int sourceIndex);
+    MCAPI void dropOneItem_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void handleBackgroundMouseRelease(int button);
+
+    MCAPI void handlePanelMouseRelease();
+
+    MCAPI void handleSlotMouseDrag(int button, ::ContainerEnumName container, int slot);
+
+    MCAPI void
+    handleSlotMousePress(int button, ::ContainerEnumName container, int slot, bool isDoubleClick, bool isShiftClick);
+
+    MCAPI void handleSlotMouseRelease(int button, ::ContainerEnumName container, int slot);
 
     MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void placeAllItems(
+    MCAPI void placeAllItems_DEPRECATED(
         ::ContainerEnumName selectedName,
         int                 selectedIndex,
         ::ContainerEnumName destinationName,
         int                 destinationIndex
     );
 
-    MCAPI void placeAmountOfItems(
+    MCAPI void placeAmountOfItems_DEPRECATED(
         ::ContainerEnumName selectedName,
         int                 selectedIndex,
         ::ContainerEnumName destinationName,
@@ -97,7 +110,7 @@ public:
         int                 amount
     );
 
-    MCAPI void placeOneItem(
+    MCAPI void placeOneItem_DEPRECATED(
         ::ContainerEnumName selectedName,
         int                 selectedIndex,
         ::ContainerEnumName destinationName,
@@ -106,13 +119,11 @@ public:
 
     MCAPI void pullInIngredientsForSelectedTrade();
 
-    MCAPI void resetSplitStack();
-
-    MCAPI void selectRecipe(::ContainerEnumName sourceName, int sourceIndex, bool displayOnly);
+    MCAPI void resetSplitStack_DEPRECATED();
 
     MCAPI void selectTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void setDistributeAllSource(::ContainerEnumName sourceName, int sourceIndex);
+    MCAPI void setDistributeAllSource_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
 
     MCAPI void setPreviewItemName(::std::string name);
 
@@ -120,42 +131,44 @@ public:
 
     MCAPI void setRecipeBookSearchString(::std::string searchText);
 
-    MCAPI void splitMultipleItems(
+    MCAPI void setRecipeBookTab(::InventoryLeftTabIndex tabIndex);
+
+    MCAPI void splitMultipleItemsTouch_DEPRECATED(
         ::ContainerEnumName selectedName,
         int                 selectedIndex,
         ::ContainerEnumName destinationName,
         int                 destinationIndex
     );
 
-    MCAPI void splitMultipleItemsTouch(
+    MCAPI void splitMultipleItems_DEPRECATED(
         ::ContainerEnumName selectedName,
         int                 selectedIndex,
         ::ContainerEnumName destinationName,
         int                 destinationIndex
     );
 
-    MCAPI void splitSingleItem(
+    MCAPI void splitSingleItem_DEPRECATED(
         ::ContainerEnumName sourceName,
         int                 sourceIndex,
         ::ContainerEnumName destinationName,
         int                 destinationIndex
     );
 
-    MCAPI void takeAllItems(
+    MCAPI void takeAllItems_DEPRECATED(
         ::ContainerEnumName destinationName,
         int                 destinationIndex,
         ::ContainerEnumName sourceName,
         int                 sourceIndex
     );
 
-    MCAPI void takeHalfItems(
+    MCAPI void takeHalfItems_DEPRECATED(
         ::ContainerEnumName destinationName,
         int                 destinationIndex,
         ::ContainerEnumName sourceName,
         int                 sourceIndex
     );
 
-    MCAPI void takeOneItem(
+    MCAPI void takeOneItem_DEPRECATED(
         ::ContainerEnumName destinationName,
         int                 destinationIndex,
         ::ContainerEnumName sourceName,

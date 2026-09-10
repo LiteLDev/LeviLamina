@@ -8,12 +8,18 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptProjectileHitIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptProjectileHitEntityAfterEvent : public ::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent {
+public:
+    // ScriptProjectileHitEntityAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,6 +34,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptProjectileHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
+
+    MCAPI ScriptProjectileHitEntityAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData> const& projectileHitEvent,
+        ::Scripting::WeakLifetimeScope const&                                                  scope
+    );
 
     MCAPI ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent&&);
@@ -46,6 +57,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData> const& projectileHitEvent,
+        ::Scripting::WeakLifetimeScope const&                                                  scope
+    );
     // NOLINTEND
 };
 

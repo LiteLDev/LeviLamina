@@ -38,9 +38,17 @@ public:
     );
 #endif
 
-    virtual void onLowDiskSpace(bool const bSet);
+#ifdef LL_PLAT_S
+    virtual void onLowDiskSpace(bool const, uint64);
+#else // LL_PLAT_C
+    virtual void onLowDiskSpace(bool const bSet, uint64 freeSpace);
+#endif
 
-    virtual void onOutOfDiskSpace(bool const bSet);
+#ifdef LL_PLAT_S
+    virtual void onOutOfDiskSpace(bool const, uint64);
+#else // LL_PLAT_C
+    virtual void onOutOfDiskSpace(bool const bSet, uint64 freeSpace);
+#endif
 
     virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
     // NOLINTEND
@@ -74,9 +82,17 @@ public:
     );
 #endif
 
-    MCFOLD void $onLowDiskSpace(bool const bSet);
+#ifdef LL_PLAT_S
+    MCFOLD void $onLowDiskSpace(bool const, uint64);
+#else // LL_PLAT_C
+    MCFOLD void $onLowDiskSpace(bool const bSet, uint64 freeSpace);
+#endif
 
-    MCFOLD void $onOutOfDiskSpace(bool const bSet);
+#ifdef LL_PLAT_S
+    MCFOLD void $onOutOfDiskSpace(bool const, uint64);
+#else // LL_PLAT_C
+    MCFOLD void $onOutOfDiskSpace(bool const bSet, uint64 freeSpace);
+#endif
 
     MCFOLD void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
 

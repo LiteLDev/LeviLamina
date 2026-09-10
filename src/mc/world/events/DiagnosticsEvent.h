@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/profile/ScopeDataSummary.h"
 
 // auto generated inclusion list
 #include "mc/entity/profiling/EntitySystemDiagnosticSummary.h"
@@ -16,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::ProfilerLiteTelemetry>                                      mTelemetry;
-    ::ll::TypedStorage<8, 48, ::ECS::Profiling::Diagnostics::EntitySystemDiagnosticSummary> mEntitySystemDiagnostics;
+    ::ll::TypedStorage<8, 80, ::ECS::Profiling::Diagnostics::EntitySystemDiagnosticSummary> mEntitySystemDiagnostics;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::Profile::Whisker::Diagnostics::ScopeDataSummary>> mWhiskerData;
     ::ll::TypedStorage<8, 32, ::std::string>                                                             mPlayerName;
     // NOLINTEND

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListener.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
@@ -31,6 +32,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual bool isTypeOrDerived(::BlockActorType type) const /*override*/;
+
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -63,6 +66,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);

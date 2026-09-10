@@ -19,10 +19,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 312, ::OreUI::RouterHistoryAdapter>                      mRouter;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>> mPush;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>> mReplace;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void>>                mBack;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int>>           mGo;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>> mPush;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>> mReplace;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                mBack;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int>>           mGo;
     // NOLINTEND
 
 public:

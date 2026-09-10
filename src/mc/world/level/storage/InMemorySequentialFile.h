@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InMemoryFile;
+// clang-format on
+
 class InMemorySequentialFile : public ::leveldb::SequentialFile {
 public:
     // member variables
@@ -24,6 +29,22 @@ public:
     virtual ::leveldb::Status Read(uint64 n, ::leveldb::Slice* result, char* scratch) /*override*/;
 
     virtual ::leveldb::Status Skip(uint64 n) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI explicit InMemorySequentialFile(::std::shared_ptr<::InMemoryFile> file);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::std::shared_ptr<::InMemoryFile> file);
+#endif
     // NOLINTEND
 
 public:

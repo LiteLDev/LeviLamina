@@ -84,8 +84,6 @@ public:
     MCAPI void
     executeEvent(::BlockSource&, ::BlockPos const& pos, ::Block const&, ::std::string const& eventName, ::Actor& actor);
 
-    MCAPI void loadUserData(::CompoundTag const& tag);
-
     MCAPI void saveUserData(::CompoundTag& tag) const;
 
     MCAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
@@ -139,9 +137,9 @@ public:
         ::BlockSource const*          region
     ) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

@@ -12,6 +12,7 @@ class CompoundTag;
 class HashedString;
 class PropertyGroup;
 class PropertyMetadata;
+class RenderParams;
 class Tag;
 struct MolangScriptArg;
 struct PropertySyncData;
@@ -26,9 +27,23 @@ public:
     ::ll::TypedStorage<8, 104, ::PropertyValues>                                         mValues;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PropertyContainer();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI PropertyContainer(
+        ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
+        ::RenderParams&                                           renderParams
+    );
+#endif
+
     MCAPI void _addDataToCompoundTag(::CompoundTag& compoundTag, ::PropertyMetadata const& propertyMetadata) const;
 
     MCAPI ::std::optional<uint64>
@@ -50,5 +65,14 @@ public:
         ::std::string const&                                                  aliasName,
         ::std::string const&                                                  canonicalName
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void*
+    $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
+#endif
     // NOLINTEND
 };

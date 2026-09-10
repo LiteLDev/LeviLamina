@@ -4,17 +4,12 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft::Releases { struct VersionRelease; }
 namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::Releases {
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
-MCAPI ::std::add_lvalue_reference_t<::ScriptModuleMinecraft::Releases::VersionRelease const[]> ALL_RELEASES();
-#endif
-
 MCAPI ::Scripting::Version const& V010();
 
 MCAPI ::Scripting::Version const& V1_0_0();
@@ -74,6 +69,8 @@ MCAPI ::Scripting::Version const& V2_6_0();
 MCAPI ::Scripting::Version const& V2_7_0();
 
 MCAPI ::Scripting::Version const& V2_8_0();
+
+MCAPI ::Scripting::Version const& V2_9_0();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::Releases

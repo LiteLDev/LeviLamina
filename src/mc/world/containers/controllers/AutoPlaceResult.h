@@ -16,20 +16,4 @@ public:
     AutoPlaceResult& operator=(AutoPlaceResult const&);
     AutoPlaceResult(AutoPlaceResult const&);
     AutoPlaceResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI AutoPlaceResult(::std::string const& _collectionName, int _collectionIndex, bool _slotEmpty);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::string const& _collectionName, int _collectionIndex, bool _slotEmpty);
-#endif
-    // NOLINTEND
 };

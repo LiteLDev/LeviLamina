@@ -6,6 +6,11 @@
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
+// auto generated forward declare list
+// clang-format off
+class LocalConnector;
+// clang-format on
+
 class LocalNetworkPeer : public ::NetworkPeer {
 public:
     // LocalNetworkPeer inner types declare
@@ -32,27 +37,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk6cf7f4;
     ::ll::UntypedStorage<8, 16> mUnk4398dc;
     ::ll::UntypedStorage<8, 8>  mUnk1898c5;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     LocalNetworkPeer& operator=(LocalNetworkPeer const&);
     LocalNetworkPeer(LocalNetworkPeer const&);
     LocalNetworkPeer();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    LocalNetworkPeer& operator=(LocalNetworkPeer const&);
-    LocalNetworkPeer(LocalNetworkPeer const&);
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ~LocalNetworkPeer() /*override*/ = default;
+
     virtual void sendPacket(::std::string const& data, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
@@ -71,7 +71,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI LocalNetworkPeer();
+    MCNAPI explicit LocalNetworkPeer(::LocalConnector& connector);
 #endif
     // NOLINTEND
 
@@ -79,7 +79,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::LocalConnector& connector);
 #endif
     // NOLINTEND
 

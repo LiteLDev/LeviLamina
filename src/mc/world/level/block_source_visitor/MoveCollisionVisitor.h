@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace BlockSourceVisitor { struct VisitArgs; }
+// clang-format on
+
 namespace BlockSourceVisitor {
 
 struct MoveCollisionVisitor {
@@ -16,6 +21,12 @@ public:
     MoveCollisionVisitor& operator=(MoveCollisionVisitor const&);
     MoveCollisionVisitor(MoveCollisionVisitor const&);
     MoveCollisionVisitor();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void operator()(::BlockSourceVisitor::VisitArgs const& args);
+    // NOLINTEND
 };
 
 } // namespace BlockSourceVisitor

@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/persona/PieceType.h"
 #include "mc/platform/UUID.h"
-#include "mc/world/actor/player/persona/PieceType.h"
 
 class SerializedPersonaPieceHandle {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>       mPieceId;
-    ::ll::TypedStorage<4, 4, ::persona::PieceType> mPieceType;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>         mPackId;
-    ::ll::TypedStorage<1, 1, bool>                 mIsDefaultPiece;
-    ::ll::TypedStorage<8, 32, ::std::string>       mProductId;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mPieceId;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::persona::PieceType> mPieceType;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                      mPackId;
+    ::ll::TypedStorage<1, 1, bool>                              mIsDefaultPiece;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mProductId;
     // NOLINTEND
 
 public:
@@ -28,16 +28,12 @@ public:
     MCAPI SerializedPersonaPieceHandle(::SerializedPersonaPieceHandle const&);
 
     MCAPI SerializedPersonaPieceHandle(
-        ::std::string const& pieceId,
-        ::persona::PieceType pieceType,
-        ::mce::UUID          packId,
-        bool                 isDefaultPiece,
-        ::std::string const& productId
+        ::std::string const&              pieceId,
+        ::SharedTypes::persona::PieceType pieceType,
+        ::mce::UUID                       packId,
+        bool                              isDefaultPiece,
+        ::std::string const&              productId
     );
-
-#ifdef LL_PLAT_S
-    MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle&&);
-#endif
 
     MCAPI bool operator==(::SerializedPersonaPieceHandle const& rhs) const;
     // NOLINTEND
@@ -48,11 +44,11 @@ public:
     MCAPI void* $ctor(::SerializedPersonaPieceHandle const&);
 
     MCAPI void* $ctor(
-        ::std::string const& pieceId,
-        ::persona::PieceType pieceType,
-        ::mce::UUID          packId,
-        bool                 isDefaultPiece,
-        ::std::string const& productId
+        ::std::string const&              pieceId,
+        ::SharedTypes::persona::PieceType pieceType,
+        ::mce::UUID                       packId,
+        bool                              isDefaultPiece,
+        ::std::string const&              productId
     );
     // NOLINTEND
 };

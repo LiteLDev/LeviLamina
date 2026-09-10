@@ -29,9 +29,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const
-        /*override*/;
-
     virtual bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::IRandom& random) const /*override*/;
 
     virtual bool _shouldStopRandomWalk(::BlockSource& region, ::BlockPos& pos) const /*override*/;
@@ -43,6 +40,8 @@ public:
     MCAPI GrassBlock(::std::string const& nameId, int id);
 
 #ifdef LL_PLAT_C
+    MCAPI int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
+
     MCAPI void initSideColorsFromAtlas(::std::vector<::mce::Color> colors) const;
 #endif
     // NOLINTEND
@@ -56,8 +55,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
-
     MCAPI bool $_plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::IRandom& random) const;
 
     MCAPI bool $_shouldStopRandomWalk(::BlockSource& region, ::BlockPos& pos) const;

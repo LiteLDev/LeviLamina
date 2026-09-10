@@ -8,8 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ContainerScreenContext;
 class ItemStack;
+class MerchantRecipe;
+class MerchantRecipeList;
 class Player;
 struct ActorUniqueID;
 // clang-format on
@@ -59,15 +62,25 @@ public:
     MCAPI Trade2ContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
 
 #ifdef LL_PLAT_C
+    MCAPI ::MerchantRecipeList* getAllTrades() const;
+
     MCAPI int getCurrentTradeExp() const;
 
     MCFOLD ::std::string getDisplayName();
 
     MCAPI ::std::string getDisplayNameTag() const;
 
+    MCAPI ::Actor* getEntity() const;
+
+    MCAPI int getEntityMaxTradeTier() const;
+
     MCAPI int getEntityTradeTier() const;
 
     MCAPI ::std::vector<int> getNumberOfTradesByTier() const;
+
+    MCAPI ::MerchantRecipe* getSelectedTrade() const;
+
+    MCAPI ::MerchantRecipe* getTrade(int tier, int index) const;
 
     MCAPI int getTradeExpForCurrentRequirement(uint currentExp) const;
 
@@ -76,6 +89,12 @@ public:
     MCAPI int getTradeIndex(int tier, int index) const;
 
     MCAPI bool hasAvailableTradeWithSecondItem() const;
+
+    MCAPI bool isSelectedTrade(int tier, int index) const;
+
+    MCAPI void setSelectedTrade(int index);
+
+    MCAPI void setSelectedTrade(int tier, int index);
 #endif
     // NOLINTEND
 

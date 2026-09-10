@@ -146,7 +146,7 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 

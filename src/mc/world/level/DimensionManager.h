@@ -23,6 +23,7 @@ class LevelStorage;
 struct DimensionIdType;
 struct DimensionType;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace mce { class UUID; }
 // clang-format on
 class IDimensionFactory;
 
@@ -76,7 +77,11 @@ public:
     );
 #endif
 
-    MCAPI bool _registerCustomDimensionWithDimensionDefinitionGroup(::std::string_view name, ::DimensionType type);
+    MCAPI bool _registerCustomDimensionWithDimensionDefinitionGroup(
+        ::std::string_view name,
+        ::DimensionType    type,
+        ::mce::UUID const& packId
+    );
 
     MCAPI void _registerCustomDimensionWithFactory(::std::string_view name, ::DimensionType type);
 
@@ -90,13 +95,18 @@ public:
 
     MCAPI ::WeakRef<::Dimension> getDimension(::DimensionType dimensionType) const;
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
+    getDimensionDefinition(::DimensionType dimensionType) const;
+#endif
+
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::std::string_view dimensionName);
 
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
 
     MCAPI void serverInitialize(
         ::ILevelStorageManagerConnector& levelStorageManagerConnector,
-        ::DimensionDefinitionGroup       dimensionDefinitionGroup
+        ::DimensionDefinitionGroup       jsonDefinitionGroup
     );
 
     MCAPI void serverSaveDimensionNameIdStoreTable(::LevelStorage& levelStorage) const;
@@ -118,7 +128,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Connector<void(::DimensionManager&)>& $getOnReadyForCustomDimensionRegistrationConnector();
+#else // LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
+    $getOnReadyForCustomDimensionRegistrationConnector();
+#endif
 
 #ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();

@@ -16,8 +16,6 @@ class IgniteSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IgniteSubcomponent() /*override*/ = default;
-
     virtual void readfromJSON(::Json::Value&) /*override*/;
 
     virtual void writetoJSON(::Json::Value&) const /*override*/;
@@ -39,11 +37,5 @@ public:
     MCAPI char const* $getName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

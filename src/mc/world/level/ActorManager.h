@@ -127,7 +127,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+#else // LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+#endif
 
 #ifdef LL_PLAT_S
     MCAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&

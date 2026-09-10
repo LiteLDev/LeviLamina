@@ -48,7 +48,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& tag) const /*override*/;
 
     virtual ::IVanillaRenderBlockActorComponent*
     getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
@@ -79,7 +79,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& tag) const;
 
     MCAPI ::IVanillaRenderBlockActorComponent* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 

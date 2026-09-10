@@ -20,8 +20,6 @@ namespace ServerPlayerBlockUseHandler {
 // NOLINTBEGIN
 MCAPI bool isValidSourceRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
 
-MCAPI void onAbortDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int progress);
-
 MCAPI void onBeforeMovementSimulation(
     ::ServerPlayer&                                      player,
     ::PlayerBlockActions const&                          blockActions,

@@ -60,7 +60,9 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedAbilitiesData(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
 
+#ifdef LL_PLAT_C
     MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
+#endif
 
     MCAPI ~SerializedAbilitiesData();
     // NOLINTEND

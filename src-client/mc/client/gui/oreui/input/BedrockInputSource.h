@@ -14,6 +14,12 @@ namespace OreUI {
 
 class BedrockInputSource {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mIgnoreBedrockInput;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI void handleInput(::OreUI::ViewInputHandler& inputHandler, ::OreUI::GamepadMode gamepadMode);

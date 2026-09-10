@@ -64,7 +64,7 @@ public:
 
     virtual void render(
         ::ScreenContext& screenContext,
-        ::Actor&         e,
+        ::Actor&         entity,
         float            time,
         float            r,
         float            bob,
@@ -150,7 +150,7 @@ public:
 
     MCAPI void $render(
         ::ScreenContext& screenContext,
-        ::Actor&         e,
+        ::Actor&         entity,
         float            time,
         float            r,
         float            bob,

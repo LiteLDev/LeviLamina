@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockActor;
 class BlockSource;
 class CompoundTag;
 class Container;
@@ -18,6 +19,8 @@ class IVanillaMainBlockActorComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ::BlockActor& getBlockActor() = 0;
+
     virtual ::BlockActorType getBlockActorType() const = 0;
 
     virtual ::Container* getContainer() = 0;

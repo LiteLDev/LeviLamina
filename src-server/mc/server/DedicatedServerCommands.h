@@ -9,6 +9,7 @@
 // clang-format off
 class AllowListFile;
 class DedicatedServer;
+class EditorAllowList;
 class IMinecraftApp;
 class Level;
 class LevelStorage;
@@ -27,6 +28,7 @@ public:
         ::LevelStorage&,
         ::DedicatedServer& dedicatedServer,
         ::AllowListFile&   allowListFile,
+        ::EditorAllowList& editorAllowList,
         ::ScriptSettings*  scriptSettings
     );
     // NOLINTEND

@@ -17,18 +17,18 @@ class BlendingDataProvider;
 class ChunkKey;
 class ChunkViewSource;
 class DBStorage;
-class Experiments;
 class IDataInput;
 class LevelChunk;
 class LevelChunkMetaDataDictionary;
 class LevelStorageWriteBatch;
-class Scheduler;
 class TaskGroup;
 struct ActorUnloadedChunkTransferEntry;
 struct ChunkDeletionMetadata;
 struct DimensionType;
 struct LevelChunkFinalDeleter;
 struct PersistentBlendData;
+namespace br::worldgen { class StructureInstance; }
+namespace br::worldgen { struct Structure; }
 // clang-format on
 
 class DBChunkStorage : public ::ChunkSource {
@@ -151,18 +151,14 @@ public:
     virtual void deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk) /*override*/;
 
     virtual bool chunkPosNeedsBlending(::ChunkPos const& cp) /*override*/;
+
+    virtual ::std::shared_ptr<::br::worldgen::StructureInstance>
+    _tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DBChunkStorage(
-        ::std::unique_ptr<::ChunkSource> parent,
-        ::DBStorage&                     storage,
-        ::Scheduler&                     scheduler,
-        ::Experiments const&             experiments
-    );
-
     MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(
         ::ChunkPos                        chunkPos,
         bool                              isCompleted,
@@ -201,8 +197,6 @@ public:
     MCAPI ::std::string _upgradeActorStorage(::ChunkKey chunkKey, ::std::string_view& legacyActorData);
 
     MCAPI void _writeDiscardChunksBatch();
-
-    MCAPI void freeCaches();
     // NOLINTEND
 
 public:
@@ -217,17 +211,6 @@ public:
         bool                                                      hasActorDigestVersionTag,
         ::std::string const&                                      storageKeyDigestBuffer,
         ::std::function<bool(::std::string_view, ::std::string&)> loadDataCallback
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::ChunkSource> parent,
-        ::DBStorage&                     storage,
-        ::Scheduler&                     scheduler,
-        ::Experiments const&             experiments
     );
     // NOLINTEND
 
@@ -292,6 +275,9 @@ public:
     MCAPI void $deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
+
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 
     // NOLINTEND

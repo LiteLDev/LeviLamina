@@ -29,6 +29,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                  mPackImportExistenceTracker;
     ::ll::TypedStorage<8, 8, ::IContentAcquisition::ImportCallbackId>                   mImportCallbackId;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::vector<::DlcId>>>                mFailedPackImports;
+    ::ll::TypedStorage<1, 1, bool>                                                      mAttemptedServerFallback;
     // NOLINTEND
 
 public:

@@ -18,6 +18,12 @@ public:
     WidgetPrimComponentBox& operator=(WidgetPrimComponentBox const&);
     WidgetPrimComponentBox(WidgetPrimComponentBox const&);
     WidgetPrimComponentBox();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentBox const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Network

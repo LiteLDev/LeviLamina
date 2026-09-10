@@ -56,7 +56,7 @@ public:
     ::ll::TypedStorage<1, 1, bool const>                                            mIsFromRealmsPDP;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                              mActionAfterCreate;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>> mEntitlementManager;
-    ::ll::TypedStorage<8, 656, ::Realms::World>                                     mNewWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                                     mNewWorld;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Realms::World&)>>              mRealmCreatedCallback;
     // NOLINTEND
 

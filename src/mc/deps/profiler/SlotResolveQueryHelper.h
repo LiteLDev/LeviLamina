@@ -35,6 +35,9 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI SlotResolveQueryHelper(::std::thread::id thread, ::gsl::span<::std::string_view const> names);
 
+    MCNAPI ::Bedrock::Profile::Whisker::SlotResolveQueryHelper&
+    operator=(::Bedrock::Profile::Whisker::SlotResolveQueryHelper&&);
+
     MCNAPI ::gsl::span<::gsl::not_null<::Bedrock::Profile::Whisker::ScopeData const*>> tryResolveAndFetchAll();
 
     MCNAPI ~SlotResolveQueryHelper();

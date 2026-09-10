@@ -115,5 +115,7 @@ public:
     virtual void onStorageChanged() = 0;
 
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const = 0;
+
+    virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const& levelId) const = 0;
     // NOLINTEND
 };

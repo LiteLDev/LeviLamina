@@ -19,11 +19,45 @@ class PreloadCache : public ::std::enable_shared_from_this<::Bedrock::Resources:
 public:
     // PreloadCache inner types declare
     // clang-format off
+    struct InFlightTocBuild;
+    struct InFlightTocBuilds;
     struct PreloadedContentMaps;
     struct SharedOnlyConstructionTag;
     // clang-format on
 
     // PreloadCache inner types define
+    struct InFlightTocBuild {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 80> mUnkf310d5;
+        ::ll::UntypedStorage<8, 72> mUnk4655ba;
+        ::ll::UntypedStorage<1, 1>  mUnkb8d676;
+        ::ll::UntypedStorage<8, 16> mUnk262761;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        InFlightTocBuild& operator=(InFlightTocBuild const&);
+        InFlightTocBuild(InFlightTocBuild const&);
+        InFlightTocBuild();
+    };
+
+    struct InFlightTocBuilds {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 80> mUnka1d340;
+        ::ll::UntypedStorage<8, 64> mUnkff858f;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        InFlightTocBuilds& operator=(InFlightTocBuilds const&);
+        InFlightTocBuilds(InFlightTocBuilds const&);
+        InFlightTocBuilds();
+    };
+
     struct PreloadedContentMaps {
     public:
         // member variables
@@ -46,6 +80,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 136> mUnk3091c8;
     ::ll::UntypedStorage<8, 16>  mUnk407c1f;
+    ::ll::UntypedStorage<8, 8>   mUnk693ed0;
+    ::ll::UntypedStorage<8, 16>  mUnka4641f;
     ::ll::UntypedStorage<8, 72>  mUnkba8bc7;
     // NOLINTEND
 
@@ -58,10 +94,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PreloadCache(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
-
     MCNAPI ::std::shared_ptr<::Bedrock::Resources::Archive::TOCReader>
-    _cacheTOCReader(::Core::Path const& archivePath) const;
+    _cacheTOCReaderSingleFlight(::Core::Path const& archivePath) const;
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(
         ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
@@ -96,12 +130,6 @@ public:
         ::Core::Path const&                                 path,
         ::Bedrock::Resources::Archive::Reader*              reader
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
     // NOLINTEND
 };
 

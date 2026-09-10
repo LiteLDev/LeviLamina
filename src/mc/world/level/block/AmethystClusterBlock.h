@@ -13,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class Experiments;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -29,8 +28,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockType& init() /*override*/;
-
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const /*override*/;
@@ -47,6 +44,8 @@ public:
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
+    virtual ::Block const& getInitialDefaultState() /*override*/;
+
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
@@ -59,8 +58,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockType& $init();
-
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
@@ -74,6 +71,8 @@ public:
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

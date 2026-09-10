@@ -36,6 +36,8 @@ public:
 
     virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int index) const = 0;
 
+    virtual bool isWorldTemplateInstalled(::mce::UUID const& uuid) const = 0;
+
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) = 0;
 
     virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const = 0;

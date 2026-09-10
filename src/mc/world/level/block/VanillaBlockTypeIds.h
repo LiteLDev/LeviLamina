@@ -1474,6 +1474,8 @@ MCAPI ::HashedString const& OrangeConcretePowder();
 
 MCAPI ::HashedString const& OrangeGlazedTerracotta();
 
+MCAPI ::HashedString const& OrangePoplarLeaves();
+
 MCAPI ::HashedString const& OrangeShulkerBox();
 
 MCAPI ::HashedString const& OrangeStainedGlass();
@@ -1706,6 +1708,40 @@ MCAPI ::HashedString const& PolishedTuffStairs();
 
 MCAPI ::HashedString const& PolishedTuffWall();
 
+MCAPI ::HashedString const& PoplarButton();
+
+MCAPI ::HashedString const& PoplarDoor();
+
+MCAPI ::HashedString const& PoplarDoubleSlab();
+
+MCAPI ::HashedString const& PoplarFence();
+
+MCAPI ::HashedString const& PoplarFenceGate();
+
+MCAPI ::HashedString const& PoplarHangingSign();
+
+MCAPI ::HashedString const& PoplarLog();
+
+MCAPI ::HashedString const& PoplarPlanks();
+
+MCAPI ::HashedString const& PoplarPressurePlate();
+
+MCAPI ::HashedString const& PoplarSapling();
+
+MCAPI ::HashedString const& PoplarShelf();
+
+MCAPI ::HashedString const& PoplarSlab();
+
+MCAPI ::HashedString const& PoplarStairs();
+
+MCAPI ::HashedString const& PoplarStandingSign();
+
+MCAPI ::HashedString const& PoplarTrapdoor();
+
+MCAPI ::HashedString const& PoplarWallSign();
+
+MCAPI ::HashedString const& PoplarWood();
+
 MCAPI ::HashedString const& Poppy();
 
 MCAPI ::HashedString const& Portal();
@@ -1821,6 +1857,8 @@ MCAPI ::HashedString const& RedNetherBrickSlab();
 MCAPI ::HashedString const& RedNetherBrickStairs();
 
 MCAPI ::HashedString const& RedNetherBrickWall();
+
+MCAPI ::HashedString const& RedPoplarLeaves();
 
 MCAPI ::HashedString const& RedSand();
 
@@ -2052,6 +2090,8 @@ MCAPI ::HashedString const& Stonecutter();
 
 MCAPI ::HashedString const& StonecutterBlock();
 
+MCAPI ::HashedString const& StrawBed();
+
 MCAPI ::HashedString const& StrippedAcaciaLog();
 
 MCAPI ::HashedString const& StrippedAcaciaWood();
@@ -2089,6 +2129,10 @@ MCAPI ::HashedString const& StrippedOakWood();
 MCAPI ::HashedString const& StrippedPaleOakLog();
 
 MCAPI ::HashedString const& StrippedPaleOakWood();
+
+MCAPI ::HashedString const& StrippedPoplarLog();
+
+MCAPI ::HashedString const& StrippedPoplarWood();
 
 MCAPI ::HashedString const& StrippedSpruceLog();
 
@@ -2471,6 +2515,8 @@ MCAPI ::HashedString const& YellowConcrete();
 MCAPI ::HashedString const& YellowConcretePowder();
 
 MCAPI ::HashedString const& YellowGlazedTerracotta();
+
+MCAPI ::HashedString const& YellowPoplarLeaves();
 
 MCAPI ::HashedString const& YellowShulkerBox();
 

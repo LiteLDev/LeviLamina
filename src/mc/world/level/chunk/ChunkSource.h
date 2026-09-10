@@ -209,7 +209,6 @@ public:
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
-#ifdef LL_PLAT_C
     MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
         ::ChunkSource::LoadMode                                             lm,
         bool                                                                circle,
@@ -217,7 +216,6 @@ public:
         ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
         float const*                                                        serverBuildRatio
     );
-#endif
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -327,11 +325,7 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
-#ifdef LL_PLAT_S
-    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
-#else // LL_PLAT_C
     MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
-#endif
 
     MCAPI bool $canLaunchTasks() const;
 

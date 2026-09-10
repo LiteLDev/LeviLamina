@@ -34,7 +34,9 @@ public:
 
     MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
 
+#ifdef LL_PLAT_C
     MCAPI explicit ActorDefinitionIdentifier(::std::string_view fullName);
+#endif
 
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const& other);
 
@@ -72,7 +74,9 @@ public:
 
     MCAPI void* $ctor(char const* fullName);
 
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::std::string_view fullName);
+#endif
 
     MCAPI void* $ctor(::ActorDefinitionIdentifier const& other);
 

@@ -15,11 +15,23 @@ class BlockEventResponseFactory : public ::EventResponseFactory, public ::IPackL
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~BlockEventResponseFactory() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~BlockEventResponseFactory() /*override*/;
+#endif
 
     virtual void initializeFactory(::PackLoadInfo const& packLoadInfo) /*override*/;
 
     virtual void initSchema() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
@@ -30,5 +42,13 @@ public:
     MCAPI void $initSchema();
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForIPackLoadScoped();
+
+    MCNAPI static void** $vftableForEventResponseFactory();
     // NOLINTEND
 };

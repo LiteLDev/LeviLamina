@@ -217,6 +217,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayScreenModel(::MinecraftScreenModelContext context);
 
+    MCAPI void _fetchTrialAvailability();
+
     MCAPI void _navigateToEditWorldScreen(::LocalWorldInfo const& info);
 
     MCAPI void _populateAdditionalRealmsWorldsInfo();
@@ -234,6 +236,8 @@ public:
     MCAPI void _populateRealmsWorldsInternal(bool ofUnpairedParentRealms);
 
     MCAPI void _remove3PServersMismatchingEditorMode();
+
+    MCAPI void _requestPendingInviteCount();
 
     MCAPI void _sortRealmsWorlds(::std::string const currentUserXUID, ::std::vector<::Realms::World>& worlds);
 

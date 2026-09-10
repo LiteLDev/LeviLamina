@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class GameDependencies; }
-namespace Realms { struct World; }
+namespace Social { struct RealmWorldPublisherData; }
 // clang-format on
 
 namespace OreUI {
@@ -33,7 +33,9 @@ public:
     // NOLINTBEGIN
     MCAPI CurrentRealmQuery(::OreUI::GameDependencies const& game, ::std::string xuid);
 
-    MCAPI void _fetchRealmProperties(::Realms::World const& world, ::std::string xuid);
+    MCAPI void _clearRealmProperties();
+
+    MCAPI void _setRealmProperties(::Social::RealmWorldPublisherData const& realmData, ::std::string xuid);
     // NOLINTEND
 
 public:

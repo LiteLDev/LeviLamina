@@ -5,6 +5,9 @@
 #include "mc/world/events/ActorAddEffectEvent.h"
 #include "mc/world/events/ActorAnimationChangedEvent.h"
 #include "mc/world/events/ActorAttackEvent.h"
+#include "mc/world/events/ActorBeforeAcquireItemEvent.h"
+#include "mc/world/events/ActorBeforeHealEvent.h"
+#include "mc/world/events/ActorBeforeHurtEvent.h"
 #include "mc/world/events/ActorCarriedItemChangedEvent.h"
 #include "mc/world/events/ActorDefinitionEndedEvent.h"
 #include "mc/world/events/ActorDefinitionStartedEvent.h"
@@ -13,8 +16,11 @@
 #include "mc/world/events/ActorDroppedItemEvent.h"
 #include "mc/world/events/ActorEquippedArmorEvent.h"
 #include "mc/world/events/ActorGriefingBlockEvent.h"
+#include "mc/world/events/ActorHealEvent.h"
 #include "mc/world/events/ActorHealthChangedEvent.h"
 #include "mc/world/events/ActorHurtEvent.h"
+#include "mc/world/events/ActorItemEventAfterDroppedItem.h"
+#include "mc/world/events/ActorItemEventBeforeDroppedItem.h"
 #include "mc/world/events/ActorKilledEvent.h"
 #include "mc/world/events/ActorPlacedItemEvent.h"
 #include "mc/world/events/ActorRemoveEffectEvent.h"
@@ -25,9 +31,12 @@
 #include "mc/world/events/ActorUpgradeStartedEvent.h"
 #include "mc/world/events/ActorUpgradeTriggeredEvent.h"
 #include "mc/world/events/ActorUseItemEvent.h"
+#include "mc/world/events/BeforeMountTamingEvent.h"
+#include "mc/world/events/BeforeTamingEvent.h"
 #include "mc/world/events/KnockBackEvent.h"
 #include "mc/world/events/MountTamingEvent.h"
 #include "mc/world/events/ProjectileHitEvent.h"
+#include "mc/world/events/TamingEvent.h"
 
 // auto generated inclusion list
 #include "mc/world/events/EventVariantImpl.h"
@@ -64,9 +73,12 @@ struct ActorUpgradeEndedEvent;
 struct ActorUpgradeStartedEvent;
 struct ActorUpgradeTriggeredEvent;
 struct ActorUseItemEvent;
+struct BeforeMountTamingEvent;
+struct BeforeTamingEvent;
 struct KnockBackEvent;
 struct MountTamingEvent;
 struct ProjectileHitEvent;
+struct TamingEvent;
 // clang-format on
 
 struct ActorNotificationEvent : public ::EventVariantImpl<
@@ -92,6 +104,7 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorUseItemEvent const,
                                     ::KnockBackEvent const,
                                     ::MountTamingEvent const,
+                                    ::TamingEvent const,
                                     ::ActorItemEventAfterDroppedItem const,
                                     ::ProjectileHitEvent const,
                                     ::ActorGriefingBlockEvent const,
@@ -102,4 +115,6 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorBeforeAcquireItemEvent const,
                                     ::ActorBeforeHealEvent const,
                                     ::ActorBeforeHurtEvent const,
+                                    ::BeforeTamingEvent const,
+                                    ::BeforeMountTamingEvent const,
                                     ::ActorUpgradeStartedEvent const> {};

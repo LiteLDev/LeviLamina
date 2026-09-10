@@ -14,6 +14,7 @@ namespace Gameface { class ResourceResponse; }
 namespace Gameface { class ResourceStreamResponse; }
 namespace Gameface { class TemporaryTextureHolder; }
 namespace Gameface { struct ResourceRequest; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace OreUI {
@@ -51,8 +52,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ResourceLocation>
-    _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
+    MCAPI ::std::optional<::ResourceLocation> _getAssetResourceLocationFromResourcePackManager(
+        ::Gameface::ResourceRequest const&  request,
+        ::std::optional<::mce::UUID> const& packId
+    ) const;
     // NOLINTEND
 
 public:

@@ -127,7 +127,7 @@ public:
 
     MCFOLD ::HashedString const& getTagFilter() const;
 
-    MCAPI ::std::vector<::HashedString> const& getTagList() const;
+    MCFOLD ::std::vector<::HashedString> const& getTagList() const;
 
     MCAPI void setLogLevelFilter(::Editor::LogLevelFilter filter);
 

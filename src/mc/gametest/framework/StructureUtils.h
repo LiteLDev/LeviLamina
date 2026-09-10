@@ -49,14 +49,6 @@ FindStructureBlocks(::BlockPos const& centerPos, int searchRadius, ::BlockSource
 MCAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
 
 MCAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
-
-MCAPI ::StructureBlockActor* SpawnStructure(
-    ::std::string const& structureName,
-    ::BlockPos const&    northWestCorner,
-    ::Rotation           rotation,
-    int,
-    ::BlockSource& region
-);
 // NOLINTEND
 
 } // namespace gametest::StructureUtils

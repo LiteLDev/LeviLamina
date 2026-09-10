@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core_graphics/TextureSetLayerType.h"
+
 // auto generated forward declare list
 // clang-format off
 class ScreenContext;
 class Tessellator;
-namespace mce { class TexturePtr; }
+struct FlipbookTextureDescription;
+struct TextureUVCoordinateSet;
+namespace mce { class TextureGroup; }
 namespace mce { struct ViewportInfo; }
 namespace mce::framebuilder { struct BlitFlipbookSingleTextureDescription; }
 // clang-format on
@@ -16,11 +21,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24>  mUnkbca3d9;
-    ::ll::UntypedStorage<8, 88>  mUnkba2b97;
+    ::ll::UntypedStorage<8, 96>  mUnkba2b97;
     ::ll::UntypedStorage<4, 4>   mUnk3e9001;
     ::ll::UntypedStorage<8, 32>  mUnk662201;
     ::ll::UntypedStorage<8, 16>  mUnk31f342;
-    ::ll::UntypedStorage<8, 592> mUnk3657f7;
+    ::ll::UntypedStorage<8, 616> mUnk3657f7;
     ::ll::UntypedStorage<8, 56>  mUnk350955;
     ::ll::UntypedStorage<4, 4>   mUnkdd2ba5;
     ::ll::UntypedStorage<4, 4>   mUnkaf5df3;
@@ -42,14 +47,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FlipbookTexture(
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        ::FlipbookTextureDescription const&    flipbookTextureDescription,
+        ::TextureUVCoordinateSet const&        uvs,
+        int                                    padSize,
+        ::cg::TextureSetLayerType              textureType
+    );
+
     MCNAPI ::mce::framebuilder::BlitFlipbookSingleTextureDescription
     createDescription(::ScreenContext& screenContext, ::mce::ViewportInfo const& viewportInfo) const;
 
     MCNAPI void load(::Tessellator& tessellator);
 
-    MCNAPI void render(::ScreenContext& screenContext, ::mce::TexturePtr const&, ::mce::ViewportInfo const&) const;
-
     MCNAPI ~FlipbookTexture();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        ::FlipbookTextureDescription const&    flipbookTextureDescription,
+        ::TextureUVCoordinateSet const&        uvs,
+        int                                    padSize,
+        ::cg::TextureSetLayerType              textureType
+    );
     // NOLINTEND
 
 public:

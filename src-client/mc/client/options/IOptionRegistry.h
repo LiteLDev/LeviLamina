@@ -128,10 +128,6 @@ public:
 
     virtual float getDwellBeforeDrag() const = 0;
 
-    virtual void setStackSplittingTrigger(float value) = 0;
-
-    virtual float getStackSplittingTrigger() const = 0;
-
     virtual float getGameSensitivity(::InputMode inputmode) const = 0;
 
     virtual void
@@ -173,7 +169,7 @@ public:
 
     virtual bool getRayTracing() const = 0;
 
-    virtual bool getDeferred() const = 0;
+    virtual bool isVibrantVisualsUserEnabled() const = 0;
 
     virtual int getGraphicsQualityPresetMode() const = 0;
 

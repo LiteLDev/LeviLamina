@@ -302,7 +302,8 @@ public:
         ::std::string const&                 platformId
     ) /*override*/;
 
-    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& pos) /*override*/;
+    virtual ::BedSleepingResult
+    startSleepInBed(::BlockPos const& pos, bool setsRespawn, float sleepOffset) /*override*/;
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
@@ -590,7 +591,7 @@ public:
         ::std::string const&                 platformId
     );
 
-    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& pos);
+    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& pos, bool setsRespawn, float sleepOffset);
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 

@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms { class RealmsPurchase; }
-namespace Realms { class RealmsPurchaseReconciler; }
+namespace Realms { class LegacyRealmsPurchase; }
+namespace Realms { class LegacyRealmsPurchaseReconciler; }
 // clang-format on
 
 namespace OreUI {
@@ -17,8 +17,8 @@ class RealmsPurchaseCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsPurchaseReconciler>> mRealmsPurchaseReconciler;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsPurchase>>           mRealmsPurchase;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler>> mRealmsPurchaseReconciler;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::LegacyRealmsPurchase>>           mRealmsPurchase;
     // NOLINTEND
 
 public:
@@ -37,8 +37,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RealmsPurchaseCommandsFacet(
-        ::std::shared_ptr<::Realms::RealmsPurchase>           realmsPurchase,
-        ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
+        ::std::shared_ptr<::Realms::LegacyRealmsPurchase>           realmsPurchase,
+        ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler
     );
 
     MCAPI void fulfillPriorRealmsPurchase(::std::string const& xuid);
@@ -64,8 +64,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::shared_ptr<::Realms::RealmsPurchase>           realmsPurchase,
-        ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
+        ::std::shared_ptr<::Realms::LegacyRealmsPurchase>           realmsPurchase,
+        ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler
     );
     // NOLINTEND
 

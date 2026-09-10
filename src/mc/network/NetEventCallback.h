@@ -302,8 +302,16 @@ public:
         ::std::string const&                     telemetryOverride
     );
 
+#ifdef LL_PLAT_S
+    virtual ::IncomingPacketFilterResult allowIncomingPacketId(
+        ::NetworkIdentifierWithSubId const& sender,
+        ::MinecraftPacketIds                packetId,
+        uint64                              packetSize
+    ) = 0;
+#else // LL_PLAT_C
     virtual ::IncomingPacketFilterResult
     allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize) = 0;
+#endif
 
     virtual ::OutgoingPacketFilterResult
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) = 0;
@@ -689,7 +697,11 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundCloseFormPacket const&);
 
@@ -811,9 +823,17 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ShowProfilePacket const&);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetScorePacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetScorePacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::SetScoreboardIdentityPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const&);
 
@@ -1019,7 +1039,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const&);
 
+#ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::PlayerLocationPacket const&);
+#else // LL_PLAT_C
+    virtual void handle(::NetworkIdentifier const& source, ::PlayerLocationPacket const& packet);
+#endif
 
     virtual void handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const&);
 
@@ -1474,7 +1498,11 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet);
 #endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundCloseFormPacket const&);
 
@@ -1596,9 +1624,17 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ShowProfilePacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetScorePacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetScorePacket const& packet);
+#endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetScoreboardIdentityPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const&);
 
@@ -1804,7 +1840,11 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const&);
 
+#ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerLocationPacket const&);
+#else // LL_PLAT_C
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PlayerLocationPacket const& packet);
+#endif
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const&);
 

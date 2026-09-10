@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/AssetType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -10,11 +13,15 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes {
 // functions
 // NOLINTBEGIN
+MCAPI ::std::string_view assetTypeToString(::SharedTypes::AssetType type);
+
 MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindColor(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindEasing(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindExtraKnockbackApproach(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindFacing(::cereal::ReflectionCtx& ctx);
 
@@ -30,7 +37,9 @@ MCAPI void bindItemCooldownType(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindJigsawJointType(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindLinkedAssetTypes(::cereal::ReflectionCtx& ctx);
+MCAPI void bindKnockbackMode(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindPushMode(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindSemVersion(::cereal::ReflectionCtx& ctx);
 

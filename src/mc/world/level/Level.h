@@ -186,7 +186,6 @@ class ServerNetworkEventCoordinator;
 class ServerParticleManager;
 class ServerPlayerEventCoordinator;
 class ServerPlayerSleepManager;
-class ServerSoundHandle;
 class SoundPlayerInterface;
 class Spawner;
 class StartGamePacket;
@@ -224,6 +223,7 @@ struct DimensionType;
 struct LevelArguments;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
+struct PlaySoundOptions;
 struct PlayerMovementSettings;
 struct PlayerSleepStatus;
 struct PlayerSpawnDimensionResolution;
@@ -862,13 +862,7 @@ public:
         float const                            pitch
     ) /*override*/;
 
-    virtual void playSound(
-        ::std::string const&                 name,
-        ::Vec3 const&                        pos,
-        float                                volume,
-        float                                pitch,
-        ::std::optional<::ServerSoundHandle> serverSoundHandle
-    ) /*override*/;
+    virtual void playSound(::PlaySoundOptions const& options) /*override*/;
 
     virtual void playSound(
         ::IConstBlockSource const&             region,
@@ -1293,6 +1287,10 @@ public:
     virtual ::DimensionManager& getDimensionManager() /*override*/;
 
     virtual ::DimensionManager const& getDimensionManager() const /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> getDimensionManagerNonOwner() /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> getDimensionManagerNonOwner() const /*override*/;
 
     virtual void subChunkTickAndSendRequests() /*override*/;
 
@@ -1976,13 +1974,7 @@ public:
     MCAPI void
     $playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float const volume, float const pitch);
 
-    MCAPI void $playSound(
-        ::std::string const&                 name,
-        ::Vec3 const&                        pos,
-        float                                volume,
-        float                                pitch,
-        ::std::optional<::ServerSoundHandle> serverSoundHandle
-    );
+    MCAPI void $playSound(::PlaySoundOptions const& options);
 
     MCAPI void $playSound(
         ::IConstBlockSource const&             region,
@@ -2395,6 +2387,10 @@ public:
     MCFOLD ::DimensionManager& $getDimensionManager();
 
     MCFOLD ::DimensionManager const& $getDimensionManager() const;
+
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> $getDimensionManagerNonOwner();
+
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> $getDimensionManagerNonOwner() const;
 
     MCFOLD void $subChunkTickAndSendRequests();
 

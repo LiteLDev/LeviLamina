@@ -85,13 +85,7 @@ public:
         ::std::vector<::LegacySetSlot> const& legacySetItemSlots
     );
 
-#ifdef LL_PLAT_S
     MCAPI void _processQueue();
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI void _processQueue();
-#endif
 
     MCAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
 

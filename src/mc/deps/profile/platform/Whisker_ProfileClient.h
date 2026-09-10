@@ -12,7 +12,7 @@
 namespace Bedrock::Profile { class ScopeStackStorage; }
 namespace Bedrock::Profile::Whisker { struct ScopeData; }
 namespace Bedrock::Profiler::details { struct StaticProfLabel; }
-namespace Core::Profile { class CPUProfileToken; }
+namespace Core::Profile { class ScopeToken; }
 namespace brstd { struct source_location; }
 // clang-format on
 
@@ -59,17 +59,17 @@ public:
     virtual void onMainThreadDestroy() /*override*/;
 
     virtual void enterCPUProfile(
-        ::Bedrock::Profile::ScopeStackStorage&  scope,
-        ::Core::Profile::CPUProfileToken const& token
+        ::Bedrock::Profile::ScopeStackStorage& scope,
+        ::Core::Profile::ScopeToken const&     token
     ) /*override*/;
 
     virtual void leaveCPUProfile(
-        ::Bedrock::Profile::ScopeStackStorage&  scope,
-        ::Core::Profile::CPUProfileToken const& token
+        ::Bedrock::Profile::ScopeStackStorage& scope,
+        ::Core::Profile::ScopeToken const&     token
     ) /*override*/;
 
     virtual void generateCPUProfileTokenStatic(
-        ::Core::Profile::CPUProfileToken&             target,
+        ::Core::Profile::ScopeToken&                  target,
         char const*                                   group,
         ::Bedrock::Profiler::details::StaticProfLabel label,
         uint                                          color,
@@ -87,6 +87,9 @@ public:
     makeActive(::std::string_view consumerName);
 
     MCNAPI void purgeAllRecords();
+
+    MCNAPI void
+    queryThreadIDsByType(::std::vector<::std::thread::id>& output, ::Core::Profile::ThreadFrameType threadType) const;
 
     MCNAPI void resolveUniqueKeysByName(
         ::gsl::span<void const*>              output,
@@ -113,13 +116,13 @@ public:
     MCNAPI void $onMainThreadDestroy();
 
     MCNAPI void
-    $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
+    $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::ScopeToken const& token);
 
     MCNAPI void
-    $leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
+    $leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::ScopeToken const& token);
 
     MCNAPI void $generateCPUProfileTokenStatic(
-        ::Core::Profile::CPUProfileToken&             target,
+        ::Core::Profile::ScopeToken&                  target,
         char const*                                   group,
         ::Bedrock::Profiler::details::StaticProfLabel label,
         uint                                          color,

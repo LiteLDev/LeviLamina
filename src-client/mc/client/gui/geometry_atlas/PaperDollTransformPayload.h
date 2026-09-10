@@ -19,6 +19,18 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                mScaleX;
     ::ll::TypedStorage<4, 4, float>                                                mScaleY;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~PaperDollTransformPayload();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };
 
 } // namespace GeometryAtlas

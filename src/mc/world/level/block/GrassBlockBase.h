@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -12,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class HashedString;
 class IRandom;
 class ItemStack;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -23,14 +23,12 @@ class GrassBlockBase : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::HashedString const&> mTillsIntoBlock;
-    ::ll::TypedStorage<8, 8, ::HashedString const&> mGrowsOnBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor const> mTillsIntoBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor const> mGrowsOnBlock;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    GrassBlockBase& operator=(GrassBlockBase const&);
-    GrassBlockBase(GrassBlockBase const&);
     GrassBlockBase();
 
 public:
@@ -43,6 +41,8 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
@@ -51,11 +51,20 @@ public:
     virtual bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::IRandom& random) const = 0;
 
     virtual bool _shouldStopRandomWalk(::BlockSource& region, ::BlockPos& pos) const = 0;
+
+    virtual ~GrassBlockBase() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GrassBlockBase(
+        ::std::string const& nameId,
+        int                  id,
+        ::BlockDescriptor    tillsIntoBlock,
+        ::BlockDescriptor    growsOnBlock
+    );
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -68,6 +77,19 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, ::BlockDescriptor tillsIntoBlock, ::BlockDescriptor growsOnBlock);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool
@@ -75,9 +97,11 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCFOLD bool $canBeOriginalSurface(bool) const;
 
-    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
 
     // NOLINTEND

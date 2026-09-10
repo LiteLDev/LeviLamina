@@ -1,4 +1,5 @@
 #include "mc/world/scores/Scoreboard.h"
+#include "mc/world/scores/Objective.h"
 #include "mc/world/scores/ScoreboardIdentityRef.h"
 
 int Scoreboard::modifyPlayerScore(
@@ -27,4 +28,16 @@ ScoreboardId Scoreboard::getId(PlayerScoreboardId const& playerId) const {
         return found->second;
     }
     return ScoreboardId::INVALID();
+}
+
+bool Scoreboard::resetPlayerScore(::ScoreboardId const& id, ::Objective& objective) {
+    if (objective.mScores->find(id) == objective.mScores->end()) {
+        return false;
+    }
+    auto it = mIdentityRefs->find(id);
+    if (it == mIdentityRefs->end()) {
+        return false;
+    }
+    onPlayerScoreRemoved(id, objective);
+    return it->second.removeFromObjective(*this, objective);
 }

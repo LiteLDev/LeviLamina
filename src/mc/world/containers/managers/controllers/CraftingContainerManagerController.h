@@ -20,6 +20,7 @@ class BlockPos;
 class BlockSource;
 class ContainerController;
 class CraftingContainerManagerModel;
+class ItemRegistryRef;
 class ItemStack;
 class ItemStackBase;
 class Recipe;
@@ -121,9 +122,11 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                           mAllResults;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                 mListenerLifeIndicator;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftingContainerManagerController::BlockChangeListener>>
-                                   mBlockChangeListener;
-    ::ll::TypedStorage<1, 1, bool> mCloseCraftingContainer;
-    ::ll::TypedStorage<1, 1, bool> mIsCrafting;
+                                                                                  mBlockChangeListener;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::CraftableCountingData>> mCraftableCountCache;
+    ::ll::TypedStorage<1, 1, bool>                                                mCraftableCountCacheDirty;
+    ::ll::TypedStorage<1, 1, bool>                                                mCloseCraftingContainer;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsCrafting;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
@@ -192,8 +195,12 @@ public:
 
     MCNAPI void _filterRecipes();
 
-    MCNAPI ::std::vector<::RecipeSearchResult>
-    _getRecipesForItem(::ItemInstance const& recipeItem, ::std::vector<::std::string> const& tags, bool);
+    MCNAPI ::std::vector<::RecipeSearchResult> _getRecipesForItem(
+        ::ItemInstance const&               recipeItem,
+        ::std::vector<::std::string> const& tags,
+        ::ItemRegistryRef const             itemRegistry,
+        bool
+    );
 
     MCNAPI void _handleItemCraftedEvents(
         ::ItemInstance const&               resultItem,
@@ -233,6 +240,8 @@ public:
     MCNAPI ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
 
     MCNAPI int getIndexForCreativeItem(::std::string const& collectionName, ::ItemStackBase const& item) const;
+
+    MCNAPI ::ItemInstance const& getRecipeItem(::std::string const& collectionName, int collectionIndex) const;
 
     MCNAPI ::std::string const& getSearchString() const;
 

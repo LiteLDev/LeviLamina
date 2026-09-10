@@ -167,8 +167,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 

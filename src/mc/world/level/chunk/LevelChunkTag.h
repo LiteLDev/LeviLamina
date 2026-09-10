@@ -28,4 +28,5 @@ enum class LevelChunkTag : schar {
     ActorDigestVersion                 = 65,
     LegacyVersion                      = 118,
     AabbVolumes                        = 119,
+    JigsawStructureBlueprint           = 120,
 };

@@ -39,15 +39,22 @@ public:
 public:
     // prevent constructor by default
     PropertySyncData& operator=(PropertySyncData const&);
-    PropertySyncData(PropertySyncData const&);
     PropertySyncData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PropertySyncData(::PropertySyncData const&);
+
     MCFOLD ::PropertySyncData& operator=(::PropertySyncData&&);
 
     MCAPI ~PropertySyncData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::PropertySyncData const&);
     // NOLINTEND
 
 public:

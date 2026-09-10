@@ -56,7 +56,7 @@ public:
 
     MCAPI uint64 getCount() const;
 
-    MCAPI ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
+    MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
 
     MCAPI uint64 getMaxScreenshots() const;
 

@@ -41,6 +41,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addItem(::std::string const& item, ::OreUI::AtlasIndex::ItemEntry const& entry);
+
+    MCAPI ::std::optional<::OreUI::AtlasIndex::ItemEntry const> findItem(::std::string_view item) const;
     // NOLINTEND
 };
 

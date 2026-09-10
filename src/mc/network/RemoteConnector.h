@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class NetworkIdentifier;
+class PrivateKeyManager;
 struct ConnectionDefinition;
 namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace Social { class GameConnectionInfo; }
@@ -21,7 +22,7 @@ class RemoteConnector : public ::Connector,
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool host(::ConnectionDefinition const& definition) = 0;
+    virtual bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys) = 0;
 
     virtual bool connect(
         ::Social::GameConnectionInfo const&                         primaryConnection,

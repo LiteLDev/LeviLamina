@@ -15,6 +15,7 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class DataTransferServiceCreateSettingResponsePayload; }
 namespace Editor::Network { class DataTransferServiceDataRequestResponsePayload; }
 namespace Editor::Network { class DataTransferServiceDeferredExperimentEnabledPayload; }
+namespace Editor::Network { class DataTransferServiceExportConfigsResponsePayload; }
 namespace Editor::Network { class DataTransferServiceIdentifiersRequestResponsePayload; }
 namespace Editor::Network { class DataTransferServiceRegisterCollectionPayload; }
 namespace Editor::Network { class DataTransferServiceRequestBiomeConfigResponsePayload; }
@@ -34,6 +35,7 @@ public:
     struct PendingBiomeConfigRequest;
     struct PendingCreateSettingRequest;
     struct PendingDataRequest;
+    struct PendingExportConfigsRequest;
     struct PendingIdentifiersRequest;
     struct RegisteredCollection;
     // clang-format on
@@ -85,6 +87,21 @@ public:
         PendingDataRequest();
     };
 
+    struct PendingExportConfigsRequest {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnka2ec53;
+        ::ll::UntypedStorage<8, 32> mUnke649b1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PendingExportConfigsRequest& operator=(PendingExportConfigsRequest const&);
+        PendingExportConfigsRequest(PendingExportConfigsRequest const&);
+        PendingExportConfigsRequest();
+    };
+
     struct PendingIdentifiersRequest {
     public:
         // member variables
@@ -126,6 +143,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnke70eae;
     ::ll::UntypedStorage<8, 64> mUnkdc0560;
     ::ll::UntypedStorage<1, 1>  mUnkb9da73;
+    ::ll::UntypedStorage<8, 64> mUnk7ca037;
     // NOLINTEND
 
 public:
@@ -221,6 +239,11 @@ public:
     virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const& collectionName) /*override*/;
 
     virtual bool isDeferredExperimentEnabled() const /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> exportAllConfigsToPack(
+        ::std::string const&                                                              packName,
+        ::std::function<void(bool, ::std::string const&, ::std::optional<::std::string>)> callback
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -238,6 +261,9 @@ public:
     MCNAPI void _onDeferredExperimentEnabledPayloadReceived(
         ::Editor::Network::DataTransferServiceDeferredExperimentEnabledPayload const& payload
     );
+
+    MCNAPI void
+    _onExportConfigsResponseReceived(::Editor::Network::DataTransferServiceExportConfigsResponsePayload const& payload);
 
     MCNAPI void _onRegisterCollectionPayloadReceived(
         ::Editor::Network::DataTransferServiceRegisterCollectionPayload const& payload
@@ -345,6 +371,11 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $closeSession(::std::string const& collectionName);
 
     MCNAPI bool $isDeferredExperimentEnabled() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> $exportAllConfigsToPack(
+        ::std::string const&                                                              packName,
+        ::std::function<void(bool, ::std::string const&, ::std::optional<::std::string>)> callback
+    );
 
 
     // NOLINTEND

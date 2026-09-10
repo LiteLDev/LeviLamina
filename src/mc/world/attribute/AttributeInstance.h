@@ -11,7 +11,6 @@ class AttributeInstanceHandle;
 class AttributeModifier;
 class TemporalAttributeBuff;
 struct AttributeModificationContext;
-namespace mce { class UUID; }
 // clang-format on
 
 class AttributeInstance {
@@ -68,37 +67,17 @@ public:
 
     MCAPI ::std::optional<float> addBuff(::AttributeBuff const& buff, ::AttributeModificationContext context);
 
-#ifdef LL_PLAT_S
-    MCAPI void addModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
-#endif
-
     MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier, ::AttributeModificationContext context);
 
     MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
 
-#ifdef LL_PLAT_C
     MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
-#endif
 
     MCAPI ::AttributeInstance& operator=(::AttributeInstance const&);
 
     MCAPI void removeBuff(::AttributeBuff const& buff);
 
-#ifdef LL_PLAT_S
-    MCAPI bool removeModifier(::mce::UUID const& id, ::AttributeModificationContext context);
-#endif
-
     MCAPI void removeModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
-
-#ifdef LL_PLAT_S
-    MCAPI void removeModifier(::std::shared_ptr<::AttributeModifier> modifier, ::AttributeModificationContext context);
-
-    MCAPI void removeModifiers(::AttributeModificationContext context);
-#endif
 
     MCAPI void updateModifier(::AttributeModifier const& takeOver, ::AttributeModificationContext context);
     // NOLINTEND

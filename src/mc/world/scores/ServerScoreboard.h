@@ -24,8 +24,11 @@ class Objective;
 class PacketSender;
 class Player;
 class ScoreboardIdentityRef;
+struct ChangeEntityScore;
+struct ChangeFakePlayerScore;
+struct ChangePlayerScore;
 struct PlayerScoreboardId;
-struct ScorePacketInfo;
+struct RemoveScore;
 // clang-format on
 
 class ServerScoreboard : public ::Scoreboard {
@@ -116,7 +119,8 @@ public:
 
     MCAPI void _onSaveEvent(::LevelStorage&);
 
-    MCAPI ::ScorePacketInfo _unpackIdentityDefToScorePacket(
+    MCAPI ::std::variant<::RemoveScore, ::ChangePlayerScore, ::ChangeEntityScore, ::ChangeFakePlayerScore>
+    _unpackIdentityDefToScorePacket(
         ::ScoreboardIdentityRef const& identityDef,
         ::std::string const&           objName,
         int                            score

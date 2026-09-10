@@ -56,15 +56,17 @@ public:
 
     MCAPI void clearPendingPackAction() const;
 
-    MCAPI void clearRealmsWorldPackEditor() const;
-
     MCAPI void clearSavePackSettingsState() const;
 
     MCAPI void continuePendingPackAction() const;
 
     MCAPI void deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) const;
 
+    MCAPI void reloadPacks() const;
+
     MCAPI void savePackSettings() const;
+
+    MCAPI void setEditorEnabled(bool isEditorEnabled) const;
     // NOLINTEND
 
 public:

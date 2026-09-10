@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/Category.h"
+#include "mc/client/sound/Category.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 class Music : public ::Bedrock::EnableNonOwnerReferences {

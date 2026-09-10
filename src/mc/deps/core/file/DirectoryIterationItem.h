@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkba94d0;
-    ::ll::UntypedStorage<8, 32> mUnk2172c9;
+    ::ll::UntypedStorage<8, 32> mUnk47aa5b;
     ::ll::UntypedStorage<8, 8>  mUnk657388;
     ::ll::UntypedStorage<8, 8>  mUnk5990e0;
     ::ll::UntypedStorage<4, 4>  mUnk657618;
@@ -32,6 +32,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void setFullPathName(::Core::PathView fullPathName);
+
+    MCNAPI void setName(::Core::PathView name);
 
     MCNAPI ~DirectoryIterationItem();
     // NOLINTEND

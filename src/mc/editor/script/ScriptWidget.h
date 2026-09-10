@@ -6,7 +6,6 @@
 #include "mc/common/editor/WidgetCollisionType.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
-#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidget_ComponentInterface.h"
 #include "mc/editor/script/ScriptWidget_GroupInterface.h"
@@ -16,14 +15,11 @@
 // clang-format off
 class AABB;
 class Vec3;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentBase; }
-namespace Editor::ScriptModule { class ScriptWidgetCreateOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetGroup; }
-namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
@@ -101,17 +97,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ScriptWidget(
-        ::Editor::ServiceProviderCollection&                                          serviceProviders,
-        ::Editor::ScriptModule::ScriptWidgetService&                                  parentService,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> group,
-        ::Vec3 const&                                                                 position,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const&     options,
-        ::Scripting::WeakLifetimeScope const&                                         scope
-    );
-#endif
-
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _getBindPositionToBlockCursor() const;
 
@@ -184,21 +169,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                          serviceProviders,
-        ::Editor::ScriptModule::ScriptWidgetService&                                  parentService,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> group,
-        ::Vec3 const&                                                                 position,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const&     options,
-        ::Scripting::WeakLifetimeScope const&                                         scope
-    );
-#endif
     // NOLINTEND
 
 public:

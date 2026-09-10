@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/threading/SpinLockImpl.h"
 #include "mc/world/level/chunk/DirtyTicksCounter.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
@@ -16,7 +17,6 @@ class BlockPos;
 class BlockVolume;
 class IDataInput;
 class IDataOutput;
-class SpinLockImpl;
 class SubChunkBrightnessStorage;
 class SubChunkPos;
 struct DeserializationChanges;
@@ -57,12 +57,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mNeedsClientLighting;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::SubChunkStorage<::Block>>[2]> mBlocks;
     ::ll::TypedStorage<8, 16, ::SubChunkStorage<::Block>* [2]>                  mBlocksReadPtr;
-    ::ll::TypedStorage<8, 8, ::SpinLockImpl*>                                   mWriteLock;
+    ::ll::TypedStorage<8, 24, ::SpinLockImpl>                                   mWriteLock;
     ::ll::TypedStorage<8, 8, uint64>                                            mHash;
     ::ll::TypedStorage<1, 1, bool>                                              mHashDirty;
     ::ll::TypedStorage<1, 1, schar>                                             mAbsoluteIndex;
     ::ll::TypedStorage<1, 1, bool>                                              mIsReplacementSubChunk;
     ::ll::TypedStorage<1, 1, uchar>                                             mRenderChunkTrackingVersionNumber;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsInitialized;
     // NOLINTEND
 
 public:
@@ -74,12 +75,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI SubChunk(::SubChunk&& rhs);
 
-    MCAPI
-    SubChunk(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
-#endif
+    MCAPI SubChunk(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
 
 #ifdef LL_PLAT_C
     MCAPI void _createBlockLightStorage();
@@ -143,12 +141,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::SubChunk&& rhs);
 
-    MCAPI void*
-    $ctor(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
-#endif
+    MCAPI void* $ctor(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
     // NOLINTEND
 
 public:

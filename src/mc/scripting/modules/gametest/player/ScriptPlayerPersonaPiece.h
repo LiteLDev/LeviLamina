@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/player/persona/PieceType.h"
+#include "mc/deps/shared_types/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,11 +16,11 @@ struct ScriptPlayerPersonaPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>        pieceId;
-    ::ll::TypedStorage<4, 4, ::persona::PieceType>  pieceType;
-    ::ll::TypedStorage<8, 32, ::std::string>        packId;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> isDefaultPiece;
-    ::ll::TypedStorage<8, 32, ::std::string>        productId;
+    ::ll::TypedStorage<8, 32, ::std::string>                    pieceId;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::persona::PieceType> pieceType;
+    ::ll::TypedStorage<8, 32, ::std::string>                    packId;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>             isDefaultPiece;
+    ::ll::TypedStorage<8, 32, ::std::string>                    productId;
     // NOLINTEND
 
 public:

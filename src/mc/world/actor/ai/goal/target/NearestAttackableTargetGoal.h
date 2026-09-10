@@ -48,11 +48,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
+#endif
 
     MCAPI bool _selectTarget();
 
     MCAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

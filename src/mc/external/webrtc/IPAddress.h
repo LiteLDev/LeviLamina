@@ -8,8 +8,12 @@ class IPAddress {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkc3f00a;
+    ::ll::UntypedStorage<4, 4> mUnkc3f00a;
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<2, 16> mUnk286fd5;
+#else // LL_PLAT_C
     ::ll::UntypedStorage<4, 16> mUnk286fd5;
+#endif
     // NOLINTEND
 
 public:

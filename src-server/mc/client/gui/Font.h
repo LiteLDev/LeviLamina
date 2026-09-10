@@ -8,6 +8,7 @@ public:
     // clang-format off
     struct GlyphQuad;
     struct TextObject;
+    class TextObjectCache;
     // clang-format on
 
     // Font inner types define
@@ -23,4 +24,6 @@ public:
         // TextObject inner types define
         struct Page {};
     };
+
+    class TextObjectCache {};
 };

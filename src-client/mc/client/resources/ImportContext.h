@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/resources/ImportContextType.h"
 #include "mc/client/resources/ImportFailure.h"
+#include "mc/client/resources/ImportMode.h"
 #include "mc/client/resources/ImportSuccess.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/core/zip_utils/ZipProgressList.h"
@@ -46,7 +47,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> getPersonaPath() const = 0;
 
-    virtual bool allowOverwrite() const = 0;
+    virtual ::ImportMode getImportMode() const = 0;
 
     virtual bool shouldUnzipToDestination(::PackManifest const& manifest) const = 0;
 

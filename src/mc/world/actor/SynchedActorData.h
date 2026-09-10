@@ -26,28 +26,23 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
     public:
         // prevent constructor by default
-        CopyableDataList& operator=(CopyableDataList const&);
+        CopyableDataList(CopyableDataList const&);
         CopyableDataList();
 
-#endif
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI CopyableDataList(::SynchedActorData::CopyableDataList const& other);
-#endif
+        MCAPI ::SynchedActorData::CopyableDataList& operator=(::SynchedActorData::CopyableDataList const& other);
+
+        MCAPI ~CopyableDataList();
         // NOLINTEND
 
     public:
-        // constructor thunks
+        // destructor thunk
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(::SynchedActorData::CopyableDataList const& other);
-#endif
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

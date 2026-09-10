@@ -37,7 +37,7 @@ public:
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
 
     // NOLINTEND

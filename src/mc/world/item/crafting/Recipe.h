@@ -125,26 +125,22 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>                    mTag;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Recipe();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    Recipe& operator=(Recipe const&);
-    Recipe(Recipe const&);
-    Recipe();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~Recipe();
 
+#ifdef LL_PLAT_S
+    virtual ::std::vector<::ItemInstance> const&
+    assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const = 0;
+#else // LL_PLAT_C
     virtual ::std::vector<::ItemInstance> const&
     assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const = 0;
+#endif
 
     virtual int getCraftingSize() const = 0;
 
@@ -180,15 +176,11 @@ public:
     MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
 
 #ifdef LL_PLAT_C
-    MCAPI Recipe(::Recipe&& recipe);
-
     MCAPI ::IngredientSearchResults
     checkContainerItemsForUsability(::std::vector<::ContainerModel*> const& containers) const;
 #endif
 
     MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
-
-    MCAPI ::Recipe::ConstructionContext getConstructionContext() const;
     // NOLINTEND
 
 public:
@@ -201,10 +193,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Recipe&& recipe);
-#endif
     // NOLINTEND
 
 public:

@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/resources/PackErrorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class I18n;
+// clang-format on
+
 class PackError {
 public:
     // member variables
@@ -19,7 +24,7 @@ public:
     // NOLINTBEGIN
     virtual ~PackError() = default;
 
-    virtual ::std::string getLocErrorMessage() const;
+    virtual ::std::string getLocErrorMessage(::I18n& loc) const;
 
     virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const = 0;
 
@@ -29,15 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI ::std::string getEventErrorMessage() const;
-#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getLocErrorMessage() const;
+    MCNAPI ::std::string $getLocErrorMessage(::I18n& loc) const;
 
 
     // NOLINTEND

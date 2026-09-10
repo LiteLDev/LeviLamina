@@ -24,6 +24,7 @@ struct PortPair;
 struct ServerSupportedAuthenticationTypes;
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakNetGUID; }
+namespace Social { struct Nonce; }
 // clang-format on
 
 class RakNetServerLocator : public ::ServerLocator {
@@ -204,7 +205,8 @@ public:
         bool                                 isJoinableThroughServerScreen,
         bool                                 isEditorWorld,
         bool                                 isHardcore,
-        ::ServerSupportedAuthenticationTypes supportedAuth
+        ::ServerSupportedAuthenticationTypes supportedAuth,
+        ::Social::Nonce const&
     ) /*override*/;
 
     virtual void stopAnnouncingServer() /*override*/;
@@ -319,7 +321,8 @@ public:
         bool                                 isJoinableThroughServerScreen,
         bool                                 isEditorWorld,
         bool                                 isHardcore,
-        ::ServerSupportedAuthenticationTypes supportedAuth
+        ::ServerSupportedAuthenticationTypes supportedAuth,
+        ::Social::Nonce const&
     );
 
     MCNAPI void $stopAnnouncingServer();

@@ -5,149 +5,65 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/SubChunkPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/world/level/SubChunkPos.h"
-#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class SubChunkPacket : public ::Packet {
-public:
-    // SubChunkPacket inner types declare
-    // clang-format off
-    struct HeightmapData;
-    struct SubChunkPosOffset;
-    struct SubChunkPacketData;
-    // clang-format on
-
-    // SubChunkPacket inner types define
-    enum class HeightMapDataType : uchar {
-        NoData     = 0,
-        HasData    = 1,
-        AllTooHigh = 2,
-        AllTooLow  = 3,
-        AllCopied  = 4,
-    };
-
-    enum class SubChunkRequestResult : uchar {
-        Undefined             = 0,
-        Success               = 1,
-        LevelChunkDoesntExist = 2,
-        WrongDimension        = 3,
-        PlayerDoesntExist     = 4,
-        IndexOutOfBounds      = 5,
-        SuccessAllAir         = 6,
-    };
-
-    struct HeightmapData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mHeightMapType;
-        ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkHeightMap;
-        ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mRenderHeightMapType;
-        ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkRenderHeightMap;
-        // NOLINTEND
-
-    public:
-        HeightmapData() {
-            mHeightMapType       = HeightMapDataType::NoData;
-            mRenderHeightMapType = HeightMapDataType::NoData;
-        }
-    };
-
-    struct SubChunkPosOffset {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, schar> mX;
-        ::ll::TypedStorage<1, 1, schar> mY;
-        ::ll::TypedStorage<1, 1, schar> mZ;
-        // NOLINTEND
-    };
-
-    struct SubChunkPacketData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 3, ::SubChunkPacket::SubChunkPosOffset const> mSubChunkPosOffset;
-        ::ll::TypedStorage<8, 32, ::std::string>                            mSerializedSubChunk;
-        ::ll::TypedStorage<1, 1, ::SubChunkPacket::SubChunkRequestResult>   mResult;
-        ::ll::TypedStorage<1, 514, ::SubChunkPacket::HeightmapData>         mHeightMapData;
-        ::ll::TypedStorage<8, 8, uint64>                                    mBlobId;
-        // NOLINTEND
-
-    public:
-        SubChunkPacketData(SubChunkPosOffset const& pos, SubChunkRequestResult requestResult) {
-            mSubChunkPosOffset                   = pos;
-            mResult                              = requestResult;
-            mSerializedSubChunk                  = {};
-            mHeightMapData->mHeightMapType       = HeightMapDataType::NoData;
-            mHeightMapData->mRenderHeightMapType = HeightMapDataType::NoData;
-            mBlobId                              = 0;
-        }
-
-        SubChunkPacketData& operator=(SubChunkPacketData const& rhs) {
-            mSubChunkPosOffset                   = rhs.mSubChunkPosOffset;
-            mSerializedSubChunk                  = rhs.mSerializedSubChunk;
-            mResult                              = rhs.mResult;
-            mHeightMapData->mHeightMapType       = rhs.mHeightMapData->mHeightMapType;
-            mHeightMapData->mRenderHeightMapType = rhs.mHeightMapData->mRenderHeightMapType;
-            mBlobId                              = rhs.mBlobId;
-            return *this;
-        }
-
-        SubChunkPacketData() {
-            mSubChunkPosOffset = {
-                0,
-                0,
-                0,
-            };
-            mResult                              = SubChunkRequestResult::Undefined;
-            mSerializedSubChunk                  = {};
-            mHeightMapData->mHeightMapType       = HeightMapDataType::NoData;
-            mHeightMapData->mRenderHeightMapType = HeightMapDataType::NoData;
-            mBlobId                              = 0;
-        }
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~SubChunkPacketData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
-
+class SubChunkPacket : public ::ll::PayloadPacket<::SubChunkPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                 mCacheEnabled;
-    ::ll::TypedStorage<4, 4, ::DimensionType>                                      mDimensionType;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPacket::SubChunkPacketData>> mSubChunkData;
-    ::ll::TypedStorage<4, 12, ::SubChunkPos>                                       mCenterPos;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
+
+public:
+    SubChunkPacket()
+    : ::ll::PayloadPacket<::SubChunkPacketPayload>(),
+      mSerializationMode(SerializationMode::CerealOnly) {}
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubChunkPacket() /*override*/ = default;
-
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
@@ -157,9 +73,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCAPI bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

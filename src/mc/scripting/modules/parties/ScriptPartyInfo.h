@@ -17,6 +17,18 @@ public:
     ScriptPartyInfo& operator=(ScriptPartyInfo const&);
     ScriptPartyInfo(ScriptPartyInfo const&);
     ScriptPartyInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ScriptPartyInfo();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleParties

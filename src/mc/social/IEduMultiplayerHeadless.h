@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Social { class GameConnectionInfo; }
 namespace Social { struct EduAddServerResponse; }
 namespace Social { struct EduDedicatedServerDetails; }
 namespace Social { struct EduFetchServersResponse; }
@@ -71,6 +72,10 @@ public:
         ::std::vector<::std::string>,
         ::std::vector<::Social::EduDedicatedServerDetails>>
     loadCachedServersFromDisk();
+
+    virtual bool tryJoinWorld(::Social::GameConnectionInfo const& connection);
+
+    virtual void clearConnection();
 
     virtual ::Social::EduHeadlessConnectionHandshake getHandshake() const;
 

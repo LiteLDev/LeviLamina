@@ -27,7 +27,7 @@ class SelectionServiceServer : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnkc15a5e;
+    ::ll::UntypedStorage<8, 176> mUnkc15a5e;
     ::ll::UntypedStorage<8, 16>  mUnk7bbf27;
     ::ll::UntypedStorage<8, 16>  mUnk41c42a;
     ::ll::UntypedStorage<8, 16>  mUnk7e7ef6;

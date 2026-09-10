@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class IBlockWorldGenAPI;
 namespace ColumnUtils { struct ColumnRange; }
 // clang-format on
 
@@ -17,6 +18,16 @@ MCAPI ::std::optional<::ColumnUtils::ColumnRange> scanColumn(
     ::std::function<bool(::BlockPos const&)> insideColumnPredicate,
     ::std::function<bool(::BlockPos const&)> validEdgePredicate
 );
+
+#ifdef LL_PLAT_C
+MCAPI ::std::optional<::ColumnUtils::ColumnRange> scanColumnWithinPosBiome(
+    ::IBlockWorldGenAPI&                     target,
+    ::BlockPos const&                        pos,
+    int                                      searchRange,
+    ::std::function<bool(::BlockPos const&)> insideColumnPredicate,
+    ::std::function<bool(::BlockPos const&)> validEdgePredicate
+);
+#endif
 // NOLINTEND
 
 } // namespace ColumnUtils

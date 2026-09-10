@@ -8,14 +8,13 @@ struct ServerConfigurationJoinInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkbcd9a2;
+    ::ll::UntypedStorage<8, 256> mUnkbcd9a2;
     ::ll::UntypedStorage<8, 72>  mUnk2be4db;
-    ::ll::UntypedStorage<8, 120> mUnkb6979c;
+    ::ll::UntypedStorage<8, 48>  mUnkb6979c;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ServerConfigurationJoinInfo& operator=(ServerConfigurationJoinInfo const&);
     ServerConfigurationJoinInfo();
 
 public:
@@ -24,7 +23,7 @@ public:
     MCNAPI ServerConfigurationJoinInfo(::ServerConfiguration::ServerConfigurationJoinInfo const&);
 
     MCNAPI ::ServerConfiguration::ServerConfigurationJoinInfo&
-    operator=(::ServerConfiguration::ServerConfigurationJoinInfo&&);
+    operator=(::ServerConfiguration::ServerConfigurationJoinInfo const&);
 
     MCNAPI ~ServerConfigurationJoinInfo();
     // NOLINTEND

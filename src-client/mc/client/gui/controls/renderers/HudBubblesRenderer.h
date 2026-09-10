@@ -36,7 +36,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mPopSoundReady;
     ::ll::TypedStorage<1, 1, bool>                                mWobblingLastFrame;
     ::ll::TypedStorage<8, 96, ::std::array<::mce::TexturePtr, 3>> mBubbleTextures;
-    ::ll::TypedStorage<8, 1776, ::std::array<::mce::Mesh, 3>>     mBubbleMeshes;
+    ::ll::TypedStorage<8, 1848, ::std::array<::mce::Mesh, 3>>     mBubbleMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>     mIconPosition;
     // NOLINTEND
 

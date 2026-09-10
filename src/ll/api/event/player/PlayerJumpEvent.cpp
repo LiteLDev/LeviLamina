@@ -17,7 +17,7 @@
 namespace ll::event::inline player {
 
 void PlayerJumpEvent::serialize(CompoundTag& nbt) const {
-    PlayerEvent::serialize(nbt);
+    Cancellable<PlayerEvent>::serialize(nbt);
     nbt["fromPosition"] = ListTag{mFromPosition.x, mFromPosition.y, mFromPosition.z};
     nbt["toPosition"]   = ListTag{mToPosition.x, mToPosition.y, mToPosition.z};
 }

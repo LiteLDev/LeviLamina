@@ -17,6 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsBackups>> mRealmsBackups;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsDirty;
     // NOLINTEND
 
 public:
@@ -38,7 +39,11 @@ public:
 
     MCAPI void clearRealmBackupsState();
 
+    MCAPI void clearRealmsBackupsDownloadState();
+
     MCAPI void downloadRealmWorld(::std::string const& realmId, ::std::string const& realmName, int activeSlotIndex);
+
+    MCAPI void fetchRealmsBackups(::std::string const& realmId, int activeSlotIndex);
     // NOLINTEND
 
 public:

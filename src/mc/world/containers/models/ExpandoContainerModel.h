@@ -75,6 +75,10 @@ public:
     MCAPI void _generateCurrentItems();
 
     MCAPI void _refreshContainer(bool fullRefresh);
+
+#ifdef LL_PLAT_C
+    MCAPI void setOnItemExpandedCallback(::std::function<void(::std::string const&, int, int)> callback);
+#endif
     // NOLINTEND
 
 public:

@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 #include "mc/deps/shared_types/v1_26_20/actor/MoveTowardsTargetGoalDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_30 {
 
 struct FollowTargetLeaderGoalDefinition : public ::SharedTypes::v1_26_20::MoveTowardsTargetGoalDefinition {
@@ -16,6 +21,18 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                       mAlwaysLookForLeader;
     ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mLeaderFilters;
     ::ll::TypedStorage<4, 4, int>                                        mSearchCooldown;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::SharedTypes::v1_26_30::FollowTargetLeaderGoalDefinition const&) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

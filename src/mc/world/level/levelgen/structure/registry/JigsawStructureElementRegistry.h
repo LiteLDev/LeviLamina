@@ -9,6 +9,7 @@
 // clang-format off
 class IStructureTemplateManager;
 class StructurePoolElement;
+namespace JigsawStructureUtils { class StructureElementId; }
 // clang-format on
 
 class JigsawStructureElementRegistry {
@@ -26,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::StructurePoolElement const* _lookupById(::JigsawStructureUtils::StructureElementId const& id) const;
+
     MCAPI ::StructurePoolElement const* lookupByName(::std::string name) const;
 
     MCAPI ::StructurePoolElement const* lookupEmptyElement() const;

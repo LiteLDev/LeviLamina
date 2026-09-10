@@ -12,7 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Random;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -53,27 +52,8 @@ public:
         ::std::optional<::std::string> quadrupleSaplingTree
     );
 
-    MCAPI bool _age(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI ::std::optional<::BlockPos>
     _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI bool _placeFeature(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::std::optional<::BlockPos> quadrupleSaplingOffset,
-        ::std::string const&        featureName,
-        ::Random&                   random
-    ) const;
-
-    MCAPI bool _placeTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void _setBlockNoUpdate(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::std::optional<::BlockPos> quadrupleSaplingOffset,
-        ::Block const&              block
-    ) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND

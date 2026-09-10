@@ -12,8 +12,6 @@ namespace Editor::CerealHelpers {
 // NOLINTBEGIN
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindNetworPayloadTypes(::cereal::ReflectionCtx& ctx);
-
 MCNAPI void glmvec2FromArray(::glm::vec2& vec, ::std::array<float, 2> arr);
 
 MCNAPI void glmvec3FromArray(::glm::vec3& vec, ::std::array<float, 3> arr);

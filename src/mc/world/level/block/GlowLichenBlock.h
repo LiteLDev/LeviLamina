@@ -12,7 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class Material;
 // clang-format on
 
@@ -31,7 +30,7 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    virtual ::BlockType& init() /*override*/;
+    virtual ::Block const& getInitialDefaultState() /*override*/;
     // NOLINTEND
 
 public:
@@ -54,7 +53,7 @@ public:
 
     MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::BlockType& $init();
+    MCAPI ::Block const& $getInitialDefaultState();
 
 
     // NOLINTEND

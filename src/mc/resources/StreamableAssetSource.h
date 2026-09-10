@@ -6,11 +6,45 @@ struct StreamableAssetSource {
 public:
     // StreamableAssetSource inner types declare
     // clang-format off
+    struct EncryptedFileSource;
+    struct EncryptedZipExtractSource;
     struct FileSource;
     struct ZipExtractSource;
     // clang-format on
 
     // StreamableAssetSource inner types define
+    struct EncryptedFileSource {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 1032> mUnkcec3cf;
+        ::ll::UntypedStorage<8, 32>   mUnke80587;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EncryptedFileSource& operator=(EncryptedFileSource const&);
+        EncryptedFileSource(EncryptedFileSource const&);
+        EncryptedFileSource();
+    };
+
+    struct EncryptedZipExtractSource {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>    mUnk8f08b7;
+        ::ll::UntypedStorage<8, 1032> mUnkf1bd8c;
+        ::ll::UntypedStorage<8, 1032> mUnkad7aed;
+        ::ll::UntypedStorage<8, 32>   mUnk1a01c7;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EncryptedZipExtractSource& operator=(EncryptedZipExtractSource const&);
+        EncryptedZipExtractSource(EncryptedZipExtractSource const&);
+        EncryptedZipExtractSource();
+    };
+
     struct FileSource {
     public:
         // member variables
@@ -44,7 +78,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 2080> mUnkbdfd36;
+    ::ll::UntypedStorage<8, 2112> mUnka0154c;
     // NOLINTEND
 
 public:

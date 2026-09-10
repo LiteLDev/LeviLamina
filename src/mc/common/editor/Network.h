@@ -24,6 +24,8 @@ MCNAPI void bindPersistenceServicePayloadTypes(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindRestartServicePayloadTypes(::cereal::ReflectionCtx& ctx);
 
+MCNAPI void bindRpcPayloadTypes(::cereal::ReflectionCtx& ctx);
+
 MCNAPI void bindStructureDataCachePayloadTypes(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindStructurePayloadTypes(::cereal::ReflectionCtx& ctx);

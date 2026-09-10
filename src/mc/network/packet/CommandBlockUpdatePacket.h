@@ -93,7 +93,7 @@ public:
 
     MCFOLD ::SerializationMode $getSerializationMode() const;
 
-    MCAPI void $setSerializationMode(::SerializationMode mode);
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

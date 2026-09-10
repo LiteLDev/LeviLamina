@@ -8,6 +8,7 @@ enum class BreakIteratorBoundary : int {
     Character = 0,
     Word      = 1,
     Line      = 2,
+    Count     = 3,
 };
 
 }

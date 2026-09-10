@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
 
@@ -15,7 +16,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
-class HashedString;
 class IConstBlockSource;
 class ItemStack;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -26,14 +26,12 @@ class PathBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockToTillInto;
-    ::ll::TypedStorage<8, 8, ::HashedString const&> mBaseBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor const> mBlockToTillInto;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor const> mBaseBlock;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PathBlock& operator=(PathBlock const&);
-    PathBlock(PathBlock const&);
     PathBlock();
 
 public:
@@ -66,6 +64,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    PathBlock(::std::string const& nameId, int id, ::BlockDescriptor blockToTillInto, ::BlockDescriptor baseBlock);
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -75,6 +76,13 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::AABB& BLOCK_AABB();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, ::BlockDescriptor blockToTillInto, ::BlockDescriptor baseBlock);
     // NOLINTEND
 
 public:

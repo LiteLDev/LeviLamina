@@ -26,6 +26,8 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::LoadingState()>>  mGetLoadingStateCallback;
     ::ll::TypedStorage<4, 4, float>                               mProgress;
     ::ll::TypedStorage<4, 4, ::WorldProcessProgressHandler::Type> mWorldProcessType;
+    ::ll::TypedStorage<1, 1, bool>                                mExitOnComplete;
+    ::ll::TypedStorage<1, 1, bool>                                mExitRequested;
     // NOLINTEND
 
 public:
@@ -58,7 +60,8 @@ public:
     MCAPI WorldProcessProgressHandler(
         ::WorldProcessProgressHandler::Type worldProcessType,
         ::std::function<float()>            tickCallback,
-        ::std::function<::LoadingState()>   getLoadingStateCallback
+        ::std::function<::LoadingState()>   getLoadingStateCallback,
+        bool                                exitOnComplete
     );
     // NOLINTEND
 
@@ -68,7 +71,8 @@ public:
     MCAPI void* $ctor(
         ::WorldProcessProgressHandler::Type worldProcessType,
         ::std::function<float()>            tickCallback,
-        ::std::function<::LoadingState()>   getLoadingStateCallback
+        ::std::function<::LoadingState()>   getLoadingStateCallback,
+        bool                                exitOnComplete
     );
     // NOLINTEND
 

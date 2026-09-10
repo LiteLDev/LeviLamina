@@ -23,7 +23,13 @@ public:
 
     virtual bool isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const /*override*/;
 
-    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
+    virtual void buildSurfaceAt(
+        ::ISurfaceBuilder::GlobalParameters const&,
+        ::ISurfaceBuilder::SurfaceBuilderParameters const&,
+        ::ISurfaceBuilder::PerColumnParameters const& columnParams
+    ) const /*override*/;
+
+    virtual bool getUsesDepthValue() const /*override*/;
     // NOLINTEND
 
 public:
@@ -35,7 +41,13 @@ public:
 
     MCAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
-    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    MCAPI void $buildSurfaceAt(
+        ::ISurfaceBuilder::GlobalParameters const&,
+        ::ISurfaceBuilder::SurfaceBuilderParameters const&,
+        ::ISurfaceBuilder::PerColumnParameters const& columnParams
+    ) const;
+
+    MCFOLD bool $getUsesDepthValue() const;
 
 
     // NOLINTEND

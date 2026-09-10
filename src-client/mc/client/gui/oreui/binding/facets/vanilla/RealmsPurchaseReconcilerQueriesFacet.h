@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms { class RealmsPurchaseReconciler; }
+namespace Realms { class LegacyRealmsPurchaseReconciler; }
 // clang-format on
 
 namespace OreUI {
@@ -20,11 +20,11 @@ class RealmsPurchaseReconcilerQueriesFacet
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsPurchaseReconciler>> mRealmsPurchaseReconciler;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mStateChangedSubscription;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseReconcilerState>                mState;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseReconcilerFailureReason>        mFailureReason;
-    ::ll::TypedStorage<1, 1, bool>                                                   mIsDirty;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler>> mRealmsPurchaseReconciler;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                             mStateChangedSubscription;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseReconcilerState>                      mState;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseReconcilerFailureReason>              mFailureReason;
+    ::ll::TypedStorage<1, 1, bool>                                                         mIsDirty;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsPurchaseReconcilerQueriesFacet(
-        ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
+        ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler
     );
 
     MCFOLD ::Realms::RealmsPurchaseReconcilerFailureReason getFailureReason() const;
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler);
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler);
     // NOLINTEND
 
 public:

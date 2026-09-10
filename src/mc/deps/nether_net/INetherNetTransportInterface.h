@@ -47,6 +47,9 @@ public:
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
     ) = 0;
 
+    virtual void
+    SetIdentityGenerator(::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator) = 0;
+
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) = 0;
 
     virtual bool GetSessionState(

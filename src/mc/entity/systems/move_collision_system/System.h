@@ -37,6 +37,7 @@ struct HorseFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct LocalSpatialEntityFetcherFactoryComponent;
 struct MaxAutoStepComponent;
+struct MinecartFlagComponent;
 struct MobBodyRotationComponent;
 struct MobFlagComponent;
 struct MoveRequestComponent;
@@ -85,7 +86,8 @@ struct System : public ::IStrictTickingSystem<::StrictExecutionContext<
                         ::PassengerRenderingRidingOffsetComponent,
                         ::DimensionTypeComponent,
                         ::MaxAutoStepComponent,
-                        ::CollidableMobNearFlagComponent>,
+                        ::CollidableMobNearFlagComponent,
+                        ::MinecartFlagComponent>,
                     ::Write<::MoveRequestComponent>,
                     ::AddRemove<>,
                     ::GlobalRead<
@@ -164,7 +166,8 @@ public:
                 ::PassengerRenderingRidingOffsetComponent,
                 ::DimensionTypeComponent,
                 ::MaxAutoStepComponent,
-                ::CollidableMobNearFlagComponent>,
+                ::CollidableMobNearFlagComponent,
+                ::MinecartFlagComponent>,
             ::Write<::MoveRequestComponent>,
             ::AddRemove<>,
             ::GlobalRead<
@@ -206,7 +209,8 @@ public:
                 ::PassengerRenderingRidingOffsetComponent,
                 ::DimensionTypeComponent,
                 ::MaxAutoStepComponent,
-                ::CollidableMobNearFlagComponent>,
+                ::CollidableMobNearFlagComponent,
+                ::MinecartFlagComponent>,
             ::Write<::MoveRequestComponent>,
             ::AddRemove<>,
             ::GlobalRead<
@@ -253,7 +257,8 @@ public:
                 ::PassengerRenderingRidingOffsetComponent,
                 ::DimensionTypeComponent,
                 ::MaxAutoStepComponent,
-                ::CollidableMobNearFlagComponent>,
+                ::CollidableMobNearFlagComponent,
+                ::MinecartFlagComponent>,
             ::Write<::MoveRequestComponent>,
             ::AddRemove<>,
             ::GlobalRead<
@@ -299,7 +304,8 @@ public:
                 ::PassengerRenderingRidingOffsetComponent,
                 ::DimensionTypeComponent,
                 ::MaxAutoStepComponent,
-                ::CollidableMobNearFlagComponent>,
+                ::CollidableMobNearFlagComponent,
+                ::MinecartFlagComponent>,
             ::Write<::MoveRequestComponent>,
             ::AddRemove<>,
             ::GlobalRead<
@@ -341,7 +347,8 @@ public:
                 ::PassengerRenderingRidingOffsetComponent,
                 ::DimensionTypeComponent,
                 ::MaxAutoStepComponent,
-                ::CollidableMobNearFlagComponent>,
+                ::CollidableMobNearFlagComponent,
+                ::MinecartFlagComponent>,
             ::Write<::MoveRequestComponent>,
             ::AddRemove<>,
             ::GlobalRead<

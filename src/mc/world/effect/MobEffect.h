@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/DenseEnumMap.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/effect/MobEffectIds.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +19,6 @@ class AttributeBuff;
 class AttributeModifier;
 class BaseAttributeMap;
 class BaseGameVersion;
-class CompoundTag;
 class Experiments;
 class TemporalAttributeBuff;
 struct EffectDuration;
@@ -45,22 +46,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mFactorPreviousFrame;
         ::ll::TypedStorage<1, 1, bool>  mHadEffectLastTick;
         ::ll::TypedStorage<1, 1, bool>  mHadApplied;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI ::std::unique_ptr<::CompoundTag> save() const;
-#endif
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
-#endif
         // NOLINTEND
     };
 
@@ -105,7 +90,7 @@ public:
 
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
+    virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) const;
 
     virtual void onEffectExpired(::Actor& target) const;
 
@@ -144,14 +129,12 @@ public:
 
     MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
 
+#ifdef LL_PLAT_C
     MCAPI void applyModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
         int                 amplification
     ) const;
-
-#ifdef LL_PLAT_C
-    MCAPI void updateEffects(::Actor& target, ::EffectDuration durationTicks, int amplification);
 #endif
 
     MCAPI void updateModsAndBuffs(
@@ -164,100 +147,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
-
-    MCAPI static ::MobEffect* getByName(::std::string const& name);
+    MCAPI static ::MobEffect const* getByName(::std::string const& name);
 
     MCAPI static ::std::string getNameById(uint effectId);
 
     MCAPI static void initEffects(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
-
-    MCAPI static void shutdownEffects();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MobEffect*& ABSORPTION();
-
-    MCAPI static ::MobEffect*& BAD_OMEN();
-
-    MCAPI static ::MobEffect*& BLINDNESS();
-
-    MCAPI static ::MobEffect*& BREATH_OF_THE_NAUTILUS();
-
-    MCAPI static ::MobEffect*& CONDUIT_POWER();
-
-    MCAPI static ::MobEffect*& CONFUSION();
-
-    MCAPI static ::MobEffect*& DAMAGE_BOOST();
-
-    MCAPI static ::MobEffect*& DAMAGE_RESISTANCE();
-
-    MCAPI static ::MobEffect*& DARKNESS();
-
     MCAPI static ::mce::Color const& DEFAULT_COLOR();
 
-    MCAPI static ::MobEffect*& DIG_SLOWDOWN();
-
-    MCAPI static ::MobEffect*& DIG_SPEED();
-
-    MCAPI static ::MobEffect*& EMPTY_EFFECT();
-
-    MCAPI static ::MobEffect*& FATAL_POISON();
-
-    MCAPI static ::MobEffect*& FIRE_RESISTANCE();
-
-    MCAPI static ::MobEffect*& HARM();
-
-    MCAPI static ::MobEffect*& HEAL();
-
-    MCAPI static ::MobEffect*& HEALTH_BOOST();
-
-    MCAPI static ::MobEffect*& HERO_OF_THE_VILLAGE();
-
-    MCAPI static ::MobEffect*& HUNGER();
-
-    MCAPI static ::MobEffect*& INFESTED();
-
-    MCAPI static ::MobEffect*& INVISIBILITY();
-
-    MCAPI static ::MobEffect*& JUMP();
-
-    MCAPI static ::MobEffect*& LEVITATION();
-
-    MCAPI static ::MobEffect*& MOVEMENT_SLOWDOWN();
-
-    MCAPI static ::MobEffect*& MOVEMENT_SPEED();
-
-    MCAPI static ::MobEffect*& NIGHT_VISION();
-
-    MCAPI static ::MobEffect*& OOZING();
-
-    MCAPI static ::MobEffect*& POISON();
-
-    MCAPI static ::MobEffect*& RAID_OMEN();
-
-    MCAPI static ::MobEffect*& REGENERATION();
-
-    MCAPI static ::MobEffect*& SATURATION();
-
-    MCAPI static ::MobEffect*& SLOW_FALLING();
-
-    MCAPI static ::MobEffect*& TRIAL_OMEN();
-
-    MCAPI static ::MobEffect*& WATER_BREATHING();
-
-    MCAPI static ::MobEffect*& WEAKNESS();
-
-    MCAPI static ::MobEffect*& WEAVING();
-
-    MCAPI static ::MobEffect*& WIND_CHARGED();
-
-    MCAPI static ::MobEffect*& WITHER();
-
-    MCAPI static ::std::add_lvalue_reference_t<::std::unique_ptr<::MobEffect>[]> mMobEffects();
+    MCAPI static ::Bedrock::DenseEnumMap<::MobEffectIds, ::std::unique_ptr<::MobEffect>, 38>& mMobEffects();
     // NOLINTEND
 
 public:
@@ -280,7 +182,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
+    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) const;
 
     MCFOLD void $onEffectExpired(::Actor& target) const;
 

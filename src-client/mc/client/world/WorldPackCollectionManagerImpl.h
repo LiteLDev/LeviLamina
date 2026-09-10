@@ -59,6 +59,8 @@ public:
 
     virtual void resetContent() /*override*/;
 
+    virtual void reloadPacks() /*override*/;
+
     virtual ::Bedrock::PubSub::Subscription
     subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback) /*override*/;
 
@@ -94,11 +96,17 @@ public:
     virtual ::Bedrock::PubSub::Subscription subscribeToMarketplacePackDownloadStatus(
         ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
     ) /*override*/;
+
+    virtual void setEditorEnabled(bool isEditorEnabled) /*override*/;
+
+    virtual bool getEditorEnabled() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::WorldContentItemCollectionsModel _generatePackCollectionsModel();
+
     MCAPI ::std::shared_ptr<::ContentItemCollection>
     _getAvailableContentItemCollection(::ContentType contentType) const;
 
@@ -112,6 +120,8 @@ public:
         bool                 ignoreWarnings
     );
 
+    MCAPI void _reloadAndReapplyPendingChanges();
+
     MCAPI void _reloadContentSource();
     // NOLINTEND
 
@@ -123,6 +133,8 @@ public:
     MCAPI void $setContentSource(::std::unique_ptr<::ContentSource>&& contentSource);
 
     MCAPI void $resetContent();
+
+    MCAPI void $reloadPacks();
 
     MCAPI ::Bedrock::PubSub::Subscription
     $subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback);
@@ -152,6 +164,10 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription $subscribeToMarketplacePackDownloadStatus(
         ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
     );
+
+    MCAPI void $setEditorEnabled(bool isEditorEnabled);
+
+    MCFOLD bool $getEditorEnabled() const;
     // NOLINTEND
 };
 

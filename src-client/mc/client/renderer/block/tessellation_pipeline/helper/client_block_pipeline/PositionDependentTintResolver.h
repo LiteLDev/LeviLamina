@@ -42,12 +42,6 @@ public:
     MCAPI ::mce::Color
     $_get(::Block const& block, ::BlockPos const& blockPos, ::TintMethod tintMethod, ::BiomeTintCache* biomeTintCache);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

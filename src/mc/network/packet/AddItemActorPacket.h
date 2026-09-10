@@ -3,35 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/legacy/ActorRuntimeID.h"
-#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/AddItemActorPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class DataItem;
-class ItemActor;
 class ReadOnlyBinaryStream;
-class SynchedActorDataEntityWrapper;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class AddItemActorPacket : public ::Packet {
+class AddItemActorPacket : public ::ll::PayloadPacket<::AddItemActorPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
-    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper*>              mEntityData;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mItem;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
-    ::ll::TypedStorage<1, 1, bool>                                          mIsFromFishing;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
@@ -41,27 +30,51 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddItemActorPacket() /*override*/ = default;
-
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AddItemActorPacket(::ItemActor& itemEntity);
+    MCAPI explicit AddItemActorPacket(::AddItemActorPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemActor& itemEntity);
+    MCAPI void* $ctor(::AddItemActorPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -71,9 +84,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

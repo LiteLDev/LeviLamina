@@ -72,12 +72,12 @@ xmake
 
 ## Build Options
 
-| Option | Values | Default | Description |
-|--------|--------|---------|-------------|
-| `--target_type` | `server`, `client` | `server` | Build target type |
-| `--tests` | `y`, `n` | `n` | Enable GTest-based testing |
-| `--publish` | `y`, `n` | `n` | Mark as published release (affects version string) |
-| `--levimc_repo` | URL | - | Custom xmake-repo URL |
+| Option          | Values             | Default  | Description                                        |
+| --------------- | ------------------ | -------- | -------------------------------------------------- |
+| `--target_type` | `server`, `client` | `server` | Build target type                                  |
+| `--tests`       | `y`, `n`           | `n`      | Enable GTest-based testing                         |
+| `--publish`     | `y`, `n`           | `n`      | Mark as published release (affects version string) |
+| `--levimc_repo` | URL                | -        | Custom xmake-repo URL                              |
 
 ### Examples
 
@@ -101,51 +101,51 @@ LeviLamina depends on 25+ external libraries, automatically managed by XMake:
 
 ### Core Libraries
 
-| Library | Version | Purpose |
-|---------|---------|---------|
-| **entt** | v3.15.0 | Entity component system |
-| **fmt** | 11.2.0 | String formatting |
-| **nlohmann_json** | v3.11.3 | JSON parsing |
-| **rapidjson** | v1.1.0 | Fast JSON parsing |
-| **leveldb** | 1.23 | Key-value database |
-| **gsl** | v4.2.0 | Guidelines Support Library |
+| Library           | Version | Purpose                    |
+| ----------------- | ------- | -------------------------- |
+| **entt**          | v3.15.0 | Entity component system    |
+| **fmt**           | 11.2.0  | String formatting          |
+| **nlohmann_json** | v3.11.3 | JSON parsing               |
+| **rapidjson**     | v1.1.0  | Fast JSON parsing          |
+| **leveldb**       | 1.23    | Key-value database         |
+| **gsl**           | v4.2.0  | Guidelines Support Library |
 
 ### Performance
 
-| Library | Version | Purpose |
-|---------|---------|---------|
-| **mimalloc** | v2.1.7 | High-performance allocator |
-| **parallel-hashmap** | v2.0.0 | Fast hash maps |
-| **concurrentqueue** | v1.0.4 | Lock-free queue |
+| Library              | Version | Purpose                    |
+| -------------------- | ------- | -------------------------- |
+| **mimalloc**         | v2.1.7  | High-performance allocator |
+| **parallel-hashmap** | v2.0.0  | Fast hash maps             |
+| **concurrentqueue**  | v1.0.4  | Lock-free queue            |
 
 ### Utilities
 
-| Library | Version | Purpose |
-|---------|---------|---------|
-| **ctre** | 3.8.1 | Compile-time regex |
-| **magic_enum** | v0.9.7 | Enum reflection |
-| **type_safe** | v0.2.4 | Type safety utilities |
-| **expected-lite** | v0.8.0 | Expected/Result type |
-| **glm** | 1.0.1 | Math library |
+| Library           | Version | Purpose               |
+| ----------------- | ------- | --------------------- |
+| **ctre**          | 3.8.1   | Compile-time regex    |
+| **magic_enum**    | v0.9.7  | Enum reflection       |
+| **type_safe**     | v0.2.4  | Type safety utilities |
+| **expected-lite** | v0.8.0  | Expected/Result type  |
+| **glm**           | 1.0.1   | Math library          |
 
 ### LeviLamina-Specific
 
-| Library | Version | Purpose |
-|---------|---------|---------|
-| **pcg_cpp** | v1.0.0 | Random number generation |
-| **pfr** | 2.1.1 | Reflection |
-| **demangler** | v17.0.7 | C++ name demangling |
-| **levibuildscript** | 0.4.1 | Build scripts |
-| **preloader** | v1.15.7 | DLL preloading |
-| **symbolprovider** | v1.2.0 | Symbol resolution |
-| **trampoline** | 2024.11.7 | Function hooking |
+| Library             | Version   | Purpose                  |
+| ------------------- | --------- | ------------------------ |
+| **pcg_cpp**         | v1.0.0    | Random number generation |
+| **pfr**             | 2.1.1     | Reflection               |
+| **demangler**       | v17.0.7   | C++ name demangling      |
+| **levibuildscript** | 0.4.1     | Build scripts            |
+| **preloader**       | v1.15.7   | DLL preloading           |
+| **symbolprovider**  | v1.2.0    | Symbol resolution        |
+| **trampoline**      | 2024.11.7 | Function hooking         |
 
 ### Platform-Specific
 
-| Library | Version | Platform | Purpose |
-|---------|---------|----------|---------|
-| **libhat** | 0.4.0 | Windows | Memory manipulation |
-| **bedrockdata** | v1.21.132 | - | BDS headers (server.8 or client.9) |
+| Library         | Version   | Platform | Purpose                       |
+| --------------- | --------- | -------- | ----------------------------- |
+| **libhat**      | 0.4.0     | Windows  | Memory manipulation           |
+| **bedrockdata** | v1.21.132 | -        | MC headers (server or client) |
 
 ## Version Number Generation
 

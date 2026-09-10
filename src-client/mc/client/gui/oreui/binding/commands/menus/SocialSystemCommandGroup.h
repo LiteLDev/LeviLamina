@@ -21,8 +21,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::SocialDrawerManager>>        mSocialDrawerManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ReceivedFriendRequestsList>> mReceivedFriendRequestsList;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, bool>>              mReportIsDrawerVisible;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, bool>>              mSetPollingForReceivedRequests;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, bool>>              mReportIsDrawerVisible;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, bool>>              mSetPollingForReceivedRequests;
     // NOLINTEND
 
 public:

@@ -38,9 +38,9 @@ public:
 
     virtual ::std::string const& getWorldsPrefix() const = 0;
 
-    virtual ::std::string encodeWorldName(::std::string const&) = 0;
+    virtual ::std::string encodeWorldName(::std::string const& name) = 0;
 
-    virtual ::std::string encodeFileName(::std::string const&) = 0;
+    virtual ::std::string encodeFileName(::std::string const& name) = 0;
 
     virtual float getSyncProgress() = 0;
 
@@ -50,28 +50,28 @@ public:
 
     virtual ::CallbackToken deleteContainer(
         ::std::shared_ptr<::CallbackTokenContext<
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>>,
-        ::std::string const&,
-        ::std::function<void(uint64)>
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::string const&                                                                           containerName,
+        ::std::function<void(uint64)> quotaUpdateCallback
     ) = 0;
 
     virtual ::CallbackToken commit(
         ::std::shared_ptr<::CallbackTokenContext<::std::function<
-            void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>, ::Core::StorageResult)>>>,
-        ::std::string const&,
-        ::std::set<::std::string> const&,
-        ::std::set<::std::string>&,
-        ::std::set<::std::string>&,
-        bool,
-        ::std::function<void(uint64)>
+            void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>, ::Core::StorageResult)>>> context,
+        ::std::string const&             containerName,
+        ::std::set<::std::string> const& filesToAdd,
+        ::std::set<::std::string>&       filesToDelete,
+        ::std::set<::std::string>&       HACK_oldFilesToDelete,
+        bool                             isRetry,
+        ::std::function<void(uint64)>    quotaUpdateCallback
     ) = 0;
 
     virtual ::CallbackToken sync(
-        ::std::string const&,
-        ::std::string const&,
+        ::std::string const&                                                                           directoryAlias,
+        ::std::string const&                                                                           filePrefix,
         ::std::shared_ptr<::CallbackTokenContext<
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>>,
-        ::std::function<void(::std::string const&, bool)>
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::function<void(::std::string const&, bool)> HACK_cleanupInfectedContainersCallback
     ) = 0;
 
     virtual ::CallbackToken syncMeta(
@@ -83,13 +83,13 @@ public:
     ) = 0;
 
     virtual ::CallbackToken syncContainerManifest(
-        ::std::string const&,
-        ::std::string const&,
+        ::std::string const&                                                                           containerName,
+        ::std::string const&                                                                           filePrefix,
         ::std::shared_ptr<::CallbackTokenContext<
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>>
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context
     ) = 0;
 
-    virtual ::Core::RemoteStorageManifest getManifest(::std::string const&) = 0;
+    virtual ::Core::RemoteStorageManifest getManifest(::std::string const& containerName) = 0;
 
     virtual int64 getQuotaRemaining() const = 0;
 
@@ -100,6 +100,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void mapContainerToRoot(::std::string const& containerName, ::std::string const& root);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI void $shutdown();
     // NOLINTEND
 };
 

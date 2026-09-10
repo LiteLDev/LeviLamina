@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/molang/MolangVersion.h"
 #include "mc/world/actor/animation/ActorAnimationBase.h"
 
 // auto generated forward declare list
@@ -31,18 +30,5 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorSoundEffect>>                            mSoundEffects;
     ::ll::TypedStorage<1, 1, bool>                                                          mBlendViaShortestPath;
     ::ll::TypedStorage<8, 24, ::std::vector<::AnimationValueCurveKeyFrame>>                 mBlendTransitionKeyFrames;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void addTransition(
-        ::std::string const& stateName,
-        ::std::string const& expression,
-        ::MolangVersion      molangVersion,
-        bool                 createEvenIfAlreadyExists
-    );
-#endif
     // NOLINTEND
 };

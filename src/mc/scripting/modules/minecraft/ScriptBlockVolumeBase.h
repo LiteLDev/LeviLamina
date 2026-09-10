@@ -6,6 +6,7 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeIterable.h"
 
@@ -20,6 +21,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockFilter; }
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace ScriptModuleMinecraft { class ScriptChunkValidator; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -60,6 +62,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
+
+    MCAPI ::Scripting::Result<::std::vector<::Vec3>, ::Scripting::ArgumentOutOfBoundsError>
+    getClosest(uint count, ::Vec3 const& location) const;
+
+    MCAPI ::Scripting::Result<::std::vector<::Vec3>, ::Scripting::ArgumentOutOfBoundsError>
+    getFarthest(uint count, ::Vec3 const& location) const;
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
 

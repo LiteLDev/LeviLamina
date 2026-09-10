@@ -173,6 +173,8 @@ public:
 
     MCAPI void _updateRidingComponents();
 
+    MCAPI void postAiStep();
+
     MCAPI void preAiStep();
 
     MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);

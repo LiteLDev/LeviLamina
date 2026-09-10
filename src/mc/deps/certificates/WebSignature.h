@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/crypto/asymmetric/system/System.h"
+
 // auto generated forward declare list
 // clang-format off
 class PrivateKeyManager;
@@ -27,25 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCNAPI bool
+    verify(::std::string const& publicKey, ::std::optional<::Crypto::Asymmetric::System> expectedSystem) const;
+
     MCNAPI ~WebSignature();
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI static ::std::optional<::WebSignature>
-    sign(::std::string const& payload, ::PrivateKeyManager const& manager, ::Json::Value const& additionalHeaderClaims);
-#endif
+    parseDetached(::std::string const& compactSerialization, ::std::string payload, uint64 maxLength);
+
+    MCNAPI static ::std::optional<::WebSignature>
+    sign(::std::string const& payload, ::PrivateKeyManager const& manager, ::Json::Value const& additionalProperties);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };

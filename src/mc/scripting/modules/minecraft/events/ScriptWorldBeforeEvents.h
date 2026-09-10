@@ -37,6 +37,7 @@ namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorItemPickupBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorTamedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseBeforeEvent; }
@@ -53,6 +54,7 @@ namespace ScriptModuleMinecraft { struct SignalNameSubscriberCount; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorHealEventFilter; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorHurtBeforeEventFilter; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorItemPickupEventFilter; }
+namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorTamedEventFilter; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptBlockEventFilter; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
@@ -205,6 +207,14 @@ public:
             1,
             ::ScriptModuleMinecraft::EmptyFilter>>>
         mBeforeWorldInitializeEventSignal;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
+            ::ScriptModuleMinecraft::ScriptActorTamedBeforeEvent,
+            1,
+            ::ScriptModuleMinecraft::EventFilters::ScriptActorTamedEventFilter>>>
+        mBeforeActorTamedEventSignal;
     // NOLINTEND
 
 public:
@@ -223,6 +233,9 @@ public:
 
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
     onBeforeActorHurt(::Actor const& actor, ::ActorBeforeHurtEvent const& eventData) /*override*/;
+
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorTamedBeforeEvent>>
+    onBeforeActorTamed(::Actor const& actor, ::Actor const& tamingActor) /*override*/;
 
     virtual void onBeforeActorRemove(::Actor const& actor) /*override*/;
 
@@ -334,6 +347,9 @@ public:
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
     $onBeforeActorHurt(::Actor const& actor, ::ActorBeforeHurtEvent const& eventData);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorTamedBeforeEvent>>
+    $onBeforeActorTamed(::Actor const& actor, ::Actor const& tamingActor);
 
     MCAPI void $onBeforeActorRemove(::Actor const& actor);
 

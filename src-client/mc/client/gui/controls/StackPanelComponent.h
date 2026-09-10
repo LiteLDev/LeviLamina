@@ -42,4 +42,10 @@ public:
 
     MCAPI void $onNotifyChildRemoved();
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

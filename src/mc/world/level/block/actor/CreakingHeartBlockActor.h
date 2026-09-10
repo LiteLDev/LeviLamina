@@ -26,7 +26,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>            mCooldown;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mSpawnedCreakingID;
     ::ll::TypedStorage<4, 4, uint>            mTrailResidualDuration;
-    ::ll::TypedStorage<4, 4, uint>            mElapsedCooldownsWithBlockedPlayer;
     // NOLINTEND
 
 public:
@@ -36,7 +35,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& tag) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -66,7 +65,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCFOLD bool $saveItemInstanceData(::CompoundTag& tag) const;
 
     MCAPI void $tick(::BlockSource& region);
 

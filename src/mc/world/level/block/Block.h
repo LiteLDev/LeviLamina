@@ -20,6 +20,7 @@
 class AABB;
 class Actor;
 class BaseGameVersion;
+class BlockChangeContext;
 class BlockPos;
 class BlockSource;
 class BlockState;
@@ -63,6 +64,8 @@ public:
     [[nodiscard]] unsigned short getBlockItemId() const { return getBlockType().mID->mValue; }
 
     [[nodiscard]] ushort getData() const { return mData; }
+
+    [[nodiscard]] Material const& getMaterial() const { return getBlockType().mMaterial; }
 
     template <typename T>
     std::optional<T> getState(uint64 id) const {
@@ -154,7 +157,7 @@ public:
 
     MCAPI bool canProvideFullSupport(uchar face) const;
 
-    MCAPI bool canProvideSupport(uchar face, ::BlockSupportType type) const;
+    MCFOLD bool canProvideSupport(uchar face, ::BlockSupportType type) const;
 
     MCAPI bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -181,9 +184,9 @@ public:
         ::Actor*             actor
     ) const;
 
+#ifdef LL_PLAT_C
     MCAPI void finalizeBlockComponentStorage();
 
-#ifdef LL_PLAT_C
     MCAPI ::BlockActorType getBlockEntityType() const;
 #endif
 
@@ -211,7 +214,7 @@ public:
 
     MCAPI ::Block const& keepStates(::std::vector<::BlockState const*> const& statesToKeep) const;
 
-    MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* placer) const;
 
     MCAPI void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -219,11 +222,45 @@ public:
 
     MCAPI void onActorInternalEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
+#ifdef LL_PLAT_C
+    MCAPI void onFallOn(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, float fallDistance) const;
+
+    MCAPI void onPlace(
+        ::BlockSource&              region,
+        ::BlockPos const&           pos,
+        ::Block const&              previousBlock,
+        ::BlockChangeContext const& changeSourceContext
+    ) const;
+
+    MCAPI void onRedstoneUpdate(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        short             strength,
+        short             oldStrength,
+        bool              isFirstTime
+    ) const;
+
+    MCAPI void onStateChange(
+        ::BlockSource&              region,
+        ::BlockPos const&           pos,
+        ::Block const&              previousBlock,
+        ::BlockChangeContext const& changeSourceContext
+    ) const;
+
+    MCAPI void onStepOff(::Actor& entity, ::BlockPos const& pos) const;
+
+    MCAPI void onStepOn(::Actor& entity, ::BlockPos const& pos) const;
+#endif
+
     MCAPI void playerDestroy(::Player& player, ::BlockPos const& pos) const;
 
     MCAPI void queuedTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool shouldRandomTick() const;
+#endif
 
     MCAPI void spawnResources(
         ::BlockSource&                region,

@@ -13,6 +13,7 @@ namespace GeometryAtlas { struct AllocateBackendPayload; }
 namespace GeometryAtlas { struct InsertTilePayload; }
 namespace GeometryAtlas { struct PaperDollTransformPayload; }
 namespace GeometryAtlas { struct RemoveTilePayload; }
+namespace GeometryAtlas { struct TileHandleSharedState; }
 namespace GeometryAtlas { struct UIItemPayload; }
 // clang-format on
 
@@ -30,7 +31,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint const> mId;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::GeometryAtlas::CommandDispatcherArgs::DispatchFunctions> const>
-        mDispatcher;
+                                                                                                   mDispatcher;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::GeometryAtlas::TileHandleSharedState const> const> mShared;
     // NOLINTEND
 
 public:

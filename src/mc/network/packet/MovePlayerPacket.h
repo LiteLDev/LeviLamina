@@ -3,41 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/entity/components/PlayerPositionModeComponent.h"
-#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/PlayerInputTick.h"
+#include "mc/network/packet/MovePlayerPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Player;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class MovePlayerPacket : public ::Packet {
+class MovePlayerPacket : public ::ll::PayloadPacket<::MovePlayerPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                            mPlayerID;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                     mPos;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                      mRot;
-    ::ll::TypedStorage<4, 4, float>                                       mYHeadRot;
-    ::ll::TypedStorage<1, 1, ::PlayerPositionModeComponent::PositionMode> mResetPosition;
-    ::ll::TypedStorage<1, 1, bool>                                        mOnGround;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                            mRidingID;
-    ::ll::TypedStorage<4, 4, int>                                         mCause;
-    ::ll::TypedStorage<4, 4, int>                                         mSourceEntityType;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                           mTick;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovePlayerPacket();
 
 public:
     // virtual functions
@@ -46,37 +30,35 @@ public:
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
 
     virtual bool isValid() const /*override*/;
 
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MovePlayerPacket(::Player const& player, ::Vec3 const& pos);
-
-    MCAPI MovePlayerPacket(
-        ::Player const&                             player,
-        ::PlayerPositionModeComponent::PositionMode resetPosition,
-        int                                         cause,
-        int                                         sourceEntityType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player, ::Vec3 const& pos);
-
-    MCAPI void* $ctor(
-        ::Player const&                             player,
-        ::PlayerPositionModeComponent::PositionMode resetPosition,
-        int                                         cause,
-        int                                         sourceEntityType
-    );
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
@@ -86,11 +68,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
 
     MCAPI bool $isValid() const;
 
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

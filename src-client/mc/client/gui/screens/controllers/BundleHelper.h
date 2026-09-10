@@ -37,6 +37,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::ui::ViewRequest handleBundlePlaceAll(
+        ::ContainerScreenController& controller,
+        ::std::string const&         collectionName,
+        int                          collectionIndex
+    );
+
+    MCAPI ::ui::ViewRequest handleBundlePlaceOne(
+        ::ContainerScreenController& controller,
+        ::std::string const&         collectionName,
+        int                          collectionIndex
+    );
+
+    MCAPI void handleBundleUnselected(::ContainerScreenController& controller);
+
     MCAPI bool isSlotInteractiveBundle(
         ::ContainerScreenController const& controller,
         ::std::string const&               collectionName,
@@ -75,5 +89,11 @@ public:
         ::ItemStackBase const&             bundleItem,
         int                                bundleItemIdx
     );
+
+    MCAPI static void registerBindings(::ContainerScreenController& controller);
+
+    MCAPI static void registerEventHandlers(::ContainerScreenController& controller);
+
+    MCAPI static void registerStateMachine(::ContainerScreenController& controller);
     // NOLINTEND
 };

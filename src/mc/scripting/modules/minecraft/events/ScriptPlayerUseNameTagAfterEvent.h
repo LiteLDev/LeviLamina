@@ -9,12 +9,18 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerUseNameTagIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerUseNameTagAfterEvent {
+public:
+    // ScriptPlayerUseNameTagAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPlayerUseNameTagIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,6 +40,11 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
+    MCAPI ScriptPlayerUseNameTagAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerUseNameTagIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                     scope
+    );
+
     MCAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
@@ -50,6 +61,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerUseNameTagIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                     scope
+    );
     // NOLINTEND
 
 public:

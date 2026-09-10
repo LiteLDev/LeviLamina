@@ -20,9 +20,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>>  mPartySystem;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void>>                mSendComposedMessage;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>> mSetComposedMessage;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, bool>>          mSetIsOpen;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                mSendComposedMessage;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>> mSetComposedMessage;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, bool>>          mSetIsOpen;
     // NOLINTEND
 
 public:

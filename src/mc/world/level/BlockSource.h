@@ -347,7 +347,6 @@ public:
         bool           allowClientTickingChanges
     );
 
-#ifdef LL_PLAT_C
     MCAPI void _blockChanged(
         ::BlockPos const&              pos,
         uint                           layer,
@@ -358,30 +357,16 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::Actor*                       blockChangeSource
     );
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void _blockChanged(
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 previousBlock,
-        int                            updateFlags,
-        bool                           fireEvent,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::Actor*                       blockChangeSource
-    );
-#endif
 
     MCAPI void _fetchEntityHelper(
         ::WeakEntityRef const&                              entityRef,
         ::gsl::span<::gsl::not_null<::Actor const*>> const& ignoredEntities,
         ::AABB const&                                       bb,
-        bool                                                useHitbox
+        bool                                                useHitbox,
+        ::std::function<bool(::Actor*)>                     selector
     );
 
-    MCAPI ::Brightness
-    _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool propagate, bool accountForNight) const;
+    MCAPI ::Brightness _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool accountForNight) const;
 
     MCAPI void addToRandomTickingQueue(
         ::BlockPos const& pos,
@@ -442,7 +427,8 @@ public:
         ::gsl::span<::gsl::not_null<::Actor const*>> ignoredEntities,
         ::AABB const&                                bb,
         bool                                         useHitbox,
-        bool                                         getDisplayEntities
+        bool                                         getDisplayEntities,
+        ::std::function<bool(::Actor*)>              selector
     );
 
     MCAPI ::std::vector<::Actor*> const& fetchEntities2(::ActorType type, ::AABB const& aabb, bool ignoreTargetType);
@@ -521,9 +507,7 @@ public:
 
     MCAPI bool setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-#ifdef LL_PLAT_C
     MCAPI void updateConnectionsAt(::BlockPos const& pos);
-#endif
 
     MCAPI void updateNeighborsAt(::BlockPos const& pos);
 

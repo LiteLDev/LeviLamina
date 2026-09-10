@@ -26,6 +26,7 @@ public:
     ::ll::TypedStorage<4, 24, ::BoundingBox>                                                                 mBox;
     ::ll::TypedStorage<8, 8, ::br::worldgen::Structure const*>                                               mStructure;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::br::worldgen::PoolElementStructureSection>>> mSections;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mIsPersisted;
     // NOLINTEND
 
 public:

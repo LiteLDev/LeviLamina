@@ -158,7 +158,7 @@ public:
 
     MCAPI void $setContainerId(::ContainerID id);
 
-    MCAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
     MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 

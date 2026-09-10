@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace OreUI { class ClientDependencies; }
 namespace OreUI { class GameDependencies; }
 namespace StorageManager { class ContentItemProvider; }
 // clang-format on
@@ -28,9 +29,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::StorageManager::ContentItemProvider>()>>
         mStorageContentItemProviderFunc;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, bool>> mSetSelected;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>>                mSetAllSelected;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>> mDeleteSelectedItems;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, bool>> mSetSelected;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>>                mSetAllSelected;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>                mDeleteSelectedItems;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mConvertLegacyWorld;
     // NOLINTEND
 
 public:
@@ -46,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StorageManagerCommandGroup(::OreUI::GameDependencies const& game);
+    MCAPI StorageManagerCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

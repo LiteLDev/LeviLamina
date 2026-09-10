@@ -57,24 +57,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorAnimationEvent>>      mEvents;
     ::ll::TypedStorage<8, 32, ::std::string>                             mSourceFilePathWithExtension;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorSkeletalAnimation();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorSkeletalAnimation(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
-
-    MCAPI void initPrecomputedInterpolation();
-
-    MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
-    // NOLINTEND
 };

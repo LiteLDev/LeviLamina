@@ -27,7 +27,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 24, ::AABB>                             mBounds;
-    ::ll::TypedStorage<8, 408, ::Editor::EditorStructureTemplate> mTemplate;
+    ::ll::TypedStorage<8, 432, ::Editor::EditorStructureTemplate> mTemplate;
     ::ll::TypedStorage<4, 12, ::BlockPos const>                   mOffset;
     // NOLINTEND
 

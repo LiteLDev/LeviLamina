@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class StructurePoolElement;
+namespace SharedTypes::v1_21_50 { struct PoolElementStructureSection; }
 namespace br::worldgen { struct JigsawJunction; }
 // clang-format on
 
@@ -28,6 +29,12 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                                    mPosition;
     ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawJunction>> mJunctions;
     ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings>                 mLiquidSettings;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
     // NOLINTEND
 };
 

@@ -28,11 +28,18 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>     mCDNUrl;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PackInfoData& operator=(PackInfoData const&);
     PackInfoData();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PackInfoData();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -50,6 +57,14 @@ public:
         bool                     isRayTracingCapable,
         ::std::string const&     cdnUrl
     );
+
+#ifdef LL_PLAT_C
+    MCAPI ::PackInfoData& operator=(::PackInfoData&&);
+
+    MCAPI ::PackInfoData& operator=(::PackInfoData const&);
+#endif
+
+    MCAPI bool operator==(::PackInfoData const& info) const;
 
     MCAPI ~PackInfoData();
     // NOLINTEND

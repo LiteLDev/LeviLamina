@@ -31,6 +31,8 @@ public:
 
     virtual void resetContent() = 0;
 
+    virtual void reloadPacks() = 0;
+
     virtual ::Bedrock::PubSub::Subscription
     subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback) = 0;
 
@@ -65,6 +67,10 @@ public:
     virtual ::Bedrock::PubSub::Subscription subscribeToMarketplacePackDownloadStatus(
         ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
     ) = 0;
+
+    virtual void setEditorEnabled(bool isEditorEnabled) = 0;
+
+    virtual bool getEditorEnabled() const = 0;
     // NOLINTEND
 };
 

@@ -158,7 +158,6 @@ class ServerNetworkEventCoordinator;
 class ServerParticleManager;
 class ServerPlayerEventCoordinator;
 class ServerPlayerSleepManager;
-class ServerSoundHandle;
 class SoundPlayerInterface;
 class Spawner;
 class StartGamePacket;
@@ -192,6 +191,7 @@ struct DerivedDimensionArguments;
 struct DimensionType;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
+struct PlaySoundOptions;
 struct PlayerMovementSettings;
 struct PlayerSleepStatus;
 struct PlayerSpawnDimensionResolution;
@@ -252,6 +252,10 @@ public:
     virtual ::DimensionManager& getDimensionManager() = 0;
 
     virtual ::DimensionManager const& getDimensionManager() const = 0;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> getDimensionManagerNonOwner() = 0;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> getDimensionManagerNonOwner() const = 0;
 
     virtual uint getChunkTickRange() const = 0;
 
@@ -632,13 +636,7 @@ public:
         float const                            pitch
     ) = 0;
 
-    virtual void playSound(
-        ::std::string const&                 name,
-        ::Vec3 const&                        pos,
-        float                                volume,
-        float                                pitch,
-        ::std::optional<::ServerSoundHandle> serverSoundHandle
-    ) = 0;
+    virtual void playSound(::PlaySoundOptions const& options) = 0;
 
     virtual void playSound(
         ::IConstBlockSource const&             region,

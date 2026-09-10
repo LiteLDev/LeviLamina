@@ -50,7 +50,7 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const validator
     );
 
-    MCAPI ::TradeTable* fetchTable(::std::string const& path);
+    MCFOLD ::TradeTable* fetchTable(::std::string const& path);
 
     MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);
     // NOLINTEND

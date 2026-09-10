@@ -86,6 +86,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockMaterialInstancesDescription(
+        ::std::vector<::BlockMaterialInstancesDescription::BlockMaterialData> const& materialDatas
+    );
+
     MCAPI BlockMaterialInstancesDescription(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
@@ -121,6 +125,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::BlockMaterialInstancesDescription::BlockMaterialData> const& materialDatas);
+
     MCAPI void* $ctor(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,

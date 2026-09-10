@@ -8,6 +8,7 @@
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/RTCErrorOr.h"
 #include "mc/external/webrtc/scoped_refptr.h"
+#include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
 
@@ -88,9 +89,7 @@ public:
         uint64                                                                     sessionId
     );
 
-    MCNAPI void _completeAndClearConnection(
-        ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError> result
-    );
+    MCNAPI void _completeWithError(::Bedrock::ErrorInfo<::NetherNet::ESessionError> error);
 
     MCNAPI void _onIceConnectionChanged(::webrtc::PeerConnectionInterface::IceConnectionState newState);
     // NOLINTEND

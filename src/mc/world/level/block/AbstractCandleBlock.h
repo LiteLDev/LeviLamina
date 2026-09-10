@@ -22,8 +22,6 @@ class AbstractCandleBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool hasVariableLighting() const /*override*/;
-
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
@@ -74,8 +72,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $hasVariableLighting() const;
-
     MCFOLD bool $isInteractiveBlock() const;
 
     MCFOLD bool $isLavaBlocking() const;

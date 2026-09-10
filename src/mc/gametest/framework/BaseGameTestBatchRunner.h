@@ -2,14 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/Rotation.h"
-
 // auto generated forward declare list
 // clang-format off
+class TestSummaryDisplayer;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { class GameTestBatch; }
 namespace gametest { class GameTestTicker; }
+namespace gametest { class MultipleTestTracker; }
+namespace gametest { struct TestParameters; }
 // clang-format on
 
 namespace gametest {
@@ -39,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGameTestBatchRunner() = default;
+    virtual ~BaseGameTestBatchRunner();
 
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
     _createGameTestInstance(::gametest::BaseGameTestFunction& function) = 0;
@@ -51,15 +52,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addTestInstanceWithRotation(
-        ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>>& instances,
-        ::std::shared_ptr<::gametest::BaseGameTestFunction>                 testFunction,
-        ::Rotation                                                          rotation
+    MCNAPI BaseGameTestBatchRunner(
+        ::std::vector<::gametest::GameTestBatch>&& batches,
+        ::gametest::GameTestTicker&                testTicker,
+        ::gametest::TestParameters&&               params
     );
+
+    MCNAPI void _resetBatchTracker();
 
     MCNAPI void _runBatch(int batchIndex);
 
-    MCNAPI void forceStop();
+    MCNAPI void setBatchTestTracker(
+        ::std::unique_ptr<::gametest::MultipleTestTracker> batchTestTracker,
+        ::std::weak_ptr<::TestSummaryDisplayer>            testDisplayer
+    );
+
+    MCNAPI void start();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::vector<::gametest::GameTestBatch>&& batches,
+        ::gametest::GameTestTicker&                testTicker,
+        ::gametest::TestParameters&&               params
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

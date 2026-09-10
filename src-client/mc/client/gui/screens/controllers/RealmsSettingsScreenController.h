@@ -115,8 +115,8 @@ public:
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mClubModelMutex;
     ::ll::TypedStorage<8, 128, ::Clubs::ClubModel>                             mClubModel;
     ::ll::TypedStorage<8, 128, ::Clubs::ClubModel>                             mUpdatedClubModel;
-    ::ll::TypedStorage<8, 656, ::Realms::World>                                mWorld;
-    ::ll::TypedStorage<8, 656, ::Realms::World>                                mUpdatedWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                                mWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                                mUpdatedWorld;
     ::ll::TypedStorage<8, 80, ::Realms::SubscriptionInfo>                      mSubscription;
     ::ll::TypedStorage<1, 1, bool>                                             mIsInitialWorldLoadComplete;
     ::ll::TypedStorage<1, 1, bool>                                             mRefreshWorldAndSubscriptionInfoOnOpen;

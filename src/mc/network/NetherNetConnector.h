@@ -16,6 +16,7 @@
 // clang-format off
 class NetherNetTransportFactory;
 class NetworkIdentifier;
+class PrivateKeyManager;
 class WebRTCNetworkPeer;
 struct ConnectionDefinition;
 namespace Bedrock::Http { class LibHttpClientInstance; }
@@ -132,7 +133,7 @@ public:
 
     virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
 
-    virtual bool host(::ConnectionDefinition const& definition) /*override*/;
+    virtual bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys) /*override*/;
 
 #ifdef LL_PLAT_S
     virtual bool connect(
@@ -231,7 +232,7 @@ public:
 
     MCAPI void $setDisableLanSignaling(bool disableLanSignaling);
 
-    MCFOLD bool $host(::ConnectionDefinition const& definition);
+    MCFOLD bool $host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
 
 #ifdef LL_PLAT_S
     MCAPI bool $connect(

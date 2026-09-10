@@ -44,8 +44,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                       mLevelDataWrapper;
-    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
     ::ll::TypedStorage<8, 8, ::TrialManager const&>                                       mTrialManager;
     ::ll::TypedStorage<8, 2472, ::WorldCreationHelper>                                    mWorldCreator;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataBindings;
@@ -69,6 +69,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                        mReloadInitialTemplate;
     ::ll::TypedStorage<1, 1, bool>                                                        mTemplateLoadingComplete;
     ::ll::TypedStorage<1, 1, bool>                                                        mInitializeResourcePacks;
+    ::ll::TypedStorage<1, 1, bool>                                                        mRestoreSelectedResourcePacks;
     ::ll::TypedStorage<1, 1, bool>                                                        isRealmsSubscriptionActive;
     ::ll::TypedStorage<1, 1, bool> mNeedToReloadTemplateAndResourcePacksWhenGoingBackToCNW;
     ::ll::TypedStorage<1, 1, bool> mHasUserChangedPacks;

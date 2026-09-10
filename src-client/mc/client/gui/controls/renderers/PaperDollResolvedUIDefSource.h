@@ -31,6 +31,8 @@ public:
     virtual float getAsFloat(::std::string_view key, float defaultValue) const /*override*/;
 
     virtual ::std::string getAsString(::std::string_view key, ::std::string_view defaultValue) const /*override*/;
+
+    virtual void markUnused(::std::string_view key) const /*override*/;
     // NOLINTEND
 
 public:
@@ -41,6 +43,8 @@ public:
     MCAPI float $getAsFloat(::std::string_view key, float defaultValue) const;
 
     MCAPI ::std::string $getAsString(::std::string_view key, ::std::string_view defaultValue) const;
+
+    MCAPI void $markUnused(::std::string_view key) const;
     // NOLINTEND
 
 public:

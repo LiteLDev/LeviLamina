@@ -10,7 +10,7 @@
 // clang-format off
 class JumpControlComponent;
 class Mob;
-struct JumpControlDescription;
+namespace SharedTypes::v1_26_40 { struct JumpControlComponentDefinition; }
 // clang-format on
 
 class JumpControl : public ::Control {
@@ -19,7 +19,8 @@ public:
     // NOLINTBEGIN
     virtual ~JumpControl() /*override*/ = default;
 
-    virtual void initializeInternal(::Mob& mob, ::JumpControlDescription const* description);
+    virtual void
+    initializeInternal(::Mob& mob, ::SharedTypes::v1_26_40::JumpControlComponentDefinition const* description);
 
     virtual ::std::unique_ptr<::JumpControl> clone() const;
 
@@ -39,7 +40,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob& mob, ::JumpControlDescription const* description);
+    MCFOLD void
+    $initializeInternal(::Mob& mob, ::SharedTypes::v1_26_40::JumpControlComponentDefinition const* description);
 
     MCAPI ::std::unique_ptr<::JumpControl> $clone() const;
 

@@ -19,7 +19,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                                    mIsEnabled;
     ::ll::TypedStorage<8, 64, ::std::function<::NetworkConnectionType()>>                 mGetNetworkConnectionType;
     ::ll::TypedStorage<8, 64, ::std::function<void(::OnlineAudioStreamEnded)>>            mOnSessionEnded;
-    ::ll::TypedStorage<8, 64, ::std::function<bool(::Core::Path const&)>>                 mIsResourceFromBasePack;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::Core::Path const&)>>                 mCanPlayOnlineAudioForFile;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StreamingMusicEntry>> mStreamingMusicTable;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                        mAllowedEventNames;
     ::ll::TypedStorage<4, 4, uint>                                                        mBufferSizeBytes;

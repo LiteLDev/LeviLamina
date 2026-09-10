@@ -30,9 +30,10 @@ class StairBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockType const&>                         mBase;
-    ::ll::TypedStorage<8, 184, ::std::optional<::BlockDescriptor> const> mBlocksToCornerWith;
-    ::ll::TypedStorage<1, 1, bool const>                                 mLeakyCornersFix;
+    ::ll::TypedStorage<8, 8, ::BlockType const&>                   mBase;
+    ::ll::TypedStorage<1, 1, bool const>                           mEnableCornerStairTag;
+    ::ll::TypedStorage<8, 184, ::std::optional<::BlockDescriptor>> mBlocksToCornerWith;
+    ::ll::TypedStorage<1, 1, bool const>                           mLeakyCornersFix;
     // NOLINTEND
 
 public:
@@ -104,8 +105,6 @@ public:
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
-
-    virtual bool isStairBlock() const /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
 
@@ -240,8 +239,6 @@ public:
         ::Vec3 const&     clickPos,
         int               itemValue
     ) const;
-
-    MCFOLD bool $isStairBlock() const;
 
     MCFOLD int $getVariant(::Block const& block) const;
 

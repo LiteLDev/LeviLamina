@@ -25,6 +25,12 @@ public:
     LayoutScheduler& operator=(LayoutScheduler const&);
     LayoutScheduler(LayoutScheduler const&);
     LayoutScheduler();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void waitUntilLayoutIsCompleted();
+    // NOLINTEND
 };
 
 } // namespace OreUI

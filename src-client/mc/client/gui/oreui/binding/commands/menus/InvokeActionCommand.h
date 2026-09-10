@@ -19,7 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::Settings::IRegistry>()>> mSettingsRegistryFunc;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>>         mInvokeAction;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>         mInvokeAction;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>         mCancelAsyncAction;
     // NOLINTEND
 
 public:
@@ -36,12 +37,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

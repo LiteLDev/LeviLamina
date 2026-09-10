@@ -40,7 +40,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                               mNumFullIcons;
     ::ll::TypedStorage<8, 8, uint64>                               mNumHalfIcons;
     ::ll::TypedStorage<8, 192, ::std::array<::mce::TexturePtr, 6>> mHungerTextures;
-    ::ll::TypedStorage<8, 3552, ::std::array<::mce::Mesh, 6>>      mHungerMeshes;
+    ::ll::TypedStorage<8, 3696, ::std::array<::mce::Mesh, 6>>      mHungerMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>      mIconPosition;
     // NOLINTEND
 

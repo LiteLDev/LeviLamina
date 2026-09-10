@@ -81,6 +81,8 @@ public:
     MCNAPI static ::Bedrock::Result<int64> parseImfFixdate(::std::string const& dateHeader);
 
 #ifdef LL_PLAT_C
+    MCNAPI static ::Bedrock::Result<::std::chrono::seconds> parseNetTimeSpan(::std::string_view str);
+
     MCNAPI static bool toDateTime(
         ::std::string const&         strTime,
         ::tm*                        result,
@@ -106,6 +108,10 @@ public:
 #endif
 
     MCNAPI static ::std::string toString_DateTime(::tm const& time, ::DateManager::TimeZoneType outputType);
+
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string toString_NetTimeSpan(::std::chrono::seconds value);
+#endif
     // NOLINTEND
 
 public:

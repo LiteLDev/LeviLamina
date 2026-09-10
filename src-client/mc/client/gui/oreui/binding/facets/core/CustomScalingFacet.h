@@ -58,7 +58,7 @@ public:
 
     MCFOLD int getMaxFixedGuiScaleModifier() const;
 
-    MCFOLD int getMinFixedGuiScaleModifier() const;
+    MCAPI int getMinFixedGuiScaleModifier() const;
 
     MCAPI char const* getScalingModeOverride() const;
 

@@ -30,16 +30,16 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ActorSpawnRuleDataLoader();
 
-#else // LL_PLAT_C
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ActorSpawnRuleDataLoader(
         ::cereal::ReflectionCtx const& ctx,
         ::PackLoadContext const&       packLoadContext,
@@ -53,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::cereal::ReflectionCtx const& ctx,
         ::PackLoadContext const&       packLoadContext,

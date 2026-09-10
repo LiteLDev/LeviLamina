@@ -44,8 +44,6 @@ public:
     addImage(::cg::TextureSetLayerType const& layerType, ::std::shared_ptr<::cg::ImageResource> imageResource);
 
     MCAPI ::cg::ImageDescription getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
-
-    MCAPI uint64 getStorageSize(::cg::TextureSetLayerType const& layerType) const;
 #endif
     // NOLINTEND
 

@@ -31,13 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentItem() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual ~ContentItem() /*override*/ = default;
     // NOLINTEND
 
 public:

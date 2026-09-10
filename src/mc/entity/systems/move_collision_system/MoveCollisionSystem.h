@@ -15,10 +15,12 @@ class IConstBlockSource;
 class LocalSpatialEntityFetcher;
 class StrictEntityContext;
 struct AABBShapeComponent;
+struct ActorDataFlagComponent;
 struct CollidableMobFlagComponent;
 struct CollidableMobNearFlagComponent;
 struct FallingBlockFlagComponent;
 struct MaxAutoStepComponent;
+struct MinecartFlagComponent;
 struct MoveRequestComponent;
 struct TickingSystemWithInfo;
 namespace BlockSourceVisitor { struct CollisionShape; }
@@ -37,15 +39,17 @@ MCAPI void fetchCollisionShapes(
     ::MaxAutoStepComponent const&                      autoStep,
     ::Optional<::CollidableMobNearFlagComponent const> collidableMobNear,
     ::MoveRequestComponent&                            request,
+    ::Optional<::MinecartFlagComponent const>          isMinecart,
     ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const> const&
-                                                                                  collidableMobs,
-    ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> const& fallingBlocks,
-    ::IConstBlockSource const&                                                    region,
-    ::LocalSpatialEntityFetcher&                                                  fetcher,
-    ::GetCollisionShapeInterface const&                                           collisionShape,
-    ::std::vector<::BlockSourceVisitor::CollisionShape>&                          tempCollisionShapes,
-    ::std::vector<::BlockSourceVisitor::CollisionShape>&                          scratchCollisionShapes,
-    ::std::vector<::AABB>&                                                        tempShapes
+                                                                                                      collidableMobs,
+    ::ViewT<::StrictEntityContext, ::AABBShapeComponent const, ::ActorDataFlagComponent const> const& stackableView,
+    ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> const&                     fallingBlocks,
+    ::IConstBlockSource const&                                                                        region,
+    ::LocalSpatialEntityFetcher&                                                                      fetcher,
+    ::GetCollisionShapeInterface const&                                                               collisionShape,
+    ::std::vector<::BlockSourceVisitor::CollisionShape>& tempCollisionShapes,
+    ::std::vector<::BlockSourceVisitor::CollisionShape>& scratchCollisionShapes,
+    ::std::vector<::AABB>&                               tempShapes
 );
 // NOLINTEND
 

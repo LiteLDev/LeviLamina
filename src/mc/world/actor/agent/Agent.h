@@ -69,7 +69,7 @@ public:
     virtual bool canBeAffected(uint id) const /*override*/;
 
     virtual void
-    knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters) /*override*/;
+    knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters) /*override*/;
 
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
@@ -116,6 +116,10 @@ public:
 
     MCAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
 
+#ifdef LL_PLAT_C
+    MCAPI float getMoveSpeedScalar() const;
+#endif
+
     MCAPI void handleAnimationEvent(::AgentAnimation anim);
 
     MCAPI bool isValidSlotNum(int slotNum);
@@ -154,7 +158,7 @@ public:
 
     MCFOLD bool $canBeAffected(uint id) const;
 
-    MCFOLD void $knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters);
+    MCFOLD void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 

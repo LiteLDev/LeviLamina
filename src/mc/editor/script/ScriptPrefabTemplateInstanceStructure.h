@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -49,12 +48,6 @@ public:
 
     MCNAPI ::Scripting::Result<::Rotation, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
     _getInstanceRotation() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

@@ -45,6 +45,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk700723;
     ::ll::UntypedStorage<8, 32> mUnk382c65;
     ::ll::UntypedStorage<8, 32> mUnk3c9355;
+    ::ll::UntypedStorage<8, 32> mUnke6dc8f;
     ::ll::UntypedStorage<8, 32> mUnk1a5b9d;
     ::ll::UntypedStorage<8, 32> mUnkf8c6bd;
     ::ll::UntypedStorage<1, 1>  mUnk907821;
@@ -66,17 +67,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EditorExtensionContext(
-        ::Player&                                                           player,
-        ::Editor::ServiceProviderCollection&                                serviceProviders,
-        ::Editor::Services::EditorSettingsServiceProvider*                  settingsService,
-        ::Editor::Services::TransactionManagerServiceProvider*              transactionManagerServiceProvider,
-        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>       clipboardServiceRef,
-        ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
-        ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
-        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
-        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
-        ::Scripting::WeakLifetimeScope                                      scope,
-        ::Editor::API::EditorExtension&                                     extension
+        ::Player&                                                              player,
+        ::Editor::ServiceProviderCollection&                                   serviceProviders,
+        ::Editor::Services::EditorSettingsServiceProvider*                     settingsService,
+        ::std::weak_ptr<::Editor::Services::TransactionManagerServiceProvider> transactionManager,
+        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>          clipboardServiceRef,
+        ::Editor::Services::EditorBlockPaletteServiceProvider*                 blockPaletteService,
+        ::Editor::Services::BrushShapeManagerServiceProvider*                  brushShapeService,
+        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider>    serverStructureServiceWeakRef,
+        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>      minimapServiceWeakRef,
+        ::Scripting::WeakLifetimeScope                                         scope,
+        ::Editor::API::EditorExtension&                                        extension
     );
     // NOLINTEND
 
@@ -84,28 +85,23 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-
-#ifdef LL_PLAT_S
-    MCNAPI static ::std::optional<::std::unique_ptr<::Editor::API::EditorExtensionContext>>
-    tryCreate(::Player& player, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::Player&                                                           player,
-        ::Editor::ServiceProviderCollection&                                serviceProviders,
-        ::Editor::Services::EditorSettingsServiceProvider*                  settingsService,
-        ::Editor::Services::TransactionManagerServiceProvider*              transactionManagerServiceProvider,
-        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>       clipboardServiceRef,
-        ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
-        ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
-        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
-        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
-        ::Scripting::WeakLifetimeScope                                      scope,
-        ::Editor::API::EditorExtension&                                     extension
+        ::Player&                                                              player,
+        ::Editor::ServiceProviderCollection&                                   serviceProviders,
+        ::Editor::Services::EditorSettingsServiceProvider*                     settingsService,
+        ::std::weak_ptr<::Editor::Services::TransactionManagerServiceProvider> transactionManager,
+        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider>          clipboardServiceRef,
+        ::Editor::Services::EditorBlockPaletteServiceProvider*                 blockPaletteService,
+        ::Editor::Services::BrushShapeManagerServiceProvider*                  brushShapeService,
+        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider>    serverStructureServiceWeakRef,
+        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>      minimapServiceWeakRef,
+        ::Scripting::WeakLifetimeScope                                         scope,
+        ::Editor::API::EditorExtension&                                        extension
     );
     // NOLINTEND
 };

@@ -64,10 +64,13 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::GameplayUserManagerProxy>>> mGameplayUserManagerProxy;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     GameplayUserManager();
 
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -90,45 +93,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI explicit GameplayUserManager(::std::unique_ptr<::GameplayUserManagerProxy> gameplayUserManagerProxy);
+#endif
 
     MCAPI void _addTrackedMapPlayers(::MapItemSavedData& mapItemSavedData);
 
     MCAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
 
+#ifdef LL_PLAT_S
     MCAPI void _resumePlayer(::WeakEntityRef weakEntityUser);
+#endif
 
     MCAPI void _saveAllPlayers(::LevelStorage& levelStorage);
 
+#ifdef LL_PLAT_S
     MCAPI void _suspendPlayer(::WeakEntityRef weakEntityUser);
 
     MCAPI void addGameplayUser(::OwnerPtr<::EntityContext> userEntity);
+#endif
 
     MCAPI void cleanupRemovedGameplayUsers();
 
+#ifdef LL_PLAT_S
     MCAPI void clearAllGameplayUserEntities();
+#endif
 
     MCAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
 
     MCAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
 
+#ifdef LL_PLAT_S
     MCAPI void queueResumePlayer(::EntityContext const& playerEntity);
 
     MCAPI void queueSuspendPlayer(::EntityContext const& playerEntity);
 
     MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+#endif
 
     MCAPI void registerMapDataManagerListener(::IServerMapDataManagerConnector& serverMapDataManagerConnector);
 
+#ifdef LL_PLAT_S
     MCAPI void startLeaveGame();
 
     MCAPI void tickSuspensions();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::std::unique_ptr<::GameplayUserManagerProxy> gameplayUserManagerProxy);
+#endif
     // NOLINTEND
 
 public:
@@ -147,11 +164,5 @@ public:
     MCAPI ::Bedrock::PubSub::Connector<void()>& $getAnyGameplayUsersRemovedConnector();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

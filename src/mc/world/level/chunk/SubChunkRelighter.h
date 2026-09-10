@@ -13,7 +13,6 @@ class BlockPos;
 class IBlockSource;
 class LevelChunk;
 class Pos;
-class SpinLockImpl;
 struct Brightness;
 struct SubChunk;
 struct SubChunkLightIndex;
@@ -24,6 +23,11 @@ struct SubtractiveLightInfo;
 class SubChunkRelighter {
 public:
     // SubChunkRelighter inner types define
+    enum class AbsorptionBehavior : int {
+        Default              = 0,
+        SkyLightIgnoresWater = 1,
+    };
+
     enum class SubChunkToDoBitsClearMode : int {
         AllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits = 0,
         SetOuterEdgeOfComputationBits                            = 1,
@@ -47,7 +51,7 @@ public:
     ::ll::TypedStorage<8, 8, ::ChunkPos>                                   mCenterChunkPos;
     ::ll::TypedStorage<8, 8, uint64>                                       mCenterSubChunkIndex;
     ::ll::TypedStorage<1, 1, bool>                                         mOriginalLighting;
-    ::ll::TypedStorage<1, 1, bool>                                         mIsClientSide;
+    ::ll::TypedStorage<4, 4, ::SubChunkRelighter::AbsorptionBehavior>      mAbsorptionBehavior;
     ::ll::TypedStorage<1, 1, ::SubChunkBrightnessStorage::LightPair>       mDefaultLightPair;
     // NOLINTEND
 
@@ -59,12 +63,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SubChunkRelighter(
-        ::IBlockSource&   source,
-        uint64            centerSubChunkIndex,
-        ::ChunkPos const& centerChunkPos,
-        bool              isClientSide,
-        bool              originalLighting,
-        bool              useFullyDarkSubchunk
+        ::IBlockSource&                         source,
+        uint64                                  centerSubChunkIndex,
+        ::ChunkPos const&                       centerChunkPos,
+        ::SubChunkRelighter::AbsorptionBehavior absorptionBehavior,
+        bool                                    originalLighting,
+        bool                                    useFullyDarkSubchunk
     );
 
     MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(::SubChunkLightIndex const& coordIndex);
@@ -83,15 +87,13 @@ public:
         uint&                      subChunkIndex
     ) const;
 
-#ifdef LL_PLAT_S
     MCAPI void _propagateBlockLight();
 
     MCAPI void _propagateSkyLight();
 
     MCAPI void _propagateSubtractiveBlockLight();
 
-    MCAPI void _propagateSubtractiveSkyLight(bool shouldCheckForIgnoredAbsorptionValues);
-#endif
+    MCAPI void _propagateSubtractiveSkyLight();
 
     MCAPI void _setLightHelper(
         ::SubChunkLightIndex coordIndex,
@@ -128,8 +130,6 @@ public:
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList,
         ::std::vector<::BlockPos>&                  brightnessChangedList
     );
-
-    MCAPI void update(::BlockPos const&, uint64);
 #endif
 
     MCAPI ~SubChunkRelighter();
@@ -150,25 +150,21 @@ public:
 
     MCAPI static ::std::bitset<196608>& mOuterEdgeOfComputationBits();
 
-    MCAPI static ::SpinLockImpl& sDarkSpinLock();
-
     MCAPI static ::std::unique_ptr<::SubChunk>& sFullyDarkSubChunk();
 
     MCAPI static ::std::unique_ptr<::SubChunk>& sFullyLitSubChunk();
-
-    MCAPI static ::SpinLockImpl& sLitSpinLock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::IBlockSource&   source,
-        uint64            centerSubChunkIndex,
-        ::ChunkPos const& centerChunkPos,
-        bool              isClientSide,
-        bool              originalLighting,
-        bool              useFullyDarkSubchunk
+        ::IBlockSource&                         source,
+        uint64                                  centerSubChunkIndex,
+        ::ChunkPos const&                       centerChunkPos,
+        ::SubChunkRelighter::AbsorptionBehavior absorptionBehavior,
+        bool                                    originalLighting,
+        bool                                    useFullyDarkSubchunk
     );
     // NOLINTEND
 

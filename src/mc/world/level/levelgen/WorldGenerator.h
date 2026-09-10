@@ -164,6 +164,10 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
     );
 
+#ifdef LL_PLAT_C
+    MCAPI void tick();
+#endif
+
     MCAPI void waitForStructures();
     // NOLINTEND
 

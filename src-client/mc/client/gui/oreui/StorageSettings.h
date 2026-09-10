@@ -9,6 +9,8 @@ namespace OreUI::EntryPoints::StorageSettings {
 // functions
 // NOLINTBEGIN
 MCAPI ::std::string composeRoute(::StorageManager::ContentType type);
+
+MCAPI ::std::optional<::StorageManager::ContentType> getContentTypeFromRoute(::std::string const& route);
 // NOLINTEND
 
 // static variables

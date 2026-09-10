@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/Category.h"
+#include "mc/client/sound/Category.h"
 #include "mc/client/sound/CustomMusic.h"
 #include "mc/client/sound/Music.h"
 #include "mc/deps/core/threading/CountTracker.h"
@@ -38,6 +38,8 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                                   mCurrentMusicName;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::Music>>> mMusicDefinitions;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::CountTracker>                              mDeferMusicRefCount;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<void*>>                                        mInitLoadingDeferment;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<void*>>                                        mResumeLoadingDeferment;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPauseStateChangeSubscription;
     ::ll::TypedStorage<1, 1, bool>                             mIsMusicReady;
     // NOLINTEND

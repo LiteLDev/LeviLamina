@@ -756,7 +756,9 @@ public:
 
     MCAPI ::Dimension& getDimension() const;
 
-    MCAPI ::BlockSource& getDimensionBlockSource() const;
+    MCFOLD ::BlockSource& getDimensionBlockSource() const;
+
+    MCFOLD ::BlockSource const& getDimensionBlockSourceConst() const;
 
     MCAPI ::MobEffectInstance const* getEffect(::MobEffect const& effect) const;
 
@@ -792,7 +794,9 @@ public:
 
     MCAPI ::Vec3 getInterpolatedRidingPosition(float a = 0.0f) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::Vec2 getInterpolatedRotation(float a) const;
+#endif
 
     MCAPI int getInventorySize() const;
 
@@ -904,8 +908,6 @@ public:
 
     MCAPI bool isAdventure() const;
 
-    MCAPI bool isAngry() const;
-
     MCAPI bool isBaby() const;
 
     MCAPI bool isCreative() const;
@@ -915,8 +917,6 @@ public:
     MCAPI bool isImmersedInWater() const;
 
     MCAPI bool isInClouds() const;
-
-    MCAPI bool isInLove() const;
 
     MCAPI bool isInPrecipitation() const;
 
@@ -936,6 +936,8 @@ public:
 
     MCAPI bool isJumping() const;
 
+    MCAPI bool isLayingDown() const;
+
     MCAPI bool isLeashed() const;
 
     MCAPI bool isLocalPlayer() const;
@@ -945,8 +947,6 @@ public:
     MCAPI bool isOverWater() const;
 
     MCAPI bool isPassenger(::Actor const& passenger) const;
-
-    MCAPI bool isResting() const;
 
     MCAPI bool isRiding(::Actor* targetVehicle) const;
 
@@ -969,6 +969,8 @@ public:
     MCAPI bool isUnderLiquid(::SharedTypes::v1_26_20::MaterialType type) const;
 
     MCAPI bool isUseNewTradeScreen() const;
+
+    MCAPI bool isWalker() const;
 
     MCAPI bool isWearingLeatherArmor() const;
 
@@ -1015,6 +1017,10 @@ public:
         bool                                   isGlobal,
         ::std::optional<::Vec3> const&
     );
+
+#ifdef LL_PLAT_C
+    MCAPI void positionAllPassengers();
+#endif
 
     MCAPI void positionPassenger(::Actor& passenger);
 
@@ -1073,6 +1079,10 @@ public:
     MCAPI void setPersistent();
 
     MCAPI void setRedactableNameTag(::Bedrock::Safety::RedactableString const& name);
+
+#ifdef LL_PLAT_C
+    MCAPI void setRotationWrapped(::Vec2 const& rot);
+#endif
 
     MCAPI void setRuntimeID(::ActorRuntimeID id);
 
@@ -1319,7 +1329,11 @@ public:
 
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
+#ifdef LL_PLAT_S
     MCFOLD ::HashedString const& $getActorRendererId() const;
+#else // LL_PLAT_C
+    MCAPI ::HashedString const& $getActorRendererId() const;
+#endif
 
     MCAPI void $despawn();
 

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class TaskGroup;
 namespace OreUI { class GameDependencies; }
 // clang-format on
 
@@ -17,8 +18,9 @@ class WorldCloudSyncCommandGroup : public ::OreUI::CommandGroupBase<::OreUI::Wor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>>       mSetLocalOnly;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>> mSetCloudSaved;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                             mTaskGroup;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>       mSetLocalOnly;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>> mSetCloudSaved;
     // NOLINTEND
 
 public:

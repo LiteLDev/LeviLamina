@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackIdVersion.h"
+#include "mc/deps/core/resource/ResourceInformation.h"
 #include "mc/deps/script_core/runtime/scripting/IDependencyLoader.h"
 #include "mc/deps/script_core/runtime/scripting/IPrinter.h"
 #include "mc/deps/script_core/script_engine/scripting/Capabilities.h"
@@ -46,6 +47,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptPlugin();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptPlugin() /*override*/ = default;
@@ -81,9 +86,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptPlugin(
+        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
+        ::Scripting::ModuleDescriptor&&                moduleDesc,
+        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
+        ::Scripting::Capabilities&&                    capabilities,
+        ::MinEngineVersion const&                      minEngineVersion,
+        ::PackIdVersion const&                         packId,
+        ::std::string const&                           runtimeName,
+        ::std::string const&                           mainScriptFilePath,
+        ::ResourceInformation::ResourceType            pluginType,
+        ::PluginExecutionGroup                         executionGroup,
+        ::std::unique_ptr<::Scripting::IPrinter>       printLogger
+    );
+
     MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
 
     MCAPI void enableHandleCounter(bool enabled);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
+        ::Scripting::ModuleDescriptor&&                moduleDesc,
+        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
+        ::Scripting::Capabilities&&                    capabilities,
+        ::MinEngineVersion const&                      minEngineVersion,
+        ::PackIdVersion const&                         packId,
+        ::std::string const&                           runtimeName,
+        ::std::string const&                           mainScriptFilePath,
+        ::ResourceInformation::ResourceType            pluginType,
+        ::PluginExecutionGroup                         executionGroup,
+        ::std::unique_ptr<::Scripting::IPrinter>       printLogger
+    );
     // NOLINTEND
 
 public:

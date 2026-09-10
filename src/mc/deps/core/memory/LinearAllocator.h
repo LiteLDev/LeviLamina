@@ -13,4 +13,5 @@ public:
 #ifdef LL_PLAT_C
     MCAPI T0* allocate(size_t n);
 #endif
+    void deallocate(void*, size_t) {}
 };

@@ -80,6 +80,12 @@ public:
             ::OreUI::GeometryProtocolType
         ) const>>
         mCreateGeometryAtlasResourceHandler;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::brstd::move_only_function<
+            ::std::unique_ptr<::Gameface::IResourceHandler>(::OreUI::RegisterResourceHandlersArguments const&) const>>
+        mCreateMinimapResourceHandler;
     // NOLINTEND
 
 public:

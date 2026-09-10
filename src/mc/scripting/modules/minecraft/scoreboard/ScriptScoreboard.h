@@ -14,6 +14,7 @@ class IdentityDefinition;
 class Level;
 class Objective;
 class Scoreboard;
+class ScoreboardIdentityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardListener; }
@@ -52,6 +53,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptScoreboard();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptScoreboard() = default;
@@ -60,11 +65,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptScoreboard(::Scoreboard& scoreboard, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>
     _getOrCreateScoreboardObjective(::Objective const& objective);
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>
     getOrCreateScoreboardIdentity(::IdentityDefinition const& identity);
+
+    MCAPI ::ScoreboardIdentityRef* getOrCreateScoreboardIdentityRef(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
+    );
+
+    MCAPI void removeIdentityById(::ScoreboardId const& id);
+
+    MCAPI void removeObjectiveByName(::std::string const& objective);
+
+    MCAPI ::ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
+    ) const;
 
     MCAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
         ::std::variant<
@@ -78,6 +103,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scoreboard& scoreboard, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

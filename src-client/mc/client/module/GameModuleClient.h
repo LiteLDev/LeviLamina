@@ -59,7 +59,7 @@ public:
 
     virtual void configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const) = 0;
 
-    virtual void tick() = 0;
+    virtual void tick(::IClientInstance const& client) = 0;
 
     virtual void setupStandardCommands(::CommandRegistry& commandRegistry) = 0;
 

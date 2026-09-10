@@ -95,13 +95,13 @@ public:
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
     virtual bool canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const /*override*/;
 
-    virtual bool canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    virtual bool canBeBuiltOver(::Block const&, ::BlockSource const& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool canProvideSupport(::Block const& block, uchar, ::BlockSupportType) const /*override*/;
 
@@ -123,7 +123,7 @@ public:
     // NOLINTBEGIN
     MCAPI TopSnowBlock(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
 
-    MCAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockType const* newBlock) const;
+    MCAPI bool _canBeBuiltOver(::BlockSource const& region, ::BlockPos const& pos, ::BlockType const* newBlock) const;
 
     MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
@@ -212,13 +212,13 @@ public:
     MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
     MCAPI bool $canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const;
 
-    MCAPI bool $canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canBeBuiltOver(::Block const&, ::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar, ::BlockSupportType) const;
 

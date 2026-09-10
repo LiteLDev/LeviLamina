@@ -73,6 +73,14 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static bool isPreserved(::BlockActor const& blockActor, ::BlockSource& region);
+#endif
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);

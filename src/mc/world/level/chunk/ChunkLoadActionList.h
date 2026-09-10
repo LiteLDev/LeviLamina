@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/chunk/ChunkRequestListType.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
@@ -12,9 +13,13 @@
 // clang-format off
 class ChunkLoadedRequest;
 class Dimension;
+class ICommandOriginLoader;
 class IRequestAction;
+class IUnknownBlockTypeRegistry;
+class JigsawStructureElementRegistry;
 class LevelStorage;
 class ServerLevel;
+struct DimensionType;
 // clang-format on
 
 class ChunkLoadActionList {
@@ -45,6 +50,15 @@ public:
     MCAPI int
     _clearRequest(::LevelStorage& levelStorage, ::IRequestAction* actionToRemove, ::std::string_view tickingAreaName);
 
+    MCAPI void _loadRequests(
+        ::LevelStorage&                                         storage,
+        ::ICommandOriginLoader&                                 loader,
+        ::std::string const&                                    dimensionPrefix,
+        ::JigsawStructureElementRegistry const&                 elementReg,
+        ::DimensionType                                         type,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry
+    );
+
     MCAPI void _saveRequest(
         ::ChunkLoadedRequest&  request,
         ::std::string const&   dimensionPrefix,
@@ -62,6 +76,21 @@ public:
         ::ServerLevel&                                               serverLevel,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
+    );
+
+    MCAPI void loadRequests(
+        ::LevelStorage&                                         storage,
+        ::ICommandOriginLoader&                                 loader,
+        ::std::string const&                                    dimensionPrefix,
+        ::DimensionType                                         type,
+        ::JigsawStructureElementRegistry const&                 elementReg,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry
+    );
+
+    MCAPI ::QueueRequestResult queueRequestActionWithoutDuplicates(
+        ::ChunkLoadedRequest chunkLoadedRequest,
+        ::ServerLevel&       serverLevel,
+        ::Dimension&         dimension
     );
 
     MCAPI ::QueueRequestResult queueRequestOrExecuteAction(

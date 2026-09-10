@@ -140,7 +140,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $remove();
 

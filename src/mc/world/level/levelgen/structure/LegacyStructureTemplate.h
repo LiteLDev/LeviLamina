@@ -77,6 +77,10 @@ public:
     ) const;
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
+
+#ifdef LL_PLAT_C
+    MCAPI void load(::CompoundTag const& tag);
+#endif
     // NOLINTEND
 
 public:
@@ -89,7 +93,7 @@ public:
     MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
         ::std::unique_ptr<::CompoundTag> originalTag,
         ::std::string const&             javaBlockName,
-        int const                        dataVersion,
+        int                              dataVersion,
         ::Block const*&                  block
     );
 

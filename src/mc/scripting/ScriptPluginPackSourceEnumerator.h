@@ -33,14 +33,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI
     ScriptPluginPackSourceEnumerator(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
+#endif
     // NOLINTEND
 
 public:

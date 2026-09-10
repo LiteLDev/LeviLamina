@@ -7,7 +7,15 @@
 #include "mc/deps/crypto/asymmetric/PrivateKeySigningFormat.h"
 #include "mc/deps/crypto/asymmetric/PubKeyFormat.h"
 #include "mc/deps/crypto/asymmetric/system/ISystemInterface.h"
+#include "mc/deps/crypto/asymmetric/system/System.h"
 #include "mc/deps/crypto/hash/HashType.h"
+#include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Crypto::Asymmetric { struct EcPublicKeyComponents; }
+namespace Crypto::Asymmetric { struct RsaPublicKeyComponents; }
+// clang-format on
 
 namespace Crypto::Asymmetric {
 
@@ -42,8 +50,14 @@ public:
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
 
-    virtual bool
-    constructPublicKey(::std::string const& modulus, ::std::string const& exponent, ::std::string& keyOut) /*override*/;
+    virtual ::Bedrock::Result<::std::string> constructPublicKey(
+        ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&
+            components
+    ) /*override*/;
+
+    virtual ::Bedrock::Result<
+        ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents>>
+    deconstructPublicKey(::std::string const& publicKey) /*override*/;
 
     virtual ::std::string encryptData(
         ::std::string const&               publicKey,
@@ -78,11 +92,25 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Bedrock::Result<::Crypto::Asymmetric::System>
+    inferSystemFromPublicKey(::std::string const& publicKey);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
 
-    MCNAPI bool $constructPublicKey(::std::string const& modulus, ::std::string const& exponent, ::std::string& keyOut);
+    MCNAPI ::Bedrock::Result<::std::string> $constructPublicKey(
+        ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&
+            components
+    );
+
+    MCNAPI ::Bedrock::Result<
+        ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents>>
+    $deconstructPublicKey(::std::string const& publicKey);
 
     MCNAPI ::std::string $encryptData(
         ::std::string const&               publicKey,

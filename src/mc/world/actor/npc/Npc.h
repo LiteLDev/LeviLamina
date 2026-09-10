@@ -48,7 +48,7 @@ public:
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
     virtual void
-    knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters) /*override*/;
+    knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters) /*override*/;
 
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
@@ -106,7 +106,7 @@ public:
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCFOLD void $knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters);
+    MCFOLD void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
     MCFOLD bool $canBePulledIntoVehicle() const;
 

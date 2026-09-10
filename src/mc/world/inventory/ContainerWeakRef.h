@@ -10,8 +10,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class Container;
 struct ContainerRuntimeIdTag;
+struct ContainerWeakRefData;
 // clang-format on
 
 class ContainerWeakRef {
@@ -23,5 +25,13 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                   mBlockPosition;
     ::ll::TypedStorage<4, 4, ::ContainerRuntimeId>          mContainerRuntimeId;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>> mWeakContainer;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::ContainerWeakRefData tryGetContainer(::BlockSource& region) const;
+#endif
     // NOLINTEND
 };

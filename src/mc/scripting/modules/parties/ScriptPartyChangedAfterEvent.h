@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleParties { struct ScriptPartyChangedIntermediateData; }
+// clang-format on
+
 namespace ScriptModuleParties {
 
 struct ScriptPartyChangedAfterEvent {

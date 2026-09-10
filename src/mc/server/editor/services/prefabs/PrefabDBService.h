@@ -128,13 +128,15 @@ public:
         ::BlockSource&                                       region,
         ::BlockPalette const&                                globalBlockPalette,
         ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef,
-        ::std::optional<::std::string_view>                  optionalCapturePath
+        ::std::optional<::std::string_view>                  optionalCapturePath,
+        bool&                                                outSuccess
     ) /*override*/;
 
     virtual void bake(
         ::WeakEntityRef                           weakPlayerRef,
         ::std::function<void(bool)>               completionCallback,
-        ::std::function<void(::std::string_view)> logger
+        ::std::function<void(::std::string_view)> logger,
+        bool                                      deleteInstancesAfterBake
     ) /*override*/;
 
     virtual void unbake(
@@ -234,13 +236,15 @@ public:
         ::BlockSource&                                       region,
         ::BlockPalette const&                                globalBlockPalette,
         ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef,
-        ::std::optional<::std::string_view>                  optionalCapturePath
+        ::std::optional<::std::string_view>                  optionalCapturePath,
+        bool&                                                outSuccess
     );
 
     MCNAPI void $bake(
         ::WeakEntityRef                           weakPlayerRef,
         ::std::function<void(bool)>               completionCallback,
-        ::std::function<void(::std::string_view)> logger
+        ::std::function<void(::std::string_view)> logger,
+        bool                                      deleteInstancesAfterBake
     );
 
     MCNAPI void $unbake(

@@ -45,13 +45,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI HudContainerModel(::ContainerEnumName containerName, ::Player& player);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
+#endif
     // NOLINTEND
 
 public:
@@ -68,11 +72,5 @@ public:
     MCAPI void $_init();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

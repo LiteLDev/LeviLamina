@@ -6,8 +6,8 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/IPackSourceFactory.h"
 #include "mc/resources/RealmsUnknownPackSources.h"
-#include "mc/resources/interface/IPackSourceFactory.h"
 
 // auto generated forward declare list
 // clang-format off

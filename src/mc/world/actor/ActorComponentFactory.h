@@ -21,8 +21,6 @@ public:
     MCAPI void _initializeComponentDefinitions(::Experiments const& experiments);
 
     MCAPI void _initializePropertyDefinitions(::Experiments const& experiments);
-
-    MCAPI void _initializeTriggerDefinitions(::Experiments const& experiments);
     // NOLINTEND
 
 public:

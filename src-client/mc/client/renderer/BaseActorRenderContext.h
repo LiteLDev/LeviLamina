@@ -13,6 +13,7 @@ class ActorBlockRenderer;
 class ActorRenderDispatcher;
 class BlockActorRenderDispatcher;
 class DataDrivenRenderer;
+class DataDrivenRendererRegistry;
 class FontHandle;
 class HashedString;
 class HudIconActorRenderer;
@@ -25,7 +26,6 @@ class ScreenContext;
 class SortedMeshDrawList;
 class Vec2;
 struct DataDrivenRendererContinuousData;
-struct ProcessedDataDrivenRenderers;
 namespace LightPropagation { class LightVolumeManager; }
 // clang-format on
 
@@ -58,7 +58,7 @@ public:
     ::ll::TypedStorage<8, 8, ::HudIconActorRenderer&>                                  mHudIconActorRenderer;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LightPropagation::LightVolumeManager>> mLightVolumeManager;
     ::ll::TypedStorage<8, 8, ::ParticleSystemEngine*>                                  mParticleSystemEngine;
-    ::ll::TypedStorage<8, 8, ::ProcessedDataDrivenRenderers const*>                    mProcessedV2DataDrivenRenderers;
+    ::ll::TypedStorage<8, 8, ::DataDrivenRendererRegistry const*>                      mProcessedV2DataDrivenRenderers;
     ::ll::TypedStorage<8, 8, ::DataDrivenRendererContinuousData*>                      mV2DataDrivenContinuousData;
     ::ll::TypedStorage<1, 1, bool>                                              mV2ShouldRenderActorsWithAttachables;
     ::ll::TypedStorage<8, 16, ::std::optional<int64>>                           mRenderUniqueIdOverride;

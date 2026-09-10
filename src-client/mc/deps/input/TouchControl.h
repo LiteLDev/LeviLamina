@@ -39,6 +39,20 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int getNewActivePointer(
+        ::TouchPointResults&                  touchPointResults,
+        ::RectangleArea const&                area,
+        float&                                x,
+        float&                                y,
+        ::std::vector<::RectangleArea> const& areasToIgnore,
+        ::std::vector<int> const&             pointerIdsToIgnore,
+        bool                                  consumeInput
+    ) const;
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

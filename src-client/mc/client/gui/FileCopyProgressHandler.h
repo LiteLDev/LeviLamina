@@ -39,8 +39,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileCopyProgressHandler() /*override*/ = default;
-
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;

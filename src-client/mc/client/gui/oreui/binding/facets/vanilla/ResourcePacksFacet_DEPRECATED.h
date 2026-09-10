@@ -57,6 +57,7 @@ public:
     struct PendingBehaviourPackRemoval;
     struct PackActivationRequest;
     struct PackViewAndItem;
+    struct SelectedPackState;
     // clang-format on
 
     // ResourcePacksFacet_DEPRECATED inner types define
@@ -139,6 +140,15 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::ContentView*>                    mContentView;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContentItem>> mContentItem;
+        // NOLINTEND
+    };
+
+    struct SelectedPackState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::OreUI::FacetResourcePackId> mPackId;
+        ::ll::TypedStorage<4, 4, int>                           mSubpackIndex;
         // NOLINTEND
     };
 
@@ -252,6 +262,9 @@ public:
     MCAPI ::std::optional<::OreUI::ResourcePacksFacet_DEPRECATED::PackViewAndItem>
     _findPackViewAndContent(::OreUI::FacetResourcePackId const& fromPackId, ::FindPackFlags findPackFlags);
 
+    MCAPI ::std::vector<::OreUI::ResourcePacksFacet_DEPRECATED::SelectedPackState>
+    _getSelectedPackStates(::ContentViews* contentViews) const;
+
     MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus _handleDlcCheckError(::DlcCheckResult error);
 
     MCAPI void _initialize(::LevelSummary& levelSummary);
@@ -263,6 +276,11 @@ public:
         ::std::vector<::OreUI::FacetResourcePack>& packDetails,
         ::ContentView*                             view,
         ::ContentType                              contentType
+    );
+
+    MCAPI bool _restoreSelectedPackStates(
+        ::ContentViews&                                                                 contentViews,
+        ::std::vector<::OreUI::ResourcePacksFacet_DEPRECATED::SelectedPackState> const& selectedPacks
     );
 
     MCAPI void _showNoInternetPrompt();

@@ -45,7 +45,7 @@ public:
         bool                 isLightning
     );
 
-    virtual ::EventResult onRealmsStory(::std::string const&);
+    virtual ::EventResult onRealmsStory(::std::string const& storyData);
 
     virtual ::EventResult onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
@@ -75,7 +75,7 @@ public:
         bool                 isLightning
     );
 
-    MCFOLD ::EventResult $onRealmsStory(::std::string const&);
+    MCFOLD ::EventResult $onRealmsStory(::std::string const& storyData);
 
     MCFOLD ::EventResult $onEvent(::LevelNotificationEvent const& event);
 

@@ -342,7 +342,7 @@ public:
 
     MCAPI uint64 $getRendererVersion() const;
 
-    MCAPI uint64 $getShaderVersion() const;
+    MCFOLD uint64 $getShaderVersion() const;
 
     MCAPI char const* $getRendererName() const;
 

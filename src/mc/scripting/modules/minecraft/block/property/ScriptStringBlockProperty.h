@@ -25,8 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptStringBlockProperty& operator=(ScriptStringBlockProperty const&);
-    ScriptStringBlockProperty(ScriptStringBlockProperty const&);
     ScriptStringBlockProperty();
 
 public:
@@ -40,9 +38,6 @@ public:
     );
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getState() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
-    operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
     // NOLINTEND
 
 public:

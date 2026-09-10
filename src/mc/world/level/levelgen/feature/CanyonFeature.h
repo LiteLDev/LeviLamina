@@ -40,8 +40,8 @@ public:
         int                      y1,
         int                      z0,
         int                      z1,
-        float                    rad,
-        float                    yRad,
+        float                    horizontalRadius,
+        float                    verticalRadius,
         ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const& context,
         ::BiomeRegistry const&   biomeRegistry
@@ -59,8 +59,8 @@ public:
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
         ::ChunkPos const&                                pos,
         ::Random&                                        random,
-        int                                              x,
-        int                                              z,
+        int                                              chunkX,
+        int                                              chunkZ,
         ::WorldGenContext const&                         context,
         ::BiomeRegistry const&                           biomeRegistry
     );
@@ -94,8 +94,8 @@ public:
         int                      y1,
         int                      z0,
         int                      z1,
-        float                    rad,
-        float                    yRad,
+        float                    horizontalRadius,
+        float                    verticalRadius,
         ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const& context,
         ::BiomeRegistry const&   biomeRegistry

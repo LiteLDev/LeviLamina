@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IOptionRegistry>>                   mOptions;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::FileStorageDirectory>> mChangeStorage;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::FileStorageDirectory>> mChangeStorage;
     // NOLINTEND
 
 public:
@@ -37,12 +37,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

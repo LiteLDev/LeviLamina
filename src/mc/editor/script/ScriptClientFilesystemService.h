@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/services/PayloadStoreHelper.h"
-
 namespace Editor::ScriptModule {
 
-class ScriptClientFilesystemService : public ::Editor::Services::PayloadStoreHelper {
+class ScriptClientFilesystemService {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb72b20;
-    ::ll::UntypedStorage<1, 1>  mUnkf91a98;
-    ::ll::UntypedStorage<8, 16> mUnk4c54b2;
+    ::ll::UntypedStorage<8, 8>  mUnkee3a10;
+    ::ll::UntypedStorage<8, 16> mUnk468692;
+    ::ll::UntypedStorage<1, 1>  mUnk4f290c;
     // NOLINTEND
 
 public:

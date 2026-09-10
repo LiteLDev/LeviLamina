@@ -24,8 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::ImageTelemetryInfo& operator+=(::ImageTelemetryInfo imageTelemetryInfo);
-
     MCNAPI ~ImageTelemetryInfo();
 #endif
     // NOLINTEND

@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameControllerHandler();
+    virtual ~GameControllerHandler() = default;
 
     virtual void refresh() = 0;
 
@@ -48,24 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameControllerHandler();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $refresh(bool isInGame);
@@ -75,11 +57,5 @@ public:
     MCFOLD ::GameControllerErrorType $checkPlatformSpecificControllerError();
 
     MCFOLD float $normalizeAxis(float raw, float deadzone);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

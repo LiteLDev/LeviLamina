@@ -14,6 +14,7 @@
 class BlockPos;
 class LevelStorage;
 class StructureManager;
+class StructureTemplate;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
@@ -39,18 +40,21 @@ public:
 public:
     // prevent constructor by default
     ScriptStructureTemplate& operator=(ScriptStructureTemplate const&);
-    ScriptStructureTemplate(ScriptStructureTemplate const&);
     ScriptStructureTemplate();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getContentType() const /*override*/;
+
+    virtual ~ScriptStructureTemplate() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptStructureTemplate(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
+
     MCAPI ScriptStructureTemplate(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
@@ -63,6 +67,8 @@ public:
     _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
 
     MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
+
+    MCAPI ::StructureTemplate* getStructureTemplate() const;
     // NOLINTEND
 
 public:
@@ -82,6 +88,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
+
     MCAPI void* $ctor(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
@@ -92,11 +100,23 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::string const& $getContentType() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

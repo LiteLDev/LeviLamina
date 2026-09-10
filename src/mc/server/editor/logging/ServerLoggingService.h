@@ -12,7 +12,6 @@
 class HashedString;
 class Player;
 namespace Editor { class LogMessage; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct LogContent; }
 // clang-format on
 
@@ -50,18 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ServerLoggingService(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getServiceName() const;
@@ -79,14 +66,6 @@ public:
     MCNAPI ::std::vector<::Editor::LogMessage> const& $getMessages() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForLoggingServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

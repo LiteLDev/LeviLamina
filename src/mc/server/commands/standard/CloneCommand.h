@@ -6,6 +6,8 @@
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandBlockName.h"
 #include "mc/server/commands/CommandPosition.h"
+#include "mc/world/level/clone_blocks_utils/CloneMode.h"
+#include "mc/world/level/clone_blocks_utils/MaskMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,27 +19,13 @@ class CommandRegistry;
 
 class CloneCommand : public ::Command {
 public:
-    // CloneCommand inner types define
-    enum class CloneMode : int {
-        Normal = 0,
-        Force  = 1,
-        Move   = 2,
-    };
-
-    enum class MaskMode : int {
-        Replace  = 0,
-        Filtered = 1,
-        Masked   = 2,
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::CommandPosition>                       mBegin;
     ::ll::TypedStorage<4, 16, ::CommandPosition>                       mEnd;
     ::ll::TypedStorage<4, 16, ::CommandPosition>                       mDestination;
-    ::ll::TypedStorage<4, 4, ::CloneCommand::MaskMode>                 mMaskMode;
-    ::ll::TypedStorage<4, 4, ::CloneCommand::CloneMode>                mCloneMode;
+    ::ll::TypedStorage<4, 4, ::CloneBlocksUtils::MaskMode>             mMaskMode;
+    ::ll::TypedStorage<4, 4, ::CloneBlocksUtils::CloneMode>            mCloneMode;
     ::ll::TypedStorage<8, 8, ::CommandBlockName>                       mBlock;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateCommandParam>> mBlockStates;
     ::ll::TypedStorage<4, 4, int>                                      mData;

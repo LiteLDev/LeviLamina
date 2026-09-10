@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Container;
@@ -29,10 +28,6 @@ public:
     ::ll::TypedStorage<4, 4, int>           mTicksPlaying;
     ::ll::TypedStorage<1, 1, bool>          mPostBlockChangeGameEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JukeboxBlockActor();
 
 public:
     // virtual functions
@@ -79,19 +74,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JukeboxBlockActor(::BlockPos const& pos);
-
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
     MCAPI void startPlayingRecord(::BlockSource& region);
 
     MCAPI void stopPlayingRecord(::BlockSource& region);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

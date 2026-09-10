@@ -9,6 +9,7 @@
 // clang-format off
 class BaseActorRenderContext;
 class BlockActor;
+class ClientPBRTextureData;
 class Model;
 class ScreenContext;
 class Tessellator;
@@ -48,32 +49,50 @@ public:
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
+        ::ClientPBRTextureData const&   actorTextureData
+    ) const;
+
+    MCAPI void _renderModel(
+        ::ScreenContext&                screenContext,
+        ::dragon::RenderMetadata const& renderMetadata,
+        ::Model&                        model,
+        ::ActorTextureInfo const&       actorTextureInfo
+    ) const;
+
+    MCAPI void _renderModel(
+        ::ScreenContext&                screenContext,
+        ::dragon::RenderMetadata const& renderMetadata,
+        ::Model&                        model,
+        ::ClientPBRTextureData const&   actorTextureData,
+        ::mce::MaterialPtr const&       forcedMaterial
+    ) const;
+
+    MCAPI void _renderModel(
+        ::ScreenContext&                screenContext,
+        ::dragon::RenderMetadata const& renderMetadata,
+        ::Model&                        model,
         ::ActorTextureInfo const&       actorTextureInfo,
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
     ) const;
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _renderModel(
+    MCAPI void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
         ::PBRTexturePtrs const&         actorTexturePtrs,
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
-    );
+    ) const;
 
-    MCAPI static void _renderModel(
+    MCAPI void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
         ::mce::ClientTexture const&     texture,
         ::mce::MaterialPtr const&       forcedMaterial,
         ::mce::ClientTexture const&     forcedTexture
-    );
+    ) const;
     // NOLINTEND
 
 public:

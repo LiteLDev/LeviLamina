@@ -13,6 +13,7 @@ class AsynchronousIPResolver;
 struct PingedCompatibleServer;
 struct PortPair;
 struct ServerSupportedAuthenticationTypes;
+namespace Social { struct Nonce; }
 // clang-format on
 
 class StubServerLocator : public ::ServerLocator {
@@ -21,7 +22,6 @@ public:
     // NOLINTBEGIN
     virtual ~StubServerLocator() /*override*/ = default;
 
-#ifdef LL_PLAT_S
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,
         ::std::string const&                 worldName,
@@ -31,21 +31,9 @@ public:
         bool                                 isJoinableThroughServerScreen,
         bool                                 isEditorWorld,
         bool                                 isHardcore,
-        ::ServerSupportedAuthenticationTypes supportedAuth
+        ::ServerSupportedAuthenticationTypes supportedAuth,
+        ::Social::Nonce const&               nonce
     ) /*override*/;
-#else // LL_PLAT_C
-    virtual void startAnnouncingServer(
-        ::std::string const&                 playerName,
-        ::std::string const&                 worldName,
-        ::GameType                           worldGameType,
-        int                                  numPlayers,
-        int                                  maxNumPlayers,
-        bool                                 isJoinableThroughServerScreen,
-        bool                                 isEditorWorld,
-        bool                                 isHardcore,
-        ::ServerSupportedAuthenticationTypes supportedAuth
-    ) /*override*/;
-#endif
 
     virtual void stopAnnouncingServer() /*override*/;
 

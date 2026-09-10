@@ -28,8 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void
     appendFormattedHovertext(::ItemStackBase const& item, ::Bedrock::Safety::RedactableString& hovertext, bool) const;
+#endif
 
     MCAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
@@ -39,11 +41,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
+#endif
     // NOLINTEND
 
 public:

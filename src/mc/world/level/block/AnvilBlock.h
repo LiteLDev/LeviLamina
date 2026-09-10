@@ -17,6 +17,8 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
+class IRandom;
+class Player;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace mce { class Color; }
@@ -74,6 +76,8 @@ public:
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
     MCAPI static int getDamageForName(::HashedString const& name);
+
+    MCAPI static void tryApplyCraftingDamage(::Player const& player, ::BlockPos const& pos, ::IRandom& random);
     // NOLINTEND
 
 public:

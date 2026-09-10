@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@ namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::Services { class ClipboardItem; }
 namespace Editor::Services { struct ClipboardWriteOptions; }
+namespace Editor::Transactions { class PendingTransaction; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -46,9 +48,10 @@ public:
     readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure) = 0;
 
     virtual ::Scripting::Result_deprecated<bool> writeToWorld(
-        ::mce::UUID const&                               itemId,
-        ::BlockPos const&                                position,
-        ::Editor::Services::ClipboardWriteOptions const* options
+        ::mce::UUID const&                                    itemId,
+        ::BlockPos const&                                     position,
+        ::Editor::Services::ClipboardWriteOptions const*      options,
+        ::WeakRef<::Editor::Transactions::PendingTransaction> pendingTransaction
     ) const = 0;
 
     virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(

@@ -340,9 +340,7 @@ public:
 
     virtual bool isLocalSplitscreenWith(::ActorUniqueID const& id) const = 0;
 
-    virtual bool isValidCrossPlatformSkin() const = 0;
-
-    virtual bool isCurrentSkinPlatformLocked() const = 0;
+    virtual bool isValidCrossPlatformSkin(bool valueIfNull) const = 0;
 
     virtual bool isSelectedSkinInitialized() const = 0;
 
@@ -471,8 +469,6 @@ public:
     virtual void navigateToServersScreen(bool const calledFromHyperlink) = 0;
 
     virtual void navigateToHowToPlayScreen(::std::string const& startTopic) = 0;
-
-    virtual void navigateToGatheringInfoScreen(bool autoConnect) = 0;
 
     virtual void navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex tabIndex) = 0;
 

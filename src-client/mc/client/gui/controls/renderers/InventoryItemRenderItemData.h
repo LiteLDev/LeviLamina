@@ -33,7 +33,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                          mTextureName;
     ::ll::TypedStorage<4, 4, ::UIMaterialType>                        mUIMaterialType;
     ::ll::TypedStorage<4, 4, ::ResourceFileSystem>                    mTextureFileSystem;
-    ::ll::TypedStorage<8, 88, ::TextureUVCoordinateSet>               mIcon;
+    ::ll::TypedStorage<8, 96, ::TextureUVCoordinateSet>               mIcon;
     ::ll::TypedStorage<8, 8, ::WeakPtr<::Item>>                       mItem;
     ::ll::TypedStorage<8, 152, ::ItemStack>                           mItemInstance;
     ::ll::TypedStorage<4, 4, ::ItemRenderChunkType>                   mItemRenderType;

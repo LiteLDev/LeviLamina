@@ -38,7 +38,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RealmSlot>>    mRealmSlots;
     ::ll::TypedStorage<4, 4, int>                                   mActiveSlotIndex;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>              isAlive;
-    ::ll::TypedStorage<8, 656, ::Realms::World>                     mCachedWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                     mCachedWorld;
     ::ll::TypedStorage<1, 1, ::OreUI::RealmSlotsFacet::FacetStatus> mStatus;
     ::ll::TypedStorage<1, 1, ::OreUI::RealmSlotsFacet::FacetStatus> mCurrentStatus;
     // NOLINTEND

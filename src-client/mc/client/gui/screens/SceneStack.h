@@ -527,7 +527,7 @@ public:
 
     MCAPI ::std::string $getScreenTelemetry() const;
 
-    MCFOLD ::std::string const& $getLastPoppedScreenName() const;
+    MCAPI ::std::string const& $getLastPoppedScreenName() const;
 
     MCAPI void $handleLicenseChanged();
 
@@ -535,13 +535,13 @@ public:
 
     MCAPI ::AbstractScene* $getTopScene();
 
-    MCFOLD ::AbstractScene const* $getTopScene() const;
+    MCAPI ::AbstractScene const* $getTopScene() const;
 
     MCAPI ::std::shared_ptr<::AbstractScene> $getTopSceneShared() const;
 
     MCAPI ::AbstractScene* $getActiveScene();
 
-    MCFOLD ::AbstractScene const* $getActiveScene() const;
+    MCAPI ::AbstractScene const* $getActiveScene() const;
 
     MCAPI ::std::shared_ptr<::AbstractScene> $getSharedNonTerminatingActiveScene();
 

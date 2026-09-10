@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::OreUI::Detail::InvocationStateTracker> mStateTracker;
     ::ll::TypedStorage<8, 24, ::OreUI::ClientDependencies>             mClientDependencies;
-    ::ll::TypedStorage<8, 128, ::OreUI::GameDependencies>              mGameDependencies;
+    ::ll::TypedStorage<8, 176, ::OreUI::GameDependencies>              mGameDependencies;
     // NOLINTEND
 
 public:

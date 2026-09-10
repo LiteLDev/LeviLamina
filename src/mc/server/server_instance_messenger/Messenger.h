@@ -17,6 +17,8 @@ class Messenger : public ::ServerInstanceMessenger::IMessenger,
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80>  mUnk3b074b;
+    ::ll::UntypedStorage<1, 1>   mUnk3abda9;
     ::ll::UntypedStorage<8, 616> mUnke430a3;
     // NOLINTEND
 
@@ -41,9 +43,20 @@ public:
 
     virtual void processMessages() /*override*/;
 
+    virtual void stopAndDiscardMessages() /*override*/;
+
+    virtual uint64 getPendingMessageCount() /*override*/;
+
     virtual ::ServerInstanceMessenger::IMessageProducer& getProducer() /*override*/;
 
     virtual ::ServerInstanceMessenger::IMessageConsumer& getConsumer() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void
+    _enqueueMessage(::brstd::move_only_function<void()>&& message, ::ServerInstanceMessenger::MessageAction action);
     // NOLINTEND
 
 public:
@@ -58,6 +71,10 @@ public:
     );
 
     MCNAPI void $processMessages();
+
+    MCNAPI void $stopAndDiscardMessages();
+
+    MCNAPI uint64 $getPendingMessageCount();
 
     MCNAPI ::ServerInstanceMessenger::IMessageProducer& $getProducer();
 

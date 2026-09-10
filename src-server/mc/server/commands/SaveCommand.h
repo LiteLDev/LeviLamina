@@ -9,6 +9,7 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+class FileArchiver;
 class Level;
 struct SnapshotFilenameAndLength;
 namespace Bedrock::Threading { class Mutex; }
@@ -27,6 +28,7 @@ public:
         Idle     = 0,
         Saving   = 1,
         Complete = 2,
+        Failed   = 3,
     };
 
 public:
@@ -44,7 +46,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool saveHold(::Level& level);
+    MCAPI static bool saveHold(::Level& level, ::FileArchiver* fileArchiver);
 
     MCAPI static bool saveResume(::Level& level);
     // NOLINTEND
@@ -52,6 +54,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string& mGeneratedVanillaLevelDataPath();
+
     MCAPI static ::std::vector<::SnapshotFilenameAndLength>& mSaveAllFileList();
 
     MCAPI static ::Bedrock::Threading::Mutex& mSaveAllMutex();

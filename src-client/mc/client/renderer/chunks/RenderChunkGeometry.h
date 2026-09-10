@@ -21,7 +21,6 @@ class RenderChunkBuilder;
 class RenderChunkSorter;
 class TerrainTextures;
 class TextureAtlas;
-class Vec3;
 struct BlockQueueEntry;
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
@@ -78,22 +77,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RenderChunkGeometry();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkGeometry(
-        ::BlockPos                             p,
-        bool                                   immediateChangeRequested,
-        int                                    buildIterationCount,
-        double                                 overrideReadyTime,
-        uchar                                  versionNum,
-        ::std::weak_ptr<::IRenderChunkGarbage> garbage,
-        ::EntityId                             entityId
-    );
-
     MCAPI void _convertFaceMetaDataToFaceSortingMetaData(
         ::std::array<::std::vector<::RenderChunkQuadInfo>, 7> const& faceMetadata,
         bool                                                         hasSortedLayers
@@ -129,10 +114,6 @@ public:
     );
 
     MCAPI void reset();
-
-    MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
-
-    MCAPI ~RenderChunkGeometry();
     // NOLINTEND
 
 public:
@@ -151,25 +132,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::TerrainTextures>& mTerrainTextures();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockPos                             p,
-        bool                                   immediateChangeRequested,
-        int                                    buildIterationCount,
-        double                                 overrideReadyTime,
-        uchar                                  versionNum,
-        ::std::weak_ptr<::IRenderChunkGarbage> garbage,
-        ::EntityId                             entityId
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

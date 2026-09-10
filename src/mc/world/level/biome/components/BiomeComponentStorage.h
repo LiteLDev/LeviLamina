@@ -21,4 +21,16 @@ public:
                                    mComponentList;
     ::ll::TypedStorage<1, 1, bool> mAllowAddingComponents;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~BiomeComponentStorage();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

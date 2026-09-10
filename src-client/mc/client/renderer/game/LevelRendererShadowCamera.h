@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/game/LevelRendererCameraListeners.h"
+#include "mc/client/renderer/game/LevelRendererCameraType.h"
 #include "mc/deps/minecraft_renderer/game/LevelCullerType.h"
 
 // auto generated forward declare list
@@ -47,6 +48,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ::LevelRendererCameraType getCameraType() const /*override*/;
+
     virtual void recalculateRenderDistance(float const renderDistanceScalar) /*override*/;
 
     virtual void preRenderUpdate(
@@ -111,6 +114,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::LevelRendererCameraType $getCameraType() const;
+
     MCNAPI void $recalculateRenderDistance(float const renderDistanceScalar);
 
     MCNAPI void $preRenderUpdate(

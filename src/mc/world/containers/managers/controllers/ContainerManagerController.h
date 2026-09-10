@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
@@ -117,6 +118,9 @@ public:
     );
 
     virtual void handleSplitSingle(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    virtual void
+    handleSplitMultiple(::SlotData const& selected, ::ItemInstance const& itemTemplate, ::SlotData const& dstSlot);
 
     virtual void handleSplitMultiple(
         ::SelectedSlotInfo const& selected,
@@ -246,6 +250,9 @@ public:
 
     MCAPI ::ItemStack const& _getItem0(::ContainerEnumName collectionEnumName) const;
 
+    MCAPI ::std::tuple<::ItemStack const&, ::std::shared_ptr<::ContainerController>>
+    _getItemAndContainerController(::SlotData const& slot, bool canBeEmpty) const;
+
     MCAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> _getPredictiveContainers();
 
     MCAPI ::SlotData _getSlotData(::ContainerValidationSlotData const& containerValidationSlotData) const;
@@ -320,6 +327,8 @@ public:
     MCAPI ::std::shared_ptr<::ContainerController> getContainerController(::std::string const& containerName) const;
 
     MCAPI int getContainerSize(::std::string const& collectionName) const;
+
+    MCAPI ::SharedTypes::Legacy::ContainerType getContainerType() const;
 
     MCAPI void getCurrentContainerStateList(::std::vector<::ItemStateData>& inventoryState);
 
@@ -426,6 +435,9 @@ public:
     );
 
     MCAPI void $handleSplitSingle(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCAPI void
+    $handleSplitMultiple(::SlotData const& selected, ::ItemInstance const& itemTemplate, ::SlotData const& dstSlot);
 
     MCAPI void $handleSplitMultiple(
         ::SelectedSlotInfo const& selected,

@@ -47,6 +47,8 @@ public:
 
     MCAPI void _setResourceLocationPair(::ResourceLocationPair const& loc);
 
+    MCAPI uint64 getStorageSize(::cg::TextureSetLayerType t) const;
+
     MCAPI ::std::optional<::std::string> hasValidationError() const;
 
     MCAPI ~TextureSetDefinition();

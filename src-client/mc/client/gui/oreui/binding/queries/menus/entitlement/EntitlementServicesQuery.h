@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
+#include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 
 // auto generated forward declare list
 // clang-format off
 class MarketplaceServicesManager;
 namespace OreUI { class GameDependencies; }
+namespace OreUI { class SubscriptionInfo; }
 // clang-format on
 
 namespace OreUI {
@@ -21,6 +23,11 @@ public:
     ::ll::TypedStorage<8, 8, ::MarketplaceServicesManager&> mMarketplaceServicesManager;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>     mHasAvailableRealmsTrial;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>     mHasAvailableMarketplacePassTrial;
+    ::ll::TypedStorage<
+        8,
+        120,
+        ::OreUI::PropertyVector<::OreUI::SubscriptionInfo, ::std::allocator<::OreUI::SubscriptionInfo>>>
+        mNextAvailableSubscriptions;
     // NOLINTEND
 
 public:

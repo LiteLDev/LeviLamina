@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class ReadOnlyBinaryStream;
 struct PlayerBlockActionData;
 // clang-format on
 
@@ -19,8 +15,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::PlayerBlockActions> read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::gsl::span<::PlayerBlockActionData const> get() const;
+
+    MCAPI bool operator==(::PlayerBlockActions const& other) const;
     // NOLINTEND
 };

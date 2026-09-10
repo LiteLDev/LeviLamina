@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGamePackLoadRequirement;
-class BetaFeaturesLoadRequirement;
 class ExperimentLoadRequirement;
 class LegacyCreatorFeaturesLoadRequirement;
 // clang-format on
@@ -14,7 +13,7 @@ class PackLoadRequirement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkf641e4;
+    ::ll::UntypedStorage<4, 8> mUnk5c0b27;
     // NOLINTEND
 
 public:

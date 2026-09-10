@@ -24,6 +24,7 @@ public:
     // PacketQueue inner types declare
     // clang-format off
     class DataChannel;
+    struct PartialReceive;
     // clang-format on
 
     // PacketQueue inner types define
@@ -100,13 +101,28 @@ public:
         // NOLINTEND
     };
 
+    struct PartialReceive {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk100791;
+        ::ll::UntypedStorage<1, 1>  mUnka46970;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PartialReceive& operator=(PartialReceive const&);
+        PartialReceive(PartialReceive const&);
+        PartialReceive();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnkc5324e;
     ::ll::UntypedStorage<8, 120> mUnkd1700a;
     ::ll::UntypedStorage<8, 64>  mUnk9b0d07;
-    ::ll::UntypedStorage<8, 24>  mUnk236963;
+    ::ll::UntypedStorage<8, 40>  mUnk901244;
     ::ll::UntypedStorage<8, 248> mUnkb28c4c;
     ::ll::UntypedStorage<8, 248> mUnk330e14;
     // NOLINTEND

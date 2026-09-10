@@ -17,18 +17,6 @@ public:
     BlockStatePair& operator=(BlockStatePair const&);
     BlockStatePair(BlockStatePair const&);
     BlockStatePair();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~BlockStatePair();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Brush

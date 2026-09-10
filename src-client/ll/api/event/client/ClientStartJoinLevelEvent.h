@@ -1,6 +1,9 @@
 #include "ll/api/event/client/ClientEvent.h"
 
 struct PlayerJoinWorldContext;
+namespace Connection {
+enum class ReconnectionType : uchar;
+}
 
 namespace ll::event::inline client {
 
@@ -42,11 +45,11 @@ public:
     LLNDAPI NetworkType        networkTypeOverride() const;
     LLNDAPI Social::MultiplayerServiceIdentifier service() const;
     LLNDAPI PlayerJoinWorldContext const&        context() const;
-    LLNDAPI std::string const&                   partyId() const;
-    LLNDAPI bool                                 isPartyLeader() const;
-    LLNDAPI bool                                 isPartyDestination() const;
-    LLNDAPI bool                                 isServerTransfer() const;
-    LLNDAPI bool                                 isReconnect() const;
+    LLNDAPI std::string const& partyId() const;
+    LLNDAPI bool               isPartyLeader() const;
+    LLNDAPI bool               isPartyDestination() const;
+    LLNDAPI bool               isServerTransfer() const;
+    LLNDAPI Connection::ReconnectionType reconnectType() const;
 };
 
 } // namespace ll::event::inline client

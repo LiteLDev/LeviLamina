@@ -41,6 +41,10 @@ public:
 
     MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI ::StructureEditorData& operator=(::StructureEditorData&&);
+
+    MCAPI bool operator==(::StructureEditorData const& rhs) const;
+
     MCAPI void save(::CompoundTag& tag) const;
 
     MCAPI void setFilteredStructureName(::std::string const& filteredName);

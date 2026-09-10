@@ -31,6 +31,8 @@ public:
 
     MCAPI ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&
     operator=(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
+
+    MCAPI ~DefendTrustedTargetGoalDefinition();
     // NOLINTEND
 
 public:
@@ -43,6 +45,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

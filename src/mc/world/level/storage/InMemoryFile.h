@@ -27,6 +27,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI ::leveldb::Status append(::leveldb::Slice const& data);
+#endif
+
     MCNAPI ::Core::PathBuffer<::std::string> getFilename() const;
     // NOLINTEND
 };

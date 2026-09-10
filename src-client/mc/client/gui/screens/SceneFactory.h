@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/certificates/identity/LastClickedSource.h"
+#include "mc/client/events/OnlineSafetyDialogVisibility.h"
 #include "mc/client/gui/CraftingType.h"
 #include "mc/client/gui/EncyclopediaTopicIndex.h"
 #include "mc/client/gui/HowToPlayTopicIndex.h"
 #include "mc/client/gui/ProgressContentType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
 #include "mc/client/gui/oreui/interface/RouteMode.h"
-#include "mc/client/gui/screens/OnlineSafetyDialogVisibility.h"
 #include "mc/client/gui/screens/SelectWorldResult.h"
 #include "mc/client/gui/screens/controllers/CreditsType.h"
 #include "mc/client/gui/screens/controllers/InventoryTabIndex.h"
@@ -26,11 +26,13 @@
 #include "mc/deps/core/file/FileUploadType.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/AsyncPromise.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/interface/GameControllerErrorType.h"
 #include "mc/events/OpenCodeMethod.h"
+#include "mc/options/FeedbackType.h"
 #include "mc/util/UploadState.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
@@ -65,9 +67,6 @@ class RealmsCreateParams;
 class ResourceLocation;
 class SceneFactoryProxy;
 class ScreenController;
-class SkinPackCollectionModel;
-class SkinPackModel;
-class StoreCatalogItem;
 class TaskGroup;
 class UIControl;
 class UIControlFactory;
@@ -246,6 +245,8 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createAutoSaveInfoScreen();
 
+    MCAPI ::std::shared_ptr<::AbstractScene> createBetaFeedbackQrScreen(::std::string const& feedbackUrl);
+
     MCAPI ::std::shared_ptr<::AbstractScene>
     createBookScreen(int bookSlot, bool editable, int page, ::BlockActor* lectern);
 
@@ -358,12 +359,6 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createEncyclopediaScreen(::EncyclopediaTopicIndex startingTopicIndex);
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createExpandedSkinPackScreen(
-        ::StoreCatalogItem const&  catalogItem,
-        ::SkinPackModel&           skinPackModel,
-        ::SkinPackCollectionModel& skinPackCollection
-    );
-
     MCAPI ::std::shared_ptr<::AbstractScene> createExternalLinkDialogScreen(
         ::std::string const&           title,
         ::std::string const&           externalLink,
@@ -401,10 +396,6 @@ public:
     MCAPI ::std::shared_ptr<::AbstractScene> createGameplayScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createGammaCalibrationScreen();
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createGatheringInfoScreen(bool autoConnect);
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createGatheringWarningScreen(::std::string const& messageOverride);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createGlobalPauseScreen();
 
@@ -605,6 +596,14 @@ public:
     );
 
     MCAPI ::std::shared_ptr<::AbstractScene> createProgressScreen(
+        ::std::string const&                                 uniqueEventName,
+        ::std::deque<::std::unique_ptr<::ProgressHandler>>&& progressHandlerList,
+        bool                                                 loadAssets,
+        bool                                                 sendProgressTelem,
+        ::std::string const&                                 overrideScreen
+    );
+
+    MCAPI ::std::shared_ptr<::AbstractScene> createProgressScreen(
         ::std::string const&                               uniqueEventName,
         ::std::deque<::std::unique_ptr<::ProgressHandler>> progressHandlerList,
         bool                                               loadAssets,
@@ -701,9 +700,10 @@ public:
     MCAPI ::std::shared_ptr<::AbstractScene> createServerForm(uint formId, ::std::string const& formJSON);
 
     MCAPI ::std::shared_ptr<::AbstractScene>
-    createSignScreen(::BlockPos const& pos, ::BlockActorType blockActorType, bool isFrontSide);
+    createServerTrustModalScreen(::std::string serverAddress, ::Bedrock::Threading::AsyncPromise<bool> resultPromise);
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createSkinPickerScreen();
+    MCAPI ::std::shared_ptr<::AbstractScene>
+    createSignScreen(::BlockPos const& pos, ::BlockActorType blockActorType, bool isFrontSide);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createStorageMigrationProgressScreen(
         ::Bedrock::NonOwnerPointer<::Bedrock::StorageMigration::StorageMigrationService> const& migrationService
@@ -717,7 +717,7 @@ public:
     createStoreInventoryScreen(::InventoryTabIndex tabIndex, ::std::optional<::StoreDataDrivenScreenParams> paramsOpt);
 
     MCAPI ::std::shared_ptr<::AbstractScene>
-    createSubmitFeedbackScreen(::std::string const& itemId, int feedbackTextLimit);
+    createSubmitFeedbackScreen(::FeedbackType feedbackType, ::std::string const& identifier, int feedbackTextLimit);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createSunsettingScreen(::std::string& title);
 

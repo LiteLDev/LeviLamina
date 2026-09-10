@@ -177,6 +177,10 @@ namespace ll {
     };
     class type_id_ref;
 }
+
+// cgltf exposes pointers to this internal tokenizer type.
+struct jsmntok_t;
+
 namespace Bedrock {
     template <typename Category, typename Type>
     ::ll::type_id_ref typeid_storage_impl();
@@ -250,6 +254,13 @@ template<typename It, typename Type>
 class ComponentStorageIterator;
 }
 }
+
+#ifndef cerealizer
+template <typename T>
+struct cerealizer {
+    struct SerializedData{};
+};
+#endif
 
 namespace GameInput::v2 {
     class IGameInput;

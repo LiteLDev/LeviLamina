@@ -133,5 +133,6 @@ enum class ActorFlags : int {
     UsesLegacyFriction            = 127,
     UsesUniformAirDrag            = 128,
     NameplateDepthTested          = 129,
-    Count                         = 130,
+    NotPickableFromInside         = 130,
+    Count                         = 131,
 };

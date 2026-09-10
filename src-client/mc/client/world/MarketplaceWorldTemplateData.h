@@ -30,6 +30,11 @@ public:
     ::ll::TypedStorage<1, 1, bool>                               mIsInstalled;
     ::ll::TypedStorage<1, 1, bool>                               mIsUpdateAvailable;
     ::ll::TypedStorage<4, 4, ::StoreCatalogCategory>             mStoreCategory;
+    ::ll::TypedStorage<4, 4, int>                                mPrice;
+    ::ll::TypedStorage<4, 4, int>                                mFullPrice;
+    ::ll::TypedStorage<1, 1, bool>                               mIsFree;
+    ::ll::TypedStorage<1, 1, bool>                               mHasDiscount;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mDiscountText;
     // NOLINTEND
 
 public:

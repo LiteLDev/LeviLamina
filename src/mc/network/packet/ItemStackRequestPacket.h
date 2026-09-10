@@ -5,47 +5,61 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/ItemStackRequestPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestBatch.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class ItemStackRequestBatch;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ItemStackRequestPacket : public ::Packet {
+class ItemStackRequestPacket : public ::ll::PayloadPacket<::ItemStackRequestPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestBatch>> mRequestBatch;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ItemStackRequestPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ItemStackRequestPacket() /*override*/;
-#endif
-
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
@@ -55,9 +69,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

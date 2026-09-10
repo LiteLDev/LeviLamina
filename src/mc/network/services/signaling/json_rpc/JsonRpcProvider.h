@@ -89,6 +89,8 @@ public:
 
     MCNAPI ::std::unique_ptr<::std::string, ::std::function<void(::std::string*)>>
     registerJsonRpcMethod(::std::string method, ::std::unique_ptr<::JsonRpc::IResultHandler> handler);
+
+    MCNAPI ~JsonRpcProvider();
     // NOLINTEND
 
 public:
@@ -98,6 +100,12 @@ public:
         ::std::shared_ptr<::ISignalingJsonRpcInterop>         signalingServiceInterop,
         ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

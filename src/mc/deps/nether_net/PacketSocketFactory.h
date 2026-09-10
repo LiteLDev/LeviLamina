@@ -10,6 +10,8 @@
 namespace webrtc { class AsyncDnsResolverInterface; }
 namespace webrtc { class AsyncPacketSocket; }
 namespace webrtc { class SocketAddress; }
+namespace webrtc { class SocketFactory; }
+namespace webrtc { class TaskQueueBase; }
 // clang-format on
 
 namespace NetherNet {
@@ -44,6 +46,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PacketSocketFactory(::webrtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::webrtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::AsyncPacketSocket>
@@ -55,6 +69,12 @@ public:
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

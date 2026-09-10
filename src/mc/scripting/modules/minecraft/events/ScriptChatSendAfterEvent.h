@@ -12,6 +12,7 @@
 class Player;
 struct ChatEvent;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptChatSendIntermediateData; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -19,6 +20,10 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptChatSendAfterEvent {
+public:
+    // ScriptChatSendAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptChatSendIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,6 +44,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptChatSendAfterEvent(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+
+    MCAPI ScriptChatSendAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                             scope
+    );
 
     MCAPI ScriptChatSendAfterEvent(
         ::ChatEvent const&                    chatEvent,
@@ -73,6 +83,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                             scope
+    );
 
     MCAPI void*
     $ctor(::ChatEvent const& chatEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);

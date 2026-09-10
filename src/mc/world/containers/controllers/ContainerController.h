@@ -87,11 +87,11 @@ public:
         ::ItemTransferAmount            transferAmount
     ) const;
 
-    MCFOLD bool canConsume(int modelSlot, int removeCount) const;
+    MCAPI bool canConsume(int modelSlot, int removeCount) const;
 
-    MCFOLD bool canDestroy(int modelSlot, int removeCount) const;
+    MCAPI bool canDestroy(int modelSlot, int removeCount) const;
 
-    MCFOLD bool canDrop(int modelSlot, int removeCount) const;
+    MCAPI bool canDrop(int modelSlot, int removeCount) const;
 
     MCAPI ::ItemSetType canSet(
         ::ContainerScreenContext const& context,
@@ -99,16 +99,6 @@ public:
         ::ItemStackBase const&          item,
         ::ItemTransferAmount            transferAmount,
         bool                            allowSwap
-    ) const;
-
-    MCAPI int
-    getAvailableAddCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& fillItem) const;
-
-    MCAPI int getAvailableAutoPlaceCount(
-        ::ContainerScreenContext const& context,
-        int                             slot,
-        ::ItemStackBase const&          fillItem,
-        bool                            allowClobber
     ) const;
 
     MCAPI ::ItemStack const& getItemStack(int slot) const;

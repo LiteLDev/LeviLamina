@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class TaskResult;
+struct ResourceLoadManagerOptions;
 namespace Bedrock::Profiler::details { struct PredeclaredAnnotation; }
 // clang-format on
 
@@ -74,16 +75,6 @@ public:
 
         MCNAPI ::Bedrock::Threading::Async<void>
         queueSync(::brstd::move_only_function<::TaskResult()> callback, uint taskPriority);
-
-        MCNAPI ~ResourceLoadTaskGroup();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -97,22 +88,15 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk2466a3;
     ::ll::UntypedStorage<8, 8>  mUnkb77267;
     ::ll::UntypedStorage<1, 1>  mUnk8953d0;
+    ::ll::UntypedStorage<8, 32> mUnkc455ca;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ResourceLoadManager& operator=(ResourceLoadManager const&);
     ResourceLoadManager(ResourceLoadManager const&);
     ResourceLoadManager();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ResourceLoadManager& operator=(ResourceLoadManager const&);
-    ResourceLoadManager(ResourceLoadManager const&);
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -123,9 +107,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ResourceLoadManager();
-
-    MCNAPI void _initializeResourceLoadTaskGroups();
+    MCNAPI explicit ResourceLoadManager(::ResourceLoadManagerOptions&& ops);
 
     MCNAPI bool areDependenciesLoaded(::ResourceLoadType resourceLoadType) const;
 
@@ -192,13 +174,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::ResourceLoadManagerOptions&& ops);
 #endif
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

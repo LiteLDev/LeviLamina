@@ -94,9 +94,9 @@ public:
 
     MCFOLD ::InputMode $getInputMode() const;
 
-    MCFOLD void $render(::InputRenderContext& context) const;
+    MCAPI void $render(::InputRenderContext& context) const;
 
-    MCFOLD void $setWindowSize(int width, int height);
+    MCAPI void $setWindowSize(int width, int height);
 
     MCAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND

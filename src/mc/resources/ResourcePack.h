@@ -12,8 +12,9 @@
 // clang-format off
 class Pack;
 class PackAccessStrategy;
+struct BehaviorPackContents;
+struct ResourcePackContents;
 struct StreamableAssetSource;
-struct SubpackInfo;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
@@ -41,6 +42,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mIsSlicePack;
     ::ll::TypedStorage<8, 64, ::ResourceSignature>                              mResourceSignature;
     ::ll::TypedStorage<1, 1, bool>                                              mIsMarkedForRemoval;
+    ::ll::TypedStorage<8, 8, ::std::atomic<double>>                             mAssetReadMs;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                             mAssetReadBytes;
     // NOLINTEND
 
 public:
@@ -52,9 +55,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ResourcePack(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
-    MCAPI void _createSubpack(::SubpackInfo const& subpackInfo);
-
     MCAPI void _createSubpacks();
+
+#ifdef LL_PLAT_C
+    MCAPI void _gatherBehaviorPackTelemetry(::BehaviorPackContents& counts) const;
+
+    MCAPI void _gatherResourcePackTelemetry(::ResourcePackContents& counts) const;
+#endif
 
     MCAPI bool areKnownFilesValid();
 
@@ -63,6 +70,12 @@ public:
         ::std::function<void(::Core::Path const&)> callback,
         int                                        subpackIndex,
         bool                                       recurseAnyways
+    ) const;
+
+    MCAPI void forEachInAssetSet(
+        ::Core::Path const&                        filePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        int                                        subpackIndex
     ) const;
 
     MCAPI void generateAssetSet();
@@ -100,8 +113,6 @@ public:
 #endif
 
     MCAPI void setLocale(::std::string const& code);
-
-    MCAPI ~ResourcePack();
     // NOLINTEND
 
 public:
@@ -110,19 +121,11 @@ public:
     MCAPI static ::Core::PathBuffer<::std::string> const& RESOURCE_PACK_BUG_ICON_PATH();
 
     MCAPI static ::Core::PathBuffer<::std::string> const& RESOURCE_PACK_ICON_PATH();
-
-    MCAPI static ::Core::PathBuffer<::std::string> const& TEXTURES_LIST_PATH();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

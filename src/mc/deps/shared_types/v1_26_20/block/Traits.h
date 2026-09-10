@@ -17,6 +17,14 @@ namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct Traits {
 public:
+    // Traits inner types define
+    using TraitVariant = ::std::variant<
+        ::SharedTypes::v1_26_20::BlockDefinition::Connection,
+        ::SharedTypes::v1_26_20::BlockDefinition::MultiBlock,
+        ::SharedTypes::v1_26_20::BlockDefinition::PlacementDirection,
+        ::SharedTypes::v1_26_20::BlockDefinition::PlacementPosition>;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::BlockDefinition::Connection>          mConnection;

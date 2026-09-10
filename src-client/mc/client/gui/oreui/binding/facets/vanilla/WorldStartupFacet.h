@@ -105,7 +105,7 @@ public:
 
     MCAPI void clearStartLocalWorldResult();
 
-    MCFOLD ::OreUI::AsyncStatefulFunction_DEPRECATED<
+    MCAPI ::OreUI::AsyncStatefulFunction_DEPRECATED<
         ::OreUI::WorldStartupFacet::BackupThenStartLocalWorldResult(::std::string const&)>&
     getBackupThenStartLocalWorldFunctor_DEPRECATED();
 
@@ -115,7 +115,7 @@ public:
 
     MCAPI ::std::string const& getMissingPacksSize() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getMissingPacksToStart() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getMissingPacksToStart() const;
 
     MCAPI ::std::string const& getMissingTemplateToStart() const;
 

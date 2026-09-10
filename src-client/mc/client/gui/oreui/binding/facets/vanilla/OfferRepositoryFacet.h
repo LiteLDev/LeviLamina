@@ -48,7 +48,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit OfferRepositoryFacet(::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> offerRepository);
 
-    MCAPI ::std::string const& getCoreSubscriptionPrice() const;
+    MCFOLD ::std::string const& getCoreSubscriptionPrice() const;
 
     MCFOLD ::std::string const& getCoreTerms() const;
 
@@ -58,7 +58,7 @@ public:
 
     MCAPI ::std::string const& getPlusTerms() const;
 
-    MCFOLD ::std::string const& getPlusTermsExtra() const;
+    MCAPI ::std::string const& getPlusTermsExtra() const;
 
     MCFOLD bool isFinishedQueryingProductsAndPurchases() const;
 

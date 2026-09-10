@@ -6,6 +6,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/RemoteStorageProvider.h"
 #include "mc/deps/core/file/StorageResult.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/threading/Mutex.h"
@@ -17,7 +18,9 @@ class CallbackToken;
 class CommitChunkSequenceBuilder;
 class ConnectedStorageEventing;
 class ConnectedStorage_GameCore;
+namespace Core { class RemoteProviderInitializer; }
 namespace Core { class RemoteStorageManifest; }
+namespace Core { class Result; }
 namespace Core { struct ContainerOutInfo; }
 // clang-format on
 
@@ -61,6 +64,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ConnectedStorageProvider_GameCore();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ConnectedStorageProvider_GameCore() /*override*/ = default;
@@ -69,9 +76,9 @@ public:
 
     virtual ::std::string const& getWorldsPrefix() const /*override*/;
 
-    virtual ::std::string encodeWorldName(::std::string const&) /*override*/;
+    virtual ::std::string encodeWorldName(::std::string const& name) /*override*/;
 
-    virtual ::std::string encodeFileName(::std::string const&) /*override*/;
+    virtual ::std::string encodeFileName(::std::string const& name) /*override*/;
 
     virtual float getSyncProgress() /*override*/;
 
@@ -81,49 +88,158 @@ public:
 
     virtual ::CallbackToken deleteContainer(
         ::std::shared_ptr<::CallbackTokenContext<
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>>,
-        ::std::string const&,
-        ::std::function<void(uint64)>
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::string const&                                                                           containerName,
+        ::std::function<void(uint64)> quotaUpdateCallback
     ) /*override*/;
 
     virtual ::CallbackToken commit(
         ::std::shared_ptr<::CallbackTokenContext<::std::function<
-            void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>, ::Core::StorageResult)>>>,
-        ::std::string const&,
-        ::std::set<::std::string> const&,
-        ::std::set<::std::string>&,
-        ::std::set<::std::string>&,
-        bool,
-        ::std::function<void(uint64)>
+            void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>, ::Core::StorageResult)>>> context,
+        ::std::string const&             containerName,
+        ::std::set<::std::string> const& filesToAdd,
+        ::std::set<::std::string>&       filesToDelete,
+        ::std::set<::std::string>&       HACK_oldFilesToDelete,
+        bool                             isRetry,
+        ::std::function<void(uint64)>    quotaUpdateCallback
     ) /*override*/;
 
     virtual ::CallbackToken sync(
-        ::std::string const&,
-        ::std::string const&,
+        ::std::string const&                                                                           directoryAlias,
+        ::std::string const&                                                                           filePrefix,
         ::std::shared_ptr<::CallbackTokenContext<
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>>,
-        ::std::function<void(::std::string const&, bool)>
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::function<void(::std::string const&, bool)> HACK_cleanupInfectedContainersCallback
     ) /*override*/;
 
     virtual ::CallbackToken syncMeta(
-        ::std::string const&,
+        ::std::string const& directoryAlias,
         ::std::string const&,
         ::std::shared_ptr<::CallbackTokenContext<
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>>,
-        ::std::shared_ptr<::std::vector<::Core::ContainerOutInfo>>
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::shared_ptr<::std::vector<::Core::ContainerOutInfo>>                                     cloudLevelsOut
     ) /*override*/;
 
     virtual ::CallbackToken syncContainerManifest(
-        ::std::string const&,
-        ::std::string const&,
+        ::std::string const&                                                                           containerName,
+        ::std::string const&                                                                           filePrefix,
         ::std::shared_ptr<::CallbackTokenContext<
-            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>>
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context
     ) /*override*/;
 
-    virtual ::Core::RemoteStorageManifest getManifest(::std::string const&) /*override*/;
+    virtual ::Core::RemoteStorageManifest getManifest(::std::string const& containerName) /*override*/;
 
     virtual int64 getQuotaRemaining() const /*override*/;
 
     virtual int64 getQuotaTotal() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ConnectedStorageProvider_GameCore(::Core::RemoteProviderInitializer&& initializer);
+
+    MCAPI ::Core::RemoteStorageManifest _copyManifest(::std::string const& containerName);
+
+    MCAPI ::Core::PathBuffer<::std::string> _getNextStagingLocation() const;
+
+    MCAPI ::Core::Result _getRootAndLevelId(
+        ::std::string const&                                      containerName,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& rootPath,
+        ::std::string&                                            levelId
+    );
+
+    MCAPI ::Core::Result _readBlobCallback(
+        ::std::string const&                                            containerName,
+        ::std::string const&                                            relativeFilename,
+        uchar*                                                          data,
+        uint64                                                          byteCount,
+        uint                                                            blobIndex,
+        uint                                                            blobCount,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& stagingPath,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& stagingRootPath,
+        ::std::shared_ptr<::Core::RemoteStorageManifest>                syncManifest,
+        ::std::function<void(::std::string const&, bool)>               HACK_cleanupInfectedContainersCallback
+    );
+
+    MCAPI void _telemetryConnectedStorageError(char const* message, ::std::string const& containerName);
+
+    MCAPI ::std::string _worldContainerNameToLevelId(::std::string const& containerName) const;
+
+    MCAPI ::std::pair<int, void*> commitStagedSnapshot(
+        ::ConnectedStorageProvider_GameCore::CommitSnapshotParameters parameters,
+        ::std::pair<int, void*>                                       opInput
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::RemoteProviderInitializer&& initializer);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $shutdown();
+
+    MCAPI ::std::string const& $getWorldsPrefix() const;
+
+    MCAPI ::std::string $encodeWorldName(::std::string const& name);
+
+    MCAPI ::std::string $encodeFileName(::std::string const& name);
+
+    MCAPI float $getSyncProgress();
+
+    MCFOLD void $onAppSuspend();
+
+    MCAPI void $onAppResume();
+
+    MCAPI ::CallbackToken $deleteContainer(
+        ::std::shared_ptr<::CallbackTokenContext<
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::string const&                                                                           containerName,
+        ::std::function<void(uint64)> quotaUpdateCallback
+    );
+
+    MCAPI ::CallbackToken $commit(
+        ::std::shared_ptr<::CallbackTokenContext<::std::function<
+            void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>, ::Core::StorageResult)>>> context,
+        ::std::string const&             containerName,
+        ::std::set<::std::string> const& filesToAdd,
+        ::std::set<::std::string>&       filesToDelete,
+        ::std::set<::std::string>&       HACK_oldFilesToDelete,
+        bool                             isRetry,
+        ::std::function<void(uint64)>    quotaUpdateCallback
+    );
+
+    MCAPI ::CallbackToken $sync(
+        ::std::string const&                                                                           directoryAlias,
+        ::std::string const&                                                                           filePrefix,
+        ::std::shared_ptr<::CallbackTokenContext<
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::function<void(::std::string const&, bool)> HACK_cleanupInfectedContainersCallback
+    );
+
+    MCAPI ::CallbackToken $syncMeta(
+        ::std::string const& directoryAlias,
+        ::std::string const&,
+        ::std::shared_ptr<::CallbackTokenContext<
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context,
+        ::std::shared_ptr<::std::vector<::Core::ContainerOutInfo>>                                     cloudLevelsOut
+    );
+
+    MCAPI ::CallbackToken $syncContainerManifest(
+        ::std::string const&                                                                           containerName,
+        ::std::string const&                                                                           filePrefix,
+        ::std::shared_ptr<::CallbackTokenContext<
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>> context
+    );
+
+    MCAPI ::Core::RemoteStorageManifest $getManifest(::std::string const& containerName);
+
+    MCAPI int64 $getQuotaRemaining() const;
+
+    MCAPI int64 $getQuotaTotal() const;
     // NOLINTEND
 };

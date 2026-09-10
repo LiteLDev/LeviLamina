@@ -12,9 +12,11 @@
 // clang-format off
 class Actor;
 class Mob;
+class Player;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -60,10 +62,20 @@ public:
 
     MCAPI ::Mob* _tryGetOwnerAsMob() const;
 
+    MCAPI ::Player* _tryGetOwnerAsPlayer() const;
+
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getEntityV2() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
+
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:

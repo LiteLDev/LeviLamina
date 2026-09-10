@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorResourceDefinitionGroup;
 class BlockType;
 class ItemStack;
 class SerializedActorBlockActor;
@@ -25,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CopperGolemStatueRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::SerializedActorRenderer::RenderData getRenderData(
@@ -33,6 +38,18 @@ public:
         ::SerializedActorBlockActor const*    entity,
         ::ItemStack const*                    item
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit CopperGolemStatueRenderer(::ActorResourceDefinitionGroup const& resourceGroup);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorResourceDefinitionGroup const& resourceGroup);
     // NOLINTEND
 
 public:

@@ -15,7 +15,7 @@ class Actor;
 class Mob;
 class NavigationComponent;
 class Path;
-namespace SharedTypes::v1_21_120 { struct MeleeAttackBaseGoalDefinition; }
+namespace SharedTypes::v1_26_40 { struct MeleeAttackBaseGoalDefinition; }
 // clang-format on
 
 class MeleeAttackBaseGoal : public ::BaseGoal {
@@ -29,7 +29,7 @@ public:
     struct NavigationSettings {
     public:
         // NavigationSettings inner types define
-        using DefinitionType = ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition;
+        using DefinitionType = ::SharedTypes::v1_26_40::MeleeAttackBaseGoalDefinition;
 
     public:
         // member variables
@@ -103,8 +103,6 @@ public:
 
     MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
 
-    MCAPI void _attemptMoveToTarget(::Actor const& target);
-
     MCAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
 
     MCAPI ::Mob& _getNavigatingMob() const;
@@ -113,13 +111,7 @@ public:
 
     MCAPI bool _isNavigationDoneOrStuck() const;
 
-    MCAPI bool _shouldRecalculatePath(bool canReachTarget) const;
-
     MCAPI bool _targetPositionPutsMobInSun();
-
-    MCAPI void _tryLookAtTarget(::Actor const& target) const;
-
-    MCAPI bool isWithinFoV(::Vec3 const& position) const;
     // NOLINTEND
 
 public:

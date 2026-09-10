@@ -10,26 +10,18 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb1c891;
     ::ll::UntypedStorage<8, 32> mUnk8546c2;
-    ::ll::UntypedStorage<8, 16> mUnk9a922d;
-    ::ll::UntypedStorage<8, 32> mUnk9ab8ef;
+    ::ll::UntypedStorage<8, 24> mUnk358c16;
+    ::ll::UntypedStorage<8, 40> mUnkff611f;
     ::ll::UntypedStorage<8, 32> mUnk6c520d;
-    ::ll::UntypedStorage<8, 16> mUnkb16b80;
-    ::ll::UntypedStorage<8, 32> mUnk538aef;
-    ::ll::UntypedStorage<8, 32> mUnk445a81;
+    ::ll::UntypedStorage<8, 24> mUnkd3c5e2;
+    ::ll::UntypedStorage<8, 40> mUnk5af099;
+    ::ll::UntypedStorage<8, 40> mUnk537d55;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    GatheringsConfigurationJoinInfo& operator=(GatheringsConfigurationJoinInfo const&);
-    GatheringsConfigurationJoinInfo();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     GatheringsConfigurationJoinInfo();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -38,10 +30,8 @@ public:
     MCNAPI ::ServerConfiguration::GatheringsConfigurationJoinInfo&
     operator=(::ServerConfiguration::GatheringsConfigurationJoinInfo&&);
 
-#ifdef LL_PLAT_C
     MCNAPI ::ServerConfiguration::GatheringsConfigurationJoinInfo&
     operator=(::ServerConfiguration::GatheringsConfigurationJoinInfo const&);
-#endif
 
     MCNAPI ~GatheringsConfigurationJoinInfo();
     // NOLINTEND

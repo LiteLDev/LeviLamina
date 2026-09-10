@@ -65,7 +65,15 @@ public:
 
     MCAPI bool isRainingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
+    MCAPI bool isSnowingAt(::BlockSource& region, ::BlockPos const& pos) const;
+#endif
+
     MCAPI void serverTick();
+
+#ifdef LL_PLAT_S
+    MCAPI void stop();
+#endif
 
     MCAPI void tick();
 

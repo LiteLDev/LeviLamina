@@ -15,7 +15,7 @@ struct MovementPackets {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 232, ::std::optional<::PlayerAuthInputPacket>> mInput;
+    ::ll::TypedStorage<8, 240, ::std::optional<::PlayerAuthInputPacket>> mInput;
     ::ll::TypedStorage<8, 24, ::std::vector<::InventoryPacketHandler>>   mTransactions;
     ::ll::TypedStorage<8, 96, ::std::optional<::InteractPacket>>         mInteraction;
     // NOLINTEND

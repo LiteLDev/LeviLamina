@@ -44,12 +44,6 @@ public:
         ::std::vector<::SharedTypes::Legacy::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset>>
         mPresets;
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::Legacy

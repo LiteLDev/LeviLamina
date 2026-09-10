@@ -70,6 +70,8 @@ public:
 
     virtual bool mayPlace(::BlockPos const&, ::Block const&) const /*override*/;
 
+    virtual bool mayPlacePlacementFilterComponent(::BlockPos const&, ::Block const&) const /*override*/;
+
     virtual bool canSurvive(::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual bool canBeBuiltOver(::BlockPos const&, ::Block const&) const /*override*/;
@@ -122,6 +124,8 @@ public:
     MCFOLD bool $placeStructure(::BlockPos const&, ::StructureTemplate&, ::StructureSettings&);
 
     MCFOLD bool $mayPlace(::BlockPos const&, ::Block const&) const;
+
+    MCFOLD bool $mayPlacePlacementFilterComponent(::BlockPos const&, ::Block const&) const;
 
     MCFOLD bool $canSurvive(::BlockPos const&, ::Block const&) const;
 

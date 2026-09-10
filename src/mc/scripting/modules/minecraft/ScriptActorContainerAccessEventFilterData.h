@@ -24,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

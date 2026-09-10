@@ -9,6 +9,7 @@
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -30,56 +31,35 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk3ff4a3;
     ::ll::UntypedStorage<8, 32> mUnkc8acd3;
     ::ll::UntypedStorage<8, 32> mUnk7251d4;
+    ::ll::UntypedStorage<8, 32> mUnk814928;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptInternalPlayerServiceContext& operator=(ScriptInternalPlayerServiceContext const&);
     ScriptInternalPlayerServiceContext(ScriptInternalPlayerServiceContext const&);
     ScriptInternalPlayerServiceContext();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ScriptInternalPlayerServiceContext& operator=(ScriptInternalPlayerServiceContext const&);
-    ScriptInternalPlayerServiceContext();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ScriptInternalPlayerServiceContext(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
-#endif
-
     MCNAPI ScriptInternalPlayerServiceContext(
         ::Editor::ServiceProviderCollection&  playerServices,
         ::Scripting::WeakLifetimeScope const& scope
     );
+    // NOLINTEND
 
-#ifdef LL_PLAT_C
-    MCNAPI ~ScriptInternalPlayerServiceContext();
-#endif
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
-#endif
-
     MCNAPI void*
     $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

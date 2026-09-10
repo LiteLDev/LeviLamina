@@ -66,42 +66,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StalkAndPounceOnTargetGoal(
-        ::Mob&                    mob,
-        ::ActorFilterGroup const& stuckBlocks,
-        float                     stalkSpeed,
-        float                     stalkGiveUpDist,
-        float                     leapHeight,
-        float                     leapDist,
-        float                     maxPounceDist,
-        float                     strikeDistance,
-        float                     interestedTime,
-        float                     stuckTime,
-        bool                      setPersistent
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                    mob,
-        ::ActorFilterGroup const& stuckBlocks,
-        float                     stalkSpeed,
-        float                     stalkGiveUpDist,
-        float                     leapHeight,
-        float                     leapDist,
-        float                     maxPounceDist,
-        float                     strikeDistance,
-        float                     interestedTime,
-        float                     stuckTime,
-        bool                      setPersistent
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

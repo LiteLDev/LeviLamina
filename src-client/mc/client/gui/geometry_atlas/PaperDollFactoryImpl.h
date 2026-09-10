@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/IPaperDollHandleFactory.h"
+#include "mc/client/gui/geometry_atlas/IPaperDollHandleFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace GeometryAtlas { class PaperDollHandle; }
 
 namespace GeometryAtlas {
 
-class PaperDollFactoryImpl : public ::OreUI::IPaperDollHandleFactory {
+class PaperDollFactoryImpl : public ::GeometryAtlas::IPaperDollHandleFactory {
 public:
     // virtual functions
     // NOLINTBEGIN

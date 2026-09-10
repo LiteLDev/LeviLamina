@@ -49,6 +49,7 @@ public:
         Bamboo              = 9,
         Cherry              = 10,
         PaleOak             = 11,
+        Poplar              = 12,
     };
 
     struct SignInteractionResult {
@@ -168,7 +169,11 @@ public:
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+#else // LL_PLAT_C
+    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+#endif
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 

@@ -116,7 +116,7 @@ public:
 
     MCFOLD ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCFOLD float $getShadowRadius() const;
+    MCAPI float $getShadowRadius() const;
 
     MCAPI float $getMaxHeadXRot();
 

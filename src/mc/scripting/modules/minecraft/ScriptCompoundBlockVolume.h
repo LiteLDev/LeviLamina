@@ -27,19 +27,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCompoundBlockVolume();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptCompoundBlockVolume() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptCompoundBlockVolume(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -50,18 +40,6 @@ public:
     MCAPI static ::Scripting::ClassBinding bindClass();
 
     MCAPI static ::Scripting::EnumBinding bindRelativeEnums();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

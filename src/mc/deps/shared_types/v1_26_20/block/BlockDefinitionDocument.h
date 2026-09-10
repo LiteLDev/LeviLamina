@@ -20,7 +20,7 @@ struct BlockDefinitionDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 456, ::SharedTypes::v1_26_20::BlockDefinition::Description>                    mDescription;
+    ::ll::TypedStorage<8, 472, ::SharedTypes::v1_26_20::BlockDefinition::Description>                    mDescription;
     ::ll::TypedStorage<8, 48, ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents>                 mComponents;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_20::BlockDefinition::BlockPermutation>> mPermutations;
     ::ll::TypedStorage<

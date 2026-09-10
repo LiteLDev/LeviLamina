@@ -3,63 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/resource/ContentIdentity.h"
-#include "mc/deps/nbt/CompoundTag.h"
-#include "mc/events/event_data/ServerTelemetryData.h"
-#include "mc/legacy/ActorRuntimeID.h"
-#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/NetworkPermissions.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/StartGamePacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/platform/UUID.h"
-#include "mc/server/config/server_configuration/ServerConfigurationJoinInfo.h"
-#include "mc/world/actor/player/SyncedPlayerMovementSettings.h"
-#include "mc/world/level/GameType.h"
-#include "mc/world/level/LevelSettings.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockDefinitionGroup;
 class ReadOnlyBinaryStream;
-struct PlayerMovementSettings;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class StartGamePacket : public ::Packet {
+class StartGamePacket : public ::ll::PayloadPacket<::StartGamePacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1344, ::LevelSettings>             mSettings;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>               mRuntimeId;
-    ::ll::TypedStorage<4, 4, ::GameType>                     mEntityGameType;
-    ::ll::TypedStorage<4, 12, ::Vec3>                        mPos;
-    ::ll::TypedStorage<4, 8, ::Vec2>                         mRot;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mLevelId;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mLevelName;
-    ::ll::TypedStorage<8, 24, ::ContentIdentity>             mTemplateContentIdentity;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                   mWorldTemplateId;
-    ::ll::TypedStorage<1, 1, bool>                           mIsTrial;
-    ::ll::TypedStorage<4, 8, ::SyncedPlayerMovementSettings> mMovementSettings;
-    ::ll::TypedStorage<8, 8, uint64>                         mLevelCurrentTime;
-    ::ll::TypedStorage<4, 4, int>                            mEnchantmentSeed;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mMultiplayerCorrelationId;
-    ::ll::TypedStorage<1, 1, bool>                           mEnableItemStackNetManager;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mServerVersion;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                 mPlayerPropertyData;
-    ::ll::TypedStorage<8, 8, uint64>                         mServerBlockTypeRegistryChecksum;
-    ::ll::TypedStorage<1, 1, bool>                           mServerEnabledClientSideGeneration;
-    ::ll::TypedStorage<1, 1, bool>                           mBlockNetworkIdsAreHashes;
-    ::ll::TypedStorage<1, 1, ::NetworkPermissions>           mNetworkPermissions;
-    ::ll::TypedStorage<1, 1, bool>                           mIsLoggingChat;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::CompoundTag>>> mBlockProperties;
-    ::ll::TypedStorage<8, 416, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
-                                                                      mServerConfigurationJoinInfo;
-    ::ll::TypedStorage<8, 128, ::Social::Events::ServerTelemetryData> mServerTelemetryData;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StartGamePacket();
 
 public:
     // virtual functions
@@ -68,85 +34,47 @@ public:
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    virtual ~StartGamePacket() /*override*/;
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StartGamePacket();
-
-    MCAPI StartGamePacket(
-        ::LevelSettings const&                                                     settings,
-        ::ActorUniqueID                                                            entityId,
-        ::ActorRuntimeID                                                           runtimeId,
-        ::GameType                                                                 entityGameType,
-        bool                                                                       enableItemStackNetManager,
-        ::Vec3 const&                                                              pos,
-        ::Vec2 const&                                                              rot,
-        ::std::string const&                                                       levelId,
-        ::std::string const&                                                       levelName,
-        ::ContentIdentity const&                                                   premiumTemplateContentIdentity,
-        ::std::string const&                                                       multiplayerCorrelationId,
-        ::BlockDefinitionGroup const&                                              blockDefinitionGroup,
-        bool                                                                       isTrial,
-        ::CompoundTag                                                              playerPropertyData,
-        ::PlayerMovementSettings const&                                            movementSettings,
-        ::std::string const&                                                       serverVersion,
-        ::mce::UUID const&                                                         worldTemplateId,
-        ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo> const& serverJoinInfo,
-        ::Social::Events::ServerTelemetryData const&                               serverTelemetryData,
-        uint64                                                                     levelCurrentTime,
-        int                                                                        enchantmentSeed,
-        uint64                                                                     blockTypeRegistryChecksum,
-        bool                                                                       isLoggingChat
-    );
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::string getMultiplayerCorrelationId() const;
-#endif
+    MCAPI explicit StartGamePacket(::StartGamePacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::LevelSettings const&                                                     settings,
-        ::ActorUniqueID                                                            entityId,
-        ::ActorRuntimeID                                                           runtimeId,
-        ::GameType                                                                 entityGameType,
-        bool                                                                       enableItemStackNetManager,
-        ::Vec3 const&                                                              pos,
-        ::Vec2 const&                                                              rot,
-        ::std::string const&                                                       levelId,
-        ::std::string const&                                                       levelName,
-        ::ContentIdentity const&                                                   premiumTemplateContentIdentity,
-        ::std::string const&                                                       multiplayerCorrelationId,
-        ::BlockDefinitionGroup const&                                              blockDefinitionGroup,
-        bool                                                                       isTrial,
-        ::CompoundTag                                                              playerPropertyData,
-        ::PlayerMovementSettings const&                                            movementSettings,
-        ::std::string const&                                                       serverVersion,
-        ::mce::UUID const&                                                         worldTemplateId,
-        ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo> const& serverJoinInfo,
-        ::Social::Events::ServerTelemetryData const&                               serverTelemetryData,
-        uint64                                                                     levelCurrentTime,
-        int                                                                        enchantmentSeed,
-        uint64                                                                     blockTypeRegistryChecksum,
-        bool                                                                       isLoggingChat
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::StartGamePacketPayload payload);
     // NOLINTEND
 
 public:
@@ -156,9 +84,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCAPI ::SerializationMode $getSerializationMode() const;
+
+    MCAPI void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

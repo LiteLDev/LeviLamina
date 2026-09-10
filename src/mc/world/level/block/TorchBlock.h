@@ -68,13 +68,7 @@ public:
     // NOLINTBEGIN
     MCAPI TorchBlock(::std::string const& nameId, int id, ::ParticleType flameParticle);
 
-#ifdef LL_PLAT_S
     MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
-#endif
 
     MCAPI void onPlaceTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
 

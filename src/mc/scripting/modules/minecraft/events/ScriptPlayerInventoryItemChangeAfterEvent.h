@@ -10,12 +10,18 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInventoryItemChangeIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerInventoryItemChangeAfterEvent {
+public:
+    // ScriptPlayerInventoryItemChangeAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -47,6 +53,11 @@ public:
     MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
         ::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&
     );
+
+    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                              scope
+    );
     // NOLINTEND
 
 public:
@@ -59,6 +70,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                                              scope
+    );
     // NOLINTEND
 };
 

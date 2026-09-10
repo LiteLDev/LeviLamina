@@ -16,28 +16,35 @@ namespace Json { class Value; }
 
 class ImpactDamageSubcomponent : public ::OnHitSubcomponent {
 public:
+    // ImpactDamageSubcomponent inner types define
+    enum class DifficultyRandomization : uchar {
+        None           = 0,
+        Additive       = 1,
+        Multiplicative = 2,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::FloatRange> mProjectileDamage;
-    ::ll::TypedStorage<4, 4, ::ActorType>  mFilter;
-    ::ll::TypedStorage<1, 1, bool>         mCatchFire;
-    ::ll::TypedStorage<1, 1, bool>         mChanneling;
-    ::ll::TypedStorage<1, 1, bool>         mKnockback;
-    ::ll::TypedStorage<1, 1, bool>         mSemiRandomDiffDamage;
-    ::ll::TypedStorage<1, 1, bool>         mDestroyOnHit;
-    ::ll::TypedStorage<1, 1, bool>         mRegisterLastHurtRequiresDamage;
-    ::ll::TypedStorage<1, 1, bool>         mDestroyOnHitRequiresDamage;
-    ::ll::TypedStorage<1, 1, bool>         mApplyKnockbackToBlockingTargets;
-    ::ll::TypedStorage<4, 4, int>          mMaxCriticalDamage;
-    ::ll::TypedStorage<4, 4, int>          mMinCriticalDamage;
-    ::ll::TypedStorage<4, 4, float>        mPowMultiplier;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                                        mProjectileDamage;
+    ::ll::TypedStorage<4, 4, ::ActorType>                                         mFilter;
+    ::ll::TypedStorage<1, 1, bool>                                                mCatchFire;
+    ::ll::TypedStorage<1, 1, bool>                                                mChanneling;
+    ::ll::TypedStorage<1, 1, bool>                                                mKnockback;
+    ::ll::TypedStorage<1, 1, ::ImpactDamageSubcomponent::DifficultyRandomization> mDifficultyRandomization;
+    ::ll::TypedStorage<1, 1, bool>                                                mCeilPreCriticalDamage;
+    ::ll::TypedStorage<1, 1, bool>                                                mDestroyOnHit;
+    ::ll::TypedStorage<1, 1, bool>                                                mRegisterLastHurtRequiresDamage;
+    ::ll::TypedStorage<1, 1, bool>                                                mDestroyOnHitRequiresDamage;
+    ::ll::TypedStorage<1, 1, bool>                                                mApplyKnockbackToBlockingTargets;
+    ::ll::TypedStorage<4, 4, int>                                                 mMaxCriticalDamage;
+    ::ll::TypedStorage<4, 4, int>                                                 mMinCriticalDamage;
+    ::ll::TypedStorage<4, 4, float>                                               mPowerMultiplier;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImpactDamageSubcomponent() /*override*/ = default;
-
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
     virtual void writetoJSON(::Json::Value& component) const /*override*/;
@@ -59,11 +66,5 @@ public:
     MCAPI char const* $getName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

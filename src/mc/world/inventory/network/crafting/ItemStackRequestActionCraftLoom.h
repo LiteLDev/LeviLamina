@@ -19,13 +19,10 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mPatternNameId;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftLoom();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,25 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionCraftLoom(::std::string const& patternNameId, uchar numCrafts);
-#endif
+    MCAPI ItemStackRequestActionCraftLoom(::std::string const& patternNameId, uchar numCrafts);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::string const& patternNameId, uchar numCrafts);
-#endif
+    MCAPI void* $ctor(::std::string const& patternNameId, uchar numCrafts);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_write(::BinaryStream& stream) const;
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
 
     // NOLINTEND

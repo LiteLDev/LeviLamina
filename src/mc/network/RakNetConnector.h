@@ -19,10 +19,12 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+class PrivateKeyManager;
 namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakNetStatistics; }
 namespace RakNet { struct RakPeerConfiguration; }
+namespace Social { struct ResolvedExperienceInfo; }
 // clang-format on
 
 class RakNetConnector : public ::RemoteConnector {
@@ -147,7 +149,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier>          mNATPunchServerId;
-    ::ll::TypedStorage<8, 520, ::Social::GameConnectionInfo> mBackupGameConnection;
+    ::ll::TypedStorage<8, 784, ::Social::GameConnectionInfo> mBackupGameConnection;
     ::ll::TypedStorage<1, 1, bool>                           mTryBackupConnection;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>>
                                                                    mRakPeer;
@@ -158,7 +160,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                 mIsServer;
     ::ll::TypedStorage<1, 1, bool>                                 mIsDisconnecting;
     ::ll::TypedStorage<1, 1, bool>                                 mConnectingToClient;
-    ::ll::TypedStorage<8, 520, ::Social::GameConnectionInfo>       mConnectedGameInfo;
+    ::ll::TypedStorage<8, 784, ::Social::GameConnectionInfo>       mConnectedGameInfo;
     ::ll::TypedStorage<
         8,
         64,
@@ -182,7 +184,7 @@ public:
     // NOLINTBEGIN
     virtual ~RakNetConnector() /*override*/ = default;
 
-    virtual bool host(::ConnectionDefinition const& definition) /*override*/;
+    virtual bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const&) /*override*/;
 
     virtual bool connect(
         ::Social::GameConnectionInfo const& primaryConnection,
@@ -207,6 +209,10 @@ public:
     virtual ushort getPort() const /*override*/;
 
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
+
+    virtual void setConnectedResolvedExperienceInfo(
+        ::std::optional<::Social::ResolvedExperienceInfo> const& resolvedExperienceInfo
+    ) /*override*/;
 
     virtual bool isIPv4Supported() const /*override*/;
 
@@ -263,7 +269,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $host(::ConnectionDefinition const& definition);
+    MCAPI bool $host(::ConnectionDefinition const& definition, ::PrivateKeyManager const&);
 
     MCAPI bool $connect(
         ::Social::GameConnectionInfo const& primaryConnection,
@@ -281,13 +287,17 @@ public:
 
     MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
 
-    MCFOLD bool $isServer() const;
+    MCAPI bool $isServer() const;
 
     MCAPI ::std::string $getLocalIp();
 
     MCAPI ushort $getPort() const;
 
     MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+
+    MCAPI void $setConnectedResolvedExperienceInfo(
+        ::std::optional<::Social::ResolvedExperienceInfo> const& resolvedExperienceInfo
+    );
 
     MCAPI bool $isIPv4Supported() const;
 

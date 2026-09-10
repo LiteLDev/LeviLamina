@@ -322,7 +322,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk3430d4;
     ::ll::UntypedStorage<1, 1>   mUnk9f2b54;
     ::ll::UntypedStorage<1, 1>   mUnk962bb4;
-    ::ll::UntypedStorage<8, 528> mUnk58b85f;
+    ::ll::UntypedStorage<8, 792> mUnk58b85f;
     ::ll::UntypedStorage<1, 1>   mUnk1ef4d7;
     ::ll::UntypedStorage<1, 1>   mUnk29fbcb;
     ::ll::UntypedStorage<4, 4>   mUnkc07c6b;
@@ -356,7 +356,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk6182e1;
     ::ll::UntypedStorage<8, 8>   mUnk84dba0;
     ::ll::UntypedStorage<8, 8>   mUnk9ffd30;
-    ::ll::UntypedStorage<8, 256> mUnkfbb9ff;
+    ::ll::UntypedStorage<8, 264> mUnkfbb9ff;
     ::ll::UntypedStorage<8, 8>   mUnkf8bdff;
     ::ll::UntypedStorage<8, 24>  mUnkfbc948;
     ::ll::UntypedStorage<8, 24>  mUnk1e1098;
@@ -530,9 +530,7 @@ public:
 
     virtual bool isLocalSplitscreenWith(::ActorUniqueID const& id) const /*override*/;
 
-    virtual bool isValidCrossPlatformSkin() const /*override*/;
-
-    virtual bool isCurrentSkinPlatformLocked() const /*override*/;
+    virtual bool isValidCrossPlatformSkin(bool valueIfNull) const /*override*/;
 
     virtual bool isSelectedSkinInitialized() const /*override*/;
 
@@ -664,8 +662,6 @@ public:
     virtual void navigateToServersScreen(bool const calledFromHyperlink) /*override*/;
 
     virtual void navigateToHowToPlayScreen(::std::string const& startTopic) /*override*/;
-
-    virtual void navigateToGatheringInfoScreen(bool autoConnect) /*override*/;
 
     virtual void navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex tabIndex) /*override*/;
 
@@ -1130,9 +1126,9 @@ public:
         ::std::function<void()>                         onHandledEventCallback
     ) /*override*/;
 
-    virtual void onLowDiskSpace(bool const bSet) /*override*/;
+    virtual void onLowDiskSpace(bool const bSet, uint64 freeSpace) /*override*/;
 
-    virtual void onOutOfDiskSpace(bool const bSet) /*override*/;
+    virtual void onOutOfDiskSpace(bool const bSet, uint64 freeSpace) /*override*/;
 
     virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode) /*override*/;
 
@@ -1526,9 +1522,7 @@ public:
 
     MCAPI bool $isLocalSplitscreenWith(::ActorUniqueID const& id) const;
 
-    MCAPI bool $isValidCrossPlatformSkin() const;
-
-    MCAPI bool $isCurrentSkinPlatformLocked() const;
+    MCAPI bool $isValidCrossPlatformSkin(bool valueIfNull) const;
 
     MCAPI bool $isSelectedSkinInitialized() const;
 
@@ -1657,8 +1651,6 @@ public:
     MCAPI void $navigateToServersScreen(bool const calledFromHyperlink);
 
     MCAPI void $navigateToHowToPlayScreen(::std::string const& startTopic);
-
-    MCAPI void $navigateToGatheringInfoScreen(bool autoConnect);
 
     MCAPI void $navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex tabIndex);
 
@@ -2120,9 +2112,9 @@ public:
         ::std::function<void()>                         onHandledEventCallback
     );
 
-    MCAPI void $onLowDiskSpace(bool const bSet);
+    MCAPI void $onLowDiskSpace(bool const bSet, uint64 freeSpace);
 
-    MCAPI void $onOutOfDiskSpace(bool const bSet);
+    MCAPI void $onOutOfDiskSpace(bool const bSet, uint64 freeSpace);
 
     MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
 

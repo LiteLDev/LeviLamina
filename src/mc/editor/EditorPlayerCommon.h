@@ -32,24 +32,14 @@ class EditorPlayerCommon : public ::Editor::IEditorPlayer,
                            public ::Editor::Services::EditorServiceList,
                            public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
-    // EditorPlayerCommon inner types define
-    enum class InitializationState : int {
-        Uninitialized  = 0,
-        Initializing   = 1,
-        Initialized    = 2,
-        Readying       = 3,
-        Ready          = 4,
-        Deinitializing = 5,
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb995b8;
     ::ll::UntypedStorage<8, 48> mUnk6374b5;
     ::ll::UntypedStorage<8, 48> mUnk3329f0;
+    ::ll::UntypedStorage<8, 48> mUnk607ee0;
     ::ll::UntypedStorage<8, 24> mUnk6b14f6;
-    ::ll::UntypedStorage<4, 4>  mUnk2b7012;
+    ::ll::UntypedStorage<4, 4>  mUnkd1ca2c;
     ::ll::UntypedStorage<8, 8>  mUnk10bddf;
     // NOLINTEND
 
@@ -68,7 +58,18 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
+    virtual ::Scripting::Result_deprecated<void> start() /*override*/;
+
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
+
+    virtual bool canStart() const /*override*/;
+
+    virtual bool isStarted() const /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription registerInitializationStateChanged(
+        ::std::function<
+            void(::Editor::IEditorPlayer::InitializationState, ::Editor::IEditorPlayer::InitializationState)> fn
+    ) /*override*/;
 
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() /*override*/;
 
@@ -114,7 +115,18 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
+    MCNAPI ::Scripting::Result_deprecated<void> $start();
+
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
+
+    MCNAPI bool $canStart() const;
+
+    MCNAPI bool $isStarted() const;
+
+    MCNAPI ::Bedrock::PubSub::Subscription $registerInitializationStateChanged(
+        ::std::function<
+            void(::Editor::IEditorPlayer::InitializationState, ::Editor::IEditorPlayer::InitializationState)> fn
+    );
 
     MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
 

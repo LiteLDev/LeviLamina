@@ -95,6 +95,8 @@ public:
     // NOLINTBEGIN
     virtual ~ChestBlockActor() /*override*/;
 
+    virtual bool isTypeOrDerived(::BlockActorType type) const /*override*/;
+
     virtual int getContainerSize() const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
@@ -121,7 +123,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual bool saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& base) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -237,6 +239,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+
     MCAPI int $getContainerSize() const;
 
     MCFOLD int $getMaxStackSize() const;
@@ -263,7 +267,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& base) const;
 
     MCAPI void $tick(::BlockSource& region);
 

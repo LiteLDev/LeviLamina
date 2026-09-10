@@ -32,7 +32,17 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptListBlockVolume();
 
+    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+
+    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
+
     MCAPI void add(::std::vector<::Vec3> const& locations);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptListBlockVolume&
+    operator=(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptListBlockVolume&
+    operator=(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
 
     MCAPI void remove(::std::vector<::Vec3> const& locations);
     // NOLINTEND
@@ -47,6 +57,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
     // NOLINTEND
 
 public:

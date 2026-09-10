@@ -18,6 +18,7 @@ struct PortPair;
 struct ServerSupportedAuthenticationTypes;
 namespace Bedrock::Threading { class Mutex; }
 namespace NetherNet { struct NetworkID; }
+namespace Social { struct Nonce; }
 // clang-format on
 
 class NetherNetServerLocator : public ::StubServerLocator {
@@ -40,6 +41,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnk91bac1;
         ::ll::UntypedStorage<1, 1>  mUnk1b4aaf;
         ::ll::UntypedStorage<1, 2>  mUnkd722a4;
+        ::ll::UntypedStorage<8, 32> mUnkcbabae;
         ::ll::UntypedStorage<4, 4>  mUnk21552f;
         ::ll::UntypedStorage<2, 2>  mUnkb17aa9;
         // NOLINTEND
@@ -54,14 +56,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8d94d4;
-    ::ll::UntypedStorage<8, 24> mUnka0ecad;
-    ::ll::UntypedStorage<8, 32> mUnk86854a;
-    ::ll::UntypedStorage<8, 16> mUnkeab7f7;
-    ::ll::UntypedStorage<1, 1>  mUnkfee0d4;
-    ::ll::UntypedStorage<1, 1>  mUnk646852;
-    ::ll::UntypedStorage<8, 88> mUnk330682;
-    ::ll::UntypedStorage<8, 80> mUnk1547c8;
+    ::ll::UntypedStorage<8, 24>  mUnk8d94d4;
+    ::ll::UntypedStorage<8, 24>  mUnka0ecad;
+    ::ll::UntypedStorage<8, 32>  mUnk86854a;
+    ::ll::UntypedStorage<8, 16>  mUnkeab7f7;
+    ::ll::UntypedStorage<1, 1>   mUnkfee0d4;
+    ::ll::UntypedStorage<1, 1>   mUnk646852;
+    ::ll::UntypedStorage<8, 120> mUnk330682;
+    ::ll::UntypedStorage<8, 80>  mUnk1547c8;
     // NOLINTEND
 
 public:
@@ -84,7 +86,8 @@ public:
         bool                                 isJoinableThroughServerScreen,
         bool                                 isEditorWorld,
         bool                                 isHardcore,
-        ::ServerSupportedAuthenticationTypes supportedAuth
+        ::ServerSupportedAuthenticationTypes supportedAuth,
+        ::Social::Nonce const&               nonce
     ) /*override*/;
 
     virtual void stopAnnouncingServer() /*override*/;
@@ -140,7 +143,8 @@ public:
         bool                                 isJoinableThroughServerScreen,
         bool                                 isEditorWorld,
         bool                                 isHardcore,
-        ::ServerSupportedAuthenticationTypes supportedAuth
+        ::ServerSupportedAuthenticationTypes supportedAuth,
+        ::Social::Nonce const&               nonce
     );
 
     MCNAPI void $stopAnnouncingServer();

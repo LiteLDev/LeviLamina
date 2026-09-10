@@ -15,12 +15,14 @@ public:
         Uninitialized = 0,
         Initialized   = 1,
         Ready         = 2,
+        Started       = 3,
     };
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnkc8874b;
+    ::ll::UntypedStorage<1, 1> mUnk268624;
     ::ll::UntypedStorage<4, 4> mUnk93c97e;
     // NOLINTEND
 
@@ -39,6 +41,10 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> ready();
 
+    virtual ::Scripting::Result_deprecated<void> preStartTick();
+
+    virtual ::Scripting::Result_deprecated<void> start();
+
     virtual ::Scripting::Result_deprecated<void> quit() = 0;
 
     virtual ::std::string_view getServiceName() const = 0;
@@ -46,6 +52,8 @@ public:
     virtual bool isServiceInitialized() const;
 
     virtual bool isServiceReady() const;
+
+    virtual bool isServiceStarted() const;
     // NOLINTEND
 
 public:
@@ -53,9 +61,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
 
+    MCNAPI ::Scripting::Result_deprecated<void> $preStartTick();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $start();
+
     MCNAPI bool $isServiceInitialized() const;
 
     MCNAPI bool $isServiceReady() const;
+
+    MCNAPI bool $isServiceStarted() const;
 
 
     // NOLINTEND

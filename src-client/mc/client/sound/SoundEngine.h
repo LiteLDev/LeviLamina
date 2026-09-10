@@ -6,6 +6,7 @@
 #include "mc/client/sound/SoundMapping.h"
 #include "mc/client/sound/VolumeMultipliers.h"
 #include "mc/deps/audio/SoundEventRepository.h"
+#include "mc/deps/audio/SoundPauseSource.h"
 #include "mc/deps/audio/SoundPlayerInterface.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -47,7 +48,8 @@ public:
         Option       = 1,
         MusicCommand = 2,
         BiomeDuck    = 3,
-        Count        = 4,
+        JukeboxDuck  = 4,
+        Count        = 5,
     };
 
     using SoundEventQueue = ::std::vector<::std::pair<::std::string, ::std::shared_ptr<::SoundEvent>>>;
@@ -70,7 +72,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mSoundCategoryVolumeOptionSubscriptions;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePackManager>>   mResourceManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>>  mLinkedAssetValidator;
-    ::ll::TypedStorage<4, 112, ::VolumeMultipliers<4>>                             mMusicVolumeMultipliers;
+    ::ll::TypedStorage<4, 140, ::VolumeMultipliers<5>>                             mMusicVolumeMultipliers;
     ::ll::TypedStorage<4, 4, float>                                                mMainVolume;
     ::ll::TypedStorage<4, 4, float>                                                mTTSVolume;
     ::ll::TypedStorage<1, 1, bool>                                                 mMuted;
@@ -108,11 +110,23 @@ public:
 
     virtual void stop(::ServerSoundHandle serverSoundHandle) /*override*/;
 
+    virtual void setVolume(::ServerSoundHandle serverSoundHandle, float volume) /*override*/;
+
+    virtual void setPitch(::ServerSoundHandle serverSoundHandle, float pitch) /*override*/;
+
+    virtual void fade(::ServerSoundHandle serverSoundHandle, float duration, float targetVolume) /*override*/;
+
+    virtual void setPlaybackPosition(::ServerSoundHandle serverSoundHandle, float seconds) /*override*/;
+
+    virtual void pause(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source) /*override*/;
+
+    virtual void resume(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source) /*override*/;
+
     virtual void stopAllSounds() /*override*/;
 
-    virtual void pauseAllPlayingSounds() /*override*/;
+    virtual void pauseAllPlayingSounds(::SoundPauseSource source) /*override*/;
 
-    virtual void resumeAllPreviouslyPlayingSounds() /*override*/;
+    virtual void resumeAllPreviouslyPlayingSounds(::SoundPauseSource source) /*override*/;
 
     virtual ::std::optional<::std::string> getSubtitle(::std::string const& name) const /*override*/;
 
@@ -159,7 +173,7 @@ public:
     virtual bool getItem(::std::string const& eventName, ::Core::PathView soundPath, ::SoundItem& soundItem) const
         /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicPath() /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicPath() /*override*/;
 
     virtual void displaySoundEngineStats(::std::string& debugOutputFormat) const;
 
@@ -171,6 +185,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _loadSoundEvents(
+        ::std::vector<::std::pair<::std::string, ::std::shared_ptr<::SoundEvent>>>& soundEvents,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>                          validator
+    );
+
     MCAPI bool
     _tryPlayMusicFromStreamingExperiment(::std::string const& eventName, ::SoundItem const& soundItem, float volume);
 
@@ -223,11 +242,23 @@ public:
 
     MCAPI void $stop(::ServerSoundHandle serverSoundHandle);
 
+    MCAPI void $setVolume(::ServerSoundHandle serverSoundHandle, float volume);
+
+    MCAPI void $setPitch(::ServerSoundHandle serverSoundHandle, float pitch);
+
+    MCAPI void $fade(::ServerSoundHandle serverSoundHandle, float duration, float targetVolume);
+
+    MCAPI void $setPlaybackPosition(::ServerSoundHandle serverSoundHandle, float seconds);
+
+    MCAPI void $pause(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source);
+
+    MCAPI void $resume(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source);
+
     MCAPI void $stopAllSounds();
 
-    MCAPI void $pauseAllPlayingSounds();
+    MCAPI void $pauseAllPlayingSounds(::SoundPauseSource source);
 
-    MCAPI void $resumeAllPreviouslyPlayingSounds();
+    MCAPI void $resumeAllPreviouslyPlayingSounds(::SoundPauseSource source);
 
     MCAPI ::std::optional<::std::string> $getSubtitle(::std::string const& name) const;
 
@@ -273,7 +304,7 @@ public:
 
     MCAPI bool $getItem(::std::string const& eventName, ::Core::PathView soundPath, ::SoundItem& soundItem) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getCurrentlyPlayingMusicPath();
+    MCAPI ::Core::PathBuffer<::std::string> const& $getCurrentlyPlayingMusicPath();
 
     MCAPI void $displaySoundEngineStats(::std::string& debugOutputFormat) const;
 

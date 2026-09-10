@@ -10,12 +10,17 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerSwingStartIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerSwingStartAfterEvent {
+public:
+    // ScriptPlayerSwingStartAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPlayerSwingStartIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN

@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/common/IMinecraftApp.h"
 #include "mc/common/SubClientId.h"
-#include "mc/deps/core/islands/AppIsland.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ScopeExit.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/network/PacketGroupDefinition.h"
+#include "mc/server/ServerExitCode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,6 +18,7 @@ class AllowListFile;
 class AppConfigs;
 class CDNConfig;
 class ConsoleInputReader;
+class EditorAllowList;
 class EditorBootstrapper;
 class FileArchiver;
 class IEDUSystems;
@@ -46,19 +47,7 @@ namespace Core { class FilePathManager; }
 namespace Core { class FileSystem; }
 // clang-format on
 
-class DedicatedServer : public ::IMinecraftApp, public ::Bedrock::AppIsland {
-public:
-    // DedicatedServer inner types define
-    enum class ServerExitCode : int {
-        Success                      = 0,
-        PortOccupied                 = 1,
-        InvalidSettings              = 2,
-        MissingDependency            = 3,
-        RuntimeError                 = 4,
-        DocumentationGenerationError = 5,
-        ScriptWatchdogTermination    = 6,
-    };
-
+class DedicatedServer : public ::IMinecraftApp {
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,7 +56,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::ServerInstanceEventCoordinator>>
                                                                                      mServerInstanceEventCoordinator;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                    mWantsToQuit;
-    ::ll::TypedStorage<4, 4, ::std::atomic<::DedicatedServer::ServerExitCode>>       mResult;
+    ::ll::TypedStorage<4, 4, ::std::atomic<::ServerExitCode>>                        mResult;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConsoleInputReader>>                mConsoleInputReader;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IGameModuleShared>>                 mGameModule;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppConfigs>>                        mAppConfig;
@@ -76,20 +65,19 @@ public:
     ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::Bedrock::Http::DispatcherInterface>>
                                                                          mHttpDispatcherServiceRegistrationToken;
     ::ll::TypedStorage<8, 32, ::std::string>                             mSessionID;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mPackOptimizerConfigPath;
     ::ll::TypedStorage<8, 64, ::Bedrock::ScopeExit>                      mOnDestructioncloseAndResetAllLogs;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelDbEnv>>            mLevelDbEnv;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CodeBuilder::IManager>> mCodeBuilder;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>> mCodeBuilderRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                  mImguiProfiler;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>         mImguiProfilerRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProfilingConfigManager>>         mProfilingConfigManager;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ProfilingConfigManager>>
-                                                                      mProfilingConfigManagerServiceRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>       mFileArchiver;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>> mEditorBootstrapper;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>          mCDNConfig;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>> mServerTextSettings;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>  mSignalingService;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>>      mCodeBuilderRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                       mImguiProfiler;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>              mImguiProfilerRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProfilingConfigManager>>              mProfilingConfigManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>                        mFileArchiver;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>>                  mEditorBootstrapper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>                           mCDNConfig;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>>                  mServerTextSettings;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>                   mSignalingService;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>>          mSignalingServiceSignInJob;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> mDiscoveryServiceHelper;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::AuthHelper>>      mAuthServiceHelper;
@@ -101,8 +89,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DedicatedServer() /*override*/;
-
-    virtual bool stop() /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const /*override*/;
 
@@ -128,19 +114,23 @@ public:
     // NOLINTBEGIN
     MCAPI DedicatedServer();
 
-    MCAPI ::DedicatedServer::ServerExitCode runDedicatedServerLoop(
+    MCAPI void _runPackOptimizerIfRequested();
+
+    MCAPI ::ServerExitCode runDedicatedServerLoop(
         ::Core::FilePathManager&                                     filePathManager,
         ::PropertiesSettings const&                                  properties,
         ::LevelSettings&                                             settings,
         ::AllowListFile&                                             userAllowList,
+        ::EditorAllowList&                                           userEditorAllowList,
         ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
         ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
         ::Bedrock::ActivationArguments const&                        args,
         ::TestConfig&                                                testConfig
     );
 
-    MCAPI ::DedicatedServer::ServerExitCode
-    start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
+    MCAPI ::ServerExitCode start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
+
+    MCAPI bool stop();
     // NOLINTEND
 
 public:
@@ -158,8 +148,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $stop();
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();

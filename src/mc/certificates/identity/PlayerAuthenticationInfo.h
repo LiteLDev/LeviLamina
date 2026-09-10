@@ -19,12 +19,12 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                XboxLiveName;
     ::ll::TypedStorage<8, 32, ::std::string>                NintendoName;
     ::ll::TypedStorage<8, 32, ::std::string>                PlayStationName;
+    ::ll::TypedStorage<8, 32, ::std::string>                BestDisplayName;
     ::ll::TypedStorage<8, 8, ::MinecraftAccountPermissions> Permissions;
     ::ll::TypedStorage<8, 32, ::std::string>                PublicKey;
     ::ll::TypedStorage<8, 16, ::mce::UUID>                  AuthenticatedUuid;
     ::ll::TypedStorage<1, 1, bool>                          IsHost;
     ::ll::TypedStorage<1, 1, bool>                          IsLocal;
-    ::ll::TypedStorage<8, 32, ::std::string>                BestDisplayName;
     // NOLINTEND
 
 public:

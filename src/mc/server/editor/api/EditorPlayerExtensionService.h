@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
@@ -48,6 +47,8 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> ready() /*override*/;
 
+    virtual ::Scripting::Result_deprecated<void> start() /*override*/;
+
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -69,22 +70,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI explicit EditorPlayerExtensionService(::Editor::ServiceProviderCollection& providers);
-#endif
-
     MCNAPI ::Scripting::Result_deprecated<void>
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
     MCNAPI ::Scripting::Result_deprecated<void> _destroyExtensionContexts();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-#endif
     // NOLINTEND
 
 public:
@@ -93,6 +82,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
+
+    MCNAPI ::Scripting::Result_deprecated<void> $start();
 
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 

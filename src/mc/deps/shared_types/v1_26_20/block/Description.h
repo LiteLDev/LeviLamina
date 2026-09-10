@@ -23,7 +23,7 @@ public:
     ::ll::TypedStorage<8, 48, ::SharedTypes::v1_26_20::BlockDefinition::BlockMenuCategory> mMenuCategory;
     ::ll::TypedStorage<8, 256, ::SharedTypes::v1_26_20::BlockDefinition::States>           mStates;
     ::ll::TypedStorage<8, 56, ::SharedTypes::v1_26_20::BlockDefinition::Traits>            mTraits;
-    ::ll::TypedStorage<8, 64, ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::VanillaBlockData>>
+    ::ll::TypedStorage<8, 80, ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::VanillaBlockData>>
         mVanillaBlockData;
     // NOLINTEND
 

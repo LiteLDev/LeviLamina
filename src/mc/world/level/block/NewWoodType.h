@@ -7,5 +7,6 @@ enum class NewWoodType : uchar {
     Bamboo   = 7,
     Cherry   = 8,
     PaleOak  = 9,
-    Count    = 10,
+    Poplar   = 10,
+    Count    = 11,
 };

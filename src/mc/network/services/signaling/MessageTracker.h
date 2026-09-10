@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace JsonRpc { class JsonRpcError; }
 namespace PlayerMessaging { struct NetworkID; }
 namespace mce { class UUID; }
 // clang-format on
@@ -77,6 +78,8 @@ public:
     add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete, bool isP2P);
 
     MCNAPI void messageAccepted(::std::string const& messageId);
+
+    MCNAPI void messageError(::std::string const& messageId, ::JsonRpc::JsonRpcError const& error);
 
     MCNAPI void messageSent(
         ::std::optional<::PlayerMessaging::NetworkID> to,

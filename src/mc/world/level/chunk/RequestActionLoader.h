@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/chunk/IRequestAction.h"
 
 // auto generated forward declare list
@@ -10,6 +11,8 @@
 class CompoundTag;
 class ICommandOriginLoader;
 class IRequestAction;
+class IUnknownBlockTypeRegistry;
+class JigsawStructureElementRegistry;
 // clang-format on
 
 class RequestActionLoader {
@@ -19,10 +22,20 @@ public:
     MCAPI static bool isValidTag(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag);
 
     MCAPI static ::std::unique_ptr<::IRequestAction> load(
-        ::IRequestAction::RequestActionType actionType,
-        ::CompoundTag const&                tag,
-        ::ICommandOriginLoader&             loader,
-        ::std::string const&                dimensionPrefix
+        ::IRequestAction::RequestActionType                     actionType,
+        ::CompoundTag const&                                    tag,
+        ::ICommandOriginLoader&                                 loader,
+        ::std::string const&                                    dimensionPrefix,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry
+    );
+
+    MCAPI static ::std::unique_ptr<::IRequestAction> load(
+        ::IRequestAction::RequestActionType                     actionType,
+        ::CompoundTag const&                                    tag,
+        ::ICommandOriginLoader&                                 loader,
+        ::std::string const&                                    dimensionPrefix,
+        ::JigsawStructureElementRegistry const&                 elementReg,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry
     );
     // NOLINTEND
 };

@@ -25,4 +25,12 @@ public:
     FeatureParserContext& operator=(FeatureParserContext const&);
     FeatureParserContext(FeatureParserContext const&);
     FeatureParserContext();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void update(::MinEngineVersion const& minEngineVersion);
+#endif
+    // NOLINTEND
 };

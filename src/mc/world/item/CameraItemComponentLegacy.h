@@ -114,11 +114,7 @@ public:
 
     MCAPI float $shutterScreenRatio() const;
 
-#ifdef LL_PLAT_S
     MCAPI float $shutterDuration() const;
-#else // LL_PLAT_C
-    MCFOLD float $shutterDuration() const;
-#endif
 
     MCAPI float $pictureDuration() const;
 

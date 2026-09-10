@@ -57,7 +57,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool place(::BlockSource& region, ::BlockPos const& pos, bool clearAirAbove) const;
+
     MCAPI void postProcessMobsAt(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool wasClippedDuringDecoration(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

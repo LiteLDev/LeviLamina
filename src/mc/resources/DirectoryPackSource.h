@@ -7,6 +7,7 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
@@ -66,6 +67,15 @@ public:
         ::IPackIOProvider const& io,
         bool                     saveEncryptedWorldTemplatePacksAsZips
     );
+
+    MCAPI static void purgeOptimizedPremiumPacksIfRequested(
+        bool                     purgeRequested,
+        ::Core::Path const&      path,
+        ::IPackIOProvider const* io,
+        ::brstd::function_ref<
+            void(::std::string_view, ::std::string const&, ::PackType, ::PackOrigin, ::std::string const&, int64)>
+            reportPackDeleted
+    );
     // NOLINTEND
 
 public:
@@ -84,5 +94,11 @@ public:
     MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

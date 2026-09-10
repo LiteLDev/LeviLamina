@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/move_only_function.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
@@ -16,12 +19,12 @@ struct ResourceDropsContext;
 namespace VanillaBlockDrops {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
-addUniformFortuneBonus(::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> countProvider);
-
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> combine(
-    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategyA,
-    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategyB
+MCAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+combine(
+    ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+        dropStrategyA,
+    ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+        dropStrategyB
 );
 
 MCAPI void configureBlockDrops(
@@ -30,18 +33,25 @@ MCAPI void configureBlockDrops(
     ::BlockDefinitionGroup*  blockDefinitionGroup
 );
 
-MCAPI ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
-limitCount(int max, ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> countProvider);
-
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> when(
-    ::std::function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>            condition,
-    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> trueStrategy
+MCAPI ::brstd::move_only_function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> limitCount(
+    int                                                                                               max,
+    ::brstd::move_only_function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> countProvider
 );
 
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> when(
-    ::std::function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>            condition,
-    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> trueStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> falseStrategy
+MCAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+when(
+    ::brstd::move_only_function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> condition,
+    ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+        trueStrategy
+);
+
+MCAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+when(
+    ::brstd::move_only_function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> condition,
+    ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+        trueStrategy,
+    ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+        falseStrategy
 );
 // NOLINTEND
 

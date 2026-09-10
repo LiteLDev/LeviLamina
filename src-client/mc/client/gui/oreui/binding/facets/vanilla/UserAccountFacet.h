@@ -89,7 +89,7 @@ public:
 
     MCFOLD ::std::string const& getBanExpiration() const;
 
-    MCAPI ::std::string const& getBanReason() const;
+    MCFOLD ::std::string const& getBanReason() const;
 
     MCFOLD ::std::string const& getCurrentPlatformId() const;
 

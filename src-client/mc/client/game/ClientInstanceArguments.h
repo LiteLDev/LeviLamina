@@ -7,9 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class IClientInstance;
 class LegacyClientNetworkHandler;
 class LevelRenderer;
 class MinecraftCommands;
+class PlayerReportHandler;
 // clang-format on
 
 struct ClientInstanceArguments {
@@ -71,6 +73,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnkca49c4;
     ::ll::UntypedStorage<8, 64> mUnkdcda39;
     ::ll::UntypedStorage<8, 64> mUnk9e4ece;
+    ::ll::UntypedStorage<8, 64> mUnk10acdb;
     // NOLINTEND
 
 public:

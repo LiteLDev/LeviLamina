@@ -97,6 +97,8 @@ public:
     ::ll::TypedStorage<4, 4, int>                                         mTabFiltersDirty;
     ::ll::TypedStorage<4, 4, int>                                         mSelectedLeftTab;
     ::ll::TypedStorage<4, 4, int>                                         mSelectedRightTab;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::string>>   mRecipeHoverTextCache;
+    ::ll::TypedStorage<1, 1, bool>                                        mRecipeHoverTextCacheShowCategory;
     // NOLINTEND
 
 public:
@@ -146,6 +148,8 @@ public:
     virtual ::ui::ViewRequest _onContainerSlotHovered(::std::string const& collectionName, int index) /*override*/;
 
     virtual ::ui::ViewRequest _onContainerSlotPressed(::std::string const& collectionName, int index) /*override*/;
+
+    virtual bool _onTouchScrollStartedWithSelectedSlot() /*override*/;
 
     virtual ::std::string _getCollectionName(::UIPropertyBag* bag) const /*override*/;
 
@@ -209,6 +213,8 @@ public:
     MCAPI bool _isItemsTabVisible() const;
 
     MCAPI bool _isNatureTabVisible() const;
+
+    MCAPI bool _isRecipeSlotCraftable(::SlotData const& slotData);
 
     MCAPI ::ui::ViewRequest
     _recipeAutoCraft(::std::string const& collectionName, int collectionIndex, ::ItemCraftType craftType);
@@ -296,6 +302,8 @@ public:
     MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
 
     MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
+
+    MCAPI bool $_onTouchScrollStartedWithSelectedSlot();
 
     MCAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
 

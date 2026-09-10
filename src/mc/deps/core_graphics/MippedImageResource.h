@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cg { class ImageBuffer; }
+namespace cg { struct ImageDescription; }
 // clang-format on
 
 namespace cg {
@@ -38,6 +39,8 @@ public:
 
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() /*override*/;
+
+    virtual ::cg::ImageDescription getImageDescription(uchar mipLevel) const /*override*/;
     // NOLINTEND
 
 public:
@@ -57,6 +60,8 @@ public:
     MCAPI void $addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
     MCAPI ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource> $unwrapImageData();
+
+    MCAPI ::cg::ImageDescription $getImageDescription(uchar mipLevel) const;
 #endif
 
 

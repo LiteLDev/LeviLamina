@@ -28,6 +28,7 @@ class MouseMapper;
 class SplitscreenJoinListener;
 struct ControllerIDtoClientMap;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Input::Debug { class ISplitscreenRedirect; }
 // clang-format on
 
 class MinecraftInputHandler : public ::IConfigListener, public ::Bedrock::EnableNonOwnerReferences {
@@ -38,10 +39,12 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                        mControllerId;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>          mClient;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions>> mAdvancedGraphicsOptions;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftBindingFactoryMap>>            mBindingFactoryMap;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftInputMappingFactoryMap>>       mMappingFactoryMap;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SplitscreenJoinListener>>               mSplitscreenJoinListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InputSettingsHandler>>                  mInputSettingsHandler;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect>>
+                                                                                   mDebugSplitscreenInputRedirect;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftBindingFactoryMap>>      mBindingFactoryMap;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftInputMappingFactoryMap>> mMappingFactoryMap;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SplitscreenJoinListener>>         mSplitscreenJoinListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InputSettingsHandler>>            mInputSettingsHandler;
     ::ll::TypedStorage<
         8,
         128,
@@ -85,8 +88,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MinecraftInputHandler(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          client,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&           advancedGraphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
 
     MCAPI void _registerMenuButton(::std::string const& buttonName, bool suspendable);
@@ -111,8 +115,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          client,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&           advancedGraphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
     // NOLINTEND
 

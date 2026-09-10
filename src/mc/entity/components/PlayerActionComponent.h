@@ -17,7 +17,7 @@ struct PlayerActionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::bitset<38>>                                            mPlayerActions;
+    ::ll::TypedStorage<8, 8, ::std::bitset<39>>                                            mPlayerActions;
     ::ll::TypedStorage<8, 312, ::std::optional<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
     ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;

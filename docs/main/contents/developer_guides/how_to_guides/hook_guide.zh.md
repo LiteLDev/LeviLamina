@@ -6,7 +6,7 @@ Hook 是一种在运行时修改函数行为的技术。通常用于在不修改
 
 wikipedia 关于 Hook 的解释：[Hooking](https://en.wikipedia.org/wiki/Hooking)
 
-在 LeviLamina 中，我们提供了封装好的Hook API，使得你可以快速便捷地对 Minecraft 基岩专用服务器（下文称为`BDS`）中的游戏函数进行行为修改。
+在 LeviLamina 中，我们提供了封装好的Hook API，使得你可以快速便捷地对 Minecraft 基岩版中的游戏函数进行行为修改。
 
 ## Hook的类型
 
@@ -102,10 +102,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
 #### 卸载
 
-所有的 Hook 都会在 BDS 卸载时自动卸载，你也可以在你模组需要卸载 Hook 的时机调用`unhook()`函数进行卸载。
+所有的 Hook 都会在 Minecraft 卸载时自动卸载，你也可以在你模组需要卸载 Hook 的时机调用`unhook()`函数进行卸载。
 
 ## 写在最后
 
-Hook 是一种非常强大的技术，但是也是一把双刃剑，如果使用不当，可能会导致BDS本体崩溃，或者模组崩溃，严重的甚至会对存档产生影响。
+Hook 是一种非常强大的技术，但是也是一把双刃剑，如果使用不当，可能会导致Minecraft本体崩溃，或者模组崩溃，严重的甚至会对存档产生影响。
 
 所以请在使用 Hook 的时候一定要谨慎，仔细检查你的代码，避免出现不必要的错误。

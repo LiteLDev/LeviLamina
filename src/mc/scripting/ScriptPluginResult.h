@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/resource/PackIdVersion.h"
+#include "mc/deps/script_core/script_engine/scripting/ModuleDescriptor.h"
+
 class ScriptPluginResult {
 public:
     // ScriptPluginResult inner types declare
@@ -17,25 +21,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnka39007;
+        ::ll::TypedStorage<8, 32, ::std::string> message;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Error& operator=(Error const&);
-        Error(Error const&);
-        Error();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~Error();
+        MCAPI ~Error();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -43,25 +41,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkdf56e5;
+        ::ll::TypedStorage<8, 32, ::std::string> message;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Info& operator=(Info const&);
-        Info(Info const&);
-        Info();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~Info();
+        MCAPI ~Info();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -69,47 +61,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkef90b3;
+        ::ll::TypedStorage<8, 32, ::std::string> message;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Verbose& operator=(Verbose const&);
-        Verbose(Verbose const&);
-        Verbose();
     };
 
     struct Warning {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk69d183;
+        ::ll::TypedStorage<8, 32, ::std::string> message;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Warning& operator=(Warning const&);
-        Warning(Warning const&);
-        Warning();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk1834eb;
-    ::ll::UntypedStorage<8, 96> mUnk14873c;
-    ::ll::UntypedStorage<8, 24> mUnk68e0e6;
-    ::ll::UntypedStorage<8, 24> mUnkbae67b;
-    ::ll::UntypedStorage<8, 24> mUnk3cb33c;
-    ::ll::UntypedStorage<8, 24> mUnka8b2c4;
-    ::ll::UntypedStorage<8, 8>  mUnk2c14cc;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion const>                        mPackId;
+    ::ll::TypedStorage<8, 96, ::Scripting::ModuleDescriptor const>          mDescriptor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptPluginResult::Error>>   mErrors;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptPluginResult::Warning>> mWarnings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptPluginResult::Info>>    mInfos;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptPluginResult::Verbose>> mVerboses;
+    ::ll::TypedStorage<8, 8, ::std::chrono::microseconds>                   mRunDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPluginResult& operator=(ScriptPluginResult const&);
-    ScriptPluginResult(ScriptPluginResult const&);
-    ScriptPluginResult();
 
 public:
     // member functions
@@ -118,12 +92,16 @@ public:
 
     MCAPI void logInfo(::std::string const& info);
 
+#ifdef LL_PLAT_C
     MCAPI ~ScriptPluginResult();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -34,6 +34,7 @@ public:
         ::OreUI::PropertyVector<::std::string, ::std::allocator<::OreUI::Detail::ObservableValue<::std::string>>>>
                                                         mEnabledResourcePacks;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>> mIsHardcore;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>  mGameMode;
     // NOLINTEND
 };
 

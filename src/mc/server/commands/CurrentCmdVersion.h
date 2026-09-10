@@ -57,6 +57,7 @@ enum class CurrentCmdVersion : int {
     StopSoundOutputFix                                                                = 47,
     PlaySoundOutputFix                                                                = 48,
     PlayerWaypointsGamerule                                                           = 49,
-    Count                                                                             = 50,
-    Latest                                                                            = 49,
+    ClonePartialBedBlockFix                                                           = 50,
+    Count                                                                             = 51,
+    Latest                                                                            = 50,
 };

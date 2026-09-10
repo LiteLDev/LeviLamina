@@ -11,11 +11,11 @@ namespace Crypto::Hash { class Hash; }
 namespace CryptoUtils {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCNAPI void _generateFileChecksum(::Core::PathView path, ::Crypto::Hash::Hash& hashToUpdate);
 #endif
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
 MCNAPI void _generateFileChecksum(::Core::PathView path, ::Crypto::Hash::Hash& hashToUpdate);
 #endif
 

@@ -45,5 +45,6 @@ public:
         mMoveSelectedItemFromStorageItemToStorageItem;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int, ::ItemTransferAmount)>> mHandleDropItem;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int)>> mHoverContainerSlot;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&, int)>> mIsRecipeSlotCraftable;
     // NOLINTEND
 };

@@ -26,13 +26,10 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                  mLoadedCraftResults;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -53,7 +50,14 @@ public:
         ::std::vector<::ItemInstance> const& craftResults,
         uchar                                numCrafts
     );
+#endif
 
+    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
+        ::std::vector<::NetworkItemInstanceDescriptor> craftResults,
+        uchar                                          numCrafts
+    );
+
+#ifdef LL_PLAT_C
     MCAPI void _updateCraftResults(::std::vector<::ItemInstance> const& craftResults);
 #endif
     // NOLINTEND
@@ -66,6 +70,8 @@ public:
 
     MCAPI void* $ctor(::std::vector<::ItemInstance> const& craftResults, uchar numCrafts);
 #endif
+
+    MCAPI void* $ctor(::std::vector<::NetworkItemInstanceDescriptor> craftResults, uchar numCrafts);
     // NOLINTEND
 
 public:

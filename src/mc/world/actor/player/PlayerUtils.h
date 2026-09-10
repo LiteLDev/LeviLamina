@@ -14,11 +14,15 @@ class Vec3;
 namespace PlayerUtils {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI bool areMonstersNearby(::BlockSource& region, ::Vec3 const& position);
+#endif
 
 MCAPI bool canUseItemToIgnite(::ItemStack const& item, ::BaseGameVersion const& baseGameVersion);
 
+#ifdef LL_PLAT_S
 MCAPI void onAttackAwardAchievements(::Player& player, float damage);
+#endif
 // NOLINTEND
 
 } // namespace PlayerUtils

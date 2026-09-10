@@ -18,12 +18,6 @@ public:
     SanitizedFormatString& operator=(SanitizedFormatString const&);
     SanitizedFormatString(SanitizedFormatString const&);
     SanitizedFormatString();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void _sanitize();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mInitializationScripts;
     ::ll::TypedStorage<1, 1, bool>              mBindToActor;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorParticleEffect();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

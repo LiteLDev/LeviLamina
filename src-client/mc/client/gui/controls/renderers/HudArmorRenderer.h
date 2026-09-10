@@ -36,7 +36,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                              mNumEmptyIcons;
     ::ll::TypedStorage<4, 4, float>                               mArmorHeightOffset;
     ::ll::TypedStorage<8, 96, ::std::array<::mce::TexturePtr, 3>> mArmorTextures;
-    ::ll::TypedStorage<8, 1776, ::std::array<::mce::Mesh, 3>>     mArmorMeshes;
+    ::ll::TypedStorage<8, 1848, ::std::array<::mce::Mesh, 3>>     mArmorMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>     mIconPosition;
     ::ll::TypedStorage<4, 16, ::RectangleArea>                    mRenderAABB;
     // NOLINTEND

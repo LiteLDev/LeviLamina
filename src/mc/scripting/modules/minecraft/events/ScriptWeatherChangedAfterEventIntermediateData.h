@@ -14,6 +14,29 @@ public:
     ::ll::TypedStorage<1, 1, bool>           mIsRaining;
     ::ll::TypedStorage<1, 1, bool>           mIsLightning;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptWeatherChangedAfterEventIntermediateData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptWeatherChangedAfterEventIntermediateData(
+        ::std::string const& dimension,
+        bool                 wasRaining,
+        bool                 wasLightning,
+        bool                 isRaining,
+        bool                 isLightning
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& dimension, bool wasRaining, bool wasLightning, bool isRaining, bool isLightning);
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

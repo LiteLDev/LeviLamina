@@ -10,6 +10,7 @@ enum class FeatureVersion : int {
     InitialRelease           = 2,
     ScatterFeatureUpdate     = 3,
     SingleBlockFeatureUpdate = 4,
+    MultiBlockFeatureUpdate  = 5,
 };
 
 }

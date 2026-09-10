@@ -51,6 +51,8 @@ public:
         ::std::function<::IDlcBatchModel&(::std::vector<::PackIdVersion> const&)> dlcBatchModelProvider
     );
 
+    MCAPI void reset();
+
     MCAPI void tryAcquireMissingDlc(::std::string const& levelId, ::std::function<void(bool)> downloadCompleteCallback);
     // NOLINTEND
 

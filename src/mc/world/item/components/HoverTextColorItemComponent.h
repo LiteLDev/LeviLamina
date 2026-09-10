@@ -22,10 +22,13 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString> mHoverTextColor;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     HoverTextColorItemComponent();
 
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,23 +38,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+#endif
     // NOLINTEND
 
 public:
@@ -60,11 +69,5 @@ public:
     MCAPI void $_initializeComponent(::ComponentItem& owner);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

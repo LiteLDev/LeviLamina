@@ -12,7 +12,6 @@ class BiomeRegistry;
 class CameraPresets;
 class CommandRegistry;
 class ItemRegistryRef;
-struct JSONSchemaProperty;
 namespace Core { class Path; }
 namespace CreatorMetadataUtils { struct ServerMetadataOutputPaths; }
 namespace Json { class Value; }
@@ -54,8 +53,6 @@ MCAPI void _addCommonEngineMetadata(::Json::Value& root, char const* type);
 MCAPI void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
 
 MCAPI void _addPrivilegeToArray(::Json::Value& arr, ::Scripting::Privilege privilege);
-
-MCAPI ::Core::Path _buildSchemaOutputPath(::Core::Path const& baseFolder, ::JSONSchemaProperty const& property);
 
 MCAPI ::Json::Value _generateScriptingModuleMetadataJson(
     ::Scripting::ModuleBinding const&          moduleToBind,

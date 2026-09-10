@@ -3,15 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/external/render_dragon/rendering/LightingModels.h"
 #include "mc/options/GraphicsMode.h"
 #include "mc/options/IAdvancedGraphicsHardwareOptions.h"
-
-// auto generated forward declare list
-// clang-format off
-class PackCapability;
-// clang-format on
 
 class IAdvancedGraphicsOptions : public ::IAdvancedGraphicsHardwareOptions {
 public:
@@ -55,16 +49,6 @@ public:
     virtual bool isPrevAdvancedGraphicsMode() const = 0;
 #endif
 
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::PackCapability
-    getPackCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
-
-    MCNAPI static ::PackCapability
-    getPackDeferredCapability(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions);
     // NOLINTEND
 
 public:

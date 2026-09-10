@@ -47,9 +47,19 @@ public:
     // NOLINTBEGIN
     MCAPI void clearVanishEnchantedItemsOnDeath();
 
+#ifdef LL_PLAT_S
+    MCAPI void dropAllOnDeath(bool onlyClearContainer);
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI ::std::vector<::ContainerID> const& getAllContainerIds();
+#endif
+
+    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
     MCAPI bool selectSlot(int slot, ::ContainerID containerId);
     // NOLINTEND

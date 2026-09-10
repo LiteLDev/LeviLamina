@@ -11,6 +11,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
+#include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -73,6 +74,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                               mDisconnected;
     ::ll::TypedStorage<1, 1, bool>                                                               mShouldCloseConnection;
     ::ll::TypedStorage<1, 1, bool>                                                               mEncryptionDisabled;
+    ::ll::TypedStorage<4, 4, ::Connection::DisconnectFailReason>              mShouldCloseConnectionReason;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IPacketSecurityController>> mPacketSecurityController;
     // NOLINTEND
 

@@ -48,13 +48,12 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptItemStack(ScriptItemStack const&);
     ScriptItemStack();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
-
     MCAPI ScriptItemStack(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
@@ -140,8 +139,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
-
     MCAPI void* $ctor(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,

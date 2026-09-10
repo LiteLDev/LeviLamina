@@ -8,7 +8,7 @@ struct ProfilerControlArgs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkfaa6db;
+    ::ll::UntypedStorage<8, 32> mUnk2da4fe;
     // NOLINTEND
 
 public:

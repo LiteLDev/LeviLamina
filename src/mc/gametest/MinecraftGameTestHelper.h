@@ -16,6 +16,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
+class Container;
 class Dimension;
 class Item;
 class ItemStack;
@@ -288,6 +289,8 @@ public:
         ::BlockPos const&                  pos,
         bool                               expectedPresent
     ) const;
+
+    MCAPI ::Container const* _getContainer(::BlockPos const& pos);
 
     MCAPI int _getItemEntityCount(::Item const& item, ::AABB const& searchBounds);
 

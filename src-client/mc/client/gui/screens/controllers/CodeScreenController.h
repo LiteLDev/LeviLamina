@@ -121,6 +121,6 @@ public:
 
     MCAPI void $onError(::WebviewError const& error);
 
-    MCFOLD void $onWebviewChanged();
+    MCAPI void $onWebviewChanged();
     // NOLINTEND
 };

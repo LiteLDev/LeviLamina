@@ -12,10 +12,12 @@
 // auto generated forward declare list
 // clang-format off
 class ContentIdentity;
+class PackAssetSet;
 class ResourceLocation;
 struct StreamableAssetSource;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
+namespace Core { class FileHandlePool; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
 // clang-format on
@@ -24,6 +26,7 @@ class PackAccessStrategy {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk962cf5;
     ::ll::UntypedStorage<8, 16> mUnk2ff3dc;
     ::ll::UntypedStorage<8, 16> mUnkb0ada6;
     // NOLINTEND
@@ -32,6 +35,7 @@ public:
     // prevent constructor by default
     PackAccessStrategy& operator=(PackAccessStrategy const&);
     PackAccessStrategy(PackAccessStrategy const&);
+    PackAccessStrategy();
 
 public:
     // virtual functions
@@ -99,7 +103,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackAccessStrategy();
+    MCNAPI PackAccessStrategy(
+        ::std::unique_ptr<::PackAssetSet>&&                        assetSet,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+    );
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle preloadArchive(::Core::Path const& packRelativePath) const;
 
@@ -120,7 +127,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::PackAssetSet>&&                        assetSet,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+    );
     // NOLINTEND
 
 public:

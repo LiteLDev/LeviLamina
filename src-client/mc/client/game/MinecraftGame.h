@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/edu/CredentialsObserver.h"
 #include "mc/certificates/identity/edu/GenericCredentialsEvent.h"
+#include "mc/client/events/OnlineSafetyDialogVisibility.h"
 #include "mc/client/game/DeferredTaskCategory.h"
 #include "mc/client/game/IMinecraftGame.h"
 #include "mc/client/game/IMultiPlayerServices.h"
@@ -151,7 +152,7 @@ class WorldTransferAgent;
 struct ActorUniqueID;
 struct ControllerIDtoClientMap;
 struct DimensionType;
-struct ExperienceConnectionData;
+struct ExperienceJoinRequestInfo;
 struct ExternalWorldTransferActionFunc;
 struct GameConnectionInfoEx;
 struct LocalWorldTransferActionFunc;
@@ -211,7 +212,6 @@ public:
     // MinecraftGame inner types declare
     // clang-format off
     struct InitContext;
-    struct TestCommandPublisher;
     struct FrameGapImpl;
     // clang-format on
 
@@ -256,8 +256,6 @@ public:
         InitContext();
     };
 
-    struct TestCommandPublisher {};
-
     struct FrameGapImpl {
     public:
         // member variables
@@ -283,6 +281,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk39dbf1;
     ::ll::UntypedStorage<8, 8>   mUnkb9a1e2;
     ::ll::UntypedStorage<8, 8>   mUnka617fc;
+    ::ll::UntypedStorage<8, 8>   mUnk847dc8;
     ::ll::UntypedStorage<8, 8>   mUnk1a8ba7;
     ::ll::UntypedStorage<8, 8>   mUnk8c1a51;
     ::ll::UntypedStorage<8, 8>   mUnkdcd0a8;
@@ -293,7 +292,9 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk102e50;
     ::ll::UntypedStorage<8, 8>   mUnkd0fa73;
     ::ll::UntypedStorage<8, 8>   mUnk30cf6e;
+    ::ll::UntypedStorage<8, 8>   mUnkf2bb2d;
     ::ll::UntypedStorage<1, 1>   mUnk73dd14;
+    ::ll::UntypedStorage<1, 1>   mUnk8622d0;
     ::ll::UntypedStorage<8, 16>  mUnke052b6;
     ::ll::UntypedStorage<8, 8>   mUnk79ddba;
     ::ll::UntypedStorage<8, 8>   mUnkf926be;
@@ -339,7 +340,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk71b5c7;
     ::ll::UntypedStorage<8, 32>  mUnk570845;
     ::ll::UntypedStorage<4, 4>   mUnk785de7;
-    ::ll::UntypedStorage<8, 408> mUnke04be5;
+    ::ll::UntypedStorage<8, 416> mUnke04be5;
     ::ll::UntypedStorage<1, 1>   mUnk19eccc;
     ::ll::UntypedStorage<4, 4>   mUnk97e7f8;
     ::ll::UntypedStorage<8, 16>  mUnk61cb9f;
@@ -373,7 +374,6 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkfa9b14;
     ::ll::UntypedStorage<8, 8>   mUnk975fa0;
     ::ll::UntypedStorage<8, 8>   mUnkc95a9f;
-    ::ll::UntypedStorage<8, 8>   mUnkdef9e3;
     ::ll::UntypedStorage<8, 16>  mUnk44f519;
     ::ll::UntypedStorage<8, 8>   mUnka426aa;
     ::ll::UntypedStorage<8, 16>  mUnkd412af;
@@ -425,13 +425,18 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk3ec43f;
     ::ll::UntypedStorage<8, 8>   mUnkb5e444;
     ::ll::UntypedStorage<8, 16>  mUnk36c9d2;
-    ::ll::UntypedStorage<8, 8>   mUnkeee60b;
+    ::ll::UntypedStorage<8, 8>   mUnk91e453;
+    ::ll::UntypedStorage<8, 8>   mUnk56d657;
     ::ll::UntypedStorage<8, 8>   mUnkc1e9f3;
     ::ll::UntypedStorage<8, 48>  mUnka02940;
     ::ll::UntypedStorage<8, 16>  mUnk748223;
     ::ll::UntypedStorage<8, 16>  mUnkec6beb;
     ::ll::UntypedStorage<8, 8>   mUnk55dcf8;
     ::ll::UntypedStorage<8, 8>   mUnk585275;
+    ::ll::UntypedStorage<8, 16>  mUnk5f5935;
+    ::ll::UntypedStorage<8, 8>   mUnkd12853;
+    ::ll::UntypedStorage<8, 8>   mUnk44d437;
+    ::ll::UntypedStorage<8, 8>   mUnk13a102;
     ::ll::UntypedStorage<8, 16>  mUnk4877d7;
     ::ll::UntypedStorage<8, 8>   mUnkd72bcd;
     ::ll::UntypedStorage<8, 8>   mUnk6c5fec;
@@ -442,10 +447,11 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk64ddee;
     ::ll::UntypedStorage<8, 64>  mUnkd24a7a;
     ::ll::UntypedStorage<8, 8>   mUnkec79fd;
+    ::ll::UntypedStorage<8, 768> mUnk1ff378;
     ::ll::UntypedStorage<8, 8>   mUnk74222f;
     ::ll::UntypedStorage<8, 8>   mUnk468478;
     ::ll::UntypedStorage<8, 8>   mUnkea13b7;
-    ::ll::UntypedStorage<8, 744> mUnk9947a0;
+    ::ll::UntypedStorage<8, 936> mUnk9947a0;
     ::ll::UntypedStorage<8, 16>  mUnkbf42d0;
     ::ll::UntypedStorage<8, 16>  mUnk469d3c;
     ::ll::UntypedStorage<8, 8>   mUnkf245c7;
@@ -458,13 +464,13 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkd56e6e;
     ::ll::UntypedStorage<8, 64>  mUnk6331f9;
     ::ll::UntypedStorage<8, 64>  mUnkfb3c1e;
-    ::ll::UntypedStorage<8, 8>   mUnkb4aa43;
-    ::ll::UntypedStorage<8, 8>   mUnkfd4a2e;
+    ::ll::UntypedStorage<8, 16>  mUnkc74988;
     ::ll::UntypedStorage<8, 8>   mUnk4764de;
     ::ll::UntypedStorage<8, 8>   mUnk2db41b;
     ::ll::UntypedStorage<8, 64>  mUnk4282e8;
     ::ll::UntypedStorage<8, 8>   mUnk313b8d;
     ::ll::UntypedStorage<8, 16>  mUnka4d1d6;
+    ::ll::UntypedStorage<8, 16>  mUnk4a4bbd;
     ::ll::UntypedStorage<8, 8>   mUnkb98e22;
     ::ll::UntypedStorage<8, 64>  mUnk358786;
     ::ll::UntypedStorage<8, 8>   mUnk633776;
@@ -476,8 +482,6 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnkc5fc6f;
     ::ll::UntypedStorage<8, 8>   mUnk7e94f8;
     ::ll::UntypedStorage<8, 8>   mUnkf60a71;
-    ::ll::UntypedStorage<8, 16>  mUnk5f5935;
-    ::ll::UntypedStorage<8, 8>   mUnkd12853;
     ::ll::UntypedStorage<8, 16>  mUnk9f4932;
     ::ll::UntypedStorage<8, 8>   mUnk93ccfd;
     ::ll::UntypedStorage<1, 1>   mUnk4d836f;
@@ -500,10 +504,11 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk3dc5d4;
     ::ll::UntypedStorage<8, 8>   mUnk6622a0;
     ::ll::UntypedStorage<8, 16>  mUnke27718;
+    ::ll::UntypedStorage<8, 16>  mUnk88d837;
     ::ll::UntypedStorage<8, 16>  mUnk9599c5;
     ::ll::UntypedStorage<8, 8>   mUnk1498bc;
     ::ll::UntypedStorage<8, 16>  mUnkc84d4d;
-    ::ll::UntypedStorage<8, 8>   mUnk44d437;
+    ::ll::UntypedStorage<8, 8>   mUnkeee60b;
     ::ll::UntypedStorage<8, 8>   mUnk7757ed;
     ::ll::UntypedStorage<8, 8>   mUnk8b5a69;
     ::ll::UntypedStorage<8, 16>  mUnk8a114f;
@@ -529,8 +534,6 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk781ed2;
     ::ll::UntypedStorage<8, 8>   mUnk871dc6;
     ::ll::UntypedStorage<8, 8>   mUnkf2f2ba;
-    ::ll::UntypedStorage<8, 8>   mUnk4daba7;
-    ::ll::UntypedStorage<8, 8>   mUnkd4beeb;
     ::ll::UntypedStorage<8, 8>   mUnkde4441;
     ::ll::UntypedStorage<8, 8>   mUnk8f12bc;
     ::ll::UntypedStorage<8, 8>   mUnkc2e1c6;
@@ -566,10 +569,10 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkcd32cf;
     ::ll::UntypedStorage<8, 8>   mUnk32d240;
     ::ll::UntypedStorage<8, 16>  mUnkaa8c49;
-    ::ll::UntypedStorage<8, 680> mUnkbfced1;
+    ::ll::UntypedStorage<8, 872> mUnk6546c2;
     ::ll::UntypedStorage<8, 16>  mUnka3a452;
     ::ll::UntypedStorage<8, 8>   mUnk7f0a19;
-    ::ll::UntypedStorage<8, 16>  mUnk968b3f;
+    ::ll::UntypedStorage<8, 8>   mUnk93ada3;
     ::ll::UntypedStorage<8, 8>   mUnk67f34e;
     ::ll::UntypedStorage<8, 8>   mUnkc456b9;
     ::ll::UntypedStorage<8, 8>   mUnk804e62;
@@ -675,14 +678,14 @@ public:
         ::std::optional<::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
-            ::ExperienceConnectionData,
+            ::ExperienceJoinRequestInfo,
             ::Realms::RealmId>> const& reconnectCookie
     ) /*override*/;
 
     virtual ::std::optional<::std::variant<
         ::GameConnectionInfoEx,
         ::Social::MultiplayerGameInfo,
-        ::ExperienceConnectionData,
+        ::ExperienceJoinRequestInfo,
         ::Realms::RealmId>>
     getReconnectionCookie() /*override*/;
 
@@ -741,6 +744,10 @@ public:
 
     virtual void requestLeaveThenJoinFriendsWorld(::std::string_view serverId) /*override*/;
 
+    virtual void requestLeaveGameWithWorldThumbnail() /*override*/;
+
+    virtual void requestLeaveGameWithWorldThumbnailThenJoinFriendsWorld(::std::string_view serverId) /*override*/;
+
     virtual void startLeaveGame() /*override*/;
 
     virtual bool isLeaveGameDone() const /*override*/;
@@ -773,8 +780,11 @@ public:
         ::PlayerJoinWorldContext                  context
     ) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void>
-    joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo, ::PlayerJoinWorldContext context) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> joinMultiplayerGame(
+        ::Social::MultiplayerGameInfo const& gameInfo,
+        ::PlayerJoinWorldContext             context,
+        ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
+    ) /*override*/;
 
     virtual void joinMultiplayerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
@@ -1282,6 +1292,8 @@ public:
 
     virtual ::TaskGroup& _getServerInitTaskGroup() /*override*/;
 
+    virtual bool isMultiPlayerInitialized() const /*override*/;
+
     virtual bool
     checkMultiPlayerPermission(::std::optional<::Social::MultiplayerServiceIdentifier> service) /*override*/;
 
@@ -1547,12 +1559,15 @@ public:
     MCAPI ::Bedrock::Threading::Async<void> _joinMultiplayerGame(
         ::Social::MultiplayerGameInfo const& gameToJoin,
         ::std::string const&                 multiplayerCorrelationId,
-        ::PlayerJoinWorldContext             context
+        ::PlayerJoinWorldContext             context,
+        ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
     );
 
     MCAPI ::SerialWorkList::WorkResult _loadGlobalResourcePacks();
 
     MCAPI void _loadInitialPackResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
+
+    MCAPI void _loadLanguageData();
 
     MCAPI void _loadLastGlobalResourcePacksFromFile(bool waitForUIReload);
 
@@ -1648,6 +1663,8 @@ public:
     MCAPI void _setupRenderer();
 
     MCAPI void _terminateRenderer();
+
+    MCAPI void _tryFireResourceLoadSession();
 
     MCAPI void _unregisterOnInitUriListeners();
 
@@ -1793,14 +1810,14 @@ public:
         ::std::optional<::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
-            ::ExperienceConnectionData,
+            ::ExperienceJoinRequestInfo,
             ::Realms::RealmId>> const& reconnectCookie
     );
 
     MCAPI ::std::optional<::std::variant<
         ::GameConnectionInfoEx,
         ::Social::MultiplayerGameInfo,
-        ::ExperienceConnectionData,
+        ::ExperienceJoinRequestInfo,
         ::Realms::RealmId>>
     $getReconnectionCookie();
 
@@ -1859,6 +1876,10 @@ public:
 
     MCAPI void $requestLeaveThenJoinFriendsWorld(::std::string_view serverId);
 
+    MCAPI void $requestLeaveGameWithWorldThumbnail();
+
+    MCAPI void $requestLeaveGameWithWorldThumbnailThenJoinFriendsWorld(::std::string_view serverId);
+
     MCAPI void $startLeaveGame();
 
     MCAPI bool $isLeaveGameDone() const;
@@ -1891,8 +1912,11 @@ public:
         ::PlayerJoinWorldContext                  context
     );
 
-    MCAPI ::Bedrock::Threading::Async<void>
-    $joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo, ::PlayerJoinWorldContext context);
+    MCAPI ::Bedrock::Threading::Async<void> $joinMultiplayerGame(
+        ::Social::MultiplayerGameInfo const& gameInfo,
+        ::PlayerJoinWorldContext             context,
+        ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
+    );
 
     MCAPI void $joinMultiplayerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
@@ -2266,7 +2290,7 @@ public:
 
     MCAPI void $resumeContentDownloads();
 
-    MCFOLD ::UIMeasureStrategy& $getUIMeasureStrategy();
+    MCAPI ::UIMeasureStrategy& $getUIMeasureStrategy();
 
     MCFOLD void $copyInternalSettingsFolderToExternalLocation() const;
 
@@ -2373,6 +2397,8 @@ public:
     MCAPI ::std::unique_ptr<::LocalServerLauncher::GameDependencies> $createGameDependencies();
 
     MCAPI ::TaskGroup& $_getServerInitTaskGroup();
+
+    MCAPI bool $isMultiPlayerInitialized() const;
 
     MCAPI bool $checkMultiPlayerPermission(::std::optional<::Social::MultiplayerServiceIdentifier> service);
 

@@ -14,6 +14,18 @@ public:
     ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData>                   mActor;
     ::ll::TypedStorage<8, 104, ::std::optional<::ScriptModuleMinecraft::ScriptActorData>> mAccessSourceActor;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~ScriptActorContainerAccessAfterEventIntermediateData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

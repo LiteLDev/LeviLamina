@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace services {
+namespace Bedrock::Services {
 
 struct DateTime {};
 
-} // namespace services
+} // namespace Bedrock::Services

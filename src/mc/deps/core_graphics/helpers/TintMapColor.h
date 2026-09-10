@@ -15,10 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI bool operator!=(::TintMapColor const& rhs) const;
-#endif
-
     MCAPI bool operator==(::TintMapColor const& rhs) const;
     // NOLINTEND
 };

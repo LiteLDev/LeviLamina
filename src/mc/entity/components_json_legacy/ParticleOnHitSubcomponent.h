@@ -38,8 +38,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleOnHitSubcomponent() /*override*/ = default;
-
     virtual void readfromJSON(::Json::Value& value) /*override*/;
 
     virtual void writetoJSON(::Json::Value& component) const /*override*/;
@@ -61,11 +59,5 @@ public:
     MCAPI char const* $getName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

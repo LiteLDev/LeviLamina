@@ -50,7 +50,8 @@ public:
         WaxedWeatheredCopper = 18,
         WaxedOxidizedCopper  = 19,
         PaleOak              = 20,
-        Count                = 21,
+        Poplar               = 21,
+        Count                = 22,
     };
 
 public:
@@ -119,8 +120,6 @@ public:
 
     virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& fillBlock) const
         /*override*/;
-
-    virtual bool isDoorBlock() const /*override*/;
 
     virtual void _useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
@@ -218,8 +217,6 @@ public:
     MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& fillBlock) const;
-
-    MCFOLD bool $isDoorBlock() const;
 
     MCAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 

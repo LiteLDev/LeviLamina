@@ -7,7 +7,6 @@
 class ChannelTransform;
 class ChannelTransform_Float;
 class ExpressionNode;
-class Vec3;
 // clang-format on
 
 class KeyFrameTransformData {
@@ -21,10 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addChannelTransform(::ExpressionNode const& expression);
-
-    MCAPI void addChannelTransform(::ExpressionNode const& expression, ::Vec3 const& axis);
-
     MCAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
     // NOLINTEND
 };

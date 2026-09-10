@@ -10,6 +10,7 @@
 class CompoundTag;
 class IDataInput;
 class IDataOutput;
+class Tag;
 // clang-format on
 
 namespace NbtIo {
@@ -22,6 +23,8 @@ MCAPI ::Bedrock::Result<::std::unique_ptr<::CompoundTag>> readNamedCompoundTag(:
 MCAPI ::std::unique_ptr<::CompoundTag> readOrGetEmpty(::IDataInput& dis);
 
 MCAPI void write(::CompoundTag const* tag, ::IDataOutput& dos);
+
+MCAPI void writeNamedTag(::std::string const& name, ::Tag const& tag, ::IDataOutput& dos, int depth);
 // NOLINTEND
 
 } // namespace NbtIo

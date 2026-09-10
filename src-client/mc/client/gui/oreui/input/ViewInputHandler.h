@@ -12,6 +12,7 @@
 class IOptionRegistry;
 class KeyboardManager;
 struct ControllerIDtoClientMap;
+namespace Input::Debug { class ISplitscreenRedirect; }
 namespace OreUI { class GamepadInputHandler; }
 namespace OreUI { class TextInputHandler; }
 namespace OreUI { class TouchInputHandler; }
@@ -38,13 +39,15 @@ public:
     ::ll::TypedStorage<8, 8, ::KeyboardManager&>                                        mKeyboardManager;
     ::ll::TypedStorage<8, 8, ::cohtml::View&>                                           mView;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap>> mControllerToClientMap;
-    ::ll::TypedStorage<1, 1, bool>                                                      mEmulateTouchInput;
-    ::ll::TypedStorage<1, 1, bool>                                                      mIsPointerDown;
-    ::ll::TypedStorage<1, 1, bool const>                                                mIsPrimaryClient;
-    ::ll::TypedStorage<1, 1, bool>                                                      mIsFullKeyboard;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mIsFullKeyboardSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                                      mInvertMouse;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mInvertMouseSubscription;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect>>
+                                                               mDebugSplitscreenInputRedirect;
+    ::ll::TypedStorage<1, 1, bool>                             mEmulateTouchInput;
+    ::ll::TypedStorage<1, 1, bool>                             mIsPointerDown;
+    ::ll::TypedStorage<1, 1, bool const>                       mIsPrimaryClient;
+    ::ll::TypedStorage<1, 1, bool>                             mIsFullKeyboard;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mIsFullKeyboardSubscription;
+    ::ll::TypedStorage<1, 1, bool>                             mInvertMouse;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mInvertMouseSubscription;
     // NOLINTEND
 
 public:
@@ -57,15 +60,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ViewInputHandler(
-        ::SubClientId                                            subClientId,
-        ::std::unique_ptr<::OreUI::TextInputHandler>             textInputHandler,
-        ::std::unique_ptr<::OreUI::TouchInputHandler>            touchInputHandler,
-        ::std::unique_ptr<::OreUI::GamepadInputHandler>          gamepadInputHandler,
-        ::KeyboardManager&                                       keyboardManager,
-        ::cohtml::View&                                          view,
-        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> controllerIdToClientMap,
-        bool                                                     isPrimaryClient,
-        ::IOptionRegistry&                                       options
+        ::SubClientId                                                              subClientId,
+        ::std::unique_ptr<::OreUI::TextInputHandler>                               textInputHandler,
+        ::std::unique_ptr<::OreUI::TouchInputHandler>                              touchInputHandler,
+        ::std::unique_ptr<::OreUI::GamepadInputHandler>                            gamepadInputHandler,
+        ::KeyboardManager&                                                         keyboardManager,
+        ::cohtml::View&                                                            view,
+        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap>                   controllerIdToClientMap,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
+        bool                                                                       isPrimaryClient,
+        ::IOptionRegistry&                                                         options
     );
 
     MCAPI ~ViewInputHandler();
@@ -75,15 +79,16 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::SubClientId                                            subClientId,
-        ::std::unique_ptr<::OreUI::TextInputHandler>             textInputHandler,
-        ::std::unique_ptr<::OreUI::TouchInputHandler>            touchInputHandler,
-        ::std::unique_ptr<::OreUI::GamepadInputHandler>          gamepadInputHandler,
-        ::KeyboardManager&                                       keyboardManager,
-        ::cohtml::View&                                          view,
-        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> controllerIdToClientMap,
-        bool                                                     isPrimaryClient,
-        ::IOptionRegistry&                                       options
+        ::SubClientId                                                              subClientId,
+        ::std::unique_ptr<::OreUI::TextInputHandler>                               textInputHandler,
+        ::std::unique_ptr<::OreUI::TouchInputHandler>                              touchInputHandler,
+        ::std::unique_ptr<::OreUI::GamepadInputHandler>                            gamepadInputHandler,
+        ::KeyboardManager&                                                         keyboardManager,
+        ::cohtml::View&                                                            view,
+        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap>                   controllerIdToClientMap,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
+        bool                                                                       isPrimaryClient,
+        ::IOptionRegistry&                                                         options
     );
     // NOLINTEND
 

@@ -42,15 +42,6 @@ public:
 
     MCAPI void goBack();
 
-    MCAPI void goBackAndReplace(
-        ::std::weak_ptr<::AbstractScene> const& scene,
-        ::std::string const&                    url,
-        ::OreUI::RouteMode                      mode,
-        ::OreUI::RouteType                      routeType
-    );
-
-    MCAPI bool isCurrentRoute(::std::string_view route) const;
-
     MCAPI void push(
         ::std::weak_ptr<::AbstractScene> const& scene,
         ::std::string const&                    url,

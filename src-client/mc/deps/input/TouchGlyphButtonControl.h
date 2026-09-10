@@ -75,26 +75,6 @@ public:
         ::std::function<bool()>            condition,
         ::std::function<float()>           opacity,
         uint                               buttonId,
-        ::ButtonColors const&              buttonColors,
-        int                                ux,
-        int                                uv,
-        int                                uvWidth,
-        int                                uvHeight,
-        int                                activePointerId,
-        bool                               passThrough,
-        int                                touchStateRequirement,
-        float                              glyphScale,
-        bool                               promiscuous,
-        bool                               extendButtonPressOutsideUntilReleased,
-        float                              innerPaddingX,
-        float                              innerPaddingY
-    );
-
-    MCAPI TouchGlyphButtonControl(
-        ::std::function<::RectangleArea()> area,
-        ::std::function<bool()>            condition,
-        ::std::function<float()>           opacity,
-        uint                               buttonId,
         ::std::string const&               iconPath,
         ::std::string const&               pressedIconPath,
         ::ButtonColors const&              buttonColors,
@@ -114,26 +94,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::function<::RectangleArea()> area,
-        ::std::function<bool()>            condition,
-        ::std::function<float()>           opacity,
-        uint                               buttonId,
-        ::ButtonColors const&              buttonColors,
-        int                                ux,
-        int                                uv,
-        int                                uvWidth,
-        int                                uvHeight,
-        int                                activePointerId,
-        bool                               passThrough,
-        int                                touchStateRequirement,
-        float                              glyphScale,
-        bool                               promiscuous,
-        bool                               extendButtonPressOutsideUntilReleased,
-        float                              innerPaddingX,
-        float                              innerPaddingY
-    );
-
     MCAPI void* $ctor(
         ::std::function<::RectangleArea()> area,
         ::std::function<bool()>            condition,

@@ -13,7 +13,6 @@
 class LocalPlayer;
 class PlayerListEntry;
 class PlayerListManager;
-struct LocalPlayerChangedConnector;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace mce { class UUID; }
 // clang-format on
@@ -38,10 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldPlayerListTracker();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorldPlayerListTracker() = default;
@@ -56,25 +51,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPlayerListTracker(
-        ::std::function<::LocalPlayer*()> getCurrentLocalPlayer,
-        ::LocalPlayerChangedConnector     localPlayerChangedConnector
-    );
-
     MCAPI void _init();
 
     MCAPI bool _updatePlayerList();
 
     MCAPI ::std::vector<::PlayerListEntry const*> getLobbyPlayerList();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::function<::LocalPlayer*()> getCurrentLocalPlayer,
-        ::LocalPlayerChangedConnector     localPlayerChangedConnector
-    );
     // NOLINTEND
 
 public:

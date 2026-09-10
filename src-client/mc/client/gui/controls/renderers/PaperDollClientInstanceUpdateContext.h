@@ -94,10 +94,4 @@ public:
 
     MCAPI void $playUI(::std::string const& name, float volume, float pitch);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

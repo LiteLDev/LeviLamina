@@ -67,8 +67,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FireAtTargetGoal(::Mob& mob);
-
-    MCAPI bool _isTargetWithinRange(::Vec3 const& targetPosition) const;
     // NOLINTEND
 
 public:

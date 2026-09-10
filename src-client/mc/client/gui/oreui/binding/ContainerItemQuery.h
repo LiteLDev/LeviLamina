@@ -19,7 +19,7 @@ class ContainerItemQuery : public ::OreUI::QueryBase<::OreUI::ContainerItemQuery
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1832, ::OreUI::ContainerItemBindings>                               mItemBindings;
+    ::ll::TypedStorage<8, 2008, ::OreUI::ContainerItemBindings>                               mItemBindings;
     ::ll::TypedStorage<1, 1, ::ContainerEnumName>                                             mContainerName;
     ::ll::TypedStorage<4, 4, int>                                                             mIndex;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;

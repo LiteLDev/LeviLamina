@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class TaskGroup;
+namespace Audio { class OnlineAudioTimingHistogram; }
 namespace Audio { class OnlineStreamedAudioBuffer; }
 namespace Audio { struct HttpRangeResponse; }
 namespace Audio { struct OnlineStreamConfig; }
@@ -46,14 +47,19 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk22aec7;
     ::ll::UntypedStorage<8, 16> mUnkff3770;
-    ::ll::UntypedStorage<8, 16> mUnkaac834;
-    ::ll::UntypedStorage<8, 64> mUnk783628;
+    ::ll::UntypedStorage<8, 40> mUnkaac834;
+    ::ll::UntypedStorage<8, 64> mUnk5feeab;
     ::ll::UntypedStorage<8, 32> mUnk6a7344;
     ::ll::UntypedStorage<8, 8>  mUnk1c6fb9;
     ::ll::UntypedStorage<8, 8>  mUnkdf9387;
     ::ll::UntypedStorage<8, 8>  mUnk38d5d7;
     ::ll::UntypedStorage<4, 4>  mUnk4c2218;
-    ::ll::UntypedStorage<4, 4>  mUnk2c29ed;
+    ::ll::UntypedStorage<4, 4>  mUnk9e826b;
+    ::ll::UntypedStorage<8, 8>  mUnkc4a82e;
+    ::ll::UntypedStorage<8, 8>  mUnke8a351;
+    ::ll::UntypedStorage<8, 96> mUnkb4bf9c;
+    ::ll::UntypedStorage<8, 96> mUnk443dd3;
+    ::ll::UntypedStorage<1, 1>  mUnk2f2f64;
     ::ll::UntypedStorage<1, 1>  mUnkc18b69;
     // NOLINTEND
 
@@ -70,13 +76,15 @@ public:
 
     virtual void start() /*override*/;
 
-    virtual void update(float deltaTimeSeconds) /*override*/;
+    virtual void update(::std::chrono::steady_clock::time_point currentTime) /*override*/;
 
     virtual void notifyReadPosition(uint64 offset) /*override*/;
 
     virtual void seekTo(uint64 offset) /*override*/;
 
     virtual void stop() /*override*/;
+
+    virtual void notifyPlaybackStarted() /*override*/;
 
     virtual bool isFetching() const /*override*/;
 
@@ -85,6 +93,10 @@ public:
     virtual uint64 getTotalBytesRequested() const /*override*/;
 
     virtual uint getTotalRetries() const /*override*/;
+
+    virtual ::Audio::OnlineAudioTimingHistogram const& getRequestTimingBeforePlaybackHistogram() const /*override*/;
+
+    virtual ::Audio::OnlineAudioTimingHistogram const& getRequestTimingAfterPlaybackHistogram() const /*override*/;
     // NOLINTEND
 
 public:
@@ -113,13 +125,15 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void $start();
 
-    MCNAPI void $update(float deltaTimeSeconds);
+    MCNAPI void $update(::std::chrono::steady_clock::time_point currentTime);
 
     MCNAPI void $notifyReadPosition(uint64 offset);
 
     MCNAPI void $seekTo(uint64 offset);
 
     MCNAPI void $stop();
+
+    MCNAPI void $notifyPlaybackStarted();
 
     MCNAPI bool $isFetching() const;
 
@@ -128,6 +142,10 @@ public:
     MCNAPI uint64 $getTotalBytesRequested() const;
 
     MCNAPI uint $getTotalRetries() const;
+
+    MCNAPI ::Audio::OnlineAudioTimingHistogram const& $getRequestTimingBeforePlaybackHistogram() const;
+
+    MCNAPI ::Audio::OnlineAudioTimingHistogram const& $getRequestTimingAfterPlaybackHistogram() const;
 #endif
 
 

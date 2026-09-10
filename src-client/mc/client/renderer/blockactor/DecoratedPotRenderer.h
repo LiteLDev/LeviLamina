@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorResourceDefinition;
 class BaseActorRenderContext;
 class BlockPos;
 class BlockSource;
@@ -21,6 +22,7 @@ struct BlockActorRenderData;
 struct Brightness;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class MaterialPtr; }
+namespace mce { class TextureGroup; }
 namespace mce { struct ClientTexture; }
 // clang-format on
 
@@ -46,6 +48,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DecoratedPotRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void
@@ -55,6 +61,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DecoratedPotRenderer(
+        ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
+        ::std::shared_ptr<::ActorResourceDefinition> definition
+    );
+
     MCAPI void _renderFacesWithActorTexture(
         ::dragon::RenderMetadata const&       renderMetadata,
         ::ScreenContext&                      screenContext,
@@ -98,6 +109,13 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::array<::std::string, 4> _getSherdsFromPotItem(::ItemStack const& decoratedPotItem);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::std::shared_ptr<::ActorResourceDefinition> definition);
     // NOLINTEND
 
 public:

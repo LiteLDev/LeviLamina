@@ -15,7 +15,6 @@
 // clang-format off
 class Level;
 class Player;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -37,66 +36,15 @@ public:
         ::ll::TypedStorage<8, 152, ::ItemStack const>    mItemStack;
         ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mPlayer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        IntermediateStorage();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI IntermediateStorage(
-            ::ItemUseMethod&,
-            ::ItemStack const& initialItemStack,
-            ::ItemStack&,
-            ::Player& player,
-            ::Level&
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void*
-        $ctor(::ItemUseMethod&, ::ItemStack const& initialItemStack, ::ItemStack&, ::Player& player, ::Level&);
-        // NOLINTEND
     };
 
     using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
         void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>;
 
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentCompleteUseEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentCompleteUseEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                          scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                          scope
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

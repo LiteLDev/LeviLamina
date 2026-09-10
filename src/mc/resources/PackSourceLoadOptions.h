@@ -16,4 +16,16 @@ public:
     PackSourceLoadOptions& operator=(PackSourceLoadOptions const&);
     PackSourceLoadOptions(PackSourceLoadOptions const&);
     PackSourceLoadOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~PackSourceLoadOptions();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

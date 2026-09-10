@@ -4,11 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/Path.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Gameface { class ResourceHandlerBroker; }
 namespace Gameface { class TemporaryTextureHolder; }
+namespace Input::Debug { class ISplitscreenRedirect; }
 namespace OreUI { class ILiveViewCollectionConsumer; }
 namespace OreUI { struct DebugData; }
 // clang-format on
@@ -24,6 +26,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ILiveViewCollectionConsumer>> mLiveViewConsumer;
     ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&>                     mTemporaryTextureHolder;
     ::ll::TypedStorage<8, 8, ::OreUI::DebugData&>                                     mDebugData;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect>>
+        mDebugSplitscreenInputRedirect;
     // NOLINTEND
 
 public:

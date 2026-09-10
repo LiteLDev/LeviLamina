@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
 namespace Editor::API {
 
 class EditorScriptAPI {
@@ -22,6 +29,32 @@ public:
     EditorScriptAPI& operator=(EditorScriptAPI const&);
     EditorScriptAPI(EditorScriptAPI const&);
     EditorScriptAPI();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI EditorScriptAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCNAPI ~EditorScriptAPI();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Editor::API

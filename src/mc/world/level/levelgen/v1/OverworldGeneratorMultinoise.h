@@ -77,6 +77,13 @@ public:
         ::ll::TypedStorage<8, 904, ::OverworldNoises3d const>      mCommonNoise;
         ::ll::TypedStorage<8, 32, ::DepthBasedBlockSupplier const> mDeepslateSupplier;
         // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static ::OverworldGeneratorMultinoise::Noises
+        make(::XoroshiroPositionalRandomFactory const& randomFactory);
+        // NOLINTEND
     };
 
 public:

@@ -6,6 +6,7 @@
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsWorldEditorState.h"
 #include "mc/client/realms/RealmsWorldEditorStateStatus.h"
+#include "mc/client/realms/RealmsWorldGeneralSettings.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/SubscribedValue.h"
 
@@ -27,7 +28,7 @@ public:
     ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldEditorStateStatus>             mStatus;
     ::ll::TypedStorage<1, 1, bool>                                               mIsDirty;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmWorldChangeSubscription;
-    ::ll::TypedStorage<8, 48, ::SubscribedValue<::std::string>>                  mWorldSeedSubVal;
+    ::ll::TypedStorage<8, 24, ::SubscribedValue<int64>>                          mWorldSeedSubVal;
     ::ll::TypedStorage<8, 24, ::SubscribedValue<bool>>                           mUseFlatWorldSubVal;
     ::ll::TypedStorage<8, 56, ::SubscribedValue<::std::optional<::std::string>>> mFlatWorldPresetSubVal;
     ::ll::TypedStorage<8, 24, ::SubscribedValue<int>>                            mGeneratorTypeSubVal;
@@ -37,9 +38,18 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                     mRealmName;
     ::ll::TypedStorage<8, 32, ::std::string>                                     mRealmDescription;
     ::ll::TypedStorage<1, 1, bool>                                               mRealmAreTexturesRequired;
+    ::ll::TypedStorage<1, 1, bool>                                               mRealmCheatsEnabled;
+    ::ll::TypedStorage<4, 4, int>                                                mRealmDaylightCycle;
+    ::ll::TypedStorage<8, 48, ::Realms::RealmsWorldGeneralSettings>              mRealmsWorldGeneralSettings;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsNameSubscriber;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsDescriptionSubscriber;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsAreTexturesRequiredSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmCheatsEnabledSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsIsHardcoreSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmDaylightCycleSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsWorldNameSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsDifficultySubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsGameTypeSubscriber;
     // NOLINTEND
 
 public:
@@ -63,21 +73,27 @@ public:
 
     MCAPI void _refreshRealmWorldSubscriptions();
 
+    MCAPI bool areRealmCheatsEnabled() const;
+
     MCAPI bool areRealmTexturesRequired() const;
 
     MCFOLD ::std::optional<::std::string> const& getFlatWorldPreset() const;
 
     MCFOLD int getGeneratorType() const;
 
+    MCAPI int getRealmDaylightCycle() const;
+
+    MCAPI ::Realms::RealmsWorldGeneralSettings const& getRealmWorldGeneralSettings() const;
+
     MCAPI ::std::string const& getRealmsDescription() const;
 
-    MCFOLD ::std::string const& getRealmsName() const;
+    MCAPI ::std::string const& getRealmsName() const;
 
     MCAPI int getSimulationDistance() const;
 
-    MCAPI bool getStartWithBonusChest() const;
+    MCFOLD bool getStartWithBonusChest() const;
 
-    MCAPI bool getStartWithMap() const;
+    MCFOLD bool getStartWithMap() const;
 
     MCFOLD ::Realms::RealmsWorldEditorState getState() const;
 
@@ -85,7 +101,7 @@ public:
 
     MCFOLD bool getUseFlatWorld() const;
 
-    MCFOLD ::std::string const& getWorldSeed() const;
+    MCFOLD int64 const getWorldSeed() const;
     // NOLINTEND
 
 public:

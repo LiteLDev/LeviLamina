@@ -27,19 +27,14 @@ struct AttackDescription;
 struct BehaviorTreeDescription;
 struct BreakBlocksDescription;
 struct BreakDoorAnnotationDescription;
-struct BucketableDescription;
 struct CommandBlockDescription;
 struct ContainerDescription;
 struct DwellerDescription;
-struct DynamicJumpControlDescription;
 struct EconomyTradeableDescription;
 struct GenericMoveControlDescription;
 struct GlideMoveControlDescription;
-struct HideDescription;
 struct IllagerBeastBlockedDescription;
-struct JumpControlDescription;
 struct LegacyGoalDefinition;
-struct ManagedWanderingTraderDescription;
 struct MobEffectChangeDescription;
 struct MoveControlBasicDescription;
 struct MoveControlDolphinDescription;
@@ -54,20 +49,24 @@ struct NavigationGenericDescription;
 struct NavigationHoverDescription;
 struct NavigationSwimDescription;
 struct NavigationWalkDescription;
-struct OpenDoorAnnotationDescription;
-struct PersistentDescription;
 struct PreferredPathDescription;
 struct ProjectileDescription;
 struct SlimeMoveControlDescription;
 struct StrengthDescription;
 struct TeleportDescription;
-struct TradeResupplyDescription;
 struct TrailDescription;
 struct TransformationDescription;
-struct TripodCameraDescription;
-struct TrustDescription;
 struct VariantParameterList;
 namespace SharedTypes::v1_21_100 { struct TickWorldDefinition; }
+namespace SharedTypes::v1_26_40 { struct BucketableComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct DynamicJumpControlComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct HideComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct JumpControlComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct ManagedWanderingTraderComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct OpenDoorAnnotationComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct PersistentComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct TradeResupplyComponentDefinition; }
+namespace SharedTypes::v1_26_40 { struct TrustComponentDefinition; }
 // clang-format on
 
 class ActorDefinitionDescriptor {
@@ -95,44 +94,44 @@ public:
     ::ll::TypedStorage<8, 8, ::BehaviorTreeDescription const*>                             mBehavior;
     ::ll::TypedStorage<8, 8, ::BreakBlocksDescription const*>                              mBreakBlocks;
     ::ll::TypedStorage<8, 8, ::BreakDoorAnnotationDescription const*>                      mBreakDoorAnnotation;
-    ::ll::TypedStorage<8, 8, ::BucketableDescription const*>                               mBucketable;
-    ::ll::TypedStorage<8, 8, ::CommandBlockDescription const*>                             mCommandBlock;
-    ::ll::TypedStorage<8, 8, ::ContainerDescription const*>                                mContainer;
-    ::ll::TypedStorage<8, 8, ::DwellerDescription const*>                                  mDweller;
-    ::ll::TypedStorage<8, 8, ::GenericMoveControlDescription const*>                       mGenericMoveControl;
-    ::ll::TypedStorage<8, 8, ::GlideMoveControlDescription const*>                         mGlideMoveControl;
-    ::ll::TypedStorage<8, 8, ::HideDescription const*>                                     mHide;
-    ::ll::TypedStorage<8, 8, ::IllagerBeastBlockedDescription const*>                      mIllagerBeastBlocked;
-    ::ll::TypedStorage<8, 8, ::ManagedWanderingTraderDescription const*>                   mManagedWanderingTrader;
-    ::ll::TypedStorage<8, 8, ::MoveControlBasicDescription const*>                         mMoveControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlDolphinDescription const*>                       mDolphinSwimControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlFlyDescription const*>                           mFlyControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlSkipDescription const*>                          mHopControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlHoverDescription const*>                         mHoverControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlSwayDescription const*>                          mSwimControl;
-    ::ll::TypedStorage<8, 8, ::NavigationClimbDescription const*>                          mWallClimberNavigation;
-    ::ll::TypedStorage<8, 8, ::NavigationFloatDescription const*>                          mFloatNavigation;
-    ::ll::TypedStorage<8, 8, ::NavigationFlyDescription const*>                            mFlyingNavigation;
-    ::ll::TypedStorage<8, 8, ::NavigationHoverDescription const*>                          mHoverNavigation;
-    ::ll::TypedStorage<8, 8, ::NavigationGenericDescription const*>                        mGenericNavigation;
-    ::ll::TypedStorage<8, 8, ::NavigationSwimDescription const*>                           mWaterboundNavigation;
-    ::ll::TypedStorage<8, 8, ::NavigationWalkDescription const*>                           mNavigation;
-    ::ll::TypedStorage<8, 8, ::PersistentDescription const*>                               mPersistent;
-    ::ll::TypedStorage<8, 8, ::PreferredPathDescription const*>                            mPreferredPath;
-    ::ll::TypedStorage<8, 8, ::ProjectileDescription const*>                               mProjectile;
-    ::ll::TypedStorage<8, 8, ::SlimeMoveControlDescription const*>                         mSlimeMoveControl;
-    ::ll::TypedStorage<8, 8, ::StrengthDescription const*>                                 mStrength;
-    ::ll::TypedStorage<8, 8, ::TrailDescription const*>                                    mTrail;
-    ::ll::TypedStorage<8, 8, ::TeleportDescription const*>                                 mTeleport;
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_100::TickWorldDefinition const*>         mTickWorld;
-    ::ll::TypedStorage<8, 8, ::TradeResupplyDescription const*>                            mTradeResupply;
-    ::ll::TypedStorage<8, 8, ::TrustDescription const*>                                    mTrust;
-    ::ll::TypedStorage<8, 8, ::EconomyTradeableDescription const*>                         mEconomyTradeable;
-    ::ll::TypedStorage<8, 8, ::TransformationDescription const*>                           mTransformation;
-    ::ll::TypedStorage<8, 8, ::DynamicJumpControlDescription const*>                       mDynamicJumpControl;
-    ::ll::TypedStorage<8, 8, ::JumpControlDescription const*>                              mJumpControl;
-    ::ll::TypedStorage<8, 8, ::OpenDoorAnnotationDescription const*>                       mOpenDoorAnnotation;
-    ::ll::TypedStorage<8, 8, ::TripodCameraDescription const*>                             mTripodCamera;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::BucketableComponentDefinition const*> mBucketable;
+    ::ll::TypedStorage<8, 8, ::CommandBlockDescription const*>                              mCommandBlock;
+    ::ll::TypedStorage<8, 8, ::ContainerDescription const*>                                 mContainer;
+    ::ll::TypedStorage<8, 8, ::DwellerDescription const*>                                   mDweller;
+    ::ll::TypedStorage<8, 8, ::GenericMoveControlDescription const*>                        mGenericMoveControl;
+    ::ll::TypedStorage<8, 8, ::GlideMoveControlDescription const*>                          mGlideMoveControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::HideComponentDefinition const*>       mHide;
+    ::ll::TypedStorage<8, 8, ::IllagerBeastBlockedDescription const*>                       mIllagerBeastBlocked;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::ManagedWanderingTraderComponentDefinition const*>
+                                                                                               mManagedWanderingTrader;
+    ::ll::TypedStorage<8, 8, ::MoveControlBasicDescription const*>                             mMoveControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlDolphinDescription const*>                           mDolphinSwimControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlFlyDescription const*>                               mFlyControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlSkipDescription const*>                              mHopControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlHoverDescription const*>                             mHoverControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlSwayDescription const*>                              mSwimControl;
+    ::ll::TypedStorage<8, 8, ::NavigationClimbDescription const*>                              mWallClimberNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationFloatDescription const*>                              mFloatNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationFlyDescription const*>                                mFlyingNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationHoverDescription const*>                              mHoverNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationGenericDescription const*>                            mGenericNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationSwimDescription const*>                               mWaterboundNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationWalkDescription const*>                               mNavigation;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::PersistentComponentDefinition const*>    mPersistent;
+    ::ll::TypedStorage<8, 8, ::PreferredPathDescription const*>                                mPreferredPath;
+    ::ll::TypedStorage<8, 8, ::ProjectileDescription const*>                                   mProjectile;
+    ::ll::TypedStorage<8, 8, ::SlimeMoveControlDescription const*>                             mSlimeMoveControl;
+    ::ll::TypedStorage<8, 8, ::StrengthDescription const*>                                     mStrength;
+    ::ll::TypedStorage<8, 8, ::TrailDescription const*>                                        mTrail;
+    ::ll::TypedStorage<8, 8, ::TeleportDescription const*>                                     mTeleport;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_100::TickWorldDefinition const*>             mTickWorld;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::TradeResupplyComponentDefinition const*> mTradeResupply;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::TrustComponentDefinition const*>         mTrust;
+    ::ll::TypedStorage<8, 8, ::EconomyTradeableDescription const*>                             mEconomyTradeable;
+    ::ll::TypedStorage<8, 8, ::TransformationDescription const*>                               mTransformation;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::DynamicJumpControlComponentDefinition const*> mDynamicJumpControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::JumpControlComponentDefinition const*>        mJumpControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::OpenDoorAnnotationComponentDefinition const*> mOpenDoorAnnotation;
     // NOLINTEND
 
 public:
@@ -150,10 +149,6 @@ public:
     MCAPI ::ActorDefinitionDescriptor& combine(::ActorDefinitionDescriptor const& rhs);
 
     MCAPI ::std::optional<::ActorDefinitionAttribute> findAttributeByName(::std::string const& attributeName) const;
-
-    MCFOLD bool hasComponent(::HashedString const& name) const;
-
-    MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
 
     MCAPI ::ActorDefinitionDescriptor& subtract(::ActorDefinitionDescriptor const& rhs);
 

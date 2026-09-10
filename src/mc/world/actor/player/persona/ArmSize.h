@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/persona/ArmSizeType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace persona { struct SizeInfo; }
@@ -12,25 +15,22 @@ namespace persona {
 class ArmSize {
 public:
     // ArmSize inner types define
-    enum class Type : uchar {
-        Slim    = 0,
-        Wide    = 1,
-        Count   = 2,
-        Unknown = 3,
-    };
+    using SizeInfoList = ::std::unordered_map<::SharedTypes::persona::ArmSizeType, ::persona::SizeInfo>;
 
-    using SizeInfoList = ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo>;
+    using Type = ::SharedTypes::persona::ArmSizeType;
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getStringFromType(::persona::ArmSize::Type armSizeType);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getStringFromType(::SharedTypes::persona::ArmSizeType armSizeType);
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo> const& mInfoList();
+    MCAPI static ::std::unordered_map<::SharedTypes::persona::ArmSizeType, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 

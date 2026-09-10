@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/resources/JsonBetaState.h"
-
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionEvent;
@@ -22,23 +19,20 @@ public:
         ::ActorDefinitionEvent&            defEvent,
         ::Json::Value const&               collection,
         ::MinEngineVersion const&          minEngineVersion,
-        ::ActorEventResponseFactory const* responseFactory,
-        ::JsonBetaState                    useBetaFeatures
+        ::ActorEventResponseFactory const* responseFactory
     );
 
     MCNAPI static ::ActorDefinitionEvent _loadEvent(
         ::Json::Value&                     root,
         ::MinEngineVersion const&          minEngineVersion,
-        ::ActorEventResponseFactory const* responseFactory,
-        ::JsonBetaState                    useBetaFeatures
+        ::ActorEventResponseFactory const* responseFactory
     );
 
     MCNAPI static ::ActorDefinitionEvent loadEvent(
         ::Json::Value                      root,
         ::MinEngineVersion const&          minEngineVersion,
         ::SemVersion const&                formatVersion,
-        ::ActorEventResponseFactory const* responseFactory,
-        ::JsonBetaState                    useBetaFeatures
+        ::ActorEventResponseFactory const* responseFactory
     );
     // NOLINTEND
 };

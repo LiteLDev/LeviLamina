@@ -24,6 +24,7 @@ namespace GeometryAtlas { class IRenderContext; }
 namespace GeometryAtlas { struct AllocateAtlasPayload; }
 namespace GeometryAtlas { struct RenderableUpdateCommand; }
 namespace GeometryAtlas { struct TileDefinition; }
+namespace GeometryAtlas { struct TileHandleSharedState; }
 namespace dragon::atlas { class IAtlasHandle; }
 // clang-format on
 
@@ -33,10 +34,10 @@ class AtlasImpl : public ::GeometryAtlas::IGeometryAtlas {
 public:
     // AtlasImpl inner types declare
     // clang-format off
-    struct TileEntry;
+    class TileEntry;
+    struct CommandArgs;
     struct Data;
     struct TileDirtyUpdate;
-    struct CommandArgs;
     struct mDispatcher;
     // clang-format on
 
@@ -47,7 +48,7 @@ public:
         UpToDate              = 2,
     };
 
-    struct TileEntry {
+    class TileEntry {
     public:
         // TileEntry inner types define
         enum class Status : uchar {
@@ -60,11 +61,34 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::std::variant<::GeometryAtlas::ItemData, ::GeometryAtlas::PaperDollData>> mData;
-        ::ll::TypedStorage<8, 32, ::dragon::atlas::AtlasTileHandle>                                          mBackendID;
-        ::ll::TypedStorage<4, 8, ::dragon::atlas::AtlasTileDescription>         mTileDescription;
-        ::ll::TypedStorage<1, 1, bool>                                          mIsAnimated;
-        ::ll::TypedStorage<1, 1, ::GeometryAtlas::AtlasImpl::TileEntry::Status> mStatus;
+        ::ll::TypedStorage<1, 1, bool>                                                       mIsAnimated;
+        ::ll::TypedStorage<4, 8, ::dragon::atlas::AtlasTileDescription const>                mTileDescription;
+        ::ll::TypedStorage<1, 1, ::GeometryAtlas::AtlasImpl::TileEntry::Status>              mStatus;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryAtlas::TileHandleSharedState>> mShared;
+        ::ll::TypedStorage<8, 32, ::dragon::atlas::AtlasTileHandle>                          mBackendID;
         // NOLINTEND
+    };
+
+    struct CommandArgs {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::GeometryAtlas::IRenderContext&> mContext;
+        ::ll::TypedStorage<
+            8,
+            8,
+            ::std::_List_iterator<::std::_List_val<
+                ::std::_List_simple_types<::std::pair<uint const, ::GeometryAtlas::AtlasImpl::TileEntry>>>>>
+                                                                         mIt;
+        ::ll::TypedStorage<8, 8, ::GeometryAtlas::AtlasImpl::TileEntry*> mEntry;
+        ::ll::TypedStorage<4, 4, uint>                                   mTileID;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CommandArgs& operator=(CommandArgs const&);
+        CommandArgs(CommandArgs const&);
+        CommandArgs();
     };
 
     struct Data {
@@ -102,28 +126,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                        mSubmitTileRender;
         ::ll::TypedStorage<1, 1, bool>                                        mNotifyTileUpdated;
         // NOLINTEND
-    };
-
-    struct CommandArgs {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::GeometryAtlas::IRenderContext&> mContext;
-        ::ll::TypedStorage<
-            8,
-            8,
-            ::std::_List_iterator<::std::_List_val<
-                ::std::_List_simple_types<::std::pair<uint const, ::GeometryAtlas::AtlasImpl::TileEntry>>>>>
-                                                                         mIt;
-        ::ll::TypedStorage<8, 8, ::GeometryAtlas::AtlasImpl::TileEntry*> mEntry;
-        ::ll::TypedStorage<4, 4, uint>                                   mTileID;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CommandArgs& operator=(CommandArgs const&);
-        CommandArgs(CommandArgs const&);
-        CommandArgs();
     };
 
     struct mDispatcher {};

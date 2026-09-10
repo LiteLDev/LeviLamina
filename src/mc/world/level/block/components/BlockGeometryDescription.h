@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/shared_types/v1_26_20/block/GeometryComponent.h"
+#include "mc/deps/shared_types/v1_26_20/block/components/GeometryComponent.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 #include "mc/world/level/block/components/BlockRendererDescription.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
@@ -179,7 +179,11 @@ public:
 
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
+#ifdef LL_PLAT_S
     MCAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
+#else // LL_PLAT_C
+    MCFOLD void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
+#endif
 
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 

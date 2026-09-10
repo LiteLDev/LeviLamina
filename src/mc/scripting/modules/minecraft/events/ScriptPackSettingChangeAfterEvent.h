@@ -4,12 +4,18 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptPackSettingChangeIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPackSettingChangeAfterEvent {
+public:
+    // ScriptPackSettingChangeAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPackSettingChangeIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,8 +34,8 @@ public:
     MCAPI ScriptPackSettingChangeAfterEvent(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
 
     MCAPI ScriptPackSettingChangeAfterEvent(
-        ::std::string const&                       settingName,
-        ::std::variant<float, bool, ::std::string> settingValue
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPackSettingChangeIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&
     );
 
     MCAPI ~ScriptPackSettingChangeAfterEvent();
@@ -46,7 +52,10 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
 
-    MCAPI void* $ctor(::std::string const& settingName, ::std::variant<float, bool, ::std::string> settingValue);
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPackSettingChangeIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 
 public:

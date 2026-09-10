@@ -67,6 +67,7 @@ class ComplexInventoryTransaction;
 class CompoundTag;
 class Container;
 class ContainerManagerModel;
+class CreativeItemRegistry;
 class DataLoadHelper;
 class EnderChestContainer;
 class EntityContext;
@@ -572,7 +573,11 @@ public:
     virtual void openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+#else // LL_PLAT_C
+    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> data);
+#endif
 
     virtual void openInventory();
 
@@ -617,7 +622,7 @@ public:
 
     virtual void setSleeping(bool val) /*override*/;
 
-    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& bedBlockPos);
+    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& bedPos, bool setsRespawn, float sleepOffset);
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
@@ -781,6 +786,8 @@ public:
 
     virtual ::std::unique_ptr<::ISparseContainerSetListener> createSparseContainerListener();
 
+    virtual void addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions);
+
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
@@ -845,6 +852,8 @@ public:
     );
 
 #ifdef LL_PLAT_C
+    MCAPI void _enterBedSleepState(::BlockPos const& bedBlockPos, float sleepOffset);
+
     MCAPI bool _findFallbackSpawnPosition(
         ::Vec3&                                        spawnPosition,
         ::std::vector<::gsl::not_null<::BlockSource*>> regions,
@@ -858,6 +867,12 @@ public:
     MCAPI bool _isChunkSourceLoaded(::Vec3 const& spawnPosition, ::BlockSource const& region) const;
 
     MCAPI void _setPlayerGameType(::GameType gameType);
+
+#ifdef LL_PLAT_C
+    MCAPI ::BedSleepingResult _validateCanSleepInBed(::BlockPos const& bedBlockPos) const;
+
+    MCAPI ::BedSleepingResult _validateSleepConditions(::BlockPos const& bedBlockPos) const;
+#endif
 
     MCAPI bool _validateSpawnPositionAvailability(
         ::Vec3 const&       pos,
@@ -976,7 +991,9 @@ public:
 
     MCAPI bool isForcedRespawn() const;
 
-    MCAPI bool isHiddenFrom(::Mob& target) const;
+#ifdef LL_PLAT_S
+    MCAPI bool isInRaid() const;
+#endif
 
     MCAPI bool isItemOnCooldown(::HashedString const& category) const;
 
@@ -1014,7 +1031,9 @@ public:
 
     MCAPI void setAgent(::Agent* agent);
 
+#ifdef LL_PLAT_C
     MCAPI void setBedRespawnPosition(::BlockPos const& bedPosition);
+#endif
 
     MCAPI void setChunkRadius(uint chunkRadius);
 
@@ -1057,6 +1076,8 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void unRegisterTrackedBoss(::ActorUniqueID mob);
+
+    MCAPI void updateCreativeItemList(::CreativeItemRegistry const& creativeItemRegistry);
 
     MCAPI bool updateEmoteMessageData(::PersonaPiece const& emotePiece);
 #endif
@@ -1250,7 +1271,11 @@ public:
     MCFOLD void $openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle);
 #endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+#else // LL_PLAT_C
+    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> data);
+#endif
 
     MCFOLD void $openInventory();
 
@@ -1303,7 +1328,7 @@ public:
 
     MCAPI void $setSleeping(bool val);
 
-    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& bedBlockPos);
+    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& bedPos, bool setsRespawn, float sleepOffset);
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
@@ -1439,6 +1464,8 @@ public:
 #endif
 
     MCFOLD ::std::unique_ptr<::ISparseContainerSetListener> $createSparseContainerListener();
+
+    MCFOLD void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions);
 
     MCAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);

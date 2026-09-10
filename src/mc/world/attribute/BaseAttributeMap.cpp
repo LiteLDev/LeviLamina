@@ -2,11 +2,12 @@
 #include "mc/world/attribute/Attribute.h"
 #include "mc/world/attribute/AttributeInstance.h"
 #include "mc/world/attribute/AttributeInstanceRef.h"
+#include "mc/world/attribute/MutableAttributeWithContext.h"
 
 inline void BaseAttributeMap::setDirty(AttributeInstance const& attribute) { _onAttributeModified(attribute); }
 
 bool BaseAttributeMap::setCurrentValue(Attribute const& attribute, float value) {
-    if (auto ptr = getMutableInstance(attribute).mPtr) {
+    if (auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr) {
         ptr->mCurrentValue = value;
         setDirty(*ptr);
         return true;
@@ -15,7 +16,7 @@ bool BaseAttributeMap::setCurrentValue(Attribute const& attribute, float value) 
 }
 
 bool BaseAttributeMap::setMaxValue(Attribute const& attribute, float value) {
-    if (auto ptr = getMutableInstance(attribute).mPtr) {
+    if (auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr) {
         ptr->mCurrentMaxValue = value;
         ptr->mDefaultMaxValue = value;
         float& currentValue   = ptr->mCurrentValue;
@@ -27,7 +28,7 @@ bool BaseAttributeMap::setMaxValue(Attribute const& attribute, float value) {
 }
 
 bool BaseAttributeMap::setDefaultValue(Attribute const& attribute, float value) {
-    if (auto ptr = getMutableInstance(attribute).mPtr) {
+    if (auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr) {
         float& defaultValue = ptr->mDefaultValue;
         if (value != defaultValue) {
             defaultValue       = value;

@@ -31,21 +31,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MobEffectInstance();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEffectInstance(uint id, ::EffectDuration duration);
-
     MCAPI ::std::string getDisplayName() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-#ifdef LL_PLAT_S
     MCAPI void updateEffects(::Actor& mob) const;
-#endif
     // NOLINTEND
 
 public:
@@ -62,11 +54,5 @@ public:
     MCAPI static ::MobEffectInstance const& NO_EFFECT();
 
     MCAPI static float& splashDurationMultiplier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint id, ::EffectDuration duration);
     // NOLINTEND
 };

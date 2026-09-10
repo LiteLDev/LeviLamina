@@ -19,6 +19,7 @@
 class Player;
 class ServerInstance;
 struct ChatEvent;
+struct PlayerMeCommandEvent;
 struct PlayerSayCommandEvent;
 struct PlayerTellCommandEvent;
 struct PlayerTellRawCommandEvent;
@@ -48,6 +49,8 @@ public:
     virtual ::EventResult onEvent(::ChatEvent const& chatEvent) /*override*/;
 
     virtual ::EventResult onEvent(::ServerInstanceLeaveGameDoneEvent const&) /*override*/;
+
+    virtual ::EventResult onEvent(::PlayerMeCommandEvent const& meEvent) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerSayCommandEvent const& sayEvent) /*override*/;
 
@@ -92,6 +95,8 @@ public:
     MCNAPI ::EventResult $onEvent(::ChatEvent const& chatEvent);
 
     MCNAPI ::EventResult $onEvent(::ServerInstanceLeaveGameDoneEvent const&);
+
+    MCNAPI ::EventResult $onEvent(::PlayerMeCommandEvent const& meEvent);
 
     MCNAPI ::EventResult $onEvent(::PlayerSayCommandEvent const& sayEvent);
 

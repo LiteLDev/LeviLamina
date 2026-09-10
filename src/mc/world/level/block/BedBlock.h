@@ -15,7 +15,6 @@ class BlockSource;
 class IConstBlockSource;
 class ItemInstance;
 class Player;
-class Vec3;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -75,24 +74,9 @@ public:
 
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::BlockPos>
-    findWakeupPosition(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::Vec3> const& enteredBedPos);
-
-    MCAPI static void setOccupied(::BlockSource& region, ::BlockPos const& pos, bool occupied);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<int const[4][2]> HEAD_DIRECTION_OFFSETS();
     // NOLINTEND
 
 public:
@@ -114,17 +98,17 @@ public:
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
 
-    MCAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+    MCFOLD bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
     MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCFOLD ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
-    MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI int $telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -49,6 +49,10 @@ public:
     MCAPI bool isPaymentAvailable() const;
 
     MCAPI bool isSelected(int iSlot, bool isSecondary);
+
+    MCAPI bool isTierAvailable(int iTier);
+
+    MCAPI void selectEffect(int iSlot, bool bSecondaryEffect);
 #endif
     // NOLINTEND
 

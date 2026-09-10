@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { struct Url; }
+struct SignalingClientConfiguration;
 // clang-format on
 
 class ISignalingServiceConfigProvider : public ::Bedrock::EnableNonOwnerReferences {
@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingServiceConfigProvider() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const& id) = 0;
+    virtual ::Bedrock::Threading::Async<::SignalingClientConfiguration> getConfiguration(::std::string const& id) = 0;
 
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() = 0;
 

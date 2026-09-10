@@ -30,8 +30,6 @@ MCNAPI ::HashedString& LIMITED_WORLD_DEPTH();
 
 MCNAPI ::HashedString& LIMITED_WORLD_WIDTH();
 
-MCNAPI ::HashedString& LOADED_PLAYER_TAG();
-
 MCNAPI ::HashedString& SEED();
 
 MCNAPI ::HashedString& SPAWN_POS();

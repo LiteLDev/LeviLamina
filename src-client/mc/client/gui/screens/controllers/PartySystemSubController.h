@@ -42,6 +42,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyInviteUpdateSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyEventSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyTravelSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyInvalidDestinationSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyDestinationCookieUpdatedSubscription;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                    mTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> mPartySystem;

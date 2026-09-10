@@ -22,6 +22,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ~CooldownItemComponent();
+#endif
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -33,6 +41,14 @@ public:
     MCAPI static ::std::string const& DEFAULT_CATEGORY();
 
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

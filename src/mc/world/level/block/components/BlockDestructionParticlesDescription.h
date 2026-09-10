@@ -33,11 +33,14 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
+    virtual ~BlockDestructionParticlesDescription() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCAPI static bool postParseConstraint(
@@ -45,6 +48,7 @@ public:
         ::Json::Value const& componentJson,
         ::SemVersion const&  jsonVersion
     );
+#endif
     // NOLINTEND
 
 public:
@@ -63,6 +67,12 @@ public:
     MCAPI static ::SemVersion const& Version1_21_70();
 
     MCAPI static ::SemVersion const& Version1_21_90();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

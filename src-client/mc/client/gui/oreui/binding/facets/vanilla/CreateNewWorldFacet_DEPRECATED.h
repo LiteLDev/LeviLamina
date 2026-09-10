@@ -71,7 +71,7 @@ public:
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>                                              mUiRouter;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED>> mWorldSettingsProvider;
     ::ll::TypedStorage<8, 104, ::ui::ProgressScreenNavigation>                              mProgressScreenNavigation;
-    ::ll::TypedStorage<8, 656, ::Realms::World>                                             mRealmWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                                             mRealmWorld;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>                  mApplyTemplateTask;
     ::ll::TypedStorage<1, 1, bool>                                                          mCreatingOnRealms;
     ::ll::TypedStorage<1, 1, bool>                                                          mInWorldCreation;

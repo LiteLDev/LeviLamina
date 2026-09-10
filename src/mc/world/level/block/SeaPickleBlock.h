@@ -58,8 +58,6 @@ public:
 
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    virtual bool hasVariableLighting() const /*override*/;
-
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -108,11 +106,9 @@ public:
 
     MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
-
-    MCFOLD bool $hasVariableLighting() const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 

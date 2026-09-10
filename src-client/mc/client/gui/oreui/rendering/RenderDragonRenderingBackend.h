@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/debug/FrameDebugData.h"
 #include "mc/client/gui/oreui/interface/IRenderingBackend.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/framebuilder/GamefaceBatchDraw.h"
@@ -67,7 +68,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 200, ::dragon::mesh::VertexFormat> dragonFormat;
+            ::ll::TypedStorage<8, 136, ::dragon::mesh::VertexFormat> dragonFormat;
             ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>>
                 dragonVertexBuffer;
             // NOLINTEND
@@ -102,7 +103,7 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
         ::ll::TypedStorage<
             8,
-            232,
+            168,
             ::std::variant<
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonVertexBuffer,
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonInstanceData>>
@@ -301,7 +302,7 @@ public:
 
     MCAPI void _drawIndexedInstanced(uint indexCount, uint indexOffset, uint instanceCount, uint instanceOffset);
 
-    MCAPI void _flush();
+    MCAPI void _flush(::OreUI::FrameDebugData::FlushTrigger trigger);
     // NOLINTEND
 
 public:

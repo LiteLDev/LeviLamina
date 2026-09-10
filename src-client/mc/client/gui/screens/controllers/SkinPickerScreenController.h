@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class MainMenuScreenModel;
 class SkinPackCollectionModel;
 class SkinRepository;
 // clang-format on
@@ -66,46 +65,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SkinPickerScreenController(
-        ::std::shared_ptr<::MainMenuScreenModel> model,
-        ::std::shared_ptr<::SkinRepository>      skinRepository
-    );
-
-    MCAPI bool _isCustomSkin(::SkinHandle const& skin) const;
-
-    MCAPI void setPreviewSkin(::SkinHandle const& newSkin);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& MINECON_2012_CAPE_ID();
 
     MCAPI static ::std::string const& MOJANG_CAPE_ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::shared_ptr<::SkinRepository> skinRepository);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $onOpen();
-
-    MCAPI void $onTerminate();
-
-    MCAPI ::ui::ViewRequest $tryExit();
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI ::std::string $_getButtonBDescription();
     // NOLINTEND
 };

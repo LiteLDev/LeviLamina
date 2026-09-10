@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/resources/JsonBetaState.h"
-
 // auto generated forward declare list
 // clang-format off
 class IDefinitionInstance;
@@ -29,32 +26,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IJsonDefinitionSerializer();
+    virtual ~IJsonDefinitionSerializer() = default;
 
     virtual ::std::shared_ptr<::IDefinitionInstance>
     serializeDefinitionInstance(::Json::Value const&, ::MinEngineVersion const&) = 0;
 
-    virtual ::std::shared_ptr<::IDefinitionInstance> serializeDefinitionInstance(
-        ::Json::Value const&,
-        ::MinEngineVersion const&,
-        ::SemVersion const&,
-        bool const,
-        ::JsonBetaState const
-    ) = 0;
+    virtual ::std::shared_ptr<::IDefinitionInstance>
+    serializeDefinitionInstance(::Json::Value const&, ::MinEngineVersion const&, ::SemVersion const&, bool const) = 0;
 
-    virtual ::std::shared_ptr<::IDefinitionInstance> _serializeDefinitionInstance(
-        ::Json::Value const&,
-        ::MinEngineVersion const&,
-        bool,
-        bool const,
-        ::JsonBetaState const
-    ) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ::std::shared_ptr<::IDefinitionInstance>
+    _serializeDefinitionInstance(::Json::Value const&, ::MinEngineVersion const&, bool, bool const) const = 0;
     // NOLINTEND
 
 public:

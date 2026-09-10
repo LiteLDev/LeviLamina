@@ -40,7 +40,6 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mPauseOptionSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mTrialModeUpdateSubscription;
     ::ll::TypedStorage<1, 1, bool>                                               mScoreboardShowing;
-    ::ll::TypedStorage<1, 1, bool>                                               mPersonaEnabled;
     ::ll::TypedStorage<1, 1, bool>                                               mErrorButtonHovered;
     ::ll::TypedStorage<4, 4, int>                                                mPreviousMaxPlayerCount;
     ::ll::TypedStorage<4, 4, int>                                                mFeedUnreadCount;
@@ -128,7 +127,7 @@ public:
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCAPI ::ui::SceneType $getSceneType() const;
 
     MCAPI ::ui::DirtyFlag $tick();
 

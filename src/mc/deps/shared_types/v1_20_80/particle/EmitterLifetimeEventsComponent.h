@@ -10,7 +10,6 @@
 // clang-format off
 class HashedString;
 namespace SharedTypes::v1_20_80 { struct DistanceEvent; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -55,12 +54,6 @@ public:
 
     MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&) const;
 #endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

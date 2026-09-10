@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelSummaryBindings.h"
+#include "mc/client/realms/RealmsBackupsDownloadState.h"
 #include "mc/client/realms/RealmsBackupsState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -26,6 +27,8 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 160, ::OreUI::LevelSummaryBindings>                             mLevelSummaryBindings;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mRealmBackupsStateSubscriber;
+    ::ll::TypedStorage<1, 1, ::Realms::RealmsBackupsDownloadState>                        mRealmsBackupsDownloadState;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mRealmsBackupsDownloadStateSubscriber;
     // NOLINTEND
 
 public:
@@ -51,6 +54,8 @@ public:
     MCFOLD ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
 
     MCAPI ::Realms::RealmsBackupsState getRealmBackupsState();
+
+    MCAPI ::Realms::RealmsBackupsDownloadState getRealmsBackupsDownloadState();
     // NOLINTEND
 
 public:

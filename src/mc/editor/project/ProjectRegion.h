@@ -52,12 +52,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk50f21a;
-        ::ll::UntypedStorage<8, 8>  mUnkc56775;
-        ::ll::UntypedStorage<8, 88> mUnk63a12f;
-        ::ll::UntypedStorage<8, 64> mUnka710be;
-        ::ll::UntypedStorage<8, 24> mUnk2429f3;
-        ::ll::UntypedStorage<1, 1>  mUnk17d311;
+        ::ll::UntypedStorage<8, 16>  mUnk50f21a;
+        ::ll::UntypedStorage<8, 8>   mUnkc56775;
+        ::ll::UntypedStorage<8, 112> mUnk63a12f;
+        ::ll::UntypedStorage<8, 64>  mUnka710be;
+        ::ll::UntypedStorage<8, 24>  mUnk2429f3;
+        ::ll::UntypedStorage<1, 1>   mUnk17d311;
         // NOLINTEND
 
     public:

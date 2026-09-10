@@ -20,7 +20,17 @@ public:
 
     struct Config {};
 
-    class Loaders {};
+    class Loaders {
+    public:
+        // Loaders inner types declare
+        // clang-format off
+        template<int T0> struct LoaderWrapper;
+        // clang-format on
+
+        // Loaders inner types define
+        template <int T0>
+        struct LoaderWrapper {};
+    };
 
     struct UpgradeResult {};
 

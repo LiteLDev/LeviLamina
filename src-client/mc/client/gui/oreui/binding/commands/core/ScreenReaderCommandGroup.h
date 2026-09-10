@@ -23,10 +23,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ITTSEventManager>>    mTTSEventManager;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::AppPlatform>> mAppPlatform;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void>>   mClear;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>   mClear;
     ::ll::TypedStorage<
         8,
-        136,
+        168,
         ::OreUI::Detail::CallableImpl<void, ::std::string, ::ProfanityFilterContext, bool, bool, bool, bool>>
         mRead;
     // NOLINTEND
@@ -56,12 +56,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

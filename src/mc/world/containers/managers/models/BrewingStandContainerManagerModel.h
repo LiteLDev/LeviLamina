@@ -54,6 +54,8 @@ public:
     MCAPI BrewingStandContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
 #ifdef LL_PLAT_C
+    MCAPI int getBrewProgress(int max);
+
     MCAPI int getFuelProgress(int max);
 
     MCAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);

@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/events/ActorGameplayEvent.h"
 #include "mc/world/events/EventCoordinator.h"
 #include "mc/world/events/EventRef.h"
+#include "mc/world/events/MutableActorGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +33,8 @@ public:
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+
+    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
 
     MCAPI void sendEvent(::EventRef<::ActorGameplayEvent<void>> const& event);
     // NOLINTEND

@@ -336,13 +336,10 @@ public:
     bool                                                          mSolid                                      : 1;
     bool                                                          mPushesOutItems                             : 1;
     bool                                                          mIgnoreBlockForInsideCubeRenderer           : 1;
-    bool                                                          mIsTrapdoor                                 : 1;
-    bool                                                          mIsDoor                                     : 1;
     bool                                                          mIsOpaqueFullBlock                          : 1;
     bool                                                          mShouldRandomTickExtraLayer                 : 1;
     bool                                                          mIsMobPiece                                 : 1;
     bool                                                          mCanBeExtraBlock                            : 1;
-    bool                                                          mCanPropagateBrightness                     : 1;
     bool                                                          mIsVanilla                                  : 1;
     bool                                                          mDataDrivenVanillaBlocksAndItemsEnabled     : 1;
     bool                                                          mRequiresCorrectToolForDrops                : 1;
@@ -469,12 +466,6 @@ public:
         ::BlockPos const&                                         pos
     ) const;
 
-    virtual bool hasVariableLighting() const;
-
-    virtual bool isStrippable(::Block const& srcBlock) const;
-
-    virtual ::Block const& getStrippedBlock(::Block const& srcBlock) const;
-
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const;
@@ -493,23 +484,15 @@ public:
 
     virtual bool isFenceBlock() const;
 
-    virtual bool isFenceGateBlock() const;
-
     virtual bool isThinFenceBlock() const;
 
     virtual bool isWallBlock() const;
 
-    virtual bool isStairBlock() const;
-
     virtual bool isSlabBlock() const;
-
-    virtual bool isDoorBlock() const;
 
     virtual bool isChestBlock() const;
 
     virtual bool isRailBlock() const;
-
-    virtual bool isButtonBlock() const;
 
     virtual bool isLeverBlock() const;
 
@@ -624,8 +607,6 @@ public:
         int               itemValue
     ) const;
 
-    virtual int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
-
     virtual bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
     virtual bool attack(::Player* player, ::BlockPos const& pos) const;
@@ -633,13 +614,13 @@ public:
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     virtual bool canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const;
 
-    virtual bool canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
+    virtual bool canBeBuiltOver(::Block const& block, ::BlockSource const&, ::BlockPos const&) const;
 
     virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
@@ -668,8 +649,6 @@ public:
 
     virtual ::std::string buildDescriptionId(::Block const& block) const;
 
-    virtual bool isAuxValueRelevantForPicking() const;
-
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
@@ -691,8 +670,6 @@ public:
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     virtual void animateTick(::BlockAnimateTickData const& tickData) const;
-
-    virtual ::BlockType& init();
 
     virtual ::Brightness getLightEmission(::Block const& block) const;
 
@@ -733,6 +710,8 @@ public:
     virtual ::Brightness getEmissiveBrightness(::Block const& block) const;
 
     virtual ::mce::Color getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
+
+    virtual ::Block const& getInitialDefaultState();
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
@@ -957,12 +936,6 @@ public:
         ::BlockPos const&                                         pos
     ) const;
 
-    MCFOLD bool $hasVariableLighting() const;
-
-    MCFOLD bool $isStrippable(::Block const& srcBlock) const;
-
-    MCFOLD ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
-
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
     MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
@@ -981,23 +954,15 @@ public:
 
     MCFOLD bool $isFenceBlock() const;
 
-    MCFOLD bool $isFenceGateBlock() const;
-
     MCFOLD bool $isThinFenceBlock() const;
 
     MCFOLD bool $isWallBlock() const;
 
-    MCFOLD bool $isStairBlock() const;
-
     MCFOLD bool $isSlabBlock() const;
-
-    MCFOLD bool $isDoorBlock() const;
 
     MCFOLD bool $isChestBlock() const;
 
     MCFOLD bool $isRailBlock() const;
-
-    MCFOLD bool $isButtonBlock() const;
 
     MCFOLD bool $isLeverBlock() const;
 
@@ -1069,11 +1034,7 @@ public:
 
     MCFOLD bool $mayPick() const;
 
-#ifdef LL_PLAT_S
-    MCFOLD bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
-#else // LL_PLAT_C
     MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
-#endif
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
@@ -1116,8 +1077,6 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
-
     MCFOLD bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
     MCFOLD bool $attack(::Player* player, ::BlockPos const& pos) const;
@@ -1125,13 +1084,13 @@ public:
     MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI bool $canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const;
 
-    MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
+    MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource const&, ::BlockPos const&) const;
 
     MCFOLD void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
@@ -1160,8 +1119,6 @@ public:
 
     MCFOLD ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool $isAuxValueRelevantForPicking() const;
-
     MCFOLD bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
@@ -1183,8 +1140,6 @@ public:
     MCFOLD void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD void $animateTick(::BlockAnimateTickData const& tickData) const;
-
-    MCFOLD ::BlockType& $init();
 
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
@@ -1225,6 +1180,8 @@ public:
     MCFOLD ::Brightness $getEmissiveBrightness(::Block const& block) const;
 
     MCFOLD ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
     MCFOLD void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 

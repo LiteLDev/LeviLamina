@@ -68,6 +68,7 @@ class ContainerClosePacket;
 class CreatePhotoPacket;
 class DebugInfoPacket;
 class DisconnectPacket;
+class EditorAllowList;
 class EditorNetworkPacket;
 class EmoteListPacket;
 class EmotePacket;
@@ -83,6 +84,7 @@ class IPacketSecurityController;
 class InteractPacket;
 class InventoryTransactionPacket;
 class ItemStackRequestPacket;
+class KeyManager;
 class LabTablePacket;
 class LecternUpdatePacket;
 class LevelSoundEventPacket;
@@ -250,6 +252,7 @@ public:
     ::ll::TypedStorage<8, 8, ::ServerLocator&>                                      mServerLocator;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::PacketSender*>>                      mPacketSender;
     ::ll::TypedStorage<8, 8, ::AllowList&>                                          mAllowList;
+    ::ll::TypedStorage<8, 8, ::EditorAllowList&>                                    mEditorAllowList;
     ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                    mPermissionsFile;
     ::ll::TypedStorage<8, 104, ::DenyList>                                          mServerDenyList;
     ::ll::TypedStorage<8, 72, ::NetworkServerConfig>                                mNetworkServerConfig;
@@ -302,7 +305,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>> mBiomeDefinitionListWithoutCSCG;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>> mBiomeDefinitionListWithCSCG;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IEDUSystems>>           mEduSystems;
-    ::ll::TypedStorage<8, 416, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
+    ::ll::TypedStorage<8, 384, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
                                                                          mServerConfigurationJoinInfo;
     ::ll::TypedStorage<8, 128, ::Social::Events::ServerTelemetryData>    mServerTelemetryData;
     ::ll::TypedStorage<8, 256, ::ServerNetworkHandlerDependencies const> mDependencies;
@@ -601,8 +604,9 @@ public:
         ::ServerLocator&                                                           serverLocator,
         ::PacketSender&                                                            packetSender,
         ::AllowList&                                                               allowList,
+        ::EditorAllowList&                                                         editorAllowList,
         ::PermissionsFile*                                                         permissionsFile,
-        ::std::string const&                                                       hostPublicKey,
+        ::KeyManager const&                                                        hostPublicKey,
         int                                                                        maxChunkRadius,
         int                                                                        maxNumPlayers,
         ::MinecraftCommands&                                                       commandHandler,
@@ -740,8 +744,6 @@ public:
     MCAPI void setEduSystems(::Bedrock::NonOwnerPointer<::IEDUSystems> eduSystems);
 #endif
 
-    MCAPI void setNewPlayerPermissions(::ServerPlayer& newPlayer);
-
     MCAPI bool tryToLoadPlayer(
         ::ServerPlayer&                   player,
         ::ConnectionRequest const&        connectionRequest,
@@ -785,8 +787,9 @@ public:
         ::ServerLocator&                                                           serverLocator,
         ::PacketSender&                                                            packetSender,
         ::AllowList&                                                               allowList,
+        ::EditorAllowList&                                                         editorAllowList,
         ::PermissionsFile*                                                         permissionsFile,
-        ::std::string const&                                                       hostPublicKey,
+        ::KeyManager const&                                                        hostPublicKey,
         int                                                                        maxChunkRadius,
         int                                                                        maxNumPlayers,
         ::MinecraftCommands&                                                       commandHandler,
@@ -908,7 +911,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::DebugInfoPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::DebugInfoPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::CreatePhotoPacket const& packet);
 

@@ -24,9 +24,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptScoreboardObjectiveDisplayOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptScoreboardObjectiveDisplayOptions(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
+        ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
+        ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
+    );
     // NOLINTEND
 };
 

@@ -38,18 +38,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

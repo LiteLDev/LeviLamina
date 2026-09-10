@@ -50,6 +50,8 @@ public:
         ::std::unique_ptr<::PackMetadata>          metadata
     );
 
+    MCAPI void move(::Pack&& pack);
+
     MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const> upgrade);
 
     MCAPI ~Pack();

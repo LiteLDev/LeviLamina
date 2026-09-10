@@ -14,20 +14,21 @@ class LocalConnectivitySystem;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
-class LocalConnector : public ::Connector {
+class LocalConnector : public ::Connector, public ::std::enable_shared_from_this<::LocalConnector> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>            mMutex;
-    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                   mLocalId;
-    ::ll::TypedStorage<8, 16, ::std::set<::LocalConnector*>>          mConnections;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>        mLocalId;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::NetworkIdentifier, ::std::weak_ptr<::LocalConnector>>>
+                                                                      mConnectionsMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>> mCallbackQueue;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalConnector() /*override*/ = default;
+    virtual ~LocalConnector() /*override*/;
 
     virtual ::std::string getLocalIp() /*override*/;
 
@@ -51,9 +52,9 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI bool connect(::NetworkIdentifier const& id);
-#endif
 
-    MCNAPI void disconnect();
+    MCNAPI void disconnect(bool skipMessage);
+#endif
 
     MCNAPI void runEvents();
     // NOLINTEND
@@ -62,6 +63,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::LocalConnectivitySystem& sLocalConnectivitySystem();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

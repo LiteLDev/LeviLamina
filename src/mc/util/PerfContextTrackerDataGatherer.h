@@ -15,6 +15,8 @@ public:
     MCNAPI static void _gatherActorCount(::EntityRegistry& registry);
 
     MCNAPI static void _gatherPlayerCount(::EntityRegistry& registry);
+
+    MCNAPI static void _resolveGameplayMode();
 #endif
     // NOLINTEND
 };

@@ -19,6 +19,7 @@ class NetworkDebugManager;
 class NetworkIdentifier;
 class NetworkSessionOwner;
 class NetworkStatistics;
+class PrivateKeyManager;
 class Scheduler;
 class SignalingService;
 class SignalingServiceSignInJob;
@@ -75,7 +76,7 @@ public:
 
     MCAPI ::NetworkIdentifier getLocalNetworkId() const;
 
-    MCAPI bool host(::ConnectionDefinition const& definition);
+    MCAPI bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
 
 #ifdef LL_PLAT_S
     MCAPI void reloadPacketLimitConfig(::PacketGroupDefinition::PacketGroupBuilder&& packetGroupBuilder);

@@ -22,38 +22,35 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mSourceFilePathWithExtension;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ActorAnimationController();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ActorAnimationController(
         ::HashedString const& name,
         ::SemVersion const&   version,
         ::std::string const&  sourceFilePathWithExtension
     );
 
-#ifdef LL_PLAT_C
     MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
-#endif
 
     MCAPI void resolveTransitionStateIndices();
-
-    MCAPI ~ActorAnimationController();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void*
     $ctor(::HashedString const& name, ::SemVersion const& version, ::std::string const& sourceFilePathWithExtension);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

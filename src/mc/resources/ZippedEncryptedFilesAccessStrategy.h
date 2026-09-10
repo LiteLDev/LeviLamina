@@ -27,7 +27,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk8b98ee;
-    ::ll::UntypedStorage<8, 8>  mUnk925bbe;
     ::ll::UntypedStorage<8, 8>  mUnk75a4be;
     // NOLINTEND
 
@@ -65,6 +64,8 @@ public:
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
     virtual ::std::string _getContentsFile() /*override*/;
+
+    virtual ::std::string _getRawContentsFile() const /*override*/;
 
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const /*override*/;
 
@@ -136,6 +137,8 @@ public:
     MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
     MCNAPI ::std::string $_getContentsFile();
+
+    MCNAPI ::std::string $_getRawContentsFile() const;
 
     MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
 

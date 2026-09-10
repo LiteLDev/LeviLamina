@@ -20,8 +20,6 @@ class SculkShriekerBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockType& init() /*override*/;
-
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
@@ -29,6 +27,8 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
+
+    virtual ::Block const& getInitialDefaultState() /*override*/;
     // NOLINTEND
 
 public:
@@ -40,8 +40,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockType& $init();
-
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
@@ -49,6 +47,8 @@ public:
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
 
     // NOLINTEND

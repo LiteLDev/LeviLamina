@@ -12,7 +12,7 @@ struct RealmsWorldLoadingDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 808, ::RealmsWorldInfo>                                  world;
+    ::ll::TypedStorage<8, 904, ::RealmsWorldInfo>                                  world;
     ::ll::TypedStorage<4, 4, ::RealmsScreenUtils::RealmsSubscriptionsLoadingState> loadingState;
     // NOLINTEND
 };

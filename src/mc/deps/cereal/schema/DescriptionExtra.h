@@ -13,7 +13,7 @@ enum class DescriptionExtra : uchar {
     OrdinalIndex        = 1 << 3,
     NumericLimits       = 1 << 4,
     NonPublicFlag       = 1 << 5,
-    NetworkingExtraInfo = UnderlyingType | ControlValueType | SerializationTraits | OrdinalIndex,
+    BinaryLayoutInfo    = UnderlyingType | ControlValueType | SerializationTraits | OrdinalIndex,
     EnttEnumAsBitmask   = 255,
 };
 

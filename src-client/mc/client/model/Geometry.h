@@ -93,13 +93,16 @@ public:
 
     public:
         // prevent constructor by default
-        NodePolyMesh& operator=(NodePolyMesh const&);
         NodePolyMesh();
 
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI NodePolyMesh(::Geometry::NodePolyMesh const&);
+
+        MCAPI ::Geometry::NodePolyMesh& operator=(::Geometry::NodePolyMesh&&);
+
+        MCAPI ::Geometry::NodePolyMesh& operator=(::Geometry::NodePolyMesh const&);
 
         MCAPI ~NodePolyMesh();
         // NOLINTEND

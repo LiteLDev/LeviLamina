@@ -22,8 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getOnBredExperience(::Actor& owner) const;
-
     MCAPI int getOnDeathExperience(::Actor& owner) const;
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);

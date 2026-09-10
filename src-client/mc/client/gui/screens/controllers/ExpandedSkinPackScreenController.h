@@ -9,10 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class MainMenuScreenModel;
 class SkinPackCollectionModel;
 class SkinPackModel;
-class StoreCatalogItem;
 namespace Json { class Value; }
 // clang-format on
 
@@ -45,35 +43,5 @@ public:
     virtual ::ui::DirtyFlag tick() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ExpandedSkinPackScreenController(
-        ::std::shared_ptr<::MainMenuScreenModel> model,
-        ::StoreCatalogItem const&,
-        ::SkinPackModel&           skinPackModel,
-        ::SkinPackCollectionModel& skinPackCollection
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::MainMenuScreenModel> model,
-        ::StoreCatalogItem const&,
-        ::SkinPackModel&           skinPackModel,
-        ::SkinPackCollectionModel& skinPackCollection
-    );
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

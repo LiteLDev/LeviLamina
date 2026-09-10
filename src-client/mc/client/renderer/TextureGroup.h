@@ -171,6 +171,8 @@ public:
 
     MCAPI bool unloadTexture(::ResourceLocation const& resourceLocation, bool assertOnFailure);
 
+    MCAPI bool updateTextureInPlace(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer imageBuffer);
+
     MCAPI ::BedrockTexture& uploadTexture(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer imageBuffer);
 
     MCAPI ::BedrockTexture& uploadTexture(

@@ -51,8 +51,6 @@ public:
             ::std::function<bool()>                                                  isActiveCallback,
             ::std::function<void(::std::string const&, ::OreUI::RouteHistoryAction)> matchCallback
         );
-
-        MCAPI ~RouteEntry();
         // NOLINTEND
 
     public:
@@ -67,12 +65,6 @@ public:
             ::std::function<bool()>                                                  isActiveCallback,
             ::std::function<void(::std::string const&, ::OreUI::RouteHistoryAction)> matchCallback
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -169,8 +161,6 @@ public:
     virtual ::OreUI::RouteMode getRouteMode(::std::string const& route) const /*override*/;
 
     virtual ::OreUI::RoutePrerequisite getRoutePrerequisite(::std::string const& route) const /*override*/;
-
-    virtual ~RouteMatcher() /*override*/;
     // NOLINTEND
 
 public:
@@ -198,12 +188,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $navigateTo(::std::string const& route, ::OreUI::RouteHistoryAction action) const;
@@ -223,12 +207,6 @@ public:
     MCAPI ::OreUI::RouteMode $getRouteMode(::std::string const& route) const;
 
     MCAPI ::OreUI::RoutePrerequisite $getRoutePrerequisite(::std::string const& route) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

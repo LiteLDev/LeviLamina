@@ -3,70 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/BaseGoal.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
-class SemVersionConstant;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class KnockbackRoarGoal : public ::BaseGoal {
-public:
-    // KnockbackRoarGoal inner types declare
-    // clang-format off
-    class KnockbackRoarDefinition;
-    // clang-format on
-
-    // KnockbackRoarGoal inner types define
-    class KnockbackRoarDefinition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                      mMaxRoarDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>                      mMaxSecondsUntilAttack;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackDamage;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackHorizontalStrength;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackVerticalStrength;
-        ::ll::TypedStorage<4, 4, float>                      mHeightCap;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackEffectRange;
-        ::ll::TypedStorage<4, 4, float>                      mMaxCooldownSeconds;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mKnockbackFilterGroup;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mDamageFilterGroup;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnRoarEnd;
-        ::ll::TypedStorage<1, 1, bool>                       mFilterEvaluateFix;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::KnockbackRoarGoal& goal) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::KnockbackRoarGoal::KnockbackRoarDefinition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN

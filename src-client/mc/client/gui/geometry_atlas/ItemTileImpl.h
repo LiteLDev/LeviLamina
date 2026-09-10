@@ -23,6 +23,8 @@ public:
     virtual uint getUserID() const /*override*/;
 
     virtual ::dragon::atlas::AtlasTileHandle getBackendID() const /*override*/;
+
+    virtual bool isInitialized() const /*override*/;
     // NOLINTEND
 
 public:
@@ -33,6 +35,8 @@ public:
     MCFOLD uint $getUserID() const;
 
     MCAPI ::dragon::atlas::AtlasTileHandle $getBackendID() const;
+
+    MCAPI bool $isInitialized() const;
     // NOLINTEND
 };
 

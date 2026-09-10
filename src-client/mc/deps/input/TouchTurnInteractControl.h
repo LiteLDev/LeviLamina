@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TouchTurnInteractControl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TouchTurnInteractControl() /*override*/ = default;
@@ -46,37 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchTurnInteractControl(
-        ::std::function<::RectangleArea()>                area,
-        ::std::function<::RectangleArea()>                hotbarArea,
-        uint                                              turnInteractButtonId,
-        uint                                              tapButtonId,
-        uint                                              holdButtonId,
-        float                                             holdSensitivity,
-        ::std::function<bool()>                           condition,
-        ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
-    );
-
-    MCAPI void addPreviousActivePointer(int pointerId);
-
-    MCAPI void incrementMoveDelta(::InputEventQueue& eventQueue, float x, float y, int yAxisInversionFactor);
-
     MCAPI void switchState(::InputEventQueue& eventQueue, ::TouchTurnState newState);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::function<::RectangleArea()>                area,
-        ::std::function<::RectangleArea()>                hotbarArea,
-        uint                                              turnInteractButtonId,
-        uint                                              tapButtonId,
-        uint                                              holdButtonId,
-        float                                             holdSensitivity,
-        ::std::function<bool()>                           condition,
-        ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
-    );
     // NOLINTEND
 
 public:

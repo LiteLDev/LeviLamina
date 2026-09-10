@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getCreator() const;
+    MCFOLD ::std::string const& getCreator() const;
 
     MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData const&);
 

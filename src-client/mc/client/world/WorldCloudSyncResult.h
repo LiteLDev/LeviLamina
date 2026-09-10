@@ -12,6 +12,8 @@ enum class WorldCloudSyncResult : int {
     UnableToSyncWorld     = 4,
     UnableToSetLocalOnly  = 5,
     UnableToSetCloudSaved = 6,
+    QuotaExceeded         = 7,
+    OutOfLocalStorage     = 8,
 };
 
 }

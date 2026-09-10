@@ -23,6 +23,8 @@ public:
         uint64                                      centerSubChunkIndex,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList
     ) const /*override*/;
+
+    virtual bool isDeferredEnabled() const /*override*/;
     // NOLINTEND
 
 public:
@@ -34,6 +36,8 @@ public:
         uint64                                      centerSubChunkIndex,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList
     ) const;
+
+    MCFOLD bool $isDeferredEnabled() const;
 
 
     // NOLINTEND

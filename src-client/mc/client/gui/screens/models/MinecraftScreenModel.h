@@ -39,7 +39,6 @@
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/input/InputBindingMode.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
-#include "mc/events/IConnectionEventing.h"
 #include "mc/events/IMinecraftEventing.h"
 #include "mc/events/UserGeneratedUriSource.h"
 #include "mc/identity/IdentitySignInTrigger.h"
@@ -141,6 +140,7 @@ namespace SDL { struct SubscriptionInfo; }
 namespace Social { class FriendList; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
+namespace Social { class ProfileImageOptions; }
 namespace Social { struct MultiIdentitySigninResult; }
 namespace Social { struct PermissionCheckResult; }
 namespace Social { struct PlatformUserProfileData; }
@@ -270,6 +270,9 @@ public:
 
     MCAPI ::Bedrock::Threading::Async<void> _queueForMainThread(::std::function<void()>&& callback);
 
+    MCAPI void
+    _sendResourcePackClientResponse(::ResourcePackResponse response, ::std::set<::std::string>* downloadingPacks);
+
     MCAPI void _startLocalServerAsync(
         ::std::string const&     levelId,
         ::std::string const&     levelName,
@@ -302,8 +305,6 @@ public:
     MCAPI void addEduDeeplinkObserver(::EduDeeplinkObserver& observer) const;
 
     MCAPI bool addExternalServer(::std::string const& name, ::std::string const& address, int port);
-
-    MCAPI void addSelectedSkinToRecentList() const;
 
     MCAPI void addTTSMessage(
         ::std::string const& message,
@@ -380,6 +381,8 @@ public:
         bool                                                          isUserInitiated
     );
 
+    MCAPI bool continueResourcePackDownloadAfterCDNFailure();
+
     MCAPI ::std::string copyWorld(::std::string const& worldId);
 
     MCAPI void createAndUploadWorldToRealm(
@@ -429,7 +432,7 @@ public:
 
     MCAPI bool doesUserHavePremiumPlatformAccess() const;
 
-    MCAPI void
+    MCAPI bool
     editExternalServer(int id, ::std::string const& name, ::std::string const& address, int port, bool updateTimeStamp);
 
     MCAPI ::std::string emoticonifyText(::std::string const& text, bool isGameTip);
@@ -473,13 +476,6 @@ public:
     MCAPI void fireEventScreenChanged(
         ::std::string const&                                      screenName,
         ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
-    );
-
-    MCAPI void fireEventServerConnectionEvent(
-        ::IConnectionEventing::ServerConnectionOutcome outcome,
-        uint                                           pingLatency,
-        double                                         timeElapsed,
-        ::std::string const&                           creatorName
     );
 
     MCAPI void firePackSettingsEvent(
@@ -536,6 +532,11 @@ public:
 
     MCAPI void
     getClubUnreadCount(::std::string const& clubId, ::std::function<void(int, ::Clubs::GenericStatus)> callback);
+
+    MCAPI void getClubUnreadCounts(
+        ::std::vector<::std::string> const&                                           clubIds,
+        ::std::function<void(::std::map<::std::string, int>, ::Clubs::GenericStatus)> callback
+    );
 
     MCAPI ::MinecraftCommands& getCommands();
 
@@ -621,13 +622,11 @@ public:
 
     MCAPI ::std::string getNetworkInfoStringInGame() const;
 
-    MCAPI ::std::string getNetworkPort() const;
-
     MCAPI bool getNewJukeboxPopupItemText(::std::string& newText, bool& isCreative);
 
     MCAPI bool getNewPopupItemText(::std::string& newText, bool& isCreative);
 
-    MCAPI ::SDL::SubscriptionInfo const& getNextAvailableSubscriptionInfo() const;
+    MCAPI ::SDL::SubscriptionInfo getNextAvailableSubscriptionInfo() const;
 
     MCAPI ::Bedrock::PubSub::Connector<
         void(::PlayerListEntry const&, ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&)>&
@@ -660,6 +659,8 @@ public:
     MCAPI void
     getPreferredRegions(::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::ServerRegion>)> callback);
 
+    MCAPI ::std::string getPriceDisclaimerText() const;
+
     MCAPI ::std::pair<::std::string, bool> const getPrivilegesBlockedString(
         ::Social::PermissionCheckResult const& reason,
         ::std::string const&                   needXBLGold,
@@ -668,6 +669,9 @@ public:
         ::std::string const&                   noInternetConnection,
         ::std::string const&                   unknownError
     ) const;
+
+    MCAPI ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
+    getProfileImageFile(::Social::ProfileImageOptions const& options);
 
     MCAPI void getProfiles(
         ::std::vector<::std::string> const&                                                   xuids,
@@ -736,9 +740,15 @@ public:
 
     MCAPI ::std::string getStoreId() const;
 
-    MCAPI ::SDL::SubscriptionInfo const& getSubscriptionFullPriceInfo() const;
+    MCAPI ::SDL::SubscriptionInfo getSubscriptionFullPriceInfo() const;
 
     MCAPI ::std::string getTermsOfUseHyperlink() const;
+
+    MCAPI void getThirdPartyDisplayPicture(
+        ::std::string const&                       playerId,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       isLocal
+    );
 
     MCAPI bool getTipText(::std::string& text);
 
@@ -753,8 +763,6 @@ public:
     MCAPI void getUserMemberOfWorldsCount(::std::function<void(::Realms::GenericStatus, bool)> callback);
 
     MCAPI ::Social::XboxLiveUserProfileData const& getUserProfileDataByXuid(::std::string const& xuid);
-
-    MCAPI ::std::vector<::std::string> getUuidsInLobby() const;
 
     MCAPI ::std::string getVersionString() const;
 
@@ -784,8 +792,6 @@ public:
     MCAPI bool hasInputDevice() const;
 
     MCAPI bool hasInteractButton() const;
-
-    MCAPI bool hasInventoryUpdated() const;
 
     MCAPI bool hasLocalDeviceEntitlements() const;
 
@@ -817,6 +823,10 @@ public:
     MCAPI bool isDeviceBeingSunset() const;
 
     MCAPI bool isDeviceSunset() const;
+
+    MCAPI bool isDisconnectedFromNEX() const;
+
+    MCAPI bool isDisconnectedFromPSN() const;
 
     MCAPI bool isEditorEnabledOrPlaytesting() const;
 
@@ -1025,14 +1035,6 @@ public:
 
     MCAPI void navigateToPlatformStoreConnectConfirmationScreen(::std::function<void(bool)> callback);
 
-    MCAPI void navigateToProgressScreen(
-        ::std::string const&                 uniqueEventName,
-        ::std::unique_ptr<::ProgressHandler> progressHandler,
-        bool                                 loadAssets,
-        bool                                 sendProgressTelem,
-        ::std::string const&                 overrideScreen
-    );
-
     MCAPI void navigateToRealmsHubScreen(::Realms::World const& world);
 
     MCAPI void navigateToRealmsPlanPicker();
@@ -1050,8 +1052,6 @@ public:
             void(::SelectWorldResult, ::optional_ref<::LevelSummary const>, ::optional_ref<::Realms::World const>)>
             callback
     );
-
-    MCAPI void navigateToSkinPickerScreen();
 
     MCAPI void navigateToStoreHomeScreen(::std::string const& title);
 
@@ -1225,8 +1225,6 @@ public:
 
     MCAPI void setInputBindingMode(::InputBindingMode mode);
 
-    MCAPI void setIsInGameBrowsing(bool isInGameBrowsing);
-
     MCAPI void setLanguage();
 
     MCAPI void setLastSelectedSlot(int slot, ::ContainerID containerId);
@@ -1279,8 +1277,6 @@ public:
 
     MCAPI bool showSignInButton() const;
 
-    MCAPI void showStoreFeaturesDisabledWhenSignedOutScreen();
-
     MCAPI void signIn(
         ::std::function<void()>                                    connectionCompleteCallback,
         ::Social::IdentitySignInTrigger                            signInTrigger,
@@ -1299,8 +1295,6 @@ public:
     MCAPI void startActiveDirectoryEduDemo();
 
     MCAPI void startExternalNetworkWorld(::std::string const& serverName, ::std::string const& ipAddress, int port);
-
-    MCAPI void startGatheringWorld(::Social::GameConnectionInfo const& connection);
 
     MCAPI void startLocalServerAsync(::LevelSummary const& levelSummary, ::LevelSettings const& levelSettings);
 
@@ -1357,6 +1351,8 @@ public:
         ::std::string const&                                          versionRef,
         ::std::function<void(::Realms::GenericStatus, ::std::string)> callback
     );
+
+    MCAPI void updateRealmsTrialAvailable(::std::function<void(::Realms::GenericStatus)> callback);
 
     MCAPI bool usePlatformProfilePicturesOnly() const;
 

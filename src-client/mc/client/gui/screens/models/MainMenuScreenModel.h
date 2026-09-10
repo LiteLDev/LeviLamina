@@ -20,6 +20,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/identity/IdentityType.h"
 #include "mc/network/EditorConnectionJoinIntent.h"
+#include "mc/options/FeedbackType.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/DownloadError.h"
 #include "mc/util/UploadState.h"
@@ -55,7 +56,6 @@ class ResourceLocation;
 class ResourcePackFileUploadManager;
 class SearchQuery;
 class SkinPackCollectionModel;
-class SkinPackModel;
 class SkinPickerUpsellTreatmentQuery;
 class StoreCatalogItem;
 class StoreCatalogRepository;
@@ -66,7 +66,7 @@ class WorldFileUploadManager;
 class WorldSeedCatalogModel;
 class WorldTemplateManager;
 struct EDULibraryCategory;
-struct ExperienceConnectionData;
+struct ExperienceJoinRequestInfo;
 struct ExperiencePromotion;
 struct LevelSummary;
 struct LinksToStyle;
@@ -81,11 +81,14 @@ struct SubmitItemRatingResult;
 struct WorldTemplateInfo;
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::PubSub { class Subscription; }
+namespace Clubs { struct FeedItem; }
 namespace Core { class Path; }
 namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Realms { class RealmsWorldContext; }
+namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
 namespace Realms::Stories { class FacetStateManager; }
+namespace Realms::Stories { class RealmEvent; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
 namespace Social { class User; }
 namespace Social { struct EduDedicatedServerDetails; }
@@ -167,6 +170,11 @@ public:
 
     MCAPI void cancelCreateRealmsWorld();
 
+    MCAPI void checkAndPostUnpublishedRealmEventsToRealm(
+        ::Realms::RealmId                                                       realmId,
+        ::std::function<void(::Realms::Stories::RealmEvent, ::Clubs::FeedItem)> onSuccessfulPostToRealm
+    );
+
     MCAPI bool checkStoreForAvailableUpdates() const;
 
     MCAPI void clearAllUserCache();
@@ -203,7 +211,7 @@ public:
         ::std::unique_ptr<::PlatformOfferTransactionContext> context
     );
 
-    MCAPI bool fulfillPriorRealmsPurchase(
+    MCFOLD bool fulfillPriorRealmsPurchase(
         ::std::weak_ptr<::Purchase>                   purchase,
         ::std::unique_ptr<::RealmsTransactionContext> context
     );
@@ -274,9 +282,7 @@ public:
 
     MCAPI bool isSidebarNavigationLayoutActive(::sidebar::navigationLayout::Type layoutType) const;
 
-    MCAPI bool isSkinPackNew(::SkinPackModel const& skinPackModel) const;
-
-    MCAPI void joinExperienceWorld(::ExperienceConnectionData const& connectionData);
+    MCAPI void joinExperienceWorld(::ExperienceJoinRequestInfo const& connectionData);
 
     MCAPI void launchSunsettingUri();
 
@@ -327,9 +333,6 @@ public:
         ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> eduCloudSaveSystem,
         ::std::optional<::CloudSaveLevelInfo>                       cloudSaveInfo
     );
-
-    MCAPI void
-    navigateToExpandedSkinPackScreen(::SkinPackModel& skinPackModel, ::SkinPackCollectionModel& skinPackCollection);
 
     MCAPI void navigateToFeaturedWorld();
 
@@ -436,7 +439,7 @@ public:
         ::std::string const&  packTypeFilter
     );
 
-    MCAPI void navigateToSubmitFeedbackScreen(::std::string const& itemId);
+    MCAPI void navigateToSubmitFeedbackScreen(::FeedbackType feedbackType, ::std::string const& identifier);
 
     MCAPI void navigateToSunsettingScreen(::std::string title);
 

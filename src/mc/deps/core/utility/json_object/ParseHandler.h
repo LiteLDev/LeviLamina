@@ -60,9 +60,7 @@ public:
 
     MCNAPI bool Key(char const* str, uint length, bool copy);
 
-#ifdef LL_PLAT_S
     MCNAPI bool Null();
-#endif
 
     MCNAPI bool String(char const* str, uint length, bool copy);
 

@@ -28,6 +28,8 @@ public:
 
     MCAPI void processDelayedLayout();
 
+    MCAPI ::ui::DirtyFlag update(::VisualTree& visualTree, ::UIControl const* currentFocusedControl);
+
     MCAPI ~LayoutManager();
     // NOLINTEND
 

@@ -11,12 +11,6 @@ namespace Editor::ThumbnailCacheHelpers {
 // functions
 // NOLINTBEGIN
 MCNAPI ::std::string buildFilename(::mce::UUID id, uint hash, ::std::string_view extension);
-
-#ifdef LL_PLAT_S
-MCNAPI uint extractHashFromFilename(::std::string_view filename);
-
-MCNAPI bool matchFilename(::mce::UUID id, ::std::optional<uint> hash, ::std::string_view filename);
-#endif
 // NOLINTEND
 
 // static variables

@@ -45,6 +45,12 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace Settings

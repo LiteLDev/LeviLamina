@@ -47,11 +47,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
-        ::RenderParams&                        molangParams,
-        ::gsl::not_null<::PerlinSimplexNoise*> noise,
-        ::BlockPos const&                      pos,
-        int                                    heightMin,
-        int                                    heightMax
+        ::RenderParams&             molangParams,
+        ::PerlinSimplexNoise const& noise,
+        ::BlockPos const&           pos,
+        int                         heightMin,
+        int                         heightMax
     ) const;
     // NOLINTEND
 

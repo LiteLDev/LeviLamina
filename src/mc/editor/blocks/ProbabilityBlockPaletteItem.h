@@ -23,6 +23,8 @@ public:
     MCNAPI ::Editor::ProbabilityBlockPaletteItem& operator=(::Editor::ProbabilityBlockPaletteItem const&);
 
 #ifdef LL_PLAT_C
+    MCNAPI bool operator==(::Editor::ProbabilityBlockPaletteItem const& other) const;
+
     MCNAPI ~ProbabilityBlockPaletteItem();
 #endif
     // NOLINTEND

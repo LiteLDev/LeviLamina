@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/traits/block_trait/ITrait.h"
+#include "mc/world/level/block/traits/block_trait/MultiBlockPlacementDirectionBehavior.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,9 +34,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::BlockTrait::MultiBlock::EnabledStates> mStates;
-    ::ll::TypedStorage<1, 1, uchar>                                   mDirection;
-    ::ll::TypedStorage<1, 1, uchar>                                   mPartCount;
+    ::ll::TypedStorage<1, 1, ::BlockTrait::MultiBlock::EnabledStates>            mStates;
+    ::ll::TypedStorage<1, 1, uchar>                                              mDirection;
+    ::ll::TypedStorage<1, 1, uchar>                                              mPartCount;
+    ::ll::TypedStorage<1, 1, ::BlockTrait::MultiBlockPlacementDirectionBehavior> mPlacementBehavior;
     // NOLINTEND
 
 public:

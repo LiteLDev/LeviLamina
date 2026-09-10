@@ -7,40 +7,16 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace Scripting { struct ErrorBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockCustomComponentAlreadyRegisteredError : public ::Scripting::BaseError {
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentAlreadyRegisteredError();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit ScriptBlockCustomComponentAlreadyRegisteredError(::HashedString const& componentName);
-#endif
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::HashedString const& componentName);
-#endif
     // NOLINTEND
 };
 

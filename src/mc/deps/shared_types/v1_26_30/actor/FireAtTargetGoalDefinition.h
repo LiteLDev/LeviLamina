@@ -53,6 +53,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FireAtTargetGoalDefinition& operator=(FireAtTargetGoalDefinition const&);
+    FireAtTargetGoalDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FireAtTargetGoalDefinition(::SharedTypes::v1_26_30::FireAtTargetGoalDefinition const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_26_30::FireAtTargetGoalDefinition const&) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -62,6 +75,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_26_30::FireAtTargetGoalDefinition const&);
     // NOLINTEND
 };
 

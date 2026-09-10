@@ -5,15 +5,21 @@
 // auto generated forward declare list
 // clang-format off
 struct PlayerAuthenticationInfo;
+struct RawGameServerToken;
 // clang-format on
 
 class LocalAuthentication {
 public:
+    // LocalAuthentication inner types define
+    enum class Signer : int {
+        Self = 0,
+        Host = 1,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk6bd560;
-    ::ll::UntypedStorage<8, 32> mUnk617bed;
-    ::ll::UntypedStorage<8, 32> mUnk80ca02;
     ::ll::UntypedStorage<8, 32> mUnk96bd31;
     // NOLINTEND
 
@@ -29,8 +35,14 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI explicit LocalAuthentication(::std::string const& selfSignedId);
 
-    MCNAPI void
-    regenerateSelfSigned(::PlayerAuthenticationInfo authInfo, bool isSignedIn, uint64 clientRandomId, bool isPrimary);
+    MCNAPI ::RawGameServerToken makeToken(
+        ::LocalAuthentication::Signer signer,
+        ::PlayerAuthenticationInfo    authInfo,
+        bool                          isSignedIn,
+        uint64                        clientRandomId,
+        bool                          isPrimary,
+        int64                         timeCorrectionSeconds
+    );
 
     MCNAPI ~LocalAuthentication();
 #endif

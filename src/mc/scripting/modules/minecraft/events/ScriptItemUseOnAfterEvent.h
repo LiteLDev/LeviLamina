@@ -13,6 +13,7 @@ class Player;
 struct ItemUseOnEvent;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptItemUseOnIntermediateData; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -20,6 +21,10 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemUseOnAfterEvent : public ::ScriptModuleMinecraft::ScriptItemUseOnEvent {
+public:
+    // ScriptItemUseOnAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,6 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptItemUseOnAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                              scope
+    );
+
     MCAPI ScriptItemUseOnAfterEvent(
         ::ItemUseOnEvent const&                                                        itemEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
@@ -54,6 +64,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData> const& evtData,
+        ::Scripting::WeakLifetimeScope const&                                              scope
+    );
+
     MCAPI void* $ctor(
         ::ItemUseOnEvent const&                                                        itemEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,

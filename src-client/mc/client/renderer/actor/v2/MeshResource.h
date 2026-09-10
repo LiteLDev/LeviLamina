@@ -11,7 +11,7 @@ struct MeshResource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>            mMeshData;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>            mMeshData;
     ::ll::TypedStorage<4, 4, ::SkeletalHierarchyIndex> mSkeletalHierarchyIndex;
     ::ll::TypedStorage<4, 4, uint>                     mSkeletonOffset;
     ::ll::TypedStorage<8, 24, ::std::vector<uint64>>   mBoneIndices;

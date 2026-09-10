@@ -21,16 +21,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>       mSchemaUrl;
-    ::ll::TypedStorage<8, 32, ::std::string>       mIdentifier;
-    ::ll::TypedStorage<8, 32, ::std::string>       mFormatVersion;
-    ::ll::TypedStorage<8, 32, ::std::string>       mMinecraftVersion;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> mProtocolVersion;
-    ::ll::TypedStorage<
-        8,
-        72,
-        ::std::optional<::std::unordered_map<::std::string, ::cereal::ext::internal::JSONSchemaDef>>>
-        mDefs;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mTitle;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mSchemaUrl;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mExtraFormatVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mExtraMinecraftVersion;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>            mExtraProtocolVersion;
     // NOLINTEND
 
 public:
@@ -52,8 +48,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::cereal::ext::JSONSchema
-    fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
+    MCAPI static ::cereal::ext::JSONSchema fromDescription(
+        ::cereal::SchemaDescription const&               desc,
+        ::std::unordered_map<uint, ::std::string> const& schemaPathsById
+    );
     // NOLINTEND
 
 public:

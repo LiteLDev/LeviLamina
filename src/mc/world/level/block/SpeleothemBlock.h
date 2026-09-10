@@ -13,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class HashedString;
 class Vec3;
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -26,6 +25,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockToGrowOn;
+    ::ll::TypedStorage<4, 4, int>                   mMaxLength;
     // NOLINTEND
 
 public:
@@ -41,8 +41,6 @@ public:
 
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    virtual ::BlockType& init() /*override*/;
-
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual ::Block const&
@@ -57,6 +55,8 @@ public:
         /*override*/;
 
     virtual bool canGrow(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& stalactiteTipPos) const;
+
+    virtual ::Block const& getInitialDefaultState() /*override*/;
 
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpeleothemBlock(::std::string const& nameId, int id, ::HashedString const& blockToGrowOn);
+    MCAPI SpeleothemBlock(::std::string const& nameId, int id, int maxLength, ::HashedString const& blockToGrowOn);
 
     MCAPI ::SpeleothemThickness _calculateSpeleothemThickness(
         ::BlockSource&    region,
@@ -127,7 +127,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& blockToGrowOn);
+    MCAPI void* $ctor(::std::string const& nameId, int id, int maxLength, ::HashedString const& blockToGrowOn);
     // NOLINTEND
 
 public:
@@ -136,8 +136,6 @@ public:
     MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
     MCFOLD ::std::string $getDustParticleName(::Block const&) const;
-
-    MCAPI ::BlockType& $init();
 
     MCAPI int $getVariant(::Block const& block) const;
 
@@ -156,6 +154,8 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI bool $canGrow(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& stalactiteTipPos) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 

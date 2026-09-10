@@ -134,9 +134,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PackSource(::PackSourceOptions options);
 
-#ifdef LL_PLAT_C
     MCAPI void _addPack(::std::shared_ptr<::Pack> pack);
 
+#ifdef LL_PLAT_C
     MCAPI ::Bedrock::Threading::Async<void>
     _addPacks(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& packs);
 #endif

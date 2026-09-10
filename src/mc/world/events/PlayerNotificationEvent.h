@@ -84,6 +84,7 @@ struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityAfterEvent;
 struct PlayerInteractWithEntityBeforeEvent;
 struct PlayerInventoryItemChangeEvent;
+struct PlayerMeCommandEvent;
 struct PlayerOpenContainerEvent;
 struct PlayerOpenedContainerEvent;
 struct PlayerRespawnEvent;
@@ -141,6 +142,7 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerInventoryItemChangeEvent const,
                                      ::PlayerHotbarSelectedSlotChangeEvent const,
                                      ::PlayerInputPermissionCategoryChangeEvent const,
+                                     ::PlayerMeCommandEvent const,
                                      ::PlayerSayCommandEvent const,
                                      ::PlayerTellCommandEvent const,
                                      ::PlayerTellRawCommandEvent const,

@@ -81,6 +81,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldEditor(
+        ::ILevelListCache&                                levelListCache,
+        bool                                              isEduMode,
+        ::World::IWorldResourcePackHandler&               worldResourcePackHandler,
+        ::World::IWorldStorageHandler&                    worldStorageHandler,
+        ::std::unique_ptr<::World::IWorldTemplateHandler> worldTemplateHandler
+    );
+
     MCAPI ::LevelSummary& _addLevelSummary(::World::WorldID const& worldID);
 
     MCAPI void _addWorldEditorEntry(
@@ -175,6 +183,18 @@ public:
         ::World::WorldID const&                        worldID,
         ::std::function<void()>                        onCompleteCallback,
         ::std::function<void(::World::SaveWorldError)> onErrorCallback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ILevelListCache&                                levelListCache,
+        bool                                              isEduMode,
+        ::World::IWorldResourcePackHandler&               worldResourcePackHandler,
+        ::World::IWorldStorageHandler&                    worldStorageHandler,
+        ::std::unique_ptr<::World::IWorldTemplateHandler> worldTemplateHandler
     );
     // NOLINTEND
 

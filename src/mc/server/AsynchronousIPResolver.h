@@ -25,7 +25,7 @@ public:
     MCNAPI void _resolveIfNeeded();
 
 #ifdef LL_PLAT_C
-    MCNAPI ~AsynchronousIPResolver();
+    MCNAPI ::AsynchronousIPResolver& operator=(::AsynchronousIPResolver&&);
 #endif
     // NOLINTEND
 
@@ -33,13 +33,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string url);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };

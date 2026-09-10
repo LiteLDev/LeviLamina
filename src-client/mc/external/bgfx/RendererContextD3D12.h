@@ -447,8 +447,6 @@ public:
 
     virtual bool updateResolution(::bgfx::Resolution const& _resolution);
 
-    virtual void updateFlipRate(::bgfx::Resolution const& _resolution);
-
     virtual void kick(bool _alloc);
 
     virtual void finish();
@@ -674,8 +672,6 @@ public:
     MCAPI void $blitRender(::bgfx::TextVideoMemBlitter& _blitter, uint _numIndices);
 
     MCAPI bool $updateResolution(::bgfx::Resolution const& _resolution);
-
-    MCFOLD void $updateFlipRate(::bgfx::Resolution const& _resolution);
 
     MCAPI void $kick(bool _alloc);
 

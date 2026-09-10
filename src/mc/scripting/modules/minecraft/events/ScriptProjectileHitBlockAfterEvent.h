@@ -8,12 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptProjectileHitIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptProjectileHitBlockAfterEvent : public ::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent {
+public:
+    // ScriptProjectileHitBlockAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN

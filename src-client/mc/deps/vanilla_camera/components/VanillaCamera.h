@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
-class CameraRegistry;
 class EcsEventDispatcher;
 class EntityRegistry;
 class EntitySystems;
@@ -27,15 +26,9 @@ MCAPI void addGlobalComponents(
     ::Experiments const&
 );
 
-MCAPI void registerCameraComponents(::CameraRegistry& cameraRegistry);
-
 MCAPI void registerCameraEventListeners(::EntitySystems& entitySystems);
 
-MCAPI void registerCameraFilenames(::CameraRegistry& cameraRegistry);
-
 MCAPI void registerCameraSystems(::IClientInstance& clientInstance, ::EntitySystems& cameraSystems);
-
-MCAPI void removeGlobalComponents(::EntityRegistry& registry, ::IClientInstance&);
 // NOLINTEND
 
 } // namespace VanillaCamera

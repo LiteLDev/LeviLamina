@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ESessionError.h"
 
 // auto generated forward declare list
@@ -21,7 +22,26 @@ public:
 
     virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint*) = 0;
 
-    virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view) = 0;
+    virtual ::Bedrock::Threading::Async<bool> OnSessionRequested(
+        ::NetherNet::NetworkID networkID,
+        uint64                 sessionId,
+        ::std::string_view     assertion,
+        ::std::string_view     fingerprintJson,
+        bool                   isLan
+    ) = 0;
+
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::Threading::Async<bool>
+    OnSessionResponse(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view, bool);
+#else // LL_PLAT_C
+    virtual ::Bedrock::Threading::Async<bool> OnSessionResponse(
+        ::NetherNet::NetworkID networkID,
+        uint64                 sessionId,
+        ::std::string_view     assertion,
+        ::std::string_view     fingerprintJson,
+        bool                   isLan
+    );
+#endif
 
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, bool isLan) = 0;
 
@@ -38,6 +58,25 @@ public:
     OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) = 0;
 
     virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) = 0;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI ::Bedrock::Threading::Async<bool>
+    $OnSessionResponse(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view, bool);
+#else // LL_PLAT_C
+    MCNAPI ::Bedrock::Threading::Async<bool> $OnSessionResponse(
+        ::NetherNet::NetworkID networkID,
+        uint64                 sessionId,
+        ::std::string_view     assertion,
+        ::std::string_view     fingerprintJson,
+        bool                   isLan
+    );
+#endif
+
+
     // NOLINTEND
 };
 

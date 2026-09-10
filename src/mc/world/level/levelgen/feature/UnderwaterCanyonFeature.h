@@ -38,8 +38,8 @@ public:
         int                      y1,
         int                      z0,
         int                      z1,
-        float                    rad,
-        float                    yRad,
+        float                    horizontalRadius,
+        float                    verticalRadius,
         ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const&,
         ::BiomeRegistry const& biomeRegistry
@@ -65,8 +65,8 @@ public:
         int                      y1,
         int                      z0,
         int                      z1,
-        float                    rad,
-        float                    yRad,
+        float                    horizontalRadius,
+        float                    verticalRadius,
         ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const&,
         ::BiomeRegistry const& biomeRegistry

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/application/LowMemorySeverity.h"
+#include "mc/deps/certificates/KeyManager.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -35,6 +36,7 @@ class LoopbackPacketSender;
 class Minecraft;
 class ResourcePackManager;
 class Scheduler;
+class ScriptDiagnostics;
 class ServerInstanceEventCoordinator;
 class ServerLevel;
 class ServerNetworkSystem;
@@ -49,9 +51,12 @@ struct NetworkServerConfig;
 struct ServerInstanceArguments;
 struct ServerInstanceInitArguments;
 struct ServerNetworkHandlerDependencies;
+struct ServerPerformanceData;
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class RegistryManager; }
+namespace ServerInitialization { class IServerInitializer; }
+namespace ServerInitialization { struct ServerInitResult; }
 namespace ServerInstanceMessenger { class IMessenger; }
 namespace br::worldgen { class StructureSetRegistry; }
 namespace cereal { struct ReflectionCtx; }
@@ -117,7 +122,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::ServerInstance&>                    mInstance;
         ::ll::TypedStorage<8, 8, ::NetworkServerConfig&&>              mNetworkServerConfig;
-        ::ll::TypedStorage<8, 8, ::std::string const&>                 mHostPublicKey;
+        ::ll::TypedStorage<8, 48, ::KeyManager>                        mHostPublicKey;
         ::ll::TypedStorage<4, 4, int>                                  mMaxChunkRadius;
         ::ll::TypedStorage<1, 1, bool>                                 mShouldAnnounce;
         ::ll::TypedStorage<8, 8, ::ServerNetworkHandlerDependencies&&> mServerNetworkOptions;
@@ -154,7 +159,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                          mLastSyncTime;
     ::ll::TypedStorage<1, 1, bool const>                                                       mIsDedicatedServer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Minecraft>>                                   mMinecraft;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerNetworkSystem>>                         mNetwork;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ServerNetworkSystem>>                        mNetwork;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LoopbackPacketSender>>                        mPacketSender;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Timer>>                                       mSimTimer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Timer>>                                       mRealTimer;
@@ -185,7 +190,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemRegistry>>                      mServerItemRegistry;
     ::ll::TypedStorage<1, 1, bool>                                                    mEnableItemStackNetManager;
     ::ll::TypedStorage<1, 1, bool>                                                    mEnableRealmsStories;
-    ::ll::TypedStorage<1, 1, bool>                                                    mbInitialized;
     ::ll::TypedStorage<1, 1, bool>                                                    mbFlaggedForEarlyDestruction;
     ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerInstance>>            mServiceRegistrationToken;
     ::ll::TypedStorage<1, 1, bool>                                                    mHasScheduledLeaveGame;
@@ -199,7 +203,13 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ServerInstanceMessenger::IMessenger>>> mMessenger;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool() const>>    mShouldDisableNetworkOnSuspend;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChatLoggingEventListener>> mChatLoggingEventListener;
-    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LocalProfilerControlBroker>> mLocalProfilerControlBroker;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LocalProfilerControlBroker>>  mLocalProfilerControlBroker;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerInitialization::IServerInitializer>> mInitializer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDiagnostics>>                        mScriptDiagnostics;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ScriptDiagnostics>>               mScriptDiagnosticsToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerPerformanceData>>                    mServerPerformanceData;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerPerformanceData>>
+        mServerPerformanceDataRegistrationToken;
     // NOLINTEND
 
 public:
@@ -209,11 +219,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ServerInstance() /*override*/;
-#else // LL_PLAT_C
     virtual ~ServerInstance() /*override*/ = default;
-#endif
 
     virtual void onLowMemory(::LowMemorySeverity) /*override*/;
 
@@ -231,9 +237,9 @@ public:
 
     virtual void onRequestResourceReload() /*override*/;
 
-    virtual void onLowDiskSpace(bool const bSet) /*override*/;
+    virtual void onLowDiskSpace(bool const bSet, uint64) /*override*/;
 
-    virtual void onOutOfDiskSpace(bool const bSet) /*override*/;
+    virtual void onOutOfDiskSpace(bool const bSet, uint64) /*override*/;
 
     virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode) /*override*/;
 
@@ -261,9 +267,11 @@ public:
     MCAPI ::std::string getLevelId() const;
 #endif
 
-    MCAPI bool initializeServer(::ServerInstanceInitArguments&& args);
+    MCAPI ::ServerInitialization::ServerInitResult initializeServer(::ServerInstanceInitArguments&& args);
 
     MCAPI void leaveGameSync();
+
+    MCAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
 
     MCAPI void queueForServerThread(::std::function<void()> command);
 
@@ -280,6 +288,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _useClientSideChunkGeneration(::LevelData* levelData);
+
+    MCAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
+    createHostMultiplayerCallback(::ServerInstance::HostMultiplayerOps&& ops);
 
     MCAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
@@ -319,14 +330,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onLowMemory(::LowMemorySeverity);
@@ -345,9 +348,9 @@ public:
 
     MCAPI void $onRequestResourceReload();
 
-    MCAPI void $onLowDiskSpace(bool const bSet);
+    MCAPI void $onLowDiskSpace(bool const bSet, uint64);
 
-    MCAPI void $onOutOfDiskSpace(bool const bSet);
+    MCAPI void $onOutOfDiskSpace(bool const bSet, uint64);
 
     MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
 

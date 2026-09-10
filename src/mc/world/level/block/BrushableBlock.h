@@ -13,7 +13,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class HashedString;
 class ItemInstance;
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -41,8 +40,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockType& init() /*override*/;
-
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
@@ -61,6 +58,8 @@ public:
 
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
+
+    virtual ::Block const& getInitialDefaultState() /*override*/;
     // NOLINTEND
 
 public:
@@ -86,8 +85,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockType& $init();
-
     MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
@@ -104,6 +101,8 @@ public:
     MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
 
     // NOLINTEND

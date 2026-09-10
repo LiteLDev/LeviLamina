@@ -17,10 +17,15 @@ struct ConnectionAuthInfo;
 struct ConnectionSkinInfo;
 struct PlayerPartyInfo;
 struct SyncedClientOptionsComponent;
+namespace Json { class Value; }
 namespace Social { struct Nonce; }
 // clang-format on
 
 class ConnectionRequest : public ::BaseConnectionRequest {
+public:
+    // prevent constructor by default
+    ConnectionRequest();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,6 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+
     MCAPI bool clientIsEditorCapable() const;
 
     MCAPI ::EditorConnectionJoinIntent getClientEditorConnectionIntent() const;
@@ -43,8 +50,6 @@ public:
     MCAPI ::std::string getEduSessionToken() const;
 
     MCAPI ::std::string getEduTokenChain() const;
-
-    MCAPI ::std::optional<::Social::Nonce> getNonce() const;
 
     MCAPI ::std::optional<::PlayerPartyInfo> getPartyInfo() const;
 
@@ -71,7 +76,7 @@ public:
         bool                                      clientIsEditorCapable,
         ::EditorConnectionJoinIntent              clientEditorConnectionIntent,
         bool                                      isEduMode,
-        ::std::unique_ptr<::WebToken>             eduTokenChain,
+        ::std::optional<::WebToken>               eduTokenChain,
         ::std::string                             eduSessionToken,
         ::std::string                             eduJoinerToHostNonce,
         ::edu::Role                               classRole,
@@ -87,6 +92,12 @@ public:
 #endif
 
     MCAPI static ::ConnectionRequest fromString(::std::string const& str);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:

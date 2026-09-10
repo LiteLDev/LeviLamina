@@ -25,8 +25,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                   mShouldDrawThisFrame;
     ::ll::TypedStorage<8, 24, ::std::vector<::ModelPart*>>           mSkinnedParts;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mSkinnedMeshQuads;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mSkinnedMeshTris;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                          mSkinnedMeshQuads;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                          mSkinnedMeshTris;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::mat4x4>>          mBoneMatrices;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::mat4x4>>          mPreviousBoneMatrices;
     ::ll::TypedStorage<4, 24, ::std::pair<::glm::vec3, ::glm::vec3>> mBounds;

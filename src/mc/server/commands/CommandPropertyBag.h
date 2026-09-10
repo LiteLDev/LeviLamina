@@ -21,9 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
-#endif
 
     MCAPI void set(::std::string const& key, ::BlockPos const& pos);
 

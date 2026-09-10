@@ -49,7 +49,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::MolangDescriptor>
-    fromExpressionTag(::std::string const& tagExpression, ::MolangVersion const molangVersion);
+    fromExpressionTag(::std::string const& tagExpression, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:

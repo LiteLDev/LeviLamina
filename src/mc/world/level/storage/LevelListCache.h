@@ -149,6 +149,8 @@ public:
     virtual void onStorageChanged() /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const /*override*/;
+
+    virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const& levelId) const /*override*/;
     // NOLINTEND
 
 public:
@@ -283,6 +285,8 @@ public:
     MCAPI void $onStorageChanged();
 
     MCAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
 
 
     // NOLINTEND

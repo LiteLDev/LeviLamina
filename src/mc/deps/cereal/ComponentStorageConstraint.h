@@ -35,6 +35,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+
+    virtual ~ComponentStorageConstraint() /*override*/;
     // NOLINTEND
 
 public:
@@ -46,11 +48,23 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

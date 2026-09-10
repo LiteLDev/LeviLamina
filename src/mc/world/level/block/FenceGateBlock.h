@@ -50,8 +50,6 @@ public:
 
     virtual bool ignoreEntitiesOnPistonMove(::Block const& block) const /*override*/;
 
-    virtual bool isFenceGateBlock() const /*override*/;
-
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
@@ -114,8 +112,6 @@ public:
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
-
-    MCFOLD bool $isFenceGateBlock() const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

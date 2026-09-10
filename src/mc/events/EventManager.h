@@ -2,8 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
+#include "mc/platform/Result.h"
+
 // auto generated forward declare list
 // clang-format off
+class TaskResult;
 namespace Json { class Value; }
 namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
@@ -63,6 +69,11 @@ public:
     MCNAPI ::std::string _buildDnAPlatformString();
 
 #ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Result<::TaskResult> _processDelayedTelemetryEvents(
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& filePath,
+        uint                                                      primaryUserId
+    ) const;
+
     MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
 #endif
 

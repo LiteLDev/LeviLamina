@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+// clang-format on
+
 namespace Bedrock::Resources {
 
 struct BinaryHeader {
@@ -23,6 +28,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static bool hasMagicNumber(::gsl::span<uchar const> data);
+
+#ifdef LL_PLAT_S
+    MCNAPI static bool write(::BinaryStream& stream, ::Bedrock::Resources::BinaryHeader const& header);
+#endif
     // NOLINTEND
 };
 

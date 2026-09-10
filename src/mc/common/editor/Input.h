@@ -11,7 +11,7 @@ namespace Scripting { struct EnumBinding; }
 namespace Editor::Input {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::EnumBinding bindGeneralInputBindingCategoryEnum();
+MCNAPI ::Scripting::EnumBinding bindGeneralInputBindingPriorityEnum();
 
 MCNAPI bool operator==(::Editor::Input::BindingInfo const&, ::Editor::Input::BindingInfo const&);
 // NOLINTEND

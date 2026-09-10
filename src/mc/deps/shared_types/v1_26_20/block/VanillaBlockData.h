@@ -15,6 +15,9 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                       mBlockID;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::MaterialType>                     mMaterial;
     ::ll::TypedStorage<8, 48, ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype> mBlockArchetype;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                                    mTranslucency;
+    ::ll::TypedStorage<1, 1, bool>                                                      mCanDampenVibrations;
+    ::ll::TypedStorage<1, 1, bool>                                                      mCanOccludeVibrations;
     // NOLINTEND
 
 public:

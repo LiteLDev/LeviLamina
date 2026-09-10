@@ -1,11 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated inclusion list
 #include "mc/world/level/storage/ExperimentStorage.h"
 
-enum class AllExperiments : int;
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+// clang-format on
 
 class Experiments : public ::ExperimentStorage {
 public:
@@ -22,6 +26,10 @@ public:
 #endif
 
     MCAPI ::std::string getExperimentsActiveAsJSONList() const;
+
+    MCAPI void getTagData(::CompoundTag const& tag);
+
+    MCAPI void setTagData(::CompoundTag& tag) const;
 
 #ifdef LL_PLAT_C
     MCAPI bool shouldShowAsExperimentalLevel() const;

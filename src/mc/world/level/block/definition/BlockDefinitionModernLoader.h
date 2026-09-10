@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/definition/validate/block_definition_validate/ValidateContext.h"
+
 // auto generated forward declare list
 // clang-format off
 class BedrockLoadContext;
@@ -23,7 +26,8 @@ public:
             ::BedrockLoadContext,
             nullptr_t,
             ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument>>
-        mLoader;
+                                                                          mLoader;
+    ::ll::TypedStorage<8, 32, ::BlockDefinitionValidate::ValidateContext> mValidationContext;
     // NOLINTEND
 
 public:

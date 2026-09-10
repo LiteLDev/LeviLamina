@@ -13,7 +13,6 @@
 // clang-format off
 class GameplayUserManager;
 class Player;
-class UserEntityIdentifierComponent;
 namespace Core { class Path; }
 namespace Json { class Value; }
 // clang-format on
@@ -40,20 +39,9 @@ public:
     MCAPI explicit PermissionsFile(::Core::Path const& filePath);
 #endif
 
-    MCAPI void applyPlayerPermissionsFromDisk(
-        ::Player&                              player,
-        ::UserEntityIdentifierComponent const& userIdentifier,
-        ::CommandPermissionLevel               opCommandPermissionLevel
-    );
+    MCAPI void applyPlayerPermissionsFromDisk(::Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
 
-    MCAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;
-
-    MCAPI void persistPlayerPermissionsToDisk(
-        ::UserEntityIdentifierComponent const& userIdentifier,
-        ::PlayerPermissionLevel                permission
-    );
-
-    MCAPI void persistPlayerPermissionsToDisk(::std::string const& xuid, ::PlayerPermissionLevel permission);
+    MCAPI void persistPlayerPermissionsToDisk(::Player& player, ::PlayerPermissionLevel permission);
 
     MCAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
 
@@ -63,6 +51,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> userManager,
         ::CommandPermissionLevel                             opCommandPermissionLevel
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string _getPermissionIdForPlayer(::Player& player);
     // NOLINTEND
 
 public:

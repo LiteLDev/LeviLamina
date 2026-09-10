@@ -2,9 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/debugger/script_debugger_messages/NetworkPayload.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace ScriptDebuggerMessages {
 
-struct ProtocolResponse {
+struct ProtocolResponse : public ::ScriptDebuggerMessages::NetworkPayload<::ScriptDebuggerMessages::ProtocolResponse> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -16,9 +24,44 @@ public:
 
 public:
     // prevent constructor by default
-    ProtocolResponse& operator=(ProtocolResponse const&);
     ProtocolResponse(ProtocolResponse const&);
     ProtocolResponse();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ProtocolResponse() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::ScriptDebuggerMessages::ProtocolResponse& operator=(::ScriptDebuggerMessages::ProtocolResponse const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& msPayloadType();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

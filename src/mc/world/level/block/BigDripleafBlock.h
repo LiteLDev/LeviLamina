@@ -32,8 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockType& init() /*override*/;
-
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     virtual ::AABB getCollisionShape(
@@ -65,6 +63,8 @@ public:
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
+
+    virtual ::Block const& getInitialDefaultState() /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
@@ -101,8 +101,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockType& $init();
-
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI ::AABB $getCollisionShape(
@@ -130,6 +128,8 @@ public:
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
     MCFOLD bool $isLavaBlocking() const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

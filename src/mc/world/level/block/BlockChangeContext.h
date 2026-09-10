@@ -16,6 +16,7 @@ public:
         24,
         ::std::
             variant<::std::monostate, ::EnvironmentChangeContext, ::ActorChangeContext, ::StatelessBlockChangeContext>>
-        mContextSource;
+                                   mContextSource;
+    ::ll::TypedStorage<1, 1, bool> mTickSchedulingEnabled;
     // NOLINTEND
 };

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class IFileAccess;
+namespace Core { class FileHandlePool; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -24,6 +25,8 @@ public:
     virtual ::Core::Path getOnDiskScratchPath() const /*override*/;
 
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const /*override*/;
+
+    virtual ::std::shared_ptr<::Core::FileHandlePool> getArchiveHandlePool() const /*override*/;
     // NOLINTEND
 
 public:
@@ -36,6 +39,8 @@ public:
     MCNAPI ::Core::Path $getOnDiskScratchPath() const;
 
     MCNAPI ::std::unique_ptr<::IPackIOProvider> $clone() const;
+
+    MCNAPI ::std::shared_ptr<::Core::FileHandlePool> $getArchiveHandlePool() const;
 
 
     // NOLINTEND

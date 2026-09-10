@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/platform/PlatformType.h"
+#include "mc/client/gui/oreui/binding/queries/core/PlatformType.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/scripting/modules/minecraft/device/ScriptSystemInfo.h"
 

@@ -32,8 +32,6 @@ public:
 
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
-    virtual bool isAuxValueRelevantForPicking() const /*override*/;
-
     virtual bool canSpawnOn(::Actor* actor) const /*override*/;
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -52,8 +50,6 @@ public:
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
-
-    MCFOLD bool $isAuxValueRelevantForPicking() const;
 
     MCAPI bool $canSpawnOn(::Actor* actor) const;
 

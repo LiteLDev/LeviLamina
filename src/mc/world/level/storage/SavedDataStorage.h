@@ -25,6 +25,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void _save(::SavedData const& data);
+#endif
+
     MCNAPI bool loadAndSet(::SavedData& inoutData, ::std::string const& id);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

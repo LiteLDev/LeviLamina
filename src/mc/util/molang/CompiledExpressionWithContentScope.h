@@ -21,7 +21,8 @@ class CompiledExpressionWithContentScope : public ::Molang::details::CompiledExp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk929448;
+    ::ll::UntypedStorage<8, 8> mUnk5052e8;
+    ::ll::UntypedStorage<8, 8> mUnk13bf71;
     // NOLINTEND
 
 public:

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SimplexNoise;
+class Vec2;
 // clang-format on
 
 class PerlinSimplexNoise {
@@ -24,6 +25,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PerlinSimplexNoise(uint seed, int levels);
+
+    MCAPI float* getRegion(
+        float*        buffer,
+        ::Vec2 const& pos,
+        int           xSize,
+        int           ySize,
+        ::Vec2 const& scale,
+        float         sizeScale,
+        float         powScale
+    ) const;
+
+    MCAPI float getValue(float x, float y) const;
 
     MCAPI ~PerlinSimplexNoise();
     // NOLINTEND

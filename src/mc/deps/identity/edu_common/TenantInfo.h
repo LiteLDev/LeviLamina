@@ -9,15 +9,6 @@ namespace Identity { struct AuthToken; }
 
 class TenantInfo {
 public:
-    // TenantInfo inner types define
-    enum class TokenState : int {
-        Missing = -2,
-        Expired = -1,
-        Stale   = 0,
-        Fresh   = 1,
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32>  mUnkc4a972;
@@ -26,7 +17,6 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk114b10;
     ::ll::UntypedStorage<8, 80>  mUnk506b20;
     ::ll::UntypedStorage<8, 80>  mUnk5446dd;
-    ::ll::UntypedStorage<4, 4>   mUnk2576ba;
     ::ll::UntypedStorage<4, 4>   mUnk246934;
     ::ll::UntypedStorage<8, 136> mUnkc6beb3;
     // NOLINTEND
@@ -41,7 +31,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void updateEntraToken(::Identity::AuthToken const& token, ::TenantInfo::TokenState state);
+    MCNAPI void updateEntraToken(::Identity::AuthToken const& token);
 #endif
     // NOLINTEND
 };

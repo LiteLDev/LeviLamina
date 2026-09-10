@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/molang/MolangVersion.h"
 #include "mc/world/effect/EffectDuration.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
@@ -13,13 +12,11 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class CompoundTag;
 class Item;
 class ItemStack;
 class Level;
 class Player;
 struct ItemOnUseResult;
-namespace Json { class Value; }
 // clang-format on
 
 class FoodItemComponentLegacy : public ::IFoodItemComponent {
@@ -97,20 +94,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
-
-    MCAPI bool init(::Json::Value const& data, ::MolangVersion);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
-#endif
     // NOLINTEND
 
 public:
@@ -139,11 +122,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

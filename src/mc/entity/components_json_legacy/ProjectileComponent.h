@@ -6,6 +6,8 @@
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/entity/components_json_legacy/ProjectileHitState.h"
+#include "mc/entity/components_json_legacy/ShouldBounce.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorType.h"
@@ -69,18 +71,14 @@ public:
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnHitEvent;
     ::ll::TypedStorage<4, 4, float>                                  mUncertaintyBase;
     ::ll::TypedStorage<4, 4, float>                                  mUncertaintyMultiplier;
-    ::ll::TypedStorage<4, 4, ::ActorType>                            mFilterType;
     ::ll::TypedStorage<4, 4, float>                                  mOnFireTime;
     ::ll::TypedStorage<4, 4, int>                                    mPotionEffect;
     ::ll::TypedStorage<4, 4, float>                                  mSplashRange;
-    ::ll::TypedStorage<1, 1, bool>                                   mKnockback;
     ::ll::TypedStorage<4, 4, float>                                  mKnockbackForce;
     ::ll::TypedStorage<1, 1, bool>                                   mCatchFire;
     ::ll::TypedStorage<1, 1, bool>                                   mChanneling;
-    ::ll::TypedStorage<1, 1, bool>                                   mIsSplash;
     ::ll::TypedStorage<4, 4, float>                                  mInertiaMod;
     ::ll::TypedStorage<4, 4, float>                                  mLiquidInertia;
-    ::ll::TypedStorage<1, 1, bool>                                   mSemiRandomDiffDamage;
     ::ll::TypedStorage<4, 4, ::ProjectileAnchor>                     mSpawnPosAnchor;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mHitEntitySound;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mHitGroundSound;
@@ -107,7 +105,8 @@ public:
     ::ll::TypedStorage<4, 4, int>                                    mFlightSteps;
     ::ll::TypedStorage<4, 4, ::ProjectileComponent::EAxis>           mCurrentMoveDirection;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mLastReflectActor;
-    ::ll::TypedStorage<1, 1, bool>                                   mShouldBounce;
+    ::ll::TypedStorage<1, 5, ::ProjectileHitState>                   mHitState;
+    ::ll::TypedStorage<1, 1, ::ShouldBounce>                         mShouldBounce;
     ::ll::TypedStorage<4, 4, uint>                                   mCurrentDelay;
     ::ll::TypedStorage<1, 1, bool>                                   mWaitingForServer;
     ::ll::TypedStorage<1, 1, bool>                                   mWaitingForServerHitGround;
@@ -139,7 +138,7 @@ public:
 
     MCAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
 
-    MCAPI void handleMovementGravity(::Actor& owner);
+    MCAPI void handleMovementAndGravity(::Actor& owner, bool skipPositionUpdate);
 
     MCAPI void handleMovementHoming(::Actor& owner);
 
@@ -174,7 +173,7 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _isLoyaltyTrident(::Actor const& owner);
 
-    MCAPI static ::Vec2 dampenShooterAngle(::Vec2 const& angle, float angleOffset, ::BaseGameVersion const& currVer);
+    MCAPI static ::Vec2 dampenShooterAngle(::Vec2 const& angle, float angleOffset, ::BaseGameVersion const& version);
     // NOLINTEND
 
 public:

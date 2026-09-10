@@ -14,7 +14,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Bedrock::Threading::AssignedThread&> mTarget;
-    ::ll::TypedStorage<4, 4, ::std::thread::id>                     mPreviousId;
     // NOLINTEND
 
 public:

@@ -27,6 +27,8 @@ public:
     ::ll::TypedStorage<4, 4, float>                                   mCurrentPosition;
     ::ll::TypedStorage<4, 4, float>                                   mLastPosition;
     ::ll::TypedStorage<4, 4, float>                                   mCurrentVelocity;
+    ::ll::TypedStorage<4, 4, float>                                   mMeasuredVelocity;
+    ::ll::TypedStorage<4, 4, float>                                   mLastSampledPosition;
     ::ll::TypedStorage<4, 4, float>                                   mForces;
     ::ll::TypedStorage<4, 4, float>                                   mMinRange;
     ::ll::TypedStorage<4, 4, float>                                   mMaxRange;

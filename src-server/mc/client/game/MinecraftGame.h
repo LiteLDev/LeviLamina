@@ -7,7 +7,6 @@ public:
     // MinecraftGame inner types declare
     // clang-format off
     struct InitContext;
-    struct TestCommandPublisher;
     struct FrameGapImpl;
     // clang-format on
 
@@ -21,8 +20,6 @@ public:
     enum class WorkList : uint64 {};
 
     struct InitContext {};
-
-    struct TestCommandPublisher {};
 
     struct FrameGapImpl {};
 };

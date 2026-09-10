@@ -106,7 +106,6 @@ namespace mce::framebuilder { struct RenderUITextDescription; }
 namespace mce::framebuilder { struct RenderVolumetricFogDescription; }
 namespace mce::framebuilder { struct RenderWeatherDescription; }
 namespace mce::framebuilder { struct ShadowAtlasFrameDescription; }
-namespace mce::framebuilder { struct ShadowProbeDescription; }
 namespace mce::framebuilder { struct SkyAmbientSamplesDescription; }
 namespace mce::framebuilder { struct VoxelVolumeDescription; }
 namespace mce::framebuilder::bgfxbridge { struct EntityCreationContext; }
@@ -156,6 +155,8 @@ public:
     virtual bool enabled() const = 0;
 
     virtual ::std::optional<::dragon::platform::Statistics> getStatistics() = 0;
+
+    virtual ::std::optional<::dragon::platform::Statistics> getPreviousFrameStatistics() const = 0;
 
     virtual double getAverageGPUTime() const = 0;
 
@@ -334,8 +335,6 @@ public:
 
     virtual bool isRayTracingEnabled() const = 0;
 
-    virtual bool isDeferredCapable() const = 0;
-
     virtual bool isDeferredEnabled() const = 0;
 
     virtual bool isVSyncEnabled_DEPRECATED() const = 0;
@@ -422,7 +421,6 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::LightDirectionalDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::gamecomponents::GameplayMetadata const>,
             ::std::reference_wrapper<::mce::framebuilder::LightPointDescription const>,
-            ::std::reference_wrapper<::mce::framebuilder::ShadowProbeDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::ShadowAtlasFrameDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::gamecomponents::ServerGraphicsOverrideParameters const>,
             ::std::reference_wrapper<::mce::framebuilder::VoxelVolumeDescription const>> description

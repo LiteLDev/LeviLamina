@@ -38,14 +38,19 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::DiggerItemComponent::BlockInfo>> mDestroySpeeds;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DiggerItemComponent();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
+#endif
     // NOLINTEND
 
 public:
@@ -61,12 +66,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent component);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#endif
     // NOLINTEND
 };

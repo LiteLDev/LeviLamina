@@ -108,7 +108,15 @@ public:
 
     MCAPI void endLevel(::Level& level);
 
+#ifdef LL_PLAT_C
+    MCAPI void recordCacheCheck(::LevelChunk const& lc);
+#endif
+
     MCAPI void recordChunkDeleted(::LevelChunk const& lc);
+
+#ifdef LL_PLAT_C
+    MCAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
+#endif
 
     MCAPI void startLevel(::Level const& level);
 

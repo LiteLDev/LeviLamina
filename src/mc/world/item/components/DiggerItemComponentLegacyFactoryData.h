@@ -20,10 +20,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockTypeInfo>>     mDestroySpeeds;
     ::ll::TypedStorage<8, 88, ::SharedTypes::Legacy::DefinitionTrigger> mOnDigDefault;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

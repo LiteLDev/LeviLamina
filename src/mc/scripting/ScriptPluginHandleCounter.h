@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScriptPlugin;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ObjectHandle; }
 // clang-format on
@@ -75,7 +76,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptPluginHandleCounter(::ScriptPlugin& plugin);
+
     MCNAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptPlugin& plugin);
     // NOLINTEND
 
 public:

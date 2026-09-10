@@ -30,11 +30,12 @@ LL_TYPE_INSTANCE_HOOK(
     HookPriority::High,
     DedicatedServer,
     &DedicatedServer::runDedicatedServerLoop,
-    ::DedicatedServer::ServerExitCode,
+    ServerExitCode,
     ::Core::FilePathManager&                                     filePathManager,
     ::PropertiesSettings const&                                  properties,
     ::LevelSettings&                                             settings,
     ::AllowListFile&                                             userAllowList,
+    ::EditorAllowList&                                           userEditorAllowList,
     ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
     ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
     ::Bedrock::ActivationArguments const&                        args,
@@ -47,6 +48,7 @@ LL_TYPE_INSTANCE_HOOK(
         properties,
         settings,
         userAllowList,
+        userEditorAllowList,
         permissionsFile,
         std::move(packetGroupBuilder),
         args,
@@ -213,10 +215,6 @@ LL_TYPE_INSTANCE_HOOK(
     serverInstance = this;
     return res;
 }
-LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstance, &ServerInstance::$dtor, void) {
-    serverInstance = nullptr;
-    origin();
-}
 
 optional_ref<Minecraft> getMinecraft(bool) { return minecraft.load(); }
 
@@ -252,8 +250,7 @@ using HookReg = memory::HookRegistrar<
     ResourcePackRepositoryDestructor,
     CommandRegistryConstructor,
     CommandRegistryDestructor,
-    ServerInstanceConstructor,
-    ServerInstanceDestructor>;
+    ServerInstanceConstructor>;
 
 static HookReg hookRegister;
 

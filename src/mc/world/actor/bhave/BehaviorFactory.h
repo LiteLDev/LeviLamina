@@ -44,5 +44,7 @@ public:
         ::std::function<::std::unique_ptr<::BehaviorDefinition>()> definitionCreator,
         ::std::function<::std::unique_ptr<::BehaviorNode>()>       nodeCreator
     );
+
+    MCAPI ::std::unique_ptr<::BehaviorDefinition> tryGetDefinition(::std::string const& id) const;
     // NOLINTEND
 };

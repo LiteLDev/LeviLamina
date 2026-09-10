@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/editor/BrushElevationMode.h"
 #include "mc/common/editor/DirectionalPlacementMode.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -18,11 +19,11 @@
 class HashedString;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::BlockMask { class BlockMaskList; }
 namespace Editor::Network { class NativeBrushBlockChangeListPayload; }
 namespace Editor::Network { class NativeBrushClientResponsePayload; }
 namespace Editor::Network { class NativeBrushPaintEventPayload; }
+namespace Editor::Transactions { class PendingTransaction; }
 // clang-format on
 
 namespace Editor::Brush {
@@ -33,24 +34,25 @@ class BrushShapeManagerService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6af011;
-    ::ll::UntypedStorage<8, 88> mUnka4cddc;
-    ::ll::UntypedStorage<8, 64> mUnk51d4db;
-    ::ll::UntypedStorage<4, 12> mUnk37d1f3;
-    ::ll::UntypedStorage<4, 4>  mUnkc4a1dd;
-    ::ll::UntypedStorage<4, 4>  mUnkbbaf84;
-    ::ll::UntypedStorage<4, 4>  mUnka573ba;
-    ::ll::UntypedStorage<1, 1>  mUnke46fbe;
-    ::ll::UntypedStorage<4, 4>  mUnk84cce9;
-    ::ll::UntypedStorage<4, 4>  mUnk13e9dc;
-    ::ll::UntypedStorage<4, 4>  mUnk467727;
-    ::ll::UntypedStorage<4, 4>  mUnkae7855;
-    ::ll::UntypedStorage<1, 1>  mUnk97eafd;
-    ::ll::UntypedStorage<4, 4>  mUnkca6267;
-    ::ll::UntypedStorage<1, 1>  mUnk205ad5;
-    ::ll::UntypedStorage<8, 48> mUnke94b7f;
-    ::ll::UntypedStorage<8, 24> mUnkd11831;
-    ::ll::UntypedStorage<1, 1>  mUnk718da0;
+    ::ll::UntypedStorage<8, 8>   mUnk6af011;
+    ::ll::UntypedStorage<8, 112> mUnka4cddc;
+    ::ll::UntypedStorage<8, 64>  mUnk51d4db;
+    ::ll::UntypedStorage<4, 12>  mUnk37d1f3;
+    ::ll::UntypedStorage<4, 4>   mUnkc4a1dd;
+    ::ll::UntypedStorage<4, 4>   mUnkbbaf84;
+    ::ll::UntypedStorage<4, 4>   mUnka573ba;
+    ::ll::UntypedStorage<1, 1>   mUnke46fbe;
+    ::ll::UntypedStorage<4, 4>   mUnk84cce9;
+    ::ll::UntypedStorage<4, 4>   mUnk13e9dc;
+    ::ll::UntypedStorage<4, 4>   mUnk467727;
+    ::ll::UntypedStorage<4, 4>   mUnkae7855;
+    ::ll::UntypedStorage<1, 1>   mUnk97eafd;
+    ::ll::UntypedStorage<4, 4>   mUnkca6267;
+    ::ll::UntypedStorage<1, 1>   mUnk205ad5;
+    ::ll::UntypedStorage<8, 48>  mUnke94b7f;
+    ::ll::UntypedStorage<8, 24>  mUnkd11831;
+    ::ll::UntypedStorage<1, 1>   mUnk718da0;
+    ::ll::UntypedStorage<8, 16>  mUnk81d1e0;
     // NOLINTEND
 
 public:
@@ -140,24 +142,18 @@ public:
     virtual void clearBlockStateOverrides() /*override*/;
 
     virtual void setBlockFacePlacementBasedOnCamera(bool const enable) /*override*/;
+
+    virtual void setPendingTransaction(::WeakRef<::Editor::Transactions::PendingTransaction> transaction) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BrushShapeManagerService(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI void _handleBlockChangePayload(::Editor::Network::NativeBrushBlockChangeListPayload const& payload);
 
     MCNAPI void _handleClientResponsePayload(::Editor::Network::NativeBrushClientResponsePayload const& payload);
 
     MCNAPI void _handlePaintEventPayload(::Editor::Network::NativeBrushPaintEventPayload const& payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -238,15 +234,9 @@ public:
 
     MCNAPI void $setBlockFacePlacementBasedOnCamera(bool const enable);
 
+    MCNAPI void $setPendingTransaction(::WeakRef<::Editor::Transactions::PendingTransaction> transaction);
 
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorService();
-
-    MCNAPI static void** $vftableForBrushShapeManagerServiceProvider();
     // NOLINTEND
 };
 

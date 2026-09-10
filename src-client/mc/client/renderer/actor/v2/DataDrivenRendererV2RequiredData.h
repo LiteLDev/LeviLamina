@@ -4,17 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/actor/v2/DataDrivenV2ResetPoint.h"
+#include "mc/client/renderer/actor/v2/ddrv2/PoolHandle.h"
 #include "mc/deps/core/string/HashedString.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorRenderer;
 class DataDrivenRenderer;
+class DataDrivenRendererRegistry;
 class GameVersion;
 class MinecraftGameplayGraphicsResources;
 struct DataDrivenRendererContinuousData;
+struct DataDrivenRendererPool;
 struct DataDrivenRendererPreprocessingContext;
-struct ProcessedDataDrivenRenderers;
 // clang-format on
 
 class DataDrivenRendererV2RequiredData {
@@ -38,13 +40,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProcessedDataDrivenRenderers>>     mProcessedData;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererRegistry>>       mProcessedData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererContinuousData>> mContinuousData;
     ::ll::TypedStorage<1, 1, bool>                                                  mEnabled;
-    ::ll::TypedStorage<1, 1, bool>                       mActorsWithAttachablesEnabledAndPlayers;
-    ::ll::TypedStorage<4, 4, uint>                       mDisabledRenderersBeforeRebuild;
-    ::ll::TypedStorage<4, 4, uint>                       mCurrentDisabledRendererCount;
-    ::ll::TypedStorage<8, 208, ::DataDrivenV2ResetPoint> mResetPoint;
+    ::ll::TypedStorage<1, 1, bool>                                          mActorsWithAttachablesEnabledAndPlayers;
+    ::ll::TypedStorage<8, 8, ::ddrv2::PoolHandle<::DataDrivenRendererPool>> mBaseDataDrivenPool;
+    ::ll::TypedStorage<4, 4, uint>                                          mDisabledRenderersBeforeRebuild;
+    ::ll::TypedStorage<4, 4, uint>                                          mCurrentDisabledRendererCount;
+    ::ll::TypedStorage<8, 208, ::DataDrivenV2ResetPoint>                    mResetPoint;
     ::ll::TypedStorage<8, 24, ::std::vector<::DataDrivenRendererV2RequiredData::LateRenderer>> mLateRenderers;
     // NOLINTEND
 

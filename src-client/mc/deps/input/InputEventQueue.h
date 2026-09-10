@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/input/InputEvent.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/ButtonState.h"
 #include "mc/deps/input/enums/DirectionId.h"
 #include "mc/deps/input/enums/FocusImpact.h"
@@ -35,6 +36,8 @@ public:
 
     MCAPI void enqueueClearPointerLocations();
 
+    MCAPI void enqueueCustomZone(int id, short x, short y);
+
     MCAPI void enqueueDirection(
         ::DirectionId directionId,
         float         x,
@@ -42,6 +45,15 @@ public:
         ::FocusImpact focusImpact,
         int           controllerId,
         bool          inputClearingEvent
+    );
+
+    MCAPI void enqueuePointerLocation(
+        ::InputMode   inputMode,
+        short         x,
+        short         y,
+        ::FocusImpact focusImpact,
+        bool          forceMotionlessPointer,
+        int           controllerId
     );
 
     MCAPI void enqueuePointerLocationWithId(int id, short x, short y, bool updateActionPointer);

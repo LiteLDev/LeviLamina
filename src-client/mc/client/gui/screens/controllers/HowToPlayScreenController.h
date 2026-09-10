@@ -71,7 +71,7 @@ public:
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI bool $bind(
+    MCFOLD bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,

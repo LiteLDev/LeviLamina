@@ -20,7 +20,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk8f99b8;
     ::ll::UntypedStorage<4, 4>  mUnk17a18c;
     ::ll::UntypedStorage<4, 4>  mUnk94a95c;
-    ::ll::UntypedStorage<4, 4>  mUnk389b80;
+    ::ll::UntypedStorage<8, 24> mUnk232a13;
     ::ll::UntypedStorage<4, 12> mUnk2f36fd;
     ::ll::UntypedStorage<4, 12> mUnk6d3b66;
     ::ll::UntypedStorage<1, 1>  mUnk400991;
@@ -28,7 +28,6 @@ public:
 
 public:
     // prevent constructor by default
-    MeshInfoSyncPayload& operator=(MeshInfoSyncPayload const&);
     MeshInfoSyncPayload();
 
 public:
@@ -41,6 +40,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI MeshInfoSyncPayload(::Editor::Network::MeshInfoSyncPayload const&);
+
+    MCNAPI ::Editor::Network::MeshInfoSyncPayload& operator=(::Editor::Network::MeshInfoSyncPayload const&);
     // NOLINTEND
 
 public:

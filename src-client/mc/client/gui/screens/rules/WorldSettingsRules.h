@@ -62,8 +62,6 @@ public:
 
     MCAPI bool isPlatformBroadcastFriendsOfFriendsOptionSupported() const;
 
-    MCAPI bool isUsingSwitchAdHocMode() const;
-
     MCAPI ~WorldSettingsRules();
     // NOLINTEND
 

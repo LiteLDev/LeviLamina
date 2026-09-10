@@ -1,10 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/modules/minecraft/Listener.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
-#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/world/events/BlockEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -25,34 +24,17 @@ struct PressurePlatePopEvent;
 struct PressurePlatePushEvent;
 struct TargetBlockHitEvent;
 struct TripWireTripEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptBlockBreakingEventListener; }
+namespace ScriptModuleMinecraft::ScriptGlobalEventListenerUtils { struct Listener; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockGlobalEventListener : public ::EventListenerDispatcher<::BlockEventListener> {
 public:
-    // ScriptBlockGlobalEventListener inner types declare
-    // clang-format off
-    struct Listener;
-    // clang-format on
-
-    // ScriptBlockGlobalEventListener inner types define
-    struct Listener {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-            mScriptEventsHandle;
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener::Listener>>
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptGlobalEventListenerUtils::Listener>>
         mListeners;
     ::ll::TypedStorage<
         8,

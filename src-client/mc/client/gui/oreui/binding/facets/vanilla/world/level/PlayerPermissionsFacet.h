@@ -115,7 +115,7 @@ public:
 
     MCAPI bool getOperatorCommandsRevokedFlag() const;
 
-    MCFOLD bool getPlayerIdInvalidFlag() const;
+    MCAPI bool getPlayerIdInvalidFlag() const;
 
     MCFOLD ::std::vector<::OreUI::PlayerAbilityBindings> const& getPlayerPermissionList() const;
 

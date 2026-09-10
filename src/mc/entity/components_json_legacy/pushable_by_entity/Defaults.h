@@ -12,7 +12,9 @@ namespace PushableByEntity::Defaults {
 // NOLINTBEGIN
 MCAPI ::PushablePreset const& BOAT_PRESET();
 
-MCAPI ::PushablePreset const& DEFAULT_PRESET();
+MCAPI ::PushablePreset const& DEFAULT_PRESET_WITHOUT_OVERLAP_CHECK();
+
+MCAPI ::PushablePreset const& DEFAULT_PRESET_WITH_OVERLAP_CHECK();
 
 MCAPI ::PushablePreset const& MINECART_PRESET();
 // NOLINTEND

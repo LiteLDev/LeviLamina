@@ -97,6 +97,8 @@ public:
     MCAPI explicit SelectionWheelComponent(::UIControl& owner);
 
     MCAPI void _updateControlVisibility();
+
+    MCAPI void addStateControl(::std::shared_ptr<::UIControl> control);
     // NOLINTEND
 
 public:
@@ -126,5 +128,11 @@ public:
     MCAPI void $onVisibilityChanged(bool visible);
 
     MCAPI void $onEnabledChanged(bool enabled);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

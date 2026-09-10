@@ -16,7 +16,6 @@ class Actor;
 class Mob;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -39,22 +38,6 @@ public:
         ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mAttackingEntity;
         ::ll::TypedStorage<1, 1, bool const>             mHadEffect;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        IntermediateStorage();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI IntermediateStorage(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
-        // NOLINTEND
     };
 
     using EventConnectorsType =
@@ -75,37 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentHitEntityEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentHitEntityEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                        scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                        scope
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

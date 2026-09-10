@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/entity/components/MovementPackets.h"
 
@@ -11,6 +12,7 @@
 class InventoryPacketHandler;
 class PlayerAuthInputPacket;
 struct IPlayerTickPolicy;
+struct PlayerAuthInputPacketPayload;
 // clang-format on
 
 struct ServerPlayerMovementComponent {
@@ -42,6 +44,8 @@ public:
     MCAPI bool addInventoryTransactionPacket(::InventoryPacketHandler packet);
 
     MCAPI bool addPlayerAuthInputPacket(::PlayerAuthInputPacket&& packet);
+
+    MCAPI bool addPlayerAuthInputPacket(::PlayerAuthInputPacketPayload&& payload, ::SubClientId senderSubId);
 
     MCAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
     // NOLINTEND

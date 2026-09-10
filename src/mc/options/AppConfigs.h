@@ -122,6 +122,8 @@ public:
 
     virtual void setEduDedicatedServerRefreshAfterSeconds(::std::chrono::seconds);
 
+    virtual ::std::vector<::std::string> getExcludedCatalogueTags() const;
+
     virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
 
     virtual ::std::unique_ptr<::IScreenCapabilities> getScreenCapabilities(::std::string const& screenName) const;
@@ -129,6 +131,8 @@ public:
     virtual ::std::unique_ptr<::IContentAccessibilityProvider> createContentAccessibility() const;
 
     virtual ::std::string getFeedbackURL() const;
+
+    virtual ::std::string getSettingsFeedbackURL() const;
 
     virtual ::std::string getHelpCenterURL() const;
 
@@ -220,6 +224,8 @@ public:
 
     MCFOLD void $setEduDedicatedServerRefreshAfterSeconds(::std::chrono::seconds);
 
+    MCFOLD ::std::vector<::std::string> $getExcludedCatalogueTags() const;
+
     MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
 
     MCAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
@@ -227,6 +233,8 @@ public:
     MCAPI ::std::unique_ptr<::IContentAccessibilityProvider> $createContentAccessibility() const;
 
     MCAPI ::std::string $getFeedbackURL() const;
+
+    MCAPI ::std::string $getSettingsFeedbackURL() const;
 
     MCAPI ::std::string $getHelpCenterURL() const;
 

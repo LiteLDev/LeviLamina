@@ -24,16 +24,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataTracker& operator=(DataTracker const&);
-    DataTracker(DataTracker const&);
-    DataTracker();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::OreUI::DataTracker& operator=(::OreUI::DataTracker&&);
-
     MCAPI ~DataTracker();
     // NOLINTEND
 

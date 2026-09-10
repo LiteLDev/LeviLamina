@@ -112,7 +112,11 @@ public:
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
+#ifdef LL_PLAT_S
     MCAPI ::std::string $getName() const;
+#else // LL_PLAT_C
+    MCFOLD ::std::string $getName() const;
+#endif
 
     MCFOLD int $getMaxStackSize() const;
 

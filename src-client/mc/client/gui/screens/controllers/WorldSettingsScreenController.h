@@ -64,7 +64,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                       mRespawnRadiusString;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                   mWorldImagePath;
     ::ll::TypedStorage<8, 848, ::LevelSummary>                                     mEditedLevel;
-    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                mLevelData;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                mLevelData;
     ::ll::TypedStorage<8, 72, ::ExperimentStorage>                                 mOriginalExperiments;
     ::ll::TypedStorage<4, 4, ::EduCloud::WorldSyncState const>                     mEditedLevelSyncState;
     ::ll::TypedStorage<1, 1, bool>                                                 mEditedLevelDeleted;
@@ -86,7 +86,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                         mRefreshLevelData;
     ::ll::TypedStorage<1, 1, bool>                                                         mAttemptedToCreateNewWorld;
     ::ll::TypedStorage<1, 1, bool> mHackStatusVariableToTrackWorldCreationUntilWeFixInputBufferingOnUIStack;
-    ::ll::TypedStorage<8, 656, ::Realms::World>   mRealmWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World>   mRealmWorld;
     ::ll::TypedStorage<8, 24, ::std::vector<int>> mServerSimDistanceOptionValues;
     ::ll::TypedStorage<8, 24, ::std::vector<int>> mSleepPercentOptionValues;
     ::ll::TypedStorage<1, 1, bool>                mHasRealms;

@@ -11,36 +11,12 @@ class Palette {
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color const& BLACK();
-
-    MCNAPI static ::mce::Color const& BLUE();
-
-    MCNAPI static ::mce::Color const& BROWN();
-
-    MCNAPI static ::mce::Color const& CYAN();
-
-    MCNAPI static ::mce::Color const& GRAY();
-
-    MCNAPI static ::mce::Color const& GREEN();
-
-    MCNAPI static ::mce::Color const& LIGHT_BLUE();
-
-    MCNAPI static ::mce::Color const& LIGHT_GREEN();
-
+#ifdef LL_PLAT_C
     MCNAPI static ::mce::Color const& MAGENTA();
 
-    MCNAPI static ::mce::Color const& ORANGE();
-
-    MCNAPI static ::mce::Color const& PINK();
-
     MCNAPI static ::mce::Color const& PURPLE();
-
-    MCNAPI static ::mce::Color const& RED();
-
-    MCNAPI static ::mce::Color const& SILVER();
+#endif
 
     MCNAPI static ::mce::Color const& WHITE();
-
-    MCNAPI static ::mce::Color const& YELLOW();
     // NOLINTEND
 };

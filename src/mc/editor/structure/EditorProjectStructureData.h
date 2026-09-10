@@ -11,7 +11,7 @@ struct EditorProjectStructureData : public ::Editor::StructureData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 408> mUnkb3f16f;
+    ::ll::UntypedStorage<8, 432> mUnkb3f16f;
     // NOLINTEND
 
 public:

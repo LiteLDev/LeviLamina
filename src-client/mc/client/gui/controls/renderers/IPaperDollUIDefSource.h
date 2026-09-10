@@ -13,5 +13,7 @@ public:
     virtual float getAsFloat(::std::string_view key, float defaultValue) const = 0;
 
     virtual ::std::string getAsString(::std::string_view key, ::std::string_view defaultValue) const = 0;
+
+    virtual void markUnused(::std::string_view key) const = 0;
     // NOLINTEND
 };

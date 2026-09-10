@@ -137,6 +137,8 @@ public:
 
     MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
+    MCAPI void deinitialize();
+
     MCAPI ::std::string getTextBoxBackend() const;
 
     MCAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> textBoxController);

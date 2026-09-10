@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/events/OnlineSafetyDialogVisibility.h"
 #include "mc/client/gui/ProgressContentType.h"
-#include "mc/client/gui/screens/OnlineSafetyDialogVisibility.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/GameType.h"

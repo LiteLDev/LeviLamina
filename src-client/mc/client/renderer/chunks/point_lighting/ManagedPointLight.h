@@ -14,13 +14,13 @@ struct ManagedPointLight {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::mce::PointLightParameters> mLightParameters;
+    ::ll::TypedStorage<8, 48, ::mce::PointLightParameters> mLightParameters;
     ::ll::TypedStorage<
-        4,
-        12,
+        8,
+        208,
         ::std::variant<::PointLighting::BakedLightResources, ::PointLighting::AnalyticLightResources>>
-                                                                                         mResources;
-    ::ll::TypedStorage<4, 24, ::std::optional<::PointLighting::TransitioningLightState>> mTransitionState;
+                                                                                          mResources;
+    ::ll::TypedStorage<8, 224, ::std::optional<::PointLighting::TransitioningLightState>> mTransitionState;
     // NOLINTEND
 };
 

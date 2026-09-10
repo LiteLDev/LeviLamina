@@ -50,7 +50,7 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnk7c6ff6;
         ::ll::UntypedStorage<8, 8>  mUnkbb3d45;
         ::ll::UntypedStorage<8, 8>  mUnkec036e;
-        ::ll::UntypedStorage<8, 8>  mUnkdc8fb1;
+        ::ll::UntypedStorage<8, 8>  mUnk10cf6b;
         ::ll::UntypedStorage<4, 4>  mUnk2ffc16;
         ::ll::UntypedStorage<4, 4>  mUnk6aca64;
         ::ll::UntypedStorage<8, 8>  mUnk9574e8;
@@ -90,8 +90,9 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>   mUnk63a19e;
+        ::ll::UntypedStorage<8, 8>   mUnke87c76;
         ::ll::UntypedStorage<8, 8>   mUnkc09c5e;
-        ::ll::UntypedStorage<8, 416> mUnk130965;
+        ::ll::UntypedStorage<8, 384> mUnk130965;
         ::ll::UntypedStorage<8, 128> mUnk757f1a;
         // NOLINTEND
 
@@ -100,22 +101,6 @@ public:
         ServerNetworkHandlerFactoryArguments& operator=(ServerNetworkHandlerFactoryArguments const&);
         ServerNetworkHandlerFactoryArguments(ServerNetworkHandlerFactoryArguments const&);
         ServerNetworkHandlerFactoryArguments();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~ServerNetworkHandlerFactoryArguments();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -136,7 +121,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk979579;
     ::ll::UntypedStorage<1, 1>  mUnk8f0ef7;
     ::ll::UntypedStorage<8, 16> mUnk4389b9;
-    ::ll::UntypedStorage<8, 16> mUnka187cd;
+    ::ll::UntypedStorage<8, 16> mUnka93f16;
     ::ll::UntypedStorage<8, 64> mUnkd0ab0f;
     ::ll::UntypedStorage<8, 64> mUnkb71d0a;
     // NOLINTEND

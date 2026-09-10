@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::IRealmsMembers>> mRealmsMembers;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                            mTaskGroup;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, int64, ::std::string, ::std::vector<::std::string>>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int64, ::std::string, ::std::vector<::std::string>>>
         mAddRealmMembers;
     // NOLINTEND
 

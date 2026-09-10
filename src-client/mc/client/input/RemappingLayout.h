@@ -37,10 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RemappingLayout(RemappingLayout const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RemappingLayout();
@@ -76,8 +72,6 @@ public:
     MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
     MCAPI ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
-
-    MCAPI ::RemappingLayout& operator=(::RemappingLayout const& other);
 
     MCAPI void setMapping(::std::string const& action, ::std::vector<int> const& keys);
 

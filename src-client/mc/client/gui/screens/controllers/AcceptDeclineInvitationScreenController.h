@@ -20,9 +20,10 @@ public:
         WaitingForAcceptDeclineModalResult  = 1,
         CheckPlatformMultiplayerRestriction = 2,
         WaitingForPlatformUpsellResult      = 3,
-        SendResult                          = 4,
-        Exit                                = 5,
-        Complete                            = 6,
+        WaitingForPlatformRestrictionResult = 4,
+        SendResult                          = 5,
+        Exit                                = 6,
+        Complete                            = 7,
     };
 
 public:

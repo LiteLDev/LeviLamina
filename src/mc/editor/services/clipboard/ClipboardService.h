@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ClipboardServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -20,6 +21,7 @@ namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Services { class ClipboardItem; }
 namespace Editor::Services { struct ClipboardWriteOptions; }
+namespace Editor::Transactions { class PendingTransaction; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -78,9 +80,10 @@ public:
     ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<bool> writeToWorld(
-        ::mce::UUID const&                               itemId,
-        ::BlockPos const&                                position,
-        ::Editor::Services::ClipboardWriteOptions const* options
+        ::mce::UUID const&                                    itemId,
+        ::BlockPos const&                                     position,
+        ::Editor::Services::ClipboardWriteOptions const*      options,
+        ::WeakRef<::Editor::Transactions::PendingTransaction> pendingTransaction
     ) const /*override*/;
 
     virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(
@@ -159,9 +162,10 @@ public:
     $readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure);
 
     MCNAPI ::Scripting::Result_deprecated<bool> $writeToWorld(
-        ::mce::UUID const&                               itemId,
-        ::BlockPos const&                                position,
-        ::Editor::Services::ClipboardWriteOptions const* options
+        ::mce::UUID const&                                    itemId,
+        ::BlockPos const&                                     position,
+        ::Editor::Services::ClipboardWriteOptions const*      options,
+        ::WeakRef<::Editor::Transactions::PendingTransaction> pendingTransaction
     ) const;
 
     MCNAPI ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> $getPredictedWriteVolume(

@@ -58,6 +58,7 @@ struct BlockRandomTickingComponent;
 struct BlockRedstoneComponent;
 struct BlockRedstoneProducerComponent;
 struct BlockSelectionBoxComponent;
+struct BlockSoundComponent;
 struct BlockSupportComponent;
 struct BlockVoxelShapesCullingComponent;
 // clang-format on

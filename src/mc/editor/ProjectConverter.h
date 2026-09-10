@@ -13,8 +13,8 @@
 class IContentKeyProvider;
 class ILevelListCache;
 class IResourcePackRepository;
+class Level;
 class Scheduler;
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor {
@@ -65,6 +65,11 @@ public:
         ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
         ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
     ) /*override*/;
+
+    virtual bool prepareEditorProjectForSaveSnapshot(
+        ::Level&                           level,
+        ::Core::PathBuffer<::std::string>& generatedLevelDataFile
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -75,20 +80,6 @@ public:
         ::Scheduler&                                                    scheduler,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void _fixupPackHistoryFile(
-        ::Core::PathBuffer<::std::string> const& filePath,
-        ::std::unordered_set<::mce::UUID> const& packsToRemove
-    );
-
-    MCNAPI static void _fixupPacksFile(
-        ::Core::PathBuffer<::std::string> const& filePath,
-        ::std::unordered_set<::mce::UUID> const& packsToRemove
     );
     // NOLINTEND
 
@@ -129,6 +120,9 @@ public:
         ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
         ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
     );
+
+    MCNAPI bool
+    $prepareEditorProjectForSaveSnapshot(::Level& level, ::Core::PathBuffer<::std::string>& generatedLevelDataFile);
 
 
     // NOLINTEND

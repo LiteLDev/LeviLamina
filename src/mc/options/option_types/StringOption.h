@@ -46,8 +46,6 @@ public:
     );
 
     MCAPI void set(::std::string const& value, bool saveOptionChange);
-
-    MCFOLD void setCoerceValueCallback(::std::function<::std::string(::std::string const&)> f);
 #endif
     // NOLINTEND
 

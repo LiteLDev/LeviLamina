@@ -20,7 +20,7 @@ void ClientStartJoinLevelEvent::serialize(CompoundTag& nbt) const {
     nbt["isPartyLeader"]            = isPartyLeader();
     nbt["isPartyDestination"]       = isPartyDestination();
     nbt["isServerTransfer"]         = isServerTransfer();
-    nbt["isReconnect"]              = isReconnect();
+    nbt["reconnectType"]            = magic_enum::enum_name(reconnectType());
 }
 
 bool               ClientStartJoinLevelEvent::isJoiningLocalServer() const { return mJoiningLocalServer; }
@@ -29,12 +29,12 @@ std::string const& ClientStartJoinLevelEvent::serverName() const { return mServe
 std::string const& ClientStartJoinLevelEvent::worldName() const { return mWorldName; }
 NetworkType        ClientStartJoinLevelEvent::networkTypeOverride() const { return mNetworkTypeOverride; }
 Social::MultiplayerServiceIdentifier ClientStartJoinLevelEvent::service() const { return mService; }
-PlayerJoinWorldContext const& ClientStartJoinLevelEvent::context() const { return mContext; }
-std::string const&            ClientStartJoinLevelEvent::partyId() const { return mContext.partyId; }
-bool                          ClientStartJoinLevelEvent::isPartyLeader() const { return mContext.isPartyLeader; }
+PlayerJoinWorldContext const&        ClientStartJoinLevelEvent::context() const { return mContext; }
+std::string const&                   ClientStartJoinLevelEvent::partyId() const { return mContext.partyId; }
+bool                                 ClientStartJoinLevelEvent::isPartyLeader() const { return mContext.isPartyLeader; }
 bool ClientStartJoinLevelEvent::isPartyDestination() const { return mContext.isPartyDestination; }
 bool ClientStartJoinLevelEvent::isServerTransfer() const { return mContext.isServerTransfer; }
-bool ClientStartJoinLevelEvent::isReconnect() const { return mContext.isReconnect; }
+Connection::ReconnectionType ClientStartJoinLevelEvent::reconnectType() const { return mContext.reconnectionType; }
 
 LL_TYPE_INSTANCE_HOOK(
     ClientStartJoinGameHook,

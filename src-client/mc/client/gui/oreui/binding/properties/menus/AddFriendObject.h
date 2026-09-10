@@ -18,6 +18,7 @@ public:
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsOnline;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsFollowingMe;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsFollowedByMe;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsFriend;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsFriendRequestReceived;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsFriendRequestSent;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mDescription;

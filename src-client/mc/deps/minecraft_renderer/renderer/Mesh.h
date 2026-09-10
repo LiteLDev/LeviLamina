@@ -46,7 +46,7 @@ public:
     ::ll::TypedStorage<1, 1, ::mce::PrimitiveMode>                                    mPrimitiveMode;
     ::ll::TypedStorage<1, 1, ::mce::MeshDebugString>                                  mDebugName;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::mce::BufferResourceService>>          mBufferResourceService;
-    ::ll::TypedStorage<8, 312, ::mce::MeshData>                                       mMeshData;
+    ::ll::TypedStorage<8, 336, ::mce::MeshData>                                       mMeshData;
     ::ll::TypedStorage<
         8,
         24,
@@ -78,6 +78,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Mesh(::mce::Mesh&& c);
+
     MCAPI Mesh(::mce::Mesh const& rhs);
 
     MCAPI Mesh(
@@ -160,6 +162,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::mce::Mesh&& c);
+
     MCAPI void* $ctor(::mce::Mesh const& rhs);
 
     MCAPI void* $ctor(

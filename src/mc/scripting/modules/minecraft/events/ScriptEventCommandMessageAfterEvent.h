@@ -11,7 +11,6 @@
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { struct ScriptEventCommandMessageAfterEventIntermediateData; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -39,61 +38,10 @@ public:
             mSourceBlock;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ScriptEventCommandMessageAfterEvent();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
-
-    MCAPI ScriptEventCommandMessageAfterEvent(
-        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const&
-                                        scriptCommandMessageEvent,
-        ::Scripting::WeakLifetimeScope& scope
-    );
-
-    MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
-
-    MCAPI ~ScriptEventCommandMessageAfterEvent();
-#endif
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEventIntermediateData> const&
-                                        scriptCommandMessageEvent,
-        ::Scripting::WeakLifetimeScope& scope
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

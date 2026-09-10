@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_60 { struct ItemMenuCategory; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_110 {
@@ -24,6 +25,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
     MCAPI static void
     upgrade(::SharedTypes::v1_21_60::ItemMenuCategory& oldData, ::SharedTypes::v1_21_110::ItemMenuCategory& newData);
     // NOLINTEND

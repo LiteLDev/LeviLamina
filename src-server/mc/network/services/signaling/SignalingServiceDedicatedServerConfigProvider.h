@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { struct Url; }
+struct SignalingClientConfiguration;
 namespace Bedrock::Services { class AuthHelper; }
 namespace Bedrock::Services { class DiscoveryHelper; }
 // clang-format on
@@ -35,7 +35,8 @@ public:
     // NOLINTBEGIN
     virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const& id) /*override*/;
+    virtual ::Bedrock::Threading::Async<::SignalingClientConfiguration>
+    getConfiguration(::std::string const& id) /*override*/;
 
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() /*override*/;
 
@@ -65,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getUrl(::std::string const& id);
+    MCNAPI ::Bedrock::Threading::Async<::SignalingClientConfiguration> $getConfiguration(::std::string const& id);
 
     MCNAPI ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> $getAuthToken();
 

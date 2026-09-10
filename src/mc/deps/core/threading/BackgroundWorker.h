@@ -77,26 +77,18 @@ public:
         ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
         ::Bedrock::Threading::OSThreadPriority const& priority,
-        ::std::optional<uint64>                       coreAffinity,
-        ::std::optional<int>                          idealCore,
+        ::std::optional<uint64> const                 coreAffinity,
+        ::std::optional<int> const                    idealCore,
         ::WorkerPool&                                 workerPool
     );
 
-#ifdef LL_PLAT_C
     MCNAPI bool _processNextTask(::RunTaskOptions const& options);
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI bool _processNextTask(::RunTaskOptions const& options);
-#endif
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
     MCNAPI void requestStop(bool wait);
 
     MCNAPI void start();
-
-    MCNAPI void wake();
     // NOLINTEND
 
 public:
@@ -113,8 +105,8 @@ public:
         ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
         ::Bedrock::Threading::OSThreadPriority const& priority,
-        ::std::optional<uint64>                       coreAffinity,
-        ::std::optional<int>                          idealCore,
+        ::std::optional<uint64> const                 coreAffinity,
+        ::std::optional<int> const                    idealCore,
         ::WorkerPool&                                 workerPool
     );
     // NOLINTEND
@@ -127,11 +119,5 @@ public:
     MCNAPI bool $canTaskRunAgain() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

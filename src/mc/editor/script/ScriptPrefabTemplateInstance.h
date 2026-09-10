@@ -16,7 +16,6 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
 namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -62,12 +61,6 @@ public:
     _getInstanceRotation() const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance> _getPosition() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

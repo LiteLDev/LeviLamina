@@ -33,6 +33,32 @@ namespace mce { class TexturePtr; }
 
 class ItemRenderer : public ::ActorRenderer {
 public:
+    // ItemRenderer inner types declare
+    // clang-format off
+    struct GuiItemPopTransform;
+    struct GuiBlockDefaultTransform;
+    // clang-format on
+
+    // ItemRenderer inner types define
+    struct GuiItemPopTransform {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkcd7850;
+        ::ll::UntypedStorage<4, 4>  mUnkf1067b;
+        ::ll::UntypedStorage<4, 4>  mUnk5e0da4;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        GuiItemPopTransform& operator=(GuiItemPopTransform const&);
+        GuiItemPopTransform(GuiItemPopTransform const&);
+        GuiItemPopTransform();
+    };
+
+    struct GuiBlockDefaultTransform {};
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTessellator>>        mBlockTessellator;
@@ -106,8 +132,7 @@ public:
         float                     lightMultiplier,
         float                     alphaMultiplier,
         float                     scale,
-        float const               pickupPopPercentage,
-        float const               squeezeAmount
+        float const               pickupPopPercentage
     );
 
     MCAPI void _renderGuiDataDrivenBlockItem(

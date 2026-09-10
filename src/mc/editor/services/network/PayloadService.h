@@ -13,6 +13,7 @@
 class Actor;
 class EditorNetworkPacket;
 class PacketSender;
+class ScriptStat;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
@@ -116,6 +117,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk5c8add;
     ::ll::UntypedStorage<1, 1>  mUnk89f9cd;
     ::ll::UntypedStorage<1, 1>  mUnkb98162;
+    ::ll::UntypedStorage<8, 8>  mUnk240e66;
     // NOLINTEND
 
 public:
@@ -200,6 +202,8 @@ public:
         bool                                 isClientSide,
         bool                                 collectMetrics
     );
+
+    MCNAPI ::std::optional<::ScriptStat> _collectScriptStats(uint64, uint64, uint64);
 
     MCNAPI ::Scripting::Result_deprecated<::EditorNetworkPacket> _populatePacket(
         ::Editor::Network::INetworkPayload*                 payload,

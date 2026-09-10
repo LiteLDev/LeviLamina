@@ -27,6 +27,7 @@ class PrivateKeyManager;
 class Scheduler;
 class SignalingService;
 class SignalingServiceSignInJob;
+class TrustStore;
 struct ClientNetworkSystemOptions;
 struct NetworkSystemToggles;
 struct RawGameServerToken;
@@ -48,12 +49,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                    mTaskGroup;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SignalingService>>             mSignalingService;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserLoggingSub;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserConnectionQualitySub;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mDisableLanSignalingSub;
-    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::NetworkSummary>> mNetworkSummary;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                     mTaskGroup;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SignalingService>>              mSignalingService;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mUserLoggingSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mUserConnectionQualitySub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mDisableLanSignalingSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::NetworkSummary>>  mNetworkSummary;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::TrustStore>>> mServerTrustStore;
     // NOLINTEND
 
 #ifdef LL_PLAT_S

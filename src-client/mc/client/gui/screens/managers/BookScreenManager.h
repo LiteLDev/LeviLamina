@@ -79,6 +79,8 @@ public:
         ::std::string const& playerXUID
     ) const;
 
+    MCAPI int getLecternBookPage() const;
+
     MCAPI ::std::string getPickPhotoInventoryName(int index);
 
     MCAPI ::std::string getPickPhotoName(int index);
@@ -90,6 +92,8 @@ public:
     MCAPI ::std::string const& getXUID();
 
     MCAPI bool lecternHasBook() const;
+
+    MCAPI bool lecternIsValid() const;
 
     MCAPI void populatePickPics(::std::vector<::PageContent> const& pages);
 

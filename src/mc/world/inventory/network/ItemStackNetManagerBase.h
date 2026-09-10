@@ -102,7 +102,9 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStackNetManagerBase(::Player& player, bool isClientSide, bool isEnabled);
 
+#ifdef LL_PLAT_C
     MCAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
+#endif
 
     MCAPI void _pushScreen(::ContainerScreenContext screenContext);
 

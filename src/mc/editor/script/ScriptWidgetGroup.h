@@ -12,14 +12,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidget; }
-namespace Editor::ScriptModule { class ScriptWidgetGroupCreateOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetGroupErrorInvalidObject; }
-namespace Editor::ScriptModule { class ScriptWidgetService; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
 // clang-format on
@@ -75,15 +71,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ScriptWidgetGroup(
-        ::Editor::ServiceProviderCollection&                                           serviceProviders,
-        ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
-#endif
-
     MCNAPI void _forEachWidget(
         ::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn
     ) const;
@@ -115,19 +102,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                           serviceProviders,
-        ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
-#endif
     // NOLINTEND
 
 public:

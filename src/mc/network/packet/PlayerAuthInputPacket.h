@@ -3,161 +3,78 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/entity/components/PlayerBlockActions.h"
-#include "mc/input/ClientPlayMode.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/PlayerInputTick.h"
+#include "mc/network/packet/PlayerAuthInputPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class ItemStackRequestData;
 class ReadOnlyBinaryStream;
-struct PackedItemUseLegacyInventoryTransaction;
-struct PlayerActionComponent;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class PlayerAuthInputPacket : public ::Packet {
-public:
-    // PlayerAuthInputPacket inner types define
-    enum class InputData : int {
-        Ascend                                    = 0,
-        Descend                                   = 1,
-        NorthJumpDeprecated                       = 2,
-        JumpDown                                  = 3,
-        SprintDown                                = 4,
-        ChangeHeight                              = 5,
-        Jumping                                   = 6,
-        AutoJumpingInWater                        = 7,
-        Sneaking                                  = 8,
-        SneakDown                                 = 9,
-        Up                                        = 10,
-        Down                                      = 11,
-        Left                                      = 12,
-        Right                                     = 13,
-        UpLeft                                    = 14,
-        UpRight                                   = 15,
-        WantUp                                    = 16,
-        WantDown                                  = 17,
-        WantDownSlow                              = 18,
-        WantUpSlow                                = 19,
-        Sprinting                                 = 20,
-        AscendBlock                               = 21,
-        DescendBlock                              = 22,
-        SneakToggleDown                           = 23,
-        PersistSneak                              = 24,
-        StartSprinting                            = 25,
-        StopSprinting                             = 26,
-        StartSneaking                             = 27,
-        StopSneaking                              = 28,
-        StartSwimming                             = 29,
-        StopSwimming                              = 30,
-        StartJumping                              = 31,
-        StartGliding                              = 32,
-        StopGliding                               = 33,
-        PerformItemInteraction                    = 34,
-        PerformBlockActions                       = 35,
-        PerformItemStackRequest                   = 36,
-        HandledTeleport                           = 37,
-        Emoting                                   = 38,
-        MissedSwing                               = 39,
-        StartCrawling                             = 40,
-        StopCrawling                              = 41,
-        StartFlying                               = 42,
-        StopFlying                                = 43,
-        ClientAckServerData                       = 44,
-        IsInClientPredictedVehicle                = 45,
-        PaddlingLeft                              = 46,
-        PaddlingRight                             = 47,
-        BlockBreakingDelayEnabled                 = 48,
-        HorizontalCollision                       = 49,
-        VerticalCollision                         = 50,
-        DownLeft                                  = 51,
-        DownRight                                 = 52,
-        StartUsingItem                            = 53,
-        IsCameraRelativeMovementEnabledDeprecated = 54,
-        IsRotControlledByMoveDirectionDeprecated  = 55,
-        StartSpinAttack                           = 56,
-        StopSpinAttack                            = 57,
-        IsHotbarOnlyTouch                         = 58,
-        JumpReleasedRaw                           = 59,
-        JumpPressedRaw                            = 60,
-        JumpCurrentRaw                            = 61,
-        SneakReleasedRaw                          = 62,
-        SneakPressedRaw                           = 63,
-        SneakCurrentRaw                           = 64,
-        InputNum                                  = 65,
-    };
-
+class PlayerAuthInputPacket : public ::ll::PayloadPacket<::PlayerAuthInputPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRot;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPos;
-    ::ll::TypedStorage<4, 4, float>                                                        mYHeadRot;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPosDelta;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mVehicleRot;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mAnalogMoveVector;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mMove;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mInteractRotation;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mCameraOrientation;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRawMoveVector;
-    ::ll::TypedStorage<8, 16, ::std::bitset<65>>                                           mInputData;
-    ::ll::TypedStorage<4, 4, ::InputMode>                                                  mInputMode;
-    ::ll::TypedStorage<4, 4, ::ClientPlayMode>                                             mPlayMode;
-    ::ll::TypedStorage<4, 4, ::NewInteractionModel>                                        mNewInteractionModel;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                                            mClientTick;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
-    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                              mClientPredictedVehicle;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
-    PlayerAuthInputPacket(PlayerAuthInputPacket const&);
-    PlayerAuthInputPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerAuthInputPacket() /*override*/;
-
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
 
     virtual bool isValid() const /*override*/;
 
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PlayerAuthInputPacket& operator=(::PlayerAuthInputPacket&& rhs);
-
-    MCAPI ::PlayerActionComponent readIntoComponent() const;
-
 #ifdef LL_PLAT_C
-    MCAPI void setFromComponent(::PlayerActionComponent& input);
+    MCAPI PlayerAuthInputPacket();
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
@@ -167,11 +84,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
 
     MCAPI bool $isValid() const;
 
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

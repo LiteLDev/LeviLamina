@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core_graphics/ImageDescription.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cg { class ImageBuffer; }
@@ -24,6 +27,7 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::cg::ImageBuffer>> mLoadedMipData;
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>>             mLoadedMipLevels;
         ::ll::TypedStorage<8, 8, uint64>                            mImageHash;
+        ::ll::TypedStorage<4, 20, ::cg::ImageDescription>           mSourceImageDescription;
         // NOLINTEND
 
     public:
@@ -66,6 +70,8 @@ public:
 
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() = 0;
+
+    virtual ::cg::ImageDescription getImageDescription(uchar mipLevel) const = 0;
     // NOLINTEND
 };
 

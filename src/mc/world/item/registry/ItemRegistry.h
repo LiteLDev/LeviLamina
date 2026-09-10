@@ -161,12 +161,6 @@ public:
     // NOLINTBEGIN
     MCAPI ItemRegistry();
 
-    MCAPI void _initServerData(
-        ::std::vector<::ItemRegistry::LoadedItemAsset> const& allItemAssets,
-        ::ItemParseContext&                                   parseContext,
-        ::IMinecraftEventing&                                 eventing
-    );
-
 #ifdef LL_PLAT_C
     MCAPI void _movePreRegistryToMainRegistry();
 
@@ -190,6 +184,14 @@ public:
 
     MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
 
+#ifdef LL_PLAT_C
+    MCAPI void buildClientRegistryFromServer(
+        ::std::vector<::ItemData> const& serverItemData,
+        ::Experiments const&             experiments,
+        ::BaseGameVersion const&         baseGameVersion
+    );
+#endif
+
     MCAPI void clearItemAndCreativeItemRegistry();
 
 #ifdef LL_PLAT_C
@@ -207,20 +209,6 @@ public:
 
     MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
-#ifdef LL_PLAT_C
-    MCAPI void initClient(
-        ::std::vector<::ItemData> const& serverItemData,
-        ::Experiments const&             experiments,
-        ::BaseGameVersion const&         baseGameVersion
-    );
-
-    MCAPI void initClientData(
-        ::ResourcePackManager& resourcePackManager,
-        ::Experiments const&   experiments,
-        ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
-    );
-#endif
-
     MCAPI bool isComplexAlias(::HashedString const& oldName) const;
 
     MCAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
@@ -232,6 +220,14 @@ public:
     MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
     MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void populateClientItemData(
+        ::ResourcePackManager& resourcePackManager,
+        ::Experiments const&   experiments,
+        ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
+    );
+#endif
 
     MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion);

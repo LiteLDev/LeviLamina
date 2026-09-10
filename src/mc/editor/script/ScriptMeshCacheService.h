@@ -13,7 +13,6 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct EnumBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -83,6 +82,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk545102;
     ::ll::UntypedStorage<8, 16>  mUnk2122b6;
     ::ll::UntypedStorage<8, 16>  mUnk847939;
+    ::ll::UntypedStorage<8, 16>  mUnke21971;
     // NOLINTEND
 
 public:
@@ -129,10 +129,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBinding bindMeshLoadError();
-
-    MCNAPI static ::Scripting::EnumBinding bindMeshPlacementError();
-
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 

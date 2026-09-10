@@ -19,6 +19,10 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkbd6d00;
     ::ll::UntypedStorage<4, 4>  mUnk68b3d2;
     ::ll::UntypedStorage<4, 4>  mUnkbff73d;
+    ::ll::UntypedStorage<8, 96> mUnk9a1f2c;
+    ::ll::UntypedStorage<8, 96> mUnk9ab5a0;
+    ::ll::UntypedStorage<8, 96> mUnk572fb5;
+    ::ll::UntypedStorage<8, 96> mUnk4c739b;
     // NOLINTEND
 
 public:
@@ -26,4 +30,20 @@ public:
     OnlineAudioStreamEnded& operator=(OnlineAudioStreamEnded const&);
     OnlineAudioStreamEnded(OnlineAudioStreamEnded const&);
     OnlineAudioStreamEnded();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ~OnlineAudioStreamEnded();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
 };

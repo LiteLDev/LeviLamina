@@ -46,17 +46,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const*>                mBlock;
-    ::ll::TypedStorage<4, 4, ::BlockShape>                  mBlockShape;
-    ::ll::TypedStorage<4, 4, float>                         mAmbientOcclusionExponent;
-    ::ll::TypedStorage<1, 1, bool>                          mFancy;
-    ::ll::TypedStorage<1, 1, bool>                          mAllowSame;
-    ::ll::TypedStorage<1, 1, ::BlockRenderLayer>            mRenderLayer;
-    ::ll::TypedStorage<1, 1, ::IsotropicFaceData>           mIsotropicFaceData;
-    ::ll::TypedStorage<8, 32, ::std::string>                mSoundType;
-    ::ll::TypedStorage<4, 24, ::AABB>                       mVisualShape;
-    ::ll::TypedStorage<8, 24, ::std::vector<::TextureItem>> mTextureItems;
-    ::ll::TypedStorage<8, 8, uint64>                        mIconTextureIndex;
+    ::ll::TypedStorage<8, 8, ::Block const*>                  mBlock;
+    ::ll::TypedStorage<4, 4, ::BlockShape>                    mBlockShape;
+    ::ll::TypedStorage<4, 4, float>                           mAmbientOcclusionExponent;
+    ::ll::TypedStorage<1, 1, bool>                            mFancy;
+    ::ll::TypedStorage<1, 1, bool>                            mAllowSame;
+    ::ll::TypedStorage<1, 1, ::BlockRenderLayer>              mRenderLayer;
+    ::ll::TypedStorage<1, 1, ::IsotropicFaceData>             mIsotropicFaceData;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mSoundType;
+    ::ll::TypedStorage<4, 24, ::AABB>                         mVisualShape;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TextureItem>>   mTextureItems;
+    ::ll::TypedStorage<8, 8, uint64>                          mIconTextureIndex;
     // NOLINTEND
 
 public:
@@ -94,8 +94,6 @@ public:
 
     MCAPI ::TextureUVCoordinateSet const& getTexture(::BlockPos const& p, uint64 textureSlot, int blockVariant) const;
 
-    MCAPI bool isFull() const;
-
     MCAPI bool isFullAndOpaque() const;
 
     MCAPI ::BlockGraphics& setCarriedTextureItem(
@@ -108,8 +106,6 @@ public:
     );
 
     MCAPI void setDefaultCarriedTextures();
-
-    MCAPI void setSoundType(::std::string type);
 
     MCAPI ::BlockGraphics& setTextureItem(
         ::std::string const& nameUp,
@@ -163,8 +159,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NORMAL_SOUND();
-
     MCAPI static ::std::unordered_map<::std::string, ::BlockGraphics*>& mBlockLookupMap();
 
     MCAPI static ::Bedrock::Threading::Mutex& mBlockModelAccess();

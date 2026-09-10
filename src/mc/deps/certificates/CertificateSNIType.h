@@ -15,20 +15,4 @@ public:
     CertificateSNIType& operator=(CertificateSNIType const&);
     CertificateSNIType(CertificateSNIType const&);
     CertificateSNIType();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ~CertificateSNIType();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };

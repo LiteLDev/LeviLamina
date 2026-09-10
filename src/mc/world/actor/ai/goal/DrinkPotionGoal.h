@@ -18,12 +18,12 @@ class DrinkPotionGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                                  mMob;
-    ::ll::TypedStorage<4, 4, float const>                             mWalkSpeedModifier;
-    ::ll::TypedStorage<8, 24, ::std::vector<::DrinkPotionData> const> mDrinkPotionData;
-    ::ll::TypedStorage<4, 4, int>                                     mThrottleCooldown;
-    ::ll::TypedStorage<8, 8, ::Tick>                                  mFinishUsingItemTick;
-    ::ll::TypedStorage<8, 80, ::AttributeModifier>                    mSpeedAttributeModifier;
+    ::ll::TypedStorage<8, 8, ::Mob&>                            mMob;
+    ::ll::TypedStorage<4, 4, float>                             mWalkSpeedModifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DrinkPotionData>> mDrinkPotionData;
+    ::ll::TypedStorage<4, 4, int>                               mThrottleCooldown;
+    ::ll::TypedStorage<8, 8, ::Tick>                            mFinishUsingItemTick;
+    ::ll::TypedStorage<8, 80, ::AttributeModifier>              mSpeedAttributeModifier;
     // NOLINTEND
 
 public:
@@ -49,21 +49,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DrinkPotionGoal(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& SPEED_MODIFIER_DRINKING_UUID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
     // NOLINTEND
 
 public:

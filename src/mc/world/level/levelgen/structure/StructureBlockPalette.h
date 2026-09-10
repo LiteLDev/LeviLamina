@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/levelgen/structure/StructureBlockPaletteLoadResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -60,7 +61,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -75,6 +76,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(::CompoundTag const& tag);
+
+    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionDataList(::CompoundTag const& tag);
+
+    MCAPI void _saveBlockPalette(::CompoundTag& tag) const;
+
+    MCAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
+
     MCAPI void addBlockPositionData(uint64 id, ::StructureBlockPalette::BlockPositionData blockPositionData);
 
     MCAPI ::Block const& getBlock(
@@ -84,6 +93,8 @@ public:
     ) const;
 
     MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
+
+    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
     MCAPI ::Block const*
     tryGetBlock(uint64 paletteId, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry) const;

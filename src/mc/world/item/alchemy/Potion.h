@@ -133,7 +133,7 @@ public:
     MCAPI static ::std::string getPotencyDescription(
         ::Potion::PotionType       potionType,
         float                      timeMod,
-        ::std::string_view         descID,
+        ::std::string_view const   descID,
         ::MobEffectInstance const& effect
     );
 

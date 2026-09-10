@@ -7,7 +7,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/threading/InstancedThreadLocal.h"
+#include "mc/platform/brstd/once_flag.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -24,7 +24,7 @@ public:
     // clang-format off
     struct ReplaceRulesAccelerator;
     struct SphereData;
-    struct Helper;
+    struct ScratchData;
     // clang-format on
 
     // OreFeature inner types define
@@ -46,31 +46,26 @@ public:
         // NOLINTEND
     };
 
-    struct Helper {
+    struct ScratchData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::OreFeature::ReplaceRulesAccelerator>    mRulesAccelerator;
         ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData>>  mAllSpheres;
         ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData*>> mSpheres;
         ::ll::TypedStorage<4, 4, uint>                                      mActiveSpheres;
-        ::ll::TypedStorage<1, 1, bool>                                      mInitialized;
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                           mCount;
-    ::ll::TypedStorage<4, 4, float>                         mCountf;
-    ::ll::TypedStorage<4, 4, float>                         mCountfInv;
-    ::ll::TypedStorage<4, 4, float>                         mDiscardChanceOnAirExposure;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ReplaceRule>> mReplaceRules;
-    ::ll::TypedStorage<
-        8,
-        168,
-        ::Bedrock::Threading::InstancedThreadLocal<::OreFeature::Helper, ::std::allocator<::OreFeature::Helper>>>
-        mHelper;
+    ::ll::TypedStorage<4, 4, int>                                    mCount;
+    ::ll::TypedStorage<4, 4, float>                                  mCountf;
+    ::ll::TypedStorage<4, 4, float>                                  mCountfInv;
+    ::ll::TypedStorage<4, 4, float>                                  mDiscardChanceOnAirExposure;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ReplaceRule>>          mReplaceRules;
+    ::ll::TypedStorage<4, 4, ::brstd::once_flag>                     mRulesAcceleratorInitFlag;
+    ::ll::TypedStorage<8, 24, ::OreFeature::ReplaceRulesAccelerator> mRulesAccelerator;
     // NOLINTEND
 
 public:

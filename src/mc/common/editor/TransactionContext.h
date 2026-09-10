@@ -2,14 +2,43 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Editor { class ServiceProviderCollection; }
+// clang-format on
+
 namespace Editor::Transactions {
 
 class TransactionContext {
 public:
+    // TransactionContext inner types declare
+    // clang-format off
+    struct ActiveProcess;
+    // clang-format on
+
     // TransactionContext inner types define
     enum class OperationErrorHandling : int {
         ContinueOnError = 0,
         StopOnError     = 1,
+    };
+
+    struct ActiveProcess {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnkd6055b;
+        ::ll::UntypedStorage<8, 8>  mUnkfe8eec;
+        ::ll::UntypedStorage<8, 32> mUnk7bd4c3;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ActiveProcess& operator=(ActiveProcess const&);
+        ActiveProcess(ActiveProcess const&);
+        ActiveProcess();
     };
 
 public:
@@ -19,6 +48,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk95977f;
     ::ll::UntypedStorage<8, 24> mUnkc3c05a;
     ::ll::UntypedStorage<8, 24> mUnk14143f;
+    ::ll::UntypedStorage<8, 8>  mUnk3b5778;
     ::ll::UntypedStorage<4, 4>  mUnk1afd03;
     // NOLINTEND
 
@@ -35,6 +65,12 @@ public:
         ::std::string                                                      name,
         ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling
     );
+
+    MCNAPI ::Scripting::Result_deprecated<void> _clearActiveProcess();
+
+    MCNAPI ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& serviceProviders);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& serviceProviders);
 
     MCNAPI ~TransactionContext();
     // NOLINTEND

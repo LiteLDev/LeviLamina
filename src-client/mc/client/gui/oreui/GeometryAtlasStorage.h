@@ -11,10 +11,11 @@
 namespace Gameface { class IResourceHandler; }
 namespace Gameface { class TemporaryTextureHolder; }
 namespace GeometryAtlas { class IGeometryAtlas; }
+namespace GeometryAtlas { class IGeometryAtlasCaptureService; }
+namespace GeometryAtlas { class IPaperDollHandleFactory; }
 namespace OreUI { class IGeometryAtlasKnownTilesReader; }
 namespace OreUI { class IItemHandleFactory; }
 namespace OreUI { class ILiveViewCollectionPublisher; }
-namespace OreUI { class IPaperDollHandleFactory; }
 namespace OreUI { struct LiveViewCollection; }
 // clang-format on
 
@@ -32,16 +33,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryAtlas::IGeometryAtlas>>         mGeometryAtlas;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryAtlas::IGeometryAtlas>>               mGeometryAtlas;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryAtlas::IGeometryAtlasCaptureService>> mCaptureService;
         ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mTileChangeSubscription;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::IGeometryAtlasKnownTilesReader>> mKnownItems;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::IGeometryAtlasKnownTilesReader>> mKnownDolls;
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Impl();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI explicit Impl(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
+
         MCAPI ~Impl();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
         // NOLINTEND
 
     public:
@@ -62,12 +76,14 @@ public:
     // NOLINTBEGIN
     MCAPI GeometryAtlasStorage();
 
+    MCAPI explicit GeometryAtlasStorage(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
+
     MCAPI ::std::unique_ptr<::Gameface::IResourceHandler> createGeometryAtlasResourceHandler(
-        ::std::unique_ptr<::OreUI::IItemHandleFactory>           itemFactory,
-        ::std::unique_ptr<::OreUI::IPaperDollHandleFactory>      dollFactory,
-        ::std::shared_ptr<::OreUI::ILiveViewCollectionPublisher> publisher,
-        ::Gameface::TemporaryTextureHolder&                      textureHolder,
-        ::OreUI::GeometryProtocolType                            type
+        ::std::unique_ptr<::OreUI::IItemHandleFactory>              itemFactory,
+        ::std::unique_ptr<::GeometryAtlas::IPaperDollHandleFactory> dollFactory,
+        ::std::shared_ptr<::OreUI::ILiveViewCollectionPublisher>    publisher,
+        ::Gameface::TemporaryTextureHolder&                         textureHolder,
+        ::OreUI::GeometryProtocolType                               type
     );
 
     MCAPI ::OreUI::LiveViewCollection createLiveViewCollection();
@@ -77,6 +93,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
     // NOLINTEND
 };
 

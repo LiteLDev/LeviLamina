@@ -38,6 +38,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void add(::std::unique_ptr<::ITickingArea> area);
+#endif
+
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
 
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;
@@ -45,6 +49,10 @@ public:
     MCAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
 
     MCAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
+
+#ifdef LL_PLAT_C
+    MCAPI void processRemoves();
+#endif
 
     MCAPI ::std::vector<::TickingAreaDescription> removeAllStandaloneAreas(::LevelStorage& levelStorage);
 

@@ -72,7 +72,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mDirty;
     ::ll::TypedStorage<1, 1, bool>                                                mInRealm;
     ::ll::TypedStorage<1, 1, bool>                                                mCanManageRealmMembers;
-    ::ll::TypedStorage<8, 656, ::Realms::World>                                   mCurrentRealm;
+    ::ll::TypedStorage<8, 720, ::Realms::World>                                   mCurrentRealm;
     ::ll::TypedStorage<1, 1, bool>                                                mDataRefresh;
     ::ll::TypedStorage<1, 1, bool>                                                mIsLoadingFriends;
     ::ll::TypedStorage<4, 4, int>                                                 mNumFriendsToLoad;

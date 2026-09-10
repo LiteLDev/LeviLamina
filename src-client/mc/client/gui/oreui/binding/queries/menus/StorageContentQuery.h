@@ -4,8 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
-#include "mc/client/gui/oreui/binding/properties/Property.h"
-#include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
+#include "mc/client/gui/oreui/binding/properties/menus/StorageContentCommonProperties.h"
 #include "mc/client/storagemanager/ContentType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -40,14 +39,9 @@ public:
             ::std::less<uint64>,
             ::std::vector<uint64>,
             ::std::vector<::std::reference_wrapper<::OreUI::StorageContentItem>>>>
-                                                            mContentItemMap;
-    ::ll::TypedStorage<1, 1, ::StorageManager::ContentType> mType;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>   mNumberOfSelectedItems;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::StorageContentItem, ::std::allocator<::OreUI::StorageContentItem>>>
-        mContentItemList;
+                                                                        mContentItemMap;
+    ::ll::TypedStorage<1, 1, ::StorageManager::ContentType>             mType;
+    ::ll::TypedStorage<8, 296, ::OreUI::StorageContentCommonProperties> mCommon;
     // NOLINTEND
 
 public:

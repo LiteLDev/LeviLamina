@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/IScriptServerNetworkInterface.h"
@@ -51,7 +52,10 @@ public:
     virtual ::CommandPermissionLevel getCommandsOpPermissionLevel() const /*override*/;
 
     virtual ::Scripting::Result<void, ::Scripting::EngineError>
-    savePlayerPermission(::Player const& player, ::PlayerPermissionLevel permission) /*override*/;
+    savePlayerPermission(::Player& player, ::PlayerPermissionLevel permission) /*override*/;
+
+    virtual ::Scripting::Result<::std::optional<::SubClientId>, ::Scripting::EngineError>
+    tryGetPlayerSplitScreenClientId(::Player const& player) const /*override*/;
     // NOLINTEND
 
 public:
@@ -78,7 +82,10 @@ public:
     MCNAPI ::CommandPermissionLevel $getCommandsOpPermissionLevel() const;
 
     MCNAPI ::Scripting::Result<void, ::Scripting::EngineError>
-    $savePlayerPermission(::Player const& player, ::PlayerPermissionLevel permission);
+    $savePlayerPermission(::Player& player, ::PlayerPermissionLevel permission);
+
+    MCNAPI ::Scripting::Result<::std::optional<::SubClientId>, ::Scripting::EngineError>
+    $tryGetPlayerSplitScreenClientId(::Player const& player) const;
 
 
     // NOLINTEND

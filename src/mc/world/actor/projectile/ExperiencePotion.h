@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getGravity();
+    MCAPI float $getGravity();
 
     MCFOLD float $getThrowPower();
 

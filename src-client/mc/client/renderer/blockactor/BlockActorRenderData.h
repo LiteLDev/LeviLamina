@@ -28,7 +28,7 @@ public:
     ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const&>            forcedMat;
     ::ll::TypedStorage<8, 24, ::mce::ClientTexture const>          forcedTex;
     ::ll::TypedStorage<4, 4, int>                                  breakingAmount;
-    ::ll::TypedStorage<8, 72, ::dragon::RenderMetadata const>      actorRenderMetadata;
+    ::ll::TypedStorage<8, 64, ::dragon::RenderMetadata const>      actorRenderMetadata;
     // NOLINTEND
 
 public:

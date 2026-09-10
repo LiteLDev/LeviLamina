@@ -21,7 +21,7 @@ class EditorStructureSourceDataItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 480> mUnk61b0e9;
+    ::ll::UntypedStorage<8, 504> mUnk61b0e9;
     ::ll::UntypedStorage<4, 4>   mUnk64fd7a;
     // NOLINTEND
 

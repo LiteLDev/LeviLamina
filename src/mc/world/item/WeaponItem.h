@@ -73,7 +73,7 @@ public:
     // NOLINTBEGIN
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
     MCFOLD int $getAttackDamage() const;
 

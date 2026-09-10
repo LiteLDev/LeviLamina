@@ -15,6 +15,7 @@
 #include "mc/util/ProfanityFilterContext.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/ChalkboardSize.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -153,6 +154,8 @@ public:
 
     MCAPI ::Bedrock::Safety::RedactableString getBossName(int index) const;
 
+    MCAPI ::ChalkboardSize getChalkboardType(::BlockPos const& pos);
+
     MCAPI ::CoordinateCaptureType getCoordinateCaptureType() const;
 
     MCAPI ::std::unique_ptr<::CommandOrigin> getDevConsoleCommandOrigin() const;
@@ -194,6 +197,8 @@ public:
     MCAPI ::RectangleArea getSafeScreenZoneArea() const;
 
     MCAPI ::ItemStack const& getSelectedItem() const;
+
+    MCAPI int getStackSplittingTrigger() const;
 
     MCAPI ::std::string const& getStoreName() const;
 

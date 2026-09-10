@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/EntityOperation.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class BlockPos;
-class BlockVolumeBase;
+namespace Editor::Transactions { class PendingTransaction; }
 namespace Editor::Transactions { class TransactionContext; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
@@ -26,6 +25,20 @@ public:
 
     virtual void clearTransactions() = 0;
 
+    virtual ::WeakRef<::Editor::Transactions::PendingTransaction>
+    createPendingTransaction(::std::string const& name) = 0;
+
+    virtual ::WeakRef<::Editor::Transactions::PendingTransaction> getPendingTransaction(::mce::UUID const& id) = 0;
+
+    virtual ::std::vector<::WeakRef<::Editor::Transactions::PendingTransaction>>
+    getPendingTransactionsByName(::std::string const& name) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> discardPendingTransaction(::mce::UUID const& id) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> finalizePendingTransaction(::mce::UUID const& id) = 0;
+
+    virtual uint64 pendingTransactionCount() const = 0;
+
     virtual ::Scripting::Result_deprecated<void> undo() = 0;
 
     virtual ::Scripting::Result_deprecated<void> redo() = 0;
@@ -34,47 +47,7 @@ public:
 
     virtual uint64 redoSize() const = 0;
 
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeList(::std::vector<::BlockPos> const& locations) = 0;
-
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to) = 0;
-
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const& volume) = 0;
-
-    virtual ::Scripting::Result_deprecated<bool>
-    addEntityOperation(::Actor*, ::Editor::Transactions::EntityOperation::OperationType const) = 0;
-
-    virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() = 0;
-
-    virtual ::Scripting::Result_deprecated<int> discardTrackedChanges() = 0;
-
-    virtual ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name) = 0;
-
-    virtual ::Scripting::Result_deprecated<bool> commitOpenTransaction() = 0;
-
-    virtual ::Scripting::Result_deprecated<bool> discardOpenTransaction() = 0;
-
-    virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(
-        ::std::string const&                                                        payload,
-        ::std::string const&                                                        operationName,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
-    ) = 0;
-
-    virtual uint64 pendingOperationsSize() const = 0;
-
-    virtual bool hasOpenTransaction() const = 0;
-
     virtual void clearAllTransactionData() = 0;
-
-    virtual bool isBusy() const = 0;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<char const[79]> ERROR_BUSY_SERVICE();
-
-    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ERROR_NO_OPEN_TRANSACTION();
     // NOLINTEND
 };
 

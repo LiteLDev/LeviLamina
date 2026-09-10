@@ -17,6 +17,8 @@ struct ActorBeforeAcquireItemEvent;
 struct ActorBeforeHealEvent;
 struct ActorBeforeHurtEvent;
 struct ActorRemovedEvent;
+struct BeforeMountTamingEvent;
+struct BeforeTamingEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 // clang-format on
 
@@ -37,6 +39,12 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ActorBeforeAcquireItemEvent& actorAquireItemEvent) /*override*/;
 
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::BeforeTamingEvent& beforeTamingEvent) /*override*/;
+
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::BeforeMountTamingEvent& beforeMountTamingEvent) /*override*/;
+
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
     // NOLINTEND
 
@@ -51,6 +59,10 @@ public:
 
     MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ActorBeforeAcquireItemEvent& actorAquireItemEvent);
+
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BeforeTamingEvent& beforeTamingEvent);
+
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BeforeMountTamingEvent& beforeMountTamingEvent);
 
     MCAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
 

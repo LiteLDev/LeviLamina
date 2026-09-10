@@ -18,5 +18,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void setRules(::std::vector<::GameRule> rules);
+
+    MCAPI ~GameRulesChangedPacketData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

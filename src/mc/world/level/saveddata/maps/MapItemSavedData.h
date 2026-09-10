@@ -22,6 +22,7 @@ class LevelStorage;
 class MapDecoration;
 class MapItemTrackedActor;
 class Packet;
+class Player;
 class SpinLockImpl;
 class Vec3;
 struct ClientTerrainPixel;
@@ -144,6 +145,8 @@ public:
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
 
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
+
+    MCAPI bool isPlayerHoldingMap(::Player& player);
 
 #ifdef LL_PLAT_C
     MCAPI void replaceDecorations(

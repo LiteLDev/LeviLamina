@@ -10,10 +10,8 @@
 // clang-format off
 class IFileAccess;
 class ResourcePackManager;
-struct PackIdVersion;
 namespace Core { class FileSystem; }
 namespace Core { class Path; }
-namespace OreUI { struct RouteData; }
 // clang-format on
 
 namespace OreUI {
@@ -44,12 +42,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const& fileSystem,
         ::Core::Path const&                                      dataPath
     );
-
-    MCAPI void loadAndParse(
-        ::std::string const&               routesJsonFile,
-        ::std::vector<::OreUI::RouteData>& outRouteData,
-        ::std::vector<::PackIdVersion>&    outRouteMetadata
-    ) const;
 
     MCAPI ~RouteDataParser();
     // NOLINTEND

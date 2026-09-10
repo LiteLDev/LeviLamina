@@ -52,7 +52,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::std::chrono::nanoseconds const&                                 writeFlushInterval,
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
-        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
+        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing,
+        bool                                                              jigsawPersistenceToggle
     ) /*override*/;
 
     virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
@@ -135,7 +136,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::std::chrono::nanoseconds const&                                 writeFlushInterval,
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
-        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
+        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing,
+        bool                                                              jigsawPersistenceToggle
     );
 
     MCAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(

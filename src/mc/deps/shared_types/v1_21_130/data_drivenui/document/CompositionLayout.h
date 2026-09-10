@@ -5,11 +5,13 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerFixedGridLayout; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerTextField; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContextList; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ExtensionPoint; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormButton; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormDivider; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormDropdown; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormImage; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormScrollView; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormSlider; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormSwitch; }
@@ -34,10 +36,12 @@ public:
         24,
         ::std::vector<::std::variant<
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
+            ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerTextField>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
+            ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormImage>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,

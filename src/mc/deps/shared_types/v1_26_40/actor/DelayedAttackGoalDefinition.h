@@ -1,0 +1,39 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/v1_26_40/actor/MeleeAttackGoalDefinition.h"
+
+namespace SharedTypes::v1_26_40 {
+
+struct DelayedAttackGoalDefinition : public ::SharedTypes::v1_26_40::MeleeAttackGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float>                                  mAttackDuration;
+    ::ll::TypedStorage<4, 4, float>                                  mHitDelayPercent;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSound;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DelayedAttackGoalDefinition();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_26_40

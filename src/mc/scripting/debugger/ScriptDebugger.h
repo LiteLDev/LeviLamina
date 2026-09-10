@@ -105,6 +105,8 @@ public:
 
     MCNAPI ::std::string _sanitizeHostName(::std::string const& host) const;
 
+    MCNAPI void _sendNotification(::LogLevel logLevel, ::std::string_view message);
+
     MCNAPI bool _tryAttachRuntime(bool expectRuntime);
 
     MCNAPI bool _trySelectTarget();

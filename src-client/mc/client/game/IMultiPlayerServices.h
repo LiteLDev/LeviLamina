@@ -11,6 +11,8 @@ public:
     // NOLINTBEGIN
     virtual ~IMultiPlayerServices() = default;
 
+    virtual bool isMultiPlayerInitialized() const = 0;
+
     virtual bool checkMultiPlayerPermission(::std::optional<::Social::MultiplayerServiceIdentifier> service) = 0;
 
     virtual bool isPlayingLevel() const = 0;

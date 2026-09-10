@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/beta/actor/ActorDefinitions.h"
-#include "mc/deps/shared_types/v1_26_30/actor/ActorDocument.h"
+#include "mc/deps/shared_types/v1_26_40/actor/ActorDocument.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class SemVersionConstant;
 
 namespace SharedTypes::Beta {
 
-struct ActorDocument : public ::SharedTypes::v1_26_30::ActorDocument {
+struct ActorDocument : public ::SharedTypes::v1_26_40::ActorDocument {
 public:
     // member variables
     // NOLINTBEGIN

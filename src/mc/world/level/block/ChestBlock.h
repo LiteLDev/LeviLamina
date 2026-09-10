@@ -37,8 +37,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockType& init() /*override*/;
-
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -75,6 +73,8 @@ public:
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
+
+    virtual ::Block const& getInitialDefaultState() /*override*/;
     // NOLINTEND
 
 public:
@@ -106,8 +106,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockType& $init();
-
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
@@ -141,6 +139,8 @@ public:
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
 
     // NOLINTEND

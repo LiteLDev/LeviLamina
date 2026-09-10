@@ -36,7 +36,7 @@ public:
     ) /*override*/;
 
     virtual bool
-    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& directlyPowered) /*override*/;
 
     virtual bool canConsumerPower() const /*override*/;
 
@@ -62,7 +62,7 @@ public:
     MCAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& directlyPowered);
 
     MCFOLD bool $canConsumerPower() const;
 
@@ -73,11 +73,5 @@ public:
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

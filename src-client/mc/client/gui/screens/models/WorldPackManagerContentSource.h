@@ -5,13 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/PackManagerContentSourceImpl.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class CachedHostPackIdProvider;
-class IContentSourceRepository;
-struct PackManagerContentSourceArgs;
 struct PackManagerContentSourceData;
 struct PackModel;
 // clang-format on
@@ -24,10 +21,6 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>           mWorldPath;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CachedHostPackIdProvider>> mCachedHostPackIdProvider;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldPackManagerContentSource();
 
 public:
     // virtual functions
@@ -43,30 +36,6 @@ public:
         ::PackManagerContentSourceData& packData,
         ::std::vector<::PackModel>&     available
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldPackManagerContentSource(
-        ::PackManagerContentSourceArgs&&                          args,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository,
-        ::std::string                                             worldId,
-        ::Core::PathBuffer<::std::string>                         worldPath,
-        ::std::weak_ptr<::CachedHostPackIdProvider>               provider
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::PackManagerContentSourceArgs&&                          args,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository,
-        ::std::string                                             worldId,
-        ::Core::PathBuffer<::std::string>                         worldPath,
-        ::std::weak_ptr<::CachedHostPackIdProvider>               provider
-    );
     // NOLINTEND
 
 public:

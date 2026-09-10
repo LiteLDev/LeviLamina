@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContentSource();
+    virtual ~ContentSource() = default;
 
     virtual void load();
 
@@ -40,12 +40,6 @@ public:
     virtual void deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
 
     virtual void postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -62,11 +56,5 @@ public:
     MCFOLD void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
 
     MCFOLD void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

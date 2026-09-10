@@ -15,9 +15,9 @@ public:
     ::ll::TypedStorage<4, 4, int>            buyAItemAmount;
     ::ll::TypedStorage<4, 4, int>            buyBItemAmount;
     ::ll::TypedStorage<4, 4, int>            sellItemAmount;
-    ::ll::TypedStorage<8, 32, ::std::string> buyAItemImage;
-    ::ll::TypedStorage<8, 32, ::std::string> buyBItemImage;
-    ::ll::TypedStorage<8, 32, ::std::string> sellItemImage;
+    ::ll::TypedStorage<8, 32, ::std::string> buyAItemId;
+    ::ll::TypedStorage<8, 32, ::std::string> buyBItemId;
+    ::ll::TypedStorage<8, 32, ::std::string> sellItemId;
     ::ll::TypedStorage<1, 1, bool>           hasSecondaryBuyItem;
     ::ll::TypedStorage<1, 1, bool>           playerHasItemsForTrade;
     ::ll::TypedStorage<1, 1, bool>           isSelectedTrade;

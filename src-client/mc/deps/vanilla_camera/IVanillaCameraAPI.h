@@ -30,6 +30,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float> mTime;
         ::ll::TypedStorage<4, 4, float> mRotation;
+        ::ll::TypedStorage<4, 4, float> mIntensity;
         // NOLINTEND
     };
 

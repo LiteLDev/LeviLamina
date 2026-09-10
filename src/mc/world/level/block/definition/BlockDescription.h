@@ -36,7 +36,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                              mIdentifier;
-    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_26_20::BlockDefinition::VanillaBlockData> mVanillaBlockData;
+    ::ll::TypedStorage<8, 72, ::SharedTypes::v1_26_20::BlockDefinition::VanillaBlockData> mVanillaBlockData;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateDefinition>>                      mStates;
     ::ll::TypedStorage<8, 40, ::BlockMenuCategory>                                        mMenuCategory;
     ::ll::TypedStorage<8, 64, ::BlockDescription::BlockTraits>                            mTraits;

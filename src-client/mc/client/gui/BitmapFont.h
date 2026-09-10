@@ -32,6 +32,7 @@ public:
 
 public:
     // prevent constructor by default
+    BitmapFont& operator=(BitmapFont const&);
     BitmapFont();
 
 public:
@@ -87,6 +88,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BitmapFont(::BitmapFont const& rhs);
+
     MCAPI BitmapFont(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
@@ -98,6 +101,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::BitmapFont const& rhs);
+
     MCAPI void* $ctor(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,

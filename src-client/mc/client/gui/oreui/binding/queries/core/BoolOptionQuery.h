@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/OptionProperty.h"
-#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +17,7 @@ class BoolOptionQuery : public ::OreUI::QueryBase<::OreUI::BoolOptionQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<bool>> mValue;
+    ::ll::TypedStorage<8, 128, ::std::optional<::OreUI::OptionProperty<bool>>> mValue;
     // NOLINTEND
 
 public:
@@ -28,21 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BoolOptionQuery(::OreUI::ClientDependencies const& client, ::OptionID id);
+    MCAPI BoolOptionQuery(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OptionID id);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
+    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
     // NOLINTEND
 };
 

@@ -22,6 +22,8 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Candl
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CarpetBlockIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CarverReplaceableIds();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChemistryTableIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoarseIds();
@@ -105,6 +107,8 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldSt
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldStoneSlabIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldWoodAndStrippedWoodBlockIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OverridesMushroomLightRequirement();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PaleOakBlockIds();
 

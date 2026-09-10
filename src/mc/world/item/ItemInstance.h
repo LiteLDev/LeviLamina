@@ -16,7 +16,6 @@ class ItemInstance : public ::ItemStackBase {
 public:
     // prevent constructor by default
     ItemInstance& operator=(ItemInstance const&);
-    ItemInstance();
 
 public:
     // virtual functions
@@ -31,6 +30,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemInstance();
+
     MCAPI ItemInstance(::ItemInstance const& rhs);
 
     MCAPI explicit ItemInstance(::ItemStackBase const& rhs);
@@ -51,6 +52,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCFOLD void* $ctor(::ItemInstance const& rhs);
 
     MCFOLD void* $ctor(::ItemStackBase const& rhs);

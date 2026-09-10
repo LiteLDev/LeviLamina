@@ -13,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class Random;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -26,8 +25,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockType& init() /*override*/;
-
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
@@ -42,6 +39,8 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
+
+    virtual ::Block const& getInitialDefaultState() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,8 +68,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockType& $init();
-
     MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
@@ -83,6 +80,8 @@ public:
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
 
     // NOLINTEND

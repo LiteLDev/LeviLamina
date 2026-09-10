@@ -12,8 +12,10 @@ class AttributeInstance;
 class AttributeInstanceConstRef;
 class AttributeInstanceHandle;
 class AttributeInstanceRef;
+class HashedString;
 struct AttributeData;
 struct AttributeModificationContext;
+struct MutableAttributeWithContext;
 // clang-format on
 
 class BaseAttributeMap {
@@ -63,7 +65,9 @@ public:
 
     MCAPI ::AttributeInstanceConstRef getInstance(::Attribute const& attribute) const;
 
-    MCAPI ::AttributeInstanceRef getMutableInstance(::Attribute const& attribute);
+    MCAPI ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
+
+    MCAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
 
     MCAPI ::AttributeInstanceRef registerAttribute(::Attribute const& baseAttribute);
     // NOLINTEND

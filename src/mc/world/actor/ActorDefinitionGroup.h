@@ -6,10 +6,8 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/LoadResultBetaVariant.h"
 #include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
 #include "mc/platform/threading/Mutex.h"
-#include "mc/resources/JsonBetaState.h"
 #include "mc/world/actor/ActorDefinitionPtr.h"
 #include "mc/world/level/storage/Experiments.h"
 
@@ -24,9 +22,6 @@ class PackLoadContext;
 class ResourcePackManager;
 class SemVersion;
 namespace Json { class Value; }
-namespace Puv { class Input; }
-namespace SharedTypes::Beta { struct ActorDocument; }
-namespace SharedTypes::v1_26_30 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -104,22 +99,9 @@ public:
     );
 
 #ifdef LL_PLAT_S
-    MCAPI void _getResources(::Level& level);
-
-    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_30::ActorDocument, ::SharedTypes::Beta::ActorDocument>
-    _initActorDefinition(
-        ::Puv::Input const&   input,
-        ::SemVersion const&   formatVersion,
-        ::PackLoadContext&    packLoadContext,
-        ::std::string const&  relativeResourceFilepath,
-        ::JsonBetaState const useBetaFeatures,
-        ::std::string const&  identifier,
-        ::Level&              level,
-        ::LogArea             logArea
-    );
+    MCAPI void _addRef(::ActorDefinitionPtr& ptr);
 #endif
 
-#ifdef LL_PLAT_C
     MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
         ::PackLoadContext&                   packLoadContext,
@@ -128,7 +110,6 @@ public:
         ::std::unordered_set<::std::string>& definitions,
         ::LogArea                            logArea
     );
-#endif
 
     MCAPI ::std::vector<::std::string> buildActorEventList() const;
 

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleParties { struct ScriptPartyDestinationCookieResponseIntermediateData; }
+// clang-format on
+
 namespace ScriptModuleParties {
 
 struct ScriptPartyDestinationCookieResponseAfterEvent {

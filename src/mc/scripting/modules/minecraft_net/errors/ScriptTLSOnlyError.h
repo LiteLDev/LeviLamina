@@ -26,21 +26,9 @@ public:
     ScriptTLSOnlyError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptTLSOnlyError(::std::string uri);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string uri);
     // NOLINTEND
 };
 

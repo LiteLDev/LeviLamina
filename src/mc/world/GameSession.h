@@ -16,6 +16,7 @@ class Level;
 class LoopbackPacketSender;
 class NetEventCallback;
 class ServerNetworkHandler;
+class ServerNetworkSystem;
 // clang-format on
 
 class GameSession {
@@ -48,6 +49,14 @@ public:
         ::SubClientId                         subid
     );
 
+    MCAPI GameSession(
+        ::ServerNetworkSystem&                                               network,
+        ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
+        ::LoopbackPacketSender&                                              loopbackPacketSender,
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
+        ::SubClientId                                                        subid
+    );
+
     MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
 
     MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
@@ -69,6 +78,14 @@ public:
         ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
         ::LoopbackPacketSender&               loopbackPacketSender,
         ::SubClientId                         subid
+    );
+
+    MCAPI void* $ctor(
+        ::ServerNetworkSystem&                                               network,
+        ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
+        ::LoopbackPacketSender&                                              loopbackPacketSender,
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
+        ::SubClientId                                                        subid
     );
 #endif
     // NOLINTEND

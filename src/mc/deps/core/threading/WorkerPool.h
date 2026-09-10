@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
-class Scheduler;
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
@@ -49,17 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorkerPool(::std::string_view name, ::Scheduler& owner);
-
-    MCNAPI bool _checkPendingWork();
-
 #ifdef LL_PLAT_C
     MCNAPI ::std::vector<::std::thread::id> getThreadIds() const;
+
+    MCNAPI void kick(uint64 count);
 #endif
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
-
-    MCNAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
     // NOLINTEND
 
 public:
@@ -75,11 +70,5 @@ public:
     sAllPools();
 
     MCNAPI static ::Bedrock::Threading::Mutex& sAllPoolsMutex();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view name, ::Scheduler& owner);
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 #include "mc/world/actor/player/AbilitiesLayer.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/actor/player/Abilities.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
 #include "mc/world/actor/player/AbilitiesLayer.h"
@@ -22,7 +23,7 @@ public:
     LLNDAPI Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
     LLAPI bool       setAbility(::AbilitiesIndex val, float value);
     LLAPI bool       setAbility(::AbilitiesIndex val, bool value);
-    LLAPI void       setPlayerPermissions(::PlayerPermissionLevel permissions);
+    // LLAPI void       setPlayerPermissions(::PlayerPermissionLevel permissions);
 
 public:
     // member variables
@@ -54,7 +55,9 @@ public:
         ::Ability::Options                                               requiredOptions
     ) const;
 
+#ifdef LL_PLAT_C
     MCFOLD void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities&)> const& callback);
+#endif
 
     MCFOLD void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities const&)> const& callback) const;
 
@@ -68,7 +71,11 @@ public:
 
     MCAPI ::LayeredAbilities& operator=(::LayeredAbilities const& rhs);
 
+    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
+
+#ifdef LL_PLAT_C
     MCAPI ~LayeredAbilities();
+#endif
     // NOLINTEND
 
 public:
@@ -96,6 +103,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

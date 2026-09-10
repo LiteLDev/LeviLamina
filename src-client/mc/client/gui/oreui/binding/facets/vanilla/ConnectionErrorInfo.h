@@ -9,6 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> hasLearnMoreLink;
+    ::ll::TypedStorage<1, 1, bool> showReconnectButton;
     // NOLINTEND
 };
 

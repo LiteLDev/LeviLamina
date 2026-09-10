@@ -65,10 +65,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContentSource* src);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/realms_screen_utils/RealmsSubscriptionsLoadingState.h"
-#include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/store/iap/RealmsOfferTier.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -25,15 +24,6 @@ namespace RealmsScreenUtils { struct RealmsWorldLoadingDetailsGroup; }
 namespace RealmsScreenUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void addWorldsToGroupAndFetchSubscriptionInfo(
-    ::std::weak_ptr<::RealmsScreenUtils::RealmsWorldLoadingDetailsGroup> weakGroup,
-    ::std::shared_ptr<::MainMenuScreenModel>                             mainMenuScreenModel,
-    ::std::function<void(bool)>                                          callback,
-    ::std::function<bool(::RealmsWorldInfo&)>                            filter,
-    ::Realms::GenericStatus                                              status,
-    ::std::vector<::Realms::World>&                                      realmsWorlds
-);
-
 MCAPI ::std::optional<::std::string_view> getManageSubscriptionsLinkForStore(::std::string_view store);
 
 MCAPI ::std::string const
@@ -52,14 +42,6 @@ getRealmsPlusEntitlement(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> co
 MCAPI bool isRealmsPlusSubscriptionActive(
     ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> const& entitlementManager,
     ::Bedrock::NonOwnerPointer<::DateManager const> const&      dateManager
-);
-
-MCAPI void populateMultipleRealmsWorldLoadingDetailsGroups(
-    ::std::vector<::std::pair<
-        ::std::weak_ptr<::RealmsScreenUtils::RealmsWorldLoadingDetailsGroup>,
-        ::std::function<bool(::RealmsWorldInfo&)>>> groupFilterPairs,
-    ::std::shared_ptr<::MainMenuScreenModel>        mainMenuScreenModel,
-    ::std::function<void(bool)>                     callback
 );
 
 MCAPI void populateRealmsWorldLoadingDetailsGroup(

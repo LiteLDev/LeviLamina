@@ -150,6 +150,9 @@ public:
         ::ll::UntypedStorage<4, 16> mUnkfdbf79;
         ::ll::UntypedStorage<4, 8>  mUnkaec880;
         ::ll::UntypedStorage<1, 1>  mUnkcce666;
+        ::ll::UntypedStorage<4, 8>  mUnk4f9560;
+        ::ll::UntypedStorage<4, 8>  mUnkf77100;
+        ::ll::UntypedStorage<4, 8>  mUnk249b38;
         // NOLINTEND
 
     public:
@@ -239,24 +242,31 @@ public:
         ComponentStateText& operator=(ComponentStateText const&);
         ComponentStateText(ComponentStateText const&);
         ComponentStateText();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool
+        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText const& other) const;
+        // NOLINTEND
     };
 
     class ComponentStateVolumeOutline {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 96> mUnk2147af;
-        ::ll::UntypedStorage<4, 20> mUnk32b7dc;
-        ::ll::UntypedStorage<4, 20> mUnk136d74;
-        ::ll::UntypedStorage<4, 20> mUnkc46b02;
-        ::ll::UntypedStorage<4, 20> mUnk31c79b;
-        ::ll::UntypedStorage<1, 2>  mUnk16511b;
-        ::ll::UntypedStorage<1, 2>  mUnk27f311;
-        ::ll::UntypedStorage<1, 2>  mUnk224c24;
-        ::ll::UntypedStorage<1, 2>  mUnk439a1a;
-        ::ll::UntypedStorage<4, 16> mUnk63ac58;
-        ::ll::UntypedStorage<4, 16> mUnk1c30d0;
-        ::ll::UntypedStorage<1, 2>  mUnk6f4c55;
+        ::ll::UntypedStorage<8, 120> mUnk2147af;
+        ::ll::UntypedStorage<4, 20>  mUnk32b7dc;
+        ::ll::UntypedStorage<4, 20>  mUnk136d74;
+        ::ll::UntypedStorage<4, 20>  mUnkc46b02;
+        ::ll::UntypedStorage<4, 20>  mUnk31c79b;
+        ::ll::UntypedStorage<1, 2>   mUnk16511b;
+        ::ll::UntypedStorage<1, 2>   mUnk27f311;
+        ::ll::UntypedStorage<1, 2>   mUnk224c24;
+        ::ll::UntypedStorage<1, 2>   mUnk439a1a;
+        ::ll::UntypedStorage<4, 16>  mUnk63ac58;
+        ::ll::UntypedStorage<4, 16>  mUnk1c30d0;
+        ::ll::UntypedStorage<1, 2>   mUnk6f4c55;
         // NOLINTEND
 
     public:
@@ -278,8 +288,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk3ac1ac;
-        ::ll::UntypedStorage<8, 96> mUnk7c4086;
+        ::ll::UntypedStorage<4, 4>   mUnk3ac1ac;
+        ::ll::UntypedStorage<8, 120> mUnk7c4086;
         // NOLINTEND
 
     public:
@@ -294,7 +304,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnk2b0e3b;
     ::ll::UntypedStorage<4, 24>  mUnk269c2b;
-    ::ll::UntypedStorage<8, 232> mUnka8aafe;
+    ::ll::UntypedStorage<8, 256> mUnka8aafe;
     // NOLINTEND
 
 public:

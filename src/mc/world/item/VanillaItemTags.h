@@ -80,6 +80,8 @@ MCAPI ::ItemTag const& MetalNuggets();
 
 MCAPI ::ItemTag const& Minecart();
 
+MCAPI ::ItemTag const& MushroomsForStew();
+
 MCAPI ::ItemTag const& MusicDiscs();
 
 MCAPI ::ItemTag const& NautilusArmor();

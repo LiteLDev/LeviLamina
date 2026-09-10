@@ -94,6 +94,11 @@ public:
     virtual ::Scripting::Result_deprecated<void> closeSession(::std::string const& collectionName) = 0;
 
     virtual bool isDeferredExperimentEnabled() const = 0;
+
+    virtual ::Scripting::Result_deprecated<void> exportAllConfigsToPack(
+        ::std::string const&                                                              packName,
+        ::std::function<void(bool, ::std::string const&, ::std::optional<::std::string>)> callback
+    ) = 0;
     // NOLINTEND
 };
 

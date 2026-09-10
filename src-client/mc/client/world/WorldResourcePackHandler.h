@@ -26,6 +26,7 @@ class IContentManager;
 class IContentManagerContext;
 class IContentTierManager;
 class IEntitlementManager;
+class IMinecraftEventing;
 class IResourcePackRepository;
 struct ContentItem;
 struct ContentViews;
@@ -72,6 +73,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const>> mContentTierManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::World::IWorldResourcePackDownloader>>    mWorldResourcePackDownloader;
     ::ll::TypedStorage<8, 8, ::IContentAcquisition&>                                      mContentAcquisition;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                       mEventing;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSourcesReloadedSubscription;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::World::WorldID, ::World::WorldPacks>> mWorldPacks;
     ::ll::TypedStorage<
@@ -182,6 +184,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldResourcePackHandler(
+        ::IContentManager&                                         contentManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>   resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
+        ::IContentAcquisition&                                     contentAcquisition,
+        ::std::unique_ptr<::World::IWorldResourcePackDownloader>   worldResourcePackDownloader,
+        ::IMinecraftEventing&                                      eventing
+    );
+
     MCAPI ::World::WorldPacks&
     _cacheWorldPackData(::World::WorldResourcePackHandler::Contexts&& contexts, ::LevelSummary const& levelSummary);
 
@@ -241,6 +253,20 @@ public:
         ::ContentViews const&                     contentViews,
         ::World::PackStatus const                 packStatus,
         bool const                                isEduMode
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IContentManager&                                         contentManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>   resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
+        ::IContentAcquisition&                                     contentAcquisition,
+        ::std::unique_ptr<::World::IWorldResourcePackDownloader>   worldResourcePackDownloader,
+        ::IMinecraftEventing&                                      eventing
     );
     // NOLINTEND
 

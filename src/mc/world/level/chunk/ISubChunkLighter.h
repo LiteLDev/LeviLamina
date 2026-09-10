@@ -23,5 +23,7 @@ public:
         uint64                                      centerSubChunkIndex,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList
     ) const = 0;
+
+    virtual bool isDeferredEnabled() const = 0;
     // NOLINTEND
 };

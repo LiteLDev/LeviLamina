@@ -29,7 +29,6 @@ public:
 
 public:
     // prevent constructor by default
-    ClosureAny(ClosureAny const&);
     ClosureAny();
 
 public:
@@ -41,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ClosureAny(::Scripting::ClosureAny const& rhs);
+
     MCNAPI ClosureAny(
         ::Scripting::IRuntime*                                         runtime,
         ::Scripting::ContextId                                         contextId,
@@ -68,6 +69,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Scripting::ClosureAny const& rhs);
+
     MCNAPI void* $ctor(
         ::Scripting::IRuntime*                                         runtime,
         ::Scripting::ContextId                                         contextId,

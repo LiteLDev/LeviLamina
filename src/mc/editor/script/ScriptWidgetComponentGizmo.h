@@ -5,8 +5,10 @@
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 #include "mc/scripting/Axis.h"
+#include "mc/scripting/WidgetGizmoScaleMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,6 +29,9 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkb4d4a0;
     ::ll::UntypedStorage<1, 1>   mUnke1f7dc;
     ::ll::UntypedStorage<1, 1>   mUnk7c098d;
+    ::ll::UntypedStorage<4, 4>   mUnk940041;
+    ::ll::UntypedStorage<4, 4>   mUnk206c8c;
+    ::ll::UntypedStorage<4, 4>   mUnk26167e;
     ::ll::UntypedStorage<4, 16>  mUnk66792f;
     ::ll::UntypedStorage<8, 112> mUnk4d47d7;
     // NOLINTEND
@@ -58,8 +63,22 @@ public:
     MCNAPI ::Scripting::Result<::Scripting::Axis, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _getEnabledAxes() const;
 
+    MCNAPI ::Scripting::
+        Result<::Scripting::WidgetGizmoScaleMode, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+        _getScaleMode() const;
+
+    MCNAPI ::Scripting::Result<float, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getScreenScale() const;
+
+    MCNAPI ::Scripting::Result<float, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getWorldScale() const;
+
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _isActivated() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> _setScreenScale(float screenScale);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _setWorldScale(float worldScale);
     // NOLINTEND
 
 public:

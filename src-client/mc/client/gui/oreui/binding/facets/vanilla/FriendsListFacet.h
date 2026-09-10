@@ -70,7 +70,7 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider
     );
 
-    MCAPI ::std::vector<::OreUI::SocialPlayer> const& getPlatformFriends() const;
+    MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getPlatformFriends() const;
 
     MCFOLD ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
 

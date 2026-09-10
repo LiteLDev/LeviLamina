@@ -32,8 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SpawnAoECloudSubcomponent() /*override*/ = default;
-
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
     virtual void writetoJSON(::Json::Value& component) const /*override*/;
@@ -55,11 +53,5 @@ public:
     MCAPI char const* $getName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

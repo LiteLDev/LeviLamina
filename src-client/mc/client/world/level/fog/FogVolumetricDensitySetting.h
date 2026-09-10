@@ -23,9 +23,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FogVolumetricDensitySetting(
-        ::Core::Keyframes<float, float> maxDensity,
-        ::Core::Keyframes<float, float> maxDensityHeight,
-        ::Core::Keyframes<float, float> zeroDensityHeight
+        ::Core::Keyframes<float, float> const& maxDensity,
+        ::Core::Keyframes<float, float> const& maxDensityHeight,
+        ::Core::Keyframes<float, float> const& zeroDensityHeight
     );
 
     MCAPI ~FogVolumetricDensitySetting();
@@ -41,9 +41,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Core::Keyframes<float, float> maxDensity,
-        ::Core::Keyframes<float, float> maxDensityHeight,
-        ::Core::Keyframes<float, float> zeroDensityHeight
+        ::Core::Keyframes<float, float> const& maxDensity,
+        ::Core::Keyframes<float, float> const& maxDensityHeight,
+        ::Core::Keyframes<float, float> const& zeroDensityHeight
     );
     // NOLINTEND
 

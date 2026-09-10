@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void clearItemInUse(::EntityContext& owner);
 
     MCAPI int getDuration(::EntityContext const& owner) const;
@@ -32,7 +32,7 @@ public:
 
     MCAPI int getUsedDuration(::EntityContext const& owner) const;
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void releaseUsing(::Player& player);
 
     MCAPI void

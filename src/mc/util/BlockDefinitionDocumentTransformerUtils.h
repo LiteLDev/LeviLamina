@@ -227,6 +227,11 @@ MCNAPI void transformSelectionBox(
     ::BlockComponentGroupDescription&                                blockComponentGroupDescription
 );
 
+MCNAPI void transformSoundComponent(
+    ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponents,
+    ::BlockComponentGroupDescription&                                blockComponentGroupDescription
+);
+
 MCNAPI void transformStepOffComponent(
     ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponents,
     ::BlockComponentGroupDescription&                                blockComponentGroupDescription

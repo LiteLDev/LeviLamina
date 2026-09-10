@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/minecraft_renderer/objects/CrackRenderObject.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/memory/LinearAllocator.h"

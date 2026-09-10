@@ -7,6 +7,13 @@
 #include "mc/deps/crypto/asymmetric/PrivateKeySigningFormat.h"
 #include "mc/deps/crypto/asymmetric/PubKeyFormat.h"
 #include "mc/deps/crypto/hash/HashType.h"
+#include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Crypto::Asymmetric { struct EcPublicKeyComponents; }
+namespace Crypto::Asymmetric { struct RsaPublicKeyComponents; }
+// clang-format on
 
 namespace Crypto::Asymmetric {
 
@@ -18,8 +25,14 @@ public:
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) = 0;
 
-    virtual bool
-    constructPublicKey(::std::string const& modulus, ::std::string const& exponent, ::std::string& keyOut) = 0;
+    virtual ::Bedrock::Result<::std::string> constructPublicKey(
+        ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&
+            components
+    ) = 0;
+
+    virtual ::Bedrock::Result<
+        ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents>>
+    deconstructPublicKey(::std::string const& publicKey) = 0;
 
     virtual ::std::string encryptData(
         ::std::string const&               publicKey,

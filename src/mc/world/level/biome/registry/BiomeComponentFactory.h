@@ -75,6 +75,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI BiomeComponentFactory();
+#endif
+
     MCAPI void registerBiomeDefinitionSerializers(
         ::std::function<void(
             ::Biome const&,
@@ -94,5 +98,13 @@ public:
             ::BiomeStringList const&
         )> applyFromData
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 };

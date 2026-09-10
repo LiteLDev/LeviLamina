@@ -10,9 +10,9 @@
 // clang-format off
 namespace GeometryAtlas { class IAtlasTile; }
 namespace GeometryAtlas { class IGeometryAtlas; }
+namespace GeometryAtlas { class IPaperDollHandleFactory; }
 namespace GeometryAtlas { class InitializeCallbackPayload; }
 namespace GeometryAtlas { struct TileDefinition; }
-namespace OreUI { class IPaperDollHandleFactory; }
 // clang-format on
 
 namespace OreUI {
@@ -55,7 +55,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::OreUI::IPaperDollHandleFactory>>> mFactory;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::GeometryAtlas::IPaperDollHandleFactory>>> mFactory;
     // NOLINTEND
 
 public:

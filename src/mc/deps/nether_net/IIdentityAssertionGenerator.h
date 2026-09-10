@@ -20,9 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI ::std::string_view $idpProtocol() const;
-#endif
 
 
     // NOLINTEND

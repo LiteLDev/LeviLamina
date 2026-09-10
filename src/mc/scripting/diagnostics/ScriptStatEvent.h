@@ -13,30 +13,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64>                       mTick;
-    ::ll::TypedStorage<8, 32, ::std::string>               mType;
     ::ll::TypedStorage<8, 24, ::std::vector<::ScriptStat>> mStats;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptStatEvent& operator=(ScriptStatEvent const&);
-    ScriptStatEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptStatEvent(::ScriptStatEvent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptStatEvent const&);
     // NOLINTEND
 };

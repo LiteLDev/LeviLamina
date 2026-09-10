@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class IFileAccess;
+namespace Core { class FileHandlePool; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -25,5 +26,7 @@ public:
     virtual ::Core::Path getOnDiskScratchPath() const = 0;
 
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const = 0;
+
+    virtual ::std::shared_ptr<::Core::FileHandlePool> getArchiveHandlePool() const = 0;
     // NOLINTEND
 };

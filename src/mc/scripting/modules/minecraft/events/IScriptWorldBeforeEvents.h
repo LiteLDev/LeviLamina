@@ -28,6 +28,7 @@ namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorItemPickupBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorTamedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseBeforeEvent; }
@@ -94,6 +95,9 @@ public:
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent>>
     onBeforeActorItemPickup(::ActorBeforeAcquireItemEvent& actorItemPickupEvent);
+
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorTamedBeforeEvent>>
+    onBeforeActorTamed(::Actor const& actor, ::Actor const& tamingActor);
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
@@ -163,6 +167,9 @@ public:
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent>>
     $onBeforeActorItemPickup(::ActorBeforeAcquireItemEvent& actorItemPickupEvent);
+
+    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorTamedBeforeEvent>>
+    $onBeforeActorTamed(::Actor const& actor, ::Actor const& tamingActor);
 
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>

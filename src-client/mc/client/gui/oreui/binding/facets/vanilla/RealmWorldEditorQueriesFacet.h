@@ -30,9 +30,9 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsWorldEditor>>                 mRealmsWorldEditor;
     ::ll::TypedStorage<8, 8, ::TrialManager const&>                                           mTrialManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor>> mRealmsWorldPackEditor;
-    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                           mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                           mLevelDataWrapper;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                    mLevelDataBindings;
-    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                           mLevelDataWrapperSnapshot;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                           mLevelDataWrapperSnapshot;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                           mLevelDataBindingsSnapshot;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mRealmWorldEditorStateSubscriber;
     ::ll::TypedStorage<4, 8, ::std::optional<::Realms::RealmsWorldEditorStateError>> mRealmsWorldEditorStateError;

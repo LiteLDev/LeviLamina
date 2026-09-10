@@ -88,13 +88,15 @@ public:
         ::BlockSource&                                       region,
         ::BlockPalette const&                                globalBlockPalette,
         ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef,
-        ::std::optional<::std::string_view>                  optionalCapturePath
+        ::std::optional<::std::string_view>                  optionalCapturePath,
+        bool&                                                outSuccess
     ) = 0;
 
     virtual void bake(
         ::WeakEntityRef                           weakPlayerRef,
         ::std::function<void(bool)>               completionCallback,
-        ::std::function<void(::std::string_view)> logger
+        ::std::function<void(::std::string_view)> logger,
+        bool                                      deleteInstancesAfterBake
     ) = 0;
 
     virtual void unbake(

@@ -56,6 +56,8 @@ public:
 
     virtual bool mayPlace(::BlockPos const& pos, ::Block const& block) const = 0;
 
+    virtual bool mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const = 0;
+
     virtual bool canSurvive(::BlockPos const& pos, ::Block const& block) const = 0;
 
     virtual bool canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const = 0;

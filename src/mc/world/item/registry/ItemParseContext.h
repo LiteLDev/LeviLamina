@@ -29,4 +29,37 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                 mUnverifiedItemOverrideNames;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ItemVersion>> mVanillaItemVersionMap;
     // NOLINTEND
+
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ItemParseContext();
+
+#else // LL_PLAT_C
+#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ItemParseContext(
+        ::ItemVersion                itemVersion,
+        ::ItemParseContext::LoadMode mode,
+        ::std::optional<::ItemIconInfo> (*itemIconFactory)(::std::string const&, int)
+    );
+
+    MCAPI ::std::optional<::ItemVersion> getVanillaItemVersion(::HashedString const& itemName) const;
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(
+        ::ItemVersion                itemVersion,
+        ::ItemParseContext::LoadMode mode,
+        ::std::optional<::ItemIconInfo> (*itemIconFactory)(::std::string const&, int)
+    );
+#endif
+    // NOLINTEND
 };

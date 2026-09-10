@@ -9,12 +9,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class IDataInput;
 class StructureSpawnRegistry;
 class StructureStart;
 namespace br::worldgen { class StructureInstance; }
 // clang-format on
 
 class LevelChunkVolumeData {
+public:
+    // LevelChunkVolumeData inner types define
+    using StructureInstanceList = ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,6 +49,12 @@ public:
     MCAPI void addStructureReference(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
     MCFOLD void addStructureReference(::StructureStart const& start);
+
+    MCAPI void deserializeAabbVolumes(::IDataInput& stream);
+
+    MCAPI void deserializeHardcodedSpawners(::IDataInput& stream);
+
+    MCAPI ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>> getOverlappingStructures() const;
 
     MCAPI ::std::vector<::BlockPos> structureSpawnPos() const;
     // NOLINTEND

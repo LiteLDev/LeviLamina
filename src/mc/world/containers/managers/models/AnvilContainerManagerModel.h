@@ -44,8 +44,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void applyDamageToAnvilBlock();
-
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
 
     MCAPI void fireItemCraftedEvent(::ItemInstance const& item);

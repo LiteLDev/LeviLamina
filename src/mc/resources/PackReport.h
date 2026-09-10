@@ -44,6 +44,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI PackReport(::PackReport&&);
+#endif
+
     MCNAPI PackReport(::PackReport const&);
 
 #ifdef LL_PLAT_C
@@ -56,12 +60,18 @@ public:
     MCNAPI ::PackReport& operator=(::PackReport const&);
 #endif
 
+    MCNAPI void setIdentity(::PackIdVersion const& identity);
+
     MCNAPI ~PackReport();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::PackReport&&);
+#endif
+
     MCNAPI void* $ctor(::PackReport const&);
     // NOLINTEND
 

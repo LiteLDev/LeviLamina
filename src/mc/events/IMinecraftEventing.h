@@ -21,6 +21,8 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/application/storage_migration/StorageMigrationType.h"
 #include "mc/deps/core/file/LevelStorageState.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/buffer_span.h"
@@ -50,8 +52,8 @@
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/network/TransportLayer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/connection/ReconnectionType.h"
 #include "mc/network/services/signaling/SignalServiceConnectStage.h"
-#include "mc/platform/brstd/flat_map.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
@@ -109,10 +111,8 @@ namespace Bedrock { class CrashTelemetryProcessor; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
 namespace Bedrock::Http { class Status; }
-namespace Bedrock::Profile::Whisker { struct ScopeData; }
-namespace Bedrock::Profiling::Orchestrator { struct PerformanceContext; }
-namespace Bedrock::Profiling::Orchestrator { struct TriggerContext; }
-namespace Bedrock::Profiling::WhiskerLists { struct ScopeEntry; }
+namespace Bedrock::Profiling::Orchestrator { struct ProfilerCaptureParams; }
+namespace Bedrock::Profiling::Orchestrator { struct ProfilerMetadataParams; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core::Profile { struct FileCounters; }
 namespace Json { class Value; }
@@ -133,6 +133,7 @@ namespace mce { class UUID; }
 class PushNotificationMessage;
 struct ExtraLicenseData;
 namespace Social::Events { struct InboxSummaryData; }
+namespace Social::Events { struct PageDisplayRecord; }
 // clang-format on
 
 class IMinecraftEventing : public ::Bedrock::EnableNonOwnerReferences,
@@ -556,7 +557,7 @@ public:
         bool                                                     isPartyLeader,
         bool                                                     isPartyDestination,
         bool                                                     isServerTransfer,
-        bool                                                     isReconnect,
+        ::Connection::ReconnectionType                           reconnectionType,
         bool                                                     isDueToSuspend,
         uint64                                                   connectionDurationMs,
         ::Social::GameConnectionInfo const&                      connectionInfo
@@ -709,22 +710,10 @@ public:
         int                                                                                         fpsThrottle
     ) = 0;
 
-    virtual void fireEventProfilerMetadata(
-        ::gsl::span<::Bedrock::Profiling::WhiskerLists::ScopeEntry const> whiskerScopeEntries
-    ) = 0;
+    virtual void
+    fireEventProfilerMetadata(::Bedrock::Profiling::Orchestrator::ProfilerMetadataParams const& params) = 0;
 
-    virtual void fireEventProfilerCapture(
-        ::Bedrock::Profiling::Orchestrator::TriggerContext const&     triggerContext,
-        ::Bedrock::Profiling::Orchestrator::PerformanceContext const& performanceContext,
-        ::std::optional<::gsl::span<::gsl::not_null<::Bedrock::Profile::Whisker::ScopeData const*>> const> const&
-                                                 whiskerScopes,
-        ::std::optional<::brstd::flat_map<
-            ::std::string,
-            uint64,
-            ::std::less<::std::string>,
-            ::std::vector<::std::string>,
-            ::std::vector<uint64>> const> const& actorCounts
-    ) = 0;
+    virtual void fireEventProfilerCapture(::Bedrock::Profiling::Orchestrator::ProfilerCaptureParams const& params) = 0;
 
     virtual void
     fireTextureStreamingPerf(::dragon::texturestreaming::TextureStreamingPerformanceTelemetryData const& perfData) = 0;
@@ -816,6 +805,15 @@ public:
     ) = 0;
 
     virtual void fireEventTreatmentPackRemoved(::std::string packId) = 0;
+
+    virtual void fireEventPackDeleted(
+        ::std::string_view   reason,
+        ::std::string const& packId,
+        ::PackType           packType,
+        ::PackOrigin         packLocation,
+        ::std::string const& packOptimizationVersion,
+        int64                freedBytes
+    ) = 0;
 
     virtual void
     fireEventContentLogsInWorldSession(::std::string const& logArea, uint errorCount, uint warningCount) = 0;
@@ -959,6 +957,15 @@ public:
 
     virtual void
     fireEventFatalClientPackError(::FatalClientPackErrorType errorType, ::gsl::span<::std::string const> packIds) = 0;
+
+    virtual void fireEventPackActivationError(
+        ::std::string const& errorType,
+        ::std::string const& errorDetail,
+        ::std::string const& packAction,
+        ::std::string const& packId,
+        ::std::string const& contentType,
+        bool                 isFatal
+    ) = 0;
 
     virtual void fireEventStoreErrorPage(
         ::std::string const& errorCode,
@@ -1560,6 +1567,12 @@ public:
         bool                 success
     ) = 0;
 
+    virtual void fireEventCreatorFollowedUnfollowed(
+        ::std::string const& creatorId,
+        ::std::string const& operation,
+        bool                 success
+    ) = 0;
+
     virtual void fireEventUgcAcquisitionStateChanged(
         ::std::string const& ugcProductId,
         uint64               downloadSize,
@@ -1571,7 +1584,8 @@ public:
         ::std::string const& result,
         ::std::string const& resultDetails,
         int                  httpStatus,
-        int                  errorCode
+        int                  errorCode,
+        bool                 optimizedPack
     ) = 0;
 
     virtual void fireEventRealmsGeneralCall(::std::string const& callName, ::Bedrock::Http::Status returnCode) = 0;
@@ -1590,6 +1604,14 @@ public:
         int const            fileSizeKB
     ) = 0;
 
+    virtual void fireEventRealmBackupDownloadFailed(
+        int const                        realmId,
+        ::std::string const&             reason,
+        int64 const                      worldSizeBytes,
+        int64 const                      availableStorageBytes,
+        ::gsl::span<::std::string const> packIds
+    ) = 0;
+
     virtual void fireEventRealmUpload(
         ::std::string const& correlationId,
         ::std::string const& uploadStage,
@@ -1597,6 +1619,21 @@ public:
         int const            realmId,
         int const            fileSizeKB,
         bool const           isPack
+    ) = 0;
+
+    virtual void fireEventRealmsPackUpload(
+        int const            realmId,
+        int const            slotIndex,
+        ::std::string const& packId,
+        ::std::string const& packVersion,
+        ::PackType           packType,
+        ::std::string const& packClassification,
+        ::std::string const& packOptimizationVersion,
+        bool const           hasContentIdentity,
+        bool const           isPremium,
+        ::PackOrigin         packOrigin,
+        int const            stackPosition,
+        uint64 const         packSizeBytes
     ) = 0;
 
     virtual void
@@ -1736,6 +1773,15 @@ public:
     virtual void fireEventPersonaGeneralError(::std::string const& personaErrorName, uint duplicateErrorsFired) = 0;
 
     virtual void fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds) = 0;
+
+    virtual void fireEventPersonaPiecePackEviction(
+        uint   cacheSizeBeforeEviction,
+        uint   evictedCount,
+        uint   failedCount,
+        uint   protectedCount,
+        bool   evictionLimitedByBatch,
+        double passDurationInSeconds
+    ) = 0;
 
     virtual void fireEventPersonaCreationFailed(
         ::std::string_view errorName,
@@ -1950,8 +1996,12 @@ public:
 
     virtual void fireDelayedEventReportOfflineAction(::std::string const& offlineAction) = 0;
 
-    virtual void
-    fireEventFeedbackSubmitted(::std::string const& productId, bool safetyCheckSuccessful, bool isValidText) = 0;
+    virtual void fireEventFeedbackSubmitted(
+        ::std::string const& feedbackType,
+        ::std::string const& identifier,
+        bool                 safetyCheckSuccessful,
+        bool                 isValidText
+    ) = 0;
 
     virtual void fireEventTrackDeeplinks(
         ::std::string const& deeplinkDestination,
@@ -2059,6 +2109,12 @@ public:
     virtual void fireEventOnlineAudioStreamEnded(::OnlineAudioStreamEnded const& telemetry) = 0;
 
     virtual void fireEventDimensionTransfer(::DimensionTransferTelemetryData const& data) = 0;
+
+    virtual void fireEventMarketplaceImpressions(
+        ::std::string const&                 destinationQuery,
+        ::std::string const&                 destinationPage,
+        ::Social::Events::PageDisplayRecord& data
+    ) = 0;
     // NOLINTEND
 
 public:

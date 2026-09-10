@@ -54,13 +54,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::StructureAnimationAction>
-    load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

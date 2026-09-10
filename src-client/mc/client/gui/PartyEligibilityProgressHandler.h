@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/EmptyProgressHandler.h"
 #include "mc/client/gui/GameEventNotification.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/player/LoadingState.h"
 
 // auto generated forward declare list
@@ -17,11 +18,12 @@ class PartyEligibilityProgressHandler : public ::EmptyProgressHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>  mAsyncTaskGroup;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mExperienceId;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mPartyId;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mWorldId;
-    ::ll::TypedStorage<1, 1, bool>                            mContinuePartyJoin;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mAsyncTaskGroup;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                   mExperienceId;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mPartyId;
+    ::ll::TypedStorage<8, 24, ::std::optional<::mce::UUID>>  mWorldId;
+    ::ll::TypedStorage<1, 1, bool>                           mIsTransfer;
+    ::ll::TypedStorage<1, 1, bool>                           mContinuePartyJoin;
     // NOLINTEND
 
 public:
@@ -49,17 +51,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PartyEligibilityProgressHandler(
-        ::std::string const&           experienceId,
-        ::std::string const&           partyId,
-        ::std::optional<::std::string> worldId
+        ::mce::UUID const&           experienceId,
+        ::std::string const&         partyId,
+        ::std::optional<::mce::UUID> worldId,
+        bool                         isTransfer
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& experienceId, ::std::string const& partyId, ::std::optional<::std::string> worldId);
+    MCAPI void* $ctor(
+        ::mce::UUID const&           experienceId,
+        ::std::string const&         partyId,
+        ::std::optional<::mce::UUID> worldId,
+        bool                         isTransfer
+    );
     // NOLINTEND
 
 public:
@@ -67,7 +74,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 

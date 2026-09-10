@@ -29,10 +29,4 @@ public:
 
     MCAPI void tame(::Actor& owner, ::Player& player);
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _becomeTame(::Actor& owner);
-    // NOLINTEND
 };

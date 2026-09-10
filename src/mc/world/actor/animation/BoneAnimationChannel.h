@@ -24,15 +24,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::KeyFrameTransform& addKeyFrame(float time);
-
     MCAPI void animate(
         ::RenderParams&               renderParams,
         ::BoneOrientation&            destBoneOrientation,
         float                         scale,
         ::BoneAnimationChannelPlayer* boneAnimationChannelPlayer
     ) const;
-
-    MCAPI void sortKeyFrames();
     // NOLINTEND
 };

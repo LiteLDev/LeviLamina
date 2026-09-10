@@ -10,12 +10,18 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptBlock; }
+namespace ScriptModuleMinecraft { struct ScriptProjectileHitIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockHitInformation {
+public:
+    // ScriptBlockHitInformation inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -26,9 +32,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockHitInformation();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptBlockHitInformation(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData> const& projectileHitEvent,
+        ::Scripting::WeakLifetimeScope const&                                                  scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData> const& projectileHitEvent,
+        ::Scripting::WeakLifetimeScope const&                                                  scope
+    );
     // NOLINTEND
 };
 

@@ -16,6 +16,7 @@
 class Actor;
 class ArmorTrimIconGenerator;
 class ArmorTrimUnloader;
+class AtomicClientEntityManager;
 class BlockSource;
 class CameraRegistry;
 class ChunkSource;
@@ -29,6 +30,7 @@ class LevelChunk;
 class LevelSettings;
 class MapDataManager;
 class NetworkIdentifier;
+class ResourcePackManager;
 class SerializedSkinRef;
 class SubChunkManager;
 class SubChunkPacket;
@@ -56,23 +58,27 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TrustedSkinHelper>>> mTrustedSkinHelper;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::CameraRegistry>>>                 mCameraRegistry;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::EntitySystems>>>                  mCameraSystems;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VolumeEntityManagerClient>>                       mVolumeEntityManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManagerClient>>>                mTickTimeManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::SubChunkManager>>>   mSubChunkManager;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                     mOnSubChunkLoaded;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                                mClientResourcePackManager;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::CameraRegistry>>>  mCameraRegistry;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::EntitySystems>>>   mCameraSystems;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VolumeEntityManagerClient>>        mVolumeEntityManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManagerClient>>> mTickTimeManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::SubChunkManager>>> mSubChunkManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                   mOnSubChunkLoaded;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DisplayActorManager>>>
-                                                                                                mDisplayActorManager;
-    ::ll::TypedStorage<8, 40, ::PlayerSleepManager>                                             mPlayerSleepManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimIconGenerator>>                       mArmorTrimIconGenerator;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimUnloader>>                            mArmorTrimUnloader;
+                                                                             mDisplayActorManager;
+    ::ll::TypedStorage<8, 40, ::PlayerSleepManager>                          mPlayerSleepManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimIconGenerator>>    mArmorTrimIconGenerator;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimUnloader>>         mArmorTrimUnloader;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AtomicClientEntityManager>> mAtomicClientEntityManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::MapDataManager>>> mMapDataManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientSubChunkLighter>>                       mClientSubChunkLighter;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ClientLevel& operator=(ClientLevel const&);
+    ClientLevel(ClientLevel const&);
     ClientLevel();
 
 public:
@@ -93,6 +99,8 @@ public:
     virtual ::Tick const getCurrentServerTick() const /*override*/;
 
     virtual void startLeaveGame() /*override*/;
+
+    virtual ::ResourcePackManager* getClientResourcePackManager() const /*override*/;
 
     virtual ::Actor* addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
 
@@ -195,6 +203,8 @@ public:
     MCAPI ::Tick const $getCurrentServerTick() const;
 
     MCAPI void $startLeaveGame();
+
+    MCAPI ::ResourcePackManager* $getClientResourcePackManager() const;
 
     MCAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 

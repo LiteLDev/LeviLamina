@@ -15,7 +15,6 @@ class ClientInputHandlerProxy;
 class ClientInputMappingFactory;
 class Config;
 class IClientInstance;
-class IGameModuleApp;
 class InputHandler;
 class ItemStack;
 class ScreenContext;
@@ -23,6 +22,7 @@ struct ActorDataFlagComponent;
 struct MobEffectsComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;
+namespace Input::Debug { class ISplitscreenRedirect; }
 // clang-format on
 
 class ClientInputHandler {
@@ -31,23 +31,25 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>> mClient;
     ::ll::TypedStorage<8, 8, ::InputHandler&>                                   mInputHandler;
-    ::ll::TypedStorage<4, 4, ::InputBindingMode>                                mInputBindingMode;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientBindingFactory>>         mBindingFactory;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientInputMappingFactory>>    mMappingFactory;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mExpectedInGameInputMode;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsFlying;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsSneaking;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsSprinting;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsSwimming;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsInWater;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsExpediateEmoteActive;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsInAscendableBlock;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsOnDescendableBlock;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsCreativeMode;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsSpectatorMode;
-    ::ll::TypedStorage<1, 1, bool>                                              mInteractActive;
-    ::ll::TypedStorage<1, 1, bool>                                              mHasMobEffects;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientInputHandlerProxy>>      mProxy;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect>>
+                                                                             mDebugSplitscreenInputRedirect;
+    ::ll::TypedStorage<4, 4, ::InputBindingMode>                             mInputBindingMode;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientBindingFactory>>      mBindingFactory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientInputMappingFactory>> mMappingFactory;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mExpectedInGameInputMode;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsFlying;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsSneaking;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsSprinting;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsSwimming;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsInWater;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsExpediateEmoteActive;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsInAscendableBlock;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsOnDescendableBlock;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsCreativeMode;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsSpectatorMode;
+    ::ll::TypedStorage<1, 1, bool>                                           mInteractActive;
+    ::ll::TypedStorage<1, 1, bool>                                           mHasMobEffects;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientInputHandlerProxy>>   mProxy;
     // NOLINTEND
 
 public:
@@ -59,12 +61,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientInputHandler(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client,
-        ::InputHandler&                                         inputHandler,
-        ::IGameModuleApp&                                       gameModuleApp
-    );
-
     MCAPI ::Actor* _interactWithEntity() const;
 
     MCAPI ::std::string _interactWithImmersiveReader() const;
@@ -130,16 +126,6 @@ public:
     MCAPI bool useFreeformPickDirection() const;
 
     MCAPI ~ClientInputHandler();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client,
-        ::InputHandler&                                         inputHandler,
-        ::IGameModuleApp&                                       gameModuleApp
-    );
     // NOLINTEND
 
 public:

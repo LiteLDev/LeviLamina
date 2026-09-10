@@ -119,6 +119,8 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI int getItemCount(::ItemDescriptor const& descriptor) const;
+
+    MCAPI int getValidIngredientItemCount(::ItemDescriptor const& descriptor) const;
 #endif
 
     MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
@@ -128,6 +130,13 @@ public:
 
     MCAPI void
     registerPlayerNotificationCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
+
+#ifdef LL_PLAT_C
+    MCAPI void registerTrackedOnContainerChangedCallback(
+        ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::SharedTypes::Legacy::ContainerType                               containerType
+    );
+#endif
 
     MCAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
     // NOLINTEND

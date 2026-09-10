@@ -25,6 +25,8 @@ MCNAPI ::Scripting::Result_deprecated<void> _validateStructureName(::std::string
 
 MCNAPI ::Scripting::EnumBinding bindAxisEnums();
 
+MCNAPI ::Scripting::EnumBinding bindGizmoScaleSpaceEnums();
+
 MCNAPI ::Scripting::EnumBinding bindPlaneEnums();
 
 MCNAPI ::Scripting::EnumBinding bindRenderPlaneGridResolution();
@@ -42,10 +44,6 @@ MCNAPI ::Scripting::InterfaceBinding bindScriptLocalizationEntry();
 MCNAPI ::Scripting::EnumBinding bindScriptMouseActionCategory();
 
 MCNAPI ::Scripting::EnumBinding bindScriptMouseCursorIconType();
-
-#ifdef LL_PLAT_S
-MCNAPI ::Scripting::EnumBinding bindStructureSourceEnum();
-#endif
 
 MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>
 convertServiceItemToScriptItem(

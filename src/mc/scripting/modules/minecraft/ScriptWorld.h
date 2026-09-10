@@ -16,6 +16,7 @@ namespace ScriptModuleMinecraft { class ScriptAimAssistRegistry; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { class ScriptLootTableManager; }
 namespace ScriptModuleMinecraft { class ScriptPrimitiveManager; }
+namespace ScriptModuleMinecraft { class ScriptSoundDefinitionRegistry; }
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { class ScriptTickingAreaManager; }
 namespace ScriptModuleMinecraft { class ScriptV010Events; }
@@ -60,6 +61,11 @@ public:
         mTickingAreaManager;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPrimitiveManager>>
         mPrimitiveShapesManager;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundDefinitionRegistry>>
+        mSoundDefinitionRegistry;
     // NOLINTEND
 
 public:
@@ -127,7 +133,9 @@ public:
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
     );
 
+#ifdef LL_PLAT_C
     MCAPI ~ScriptWorld();
+#endif
     // NOLINTEND
 
 public:
@@ -154,7 +162,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

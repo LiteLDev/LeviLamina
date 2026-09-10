@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
+struct WorldBlockPosition;
 namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -20,12 +20,13 @@ struct MoveToPositionGoalDefinition : public ::SharedTypes::v1_26_10::Brain::Bas
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                                                    mSpeedMod;
-    ::ll::TypedStorage<4, 4, float>                                                                    mGoalRadius;
-    ::ll::TypedStorage<4, 4, float>                                                                    mMaximumRange;
-    ::ll::TypedStorage<4, 12, ::std::variant<float, ::SharedTypes::FloatRange>>                        mIntervalSeconds;
-    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::BlockPos>> mTargetMemory;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_120::ActorDefinitionTrigger>>         mOnReachTriggers;
+    ::ll::TypedStorage<4, 4, float>                                             mSpeedMod;
+    ::ll::TypedStorage<4, 4, float>                                             mGoalRadius;
+    ::ll::TypedStorage<4, 4, float>                                             mMaximumRange;
+    ::ll::TypedStorage<4, 12, ::std::variant<float, ::SharedTypes::FloatRange>> mIntervalSeconds;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>
+                                                                                               mTargetMemory;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_120::ActorDefinitionTrigger>> mOnReachTriggers;
     // NOLINTEND
 
 public:

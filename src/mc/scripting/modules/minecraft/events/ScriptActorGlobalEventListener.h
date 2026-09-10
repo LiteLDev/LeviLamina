@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/modules/minecraft/Listener.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
-#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -21,35 +21,21 @@ struct ActorDroppedItemEvent;
 struct ActorHealEvent;
 struct ActorHealthChangedEvent;
 struct ActorHurtEvent;
+struct ActorRemovedEvent;
 struct ActorUpgradeEndedEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
+struct MountTamingEvent;
+struct ProjectileHitEvent;
+struct TamingEvent;
+namespace ScriptModuleMinecraft::ScriptGlobalEventListenerUtils { struct Listener; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptActorGlobalEventListener : public ::EventListenerDispatcher<::ActorEventListener> {
 public:
-    // ScriptActorGlobalEventListener inner types declare
-    // clang-format off
-    struct Listener;
-    // clang-format on
-
-    // ScriptActorGlobalEventListener inner types define
-    struct Listener {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-                                       mScriptEventsHandle;
-        ::ll::TypedStorage<1, 1, bool> mIsV010;
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptActorGlobalEventListener::Listener>>
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptGlobalEventListenerUtils::Listener>>
         mListeners;
     // NOLINTEND
 
@@ -76,7 +62,17 @@ public:
 
     virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& eventData) /*override*/;
 
+    virtual ::EventResult onEvent(::ProjectileHitEvent const& projectileHitEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
+
+    virtual ::EventResult onEvent(::MountTamingEvent const& eventData) /*override*/;
+
+    virtual ::EventResult onEvent(::TamingEvent const& eventData) /*override*/;
+
     virtual ::EventResult onActorSneakChanged(::Actor& actor, bool isSneaking) /*override*/;
+
+    virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
     // NOLINTEND
 
 public:
@@ -102,7 +98,17 @@ public:
 
     MCAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& eventData);
 
+    MCAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
+
+    MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
+
+    MCAPI ::EventResult $onEvent(::MountTamingEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::TamingEvent const& eventData);
+
     MCAPI ::EventResult $onActorSneakChanged(::Actor& actor, bool isSneaking);
+
+    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
 
     // NOLINTEND

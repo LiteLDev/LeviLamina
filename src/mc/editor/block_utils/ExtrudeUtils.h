@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ContiguousSelectionType.h"
+#include "mc/editor/block_utils/ContiguousSelectionType.h"
 #include "mc/legacy/facing/Name.h"
 
 // auto generated forward declare list

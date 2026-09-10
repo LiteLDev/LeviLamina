@@ -17,7 +17,7 @@ class RealmsWarningScreenController : public ::DisconnectScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 656, ::Realms::World> mWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World> mWorld;
     ::ll::TypedStorage<8, 32, ::std::string>    mIP;
     ::ll::TypedStorage<4, 4, int>               mPort;
     ::ll::TypedStorage<1, 1, bool>              mJoinRealm;

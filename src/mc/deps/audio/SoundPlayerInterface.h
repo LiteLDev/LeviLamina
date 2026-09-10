@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/audio/SoundPauseSource.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
@@ -12,12 +13,12 @@ class ServerSoundHandle;
 class Vec3;
 struct LoopingSoundAttributes;
 struct LoopingSoundState;
+struct PlaySoundOptions;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 class SoundItem;
-struct PlaySoundOptions;
 // clang-format on
 
 class SoundPlayerInterface : public ::Bedrock::EnableNonOwnerReferences {
@@ -62,15 +63,27 @@ public:
 
     virtual void stop(::ServerSoundHandle serverSoundHandle) = 0;
 
+    virtual void setVolume(::ServerSoundHandle serverSoundHandle, float volume) = 0;
+
+    virtual void setPitch(::ServerSoundHandle serverSoundHandle, float pitch) = 0;
+
+    virtual void fade(::ServerSoundHandle serverSoundHandle, float duration, float targetVolume) = 0;
+
+    virtual void setPlaybackPosition(::ServerSoundHandle serverSoundHandle, float seconds) = 0;
+
+    virtual void pause(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source) = 0;
+
+    virtual void resume(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source) = 0;
+
     virtual void stopAllSounds() = 0;
 
-    virtual void pauseAllPlayingSounds() = 0;
+    virtual void pauseAllPlayingSounds(::SoundPauseSource source) = 0;
 
-    virtual void resumeAllPreviouslyPlayingSounds() = 0;
+    virtual void resumeAllPreviouslyPlayingSounds(::SoundPauseSource source) = 0;
 
     virtual void pauseMusic(bool state) = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicPath() = 0;
+    virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicPath() = 0;
 
     virtual bool getItem(::std::string const& eventName, ::Core::PathView soundPath, ::SoundItem& soundItem) const = 0;
 

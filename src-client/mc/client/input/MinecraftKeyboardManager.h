@@ -138,7 +138,7 @@ public:
 
     MCAPI void $setResumeInputCallback(::std::function<void()> callback);
 
-    MCFOLD void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
+    MCAPI void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
 
     MCAPI bool $tryClaimKeyboardOwnership();
 

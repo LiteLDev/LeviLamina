@@ -13,10 +13,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ComponentItem;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -37,22 +35,6 @@ public:
         ::ll::TypedStorage<8, 152, ::ItemStack const>    mItemStack;
         ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mEntity;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        IntermediateStorage();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI IntermediateStorage(::ItemStack const& initialInstance, ::ItemStack&, ::Actor& actor);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ItemStack const& initialInstance, ::ItemStack&, ::Actor& actor);
-        // NOLINTEND
     };
 
     using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
@@ -67,41 +49,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentConsumeEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentConsumeEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                      scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
-        void(::ItemStack const&, ::ItemStack&, ::Actor&)>
-    getConnectors(::ComponentItem& item);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                      scope
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

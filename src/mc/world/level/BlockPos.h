@@ -8,11 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ChunkBlockPos;
-class ChunkPos;
-class SubChunkPos;
 class Vec3;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class AABB;
@@ -38,6 +34,8 @@ public:
     MCAPI ::BlockPos south() const;
 
     MCAPI ::std::string toString() const;
+
+    MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
 
     MCAPI ::BlockPos west() const;
     // NOLINTEND

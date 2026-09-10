@@ -29,8 +29,6 @@ public:
         ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& scattering,
         ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& absorption
     );
-
-    MCAPI ~FogVolumetricCoefficientSetting();
     // NOLINTEND
 
 public:
@@ -46,11 +44,5 @@ public:
         ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& scattering,
         ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB> const& absorption
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -3,10 +3,10 @@
 #include "ll/api/base/ScopedValue.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/memory/Memory.h"
-#include "ll/core/LeviLamina.h"
 #include "mc/gametest/MinecraftGameTestHelper.h"
 #include "mc/gametest/framework/GameTestError.h"
-#include "mc/scripting/modules/minecraft/events/ScriptActorEventListener.h"
+#include "mc/scripting/modules/minecraft/Listener.h"
+#include "mc/scripting/modules/minecraft/events/ScriptActorGlobalEventListener.h"
 #include "mc/server/ServerPlayer.h"
 #include "mc/server/SimulatedPlayer.h"
 #include "mc/world/actor/Actor.h"
@@ -14,6 +14,10 @@
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkViewSource.h"
 #include "mc/world/level/storage/LevelData.h"
+
+#ifdef LL_DEBUG
+#include "ll/core/LeviLamina.h"
+#endif
 
 #include <algorithm>
 #include <limits>
@@ -177,8 +181,8 @@ LL_TYPE_INSTANCE_HOOK(
 LL_TYPE_INSTANCE_HOOK(
     SimulatedPlayerScriptActorCreatedHook,
     HookPriority::Highest,
-    ScriptModuleMinecraft::ScriptActorEventListener,
-    &ScriptModuleMinecraft::ScriptActorEventListener::$onActorCreated,
+    ScriptModuleMinecraft::ScriptActorGlobalEventListener,
+    &ScriptModuleMinecraft::ScriptActorGlobalEventListener::$onActorCreated,
     EventResult,
     Actor&                    actor,
     ActorInitializationMethod initializationMethod
@@ -196,8 +200,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 void enable(bool enableChunkLoading) {
-    static memory::HookRegistrar<GameTestSimulatedPlayerSpawnHook, SimulatedPlayerScriptActorCreatedHook>
-        gameTestSimulatedPlayerRegistrar;
+    static memory::HookRegistrar<GameTestSimulatedPlayerSpawnHook> gameTestSimulatedPlayerRegistrar;
 
     if (enableChunkLoading) {
         static memory::HookRegistrar<SimulatedPlayerPrepareRegionHook, SimulatedPlayerCreateChunkSourceHook>

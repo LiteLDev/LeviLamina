@@ -2,19 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/LoadResult.h"
-#include "mc/molang/MolangVersion.h"
-
-// auto generated forward declare list
-// clang-format off
-class LinkedAssetValidator;
-namespace Bedrock::Resources { class MinecraftDocumentInput; }
-namespace SharedTypes::v1_21_90 { struct CameraPresetFile; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class CameraPresetLoader {
 public:
     // member variables
@@ -27,31 +14,4 @@ public:
     CameraPresetLoader& operator=(CameraPresetLoader const&);
     CameraPresetLoader(CameraPresetLoader const&);
     CameraPresetLoader();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI CameraPresetLoader(
-        ::MolangVersion                                    molangVersion,
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
-
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_90::CameraPresetFile>
-    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::MolangVersion                                    molangVersion,
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
-#endif
-    // NOLINTEND
 };

@@ -46,7 +46,7 @@ public:
 
     MCNAPI void stopAll();
 
-    MCNAPI void update(float deltaTimeSeconds);
+    MCNAPI void update(::std::chrono::steady_clock::time_point currentTime);
 
     MCNAPI ~OnlineAudioStreamManager();
 #endif

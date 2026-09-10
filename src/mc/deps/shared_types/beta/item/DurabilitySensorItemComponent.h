@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Beta { struct DurabilityThreshold; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::Beta {
@@ -15,12 +14,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Beta::DurabilityThreshold>> mDurabilityThresholds;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

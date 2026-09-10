@@ -26,7 +26,7 @@ namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class ProfileSystem; }
 namespace Social { class User; }
-namespace Social { struct PlayerProfile; }
+namespace Social { struct PlayerIdentifier; }
 namespace World { class WorldPlayerListTracker; }
 namespace mce { class UUID; }
 // clang-format on
@@ -113,7 +113,7 @@ public:
 
     MCAPI void _refreshPlayers();
 
-    MCAPI void _updatePlayerInfo(::Social::PlayerProfile const& playerProfile);
+    MCAPI void _updatePlayerInfo(::Social::PlayerIdentifier const& playerIdentifier);
 
     MCAPI void _updatePlayerPermissionLevel(
         ::ActorUniqueID const&                   playerId,

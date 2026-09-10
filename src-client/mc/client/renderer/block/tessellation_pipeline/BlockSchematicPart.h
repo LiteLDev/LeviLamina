@@ -22,23 +22,6 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<::BlockCullingData::CullingRule::Condition>> mCullCondition;
     ::ll::TypedStorage<1, 1, bool>                                                        mCullAgainstFullAndOpaque;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockSchematicPart& operator=(BlockSchematicPart const&);
-    BlockSchematicPart();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockSchematicPart(::ClientBlockPipeline::BlockSchematicPart const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientBlockPipeline::BlockSchematicPart const&);
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

@@ -24,12 +24,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ManifestContentItem() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual ~ManifestContentItem() /*override*/ = default;
     // NOLINTEND
 };

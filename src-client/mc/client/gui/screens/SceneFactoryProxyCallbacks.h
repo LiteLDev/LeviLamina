@@ -31,7 +31,6 @@ public:
         mCreateOptionsScreen;
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::AbstractScene>(::PlayScreenDefaultTab)>>
                                                                                          mCreatePlayScreen;
-    ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::AbstractScene>()>>     mCreateSkinPickerScreen;
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::AbstractScene>(bool)>> mCreateStartMenuScreen;
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::AbstractScene>(::StoreDataDrivenScreenParams const&)>>
                                                                                            mCreateStoreHomeScreen;

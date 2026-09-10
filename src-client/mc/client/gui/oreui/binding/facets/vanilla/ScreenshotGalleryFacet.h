@@ -89,7 +89,7 @@ public:
 
     MCAPI bool const getIsAddShowcasedImageInProgress() const;
 
-    MCFOLD bool const getIsDeleteScreenshotsInProgress() const;
+    MCAPI bool const getIsDeleteScreenshotsInProgress() const;
 
     MCFOLD bool const getIsLoadGalleryInProgress() const;
 
@@ -101,7 +101,7 @@ public:
 
     MCAPI ::OreUI::ScreenshotGalleryFacetError const getModifyShowcaseGalleryError() const;
 
-    MCFOLD ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
+    MCAPI ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
 
     MCAPI uint64 getUndownloadedCount() const;
 

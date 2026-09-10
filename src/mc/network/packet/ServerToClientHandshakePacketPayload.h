@@ -2,10 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/certificates/WebToken.h"
+
 struct ServerToClientHandshakePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mData;
+    ::ll::TypedStorage<8, 128, ::WebToken> mToken;
     // NOLINTEND
 };

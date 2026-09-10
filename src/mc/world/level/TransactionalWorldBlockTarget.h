@@ -58,6 +58,8 @@ public:
 
     virtual bool mayPlace(::BlockPos const& pos, ::Block const& block) const /*override*/;
 
+    virtual bool mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const /*override*/;
+
     virtual bool canSurvive(::BlockPos const& pos, ::Block const& block) const /*override*/;
 
     virtual bool canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const /*override*/;
@@ -94,11 +96,7 @@ public:
 
     MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
-#else // LL_PLAT_C
     MCFOLD ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
-#endif
 
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
@@ -115,9 +113,11 @@ public:
 
     MCAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
+    MCAPI bool $mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const;
+
     MCAPI bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI short $getMaxHeight() const;
 
@@ -127,9 +127,13 @@ public:
 
     MCAPI short $getHeightmap(int x, int z);
 
+#ifdef LL_PLAT_S
+    MCAPI bool $isLegacyLevel();
+#else // LL_PLAT_C
     MCFOLD bool $isLegacyLevel();
+#endif
 
-    MCFOLD ::Biome const* $getBiome(::BlockPos const& pos) const;
+    MCAPI ::Biome const* $getBiome(::BlockPos const& pos) const;
 
     MCAPI bool $isInBounds(::Pos const& pos) const;
 

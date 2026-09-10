@@ -37,12 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void addChild(::std::unique_ptr<::ITextObject> childObject);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();

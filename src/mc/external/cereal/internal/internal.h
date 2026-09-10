@@ -66,6 +66,16 @@ MCAPI bool findAndOverride(
 
 MCAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
 
+#ifdef LL_PLAT_S
+MCAPI void getSchemaDescriptionAndDeps(
+    ::std::vector<::cereal::SchemaDescription>&  descriptions,
+    ::std::set<uint>&                            done,
+    ::cereal::internal::ReflectionContext const& ctx,
+    ::entt::type_info                            info,
+    ::cereal::DescriptionConfig                  config
+);
+#endif
+
 #ifdef LL_PLAT_C
 MCAPI void getSchemaDescriptionAndDeps(
     ::std::vector<::cereal::SchemaDescription>&  descriptions,

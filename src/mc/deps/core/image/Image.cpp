@@ -1,5 +1,4 @@
 #include "mc/deps/core/image/Image.h"
-#include "mc/deps/core/container/BlobHelper.h"
 
 namespace mce {
 

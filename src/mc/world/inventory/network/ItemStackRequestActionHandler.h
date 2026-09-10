@@ -13,6 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Container;
 class ContainerScreenContext;
 class ContainerScreenValidation;
 class EntityContext;
@@ -60,6 +61,29 @@ public:
         ::ll::TypedStorage<1, 1, ::ContainerEnumName const>  mContainerName;
         ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const> mContainerRuntimeId;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemStackLegacyRequestId, ::ItemStackNetId>>> mSlots;
+        // NOLINTEND
+
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        PlayerLegacyRequestSlotIdAssignment();
+
+#endif
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, ::Container& container);
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(::ContainerEnumName containerName, ::Container& container);
+#endif
         // NOLINTEND
     };
 
@@ -166,17 +190,17 @@ public:
 
     MCAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
 #endif
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ::std::vector<::std::string> const& getStrings(::ItemStackRequestId requestId) const;
+#endif
 
     MCAPI void normalTick();
-#endif
 
     MCAPI ::std::vector<::ItemInstance>
     tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar numCrafts);

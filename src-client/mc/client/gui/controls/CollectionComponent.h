@@ -28,14 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void refreshPanelItems();
-
-    MCAPI void setControlBindings(::std::vector<::std::string> const& controlBindings);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;

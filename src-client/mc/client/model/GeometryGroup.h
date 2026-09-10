@@ -17,6 +17,7 @@ class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;
 class SemVersion;
+class SemVersionConstant;
 struct ModelParent;
 struct TextureUVCoordinateSet;
 namespace Bedrock::Threading { class Mutex; }
@@ -92,6 +93,9 @@ public:
     MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
     _buildGeometryFileSchema_v1_21();
 
+    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
+    _buildGeometryFileSchema_v1_26_40();
+
     MCAPI static void _buildInheritanceTree(
         ::std::string const&,
         ::std::string const&                  sourceFilePathWithExtension,
@@ -151,6 +155,35 @@ public:
         ::MinEngineVersion const& minEngineVersion,
         bool&                     hasBeenValidated
     );
+
+    MCAPI static bool upgradeToV1_26_40(
+        ::Json::Value&            root,
+        ::SemVersion const&       fileVersion,
+        ::MinEngineVersion const& minEngineVersion,
+        bool&                     hasBeenValidated
+    );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_12();
+
+    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_14();
+
+    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_16();
+
+    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_19_30();
+
+    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_21();
+
+    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_26_40();
+
+    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_8();
+
+    MCAPI static ::std::string const& ITEM_DISPLAY_TRANSFORMS_ID();
+
+    MCAPI static ::std::string const& UV_ROTATION_DOC();
     // NOLINTEND
 
 public:

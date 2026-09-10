@@ -27,21 +27,9 @@ public:
     ScriptWebSocketLimitExceededError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWebSocketLimitExceededError(uint64 maxConcurrentConnections, uint64 connectedSockets);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(uint64 maxConcurrentConnections, uint64 connectedSockets);
     // NOLINTEND
 };
 

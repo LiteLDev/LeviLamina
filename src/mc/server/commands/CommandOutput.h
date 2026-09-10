@@ -66,10 +66,6 @@ public:
         ::CommandOutputMessageType                     type
     );
 
-#ifdef LL_PLAT_S
-    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
-#endif
-
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
     MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);

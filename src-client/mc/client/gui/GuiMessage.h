@@ -52,18 +52,16 @@ public:
     MCAPI GuiMessage(::GuiMessage const&);
 
     MCAPI GuiMessage(
-        ::GuiMessage::MessageType      type,
-        ::std::string const&           username,
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage,
-        ::std::string const&           ttsMessage,
-        ::std::string const&           authorXuid,
-        float                          lifetime,
-        bool                           forceVisible,
-        bool                           ttsRequired
+        ::GuiMessage::MessageType            type,
+        ::std::string const&                 username,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage,
+        ::std::string const&                 ttsMessage,
+        ::std::string const&                 authorXuid,
+        float                                lifetime,
+        bool                                 forceVisible,
+        bool                                 ttsRequired
     );
-
-    MCAPI void prependDevAttributionTag();
 
     MCAPI ~GuiMessage();
     // NOLINTEND
@@ -74,15 +72,15 @@ public:
     MCAPI void* $ctor(::GuiMessage const&);
 
     MCAPI void* $ctor(
-        ::GuiMessage::MessageType      type,
-        ::std::string const&           username,
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage,
-        ::std::string const&           ttsMessage,
-        ::std::string const&           authorXuid,
-        float                          lifetime,
-        bool                           forceVisible,
-        bool                           ttsRequired
+        ::GuiMessage::MessageType            type,
+        ::std::string const&                 username,
+        ::std::string const&                 message,
+        ::std::optional<::std::string> const filteredMessage,
+        ::std::string const&                 ttsMessage,
+        ::std::string const&                 authorXuid,
+        float                                lifetime,
+        bool                                 forceVisible,
+        bool                                 ttsRequired
     );
     // NOLINTEND
 

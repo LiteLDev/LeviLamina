@@ -49,6 +49,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual bool isTypeOrDerived(::BlockActorType type) const /*override*/;
+
     virtual void tick(::BlockSource& region) /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -100,6 +102,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+
     MCAPI void $tick(::BlockSource& region);
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);

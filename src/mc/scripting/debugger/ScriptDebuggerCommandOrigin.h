@@ -13,8 +13,10 @@ class Actor;
 class BlockPos;
 class Dimension;
 class Level;
+class ServerLevel;
 class Vec2;
 class Vec3;
+struct DimensionType;
 // clang-format on
 
 class ScriptDebuggerCommandOrigin : public ::CommandOrigin {
@@ -70,6 +72,28 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptDebuggerCommandOrigin(
+        ::ServerLevel&                              origin,
+        ::CommandPermissionLevel                    permissionLevel,
+        ::DimensionType                             dimensionType,
+        ::std::function<void(int, ::std::string&&)> outputCallback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::ServerLevel&                              origin,
+        ::CommandPermissionLevel                    permissionLevel,
+        ::DimensionType                             dimensionType,
+        ::std::function<void(int, ::std::string&&)> outputCallback
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::string const& $getRequestId() const;
@@ -103,5 +127,11 @@ public:
     MCNAPI bool $isValid() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

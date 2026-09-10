@@ -118,6 +118,22 @@ public:
 
     MCAPI void bindDynamicScriptTypes(::ServerScriptManager& scripts) const;
 
+#ifdef LL_PLAT_C
+    MCAPI void buildClientRegistryFromServer(
+        ::std::vector<::ItemData> const& serverItemData,
+        ::Experiments const&             experiments,
+        ::BaseGameVersion const&         baseGameVersion
+    ) const;
+#endif
+
+    MCAPI void buildServerRegistry(
+        ::Experiments const&                               experiments,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::ResourcePackManager*                             rpm,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing
+    ) const;
+
     MCAPI bool canUpdateTags() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::cereal::ReflectionCtx const> cerealContext() const;
@@ -152,18 +168,6 @@ public:
     MCAPI ::BaseGameVersion getWorldBaseGameVersion() const;
 
 #ifdef LL_PLAT_C
-    MCAPI void initClient(
-        ::std::vector<::ItemData> const& serverItemData,
-        ::Experiments const&             experiments,
-        ::BaseGameVersion const&         baseGameVersion
-    ) const;
-
-    MCAPI void initClientData(
-        ::ResourcePackManager& packManager,
-        ::Experiments const&   experiments,
-        ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
-    ) const;
-
     MCAPI void initCreativeItemsClient(
         ::CreativeContentPacket const& creativeContentPacket,
         ::BlockPalette const&          blockPalette
@@ -187,14 +191,6 @@ public:
             ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
             ::IMinecraftEventing&
         )>                                                 registerCallback
-    ) const;
-
-    MCAPI void initServer(
-        ::Experiments const&                               experiments,
-        ::BaseGameVersion const&                           baseGameVersion,
-        ::ResourcePackManager*                             rpm,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
-        ::IMinecraftEventing&                              eventing
     ) const;
 
     MCAPI bool isComplexAlias(::HashedString const& oldName) const;
@@ -230,6 +226,14 @@ public:
         ::WeakRef<::IContainerRegistryAccess>       containerAccess,
         ::WeakRef<::IContainerRegistryTracker>      containerTracker
     ) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void populateClientItemData(
+        ::ResourcePackManager& packManager,
+        ::Experiments const&   experiments,
+        ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
+    ) const;
+#endif
 
     MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion) const;

@@ -20,24 +20,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                     mWeaponReachMultiplier;
     ::ll::TypedStorage<4, 4, float>                     mWeaponMinSpeedMultiplier;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UseKineticWeaponGoalDefinition();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_120

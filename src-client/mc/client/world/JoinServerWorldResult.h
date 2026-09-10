@@ -15,7 +15,9 @@ enum class JoinServerWorldResult : int {
     UserBannedError                       = 7,
     ThirdPartyBadIPError                  = 8,
     ThirdPartyNoServerOrServerLockedError = 9,
-    UnknownError                          = 10,
+    ExternalLocalhostError                = 10,
+    ExternalPrivateNetworkError           = 11,
+    UnknownError                          = 12,
 };
 
 }

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/GameServerTokenValidationResult.h"
 #include "mc/deps/certificates/WebToken.h"
 
 // auto generated forward declare list
@@ -24,8 +25,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameServerToken();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit GameServerToken(::std::string const& tokenString);
+
     MCAPI ::PlayerAuthenticationInfo getTrustedInfo() const;
 
     MCAPI bool hasMatchingIssuer(::MinecraftServiceKeyManager const& serviceKeyManager);
@@ -36,14 +43,15 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _checkExpiration(::WebToken const& token, int64 currentTime);
 
-    MCAPI static bool _validate(
+    MCAPI static ::GameServerTokenValidationResult _validate(
         ::WebToken const&                   token,
         ::MinecraftServiceKeyManager const& keyManager,
         int64                               currentTime,
         bool                                checkExpiration
     );
 
-    MCAPI static bool _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
+    MCAPI static ::GameServerTokenValidationResult
+    _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
 
 #ifdef LL_PLAT_C
     MCAPI static ::RawGameServerToken createLocal(
@@ -53,5 +61,11 @@ public:
         ::PlayerAuthenticationInfo const& claims
     );
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& tokenString);
     // NOLINTEND
 };

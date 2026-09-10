@@ -105,5 +105,8 @@ enum class ParticleType : int {
     PauseMobGrowth        = 99,
     ResetMobGrowth        = 100,
     SulfurCube            = 101,
-    Count                 = 102,
+    OrangePoplarLeaves    = 102,
+    RedPoplarLeaves       = 103,
+    YellowPoplarLeaves    = 104,
+    Count                 = 105,
 };

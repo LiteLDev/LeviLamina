@@ -9,9 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class CerealDocumentUpgrader;
 class Experiments;
 class ItemComponent;
 class PackLoadRequirement;
+struct PackLoadInfo;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -81,6 +83,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static void
+    addAllComponentUpgrades(::CerealDocumentUpgrader& documentUpgrader, ::cereal::ReflectionCtx const& ctx);
+#endif
+
     MCAPI static void addComponentMetadata(
         ::cereal::ReflectionCtx&                          ctx,
         ::std::string const&                              componentName,
@@ -93,16 +100,33 @@ public:
 
     MCAPI static void deprecateComponentStartingFromVersion(
         ::std::string const&           name,
-        ::SemVersion const             deprecatedVersion,
+        ::SemVersion                   deprecatedVersion,
         ::cereal::ReflectionCtx const& ctx
     );
 
     MCAPI static ::std::optional<::SemVersion>
     getReleasedMinFormatVersionForAnyComponent(::cereal::ReflectionCtx const& ctx);
 
+#ifdef LL_PLAT_C
+    MCAPI static bool isComponentBasedItemSchema(
+        ::SemVersion const& formatVersion,
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& itemData,
+        ::cereal::ReflectionCtx const&                                          ctx
+    );
+#endif
+
     MCAPI static ::CerealItemComponentFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
 
     MCAPI static void
     updateReleasedMinFormatVersionForAnyComponentIfLower(::CerealItemComponentFactory& instance, ::SemVersion version);
+
+    MCAPI static bool validateCerealComponent(
+        ::std::string const&           componentName,
+        ::SemVersion const&            documentVersion,
+        ::PackLoadInfo const&          packLoadInfo,
+        ::cereal::ReflectionCtx const& ctx
+    );
     // NOLINTEND
 };

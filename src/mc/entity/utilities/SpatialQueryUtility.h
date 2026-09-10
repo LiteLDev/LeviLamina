@@ -15,6 +15,7 @@ class IConstBlockSource;
 class LocalSpatialEntityFetcher;
 class StrictEntityContext;
 struct AABBShapeComponent;
+struct ActorDataFlagComponent;
 struct CollidableMobFlagComponent;
 struct CollisionShapes;
 struct FallingBlockFlagComponent;
@@ -39,6 +40,14 @@ public:
         ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const> view,
         ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
         ::CollisionShapes&                                                     collisionShapes
+    );
+
+    MCAPI static void testForEntityStacking(
+        ::StrictEntityContext const& except,
+        ::LocalSpatialEntityFetcher& component,
+        ::AABB const&                intersectTestBox,
+        ::ViewT<::StrictEntityContext, ::AABBShapeComponent const, ::ActorDataFlagComponent const> const& view,
+        ::CollisionShapes& collisionShapes
     );
     // NOLINTEND
 };

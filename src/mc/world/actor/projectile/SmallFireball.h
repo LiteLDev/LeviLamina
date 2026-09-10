@@ -16,13 +16,10 @@ struct HurtParameters;
 // clang-format on
 
 class SmallFireball : public ::Fireball {
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     SmallFireball();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,25 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI SmallFireball(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-#endif
     // NOLINTEND
 
 public:

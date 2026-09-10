@@ -13,20 +13,10 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkbe6af1;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
-    KeyManager& operator=(KeyManager const&);
-    KeyManager(KeyManager const&);
     KeyManager();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    KeyManager(KeyManager const&);
-    KeyManager();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,16 +28,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI KeyManager(::KeyManager const& rhs);
+
     MCNAPI KeyManager(::std::string const& publicKey, ::Crypto::Asymmetric::System system);
 
-#ifdef LL_PLAT_C
     MCNAPI ::KeyManager& operator=(::KeyManager const& rhs);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::KeyManager const& rhs);
+
     MCNAPI void* $ctor(::std::string const& publicKey, ::Crypto::Asymmetric::System system);
     // NOLINTEND
 

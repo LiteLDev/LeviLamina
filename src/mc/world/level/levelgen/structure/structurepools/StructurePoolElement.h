@@ -244,6 +244,8 @@ public:
     MCAPI ::SharedTypes::v1_21_80::JigsawStructureMetadata const& _getMetadata() const;
 
     MCAPI uint64 _getMetadataKey() const;
+
+    MCAPI void setId(::JigsawStructureUtils::StructureElementId id);
     // NOLINTEND
 
 public:
@@ -317,7 +319,11 @@ public:
 
     MCAPI void $setProjection(::Projection projection);
 
+#ifdef LL_PLAT_S
     MCAPI ::Projection $getProjection() const;
+#else // LL_PLAT_C
+    MCFOLD ::Projection $getProjection() const;
+#endif
 
     MCAPI ::PostProcessSettings $getPostProcessSettings() const;
 

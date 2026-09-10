@@ -43,7 +43,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mTouchMode;
     ::ll::TypedStorage<1, 1, bool>                          mAllowScrollEvenWhenContentFits;
     ::ll::TypedStorage<1, 1, bool>                          mScrollbarAlwaysVisible;
-    ::ll::TypedStorage<4, 68, ::ScrollbarDynamics>          mScrollbarDynamics;
+    ::ll::TypedStorage<4, 76, ::ScrollbarDynamics>          mScrollbarDynamics;
     ::ll::TypedStorage<1, 1, bool>                          mTouchScrollBarVisible;
     ::ll::TypedStorage<4, 4, float>                         mTouchScrollBarIntensity;
     ::ll::TypedStorage<1, 1, bool>                          mJumpToBottomOnUpdate;

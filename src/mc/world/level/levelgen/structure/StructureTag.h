@@ -7,6 +7,8 @@ namespace StructureTag {
 // NOLINTBEGIN
 MCAPI ::std::string const& BLOCK_INDICES();
 
+MCAPI ::std::string const& BLOCK_PALETTE();
+
 MCAPI ::std::string const& FORMAT_VERSION();
 
 MCAPI ::std::string const& SIZE();

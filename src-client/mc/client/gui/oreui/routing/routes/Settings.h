@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/SettingsModalType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
+#include "mc/client/gui/oreui/interface/RouteType.h"
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -83,7 +84,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::string> composeRoute(::SettingsTabIndex tabIndex);
+    MCAPI static ::std::optional<::std::string> composeRoute(::SettingsTabIndex tabIndex, ::OreUI::RouteType routeType);
 
     MCAPI static ::std::string defaultRoute();
 

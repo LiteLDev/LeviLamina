@@ -34,11 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ContentLogFileEndPoint() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~ContentLogFileEndPoint() /*override*/;
-#endif
 
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
 
@@ -80,9 +76,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

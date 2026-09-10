@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/nbt/CompoundTag.h"
 
+// auto generated forward declare list
+// clang-format off
+class IDataInput;
+// clang-format on
+
 class LevelChunkMetaData {
 public:
     // member variables
@@ -15,8 +20,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkMetaData& operator=(LevelChunkMetaData const&);
+    LevelChunkMetaData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelChunkMetaData(::LevelChunkMetaData const& otherMetaData);
+
+#ifdef LL_PLAT_S
+    MCAPI explicit LevelChunkMetaData(::IDataInput& stream);
+#endif
+
     MCAPI void _recomputeHash() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LevelChunkMetaData const& otherMetaData);
+
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::IDataInput& stream);
+#endif
     // NOLINTEND
 };

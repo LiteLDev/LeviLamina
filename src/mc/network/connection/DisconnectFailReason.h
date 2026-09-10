@@ -147,7 +147,13 @@ enum class DisconnectFailReason : int {
     NonceNotValid                                 = 139,
     HostDisconnected                              = 140,
     EditorJoinIntentPolicyFailure                 = 141,
-    MaxDisconnectFailReason                       = 142,
+    NetherNetIdentityNotAllowed                   = 142,
+    InvalidName                                   = 143,
+    ExpiredToken                                  = 144,
+    HostAcceptsNoTypeOfAuth                       = 145,
+    NotAuthenticatedFastFail                      = 146,
+    EditorNotAllowed                              = 147,
+    MaxDisconnectFailReason                       = 148,
 };
 
 }

@@ -38,7 +38,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getActiveBehaviorPacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getActiveBehaviorPacks() const;
 
     MCFOLD ::std::vector<::World::PackDetails> const& getActiveTexturePacks() const;
 
@@ -48,7 +48,7 @@ public:
 
     MCFOLD ::std::vector<::World::PackDetails> const& getGlobalTexturePacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getRealmsTexturePacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getRealmsTexturePacks() const;
 
     MCFOLD ::std::vector<::World::PackDetails> const& getUnownedTexturePacks() const;
 

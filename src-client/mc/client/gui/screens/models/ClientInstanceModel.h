@@ -147,10 +147,4 @@ public:
 
     MCAPI void $notifyForLeaveGame();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

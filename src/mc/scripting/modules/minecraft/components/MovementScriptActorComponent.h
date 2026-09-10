@@ -10,6 +10,7 @@
 // clang-format off
 class ActorDefinitionDescriptor;
 struct MoveControlDescription;
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -28,6 +29,12 @@ public:
     virtual ~MovementScriptActorComponent() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<float> getMaxTurn() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

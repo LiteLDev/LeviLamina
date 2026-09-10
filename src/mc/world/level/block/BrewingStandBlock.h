@@ -93,7 +93,11 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::std::string $buildDescriptionId(::Block const&) const;
+#else // LL_PLAT_C
+    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
+#endif
 
     MCAPI void $addAABBs(
         ::Block const&             block,
@@ -132,8 +136,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 

@@ -17,6 +17,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk29733e;
     ::ll::UntypedStorage<1, 1>  mUnkf4a897;
     ::ll::UntypedStorage<1, 1>  mUnkd17af5;
+    ::ll::UntypedStorage<8, 64> mUnk291dd0;
     // NOLINTEND
 
 public:
@@ -24,6 +25,22 @@ public:
     BakeConfig& operator=(BakeConfig const&);
     BakeConfig(BakeConfig const&);
     BakeConfig();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI ~BakeConfig();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Resources

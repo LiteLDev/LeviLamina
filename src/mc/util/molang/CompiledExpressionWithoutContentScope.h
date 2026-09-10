@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
-    virtual ::MolangScriptArg const& evalGeneric(::RenderParams& renderParams) const /*override*/;
+    virtual ::MolangScriptArg const& evalGeneric(::RenderParams& params) const /*override*/;
 
     virtual bool isInitialized() const /*override*/;
 
@@ -76,7 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;
 
-    MCNAPI ::MolangScriptArg const& $evalGeneric(::RenderParams& renderParams) const;
+    MCNAPI ::MolangScriptArg const& $evalGeneric(::RenderParams& params) const;
 
     MCNAPI bool $isInitialized() const;
 

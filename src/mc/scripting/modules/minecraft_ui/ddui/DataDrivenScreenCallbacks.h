@@ -7,6 +7,11 @@
 #include "mc/scripting/DataDrivenScreenRejectReason.h"
 #include "mc/ui/DataDrivenScreenClosedReason.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { class StrongObjectHandle; }
+// clang-format on
+
 namespace ScriptModuleMinecraftServerUI {
 
 struct DataDrivenScreenCallbacks : public ::DataDrivenScreenPromise {
@@ -33,6 +38,26 @@ public:
     virtual void resolve(::DataDrivenScreenClosedReason resolution) /*override*/;
 
     virtual void reject(::DataDrivenScreenRejectReason rejection) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI DataDrivenScreenCallbacks(
+        ::std::function<void(::DataDrivenScreenClosedReason)> resolveCallback,
+        ::std::function<void(::DataDrivenScreenRejectReason)> rejectCallback,
+        ::Scripting::StrongObjectHandle                       keepAliveHandle
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::function<void(::DataDrivenScreenClosedReason)> resolveCallback,
+        ::std::function<void(::DataDrivenScreenRejectReason)> rejectCallback,
+        ::Scripting::StrongObjectHandle                       keepAliveHandle
+    );
     // NOLINTEND
 
 public:

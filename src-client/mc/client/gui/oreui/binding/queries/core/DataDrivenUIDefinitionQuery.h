@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
+#include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/gui/oreui/binding/queries/core/DefinitionType.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -25,8 +26,9 @@ public:
         8,
         120,
         ::OreUI::PropertyVector<::OreUI::DataDrivenUIGenericNode, ::std::allocator<::OreUI::DataDrivenUIGenericNode>>>
-                                                               mChildrenNodes;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnCompositionsReloadedSubscription;
+                                                                 mChildrenNodes;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mSourcePackId;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mOnCompositionsReloadedSubscription;
     // NOLINTEND
 
 public:

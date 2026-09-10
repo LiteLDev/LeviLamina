@@ -30,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MinEngineVersion(::SemVersion const& version);
 
-#ifdef LL_PLAT_C
     MCAPI ::Json::Value createJsonValue() const;
 
+#ifdef LL_PLAT_C
     MCAPI ::SemVersion getSemVersion() const;
 #endif
 

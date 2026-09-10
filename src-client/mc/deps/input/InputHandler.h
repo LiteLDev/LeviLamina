@@ -31,6 +31,7 @@ struct OverlappingControlsEventData;
 struct PointerLocationEventData;
 struct PointerLocationWithIdEventData;
 struct TouchPadTouchEventData;
+namespace Input::Debug { class ISplitscreenRedirect; }
 // clang-format on
 
 class InputHandler {
@@ -247,9 +248,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI InputHandler(
-        ::BindingFactoryMap&      bindingFactoryMap,
-        ::InputMappingFactoryMap& mappingFactoryMap,
-        ::InputMode               startingInputMode
+        ::BindingFactoryMap&                                                       bindingFactoryMap,
+        ::InputMappingFactoryMap&                                                  mappingFactoryMap,
+        ::InputMode                                                                startingInputMode,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
 
     MCAPI void
@@ -348,9 +350,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::BindingFactoryMap&      bindingFactoryMap,
-        ::InputMappingFactoryMap& mappingFactoryMap,
-        ::InputMode               startingInputMode
+        ::BindingFactoryMap&                                                       bindingFactoryMap,
+        ::InputMappingFactoryMap&                                                  mappingFactoryMap,
+        ::InputMode                                                                startingInputMode,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
     // NOLINTEND
 

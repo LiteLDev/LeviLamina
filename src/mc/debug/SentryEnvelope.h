@@ -23,20 +23,8 @@ public:
     SentryEnvelope();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SentryEnvelope();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindAllTypes(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

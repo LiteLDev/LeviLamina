@@ -4,6 +4,15 @@
 
 namespace Social {
 
-class MultiplayerService {};
+class MultiplayerService {
+public:
+    // MultiplayerService inner types declare
+    // clang-format off
+    struct ConnectionStates;
+    // clang-format on
+
+    // MultiplayerService inner types define
+    struct ConnectionStates {};
+};
 
 } // namespace Social

@@ -238,9 +238,9 @@ public:
                 H_p = h_p;
             }
         }
-        double T = 1 - 0.17 * cos((H_p - 30) * rtod) + 0.24 * cos((2 * H_p) * rtod) + 0.32 * cos((3 * H_p + 6) * rtod)
-                 - 0.20 * cos((4 * H_p - 63.0) * rtod);
-        double dHp   = 2 * sqrt(C1p * C2p) * sin(dhp * 0.5 * rtod);
+        double T   = 1 - 0.17 * cos((H_p - 30) * rtod) + 0.24 * cos((2 * H_p) * rtod) + 0.32 * cos((3 * H_p + 6) * rtod)
+                   - 0.20 * cos((4 * H_p - 63.0) * rtod);
+        double dHp = 2 * sqrt(C1p * C2p) * sin(dhp * 0.5 * rtod);
         L_          -= 50;
         L_          *= L_;
         double SL    = 1.0 + 0.015 * L_ / sqrt(L_ + 20);
@@ -260,7 +260,7 @@ public:
     [[nodiscard]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
 
     [[nodiscard]] uint toARGB() {
-        const auto toByte = [](float component) -> std::uint8_t {
+        auto const toByte = [](float component) -> std::uint8_t {
             return static_cast<std::uint8_t>(std::round(255.0f * std::clamp(component, 0.0f, 1.0f)));
         };
 
@@ -273,9 +273,9 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI int toARGB() const;
-#endif
 
     MCAPI ::std::string toHexString() const;
+#endif
     // NOLINTEND
 
 public:
@@ -307,23 +307,19 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI static ::mce::Color const& ORANGE();
-#endif
+
+    MCAPI static ::mce::Color const& PARTY_BLUE();
 
     MCAPI static ::mce::Color const& PINK();
+#endif
 
     MCAPI static ::mce::Color const& PURPLE();
 
+#ifdef LL_PLAT_C
     MCAPI static ::mce::Color const& REBECCA_PURPLE();
+#endif
 
     MCAPI static ::mce::Color const& RED();
-
-    MCAPI static ::mce::Color const& SHADE_DOWN();
-
-    MCAPI static ::mce::Color const& SHADE_NORTH_SOUTH();
-
-    MCAPI static ::mce::Color const& SHADE_UP();
-
-    MCAPI static ::mce::Color const& SHADE_WEST_EAST();
 
     MCAPI static ::mce::Color const& WHITE();
 

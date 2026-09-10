@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_50 { struct PoolElementStructureSection; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace StructureMetadata {
@@ -21,6 +22,12 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                                                          mMaxBounds;
     ::ll::TypedStorage<8, 32, ::std::string>                                                       mStructure;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_50::PoolElementStructureSection>> mSections;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

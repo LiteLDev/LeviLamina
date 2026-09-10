@@ -16,8 +16,6 @@ class RemoveOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RemoveOnHitSubcomponent() /*override*/ = default;
-
     virtual void readfromJSON(::Json::Value&) /*override*/;
 
     virtual void writetoJSON(::Json::Value&) const /*override*/;
@@ -39,11 +37,5 @@ public:
     MCAPI char const* $getName() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

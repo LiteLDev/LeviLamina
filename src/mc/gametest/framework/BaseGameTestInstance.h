@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGameTestInstance();
+    virtual ~BaseGameTestInstance() = default;
 
     virtual void initialize();
 
@@ -103,8 +103,6 @@ public:
 
     MCNAPI void fail(::gametest::GameTestError error, bool canRetry);
 
-    MCNAPI void finish(bool canRetry);
-
     MCNAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
 
     MCNAPI void runCallbacksOnFinish();
@@ -123,12 +121,6 @@ public:
         ::gametest::BaseGameTestFunction const&                testFunction,
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

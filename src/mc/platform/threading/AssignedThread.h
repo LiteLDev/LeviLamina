@@ -36,6 +36,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void assign(::std::thread::id const& thread);
+
+#ifdef LL_PLAT_C
+    MCAPI bool isOnThread() const;
+#endif
     // NOLINTEND
 };
 

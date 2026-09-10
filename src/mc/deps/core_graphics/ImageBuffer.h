@@ -46,8 +46,6 @@ public:
 
     MCAPI ImageBuffer(::cg::ImageBuffer const& rhs);
 
-    MCAPI void allocateStorage(::cg::ImageDescription const& imageDesc);
-
     MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer&& other);
 
     MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer const& other);

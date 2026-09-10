@@ -20,18 +20,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::mce::PrimitiveMode>           mMode;
-    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>>    mPositions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec4>>    mNormals;
-    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec4>>    mTangents;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mIndices;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mColors;
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>         mBoneId0s;
-    ::ll::TypedStorage<8, 72, ::std::vector<::glm::vec2>[3]> mTextureUVs;
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>         mPBRTextureIndices;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mMERS;
-    ::ll::TypedStorage<8, 24, ::std::vector<uchar>>          mGeoType;
-    ::ll::TypedStorage<1, 15, ::std::array<bool, 15>>        mFieldEnabled;
+    ::ll::TypedStorage<1, 1, ::mce::PrimitiveMode>                   mMode;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>>            mPositions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec4>>            mNormals;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec4>>            mTangents;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                   mIndices;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                   mColors;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                 mBoneId0s;
+    ::ll::TypedStorage<8, 72, ::std::vector<::glm::vec2>[3]>         mTextureUVs;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                 mPBRTextureIndices;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                   mMERS;
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>>                  mGeoType;
+    ::ll::TypedStorage<4, 24, ::std::pair<::glm::vec3, ::glm::vec3>> mAABB;
+    ::ll::TypedStorage<1, 15, ::std::array<bool, 15>>                mFieldEnabled;
     // NOLINTEND
 
 public:

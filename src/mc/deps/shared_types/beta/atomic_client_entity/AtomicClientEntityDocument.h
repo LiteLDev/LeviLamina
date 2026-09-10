@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,21 +18,8 @@ struct AtomicClientEntityDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription> mDescription;
-    ::ll::TypedStorage<8, 48, ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDefinitions> mDefinitions;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AtomicClientEntityDocument& operator=(AtomicClientEntityDocument const&);
-    AtomicClientEntityDocument();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AtomicClientEntityDocument(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDocument const&);
-
-    MCAPI ~AtomicClientEntityDocument();
+    ::ll::TypedStorage<8, 224, ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription> mDescription;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDefinitions>  mDefinitions;
     // NOLINTEND
 
 public:
@@ -41,15 +29,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static variables
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDocument const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI static ::SemVersionConstant const& VERSION();
+#endif
     // NOLINTEND
 };
 

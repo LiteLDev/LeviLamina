@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/renderer/game/DirectionalLightRenderData.h"
 #include "mc/client/renderer/game/LevelRendererCameraListeners.h"
+#include "mc/client/renderer/game/LevelRendererCameraType.h"
 #include "mc/client/renderer/game/PlayerRenderingParameters.h"
 #include "mc/client/renderer/scripting/ServerGraphicsOverrideManager.h"
 #include "mc/client/renderer/texture/TextureAtlasItem.h"
@@ -217,6 +218,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LevelRendererPlayer() /*override*/ = default;
+
+    virtual ::LevelRendererCameraType getCameraType() const /*override*/;
 
     virtual void initResources() /*override*/;
 
@@ -460,6 +463,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::LevelRendererCameraType $getCameraType() const;
+
     MCAPI void $initResources();
 
     MCAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);

@@ -9,12 +9,17 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInputPermissionCategoryChangeIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerInputPermissionCategoryChangeAfterEvent {
+public:
+    // ScriptPlayerInputPermissionCategoryChangeAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN

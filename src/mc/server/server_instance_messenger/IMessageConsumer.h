@@ -11,6 +11,10 @@ public:
     virtual ~IMessageConsumer() = default;
 
     virtual void processMessages() = 0;
+
+    virtual void stopAndDiscardMessages() = 0;
+
+    virtual uint64 getPendingMessageCount() = 0;
     // NOLINTEND
 };
 

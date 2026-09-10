@@ -16,7 +16,6 @@
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::API { struct EditorExtensionOptionalParameters; }
@@ -97,22 +96,6 @@ public:
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> createExtensionContexts() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI explicit EditorExtensionService(::Editor::ServiceProviderCollection& providers);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-#endif
     // NOLINTEND
 
 public:

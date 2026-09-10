@@ -24,18 +24,6 @@ public:
     ScriptSentrySessionParameters& operator=(ScriptSentrySessionParameters const&);
     ScriptSentrySessionParameters(ScriptSentrySessionParameters const&);
     ScriptSentrySessionParameters();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptSentrySessionParameters();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleDiagnostics

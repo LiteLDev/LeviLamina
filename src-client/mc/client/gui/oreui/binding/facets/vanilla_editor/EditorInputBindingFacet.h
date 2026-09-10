@@ -30,6 +30,7 @@ public:
     // clang-format off
     struct KeyBindingFacet;
     struct MouseBindingFacet;
+    struct BindingCategoryFacet;
     // clang-format on
 
     // EditorInputBindingFacet inner types define
@@ -43,6 +44,8 @@ public:
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mLabel;
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mTooltip;
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mActionId;
+        ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mBindingCategory;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>            mBindingPriority;
         ::ll::TypedStorage<1, 1, bool>                            mCanRebind;
         ::ll::TypedStorage<1, 1, bool>                            mIsModified;
         // NOLINTEND
@@ -72,6 +75,16 @@ public:
         // NOLINTEND
     };
 
+    struct BindingCategoryFacet {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> mId;
+        ::ll::TypedStorage<8, 32, ::std::string> mLabel;
+        ::ll::TypedStorage<4, 4, int>            mOrder;
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -91,10 +104,12 @@ public:
         ::std::unordered_map<
             ::HashedString,
             ::std::unordered_map<::HashedString, ::OreUI::EditorInputBindingFacet::MouseBindingFacet>>>
-                                                               mMouseBindings;
+                                                                                                     mMouseBindings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::EditorInputBindingFacet::BindingCategoryFacet>> mBindingCategories;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mKeyBindingChangedSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mMouseBindingChangedSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mTutorialStageChangedSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mBindingCategoryChangedSub;
     ::ll::TypedStorage<1, 1, bool>                             mToggleCursorEnabled;
     ::ll::TypedStorage<1, 1, bool>                             mUseDefaultBindings;
     // NOLINTEND
@@ -132,6 +147,8 @@ public:
     MCAPI void _handleTutorialStageChangeEvent(::HashedString const&, ::HashedString const&, bool isTutorialStarted);
 
     MCAPI void _refreshBindings();
+
+    MCFOLD ::std::vector<::OreUI::EditorInputBindingFacet::BindingCategoryFacet> const& getBindingCategories() const;
 
     MCFOLD ::std::unordered_map<
         ::HashedString,

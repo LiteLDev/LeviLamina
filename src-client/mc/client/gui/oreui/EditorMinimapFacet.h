@@ -158,7 +158,7 @@ public:
     MCAPI ::std::unordered_map<::std::string, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>> const&
     getMarkers();
 
-    MCAPI ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData> const& getMinimaps();
+    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData> const& getMinimaps();
 
     MCAPI ::OreUI::EditorMinimapFacet::MinimapHoverInfo
     queryMinimapPosition(::std::string const& minimapId, float worldX, float worldZ);

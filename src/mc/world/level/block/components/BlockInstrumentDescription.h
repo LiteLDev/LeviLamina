@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_26_20/block/InstrumentComponent.h"
+#include "mc/deps/shared_types/v1_26_20/block/components/InstrumentComponent.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list

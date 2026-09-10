@@ -63,8 +63,5 @@ public:
     );
 
     MCAPI static ::std::optional<::Vec3> getPosTowards(::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
-
-    MCAPI static ::std::optional<::Vec3>
-    getPosTowards(::Random& random, ::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
     // NOLINTEND
 };

@@ -182,6 +182,8 @@ public:
     // NOLINTBEGIN
     virtual ~SignBlockActor() /*override*/;
 
+    virtual bool isTypeOrDerived(::BlockActorType type) const /*override*/;
+
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -249,6 +251,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);

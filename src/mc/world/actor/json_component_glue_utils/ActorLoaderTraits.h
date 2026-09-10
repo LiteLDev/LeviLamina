@@ -19,6 +19,7 @@ namespace SharedTypes::v1_26_0 { struct ActorDocument; }
 namespace SharedTypes::v1_26_10 { struct ActorDocument; }
 namespace SharedTypes::v1_26_20 { struct ActorDocument; }
 namespace SharedTypes::v1_26_30 { struct ActorDocument; }
+namespace SharedTypes::v1_26_40 { struct ActorDocument; }
 // clang-format on
 
 namespace JsonComponentGlueUtils {
@@ -42,89 +43,18 @@ public:
         ::SharedTypes::v1_26_10::ActorDocument,
         ::SharedTypes::v1_26_20::ActorDocument,
         ::SharedTypes::v1_26_30::ActorDocument,
+        ::SharedTypes::v1_26_40::ActorDocument,
         ::SharedTypes::Beta::ActorDocument>;
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void upgrade_beta_dummy(
+    MCAPI static void upgrade_v1_26_40(
         ::Puv::CerealUpgrader<
             ::SharedTypes::v1_26_30::ActorDocument,
-            ::SharedTypes::Beta::ActorDocument,
+            ::SharedTypes::v1_26_40::ActorDocument,
             ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
     );
-
-    MCAPI static void upgrade_v1_21_100(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_21_90::ActorDocument,
-            ::SharedTypes::v1_21_100::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_21_110(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_21_100::ActorDocument,
-            ::SharedTypes::v1_21_110::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_21_120(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_21_110::ActorDocument,
-            ::SharedTypes::v1_21_120::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_21_130(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_21_120::ActorDocument,
-            ::SharedTypes::v1_21_130::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_21_89(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::Legacy::ActorDocument,
-            ::SharedTypes::Legacy::ActorDocumentCorrected,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_21_90(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::Legacy::ActorDocumentCorrected,
-            ::SharedTypes::v1_21_90::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_26_0(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_21_130::ActorDocument,
-            ::SharedTypes::v1_26_0::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_26_10(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_26_0::ActorDocument,
-            ::SharedTypes::v1_26_10::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_26_20(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_26_10::ActorDocument,
-            ::SharedTypes::v1_26_20::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-
-    MCAPI static void upgrade_v1_26_30(
-        ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_26_20::ActorDocument,
-            ::SharedTypes::v1_26_30::ActorDocument,
-            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
-    );
-#endif
     // NOLINTEND
 
 public:

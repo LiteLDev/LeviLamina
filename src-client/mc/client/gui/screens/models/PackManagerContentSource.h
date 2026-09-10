@@ -63,6 +63,8 @@ public:
 
     virtual void
     _createAvailablePackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& available);
+
+    virtual ~PackManagerContentSource() /*override*/;
     // NOLINTEND
 
 public:
@@ -91,6 +93,12 @@ public:
         ::std::vector<::PackModel>&     selected,
         ::std::vector<::PackModel>&     available
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

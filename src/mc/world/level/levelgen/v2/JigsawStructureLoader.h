@@ -9,8 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class BedrockLoadContext;
+class IMinecraftEventing;
 class LinkedAssetValidator;
 class ResourcePackManager;
+namespace PuvLoadData { struct TelemetryEventData; }
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
 namespace SharedTypes::v1_21_20::JigsawStructureDefinition { struct Contents; }
 namespace SharedTypes::v1_21_20::JigsawStructureProcessorList { struct Contents; }
@@ -80,15 +82,31 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCAPI void _parseJigsawDefinitionData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI bool _parseJigsawDefinitionData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
 
-    MCAPI void _parseProcessorsData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI bool _parseProcessorsData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
 
-    MCAPI void _parseStructureSetData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI bool _parseStructureSetData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
 
-    MCAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI bool _parseTemplatePoolsData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
 
-    MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
+    MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

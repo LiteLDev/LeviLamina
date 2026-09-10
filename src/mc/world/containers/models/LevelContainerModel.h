@@ -69,8 +69,10 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Container* getContainerHelper(::Player& player, ::ActorUniqueID const& actorUniqueId);
 
+#ifdef LL_PLAT_S
     MCAPI static ::Container*
     getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
+#endif
     // NOLINTEND
 
 public:

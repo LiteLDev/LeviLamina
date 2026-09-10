@@ -72,7 +72,7 @@ public:
 
     MCAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
 
-    MCAPI bool isRecipeUnlocked(::std::string const& recipeId) const;
+    MCFOLD bool isRecipeUnlocked(::std::string const& recipeId) const;
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 

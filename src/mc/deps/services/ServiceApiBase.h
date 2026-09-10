@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace services {
+namespace Bedrock::Services {
 
 class ServiceApiBase {};
 
-} // namespace services
+} // namespace Bedrock::Services

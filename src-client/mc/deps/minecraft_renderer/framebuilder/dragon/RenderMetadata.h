@@ -15,7 +15,7 @@ public:
     ::ll::TypedStorage<8, 8, int64 const>                                            mID;
     ::ll::TypedStorage<4, 8, ::mce::framebuilder::CustomSurfaceShaderMetadata const> mCSSMetadata;
     ::ll::TypedStorage<1, 1, bool const>                                             mIsItem;
-    ::ll::TypedStorage<8, 48, ::OffscreenCaptureDescription>                         mOffscreenCaptureDescription;
+    ::ll::TypedStorage<8, 40, ::OffscreenCaptureDescription>                         mOffscreenCaptureDescription;
     // NOLINTEND
 
 public:
@@ -27,12 +27,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RenderMetadata(::dragon::RenderMetadata const&);
+
+    MCAPI ~RenderMetadata();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::dragon::RenderMetadata const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

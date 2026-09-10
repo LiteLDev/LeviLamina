@@ -14,6 +14,7 @@ public:
     ::ll::TypedStorage<4, 8, ::glm::vec2>    mSize;
     ::ll::TypedStorage<4, 8, ::glm::vec2>    mPosition;
     ::ll::TypedStorage<4, 4, int>            mLayer;
+    ::ll::TypedStorage<1, 1, bool>           mReturnIfTooSmall;
     ::ll::TypedStorage<8, 8, ::PropertyBag&> mOwnerBag;
     // NOLINTEND
 

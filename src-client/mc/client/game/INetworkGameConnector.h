@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/events/OnlineSafetyDialogVisibility.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/events/IMinecraftEventing.h"
@@ -13,7 +14,7 @@
 class ClientNetworkSystem;
 class IClientInstance;
 class RealmsAPI;
-struct ExperienceConnectionData;
+struct ExperienceJoinRequestInfo;
 struct GameConnectionInfoEx;
 struct PlayerJoinWorldContext;
 namespace Realms { struct RealmId; }
@@ -43,21 +44,24 @@ public:
         ::PlayerJoinWorldContext     context
     ) = 0;
 
-    virtual ::Bedrock::Threading::Async<void>
-    joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo, ::PlayerJoinWorldContext context) = 0;
+    virtual ::Bedrock::Threading::Async<void> joinMultiplayerGame(
+        ::Social::MultiplayerGameInfo const& gameInfo,
+        ::PlayerJoinWorldContext             context,
+        ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
+    ) = 0;
 
     virtual void setReconnectionCookie(
         ::std::optional<::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
-            ::ExperienceConnectionData,
+            ::ExperienceJoinRequestInfo,
             ::Realms::RealmId>> const& reconnectCookie
     ) = 0;
 
     virtual ::std::optional<::std::variant<
         ::GameConnectionInfoEx,
         ::Social::MultiplayerGameInfo,
-        ::ExperienceConnectionData,
+        ::ExperienceJoinRequestInfo,
         ::Realms::RealmId>>
     getReconnectionCookie() = 0;
 

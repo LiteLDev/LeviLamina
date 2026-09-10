@@ -66,7 +66,7 @@ public:
 
     MCAPI void _updateProfiles();
 
-    MCFOLD ::std::vector<::OreUI::PartyReceivedInviteData> const& getInvites() const;
+    MCAPI ::std::vector<::OreUI::PartyReceivedInviteData> const& getInvites() const;
     // NOLINTEND
 
 public:

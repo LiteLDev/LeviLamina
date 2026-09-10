@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 512, ushort[256]>                                                  m_viewRemap;
     ::ll::TypedStorage<4, 256, float[16][4]>                                                 m_colorPalette;
-    ::ll::TypedStorage<4, 114688, ::bgfx::View[256]>                                         m_view;
+    ::ll::TypedStorage<8, 131072, ::bgfx::View[256]>                                         m_view;
     ::ll::TypedStorage<4, 1024, int[256]>                                                    m_occlusion;
     ::ll::TypedStorage<8, 524288, uint64[65536]>                                             m_sortKeys;
     ::ll::TypedStorage<2, 131072, ushort[65536]>                                             m_sortValues;

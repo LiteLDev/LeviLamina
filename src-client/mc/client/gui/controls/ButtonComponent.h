@@ -24,7 +24,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::UIControl>> mPressedStateControl;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::UIControl>> mLockedStateControl;
     ::ll::TypedStorage<1, 1, bool>                          mPressed;
-    ::ll::TypedStorage<1, 1, bool>                          mHover;
     ::ll::TypedStorage<1, 1, bool>                          mConsumeEvents;
     // NOLINTEND
 

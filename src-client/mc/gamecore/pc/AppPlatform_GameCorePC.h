@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/binding/queries/core/PlatformType.h"
 #include "mc/deps/application/ClipboardFeatureFlags.h"
 #include "mc/deps/application/OsVersion.h"
 #include "mc/deps/core/debug/AssertDialogResponse.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
-#include "mc/deps/core/platform/PlatformType.h"
+#include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/PointerType.h"
@@ -18,6 +19,7 @@
 // clang-format off
 class FilePickerSettings;
 class ImagePickingCallback;
+class PropertyBag;
 class RectangleArea;
 namespace Core { class Path; }
 // clang-format on
@@ -32,6 +34,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnka8c638;
     ::ll::UntypedStorage<1, 1>  mUnk587e2e;
     ::ll::UntypedStorage<1, 1>  mUnk15dc10;
+    ::ll::UntypedStorage<1, 1>  mUnkdc4ecc;
     // NOLINTEND
 
 public:
@@ -166,6 +169,13 @@ public:
 
     virtual float getDefaultScreenPositionY() const /*override*/;
 
+    virtual void setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    ) /*override*/;
+
     virtual void _initializeFileStorageAreas() /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view xuid) /*override*/;
@@ -280,7 +290,7 @@ public:
 
     MCFOLD bool $devHotReloadRenderResources() const;
 
-    MCFOLD bool $delayOptionSaveUntilCloudSync() const;
+    MCAPI bool $delayOptionSaveUntilCloudSync() const;
 
     MCFOLD bool $requiresXboxLiveSigninToPlay() const;
 
@@ -301,6 +311,13 @@ public:
     MCFOLD float $getDefaultScreenPositionX() const;
 
     MCFOLD float $getDefaultScreenPositionY() const;
+
+    MCAPI void $setStorageDirectory(
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
+    );
 
     MCAPI void $_initializeFileStorageAreas();
 

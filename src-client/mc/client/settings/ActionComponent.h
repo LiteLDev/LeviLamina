@@ -32,7 +32,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                      mActionLabel;
     ::ll::TypedStorage<4, 8, ::std::optional<::Settings::SettingsActionType>>     mActionType;
     ::ll::TypedStorage<8, 136, ::std::optional<::Settings::ConfirmationRequest>>  mConfirmationRequest;
-    ::ll::TypedStorage<8, 72, ::std::optional<::Settings::AsyncProgressInfo>>     mAsyncProgressInfo;
+    ::ll::TypedStorage<8, 176, ::std::optional<::Settings::AsyncProgressInfo>>    mAsyncProgressInfo;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Settings::IActionDataProvider>>  mDataProvider;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::function<void(bool)>)>> mActionCallback;
     ::ll::TypedStorage<8, 64, ::std::function<::std::optional<::std::string>(::Settings::ActionComponent const&)>>

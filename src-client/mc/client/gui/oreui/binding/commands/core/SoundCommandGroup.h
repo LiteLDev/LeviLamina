@@ -24,9 +24,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface>>               mPlayer;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<uint64, ::std::string, float, float>> mPlay;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, uint64, float>>                 mFadeOut;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<bool, uint64>>                        mIsPlaying;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<uint64, ::std::string, float, float>> mPlay;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, uint64, float>>                 mFadeOut;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<bool, uint64>>                        mIsPlaying;
     // NOLINTEND
 
 public:

@@ -52,6 +52,7 @@ public:
     bool   mExcludeAgents{};
     bool   mIsExplicitIdSelector{};
     bool   mForceDimensionFiltering{};
+    bool   mIsNameFiltersOnlyInChain{};
     // NOLINTEND
 
     CommandSelectorBase() = default;

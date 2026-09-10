@@ -5,11 +5,13 @@
 namespace Bedrock::Profiling::Control {
 
 enum class ProfilerControlAction : int {
-    Invalid        = 0,
-    Start          = 1,
-    Stop           = 2,
-    Clear          = 3,
-    FilterToEntity = 4,
+    Invalid                  = 0,
+    Start                    = 1,
+    Stop                     = 2,
+    Clear                    = 3,
+    FilterToMultipleEntities = 4,
+    FilterToSingleEntity     = 5,
+    FilterBySystem           = 6,
 };
 
 }

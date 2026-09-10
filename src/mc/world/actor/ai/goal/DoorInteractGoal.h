@@ -53,6 +53,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _doorBlocksPath() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ContiguousSelectionType.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/block_utils/ContiguousSelectionType.h"
 #include "mc/editor/serviceproviders/CommonBlockUtilityServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -18,7 +18,6 @@ class BlockPos;
 class BlockVolumeBase;
 class BoundingBox;
 class ChunkPos;
-class CompoundBlockVolume;
 class Dimension;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
@@ -98,7 +97,7 @@ public:
 
     virtual ::BoundingBox getDimensionLocationBoundingBox() const /*override*/;
 
-    virtual ::CompoundBlockVolume getContiguousSelection(
+    virtual ::Editor::RelativeVolumeListBlockVolume getContiguousSelection(
         int const                                            size,
         ::Facing::Name const&                                selectionDirection,
         ::Vec3 const&                                        startingLocation,
@@ -214,7 +213,7 @@ public:
 
     MCNAPI ::BoundingBox $getDimensionLocationBoundingBox() const;
 
-    MCNAPI ::CompoundBlockVolume $getContiguousSelection(
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume $getContiguousSelection(
         int const                                            size,
         ::Facing::Name const&                                selectionDirection,
         ::Vec3 const&                                        startingLocation,

@@ -21,8 +21,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk411f42;
     ::ll::UntypedStorage<1, 1>  mUnkce9a39;
     ::ll::UntypedStorage<4, 4>  mUnk55e031;
-    ::ll::UntypedStorage<4, 4>  mUnkd00df6;
-    ::ll::UntypedStorage<4, 4>  mUnk3753e4;
+    ::ll::UntypedStorage<4, 4>  mUnk9f201c;
+    ::ll::UntypedStorage<4, 4>  mUnkd502e9;
     ::ll::UntypedStorage<8, 16> mUnk2a09a2;
     ::ll::UntypedStorage<4, 4>  mUnk4d0c0c;
     ::ll::UntypedStorage<4, 4>  mUnk9b8dec;
@@ -52,7 +52,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI
-    MinimapItem(::mce::UUID id, int mapWidth, int mapHeight, ::Editor::Services::MinimapViewType minimapViewType);
+    MinimapItem(::mce::UUID id, int viewSizeX, int viewSizeZ, ::Editor::Services::MinimapViewType minimapViewType);
 
     MCNAPI void
     addCustomMarker(::std::string const& iconIdentifier, ::std::vector<::Editor::Services::MinimapMarkerData> data);
@@ -76,7 +76,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void*
-    $ctor(::mce::UUID id, int mapWidth, int mapHeight, ::Editor::Services::MinimapViewType minimapViewType);
+    $ctor(::mce::UUID id, int viewSizeX, int viewSizeZ, ::Editor::Services::MinimapViewType minimapViewType);
     // NOLINTEND
 
 public:

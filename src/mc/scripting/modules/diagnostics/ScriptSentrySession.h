@@ -2,16 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/debug/SentryBreadcrumbLevel.h"
-
 // auto generated forward declare list
 // clang-format off
 struct SentryEnvelopePayload;
 struct SentryEnvelopePayloadExceptionMechanism;
-namespace ScriptModuleDiagnostics { class IScriptSentryRequestSender; }
-namespace ScriptModuleDiagnostics { struct ScriptSentryCaptureContext; }
-namespace ScriptModuleDiagnostics { struct ScriptSentrySessionParameters; }
 namespace Scripting { struct BaseError; }
 // clang-format on
 
@@ -70,11 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSentrySession(
-        ::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryRequestSender> requestSender,
-        ::ScriptModuleDiagnostics::ScriptSentrySessionParameters                 parameters
-    );
-
     MCNAPI bool _checkRateLimits();
 
     MCNAPI void _fillError(
@@ -85,36 +74,9 @@ public:
 
     MCNAPI void _sendEvent(::SentryEnvelopePayload eventPayload);
 
-    MCNAPI void
-    addBreadcrumb(::SentryBreadcrumbLevel level, ::std::string message, ::std::optional<::std::string> category);
-
-    MCNAPI void addCustomTag(::std::string key, ::std::string value);
-
     MCNAPI void onException(::Scripting::BaseError const& error);
 
-    MCNAPI void onManuallyCapturedException(
-        ::Scripting::BaseError const&                                          error,
-        ::std::optional<::ScriptModuleDiagnostics::ScriptSentryCaptureContext> context
-    );
-
     MCNAPI void onUnhandledPromiseRejection(::Scripting::BaseError const& error);
-
-    MCNAPI ~ScriptSentrySession();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryRequestSender> requestSender,
-        ::ScriptModuleDiagnostics::ScriptSentrySessionParameters                 parameters
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

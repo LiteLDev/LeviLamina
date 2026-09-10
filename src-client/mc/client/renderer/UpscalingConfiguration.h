@@ -70,8 +70,3 @@ public:
     );
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCAPI bool operator==(::UpscalingConfiguration::Configs const&, ::UpscalingConfiguration::Configs const&);
-// NOLINTEND

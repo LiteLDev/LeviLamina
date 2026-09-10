@@ -339,8 +339,6 @@ public:
 
     MCAPI ::Player* fetchNearestInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
 
-    MCAPI ::Player* findPlayer(::brstd::function_ref<bool(::Player const&)> pred) const;
-
     MCAPI void flagEntityforChunkMove(::Actor& e);
 
     MCAPI void flushRunTimeLighting();

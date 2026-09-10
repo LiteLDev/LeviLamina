@@ -14,7 +14,8 @@ enum class Type : uint {
     Fixed                = 6,
     Head                 = 7,
     Embedded             = 8,
-    Max                  = 9,
+    Shelf                = 9,
+    Max                  = 10,
 };
 
 }

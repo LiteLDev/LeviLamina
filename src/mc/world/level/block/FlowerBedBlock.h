@@ -42,10 +42,10 @@ public:
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
     virtual bool canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -108,10 +108,10 @@ public:
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI bool $canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockType const& newBlock
+        ::Block const&       block,
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockType const&   newBlock
     ) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;

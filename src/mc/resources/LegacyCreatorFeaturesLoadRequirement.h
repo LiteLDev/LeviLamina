@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/resources/JsonBetaState.h"
-
 // auto generated forward declare list
 // clang-format off
 struct PackLoadInfo;
@@ -14,6 +11,6 @@ class LegacyCreatorFeaturesLoadRequirement {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool satisfied(::PackLoadInfo const& packLoadInfo, ::JsonBetaState);
+    MCNAPI static bool satisfied(::PackLoadInfo const& packLoadInfo);
     // NOLINTEND
 };

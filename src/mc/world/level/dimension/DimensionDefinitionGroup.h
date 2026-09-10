@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/UUID.h"
 #include "mc/world/level/GeneratorType.h"
 #include "mc/world/level/dimension/DimensionType.h"
 
@@ -29,6 +30,7 @@ public:
         ::ll::TypedStorage<4, 4, int>             mHeightMaximum;
         ::ll::TypedStorage<4, 4, ::GeneratorType> mGeneratorType;
         ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
+        ::ll::TypedStorage<8, 16, ::mce::UUID>    mPackId;
         // NOLINTEND
     };
 

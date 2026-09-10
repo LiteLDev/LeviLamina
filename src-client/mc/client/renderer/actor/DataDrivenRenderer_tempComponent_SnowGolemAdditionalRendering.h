@@ -22,7 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenRenderer>> mRenderer;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mHead;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                          mHead;
     ::ll::TypedStorage<8, 8, ::BlockTessellator*>                    mTessellator;
     ::ll::TypedStorage<4, 64, ::Matrix>                              mobTransform;
     // NOLINTEND

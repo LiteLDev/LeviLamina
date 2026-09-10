@@ -13,10 +13,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::
-        TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<::std::string, ::std::string, ::std::vector<::std::string>>>
+        TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<::std::string, ::std::string, ::std::vector<::std::string>>>
                                                                                     mTranslate;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<::std::string, int64>> mFormatDate;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<::std::string, int64>> mGetHowLongAgoAsString;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<::std::string, int64>> mFormatDate;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<::std::string, int64>> mGetHowLongAgoAsString;
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ class ActorHasMobEffect : public ::FilterTest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf91e7c;
+    ::ll::UntypedStorage<8, 8> mUnkac8dd4;
     // NOLINTEND
 
 public:

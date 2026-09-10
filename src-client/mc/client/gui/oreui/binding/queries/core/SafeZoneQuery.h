@@ -30,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SafeZoneQuery(::OreUI::ClientDependencies const& data);
+    MCAPI explicit SafeZoneQuery(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& data);
+    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

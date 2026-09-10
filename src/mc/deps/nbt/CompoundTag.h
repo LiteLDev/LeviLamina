@@ -113,6 +113,8 @@ public:
 
     MCAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
 
+    MCAPI ::Bedrock::Result<void> load(::IDataInput& dis, int depth);
+
     MCAPI ::Tag& put(::std::string name, ::Tag&& tag);
 
     MCAPI ::Tag* put(::std::string name, ::std::unique_ptr<::Tag> tag);
@@ -140,12 +142,16 @@ public:
     MCAPI bool remove(::std::string_view name);
 
     MCAPI void rename(::std::string_view name, ::std::string newName);
+
+    MCAPI void write(::IDataOutput& dos, int depth) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::CompoundTag&& rhs);
     // NOLINTEND
 
 public:

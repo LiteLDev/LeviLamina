@@ -16,6 +16,7 @@ class ItemStack;
 struct ActorTextureInfo;
 struct BlockActorRenderData;
 namespace dragon { struct RenderMetadata; }
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class ShulkerBoxRenderer : public ::BlockActorRenderer {
@@ -28,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ShulkerBoxRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void
@@ -37,6 +42,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ShulkerBoxRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
     MCAPI void renderByItem(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
@@ -51,6 +58,7 @@ public:
         float                 x,
         float                 y,
         float                 scale,
+        float                 pickupPopPercentage,
         float                 lightMultiplier
     );
     // NOLINTEND
@@ -59,6 +67,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string const& getTexturePathFor(::HashedString const& blockId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:

@@ -51,30 +51,20 @@ public:
         mSendCancelBreakingFunction;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ScriptBlockBreakingEventListener();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ScriptBlockBreakingEventListener(
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar)>      sendStartBreakingFunction,
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar, int)> sendCancelBreakingFunction
     );
 
     MCAPI void _flushPlayerBreaking(::Player& player, int previousProgress);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void _flushPlayerBreaking(::Player& player, int const previousProgress);
-#endif
-
-#ifdef LL_PLAT_C
     MCAPI void _startBreakingBlock(
         ::Player&         player,
         ::BlockPos const& blockPos,
@@ -82,42 +72,25 @@ public:
         uchar             face,
         int               previousProgress
     );
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void _startBreakingBlock(
-        ::Player&         player,
-        ::BlockPos const& blockPos,
-        ::Block const&    hitBlock,
-        uchar const       face,
-        int const         previousProgress
-    );
-#endif
-
-#ifdef LL_PLAT_C
     MCAPI void onBreakBlock(::Player& player);
 
     MCAPI ~ScriptBlockBreakingEventListener();
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar)>      sendStartBreakingFunction,
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar, int)> sendCancelBreakingFunction
     );
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

@@ -16,13 +16,13 @@ class StonecutterBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BlockType& init() /*override*/;
-
     virtual bool isCraftingBlock() const /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+
+    virtual ::Block const& getInitialDefaultState() /*override*/;
     // NOLINTEND
 
 public:
@@ -34,13 +34,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockType& $init();
-
     MCFOLD bool $isCraftingBlock() const;
 
     MCFOLD bool $isInteractiveBlock() const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+
+    MCAPI ::Block const& $getInitialDefaultState();
 
 
     // NOLINTEND

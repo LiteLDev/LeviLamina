@@ -64,7 +64,7 @@ public:
 
     MCAPI void _updateJoinableParties();
 
-    MCAPI ::std::vector<::OreUI::JoinablePartyFriend> const& getJoinablePartyFriends() const;
+    MCFOLD ::std::vector<::OreUI::JoinablePartyFriend> const& getJoinablePartyFriends() const;
     // NOLINTEND
 
 public:

@@ -32,9 +32,13 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI void ClearTrackingSheet();
+
     MCNAPI EntitySystemProfiler(::EntityRegistry& entityRegistry, ::EntitySystems& entitySystems);
 
     MCNAPI void InstallHooks();
+
+    MCNAPI void SetSingleTrackingSheet();
 
     MCNAPI void UninstallHooks();
 

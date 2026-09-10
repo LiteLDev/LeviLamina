@@ -268,10 +268,13 @@ public:
     ::ll::TypedStorage<4, 4, float>                            mSinkDelta;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     LegacyGoalDefinition& operator=(LegacyGoalDefinition const&);
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -280,6 +283,10 @@ public:
     MCAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
 
     MCAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
+
+#ifdef LL_PLAT_C
+    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
+#endif
 
     MCAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
 

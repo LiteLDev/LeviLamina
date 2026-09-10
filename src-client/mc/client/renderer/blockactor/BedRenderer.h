@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorResourceDefinition;
 class BaseActorRenderContext;
 struct BlockActorRenderData;
 // clang-format on
@@ -25,28 +24,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BedRenderer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BedRenderer() /*override*/ = default;
 
     virtual void
     render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BedRenderer(::std::shared_ptr<::ActorResourceDefinition> definition);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ActorResourceDefinition> definition);
     // NOLINTEND
 
 public:

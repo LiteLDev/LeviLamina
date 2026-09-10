@@ -31,6 +31,7 @@ enum class JoinRealmWorldResult : int {
     SomePartyMembersDontHaveAccess           = 23,
     NotInvitedToRealm                        = 24,
     NotInvitedToPartyDestinationRealm        = 25,
+    ClientOutdated                           = 26,
 };
 
 }

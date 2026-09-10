@@ -22,7 +22,7 @@ struct MarketplaceWorldTemplateDataBindings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 280, ::World::MarketplaceWorldTemplateData> mTemplateData;
+    ::ll::TypedStorage<8, 328, ::World::MarketplaceWorldTemplateData> mTemplateData;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>                 mThumbnailPath;
     ::ll::TypedStorage<8, 40, ::OreUI::RatingDataBindings>            mRatingDataBindings;
     // NOLINTEND
@@ -32,9 +32,15 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::string const& getCreator() const;
 
+    MCAPI ::std::string const& getDiscountText() const;
+
+    MCFOLD bool getHasDiscount() const;
+
     MCFOLD ::std::string const& getId() const;
 
     MCFOLD bool getIsExpired() const;
+
+    MCFOLD bool getIsFree() const;
 
     MCAPI bool getIsInstalled() const;
 
@@ -42,13 +48,17 @@ public:
 
     MCFOLD ::std::string const& getName() const;
 
+    MCAPI int getNonDiscountedPrice() const;
+
     MCAPI ::std::string const& getPackId() const;
 
-    MCFOLD ::OreUI::RatingDataBindings const& getRatingDataBinding() const;
+    MCAPI int getPrice() const;
+
+    MCAPI ::OreUI::RatingDataBindings const& getRatingDataBinding() const;
 
     MCAPI ::StoreCatalogCategory const& getStoreCatalogCategory() const;
 
-    MCFOLD ::OreUI::AllowListPath const& getThumbnailPath() const;
+    MCAPI ::OreUI::AllowListPath const& getThumbnailPath() const;
 
     MCAPI ~MarketplaceWorldTemplateDataBindings();
     // NOLINTEND

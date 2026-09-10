@@ -21,9 +21,9 @@ public:
     ::ll::TypedStorage<8, 8, ::Tick>              mCooldown;
     ::ll::TypedStorage<8, 8, ::Tick>              mDetectMobsTimer;
     ::ll::TypedStorage<1, 1, bool>                mInvalidCooldown;
-    ::ll::TypedStorage<4, 4, int const>           mNapCooldownMin;
-    ::ll::TypedStorage<4, 4, int const>           mNapCooldownMax;
-    ::ll::TypedStorage<4, 12, ::Vec3 const>       mDetectRange;
+    ::ll::TypedStorage<4, 4, int>                 mNapCooldownMin;
+    ::ll::TypedStorage<4, 4, int>                 mNapCooldownMax;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mDetectRange;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mCanNapFilters;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mWakeMobExceptions;
     // NOLINTEND
@@ -51,15 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NapGoal(
-        ::Mob&                    mob,
-        float                     cooldownTimeMin,
-        float                     cooldownTimeMax,
-        float                     detectMobDistXZ,
-        float                     detectMobDistY,
-        ::ActorFilterGroup const& canNapFilters,
-        ::ActorFilterGroup const& wakeMobExceptions
-    );
+    MCAPI explicit NapGoal(::Mob& mob);
 
     MCAPI bool _detectsMobs() const;
     // NOLINTEND
@@ -67,15 +59,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                    mob,
-        float                     cooldownTimeMin,
-        float                     cooldownTimeMax,
-        float                     detectMobDistXZ,
-        float                     detectMobDistY,
-        ::ActorFilterGroup const& canNapFilters,
-        ::ActorFilterGroup const& wakeMobExceptions
-    );
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -92,5 +76,11 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

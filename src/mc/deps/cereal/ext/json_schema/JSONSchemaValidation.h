@@ -16,14 +16,14 @@ public:
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mMinLength;
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mMaxLength;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mPattern;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRegexFlags;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mExtraRegexFlags;
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mMinItems;
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mMaxItems;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mNoDuplicates;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mExtraNoDuplicates;
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mMinProperties;
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mMaxProperties;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mCustomDescription;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mNonPublicConstraint;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mExtraCustomDescription;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mExtraNonPublicConstraint;
     // NOLINTEND
 
 public:

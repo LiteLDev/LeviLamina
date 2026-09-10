@@ -22,11 +22,11 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::Settings::IRegistry>()>>        mSettingsRegistryFunc;
     ::ll::TypedStorage<8, 72, ::OreUI::TelemetryBatcher>                                          mTelemetryBatcher;
     ::ll::TypedStorage<1, 1, bool>                                                                mIsPreGame;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>>          mUpdateBoolean;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, int>>           mUpdateOption;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mUpdateString;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, double>>        mUpdateNumber;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string>>                mCommitString;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>>          mUpdateBoolean;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, int>>           mUpdateOption;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mUpdateString;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, double>>        mUpdateNumber;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>                mCommitString;
     // NOLINTEND
 
 public:

@@ -82,24 +82,17 @@ public:
 
 public:
     // prevent constructor by default
+    GameOptions(GameOptions const&);
     GameOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameOptions(::Editor::GameOptions const&);
-
     MCAPI void applyToLevelData(::LevelData& levelData) const;
 
     MCAPI ::Editor::GameOptions& operator=(::Editor::GameOptions const&);
 
     MCAPI ~GameOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::GameOptions const&);
     // NOLINTEND
 
 public:

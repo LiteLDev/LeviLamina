@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -65,10 +64,10 @@ public:
         // NOLINTEND
 
     public:
-        // static variables
+        // static functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI static ::SemVersionConstant const& VERSION();
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
         // NOLINTEND
 
@@ -102,14 +101,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::SemVersionConstant const& VERSION();
 #endif
     // NOLINTEND
 };

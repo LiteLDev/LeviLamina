@@ -200,7 +200,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Container(::Container const&);
+    MCAPI Container(::Container const& backingContainer);
 
     MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
@@ -245,7 +245,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Container const&);
+    MCAPI void* $ctor(::Container const& backingContainer);
 
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
@@ -304,7 +304,11 @@ public:
 
     MCAPI ::std::vector<::ItemStack const*> const $getSlots() const;
 
+#ifdef LL_PLAT_S
     MCAPI int $getEmptySlotsCount() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEmptySlotsCount() const;
+#endif
 
     MCAPI int $getItemCount(::ItemStack const& compare) const;
 

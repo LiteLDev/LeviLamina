@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
-#include "mc/deps/core/math/IRandomSeeded.h"
 #include "mc/util/SimpleRandom.h"
 #include "mc/util/random/XoroshiroRandom.h"
 
@@ -12,18 +11,15 @@
 // clang-format off
 class BlockPos;
 class IPositionalRandomFactory;
-class SimpleRandom;
-class XoroshiroRandom;
-struct Seed128Bit;
 // clang-format on
 
 namespace br::worldgen {
 
-struct WorldGenRandom : public ::IRandom, public ::IRandomSeeded {
+struct WorldGenRandom : public ::IRandom {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::std::variant<::SimpleRandom, ::XoroshiroRandom>> mSource;
+    ::ll::TypedStorage<8, 48, ::std::variant<::SimpleRandom, ::XoroshiroRandom>> mSource;
     // NOLINTEND
 
 public:
@@ -48,14 +44,6 @@ public:
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
     virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
-
-    virtual void setSeed(int64 seed) /*override*/;
-
-    virtual void setSeed(::Seed128Bit seed) /*override*/;
-
-    virtual int64 seed64() const /*override*/;
-
-    virtual ::Seed128Bit seed128() const /*override*/;
     // NOLINTEND
 
 public:
@@ -91,23 +79,13 @@ public:
 
     MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCAPI void $setSeed(int64 seed);
-
-    MCAPI void $setSeed(::Seed128Bit seed);
-
-    MCAPI int64 $seed64() const;
-
-    MCAPI ::Seed128Bit $seed128() const;
-
 
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForIRandom();
-
-    MCNAPI static void** $vftableForIRandomSeeded();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

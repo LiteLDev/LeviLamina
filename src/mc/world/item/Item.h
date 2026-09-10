@@ -469,7 +469,7 @@ public:
 
     MCAPI ::Item& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
-    MCAPI bool
+    MCAPI void
     updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
 
     MCAPI ::InteractionResult useOn(
@@ -594,7 +594,7 @@ public:
 
     MCAPI bool $isStackedByData() const;
 
-    MCFOLD short $getMaxDamage() const;
+    MCAPI short $getMaxDamage() const;
 
     MCFOLD int $getAttackDamage() const;
 

@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ServerboundDiagnosticsPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -59,6 +63,18 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ServerboundDiagnosticsPacket(::ServerboundDiagnosticsPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerboundDiagnosticsPacketPayload payload);
     // NOLINTEND
 
 public:

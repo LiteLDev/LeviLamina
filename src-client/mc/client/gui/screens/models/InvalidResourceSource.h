@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InvalidResourceSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~InvalidResourceSource() /*override*/ = default;
@@ -41,15 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InvalidResourceSource(::IResourcePackRepository& resourceRepository, ::InvalidPacksFilterGroup filter);
-
     MCAPI bool invalidPacksChanged();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IResourcePackRepository& resourceRepository, ::InvalidPacksFilterGroup filter);
     // NOLINTEND
 
 public:
@@ -60,11 +48,5 @@ public:
     MCAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
 
     MCAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

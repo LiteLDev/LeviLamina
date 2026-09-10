@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -29,6 +30,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool placeFixed(::BlockSource& region, ::BlockPos const& pos, int mushroomType, int height) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canSurvive(::Block const& belowBlock);
     // NOLINTEND
 
 public:

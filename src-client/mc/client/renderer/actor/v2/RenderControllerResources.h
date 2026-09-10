@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SkeletonData>>                        mSkeletonResources;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::DataDrivenGeometry>>> mAssociatedGeometry;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::MeshResource>>>     mMeshResources;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MeshResource>>>     mMeshResources;
     ::ll::TypedStorage<8, 24, ::std::vector<::GeometryData>>                        mGeometryData;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::MaterialPtr>>                    mBakedMaterials;
     ::ll::TypedStorage<8, 24, ::std::vector<::SimpleTextureData>>                   mBakedTextures;

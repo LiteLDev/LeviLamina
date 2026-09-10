@@ -64,7 +64,7 @@ public:
 
     MCAPI void _fetchInvitableFriends();
 
-    MCFOLD ::std::vector<::OreUI::InvitableFriendBindings> const& getInvitableFriends();
+    MCAPI ::std::vector<::OreUI::InvitableFriendBindings> const& getInvitableFriends();
 
     MCFOLD ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
 

@@ -72,11 +72,7 @@ public:
         ::GameVersion        version
     );
 
-    MCAPI void reset(bool saveOptionChange);
-
     MCAPI void set(int value, bool saveOptionChange);
-
-    MCFOLD void setCoerceSaveValueCallback(::std::function<int(int)> callback);
 
     MCAPI void setValues(::std::vector<int> values);
 #endif
@@ -123,11 +119,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

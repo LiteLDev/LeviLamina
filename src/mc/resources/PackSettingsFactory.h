@@ -16,7 +16,6 @@ class PackSettings;
 struct PackSettingValueAndDefault;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class Path; }
-namespace Core { class PathView; }
 namespace SharedTypes::v1_21_100::PackSettingsDefinition { struct Document; }
 // clang-format on
 
@@ -94,10 +93,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackSettingsFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PackSettingsFactory() = default;
@@ -108,9 +103,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    PackSettingsFactory(uint64 maxGlobalPackSettingEntriesPerFile, ::std::optional<::Core::PathView> globalPathRoot);
-
     MCAPI ::PackSettings* _getGlobalPackSettings(::PackManifest const& manifest);
 
     MCAPI ::PackSettings* _getWorldPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
@@ -155,12 +147,6 @@ public:
 
     MCAPI static ::brstd::basic_cstring_view<char, ::std::char_traits<char>> const&
     WORLD_BEHAVIOR_PACK_SETTINGS_FILENAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 maxGlobalPackSettingEntriesPerFile, ::std::optional<::Core::PathView> globalPathRoot);
     // NOLINTEND
 
 public:

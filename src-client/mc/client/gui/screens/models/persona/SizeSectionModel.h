@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/player/persona/ArmSize.h"
-#include "mc/world/actor/player/persona/BodySize.h"
+#include "mc/deps/shared_types/persona/ArmSizeType.h"
+#include "mc/deps/shared_types/persona/BodySizeType.h"
 
 namespace persona {
 
@@ -17,18 +17,18 @@ public:
         None    = 2,
     };
 
-    using ArmSizeType = ::persona::ArmSize::Type;
+    using ArmSizeType = ::SharedTypes::persona::ArmSizeType;
 
-    using BodySizeType = ::persona::BodySize::Type;
+    using BodySizeType = ::SharedTypes::persona::BodySizeType;
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::persona::SizeSectionModel::Section> mActiveSection;
-    ::ll::TypedStorage<1, 1, ::persona::ArmSize::Type>             mEquippedArmSize;
-    ::ll::TypedStorage<1, 1, ::persona::ArmSize::Type>             mPreviewedArmSize;
-    ::ll::TypedStorage<8, 8, ::persona::BodySize::Type>            mEquippedHeight;
-    ::ll::TypedStorage<8, 8, ::persona::BodySize::Type>            mPreviewedHeight;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::persona::ArmSizeType>  mEquippedArmSize;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::persona::ArmSizeType>  mPreviewedArmSize;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::persona::BodySizeType> mEquippedHeight;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::persona::BodySizeType> mPreviewedHeight;
     // NOLINTEND
 
 public:

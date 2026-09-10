@@ -13,7 +13,11 @@ struct SurfaceMaterialAttributes;
 namespace VanillaSurfaceBuilders::Utils {
 // functions
 // NOLINTBEGIN
-MCAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameters);
+MCAPI void buildSurface(
+    ::ISurfaceBuilder::GlobalParameters const&         globalParams,
+    ::ISurfaceBuilder::SurfaceBuilderParameters const& surfaceBuilderParams,
+    ::ISurfaceBuilder::PerColumnParameters const&      columnParams
+);
 
 MCAPI void ensureValidSurfaceMaterials(::SurfaceMaterialAttributes& surfaceMaterials);
 // NOLINTEND

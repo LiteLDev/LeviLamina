@@ -90,6 +90,12 @@ public:
 
     MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace World

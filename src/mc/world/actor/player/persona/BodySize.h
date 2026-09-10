@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/persona/BodySizeType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace persona { struct SizeInfo; }
@@ -12,35 +15,24 @@ namespace persona {
 class BodySize {
 public:
     // BodySize inner types define
-    enum class Type : uint64 {
-        Smaller = 0,
-        Small   = 1,
-        Medium  = 2,
-        Tall    = 3,
-        Count   = 4,
-        Unknown = 5,
-    };
+    using SizeInfoList = ::std::unordered_map<::SharedTypes::persona::BodySizeType, ::persona::SizeInfo>;
 
-    using SizeInfoList = ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo>;
+    using Type = ::SharedTypes::persona::BodySizeType;
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::_List_const_iterator<
-        ::std::_List_val<::std::_List_simple_types<::std::pair<::persona::BodySize::Type const, ::persona::SizeInfo>>>>
-    _getSizeInfoIteratorByType(::persona::BodySize::Type bodySizeType);
+    MCAPI static ::std::string getStringFromType(::SharedTypes::persona::BodySizeType bodySizeType);
 
-    MCAPI static ::std::string getStringFromType(::persona::BodySize::Type bodySizeType);
-
-    MCAPI static ::persona::BodySize::Type getTypeFromString(::std::string_view bodySizeStr);
+    MCAPI static ::SharedTypes::persona::BodySizeType getTypeFromString(::std::string_view bodySizeStr);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo> const& mInfoList();
+    MCAPI static ::std::unordered_map<::SharedTypes::persona::BodySizeType, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 

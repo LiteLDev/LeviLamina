@@ -16,6 +16,7 @@
 class BlockPos;
 class ClientInstanceScreenModel;
 class FurnaceContainerManagerController;
+class ItemStack;
 class ItemStackBase;
 class Player;
 class UIPropertyBag;
@@ -64,6 +65,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                            mSearchBarSelected;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mDelayedSearchString;
     ::ll::TypedStorage<1, 1, bool>                            mHasInitalCategoryTabsState;
+    ::ll::TypedStorage<4, 4, int>                             mTTSPreviousIngredientId;
     ::ll::TypedStorage<4, 4, int>                             mTicksLeftUntilCategoryTabUpdate;
     ::ll::TypedStorage<4, 4, int>                             mTabFiltersDirty;
     ::ll::TypedStorage<8, 48, ::HashedString>                 mRecipeTag;
@@ -80,6 +82,8 @@ public:
     virtual ~FurnaceScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
+
+    virtual void onOpen() /*override*/;
 
     virtual void onEntered() /*override*/;
 
@@ -157,6 +161,8 @@ public:
     MCAPI void _selectRecipe(::std::string const& collectionName, int collectionIndex);
 
     MCAPI void _setLeftSideTab(int tabIndex);
+
+    MCAPI void _tryAddTTSMessageForFurnaceAction(::ItemStack const& ingredientItem, ::ItemStack const& resultItem);
     // NOLINTEND
 
 public:
@@ -181,6 +187,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI void $onOpen();
 
     MCAPI void $onEntered();
 

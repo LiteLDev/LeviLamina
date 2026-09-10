@@ -34,14 +34,13 @@ public:
 public:
     // prevent constructor by default
     TakeFlowerGoalDefinition& operator=(TakeFlowerGoalDefinition const&);
+    TakeFlowerGoalDefinition(TakeFlowerGoalDefinition const&);
     TakeFlowerGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI TakeFlowerGoalDefinition(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition&&);
-
-    MCAPI TakeFlowerGoalDefinition(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const&);
 
     MCAPI bool operator==(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const&) const;
 
@@ -68,8 +67,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const&);
     // NOLINTEND
 
 public:

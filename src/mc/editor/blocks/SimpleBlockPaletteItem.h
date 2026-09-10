@@ -21,6 +21,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool operator==(::Editor::SimpleBlockPaletteItem const& other) const;
+#endif
+
     MCNAPI ~SimpleBlockPaletteItem();
     // NOLINTEND
 

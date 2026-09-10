@@ -11,10 +11,11 @@ public:
     };
 
     enum class SaveUseCase : uchar {
-        SaveToDisk      = 0,
-        SendOverNetwork = 1,
-        Clone           = 2,
-        Move            = 3,
+        SaveToDisk               = 0,
+        SendOverNetwork          = 1,
+        Clone                    = 2,
+        Move                     = 3,
+        BlockActorToItemUserData = 4,
     };
 
 public:

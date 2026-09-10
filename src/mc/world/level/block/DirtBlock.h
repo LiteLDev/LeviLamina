@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -14,7 +15,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class HashedString;
 class ItemInstance;
 class ItemStack;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -25,13 +25,11 @@ class DirtBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockToTillInto;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mBlockToTillInto;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DirtBlock& operator=(DirtBlock const&);
-    DirtBlock(DirtBlock const&);
     DirtBlock();
 
 public:
@@ -62,7 +60,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DirtBlock(::std::string const& nameId, int id, ::BlockDescriptor blockToTillInto);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockDescriptor blockToTillInto);
     // NOLINTEND
 
 public:
@@ -79,11 +85,7 @@ public:
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
-#else // LL_PLAT_C
     MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
-#endif
 
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 

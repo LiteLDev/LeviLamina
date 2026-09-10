@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class ReadOnlyBinaryStream;
 namespace Core { class PathView; }
 // clang-format on
 
@@ -39,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<void> readFromStream(::ReadOnlyBinaryStream& manifestFileStream);
-
     MCNAPI void setPath(::Core::PathView path);
 
     MCNAPI ~FlatFileManifestInfo();

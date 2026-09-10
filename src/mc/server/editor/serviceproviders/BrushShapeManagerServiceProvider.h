@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/editor/BrushElevationMode.h"
 #include "mc/common/editor/DirectionalPlacementMode.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/editor/services/native_brush/BrushFlattenMode.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
@@ -15,6 +16,7 @@ class HashedString;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::BlockMask { class BlockMaskList; }
+namespace Editor::Transactions { class PendingTransaction; }
 // clang-format on
 
 namespace Editor::Services {
@@ -83,6 +85,8 @@ public:
 
     virtual bool const isItemPlacementActive() const = 0;
 
+    virtual void setPendingTransaction(::WeakRef<::Editor::Transactions::PendingTransaction> transaction) = 0;
+
     virtual void pushBlockStateOverride(
         ::HashedString const&                           stateName,
         ::std::variant<int, ::std::string, bool> const& stateValue
@@ -91,12 +95,6 @@ public:
     virtual void clearBlockStateOverrides() = 0;
 
     virtual void setBlockFacePlacementBasedOnCamera(bool const enable) = 0;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

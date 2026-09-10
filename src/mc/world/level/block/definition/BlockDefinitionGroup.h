@@ -9,7 +9,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/v1_21_110/item/ItemCategory.h"
-#include "mc/resources/JsonBetaState.h"
 #include "mc/resources/MinEngineVersion.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/definition/BlockDescription.h"
@@ -17,7 +16,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class DefinitionEvent;
 class Experiments;
 class IMinecraftEventing;
@@ -28,6 +26,7 @@ class PackLoadRequirement;
 class ResourcePackManager;
 struct BlockComponentGroupDescription;
 struct BlockDefinition;
+struct ServerBlockProperty;
 namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -47,8 +46,7 @@ public:
         ::ll::TypedStorage<8, 24, ::SemVersion>        mFormatVersion;
         ::ll::TypedStorage<8, 32, ::MinEngineVersion>  mMinEngineVersion;
         ::ll::TypedStorage<8, 24, ::SemVersion>        mOriginalJsonVersion;
-        ::ll::TypedStorage<8, 224, ::BlockDescription> mDescription;
-        ::ll::TypedStorage<1, 1, ::JsonBetaState>      mIsBeta;
+        ::ll::TypedStorage<8, 240, ::BlockDescription> mDescription;
         ::ll::TypedStorage<8, 32, ::std::string>       mResourcePackLocation;
         ::ll::TypedStorage<8, 32, ::std::string>       mResourceFileLocation;
         ::ll::TypedStorage<8, 16, ::Json::Value>       mRoot;
@@ -94,16 +92,15 @@ public:
         ::std::string const&              blockIdentifier,
         ::SemVersion const&               originalJsonVersion,
         ::PackLoadContext&                packLoadContext,
-        ::JsonBetaState                   canUseBeta,
         bool                              isVanillaBlock
     );
 
-    MCAPI void digestServerBlockProperties(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& blocks);
+    MCAPI void digestServerBlockProperties(::std::vector<::ServerBlockProperty> const& blocks);
 
     MCAPI ::std::unique_ptr<::BlockDefinition>
     generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::PackLoadContext& packLoadContext);
 
-    MCAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
+    MCAPI ::std::vector<::ServerBlockProperty> generateServerBlockProperties() const;
 
     MCAPI ::std::vector<::BlockDefinition const*> getBlockDefinitions() const;
 
@@ -141,8 +138,7 @@ public:
         ::std::string const&                        jsonIdentifier,
         ::std::optional<::SemVersion> const&        releaseVersion,
         ::std::vector<::PackLoadRequirement> const& requirements,
-        ::PackLoadContext const&                    packLoadContext,
-        ::JsonBetaState const                       canUseBeta
+        ::PackLoadContext const&                    packLoadContext
     );
     // NOLINTEND
 

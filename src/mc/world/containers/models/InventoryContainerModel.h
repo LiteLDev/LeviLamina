@@ -59,13 +59,21 @@ public:
 
     MCFOLD bool $isValid();
 
+#ifdef LL_PLAT_S
     MCFOLD ::ContainerWeakRef $getContainerWeakRef() const;
+#else // LL_PLAT_C
+    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+#endif
 
     MCAPI int $_getContainerOffset() const;
 
     MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
+#ifdef LL_PLAT_S
     MCFOLD ::Container* $_getContainer() const;
+#else // LL_PLAT_C
+    MCAPI ::Container* $_getContainer() const;
+#endif
 
 
     // NOLINTEND

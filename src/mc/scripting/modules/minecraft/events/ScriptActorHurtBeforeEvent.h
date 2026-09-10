@@ -22,8 +22,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mHurtActor;
     ::ll::TypedStorage<8, 88, ::ScriptModuleMinecraft::ScriptActorDamageSource>                           mDamageSource;
-    ::ll::TypedStorage<4, 4, float>                                                                       mDamage;
     ::ll::TypedStorage<1, 1, bool>                                                                        mCancel;
+    ::ll::TypedStorage<1, 1, bool>                                                                        mWasModified;
+    ::ll::TypedStorage<4, 4, float>                                                                       mDamage;
     // NOLINTEND
 
 public:

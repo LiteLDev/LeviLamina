@@ -165,9 +165,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mShowProgress;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mTipMessage;
     ::ll::TypedStorage<4, 4, float>                                                   mTipMessageLength;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                                           mRcFeedbackOuter;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                                           mRcFeedbackInner;
-    ::ll::TypedStorage<8, 592, ::mce::Mesh>                                           mVignette;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                                           mRcFeedbackOuter;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                                           mRcFeedbackInner;
+    ::ll::TypedStorage<8, 616, ::mce::Mesh>                                           mVignette;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mInvFillMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mCursorMat;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger>>      mDevConsoleLogger;

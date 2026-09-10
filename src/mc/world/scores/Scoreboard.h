@@ -69,6 +69,8 @@ public:
         return result;
     }
 
+    LLAPI bool resetPlayerScore(::ScoreboardId const& id, ::Objective& objective);
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -162,8 +164,6 @@ public:
     MCAPI bool removeObjective(::Objective* objective);
 
     MCAPI void removeScoreListener(::Player const& player, ::std::string const& objective);
-
-    MCAPI bool resetPlayerScore(::ScoreboardId const& id, ::Objective& objective);
 
     MCAPI void resetPlayerScore(::ScoreboardId const& id);
 

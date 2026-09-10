@@ -4,14 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/events/TextProcessingEventOrigin.h"
-#include "mc/platform/Result.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class ItemStackRequestAction;
-class ReadOnlyBinaryStream;
 struct ItemStackRequestIdTag;
 // clang-format on
 
@@ -43,15 +40,7 @@ public:
     MCAPI ::ItemStackRequestData& operator=(::ItemStackRequestData&&);
 #endif
 
-    MCAPI void write(::BinaryStream& stream) const;
-
     MCAPI ~ItemStackRequestData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestData>> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::Brain {
 
 struct MemorySetterDefinition {
@@ -24,12 +19,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~MemorySetterDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

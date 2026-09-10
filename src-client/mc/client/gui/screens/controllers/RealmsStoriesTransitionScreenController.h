@@ -15,7 +15,7 @@ class RealmsStoriesTransitionScreenController : public ::ClientInstanceScreenCon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 656, ::Realms::World> mWorld;
+    ::ll::TypedStorage<8, 720, ::Realms::World> mWorld;
     // NOLINTEND
 
 public:

@@ -15,4 +15,20 @@ public:
     CompositePackSourceOptions& operator=(CompositePackSourceOptions const&);
     CompositePackSourceOptions(CompositePackSourceOptions const&);
     CompositePackSourceOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ~CompositePackSourceOptions();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
 };

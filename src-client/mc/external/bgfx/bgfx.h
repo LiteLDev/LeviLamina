@@ -158,6 +158,8 @@ MCAPI void schedulePreBlasSkinningDispatch(
     char const*                       _debugName
 );
 
+MCAPI void setPaletteColor(uchar _index, uint _rgba);
+
 MCAPI void shutdown();
 // NOLINTEND
 

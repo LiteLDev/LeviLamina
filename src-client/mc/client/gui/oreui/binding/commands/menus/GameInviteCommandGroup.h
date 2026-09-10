@@ -20,8 +20,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>> mMultiplayerService;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::vector<::std::string>>> mInviteXboxPlayers;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::vector<::std::string>>>
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::vector<::std::string>>> mInviteXboxPlayers;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::vector<::std::string>>>
         mInvitePlatformPlayers;
     // NOLINTEND
 

@@ -30,9 +30,9 @@ public:
 
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
 
-    virtual ::EventResult onPartyChanged(::PartyChangedEvent const&);
+    virtual ::EventResult onPartyChanged(::PartyChangedEvent const& event);
 
-    virtual ::EventResult onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const&);
+    virtual ::EventResult onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
     // NOLINTEND
 
 public:
@@ -44,9 +44,9 @@ public:
 
     MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
 
-    MCFOLD ::EventResult $onPartyChanged(::PartyChangedEvent const&);
+    MCFOLD ::EventResult $onPartyChanged(::PartyChangedEvent const& event);
 
-    MCFOLD ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const&);
+    MCFOLD ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
 
 
     // NOLINTEND

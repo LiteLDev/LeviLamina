@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 #include "mc/deps/shared_types/v1_21_120/actor/EntityTypes.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_30 {
 
 struct FollowCaravanGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -15,6 +20,12 @@ public:
     ::ll::TypedStorage<4, 4, float>                                  mSpeedMultiplier;
     ::ll::TypedStorage<4, 4, int>                                    mEntityCount;
     ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_120::EntityTypes> mEntityTypes;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

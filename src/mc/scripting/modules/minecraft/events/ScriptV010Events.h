@@ -17,12 +17,7 @@ class Player;
 struct ChatEvent;
 struct ItemUseEvent;
 struct ItemUseOnEvent;
-namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptActorEventListener; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
-namespace ScriptModuleMinecraft { class ScriptItemEventListener; }
-namespace ScriptModuleMinecraft { class ScriptPlayerEventListener; }
-namespace ScriptModuleMinecraft { class ScriptServerNetworkEventListener; }
 namespace ScriptModuleMinecraft { struct EmptyFilter; }
 namespace ScriptModuleMinecraft { struct ScriptActorCreateEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitAfterEvent; }
@@ -30,17 +25,23 @@ namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermedia
 namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptItemReleaseUseAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptItemReleaseUseIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptItemStartUseAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptItemStartUseIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptItemStopUseAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptItemStopUseIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptItemUseOnIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEvent; }
@@ -66,12 +67,6 @@ public:
     ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events>> mHandle;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Level*>>                                                  mLevel;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptGlobalEventListeners*> mGlobalEventListeners;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptActorEventListener>> mActorEventListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptItemEventListener>>  mItemEventListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptPlayerEventListener>>
-        mPlayerEventListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptServerNetworkEventListener>>
-        mServerNetworkEventListener;
     ::ll::TypedStorage<
         8,
         32,
@@ -243,8 +238,7 @@ public:
     onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player) /*override*/;
 
     virtual void onActorRemoved(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& removedActor,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorRemoveAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorHitEntity(
@@ -270,24 +264,23 @@ public:
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent) /*override*/;
 
-    virtual void onItemUseOn(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent
-    ) /*override*/;
+    virtual void
+    onItemUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData>& eventData) /*override*/;
 
     virtual void onItemStartUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& itemEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStartUseIntermediateData>& itemEvent
     ) /*override*/;
 
     virtual void onItemCompleteUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& itemEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemCompleteUseIntermediateData>& itemEvent
     ) /*override*/;
 
     virtual void onItemReleaseUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& itemEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemReleaseUseIntermediateData>& itemEvent
     ) /*override*/;
 
     virtual void onItemStopUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseIntermediateData>& itemEvent
     ) /*override*/;
     // NOLINTEND
 
@@ -299,7 +292,7 @@ public:
     MCAPI ScriptV010Events(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::Level*> level);
 
     MCAPI void
-    onActorCreated(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorCreateEvent>& actorEvent);
+    onActorCreated(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSpawnAfterEventIntermediateData>& eventData);
 
     MCAPI ::ScriptModuleMinecraft::ScriptV010Events& operator=(::ScriptModuleMinecraft::ScriptV010Events&&);
 
@@ -351,10 +344,8 @@ public:
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     $onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player);
 
-    MCAPI void $onActorRemoved(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& removedActor,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&
-    );
+    MCAPI void
+    $onActorRemoved(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorRemoveAfterEventIntermediateData>& eventData);
 
     MCAPI void $onActorHitEntity(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>& eventData
@@ -378,24 +369,18 @@ public:
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent);
 
+    MCAPI void $onItemUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData>& eventData);
+
     MCAPI void
-    $onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent);
+    $onItemStartUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStartUseIntermediateData>& itemEvent);
 
-    MCAPI void $onItemStartUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>& itemEvent
-    );
+    MCAPI void
+    $onItemCompleteUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemCompleteUseIntermediateData>& itemEvent);
 
-    MCAPI void $onItemCompleteUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>& itemEvent
-    );
+    MCAPI void
+    $onItemReleaseUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemReleaseUseIntermediateData>& itemEvent);
 
-    MCAPI void $onItemReleaseUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>& itemEvent
-    );
-
-    MCAPI void $onItemStopUse(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>& itemEvent
-    );
+    MCAPI void $onItemStopUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseIntermediateData>& itemEvent);
 
 
     // NOLINTEND

@@ -5,11 +5,12 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/certificates/identity/RawGameServerToken.h"
+#include "mc/client/gui/oreui/binding/queries/core/PlatformType.h"
+#include "mc/deps/certificates/WebToken.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
-#include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/json/Value.h"
-#include "mc/world/actor/player/persona/PieceType.h"
+#include "mc/deps/shared_types/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,9 +18,9 @@ class AnimatedImageData;
 class MinEngineVersion;
 class SerializedPersonaPieceHandle;
 class TintMapColor;
-class WebToken;
 struct ConnectionAuthInfo;
 struct ConnectionSkinInfo;
+namespace Social { struct Nonce; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -35,7 +36,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>> rawToken;
+        ::ll::TypedStorage<8, 136, ::std::optional<::WebToken>> rawToken;
         ::ll::TypedStorage<8, 16, ::Json::Value>                authData;
         // NOLINTEND
 
@@ -55,7 +56,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>> mRawToken;
+    ::ll::TypedStorage<8, 136, ::std::optional<::WebToken>> mRawToken;
     ::ll::TypedStorage<8, 32, ::RawGameServerToken>         mUnverifiedGameServerToken;
     ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>    mAuthenticationType;
     // NOLINTEND
@@ -78,7 +79,7 @@ public:
     // NOLINTBEGIN
     MCAPI BaseConnectionRequest(::BaseConnectionRequest const& other);
 
-    MCAPI BaseConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCAPI BaseConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
 
     MCAPI bool _isUsingRestrictedIds() const;
 
@@ -104,9 +105,11 @@ public:
 
     MCAPI ::std::string getLanguageCode() const;
 
+    MCAPI ::std::optional<::Social::Nonce> getNonce() const;
+
     MCAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
-    MCAPI ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
+    MCAPI ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
 
     MCAPI ::std::string getPlatformId() const;
 
@@ -115,6 +118,8 @@ public:
     MCAPI ::std::string getPlatformOnlineId() const;
 
     MCAPI ::PlatformType getPlatformType() const;
+
+    MCAPI ::std::string getProfileHash() const;
 
     MCAPI ::std::string getSelfSignedId() const;
 
@@ -172,7 +177,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::BaseConnectionRequest const& other);
 
-    MCAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:

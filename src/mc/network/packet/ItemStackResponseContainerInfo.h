@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/ItemStackResponseSlotInfo.h"
 
 // auto generated inclusion list
 #include "mc/world/containers/FullContainerName.h"
@@ -16,5 +17,11 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::FullContainerName>                        mFullContainerName;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseSlotInfo>> mSlots;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::ItemStackResponseContainerInfo const& rhs) const;
     // NOLINTEND
 };

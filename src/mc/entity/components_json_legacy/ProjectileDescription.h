@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/entity/components_json_legacy/ShouldBounce.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/projectile/ProjectileAnchor.h"
 
 // auto generated forward declare list
@@ -23,8 +23,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3>                                                mProjectileOffset;
     ::ll::TypedStorage<4, 4, float>                                                  mProjectilePower;
-    ::ll::TypedStorage<1, 1, bool>                                                   mKnockback;
-    ::ll::TypedStorage<1, 1, bool>                                                   mIgniteOnHit;
     ::ll::TypedStorage<1, 1, bool>                                                   mLightingOnHit;
     ::ll::TypedStorage<4, 4, float>                                                  mGravity;
     ::ll::TypedStorage<4, 4, float>                                                  mUpwardsAngleOffset;
@@ -34,12 +32,9 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                  mOnFireTime;
     ::ll::TypedStorage<4, 4, int>                                                    mPotionEffect;
     ::ll::TypedStorage<4, 4, float>                                                  mSplashRange;
-    ::ll::TypedStorage<4, 4, ::ActorType>                                            mFilter;
     ::ll::TypedStorage<1, 1, bool>                                                   mCatchFire;
-    ::ll::TypedStorage<1, 1, bool>                                                   mIsSplash;
     ::ll::TypedStorage<4, 4, float>                                                  mInertiaMod;
     ::ll::TypedStorage<4, 4, float>                                                  mLiquidInertia;
-    ::ll::TypedStorage<1, 1, bool>                                                   mSemiRandomDiffDamage;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mHitEntitySound;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mHitGroundSound;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mShootSound;
@@ -53,8 +48,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                   mCritParticleOnHurt;
     ::ll::TypedStorage<1, 1, bool>                                                   mShootTarget;
     ::ll::TypedStorage<1, 1, bool>                                                   mIsHoming;
-    ::ll::TypedStorage<1, 1, bool>                                                   mShouldBounce;
-    ::ll::TypedStorage<1, 1, bool>                                                   mFireAffectedByGriefing;
+    ::ll::TypedStorage<1, 1, ::ShouldBounce>                                         mShouldBounce;
     ::ll::TypedStorage<1, 1, bool>                                                   mHitWater;
     ::ll::TypedStorage<1, 1, bool>                                                   mMultipleHits;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionIdentifier>>            mIgnoredEntities;

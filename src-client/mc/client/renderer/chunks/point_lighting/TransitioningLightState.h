@@ -24,8 +24,8 @@ public:
     ::ll::TypedStorage<1, 1, ::PointLighting::TransitioningLightState::Phase> mPhase;
     ::ll::TypedStorage<4, 4, float>                                           mCurrentBlendFactor;
     ::ll::TypedStorage<
-        4,
-        12,
+        8,
+        208,
         ::std::variant<::PointLighting::BakedLightResources, ::PointLighting::AnalyticLightResources>>
         mResources;
     // NOLINTEND

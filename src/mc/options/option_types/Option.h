@@ -73,44 +73,11 @@ public:
         ::ll::TypedStorage<8, 64, ::std::function<void(bool)>>     mRequestSaveCallback;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        Impl();
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI Impl(
-            ::OptionID           id,
-            ::OptionOwnerType    ownerType,
-            ::OptionResetFlags   resetFlags,
-            ::std::string const& captionId,
-            ::std::string const& saveTag,
-            ::OptionType         optionType,
-            ::GameVersion        version
-        );
-
         MCAPI ~Impl();
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(
-            ::OptionID           id,
-            ::OptionOwnerType    ownerType,
-            ::OptionResetFlags   resetFlags,
-            ::std::string const& captionId,
-            ::std::string const& saveTag,
-            ::OptionType         optionType,
-            ::GameVersion        version
-        );
 #endif
         // NOLINTEND
 
@@ -135,10 +102,13 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Option::Impl>> mImpl;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Option();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -160,6 +130,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI Option(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
@@ -170,7 +141,6 @@ public:
         ::GameVersion        version
     );
 
-#ifdef LL_PLAT_C
     MCAPI void _resetOption(::InputMode inputMode, bool saveOptionChange);
 
     MCAPI void _updatePropertyVector(
@@ -183,15 +153,21 @@ public:
     MCAPI bool isDefaultValue(::InputMode inputMode) const;
 
     MCAPI bool isNewVersion(::GameVersion currentVersion) const;
-#endif
 
     MCAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
 
-#ifdef LL_PLAT_C
     MCAPI ::Bedrock::PubSub::Subscription
     registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
 
+    MCAPI void setCoerceSaveValueCallback(::std::function<int(int)> callback);
+
+    MCAPI void setCoerceValueCallback(::std::function<::std::string(::std::string const&)> f);
+
+    MCAPI void setCoerceValueCallback(::std::function<bool(bool)> f);
+
     MCAPI void setOverrideSource(::Option* overrideSource);
+
+    MCAPI void toggle();
 #endif
     // NOLINTEND
 
@@ -203,8 +179,6 @@ public:
 
     MCAPI static bool read(::std::string const& valueString, float& output);
 
-    MCAPI static bool read(::std::string const& valueString, ::std::vector<::std::string>& output);
-
     MCAPI static bool read(::std::string const& valueString, bool& output);
 #endif
     // NOLINTEND
@@ -212,6 +186,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
@@ -221,6 +196,7 @@ public:
         ::OptionType         optionType,
         ::GameVersion        version
     );
+#endif
     // NOLINTEND
 
 public:

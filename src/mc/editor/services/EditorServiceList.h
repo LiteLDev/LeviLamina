@@ -43,8 +43,18 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> _readyServices();
 
+    MCNAPI ::Scripting::Result_deprecated<::Editor::Services::IEditorService*>
+    _registerAndInitService(::std::unique_ptr<::Editor::Services::IEditorService> service);
+
     MCNAPI ::Scripting::Result_deprecated<void>
     _registerAndInitServiceList(::std::vector<::std::unique_ptr<::Editor::Services::IEditorService>> serviceList);
+
+    MCNAPI ::Scripting::Result_deprecated<::Editor::Services::IEditorService*>
+    _registerService(::std::unique_ptr<::Editor::Services::IEditorService> servicePtr);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _startServices();
+
+    MCNAPI ::Scripting::Result_deprecated<void> _tickToStart();
     // NOLINTEND
 
 public:

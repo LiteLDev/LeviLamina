@@ -14,7 +14,6 @@ class Dimension;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
-namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
 // clang-format on
 
@@ -36,9 +35,7 @@ public:
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
     fillBlocks(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& volume,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const& volume,
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,

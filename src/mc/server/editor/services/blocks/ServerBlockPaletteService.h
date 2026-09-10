@@ -18,6 +18,7 @@ namespace Editor::Network { class BlockPaletteChangedPayload; }
 namespace Editor::Network { class BlockPaletteItemChangedPayload; }
 namespace Editor::Network { class BlockPaletteRemovedPayload; }
 namespace Editor::Network { class BlockPaletteSelectedIndexChangedPayload; }
+namespace Editor::Network { class BlockPaletteStartHandshakeRequestPayload; }
 // clang-format on
 
 namespace Editor::Services {
@@ -74,6 +75,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void
+    _handleBlockPaletteStartHandshakeRequestPayload(::Editor::Network::BlockPaletteStartHandshakeRequestPayload const&);
+
     MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncPaletteItem(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,

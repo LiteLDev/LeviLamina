@@ -27,7 +27,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string, 10> const& WOOD_NAMES();
+    MCAPI static ::std::array<::std::string, 11> const& WOOD_NAMES();
     // NOLINTEND
 
 public:

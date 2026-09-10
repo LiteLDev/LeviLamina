@@ -3,74 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/CreativeContentPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/world/inventory/network/TypedServerNetId.h"
-#include "mc/world/item/NetworkItemInstanceDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class CreativeItemRegistry;
 class ReadOnlyBinaryStream;
-struct CreativeItemNetIdTag;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class CreativeContentPacket : public ::Packet {
-public:
-    // CreativeContentPacket inner types declare
-    // clang-format off
-    struct CreativeGroupInfoDescription;
-    struct CreativeItemEntryDescription;
-    // clang-format on
-
-    // CreativeContentPacket inner types define
-    struct CreativeGroupInfoDescription {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::SharedTypes::CreativeItemCategory const> mCreativeItemCategory;
-        ::ll::TypedStorage<8, 32, ::std::string const>                      mName;
-        ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor const>    mIcon;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CreativeGroupInfoDescription();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
-
-    struct CreativeItemEntryDescription {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::CreativeItemNetId const>              mCreativeItemNetId;
-        ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor const> mItemDescriptor;
-        ::ll::TypedStorage<4, 4, uint const>                             mIndex;
-        ::ll::TypedStorage<4, 4, uint const>                             mGroupIndex;
-        // NOLINTEND
-    };
-
+class CreativeContentPacket : public ::ll::PayloadPacket<::CreativeContentPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> const>
-        mCreativeItemRegistryForWrite;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeContentPacket::CreativeGroupInfoDescription>>
-        mReadGroupInfoDescriptions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeContentPacket::CreativeItemEntryDescription>>
-        mReadEntryDescriptions;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CreativeContentPacket();
 
 public:
     // virtual functions
@@ -79,17 +34,47 @@ public:
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    virtual ~CreativeContentPacket() /*override*/;
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI explicit CreativeContentPacket(::CreativeContentPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CreativeContentPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -99,9 +84,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCAPI bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

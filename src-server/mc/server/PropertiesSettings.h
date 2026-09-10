@@ -72,6 +72,8 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                                mServiceKeysRetryTimeoutSeconds;
     ::ll::TypedStorage<1, 1, bool>                                                mForceGameMode;
     ::ll::TypedStorage<1, 1, bool>                                                mAllowCheats;
+    ::ll::TypedStorage<1, 1, bool>                                                mAllowCodeBuilder;
+    ::ll::TypedStorage<1, 1, bool>                                                mAllowCommandBlocks;
     ::ll::TypedStorage<1, 1, bool>                                                mIsHardcore;
     ::ll::TypedStorage<1, 1, bool>                                                mAdventureModeOverridesEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mDisablePlayerInteractions;
@@ -115,6 +117,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mRakNetJoinFloodProtection;
     ::ll::TypedStorage<1, 1, bool>                                                mAllowUnconnectedPings;
     ::ll::TypedStorage<1, 1, bool>                                                mAllowSubClientLogin;
+    ::ll::TypedStorage<1, 1, bool>                                                mJigsawPersistenceEnabled;
     ::ll::TypedStorage<1, 1, ::NetworkPermissions>                                mNetworkPermissions;
     ::ll::TypedStorage<4, 4, ::ServerPlayerJoinBehavior>                          mPlayerJoinBehavior;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mAppId;
@@ -122,14 +125,13 @@ public:
     ::ll::TypedStorage<8, 104, ::PortConfiguration>                               mPortConfig;
     ::ll::TypedStorage<4, 8, ::Bedrock::Services::DiscoveryConfig>                mDiscoveryConfig;
     ::ll::TypedStorage<1, 1, bool>                                                mRealmsStoriesEnabled;
-    ::ll::TypedStorage<1, 1, bool>                                                mProfilerEnabled;
     ::ll::TypedStorage<4, 4, ::EducationServicesEnvironment>                      mEducationServicesEnvironment;
     ::ll::TypedStorage<1, 1, bool>                                                mIsChatLoggingEnabled;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mServiceOverrides;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                               mScriptSentryMaxEventsPerWindow;
     ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>>            mScriptSentryRateLimitWindow;
     ::ll::TypedStorage<8, 160, ::PropertiesSettings::TelemetrySettings>           mTelemetry;
-    ::ll::TypedStorage<8, 512, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
+    ::ll::TypedStorage<8, 480, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
     ::ll::TypedStorage<1, 1, bool>                                                mEditorNetworkMetricsEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mConvertWorldToEditorProject;
     ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>                      mEditorConnectionPolicy;

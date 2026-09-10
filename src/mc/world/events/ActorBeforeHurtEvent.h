@@ -15,6 +15,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Actor const&>             mEntity;
     ::ll::TypedStorage<8, 8, ::ActorDamageSource const&> mSource;
     ::ll::TypedStorage<4, 4, float>                      mDamage;
+    ::ll::TypedStorage<1, 1, bool>                       mWasModified;
     // NOLINTEND
 
 public:

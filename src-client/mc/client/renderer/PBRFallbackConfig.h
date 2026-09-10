@@ -81,6 +81,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& PAYLOAD_KEY();
+
+    MCNAPI static ::std::string_view const& PBR_FALLBACK_GLOBAL_CONFIG_FILE();
     // NOLINTEND
 
 public:

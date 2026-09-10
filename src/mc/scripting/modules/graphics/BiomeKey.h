@@ -18,6 +18,18 @@ public:
     BiomeKey& operator=(BiomeKey const&);
     BiomeKey(BiomeKey const&);
     BiomeKey();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~BiomeKey();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleServerGraphics

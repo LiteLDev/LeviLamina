@@ -49,6 +49,7 @@ class WorldClockRegistry;
 struct EduSharedUriResource;
 struct LevelDataValue;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
+namespace RakNet { class BitStream; }
 // clang-format on
 
 class LevelData {
@@ -158,9 +159,8 @@ public:
             ::std::vector<::LevelDataProperty>,
             ::std::vector<::std::unique_ptr<
                 ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>>>
-                                                              mLevelDataPropertiesPublishers;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mExperienceWorldId;
-    ::ll::TypedStorage<4, 4, ::LevelDataType>                 mLevelDataType;
+                                              mLevelDataPropertiesPublishers;
+    ::ll::TypedStorage<4, 4, ::LevelDataType> mLevelDataType;
     // NOLINTEND
 
 public:
@@ -195,9 +195,9 @@ public:
     _getLevelDataPropertyPublisher(::LevelDataProperty property) const;
 #endif
 
-    MCFOLD ::LevelDataValue const* _getValue(::HashedString const& key) const;
+    MCAPI ::LevelDataValue const* _getValue(::HashedString const& key) const;
 
-    MCFOLD ::LevelDataValue* _getValue(::HashedString const& key);
+    MCAPI ::LevelDataValue* _getValue(::HashedString const& key);
 
     MCAPI void _initLevelDataPropertyPublishers();
 
@@ -233,11 +233,9 @@ public:
     MCAPI bool isCloudSaveActiveForWorld() const;
 
     MCAPI bool isEditionCompatible() const;
-#endif
 
     MCAPI ::LevelData& operator=(::LevelData&& rhs);
 
-#ifdef LL_PLAT_C
     MCAPI ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
 
     MCAPI ::Bedrock::PubSub::Subscription
@@ -305,6 +303,8 @@ public:
 #endif
 
     MCAPI void touchLastLoadedWithVersion();
+
+    MCAPI void v1_read(::RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
 
     MCAPI ~LevelData();
     // NOLINTEND

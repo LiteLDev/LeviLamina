@@ -21,10 +21,4 @@ public:
                                                                         mGapNoiseSource;
     ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mPositionalRandomFactory;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::OreVeinifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
-    // NOLINTEND
 };

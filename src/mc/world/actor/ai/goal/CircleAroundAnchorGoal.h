@@ -66,7 +66,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $start();
 
-    MCFOLD void $stop();
+    MCAPI void $stop();
 
     MCFOLD bool $canUse();
 

@@ -88,10 +88,4 @@ public:
 
 
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
-    // NOLINTEND
 };

@@ -29,5 +29,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 400, ::Bedrock::small_vector<::DensityAllocator::VolumeEntry, 8>> mEntries;
+    ::ll::TypedStorage<4, 4, uint>                                                          mActiveCount;
     // NOLINTEND
 };

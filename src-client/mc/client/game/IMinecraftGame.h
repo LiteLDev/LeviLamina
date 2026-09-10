@@ -17,7 +17,6 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/application/app_extensions/AppExtensionsOwner.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/islands/AppIsland.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/DeferredTasksManager.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -128,6 +127,7 @@ struct ControllerIDtoClientMap;
 struct DimensionType;
 struct PlayerJoinWorldContext;
 struct ScreenshotOptions;
+namespace Bedrock { class ActivationArguments; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
@@ -154,7 +154,6 @@ namespace mce { class UUID; }
 // clang-format on
 
 class IMinecraftGame : public ::Bedrock::EnableNonOwnerReferences,
-                       public ::Bedrock::AppIsland,
                        public ::IMinecraftApp,
                        public ::IGameServerStartup,
                        public ::IGameServerShutdown,
@@ -172,6 +171,10 @@ public:
     virtual ~IMinecraftGame() /*override*/ = default;
 
     virtual void update() = 0;
+
+    virtual bool stop() = 0;
+
+    virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) = 0;
 
     virtual ::AppSystemRegistry& getAppSystemRegistry() = 0;
 

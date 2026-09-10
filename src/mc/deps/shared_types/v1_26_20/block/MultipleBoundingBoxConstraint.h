@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_26_20::BlockDefinition { struct BoundingBoxData; }
+namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -27,6 +29,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void validateValue(
+        ::std::vector<::SharedTypes::v1_26_20::BlockDefinition::BoundingBoxData> const& boundingBoxDataVector,
+        ::cereal::SerializerContext&                                                    context
+    ) const;
     // NOLINTEND
 
 public:

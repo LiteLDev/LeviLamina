@@ -57,7 +57,9 @@ public:
 
     MCAPI bool performCommand(::BlockSource& region, ::ActorUniqueID const& minecartId);
 
+#ifdef LL_PLAT_S
     MCAPI bool performCommand(::BlockSource& region, ::BlockPos const& pos, bool& markForSaving);
+#endif
 
     MCAPI bool save(::CompoundTag& tag) const;
 

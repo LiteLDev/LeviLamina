@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,33 +19,34 @@ class LootItemFunction {
 public:
     // LootItemFunction inner types define
     enum class FunctionType : int {
-        SetItemCount           = 0,
-        SetItemData            = 1,
-        SetItemDamage          = 2,
-        LootingEnchant         = 3,
-        EnchantWithLevels      = 4,
-        EnchantBookForTrading  = 5,
-        EnchantRandomly        = 6,
-        SmeltItem              = 7,
-        SetDataFromColorIndex  = 8,
-        EnchantRandomEquipment = 9,
-        RandomAuxValue         = 10,
-        RandomBlockState       = 11,
-        RandomDye              = 12,
-        ExplorationMap         = 13,
-        SetBannerDetails       = 14,
-        ExplosionDecay         = 15,
-        SetItemName            = 16,
-        SetItemLore            = 17,
-        SpecificEnchant        = 18,
-        FillContainer          = 19,
-        SetSpawnEgg            = 20,
-        SetBookContents        = 21,
-        SetStewEffect          = 22,
-        SetOminousBottle       = 23,
-        SetArmorTrim           = 24,
-        SetPotion              = 25,
-        Count                  = 26,
+        SetItemCount             = 0,
+        SetItemData              = 1,
+        SetItemDamage            = 2,
+        LootingEnchant           = 3,
+        EnchantWithLevels        = 4,
+        EnchantBookForTrading    = 5,
+        EnchantRandomly          = 6,
+        SmeltItem                = 7,
+        SetDataFromColorIndex    = 8,
+        EnchantRandomEquipment   = 9,
+        RandomAuxValue           = 10,
+        RandomBlockState         = 11,
+        RandomDye                = 12,
+        ExplorationMap           = 13,
+        SetBannerDetails         = 14,
+        ExplosionDecay           = 15,
+        SetItemName              = 16,
+        SetItemLore              = 17,
+        SpecificEnchant          = 18,
+        FillContainer            = 19,
+        SetSpawnEgg              = 20,
+        SetBookContents          = 21,
+        SetStewEffect            = 22,
+        SetOminousBottle         = 23,
+        SetArmorTrim             = 24,
+        SetPotion                = 25,
+        CarryOverBlockEntityData = 26,
+        Count                    = 27,
     };
 
 public:
@@ -56,7 +58,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~LootItemFunction();
+#else // LL_PLAT_C
+    virtual ~LootItemFunction() = default;
+#endif
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) = 0;
 
@@ -83,13 +89,21 @@ public:
         ::HashedString,
         ::std::function<::std::unique_ptr<
             ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
+    mLootingExperimentalFunctions();
+
+    MCAPI static ::std::unordered_map<
+        ::HashedString,
+        ::std::function<::std::unique_ptr<
+            ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
     mLootingFunctions();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
