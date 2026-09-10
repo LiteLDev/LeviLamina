@@ -41,7 +41,6 @@
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/ServerNetworkSystem.h"
 #include "mc/network/connection/DisconnectFailReason.h"
-#include "mc/network/packet/DisconnectPacket.h"
 
 namespace ll::protocol::detail {
 
@@ -139,7 +138,7 @@ bool isPeerFailure(ProtocolErrc error) noexcept { return error != ProtocolErrc::
 
 void disconnectPrelogin(
     NetworkIdentifier const&         id,
-    SubClientId                      subClientId,
+    [[maybe_unused]] SubClientId     subClientId,
     Connection::DisconnectFailReason reason,
     std::string                      message = {}
 ) {
@@ -150,7 +149,7 @@ void disconnectPrelogin(
     if (generation == 0) return;
 
     thread::ServerThreadExecutor::getDefault().execute(
-        [id, subClientId, reason, generation, message = std::move(message)]() mutable {
+        [id, reason, generation, message = std::move(message)]() mutable {
             auto endpoint = getServerEndpoint();
             auto handler  = service::getServerNetworkHandler();
             if (!endpoint || !handler || endpoint->currentGeneration(id) != generation) return;
@@ -161,16 +160,10 @@ void disconnectPrelogin(
             auto connectionId = connection->mId;
 
             if (message.empty()) message = disconnectMessage(reason);
-            try {
-                DisconnectPacket packet{
-                    DisconnectPacketPayload{reason, message, std::nullopt}
-                };
-                handler->mPacketSender->sendToClient(connectionId, packet, subClientId);
-            } catch (...) {}
 
             auto& network = handler->mNetwork;
             network.onConnectionClosed(connectionId, reason, message, {}, false, {});
-            network.getRemoteConnector()->closeNetworkConnection(connectionId);
+            network.mRemoteConnector->closeNetworkConnection(connectionId);
         }
     );
 }
@@ -409,8 +402,8 @@ void ServerLoginIntegration::observeConnectionRequest(
         if (generation == 0) return;
 
         std::optional<DiscoveryMarker> marker;
-        if (request.mRawToken) {
-            auto parsed = parseDiscoveryMarker(request.mRawToken->mDataInfo);
+        if (request.mRawToken->has_value()) {
+            auto parsed = parseDiscoveryMarker(request.mRawToken->value().mDataInfo);
             if (parsed) marker = std::move(*parsed);
         }
 

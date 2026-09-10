@@ -3,7 +3,9 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/client/game/ClientInstance.h"
+#include "mc/client/game/IMinecraftGame.h"
 #include "mc/client/network/ClientNetworkHandler.h"
+#include "mc/network/ClientNetworkSystem.h"
 #include "mc/network/IncomingPacketFilterResult.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
@@ -56,6 +58,24 @@ LL_TYPE_INSTANCE_HOOK(
 ) {
     auto const subClientId = static_cast<std::uint8_t>(packet.mSenderSubId);
 
+    auto inlinedDisconnectFromServer = [this](NetworkIdentifier const& id) {
+        mClient.getMinecraftGame_DEPRECATED().onClientLevelExit(mClient, 5);
+
+        if (mClient.isPrimaryClient()) {
+            mClient.getClientNetworkSystem().closeConnection(id, Connection::DisconnectFailReason::BadPacket, "");
+        } else {
+            this->onDisconnect(
+                id,
+                Connection::DisconnectFailReason::BadPacket,
+                Connection::DisconnectionStage::Unknown,
+                "",
+                "",
+                false,
+                "DisconnectPacket"
+            );
+        }
+    };
+
     auto disposition = getClientLoginIntegration().beforePlayStatus(id, subClientId, packet.mStatus);
     switch (disposition) {
     case ClientLoginIntegration::LoginSuccessDisposition::ContinueVanilla:
@@ -64,12 +84,12 @@ LL_TYPE_INSTANCE_HOOK(
     case ClientLoginIntegration::LoginSuccessDisposition::ActivateAfterOrigin:
         origin(id, packet);
         if (!getClientLoginIntegration().completeLoginSuccess(id, subClientId)) {
-            _disconnectFromServer(id);
+            inlinedDisconnectFromServer(id);
         }
 
         return;
     case ClientLoginIntegration::LoginSuccessDisposition::Reject:
-        _disconnectFromServer(id);
+        inlinedDisconnectFromServer(id);
         return;
     }
 }

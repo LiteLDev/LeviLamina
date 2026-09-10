@@ -119,9 +119,18 @@ LL_TYPE_INSTANCE_HOOK(
     bool                                   skipMessage,
     std::string const&                     telemetry
 ) {
-    getClientLoginIntegration().closeConnection(id);
+    if (reason == Connection::DisconnectFailReason::HostSuspended) {
+        getClientLoginIntegration().closeAll();
+    } else {
+        getClientLoginIntegration().closeConnection(id);
+    }
+
     if (auto endpoint = getClientEndpoint()) {
-        endpoint->closeConnection(id);
+        if (reason == Connection::DisconnectFailReason::HostSuspended) {
+            endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
+        } else {
+            endpoint->closeConnection(id);
+        }
     }
 
     origin(id, reason, stage, message, body, skipMessage, telemetry);
@@ -157,21 +166,6 @@ LL_TYPE_INSTANCE_HOOK(
     origin();
 }
 
-LL_TYPE_INSTANCE_HOOK(
-    ProtocolClientSuspensionDisconnectHook,
-    HookPriority::High,
-    ClientInstance,
-    &ClientInstance::$onAppSuspensionDisconnect,
-    void
-) {
-    getClientLoginIntegration().closeAll();
-    if (auto endpoint = getClientEndpoint()) {
-        endpoint->closeAll(ProtocolCloseReason::ConnectionClosed);
-    }
-
-    origin();
-}
-
 void registerClientLifecycleHooks() {
     static memory::HookRegistrar<
         ProtocolClientOutgoingConnectionHook,
@@ -181,8 +175,7 @@ void registerClientLifecycleHooks() {
         ProtocolClientOutgoingConnectionFailedHook,
         ProtocolClientHandlerDisconnectHook,
         ProtocolClientCancelJoinHook,
-        ProtocolClientLevelExitHook,
-        ProtocolClientSuspensionDisconnectHook>
+        ProtocolClientLevelExitHook>
         hooks;
 }
 

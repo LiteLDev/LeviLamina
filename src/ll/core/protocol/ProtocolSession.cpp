@@ -11,16 +11,7 @@
 #include "ll/core/protocol/ProtocolEnvelopePacket.h"
 #include "ll/core/protocol/RegistrationLease.h"
 
-// TODO(https://github.com/LiteLDev/mcapi-requests/issues/229): Remove after the symbols are added.
 NetherNet::NetworkID::NetworkID() = default;
-
-NetherNet::P2P::NetworkID::NetworkID(NetherNet::P2P::NetworkID const&) = default;
-
-NetherNet::P2P::NetworkID& NetherNet::P2P::NetworkID::operator=(NetherNet::P2P::NetworkID const&) = default;
-
-NetherNet::Realms::NetworkID::NetworkID(NetherNet::Realms::NetworkID const&) = default;
-
-NetherNet::Realms::NetworkID& NetherNet::Realms::NetworkID::operator=(NetherNet::Realms::NetworkID const&) = default;
 
 namespace ll::protocol::detail {
 

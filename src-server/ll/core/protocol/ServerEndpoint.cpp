@@ -241,7 +241,7 @@ ServerEndpoint::findLiveConnection(NetworkIdentifier const& id, std::uint64_t ge
         if (!network) return nullptr;
 
         return ll::protocol::detail::findLiveConnection<NetworkConnection>(
-            network->getConnections(),
+            *network->mConnections,
             id,
             [](NetworkConnection const& connection) -> NetworkIdentifier const& { return connection.mId; }
         );

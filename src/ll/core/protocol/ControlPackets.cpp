@@ -85,7 +85,7 @@ Bedrock::Result<void> ControlPacket::read(ReadOnlyBinaryStream& stream) {
             }
         }
 
-        if (auto completed = stream.ensureReadCompleted(); !completed) {
+        if (stream.mHasOverflowed || stream.mReadPointer != stream.mView.size()) {
             return makeControlReadFailure();
         }
 

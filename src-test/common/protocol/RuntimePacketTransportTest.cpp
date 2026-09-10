@@ -29,11 +29,17 @@ namespace {
 std::string serialize(network::Packet const& packet) {
     BinaryStream stream;
     packet.write(stream);
-    return stream.getAndReleaseData();
+
+    stream.mView = {};
+    return std::move(stream.mOwnedBuffer);
 }
 
 Bedrock::Result<void> deserialize(network::Packet& packet, std::string bytes) {
-    ReadOnlyBinaryStream stream{std::move(bytes)};
+    ReadOnlyBinaryStream stream{bytes, false};
+
+    stream.mOwnedBuffer = std::move(bytes);
+    stream.mView = stream.mOwnedBuffer; 
+    
     return packet.read(stream);
 }
 

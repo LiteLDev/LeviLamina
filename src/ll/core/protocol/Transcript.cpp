@@ -5,23 +5,16 @@
 #include "ll/core/protocol/Constants.h"
 #include "ll/core/protocol/ControlCodec.h"
 
-#include "mc/deps/crypto/Hash.h"
-
-#include <algorithm>
 #include <cstring>
-#include <limits>
 #include <optional>
 #include <string>
 
+#include "mc/deps/crypto/hash/Hash.h"
+
 namespace ll::protocol::detail {
 
-void updateHash(Crypto::Hash::Hash& hash, std::span<std::byte const> input) {
-    constexpr auto MaxUpdateSize = static_cast<std::size_t>(std::numeric_limits<uint>::max());
-    while (!input.empty()) {
-        auto const size = std::min(input.size(), MaxUpdateSize);
-        hash.update(input.data(), static_cast<uint>(size));
-        input = input.subspan(size);
-    }
+void appendBytes(std::string& output, std::span<std::byte const> input) {
+    output.append(reinterpret_cast<char const*>(input.data()), input.size());
 }
 
 TranscriptDigest toTranscriptDigest(std::string const& binaryDigest) {
@@ -33,16 +26,11 @@ TranscriptDigest toTranscriptDigest(std::string const& binaryDigest) {
 }
 
 struct Transcript::Impl {
-    Crypto::Hash::Hash              hash{Crypto::Hash::HashType::Sha256};
-    std::optional<TranscriptDigest> digest;
+    std::string                     bytes{TranscriptHashDomain};
+    std::optional<TranscriptDigest> digest{};
 };
 
-Transcript::Transcript() : mImpl(std::make_unique<Impl>()) {
-    updateHash(
-        mImpl->hash,
-        {reinterpret_cast<std::byte const*>(TranscriptHashDomain.data()), TranscriptHashDomain.size()}
-    );
-}
+Transcript::Transcript() : mImpl(std::make_unique<Impl>()) {}
 Transcript::~Transcript() = default;
 
 Transcript::Transcript(Transcript&&) noexcept            = default;
@@ -64,13 +52,22 @@ Expected<> Transcript::add(ControlMessage const& message, CoreVersion coreProtoc
     if (auto result = frame.writeU64(runtimeId); !result) return result;
     if (auto result = frame.writeU32(static_cast<std::uint32_t>(encoded->size())); !result) return result;
 
-    updateHash(mImpl->hash, frame.bytes());
-    updateHash(mImpl->hash, {reinterpret_cast<std::byte const*>(encoded->data()), encoded->size()});
+    appendBytes(mImpl->bytes, frame.bytes());
+
+    mImpl->bytes.append(*encoded);
     return {};
 }
 
 TranscriptDigest Transcript::finish() {
-    if (!mImpl->digest) mImpl->digest = toTranscriptDigest(mImpl->hash.final());
+    if (!mImpl->digest) {
+        mImpl->digest = toTranscriptDigest(
+            Crypto::Hash::hash(
+                Crypto::Hash::HashType::Sha256,
+                mImpl->bytes.data(),
+                static_cast<uint>(mImpl->bytes.size())
+            )
+        );
+    }
     return *mImpl->digest;
 }
 

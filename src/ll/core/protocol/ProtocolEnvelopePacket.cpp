@@ -65,7 +65,7 @@ std::span<std::byte const> ProtocolEnvelopePacket::body() const noexcept {
 }
 
 void ProtocolEnvelopePacket::write(BinaryStream& stream) const {
-    stream.writeUnsignedChar(mEnvelopeSchema, "EnvelopeSchema", "LeviLamina protocol envelope schema");
+    stream.writeByte(mEnvelopeSchema, "EnvelopeSchema", "LeviLamina protocol envelope schema");
     stream.writeUnsignedShort(mPayloadSchema, "PayloadSchema", "Negotiated payload schema");
     stream.writeUnsignedInt(static_cast<uint>(mBody.size()), "BodyLength", "Encoded payload body length");
     stream.write(mBody.data(), mBody.size());
@@ -99,7 +99,7 @@ Bedrock::Result<void> ProtocolEnvelopePacket::read(ReadOnlyBinaryStream& stream)
                 return makeEnvelopeReadFailure();
             }
         }
-        if (auto completed = stream.ensureReadCompleted(); !completed) {
+        if (stream.mHasOverflowed || stream.mReadPointer != stream.mView.size()) {
             return makeEnvelopeReadFailure();
         }
 
