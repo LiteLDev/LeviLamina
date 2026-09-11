@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/storage/Experiments.h"
 
 // auto generated inclusion list
 #include "mc/client/network/ClientNetworkPackDependencies.h"
@@ -189,6 +190,17 @@ public:
     using ChunkKey = ::std::pair<::Dimension const*, ::ChunkPos>;
 
     using ChunkCallbackKey = ::std::tuple<::NetworkIdentifier, ::Dimension const*, ::ChunkPos>;
+
+public:
+    LLAPI void _disconnectFromServer(::NetworkIdentifier const& source);
+
+    LLAPI void onChunkHandleCompleted(
+        ::NetworkIdentifier const& source,
+        ::ChunkPos const&          chunkPos,
+        ::Dimension const&         dimension
+    );
+
+    LLAPI void _ensureVoxelShapeRegistryExists(::Experiments const& experiments);
 
 public:
     // member variables
