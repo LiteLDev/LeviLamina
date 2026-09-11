@@ -61,12 +61,12 @@ void ClientNetworkHandler::onChunkHandleCompleted(
     }
 }
 
-void ClientNetworkHandler::_ensureVoxelShapeRegistryExists(::Experiments const& experiments) {
+void ClientNetworkHandler::_ensureVoxelShapeRegistryExists(::Experiments const& /*experiments*/) {
     if (!mVoxelShapeRegistry) {
-        mVoxelShapeRegistry = std::make_unique<VoxelShapes::VoxelShapeRegistry>();
-        if (experiments.isExperimentEnabled(AllExperiments::VoxelShapes)) {
-            // TODO: https://github.com/LiteLDev/mcapi-requests/issues/242
-            // mVoxelShapeRegistry->initialize();
-        }
+        // TODO: https://github.com/LiteLDev/mcapi-requests/issues/242
+        // mVoxelShapeRegistry = std::make_unique<VoxelShapes::VoxelShapeRegistry>();
+        // if (experiments.isExperimentEnabled(AllExperiments::VoxelShapes)) {
+        //     mVoxelShapeRegistry->initialize();
+        // }
     }
 }
