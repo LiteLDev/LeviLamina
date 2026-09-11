@@ -50,6 +50,10 @@ public:
 
     LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt, class BlockPos const& pos);
 
+    [[nodiscard]] BlockPos getPosition() const { return mPosition.get(); }
+
+    [[nodiscard]] BlockActorType getType() const { return mType; }
+
 public:
     // member variables
     // NOLINTBEGIN
