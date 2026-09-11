@@ -86,6 +86,9 @@ namespace MovementDataExtractionUtility { class SnapshotAccessor; }
 
 class LocalPlayer : public ::Player {
 public:
+    LLAPI void closeContainerScreen(::SharedTypes::Legacy::ContainerType containerType);
+
+public:
     // LocalPlayer inner types declare
     // clang-format off
     class RegionListener;
