@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandPositionFloat.h"
 #include "mc/server/commands/CommandSelector.h"
@@ -16,7 +17,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class TeleportTarget;
-class Vec3;
 struct DimensionType;
 namespace RotationCommandUtils { class RotationData; }
 // clang-format on

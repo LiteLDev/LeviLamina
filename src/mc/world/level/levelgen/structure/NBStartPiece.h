@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/NBBridgeCrossing.h"
+#include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 // auto generated forward declare list
 // clang-format off
 class PieceWeight;
-class StructurePiece;
 // clang-format on
 
 class NBStartPiece : public ::NBBridgeCrossing {

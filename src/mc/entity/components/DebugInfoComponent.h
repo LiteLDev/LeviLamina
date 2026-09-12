@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -10,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 struct ActorDefinitionTriggeredEvent;
 // clang-format on
 

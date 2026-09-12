@@ -23,7 +23,6 @@ class BlockSource;
 class BoundingBox;
 class IRandom;
 class IStructureTemplateManager;
-class JigsawBlockInfo;
 class JigsawStructureBlockInfo;
 class LegacyStructureSettings;
 class LegacyStructureTemplate;

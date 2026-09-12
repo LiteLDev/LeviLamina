@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/voxel_shapes/RegistryHandle.h"
+
 // auto generated forward declare list
 // clang-format off
-class HashedString;
-namespace VoxelShapes { class RegistryHandle; }
 namespace VoxelShapes { class VoxelShape; }
 // clang-format on
 
@@ -15,34 +17,28 @@ class VoxelShapeRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3a4b31;
-    ::ll::UntypedStorage<2, 2>  mUnk937122;
-    ::ll::UntypedStorage<2, 2>  mUnk11cf12;
-    ::ll::UntypedStorage<8, 8>  mUnk903343;
-    ::ll::UntypedStorage<8, 8>  mUnka5e922;
-    ::ll::UntypedStorage<8, 24> mUnk92b9be;
-    ::ll::UntypedStorage<8, 64> mUnka8a263;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mInitialized;
+    ::ll::TypedStorage<2, 2, ::VoxelShapes::RegistryHandle>                                        mEmptyShapeHandle;
+    ::ll::TypedStorage<2, 2, ::VoxelShapes::RegistryHandle>                                        mUnitCubeShapeHandle;
+    ::ll::TypedStorage<8, 8, uint64>                                                               mVanillaShapes;
+    ::ll::TypedStorage<8, 8, uint64>                                                               mCustomShapes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::VoxelShapes::VoxelShape>>                            mVoxelShapes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle>> mNameMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VoxelShapeRegistry& operator=(VoxelShapeRegistry const&);
-    VoxelShapeRegistry(VoxelShapeRegistry const&);
-    VoxelShapeRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::VoxelShapes::RegistryHandle _insertOrFindDuplicate(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
+    MCAPI ::VoxelShapes::RegistryHandle _insertOrFindDuplicate(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
 
-    MCNAPI ::VoxelShapes::RegistryHandle getHandleByName(::HashedString const& name) const;
+    MCAPI ::VoxelShapes::RegistryHandle getHandleByName(::HashedString const& name) const;
 
-    MCNAPI bool hasName(::HashedString const& name) const;
+    MCAPI bool hasName(::HashedString const& name) const;
 
-    MCNAPI void initialize();
+    MCAPI void initialize();
 
 #ifdef LL_PLAT_C
-    MCNAPI void initializeFromNetwork(
+    MCAPI void initializeFromNetwork(
         ::std::vector<::VoxelShapes::VoxelShape> const&                            shapes,
         ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle> const& nameMap,
         ushort                                                                     customShapeCount
@@ -53,15 +49,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _computeIsCubeShapeEquivalent(::VoxelShapes::VoxelShape const& shape);
+    MCAPI static bool _computeIsCubeShapeEquivalent(::VoxelShapes::VoxelShape const& shape);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& EMPTY_ID();
+    MCAPI static ::HashedString const& EMPTY_ID();
 
-    MCNAPI static ::HashedString const& UNIT_CUBE_ID();
+    MCAPI static ::HashedString const& UNIT_CUBE_ID();
     // NOLINTEND
 };
 

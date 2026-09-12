@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.40.1] - 2026-09-12
+
+### Added
+
+- Added getMaterial method to Block @yangyangzhong82
+
+### Changed
+
+- Bumped bedrock-runtime-data version
+
+### Fixed
+
+- Restore the server advertisement when BDS leaves it unset
+
 ## [26.40.0] - 2026-09-08
 
 ### Added
@@ -1744,7 +1758,8 @@ For lip and tooth-hub test only.
 [#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
 [#1824]: https://github.com/LiteLDev/LeviLamina/issues/1824
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.1...HEAD
+[26.40.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.0...v26.40.1
 [26.40.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.2...v26.40.0
 [26.32.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.1...v26.32.2
 [26.32.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.0...v26.32.1

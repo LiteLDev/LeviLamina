@@ -18,15 +18,9 @@ class UnleashResponse : public ::ActorEventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkeda036;
-    ::ll::UntypedStorage<1, 1> mUnkae317b;
+    ::ll::TypedStorage<1, 1, bool> mUnleashSelf;
+    ::ll::TypedStorage<1, 1, bool> mUnleashOthers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UnleashResponse& operator=(UnleashResponse const&);
-    UnleashResponse(UnleashResponse const&);
-    UnleashResponse();
 
 public:
     // virtual functions
@@ -45,21 +39,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $buildSchema(
+    MCAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
                                                schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const;
 
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $executeAction(::RenderParams& params) const;
+    MCAPI void $executeAction(::RenderParams& params) const;
 
 
     // NOLINTEND

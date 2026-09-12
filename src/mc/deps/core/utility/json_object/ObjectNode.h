@@ -5,9 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_object/Collection.h"
 #include "mc/deps/core/utility/json_object/Node.h"
+#include "mc/platform/container/list.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::JSONObject { class NodeBase; }
 namespace Bedrock::JSONObject { class StringNode; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
 // clang-format on
