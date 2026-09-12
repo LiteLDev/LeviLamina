@@ -28,6 +28,7 @@
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/io/Output.h"
 #include "ll/core/mod/ModRegistrar.h"
+#include "ll/core/protocol/ServerProtocolRuntime.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/deps/core/file/Path.h"
@@ -217,6 +218,13 @@ void leviLaminaMain() {
 #endif
 
     command::registerCommands();
+
+    if (config.targeted.protocol.enabled) {
+        if (auto initialized = protocol::server::initialize(); !initialized) {
+            getLogger().error("Protocol initialization failed");
+            initialized.error().log(getLogger());
+        }
+    }
 
     mod::ModRegistrar::getInstance().loadAllMods();
 

@@ -27,8 +27,8 @@ class RuntimePacket final : public ::Packet {
 public:
     RuntimePacket() = default;
 
-    RuntimePacket(std::unique_ptr<ll::network::Packet> packet)
-    : mOwnedPacket(std::move(packet)),
+    explicit RuntimePacket(std::unique_ptr<ll::network::Packet> newPacket)
+    : mOwnedPacket(std::move(newPacket)),
       mPacket(mOwnedPacket.get()) {
         if (mPacket) {
             mRuntimeId    = mPacket->getRuntimeId();
@@ -46,7 +46,7 @@ public:
 
     [[nodiscard]] constexpr optional_ref<ll::network::Packet const> getPacket() const { return mPacket; }
 
-    [[nodiscard]] constexpr optional_ref<ll::network::Packet> getmOwnedPacket() const { return mOwnedPacket.get(); }
+    [[nodiscard]] constexpr optional_ref<ll::network::Packet> getOwnedPacket() const { return mOwnedPacket.get(); }
 
     constexpr void movePacket(std::unique_ptr<ll::network::Packet> newPacket) {
         mOwnedPacket = std::move(newPacket);
