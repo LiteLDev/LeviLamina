@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
+#include "mc/deps/nether_net/NetworkID.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { struct NetworkID; }
 namespace webrtc { class SocketAddress; }
 // clang-format on
 

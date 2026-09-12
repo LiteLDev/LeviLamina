@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/util/molang/ExpressionNode.h"
+#include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,18 +16,12 @@ class ReflectProjectileDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk77b87e;
-    ::ll::UntypedStorage<8, 16> mUnk5fa002;
-    ::ll::UntypedStorage<8, 16> mUnkafaef4;
-    ::ll::UntypedStorage<8, 24> mUnk97eea3;
-    ::ll::UntypedStorage<8, 32> mUnk63132a;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>           mAzimuthAngle;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>           mElevationAngle;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>           mReflectionScale;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorType>> mProjectilesToReflect;
+    ::ll::TypedStorage<8, 32, ::std::string>              mReflectionSound;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReflectProjectileDefinition& operator=(ReflectProjectileDefinition const&);
-    ReflectProjectileDefinition(ReflectProjectileDefinition const&);
-    ReflectProjectileDefinition();
 
 public:
     // member functions

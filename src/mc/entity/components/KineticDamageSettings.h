@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
+#include "mc/entity/components/KineticEffectConditions.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_90 { struct KineticWeaponItemComponent; }
@@ -12,21 +16,19 @@ struct KineticDamageSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk99fc48;
-    ::ll::UntypedStorage<4, 16> mUnk18b739;
-    ::ll::UntypedStorage<4, 16> mUnk3b0935;
-    ::ll::UntypedStorage<4, 8>  mUnkcfdebd;
-    ::ll::UntypedStorage<4, 12> mUnkc2522a;
-    ::ll::UntypedStorage<4, 4>  mUnkab3188;
-    ::ll::UntypedStorage<4, 4>  mUnk7d7e6f;
-    ::ll::UntypedStorage<4, 4>  mUnk98b7f2;
-    ::ll::UntypedStorage<2, 2>  mUnk6951cb;
+    ::ll::TypedStorage<4, 16, ::std::optional<::KineticEffectConditions>> mDamageConditions;
+    ::ll::TypedStorage<4, 16, ::std::optional<::KineticEffectConditions>> mKnockbackConditions;
+    ::ll::TypedStorage<4, 16, ::std::optional<::KineticEffectConditions>> mDismountConditions;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                   mReach;
+    ::ll::TypedStorage<4, 12, ::std::optional<::SharedTypes::FloatRange>> mCreativeReach;
+    ::ll::TypedStorage<4, 4, float>                                       mHitboxMargin;
+    ::ll::TypedStorage<4, 4, float>                                       mDamageModifier;
+    ::ll::TypedStorage<4, 4, float>                                       mDamageMultiplier;
+    ::ll::TypedStorage<2, 2, ushort>                                      mDelay;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    KineticDamageSettings& operator=(KineticDamageSettings const&);
-    KineticDamageSettings(KineticDamageSettings const&);
     KineticDamageSettings();
 
 public:

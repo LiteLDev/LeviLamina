@@ -6,6 +6,7 @@
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/containers/FullContainerName.h"
 #include "mc/world/inventory/ContainerWeakRef.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
 #include "mc/world/inventory/network/ItemStackRequestScreen.h"
@@ -26,7 +27,6 @@ class ItemStackRequestBatch;
 class ItemStackRequestData;
 class SparseContainer;
 class SparseContainerClient;
-struct FullContainerName;
 struct HistoricPredictionData;
 struct ItemStackRequestIdTag;
 struct ItemStackResponseInfo;
