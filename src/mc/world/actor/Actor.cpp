@@ -279,3 +279,9 @@ bool Actor::isOnHotBlock() const { return getEntityContext().hasComponent<IsOnHo
 }
 
 bool Actor::isDead() const { return getEntityContext().hasComponent<IsDeadFlagComponent>(); }
+
+float Actor::distanceTo(::Vec3 const& pos) const { return static_cast<float>(getPosition().distanceTo(pos)); }
+
+float Actor::distanceToSqr(::Actor const& e) const { return distanceToSqr(e.getPosition()); }
+
+float Actor::distanceToSqr(::Vec3 const& pos) const { return static_cast<float>(getPosition().distanceToSqr(pos)); }

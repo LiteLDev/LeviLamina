@@ -81,6 +81,16 @@ public:
 
     LLAPI optional_ref<Actor> spawnActor(CompoundTag const&);
 
+    LLNDAPI bool findNextTopSolidBlockAbove(::BlockPos& pos) const;
+
+    LLAPI void addToTickingQueue(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        int               tickDelay,
+        int               priorityOffset = 0,
+        bool              skipOverrides  = false
+    );
+
 public:
     // member variables
     // NOLINTBEGIN

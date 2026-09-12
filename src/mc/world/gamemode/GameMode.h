@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/FacingID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
@@ -22,6 +23,10 @@ struct IGameModeTimer;
 // clang-format on
 
 class GameMode {
+public:
+    [[nodiscard]] ::BlockPos const& getDestroyBlockPos() const { return mDestroyBlockPos.get(); }
+    [[nodiscard]] ::FacingID        getDestroyBlockFace() const { return static_cast<::FacingID>(mDestroyBlockFace); }
+
 public:
     // GameMode inner types declare
     // clang-format off

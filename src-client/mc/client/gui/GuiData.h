@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/HudElement.h"
 
 // auto generated inclusion list
 #include "mc/client/game/CoordinateCaptureType.h"
@@ -39,6 +40,11 @@ namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class GuiData : public ::IConfigListener, public ::AppPlatformListener, public ::Bedrock::EnableNonOwnerReferences {
+public:
+    LLAPI void setHudVisibilityState(::std::vector<::HudElement> const& elements, ::HudVisibility visibility);
+
+    LLNDAPI bool isHudElementVisible(::HudElement element) const;
+
 public:
     // GuiData inner types declare
     // clang-format off
