@@ -5,26 +5,29 @@
 // auto generated inclusion list
 #include "mc/deps/core/container/small_vector.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace VoxelShapes { struct MergerIndexPair; }
+// clang-format on
+
 namespace VoxelShapes {
 
 class IndexMerger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9ef562;
-    ::ll::UntypedStorage<8, 64> mUnk914bd0;
+    ::ll::TypedStorage<8, 64, ::Bedrock::small_vector<float, 12>>                          mCoords;
+    ::ll::TypedStorage<8, 64, ::Bedrock::small_vector<::VoxelShapes::MergerIndexPair, 24>> mIndices;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    IndexMerger& operator=(IndexMerger const&);
-    IndexMerger(IndexMerger const&);
     IndexMerger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI IndexMerger(
+    MCAPI IndexMerger(
         ::Bedrock::small_vector<float, 12> const& first,
         ::Bedrock::small_vector<float, 12> const& second,
         bool                                      canTrimExcessOfFirst,
@@ -35,13 +38,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::small_vector<float, 12> const& emptyShapeCoords();
+    MCAPI static ::Bedrock::small_vector<float, 12> const& emptyShapeCoords();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::small_vector<float, 12> const& first,
         ::Bedrock::small_vector<float, 12> const& second,
         bool                                      canTrimExcessOfFirst,

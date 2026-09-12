@@ -8,28 +8,22 @@ struct SerializableCells {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk20f6d8;
-    ::ll::UntypedStorage<1, 1>  mUnka53906;
-    ::ll::UntypedStorage<1, 1>  mUnkf63ad1;
-    ::ll::UntypedStorage<8, 24> mUnk3df10b;
+    ::ll::TypedStorage<1, 1, uchar>                 mXSize;
+    ::ll::TypedStorage<1, 1, uchar>                 mYSize;
+    ::ll::TypedStorage<1, 1, uchar>                 mZSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mStorage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SerializableCells& operator=(SerializableCells const&);
-    SerializableCells(SerializableCells const&);
-    SerializableCells();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~SerializableCells();
+    MCAPI ~SerializableCells();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

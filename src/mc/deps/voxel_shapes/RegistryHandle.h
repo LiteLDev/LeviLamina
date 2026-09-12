@@ -6,16 +6,14 @@ namespace VoxelShapes {
 
 class RegistryHandle {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk371898;
-    // NOLINTEND
+    // RegistryHandle inner types define
+    using value_type = ushort;
 
 public:
-    // prevent constructor by default
-    RegistryHandle& operator=(RegistryHandle const&);
-    RegistryHandle(RegistryHandle const&);
-    RegistryHandle();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<2, 2, ushort> mValue;
+    // NOLINTEND
 };
 
 } // namespace VoxelShapes

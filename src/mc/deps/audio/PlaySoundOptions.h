@@ -2,33 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/audio/ServerSoundHandle.h"
+#include "mc/deps/core/math/Vec3.h"
+
 struct PlaySoundOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7cb4c8;
-    ::ll::UntypedStorage<4, 12> mUnk7b7755;
-    ::ll::UntypedStorage<4, 4>  mUnk209892;
-    ::ll::UntypedStorage<4, 4>  mUnka6df4a;
-    ::ll::UntypedStorage<4, 4>  mUnk5c4869;
-    ::ll::UntypedStorage<8, 16> mUnka38c93;
+    ::ll::TypedStorage<8, 32, ::std::string>                        mName;
+    ::ll::TypedStorage<4, 12, ::Vec3>                               mPosition;
+    ::ll::TypedStorage<4, 4, float>                                 mVolume;
+    ::ll::TypedStorage<4, 4, float>                                 mPitch;
+    ::ll::TypedStorage<4, 4, int>                                   mLoopCount;
+    ::ll::TypedStorage<8, 16, ::std::optional<::ServerSoundHandle>> mServerSoundHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlaySoundOptions& operator=(PlaySoundOptions const&);
-    PlaySoundOptions(PlaySoundOptions const&);
-    PlaySoundOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PlaySoundOptions();
+    MCAPI ~PlaySoundOptions();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
