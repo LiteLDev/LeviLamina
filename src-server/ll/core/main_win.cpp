@@ -1,3 +1,4 @@
+#include "ll/api/service/Bedrock.h"
 #include "ll/api/service/TargetedBedrock.h"
 #include "ll/core/LeviLamina.h"
 
@@ -29,13 +30,11 @@
 #include "ll/core/mod/ModRegistrar.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
-#include "mc/scripting/ServerScriptManager.h"
-#include "mc/server/DedicatedServer.h"
-#include "mc/server/ServerInstance.h"
-
 #include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/events/IMinecraftEventing.h"
+#include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/CompositePackSource.h"
 #include "mc/resources/DirectoryPackSource.h"
 #include "mc/resources/IResourcePackRepository.h"
@@ -48,12 +47,13 @@
 #include "mc/resources/ResourcePack.h"
 #include "mc/resources/ResourcePackStack.h"
 #include "mc/scripting/ServerScriptManager.h"
+#include "mc/scripting/modules/PackManifest.h"
+#include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/module/VanillaGameModuleServer.h"
-#include <mc/events/IMinecraftEventing.h>
-#include <mc/util/BaseGameVersion.h>
-#include <mc/world/events/EventResult.h>
-#include <mc/world/level/block/BlockType.h>
+#include "mc/util/BaseGameVersion.h"
+#include "mc/world/events/EventResult.h"
+#include "mc/world/level/block/BlockType.h"
 
 #include "windows.h"
 
@@ -170,6 +170,23 @@ namespace i18n {
 std::string& defaultLocaleCode();
 }
 
+// #blameMojang - MCPE-240610: BDS skips the server advertisement when the level's LANBroadcast flag is off,
+// leaving RakNet's offline ping response empty. Clients refuse to start the handshake without a valid pong.
+void fixServerAnnouncement() {
+    auto handler = ll::service::getServerNetworkHandler();
+    if (!handler || !handler->mServerName->empty()) {
+        return;
+    }
+
+    auto serverName = ll::service::getServerInstance()->mServerName;
+    if (serverName->empty()) {
+        serverName = "LeviLamina Server";
+    }
+
+    handler->mServerName = serverName;
+    handler->updateServerAnnouncement();
+}
+
 void leviLaminaMain() {
     if (auto res = i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
@@ -251,6 +268,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     auto result = origin(ins);
 
     CrashLogger::init();
+
+    fixServerAnnouncement();
 
     mod::ModRegistrar::getInstance().enableAllMods();
 
