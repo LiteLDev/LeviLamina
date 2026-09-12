@@ -11,8 +11,6 @@
 #include "ll/core/protocol/ProtocolEnvelopePacket.h"
 #include "ll/core/protocol/RegistrationLease.h"
 
-NetherNet::NetworkID::NetworkID() = default;
-
 namespace ll::protocol::detail {
 
 ProtocolSession::ProtocolSession(

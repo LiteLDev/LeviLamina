@@ -23,7 +23,7 @@ struct ConnectionKey {
 struct SessionIdentity {
     ConnectionKey     key;
     std::uint64_t     handshakeId{};
-    NetworkIdentifier networkIdentifier;
+    NetworkIdentifier networkIdentifier = NetworkIdentifier::INVALID_ID();
 };
 
 } // namespace ll::protocol::detail

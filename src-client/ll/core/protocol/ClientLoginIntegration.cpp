@@ -26,9 +26,7 @@
 #include "ll/core/protocol/ProtocolRuntime.h"
 
 #include "mc/client/game/ClientInstance.h"
-#include "mc/client/game/IMinecraftGame.h"
 #include "mc/client/network/ClientNetworkHandler.h"
-#include "mc/network/ClientNetworkSystem.h"
 #include "mc/network/NetEventCallback.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/connection/DisconnectFailReason.h"
@@ -139,28 +137,7 @@ struct ClientLoginIntegration::Impl {
             return;
         }
 
-        if (disconnect) {
-            auto inlinedDisconnectFromServer = [](ClientNetworkHandler& handler, NetworkIdentifier const& id) {
-                handler.mClient.getMinecraftGame_DEPRECATED().onClientLevelExit(handler.mClient, 5);
-
-                if (handler.mClient.isPrimaryClient()) {
-                    handler.mClient.getClientNetworkSystem()
-                        .closeConnection(id, Connection::DisconnectFailReason::BadPacket, "");
-                } else {
-                    handler.onDisconnect(
-                        id,
-                        Connection::DisconnectFailReason::BadPacket,
-                        Connection::DisconnectionStage::Unknown,
-                        "",
-                        "",
-                        false,
-                        "DisconnectPacket"
-                    );
-                }
-            };
-
-            inlinedDisconnectFromServer(static_cast<ClientNetworkHandler&>(callback), entry->networkId);
-        }
+        if (disconnect) static_cast<ClientNetworkHandler&>(callback)._disconnectFromServer(entry->networkId);
     }
 
     Expected<> send(std::shared_ptr<Entry> const& entry, HandshakeProgress const& progress) {

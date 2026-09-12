@@ -15,7 +15,7 @@ namespace ll::protocol::detail {
 
 class ClientEndpoint final {
     struct ConnectionRecord {
-        NetworkIdentifier id;
+        NetworkIdentifier id = NetworkIdentifier::INVALID_ID();
         std::string       key;
         std::uint64_t     generation{};
         std::uint8_t      subClientId{};

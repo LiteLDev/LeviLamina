@@ -55,7 +55,7 @@ struct PeerIdentityView {
     std::uint64_t     connectionGeneration{};
     std::uint8_t      subClientId{};
     std::string_view  connection;
-    NetworkIdentifier networkIdentifier;
+    NetworkIdentifier networkIdentifier = NetworkIdentifier::INVALID_ID();
 };
 
 namespace detail {

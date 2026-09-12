@@ -21,7 +21,7 @@ namespace ll::protocol::detail {
 
 class ServerEndpoint final : public ServerSessionSource {
     struct ConnectionRecord {
-        NetworkIdentifier id;
+        NetworkIdentifier id = NetworkIdentifier::INVALID_ID();
         std::uint64_t     generation{};
     };
 
