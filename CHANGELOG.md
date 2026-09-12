@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.32.4] - 2026-09-12
+
+### Fixed
+
+- Restore the server advertisement when BDS leaves it unset
+
 ## [26.32.3] - 2026-09-08
 
 - Fixed PlayerJumpEvent serialize
@@ -1734,7 +1740,8 @@ For lip and tooth-hub test only.
 [#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
 [#1824]: https://github.com/LiteLDev/LeviLamina/issues/1824
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.4...HEAD
+[26.32.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.3...v26.32.4
 [26.32.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.2...v26.32.3
 [26.32.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.1...v26.32.2
 [26.32.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.0...v26.32.1

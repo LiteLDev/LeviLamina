@@ -47,7 +47,6 @@
 #include "mc/resources/ResourcePack.h"
 #include "mc/resources/ResourcePackStack.h"
 #include "mc/scripting/ServerScriptManager.h"
-#include "mc/scripting/modules/PackManifest.h"
 #include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/module/VanillaGameModuleServer.h"
