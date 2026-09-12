@@ -74,6 +74,11 @@ namespace LevelChunkTicking { struct Registry; }
 
 class LevelChunk {
 public:
+    [[nodiscard]] ::BlockTickingQueue const& getTickQueue() const { return *mTickQueue; }
+
+    [[nodiscard]] ::BlockTickingQueue& getTickQueue() { return *mTickQueue; } // NOLINT(readability-make-member-function-const)
+
+public:
     // LevelChunk inner types declare
     // clang-format off
     class Neighbors;

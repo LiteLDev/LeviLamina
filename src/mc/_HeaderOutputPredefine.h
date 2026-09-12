@@ -256,6 +256,7 @@ class ComponentStorageIterator;
 }
 
 #ifndef cerealizer
+// Compile-only placeholder for generated headers; does not describe the game's ABI.
 template <typename T>
 struct cerealizer {
     struct SerializedData{};

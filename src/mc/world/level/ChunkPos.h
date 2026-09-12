@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "ll/api/utils/HashUtils.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -39,3 +40,12 @@ public:
     MCAPI static ::ChunkPos const& ONE();
     // NOLINTEND
 };
+
+namespace std {
+template <>
+struct hash<ChunkPos> {
+    size_t operator()(ChunkPos const& pos) const noexcept {
+        return ll::hash_utils::HashCombiner{}.add(pos.x).add(pos.z);
+    }
+};
+} // namespace std

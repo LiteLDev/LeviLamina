@@ -42,7 +42,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionCraftRecipeAuto(
+    MCAPI ItemStackRequestActionCraftRecipeAuto(
         ::RecipeNetId const&                     recipeNetId,
         uchar                                    numCrafts,
         ::std::vector<::RecipeIngredient> const& ingredients
@@ -54,7 +54,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void*
+    MCAPI void*
     $ctor(::RecipeNetId const& recipeNetId, uchar numCrafts, ::std::vector<::RecipeIngredient> const& ingredients);
 #endif
     // NOLINTEND
@@ -62,9 +62,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_write(::BinaryStream& stream) const;
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
 
     // NOLINTEND

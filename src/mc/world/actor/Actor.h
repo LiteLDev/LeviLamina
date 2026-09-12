@@ -121,6 +121,12 @@ public:
     LLNDAPI class EntityContext&       getEntityContext() { return mEntityContext; }
     LLNDAPI class EntityContext const& getEntityContext() const { return mEntityContext; }
 
+    LLNDAPI float distanceTo(::Vec3 const& pos) const;
+
+    LLNDAPI float distanceToSqr(::Actor const& e) const;
+
+    LLNDAPI float distanceToSqr(::Vec3 const& pos) const;
+
     LLAPI void refresh();
 
     LLAPI optional_ref<Actor> clone(Vec3 const& pos, std::optional<DimensionType> dimId = std::nullopt) const;

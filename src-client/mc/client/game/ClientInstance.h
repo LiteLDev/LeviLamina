@@ -240,6 +240,9 @@ public:
     struct mCreditsCallback {};
 
 public:
+    LLAPI static bool tickDestroyBlock(::ClientInstance::ClientDestroyBlockState& destroyBlockState, bool advanceTime);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>   mUnkeb8701;

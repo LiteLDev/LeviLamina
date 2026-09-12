@@ -39,11 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setArmor(int slot, ::ItemStack const& item);
+    MCAPI void $setArmor(int slot, ::ItemStack const& item);
 
-    MCNAPI void $setOffhandSlot(::ItemStack const& item);
+    MCAPI void $setOffhandSlot(::ItemStack const& item);
 
-    MCNAPI void $setPlayerUIItem(int slot, ::ItemStack const& item);
+    MCAPI void $setPlayerUIItem(int slot, ::ItemStack const& item);
 
 
     // NOLINTEND

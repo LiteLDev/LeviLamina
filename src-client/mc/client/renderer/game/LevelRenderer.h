@@ -74,6 +74,9 @@ namespace mce { class TextureGroup; }
 
 class LevelRenderer : public ::LevelListener, public ::AppPlatformListener {
 public:
+    LLAPI void rebuildAllRenderChunkGeometry();
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::OwnerPtr<::RenderChunkCoordinator>>>

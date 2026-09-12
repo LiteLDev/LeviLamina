@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ComponentStorageIterator.h"
+#include "mc/platform/brstd/associative_adapter.h"
 #include "mc/world/item/components/ItemComponent.h"
 #include "mc/world/item/components/ItemCustomComponentData.h"
 
@@ -10,7 +12,9 @@
 // clang-format off
 class HashedString;
 namespace SharedTypes::v1_21_60 { struct CustomComponentsItemComponent; }
+namespace SharedTypes::v1_26_30 { struct ItemCustomComponent; }
 namespace cereal { class DynamicValue; }
+namespace cereal { struct ComponentStorageSentinelType; }
 // clang-format on
 
 class CustomComponentsItemComponent : public ::ItemComponent {

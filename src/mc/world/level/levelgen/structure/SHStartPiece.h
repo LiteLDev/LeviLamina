@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/SHStairsDown.h"
+#include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 // auto generated forward declare list
 // clang-format off
 class PieceWeight;
 class SHPortalRoom;
-class StructurePiece;
 // clang-format on
 
 class SHStartPiece : public ::SHStairsDown {

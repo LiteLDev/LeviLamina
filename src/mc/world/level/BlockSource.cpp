@@ -11,6 +11,7 @@
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/BlockTickingQueue.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/block/actor/DropperBlockActor.h"
@@ -65,4 +66,41 @@ optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
     level.addEntity(*this, std::move(actorOwnerPtr));
     actor->refresh();
     return actor;
+}
+
+bool BlockSource::findNextTopSolidBlockAbove(::BlockPos& pos) const {
+    short maxHeight = getMaxHeight();
+
+    pos.y = std::max<int>(pos.y, getMinHeight());
+    while (pos.y <= maxHeight) {
+        if (getBlock(pos)._isSolid()) {
+            return true;
+        }
+        pos.y++;
+    }
+
+    return false;
+}
+
+void BlockSource::addToTickingQueue(
+    ::BlockPos const& pos,
+    ::Block const&    block,
+    int               tickDelay,
+    int               priorityOffset,
+    bool              skipOverrides
+) {
+    if (getLevel().isClientSide() && !mAllowTickingChanges) {
+        return;
+    }
+    if (mTickQueue && !skipOverrides) {
+        mTickQueue->add(*this, pos, block, tickDelay, priorityOffset);
+        return;
+    }
+
+    ChunkPos chunkPos(pos);
+
+    LevelChunk* chunk = getChunk(chunkPos);
+    if (chunk) {
+        chunk->getTickQueue().add(*this, pos, block, tickDelay, priorityOffset);
+    }
 }

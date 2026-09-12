@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/particlesystem/particle/ActorBindInfo.h"
 #include "mc/client/particlesystem/particle/ComponentAccessParticleEmitter.h"
+#include "mc/client/particlesystem/particle/ParticleEmitter.h"
 #include "mc/client/particlesystem/particle/ParticleRenderData.h"
 #include "mc/deps/core/container/slot_map_handle.h"
 #include "mc/deps/core/math/Matrix.h"
@@ -35,7 +36,6 @@ struct ActorUniqueID;
 struct BrightnessPair;
 namespace LightPropagation { class LightVolumeManager; }
 namespace ParticleSystem { class ParticleEffect; }
-namespace ParticleSystem { class ParticleEmitter; }
 namespace ParticleSystem { class ParticleEventNode; }
 namespace ParticleSystem { struct CommonParticle; }
 namespace mce { class Color; }

@@ -1,11 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/crafting/RecipeIngredient.h"
-#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/crafting/RecipeIngredient.h"
 
 // auto generated forward declare list
 // clang-format off
