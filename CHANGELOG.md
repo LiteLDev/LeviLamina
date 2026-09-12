@@ -11,7 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added getMaterial method to Block @yangyangzhong82
+- Added getMaterial method to Block [#1835] @yangyangzhong82
+- Added getPosition and getType methods to BlockActor [#1836] @yangyangzhong82
+- Restored some inlined methods [#1837] @LordBombardir
 
 ### Changed
 
@@ -1757,6 +1759,9 @@ For lip and tooth-hub test only.
 [#1815]: https://github.com/LiteLDev/LeviLamina/issues/1815
 [#1822]: https://github.com/LiteLDev/LeviLamina/issues/1822
 [#1824]: https://github.com/LiteLDev/LeviLamina/issues/1824
+[#1835]: https://github.com/LiteLDev/LeviLamina/issues/1835
+[#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
+[#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
 [Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.1...HEAD
 [26.40.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.0...v26.40.1
