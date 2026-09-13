@@ -156,6 +156,17 @@ plugins:
             Developer Guides: 开发者指南
             Tutorials: 教程
             How-to Guides: 如何做到······
+            Protocol: 协议
+            Introduction: 简介
+            Creating a Payload: 创建 Payload
+            Registering a Payload: 注册 Payload
+            Sending Payloads: 发送 Payload
+            Receiving Payloads: 接收 Payload
+            Lifecycle: 生命周期
+            Compatibility: 兼容性
+            Versioning: 版本控制
+            Migration and Release Note: 迁移与发布说明
+            Limitations: 限制与约束
             Architecture: 项目架构
             API Reference: API 参考
             Base: 基础类型
