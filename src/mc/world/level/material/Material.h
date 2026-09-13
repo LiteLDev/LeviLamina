@@ -27,6 +27,9 @@ public:
     // NOLINTEND
 
 public:
+    bool operator==(Material const& rhs) const { return mType == rhs.mType; }
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setupMaterials();
