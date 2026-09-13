@@ -21,6 +21,7 @@ public:
     // NOLINTEND
 
 public:
+    BlockEventBase() : mPos(BlockPos(0, 0, 0)) {}
     BlockEventBase(BlockPos const& pos) : mPos(pos) {}
 
 public:
