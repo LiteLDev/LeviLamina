@@ -23,6 +23,20 @@ public:
     // NOLINTEND
 
 public:
+    BlockRedstoneUpdateEvent(
+        BlockPos const& pos,
+        BlockSource&    blockSource,
+        short           signalLevel,
+        short           previousSignalLevel,
+        bool            isFirstTime
+    )
+    : BlockEvents::BlockEventBase(pos),
+      mRegion(blockSource),
+      mSignalLevel(signalLevel),
+      mPreviousSignalLevel(previousSignalLevel),
+      mIsFirstTime(isFirstTime) {}
+
+public:
     // prevent constructor by default
     BlockRedstoneUpdateEvent& operator=(BlockRedstoneUpdateEvent const&);
     BlockRedstoneUpdateEvent(BlockRedstoneUpdateEvent const&);

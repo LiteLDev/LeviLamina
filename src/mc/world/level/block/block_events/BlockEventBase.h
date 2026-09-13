@@ -21,6 +21,9 @@ public:
     // NOLINTEND
 
 public:
+    BlockEventBase(BlockPos const& pos) : mPos(pos) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BlockEventBase() = default;

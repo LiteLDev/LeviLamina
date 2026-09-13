@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [26.40.2] - 2026-09-13
 
+### Added
+
+- Implemented Material::operator==
+- Implemented EventCoordinator and EventCoordinatorPimpl::_processEvent
+- Implemented BlockEventPublishingExecutor and BlockEventExecutor
+- Added constructor for BlockEvents::BlockEventBase and BlockRedstoneUpdateEvent
+
 ### Changed
 
 - Bumped bedrock-runtime-data version
