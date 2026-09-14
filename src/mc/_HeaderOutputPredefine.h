@@ -241,12 +241,6 @@ struct x509_st;
 struct evp_md_st;
 struct ssl_session_st;
 
-// abseil definitions
-namespace absl::hash_internal {
-template <typename T>
-struct Hash;
-}
-
 // Ungenerated cereal definitions
 namespace cereal {
 namespace internal {
