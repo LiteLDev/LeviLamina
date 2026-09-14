@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/events/EventResult.h"
 
 
@@ -19,7 +17,7 @@ TReturn gameplayEventReturn(TEvent<TReturn> const&) {
 
 
 template <class T0>
-class EventCoordinatorPimpl : Bedrock::EnableNonOwnerReferences {
+class EventCoordinatorPimpl {
 public:
     using EventFuncPtr = std::function<EventResult(T0&)>;
 
