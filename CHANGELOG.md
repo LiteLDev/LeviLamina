@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.40.4] - 2026-09-14
+
+### Fixed
+
+- Removed redundant extend for EventCoordinatorPimpl
+
 ## [26.40.3] - 2026-09-14
 
 ### Fixed
@@ -1783,7 +1789,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.4...HEAD
+[26.40.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.3...v26.40.4
 [26.40.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.2...v26.40.3
 [26.40.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.1...v26.40.2
 [26.40.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.0...v26.40.1
