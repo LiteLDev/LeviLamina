@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.40.3] - 2026-09-14
+
+### Fixed
+
+- Moved absl::hash_internal::Hash definition to avoid namespace redefinition
+- Removed redundant filler which breaks the class size for BlockDescriptor
+
 ## [26.40.2] - 2026-09-13
 
 ### Added
@@ -1776,7 +1783,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.3...HEAD
+[26.40.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.2...v26.40.3
 [26.40.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.1...v26.40.2
 [26.40.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.0...v26.40.1
 [26.40.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.2...v26.40.0
