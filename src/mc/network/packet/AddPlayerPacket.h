@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    template <typename... Args>
+    AddPlayerPacket(Args&&... args)
+    : PayloadPacket(std::forward<Args>(args)...),
+      mSerializationMode(SerializationMode::CerealOnly) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
