@@ -45,8 +45,8 @@ LL_TYPE_INSTANCE_HOOK(
 LL_TYPE_INSTANCE_HOOK(
     ServerInstanceDestructor,
     HookPriority::High,
-    MinecraftGame,
-    &MinecraftGame::$shutdownServer,
+    ServerInstance,
+    &ServerInstance::_resetServerScriptManager,
     void
 ) {
     serverInstance = nullptr;

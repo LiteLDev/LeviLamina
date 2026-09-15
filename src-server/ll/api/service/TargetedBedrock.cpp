@@ -3,6 +3,7 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/common/IMinecraftApp.h"
+#include "mc/deps/raknet/PacketPriority.h"
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/network/NetworkSystem.h"
 #include "mc/network/ServerNetworkHandler.h"
@@ -88,6 +89,16 @@ LL_TYPE_INSTANCE_HOOK(
     unhook();
     origin(a1, a2);
 }
+LL_TYPE_INSTANCE_HOOK(
+    ServerNetworkHandlerShutdown,
+    HookPriority::High,
+    ServerNetworkHandler,
+    &ServerNetworkHandler::onStartShutdown,
+    void
+) {
+    serverNetworkHandler = nullptr;
+    origin();
+}
 
 // NetworkSystem
 static std::atomic<NetworkSystem*> networkSystem;
@@ -136,6 +147,22 @@ LL_TYPE_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, RakNet::RakP
     auto res = origin();
     rakPeer  = this;
     return res;
+}
+LL_TYPE_INSTANCE_HOOK(
+    RakNetRakPeerShutdown,
+    HookPriority::High,
+    RakNet::RakPeer,
+    &RakNet::RakPeer::$Shutdown,
+    void,
+    uint             blockDuration,
+    uchar            orderingChannel,
+    ::PacketPriority disconnectionNotificationPriority
+) {
+    if ((void*)this == (void*)getRakPeer() && !blockDuration && !orderingChannel
+        && disconnectionNotificationPriority == PacketPriority::LowPriority) {
+        rakPeer = nullptr;
+    }
+    origin(blockDuration, orderingChannel, disconnectionNotificationPriority);
 }
 
 // ResourcePackRepository
@@ -215,6 +242,16 @@ LL_TYPE_INSTANCE_HOOK(
     serverInstance = this;
     return res;
 }
+LL_TYPE_INSTANCE_HOOK(
+    ServerInstanceLeaveGame,
+    HookPriority::High,
+    ServerInstance,
+    &ServerInstance::leaveGameSync,
+    void
+) {
+    serverInstance = nullptr;
+    origin();
+}
 
 optional_ref<Minecraft> getMinecraft(bool) { return minecraft.load(); }
 
@@ -241,16 +278,19 @@ using HookReg = memory::HookRegistrar<
     MinecraftInit,
     MinecraftDestructor,
     ServerNetworkHandlerInit,
+    ServerNetworkHandlerShutdown,
     NetworkSystemConstructor,
     NetworkSystemDestructor,
     ServerLevelInit,
     LevelDestructor,
     RakNetRakPeerConstructor,
+    RakNetRakPeerShutdown,
     ResourcePackRepositoryInit,
     ResourcePackRepositoryDestructor,
     CommandRegistryConstructor,
     CommandRegistryDestructor,
-    ServerInstanceConstructor>;
+    ServerInstanceConstructor,
+    ServerInstanceLeaveGame>;
 
 static HookReg hookRegister;
 
