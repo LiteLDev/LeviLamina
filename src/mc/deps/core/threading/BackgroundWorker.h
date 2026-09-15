@@ -5,16 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
 #include "mc/deps/core/threading/BackgroundTaskBase.h"
+#include "mc/deps/core/threading/BackgroundTaskQueue.h"
 #include "mc/deps/core/threading/ITaskExecutionContext.h"
+#include "mc/deps/core/threading/ResetEventObj.h"
 #include "mc/deps/core/threading/SPSCQueue.h"
 #include "mc/deps/profiler/ThreadFrameType.h"
+#include "mc/platform/threading/OSThreadPriority.h"
 
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
 class WorkerPool;
 struct RunTaskOptions;
-namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
 class BackgroundWorker : public ::ITaskExecutionContext {
@@ -32,25 +34,30 @@ public:
         Running      = 2,
     };
 
+    using SortingJobQueue =
+        ::MovePriorityQueue<::std::shared_ptr<::BackgroundTaskBase>, ::BackgroundTaskBase::PriorityComparer>;
+
+    using TaskPipe = ::SPSCQueue<::std::shared_ptr<::BackgroundTaskBase>, 512>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk588fa6;
-    ::ll::UntypedStorage<4, 4>   mUnk710ade;
-    ::ll::UntypedStorage<8, 16>  mUnk13d7dc;
-    ::ll::UntypedStorage<4, 8>   mUnka1b2fe;
-    ::ll::UntypedStorage<8, 32>  mUnk3a56b0;
-    ::ll::UntypedStorage<1, 1>   mUnk4f46c0;
-    ::ll::UntypedStorage<8, 16>  mUnkd929e4;
-    ::ll::UntypedStorage<4, 4>   mUnka494ab;
-    ::ll::UntypedStorage<4, 4>   mUnke7131f;
-    ::ll::UntypedStorage<8, 160> mUnk340fb7;
-    ::ll::UntypedStorage<1, 1>   mUnkd41591;
-    ::ll::UntypedStorage<8, 8>   mUnkb6dab1;
-    ::ll::UntypedStorage<8, 16>  mUnk923ee5;
-    ::ll::UntypedStorage<8, 8>   mUnkf38404;
-    ::ll::UntypedStorage<8, 8>   mUnkaffb93;
-    ::ll::UntypedStorage<8, 360> mUnk649664;
+    ::ll::TypedStorage<1, 1, bool const>                               mAsync;
+    ::ll::TypedStorage<4, 4, ::Bedrock::Threading::OSThreadPriority>   mPriority;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>                 mCoreAffinity;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                     mIdealCore;
+    ::ll::TypedStorage<8, 32, ::std::string>                           mName;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::ThreadFrameType>         mFrameType;
+    ::ll::TypedStorage<8, 16, ::std::thread>                           mThread;
+    ::ll::TypedStorage<4, 4, ::std::thread::id>                        mWorkerThreadID;
+    ::ll::TypedStorage<4, 4, ::std::atomic<::BackgroundWorker::State>> mState;
+    ::ll::TypedStorage<8, 160, ::ResetEventObj>                        mResetEvent;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                      mIdle;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>  mIdleSinceTime;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BackgroundTaskBase>> mCurrentTask;
+    ::ll::TypedStorage<8, 8, ::WorkerPool&>                            mWorkerPool;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>               mMaxSpinlockDuration;
+    ::ll::TypedStorage<8, 360, ::BackgroundTaskQueue>                  mTaskQueue;
     // NOLINTEND
 
 public:
@@ -72,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BackgroundWorker(
+    MCAPI BackgroundWorker(
         ::std::string_view                            name,
         ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
@@ -82,25 +89,25 @@ public:
         ::WorkerPool&                                 workerPool
     );
 
-    MCNAPI bool _processNextTask(::RunTaskOptions const& options);
+    MCAPI bool _processNextTask(::RunTaskOptions const& options);
 
-    MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
+    MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
-    MCNAPI void requestStop(bool wait);
+    MCAPI void requestStop(bool wait);
 
-    MCNAPI void start();
+    MCAPI void start();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BackgroundWorker*& gLocalWorkerMappingSingleton();
+    MCAPI static ::BackgroundWorker*& gLocalWorkerMappingSingleton();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string_view                            name,
         ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
@@ -114,9 +121,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isAsync() const;
+    MCFOLD bool $isAsync() const;
 
-    MCNAPI bool $canTaskRunAgain() const;
+    MCAPI bool $canTaskRunAgain() const;
 
 
     // NOLINTEND
