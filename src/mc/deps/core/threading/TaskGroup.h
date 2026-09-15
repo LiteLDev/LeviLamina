@@ -87,6 +87,9 @@ public:
     // NOLINTEND
 
 public:
+    LLNDAPI static ::IBackgroundTaskOwner* getCurrentTaskGroup();
+
+public:
     // prevent constructor by default
     TaskGroup();
 
