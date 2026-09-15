@@ -121,6 +121,15 @@ public:
     // NOLINTEND
 
 public:
+    static bool anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Block const& block) {
+        return std::ranges::any_of(blockDescriptors, [&block](BlockDescriptor const& des) {
+            if (des.matches(block)) {
+                return true;
+            }
+        });
+    }
+
+public:
     // prevent constructor by default
     BlockDescriptor();
 
