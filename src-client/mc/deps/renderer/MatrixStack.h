@@ -43,6 +43,13 @@ public:
     // NOLINTEND
 
 public:
+    Matrix& getTop() {
+        _isDirty = true;
+        return stack->back();
+    }
+    Matrix const& top() const { return stack->back(); }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI MatrixStack();
