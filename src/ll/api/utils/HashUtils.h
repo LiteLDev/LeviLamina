@@ -52,15 +52,22 @@ public:
     [[nodiscard]] constexpr size_t hash() const { return seed; }
 };
 
-[[nodiscard]] constexpr uint64 doHash(std::string_view x) {
-    // hash_64_fnv1a
-    uint64           hash  = 0xcbf29ce484222325;
+[[nodiscard]] constexpr uint64 appendHash(uint64 hash, std::string_view x) {
     constexpr uint64 prime = 0x100000001b3;
     for (char c : x) {
         hash ^= c;
         hash *= prime;
     }
     return hash;
+}
+
+[[nodiscard]] constexpr uint64 doHash(std::string_view x) {
+    // hash_64_fnv1a
+    return appendHash(0xcbf29ce484222325, x);
+}
+
+[[nodiscard]] constexpr uint64 doHash(std::string_view prefix, std::string_view value) {
+    return appendHash(doHash(prefix), value);
 }
 
 [[nodiscard]] constexpr uint64 doHash2(std::string_view x) {

@@ -2,6 +2,7 @@
 #include "ll/api/i18n/I18n.h"
 
 #include "ll/core/LeviLamina.h"
+#include "ll/core/protocol/ModLifecycleIntegration.h"
 
 namespace ll::mod {
 struct ModCallbackRecord {
@@ -94,8 +95,12 @@ Expected<> ModManagerRegistry::disableMod(std::string_view name) const noexcept 
     if (!hasMod(name)) {
         return makeI18nStringError<"Mod {0} not found">(name);
     }
-    if (getMod(name)->isDisabled()) {
+    auto owner = getMod(name);
+    if (owner->isDisabled()) {
         return makeI18nStringError<"Mod {0} already disabled">(name);
+    }
+    if (auto prepared = protocol::prepareModDisable(*owner); !prepared) {
+        return prepared;
     }
     return getManagerForMod(name)->disable(name);
 } catch (...) {
