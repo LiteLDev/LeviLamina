@@ -225,6 +225,8 @@ public:
 
     LLNDAPI bool isDead() const;
 
+    LLNDAPI ::ItemStack const& getEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot) const;
+
 public:
     // member variables
     // NOLINTBEGIN
