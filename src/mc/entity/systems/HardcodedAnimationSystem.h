@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/vanilla_components/StateVectorComponent.h"
+#include "mc/entity/components/ActorWalkAnimationComponent.h"
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
@@ -22,6 +24,12 @@ struct TickingSystemWithInfo;
 // clang-format on
 
 namespace HardcodedAnimationSystem {
+void computeMovementThisTick(::StateVectorComponent const& stateVector, ::ActorWalkAnimationComponent& walk) {
+    // Horizontal distance travelled since last tick; the vertical component is deliberately excluded.
+    float const dx = stateVector.mPos->x - stateVector.mPosPrev->x;
+    float const dz = stateVector.mPos->z - stateVector.mPosPrev->z;
+    walk.mMovementThisTick = std::sqrt(dx * dx + dz * dz);
+}
 // functions
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createSystem();

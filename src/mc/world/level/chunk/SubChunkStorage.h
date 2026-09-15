@@ -12,7 +12,7 @@ template <typename T>
 class ISubChunkStoragePaletted;
 
 template <typename T>
-using RuntimeSerializationLookup = brstd::function_ref<unsigned long(T const&), unsigned long(T const&)>;
+using RuntimeSerializationLookup = brstd::function_ref<unsigned long long(T const&), unsigned long(T const&)>;
 
 template <typename T>
 using PersistentSerializationLookup = brstd::function_ref<CompoundTag const*(T const&), CompoundTag const*(T const&)>;

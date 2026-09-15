@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/PackInfoData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackIdVersion.h"
@@ -21,6 +22,18 @@ public:
     ::ll::TypedStorage<8, 48, ::PackIdVersion>               mWorldTemplateIdAndVersion;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInfoData>> mResourcePacks;
     // NOLINTEND
+
+public:
+    [[nodiscard]] std::unordered_map<::ContentIdentity, ::std::string> collectKeys() const {
+        std::unordered_map<::ContentIdentity, ::std::string> result;
+        for (auto const& info : *mResourcePacks) {
+            // Packs with no content key are not addressable, so they are left out.
+            if (!info.mContentKey->empty()) {
+                result.emplace(info.mContentIdentity.get(), info.mContentKey.get());
+            }
+        }
+        return result;
+    }
 
 public:
     // member functions

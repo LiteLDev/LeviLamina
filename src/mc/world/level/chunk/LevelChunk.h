@@ -76,7 +76,16 @@ class LevelChunk {
 public:
     [[nodiscard]] ::BlockTickingQueue const& getTickQueue() const { return *mTickQueue; }
 
-    [[nodiscard]] ::BlockTickingQueue& getTickQueue() { return *mTickQueue; } // NOLINT(readability-make-member-function-const)
+    [[nodiscard]] ::BlockTickingQueue& getTickQueue() {
+        return *mTickQueue;
+    } // NOLINT(readability-make-member-function-const)
+
+    // LLAPI void populateHeightMapDataForSubChunkPacket(
+    //     short                                        subChunkAbsoluteIndex,
+    //     ::SubChunkPacketPayload::SubChunkPacketData& subChunkPacketData
+    // ) const;
+
+    LLAPI void serializeBiomes(::IDataOutput& stream) const;
 
 public:
     // LevelChunk inner types declare
@@ -226,12 +235,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                     mDidSaveJigsawStructureBlueprints;
     ::ll::TypedStorage<8, 856, ::LevelChunkVolumeData> mLevelChunkVolumeData;
     // NOLINTEND
-
-    // public:
-    //     LLAPI void populateHeightMapDataForSubChunkPacket(
-    //         short                                        subChunkAbsoluteIndex,
-    //         ::SubChunkPacketPayload::SubChunkPacketData& subChunkPacketData
-    //     ) const;
 
 public:
     // prevent constructor by default

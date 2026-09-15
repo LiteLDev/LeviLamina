@@ -67,6 +67,18 @@ public:
     // NOLINTEND
 
 public:
+    [[nodiscard]] bool isUniform(::Block const& block) const {
+        if (!mBlocksReadPtr[0]->isUniform(block)) {
+            return false;
+        }
+        // The extra layer is optional; a subchunk with only a standard layer is uniform whenever that layer is.
+        if (mBlocksReadPtr[1] != nullptr) {
+            return mBlocksReadPtr[1]->isUniform(block);
+        }
+        return true;
+    }
+
+public:
     // prevent constructor by default
     SubChunk& operator=(SubChunk const&);
     SubChunk(SubChunk const&);

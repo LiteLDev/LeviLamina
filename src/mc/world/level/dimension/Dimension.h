@@ -189,6 +189,12 @@ public:
     // NOLINTEND
 
 public:
+    [[nodiscard]] ushort getHeightInSubchunks() const {
+        // e.g. overworld: (320 - -64) / 16 == 24
+        return static_cast<ushort>((mHeightRange->mMax - mHeightRange->mMin) / 16);
+    }
+
+public:
     // prevent constructor by default
     Dimension& operator=(Dimension const&);
     Dimension(Dimension const&);
