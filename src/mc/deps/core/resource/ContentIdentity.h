@@ -14,6 +14,9 @@ public:
     // NOLINTEND
 
 public:
+    bool operator==(ContentIdentity const& rhs) const { return *mUUID == *rhs.mUUID; }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::std::string asString() const;
