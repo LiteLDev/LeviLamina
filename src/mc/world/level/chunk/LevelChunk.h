@@ -87,6 +87,8 @@ public:
 
     LLAPI void serializeBiomes(::IDataOutput& stream) const;
 
+    LLAPI void deserializeBorderBlocks(::IDataInput& stream);
+
 public:
     // LevelChunk inner types declare
     // clang-format off

@@ -217,6 +217,9 @@ public:
         float const*                                                        serverBuildRatio
     );
 
+    // Unlike getExistingChunk, this one withholds any chunk that has not finished loading.
+    LLAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
+
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
     // NOLINTEND

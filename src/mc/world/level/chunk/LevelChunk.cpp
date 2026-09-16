@@ -1,5 +1,6 @@
 #include "mc/world/level/chunk/LevelChunk.h"
 
+#include "mc/util/IDataInput.h"
 #include "mc/util/IDataOutput.h"
 #include "mc/world/level/biome/Biome.h"
 #include "mc/world/level/chunk/SubChunk.h" // IWYU pragma: keep for std::vector<SubChunk>::size
@@ -19,6 +20,15 @@ void LevelChunk::serializeBiomes(::IDataOutput& stream) const {
         // Subchunk type tag: the 2*type+1 form never collides with the 0xFF empty marker.
         stream.writeByte(static_cast<char>(2 * static_cast<int>(subChunk->getType()) + 1));
         subChunk->_serialize(stream, [](::Biome const& biome) { return biome.mId->mValue; });
+    }
+}
+
+void LevelChunk::deserializeBorderBlocks(::IDataInput& stream) {
+    // A count byte followed by that many indices. The matching serializeBorderBlocks writes nothing
+    // when the map is empty, so callers only get here once they know there is a payload to read.
+    uchar const count = stream.readByte();
+    for (uchar i = 0; i < count; ++i) {
+        mBorderBlockMap.get()[stream.readByte()] = true;
     }
 }
 
