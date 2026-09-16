@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/registry/BlockTypeRegistry.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
@@ -39,6 +41,19 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>     mBlockFromNetworkId;
     ::ll::TypedStorage<8, 8, ::Level*>                           mLevel;
     // NOLINTEND
+
+public:
+    /// @brief Restored: inlined in the game, so it is reimplemented here.
+    ///        Walks every registered block type and appends each of its permutations to this palette.
+    void initFromBlockDefinitions() {
+        ::BlockTypeRegistry::get().forEachBlockType([this](::BlockType const& blockType) {
+            blockType.forEachBlockPermutation([this](::Block const& block) {
+                appendBlock(block);
+                return true;
+            });
+            return true;
+        });
+    }
 
 public:
     // prevent constructor by default

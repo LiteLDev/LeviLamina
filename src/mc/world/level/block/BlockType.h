@@ -154,6 +154,15 @@ public:
         return ::BlockTypeRegistry::get().lookupByName(mNameInfo->mFullName->getString(), true);
     }
 
+    /// @brief Visits every permutation of this block, stopping as soon as `callback` returns false.
+    void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const {
+        for (auto const& permutation : mBlockPermutations.get()) {
+            if (permutation && !callback(*permutation)) {
+                break;
+            }
+        }
+    }
+
     /// @brief Sets or clears one bit of the client prediction override set.
     ///        Ignored unless the component storage currently allows modification.
     void setClientPredictionOverride(::BlockClientPredictionOverrides type, bool value) {
