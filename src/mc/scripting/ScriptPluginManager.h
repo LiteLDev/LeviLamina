@@ -5,9 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/ResourceInformation.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/deps/script_core/reflection/scripting/Privilege.h"
+#include "mc/deps/script_core/runtime/scripting/RuntimeConditions.h"
 #include "mc/scripting/PluginExecutionGroup.h"
 #include "mc/scripting/modules/FilterResult.h"
+#include "mc/util/BaseGameVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,9 +20,11 @@ class ScriptPlugin;
 class ScriptPluginManagerResult;
 class ScriptPluginResult;
 class ScriptStat;
+class ScriptStatCollector;
 class ServerLevel;
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class IRuntime; }
+namespace Scripting { class ScriptEngine; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct RuntimeStats; }
 namespace Scripting { struct ScriptContextResult; }
@@ -38,28 +43,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkf6e39d;
-        ::ll::UntypedStorage<8, 16> mUnk7a40bc;
+        ::ll::TypedStorage<8, 32, ::std::string>                  name;
+        ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> scope;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PackNameAndWeakScope& operator=(PackNameAndWeakScope const&);
-        PackNameAndWeakScope(PackNameAndWeakScope const&);
-        PackNameAndWeakScope();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke51876;
-    ::ll::UntypedStorage<8, 8>  mUnk49bd90;
-    ::ll::UntypedStorage<8, 24> mUnk6c8a4d;
-    ::ll::UntypedStorage<8, 24> mUnk174121;
-    ::ll::UntypedStorage<8, 8>  mUnke00494;
-    ::ll::UntypedStorage<8, 8>  mUnk904f06;
-    ::ll::UntypedStorage<8, 8>  mUnk221d43;
-    ::ll::UntypedStorage<8, 8>  mUnk117c4d;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                                mBaseGameVersion;
+    ::ll::TypedStorage<8, 8, ::Scripting::ScriptEngine&>                        mScriptEngine;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ScriptPlugin>>> mScriptPlugins;
+    ::ll::TypedStorage<8, 24, ::Scripting::RuntimeConditions>                   mCurrentRuntimeConditions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mMemoryStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mHandleCountStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mSubscriberCountStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mQuickJsStatCollector;
     // NOLINTEND
 
 public:
@@ -71,18 +70,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addContextResultsToPluginResults(
+    MCAPI void _addContextResultsToPluginResults(
         ::Scripting::ScriptContextResult const& contextResult,
         ::ScriptPluginResult&                   pluginResult
     );
 
-    MCNAPI ::std::optional<::ScriptStat> _collectHandleCountStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::ScriptStat> _collectHandleCountStats(uint64, uint64, uint64);
 
-    MCNAPI ::std::optional<::ScriptStat> _collectMemoryStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::ScriptStat> _collectMemoryStats(uint64, uint64, uint64);
 
-    MCNAPI ::std::optional<::ScriptStat> _collectQuickJsStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::ScriptStat> _collectQuickJsStats(uint64, uint64, uint64);
 
-    MCNAPI ::std::optional<::ScriptStat> _collectSubscriberCountStats(
+    MCAPI ::std::optional<::ScriptStat> _collectSubscriberCountStats(
         ::Bedrock::NotNullNonOwnerPtr<::ServerLevel>     serverLevel,
         ::gsl::not_null<::Scripting::DependencyLocator*> locator,
         uint64,
@@ -91,27 +90,26 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+    MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 #endif
 
-    MCNAPI void _disableHandleCounter();
+    MCAPI void _disableHandleCounter();
 
-    MCNAPI void _enableHandleCounter();
+    MCAPI void _enableHandleCounter();
 
-    MCNAPI void _reloadHandleCounter(bool publisherEnabled);
+    MCAPI void _reloadHandleCounter(bool publisherEnabled);
 
 #ifdef LL_PLAT_C
-    MCNAPI void
-    _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
+    MCAPI void _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
 #endif
 
-    MCNAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
+    MCAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
 
 #ifdef LL_PLAT_C
-    MCNAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
+    MCAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
 #endif
 
-    MCNAPI ::ScriptPluginManagerResult discoverPlugins(
+    MCAPI ::ScriptPluginManagerResult discoverPlugins(
         ::ResourceInformation::ResourceType moduleType,
         ::IScriptPluginSourceEnumerator&    pluginEnumerator,
         ::std::vector<::std::function<::ScriptModuleFilters::FilterResult(
@@ -125,18 +123,18 @@ public:
             pluginExecutionGroupSelector
     );
 
-    MCNAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
+    MCAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
 
 #ifdef LL_PLAT_C
-    MCNAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
+    MCAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
 #endif
 
-    MCNAPI ~ScriptPluginManager();
+    MCAPI ~ScriptPluginManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

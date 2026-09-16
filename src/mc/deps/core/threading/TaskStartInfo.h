@@ -6,17 +6,11 @@ struct TaskStartInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk8ac9bb;
-    ::ll::UntypedStorage<4, 4>  mUnkd75717;
-    ::ll::UntypedStorage<4, 4>  mUnk184e63;
-    ::ll::UntypedStorage<4, 4>  mUnk518d45;
-    ::ll::UntypedStorage<1, 1>  mUnke94090;
-    ::ll::UntypedStorage<8, 8>  mUnk15c0d8;
+    ::ll::TypedStorage<8, 16, ::std::string_view>                     name;
+    ::ll::TypedStorage<4, 4, ::std::thread::id>                       affinity;
+    ::ll::TypedStorage<4, 4, uint>                                    priority;
+    ::ll::TypedStorage<4, 4, int>                                     priorityBackDown;
+    ::ll::TypedStorage<1, 1, bool>                                    mLinkCancellation;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> startAtTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TaskStartInfo& operator=(TaskStartInfo const&);
-    TaskStartInfo(TaskStartInfo const&);
-    TaskStartInfo();
 };
