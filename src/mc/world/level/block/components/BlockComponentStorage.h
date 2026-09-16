@@ -80,8 +80,15 @@ public:
         // NOLINTEND
     };
 
+    /// @brief Restored: a component is stored as its vtable followed by the value, which is why the
+    ///        game reaches the payload with `&componentBase[1]`.
     template <typename T0>
-    struct ComponentInstance {};
+    struct ComponentInstance : ComponentBase {
+        template <class... A>
+        explicit ComponentInstance(A&&... a) : mValue(::std::forward<A>(a)...) {}
+
+        T0 mValue;
+    };
 
 public:
     // member variables
@@ -125,6 +132,34 @@ public:
         // the result; that read has no observable effect, so it is omitted here.
         auto const& components = mComponents.get();
         return components.find(::Bedrock::type_id<void, T>()) != components.end();
+    }
+
+    /// @brief Constructs a component of type `TComponent` in place and inserts it, or overwrites the
+    ///        existing one when the storage allows replacement.
+    template <class TComponent, class... Args>
+    TComponent* _addStatefulComponent(::Bedrock::typeid_t<void> typeId, Args&&... args) {
+        if (auto* existing = _findComponentBase(typeId)) {
+            // The payload sits immediately after ComponentBase's vtable pointer.
+            auto* component = reinterpret_cast<TComponent*>(&existing[1]);
+            if (mAllowComponentReplacement) {
+                *component = TComponent{::std::forward<Args>(args)...};
+            }
+            return component;
+        }
+
+        auto* instance  = new ComponentInstance<TComponent>(::std::forward<Args>(args)...);
+        auto* component = &instance->mValue;
+
+        auto const& keys = mComponents->keys();
+        auto const  at   =
+            ::std::lower_bound(keys.cbegin(), keys.cend(), typeId, ::std::less<::Bedrock::typeid_t<void>>{});
+        mComponents->emplace_hint(at, typeId, ::std::unique_ptr<ComponentBase>{instance});
+
+        // The game locks the event subscriber here and drops the result; refcounting it is all its
+        // inlined body does.
+        (void)mBlockComponentEventSubscriber.lock();
+
+        return component;
     }
 
 public:

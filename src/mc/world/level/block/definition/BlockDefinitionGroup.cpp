@@ -6,11 +6,66 @@
 #include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/components/BlockDestructibleByExplosionDescription.h"
 #include "mc/world/level/block/components/BlockDestructibleByMiningDescription.h"
+#include "mc/deps/core/utility/typeid_t.h"
+#include "mc/world/actor/DefinitionEvent.h"
 #include "mc/world/level/block/definition/BlockArchetypeDispatcher.h"
+#include "mc/world/level/block/definition/BlockDefinition.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/BlockCustomComponentsComponent.h"
+#include "mc/world/level/block/components/BlockDeprecatedR16EventListenerComponent.h"
+#include "mc/world/level/block/components/triggers/OnInteractTrigger.h"
+#include "mc/world/level/block/components/triggers/OnPlayerPlacingTrigger.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/material/Material.h"
 
-void BlockDefinitionGroup::initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition) {}
+void BlockDefinitionGroup::initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition) {
+    for (auto const& description : definition.mBaseComponents->mDescriptions.get()) {
+        if (description) {
+            description->initializeComponent(*blockType.mComponents);
+        }
+    }
+
+    // The R16 listener is only installed when the storage still accepts new components.
+    if (!definition.mEventHandlers->empty() && blockType.mComponents->mAllowModifyingComponents) {
+        blockType.mComponents->_addStatefulComponent<::BlockDeprecatedR16EventListenerComponent>(
+            ::Bedrock::type_id<void, ::BlockDeprecatedR16EventListenerComponent>(),
+            definition.mEventHandlers.get()
+        );
+    }
+
+    for (auto const& tag : definition.mBaseComponents->mTags.get()) {
+        blockType.addTag(tag);
+    }
+
+    // The custom components object sits right after its ComponentBase header.
+    auto* componentBase = blockType.mComponents->_findComponentBase(
+        ::Bedrock::type_id<void, ::BlockCustomComponentsComponent>()
+    );
+    auto* customComponents =
+        componentBase ? reinterpret_cast<::BlockCustomComponentsComponent*>(&componentBase[1]) : nullptr;
+
+    bool const hasOnPlayerPlacing = blockType.mComponents->hasComponent<::OnPlayerPlacingTrigger>();
+
+    if (blockType.mComponents->hasComponent<::OnInteractTrigger>()) {
+        blockType.setClientPredictionOverride(::BlockClientPredictionOverrides::BlockPlayerInteract, true);
+        if (hasOnPlayerPlacing || (customComponents && customComponents->mHasPlayerPlacingEvent)) {
+            blockType.setClientPredictionOverride(::BlockClientPredictionOverrides::BlockPlayerPlacing, true);
+        }
+        return;
+    }
+    if (customComponents) {
+        if (customComponents->mHasPlayerInteractEvent) {
+            blockType.setClientPredictionOverride(::BlockClientPredictionOverrides::BlockPlayerInteract, true);
+        }
+        if (hasOnPlayerPlacing || customComponents->mHasPlayerPlacingEvent) {
+            blockType.setClientPredictionOverride(::BlockClientPredictionOverrides::BlockPlayerPlacing, true);
+        }
+        return;
+    }
+    if (hasOnPlayerPlacing) {
+        blockType.setClientPredictionOverride(::BlockClientPredictionOverrides::BlockPlayerPlacing, true);
+    }
+}
 
 ::WeakPtr<::BlockType> BlockDefinitionGroup::registerDataDrivenBlock(::BlockDescription const& desc) {
     ::BlockType* blockType = ::BlockArchetypeDispatcher::tryRegisterBlock(
