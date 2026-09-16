@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/multiplayer/SubChunkChange.h"
 
 // auto generated inclusion list
 #include "mc/client/multiplayer/ISubChunkManagerConnector.h"

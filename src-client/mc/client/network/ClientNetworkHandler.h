@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/player/LocalPlayer.h"
+#include "mc/network/packet/SubChunkPacket.h"
 #include "mc/world/level/storage/Experiments.h"
 
 // auto generated inclusion list
@@ -194,13 +196,20 @@ public:
 public:
     LLAPI void _disconnectFromServer(::NetworkIdentifier const& source);
 
-    LLAPI void onChunkHandleCompleted(
-        ::NetworkIdentifier const& source,
-        ::ChunkPos const&          chunkPos,
-        ::Dimension const&         dimension
-    );
+    LLAPI void
+    onChunkHandleCompleted(::NetworkIdentifier const& source, ::ChunkPos const& chunkPos, ::Dimension const& dimension);
 
     LLAPI void _ensureVoxelShapeRegistryExists(::Experiments const& experiments);
+
+    LLAPI void _respondBlobCacheStatusForSubChunk(::SubChunkPacket::SubChunkPacketData const& subChunkData);
+
+    LLAPI void _handleSubChunkData(
+        ::NetworkIdentifier const&                  packet,
+        ::SubChunkPacket const&                     subChunkData,
+        ::SubChunkPacket::SubChunkPacketData const& localPlayer,
+        ::LocalPlayer const*                        levelAndPlayerExists,
+        bool
+    );
 
 public:
     // member variables
