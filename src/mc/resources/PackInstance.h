@@ -30,6 +30,9 @@ public:
     // NOLINTEND
 
 public:
+    LLNDAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream) const;
+
+public:
     // prevent constructor by default
     PackInstance();
 

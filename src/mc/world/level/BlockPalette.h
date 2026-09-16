@@ -41,8 +41,7 @@ public:
     // NOLINTEND
 
 public:
-    /// @brief Restored: inlined in the game, so it is reimplemented here.
-    ///        Walks every registered block type and appends each of its permutations to this palette.
+    /// Walks every registered block type and appends each of its permutations to this palette.
     LLAPI void initFromBlockDefinitions();
 
 public:
