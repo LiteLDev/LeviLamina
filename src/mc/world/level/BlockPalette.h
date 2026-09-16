@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/registry/BlockTypeRegistry.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
@@ -45,15 +43,7 @@ public:
 public:
     /// @brief Restored: inlined in the game, so it is reimplemented here.
     ///        Walks every registered block type and appends each of its permutations to this palette.
-    void initFromBlockDefinitions() {
-        ::BlockTypeRegistry::get().forEachBlockType([this](::BlockType const& blockType) {
-            blockType.forEachBlockPermutation([this](::Block const& block) {
-                appendBlock(block);
-                return true;
-            });
-            return true;
-        });
-    }
+    LLAPI void initFromBlockDefinitions();
 
 public:
     // prevent constructor by default

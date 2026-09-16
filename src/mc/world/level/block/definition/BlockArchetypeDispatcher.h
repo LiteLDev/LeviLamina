@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BlockShape.h"
 
-// auto generated forward declare list
 // clang-format off
 class BlockType;
 class Material;
