@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/VanillaBlockTypeIds.h"
+#include "mc/world/level/material/Material.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
@@ -91,6 +93,42 @@ public:
 
     template <typename T>
     MCAPI T const* tryGetComponent() const;
+
+    /// Refreshes the data cached on this block state from its components and block type.
+    void cacheComponentData() {
+        mCachedComponentData->mEmissiveBrightness->mValue = mBlockType->getEmissiveBrightness(*this).mValue;
+        mCachedComponentData->mIsSolid                    = _isSolid();
+        mCachedComponentData->mOcclusionType              = _getBlockOcclusionType();
+    }
+
+    /// The block type properties and material are inspected in order of decreasing priority.
+    [[nodiscard]] BlockOcclusionType _getBlockOcclusionType() const {
+        if (hasProperty(BlockProperty::HalfSlab)) {
+            return BlockOcclusionType::HalfSlab;
+        }
+        if (hasProperty(BlockProperty::Leaves)) {
+            return BlockOcclusionType::Leaf;
+        }
+        if (hasProperty(BlockProperty::Connects2D)) {
+            return BlockOcclusionType::Connects2D;
+        }
+        auto const& material = mBlockType->mMaterial;
+        if (material.mLiquid) {
+            return BlockOcclusionType::IsLiquid;
+        }
+        if (hasProperty(BlockProperty::Portal)) {
+            return BlockOcclusionType::Portal;
+        }
+        if (material.mType == ::SharedTypes::v1_26_20::MaterialType::Ice) {
+            return BlockOcclusionType::Ice;
+        }
+        if (material.mType == ::SharedTypes::v1_26_20::MaterialType::Cactus) {
+            return BlockOcclusionType::Cactus;
+        }
+        return mBlockType->mNameInfo->mFullName->mStrHash == ::VanillaBlockTypeIds::SculkShrieker().mStrHash
+                 ? BlockOcclusionType::SculkShrieker
+                 : BlockOcclusionType::Default;
+    }
 
 public:
     // member variables
