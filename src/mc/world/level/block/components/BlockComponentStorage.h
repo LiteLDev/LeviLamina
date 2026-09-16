@@ -80,8 +80,8 @@ public:
         // NOLINTEND
     };
 
-    /// @brief Restored: a component is stored as its vtable followed by the value, which is why the
-    ///        game reaches the payload with `&componentBase[1]`.
+    /// A component is stored as its vtable followed by the value, which is why the game reaches the payload with
+    /// &componentBase[1].
     template <typename T0>
     struct ComponentInstance : ComponentBase {
         template <class... A>
@@ -134,6 +134,13 @@ public:
         return components.find(::Bedrock::type_id<void, T>()) != components.end();
     }
 
+    /// The payload sits immediately after ComponentBase's vtable pointer.
+    template <class T>
+    [[nodiscard]] T* _findComponentTyped() const {
+        auto* componentBase = _findComponentBase(::Bedrock::type_id<void, T>());
+        return componentBase != nullptr ? reinterpret_cast<T*>(&componentBase[1]) : nullptr;
+    }
+
     /// @brief Constructs a component of type `TComponent` in place and inserts it, or overwrites the
     ///        existing one when the storage allows replacement.
     template <class TComponent, class... Args>
@@ -151,7 +158,7 @@ public:
         auto* component = &instance->mValue;
 
         auto const& keys = mComponents->keys();
-        auto const  at   =
+        auto const  at =
             ::std::lower_bound(keys.cbegin(), keys.cend(), typeId, ::std::less<::Bedrock::typeid_t<void>>{});
         mComponents->emplace_hint(at, typeId, ::std::unique_ptr<ComponentBase>{instance});
 
@@ -161,6 +168,8 @@ public:
 
         return component;
     }
+
+    inline void allowComponentReplacement() { mAllowComponentReplacement = true; }
 
 public:
     // destructor thunk

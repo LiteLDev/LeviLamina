@@ -26,7 +26,6 @@ using BlockFactory = ::std::function<::BlockType*(
     ::Material const&                                               material
 )>;
 
-/// @brief Restored: inlined in the game, so it is reimplemented here.
 /// @return The archetype name -> factory table (`bush_block`, `flower_bed_block`, `pumpkin_block`).
 [[nodiscard]] LLNDAPI ::std::unordered_map<::std::string_view, BlockFactory> const& getBlockFactories();
 
