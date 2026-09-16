@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/AttachmentType.h"
-#include "mc/world/level/block/BigDripleafTilt.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/block/states/BlockState.h"
 #include "mc/world/level/block/states/BlockStateInstance.h"
 
@@ -138,6 +138,28 @@ public:
     template <typename T>
     optional_ref<Block const> trySetState(BlockState const& stateType, T val, ushort data) {
         return trySetState(stateType.mID, val, data);
+    }
+
+    /// @brief Sets whether this block counts as a base game (vanilla) block.
+    void setIsVanillaBlock(bool isVanilla) { mIsVanilla = isVanilla; }
+
+    /// @brief Initializes `blockComponentDescription` against this block's component storage.
+    ::BlockType& addComponent(::BlockComponentDescription const& blockComponentDescription) {
+        blockComponentDescription.initializeComponentFromCode(*mComponents);
+        return *this;
+    }
+
+    /// @brief Looks this block up in the registry by its full name and returns a weak pointer to it.
+    [[nodiscard]] ::WeakPtr<::BlockType> createWeakPtr() const {
+        return ::BlockTypeRegistry::get().lookupByName(mNameInfo->mFullName->getString(), true);
+    }
+
+    /// @brief Sets or clears one bit of the client prediction override set.
+    ///        Ignored unless the component storage currently allows modification.
+    void setClientPredictionOverride(::BlockClientPredictionOverrides type, bool value) {
+        if (mComponents->mAllowModifyingComponents) {
+            mClientPredictionOverrides.get().mContainer.set(static_cast<size_t>(type), value);
+        }
     }
 
 public:

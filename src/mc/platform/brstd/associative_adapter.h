@@ -151,6 +151,9 @@ public:
     };
 
 public:
+    // mContainers is private, so the key container has to be exposed through an accessor of its own.
+    [[nodiscard]] key_container_type const& keys() const noexcept { return mContainers.keys; }
+
     iterator       begin() noexcept { return iterator(mContainers.keys.begin(), mContainers.values.begin()); }
     const_iterator begin() const noexcept {
         return const_iterator(mContainers.keys.begin(), mContainers.values.begin());

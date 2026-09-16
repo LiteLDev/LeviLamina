@@ -119,6 +119,15 @@ public:
     // NOLINTEND
 
 public:
+    template <class T>
+    [[nodiscard]] bool hasComponent() const {
+        // The game also reads mAllowModifyingComponents at the top of this function and discards
+        // the result; that read has no observable effect, so it is omitted here.
+        auto const& components = mComponents.get();
+        return components.find(::Bedrock::type_id<void, T>()) != components.end();
+    }
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

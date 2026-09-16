@@ -1,6 +1,8 @@
 #pragma once
 
+#include "ll/api/utils/StringUtils.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/registry/BlockTypeRegistryModificationsLock.h"
 
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
@@ -145,6 +147,31 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTypeRegistry::DirectAccessBlocks>> mDirectAccessBlocks;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistryRWLock>>              mRWLock;
     // NOLINTEND
+
+public:
+    [[nodiscard]] static ::BlockTypeRegistry& get() { return mBlockTypeRegistry().mValue; }
+
+    /// @brief Constructs a new block of type `TBlockType` and registers it under `blockName`.
+    template <class TBlockType, class... Args>
+    TBlockType& registerBlock(::HashedString const& blockName, Args&&... args) {
+        ::std::string nameId = blockName.getString();
+
+        BlockTypeRegistryModificationsLock lock(mRWLock);
+
+        auto* block = new TBlockType(nameId, ::std::forward<Args>(args)...);
+
+        // Registration keys on the lowercased full name; the part before ':' is the namespace.
+        ::std::string lowered = ll::string_utils::toLowerCase(block->mNameInfo->mFullName->getString());
+        auto const    colon   = lowered.find(':');
+
+        mKnownNamespaces->emplace(lowered.substr(0, colon));
+        mBlockLookupMap->try_emplace(::HashedString{lowered}, ::SharedPtr<::BlockType>{block});
+
+        ::HashedString hashed{lowered};
+        mBlockNameHashToStringMap->operator[](hashed.getHash()) = hashed;
+
+        return *block;
+    }
 
 public:
     // member functions

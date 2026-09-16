@@ -19,6 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    explicit BlockDestructibleByExplosionDescription(float explosionResistance) {
+        mExplosionResistance = explosionResistance * 5.0f;
+        mInitializedFromCode = true;
+    }
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;

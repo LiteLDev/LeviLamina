@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
+#include "mc/world/level/material/Material.h"
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockType.h"
@@ -24,6 +26,19 @@ public:
     ::ll::TypedStorage<1, 1, bool> mLit;
     ::ll::TypedStorage<1, 1, bool> mCarved;
     // NOLINTEND
+
+public:
+    /// The game additionally calls
+    /// `BlockType::_subscribeForEvent<BlockEvents::BlockPlaceEvent, PumpkinBlock>(&PumpkinBlock::onPlace, false)`
+    /// at the end of this constructor. That call only wires up event plumbing (it bottoms out in
+    /// `BlockEventManager::_getOrAddExecutor` / `BlockEventPublishingExecutor::_subscribe`, whose own
+    /// dependencies were not worth restoring), so it is omitted here.
+    PumpkinBlock(::std::string const& nameId, int id, bool lit, bool carved)
+    : ::BlockType(nameId, id, ::Material::getMaterial(::SharedTypes::v1_26_20::MaterialType::Solid)) {
+        mLit        = lit;
+        mCarved     = carved;
+        mIsMobPiece = true;
+    }
 
 public:
     // virtual functions

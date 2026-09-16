@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/WeakPtr.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogArea.h"
@@ -70,6 +71,13 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                         mEventing;
     // NOLINTEND
+
+public:
+    LLNDAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
+
+    LLAPI void initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition);
+
+    LLAPI void initializeBlocks(::Level& level);
 
 public:
     // prevent constructor by default
