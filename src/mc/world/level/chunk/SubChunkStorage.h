@@ -77,6 +77,12 @@ public:
         std::vector<BlockDataFetchResult<T>>&
     ) const = 0;
 
+    virtual bool hasAnyElementInBox(
+        BlockPos const&,
+        BoundingBox const&,
+        brstd::function_ref<bool(T const&), bool(T const&)> const&
+    ) const = 0;
+
     virtual bool hasAnyElementMatchingFilterInPalette(std::function<bool(T const&)> const&) const = 0;
 
     virtual void _serialize(IDataOutput&, RuntimeSerializationLookup<T> const&) const = 0;
