@@ -7,6 +7,86 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.40.5] - 2026-09-17
+
+### Added
+
+- Eeadded ServerInstanceDestructor and ClientInstanceDestructor @kuangby
+- Implemented `BlockDescriptor::anyMatch`
+- Added conversation operator of VariantParameterListConst for VariantParameterList
+- Added missing destructor hooks for some services
+- Added constructor for `AddPlayerPacket` and `SetScorePacket`
+- Added constructor for `PlayerListPacketPayload::AddEntry`
+- Filled `MPMCQueue` and `BackgroundTask`
+
+  #### Camera & Matrix
+- Implemented `mce::Camera::getProjectionMatrix`
+- Implemented `MatrixStack::getTop`
+- Implemented `MatrixStack::top`
+
+  #### Actor
+- Implemented `Actor::getEquippedSlot`
+
+  #### Threading & Task System
+- Implemented `BackgroundTaskBase::isOrphaned`
+- Implemented `BackgroundWorker::getLocal`
+- Implemented `TaskGroup::getCurrentTaskGroup`
+- Implemented `Bedrock::Threading::SharedAsync`
+- Implemented `Bedrock::Threading::Async`
+
+  #### Content & Resources
+- Implemented `std::hash<ContentIdentity>`
+- Implemented `ContentIdentity::operator==`
+- Implemented `PackInstance::getResource`
+- Implemented `PacksInfoData::collectKeys`
+
+  #### Networking & Serialization
+- Implemented `ReadOnlyBinaryStream::ensureReadCompleted`
+- Implemented `SaveContextFactory::createNetworkSaveContext`
+- Implemented `ClientLevel::addSubChunkPacketHandler`
+- Implemented `ClientNetworkHandler::_respondBlobCacheStatusForSubChunk`
+- Implemented `ClientNetworkHandler::_handleSubChunkData`
+
+  #### Dimensions & Chunks
+- Implemented `Dimension::getHeightInSubchunks`
+- Implemented `LevelChunk::serializeBiomes`
+- Implemented `LevelChunk::deserializeBorderBlocks`
+- Implemented `SubChunk::isUniform`
+- Implemented `ChunkSource::getAvailableChunk`
+
+  #### Block System
+- Implemented `BlockDefinitionGroup::registerDataDrivenBlock`
+- Implemented `BlockDefinitionGroup::initializeBlocks`
+- Implemented `BlockDefinitionGroup::initBlockTypeFromDefinition`
+- Implemented `BlockType::forEachBlockPermutation`
+- Implemented `BlockPalette::initFromBlockDefinitions`
+- Implemented `Block::cacheComponentData`
+- Implemented `Block::_getBlockOcclusionType`
+
+  #### Block Components
+- Implemented `BlockComponentStorage::ComponentInstance`
+- Implemented `BlockComponentStorage::_addStatefulComponent`
+- Implemented `BlockComponentStorage::_findComponentTyped`
+- Implemented `BlockComponentGroupDescription::getComponentDescription`
+- Implemented `BlockComponentStorageFinalizer::finalizeComponentData`
+- Implemented `BlockTypeComponentStorageFinalizer::finalizeComponentData`
+
+  #### Animation
+- Implemented `HardcodedAnimationSystem::computeMovementThisTick`
+
+  #### UI
+- Implemented `ScreenController::registerButtonPressedHandler`
+
+### Changed
+
+- Bumped bedrock-runtime-data version to 26.40.5-client.9 and 26.40.8-server.9
+
+### Fixed
+
+- Fixed `Mob::getItemSlot`
+- Fixed `RuntimeSerializationLookup` type
+- Added missing virtual function for `SubChunkStorage` and `SubChunkStoragePaletted`
+
 ## [26.40.4] - 2026-09-14
 
 ### Fixed
@@ -1789,7 +1869,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.5...HEAD
+[26.40.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.4...v26.40.5
 [26.40.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.3...v26.40.4
 [26.40.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.2...v26.40.3
 [26.40.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.1...v26.40.2
