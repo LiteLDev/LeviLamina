@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Eeadded ServerInstanceDestructor and ClientInstanceDestructor @kuangby
+- Readded ServerInstanceDestructor and ClientInstanceDestructor @kuangby
 - Implemented `BlockDescriptor::anyMatch`
 - Added conversation operator of VariantParameterListConst for VariantParameterList
 - Added missing destructor hooks for some services
