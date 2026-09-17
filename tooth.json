@@ -18,7 +18,7 @@
                 "github.com/LiteLDev/levilamina-loc": "1.6.*",
                 "github.com/LiteLDev/PeEditor": "3.9.*",
                 "github.com/LiteLDev/PreLoader": "1.16.2",
-                "github.com/LiteLDev/bedrock-runtime-data": "26.40.8-server.8"
+                "github.com/LiteLDev/bedrock-runtime-data": "26.40.8-server.9"
             },
             "assets": [
                 {
@@ -55,7 +55,7 @@
                 "github.com/LiteLDev/levilamina-loc#client": "1.6.*",
                 "github.com/LiteLDev/PeEditor": "3.9.*",
                 "github.com/LiteLDev/PreLoader": "1.16.2",
-                "github.com/LiteLDev/bedrock-runtime-data": "26.40.5-client.8"
+                "github.com/LiteLDev/bedrock-runtime-data": "26.40.5-client.9"
             },
             "assets": [
                 {
