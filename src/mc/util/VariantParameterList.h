@@ -27,7 +27,7 @@ public:
     // NOLINTEND
 
 public:
-    operator VariantParameterListConst() {
+    operator VariantParameterListConst() const {
         return VariantParameterListConst{mSelf, mOther, mPlayer, mTarget, mParent, mBaby, mBlock, mDamager, mHolder};
     }
 };
