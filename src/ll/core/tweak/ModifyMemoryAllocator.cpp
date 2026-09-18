@@ -7,12 +7,12 @@ auto replaceMemoryAllocator = []() -> bool {
 #ifdef LL_PLAT_S
     *(
          std::atomic<Bedrock::Memory::IMemoryAllocator*>*
-    )"?memoryAllocator@MemoryTrackerAnon@?A0xC8249FD8@Memory@@3U?$atomic@PEAVIMemoryAllocator@Memory@Bedrock@@@std@@A.llvm.15428288957718305248"_sym
+    )"?memoryAllocator@MemoryTrackerAnon@?A0xC8249FD8@Memory@@3U?$atomic@PEAVIMemoryAllocator@Memory@Bedrock@@@std@@A.llvm.2559132642935927632"_sym
          .resolve() = &ll::memory::getDefaultAllocator();
 #else
     *(
          std::atomic<Bedrock::Memory::IMemoryAllocator*>*
-    )"?memoryAllocator@MemoryTrackerAnon@?A0x2B00547D@Memory@@3U?$atomic@PEAVIMemoryAllocator@Memory@Bedrock@@@std@@A.llvm.2259668294307561024"_sym
+    )"?memoryAllocator@MemoryTrackerAnon@?A0x2B00547D@Memory@@3U?$atomic@PEAVIMemoryAllocator@Memory@Bedrock@@@std@@A.llvm.3932494962788463207"_sym
          .resolve() = &ll::memory::getDefaultAllocator();
 #endif
     return true;
