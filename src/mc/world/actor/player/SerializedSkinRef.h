@@ -6,9 +6,11 @@
 #include "mc/deps/shared_types/persona/ArmSizeType.h"
 #include "mc/deps/shared_types/persona/PieceType.h"
 #include "mc/util/ThreadOwner.h"
+#include "mc/world/actor/player/TrustedSkinFlag.h"
 
 // auto generated forward declare list
 // clang-format off
+class AnimatedImageData;
 class ConnectionRequest;
 class MinEngineVersion;
 class SerializedPersonaPieceHandle;
@@ -72,13 +74,23 @@ public:
     MCAPI int64 estimateSizeInBytes() const;
 #endif
 
+    MCAPI bool isValid() const;
+
     MCFOLD ::SerializedSkinRef& operator=(::SerializedSkinRef&& rhs);
 
     MCAPI ::SerializedSkinRef& operator=(::SerializedSkinRef const& rhs);
 
-#ifdef LL_PLAT_S
+    MCAPI void setAnimatedImageData(::std::vector<::AnimatedImageData> animatedImages);
+
+    MCAPI void setAnimationData(::std::string const& animationData);
+
+    MCAPI void setArmSize(::SharedTypes::persona::ArmSizeType const& armSizeType);
+
+    MCAPI void setCapeId(::std::string const& capeId);
+
     MCAPI void setCapeImageDataCereal(::SkinImage const& image);
-#endif
+
+    MCAPI void setFullId(::std::string const& fullId);
 
 #ifdef LL_PLAT_C
     MCAPI void setGeometryData(::Json::Value data, ::MinEngineVersion minEngineVersion);
@@ -86,9 +98,11 @@ public:
 
     MCAPI void setGeometryDataMinEngineVersion(::MinEngineVersion minEngineVersion);
 
-#ifdef LL_PLAT_S
+    MCAPI void setId(::std::string const& id);
+
     MCAPI void setImageDataCereal(::SkinImage const& image);
-#endif
+
+    MCAPI void setIsTrustedSkinFlag(::TrustedSkinFlag const& isTrustedSkinFlag);
 
     MCAPI void setPersonaAppearanceData(
         ::SharedTypes::persona::ArmSizeType const&                                     armSizeType,
@@ -96,6 +110,19 @@ public:
         ::std::vector<::SerializedPersonaPieceHandle>                                  personaPieces,
         ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors
     );
+
+    MCAPI void setPersonaPieces(::std::vector<::SerializedPersonaPieceHandle> const& personaPieces);
+
+    MCAPI void
+    setPieceTintColors(::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors);
+
+    MCAPI void setPlayFabId(::std::string const& playFabId);
+
+    MCAPI void setProfileHash(::std::string const& profileHash);
+
+    MCAPI void setResourcePatch(::std::string const& resourcePatch);
+
+    MCAPI void setSkinColor(::mce::Color const& color);
 
     MCAPI ~SerializedSkinRef();
     // NOLINTEND

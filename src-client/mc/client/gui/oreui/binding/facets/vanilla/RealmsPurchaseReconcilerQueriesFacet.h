@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
-#include "mc/client/realms/RealmsPurchaseReconcilerFailureReason.h"
-#include "mc/client/realms/RealmsPurchaseReconcilerState.h"
+#include "mc/client/realms/LegacyRealmsPurchaseReconcilerFailureReason.h"
+#include "mc/client/realms/LegacyRealmsPurchaseReconcilerState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -22,8 +22,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler>> mRealmsPurchaseReconciler;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                             mStateChangedSubscription;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseReconcilerState>                      mState;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseReconcilerFailureReason>              mFailureReason;
+    ::ll::TypedStorage<4, 4, ::Realms::LegacyRealmsPurchaseReconcilerState>                mState;
+    ::ll::TypedStorage<4, 4, ::Realms::LegacyRealmsPurchaseReconcilerFailureReason>        mFailureReason;
     ::ll::TypedStorage<1, 1, bool>                                                         mIsDirty;
     // NOLINTEND
 
@@ -46,9 +46,9 @@ public:
         ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler
     );
 
-    MCFOLD ::Realms::RealmsPurchaseReconcilerFailureReason getFailureReason() const;
+    MCFOLD ::Realms::LegacyRealmsPurchaseReconcilerFailureReason getFailureReason() const;
 
-    MCFOLD ::Realms::RealmsPurchaseReconcilerState getState() const;
+    MCFOLD ::Realms::LegacyRealmsPurchaseReconcilerState getState() const;
     // NOLINTEND
 
 public:

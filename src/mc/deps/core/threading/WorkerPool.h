@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class WorkerPool : public ::Bedrock::EnableNonOwnerReferences {
@@ -24,7 +23,7 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnk66023e;
     ::ll::UntypedStorage<8, 8>   mUnk462341;
     ::ll::UntypedStorage<8, 8>   mUnk5991a5;
-    ::ll::UntypedStorage<8, 80>  mUnk7be3ee;
+    ::ll::UntypedStorage<8, 80>  mUnk831ddc;
     ::ll::UntypedStorage<4, 4>   mUnkda7062;
     ::ll::UntypedStorage<4, 4>   mUnk853032;
     ::ll::UntypedStorage<8, 24>  mUnkceb84a;
@@ -69,6 +68,6 @@ public:
     MCNAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
     sAllPools();
 
-    MCNAPI static ::Bedrock::Threading::Mutex& sAllPoolsMutex();
+    MCNAPI static ::std::mutex& sAllPoolsMutex();
     // NOLINTEND
 };

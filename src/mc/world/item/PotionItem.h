@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/item/ResolvedItemIconInfo.h"
-#include "mc/world/item/alchemy/Potion.h"
+#include "mc/world/item/alchemy/PotionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,47 +21,37 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Player;
+class ThrownPotion;
 class Vec3;
+struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class PotionItem : public ::Item {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1984, ::ResolvedItemIconInfo[31]> mPotionIcons;
-    ::ll::TypedStorage<4, 124, ::Potion::PotionVariant[31]> mPotionVariants;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PotionItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Potion::PotionType getPotionType() const;
+    virtual ::PotionType getPotionType() const;
 
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool                                 showCategory
     ) const /*override*/;
 
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
 
     virtual bool uniqueAuxValues() const /*override*/;
 
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& instance, ::Level* level, ::Player* player) const /*override*/;
 
@@ -72,48 +62,47 @@ public:
 
     virtual bool isDestructive(int auxValue) const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI PotionItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+#ifdef LL_PLAT_S
+    MCAPI static void applyEffect(::ThrownPotion* potion, ::ItemStack const& slotItem);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::PotionType $getPotionType() const;
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool                                 showCategory
     ) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 
-    MCAPI ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& instance, ::Level* level, ::Player* player) const;
 
@@ -123,8 +112,14 @@ public:
 
     MCAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

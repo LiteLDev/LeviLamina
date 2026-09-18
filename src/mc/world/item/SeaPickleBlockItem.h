@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/BlockItem.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,9 +21,14 @@ public:
     // NOLINTBEGIN
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      actor,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -30,8 +36,14 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      actor,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

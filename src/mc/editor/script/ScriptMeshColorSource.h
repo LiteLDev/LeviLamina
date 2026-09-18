@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 struct ScriptMeshColorSource {
@@ -19,6 +24,12 @@ public:
     ScriptMeshColorSource& operator=(ScriptMeshColorSource const&);
     ScriptMeshColorSource(ScriptMeshColorSource const&);
     ScriptMeshColorSource();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

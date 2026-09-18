@@ -17,6 +17,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<float>> mVolume;
     ::ll::TypedStorage<4, 8, ::std::optional<float>> mPitch;
     ::ll::TypedStorage<4, 8, ::std::optional<int>>   mLoopCount;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>  mIsBroadcast;
     // NOLINTEND
 
 public:

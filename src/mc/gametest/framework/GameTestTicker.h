@@ -33,8 +33,6 @@ public:
 
     MCNAPI void clear();
 
-    MCNAPI void forceStop();
-
     MCNAPI void tick();
 
     MCNAPI ~GameTestTicker();

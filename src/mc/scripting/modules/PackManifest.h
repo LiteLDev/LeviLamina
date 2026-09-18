@@ -15,6 +15,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/DropdownSetting.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/LabelSetting.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/MultiSelectSetting.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/SliderSetting.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/ToggleSetting.h"
 #include "mc/resources/ManifestOrigin.h"
@@ -92,7 +93,8 @@ public:
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>>>>
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting>>>>
                                                                                                mPackSettingsDef;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackCapabilityTrustLevel>> mCapabilities;
     ::ll::TypedStorage<8, 136, ::ResourceMetadata>                                             mMetadata;
@@ -129,12 +131,6 @@ public:
 
     MCAPI void _serializeModules(::Json::Value& destination) const;
 
-    MCAPI void addModule(::ResourceInformation const& resourceInfo);
-
-    MCAPI void addPackCapability(::std::string_view capability, ::PackCapabilityTrustLevel trustLevel);
-
-    MCAPI void addPackDependency(::PackIdVersion const& packId);
-
 #ifdef LL_PLAT_C
     MCAPI ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
 
@@ -149,8 +145,6 @@ public:
 
     MCAPI ::std::string getNameWithVersionForTelemetry(::I18n& loc) const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getPackSettingsLocKeys() const;
-
     MCAPI bool hasPackCapability(::std::string_view capability) const;
 
 #ifdef LL_PLAT_C
@@ -159,8 +153,6 @@ public:
 
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
 
-    MCAPI void setIdentity(::PackIdVersion const& identity);
-
     MCAPI void setLastModifiedDate(int64 lastModifiedDate);
 
     MCAPI void setLocalizedNameKeywords(
@@ -168,19 +160,14 @@ public:
         ::I18n&                                                   loc
     );
 
-    MCAPI void setMinEngineVersion(::MinEngineVersion const& engineVersion);
-
-    MCAPI void setOptimizationVersion(::SemVersion const& optimizationVersion);
-
     MCAPI void setPackSettingsDef(
         ::std::vector<::std::variant<
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> packSettingsDef
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting>> packSettingsDef
     );
-
-    MCAPI void setRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:

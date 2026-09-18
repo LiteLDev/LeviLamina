@@ -22,8 +22,10 @@ class PacketSender;
 class Player;
 class PlayerLimboActorManager;
 class PortalForcer;
+struct ActorUniqueID;
 struct AddLimboActorHelper;
 struct DimensionType;
+struct NetworkIdentifierWithSubId;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -46,6 +48,20 @@ public:
         mOnAnyPlayerChangeDimensionPreSuspendRegion;
     ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnAnyPlayerChangeDimensionPrepareRegionComplete;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::ActorUniqueID, ::DimensionType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnAnyPlayerChangeDimensionComplete;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::NetworkIdentifierWithSubId const&, ::DimensionType),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mOnPlayerLeftDimension;
     // NOLINTEND
 
 public:
@@ -90,6 +106,12 @@ public:
 
     virtual ::Bedrock::PubSub::Connector<void()>&
     getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector() /*override*/;
+
+    virtual ::Bedrock::PubSub::Connector<void(::ActorUniqueID, ::DimensionType)>&
+    getOnAnyPlayerChangeDimensionCompleteConnector() /*override*/;
+
+    virtual ::Bedrock::PubSub::Connector<void(::NetworkIdentifierWithSubId const&, ::DimensionType)>&
+    getOnPlayerLeftDimensionConnector() /*override*/;
 
     virtual bool
     playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime) /*override*/;
@@ -177,7 +199,13 @@ public:
     MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionType)>&
     $getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ActorUniqueID, ::DimensionType)>&
+    $getOnAnyPlayerChangeDimensionCompleteConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::NetworkIdentifierWithSubId const&, ::DimensionType)>&
+    $getOnPlayerLeftDimensionConnector();
 
     MCAPI bool $playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime);
 

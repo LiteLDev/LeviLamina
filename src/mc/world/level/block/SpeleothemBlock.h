@@ -15,6 +15,7 @@ class BlockPos;
 class BlockSource;
 class HashedString;
 class Vec3;
+namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 namespace mce { class Color; }
@@ -22,10 +23,24 @@ namespace mce { class Color; }
 
 class SpeleothemBlock : public ::FallingBlock {
 public:
+    // SpeleothemBlock inner types define
+    enum class DealsFallDamage : uchar {
+        No  = 0,
+        Yes = 1,
+    };
+
+    enum class GrowsStalagmite : uchar {
+        No  = 0,
+        Yes = 1,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockToGrowOn;
-    ::ll::TypedStorage<4, 4, int>                   mMaxLength;
+    ::ll::TypedStorage<8, 8, ::HashedString const&>              mBlockToGrowOn;
+    ::ll::TypedStorage<4, 4, int>                                mMaxLength;
+    ::ll::TypedStorage<1, 1, ::SpeleothemBlock::GrowsStalagmite> mGrowsStalagmite;
+    ::ll::TypedStorage<4, 4, float>                              mGrowthProbability;
     // NOLINTEND
 
 public:
@@ -74,12 +89,29 @@ public:
     virtual void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     virtual bool _canGrow(::Block const& rootBlock, ::Block const& aboveRootLiquidBlock) const;
+
+    virtual bool _isValidTipGrowPos(::BlockSource& region, ::BlockPos const& growPos, uchar growDirection) const;
+
+    virtual void _createSpeleothem(
+        ::BlockSource&        region,
+        ::BlockPos const&     pos,
+        uchar                 direction,
+        ::SpeleothemThickness thickness
+    ) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpeleothemBlock(::std::string const& nameId, int id, int maxLength, ::HashedString const& blockToGrowOn);
+    MCAPI SpeleothemBlock(
+        ::std::string const&               nameId,
+        int                                id,
+        ::HashedString const&              blockToGrowOn,
+        int                                maxLength,
+        ::SpeleothemBlock::GrowsStalagmite growsStalagmite,
+        float                              growthProbability,
+        ::SpeleothemBlock::DealsFallDamage dealsFallDamage
+    );
 
     MCAPI ::SpeleothemThickness _calculateSpeleothemThickness(
         ::BlockSource&    region,
@@ -88,14 +120,9 @@ public:
         bool              mergeOpposingTips
     ) const;
 
-    MCAPI void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos) const;
+    MCAPI bool _canTipGrow(::BlockSource& region, ::BlockPos const& tipPos) const;
 
-    MCAPI void _createSpeleothem(
-        ::BlockSource&        region,
-        ::BlockPos const&     pos,
-        uchar                 direction,
-        ::SpeleothemThickness thickness
-    ) const;
+    MCAPI void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos) const;
 
     MCAPI ::std::optional<::BlockPos>
     _findRootBlock(::BlockSource& region, ::BlockPos const& pos, int maxSearchLength) const;
@@ -111,14 +138,14 @@ public:
 
     MCAPI void growStalagmite(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canTipGrow(::BlockSource& region, ::BlockPos const& tipPos);
-
     MCAPI static bool _isTip(::Block const& block, bool includeMergedTip);
 
     MCAPI static bool isSpeleothemWithDirection(::Block const& block, uchar tipDirection);
@@ -127,7 +154,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, int maxLength, ::HashedString const& blockToGrowOn);
+    MCAPI void* $ctor(
+        ::std::string const&               nameId,
+        int                                id,
+        ::HashedString const&              blockToGrowOn,
+        int                                maxLength,
+        ::SpeleothemBlock::GrowsStalagmite growsStalagmite,
+        float                              growthProbability,
+        ::SpeleothemBlock::DealsFallDamage dealsFallDamage
+    );
     // NOLINTEND
 
 public:
@@ -171,6 +206,15 @@ public:
     MCAPI void $randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI bool $_canGrow(::Block const& rootBlock, ::Block const& aboveRootLiquidBlock) const;
+
+    MCAPI bool $_isValidTipGrowPos(::BlockSource& region, ::BlockPos const& growPos, uchar growDirection) const;
+
+    MCAPI void $_createSpeleothem(
+        ::BlockSource&        region,
+        ::BlockPos const&     pos,
+        uchar                 direction,
+        ::SpeleothemThickness thickness
+    ) const;
 
 
     // NOLINTEND

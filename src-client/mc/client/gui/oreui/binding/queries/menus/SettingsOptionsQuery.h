@@ -23,21 +23,15 @@ class SettingsOptionsQuery : public ::OreUI::QueryBase<::OreUI::SettingsOptionsQ
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>           mSettingsRegistry;
-    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                         mCommonProperties;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                            mValue;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mInfo;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>> mSettingsRegistry;
+    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>               mCommonProperties;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>             mValue;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>> mInfo;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::SettingsOption, ::OreUI::SettingsOption>> mOptions;
     ::ll::TypedStorage<
         8,
         120,
-        ::OreUI::PropertyVector<::OreUI::SettingsOption, ::std::allocator<::OreUI::SettingsOption>>>
-        mOptions;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<
-            ::OreUI::SettingsOptionConfirmationRequest,
-            ::std::allocator<::OreUI::SettingsOptionConfirmationRequest>>>
+        ::OreUI::PropertyVector<::OreUI::SettingsOptionConfirmationRequest, ::OreUI::SettingsOptionConfirmationRequest>>
                                                                mConfirmationRequests;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSettingsChangedSubscription;
     // NOLINTEND

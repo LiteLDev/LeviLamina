@@ -29,6 +29,8 @@ public:
     virtual int getMaxYSpawnOffset() const /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
+
+    virtual bool requiresNeighborAwareBlockUpgrade() const /*override*/;
     // NOLINTEND
 
 public:
@@ -37,6 +39,8 @@ public:
     MCAPI int $getMaxYSpawnOffset() const;
 
     MCAPI ::std::string_view $getStructureName() const;
+
+    MCAPI bool $requiresNeighborAwareBlockUpgrade() const;
 
 
     // NOLINTEND

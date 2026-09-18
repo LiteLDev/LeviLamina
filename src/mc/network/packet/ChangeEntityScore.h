@@ -15,4 +15,20 @@ public:
     ::ll::TypedStorage<4, 4, int>             mScoreValue;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ~ChangeEntityScore();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $dtor();
+#endif
+    // NOLINTEND
 };

@@ -22,16 +22,11 @@ struct MobFlagComponent;
 struct MoveRequestComponent;
 struct ServerCatchupMovementTrackerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace SolidMobSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
-
-MCAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
-
 MCAPI void flagNearbyMobsForServerMovementCatchup(
     ::StrictEntityContext const&                   player,
     ::StateVectorComponent const&                  stateVector,

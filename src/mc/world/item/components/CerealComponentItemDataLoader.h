@@ -15,8 +15,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        256,
-        ::Puv::SlicedLoader<::ComponentItemData_v1_26_0, ::BedrockLoadContext, nullptr_t, ::ComponentItemData_v1_26_0>>
+        264,
+        ::Puv::SlicedLoader<
+            ::ComponentItemData_v1_26_0,
+            ::BedrockLoadContext,
+            nullptr_t,
+            nullptr_t,
+            ::ComponentItemData_v1_26_0>>
         mLoader;
     // NOLINTEND
 

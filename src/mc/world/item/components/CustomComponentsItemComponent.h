@@ -28,17 +28,13 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemCustomComponentData>> mComponents;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CustomComponentsItemComponent();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI explicit CustomComponentsItemComponent(
         ::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
     );
@@ -61,17 +57,11 @@ public:
     );
 
     MCAPI void _addComponent(::HashedString compName, ::cereal::DynamicValue data);
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI void _addComponent(::HashedString compName, ::cereal::DynamicValue data);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
 
     MCAPI void* $ctor(
@@ -90,6 +80,11 @@ public:
                 ::SharedTypes::v1_26_30::ItemCustomComponent>,
             ::cereal::ComponentStorageSentinelType> customComponentsData
     );
-#endif
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

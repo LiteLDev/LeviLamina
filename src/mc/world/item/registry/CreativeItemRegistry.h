@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/platform/brstd/flat_map.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@ class CreativeContentPacket;
 class CreativeGroupInfo;
 class CreativeItemEntry;
 class CreativeItemGroupCategory;
+class ItemInstance;
 struct CreativeItemNetIdTag;
 // clang-format on
 
@@ -32,7 +34,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~CreativeItemRegistry() /*override*/;
+#else // LL_PLAT_C
+    virtual ~CreativeItemRegistry() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:
@@ -49,11 +56,19 @@ public:
         ::std::vector<::SharedTypes::CreativeItemCategory>,
         ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>> createCategories();
 
+#ifdef LL_PLAT_S
+    MCAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI void initializeFromCreativeContentPacket(
         ::CreativeContentPacket const& creativeContentPacket,
         ::BlockPalette const&          blockPalette
     );
+
+    MCAPI ::CreativeItemEntry* newItemEntry(::CreativeItemNetId const& creativeNetId, ::ItemInstance const& item);
+
+    MCAPI void updateNetIdMap();
 #endif
     // NOLINTEND
 
@@ -68,7 +83,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

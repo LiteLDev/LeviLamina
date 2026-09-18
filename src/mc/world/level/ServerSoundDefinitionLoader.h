@@ -6,7 +6,7 @@ class ServerSoundDefinitionLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 264> mUnke104a2;
+    ::ll::UntypedStorage<8, 272> mUnke104a2;
     // NOLINTEND
 
 public:

@@ -17,13 +17,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mComponent;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mText;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mDynamicAttribs;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mComponent;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>> mText;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mDynamicAttribs;
     ::ll::TypedStorage<
         8,
         120,
-        ::OreUI::PropertyVector<::OreUI::DataDrivenUIGenericNode, ::std::allocator<::OreUI::DataDrivenUIGenericNode>>>
+        ::OreUI::PropertyVector<::OreUI::DataDrivenUIGenericNode, ::OreUI::DataDrivenUIGenericNode>>
         mChildrenNodes;
     // NOLINTEND
 
@@ -56,9 +58,7 @@ public:
         ::std::optional<::std::string> component,
         ::std::optional<::std::string> text,
         ::std::optional<::std::string> dynamicAttribs,
-        ::OreUI::PropertyVector<
-            ::OreUI::DataDrivenUIGenericNode,
-            ::std::allocator<::OreUI::DataDrivenUIGenericNode>> const& childrenNodes
+        ::OreUI::PropertyVector<::OreUI::DataDrivenUIGenericNode, ::OreUI::DataDrivenUIGenericNode> const& childrenNodes
     );
     // NOLINTEND
 
@@ -80,9 +80,7 @@ public:
         ::std::optional<::std::string> component,
         ::std::optional<::std::string> text,
         ::std::optional<::std::string> dynamicAttribs,
-        ::OreUI::PropertyVector<
-            ::OreUI::DataDrivenUIGenericNode,
-            ::std::allocator<::OreUI::DataDrivenUIGenericNode>> const& childrenNodes
+        ::OreUI::PropertyVector<::OreUI::DataDrivenUIGenericNode, ::OreUI::DataDrivenUIGenericNode> const& childrenNodes
     );
     // NOLINTEND
 

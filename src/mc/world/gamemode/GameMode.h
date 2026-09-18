@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -44,6 +45,7 @@ public:
         ::ll::TypedStorage<4, 12, ::BlockPos> mNextBuildPos;
         ::ll::TypedStorage<4, 12, ::Vec3>     mInitialClickPos;
         ::ll::TypedStorage<1, 1, uchar>       mContinueFacing;
+        ::ll::TypedStorage<1, 1, ::HandSlot>  mLastBuildHandSlot;
         // NOLINTEND
     };
 
@@ -107,7 +109,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameMode() = default;
+    virtual ~GameMode();
 
     virtual bool startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
@@ -118,11 +120,11 @@ public:
 
     virtual void stopDestroyBlock(::BlockPos const& pos);
 
-    virtual void startBuildBlock(::BlockPos const& pos, uchar face);
+    virtual void startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
 
-    virtual bool buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+    virtual bool buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
 
-    virtual void continueBuildBlock(::BlockPos const& pos, uchar face);
+    virtual void continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
 
     virtual void stopBuildBlock();
 
@@ -130,20 +132,21 @@ public:
 
     virtual float getPickRange(::InputMode const& currentInputMode);
 
-    virtual bool useItem(::ItemStack& item);
+    virtual bool useItem(::ItemStack& item, ::HandSlot handSlot);
 
-    virtual bool useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
+    virtual bool useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
 
     virtual ::InteractionResult useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
         ::Vec3 const&     hit,
+        ::HandSlot        handSlot,
         ::Block const*    targetBlock,
         bool              isFirstEvent
     );
 
-    virtual bool interact(::Actor& entity, ::Vec3 const& location);
+    virtual bool interact(::Actor& entity, ::Vec3 const& location, ::HandSlot handSlot);
 
     virtual bool attack(::Actor& entity, ::Vec3 const& hitPosition);
 
@@ -171,15 +174,19 @@ public:
 
     MCAPI bool _enableBlockBreakDelay() const;
 
+#ifdef LL_PLAT_S
+    MCAPI bool _sendTryDestroyBlock(::BlockPos const& pos, uchar face);
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 #endif
 
-    MCAPI bool baseUseItem(::ItemStack const& item);
+    MCAPI bool baseUseItem(::ItemStack const& item, ::HandSlot handSlot);
 
-    MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection);
+    MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
 
-    MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
+    MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr, ::HandSlot handSlot);
 
     MCAPI float getDestroyRate(::Block const& block);
 
@@ -211,6 +218,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
@@ -222,11 +235,11 @@ public:
 
     MCAPI void $stopDestroyBlock(::BlockPos const& pos);
 
-    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
 
-    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
 
-    MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face);
+    MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
 
     MCAPI void $stopBuildBlock();
 
@@ -234,20 +247,21 @@ public:
 
     MCAPI float $getPickRange(::InputMode const& currentInputMode);
 
-    MCAPI bool $useItem(::ItemStack& item);
+    MCAPI bool $useItem(::ItemStack& item, ::HandSlot handSlot);
 
-    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
+    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
 
     MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
         ::Vec3 const&     hit,
+        ::HandSlot        handSlot,
         ::Block const*    targetBlock,
         bool              isFirstEvent
     );
 
-    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot handSlot);
 
     MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
@@ -260,5 +274,11 @@ public:
     MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

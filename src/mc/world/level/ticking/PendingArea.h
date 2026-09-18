@@ -32,16 +32,16 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     PendingArea();
 
+#else // LL_PLAT_C
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI PendingArea(
         ::mce::UUID           uniqueId,
         ::std::string const&  name,
@@ -53,7 +53,7 @@ public:
 
     MCAPI ::TickingAreaDescription getDescription() const;
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI ::CompoundTag serialize(::DimensionType dimensionId) const;
 #endif
     // NOLINTEND
@@ -61,7 +61,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI static ::PendingArea load(::std::string const& key, ::CompoundTag const& tag);
 
     MCAPI static bool validTag(::CompoundTag const& tag);
@@ -71,7 +71,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::mce::UUID           uniqueId,
         ::std::string const&  name,

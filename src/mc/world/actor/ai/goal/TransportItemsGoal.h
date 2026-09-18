@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct GoalId;
 // clang-format on
 
 class TransportItemsGoal : public ::BaseGoal {
@@ -86,6 +87,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TransportItemsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+
     MCAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
 
     MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
@@ -93,6 +96,12 @@ public:
     MCAPI void _reset();
 
     MCAPI void _startCooldown();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

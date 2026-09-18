@@ -12,6 +12,7 @@ class IGameplayUserManagerConnector;
 class ILevelStorageManagerConnector;
 class IServerPlayerSleepManagerConnector;
 class LevelData;
+class LevelEventCoordinator;
 class LevelStorage;
 class PacketSender;
 class WorldClockRegistry;
@@ -51,9 +52,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TickTimeManagerServer(
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&    levelData,
-        ::cereal::ReflectionCtx&                             ctx,
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
+        ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&             levelData,
+        ::cereal::ReflectionCtx&                                      ctx,
+        ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const&          packetSender,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
     );
 
     MCNAPI void _onWakeUpAllPlayers();
@@ -75,9 +77,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&    levelData,
-        ::cereal::ReflectionCtx&                             ctx,
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
+        ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&             levelData,
+        ::cereal::ReflectionCtx&                                      ctx,
+        ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const&          packetSender,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
     );
     // NOLINTEND
 

@@ -25,6 +25,7 @@
 #include "mc/world/actor/player/ServerLocatorBar.h"
 #include "mc/world/actor/player/VanillaWaypointManager.h"
 #include "mc/world/inventory/InventoryMenu.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/Tick.h"
 
@@ -111,6 +112,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                    mMaxChunkRadius;
     ::ll::TypedStorage<1, 1, bool>                                    mIsInitialPlayerLoadHappening;
     ::ll::TypedStorage<1, 1, bool>                                    mIsTeacher;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsExternalCommunicationAllowed;
     ::ll::TypedStorage<1, 1, bool>                                    mLocalPlayerInitialized;
     ::ll::TypedStorage<1, 1, bool>                                    mWaitingForTickingAreasPreload;
     ::ll::TypedStorage<8, 8, ::Tick>                                  mPrevShieldBlockingTick;
@@ -162,7 +164,7 @@ public:
 
     virtual bool isValidTarget(::Actor* attacker) const /*override*/;
 
-    virtual bool swing(::ActorSwingSource swingSource) /*override*/;
+    virtual bool swing(::ActorSwingSource swingSource, ::HandSlot handSlot) /*override*/;
 
     virtual void
     hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots) /*override*/;
@@ -268,6 +270,8 @@ public:
     virtual void onLinkedSlotsChanged() /*override*/;
 
     virtual bool isTeacher() const /*override*/;
+
+    virtual bool isExternalCommunicationAllowed() const /*override*/;
 
     virtual bool isLoading() const /*override*/;
 
@@ -441,7 +445,7 @@ public:
 
     MCAPI bool $isValidTarget(::Actor* attacker) const;
 
-    MCAPI bool $swing(::ActorSwingSource swingSource);
+    MCAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
     MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
 
@@ -545,6 +549,8 @@ public:
     MCAPI void $onLinkedSlotsChanged();
 
     MCAPI bool $isTeacher() const;
+
+    MCAPI bool $isExternalCommunicationAllowed() const;
 
     MCAPI bool $isLoading() const;
 

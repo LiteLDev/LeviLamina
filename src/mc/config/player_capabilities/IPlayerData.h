@@ -18,6 +18,8 @@ public:
     virtual bool isTeacher() const = 0;
 
     virtual bool isOperator() const = 0;
+
+    virtual bool isExternalPlayerCommunicationAllowed() const = 0;
     // NOLINTEND
 };
 

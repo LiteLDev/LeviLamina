@@ -11,6 +11,7 @@
 // clang-format off
 class AABB;
 class BlockSource;
+class CompoundTag;
 class Random;
 class Village;
 // clang-format on
@@ -55,6 +56,10 @@ public:
     );
 
     MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
+
+#ifdef LL_PLAT_S
+    MCAPI void save(::CompoundTag& tag) const;
+#endif
 
     MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
     // NOLINTEND

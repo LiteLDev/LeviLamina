@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/network/services/signaling/MessagePerformance.h"
 
@@ -28,7 +29,7 @@ public:
         ::ll::UntypedStorage<8, 16> mUnke1b276;
         ::ll::UntypedStorage<8, 16> mUnkc4ec43;
         ::ll::UntypedStorage<8, 16> mUnkff686d;
-        ::ll::UntypedStorage<8, 64> mUnk8f7071;
+        ::ll::UntypedStorage<8, 24> mUnk8e645e;
         ::ll::UntypedStorage<1, 1>  mUnk8a6cb0;
         // NOLINTEND
 
@@ -43,8 +44,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk3969f8;
-    ::ll::UntypedStorage<8, 80> mUnkc507e5;
-    ::ll::UntypedStorage<8, 80> mUnk3dedd3;
+    ::ll::UntypedStorage<8, 80> mUnka39c88;
+    ::ll::UntypedStorage<8, 80> mUnk80568d;
     ::ll::UntypedStorage<8, 48> mUnkbcdda6;
     ::ll::UntypedStorage<8, 48> mUnkdc3254;
     ::ll::UntypedStorage<8, 8>  mUnkc75976;
@@ -74,8 +75,7 @@ public:
         ::std::function<void(::mce::UUID, ::MessageTracker::MessageStatus&&)>&& fn
     );
 
-    MCNAPI void
-    add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete, bool isP2P);
+    MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError> add(::std::string const& messageId, bool isP2P);
 
     MCNAPI void messageAccepted(::std::string const& messageId);
 

@@ -16,6 +16,7 @@ struct LevelStartLeaveGameEvent;
 struct LevelTickingAreaFinishedLoadingEvent;
 struct LevelWeatherChangedEvent;
 struct ScriptingWorldInitializeEvent;
+struct WorldClockRestartEvent;
 // clang-format on
 
 struct LevelNotificationEvent : public ::EventVariantImpl<
@@ -27,4 +28,5 @@ struct LevelNotificationEvent : public ::EventVariantImpl<
                                     ::LevelStartLeaveGameEvent const,
                                     ::LevelGameRuleChangeEvent const,
                                     ::ScriptingWorldInitializeEvent const,
-                                    ::LevelWeatherChangedEvent const> {};
+                                    ::LevelWeatherChangedEvent const,
+                                    ::WorldClockRestartEvent const> {};

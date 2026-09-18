@@ -30,6 +30,14 @@ public:
     MCAPI ::ScoreboardId const&
     convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<::ScoreboardId> getAllScoreboardIds() const;
+
+    MCAPI ::ScoreboardId const& getScoreboardId(::ActorUniqueID const& euid) const;
+#endif
+
     MCAPI ::ScoreboardId const& getScoreboardId(::std::string const& fakePlayerName) const;
+
+    MCAPI bool shouldConvertFakePlayer(::PlayerScoreboardId const& playerId, ::std::string const& displayName);
     // NOLINTEND
 };

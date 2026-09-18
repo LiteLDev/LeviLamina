@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldJoinedRecord() = default;
+    virtual ~WorldJoinedRecord();
 
     virtual ::World::WorldJoinedRecordType getWorldJoinedRecordType() const = 0;
 
@@ -43,12 +43,26 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI WorldJoinedRecord(::std::string const& name, ::GameType gameType, bool isEditorWorld);
+
+    MCAPI ::Json::Value serialize() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& name, ::GameType gameType, bool isEditorWorld);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

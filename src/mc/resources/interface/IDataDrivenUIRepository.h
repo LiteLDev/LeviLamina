@@ -41,6 +41,8 @@ public:
 
     virtual void load(::ResourcePackManager const& resourcePackManager) = 0;
 
+    virtual bool hasRootDefinition(::std::string const& identifier) const = 0;
+
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerTextField>,

@@ -28,13 +28,12 @@ public:
 
 public:
     // prevent constructor by default
+    RouterLocation(RouterLocation const&);
     RouterLocation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouterLocation(::OreUI::RouterLocation const&);
-
     MCAPI RouterLocation(
         ::std::weak_ptr<::AbstractScene> scene,
         ::std::string const&             url,
@@ -47,8 +46,6 @@ public:
     MCFOLD ::std::string const& getPath() const;
 
     MCFOLD ::std::string const& getQuery() const;
-
-    MCAPI ::std::unordered_map<::std::string, ::std::string> getTelemetryEventProperties() const;
 
     MCAPI ::std::string getTelemetryId() const;
 
@@ -68,8 +65,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RouterLocation const&);
-
     MCAPI void* $ctor(
         ::std::weak_ptr<::AbstractScene> scene,
         ::std::string const&             url,

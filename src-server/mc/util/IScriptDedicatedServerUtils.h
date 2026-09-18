@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/PlayerPermissionLevel.h"
+
 // auto generated forward declare list
 // clang-format off
 struct SnapshotFilenameAndLength;
@@ -21,6 +24,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 40> mUnk8e9055;
         ::ll::UntypedStorage<8, 40> mUnkfd5ece;
+        ::ll::UntypedStorage<1, 1>  mUnk98342d;
         // NOLINTEND
 
     public:
@@ -51,8 +55,6 @@ public:
     // NOLINTBEGIN
     virtual ~IScriptDedicatedServerUtils() = default;
 
-    virtual void stopServer() = 0;
-
     virtual bool saveHold() = 0;
 
     virtual bool saveResume() = 0;
@@ -77,7 +79,13 @@ public:
 
     virtual bool reloadPermissionsFile() = 0;
 
-    virtual ::std::vector<::std::string> getOperatorXuids() const = 0;
+    virtual ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& getPermissions() const = 0;
+
+    virtual bool setPermissions(::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& permissionData) = 0;
+
+    virtual bool setPlayerPermission(::std::string const& xuid, ::PlayerPermissionLevel permission) = 0;
+
+    virtual void stopServer() = 0;
 
     virtual bool reloadScriptConfig() = 0;
 

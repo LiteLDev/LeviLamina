@@ -36,9 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
-
-    MCAPI ::std::vector<::ItemStack> getComplexItems();
+#endif
 
     MCAPI void setupDefault();
 
@@ -65,11 +65,5 @@ public:
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

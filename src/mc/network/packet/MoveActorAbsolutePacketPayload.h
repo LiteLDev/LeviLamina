@@ -9,6 +9,6 @@ struct MoveActorAbsolutePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData> mMoveData;
+    ::ll::TypedStorage<8, 40, ::MoveActorAbsoluteData> mMoveData;
     // NOLINTEND
 };

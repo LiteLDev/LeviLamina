@@ -78,9 +78,7 @@ public:
         ::Vec3 const&      structureNormalizedOrigin
     );
 
-#ifdef LL_PLAT_C
     MCNAPI ~PrefabStructurePositionCalculator();
-#endif
     // NOLINTEND
 
 public:
@@ -94,9 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

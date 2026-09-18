@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 struct ItemRegistryComplexAlias;
 namespace FlatteningUtils { struct Instance; }
 // clang-format on
@@ -16,6 +17,8 @@ namespace FlatteningUtils::Wood {
 // functions
 // NOLINTBEGIN
 MCAPI ::FlatteningUtils::Instance get();
+
+MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 
 MCAPI ::ItemRegistryComplexAlias getItemComplexAliasCallback();
 

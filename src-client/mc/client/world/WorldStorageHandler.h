@@ -188,7 +188,7 @@ public:
         ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     );
 
-    MCAPI ::World::IWorldStorageHandler::ExportWorldStatus $exportWorldStatus() const;
+    MCFOLD ::World::IWorldStorageHandler::ExportWorldStatus $exportWorldStatus() const;
 
     MCAPI void $updateWorldIcon(
         ::World::WorldID const&                        worldId,

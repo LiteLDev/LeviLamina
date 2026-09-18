@@ -30,14 +30,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ActorAnimationPlayer() = default;
+#else // LL_PLAT_C
+    virtual ~ActorAnimationPlayer();
+#endif
 
+#ifdef LL_PLAT_S
     virtual void applyToPose(
         ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight
     ) = 0;
+#else // LL_PLAT_C
+    virtual void applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap,
+        float                                                                             blendWeight
+    ) = 0;
+#endif
 
     virtual void resetAnimation() = 0;
 
@@ -60,6 +73,14 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
@@ -76,5 +97,11 @@ public:
 #endif
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

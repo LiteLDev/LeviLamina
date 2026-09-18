@@ -19,9 +19,9 @@ class CurrentRealmQuery : public ::OreUI::QueryBase<::OreUI::CurrentRealmQuery> 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<int64>>> mID;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                   mIsRealmOwner;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mRealmIDChangedToken;
+    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<int64>, ::std::optional<int64>>> mID;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                     mIsRealmOwner;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                    mRealmIDChangedToken;
     // NOLINTEND
 
 public:

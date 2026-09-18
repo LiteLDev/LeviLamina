@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -18,7 +19,7 @@ class WritableBookItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual bool requiresInteract() const /*override*/;
 
@@ -66,7 +67,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
     MCFOLD bool $requiresInteract() const;
 

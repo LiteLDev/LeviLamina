@@ -12,10 +12,12 @@ class SaleInfoObject : public ::OreUI::PropertyObject<::OreUI::SaleInfoObject> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>>>           mSalePrice;
-    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>>>        mDiscount;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mStartDate;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mExpirationDate;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>, ::std::optional<int>>>       mSalePrice;
+    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>, ::std::optional<double>>> mDiscount;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mStartDate;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mExpirationDate;
     // NOLINTEND
 };
 

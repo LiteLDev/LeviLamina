@@ -30,7 +30,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& route, ::OreUI::RouteHistoryAction const action);
+    MCFOLD void* $ctor(::std::string const& route, ::OreUI::RouteHistoryAction const action);
     // NOLINTEND
 
 public:

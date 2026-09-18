@@ -54,6 +54,8 @@ MCAPI ::Scripting::Version const& V1_9_0();
 
 MCAPI ::Scripting::Version const& V2_0_0();
 
+MCAPI ::Scripting::Version const& V2_10_0();
+
 MCAPI ::Scripting::Version const& V2_1_0();
 
 MCAPI ::Scripting::Version const& V2_2_0();

@@ -70,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 

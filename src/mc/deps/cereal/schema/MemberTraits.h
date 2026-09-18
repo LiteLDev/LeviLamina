@@ -10,10 +10,9 @@ enum class MemberTraits : ushort {
     IsRequired                = 1 << 0,
     IsDefaultSetter           = 1 << 1,
     IsMemberLevelSetterGetter = 1 << 2,
-    IsKeyedSetterGetter       = 1 << 3,
-    IsConstSelector           = 1 << 4,
-    HasDefaultValue           = 1 << 5,
-    IsPatternMember           = 1 << 6,
+    IsConstSelector           = 1 << 3,
+    HasDefaultValue           = 1 << 4,
+    IsPatternMember           = 1 << 5,
     EnttEnumAsBitmask         = IsRequired | IsPatternMember,
 };
 

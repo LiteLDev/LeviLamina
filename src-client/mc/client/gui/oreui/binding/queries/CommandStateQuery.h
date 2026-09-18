@@ -25,12 +25,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::InvocationState>>  mState;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::InvocationResult>> mResult;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uchar>>                     mProgress;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>>>      mError;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mChangeToken;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mRemoveToken;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::InvocationState, ::OreUI::InvocationState>>   mState;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::InvocationResult, ::OreUI::InvocationResult>> mResult;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uchar, uchar>>                                         mProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint, uint>>                                 mInvocationCount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>, ::std::optional<int>>> mError;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                mChangeToken;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                mRemoveToken;
     // NOLINTEND
 
 public:
@@ -53,14 +54,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::Detail::InvocationStateTracker& tracker, ::OreUI::Detail::IdType const& id);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

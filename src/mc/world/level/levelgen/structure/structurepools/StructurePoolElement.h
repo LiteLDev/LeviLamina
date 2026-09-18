@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/once_flag.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/PostProcessSettings.h"
 #include "mc/world/level/levelgen/structure/Projection.h"
@@ -121,7 +120,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>> mMetadata;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                         mMetadataMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                        mMetadataMutex;
     ::ll::TypedStorage<4, 4, ::brstd::once_flag>                                                   mTemplateOnceFlag;
     ::ll::TypedStorage<8, 56, ::std::optional<::StructurePoolElement::LazyTemplate>>               mTemplate;
     ::ll::TypedStorage<8, 8, uint64>                                                               mMetadataKey;
@@ -244,7 +243,9 @@ public:
 
     MCAPI uint64 _getMetadataKey() const;
 
+#ifdef LL_PLAT_S
     MCAPI void setId(::JigsawStructureUtils::StructureElementId id);
+#endif
     // NOLINTEND
 
 public:

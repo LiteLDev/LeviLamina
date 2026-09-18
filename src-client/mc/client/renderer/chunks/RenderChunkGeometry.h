@@ -101,6 +101,7 @@ public:
         ::RenderChunkBuilder&           builder,
         ::mce::BufferResourceService&   bufferResourceService,
         bool                            isBuilding,
+        bool                            alreadyHadGeometry,
         ::dragon::RenderMetadata const& renderMetadata,
         bool                            useSplitStream
     );

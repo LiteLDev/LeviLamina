@@ -26,34 +26,6 @@ public:
         ::ll::TypedStorage<1, 3, ::std::optional<::Bedrock::LogLevel>> mLogLevel;
         ::ll::TypedStorage<4, 8, ::std::optional<::LogAreaID>>         mLogArea;
         // NOLINTEND
-
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        Context();
-
-#endif
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI Context(
-            ::std::string                        value,
-            ::std::optional<::Bedrock::LogLevel> logLevel,
-            ::std::optional<::LogAreaID>         logArea
-        );
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void*
-        $ctor(::std::string value, ::std::optional<::Bedrock::LogLevel> logLevel, ::std::optional<::LogAreaID> logArea);
-#endif
-        // NOLINTEND
     };
 
     struct Frame {

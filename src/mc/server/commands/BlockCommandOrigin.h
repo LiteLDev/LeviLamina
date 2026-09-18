@@ -81,15 +81,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockCommandOrigin(::BlockSource& region, ::BlockPos const& pos);
-
     MCAPI ::std::string _getName(::BlockSource& region) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

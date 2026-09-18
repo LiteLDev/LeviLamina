@@ -10,7 +10,6 @@ class CollisionBoxComponent;
 class DimensionStateComponent;
 class EntityId;
 class EntityRegistry;
-class FreezingComponent;
 class HitboxComponent;
 class JumpControlComponent;
 class LoadingStateComponent;
@@ -38,7 +37,7 @@ struct BoatFlagComponent;
 struct BoatMovementComponent;
 struct BoatPaddleComponent;
 struct CanAlwaysAutoStepFlagComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct ChunkPositionComponent;
 struct ClientInputLockComponent;
 struct CollidableMobFlagComponent;
@@ -50,7 +49,8 @@ struct DepenetrationComponent;
 struct DimensionTypeComponent;
 struct FallDistanceComponent;
 struct FallFlyTicksComponent;
-struct FreezeImmuneFlagComponent;
+struct FreezingComponent;
+struct FreezingImmuneFromEquipmentComponent;
 struct HasTeleportedFlagComponent;
 struct HorizontalCollisionFlagComponent;
 struct HorseFlagComponent;
@@ -244,7 +244,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 904> mUnka2c82d;
+    ::ll::UntypedStorage<8, 904> mUnka429f8;
     // NOLINTEND
 
 public:

@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20 {
 
 struct HoldGroundGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -21,12 +16,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                               mBroadcast;
     ::ll::TypedStorage<4, 4, float>                                              mBroadcastRange;
     ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mWithinRadiusEvent;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

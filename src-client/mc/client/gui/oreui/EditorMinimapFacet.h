@@ -155,8 +155,9 @@ public:
 
     MCAPI ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData> const& getGlobalMarkers();
 
-    MCAPI ::std::unordered_map<::std::string, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>> const&
-    getMarkers();
+    MCFOLD ::std::
+        unordered_map<::std::string, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>> const&
+        getMarkers();
 
     MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData> const& getMinimaps();
 

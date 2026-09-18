@@ -16,5 +16,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                 mPitch;
     ::ll::TypedStorage<4, 4, int>                                   mLoopCount;
     ::ll::TypedStorage<8, 16, ::std::optional<::ServerSoundHandle>> mServerSoundHandle;
+    ::ll::TypedStorage<1, 1, bool>                                  mBypassListenerRangeCheck;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                mPlaybackPositionSeconds;
     // NOLINTEND
 };

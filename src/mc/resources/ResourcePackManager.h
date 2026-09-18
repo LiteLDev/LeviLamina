@@ -7,7 +7,6 @@
 #include "mc/deps/core/resource/ResourceLoader.h"
 #include "mc/deps/core/resource/ResourcePackStackType.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/move_only_function.h"
 
@@ -26,7 +25,6 @@ class ResourceLocationPair;
 class ResourcePack;
 class ResourcePackListener;
 class ResourcePackStack;
-class TaskGroup;
 struct PackIdVersion;
 struct StreamableAssetSource;
 namespace Core { class Path; }
@@ -44,7 +42,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackStack>>                          mGlobalStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackStack>>                          mTreatmentStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackStack>>                          mBaseGameStack;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ResourcePackStack>>                         mFullStack;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackStack>>                          mFullStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSourceReport>>                           mLoadingReport;
     ::ll::TypedStorage<8, 32, ::std::string>                                                  mLocaleCode;
     ::ll::TypedStorage<1, 1, bool>                                                            mInitializing;
@@ -52,7 +50,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                            mUseGlobalPackStack;
     ::ll::TypedStorage<1, 1, bool>                                                            mGameplayResourcesLoaded;
     ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                             mFullStackAccess;
-    ::ll::TypedStorage<4, 4, uint>                                                            mComposeGeneration;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const>>     mContentTierManager;
     ::ll::TypedStorage<8, 24, ::SemVersion> mFullStackMinEngineVersion_DEPRECATED_DONOTUSE;
     // NOLINTEND
@@ -127,27 +124,20 @@ public:
         bool                                                              needsToInitialize
     );
 
-#ifdef LL_PLAT_C
     MCAPI void _calculateMinEngineVersionFromFullStack();
-#endif
 
     MCAPI void _composeFullStack();
-
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Threading::Async<void> _composeFullStackAsync(::TaskGroup& taskGroup);
-#endif
 
     MCAPI bool _doStackOperation(
         ::ResourcePackStackType                                                          stackType,
         ::brstd::move_only_function<bool(::std::unique_ptr<::ResourcePackStack>*) const> operation
     );
 
-#ifdef LL_PLAT_C
     MCAPI void _updateLanguageSubpacks();
 
+#ifdef LL_PLAT_C
     MCAPI ::ContentTierIncompatibleReason canSupportPacks();
-
-    MCAPI void clearPackReports();
+#endif
 
     MCAPI int composeFullStack(
         ::ResourcePackStack&       output,
@@ -155,6 +145,7 @@ public:
         ::ResourcePackStack const& levelStack
     ) const;
 
+#ifdef LL_PLAT_C
     MCAPI void ensureSupportedSubpacks();
 
     MCAPI ::std::vector<::ResourceLocationPair> findAllTexturesInUse() const;
@@ -168,8 +159,10 @@ public:
     MCAPI ::std::vector<::PackInstance> getIncompatiblePacks() const;
 #endif
 
-    MCAPI ::PackInstance*
-    getPackForResource(::Core::Path const& resourceName, ::std::optional<::mce::UUID> const& packId) const;
+    MCAPI ::std::vector<::PackInstance> getPacksWhereAssetExtractionNotViable(
+        ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
+        ::std::string const&                                     sourceContext
+    ) const;
 
     MCAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
 
@@ -207,6 +200,8 @@ public:
     ) const;
 
     MCAPI void onLanguageChanged();
+
+    MCAPI void releasePreloadCacheHandles();
 #endif
 
     MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);

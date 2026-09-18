@@ -29,6 +29,7 @@
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/inventory/InventoryMenu.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
@@ -179,6 +180,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::LocalPlayer::RegionListener*>> mRegionListeners;
     ::ll::TypedStorage<1, 1, bool>                                           mDamagedByMobThisFrame;
     ::ll::TypedStorage<1, 1, bool>                                           mIsTeacher;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsExternalCommunicationAllowed;
     ::ll::TypedStorage<1, 1, bool>                                           mHasBeenInitialized;
     ::ll::TypedStorage<1, 1, bool>                                           mPrevTransitionBlocking;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mInventorySearchString;
@@ -311,7 +313,7 @@ public:
 
     virtual void handleInsidePortal(::BlockPos const& portalPos) /*override*/;
 
-    virtual bool swing(::ActorSwingSource swingSource) /*override*/;
+    virtual bool swing(::ActorSwingSource swingSource, ::HandSlot handSlot) /*override*/;
 
     virtual void setSneaking(bool _isSneaking) /*override*/;
 
@@ -374,6 +376,8 @@ public:
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
     virtual bool isTeacher() const /*override*/;
+
+    virtual bool isExternalCommunicationAllowed() const /*override*/;
 
     virtual void sendInventoryTransaction(::InventoryTransaction const& transaction) const /*override*/;
 
@@ -455,8 +459,6 @@ public:
     MCAPI void handleArmorDamage(::ArmorSlotAndDamagePair const& armorSlotAndDamage);
 
     MCAPI void hurtTo(int newHealth);
-
-    MCAPI void initializeItemStackNetManager(bool enableItemStackNetManager);
 
     MCAPI void localPlayerTurn(::Vec2 const& deltaRot);
 
@@ -599,7 +601,7 @@ public:
 
     MCAPI void $handleInsidePortal(::BlockPos const& portalPos);
 
-    MCAPI bool $swing(::ActorSwingSource swingSource);
+    MCAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
     MCAPI void $setSneaking(bool _isSneaking);
 
@@ -657,6 +659,8 @@ public:
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
     MCAPI bool $isTeacher() const;
+
+    MCAPI bool $isExternalCommunicationAllowed() const;
 
     MCAPI void $sendInventoryTransaction(::InventoryTransaction const& transaction) const;
 

@@ -42,6 +42,8 @@ public:
         ::CommandOutputMessageType                     type
     );
 
+    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
+
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
     MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
@@ -52,6 +54,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::optional<::std::string> _mDataGetter(::CommandOutput const& payload);
+
     MCAPI static void _mDataSetter(::CommandOutput& payload, ::std::optional<::std::string> jsonString);
     // NOLINTEND
 

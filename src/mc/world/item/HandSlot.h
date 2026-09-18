@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class HandSlot : int {
+enum class HandSlot : uchar {
     Mainhand = 0,
     Offhand  = 1,
     Count    = 2,

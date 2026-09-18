@@ -21,9 +21,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mPath;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mQuery;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mFragment;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mPath;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mQuery;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mFragment;
     // NOLINTEND
 
 public:

@@ -16,7 +16,8 @@ class ImmersiveReaderToken : public ::edu::auth::CredentialsObserver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mTokenString;
+    ::ll::TypedStorage<8, 32, ::std::string> mRawTokenString;
+    ::ll::TypedStorage<8, 32, ::std::string> mSubDomain;
     ::ll::TypedStorage<8, 128, ::WebToken>   mToken;
     // NOLINTEND
 

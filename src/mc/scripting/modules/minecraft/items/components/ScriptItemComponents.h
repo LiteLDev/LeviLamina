@@ -4,13 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentReader; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { class ScriptItemComponent; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -42,6 +47,19 @@ public:
         ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
         ::Scripting::Version const&                              scriptingVersion,
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
+    );
+
+    MCAPI ::std::vector<::std::string_view> getSupportedItemComponentIds(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        bool                                                                         includeCustom
+    );
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
+    tryCreateComponent(
+        ::std::string_view                                                             componentName,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        bool                                                                           includeCustom
     );
 
     MCAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory> const&

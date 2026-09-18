@@ -14,8 +14,8 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct AutoClimbTravelFlagComponent;
-struct CanStandOnSnowFlagComponent;
-struct HasLightweightFamilyFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -26,26 +26,26 @@ namespace MobMovementClimb {
 MCAPI void forAutoClimbSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
 MCAPI void tickAutoClimbingMob(
-    ::StrictEntityContext const&                          entity,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily,
-    ::ActorDataFlagComponent const&                       synchedActorData,
-    ::AABBShapeComponent const&                           aabbShape,
-    ::StateVectorComponent&                               stateVector,
-    ::EntityModifier<::AutoClimbTravelFlagComponent>      climbModifier,
-    ::IConstBlockSource const&                            region
+    ::StrictEntityContext const&                                   entity,
+    ::Optional<::CanStandOnPowderSnowComponent const>              canStandOnPowderSnow,
+    ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const> canStandOnPowderSnowFromEquipment,
+    ::ActorDataFlagComponent const&                                synchedActorData,
+    ::AABBShapeComponent const&                                    aabbShape,
+    ::StateVectorComponent&                                        stateVector,
+    ::EntityModifier<::AutoClimbTravelFlagComponent>               climbModifier,
+    ::IConstBlockSource const&                                     region
 );
 
 MCAPI void tickAutoClimbingMobInLava(
-    ::StrictEntityContext const&                          entity,
-    ::NavigationComponent const&                          navigation,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily,
-    ::ActorDataFlagComponent const&                       synchedActorData,
-    ::AABBShapeComponent const&                           aabbShape,
-    ::StateVectorComponent&                               stateVector,
-    ::EntityModifier<::AutoClimbTravelFlagComponent>      climbModifier,
-    ::IConstBlockSource const&                            region
+    ::StrictEntityContext const&                                   entity,
+    ::NavigationComponent const&                                   navigation,
+    ::Optional<::CanStandOnPowderSnowComponent const>              canStandOnPowderSnow,
+    ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const> canStandOnPowderSnowFromEquipment,
+    ::ActorDataFlagComponent const&                                synchedActorData,
+    ::AABBShapeComponent const&                                    aabbShape,
+    ::StateVectorComponent&                                        stateVector,
+    ::EntityModifier<::AutoClimbTravelFlagComponent>               climbModifier,
+    ::IConstBlockSource const&                                     region
 );
 // NOLINTEND
 

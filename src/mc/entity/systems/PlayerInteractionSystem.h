@@ -5,8 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
+class Interaction;
 class Player;
 // clang-format on
 
@@ -25,8 +24,7 @@ public:
         // NOLINTBEGIN
         virtual ~InteractionMappingBase() = default;
 
-        virtual ::InteractionResult
-        getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction) const = 0;
+        virtual ::Interaction getInteraction(::Actor& actor, ::Player& player) const = 0;
         // NOLINTEND
     };
 

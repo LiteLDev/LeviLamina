@@ -12,7 +12,6 @@ class StrictEntityContext;
 struct InterpolateMovementNeededComponent;
 struct NeedSetPreviousPositionFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class SetPreviousPositionSystem {
@@ -28,7 +27,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _doSetPreviousPositionSystem(::StrictEntityContext const&, ::StateVectorComponent& stateVectorComponent);
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

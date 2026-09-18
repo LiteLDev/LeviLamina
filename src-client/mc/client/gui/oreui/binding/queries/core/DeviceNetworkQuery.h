@@ -29,13 +29,13 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mMobileDataOnceToken;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mMobileDataModalToken;
     ::ll::TypedStorage<8, 8, uint64>                                           mFrameCount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                        mIsOnline;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                        mCellularDataFee;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                        mOnlyCellularAvailable;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                        mSupportsManualAddedServers;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                        mIsLANAllowed;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                        mIsAdHocModeActive;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                         mDefaultNetworkMaxPlayers;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                  mIsOnline;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                  mCellularDataFee;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                  mOnlyCellularAvailable;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                  mSupportsManualAddedServers;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                  mIsLANAllowed;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                  mIsAdHocModeActive;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                    mDefaultNetworkMaxPlayers;
     // NOLINTEND
 
 public:

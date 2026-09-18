@@ -50,7 +50,6 @@ class ActorDefinitionDescriptor;
 class ActorDefinitionDiffList;
 class ActorDefinitionGroup;
 class ActorHurtResult;
-class ActorInteraction;
 class ActorRuntimeID;
 class AnimationComponent;
 class Attribute;
@@ -69,7 +68,7 @@ class FishingHook;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ILevel;
-class InteractionResult;
+class Interaction;
 class ItemActor;
 class ItemDescriptor;
 class ItemStack;
@@ -390,8 +389,6 @@ public:
 
     virtual ::ActorUniqueID getSourceUniqueID() const;
 
-    virtual bool canFreeze() const;
-
     virtual ::AABB getLiquidAABB(::SharedTypes::v1_26_20::MaterialType const liquidType) const;
 
     virtual void handleInsidePortal(::BlockPos const& portalPos);
@@ -446,7 +443,7 @@ public:
 
     virtual void openContainerComponent(::Player& player);
 
-    virtual bool swing(::ActorSwingSource swingSource);
+    virtual bool swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
     virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
@@ -460,8 +457,7 @@ public:
 
     virtual bool drop(::ItemStack const& item, bool const randomly);
 
-    virtual ::InteractionResult
-    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location);
 
     virtual bool canDestroyBlock(::Block const& block) const;
 
@@ -696,6 +692,8 @@ public:
 
     MCAPI int getInventorySize() const;
 
+    MCAPI ::ItemStack const& getItemInHandSlot(::HandSlot slot) const;
+
     MCAPI ::ActorUniqueID getLeashHolder() const;
 
     MCAPI uint64 getLevelTimeStamp() const;
@@ -804,6 +802,8 @@ public:
 
     MCAPI bool isAdventure() const;
 
+    MCAPI bool isAngry() const;
+
     MCAPI bool isBaby() const;
 
     MCAPI bool isCreative() const;
@@ -813,6 +813,8 @@ public:
     MCAPI bool isImmersedInWater() const;
 
     MCAPI bool isInClouds() const;
+
+    MCAPI bool isInLove() const;
 
     MCAPI bool isInPrecipitation() const;
 
@@ -832,8 +834,6 @@ public:
 
     MCAPI bool isJumping() const;
 
-    MCAPI bool isLayingDown() const;
-
     MCAPI bool isLeashed() const;
 
     MCAPI bool isLocalPlayer() const;
@@ -846,13 +846,13 @@ public:
 
     MCAPI bool isPlayer() const;
 
+    MCAPI bool isResting() const;
+
     MCAPI bool isRiding(::Actor* targetVehicle) const;
 
     MCAPI bool isSilent() const;
 
     MCAPI bool isSitting() const;
-
-    MCAPI bool isSneaking() const;
 
     MCAPI bool isSpectator() const;
 
@@ -861,8 +861,6 @@ public:
     MCAPI bool isSurvival() const;
 
     MCAPI bool isSwimmer() const;
-
-    MCAPI bool isSwimming() const;
 
     MCAPI bool isTame() const;
 
@@ -1235,11 +1233,7 @@ public:
 
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-#ifdef LL_PLAT_S
-    MCFOLD ::HashedString const& $getActorRendererId() const;
-#else // LL_PLAT_C
     MCAPI ::HashedString const& $getActorRendererId() const;
-#endif
 
     MCAPI void $despawn();
 
@@ -1268,8 +1262,6 @@ public:
     MCAPI ::HashedString const& $queryEntityRenderer() const;
 
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
-
-    MCFOLD bool $canFreeze() const;
 
     MCAPI ::AABB $getLiquidAABB(::SharedTypes::v1_26_20::MaterialType const liquidType) const;
 
@@ -1325,7 +1317,7 @@ public:
 
     MCAPI void $openContainerComponent(::Player& player);
 
-    MCFOLD bool $swing(::ActorSwingSource swingSource);
+    MCFOLD bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
     MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
@@ -1339,8 +1331,7 @@ public:
 
     MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
-    MCAPI ::InteractionResult
-    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
 
     MCFOLD bool $canDestroyBlock(::Block const& block) const;
 

@@ -40,61 +40,28 @@ public:
     // NOLINTBEGIN
     virtual ~WorldCloudSyncer_GameCore() /*override*/ = default;
 
-    virtual void syncWorld(
-        ::World::WorldID const&                                     id,
-        ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete
-    ) /*override*/;
+    virtual void
+    syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) /*override*/;
 
-    virtual ::Core::ContainerSyncState getSyncState(::World::WorldID const& id) const /*override*/;
+    virtual void
+    uploadWorld(::World::WorldID const&, bool, bool, ::std::function<void(::World::WorldCloudSyncResult)> const&) const
+        /*override*/;
 
-    virtual ::std::optional<uint64> getConsumedRemoteStorageQuota(::World::WorldID const& id) const /*override*/;
+    virtual ::Core::ContainerSyncState getSyncState(::World::WorldID const&) const /*override*/;
+
+    virtual ::std::optional<uint64> getConsumedRemoteStorageQuota(::World::WorldID const&) const /*override*/;
 
     virtual void setLocalOnly(
-        ::World::WorldID const&                                     id,
-        bool                                                        forceLocalOnly,
-        ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete
+        ::World::WorldID const&,
+        bool,
+        ::std::function<void(::World::WorldCloudSyncResult)> const&
     ) /*override*/;
 
     virtual void setCloudSaved(
-        ::World::WorldID const&                                     id,
-        bool                                                        isRetry,
-        ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete
+        ::World::WorldID const&,
+        bool,
+        ::std::function<void(::World::WorldCloudSyncResult)> const&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _isSharedFolderWorld(::World::WorldID const& id) const;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void
-    $syncWorld(::World::WorldID const& id, ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete);
-
-    MCAPI ::Core::ContainerSyncState $getSyncState(::World::WorldID const& id) const;
-
-    MCAPI ::std::optional<uint64> $getConsumedRemoteStorageQuota(::World::WorldID const& id) const;
-
-    MCAPI void $setLocalOnly(
-        ::World::WorldID const&                                     id,
-        bool                                                        forceLocalOnly,
-        ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete
-    );
-
-    MCAPI void $setCloudSaved(
-        ::World::WorldID const&                                     id,
-        bool                                                        isRetry,
-        ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

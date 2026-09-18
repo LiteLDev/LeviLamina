@@ -47,14 +47,14 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::OreUI::DeviceStorageInformationQuery::ThrottledUpdater> mStorageUpdater;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mDeleteContentSubscription;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                 mIsUsingExternalStorage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                 mIsUsingAppDataStorage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>                               mStorageSize;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>                               mStorageUsed;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                        mStorageAvailableSize;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                 mSupportsSizeQuery;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                 mIsStorageFull;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                 mIsStorageLow;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsUsingExternalStorage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsUsingAppDataStorage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64, uint64>>                       mStorageSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64, uint64>>                       mStorageUsed;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>         mStorageAvailableSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mSupportsSizeQuery;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsStorageFull;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsStorageLow;
     // NOLINTEND
 
 public:

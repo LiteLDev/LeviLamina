@@ -7,23 +7,26 @@
 
 // auto generated forward declare list
 // clang-format off
-class IPackTelemetry;
+class I18n;
+class IPackManifestFactoryImpl;
 class PackAccessStrategy;
 class PackCapabilityRegistry;
 class PackManifest;
 class PackReport;
 class ResourceLocation;
 class SubpackInfoCollection;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class PackManifestFactory : public ::IPackManifestFactory {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkf4e802;
     ::ll::UntypedStorage<8, 8>  mUnk848295;
     ::ll::UntypedStorage<8, 16> mUnk6440d6;
-    ::ll::UntypedStorage<8, 8>  mUnk89c744;
     ::ll::UntypedStorage<8, 8>  mUnk7afdc0;
+    ::ll::UntypedStorage<8, 8>  mUnke128bf;
     // NOLINTEND
 
 public:
@@ -35,11 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~PackManifestFactory() /*override*/;
-#else // LL_PLAT_C
     virtual ~PackManifestFactory() /*override*/ = default;
-#endif
 
     virtual ::std::unique_ptr<::PackManifest> create(
         ::PackAccessStrategy&     accessStrategy,
@@ -52,7 +51,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackManifestFactory(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
+    MCNAPI PackManifestFactory(
+        ::PackCapabilityRegistry const&               packCapabilityRegistry,
+        ::std::unique_ptr<::IPackManifestFactoryImpl> impl,
+        ::std::unique_ptr<::cereal::ReflectionCtx>    context,
+        ::I18n&                                       loc
+    );
     // NOLINTEND
 
 public:
@@ -68,15 +72,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
-#endif
+    MCNAPI void* $ctor(
+        ::PackCapabilityRegistry const&               packCapabilityRegistry,
+        ::std::unique_ptr<::IPackManifestFactoryImpl> impl,
+        ::std::unique_ptr<::cereal::ReflectionCtx>    context,
+        ::I18n&                                       loc
+    );
     // NOLINTEND
 
 public:

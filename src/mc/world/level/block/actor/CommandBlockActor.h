@@ -12,7 +12,6 @@
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
-class CommandBlock;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
@@ -73,23 +72,17 @@ public:
     // NOLINTBEGIN
     MCAPI CommandBlockActor(::BlockPos const& pos, ::CommandBlockMode mode);
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void _setAutomatic(::BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
 #endif
 
-    MCAPI ::CommandBlock const* getCommandBlock(::BlockSource& region) const;
-
     MCAPI bool getConditionalMode(::BlockSource& region) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::string getLastOutput() const;
-#endif
 
     MCAPI bool markConditionMet(::BlockSource& region);
 
-#ifdef LL_PLAT_C
     MCAPI bool performCommand(::BlockSource& region);
 
+#ifdef LL_PLAT_S
     MCAPI void setAutomatic(::BlockSource& region, bool automatic, ::CommandBlockMode oldMode);
 #endif
 

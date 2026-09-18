@@ -116,6 +116,8 @@ public:
 
     MCNAPI void _handleOnConnected(::std::string const& activeSubProtocol);
 
+    MCNAPI void _receive(::std::string const& payload);
+
     MCNAPI void _send(::std::string const& messageBody);
 
     MCNAPI ::WSConnectionResult
@@ -128,8 +130,6 @@ public:
         ::CodeBuilder::EncryptionCipherMode cipherMode,
         ::std::string&
     );
-
-    MCNAPI void receive(::std::string const& payload);
 
 #ifdef LL_PLAT_C
     MCNAPI void setLocalConnectionHandler(::std::function<void(::std::string const&)> sendHandler);

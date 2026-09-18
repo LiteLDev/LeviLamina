@@ -70,7 +70,7 @@ public:
 
     MCAPI bool getEntitiesDropLoot() const;
 
-    MCFOLD bool getFireSpreads() const;
+    MCAPI bool getFireSpreads() const;
 
     MCAPI bool getFriendlyFireEnabled() const;
 
@@ -84,7 +84,7 @@ public:
 
     MCAPI bool getMobsDropLoot() const;
 
-    MCFOLD bool getNaturalRegeneration() const;
+    MCAPI bool getNaturalRegeneration() const;
 
     MCFOLD int getPlayerWaypointsMode() const;
 

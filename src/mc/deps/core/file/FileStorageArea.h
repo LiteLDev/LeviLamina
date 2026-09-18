@@ -16,7 +16,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileIndexLru; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class FlatFileManifestTracker; }
@@ -210,7 +209,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::BasicLockbox<::std::vector<::Core::FileStats*>, ::Bedrock::Threading::Mutex>&
+    MCAPI static ::Bedrock::Threading::BasicLockbox<::std::vector<::Core::FileStats*>, ::std::mutex>&
     sStorageAreaFileStats();
 
     MCAPI static ::Core::StorageAreasTree& sStorageAreas();

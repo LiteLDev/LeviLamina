@@ -4,10 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/effect/MobEffectInstance.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/ResolvedItemIconInfo.h"
-#include "mc/world/item/alchemy/Potion.h"
+#include "mc/world/item/alchemy/PotionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,13 +26,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::ResolvedItemIconInfo> mIconInfo;
-    ::ll::TypedStorage<8, 136, ::MobEffectInstance>   mMobEffect;
+    ::ll::TypedStorage<8, 144, ::MobEffectInstance>   mMobEffect;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Potion::PotionType getPotionType() const;
+    virtual ::PotionType getPotionType() const;
 
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
@@ -48,7 +49,7 @@ public:
 
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const /*override*/;
 
@@ -60,7 +61,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::PotionType $getPotionType() const;
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
@@ -77,7 +78,7 @@ public:
 
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const;
 

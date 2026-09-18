@@ -10,6 +10,8 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Mob;
+struct GoalId;
 // clang-format on
 
 class RaidGardenGoal : public ::BaseMoveToBlockGoal {
@@ -27,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RaidGardenGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -40,6 +46,18 @@ public:
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RaidGardenGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

@@ -8,8 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
+class Interaction;
 class Player;
 struct LeashablePreset;
 // clang-format on
@@ -37,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI LeashableComponent(::LeashableComponent&&);
 
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
 
     MCAPI ::LeashableComponent& operator=(::LeashableComponent&&);
 

@@ -6,11 +6,6 @@
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 
-// auto generated forward declare list
-// clang-format off
-class Abilities;
-// clang-format on
-
 struct RequestPermissionsPacketPayload {
 public:
     // RequestPermissionsPacketPayload inner types define
@@ -32,13 +27,5 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>         mTargetPlayerId;
     ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel> mPlayerPermissions;
     ::ll::TypedStorage<2, 2, ushort>                  mCustomPermissionFlags;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void _setFromAbilities(::Abilities const& abilities);
-#endif
     // NOLINTEND
 };

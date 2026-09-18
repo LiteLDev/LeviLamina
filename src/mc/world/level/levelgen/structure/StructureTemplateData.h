@@ -11,6 +11,7 @@
 // clang-format off
 class CompoundTag;
 class StructureBlockPalette;
+class Tag;
 // clang-format on
 
 class StructureTemplateData {
@@ -22,7 +23,7 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                            mSize;
     ::ll::TypedStorage<4, 12, ::BlockPos>                            mStructureWorldOrigin;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                    mBlockIndices;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>>                    mExtraBlockIndices;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<int>>>   mExtraBlockIndices;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructureBlockPalette>> mPalettes;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTag>>>              mEntityData;
     // NOLINTEND
@@ -85,8 +86,12 @@ public:
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
     MCAPI void setBlockIndices(::std::vector<int> blockIndices);
+    // NOLINTEND
 
-    MCAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _readBlockIndexArray(::Tag const& tag, int formatVersion, ::std::vector<int>& blockIndices);
     // NOLINTEND
 
 public:
@@ -95,6 +100,8 @@ public:
     MCAPI static int const& CURRENT_FORMAT_VERSION();
 
     MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
+
+    MCAPI static int const& NO_BLOCK_INDEX_VALUE();
     // NOLINTEND
 
 public:

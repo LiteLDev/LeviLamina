@@ -6,10 +6,7 @@
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
-#include "mc/options/GraphicsMode.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActor.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,7 +23,6 @@ namespace ScriptModuleMinecraft { class ScriptInputInfo; }
 namespace ScriptModuleMinecraft { class ScriptLocatorBar; }
 namespace ScriptModuleMinecraft { class ScriptPlayerAimAssist; }
 namespace ScriptModuleMinecraft { class ScriptPlayerInputPermissions; }
-namespace ScriptModuleMinecraft { class ScriptSoundInstance; }
 namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptCamera; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
@@ -38,8 +34,6 @@ namespace ScriptModuleMinecraft { struct ScriptScreenDisplay; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct EngineError; }
-namespace Scripting { struct Error; }
 namespace Scripting { struct UnsupportedAPIError; }
 // clang-format on
 
@@ -126,9 +120,6 @@ public:
         ::std::optional<::ServerSoundHandle>                               serverSoundHandle
     );
 
-    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    getChatDisplayName() const;
-
     MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getChatMessagePrefix() const;
 
@@ -138,20 +129,7 @@ public:
     MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getChatNameSuffix() const;
 
-    MCAPI ::Scripting::Result<::CommandPermissionLevel, ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    getCommandPermissionLevel() const;
-
-    MCAPI ::Scripting::Result<::GraphicsMode, ::ScriptModuleMinecraft::ScriptInvalidActorError> getGraphicsMode() const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
-
-    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::EngineError>
-    getPersistentId() const;
-
     MCAPI ::Scripting::Result_deprecated<int> getPlayerLevel() const;
-
-    MCAPI ::Scripting::Result<::PlayerPermissionLevel, ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    getPlayerPermissionLevel() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getSelectedSlot() const;
 
@@ -171,16 +149,6 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<void>
     playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
-
-    MCAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundInstance>,
-        ::Scripting::Error,
-        ::Scripting::EngineError>
-    playSound(
-        ::Scripting::WeakLifetimeScope const&                              scope,
-        ::std::string const&                                               soundID,
-        ::std::optional<::ScriptModuleMinecraft::ScriptPlayerSoundOptions> soundOptions
-    );
 
     MCAPI ::Scripting::Result_deprecated<void>
     queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);

@@ -55,6 +55,12 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $update();
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace OreUI

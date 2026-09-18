@@ -7,6 +7,7 @@
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/Header.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/LabelSetting.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/Metadata.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/MultiSelectSetting.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/NativeModuleDependency.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/PackDependency.h"
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/SliderSetting.h"
@@ -44,7 +45,8 @@ public:
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>>>>
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting>>>>
         mSettings;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::SharedTypes::v3_0_0::PackManifestDefinition::Subpack>>>
                                                                                                          mSubpacks;

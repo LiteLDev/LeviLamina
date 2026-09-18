@@ -95,11 +95,22 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI SparseContainer(
+        ::Container&                                     backingContainer,
+        ::SparseContainerBackingSetType                  backingSetType,
+        bool                                             isClientSide,
+        bool                                             isItemStackNetManagerEnabled,
+        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
+        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
+    );
+
     MCAPI int _getAvailableAddCount(
         ::ContainerScreenContext const& context,
         ::ContainerEnumName             name,
         ::ItemStack const&              itemInSlot
     ) const;
+
+    MCAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI void addAvailableSetCountCallback(
         ::ContainerEnumName                               name,
@@ -174,6 +185,21 @@ public:
 #endif
 
     MCAPI void removeItemNetworkChangedCallback(::ContainerEnumName name);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::Container&                                     backingContainer,
+        ::SparseContainerBackingSetType                  backingSetType,
+        bool                                             isClientSide,
+        bool                                             isItemStackNetManagerEnabled,
+        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
+        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
+    );
+#endif
     // NOLINTEND
 
 public:

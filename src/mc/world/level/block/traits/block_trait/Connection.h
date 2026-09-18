@@ -29,7 +29,8 @@ public:
     // Connection inner types define
     enum class EnabledConnectionStates : int {
         Cardinal = 0,
-        Count    = 1,
+        Vertical = 1,
+        Count    = 2,
     };
 
     enum class Type : int {
@@ -40,7 +41,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1>> mStates;
+        ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 2>> mStates;
         // NOLINTEND
     };
 

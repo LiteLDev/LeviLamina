@@ -20,6 +20,7 @@ class LevelChunk;
 struct BiomeHashType;
 struct BiomeIdType;
 struct GetBiomeOptions;
+namespace BiomeChunkVolume { struct BiomeSamplesContainer; }
 // clang-format on
 
 class BiomeSource3d : public ::BiomeSource {
@@ -68,6 +69,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+
+    MCAPI void _populateBiomeSamples(
+        ::BiomeChunkVolume::BiomeSamplesContainer& biomeSamples,
+        ::ChunkLocalNoiseCache const&              chunkLocalNoiseCache
+    ) const;
     // NOLINTEND
 
 public:

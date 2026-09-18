@@ -7,7 +7,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/actor/ActorDefinitionPtr.h"
 #include "mc/world/level/storage/Experiments.h"
 
@@ -69,7 +68,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionGroup::EDLWrapper>>   mTemplateMap;
     ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                              mResourcePackManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>> mLinkedAssetValidator;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                        mReferenceMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                       mReferenceMutex;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                               mEventing;
     ::ll::TypedStorage<8, 8, ::ActorComponentFactory*>                            mComponentFactory;
     ::ll::TypedStorage<8, 72, ::Experiments>                                      mExperiments;

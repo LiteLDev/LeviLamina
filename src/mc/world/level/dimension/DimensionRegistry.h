@@ -33,15 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DimensionRegistry();
-
     MCAPI ::WeakRef<::Dimension> registerDimension(::DimensionIdType id, ::OwnerPtr<::Dimension> dimension);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -34,11 +34,19 @@ public:
 
     MCAPI ::std::unique_ptr<::NinePatchLayer>
     createSymmetrical(::IntRectangle const& src, int xCutAt, int yCutAt, float w, float h);
+
+    MCAPI ~NinePatchFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::ResourceLocation const& resourceLocation);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

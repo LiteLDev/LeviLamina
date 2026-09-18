@@ -11,9 +11,10 @@
 // auto generated forward declare list
 // clang-format off
 class TaskGroup;
-namespace Audio { class OnlineAudioTimingHistogram; }
+namespace Audio { class IOnlineAudioFetcherUpdateHandle; }
 namespace Audio { class OnlineStreamedAudioBuffer; }
 namespace Audio { struct HttpRangeResponse; }
+namespace Audio { struct OnlineAudioFetcherSnapshot; }
 namespace Audio { struct OnlineStreamConfig; }
 // clang-format on
 
@@ -21,46 +22,9 @@ namespace Audio {
 
 class HttpAudioFetcher : public ::Audio::IOnlineAudioFetcher {
 public:
-    // HttpAudioFetcher inner types declare
-    // clang-format off
-    struct ActiveRequest;
-    // clang-format on
-
-    // HttpAudioFetcher inner types define
-    struct ActiveRequest {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk170164;
-        ::ll::UntypedStorage<8, 16> mUnk6aa44d;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ActiveRequest& operator=(ActiveRequest const&);
-        ActiveRequest(ActiveRequest const&);
-        ActiveRequest();
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk22aec7;
-    ::ll::UntypedStorage<8, 16> mUnkff3770;
-    ::ll::UntypedStorage<8, 40> mUnkaac834;
-    ::ll::UntypedStorage<8, 64> mUnk5feeab;
-    ::ll::UntypedStorage<8, 32> mUnk6a7344;
-    ::ll::UntypedStorage<8, 8>  mUnk1c6fb9;
-    ::ll::UntypedStorage<8, 8>  mUnkdf9387;
-    ::ll::UntypedStorage<8, 8>  mUnk38d5d7;
-    ::ll::UntypedStorage<4, 4>  mUnk4c2218;
-    ::ll::UntypedStorage<4, 4>  mUnk9e826b;
-    ::ll::UntypedStorage<8, 8>  mUnkc4a82e;
-    ::ll::UntypedStorage<8, 8>  mUnke8a351;
-    ::ll::UntypedStorage<8, 96> mUnkb4bf9c;
-    ::ll::UntypedStorage<8, 96> mUnk443dd3;
-    ::ll::UntypedStorage<1, 1>  mUnk2f2f64;
-    ::ll::UntypedStorage<1, 1>  mUnkc18b69;
+    ::ll::UntypedStorage<8, 16> mUnkbc1fc7;
     // NOLINTEND
 
 public:
@@ -76,35 +40,15 @@ public:
 
     virtual void start() /*override*/;
 
-    virtual void update(::std::chrono::steady_clock::time_point currentTime) /*override*/;
-
-    virtual void notifyReadPosition(uint64 offset) /*override*/;
-
     virtual void seekTo(uint64 offset) /*override*/;
 
     virtual void stop() /*override*/;
 
     virtual void notifyPlaybackStarted() /*override*/;
 
-    virtual bool isFetching() const /*override*/;
+    virtual ::Audio::OnlineAudioFetcherSnapshot getSnapshot() const /*override*/;
 
-    virtual uint64 getNextFetchOffset() const /*override*/;
-
-    virtual uint64 getTotalBytesRequested() const /*override*/;
-
-    virtual uint getTotalRetries() const /*override*/;
-
-    virtual ::Audio::OnlineAudioTimingHistogram const& getRequestTimingBeforePlaybackHistogram() const /*override*/;
-
-    virtual ::Audio::OnlineAudioTimingHistogram const& getRequestTimingAfterPlaybackHistogram() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void _tryIssueRequest();
-#endif
+    virtual ::std::shared_ptr<::Audio::IOnlineAudioFetcherUpdateHandle> getUpdateHandle() /*override*/;
     // NOLINTEND
 
 public:
@@ -125,27 +69,15 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void $start();
 
-    MCNAPI void $update(::std::chrono::steady_clock::time_point currentTime);
-
-    MCNAPI void $notifyReadPosition(uint64 offset);
-
     MCNAPI void $seekTo(uint64 offset);
 
     MCNAPI void $stop();
 
     MCNAPI void $notifyPlaybackStarted();
 
-    MCNAPI bool $isFetching() const;
+    MCNAPI ::Audio::OnlineAudioFetcherSnapshot $getSnapshot() const;
 
-    MCNAPI uint64 $getNextFetchOffset() const;
-
-    MCNAPI uint64 $getTotalBytesRequested() const;
-
-    MCNAPI uint $getTotalRetries() const;
-
-    MCNAPI ::Audio::OnlineAudioTimingHistogram const& $getRequestTimingBeforePlaybackHistogram() const;
-
-    MCNAPI ::Audio::OnlineAudioTimingHistogram const& $getRequestTimingAfterPlaybackHistogram() const;
+    MCNAPI ::std::shared_ptr<::Audio::IOnlineAudioFetcherUpdateHandle> $getUpdateHandle();
 #endif
 
 

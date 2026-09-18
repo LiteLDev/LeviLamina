@@ -12,14 +12,13 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockConnectionRuleDescription : public ::NetworkedBlockComponentDescription<::BlockConnectionRuleDescription> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::ConnectionID, 4>>              mConnectionsFromMask;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::ConnectionID, 5>>              mConnectionsFromMask;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::ConnectionType>            mConnectionsFrom;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_20::Direction>> mEnabledDirections;
     // NOLINTEND
@@ -37,18 +36,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::
-        unordered_map<::SharedTypes::v1_26_20::ConnectionType, ::Bedrock::EnumSet<::ConnectionID, 4> const> const&
+        unordered_map<::SharedTypes::v1_26_20::ConnectionType, ::Bedrock::EnumSet<::ConnectionID, 5> const> const&
         CONNECTION_TO_MASK();
 
     MCAPI static ::std::string const& NameID();

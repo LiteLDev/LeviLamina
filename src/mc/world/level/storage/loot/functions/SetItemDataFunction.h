@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/WeakPtr.h"
 #include "mc/world/level/storage/loot/RandomValueBounds.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
 // clang-format off
-class Item;
-class ItemInstance;
-class ItemStack;
+class ItemStackBase;
 class LootItemCondition;
 class LootTableContext;
 class Random;
@@ -42,32 +39,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetItemDataFunction() /*override*/ = default;
-
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
-
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
-
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
-        ::Item const*&       inOutItemDef,
-        ::std::string const& originalItemName,
-        ::Random&            random,
-        int&                 outResultAux
-    );
-
-    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
-        ::std::string const& originalItemName,
-        ::std::string const& itemRawNameId,
-        ::Random&            random,
-        int&                 outAux,
-        ::WeakPtr<::Item>&   outItem
-    );
+    virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
 public:
@@ -80,11 +54,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
-
-    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
-
     MCAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+
+    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
 
     // NOLINTEND

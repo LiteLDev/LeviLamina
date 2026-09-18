@@ -23,11 +23,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptSimpleBlockVolume : public ::ScriptModuleMinecraft::ScriptBlockVolumeBase {
 public:
-    // prevent constructor by default
-    ScriptSimpleBlockVolume& operator=(ScriptSimpleBlockVolume const&);
-    ScriptSimpleBlockVolume();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
@@ -51,9 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSimpleBlockVolume(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+    MCAPI void setFrom(::Vec3 const& from);
 
-    MCAPI ScriptSimpleBlockVolume(::Vec3 const& from, ::Vec3 const& to);
+    MCAPI void setTo(::Vec3 const& to);
     // NOLINTEND
 
 public:
@@ -62,14 +57,6 @@ public:
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::EnumBinding bindEnums();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
-
-    MCAPI void* $ctor(::Vec3 const& from, ::Vec3 const& to);
     // NOLINTEND
 
 public:

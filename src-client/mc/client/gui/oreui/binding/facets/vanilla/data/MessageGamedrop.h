@@ -29,8 +29,6 @@ public:
 
 public:
     // prevent constructor by default
-    MessageGamedrop& operator=(MessageGamedrop const&);
-    MessageGamedrop(MessageGamedrop const&);
     MessageGamedrop();
 
 public:
@@ -42,10 +40,6 @@ public:
         ::std::function<::ImageData(::std::string)>                imageLookup,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI ::OreUI::MessageGamedrop& operator=(::OreUI::MessageGamedrop&&);
-
-    MCAPI ~MessageGamedrop();
     // NOLINTEND
 
 public:
@@ -57,12 +51,6 @@ public:
         ::std::function<::ImageData(::std::string)>                imageLookup,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

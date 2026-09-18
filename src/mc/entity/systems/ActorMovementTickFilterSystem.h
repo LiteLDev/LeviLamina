@@ -12,7 +12,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo addInterpolationNeededComponent(bool isClientSide);
-
-    MCAPI static ::TickingSystemWithInfo createBase();
     // NOLINTEND
 };

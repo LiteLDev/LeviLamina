@@ -17,6 +17,7 @@ MCNAPI void initializeLoader(
         ::Editor::Structures::PUVLoader::v1::StructureMetadata,
         nullptr_t,
         nullptr_t,
+        nullptr_t,
         ::Editor::Structures::PUVLoader::v1::StructureMetadata>& loader
 );
 // NOLINTEND

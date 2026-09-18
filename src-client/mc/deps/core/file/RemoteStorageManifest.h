@@ -28,22 +28,6 @@ public:
         BlobSequence& operator=(BlobSequence const&);
         BlobSequence(BlobSequence const&);
         BlobSequence();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~BlobSequence();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
     struct BlobRecord {
@@ -55,35 +39,11 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnk51cb16;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         BlobRecord& operator=(BlobRecord const&);
         BlobRecord(BlobRecord const&);
         BlobRecord();
-
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        BlobRecord& operator=(BlobRecord const&);
-        BlobRecord();
-
-#endif
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI BlobRecord(::Core::RemoteStorageManifest::BlobRecord const&);
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void* $ctor(::Core::RemoteStorageManifest::BlobRecord const&);
-#endif
-        // NOLINTEND
     };
 };
 

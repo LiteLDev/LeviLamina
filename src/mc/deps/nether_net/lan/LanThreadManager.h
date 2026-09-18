@@ -69,13 +69,13 @@ public:
     virtual void SendLanBroadcastResponse(
         ::webrtc::SocketAddress const& destination,
         ::NetherNet::NetworkID         from,
-        ::std::vector<::std::byte>     data
+        ::std::string                  data
     ) /*override*/;
 
     virtual void SendSignalingMessageTo(
-        ::NetherNet::NetworkID     networkIdFrom,
-        ::NetherNet::NetworkID     networkIdTo,
-        ::std::vector<::std::byte> data
+        ::NetherNet::NetworkID networkIdFrom,
+        ::NetherNet::NetworkID networkIdTo,
+        ::std::string          data
     ) /*override*/;
 
     virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID networkId) /*override*/;
@@ -122,13 +122,13 @@ public:
     MCNAPI void $SendLanBroadcastResponse(
         ::webrtc::SocketAddress const& destination,
         ::NetherNet::NetworkID         from,
-        ::std::vector<::std::byte>     data
+        ::std::string                  data
     );
 
     MCNAPI void $SendSignalingMessageTo(
-        ::NetherNet::NetworkID     networkIdFrom,
-        ::NetherNet::NetworkID     networkIdTo,
-        ::std::vector<::std::byte> data
+        ::NetherNet::NetworkID networkIdFrom,
+        ::NetherNet::NetworkID networkIdTo,
+        ::std::string          data
     );
 
     MCNAPI bool $IsNetworkIdOnLan(::NetherNet::NetworkID networkId);

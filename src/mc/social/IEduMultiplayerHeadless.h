@@ -7,7 +7,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/options/EducationServicesEnvironment.h"
 #include "mc/platform/brstd/flat_map.h"
-#include "mc/social/EduJoinerResponse.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,12 +37,16 @@ public:
     // NOLINTBEGIN
     virtual void hostServer();
 
-    virtual ::Social::EduJoinerResponse
-    tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
+    virtual void tryAcceptJoiner(
+        ::std::string const&                sessionToken,
+        ::std::string const&                joinerToHostNonce,
+        ::brstd::move_only_function<void()> onDisconnect,
+        ::brstd::move_only_function<void()> onAccept
+    );
 
     virtual ::std::string getHostToJoinerNonce(::std::string const& sessionToken) const;
 
-    virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners();
+    virtual bool isChatDisabled(::std::string const&) const;
 
     virtual ::Bedrock::Threading::Async<::Social::EduFetchTenantSettingsResponse> requestTenantSettings();
 
@@ -98,12 +102,16 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void $hostServer();
 
-    MCNAPI ::Social::EduJoinerResponse
-    $tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
+    MCNAPI void $tryAcceptJoiner(
+        ::std::string const&                sessionToken,
+        ::std::string const&                joinerToHostNonce,
+        ::brstd::move_only_function<void()> onDisconnect,
+        ::brstd::move_only_function<void()> onAccept
+    );
 
     MCNAPI ::std::string $getHostToJoinerNonce(::std::string const& sessionToken) const;
 
-    MCNAPI ::Bedrock::Threading::Async<void> $onNextFetchJoiners();
+    MCNAPI bool $isChatDisabled(::std::string const&) const;
 #endif
 
 

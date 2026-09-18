@@ -11,6 +11,7 @@
 // clang-format off
 class Mob;
 class Random;
+struct GoalId;
 // clang-format on
 
 class FloatWanderGoal : public ::BaseGoal {
@@ -53,9 +54,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FloatWanderGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+
     MCAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
 
     MCAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

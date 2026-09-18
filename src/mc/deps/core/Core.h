@@ -26,8 +26,6 @@ MCNAPI ::Core::Result transferDirectory(
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
 MCNAPI ::std::string const& sLockBlobName();
-
-MCNAPI ::std::string const& sMultiChunkTag();
 #endif
 
 MCNAPI ::std::shared_ptr<::Core::FileStorageArea>& sRootStorageArea();

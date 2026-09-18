@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/EnumSet.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/input/InputMode.h"
@@ -92,28 +93,30 @@ public:
         InputNum                                  = 66,
     };
 
+    using InputDataSet = ::Bedrock::EnumSet<::PlayerAuthInputPacketPayload::InputData, 66>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRot;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPos;
-    ::ll::TypedStorage<4, 4, float>                                                        mYHeadRot;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPosDelta;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mVehicleRot;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mAnalogMoveVector;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mMove;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mInteractRotation;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mCameraOrientation;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRawMoveVector;
-    ::ll::TypedStorage<8, 16, ::std::bitset<66>>                                           mInputData;
-    ::ll::TypedStorage<4, 4, ::InputMode>                                                  mInputMode;
-    ::ll::TypedStorage<4, 4, ::ClientPlayMode>                                             mPlayMode;
-    ::ll::TypedStorage<4, 4, ::NewInteractionModel>                                        mNewInteractionModel;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                                            mClientTick;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
-    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                              mClientPredictedVehicle;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                             mRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                            mPos;
+    ::ll::TypedStorage<4, 4, float>                                                              mYHeadRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                            mPosDelta;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                             mVehicleRot;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                             mAnalogMoveVector;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                             mMove;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                             mInteractRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                            mCameraOrientation;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                             mRawMoveVector;
+    ::ll::TypedStorage<8, 16, ::Bedrock::EnumSet<::PlayerAuthInputPacketPayload::InputData, 66>> mInputData;
+    ::ll::TypedStorage<4, 4, ::InputMode>                                                        mInputMode;
+    ::ll::TypedStorage<4, 4, ::ClientPlayMode>                                                   mPlayMode;
+    ::ll::TypedStorage<4, 4, ::NewInteractionModel>                                              mNewInteractionModel;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                                                  mClientTick;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackedItemUseLegacyInventoryTransaction>>       mItemUseTransaction;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                          mItemStackRequest;
+    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                              mPlayerBlockActions;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mClientPredictedVehicle;
     // NOLINTEND
 
 public:

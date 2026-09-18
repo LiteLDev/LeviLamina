@@ -7,6 +7,7 @@
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/menus/GameVersionObject.h"
 #include "mc/client/world/SyncState.h"
+#include "mc/deps/core/minecraft/threading/EnableFIFOQueueForMainThread.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/world/level/GameType.h"
@@ -27,7 +28,9 @@ namespace World { class LocalWorldList; }
 
 namespace OreUI {
 
-class LocalWorldQuery : public ::OreUI::QueryBase<::OreUI::LocalWorldQuery>, public ::LevelListCacheObserver {
+class LocalWorldQuery : public ::OreUI::QueryBase<::OreUI::LocalWorldQuery>,
+                        public ::LevelListCacheObserver,
+                        public ::Bedrock::Threading::EnableFIFOQueueForMainThread {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,26 +41,31 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider>> mAccessibilityProvider;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>           mEntitlementManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GenericEntitlementChangeListener>> mEntitlementChangeListener;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                     mId;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                     mName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64>>                             mLastSaved;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::GameType>>                        mGameMode;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                     mFileSize;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                     mPreviewImgPath;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                              mIsExperimental;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                              mIsHardcore;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                              mPlayerHasDied;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                               mDaysPlayed;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                              mShowDaysPlayed;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>      mId;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>      mName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64, int64>>                      mLastSaved;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::GameType, ::GameType>>            mGameMode;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>      mFileSize;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>      mPreviewImgPath;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                        mIsExperimental;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                        mIsHardcore;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                        mPlayerHasDied;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                          mDaysPlayed;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                        mShowDaysPlayed;
     ::ll::TypedStorage<8, 1120, ::OreUI::GameVersionObject>                          mGameVersion;
     ::ll::TypedStorage<8, 1120, ::OreUI::GameVersionObject>                          mTemplateVersion;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                         mIsTemplateCompatibleWithAnyVersion;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                         mAllContentOwned;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                         mRequiresCloudSync;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                         mIsMultiplayerEnabled;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::GamePublishSetting>> mXblBroadcastIntent;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                         mIsEditorWorld;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<::World::SyncState>>> mCloudSyncState;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mIsTemplateCompatibleWithAnyVersion;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mAllContentOwned;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mRequiresCloudSync;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mIsMultiplayerEnabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::GamePublishSetting, ::Social::GamePublishSetting>>
+                                                              mXblBroadcastIntent;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mIsEditorWorld;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::Property<::std::optional<::World::SyncState>, ::std::optional<::World::SyncState>>>
+        mCloudSyncState;
     // NOLINTEND
 
 public:
@@ -86,6 +94,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI LocalWorldQuery(::OreUI::GameDependencies const& game, ::std::string worldId);
+
+    MCAPI void _refreshAllContentOwned();
 
     MCAPI void _refreshFromSummary(::LevelSummary const& summary);
 

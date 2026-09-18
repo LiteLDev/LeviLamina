@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class ItemInstance;
-class ItemStack;
+class ItemStackBase;
 class LootItemCondition;
 class LootTableContext;
 class Random;
@@ -16,6 +18,11 @@ namespace Json { class Value; }
 
 class LootItemFunction {
 public:
+    // LootItemFunction inner types declare
+    // clang-format off
+    struct ApplyArguments;
+    // clang-format on
+
     // LootItemFunction inner types define
     enum class FunctionType : int {
         SetItemCount             = 0,
@@ -48,6 +55,24 @@ public:
         Count                    = 27,
     };
 
+    struct ApplyArguments {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::ItemStackBase&>    mItem;
+        ::ll::TypedStorage<8, 8, ::Random&>           mRandom;
+        ::ll::TypedStorage<8, 8, ::LootTableContext&> mContext;
+        ::ll::TypedStorage<8, 8, ::Trade const*>      mTrade;
+        ::ll::TypedStorage<8, 24, ::SemVersion>       mVersion;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ApplyArguments& operator=(ApplyArguments const&);
+        ApplyArguments(ApplyArguments const&);
+        ApplyArguments();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,20 +83,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    virtual ~LootItemFunction();
-#else // LL_PLAT_C
     virtual ~LootItemFunction() = default;
+#else // LL_PLAT_C
+    virtual ~LootItemFunction();
 #endif
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) = 0;
-
-    virtual int apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
-
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) = 0;
-
-    virtual int apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
-
     virtual ::LootItemFunction::FunctionType getFunctionType() const = 0;
+
+    virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) = 0;
+
+    virtual int applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
+
+    virtual void apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+
+    virtual int apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int apply(::LootItemFunction::ApplyArguments arguments);
     // NOLINTEND
 
 public:
@@ -100,7 +131,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
 #endif
     // NOLINTEND
@@ -108,9 +139,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
 
-    MCAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCAPI void $apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+
+    MCAPI int $apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
 
 
     // NOLINTEND

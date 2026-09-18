@@ -5,11 +5,10 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
 class AgeableDefinition;
 class CompoundTag;
 class DataLoadHelper;
-class InteractionResult;
+class Interaction;
 class ItemStack;
 class Player;
 // clang-format on
@@ -25,10 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InteractionResult _growthToggle(
+    MCAPI ::Interaction _growthToggle(
         ::Actor&                   actor,
         ::Player&                  player,
-        ::ActorInteraction&        interaction,
         ::AgeableDefinition const& definition,
         ::ItemStack const&         item,
         bool const                 growthPaused
@@ -36,7 +34,7 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::InteractionResult getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Actor& actor, ::Player& player);
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND

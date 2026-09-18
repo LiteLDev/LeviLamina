@@ -21,6 +21,7 @@ namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
 namespace Editor::Prefabs { struct PrefabDBInstanceChangeEvent; }
 namespace Editor::Prefabs { struct PrefabDBInstanceInteractionEvent; }
 namespace Editor::Prefabs { struct PrefabDBTemplateChangeEvent; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
@@ -74,6 +75,11 @@ public:
     virtual void deselectInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef) /*override*/;
 
     virtual void clearSelectedInstances() /*override*/;
+
+    virtual void findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -126,6 +132,11 @@ public:
     MCNAPI void $deselectInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef);
 
     MCNAPI void $clearSelectedInstances();
+
+    MCNAPI void $findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
+    );
 
 
     // NOLINTEND

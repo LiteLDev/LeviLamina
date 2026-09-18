@@ -39,6 +39,19 @@ public:
         bool                 isZFlipped,
         bool                 instant
     );
+
+#ifdef LL_PLAT_C
+    MCAPI int updateFromPosition(
+        ::BlockSource const*,
+        ::BlockPos const& lookTowards,
+        float             x,
+        float             z,
+        float             yRot,
+        bool              isZFlipped,
+        bool              instant,
+        bool              spin
+    );
+#endif
     // NOLINTEND
 
 public:

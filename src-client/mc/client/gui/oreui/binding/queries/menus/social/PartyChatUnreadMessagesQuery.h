@@ -18,7 +18,7 @@ class PartyChatUnreadMessagesQuery : public ::OreUI::QueryBase<::OreUI::PartyCha
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>        mHasUnreadMessages;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>  mHasUnreadMessages;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mHasUnreadMessagesChangedToken;
     // NOLINTEND
 

@@ -19,8 +19,12 @@ class LinksToObject : public ::OreUI::PropertyObject<::OreUI::LinksToObject> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                                mId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Bedrock::Services::layout::model::LinkType>> mType;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mId;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::Property<::Bedrock::Services::layout::model::LinkType, ::Bedrock::Services::layout::model::LinkType>>
+        mType;
     // NOLINTEND
 
 public:

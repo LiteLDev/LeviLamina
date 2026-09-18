@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 
@@ -21,6 +22,7 @@ namespace Editor::Prefabs { class PrefabDBTemplate; }
 namespace Editor::Prefabs { class VisiblePrefabInstance; }
 namespace Editor::Prefabs { struct PrefabDBInstanceChangeEvent; }
 namespace Editor::Prefabs { struct PrefabDBTemplateChangeEvent; }
+namespace Editor::Prefabs::PrefabDBInstanceLoader::v1 { struct InstanceData; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -83,6 +85,19 @@ public:
 
     virtual ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>
     getInstance(::DimensionType const& dimension, ::mce::UUID const& instanceId) = 0;
+
+    virtual void findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
+    ) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+    applyInstanceSnapshot(::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& data) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> deleteInstanceById(::mce::UUID const& instanceId) = 0;
+
+    virtual ::std::optional<::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData>
+    getInstanceSnapshot(::mce::UUID const& instanceId) = 0;
 
     virtual void bakePrefabInstanceToWorld(
         ::BlockSource&                                       region,

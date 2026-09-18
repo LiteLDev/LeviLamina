@@ -9,10 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class Experiments;
 class SemVersion;
-namespace Json { class Value; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDestructionParticlesDescription
@@ -35,20 +32,6 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual ~BlockDestructionParticlesDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static bool postParseConstraint(
-        ::Experiments const& experiments,
-        ::Json::Value const& componentJson,
-        ::SemVersion const&  jsonVersion
-    );
-#endif
     // NOLINTEND
 
 public:

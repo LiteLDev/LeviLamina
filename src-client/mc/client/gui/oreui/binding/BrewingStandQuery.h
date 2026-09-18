@@ -18,8 +18,8 @@ class BrewingStandQuery : public ::OreUI::QueryBase<::OreUI::BrewingStandQuery> 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>                                      mBrewProgress;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>                                      mFuelProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                               mBrewProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                               mFuelProgress;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 

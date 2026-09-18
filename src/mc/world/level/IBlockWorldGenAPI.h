@@ -45,6 +45,10 @@ public:
 
     virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const = 0;
 
+    virtual bool hasAnyBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const = 0;
+
+    virtual bool hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const = 0;
+
     virtual bool setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags) = 0;
 
     virtual bool setBlockSimple(::BlockPos const& pos, ::Block const& block) = 0;

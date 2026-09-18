@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-template <typename T0>
+template <typename T0, typename T1>
 class Property {};
 
 } // namespace OreUI

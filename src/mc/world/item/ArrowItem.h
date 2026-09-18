@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/ResolvedItemIconInfo.h"
-#include "mc/world/item/alchemy/Potion.h"
 #include "mc/world/item/components/ComponentItem.h"
 
 // auto generated forward declare list
@@ -21,18 +19,12 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Vec3;
+struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ArrowItem : public ::ComponentItem {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1344, ::ResolvedItemIconInfo[21]> mArrowIcons;
-    ::ll::TypedStorage<4, 84, ::Potion::PotionVariant[21]>  mArrowVariants;
-    // NOLINTEND
-
 public:
     // prevent constructor by default
     ArrowItem();
@@ -59,7 +51,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool                                 showCategory
     ) const /*override*/;
 
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const
@@ -106,7 +98,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool                                 showCategory
     ) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;

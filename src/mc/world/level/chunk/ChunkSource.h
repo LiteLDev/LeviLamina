@@ -8,8 +8,6 @@
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
-#include "mc/world/level/chunk/ChunkState.h"
-#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -137,7 +135,7 @@ public:
 
     virtual bool isWithinWorldLimit(::ChunkPos const& cp) const;
 
-    virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* getChunkMap();
+    virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* getChunkMap() const;
 
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& getStorage() const;
 
@@ -167,18 +165,12 @@ public:
     MCAPI explicit ChunkSource(::std::unique_ptr<::ChunkSource> parent);
 
 #ifdef LL_PLAT_C
-    MCAPI void _checkForUnblockingChunks(::LevelChunk const& lc);
+    MCAPI void _checkForUnblockingChunks(::ChunkPos cp);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _checkForUnblockingChunks(::LevelChunk const& lc);
+    MCAPI void _checkForUnblockingChunks(::ChunkPos cp);
 #endif
-
-    MCAPI void _checkLevelChunkForNextStage(
-        ::LevelChunk const&                                         lc,
-        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid,
-        ::ChunkState                                                stateToCheck
-    );
 
 #ifdef LL_PLAT_C
     MCAPI void _createOrReplaceGridAreaMap(::std::shared_ptr<::LevelChunk> lc, bool createNeighbourGridsIfMissing);
@@ -193,12 +185,6 @@ public:
         ::brstd::move_only_function<::TaskResult()> taskFunc
     );
 
-    MCAPI void _launchLightingTask(
-        ::std::shared_ptr<::LevelChunk> const&      lc,
-        ::std::shared_ptr<::ChunkViewSource> const& chunks,
-        bool                                        areInTask
-    );
-
     MCAPI void _saveDirtyChunks(::LevelStorage&);
 
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
@@ -209,6 +195,7 @@ public:
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
+#ifdef LL_PLAT_C
     MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
         ::ChunkSource::LoadMode                                             lm,
         bool                                                                circle,
@@ -216,6 +203,7 @@ public:
         ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
         float const*                                                        serverBuildRatio
     );
+#endif
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -313,7 +301,7 @@ public:
 
     MCFOLD bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
-    MCFOLD ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap();
+    MCFOLD ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap() const;
 
     MCAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& $getStorage() const;
 

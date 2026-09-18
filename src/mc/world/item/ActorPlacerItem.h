@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -16,6 +17,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Container;
+class Experiments;
 class HashedString;
 class InteractionResult;
 class ItemDescriptor;
@@ -58,9 +60,14 @@ public:
 
     virtual bool isActorPlacerItem() const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -81,7 +88,11 @@ public:
     MCAPI static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
 #endif
 
-    MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
+    MCAPI static void registerCustomEggs(
+        ::ItemRegistryRef          itemRegistry,
+        ::ActorInfoRegistry const& registry,
+        ::Experiments const&       experiments
+    );
 
     MCAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
     // NOLINTEND
@@ -117,8 +128,14 @@ public:
 
     MCFOLD bool $isActorPlacerItem() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

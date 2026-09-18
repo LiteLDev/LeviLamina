@@ -12,7 +12,7 @@ namespace LevelDataKeys {
 // NOLINTBEGIN
 MCNAPI ::HashedString& DAYLIGHT_CYCLE();
 
-MCNAPI ::HashedString& EDUCATION_OID();
+MCNAPI ::HashedString& EDUCATION_MESS_USER_ID();
 
 MCNAPI ::HashedString& EDUCATION_SHARED_RESOURCE();
 
@@ -29,6 +29,8 @@ MCNAPI ::HashedString& GENERATOR();
 MCNAPI ::HashedString& LIMITED_WORLD_DEPTH();
 
 MCNAPI ::HashedString& LIMITED_WORLD_WIDTH();
+
+MCNAPI ::HashedString& LOADED_PLAYER_TAG();
 
 MCNAPI ::HashedString& SEED();
 

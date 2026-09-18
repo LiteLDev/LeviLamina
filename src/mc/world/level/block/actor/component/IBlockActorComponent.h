@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class ILevel;
+class SaveContext;
 // clang-format on
 
 struct IBlockActorComponent {
@@ -16,8 +18,8 @@ public:
     // NOLINTBEGIN
     virtual ~IBlockActorComponent() = default;
 
-    virtual void save(::CompoundTag& parentTag) const = 0;
+    virtual void save(::CompoundTag& parentTag, ::SaveContext const& saveContext) const = 0;
 
-    virtual void load(::CompoundTag const& parentTag, ::BlockActorVersion version) = 0;
+    virtual void load(::CompoundTag const& parentTag, ::ILevel& level, ::BlockActorVersion version) = 0;
     // NOLINTEND
 };

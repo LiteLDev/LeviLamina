@@ -25,10 +25,4 @@ public:
     ::ll::TypedStorage<4, 4, float>                     mXZDeltaSize;
     ::ll::TypedStorage<4, 4, float>                     mYDeltaSize;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx);
-    // NOLINTEND
 };

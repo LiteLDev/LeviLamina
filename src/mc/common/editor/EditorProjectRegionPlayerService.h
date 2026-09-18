@@ -14,6 +14,7 @@ struct DimensionType;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct ProjectRegionConfig; }
+namespace Editor { struct ProjectRegionGlobalMetrics; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -55,6 +56,8 @@ public:
     virtual ::std::vector<::WeakRef<::Editor::ProjectRegion>> getAllRegions() const /*override*/;
 
     virtual ::WeakRef<::Editor::ProjectRegion> getRegion(::mce::UUID const& id) const /*override*/;
+
+    virtual ::Editor::ProjectRegionGlobalMetrics collectMetrics() const /*override*/;
     // NOLINTEND
 
 public:
@@ -89,6 +92,8 @@ public:
     MCNAPI ::std::vector<::WeakRef<::Editor::ProjectRegion>> $getAllRegions() const;
 
     MCNAPI ::WeakRef<::Editor::ProjectRegion> $getRegion(::mce::UUID const& id) const;
+
+    MCNAPI ::Editor::ProjectRegionGlobalMetrics $collectMetrics() const;
 
 
     // NOLINTEND

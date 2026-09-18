@@ -24,12 +24,15 @@ public:
     ::ll::TypedStorage<8, 8, ::BlockState const*> mBlockState;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     IScriptBlockProperty& operator=(IScriptBlockProperty const&);
     IScriptBlockProperty(IScriptBlockProperty const&);
     IScriptBlockProperty();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,29 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IScriptBlockProperty(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
-
+#ifdef LL_PLAT_C
     MCAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
     // NOLINTEND
 
 public:

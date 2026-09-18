@@ -26,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>>             mCtx;
-    ::ll::TypedStorage<8, 256, ::CerealComponentItemDataLoader>                                         mLoader;
+    ::ll::TypedStorage<8, 264, ::CerealComponentItemDataLoader>                                         mLoader;
     ::ll::TypedStorage<8, 96, ::PackLoadInfo>                                                           mPackLoadInfo;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)>> mValidatorFn;
     // NOLINTEND

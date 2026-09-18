@@ -8,7 +8,6 @@ class ActorOwnerComponent;
 class EntitySensorComponent;
 class StrictEntityContext;
 struct CurrentTickComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class EntitySensorSystem {
@@ -21,7 +20,5 @@ public:
         ::EntitySensorComponent&      entitySensorComponent,
         ::CurrentTickComponent const& currentTickComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

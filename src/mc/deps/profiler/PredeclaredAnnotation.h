@@ -16,6 +16,18 @@ public:
     PredeclaredAnnotation& operator=(PredeclaredAnnotation const&);
     PredeclaredAnnotation(PredeclaredAnnotation const&);
     PredeclaredAnnotation();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~PredeclaredAnnotation();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Profiler::details

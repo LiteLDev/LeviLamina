@@ -20,7 +20,7 @@
 #include "mc/client/network/realms/FailureReason.h"
 #include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/network/realms/RealmsAPI.h"
-#include "mc/client/persona/DefaultSkinType.h"
+#include "mc/client/persona/defaults/DefaultSkinType.h"
 #include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/client/services/download/IDlcBatcher.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
@@ -50,6 +50,8 @@
 #include "mc/util/ProfanityFilterContext.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/actor/player/LoadingState.h"
+#include "mc/world/inventory/FurnaceLayout.h"
+#include "mc/world/inventory/FurnaceLeftTabIndex.h"
 #include "mc/world/inventory/InventoryLayout.h"
 #include "mc/world/inventory/InventoryLeftTabIndex.h"
 #include "mc/world/inventory/InventoryRightTabIndex.h"
@@ -75,6 +77,7 @@ class IContentManager;
 class IDlcBatchModel;
 class IEDUDiscoveryService;
 class IGameConnectionListener;
+class ILayoutServiceProvider;
 class IMinecraftGame;
 class INetworkGameConnector;
 class IOptionRegistry;
@@ -88,7 +91,6 @@ class LevelSettings;
 class LocalPlayer;
 class MinecraftCommands;
 class PackManifest;
-class PackSettings;
 class PlatformMultiplayerRestrictions;
 class PlatformUpsellDialog;
 class PlayerAchievementData;
@@ -119,6 +121,7 @@ struct PlayerInventorySlotData;
 struct Purchase;
 struct StoreContentSources;
 struct StoreDataDrivenScreenParams;
+struct SubscriptionOffer;
 namespace Bedrock::Http { class Status; }
 namespace Clubs { struct ClubModel; }
 namespace Core { class Path; }
@@ -136,7 +139,6 @@ namespace Realms { struct RealmId; }
 namespace Realms { struct ServerRegion; }
 namespace Realms { struct World; }
 namespace Realms { struct WorldBackupList; }
-namespace SDL { struct SubscriptionInfo; }
 namespace Social { class FriendList; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
@@ -144,6 +146,8 @@ namespace Social { class ProfileImageOptions; }
 namespace Social { struct MultiIdentitySigninResult; }
 namespace Social { struct PermissionCheckResult; }
 namespace Social { struct PlatformUserProfileData; }
+namespace Social { struct UserLinkedAccountsInfo; }
+namespace Social { struct XUID; }
 namespace Social { struct XboxLiveUserProfileData; }
 namespace edu::auth { struct CredentialsObserver; }
 namespace mce { class UUID; }
@@ -165,6 +169,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                          mMinecraft;
+    ::ll::TypedStorage<8, 8, ::ILayoutServiceProvider&>                                  mLayoutServiceProvider;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions>> mAdvancedGraphicsOptions;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>          mClient;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>>              mSceneStack;
@@ -456,6 +461,8 @@ public:
 
     MCAPI bool findProfanityInString(::ProfanityFilterContext stringContext, ::std::string const& str) const;
 
+    MCAPI void finishGuidedFlow(bool completed);
+
     MCAPI void fireBannedSkinVerification(
         ::std::string const& skinData,
         bool                 wasApproved,
@@ -479,9 +486,11 @@ public:
     );
 
     MCAPI void firePackSettingsEvent(
-        ::PackSettings const& packSettings,
         ::PackManifest const& manifest,
-        ::std::string         serializedPackSettings
+        ::std::string         serializedPackSettings,
+        int                   subpackIndex,
+        ::std::string const&  subpackName,
+        int                   subpackCount
     );
 
     MCAPI void fireSignOutEdu(::std::string const& action, ::std::string const& error) const;
@@ -521,7 +530,7 @@ public:
 
     MCAPI ::std::string getButtonTexture(::TriggerIndiciesEnum trigger);
 
-    MCAPI ::std::string getButtonTexture(::ButtonIndiciesEnum button, ::IconSize iconSize);
+    MCAPI ::std::string getButtonTexture(::ButtonIndiciesEnum button, ::IconSize iconSize, bool checkButtonSwap);
 
     MCAPI ::ClipboardFeatureFlags getClipboardFeatures() const;
 
@@ -532,11 +541,6 @@ public:
 
     MCAPI void
     getClubUnreadCount(::std::string const& clubId, ::std::function<void(int, ::Clubs::GenericStatus)> callback);
-
-    MCAPI void getClubUnreadCounts(
-        ::std::vector<::std::string> const&                                           clubIds,
-        ::std::function<void(::std::map<::std::string, int>, ::Clubs::GenericStatus)> callback
-    );
 
     MCAPI ::MinecraftCommands& getCommands();
 
@@ -551,6 +555,8 @@ public:
     MCAPI ::SkinHandle getCustomSkinHandle(::persona::DefaultSkinType skinType) const;
 
     MCAPI ::std::vector<::std::string> const& getDevConsoleScreenMessages();
+
+    MCAPI ::std::string getDevelopmentVersionString() const;
 
     MCAPI ::DimensionHeightRange getDimensionHeightRange() const;
 
@@ -592,15 +598,11 @@ public:
 
     MCAPI ::LevelData* getLevelData();
 
-    MCAPI void getLinkedPlatformIds(
-        ::std::function<void(::std::string, ::std::string)> callback,
-        ::std::vector<::std::string> const&                 xuids
-    ) const;
+    MCAPI ::Bedrock::Threading::Async<::std::vector<::Social::UserLinkedAccountsInfo>>
+    getLinkedAccountsFromPSNs(::std::vector<::std::string> const& platformIds) const;
 
-    MCAPI void getLinkedXuids(
-        ::std::function<void(::std::string, ::std::string)> callback,
-        ::std::vector<::std::string> const&                 platformIds
-    ) const;
+    MCAPI ::Bedrock::Threading::Async<::std::vector<::Social::UserLinkedAccountsInfo>>
+    getLinkedAccountsFromXUIDs(::std::vector<::Social::XUID> const& xuids) const;
 
     MCAPI float getLoadingProgress();
 
@@ -626,7 +628,7 @@ public:
 
     MCAPI bool getNewPopupItemText(::std::string& newText, bool& isCreative);
 
-    MCAPI ::SDL::SubscriptionInfo getNextAvailableSubscriptionInfo() const;
+    MCAPI ::std::optional<::SubscriptionOffer> getNextAvailableSubscriptionInfo() const;
 
     MCAPI ::Bedrock::PubSub::Connector<
         void(::PlayerListEntry const&, ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&)>&
@@ -740,15 +742,9 @@ public:
 
     MCAPI ::std::string getStoreId() const;
 
-    MCAPI ::SDL::SubscriptionInfo getSubscriptionFullPriceInfo() const;
+    MCAPI ::std::optional<::SubscriptionOffer> getSubscriptionFullPriceInfo() const;
 
     MCAPI ::std::string getTermsOfUseHyperlink() const;
-
-    MCAPI void getThirdPartyDisplayPicture(
-        ::std::string const&                       playerId,
-        ::std::function<void(::Core::Path const&)> callback,
-        bool                                       isLocal
-    );
 
     MCAPI bool getTipText(::std::string& text);
 
@@ -824,10 +820,6 @@ public:
 
     MCAPI bool isDeviceSunset() const;
 
-    MCAPI bool isDisconnectedFromNEX() const;
-
-    MCAPI bool isDisconnectedFromPSN() const;
-
     MCAPI bool isEditorEnabledOrPlaytesting() const;
 
     MCAPI bool isEditorModeEnabled() const;
@@ -902,8 +894,6 @@ public:
 
     MCAPI bool isRealmOwner() const;
 
-    MCAPI bool isRealmsEditWorldOreUIFeatureOn() const;
-
     MCFOLD bool isRealmsEnabled() const;
 
     MCAPI bool isRealmsHubInGameFeatureOn() const;
@@ -922,7 +912,7 @@ public:
 
     MCAPI bool isSignedInToAdhoc() const;
 
-    MCAPI bool isSignedInToNEX() const;
+    MCAPI bool isSignedInToNSO() const;
 
     MCAPI bool isSignedInToPSN() const;
 
@@ -1036,6 +1026,8 @@ public:
     MCAPI void navigateToPlatformStoreConnectConfirmationScreen(::std::function<void(bool)> callback);
 
     MCAPI void navigateToRealmsHubScreen(::Realms::World const& world);
+
+    MCAPI void navigateToRealmsManageMembersScreen(::Realms::World const& world);
 
     MCAPI void navigateToRealmsPlanPicker();
 
@@ -1159,7 +1151,11 @@ public:
 
     MCAPI void saveLevelData(::std::string const& levelId, ::LevelData const& data);
 
+    MCAPI void savePlayerBlastFurnaceOptions(::FurnaceLeftTabIndex leftTab, bool filtering, ::FurnaceLayout layout);
+
     MCAPI void savePlayerBlastFurnaceSearchString(::std::string const& searchString);
+
+    MCAPI void savePlayerFurnaceOptions(::FurnaceLeftTabIndex leftTab, bool filtering, ::FurnaceLayout layout);
 
     MCAPI void savePlayerFurnaceSearchString(::std::string const& searchString);
 
@@ -1172,6 +1168,8 @@ public:
     );
 
     MCAPI void savePlayerInventorySearchString(::std::string const& inventorySearchString);
+
+    MCAPI void savePlayerSmokerOptions(::FurnaceLeftTabIndex leftTab, bool filtering, ::FurnaceLayout layout);
 
     MCAPI void savePlayerSmokerSearchString(::std::string const& searchString);
 
@@ -1224,6 +1222,8 @@ public:
     MCAPI void setGraphicsMode(int mode);
 
     MCAPI void setInputBindingMode(::InputBindingMode mode);
+
+    MCAPI void setIsInGameBrowsing(bool isInGameBrowsing);
 
     MCAPI void setLanguage();
 
@@ -1351,8 +1351,6 @@ public:
         ::std::string const&                                          versionRef,
         ::std::function<void(::Realms::GenericStatus, ::std::string)> callback
     );
-
-    MCAPI void updateRealmsTrialAvailable(::std::function<void(::Realms::GenericStatus)> callback);
 
     MCAPI bool usePlatformProfilePicturesOnly() const;
 

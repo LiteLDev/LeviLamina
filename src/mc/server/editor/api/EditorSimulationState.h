@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace Editor::ScriptModule {
 
 class EditorSimulationState {
@@ -21,12 +16,6 @@ public:
     EditorSimulationState& operator=(EditorSimulationState const&);
     EditorSimulationState(EditorSimulationState const&);
     EditorSimulationState();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

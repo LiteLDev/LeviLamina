@@ -4,7 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Audio { class OnlineAudioTimingHistogram; }
+namespace Audio { class IOnlineAudioFetcherUpdateHandle; }
+namespace Audio { struct OnlineAudioFetcherSnapshot; }
 // clang-format on
 
 namespace Audio {
@@ -17,27 +18,15 @@ public:
 
     virtual void start() = 0;
 
-    virtual void update(::std::chrono::steady_clock::time_point currentTime) = 0;
-
-    virtual void notifyReadPosition(uint64 offset) = 0;
-
     virtual void seekTo(uint64 offset) = 0;
 
     virtual void stop() = 0;
 
     virtual void notifyPlaybackStarted() = 0;
 
-    virtual bool isFetching() const = 0;
+    virtual ::Audio::OnlineAudioFetcherSnapshot getSnapshot() const = 0;
 
-    virtual uint64 getNextFetchOffset() const = 0;
-
-    virtual uint64 getTotalBytesRequested() const = 0;
-
-    virtual uint getTotalRetries() const = 0;
-
-    virtual ::Audio::OnlineAudioTimingHistogram const& getRequestTimingBeforePlaybackHistogram() const = 0;
-
-    virtual ::Audio::OnlineAudioTimingHistogram const& getRequestTimingAfterPlaybackHistogram() const = 0;
+    virtual ::std::shared_ptr<::Audio::IOnlineAudioFetcherUpdateHandle> getUpdateHandle() = 0;
     // NOLINTEND
 };
 

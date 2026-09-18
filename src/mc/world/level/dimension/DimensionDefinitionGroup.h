@@ -26,11 +26,24 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>             mHeightMinimum;
-        ::ll::TypedStorage<4, 4, int>             mHeightMaximum;
+        ::ll::TypedStorage<4, 4, int>             mMinY;
+        ::ll::TypedStorage<4, 4, int>             mHeightRange;
         ::ll::TypedStorage<4, 4, ::GeneratorType> mGeneratorType;
         ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
         ::ll::TypedStorage<8, 16, ::mce::UUID>    mPackId;
+        ::ll::TypedStorage<8, 32, ::std::string>  mDefaultBiome;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~DimensionDefinition();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -57,6 +70,9 @@ public:
     MCAPI void forEachDimensionDefinition(
         ::std::function<void(::std::string const&, ::DimensionDefinitionGroup::DimensionDefinition const&)> callback
     ) const;
+
+    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
+    getDimensionDefinition(::std::string const& dimensionName) const;
 
     MCAPI ~DimensionDefinitionGroup();
     // NOLINTEND

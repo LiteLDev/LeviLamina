@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/util/FloatRange.h"
 #include "mc/util/molang/ExpressionNode.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
@@ -87,9 +86,9 @@ public:
         8,
         64,
         ::std::unordered_map<int, ::std::unordered_map<int, ::std::shared_ptr<::CaveFeature::CachedMetaData>>>>
-                                                           mCachedMetaDataMap;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mCacheMutex;
-    ::ll::TypedStorage<4, 4, ::std::atomic<uint>>          mPlaceCount;
+                                                  mCachedMetaDataMap;
+    ::ll::TypedStorage<8, 80, ::std::mutex>       mCacheMutex;
+    ::ll::TypedStorage<4, 4, ::std::atomic<uint>> mPlaceCount;
     // NOLINTEND
 
 public:

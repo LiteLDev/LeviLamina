@@ -7,6 +7,11 @@
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 #include "mc/deps/shared_types/v1_26_0/actor/NearestAttackableTargetGoalDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_30 {
 
 struct DefendTrustedTargetGoalDefinition : public ::SharedTypes::v1_26_0::NearestAttackableTargetGoalDefinition {
@@ -32,7 +37,15 @@ public:
     MCAPI ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&
     operator=(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
 
+    MCAPI bool operator==(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition const&) const;
+
     MCAPI ~DefendTrustedTargetGoalDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

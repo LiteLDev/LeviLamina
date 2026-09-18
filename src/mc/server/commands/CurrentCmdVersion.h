@@ -58,6 +58,8 @@ enum class CurrentCmdVersion : int {
     PlaySoundOutputFix                                                                = 48,
     PlayerWaypointsGamerule                                                           = 49,
     ClonePartialBedBlockFix                                                           = 50,
-    Count                                                                             = 51,
-    Latest                                                                            = 50,
+    TeleportEntityDimensionPositionFix                                                = 51,
+    TimeOfCommandOverloads                                                            = 52,
+    Count                                                                             = 53,
+    Latest                                                                            = 52,
 };

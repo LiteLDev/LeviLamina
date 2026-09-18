@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerController() = default;
 
-    virtual ::ItemInstance const& getRecipeItem(int slot) const;
+    virtual ::ItemInstance const& getRecipeItem(int index) const;
 
     virtual bool canRemove(int slot, int removeCount) const;
 
@@ -87,11 +87,11 @@ public:
         ::ItemTransferAmount            transferAmount
     ) const;
 
-    MCAPI bool canConsume(int modelSlot, int removeCount) const;
+    MCFOLD bool canConsume(int modelSlot, int removeCount) const;
 
-    MCAPI bool canDestroy(int modelSlot, int removeCount) const;
+    MCFOLD bool canDestroy(int modelSlot, int removeCount) const;
 
-    MCAPI bool canDrop(int modelSlot, int removeCount) const;
+    MCFOLD bool canDrop(int modelSlot, int removeCount) const;
 
     MCAPI ::ItemSetType canSet(
         ::ContainerScreenContext const& context,
@@ -99,6 +99,16 @@ public:
         ::ItemStackBase const&          item,
         ::ItemTransferAmount            transferAmount,
         bool                            allowSwap
+    ) const;
+
+    MCAPI int
+    getAvailableAddCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& fillItem) const;
+
+    MCAPI int getAvailableAutoPlaceCount(
+        ::ContainerScreenContext const& context,
+        int                             slot,
+        ::ItemStackBase const&          fillItem,
+        bool                            allowClobber
     ) const;
 
     MCAPI ::ItemStack const& getItemStack(int slot) const;
@@ -119,7 +129,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::ItemInstance const& $getRecipeItem(int slot) const;
+    MCFOLD ::ItemInstance const& $getRecipeItem(int index) const;
 
     MCAPI bool $canRemove(int slot, int removeCount) const;
 

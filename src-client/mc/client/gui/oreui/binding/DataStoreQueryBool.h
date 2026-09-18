@@ -13,9 +13,9 @@ class DataStoreQueryBool : public ::OreUI::QueryBase<::OreUI::DataStoreQueryBool
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>           mSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>           mScreenAPISubscription;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>> mValue;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                  mSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                  mScreenAPISubscription;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>, ::std::optional<bool>>> mValue;
     // NOLINTEND
 };
 

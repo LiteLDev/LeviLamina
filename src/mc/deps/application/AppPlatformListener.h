@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/core/platform/OperationMode.h"
+#include "mc/deps/core/platform_info/RefreshRate.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -46,6 +47,8 @@ public:
     virtual void onPerformanceModeChanged(bool const boost);
 
     virtual void onPushNotificationReceived(::PushNotificationMessage const& msg);
+
+    virtual void onRefreshRateChanged(::RefreshRate const refreshRate);
 
     virtual void onResizeBegin();
 
@@ -112,6 +115,8 @@ public:
     MCFOLD void $onPerformanceModeChanged(bool const boost);
 
     MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
+
+    MCFOLD void $onRefreshRateChanged(::RefreshRate const refreshRate);
 
     MCFOLD void $onResizeBegin();
 

@@ -57,10 +57,6 @@ public:
     MCAPI void convertLegacyWorld(uint worldIndex, ::std::function<void()> failureCallback);
 
     MCAPI void fetchLegacySkin();
-
-    MCAPI void initWorlds();
-
-    MCAPI void onWizardComplete();
     // NOLINTEND
 
 public:

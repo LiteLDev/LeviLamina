@@ -34,6 +34,8 @@ public:
     virtual bool isTeacher() const /*override*/;
 
     virtual bool isOperator() const /*override*/;
+
+    virtual bool isExternalPlayerCommunicationAllowed() const /*override*/;
     // NOLINTEND
 
 public:
@@ -44,6 +46,8 @@ public:
     MCNAPI bool $isTeacher() const;
 
     MCNAPI bool $isOperator() const;
+
+    MCNAPI bool $isExternalPlayerCommunicationAllowed() const;
 
 
     // NOLINTEND

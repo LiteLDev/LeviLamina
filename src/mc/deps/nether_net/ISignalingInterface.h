@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ESessionError.h"
 
 // auto generated forward declare list
@@ -20,12 +21,8 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingInterface() = default;
 
-    virtual void SendSignal(
-        ::NetherNet::NetworkID                              from,
-        ::NetherNet::NetworkID                              to,
-        ::std::string const&                                message,
-        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-    ) = 0;
+    virtual ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    SendSignal(::NetherNet::NetworkID from, ::NetherNet::NetworkID to, ::std::string const& message) = 0;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) = 0;
     // NOLINTEND

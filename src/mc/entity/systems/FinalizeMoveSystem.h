@@ -19,7 +19,6 @@ struct MovementAbilitiesComponent;
 struct OffsetsComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct VerticalCollisionFlagComponent;
 // clang-format on
 
@@ -41,10 +40,4 @@ public:
         ::StateVectorComponent,
         ::Optional<::OnGroundFlagComponent const>,
         ::Optional<::MovementAbilitiesComponent const>>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create();
-    // NOLINTEND
 };

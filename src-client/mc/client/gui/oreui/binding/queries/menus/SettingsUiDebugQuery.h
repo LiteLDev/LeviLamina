@@ -18,7 +18,7 @@ class SettingsUiDebugQuery : public ::OreUI::QueryBase<::OreUI::Debug::SettingsU
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>        mIsUiDebugModeEnabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>  mIsUiDebugModeEnabled;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mDebugModeChangedSubscription;
     // NOLINTEND
 

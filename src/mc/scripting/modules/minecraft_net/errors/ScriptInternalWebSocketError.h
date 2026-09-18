@@ -28,6 +28,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptInternalWebSocketError();
+
+    MCNAPI explicit ScriptInternalWebSocketError(::std::error_code const& error);
     // NOLINTEND
 
 public:
@@ -40,6 +42,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::std::error_code const& error);
     // NOLINTEND
 };
 

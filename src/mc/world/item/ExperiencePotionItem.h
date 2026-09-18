@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -22,7 +23,7 @@ public:
     // NOLINTBEGIN
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual bool isThrowable() const /*override*/;
 
@@ -42,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
     MCFOLD bool $isThrowable() const;
 

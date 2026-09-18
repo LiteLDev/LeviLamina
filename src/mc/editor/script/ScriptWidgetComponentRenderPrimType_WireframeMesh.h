@@ -34,6 +34,12 @@ public:
     ScriptWidgetComponentRenderPrimType_WireframeMesh();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ScriptWidgetComponentRenderPrimType_WireframeMesh() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool
@@ -46,6 +52,18 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

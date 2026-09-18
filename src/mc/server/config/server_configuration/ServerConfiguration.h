@@ -10,8 +10,6 @@ namespace cereal { struct ReflectionCtx; }
 namespace ServerConfiguration {
 // functions
 // NOLINTBEGIN
-MCNAPI void bindGatheringsConfigurationJoinInfoForFile(::cereal::ReflectionCtx& ctx);
-
 MCNAPI void bindGatheringsConfigurationJoinInfoForPacket(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindServerConfigurationJoinInfo(::cereal::ReflectionCtx& ctx);

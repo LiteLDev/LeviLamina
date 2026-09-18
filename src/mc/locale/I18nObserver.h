@@ -8,10 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class PackManifest;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
-class I18nObserver : public ::Core::Observer<::I18nObserver, ::Bedrock::Threading::Mutex> {
+class I18nObserver : public ::Core::Observer<::I18nObserver, ::std::mutex> {
 public:
     // virtual functions
     // NOLINTBEGIN

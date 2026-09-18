@@ -10,7 +10,6 @@
 class LevelComponent;
 class StrictEntityContext;
 struct EventingRequestQueueComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class EventingRequestSystem {
@@ -26,7 +25,5 @@ public:
         ::EventingRequestQueueComponent& eventingRequestQueueComponent,
         ::LevelComponent&                levelComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

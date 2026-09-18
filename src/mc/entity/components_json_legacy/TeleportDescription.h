@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ActorComponentDescription.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,14 +16,16 @@ struct TeleportDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>    mRandomTeleports;
-    ::ll::TypedStorage<4, 4, float>   mMinTeleportTime;
-    ::ll::TypedStorage<4, 4, float>   mMaxTeleportTime;
-    ::ll::TypedStorage<4, 12, ::Vec3> mRandomTeleportCube;
-    ::ll::TypedStorage<4, 4, float>   mTargetDistance;
-    ::ll::TypedStorage<4, 4, float>   mTargetTeleportChance;
-    ::ll::TypedStorage<4, 4, float>   mLightTeleportChance;
-    ::ll::TypedStorage<4, 4, float>   mDarkTeleportChance;
+    ::ll::TypedStorage<1, 1, bool>                mRandomTeleports;
+    ::ll::TypedStorage<1, 1, bool>                mTeleportsOnProjectileHit;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mProjectileFilter;
+    ::ll::TypedStorage<4, 4, float>               mMinTeleportTime;
+    ::ll::TypedStorage<4, 4, float>               mMaxTeleportTime;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mRandomTeleportCube;
+    ::ll::TypedStorage<4, 4, float>               mTargetDistance;
+    ::ll::TypedStorage<4, 4, float>               mTargetTeleportChance;
+    ::ll::TypedStorage<4, 4, float>               mLightTeleportChance;
+    ::ll::TypedStorage<4, 4, float>               mDarkTeleportChance;
     // NOLINTEND
 
 public:

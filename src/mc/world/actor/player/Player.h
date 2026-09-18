@@ -333,7 +333,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                           mEmoteMessageCount;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mDeviceId;
     ::ll::TypedStorage<1, 1, bool>                                           mFlagClientForBAIReset;
-    ::ll::TypedStorage<1, 1, bool>                                           mSendInventoryOptionsToClient;
+    ::ll::TypedStorage<1, 1, uchar>                                          mSendPlayerOptionsFlags;
     ::ll::TypedStorage<1, 1, bool>                                           mIsHostingPlayer;
     ::ll::TypedStorage<1, 1, bool>                                           mPrevBlockedUsingShield;
     ::ll::TypedStorage<1, 1, bool>                                           mPrevBlockedUsingDamagedShield;
@@ -469,11 +469,7 @@ public:
     virtual void openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle);
 #endif
 
-#ifdef LL_PLAT_S
     virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
-#else // LL_PLAT_C
-    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> data);
-#endif
 
     virtual void openInventory();
 
@@ -611,6 +607,8 @@ public:
 
     virtual bool isTeacher() const = 0;
 
+    virtual bool isExternalCommunicationAllowed() const = 0;
+
     virtual void onSuspension();
 
     virtual void onLinkedSlotsChanged();
@@ -639,8 +637,6 @@ public:
     virtual ::std::string getXuid() const;
 
     virtual ::PlayerMovementSettings const& getMovementSettings() const;
-
-    virtual bool canFreeze() const /*override*/;
 
     virtual bool canInteractWithOtherEntitiesInGame() const /*override*/;
 
@@ -887,10 +883,6 @@ public:
 
     MCAPI bool isForcedRespawn() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool isInRaid() const;
-#endif
-
     MCAPI bool isItemOnCooldown(::HashedString const& category) const;
 
 #ifdef LL_PLAT_C
@@ -912,10 +904,6 @@ public:
         int                                    data,
         bool                                   isGlobal
     );
-
-#ifdef LL_PLAT_S
-    MCAPI void recheckSpawnPosition();
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI void registerTrackedBoss(::ActorUniqueID mob);
@@ -1171,11 +1159,7 @@ public:
     MCFOLD void $openChalkboard(::ChalkboardBlockActor& chalkboard, bool showLockToggle);
 #endif
 
-#ifdef LL_PLAT_S
     MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
-#else // LL_PLAT_C
-    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> data);
-#endif
 
     MCFOLD void $openInventory();
 
@@ -1322,8 +1306,6 @@ public:
     MCAPI ::std::string $getXuid() const;
 
     MCAPI ::PlayerMovementSettings const& $getMovementSettings() const;
-
-    MCAPI bool $canFreeze() const;
 
     MCAPI bool $canInteractWithOtherEntitiesInGame() const;
 

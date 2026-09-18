@@ -42,13 +42,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void confirmTransaction(bool isPaymentConfirmed);
-
     MCAPI ::std::string getEffectHoverName(int iSlot, bool bSecondaryEffect);
-
-    MCAPI bool isPaymentAvailable() const;
-
-    MCAPI bool isSelected(int iSlot, bool isSecondary);
 
     MCAPI bool isTierAvailable(int iTier);
 

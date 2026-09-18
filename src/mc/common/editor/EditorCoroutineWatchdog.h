@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace brstd { struct source_location; }
-// clang-format on
-
 namespace Editor::Services {
 
 class EditorCoroutineWatchdog {
@@ -24,6 +19,8 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk586287;
         ::ll::UntypedStorage<8, 32> mUnkced5f4;
+        ::ll::UntypedStorage<8, 32> mUnk1c83fa;
+        ::ll::UntypedStorage<8, 32> mUnk61a6ea;
         ::ll::UntypedStorage<8, 8>  mUnk8648a9;
         ::ll::UntypedStorage<8, 8>  mUnk67915b;
         ::ll::UntypedStorage<4, 4>  mUnk74814d;
@@ -43,6 +40,8 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnke1b567;
+        ::ll::UntypedStorage<8, 32> mUnk3583c5;
+        ::ll::UntypedStorage<8, 32> mUnkdf2ece;
         ::ll::UntypedStorage<8, 8>  mUnkf635ae;
         ::ll::UntypedStorage<8, 8>  mUnk528b1b;
         ::ll::UntypedStorage<4, 4>  mUnke15ad7;
@@ -66,9 +65,9 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk2d5d57;
     ::ll::UntypedStorage<8, 8>  mUnk7fe2cd;
     ::ll::UntypedStorage<8, 8>  mUnk27f3ba;
-    ::ll::UntypedStorage<8, 80> mUnk6f57a7;
+    ::ll::UntypedStorage<8, 80> mUnke56164;
     ::ll::UntypedStorage<8, 64> mUnk26e416;
-    ::ll::UntypedStorage<8, 80> mUnkcafcf2;
+    ::ll::UntypedStorage<8, 80> mUnk8243c3;
     ::ll::UntypedStorage<8, 24> mUnke10a81;
     ::ll::UntypedStorage<8, 8>  mUnkf5c83b;
     ::ll::UntypedStorage<1, 1>  mUnkbdae8c;
@@ -85,7 +84,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void registerTask(uint64 id, ::std::string const& name, ::brstd::source_location const& location);
+    MCNAPI void setActivity(uint64 id, ::std::string const& activity);
     // NOLINTEND
 };
 

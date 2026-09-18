@@ -11,7 +11,6 @@
 class CompoundTag;
 class HashedString;
 class PropertyGroup;
-class RenderParams;
 class Tag;
 struct PropertySyncData;
 // clang-format on
@@ -40,13 +39,6 @@ public:
     // NOLINTBEGIN
     MCAPI PropertyComponent(::PropertyComponent&&);
 
-#ifdef LL_PLAT_C
-    MCAPI PropertyComponent(
-        ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
-        ::RenderParams&                                           renderParams
-    );
-#endif
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void
@@ -54,13 +46,7 @@ public:
 
     MCAPI bool getBool(uint64 h) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI ::HashedString const& getString(uint64 h) const;
-#endif
 
     MCAPI ::PropertySyncData packAllSyncData() const;
 
@@ -83,10 +69,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::PropertyComponent&&);
-
-#ifdef LL_PLAT_C
-    MCAPI void*
-    $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
-#endif
     // NOLINTEND
 };

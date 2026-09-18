@@ -7,6 +7,7 @@
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
+#include "mc/client/legacy/ImportStatus.h"
 #include "mc/client/network/realms/FailureReason.h"
 #include "mc/events/IMinecraftEventing.h"
 
@@ -54,7 +55,7 @@ public:
 
     MCAPI ::std::string _checkTextEditEventForProfanityAndOpenWarning(::TextEditScreenEventData const& textEditEvent);
 
-    MCAPI void _displayWorldConversionErrorModalDialog();
+    MCAPI void _displayWorldConversionErrorModalDialog(::Legacy::ImportStatus status);
 
     MCAPI ::ui::ViewRequest _startLocalWorldSubRoutine(
         ::LocalWorldInfo const&                        world,

@@ -13,14 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ItemStackRequestData>>> mRequests;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void addDeserializedRequest(::std::unique_ptr<::ItemStackRequestData> request);
-
-    MCAPI void addRequest(::std::unique_ptr<::ItemStackRequestData> request);
-#endif
-    // NOLINTEND
 };

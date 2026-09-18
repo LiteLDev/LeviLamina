@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/biome/BiomeIdType.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
 #include "mc/world/level/storage/StorageVersion.h"
@@ -14,6 +15,7 @@ class CompoundTag;
 class LevelChunk;
 class Vec3;
 class WorldGenerator;
+struct CustomDimensionOptions;
 struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
@@ -25,6 +27,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::unique_ptr<::WorldGenerator>(::Dimension&)>> mGeneratorCreator;
+    ::ll::TypedStorage<2, 2, ::BiomeIdType>                                                       mDefaultBiome;
     // NOLINTEND
 
 public:
@@ -61,13 +64,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomDimension(::DerivedDimensionArguments&& args, ::DimensionType id, ::std::string const& name);
+    MCAPI CustomDimension(
+        ::DerivedDimensionArguments&&   args,
+        ::DimensionType                 id,
+        ::std::string const&            name,
+        ::CustomDimensionOptions const& options
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args, ::DimensionType id, ::std::string const& name);
+    MCAPI void* $ctor(
+        ::DerivedDimensionArguments&&   args,
+        ::DimensionType                 id,
+        ::std::string const&            name,
+        ::CustomDimensionOptions const& options
+    );
     // NOLINTEND
 
 public:

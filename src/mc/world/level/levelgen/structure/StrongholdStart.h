@@ -20,6 +20,8 @@ public:
     virtual bool isValid() const /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
+
+    virtual bool requiresNeighborAwareBlockUpgrade() const /*override*/;
     // NOLINTEND
 
 public:
@@ -28,6 +30,8 @@ public:
     MCFOLD bool $isValid() const;
 
     MCAPI ::std::string_view $getStructureName() const;
+
+    MCFOLD bool $requiresNeighborAwareBlockUpgrade() const;
 
 
     // NOLINTEND

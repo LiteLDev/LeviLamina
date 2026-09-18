@@ -4,6 +4,15 @@
 
 namespace dragon::res {
 
-class DragonFrameResources {};
+class DragonFrameResources {
+public:
+    // DragonFrameResources inner types declare
+    // clang-format off
+    struct AbstractPass;
+    // clang-format on
+
+    // DragonFrameResources inner types define
+    struct AbstractPass {};
+};
 
 } // namespace dragon::res

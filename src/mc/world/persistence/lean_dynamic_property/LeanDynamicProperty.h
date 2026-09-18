@@ -13,6 +13,9 @@ namespace LeanDynamicProperty {
 // NOLINTBEGIN
 MCNAPI ::std::variant<double, float, bool, ::std::string, ::Vec3>
 delean(::std::variant<double, float, bool, ::LeanDynamicProperty::String, ::Vec3> const& leanVariant);
+
+MCNAPI ::std::variant<double, float, bool, ::LeanDynamicProperty::String, ::Vec3>
+lean(::std::variant<double, float, bool, ::std::string, ::Vec3> const& variant);
 // NOLINTEND
 
 } // namespace LeanDynamicProperty

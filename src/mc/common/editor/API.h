@@ -15,7 +15,7 @@ namespace Editor::API {
 // functions
 // NOLINTBEGIN
 MCNAPI ::Scripting::Result_deprecated<::Editor::API::EditorExtensionServiceProvider*>
-_getExtensionService(::Editor::ServiceProviderCollection&);
+_getExtensionService(::Editor::ServiceProviderCollection& providers);
 
 MCNAPI ::Scripting::Result_deprecated<void>
 validateIdNamespaceForScriptPack(::std::string const& moduleUUID, ::std::string const& id);

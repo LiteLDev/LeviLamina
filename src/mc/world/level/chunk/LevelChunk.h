@@ -7,7 +7,7 @@
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/network/packet/SubChunkPacketPayload.h"
-#include "mc/platform/threading/Mutex.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/platform/threading/SpinLockImpl.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/level/BlockPos.h"
@@ -24,6 +24,7 @@
 #include "mc/world/level/chunk/DirtyTicksCounter.h"
 #include "mc/world/level/chunk/LevelChunkBiomes.h"
 #include "mc/world/level/chunk/LevelChunkBlockActorStorage.h"
+#include "mc/world/level/chunk/LevelChunkCreationMode.h"
 #include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/chunk/LevelChunkNeighbor.h"
 #include "mc/world/level/chunk/LevelChunkVolumeData.h"
@@ -62,6 +63,7 @@ class SubChunkPos;
 class WeakEntityRef;
 struct ActorDefinitionIdentifier;
 struct ActorLink;
+struct ActorUniqueID;
 struct BiomeChunkState;
 struct BlockID;
 struct DeserializationChanges;
@@ -134,10 +136,14 @@ public:
 
     using BlockActorVector = ::std::vector<::std::shared_ptr<::BlockActor>>;
 
+    using MoveLock = ::std::lock_guard<::SpinLockImpl>;
+
+    using MoveLockMutex = ::SpinLockImpl;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>             mBlockEntityAccessLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                            mBlockEntityAccessLock;
     ::ll::TypedStorage<8, 8, ::ILevel&>                                mLevel;
     ::ll::TypedStorage<8, 8, ::Dimension&>                             mDimension;
     ::ll::TypedStorage<4, 12, ::BlockPos>                              mMin;
@@ -188,6 +194,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                           mRemovedActorStorageKeys;
     ::ll::TypedStorage<8, 184, ::LevelChunkBlockActorStorage>                         mBlockEntities;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockActor>>>         mPreservedBlockEntities;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                  mPreservedBlockEntitiesTick;
     ::ll::TypedStorage<8, 24, ::std::vector<::WeakRef<::EntityContext>>>              mVolumes;
     ::ll::TypedStorage<1, 2, ::BrightnessPair>                                        mDefaultBrightness;
     ::ll::TypedStorage<8, 24, ::std::vector<::LevelChunk::SpawningArea>>              mSpawningAreas;
@@ -220,6 +227,9 @@ public:
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>      mIsTransient;
     ::ll::TypedStorage<1, 1, bool>                     mDidSaveJigsawStructureBlueprints;
     ::ll::TypedStorage<8, 856, ::LevelChunkVolumeData> mLevelChunkVolumeData;
+    ::ll::TypedStorage<8, 24, ::SpinLockImpl>          mMoveLockMutex;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>      mIsBeingMoved;
+    ::ll::TypedStorage<1, 1, ::std::atomic<::LevelChunkCreationMode>> mChunkCreationMode;
     // NOLINTEND
 
 public:
@@ -241,8 +251,6 @@ public:
     );
 
     MCAPI void _addEntityToVolumes(::gsl::not_null<::Actor*> actor);
-
-    MCAPI void _checkAndInferMetaDataAfterDeserialization();
 
 #ifdef LL_PLAT_C
     MCAPI void _deserializeBiomes(::IDataInput& stream, ::BiomeRegistry const& biomeRegistry, bool fromNetwork);
@@ -291,6 +299,10 @@ public:
 
     MCAPI bool applySeasonsPostProcess(::BlockSource& region);
 
+#ifdef LL_PLAT_C
+    MCAPI void changeState(::ChunkState from, ::ChunkState to);
+#endif
+
     MCAPI bool checkSeasonsPostProcessDirty() const;
 
 #ifdef LL_PLAT_C
@@ -337,7 +349,13 @@ public:
         ::buffer_span_mut<::SubChunk>  subchunks
     );
 
-    MCAPI bool generateOriginalLighting(::ChunkViewSource& neighborhood, bool enforceBorderCheck);
+#ifdef LL_PLAT_C
+    MCAPI bool generateOriginalLighting(
+        ::ChunkViewSource&            neighborhood,
+        bool                          enforceBorderCheck,
+        ::brstd::function_ref<void()> prepareNeighborhood
+    );
+#endif
 
     MCAPI ::ChunkLocalHeight getAboveTopSolidBlock(
         ::ChunkBlockPos const& start,
@@ -356,9 +374,9 @@ public:
 
     MCAPI ::Block const& getBlock(::ChunkBlockPos const& pos) const;
 
+#ifdef LL_PLAT_C
     MCAPI ::BlockActor* getBlockEntity(::ChunkBlockPos const& localPos);
 
-#ifdef LL_PLAT_C
     MCAPI ::std::array<::ChunkLocalHeight, 256> getEntireLightingHeightMap() const;
 #endif
 
@@ -372,6 +390,10 @@ public:
         bool                                         useHitbox,
         ::std::function<bool(::Actor*)>              selector
     ) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::Actor* getEntity(::ActorUniqueID const& actorId) const;
+#endif
 
     MCAPI short getMaxAllocatedY() const;
 
@@ -395,6 +417,8 @@ public:
 
     MCAPI void markForTickingThisFrame(::LevelChunkTicking::Registry& registry);
 
+    MCAPI void moveAssignFrom(::LevelChunk&& otherChunk);
+
 #ifdef LL_PLAT_C
     MCAPI void moveLevelChunk(::LevelChunk&& otherChunk, uint64 subChunkRequestLimit);
 #endif
@@ -402,8 +426,6 @@ public:
     MCAPI bool nonActorDataNeedsSaving(int wait, int maxWait) const;
 
     MCAPI void onDiscarded();
-
-    MCAPI ::LevelChunk& operator=(::LevelChunk&& otherChunk);
 
     MCAPI void placeCallbacks(
         ::ChunkBlockPos const&          pos,
@@ -419,15 +441,15 @@ public:
         ::SubChunkPacketPayload::SubChunkPacketData& subChunkPacketData
     ) const;
 
-#ifdef LL_PLAT_S
-    MCAPI void pruneBiomesAboveHeightmap();
-#endif
-
 #ifdef LL_PLAT_C
+    MCAPI void pruneBiomesAboveHeightmap();
+
     MCAPI void recalculateChunkSkyLight();
 #endif
 
     MCAPI void recomputeHeightMap(bool resetLighting);
+
+    MCAPI void releasePreservedBlockEntities(::BlockSource& tickRegion);
 
     MCAPI ::std::shared_ptr<::BlockActor> removeBlockEntity(::BlockPos const& blockPos);
 
@@ -463,6 +485,8 @@ public:
 
     MCAPI void setAllBlockTypeIDAndData(::buffer_span<::BlockID> ids, ::buffer_span<::NibblePair> data);
 
+    MCAPI void setBiomeStorages(::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>> biomeStorages);
+
     MCAPI ::Block const& setBlock(
         ::ChunkBlockPos const&          pos,
         ::Block const&                  block,
@@ -471,12 +495,16 @@ public:
         ::BlockChangeContext const&     changeSourceContext
     );
 
+    MCAPI void setBlockSimple(::ChunkBlockPos const& pos, ::Block const& block);
+
     MCAPI void setBlockVolume(::BlockVolume const& box, uint yOffset);
 
     MCAPI void setBorder(::ChunkBlockPos const& pos, bool val);
 
 #ifdef LL_PLAT_C
     MCAPI void setClientNeedsToRequestSubchunks(::std::optional<uint64> requestLimit);
+
+    MCAPI void setEmptyClientChunk();
 #endif
 
     MCAPI ::Block const&
@@ -488,7 +516,7 @@ public:
 
     MCAPI void setPreWorldGenHeightMap(::std::unique_ptr<::std::vector<short>> heightmap);
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void setupRedstoneCircuit(::BlockSource& resource);
 #endif
 
@@ -506,7 +534,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::std::unique_ptr<::LevelChunk, ::LevelChunkPhase1Deleter> createNew(
         ::Dimension&                                dimension,
         ::ChunkPos                                  cp,
@@ -517,7 +544,6 @@ public:
 
     MCAPI static ::std::unique_ptr<::LevelChunk>
     createNewNoCustomDeleter(::Dimension& dimension, ::ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);
-#endif
 
     MCAPI static ::std::pair<ushort, ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>> deserialize3DBiomes(
         ::IDataInput&          stream,

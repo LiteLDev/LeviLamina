@@ -48,9 +48,7 @@ public:
 
     MCAPI int getInt(ushort id) const;
 
-#ifdef LL_PLAT_S
     MCAPI int64 getInt64(ushort id) const;
-#endif
 
     MCAPI schar getInt8(ushort id) const;
 
@@ -63,8 +61,6 @@ public:
     MCAPI ::Vec3 getVec3(ushort id) const;
 
     MCAPI bool hasData(ushort id) const;
-
-    MCAPI void markDirty(ushort id);
     // NOLINTEND
 
 public:

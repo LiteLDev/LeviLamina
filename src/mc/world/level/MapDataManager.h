@@ -17,10 +17,34 @@ class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
 class PacketSender;
+class Player;
 struct DimensionType;
 // clang-format on
 
 class MapDataManager {
+public:
+    // MapDataManager inner types declare
+    // clang-format off
+    struct DeferredLoadData;
+    // clang-format on
+
+    // MapDataManager inner types define
+    struct DeferredLoadData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 80> mUnk1433ac;
+        ::ll::UntypedStorage<8, 64> mUnk15de5b;
+        ::ll::UntypedStorage<8, 64> mUnk948872;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DeferredLoadData& operator=(DeferredLoadData const&);
+        DeferredLoadData(DeferredLoadData const&);
+        DeferredLoadData();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,6 +55,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                             mOnSaveLevelData;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::unique_ptr<::MapItemSavedData>>> mMapData;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>> mPacketSender;
+    ::ll::TypedStorage<8, 208, ::MapDataManager::DeferredLoadData>        mDeferredLoadData;
     // NOLINTEND
 
 public:
@@ -63,9 +88,14 @@ public:
         ::std::function<::ActorUniqueID()>          getNewUniqueID
     );
 
-    MCAPI ::MapItemSavedData* _loadMapData(::ActorUniqueID const& uuid);
+    MCAPI ::std::unique_ptr<::MapItemSavedData> _deserializeMapData(::ActorUniqueID const& uuid);
 
     MCAPI void _onSaveLevelData(::LevelStorage& levelStorage);
+
+    MCAPI ::MapItemSavedData*
+    _publishMapData(::ActorUniqueID const& uuid, ::std::unique_ptr<::MapItemSavedData> loadedMap);
+
+    MCAPI bool copyAndLockMap(::ActorUniqueID originalMapUuid, ::ActorUniqueID newMapUuid);
 
     MCAPI ::MapItemSavedData& createMapSavedData(
         ::std::vector<::ActorUniqueID> const& mapIds,
@@ -74,7 +104,32 @@ public:
         int                                   returnScaleLevel
     );
 
+    MCAPI ::MapItemSavedData& createMapSavedData(
+        ::ActorUniqueID const& uuid,
+        ::BlockPos const&      origin,
+        ::DimensionType        dimension,
+        int                    returnScaleLevel
+    );
+
+    MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
+
+    MCAPI ::MapItemSavedData* getMapSavedData(::ActorUniqueID uuid);
+
+    MCAPI void loadMapDataForDeferredPublish(::ActorUniqueID uuid);
+
+    MCAPI void onStartLeaveGame();
+
+    MCAPI void publishDeferredMapData();
+
     MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCAPI void tick();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool hasMapToCopy(::Player& player, ::ActorUniqueID const& uuid);
     // NOLINTEND
 
 public:
@@ -106,11 +161,5 @@ public:
     MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

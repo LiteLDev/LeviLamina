@@ -6,6 +6,7 @@ struct MarketplaceStatusInfo {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mIsEduMode;
     ::ll::TypedStorage<1, 1, bool> mIsMarketplaceDisabled;
     ::ll::TypedStorage<1, 1, bool> mIsOffline;
     ::ll::TypedStorage<1, 1, bool> mIsSessionConfigInProgress;

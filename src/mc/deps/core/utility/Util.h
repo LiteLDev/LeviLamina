@@ -132,6 +132,8 @@ MCNAPI ::std::string getFilesizeString(uint64 filesize, ::I18n& loc);
 
 MCNAPI ::std::string getLocalizedStoreDisplayName(::std::string const& storeId);
 
+MCNAPI ::std::string_view getNameWithoutNamespace(::std::string_view name);
+
 MCNAPI ::std::string getPackDataDownloadProgressString(
     uint64 downloadedDataSize,
     uint64 totalDownloadDataSize,
@@ -141,6 +143,8 @@ MCNAPI ::std::string getPackDataDownloadProgressString(
 MCNAPI ::std::string getVirtualCurrencyStringTTS(uint amount);
 
 MCNAPI ::std::string getVirtualCurrencyStringTTS(::std::string const& currency);
+
+MCNAPI bool isIntegral(::std::string const& str, bool allowPlusSign);
 #endif
 
 MCNAPI bool isValidNamespaceFormat(::std::string_view name);

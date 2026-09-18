@@ -9,6 +9,7 @@ public:
     // RealmsWorldPackEditor inner types declare
     // clang-format off
     struct FetchStatus;
+    struct PackProfanityInfo;
     class RealmsWorldPackEditorImpl;
     struct SaveStatus;
     // clang-format on
@@ -17,6 +18,8 @@ public:
     enum class ProcessState : int {};
 
     struct FetchStatus {};
+
+    struct PackProfanityInfo {};
 
     class RealmsWorldPackEditorImpl {};
 

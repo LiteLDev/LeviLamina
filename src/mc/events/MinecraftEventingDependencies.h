@@ -11,7 +11,7 @@ namespace Social::Events { class EventManager; }
 class IBrazeEventListener;
 class IPurchaseEventing;
 class IRealmsTelemetry;
-class IResourceLoadEventing;
+class IWorldLoadPerformanceEventing;
 // clang-format on
 
 struct MinecraftEventingDependencies {
@@ -22,7 +22,7 @@ public:
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<uint>>>                           mPrimaryLocalUser;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IBrazeEventListener>>                           mBraze;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPurchaseEventing>>                              mPurchaseEventing;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IResourceLoadEventing>>                          mResourceLoadEventing;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IWorldLoadPerformanceEventing>> mWorldLoadPerformanceEventing;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::std::unique_ptr<::IRealmsTelemetry>() const>>
         mRealmsTelemetryFactory;
     // NOLINTEND

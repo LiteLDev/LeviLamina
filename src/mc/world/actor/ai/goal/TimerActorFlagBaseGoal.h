@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct GoalId;
 // clang-format on
 
 class TimerActorFlagBaseGoal : public ::BaseGoal {
@@ -53,13 +54,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TimerActorFlagBaseGoal(::Mob& mob, ::ActorFlags actorFlag);
+    MCAPI TimerActorFlagBaseGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::ActorFlags actorFlag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::ActorFlags actorFlag);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::ActorFlags actorFlag);
     // NOLINTEND
 
 public:

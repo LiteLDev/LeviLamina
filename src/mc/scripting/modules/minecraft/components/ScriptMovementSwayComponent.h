@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/DerivedMovementScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -13,6 +14,14 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 class ScriptMovementSwayComponent : public ::ScriptModuleMinecraft::DerivedMovementScriptActorComponent<840> {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<float> getSwayAmplitude() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getSwayFrequency() const;
+    // NOLINTEND
+
 public:
     // static functions
     // NOLINTBEGIN

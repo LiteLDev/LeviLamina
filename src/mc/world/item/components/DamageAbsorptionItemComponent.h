@@ -30,9 +30,7 @@ public:
         ::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& absorbableDamageCauses
     );
 
-#ifdef LL_PLAT_S
     MCAPI explicit DamageAbsorptionItemComponent(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
-#endif
     // NOLINTEND
 
 public:
@@ -40,9 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& absorbableDamageCauses);
 
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
-#endif
     // NOLINTEND
 
 public:

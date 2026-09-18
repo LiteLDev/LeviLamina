@@ -107,6 +107,7 @@ class IAppPlatform;
 class IConstBlockSource;
 class IFileAccess;
 class ILevel;
+class IMinecraftEventing;
 class InsomniaComponent;
 class InternalTaskGroup;
 class InventoryContentPacket;
@@ -120,17 +121,14 @@ class LevelData;
 class LevelTickTrackingComponent;
 class LinkedAssetValidator;
 class ListTag;
-class LootTableContext;
 class Matrix;
 class NavigationComponent;
 class Player;
 class PoolAliasBinding;
-class Random;
 class Recipe;
 class RecipeIngredient;
 class RedstoneTorchCapacitor;
 class ScriptPluginResult;
-class ScriptStat;
 class SemVersion;
 class ShapedRecipe;
 class ShapelessRecipe;
@@ -159,7 +157,8 @@ struct AirTravelFlagComponent;
 struct BlockLayer;
 struct BossComponent;
 struct BurnsInDaylightComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct CurrentTickComponent;
 struct DashActionComponent;
 struct DashJumpFlagComponent;
@@ -170,7 +169,6 @@ struct FlatWorldPreset;
 struct GlidingTravelFlagComponent;
 struct GroundTravelFlagComponent;
 struct HCTraceImplArea;
-struct HasLightweightFamilyFlagComponent;
 struct HorseWasOnGroundPreTravelComponent;
 struct ImmuneToLavaDragComponent;
 struct JumpPendingScaleComponent;
@@ -209,6 +207,7 @@ struct WasInWaterFlagComponent;
 struct WaterTravelFlagComponent;
 struct WorkerConfiguration;
 struct WorldTemplateInfo;
+struct XAsyncBlock;
 struct cgltf_anisotropy;
 struct cgltf_attribute;
 struct cgltf_data;
@@ -223,6 +222,7 @@ struct cgltf_texture_view;
 struct srtp_auth_t;
 namespace Bedrock { class StaticOptimizedString; }
 namespace Bedrock { class WorkerPoolHandleInterface; }
+namespace Bedrock::Http { class DispatcherInterface; }
 namespace Bedrock::Services { class IDiscoveryService; }
 namespace Bedrock::Services { struct DiscoveryConfig; }
 namespace Core { class File; }
@@ -250,17 +250,20 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 class TraceState;
 struct HC_CALL;
+class DataDrivenModel;
 class DataDrivenRenderer;
 class ExprToken;
 class IClientInstance;
 class IOptionRegistry;
+class OptionRegistry;
 class SearchQuery;
-class StoreDataDrivenScreenController;
 class TrialManager;
 class UIControl;
 class UIPropertyBag;
 class WorldSeedModel;
+struct AttachablesPreprocessingContext;
 struct BakedRenderControllerResults;
+struct BlockLightConfiguration;
 struct ClientSkin;
 struct CloudConfiguration;
 struct CommonLocTextPair;
@@ -411,6 +414,8 @@ MCAPI uint SuperFastHashIncremental(char const* data, uint64 len, uint lastHash)
 MCAPI ::SharedTypes::Legacy::UseAnimation UseAnimationFromString(::std::string const& str);
 
 #ifdef LL_PLAT_C
+MCAPI HRESULT XalCleanupAsync(::XAsyncBlock* async);
+
 MCAPI ::Bedrock::Threading::Async<::ContentCatalogQueryData::Done> _addCatalogItemsFromSearch(
     ::SearchQuery const&                         query,
     ::DurableSearchResults const&                response,
@@ -508,16 +513,7 @@ MCAPI void _forEachObject(
 );
 
 MCAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
-#endif
 
-MCAPI ::std::unique_ptr<::ListTag> _getLootItemList(
-    ::std::string const&        lootTable,
-    ::Random&                   random,
-    ::LootTableContext&         context,
-    ::std::vector<::ItemStack>& items
-);
-
-#ifdef LL_PLAT_C
 MCAPI ::cg::MipMapSupport _globalMipMapSupport();
 
 MCAPI bool _haveSameScrollSection(::std::weak_ptr<::UIControl> const& a, ::std::weak_ptr<::UIControl> const& b);
@@ -648,6 +644,8 @@ MCAPI ::OfferCategory _tryDetermineOfferCategory(::ProductSku const& sku);
 
 MCAPI ::ProductType _tryDetermineProductType(::ProductSku const& sku);
 
+MCAPI void _updateFramePacing(::std::shared_ptr<::OptionRegistry> const& Options);
+
 MCAPI void _validateControlNamesRecursive(
     ::Json::Value const&          control,
     ::std::string const&          namePath,
@@ -686,6 +684,14 @@ MCAPI void addToFillQueue(
 );
 
 #ifdef LL_PLAT_C
+MCAPI void bakeAttachable(::std::shared_ptr<::DataDrivenRenderer> renderer, ::AttachablesPreprocessingContext& ctx);
+
+MCAPI void bakeDataDrivenRenderer(
+    ::std::weak_ptr<::DataDrivenModel>        weakModelPtr,
+    ::ExtractedDataDataDrivenModel const&     extractedData,
+    ::DataDrivenRendererPreprocessingContext& ctx
+);
+
 MCAPI ushort bakeGeneratedDraws(
     ::ExtractedDataDataDrivenModel const&     extractedData,
     uint                                      geoIdx,
@@ -886,6 +892,8 @@ MCAPI void convertBiomesFilterToGenericFilter(::Json::Value& tradeItem);
 
 #ifdef LL_PLAT_C
 MCAPI ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)> createDefaultUniqueRakPeer();
+
+MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeEventMap();
 #endif
 
 #ifdef LL_PLAT_S
@@ -893,25 +901,17 @@ MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeEventMap(
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeEventMap();
-#endif
-
-#ifdef LL_PLAT_S
 MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeLOCMap();
 #endif
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeLOCMap();
 
 MCAPI ::std::unordered_map<::PackType, ::std::string> createPackTypeToStringMap();
 #endif
 
-#ifdef LL_PLAT_S
-MCAPI ::std::unordered_map<::PackType, ::std::string> createPackTypeToStringMap();
-#endif
-
 #ifdef LL_PLAT_C
-MCAPI ::std::unordered_map<::std::string, ::PackType> createStringToPackTypeMap();
+MCAPI ::std::unordered_map<::PackType, ::std::string> createPackTypeToStringMap();
 #endif
 
 #ifdef LL_PLAT_S
@@ -919,6 +919,8 @@ MCAPI ::std::unordered_map<::std::string, ::PackType> createStringToPackTypeMap(
 #endif
 
 #ifdef LL_PLAT_C
+MCAPI ::std::unordered_map<::std::string, ::PackType> createStringToPackTypeMap();
+
 MCAPI ::ExprToken createTokenFromUIDefVal(::Json::Value const& resVal);
 #endif
 
@@ -952,16 +954,16 @@ MCAPI void doHorsePreTravelSystem(
 
 MCAPI void doLavaMoveSystem(
     ::StrictEntityContext const&,
-    ::Optional<::NavigationComponent const>               navigationComponent,
-    ::AABBShapeComponent const&                           aabbShapeComponent,
-    ::ActorRotationComponent const&                       actorRotationComponent,
-    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
-    ::FallDistanceComponent&                              fallDistanceComponent,
-    ::MobTravelComponent&                                 mobTravelComponent,
-    ::StateVectorComponent&                               stateVectorComponent,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent,
-    ::IConstBlockSource const&                            region
+    ::Optional<::NavigationComponent const>                        navigationComponent,
+    ::AABBShapeComponent const&                                    aabbShapeComponent,
+    ::ActorRotationComponent const&                                actorRotationComponent,
+    ::ActorDataFlagComponent const&                                synchedActorDataComponent,
+    ::FallDistanceComponent&                                       fallDistanceComponent,
+    ::MobTravelComponent&                                          mobTravelComponent,
+    ::StateVectorComponent&                                        stateVectorComponent,
+    ::Optional<::CanStandOnPowderSnowComponent const>              canStandOnPowderSnowComponent,
+    ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const> canStandOnPowderSnowFromEquipmentComponent,
+    ::IConstBlockSource const&                                     region
 );
 
 MCAPI void doPlayerMovementStatsEventSystem(
@@ -1080,7 +1082,7 @@ MCFOLD ::srtp_err_status_t external_hmac_update(void*, uchar const*, int);
 
 #ifdef LL_PLAT_C
 MCAPI ::std::optional<::ExtractedDataDataDrivenModel>
-extractModelData(::HashedString const& name, ::std::shared_ptr<::DataDrivenRenderer> const rendererPtr);
+extractModelData(::HashedString const& name, ::std::shared_ptr<::DataDrivenRenderer> rendererPtr);
 
 MCAPI void fillLangValue(
     ::std::string const&                                jsonFieldStr,
@@ -1137,11 +1139,7 @@ MCAPI void getControlsInternal(
     ::std::function<bool(::UIControl const&)>      predicate,
     ::UIControl&                                   control
 );
-#endif
 
-MCAPI ::std::string getDiscoveryServiceURL(::DiscoveryEnvironment environment);
-
-#ifdef LL_PLAT_C
 MCAPI ::Json::Value const& getDisplayProperties(::Json::Value const& resultObject, bool pascalCase);
 
 MCAPI ::std::string const getEdition();
@@ -1198,13 +1196,6 @@ MCAPI int& getSampleCount(
 );
 
 #ifdef LL_PLAT_C
-MCAPI ::std::string getScreenshotTextureFileSystemFromBag(
-    int const                          index,
-    ::UIPropertyBag&                   bag,
-    int const                          offset,
-    ::StoreDataDrivenScreenController& controller
-);
-
 MCAPI ::std::string getStringOrParsedTextObject(
     ::Json::Value const&                                 value,
     ::std::function<::std::string(::std::string const&)> emoticonifyTextCallback
@@ -1213,13 +1204,9 @@ MCAPI ::std::string getStringOrParsedTextObject(
 MCAPI ::SubChunk::SubChunkState getSubChunkState(::LevelChunk& levelChunk, short absoluteIndex);
 
 MCAPI void getVisibleControlsInternal(::std::function<void(::UIControl&)> const& action, ::UIControl& control);
-#endif
 
-#ifdef LL_PLAT_S
 MCAPI bool isChunkAtStage(::std::weak_ptr<::LevelChunk> lcwp, ::ChunkState stateToCheck);
-#endif
 
-#ifdef LL_PLAT_C
 MCAPI bool isPersonaLodReady(::ClientSkin const& skin);
 
 MCAPI bool isSkinPackExpiredRealms(::SkinPackMeta const& meta);
@@ -1231,11 +1218,6 @@ MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag);
 
 #ifdef LL_PLAT_C
 MCAPI int jsmn_parse(::jsmn_parser* parser, char const* js, uint64 len, ::jsmntok_t* tokens, uint64 num_tokens);
-
-MCAPI ::std::string keyLookup(
-    ::std::unordered_map<::std::string, ::std::vector<char> const> const& keyMap,
-    ::std::string const&                                                  packIdentity
-);
 #endif
 
 #ifdef LL_PLAT_S
@@ -1246,6 +1228,11 @@ MCAPI ::std::string keyLookup(
 #endif
 
 #ifdef LL_PLAT_C
+MCAPI ::std::string keyLookup(
+    ::std::unordered_map<::std::string, ::std::vector<char> const> const& keyMap,
+    ::std::string const&                                                  packIdentity
+);
+
 MCAPI ::glm::vec3 makeAchromatopsiaXLinked(::glm::vec3 fragment);
 #endif
 
@@ -1273,15 +1260,6 @@ MCAPI ::mce::UUID makeGuestUUID(::mce::UUID const& hostUuid, ::SubClientId subcl
 
 #ifdef LL_PLAT_C
 MCAPI ::glm::vec3 makeInverted(::glm::vec3 fragment);
-
-MCAPI ::TextPacket makeMessageOnly(
-    ::TextPacketType               t,
-    ::std::string                  message,
-    bool                           localize,
-    ::std::optional<::std::string> filtered,
-    ::std::string                  xuid,
-    ::std::string                  platformId
-);
 #endif
 
 #ifdef LL_PLAT_S
@@ -1296,13 +1274,13 @@ MCAPI ::TextPacket makeMessageOnly(
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI ::TextPacket makeMessageParams(
-    ::TextPacketType             t,
-    ::std::string                message,
-    ::std::vector<::std::string> params,
-    bool                         localize,
-    ::std::string                xuid,
-    ::std::string                platformId
+MCAPI ::TextPacket makeMessageOnly(
+    ::TextPacketType               t,
+    ::std::string                  message,
+    bool                           localize,
+    ::std::optional<::std::string> filtered,
+    ::std::string                  xuid,
+    ::std::string                  platformId
 );
 #endif
 
@@ -1317,13 +1295,16 @@ MCAPI ::TextPacket makeMessageParams(
 );
 #endif
 
-MCAPI ::mce::UUID makePlayerUUIDForNsaId(::std::string const& nsaId);
-
-MCAPI ::mce::UUID makePlayerUUIDForPsnId(::std::string const& psnId);
-
-MCAPI ::mce::UUID makePlayerUUIDForXUID(::std::string const& xuid);
-
 #ifdef LL_PLAT_C
+MCAPI ::TextPacket makeMessageParams(
+    ::TextPacketType             t,
+    ::std::string                message,
+    ::std::vector<::std::string> params,
+    bool                         localize,
+    ::std::string                xuid,
+    ::std::string                platformId
+);
+
 MCAPI ::glm::vec3 makeProtanopia(::glm::vec3 fragment);
 
 MCAPI ::DataDrivenRendererPool makeSeededFallbackPool(::std::weak_ptr<::mce::BufferResourceService> bufferService);
@@ -1332,8 +1313,11 @@ MCAPI ::glm::vec3 makeSepia(::glm::vec3 fragment);
 #endif
 
 #ifdef LL_PLAT_S
-MCAPI ::std::shared_ptr<::Bedrock::Services::IDiscoveryService>
-makeServerDiscoveryService(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
+MCAPI ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> makeServerDiscoveryService(
+    ::Bedrock::Services::DiscoveryConfig const&             discoveryConfig,
+    ::std::shared_ptr<::Bedrock::Http::DispatcherInterface> dispatcher,
+    ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>     eventing
+);
 #endif
 
 #ifdef LL_PLAT_C
@@ -1432,13 +1416,6 @@ MCAPI void setProgressPercent(
 );
 
 MCAPI bool shouldConnectToSideOrBelow(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type dir);
-
-MCAPI bool shouldRenderAnyAttachables(
-    bool     modelAttachablesAreEnabled,
-    ::Actor& actor,
-    bool     lessThanOrEqualToVersion_1_16_210,
-    bool     hideArmor
-);
 #endif
 
 #ifdef LL_PLAT_S
@@ -1466,6 +1443,12 @@ MCAPI ::ShapelessRecipePayload toShapelessPayload(::ShapelessRecipe const& recip
 MCAPI ::std::string toString(::AgentActionType type);
 
 #ifdef LL_PLAT_C
+MCAPI ::std::optional<uint> tryCreateDataDrivenV2Resource(
+    ::HashedString const&                          name,
+    ::std::shared_ptr<::DataDrivenRenderer> const& render,
+    ::DataDrivenRendererPreprocessingContext&      bakeCtx
+);
+
 MCAPI void updateLevelSettingsConsideringPlayerIntents(
     ::Bedrock::NotNullNonOwnerPtr<::ILevel>             level,
     ::Bedrock::NotNullNonOwnerPtr<::IAppPlatform> const appPlatform,
@@ -1592,26 +1575,20 @@ TextProcessingEventOriginEnumMap();
 
 MCAPI uint const& UNINITIALIZED_BLOCK_NETWORKID();
 
-MCAPI ::std::array<::HashedString, 17> const& VanillaStructureFeatureTypes();
+MCAPI ::std::array<::HashedString, 25> const& VanillaStructureFeatureTypes();
 
 #ifdef LL_PLAT_C
 MCAPI ::std::unordered_map<int, ::std::string> const& autoUpdateModeLabels();
 
-MCAPI ::std::unordered_map<int, ::std::string> const& chatDurationLabels();
+MCAPI ::std::unordered_map<int, ::std::string> const& blockLightQualityLabels();
 
-MCAPI ::std::unordered_map<int, ::std::string> const& chunkMapModeLabels();
+MCAPI ::std::unordered_map<int, ::std::string> const& chatDurationLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& cloudQualityLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& contentLogGUILevelLables();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& debugHudLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& devConnectionQualityLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& devEducationServicesEnvironmentLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& devMarketplaceRotationSpeedMultiplierLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& deviceInfoMemoryTierLabels();
 
@@ -1634,9 +1611,9 @@ MCAPI ::SubChunkDelayedDeleter<::SubChunkStorage<::Block>>& gBlockStorageGC();
 
 MCAPI ::InternalTaskGroup& gInternalTaskGroup();
 
+#ifdef LL_PLAT_C
 MCAPI ::SubChunkDelayedDeleter<::SubChunkBrightnessStorage>& gLightStorageGC();
 
-#ifdef LL_PLAT_C
 MCAPI ::MainGameCore::WinMain*& gWinMainInstance();
 
 MCAPI bool& g_forceDLSSFallback_Dx12();
@@ -1653,23 +1630,13 @@ MCAPI ::HCTraceImplArea& g_traceWEBSOCKET();
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI ::HCTraceImplArea& g_traceXSAPI();
-
 MCAPI ::std::unordered_map<int, ::std::string> const& gameModeLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& graphicsApiLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& graphicsModeLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& graphicsQualityPresetModeLabels();
 
-MCAPI ::std::unordered_map<int, ::std::string> const& interactionModelLabels();
-
 MCAPI ::std::unordered_map<int, ::std::string> const& joystickVisibilityOptionLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& newPlayerFlowV3ABCTestGroupLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& newPlayerPathTutorialModeABTestGroupLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& partyInviteReceivedFilterLabels();
 
@@ -1684,8 +1651,6 @@ MCAPI ::std::unordered_map<int, ::std::string> const& permissionsValueLabelPairs
 MCAPI ::std::unordered_map<int, ::std::string> const& permissionsValueTexturePairs();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& playerWaypointsLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& pointLightQualityLabels();
 #endif
 
 MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64, char const*, uint)> rakMalloc_Ex();
@@ -1693,11 +1658,7 @@ MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64, char const*, uint)> rakMal
 MCAPI ::std::add_lvalue_reference_t<void* (*)(void*, uint64, char const*, uint)> rakRealloc_Ex();
 
 #ifdef LL_PLAT_C
-MCAPI ::std::unordered_map<int, ::std::string> const& realmsEnvironmentLabels();
-
 MCAPI ::std::unordered_map<int, ::std::string> const& realmsGameModeLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& realmsSkuLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& reflectionQualityLabels();
 #endif
@@ -1717,13 +1678,9 @@ MCAPI ::std::unordered_map<int, ::std::string> const& sneakOptionLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& splitScreenLabels();
 
-MCAPI ::std::unordered_map<int, ::std::string> const& startupStatisticsLabels();
-
 MCAPI ::std::unordered_map<int, ::std::string> const& storageLocationLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& subtitlePositionLabels();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& sunsettingTierLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& thirdPersonLabels();
 
@@ -1742,7 +1699,5 @@ MCAPI ::std::unordered_map<int, ::std::string> const& volumetricFogQualityLabels
 MCAPI ::std::unordered_map<int, ::std::string> const& vsyncLabels();
 
 MCAPI ::std::add_lvalue_reference_t<int (*)(void*)> winrt_to_hresult_handler();
-
-MCAPI ::std::unordered_map<int, ::std::string> const& xboxEnvironmentLabels();
 #endif
 // NOLINTEND

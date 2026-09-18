@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/block_events/BlockEventBase.h"
 
 // auto generated forward declare list
@@ -22,6 +23,7 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>          mSuccessful;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3> const> mHit;
     ::ll::TypedStorage<1, 1, uchar const>                    mFace;
+    ::ll::TypedStorage<1, 1, ::HandSlot const>               mHandSlot;
     // NOLINTEND
 
 public:
@@ -42,6 +44,12 @@ public:
     MCFOLD ::BlockSource const& $getBlockSource() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -96,6 +96,20 @@ public:
 
     MCAPI ::std::string getTextInputText();
 
+    MCAPI void handleNativeTextInput(::std::string_view text);
+
+    MCAPI void imeConfirmComposition();
+
+    MCAPI void imeConfirmComposition(::std::string const& utf8Text);
+
+    MCAPI void imeEndComposition();
+
+    MCAPI void imeReplaceCompositionTextRange(::std::string const& replacement, int from, int to);
+
+    MCAPI void imeStartComposition();
+
+    MCAPI void imeUpdateCompositionText(::std::string const& utf8Text);
+
     MCAPI void setText(::std::string const& text, ::std::optional<::TextBoxSelection> const& selection);
     // NOLINTEND
 

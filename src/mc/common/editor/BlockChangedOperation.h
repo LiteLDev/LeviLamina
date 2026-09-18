@@ -40,7 +40,7 @@ public:
         ::ll::UntypedStorage<8, 8>   mUnkca0473;
         ::ll::UntypedStorage<8, 8>   mUnke42f4f;
         ::ll::UntypedStorage<8, 16>  mUnk3f28df;
-        ::ll::UntypedStorage<8, 16>  mUnkc02d8d;
+        ::ll::UntypedStorage<8, 16>  mUnk4e050e;
         ::ll::UntypedStorage<8, 16>  mUnk78108e;
         ::ll::UntypedStorage<8, 224> mUnkda3c58;
         // NOLINTEND
@@ -55,6 +55,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk415a46;
     ::ll::UntypedStorage<8, 24> mUnk4da484;
     ::ll::UntypedStorage<8, 8>  mUnk228eec;
     ::ll::UntypedStorage<8, 8>  mUnk127d01;
@@ -73,10 +74,10 @@ public:
 
     virtual ::std::string_view getName() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
+    virtual ::Editor::Transactions::IOperation::ProcessResult
     _processUndo(::Editor::ServiceProviderCollection& services) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
+    virtual ::Editor::Transactions::IOperation::ProcessResult
     _processRedo(::Editor::ServiceProviderCollection& services) /*override*/;
 
     virtual ::Editor::Transactions::IOperation::ProcessingState _getProcessingState() const /*override*/;
@@ -121,9 +122,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_processUndo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Editor::Transactions::IOperation::ProcessResult
+    $_processUndo(::Editor::ServiceProviderCollection& services);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_processRedo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Editor::Transactions::IOperation::ProcessResult
+    $_processRedo(::Editor::ServiceProviderCollection& services);
 
     MCNAPI ::Editor::Transactions::IOperation::ProcessingState $_getProcessingState() const;
 

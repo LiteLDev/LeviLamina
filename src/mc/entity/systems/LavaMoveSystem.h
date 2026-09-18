@@ -14,13 +14,12 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorRotationComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlagComponent;
 struct LavaTravelFlagComponent;
 struct MobTravelComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class LavaMoveSystem {
@@ -36,12 +35,6 @@ public:
         ::FallDistanceComponent,
         ::MobTravelComponent,
         ::StateVectorComponent,
-        ::Optional<::CanStandOnSnowFlagComponent const>,
-        ::Optional<::HasLightweightFamilyFlagComponent const>>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createLavaMoveSystem();
-    // NOLINTEND
+        ::Optional<::CanStandOnPowderSnowComponent const>,
+        ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const>>;
 };

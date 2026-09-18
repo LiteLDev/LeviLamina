@@ -13,16 +13,17 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<int>> mStackSize;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ItemGroup();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI ItemGroup(::ItemInstance const& itemInstance, int count);
 #endif
@@ -31,6 +32,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::ItemInstance const& itemInstance);
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::ItemInstance const& itemInstance, int count);
 #endif

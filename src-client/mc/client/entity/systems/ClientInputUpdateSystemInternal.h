@@ -27,12 +27,12 @@ struct ActorGameTypeComponent;
 struct ActorRotationComponent;
 struct ActorTypeComponent;
 struct CamelFlagComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct ClientInputLockComponent;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlagComponent;
 struct HorseFlagComponent;
 struct ImmuneToLavaDragComponent;
 struct LocalConstBlockSourceFactoryComponent;
@@ -64,8 +64,8 @@ struct WasInWaterFlagComponent;
 struct ClientInputUpdateSystemInternal
 : public ::IStrictTickingSystem<::StrictExecutionContext<
       ::Filter<
-          ::CanStandOnSnowFlagComponent,
-          ::HasLightweightFamilyFlagComponent,
+          ::CanStandOnPowderSnowComponent,
+          ::CanStandOnPowderSnowFromEquipmentComponent,
           ::HorseFlagComponent,
           ::MobFlagComponent,
           ::ParrotFlagComponent,
@@ -116,8 +116,8 @@ public:
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -186,8 +186,8 @@ public:
         ::Optional<::WasInWaterFlagComponent const>   isInWater,
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -243,8 +243,8 @@ public:
     MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,

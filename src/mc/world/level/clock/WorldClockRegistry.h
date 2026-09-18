@@ -11,12 +11,21 @@
 // clang-format off
 class HashedString;
 class LevelData;
+class LevelEventCoordinator;
 class PacketSender;
+class TimeMarker;
 class WorldClock;
 struct WorldClockData;
+struct WorldClockRegistrationError;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class WorldClockRegistry {
+public:
+    // WorldClockRegistry inner types define
+    using RegistrationResult =
+        ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::WorldClock>, ::WorldClockRegistrationError>;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,7 +38,10 @@ public:
             ::std::less<uint64>,
             ::std::vector<uint64>,
             ::std::vector<::Bedrock::UniqueOwnerPointer<::WorldClock>>>>
-        mClocks;
+                                                                                      mClocks;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator>> mLevelEventCoordinator;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::vector<::Bedrock::PubSub::Subscription>>>
+        mClockSubscriptions;
     // NOLINTEND
 
 public:
@@ -43,6 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::WorldClock>, ::WorldClockRegistrationError>
+    _registerClock(::HashedString const& name, ::std::vector<::TimeMarker> const& timeMarkers, bool isVanilla);
+
+#ifdef LL_PLAT_C
+    MCAPI void _registerEventListeners(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+#endif
+
     MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock> const _tryGetClock(::HashedString const& name);
 
     MCAPI int getTime(::HashedString const& clockName) const;

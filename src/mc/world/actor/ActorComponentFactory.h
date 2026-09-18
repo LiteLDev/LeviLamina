@@ -14,10 +14,6 @@ class ActorComponentFactory : public ::EntityComponentFactoryJson {
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void _initialize(::Experiments const& experiments);
-#endif
-
     MCAPI void _initializeComponentDefinitions(::Experiments const& experiments);
 
     MCAPI void _initializePropertyDefinitions(::Experiments const& experiments);

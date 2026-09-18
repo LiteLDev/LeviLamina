@@ -24,8 +24,6 @@ public:
 
     virtual bool areCompatible(::std::string const& routeA, ::std::string const& routeB) const = 0;
 
-    virtual bool isRouteInDirectory(::std::string const& directory, ::std::string const& route) const = 0;
-
     virtual ::std::optional<::std::string> getDefaultRouteForFile(::std::string const& file) const = 0;
 
     virtual ::OreUI::RouteType getRouteType(::std::string const& route) const = 0;

@@ -11,6 +11,7 @@
 // clang-format off
 class BlockPos;
 class BlockType;
+class HashedString;
 class IBlockSource;
 namespace Util { class XXHash; }
 namespace br::worldgen { struct StructureBlockInfo; }
@@ -52,6 +53,10 @@ public:
 
     MCAPI static ::br::worldgen::processors::BlockIgnore
     from(::std::vector<::SharedTypes::Reference<0>> const& toIgnore);
+
+#ifdef LL_PLAT_C
+    MCAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
+#endif
     // NOLINTEND
 
 public:

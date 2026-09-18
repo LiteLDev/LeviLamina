@@ -23,22 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RouteData& operator=(RouteData const&);
-    RouteData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouteData(::OreUI::RouteData const&);
-
     MCAPI ~RouteData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RouteData const&);
     // NOLINTEND
 
 public:

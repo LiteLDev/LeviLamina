@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockPredicate.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolBlockPredicateType.h"
 
@@ -24,7 +23,7 @@ public:
     ::ll::TypedStorage<4, 4, uint const>                                        mMaximumAmount;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::HashedString> const> mBlockMappings;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                        mCandidatePositions;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mCandidatePositionsLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                     mCandidatePositionsLock;
     // NOLINTEND
 
 public:
@@ -50,13 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
-#endif
     // NOLINTEND
 
 public:

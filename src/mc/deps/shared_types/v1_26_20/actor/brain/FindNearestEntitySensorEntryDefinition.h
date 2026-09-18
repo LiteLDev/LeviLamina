@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/v1_21_130/actor/brain/MemoryIdentifierDefinition.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
-#include "mc/deps/shared_types/v1_26_0/actor/brain/BaseSensorEntryDefinition.h"
+#include "mc/deps/shared_types/v1_26_0/actor/brain/ResultSensorEntryDefinition.h"
 #include "mc/deps/shared_types/v1_26_20/actor/brain/SensorResponseDefinition.h"
 
 // auto generated forward declare list
@@ -19,7 +19,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_20::Brain::MemorySensors {
 
 struct FindNearestEntitySensorEntryDefinition
-: public ::SharedTypes::v1_26_0::Brain::BaseSensorEntryDefinition<
+: public ::SharedTypes::v1_26_0::Brain::ResultSensorEntryDefinition<
       ::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition> {
 public:
     // FindNearestEntitySensorEntryDefinition inner types define

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
+class TaskGroup;
 namespace Json { class Value; }
 // clang-format on
 
@@ -17,6 +18,7 @@ class SubmitFeedbackScreenController : public ::MainMenuScreenController {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>          mAsyncTaskGroup;
     ::ll::TypedStorage<1, 1, bool>                                    mDirty;
     ::ll::TypedStorage<1, 1, bool>                                    mPendingAsyncOperation;
     ::ll::TypedStorage<1, 1, bool>                                    mEnableSubmitButton;

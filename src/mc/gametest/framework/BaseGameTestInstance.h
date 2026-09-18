@@ -112,6 +112,8 @@ public:
     MCNAPI void setRunOnFinish(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI void succeed();
+
+    MCNAPI void tick();
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
 namespace Editor::Prefabs { struct PrefabDBInstanceInteractionEvent; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Prefabs {
@@ -31,6 +32,11 @@ public:
     virtual void deselectInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef) = 0;
 
     virtual void clearSelectedInstances() = 0;
+
+    virtual void findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
+    ) = 0;
     // NOLINTEND
 };
 

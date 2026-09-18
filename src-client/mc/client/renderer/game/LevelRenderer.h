@@ -81,10 +81,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PointLighting::PointLightCoordinator>> mPointLightCoordinator;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PointLighting::PointLightShadowProbeManager>>
                                                                                          mPointLightShadowProbeManager;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                           mPointLightOptionSubscription;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightVolumeManager>> mLightVolumeManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightPropagationCoordinator>>
                                                                                   mLightPropagationCoordinator;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mLightVolumeOptionSubscription;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::TextureGroup>>             mTextureGroup;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                     mShadowCylinder;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                     mShadowOverlayCube;
@@ -213,6 +213,8 @@ public:
     MCAPI void onDimensionChanged();
 
     MCAPI void onOptionsChanged();
+
+    MCAPI void onWillChangeDimension();
 
     MCAPI void preRenderUpdate(
         ::ScreenContext&                        screenContext,

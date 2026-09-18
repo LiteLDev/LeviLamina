@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/scripting/debugger/script_debugger_messages/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace ScriptDebuggerMessages {
 
 struct StartProfilerMessage
@@ -28,21 +23,9 @@ public:
     StartProfilerMessage();
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& msPayloadType();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

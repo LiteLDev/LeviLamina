@@ -85,7 +85,11 @@ public:
 
     MCFOLD int $_getContainerOffset() const;
 
+#ifdef LL_PLAT_S
+    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+#else // LL_PLAT_C
     MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+#endif
 
     MCAPI ::Container* $_getContainer() const;
 

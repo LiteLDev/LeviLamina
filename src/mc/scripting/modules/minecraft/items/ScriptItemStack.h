@@ -21,7 +21,6 @@ namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct EngineError; }
 namespace Scripting { struct UnsupportedAPIError; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -46,14 +45,25 @@ public:
         mAttachedComponents;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ScriptItemStack();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ScriptItemStack(ScriptItemStack const&);
     ScriptItemStack();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
+#endif
+
     MCAPI ScriptItemStack(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
@@ -81,23 +91,21 @@ public:
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
     getComponents(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents> components, bool includeCustom);
 
-    MCAPI ::Scripting::Result<::std::string, ::Scripting::EngineError> getLocalizationKey() const;
-
     MCAPI ::std::vector<::std::string> getLore() const;
-
-    MCAPI ::std::optional<::std::string> getNameTag() const;
 
     MCAPI ::std::vector<::std::string> getTags() const;
 
-    MCAPI ::std::string getTypeId() const;
-
     MCAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack const&);
+
+    MCAPI void setAmountV010(int amount);
 
     MCAPI ::Scripting::Result_deprecated<void>
     setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
     MCAPI ::Scripting::Result_deprecated<void>
     setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
+
+    MCAPI void setData(int data);
 
     MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
     setDynamicProperty(
@@ -139,6 +147,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
+#endif
+
     MCAPI void* $ctor(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,

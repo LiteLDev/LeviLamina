@@ -59,6 +59,10 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceItem>>
     getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
 
+#ifdef LL_PLAT_C
+    MCNAPI bool operator==(::Editor::Services::PersistenceGroup const& other) const;
+#endif
+
     MCNAPI ~PersistenceGroup();
     // NOLINTEND
 

@@ -44,10 +44,10 @@ public:
 
     virtual ::std::string_view getName() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
+    virtual ::Editor::Transactions::IOperation::ProcessResult
     _processUndo(::Editor::ServiceProviderCollection& services) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
+    virtual ::Editor::Transactions::IOperation::ProcessResult
     _processRedo(::Editor::ServiceProviderCollection& services) /*override*/;
     // NOLINTEND
 
@@ -79,9 +79,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_processUndo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Editor::Transactions::IOperation::ProcessResult
+    $_processUndo(::Editor::ServiceProviderCollection& services);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_processRedo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Editor::Transactions::IOperation::ProcessResult
+    $_processRedo(::Editor::ServiceProviderCollection& services);
 
 
     // NOLINTEND

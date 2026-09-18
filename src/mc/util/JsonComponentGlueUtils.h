@@ -6,11 +6,12 @@
 // clang-format off
 class ActorDefinitionTrigger;
 class AdmireItemGoal;
+class AngerLevelComponent;
 class AvoidBlockGoal;
 class AvoidMobTypeGoal;
 class BegGoal;
-class BreedGoal;
 class ChargeHeldItemGoal;
+class CollisionBoxComponent;
 class DefendTrustedTargetGoal;
 class DigGoal;
 class DrinkPotionGoal;
@@ -21,11 +22,16 @@ class EmergeGoal;
 class EntityContext;
 class ExperienceRewardComponent;
 class FireAtTargetGoal;
+class FlockingComponent;
 class FollowCaravanGoal;
+class FollowMobGoal;
+class GameEventMovementTrackingComponent;
 class GoAndGiveItemsToNoteblockGoal;
 class GoAndGiveItemsToOwnerGoal;
 class GoHomeGoal;
 class HoldGroundGoal;
+class HomeComponent;
+class InteractComponent;
 class JumpAroundTargetGoal;
 class JumpToBlockGoal;
 class KnockbackRoarGoal;
@@ -35,6 +41,7 @@ class LookAtTargetGoal;
 class LookAtTradingPlayerGoal;
 class MeleeAttackBaseGoal;
 class Mob;
+class MountTamingComponent;
 class MoveToBlockGoal;
 class NapGoal;
 class PickupItemsGoal;
@@ -62,9 +69,12 @@ class VillagerCelebrationGoal;
 class WorkGoal;
 struct AddRiderComponent;
 struct ApplyKnockbackRulesComponent;
+struct BlockMovementSlowdownImmunityComponent;
+struct BossComponent;
 struct LegacyGoalDefinition;
 struct OnEquipmentChangedComponent;
 struct OutOfControlComponent;
+struct PhysicsComponent;
 struct PushableByEntityComponent;
 struct SpawnOnDeathComponent;
 struct VibrationListenerComponent;
@@ -77,7 +87,6 @@ namespace SharedTypes::v1_21_120 { struct AvoidBlockGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct AvoidMobTypeGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct DigGoalDefinition; }
 namespace SharedTypes::v1_21_130 { struct AddRiderComponentDefinition; }
-namespace SharedTypes::v1_21_90 { struct BreedGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct ExperienceRewardComponentDefinition; }
 namespace SharedTypes::v1_26_0 { struct LookAtPlayerGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct LookAtTargetGoalDefinition; }
@@ -137,14 +146,31 @@ namespace SharedTypes::v1_26_40 { struct OnTargetAcquiredDefinition; }
 namespace SharedTypes::v1_26_40 { struct OnTargetEscapeDefinition; }
 namespace SharedTypes::v1_26_40 { struct OnWakeWithOwnerDefinition; }
 namespace SharedTypes::v1_26_40 { struct PushableByEntityComponentDefinition; }
-namespace SharedTypes::v1_26_40 { struct RangedAttackGoalDefinition; }
 namespace SharedTypes::v1_26_40 { struct SnackGoalDefinition; }
 namespace SharedTypes::v1_26_40 { struct SummonActorGoalDefinition; }
+namespace SharedTypes::v1_26_50 { struct AngerLevelComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct BlockMovementSlowdownImmunityComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct BossComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct CollisionBoxComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct FlockingComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct FollowMobGoalDefinition; }
+namespace SharedTypes::v1_26_50 { struct GameEventMovementTrackingComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct HomeComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct InteractComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct MountTamingComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct PhysicsComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct RangedAttackGoalDefinition; }
 // clang-format on
 
 namespace JsonComponentGlueUtils {
 // functions
 // NOLINTBEGIN
+MCNAPI void initialize(
+    ::EntityContext&,
+    ::InteractComponent&                                        comp,
+    ::SharedTypes::v1_26_50::InteractComponentDefinition const& definition
+);
+
 MCNAPI void initialize(
     ::EntityContext&,
     ::SpawnOnDeathComponent&                                 component,
@@ -176,9 +202,6 @@ MCNAPI void initialize(
 );
 
 MCNAPI void initialize(::EntityContext&, ::BegGoal& goal, ::SharedTypes::v1_26_40::BegGoalDefinition const& definition);
-
-MCNAPI void
-initialize(::EntityContext&, ::BreedGoal& goal, ::SharedTypes::v1_21_90::BreedGoalDefinition const& definition);
 
 MCNAPI void initialize(
     ::EntityContext&,
@@ -221,6 +244,9 @@ MCNAPI void initialize(
     ::FollowCaravanGoal&                                        goal,
     ::SharedTypes::v1_26_30::FollowCaravanGoalDefinition const& definition
 );
+
+MCNAPI void
+initialize(::EntityContext&, ::FollowMobGoal& goal, ::SharedTypes::v1_26_50::FollowMobGoalDefinition const& definition);
 
 MCNAPI void initialize(
     ::EntityContext&,
@@ -314,7 +340,7 @@ MCNAPI void initialize(
 MCNAPI void initialize(
     ::EntityContext&,
     ::RangedAttackGoal&                                        goal,
-    ::SharedTypes::v1_26_40::RangedAttackGoalDefinition const& definition
+    ::SharedTypes::v1_26_50::RangedAttackGoalDefinition const& definition
 );
 
 MCNAPI void initialize(
@@ -382,8 +408,20 @@ MCNAPI void initialize(
 
 MCNAPI void initialize(
     ::EntityContext&,
+    ::HomeComponent&                                        runtimeComponent,
+    ::SharedTypes::v1_26_50::HomeComponentDefinition const& definition
+);
+
+MCNAPI void initialize(
+    ::EntityContext&,
     ::ApplyKnockbackRulesComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_30::ApplyKnockbackRulesComponentDefinition const& loadedData
+);
+
+MCNAPI void initialize(
+    ::EntityContext&,
+    ::BlockMovementSlowdownImmunityComponent&                                        runtimeComponent,
+    ::SharedTypes::v1_26_50::BlockMovementSlowdownImmunityComponentDefinition const& loadedData
 );
 
 MCNAPI void initialize(
@@ -471,9 +509,27 @@ MCNAPI void initialize(
 );
 
 MCNAPI void initialize(
+    ::EntityContext& entity,
+    ::PhysicsComponent&,
+    ::SharedTypes::v1_26_50::PhysicsComponentDefinition const& definition
+);
+
+MCNAPI void initialize(
     ::EntityContext&              entity,
     ::VibrationListenerComponent& component,
     ::SharedTypes::v1_26_20::VibrationListenerComponentDefinition const&
+);
+
+MCNAPI void initialize(
+    ::EntityContext&                                              entity,
+    ::AngerLevelComponent&                                        component,
+    ::SharedTypes::v1_26_50::AngerLevelComponentDefinition const& definition
+);
+
+MCNAPI void initialize(
+    ::EntityContext&                                               entity,
+    ::MountTamingComponent&                                        component,
+    ::SharedTypes::v1_26_50::MountTamingComponentDefinition const& definition
 );
 
 MCNAPI void initialize(
@@ -498,6 +554,30 @@ MCNAPI void initialize(
     ::EntityContext&                                                 entity,
     ::LookAtTradingPlayerGoal&                                       goal,
     ::SharedTypes::v1_26_0::LookAtTradingPlayerGoalDefinition const& definition
+);
+
+MCNAPI void initialize(
+    ::EntityContext&                                                             entity,
+    ::GameEventMovementTrackingComponent&                                        runtimeComponent,
+    ::SharedTypes::v1_26_50::GameEventMovementTrackingComponentDefinition const& definition
+);
+
+MCNAPI void initialize(
+    ::EntityContext&                                        entity,
+    ::BossComponent&                                        runtimeComponent,
+    ::SharedTypes::v1_26_50::BossComponentDefinition const& loadedData
+);
+
+MCNAPI void initialize(
+    ::EntityContext&                                                entity,
+    ::CollisionBoxComponent&                                        runtimeComponent,
+    ::SharedTypes::v1_26_50::CollisionBoxComponentDefinition const& loadedData
+);
+
+MCNAPI void initialize(
+    ::EntityContext&                                            entity,
+    ::FlockingComponent&                                        runtimeComponent,
+    ::SharedTypes::v1_26_50::FlockingComponentDefinition const& loadedData
 );
 
 MCNAPI void initializeMeleeAttackBaseGoal(

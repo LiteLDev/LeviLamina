@@ -11,6 +11,7 @@ class ActorAnimationGroup;
 class AnimationComponent;
 class SerializedSkinRef;
 class Skin;
+class SkinPackPin;
 struct PaperDollPlayerSkinInfo;
 struct SkinImages;
 namespace mce { class UUID; }
@@ -28,6 +29,8 @@ public:
 
     virtual ::Skin const* getSkinFromPack(uint64 packHash, int packIndex) = 0;
 
+    virtual ::SkinPackPin pinSkinPack(::mce::UUID const& packId) = 0;
+
     virtual bool isValidSelectedSkin(::mce::UUID const& packId, int skinIndex) const = 0;
 
     virtual void createOrUpdateSkin(
@@ -41,6 +44,8 @@ public:
     virtual ::SkinImages getSkinImages(::Skin const& skin, bool isPlayer) = 0;
 
     virtual bool isAnySkinOfNameInitialized(::std::string_view skin) const = 0;
+
+    virtual bool isRequiredPlayerAnimationLoaded() const = 0;
 
     virtual void markLocalPlayerAsDirty() = 0;
 

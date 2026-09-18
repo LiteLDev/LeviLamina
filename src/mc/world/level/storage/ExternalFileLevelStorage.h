@@ -13,6 +13,7 @@ class ContentIdentity;
 class IContentKeyProvider;
 class LevelData;
 class PackAccessStrategy;
+class TaskGroup;
 struct LevelSummary;
 namespace Core { class Path; }
 namespace Core { class Result; }
@@ -28,20 +29,20 @@ MCNAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& l
 
 MCNAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
 
+#ifdef LL_PLAT_S
 MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
     ::Core::Path const&                                               levelDirectory,
     ::ContentIdentity const&                                          contentIdentity,
     ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
 );
+#endif
 
 #ifdef LL_PLAT_C
-MCNAPI int64 getLevelModifiedTimestamp(::Core::Path const& directory, ::std::string const& containerName);
+MCNAPI ::std::vector<::std::string> const getImportantFiles();
 
 MCNAPI bool isLevelCloudSave(::Core::Path const& directory);
 
 MCNAPI bool isLevelCloudSaveOptOut(::Core::Path const& directory);
-
-MCNAPI bool isLevelMarkedForSync(::Core::Path const& directory);
 #endif
 
 MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
@@ -50,14 +51,6 @@ MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::strin
 MCNAPI void markLevelAsCloudSave(::Core::Path const& directory);
 
 MCNAPI void markLevelAsCloudSaveOptOut(::Core::Path const& directory);
-
-MCNAPI void markLevelForSync(
-    ::Core::Path const&  directory,
-    ::std::string const& levelName,
-    uint64               totalSize,
-    int64                fileTimeUTC,
-    bool                 isSyncInUsableState
-);
 #endif
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
@@ -65,11 +58,13 @@ MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::Leve
 MCNAPI ::Bedrock::Result<bool>
 readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
 
+#ifdef LL_PLAT_S
 MCNAPI bool readShallowLevelSummaryFromSyncFile(
     ::Core::Path const&  directory,
     ::std::string const& levelId,
     ::LevelSummary&      summary
 );
+#endif
 
 #ifdef LL_PLAT_C
 MCNAPI bool readSyncFileData(
@@ -92,6 +87,12 @@ MCNAPI void
 saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
 
 #ifdef LL_PLAT_C
+MCNAPI void saveLevelDisplayDataToCache(
+    ::std::string const&          levelId,
+    ::LevelData const&            levelData,
+    ::gsl::not_null<::TaskGroup*> taskGroup
+);
+
 MCNAPI void syncLevelInfoCache(::std::unordered_set<::Core::PathBuffer<::std::string>> const& levelRootPaths);
 
 MCNAPI ::Core::Result unMarkLevelAsCloudSave(::Core::Path const& directory);

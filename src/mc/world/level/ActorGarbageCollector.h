@@ -16,6 +16,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::OwnerPtr<::EntityContext>>> mPendingEntitiesToRemove;
     ::ll::TypedStorage<8, 24, ::std::vector<::OwnerPtr<::EntityContext>>> mDiscardedSerializingEntities;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsTearingDown;
     // NOLINTEND
 
 public:
@@ -24,6 +25,8 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void garbageCollectEntity(::OwnerPtr<::EntityContext> entity);
 #endif
+
+    MCAPI void teardown();
 
     MCAPI void update();
     // NOLINTEND

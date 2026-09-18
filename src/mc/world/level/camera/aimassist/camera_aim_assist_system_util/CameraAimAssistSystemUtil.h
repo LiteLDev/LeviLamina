@@ -23,7 +23,7 @@ namespace CameraAimAssistErrorType { struct MissingDependencies; }
 namespace CameraAimAssistErrorType { struct UnknownCategoryId; }
 namespace CameraAimAssistErrorType { struct UnknownPresetId; }
 namespace CameraAimAssistSystemUtil { struct BlockHitDetectResult; }
-namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 // clang-format on
 
 namespace CameraAimAssistSystemUtil {
@@ -78,7 +78,7 @@ MCNAPI ::Bedrock::Result<
         ::CameraAimAssistErrorType::MissingDependencies>>
 setAimAssistFromClient(
     ::Player&                                    player,
-    ::SharedTypes::v1_21_90::CameraPreset const& cameraPreset,
+    ::SharedTypes::v1_26_50::CameraPreset const& cameraPreset,
     bool                                         allowAimAssist
 );
 

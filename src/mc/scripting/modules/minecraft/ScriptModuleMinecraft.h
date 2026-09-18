@@ -117,6 +117,8 @@ MCNAPI ::Scripting::EnumBinding bindTimeOfDay();
 
 MCNAPI ::Scripting::EnumBinding bindTintMethodEnums();
 
+MCNAPI bool blockHasScriptableInventory(::Block const& block);
+
 MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createBlockContainerClosedAfterEventMetadata();
 
@@ -296,6 +298,18 @@ createTripWireTripAfterEventMetadata();
 
 MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createWeatherChangeAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createWorldClockPausedAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createWorldClockResumedAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createWorldClockTimeMarkerAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createWorldClockTimeModifiedAfterEventMetadata();
 
 MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createWorldInitializeAfterEventMetadata();

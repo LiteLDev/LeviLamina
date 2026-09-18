@@ -19,22 +19,6 @@ public:
     ProfilerControlResult& operator=(ProfilerControlResult const&);
     ProfilerControlResult(ProfilerControlResult const&);
     ProfilerControlResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~ProfilerControlResult();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Profiling::Control

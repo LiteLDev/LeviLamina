@@ -66,6 +66,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Json::Value buildNotificationPayload(::std::string const& dataTag, ::std::string const& payload);
 
+    MCNAPI static ::Json::Value buildServerPayloadDestroyMenu(::std::string const& id);
+
+    MCNAPI static ::Json::Value buildServerPayloadDestroyModalTool(::std::string const& id);
+
     MCNAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent
     getSerializedEvent(::Json::Value const& payload);
 

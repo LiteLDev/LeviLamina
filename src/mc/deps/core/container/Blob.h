@@ -49,10 +49,37 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                             mSize;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Blob();
+
+#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit Blob(uint64 size);
+
+    MCAPI Blob(uchar const* const ptr, uint64 size);
+#endif
+    // NOLINTEND
+
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void defaultDeleter(uchar* ptr);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(uint64 size);
+
+    MCAPI void* $ctor(uchar const* const ptr, uint64 size);
+#endif
     // NOLINTEND
 };
 

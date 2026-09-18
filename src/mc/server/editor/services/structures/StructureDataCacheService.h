@@ -52,6 +52,10 @@ public:
         ::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef
     ) /*override*/;
 
+    virtual void unregisterStructureDataProvider(
+        ::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef
+    ) /*override*/;
+
     virtual void informStructureDataRemoved(::mce::UUID const& id) /*override*/;
 
     virtual void informStructureDataUpdated(
@@ -95,6 +99,9 @@ public:
 
     MCNAPI void
     $registerStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef);
+
+    MCNAPI void
+    $unregisterStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef);
 
     MCNAPI void $informStructureDataRemoved(::mce::UUID const& id);
 

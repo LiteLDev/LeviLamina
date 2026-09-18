@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
@@ -86,7 +85,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                             mIsLevelStarted;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                          mLevelStartTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                       mDuration;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                    mMutex;
     ::ll::TypedStorage<4, 4, int>                                                              mCurrentTick;
     ::ll::TypedStorage<8, 8, uint64>                                                           mOuterUpdateCount;
     ::ll::TypedStorage<8, 8, uint64>                                                           mInnerUpdateCount;
@@ -108,13 +107,7 @@ public:
     MCAPI void endLevel(::Level& level);
 
 #ifdef LL_PLAT_C
-    MCAPI void recordCacheCheck(::LevelChunk const& lc);
-#endif
-
     MCAPI void recordChunkDeleted(::LevelChunk const& lc);
-
-#ifdef LL_PLAT_C
-    MCAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
 #endif
 
     MCAPI void startLevel(::Level const& level);

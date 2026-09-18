@@ -15,7 +15,6 @@ class UIAnimationController;
 class UIControl;
 class VisualTree;
 struct ScreenEvent;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -61,13 +60,6 @@ public:
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Subscription
-    registerListenerWithExpectedPageCount(uint64 expectedPageCount, ::std::function<void(uint64)> callback);
     // NOLINTEND
 
 public:

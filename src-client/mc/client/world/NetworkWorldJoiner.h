@@ -51,6 +51,7 @@ public:
     ::ll::TypedStorage<8, 8, ::World::ServerURLResolver>        mServerURLResolver;
     ::ll::TypedStorage<8, 8, ::World::ExternalServerWorldList&> mExternalServerWorldList;
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>                  mRouter;
+    ::ll::TypedStorage<8, 8, ::IClientInstance&>                mClient;
     // NOLINTEND
 
 public:
@@ -96,6 +97,11 @@ public:
         ::Network::ServerID const&                                  serverId,
         ::std::function<void(::std::unique_ptr<::ProgressHandler>)> onCompleteCallback,
         ::std::function<void(::World::JoinServerWorldResult)>       onErrorCallback
+    );
+
+    MCAPI void joinRealmThroughWorldTransfer(
+        ::std::string const&                      realmIdString,
+        ::IMinecraftEventing::RealmConnectionFlow fromFlow
     );
 
     MCAPI void joinRealmWorld(

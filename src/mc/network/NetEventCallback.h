@@ -170,6 +170,7 @@ class PositionTrackingDBClientRequestPacket;
 class PositionTrackingDBServerBroadcastPacket;
 class PrimitiveShapesPacket;
 class PurchaseReceiptPacket;
+class RecordStartedPacket;
 class RefreshEntitlementsPacket;
 class RemoveActorPacket;
 class RemoveObjectivePacket;
@@ -211,6 +212,7 @@ class SetHealthPacket;
 class SetHudPacket;
 class SetLastHurtByPacket;
 class SetLocalPlayerAsInitializedPacket;
+class SetPlayerFurnaceOptionsPacket;
 class SetPlayerGameTypePacket;
 class SetPlayerInventoryOptionsPacket;
 class SetScorePacket;
@@ -292,6 +294,7 @@ public:
     virtual void onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 #endif
 
+#ifdef LL_PLAT_S
     virtual void onDisconnect(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
@@ -301,6 +304,17 @@ public:
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
     );
+#else // LL_PLAT_C
+    virtual void onDisconnect(
+        ::NetworkIdentifier const&               source,
+        ::Connection::DisconnectFailReason const discoReason,
+        ::Connection::DisconnectionStage const   disconnectStage,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
+        bool                                     skipMessage,
+        ::std::string const&                     telemetryOverride
+    );
+#endif
 
 #ifdef LL_PLAT_S
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
@@ -1013,6 +1027,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet);
 
+    virtual void handle(::NetworkIdentifier const& source, ::SetPlayerFurnaceOptionsPacket const& packet);
+
 #ifdef LL_PLAT_S
     virtual void handle(::NetworkIdentifier const&, ::SetHudPacket const&);
 #else // LL_PLAT_C
@@ -1076,6 +1092,8 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::ServerPresenceInfoPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::RecordStartedPacket const&);
     // NOLINTEND
 
 public:
@@ -1107,6 +1125,7 @@ public:
     MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 #endif
 
+#ifdef LL_PLAT_S
     MCFOLD void $onDisconnect(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
@@ -1116,6 +1135,17 @@ public:
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
     );
+#else // LL_PLAT_C
+    MCFOLD void $onDisconnect(
+        ::NetworkIdentifier const&               source,
+        ::Connection::DisconnectFailReason const discoReason,
+        ::Connection::DisconnectionStage const   disconnectStage,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
+        bool                                     skipMessage,
+        ::std::string const&                     telemetryOverride
+    );
+#endif
 
     MCFOLD void $onWebsocketRequest(
         ::std::string const&    serverAddress,
@@ -1814,6 +1844,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet);
 
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::SetPlayerFurnaceOptionsPacket const& packet);
+
 #ifdef LL_PLAT_S
     MCFOLD void $handle(::NetworkIdentifier const&, ::SetHudPacket const&);
 #else // LL_PLAT_C
@@ -1877,6 +1909,8 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerPresenceInfoPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::RecordStartedPacket const&);
 
 
     // NOLINTEND

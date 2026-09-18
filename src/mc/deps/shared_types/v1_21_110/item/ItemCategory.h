@@ -11,6 +11,11 @@ namespace SharedTypes::v1_21_110 {
 
 struct ItemCategory {
 public:
+    // ItemCategory inner types declare
+    // clang-format off
+    struct CREATIVE_ITEM_CATEGORY_MAPPING;
+    // clang-format on
+
     // ItemCategory inner types define
     enum class CreativeItemCategory : uchar {
         All             = 0,
@@ -26,6 +31,15 @@ public:
     enum class CreativeItemCategoryStringError : uchar {
         EmptyString = 0,
         NotFound    = 1,
+    };
+
+    struct CREATIVE_ITEM_CATEGORY_MAPPING {
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::initializer_list<::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> const&
+        $RT1();
+        // NOLINTEND
     };
 
 public:

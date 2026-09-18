@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -27,18 +26,6 @@ public:
     HapticsCommandGroup& operator=(HapticsCommandGroup const&);
     HapticsCommandGroup(HapticsCommandGroup const&);
     HapticsCommandGroup();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit HapticsCommandGroup(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
 };
 
 } // namespace OreUI

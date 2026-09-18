@@ -65,13 +65,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::UniqueOwnerPointer<::EventCoordinatorManager>
-    createEventCoordinatorManager(bool isClientSide);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();

@@ -53,6 +53,15 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::StructureAnimationAction>
+    load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
+#endif
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

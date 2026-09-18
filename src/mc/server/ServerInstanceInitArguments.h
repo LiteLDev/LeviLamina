@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -139,7 +140,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk87b043;
     ::ll::UntypedStorage<8, 16>  mUnk639ef4;
     ::ll::UntypedStorage<8, 16>  mUnkae7244;
-    ::ll::UntypedStorage<8, 16>  mUnk767c88;
+    ::ll::UntypedStorage<8, 64>  mUnkee2d02;
     // NOLINTEND
 
 public:

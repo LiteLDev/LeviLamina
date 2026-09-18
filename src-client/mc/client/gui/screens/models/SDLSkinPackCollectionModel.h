@@ -6,6 +6,7 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/models/DlcBatchCacheModel.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,9 +16,9 @@ class IPersonaClient;
 class ISkinRepository;
 class IStoreCatalogItem;
 class IStoreCatalogRepository;
+class PackManifest;
 class PersonaClient;
 class SkinPackModel;
-namespace mce { class UUID; }
 namespace persona { class DlcImportTracker; }
 // clang-format on
 
@@ -32,11 +33,11 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository>>      mStoreCatalogRepository;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::persona::DlcImportTracker>>> mTrackedImports;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::SkinPackModel>>>             mSkinPacks;
+    ::ll::TypedStorage<8, 16, ::std::set<::mce::UUID>>                                       mCollectedPackIdentities;
     ::ll::TypedStorage<8, 8, uint64>                                                         mStartFetchIndex;
     ::ll::TypedStorage<8, 8, uint64>                                                         mVisibleEndRange;
     ::ll::TypedStorage<4, 4, uint>                                                           mVisiblePacks;
     ::ll::TypedStorage<4, 4, uint>                                                           mMaxPacksPerFetch;
-    ::ll::TypedStorage<4, 4, int>                                                            mSideLoadedPacksCollected;
     // NOLINTEND
 
 public:
@@ -56,7 +57,15 @@ public:
         ::IPersonaClient&                                        personaClient
     );
 
-    MCAPI uint64 collectLegacyAndSideLoadedSkinPacks();
+    MCAPI bool _canCollect(::mce::UUID const& packId) const;
+
+    MCAPI void _collectAndLoadSkinPack(::PackManifest const& packManifest);
+
+    MCAPI uint64 _collectBuiltInSkinPacks(bool isEduMode);
+
+    MCAPI uint64 _collectUserSkinPacks();
+
+    MCAPI void addBuiltInSkinPackModel(::std::shared_ptr<::SkinPackModel> skinPackModel);
 
     MCAPI void collectOffers(::std::vector<::gsl::not_null<::IStoreCatalogItem*>> const& offers);
 

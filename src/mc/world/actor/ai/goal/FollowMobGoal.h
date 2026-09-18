@@ -26,6 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                 mTimeToRecalcPath;
     ::ll::TypedStorage<4, 4, int>                 mSearchRange;
     ::ll::TypedStorage<1, 1, bool>                mUseHomePositionRestriction;
+    ::ll::TypedStorage<1, 1, bool>                mAbortNavigationOnStop;
     // NOLINTEND
 
 public:
@@ -53,31 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FollowMobGoal(
-        ::Mob&                    mob,
-        float                     speedMultiplier,
-        float                     stopDistance,
-        int                       searchRange,
-        bool                      useHomePositionRestriction,
-        ::std::string const&      preferredActorType,
-        ::ActorFilterGroup const& filters
-    );
-
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>> _findCandidateMobs();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                    mob,
-        float                     speedMultiplier,
-        float                     stopDistance,
-        int                       searchRange,
-        bool                      useHomePositionRestriction,
-        ::std::string const&      preferredActorType,
-        ::ActorFilterGroup const& filters
-    );
     // NOLINTEND
 
 public:
@@ -96,5 +73,11 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

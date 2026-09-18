@@ -54,7 +54,7 @@ public:
 
     virtual ::std::optional<int64> onDPIChange(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onCompacting(::MainGameCore::WndProc::WndProcParams params);
+    virtual ::std::optional<int64> onCompacting(::MainGameCore::WndProc::WndProcParams);
 
     virtual ::std::optional<int64> onSysCommand(::MainGameCore::WndProc::WndProcParams params);
 
@@ -86,7 +86,7 @@ public:
 
     MCAPI ::std::optional<int64> $onDPIChange(::MainGameCore::WndProc::WndProcParams params);
 
-    MCAPI ::std::optional<int64> $onCompacting(::MainGameCore::WndProc::WndProcParams params);
+    MCFOLD ::std::optional<int64> $onCompacting(::MainGameCore::WndProc::WndProcParams);
 
     MCAPI ::std::optional<int64> $onActivateApp(::MainGameCore::WndProc::WndProcParams params);
 

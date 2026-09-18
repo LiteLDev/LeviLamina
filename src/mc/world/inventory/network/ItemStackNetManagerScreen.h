@@ -18,4 +18,10 @@ public:
     // NOLINTBEGIN
     virtual ~ItemStackNetManagerScreen() = default;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

@@ -11,7 +11,6 @@
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
-namespace Bedrock::Threading { class Mutex; }
 struct HC_CALL;
 // clang-format on
 
@@ -23,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnkcb3229;
     ::ll::UntypedStorage<8, 64>  mUnk419653;
-    ::ll::UntypedStorage<8, 80>  mUnk2cebe7;
+    ::ll::UntypedStorage<8, 80>  mUnk807d26;
     ::ll::UntypedStorage<8, 336> mUnk2fe4b9;
     ::ll::UntypedStorage<8, 8>   mUnkf64a92;
     // NOLINTEND
@@ -67,7 +66,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Threading::Mutex& sWeakThisMutex();
+    MCNAPI static ::std::mutex& sWeakThisMutex();
     // NOLINTEND
 
 public:

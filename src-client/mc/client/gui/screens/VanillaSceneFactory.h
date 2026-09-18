@@ -11,9 +11,10 @@
 // clang-format off
 class AbstractScene;
 class BaseScreen;
-class IAdvancedGraphicsOptions;
 class IClientInstance;
+class ILayoutServiceProvider;
 class IMinecraftGame;
+class ISceneFactoryImpl;
 class IUIDefRepository;
 namespace Json { class Value; }
 namespace OreUI { class SceneProvider; }
@@ -50,10 +51,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI VanillaSceneFactory(
-        ::IMinecraftGame&                                                minecraft,
-        ::IClientInstance&                                               client,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
-        ::OreUI::SceneProvider&                                          sceneProvider,
+        ::std::unique_ptr<::ISceneFactoryImpl> impl,
+        ::IMinecraftGame&                      minecraft,
+        ::ILayoutServiceProvider&              layoutServiceProvider,
+        ::IClientInstance&                     client,
+        ::OreUI::SceneProvider&                sceneProvider,
         ::brstd::move_only_function<::std::shared_ptr<::BaseScreen>(::SceneCreationUtils::ScreenCreator&)>&&
             devConsoleScreenFactory
     );
@@ -63,10 +65,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::IMinecraftGame&                                                minecraft,
-        ::IClientInstance&                                               client,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
-        ::OreUI::SceneProvider&                                          sceneProvider,
+        ::std::unique_ptr<::ISceneFactoryImpl> impl,
+        ::IMinecraftGame&                      minecraft,
+        ::ILayoutServiceProvider&              layoutServiceProvider,
+        ::IClientInstance&                     client,
+        ::OreUI::SceneProvider&                sceneProvider,
         ::brstd::move_only_function<::std::shared_ptr<::BaseScreen>(::SceneCreationUtils::ScreenCreator&)>&&
             devConsoleScreenFactory
     );

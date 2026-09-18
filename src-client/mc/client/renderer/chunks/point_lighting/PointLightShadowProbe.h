@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace dragon::atlas { struct TileRenderConfig; }
 namespace dragon::rendering { struct Camera; }
 // clang-format on
 
@@ -47,17 +46,6 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                               mLastAccessedMs;
     ::ll::TypedStorage<1, 1, bool>                                                                 mIsVisibleThisFrame;
     ::ll::TypedStorage<1, 1, bool>                                                                 mIsFreshProbe;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::dragon::atlas::TileRenderConfig createTileRenderConfig(
-        ::glm::vec3 const&                   worldOrigin,
-        ::dragon::rendering::TextureCubeFace face,
-        float                                nearPlane,
-        float                                farPlane
-    ) const;
     // NOLINTEND
 
 public:

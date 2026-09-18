@@ -6,12 +6,9 @@ class PersonaGeometryJsonCache {
 public:
     // PersonaGeometryJsonCache inner types declare
     // clang-format off
-    struct BuildStats;
     struct Entry;
     // clang-format on
 
     // PersonaGeometryJsonCache inner types define
-    struct BuildStats {};
-
     struct Entry {};
 };

@@ -25,8 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    MessageButton& operator=(MessageButton const&);
-    MessageButton(MessageButton const&);
     MessageButton();
 
 public:
@@ -35,8 +33,6 @@ public:
     MCAPI explicit MessageButton(::ButtonData const& button);
 
     MCAPI void openExternalLink();
-
-    MCAPI ::OreUI::MessageButton& operator=(::OreUI::MessageButton&&);
 
     MCAPI ~MessageButton();
     // NOLINTEND

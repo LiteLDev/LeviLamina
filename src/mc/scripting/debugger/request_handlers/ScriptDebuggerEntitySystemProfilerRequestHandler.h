@@ -3,21 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/scripting/debugger/request_handlers/ScriptDebuggerBaseProfilerRequestHandler.h"
 
 // auto generated forward declare list
 // clang-format off
-class LocalProfilerControlBroker;
 class ScriptDebugger;
 namespace ScriptDebuggerMessages { struct DebuggerRequestMessage; }
 // clang-format on
 
 class ScriptDebuggerEntitySystemProfilerRequestHandler : public ::ScriptDebuggerBaseProfilerRequestHandler {
-public:
-    // prevent constructor by default
-    ScriptDebuggerEntitySystemProfilerRequestHandler();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,18 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptDebuggerEntitySystemProfilerRequestHandler(
-        ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> profilerControlBroker
-    );
-
     MCNAPI ::std::optional<::std::vector<uint>>
     _parseIdsFromRequest(::ScriptDebuggerMessages::DebuggerRequestMessage const& request, ::std::string const argName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> profilerControlBroker);
     // NOLINTEND
 
 public:
@@ -51,11 +35,5 @@ public:
     MCNAPI void $onDisconnect(::ScriptDebugger& debugger);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

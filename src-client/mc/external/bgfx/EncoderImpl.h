@@ -40,7 +40,7 @@ public:
     ::ll::TypedStorage<4, 56, ::bgfx::SortKey>                                            m_key;
     ::ll::TypedStorage<8, 128, ::bgfx::RenderDraw>                                        m_draw;
     ::ll::TypedStorage<4, 64, ::bgfx::RenderCompute>                                      m_compute;
-    ::ll::TypedStorage<4, 1344, ::bgfx::RenderBind>                                       m_bind;
+    ::ll::TypedStorage<4, 1088, ::bgfx::RenderBind>                                       m_bind;
     ::ll::TypedStorage<8, 8, ::bgfx::RangedBindings*>                                     m_rangedBindings;
     ::ll::TypedStorage<1, 1, bool>                                                        m_isDirty;
     ::ll::TypedStorage<4, 4, uint>                                                        m_numSubmitted;

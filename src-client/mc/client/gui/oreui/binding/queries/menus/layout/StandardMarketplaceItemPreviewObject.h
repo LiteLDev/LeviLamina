@@ -18,13 +18,13 @@ class StandardMarketplaceItemPreviewObject
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mId;
-    ::ll::TypedStorage<8, 440, ::OreUI::LocalizedStringObject>   mTitle;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mCreatorName;
-    ::ll::TypedStorage<8, 440, ::OreUI::ImageObject>             mThumbnail;
-    ::ll::TypedStorage<8, 600, ::OreUI::RatingObject>            mRating;
-    ::ll::TypedStorage<8, 840, ::OreUI::PriceObject>             mPrice;
-    ::ll::TypedStorage<8, 616, ::OreUI::LinksToObject>           mLinksTo;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mId;
+    ::ll::TypedStorage<8, 440, ::OreUI::LocalizedStringObject>                  mTitle;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mCreatorName;
+    ::ll::TypedStorage<8, 440, ::OreUI::ImageObject>                            mThumbnail;
+    ::ll::TypedStorage<8, 600, ::OreUI::RatingObject>                           mRating;
+    ::ll::TypedStorage<8, 840, ::OreUI::PriceObject>                            mPrice;
+    ::ll::TypedStorage<8, 616, ::OreUI::LinksToObject>                          mLinksTo;
     // NOLINTEND
 };
 

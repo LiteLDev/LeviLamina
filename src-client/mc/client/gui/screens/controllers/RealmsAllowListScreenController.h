@@ -8,6 +8,7 @@
 #include "mc/client/gui/screens/controllers/RealmPlayer.h"
 #include "mc/client/network/realms/RealmsAPI.h"
 #include "mc/client/network/realms/World.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
@@ -80,7 +81,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::RealmPlayer>>  mCompleteWorldPlayerList;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::PlatformUserProfileData>>
                                                                    mLinkedPlatformAccounts;
-    ::ll::TypedStorage<4, 4, ::std::atomic<uint>>                  mLinkedAccountLoadCounter;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>        mCurrentMembersList;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>        mFullMembersList;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>        mFilteredMembersList;
@@ -98,6 +98,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                       mSharePopupBButtonDescription;
     ::ll::TypedStorage<4, 4, uint>                                 mCurrentUpdatedPlayers;
     ::ll::TypedStorage<1, 1, bool>                                 mShowLinkedAccounts;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                        mTaskGroup;
     // NOLINTEND
 
 public:
@@ -178,8 +179,6 @@ public:
         ::PlayerPermissionLevel const permission,
         ::PlayerPermissionLevel const oldPermission
     );
-
-    MCAPI void updateWorld(::Realms::World const& world, ::std::function<void()> callback);
     // NOLINTEND
 
 public:

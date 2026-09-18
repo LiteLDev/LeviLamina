@@ -54,7 +54,5 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> createUniquePathForWorld() const;
 
     MCAPI void handleLegacyWorldConversionComplete(::ImportResult const& result);
-
-    MCAPI void initLegacyWorldImporter();
     // NOLINTEND
 };

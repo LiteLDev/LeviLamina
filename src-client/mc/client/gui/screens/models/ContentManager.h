@@ -248,8 +248,6 @@ public:
         ::std::function<::std::shared_ptr<::StorageManager::WorldConverter>()> storageWorldConverterConstructor
     );
 
-    MCAPI ::ContentSource* _loadResourceContent(::ContentType type, ::ContentFlags flags);
-
     MCAPI void _removeContentItemsFromSource(::gsl::not_null<::ContentSource*> source);
 
     MCAPI void _retrievePackSources(::PackType packType, ::std::vector<::PackSource*>& packSources);
@@ -377,7 +375,7 @@ public:
 
     MCAPI void $beginAsyncInit(::TaskGroup& taskGroup);
 
-    MCFOLD bool $isInitialized() const;
+    MCAPI bool $isInitialized() const;
 
     MCAPI void $onLanguageChanged();
 

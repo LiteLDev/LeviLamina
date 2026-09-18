@@ -11,6 +11,7 @@
 #include "mc/world/item/SortItemInstanceIdAux.h"
 #include "mc/world/item/crafting/ExternalRecipeStore.h"
 #include "mc/world/item/crafting/RecipeIngredient.h"
+#include "mc/world/item/crafting/RecipeType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,6 +20,7 @@ class Block;
 class Experiments;
 class ILevel;
 class Item;
+class ItemStack;
 class ItemStackBase;
 class MinEngineVersion;
 class Recipe;
@@ -38,6 +40,7 @@ public:
     // clang-format off
     struct NormalizedRectangularRecipeResults;
     class Type;
+    struct Buffers;
     // clang-format on
 
     // Recipes inner types define
@@ -60,6 +63,18 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const*>      mBlock;
         ::ll::TypedStorage<8, 24, ::RecipeIngredient> mIngredient;
         ::ll::TypedStorage<1, 1, char>                mC;
+        // NOLINTEND
+    };
+
+    struct Buffers {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>  mTags;
+        ::ll::TypedStorage<8, 24, ::std::vector<::Recipes::Type>> mInputList;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>     mOutputInstances;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>  mResultList;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   mShapeList;
         // NOLINTEND
     };
 
@@ -108,7 +123,7 @@ public:
     MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
 #endif
 
-    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const&);
 
     MCAPI ::RecipeIngredient const _loadIngredientFromJson(
         ::Json::Value const& obj,
@@ -119,6 +134,16 @@ public:
 
     MCAPI ::RecipeIngredient const
     _loadInputIngredientFromJson(::Json::Value const& obj, ::MinEngineVersion const& minEngineVersion) const;
+
+    MCAPI bool _loadRecipe(
+        ::std::string const&      recipeId,
+        ::RecipeType              type,
+        ::Json::Value const&      objData,
+        ::MinEngineVersion const& minEngineVersion,
+        ::SemVersion const&       formatVersion,
+        bool                      isBaseGamePack,
+        ::Recipes::Buffers&       buffers
+    );
 
     MCAPI ::std::optional<::RecipeUnlockingRequirement> _loadUnlockingRequirementFromJson(
         ::Json::Value const& obj,
@@ -345,13 +370,6 @@ public:
         ::ExternalRecipeStore&   recipeStorage,
         ::BaseGameVersion const& baseGameVersion,
         ::Experiments const&     experiments
-    );
-
-    MCAPI bool loadRecipe(
-        ::std::pair<::std::string, ::Json::Value> const& recipeObjInfo,
-        ::MinEngineVersion const&                        minEngineVersion,
-        ::SemVersion const&                              formatVersion,
-        bool                                             isBaseGamePack
     );
 
 #ifdef LL_PLAT_C

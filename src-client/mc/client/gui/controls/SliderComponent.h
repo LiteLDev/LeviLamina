@@ -115,10 +115,4 @@ public:
 
     MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

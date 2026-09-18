@@ -182,6 +182,7 @@ class VolumeEntityManagerServer;
 class WeakEntityRef;
 class WorldClockRegistry;
 class _TickPtr;
+struct ActorDimensionTransferRequest;
 struct ActorUniqueID;
 struct AdventureSettings;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
@@ -196,13 +197,12 @@ struct PlayerMovementSettings;
 struct PlayerSleepStatus;
 struct PlayerSpawnDimensionResolution;
 struct ResolvedItemIconInfo;
-struct ScreenshotOptions;
 struct Tick;
 namespace GameModeExt { struct MessengerFactory; }
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
-namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 namespace cereal { struct ReflectionCtx; }
 namespace cg { class ImageBuffer; }
@@ -215,6 +215,7 @@ class Particle;
 class SubChunkManager;
 class SubChunkRequestManager;
 class TrustedSkinHelper;
+struct ScreenshotOptions;
 // clang-format on
 
 class ILevel : public ::Bedrock::EnableNonOwnerReferences {
@@ -267,7 +268,8 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> getPlayerDimensionTransferManager() = 0;
 
-    virtual void entityChangeDimension(::Actor& entity, ::DimensionType toId, ::std::optional<::Vec3> entityPos) = 0;
+    virtual void
+    entityChangeDimension(::Actor& entity, ::ActorDimensionTransferRequest const& actorDimensionTransferRequest) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> getActorDimensionTransferManager() = 0;
 
@@ -291,7 +293,7 @@ public:
 
     virtual ::CameraPresets& getCameraPresets() = 0;
 
-    virtual ::SharedTypes::v1_21_90::CameraPreset const* getCameraPreset(int presetIndex) const = 0;
+    virtual ::SharedTypes::v1_26_50::CameraPreset const* getCameraPreset(int presetIndex) const = 0;
 
     virtual bool getDisablePlayerInteractions() const = 0;
 
@@ -1079,6 +1081,8 @@ public:
     virtual bool hasStartWithMapEnabled() const = 0;
 
     virtual bool isEditorWorld() const = 0;
+
+    virtual bool isEditorTestWorld() const = 0;
 
     virtual bool getAllowAnonymousBlockDropsInEditorWorlds() const = 0;
 

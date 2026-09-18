@@ -27,15 +27,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::BlockDefinition::Connection>          mConnection;
-    ::ll::TypedStorage<2, 6, ::SharedTypes::v1_26_20::BlockDefinition::MultiBlock>          mMultiBlock;
-    ::ll::TypedStorage<8, 40, ::SharedTypes::v1_26_20::BlockDefinition::PlacementDirection> mPlacementDirection;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::BlockDefinition::PlacementPosition>   mPlacementPosition;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::Connection>> mConnection;
+    ::ll::TypedStorage<2, 8, ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::MultiBlock>> mMultiBlock;
+    ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::PlacementDirection>>
+        mPlacementDirection;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::PlacementPosition>>
+        mPlacementPosition;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::Traits const&) const;
+
     MCAPI ~Traits();
     // NOLINTEND
 

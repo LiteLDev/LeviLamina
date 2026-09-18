@@ -4,10 +4,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class DebuggerStat;
 class DynamicProperties;
 class ILevelStorageManagerConnector;
 class LevelStorage;
-class ScriptStat;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,8 +20,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk3126ff;
     ::ll::UntypedStorage<8, 8>  mUnkdfddbd;
     ::ll::UntypedStorage<8, 24> mUnk52c501;
-    ::ll::UntypedStorage<8, 8>  mUnk804677;
-    ::ll::UntypedStorage<8, 8>  mUnk802b93;
+    ::ll::UntypedStorage<8, 8>  mUnk64f89f;
+    ::ll::UntypedStorage<8, 8>  mUnkb3337b;
     // NOLINTEND
 
 public:
@@ -35,9 +35,9 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DynamicPropertiesManager(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI ::std::optional<::ScriptStat> _collectMemoryStats(uint64, uint64, uint64);
+    MCNAPI ::std::optional<::DebuggerStat> _collectMemoryStats(uint64, uint64, uint64);
 
-    MCNAPI ::std::optional<::ScriptStat> _collectPropertiesStats(uint64, uint64, uint64);
+    MCNAPI ::std::optional<::DebuggerStat> _collectPropertiesStats(uint64, uint64, uint64);
 
     MCNAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
 

@@ -73,6 +73,9 @@ public:
         ::std::string const& realmId,
         bool                 isOwner
     ) /*override*/;
+
+    virtual void
+    fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId) /*override*/;
     // NOLINTEND
 
 public:
@@ -115,6 +118,8 @@ public:
         ::std::string const& realmId,
         bool                 isOwner
     );
+
+    MCAPI void $fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId);
     // NOLINTEND
 
 public:

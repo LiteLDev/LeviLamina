@@ -14,6 +14,8 @@ namespace ItemColorUtil {
 // functions
 // NOLINTBEGIN
 MCNAPI ::ItemColor fromColor(::mce::Color const& color);
+
+MCNAPI ::ItemColor fromName(::std::string const& name);
 // NOLINTEND
 
 // static variables

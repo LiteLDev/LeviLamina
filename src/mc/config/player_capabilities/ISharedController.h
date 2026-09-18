@@ -15,6 +15,8 @@ public:
     // NOLINTBEGIN
     virtual ~ISharedController() = default;
 
+    virtual bool canMessage(::PlayerCapabilities::IPlayerData const& player) const = 0;
+
     virtual bool canChat(::PlayerCapabilities::IPlayerData const& player) const = 0;
 
     virtual bool canTell(::PlayerCapabilities::IPlayerData const& player) const = 0;

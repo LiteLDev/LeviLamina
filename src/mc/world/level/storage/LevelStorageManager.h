@@ -132,11 +132,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
-#else // LL_PLAT_C
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
-#endif
 
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
 

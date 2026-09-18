@@ -12,14 +12,9 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
 // clang-format on
 
 class GlowLichenBlock : public ::MultifaceBlock {
-public:
-    // prevent constructor by default
-    GlowLichenBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,18 +26,6 @@ public:
         /*override*/;
 
     virtual ::Block const& getInitialDefaultState() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlowLichenBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

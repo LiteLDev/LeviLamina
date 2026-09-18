@@ -5,8 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
+class Interaction;
 class Player;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
@@ -22,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
 
     MCAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
     // NOLINTEND

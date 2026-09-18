@@ -27,21 +27,32 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI float
+    calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
+
+#ifdef LL_PLAT_S
+    MCAPI float calculateYRotation(
+        ::MoveControlComponent const& parent,
+        ::Mob const&                  mob,
+        ::Vec3 const&                 positionDifference,
+        float                         maxMoveSpeed
+    );
+#endif
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float calculateMoveSpeed(
-        ::MoveControlComponent const& parent,
-        ::Mob&                        mob,
-        ::Vec3 const&                 endPosition,
-        float const                   maxMoveSpeed
-    );
-
+#ifdef LL_PLAT_C
     MCAPI static float calculateYRotation(
         ::MoveControlComponent const& parent,
         ::Mob const&                  mob,
         ::Vec3 const&                 positionDifference,
         float const                   maxMoveSpeed
     );
+#endif
 
     MCAPI static bool
     shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float const endDistanceSqr);

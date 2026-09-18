@@ -55,11 +55,7 @@ public:
 
     virtual void initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
 
-#ifdef LL_PLAT_S
-    virtual void initializeComponent(::BlockComponentStorage& blockComponentSortage) const;
-#else // LL_PLAT_C
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
-#endif
 
     virtual void initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 
@@ -87,11 +83,7 @@ public:
 
     MCAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
 
-#ifdef LL_PLAT_S
-    MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentSortage) const;
-#else // LL_PLAT_C
     MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
-#endif
 
     MCAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 

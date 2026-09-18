@@ -27,20 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool deserialize(::std::string const& rawData, ::cereal::ReflectionCtx const& cerealContext);
-
-    MCNAPI ~ScriptDebuggerPacket();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -17,6 +17,7 @@
 #include "mc/deps/core/math/FrustumEdges.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core_graphics/ImageBuffer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/minecraft_renderer/game/FrustumCullerType.h"
@@ -313,7 +314,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererCamera() = default;
+    virtual ~LevelRendererCamera();
 
     virtual ::LevelRendererCameraType getCameraType() const;
 
@@ -326,8 +327,6 @@ public:
     virtual void onDeviceLost();
 
     virtual void onLowMemory();
-
-    virtual void initResources();
 
     virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
@@ -390,6 +389,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelRendererCamera(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
+
     MCAPI void _addToRenderChunkQueue(
         ::ChunkRenderObjectCollection&           collection,
         ::TerrainMaterialVariationManager const& terrainVariationMgr,
@@ -432,6 +433,10 @@ public:
 
     MCAPI ::LevelRendererCamera::RainState doRainUpdate();
 
+    MCAPI void doneQueuingChunks();
+
+    MCAPI ::optional_ref<::TerrainMaterialVariationManager const> getCurrentVariationManager() const;
+
     MCAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
 
     MCAPI ::RenderChunkInstanced* getRenderChunkInstancedAt(::SubChunkPos const& rcp) const;
@@ -444,9 +449,27 @@ public:
 
     MCAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
 
+    MCAPI void mergeShadowActorRenderQueue(
+        ::brstd::flat_map<
+            ::gsl::not_null<::Actor*>,
+            ::ShadowContext,
+            ::std::less<::gsl::not_null<::Actor*>>,
+            ::std::vector<::gsl::not_null<::Actor*>>,
+            ::std::vector<::ShadowContext>>& actorRenderQueue
+    );
+
     MCAPI void onViewRadiusChanged(bool resetAll);
 
     MCAPI void preDimensionChanged(::Player& player);
+
+    MCAPI void queueChunk(
+        ::ChunkRenderObjectCollection&                          collection,
+        ::RenderChunkInstanced const&                           renderChunkInstanced,
+        float                                                   farDistance2,
+        float                                                   currentTime,
+        ::TerrainMaterialVariationManager const&                terrainVariationMgr,
+        ::optional_ref<::TerrainMaterialVariationManager const> fadeVariationMgr
+    );
 
     MCAPI void recaptureViewAreaDimensions();
 
@@ -460,9 +483,25 @@ public:
 
     MCAPI void resetChunkCullingData(::ChunkPos const& cp);
 
+    MCAPI void setDirLightShadowRenderChunksPerfCounter(int chunkCount);
+
+    MCAPI bool shouldCullThisFrame(uint64 lastNumRenderChunksVisibleFromCullingPoint);
+
     MCAPI void updateFarChunksDistance();
 
     MCAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -470,7 +509,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::LevelRendererCameraType $getCameraType() const;
 
-    MCAPI void $addCameraListenerToRenderChunkCoordinator();
+    MCFOLD void $addCameraListenerToRenderChunkCoordinator();
 
     MCAPI void $onAppSuspended();
 
@@ -479,8 +518,6 @@ public:
     MCAPI void $onDeviceLost();
 
     MCFOLD void $onLowMemory();
-
-    MCFOLD void $initResources();
 
     MCFOLD void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 

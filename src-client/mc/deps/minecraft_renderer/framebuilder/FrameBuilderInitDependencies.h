@@ -8,7 +8,7 @@ struct FrameBuilderInitDependencies {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk2dde99;
+    ::ll::UntypedStorage<8, 8>   mUnkc37f2f;
     ::ll::UntypedStorage<4, 4>   mUnk5b574e;
     ::ll::UntypedStorage<4, 4>   mUnk733503;
     ::ll::UntypedStorage<8, 8>   mUnk9c5971;

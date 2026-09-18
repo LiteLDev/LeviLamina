@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackIdVersion.h"
+#include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
@@ -25,6 +26,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                 mOriginalVersion;
     ::ll::TypedStorage<8, 48, ::PackIdVersion>                               mIdentity;
     ::ll::TypedStorage<1, 1, ::PackType>                                     mPackType;
+    ::ll::TypedStorage<1, 1, ::PackOrigin>                                   mPackOrigin;
     ::ll::TypedStorage<1, 1, bool>                                           mWasUpgraded;
     ::ll::TypedStorage<1, 1, bool>                                           mAttemptedUpgrade;
     // NOLINTEND
@@ -44,9 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI PackReport(::PackReport&&);
-#endif
 
     MCNAPI PackReport(::PackReport const&);
 
@@ -60,17 +60,13 @@ public:
     MCNAPI ::PackReport& operator=(::PackReport const&);
 #endif
 
-    MCNAPI void setIdentity(::PackIdVersion const& identity);
-
     MCNAPI ~PackReport();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::PackReport&&);
-#endif
 
     MCNAPI void* $ctor(::PackReport const&);
     // NOLINTEND

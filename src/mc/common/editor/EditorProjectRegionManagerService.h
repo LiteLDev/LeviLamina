@@ -17,6 +17,7 @@ namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct ProjectRegionConfig; }
+namespace Editor { struct ProjectRegionGlobalMetrics; }
 namespace Editor { struct ProjectRegionManagerChunkProcessingState; }
 namespace mce { class UUID; }
 // clang-format on
@@ -81,6 +82,8 @@ public:
     virtual ::std::optional<::Editor::ProjectRegionManagerChunkProcessingState> getChunkProcessingState() const
         /*override*/;
 
+    virtual ::Editor::ProjectRegionGlobalMetrics collectMetrics() const /*override*/;
+
     virtual ::Bedrock::PubSub::Subscription registerChunkProcessingChangeListener(
         ::std::function<void(::Scripting::Result_deprecated<::Editor::ProjectRegionManagerChunkProcessingState> const&)>
             callback
@@ -131,6 +134,8 @@ public:
     MCNAPI bool $isProcessingChunks() const;
 
     MCNAPI ::std::optional<::Editor::ProjectRegionManagerChunkProcessingState> $getChunkProcessingState() const;
+
+    MCNAPI ::Editor::ProjectRegionGlobalMetrics $collectMetrics() const;
 
     MCNAPI ::Bedrock::PubSub::Subscription $registerChunkProcessingChangeListener(
         ::std::function<void(::Scripting::Result_deprecated<::Editor::ProjectRegionManagerChunkProcessingState> const&)>

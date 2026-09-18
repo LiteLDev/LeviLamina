@@ -78,11 +78,41 @@ public:
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup
     );
 
+    MCAPI void addAgentAdditionalRendering();
+
+    MCAPI void addBalloonAdditionalRendering();
+
+    MCAPI void addEnderCrystalAdditionalRendering();
+
+    MCAPI void addEnderDragonAdditionalRendering();
+
+    MCAPI void addEnderManAdditionalRendering(::BlockTessellator* blockTesselator);
+
+    MCAPI void addFoxAdditionalRendering();
+
     MCAPI void addGuardianAdditionalRendering();
 
     MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
+    MCAPI void addIronGolemAdditionalRendering(::BlockTessellator* blockTesselator);
+
     MCAPI void addMinecartAdditionalRendering(::BlockTessellator& commonBlockRenderer);
+
+    MCAPI void addMushroomCowAdditionalRendering(::BlockTessellator& commonBlockRenderer);
+
+    MCAPI void addPandaAdditionalRendering();
+
+    MCAPI void addSnowGolemAdditionalRendering(::BlockTessellator* blockTesselator);
+
+    MCAPI void addVexAdditionalRendering();
+
+    MCAPI void addVillagerAdditionalRendering();
+
+    MCFOLD void addVillagerV2AdditionalRendering();
+
+    MCFOLD void addWanderingTraderAdditionalRendering();
+
+    MCAPI void addWitchAdditionalRendering();
     // NOLINTEND
 
 public:

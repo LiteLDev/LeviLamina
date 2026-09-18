@@ -8,18 +8,31 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
 class BreedableDefinition;
 class CompoundTag;
 class DataLoadHelper;
-class InteractionResult;
+class Interaction;
 class Player;
 class WeakEntityRef;
 // clang-format on
 
 class BreedableComponent {
 public:
+    // BreedableComponent inner types declare
+    // clang-format off
+    struct LoveCauses;
+    // clang-format on
+
     // BreedableComponent inner types define
+    struct LoveCauses {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Player const*> mPrimary;
+        ::ll::TypedStorage<8, 8, ::Player const*> mSecondary;
+        // NOLINTEND
+    };
+
     using MatingResult = ::std::vector<::WeakEntityRef>;
 
 public:
@@ -39,7 +52,7 @@ public:
 
     MCAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
 
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
 
     MCAPI ::std::vector<::WeakEntityRef> mate(::Actor& owner, ::Actor& partner);
 

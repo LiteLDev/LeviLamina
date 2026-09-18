@@ -3,78 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/AmethystBlock.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/CrystalClusterBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
-class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
-namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class AmethystClusterBlock : public ::AmethystBlock {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mHeight;
-    ::ll::TypedStorage<4, 4, int> mAabbOffset;
-    // NOLINTEND
-
+class AmethystClusterBlock : public ::CrystalClusterBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const /*override*/;
-
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
-
-    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
-
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
-
-    virtual ::Block const& getInitialDefaultState() /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    virtual bool isSilentWhenJumpingOff() const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
-
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCFOLD bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
-
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
-
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
-
-    MCAPI ::Block const& $getInitialDefaultState();
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $isSilentWhenJumpingOff() const;
 
 
     // NOLINTEND

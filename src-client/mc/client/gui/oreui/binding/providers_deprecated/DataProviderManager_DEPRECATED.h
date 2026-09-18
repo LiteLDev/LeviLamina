@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class IAdvancedGraphicsOptions;
+class ILayoutServiceProvider;
 class IMinecraftGame;
 class SuggestedContentOffersProvider;
 namespace OreUI { class WorldSettingsProvider_DEPRECATED; }
@@ -32,6 +33,7 @@ public:
     // NOLINTBEGIN
     MCAPI DataProviderManager_DEPRECATED(
         ::IMinecraftGame&                                                minecraftGame,
+        ::ILayoutServiceProvider&                                        layoutServiceProvider,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
     );
     // NOLINTEND
@@ -41,6 +43,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::IMinecraftGame&                                                minecraftGame,
+        ::ILayoutServiceProvider&                                        layoutServiceProvider,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
     );
     // NOLINTEND

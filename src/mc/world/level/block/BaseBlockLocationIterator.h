@@ -50,7 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $_begin();
 
-    MCFOLD void $_end();
+    MCAPI void $_end();
 
 
     // NOLINTEND

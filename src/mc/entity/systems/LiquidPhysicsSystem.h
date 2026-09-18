@@ -39,8 +39,6 @@ MCAPI void _markForLiquidFlow(
 );
 
 MCAPI ::TickingSystemWithInfo createFilterSystem(bool isClientSide);
-
-MCAPI ::TickingSystemWithInfo createLiquidFetchingSystem();
 // NOLINTEND
 
 } // namespace LiquidPhysicsSystem

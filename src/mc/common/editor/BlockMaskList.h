@@ -6,7 +6,6 @@
 // clang-format off
 class Block;
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::BlockMask {
@@ -31,17 +30,11 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI bool containsBlock(::HashedString const& blockName) const;
-#endif
 
     MCNAPI bool match(::Block const* block) const;
+#endif
 
     MCNAPI ~BlockMaskList();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_26_30/NoiseDescriptor.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class ReadOnlyBinaryStream;
 struct SerializedNoiseBlockSpecifier;
 // clang-format on
 
@@ -27,14 +25,6 @@ public:
     MCAPI bool operator==(::BiomeNoiseGradientSurfaceData const& other) const;
 
     MCAPI ~BiomeNoiseGradientSurfaceData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::Bedrock::Result<::BiomeNoiseGradientSurfaceData> read(::ReadOnlyBinaryStream& stream);
-#endif
     // NOLINTEND
 
 public:

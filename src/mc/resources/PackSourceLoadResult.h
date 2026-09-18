@@ -6,7 +6,7 @@ struct PackSourceLoadResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk305d64;
+    ::ll::UntypedStorage<8, 8>  mUnk305d64;
     ::ll::UntypedStorage<8, 24> mUnk718822;
     // NOLINTEND
 

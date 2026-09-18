@@ -29,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptInvalidFormModificationError(::std::string formId);
+
+    MCNAPI ~ScriptInvalidFormModificationError();
     // NOLINTEND
 
 public:
@@ -41,6 +43,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string formId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

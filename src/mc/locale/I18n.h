@@ -18,6 +18,15 @@ class ResourcePackManager;
 
 class I18n {
 public:
+    // I18n inner types declare
+    // clang-format off
+    class Property;
+    // clang-format on
+
+    // I18n inner types define
+    class Property {};
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~I18n() = default;

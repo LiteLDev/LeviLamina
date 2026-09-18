@@ -14,6 +14,7 @@
 // clang-format off
 class Actor;
 class Mob;
+struct GoalId;
 // clang-format on
 
 class FireAtTargetGoal : public ::BaseGoal {
@@ -66,7 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FireAtTargetGoal(::Mob& mob);
+    MCAPI FireAtTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
@@ -83,7 +84,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

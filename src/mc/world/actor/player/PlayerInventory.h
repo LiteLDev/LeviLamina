@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Container;
 class HudContainerManagerModel;
 class Inventory;
 // clang-format on
@@ -35,11 +34,6 @@ public:
     virtual void containerSizeChanged(int size) /*override*/;
 
     virtual void containerContentChanged(int slot) /*override*/;
-
-    virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
     // NOLINTEND
 
 public:
@@ -47,19 +41,9 @@ public:
     // NOLINTBEGIN
     MCAPI void clearVanishEnchantedItemsOnDeath();
 
-#ifdef LL_PLAT_S
-    MCAPI void dropAllOnDeath(bool onlyClearContainer);
-#endif
-
 #ifdef LL_PLAT_C
     MCAPI bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
 #endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::std::vector<::ContainerID> const& getAllContainerIds();
-#endif
-
-    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
     MCAPI bool selectSlot(int slot, ::ContainerID containerId);
     // NOLINTEND
@@ -70,11 +54,6 @@ public:
     MCFOLD void $containerSizeChanged(int size);
 
     MCAPI void $containerContentChanged(int slot);
-
-    MCAPI void $createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
 
 
     // NOLINTEND

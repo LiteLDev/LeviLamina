@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/network/packet/AgentActionType.h"
-#include "mc/world/actor/agent/agent_components/Direction.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Player;
-class Vec3;
 // clang-format on
 
 namespace AgentCommands {
@@ -44,14 +42,6 @@ public:
     virtual void tick();
 
     virtual void fireCommandDoneEvent();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
-#endif
     // NOLINTEND
 
 public:

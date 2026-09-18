@@ -18,7 +18,7 @@ class PartyChatEnabledQuery : public ::OreUI::QueryBase<::OreUI::PartyChatEnable
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>        mIsEnabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>  mIsEnabled;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartyChatIsJoinedChangedToken;
     // NOLINTEND
 

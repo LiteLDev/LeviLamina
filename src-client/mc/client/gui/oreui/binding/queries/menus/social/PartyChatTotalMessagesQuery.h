@@ -18,7 +18,7 @@ class PartyChatTotalMessagesQuery : public ::OreUI::QueryBase<::OreUI::PartyChat
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint>>        mTotalMessages;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint, uint>>  mTotalMessages;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mTotalMessagesChangedToken;
     // NOLINTEND
 

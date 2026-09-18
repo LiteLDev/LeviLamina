@@ -14,12 +14,17 @@ class CompoundTag;
 class LevelChunk;
 class Vec3;
 class WorldGenerator;
+struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
 
 class OverworldDimension : public ::Dimension {
+public:
+    // prevent constructor by default
+    OverworldDimension();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,6 +52,18 @@ public:
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit OverworldDimension(::DerivedDimensionArguments&& args);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
     // NOLINTEND
 
 public:

@@ -23,18 +23,10 @@ public:
 
     MCAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
 
-#ifdef LL_PLAT_S
-    MCAPI void _finalizeBlockTriggerComponents(::Block& block);
-#endif
-
     MCAPI void _finalizeCollisionBoxComponent(::Block& block);
 
     MCAPI void _finalizeSelectionBoxComponent(::Block& block);
 
     MCAPI void addRemainingComponents(::Block& block);
-
-#ifdef LL_PLAT_S
-    MCAPI void finalizeComponentData(::Block& block);
-#endif
     // NOLINTEND
 };

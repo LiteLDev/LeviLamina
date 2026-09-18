@@ -25,13 +25,15 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mSplitScreenToken;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mGuiScaleChangedToken;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mGuiAccessibilityScalingToken;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::AppPlatform>>     mAppPlatform;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>> mClient;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mDisplayWidth;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mDisplayHeight;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mGuiScaleModifier;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mGuiScaleBase;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>                  mPixelsPerMillimeter;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mDisplayWidth;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mDisplayHeight;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mGuiScaleModifier;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mGuiScaleBase;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>           mPixelsPerMillimeter;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>             mGuiAccessibilityScaling;
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@
 // clang-format off
 class DefinitionEvent;
 class Experiments;
-class IMinecraftEventing;
+class IPuvLoadEventing;
 class Level;
 class LinkedAssetValidator;
 class PackLoadContext;
@@ -68,7 +68,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                           mLastBlockId;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                 mBlockResourceGroupNames;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
-    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                         mEventing;
+    ::ll::TypedStorage<8, 8, ::IPuvLoadEventing&>                                           mEventing;
     // NOLINTEND
 
 public:
@@ -80,7 +80,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
+    MCAPI BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::IPuvLoadEventing& eventing);
 
     MCAPI void _buildBlockDescriptionSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
@@ -145,7 +145,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IPuvLoadEventing& eventing);
     // NOLINTEND
 
 public:

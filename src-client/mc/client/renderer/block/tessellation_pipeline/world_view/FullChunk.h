@@ -23,7 +23,7 @@ class FullChunk : public ::ClientBlockPipeline::WorldView::Interface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 264, ::BlockSource>   mSource;
+    ::ll::TypedStorage<8, 376, ::BlockSource>   mSource;
     ::ll::TypedStorage<4, 12, ::BlockPos const> mMinPos;
     ::ll::TypedStorage<8, 8, ::SubChunk const*> mMainSubChunk;
     // NOLINTEND

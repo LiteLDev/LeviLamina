@@ -19,12 +19,30 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>> mEnumValues;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    BlockStateDefinition& operator=(BlockStateDefinition const&);
+    BlockStateDefinition();
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _copy(::BlockStateDefinition const& rhs);
+#ifdef LL_PLAT_S
+    MCAPI BlockStateDefinition(::BlockStateDefinition const& rhs);
+#endif
 
     MCAPI ~BlockStateDefinition();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::BlockStateDefinition const& rhs);
+#endif
     // NOLINTEND
 
 public:

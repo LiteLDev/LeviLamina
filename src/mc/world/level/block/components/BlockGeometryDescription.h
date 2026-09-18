@@ -62,11 +62,11 @@ public:
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
 
-    virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+    virtual void initializeComponent(::BlockComponentStorage&) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentDescription::InitializationContext& context) const /*override*/;
 
-    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+    virtual void initializeComponentFromCode(::BlockComponentStorage&) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const
         /*override*/;
@@ -173,11 +173,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponent(::BlockComponentStorage&) const;
 
     MCAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage&) const;
 
 #ifdef LL_PLAT_S
     MCAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;

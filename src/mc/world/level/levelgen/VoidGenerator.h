@@ -22,6 +22,7 @@ class Dimension;
 class LevelChunk;
 class PerlinSimplexNoise;
 class Random;
+struct BiomeIdType;
 // clang-format on
 
 class VoidGenerator : public ::WorldGenerator {
@@ -82,13 +83,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit VoidGenerator(::Dimension& dimension);
+    MCAPI VoidGenerator(::Dimension& dimension, ::BiomeIdType customDimensionDefaultBiome);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
+    MCAPI void* $ctor(::Dimension& dimension, ::BiomeIdType customDimensionDefaultBiome);
     // NOLINTEND
 
 public:

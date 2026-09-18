@@ -14,11 +14,14 @@
 // auto generated forward declare list
 // clang-format off
 struct PlayerDimensionChangeBeforeEvent;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class RedoOperationPayload; }
 namespace Editor::Network { class UndoOperationPayload; }
 namespace Editor::Transactions { class PendingTransaction; }
 namespace Editor::Transactions { class TransactionContext; }
+namespace Editor::Transactions { struct TransactionEvent; }
+namespace Editor::Transactions { struct TransactionOperationEvent; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -86,10 +89,14 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk805093;
     ::ll::UntypedStorage<8, 16> mUnk5f5816;
+    ::ll::UntypedStorage<8, 48> mUnk58a36a;
+    ::ll::UntypedStorage<8, 24> mUnk119b41;
+    ::ll::UntypedStorage<8, 48> mUnk188742;
     ::ll::UntypedStorage<8, 24> mUnk436aea;
     ::ll::UntypedStorage<8, 24> mUnkf990cc;
     ::ll::UntypedStorage<8, 40> mUnk7c3256;
     ::ll::UntypedStorage<8, 24> mUnka9cde2;
+    ::ll::UntypedStorage<8, 24> mUnk8a2dfc;
     ::ll::UntypedStorage<8, 16> mUnkfe14d9;
     // NOLINTEND
 
@@ -127,6 +134,14 @@ public:
 
     virtual uint64 pendingTransactionCount() const /*override*/;
 
+    virtual ::Bedrock::PubSub::Subscription registerTransactionEventListener(
+        ::std::function<void(::Editor::Transactions::TransactionEvent const&)> callback
+    ) /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription registerTransactionOperationEventListener(
+        ::std::function<void(::Editor::Transactions::TransactionOperationEvent const&)> callback
+    ) /*override*/;
+
     virtual void
     addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext) /*override*/;
 
@@ -153,9 +168,13 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void>
     _addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext);
 
+    MCNAPI void _clearHistory();
+
     MCNAPI void _handleRedoMessage(::Editor::Network::RedoOperationPayload const&);
 
     MCNAPI void _handleUndoMessage(::Editor::Network::UndoOperationPayload const&);
+
+    MCNAPI void _queueOperationEvent(::Editor::Transactions::TransactionOperationEvent evt);
 
     MCNAPI void tick(::Editor::ServiceProviderCollection&);
     // NOLINTEND
@@ -189,6 +208,13 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $finalizePendingTransaction(::mce::UUID const& id);
 
     MCNAPI uint64 $pendingTransactionCount() const;
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $registerTransactionEventListener(::std::function<void(::Editor::Transactions::TransactionEvent const&)> callback);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $registerTransactionOperationEventListener(
+        ::std::function<void(::Editor::Transactions::TransactionOperationEvent const&)> callback
+    );
 
     MCNAPI void $addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext);
 

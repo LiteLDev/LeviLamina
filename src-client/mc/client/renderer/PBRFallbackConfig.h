@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
 class ResourcePackManager;
 class SemVersionConstant;
 struct PBRFallbackSettings;
@@ -66,8 +65,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PBRFallbackConfig(::IMinecraftEventing& eventing);
-
     MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
@@ -83,12 +80,6 @@ public:
     MCNAPI static ::std::string_view const& PAYLOAD_KEY();
 
     MCNAPI static ::std::string_view const& PBR_FALLBACK_GLOBAL_CONFIG_FILE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

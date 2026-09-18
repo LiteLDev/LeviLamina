@@ -203,7 +203,13 @@ public:
 
     virtual bool supportsDeferredGraphics() const = 0;
 
+    virtual bool supportsDeferredBlockLights() const = 0;
+
     virtual bool supportsDeferredPointLights() const = 0;
+
+    virtual bool isDeferredTechnicalPreview() const = 0;
+
+    virtual bool localLightConfigContainsPointLight() const = 0;
 
     virtual bool supportsImprovedInputResponse() const = 0;
 
@@ -259,6 +265,8 @@ public:
     virtual void navigateToContentLogHistoryScreen() = 0;
 
     virtual bool isSupportingFramePacing() const = 0;
+
+    virtual bool doesFramePacingRequireVsync() const = 0;
 
     virtual void cancelAllDownloads() const = 0;
 

@@ -16,8 +16,7 @@ MCAPI void initialize(
     ::IOptionRegistry&             options,
     bool                           isEditorEnabled,
     bool                           isEduMode,
-    ::std::function<bool()>        isTrial,
-    ::std::function<bool()>        isRealmsEditWorldFeatureOn
+    ::std::function<bool()>        isTrial
 );
 // NOLINTEND
 

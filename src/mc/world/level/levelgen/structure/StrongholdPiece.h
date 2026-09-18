@@ -73,6 +73,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void forceAddPortalRoom(
+        ::StructurePiece&                                   startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random
+    );
+
     MCAPI static ::StructurePiece* generateAndAddPiece(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,

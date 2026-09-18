@@ -8,7 +8,7 @@ enum class ActiveDirectoryExperience : uchar {
     TrialWarning      = 3,
     TrialEnded        = 4,
     Generic           = 5,
-    MUTSDriven        = 6,
+    EduServiceDriven  = 6,
     OneTrialWarning   = 7,
     FinalTrialWarning = 8,
 };

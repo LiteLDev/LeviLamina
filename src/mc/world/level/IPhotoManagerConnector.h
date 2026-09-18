@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-struct ScreenshotOptions;
 namespace cg { class ImageBuffer; }
+struct ScreenshotOptions;
 // clang-format on
 
 class IPhotoManagerConnector {

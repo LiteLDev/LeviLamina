@@ -2,15 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct TickingSystemWithInfo;
-// clang-format on
-
-struct PlayerMoveSystems {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createPlayerPostMoveSystem();
-    // NOLINTEND
-};
+struct PlayerMoveSystems {};

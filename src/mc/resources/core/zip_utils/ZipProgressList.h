@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/threading/Mutex.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Core::ZipUtils { class ZipProgress; }
@@ -17,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Core::ZipUtils::ZipProgress>>> mZipProgress;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mProgressLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                    mProgressLock;
     // NOLINTEND
 
 public:

@@ -72,6 +72,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DataDrivenRendererRegistry(::GameVersion const& version, ::DataDrivenRendererPool&& fallbackPool);
+
+    MCAPI void clearForReinit(::GameVersion const& version, ::DataDrivenRendererPool&& newFallbackPool);
+
+    MCAPI ::std::optional<::DataDrivenRendererRegistry::DataDrivenRemappingData>
+    tryUnregisterDataDrivenRenderer(::ActorRenderer const* renderer);
     // NOLINTEND
 
 public:

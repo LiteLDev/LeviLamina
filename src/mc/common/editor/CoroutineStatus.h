@@ -15,8 +15,19 @@ public:
 public:
     // prevent constructor by default
     CoroutineStatus& operator=(CoroutineStatus const&);
-    CoroutineStatus(CoroutineStatus const&);
     CoroutineStatus();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI CoroutineStatus(::Editor::CoroutineStatus const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::CoroutineStatus const&);
+    // NOLINTEND
 };
 
 } // namespace Editor

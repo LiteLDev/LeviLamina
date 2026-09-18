@@ -13,4 +13,16 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<uint>>          mBoneToModelPartIdx;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mBoneNames;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~ExtractedSkeletonData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

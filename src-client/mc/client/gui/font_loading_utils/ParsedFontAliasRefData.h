@@ -13,6 +13,18 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<int, int>>> ranges;
     ::ll::TypedStorage<4, 4, float>                                 fontScale;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~ParsedFontAliasRefData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };
 
 } // namespace FontLoadingUtils

@@ -13,7 +13,6 @@ class Actor;
 class BlockPos;
 class Dimension;
 class Level;
-class ServerLevel;
 class Vec2;
 class Vec3;
 // clang-format on
@@ -68,28 +67,6 @@ public:
     virtual void handleCommandOutputCallback(int successCount, ::std::string&& messages) const /*override*/;
 
     virtual bool isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptCommandOrigin(
-        ::ServerLevel&                              origin,
-        ::Dimension*                                dimension,
-        ::std::function<void(int, ::std::string&&)> outputCallback,
-        ::std::optional<::CommandPermissionLevel>   permissionLevel
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ServerLevel&                              origin,
-        ::Dimension*                                dimension,
-        ::std::function<void(int, ::std::string&&)> outputCallback,
-        ::std::optional<::CommandPermissionLevel>   permissionLevel
-    );
     // NOLINTEND
 
 public:

@@ -11,8 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockType;
 class CompoundTag;
-namespace Bedrock::Threading { class Mutex; }
+class ILevel;
+class SaveContext;
 // clang-format on
 
 class DynamicPropertiesBlockActorComponent : public ::IBlockActorComponent {
@@ -65,9 +67,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void save(::CompoundTag& parentTag) const /*override*/;
+    virtual void save(::CompoundTag& parentTag, ::SaveContext const&) const /*override*/;
 
-    virtual void load(::CompoundTag const& parentTag, ::BlockActorVersion version) /*override*/;
+    virtual void load(::CompoundTag const& parentTag, ::ILevel&, ::BlockActorVersion version) /*override*/;
 
     virtual ~DynamicPropertiesBlockActorComponent() /*override*/;
     // NOLINTEND
@@ -94,6 +96,8 @@ public:
         )>                   callback
     );
 
+    MCAPI void saveToTag(::CompoundTag& parentTag) const;
+
     MCAPI ::DynamicPropertiesBlockActorComponent::SetResult
     set(::std::string const&                                                              bucket,
         ::std::string const&                                                              key,
@@ -108,6 +112,14 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::DynamicPropertiesBlockActorComponent> tryCreateFor(::BlockType const& blockType);
+#endif
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> DYNAMIC_PROPERTIES_TAG();
@@ -116,7 +128,7 @@ public:
         flat_map<uint, ::std::string, ::std::less<uint>, ::std::vector<uint>, ::std::vector<::std::string>>&
         mBucketDictionary();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mDictionaryMutex();
+    MCAPI static ::std::mutex& mDictionaryMutex();
 
     MCAPI static ::brstd::
         flat_map<uint, ::std::string, ::std::less<uint>, ::std::vector<uint>, ::std::vector<::std::string>>&
@@ -132,9 +144,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::CompoundTag& parentTag) const;
+    MCAPI void $save(::CompoundTag& parentTag, ::SaveContext const&) const;
 
-    MCAPI void $load(::CompoundTag const& parentTag, ::BlockActorVersion version);
+    MCAPI void $load(::CompoundTag const& parentTag, ::ILevel&, ::BlockActorVersion version);
 
 
     // NOLINTEND

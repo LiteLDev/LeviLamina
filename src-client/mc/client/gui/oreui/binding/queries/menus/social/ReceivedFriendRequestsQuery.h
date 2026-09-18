@@ -7,6 +7,7 @@
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/social/XboxAPICallResult.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -24,16 +25,13 @@ class ReceivedFriendRequestsQuery : public ::OreUI::QueryBase<::OreUI::ReceivedF
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>> mIsLoading;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::AddFriendObject, ::std::allocator<::OreUI::AddFriendObject>>>
-                                                                                       mRequests;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::XboxAPICallResult>>                 mXboxAPICallResult;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ReceivedFriendRequestsList>> mReceivedFriendRequestsList;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                               mIsLoading;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::AddFriendObject, ::OreUI::AddFriendObject>> mRequests;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::XboxAPICallResult, ::XboxAPICallResult>> mXboxAPICallResult;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ReceivedFriendRequestsList>>      mReceivedFriendRequestsList;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mReceivedFriendRequestsListSubscriber;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                               mTaskGroup;
     // NOLINTEND
 
 public:

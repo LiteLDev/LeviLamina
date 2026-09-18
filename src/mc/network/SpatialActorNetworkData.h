@@ -17,6 +17,7 @@ public:
     // clang-format off
     struct DebugSendRateModifiers;
     struct DebugSpatialPacketModifiers;
+    struct PlayerUpdateTarget;
     // clang-format on
 
     // SpatialActorNetworkData inner types define
@@ -58,14 +59,29 @@ public:
         DebugSpatialPacketModifiers();
     };
 
+    struct PlayerUpdateTarget {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 184> mUnk6dc1e3;
+        ::ll::UntypedStorage<8, 8>   mUnke8aaa8;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlayerUpdateTarget& operator=(PlayerUpdateTarget const&);
+        PlayerUpdateTarget(PlayerUpdateTarget const&);
+        PlayerUpdateTarget();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk3d576d;
     ::ll::UntypedStorage<1, 1>  mUnk61c3eb;
     ::ll::UntypedStorage<1, 1>  mUnkf6f1aa;
-    ::ll::UntypedStorage<8, 32> mUnk662955;
-    ::ll::UntypedStorage<8, 32> mUnk4f87d7;
+    ::ll::UntypedStorage<8, 40> mUnk662955;
+    ::ll::UntypedStorage<8, 40> mUnk4f87d7;
     ::ll::UntypedStorage<4, 4>  mUnkec90d2;
     ::ll::UntypedStorage<8, 64> mUnk5ce137;
     // NOLINTEND
@@ -79,7 +95,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
+    MCNAPI ::std::optional<uint64> _getOptimizationUpdateInterval(::Player& player) const;
 
 #ifdef LL_PLAT_C
     MCNAPI void handleServerData(

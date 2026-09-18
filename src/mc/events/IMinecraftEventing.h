@@ -13,8 +13,9 @@
 #include "mc/client/gui/screens/controllers/EduShareMethodType.h"
 #include "mc/client/gui/screens/controllers/EduShareUriType.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenMode.h"
+#include "mc/client/identity/PlayFabStatus.h"
+#include "mc/client/social/ClientReportingEvent.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
-#include "mc/client/social/MultiplayerState.h"
 #include "mc/client/social/ServiceState.h"
 #include "mc/client/store/iap/transactions/TransactionStatus.h"
 #include "mc/client/util/edu_cloud_utils/Operation.h"
@@ -37,6 +38,7 @@
 #include "mc/events/IExternalSessionTelemetry.h"
 #include "mc/events/IMinecraftEventingProvider.h"
 #include "mc/events/IPackTelemetry.h"
+#include "mc/events/IPuvLoadEventing.h"
 #include "mc/events/IScreenChangedEventing.h"
 #include "mc/events/IUIEventTelemetry.h"
 #include "mc/events/NetworkType.h"
@@ -48,6 +50,7 @@
 #include "mc/identity/IdentitySignInTrigger.h"
 #include "mc/identity/IdentityType.h"
 #include "mc/identity/SignInResult.h"
+#include "mc/network/EditorConnectionJoinIntent.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/network/TransportLayer.h"
@@ -84,7 +87,6 @@ class MessagePerformance;
 class NetworkIdentifier;
 class PackInstance;
 class PackManifest;
-class PackSettings;
 class PerfContextTrackerReport;
 class Player;
 class PlayerRespawnTelemetryData;
@@ -116,7 +118,6 @@ namespace Bedrock::Profiling::Orchestrator { struct ProfilerMetadataParams; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core::Profile { struct FileCounters; }
 namespace Json { class Value; }
-namespace PuvLoadData { struct TelemetryEventData; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { struct PermissionCheckResult; }
 namespace Social { struct PlayerIDs; }
@@ -142,6 +143,7 @@ class IMinecraftEventing : public ::Bedrock::EnableNonOwnerReferences,
                            public ::IConnectionEventing,
                            public ::IUIEventTelemetry,
                            public ::IExternalSessionTelemetry,
+                           public ::IPuvLoadEventing,
                            public ::IMinecraftEventingProvider {
 public:
     // IMinecraftEventing inner types declare
@@ -354,6 +356,7 @@ public:
         TimelineRequiredScreen = 9,
         RealmsPurchase         = 10,
         PartyTravel            = 11,
+        JoiningFriend          = 12,
     };
 
     enum class RealmConnectionLambda : int {
@@ -465,6 +468,8 @@ public:
 
     virtual void initEditorEventListener() = 0;
 
+    virtual void initOfflineEventListener() = 0;
+
     virtual void shutdown() = 0;
 
     virtual ::std::string const& getPlayerSessionId() = 0;
@@ -546,7 +551,6 @@ public:
         ::Json::Value const&                                     failDebugInfo,
         ::TransportLayer                                         transportLayer,
         ::NetworkType                                            networkTypeOverride,
-        ::Social::MultiplayerState                               multiplayerState,
         bool                                                     isConnectedToApplicationLayer,
         bool                                                     isFilteringProfanity,
         ::Social::MultiplayerServiceIdentifier                   multiplayerServiceIdentifier,
@@ -560,7 +564,8 @@ public:
         ::Connection::ReconnectionType                           reconnectionType,
         bool                                                     isDueToSuspend,
         uint64                                                   connectionDurationMs,
-        ::Social::GameConnectionInfo const&                      connectionInfo
+        ::Social::GameConnectionInfo const&                      connectionInfo,
+        ::EditorConnectionJoinIntent                             editorConnectionJoinIntent
     ) = 0;
 
     virtual void fireEventClientLastPackets(
@@ -610,15 +615,15 @@ public:
     ) = 0;
 
     virtual void fireEventNPLNLifecycle(
-        int                        eventType,
-        ::Social::MultiplayerState multiplayerState,
-        ::Social::ServiceState     serviceState
+        int                            eventType,
+        ::Social::ClientReportingEvent multiplayerState,
+        ::Social::ServiceState         serviceState
     ) = 0;
 
     virtual void fireEventNPLNRpcFailure(
         int                                     rpcType,
         int                                     statusCode,
-        ::Social::MultiplayerState              multiplayerState,
+        ::Social::ClientReportingEvent          clientState,
         ::Social::ServiceState                  serviceState,
         ::std::optional<::std::chrono::seconds> requiredDelay
     ) = 0;
@@ -630,7 +635,7 @@ public:
 
     virtual void fireServerConnectionEvent(
         ::IConnectionEventing::ServerConnectionOutcome outcome,
-        uint                                           pingLatency,
+        ::std::chrono::milliseconds                    pingLatency,
         double                                         timeElapsed,
         ::std::string const&                           creatorName,
         ::std::string const&                           worldId
@@ -768,6 +773,8 @@ public:
         ::std::string const&                    errorCode
     ) = 0;
 
+    virtual void fireEventNsaUpgradeResult(::Social::PlayFabStatus status) = 0;
+
     virtual void fireEventAppPaused() = 0;
 
     virtual void fireEventAppUnpaused() = 0;
@@ -812,7 +819,9 @@ public:
         ::PackType           packType,
         ::PackOrigin         packLocation,
         ::std::string const& packOptimizationVersion,
-        int64                freedBytes
+        int64                freedBytes,
+        bool                 succeeded,
+        int64                remainingBytes
     ) = 0;
 
     virtual void
@@ -845,9 +854,11 @@ public:
     virtual void fireEventServerRespawnSearchTime(::Player& player, ::PlayerRespawnTelemetryData const& data) = 0;
 
     virtual void firePackSettingsEvent(
-        ::PackSettings const& packSettings,
         ::PackManifest const& manifest,
-        ::std::string         serializedPackSettings
+        ::std::string         serializedPackSettings,
+        int                   subpackIndex,
+        ::std::string const&  subpackName,
+        int                   subpackCount
     ) = 0;
 
     virtual void removeTestBuildIdTag() = 0;
@@ -987,8 +998,10 @@ public:
 
     virtual void removeConnectionCommonProperties(uint userId) = 0;
 
-    virtual void
-    trySetExperienceIdentifiers(::std::string const& experienceId, ::std::string const& existingSessionId) = 0;
+    virtual void trySetExperienceIdentifiers(
+        ::std::string const&                  experienceId,
+        ::std::optional<::std::string> const& existingSessionId
+    ) = 0;
 
     virtual void removeExperienceIdentifiers() = 0;
 
@@ -1008,9 +1021,10 @@ public:
     ) = 0;
 
     virtual void fireEventStoreDiscoveryRequestResponse(
-        int const  status,
-        int const  retryAttempt,
-        bool const asyncServicesManager
+        int const                             retryAttempt,
+        ::std::optional<int>                  errorStatus,
+        ::std::optional<::std::string> const& errorMessage,
+        ::std::optional<::std::string> const& errorCode
     ) = 0;
 
     virtual void fireEventStoreInventoryRefreshRequestResponse(
@@ -1410,7 +1424,6 @@ public:
     virtual void fireEventUnknownBlockReceived(::NewBlockID const& blockId, ushort data) = 0;
 
     virtual void fireEventSignInEdu(
-        ::std::string const&                                            mutsUserId,
         ::edu::Role                                                     role,
         ::Identity::EduSignInStage                                      stage,
         ::std::string const&                                            tenantType,
@@ -1419,20 +1432,17 @@ public:
     ) = 0;
 
     virtual void fireEventSignOutEdu(
-        ::std::string const& mutsUserId,
         ::edu::Role          role,
         ::std::string const& tenantType,
         ::std::string const& action,
         ::std::string const& error
     ) = 0;
 
-    virtual void
-    fireEventSwitchAccountEdu(::std::string const& mutsUserId, ::edu::Role role, ::std::string const& tenantType) = 0;
+    virtual void fireEventSwitchAccountEdu(::edu::Role role, ::std::string const& tenantType) = 0;
 
     virtual void fireEventEduDemoConversion(::edu::Role role, ::LastClickedSource lastClickedSource) = 0;
 
     virtual void fireEventPopupFiredEdu(
-        ::std::string const&          mutsUserId,
         ::std::string const&          dialogType,
         ::std::string const&          experienceId,
         ::std::string const&          title,
@@ -1783,6 +1793,14 @@ public:
         double passDurationInSeconds
     ) = 0;
 
+    virtual void fireEventProfileImageFetched(
+        ::std::string const& imageType,
+        ::std::string const& fetchOutcome,
+        bool                 servedFromCache,
+        int                  httpStatus,
+        uint                 fetchDurationMs
+    ) = 0;
+
     virtual void fireEventPersonaCreationFailed(
         ::std::string_view errorName,
         ::std::string_view pieceId,
@@ -2019,7 +2037,12 @@ public:
     virtual void
     fireEventActorMovementCorrectionDivergence(::ActorType actorType, ::std::vector<float> const& divergences) = 0;
 
-    virtual void fireEventDedicatedServerDiscoveryResponse(int const status, int const retryAttempt) = 0;
+    virtual void fireEventDedicatedServerDiscoveryResponse(
+        int const                             retryAttempt,
+        ::std::optional<int>                  errorStatus,
+        ::std::optional<::std::string> const& errorMessage,
+        ::std::optional<::std::string> const& errorCode
+    ) = 0;
 
     virtual void fireEventInGamePause(bool pauseStatus) = 0;
 
@@ -2098,9 +2121,6 @@ public:
         ::std::string_view   legacyStream,
         ::std::string_view   cerealStream
     ) = 0;
-
-    virtual void
-    fireEventPUVLoad(::std::string const& resourceCategory, ::PuvLoadData::TelemetryEventData&& loadData) = 0;
 
     virtual void fireEventRemoteDesktop(bool isRemoteDesktop) = 0;
 

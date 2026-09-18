@@ -139,7 +139,7 @@ enum class BlockShape : int {
     Azalea                      = 132,
     GlowItemFrame               = 133,
     MultifaceBlock              = 134,
-    AmethystCluster             = 135,
+    CrystalCluster              = 135,
     Candle                      = 136,
     CandleCake                  = 137,
     SculkShrieker               = 138,

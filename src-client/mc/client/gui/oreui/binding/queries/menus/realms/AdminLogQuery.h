@@ -20,9 +20,8 @@ class AdminLogQuery : public ::OreUI::QueryBase<::OreUI::AdminLogQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::AdminLogManager>> mAdminLogManager;
-    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::AdminLogData, ::std::allocator<::OreUI::AdminLogData>>>
-                                                               mAdminLogDataList;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::AdminLogManager>>                           mAdminLogManager;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::AdminLogData, ::OreUI::AdminLogData>> mAdminLogDataList;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mAdminLogsChangedSubscription;
     // NOLINTEND
 

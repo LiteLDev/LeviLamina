@@ -29,9 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::Container*>
-    _getAttachedContainers(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
-
     MCAPI ::Container* _getContainerInBlock(::BlockSource& region, ::Vec3 const& pos);
 
     MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);

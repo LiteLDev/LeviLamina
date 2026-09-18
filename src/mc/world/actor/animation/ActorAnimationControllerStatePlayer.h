@@ -11,6 +11,7 @@
 // clang-format off
 class ActorAnimationControllerPlayer;
 class ActorAnimationControllerState;
+class ActorSkeletalAnimationPtr;
 class AnimationComponent;
 class ApplyAnimationContext;
 class BoneOrientation;
@@ -76,6 +77,12 @@ public:
         ::ExpressionNode const&                                    blendExpression,
         ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
+
+    MCAPI void addAnimation(
+        ::AnimationComponent&       animationComponent,
+        ::HashedString const&       friendlyName,
+        ::ActorSkeletalAnimationPtr animation
+    );
 #endif
     // NOLINTEND
 
@@ -110,7 +117,11 @@ public:
 
     MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
 
+#ifdef LL_PLAT_S
     MCAPI bool $hasAnimationFinished() const;
+#else // LL_PLAT_C
+    MCFOLD bool $hasAnimationFinished() const;
+#endif
 
     MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
 

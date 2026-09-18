@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 class AllowListFile;
+class CommandRegistry;
 class DedicatedServer;
 class EditorAllowList;
 class IMinecraftApp;
@@ -26,10 +28,11 @@ public:
         ::IMinecraftApp&                                  app,
         ::Level&                                          level,
         ::LevelStorage&,
-        ::DedicatedServer& dedicatedServer,
-        ::AllowListFile&   allowListFile,
-        ::EditorAllowList& editorAllowList,
-        ::ScriptSettings*  scriptSettings
+        ::DedicatedServer&                                      dedicatedServer,
+        ::AllowListFile&                                        allowListFile,
+        ::EditorAllowList&                                      editorAllowList,
+        ::ScriptSettings*                                       scriptSettings,
+        ::brstd::move_only_function<void(::CommandRegistry&)>&& registerServerIdentityCommand
     );
     // NOLINTEND
 

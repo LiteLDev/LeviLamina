@@ -55,4 +55,16 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockCullingData::CullingRule>> mCullingRules;
     ::ll::TypedStorage<8, 32, ::PuvLoadData::LoadResultWithTiming>            mLoadTime;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~BlockCullingData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

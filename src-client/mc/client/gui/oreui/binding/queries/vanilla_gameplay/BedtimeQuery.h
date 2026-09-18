@@ -20,15 +20,16 @@ class BedtimeQuery : public ::OreUI::QueryBase<::OreUI::BedtimeQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::LocalPlayer const*>                           mLocalPlayer;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mLocalPlayerSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                           mIsTrial;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                       mSleepingPlayerCount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                       mRequiredSleepingPlayerCount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::ChatAvailability>> mChatAvailability;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                       mRemotePlayersCount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                      mIsAbleToSleep;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                      mCanChangeSleepSettings;
+    ::ll::TypedStorage<8, 8, ::LocalPlayer const*>             mLocalPlayer;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLocalPlayerSubscription;
+    ::ll::TypedStorage<1, 1, bool>                             mIsTrial;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>    mSleepingPlayerCount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>    mRequiredSleepingPlayerCount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::ChatAvailability, ::OreUI::ChatAvailability>>
+                                                              mChatAvailability;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>   mRemotePlayersCount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mIsAbleToSleep;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mCanChangeSleepSettings;
     // NOLINTEND
 
 public:

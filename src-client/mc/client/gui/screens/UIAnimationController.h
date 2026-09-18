@@ -32,18 +32,6 @@ public:
         ::ll::TypedStorage<8, 16, ::std::weak_ptr<::UIControl>>                                   control;
         ::ll::TypedStorage<8, 64, ::std::function<::ui::AnimationStatus(::mce::TimeStep const&)>> function;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~AnimationUIControlFunctionCallback();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     using animationFunction_t = ::std::function<::ui::AnimationStatus(::mce::TimeStep const&)>;
@@ -60,14 +48,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _tick(
+    MCAPI static bool _tick(
         ::std::vector<::UIAnimationController::AnimationUIControlFunctionCallback>& animationList,
         ::mce::TimeStep const&                                                      timeStep,
         ::std::vector<::ScreenEvent>&                                               screenEvents
     );
-
-    MCAPI void clearAnimationLists();
     // NOLINTEND
 };

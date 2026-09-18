@@ -17,7 +17,7 @@ class Messenger : public ::ServerInstanceMessenger::IMessenger,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnk3b074b;
+    ::ll::UntypedStorage<8, 80>  mUnk468482;
     ::ll::UntypedStorage<1, 1>   mUnk3abda9;
     ::ll::UntypedStorage<8, 616> mUnke430a3;
     // NOLINTEND

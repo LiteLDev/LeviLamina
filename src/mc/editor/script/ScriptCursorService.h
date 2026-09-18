@@ -33,13 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getDefaultProperties() const;
 
-    MCNAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
-
-    MCNAPI ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const;
-
     MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getProperties() const;
-
-    MCNAPI ::Scripting::Result_deprecated<bool> isVisible() const;
 
     MCNAPI ::Scripting::Result_deprecated<void>
     setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);

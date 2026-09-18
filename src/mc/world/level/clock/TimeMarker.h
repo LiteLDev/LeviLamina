@@ -34,6 +34,8 @@ public:
 #endif
 
     MCAPI ::TimeMarkerData toData() const;
+
+    MCAPI ~TimeMarker();
     // NOLINTEND
 
 public:
@@ -42,5 +44,11 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::TimeMarkerData const& data);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

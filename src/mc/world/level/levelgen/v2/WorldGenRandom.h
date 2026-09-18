@@ -41,8 +41,6 @@ public:
 
     virtual void consumeCount(uint count) /*override*/;
 
-    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
-
     virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
     // NOLINTEND
 
@@ -74,8 +72,6 @@ public:
     MCAPI double $nextGaussianDouble();
 
     MCAPI void $consumeCount(uint count);
-
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
 
     MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 

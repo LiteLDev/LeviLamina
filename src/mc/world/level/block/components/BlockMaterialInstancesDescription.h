@@ -49,6 +49,30 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                                  materialName;
         ::ll::TypedStorage<8, 40, ::BlockMaterialInstancesDescription::BlockMaterialInstanceData> materialInstanceData;
         // NOLINTEND
+
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        BlockMaterialData& operator=(BlockMaterialData const&);
+        BlockMaterialData();
+
+#endif
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI BlockMaterialData(::BlockMaterialInstancesDescription::BlockMaterialData const&);
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(::BlockMaterialInstancesDescription::BlockMaterialData const&);
+#endif
+        // NOLINTEND
     };
 
 public:

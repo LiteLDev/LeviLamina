@@ -25,10 +25,10 @@ public:
     ::ll::TypedStorage<
         8,
         120,
-        ::OreUI::PropertyVector<::OreUI::DataDrivenUIGenericNode, ::std::allocator<::OreUI::DataDrivenUIGenericNode>>>
-                                                                 mChildrenNodes;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mSourcePackId;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mOnCompositionsReloadedSubscription;
+        ::OreUI::PropertyVector<::OreUI::DataDrivenUIGenericNode, ::OreUI::DataDrivenUIGenericNode>>
+                                                                                mChildrenNodes;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mSourcePackId;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mOnCompositionsReloadedSubscription;
     // NOLINTEND
 
 public:

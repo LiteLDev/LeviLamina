@@ -24,7 +24,6 @@ class IClientInstance;
 class IRenderChunkGarbageCollection;
 class InsideCubeRenderer;
 class Level;
-class LevelRenderer;
 class MinecraftGraphics;
 class PlayerRenderView;
 class Tessellator;
@@ -52,6 +51,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk752dd6;
         ::ll::UntypedStorage<8, 8> mUnk326994;
         ::ll::UntypedStorage<8, 8> mUnkedc2e7;
         // NOLINTEND
@@ -78,7 +78,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IClientInstance>>         mClient;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>      mPrimaryClient;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector>> mFrameAnomalyDetector;
-    ::ll::TypedStorage<8, 16, ::GameRenderer::Overlays>                              mOverlays;
+    ::ll::TypedStorage<8, 24, ::GameRenderer::Overlays>                              mOverlays;
     ::ll::TypedStorage<8, 88, ::mce::RenderGraph>                                    mRenderGraph;
     ::ll::TypedStorage<4, 24, ::mce::Clock>                                          mClock;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Tessellator>>                       mTessellator;
@@ -133,8 +133,6 @@ public:
 
     MCAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
 
-    MCAPI ::std::weak_ptr<::PlayerRenderView> addPlayerRenderView(::LevelRenderer& renderer);
-
     MCAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
 
     MCAPI ::ScreenContext makeScreenContext(float a);
@@ -144,8 +142,6 @@ public:
     MCAPI void onSubClientRemoved(::IClientInstance const& client);
 
     MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
-
-    MCAPI void removePlayerRenderView(::PlayerRenderView* view);
 
     MCAPI void renderCurrentFrame(float a);
 

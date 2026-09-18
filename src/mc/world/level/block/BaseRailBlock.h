@@ -135,11 +135,9 @@ public:
 
     MCAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);
 
-#ifdef LL_PLAT_S
     MCAPI static bool isRail(::Block const& block);
 
     MCAPI static bool isRail(::IConstBlockSource const& region, ::BlockPos const& pos);
-#endif
 
     MCAPI static bool isSlope(::Block const& block);
     // NOLINTEND

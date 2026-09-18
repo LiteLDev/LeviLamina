@@ -7,7 +7,6 @@
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,10 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds> mLatency;
-    ::ll::TypedStorage<
-        8,
-        96,
-        ::Bedrock::Threading::BasicLockbox<::Bedrock::Threading::Async<void>, ::Bedrock::Threading::Mutex>>
+    ::ll::TypedStorage<8, 96, ::Bedrock::Threading::BasicLockbox<::Bedrock::Threading::Async<void>, ::std::mutex>>
                                                              mPredecessor;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mTaskGroup;
     // NOLINTEND

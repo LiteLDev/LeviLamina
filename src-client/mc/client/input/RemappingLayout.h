@@ -37,6 +37,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RemappingLayout(RemappingLayout const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RemappingLayout();
@@ -53,11 +57,16 @@ public:
 
     virtual ::std::string getMappedKeyName(::Keymapping const& keyMapping) const;
 
-    virtual ::std::string getKeySpriteLocation(int key, ::IconSize iconSize) const;
+    virtual ::std::string getKeySpriteLocation(
+        int        key,
+        bool       checkUserConfiguredSwap,
+        bool       checkPlatformButtonSwapping,
+        ::IconSize iconSize
+    ) const;
 
     virtual ::std::string getKeySpriteLocation(::Keymapping const& keyMapping) const;
 
-    virtual int _rawKeyToKey(int rawInputKey, ::RawInputType rawInputType) const = 0;
+    virtual int _rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const = 0;
     // NOLINTEND
 
 public:
@@ -72,6 +81,8 @@ public:
     MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
     MCAPI ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
+
+    MCAPI ::RemappingLayout& operator=(::RemappingLayout const& other);
 
     MCAPI void setMapping(::std::string const& action, ::std::vector<int> const& keys);
 
@@ -109,7 +120,12 @@ public:
 
     MCAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
 
-    MCFOLD ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
+    MCFOLD ::std::string $getKeySpriteLocation(
+        int        key,
+        bool       checkUserConfiguredSwap,
+        bool       checkPlatformButtonSwapping,
+        ::IconSize iconSize
+    ) const;
 
     MCAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
     // NOLINTEND

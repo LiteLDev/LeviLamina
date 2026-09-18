@@ -13,10 +13,7 @@ struct BossEventPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const>                            FLAG_DARKEN;
-    ::ll::TypedStorage<4, 4, int const>                            FLAG_FOG;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mBossID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mPlayerID;
     ::ll::TypedStorage<1, 1, ::BossEventUpdateType>                mEventType;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
     ::ll::TypedStorage<4, 4, float>                                mHealthPercent;
@@ -28,6 +25,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BossEventPacketPayload();
+
+    MCAPI ::std::string getRedactedName() const;
+
+    MCFOLD ::std::string getUnredactedName() const;
     // NOLINTEND
 
 public:

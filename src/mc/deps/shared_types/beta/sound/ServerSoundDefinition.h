@@ -25,7 +25,8 @@ public:
         8,
         72,
         ::std::optional<::std::unordered_map<::std::string, ::SharedTypes::Beta::Sound::TagValueList>>>
-        mTags;
+                                                     mTags;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mBroadcastRange;
     // NOLINTEND
 
 public:

@@ -71,6 +71,7 @@ public:
     ::ll::TypedStorage<4, 4, ::std::thread::id const>                         mOwnerThreadID;
     ::ll::TypedStorage<1, 1, bool const>                                      mAllowUnpopulatedChunks;
     ::ll::TypedStorage<1, 1, bool const>                                      mPublicSource;
+    ::ll::TypedStorage<1, 1, bool const>                                      mMarkChangedBlocksForSaving;
     ::ll::TypedStorage<8, 8, ::Level&>                                        mLevel;
     ::ll::TypedStorage<8, 8, ::ChunkSource&>                                  mChunkSource;
     ::ll::TypedStorage<8, 8, ::Dimension&>                                    mDimension;
@@ -78,6 +79,8 @@ public:
     ::ll::TypedStorage<2, 2, short const>                                     mMinHeight;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDataFetchResult<::Block>>> mTempBlockFetchResult;
     ::ll::TypedStorage<1, 1, bool>                                            mAllowTickingChanges;
+    ::ll::TypedStorage<1, 1, bool>                                            mProcessingConnectionUpdates;
+    ::ll::TypedStorage<8, 40, ::std::deque<::BlockPos>>                       mPendingConnectionUpdates;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                     mPlaceChunkPos;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockSourceListener*>>          mListeners;
     ::ll::TypedStorage<1, 1, bool>                                            mIsPersistantBlockSource;
@@ -90,6 +93,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Actor*>>                        mTempEntityList;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockActor*>>                   mTempBlockEntityList;
     ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>                          mTempCubeList;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>               mPendingPreservedBlockEntityChunks;
     // NOLINTEND
 
 public:
@@ -328,7 +332,8 @@ public:
         ::ChunkSource& source,
         bool           publicSource,
         bool           allowUnpopulatedChunks,
-        bool           allowClientTickingChanges
+        bool           allowClientTickingChanges,
+        bool           markChangedBlocksForSaving
     );
 
     MCAPI void _blockChanged(
@@ -430,7 +435,9 @@ public:
 
     MCAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
 
+#ifdef LL_PLAT_C
     MCAPI void fireBlockEntityAboutToBeRemoved(::std::shared_ptr<::BlockActor> te);
+#endif
 
     MCAPI ::Biome const& getBiome(::BlockPos const& pos) const;
 
@@ -489,7 +496,7 @@ public:
 
     MCAPI bool setBlockAndRetainCompatibleBlockActor(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
-    MCAPI bool setBlockSimple(::BlockPos const& pos, ::Block const& block);
+    MCAPI void tickPreservedBlockEntities();
 
     MCAPI void updateConnectionsAt(::BlockPos const& pos);
 
@@ -513,7 +520,8 @@ public:
         ::ChunkSource& source,
         bool           publicSource,
         bool           allowUnpopulatedChunks,
-        bool           allowClientTickingChanges
+        bool           allowClientTickingChanges,
+        bool           markChangedBlocksForSaving
     );
     // NOLINTEND
 

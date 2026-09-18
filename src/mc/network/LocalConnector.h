@@ -6,7 +6,6 @@
 #include "mc/network/Connector.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/TransportLayer.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,8 +17,8 @@ class LocalConnector : public ::Connector, public ::std::enable_shared_from_this
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
-    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>        mLocalId;
+    ::ll::TypedStorage<8, 80, ::std::mutex>         mMutex;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mLocalId;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::NetworkIdentifier, ::std::weak_ptr<::LocalConnector>>>
                                                                       mConnectionsMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>> mCallbackQueue;

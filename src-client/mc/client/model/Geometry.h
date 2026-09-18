@@ -214,8 +214,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Geometry();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Geometry(
+        ::std::string const& serializableName,
+        ::std::string const& sourceFilePathWithExtension,
+        bool                 isFromBaseGamePack,
+        int                  texw,
+        int                  texh
+    );
+
+    MCAPI Geometry(
+        ::std::string const& serializableName,
+        ::std::string const& sourceFilePathWithExtension,
+        ::Geometry const&    source,
+        bool                 isFromBaseGamePack,
+        int                  texw,
+        int                  texh
+    );
+
     MCAPI void
     _parseBones(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
 
@@ -228,9 +249,16 @@ public:
         ::TextureUVCoordinateSet const& uvOffset
     );
 
+    MCAPI void _parseItemDisplayTransform(::Json::Value const& itemTransformNode, ::std::string const& transformName);
+
     MCAPI ::Geometry::Node const* getNode(::std::string_view name) const;
 
+    MCAPI void
+    parse(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
+
     MCAPI void toJson(::Json::Value& root) const;
+
+    MCAPI ~Geometry();
     // NOLINTEND
 
 public:
@@ -243,5 +271,32 @@ public:
     MCAPI static ::SemVersionConstant const& mDrownedParentFieldSupportedVersion();
 
     MCAPI static ::SemVersionConstant const& mParentFieldSupportedVersion();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const& serializableName,
+        ::std::string const& sourceFilePathWithExtension,
+        bool                 isFromBaseGamePack,
+        int                  texw,
+        int                  texh
+    );
+
+    MCAPI void* $ctor(
+        ::std::string const& serializableName,
+        ::std::string const& sourceFilePathWithExtension,
+        ::Geometry const&    source,
+        bool                 isFromBaseGamePack,
+        int                  texw,
+        int                  texh
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

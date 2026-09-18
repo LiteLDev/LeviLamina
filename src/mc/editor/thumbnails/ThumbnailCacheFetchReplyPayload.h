@@ -9,6 +9,7 @@
 // clang-format off
 namespace Editor { class ThumbnailFileBytes; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -36,9 +37,26 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ThumbnailCacheFetchReplyPayload(
+        ::mce::UUID const&                                          id,
+        uint                                                        hash,
+        ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::mce::UUID const& id, uint hash, ::std::variant<::Editor::ThumbnailFileBytes, ::std::string> data);
     // NOLINTEND
 
 public:

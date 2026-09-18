@@ -9,6 +9,7 @@
 // clang-format off
 class AppPlatform;
 namespace Core { class Path; }
+namespace ResourcePackPaths { struct AllPaths; }
 // clang-format on
 
 namespace ResourcePackPaths {
@@ -20,6 +21,8 @@ MCNAPI ::Core::PathBuffer<::std::string> addServiceLocator(::Core::PathBuffer<::
 
 MCNAPI ::Core::PathBuffer<::std::string>
     addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
+
+MCNAPI ::ResourcePackPaths::AllPaths getAllPaths(::AppPlatform& platform);
 
 #ifdef LL_PLAT_C
 MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);

@@ -22,22 +22,15 @@ public:
     // prevent constructor by default
     FileHandlePool& operator=(FileHandlePool const&);
     FileHandlePool(FileHandlePool const&);
+    FileHandlePool();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileHandlePool();
-
     MCNAPI ::std::shared_ptr<::Core::PooledFileHandle>
     _depositHandle(::Core::Path const& filePath, ::Core::File&& file);
 
     MCNAPI ::std::shared_ptr<::Core::PooledFileHandle> acquireHandle(::Core::Path const& filePath);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

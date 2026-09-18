@@ -59,13 +59,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-#ifdef LL_PLAT_S
     MCAPI void _setPower(::Vec3 const& power);
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI void _setPower(::Vec3 const& power);
-#endif
     // NOLINTEND
 
 public:

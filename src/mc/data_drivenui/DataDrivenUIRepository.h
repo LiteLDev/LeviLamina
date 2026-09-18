@@ -48,10 +48,10 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnka0c594;
     ::ll::UntypedStorage<8, 8>   mUnk93c79f;
     ::ll::UntypedStorage<8, 8>   mUnk45cd72;
-    ::ll::UntypedStorage<8, 256> mUnkd8a435;
-    ::ll::UntypedStorage<8, 256> mUnkcca1b1;
-    ::ll::UntypedStorage<8, 256> mUnk323176;
-    ::ll::UntypedStorage<8, 256> mUnk71ff3b;
+    ::ll::UntypedStorage<8, 264> mUnk45c653;
+    ::ll::UntypedStorage<8, 264> mUnk952e0d;
+    ::ll::UntypedStorage<8, 264> mUnk7fd127;
+    ::ll::UntypedStorage<8, 264> mUnk37444b;
     ::ll::UntypedStorage<8, 24>  mUnk1ec5f7;
     ::ll::UntypedStorage<8, 24>  mUnk64ee12;
     ::ll::UntypedStorage<8, 128> mUnkb4c13b;
@@ -73,6 +73,8 @@ public:
     virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager) /*override*/;
 
     virtual void load(::ResourcePackManager const& resourcePackManager) /*override*/;
+
+    virtual bool hasRootDefinition(::std::string const& identifier) const /*override*/;
 
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
@@ -145,9 +147,11 @@ public:
             ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot,
             nullptr_t,
             nullptr_t,
+            nullptr_t,
             ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot>& rootLoader,
         ::Puv::SlicedLoader<
             ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition,
+            nullptr_t,
             nullptr_t,
             nullptr_t,
             ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition>& compositionLoader,
@@ -193,6 +197,8 @@ public:
     MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
 
     MCNAPI void $load(::ResourcePackManager const& resourcePackManager);
+
+    MCNAPI bool $hasRootDefinition(::std::string const& identifier) const;
 
     MCNAPI ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,

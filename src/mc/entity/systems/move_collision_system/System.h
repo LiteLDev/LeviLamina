@@ -25,14 +25,14 @@ struct ActorGameTypeComponent;
 struct ActorRotationComponent;
 struct ActorTypeComponent;
 struct CamelFlagComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct CollidableMobFlagComponent;
 struct CollidableMobNearFlagComponent;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
 struct FallingBlockFlagComponent;
-struct HasLightweightFamilyFlagComponent;
 struct HorseFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct LocalSpatialEntityFetcherFactoryComponent;
@@ -58,8 +58,8 @@ namespace MoveCollisionSystem {
 
 struct System : public ::IStrictTickingSystem<::StrictExecutionContext<
                     ::Filter<
-                        ::CanStandOnSnowFlagComponent,
-                        ::HasLightweightFamilyFlagComponent,
+                        ::CanStandOnPowderSnowComponent,
+                        ::CanStandOnPowderSnowFromEquipmentComponent,
                         ::HorseFlagComponent,
                         ::MobFlagComponent,
                         ::ParrotFlagComponent,
@@ -108,8 +108,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 280, ::LocalSpatialEntityFetcher> mFetcher;
-        ::ll::TypedStorage<8, 280, ::LocalConstBlockSource>     mBlockSource;
+        ::ll::TypedStorage<8, 392, ::LocalSpatialEntityFetcher> mFetcher;
+        ::ll::TypedStorage<8, 392, ::LocalConstBlockSource>     mBlockSource;
         // NOLINTEND
     };
 
@@ -138,8 +138,8 @@ public:
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -181,8 +181,8 @@ public:
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -229,8 +229,8 @@ public:
     MCAPI static ::std::optional<::MoveCollisionSystem::System::SpatialQueryFactories> createSpatialQueryFactories(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -276,8 +276,8 @@ public:
     MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -319,8 +319,8 @@ public:
     MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,

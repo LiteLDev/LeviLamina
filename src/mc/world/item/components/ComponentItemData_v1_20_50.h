@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
     // NOLINTEND

@@ -33,7 +33,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk24996e;
     ::ll::UntypedStorage<8, 64> mUnk514da7;
     ::ll::UntypedStorage<8, 64> mUnk3a2a8e;
-    ::ll::UntypedStorage<8, 64> mUnk2a898b;
+    ::ll::UntypedStorage<8, 64> mUnk3df8eb;
     ::ll::UntypedStorage<8, 64> mUnk107dbb;
     ::ll::UntypedStorage<8, 16> mUnk6f42e6;
     // NOLINTEND
@@ -98,11 +98,16 @@ public:
 
     virtual ::mce::Color getPlayerColor(::ActorUniqueID playerId) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setVanillaBiomeColorMap(
+        ::mce::UUID const&                                       minimapId,
+        ::std::unordered_map<::std::string, ::mce::Color> const& colorMap
+    ) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> updateVanillaColorMap(
+        ::mce::UUID const&   minimapId,
+        ::std::string const& biomeId,
+        ::mce::Color const&  color
+    ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> addMultiplayerMarker(::mce::UUID const& minimapId) /*override*/;
 
@@ -152,6 +157,11 @@ public:
     MCNAPI void _handleServerTick();
 
     MCNAPI void _handleUIVisibilityPayload(::Editor::Network::MinimapUIVisibilityPayload const& payload);
+
+    MCNAPI void _notifyMinimapBiomeColorChange(
+        ::mce::UUID const&                                       minimapId,
+        ::std::unordered_map<::std::string, ::mce::Color> const& biomeColorMap
+    );
 
     MCNAPI void _sendCustomMarkerSync(::mce::UUID const& minimapId, ::Editor::Services::MinimapItem const& minimap);
 
@@ -217,11 +227,13 @@ public:
 
     MCNAPI ::mce::Color $getPlayerColor(::ActorUniqueID playerId);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap);
+    MCNAPI ::Scripting::Result_deprecated<void> $setVanillaBiomeColorMap(
+        ::mce::UUID const&                                       minimapId,
+        ::std::unordered_map<::std::string, ::mce::Color> const& colorMap
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color);
+    $updateVanillaColorMap(::mce::UUID const& minimapId, ::std::string const& biomeId, ::mce::Color const& color);
 
     MCNAPI ::Scripting::Result_deprecated<void> $addMultiplayerMarker(::mce::UUID const& minimapId);
 

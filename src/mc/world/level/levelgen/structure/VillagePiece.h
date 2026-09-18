@@ -44,7 +44,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addPieces(
+    MCAPI static bool addPieces(
         ::BlockPos                                          position,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,

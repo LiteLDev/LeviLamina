@@ -17,6 +17,7 @@ class Mob;
 class Path;
 class WeakEntityRef;
 struct DistanceSortedActor;
+struct GoalId;
 struct Shareable;
 // clang-format on
 
@@ -74,6 +75,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PickupItemsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+
     MCAPI void _dropItem(::ItemStack const& item) const;
 
     MCAPI ::std::vector<::WeakEntityRef>
@@ -82,6 +85,12 @@ public:
     MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 
     MCAPI bool _hasRoomForCarriedItem() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
@@ -106,11 +115,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

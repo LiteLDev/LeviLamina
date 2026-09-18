@@ -52,8 +52,6 @@ public:
 
     virtual void normalTick() /*override*/;
 
-    virtual bool canFreeze() const /*override*/;
-
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
     // NOLINTEND
 
@@ -89,8 +87,6 @@ public:
     MCAPI void $setTarget(::Actor* target);
 
     MCAPI void $normalTick();
-
-    MCAPI bool $canFreeze() const;
 
     MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
 

@@ -5,29 +5,37 @@
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/application/LowMemorySeverity.h"
-#include "mc/deps/certificates/KeyManager.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/network/ConnectionDefinition.h"
 #include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/platform/brstd/move_only_function.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/server/ServerGraphicsSettings.h"
 #include "mc/server/ServerInstanceInitArguments.h"
+#include "mc/server/commands/CommandsRegistryConfiguration.h"
 #include "mc/world/GameCallbacks.h"
+#include "mc/world/level/LevelSettings.h"
+#include "mc/world/level/storage/Experiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
 class CDNConfig;
 class ChatLoggingEventListener;
+class DebuggerDiagnostics;
 class EducationOptions;
 class ILevel;
 class IMinecraftEventing;
+class IResourcePackRepository;
 class ItemRegistry;
+class KeyManager;
 class LevelData;
 class LevelStorage;
 class LinkedAssetValidator;
@@ -36,7 +44,7 @@ class LoopbackPacketSender;
 class Minecraft;
 class ResourcePackManager;
 class Scheduler;
-class ScriptDiagnostics;
+class ScriptPackSettingsCache;
 class ServerInstanceEventCoordinator;
 class ServerLevel;
 class ServerNetworkSystem;
@@ -45,7 +53,7 @@ class ServerTextSettings;
 class TextFilteringProcessor;
 class Timer;
 class WorldSessionEndPoint;
-struct ConnectionDefinition;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct DimensionFactoryAndManager;
 struct NetworkServerConfig;
 struct ServerInstanceArguments;
@@ -70,8 +78,9 @@ public:
     // ServerInstance inner types declare
     // clang-format off
     struct CreateServerLevelOps;
-    struct HostMultiplayerOps;
     struct NetworkToggleOptions;
+    struct PostLevelArgs;
+    struct LevelInitArgs;
     // clang-format on
 
     // ServerInstance inner types define
@@ -116,25 +125,6 @@ public:
         CreateServerLevelOps();
     };
 
-    struct HostMultiplayerOps {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::ServerInstance&>                    mInstance;
-        ::ll::TypedStorage<8, 8, ::NetworkServerConfig&&>              mNetworkServerConfig;
-        ::ll::TypedStorage<8, 48, ::KeyManager>                        mHostPublicKey;
-        ::ll::TypedStorage<4, 4, int>                                  mMaxChunkRadius;
-        ::ll::TypedStorage<1, 1, bool>                                 mShouldAnnounce;
-        ::ll::TypedStorage<8, 8, ::ServerNetworkHandlerDependencies&&> mServerNetworkOptions;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HostMultiplayerOps& operator=(HostMultiplayerOps const&);
-        HostMultiplayerOps(HostMultiplayerOps const&);
-        HostMultiplayerOps();
-    };
-
     struct NetworkToggleOptions {
     public:
         // member variables
@@ -153,6 +143,49 @@ public:
         NetworkToggleOptions();
     };
 
+    struct PostLevelArgs {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerLevel>>                          mLevel;
+        ::ll::TypedStorage<8, 72, ::Experiments>                                            mExperiments;
+        ::ll::TypedStorage<8, 1344, ::LevelSettings>                                        mLevelSettings;
+        ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                                    mClientResourcePackManager;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>> mResourcePackRepository;
+        ::ll::TypedStorage<8, 104, ::std::optional<::CommandsRegistryConfiguration const>>
+                                                                                mCommandsRegistryConfiguration;
+        ::ll::TypedStorage<4, 20, ::ConnectionDefinition>                       mConnectionDefinition;
+        ::ll::TypedStorage<8, 32, ::OwnerPtr<::EntityContext>>                  mLevelEntityContext;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPackSettingsCache>> mPackSettingsCache;
+        ::ll::TypedStorage<1, 1, bool>                                          mEnableItemStackNetManager;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>>
+            mHostMultiplayer;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PostLevelArgs& operator=(PostLevelArgs const&);
+        PostLevelArgs(PostLevelArgs const&);
+        PostLevelArgs();
+    };
+
+    struct LevelInitArgs {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> mLevelName;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>
+                                                                                      mBiomeIdToResolvedData;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ServerInstance::PostLevelArgs>> mPost;
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -169,11 +202,11 @@ public:
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                              mInUpdate;
     ::ll::TypedStorage<4, 4, ::std::atomic<int>>                                               mWriteRefCounter;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                              mThreadShouldJoin;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mMutexDestruction;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                    mMutexDestruction;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator>> mEventCoordinator;
     ::ll::TypedStorage<4, 4, ::std::atomic<::ServerInstance::InstanceState>>                   mInstanceState;
     ::ll::TypedStorage<8, 16, ::std::thread>                                                   mServerInstanceThread;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mResumeMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                    mResumeMutex;
     ::ll::TypedStorage<8, 72, ::std::condition_variable>                                       mResumeSignal;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scripting::RegistryManager>>                  mScriptRegistryManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerScriptManager>>                         mServerScriptManager;
@@ -205,8 +238,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChatLoggingEventListener>> mChatLoggingEventListener;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LocalProfilerControlBroker>>  mLocalProfilerControlBroker;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerInitialization::IServerInitializer>> mInitializer;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDiagnostics>>                        mScriptDiagnostics;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ScriptDiagnostics>>               mScriptDiagnosticsToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerDiagnostics>>                      mDebuggerDiagnostics;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::DebuggerDiagnostics>>             mDebuggerDiagnosticsToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerPerformanceData>>                    mServerPerformanceData;
     ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerPerformanceData>>
         mServerPerformanceDataRegistrationToken;
@@ -255,6 +288,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
 
+    MCAPI ::Bedrock::Threading::Async<bool> _postLevelInitialization(::ServerInstance::PostLevelArgs&& args);
+
     MCAPI void _resetServerScriptManager();
 
 #ifdef LL_PLAT_C
@@ -290,7 +325,14 @@ public:
     MCAPI static bool _useClientSideChunkGeneration(::LevelData* levelData);
 
     MCAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
-    createHostMultiplayerCallback(::ServerInstance::HostMultiplayerOps&& ops);
+    createHostMultiplayerCallback(
+        ::ServerInstance&                  instance,
+        ::NetworkServerConfig              networkServerConfig,
+        ::KeyManager                       hostPublicKey,
+        int                                maxChunkRadius,
+        bool                               shouldAnnounce,
+        ::ServerNetworkHandlerDependencies serverNetworkOptions
+    );
 
     MCAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>

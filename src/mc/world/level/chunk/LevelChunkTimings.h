@@ -25,9 +25,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 112, ::std::array<::std::atomic<int64>, 14>> mStateTimes;
-        ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                    mNumChanges;
-        ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                    mNumRejectedChanges;
+        ::ll::TypedStorage<8, 96, ::std::array<::std::atomic<int64>, 12>> mStateTimes;
+        ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                   mNumChanges;
+        ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                   mNumRejectedChanges;
         // NOLINTEND
     };
 
@@ -39,13 +39,13 @@ public:
 
     using LockMutex = ::SpinLockImpl;
 
-    using StateTimes = ::std::array<::std::atomic<int64>, 14>;
+    using StateTimes = ::std::array<::std::atomic<int64>, 12>;
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::SpinLockImpl>                                       mDataMutex;
-    ::ll::TypedStorage<8, 136, ::std::optional<::Bedrock::LevelChunkTimings::Self>> mSelf;
+    ::ll::TypedStorage<8, 120, ::std::optional<::Bedrock::LevelChunkTimings::Self>> mSelf;
     ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                                 mNumDiscards;
     // NOLINTEND
 

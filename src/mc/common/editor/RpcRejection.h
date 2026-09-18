@@ -15,13 +15,20 @@ public:
 public:
     // prevent constructor by default
     RpcRejection& operator=(RpcRejection const&);
-    RpcRejection(RpcRejection const&);
     RpcRejection();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RpcRejection(::Editor::Rpc::RpcRejection const&);
+
     MCNAPI ~RpcRejection();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Rpc::RpcRejection const&);
     // NOLINTEND
 
 public:

@@ -59,7 +59,7 @@ public:
                                                                    mDimension;
     ::ll::TypedStorage<4, 4, ::DimensionType>                      mDimensionId;
     ::ll::TypedStorage<4, 12, ::Vec3>                              mLocation;
-    ::ll::TypedStorage<4, 12, ::Vec3>                              mRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                              mRotationDegrees;
     ::ll::TypedStorage<4, 4, float>                                mScale;
     ::ll::TypedStorage<8, 24, ::ScriptModuleMinecraft::ScriptRGBA> mColor;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>               mTimeLeftSec;
@@ -116,6 +116,10 @@ public:
     );
 
     MCAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);
+
+    MCAPI void setMaxRenderDistance(::std::optional<float> dist);
+
+    MCAPI void setTotalTimeLeft(::std::optional<float> timeSec);
 
     MCAPI void setVisibleTo(
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& visibleTo

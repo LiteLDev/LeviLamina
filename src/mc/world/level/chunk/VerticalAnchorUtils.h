@@ -10,16 +10,12 @@ namespace br::worldgen { class WorldGenContext; }
 namespace br::worldgen::VerticalAnchorUtils {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_S
-MCAPI int aboveBottomHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
-#endif
-
 #ifdef LL_PLAT_C
 MCAPI int aboveBottomHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
 #endif
 
 #ifdef LL_PLAT_S
-MCFOLD int absoluteHandler(::br::worldgen::WorldGenContext const&, int v);
+MCAPI int aboveBottomHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
 #endif
 
 #ifdef LL_PLAT_C
@@ -27,7 +23,7 @@ MCFOLD int absoluteHandler(::br::worldgen::WorldGenContext const&, int v);
 #endif
 
 #ifdef LL_PLAT_S
-MCAPI int belowTopHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
+MCFOLD int absoluteHandler(::br::worldgen::WorldGenContext const&, int v);
 #endif
 
 #ifdef LL_PLAT_C
@@ -35,10 +31,14 @@ MCAPI int belowTopHandler(::br::worldgen::WorldGenContext const& heightAccessor,
 #endif
 
 #ifdef LL_PLAT_S
+MCAPI int belowTopHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
+#endif
+
+#ifdef LL_PLAT_C
 MCAPI int seaLevelHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
 #endif
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCAPI int seaLevelHandler(::br::worldgen::WorldGenContext const& heightAccessor, int v);
 #endif
 // NOLINTEND

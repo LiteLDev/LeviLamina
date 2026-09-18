@@ -158,6 +158,8 @@ public:
 
     MCAPI void _flipAllFaces(::Facing::Rotation rotation);
 
+    MCAPI float _getLiquidOwnHeight(::BlockPos const& pos, ::Material const& material);
+
     MCAPI ::TextureUVCoordinateSet const& _getTexture(
         ::BlockPos const&      pos,
         ::Block const&         block,
@@ -299,8 +301,6 @@ public:
         ::Vec3 const&                   p,
         ::TextureUVCoordinateSet const& tex
     );
-
-    MCAPI bool tessellateAmethystCluster(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
     MCAPI bool
     tessellateAnvilInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& pos, bool render);
@@ -461,6 +461,8 @@ public:
         ::BlockTessellator::CrossTextureWidth              width,
         ::BlockTessellator::CrossTextureReverseSideMapping reverseSideMapping
     );
+
+    MCAPI bool tessellateCrystalCluster(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 
     MCAPI bool tessellateDiodeInWorld(::Tessellator& tessellator, ::Block const& block, ::BlockPos const& p);
 

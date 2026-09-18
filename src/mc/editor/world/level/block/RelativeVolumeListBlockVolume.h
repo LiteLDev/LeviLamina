@@ -83,6 +83,10 @@ public:
     MCNAPI ::std::vector<::SimpleBlockVolume>
     calculateVolumetricDifference(::SimpleBlockVolume const& volA, ::SimpleBlockVolume const& volB);
 
+#ifdef LL_PLAT_C
+    MCNAPI void clear();
+#endif
+
     MCNAPI void compact();
 
     MCNAPI void enableAdjacencyMap() const;
@@ -119,6 +123,12 @@ public:
     _greedyBoxCoverFromGrid(::Editor::BlockAdjacencyMap& remaining, ::std::vector<::BlockPos>& voxels);
 
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static ::Editor::RelativeVolumeListBlockVolume fromValidatedDisjointVolumes(
+        ::std::vector<::SimpleBlockVolume> volumes,
+        int                                capacity,
+        ::std::optional<::BlockPos> const& origin
+    );
     // NOLINTEND
 
 public:

@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class AsyncVerdictPromise;
 namespace ScriptModuleServerAdmin { struct DisconnectedError; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -33,6 +35,14 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptAsyncPlayerJoinBeforeEvent(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent const&);
 
+    MCNAPI ScriptAsyncPlayerJoinBeforeEvent(
+        ::std::shared_ptr<::AsyncVerdictPromise>& promise,
+        ::std::string                             playerId,
+        ::std::string                             playerName,
+        ::SubClientId                             subClientId,
+        ::std::string                             playerXuid
+    );
+
     MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::DisconnectedError>
     disallowJoin(::std::optional<::std::string> message);
 
@@ -58,6 +68,14 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent const&);
+
+    MCNAPI void* $ctor(
+        ::std::shared_ptr<::AsyncVerdictPromise>& promise,
+        ::std::string                             playerId,
+        ::std::string                             playerName,
+        ::SubClientId                             subClientId,
+        ::std::string                             playerXuid
+    );
     // NOLINTEND
 
 public:

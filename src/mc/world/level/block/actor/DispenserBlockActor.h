@@ -69,8 +69,6 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~DispenserBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -87,12 +85,6 @@ public:
     MCAPI void* $ctor(::BlockPos pos);
 
     MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -114,7 +106,7 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCFOLD void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
     MCFOLD void $stopOpen(::Actor& actor);
 
@@ -135,19 +127,5 @@ public:
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
-
-    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
-
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForBlockActor();
-
-    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ class CommandOutput;
 class CommandRegistry;
 class Player;
 struct ServerCameraStatesComponent;
-namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 // clang-format on
 
 class CameraCommand : public ::Command {
@@ -119,7 +119,7 @@ public:
     MCAPI static bool resolveInheritance(
         ::std::string&                                              currentPresetName,
         ::std::string const&                                        parentToStopAt,
-        ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presetList
+        ::std::vector<::SharedTypes::v1_26_50::CameraPreset> const& presetList
     );
 
     MCAPI static void setup(::CommandRegistry& registry);

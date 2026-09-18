@@ -119,10 +119,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::BiomeIdType id, ::std::string_view name);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

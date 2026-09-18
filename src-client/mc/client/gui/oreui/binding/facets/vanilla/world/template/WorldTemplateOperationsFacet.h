@@ -82,7 +82,7 @@ public:
 
     MCFOLD ::OreUI::FacetTaskState getDownloadingTaskState();
 
-    MCAPI ::std::string const& getImportedPackName();
+    MCFOLD ::std::string const& getImportedPackName();
 
     MCAPI ::std::optional<::ImportFailure> const& getImportingTaskResult();
 

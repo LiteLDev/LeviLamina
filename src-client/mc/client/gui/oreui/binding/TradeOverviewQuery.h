@@ -18,11 +18,11 @@ class TradeOverviewQuery : public ::OreUI::QueryBase<::OreUI::TradeOverviewQuery
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsExperienceBarVisible;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>         mExperienceProgress;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>         mExperiencePossibleProgress;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mTraderName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>           mTradeTiers;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsExperienceBarVisible;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                 mExperienceProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                 mExperiencePossibleProgress;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mTraderName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                     mTradeTiers;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 

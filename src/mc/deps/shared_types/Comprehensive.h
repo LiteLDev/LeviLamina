@@ -13,6 +13,8 @@ MCAPI ::std::string_view const& CAMERA_PAYLOAD_KEY();
 
 MCAPI ::std::string_view const& CAMERA_SPLINE_PAYLOAD_KEY();
 
+MCAPI ::std::string_view const& CRAFTING_ITEMS_CATALOG_PAYLOAD();
+
 #ifdef LL_PLAT_C
 MCAPI ::std::string_view const& ITEM_PAYLOAD_KEY();
 

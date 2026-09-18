@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/LegacyWorldConversionManager.h"
 #include "mc/client/gui/screens/models/MainMenuScreenModel.h"
-#include "mc/client/gui/screens/models/WorldType.h"
 #include "mc/client/gui/screens/models/interface/IWorldsProvider.h"
+#include "mc/client/gui/screens/models/interface/WorldType.h"
 #include "mc/client/legacy/ImportStatus.h"
 #include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/network/realms/RealmId.h"
@@ -217,8 +217,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayScreenModel(::MinecraftScreenModelContext context);
 
-    MCAPI void _fetchTrialAvailability();
-
     MCAPI void _navigateToEditWorldScreen(::LocalWorldInfo const& info);
 
     MCAPI void _populateAdditionalRealmsWorldsInfo();
@@ -236,8 +234,6 @@ public:
     MCAPI void _populateRealmsWorldsInternal(bool ofUnpairedParentRealms);
 
     MCAPI void _remove3PServersMismatchingEditorMode();
-
-    MCAPI void _requestPendingInviteCount();
 
     MCAPI void _sortRealmsWorlds(::std::string const currentUserXUID, ::std::vector<::Realms::World>& worlds);
 
@@ -282,8 +278,6 @@ public:
     MCAPI void handleLegacyWorldConversionComplete(::ImportResult const& result);
 
     MCAPI bool hasLocalWorldWithId(::std::string const& levelId);
-
-    MCAPI void initLegacyWorldImporter();
 
     MCAPI void initializeRealmsWorlds();
 

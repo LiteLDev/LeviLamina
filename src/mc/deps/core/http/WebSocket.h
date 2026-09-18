@@ -19,7 +19,7 @@ class WebSocket : public ::std::enable_shared_from_this<::Bedrock::Http::WebSock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk59fcc6;
+    ::ll::UntypedStorage<8, 80> mUnk2c8c31;
     ::ll::UntypedStorage<8, 8>  mUnk2d81af;
     ::ll::UntypedStorage<8, 8>  mUnk5cda29;
     // NOLINTEND

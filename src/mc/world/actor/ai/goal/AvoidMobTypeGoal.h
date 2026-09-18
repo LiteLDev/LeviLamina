@@ -16,6 +16,7 @@
 class Actor;
 class Mob;
 class Path;
+struct GoalId;
 struct MobDescriptor;
 // clang-format on
 
@@ -71,9 +72,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AvoidMobTypeGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+
     MCAPI bool canFindAvoidPath(::Actor* actor);
 
     MCAPI ::Actor* findNearestEntityToAvoid(float dist);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
@@ -92,11 +101,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

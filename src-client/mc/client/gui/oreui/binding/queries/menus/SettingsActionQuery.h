@@ -23,13 +23,17 @@ class SettingsActionQuery : public ::OreUI::QueryBase<::OreUI::SettingsActionQue
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>                         mSettingsRegistry;
-    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                                       mCommonProperties;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                                mActionLabel;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<::OreUI::SettingsActionType>>> mActionType;
-    ::ll::TypedStorage<8, 1048, ::std::optional<::OreUI::SettingsConfirmationRequest>>          mConfirmationRequest;
-    ::ll::TypedStorage<8, 856, ::std::optional<::OreUI::SettingsAsyncProgressInformation>>      mAsyncInfo;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSettingsChangedSubscription;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>         mSettingsRegistry;
+    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                       mCommonProperties;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mActionLabel;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::Property<::std::optional<::OreUI::SettingsActionType>, ::std::optional<::OreUI::SettingsActionType>>>
+                                                                                           mActionType;
+    ::ll::TypedStorage<8, 1048, ::std::optional<::OreUI::SettingsConfirmationRequest>>     mConfirmationRequest;
+    ::ll::TypedStorage<8, 856, ::std::optional<::OreUI::SettingsAsyncProgressInformation>> mAsyncInfo;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                             mSettingsChangedSubscription;
     // NOLINTEND
 
 public:

@@ -7,7 +7,6 @@
 #include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
@@ -33,11 +32,11 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::DBStorage>>         mDB;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>          mTaskGroup;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>            mTimestampMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                           mTimestampMutex;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, uint64>>   mTimestamps;
     ::ll::TypedStorage<8, 8, uint64>                                  mBaseTimestamp;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mCacheLoadingTime;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>            mValidatorMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                           mValidatorMutex;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<uint64>>           mRequestedBlobIds;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::chrono::steady_clock::time_point>>
         mRecentlyReceivedBlobIds;
@@ -54,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _flushTimestampsToDisk(::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex> lock);
+    MCAPI void _flushTimestampsToDisk(::Bedrock::Threading::UniqueLock<::std::mutex> lock);
 
     MCAPI void _updateTimestamp(uint64 id);
 

@@ -8,6 +8,7 @@ class Container;
 class LootPool;
 class LootTableContext;
 class Random;
+class SemVersion;
 namespace Json { class Value; }
 // clang-format on
 
@@ -22,7 +23,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void deserialize(::Json::Value const& table, bool usingUpcomingCreatorFeaturesExperiment);
+    MCAPI void deserialize(
+        ::Json::Value const& table,
+        bool                 usingUpcomingCreatorFeaturesExperiment,
+        ::SemVersion const&  jsonVersion
+    );
 
     MCAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
 

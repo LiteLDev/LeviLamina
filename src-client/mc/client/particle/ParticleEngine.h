@@ -9,7 +9,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
-#include "mc/util/Random.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,7 +45,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Particle>>>         mNewParticles;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SeasonsRenderer>>        mSeasons;
     ::ll::TypedStorage<8, 8, ::LightTexture&>                                       mLightTexture;
-    ::ll::TypedStorage<8, 2544, ::Random>                                           random;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   opaqueMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   alphaTestMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   blendMat;

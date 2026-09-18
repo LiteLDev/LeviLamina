@@ -6,7 +6,6 @@
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
-#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -61,16 +60,6 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkViewSource(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI ChunkViewSource(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
-
-#ifdef LL_PLAT_S
-    MCAPI ChunkViewSource(
-        ::ChunkSource&                                              mainSource,
-        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
-        ::Bounds const&                                             bounds
-    );
-#endif
-
     MCAPI void move(
         ::Bounds const&                                                     bounds,
         bool                                                                isCircle,
@@ -108,16 +97,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkViewSource const& otherChunkViewSource);
-
-    MCAPI void* $ctor(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
-
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(
-        ::ChunkSource&                                              mainSource,
-        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
-        ::Bounds const&                                             bounds
-    );
-#endif
     // NOLINTEND
 
 public:

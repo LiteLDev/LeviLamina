@@ -12,7 +12,6 @@
 class HashedString;
 class ScriptDeferredFlushTracker;
 namespace Editor::DataStore { struct PayloadDescription; }
-namespace Editor::Services { class DataStoreServiceProvider; }
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { struct ScriptAfterEventMetadata; }
 namespace Scripting { class ModuleBindingBuilder; }
@@ -76,10 +75,6 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
     operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&& rhs);
-
-    MCNAPI void registerListeners(::Editor::Services::DataStoreServiceProvider& dataStoreService);
-
-    MCNAPI ~ScriptDataStoreAfterEvents();
     // NOLINTEND
 
 public:
@@ -97,12 +92,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata const& mMetadata();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

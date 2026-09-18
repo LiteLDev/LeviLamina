@@ -73,6 +73,12 @@ public:
 
     MCAPI uint64 erase(::ChunkBlockPos const& pos);
 
+#ifdef LL_PLAT_S
+    MCAPI ::std::_List_const_iterator<::std::_List_val<
+        ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>
+    find(::ChunkBlockPos const& pos) const;
+#endif
+
     MCAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
 
     MCAPI ~LevelChunkBlockActorStorage();

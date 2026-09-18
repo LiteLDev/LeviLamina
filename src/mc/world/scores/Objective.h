@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 class ObjectiveCriteria;
+class Scoreboard;
 // clang-format on
 
 class Objective : public ::Bedrock::EnableNonOwnerReferences {
@@ -34,6 +36,16 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<::ScoreboardId> getPlayers() const;
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::Objective> deserialize(::CompoundTag const& dataTag, ::Scoreboard& owner);
+
+    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::Objective const& toSave);
 #endif
     // NOLINTEND
 

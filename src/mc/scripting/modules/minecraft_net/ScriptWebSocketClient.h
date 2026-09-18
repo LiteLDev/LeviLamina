@@ -31,6 +31,12 @@ public:
     ScriptWebSocketClient();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void invalidate();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);

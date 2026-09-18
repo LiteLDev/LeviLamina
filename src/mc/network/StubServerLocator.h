@@ -41,17 +41,13 @@ public:
 
     virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) /*override*/;
 
-    virtual void addCustomServer(::std::string const& address, int port) /*override*/;
-
     virtual void stopServerDiscovery() /*override*/;
 
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
 
-    virtual void clearServerList() /*override*/;
-
     virtual void update() /*override*/;
 
-    virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
+    virtual ::std::chrono::milliseconds getPingTimeForGUID(::std::string const& guid) /*override*/;
 
     virtual void checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,
@@ -63,11 +59,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
-
-    MCNAPI void $addCustomServer(::std::string const& address, int port);
-
-    MCNAPI float $getPingTimeForGUID(::std::string const& guid);
+    MCNAPI ::std::chrono::milliseconds $getPingTimeForGUID(::std::string const& guid);
 
     MCNAPI void $checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,

@@ -11,7 +11,6 @@
 // clang-format off
 namespace Bedrock { class SessionInfo; }
 namespace Bedrock { class SessionInfoManagerImpl; }
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 namespace Bedrock {
@@ -31,7 +30,7 @@ public:
         ::std::shared_ptr<::Bedrock::SessionInfo>,
         ::Bedrock::SessionInfoManagerImpl,
         ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
-        ::Bedrock::Threading::Mutex>
+        ::std::mutex>
     editCurrentSession() = 0;
 
     virtual ::Bedrock::PubSub::Connector<void(

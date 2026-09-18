@@ -47,14 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI static ::EditorAllowList loadFromDefaultLocation();
-#endif
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

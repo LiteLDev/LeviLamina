@@ -15,21 +15,8 @@ public:
 public:
     // prevent constructor by default
     JsonRpcNotificationBase& operator=(JsonRpcNotificationBase const&);
+    JsonRpcNotificationBase(JsonRpcNotificationBase const&);
     JsonRpcNotificationBase();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI JsonRpcNotificationBase(::JsonRpc::JsonRpcNotificationBase const&);
-
-    MCNAPI ::JsonRpc::JsonRpcNotificationBase& operator=(::JsonRpc::JsonRpcNotificationBase&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::JsonRpc::JsonRpcNotificationBase const&);
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

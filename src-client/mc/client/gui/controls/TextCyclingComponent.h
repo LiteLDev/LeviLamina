@@ -39,10 +39,4 @@ public:
 
     MCAPI void $_updateSubPage();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

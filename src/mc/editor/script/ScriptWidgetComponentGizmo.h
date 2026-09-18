@@ -7,12 +7,9 @@
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
-#include "mc/scripting/Axis.h"
-#include "mc/scripting/WidgetGizmoScaleMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
 namespace Scripting { struct ClassBinding; }
@@ -56,25 +53,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::
-        Result<::std::optional<::Vec3>, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-        _getAutoOffset() const;
-
-    MCNAPI ::Scripting::Result<::Scripting::Axis, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _getEnabledAxes() const;
-
-    MCNAPI ::Scripting::
-        Result<::Scripting::WidgetGizmoScaleMode, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-        _getScaleMode() const;
-
     MCNAPI ::Scripting::Result<float, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _getScreenScale() const;
 
     MCNAPI ::Scripting::Result<float, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _getWorldScale() const;
-
-    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _isActivated() const;
 
     MCNAPI ::Scripting::Result_deprecated<void> _setScreenScale(float screenScale);
 

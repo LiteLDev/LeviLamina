@@ -24,30 +24,37 @@ public:
     ::ll::TypedStorage<4, 4, uint>                    mIndex;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CreativeItemEntry();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI CreativeItemEntry(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,
         ::ItemInstance const&      item,
         uint                       index
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,
         ::ItemInstance const&      item,
         uint                       index
     );
+#endif
     // NOLINTEND
 
 public:

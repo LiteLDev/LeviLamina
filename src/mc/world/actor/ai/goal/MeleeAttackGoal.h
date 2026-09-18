@@ -11,6 +11,7 @@ class Actor;
 class BaseGameVersion;
 class Mob;
 class Vec3;
+struct GoalId;
 // clang-format on
 
 class MeleeAttackGoal : public ::MeleeAttackBaseGoal {
@@ -50,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MeleeAttackGoal(::Mob& mob);
+    MCAPI MeleeAttackGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
@@ -92,7 +93,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

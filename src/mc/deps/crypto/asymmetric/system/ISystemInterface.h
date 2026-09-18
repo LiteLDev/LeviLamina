@@ -25,6 +25,11 @@ public:
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) = 0;
 
+    virtual ::Bedrock::Result<::std::string>
+    parsePrivateKey(::std::string const& privateKey, ::Crypto::Asymmetric::PrivateKeySigningFormat format) = 0;
+
+    virtual ::Bedrock::Result<::std::string> derivePublicKey(::std::string const& privateKey) = 0;
+
     virtual ::Bedrock::Result<::std::string> constructPublicKey(
         ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&
             components

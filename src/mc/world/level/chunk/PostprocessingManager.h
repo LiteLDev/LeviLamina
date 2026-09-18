@@ -4,14 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/platform/threading/UniqueLock.h"
-#include "mc/world/level/chunk/ChunkState.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
 class ChunkSource;
 class LevelChunk;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class PostprocessingManager {
@@ -26,8 +24,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunk>>                               mChunk;
-        ::ll::TypedStorage<8, 16, ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>> mChunkLock;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunk>>                mChunk;
+        ::ll::TypedStorage<8, 16, ::Bedrock::Threading::UniqueLock<::std::mutex>> mChunkLock;
         // NOLINTEND
     };
 
@@ -35,6 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::std::vector<::PostprocessingManager::LockedChunk>>
-    tryLock(::ChunkPos const& center, ::ChunkSource& neighborhood, ::std::optional<::ChunkState> minimumChunkState);
+    tryLock(::ChunkPos const& center, ::ChunkSource& neighborhood);
     // NOLINTEND
 };

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/audio/SoundPauseSource.h"
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -83,7 +82,7 @@ public:
 
     virtual void pauseMusic(bool state) = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicPath() = 0;
+    virtual ::Core::PathView getCurrentlyPlayingMusicPath() const = 0;
 
     virtual bool getItem(::std::string const& eventName, ::Core::PathView soundPath, ::SoundItem& soundItem) const = 0;
 
@@ -110,6 +109,9 @@ public:
     ) = 0;
 
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64 handle) const = 0;
+
+    virtual ::std::optional<::PlayingSoundAttributes>
+    tryGetPlayingSoundAttributes(::ServerSoundHandle serverSoundHandle) const = 0;
 
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64 handle) const = 0;
     // NOLINTEND

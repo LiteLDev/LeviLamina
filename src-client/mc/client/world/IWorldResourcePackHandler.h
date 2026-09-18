@@ -81,6 +81,8 @@ public:
 
     virtual void savePacksData() = 0;
 
+    virtual void saveDirtyPacksData() = 0;
+
     virtual bool hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary) = 0;
 
     virtual bool hasBehaviorPacks(::LevelSummary const& levelSummary) = 0;

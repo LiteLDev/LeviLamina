@@ -42,6 +42,8 @@ public:
     virtual ::Container* _tryGetContainer() const /*override*/;
 
     virtual ::ItemContext _getItemContext(int slot) const /*override*/;
+
+    virtual void _onContainerChanged() const /*override*/;
     // NOLINTEND
 
 public:
@@ -52,6 +54,8 @@ public:
     MCAPI ::Container* $_tryGetContainer() const;
 
     MCAPI ::ItemContext $_getItemContext(int slot) const;
+
+    MCAPI void $_onContainerChanged() const;
 
 
     // NOLINTEND

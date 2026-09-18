@@ -4,15 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/BakedBlockLightType.h"
+#include "mc/client/renderer/chunks/render_chunk_metrics/MetricData.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/game/RangeIndices.h"
-#include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockTessellator;
 class ChunkSource;
 class ChunkViewSource;
@@ -46,6 +45,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                         mAverageSkyLight;
     ::ll::TypedStorage<8, 168, ::std::array<::std::vector<::RenderChunkQuadInfo>, 7>>       mFaceMetadata;
     ::ll::TypedStorage<4, 176, ::std::array<::RangeIndices, 22>>                            mRenderLayerRanges;
+    ::ll::TypedStorage<8, 64, ::RenderChunkMetrics::MetricData>                             mBuilderMetricData;
     ::ll::TypedStorage<8, 8, ::std::vector<::BlockQueueEntry>*>                             mQueues;
     ::ll::TypedStorage<8, 8, ::std::vector<::BlockQueueEntry>*>                             mSimpleOpaqueBlockQueue;
     ::ll::TypedStorage<8, 176, uint64[22]>                                                  mQueueIndexCounts;
@@ -58,9 +58,9 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::Mesh>>                                     mBuiltMesh;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::MeshData>>                                 mMeshData;
     ::ll::TypedStorage<1, 1, bool>                                                               mGUIRendering;
-    ::ll::TypedStorage<4, 24, ::AABB>                                                            mBuildBoundingBox;
     ::ll::TypedStorage<1, 1, bool>                                    mUseNewTessellationPipeline;
     ::ll::TypedStorage<1, 1, bool>                                    mTextureShiftsEnabled;
+    ::ll::TypedStorage<4, 24, ::AABB>                                 mBuildBoundingBox;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IRenderChunkGarbage>> mRenderChunkGarbage;
     ::ll::TypedStorage<8, 16, ::WeakRef<::RenderChunkCoordinator>>    mRenderChunkCoordinator;
     // NOLINTEND
@@ -102,8 +102,6 @@ public:
         bool                                                       forExport,
         ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
-
-    MCAPI void prepareWorldData(::BlockPos const& pos, ::ChunkSourceViewGenerateMode viewMoveMode);
 
     MCAPI ~RenderChunkBuilder();
     // NOLINTEND

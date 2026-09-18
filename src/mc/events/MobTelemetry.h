@@ -81,10 +81,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk4ffe85;
-    ::ll::UntypedStorage<8, 128> mUnk37be35;
-    ::ll::UntypedStorage<8, 128> mUnk54b273;
-    ::ll::UntypedStorage<8, 128> mUnk27fe54;
-    ::ll::UntypedStorage<8, 128> mUnk9afd7f;
+    ::ll::UntypedStorage<8, 128> mUnk106119;
+    ::ll::UntypedStorage<8, 128> mUnk8fae19;
+    ::ll::UntypedStorage<8, 128> mUnkb84495;
+    ::ll::UntypedStorage<8, 128> mUnk95ca88;
     ::ll::UntypedStorage<8, 64>  mUnk268af8;
     // NOLINTEND
 

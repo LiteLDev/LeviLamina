@@ -18,7 +18,6 @@ namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace OreUI { class IRouteMatcher; }
 namespace OreUI { class IRoutePrerequisiteHandler; }
 namespace OreUI { class RouterEventing; }
-namespace OreUI { struct RouteAction; }
 // clang-format on
 
 namespace OreUI {
@@ -89,16 +88,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     );
 
-    MCAPI void _handleSceneStackPop(
-        ::std::shared_ptr<::AbstractScene> const& newTopScreen,
-        bool,
-        ::std::optional<::OreUI::RouteAction> const& routeAction
-    );
-
-    MCAPI void _handleSceneStackPush(
-        ::std::shared_ptr<::AbstractScene> const&    newScreen,
-        ::std::optional<::OreUI::RouteAction> const& routeAction
-    );
+    MCAPI ::std::vector<::OreUI::RouterLocation> _buildProjectedHistory() const;
 
     MCAPI void _onChange(
         ::std::optional<::OreUI::RouterLocation> const& oldLocation,
@@ -107,7 +97,11 @@ public:
 
     MCAPI bool _pushRoute(::std::string const& route, ::OreUI::Router::RouterPushMode mode);
 
-    MCAPI void _replaceCurrentRouteInHistory(::std::string const& newRoute, ::OreUI::RouteHistoryAction action);
+    MCAPI void _replaceCurrentRouteInHistory(
+        ::std::string const&                      newRoute,
+        ::OreUI::RouteHistoryAction               action,
+        ::std::shared_ptr<::AbstractScene> const& scene
+    );
 
     MCAPI ::std::optional<::OreUI::RouterLocation> getCurrentLocation() const;
 

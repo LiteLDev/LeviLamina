@@ -17,7 +17,7 @@ class SelfOwningLocalConstBlockSource : public ::VanillaSystems::IOwnedConstBloc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 280> mUnk101401;
+    ::ll::UntypedStorage<8, 392> mUnk101401;
     ::ll::UntypedStorage<8, 8>   mUnk76a839;
     ::ll::UntypedStorage<8, 24>  mUnka0a59d;
     // NOLINTEND

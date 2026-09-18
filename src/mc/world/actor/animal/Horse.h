@@ -63,8 +63,6 @@ public:
 
     virtual void feed(int itemId) /*override*/;
 
-    virtual bool canFreeze() const /*override*/;
-
     virtual bool isImmobile() const /*override*/;
 
     virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
@@ -145,8 +143,6 @@ public:
     MCAPI float $getShadowRadius() const;
 
     MCAPI void $feed(int itemId);
-
-    MCAPI bool $canFreeze() const;
 
     MCAPI bool $isImmobile() const;
 

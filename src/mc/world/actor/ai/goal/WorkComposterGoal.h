@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ContainerComponent;
+class Mob;
+struct GoalId;
 // clang-format on
 
 class WorkComposterGoal : public ::WorkGoal {
@@ -26,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorkComposterGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void start() /*override*/;
@@ -36,7 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorkComposterGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+
     MCAPI ::std::pair<int, int> _findCompostableItemSlot(::ContainerComponent& inventory);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

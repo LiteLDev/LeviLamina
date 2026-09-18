@@ -20,14 +20,16 @@ class SettingsStringQuery : public ::OreUI::QueryBase<::OreUI::SettingsStringQue
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>           mSettingsRegistry;
-    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                         mCommonProperties;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                  mValue;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mPlaceholder;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>>>           mMaxLength;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                           mIsValid;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mFallbackValue;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mSettingsChangedSubscription;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>         mSettingsRegistry;
+    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                       mCommonProperties;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mValue;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+                                                                                              mPlaceholder;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>, ::std::optional<int>>> mMaxLength;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mIsValid;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+                                                               mFallbackValue;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSettingsChangedSubscription;
     // NOLINTEND
 
 public:

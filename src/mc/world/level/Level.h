@@ -212,6 +212,7 @@ class WeakEntityRef;
 class WeatherManager;
 class WorldClockRegistry;
 class _TickPtr;
+struct ActorDimensionTransferRequest;
 struct ActorUniqueID;
 struct AdventureSettings;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
@@ -228,12 +229,11 @@ struct PlayerMovementSettings;
 struct PlayerSleepStatus;
 struct PlayerSpawnDimensionResolution;
 struct ResolvedItemIconInfo;
-struct ScreenshotOptions;
 struct Tick;
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
-namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 namespace cereal { struct ReflectionCtx; }
 namespace cg { class ImageBuffer; }
@@ -246,6 +246,7 @@ class Particle;
 class SubChunkManager;
 class SubChunkRequestManager;
 class TrustedSkinHelper;
+struct ScreenshotOptions;
 // clang-format on
 
 class Level : public ::ILevel, public ::BlockSourceListener, public ::IWorldRegistriesProvider {
@@ -466,8 +467,10 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager>
     getPlayerDimensionTransferManager() /*override*/;
 
-    virtual void
-    entityChangeDimension(::Actor& entity, ::DimensionType toId, ::std::optional<::Vec3> entityPos) /*override*/;
+    virtual void entityChangeDimension(
+        ::Actor&                               entity,
+        ::ActorDimensionTransferRequest const& actorDimensionTransferRequest
+    ) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager>
     getActorDimensionTransferManager() /*override*/;
@@ -494,7 +497,7 @@ public:
 
     virtual ::CameraPresets& getCameraPresets() /*override*/;
 
-    virtual ::SharedTypes::v1_21_90::CameraPreset const* getCameraPreset(int presetIndex) const /*override*/;
+    virtual ::SharedTypes::v1_26_50::CameraPreset const* getCameraPreset(int presetIndex) const /*override*/;
 
     virtual bool getDisablePlayerInteractions() const /*override*/;
 
@@ -1353,6 +1356,8 @@ public:
 
     virtual bool isEditorWorld() const /*override*/;
 
+    virtual bool isEditorTestWorld() const /*override*/;
+
     virtual bool getAllowAnonymousBlockDropsInEditorWorlds() const /*override*/;
 
     virtual bool isHardcore() const /*override*/;
@@ -1528,8 +1533,6 @@ public:
     );
 
     MCAPI void loadShapeRegistry();
-
-    MCAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
     // NOLINTEND
 
 public:
@@ -1540,6 +1543,10 @@ public:
         ::Scheduler&                                  scheduler,
         ::IMinecraftEventing&                         eventing
     );
+
+    MCFOLD static uint createRandomSeed();
+
+    MCAPI static ::LevelSeed64 parseLevelSeed64(::std::string const& seedString);
     // NOLINTEND
 
 public:
@@ -1593,15 +1600,12 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> $getPlayerDimensionTransferManager();
 
-    MCAPI void $entityChangeDimension(::Actor& entity, ::DimensionType toId, ::std::optional<::Vec3> entityPos);
+    MCAPI void
+    $entityChangeDimension(::Actor& entity, ::ActorDimensionTransferRequest const& actorDimensionTransferRequest);
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> $getActorDimensionTransferManager();
 
-#ifdef LL_PLAT_S
-    MCFOLD ::Spawner& $getSpawner() const;
-#else // LL_PLAT_C
     MCAPI ::Spawner& $getSpawner() const;
-#endif
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::BossEventSubscriptionManager> $getBossEventSubscriptionManager();
 
@@ -1625,7 +1629,7 @@ public:
 
     MCFOLD ::CameraPresets& $getCameraPresets();
 
-    MCAPI ::SharedTypes::v1_21_90::CameraPreset const* $getCameraPreset(int presetIndex) const;
+    MCAPI ::SharedTypes::v1_26_50::CameraPreset const* $getCameraPreset(int presetIndex) const;
 
     MCAPI bool $getDisablePlayerInteractions() const;
 
@@ -2395,17 +2399,9 @@ public:
 
     MCFOLD ::StackRefResult<::PauseManager const> $getPauseManager() const;
 
-#ifdef LL_PLAT_S
-    MCFOLD bool $isClientSide() const;
-#else // LL_PLAT_C
     MCAPI bool $isClientSide() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCFOLD ::SubClientId $getSubClientId() const;
-#else // LL_PLAT_C
     MCAPI ::SubClientId $getSubClientId() const;
-#endif
 
     MCAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& $getPlayerList() const;
 
@@ -2460,6 +2456,8 @@ public:
     MCAPI bool $hasStartWithMapEnabled() const;
 
     MCAPI bool $isEditorWorld() const;
+
+    MCAPI bool $isEditorTestWorld() const;
 
     MCAPI bool $getAllowAnonymousBlockDropsInEditorWorlds() const;
 

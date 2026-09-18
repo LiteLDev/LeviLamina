@@ -39,6 +39,14 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
+#ifdef LL_PLAT_C
+    MCAPI PackLoadContext(
+        ::PackLoadInfo const&                              packLoadInfo,
+        ::MinEngineVersion const&                          minEngineVersion,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
+#endif
+
     MCAPI ~PackLoadContext();
     // NOLINTEND
 
@@ -50,6 +58,14 @@ public:
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::PackLoadInfo const&                              packLoadInfo,
+        ::MinEngineVersion const&                          minEngineVersion,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
+#endif
     // NOLINTEND
 
 public:

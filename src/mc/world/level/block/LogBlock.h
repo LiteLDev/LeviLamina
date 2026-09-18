@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/WeakPtr.h"
 #include "mc/world/level/block/LogBlockMapColors.h"
 #include "mc/world/level/block/RotatedPillarBlock.h"
 
@@ -21,13 +20,9 @@ class LogBlock : public ::RotatedPillarBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>          mStrippedBlockType;
+    ::ll::TypedStorage<8, 8, ::BlockType const*>                    mStrippedBlockType;
     ::ll::TypedStorage<4, 36, ::std::optional<::LogBlockMapColors>> mMapColors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LogBlock();
 
 public:
     // virtual functions
@@ -41,25 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LogBlock(
-        ::std::string const&                 nameId,
-        int                                  id,
-        ::WeakPtr<::BlockType const>         strippedBlockType,
-        ::std::optional<::LogBlockMapColors> mapColors
-    );
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                 nameId,
-        int                                  id,
-        ::WeakPtr<::BlockType const>         strippedBlockType,
-        ::std::optional<::LogBlockMapColors> mapColors
-    );
     // NOLINTEND
 
 public:

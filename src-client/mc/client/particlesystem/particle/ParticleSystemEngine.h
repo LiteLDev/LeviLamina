@@ -81,7 +81,8 @@ public:
         ::ParticleEffectGroup&                                  particleEffectGroup,
         ::BlockSource&                                          region,
         ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
-        ::LightTexture&                                         lightTexture
+        ::LightTexture&                                         lightTexture,
+        int                                                     framesToInterpolate
     );
 
     MCAPI void clear();
@@ -137,7 +138,8 @@ public:
         ::ParticleEffectGroup&                                  particleEffectGroup,
         ::BlockSource&                                          region,
         ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
-        ::LightTexture&                                         lightTexture
+        ::LightTexture&                                         lightTexture,
+        int                                                     framesToInterpolate
     );
     // NOLINTEND
 };

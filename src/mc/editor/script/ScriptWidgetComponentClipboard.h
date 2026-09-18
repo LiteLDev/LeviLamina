@@ -5,15 +5,12 @@
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
-#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::ScriptModule { class ScriptEditorStructure; }
-namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -47,13 +44,6 @@ public:
     virtual ~ScriptWidgetComponentClipboard() /*override*/ = default;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
-    _scriptGetClipboardOffset() const;
     // NOLINTEND
 
 public:

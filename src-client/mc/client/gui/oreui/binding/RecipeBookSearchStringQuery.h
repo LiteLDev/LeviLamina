@@ -18,7 +18,7 @@ class RecipeBookSearchStringQuery : public ::OreUI::QueryBase<::OreUI::RecipeBoo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mSearchString;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mSearchString;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 

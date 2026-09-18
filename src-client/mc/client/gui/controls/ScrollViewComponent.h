@@ -113,6 +113,8 @@ public:
         ::glm::vec2 const&       deltaPosition,
         bool                     alreadyHandled
     );
+
+    MCAPI bool isPointInViewPort(::glm::vec2 const& pointerPosition) const;
     // NOLINTEND
 
 public:

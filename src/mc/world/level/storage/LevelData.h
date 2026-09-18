@@ -195,9 +195,9 @@ public:
     _getLevelDataPropertyPublisher(::LevelDataProperty property) const;
 #endif
 
-    MCAPI ::LevelDataValue const* _getValue(::HashedString const& key) const;
+    MCFOLD ::LevelDataValue const* _getValue(::HashedString const& key) const;
 
-    MCAPI ::LevelDataValue* _getValue(::HashedString const& key);
+    MCFOLD ::LevelDataValue* _getValue(::HashedString const& key);
 
     MCAPI void _initLevelDataPropertyPublishers();
 
@@ -266,8 +266,6 @@ public:
 
     MCAPI void setEducationFeaturesEnabled(bool educationEnabled);
 
-    MCAPI void setEducationOid(::std::string const& educationOid);
-
 #ifdef LL_PLAT_C
     MCAPI void setFlatWorldPreset(::FlatWorldPresetID preset);
 #endif
@@ -281,6 +279,8 @@ public:
     MCAPI void setIsHardcore(bool value);
 
     MCAPI void setLevelName(::std::string const& levelName);
+
+    MCAPI void setMessUserId(::std::string const& messUserId);
 
     MCAPI void setOverworldTimeSetting(int time);
 
@@ -304,7 +304,9 @@ public:
 
     MCAPI void touchLastLoadedWithVersion();
 
+#ifdef LL_PLAT_S
     MCAPI void v1_read(::RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
+#endif
 
     MCAPI ~LevelData();
     // NOLINTEND

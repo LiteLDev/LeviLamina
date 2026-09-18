@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PartyEligibilityProgressHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
@@ -43,45 +39,6 @@ public:
 
     virtual ::std::string getTitleText() const /*override*/;
 
-    virtual void
-    onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const& notification) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PartyEligibilityProgressHandler(
-        ::mce::UUID const&           experienceId,
-        ::std::string const&         partyId,
-        ::std::optional<::mce::UUID> worldId,
-        bool                         isTransfer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::mce::UUID const&           experienceId,
-        ::std::string const&         partyId,
-        ::std::optional<::mce::UUID> worldId,
-        bool                         isTransfer
-    );
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCAPI ::std::string $getTitleText() const;
-
-    MCAPI void $onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const& notification);
+    virtual void onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const&) /*override*/;
     // NOLINTEND
 };

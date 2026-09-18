@@ -14,6 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct GoalId;
 // clang-format on
 
 class JumpAroundTargetGoal : public ::BaseGoal {
@@ -96,7 +97,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JumpAroundTargetGoal(::Mob& mob);
+    MCAPI JumpAroundTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
     // NOLINTEND
@@ -104,7 +105,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

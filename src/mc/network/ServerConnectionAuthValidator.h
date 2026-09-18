@@ -10,7 +10,6 @@
 // clang-format off
 class BaseConnectionRequest;
 class MinecraftServiceKeyManager;
-struct NetworkServerConfig;
 struct PlayerAuthenticationInfo;
 namespace Social { struct Nonce; }
 // clang-format on
@@ -29,33 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerConnectionAuthValidator();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerConnectionAuthValidator(
-        ::NetworkServerConfig const&                                networkServerConfig,
-        bool                                                        isLan,
-        ::std::function<int64()>                                    currentTimeFn,
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys
-    );
-
     MCAPI ::std::variant<::PlayerAuthenticationInfo, ::Connection::DisconnectFailReason>
     _validateBase(::BaseConnectionRequest const& connectionRequest) const;
-
-    MCAPI ::Social::Nonce getOrRotateLanSecret();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::NetworkServerConfig const&                                networkServerConfig,
-        bool                                                        isLan,
-        ::std::function<int64()>                                    currentTimeFn,
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys
-    );
     // NOLINTEND
 };

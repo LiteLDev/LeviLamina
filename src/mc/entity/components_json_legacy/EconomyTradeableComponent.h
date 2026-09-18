@@ -9,10 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
-class InteractionResult;
+class Interaction;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
@@ -60,7 +59,7 @@ public:
 
     MCAPI ::IntRange getCurrentCuredDiscount() const;
 
-    MCAPI ::InteractionResult getInteraction(::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Player& player);
 
     MCAPI ::MerchantRecipeList* getOffers();
 

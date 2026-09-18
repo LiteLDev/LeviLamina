@@ -41,6 +41,8 @@ public:
         ::Scripting::DependencyLocator& locator
     );
 
+    MCNAPI void onTick();
+
     MCNAPI void registerListeners();
 
     MCNAPI ~ScriptAdminBeforeEvents();

@@ -11,7 +11,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/typeid_t.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -129,7 +128,7 @@ public:
     ::ll::TypedStorage<1, 1, bool> mEnabled;
     ::ll::TypedStorage<8, 16, ::std::map<::Bedrock::typeid_t<::ContentLog>, ::ContentLog::ContentLogEndPointData>>
                                                                              mEndPoints;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                   mEndpointMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                  mEndpointMutex;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContentLog::ScopeHandler>> mScopeHandler;
     ::ll::TypedStorage<
         8,

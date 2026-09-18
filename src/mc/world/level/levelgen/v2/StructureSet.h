@@ -49,17 +49,22 @@ public:
     ::ll::TypedStorage<8, 32, ::br::worldgen::StructurePlacement>                 mPlacement;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     StructureSet();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI StructureSet(
         ::std::vector<::br::worldgen::StructureSet::Entry> entries,
         ::br::worldgen::StructurePlacement                 placement
     );
+#endif
 
     MCAPI bool contains(::HashedString type) const;
     // NOLINTEND
@@ -74,8 +79,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void*
     $ctor(::std::vector<::br::worldgen::StructureSet::Entry> entries, ::br::worldgen::StructurePlacement placement);
+#endif
     // NOLINTEND
 };
 

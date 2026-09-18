@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/chunk/AverageTracker.h"
 #include "mc/world/level/chunk/TimeAccumulator.h"
 
@@ -160,7 +159,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ImguiProfiler::RecordGroup>> mRecordGroups;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                             mRecordGroupMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                            mRecordGroupMutex;
     // NOLINTEND
 
 public:
@@ -193,7 +192,7 @@ public:
 
     MCAPI static int& sProduceRecords();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sRecordMutex();
+    MCAPI static ::std::mutex& sRecordMutex();
     // NOLINTEND
 
 public:

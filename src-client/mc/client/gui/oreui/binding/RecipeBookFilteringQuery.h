@@ -18,7 +18,7 @@ class RecipeBookFilteringQuery : public ::OreUI::QueryBase<::OreUI::RecipeBookFi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mIsFiltering;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mIsFiltering;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 

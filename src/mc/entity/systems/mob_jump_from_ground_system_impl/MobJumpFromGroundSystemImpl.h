@@ -25,11 +25,11 @@ struct ActorGameTypeComponent;
 struct ActorRotationComponent;
 struct ActorTypeComponent;
 struct CamelFlagComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlagComponent;
 struct HorseFlagComponent;
 struct LavaSlimeFlagComponent;
 struct LavaSlimeJumpRequestComponent;
@@ -97,8 +97,8 @@ MCAPI void doLocalPlayerJumpFromGround(
     ::EntityModifier<::TriggerJumpRequestComponent>& modifier,
     ::StrictExecutionContext<
         ::Filter<
-            ::CanStandOnSnowFlagComponent,
-            ::HasLightweightFamilyFlagComponent,
+            ::CanStandOnPowderSnowComponent,
+            ::CanStandOnPowderSnowFromEquipmentComponent,
             ::HorseFlagComponent,
             ::MobFlagComponent,
             ::ParrotFlagComponent,

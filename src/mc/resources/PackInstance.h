@@ -50,8 +50,6 @@ public:
         ::PackSettings*                                    packSettings
     );
 
-    MCAPI bool hasResource(::Core::Path const& resourceName) const;
-
     MCAPI ~PackInstance();
     // NOLINTEND
 

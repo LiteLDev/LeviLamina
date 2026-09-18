@@ -25,6 +25,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Scheduler;
+class WorkerPool;
 struct RangeIndices;
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
@@ -41,6 +43,7 @@ namespace dragon { struct TextureDescription; }
 namespace dragon::materials { class MaterialResourceManager; }
 namespace dragon::platform { struct GLTextureWrapper; }
 namespace dragon::platform { struct Statistics; }
+namespace dragon::platform { struct SurfaceParameters; }
 namespace dragon::rendering { class RayTracingFeatureConfiguration; }
 namespace dragon::rendering { class RayTracingResources; }
 namespace dragon::rendering { struct SharedTextureHandle; }
@@ -219,7 +222,7 @@ public:
 
     virtual void setActiveShadowTiles(::std::vector<::mce::framebuilder::ActiveShadowTileInfo> const& activeTiles) = 0;
 
-    virtual void updateSurfaceParameters(::std::variant<::HWND__*, ::std::monostate> const& surfaceParams) = 0;
+    virtual void updateSurfaceParameters(::dragon::platform::SurfaceParameters const& surfaceParams) = 0;
 
     virtual void updateWindowSize(uint const width, uint const height) = 0;
 
@@ -314,7 +317,8 @@ public:
 
     virtual ::mce::CheckedResourceService<::dragon::ResolvedMaterialResource>* getMaterialResourceService() = 0;
 
-    virtual void initializeTextureCache() = 0;
+    virtual void
+    initializeTextureCache(::gsl::not_null<::WorkerPool*> workerPool, ::gsl::not_null<::Scheduler*> scheduler) = 0;
 
     virtual void initializeTextureStreamer() = 0;
 
@@ -402,7 +406,7 @@ public:
     virtual void queueMaterialReload() = 0;
 
     virtual void
-    registerWindowHandle(::std::variant<::HWND__*, ::std::monostate> const&, ushort const, int const, int const) = 0;
+    registerWindowHandle(::dragon::platform::SurfaceParameters const&, ushort const, int const, int const) = 0;
 
     virtual void unregisterWindowHandle(ushort const viewId) = 0;
 

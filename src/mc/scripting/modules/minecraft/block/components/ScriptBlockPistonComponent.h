@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 
 // auto generated forward declare list
@@ -27,6 +28,20 @@ public:
         16,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponentContainer>>
         mScriptContainer;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<bool> isExpanded();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isExpanding();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isMoving();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isRetracted();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isRetracting();
     // NOLINTEND
 
 public:

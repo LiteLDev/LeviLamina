@@ -22,7 +22,6 @@ struct PlayerComponent;
 struct PositionPassengerRequestComponent;
 struct StateVectorComponent;
 struct SynchedActorDataComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -51,10 +50,4 @@ public:
         ::ActorRotationComponent const,
         ::StateVectorComponent const,
         ::Optional<::ActorSetPositionRequestComponent const>>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
 };

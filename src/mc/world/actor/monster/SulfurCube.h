@@ -28,8 +28,6 @@ public:
 
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    virtual bool canFreeze() const /*override*/;
-
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
@@ -70,8 +68,6 @@ public:
     MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
-
-    MCAPI bool $canFreeze() const;
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 

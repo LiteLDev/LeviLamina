@@ -12,13 +12,7 @@ class ExperiencePdpFabObject : public ::OreUI::PropertyObject<::OreUI::Experienc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2808, ::OreUI::ExperiencePdpObject> mExperiencePdp;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    ::ll::TypedStorage<8, 1688, ::OreUI::ExperiencePdpObject> mExperiencePdp;
     // NOLINTEND
 };
 

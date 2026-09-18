@@ -138,6 +138,12 @@ public:
         ::RemappingLayout&                                              layout
     );
 
+    MCAPI ::std::string _getIconSprite(
+        ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
+        int                                                             collectionIndex,
+        ::RemappingLayout&                                              layout
+    );
+
     MCAPI int _getIndexAdjustmentOffsetFromCollectionGroup(::std::string const& collectionGroup, int gridIndex);
 
     MCAPI bool

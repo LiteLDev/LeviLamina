@@ -12,7 +12,6 @@
 // clang-format off
 namespace Bedrock { class SessionInfo; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 namespace Bedrock {
@@ -23,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnk76644a;
     ::ll::UntypedStorage<8, 128> mUnk35cbdc;
-    ::ll::UntypedStorage<8, 80>  mUnkab0304;
+    ::ll::UntypedStorage<8, 80>  mUnke2dc34;
     ::ll::UntypedStorage<8, 16>  mUnkc9cc48;
     ::ll::UntypedStorage<8, 128> mUnk1c9ab3;
     // NOLINTEND
@@ -55,7 +54,7 @@ public:
         ::std::shared_ptr<::Bedrock::SessionInfo>,
         ::Bedrock::SessionInfoManagerImpl,
         ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
-        ::Bedrock::Threading::Mutex>
+        ::std::mutex>
     editCurrentSession() /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(
@@ -99,7 +98,7 @@ public:
         ::std::shared_ptr<::Bedrock::SessionInfo>,
         ::Bedrock::SessionInfoManagerImpl,
         ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
-        ::Bedrock::Threading::Mutex>
+        ::std::mutex>
     $editCurrentSession();
 
     MCNAPI ::Bedrock::PubSub::Connector<void(

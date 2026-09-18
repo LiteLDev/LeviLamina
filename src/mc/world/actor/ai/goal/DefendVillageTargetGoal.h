@@ -6,6 +6,12 @@
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+struct GoalId;
+// clang-format on
+
 class DefendVillageTargetGoal : public ::TargetGoal {
 public:
     // member variables
@@ -13,6 +19,10 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPotentialTarget;
     ::ll::TypedStorage<4, 4, float>            mAttackChance;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DefendVillageTargetGoal();
 
 public:
     // virtual functions
@@ -24,6 +34,18 @@ public:
     virtual void start() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DefendVillageTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

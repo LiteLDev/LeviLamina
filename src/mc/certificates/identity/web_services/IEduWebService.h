@@ -24,7 +24,7 @@ public:
     virtual void setPurchaseReceipt(
         ::std::string const&               receipt,
         ::std::function<void(bool)> const& callback,
-        ::std::string const&               anonimizedOId
+        ::std::string const&               messUserId
     ) = 0;
 
     virtual void setSkin(::std::string const& newSkin) = 0;

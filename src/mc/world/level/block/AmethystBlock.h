@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
+    MCFOLD void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
     MCFOLD bool $isSilentWhenJumpingOff() const;
 

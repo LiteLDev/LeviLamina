@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 class Objective;
+class Scoreboard;
 struct ScoreboardId;
 // clang-format on
 
@@ -23,5 +25,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::string const getBelowNameStringForId(::ScoreboardId const& scoreboardId) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI static ::DisplayObjective deserialize(::CompoundTag const& dataTag, ::Scoreboard const& owner);
+
+    MCNAPI static ::std::unique_ptr<::CompoundTag> serialize(::DisplayObjective const& toSave);
+#endif
     // NOLINTEND
 };

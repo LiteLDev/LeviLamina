@@ -19,10 +19,7 @@ class SettingsQuery : public ::OreUI::QueryBase<::OreUI::SettingsQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::SettingsGroupId, ::std::allocator<::OreUI::SettingsGroupId>>>
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::SettingsGroupId, ::OreUI::SettingsGroupId>>
                                                                         mSettingsGroups;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>> mSettingsRegistry;
     // NOLINTEND

@@ -15,7 +15,6 @@ struct BoatFlagComponent;
 struct FallDistanceComponent;
 struct FallingBlockFlagComponent;
 struct PassengerComponent;
-struct TickingSystemWithInfo;
 struct UpdateWaterStateRequestComponent;
 struct VehicleComponent;
 struct WasInWaterFlagComponent;
@@ -26,8 +25,6 @@ struct InWaterSensingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void doInWaterSensing(
         ::StrictEntityContext&                        entity,
         ::UpdateWaterStateRequestComponent const&     updateWaterStateRequestComponent,

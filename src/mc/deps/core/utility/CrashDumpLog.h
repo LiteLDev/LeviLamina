@@ -7,7 +7,6 @@
 struct CrashDumpEventData;
 struct CrashDumpKeyValueData;
 struct CrashDump_AllData;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class CrashDumpLog {
@@ -38,9 +37,7 @@ public:
 
     MCNAPI static bool startCrashDumpLogThread();
 
-#ifdef LL_PLAT_S
     MCNAPI static void stopCrashDumpLogThread();
-#endif
     // NOLINTEND
 
 public:
@@ -48,28 +45,14 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::CrashDump_AllData*& mAllData();
 
-    MCNAPI static ::Bedrock::Threading::Mutex& mAssertDataMutex();
-
     MCNAPI static ::std::unique_ptr<::std::thread>& mCrashDumpLog_logThread();
 
-    MCNAPI static ::Bedrock::Threading::Mutex& mCrashDumpThreadMutex();
+    MCNAPI static ::std::mutex& mCrashDumpThreadMutex();
 
     MCNAPI static ::std::condition_variable& mCrashDumpThreadMutexCV();
 
-    MCNAPI static ::Bedrock::Threading::Mutex& mEventDataMutex();
-
-    MCNAPI static ::Bedrock::Threading::Mutex& mFrameDataMutex();
-
-    MCNAPI static ::Bedrock::Threading::Mutex& mGameplayDataMutex();
-
-    MCNAPI static ::Bedrock::Threading::Mutex& mGlobalDataMutex();
+    MCNAPI static ::std::mutex& mDataMutex();
 
     MCNAPI static bool& mIsThreadRunning();
-
-    MCNAPI static ::Bedrock::Threading::Mutex& mKeyValueDataMutex();
-
-    MCNAPI static ::Bedrock::Threading::Mutex& mPlayerDataMutex();
-
-    MCNAPI static ::Bedrock::Threading::Mutex& mRenderDataMutex();
     // NOLINTEND
 };

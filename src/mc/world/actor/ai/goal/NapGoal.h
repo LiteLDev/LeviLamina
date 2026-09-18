@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct GoalId;
 // clang-format on
 
 class NapGoal : public ::BaseGoal {
@@ -51,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NapGoal(::Mob& mob);
+    MCAPI NapGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI bool _detectsMobs() const;
     // NOLINTEND
@@ -59,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
@@ -76,11 +77,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,9 +12,10 @@ class SettingsAsyncProgressInformation : public ::OreUI::PropertyObject<::OreUI:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                  mTitle;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                  mDescription;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mCancelLabel;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mTitle;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mDescription;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mCancelLabel;
     // NOLINTEND
 };
 

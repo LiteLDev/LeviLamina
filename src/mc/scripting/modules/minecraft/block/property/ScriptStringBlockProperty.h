@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
-#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/property/IScriptBlockProperty.h"
 
 // auto generated forward declare list
@@ -25,6 +24,8 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptStringBlockProperty& operator=(ScriptStringBlockProperty const&);
+    ScriptStringBlockProperty(ScriptStringBlockProperty const&);
     ScriptStringBlockProperty();
 
 public:
@@ -37,7 +38,8 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getState() const;
+    MCAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
+    operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
     // NOLINTEND
 
 public:

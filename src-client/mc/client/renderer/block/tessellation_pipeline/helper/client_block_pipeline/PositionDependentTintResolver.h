@@ -21,7 +21,7 @@ class PositionDependentTintResolver : public ::ClientBlockPipeline::ITintResolve
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 264, ::BlockSource>   mSource;
+    ::ll::TypedStorage<8, 376, ::BlockSource>   mSource;
     ::ll::TypedStorage<4, 12, ::BlockPos const> mMinPos;
     // NOLINTEND
 
@@ -41,6 +41,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::mce::Color
     $_get(::Block const& block, ::BlockPos const& blockPos, ::TintMethod tintMethod, ::BiomeTintCache* biomeTintCache);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

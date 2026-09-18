@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomInputZoneMapper() /*override*/ = default;
+    virtual ~CustomInputZoneMapper() /*override*/;
 
     virtual void setMapping(
         ::InputEventQueue&      eventQueue,
@@ -61,6 +61,24 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CustomInputZoneMapper();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setMapping(
@@ -83,5 +101,11 @@ public:
     MCFOLD void $setWindowSize(int width, int height);
 
     MCAPI void $changeControllerId(int oldId, int newId);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
@@ -27,9 +28,21 @@ public:
     ScriptWebSocketConnectionFailedError();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptWebSocketConnectionFailedError(::std::string uri, ::Bedrock::Http::StatusCode errorCode);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string uri, ::Bedrock::Http::StatusCode errorCode);
     // NOLINTEND
 };
 

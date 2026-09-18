@@ -116,10 +116,6 @@ public:
 
     MCAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
 
-#ifdef LL_PLAT_C
-    MCAPI float getMoveSpeedScalar() const;
-#endif
-
     MCAPI void handleAnimationEvent(::AgentAnimation anim);
 
     MCAPI bool isValidSlotNum(int slotNum);

@@ -86,6 +86,8 @@ public:
 
     MCAPI void addBlockPositionData(uint64 id, ::StructureBlockPalette::BlockPositionData blockPositionData);
 
+    MCAPI ::StructureBlockPalette clone() const;
+
     MCAPI ::Block const& getBlock(
         ::BlockPalette const&                                   blockPalette,
         uint64                                                  paletteId,

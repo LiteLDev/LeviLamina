@@ -8,15 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class ContentCatalogService;
 class FeatureToggles;
 class FlightingService;
 class IAdvancedGraphicsOptions;
 class IDataDrivenUIRepository;
+class ILayoutServiceCache;
 class IMinecraftGame;
 class ISceneStackNavigator;
-class LayoutServiceSystem;
-namespace OreUI { class LazyLayoutImageSource; }
+class ISubscriptionStateManager;
 namespace flighting { class TreatmentToggles; }
 // clang-format on
 
@@ -45,8 +44,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::FeatureToggles>>           mFeatureToggles;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository>>  mDataDrivenUIRepository;
     ::ll::TypedStorage<8, 8, ::ISceneStackNavigator&>                                    mSceneStackNavigator;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LayoutServiceSystem>>      mLayoutServiceSystem;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::LazyLayoutImageSource>>         mLayoutImageSource;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache>>      mLayoutServiceCache;
     // NOLINTEND
 
 public:
@@ -61,18 +59,19 @@ public:
     MCAPI GameDependencies(::OreUI::GameDependencies&&);
 
     MCAPI GameDependencies(
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&                    game,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&          graphicsOptions,
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&                       platform,
-        ::flighting::TreatmentToggles&                                            flighting,
-        ::Bedrock::NotNullNonOwnerPtr<::FeatureToggles> const&                    features,
-        ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository> const&           dataDrivenUIRepository,
-        ::ISceneStackNavigator&                                                   sceneStackNavigator,
-        ::Bedrock::NotNullNonOwnerPtr<::LayoutServiceSystem> const&               layoutServiceSystem,
-        ::std::function<::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService>()> contentCatalogServiceProvider
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&           game,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& graphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&              platform,
+        ::flighting::TreatmentToggles&                                   flighting,
+        ::Bedrock::NotNullNonOwnerPtr<::FeatureToggles> const&           features,
+        ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository> const&  dataDrivenUIRepository,
+        ::ISceneStackNavigator&                                          sceneStackNavigator,
+        ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> const&      layoutServiceCache
     );
 
     MCAPI ::FlightingService& getFlightingService() const;
+
+    MCAPI ::std::shared_ptr<::ISubscriptionStateManager> getSubscriptionStateManager() const;
 
     MCAPI ~GameDependencies();
     // NOLINTEND
@@ -83,15 +82,14 @@ public:
     MCAPI void* $ctor(::OreUI::GameDependencies&&);
 
     MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&                    game,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&          graphicsOptions,
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&                       platform,
-        ::flighting::TreatmentToggles&                                            flighting,
-        ::Bedrock::NotNullNonOwnerPtr<::FeatureToggles> const&                    features,
-        ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository> const&           dataDrivenUIRepository,
-        ::ISceneStackNavigator&                                                   sceneStackNavigator,
-        ::Bedrock::NotNullNonOwnerPtr<::LayoutServiceSystem> const&               layoutServiceSystem,
-        ::std::function<::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService>()> contentCatalogServiceProvider
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&           game,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& graphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&              platform,
+        ::flighting::TreatmentToggles&                                   flighting,
+        ::Bedrock::NotNullNonOwnerPtr<::FeatureToggles> const&           features,
+        ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository> const&  dataDrivenUIRepository,
+        ::ISceneStackNavigator&                                          sceneStackNavigator,
+        ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> const&      layoutServiceCache
     );
     // NOLINTEND
 

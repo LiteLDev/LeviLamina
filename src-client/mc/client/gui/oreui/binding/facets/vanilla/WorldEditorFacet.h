@@ -24,8 +24,10 @@
 // clang-format off
 class IEntitlementManager;
 class NewPlayerSystem;
+class TaskGroup;
 class TrialManager;
 namespace OreUI { class IResourceAllowList; }
+namespace World { class IWorldCloudSyncer; }
 namespace World { class WorldEditor; }
 namespace World { struct WorldData; }
 // clang-format on
@@ -51,6 +53,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::World::WorldEditor&>                                       mWorldEditor;
+    ::ll::TypedStorage<8, 8, ::World::IWorldCloudSyncer&>                                 mWorldCloudSyncer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem>>           mNewPlayerSystem;
     ::ll::TypedStorage<8, 8, ::TrialManager const&>                                       mTrialManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>       mEntitlementManager;
@@ -75,6 +78,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mWorldClosedExternally;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::World::SaveWorldError>> mSaveWorldTask;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::World::IWorldStorageHandler::ReadWorldError>> mLoadWorldTask;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                                            mTaskGroup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                                  mAliveTracker;
     // NOLINTEND
 
 public:
@@ -96,12 +101,17 @@ public:
     // NOLINTBEGIN
     MCAPI WorldEditorFacet(
         ::World::WorldEditor&                                      worldEditor,
+        ::World::IWorldCloudSyncer&                                worldCloudSyncer,
         ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem>           newPlayerSystem,
         ::TrialManager const&                                      trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::WorldSettingsRules                                       worldSettingsRules
     );
+
+    MCAPI void _finishLoadWorld(::World::WorldID const& worldId);
+
+    MCAPI void _finishSaveWorld(::World::WorldID const& worldId);
 
     MCAPI void _initializeDataBindings(::World::WorldData const& worldData);
 
@@ -115,7 +125,7 @@ public:
 
     MCAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
 
-    MCFOLD ::std::string const& getCurrentWorldID() const;
+    MCAPI ::std::string const& getCurrentWorldID() const;
 
     MCAPI ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
 
@@ -131,7 +141,7 @@ public:
 
     MCAPI bool isEditorWorld() const;
 
-    MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> loadWorld(::std::string const& id);
+    MCAPI void loadWorld(::std::string const& id);
 
     MCAPI void reloadWorld();
 
@@ -153,6 +163,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::World::WorldEditor&                                      worldEditor,
+        ::World::IWorldCloudSyncer&                                worldCloudSyncer,
         ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem>           newPlayerSystem,
         ::TrialManager const&                                      trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,

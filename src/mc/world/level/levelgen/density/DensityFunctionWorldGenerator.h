@@ -39,7 +39,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 2544, ::Random> random;
+        ::ll::TypedStorage<8, 2560, ::Random>                    random;
+        ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> blockResults;
+        ::ll::TypedStorage<1, 1, bool>                           blockResultsInUse;
         // NOLINTEND
     };
 

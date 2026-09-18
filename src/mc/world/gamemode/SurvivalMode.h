@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/gamemode/GameMode.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,6 +13,7 @@ class Block;
 class BlockPos;
 class InteractionResult;
 class ItemStack;
+class Player;
 class Vec3;
 // clang-format on
 
@@ -26,29 +28,35 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SurvivalMode();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool attack(::Actor& entity, ::Vec3 const& hitPosition) /*override*/;
 
-    virtual bool interact(::Actor& entity, ::Vec3 const& location) /*override*/;
+    virtual bool interact(::Actor& entity, ::Vec3 const& location, ::HandSlot const handSlot) /*override*/;
 
     virtual bool destroyBlock(::BlockPos const& pos, uchar face) /*override*/;
 
     virtual bool startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock) /*override*/;
 
-    virtual void startBuildBlock(::BlockPos const& pos, uchar face) /*override*/;
+    virtual void startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot) /*override*/;
 
-    virtual bool buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick) /*override*/;
+    virtual bool
+    buildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot, bool const isSimTick) /*override*/;
 
-    virtual bool useItem(::ItemStack& item) /*override*/;
+    virtual bool useItem(::ItemStack& item, ::HandSlot const handSlot) /*override*/;
 
-    virtual bool useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection) /*override*/;
+    virtual bool useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot) /*override*/;
 
     virtual ::InteractionResult useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
         ::Vec3 const&     hit,
+        ::HandSlot const  handSlot,
         ::Block const*    targetBlock,
         bool              isFirstEvent
     ) /*override*/;
@@ -65,9 +73,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit SurvivalMode(::Player& player);
+
     MCAPI void _messagePlayers(::std::string message);
 
     MCAPI void _showTrialReminder(bool force);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static bool& mTrialHasEnded();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:
@@ -75,25 +97,26 @@ public:
     // NOLINTBEGIN
     MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
-    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot const handSlot);
 
     MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
     MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot);
 
-    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot, bool const isSimTick);
 
-    MCAPI bool $useItem(::ItemStack& item);
+    MCAPI bool $useItem(::ItemStack& item, ::HandSlot const handSlot);
 
-    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
+    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
 
     MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
         ::Vec3 const&     hit,
+        ::HandSlot const  handSlot,
         ::Block const*    targetBlock,
         bool              isFirstEvent
     );

@@ -23,49 +23,49 @@ public:
     // NOLINTBEGIN
     virtual ~ClientInstanceEventListener() = default;
 
-    virtual ::EventResult onClientInitializeStart(::ClientInstance& instance);
+    virtual ::EventResult onClientInitializeStart(::ClientInstance&);
 
-    virtual ::EventResult onClientInitializeEnd(::ClientInstance& instance);
+    virtual ::EventResult onClientInitializeEnd(::ClientInstance&);
 
-    virtual ::EventResult onClientMinecraftInitialized(::ClientInstance& instance, ::Minecraft& minecraft);
+    virtual ::EventResult onClientMinecraftInitialized(::ClientInstance&, ::Minecraft&);
 
-    virtual ::EventResult onClientCreatedLevel(::ClientInstance& instance, ::Level& level);
+    virtual ::EventResult onClientCreatedLevel(::ClientInstance& client, ::Level& level);
 
     virtual ::EventResult onClientUpdateStart(::ClientInstance& instance);
 
-    virtual ::EventResult onClientUpdateEnd(::ClientInstance& instance);
+    virtual ::EventResult onClientUpdateEnd(::ClientInstance&);
 
-    virtual ::EventResult onClientSuspend(::ClientInstance& instance);
+    virtual ::EventResult onClientSuspend(::ClientInstance&);
 
-    virtual ::EventResult onClientEnteredWorld(::ClientInstance& instance);
+    virtual ::EventResult onClientEnteredWorld(::ClientInstance& clientInstance);
 
-    virtual ::EventResult onStartLeaveGame(::ClientInstance& instance);
+    virtual ::EventResult onStartLeaveGame(::ClientInstance& client);
 
-    virtual ::EventResult onEvent(::ClientInstanceNotificationEvent const& playerViewPerspectiveChangedEvent);
+    virtual ::EventResult onEvent(::ClientInstanceNotificationEvent const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onClientInitializeStart(::ClientInstance& instance);
+    MCFOLD ::EventResult $onClientInitializeStart(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientInitializeEnd(::ClientInstance& instance);
+    MCFOLD ::EventResult $onClientInitializeEnd(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientMinecraftInitialized(::ClientInstance& instance, ::Minecraft& minecraft);
+    MCFOLD ::EventResult $onClientMinecraftInitialized(::ClientInstance&, ::Minecraft&);
 
-    MCFOLD ::EventResult $onClientCreatedLevel(::ClientInstance& instance, ::Level& level);
+    MCFOLD ::EventResult $onClientCreatedLevel(::ClientInstance& client, ::Level& level);
 
     MCFOLD ::EventResult $onClientUpdateStart(::ClientInstance& instance);
 
-    MCFOLD ::EventResult $onClientUpdateEnd(::ClientInstance& instance);
+    MCFOLD ::EventResult $onClientUpdateEnd(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientSuspend(::ClientInstance& instance);
+    MCFOLD ::EventResult $onClientSuspend(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
+    MCFOLD ::EventResult $onClientEnteredWorld(::ClientInstance& clientInstance);
 
-    MCFOLD ::EventResult $onStartLeaveGame(::ClientInstance& instance);
+    MCFOLD ::EventResult $onStartLeaveGame(::ClientInstance& client);
 
-    MCFOLD ::EventResult $onEvent(::ClientInstanceNotificationEvent const& playerViewPerspectiveChangedEvent);
+    MCFOLD ::EventResult $onEvent(::ClientInstanceNotificationEvent const&);
     // NOLINTEND
 
 public:

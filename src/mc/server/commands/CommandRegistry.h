@@ -11,6 +11,7 @@
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/CommandStatus.h"
 #include "mc/server/commands/CommandTypeFlag.h"
 #include "mc/server/commands/CommandVersion.h"
 #include "mc/server/commands/SemanticConstraint.h"
@@ -151,12 +152,14 @@ public:
         BlockStateArray           = 1048660,
         BlockStateArrayCont       = 1048661,
         ClockTimeMarkerName       = 1048662,
-        Command                   = 1048663,
-        SlashCommand              = 1048664,
-        CodeBuilderArg            = 1048665,
-        CodeBuilderArgs           = 1048666,
-        CodeBuilderSelectParam    = 1048667,
-        CodeBuilderSelector       = 1048668,
+        PoiTag                    = 1048663,
+        PoiType                   = 1048664,
+        Command                   = 1048665,
+        SlashCommand              = 1048666,
+        CodeBuilderArg            = 1048667,
+        CodeBuilderArgs           = 1048668,
+        CodeBuilderSelectParam    = 1048669,
+        CodeBuilderSelector       = 1048670,
     };
 
     struct RegistryState {
@@ -520,7 +523,12 @@ public:
                 int,
                 ::CommandRegistry::SymbolPairHasher,
                 ::std::equal_to<void>>>
-                                                             predict;
+            predict;
+        ::ll::TypedStorage<
+            8,
+            72,
+            ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>
+                                                             nullableSymbols;
         ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> buildDuration;
         // NOLINTEND
     };
@@ -918,6 +926,8 @@ public:
     MCAPI ::CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;
 
+    MCAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
+
     MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
 
 #ifdef LL_PLAT_C
@@ -926,9 +936,9 @@ public:
         ::std::string const&   cmdLine,
         uint                   cursorPosition
     ) const;
+#endif
 
     MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
-#endif
 
     MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
 
@@ -984,6 +994,13 @@ public:
         ::CommandFlag            f2
     );
 
+#ifdef LL_PLAT_S
+    MCAPI void registerCommandFactory(
+        char const*                                                      command,
+        ::brstd::copyable_function<::std::unique_ptr<::Command>() const> createCommand
+    );
+#endif
+
     MCAPI void registerOverload(
         char const*                                     command,
         ::CommandVersion                                version,
@@ -997,9 +1014,7 @@ public:
 
     MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
 
-    MCAPI void setCommandRegistrationOverride(
-        ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)> functor
-    );
+    MCAPI void setNetworkUpdateCallback(::std::function<void(::Packet const&)> callback);
 
     MCAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
 
@@ -1086,7 +1101,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static char const*& CODE_STATUS_PROPERTY_NAME();
+
     MCAPI static char const*& COMMAND_NAME_ENUM_NAME();
+
+    MCAPI static char const*& FUNCTION_NAME_SOFTENUM_NAME();
+
+    MCAPI static char const*& POI_TAG_SOFTENUM();
+
+    MCAPI static char const*& POI_TYPE_SOFTENUM();
 
     MCAPI static char const*& TAG_VALUES_SOFTENUM_NAME();
 

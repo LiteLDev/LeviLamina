@@ -70,6 +70,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool isHandleType(::entt::meta_type const& type) const;
+
     MCNAPI bool isPrivilegedClosureTemplateType(::entt::meta_type const& type) const;
     // NOLINTEND
 };

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/BasicLockbox.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading { class Mutex; }
-// clang-format on
-
 namespace Bedrock::Http {
 
 class RequestLogBridge {
@@ -159,9 +154,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Threading::
-        BasicLockbox<::Bedrock::Http::RequestLogBridge::SharedState, ::Bedrock::Threading::Mutex>&
-        s_state();
+    MCNAPI static ::Bedrock::Threading::BasicLockbox<::Bedrock::Http::RequestLogBridge::SharedState, ::std::mutex>&
+    s_state();
     // NOLINTEND
 };
 

@@ -8,8 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class LootTableReference : public ::LootPoolEntry {
@@ -28,6 +30,19 @@ public:
     virtual ~LootTableReference() /*override*/ = default;
 
     virtual ::LootPoolEntry::EntryType getEntryType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
+        ::Json::Value                                          entry,
+        int                                                    weight,
+        int                                                    quality,
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions
+    );
+#endif
     // NOLINTEND
 
 public:

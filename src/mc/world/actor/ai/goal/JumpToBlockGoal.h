@@ -16,6 +16,7 @@ class ItemDescriptor;
 class Mob;
 class MoveControlComponent;
 class NavigationComponent;
+struct GoalId;
 // clang-format on
 
 class JumpToBlockGoal : public ::BaseGoal {
@@ -100,7 +101,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JumpToBlockGoal(::Mob& mob);
+    MCAPI JumpToBlockGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI void _clearGoalState();
 
@@ -116,7 +117,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
@@ -137,11 +138,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

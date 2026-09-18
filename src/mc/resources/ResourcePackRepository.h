@@ -19,6 +19,7 @@
 // clang-format off
 class IContentAccessibilityProvider;
 class IContentKeyProvider;
+class IMinecraftEventing;
 class IRepositoryFactory;
 class InvalidPacks;
 class PackInstance;
@@ -33,6 +34,7 @@ class ResourcePack;
 class ResourcePackRepositoryRefreshQueue;
 class ResourcePackStack;
 class TaskGroup;
+struct InvalidPack;
 struct InvalidPacksFilterGroup;
 struct PackIdVersion;
 struct PackInstanceId;
@@ -104,6 +106,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::PackIdVersion>>                                       mServicePacks;
     ::ll::TypedStorage<8, 8, ::PackManifestFactory&>                                                mManifestFactory;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider>> mContentAccessibility;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IMinecraftEventing>>               mMinecraftEventing;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                              mCurrentWorldPath;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                      mCurrentPremiumWorldTemplatePath;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContentIdentity, ::std::string>> mTempCacheContentKeys;
@@ -145,7 +148,7 @@ public:
     getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const
         /*override*/;
 
-    virtual ::ResourcePack* getResourcePackByUUID(::mce::UUID const& id) const /*override*/;
+    virtual ::std::vector<::ResourcePack*> getResourcePacksByUUID(::mce::UUID const& id) const /*override*/;
 
     virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const /*override*/;
 
@@ -169,7 +172,8 @@ public:
 
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const /*override*/;
 
-    virtual void addSystemPacksToStack(::ResourcePackStack& stack) const /*override*/;
+    virtual void addSystemPacksToStack(::ResourcePackStack& stack, ::std::optional<::std::string> worldId) const
+        /*override*/;
 
     virtual void
     addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) /*override*/;
@@ -237,14 +241,21 @@ public:
 
     virtual void forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const /*override*/;
 
-    virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const /*override*/;
+    virtual ::std::vector<::InvalidPack> const& getInvalidPacks() const /*override*/;
 
-    virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const
-        /*override*/;
+    virtual ::std::vector<::InvalidPack> getInvalidPacks(::PackType type) const /*override*/;
 
-    virtual void deletePack(::ResourceLocation const& packLocation) /*override*/;
+    virtual ::std::vector<::InvalidPack> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const /*override*/;
 
-    virtual void deletePackFiles(::ResourceLocation const& packLocation) /*override*/;
+    virtual ::std::vector<::InvalidPack> getInvalidPacks(::PackOrigin origin) const /*override*/;
+
+    virtual void
+    deletePacks(::gsl::span<::ResourceLocation const> packLocations, ::std::string_view deletionReason) /*override*/;
+
+    virtual void deletePack(::ResourceLocation const& packLocation, ::std::string_view deletionReason) /*override*/;
+
+    virtual void
+    deletePackFiles(::ResourceLocation const& packLocation, ::std::string_view deletionReason) /*override*/;
 
     virtual void postDeletePack(::ResourceLocation const& packLocation) /*override*/;
 
@@ -267,9 +278,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
         ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>       commands,
         ::PackSourceFactory&                                                  packSourceFactory,
+        ::Bedrock::NonOwnerPointer<::IMinecraftEventing>                      minecraftEventing,
         bool                                                                  initAsync,
         ::std::unique_ptr<::IRepositoryFactory>                               factory
     );
+
+    MCAPI void _postDeletePacks(::gsl::span<::ResourceLocation const> packLocations);
 
     MCAPI void _removePacksIf(::brstd::function_ref<bool(::ResourcePack const&)> callback);
     // NOLINTEND
@@ -284,6 +298,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
         ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>       commands,
         ::PackSourceFactory&                                                  packSourceFactory,
+        ::Bedrock::NonOwnerPointer<::IMinecraftEventing>                      minecraftEventing,
         bool                                                                  initAsync,
         ::std::unique_ptr<::IRepositoryFactory>                               factory
     );
@@ -312,7 +327,7 @@ public:
     MCAPI ::ResourcePack*
     $getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const;
 
-    MCAPI ::ResourcePack* $getResourcePackByUUID(::mce::UUID const& id) const;
+    MCAPI ::std::vector<::ResourcePack*> $getResourcePacksByUUID(::mce::UUID const& id) const;
 
     MCAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
 
@@ -336,7 +351,7 @@ public:
 
     MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 
-    MCAPI void $addSystemPacksToStack(::ResourcePackStack& stack) const;
+    MCAPI void $addSystemPacksToStack(::ResourcePackStack& stack, ::std::optional<::std::string> worldId) const;
 
     MCAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
 
@@ -403,13 +418,19 @@ public:
 
     MCAPI void $forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const;
 
-    MCAPI ::std::vector<::ResourceLocation> const& $getInvalidPacks(::PackType type) const;
+    MCFOLD ::std::vector<::InvalidPack> const& $getInvalidPacks() const;
 
-    MCAPI ::std::vector<::ResourceLocation> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
+    MCAPI ::std::vector<::InvalidPack> $getInvalidPacks(::PackType type) const;
 
-    MCAPI void $deletePack(::ResourceLocation const& packLocation);
+    MCAPI ::std::vector<::InvalidPack> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
 
-    MCAPI void $deletePackFiles(::ResourceLocation const& packLocation);
+    MCAPI ::std::vector<::InvalidPack> $getInvalidPacks(::PackOrigin origin) const;
+
+    MCAPI void $deletePacks(::gsl::span<::ResourceLocation const> packLocations, ::std::string_view deletionReason);
+
+    MCAPI void $deletePack(::ResourceLocation const& packLocation, ::std::string_view deletionReason);
+
+    MCAPI void $deletePackFiles(::ResourceLocation const& packLocation, ::std::string_view deletionReason);
 
     MCAPI void $postDeletePack(::ResourceLocation const& packLocation);
 

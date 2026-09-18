@@ -28,8 +28,6 @@ public:
 
     virtual bool hasPlatformSpecificInvites() const = 0;
 
-    virtual bool isRealmsEnabled() const = 0;
-
     virtual void initAppPlatformNetworkSettings() = 0;
 
     virtual int const numberOfThrottledTreatmentPacksToImportPerMinute() const = 0;
@@ -70,6 +68,8 @@ public:
     virtual ::HardwareMemoryTierUtil const& getHardwareMemoryTierUtil() const = 0;
 
     virtual ::std::string getDeviceId() const = 0;
+
+    virtual bool isRealmsEnabled() const = 0;
 #endif
 
     // NOLINTEND

@@ -30,10 +30,45 @@ public:
     ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings>                 mLiquidSettings;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PoolElementStructureSection();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI PoolElementStructureSection(
+        ::StructurePoolElement const&                        element,
+        ::BlockPos                                           position,
+        int                                                  groundOffset,
+        ::Rotation                                           rot,
+        ::BoundingBox                                        box,
+        ::std::vector<::br::worldgen::JigsawJunction> const& junctions,
+        ::br::worldgen::LiquidSettings                       liquidSettings
+    );
+#endif
+
     MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::StructurePoolElement const&                        element,
+        ::BlockPos                                           position,
+        int                                                  groundOffset,
+        ::Rotation                                           rot,
+        ::BoundingBox                                        box,
+        ::std::vector<::br::worldgen::JigsawJunction> const& junctions,
+        ::br::worldgen::LiquidSettings                       liquidSettings
+    );
+#endif
     // NOLINTEND
 };
 

@@ -22,11 +22,11 @@ class ImageQuery : public ::OreUI::QueryBase<::OreUI::ImageQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::FetchStatus>>                   mFetchStatus;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                          mLocalPath;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ILayoutImageSource>>        mImageSource;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                               mTaskGroup;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::FetchStatus, ::OreUI::FetchStatus>> mFetchStatus;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mLocalPath;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ILayoutImageSource>>            mImageSource;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>     mResourceAllowList;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                   mTaskGroup;
     // NOLINTEND
 
 public:

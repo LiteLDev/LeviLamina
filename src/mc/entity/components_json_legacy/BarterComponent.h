@@ -15,6 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mItemOriginationActorUniqueID;
+    ::ll::TypedStorage<8, 32, ::std::string>  mBarterItemsTable;
+    ::ll::TypedStorage<4, 4, int>             mCooldown;
     ::ll::TypedStorage<2, 2, short>           mBarterItemId;
     ::ll::TypedStorage<1, 1, bool>            mExecuteTrade;
     // NOLINTEND

@@ -11,7 +11,6 @@
 class StrictEntityContext;
 struct NoActionTimeComponent;
 struct OnGroundFlagComponent;
-struct TickingSystemWithInfo;
 struct WasOnGroundFlagComponent;
 // clang-format on
 
@@ -19,8 +18,6 @@ class PostAIUpdateSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void doPostAiUpdate(
         ::StrictEntityContext&                       entity,
         ::Optional<::OnGroundFlagComponent const>    onGround,

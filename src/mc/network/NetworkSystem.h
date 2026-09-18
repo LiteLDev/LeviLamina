@@ -219,9 +219,6 @@ public:
 
     MCAPI void sendToMultiple(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
-    MCAPI void
-    setCloseConnection(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason closeConnectionReason);
-
     MCAPI void update(::std::vector<::WeakEntityRef> const* userList);
     // NOLINTEND
 

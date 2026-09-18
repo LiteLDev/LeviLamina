@@ -15,4 +15,20 @@ public:
     ::ll::TypedStorage<4, 4, int>                  mScoreValue;
     ::ll::TypedStorage<8, 8, ::PlayerScoreboardId> mPlayerId;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ~ChangePlayerScore();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $dtor();
+#endif
+    // NOLINTEND
 };

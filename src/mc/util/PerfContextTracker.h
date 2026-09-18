@@ -117,7 +117,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnk7bb973;
+    ::ll::UntypedStorage<8, 80>  mUnkb78c30;
     ::ll::UntypedStorage<1, 1>   mUnkee6e42;
     ::ll::UntypedStorage<8, 32>  mUnk2b7e27;
     ::ll::UntypedStorage<8, 40>  mUnkeefdc7;
@@ -132,6 +132,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk800a03;
     ::ll::UntypedStorage<8, 64>  mUnk39cda4;
     ::ll::UntypedStorage<8, 16>  mUnke4d432;
+    ::ll::UntypedStorage<1, 1>   mUnk1b3be6;
     // NOLINTEND
 
 public:

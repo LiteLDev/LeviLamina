@@ -29,7 +29,12 @@ public:
     // NOLINTBEGIN
     virtual ~UpgraderBase();
 
+#ifdef LL_PLAT_S
+    virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny sourceAny) const = 0;
+#else // LL_PLAT_C
     virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny source) const = 0;
+#endif
+
     // NOLINTEND
 
 public:

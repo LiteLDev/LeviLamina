@@ -25,8 +25,11 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                   mRealmName;
     ::ll::TypedStorage<8, 32, ::std::string>                                   mRealmId;
     ::ll::TypedStorage<8, 32, ::std::string>                                   mRealmOwnerId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                   mFriendlyId;
     ::ll::TypedStorage<4, 4, int>                                              mActiveSlotIndex;
     ::ll::TypedStorage<4, 4, int>                                              mMaxPlayers;
+    ::ll::TypedStorage<4, 4, int>                                              mDaysLeft;
+    ::ll::TypedStorage<4, 4, int>                                              mOnlinePlayerCount;
     ::ll::TypedStorage<1, 1, bool>                                             mClosed;
     ::ll::TypedStorage<1, 1, bool>                                             mExpired;
     ::ll::TypedStorage<1, 1, bool>                                             mFull;
@@ -53,13 +56,19 @@ public:
 
     MCFOLD int getActiveSlotIndex() const;
 
-    MCFOLD bool getIsClosed() const;
+    MCFOLD int getDaysLeft() const;
+
+    MCFOLD ::std::string const& getFriendlyId() const;
+
+    MCAPI bool getIsClosed() const;
 
     MCAPI bool getIsExpired() const;
 
     MCAPI bool getIsFull() const;
 
     MCAPI int getMaxPlayers() const;
+
+    MCAPI int getOnlinePlayerCount() const;
 
     MCFOLD ::std::string const& getRealmId() const;
 

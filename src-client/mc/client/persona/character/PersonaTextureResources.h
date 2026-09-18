@@ -18,4 +18,16 @@ public:
     PersonaTextureResources& operator=(PersonaTextureResources const&);
     PersonaTextureResources(PersonaTextureResources const&);
     PersonaTextureResources();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~PersonaTextureResources();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

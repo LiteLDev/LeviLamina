@@ -10,6 +10,7 @@
 // clang-format off
 namespace Editor { class ProjectRegion; }
 namespace Editor { struct ProjectRegionConfig; }
+namespace Editor { struct ProjectRegionGlobalMetrics; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -28,6 +29,8 @@ public:
     virtual ::Scripting::Result_deprecated<void> destroyRegion(::mce::UUID const& id) = 0;
 
     virtual ::WeakRef<::Editor::ProjectRegion> getRegion(::mce::UUID const& id) const = 0;
+
+    virtual ::Editor::ProjectRegionGlobalMetrics collectMetrics() const = 0;
     // NOLINTEND
 };
 

@@ -119,6 +119,7 @@ public:
                                                                                   mCreateLevel;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>>       mAppPlatform;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>> mPartySystem;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool() const>>          mDidLocalPlayerCancelJoin;
     // NOLINTEND
 
 public:

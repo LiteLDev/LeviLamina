@@ -13,10 +13,18 @@ class Item;
 // clang-format on
 
 class ItemInstance : public ::ItemStackBase {
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ItemInstance& operator=(ItemInstance const&);
+    ItemInstance();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ItemInstance& operator=(ItemInstance const&);
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,7 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ItemInstance();
+#endif
 
     MCAPI ItemInstance(::ItemInstance const& rhs);
 
@@ -52,7 +62,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor();
+#endif
 
     MCFOLD void* $ctor(::ItemInstance const& rhs);
 
