@@ -5,6 +5,9 @@
 namespace cg {
 
 template <typename T0>
-class TaskDispatcher {};
+class TaskDispatcher {
+public:
+    struct TaskDispatcherExecution {};
+};
 
 } // namespace cg
