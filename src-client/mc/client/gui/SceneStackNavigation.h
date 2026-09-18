@@ -23,6 +23,8 @@ MCAPI void openPauseMenu(::IMinecraftGame& minecraftGame);
 
 MCAPI void toMainMenu(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
 
+MCAPI void toPlayScreen(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
+
 MCAPI void toPreStartScreen(
     ::TextToSpeechSystem&                        ttsSystem,
     ::ui::ScreenTechStackSelector const&         screenTechStackSelector,

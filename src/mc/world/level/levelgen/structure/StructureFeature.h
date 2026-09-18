@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
@@ -36,10 +35,10 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                                                   mRadius;
     ::ll::TypedStorage<4, 4, int>                                                                    mXScale;
     ::ll::TypedStorage<4, 4, int>                                                                    mZScale;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mCreateBlueprintsAndVisitedPositionsMutex;
-    ::ll::TypedStorage<8, 72, ::std::condition_variable>   mBlueprintWaitVar;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>>           mActiveBlueprintCreateCount;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>          mBlueprintsFinished;
+    ::ll::TypedStorage<8, 80, ::std::mutex>              mCreateBlueprintsAndVisitedPositionsMutex;
+    ::ll::TypedStorage<8, 72, ::std::condition_variable> mBlueprintWaitVar;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>         mActiveBlueprintCreateCount;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>        mBlueprintsFinished;
     // NOLINTEND
 
 public:
@@ -76,13 +75,23 @@ public:
         ::Dimension const&                   dimension
     ) = 0;
 
+#ifdef LL_PLAT_S
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
-        ::ChunkPos const&                    lc,
+        ::ChunkPos const&                    chunkPos,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) = 0;
+#else // LL_PLAT_C
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension&                         dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    ) = 0;
+#endif
 
     virtual ::StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
     // NOLINTEND
@@ -170,5 +179,11 @@ public:
     MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

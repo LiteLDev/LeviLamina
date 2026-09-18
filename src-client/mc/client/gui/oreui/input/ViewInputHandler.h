@@ -9,8 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class IGameController;
 class IOptionRegistry;
+class KeyboardAction;
 class KeyboardManager;
+class MouseAction;
 struct ControllerIDtoClientMap;
 namespace Input::Debug { class ISplitscreenRedirect; }
 namespace OreUI { class GamepadInputHandler; }
@@ -71,6 +74,12 @@ public:
         bool                                                                       isPrimaryClient,
         ::IOptionRegistry&                                                         options
     );
+
+    MCAPI void handleKeyboardInput(::KeyboardAction const& keyboardAction);
+
+    MCAPI void handleMouseInput(::MouseAction const& mouseAction);
+
+    MCAPI bool shouldHandleGamepad(::std::shared_ptr<::IGameController> gamePad);
 
     MCAPI ~ViewInputHandler();
     // NOLINTEND

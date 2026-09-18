@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
 
 // auto generated forward declare list
@@ -54,7 +53,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>                          mFlushCallbacks;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::LevelStorageWriteBatch::BatchEntry>> mBatch;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mFlushCallbacksMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                    mFlushCallbacksMutex;
     // NOLINTEND
 
 public:

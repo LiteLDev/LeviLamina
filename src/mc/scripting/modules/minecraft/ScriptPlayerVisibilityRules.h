@@ -21,6 +21,16 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setShowHidden(::std::optional<bool> showHidden);
+
+    MCAPI void setShowSpectator(::std::optional<bool> showSpectator);
+
+    MCAPI void setShowSpectatorToSpectator(::std::optional<bool> showSpectatorToSpectator);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();

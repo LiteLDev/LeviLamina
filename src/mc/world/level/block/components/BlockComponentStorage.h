@@ -31,6 +31,7 @@ struct BlockBlockEntityComponent;
 struct BlockChestObstructionComponent;
 struct BlockCollisionBoxComponent;
 struct BlockConnectionRuleComponent;
+struct BlockContainerComponent;
 struct BlockCraftingTableComponent;
 struct BlockDestructibleByExplosionComponent;
 struct BlockDestructibleByMiningComponent;

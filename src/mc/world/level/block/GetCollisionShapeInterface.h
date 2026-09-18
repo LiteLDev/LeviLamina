@@ -26,7 +26,7 @@ public:
 
     virtual bool isWearingLeatherBoots() const = 0;
 
-    virtual bool hasLightWeightFamilyTag() const = 0;
+    virtual bool canStandOnPowderSnow() const = 0;
 
     virtual ::AABB const& getAABB() const = 0;
 

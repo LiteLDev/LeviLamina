@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/block/block_serialization_utils/NBTState.h"
 
 // auto generated forward declare list
@@ -44,8 +43,8 @@ public:
             ::BlockSerializationUtils::NbtToBlockCache::Key,
             ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>,
             ::BlockSerializationUtils::NbtToBlockCache::Comparator>>
-                                                           mCache;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
+                                            mCache;
+    ::ll::TypedStorage<8, 80, ::std::mutex> mMutex;
     // NOLINTEND
 };
 

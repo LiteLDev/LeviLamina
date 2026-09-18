@@ -9,7 +9,6 @@
 // clang-format off
 class EntityRegistry;
 class LevelChunk;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class LevelChunkTickingSystem : public ::ITickingSystem {
@@ -28,12 +27,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createPlayerPassengerSystem();
     // NOLINTEND
 
 public:

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core_graphics/ImageBuffer.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,8 +24,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
-    ::ll::TypedStorage<8, 8, uint64>                       mId;
+    ::ll::TypedStorage<8, 80, ::std::mutex> mMutex;
+    ::ll::TypedStorage<8, 8, uint64>        mId;
     ::ll::TypedStorage<
         8,
         16,

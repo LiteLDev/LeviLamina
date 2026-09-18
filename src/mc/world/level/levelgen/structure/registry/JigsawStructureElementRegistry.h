@@ -27,7 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCFOLD ::StructurePoolElement const* _lookupById(::JigsawStructureUtils::StructureElementId const& id) const;
+#endif
 
     MCAPI ::StructurePoolElement const* lookupByName(::std::string name) const;
 

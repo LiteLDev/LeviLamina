@@ -21,7 +21,7 @@ class AnimationQuery : public ::OreUI::QueryBase<::OreUI::AnimationQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                   mScreenAnimationEnabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>             mScreenAnimationEnabled;
     ::ll::TypedStorage<8, 8, ::Option*>                                   mAnimationOption;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>> mClient;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mRouteChangedToken;

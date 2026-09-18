@@ -55,18 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelChunkDataRegistry& operator=(LevelChunkDataRegistry const&);
-    LevelChunkDataRegistry(LevelChunkDataRegistry const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LevelChunkDataRegistry();
-
-    MCAPI ::br::ChunkEntity create();
-
-    MCAPI ::br::LevelChunkDataRegistry& operator=(::br::LevelChunkDataRegistry&& other);
     // NOLINTEND
 
 public:

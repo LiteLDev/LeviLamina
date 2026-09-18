@@ -36,6 +36,7 @@ public:
     ::ll::TypedStorage<1, 1, schar>                           mRotY;
     ::ll::TypedStorage<1, 1, schar>                           mRotYHead;
     ::ll::TypedStorage<1, 1, schar>                           mRotYBody;
+    ::ll::TypedStorage<8, 8, uint64>                          mTicks;
     // NOLINTEND
 
 public:

@@ -53,7 +53,14 @@ MCAPI void registerBlockPosTrackerSystems(
 );
 
 MCAPI void registerEditorPauseFilterSystems(::EntitySystems& systemRegistry);
+#endif
 
+MCAPI void registerMovementInputSystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
+
+#ifdef LL_PLAT_C
 MCAPI void registerSharedVanillaPlayerInteractionSystems(::EntitySystems& systemRegistry);
 
 MCAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);

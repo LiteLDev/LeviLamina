@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class IBlockWorldGenAPI;
 // clang-format on
 
 class SnapToSurfaceFeature : public ::IFeature {
@@ -18,17 +19,19 @@ public:
     enum class Surface : int {
         Ceiling          = 0,
         Floor            = 1,
-        RandomHorizontal = 2,
+        Wall             = 2,
+        RandomHorizontal = 3,
     };
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>            mFeatureToSnap;
-    ::ll::TypedStorage<4, 4, int>                               mVerticalSearchRange;
+    ::ll::TypedStorage<4, 4, int>                               mSearchRange;
     ::ll::TypedStorage<4, 4, ::SnapToSurfaceFeature::Surface>   mSurface;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedSurfaceBlocks;
     ::ll::TypedStorage<1, 1, bool>                              mAllowAirPlacement;
+    ::ll::TypedStorage<1, 1, bool>                              mAllowNonAirPlacement;
     ::ll::TypedStorage<1, 1, bool>                              mAllowUnderwaterPlacement;
     ::ll::TypedStorage<1, 1, bool>                              mEmbedInSurface;
     // NOLINTEND
@@ -39,6 +42,13 @@ public:
     virtual ~SnapToSurfaceFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    _findSnapPosInDirection(::IBlockWorldGenAPI& target, ::BlockPos const& pos, uchar direction) const;
     // NOLINTEND
 
 public:

@@ -50,6 +50,11 @@ public:
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
 
+    virtual ::Bedrock::Result<::std::string>
+    parsePrivateKey(::std::string const& privateKey, ::Crypto::Asymmetric::PrivateKeySigningFormat format) /*override*/;
+
+    virtual ::Bedrock::Result<::std::string> derivePublicKey(::std::string const& privateKey) /*override*/;
+
     virtual ::Bedrock::Result<::std::string> constructPublicKey(
         ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&
             components
@@ -102,6 +107,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
+
+    MCNAPI ::Bedrock::Result<::std::string>
+    $parsePrivateKey(::std::string const& privateKey, ::Crypto::Asymmetric::PrivateKeySigningFormat format);
+
+    MCNAPI ::Bedrock::Result<::std::string> $derivePublicKey(::std::string const& privateKey);
 
     MCNAPI ::Bedrock::Result<::std::string> $constructPublicKey(
         ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&

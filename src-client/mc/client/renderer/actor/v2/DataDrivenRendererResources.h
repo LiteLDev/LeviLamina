@@ -19,4 +19,16 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mConditionalControllerExpressions;
     ::ll::TypedStorage<8, 24, ::std::vector<::DataDrivenRenderer_tempComponent*>> mTempComponents;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~DataDrivenRendererResources();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

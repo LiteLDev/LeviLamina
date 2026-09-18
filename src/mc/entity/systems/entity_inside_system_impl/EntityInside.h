@@ -17,12 +17,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class FreezingComponent;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorGameTypeComponent;
 struct ActorMovementTickNeededComponent;
 struct BlockMovementSlowdownAppliedComponent;
+struct BlockMovementSlowdownImmunityComponent;
 struct BlockMovementSlowdownMultiplierComponent;
 struct BoatFlagComponent;
 struct CactusBlockFlag;
@@ -30,13 +30,13 @@ struct DimensionTypeComponent;
 struct EndPortalBlockFlag;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct FreezeImmuneFlagComponent;
+struct FreezingComponent;
+struct FreezingImmuneFromEquipmentComponent;
 struct HoneyBlockFlag;
 struct IgnoresEntityInsideFlagComponent;
 struct InsideBlockComponent;
 struct InsideBubbleColumnBlockComponent;
 struct InsideGenericBlockComponent;
-struct InsideWebBlockComponent;
 struct InterpolateMovementNeededComponent;
 struct IsDeadFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
@@ -47,6 +47,7 @@ struct StateVectorComponent;
 struct SweetBerryBushBlockFlag;
 struct WasInWaterFlagComponent;
 struct WaterlilyBlockFlag;
+struct WebBlockFlag;
 // clang-format on
 
 namespace EntityInsideSystemImpl {
@@ -55,7 +56,7 @@ struct EntityInside : public ::IStrictTickingSystem<::StrictExecutionContext<
                           ::Filter<
                               ::InterpolateMovementNeededComponent,
                               ::BoatFlagComponent,
-                              ::FreezeImmuneFlagComponent,
+                              ::FreezingImmuneFromEquipmentComponent,
                               ::IsDeadFlagComponent,
                               ::PlayerComponent,
                               ::WasInWaterFlagComponent>,
@@ -63,6 +64,7 @@ struct EntityInside : public ::IStrictTickingSystem<::StrictExecutionContext<
                               ::AABBShapeComponent,
                               ::ActorMovementTickNeededComponent,
                               ::ActorGameTypeComponent,
+                              ::BlockMovementSlowdownImmunityComponent,
                               ::DimensionTypeComponent,
                               ::MovementAbilitiesComponent>,
                           ::Write<
@@ -82,7 +84,7 @@ struct EntityInside : public ::IStrictTickingSystem<::StrictExecutionContext<
                               ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
                               ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
                               ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                              ::InsideWebBlockComponent>,
+                              ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>>,
                           ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
                           ::GlobalWrite<>,
                           ::EntityFactoryT<>>> {
@@ -92,7 +94,7 @@ public:
         ::Filter<
             ::InterpolateMovementNeededComponent,
             ::BoatFlagComponent,
-            ::FreezeImmuneFlagComponent,
+            ::FreezingImmuneFromEquipmentComponent,
             ::IsDeadFlagComponent,
             ::PlayerComponent,
             ::WasInWaterFlagComponent>,
@@ -100,6 +102,7 @@ public:
             ::AABBShapeComponent,
             ::ActorMovementTickNeededComponent,
             ::ActorGameTypeComponent,
+            ::BlockMovementSlowdownImmunityComponent,
             ::DimensionTypeComponent,
             ::MovementAbilitiesComponent>,
         ::Write<
@@ -119,7 +122,7 @@ public:
             ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
             ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
             ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-            ::InsideWebBlockComponent>,
+            ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>>,
         ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
         ::GlobalWrite<>,
         ::EntityFactoryT<>>>;
@@ -138,7 +141,7 @@ public:
             ::Filter<
                 ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
-                ::FreezeImmuneFlagComponent,
+                ::FreezingImmuneFromEquipmentComponent,
                 ::IsDeadFlagComponent,
                 ::PlayerComponent,
                 ::WasInWaterFlagComponent>,
@@ -146,6 +149,7 @@ public:
                 ::AABBShapeComponent,
                 ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
+                ::BlockMovementSlowdownImmunityComponent,
                 ::DimensionTypeComponent,
                 ::MovementAbilitiesComponent>,
             ::Write<
@@ -165,7 +169,7 @@ public:
                 ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
                 ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
                 ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                ::InsideWebBlockComponent>,
+                ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
@@ -176,7 +180,7 @@ public:
             ::Filter<
                 ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
-                ::FreezeImmuneFlagComponent,
+                ::FreezingImmuneFromEquipmentComponent,
                 ::IsDeadFlagComponent,
                 ::PlayerComponent,
                 ::WasInWaterFlagComponent>,
@@ -184,6 +188,7 @@ public:
                 ::AABBShapeComponent,
                 ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
+                ::BlockMovementSlowdownImmunityComponent,
                 ::DimensionTypeComponent,
                 ::MovementAbilitiesComponent>,
             ::Write<
@@ -203,7 +208,7 @@ public:
                 ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
                 ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
                 ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                ::InsideWebBlockComponent>,
+                ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext,
@@ -219,7 +224,7 @@ public:
             ::Filter<
                 ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
-                ::FreezeImmuneFlagComponent,
+                ::FreezingImmuneFromEquipmentComponent,
                 ::IsDeadFlagComponent,
                 ::PlayerComponent,
                 ::WasInWaterFlagComponent>,
@@ -227,6 +232,7 @@ public:
                 ::AABBShapeComponent,
                 ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
+                ::BlockMovementSlowdownImmunityComponent,
                 ::DimensionTypeComponent,
                 ::MovementAbilitiesComponent>,
             ::Write<
@@ -246,7 +252,7 @@ public:
                 ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
                 ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
                 ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                ::InsideWebBlockComponent>,
+                ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
@@ -257,7 +263,7 @@ public:
             ::Filter<
                 ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
-                ::FreezeImmuneFlagComponent,
+                ::FreezingImmuneFromEquipmentComponent,
                 ::IsDeadFlagComponent,
                 ::PlayerComponent,
                 ::WasInWaterFlagComponent>,
@@ -265,6 +271,7 @@ public:
                 ::AABBShapeComponent,
                 ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
+                ::BlockMovementSlowdownImmunityComponent,
                 ::DimensionTypeComponent,
                 ::MovementAbilitiesComponent>,
             ::Write<
@@ -284,7 +291,7 @@ public:
                 ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
                 ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
                 ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                ::InsideWebBlockComponent>,
+                ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext,

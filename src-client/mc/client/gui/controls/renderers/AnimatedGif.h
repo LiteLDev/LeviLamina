@@ -23,4 +23,16 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::Color>>            mFrameCache;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::Color>>            mPrevFrameCache;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~AnimatedGif();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

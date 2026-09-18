@@ -81,6 +81,8 @@ public:
 
     MCAPI BaseConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
 
+    MCAPI bool _isSupportedPersonaData() const;
+
     MCAPI bool _isUsingRestrictedIds() const;
 
     MCAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;

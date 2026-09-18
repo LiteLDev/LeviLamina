@@ -40,6 +40,7 @@ public:
             ::Editor::Structures::PUVLoader::v1::StructureMetadata,
             nullptr_t,
             nullptr_t,
+            nullptr_t,
             ::Editor::Structures::PUVLoader::v1::StructureMetadata>& loader,
         ::std::string&                                               jsonString,
         ::std::vector<::std::string>&                                outErrors

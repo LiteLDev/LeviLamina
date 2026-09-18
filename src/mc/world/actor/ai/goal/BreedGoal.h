@@ -11,6 +11,7 @@
 class Mob;
 class Vec2;
 class Vec3;
+struct GoalId;
 // clang-format on
 
 class BreedGoal : public ::BaseGoal {
@@ -47,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BreedGoal(::Mob& animal);
+    MCAPI BreedGoal(::Mob& animal, ::std::string name, ::GoalId const& goalId);
 
     MCAPI bool _isCloseEnoughToBreed(::Vec3 pos1, ::Vec2 size1, ::Vec3 pos2, ::Vec2 size2) const;
 
@@ -57,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& animal);
+    MCAPI void* $ctor(::Mob& animal, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

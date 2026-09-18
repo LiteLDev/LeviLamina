@@ -22,13 +22,10 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::Reference<11>>> mTextures;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     IconItemComponent();
 
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,9 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI explicit IconItemComponent(::SharedTypes::v1_21_80::IconItemComponent component);
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string const& getBundleOpenBackTexture() const;
@@ -54,21 +49,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::SharedTypes::v1_21_80::IconItemComponent component);
-#endif
     // NOLINTEND
 
 public:

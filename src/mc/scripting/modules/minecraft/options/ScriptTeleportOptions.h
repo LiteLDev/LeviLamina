@@ -28,6 +28,7 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>    mKeepVelocity;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mFacingLocation;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>    mCheckForBlocks;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>    mForceProvidedPositionOnDimensionChange;
     // NOLINTEND
 
 public:

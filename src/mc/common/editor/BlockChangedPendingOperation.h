@@ -21,6 +21,7 @@ class BlockChangedPendingOperation : public ::Editor::Transactions::IPendingOper
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk10c9f5;
     ::ll::UntypedStorage<8, 24> mUnk7be951;
     // NOLINTEND
 

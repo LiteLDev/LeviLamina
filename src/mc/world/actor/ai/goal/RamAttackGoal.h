@@ -16,6 +16,7 @@
 class ActorDefinitionTrigger;
 class Mob;
 class Path;
+struct GoalId;
 namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
 
@@ -112,7 +113,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RamAttackGoal(::Mob& mob);
+    MCAPI RamAttackGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI void _findTreeBehindTarget();
 
@@ -124,7 +125,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
@@ -143,11 +144,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

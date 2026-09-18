@@ -1,0 +1,49 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/actor/player/persona/AnimatedTextureType.h"
+
+// auto generated forward declare list
+// clang-format off
+class AnimatedTextureContainer;
+class IImageCache;
+class PackAccessStrategy;
+struct TextureUVCoordinateSet;
+namespace cg { class ImageBuffer; }
+namespace persona { struct TextureTint; }
+namespace persona { struct TextureTintCollection; }
+// clang-format on
+
+class PersonaTextureComposer {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::cg::ImageBuffer const* _loadImage(
+        ::PackAccessStrategy const& strategy,
+        ::std::string const&        path,
+        ::std::string const&        uniquePath,
+        ::IImageCache&              textureGroup
+    );
+
+    MCNAPI static void _readTextureIntoAtlas(
+        ::cg::ImageBuffer&            atlasImage,
+        ::persona::TextureTint const& textureTint,
+        ::cg::ImageBuffer const&      sourceImage,
+        ::cg::ImageBuffer const*      srcTintMapImage,
+        ::cg::ImageBuffer const*      srcClothingLayerMapImage,
+        ::TextureUVCoordinateSet&     uvs,
+        ::glm::ivec2 const*           maxDimensionsSlice
+    );
+
+    MCNAPI static bool
+    _validateAnimatedTextureType(::persona::AnimatedTextureType type, uint width, uint height, int frames);
+
+    MCNAPI static ::std::vector<::AnimatedTextureContainer> buildAnimatedTexture(
+        ::std::string const&                                    skinName,
+        ::std::vector<::persona::TextureTintCollection*> const& textureCollections,
+        ::IImageCache&                                          imageCache
+    );
+    // NOLINTEND
+};

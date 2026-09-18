@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/deps/shared_types/item/ItemCooldownType.h"
@@ -13,6 +12,7 @@
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/interactions/mining/MineBlockItemEffectType.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/ItemAcquisitionMethod.h"
 #include "mc/world/item/ItemColor.h"
@@ -70,6 +70,14 @@ namespace mce { class Color; }
 
 class Item {
 public:
+    // Item inner types define
+    enum class OffhandAllowed : uchar {
+        Default = 0,
+        Yes     = 1,
+        No      = 2,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ItemVersion>                                   mItemParseVersion;
@@ -98,11 +106,10 @@ public:
     bool                                                                      mExplodable           : 1;
     bool                                                                      mFireResistant        : 1;
     bool                                                                      mShouldDespawn        : 1;
-    bool                                                                      mAllowOffhand         : 1;
     bool                                                                      mIgnoresPermissions   : 1;
     ::ll::TypedStorage<4, 4, int>                                             mMaxUseDuration;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mMinRequiredBaseGameVersion;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                    mBlockType;
+    ::ll::TypedStorage<8, 8, ::BlockType const*>                              mBlockType;
     ::ll::TypedStorage<1, 1, ::SharedTypes::CreativeItemCategory>             mCreativeCategory;
     ::ll::TypedStorage<8, 8, ::Item*>                                         mCraftingRemainingItem;
     ::ll::TypedStorage<8, 32, ::std::string>                                  mCreativeGroup;
@@ -116,6 +123,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraItemComponentLegacy>>  mCameraComponentLegacy;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>         mOnResetBAICallbacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemTag>>                       mTags;
+    ::Item::OffhandAllowed                                                    mAllowOffhand : 2;
     // NOLINTEND
 
 public:
@@ -142,7 +150,7 @@ public:
 
     virtual int getMaxUseDuration(::ItemStack const* instance) const;
 
-    virtual ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
+    virtual ::BlockType const* getBlockTypeForRendering() const;
 
     virtual bool isMusicDisk() const;
 
@@ -301,11 +309,12 @@ public:
 
     virtual bool canUseOnSimTick() const;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     virtual bool canUseAsAttack() const;
 
-    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
+    virtual ::ItemStack&
+    useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection, ::HandSlot handSlot) const;
 
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
@@ -411,6 +420,8 @@ public:
 
     virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
+    virtual ::std::string _getHoverTextDescription() const;
+
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
@@ -418,8 +429,14 @@ public:
 
     virtual bool _shouldAutoCalculatePlacePos() const;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
     // NOLINTEND
 
 public:
@@ -451,8 +468,6 @@ public:
 
     MCAPI ::Item& addTag(::HashedString const& tag);
 
-    MCAPI ::std::string buildCategoryDescriptionName() const;
-
     MCAPI void clearTags();
 
     MCAPI ::std::vector<::CommandName> getCommandNames() const;
@@ -467,18 +482,15 @@ public:
 
     MCAPI void setDamageValue(::ItemStackBase& stack, short newDamage) const;
 
-    MCAPI ::Item& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
-
     MCAPI void
     updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
 
     MCAPI ::InteractionResult useOn(
         ::ItemStack&             item,
         ::Actor&                 entity,
-        int                      x,
-        int                      y,
-        int                      z,
+        ::BlockPos const&        pos,
         uchar                    face,
+        ::HandSlot               handSlot,
         ::Vec3 const&            clickPos,
         ::ItemUsedOnEventContext itemUsedOnEventContext
     ) const;
@@ -534,7 +546,7 @@ public:
 
     MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
-    MCAPI ::WeakPtr<::BlockType const> const& $getBlockTypeForRendering() const;
+    MCAPI ::BlockType const* $getBlockTypeForRendering() const;
 
     MCFOLD bool $isMusicDisk() const;
 
@@ -556,7 +568,7 @@ public:
 
     MCFOLD bool $isDye() const;
 
-    MCAPI ::ItemColor $getItemColor() const;
+    MCFOLD ::ItemColor $getItemColor() const;
 
     MCFOLD bool $isFertilizer() const;
 
@@ -693,11 +705,12 @@ public:
 
     MCFOLD bool $canUseOnSimTick() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCFOLD bool $canUseAsAttack() const;
 
-    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
+    MCAPI ::ItemStack&
+    $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection, ::HandSlot handSlot) const;
 
     MCFOLD ::Actor* $createProjectileActor(
         ::BlockSource&     region,
@@ -803,6 +816,8 @@ public:
 
     MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
+    MCAPI ::std::string $_getHoverTextDescription() const;
+
     MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
@@ -810,8 +825,14 @@ public:
 
     MCFOLD bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

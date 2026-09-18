@@ -42,7 +42,7 @@ public:
 
     MCAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI bool processFeature(
         ::IWorldRegistriesProvider&  lookupProvider,
         bool                         isBasePack,

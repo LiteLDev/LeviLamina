@@ -22,7 +22,6 @@ struct PlayerComponent;
 struct RailMovementComponent;
 struct SnapOnRailComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -90,11 +89,5 @@ public:
         ::EntityModifier<::ActorSetPositionRequestComponent> mod,
         ::IConstBlockSource const&                           constBlockSource
     );
-
-    MCAPI static ::TickingSystemWithInfo createPostRailMovementPositionSystem();
-
-    MCAPI static ::TickingSystemWithInfo createPreRailMovementPositionSystem();
-
-    MCAPI static ::TickingSystemWithInfo createRailMovementSystem();
     // NOLINTEND
 };

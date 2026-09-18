@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
+#include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -15,13 +16,14 @@ namespace OreUI { class GameDependencies; }
 
 namespace OreUI {
 
-class BuildInfoQuery : public ::OreUI::QueryBase<::OreUI::BuildInfoQuery> {
+class BuildInfoQuery : public ::OreUI::QueryBase<::OreUI::BuildInfoQuery>,
+                       public ::Bedrock::Threading::EnableQueueForMainThread {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mTreatments;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mCanCopyToClipboard;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mTreatmentChangedSubscription;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mTreatments;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mCanCopyToClipboard;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mTreatmentChangedSubscription;
     // NOLINTEND
 
 public:

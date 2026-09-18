@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class ItemRegistryRef;
+class SemVersion;
 struct TradeTier;
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
 // clang-format on
@@ -25,8 +26,9 @@ public:
     // NOLINTBEGIN
     MCAPI TradeTableData(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
-        ::ItemRegistryRef const                 itemRegistry,
-        bool                                    usingUpcomingCreatorFeaturesExperiment
+        ::ItemRegistryRef const&                itemRegistry,
+        bool                                    usingUpcomingCreatorFeaturesExperiment,
+        ::SemVersion const&                     jsonVersion
     );
     // NOLINTEND
 
@@ -35,8 +37,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
-        ::ItemRegistryRef const                 itemRegistry,
-        bool                                    usingUpcomingCreatorFeaturesExperiment
+        ::ItemRegistryRef const&                itemRegistry,
+        bool                                    usingUpcomingCreatorFeaturesExperiment,
+        ::SemVersion const&                     jsonVersion
     );
     // NOLINTEND
 };

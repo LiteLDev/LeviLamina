@@ -39,7 +39,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80>  mUnk8f8fe3;
+        ::ll::UntypedStorage<8, 80>  mUnk6d1f20;
         ::ll::UntypedStorage<8, 152> mUnkc955b2;
         ::ll::UntypedStorage<8, 8>   mUnkad80c2;
         ::ll::UntypedStorage<8, 24>  mUnkf3431e;
@@ -96,8 +96,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI ::NetworkStatistics* getNetworkStatistics(::TrackerType type);
 #endif
-
-    MCNAPI void registerStatisticsSource(::NetworkStatistics& s);
     // NOLINTEND
 
 public:

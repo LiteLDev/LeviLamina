@@ -10,6 +10,7 @@
 // clang-format off
 class RideableComponent;
 class RideableDefinition;
+struct SeatDescription;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -20,13 +21,19 @@ class ScriptRideableComponent
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<int> getControllingSeat() const;
+
     MCAPI ::Scripting::Result_deprecated<bool> getCrouchingSkipInteract() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getFamilyTypes() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> getPassengerCanInteract() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getPassengerMaxWidth() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getPullInEntities() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getSeatCount() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::SeatDescription>> getSeats() const;
     // NOLINTEND
 
 public:

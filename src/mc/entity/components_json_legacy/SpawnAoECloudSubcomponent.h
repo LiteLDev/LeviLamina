@@ -13,6 +13,7 @@
 class Actor;
 class ProjectileComponent;
 namespace Json { class Value; }
+namespace SharedTypes::v1_26_50 { struct ProjectileOnHitSubcomponent; }
 // clang-format on
 
 class SpawnAoECloudSubcomponent : public ::OnHitSubcomponent {
@@ -32,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void readfromJSON(::Json::Value& component) /*override*/;
+    virtual void initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component) /*override*/;
 
     virtual void writetoJSON(::Json::Value& component) const /*override*/;
 
@@ -44,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $readfromJSON(::Json::Value& component);
+    MCAPI void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component);
 
     MCAPI void $writetoJSON(::Json::Value& component) const;
 

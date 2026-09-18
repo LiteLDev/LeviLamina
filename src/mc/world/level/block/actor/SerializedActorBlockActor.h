@@ -92,10 +92,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static bool isItemSerializedActorBlock(::ItemStackBase const& item);
-#endif
-
     MCAPI static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
     // NOLINTEND
 

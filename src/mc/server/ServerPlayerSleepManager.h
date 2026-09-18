@@ -13,11 +13,9 @@
 // auto generated forward declare list
 // clang-format off
 class GameplayUserManager;
-class IPlayerDimensionTransferConnector;
 class IPlayerSleepPercentageGetter;
 class LevelEventManager;
 class Player;
-class PlayerDeathManager;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -46,10 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerPlayerSleepManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ServerPlayerSleepManager() /*override*/ = default;
@@ -64,32 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerPlayerSleepManager(
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
-        ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
-    );
-
     MCFOLD void _onPlayerDeath();
-
-    MCAPI bool enoughPlayersDeepSleeping() const;
-
-    MCAPI void initializeWithPlayerDeathManager(::PlayerDeathManager& playerDeathManager);
-
-    MCAPI void
-    registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
-
-    MCAPI void tickCheckToWakeUpPlayers();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
-        ::std::unique_ptr<::IPlayerSleepPercentageGetter>    playerSleepPercentageGetter,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>   levelEventManager
-    );
     // NOLINTEND
 
 public:
@@ -97,17 +66,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $updateSleepingPlayerList();
 
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
-#else // LL_PLAT_C
     MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
-#else // LL_PLAT_C
     MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
-#endif
 
 
     // NOLINTEND

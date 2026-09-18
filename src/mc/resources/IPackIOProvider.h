@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class I18n;
 class IFileAccess;
 namespace Core { class FileHandlePool; }
 namespace Core { class Path; }
@@ -28,5 +29,7 @@ public:
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const = 0;
 
     virtual ::std::shared_ptr<::Core::FileHandlePool> getArchiveHandlePool() const = 0;
+
+    virtual ::I18n& getLoc() const = 0;
     // NOLINTEND
 };

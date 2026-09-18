@@ -18,10 +18,10 @@ class RealmsServerSettingsSliderData : public ::OreUI::PropertyObject<::OreUI::R
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>> min;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>> max;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>> defaultValue;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>> current;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>> mMin;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>> mMax;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>> mDefaultValue;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>> mCurrent;
     // NOLINTEND
 
 public:

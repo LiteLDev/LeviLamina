@@ -13,6 +13,7 @@
 #include "mc/network/NetworkSystem.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,16 +26,19 @@ class NetworkStatistics;
 class NetworkSummary;
 class PrivateKeyManager;
 class Scheduler;
+class SecureStorage;
 class SignalingService;
 class SignalingServiceSignInJob;
 class TrustStore;
 struct ClientNetworkSystemOptions;
 struct NetworkSystemToggles;
 struct RawGameServerToken;
+namespace Bedrock::Http { class DispatcherInterface; }
 namespace Json { class Value; }
 namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace PlayerMessaging { struct NetworkID; }
 namespace Social { class GameConnectionInfo; }
+namespace flighting { class IFlightReader; }
 // clang-format on
 
 class ClientNetworkSystem : public ::Social::IGameConnectionInfoProvider,
@@ -80,13 +84,16 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI ClientNetworkSystem(
-        ::Scheduler&                                         receiveThread,
-        ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
-        ::NetworkSystemToggles const&                        networkToggles,
-        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
-        ::Bedrock::NonOwnerPointer<::AppPlatform>            appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::std::unique_ptr<::IPacketSerializationController>  packetController
+        ::Scheduler&                                                        receiveThread,
+        ::std::vector<::std::string> const&                                 overrideBroadcastAddresses,
+        ::NetworkSystemToggles const&                                       networkToggles,
+        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>                   networkDebugManager,
+        ::Bedrock::NonOwnerPointer<::AppPlatform>                           appPlatform,
+        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::Http::DispatcherInterface> httpDispatcher,
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>                networkSessionOwner,
+        ::std::unique_ptr<::IPacketSerializationController>                 packetController,
+        ::std::unique_ptr<::SecureStorage>                                  serverTrustStoreStorage,
+        ::Bedrock::NonOwnerPointer<::flighting::IFlightReader const>        controlTower
     );
 
     MCAPI bool _connectLan(::Social::GameConnectionInfo const& primary, ::Social::GameConnectionInfo const& backup);
@@ -114,12 +121,15 @@ public:
     MCAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
 
     MCAPI void getPingTimeForConnection(
-        ::Social::GameConnectionInfo const& connection,
-        ::std::function<void(uint)>         pingTimeCallback
+        ::Social::GameConnectionInfo const&                            connection,
+        ::brstd::move_only_function<void(::std::chrono::milliseconds)> pingTimeCallback
     );
 
-    MCAPI ::Bedrock::Threading::Async<::Bedrock::Result<::std::string>>
-    probeTransportLayer(::std::string const& host, int port) const;
+    MCAPI ::Bedrock::Threading::Async<::Bedrock::Result<::std::string>> probeTransportLayer(
+        ::std::string const&                                                host,
+        int                                                                 port,
+        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::Http::DispatcherInterface> dispatcher
+    ) const;
 
     MCAPI void registerForPrimaryUserOptionChanges(::ClientNetworkSystemOptions const& primaryUserOptions);
 
@@ -138,13 +148,16 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(
-        ::Scheduler&                                         receiveThread,
-        ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
-        ::NetworkSystemToggles const&                        networkToggles,
-        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
-        ::Bedrock::NonOwnerPointer<::AppPlatform>            appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::std::unique_ptr<::IPacketSerializationController>  packetController
+        ::Scheduler&                                                        receiveThread,
+        ::std::vector<::std::string> const&                                 overrideBroadcastAddresses,
+        ::NetworkSystemToggles const&                                       networkToggles,
+        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>                   networkDebugManager,
+        ::Bedrock::NonOwnerPointer<::AppPlatform>                           appPlatform,
+        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::Http::DispatcherInterface> httpDispatcher,
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>                networkSessionOwner,
+        ::std::unique_ptr<::IPacketSerializationController>                 packetController,
+        ::std::unique_ptr<::SecureStorage>                                  serverTrustStoreStorage,
+        ::Bedrock::NonOwnerPointer<::flighting::IFlightReader const>        controlTower
     );
 #endif
     // NOLINTEND

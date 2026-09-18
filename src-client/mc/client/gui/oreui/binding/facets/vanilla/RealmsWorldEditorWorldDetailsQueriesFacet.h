@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/realms/RealmsWorldEditorFetchState.h"
 #include "mc/client/realms/RealmsWorldEditorState.h"
 #include "mc/client/realms/RealmsWorldEditorStateStatus.h"
 #include "mc/client/realms/RealmsWorldGeneralSettings.h"
@@ -24,8 +25,11 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsWorldEditor>>    mRealmsWorldEditor;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsWorldEditorStateSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsWorldEditorFetchStateSubscriber;
     ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldEditorState>                   mState;
     ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldEditorStateStatus>             mStatus;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldEditorFetchState>              mFetchState;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldEditorStateStatus>             mFetchStateStatus;
     ::ll::TypedStorage<1, 1, bool>                                               mIsDirty;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmWorldChangeSubscription;
     ::ll::TypedStorage<8, 24, ::SubscribedValue<int64>>                          mWorldSeedSubVal;
@@ -77,21 +81,25 @@ public:
 
     MCAPI bool areRealmTexturesRequired() const;
 
+    MCFOLD ::Realms::RealmsWorldEditorFetchState getFetchState() const;
+
+    MCAPI ::Realms::RealmsWorldEditorStateStatus getFetchStateStatus() const;
+
     MCFOLD ::std::optional<::std::string> const& getFlatWorldPreset() const;
 
     MCFOLD int getGeneratorType() const;
 
     MCAPI int getRealmDaylightCycle() const;
 
-    MCAPI ::Realms::RealmsWorldGeneralSettings const& getRealmWorldGeneralSettings() const;
+    MCFOLD ::Realms::RealmsWorldGeneralSettings const& getRealmWorldGeneralSettings() const;
 
     MCAPI ::std::string const& getRealmsDescription() const;
 
-    MCAPI ::std::string const& getRealmsName() const;
+    MCFOLD ::std::string const& getRealmsName() const;
 
-    MCAPI int getSimulationDistance() const;
+    MCFOLD int getSimulationDistance() const;
 
-    MCFOLD bool getStartWithBonusChest() const;
+    MCAPI bool getStartWithBonusChest() const;
 
     MCFOLD bool getStartWithMap() const;
 
@@ -99,9 +107,9 @@ public:
 
     MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
 
-    MCFOLD bool getUseFlatWorld() const;
+    MCAPI bool getUseFlatWorld() const;
 
-    MCFOLD int64 const getWorldSeed() const;
+    MCAPI int64 const getWorldSeed() const;
     // NOLINTEND
 
 public:

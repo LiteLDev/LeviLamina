@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     virtual ~RenderMaterialGroupBase() = default;
 
-    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) = 0;
+    virtual ::std::shared_ptr<::mce::RenderMaterialInfo> getMaterialInfo(::HashedString const& name) = 0;
 
     virtual void clearMaterial(::HashedString const& name) = 0;
     // NOLINTEND

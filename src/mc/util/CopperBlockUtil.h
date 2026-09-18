@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockPos;
 class BlockSource;
 class Player;
@@ -19,6 +20,10 @@ namespace CopperBlockUtil {
 MCNAPI void emitScrapeParticlesAroundPosition(::BlockSource& region, ::Vec3 const& pos);
 
 MCNAPI void emitWaxParticlesAroundPosition(::BlockSource& region, ::Vec3 const& pos, ::mce::Color const& color);
+#endif
+
+#ifdef LL_PLAT_S
+MCNAPI bool shouldUseInteractableBlockAsCopper(::Actor const& actor);
 #endif
 
 MCNAPI bool tryIncrementAge(

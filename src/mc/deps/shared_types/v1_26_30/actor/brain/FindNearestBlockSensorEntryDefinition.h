@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 #include "mc/deps/shared_types/v1_21_130/actor/brain/MemoryIdentifierDefinition.h"
-#include "mc/deps/shared_types/v1_26_0/actor/brain/BaseSensorEntryDefinition.h"
+#include "mc/deps/shared_types/v1_26_0/actor/brain/ResultSensorEntryDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +16,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_30::Brain::MemorySensors {
 
 struct FindNearestBlockSensorEntryDefinition
-: public ::SharedTypes::v1_26_0::Brain::BaseSensorEntryDefinition<
+: public ::SharedTypes::v1_26_0::Brain::ResultSensorEntryDefinition<
       ::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition> {
 public:
     // member variables

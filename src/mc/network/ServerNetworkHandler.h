@@ -13,6 +13,8 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceReference.h"
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/events/event_data/ServerTelemetryData.h"
 #include "mc/network/IncomingPacketFilterResult.h"
@@ -29,11 +31,11 @@
 #include "mc/network/connection/DisconnectionStage.h"
 #include "mc/platform/MultiplayerServiceObserver.h"
 #include "mc/platform/UUID.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/server/DenyList.h"
 #include "mc/server/ServerPlayerLoader.h"
 #include "mc/server/ServerTextEvent.h"
 #include "mc/server/config/server_configuration/ServerConfigurationJoinInfo.h"
+#include "mc/world/level/IPlayerConnectionConnector.h"
 #include "mc/world/level/LevelListener.h"
 
 // auto generated forward declare list
@@ -49,6 +51,7 @@ class AsyncJoinTaskManager;
 class BiomeDefinitionListPacket;
 class BlockActorDataPacket;
 class BlockPickRequestPacket;
+class BlockPos;
 class BlockSource;
 class BookEditPacket;
 class BossEventPacket;
@@ -140,6 +143,7 @@ class ServerboundPackSettingChangePacket;
 class SetDefaultGameTypePacket;
 class SetDifficultyPacket;
 class SetLocalPlayerAsInitializedPacket;
+class SetPlayerFurnaceOptionsPacket;
 class SetPlayerGameTypePacket;
 class SetPlayerInventoryOptionsPacket;
 class SettingsCommandPacket;
@@ -160,10 +164,12 @@ class Vec3;
 struct ActorUniqueID;
 struct AsyncJoinAllow;
 struct AsyncJoinDeny;
+struct DimensionType;
 struct IServerNetworkController;
 struct MessToken;
 struct PackInfoData;
 namespace Automation { class AutomationClient; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::Safety { class RedactableString; }
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace Json { class Value; }
@@ -177,7 +183,8 @@ class ServerNetworkHandler : public ::Bedrock::Threading::EnableQueueForMainThre
                              public ::NetEventCallback,
                              public ::LevelListener,
                              public ::Social::MultiplayerServiceObserver,
-                             public ::Social::XboxLiveUserObserver {
+                             public ::Social::XboxLiveUserObserver,
+                             public ::IPlayerConnectionConnector {
 public:
     // ServerNetworkHandler inner types declare
     // clang-format off
@@ -268,7 +275,7 @@ public:
         mServerStorageForClientsConnectingAttempt;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::Nonce>> mPlayerNonces;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClassroomModeNetworkHandler>>      mCompanionHandler;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                          mValidatePlayerMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                         mValidatePlayerMutex;
     ::ll::TypedStorage<1, 1, bool>                                                  mAllowIncoming;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IServerNetworkController>>         mServerNetworkController;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mServerName;
@@ -309,6 +316,25 @@ public:
                                                                          mServerConfigurationJoinInfo;
     ::ll::TypedStorage<8, 128, ::Social::Events::ServerTelemetryData>    mServerTelemetryData;
     ::ll::TypedStorage<8, 256, ::ServerNetworkHandlerDependencies const> mDependencies;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::ActorUniqueID), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnPlayerDisconnected;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::NetworkIdentifierWithSubId const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnPlayerNetworkDisconnected;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::NetworkIdentifierWithSubId const&, ::BlockPos const&, uint, ::DimensionType),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mOnPlayerNetworkConnected;
     // NOLINTEND
 
 public:
@@ -334,6 +360,13 @@ public:
         ::std::string const&    payload,
         ::std::function<void()> errorCallback
     ) /*override*/;
+
+    virtual ::Bedrock::PubSub::Connector<void(::NetworkIdentifierWithSubId const&)>&
+    getOnPlayerNetworkDisconnectedConnector() /*override*/;
+
+    virtual ::Bedrock::PubSub::Connector<
+        void(::NetworkIdentifierWithSubId const&, ::BlockPos const&, uint, ::DimensionType)>&
+    getOnPlayerNetworkConnectedConnector() /*override*/;
 
     virtual void onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid) /*override*/;
 
@@ -548,6 +581,8 @@ public:
     virtual void
     handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet) /*override*/;
 
+    virtual void handle(::NetworkIdentifier const& source, ::SetPlayerFurnaceOptionsPacket const& packet) /*override*/;
+
     virtual void handle(::NetworkIdentifier const& source, ::ServerboundLoadingScreenPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::ServerboundDiagnosticsPacket const& packet) /*override*/;
@@ -671,6 +706,9 @@ public:
         ::PermissionsHandler&             permissions,
         ::Player*                         player
     );
+
+    MCAPI ::ServerPlayer*
+    _validatePrimaryPlayerForSubClient(::NetworkIdentifier const& source, ::SubClientId subClientId);
 
     MCAPI void addToDenyList(::mce::UUID const& uuid, ::std::string const& xuid);
 
@@ -820,6 +858,13 @@ public:
         ::std::string const&    payload,
         ::std::function<void()> errorCallback
     );
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::NetworkIdentifierWithSubId const&)>&
+    $getOnPlayerNetworkDisconnectedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(::NetworkIdentifierWithSubId const&, ::BlockPos const&, uint, ::DimensionType)>&
+    $getOnPlayerNetworkConnectedConnector();
 
     MCAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
 
@@ -1022,6 +1067,8 @@ public:
     MCAPI void $handle(::NetworkIdentifier const& source, ::GameTestRequestPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::SetPlayerInventoryOptionsPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetPlayerFurnaceOptionsPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundLoadingScreenPacket const& packet);
 

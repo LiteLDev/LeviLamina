@@ -94,13 +94,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mNeedToUpdateQueryableBoneOrientations;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AnimationComponent();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -148,9 +145,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
 
+#ifdef LL_PLAT_C
     MCAPI void _addAnimationToStatePlayer(
         ::HashedString const&                                    friendlyName,
         ::std::shared_ptr<::ActorAnimationControllerStatePlayer> player
@@ -235,9 +232,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::AnimationComponentArguments&& args);
-#endif
     // NOLINTEND
 
 public:

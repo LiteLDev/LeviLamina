@@ -3,13 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ESessionError.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 namespace NetherNet { struct NetworkID; }
+namespace cereal { struct SchemaWriter; }
 // clang-format on
 
 namespace NetherNet {
@@ -54,10 +57,9 @@ public:
 
     virtual void OnSpopViolation() = 0;
 
-    virtual void
-    OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) = 0;
+    virtual void OnDiscoveryResponse(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) = 0;
 
-    virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) = 0;
+    virtual ::brstd::move_only_function<bool(::cereal::SchemaWriter&, ::cereal::ContextArea)> OnDiscoveryRequest() = 0;
     // NOLINTEND
 
 public:

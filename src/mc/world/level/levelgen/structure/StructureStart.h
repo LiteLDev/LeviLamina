@@ -34,6 +34,8 @@ public:
 
     virtual int getMaxYSpawnOffset() const;
 
+    virtual bool requiresNeighborAwareBlockUpgrade() const;
+
     virtual ::std::string_view getStructureName() const = 0;
     // NOLINTEND
 
@@ -51,6 +53,8 @@ public:
     MCFOLD bool $isValid() const;
 
     MCFOLD int $getMaxYSpawnOffset() const;
+
+    MCFOLD bool $requiresNeighborAwareBlockUpgrade() const;
 
 
     // NOLINTEND

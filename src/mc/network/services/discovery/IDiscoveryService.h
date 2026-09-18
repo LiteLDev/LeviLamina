@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class Status; }
 namespace Bedrock::Services { struct EnvironmentQueryResponse; }
 // clang-format on
 
@@ -23,8 +22,6 @@ public:
     getServiceEndpoints() const = 0;
 
     virtual void reset() = 0;
-
-    virtual ::Bedrock::Http::Status const& getStatus() const = 0;
     // NOLINTEND
 };
 

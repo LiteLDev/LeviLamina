@@ -11,6 +11,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,9 +32,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentOnPlaceAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptBlockCustomComponentOnPlaceAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
+    );
     // NOLINTEND
 };
 

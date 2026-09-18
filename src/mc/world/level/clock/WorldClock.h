@@ -14,6 +14,7 @@
 // clang-format off
 class PacketSender;
 class TimeMarker;
+struct TimeMarkerError;
 struct WorldClockData;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace cereal { struct ReflectionCtx; }
@@ -28,6 +29,8 @@ public:
         RemoveTimeMarker = 2,
         Count            = 3,
     };
+
+    using AddTimeMarkerResult = ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::TimeMarker>, ::TimeMarkerError>;
 
     using OnPauseSignature = void(::std::string const&);
 
@@ -107,13 +110,23 @@ public:
 
     MCAPI void _sendSyncWorldClockState(::PacketSender& packetSender) const;
 
+    MCAPI void addTime(int time);
+
+    MCAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::TimeMarker>, ::TimeMarkerError>
+    addTimeMarker(::TimeMarker const& timeMarker, bool isVanilla);
+
     MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
+
+    MCAPI ::std::optional<::TimeMarkerError>
+    serverReloadCreatorTimeMarkers(::std::vector<::TimeMarker> const& timeMarkers);
 
 #ifdef LL_PLAT_C
     MCAPI void tick();
 #endif
 
-    MCAPI ~WorldClock();
+    MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker const> const tryGetTimeMarker(uint64 timeMarkerId) const;
+
+    MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
     // NOLINTEND
 
 public:
@@ -132,11 +145,5 @@ public:
 #endif
 
     MCAPI void* $ctor(::WorldClock const& rhs);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -12,13 +12,11 @@
 class AABB;
 class BaseGameVersion;
 class Block;
-class BlockActor;
 class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
-class ItemInstance;
 class Player;
 class Vec3;
 // clang-format on
@@ -27,26 +25,20 @@ class FenceBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
-    ) const /*override*/;
+    virtual ::AABB const&
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
+        /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual ::AABB const& getOutline(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferValue
-    ) const /*override*/;
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
 
     virtual bool addCollisionShapes(
         ::Block const&                                     block,
@@ -56,8 +48,6 @@ public:
         ::std::vector<::AABB>&                             inoutBoxes,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
-
-    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
@@ -93,6 +83,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCFOLD static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
@@ -102,25 +98,21 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::AABB& bufferAABB
     ) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI ::AABB const& $getOutline(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferValue
-    ) const;
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI bool $addCollisionShapes(
         ::Block const&                                     block,
@@ -130,8 +122,6 @@ public:
         ::std::vector<::AABB>&                             inoutBoxes,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
-
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 

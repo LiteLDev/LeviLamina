@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
-#include "mc/client/realms/RealmsPurchaseFailureReason.h"
-#include "mc/client/realms/RealmsPurchaseState.h"
+#include "mc/client/realms/LegacyRealmsPurchaseFailureReason.h"
+#include "mc/client/realms/LegacyRealmsPurchaseState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -21,8 +21,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::LegacyRealmsPurchase>> mRealmsPurchase;
     ::ll::TypedStorage<1, 1, bool>                                               mPurchaseDisabledDueToStoreVersion;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseState>                      mState;
-    ::ll::TypedStorage<4, 4, ::Realms::RealmsPurchaseFailureReason>              mFailureReason;
+    ::ll::TypedStorage<4, 4, ::Realms::LegacyRealmsPurchaseState>                mState;
+    ::ll::TypedStorage<4, 4, ::Realms::LegacyRealmsPurchaseFailureReason>        mFailureReason;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mStateChangedSubscription;
     ::ll::TypedStorage<1, 1, bool>                                               mIsDirty;
     // NOLINTEND
@@ -47,11 +47,11 @@ public:
         int                                               expectedStoreVersion
     );
 
-    MCFOLD ::Realms::RealmsPurchaseFailureReason getFailureReason() const;
+    MCFOLD ::Realms::LegacyRealmsPurchaseFailureReason getFailureReason() const;
 
-    MCAPI ::Realms::RealmsPurchaseState getState() const;
+    MCAPI ::Realms::LegacyRealmsPurchaseState getState() const;
 
-    MCFOLD bool isPurchaseDisabledDueToStoreVersion() const;
+    MCAPI bool isPurchaseDisabledDueToStoreVersion() const;
     // NOLINTEND
 
 public:

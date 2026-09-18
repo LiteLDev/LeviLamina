@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     RenderDescription& operator=(RenderDescription const&);
+    RenderDescription(RenderDescription const&);
     RenderDescription();
 
 #endif
@@ -33,7 +34,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI RenderDescription(::SharedTypes::Beta::AtomicClientEntity::RenderDescription const&);
+    MCAPI RenderDescription(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
 
     MCAPI ::SharedTypes::Beta::AtomicClientEntity::RenderDescription&
     operator=(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
@@ -46,7 +47,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::Beta::AtomicClientEntity::RenderDescription const&);
+    MCAPI void* $ctor(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
 #endif
     // NOLINTEND
 

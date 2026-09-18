@@ -71,6 +71,9 @@ public:
     MCNAPI void
     _tickBlockAnimationsJavaParity(::BlockSource& region, ::Random& random, ::Vec3 const& centerPosition) const;
 
+    MCNAPI void
+    _tickBlockAnimationsOriginalBedrock(::BlockSource& region, ::Random& random, ::Vec3 const& centerPosition) const;
+
     MCNAPI void _tickBlockAnimationsTimeLimitedJavaParity(
         ::BlockSource&                                                         region,
         ::Random&                                                              random,

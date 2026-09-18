@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
 #include "mc/deps/shared_types/persona/PieceType.h"
 #include "mc/deps/shared_types/v1_26_40/actor/TintColor.h"
 
@@ -52,9 +51,8 @@ public:
         8,
         144,
         ::std::optional<::std::variant<::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor, ::std::string>>>
-                                                                       mTintBaseColor;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                    mAllowTintOverride;
-    ::ll::TypedStorage<8, 80, ::std::optional<::cereal::DynamicValue>> mColorSwatches;
+                                                    mTintBaseColor;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mAllowTintOverride;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
@@ -68,8 +66,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI PersonaPieceMeta(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&&);
-
     MCAPI PersonaPieceMeta(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&);
 
     MCAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&
@@ -106,8 +102,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&);
 #endif
     // NOLINTEND

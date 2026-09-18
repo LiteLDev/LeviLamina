@@ -18,7 +18,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace Bedrock::Threading { class Mutex; }
 namespace GeometryAtlas { class IItemTile; }
 namespace GeometryAtlas { class IPaperDollTile; }
 namespace GeometryAtlas { class IRenderContext; }
@@ -100,8 +99,7 @@ public:
         ::ll::TypedStorage<
             8,
             120,
-            ::Bedrock::Threading::
-                BasicLockbox<::std::deque<::GeometryAtlas::RenderableUpdateCommand>, ::Bedrock::Threading::Mutex>>
+            ::Bedrock::Threading::BasicLockbox<::std::deque<::GeometryAtlas::RenderableUpdateCommand>, ::std::mutex>>
                                                                                            mCommands;
         ::ll::TypedStorage<8, 24, ::std::vector<::GeometryAtlas::RenderableUpdateCommand>> mFutureCommands;
         ::ll::TypedStorage<

@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mValid;
+    ::ll::TypedStorage<1, 1, bool> mIsAbandoned;
     // NOLINTEND
 
 public:
@@ -19,6 +20,8 @@ public:
 
     virtual bool isValid() const /*override*/;
 
+    virtual bool requiresNeighborAwareBlockUpgrade() const /*override*/;
+
     virtual ::std::string_view getStructureName() const /*override*/;
     // NOLINTEND
 
@@ -26,6 +29,12 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isValid() const;
+
+#ifdef LL_PLAT_S
+    MCAPI bool $requiresNeighborAwareBlockUpgrade() const;
+#else // LL_PLAT_C
+    MCFOLD bool $requiresNeighborAwareBlockUpgrade() const;
+#endif
 
     MCAPI ::std::string_view $getStructureName() const;
 

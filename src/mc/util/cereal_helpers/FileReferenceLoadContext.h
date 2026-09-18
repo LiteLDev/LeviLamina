@@ -20,22 +20,6 @@ public:
     FileReferenceLoadContext& operator=(FileReferenceLoadContext const&);
     FileReferenceLoadContext(FileReferenceLoadContext const&);
     FileReferenceLoadContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~FileReferenceLoadContext();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace CerealHelpers

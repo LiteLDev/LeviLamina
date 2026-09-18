@@ -19,6 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float> mMinRange;
     ::ll::TypedStorage<
         8,
         48,

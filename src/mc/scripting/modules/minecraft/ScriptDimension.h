@@ -34,6 +34,7 @@ namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptUnloadedChunksError; }
 namespace ScriptModuleMinecraft { struct ScriptWorldSoundOptions; }
+namespace ScriptModuleMinecraft::Poi { struct ScriptManager; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
@@ -89,8 +90,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Dimension*>>   mDimension;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::Poi::ScriptManager>>>
+                                                            mPoiManager;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Dimension*>> mDimension;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptDimension& operator=(ScriptDimension const&);
+    ScriptDimension(ScriptDimension const&);
+    ScriptDimension();
 
 public:
     // virtual functions
@@ -149,13 +161,19 @@ public:
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getEntitiesAtBlockLocation_V010(::BlockPos const& pos) const;
 
+    MCAPI ::std::string getId() const;
+
     MCAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getLightLevel(::Vec3 const& location) const;
 
+    MCAPI ::std::string getLocalizationKey() const;
+
     MCAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getSkyLightLevel(::Vec3 const& location) const;
+
+    MCAPI ::ScriptModuleMinecraft::ScriptDimension& operator=(::ScriptModuleMinecraft::ScriptDimension&& rhs);
 
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundInstance>,

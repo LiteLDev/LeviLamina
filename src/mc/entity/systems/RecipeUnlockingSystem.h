@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class RecipeUnlockingSystem {
@@ -30,10 +29,4 @@ public:
         InventoryChangedData(InventoryChangedData const&);
         InventoryChangedData();
     };
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
 };

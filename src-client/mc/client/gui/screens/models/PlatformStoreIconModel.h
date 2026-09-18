@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading { class Mutex; }
-// clang-format on
-
 class PlatformStoreIconModel {
 public:
     // PlatformStoreIconModel inner types declare
@@ -35,19 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlatformStoreIconModel();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlatformStoreIconModel(::SubClientId subClientId);
-
     MCAPI void _updatePlatformStoreIcon();
-
-    MCAPI void setIsInGameBrowsing(bool isInGameBrowsing);
-
-    MCAPI ~PlatformStoreIconModel();
     // NOLINTEND
 
 public:
@@ -59,18 +44,6 @@ public:
         unordered_map<::SubClientId, ::std::vector<::PlatformStoreIconModel::PlatformStoreIconVisibility*>>&
         sPlatformStoreIconVisibilityStacks();
 
-    MCAPI static ::Bedrock::Threading::Mutex& sStacksMutex();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientId subClientId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static ::std::mutex& sStacksMutex();
     // NOLINTEND
 };

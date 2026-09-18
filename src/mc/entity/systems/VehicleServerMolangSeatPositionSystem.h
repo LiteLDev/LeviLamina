@@ -12,7 +12,6 @@ class RideableComponent;
 class StrictEntityContext;
 struct PassengerComponent;
 struct PositionPassengerRequestComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -27,7 +26,5 @@ public:
         ::PositionPassengerRequestComponent& positionPassengerRequestComponent,
         ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

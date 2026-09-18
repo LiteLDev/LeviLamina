@@ -10,6 +10,7 @@
 #include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ESessionError.h"
+#include "mc/deps/services/Discriminated.h"
 #include "mc/editor/services/playtest/SessionResult.h"
 #include "mc/network/services/signaling/ISignalingServiceConfigProvider.h"
 #include "mc/platform/ErrorInfo.h"
@@ -17,7 +18,6 @@
 #include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/brstd/promise.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/platform/threading/UniqueLock.h"
 #include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
 #include "mc/world/level/FileArchiver.h"
@@ -25,6 +25,7 @@
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
+class EditorNetworkPacket;
 class Pack;
 class ResourcePack;
 class Scheduler;
@@ -37,6 +38,7 @@ struct AsyncJoinDeny;
 struct MinecraftServiceKeyInfo;
 struct MinecraftServiceKeysMetadata;
 struct PackSourceLoadResult;
+struct PingedCompatibleServer;
 struct SignalingClientConfiguration;
 struct TaskStartInfo;
 namespace Bedrock::Http { class HeaderCollection; }
@@ -45,6 +47,28 @@ namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http { struct Url; }
 namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
 namespace Bedrock::Services { struct EnvironmentQueryResponse; }
+namespace Bedrock::Services { struct ServiceError; }
+namespace Bedrock::Services::discovery::model { struct EnvironmentQueryResponseData; }
+namespace Bedrock::Services::discovery::model { struct ManagedServiceEnvironmentMetadata; }
+namespace Bedrock::Services::gatherings::model { struct CheckPartyEligibilityResponseData; }
+namespace Bedrock::Services::gatherings::model { struct ExperiencePlayerCountResponseData; }
+namespace Bedrock::Services::gatherings::model { struct GetAllExperienceDiscoveryMetadataResponseData; }
+namespace Bedrock::Services::gatherings::model { struct JoinResponseData; }
+namespace Bedrock::Services::layout::model { struct BulkFabsResponseData; }
+namespace Bedrock::Services::layout::model { struct FabChildren; }
+namespace Bedrock::Services::layout::model { struct LayoutResponseData; }
+namespace Bedrock::Services::layout::model { struct PageableDataBase; }
+namespace Bedrock::Services::layout::model { struct PageableExperiences; }
+namespace Bedrock::Services::layout::model { struct PageableStandardMarketplaceItemPreview; }
+namespace Bedrock::Services::layout::model { struct SessionConfig; }
+namespace Bedrock::Services::multiplayer::model { struct Party; }
+namespace Bedrock::Services::multiplayer::model { struct PartyInvite; }
+namespace Bedrock::Services::multiplayer::model { struct PartySummary; }
+namespace Bedrock::Services::safety::model { struct RoomResponseData; }
+namespace Bedrock::Services::safety::model { struct ScanResponseData; }
+namespace Bedrock::Services::safety_client::model { struct ImageValidationResult; }
+namespace Bedrock::Services::safety_client::model { struct SkinValidationResult; }
+namespace Bedrock::Services::safety_client::model { struct TextValidationResult; }
 namespace Bedrock::Threading { struct CachedAsyncRetry; }
 namespace Json { class Value; }
 namespace JsonRpc { class JsonRpcError; }
@@ -53,6 +77,7 @@ namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
 namespace PackCommand { struct PackCommandResult; }
 namespace RepositoryLoading { struct PackModifications; }
 namespace Safety { struct TextFilterResult; }
+namespace Social::Events { class Event; }
 namespace DedicatedServerInitialization { struct DedicatedServerInitResult; }
 namespace DedicatedServerInitialization { struct NetworkSystemDep; }
 namespace DedicatedServerInitialization { struct ServerInstanceDep; }
@@ -63,11 +88,14 @@ public:
     // TaskGroup inner types declare
     // clang-format off
     template<typename T0> class ThenableBase;
+    class unordered_map;
     // clang-format on
 
     // TaskGroup inner types define
     template <typename T0>
     class ThenableBase {};
+
+    class unordered_map {};
 
 public:
     // member variables
@@ -76,14 +104,14 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::WorkerPool>> mWorkers;
     ::ll::TypedStorage<8, 32, ::std::string>                            mName;
     ::ll::TypedStorage<1, 1, bool>                                      mCheckOwnerThread;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>              mLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                             mLock;
     ::ll::TypedStorage<4, 4, ::std::atomic<::TaskGroupState>>           mState;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BackgroundTaskBase>>  mTasks;
     ::ll::TypedStorage<8, 8, uint64>                                    mTaskCount;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BackgroundTaskBase>>  mEnumCurr;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BackgroundTaskBase>>  mEnumNext;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>        mResumeTaskHandle;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>              mResumeTaskMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                             mResumeTaskMutex;
     // NOLINTEND
 
 public:
@@ -130,7 +158,7 @@ public:
     MCAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::brstd::promise<void>* workStarted);
 
     MCAPI void _forAllTasks(
-        ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&        lock,
+        ::Bedrock::Threading::UniqueLock<::std::mutex>&                       lock,
         ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
     );
 
@@ -144,11 +172,7 @@ public:
 
     MCAPI bool isEmpty() const;
 
-#ifdef LL_PLAT_C
     MCAPI void resume();
-#endif
-
-    MCAPI void sync_DEPRECATED_ASK_TOMMO(::std::function<void()> waitFn);
     // NOLINTEND
 
 public:

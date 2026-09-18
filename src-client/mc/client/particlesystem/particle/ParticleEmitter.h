@@ -15,7 +15,7 @@ class ParticleRenderData;
 class Vec3;
 class WeakEntityRef;
 struct ActorUniqueID;
-namespace ParticleSystem { struct ActorBindInfo; }
+namespace ParticleSystem { struct EntityBindInfo; }
 // clang-format on
 
 namespace ParticleSystem {
@@ -26,16 +26,16 @@ public:
     // NOLINTBEGIN
     virtual ~ParticleEmitter() = default;
 
-    virtual void setActorBindInfo(
+    virtual void setEntityBindInfo(
         ::Dimension*          dimension,
         ::ActorUniqueID       actorId,
         ::HashedString const& locator,
         ::Vec3 const&         offset
     ) = 0;
 
-    virtual void setActorBindInfo(::WeakEntityRef actorRef, ::HashedString const& locator, ::Vec3 const& offset) = 0;
+    virtual void setEntityBindInfo(::WeakEntityRef entityRef, ::HashedString const& locator, ::Vec3 const& offset) = 0;
 
-    virtual void setActorBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset) = 0;
+    virtual void setEntityBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset) = 0;
 
     virtual void setEnableUpdate(bool enable) = 0;
 
@@ -82,7 +82,7 @@ public:
 
     virtual void setManualParticleEmission(bool manualParticleEmission) = 0;
 
-    virtual ::ParticleSystem::ActorBindInfo getActorBindInfo() const = 0;
+    virtual ::ParticleSystem::EntityBindInfo getEntityBindInfo() const = 0;
     // NOLINTEND
 
 public:

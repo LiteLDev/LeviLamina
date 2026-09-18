@@ -24,13 +24,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>> mSettingsRegistry;
     ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>               mCommonProperties;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                 mValue;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>           mValue;
     ::ll::TypedStorage<
         8,
         120,
-        ::OreUI::PropertyVector<
-            ::OreUI::SettingsBooleanConfirmationRequest,
-            ::std::allocator<::OreUI::SettingsBooleanConfirmationRequest>>>
+        ::OreUI::
+            PropertyVector<::OreUI::SettingsBooleanConfirmationRequest, ::OreUI::SettingsBooleanConfirmationRequest>>
                                                                mConfirmationRequests;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSettingsChangedSubscription;
     // NOLINTEND

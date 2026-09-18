@@ -157,6 +157,7 @@ namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Automation { class AutomationClient; }
 namespace Bedrock::Http { class Status; }
+namespace Bedrock::Profiling { struct IProfilingOrchestratorProvider; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Editor { class IEditorManager; }
@@ -362,7 +363,7 @@ public:
 
     virtual void refreshScreenSizeData() = 0;
 
-    virtual void onScreenSizeChanged(int width, int height, float forcedGuiScale) = 0;
+    virtual void onScreenSizeChanged(int width, int height) = 0;
 
     virtual void onGuiScaleOffsetChanged() = 0;
 
@@ -389,6 +390,8 @@ public:
     virtual ::IMinecraftEventing& getEventing() const = 0;
 
     virtual ::IConnectionEventing& getConnectionEventing() const = 0;
+
+    virtual ::Bedrock::Profiling::IProfilingOrchestratorProvider& getProfilingOrchestratorProvider() const = 0;
 
     virtual ::FontHandle getFontHandle() const = 0;
 
@@ -725,7 +728,7 @@ public:
 
     virtual void onMobEffectsChange() = 0;
 
-    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) = 0;
+    virtual void setUISize(int w, int h) = 0;
 
     virtual void forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)> callback) = 0;
 
@@ -981,9 +984,9 @@ public:
 
     virtual double getServerConnectionTime() const = 0;
 
-    virtual void setServerPingTime(int pingTime) = 0;
+    virtual void setServerPingTime(::std::chrono::milliseconds pingTime) = 0;
 
-    virtual int getServerPingTime() const = 0;
+    virtual ::std::chrono::milliseconds getServerPingTime() const = 0;
 
     virtual void setDefaultPlayscreenTab(::PlayScreenDefaultTab defaultTab) = 0;
 

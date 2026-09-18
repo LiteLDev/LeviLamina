@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/item/BucketFillType.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
 
@@ -63,7 +64,7 @@ public:
 
     virtual bool canUseOnSimTick() const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual void releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const /*override*/;
 
@@ -96,9 +97,14 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -117,6 +123,8 @@ public:
 
     MCAPI bool
     _supportsWaterlessEntity(::Actor const& entity, ::HashedString& bucketType, bool const onlyCheckActorType) const;
+
+    MCAPI bool _takePowderSnow(::ItemStack& item, ::Actor& actor, ::BlockPos const& pos) const;
 
     MCAPI bool readBucketEntitySaveData(
         ::BlockSource&        region,
@@ -149,7 +157,7 @@ public:
 
     MCAPI bool $canUseOnSimTick() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
@@ -180,8 +188,14 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

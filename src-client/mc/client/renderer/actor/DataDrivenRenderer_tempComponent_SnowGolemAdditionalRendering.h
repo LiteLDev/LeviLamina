@@ -22,10 +22,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenRenderer>> mRenderer;
-    ::ll::TypedStorage<8, 616, ::mce::Mesh>                          mHead;
+    ::ll::TypedStorage<8, 632, ::mce::Mesh>                          mHead;
     ::ll::TypedStorage<8, 8, ::BlockTessellator*>                    mTessellator;
     ::ll::TypedStorage<4, 64, ::Matrix>                              mobTransform;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering();
 
 public:
     // virtual functions
@@ -37,6 +41,20 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering(
+        ::std::shared_ptr<::DataDrivenRenderer> renderer
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
     // NOLINTEND
 
 public:

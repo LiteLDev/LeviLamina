@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/audio/SoundPauseSource.h"
 #include "mc/deps/audio/SoundPlayerInterface.h"
-#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,7 +43,7 @@ public:
 
     virtual bool isPlayingMusic(::Core::PathView) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicPath() /*override*/;
+    virtual ::Core::PathView getCurrentlyPlayingMusicPath() const /*override*/;
 
     virtual bool getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const /*override*/;
 
@@ -97,6 +96,9 @@ public:
 
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const /*override*/;
 
+    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(::ServerSoundHandle) const
+        /*override*/;
+
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const /*override*/;
     // NOLINTEND
 
@@ -121,7 +123,7 @@ public:
 
     MCNAPI bool $isPlayingMusic(::Core::PathView) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> const& $getCurrentlyPlayingMusicPath();
+    MCNAPI ::Core::PathView $getCurrentlyPlayingMusicPath() const;
 
     MCNAPI bool $getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const;
 
@@ -172,6 +174,8 @@ public:
     MCNAPI uint64 $playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
 
     MCNAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64) const;
+
+    MCNAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(::ServerSoundHandle) const;
 
     MCNAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64) const;
 

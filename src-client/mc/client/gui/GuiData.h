@@ -20,7 +20,6 @@
 #include "mc/deps/input/RectangleArea.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/util/HudVisibility.h"
 #include "mc/util/ProfanityFilterContext.h"
 #include "mc/world/ContainerID.h"
@@ -171,16 +170,16 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mShowProgress;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mTipMessage;
     ::ll::TypedStorage<4, 4, float>                                                   mTipMessageLength;
-    ::ll::TypedStorage<8, 616, ::mce::Mesh>                                           mRcFeedbackOuter;
-    ::ll::TypedStorage<8, 616, ::mce::Mesh>                                           mRcFeedbackInner;
-    ::ll::TypedStorage<8, 616, ::mce::Mesh>                                           mVignette;
+    ::ll::TypedStorage<8, 632, ::mce::Mesh>                                           mRcFeedbackOuter;
+    ::ll::TypedStorage<8, 632, ::mce::Mesh>                                           mRcFeedbackInner;
+    ::ll::TypedStorage<8, 632, ::mce::Mesh>                                           mVignette;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mInvFillMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mCursorMat;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger>>      mDevConsoleLogger;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                 mLastTickTime;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::GuiMessage>>> mDelayedMessages;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                           mQueuedDevConsoleMessages;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                            mQueuedDevMessagesMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                           mQueuedDevMessagesMutex;
     ::ll::TypedStorage<1, 1, bool>                                                    mUseEditorGuiScale;
     ::ll::TypedStorage<4, 16, ::RectangleArea>                                        mHUDHotbarRectangle;
     ::ll::TypedStorage<1, 1, ::CoordinateCaptureType>                                 mCoordinateCaptureType;
@@ -218,7 +217,6 @@ public:
     MCAPI float calculateGuiScale(
         ::Vec2 const&                  totalScreenSize,
         ::Vec2 const&                  safeZone,
-        float                          forcedGuiScale,
         ::cg::math::Rect<float> const& clientViewportModifiers
     );
 

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20 {
@@ -25,12 +24,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                            mVerticalThrowMul;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>                           mThrowSound;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_120::ActorDefinitionTrigger>> mOnItemThrowTriggers;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

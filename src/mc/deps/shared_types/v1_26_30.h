@@ -14,11 +14,14 @@ namespace SharedTypes::v1_26_30 { struct OwnerHurtTargetGoalDefinition; }
 namespace SharedTypes::v1_26_30 { struct ShareItemsGoalDefinition; }
 namespace SharedTypes::v1_26_30 { struct SneezeGoalDefinition; }
 namespace SharedTypes::v1_26_30 { struct TargetWhenPushedGoalDefinition; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_30 {
 // functions
 // NOLINTBEGIN
+MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+
 MCAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                                    legacyGoal,
     ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition& sharedGoal

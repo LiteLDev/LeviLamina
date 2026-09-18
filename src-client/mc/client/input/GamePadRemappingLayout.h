@@ -38,7 +38,12 @@ public:
 
     virtual int getAdjustedKey(int key) const /*override*/;
 
-    virtual ::std::string getKeySpriteLocation(int key, ::IconSize iconSize) const /*override*/;
+    virtual ::std::string getKeySpriteLocation(
+        int        key,
+        bool       checkUserConfiguredSwap,
+        bool       checkPlatformButtonSwapping,
+        ::IconSize iconSize
+    ) const /*override*/;
 
     virtual ::std::string getKeySpriteLocation(::Keymapping const& keyMapping) const /*override*/;
 
@@ -48,14 +53,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string
-    _getKeySpriteLocationInternal(int key, bool checkUserConfiguredButtonSwapping, ::IconSize iconSize) const;
+    MCAPI ::std::string _getKeySpriteLocationInternal(
+        int        key,
+        bool       checkUserConfiguredButtonSwapping,
+        bool       checkPlatformButtonSwapping,
+        ::IconSize iconSize
+    ) const;
 
     MCAPI ::std::string const _getMappedKeyNameInternal(int key, bool const checkUserConfiguredButtonSwapping) const;
 
     MCAPI void _swapGamepadKeyBindings(int key1, int key2);
 
-    MCAPI ::std::string getKeySpriteName(int key) const;
+    MCAPI ::std::string getKeySpriteName(int key, bool checkPlatformButtonSwapping) const;
 
     MCAPI ::std::string getKeyTextName(int key, bool checkUserConfiguredButtonSwapping) const;
     // NOLINTEND
@@ -75,7 +84,12 @@ public:
 
     MCAPI int $getAdjustedKey(int key) const;
 
-    MCAPI ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
+    MCAPI ::std::string $getKeySpriteLocation(
+        int        key,
+        bool       checkUserConfiguredSwap,
+        bool       checkPlatformButtonSwapping,
+        ::IconSize iconSize
+    ) const;
 
     MCAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
 

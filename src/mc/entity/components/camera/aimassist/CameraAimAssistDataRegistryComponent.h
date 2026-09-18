@@ -6,7 +6,6 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,9 +36,9 @@ public:
         8,
         64,
         ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>>
-                                                           mCategories;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mRegistriesLock;
-    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>        mEventing;
+                                                    mCategories;
+    ::ll::TypedStorage<8, 80, ::std::mutex>         mRegistriesLock;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&> mEventing;
     // NOLINTEND
 
 public:

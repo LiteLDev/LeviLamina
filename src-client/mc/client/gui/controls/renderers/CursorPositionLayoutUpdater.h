@@ -34,4 +34,10 @@ public:
 
     MCFOLD void $render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int);
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

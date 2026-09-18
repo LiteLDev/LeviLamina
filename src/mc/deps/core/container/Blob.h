@@ -10,9 +10,9 @@ public:
     using delete_function = void (*)(value_type*);
     using size_type       = std::size_t;
     using pointer         = value_type*;
-    using const_pointer   = const value_type*;
+    using const_pointer   = value_type const*;
     using iterator        = value_type*;
-    using const_iterator  = const value_type*;
+    using const_iterator  = value_type const*;
 
     struct Deleter {
         delete_function m_func;
@@ -34,12 +34,12 @@ private:
 public:
     LLNDAPI Blob() noexcept;
     LLNDAPI explicit Blob(size_type size);
-    LLNDAPI Blob(const value_type* ptr, size_type size);
-    LLNDAPI Blob(const Blob&);
+    LLNDAPI Blob(value_type const* ptr, size_type size);
+    LLNDAPI Blob(Blob const&);
     LLNDAPI Blob(Blob&&) noexcept;
     LLNDAPI Blob(pointer_type&& ptr, size_type size) noexcept;
     LLAPI ~Blob();
-    LLAPI Blob& operator=(const Blob&);
+    LLAPI Blob& operator=(Blob const&);
     LLAPI Blob& operator=(Blob&& rhs) noexcept;
 
     LLNDAPI iterator       begin() noexcept;
@@ -57,7 +57,7 @@ public:
     LLNDAPI pointer_type  release() noexcept;
 
     LLNDAPI gsl::span<unsigned char> getSpan();
-    LLNDAPI gsl::span<const unsigned char> getSpan() const;
+    LLNDAPI gsl::span<unsigned char const> getSpan() const;
 
     LLAPI void fillBlob(std::uint8_t val);
     LLAPI void swap(Blob& other) noexcept;

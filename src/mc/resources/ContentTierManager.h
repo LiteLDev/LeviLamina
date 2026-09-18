@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/IContentTierManager.h"
+#include "mc/deps/core/utility/HardwareMemoryTier.h"
+#include "mc/server/IContentTierManager.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk44461e;
-    ::ll::UntypedStorage<1, 1>  mUnkf4791a;
+    ::ll::UntypedStorage<1, 1>  mUnkb69c86;
     // NOLINTEND
 
 public:
@@ -35,15 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
-
-    MCNAPI void _calculateMemoryTier();
+#ifdef LL_PLAT_C
+    MCNAPI ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible, ::HardwareMemoryTier tier);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible, ::HardwareMemoryTier tier);
+#endif
     // NOLINTEND
 
 public:

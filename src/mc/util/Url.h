@@ -21,6 +21,8 @@ MCNAPI ::std::string append(::std::string const& lhs, ::std::string const& rhs);
 #ifdef LL_PLAT_C
 MCNAPI ::std::string appendQueryString(::std::string const& url, ::std::string const& query);
 
+MCNAPI ::std::string assembleUrl(::Util::Url::ComponentsView const& components);
+
 MCNAPI ::std::string buildMailtoUrl(::std::string const& subject, ::std::string const& body);
 
 MCNAPI bool doesRouteMatch(::std::string_view routePattern, ::std::string_view route);
@@ -48,6 +50,8 @@ MCNAPI bool
 isAddressWithinCIDRMasks_IPv6(::std::string const& ipAddrStr, ::std::vector<::std::string> const& ipAddressCIDRMasks);
 
 MCNAPI bool isValidHostname(::std::string const& address);
+
+MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 #endif
 
 MCNAPI bool isValidIPv4(::std::string_view ipAddrStr);
@@ -62,6 +66,8 @@ MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
 
 #ifdef LL_PLAT_C
 MCNAPI ::std::string setQueryParameter(::std::string_view url, ::std::string_view key, ::std::string_view value);
+
+MCNAPI bool startsWithMatchingFullPathSegments(::std::string_view route, ::std::string_view start);
 
 MCNAPI ::std::string stripProtocol(::std::string const& url);
 

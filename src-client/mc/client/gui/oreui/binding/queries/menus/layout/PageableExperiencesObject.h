@@ -18,11 +18,12 @@ class PageableExperiencesObject : public ::OreUI::PropertyObject<::OreUI::Pageab
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mContinuationToken;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mContinuationToken;
     ::ll::TypedStorage<
         8,
         120,
-        ::OreUI::PropertyVector<::OreUI::ExperiencePreviewObject, ::std::allocator<::OreUI::ExperiencePreviewObject>>>
+        ::OreUI::PropertyVector<::OreUI::ExperiencePreviewObject, ::OreUI::ExperiencePreviewObject>>
         mExperiences;
     // NOLINTEND
 };

@@ -8,8 +8,8 @@ struct ColumnRange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> floor;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>> ceiling;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> start;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> end;
     // NOLINTEND
 };
 

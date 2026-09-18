@@ -13,8 +13,8 @@ class SettingsId : public ::OreUI::PropertyObject<::OreUI::SettingsId> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>         mId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::SettingsType>> mType;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>                 mId;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::SettingsType, ::OreUI::SettingsType>> mType;
     // NOLINTEND
 };
 

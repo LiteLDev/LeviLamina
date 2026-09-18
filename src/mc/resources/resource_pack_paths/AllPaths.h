@@ -28,6 +28,18 @@ public:
     AllPaths& operator=(AllPaths const&);
     AllPaths(AllPaths const&);
     AllPaths();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~AllPaths();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace ResourcePackPaths

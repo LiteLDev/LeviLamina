@@ -17,6 +17,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class CompoundTag;
 class DisplayObjective;
 class Objective;
 class ObjectiveCriteria;
@@ -74,7 +75,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~Scoreboard();
+#else // LL_PLAT_C
     virtual ~Scoreboard() = default;
+#endif
 
     virtual ::DisplayObjective const* setDisplayObjective(
         ::std::string const&       displaySlotName,
@@ -116,6 +121,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Scoreboard(::CommandSoftEnumRegistry registry);
 
+#ifdef LL_PLAT_S
+    MCAPI void _addLoadedCriteria(::std::unique_ptr<::ObjectiveCriteria> newCriteria);
+
+    MCAPI void _addLoadedObjective(::std::unique_ptr<::Objective> newObjective);
+#endif
+
     MCAPI ::Objective*
     addObjective(::std::string const& name, ::std::string const& displayName, ::ObjectiveCriteria const& criteria);
 
@@ -152,16 +163,26 @@ public:
 
     MCAPI ::ScoreboardId const& getScoreboardId(::Actor const& entity) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::ScoreboardId const& getScoreboardId(::ActorUniqueID const& entityId) const;
+#endif
 
     MCAPI ::ScoreboardId const& getScoreboardId(::std::string const& name) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::std::vector<::ScoreboardId> getTrackedIds() const;
+
+    MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::CompoundTag const& loadedData);
+#endif
 
     MCAPI ::ScoreboardIdentityRef const&
     registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
     MCAPI bool removeObjective(::Objective* objective);
+
+#ifdef LL_PLAT_S
+    MCAPI void removeScoreListener(::Player const& player);
+#endif
 
     MCAPI void removeScoreListener(::Player const& player, ::std::string const& objective);
 
@@ -191,6 +212,14 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $dtor();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::DisplayObjective const* $setDisplayObjective(
@@ -213,11 +242,11 @@ public:
 
     MCAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
 
-    MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
+    MCFOLD void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 
     MCFOLD void $onPlayerJoined(::Player const& player);
 
-    MCAPI void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
+    MCFOLD void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
 
     MCFOLD void $tick();
 

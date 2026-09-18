@@ -11,7 +11,6 @@
 class Actor;
 class CommandOrigin;
 class CommandOutput;
-class CommandRegistry;
 class Player;
 // clang-format on
 
@@ -37,12 +36,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:

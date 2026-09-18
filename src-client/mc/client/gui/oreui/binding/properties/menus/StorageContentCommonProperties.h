@@ -17,11 +17,8 @@ struct StorageContentCommonProperties {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>> mNumberOfSelectedItems;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::StorageContentItem, ::std::allocator<::OreUI::StorageContentItem>>>
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>> mNumberOfSelectedItems;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::StorageContentItem, ::OreUI::StorageContentItem>>
         mContentItems;
     // NOLINTEND
 };

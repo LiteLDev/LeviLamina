@@ -13,6 +13,7 @@ namespace ScriptModuleMinecraft { class ScriptCustomCommandRegistry; }
 namespace ScriptModuleMinecraft { class ScriptDimensionRegistry; }
 namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptSpawnRulesRegistry; }
+namespace ScriptModuleMinecraft { class ScriptWorldClockRegistry; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -36,6 +37,8 @@ public:
             mCustomCommandRegistry;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionRegistry>>
         mDimensionRegistry;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRegistry>>
+        mWorldClockRegistry;
     // NOLINTEND
 
 public:

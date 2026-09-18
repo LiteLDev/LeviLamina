@@ -45,7 +45,9 @@ public:
 
     MCAPI bool operator==(::StructureSettings const& rhs) const;
 
-    MCFOLD void setPaletteName(::std::string paletteName);
+    MCAPI void setPaletteName(::std::string paletteName);
+
+    MCAPI void setPivot(::Vec3 const& pivot);
 
     MCAPI ~StructureSettings();
     // NOLINTEND

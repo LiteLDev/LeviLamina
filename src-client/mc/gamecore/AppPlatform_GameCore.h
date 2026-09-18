@@ -25,6 +25,7 @@ namespace Bedrock { class Platform_GameCore; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class Path; }
+namespace dragon::platform { struct SurfaceParameters; }
 // clang-format on
 
 class AppPlatform_GameCore : public ::AppPlatformWindows {
@@ -161,7 +162,7 @@ public:
 
     virtual bool isWebviewSupported() const /*override*/;
 
-    virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const /*override*/;
+    virtual ::dragon::platform::SurfaceParameters getRenderSurfaceParameters() const /*override*/;
 
     virtual bool isLANAvailable() const /*override*/;
 
@@ -177,6 +178,8 @@ public:
     virtual bool isHandheldDevice() const;
 
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
+
+    virtual ::std::unique_ptr<::SecureStorage> getSharedSecureStorage() /*override*/;
 
     virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) /*override*/;
 
@@ -307,7 +310,7 @@ public:
 
     MCFOLD bool $isWebviewSupported() const;
 
-    MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
+    MCAPI ::dragon::platform::SurfaceParameters $getRenderSurfaceParameters() const;
 
     MCAPI bool $isLANAvailable() const;
 
@@ -324,6 +327,8 @@ public:
 
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
+    MCAPI ::std::unique_ptr<::SecureStorage> $getSharedSecureStorage();
+
     MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
     MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
@@ -332,6 +337,6 @@ public:
 
     MCAPI int $getPlatformDpi() const;
 
-    MCAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
+    MCFOLD ::Bedrock::CommonPlatform* $getPlatformShim() const;
     // NOLINTEND
 };

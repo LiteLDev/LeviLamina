@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDamageSource.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,8 @@ class ActorDamageByBlockSource : public ::ActorDamageSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>    mBlock;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mBlockPos;
     // NOLINTEND
 
 public:

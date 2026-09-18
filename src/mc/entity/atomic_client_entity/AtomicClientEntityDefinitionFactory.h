@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk62e2ee;
-    ::ll::UntypedStorage<8, 264> mUnkf1f7b6;
+    ::ll::UntypedStorage<8, 272> mUnkf1f7b6;
     // NOLINTEND
 
 #ifdef LL_PLAT_S

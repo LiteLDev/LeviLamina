@@ -101,6 +101,20 @@ namespace SharedTypes::v1_26_40 { struct OnTargetAcquiredDefinition; }
 namespace SharedTypes::v1_26_40 { struct OnTargetEscapeDefinition; }
 namespace SharedTypes::v1_26_40 { struct OnWakeWithOwnerDefinition; }
 namespace SharedTypes::v1_26_40 { struct RangedAttackGoalDefinition; }
+namespace SharedTypes::v1_26_50 { struct AngerLevelComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct BarterComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct BossComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct CollisionBoxComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct ExhaustionComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct FlockingComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct GameEventMovementTrackingComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct GrowsCropComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct HomeComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct InsomniaComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct InstantDespawnComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct LegacyTradeableComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct MountTamingComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct PhysicsComponentDefinition; }
 // clang-format on
 
 namespace JsonUtil {
@@ -126,7 +140,85 @@ MCNAPI void buildActorDefinitionSchema(
 MCNAPI void buildActorDefinitionSchema(
     ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::AngerLevelComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_50::BarterComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_50::BossComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::CollisionBoxComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::ExhaustionComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
         ::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_50::FlockingComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::GameEventMovementTrackingComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::GrowsCropComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_50::HomeComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_50::InsomniaComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::InstantDespawnComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::LegacyTradeableComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::MountTamingComponentDefinition>>& root
 );
 
 MCNAPI void buildActorDefinitionSchema(
@@ -183,6 +275,12 @@ MCNAPI void buildActorDefinitionSchema(
 MCNAPI void buildActorDefinitionSchema(
     ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_40::OnWakeWithOwnerDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_50::PhysicsComponentDefinition>>&
         root
 );
 
@@ -748,6 +846,8 @@ MCNAPI ::HashedString const& VEC3_TYPE_NAME();
 MCNAPI ::HashedString const& VEC4_TYPE_NAME();
 
 MCNAPI ::HashedString const& VERSION_TYPE_NAME();
+
+MCNAPI ::HashedString const& WEIGHTED_CHOICE_NAME();
 // NOLINTEND
 
 } // namespace JsonUtil

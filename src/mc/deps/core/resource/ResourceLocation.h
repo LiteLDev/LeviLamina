@@ -67,6 +67,10 @@ public:
 
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::string getFileSystemName() const;
+#endif
+
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
 #ifdef LL_PLAT_C

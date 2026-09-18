@@ -25,12 +25,12 @@ struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct ActorTypeComponent;
 struct CamelFlagComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct DepenetrationComponent;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlagComponent;
 struct HorseFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct MobBodyRotationComponent;
@@ -53,8 +53,8 @@ struct VehicleComponent;
 struct MoveTowardsClosestSpaceSystemImpl
 : public ::IStrictTickingSystem<::StrictExecutionContext<
       ::Filter<
-          ::CanStandOnSnowFlagComponent,
-          ::HasLightweightFamilyFlagComponent,
+          ::CanStandOnPowderSnowComponent,
+          ::CanStandOnPowderSnowFromEquipmentComponent,
           ::HorseFlagComponent,
           ::MobFlagComponent,
           ::ParrotFlagComponent,
@@ -91,8 +91,8 @@ public:
     // MoveTowardsClosestSpaceSystemImpl inner types define
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
         ::Filter<
-            ::CanStandOnSnowFlagComponent,
-            ::HasLightweightFamilyFlagComponent,
+            ::CanStandOnPowderSnowComponent,
+            ::CanStandOnPowderSnowFromEquipmentComponent,
             ::HorseFlagComponent,
             ::MobFlagComponent,
             ::ParrotFlagComponent,
@@ -138,8 +138,8 @@ public:
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -187,8 +187,8 @@ public:
         ::StateVectorComponent&                           stateVector,
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,
@@ -232,8 +232,8 @@ public:
     MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
+                ::CanStandOnPowderSnowComponent,
+                ::CanStandOnPowderSnowFromEquipmentComponent,
                 ::HorseFlagComponent,
                 ::MobFlagComponent,
                 ::ParrotFlagComponent,

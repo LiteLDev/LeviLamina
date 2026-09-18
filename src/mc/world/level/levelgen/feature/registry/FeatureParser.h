@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI FeatureParser(
         ::Puv::VersionRange     versionRange,
         ::FeatureParserContext& context,
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::Puv::VersionRange     versionRange,
         ::FeatureParserContext& context,
@@ -77,11 +77,5 @@ public:
     MCAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

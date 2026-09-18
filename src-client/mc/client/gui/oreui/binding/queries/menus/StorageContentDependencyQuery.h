@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
-#include "mc/client/gui/oreui/binding/properties/ObservableValue.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/storagemanager/ContentType.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -26,11 +25,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageManager::ContentItemProvider>> mStorageContentItemProvider;
     ::ll::TypedStorage<1, 1, ::StorageManager::ContentType>                             mType;
     ::ll::TypedStorage<8, 8, ::ILevelListCache&>                                        mLevelListCache;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::std::string, ::std::allocator<::OreUI::Detail::ObservableValue<::std::string>>>>
-        mAffectedWorlds;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::std::string, ::std::string>>   mAffectedWorlds;
     // NOLINTEND
 
 public:

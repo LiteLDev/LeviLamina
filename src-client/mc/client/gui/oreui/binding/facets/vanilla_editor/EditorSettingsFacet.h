@@ -108,7 +108,7 @@ public:
 
     MCFOLD ::std::string const& getSelectedTool() const;
 
-    MCAPI ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> const& getThemesMap() const;
+    MCFOLD ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> const& getThemesMap() const;
 
     MCAPI bool hasKey(::std::string const& key) const;
 

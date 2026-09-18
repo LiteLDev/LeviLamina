@@ -15,14 +15,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float getAmount(int amplification, float scale) const /*override*/;
+    virtual float getAmount(int amplification, float) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getAmount(int amplification, float scale) const;
+    MCAPI float $getAmount(int amplification, float) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

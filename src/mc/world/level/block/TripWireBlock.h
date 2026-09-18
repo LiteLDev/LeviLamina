@@ -61,10 +61,6 @@ public:
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool shouldConnectTo(::BlockSource& region, ::BlockPos const& pos, int dir) const;
-#endif
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
@@ -74,6 +70,10 @@ public:
     MCAPI static bool _isEntityInsideTriggerable(::BlockSource const& region, ::BlockPos const& pos, ::Actor& entity);
 
     MCAPI static void _updateSource(::BlockSource& region, ::BlockPos const& pos);
+
+#ifdef LL_PLAT_C
+    MCFOLD static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
+#endif
     // NOLINTEND
 
 public:

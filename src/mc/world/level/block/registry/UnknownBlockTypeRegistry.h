@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SharedPtr.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
 
 // auto generated forward declare list
@@ -17,13 +15,13 @@ class CompoundTag;
 class UnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 public:
     // UnknownBlockTypeRegistry inner types define
-    using UnknownBlockLookupMap = ::std::map<uint64, ::SharedPtr<::BlockType>>;
+    using UnknownBlockLookupMap = ::std::map<uint64, ::std::unique_ptr<::BlockType>>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                  mMutex;
-    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::SharedPtr<::BlockType>>> mUnknownBlockLookupMap;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                       mMutex;
+    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::std::unique_ptr<::BlockType>>> mUnknownBlockLookupMap;
     // NOLINTEND
 
 public:

@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ::Puv::LoadResultAny loadFromString(
         ::cereal::ReflectionCtx const&                     ctx,
-        ::std::string const&                               jsonAsString,
+        ::std::string const&                               dataJson,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) = 0;
 

@@ -21,28 +21,51 @@ class ScriptAllowList {
 public:
     // ScriptAllowList inner types declare
     // clang-format off
-    struct AllowListEntryData;
+    struct AllowListEntry;
+    struct AllowListEntryNameInfo;
     // clang-format on
 
     // ScriptAllowList inner types define
-    struct AllowListEntryData {
+    struct AllowListEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 40> mUnkfead68;
-        ::ll::UntypedStorage<8, 40> mUnk1467da;
+        ::ll::UntypedStorage<8, 40> mUnke6d784;
+        ::ll::UntypedStorage<8, 40> mUnkabf489;
+        ::ll::UntypedStorage<1, 1>  mUnk1004a0;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        AllowListEntryData& operator=(AllowListEntryData const&);
-        AllowListEntryData(AllowListEntryData const&);
-        AllowListEntryData();
+        AllowListEntry& operator=(AllowListEntry const&);
+        AllowListEntry(AllowListEntry const&);
+        AllowListEntry();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool operator==(::ScriptModuleServerAdmin::ScriptAllowList::AllowListEntryData const&) const;
+        MCNAPI bool operator==(::ScriptModuleServerAdmin::ScriptAllowList::AllowListEntry const&) const;
+        // NOLINTEND
+    };
+
+    struct AllowListEntryNameInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 40> mUnk124b6a;
+        ::ll::UntypedStorage<8, 40> mUnk598775;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        AllowListEntryNameInfo& operator=(AllowListEntryNameInfo const&);
+        AllowListEntryNameInfo(AllowListEntryNameInfo const&);
+        AllowListEntryNameInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool operator==(::ScriptModuleServerAdmin::ScriptAllowList::AllowListEntryNameInfo const&) const;
         // NOLINTEND
     };
 
@@ -57,32 +80,6 @@ public:
     ScriptAllowList& operator=(ScriptAllowList const&);
     ScriptAllowList(ScriptAllowList const&);
     ScriptAllowList();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleServerAdmin::ScriptAllowListModificationError,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::InvalidArgumentError>
-    add(::std::variant<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>,
-        ::ScriptModuleServerAdmin::ScriptAllowList::AllowListEntryData> const& playerData);
-
-    MCNAPI ::std::vector<::ScriptModuleServerAdmin::ScriptAllowList::AllowListEntryData> entries() const;
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleServerAdmin::ScriptAllowListModificationError,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::InvalidArgumentError>
-    remove(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>,
-            ::ScriptModuleServerAdmin::ScriptAllowList::AllowListEntryData> const& playerData
-    );
-    // NOLINTEND
 
 public:
     // static functions

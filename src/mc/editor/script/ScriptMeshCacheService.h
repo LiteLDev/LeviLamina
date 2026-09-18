@@ -13,6 +13,7 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -31,6 +32,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkefe3d4;
+        ::ll::UntypedStorage<8, 24> mUnk3458e4;
         ::ll::UntypedStorage<4, 4>  mUnkdc9416;
         ::ll::UntypedStorage<4, 4>  mUnkbd8342;
         ::ll::UntypedStorage<4, 4>  mUnk16cc64;
@@ -75,7 +77,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk98a1e1;
     ::ll::UntypedStorage<8, 32>  mUnk7b608c;
     ::ll::UntypedStorage<1, 1>   mUnka6f20d;
-    ::ll::UntypedStorage<8, 112> mUnk2f73de;
+    ::ll::UntypedStorage<8, 136> mUnk2f73de;
     ::ll::UntypedStorage<8, 144> mUnk7465cf;
     ::ll::UntypedStorage<8, 8>   mUnk588404;
     ::ll::UntypedStorage<8, 16>  mUnkfdc293;
@@ -129,6 +131,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::Scripting::EnumBinding bindMeshColorSourceKind();
+
+    MCNAPI static ::Scripting::EnumBinding bindMeshLoadError();
+
+    MCNAPI static ::Scripting::EnumBinding bindMeshPlacementError();
+
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 

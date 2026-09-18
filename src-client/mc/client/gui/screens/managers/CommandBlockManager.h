@@ -107,10 +107,4 @@ public:
 
     MCFOLD bool $isMinecartCommandBlock() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

@@ -29,9 +29,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
-
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+
+    virtual bool _applies(::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
 public:
@@ -43,9 +43,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random& random, ::LootTableContext& context);
-
     MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
+
+    MCNAPI bool $_applies(::Random& random, ::LootTableContext& context);
 
 
     // NOLINTEND

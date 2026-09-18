@@ -41,17 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit SecureStorage(::Core::PathView settingsPath);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Core::PathView settingsPath);
-#endif
     // NOLINTEND
 
 public:

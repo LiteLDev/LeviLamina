@@ -39,5 +39,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addEffect(::FeedItem::Effect const& effect);
+
+    MCAPI ~FeedItem();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

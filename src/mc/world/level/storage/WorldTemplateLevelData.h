@@ -32,12 +32,6 @@ public:
     MCAPI void _getTagData(::CompoundTag const& tag);
 
     MCAPI void _setTagData(::CompoundTag& tag) const;
-
-    MCAPI void setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
-
-    MCAPI void setMaxBaseGameVersion(::BaseGameVersion const& maxBaseGameVersion);
-
-    MCAPI void setWorldTemplateIdentity(::PackIdVersion const& identity);
     // NOLINTEND
 
 public:

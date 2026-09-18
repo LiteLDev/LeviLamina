@@ -7,6 +7,7 @@
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/network/realms/World.h"
 #include "mc/client/social/PlatformUserProfileData.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -82,6 +83,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mMakePartyInvite;
     ::ll::TypedStorage<4, 4, uint>                                                mEntriesPerPage;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>> mPartySystem;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                       mTaskGroup;
     // NOLINTEND
 
 public:

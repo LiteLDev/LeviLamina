@@ -18,7 +18,7 @@ class PartyChatFirstMessageOrderQuery : public ::OreUI::QueryBase<::OreUI::Party
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint>>        mFirstOrder;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint, uint>>  mFirstOrder;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFirstOrderChangedToken;
     // NOLINTEND
 

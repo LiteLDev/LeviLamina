@@ -12,6 +12,7 @@ class BlockPos;
 class ClientInstanceScreenModel;
 class Player;
 struct ActorUniqueID;
+namespace Json { class Value; }
 // clang-format on
 
 class ChestScreenController : public ::BlockContainerScreenController {
@@ -23,6 +24,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ChestScreenController() /*override*/ = default;
+
+    virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
     virtual void _registerCoalesceOrder() /*override*/;
 
@@ -56,6 +59,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
     MCFOLD void $_registerCoalesceOrder();
 
     MCFOLD void $_registerAutoPlaceOrder();

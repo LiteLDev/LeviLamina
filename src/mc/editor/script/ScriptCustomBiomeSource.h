@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 class ScriptCustomBiomeSource
@@ -24,9 +29,9 @@ public:
     ScriptCustomBiomeSource();
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getId() const;
+    MCNAPI static ::Scripting::ClassBinding bindType();
     // NOLINTEND
 };
 

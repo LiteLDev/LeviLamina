@@ -12,6 +12,7 @@ class IEntitlementManager;
 class LevelDataWrapper;
 namespace OreUI { class IResourceAllowList; }
 namespace World { struct PackDetails; }
+namespace World { struct WorldPacksData; }
 // clang-format on
 
 namespace OreUI {
@@ -31,14 +32,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelPackBindings();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelPackBindings(
+        ::World::WorldPacksData const&                             worldPacks,
+        ::LevelDataWrapper&                                        worldData,
+        bool                                                       isTrialMode,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
+    );
+
     MCAPI void _addPackIconPathToAllowList(
         ::World::PackCollection&                                   packCollection,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::std::vector<::World::PackDetails> const& getActiveBehaviorPacks() const;
+    MCFOLD ::std::vector<::World::PackDetails> const& getActiveBehaviorPacks() const;
 
     MCFOLD ::std::vector<::World::PackDetails> const& getActiveTexturePacks() const;
 
@@ -55,6 +68,26 @@ public:
     MCAPI bool isRealmsPlusSubscriptionActive();
 
     MCAPI bool isRealmsPlusSupported() const;
+
+    MCAPI void setData(
+        ::World::WorldPacksData const&                             worldPacks,
+        ::LevelDataWrapper&                                        worldData,
+        bool                                                       isTrialMode,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::World::WorldPacksData const&                             worldPacks,
+        ::LevelDataWrapper&                                        worldData,
+        bool                                                       isTrialMode,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
+    );
     // NOLINTEND
 };
 

@@ -152,8 +152,6 @@ public:
 
     virtual bool areCompatible(::std::string const& routeA, ::std::string const& routeB) const /*override*/;
 
-    virtual bool isRouteInDirectory(::std::string const& directory, ::std::string const& route) const /*override*/;
-
     virtual ::std::optional<::std::string> getDefaultRouteForFile(::std::string const& file) const /*override*/;
 
     virtual ::OreUI::RouteType getRouteType(::std::string const& route) const /*override*/;
@@ -197,8 +195,6 @@ public:
     MCAPI bool $isSupported(::std::string const& route) const;
 
     MCAPI bool $areCompatible(::std::string const& routeA, ::std::string const& routeB) const;
-
-    MCAPI bool $isRouteInDirectory(::std::string const& directory, ::std::string const& route) const;
 
     MCAPI ::std::optional<::std::string> $getDefaultRouteForFile(::std::string const& file) const;
 

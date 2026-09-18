@@ -53,7 +53,13 @@ public:
         bool                         serializable
     );
 
+    MCAPI ::std::string getIdAsString() const;
+
     MCAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
+
+    MCAPI void setIdFromString(::std::string const& s);
+
+    MCAPI void setName(::std::string const& name);
     // NOLINTEND
 
 public:

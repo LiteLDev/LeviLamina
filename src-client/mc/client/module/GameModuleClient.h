@@ -48,6 +48,8 @@ public:
 
     virtual void deconfigureLevel(::IClientInstance& client) = 0;
 
+    virtual void onLeaveWorld() = 0;
+
     virtual void initializeResourceStack(
         ::Experiments const*                                            experiments,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,

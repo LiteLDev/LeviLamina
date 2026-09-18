@@ -32,13 +32,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CraftingContainerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CraftingContainerController() /*override*/;
-#endif
 
-    virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
+    virtual ::ItemInstance const& getRecipeItem(int index) const = 0;
 
     virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
 
@@ -68,14 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -91,11 +79,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

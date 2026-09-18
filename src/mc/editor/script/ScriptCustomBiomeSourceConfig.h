@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 struct ScriptCustomBiomeSourceConfig {
@@ -17,6 +22,12 @@ public:
     ScriptCustomBiomeSourceConfig& operator=(ScriptCustomBiomeSourceConfig const&);
     ScriptCustomBiomeSourceConfig(ScriptCustomBiomeSourceConfig const&);
     ScriptCustomBiomeSourceConfig();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::InterfaceBinding bindType();
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

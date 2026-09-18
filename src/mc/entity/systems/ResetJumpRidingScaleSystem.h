@@ -6,7 +6,6 @@
 // clang-format off
 class StrictEntityContext;
 struct JumpRidingScaleComponent;
-struct TickingSystemWithInfo;
 struct VanillaClientGameplayComponent;
 // clang-format on
 
@@ -19,7 +18,5 @@ public:
         ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
         ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -19,7 +19,8 @@ class ContainerColorModeQuery : public ::OreUI::QueryBase<::OreUI::ContainerColo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::GameplayUI::ContainerColorMode>>           mColorMode;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::GameplayUI::ContainerColorMode, ::GameplayUI::ContainerColorMode>>
+                                                                                              mColorMode;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 

@@ -13,7 +13,6 @@ struct BounceComponent;
 struct EventingDispatcherComponent;
 struct EventingRequestQueueComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class BounceEventingSystem {
@@ -28,7 +27,5 @@ public:
         ::BounceComponent&                                              bounceComponent,
         ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

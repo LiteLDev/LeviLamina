@@ -4,19 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogLevel.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/scripting/debugger/IScriptDebugger.h"
-#include "mc/scripting/diagnostics/IScriptStatPublisher.h"
+#include "mc/scripting/diagnostics/IDebuggerStatPublisher.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScriptStat;
+class DebuggerStat;
+class IScriptDebuggerWatchdog;
+class IScriptTelemetryLogger;
+class LocalProfilerControlBroker;
+class MinecraftCommands;
+class ScriptPluginManager;
+class ServerLevel;
 struct ScriptDebuggerSettings;
 namespace Core { class Path; }
 namespace ScriptDebuggerMessages { struct DebuggerRequestMessage; }
+namespace Scripting { class ScriptEngine; }
 namespace cereal { class DynamicValue; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ScriptDebugger : public ::IScriptDebugger, public ::IScriptStatPublisher {
+class ScriptDebugger : public ::IScriptDebugger, public ::IDebuggerStatPublisher {
 public:
     // ScriptDebugger inner types declare
     // clang-format off
@@ -48,7 +57,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnkaa78c0;
+    ::ll::UntypedStorage<8, 144> mUnkaa78c0;
     ::ll::UntypedStorage<8, 8>   mUnkd106a5;
     ::ll::UntypedStorage<8, 8>   mUnkf7195e;
     ::ll::UntypedStorage<8, 8>   mUnk2f3c05;
@@ -94,12 +103,26 @@ public:
 
     virtual bool isStatPublisherEnabled() const /*override*/;
 
-    virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) /*override*/;
+    virtual void publishStats(uint64 collectedTick, ::std::vector<::DebuggerStat> const& stats) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptDebugger(
+        ::ScriptDebuggerSettings                                        settings,
+        ::ServerLevel&                                                  serverLevel,
+        ::MinecraftCommands&                                            commands,
+        ::cereal::ReflectionCtx&                                        ctx,
+        ::Scripting::ScriptEngine&                                      scriptEngine,
+        ::ScriptPluginManager&                                          pluginManager,
+        ::IScriptDebuggerWatchdog&                                      watchdog,
+        ::IScriptTelemetryLogger&                                       telemetry,
+        ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> const& profilerControlBroker
+    );
+
+    MCNAPI void _debuggerMessageHandler(::std::string_view message);
+
     MCNAPI void
     _handleDebuggerRequestMessage(::ScriptDebuggerMessages::DebuggerRequestMessage const& debuggerRequestPayload);
 
@@ -124,6 +147,28 @@ public:
     );
 
     MCNAPI void sendLog(::LogLevel logLevel, ::std::string_view message);
+
+    MCNAPI void sendViews();
+
+    MCNAPI void update();
+
+    MCNAPI void waitAutoAttach(::std::chrono::seconds waitDuration);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::ScriptDebuggerSettings                                        settings,
+        ::ServerLevel&                                                  serverLevel,
+        ::MinecraftCommands&                                            commands,
+        ::cereal::ReflectionCtx&                                        ctx,
+        ::Scripting::ScriptEngine&                                      scriptEngine,
+        ::ScriptPluginManager&                                          pluginManager,
+        ::IScriptDebuggerWatchdog&                                      watchdog,
+        ::IScriptTelemetryLogger&                                       telemetry,
+        ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> const& profilerControlBroker
+    );
     // NOLINTEND
 
 public:
@@ -143,7 +188,7 @@ public:
 
     MCNAPI bool $isStatPublisherEnabled() const;
 
-    MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
+    MCNAPI void $publishStats(uint64 collectedTick, ::std::vector<::DebuggerStat> const& stats);
 
 
     // NOLINTEND

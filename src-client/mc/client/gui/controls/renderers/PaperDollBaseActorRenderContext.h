@@ -75,4 +75,10 @@ public:
 
     MCAPI ::SubClientId $getClientSubId();
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

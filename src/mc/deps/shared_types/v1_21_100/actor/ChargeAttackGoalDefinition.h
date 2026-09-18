@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_100 {
 
 struct ChargeAttackGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -22,12 +17,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                                  mSpeedMultiplier;
     ::ll::TypedStorage<4, 4, float>                                  mSuccessRate;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

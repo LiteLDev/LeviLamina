@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileOpenMode; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class Result; }
@@ -83,6 +82,8 @@ public:
 
     virtual ::Core::Result _flush() = 0;
 
+    virtual ::Core::Result _flushToOS();
+
     virtual ::Core::Result _getSize(uint64* pSizeOut) = 0;
 
     virtual ::Core::Result _getRemainingSize(uint64* pSizeOut) = 0;
@@ -115,7 +116,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::Core::FileImpl*>& sAllFiles();
 
-    MCNAPI static ::Bedrock::Threading::Mutex& sAllFilesLock();
+    MCNAPI static ::std::mutex& sAllFilesLock();
     // NOLINTEND
 
 public:
@@ -128,6 +129,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::Core::Result $_flushToOS();
+
+
     // NOLINTEND
 
 public:

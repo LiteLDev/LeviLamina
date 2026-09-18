@@ -8,6 +8,7 @@
 #include "mc/client/gui/oreui/binding/queries/menus/realms/RealmsServerSettingsSliderData.h"
 #include "mc/client/network/realms/RealmsServerMode.h"
 #include "mc/client/network/realms/RealmsTier.h"
+#include "mc/client/realms/FetchingRealmsServerSettingsState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -24,13 +25,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServerSettingsManager>>
-                                                                              mRealmsServerSettingsManager;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::RealmsServerMode>> mRealmsServerMode;
-    ::ll::TypedStorage<8, 944, ::OreUI::RealmsServerSettingsSliderData>       mRealmsPlayerCount;
-    ::ll::TypedStorage<8, 944, ::OreUI::RealmsServerSettingsSliderData>       mRealmsRenderDistance;
-    ::ll::TypedStorage<8, 944, ::OreUI::RealmsServerSettingsSliderData>       mRealmsSimDistance;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::RealmsTier>>       mRealmsTier;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mRealmsServerModeChangedSubscription;
+        mRealmsServerSettingsManager;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::Property<::Realms::FetchingRealmsServerSettingsState, ::Realms::FetchingRealmsServerSettingsState>>
+        mFetchingRealmsServerSettingsState;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::RealmsServerMode, ::Realms::RealmsServerMode>>
+                                                                                              mRealmsServerMode;
+    ::ll::TypedStorage<8, 944, ::OreUI::RealmsServerSettingsSliderData>                       mRealmsPlayerCount;
+    ::ll::TypedStorage<8, 944, ::OreUI::RealmsServerSettingsSliderData>                       mRealmsRenderDistance;
+    ::ll::TypedStorage<8, 944, ::OreUI::RealmsServerSettingsSliderData>                       mRealmsSimDistance;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::RealmsTier, ::Realms::RealmsTier>> mRealmsTier;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mRealmsServerModeChangedSubscription;
     // NOLINTEND
 
 public:

@@ -13,7 +13,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 struct BlockAnimateTickData;
-namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -38,8 +37,6 @@ public:
 
     MCAPI ::std::optional<::SharedTypes::v1_26_20::MaterialType>
     getCauldronFillLiquidType(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -56,9 +53,6 @@ public:
     );
 
     MCAPI static void addDripParticle(::BlockSource& region, ::BlockPos const& pos, ::ParticleType particleType);
-
-    MCAPI static ::std::optional<::BlockPos>
-    findStalactiteTipAboveCauldron(::BlockSource& region, ::BlockPos const& cauldronPos);
     // NOLINTEND
 
 public:

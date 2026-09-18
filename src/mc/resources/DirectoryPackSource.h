@@ -18,6 +18,7 @@ struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 namespace Core { class Path; }
 namespace PackCommand { class IPackCommandPipeline; }
+namespace PackDeletionTelemetry { struct EventData; }
 // clang-format on
 
 class DirectoryPackSource : public ::PackSource {
@@ -69,12 +70,10 @@ public:
     );
 
     MCAPI static void purgeOptimizedPremiumPacksIfRequested(
-        bool                     purgeRequested,
-        ::Core::Path const&      path,
-        ::IPackIOProvider const* io,
-        ::brstd::function_ref<
-            void(::std::string_view, ::std::string const&, ::PackType, ::PackOrigin, ::std::string const&, int64)>
-            reportPackDeleted
+        bool                                                                   purgeRequested,
+        ::Core::Path const&                                                    path,
+        ::IPackIOProvider const*                                               io,
+        ::brstd::function_ref<void(::PackDeletionTelemetry::EventData const&)> reportPackDeleted
     );
     // NOLINTEND
 

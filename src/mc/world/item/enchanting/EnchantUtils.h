@@ -13,13 +13,12 @@ class ActorDamageSource;
 class BlockSource;
 class EnchantmentInstance;
 class HashedString;
+class IRandom;
 class Item;
 class ItemEnchants;
-class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Mob;
-class Random;
 class Vec3;
 struct ActorUniqueID;
 struct EnchantResult;
@@ -63,7 +62,7 @@ MCAPI void getCurses(::ItemStackBase const& item, ::std::vector<::EnchantmentIns
 
 MCAPI float getDamageReduction(::ActorDamageSource const& source, ::Mob const& target);
 
-MCAPI ::std::vector<int> getEnchantCosts(::ItemStackBase const& itemInst, int bookcaseCount);
+MCAPI ::std::vector<int> getEnchantCosts(::IRandom& random, ::ItemStackBase const& itemInst, int bookcaseCount);
 
 MCAPI int getEnchantLevel(::Enchant::Type enchantType, ::ItemStackBase const& stack);
 
@@ -79,25 +78,24 @@ MCAPI ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
 
 MCAPI float getMeleeDamageBonus(::Actor const& victim, ::Actor const& attacker);
 
-MCAPI ::ItemStack const& getRandomDamagedItemWithMending(::Mob const& equipped);
+MCAPI ::ItemStack const& getRandomDamagedItemWithMending(::IRandom& random, ::Mob const& equipped);
 
 MCAPI ::ItemStack const& getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
 
-MCAPI ::std::string getRandomName();
+MCAPI ::std::string getRandomName(::IRandom& random);
 
 MCAPI int getTotalProtectionLevels(::Enchant::Type type, ::Mob const& target);
 
-MCAPI int getTradeableRandomEnchantIndex(::Random& random);
+MCAPI int getTradeableRandomEnchantIndex(::IRandom& random);
 
 MCAPI bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
 
-MCFOLD void randomlyEnchant(::ItemInstance& out, int cost, int valueBuff, bool treasure);
-
-MCFOLD void randomlyEnchant(::ItemStack& out, int cost, int valueBuff, bool treasure);
+MCAPI void randomlyEnchant(::IRandom& random, ::ItemStackBase& out, int cost, int valueBuff, bool treasure);
 
 MCAPI void removeEnchants(::ItemStack& out);
 
-MCAPI ::ItemEnchants selectEnchantments(::Item const* item, int enchantCost, int valueBuff, bool treasure);
+MCAPI ::ItemEnchants
+selectEnchantments(::IRandom& random, ::Item const* item, int enchantCost, int valueBuff, bool treasure);
 // NOLINTEND
 
 } // namespace EnchantUtils

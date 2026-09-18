@@ -19,7 +19,7 @@ class RecipeBookSelectedTabQuery : public ::OreUI::QueryBase<::OreUI::RecipeBook
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::ContainerEnumName>>                        mSelectedContainer;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::ContainerEnumName, ::ContainerEnumName>>   mSelectedContainer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 

@@ -35,7 +35,7 @@ public:
 
     MCAPI bool operator==(::BiomeCappedSurfaceData const& other) const;
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void write(::BinaryStream& stream) const;
 #endif
     // NOLINTEND
@@ -43,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI static ::Bedrock::Result<::BiomeCappedSurfaceData> read(::ReadOnlyBinaryStream& stream);
 #endif
     // NOLINTEND

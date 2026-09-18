@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mToken;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>        mEnabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>  mEnabled;
     // NOLINTEND
 
 public:

@@ -12,7 +12,7 @@ class EchoQuery : public ::OreUI::QueryBase<::OreUI::Debug::EchoQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64>> mNumber;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>> mNumber;
     // NOLINTEND
 };
 

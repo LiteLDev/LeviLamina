@@ -93,7 +93,7 @@ public:
 
     MCFOLD ::std::string const& getCurrentPlatformId() const;
 
-    MCAPI ::std::string const& getCurrentXuid() const;
+    MCFOLD ::std::string const& getCurrentXuid() const;
 
     MCAPI ::std::string getMarketplaceDisabledReason() const;
 

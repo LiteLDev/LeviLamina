@@ -8,9 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
-class ActorInteraction;
 class EntityContext;
-class InteractionResult;
+class Interaction;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -24,8 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::InteractionResult
-    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
 
     virtual bool isDarkEnoughToSpawn() const /*override*/;
     // NOLINTEND
@@ -53,8 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult
-    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 

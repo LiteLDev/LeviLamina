@@ -1,0 +1,37 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+enum class PotionVariant : int {
+    MoveSlow       = 0,
+    MoveSpeed      = 1,
+    DigSlow        = 2,
+    DigSpeed       = 3,
+    DamageBoost    = 4,
+    Heal           = 5,
+    Harm           = 6,
+    Jump           = 7,
+    Confusion      = 8,
+    Regen          = 9,
+    Resistance     = 10,
+    FireResistance = 11,
+    WaterBreath    = 12,
+    Invisibility   = 13,
+    Blindness      = 14,
+    NightVision    = 15,
+    Hunger         = 16,
+    Weakness       = 17,
+    Poison         = 18,
+    Wither         = 19,
+    HealthBoost    = 20,
+    Absorption     = 21,
+    Saturation     = 22,
+    Levitation     = 23,
+    TurtleMaster   = 24,
+    SlowFall       = 25,
+    WindCharged    = 26,
+    Weaving        = 27,
+    Oozing         = 28,
+    Infested       = 29,
+    Base           = 30,
+};

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/shared_types/item/EnchantSlot.h"
 #include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/level/block/BlockShape.h"
@@ -63,7 +63,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mIsAttachable;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::shared_ptr<::ItemComponent>>> mItemComponents;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IconItemComponent>>                         mIcon;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                                    mBlockTypeForRendering;
+    ::ll::TypedStorage<8, 8, ::BlockType const*>                                              mBlockTypeForRendering;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::ItemComponent>>>
                                                                                             mRegisteredCerealComponents;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
@@ -107,7 +107,7 @@ public:
 
     virtual bool isTrimAllowed() const /*override*/;
 
-    virtual ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const /*override*/;
+    virtual ::BlockType const* getBlockTypeForRendering() const /*override*/;
 
     virtual ::ItemComponent* getComponent(::HashedString const& id) const /*override*/;
 
@@ -178,11 +178,12 @@ public:
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual bool canUseAsAttack() const /*override*/;
 
-    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const
+    virtual ::ItemStack&
+    useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection, ::HandSlot handSlot) const
         /*override*/;
 
     virtual ::Actor* createProjectileActor(
@@ -268,9 +269,14 @@ public:
 
     virtual bool _shouldAutoCalculatePlacePos() const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -359,7 +365,7 @@ public:
 
     MCAPI bool $isTrimAllowed() const;
 
-    MCAPI ::WeakPtr<::BlockType const> const& $getBlockTypeForRendering() const;
+    MCAPI ::BlockType const* $getBlockTypeForRendering() const;
 
     MCAPI ::ItemComponent* $getComponent(::HashedString const& id) const;
 
@@ -379,7 +385,7 @@ public:
 
     MCAPI short $getMaxDamage() const;
 
-    MCFOLD int $getAttackDamage() const;
+    MCAPI int $getAttackDamage() const;
 
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
@@ -429,11 +435,12 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCAPI bool $canUseAsAttack() const;
 
-    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
+    MCAPI ::ItemStack&
+    $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection, ::HandSlot handSlot) const;
 
     MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
@@ -512,9 +519,21 @@ public:
 
     MCAPI bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -46,11 +46,17 @@ public:
 
     MCNAPI float getPlaybackPosition(::std::chrono::steady_clock::time_point now) const;
 
+    MCNAPI ::ServerSoundInstance& operator=(::ServerSoundInstance&& other);
+
     MCNAPI void pause();
 
     MCNAPI void resume();
 
     MCNAPI void seekTo(float seconds);
+
+    MCNAPI void setPitch(float pitch);
+
+    MCNAPI void setVolume(float volume);
 
     MCNAPI void stop();
 

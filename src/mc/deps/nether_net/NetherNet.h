@@ -9,7 +9,7 @@
 // clang-format off
 namespace NetherNet { class INetherNetTransportInterface; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
-namespace NetherNet { class IUdpSocketFactory; }
+namespace NetherNet { class ISocketFactory; }
 namespace NetherNet { struct GlobalConfiguration; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct TransportConfiguration; }
@@ -26,7 +26,7 @@ MCNAPI ::NetherNet::INetherNetTransportInterface* CreateNetherNetTransportInterf
 );
 
 #ifdef LL_PLAT_C
-MCNAPI ::std::unique_ptr<::NetherNet::IUdpSocketFactory> CreateUdpSocketFactory();
+MCNAPI ::std::unique_ptr<::NetherNet::ISocketFactory> CreateSocketFactory();
 #endif
 
 MCNAPI void DestroyNetherNetTransportInterface(::NetherNet::INetherNetTransportInterface* transportInterface);

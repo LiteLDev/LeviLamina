@@ -47,12 +47,35 @@ public:
         mData;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Test();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit Test(::br::worldgen::processors::BlockRules::TagMatch match);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::TagMatch match);
+#endif
     // NOLINTEND
 
 public:

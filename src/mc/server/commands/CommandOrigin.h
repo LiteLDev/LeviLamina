@@ -69,6 +69,8 @@ public:
 
     virtual ::std::optional<::Vec3> getCursorHitPos() const;
 
+    virtual bool hasMessagePerms() const;
+
     virtual bool hasChatPerms() const;
 
     virtual bool hasTellPerms() const;
@@ -137,17 +139,13 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::optional<::BlockPos> $getCursorHitBlockPos() const;
 
     MCFOLD ::std::optional<::Vec3> $getCursorHitPos() const;
+
+    MCAPI bool $hasMessagePerms() const;
 
     MCAPI bool $hasChatPerms() const;
 

@@ -5,9 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
-class ItemDescriptor;
+class Interaction;
 class Player;
 struct ActorDefinitionTameItem;
 // clang-format on
@@ -23,9 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canTame(::Actor& owner, ::Player& player, ::ItemDescriptor& resultItemOut);
-
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
 
     MCAPI void tame(::Actor& owner, ::Player& player);
     // NOLINTEND

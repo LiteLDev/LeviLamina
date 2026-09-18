@@ -29,9 +29,7 @@ public:
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
-#ifdef LL_PLAT_C
     MCAPI static ::HashedString const& getIdentifier();
-#endif
     // NOLINTEND
 
 public:

@@ -35,6 +35,7 @@ public:
     class PopRangeOfTypeScreenEvent;
     class FlushScreenEvent;
     class ReloadScreenEvent;
+    class RouteActionEvent;
     // clang-format on
 
     // SceneStack inner types define
@@ -47,6 +48,7 @@ public:
             PopRangeOfType = 2,
             Flush          = 3,
             Reload         = 4,
+            RouteAction    = 5,
         };
 
     public:
@@ -133,6 +135,20 @@ public:
         // NOLINTEND
     };
 
+    class RouteActionEvent : public ::SceneStack::SceneStackEvent {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 40, ::OreUI::RouteAction> mRouteAction;
+        // NOLINTEND
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~RouteActionEvent() /*override*/ = default;
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -177,7 +193,15 @@ public:
         ::std::vector<::std::pair<
             void*,
             ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>>>>
-                                                                                   mPopSceneCallbacks;
+        mPopSceneCallbacks;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<
+            ::std::pair<void*, ::std::function<void(::std::vector<::std::shared_ptr<::AbstractScene>> const&)>>>>
+        mPopRangeSceneCallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<void*, ::std::function<void(::OreUI::RouteAction const&)>>>>
+                                                                                   mRouteActionCallbacks;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SceneStackProxy>>                 mProxy;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator>> mUIEventCoordinator;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                             mGetSuspended;
@@ -231,6 +255,20 @@ public:
 
     virtual void unregisterPopSceneCallback(void* token) /*override*/;
 
+    virtual void registerPopRangeSceneCallback(
+        void*                                                                           token,
+        ::std::function<void(::std::vector<::std::shared_ptr<::AbstractScene>> const&)> popRangeSceneCallback
+    ) /*override*/;
+
+    virtual void unregisterPopRangeSceneCallback(void* token) /*override*/;
+
+    virtual void registerRouteActionCallback(
+        void*                                              token,
+        ::std::function<void(::OreUI::RouteAction const&)> routeActionCallback
+    ) /*override*/;
+
+    virtual void unregisterRouteActionCallback(void* token) /*override*/;
+
     virtual void forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         bool                                          tickedLastFrame,
@@ -257,6 +295,8 @@ public:
 
     virtual void popScreenWithRouteAction(::OreUI::RouteAction const& routeAction) /*override*/;
 
+    virtual void scheduleRouteAction(::OreUI::RouteAction const& routeAction) /*override*/;
+
     virtual void pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush) /*override*/;
 
     virtual void schedulePopScreen(int totalPopNumber) /*override*/;
@@ -264,12 +304,7 @@ public:
     virtual void
     schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames) /*override*/;
 
-    virtual void flushStack(
-        bool                    immediate,
-        bool                    ignoreNotFlushableFlag,
-        bool                    ignoreTransitions,
-        ::std::function<void()> postFlushCallback
-    ) /*override*/;
+    virtual void flushStack(::ISceneStack::FlushMode mode, ::std::function<void()> postFlushCallback) /*override*/;
 
     virtual void deferUpdatesUntilNextTick() /*override*/;
 
@@ -327,6 +362,8 @@ public:
 
     virtual ::gsl::span<::ISceneStack::SceneElement const> getScreenStackView() const /*override*/;
 
+    virtual ::std::vector<::ISceneStack::PendingSceneStackChange> getPendingSceneStackChanges() const /*override*/;
+
     virtual int getScheduledPopCount() const /*override*/;
 
     virtual bool isScreenReplaceable() const /*override*/;
@@ -357,9 +394,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SceneStack(
-        ::CachedScenes&                                            cachedScenes,
-        ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> const& uiEventCoordinator,
-        ::std::function<bool()> const&                             getSuspended
+        ::CachedScenes&                                                       cachedScenes,
+        ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> const&            uiEventCoordinator,
+        ::std::function<bool()> const&                                        getSuspended,
+        ::std::function<::std::unique_ptr<::TaskGroup>(::std::string)> const& taskGroupProvider
     );
 
     MCAPI bool _animationsEnabled() const;
@@ -411,9 +449,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::CachedScenes&                                            cachedScenes,
-        ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> const& uiEventCoordinator,
-        ::std::function<bool()> const&                             getSuspended
+        ::CachedScenes&                                                       cachedScenes,
+        ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> const&            uiEventCoordinator,
+        ::std::function<bool()> const&                                        getSuspended,
+        ::std::function<::std::unique_ptr<::TaskGroup>(::std::string)> const& taskGroupProvider
     );
     // NOLINTEND
 
@@ -458,6 +497,18 @@ public:
 
     MCAPI void $unregisterPopSceneCallback(void* token);
 
+    MCAPI void $registerPopRangeSceneCallback(
+        void*                                                                           token,
+        ::std::function<void(::std::vector<::std::shared_ptr<::AbstractScene>> const&)> popRangeSceneCallback
+    );
+
+    MCAPI void $unregisterPopRangeSceneCallback(void* token);
+
+    MCAPI void
+    $registerRouteActionCallback(void* token, ::std::function<void(::OreUI::RouteAction const&)> routeActionCallback);
+
+    MCAPI void $unregisterRouteActionCallback(void* token);
+
     MCAPI void $forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         bool                                          tickedLastFrame,
@@ -480,18 +531,15 @@ public:
 
     MCAPI void $popScreenWithRouteAction(::OreUI::RouteAction const& routeAction);
 
+    MCAPI void $scheduleRouteAction(::OreUI::RouteAction const& routeAction);
+
     MCAPI void $pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush);
 
     MCAPI void $schedulePopScreen(int totalPopNumber);
 
     MCAPI void $schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames);
 
-    MCAPI void $flushStack(
-        bool                    immediate,
-        bool                    ignoreNotFlushableFlag,
-        bool                    ignoreTransitions,
-        ::std::function<void()> postFlushCallback
-    );
+    MCAPI void $flushStack(::ISceneStack::FlushMode mode, ::std::function<void()> postFlushCallback);
 
     MCAPI void $deferUpdatesUntilNextTick();
 
@@ -548,6 +596,8 @@ public:
     MCAPI ::std::shared_ptr<::AbstractScene const> const $getSharedNonTerminatingActiveScene() const;
 
     MCAPI ::gsl::span<::ISceneStack::SceneElement const> $getScreenStackView() const;
+
+    MCAPI ::std::vector<::ISceneStack::PendingSceneStackChange> $getPendingSceneStackChanges() const;
 
     MCFOLD int $getScheduledPopCount() const;
 

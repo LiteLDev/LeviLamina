@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/particlesystem/particle/ActorBindInfo.h"
 #include "mc/client/particlesystem/particle/ComponentAccessParticleEmitter.h"
+#include "mc/client/particlesystem/particle/EntityBindInfo.h"
 #include "mc/client/particlesystem/particle/ParticleEmitter.h"
 #include "mc/client/particlesystem/particle/ParticleRenderData.h"
 #include "mc/deps/core/container/slot_map_handle.h"
@@ -103,7 +103,7 @@ public:
     ::ll::TypedStorage<2, 2, ::MolangVariableIndex>               mParticleRandom3VariableIndex;
     ::ll::TypedStorage<2, 2, ::MolangVariableIndex>               mParticleRandom4VariableIndex;
     ::ll::TypedStorage<4, 64, ::Matrix>                           mEmitterTransform;
-    ::ll::TypedStorage<8, 88, ::ParticleSystem::ActorBindInfo>    mActorBindInfo;
+    ::ll::TypedStorage<8, 88, ::ParticleSystem::EntityBindInfo>   mEntityBindInfo;
     ::ll::TypedStorage<4, 24, ::AABB>                             mAABB;
     ::ll::TypedStorage<4, 4, float>                               mCullingBufferDistance;
     ::ll::TypedStorage<8, 8, uint64>                              mMaxNumParticles;
@@ -144,7 +144,7 @@ public:
     // NOLINTBEGIN
     virtual ~ParticleEmitterActual() /*override*/ = default;
 
-    virtual void setActorBindInfo(
+    virtual void setEntityBindInfo(
         ::Dimension*          dimension,
         ::ActorUniqueID       actorId,
         ::HashedString const& locator,
@@ -152,9 +152,9 @@ public:
     ) /*override*/;
 
     virtual void
-    setActorBindInfo(::WeakEntityRef actorRef, ::HashedString const& locator, ::Vec3 const& offset) /*override*/;
+    setEntityBindInfo(::WeakEntityRef entityRef, ::HashedString const& locator, ::Vec3 const& offset) /*override*/;
 
-    virtual void setActorBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset) /*override*/;
+    virtual void setEntityBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset) /*override*/;
 
     virtual void setEnableUpdate(bool enable) /*override*/;
 
@@ -203,7 +203,7 @@ public:
     virtual void
     emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult) /*override*/;
 
-    virtual ::ParticleSystem::ActorBindInfo getActorBindInfo() const /*override*/;
+    virtual ::ParticleSystem::EntityBindInfo getEntityBindInfo() const /*override*/;
 
     virtual ::Vec3 const& getPosition() const /*override*/;
 
@@ -273,12 +273,14 @@ public:
         ::Vec3&                           particleWorldPosition,
         ::Vec3&                           particleWorldVelocity
     ) /*override*/;
+
+    virtual ::AABB getEntityAABB() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _computeActorTransformAndReturnIfAttachedToLocator(
+    MCAPI bool _computeEntityTransformAndReturnIfAttachedToLocator(
         float     a,
         ::Matrix& actorTransform,
         bool      useActorPosition,
@@ -335,16 +337,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setActorBindInfo(
+    MCAPI void $setEntityBindInfo(
         ::Dimension*          dimension,
         ::ActorUniqueID       actorId,
         ::HashedString const& locator,
         ::Vec3 const&         offset
     );
 
-    MCAPI void $setActorBindInfo(::WeakEntityRef actorRef, ::HashedString const& locator, ::Vec3 const& offset);
+    MCAPI void $setEntityBindInfo(::WeakEntityRef entityRef, ::HashedString const& locator, ::Vec3 const& offset);
 
-    MCAPI void $setActorBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset);
+    MCAPI void $setEntityBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset);
 
     MCAPI void $setEnableUpdate(bool enable);
 
@@ -392,7 +394,7 @@ public:
 
     MCAPI void $emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult);
 
-    MCAPI ::ParticleSystem::ActorBindInfo $getActorBindInfo() const;
+    MCAPI ::ParticleSystem::EntityBindInfo $getEntityBindInfo() const;
 
     MCAPI ::Vec3 const& $getPosition() const;
 
@@ -408,7 +410,7 @@ public:
 
     MCAPI uint64 $getNumParticles() const;
 
-    MCFOLD uint64 $getNumParticlesEmitted() const;
+    MCAPI uint64 $getNumParticlesEmitted() const;
 
     MCAPI void $setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity);
 
@@ -454,6 +456,8 @@ public:
         ::Vec3&                           particleWorldPosition,
         ::Vec3&                           particleWorldVelocity
     );
+
+    MCAPI ::AABB $getEntityAABB() const;
     // NOLINTEND
 };
 

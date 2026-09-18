@@ -12,6 +12,7 @@ class Mob;
 class NavigationComponent;
 class Player;
 struct DimensionType;
+struct GoalId;
 // clang-format on
 
 class FollowOwnerGoal : public ::BaseGoal {
@@ -62,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FollowOwnerGoal(::Mob& mob);
+    MCAPI FollowOwnerGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
 
@@ -72,7 +73,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

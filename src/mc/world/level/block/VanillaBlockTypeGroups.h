@@ -140,7 +140,7 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Shulk
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SkullIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Speleothem();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SpeleothemIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SpongeIds();
 

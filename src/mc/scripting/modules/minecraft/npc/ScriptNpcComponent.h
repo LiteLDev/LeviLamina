@@ -27,8 +27,6 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
-
     MCAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
 
     MCAPI ::Scripting::Result_deprecated<void> setName(::std::string name);

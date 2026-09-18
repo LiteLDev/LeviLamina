@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -30,10 +29,9 @@ class StairBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockType const&>                   mBase;
-    ::ll::TypedStorage<1, 1, bool const>                           mEnableCornerStairTag;
-    ::ll::TypedStorage<8, 184, ::std::optional<::BlockDescriptor>> mBlocksToCornerWith;
-    ::ll::TypedStorage<1, 1, bool const>                           mLeakyCornersFix;
+    ::ll::TypedStorage<8, 8, ::BlockType const&> mBase;
+    ::ll::TypedStorage<1, 1, bool const>         mLeakyCornersFix;
+    ::ll::TypedStorage<1, 1, bool const>         mStairConnectionsCauseNeighborUpdates;
     // NOLINTEND
 
 public:
@@ -116,7 +114,7 @@ public:
 
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -126,8 +124,8 @@ public:
         ::std::string const& nameId,
         int                  id,
         ::BlockType const&   base,
-        bool                 enableCornerStairTag,
-        bool                 leakyCornersFix
+        bool                 leakyCornersFix,
+        bool                 stairConnectionsCauseNeighborUpdates
     );
 
     MCAPI bool _neighboringBlockCheckForCreatingBarrierInDirection(
@@ -141,20 +139,15 @@ public:
 #endif
 
     MCAPI bool setInnerPieceShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    shape,
-        bool                       shrink
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::AABB& shape,
+        bool    shrink
     ) const;
 
-    MCAPI bool setStepShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    shape,
-        bool                       shrink
-    ) const;
+    MCAPI bool
+    setStepShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& shape, bool shrink) const;
     // NOLINTEND
 
 public:
@@ -170,8 +163,8 @@ public:
         ::std::string const& nameId,
         int                  id,
         ::BlockType const&   base,
-        bool                 enableCornerStairTag,
-        bool                 leakyCornersFix
+        bool                 leakyCornersFix,
+        bool                 stairConnectionsCauseNeighborUpdates
     );
     // NOLINTEND
 
@@ -250,7 +243,7 @@ public:
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

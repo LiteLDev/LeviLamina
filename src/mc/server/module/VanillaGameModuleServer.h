@@ -52,7 +52,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::std::optional<::std::string>                                  worldId
     ) /*override*/;
 
     virtual void configureLevel(
@@ -93,7 +94,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::std::optional<::std::string>                                  worldId
     );
 
     MCAPI void $configureLevel(

@@ -42,6 +42,8 @@ public:
     MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
 
     MCAPI void resolveTransitionStateIndices();
+
+    MCAPI ~ActorAnimationController();
 #endif
     // NOLINTEND
 
@@ -51,6 +53,14 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void*
     $ctor(::HashedString const& name, ::SemVersion const& version, ::std::string const& sourceFilePathWithExtension);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

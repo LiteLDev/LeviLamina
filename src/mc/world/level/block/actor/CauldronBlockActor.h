@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/Container.h"
 #include "mc/world/item/ItemStack.h"
-#include "mc/world/item/alchemy/Potion.h"
+#include "mc/world/item/alchemy/PotionType.h"
 #include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
@@ -25,11 +25,11 @@ class CauldronBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                  mPotionId;
-    ::ll::TypedStorage<4, 4, ::Potion::PotionType> mPotionType;
-    ::ll::TypedStorage<1, 1, bool>                 mHasCustomColor;
-    ::ll::TypedStorage<4, 4, int>                  mCustomColor;
-    ::ll::TypedStorage<8, 1520, ::ItemStack[10]>   mItems;
+    ::ll::TypedStorage<4, 4, int>                mPotionId;
+    ::ll::TypedStorage<4, 4, ::PotionType>       mPotionType;
+    ::ll::TypedStorage<1, 1, bool>               mHasCustomColor;
+    ::ll::TypedStorage<4, 4, int>                mCustomColor;
+    ::ll::TypedStorage<8, 1520, ::ItemStack[10]> mItems;
     // NOLINTEND
 
 public:

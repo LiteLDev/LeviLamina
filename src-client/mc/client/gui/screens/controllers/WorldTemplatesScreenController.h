@@ -15,6 +15,7 @@ class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
 class ResourceLocation;
+struct InvalidPack;
 struct PackIdVersion;
 struct WorldTemplateInfo;
 namespace Json { class Value; }
@@ -29,7 +30,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DlcUIWrapper>>                    mDlcUIWrapper;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mFilter;
     ::ll::TypedStorage<8, 24, ::InvalidPacksFilterGroup>                           mInvalidPacksFilter;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceLocation>>                   mInvalidPacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InvalidPack>>                        mInvalidPacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::ResourceLocation>>                   mLoadingPacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::WorldTemplateInfo>>                  mPremiumTemplates;
     ::ll::TypedStorage<8, 24, ::std::vector<::WorldTemplateInfo>>                  mCustomTemplates;

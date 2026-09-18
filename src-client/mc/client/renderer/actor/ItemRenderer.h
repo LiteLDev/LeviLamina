@@ -132,7 +132,8 @@ public:
         float                     lightMultiplier,
         float                     alphaMultiplier,
         float                     scale,
-        float const               pickupPopPercentage
+        float const               pickupPopPercentage,
+        int const                 zOrder
     );
 
     MCAPI void _renderGuiDataDrivenBlockItem(

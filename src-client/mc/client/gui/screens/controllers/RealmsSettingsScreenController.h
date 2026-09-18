@@ -14,7 +14,6 @@
 #include "mc/client/network/realms/World.h"
 #include "mc/client/network/realms/WorldBackupList.h"
 #include "mc/client/services/clubs/ClubModel.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/storage/GameRules.h"
 
 // auto generated forward declare list
@@ -112,12 +111,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mClubModelMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                    mClubModelMutex;
     ::ll::TypedStorage<8, 128, ::Clubs::ClubModel>                             mClubModel;
     ::ll::TypedStorage<8, 128, ::Clubs::ClubModel>                             mUpdatedClubModel;
     ::ll::TypedStorage<8, 720, ::Realms::World>                                mWorld;
     ::ll::TypedStorage<8, 720, ::Realms::World>                                mUpdatedWorld;
-    ::ll::TypedStorage<8, 80, ::Realms::SubscriptionInfo>                      mSubscription;
+    ::ll::TypedStorage<8, 112, ::Realms::SubscriptionInfo>                     mSubscription;
     ::ll::TypedStorage<1, 1, bool>                                             mIsInitialWorldLoadComplete;
     ::ll::TypedStorage<1, 1, bool>                                             mRefreshWorldAndSubscriptionInfoOnOpen;
     ::ll::TypedStorage<4, 4, ::RealmsSettingsScreenController::PurchaseIntent> mPurchaseIntent;
@@ -293,8 +292,6 @@ public:
     MCAPI void _showSuccessPopup();
 
     MCAPI void _updateRealmBranchConfig(::std::string const& ref);
-
-    MCAPI void _updateSubscriptionInformation(::Realms::SubscriptionInfo subscription);
 
     MCAPI void _updateVersionsModel(::std::string const& filter, bool forceUpdate);
 

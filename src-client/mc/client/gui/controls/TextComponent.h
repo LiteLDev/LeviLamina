@@ -98,8 +98,6 @@ public:
 
     MCAPI void setFontType(::std::string const& fontType);
 
-    MCAPI void setText(::std::string const& label);
-
     MCAPI void setTextTTS(::std::string const& label);
     // NOLINTEND
 

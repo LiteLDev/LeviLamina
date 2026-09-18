@@ -19,6 +19,7 @@ namespace ScriptModuleMinecraftServerUI { class ScriptObservableString; }
 namespace ScriptModuleMinecraftServerUI { class ScriptObservableUIRawMessage; }
 namespace ScriptModuleMinecraftServerUI { class ScriptPlayerLeftError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptUIRawMessage; }
+namespace ScriptModuleMinecraftServerUI { struct ScriptMessageBoxButtonOptions; }
 namespace ScriptModuleMinecraftServerUI { struct ScriptMessageBoxResult; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
@@ -37,12 +38,8 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk447b66;
     ::ll::UntypedStorage<8, 216> mUnk852f39;
     ::ll::UntypedStorage<8, 216> mUnkcd09d9;
-    ::ll::UntypedStorage<8, 216> mUnk1bac06;
-    ::ll::UntypedStorage<8, 224> mUnkf5b621;
-    ::ll::UntypedStorage<8, 216> mUnk2b471c;
-    ::ll::UntypedStorage<8, 224> mUnk58ff6d;
-    ::ll::UntypedStorage<8, 40>  mUnk28f02e;
-    ::ll::UntypedStorage<8, 40>  mUnkfaca99;
+    ::ll::UntypedStorage<8, 576> mUnkd684d3;
+    ::ll::UntypedStorage<8, 576> mUnkb7893f;
     // NOLINTEND
 
 public:
@@ -73,6 +70,18 @@ public:
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageBox>,
         ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
+    button1WithOptions(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                        body,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptMessageBoxButtonOptions> options
+    );
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageBox>,
+        ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
     button2(
         ::std::variant<
             ::std::string,
@@ -84,6 +93,18 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
             ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>> tooltip
+    );
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageBox>,
+        ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
+    button2WithOptions(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                        body,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptMessageBoxButtonOptions> options
     );
 
     MCNAPI ::Scripting::Result<

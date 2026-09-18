@@ -43,6 +43,8 @@ public:
 
     MCAPI void persistPlayerPermissionsToDisk(::Player& player, ::PlayerPermissionLevel permission);
 
+    MCAPI void persistPlayerPermissionsToDisk(::std::string const& playerId, ::PlayerPermissionLevel permission);
+
     MCAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
 
     MCAPI ::FileReadResult reload();

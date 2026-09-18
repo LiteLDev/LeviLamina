@@ -800,8 +800,6 @@ public:
     MCAPI ::ResourceDrops
     getResourceDrops(::Block const& block, ::IRandom& random, ::ResourceDropsContext const& resourceDropsContext) const;
 
-    MCAPI bool hasBlockEntity() const;
-
     MCAPI bool hasNonLegacyState(::HashedString const& name) const;
 
     MCAPI bool hasState(::HashedString const& name) const;
@@ -822,8 +820,6 @@ public:
     MCAPI bool matchesStates(::BlockType const& blockType) const;
 
     MCAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-
-    MCAPI ::BlockType& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
     MCAPI ::BlockType& setNameId(::std::string const& id);
 

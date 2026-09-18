@@ -26,16 +26,14 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ::ContentTierIncompatibleReason isCompatible(::ContentTierInfo const& contentInfoTier) const;
+#endif
 
     MCNAPI ~SubpackInfoCollection();
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };

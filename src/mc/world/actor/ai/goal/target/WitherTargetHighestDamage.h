@@ -11,6 +11,7 @@ class Actor;
 class Mob;
 class Player;
 class WitherBoss;
+struct GoalId;
 struct MobDescriptor;
 // clang-format on
 
@@ -51,7 +52,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WitherTargetHighestDamage(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+
     MCAPI ::Player* getHighestDamageTarget();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

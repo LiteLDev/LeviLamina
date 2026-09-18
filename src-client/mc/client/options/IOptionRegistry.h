@@ -171,6 +171,8 @@ public:
 
     virtual bool isVibrantVisualsUserEnabled() const = 0;
 
+    virtual bool isVibrantVisualsEnabledAndSupported() const = 0;
+
     virtual int getGraphicsQualityPresetMode() const = 0;
 
     virtual int getDeferredTargetFrameRate() const = 0;
@@ -285,10 +287,6 @@ public:
     virtual void setSkinId(::std::string const& skinId) = 0;
 
     virtual ::std::string const& getSkinId() const = 0;
-
-    virtual void setRecentSkinIds(::std::vector<::std::string> const& recentSkinIds) = 0;
-
-    virtual ::std::vector<::std::string> const& getRecentSkinIds() = 0;
 
     virtual bool getFovToggle() const = 0;
 
@@ -438,8 +436,6 @@ public:
 
     virtual bool getShouldQuitAppAfterTesting() const = 0;
 
-    virtual bool shouldUploadTestArtifacts() const = 0;
-
     virtual bool hasAutomationTestRunTimedOut() const = 0;
 
     virtual bool hasAutomationTestRunReachedCrashLimit() const = 0;
@@ -449,12 +445,6 @@ public:
     virtual ::std::string getAutomationServerIp() const = 0;
 
     virtual ::std::string getAutomationServerPort() const = 0;
-
-    virtual ::std::string getAutomationArtifactUploadSas() const = 0;
-
-    virtual ::std::string getAutomationArtifactUploadUrl() const = 0;
-
-    virtual ::std::string getAutomationRelativeBlobpath() const = 0;
 
     virtual ::std::string getAutomationFunctionalTestTags() const = 0;
 
@@ -469,8 +459,6 @@ public:
     virtual ::std::string getAutomationUnitBrokenTestTags() const = 0;
 
     virtual ::std::string getAutomationTestBuildID() const = 0;
-
-    virtual ::std::string getAutomationUploadToken() const = 0;
 
     virtual ::std::string getAutomationEnabledFeatures() const = 0;
 
@@ -510,11 +498,11 @@ public:
 
     virtual int getAutomationServerPerTestcaseTimeout() const = 0;
 
+    virtual int getAutomationTestRunnerUpdateBudgetMilliseconds() const = 0;
+
     virtual void setAutomationFunctionalBrokenTestTags(::std::string const& tags) = 0;
 
     virtual void setAutomationUnitBrokenTestTags(::std::string const& tags) = 0;
-
-    virtual void setAutomationUploadToken(::std::string const& token) = 0;
 
     virtual bool getDevAchievementsAlwaysEnabled() = 0;
 
@@ -527,6 +515,12 @@ public:
     virtual int getAutomationMultiplayerDeviceIndex() const = 0;
 
     virtual ::std::vector<::std::string> getAutomationMultiplayerUserAccounts() const = 0;
+
+    virtual ::std::string getAutomationMultiplayerMinPlayers() const = 0;
+
+    virtual ::std::string getAutomationMultiplayerIdleTime() const = 0;
+
+    virtual ::std::string getAutomationRealmInviteId() const = 0;
 
     virtual ::DevConnectionQuality getDevConnectionQuality() const = 0;
 

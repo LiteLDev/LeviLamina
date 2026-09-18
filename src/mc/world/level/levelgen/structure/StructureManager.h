@@ -6,7 +6,6 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplateManager.h"
 #include "mc/world/level/levelgen/structure/StructureDeleteResult.h"
@@ -52,7 +51,7 @@ public:
         64,
         ::std::unordered_map<uint64, ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>>>
                                                                          mMetadataRegistry;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>               mMetadataRegistryMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                              mMetadataRegistryMutex;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>> mCerealContext;
     // NOLINTEND
 
@@ -156,10 +155,6 @@ public:
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);
-
-#ifdef LL_PLAT_S
-    MCAPI static bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
-#endif
     // NOLINTEND
 
 public:

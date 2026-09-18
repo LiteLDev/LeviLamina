@@ -46,10 +46,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

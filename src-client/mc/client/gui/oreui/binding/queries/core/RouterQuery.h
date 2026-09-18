@@ -21,15 +21,12 @@ class RouterQuery : public ::OreUI::QueryBase<::OreUI::RouterQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 312, ::OreUI::RouterHistoryAdapter>    mRouter;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mRouterToken;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>        mLength;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mAction;
-    ::ll::TypedStorage<8, 840, ::OreUI::ExposedRouterLocation>   mLocation;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::ExposedRouterLocation, ::std::allocator<::OreUI::ExposedRouterLocation>>>
+    ::ll::TypedStorage<8, 312, ::OreUI::RouterHistoryAdapter>                   mRouter;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mRouterToken;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64, uint64>>               mLength;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mAction;
+    ::ll::TypedStorage<8, 840, ::OreUI::ExposedRouterLocation>                  mLocation;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::ExposedRouterLocation, ::OreUI::ExposedRouterLocation>>
         mHistory;
     // NOLINTEND
 

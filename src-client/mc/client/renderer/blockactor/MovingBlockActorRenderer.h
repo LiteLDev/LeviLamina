@@ -12,7 +12,6 @@
 class BaseActorRenderContext;
 class BlockTessellator;
 struct BlockActorRenderData;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class MovingBlockActorRenderer : public ::BlockActorRenderer {
@@ -35,19 +34,6 @@ public:
     // NOLINTBEGIN
     virtual void
     render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    MovingBlockActorRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::BlockTessellator& blockTessellator);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::BlockTessellator& blockTessellator);
     // NOLINTEND
 
 public:

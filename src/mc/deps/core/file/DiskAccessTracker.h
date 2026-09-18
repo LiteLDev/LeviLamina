@@ -71,11 +71,11 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk70b829;
     ::ll::UntypedStorage<8, 16> mUnk81e3dd;
     ::ll::UntypedStorage<8, 16> mUnk164044;
-    ::ll::UntypedStorage<8, 56> mUnk893e32;
+    ::ll::UntypedStorage<8, 56> mUnk5a4c44;
     ::ll::UntypedStorage<8, 8>  mUnkdb336a;
     ::ll::UntypedStorage<8, 8>  mUnk4b0c78;
-    ::ll::UntypedStorage<8, 80> mUnka734d7;
-    ::ll::UntypedStorage<8, 80> mUnk37a284;
+    ::ll::UntypedStorage<8, 80> mUnk7826c4;
+    ::ll::UntypedStorage<8, 80> mUnk58509b;
     ::ll::UntypedStorage<1, 1>  mUnk51bb1c;
     // NOLINTEND
 

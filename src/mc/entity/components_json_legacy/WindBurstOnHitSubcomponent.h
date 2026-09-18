@@ -10,13 +10,14 @@
 class Actor;
 class ProjectileComponent;
 namespace Json { class Value; }
+namespace SharedTypes::v1_26_50 { struct ProjectileOnHitSubcomponent; }
 // clang-format on
 
 class WindBurstOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void readfromJSON(::Json::Value&) /*override*/;
+    virtual void initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const&) /*override*/;
 
     virtual void writetoJSON(::Json::Value&) const /*override*/;
 
@@ -28,7 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $readfromJSON(::Json::Value&);
+    MCFOLD void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const&);
 
     MCFOLD void $writetoJSON(::Json::Value&) const;
 

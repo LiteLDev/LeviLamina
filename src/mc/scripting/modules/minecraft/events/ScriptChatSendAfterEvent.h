@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
-#include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -31,13 +30,14 @@ public:
     ::ll::TypedStorage<
         8,
         32,
-        ::std::optional<::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>>
+        ::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>>
                                                                                                            mTargets;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mSender;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptChatSendAfterEvent& operator=(ScriptChatSendAfterEvent const&);
     ScriptChatSendAfterEvent();
 
 public:
@@ -56,17 +56,14 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI void copyTo(::ChatEvent& chatEvent, ::Scripting::WeakLifetimeScope const& scope) const;
+    MCAPI void copyTo(::ChatEvent& chatEvent) const;
 
     MCAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     getTargets_V010();
 
-    MCAPI ::ScriptModuleMinecraft::ScriptChatSendAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
-
     MCAPI ::Scripting::Result_deprecated<void>
-    setTargets_V010(::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> targets);
+    setTargets_V010(::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> targets);
 
     MCAPI ~ScriptChatSendAfterEvent();
     // NOLINTEND

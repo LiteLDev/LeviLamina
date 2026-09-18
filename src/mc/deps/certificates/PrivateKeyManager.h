@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/certificates/KeyManager.h"
+#include "mc/deps/crypto/asymmetric/PrivateKeySigningFormat.h"
 #include "mc/deps/crypto/asymmetric/system/System.h"
 
 class PrivateKeyManager : public ::KeyManager {
@@ -34,6 +35,12 @@ public:
 
 #ifdef LL_PLAT_S
     MCNAPI PrivateKeyManager(
+        ::std::string const&                          privateKey,
+        ::Crypto::Asymmetric::PrivateKeySigningFormat format,
+        ::Crypto::Asymmetric::System                  system
+    );
+
+    MCNAPI PrivateKeyManager(
         ::std::string const&         publicKey,
         ::std::string const&         privateKey,
         ::Crypto::Asymmetric::System system
@@ -41,6 +48,10 @@ public:
 #endif
 
     MCNAPI ::std::string computeSecret(::KeyManager const& peer) const;
+
+#ifdef LL_PLAT_S
+    MCNAPI ::std::string getPrivateKeyPem() const;
+#endif
     // NOLINTEND
 
 public:
@@ -49,6 +60,12 @@ public:
     MCNAPI void* $ctor(::Crypto::Asymmetric::System system);
 
 #ifdef LL_PLAT_S
+    MCNAPI void* $ctor(
+        ::std::string const&                          privateKey,
+        ::Crypto::Asymmetric::PrivateKeySigningFormat format,
+        ::Crypto::Asymmetric::System                  system
+    );
+
     MCNAPI void*
     $ctor(::std::string const& publicKey, ::std::string const& privateKey, ::Crypto::Asymmetric::System system);
 #endif

@@ -79,13 +79,14 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkf091ed;
     ::ll::UntypedStorage<8, 16> mUnkc14a31;
     ::ll::UntypedStorage<4, 48> mUnk9bf443;
-    ::ll::UntypedStorage<8, 72> mUnk92e626;
+    ::ll::UntypedStorage<8, 64> mUnk4b6951;
     ::ll::UntypedStorage<8, 24> mUnk1dc8dd;
     ::ll::UntypedStorage<8, 24> mUnk85c920;
     ::ll::UntypedStorage<8, 48> mUnka10fb0;
     ::ll::UntypedStorage<4, 52> mUnk8d2203;
     ::ll::UntypedStorage<4, 16> mUnk569f22;
     ::ll::UntypedStorage<8, 16> mUnk8cd97e;
+    ::ll::UntypedStorage<8, 16> mUnk2b2c03;
     // NOLINTEND
 
 public:
@@ -102,19 +103,21 @@ public:
 
     MCNAPI void _destroy();
 
-    MCNAPI void _discardRequests();
-
     MCNAPI void _initialize(::Dimension& dimension);
 
     MCNAPI bool _isBoundsAvailable(::Bounds const& bounds) const;
 
     MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
 
+    MCNAPI void _onChunkUnloaded(::LevelChunk& levelChunk);
+
     MCNAPI void _processAvailability();
 
     MCNAPI void _processBlockOperationAreas();
 
     MCNAPI void _processBounds();
+
+    MCNAPI void _refreshChunksToProcess();
 
     MCNAPI bool isAreaAvailable(::BoundingBox const& area);
 

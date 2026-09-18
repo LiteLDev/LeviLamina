@@ -19,10 +19,10 @@ class PartyChatMemberQuery : public ::OreUI::QueryBase<::OreUI::PartyChatMemberQ
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mXuid;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mGamerTag;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mGamerIcon;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                      mTaskGroup;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mXuid;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mGamerTag;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mGamerIcon;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                     mTaskGroup;
     // NOLINTEND
 
 public:

@@ -57,6 +57,8 @@ public:
 
     virtual float getBounciness(::IConstBlockSource const&, ::BlockPos const&) const /*override*/;
 
+    virtual bool isLavaBlocking() const /*override*/;
+
     virtual ::AABB getCollisionShape(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -118,6 +120,8 @@ public:
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCAPI float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
+
+    MCFOLD bool $isLavaBlocking() const;
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&                                     block,

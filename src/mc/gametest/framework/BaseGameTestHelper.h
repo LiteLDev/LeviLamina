@@ -283,8 +283,6 @@ public:
 
     MCNAPI void succeedIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCNAPI void succeedOnTick(int tick);
-
     MCNAPI void succeedOnTickWhen(int tick, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI void succeedWhen(::std::function<::std::optional<::gametest::GameTestError>()> fn);

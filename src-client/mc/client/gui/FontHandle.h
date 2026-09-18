@@ -40,7 +40,7 @@ public:
 
     MCAPI FontHandle(
         ::std::shared_ptr<::Font>                       defaultFont,
-        uint64 const                                    fontId,
+        uint64                                          fontId,
         ::Bedrock::NotNullNonOwnerPtr<::FontRepository> fontRepository
     );
 
@@ -64,7 +64,7 @@ public:
 
     MCAPI void* $ctor(
         ::std::shared_ptr<::Font>                       defaultFont,
-        uint64 const                                    fontId,
+        uint64                                          fontId,
         ::Bedrock::NotNullNonOwnerPtr<::FontRepository> fontRepository
     );
     // NOLINTEND

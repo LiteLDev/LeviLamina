@@ -10,12 +10,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Goat : public ::Animal {
+public:
+    // prevent constructor by default
+    Goat();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,6 +41,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Goat(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void reduceHornCount();
     // NOLINTEND
 
@@ -43,6 +56,16 @@ public:
     MCAPI static int& DEFAULT_HORN_COUNT();
 
     MCAPI static int& SCREAMING_GOAT_VARIANT();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

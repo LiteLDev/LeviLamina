@@ -168,7 +168,7 @@ public:
                                                                              mLimboEntities;
     ::ll::TypedStorage<8, 16, ::std::set<::ActorUniqueID>>                   mEntitiesToMoveChunks;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::TickingAreaList>>          mTickingAreaList;
-    ::ll::TypedStorage<8, 632, ::LevelChunkGarbageCollector>                 mLevelChunkGarbageCollector;
+    ::ll::TypedStorage<8, 120, ::LevelChunkGarbageCollector>                 mLevelChunkGarbageCollector;
     ::ll::TypedStorage<8, 16, ::std::set<::ActorUniqueID>>                   mWitherIDs;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelChunkBuilderData>>     mLevelChunkBuilderData;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mLastPruneTime;
@@ -344,6 +344,10 @@ public:
     MCAPI void addWither(::ActorUniqueID const& id);
 
     MCAPI ::Player* fetchNearestInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::Player* findPlayer(::brstd::function_ref<bool(::Player const&)> pred) const;
+#endif
 
     MCAPI void flagEntityforChunkMove(::Actor& e);
 

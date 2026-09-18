@@ -58,7 +58,7 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                                           mLastHitLocation;
     ::ll::TypedStorage<1, 1, bool>                                              mbHitLocationRecorded;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FullScreenEffectRenderer>>     mFullscreenEffectRenderer;
-    ::ll::TypedStorage<8, 176, ::OnCameraEffectRenderer>                        mOnCameraEffectRenderer;
+    ::ll::TypedStorage<8, 224, ::OnCameraEffectRenderer>                        mOnCameraEffectRenderer;
     ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                 mMinecraft;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>> mClient;
     // NOLINTEND

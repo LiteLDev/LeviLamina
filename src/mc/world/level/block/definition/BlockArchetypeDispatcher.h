@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BlockShape.h"
 
+class BlockTypeRegistry;
+class CompoundTag;
+namespace cereal {
+struct ReflectionCtx;
+}
+
 // clang-format off
 class BlockType;
 class Material;
@@ -23,8 +29,28 @@ public:
 
     // static functions
     // NOLINTBEGIN
+    MCAPI static void buildNetworkTag(
+        ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype const& archetypeData,
+        ::CompoundTag&                                                  tag,
+        ::cereal::ReflectionCtx const&                                  ctx
+    );
+
 #ifdef LL_PLAT_C
     MCAPI static ::BlockShape getBlockShape(::std::string const& blockName);
 #endif
+
+    MCAPI static void initializeFromNetwork(
+        ::CompoundTag const&                                      tag,
+        ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype& archetypeData,
+        ::cereal::ReflectionCtx const&                            ctx
+    );
+
+    MCAPI static ::BlockType* tryRegisterBlock(
+        ::BlockTypeRegistry&                                            registry,
+        ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype const& archetypeData,
+        ::std::string const&                                            blockName,
+        int                                                             blockID,
+        ::Material const&                                               material
+    );
     // NOLINTEND
 };

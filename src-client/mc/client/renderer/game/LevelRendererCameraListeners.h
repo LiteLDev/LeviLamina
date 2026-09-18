@@ -70,4 +70,16 @@ public:
 
     MCNAPI void $updateLevelCullerType(::LevelCullerType const newLevelCullerType);
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForPlayerListener();
+
+    MCNAPI static void** $vftableForLevelRendererCamera();
+
+    MCNAPI static void** $vftableForRegionListener();
+
+    MCNAPI static void** $vftableForLevelListener();
+    // NOLINTEND
 };

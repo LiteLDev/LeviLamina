@@ -14,7 +14,6 @@ struct EmotePlayedTelemetryDataComponent;
 struct EventingDispatcherComponent;
 struct EventingRequestQueueComponent;
 struct ShouldStopEmotingRequestComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class PersonaEmoteInputSystem {
@@ -36,7 +35,5 @@ public:
         ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView,
         ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

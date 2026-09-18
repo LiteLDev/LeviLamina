@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/editor/script/ScriptTaskPromise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,6 +32,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk37c655;
     ::ll::UntypedStorage<8, 32> mUnk3ff4a3;
     ::ll::UntypedStorage<8, 32> mUnkc8acd3;
+    ::ll::UntypedStorage<8, 32> mUnk6285c8;
     ::ll::UntypedStorage<8, 32> mUnk7251d4;
     ::ll::UntypedStorage<8, 32> mUnk814928;
     // NOLINTEND

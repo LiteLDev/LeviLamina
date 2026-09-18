@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PrivacyAndOnlineSafetyFacet();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
@@ -34,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PrivacyAndOnlineSafetyFacet(::std::weak_ptr<::Social::User> user);
-
     MCAPI void doPermissionCheck();
 
     MCAPI bool getAllowCapturesResult() const;
@@ -49,12 +43,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::weak_ptr<::Social::User> user);
     // NOLINTEND
 
 public:

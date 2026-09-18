@@ -204,7 +204,7 @@ public:
     ::ll::TypedStorage<8, 8, ::bgfx::Encoder*>                           m_encoder0;
     ::ll::TypedStorage<8, 8, ::bgfx::EncoderImpl*>                       m_encoder;
     ::ll::TypedStorage<8, 40, ::bx::HandleAlloc*>                        m_encoderHandle;
-    ::ll::TypedStorage<8, 206574336, ::bgfx::Frame[2]>                   m_frame;
+    ::ll::TypedStorage<8, 30413696, ::bgfx::Frame[2]>                    m_frame;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_render;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_submit;
     ::ll::TypedStorage<8, 524280, uint64[65535]>                         m_tempKeys;
@@ -407,6 +407,8 @@ public:
     MCAPI void rendererExecCommands(::bgfx::CommandBuffer& _cmdbuf);
 
     MCAPI void reset(uint _width, uint _height, uint _flags);
+
+    MCAPI void setName(::bgfx::TextureHandle _handle, ::bx::StringView const& _name);
 
     MCAPI void setName(::bgfx::ShaderHandle _handle, ::bx::StringView const& _name);
 

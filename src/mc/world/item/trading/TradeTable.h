@@ -17,4 +17,16 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mPath;
     ::ll::TypedStorage<8, 24, ::std::vector<::TradeTier>>        mTiers;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~TradeTable();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

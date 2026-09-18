@@ -36,6 +36,10 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ScriptArrowPrimitive();
 #endif
+
+    MCAPI void setHeadLength(float length);
+
+    MCAPI void setHeadRadius(float radius);
     // NOLINTEND
 
 public:

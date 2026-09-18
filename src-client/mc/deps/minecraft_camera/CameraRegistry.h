@@ -21,7 +21,7 @@ class IMinecraftEventing;
 class ResourcePackManager;
 namespace MinecraftCamera { struct RegisteredCamera; }
 namespace SharedTypes::v1_21_100 { struct CameraDefinitions; }
-namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 // clang-format on
 
 class CameraRegistry : public ::Bedrock::EnableNonOwnerReferences {
@@ -37,7 +37,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::cereal::ReflectionCtx> mReflectionCtx;
-    ::ll::TypedStorage<8, 264, ::Bedrock::Resources::CategoryLoader<::Bedrock::Resources::SharedSlicesTraits<2>>>
+    ::ll::TypedStorage<8, 272, ::Bedrock::Resources::CategoryLoader<::Bedrock::Resources::SharedSlicesTraits<2>>>
         mLoader;
     ::ll::TypedStorage<
         8,
@@ -75,7 +75,7 @@ public:
     MCAPI static void _applyPresetValues(
         uint64                                       presetIndex,
         ::OwnerPtr<::EntityId>&                      cameraEntity,
-        ::SharedTypes::v1_21_90::CameraPreset const& preset,
+        ::SharedTypes::v1_26_50::CameraPreset const& preset,
         ::Experiments const&                         experiments
     );
     // NOLINTEND

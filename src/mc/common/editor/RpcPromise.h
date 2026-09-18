@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/editor/RpcError.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Rpc { struct RpcRejection; }
@@ -29,6 +32,8 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void reject(::std::string detail);
 #endif
+
+    MCNAPI void reject(::Editor::Rpc::RpcError error);
     // NOLINTEND
 };
 

@@ -64,11 +64,11 @@ MCAPI bool placeInWorld(
     ::IRandom&                                    random
 );
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
 MCAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
 #endif
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
 #endif
 

@@ -24,8 +24,8 @@ class CurrentPartyDestinationQuery : public ::OreUI::QueryBase<::OreUI::CurrentP
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                         mDestinationName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                  mShouldShowJoinDestination;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>          mDestinationName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                            mShouldShowJoinDestination;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager>> mPartyTravelManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                           mUserAtDestinationSubscription;
     ::ll::TypedStorage<8, 32, ::std::string>                                             mMainMenuDestinationName;

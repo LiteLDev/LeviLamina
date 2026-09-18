@@ -11,6 +11,7 @@
 // clang-format off
 class ExpressionNode;
 class Mob;
+struct GoalId;
 // clang-format on
 
 class EatBlockGoal : public ::BaseGoal {
@@ -45,6 +46,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EatBlockGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

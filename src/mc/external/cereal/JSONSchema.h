@@ -48,10 +48,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::cereal::ext::JSONSchema fromDescription(
-        ::cereal::SchemaDescription const&               desc,
-        ::std::unordered_map<uint, ::std::string> const& schemaPathsById
-    );
+    MCAPI static ::cereal::ext::JSONSchema
+    fromDescription(::cereal::SchemaDescription const& desc, ::std::function<::std::string(uint)> const& uriProvider);
     // NOLINTEND
 
 public:

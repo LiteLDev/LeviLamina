@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class Mob;
+struct GoalId;
 struct MobDescriptor;
 // clang-format on
 
@@ -69,12 +70,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TargetGoal(
+        ::Mob&                                pathMob,
+        ::std::string                         name,
+        ::GoalId const&                       goalId,
+        ::std::vector<::MobDescriptor> const& targetTypes,
+        bool                                  mustSee,
+        int                                   mustSeeForgetTicks,
+        bool                                  mustReach,
+        float                                 withinDefault,
+        bool                                  attackOwner,
+        int                                   persistTargetTicks
+    );
+
     MCAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
 
     MCAPI bool _canReach(::Actor& target);
 
     MCAPI bool
     _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                                pathMob,
+        ::std::string                         name,
+        ::GoalId const&                       goalId,
+        ::std::vector<::MobDescriptor> const& targetTypes,
+        bool                                  mustSee,
+        int                                   mustSeeForgetTicks,
+        bool                                  mustReach,
+        float                                 withinDefault,
+        bool                                  attackOwner,
+        int                                   persistTargetTicks
+    );
     // NOLINTEND
 
 public:

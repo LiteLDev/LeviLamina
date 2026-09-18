@@ -23,9 +23,9 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk6d36a6;
     ::ll::UntypedStorage<1, 1>   mUnka30829;
     ::ll::UntypedStorage<8, 32>  mUnk11517d;
-    ::ll::UntypedStorage<8, 80>  mUnk9aa06e;
+    ::ll::UntypedStorage<8, 80>  mUnkdf1da4;
     ::ll::UntypedStorage<8, 296> mUnk7e3094;
-    ::ll::UntypedStorage<8, 80>  mUnk63885d;
+    ::ll::UntypedStorage<8, 80>  mUnk3f5a25;
     ::ll::UntypedStorage<8, 64>  mUnk73b293;
     ::ll::UntypedStorage<8, 64>  mUnke6df3f;
     ::ll::UntypedStorage<8, 64>  mUnk99b689;
@@ -45,11 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~AggregationEventListener() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~AggregationEventListener() /*override*/;
-#endif
 
     virtual void recordEvent(
         ::Social::Events::Event const&                   event,
@@ -57,6 +53,8 @@ public:
     ) /*override*/;
 
     virtual void sendEvents(bool forceSend) /*override*/;
+
+    virtual int getEventTagsFilter() const = 0;
 
     virtual void sendEvent(::Social::Events::Event const& event) = 0;
 
@@ -72,13 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
-#endif
 
 #ifdef LL_PLAT_C
     MCNAPI AggregationEventListener(
@@ -100,13 +92,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Core::Path const& logFileName);
-#endif
-
-#ifdef LL_PLAT_S
-    MCNAPI void* $ctor(::Core::Path const& logFileName);
-#endif
 
 #ifdef LL_PLAT_C
     MCNAPI void*
@@ -117,9 +103,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

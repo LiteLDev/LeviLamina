@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptAfterEventMetadata; }
-namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -29,23 +27,9 @@ public:
     ScriptWebSocketClientEvents();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptWebSocketClientEvents(::Scripting::WeakLifetimeScope& scope);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-
     MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata const& getMetadata();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 };
 

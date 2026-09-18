@@ -14,6 +14,7 @@ class ItemInstance;
 class ItemStackRequestActionConsume;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING;
+class ItemStackRequestActionCreate;
 class ItemStackRequestActionHandler;
 class Player;
 class SimpleSparseContainer;
@@ -60,6 +61,10 @@ public:
 
     MCAPI ::ItemStackNetResult
     handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
+
+#ifdef LL_PLAT_S
+    MCAPI ::ItemStackNetResult handleCreate(::ItemStackRequestActionCreate const& requestAction);
+#endif
 
     MCAPI bool isCraftRequest() const;
 

@@ -9,7 +9,6 @@
 // clang-format off
 class BaseGameVersion;
 class Block;
-class BlockDefinitionGroup;
 class Experiments;
 class IRandom;
 struct ResourceDrops;
@@ -27,11 +26,7 @@ combine(
         dropStrategyB
 );
 
-MCAPI void configureBlockDrops(
-    ::BaseGameVersion const& baseGameVersion,
-    ::Experiments const&     experiments,
-    ::BlockDefinitionGroup*  blockDefinitionGroup
-);
+MCAPI void configureBlockDrops(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
 MCAPI ::brstd::move_only_function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> limitCount(
     int                                                                                               max,

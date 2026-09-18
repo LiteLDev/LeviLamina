@@ -89,25 +89,17 @@ public:
         NatHolePuncherFunctor& operator=(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI bool punch(::std::function<bool()> lanDiscoveryPortPuncher, ::std::function<bool()> gamePortPuncher);
-#endif
-        // NOLINTEND
     };
 
     class PingRateRecorder {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk47b2d8;
+        ::ll::UntypedStorage<8, 24> mUnk277bb5;
         ::ll::UntypedStorage<4, 4>  mUnke4ceed;
-        ::ll::UntypedStorage<4, 4>  mUnkafd9c7;
-        ::ll::UntypedStorage<4, 4>  mUnkc2e940;
-        ::ll::UntypedStorage<4, 4>  mUnk7e5467;
+        ::ll::UntypedStorage<8, 8>  mUnk7c3b2f;
+        ::ll::UntypedStorage<8, 8>  mUnk1f49b5;
+        ::ll::UntypedStorage<8, 8>  mUnk3f2a9d;
         ::ll::UntypedStorage<4, 4>  mUnk55e198;
         ::ll::UntypedStorage<4, 4>  mUnk4b04bf;
         ::ll::UntypedStorage<1, 1>  mUnk762855;
@@ -167,15 +159,15 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkfa3d98;
     ::ll::UntypedStorage<4, 4>   mUnk7ebf28;
     ::ll::UntypedStorage<4, 8>   mUnkc145b0;
-    ::ll::UntypedStorage<4, 4>   mUnk3962a5;
-    ::ll::UntypedStorage<4, 4>   mUnk3d87f2;
+    ::ll::UntypedStorage<8, 8>   mUnkbc5f1b;
+    ::ll::UntypedStorage<8, 8>   mUnk992e9d;
     ::ll::UntypedStorage<8, 24>  mUnk3bbb85;
     ::ll::UntypedStorage<8, 24>  mUnk87606a;
     ::ll::UntypedStorage<8, 40>  mUnk26b996;
     ::ll::UntypedStorage<1, 1>   mUnk2c445a;
     ::ll::UntypedStorage<8, 64>  mUnkc78041;
     ::ll::UntypedStorage<8, 32>  mUnkc98a78;
-    ::ll::UntypedStorage<4, 4>   mUnk8bcebb;
+    ::ll::UntypedStorage<8, 8>   mUnk2a510a;
     ::ll::UntypedStorage<8, 80>  mUnkd855a4;
     ::ll::UntypedStorage<8, 80>  mUnk518100;
     ::ll::UntypedStorage<4, 4>   mUnk5542ff;
@@ -217,15 +209,11 @@ public:
 
     virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) /*override*/;
 
-    virtual void addCustomServer(::std::string const& address, int port) /*override*/;
-
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
-
-    virtual void clearServerList() /*override*/;
 
     virtual void update() /*override*/;
 
-    virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
+    virtual ::std::chrono::milliseconds getPingTimeForGUID(::std::string const& guid) /*override*/;
 
     virtual void checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,
@@ -276,12 +264,20 @@ public:
 
     MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& addr, int ipVersion);
 
-    MCNAPI bool
-    _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
+    MCNAPI bool _onPongReceive(
+        ::std::chrono::milliseconds&                   latencyToSet,
+        ::RakNet::RakNetGUID const&                    guid,
+        ::std::chrono::steady_clock::time_point const& receivedTime,
+        int                                            ipVersion
+    );
 
     MCNAPI bool _pingServerV4(::std::string const& address, int port);
 
     MCNAPI bool _pingServerV6(::std::string const& address, int port);
+
+#ifdef LL_PLAT_C
+    MCNAPI void _punchHoles();
+#endif
 
     MCNAPI void _startAnnouncingServer(::RakNetServerLocator::AnnounceServerData const& announceData);
 
@@ -333,15 +329,11 @@ public:
 
     MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCNAPI void $addCustomServer(::std::string const& address, int port);
-
     MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
-
-    MCNAPI void $clearServerList();
 
     MCNAPI void $update();
 
-    MCNAPI float $getPingTimeForGUID(::std::string const& guid);
+    MCNAPI ::std::chrono::milliseconds $getPingTimeForGUID(::std::string const& guid);
 
     MCNAPI void $checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,

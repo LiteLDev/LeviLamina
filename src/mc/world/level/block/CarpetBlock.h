@@ -69,7 +69,11 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
+#ifdef LL_PLAT_S
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+#else // LL_PLAT_C
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+#endif
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

@@ -53,6 +53,8 @@ public:
     virtual float _zTextOffset() const;
 
     virtual int _getSignWidth() const;
+
+    virtual ~SignRenderer() /*override*/;
     // NOLINTEND
 
 public:
@@ -63,15 +65,15 @@ public:
     MCAPI void _renderSign(
         ::BaseActorRenderContext&                               renderContext,
         ::Block const&                                          block,
-        float const                                             size,
-        int const                                               breakingAmount,
-        float const                                             frameAlpha,
+        float                                                   size,
+        int                                                     breakingAmount,
+        float                                                   frameAlpha,
         ::ScreenContext&                                        screenContext,
         ::BlockSource&                                          renderSource,
         ::IVanillaRenderBlockActorComponent&                    renderComponent,
         ::BlockPos const&                                       worldPos,
         ::mce::MaterialPtr const&                               forcedMat,
-        ::mce::ClientTexture const                              forcedTex,
+        ::mce::ClientTexture                                    forcedTex,
         ::Model&                                                model,
         ::mce::framebuilder::CustomSurfaceShaderMetadata const& cssMetadata
     );
@@ -92,6 +94,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
@@ -103,5 +111,11 @@ public:
     MCAPI float $_zTextOffset() const;
 
     MCFOLD int $_getSignWidth() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

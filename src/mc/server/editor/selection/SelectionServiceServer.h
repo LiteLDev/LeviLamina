@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/Task.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/selection/SelectionServiceProvider.h"
@@ -11,8 +12,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BoundingBox;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor { struct CoroutineStatus; }
+namespace Editor::Coroutine { class CoroutineTaskContext; }
 namespace Editor::Network { class SelectionVolumeUpdate; }
 namespace Editor::Selection { class SelectionContainerEntity; }
 namespace Editor::Selection { class SelectionContainerVolume; }
@@ -33,8 +38,9 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk7e7ef6;
     ::ll::UntypedStorage<8, 56>  mUnkf28297;
     ::ll::UntypedStorage<8, 8>   mUnka13fb7;
-    ::ll::UntypedStorage<8, 64>  mUnkdc3f46;
-    ::ll::UntypedStorage<8, 8>   mUnk1fee3a;
+    ::ll::UntypedStorage<8, 8>   mUnk5c476a;
+    ::ll::UntypedStorage<8, 8>   mUnk894ef1;
+    ::ll::UntypedStorage<1, 1>   mUnk1ab499;
     ::ll::UntypedStorage<8, 64>  mUnk8c7459;
     // NOLINTEND
 
@@ -154,6 +160,14 @@ public:
     );
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForIEditorService();
+
+    MCNAPI static void** $vftableForSelectionServiceProvider();
     // NOLINTEND
 };
 

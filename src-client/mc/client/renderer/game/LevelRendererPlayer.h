@@ -125,7 +125,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                    mLastCloudMeshSize;
     ::ll::TypedStorage<4, 4, int>                                                    mLastCloudGridSize;
     ::ll::TypedStorage<4, 336, ::std::array<::DirectionalLightRenderData, 3>>        mDirectionalLightRenderData;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, uint64>>              mRecordSoundMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::ServerSoundHandle>> mRecordServerSoundMap;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::BlockDestructInfo>> mDestroyingBlockList;
     ::ll::TypedStorage<8, 8, double>                                                 mLastDestroyRenderTime;
     ::ll::TypedStorage<4, 4, float>                                                  mFov;
@@ -186,6 +186,8 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnStopLevelSoundEvent;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnStopAllLevelSoundsEvent;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnStopMusicEvent;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnRecordStartedEvent;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnRecordStoppedEvent;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mSubtitlesOptionSubscription;
     ::ll::TypedStorage<1, 1, bool>                                        mSubtitlesEnabled;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelAnimateTickHelper>> mLevelAnimateTickHelper;
@@ -220,8 +222,6 @@ public:
     virtual ~LevelRendererPlayer() /*override*/ = default;
 
     virtual ::LevelRendererCameraType getCameraType() const /*override*/;
-
-    virtual void initResources() /*override*/;
 
     virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext) /*override*/;
 
@@ -340,8 +340,6 @@ public:
 
     MCAPI void _crack(::BlockSource& region, ::Block const& block, ::BlockPos const& inPos, uchar face);
 
-    MCAPI void _playBabySoundEvent(::Sound const& sound, ::Vec3 const& pos, ::Random& rand, bool isLocalPlayer) const;
-
     MCAPI void _renderHighlightSelection(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
@@ -357,12 +355,6 @@ public:
         ::BlockSource&            region,
         ::BlockPos const&         pos
     ) const;
-
-    MCAPI ::Sound const& _retrieveActorSoundWithFallback(
-        ::SharedTypes::Legacy::LevelSoundEvent eventType,
-        ::SharedTypes::Legacy::LevelSoundEvent backupEventType,
-        ::ActorSoundIdentifier const&          actorSoundIdentifier
-    );
 
     MCAPI void _spawnSmokeParticles(::ParticleType particleType, ::Vec3 const& pos, int data);
 
@@ -414,8 +406,6 @@ public:
 
     MCAPI void stopMusic();
 
-    MCAPI void stopRecord(::Vec3 const& pos);
-
     MCAPI void stopSound(::std::string const& name);
 
     MCAPI void stopSounds();
@@ -465,8 +455,6 @@ public:
     // NOLINTBEGIN
     MCFOLD ::LevelRendererCameraType $getCameraType() const;
 
-    MCAPI void $initResources();
-
     MCAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
     MCAPI void $tickLevelRendererCamera();
@@ -484,7 +472,7 @@ public:
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+    MCFOLD void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
     MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
@@ -504,7 +492,7 @@ public:
 
     MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
-    MCAPI void $addCameraListenerToRenderChunkCoordinator();
+    MCFOLD void $addCameraListenerToRenderChunkCoordinator();
 
     MCAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
 

@@ -11,10 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
-class InteractionResult;
+class Interaction;
 class NpcI18nObserver;
 class Player;
 struct SkinData;
@@ -67,7 +66,7 @@ public:
 
     MCAPI ::std::vector<int> getCommandCounts() const;
 
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string const& getInteractiveRawText(::Actor const& owner) const;

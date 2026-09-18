@@ -105,7 +105,7 @@ public:
     ::ll::TypedStorage<4, 20, ::NetworkSettingOptions>                            mNetworkSettings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
     ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                           mPlayerMovementSettings;
-    ::ll::TypedStorage<8, 760, ::ScriptSettings>                                  mScriptSettings;
+    ::ll::TypedStorage<8, 800, ::ScriptSettings>                                  mScriptSettings;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                              mChatRestrictionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mPersonaDisabled;
     ::ll::TypedStorage<1, 1, bool>                                                mCustomSkinsDisabled;
@@ -131,7 +131,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                               mScriptSentryMaxEventsPerWindow;
     ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>>            mScriptSentryRateLimitWindow;
     ::ll::TypedStorage<8, 160, ::PropertiesSettings::TelemetrySettings>           mTelemetry;
-    ::ll::TypedStorage<8, 480, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
+    ::ll::TypedStorage<8, 440, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
     ::ll::TypedStorage<1, 1, bool>                                                mEditorNetworkMetricsEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mConvertWorldToEditorProject;
     ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>                      mEditorConnectionPolicy;

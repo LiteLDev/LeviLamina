@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class IWorldRegistriesProvider;
 struct FilterContext;
 struct FilterInputs;
@@ -53,8 +54,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk20eb73;
-    ::ll::UntypedStorage<2, 2> mUnk995088;
+    ::ll::UntypedStorage<2, 2>  mUnk20eb73;
+    ::ll::UntypedStorage<2, 2>  mUnk995088;
+    ::ll::UntypedStorage<8, 40> mUnk4242cc;
     // NOLINTEND
 
 public:
@@ -88,12 +90,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool _testValuesWithOperator(::HashedString const& a, ::HashedString const& b) const;
+
+    MCNAPI bool _testValuesWithOperator(float a, float b) const;
+
+    MCNAPI bool _testValuesWithOperator(bool a, bool b) const;
+
     MCNAPI ::Json::Value serialize() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+
     MCNAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
     MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;

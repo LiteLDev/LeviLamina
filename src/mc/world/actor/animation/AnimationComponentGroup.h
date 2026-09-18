@@ -24,7 +24,14 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI static void onFrameRendered();
+#endif
 
+#ifdef LL_PLAT_S
+    MCAPI static void
+    releaseAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI static void
     setFactory(::gsl::not_null<::std::unique_ptr<::AnimationComponent> (*)(::AnimationComponentArguments&&)> factory);
 #endif

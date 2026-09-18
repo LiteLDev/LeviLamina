@@ -31,10 +31,4 @@ public:
     ::ll::TypedStorage<4, 4, float>                                             mCurrentMultiplier;
     ::ll::TypedStorage<4, 24, ::std::optional<::VolumeMultiplier::EasingState>> mEasingState;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool advanceTime(float elapsedTime);
-    // NOLINTEND
 };

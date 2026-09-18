@@ -50,7 +50,8 @@ public:
 
     MCAPI ::cereal::SerializerContext& pushContext(uint containerIndex);
 
-    MCAPI ::cereal::SerializerContext& pushContext(::Bedrock::StaticOptimizedString propertyName);
+    MCAPI ::cereal::SerializerContext&
+    pushContext(::Bedrock::StaticOptimizedString propertyName, ::std::optional<uint> propertyId);
     // NOLINTEND
 };
 

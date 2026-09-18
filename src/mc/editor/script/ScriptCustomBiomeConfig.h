@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct CustomBiome;
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -36,8 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::map<::std::string, ::CustomBiome>
-    buildMap(::std::vector<::Editor::ScriptModule::ScriptCustomBiomeConfig> const& listOfCustomBiomes);
+    MCNAPI static ::Scripting::InterfaceBinding bindType();
     // NOLINTEND
 
 public:

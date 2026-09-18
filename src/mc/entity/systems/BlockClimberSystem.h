@@ -7,7 +7,6 @@
 class BlockPos;
 class BlockType;
 class IConstBlockSource;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class BlockClimberSystem {
@@ -18,11 +17,8 @@ public:
         ::BlockType const&         block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          blockPos,
-        bool                       canStandOnSnow,
-        bool                       hasLightweightFamily,
+        bool                       canStandOnPowderSnow,
         bool                       isPlayer
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

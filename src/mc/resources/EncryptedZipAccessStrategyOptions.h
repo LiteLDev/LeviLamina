@@ -17,4 +17,16 @@ public:
     EncryptedZipAccessStrategyOptions& operator=(EncryptedZipAccessStrategyOptions const&);
     EncryptedZipAccessStrategyOptions(EncryptedZipAccessStrategyOptions const&);
     EncryptedZipAccessStrategyOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~EncryptedZipAccessStrategyOptions();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

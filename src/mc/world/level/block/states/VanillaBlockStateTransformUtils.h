@@ -40,6 +40,8 @@ public:
 
     MCAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
 
+    MCAPI static bool hasTransformableConnectionStates(::Block const& block);
+
     MCAPI static bool hasTransformableWallStates(::Block const& block);
 
     MCAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
@@ -48,9 +50,7 @@ public:
 
     MCAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
-#ifdef LL_PLAT_C
     MCAPI static ::Block const* transformConnectionStates(::Block const& block, ::Rotation rotation, ::Mirror mirror);
-#endif
 
     MCAPI static ::Block const*
     transformWallConnectionTypes(::Block const& block, ::Rotation rotation, ::Mirror mirror);

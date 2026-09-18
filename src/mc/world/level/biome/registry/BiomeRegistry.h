@@ -16,9 +16,10 @@
 // clang-format off
 class BaseGameVersion;
 class Biome;
+class Experiments;
+class HashedString;
 class ILevelStorageManagerConnector;
 class IMinecraftEventing;
-class IWorldRegistriesProvider;
 class LevelStorage;
 class LinkedAssetValidator;
 class ResourcePackManager;
@@ -109,16 +110,17 @@ public:
         uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
 #endif
 
-    MCAPI bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
+    MCAPI ::std::vector<::std::string> const biomeGetTags(::Biome const& biome) const;
+
+    MCAPI bool biomeHasTag(::Biome const& biome, ::HashedString const& id) const;
+
+    MCAPI bool biomeHasTag(::Biome const& biome, uint64 tagHash) const;
+
+    MCFOLD bool biomeHasTag(::Biome const& biome, ::IDType<::BiomeTagIDType> const& tagID) const;
+
+    MCFOLD bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
 
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
-
-    MCAPI void initServerFromPacks(
-        ::IWorldRegistriesProvider& worldRegistries,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
-            biomeIdToResolvedData
-    );
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -131,7 +133,7 @@ public:
         ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,
         ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
                               biomeIdToResolvedData,
-        bool                  betaApis,
+        ::Experiments const&  activeExperiments,
         ::IMinecraftEventing& eventing
     );
 
@@ -148,8 +150,6 @@ public:
     MCFOLD ::Biome const* lookupByName(::std::string const& name) const;
 
     MCFOLD ::Biome* lookupByName(::std::string const& name);
-
-    MCAPI void saveBiomeTable(::LevelStorage& levelStorage) const;
     // NOLINTEND
 
 public:

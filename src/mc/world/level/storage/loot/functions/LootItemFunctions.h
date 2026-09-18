@@ -12,9 +12,7 @@ class LootItemFunctions {
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::std::vector<::std::unique_ptr<::LootItemFunction>>
     deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
-#endif
     // NOLINTEND
 };

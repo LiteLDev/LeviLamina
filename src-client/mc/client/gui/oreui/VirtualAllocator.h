@@ -29,13 +29,19 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 $GetAllocationPageSize() const;
 
-    MCAPI uint64 $GetCommitPageSize() const;
+    MCFOLD uint64 $GetCommitPageSize() const;
 
     MCAPI void* $Allocate(void* address, uint64 size, uint64 alignment, int protection, int flags);
 
     MCAPI bool $Free(void* address, uint64 size, int flags);
 
     MCAPI bool $PartialFree(void* address, uint64 oldSize, uint64 newSize, int);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

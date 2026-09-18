@@ -42,13 +42,12 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentBase& operator=(ScriptWidgetComponentBase const&);
-    ScriptWidgetComponentBase(ScriptWidgetComponentBase const&);
     ScriptWidgetComponentBase();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentBase() = default;
+    virtual ~ScriptWidgetComponentBase();
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const = 0;
 
@@ -61,6 +60,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetComponentBase(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
+
     MCNAPI ScriptWidgetComponentBase(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -82,6 +83,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
+
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -93,6 +96,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
@@ -100,6 +109,12 @@ public:
     MCNAPI void $_onOwnerPositionUpdate();
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

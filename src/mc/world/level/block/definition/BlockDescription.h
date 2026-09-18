@@ -50,6 +50,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI BlockDescription(::BlockDescription&&);
+#endif
+
     MCAPI BlockDescription(::BlockDescription const&);
 
     MCAPI ::BlockDescription& operator=(::BlockDescription&&);
@@ -62,6 +66,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::BlockDescription&&);
+#endif
+
     MCAPI void* $ctor(::BlockDescription const&);
     // NOLINTEND
 

@@ -24,6 +24,8 @@ public:
 
     virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
         /*override*/;
+
+    virtual ::std::string_view getEfficiencyLocalization() const /*override*/;
     // NOLINTEND
 
 public:
@@ -44,6 +46,8 @@ public:
     MCAPI int $getEnchantSlot() const;
 
     MCFOLD void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+
+    MCAPI ::std::string_view $getEfficiencyLocalization() const;
 
 
     // NOLINTEND

@@ -42,9 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ~DiggerItemComponent();
-#endif
     // NOLINTEND
 
 public:
@@ -62,9 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

@@ -15,6 +15,7 @@
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemTag.h"
 #include "mc/world/item/registry/ItemRegistrationOrder.h"
+#include "mc/world/item/registry/ItemRegistrationState.h"
 #include "mc/world/item/registry/ItemRegistryRef.h"
 
 // auto generated forward declare list
@@ -34,7 +35,6 @@ struct ItemIconInfo;
 struct ItemParseContext;
 struct ItemRegistryComplexAlias;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace Bedrock::Threading { class Mutex; }
 namespace ItemLoaderTraits { struct Loader; }
 namespace Puv { class Input; }
 namespace cereal { struct ReflectionCtx; }
@@ -137,7 +137,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ItemTag, ::std::unordered_set<::Item const*>>> mTagToItemsMap;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::Item const*> const>                            mEmptyItemSet;
     ::ll::TypedStorage<1, 1, bool>                                      mServerInitializingCreativeItems;
-    ::ll::TypedStorage<1, 1, bool>                                      mIsInitialized;
+    ::ll::TypedStorage<1, 1, ::ItemRegistrationState>                   mItemRegistrationState;
     ::ll::TypedStorage<8, 64, ::std::function<void(::ItemRegistryRef)>> mExtraItemInitCallback;
     ::ll::TypedStorage<
         8,
@@ -148,12 +148,12 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedPtr<::Item>>>    mDeadItemRegistry;
     ::ll::TypedStorage<1, 1, bool>                                   mAddToPreRegistry;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::SharedPtr<::Item>>>
-                                                                              mHardcodedVanillaItemPreRegistry;
-    ::ll::TypedStorage<1, 1, ::ItemRegistrationOrder>                         mItemRegistrationOrder;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mWorldBaseGameVersion;
-    ::ll::TypedStorage<1, 1, bool>                                            mCheckForItemWorldCompatibility;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::Mutex>> mCompatibilityCheckMutex;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CreativeItemRegistry>>       mCreativeItemRegistry;
+                                                                        mHardcodedVanillaItemPreRegistry;
+    ::ll::TypedStorage<1, 1, ::ItemRegistrationOrder>                   mItemRegistrationOrder;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                        mWorldBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>                                      mCheckForItemWorldCompatibility;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::mutex>>          mCompatibilityCheckMutex;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CreativeItemRegistry>> mCreativeItemRegistry;
     // NOLINTEND
 
 public:
@@ -162,6 +162,8 @@ public:
     MCAPI ItemRegistry();
 
 #ifdef LL_PLAT_C
+    MCAPI void _bindBetaItemTypes(::Experiments const& experiments);
+
     MCAPI void _movePreRegistryToMainRegistry();
 
     MCAPI void _populateVanillaItemVersionMap(
@@ -197,7 +199,7 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void findAllAttachableDefinitions();
 
-    MCAPI void finishedRegistration();
+    MCAPI void finishedRegistration(::Experiments const& experiments);
 #endif
 
     MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&

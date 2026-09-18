@@ -27,7 +27,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16>  mUnk7a2899;
         ::ll::UntypedStorage<8, 64>  mUnkcc5d93;
-        ::ll::UntypedStorage<8, 128> mUnkbcb283;
+        ::ll::UntypedStorage<8, 128> mUnke3ed6e;
         // NOLINTEND
 
     public:
@@ -55,14 +55,16 @@ public:
     MCNAPI void _initFromPackStack(::std::vector<::PackInstance> const& stack);
 
     MCNAPI ::Bedrock::PubSub::Subscription registerObserver(
-        ::mce::UUID                                                                                    packId,
-        ::std::function<void(::std::string const&, ::std::variant<float, bool, ::std::string> const&)> callback
+        ::mce::UUID packId,
+        ::std::function<
+            void(::std::string const&, ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> const&)>
+            callback
     );
 
     MCNAPI void updatePackSetting(
-        ::mce::UUID                                       packId,
-        ::std::string const&                              name,
-        ::std::variant<float, bool, ::std::string> const& value
+        ::mce::UUID                                                                     packId,
+        ::std::string const&                                                            name,
+        ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> const& value
     );
     // NOLINTEND
 };

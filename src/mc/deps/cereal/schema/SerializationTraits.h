@@ -6,13 +6,14 @@ namespace cereal {
 
 enum class SerializationTraits : uchar {
     // bitfield representation
-    None              = 0,
-    Compression       = 1 << 0,
-    BigEndian         = 1 << 1,
-    EnumAsValue       = 1 << 2,
-    NoSizeCompression = 1 << 3,
-    SkipAlsoReadAs    = 1 << 4,
-    EnttEnumAsBitmask = 255,
+    None                   = 0,
+    Compression            = 1 << 0,
+    BigEndian              = 1 << 1,
+    EnumAsValue            = 1 << 2,
+    NoSizeCompression      = 1 << 3,
+    SkipAlsoReadAs         = 1 << 4,
+    AllowUnknownEnumValues = 1 << 5,
+    EnttEnumAsBitmask      = 255,
 };
 
 }

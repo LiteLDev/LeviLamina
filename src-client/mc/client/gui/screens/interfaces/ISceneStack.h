@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
+#include "mc/client/gui/oreui/routing/RouteAction.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/function_ref.h"
 
@@ -15,7 +16,6 @@ class OptionRegistry;
 class SceneStackProxy;
 struct ScreenThreshold;
 namespace Bedrock::PubSub { class Subscription; }
-namespace OreUI { struct RouteAction; }
 // clang-format on
 
 class ISceneStack : public ::Bedrock::EnableNonOwnerReferences {
@@ -23,9 +23,19 @@ public:
     // ISceneStack inner types declare
     // clang-format off
     struct SceneElement;
+    struct PendingSceneStackChange;
     // clang-format on
 
     // ISceneStack inner types define
+    enum class FlushMode : int {
+        Queued                       = 0,
+        Immediate                    = 1,
+        QueuedIncludingNonFlushable  = 2,
+        QueuedIgnoringTransitions    = 3,
+        ImmediateIgnoringTransitions = 4,
+        Teardown                     = 5,
+    };
+
     struct SceneElement {
     public:
         // member variables
@@ -41,6 +51,30 @@ public:
         // NOLINTEND
     };
 
+    struct PendingSceneStackChange {
+    public:
+        // PendingSceneStackChange inner types define
+        enum class Kind : int {
+            Push           = 0,
+            Pop            = 1,
+            PopRangeOfType = 2,
+            Flush          = 3,
+            RouteAction    = 4,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::ISceneStack::PendingSceneStackChange::Kind> mKind;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AbstractScene>>          mScene;
+        ::ll::TypedStorage<8, 48, ::std::optional<::OreUI::RouteAction>>       mRouteAction;
+        ::ll::TypedStorage<4, 4, int>                                          mPopCount;
+        ::ll::TypedStorage<1, 1, bool>                                         mFlushIgnoreNotFlushable;
+        ::ll::TypedStorage<4, 4, ::ui::SceneType>                              mSceneType;
+        ::ll::TypedStorage<4, 4, ::ui::SceneType>                              mSceneTypeExclusions;
+        // NOLINTEND
+    };
+
     using SceneChangeCallback = ::std::function<void(::AbstractScene&)>;
 
     using PrePushSceneCallback = ::std::function<void(::AbstractScene&)>;
@@ -53,7 +87,11 @@ public:
     using PopSceneCallback =
         ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>;
 
+    using PopRangeSceneCallback = ::std::function<void(::std::vector<::std::shared_ptr<::AbstractScene>> const&)>;
+
     using PostFlushCallback = ::std::function<void()>;
+
+    using RouteActionCallback = ::std::function<void(::OreUI::RouteAction const&)>;
 
     using VoidSceneVisitor = ::brstd::function_ref<void(::AbstractScene&)>;
 
@@ -101,6 +139,20 @@ public:
 
     virtual void unregisterPopSceneCallback(void* token) = 0;
 
+    virtual void registerPopRangeSceneCallback(
+        void*                                                                           token,
+        ::std::function<void(::std::vector<::std::shared_ptr<::AbstractScene>> const&)> popRangeSceneCallback
+    ) = 0;
+
+    virtual void unregisterPopRangeSceneCallback(void* token) = 0;
+
+    virtual void registerRouteActionCallback(
+        void*                                              token,
+        ::std::function<void(::OreUI::RouteAction const&)> routeActionCallback
+    ) = 0;
+
+    virtual void unregisterRouteActionCallback(void* token) = 0;
+
     virtual void forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         bool                                          tickedLastFrame,
@@ -126,18 +178,15 @@ public:
 
     virtual void popScreenWithRouteAction(::OreUI::RouteAction const& routeAction) = 0;
 
+    virtual void scheduleRouteAction(::OreUI::RouteAction const& routeAction) = 0;
+
     virtual void pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush) = 0;
 
     virtual void schedulePopScreen(int totalPopNumber) = 0;
 
     virtual void schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames) = 0;
 
-    virtual void flushStack(
-        bool                    immediate,
-        bool                    ignoreNotFlushableFlag,
-        bool                    ignoreTransitions,
-        ::std::function<void()> postFlushCallback
-    ) = 0;
+    virtual void flushStack(::ISceneStack::FlushMode mode, ::std::function<void()> postFlushCallback) = 0;
 
     virtual void deferUpdatesUntilNextTick() = 0;
 
@@ -194,6 +243,8 @@ public:
     virtual ::std::shared_ptr<::AbstractScene const> const getSharedNonTerminatingActiveScene() const = 0;
 
     virtual ::gsl::span<::ISceneStack::SceneElement const> getScreenStackView() const = 0;
+
+    virtual ::std::vector<::ISceneStack::PendingSceneStackChange> getPendingSceneStackChanges() const = 0;
 
     virtual int getScheduledPopCount() const = 0;
 

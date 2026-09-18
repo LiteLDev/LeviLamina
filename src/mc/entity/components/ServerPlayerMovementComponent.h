@@ -39,8 +39,6 @@ public:
 
     MCAPI ServerPlayerMovementComponent(::ServerPlayerMovementComponent&&);
 
-    MCAPI explicit ServerPlayerMovementComponent(::std::unique_ptr<::IPlayerTickPolicy> policy);
-
     MCAPI bool addInventoryTransactionPacket(::InventoryPacketHandler packet);
 
     MCAPI bool addPlayerAuthInputPacket(::PlayerAuthInputPacket&& packet);
@@ -56,7 +54,5 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::ServerPlayerMovementComponent&&);
-
-    MCAPI void* $ctor(::std::unique_ptr<::IPlayerTickPolicy> policy);
     // NOLINTEND
 };

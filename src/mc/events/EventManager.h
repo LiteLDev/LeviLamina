@@ -2,15 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class TaskResult;
-namespace Json { class Value; }
 namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Property; }
@@ -35,16 +28,14 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk27720e;
     ::ll::UntypedStorage<8, 8>  mUnke742b0;
     ::ll::UntypedStorage<8, 8>  mUnkb0340f;
-    ::ll::UntypedStorage<8, 8>  mUnkb904e5;
     ::ll::UntypedStorage<8, 8>  mUnk7e8048;
-    ::ll::UntypedStorage<8, 64> mUnke7aafa;
-    ::ll::UntypedStorage<8, 8>  mUnk646108;
     ::ll::UntypedStorage<8, 8>  mUnk4a6715;
     ::ll::UntypedStorage<4, 4>  mUnk3ce00c;
     ::ll::UntypedStorage<1, 1>  mUnk6fc9f0;
     ::ll::UntypedStorage<1, 1>  mUnk60b46f;
     ::ll::UntypedStorage<8, 8>  mUnk7ec861;
     ::ll::UntypedStorage<8, 16> mUnkc396ea;
+    ::ll::UntypedStorage<8, 16> mUnk8b72bc;
     // NOLINTEND
 
 public:
@@ -60,8 +51,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI void SendDelayedEventActions(uint primaryUserId);
-
-    MCNAPI void SendDelayedTelemetryEvents(uint primaryUserId);
 #endif
 
     MCNAPI void UpdateDnAPlatString();
@@ -69,11 +58,6 @@ public:
     MCNAPI ::std::string _buildDnAPlatformString();
 
 #ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::Result<::TaskResult> _processDelayedTelemetryEvents(
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& filePath,
-        uint                                                      primaryUserId
-    ) const;
-
     MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
 #endif
 
@@ -94,6 +78,10 @@ public:
     MCNAPI void recordEvent(::Social::Events::Event& event);
 
     MCNAPI void removePlayerCommonProperty(uint userId, ::std::string const& name);
+
+#ifdef LL_PLAT_C
+    MCNAPI void sendSavedEvents();
+#endif
 
     MCNAPI ~EventManager();
     // NOLINTEND

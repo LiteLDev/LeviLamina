@@ -13,6 +13,7 @@ class ActorHurtResult;
 class BlockSource;
 class EntityContext;
 class HashedString;
+class Vec3;
 struct ActorDefinitionIdentifier;
 struct HurtParameters;
 // clang-format on
@@ -26,6 +27,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual float getInterpolatedBodyYaw(float) const /*override*/;
+
+    virtual void remove() /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
@@ -41,7 +44,9 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void dropCushionAndRemove(bool dropCushion);
+    MCAPI bool _wouldSurviveAt(::BlockSource const& region, ::Vec3 const& at) const;
+
+    MCAPI void dropCushionAndRemove(bool dropCushion, ::Actor* breakingActor);
 
     MCAPI bool wouldSurvive(::BlockSource const& region) const;
     // NOLINTEND
@@ -66,6 +71,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $getInterpolatedBodyYaw(float) const;
+
+    MCAPI void $remove();
 
     MCFOLD float $getShadowRadius() const;
 

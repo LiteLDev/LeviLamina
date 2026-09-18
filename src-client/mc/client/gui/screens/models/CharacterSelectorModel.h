@@ -69,7 +69,7 @@ public:
     ::ll::TypedStorage<8, 40, ::ProfileEntryPromptManager>                                mEntryPromptManager;
     ::ll::TypedStorage<4, 8, ::glm::ivec2>                                                mGridParams;
     ::ll::TypedStorage<4, 4, uint>                                                        mPreviewIndex;
-    ::ll::TypedStorage<8, 2544, ::Random>                                                 mRandom;
+    ::ll::TypedStorage<8, 2560, ::Random>                                                 mRandom;
     ::ll::TypedStorage<4, 4, ::CharacterSelectorModel::AppearanceCreationType>            mAppearanceCreationType;
     ::ll::TypedStorage<4, 4, ::CharacterSelectorVisibility>                               mCastModalVisibility;
     ::ll::TypedStorage<8, 16, ::CharacterSelectorModel::CharacterSelectorFTUEModel>       mFTUEData;

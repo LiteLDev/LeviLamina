@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/packet/LevelSoundEventPacket.h"
@@ -16,13 +17,20 @@
 // auto generated forward declare list
 // clang-format off
 class ActorSoundIdentifier;
+class BlockPos;
 class IDimension;
+class IPlayerConnectionConnector;
+class IPlayerDimensionTransferConnector;
 class LevelEventCoordinator;
 class PacketSender;
 class Player;
+class ServerSoundHandle;
 class ServerSoundInstance;
 class SoundPlayerInterface;
 class Vec3;
+struct BroadcastOptions;
+struct ClientboundUpdateSoundDataPacketPayload;
+struct DimensionType;
 struct PlaySoundOptions;
 struct SoundEventIdentifier;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -120,6 +128,20 @@ public:
         mOnStopAllLevelSoundsEvent;
     ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnStopMusicEvent;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::BlockPos const&, ::ServerSoundHandle), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnRecordStartedEvent;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::ServerSoundHandle), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                               mOnRecordStoppedEvent;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerDisconnectedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerConnectedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerLeftDimensionSubscription;
     // NOLINTEND
 
 public:
@@ -162,6 +184,9 @@ public:
             ::LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket> packet
     );
 
+    MCAPI void
+    _stopBroadcastsForPlayer(::NetworkIdentifierWithSubId const& player, ::std::optional<::DimensionType> dimension);
+
     MCAPI void broadcastSoundEvent(
         ::IDimension&                  dimension,
         ::SoundEventIdentifier const&  soundEvent,
@@ -187,7 +212,19 @@ public:
     MCAPI ::std::optional<::ServerSoundInstance> createServerSoundInstance(
         ::std::string const&                          soundEventName,
         int                                           loopCount,
-        ::std::optional<::NetworkIdentifierWithSubId> recipient
+        ::std::optional<::NetworkIdentifierWithSubId> recipient,
+        ::std::optional<::BroadcastOptions>           broadcast
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void handleUpdateSoundData(::ClientboundUpdateSoundDataPacketPayload const& payload);
+#endif
+
+    MCAPI void onViewRegionMoved(
+        ::NetworkIdentifierWithSubId const& player,
+        ::BlockPos const&                   position,
+        uint                                radius,
+        ::DimensionType                     dimension
     );
 
     MCAPI void playPredictiveSynchronizedSound(
@@ -212,6 +249,26 @@ public:
         ::std::optional<::Vec3> const&         fireAtPosition
     );
 
+    MCAPI void playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float volume, float pitch);
+
+    MCAPI void playSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
+    );
+
+    MCAPI void playSoundForPlayerInDimension(
+        ::DimensionType                        dimensionType,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal,
+        ::Player*                              primaryLocalPlayer
+    );
+
     MCAPI void playSynchronizedSound_DEPRECATED(
         ::IDimension&                          dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
@@ -222,6 +279,18 @@ public:
         bool                                   isGlobal,
         ::std::optional<::Vec3> const&         fireAtPosition
     );
+
+    MCAPI void processQueuedSoundPackets();
+
+    MCAPI void sendRecordStarted(
+        ::std::vector<::NetworkIdentifierWithSubId> const& recipients,
+        ::BlockPos const&                                  blockPos,
+        ::ServerSoundHandle                                serverSoundHandle
+    );
+
+    MCAPI void subscribeToPlayerConnectionEvents(::IPlayerConnectionConnector& connector);
+
+    MCAPI void subscribeToPlayerDimensionTransfers(::IPlayerDimensionTransferConnector& connector);
     // NOLINTEND
 
 public:

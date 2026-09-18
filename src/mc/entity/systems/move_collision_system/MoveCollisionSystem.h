@@ -22,17 +22,12 @@ struct FallingBlockFlagComponent;
 struct MaxAutoStepComponent;
 struct MinecartFlagComponent;
 struct MoveRequestComponent;
-struct TickingSystemWithInfo;
 namespace BlockSourceVisitor { struct CollisionShape; }
 // clang-format on
 
 namespace MoveCollisionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createCollisionShapesCopySystem();
-
-MCAPI ::TickingSystemWithInfo createSystem();
-
 MCAPI void fetchCollisionShapes(
     ::StrictEntityContext const&                       entity,
     ::AABBShapeComponent const&                        aabb,

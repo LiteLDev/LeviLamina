@@ -36,14 +36,20 @@ public:
 
     virtual void onSetter(::std::function<bool()> cb) = 0;
 
-    virtual void onMetaType(::std::function<bool()> setters, ::std::function<void()> members) = 0;
+    virtual void onMetaType(
+        ::entt::meta_any        from,
+        ::entt::meta_any        to,
+        ::std::function<bool()> setters,
+        ::std::function<void()> members
+    ) = 0;
 
-    virtual void onMetaData(
-        ::std::string_view                                                                                key,
-        uint                                                                                              id,
-        ::entt::meta_data                                                                                 data,
-        ::entt::meta_any                                                                                  from,
-        ::entt::meta_any                                                                                  to,
+    virtual bool onMetaData(
+        ::std::string_view key,
+        uint               id,
+        ::entt::meta_data  data,
+        ::entt::meta_any   from,
+        ::entt::meta_any   to,
+        bool               isDestinationOverridden,
         ::std::function<void(::entt::meta_data, ::entt::meta_any&, ::entt::meta_data, ::entt::meta_any&)> cb
     ) = 0;
     // NOLINTEND

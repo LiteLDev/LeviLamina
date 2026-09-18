@@ -88,6 +88,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>              mIsEditorWorld;
     ::ll::TypedStorage<8, 32, ::World::WorldID> mCurrentWorldID;
     ::ll::TypedStorage<1, 1, bool>              mDirty;
+    ::ll::TypedStorage<1, 1, bool>              mWorldPacksDirty;
     // NOLINTEND
 
 public:
@@ -154,6 +155,8 @@ public:
 
     virtual void savePacksData() /*override*/;
 
+    virtual void saveDirtyPacksData() /*override*/;
+
     virtual bool hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary) /*override*/;
 
     virtual bool hasBehaviorPacks(::LevelSummary const& levelSummary) /*override*/;
@@ -184,16 +187,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldResourcePackHandler(
-        ::IContentManager&                                         contentManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>   resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
-        ::IContentAcquisition&                                     contentAcquisition,
-        ::std::unique_ptr<::World::IWorldResourcePackDownloader>   worldResourcePackDownloader,
-        ::IMinecraftEventing&                                      eventing
-    );
-
     MCAPI ::World::WorldPacks&
     _cacheWorldPackData(::World::WorldResourcePackHandler::Contexts&& contexts, ::LevelSummary const& levelSummary);
 
@@ -257,20 +250,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IContentManager&                                         contentManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>   resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager,
-        ::IContentAcquisition&                                     contentAcquisition,
-        ::std::unique_ptr<::World::IWorldResourcePackDownloader>   worldResourcePackDownloader,
-        ::IMinecraftEventing&                                      eventing
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::World::WorldPacks& $loadPackContentForWorld(::LevelSummary const& levelSummary);
@@ -319,6 +298,8 @@ public:
     );
 
     MCAPI void $savePacksData();
+
+    MCAPI void $saveDirtyPacksData();
 
     MCAPI bool $hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary);
 

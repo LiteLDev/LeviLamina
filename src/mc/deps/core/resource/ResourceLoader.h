@@ -42,19 +42,11 @@ public:
         ::gsl::span<::std::string const> extensionList
     ) const = 0;
 
-#ifdef LL_PLAT_S
     virtual bool load(
         ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const;
-#else // LL_PLAT_C
-    virtual bool load(
-        ::ResourceLocationPair const&    resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
-    ) const;
-#endif
 
     virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
@@ -105,19 +97,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCFOLD bool $load(
         ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const;
-#else // LL_PLAT_C
-    MCFOLD bool $load(
-        ::ResourceLocationPair const&    resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
-    ) const;
-#endif
 
     MCFOLD bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 

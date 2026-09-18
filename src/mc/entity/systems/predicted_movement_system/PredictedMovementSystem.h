@@ -16,7 +16,6 @@ struct MobFlagComponent;
 struct MovementInterpolatorComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
 namespace PredictedMovementSystem { struct SystemUniforms; }
 // clang-format on
@@ -39,11 +38,7 @@ MCAPI void _tickPredictedMovement(
 
 #ifdef LL_PLAT_C
 MCAPI void _updateRuntimeData(::PredictedMovementComponent& component);
-#endif
 
-MCAPI ::TickingSystemWithInfo createSystem();
-
-#ifdef LL_PLAT_C
 MCAPI bool tryAddPredictionMoveData(::AddActorPacket const& packet, ::PredictedMovementComponent* component);
 #endif
 // NOLINTEND

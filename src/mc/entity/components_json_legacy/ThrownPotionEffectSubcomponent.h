@@ -10,12 +10,15 @@
 class Actor;
 class ProjectileComponent;
 namespace Json { class Value; }
+namespace SharedTypes::v1_26_50 { struct ProjectileOnHitSubcomponent; }
 // clang-format on
 
 class ThrownPotionEffectSubcomponent : public ::SplashPotionEffectSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual void initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component) /*override*/;
+
     virtual void writetoJSON(::Json::Value&) const /*override*/;
 
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
@@ -26,6 +29,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component);
+
     MCFOLD void $writetoJSON(::Json::Value&) const;
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);

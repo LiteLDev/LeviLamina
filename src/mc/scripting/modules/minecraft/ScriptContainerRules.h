@@ -23,6 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::vector<::std::string> _getAllowedItems() const;
+
+    MCAPI ::std::vector<::std::string> _getBannedItems() const;
+
+    MCAPI void _setAllowedItems(::std::vector<::std::string> const& allowedItems);
+
+    MCAPI void _setBannedItems(::std::vector<::std::string> const& bannedItems);
+
     MCAPI ~ScriptContainerRules();
     // NOLINTEND
 

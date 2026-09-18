@@ -31,8 +31,9 @@ namespace SharedTypes::v1_26_0 { struct ActorDocument; }
 namespace SharedTypes::v1_26_10 { struct ActorDocument; }
 namespace SharedTypes::v1_26_20 { struct ActorDocument; }
 namespace SharedTypes::v1_26_30 { struct ActorDocument; }
-namespace SharedTypes::v1_26_40 { struct ActorDefinitions; }
 namespace SharedTypes::v1_26_40 { struct ActorDocument; }
+namespace SharedTypes::v1_26_50 { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_50 { struct ActorDocument; }
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -49,7 +50,7 @@ public:
     using FillDefinitionCb = ::std::function<::ActorMigratedDefinitionFactory::InitResult(
         ::ActorDefinitionDescriptor&,
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_40::ActorDefinitions,
+            ::SharedTypes::v1_26_50::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions>
     )>;
 
@@ -57,7 +58,7 @@ public:
         ::ActorDefinition&,
         ::ActorDefinitionDescriptor&,
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_40::ActorDefinitions,
+            ::SharedTypes::v1_26_50::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions>
     );
 
@@ -82,7 +83,7 @@ public:
             ::ActorDefinition&,
             ::ActorDefinitionDescriptor&,
             ::ComponentStorageLoadDataRefVariant<
-                ::SharedTypes::v1_26_40::ActorDefinitions,
+                ::SharedTypes::v1_26_50::ActorDefinitions,
                 ::SharedTypes::Beta::ActorDefinitions>
         )>>
         mFillActorDescriptionCbs;
@@ -92,13 +93,13 @@ public:
         ::std::vector<::std::function<::ActorMigratedDefinitionFactory::InitResult(
             ::ActorDefinitionDescriptor&,
             ::ComponentStorageLoadDataRefVariant<
-                ::SharedTypes::v1_26_40::ActorDefinitions,
+                ::SharedTypes::v1_26_50::ActorDefinitions,
                 ::SharedTypes::Beta::ActorDefinitions>
         )>>>
         mFillActorDefinitionCbs;
     ::ll::TypedStorage<
         8,
-        264,
+        288,
         ::std::tuple<
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::Legacy::ActorDocumentCorrected,
@@ -142,6 +143,10 @@ public:
                                    ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::v1_26_40::ActorDocument,
+                                   ::SharedTypes::v1_26_50::ActorDocument,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_26_50::ActorDocument,
                                    ::SharedTypes::Beta::ActorDocument,
                                    ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>>>
                                                                         mLegacyUpgradeCallbacks;

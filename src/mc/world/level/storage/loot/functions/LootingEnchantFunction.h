@@ -8,12 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class ItemInstance;
-class ItemStack;
-class LootItemCondition;
+class ItemStackBase;
 class LootTableContext;
 class Random;
-namespace Json { class Value; }
 // clang-format on
 
 class LootingEnchantFunction : public ::LootItemFunction {
@@ -26,34 +23,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LootingEnchantFunction() /*override*/ = default;
-
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
-
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
-
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static int _getLootingEnchantLevel(::LootTableContext& context);
-
-#ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
-    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
-#endif
+    virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
-
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
-
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+
+    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
 
     // NOLINTEND

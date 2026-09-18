@@ -6,7 +6,6 @@
 #include "mc/platform/NonCopyable.h"
 #include "mc/platform/brstd/bitset.h"
 #include "mc/platform/brstd/flat_set.h"
-#include "mc/platform/threading/Mutex.h"
 
 namespace Bedrock::Threading::Detail {
 
@@ -50,7 +49,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                  mMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                 mMutex;
     ::ll::TypedStorage<8, 24, ::std::vector<::brstd::bitset<1024, uint64>>> mSlots;
     ::ll::TypedStorage<
         8,

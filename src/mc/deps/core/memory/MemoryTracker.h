@@ -20,13 +20,13 @@ public:
 
     virtual bool isTracking() const;
 
-    virtual ::Memory::MemoryCategory getCurrentCategory() const;
-
 #ifdef LL_PLAT_S
-    virtual void setCurrentCategory(::Memory::MemoryCategory);
+    virtual ::Memory::MemoryCategory exchangeCurrentCategory(::Memory::MemoryCategory);
 #else // LL_PLAT_C
-    virtual void setCurrentCategory(::Memory::MemoryCategory category);
+    virtual ::Memory::MemoryCategory exchangeCurrentCategory(::Memory::MemoryCategory newCategory);
 #endif
+
+    virtual ::Memory::MemoryCategory getCurrentCategory() const;
 
     virtual uint64 getCategoryAllocationCount(uint) const;
 
@@ -56,13 +56,13 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isTracking() const;
 
-    MCFOLD ::Memory::MemoryCategory $getCurrentCategory() const;
-
 #ifdef LL_PLAT_S
-    MCFOLD void $setCurrentCategory(::Memory::MemoryCategory);
+    MCFOLD ::Memory::MemoryCategory $exchangeCurrentCategory(::Memory::MemoryCategory);
 #else // LL_PLAT_C
-    MCFOLD void $setCurrentCategory(::Memory::MemoryCategory category);
+    MCFOLD ::Memory::MemoryCategory $exchangeCurrentCategory(::Memory::MemoryCategory newCategory);
 #endif
+
+    MCFOLD ::Memory::MemoryCategory $getCurrentCategory() const;
 
     MCFOLD uint64 $getCategoryAllocationCount(uint) const;
 

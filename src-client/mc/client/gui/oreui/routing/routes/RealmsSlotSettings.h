@@ -53,11 +53,9 @@ public:
     // NOLINTBEGIN
     virtual bool shouldAddToConfiguration() const /*override*/;
 
-    virtual void addToMatcher(
-        ::OreUI::RouteMatcher&                              routeMatcher,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
-    ) const /*override*/;
+    virtual void
+    addToMatcher(::OreUI::RouteMatcher&, ::SceneFactory&, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -72,29 +70,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[31]> BASE_SCREEN_ID();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[25]> LEGACY_ROUTE();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI bool $shouldAddToConfiguration() const;
-
-    MCAPI void $addToMatcher(
-        ::OreUI::RouteMatcher&                              routeMatcher,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
-    ) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

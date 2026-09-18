@@ -31,6 +31,8 @@ public:
 
     virtual ::std::string getFullName() const /*override*/;
 
+    virtual ::std::string getNameAndAux() const /*override*/;
+
     virtual ::std::map<::std::string, ::std::string> toMap() const /*override*/;
 
     virtual ::std::optional<::CompoundTag> save() const /*override*/;
@@ -61,6 +63,8 @@ public:
     MCFOLD bool $sameItem(::ItemDescriptor::ItemEntry const&, bool) const;
 
     MCFOLD ::std::string $getFullName() const;
+
+    MCAPI ::std::string $getNameAndAux() const;
 
     MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 

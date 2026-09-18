@@ -16,7 +16,6 @@ struct MovementInterpolatorComponent;
 struct PlayerPositionModeComponent;
 struct ServerPlayerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class TeleportInterpolatorResetSystem {
@@ -29,10 +28,4 @@ public:
         ::PlayerPositionModeComponent const,
         ::FallDistanceComponent,
         ::StateVectorComponent>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createTeleportInterpolatorResetSystem();
-    // NOLINTEND
 };

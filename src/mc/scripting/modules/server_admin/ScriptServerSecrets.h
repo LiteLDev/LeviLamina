@@ -35,8 +35,6 @@ public:
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Scripting::ContextConfig const&                            contextConfig
     );
-
-    MCNAPI ::std::vector<::std::string> getAllSecretNames() const;
     // NOLINTEND
 
 public:

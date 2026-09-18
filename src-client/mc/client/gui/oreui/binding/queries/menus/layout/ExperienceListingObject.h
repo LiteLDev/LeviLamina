@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/properties/PropertyObject.h"
-#include "mc/client/gui/oreui/binding/queries/menus/layout/ExperienceImageSetObject.h"
+#include "mc/client/gui/oreui/binding/queries/menus/layout/ImageObject.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +17,7 @@ class ExperienceListingObject : public ::OreUI::PropertyObject<::OreUI::Experien
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1560, ::OreUI::ExperienceImageSetObject>              mDisplayImage;
+    ::ll::TypedStorage<8, 440, ::OreUI::ImageObject>                            mDisplayImage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LocalizedStringObject>> mMotd;
     // NOLINTEND
 };

@@ -128,9 +128,6 @@ public:
 
     MCAPI void fireEventPersonaAvatarUpdated(::PersonaAppearance const& oldAppearance, bool isBeingDeleted);
 
-    MCAPI ::std::string
-    getEmoteFileSystemFromAppearance(::persona::PersonaCharacterHandle const& handle, int emoteIndex);
-
     MCAPI ::persona::PieceOfferWrapper
     getEmotePieceOfferFromAppearance(::persona::PersonaCharacterHandle const& handle, int emoteIndex);
 
@@ -140,8 +137,6 @@ public:
 
     MCAPI ::mce::Color
     getTintColor(::persona::PersonaCharacterHandle const& handle, ::SharedTypes::persona::PieceType type, int channel);
-
-    MCAPI bool isEmoteSlotSetOnCurrentAppearance(int emoteWheelSlot);
 
     MCAPI void removePieceByType(
         ::persona::PersonaCharacterHandle const& handle,

@@ -24,11 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~SidePoweredComponent() /*override*/;
-#else // LL_PLAT_C
     virtual ~SidePoweredComponent() /*override*/ = default;
-#endif
 
     virtual uchar getPoweroutDirection() const /*override*/;
 
@@ -42,14 +38,6 @@ public:
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
 
     virtual void removeFromAnySourceList(::BaseCircuitComponent const* component) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

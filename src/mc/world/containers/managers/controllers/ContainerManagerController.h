@@ -250,9 +250,6 @@ public:
 
     MCAPI ::ItemStack const& _getItem0(::ContainerEnumName collectionEnumName) const;
 
-    MCAPI ::std::tuple<::ItemStack const&, ::std::shared_ptr<::ContainerController>>
-    _getItemAndContainerController(::SlotData const& slot, bool canBeEmpty) const;
-
     MCAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> _getPredictiveContainers();
 
     MCAPI ::SlotData _getSlotData(::ContainerValidationSlotData const& containerValidationSlotData) const;

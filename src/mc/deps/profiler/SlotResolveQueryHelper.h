@@ -39,9 +39,9 @@ public:
     operator=(::Bedrock::Profile::Whisker::SlotResolveQueryHelper&&);
 
     MCNAPI ::gsl::span<::gsl::not_null<::Bedrock::Profile::Whisker::ScopeData const*>> tryResolveAndFetchAll();
+#endif
 
     MCNAPI ~SlotResolveQueryHelper();
-#endif
     // NOLINTEND
 
 public:
@@ -55,9 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

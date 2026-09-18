@@ -108,7 +108,7 @@ public:
 
     MCAPI void $suspendAllFacets();
 
-    MCFOLD void $disableFacetActivation();
+    MCAPI void $disableFacetActivation();
 
     MCAPI void $bind(::OreUI::FacetBinder& binder);
 

@@ -22,20 +22,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void readfromJSON(::Json::Value& component) /*override*/;
-
     virtual void writetoJSON(::Json::Value&) const /*override*/;
 
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     virtual char const* getName() const /*override*/;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $readfromJSON(::Json::Value& component);
-
-
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string getIdentityName() const;
 
-    MCAPI ::std::string getMessOId() const;
+    MCAPI ::std::string getMessUserId() const;
 
     MCAPI ::std::string getPlayFabId() const;
 

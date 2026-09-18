@@ -5,16 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/PackIconType.h"
-#include "mc/resources/PackReport.h"
-#include "mc/resources/ResourceSignature.h"
 
 // auto generated forward declare list
 // clang-format off
+class I18n;
 class Pack;
-class PackAccessStrategy;
 struct BehaviorPackContents;
 struct ResourcePackContents;
 struct StreamableAssetSource;
+struct SubpackInfo;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
@@ -23,27 +22,58 @@ namespace Json { class Value; }
 
 class ResourcePack {
 public:
+    // ResourcePack inner types declare
+    // clang-format off
+    struct Impl;
+    // clang-format on
+
     // ResourcePack inner types define
+    struct Impl {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnkb8cf7e;
+        ::ll::UntypedStorage<1, 1>  mUnkd06044;
+        ::ll::UntypedStorage<8, 16> mUnk4b385f;
+        ::ll::UntypedStorage<8, 8>  mUnk75183a;
+        ::ll::UntypedStorage<8, 24> mUnk18bd2a;
+        ::ll::UntypedStorage<8, 24> mUnkf245c7;
+        ::ll::UntypedStorage<8, 32> mUnk42ef5f;
+        ::ll::UntypedStorage<8, 32> mUnkabb7e0;
+        ::ll::UntypedStorage<8, 8>  mUnke53f85;
+        ::ll::UntypedStorage<1, 1>  mUnkc7f91b;
+        ::ll::UntypedStorage<1, 1>  mUnkb2f73c;
+        ::ll::UntypedStorage<8, 64> mUnk89c0cf;
+        ::ll::UntypedStorage<1, 1>  mUnkc71760;
+        ::ll::UntypedStorage<8, 8>  mUnk22a855;
+        ::ll::UntypedStorage<8, 8>  mUnk5be703;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Impl& operator=(Impl const&);
+        Impl(Impl const&);
+        Impl();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~Impl();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
     using Callback = ::std::function<void(::Core::Path const&)>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                              mHidden;
-    ::ll::TypedStorage<1, 1, bool>                                              mError;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Pack>>>       mPack;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>           mSubpackAccessStrategy;
-    ::ll::TypedStorage<8, 248, ::PackReport>                                    mPackReport;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Pack>>>         mSubPacks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ResourcePack>>> mSubResourcePacks;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                mIconPath;
-    ::ll::TypedStorage<8, 8, double>                                            mLoadTime;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsBaseGamePack;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsSlicePack;
-    ::ll::TypedStorage<8, 64, ::ResourceSignature>                              mResourceSignature;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsMarkedForRemoval;
-    ::ll::TypedStorage<8, 8, ::std::atomic<double>>                             mAssetReadMs;
-    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                             mAssetReadBytes;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ResourcePack::Impl>>> mImpl;
     // NOLINTEND
 
 public:
@@ -53,9 +83,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ResourcePack(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
+    MCAPI ResourcePack(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
-    MCAPI void _createSubpacks();
+    MCAPI void _createSubpack(::I18n& loc, ::SubpackInfo const& subpackInfo);
+
+    MCAPI void _createSubpacks(::I18n& loc);
 
 #ifdef LL_PLAT_C
     MCAPI void _gatherBehaviorPackTelemetry(::BehaviorPackContents& counts) const;
@@ -100,6 +132,12 @@ public:
     MCAPI bool hasIcon(::PackIconType iconType) const;
 #endif
 
+    MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void invalidatePreloadCache();
+#endif
+
     MCAPI bool isAssetExtractionViable() const;
 
     MCAPI ::Bedrock::Resources::PreloadedPathHandle
@@ -110,9 +148,15 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void regenerateAssetSet();
+
+    MCAPI void resumeFallbackCache();
 #endif
 
     MCAPI void setLocale(::std::string const& code);
+
+#ifdef LL_PLAT_C
+    MCAPI void suspendFallbackCache();
+#endif
     // NOLINTEND
 
 public:
@@ -126,6 +170,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
+    MCAPI void* $ctor(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
     // NOLINTEND
 };

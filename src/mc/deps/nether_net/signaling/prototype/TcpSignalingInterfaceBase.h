@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/ISignalingInterface.h"
@@ -71,12 +72,8 @@ public:
     // NOLINTBEGIN
     virtual ~TcpSignalingInterfaceBase() /*override*/ = default;
 
-    virtual void SendSignal(
-        ::NetherNet::NetworkID,
-        ::NetherNet::NetworkID,
-        ::std::string const&,
-        ::std::function<void(::NetherNet::ESessionError)>&&
-    ) /*override*/;
+    virtual ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    SendSignal(::NetherNet::NetworkID, ::NetherNet::NetworkID, ::std::string const&) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) /*override*/;
     // NOLINTEND

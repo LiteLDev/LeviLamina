@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -16,9 +17,10 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-struct OnUseAsAttack
-: public ::ItemComponent,
-  public ::Bedrock::PubSub::
-      Publisher<void(::ItemStack&, ::Player&, ::Vec3 const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {};
+struct OnUseAsAttack : public ::ItemComponent,
+                       public ::Bedrock::PubSub::Publisher<
+                           void(::ItemStack&, ::Player&, ::Vec3 const&, ::HandSlot),
+                           ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+                           0> {};
 
 } // namespace PublisherItemComponent

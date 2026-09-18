@@ -15,7 +15,7 @@ class Vec3;
 namespace NavigationUtility {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCAPI bool canMove(
     ::Mob&        mob,
     ::Vec3 const& startPos,
@@ -24,7 +24,7 @@ MCAPI bool canMove(
 );
 #endif
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
 MCAPI bool canMove(
     ::Mob&        mob,
     ::Vec3 const& startPos,

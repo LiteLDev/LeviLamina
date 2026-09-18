@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual int getExtraRenderLayers() const /*override*/;
 
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getExtraRenderLayers() const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
 
     // NOLINTEND

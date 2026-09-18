@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class SoundPlayerInterface;
-namespace OreUI { class ClientDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -27,22 +26,6 @@ public:
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<uint64, ::std::string, float, float>> mPlay;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, uint64, float>>                 mFadeOut;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<bool, uint64>>                        mIsPlaying;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SoundCommandGroup();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SoundCommandGroup(::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

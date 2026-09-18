@@ -8,8 +8,8 @@ struct ScriptPackSettingChangeIntermediateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                              mSettingName;
-    ::ll::TypedStorage<8, 40, ::std::variant<float, bool, ::std::string>> mSettingValue;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                            mSettingName;
+    ::ll::TypedStorage<8, 40, ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>>> mSettingValue;
     // NOLINTEND
 
 public:
@@ -20,15 +20,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptPackSettingChangeIntermediateData(
-        ::std::string const&                       settingName,
-        ::std::variant<float, bool, ::std::string> settingValue
+        ::std::string const&                                                     settingName,
+        ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> settingValue
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& settingName, ::std::variant<float, bool, ::std::string> settingValue);
+    MCAPI void* $ctor(
+        ::std::string const&                                                     settingName,
+        ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> settingValue
+    );
     // NOLINTEND
 };
 

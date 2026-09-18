@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { class UUID; }
+// clang-format on
+
 namespace Core {
 
 class Random : public ::IRandom {
@@ -25,6 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>         mHaveNextNextGaussian;
     ::ll::TypedStorage<1, 1, bool>         mHaveNextNextGaussianDouble;
     ::ll::TypedStorage<1, 1, bool>         mTest_OnlyUsedDeterministically;
+    ::ll::TypedStorage<1, 1, bool>         mAllowSeedChanges;
     // NOLINTEND
 
 public:
@@ -45,20 +51,34 @@ public:
     virtual void consumeCount(uint count) /*override*/;
 
     virtual double nextGaussianDouble() /*override*/;
-
-    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint _genRandInt32();
+    MCAPI Random();
+
+    MCAPI uint _genRandInt32(bool allowUnitTestDeterministicOverride);
+
+#ifdef LL_PLAT_C
+    MCAPI float nextGaussianFloat();
+#endif
+
+    MCAPI ::glm::vec3 nextGaussianVec3();
+
+    MCAPI void reset();
     // NOLINTEND
 
 public:
-    // static variables
+    // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Random& mThreadLocalRandom();
+    MCAPI static ::mce::UUID generateUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -79,8 +99,6 @@ public:
     MCAPI void $consumeCount(uint count);
 
     MCAPI double $nextGaussianDouble();
-
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
 
 
     // NOLINTEND

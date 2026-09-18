@@ -9,7 +9,6 @@
 #include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,7 +37,7 @@ public:
     ::ll::TypedStorage<8, 16, ::OreUI::AtlasIndex::ItemEntry>                   mAir;
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                mAtlasTexturePtr;
     ::ll::TypedStorage<8, 16, ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager>> mAtlasManager;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mBlockRequestActive;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                     mBlockRequestActive;
     ::ll::TypedStorage<8, 8, uint64>                                            mImageId;
     ::ll::TypedStorage<8, 8, uint64>                                            mBatchingHint;
     // NOLINTEND

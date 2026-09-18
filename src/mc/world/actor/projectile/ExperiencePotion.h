@@ -19,7 +19,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD float $getGravity();
+#else // LL_PLAT_C
     MCAPI float $getGravity();
+#endif
 
     MCFOLD float $getThrowPower();
 

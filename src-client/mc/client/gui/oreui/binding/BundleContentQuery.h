@@ -22,9 +22,7 @@ public:
     ::ll::TypedStorage<
         8,
         120,
-        ::OreUI::PropertyVector<
-            ::OreUI::ContainerItemPropertyObject,
-            ::std::allocator<::OreUI::ContainerItemPropertyObject>>>
+        ::OreUI::PropertyVector<::OreUI::ContainerItemPropertyObject, ::OreUI::ContainerItemPropertyObject>>
                                                                                               mItems;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     ::ll::TypedStorage<4, 4, int>                                                             mBundleID;

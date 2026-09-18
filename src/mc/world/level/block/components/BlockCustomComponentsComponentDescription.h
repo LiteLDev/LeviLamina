@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 struct BlockCustomComponentData;
 namespace cereal { class DynamicValue; }
@@ -69,16 +68,6 @@ public:
         bool                   overridePlayerInteract,
         bool                   overridePlayerPlacing
     );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
-#endif
     // NOLINTEND
 
 public:

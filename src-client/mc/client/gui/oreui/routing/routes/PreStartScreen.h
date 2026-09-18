@@ -44,13 +44,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> ACCESSIBILITY_SETTINGS_ROUTE();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> AUTO_SAVE_WARNING_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SAFE_AREA_WARNING_ROUTE();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> TTS_WARNING_ROUTE();
     // NOLINTEND
 
 public:

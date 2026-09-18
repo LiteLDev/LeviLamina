@@ -18,10 +18,7 @@ class PartyChatMessagesFromRangeQuery : public ::OreUI::QueryBase<::OreUI::Party
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::ChatMessageObject, ::std::allocator<::OreUI::ChatMessageObject>>>
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::ChatMessageObject, ::OreUI::ChatMessageObject>>
         mMessages;
     // NOLINTEND
 

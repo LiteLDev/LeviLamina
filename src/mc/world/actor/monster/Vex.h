@@ -60,7 +60,11 @@ public:
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
+#ifdef LL_PLAT_S
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+#else // LL_PLAT_C
     MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+#endif
 
     MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

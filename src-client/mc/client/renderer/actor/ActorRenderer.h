@@ -74,7 +74,7 @@ public:
     // NOLINTBEGIN
     virtual ~ActorRenderer() /*override*/;
 
-    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) = 0;
+    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData) = 0;
 
     virtual void renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 

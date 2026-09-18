@@ -52,6 +52,8 @@ public:
 
     MCAPI static void handleCopyFacingButtonPress(::IClientInstance& client);
 
+    MCAPI static void handleDebugHotkeyChatEcho(::IClientInstance& client, ::std::string const& label, bool enabled);
+
     MCAPI static void handleDismountButtonPress(::IClientInstance& client);
 
     MCAPI static void handleDropAllButtonPress(::IClientInstance& client);
@@ -114,6 +116,10 @@ public:
     MCAPI static void handleToggleChatTextToSpeechButtonPress(::IClientInstance& client);
 
     MCAPI static void handleToggleControlTipsButtonPress(::IClientInstance& client);
+
+    MCAPI static void handleToggleEnableFocusDebugButtonPress(::IClientInstance& client);
+
+    MCAPI static void handleToggleEnableNewScreensDebugButtonPress(::IClientInstance& client);
 
     MCAPI static void handleTogglePerspectiveButtonPress(::IClientInstance& client);
 

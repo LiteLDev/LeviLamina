@@ -8,7 +8,6 @@ class StrictEntityContext;
 struct ActorRotationComponent;
 struct MobBodyRotationComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class ShulkerPostAiStepSystem {
@@ -21,7 +20,5 @@ public:
         ::MobBodyRotationComponent& mobBodyRotationComponent,
         ::StateVectorComponent&     stateVectorComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class IRandom;
 class SimplexNoise;
-class Vec2;
 // clang-format on
 
 class PerlinSimplexNoise {
@@ -26,15 +26,9 @@ public:
     // NOLINTBEGIN
     MCAPI PerlinSimplexNoise(uint seed, int levels);
 
-    MCAPI float* getRegion(
-        float*        buffer,
-        ::Vec2 const& pos,
-        int           xSize,
-        int           ySize,
-        ::Vec2 const& scale,
-        float         sizeScale,
-        float         powScale
-    ) const;
+#ifdef LL_PLAT_C
+    MCAPI void _init(::IRandom& r, bool parityInitialization);
+#endif
 
     MCAPI float getValue(float x, float y) const;
 

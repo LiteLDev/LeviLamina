@@ -59,7 +59,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 616, ::mce::Mesh>      mMesh;
+            ::ll::TypedStorage<8, 632, ::mce::Mesh>      mMesh;
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mTexture;
             ::ll::TypedStorage<4, 4, int>                mSheet;
             // NOLINTEND
@@ -141,7 +141,6 @@ public:
 
 public:
     // prevent constructor by default
-    Font& operator=(Font const&);
     Font();
 
 public:
@@ -185,7 +184,7 @@ public:
 
     virtual float getScaleFactor() const = 0;
 
-    virtual float getScaleFactor(int uniChar) const;
+    virtual float getScaleFactor(int c) const;
 
     virtual ::Vec2 getTranslationFactor() const;
 
@@ -258,8 +257,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Font(::Font const& rhs);
-
     MCAPI explicit Font(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI bool _chopString(
@@ -386,8 +383,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Font const& rhs);
-
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
@@ -425,7 +420,7 @@ public:
 
     MCAPI int $getLineLength(::std::string_view str, float fontSize, bool showColorSymbol);
 
-    MCAPI float $getScaleFactor(int uniChar) const;
+    MCAPI float $getScaleFactor(int c) const;
 
     MCFOLD ::Vec2 $getTranslationFactor() const;
 

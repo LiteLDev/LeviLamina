@@ -30,5 +30,9 @@ public:
         float                         scale,
         ::BoneAnimationChannelPlayer* boneAnimationChannelPlayer
     ) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void sortKeyFrames();
+#endif
     // NOLINTEND
 };

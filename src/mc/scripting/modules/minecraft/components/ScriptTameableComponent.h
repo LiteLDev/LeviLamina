@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
@@ -11,8 +10,6 @@
 // clang-format off
 class TameableComponent;
 class TameableDefinition;
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -23,19 +20,9 @@ class ScriptTameableComponent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-    getTameItems() const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTameItems_010() const;
-
     MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
 
-    MCAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
-    tamedToPlayer() const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
+    MCAPI ::Scripting::Result_deprecated<bool> tame_010() const;
     // NOLINTEND
 
 public:

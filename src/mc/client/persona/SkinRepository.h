@@ -11,6 +11,8 @@ public:
     // clang-format on
 
     // SkinRepository inner types define
+    enum class EntryDisposition : uchar {};
+
     enum class SkinPackLoadState : uchar {};
 
     struct LoadListener {};

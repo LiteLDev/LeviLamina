@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/PrefabSource.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
@@ -66,10 +65,6 @@ public:
 
     MCNAPI ::Scripting::Result<::std::string, ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplate>
     _getNotes() const;
-
-    MCNAPI ::Scripting::
-        Result<::Editor::Prefabs::PrefabSource, ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplate>
-        _getSource() const;
 
     MCNAPI ::Scripting::Result<
         void,

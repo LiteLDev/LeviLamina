@@ -124,4 +124,14 @@ public:
         ::Actor*                       blockChangeSource
     );
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForAppPlatformListener();
+
+    MCNAPI static void** $vftableForBlockSourceListener();
+
+    MCNAPI static void** $vftableForMinecraftUICustomRenderer();
+    // NOLINTEND
 };

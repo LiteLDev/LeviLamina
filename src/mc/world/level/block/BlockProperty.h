@@ -42,4 +42,5 @@ enum class BlockProperty : uint64 {
     CanHaltWhenClimbing              = 1ull << 34,
     CanDamperVibrations              = 1ull << 35,
     CanOccludeVibrations             = 1ull << 36,
+    LegacyComparatorReadThrough      = 1ull << 37,
 };

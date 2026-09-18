@@ -11,9 +11,11 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Mob;
 class POIInstance;
 class Path;
 class Vec3;
+struct GoalId;
 // clang-format on
 
 class MoveToPOIGoal : public ::BaseMoveToGoal {
@@ -26,6 +28,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                      mRequireSameY;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveToPOIGoal();
 
 public:
     // virtual functions
@@ -50,11 +56,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MoveToPOIGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::POIType poiType);
+
     MCAPI bool _canReachPOI(::Vec3 const& pos, float const radiusSqr, bool usingBoundingBox);
 
     MCAPI void _updatePOIBooking();
 
     MCAPI bool getPOI(::POIType type);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::POIType poiType);
     // NOLINTEND
 
 public:

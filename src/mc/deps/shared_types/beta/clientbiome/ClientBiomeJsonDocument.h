@@ -67,7 +67,7 @@ public:
         // static functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
 #endif
         // NOLINTEND
 
@@ -100,7 +100,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
 #endif
     // NOLINTEND
 };

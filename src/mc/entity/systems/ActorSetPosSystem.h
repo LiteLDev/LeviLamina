@@ -37,7 +37,6 @@ struct PlayerComponent;
 struct ShulkerFlagComponent;
 struct StateVectorComponent;
 struct SynchedActorDataComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class ActorSetPosSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
@@ -160,8 +159,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void actorUpdateOwnerChunk(::EntityContext& entity);
-
-    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
     MCAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
 

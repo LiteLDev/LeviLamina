@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace Editor::ScriptModule {
 
 struct ScriptDataStoreModalToolActivationChangedEvent {
@@ -22,24 +17,6 @@ public:
     ScriptDataStoreModalToolActivationChangedEvent& operator=(ScriptDataStoreModalToolActivationChangedEvent const&);
     ScriptDataStoreModalToolActivationChangedEvent(ScriptDataStoreModalToolActivationChangedEvent const&);
     ScriptDataStoreModalToolActivationChangedEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptDataStoreModalToolActivationChangedEvent(::std::optional<::std::string> toolId, bool isActive);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::optional<::std::string> toolId, bool isActive);
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

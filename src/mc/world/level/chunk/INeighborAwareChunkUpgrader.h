@@ -22,7 +22,7 @@ public:
     virtual ::NeighborAwareBlockUpdateType
     getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const = 0;
 
-    virtual void doLevelChunkNeighborAwareUpgrade(
+    virtual bool doLevelChunkNeighborAwareUpgrade(
         ::NeighborAwareBlockUpdateType updateType,
         ::BlockSource&                 region,
         ::Block const&                 block,

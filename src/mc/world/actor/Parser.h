@@ -95,9 +95,6 @@ public:
     MCAPI static void
     parse(::Json::Value const& val, ::Vec3& variable, char const* jsonName, ::Vec3 const& defaultValue);
 
-    MCAPI static void
-    parse(::Json::Value const& val, ::ActorType& variable, char const* jsonName, char const* defaultValue);
-
     MCAPI static void parse(
         ::Json::Value const&               val,
         ::SharedTypes::Legacy::Difficulty& variable,

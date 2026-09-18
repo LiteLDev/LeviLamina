@@ -10,17 +10,12 @@
 struct ActorIsBeingDestroyedFlagComponent;
 struct ExitFromPassengerFlagComponent;
 struct StopRidingRequestComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
 namespace RemoveAllPassengersSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createRequestProcessingSystem();
-
-MCAPI ::TickingSystemWithInfo createRideableComponentRemovalSystem();
-
 MCAPI void removeAllPassengers(
     ::VehicleComponent const& vehicleComponent,
     bool                      actorIsBeingDestroyed,

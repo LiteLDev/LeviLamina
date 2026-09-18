@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/oreui/input/GamepadInput.h"
+
 namespace OreUI {
 
 class GamepadState {
@@ -42,6 +45,12 @@ public:
     ::ll::TypedStorage<4, 24, ::OreUI::GamepadState::JoystickState[2]> mJoystickStates;
     ::ll::TypedStorage<1, 36, ::std::array<bool, 36>>                  mCurrentButtonPressedStates;
     ::ll::TypedStorage<1, 1, bool>                                     mIsMovingDiagonally;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _updateJoysticks(::std::vector<::OreUI::GamepadInput::StickEvent> const& stickEvents);
     // NOLINTEND
 };
 

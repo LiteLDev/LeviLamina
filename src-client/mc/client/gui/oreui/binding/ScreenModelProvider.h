@@ -9,6 +9,7 @@
 // clang-format off
 class IAdvancedGraphicsOptions;
 class IClientInstance;
+class ILayoutServiceProvider;
 class IMinecraftGame;
 class MainMenuScreenModel;
 class PlayScreenModel;
@@ -21,6 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                          mMinecraft;
+    ::ll::TypedStorage<8, 8, ::ILayoutServiceProvider&>                                  mLayoutServiceProvider;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>          mClientInstance;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions>> mAdvancedGraphicsOptions;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::MainMenuScreenModel>>                    mMainMenuScreenModel;

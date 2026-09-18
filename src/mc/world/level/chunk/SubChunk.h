@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/threading/SpinLockImpl.h"
+#include "mc/world/level/block/chunk_volume/SubVolumeViewOf.h"
 #include "mc/world/level/chunk/DirtyTicksCounter.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
@@ -137,7 +138,11 @@ public:
 
     MCAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
 
-    MCAPI void setFromBlockVolume(::BlockVolume const& box, short height);
+    MCAPI void setFromBlockVolume(
+        ::BlockVolume const&                           box,
+        short                                          height,
+        ::ChunkVolume::SubVolumeViewOf<::Block const*> scratchVolume
+    );
 
 #ifdef LL_PLAT_C
     MCAPI void setLight(ushort idx, ::SubChunkBrightnessStorage::LightPair pair);

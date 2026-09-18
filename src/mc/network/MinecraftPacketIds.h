@@ -257,5 +257,7 @@ enum class MinecraftPacketIds : int {
     ClientboundUpdateSoundData               = 348,
     SendPartyDestinationCookie               = 349,
     PartyDestinationCookieResponse           = 350,
-    EndId                                    = 351,
+    SetPlayerFurnaceOptions                  = 351,
+    RecordStarted                            = 352,
+    EndId                                    = 353,
 };

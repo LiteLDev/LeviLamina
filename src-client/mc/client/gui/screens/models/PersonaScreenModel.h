@@ -73,8 +73,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PersonaScreenModel(::MinecraftScreenModelContext context);
 
-    MCAPI ::SkinPackCollectionModel& _getInvalidSkinPackCollectionModel();
-
     MCAPI void _initializeSkinPackCollectors();
 
     MCAPI bool _playerHasContentSubscription() const;

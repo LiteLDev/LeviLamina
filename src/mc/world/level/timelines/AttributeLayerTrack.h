@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/eas/attributes/NoiseAlignment.h"
+
 class AttributeLayerTrack {
 public:
     // AttributeLayerTrack inner types declare
@@ -17,7 +20,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24>  mUnk51ad10;
         ::ll::UntypedStorage<4, 8>   mUnk68fc11;
-        ::ll::UntypedStorage<8, 104> mUnk70b049;
+        ::ll::UntypedStorage<8, 112> mUnk70b049;
         // NOLINTEND
 
     public:
@@ -50,5 +53,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                    mAttributeLayerName;
     ::ll::TypedStorage<8, 32, ::std::string>                                    mNoiseName;
     ::ll::TypedStorage<4, 4, uint>                                              mLocalTransitionTicks;
+    ::ll::TypedStorage<4, 8, ::EAS::NoiseAlignment>                             mNoiseAlignment;
     // NOLINTEND
 };

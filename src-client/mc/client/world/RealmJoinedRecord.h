@@ -38,6 +38,12 @@ public:
 
     MCAPI void $serializeExtended(::Json::Value& outJsonValue) const;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace World

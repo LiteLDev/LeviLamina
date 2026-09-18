@@ -6,13 +6,20 @@
 #include "mc/common/editor/EditorPlayerCoroutineServiceProvider.h"
 #include "mc/common/editor/Generator.h"
 #include "mc/common/editor/Task.h"
+#include "mc/common/editor/TaskCompletionStatus.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::PubSub { class Subscription; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct CoroutineStatus; }
+namespace Editor::Coroutine { class CoroutineTaskContext; }
+namespace Editor::Coroutine { struct CoroutineTaskOptions; }
 namespace Editor::Coroutine { struct TaskHandle; }
+namespace Editor::Services { class EditorCoroutineServiceProvider; }
 namespace brstd { struct source_location; }
 // clang-format on
 
@@ -21,11 +28,35 @@ namespace Editor::Services {
 class EditorPlayerCoroutineService : public ::Editor::Services::IEditorService,
                                      public ::Editor::Services::EditorPlayerCoroutineServiceProvider {
 public:
+    // EditorPlayerCoroutineService inner types declare
+    // clang-format off
+    struct CompletionState;
+    // clang-format on
+
+    // EditorPlayerCoroutineService inner types define
+    struct CompletionState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk4de53a;
+        ::ll::UntypedStorage<8, 48> mUnk55884a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CompletionState& operator=(CompletionState const&);
+        CompletionState(CompletionState const&);
+        CompletionState();
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfcb938;
-    ::ll::UntypedStorage<8, 8> mUnk8cde99;
-    ::ll::UntypedStorage<1, 1> mUnk9b767c;
+    ::ll::UntypedStorage<8, 8>  mUnkfcb938;
+    ::ll::UntypedStorage<8, 8>  mUnkb72e94;
+    ::ll::UntypedStorage<8, 8>  mUnk8cde99;
+    ::ll::UntypedStorage<1, 1>  mUnk9b767c;
+    ::ll::UntypedStorage<8, 16> mUnkb68438;
     // NOLINTEND
 
 public:
@@ -46,17 +77,17 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual ::Editor::Coroutine::TaskHandle queue(
-        ::std::string                                    name,
-        ::Editor::Generator<::Editor::CoroutineStatus>&& coroutine,
-        ::std::function<void(uint64, bool)>              onComplete,
-        ::brstd::source_location                         creationSite
+        ::std::string                                                            name,
+        ::Editor::Generator<::Editor::CoroutineStatus>&&                         coroutine,
+        ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)> onComplete,
+        ::brstd::source_location                                                 creationSite
     ) /*override*/;
 
     virtual ::Editor::Coroutine::TaskHandle queueTask(
-        ::std::string                                     name,
-        ::Editor::Task<void, ::Editor::CoroutineStatus>&& task,
-        ::std::function<void(uint64, bool)>               onComplete,
-        ::brstd::source_location                          creationSite
+        ::std::string                                                            name,
+        ::Editor::Task<void, ::Editor::CoroutineStatus>&&                        task,
+        ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)> onComplete,
+        ::brstd::source_location                                                 creationSite
     ) /*override*/;
 
     virtual bool cancel(::Editor::Coroutine::TaskHandle handle) /*override*/;
@@ -68,12 +99,47 @@ public:
     virtual ::std::string const* getTaskName(::Editor::Coroutine::TaskHandle handle) const /*override*/;
 
     virtual uint64 activeTaskCount() const /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription
+    registerBusyStateChangedListener(::std::function<void(bool)> callback) /*override*/;
+
+    virtual ::Editor::Coroutine::TaskHandle _queueTaskFactory(
+        ::std::string                             name,
+        ::Editor::Coroutine::CoroutineTaskOptions options,
+        ::brstd::move_only_function<
+            ::Editor::Task<void, ::Editor::CoroutineStatus>(::Editor::Coroutine::CoroutineTaskContext&)> factory,
+        ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)>                         onComplete,
+        ::brstd::source_location                                                                         creationSite
+    ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI EditorPlayerCoroutineService(
+        ::Editor::ServiceProviderCollection&                providers,
+        ::Editor::Services::EditorCoroutineServiceProvider& manager
+    );
+
+    MCNAPI void _refreshOwnerMetadata();
+
+    MCNAPI ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)> _wrapCompletion(
+        bool                                                                     contributesToBusyState,
+        ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)> onComplete
+    );
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& ServiceName();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Editor::ServiceProviderCollection& providers, ::Editor::Services::EditorCoroutineServiceProvider& manager);
     // NOLINTEND
 
 public:
@@ -86,17 +152,17 @@ public:
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI ::Editor::Coroutine::TaskHandle $queue(
-        ::std::string                                    name,
-        ::Editor::Generator<::Editor::CoroutineStatus>&& coroutine,
-        ::std::function<void(uint64, bool)>              onComplete,
-        ::brstd::source_location                         creationSite
+        ::std::string                                                            name,
+        ::Editor::Generator<::Editor::CoroutineStatus>&&                         coroutine,
+        ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)> onComplete,
+        ::brstd::source_location                                                 creationSite
     );
 
     MCNAPI ::Editor::Coroutine::TaskHandle $queueTask(
-        ::std::string                                     name,
-        ::Editor::Task<void, ::Editor::CoroutineStatus>&& task,
-        ::std::function<void(uint64, bool)>               onComplete,
-        ::brstd::source_location                          creationSite
+        ::std::string                                                            name,
+        ::Editor::Task<void, ::Editor::CoroutineStatus>&&                        task,
+        ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)> onComplete,
+        ::brstd::source_location                                                 creationSite
     );
 
     MCNAPI bool $cancel(::Editor::Coroutine::TaskHandle handle);
@@ -108,6 +174,17 @@ public:
     MCNAPI ::std::string const* $getTaskName(::Editor::Coroutine::TaskHandle handle) const;
 
     MCNAPI uint64 $activeTaskCount() const;
+
+    MCNAPI ::Bedrock::PubSub::Subscription $registerBusyStateChangedListener(::std::function<void(bool)> callback);
+
+    MCNAPI ::Editor::Coroutine::TaskHandle $_queueTaskFactory(
+        ::std::string                             name,
+        ::Editor::Coroutine::CoroutineTaskOptions options,
+        ::brstd::move_only_function<
+            ::Editor::Task<void, ::Editor::CoroutineStatus>(::Editor::Coroutine::CoroutineTaskContext&)> factory,
+        ::std::function<void(uint64, ::Editor::Coroutine::TaskCompletionStatus)>                         onComplete,
+        ::brstd::source_location                                                                         creationSite
+    );
 
 
     // NOLINTEND

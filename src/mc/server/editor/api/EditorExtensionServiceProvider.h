@@ -34,6 +34,8 @@ public:
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
             activationClosure,
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+            sessionLifecycleClosure,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
                                                                           shutdownClosure,
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
         ::Editor::API::ServerScriptPackType                               packType
@@ -64,7 +66,7 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() = 0;
 
-    virtual ::Scripting::Result_deprecated<void> createExtensionContexts() = 0;
+    virtual ::Scripting::Result_deprecated<void> createExtensionContexts(bool shouldNotify) = 0;
     // NOLINTEND
 };
 

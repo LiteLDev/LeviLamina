@@ -24,7 +24,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                 mProperty;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>  mProperty;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>               mRedactableString;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>> mProfanityContext;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mProfanityToggleSubscription;

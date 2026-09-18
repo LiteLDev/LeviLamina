@@ -28,11 +28,7 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
-    MCAPI ::std::string getDisplayName_010() const;
-
     MCAPI ::Scripting::Result_deprecated<int> getDuration() const;
-
-    MCAPI int getDuration_010() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
 

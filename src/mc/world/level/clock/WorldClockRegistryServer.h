@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class LevelData;
+class LevelEventCoordinator;
 class LevelStorage;
 class NetworkIdentifier;
 class PacketSender;
@@ -54,7 +55,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldClockRegistryServer(::cereal::ReflectionCtx& cerealContext);
+    MCAPI WorldClockRegistryServer(
+        ::cereal::ReflectionCtx&                                      cerealContext,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
+    );
 
     MCAPI bool loadData(::LevelStorage const& levelStorage);
 
@@ -72,7 +76,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx& cerealContext);
+    MCAPI void* $ctor(
+        ::cereal::ReflectionCtx&                                      cerealContext,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
+    );
     // NOLINTEND
 
 public:

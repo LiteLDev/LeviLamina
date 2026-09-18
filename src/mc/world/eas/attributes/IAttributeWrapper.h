@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class WorldClockRegistry;
 namespace EAS { struct EnvironmentAttributeData; }
 // clang-format on
 
@@ -17,7 +18,7 @@ public:
 
     virtual ::EAS::EnvironmentAttributeData toData() const = 0;
 
-    virtual void tick() = 0;
+    virtual void tick(::WorldClockRegistry const&) = 0;
     // NOLINTEND
 };
 

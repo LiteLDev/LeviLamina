@@ -171,10 +171,6 @@ public:
         int                        secondarySlots
     );
 
-#ifdef LL_PLAT_C
-    MCAPI ::std::string getDescription() const;
-#endif
-
     MCAPI ::std::string getDescriptionId() const;
     // NOLINTEND
 

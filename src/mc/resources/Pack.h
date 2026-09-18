@@ -7,9 +7,11 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/SubpackInfoCollection.h"
 
 // auto generated forward declare list
 // clang-format off
+class I18n;
 class IContentKeyProvider;
 class IPackIOProvider;
 class IPackManifestFactory;
@@ -19,21 +21,24 @@ class PackMetadata;
 class PackReport;
 class PackSourceReport;
 class ResourceLocation;
-class SubpackInfoCollection;
+struct PackIdVersion;
 namespace Core { class Path; }
-namespace PackCommand { struct UpgradeLegacyDependencies; }
 // clang-format on
 
 class Pack {
 public:
+    // Pack inner types define
+    using UpgradeLegacyDependencies = ::std::vector<::PackIdVersion>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                                 mManifest;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>                           mAccessStrategy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>                        mSubpackInfoStack;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                                 mMetadata;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const>> mDependenciesUpgrade;
-    ::ll::TypedStorage<1, 1, uchar>                                                             mRevision;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                       mManifest;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>                 mAccessStrategy;
+    ::ll::TypedStorage<8, 24, ::SubpackInfoCollection>                                mSubpackInfoStack;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                       mMetadata;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::PackIdVersion> const>> mDependenciesUpgrade;
+    ::ll::TypedStorage<1, 1, uchar>                                                   mRevision;
     // NOLINTEND
 
 public:
@@ -44,15 +49,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Pack(
-        ::std::unique_ptr<::PackManifest>          manifest,
-        ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
-        ::std::unique_ptr<::SubpackInfoCollection> subpacks,
-        ::std::unique_ptr<::PackMetadata>          metadata
+        ::I18n&                                 loc,
+        ::std::unique_ptr<::PackManifest>       manifest,
+        ::std::unique_ptr<::PackAccessStrategy> accessStrategy,
+        ::SubpackInfoCollection                 subpacks,
+        ::std::unique_ptr<::PackMetadata>       metadata
     );
 
     MCAPI void move(::Pack&& pack);
 
-    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const> upgrade);
+    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::std::vector<::PackIdVersion> const> upgrade);
 
     MCAPI ~Pack();
     // NOLINTEND
@@ -60,18 +66,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::std::unique_ptr<::Pack> createPack(
-        ::ResourceLocation const&                               fileLocation,
-        ::PackType                                              type,
-        ::PackOrigin                                            origin,
-        ::IPackManifestFactory&                                 manifestFactory,
-        ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
-        ::PackSourceReport*                                     report,
-        ::Core::Path const&                                     zipSubDir
-    );
-#endif
-
     MCAPI static ::std::unique_ptr<::Pack> createPack(
         ::IPackIOProvider const&                                io,
         ::ResourceLocation const&                               fileLocation,
@@ -101,10 +95,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::unique_ptr<::PackManifest>          manifest,
-        ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
-        ::std::unique_ptr<::SubpackInfoCollection> subpacks,
-        ::std::unique_ptr<::PackMetadata>          metadata
+        ::I18n&                                 loc,
+        ::std::unique_ptr<::PackManifest>       manifest,
+        ::std::unique_ptr<::PackAccessStrategy> accessStrategy,
+        ::SubpackInfoCollection                 subpacks,
+        ::std::unique_ptr<::PackMetadata>       metadata
     );
     // NOLINTEND
 

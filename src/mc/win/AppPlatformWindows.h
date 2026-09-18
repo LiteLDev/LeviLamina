@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IAppPlatformImpl;
 class PDFWriter;
 namespace Core { class Path; }
 // clang-format on
@@ -26,20 +27,12 @@ public:
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
     AppPlatformWindows();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    AppPlatformWindows& operator=(AppPlatformWindows const&);
-    AppPlatformWindows(AppPlatformWindows const&);
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -115,7 +108,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI AppPlatformWindows();
+    MCAPI explicit AppPlatformWindows(::std::unique_ptr<::IAppPlatformImpl> impl);
 #endif
 
     MCAPI uint64 _findHighPerformanceThreadsCount() const;
@@ -131,7 +124,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::std::unique_ptr<::IAppPlatformImpl> impl);
 #endif
     // NOLINTEND
 
@@ -168,21 +161,17 @@ public:
 
     MCAPI bool $is24HourTimeFormat() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
-#else // LL_PLAT_C
     MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
-#else // LL_PLAT_C
     MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
-#endif
 
     MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
+#else // LL_PLAT_C
+    MCFOLD ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
+#endif
 
     MCAPI ::Core::PathBuffer<::std::string> $_getSharedDataPath() const;
 
@@ -191,13 +180,13 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ::std::string $getSystemLocale() const;
 
-    MCAPI void $collectGraphicsHardwareDetails();
+    MCFOLD void $collectGraphicsHardwareDetails();
 
     MCFOLD bool $supportsMSAA() const;
 
     MCFOLD bool $supportsAlbumExport() const;
 
-    MCAPI bool $supportsPDFExport() const;
+    MCFOLD bool $supportsPDFExport() const;
 
     MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
 

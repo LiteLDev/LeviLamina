@@ -23,13 +23,14 @@ public:
     enum class EarlyOutScheme : int {
         ConditionSuccess = 0,
         PlacementSuccess = 1,
+        None             = 2,
     };
 
     struct FeatureExpressionNodePair {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureRef;
+        ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureReference;
         ::ll::TypedStorage<8, 16, ::ExpressionNode>      mExpressionNode;
         // NOLINTEND
     };
@@ -44,8 +45,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConditionalListFeature() /*override*/ = default;
-
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
@@ -55,11 +54,5 @@ public:
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

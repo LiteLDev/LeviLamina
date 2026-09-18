@@ -9,12 +9,9 @@ namespace Memory {
 
 class ScopedMemoryTrackingTag {
 public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_C
-    ::ll::TypedStorage<4, 4, ::std::thread::id const>  mCreator;
+    // member variables
+    // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::Memory::MemoryCategory> mOldCategory;
-#endif
     // NOLINTEND
 };
 

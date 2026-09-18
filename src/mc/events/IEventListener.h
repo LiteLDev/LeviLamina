@@ -24,8 +24,6 @@ public:
 
     virtual void sendEvents(bool forceSend) = 0;
 
-    virtual int getEventTagsFilter() const = 0;
-
     virtual void stopDebugEventLogging() = 0;
     // NOLINTEND
 };

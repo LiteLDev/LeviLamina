@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/copyable_function.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
 class Container;
+class Experiments;
 class InteractionResult;
 class InventoryAction;
 class ItemStack;
@@ -31,9 +35,9 @@ public:
 
     virtual ::Block const& unwrapBlock(uint const& block) const = 0;
 
-    virtual ::ItemStack const& getSelectedItem() const = 0;
+    virtual ::ItemStack const& getItemInHandSlot(::HandSlot) const = 0;
 
-    virtual void setSelectedItem(::ItemStack const& item) = 0;
+    virtual void setItemInHandSlot(::HandSlot, ::ItemStack const&) = 0;
 
     virtual ::PlayerInventorySlotData getSelectedSlot() const = 0;
 
@@ -46,24 +50,19 @@ public:
     virtual void setPosition(::Vec3 const& position) = 0;
 
     virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback,
-        ::std::function<void()>&&                                                          execute
+        ::HandSlot                                                                                  handSlot,
+        ::brstd::copyable_function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::brstd::function_ref<void()>                                                               execute
     ) = 0;
 
     virtual void addExpectedAction(::InventoryAction const& action) = 0;
 
-    virtual bool baseUseItem(::ItemStack& item) = 0;
+    virtual bool baseUseItem(::ItemStack&, ::HandSlot) = 0;
 
-    virtual bool baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection) = 0;
+    virtual bool baseUseItemAsAttack(::ItemStack&, ::Vec3 const&, ::HandSlot) = 0;
 
-    virtual ::InteractionResult useItemOn(
-        ::ItemStack&      item,
-        ::BlockPos const& at,
-        uchar             face,
-        ::Vec3 const&     hit,
-        ::Block const*    targetBlock,
-        bool              isFirstEvent
-    ) = 0;
+    virtual ::InteractionResult
+    useItemOn(::ItemStack&, ::BlockPos const&, uchar, ::Vec3 const&, ::HandSlot, ::Block const*, bool) = 0;
 
     virtual void resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const = 0;
 
@@ -82,5 +81,7 @@ public:
     virtual void sendBlockInteractedWith(::BlockPos const& pos) = 0;
 
     virtual ::DepenetrationComponent& getDepenetrationComponent() = 0;
+
+    virtual ::Experiments const& getExperiments() const = 0;
     // NOLINTEND
 };

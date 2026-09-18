@@ -12,13 +12,12 @@
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlagComponent;
 struct InterpolateMovementNeededComponent;
 struct MobFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class LadderResetFallDamageSystem {
@@ -31,12 +30,6 @@ public:
         ::StateVectorComponent const,
         ::ActorDataFlagComponent const,
         ::FallDistanceComponent,
-        ::Optional<::CanStandOnSnowFlagComponent const>,
-        ::Optional<::HasLightweightFamilyFlagComponent const>>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createLadderResetFallDamageSystem();
-    // NOLINTEND
+        ::Optional<::CanStandOnPowderSnowComponent const>,
+        ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const>>;
 };

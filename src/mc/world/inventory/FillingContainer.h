@@ -111,11 +111,7 @@ public:
 
     MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
-#ifdef LL_PLAT_S
     MCAPI void $setItem(int slot, ::ItemStack const& item);
-#else // LL_PLAT_C
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
-#endif
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 

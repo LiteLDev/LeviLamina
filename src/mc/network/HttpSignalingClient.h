@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/ISignalingInterface.h"
 
@@ -35,12 +36,8 @@ public:
     // NOLINTBEGIN
     virtual ~HttpSignalingClient() /*override*/ = default;
 
-    virtual void SendSignal(
-        ::NetherNet::NetworkID                              from,
-        ::NetherNet::NetworkID                              to,
-        ::std::string const&                                signal,
-        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-    ) /*override*/;
+    virtual ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    SendSignal(::NetherNet::NetworkID from, ::NetherNet::NetworkID to, ::std::string const& signal) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
     RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
@@ -50,12 +47,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $SendSignal(
-        ::NetherNet::NetworkID                              from,
-        ::NetherNet::NetworkID                              to,
-        ::std::string const&                                signal,
-        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-    );
+    MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    $SendSignal(::NetherNet::NetworkID from, ::NetherNet::NetworkID to, ::std::string const& signal);
 
     MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 #endif

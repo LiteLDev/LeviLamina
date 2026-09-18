@@ -34,6 +34,8 @@ public:
         ::std::string                                                    formId,
         ::ScriptModuleMinecraftServerUI::ScriptFormVisibilityErrorReason reason
     );
+
+    MCNAPI ~ScriptFormVisibilityError();
     // NOLINTEND
 
 public:
@@ -46,6 +48,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string formId, ::ScriptModuleMinecraftServerUI::ScriptFormVisibilityErrorReason reason);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

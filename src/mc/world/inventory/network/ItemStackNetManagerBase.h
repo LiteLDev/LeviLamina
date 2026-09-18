@@ -104,9 +104,13 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
-#endif
 
     MCAPI void _pushScreen(::ContainerScreenContext screenContext);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void _pushScreen(::ContainerScreenContext screenContext);
+#endif
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
     // NOLINTEND

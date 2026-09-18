@@ -10,9 +10,14 @@
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
+class IClientInstance;
+class Level;
+class LevelRenderer;
+class OptionRegistry;
 class Player;
 class ScreenContext;
 class Vec3;
+class WeakEntityRef;
 struct LevelRenderPreRenderUpdateParameters;
 struct ShadowCascadeState;
 namespace mce::framebuilder { struct ShadowParameters; }
@@ -81,10 +86,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI LevelRendererShadowCamera(
+        ::IClientInstance& clientInstance,
+        ::std::shared_ptr<::OptionRegistry>,
+        ::Level&         level,
+        ::LevelRenderer& levelRenderer,
+        ::WeakEntityRef
+    );
+
     MCNAPI void _calculatePlayerShadowMap(
         ::mce::framebuilder::ShadowParameters const& shadowParameters,
         ::Vec3 const&                                lightSourceDir
     );
+
+    MCNAPI void removeCameraListenerToRenderChunkCoordinator();
 
     MCNAPI void setupCamera(
         ::glm::vec3 const&                              direction,
@@ -108,6 +123,18 @@ public:
         ::glm::vec3 const&                           playerPosition,
         ::mce::framebuilder::ShadowParameters const& shadowParameters,
         ::ShadowCascadeState&                        shadowCascadeState
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::IClientInstance& clientInstance,
+        ::std::shared_ptr<::OptionRegistry>,
+        ::Level&         level,
+        ::LevelRenderer& levelRenderer,
+        ::WeakEntityRef
     );
     // NOLINTEND
 
@@ -139,5 +166,17 @@ public:
     MCNAPI void $addCameraListenerToRenderChunkCoordinator();
 
     MCNAPI void $updateLevelCullerType(::LevelCullerType const newLevelCullerType);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForLevelListener();
+
+    MCNAPI static void** $vftableForRegionListener();
+
+    MCNAPI static void** $vftableForLevelRendererCamera();
+
+    MCNAPI static void** $vftableForPlayerListener();
     // NOLINTEND
 };

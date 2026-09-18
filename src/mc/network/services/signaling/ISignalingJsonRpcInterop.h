@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ESessionError.h"
+#include "mc/network/services/signaling/json_rpc/ITransport.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class ISignalingServiceTelemetry;
 class MessageTracker;
 namespace Json { class Value; }
 namespace NetherNet { struct NetworkID; }
@@ -17,20 +19,19 @@ namespace NetherNet { struct StunRelayServer; }
 namespace PlayerMessaging { struct NetworkID; }
 // clang-format on
 
-class ISignalingJsonRpcInterop {
+class ISignalingJsonRpcInterop : public ::JsonRpc::ITransport {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISignalingJsonRpcInterop() = default;
+    virtual ~ISignalingJsonRpcInterop() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> sendJsonRpcTo(
-        ::PlayerMessaging::NetworkID          networkIdTo,
-        ::std::optional<::std::string> const& messageId,
-        ::std::string const&                  message
-    ) const = 0;
-
-    virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
-    sendJsonRpc(::std::optional<::std::string> const& messageId, ::std::string const& message) const = 0;
+    virtual ::std::
+        pair<::Bedrock::Threading::Async<::Bedrock::Result<void>>, ::Bedrock::Threading::Async<::std::error_code>>
+        sendJsonRpcTo(
+            ::PlayerMessaging::NetworkID          networkIdTo,
+            ::std::optional<::std::string> const& messageId,
+            ::std::string const&                  message
+        ) const = 0;
 
     virtual ::std::shared_ptr<::MessageTracker> getMessageTracker() = 0;
 
@@ -44,5 +45,7 @@ public:
     ) = 0;
 
     virtual void onTurnConfigFailure(::Bedrock::ErrorInfo<::NetherNet::ESessionError> const& error) = 0;
+
+    virtual ::std::shared_ptr<::ISignalingServiceTelemetry const> getTelemetry() = 0;
     // NOLINTEND
 };

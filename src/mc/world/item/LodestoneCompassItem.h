@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/AbstractCompassItem.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,8 +30,14 @@ public:
     // NOLINTBEGIN
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& item, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  item,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -61,8 +68,14 @@ public:
     // NOLINTBEGIN
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& item, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  item,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

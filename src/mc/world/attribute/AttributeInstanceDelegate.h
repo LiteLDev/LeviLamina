@@ -9,6 +9,7 @@
 // clang-format off
 class AttributeBuff;
 class AttributeInstance;
+class AttributeInstanceRef;
 struct AttributeModificationContext;
 // clang-format on
 
@@ -33,6 +34,14 @@ public:
     virtual ::std::optional<float> change(float oldValue, float newValue, ::AttributeBuff const& buff);
 
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::AttributeInstanceRef _getMutableInstance(::AttributeModificationContext& context) const;
+#endif
     // NOLINTEND
 
 public:

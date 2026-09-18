@@ -13,7 +13,7 @@ enum class BuildPlatform : int {
     Dedicated              = 9,
     TvOSDeprecated         = 10,
     Sony                   = 11,
-    Nx                     = 12,
+    Nintendo               = 12,
     Xbox                   = 13,
     WindowsPhoneDeprecated = 14,
     Linux                  = 15,

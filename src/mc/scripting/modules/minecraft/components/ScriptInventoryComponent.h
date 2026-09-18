@@ -38,8 +38,6 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getContainerType() const;
-
     MCAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>

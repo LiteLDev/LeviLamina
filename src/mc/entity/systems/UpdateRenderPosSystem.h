@@ -7,7 +7,6 @@
 class StrictEntityContext;
 struct RenderPositionComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class UpdateRenderPosSystem {
@@ -19,7 +18,5 @@ public:
         ::StateVectorComponent const& stateVectorComponent,
         ::RenderPositionComponent&    renderPositionComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

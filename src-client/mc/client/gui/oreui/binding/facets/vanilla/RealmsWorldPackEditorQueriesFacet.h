@@ -15,6 +15,7 @@
 // auto generated forward declare list
 // clang-format off
 class ContentItemCollection;
+class ProfanityContext;
 namespace OreUI { class IResourceAllowList; }
 namespace Realms { class RealmsWorldPackEditor; }
 namespace World { struct PackDetails; }
@@ -30,11 +31,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                            mIsDirty;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor>> mRealmsWorldPackEditor;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>     mResourceAllowList;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>>              mProfanityContext;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                mCollectionDirtySub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>              mRealmsWorldPackEditorFetchStatusSub;
     ::ll::TypedStorage<4, 12, ::Realms::RealmsWorldPackEditor::FetchStatus> mRealmsWorldPackEditorFetchStatus;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>              mRealmsWorldPackEditorSaveStatusSub;
-    ::ll::TypedStorage<8, 56, ::Realms::RealmsWorldPackEditor::SaveStatus>  mRealmsWorldPackEditorSaveStatus;
+    ::ll::TypedStorage<8, 88, ::Realms::RealmsWorldPackEditor::SaveStatus>  mRealmsWorldPackEditorSaveStatus;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>              mRealmsWorldPackEditorPackContentChangedSub;
     ::ll::TypedStorage<1, 1, bool>                                          mIsPackContentChanged;
     ::ll::TypedStorage<8, 24, ::std::vector<::World::PackDetails>>          mSelectedResourcePackDetails;
@@ -72,7 +74,8 @@ public:
     // NOLINTBEGIN
     MCAPI RealmsWorldPackEditorQueriesFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>              profanityContext
     );
 
     MCAPI ::std::vector<::World::PackDetails>
@@ -82,13 +85,13 @@ public:
 
     MCAPI ::std::vector<::World::PackDetails> const& getAvailableBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getAvailableResourcePacks() const;
+    MCAPI ::std::vector<::World::PackDetails> const& getAvailableResourcePacks() const;
 
-    MCFOLD ::std::optional<::World::PackActionError> const& getChangePackPriorityError() const;
+    MCAPI ::std::optional<::World::PackActionError> const& getChangePackPriorityError() const;
 
     MCAPI ::std::vector<::World::PackDetails> const& getGlobalResourcePacks() const;
 
-    MCFOLD bool getIsPackEditorContentChanged() const;
+    MCAPI bool getIsPackEditorContentChanged() const;
 
     MCAPI ::std::optional<::IMarketplacePackDownloader::MarketplacePackDownloadStatus> const&
     getMarketplacePackDownloadStatus();
@@ -97,7 +100,7 @@ public:
 
     MCAPI ::std::vector<::World::PackDetails> const& getMarketplacePassResourcePacks() const;
 
-    MCFOLD ::std::optional<::World::PackActionError> const& getPackApplicationError() const;
+    MCAPI ::std::optional<::World::PackActionError> const& getPackApplicationError() const;
 
     MCFOLD ::std::optional<::std::string> const& getPackEditorFailedUploadPackName() const;
 
@@ -109,11 +112,14 @@ public:
 
     MCFOLD ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorSaveState() const;
 
-    MCAPI ::std::optional<::World::PendingPackAction> const& getPendingPackAction() const;
+    MCAPI ::std::optional<::std::vector<::Realms::RealmsWorldPackEditor::PackProfanityInfo>> const&
+    getPackProfanityInfo() const;
+
+    MCFOLD ::std::optional<::World::PendingPackAction> const& getPendingPackAction() const;
 
     MCAPI ::std::vector<::World::PackDetails> const& getSelectedBehaviorPacks() const;
 
-    MCAPI ::std::vector<::World::PackDetails> const& getSelectedResourcePacks() const;
+    MCFOLD ::std::vector<::World::PackDetails> const& getSelectedResourcePacks() const;
     // NOLINTEND
 
 public:
@@ -127,7 +133,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>              profanityContext
     );
     // NOLINTEND
 

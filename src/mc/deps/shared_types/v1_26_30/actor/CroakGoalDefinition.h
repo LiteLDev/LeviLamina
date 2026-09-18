@@ -7,6 +7,11 @@
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_30 {
 
 struct CroakGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -16,6 +21,18 @@ public:
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                  mIntervalRange;
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                  mDurationRange;
     ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mFilters;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::SharedTypes::v1_26_30::CroakGoalDefinition const&) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

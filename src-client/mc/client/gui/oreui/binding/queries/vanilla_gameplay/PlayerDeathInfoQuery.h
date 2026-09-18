@@ -18,8 +18,8 @@ class PlayerDeathInfoQuery : public ::OreUI::QueryBase<::OreUI::PlayerDeathInfoQ
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IClientInstance const&>           mClient;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mDeathInfo;
+    ::ll::TypedStorage<8, 8, ::IClientInstance const&>                          mClient;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mDeathInfo;
     // NOLINTEND
 
 public:

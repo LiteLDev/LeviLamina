@@ -22,11 +22,11 @@ class ChatMessageObject : public ::OreUI::PropertyObject<::OreUI::ChatMessageObj
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>             mId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint>>                      mOrder;
-    ::ll::TypedStorage<8, 312, ::OreUI::RedactableStringProperty>            mMessage;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>             mSenderXuid;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::ChatMessageType>> mType;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>                         mId;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint, uint>>                                           mOrder;
+    ::ll::TypedStorage<8, 312, ::OreUI::RedactableStringProperty>                                       mMessage;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>                         mSenderXuid;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::ChatMessageType, ::Social::ChatMessageType>> mType;
     // NOLINTEND
 
 public:

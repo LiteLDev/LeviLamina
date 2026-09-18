@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecartCommandBlockManager();
+    virtual ~MinecartCommandBlockManager() = default;
 
     virtual void init();
 
@@ -100,12 +100,6 @@ public:
     MCAPI void _loadFromBaseCommandBlock();
 
     MCAPI void _saveToBaseCommandBlock(::BaseCommandBlock& baseCommandBlock);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

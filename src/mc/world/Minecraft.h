@@ -75,7 +75,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureManager>>                 mStructureManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameModuleServer>>                mGameModuleServer;
     ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                    mPermissionsFile;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PrivateKeyManager>>                mServerKeys;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PrivateKeyManager>>               mServerKeys;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MinecraftServiceKeyManager>>      mMinecraftServiceKeys;
     ::ll::TypedStorage<8, 32, ::std::string const>                                  mSaveGamePath;
     ::ll::TypedStorage<8, 8, ::ServerMetrics*>                                      mServerMetrics;

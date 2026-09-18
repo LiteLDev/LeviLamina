@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CompoundTag;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockReplaceableDescription : public ::BlockComponentDescription {
@@ -19,6 +21,12 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
+    virtual bool isNetworkComponent() const /*override*/;
+
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+
+    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
     // NOLINTEND
 
 public:
@@ -35,6 +43,12 @@ public:
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCFOLD bool $isNetworkComponent() const;
+
+    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+
+    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

@@ -9,7 +9,6 @@
 // clang-format off
 class StrictEntityContext;
 struct NeedsUpgradeToBodySlotFlagComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class MarkWolfForUpgradeToBodySlotSystem {
@@ -20,7 +19,5 @@ public:
         ::StrictEntityContext&                                   strictEntityContext,
         ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent>& modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

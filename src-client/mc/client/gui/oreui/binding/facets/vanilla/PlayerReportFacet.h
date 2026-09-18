@@ -119,6 +119,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                              mGalleryScreenshotId;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                                         mSelectedChatMessages;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsPartyChatReport;
+    ::ll::TypedStorage<1, 1, bool>                                                        mShouldMutePlayer;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mPartyId;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::ChatMessageData>> mReportableChatMessages;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::ChatMessageData>> mReportablePartyChatMessages;

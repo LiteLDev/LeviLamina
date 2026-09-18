@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48>  mUnkcc05fa;
     ::ll::UntypedStorage<8, 48>  mUnk80d5a1;
-    ::ll::UntypedStorage<8, 520> mUnkdb7f4c;
+    ::ll::UntypedStorage<8, 528> mUnkdb7f4c;
     ::ll::UntypedStorage<8, 16>  mUnk83e259;
     ::ll::UntypedStorage<8, 24>  mUnk2bc7d3;
     ::ll::UntypedStorage<8, 16>  mUnk16bb69;

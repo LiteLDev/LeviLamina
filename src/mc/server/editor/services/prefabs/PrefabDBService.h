@@ -30,6 +30,7 @@ namespace Editor::Prefabs { class PrefabDBTemplate; }
 namespace Editor::Prefabs { class VisiblePrefabInstance; }
 namespace Editor::Prefabs { struct PrefabDBInstanceChangeEvent; }
 namespace Editor::Prefabs { struct PrefabDBTemplateChangeEvent; }
+namespace Editor::Prefabs::PrefabDBInstanceLoader::v1 { struct InstanceData; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -124,6 +125,19 @@ public:
     virtual ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>
     getInstance(::DimensionType const& dimension, ::mce::UUID const& instanceId) /*override*/;
 
+    virtual ::Scripting::Result_deprecated<void>
+    applyInstanceSnapshot(::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& data) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> deleteInstanceById(::mce::UUID const& instanceId) /*override*/;
+
+    virtual ::std::optional<::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData>
+    getInstanceSnapshot(::mce::UUID const& instanceId) /*override*/;
+
+    virtual void findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
+    ) /*override*/;
+
     virtual void bakePrefabInstanceToWorld(
         ::BlockSource&                                       region,
         ::BlockPalette const&                                globalBlockPalette,
@@ -152,6 +166,9 @@ public:
     MCNAPI explicit PrefabDBService(::Editor::ServiceProviderCollection& serviceProviders);
 
     MCNAPI bool _buildManifests();
+
+    MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBPrefabInstance>
+    _createPrefabInstanceFromData(::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& data);
 
     MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBTemplate> _createPrefabTemplate(
         ::std::string const&                   name,
@@ -231,6 +248,19 @@ public:
 
     MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>
     $getInstance(::DimensionType const& dimension, ::mce::UUID const& instanceId);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $applyInstanceSnapshot(::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& data);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $deleteInstanceById(::mce::UUID const& instanceId);
+
+    MCNAPI ::std::optional<::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData>
+    $getInstanceSnapshot(::mce::UUID const& instanceId);
+
+    MCNAPI void $findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
+    );
 
     MCNAPI void $bakePrefabInstanceToWorld(
         ::BlockSource&                                       region,

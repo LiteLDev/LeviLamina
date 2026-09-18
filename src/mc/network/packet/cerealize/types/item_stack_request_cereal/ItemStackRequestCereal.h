@@ -112,9 +112,6 @@ MCAPI ::std::unique_ptr<::ItemStackRequestAction> toItemStackRequestAction(
         ::ItemStackRequestCereal::CraftResultsActionData> const& data
 );
 
-MCAPI ::NetworkItemInstanceDescriptor
-toNetworkItemInstanceDescriptor(::ItemStackRequestCereal::NetworkItemInstanceDescriptorData const& data);
-
 MCAPI ::std::vector<::ItemStackRequestCereal::NetworkItemInstanceDescriptorData>
 toNetworkItemInstanceDescriptorDataList(::std::vector<::NetworkItemInstanceDescriptor> const& descriptors);
 

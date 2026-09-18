@@ -92,6 +92,9 @@ public:
 
     MCAPI void _unloadAtlasTextures();
 
+    MCAPI ::std::optional<::std::pair<::UIThumbnailAtlasRenderer::AtlasInfo, ::OreUI::AtlasIndex::ItemEntry>>
+    findItemAndAtlasInfo(::std::string_view name) const;
+
     MCAPI ::std::shared_ptr<::OreUI::AtlasIndex> getIndex(::std::string_view atlasName) const;
 
     MCAPI bool isThumbnailAtlasEnabled() const;

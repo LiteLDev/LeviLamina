@@ -11,6 +11,8 @@ class Block;
 class BlockPos;
 class HashedString;
 class IBlockWorldGenAPI;
+class Random;
+namespace SpeleothemUtils { struct SpeleothemBasePos; }
 // clang-format on
 
 namespace SpeleothemUtils {
@@ -19,14 +21,31 @@ namespace SpeleothemUtils {
 MCAPI void buildBaseToTipColumn(
     ::IBlockWorldGenAPI&  target,
     ::BlockPos const&     basePos,
-    uchar const           direction,
-    int const             length,
-    bool const            mergeTips,
+    uchar                 direction,
+    int                   length,
+    bool                  mergeTips,
+    ::HashedString const& pointedBlock
+);
+
+MCAPI bool canBeAdjacentToWater(::IBlockWorldGenAPI& target, ::BlockPos const& pos);
+
+MCAPI bool canPlacePool(
+    ::IBlockWorldGenAPI&  target,
+    ::BlockPos const&     pos,
+    ::HashedString const& baseBlock,
     ::HashedString const& pointedBlock
 );
 
 MCAPI ::Block const&
 getPlacementBlock(uchar const direction, ::SpeleothemThickness const& thickness, ::HashedString const& pointedBlock);
+
+MCAPI ::std::optional<::SpeleothemUtils::SpeleothemBasePos> getSpeleothemBasePos(
+    ::IBlockWorldGenAPI&                                                 target,
+    ::BlockPos const&                                                    pos,
+    ::Random&                                                            random,
+    ::HashedString const&                                                baseBlock,
+    ::std::vector<::std::reference_wrapper<::HashedString const>> const& replaceableBlocks
+);
 
 MCAPI float getSpeleothemHeight(float xzDistanceFromCenter, float speleothemRadius, float scale, float bluntness);
 
@@ -37,7 +56,7 @@ MCAPI bool isBaseOrLava(
     ::std::vector<::std::reference_wrapper<::HashedString const>> const& replaceableBlocks
 );
 
-MCAPI bool isCircleMostlyEmbeddedInStone(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
+MCAPI bool isCircleMostlyEmbeddedInTerrain(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
 // NOLINTEND
 
 } // namespace SpeleothemUtils

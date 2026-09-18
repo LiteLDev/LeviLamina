@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorType.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -45,9 +46,14 @@ public:
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& item, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  item,
+        ::Actor&      spawningActor,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
 
     virtual ::ActorType _getActorType() const;
     // NOLINTEND
@@ -68,8 +74,14 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& item, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  item,
+        ::Actor&      spawningActor,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
     MCFOLD ::ActorType $_getActorType() const;
 

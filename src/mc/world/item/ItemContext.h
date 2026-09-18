@@ -46,6 +46,8 @@ public:
 
     MCAPI ItemContext(::BlockSource& region, ::BlockPos const& containerPos, int slot);
 
+    MCAPI void _setItem(::ItemStack const& item);
+
     MCAPI ::Container* _tryGetContainerFromEntity() const;
 
     MCAPI ::Container* _tryGetContainerFromItem() const;

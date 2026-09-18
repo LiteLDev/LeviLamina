@@ -10,6 +10,8 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Mob;
+struct GoalId;
 // clang-format on
 
 class MoveToLiquidGoal : public ::BaseMoveToBlockGoal {
@@ -18,6 +20,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::MaterialType> mMaterialType;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveToLiquidGoal();
 
 public:
     // virtual functions
@@ -31,6 +37,24 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool findTargetBlock() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MoveToLiquidGoal(
+        ::Mob&                                mob,
+        ::std::string                         name,
+        ::GoalId const&                       goalId,
+        ::SharedTypes::v1_26_20::MaterialType materialType
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::SharedTypes::v1_26_20::MaterialType materialType);
     // NOLINTEND
 
 public:

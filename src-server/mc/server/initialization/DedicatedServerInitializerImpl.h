@@ -39,6 +39,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual void assignServerThread() /*override*/;
+
     virtual ::DedicatedServerInitialization::IDedicatedServerInitializer::ServerInitTuple
     initializeServer(::TaskGroup& taskGroup) /*override*/;
 
@@ -56,6 +58,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $assignServerThread();
+
     MCNAPI ::DedicatedServerInitialization::IDedicatedServerInitializer::ServerInitTuple
     $initializeServer(::TaskGroup& taskGroup);
 

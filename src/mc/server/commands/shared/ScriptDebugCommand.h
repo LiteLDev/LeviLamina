@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class CommandOutput;
+class DebuggerDiagnosticsPublishToFile;
 class IScriptDebugger;
-class ScriptDiagnosticsPublishToFile;
 // clang-format on
 
 class ScriptDebugCommand : public ::Command {
@@ -51,7 +51,7 @@ public:
     ) const;
 
     MCAPI void _handleDiagnosticsAction(
-        ::ScriptDiagnosticsPublishToFile*       diagnosticsPublishToFile,
+        ::DebuggerDiagnosticsPublishToFile*     diagnosticsPublishToFile,
         ::std::string const&                    locPrefix,
         ::ScriptDebugCommand::DiagnosticsAction action,
         ::CommandOutput&                        output

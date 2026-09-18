@@ -7,7 +7,6 @@
 class LevelComponent;
 class StrictEntityContext;
 struct ParticleEventRequestQueueComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct ParticleEventRequestSystem {
@@ -16,7 +15,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _tick(::StrictEntityContext const&, ::LevelComponent& level, ::ParticleEventRequestQueueComponent& requests);
-
-    MCAPI static ::TickingSystemWithInfo create();
     // NOLINTEND
 };

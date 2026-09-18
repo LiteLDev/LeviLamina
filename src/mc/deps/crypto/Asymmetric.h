@@ -7,7 +7,6 @@
 #include "mc/deps/crypto/asymmetric/PrivateKeySigningFormat.h"
 #include "mc/deps/crypto/asymmetric/PubKeyFormat.h"
 #include "mc/deps/crypto/asymmetric/system/ISystemInterface.h"
-#include "mc/deps/crypto/asymmetric/system/System.h"
 #include "mc/deps/crypto/hash/HashType.h"
 #include "mc/platform/Result.h"
 
@@ -39,6 +38,11 @@ public:
     virtual ~Asymmetric() /*override*/ = default;
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
+
+    virtual ::Bedrock::Result<::std::string>
+    parsePrivateKey(::std::string const& privateKey, ::Crypto::Asymmetric::PrivateKeySigningFormat format) /*override*/;
+
+    virtual ::Bedrock::Result<::std::string> derivePublicKey(::std::string const& privateKey) /*override*/;
 
     virtual ::Bedrock::Result<::std::string> constructPublicKey(
         ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&
@@ -82,21 +86,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit Asymmetric(::Crypto::Asymmetric::System system);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Crypto::Asymmetric::System system);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
+
+    MCNAPI ::Bedrock::Result<::std::string>
+    $parsePrivateKey(::std::string const& privateKey, ::Crypto::Asymmetric::PrivateKeySigningFormat format);
+
+    MCNAPI ::Bedrock::Result<::std::string> $derivePublicKey(::std::string const& privateKey);
 
     MCNAPI ::Bedrock::Result<::std::string> $constructPublicKey(
         ::std::variant<::Crypto::Asymmetric::RsaPublicKeyComponents, ::Crypto::Asymmetric::EcPublicKeyComponents> const&

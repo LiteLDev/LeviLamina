@@ -11,6 +11,7 @@
 // clang-format off
 class ContentIdentity;
 class ContentTierInfo;
+class I18n;
 class IResourcePackRepository;
 class LoadedResourceData;
 class PackInstance;
@@ -18,6 +19,7 @@ class PackSourceReport;
 class ResourceLocation;
 struct PackIdVersion;
 struct PackInstanceId;
+struct UnextractablePacks;
 class ResourcePackMergeStrategy;
 // clang-format on
 
@@ -39,13 +41,10 @@ public:
         Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                isDependent);
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ResourcePackStack();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,6 +70,7 @@ public:
         ::std::vector<::PackInstance> const&                                  packs,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
     );
+#endif
 
     MCAPI ResourcePackStack(
         ::std::vector<::PackInstanceId> const&                                identities,
@@ -78,19 +78,25 @@ public:
         bool                                                                  anyVersion
     );
 
+#ifdef LL_PLAT_C
     MCAPI void _setLoadingReport(::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
+#endif
+
+    MCAPI void
+    add(::PackInstance                                                        packInstance,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
+        bool                                                                  isDependent);
+
+#ifdef LL_PLAT_C
+    MCAPI void clearPackReports();
 
     MCAPI void ensureSupportedSubpacks(::ContentTierInfo const& contentInfoTier);
 #endif
 
-    MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::PackType type) const;
+    MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::I18n& loc, ::PackType type) const;
 
-#ifdef LL_PLAT_C
-    MCAPI ::std::vector<::PackInstance> getPacksWhereAssetExtractionNotViable(
-        ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
-        ::std::string const&                                     sourceContext
-    ) const;
-#endif
+    MCAPI ::UnextractablePacks
+    getPacksWhereAssetExtractionNotViable(::std::function<::std::string(::ContentIdentity const&)> getContentKey) const;
 
     MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
@@ -98,9 +104,11 @@ public:
     MCAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;
 
     MCAPI bool isOnStack(::PackIdVersion const& packIdentity) const;
+#endif
 
     MCAPI void removeInvalidPacks();
 
+#ifdef LL_PLAT_C
     MCAPI void serialize(::std::ostream& fileStream) const;
 
     MCAPI bool supportsVibrantVisuals() const;
@@ -114,7 +122,8 @@ public:
         ::std::vector<::PackInstance>&                                        packStack,
         ::PackInstance&                                                       packInstance,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        bool                                                                  isDependent
+        bool                                                                  isDependent,
+        ::std::optional<::std::string> const&                                 levelId
     );
 
     MCAPI static ::std::unique_ptr<::ResourcePackStack> deserialize(
@@ -140,13 +149,13 @@ public:
         ::std::vector<::PackInstance> const&                                  packs,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
     );
+#endif
 
     MCAPI void* $ctor(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  anyVersion
     );
-#endif
     // NOLINTEND
 
 public:

@@ -182,6 +182,8 @@ public:
 
     MCAPI void _populateFullKeyboardDefaults(::RemappingLayout& layout) const;
 
+    MCAPI void _populateGamepadDefaults(::RemappingLayout& layout) const;
+
     MCAPI void _populateKeyboardDefaults(::RemappingLayout& layout) const;
     // NOLINTEND
 

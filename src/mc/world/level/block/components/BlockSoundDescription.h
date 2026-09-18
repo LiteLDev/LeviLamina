@@ -18,10 +18,13 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mSoundType;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     BlockSoundDescription();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,7 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI explicit BlockSoundDescription(::std::string_view soundType);
+#endif
     // NOLINTEND
 
 public:
@@ -55,7 +60,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::std::string_view soundType);
+#endif
     // NOLINTEND
 
 public:

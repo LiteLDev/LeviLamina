@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI { class ClientDependencies; }
 namespace OreUI { class GameDependencies; }
 namespace StorageManager { class ContentItemProvider; }
 // clang-format on
@@ -33,6 +32,7 @@ public:
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>>                mSetAllSelected;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>                mDeleteSelectedItems;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mConvertLegacyWorld;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                               mToPlayScreen;
     // NOLINTEND
 
 public:
@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageManagerCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+    MCAPI explicit StorageManagerCommandGroup(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

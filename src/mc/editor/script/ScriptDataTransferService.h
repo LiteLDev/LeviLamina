@@ -38,8 +38,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> _closeSession(::std::string const& collectionName);
 
-    MCNAPI ::Scripting::Result_deprecated<bool> _isDeferredExperimentEnabled() const;
-
     MCNAPI ::Scripting::Result_deprecated<void> _openSession(::std::string const& collectionName);
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<

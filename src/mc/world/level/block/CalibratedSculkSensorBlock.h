@@ -11,7 +11,6 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class CircuitSystem;
 // clang-format on
 
 class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
@@ -30,11 +29,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static bool
-    _wouldBePoweredByCircuit(::CircuitSystem& circuitSystem, ::BlockPos const& pos, uchar connectionDirection);
-#endif
-
     MCAPI static int getInputStrength(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
 

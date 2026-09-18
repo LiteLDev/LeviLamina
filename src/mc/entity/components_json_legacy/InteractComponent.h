@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
+class Interaction;
+class InteractionDescription;
 class Player;
 // clang-format on
 
@@ -17,13 +17,16 @@ class InteractComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, short> mCooldownCounter;
+    ::ll::TypedStorage<2, 2, short>                                    mCooldownCounter;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InteractionDescription>> mInteractions;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction _runInteraction(::Actor& owner, ::InteractionDescription const& desc, ::Player& player);
+
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
     // NOLINTEND
 
 public:

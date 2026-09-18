@@ -15,11 +15,7 @@ public:
 
     virtual int nextInt() = 0;
 
-#ifdef LL_PLAT_S
     virtual int nextInt(int bound) = 0;
-#else // LL_PLAT_C
-    virtual int nextInt(int n) = 0;
-#endif
 
     virtual int64 nextLong() = 0;
 
@@ -31,13 +27,7 @@ public:
 
     virtual double nextGaussianDouble() = 0;
 
-#ifdef LL_PLAT_S
     virtual void consumeCount(uint rounds) = 0;
-#else // LL_PLAT_C
-    virtual void consumeCount(uint count) = 0;
-#endif
-
-    virtual ::std::unique_ptr<::IRandom> fork() = 0;
 
     virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional();
 

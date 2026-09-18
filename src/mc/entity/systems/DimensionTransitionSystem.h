@@ -17,7 +17,6 @@ class StrictEntityContext;
 struct PlayerChangeDimensionRequestComponent;
 struct PlayerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class DimensionTransitionSystem {
@@ -30,16 +29,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createPortalTransition();
-
-#ifdef LL_PLAT_C
-    MCAPI static ::TickingSystemWithInfo createReadyToContinueClient();
-#endif
-
-    MCAPI static ::TickingSystemWithInfo createReadyToContinueServer();
-
-    MCAPI static ::TickingSystemWithInfo createVehicleDismount();
-
     MCAPI static void requestPlayerChangeDimension(
         ::StrictEntityContext const&                                                      player,
         ::ChangeDimensionRequest&&                                                        request,

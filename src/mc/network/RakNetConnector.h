@@ -15,6 +15,7 @@
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -63,8 +64,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>               mAddress;
-        ::ll::TypedStorage<8, 64, ::std::function<void(uint)>> mAction;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                  mAddress;
+        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::std::chrono::milliseconds)>> mAction;
         // NOLINTEND
     };
 
@@ -248,8 +249,11 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void
-    getPingTimeForConnection(::std::string const& address, int port, ::std::function<void(uint)> pingTimeCallback);
+    MCAPI void getPingTimeForConnection(
+        ::std::string const&                                           address,
+        int                                                            port,
+        ::brstd::move_only_function<void(::std::chrono::milliseconds)> pingTimeCallback
+    );
 #endif
 
     MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);

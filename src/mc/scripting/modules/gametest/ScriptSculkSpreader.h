@@ -27,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
+
     MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;

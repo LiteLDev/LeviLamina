@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/ViewId.h"
 #include "mc/client/gui/oreui/views/FrameId.h"
-#include "mc/platform/threading/Mutex.h"
 
 namespace OreUI {
 
@@ -29,7 +28,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                           mMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                          mMutex;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FramesToPaintQueue::ViewFrame>> mFrames;
     // NOLINTEND
 

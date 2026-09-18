@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -46,10 +44,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<float> getLiquidInertia() const;
 
     MCAPI ::Scripting::Result_deprecated<float> getOnFireTime() const;
-
-    MCAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-    getOwner() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> getShouldBounceOnHit() const;
 

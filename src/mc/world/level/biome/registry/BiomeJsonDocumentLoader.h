@@ -11,6 +11,7 @@
 // clang-format off
 class BedrockLoadContext;
 class BiomeRegistry;
+class Experiments;
 class LinkedAssetValidator;
 struct BiomeJsonDocumentGlue;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
@@ -24,10 +25,11 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        256,
+        264,
         ::Puv::SlicedLoader<
             ::SharedTypes::v1_26_30::BiomeJsonDocument::BiomeJsonObject,
             ::BedrockLoadContext,
+            nullptr_t,
             nullptr_t,
             ::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject>>
         mPuvBiomeLoader;
@@ -48,8 +50,8 @@ public:
         ::Core::Path const&                                resourceName,
         bool                                               isBaseGamePack,
         ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
-             biomeIdToResolvedData,
-        bool betaApis
+                             biomeIdToResolvedData,
+        ::Experiments const& activeExperiments
     );
     // NOLINTEND
 
@@ -64,8 +66,8 @@ public:
         ::Core::Path const&                                resourceName,
         bool                                               isBaseGamePack,
         ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
-             biomeIdToResolvedData,
-        bool betaApis
+                             biomeIdToResolvedData,
+        ::Experiments const& activeExperiments
     );
     // NOLINTEND
 };

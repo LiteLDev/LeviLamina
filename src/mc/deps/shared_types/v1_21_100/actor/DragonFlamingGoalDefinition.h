@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_100 {
 
 struct DragonFlamingGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -23,12 +18,6 @@ public:
     ::ll::TypedStorage<4, 4, float>          mSmokeRadius;
     ::ll::TypedStorage<4, 4, float>          mSmokeTime;
     ::ll::TypedStorage<8, 32, ::std::string> mSmokeColor;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

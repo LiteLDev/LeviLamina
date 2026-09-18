@@ -27,6 +27,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnka951d0;
     ::ll::UntypedStorage<8, 128> mUnkb54189;
+    ::ll::UntypedStorage<8, 64>  mUnk837d5d;
     ::ll::UntypedStorage<8, 8>   mUnkaf0d99;
     // NOLINTEND
 
@@ -41,12 +42,8 @@ public:
     // NOLINTBEGIN
     virtual ~HttpSignalingServer() /*override*/ = default;
 
-    virtual void SendSignal(
-        ::NetherNet::NetworkID,
-        ::NetherNet::NetworkID                              to,
-        ::std::string const&                                signal,
-        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-    ) /*override*/;
+    virtual ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    SendSignal(::NetherNet::NetworkID, ::NetherNet::NetworkID to, ::std::string const& signal) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
     RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
@@ -58,12 +55,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $SendSignal(
-        ::NetherNet::NetworkID,
-        ::NetherNet::NetworkID                              to,
-        ::std::string const&                                signal,
-        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-    );
+    MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    $SendSignal(::NetherNet::NetworkID, ::NetherNet::NetworkID to, ::std::string const& signal);
 
     MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 

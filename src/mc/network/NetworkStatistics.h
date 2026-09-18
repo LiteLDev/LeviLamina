@@ -8,7 +8,6 @@
 #include "mc/network/ClientOrServerNetworkSystemRef.h"
 #include "mc/network/PacketObserver.h"
 #include "mc/network/TrackerType.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,6 +15,7 @@ class NetworkDebugManager;
 class NetworkIdentifier;
 class Packet;
 class ServerNetworkSystem;
+class WeakEntityRef;
 namespace Core { class OutputFileStream; }
 // clang-format on
 
@@ -52,11 +52,11 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>>   mCurrentPacketStats;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentSourceNetworkIdentifierStrings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentTargetNetworkIdentifierStrings;
-    ::ll::TypedStorage<8, 11232, ::std::array<::std::string, 351>>               mPacketNames;
+    ::ll::TypedStorage<8, 11296, ::std::array<::std::string, 353>>               mPacketNames;
     ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats>                mCurrentOverview;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkStatistics::OverviewStats>> mLastSeconds;
     ::ll::TypedStorage<8, 8, double>                                             mStartSeconds;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                       mRakNetStatsReadingLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                      mRakNetStatsReadingLock;
     ::ll::TypedStorage<8, 224, ::RakNet::RakNetStatistics>                       mRakNetStatsReading;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::RakNet::RakNetStatistics&)>> mGetRakNetStatsReading;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Core::OutputFileStream>>         mCSVFile;
@@ -104,6 +104,8 @@ public:
 #ifdef LL_PLAT_S
     MCAPI ::std::string getVerboseInfo() const;
 #endif
+
+    MCAPI void tick(::std::vector<::WeakEntityRef> const* userList);
 
 #ifdef LL_PLAT_C
     MCAPI void updateCSV(double time);

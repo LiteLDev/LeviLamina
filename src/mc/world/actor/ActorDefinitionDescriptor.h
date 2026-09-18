@@ -49,8 +49,6 @@ struct NavigationGenericDescription;
 struct NavigationHoverDescription;
 struct NavigationSwimDescription;
 struct NavigationWalkDescription;
-struct PreferredPathDescription;
-struct ProjectileDescription;
 struct SlimeMoveControlDescription;
 struct StrengthDescription;
 struct TeleportDescription;
@@ -67,6 +65,8 @@ namespace SharedTypes::v1_26_40 { struct OpenDoorAnnotationComponentDefinition; 
 namespace SharedTypes::v1_26_40 { struct PersistentComponentDefinition; }
 namespace SharedTypes::v1_26_40 { struct TradeResupplyComponentDefinition; }
 namespace SharedTypes::v1_26_40 { struct TrustComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct PreferredPathComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct ProjectileComponentDefinition; }
 // clang-format on
 
 class ActorDefinitionDescriptor {
@@ -118,8 +118,8 @@ public:
     ::ll::TypedStorage<8, 8, ::NavigationSwimDescription const*>                               mWaterboundNavigation;
     ::ll::TypedStorage<8, 8, ::NavigationWalkDescription const*>                               mNavigation;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::PersistentComponentDefinition const*>    mPersistent;
-    ::ll::TypedStorage<8, 8, ::PreferredPathDescription const*>                                mPreferredPath;
-    ::ll::TypedStorage<8, 8, ::ProjectileDescription const*>                                   mProjectile;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_50::PreferredPathComponentDefinition const*> mPreferredPath;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_50::ProjectileComponentDefinition const*>    mProjectile;
     ::ll::TypedStorage<8, 8, ::SlimeMoveControlDescription const*>                             mSlimeMoveControl;
     ::ll::TypedStorage<8, 8, ::StrengthDescription const*>                                     mStrength;
     ::ll::TypedStorage<8, 8, ::TrailDescription const*>                                        mTrail;

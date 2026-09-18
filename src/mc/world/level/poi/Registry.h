@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/poi/TypeId.h"
+
 namespace Poi {
 
 struct Registry {
@@ -18,6 +21,12 @@ public:
     Registry& operator=(Registry const&);
     Registry(Registry const&);
     Registry();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Poi::TypeId find(::std::string_view name) const;
+    // NOLINTEND
 };
 
 } // namespace Poi

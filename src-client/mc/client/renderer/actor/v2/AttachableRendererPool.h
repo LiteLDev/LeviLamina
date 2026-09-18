@@ -17,4 +17,16 @@ public:
     ::ll::TypedStorage<8, 24, ::AttachablesResources>               mAttachableResources;
     ::ll::TypedStorage<8, 24, ::std::vector<::BakedAttachableData>> mAttachables;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~AttachableRendererPool();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

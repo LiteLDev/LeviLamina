@@ -203,6 +203,8 @@ public:
     virtual bool _isInCreativeContainer(::std::string const& containerName) const;
 
     virtual bool _getGestureControlEnabled() const /*override*/;
+
+    virtual void _onInputModeChanged() /*override*/;
     // NOLINTEND
 
 public:
@@ -398,5 +400,7 @@ public:
     MCFOLD bool $_isInCreativeContainer(::std::string const& containerName) const;
 
     MCAPI bool $_getGestureControlEnabled() const;
+
+    MCAPI void $_onInputModeChanged();
     // NOLINTEND
 };

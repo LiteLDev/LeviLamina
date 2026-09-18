@@ -217,7 +217,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $shutdown();
+#else // LL_PLAT_C
     MCAPI void $shutdown();
+#endif
 
     MCAPI bool $isShutdownDone();
 

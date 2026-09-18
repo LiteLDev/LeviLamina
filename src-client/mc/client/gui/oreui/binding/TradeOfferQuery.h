@@ -18,19 +18,19 @@ class TradeOfferQuery : public ::OreUI::QueryBase<::OreUI::TradeOfferQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mIsOutOfUses;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyAItemName;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyBItemName;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mSellItemName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mBuyAItemAmount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mBuyBItemAmount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mSellItemAmount;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyAItemId;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyBItemId;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mSellItemId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mHasSecondaryBuyItem;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mPlayerHasItemsForTrade;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mIsSelectedTrade;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mIsOutOfUses;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mBuyAItemName;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mBuyBItemName;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mSellItemName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                   mBuyAItemAmount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                   mBuyBItemAmount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                   mSellItemAmount;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mBuyAItemId;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mBuyBItemId;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mSellItemId;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mHasSecondaryBuyItem;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mPlayerHasItemsForTrade;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mIsSelectedTrade;
     ::ll::TypedStorage<4, 4, int>                                                             mTradeTier;
     ::ll::TypedStorage<4, 4, int>                                                             mTradeIndex;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;

@@ -140,7 +140,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void initializeStatics();
 
+#ifdef LL_PLAT_S
     MCAPI static void shutdownStatics();
+#endif
     // NOLINTEND
 
 public:

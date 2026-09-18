@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
-#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/property/IScriptBlockProperty.h"
 
 // auto generated forward declare list
@@ -39,8 +38,6 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI ::Scripting::Result_deprecated<bool> getState() const;
-
     MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
     // NOLINTEND
@@ -60,6 +57,14 @@ public:
         ::std::vector<bool>                                                                   validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

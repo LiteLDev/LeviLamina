@@ -6,8 +6,8 @@ struct PackSettingValueAndDefault {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkccbcdf;
-    ::ll::UntypedStorage<8, 40> mUnk258b5a;
+    ::ll::UntypedStorage<8, 40> mUnk6f43ab;
+    ::ll::UntypedStorage<8, 40> mUnkd3052a;
     // NOLINTEND
 
 public:

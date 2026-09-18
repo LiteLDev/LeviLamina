@@ -15,7 +15,10 @@ class SpawnGroupDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 256, ::Puv::SlicedLoader<::ActorSpawnRuleData, nullptr_t, nullptr_t, ::ActorSpawnRuleData>>
+    ::ll::TypedStorage<
+        8,
+        264,
+        ::Puv::SlicedLoader<::ActorSpawnRuleData, nullptr_t, nullptr_t, nullptr_t, ::ActorSpawnRuleData>>
         mLoader;
     // NOLINTEND
 

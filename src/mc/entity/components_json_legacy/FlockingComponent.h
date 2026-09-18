@@ -16,11 +16,6 @@ class FlockingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mNeighborhood;
-    ::ll::TypedStorage<4, 12, ::Vec3>                         mCenterOfMass;
-    ::ll::TypedStorage<4, 12, ::Vec3>                         mGroupVelocity;
-    ::ll::TypedStorage<4, 12, ::Vec3>                         mGoalHeading;
-    ::ll::TypedStorage<4, 12, ::Vec3>                         mCurrentHeading;
     ::ll::TypedStorage<1, 1, bool>                            mInWater;
     ::ll::TypedStorage<1, 1, bool>                            mMatchVariant;
     ::ll::TypedStorage<1, 1, bool>                            mUseCenterOfMass;
@@ -44,6 +39,11 @@ public:
     ::ll::TypedStorage<4, 4, float>                           mBlockDist;
     ::ll::TypedStorage<4, 4, float>                           mBlockWeight;
     ::ll::TypedStorage<1, 1, bool>                            mOverspeedRequired;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mNeighborhood;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mCenterOfMass;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mGroupVelocity;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mGoalHeading;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mCurrentHeading;
     // NOLINTEND
 
 public:

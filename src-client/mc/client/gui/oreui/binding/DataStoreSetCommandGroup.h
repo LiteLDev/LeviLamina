@@ -11,6 +11,8 @@
 class PacketSender;
 namespace Bedrock::DDUI { class DataStoreSyncClient; }
 namespace GameplayUI { class DataDrivenScreenAPI; }
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -19,6 +21,8 @@ class DataStoreSetCommandGroup : public ::OreUI::CommandGroupBase<::OreUI::DataS
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::OreUI::GameDependencies const*>      mGame;
+    ::ll::TypedStorage<8, 8, ::OreUI::ClientDependencies const*>    mClient;
     ::ll::TypedStorage<8, 8, ::Bedrock::DDUI::DataStoreSyncClient*> mDataStore;
     ::ll::TypedStorage<
         8,
@@ -40,21 +44,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void buttonPress(::std::string dataStore, ::std::string property, ::std::string path);
+    MCAPI ::GameplayUI::DataDrivenScreenAPI* _getDataDrivenScreenAPI() const;
 
-    MCAPI void closeButtonPress(::std::string dataStore, ::std::string property, ::std::string path);
+    MCAPI void buttonPress(::std::string dataStoreName, ::std::string property, ::std::string path);
+
+    MCAPI void closeButtonPress(::std::string dataStoreName, ::std::string property, ::std::string path);
 
     MCAPI void setBool(::std::string dataStoreName, ::std::string property, ::std::string path, bool data);
 
     MCAPI void setNumber(::std::string dataStoreName, ::std::string property, ::std::string path, double data);
 
     MCAPI void setString(::std::string dataStoreName, ::std::string property, ::std::string path, ::std::string data);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[36]> NAME();
     // NOLINTEND
 };
 

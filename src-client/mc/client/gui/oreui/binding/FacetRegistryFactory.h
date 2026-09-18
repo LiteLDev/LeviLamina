@@ -13,6 +13,7 @@
 class IAdvancedGraphicsOptions;
 class IAppPlatform;
 class IClientInstance;
+class ILayoutServiceProvider;
 class IMinecraftGame;
 namespace OreUI { class IFacet; }
 namespace OreUI { class IFacetRegistry; }
@@ -75,7 +76,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>        mClientInstance;
     ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                        mMinecraft;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IAppPlatform>>              mAppPlatform;
-    ::ll::TypedStorage<8, 88, ::OreUI::ScreenModelProvider>                            mScreenModelProvider;
+    ::ll::TypedStorage<8, 96, ::OreUI::ScreenModelProvider>                            mScreenModelProvider;
     // NOLINTEND
 
 public:
@@ -89,6 +90,7 @@ public:
     // NOLINTBEGIN
     MCAPI FacetRegistryFactory(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          clientInstance,
+        ::ILayoutServiceProvider&                                        layoutServiceProvider,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                appPlatform
     );
@@ -105,6 +107,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          clientInstance,
+        ::ILayoutServiceProvider&                                        layoutServiceProvider,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                appPlatform
     );

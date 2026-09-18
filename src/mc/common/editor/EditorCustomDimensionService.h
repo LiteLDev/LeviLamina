@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _broadcastDimensionData() const;
-
     MCNAPI void _loadFromFile();
 
     MCNAPI void _saveToFile() const;

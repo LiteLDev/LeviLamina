@@ -14,20 +14,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class DebuggerStat;
+class DebuggerStatCollector;
 class IScriptPluginSourceEnumerator;
 class PackManifest;
 class ScriptPlugin;
 class ScriptPluginManagerResult;
 class ScriptPluginResult;
-class ScriptStat;
-class ScriptStatCollector;
 class ServerLevel;
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class IRuntime; }
 namespace Scripting { class ScriptEngine; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct RuntimeStats; }
-namespace Scripting { struct ScriptContextResult; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -55,10 +54,12 @@ public:
     ::ll::TypedStorage<8, 8, ::Scripting::ScriptEngine&>                        mScriptEngine;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ScriptPlugin>>> mScriptPlugins;
     ::ll::TypedStorage<8, 24, ::Scripting::RuntimeConditions>                   mCurrentRuntimeConditions;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mMemoryStatCollector;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mHandleCountStatCollector;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mSubscriberCountStatCollector;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>>          mQuickJsStatCollector;
+    ::ll::TypedStorage<1, 1, bool>                                              mSystemPackDiscoveryError;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>>        mMemoryStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>>        mHandleCountStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>>        mSubscriberCountStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>>        mQuickJsStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>>        mScriptingStatCollector;
     // NOLINTEND
 
 public:
@@ -70,18 +71,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addContextResultsToPluginResults(
-        ::Scripting::ScriptContextResult const& contextResult,
-        ::ScriptPluginResult&                   pluginResult
-    );
+    MCAPI ::std::optional<::DebuggerStat> _collectHandleCountStats(uint64, uint64, uint64);
 
-    MCAPI ::std::optional<::ScriptStat> _collectHandleCountStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::DebuggerStat> _collectMemoryStats(uint64, uint64, uint64);
 
-    MCAPI ::std::optional<::ScriptStat> _collectMemoryStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::DebuggerStat> _collectQuickJsStats(uint64, uint64, uint64);
 
-    MCAPI ::std::optional<::ScriptStat> _collectQuickJsStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::DebuggerStat>
+    _collectScriptingStats(::std::reference_wrapper<::ServerLevel> serverLevel, uint64, uint64, uint64);
 
-    MCAPI ::std::optional<::ScriptStat> _collectSubscriberCountStats(
+    MCAPI ::std::optional<::DebuggerStat> _collectSubscriberCountStats(
         ::Bedrock::NotNullNonOwnerPtr<::ServerLevel>     serverLevel,
         ::gsl::not_null<::Scripting::DependencyLocator*> locator,
         uint64,
@@ -90,6 +89,10 @@ public:
     );
 
 #ifdef LL_PLAT_C
+    MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 #endif
 
@@ -124,6 +127,10 @@ public:
     );
 
     MCAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
+
+    MCAPI ::std::vector<::Scripting::ModuleDescriptor> getPluginModuleDescriptors() const;
+
+    MCAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);

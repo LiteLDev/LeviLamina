@@ -33,23 +33,31 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorAnimationEvent(
-        float                     time,
-        ::std::string const&      event,
-        ::CurrentCmdVersion const commandVersion,
-        ::MolangVersion const     molangVersion
+        float                time,
+        ::std::string const& event,
+        ::CurrentCmdVersion  commandVersion,
+        ::MolangVersion      molangVersion
     );
 
     MCAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ~ActorAnimationEvent();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        float                     time,
-        ::std::string const&      event,
-        ::CurrentCmdVersion const commandVersion,
-        ::MolangVersion const     molangVersion
-    );
+    MCAPI void*
+    $ctor(float time, ::std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion molangVersion);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -22,14 +22,11 @@ MCNAPI ::std::string_view getName(::entt::meta_type const& type, uint member);
 
 #ifdef LL_PLAT_S
 MCNAPI ::cereal::SchemaDescription
-getSchemaDescription(::cereal::ReflectionCtx const& ctx, ::entt::type_info info, ::cereal::DescriptionConfig config);
+getSchemaDescription(::cereal::ReflectionCtx const& ctx, uint typeId, ::cereal::DescriptionConfig config);
 #endif
 
-MCNAPI ::std::vector<::cereal::SchemaDescription> getSchemaDescriptionRecursive(
-    ::cereal::ReflectionCtx const& ctx,
-    ::entt::type_info              info,
-    ::cereal::DescriptionConfig    config
-);
+MCNAPI ::std::vector<::cereal::SchemaDescription>
+getSchemaDescriptionRecursive(::cereal::ReflectionCtx const& ctx, uint typeId, ::cereal::DescriptionConfig config);
 
 #ifdef LL_PLAT_S
 MCNAPI ::std::vector<::cereal::SchemaDescription>

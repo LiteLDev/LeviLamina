@@ -9,7 +9,7 @@ class CompoundTag;
 class DataLoadHelper;
 // clang-format on
 
-class FreezingComponent {
+struct FreezingComponent {
 public:
     // member variables
     // NOLINTBEGIN
@@ -21,6 +21,6 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 };

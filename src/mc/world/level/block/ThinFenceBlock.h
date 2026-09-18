@@ -30,7 +30,7 @@ public:
     virtual void addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          blockPos,
+        ::BlockPos const&          pos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
@@ -44,12 +44,9 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
-    ) const /*override*/;
+    virtual ::AABB const&
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
+        /*override*/;
 
     virtual ::AABB getCollisionShape(
         ::Block const&             block,
@@ -80,6 +77,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCFOLD static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
@@ -91,7 +94,7 @@ public:
     MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          blockPos,
+        ::BlockPos const&          pos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
@@ -106,10 +109,10 @@ public:
     ) const;
 
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::AABB& bufferAABB
     ) const;
 
     MCAPI ::AABB $getCollisionShape(

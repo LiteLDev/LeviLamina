@@ -57,6 +57,8 @@ public:
         ::std::string const& realmId,
         bool                 isOwner
     ) = 0;
+
+    virtual void fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId) = 0;
     // NOLINTEND
 };
 

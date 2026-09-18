@@ -23,16 +23,16 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     FeatureLoader();
 
+#else // LL_PLAT_C
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI FeatureLoader(
         ::FeatureParserContext&                          context,
         ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
@@ -46,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::FeatureParserContext&                          context,
         ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,

@@ -19,11 +19,11 @@ struct GameVersionObject : public ::OreUI::PropertyObject<::OreUI::GameVersionOb
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>  mMajor;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>  mMinor;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>  mPatch;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>  mRevision;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>> mIsBeta;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>   mMajor;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>   mMinor;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>   mPatch;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>   mRevision;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mIsBeta;
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 class SemVersionConstant;
 namespace Bedrock::Resources { struct BakeConfig; }
 namespace Bedrock::Resources::Archive { class Builder; }
+namespace Core { class Path; }
 namespace Core { class PathView; }
 // clang-format on
 
@@ -21,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 168>  mUnke09763;
     ::ll::UntypedStorage<8, 64>   mUnkea5474;
-    ::ll::UntypedStorage<8, 1720> mUnk8b21a9;
+    ::ll::UntypedStorage<8, 2856> mUnk25863d;
     ::ll::UntypedStorage<8, 72>   mUnka320e0;
     // NOLINTEND
 
@@ -43,7 +44,30 @@ public:
 
     MCNAPI int bakeSinglePack(::Core::PathView packRoot, ::Core::PathView destPath);
 
+    MCNAPI void copyLooseFiles(::Core::PathView packRoot, ::Core::PathView destPath);
+
     MCNAPI ::Bedrock::Result<void> copyRegularFile(::Core::PathView sourcePath, ::Core::PathView destPath);
+
+    MCNAPI void optimizeFilesWithArchive(
+        ::Bedrock::Resources::Archive::Builder* archive,
+        ::Core::PathView                        dstLoosePath,
+        ::std::vector<::Core::Path> const&      gatheredFiles,
+        bool                                    doCopy,
+        bool                                    skipOptimization,
+        ::std::vector<::Core::Path>*            outFullyArchivedFiles
+    );
+
+    MCNAPI void outputLog() const;
+
+    MCNAPI bool shouldCopyLooseSource(::Core::PathView filePath);
+
+    MCNAPI int unpackBrarchive();
+
+    MCNAPI int unpackBrarchiveSinglePack(::Core::PathView packRoot, ::Core::PathView destPath);
+
+    MCNAPI int unpackBrpak();
+
+    MCNAPI int unpackBrpakSinglePack(::Core::PathView packRoot, ::Core::PathView destPath);
 
     MCNAPI void writeArchive(::Bedrock::Resources::Archive::Builder& builder, ::Core::PathView dstFile);
 #endif

@@ -19,7 +19,7 @@ class OneDSEditorEventListener : public ::Social::Events::AggregationEventListen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk8228d9;
+    ::ll::UntypedStorage<8, 80> mUnk33b7ae;
     ::ll::UntypedStorage<8, 8>  mUnk387a2d;
     ::ll::UntypedStorage<8, 8>  mUnk470474;
     ::ll::UntypedStorage<8, 24> mUnk2c3202;
@@ -54,11 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
-        ::std::vector<::Social::Events::Event>                            events,
-        ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
-    );
-
     MCNAPI bool _sendBatch();
     // NOLINTEND
 

@@ -12,9 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32>  mUnkc4a972;
-    ::ll::UntypedStorage<8, 32>  mUnk18aa38;
-    ::ll::UntypedStorage<8, 32>  mUnke83400;
-    ::ll::UntypedStorage<8, 32>  mUnk114b10;
+    ::ll::UntypedStorage<8, 32>  mUnk89f851;
+    ::ll::UntypedStorage<8, 32>  mUnk5a7d3f;
     ::ll::UntypedStorage<8, 80>  mUnk506b20;
     ::ll::UntypedStorage<8, 80>  mUnk5446dd;
     ::ll::UntypedStorage<4, 4>   mUnk246934;
@@ -31,7 +30,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void updateEntraToken(::Identity::AuthToken const& token);
+    MCNAPI void updateEntraToken(::Identity::AuthToken const& entraToken);
 #endif
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
 #include "mc/external/game_input/GameInputDeviceStatus.h"
 #include "mc/input/GameControllerHandler.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,7 +33,7 @@ public:
         8,
         ::std::unique_ptr<::GameInput::v2::IGameInput, ::Bedrock::ComAdapter<::GameInput::v2::IGameInput>::Deleter>>
                                                                       mGameInput;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>            mPlayerInputsLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                           mPlayerInputsLock;
     ::ll::TypedStorage<8, 16, ::std::map<int, ::GameCorePlayerInput>> mPlayerInputs;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                           mTaskGroup;
     ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>                     mTaskQueue;

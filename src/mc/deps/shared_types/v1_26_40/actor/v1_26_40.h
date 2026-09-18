@@ -20,11 +20,14 @@ namespace SharedTypes::v1_26_40 { struct SnackGoalDefinition; }
 namespace SharedTypes::v1_26_40 { struct SummonActorGoalDefinition; }
 namespace SharedTypes::v1_26_40 { struct TradeResupplyComponentDefinition; }
 namespace SharedTypes::v1_26_40 { struct TrustComponentDefinition; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_40 {
 // functions
 // NOLINTBEGIN
+MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+
 MCFOLD void
 deserializeLegacyDescription(::SharedTypes::v1_26_40::BucketableComponentDefinition&, ::DeserializeDataParams);
 

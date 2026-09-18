@@ -14,7 +14,6 @@ class StrictEntityContext;
 struct InterpolateMovementNeededComponent;
 struct MinecartFlagComponent;
 struct MinecartPreNormalTickBlockPosComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class MinecartPreNormalTickSystem {
@@ -35,7 +34,5 @@ public:
         ::ActorOwnerComponent&                                     actorOwnerComponent,
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

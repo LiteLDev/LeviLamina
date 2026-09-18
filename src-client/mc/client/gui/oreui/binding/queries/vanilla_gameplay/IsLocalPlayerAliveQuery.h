@@ -19,7 +19,7 @@ class IsLocalPlayerAliveQuery : public ::OreUI::QueryBase<::OreUI::IsLocalPlayer
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>        mIsAlive;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>  mIsAlive;
     ::ll::TypedStorage<8, 8, ::LocalPlayer const*>             mLocalPlayer;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLocalPlayerSubscription;
     // NOLINTEND

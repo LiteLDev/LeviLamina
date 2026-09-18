@@ -14,6 +14,8 @@
 #include "mc/deps/shared_types/v1_26_40/actor/PersistentComponentDefinition.h"
 #include "mc/deps/shared_types/v1_26_40/actor/TradeResupplyComponentDefinition.h"
 #include "mc/deps/shared_types/v1_26_40/actor/TrustComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_50/actor/PreferredPathComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_50/actor/ProjectileComponentDefinition.h"
 #include "mc/entity/components/BehaviorTreeDescription.h"
 #include "mc/entity/components/BreakDoorAnnotationDescription.h"
 #include "mc/entity/components/CommandBlockDescription.h"
@@ -22,7 +24,6 @@
 #include "mc/entity/components_json_legacy/DwellerDescription.h"
 #include "mc/entity/components_json_legacy/EconomyTradeableDescription.h"
 #include "mc/entity/components_json_legacy/IllagerBeastBlockedDescription.h"
-#include "mc/entity/components_json_legacy/ProjectileDescription.h"
 #include "mc/entity/components_json_legacy/TeleportDescription.h"
 #include "mc/entity/components_json_legacy/TransformationDescription.h"
 #include "mc/entity/definitions/AmphibiousMoveControlDescription.h"
@@ -43,7 +44,6 @@
 #include "mc/entity/definitions/NavigationHoverDescription.h"
 #include "mc/entity/definitions/NavigationSwimDescription.h"
 #include "mc/entity/definitions/NavigationWalkDescription.h"
-#include "mc/entity/definitions/PreferredPathDescription.h"
 #include "mc/entity/definitions/SlimeMoveControlDescription.h"
 #include "mc/entity/definitions/StrengthDescription.h"
 #include "mc/entity/definitions/TrailDescription.h"
@@ -129,12 +129,12 @@ public:
     ::ll::TypedStorage<8, 120, ::NavigationSwimDescription>                                   mWaterboundNavigation;
     ::ll::TypedStorage<8, 88, ::NavigationWalkDescription>                                    mNavigation;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::PersistentComponentDefinition>          mPersistent;
-    ::ll::TypedStorage<8, 48, ::PreferredPathDescription>                                     mPreferredPath;
-    ::ll::TypedStorage<8, 360, ::ProjectileDescription>                                       mProjectile;
+    ::ll::TypedStorage<8, 40, ::SharedTypes::v1_26_50::PreferredPathComponentDefinition>      mPreferredPath;
+    ::ll::TypedStorage<8, 536, ::SharedTypes::v1_26_50::ProjectileComponentDefinition>        mProjectile;
     ::ll::TypedStorage<8, 24, ::SlimeMoveControlDescription>                                  mSlimeMoveControl;
     ::ll::TypedStorage<8, 24, ::StrengthDescription>                                          mStrength;
     ::ll::TypedStorage<8, 136, ::TrailDescription>                                            mTrail;
-    ::ll::TypedStorage<8, 48, ::TeleportDescription>                                          mTeleport;
+    ::ll::TypedStorage<8, 120, ::TeleportDescription>                                         mTeleport;
     ::ll::TypedStorage<4, 12, ::SharedTypes::v1_21_100::TickWorldDefinition>                  mTickWorld;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::TradeResupplyComponentDefinition>       mTradeResupply;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::TrustComponentDefinition>               mTrust;

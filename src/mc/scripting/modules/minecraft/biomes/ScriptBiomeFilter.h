@@ -33,8 +33,24 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptBiomeFilter(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
 
+    MCAPI ::std::optional<::std::vector<::std::string>> getExcludeBiomes() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> getExcludeTags() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> getIncludeBiomes() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> getIncludeTags() const;
+
     MCAPI void
     setBiomes(::std::vector<::std::string>& biomeContainer, ::std::optional<::std::vector<::std::string>> biomes);
+
+    MCAPI void setExcludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
+
+    MCAPI void setExcludeTags(::std::optional<::std::vector<::std::string>> tags);
+
+    MCAPI void setIncludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
+
+    MCAPI void setIncludeTags(::std::optional<::std::vector<::std::string>> tags);
 
     MCAPI void setTags(::std::vector<::std::string>& tagContainer, ::std::optional<::std::vector<::std::string>> tags);
     // NOLINTEND

@@ -47,6 +47,10 @@ public:
 
     virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const /*override*/;
 
+    virtual bool hasAnyBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const /*override*/;
+
+    virtual bool hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const /*override*/;
+
     virtual bool setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags) /*override*/;
 
     virtual bool setBlockSimple(::BlockPos const& pos, ::Block const& block) /*override*/;
@@ -103,6 +107,10 @@ public:
 
     MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
+    MCAPI bool $hasAnyBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
+
+    MCAPI bool $hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
+
     MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
     MCFOLD bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
@@ -113,25 +121,21 @@ public:
 
     MCAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI short $getMaxHeight() const;
 
-    MCAPI short $getMinHeight() const;
+    MCFOLD short $getMinHeight() const;
 
     MCFOLD bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 
     MCAPI short $getHeightmap(int x, int z);
 
-#ifdef LL_PLAT_S
     MCAPI bool $isLegacyLevel();
-#else // LL_PLAT_C
-    MCFOLD bool $isLegacyLevel();
-#endif
 
     MCAPI ::Biome const* $getBiome(::BlockPos const& pos) const;
 
@@ -139,9 +143,13 @@ public:
 
     MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::LevelData const& $getLevelData() const;
+#else // LL_PLAT_C
+    MCFOLD ::LevelData const& $getLevelData() const;
+#endif
 
-    MCAPI ::WorldGenContext const& $getContext();
+    MCFOLD ::WorldGenContext const& $getContext();
 
     MCFOLD void $disableBlockSimple();
 

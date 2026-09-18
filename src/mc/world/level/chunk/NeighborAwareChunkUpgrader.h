@@ -22,7 +22,7 @@ public:
     getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const
         /*override*/;
 
-    virtual void doLevelChunkNeighborAwareUpgrade(
+    virtual bool doLevelChunkNeighborAwareUpgrade(
         ::NeighborAwareBlockUpdateType updateType,
         ::BlockSource&                 region,
         ::Block const&                 block,
@@ -36,7 +36,7 @@ public:
     MCAPI ::NeighborAwareBlockUpdateType
     $getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const;
 
-    MCAPI void $doLevelChunkNeighborAwareUpgrade(
+    MCAPI bool $doLevelChunkNeighborAwareUpgrade(
         ::NeighborAwareBlockUpdateType updateType,
         ::BlockSource&                 region,
         ::Block const&                 block,

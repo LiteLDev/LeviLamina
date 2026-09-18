@@ -20,6 +20,39 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>      rawCommand;
     ::ll::TypedStorage<8, 8, ::Command*>          command;
     // NOLINTEND
+
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    StoredCommand();
+
+#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI StoredCommand(::CurrentCmdVersion cmdVersion, ::std::string_view rawCmd);
+
+    MCAPI ~StoredCommand();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::CurrentCmdVersion cmdVersion, ::std::string_view rawCmd);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
+    // NOLINTEND
 };
 
 } // namespace npc

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class ScriptDiagnosticsDescriptor {
 public:
     // ScriptDiagnosticsDescriptor inner types define
@@ -45,51 +40,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptDiagnosticsDescriptor& operator=(ScriptDiagnosticsDescriptor const&);
+    ScriptDiagnosticsDescriptor(ScriptDiagnosticsDescriptor const&);
     ScriptDiagnosticsDescriptor();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptDiagnosticsDescriptor(::ScriptDiagnosticsDescriptor&&);
-
-    MCNAPI ScriptDiagnosticsDescriptor(::ScriptDiagnosticsDescriptor const&);
-
-    MCNAPI ScriptDiagnosticsDescriptor(
-        ::std::string                              name,
-        ::std::string                              statGroupId,
-        ::ScriptDiagnosticsDescriptor::DataSource  dataSource,
-        ::ScriptDiagnosticsDescriptor::DisplayType displayType
-    );
-
-    MCNAPI ::ScriptDiagnosticsDescriptor& operator=(::ScriptDiagnosticsDescriptor const&);
-
-    MCNAPI ~ScriptDiagnosticsDescriptor();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDiagnosticsDescriptor&&);
-
-    MCNAPI void* $ctor(::ScriptDiagnosticsDescriptor const&);
-
-    MCNAPI void* $ctor(
-        ::std::string                              name,
-        ::std::string                              statGroupId,
-        ::ScriptDiagnosticsDescriptor::DataSource  dataSource,
-        ::ScriptDiagnosticsDescriptor::DisplayType displayType
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

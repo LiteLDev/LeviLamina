@@ -27,10 +27,10 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mKeyboardTypeOptionSubscription;
     ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<bool>>             mSwapABButtons;
     ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<bool>>             mSwapXYButtons;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::InputMethod>>   mCurrentInputType;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                   mEnableControllerHints;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::KeyboardType>>         mKeyboardType;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                   mInteractionModelLocked;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::InputMethod, ::OreUI::InputMethod>> mCurrentInputType;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mEnableControllerHints;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::KeyboardType, ::KeyboardType>>             mKeyboardType;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mInteractionModelLocked;
     // NOLINTEND
 
 public:

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
-#include "mc/client/gui/oreui/binding/properties/ObservableValue.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/gui/oreui/input/InputMethod.h"
@@ -44,16 +43,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>>                     mClient;
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::AppPlatform>>                         mAppPlatform;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::DevicePlatformQuery::PlatformType>> mPlatformType;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>> mClient;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::AppPlatform>>     mAppPlatform;
     ::ll::TypedStorage<
         8,
-        120,
-        ::OreUI::PropertyVector<
-            ::OreUI::InputMethod,
-            ::std::allocator<::OreUI::Detail::ObservableValue<::OreUI::InputMethod>>>>
-        mInputMethods;
+        176,
+        ::OreUI::Property<::OreUI::DevicePlatformQuery::PlatformType, ::OreUI::DevicePlatformQuery::PlatformType>>
+                                                                                                    mPlatformType;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::InputMethod, ::OreUI::InputMethod>> mInputMethods;
     // NOLINTEND
 
 public:

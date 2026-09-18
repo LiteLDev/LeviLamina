@@ -18,8 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>> mClient;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mLitProgress;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mBurnProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mLitProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mBurnProgress;
     // NOLINTEND
 
 public:

@@ -15,7 +15,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                NintendoId;
     ::ll::TypedStorage<8, 32, ::std::string>                PsnId;
     ::ll::TypedStorage<8, 32, ::std::string>                TenantId;
-    ::ll::TypedStorage<8, 32, ::std::string>                MessOId;
+    ::ll::TypedStorage<8, 32, ::std::string>                MessUserId;
     ::ll::TypedStorage<8, 32, ::std::string>                XboxLiveName;
     ::ll::TypedStorage<8, 32, ::std::string>                NintendoName;
     ::ll::TypedStorage<8, 32, ::std::string>                PlayStationName;

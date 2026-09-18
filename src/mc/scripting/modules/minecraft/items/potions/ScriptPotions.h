@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
-#include "mc/world/item/alchemy/Potion.h"
+#include "mc/world/item/alchemy/PotionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,7 +30,7 @@ public:
         8,
         64,
         ::std::unordered_map<
-            ::Potion::PotionType,
+            ::PotionType,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>>>
         mPotionDeliveryTypeHandles;
     ::ll::TypedStorage<
@@ -51,7 +51,7 @@ public:
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>
-    getOrCreatePotionDeliveryType(::Potion::PotionType potionType, ::Scripting::WeakLifetimeScope scope);
+    getOrCreatePotionDeliveryType(::PotionType potionType, ::Scripting::WeakLifetimeScope scope);
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>
     getOrCreatePotionEffectType(

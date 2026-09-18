@@ -68,6 +68,8 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
+    virtual void queueTitleNarration() /*override*/;
+
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
@@ -126,6 +128,8 @@ public:
     MCAPI void $onEntered();
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCAPI void $queueTitleNarration();
 
     MCAPI ::ui::SceneType $getSceneType() const;
 

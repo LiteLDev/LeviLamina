@@ -163,6 +163,8 @@ public:
 
     virtual ::ui::ViewRequest
     promptConnect(bool signInOnSuccess, ::std::function<void(::Social::UserPlatformConnectionResult)> signInCallback);
+
+    virtual void _onInputModeChanged();
     // NOLINTEND
 
 public:
@@ -247,11 +249,7 @@ public:
 
     MCAPI void _showLiveMultiplayerModal();
 
-    MCAPI void _showMobileDataBlockedModal();
-
     MCAPI void _showNoWifiModal();
-
-    MCAPI void _showServerCapacityFullModal();
 
     MCAPI bool _tryNavigateToXblUpsellScreen();
 
@@ -485,5 +483,7 @@ public:
 
     MCAPI ::ui::ViewRequest
     $promptConnect(bool signInOnSuccess, ::std::function<void(::Social::UserPlatformConnectionResult)> signInCallback);
+
+    MCFOLD void $_onInputModeChanged();
     // NOLINTEND
 };

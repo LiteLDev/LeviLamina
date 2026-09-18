@@ -10,6 +10,8 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Mob;
+struct GoalId;
 // clang-format on
 
 class MoveOutdoorsGoal : public ::BaseMoveToBlockGoal {
@@ -18,6 +20,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Tick> mNextTargetTick;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveOutdoorsGoal();
 
 public:
     // virtual functions
@@ -34,9 +40,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MoveOutdoorsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool mobHasClearSpaceAbove(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

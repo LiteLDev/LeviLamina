@@ -11,6 +11,8 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Level;
+class Mob;
+struct GoalId;
 // clang-format on
 
 class StompBlockGoal : public ::BaseMoveToBlockGoal {
@@ -20,6 +22,10 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*> mBlockToRemove;
     ::ll::TypedStorage<4, 4, int>            mTicksSinceReachedGoal;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StompBlockGoal();
 
 public:
     // virtual functions
@@ -48,9 +54,41 @@ public:
 
     virtual void _createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    virtual void _playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos);
+    virtual void _playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    virtual void _playDestroySound(::Level&, ::BlockSource&, ::BlockPos);
+    virtual void _playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StompBlockGoal(
+        ::Block const*  block,
+        ::Mob&          mob,
+        ::std::string   name,
+        ::GoalId const& goalId,
+        float           speedModifier,
+        int             horizontalSearchRange,
+        int             verticalSearchRange,
+        float           goalRadius,
+        int             interval
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Block const*  block,
+        ::Mob&          mob,
+        ::std::string   name,
+        ::GoalId const& goalId,
+        float           speedModifier,
+        int             horizontalSearchRange,
+        int             verticalSearchRange,
+        float           goalRadius,
+        int             interval
+    );
     // NOLINTEND
 
 public:
@@ -68,12 +106,28 @@ public:
 
     MCAPI void $tick();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
     MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI void $_moveToBlock();
 
     MCAPI bool $_canReach(::BlockPos const& pos);
 
+    MCFOLD void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
+    MCFOLD void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+
+    MCFOLD void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+
+    MCFOLD void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

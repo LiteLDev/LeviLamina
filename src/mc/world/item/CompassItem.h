@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/AbstractCompassItem.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,15 +19,27 @@ class CompassItem : public ::AbstractCompassItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::InteractionResult
-    _useOn(::ItemStack& item, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  item,
+        ::Actor&      actor,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& item, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  item,
+        ::Actor&      actor,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

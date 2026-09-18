@@ -36,17 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    JumpAroundTargetGoalDefinition& operator=(JumpAroundTargetGoalDefinition const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI JumpAroundTargetGoalDefinition();
-
-    MCAPI JumpAroundTargetGoalDefinition(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&);
-
-    MCAPI bool operator==(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -79,8 +71,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&);
     // NOLINTEND
 };
 

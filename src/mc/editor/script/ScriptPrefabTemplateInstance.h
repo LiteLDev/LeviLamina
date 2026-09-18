@@ -5,17 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
-#include "mc/deps/script_core/runtime/scripting/Result.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -53,14 +49,12 @@ public:
         ::Editor::ServiceProviderCollection&                 serviceProviders,
         ::Scripting::WeakLifetimeScope const&                scope
     );
+    // NOLINTEND
 
-    MCNAPI ::Scripting::Result<::Mirror, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _getInstanceMirror() const;
-
-    MCNAPI ::Scripting::Result<::Rotation, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _getInstanceRotation() const;
-
-    MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance> _getPosition() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:

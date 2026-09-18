@@ -46,10 +46,11 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        256,
+        264,
         ::Puv::SlicedLoader<
             ::SharedTypes::v1_21_20::AutomaticFeatureRulesData,
             ::BedrockLoadContext,
+            nullptr_t,
             nullptr_t,
             ::SharedTypes::v1_21_20::AutomaticFeatureRulesData>>
                                                     mLoader;

@@ -80,9 +80,6 @@ public:
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptGetBoundsVisible() const;
 
-    MCNAPI ::Scripting::Result<int, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
-    _scriptGetSelectedCount() const;
-
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptGetVisible() const;
 

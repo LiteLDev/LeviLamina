@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
@@ -33,8 +32,8 @@ public:
     ::ll::TypedStorage<8, 8, ::Biome&>                                         mDefaultBiome;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::string>> mChunkEntities;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::string>> mChunkBlockEntities;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mRegionFileMutex;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mChunkMapMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                    mRegionFileMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                    mChunkMapMutex;
     // NOLINTEND
 
 public:

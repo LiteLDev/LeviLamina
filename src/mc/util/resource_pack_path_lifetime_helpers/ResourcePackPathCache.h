@@ -8,7 +8,7 @@ class ResourcePackPathCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk7cbdf7;
+    ::ll::UntypedStorage<8, 16> mUnkb9e4e7;
     // NOLINTEND
 
 public:

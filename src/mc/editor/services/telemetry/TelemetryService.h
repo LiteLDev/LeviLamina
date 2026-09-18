@@ -7,12 +7,6 @@
 #include "mc/editor/serviceproviders/TelemetryServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
-// auto generated forward declare list
-// clang-format off
-class IMinecraftEventing;
-namespace Editor { class ServiceProviderCollection; }
-// clang-format on
-
 namespace Editor::Services {
 
 class TelemetryService : public ::Editor::Services::IEditorService,
@@ -63,18 +57,6 @@ public:
         ::std::string const&                  currentStage,
         ::std::optional<::std::string> const& previousStage
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TelemetryService(::Editor::ServiceProviderCollection& providers, ::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

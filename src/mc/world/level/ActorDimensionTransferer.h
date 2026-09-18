@@ -16,7 +16,7 @@ class IActorDimensionTransferProxy;
 class IDimension;
 class PortalForcer;
 class Vec3;
-struct DimensionType;
+struct ActorDimensionTransferRequest;
 // clang-format on
 
 class ActorDimensionTransferer : public ::IActorDimensionTransferer {
@@ -40,12 +40,10 @@ public:
     virtual void setupActorForTransfer(::Actor& actor) /*override*/;
 
     virtual ::Vec3 findTargetPositionAndSetPosition(
-        ::Actor&                       actor,
-        ::DimensionType                toId,
-        ::DimensionType                fromId,
-        ::IDimension const&            toDimension,
-        ::PortalForcer const&          portalForcer,
-        ::std::optional<::Vec3> const& actorPosition
+        ::Actor&                               actor,
+        ::ActorDimensionTransferRequest const& actorDimensionTransferRequest,
+        ::IDimension const&                    toDimension,
+        ::PortalForcer const&                  portalForcer
     ) /*override*/;
 
     virtual void transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition) /*override*/;
@@ -75,12 +73,10 @@ public:
     MCAPI void $setupActorForTransfer(::Actor& actor);
 
     MCAPI ::Vec3 $findTargetPositionAndSetPosition(
-        ::Actor&                       actor,
-        ::DimensionType                toId,
-        ::DimensionType                fromId,
-        ::IDimension const&            toDimension,
-        ::PortalForcer const&          portalForcer,
-        ::std::optional<::Vec3> const& actorPosition
+        ::Actor&                               actor,
+        ::ActorDimensionTransferRequest const& actorDimensionTransferRequest,
+        ::IDimension const&                    toDimension,
+        ::PortalForcer const&                  portalForcer
     );
 
     MCAPI void $transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition);

@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Beta { struct ActorDefinitions; }
-namespace SharedTypes::v1_26_40 { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_50 { struct ActorDefinitions; }
 // clang-format on
 
 struct ActorDocumentDataParams {
@@ -21,7 +21,7 @@ public:
         8,
         16,
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_40::ActorDefinitions,
+            ::SharedTypes::v1_26_50::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions>>
                                                         mValue;
     ::ll::TypedStorage<8, 24, ::SemVersion const>       mFormatVersion;
@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDocumentDataParams(
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_40::ActorDefinitions,
+            ::SharedTypes::v1_26_50::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions> value,
         ::SemVersion const&                        formatVersion,
         ::MinEngineVersion const&                  minEngineVersion,
@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_40::ActorDefinitions,
+            ::SharedTypes::v1_26_50::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions> value,
         ::SemVersion const&                        formatVersion,
         ::MinEngineVersion const&                  minEngineVersion,

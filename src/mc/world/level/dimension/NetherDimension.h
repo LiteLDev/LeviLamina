@@ -15,11 +15,16 @@ class LevelChunk;
 class Vec3;
 class WorldGenerator;
 struct BiomeIdType;
+struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 
 class NetherDimension : public ::Dimension {
+public:
+    // prevent constructor by default
+    NetherDimension();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -56,6 +61,18 @@ public:
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit NetherDimension(::DerivedDimensionArguments&& args);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
     // NOLINTEND
 
 public:

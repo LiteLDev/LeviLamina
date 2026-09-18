@@ -18,12 +18,6 @@ public:
     PolarBear();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual bool canFreeze() const /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PolarBear(
@@ -41,14 +35,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD bool $canFreeze() const;
-
-
     // NOLINTEND
 
 public:

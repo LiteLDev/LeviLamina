@@ -30,9 +30,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mId;
-        ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mName;
-        ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mAllContentOwned;
+        ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mId;
+        ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mName;
+        ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mAllContentOwned;
         // NOLINTEND
     };
 
@@ -44,10 +44,9 @@ public:
     ::ll::TypedStorage<
         8,
         120,
-        ::OreUI::
-            PropertyVector<::OreUI::LocalWorldListQuery::Entry, ::std::allocator<::OreUI::LocalWorldListQuery::Entry>>>
-                                                        mWorlds;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>> mOtherStorageTypeHasWorlds;
+        ::OreUI::PropertyVector<::OreUI::LocalWorldListQuery::Entry, ::OreUI::LocalWorldListQuery::Entry>>
+                                                              mWorlds;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mOtherStorageTypeHasWorlds;
     // NOLINTEND
 
 public:

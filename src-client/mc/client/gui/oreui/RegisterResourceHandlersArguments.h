@@ -21,6 +21,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&>                       mTemporaryTextureHolder;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::ILiveViewCollectionPublisher>> mLiveViewPublisher;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                                  mReloadAllViews;
+    ::ll::TypedStorage<1, 1, bool>                                                      mIsRenderDragonEnabled;
     // NOLINTEND
 
 public:

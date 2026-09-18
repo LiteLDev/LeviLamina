@@ -22,9 +22,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsBackupDownloader>> mBackupDownloader;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::BackupDownloadState>>               mState;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>                                       mProgress;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                 mChangedSubscription;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::BackupDownloadState, ::Realms::BackupDownloadState>> mState;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mProgress;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mChangedSubscription;
     // NOLINTEND
 
 public:

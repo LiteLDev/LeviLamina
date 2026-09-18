@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class Player;
 // clang-format on
 
 class PlayerItemInUse {
@@ -24,23 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void clearItemInUse(::EntityContext& owner);
-
-    MCAPI int getDuration(::EntityContext const& owner) const;
-#endif
-
     MCAPI int getUsedDuration(::EntityContext const& owner) const;
-
-#ifdef LL_PLAT_S
-    MCAPI void releaseUsing(::Player& player);
-
-    MCAPI void
-    setItemInUse(::ItemStack const& newItem, ::EntityContext& owner, int duration, ::PlayerInventorySlotData slot);
-
-    MCAPI bool shouldDisplayUseParticles(::EntityContext const& owner);
-
-    MCAPI void updateItemInUse(::ItemStack const& updatedItem);
-#endif
     // NOLINTEND
 };

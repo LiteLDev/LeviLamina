@@ -165,7 +165,7 @@ public:
 
     MCAPI ::OreUI::InboxFacet::InboxSettings const& getSettings() const;
 
-    MCFOLD bool isMarketplacePassSubscriber();
+    MCAPI bool isMarketplacePassSubscriber();
 
     MCAPI void markAllRead();
 

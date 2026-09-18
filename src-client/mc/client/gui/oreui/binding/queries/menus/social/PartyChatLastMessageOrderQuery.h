@@ -18,7 +18,7 @@ class PartyChatLastMessageOrderQuery : public ::OreUI::QueryBase<::OreUI::PartyC
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>         mLastOrder;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>    mLastOrder;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLastOrderChangedToken;
     // NOLINTEND
 

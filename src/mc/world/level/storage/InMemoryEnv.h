@@ -52,9 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI InMemoryEnv(::leveldb::Env* env, ::Core::Path const& rootDbPath);
-#endif
 
     MCNAPI void _flushWithTransaction();
     // NOLINTEND
@@ -62,9 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::leveldb::Env* env, ::Core::Path const& rootDbPath);
-#endif
     // NOLINTEND
 
 public:

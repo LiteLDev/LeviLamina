@@ -22,6 +22,8 @@ public:
     // NOLINTBEGIN
     virtual ~PayloadServiceProvider() = default;
 
+    virtual void flushDeferred(uint64 coalesceKey);
+
     virtual ::Scripting::Result_deprecated<void> dispatchToSelf(::Editor::Network::INetworkPayload& payload) = 0;
 
     virtual void onReceivePayload(::EditorNetworkPacket const& packet) = 0;
@@ -42,6 +44,12 @@ public:
 
     virtual ::Scripting::Result_deprecated<void>
     _send(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> _sendDeferred(
+        ::std::shared_ptr<::Editor::Network::INetworkPayload> payload,
+        uint64                                                coalesceKey,
+        ::Editor::Network::PayloadMetrics*                    metrics
+    );
 
     virtual ::Scripting::Result_deprecated<void>
     _sendToManager(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics) = 0;

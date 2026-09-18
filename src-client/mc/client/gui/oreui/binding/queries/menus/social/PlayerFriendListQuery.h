@@ -25,16 +25,12 @@ class PlayerFriendListQuery : public ::OreUI::QueryBase<::OreUI::PlayerFriendLis
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>> mIsLoading;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::AddFriendObject, ::std::allocator<::OreUI::AddFriendObject>>>
-                                                                                          mFriends;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::XboxAPICallResult>>                    mXboxAPICallResult;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::PlayerFriendList>>              mPlayerFriendList;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mPlayerFriendListSubscriber;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                               mIsLoading;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::AddFriendObject, ::OreUI::AddFriendObject>> mFriends;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::XboxAPICallResult, ::XboxAPICallResult>> mXboxAPICallResult;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::PlayerFriendList>>                mPlayerFriendList;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                              mPlayerFriendListSubscriber;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>   mResourceAllowList;
     // NOLINTEND
 
 public:

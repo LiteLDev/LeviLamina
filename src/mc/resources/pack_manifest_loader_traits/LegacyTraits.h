@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class I18n;
 class PackCapabilityRegistry;
 class PackManifest;
 class PackReport;
@@ -22,6 +23,7 @@ public:
     MCNAPI static ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument legacyParseFn(
         ::Puv::Input const& input,
         ::Puv::Logger&,
+        ::I18n*                         loc,
         ::PackManifest*                 manifest,
         ::PackReport*                   report,
         ::SubpackInfoCollection*        subpackInfoStack,

@@ -41,8 +41,6 @@ public:
 
     virtual double nextGaussianDouble() /*override*/;
 
-    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
-
     virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
 
     virtual void consumeCount(uint rounds) /*override*/;
@@ -64,8 +62,6 @@ public:
     MCNAPI double $nextDouble();
 
     MCNAPI double $nextGaussianDouble();
-
-    MCNAPI ::std::unique_ptr<::IRandom> $fork();
 
     MCNAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 

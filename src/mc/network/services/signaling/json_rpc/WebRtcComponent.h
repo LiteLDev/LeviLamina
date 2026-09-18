@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkbe99df;
     ::ll::UntypedStorage<8, 24> mUnk1bb34c;
-    ::ll::UntypedStorage<8, 80> mUnkcc2ad6;
+    ::ll::UntypedStorage<8, 80> mUnkaae320;
     ::ll::UntypedStorage<8, 64> mUnk2d2bc1;
     ::ll::UntypedStorage<8, 16> mUnk1c8606;
     ::ll::UntypedStorage<8, 16> mUnk6cd539;
@@ -34,12 +34,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void initialize(::std::shared_ptr<::JsonRpc::JsonRpcProvider> provider) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void sendTurnConfigRequest();
     // NOLINTEND
 
 public:

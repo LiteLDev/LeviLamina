@@ -47,6 +47,8 @@ public:
 
     MCAPI bool getDoNotShowHardcoreModeWarning() const;
 
+    MCAPI bool getDoNotShowHardcoreModeWarningThisJoin() const;
+
     MCAPI bool getDoNotShowHiddenAlternativeStorageWorldsWarning() const;
 
     MCAPI bool getDoNotShowHiddenLocalWorldsWarning() const;
@@ -85,8 +87,6 @@ public:
 
     MCAPI void resetPartyJoinRealmsWarnings();
 
-    MCAPI void setDisableHardcoreModeWarningOnce(bool newValue);
-
     MCAPI void setDoNotAddonStackingWarning(bool newValue);
 
     MCAPI void setDoNotShowAlternativeStorageHasWorlds(bool newValue);
@@ -98,6 +98,8 @@ public:
     MCAPI void setDoNotShowFriendsListFTUE(bool newValue);
 
     MCAPI void setDoNotShowHardcoreModeWarning(bool newValue);
+
+    MCAPI void setDoNotShowHardcoreModeWarningThisJoin(bool newValue);
 
     MCAPI void setDoNotShowHiddenAlternativeStorageWorldsWarning(bool newValue);
 

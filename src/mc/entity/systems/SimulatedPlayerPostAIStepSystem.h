@@ -12,7 +12,6 @@ class ActorOwnerComponent;
 class StrictEntityContext;
 struct InterpolateMovementNeededComponent;
 struct SimulatedPlayerFlagComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class SimulatedPlayerPostAIStepSystem {
@@ -28,7 +27,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _doSimulatedPlayerPostAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -32,17 +32,21 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptListBlockVolume();
 
+#ifdef LL_PLAT_C
     MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
     MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
+#endif
 
     MCAPI void add(::std::vector<::Vec3> const& locations);
 
+#ifdef LL_PLAT_C
     MCAPI ::ScriptModuleMinecraft::ScriptListBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
     MCAPI ::ScriptModuleMinecraft::ScriptListBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
+#endif
 
     MCAPI void remove(::std::vector<::Vec3> const& locations);
     // NOLINTEND
@@ -58,9 +62,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
+#ifdef LL_PLAT_C
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
+#endif
     // NOLINTEND
 
 public:

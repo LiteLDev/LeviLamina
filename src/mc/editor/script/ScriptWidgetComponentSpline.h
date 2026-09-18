@@ -4,15 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WidgetComponentType.h"
-#include "mc/deps/script_core/runtime/scripting/Result.h"
-#include "mc/deps/scripting/SplineType.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
-namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
+namespace Editor { class ServiceProviderCollection; }
+namespace Editor::ScriptModule { class ScriptWidget; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentSplineOptions; }
+namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { struct ClassBinding; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -43,17 +45,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
-        ::Scripting::RenderHelper::SplineType,
-        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    getSplineType() const;
+    MCNAPI ScriptWidgetComponentSpline(
+        ::Editor::ServiceProviderCollection&                                        serviceProviders,
+        ::mce::UUID const&                                                          componentId,
+        ::std::string const&                                                        componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>    owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                                parentService,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentSplineOptions> options
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Editor::ServiceProviderCollection&                                        serviceProviders,
+        ::mce::UUID const&                                                          componentId,
+        ::std::string const&                                                        componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>    owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                                parentService,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentSplineOptions> options
+    );
     // NOLINTEND
 
 public:

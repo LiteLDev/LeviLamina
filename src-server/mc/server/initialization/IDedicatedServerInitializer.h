@@ -56,6 +56,8 @@ public:
     virtual ::std::unique_ptr<::DedicatedServerInitialization::ClassroomModeListenerDep>
     setupPostInitLevel(::DedicatedServerInitialization::ServerInstanceDep& server) = 0;
 
+    virtual void assignServerThread() = 0;
+
     virtual ::TaskResult requeueAfter(::std::chrono::milliseconds time) = 0;
     // NOLINTEND
 };

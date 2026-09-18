@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ItemStack.h"
+#include "mc/world/level/ServerSoundInstance.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@ class CompoundTag;
 class Container;
 class DataLoadHelper;
 class ILevel;
+class RecordItemComponent;
 class SaveContext;
 // clang-format on
 
@@ -22,11 +24,12 @@ class JukeboxBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::ItemStack> mRecord;
-    ::ll::TypedStorage<4, 4, int>           mCount;
-    ::ll::TypedStorage<1, 1, bool>          mRecordingFinished;
-    ::ll::TypedStorage<4, 4, int>           mTicksPlaying;
-    ::ll::TypedStorage<1, 1, bool>          mPostBlockChangeGameEvent;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                            mRecord;
+    ::ll::TypedStorage<4, 4, int>                                      mCount;
+    ::ll::TypedStorage<1, 1, bool>                                     mRecordingFinished;
+    ::ll::TypedStorage<4, 4, int>                                      mTicksPlaying;
+    ::ll::TypedStorage<1, 1, bool>                                     mPostBlockChangeGameEvent;
+    ::ll::TypedStorage<8, 304, ::std::optional<::ServerSoundInstance>> mServerSoundInstance;
     // NOLINTEND
 
 public:
@@ -74,6 +77,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _startRecordSound(::BlockSource& region, ::RecordItemComponent const& record);
+
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
     MCAPI void startPlayingRecord(::BlockSource& region);
@@ -98,7 +103,11 @@ public:
 
     MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
+#ifdef LL_PLAT_S
+    MCFOLD ::ItemStack const& $getItem(int) const;
+#else // LL_PLAT_C
     MCAPI ::ItemStack const& $getItem(int) const;
+#endif
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 

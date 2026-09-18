@@ -41,7 +41,7 @@ public:
 
     virtual void fireServerConnectionEvent(
         ::IConnectionEventing::ServerConnectionOutcome outcome,
-        uint                                           pingLatency,
+        ::std::chrono::milliseconds                    pingLatency,
         double                                         timeElapsed,
         ::std::string const&                           creatorName,
         ::std::string const&                           worldId

@@ -17,8 +17,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockComponentStorage&>           mComponents;
     ::ll::TypedStorage<8, 8, ::VoxelShapes::VoxelShapeRegistry&> mVoxelShapeRegistry;
-    ::ll::TypedStorage<1, 1, bool>                               mIsVanillaBlock;
-    ::ll::TypedStorage<8, 8, ::BlockType const*>                 mBlockType;
+    ::ll::TypedStorage<1, 1, bool const>                         mIsVanillaBlock;
+    ::ll::TypedStorage<8, 8, ::BlockType const&>                 mBlockType;
+    ::ll::TypedStorage<1, 1, bool const>                         mIsPermutation;
     // NOLINTEND
 
 public:

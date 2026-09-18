@@ -8,6 +8,7 @@
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -55,6 +56,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                               mTargetBlockId;
     ::ll::TypedStorage<1, 1, uchar>                                              mFace;
     ::ll::TypedStorage<4, 4, int>                                                mSlot;
+    ::ll::TypedStorage<1, 1, ::HandSlot>                                         mHand;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                      mItem;
     ::ll::TypedStorage<4, 12, ::Vec3>                                            mFromPos;
     ::ll::TypedStorage<4, 12, ::Vec3>                                            mClickPos;

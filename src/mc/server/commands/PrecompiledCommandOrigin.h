@@ -51,6 +51,8 @@ public:
 
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
+    virtual bool hasMessagePerms() const /*override*/;
+
     virtual bool hasChatPerms() const /*override*/;
 
     virtual bool hasTellPerms() const /*override*/;
@@ -92,6 +94,8 @@ public:
     MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
     MCFOLD bool $isSelectorExpansionAllowed() const;
+
+    MCFOLD bool $hasMessagePerms() const;
 
     MCFOLD bool $hasChatPerms() const;
 

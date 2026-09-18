@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/WidgetCollisionType.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/editor/script/ScriptWidget_ComponentInterface.h"
 #include "mc/editor/script/ScriptWidget_GroupInterface.h"
@@ -15,11 +15,14 @@
 // clang-format off
 class AABB;
 class Vec3;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentBase; }
+namespace Editor::ScriptModule { class ScriptWidgetCreateOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetGroup; }
+namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace mce { class UUID; }
@@ -97,18 +100,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidget(
+        ::Editor::ServiceProviderCollection&                                          serviceProviders,
+        ::Editor::ScriptModule::ScriptWidgetService&                                  parentService,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> group,
+        ::Vec3 const&                                                                 position,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const&     options,
+        ::Scripting::WeakLifetimeScope const&                                         scope
+    );
+
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _getBindPositionToBlockCursor() const;
 
-    MCNAPI ::Scripting::Result<float, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _getCollisionRadius() const;
-
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _getCollisionRadiusVisible() const;
-
-    MCNAPI ::Scripting::
-        Result<::Editor::Widgets::WidgetCollisionType, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-        _getCollisionType() const;
 
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _getIgnoreEditorModeVisibilityOverride() const;
@@ -119,9 +124,6 @@ public:
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptGetCollisionOffset() const;
-
-    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _scriptGetDimensionId() const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptGetPosition() const;
@@ -135,11 +137,6 @@ public:
     _scriptGetShowBoundingBox() const;
 
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _scriptGetVisible() const;
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _scriptGetWidgetGroup() const;
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptSetShowBoundingBox(bool visible);
@@ -169,6 +166,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Editor::ServiceProviderCollection&                                          serviceProviders,
+        ::Editor::ScriptModule::ScriptWidgetService&                                  parentService,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> group,
+        ::Vec3 const&                                                                 position,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const&     options,
+        ::Scripting::WeakLifetimeScope const&                                         scope
+    );
     // NOLINTEND
 
 public:
