@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/common/FacingID.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"

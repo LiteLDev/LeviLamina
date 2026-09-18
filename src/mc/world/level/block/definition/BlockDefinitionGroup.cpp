@@ -2,21 +2,22 @@
 
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/shared_types/v1_26_20/block/VanillaBlockData.h"
-#include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/components/BlockDestructibleByExplosionDescription.h"
-#include "mc/world/level/block/components/BlockDestructibleByMiningDescription.h"
 #include "mc/deps/core/utility/typeid_t.h"
+#include "mc/deps/shared_types/v1_26_20/block/VanillaBlockData.h"
 #include "mc/world/actor/DefinitionEvent.h"
-#include "mc/world/level/block/definition/BlockArchetypeDispatcher.h"
-#include "mc/world/level/block/definition/BlockDefinition.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 #include "mc/world/level/block/components/BlockCustomComponentsComponent.h"
 #include "mc/world/level/block/components/BlockDeprecatedR16EventListenerComponent.h"
+#include "mc/world/level/block/components/BlockDestructibleByExplosionDescription.h"
+#include "mc/world/level/block/components/BlockDestructibleByMiningDescription.h"
 #include "mc/world/level/block/components/triggers/OnInteractTrigger.h"
 #include "mc/world/level/block/components/triggers/OnPlayerPlacingTrigger.h"
+#include "mc/world/level/block/definition/BlockArchetypeDispatcher.h"
+#include "mc/world/level/block/definition/BlockDefinition.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/material/Material.h"
+
 
 void BlockDefinitionGroup::initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition) {
     for (auto const& description : definition.mBaseComponents->mDescriptions.get()) {
@@ -38,9 +39,8 @@ void BlockDefinitionGroup::initBlockTypeFromDefinition(::BlockType& blockType, :
     }
 
     // The custom components object sits right after its ComponentBase header.
-    auto* componentBase = blockType.mComponents->_findComponentBase(
-        ::Bedrock::type_id<void, ::BlockCustomComponentsComponent>()
-    );
+    auto* componentBase =
+        blockType.mComponents->_findComponentBase(::Bedrock::type_id<void, ::BlockCustomComponentsComponent>());
     auto* customComponents =
         componentBase ? reinterpret_cast<::BlockCustomComponentsComponent*>(&componentBase[1]) : nullptr;
 
@@ -67,7 +67,7 @@ void BlockDefinitionGroup::initBlockTypeFromDefinition(::BlockType& blockType, :
     }
 }
 
-::WeakPtr<::BlockType> BlockDefinitionGroup::registerDataDrivenBlock(::BlockDescription const& desc) {
+BlockType* BlockDefinitionGroup::registerDataDrivenBlock(::BlockDescription const& desc) {
     ::BlockType* blockType = ::BlockArchetypeDispatcher::tryRegisterBlock(
         *desc.mVanillaBlockData->mBlockArchetype,
         desc.mIdentifier,
@@ -76,19 +76,17 @@ void BlockDefinitionGroup::initBlockTypeFromDefinition(::BlockType& blockType, :
     );
     if (blockType == nullptr) {
         // No archetype claimed it, so fall back to registering a plain block.
-        blockType =
-            &::BlockTypeRegistry::get().registerBlock<::BlockType, int const&, ::Material const&>(
-                ::HashedString{desc.mIdentifier},
-                desc.mVanillaBlockData->mBlockID,
-                ::Material::getMaterial(desc.mVanillaBlockData->mMaterial)
-            );
+        blockType = &::BlockTypeRegistry::get().registerBlock<::BlockType, int const&, ::Material const&>(
+            ::HashedString{desc.mIdentifier},
+            desc.mVanillaBlockData->mBlockID,
+            ::Material::getMaterial(desc.mVanillaBlockData->mMaterial)
+        );
     }
 
-    ::WeakPtr<::BlockType> weakPtr = blockType->createWeakPtr();
-    weakPtr->setIsVanillaBlock(desc.mIsBaseGameBlock);
-    weakPtr->addComponent(::BlockDestructibleByExplosionDescription{0.0f})
+    blockType->setIsVanillaBlock(desc.mIsBaseGameBlock);
+    blockType->addComponent(::BlockDestructibleByExplosionDescription{0.0f})
         .addComponent(::BlockDestructibleByMiningDescription{0.0f});
-    return weakPtr;
+    return blockType;
 }
 
 void BlockDefinitionGroup::initializeBlocks(::Level& level) {

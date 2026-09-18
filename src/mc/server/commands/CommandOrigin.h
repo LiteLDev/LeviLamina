@@ -37,7 +37,7 @@ public:
     // NOLINTEND
 
 public:
-    CommandOrigin() { mUUID = Crypto::Random::generateUUID(); }
+    CommandOrigin() { mUUID = Crypto::Random::generateUUID(Crypto::Random::RandomPurpose::Public); }
     LLNDAPI std::string getLocaleCode() const;
 
 public:

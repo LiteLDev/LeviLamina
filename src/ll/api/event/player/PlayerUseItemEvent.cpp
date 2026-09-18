@@ -22,14 +22,15 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerTransactionSubject,
     &PlayerTransactionSubject::$baseUseItem,
     bool,
-    ItemStack& item
+    ItemStack&     item,
+    HandSlot const handSlot
 ) {
     auto ev = PlayerUseItemEvent(mUnk18866d.as<Player&>(), item);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return false;
     }
-    return origin(item);
+    return origin(item, handSlot);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

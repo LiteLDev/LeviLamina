@@ -82,11 +82,6 @@ public:
     MCAPI void _setLoadingReport(::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
 #endif
 
-    MCAPI void
-    add(::PackInstance                                                        packInstance,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        bool                                                                  isDependent);
-
 #ifdef LL_PLAT_C
     MCAPI void clearPackReports();
 

@@ -107,6 +107,6 @@ void Blob::swap(Blob& other) noexcept {
 void Blob::defaultDeleter(value_type* p) noexcept {
     if (p) {
         auto* alloc = &ll::memory::getDefaultAllocator();
-        alloc->release(p);
+        alloc->_release(p);
     }
 }

@@ -31,23 +31,23 @@ namespace ll::memory {
 }
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    void* allocate(uint64 size) override try { return mi_malloc(size != 0ull ? size : 1ull); } catch (...) {
+    void* _allocate(uint64 size) override try { return mi_malloc(size != 0ull ? size : 1ull); } catch (...) {
         return nullptr;
     }
 
-    void release(void* ptr) override try { mi_free(ptr); } catch (...) {
+    void _release(::gsl::not_null<void*> ptr) override try { mi_free(ptr); } catch (...) {
     }
 
-    void* alignedAllocate(uint64 size, uint64 alignment) override try {
+    void* _alignedAllocate(uint64 size, uint64 alignment) override try {
         return mi_malloc_aligned(size != 0ull ? size : 1ull, alignment);
     } catch (...) {
         return nullptr;
     }
 
-    void alignedRelease(void* ptr) override try { mi_free(ptr); } catch (...) {
+    void _alignedRelease(::gsl::not_null<void*> ptr) override try { mi_free(ptr); } catch (...) {
     }
 
-    uint64 getUsableSize(void* ptr, bool) override try { return mi_usable_size(ptr); } catch (...) {
+    uint64 _getUsableSize(::gsl::not_null<void*> ptr, bool) override try { return mi_usable_size(ptr); } catch (...) {
         return 0ull;
     }
 
@@ -76,23 +76,25 @@ public:
 
 class StdMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    void* allocate(uint64 size) override try { return malloc(size != 0ull ? size : 1ull); } catch (...) {
+    void* _allocate(uint64 size) override try { return malloc(size != 0ull ? size : 1ull); } catch (...) {
         return nullptr;
     }
 
-    void release(void* ptr) override try { free(ptr); } catch (...) {
+    void _release(::gsl::not_null<void*> ptr) override try { free(ptr); } catch (...) {
     }
 
-    void* alignedAllocate(uint64 size, uint64 alignment) override try {
+    void* _alignedAllocate(uint64 size, uint64 alignment) override try {
         return _aligned_malloc(size != 0ull ? size : 1ull, alignment);
     } catch (...) {
         return nullptr;
     }
 
-    void alignedRelease(void* ptr) override try { _aligned_free(ptr); } catch (...) {
+    void _alignedRelease(::gsl::not_null<void*> ptr) override try { _aligned_free(ptr); } catch (...) {
     }
 
-    uint64 getUsableSize(void* ptr, bool) override try { return ptr ? _msize(ptr) : 0ull; } catch (...) {
+    uint64 _getUsableSize(::gsl::not_null<void*> ptr, bool) override try {
+        return ptr ? _msize(ptr) : 0ull;
+    } catch (...) {
         return 0ull;
     }
 

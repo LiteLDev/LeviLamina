@@ -9,7 +9,9 @@
 #include "mc/world/events/LevelTickingAreaFinishedLoadingEvent.h"
 #include "mc/world/events/LevelWeatherChangedEvent.h"
 #include "mc/world/events/ScriptingWorldInitializeEvent.h"
+#include "mc/world/events/WorldClockRestartEvent.h"
 #include "mc/world/level/LevelSoundBroadcastEvent.h"
+
 
 // auto generated inclusion list
 #include "mc/world/events/EventVariantImpl.h"

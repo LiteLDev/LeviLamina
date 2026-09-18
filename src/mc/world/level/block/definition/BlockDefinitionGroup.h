@@ -73,7 +73,7 @@ public:
     // NOLINTEND
 
 public:
-    LLNDAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
+    LLNDAPI ::BlockType* registerDataDrivenBlock(::BlockDescription const& desc);
 
     LLAPI void initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition);
 

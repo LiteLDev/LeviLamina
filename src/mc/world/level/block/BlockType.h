@@ -149,11 +149,6 @@ public:
         return *this;
     }
 
-    /// @brief Looks this block up in the registry by its full name and returns a weak pointer to it.
-    [[nodiscard]] ::WeakPtr<::BlockType> createWeakPtr() const {
-        return ::BlockTypeRegistry::get().lookupByName(mNameInfo->mFullName->getString(), true);
-    }
-
     /// @brief Visits every permutation of this block, stopping as soon as `callback` returns false.
     void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const {
         for (auto const& permutation : mBlockPermutations.get()) {
@@ -338,7 +333,7 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockType>       tryGetFromRegistry(HashedString const& name);
+    LLNDAPI static optional_ref<BlockType const> tryGetFromRegistry(HashedString const& name);
     LLNDAPI static optional_ref<BlockType const> tryGetFromRegistry(uint legacyBlockID);
 
 public:

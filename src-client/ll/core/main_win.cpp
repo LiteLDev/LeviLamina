@@ -174,14 +174,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                                                            includeEditorPacks
 ) {
     repo->forEachPack([&](::ResourcePack const& pack) {
-        if (pack.mPack->mManifest->mPackType == PackType::Resources) {
-            auto packPath = pack.mPack->mManifest->mLocation->mPath->value;
+        if (pack.mImpl->mPack->mManifest->mPackType == PackType::Resources) {
+            auto packPath = pack.mImpl->mPack->mManifest->mLocation->mPath->value;
             if (packPath.find(pl::pl_mods_path) != std::string::npos) {
-                auto& identity = pack.mPack->mManifest->mIdentity;
+                auto& identity = pack.mImpl->mPack->mManifest->mIdentity;
                 auto  newPack  = repo->getResourcePackForPackId(identity);
                 if (newPack) {
                     PackSettingsFactory& factory  = repo->getPackSettingsFactory();
-                    auto&                manifest = newPack->mPack->mManifest;
+                    auto&                manifest = newPack->mImpl->mPack->mManifest;
                     PackSettings*        settings = factory.getPackSettings(*manifest, {});
                     stack.add({newPack, -1, false, settings}, repo, false);
                 }
@@ -197,28 +197,29 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     VanillaGameModuleServer,
     &VanillaGameModuleServer::$initializeBehaviorStack,
     void,
-    ::Experiments const&                                            experiments,
-    ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
-    ::ResourcePackStack&                                            stack,
-    ::BaseGameVersion const&                                        baseGameVersion,
-    bool                                                            includeEditorPacks
+    Experiments const&                                            experiments,
+    Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
+    ResourcePackStack&                                            stack,
+    BaseGameVersion const&                                        baseGameVersion,
+    bool                                                          includeEditorPacks,
+    std::optional<::std::string>                                  worldId
 ) {
     repo->forEachPack([&](::ResourcePack const& pack) {
-        if (pack.mPack->mManifest->mPackType == PackType::Behavior) {
-            auto packPath = pack.mPack->mManifest->mLocation->mPath->value;
+        if (pack.mImpl->mPack->mManifest->mPackType == PackType::Behavior) {
+            auto packPath = pack.mImpl->mPack->mManifest->mLocation->mPath->value;
             if (packPath.find(pl::pl_mods_path) != std::string::npos) {
-                auto& identity = pack.mPack->mManifest->mIdentity;
+                auto& identity = pack.mImpl->mPack->mManifest->mIdentity;
                 auto  newPack  = repo->getResourcePackForPackId(identity);
                 if (newPack) {
                     PackSettingsFactory& factory  = repo->getPackSettingsFactory();
-                    auto&                manifest = newPack->mPack->mManifest;
+                    auto&                manifest = newPack->mImpl->mPack->mManifest;
                     PackSettings*        settings = factory.getPackSettings(*manifest, {});
                     stack.add({newPack, -1, false, settings}, repo, false);
                 }
             }
         }
     });
-    origin(experiments, repo, stack, baseGameVersion, includeEditorPacks);
+    origin(experiments, repo, stack, baseGameVersion, includeEditorPacks, worldId);
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(

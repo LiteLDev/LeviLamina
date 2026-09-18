@@ -37,15 +37,16 @@ LL_TYPE_INSTANCE_HOOK(
     GameMode,
     &GameMode::$useItemOn,
     InteractionResult,
-    ItemStack&      item,
-    BlockPos const& blockPos,
-    uchar           face,
-    Vec3 const&     clickPos,
-    Block const*    block,
-    bool            isFirstEvent
+    ItemStack&        item,
+    ::BlockPos const& at,
+    uchar             face,
+    ::Vec3 const&     hit,
+    ::HandSlot        handSlot,
+    ::Block const*    targetBlock,
+    bool              isFirstEvent
 ) {
     ScopedValue scope{isUsingItem, true};
-    auto        result = origin(item, blockPos, face, clickPos, block, isFirstEvent);
+    auto        result = origin(item, at, face, hit, handSlot, targetBlock, isFirstEvent);
     return result;
 }
 

@@ -180,16 +180,18 @@ LL_TYPE_INSTANCE_HOOK(
     ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
     ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>       commands,
     ::PackSourceFactory&                                                  packSourceFactory,
+    ::Bedrock::NonOwnerPointer<::IMinecraftEventing>                      minecraftEventing,
     bool                                                                  initAsync,
     ::std::unique_ptr<::IRepositoryFactory>                               factory
 ) {
     auto res = origin(
         std::move(repositoryPacks),
         manifestFactory,
-        std::move(contentAccessibility),
-        std::move(pathManager),
+        contentAccessibility,
+        pathManager,
         std::move(commands),
         packSourceFactory,
+        std::move(minecraftEventing),
         initAsync,
         std::move(factory)
     );

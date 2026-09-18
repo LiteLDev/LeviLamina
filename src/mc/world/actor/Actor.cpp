@@ -26,6 +26,7 @@
 #include "mc/util/molang/IComplexExpression.h"
 #include "mc/util/rotation_command_utils/RotationData.h"
 #include "mc/world//actor/player/Player.h"
+#include "mc/world/SimpleContainer.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
@@ -36,7 +37,6 @@
 #include "mc/world/actor/animation/AnimationComponent.h"
 #include "mc/world/actor/provider/ActorAttribute.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
-#include "mc/world/SimpleContainer.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
@@ -186,6 +186,7 @@ void Actor::teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 cons
     },
             1
         ),
+        1,
         false
     );
 }
@@ -194,6 +195,7 @@ void Actor::teleport(class Vec3 const& pos, DimensionType dimId) {
     TeleportCommand::applyTarget(
         *this,
         TeleportCommand::computeTarget(*this, pos, nullptr, dimId, std::nullopt, 1),
+        1,
         false
     );
 }

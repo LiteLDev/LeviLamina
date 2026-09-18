@@ -3,10 +3,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 
-#include "mc/deps/ecs/strict/StrictEntityContext.h"
 #include "mc/deps/nbt/CompoundTag.h"
-#include "mc/deps/vanilla_components/WasOnGroundFlagComponent.h"
-#include "mc/entity/systems/ServerPlayerMovementCorrectionSystem.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/PlayerAuthInputPacket.h"
 #include "mc/server/ServerPlayer.h"
@@ -36,8 +33,8 @@ LL_TYPE_INSTANCE_HOOK(
     origin(source, packet);
     auto handle = thisFor<NetEventCallback>();
     if (auto player = handle->_getServerPlayer(source, packet.mSenderSubId);
-        player && packet.mInputData->test(static_cast<size_t>(PlayerAuthInputPacket::InputData::Jumping))
-        && player->isOnGround() && *packet.mPos - player->getPosition() > 0.0f) {
+        player && packet.mInputData->contains(PlayerAuthInputPacket::InputData::Jumping) && player->isOnGround()
+        && *packet.mPos - player->getPosition() > 0.0f) {
         auto event = PlayerJumpEvent(*player, player->getPosition(), *packet.mPos);
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {

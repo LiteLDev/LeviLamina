@@ -2,6 +2,9 @@
 
 #include "ll/api/utils/StringUtils.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/SharedPtr.h"
+#include "mc/common/WeakPtr.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/registry/BlockTypeRegistryModificationsLock.h"
 
 // auto generated inclusion list
@@ -144,12 +147,30 @@ public:
         auto const    colon   = lowered.find(':');
 
         mKnownNamespaces->emplace(lowered.substr(0, colon));
-        mBlockLookupMap->try_emplace(::HashedString{lowered}, ::SharedPtr<::BlockType>{block});
+        mBlockLookupMap->try_emplace(::HashedString{lowered}, std::unique_ptr<::BlockType>{block});
 
         ::HashedString hashed{lowered};
         mBlockNameHashToStringMap->operator[](hashed.getHash()) = hashed;
 
         return *block;
+    }
+
+    ::Block const* lookupByName(
+        ::HashedString const&                                                  name,
+        ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states,
+        bool                                                                   logNotFound
+    ) const {
+        auto result = _lookupByNameImpl(name, 0, ::BlockTypeRegistry::LookupByNameImplResolve::Block, logNotFound);
+        if (result.mBlock == nullptr) {
+            return nullptr;
+        }
+
+        return _lookupByNameImplSetNewBlockStates(*result.mBlock, states);
+    }
+
+    ::BlockType const* lookupByName(::HashedString const& name, bool logNotFound = false) const {
+        return _lookupByNameImpl(name, 0, ::BlockTypeRegistry::LookupByNameImplResolve::BlockType, logNotFound)
+            .mBlockType;
     }
 
 public:
