@@ -11,11 +11,11 @@ public:
     // clang-format on
 
     // RenderChunkShared inner types define
-    enum class BuildState : int {};
+    enum class VisibilityBuildState : int {};
 
     enum class DataState : int {};
 
-    enum class VisibilityBuildState : int {};
+    enum class BuildState : int {};
 
     struct ActorBlockSyncMessageWithVersion {};
 
