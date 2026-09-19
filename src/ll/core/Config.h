@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 40;
+    int version = 41;
 
     std::string language = "system";
     struct {
