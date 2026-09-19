@@ -8,8 +8,8 @@ void* SignatureView::uncachedResolve(std::span<std::byte> range) const {
     if (elements.empty()) [[unlikely]] {
         return nullptr;
     }
-    const auto firstByte = *elements.front();
-    const auto scanEnd   = range.end() - elements.size() + 1;
+    auto const firstByte = *elements.front();
+    auto const scanEnd   = range.end() - elements.size() + 1;
 
     for (auto i = range.begin(); i != scanEnd; i++) {
         i = std::find(i, scanEnd, firstByte);

@@ -4,7 +4,7 @@
 #include "ll/api/mod/NativeMod.h"
 namespace ll {
 
-constexpr const std::string_view selfModName = "LeviLamina";
+constexpr std::string_view const selfModName = "LeviLamina";
 
 std::shared_ptr<mod::NativeMod> const& getSelfModIns();
 

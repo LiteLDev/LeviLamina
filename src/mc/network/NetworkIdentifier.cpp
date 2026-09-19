@@ -12,7 +12,7 @@ std::string NetworkIdentifier::getIPAndPort() const {
                 char buffer[71];
                 address.ToString(true, buffer, '|');
                 std::string_view ipAndPort(buffer);
-                auto result =
+                auto             result =
                     std::ranges::views::split(ipAndPort, '|')
                     | std::views::transform([](auto&& part) { return std::string_view{part.begin(), part.end()}; })
                     | std::views::take(2) | std::ranges::to<std::vector>();

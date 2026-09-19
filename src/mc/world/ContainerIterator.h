@@ -15,10 +15,10 @@ public:
 
     [[nodiscard]] constexpr ContainerIterator(T* container, int position) : mContainer(container), mSlot(position) {}
 
-    [[nodiscard]] constexpr bool operator==(const ContainerIterator& other) const {
+    [[nodiscard]] constexpr bool operator==(ContainerIterator const& other) const {
         return mSlot == other.mSlot && mContainer == other.mContainer;
     }
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(const ContainerIterator& other) const {
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(ContainerIterator const& other) const {
         return mSlot <=> other.mSlot;
     }
     [[nodiscard]] constexpr reference operator*() const {

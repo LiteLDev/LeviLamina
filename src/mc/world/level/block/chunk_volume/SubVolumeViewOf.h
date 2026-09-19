@@ -7,9 +7,9 @@ namespace ChunkVolume {
 template <typename T>
 class SubVolumeViewOf {
 public:
-    using ViewType = gsl::span<const T *>;
+    using ViewType = gsl::span<T const*>;
 
-    SubVolumeViewOf<const T *>::ViewType mView;
+    SubVolumeViewOf<T const*>::ViewType mView;
 };
 
 } // namespace ChunkVolume

@@ -82,7 +82,7 @@ T spin_wait_while(std::atomic<T> const& location, C comp, std::memory_order orde
 template <typename T, typename U>
 T spin_wait_while_eq(
     std::atomic<T> const& location,
-    const U               value,
+    U const               value,
     std::memory_order     order = std::memory_order_acquire
 ) {
     return spin_wait_while(location, [&value](T t) { return t == value; }, order);
@@ -93,7 +93,7 @@ T spin_wait_while_eq(
 template <typename T, typename U>
 T spin_wait_until_eq(
     std::atomic<T> const& location,
-    const U               value,
+    U const               value,
     std::memory_order     order = std::memory_order_acquire
 ) {
     return spin_wait_while(location, [&value](T t) { return t != value; }, order);
@@ -129,7 +129,7 @@ public:
         // op->status should be read before inserting the operation into the
         // aggregator waitlist since it can become invalid after executing a
         // handler (if the operation has 'short' life time.)
-        const uintptr_t status = op->status.load(std::memory_order_relaxed);
+        uintptr_t const status = op->status.load(std::memory_order_relaxed);
 
         // ITT note: &(op->status) tag is used to cover accesses to this op node. This
         // thread has created the operation, and now releases it so that the handler

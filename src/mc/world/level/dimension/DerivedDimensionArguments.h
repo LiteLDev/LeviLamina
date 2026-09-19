@@ -18,6 +18,6 @@ public:
     // NOLINTBEGIN
     ::ILevel&                                                                       mLevel;
     ::brstd::move_only_function<::std::unique_ptr<::TaskGroup>(::std::string_view)> mCreateTaskGroup;
-    std::unique_ptr<::IClientDimensionExtensions> mClientExtensions;
+    std::unique_ptr<::IClientDimensionExtensions>                                   mClientExtensions;
     // NOLINTEND
 };

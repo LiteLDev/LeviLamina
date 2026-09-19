@@ -20,7 +20,7 @@ bool setServerMotd(std::string const& serverName, bool shouldAnnounce) {
 }
 
 std::optional<fs::path> createAndReturnPath(fs::path const& base, std::string_view subPath) {
-    fs::path path = base / subPath;
+    fs::path        path = base / subPath;
     std::error_code ec;
     if (!fs::exists(path)) fs::create_directories(path, ec);
     return path;

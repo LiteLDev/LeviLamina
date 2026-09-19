@@ -238,9 +238,9 @@ public:
                 H_p = h_p;
             }
         }
-        double T   = 1 - 0.17 * cos((H_p - 30) * rtod) + 0.24 * cos((2 * H_p) * rtod) + 0.32 * cos((3 * H_p + 6) * rtod)
-                   - 0.20 * cos((4 * H_p - 63.0) * rtod);
-        double dHp = 2 * sqrt(C1p * C2p) * sin(dhp * 0.5 * rtod);
+        double T = 1 - 0.17 * cos((H_p - 30) * rtod) + 0.24 * cos((2 * H_p) * rtod) + 0.32 * cos((3 * H_p + 6) * rtod)
+                 - 0.20 * cos((4 * H_p - 63.0) * rtod);
+        double dHp   = 2 * sqrt(C1p * C2p) * sin(dhp * 0.5 * rtod);
         L_          -= 50;
         L_          *= L_;
         double SL    = 1.0 + 0.015 * L_ / sqrt(L_ + 20);

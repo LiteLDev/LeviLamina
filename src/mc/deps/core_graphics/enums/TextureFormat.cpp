@@ -1,7 +1,7 @@
 #include "mc/deps/core_graphics/enums/TextureFormat.h"
 
 namespace mce {
-mce::TextureFormat translateImageFormat(const mce::ImageFormat imageFormat) {
+mce::TextureFormat translateImageFormat(mce::ImageFormat const imageFormat) {
     switch (imageFormat) {
     case ImageFormat::Unknown:
         return TextureFormat::UnknownTextureFormat;

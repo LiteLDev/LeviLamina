@@ -20,23 +20,23 @@ class PathView {
 public:
     ~PathView() = default;
 
-    PathView(const PathView& other)            = default;
-    PathView& operator=(const PathView& other) = default;
+    PathView(PathView const& other)            = default;
+    PathView& operator=(PathView const& other) = default;
 
     PathView(PathView&& other) noexcept            = default;
     PathView& operator=(PathView&& other) noexcept = default;
 
-    explicit PathView(const std::string& s) : mSrc(s) {}
-    explicit PathView(const char* s) : mSrc(s ? s : "") {}
+    explicit PathView(std::string const& s) : mSrc(s) {}
+    explicit PathView(char const* s) : mSrc(s ? s : "") {}
     explicit PathView(std::string_view s) : mSrc(s) {}
 
-    PathView(const Core::Path& src) : mSrc(src.getUtf8StdString()) {}
+    PathView(Core::Path const& src) : mSrc(src.getUtf8StdString()) {}
 
     [[nodiscard]] size_t size() const { return mSrc.size(); }
     [[nodiscard]] bool   empty() const { return mSrc.empty(); }
 
     [[nodiscard]] std::string_view getUtf8StringView() const { return mSrc; }
-    [[nodiscard]] const char*      getUtf8CString() const { return mSrc.data(); }
+    [[nodiscard]] char const*      getUtf8CString() const { return mSrc.data(); }
 
     [[nodiscard]] bool isAbsolute() const {
 #ifdef _WIN32

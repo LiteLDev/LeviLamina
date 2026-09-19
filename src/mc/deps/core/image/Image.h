@@ -25,17 +25,17 @@ struct Image {
     LLNDAPI Image();
     LLNDAPI Image(uint32 w, uint32 h, mce::ImageFormat format, mce::ImageUsage usage);
     LLNDAPI Image(uint32 w, uint32 h, uint32 d, mce::ImageFormat format, mce::ImageUsage usage);
-    LLNDAPI Image(const mce::Image&);
+    LLNDAPI Image(mce::Image const&);
     LLNDAPI Image(mce::Image&&);
     LLNDAPI Image(mce::Image::Storage&&);
     LLAPI ~Image();
 
-    LLAPI mce::Image& operator=(const mce::Image&);
+    LLAPI mce::Image& operator=(mce::Image const&);
     LLAPI mce::Image& operator=(mce::Image&&);
     LLAPI void        setRawImage(mce::Image::Storage&& contents);
     LLAPI void        setImageDescription(uint32 w, uint32 h, mce::ImageFormat format, mce::ImageUsage usage);
     LLAPI void        setImageDescription(uint32 w, uint32 h, uint32 d, mce::ImageFormat format, mce::ImageUsage usage);
-    LLAPI void        copyRawImage(const mce::Image::Storage&);
+    LLAPI void        copyRawImage(mce::Image::Storage const&);
     LLAPI mce::Image clone() const;
     LLAPI bool       isEmpty() const;
     LLAPI void       resizeImageBytesToFitImageDescription();

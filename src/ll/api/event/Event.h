@@ -1,8 +1,8 @@
 #pragma once
 
 #include <concepts>
-#include <typeindex>
 #include <type_traits>
+#include <typeindex>
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/event/EventId.h"
@@ -46,8 +46,8 @@ LLAPI void registerRuntimeEventId(std::type_index type, EventIdView eventId);
 template <class T>
     requires std::derived_from<std::remove_cvref_t<T>, Event>
 void registerRuntimeEventId() {
-    using EventType = std::remove_cvref_t<T>;
-    static const bool registered = [] {
+    using EventType              = std::remove_cvref_t<T>;
+    static bool const registered = [] {
         registerRuntimeEventId(std::type_index{typeid(EventType)}, getEventId<EventType>);
         return true;
     }();

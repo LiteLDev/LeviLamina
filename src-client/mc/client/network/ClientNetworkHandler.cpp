@@ -101,30 +101,30 @@ void ClientNetworkHandler::_respondBlobCacheStatusForSubChunk(::SubChunkPacket::
     startInfo.priorityBackDown  = -1;
     startInfo.mLinkCancellation = false;
 
-    mIOTaskGroup->_queueInternal(::BackgroundTask<::TaskResult, void>::create(
-        mIOTaskGroup.get(),
-        startInfo,
-        ::Bedrock::Threading::Async<void>{},
-        mIOTaskGroup->_workerPoolIsAsync(),
-        [blobId = data.mBlobId->value(),
-         cache  = mBlobCache,
-         misses = mCacheMisses,
-         hits   = mCacheHits]() -> ::TaskResult {
-            if (cache != nullptr && cache->doesBlobExist(blobId)) {
-                hits->enqueue(blobId);
-                if (auto client = ll::service::getClientInstance()) {
-                    if (auto tracking = client->mUnke2a76f.as<MinecraftGame*>()
-                                            ->mUnke45c86.as<std::unique_ptr<SubChunkRequestTrackingData>>()
-                                            .get()) {
-                        ++*tracking->mClientSubChunksReusedFromCache;
+    mIOTaskGroup->_queueInternal(
+        ::BackgroundTask<::TaskResult, void>::create(
+            mIOTaskGroup.get(),
+            startInfo,
+            ::Bedrock::Threading::Async<void>{},
+            mIOTaskGroup->_workerPoolIsAsync(),
+            [blobId = data.mBlobId->value(), cache = mBlobCache, misses = mCacheMisses, hits = mCacheHits]()
+                -> ::TaskResult {
+                if (cache != nullptr && cache->doesBlobExist(blobId)) {
+                    hits->enqueue(blobId);
+                    if (auto client = ll::service::getClientInstance()) {
+                        if (auto tracking = client->mUnke2a76f.as<MinecraftGame*>()
+                                                ->mUnke45c86.as<std::unique_ptr<SubChunkRequestTrackingData>>()
+                                                .get()) {
+                            ++*tracking->mClientSubChunksReusedFromCache;
+                        }
                     }
+                } else {
+                    misses->enqueue(blobId);
                 }
-            } else {
-                misses->enqueue(blobId);
+                return ::TaskResult::Done();
             }
-            return ::TaskResult::Done();
-        }
-    ));
+        )
+    );
 }
 
 void ClientNetworkHandler::_handleSubChunkData(

@@ -17,7 +17,7 @@ public:
         requires(!std::same_as<std::decay_t<Event>, EventRef> && !std::is_const_v<Event>)
     : variant_(std::ref(event)) {}
 
-    EventRef(const EventRef& other) = default;
+    EventRef(EventRef const& other) = default;
 
     EventVariant& get() { return variant_; }
 

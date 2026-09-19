@@ -59,7 +59,8 @@ public:
         ::std::string const&,
         ::std::shared_ptr<::Audio::OnlineStreamedAudioBuffer>,
         ::Audio::OnlineStreamConfig const&
-    )> createFetcherFactory(::Bedrock::NotNullNonOwnerPtr<::TaskGroup> const& taskGroup);
+    )>
+    createFetcherFactory(::Bedrock::NotNullNonOwnerPtr<::TaskGroup> const& taskGroup);
 #endif
     // NOLINTEND
 

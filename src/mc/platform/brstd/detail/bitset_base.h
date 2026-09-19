@@ -12,7 +12,7 @@ public:
     using size_type            = UnderlyingContainer::size_type;
 
 protected:
-    static const size_t bits_per_value = sizeof(underlying_type) * 8;
+    static size_t const bits_per_value = sizeof(underlying_type) * 8;
 
 public:
     constexpr bool test(size_type pos) const {

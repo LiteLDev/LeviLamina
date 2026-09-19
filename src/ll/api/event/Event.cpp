@@ -12,11 +12,7 @@ ConcurrentDenseMap<std::type_index, EventId>& runtimeEventIds() {
 } // namespace
 
 void detail::registerRuntimeEventId(std::type_index type, EventIdView eventId) {
-    runtimeEventIds().lazy_emplace_l(
-        type,
-        [](auto&&...) {},
-        [&](auto const& ctor) { ctor(type, eventId); }
-    );
+    runtimeEventIds().lazy_emplace_l(type, [](auto&&...) {}, [&](auto const& ctor) { ctor(type, eventId); });
 }
 
 void Event::serialize(CompoundTag& nbt) const { nbt["eventId"] = getId().name; }

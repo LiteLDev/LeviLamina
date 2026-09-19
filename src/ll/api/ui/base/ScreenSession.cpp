@@ -78,8 +78,6 @@ Expected<> ScreenSession::close() const {
 
 ScreenSession::operator bool() const noexcept { return impl != nullptr; }
 
-void closeScreen(Player& player) {
-    detail::ScreenSessionImpl::closeScreen(player, std::nullopt);
-}
+void closeScreen(Player& player) { detail::ScreenSessionImpl::closeScreen(player, std::nullopt); }
 
 } // namespace ll::ui

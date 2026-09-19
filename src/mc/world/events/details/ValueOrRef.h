@@ -15,7 +15,7 @@ public:
         }
     }
 
-    ValueOrRef(const ValueOrRef& other) = delete;
+    ValueOrRef(ValueOrRef const& other) = delete;
 
     ValueOrRef(ValueOrRef&& other) noexcept
     : is_pointer_(other.is_pointer_),
@@ -23,7 +23,7 @@ public:
 
     T& value() noexcept { return is_pointer_ ? *variant_.pointer : variant_.value; }
 
-    const T& value() const noexcept { return is_pointer_ ? *variant_.pointer : variant_.value; }
+    T const& value() const noexcept { return is_pointer_ ? *variant_.pointer : variant_.value; }
 
 private:
     ValueOrRef(T value) : is_pointer_(false), variant_(std::move(value)) {}
@@ -37,7 +37,7 @@ private:
         T  value;
     };
     Variant    variant_;
-    const bool is_pointer_;
+    bool const is_pointer_;
 };
 
 } // namespace Details

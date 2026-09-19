@@ -75,7 +75,7 @@ Stacktrace Stacktrace::fromThread(std::thread::id id) {
     stackFrame.AddrStack.Offset = context.Rsp;
     stackFrame.AddrStack.Mode   = AddrModeFlat;
 
-    auto processHandle = GetCurrentProcess();
+    auto           processHandle = GetCurrentProcess();
     ll::Stacktrace result{};
 
     while (StackWalk64(
@@ -136,7 +136,7 @@ private:
 };
 
 struct DbgHelpState {
-    inline static SRWLOCK             srw = SRWLOCK_INIT;
+    inline static SRWLOCK srw = SRWLOCK_INIT;
     // DbgHelp uses the handle value as its session key. A duplicated process handle is unique and remains valid for
     // fInvadeProcess, preserving eager module loading without sharing another component's symbol session.
     inline static DbgHelpProcessHandle handle{};
@@ -155,8 +155,9 @@ public:
 
 void configureSymbols() noexcept {
     auto options = SymGetOptions();
-    options &= ~(SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
-               | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH);
+    options &=
+        ~(SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
+          | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH);
     options |= SYMOPT_CASE_INSENSITIVE | SYMOPT_UNDNAME | SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES
              | SYMOPT_OMAP_FIND_NEAREST | SYMOPT_EXACT_SYMBOLS | SYMOPT_FAIL_CRITICAL_ERRORS | SYMOPT_AUTO_PUBLICS
              | SYMOPT_NO_PROMPTS;

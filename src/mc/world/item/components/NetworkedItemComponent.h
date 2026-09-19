@@ -7,6 +7,6 @@ template <typename T>
 class NetworkedItemComponent : public ItemComponent {
 public:
     [[nodiscard]] bool                         isNetworkComponent() const override;
-    [[nodiscard]] std::unique_ptr<CompoundTag> buildNetworkTag(const cereal::ReflectionCtx&) const override;
-    bool initializeFromNetwork(const CompoundTag&, const cereal::ReflectionCtx&) override;
+    [[nodiscard]] std::unique_ptr<CompoundTag> buildNetworkTag(cereal::ReflectionCtx const&) const override;
+    bool initializeFromNetwork(CompoundTag const&, cereal::ReflectionCtx const&) override;
 };

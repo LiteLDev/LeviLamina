@@ -14,7 +14,7 @@ public:
     // NOLINTEND
 
 public:
-    static const size_t mWaitForZeroBit = 1ull << 63;
+    static size_t const mWaitForZeroBit = 1ull << 63;
 
     LLAPI void   lock_shared();
     LLNDAPI bool try_lock_shared();

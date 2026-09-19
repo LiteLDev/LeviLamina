@@ -1,12 +1,12 @@
-#include "ll/core/io/Output.h"
-#include "ll/core/io/LogPipe.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/core/io/LogPipe.h"
+#include "ll/core/io/Output.h"
 
 #include "Windows.h"
 #include "io.h"
 namespace ll::io {
-void defaultOutputImpl(std::string_view sv) { 
-    getDefaultLogPipe().write(sv); 
+void defaultOutputImpl(std::string_view sv) {
+    getDefaultLogPipe().write(sv);
     auto fd = _fileno(stdout);
     if (_isatty(fd)) {
         auto wstr = string_utils::str2wstr(sv);

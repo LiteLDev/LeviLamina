@@ -68,9 +68,9 @@ template <>
 
 ::std::unordered_map<::std::string_view, BlockFactory> const& getBlockFactories() {
     static ::std::unordered_map<::std::string_view, BlockFactory> const blockFactories = {
-        {"bush_block",       &registerArchetypeBlock<BushArchetype>     },
+        {      "bush_block",      &registerArchetypeBlock<BushArchetype>},
         {"flower_bed_block", &registerArchetypeBlock<FlowerBedArchetype>},
-        {"pumpkin_block",    &registerArchetypeBlock<PumpkinArchetype>  },
+        {   "pumpkin_block",   &registerArchetypeBlock<PumpkinArchetype>},
     };
     return blockFactories;
 }
