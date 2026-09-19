@@ -111,7 +111,6 @@ public:
         // NOLINTBEGIN
         MCAPI static void cycleDisplayItemFromLootTable(
             ::BlockSource&                        region,
-            ::VaultBlockState                     blockState,
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData
         );

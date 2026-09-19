@@ -83,8 +83,7 @@ MCNAPI void saveLevelData(
     bool                 ignoreCache
 );
 
-MCNAPI void
-saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
+MCNAPI void saveLevelDataToPath(::Core::Path const& fullPath, ::LevelData const& levelData);
 
 #ifdef LL_PLAT_C
 MCNAPI void saveLevelDisplayDataToCache(
