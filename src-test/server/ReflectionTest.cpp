@@ -41,8 +41,6 @@
 AnimatedImageData::AnimatedImageData()                                                                     = default;
 SerializedPersonaPieceHandle::SerializedPersonaPieceHandle()                                               = default;
 SemVersion::SemVersion()                                                                                   = default;
-SemVersion::SemVersion(SemVersion const&)                                                                  = default;
-SemVersion& SemVersion::operator=(SemVersion const&)                                                       = default;
 Bedrock::StaticOptimizedString::StaticOptimizedString()                                                    = default;
 SerializedPersonaPieceHandle& SerializedPersonaPieceHandle::operator=(SerializedPersonaPieceHandle const&) = default;
 
@@ -551,7 +549,9 @@ struct ll::reflection::Serializer<Bedrock::StaticOptimizedString> {
     }
 
     static ll::Expected<Bedrock::StaticOptimizedString> from_string(std::string_view value) {
-        return Bedrock::StaticOptimizedString{value, Bedrock::StaticOptimizedString::StorageType::Dynamic};
+        Bedrock::StaticOptimizedString result{};
+        result._set(value.data(), value.size(), Bedrock::StaticOptimizedString::StorageType::Dynamic);
+        return result;
     }
 
     template <typename J>
@@ -1183,9 +1183,10 @@ TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields)
     value.mGeometryDataMinEngineVersion         = MinEngineVersion::fromString("1.20.0-beta+build.1");
 
     auto const packId = mce::UUID::fromString("01234567-89ab-cdef-0123-456789abcdef");
-    value.mPersonaPieces->emplace_back("hair-piece", persona::PieceType::Hair, packId, false, "product-id");
-    value.mArmSizeType = persona::ArmSize::Type::Wide;
-    value.mPieceTintColors->emplace(persona::PieceType::Hair, TintMapColor{});
+    value.mPersonaPieces
+        ->emplace_back("hair-piece", SharedTypes::persona::PieceType::Hair, packId, false, "product-id");
+    value.mArmSizeType = SharedTypes::persona::ArmSizeType::Wide;
+    value.mPieceTintColors->emplace(SharedTypes::persona::PieceType::Hair, TintMapColor{});
     value.mSkinColor                  = mce::Color{0.1, 0.2, 0.3, 0.4};
     value.mIsTrustedSkin              = TrustedSkinFlag::True;
     value.mIsPremium                  = true;
@@ -1271,8 +1272,8 @@ TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields)
     ASSERT_EQ(parsed.mPersonaPieces->size(), 1);
     EXPECT_EQ(parsed.mPersonaPieces->at(0).mPieceId.get(), "hair-piece");
     EXPECT_EQ(parsed.mPersonaPieces->at(0).mPackId.get(), packId);
-    EXPECT_EQ(parsed.mArmSizeType, persona::ArmSize::Type::Wide);
-    EXPECT_TRUE(parsed.mPieceTintColors->contains(persona::PieceType::Hair));
+    EXPECT_EQ(parsed.mArmSizeType, SharedTypes::persona::ArmSizeType::Wide);
+    EXPECT_TRUE(parsed.mPieceTintColors->contains(SharedTypes::persona::PieceType::Hair));
     EXPECT_FLOAT_EQ(parsed.mSkinColor->r, 0.1f);
     EXPECT_EQ(parsed.mIsTrustedSkin, TrustedSkinFlag::True);
     EXPECT_TRUE(parsed.mIsPremium);
