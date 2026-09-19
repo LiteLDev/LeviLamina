@@ -41,8 +41,7 @@ public:
             ::Bedrock::DeviceIdErrorType::FileWriteError,
             ::Bedrock::DeviceIdErrorType::NoCacheFound,
             ::Bedrock::DeviceIdErrorType::CacheOpenFailed,
-            ::Bedrock::DeviceIdErrorType::ValidationFail>>
-    writeToCacheFolder(::Core::Path const& pathToCacheFolder);
+            ::Bedrock::DeviceIdErrorType::ValidationFail>> writeToCacheFolder(::Core::Path const& pathToCacheFolder);
 #endif
     // NOLINTEND
 

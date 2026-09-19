@@ -407,10 +407,10 @@ public:
             throw std::runtime_error("tag not hold an number");
         }
     }
-    [[nodiscard]] operator std::string const&() const { return get<StringTag>(); }
-    [[nodiscard]] operator std::string&() { return get<StringTag>(); }
-    [[nodiscard]] operator std::string&&() && { return std::move(get<StringTag>()); }
-    [[nodiscard]] operator std::string_view() const { return get<StringTag>(); }
+    [[nodiscard]]             operator std::string const&() const { return get<StringTag>(); }
+    [[nodiscard]]             operator std::string&() { return get<StringTag>(); }
+    [[nodiscard]]             operator std::string&&() && { return std::move(get<StringTag>()); }
+    [[nodiscard]]             operator std::string_view() const { return get<StringTag>(); }
     static CompoundTagVariant object(std::initializer_list<CompoundTag::TagMap::value_type> init = {}) {
         return CompoundTagVariant{std::in_place_type<CompoundTag>, init};
     }

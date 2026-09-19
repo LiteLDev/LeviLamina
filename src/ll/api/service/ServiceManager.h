@@ -46,20 +46,19 @@ public:
         if (auto service = getService<T>(); service) {
             fn(*service);
         }
-        auto listener =
-            event::MultiListener<event::server::ServiceRegisterEvent, event::server::ServiceUnregisterEvent>::create(
-                [fn](auto&& event) {
-                    if (event.service()->getServiceId() == T::ServiceId) {
-                        if constexpr (std::is_same_v<
-                                          std::remove_cvref_t<decltype((event))>,
-                                          event::server::ServiceUnregisterEvent>) {
-                            fn(nullptr);
-                        } else {
-                            fn(std::static_pointer_cast<T>(event.service()));
-                        }
-                    }
+        auto listener = event::MultiListener<
+            event::server::ServiceRegisterEvent,
+            event::server::ServiceUnregisterEvent>::create([fn](auto&& event) {
+            if (event.service()->getServiceId() == T::ServiceId) {
+                if constexpr (
+                    std::is_same_v<std::remove_cvref_t<decltype((event))>, event::server::ServiceUnregisterEvent>
+                ) {
+                    fn(nullptr);
+                } else {
+                    fn(std::static_pointer_cast<T>(event.service()));
                 }
-            );
+            }
+        });
         event::EventBus::getInstance().addListener(listener);
         return listener;
     }

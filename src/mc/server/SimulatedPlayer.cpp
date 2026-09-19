@@ -83,8 +83,9 @@ void SimulatedPlayer::simulateStopMoving() {
             if constexpr (!std::is_same_v<T, sim::VoidMoveIntent>) {
                 MobMovement::setLocalMoveVelocity(mEntityContext, 0.0f, 0.0f, 0.0f);
             }
-            if constexpr (std::is_same_v<T, sim::NavigateToEntityIntent>
-                          || std::is_same_v<T, sim::NavigateToPositionsIntent>) {
+            if constexpr (
+                std::is_same_v<T, sim::NavigateToEntityIntent> || std::is_same_v<T, sim::NavigateToPositionsIntent>
+            ) {
                 auto navComponent = getEntityContext().tryGetComponent<NavigationComponent>();
                 if (navComponent && navComponent->mNavigation) {
                     navComponent->mNavigation->stop(navComponent, *this);

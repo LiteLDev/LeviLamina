@@ -842,8 +842,8 @@ TEST(DataDrivenUITest, CustomFormComponentsCoverEveryStableOption) {
     auto             dropdownData = Dropdown{
         "Dropdown",
         dropdown,
-                    {{UIRawMessage::text("Two"), 2.0, UIRawMessage::text("Item description")}},
-                    {.description = "Dropdown description", .disabled = true, .visible = false}
+        {{UIRawMessage::text("Two"), 2.0, UIRawMessage::text("Item description")}},
+        {.description = "Dropdown description", .disabled = true, .visible = false}
     }.serialize();
     EXPECT_EQ(dropdownData["description"].asString(), "Dropdown description");
     EXPECT_TRUE(dropdownData["disabled"].asBool());
@@ -860,7 +860,7 @@ TEST(DataDrivenUITest, CustomFormComponentsCoverEveryStableOption) {
         slider,
         NumberValue{-1.0},
         NumberValue{5.0},
-                    {.description = "Slider description", .disabled = true, .step = 0.5, .visible = false}
+        {.description = "Slider description", .disabled = true, .step = 0.5, .visible = false}
     }.serialize();
     EXPECT_EQ(sliderData["description"].asString(), "Slider description");
     EXPECT_TRUE(sliderData["disabled"].asBool());
@@ -875,7 +875,7 @@ TEST(DataDrivenUITest, CustomFormComponentsCoverEveryStableOption) {
     auto             textFieldData = TextField{
         "Text",
         text,
-                    {.description = "Text description", .disabled = true, .visible = false}
+        {.description = "Text description", .disabled = true, .visible = false}
     }.serialize();
     EXPECT_EQ(textFieldData["description"].asString(), "Text description");
     EXPECT_TRUE(textFieldData["disabled"].asBool());
@@ -885,7 +885,7 @@ TEST(DataDrivenUITest, CustomFormComponentsCoverEveryStableOption) {
     auto              toggleData = Toggle{
         "Toggle",
         toggled,
-                     {.description = "Toggle description", .disabled = true, .visible = false}
+        {.description = "Toggle description", .disabled = true, .visible = false}
     }.serialize();
     EXPECT_EQ(toggleData["description"].asString(), "Toggle description");
     EXPECT_TRUE(toggleData["disabled"].asBool());

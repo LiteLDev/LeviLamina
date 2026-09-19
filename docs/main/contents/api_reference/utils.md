@@ -19,6 +19,7 @@ The Utils module provides various utility functions for system information, stri
 | `ll/api/utils/FontUtils.h` | Font enumeration |
 | `ll/api/utils/FileUtils.h` | File I/O utilities |
 | `ll/api/utils/Base64Utils.h` | Base64 encoding/decoding |
+| `ll/api/utils/CompressUtils.h` | Compression and decompression, streaming or one-shot |
 
 ## Key Functions
 
@@ -90,6 +91,25 @@ double randomReal(double min, double max);
 namespace ll::base64_utils {
 std::string encode(std::string_view data);
 std::string decode(std::string_view data);
+}
+```
+
+### CompressUtils
+
+```cpp
+namespace ll::compress_utils {
+enum class CompressFormat : int { Gzip, Zlib };
+enum class CompressLevel : int { Store, Fastest, Default, Best };
+
+std::string_view extensionOf(CompressFormat format);
+
+Expected<std::string> compress(std::string_view data, CompressFormat = CompressFormat::Gzip,
+                               CompressLevel = CompressLevel::Default);
+Expected<std::string> decompress(std::string_view data, CompressFormat = CompressFormat::Gzip,
+                                 size_t maxSize = 0);
+
+Expected<> compressFile(std::filesystem::path const& src, std::filesystem::path const& dst, ...);
+Expected<> decompressFile(std::filesystem::path const& src, std::filesystem::path const& dst, ...);
 }
 ```
 
@@ -178,6 +198,54 @@ void base64Example() {
     std::string decoded = ll::base64_utils::decode(encoded);
 }
 ```
+
+### Compression
+
+```cpp
+#include "ll/api/utils/CompressUtils.h"
+
+void compressExample() {
+    using namespace ll::compress_utils;
+
+    auto packed = compress("hello hello hello");
+    if (!packed) {
+        return;
+    }
+    auto original = decompress(*packed);
+}
+```
+
+For anything large, stream it instead so neither side is held in memory. Push input with `write` as
+often as needed, then call `finish` once:
+
+```cpp
+#include "ll/api/utils/CompressUtils.h"
+
+ll::Expected<> compressToSocket(std::string_view chunk1, std::string_view chunk2) {
+    using namespace ll::compress_utils;
+
+    Compressor codec{[&](std::string_view out) -> ll::Expected<> {
+        // Called repeatedly as output becomes available.
+        return sendBytes(out);
+    }};
+    if (auto res = codec.status(); !res) {
+        return res;
+    }
+    if (auto res = codec.write(chunk1); !res) {
+        return res;
+    }
+    if (auto res = codec.write(chunk2); !res) {
+        return res;
+    }
+    return codec.finish();
+}
+```
+
+`compressFile` and `decompressFile` wrap the same machinery for the file-to-file case, completing
+under a temporary name so an interrupted run leaves no half-written output behind.
+
+`decompress` caps its output, since a small input can expand enormously. Pass an explicit `maxSize`
+when the expected size is known.
 
 ## Related
 

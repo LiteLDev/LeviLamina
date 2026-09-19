@@ -15,6 +15,7 @@
 #include "ll/api/Versions.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/DefaultSinks.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/service/PlayerInfo.h"
@@ -108,10 +109,24 @@ void checkOtherBdsInstance() {
                     getLogger().error(
                         "Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid)
                     );
-                    char input;
-                    rewind(stdin);
-                    input = static_cast<char>(getchar());
-                    rewind(stdin);
+                    int input = getchar();
+                    if (input == EOF) {
+                        // Nobody is there to answer: stdin is closed or redirected, as it is under a
+                        // service wrapper or CI. Looping here would spin forever writing the prompt.
+                        clearerr(stdin);
+                        getLogger().warn("No console input available, leaving the other process alone"_tr());
+                        break;
+                    }
+                    // Drop the rest of the line so a multi-character answer is not read as answers to
+                    // the next questions.
+                    if (input != '\n') {
+                        while (true) {
+                            int rest = getchar();
+                            if (rest == '\n' || rest == EOF) {
+                                break;
+                            }
+                        }
+                    }
                     if (input == 'n' || input == 'N') {
                         break;
                     }
@@ -193,6 +208,8 @@ void leviLaminaMain() {
     }
 
     auto& config = getLeviConfig();
+
+    io::initDefaultFileSink(config.logRotate);
 
     // Update default language
     if (config.language != "system") {

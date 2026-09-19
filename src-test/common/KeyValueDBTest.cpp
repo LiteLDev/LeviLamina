@@ -18,8 +18,8 @@ public:
         static std::atomic_uint64_t sequence{0};
         auto const                  timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
         path                                  = std::filesystem::temp_directory_path()
-             / ("levilamina-key-value-db-test-" + std::to_string(timestamp) + "-"
-                + std::to_string(sequence.fetch_add(1, std::memory_order_relaxed)));
+                                              / ("levilamina-key-value-db-test-" + std::to_string(timestamp) + "-"
+                                                 + std::to_string(sequence.fetch_add(1, std::memory_order_relaxed)));
     }
 
     TemporaryDirectory(TemporaryDirectory const&)            = delete;

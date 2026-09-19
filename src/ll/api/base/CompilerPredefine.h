@@ -193,7 +193,7 @@ typedef const struct _s__ThrowInfo {
 // types, it has to match exactly.
 //
 __declspec(noreturn) extern "C" void __stdcall _CxxThrowException(void* pExceptionObject, _ThrowInfo* pThrowInfo);
-extern "C" int __cdecl __CxxExceptionFilter(void*, void*, int, void*);
+extern "C" int __cdecl                         __CxxExceptionFilter(void*, void*, int, void*);
 
 // Returns true if the object is really a C++ exception
 // If it is, stores the previous exception in *storage, and saves the current one

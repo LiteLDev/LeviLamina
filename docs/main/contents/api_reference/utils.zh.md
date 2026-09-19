@@ -19,6 +19,7 @@ Utils 模块提供了各种实用函数，包括系统信息、字符串操作�
 | `ll/api/utils/FontUtils.h` | 字体枚举 |
 | `ll/api/utils/FileUtils.h` | 文件 I/O 工具 |
 | `ll/api/utils/Base64Utils.h` | Base64 编码/解码 |
+| `ll/api/utils/CompressUtils.h` | 压缩与解压,支持流式和一次性两种用法 |
 
 ## 核心函数
 
@@ -90,6 +91,25 @@ double randomReal(double min, double max);
 namespace ll::base64_utils {
 std::string encode(std::string_view data);
 std::string decode(std::string_view data);
+}
+```
+
+### CompressUtils
+
+```cpp
+namespace ll::compress_utils {
+enum class CompressFormat : int { Gzip, Zlib };
+enum class CompressLevel : int { Store, Fastest, Default, Best };
+
+std::string_view extensionOf(CompressFormat format);
+
+Expected<std::string> compress(std::string_view data, CompressFormat = CompressFormat::Gzip,
+                               CompressLevel = CompressLevel::Default);
+Expected<std::string> decompress(std::string_view data, CompressFormat = CompressFormat::Gzip,
+                                 size_t maxSize = 0);
+
+Expected<> compressFile(std::filesystem::path const& src, std::filesystem::path const& dst, ...);
+Expected<> decompressFile(std::filesystem::path const& src, std::filesystem::path const& dst, ...);
 }
 ```
 
@@ -178,6 +198,52 @@ void base64Example() {
     std::string decoded = ll::base64_utils::decode(encoded);
 }
 ```
+
+### 压缩
+
+```cpp
+#include "ll/api/utils/CompressUtils.h"
+
+void compressExample() {
+    using namespace ll::compress_utils;
+
+    auto packed = compress("hello hello hello");
+    if (!packed) {
+        return;
+    }
+    auto original = decompress(*packed);
+}
+```
+
+数据较大时改用流式,这样两侧都不会整块驻留内存。按需多次调用 `write` 推入数据,最后调用一次 `finish`:
+
+```cpp
+#include "ll/api/utils/CompressUtils.h"
+
+ll::Expected<> compressToSocket(std::string_view chunk1, std::string_view chunk2) {
+    using namespace ll::compress_utils;
+
+    Compressor codec{[&](std::string_view out) -> ll::Expected<> {
+        // 每次有输出产生时都会被调用
+        return sendBytes(out);
+    }};
+    if (auto res = codec.status(); !res) {
+        return res;
+    }
+    if (auto res = codec.write(chunk1); !res) {
+        return res;
+    }
+    if (auto res = codec.write(chunk2); !res) {
+        return res;
+    }
+    return codec.finish();
+}
+```
+
+文件到文件的场景用 `compressFile` 和 `decompressFile`,它们基于同一套机制,并且先写入临时文件再改名,
+因此中途被打断不会留下半个文件。
+
+`decompress` 会限制输出大小,因为很小的输入也可能解压出极大的数据。已知预期大小时请显式传入 `maxSize`。
 
 ## 相关模块
 

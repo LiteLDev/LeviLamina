@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/io/RotatePolicy.h"
 #include "ll/api/reflection/Dispatcher.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/TargetedConfig.h"
@@ -15,9 +16,13 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 40;
+    int version = 41;
 
     std::string language = "system";
+
+    /// Controls how `logs/latest.log` is rotated and how long the archives are kept.
+    io::RotateConfig logRotate{};
+
     struct {
         struct CmdSetting {
             bool                   enabled    = true;

@@ -25,8 +25,7 @@ MCAPI ::brstd::flat_map<
     ::MovementAttributeEntry,
     ::std::less<::HashedString>,
     ::std::vector<::HashedString>,
-    ::std::vector<::MovementAttributeEntry>> const&
-getAttributeMap();
+    ::std::vector<::MovementAttributeEntry>> const& getAttributeMap();
 // NOLINTEND
 
 } // namespace MovementAttributesComponentExt

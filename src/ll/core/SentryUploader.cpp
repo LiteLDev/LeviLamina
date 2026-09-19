@@ -2,11 +2,10 @@
 #include <fstream>
 #include <sstream>
 
-#include <zlib.h>
-
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
+#include "ll/api/utils/CompressUtils.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/SentryUploader.h"
@@ -16,31 +15,6 @@ using json = nlohmann::json;
 
 namespace ll {
 auto sentryLogger = io::LoggerRegistry::getInstance().getOrCreate("SentryUploader");
-
-std::string compressDataGzip(std::string const& data) {
-    std::string compressedBuffer;
-    z_stream    deflateStream{};
-    if (deflateInit2(&deflateStream, Z_BEST_COMPRESSION, Z_DEFLATED, 15 + 16, 8, Z_DEFAULT_STRATEGY) != Z_OK) {
-        throw std::runtime_error("Failed to initialize compression stream");
-    }
-    if (data.size() > std::numeric_limits<uint>::max()) {
-        deflateEnd(&deflateStream);
-        throw std::runtime_error("Data too large for compression");
-    }
-    deflateStream.avail_in = static_cast<uInt>(data.size());
-    deflateStream.next_in  = (Bytef*)data.data();
-    size_t bufferSize      = data.size();
-    compressedBuffer.resize(bufferSize);
-    deflateStream.avail_out = static_cast<uInt>(bufferSize);
-    deflateStream.next_out  = (Bytef*)compressedBuffer.data();
-    if (deflate(&deflateStream, Z_FINISH) != Z_STREAM_END) {
-        deflateEnd(&deflateStream);
-        throw std::runtime_error("Gzip compression failed");
-    }
-    compressedBuffer.resize(deflateStream.total_out);
-    deflateEnd(&deflateStream);
-    return compressedBuffer;
-}
 
 SentryUploader::SentryUploader(
     std::string user,
@@ -99,8 +73,8 @@ void SentryUploader::uploadAll() {
     for (auto const& sentryConfig : mModsSentryConfig) {
         threads.emplace_back([=, this]() {
             try {
-                std::string url = sentryConfig.dsnInfo.protocol + "://" + sentryConfig.dsnInfo.host + "/api/"
-                                + sentryConfig.dsnInfo.projectId + "/envelope/";
+                std::string url     = sentryConfig.dsnInfo.protocol + "://" + sentryConfig.dsnInfo.host + "/api/"
+                                    + sentryConfig.dsnInfo.projectId + "/envelope/";
                 std::string eventId = mce::UUID::random().asString();
 
                 json envelopeHeader = {
@@ -173,7 +147,12 @@ void SentryUploader::sendToSentry(
                    << traceFileItemHeader.dump() << "\n"
                    << mAdditionalFileContent << "\n";
 
-    std::string compressedData = compressDataGzip(envelopeStream.str());
+    auto compressedData = compress_utils::compress(envelopeStream.str(), compress_utils::CompressFormat::Gzip);
+    if (!compressedData) {
+        sentryLogger->error("Mod: {} failed to compress the envelope"_tr(sentryInfo.modName));
+        compressedData.error().log(*sentryLogger);
+        return;
+    }
 
     auto response = cpr::Post(
         cpr::Url{
@@ -185,7 +164,7 @@ void SentryUploader::sendToSentry(
             {"X-Sentry-Auth",
              "Sentry sentry_version=7,sentry_client=sentry.dofes/0.1,sentry_key=" + sentryInfo.dsnInfo.publicKey},
         },
-        cpr::Body{compressedData}
+        cpr::Body{*compressedData}
     );
 
     if (response.status_code == 200) {

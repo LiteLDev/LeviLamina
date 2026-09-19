@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added log file rotation, configurable under `logRotate` in `Config.json`: `logs/latest.log` is now
+  rotated by size and by date, archives are gzip compressed except for the newest few, and old
+  archives are removed by count, age and total size
+- Added `ll::io::ConsoleSink` and `ll::io::RotatePolicy`, along with `getDefaultFileSink` and
+  `makeDefaultSinks` in `ll/api/io/DefaultSinks.h`
+- Added `ll/api/utils/CompressUtils.h`: `Compressor` and `Decompressor` for streaming, plus
+  `compress`, `decompress`, `compressFile` and `decompressFile` for one-shot use. Supports gzip,
+  zlib framing
+
+### Changed
+
+- `ll::io::FileSink` now takes a `RotatePolicy` in place of its open mode, defaulting to no rotation,
+  writes in binary mode so its size accounting matches the bytes on disk, and applies its flush level
+  to the file
+- `logs/latest.log` is no longer appended to across restarts; each run archives the previous file
+
+### Fixed
+
+- Fixed the duplicate-instance prompt spinning forever when stdin is closed or redirected, as it is
+  under a service wrapper or CI: `getchar` returned EOF, which matched none of the answers, so the
+  question was re-asked as fast as the log could be written
+- Fixed the crash report upload failing on envelopes that do not compress: its gzip buffer was sized
+  at the input length, which a deflate stream can exceed. It now shares the compression utilities
+  rather than carrying its own copy
+
+### Removed
+
+- Removed `ll::io::DefaultSink`, which mixed console and file output into one sink and left
+  `setFormatter` and `setFlushLevel` without effect on the log file. Use `ConsoleSink` together with
+  `getDefaultFileSink`, or `makeDefaultSinks` for both
+
 ## [26.51.1] - 2026-09-19
 
 ### Added

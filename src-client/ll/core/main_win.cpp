@@ -3,6 +3,7 @@
 #include "ll/api/Versions.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/DefaultSinks.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GamingStatus.h"
@@ -78,6 +79,8 @@ void leviLaminaMain() {
     }
 
     auto& config = getLeviConfig();
+
+    io::initDefaultFileSink(config.logRotate);
 
     if (config.language != "system") {
         i18n::defaultLocaleCode() = config.language;

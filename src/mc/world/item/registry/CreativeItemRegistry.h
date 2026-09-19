@@ -54,8 +54,7 @@ public:
         ::gsl::not_null<::CreativeItemGroupCategory*>,
         ::std::less<::SharedTypes::CreativeItemCategory>,
         ::std::vector<::SharedTypes::CreativeItemCategory>,
-        ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>>
-    createCategories();
+        ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>> createCategories();
 
 #ifdef LL_PLAT_S
     MCAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;

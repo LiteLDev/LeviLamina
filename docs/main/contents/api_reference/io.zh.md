@@ -14,7 +14,10 @@ IO 模块提供了线程安全的格式化日志系统，支持多个输出目�
 | `ll/api/io/LogLevel.h` | 日志严重性级别 |
 | `ll/api/io/LoggerRegistry.h` | 日志实例管理 |
 | `ll/api/io/Sink.h` | 日志输出目标接口 |
-| `ll/api/io/FileSink.h` | 基于文件的日志输出 |
+| `ll/api/io/FileSink.h` | 基于文件的日志输出，可选轮转 |
+| `ll/api/io/ConsoleSink.h` | 控制台日志输出 |
+| `ll/api/io/DefaultSinks.h` | 日志器默认使用的输出目标 |
+| `ll/api/io/RotatePolicy.h` | 日志文件何时轮转、归档保留多久 |
 | `ll/api/io/FileUtils.h` | 文件 I/O 工具 |
 | `ll/api/io/StdoutRedirector.h` | 将 stdout 重定向到日志 |
 
@@ -123,12 +126,55 @@ void configureLogger(ll::io::Logger& logger) {
 ```cpp
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/FileSink.h"
+#include "ll/api/io/PatternFormatter.h"
 
 void addFileSink(ll::io::Logger& logger) {
-    auto fileSink = std::make_shared<ll::io::FileSink>("logs/mymod.log");
+    auto fileSink = std::make_shared<ll::io::FileSink>(
+        "logs/mymod.log",
+        makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false)
+    );
     logger.addSink(fileSink);
 }
 ```
+
+### 轮转日志文件
+
+不传入 `RotatePolicy` 时，`FileSink` 只会一直追加，不做切分。`RotatePolicy{}` 的各项默认值本身就是一套
+可直接使用的配置，所以通常只要把它传进去就够了。策略中的字段在三个不同时机被读取：`rotateOnOpen` 只在
+打开文件时读取一次，`maxFileSize` 和 `interval` 在每条消息写入前判断，压缩与清理相关的设置则在归档产生
+之后异步执行。
+
+```cpp
+#include "ll/api/io/FileSink.h"
+#include "ll/api/io/PatternFormatter.h"
+#include "ll/api/io/RotatePolicy.h"
+
+void addRotatingFileSink(ll::io::Logger& logger) {
+    ll::io::RotatePolicy policy{};
+    policy.maxFileSize = 8ull * 1024 * 1024;             // 超过 8 MiB 时轮转
+    policy.interval    = ll::io::RotateInterval::Daily;  // 跨天时也轮转
+    policy.maxFiles    = 64;                             // 最多保留 64 个归档
+
+    logger.addSink(
+        std::make_shared<ll::io::FileSink>(
+            "logs/mymod.log",
+            makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false),
+            policy
+        )
+    );
+}
+```
+
+大小与时间两个触发条件相互独立，哪个先满足就由它触发轮转。归档命名形如 `2026-09-19.log`，同一周期内
+的后续轮转依次加上 `.1`、`.2`。
+
+`maxFiles`、`maxAgeDays` 和 `totalSizeCap` 各自独立生效，最终取并集删除，因此放宽其中一个不会让另外
+两个失效；将任意一项设为 0 即关闭该维度，将 `cleanup` 设为 false 则完全不删除任何文件。清理只会处理
+符合归档命名规则的文件，同目录下的其他文件不受影响。
+
+归档会在后台线程中被 gzip 压缩，但最新的 `keepUncompressed` 个除外，它们保持明文，便于直接搜索最近的
+日志而无需解压。由于 `totalSizeCap` 统计的是压缩后的体积，关闭 `compress` 会明显缩短该上限内能保留的
+历史长度。
 
 ### 条件日志记录
 

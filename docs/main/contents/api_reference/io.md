@@ -14,7 +14,10 @@ The IO module provides a thread-safe, formatted logging system with multiple sin
 | `ll/api/io/LogLevel.h` | Log severity levels |
 | `ll/api/io/LoggerRegistry.h` | Logger instance management |
 | `ll/api/io/Sink.h` | Log output sink interface |
-| `ll/api/io/FileSink.h` | File-based log sink |
+| `ll/api/io/FileSink.h` | File-based log sink, with optional rotation |
+| `ll/api/io/ConsoleSink.h` | Console log sink |
+| `ll/api/io/DefaultSinks.h` | The sinks a logger starts out with |
+| `ll/api/io/RotatePolicy.h` | When a log file rotates and how long archives are kept |
 | `ll/api/io/FileUtils.h` | File I/O utilities |
 | `ll/api/io/StdoutRedirector.h` | Redirect stdout to logger |
 
@@ -123,12 +126,56 @@ void configureLogger(ll::io::Logger& logger) {
 ```cpp
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/FileSink.h"
+#include "ll/api/io/PatternFormatter.h"
 
 void addFileSink(ll::io::Logger& logger) {
-    auto fileSink = std::make_shared<ll::io::FileSink>("logs/mymod.log");
+    auto fileSink = std::make_shared<ll::io::FileSink>(
+        "logs/mymod.log",
+        makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false)
+    );
     logger.addSink(fileSink);
 }
 ```
+
+### Rotating a Log File
+
+A `FileSink` only appends unless it is given a `RotatePolicy`. `RotatePolicy{}`'s own defaults are
+meant to be usable as they are, so passing one is normally all it takes. Its fields are read at three
+different times: `rotateOnOpen` once when the file opens, `maxFileSize` and `interval` before every
+message, and the compression and retention settings asynchronously after an archive is created.
+
+```cpp
+#include "ll/api/io/FileSink.h"
+#include "ll/api/io/PatternFormatter.h"
+#include "ll/api/io/RotatePolicy.h"
+
+void addRotatingFileSink(ll::io::Logger& logger) {
+    ll::io::RotatePolicy policy{};
+    policy.maxFileSize = 8ull * 1024 * 1024;        // rotate past 8 MiB
+    policy.interval    = ll::io::RotateInterval::Daily;  // and when the date changes
+    policy.maxFiles    = 64;                        // keep at most 64 archives
+
+    logger.addSink(
+        std::make_shared<ll::io::FileSink>(
+            "logs/mymod.log",
+            makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false),
+            policy
+        )
+    );
+}
+```
+
+The size and time triggers are independent, so whichever comes first rotates the file. Archives are
+named `2026-09-19.log`, with `.1`, `.2` and so on for later rotations within the same interval.
+
+`maxFiles`, `maxAgeDays` and `totalSizeCap` each contribute independently and their results are
+unioned, so widening one never disables another; set any of them to 0 to drop that limit, or set
+`cleanup` to false to stop deleting anything. Retention only ever considers files matching the
+archive naming scheme, so unrelated files in the same directory are left alone.
+
+Archives are gzip compressed on a background thread, except for the newest `keepUncompressed` of
+them, which stay plain so recent output remains greppable without unpacking it. Since `totalSizeCap`
+weighs compressed sizes, turning `compress` off shortens how much history fits within it.
 
 ### Conditional Logging
 
