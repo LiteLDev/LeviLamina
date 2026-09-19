@@ -36,7 +36,7 @@ class ServerResourcePointer;
 class Buffer;
 
 template <typename T>
-struct ResourceHandleTrackerValidator; // 主模板不定义，强制每个 T 必须显式特化
+struct ResourceHandleTrackerValidator;
 
 template <typename T>
 struct ResourceBlockTemplate {
@@ -72,7 +72,7 @@ struct ResourceHandleTrackerValidator<mce::ImmediateBuffer> {
     using TrackerType     = PerFrameHandleTracker;
 };
 
-// ---- Client 端 Texture handle（variant 包装版）----
+
 template <>
 struct ResourceHandleTrackerValidator<
     std::variant<std::monostate, mce::Texture, mce::ClientResourcePointer<dragon::ResolvedTextureResource>>> {
@@ -80,7 +80,7 @@ struct ResourceHandleTrackerValidator<
     using TrackerType     = PerFrameHandleTracker;
 };
 
-// ---- Client 端 Buffer handle（variant 包装 Vertex/Index）----
+
 template <>
 struct ResourceHandleTrackerValidator<std::variant<
     std::monostate,
@@ -90,8 +90,6 @@ struct ResourceHandleTrackerValidator<std::variant<
     using DescriptionType = dragon::BufferDescription;
     using TrackerType     = PerFrameHandleTracker;
 };
-
-// ---- 以下五个：内部直连资源，一律 UncheckedHandleTracker ----
 
 template <>
 struct ResourceHandleTrackerValidator<dragon::ResolvedVertexBufferResource> {
