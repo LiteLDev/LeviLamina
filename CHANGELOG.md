@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.51.1] - 2026-09-19
+
+### Added
+
+- Added functions needed by [LeviStone](https://github.com/LiteLDev/LeviStone)
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
 ## [26.51.0] - 2026-09-18
 
 ### Changed
@@ -1888,7 +1898,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.1...HEAD
+[26.51.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.0...v26.51.1
 [26.51.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.6...v26.51.0
 [26.40.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.5...v26.40.6
 [26.40.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.4...v26.40.5
