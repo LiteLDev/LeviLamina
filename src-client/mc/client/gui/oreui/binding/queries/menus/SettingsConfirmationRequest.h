@@ -17,10 +17,10 @@ class SettingsConfirmationRequest : public ::OreUI::PropertyObject<::OreUI::Sett
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mTitle;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mDescription;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mAcceptLabel;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mCancelLabel;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mTitle;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mDescription;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mAcceptLabel;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mCancelLabel;
     // NOLINTEND
 
 public:

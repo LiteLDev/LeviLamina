@@ -38,6 +38,7 @@ public:
     ::ll::TypedStorage<1, 1, schar>                        mRotX;
     ::ll::TypedStorage<1, 1, schar>                        mRotY;
     ::ll::TypedStorage<1, 1, schar>                        mRotYHead;
-    ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData>     mPreviousData;
+    ::ll::TypedStorage<8, 8, uint64>                       mTicks;
+    ::ll::TypedStorage<8, 40, ::MoveActorAbsoluteData>     mPreviousData;
     // NOLINTEND
 };

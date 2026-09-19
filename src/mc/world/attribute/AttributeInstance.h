@@ -11,6 +11,7 @@ class AttributeInstanceHandle;
 class AttributeModifier;
 class TemporalAttributeBuff;
 struct AttributeModificationContext;
+namespace mce { class UUID; }
 // clang-format on
 
 class AttributeInstance {
@@ -42,6 +43,7 @@ public:
             ::ll::TypedStorage<4, 4, float> mCurrentValue;
         };
     };
+    ::ll::TypedStorage<1, 1, bool> mValueChangedDuringTick;
     // NOLINTEND
 
 public:
@@ -67,17 +69,25 @@ public:
 
     MCAPI ::std::optional<float> addBuff(::AttributeBuff const& buff, ::AttributeModificationContext context);
 
+    MCAPI void addModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
+
     MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier, ::AttributeModificationContext context);
 
     MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
 
-    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
+    MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
     MCAPI ::AttributeInstance& operator=(::AttributeInstance const&);
 
     MCAPI void removeBuff(::AttributeBuff const& buff);
 
+    MCAPI bool removeModifier(::mce::UUID const& id, ::AttributeModificationContext context);
+
     MCAPI void removeModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
+
+    MCAPI void removeModifier(::std::shared_ptr<::AttributeModifier> modifier, ::AttributeModificationContext context);
+
+    MCAPI void removeModifiers(::AttributeModificationContext context);
 
     MCAPI void updateModifier(::AttributeModifier const& takeOver, ::AttributeModificationContext context);
     // NOLINTEND

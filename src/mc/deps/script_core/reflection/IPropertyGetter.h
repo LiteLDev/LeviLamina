@@ -11,7 +11,8 @@ class IPropertyGetter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2af62d;
+    ::ll::UntypedStorage<1, 1>  mUnk2af62d;
+    ::ll::UntypedStorage<8, 24> mUnka968c5;
     // NOLINTEND
 
 public:
@@ -34,6 +35,12 @@ public:
     virtual ::Scripting::Reflection::ReturnPolicy getReturnPolicy() const = 0;
 
     virtual bool isReferenceType() const = 0;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

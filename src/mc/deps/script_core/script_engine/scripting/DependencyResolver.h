@@ -4,9 +4,11 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ModuleResolveResult; }
 namespace Scripting { struct VersionRequestKey; }
 namespace Scripting { struct VersionRequestedBy; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -28,6 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::vector<::Scripting::ModuleDescriptor> _getDependencyChain(
+        ::Scripting::ModuleDescriptor const& firstRequest,
+        ::mce::UUID const                    originalRequestorUUID,
+        ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const&
+            versionRequestTable
+    ) const;
+
     MCNAPI ::Scripting::ModuleResolveResult _resolveDependencyRequests(
         ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const&
             versionRequestTable

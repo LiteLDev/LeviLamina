@@ -67,7 +67,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $setContainerChanged(int slot);
 
-    MCFOLD void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
     MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 

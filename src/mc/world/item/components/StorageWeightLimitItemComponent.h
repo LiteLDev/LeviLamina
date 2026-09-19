@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -27,6 +28,10 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
+
+#ifdef LL_PLAT_S
+    MCAPI static ::HashedString const& getIdentifier();
+#endif
     // NOLINTEND
 
 public:

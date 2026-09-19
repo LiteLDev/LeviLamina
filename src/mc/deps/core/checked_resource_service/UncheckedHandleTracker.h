@@ -4,6 +4,11 @@
 
 namespace mce {
 
-class UncheckedHandleTracker {};
+class UncheckedHandleTracker {
+public:
+    bool mIsValid;
+
+    UncheckedHandleTracker() : mIsValid(false) {}
+};
 
 } // namespace mce

@@ -31,14 +31,28 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWidgetCreateOptions& operator=(ScriptWidgetCreateOptions const&);
     ScriptWidgetCreateOptions(ScriptWidgetCreateOptions const&);
     ScriptWidgetCreateOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
+
+    MCNAPI ~ScriptWidgetCreateOptions();
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

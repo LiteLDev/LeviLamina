@@ -55,10 +55,6 @@ public:
 
     MCAPI static ::std::string const& TAG_TRIM_PATTERN();
 
-    MCAPI static ::std::string const& UPGRADE_DESCRIPTION();
-
-    MCAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
-
     MCAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
     // NOLINTEND
 

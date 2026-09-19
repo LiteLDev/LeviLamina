@@ -9,10 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
-class InteractionResult;
+class Interaction;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
@@ -52,7 +51,7 @@ public:
 
     MCAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
 
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
 
     MCAPI ::std::string const& loadDisplayName(::Actor& owner);
 

@@ -16,12 +16,14 @@
 // auto generated forward declare list
 // clang-format off
 class HIDController;
+class IAppPlatformImpl;
 class SecureStorage;
 class SecureStorageKey;
 class WebviewInterface;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 namespace Webview { class PlatformArguments; }
+namespace dragon::platform { struct SurfaceParameters; }
 // clang-format on
 
 class AppPlatform_win32 : public ::AppPlatformWindows {
@@ -109,6 +111,8 @@ public:
 
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
+    virtual ::std::unique_ptr<::SecureStorage> getSharedSecureStorage() /*override*/;
+
     virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) /*override*/;
 
     virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
@@ -135,7 +139,7 @@ public:
 
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const /*override*/;
+    virtual ::dragon::platform::SurfaceParameters getRenderSurfaceParameters() const /*override*/;
 
     virtual ::std::optional<bool> isOnWifiConnectionTelemetryValue() /*override*/;
 
@@ -150,8 +154,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AppPlatform_win32(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
+        ::std::unique_ptr<::IAppPlatformImpl> impl,
+        ::HWND__*                             hWnd,
+        ::std::string const&                  dataFolder,
         ::std::string_view,
         ::std::shared_ptr<::HIDController> HIDControllerWinRT,
         int                                screenWidth,
@@ -169,8 +174,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
+        ::std::unique_ptr<::IAppPlatformImpl> impl,
+        ::HWND__*                             hWnd,
+        ::std::string const&                  dataFolder,
         ::std::string_view,
         ::std::shared_ptr<::HIDController> HIDControllerWinRT,
         int                                screenWidth,
@@ -245,6 +251,8 @@ public:
 
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
+    MCAPI ::std::unique_ptr<::SecureStorage> $getSharedSecureStorage();
+
     MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
     MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
@@ -271,7 +279,7 @@ public:
 
     MCAPI bool $getPlatformTTSEnabled() const;
 
-    MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
+    MCAPI ::dragon::platform::SurfaceParameters $getRenderSurfaceParameters() const;
 
     MCAPI ::std::optional<bool> $isOnWifiConnectionTelemetryValue();
 

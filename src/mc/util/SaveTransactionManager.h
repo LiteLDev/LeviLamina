@@ -15,7 +15,7 @@ class SaveTransactionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnk5ac7c8;
+    ::ll::UntypedStorage<8, 80>  mUnkd2a688;
     ::ll::UntypedStorage<8, 336> mUnk54446c;
     ::ll::UntypedStorage<8, 64>  mUnk97a76d;
     // NOLINTEND

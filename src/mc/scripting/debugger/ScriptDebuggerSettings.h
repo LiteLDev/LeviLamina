@@ -16,6 +16,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                            mForceInboundDebugPort;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mHost;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>           mPort;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mListenAddress;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mPasscode;
     // NOLINTEND
 

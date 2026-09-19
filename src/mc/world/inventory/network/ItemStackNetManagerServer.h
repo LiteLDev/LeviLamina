@@ -89,6 +89,10 @@ public:
 
     MCAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
 
+#ifdef LL_PLAT_S
+    MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
+#endif
+
     MCAPI void handleRequest(
         ::std::unique_ptr<::ItemStackRequestData>            request,
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor

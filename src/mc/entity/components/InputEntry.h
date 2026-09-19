@@ -2,18 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/input/InputMode.h"
+#include "mc/network/packet/PlayerAuthInputPacketPayload.h"
+
 struct InputEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1256a7;
-    ::ll::UntypedStorage<8, 16> mUnkbd66e3;
-    ::ll::UntypedStorage<4, 8>  mUnk5ce573;
+    ::ll::TypedStorage<4, 4, ::InputMode>                                                        mInputMode;
+    ::ll::TypedStorage<8, 16, ::Bedrock::EnumSet<::PlayerAuthInputPacketPayload::InputData, 66>> mInputData;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                             mRawMoveVector;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InputEntry& operator=(InputEntry const&);
-    InputEntry(InputEntry const&);
-    InputEntry();
 };

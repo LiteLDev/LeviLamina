@@ -3,10 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/actor/utilities/AttackableTargetOptions.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/v1_21_130/actor/brain/MemoryIdentifierDefinition.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
-#include "mc/deps/shared_types/v1_26_0/actor/brain/BaseSensorEntryDefinition.h"
+#include "mc/deps/shared_types/v1_26_0/actor/brain/ResultSensorEntryDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +19,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_30::Brain::MemorySensors {
 
 struct FindNearestAttackableEntitySensorEntryDefinition
-: public ::SharedTypes::v1_26_0::Brain::BaseSensorEntryDefinition<
+: public ::SharedTypes::v1_26_0::Brain::ResultSensorEntryDefinition<
       ::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestAttackableEntitySensorEntryDefinition> {
 public:
     // FindNearestAttackableEntitySensorEntryDefinition inner types define
@@ -39,18 +40,8 @@ public:
                                                                          mSearchPosMemory;
     ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mTargetFilters;
     ::ll::TypedStorage<4, 12, ::Vec3>                                    mSensingRange;
-    ::ll::TypedStorage<1, 1, bool>                                       mCanSwitchTargets;
-    ::ll::TypedStorage<1, 1, bool>                                       mCanTargetOwner;
-    ::ll::TypedStorage<1, 1, bool>                                       mCanTargetInvisible;
-    ::ll::TypedStorage<1, 1, bool>                                       mCanTargetPlayingDead;
-    ::ll::TypedStorage<1, 1, bool>                                       mCanIgnoreTargetDisguises;
-    ::ll::TypedStorage<1, 1, bool>                                       mCanIgnoreLineOfSight;
-    ::ll::TypedStorage<1, 1, bool>                                       mCanIgnoreSunlight;
-    ::ll::TypedStorage<1, 1, bool>                                       mRequireUnobstructedPath;
+    ::ll::TypedStorage<4, 20, ::AttackableTargetOptions>                 mAttackableTargetOptions;
     ::ll::TypedStorage<4, 4, float>                                      mSecondsBeforeForgettingLostTarget;
-    ::ll::TypedStorage<4, 4, float>                                      mTargetSneakingVisibilityMultiplier;
-    ::ll::TypedStorage<4, 4, float>                                      mTargetInvisibleVisibilityMultiplier;
-    ::ll::TypedStorage<4, 4, float>                                      mPlayerDisguisedVisibilityMultiplier;
     ::ll::TypedStorage<4, 4, float>                                      mSensingFOVDegrees;
     // NOLINTEND
 
@@ -83,13 +74,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& ATTACKABLE_TARGET_OPTIONS_NAME();
+
     MCAPI static ::std::string_view const& CAN_IGNORE_LINE_OF_SIGHT_NAME();
 
     MCAPI static ::std::string_view const& CAN_IGNORE_SUNLIGHT_NAME();
 
     MCAPI static ::std::string_view const& CAN_IGNORE_TARGET_DISGUISES_NAME();
-
-    MCAPI static ::std::string_view const& CAN_SWITCH_TARGETS_NAME();
 
     MCAPI static ::std::string_view const& CAN_TARGET_INVISIBLE_NAME();
 

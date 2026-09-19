@@ -46,4 +46,10 @@ public:
 
     MCFOLD void $markUnused(::std::string_view) const;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

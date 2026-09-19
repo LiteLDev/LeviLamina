@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/InstancedThreadLocalValue.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/chunk/ChunkSource.h"
@@ -55,7 +54,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureFeatureRegistry>> mStructureFeatureRegistry;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                  mCreateStructuresAndVisitedPositionsMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                 mCreateStructuresAndVisitedPositionsMutex;
     ::ll::TypedStorage<8, 72, ::std::condition_variable>                    mStructureInstanceWaitVar;
     ::ll::TypedStorage<4, 4, ::std::atomic<int>>                            mActiveStructureInstanceCreateCount;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>             mVisitedPositions;
@@ -151,7 +150,7 @@ public:
 
     MCAPI ::std::vector<short> computeChunkHeightMap(::ChunkPos const& pos);
 
-    MCAPI void postProcessStructureFeatures(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
+    MCAPI void postProcessStructureFeatures(::BlockSource& region, ::Random& random, uint seed, int chunkX, int chunkZ);
 
     MCAPI void postProcessStructures(::BlockSource& region, ::Random&, int chunkX, int chunkZ);
 
@@ -164,7 +163,7 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
     );
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void tick();
 #endif
 

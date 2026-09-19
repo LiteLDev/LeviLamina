@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Random;
 namespace ParticleSystem { class EmitterInitialComponentBase; }
 namespace ParticleSystem { class EmitterLifetimeComponentBase; }
 namespace ParticleSystem { class EmitterRateComponentBase; }
@@ -65,12 +64,6 @@ public:
     );
 
     MCAPI bool isManualEmitter() const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Random>& mRandomNumberGenerator();
     // NOLINTEND
 };
 

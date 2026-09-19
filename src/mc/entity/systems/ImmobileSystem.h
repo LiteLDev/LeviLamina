@@ -12,15 +12,12 @@ struct LocalMoveVelocityComponent;
 struct MobIsJumpingFlagComponent;
 struct MobRotationComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class ImmobileSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void doImmobileSystem(
         ::StrictEntityContext const&                  context,
         ::LocalMoveVelocityComponent&                 localMoveVelocityComponent,

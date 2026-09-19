@@ -47,8 +47,6 @@ public:
 
     MCNAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
 
-    MCNAPI ::std::unique_ptr<::Path> makeCopy() const;
-
     MCNAPI void setSize(uint64 length);
 
     MCNAPI ~Path();

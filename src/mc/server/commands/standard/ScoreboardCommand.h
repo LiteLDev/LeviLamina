@@ -104,6 +104,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _generateCumulativeOutput(
+        ::ScoreboardCommand::SetScoreOutput const& cumulativeOutput,
+        ::Objective const&                         objective,
+        ::CommandOutput&                           output
+    ) const;
+
     MCAPI ::Objective* _getObjective(
         ::Scoreboard const&  scoreboard,
         ::std::string const& name,

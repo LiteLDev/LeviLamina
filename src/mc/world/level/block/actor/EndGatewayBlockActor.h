@@ -57,6 +57,9 @@ public:
 
     MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
 
+    MCAPI static ::BlockPos
+    findTallestBlock(::BlockSource& region, ::BlockPos const& around, int dist, bool allowBedrock);
+
     MCAPI static ::BlockPos findValidSpawnAround(
         ::BlockSource&    region,
         ::BlockPos const& around,

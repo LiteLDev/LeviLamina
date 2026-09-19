@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
-#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 
@@ -13,7 +12,6 @@
 class BlockActor;
 class BlockPos;
 class BlockSource;
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -30,16 +28,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<int> _tryGetFillLevel() const;
-
-    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getCustomColor() const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getFillLevel() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::ScriptModuleMinecraft::ScriptFluidType
+    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronFluidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
 
     MCAPI static ::std::optional<
@@ -55,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/CommonPlatform.h"
-#include "mc/deps/core/platform/DisplayOrientation.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/ResetCallbackObject.h"
@@ -16,9 +15,9 @@ class AppPlatform_GameCore;
 class GameControllerHandler_GameCore;
 class HIDControllerGameCoreDesktop;
 class IMinecraftEventing;
-class PushNotificationMessage;
 struct XTaskQueueObject;
 namespace Bedrock { class ActivationArguments; }
+namespace Bedrock { class GameHolder; }
 // clang-format on
 
 namespace Bedrock {
@@ -52,16 +51,18 @@ public:
         ::std::queue<
             ::brstd::move_only_function<void(::IMinecraftEventing*)>,
             ::std::deque<::brstd::move_only_function<void(::IMinecraftEventing*)>>>>
-                                                   mEvents;
-    ::ll::TypedStorage<1, 1, bool>                 mMouseInsideClient;
-    ::ll::TypedStorage<1, 1, bool>                 mInactiveScrollEnabled;
-    ::ll::TypedStorage<1, 1, bool>                 mInvertScrollEnabled;
-    ::ll::TypedStorage<1, 1, bool>                 mRemoteSession;
-    ::ll::TypedStorage<1, 1, bool>                 mMouseClickLockEnabled;
-    ::ll::TypedStorage<1, 1, bool>                 mMouseSonarEnabled;
-    ::ll::TypedStorage<4, 4, uint>                 mMouseClickLockTime;
-    ::ll::TypedStorage<4, 4, float>                mKeyboardHeight;
-    ::ll::TypedStorage<8, 8, ::winrt::event_token> mThemeChangeRevoker;
+                                                                                         mEvents;
+    ::ll::TypedStorage<1, 1, bool>                                                       mMouseInsideClient;
+    ::ll::TypedStorage<1, 1, bool>                                                       mInactiveScrollEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                       mInvertScrollEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                       mRemoteSession;
+    ::ll::TypedStorage<1, 1, bool>                                                       mMouseClickLockEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                       mMouseSonarEnabled;
+    ::ll::TypedStorage<4, 4, uint>                                                       mMouseClickLockTime;
+    ::ll::TypedStorage<4, 4, float>                                                      mKeyboardHeight;
+    ::ll::TypedStorage<8, 8, ::HICON__*>                                                 mCurrentCursor;
+    ::ll::TypedStorage<8, 8, ::winrt::event_token>                                       mThemeChangeRevoker;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Bedrock::GameHolder>>> mHolder;
     // NOLINTEND
 
 public:
@@ -73,30 +74,6 @@ public:
 
     virtual bool updatePlatformGraphicsInfo() /*override*/;
 
-    virtual void issueShutdown() /*override*/;
-
-    virtual void issueBack() /*override*/;
-
-    virtual void issueLowMemory() /*override*/;
-
-    virtual void issueFocusLost() /*override*/;
-
-    virtual void issueFocusGained() /*override*/;
-
-    virtual void issueInputPaneVisible() /*override*/;
-
-    virtual void issueInputPaneHidden() /*override*/;
-
-    virtual void issueSuspendWarning() /*override*/;
-
-    virtual void issueVisibilityChange(bool visible) /*override*/;
-
-    virtual void issueWindowSizeChange(int width, int height) /*override*/;
-
-    virtual void issueDPIChange(float dpi) /*override*/;
-
-    virtual void issueOrientationChange(::DisplayOrientation const& orientation) /*override*/;
-
     virtual bool _preAppCreation(::Bedrock::ActivationArguments const&) /*override*/;
 
     virtual void _processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
@@ -105,15 +82,7 @@ public:
 
     virtual bool _update(bool canRender) /*override*/;
 
-    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const& msg) /*override*/;
-
     virtual void notifyUriListeners_Shim(::ActivationUri const& uri) /*override*/;
-
-    virtual ::std::string getDeviceId_Shim() const /*override*/;
-
-    virtual bool _isShuttingDown() /*override*/;
-
-    virtual bool _isShutdown() /*override*/;
 
     virtual void resetCallback() /*override*/;
     // NOLINTEND
@@ -143,30 +112,6 @@ public:
 
     MCAPI bool $updatePlatformGraphicsInfo();
 
-    MCAPI void $issueShutdown();
-
-    MCAPI void $issueBack();
-
-    MCFOLD void $issueLowMemory();
-
-    MCAPI void $issueFocusLost();
-
-    MCAPI void $issueFocusGained();
-
-    MCFOLD void $issueInputPaneVisible();
-
-    MCFOLD void $issueInputPaneHidden();
-
-    MCFOLD void $issueSuspendWarning();
-
-    MCAPI void $issueVisibilityChange(bool visible);
-
-    MCAPI void $issueWindowSizeChange(int width, int height);
-
-    MCAPI void $issueDPIChange(float dpi);
-
-    MCAPI void $issueOrientationChange(::DisplayOrientation const& orientation);
-
     MCAPI bool $_preAppCreation(::Bedrock::ActivationArguments const&);
 
     MCAPI void $_processActivationArguments(::Bedrock::ActivationArguments const& args);
@@ -175,15 +120,7 @@ public:
 
     MCAPI bool $_update(bool canRender);
 
-    MCAPI void $pushNotificationReceived_Shim(::PushNotificationMessage const& msg);
-
     MCAPI void $notifyUriListeners_Shim(::ActivationUri const& uri);
-
-    MCAPI ::std::string $getDeviceId_Shim() const;
-
-    MCFOLD bool $_isShuttingDown();
-
-    MCFOLD bool $_isShutdown();
 
     MCFOLD void $resetCallback();
     // NOLINTEND

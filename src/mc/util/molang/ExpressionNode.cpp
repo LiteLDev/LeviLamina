@@ -47,9 +47,15 @@ ExpressionNode::queryFunctionAccessorFromString(
         bool experimentsEnabled = true;
 
         if (!queryFunction.mExperiments->empty()) {
+#ifdef LL_PLAT_C
             auto experiments =
-                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x7FAA17FF@@3VExperimentStorage@@A.llvm.7928722031444509472"_sym
+                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x10A4F501@@3VExperimentStorage@@A.llvm.10811897775780657989"_sym
                     .resolve();
+#else
+            auto experiments =
+                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x42C71F9@@3VExperimentStorage@@A.llvm.1039915497221347259"_sym
+                    .resolve();
+#endif
 
             for (auto const experiment : queryFunction.mExperiments.get()) {
                 if (!experiments->isExperimentEnabled(static_cast<AllExperiments>(experiment))) {

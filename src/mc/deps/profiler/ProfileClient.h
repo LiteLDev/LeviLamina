@@ -38,6 +38,10 @@ public:
 
     virtual void onFrameTransition(uchar previousFrameType);
 
+    virtual bool isConditionalAndExternalProfiler() const;
+
+    virtual bool isActivelyConsumingData() const;
+
     virtual uint getMaxTokens() const;
 
     virtual void onThreadCreate(
@@ -94,8 +98,6 @@ public:
     virtual void logCaptureResults();
 
     virtual bool isCaptureEnding();
-
-    virtual void setMarker(char const*, uint) const;
 
     virtual void generateCPUProfileTokenStatic(
         ::Core::Profile::ScopeToken&                  target,
@@ -173,6 +175,10 @@ public:
 
     MCNAPI void $onFrameTransition(uchar previousFrameType);
 
+    MCNAPI bool $isConditionalAndExternalProfiler() const;
+
+    MCNAPI bool $isActivelyConsumingData() const;
+
     MCNAPI uint $getMaxTokens() const;
 
     MCNAPI void $onThreadCreate(
@@ -229,8 +235,6 @@ public:
     MCNAPI void $logCaptureResults();
 
     MCNAPI bool $isCaptureEnding();
-
-    MCNAPI void $setMarker(char const*, uint) const;
 
     MCNAPI void $generateCPUProfileTokenStatic(
         ::Core::Profile::ScopeToken&                  target,

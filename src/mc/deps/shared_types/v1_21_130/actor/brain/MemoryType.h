@@ -19,10 +19,13 @@ public:
         Float       = 3,
         String      = 4,
         EntityRef   = 5,
-        BlockPos    = 6,
-        BlockPosVec = 7,
-        PoiMemory   = 8,
-        Count       = 9,
+        BlockRef    = 6,
+        BlockPos    = 7,
+        BlockPosVec = 8,
+        PoiMemory   = 9,
+        DamageCause = 10,
+        Countdown   = 11,
+        Count       = 12,
     };
 
     struct Names {
@@ -33,7 +36,13 @@ public:
 
         MCAPI static ::std::string_view const& BLOCK_POS_VEC();
 
+        MCAPI static ::std::string_view const& BLOCK_REF();
+
         MCAPI static ::std::string_view const& BOOL();
+
+        MCAPI static ::std::string_view const& COUNTDOWN();
+
+        MCAPI static ::std::string_view const& DAMAGE_CAUSE();
 
         MCAPI static ::std::string_view const& ENTITY_REF();
 

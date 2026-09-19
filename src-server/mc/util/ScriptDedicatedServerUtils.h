@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/util/IScriptDedicatedServerUtils.h"
 
 // auto generated forward declare list
@@ -35,8 +36,6 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptDedicatedServerUtils() /*override*/ = default;
 
-    virtual void stopServer() /*override*/;
-
     virtual bool saveHold() /*override*/;
 
     virtual bool saveResume() /*override*/;
@@ -59,22 +58,27 @@ public:
 
     virtual bool getAllowListEnabled() const /*override*/;
 
-    virtual ::std::vector<::std::string> getOperatorXuids() const /*override*/;
-
     virtual bool reloadPermissionsFile() /*override*/;
+
+    virtual ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& getPermissions() const /*override*/;
+
+    virtual bool
+    setPermissions(::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& permissionData) /*override*/;
+
+    virtual bool setPlayerPermission(::std::string const& xuid, ::PlayerPermissionLevel permission) /*override*/;
 
     virtual bool reloadScriptConfig() /*override*/;
 
     virtual bool reloadCDNConfig() /*override*/;
 
     virtual ::std::string const& getSessionID() const /*override*/;
+
+    virtual void stopServer() /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $stopServer();
-
     MCNAPI bool $saveHold();
 
     MCNAPI bool $saveResume();
@@ -97,14 +101,20 @@ public:
 
     MCNAPI bool $getAllowListEnabled() const;
 
-    MCNAPI ::std::vector<::std::string> $getOperatorXuids() const;
-
     MCNAPI bool $reloadPermissionsFile();
+
+    MCNAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& $getPermissions() const;
+
+    MCNAPI bool $setPermissions(::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& permissionData);
+
+    MCNAPI bool $setPlayerPermission(::std::string const& xuid, ::PlayerPermissionLevel permission);
 
     MCNAPI bool $reloadScriptConfig();
 
     MCNAPI bool $reloadCDNConfig();
 
     MCNAPI ::std::string const& $getSessionID() const;
+
+    MCNAPI void $stopServer();
     // NOLINTEND
 };

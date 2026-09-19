@@ -28,6 +28,10 @@
 // auto generated forward declare list
 // clang-format off
 class AsyncJoinRegistrar;
+class DebuggerClientDiagnosticsListener;
+class DebuggerDiagnostics;
+class DebuggerDiagnosticsCollectors;
+class DebuggerDiagnosticsPublishToFile;
 class IMinecraftEventing;
 class IScriptServerNetworkInterface;
 class IScriptTelemetryLogger;
@@ -38,16 +42,13 @@ class MinecraftCommands;
 class PackManifest;
 class Scheduler;
 class ScriptAsyncJobCoordinator;
-class ScriptClientDiagnosticsListener;
 class ScriptContentLogEndPoint;
 class ScriptDebugger;
 class ScriptDebuggerWatchdog;
-class ScriptDiagnostics;
-class ScriptDiagnosticsCollectors;
-class ScriptDiagnosticsPublishToFile;
 class ScriptFormPromiseTracker;
 class ScriptPackSettingsCache;
 class ScriptPluginManager;
+class ScriptPluginManagerResult;
 class ScriptPluginResult;
 class ScriptTaskGroup;
 class ScriptTickListener;
@@ -63,6 +64,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { class ScriptCustomDimensionRegistry; }
 namespace ScriptModuleMinecraft { class ScriptCustomSpawnRulesRegistry; }
+namespace ScriptModuleMinecraft { class ScriptCustomWorldClockRegistry; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class IRuntime; }
@@ -84,16 +86,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 144, ::ServerScriptManagerEvents>                        mScriptStateEvents;
-    ::ll::TypedStorage<8, 760, ::ScriptSettings>                                   mSettings;
-    ::ll::TypedStorage<8, 8, ::ServerLevel&>                                       mServerLevel;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPackSettingsCache>>        mPackSettingsCache;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Scheduler>>             mServerScheduler;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>>           mCerealContext;
-    ::ll::TypedStorage<1, 1, ::RegisterDiagnosticsStatsTypes>                      mRegisterDiagnosticsStatsTypes;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IScriptTelemetryLogger>>          mTelemetryLogger;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptClientDiagnosticsListener>> mClientDiagnosticsListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelEventHandlerRegistrar>>      mLevelEventHandlerRegistrar;
+    ::ll::TypedStorage<8, 144, ::ServerScriptManagerEvents>                          mScriptStateEvents;
+    ::ll::TypedStorage<8, 800, ::ScriptSettings>                                     mSettings;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&>                                         mServerLevel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPackSettingsCache>>          mPackSettingsCache;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Scheduler>>               mServerScheduler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>>             mCerealContext;
+    ::ll::TypedStorage<1, 1, ::RegisterDiagnosticsStatsTypes>                        mRegisterDiagnosticsStatsTypes;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IScriptTelemetryLogger>>            mTelemetryLogger;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerClientDiagnosticsListener>> mClientDiagnosticsListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelEventHandlerRegistrar>>        mLevelEventHandlerRegistrar;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::CustomCommandRegistry>> mCustomCommandRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptCustomComponentParameterCache>>
         mCustomComponentParameterCache;
@@ -105,6 +107,8 @@ public:
         mCustomSpawnRulesRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptCustomDimensionRegistry>>
         mCustomDimensionRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptCustomWorldClockRegistry>>
+        mCustomWorldClockRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptGlobalEventListeners>>
                                                                                        mGlobalEventListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IScriptServerNetworkInterface>>       mServerNetworkInterface;
@@ -114,9 +118,9 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptFormPromiseTracker>>            mFormPromiseTracker;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDebuggerWatchdog>>              mScriptDebuggerWatchdog;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDebugger>>                      mScriptDebugger;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ScriptDiagnostics>>         mDiagnostics;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDiagnosticsPublishToFile>>      mDiagnosticsPublishToFile;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDiagnosticsCollectors>>         mScriptDiagnosticsCollectors;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::DebuggerDiagnostics>>       mDiagnostics;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerDiagnosticsPublishToFile>>    mDiagnosticsPublishToFile;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerDiagnosticsCollectors>>       mScriptDiagnosticsCollectors;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptTickListener>>                  mScriptTickListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptTaskGroup>>                     mScriptTaskGroup;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptContentLogEndPoint>>            mScriptContentLogEndPoint;
@@ -172,8 +176,10 @@ public:
         ::Scripting::RegistryManager&                            registry,
         ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> localProfilerControlBroker,
         ::std::unique_ptr<::AsyncJoinRegistrar>&&                asyncJoinRegistrar,
-        ::Bedrock::NonOwnerPointer<::ScriptDiagnostics>          diagnostics
+        ::Bedrock::NonOwnerPointer<::DebuggerDiagnostics>        diagnostics
     );
+
+    MCAPI void _checkForSystemPackErrors(::ScriptPluginManagerResult const& result);
 
     MCAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
 
@@ -189,8 +195,6 @@ public:
     );
 
     MCAPI void setBlockCustomComponentCerealContext(::cereal::ReflectionCtx& ctx);
-
-    MCAPI void setServerNetworkInterface(::std::unique_ptr<::IScriptServerNetworkInterface>&& serverNetworkInterface);
     // NOLINTEND
 
 public:
@@ -208,7 +212,7 @@ public:
         ::Scripting::RegistryManager&                            registry,
         ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> localProfilerControlBroker,
         ::std::unique_ptr<::AsyncJoinRegistrar>&&                asyncJoinRegistrar,
-        ::Bedrock::NonOwnerPointer<::ScriptDiagnostics>          diagnostics
+        ::Bedrock::NonOwnerPointer<::DebuggerDiagnostics>        diagnostics
     );
     // NOLINTEND
 

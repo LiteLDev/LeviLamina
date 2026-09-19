@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/memory/bedrock/VirtualArray.h"
 #include "mc/external/bgfx/AccelerationStructureHandle.h"
 #include "mc/external/bgfx/BlitItem.h"
 #include "mc/external/bgfx/CommandBuffer.h"
@@ -13,7 +14,6 @@
 #include "mc/external/bgfx/ProgramHandle.h"
 #include "mc/external/bgfx/RayTracingConfiguration.h"
 #include "mc/external/bgfx/RayTracingResources.h"
-#include "mc/external/bgfx/RenderBind.h"
 #include "mc/external/bgfx/RenderItem.h"
 #include "mc/external/bgfx/Resolution.h"
 #include "mc/external/bgfx/ShaderBufferHandle.h"
@@ -29,6 +29,7 @@
 // clang-format off
 namespace bgfx { class UniformBuffer; }
 namespace bgfx { struct RangedBindings; }
+namespace bgfx { struct RenderBind; }
 namespace bgfx { struct TextVideoMem; }
 namespace bgfx { struct TextureHandle; }
 namespace bgfx { struct TransientIndexBuffer; }
@@ -58,9 +59,9 @@ public:
     ::ll::TypedStorage<8, 524288, uint64[65536]>                                             m_sortKeys;
     ::ll::TypedStorage<2, 131072, ushort[65536]>                                             m_sortValues;
     ::ll::TypedStorage<8, 8388608, ::bgfx::RenderItem[65536]>                                m_renderItem;
-    ::ll::TypedStorage<4, 88080384, ::bgfx::RenderBind[65536]>                               m_renderItemBind;
+    ::ll::TypedStorage<8, 120, ::Bedrock::Memory::VirtualArray<::bgfx::RenderBind>>          m_renderItemBind;
     ::ll::TypedStorage<8, 524288, ::bgfx::RangedBindings* [65536]>                           m_rangedRenderItemBind;
-    ::ll::TypedStorage<4, 4160, uint[1025]>                                                  m_blitKeys;
+    ::ll::TypedStorage<4, 4104, uint[1025]>                                                  m_blitKeys;
     ::ll::TypedStorage<2, 65600, ::bgfx::BlitItem[1025]>                                     m_blitItem;
     ::ll::TypedStorage<4, 4718624, ::bgfx::FrameCache>                                       m_frameCache;
     ::ll::TypedStorage<8, 8, ::bgfx::UniformBuffer**>                                        m_uniformBuffer;

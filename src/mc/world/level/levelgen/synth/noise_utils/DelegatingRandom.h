@@ -38,8 +38,6 @@ public:
     virtual double nextGaussianDouble() /*override*/;
 
     virtual void consumeCount(uint count) /*override*/;
-
-    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
     // NOLINTEND
 
 public:
@@ -62,8 +60,6 @@ public:
     MCAPI double $nextGaussianDouble();
 
     MCFOLD void $consumeCount(uint count);
-
-    MCFOLD ::std::unique_ptr<::IRandom> $fork();
 
 
     // NOLINTEND

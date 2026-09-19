@@ -10,6 +10,22 @@ class HashedString;
 namespace VanillaStructureFeatureType {
 // static variables
 // NOLINTBEGIN
+MCAPI ::HashedString const& AbandonedCampBambooJungle();
+
+MCAPI ::HashedString const& AbandonedCampBirchForest();
+
+MCAPI ::HashedString const& AbandonedCampCherryGrove();
+
+MCAPI ::HashedString const& AbandonedCampDappledForest();
+
+MCAPI ::HashedString const& AbandonedCampExtremeHillsPlusTrees();
+
+MCAPI ::HashedString const& AbandonedCampFlowerForest();
+
+MCAPI ::HashedString const& AbandonedCampPaleGarden();
+
+MCAPI ::HashedString const& AbandonedCampSwampland();
+
 MCAPI ::HashedString const& AncientCity();
 
 MCAPI ::HashedString const& Bastion();

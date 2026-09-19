@@ -9,7 +9,6 @@
 // clang-format off
 class ContainerScreenContext;
 class ItemStack;
-class MerchantRecipe;
 // clang-format on
 
 class TradeContainerManagerModel : public ::LevelContainerManagerModel {
@@ -43,11 +42,7 @@ public:
 #ifdef LL_PLAT_C
     MCAPI int getAvailableRecipeListSize();
 
-    MCAPI ::MerchantRecipe* getCurrentRecipe(int index);
-
     MCFOLD ::std::string getDisplayName();
-
-    MCAPI void recipeChanged();
 #endif
     // NOLINTEND
 

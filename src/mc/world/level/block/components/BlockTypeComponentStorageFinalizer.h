@@ -9,6 +9,12 @@ class BlockType;
 
 class BlockTypeComponentStorageFinalizer {
 public:
+    void finalizeComponentData(BlockType& blockType) {
+        _finalizeCollisionBoxComponent(blockType);
+        _finalizeSelectionBoxComponent(blockType);
+        _finalizeRedstoneProducerComponent(blockType);
+    }
+
     // member functions
     // NOLINTBEGIN
     MCAPI void _finalizeCollisionBoxComponent(::BlockType& blockType);

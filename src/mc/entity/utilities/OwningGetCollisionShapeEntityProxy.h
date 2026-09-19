@@ -19,10 +19,10 @@ struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorGameTypeComponent;
 struct ActorTypeComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlagComponent;
 struct MovementAbilitiesComponent;
 struct PassengerComponent;
 struct VehicleComponent;
@@ -30,7 +30,7 @@ struct VehicleComponent;
 
 class OwningGetCollisionShapeEntityProxy
 : public ::GetCollisionShapeEntityProxy<::StrictExecutionContext<
-      ::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent>,
+      ::Filter<::CanStandOnPowderSnowComponent, ::CanStandOnPowderSnowFromEquipmentComponent>,
       ::Read<
           ::AABBShapeComponent,
           ::MovementAbilitiesComponent,
@@ -48,7 +48,7 @@ class OwningGetCollisionShapeEntityProxy
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk30af3e;
+    ::ll::UntypedStorage<8, 8> mUnkc9873d;
     // NOLINTEND
 
 public:

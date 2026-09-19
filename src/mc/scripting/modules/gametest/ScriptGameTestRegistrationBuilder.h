@@ -12,6 +12,7 @@
 class Vec3;
 namespace ScriptModuleGameTest { class BaseScriptGameTestFunction; }
 namespace ScriptModuleMinecraft { class ScriptDimensionType; }
+namespace Scripting { class DependencyLocator; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
@@ -62,6 +63,7 @@ public:
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError>
     structureLocation(
+        ::Scripting::DependencyLocator&                                                              dependencyLocator,
         ::Vec3                                                                                       structureLocation,
         ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptDimensionType, ::std::string>> dimensionTypeVar
     );

@@ -22,11 +22,11 @@ class CurrentPartyDataQuery : public ::OreUI::QueryBase<::OreUI::CurrentPartyDat
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                    mIsInParty;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>           mPartyId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Parties::PartyPrivacy>> mPrivacy;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                    mRestrictInvitesToLeader;
-    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                           mOptions;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                       mIsInParty;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>                     mPartyId;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Parties::PartyPrivacy, ::Parties::PartyPrivacy>> mPrivacy;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mRestrictInvitesToLeader;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>              mOptions;
     // NOLINTEND
 
 public:

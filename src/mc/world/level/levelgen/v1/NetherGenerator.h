@@ -39,7 +39,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 2544, ::Random>                              random;
+        ::ll::TypedStorage<8, 2560, ::Random>                              random;
         ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
     };

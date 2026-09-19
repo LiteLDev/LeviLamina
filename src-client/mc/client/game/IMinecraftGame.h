@@ -25,6 +25,7 @@
 #include "mc/deps/input/PointerType.h"
 #include "mc/events/NetworkType.h"
 #include "mc/platform/MultiplayerLockedContext.h"
+#include "mc/profile/IProfilingOrchestratorProvider.h"
 #include "mc/sound/MusicRepeatMode.h"
 
 // auto generated forward declare list
@@ -158,6 +159,7 @@ class IMinecraftGame : public ::Bedrock::EnableNonOwnerReferences,
                        public ::IGameServerStartup,
                        public ::IGameServerShutdown,
                        public ::INetworkGameConnector,
+                       public ::Bedrock::Profiling::IProfilingOrchestratorProvider,
                        public ::IClientInstances,
                        public ::IWorldTransfer,
                        public ::AppExtensions::AppExtensionsOwner,
@@ -243,7 +245,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() = 0;
 
-    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& getClientInstanceMap() const = 0;
+    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> getClientInstanceMap() = 0;
+
+    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance const>> getClientInstanceMap() const = 0;
 
     virtual void joinMultiplayerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
@@ -375,7 +379,7 @@ public:
 
     virtual void recalculateScene() = 0;
 
-    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) = 0;
+    virtual void setUISize(int w, int h) = 0;
 
     virtual bool isReadyToRender() const = 0;
 
@@ -541,7 +545,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ExternalContentManager> getContentManager() = 0;
 
-    virtual ::std::shared_ptr<::IClientInstance>
+    virtual ::std::shared_ptr<::IClientInstance const>
     tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider const> getAccessibilityProvider() const = 0;

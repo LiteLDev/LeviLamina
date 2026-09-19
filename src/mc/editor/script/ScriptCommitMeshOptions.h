@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 struct ScriptCommitMeshOptions {
@@ -13,6 +18,7 @@ public:
     ::ll::UntypedStorage<4, 16> mUnkdac51b;
     ::ll::UntypedStorage<4, 12> mUnk44b134;
     ::ll::UntypedStorage<8, 32> mUnk8cea7b;
+    ::ll::UntypedStorage<8, 32> mUnk19ec21;
     ::ll::UntypedStorage<8, 40> mUnk43e634;
     // NOLINTEND
 
@@ -21,6 +27,12 @@ public:
     ScriptCommitMeshOptions& operator=(ScriptCommitMeshOptions const&);
     ScriptCommitMeshOptions(ScriptCommitMeshOptions const&);
     ScriptCommitMeshOptions();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::InterfaceBinding bindScript();
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

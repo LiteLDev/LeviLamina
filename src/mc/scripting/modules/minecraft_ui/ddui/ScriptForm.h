@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft_ui/ddui/ScriptDataDrivenScreenClosedReason.h"
@@ -10,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::DDUI { class DataStoreSyncServer; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormVisibilityError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptInvalidFormError; }
@@ -33,12 +35,18 @@ public:
 public:
     // prevent constructor by default
     ScriptForm& operator=(ScriptForm const&);
-    ScriptForm(ScriptForm const&);
     ScriptForm();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptForm(::ScriptModuleMinecraftServerUI::ScriptForm const&);
+
+    MCNAPI ScriptForm(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
+        ::std::string                                                               formId
+    );
+
     MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
@@ -67,6 +75,17 @@ public:
                              ::Scripting::EngineError>)>                                           reject,
         ::Scripting::StrongObjectHandle                                                            owningFormHandle,
         ::Scripting::DependencyLocator&                                                            locator
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptForm const&);
+
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
+        ::std::string                                                               formId
     );
     // NOLINTEND
 };

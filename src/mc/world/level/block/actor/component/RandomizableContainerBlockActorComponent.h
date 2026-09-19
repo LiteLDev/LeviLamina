@@ -9,23 +9,25 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class ILevel;
+class SaveContext;
 // clang-format on
 
 class RandomizableContainerBlockActorComponent : public ::IBlockActorComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void save(::CompoundTag&) const /*override*/;
+    virtual void save(::CompoundTag&, ::SaveContext const&) const /*override*/;
 
-    virtual void load(::CompoundTag const&, ::BlockActorVersion) /*override*/;
+    virtual void load(::CompoundTag const&, ::ILevel&, ::BlockActorVersion) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $save(::CompoundTag&) const;
+    MCFOLD void $save(::CompoundTag&, ::SaveContext const&) const;
 
-    MCFOLD void $load(::CompoundTag const&, ::BlockActorVersion);
+    MCFOLD void $load(::CompoundTag const&, ::ILevel&, ::BlockActorVersion);
 
 
     // NOLINTEND

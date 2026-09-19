@@ -17,17 +17,12 @@ struct MoveInputComponent;
 struct PassengerComponent;
 struct PlayerActionComponent;
 struct PlayerInputRequestComponent;
-struct TickingSystemWithInfo;
 struct WasInWaterFlagComponent;
 // clang-format on
 
 namespace SneakTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createActionSystem();
-
-MCAPI ::TickingSystemWithInfo createIntentSystem();
-
 MCAPI void doIntentTick(
     ::StrictEntityContext const&,
     ::MoveInputComponent const&                        moveInput,

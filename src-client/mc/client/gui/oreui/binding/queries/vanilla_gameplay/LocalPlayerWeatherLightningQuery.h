@@ -19,9 +19,9 @@ class LocalPlayerWeatherLightningQuery : public ::OreUI::QueryBase<::OreUI::Loca
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>> mIsLightning;
-    ::ll::TypedStorage<8, 8, ::LocalPlayer const*>                       mLocalPlayer;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>           mLocalPlayerSubscription;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>, ::std::optional<bool>>> mIsLightning;
+    ::ll::TypedStorage<8, 8, ::LocalPlayer const*>                                              mLocalPlayer;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLocalPlayerSubscription;
     // NOLINTEND
 
 public:

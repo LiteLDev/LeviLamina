@@ -23,21 +23,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSavesManager>> mRealmsSavesManager;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::WorldBackupData, ::std::allocator<::OreUI::WorldBackupData>>>
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::WorldBackupData, ::OreUI::WorldBackupData>>
         mManualBackups;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::WorldBackupData, ::std::allocator<::OreUI::WorldBackupData>>>
-                                                               mAutomaticBackups;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64>>       mStorageBytesUsed;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64>>       mStorageBytesTotal;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64>>       mActiveWorldSizeBytes;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mBackupListChangedSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mActiveWorldSizeChangedSubscription;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::WorldBackupData, ::OreUI::WorldBackupData>>
+                                                                mAutomaticBackups;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64, int64>> mStorageBytesUsed;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64, int64>> mStorageBytesTotal;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64, int64>> mActiveWorldSizeBytes;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mBackupListChangedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mActiveWorldSizeChangedSubscription;
     // NOLINTEND
 
 public:

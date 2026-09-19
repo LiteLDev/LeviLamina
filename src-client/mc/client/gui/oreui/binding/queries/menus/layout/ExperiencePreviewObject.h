@@ -22,13 +22,19 @@ class ExperiencePreviewObject : public ::OreUI::PropertyObject<::OreUI::Experien
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                                      mExperienceId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Bedrock::Services::layout::model::ExperienceMode>> mMode;
-    ::ll::TypedStorage<8, 440, ::OreUI::LocalizedStringObject>                                        mTitle;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                                      mCreatorName;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                                      mCreatorId;
-    ::ll::TypedStorage<8, 1808, ::OreUI::ExperienceListingObject>                                     mListing;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LinksToObject>>                               mLinksTo;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mExperienceId;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::Property<
+            ::Bedrock::Services::layout::model::ExperienceMode,
+            ::Bedrock::Services::layout::model::ExperienceMode>>
+                                                                                mMode;
+    ::ll::TypedStorage<8, 440, ::OreUI::LocalizedStringObject>                  mTitle;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mCreatorName;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mCreatorId;
+    ::ll::TypedStorage<8, 688, ::OreUI::ExperienceListingObject>                mListing;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LinksToObject>>         mLinksTo;
     // NOLINTEND
 
 public:

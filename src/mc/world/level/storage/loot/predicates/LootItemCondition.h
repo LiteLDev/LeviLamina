@@ -37,13 +37,25 @@ public:
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk7dec2c;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LootItemCondition& operator=(LootItemCondition const&);
+    LootItemCondition(LootItemCondition const&);
+    LootItemCondition();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LootItemCondition() = default;
 
-    virtual bool applies(::Random& random, ::LootTableContext& context) = 0;
-
     virtual ::LootItemCondition::ConditionType getConditionType() const = 0;
+
+    virtual bool _applies(::Random& random, ::LootTableContext& context) = 0;
     // NOLINTEND
 
 public:

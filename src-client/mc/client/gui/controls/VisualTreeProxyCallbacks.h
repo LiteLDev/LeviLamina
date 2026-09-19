@@ -24,4 +24,21 @@ public:
         ::std::function<::std::shared_ptr<::UIControl>(::std::function<bool(::UIControl const&)> const&)>>
         mGetFirstVisibleControl;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    VisualTreeProxyCallbacks& operator=(VisualTreeProxyCallbacks const&);
+    VisualTreeProxyCallbacks();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI VisualTreeProxyCallbacks(::VisualTreeProxyCallbacks const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::VisualTreeProxyCallbacks const&);
+    // NOLINTEND
 };

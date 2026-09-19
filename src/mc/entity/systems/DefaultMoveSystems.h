@@ -13,9 +13,9 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorRotationComponent;
-struct CanStandOnSnowFlagComponent;
+struct CanStandOnPowderSnowComponent;
+struct CanStandOnPowderSnowFromEquipmentComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlagComponent;
 struct MobTravelComponent;
 struct MoveInputComponent;
 struct OnGroundFlagComponent;
@@ -28,17 +28,17 @@ namespace DefaultMoveSystems {
 // NOLINTBEGIN
 MCAPI void doDefaultMoveSystems(
     ::StrictEntityContext const&,
-    ::Optional<::OnGroundFlagComponent const>             onGroundFlagComponent,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent,
-    ::Optional<::MoveInputComponent const>                moveInputComponent,
-    ::AABBShapeComponent const&                           aabbShapeComponent,
-    ::ActorRotationComponent const&                       actorRotationComponent,
-    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
-    ::FallDistanceComponent&                              fallDistanceComponent,
-    ::MobTravelComponent&                                 mobTravelComponent,
-    ::StateVectorComponent&                               stateVectorComponent,
-    ::IConstBlockSource const&                            region
+    ::Optional<::OnGroundFlagComponent const>                      onGroundFlagComponent,
+    ::Optional<::CanStandOnPowderSnowComponent const>              canStandOnPowderSnowComponent,
+    ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const> canStandOnPowderSnowFromEquipmentComponent,
+    ::Optional<::MoveInputComponent const>                         moveInputComponent,
+    ::AABBShapeComponent const&                                    aabbShapeComponent,
+    ::ActorRotationComponent const&                                actorRotationComponent,
+    ::ActorDataFlagComponent const&                                synchedActorDataComponent,
+    ::FallDistanceComponent&                                       fallDistanceComponent,
+    ::MobTravelComponent&                                          mobTravelComponent,
+    ::StateVectorComponent&                                        stateVectorComponent,
+    ::IConstBlockSource const&                                     region
 );
 
 MCAPI void doFlyingPlayerMoveSystems(

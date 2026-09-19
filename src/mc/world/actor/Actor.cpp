@@ -26,6 +26,7 @@
 #include "mc/util/molang/IComplexExpression.h"
 #include "mc/util/rotation_command_utils/RotationData.h"
 #include "mc/world//actor/player/Player.h"
+#include "mc/world/SimpleContainer.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
@@ -36,6 +37,7 @@
 #include "mc/world/actor/animation/AnimationComponent.h"
 #include "mc/world/actor/provider/ActorAttribute.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/ChunkBlockPos.h"
@@ -184,6 +186,7 @@ void Actor::teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 cons
     },
             1
         ),
+        1,
         false
     );
 }
@@ -192,6 +195,7 @@ void Actor::teleport(class Vec3 const& pos, DimensionType dimId) {
     TeleportCommand::applyTarget(
         *this,
         TeleportCommand::computeTarget(*this, pos, nullptr, dimId, std::nullopt, 1),
+        1,
         false
     );
 }
@@ -285,3 +289,22 @@ float Actor::distanceTo(::Vec3 const& pos) const { return static_cast<float>(get
 float Actor::distanceToSqr(::Actor const& e) const { return distanceToSqr(e.getPosition()); }
 
 float Actor::distanceToSqr(::Vec3 const& pos) const { return static_cast<float>(getPosition().distanceToSqr(pos)); }
+
+ItemStack const& Actor::getEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot) const {
+    using SharedTypes::Legacy::EquipmentSlot;
+    switch (slot) {
+    case EquipmentSlot::Mainhand: // same value as HandSlot
+        return getCarriedItem();
+    case EquipmentSlot::Offhand:
+        return ActorEquipment::getHandContainer(getEntityContext()).getItem(1);
+    case EquipmentSlot::Head:
+    case EquipmentSlot::Torso:
+    case EquipmentSlot::Legs:
+    case EquipmentSlot::Feet:
+    case EquipmentSlot::Body:
+        // ArmorSlot = EquipmentSlot - 2, see Actor::getArmor
+        return ActorEquipment::getArmorContainer(getEntityContext()).getItem(static_cast<int>(slot) - 2);
+    default:
+        return ItemStack::EMPTY_ITEM();
+    }
+}

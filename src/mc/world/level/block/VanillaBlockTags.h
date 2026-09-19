@@ -56,6 +56,8 @@ MCAPI ::HashedString const& IsSwordItemDestructible();
 
 MCAPI ::HashedString const& Jungle();
 
+MCAPI ::HashedString const& Leaves();
+
 MCAPI ::HashedString const& Log();
 
 MCAPI ::HashedString const& Metal();

@@ -7,10 +7,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/nbt/CompoundTag.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CachedComponentData.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/components/BlockComponentDirectData.h"
 #include "mc/world/level/block/components/BlockComponentStorage.h"
 #include "mc/world/level/block/components/ConnectionID.h"
@@ -20,7 +20,6 @@
 class AABB;
 class Actor;
 class BaseGameVersion;
-class BlockChangeContext;
 class BlockPos;
 class BlockSource;
 class BlockState;
@@ -92,6 +91,16 @@ public:
     template <typename T>
     MCAPI T const* tryGetComponent() const;
 
+    /// Refreshes the data cached on this block state from its components and block type.
+    void cacheComponentData() {
+        mCachedComponentData->mEmissiveBrightness->mValue = mBlockType->getEmissiveBrightness(*this).mValue;
+        mCachedComponentData->mIsSolid                    = _isSolid();
+        mCachedComponentData->mOcclusionType              = _getBlockOcclusionType();
+    }
+
+    /// The block type properties and material are inspected in order of decreasing priority.
+    LLNDAPI BlockOcclusionType _getBlockOcclusionType() const;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -157,7 +166,7 @@ public:
 
     MCAPI bool canProvideFullSupport(uchar face) const;
 
-    MCFOLD bool canProvideSupport(uchar face, ::BlockSupportType type) const;
+    MCAPI bool canProvideSupport(uchar face, ::BlockSupportType type) const;
 
     MCAPI bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -184,11 +193,7 @@ public:
         ::Actor*             actor
     ) const;
 
-#ifdef LL_PLAT_C
     MCAPI void finalizeBlockComponentStorage();
-
-    MCAPI ::BlockActorType getBlockEntityType() const;
-#endif
 
     MCAPI ::std::optional<::ConnectionID> getConnectionID() const;
 
@@ -222,45 +227,13 @@ public:
 
     MCAPI void onActorInternalEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
-#ifdef LL_PLAT_C
-    MCAPI void onFallOn(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, float fallDistance) const;
-
-    MCAPI void onPlace(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::Block const&              previousBlock,
-        ::BlockChangeContext const& changeSourceContext
-    ) const;
-
-    MCAPI void onRedstoneUpdate(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        short             strength,
-        short             oldStrength,
-        bool              isFirstTime
-    ) const;
-
-    MCAPI void onStateChange(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::Block const&              previousBlock,
-        ::BlockChangeContext const& changeSourceContext
-    ) const;
-
-    MCAPI void onStepOff(::Actor& entity, ::BlockPos const& pos) const;
-
-    MCAPI void onStepOn(::Actor& entity, ::BlockPos const& pos) const;
-#endif
+    MCAPI void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void playerDestroy(::Player& player, ::BlockPos const& pos) const;
 
     MCAPI void queuedTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool shouldRandomTick() const;
-#endif
 
     MCAPI void spawnResources(
         ::BlockSource&                region,
@@ -272,7 +245,8 @@ public:
 
     MCAPI ::std::string toDebugString() const;
 
-    MCAPI bool use(::Player& player, ::BlockPos const& pos, uchar face, ::std::optional<::Vec3> hit) const;
+    MCAPI bool
+    use(::Player& player, ::BlockPos const& pos, uchar face, ::HandSlot handSlot, ::std::optional<::Vec3> hit) const;
     // NOLINTEND
 
 public:

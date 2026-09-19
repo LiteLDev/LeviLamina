@@ -8,8 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EnchantmentInstance;
-class ItemInstance;
-class ItemStack;
+class ItemStackBase;
 class LootItemCondition;
 class LootTableContext;
 class Random;
@@ -48,19 +47,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EnchantBookForTradingFunction() /*override*/ = default;
-
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
-
-    virtual int
-    apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
-
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
-
-    virtual int
-    apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
-
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+
+    virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&) /*override*/;
+
+    virtual int
+    applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&, ::Trade const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -72,7 +64,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
 #endif
@@ -81,15 +73,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
-
-    MCAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
-
-    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
-
-    MCAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
-
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+
+    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&);
+
+    MCAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&, ::Trade const&);
 
 
     // NOLINTEND

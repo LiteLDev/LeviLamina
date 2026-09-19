@@ -65,4 +65,12 @@ public:
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForActorShaderManager();
+
+    MCNAPI static void** $vftableForMinecraftUICustomRenderer();
+    // NOLINTEND
 };

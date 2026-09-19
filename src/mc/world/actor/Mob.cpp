@@ -22,13 +22,13 @@ Mob* Mob::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
 ItemStack const& Mob::getItemSlot(::SharedTypes::Legacy::EquipmentSlot slot) const {
     using SharedTypes::Legacy::ArmorSlot;
     using SharedTypes::Legacy::EquipmentSlot;
-    if (slot > EquipmentSlot::Offhand) {
+    if (static_cast<uint>(slot) > static_cast<uint>(EquipmentSlot::Offhand)) {
         // ArmorSlot = EquipmentSlot - 2
         auto newSlot = static_cast<ArmorSlot>(static_cast<int>(slot) - 2);
-        if (newSlot > ArmorSlot::HumanoidCount) {
+        if (static_cast<uint>(newSlot) > static_cast<uint>(ArmorSlot::Body)) {
             return ItemStack::EMPTY_ITEM();
         } else {
-            return getArmor(static_cast<SharedTypes::Legacy::ArmorSlot>(slot));
+            return getArmor(newSlot);
         }
     } else {
         return ActorEquipment::getHandContainer(getEntityContext()).getItem(static_cast<int>(slot));

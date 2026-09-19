@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,11 +33,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>       mBlockTypeStatesConversionWarningMutex;
-    ::ll::TypedStorage<8, 16, ::std::set<::std::pair<int, int>>> mBlockTypeStatesConversionWarningSet;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                      mLegacyBlockStatesConversionWarningMutex;
+    ::ll::TypedStorage<8, 16, ::std::set<::std::pair<int, int>>> mLegacyBlockStatesConversionWarningSet;
     ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>     mBlockFromNetworkId;
     ::ll::TypedStorage<8, 8, ::Level*>                           mLevel;
     // NOLINTEND
+
+public:
+    /// Walks every registered block type and appends each of its permutations to this palette.
+    LLAPI void initFromBlockDefinitions();
 
 public:
     // prevent constructor by default

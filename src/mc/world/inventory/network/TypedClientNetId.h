@@ -8,7 +8,7 @@ public:
     T1              mRawId;
     MCAPI static T1 sNextRawId;
 
-    virtual ~TypedClientNetId();
-    virtual void clientInit(TypedClientNetId<T0, T1, T2>);
+    virtual ~TypedClientNetId() = default;
+    virtual void clientInit(TypedClientNetId const&);
     virtual void clientInit();
 };

@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/poi/TypeId.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
-
 namespace Poi {
 
 class TagProvider {
@@ -24,9 +16,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk428c06;
-        ::ll::UntypedStorage<8, 8> mUnk7a422e;
-        ::ll::UntypedStorage<8, 8> mUnk7c361b;
+        ::ll::UntypedStorage<8, 16> mUnk223ba5;
+        ::ll::UntypedStorage<8, 8>  mUnk7a422e;
+        ::ll::UntypedStorage<2, 2>  mUnk536470;
         // NOLINTEND
 
     public:
@@ -39,8 +31,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk739f88;
-    ::ll::UntypedStorage<8, 72> mUnkb1da15;
+    ::ll::UntypedStorage<8, 24> mUnkeaf59a;
+    ::ll::UntypedStorage<8, 64> mUnkcf66d1;
+    ::ll::UntypedStorage<8, 24> mUnk1f6218;
     // NOLINTEND
 
 public:
@@ -48,6 +41,12 @@ public:
     TagProvider& operator=(TagProvider const&);
     TagProvider(TagProvider const&);
     TagProvider();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Poi::TagProvider::Tag tag(::std::string_view name) const;
+    // NOLINTEND
 };
 
 } // namespace Poi

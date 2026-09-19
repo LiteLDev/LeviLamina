@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ActorUniqueID;
 struct DimensionType;
+struct NetworkIdentifierWithSubId;
 // clang-format on
 
 class IPlayerDimensionTransferConnector {
@@ -18,5 +20,11 @@ public:
     getOnAnyPlayerChangeDimensionPreSuspendRegionConnector() = 0;
 
     virtual ::Bedrock::PubSub::Connector<void()>& getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector() = 0;
+
+    virtual ::Bedrock::PubSub::Connector<void(::ActorUniqueID, ::DimensionType)>&
+    getOnAnyPlayerChangeDimensionCompleteConnector() = 0;
+
+    virtual ::Bedrock::PubSub::Connector<void(::NetworkIdentifierWithSubId const&, ::DimensionType)>&
+    getOnPlayerLeftDimensionConnector() = 0;
     // NOLINTEND
 };

@@ -13,16 +13,27 @@ LL_TYPE_STATIC_HOOK(
     DedicatedServerCommands,
     &DedicatedServerCommands::setupStandaloneServer,
     void,
-    ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft,
-    ::IMinecraftApp&                                  app,
-    ::Level&                                          level,
-    ::LevelStorage&                                   levelStorage,
-    ::DedicatedServer&                                dedicatedServer,
-    ::AllowListFile&                                  allowListFile,
-    ::EditorAllowList&                                editorAllowList,
-    ::ScriptSettings*                                 scriptSettings
+    ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const&       minecraft,
+    ::IMinecraftApp&                                        app,
+    ::Level&                                                level,
+    ::LevelStorage&                                         levelStorage,
+    ::DedicatedServer&                                      dedicatedServer,
+    ::AllowListFile&                                        allowListFile,
+    ::EditorAllowList&                                      editorAllowList,
+    ::ScriptSettings*                                       scriptSettings,
+    ::brstd::move_only_function<void(::CommandRegistry&)>&& registerServerIdentityCommand
 ) {
-    origin(minecraft, app, level, levelStorage, dedicatedServer, allowListFile, editorAllowList, scriptSettings);
+    origin(
+        minecraft,
+        app,
+        level,
+        levelStorage,
+        dedicatedServer,
+        allowListFile,
+        editorAllowList,
+        scriptSettings,
+        std::move(registerServerIdentityCommand)
+    );
     if (auto registry = ll::service::getCommandRegistry(false)) {
         EventBus::getInstance().publish(ServerCommandRegisterEvent(*registry, false));
     }

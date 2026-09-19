@@ -38,8 +38,6 @@ public:
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::gsl::not_null<::StackRefResult<::PauseManager>> const&   pauseManager
     );
-
-    MCAPI void tickEntitySystems();
     // NOLINTEND
 
 public:

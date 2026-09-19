@@ -140,12 +140,4 @@ public:
 
     MCAPI bool $getShouldBeSkippedDuringAutomation() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIScreenSettings();
-
-    MCNAPI static void** $vftableForUIComponent();
-    // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
 
@@ -39,10 +38,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                         mIsSpotSelected;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkPos>>   mSelectedChunks;
-    ::ll::TypedStorage<8, 8, ::VillageFeature*>            mVillages;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mPositionMutex;
+    ::ll::TypedStorage<1, 1, bool>                       mIsSpotSelected;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkPos>> mSelectedChunks;
+    ::ll::TypedStorage<8, 8, ::VillageFeature*>          mVillages;
+    ::ll::TypedStorage<8, 80, ::std::mutex>              mPositionMutex;
     // NOLINTEND
 
 public:

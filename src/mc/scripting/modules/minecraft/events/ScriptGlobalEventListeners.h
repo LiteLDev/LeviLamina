@@ -18,6 +18,7 @@ namespace ScriptModuleMinecraft { class ScriptLevelGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptPlayerGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptScriptingGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptServerNetworkGlobalEventListener; }
+namespace ScriptModuleMinecraft { class ScriptWorldClockGlobalEventListener; }
 namespace ScriptModuleMinecraftRealmsAdmin { class ScriptRealmsGlobalEventListener; }
 namespace ScriptModuleParties { class ScriptPartiesGlobalEventListener; }
 // clang-format on
@@ -53,6 +54,8 @@ public:
         mScriptingEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptLevelGlobalEventListener>>
         mLevelEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptWorldClockGlobalEventListener>>
+        mWorldClockEventListener;
     // NOLINTEND
 
 public:

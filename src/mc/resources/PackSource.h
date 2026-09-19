@@ -22,37 +22,19 @@ class TaskGroup;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 struct PackSourceOptions;
-struct PackStorage;
+struct PackTaskData;
 // clang-format on
 
 class PackSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // PackSource inner types declare
     // clang-format off
-    struct PackTaskData;
     class RequiredPackOrigin;
     class RequiredPackType;
     class RequiredResourceOrBehaviorPackType;
     // clang-format on
 
     // PackSource inner types define
-    struct PackTaskData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk673f56;
-        ::ll::UntypedStorage<8, 24> mUnk1dbbeb;
-        ::ll::UntypedStorage<8, 64> mUnke8ed21;
-        ::ll::UntypedStorage<8, 64> mUnka1631e;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PackTaskData& operator=(PackTaskData const&);
-        PackTaskData(PackTaskData const&);
-        PackTaskData();
-    };
-
     class RequiredPackOrigin {
     public:
         // member variables
@@ -141,14 +123,12 @@ public:
     _addPacks(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& packs);
 #endif
 
-    MCAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackSource::PackTaskData> task);
+    MCAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackTaskData> task);
 
     MCAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
-    MCAPI ::PackStorage _getStorage() const;
-
     MCAPI ::PackSourceLoadResult
-    _getTaskData(::brstd::function_ref<::PackSourceLoadResult(::std::shared_ptr<::PackSource::PackTaskData>)> task);
+    _getTaskData(::brstd::function_ref<::PackSourceLoadResult(::std::shared_ptr<::PackTaskData>)> task);
 
 #ifdef LL_PLAT_C
     MCAPI bool _removePack(::brstd::function_ref<bool(::Pack const&)> predicate);

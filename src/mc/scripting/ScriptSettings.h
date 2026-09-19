@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                          mEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                          mEnableEditorModules;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                                            mBaseGameVersion;
-    ::ll::TypedStorage<8, 104, ::ScriptDebuggerSettings>                                    mDebuggerSettings;
+    ::ll::TypedStorage<8, 144, ::ScriptDebuggerSettings>                                    mDebuggerSettings;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::UUID>>                                   mExcludedScriptModules;
     ::ll::TypedStorage<4, 36, ::std::optional<::Scripting::WatchdogSettings>>               mWatchdogSettings;
     ::ll::TypedStorage<1, 1, bool>                                                          mDiagnosticsAutoStart;

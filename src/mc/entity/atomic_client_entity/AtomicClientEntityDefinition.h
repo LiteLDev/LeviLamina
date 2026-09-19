@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AtomicClientEntityDefinitionDescriptor;
+// clang-format on
+
 class AtomicClientEntityDefinition {
 public:
     // member variables
@@ -17,4 +22,36 @@ public:
     AtomicClientEntityDefinition& operator=(AtomicClientEntityDefinition const&);
     AtomicClientEntityDefinition(AtomicClientEntityDefinition const&);
     AtomicClientEntityDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit AtomicClientEntityDefinition(::std::string const& identifier);
+
+    MCNAPI AtomicClientEntityDefinition(::AtomicClientEntityDefinition&& other);
+
+    MCNAPI void parse(::std::string const& identifier, ::AtomicClientEntityDefinitionDescriptor descriptor);
+
+    MCNAPI ~AtomicClientEntityDefinition();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& identifier);
+
+    MCNAPI void* $ctor(::AtomicClientEntityDefinition&& other);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
 };

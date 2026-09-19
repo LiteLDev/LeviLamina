@@ -18,11 +18,11 @@ class AnvilQuery : public ::OreUI::QueryBase<::OreUI::AnvilQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mCostText;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mCostSentiment;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mShouldCrossOutIconBeVisible;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mPreviewItemName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mHasInputItem;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mCostText;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mCostSentiment;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mShouldCrossOutIconBeVisible;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mPreviewItemName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mHasInputItem;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 

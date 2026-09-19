@@ -13,7 +13,9 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class EntityContext;
+class Interaction;
 class Player;
+class Vec3;
 struct ActorDefinitionIdentifier;
 struct HurtParameters;
 struct VariantParameterList;
@@ -45,6 +47,8 @@ public:
 
     virtual void remove() /*override*/;
 
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
+
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
@@ -74,7 +78,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCFOLD float $getShadowRadius() const;
 
@@ -83,6 +87,8 @@ public:
     MCFOLD bool $canExistWhenDisallowMob() const;
 
     MCAPI void $remove();
+
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
 
     MCAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);

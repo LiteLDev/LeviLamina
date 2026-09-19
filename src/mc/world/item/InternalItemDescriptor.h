@@ -27,6 +27,8 @@ public:
 
     virtual ::std::string getFullName() const /*override*/;
 
+    virtual ::std::string getNameAndAux() const /*override*/;
+
     virtual ::ItemDescriptor::ItemEntry getItem() const /*override*/;
 
     virtual ::std::map<::std::string, ::std::string> toMap() const /*override*/;
@@ -48,6 +50,8 @@ public:
     MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
 
     MCAPI ::std::string $getFullName() const;
+
+    MCAPI ::std::string $getNameAndAux() const;
 
     MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
 

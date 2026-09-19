@@ -37,6 +37,18 @@ public:
     // NOLINTEND
 
 public:
+    [[nodiscard]] KeyIterable keys() const {
+        return KeyIterable{mComponents->keys().begin(), mComponents->keys().end()};
+    }
+
+    /// The reference points into the stored component, so it stays valid as long as the
+    /// storage does; the `meta_any` returned by the non-template overload is only a handle.
+    template <class T>
+    [[nodiscard]] T const& getComponent(::std::string_view name) const {
+        return this->getComponent(name).template cast<T const&>();
+    }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool eraseComponent(::std::string_view name);

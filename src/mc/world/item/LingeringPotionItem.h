@@ -3,55 +3,43 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/PotionItem.h"
-#include "mc/world/item/ResolvedItemIconInfo.h"
-#include "mc/world/item/alchemy/Potion.h"
+#include "mc/world/item/alchemy/PotionType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockSource;
-class CompoundTag;
 class Container;
 class Item;
-class ItemDescriptor;
 class ItemStack;
 class ItemStackBase;
 class Level;
 class Player;
 class Vec3;
+struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class LingeringPotionItem : public ::PotionItem {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1344, ::ResolvedItemIconInfo[21]> mLingeringIcons;
-    ::ll::TypedStorage<4, 84, ::Potion::PotionVariant[21]>  mLingeringPotionVariants;
-    // NOLINTEND
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Potion::PotionType getPotionType() const /*override*/;
+    virtual ::PotionType getPotionType() const /*override*/;
 
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
-
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool                                 showCategory
     ) const /*override*/;
 
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual bool isThrowable() const /*override*/;
 
@@ -69,24 +57,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::PotionType $getPotionType() const;
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
-
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
+        bool                                 showCategory
     ) const;
 
-    MCAPI ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
     MCFOLD bool $isThrowable() const;
 

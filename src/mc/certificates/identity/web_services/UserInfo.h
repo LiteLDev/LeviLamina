@@ -14,7 +14,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk6665c8;
     ::ll::UntypedStorage<8, 32> mUnk978076;
     ::ll::UntypedStorage<8, 32> mUnk4f365d;
-    ::ll::UntypedStorage<8, 32> mUnk1a0aa5;
+    ::ll::UntypedStorage<8, 32> mUnk6b93b7;
     ::ll::UntypedStorage<8, 32> mUnkcb106c;
     ::ll::UntypedStorage<8, 32> mUnk1e09fc;
     ::ll::UntypedStorage<8, 32> mUnkf70377;

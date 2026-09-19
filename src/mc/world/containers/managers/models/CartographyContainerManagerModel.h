@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
+class ItemInstance;
 class ItemStack;
 // clang-format on
 
@@ -37,6 +38,14 @@ public:
     virtual bool isValid(float pickRange) /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+#endif
     // NOLINTEND
 
 public:

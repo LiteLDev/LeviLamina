@@ -57,7 +57,7 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>      mWorldIconTargetPath;
     ::ll::TypedStorage<4, 4, ::WorldIconType>                         mWorldIconType;
     ::ll::TypedStorage<8, 24, ::ContentIdentity>                      mPremiumTemplateContentIdentity;
-    ::ll::TypedStorage<8, 32, ::std::string>                          mEducationOid;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mMessUserId;
     ::ll::TypedStorage<8, 72, ::Experiments>                          mExperiments;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                      mBaseGameVersion;
     ::ll::TypedStorage<1, 1, bool>                                    mIsSingleUseWorld;
@@ -118,7 +118,7 @@ public:
         ::StorageVersion                      storageVersion,
         ::Core::Path const&                   path,
         ::ContentIdentity const&              premiumContentIdentity,
-        ::std::string const&                  educationOid,
+        ::std::string const&                  messUserId,
         bool                                  isSingleUseWorld,
         ::EduSharedUriResource const&         eduSharedUriResource,
         ::Experiments const&                  experiments,
@@ -127,9 +127,13 @@ public:
         bool                                  uncompleteWorldFileOnDisk,
         ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
     );
-#endif
 
     MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
+#endif
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getEducationCreatorId() const;
@@ -145,6 +149,8 @@ public:
     MCAPI ::LevelSummary& operator=(::LevelSummary const&);
 
     MCAPI bool operator==(::LevelSummary const& rhs) const;
+
+    MCAPI void reinitializeWorldSize(::Core::Path const& directory);
 
     MCAPI void setCloudSave(::CloudSaveLevelInfo const& value);
 
@@ -223,7 +229,7 @@ public:
         ::StorageVersion                      storageVersion,
         ::Core::Path const&                   path,
         ::ContentIdentity const&              premiumContentIdentity,
-        ::std::string const&                  educationOid,
+        ::std::string const&                  messUserId,
         bool                                  isSingleUseWorld,
         ::EduSharedUriResource const&         eduSharedUriResource,
         ::Experiments const&                  experiments,

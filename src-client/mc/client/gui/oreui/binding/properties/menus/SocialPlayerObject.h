@@ -25,25 +25,35 @@ class SocialPlayerObject : public ::OreUI::PropertyObject<::OreUI::SocialPlayerO
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>           mMaybeActorId;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>           mMaybeXuid;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>           mMaybePlatformId;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                            mGamerTag;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                            mGamerIcon;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>           mPlayingOnServerId;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>           mPlayingOnRealmId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::SocialPresence>>                  mPresence;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::PartyPresence>>                   mPartyPresence;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                            mPresenceTitleName;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                            mPresenceMessage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::TitleHistory>>                   mTitleHistory;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                     mIsCurrentlyPlaying;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                     mIsInSameGame;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::RelationshipStatus>>                     mFavoriteStatus;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<::PlayerPermissionLevel>>> mPermissionLevel;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>                    mIsBlocked;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>                    mIsMuted;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::RelationToCurrentUser>>          mRelation;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mMaybeActorId;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mMaybeXuid;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+                                                                                mMaybePlatformId;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mGamerTag;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mGamerIcon;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mPlayingOnServerId;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+                                                                                                    mPlayingOnRealmId;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::SocialPresence, ::OreUI::SocialPresence>> mPresence;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::PartyPresence, ::OreUI::PartyPresence>>   mPartyPresence;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>                     mPresenceTitleName;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>                     mPresenceMessage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::TitleHistory, ::Social::TitleHistory>>   mTitleHistory;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                       mIsCurrentlyPlaying;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                       mIsInSameGame;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::RelationshipStatus, ::RelationshipStatus>>       mFavoriteStatus;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::Property<::std::optional<::PlayerPermissionLevel>, ::std::optional<::PlayerPermissionLevel>>>
+                                                                                                mPermissionLevel;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>, ::std::optional<bool>>> mIsBlocked;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>, ::std::optional<bool>>> mIsMuted;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::RelationToCurrentUser, ::Social::RelationToCurrentUser>>
+        mRelation;
     // NOLINTEND
 
 public:

@@ -13,7 +13,6 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct PassengerComponent;
 struct StopRidingRequestComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class RemovePassengersTooLargeForVehicleSystem {
@@ -27,7 +26,5 @@ public:
         ::ViewT<::StrictEntityContext, ::RideableComponent const> const& vehicleView,
         ::EntityModifier<::StopRidingRequestComponent>&                  modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

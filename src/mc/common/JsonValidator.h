@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class I18n;
 namespace Json { class Value; }
 // clang-format on
 
@@ -31,6 +32,7 @@ public:
 
     public:
         // prevent constructor by default
+        Property& operator=(Property const&);
         Property();
 
     public:
@@ -42,8 +44,6 @@ public:
 
         MCNAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
-
-        MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property const&);
 
         MCNAPI ::JsonValidator::Property& operator[](::std::string const& propName);
 
@@ -67,6 +67,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static bool validate(
+        ::I18n&                          loc,
         ::JsonValidator::Property const& rootProp,
         ::Json::Value const&             rootData,
         ::std::vector<::std::string>*    errors

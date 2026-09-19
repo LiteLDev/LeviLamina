@@ -18,4 +18,16 @@ public:
     EncryptedAccessStrategyOptions& operator=(EncryptedAccessStrategyOptions const&);
     EncryptedAccessStrategyOptions(EncryptedAccessStrategyOptions const&);
     EncryptedAccessStrategyOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~EncryptedAccessStrategyOptions();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

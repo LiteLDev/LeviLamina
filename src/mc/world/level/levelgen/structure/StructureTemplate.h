@@ -24,7 +24,6 @@ class Dimension;
 class IUnknownBlockTypeRegistry;
 class JigsawStructureBlockInfo;
 class LevelChunk;
-class StructureAnimationData;
 class StructureBlockPalette;
 class StructureSettings;
 class StructureTelemetryServerData;
@@ -57,7 +56,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                           mName;
-    ::ll::TypedStorage<8, 176, ::StructureTemplateData>                                mStructureTemplateData;
+    ::ll::TypedStorage<8, 184, ::StructureTemplateData>                                mStructureTemplateData;
     ::ll::TypedStorage<1, 1, uchar>                                                    mStructureVersion;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry>> mUnknownBlockRegistry;
     ::ll::TypedStorage<1, 1, bool>                                                     mIsRemovable;
@@ -190,13 +189,6 @@ public:
         bool                            updateItemData
     ) const;
 
-#ifdef LL_PLAT_S
-    MCAPI void placeNextSegmentInWorld(
-        ::StructureAnimationData& structureAnimationData,
-        ::BlockPalette const&     globalBlockPalette
-    ) const;
-#endif
-
     MCAPI bool setBlock(::BlockPos const& pos, ::Block const* block, bool waterlogged);
 
     MCAPI bool structureTemplateDataIsValid(
@@ -226,12 +218,6 @@ public:
         ::StructureTemplateData const&                          structureTemplateData,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& NO_BLOCK_INDEX_VALUE();
     // NOLINTEND
 
 public:

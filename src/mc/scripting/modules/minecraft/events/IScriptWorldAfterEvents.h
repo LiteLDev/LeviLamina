@@ -64,6 +64,10 @@ namespace ScriptModuleMinecraft { struct ScriptSoundCompletedAfterEventIntermedi
 namespace ScriptModuleMinecraft { struct ScriptTargetBlockHitAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptTripWireTripAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockPausedAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockResumedAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockTimeMarkerAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockTimeModifiedAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEventIntermediateData; }
 // clang-format on
 
@@ -338,6 +342,24 @@ public:
 
     virtual void
     onProjectileHitEntity(::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData>& eventData);
+
+    virtual void onWorldClockTimeModified(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeModifiedAfterEventIntermediateData>&
+            clockTimeModifiedEvent
+    );
+
+    virtual void onWorldClockPaused(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockPausedAfterEventIntermediateData>& clockPausedEvent
+    );
+
+    virtual void onWorldClockResumed(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockResumedAfterEventIntermediateData>& clockResumedEvent
+    );
+
+    virtual void onWorldClockTimeMarker(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerAfterEventIntermediateData>&
+            clockTimeMarkerEvent
+    );
     // NOLINTEND
 
 public:
@@ -533,6 +555,24 @@ public:
 
     MCFOLD void
     $onProjectileHitEntity(::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData>& eventData);
+
+    MCFOLD void $onWorldClockTimeModified(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeModifiedAfterEventIntermediateData>&
+            clockTimeModifiedEvent
+    );
+
+    MCFOLD void $onWorldClockPaused(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockPausedAfterEventIntermediateData>& clockPausedEvent
+    );
+
+    MCFOLD void $onWorldClockResumed(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockResumedAfterEventIntermediateData>& clockResumedEvent
+    );
+
+    MCFOLD void $onWorldClockTimeMarker(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerAfterEventIntermediateData>&
+            clockTimeMarkerEvent
+    );
 
 
     // NOLINTEND

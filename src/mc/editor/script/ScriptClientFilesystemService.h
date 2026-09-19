@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct InterfaceBinding; }
+// clang-format on
+
 namespace Editor::ScriptModule {
 
 class ScriptClientFilesystemService {
@@ -18,6 +25,16 @@ public:
     ScriptClientFilesystemService& operator=(ScriptClientFilesystemService const&);
     ScriptClientFilesystemService(ScriptClientFilesystemService const&);
     ScriptClientFilesystemService();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::EnumBinding bindFilePickerErrorEnum();
+
+    MCNAPI static ::Scripting::InterfaceBinding bindFileSelectorOptions();
+
+    MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

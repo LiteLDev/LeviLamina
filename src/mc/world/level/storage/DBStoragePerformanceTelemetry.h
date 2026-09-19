@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class LevelStorageEventing;
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class DBStoragePerformanceTelemetry {
@@ -17,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk98c37d;
-    ::ll::UntypedStorage<8, 80> mUnkb28d92;
+    ::ll::UntypedStorage<8, 80> mUnke9822b;
     ::ll::UntypedStorage<8, 8>  mUnk932436;
     ::ll::UntypedStorage<8, 24> mUnkeb0085;
     // NOLINTEND
@@ -33,8 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DBStoragePerformanceTelemetry(::Bedrock::NonOwnerPointer<::LevelStorageEventing> eventing);
 
-    MCNAPI void
-    _fireEventLevelDBPerformanceData(::Bedrock::Threading::LockGuard<::Bedrock::Threading::Mutex>&, bool force);
+    MCNAPI void _fireEventLevelDBPerformanceData(::Bedrock::Threading::LockGuard<::std::mutex>&, bool force);
 
     MCNAPI void fireEventLevelDBPerformanceData(bool force);
 

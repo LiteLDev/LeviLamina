@@ -15,6 +15,7 @@ class Actor;
 class Mob;
 class NavigationComponent;
 class Path;
+struct GoalId;
 namespace SharedTypes::v1_26_40 { struct MeleeAttackBaseGoalDefinition; }
 // clang-format on
 
@@ -99,7 +100,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MeleeAttackBaseGoal(::Mob& mob);
+    MCAPI MeleeAttackBaseGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
 
@@ -117,7 +118,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

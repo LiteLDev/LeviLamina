@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnkd171ca;
-    ::ll::UntypedStorage<8, 80> mUnk2ca349;
+    ::ll::UntypedStorage<8, 80> mUnk2c0e30;
     // NOLINTEND
 
 public:
@@ -28,11 +28,5 @@ public:
     MCNAPI ::leveldb::Status $Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

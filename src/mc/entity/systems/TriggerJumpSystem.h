@@ -20,7 +20,6 @@ struct MobTravelComponent;
 struct MovementAttributesComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 struct WasInLavaFlagComponent;
 struct WasInWaterFlagComponent;
@@ -44,10 +43,4 @@ public:
         ::Optional<::MobIsJumpingFlagComponent const>,
         ::Optional<::WasInLavaFlagComponent const>,
         ::Optional<::WasInWaterFlagComponent const>>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createTriggerJumpSystem();
-    // NOLINTEND
 };

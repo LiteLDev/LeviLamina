@@ -15,7 +15,7 @@ class IFileChunkDownloader {
 public:
     // IFileChunkDownloader inner types define
     using DataCallback =
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>;
+        ::std::function<void(::std::vector<uchar>, uint64, uint64, int, ::std::function<void(uint64, bool)>)>;
 
     using EndCallback = ::std::function<void(::DownloaderState)>;
 
@@ -49,8 +49,9 @@ public:
     ) = 0;
 
     virtual void downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
-        ::std::function<void(::DownloaderState)>                                                         endCallback
+        ::std::function<void(::std::vector<uchar>, uint64, uint64, int, ::std::function<void(uint64, bool)>)>
+                                                 dataCallback,
+        ::std::function<void(::DownloaderState)> endCallback
     ) = 0;
 
     virtual bool canCancelDownload() const = 0;

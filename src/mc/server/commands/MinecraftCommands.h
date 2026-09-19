@@ -25,7 +25,6 @@ class Experiments;
 class ICommandsContextProvider;
 class ItemRegistryRef;
 class Level;
-class Packet;
 class Recipes;
 struct MCRESULT;
 struct MinecraftCommandsArguments;
@@ -112,8 +111,6 @@ public:
 
     MCAPI void
     runCommand(::HashedString const& commandStr, ::CommandOrigin& origin, ::CurrentCmdVersion commandVersion);
-
-    MCAPI void setRegistryNetworkUpdateCallback(::std::function<void(::Packet const&)> callback) const;
 
     MCAPI void tick();
     // NOLINTEND

@@ -66,6 +66,12 @@ public:
         std::vector<BlockDataFetchResult<T>>&
     ) const override;
 
+    MCAPI bool hasAnyElementInBox(
+        BlockPos const&,
+        BoundingBox const&,
+        brstd::function_ref<bool(T const&), bool(T const&)> const&
+    ) const override;
+
     MCAPI bool hasAnyElementMatchingFilterInPalette(std::function<bool(T const&)> const&) const override;
 
     MCAPI void _serialize(IDataOutput&, RuntimeSerializationLookup<T> const&) const override;
@@ -128,6 +134,12 @@ public:
         BoundingBox const&,
         brstd::function_ref<bool(T const&), bool(T const&)> const&,
         std::vector<BlockDataFetchResult<T>>&
+    ) const override;
+
+    MCAPI bool hasAnyElementInBox(
+        BlockPos const&,
+        BoundingBox const&,
+        brstd::function_ref<bool(T const&), bool(T const&)> const&
     ) const override;
 
     MCAPI bool hasAnyElementMatchingFilterInPalette(std::function<bool(T const&)> const&) const override;

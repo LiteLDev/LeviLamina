@@ -13,7 +13,7 @@ class Player;
 struct ControlSchemeComponent;
 struct ServerCameraAllowedControlSchemesComponent;
 struct ServerCameraDefaultControlSchemesComponent;
-namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 // clang-format on
 
 namespace ControlSchemeUtils {
@@ -31,13 +31,13 @@ MCNAPI ::std::string getControlSchemeName(::ControlScheme::Scheme scheme);
 
 MCNAPI ::ControlScheme::Scheme getDefaultControlScheme(
     ::std::string_view                                          cameraName,
-    ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presets,
+    ::std::vector<::SharedTypes::v1_26_50::CameraPreset> const& presets,
     ::std::vector<::ControlScheme::Scheme> const&               allowedControlSchemes
 );
 
 MCNAPI ::std::string_view getRootInheritedCamera(
     ::std::string_view                                          cameraName,
-    ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presets
+    ::std::vector<::SharedTypes::v1_26_50::CameraPreset> const& presets
 );
 
 MCNAPI bool isSchemeAllowedByCamera(::std::string_view cameraName, ::ControlScheme::Scheme scheme);
@@ -46,7 +46,7 @@ MCNAPI void populateControlSchemeServerComponents(
     ::ServerCameraAllowedControlSchemesComponent&               allowedSchemesComponent,
     ::ServerCameraDefaultControlSchemesComponent&               defaultSchemesComponent,
     ::std::string_view                                          presetName,
-    ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& cameraPresets
+    ::std::vector<::SharedTypes::v1_26_50::CameraPreset> const& cameraPresets
 );
 
 MCNAPI ::ControlScheme::Scheme resolveControlSchemeOnCameraSetCommand(

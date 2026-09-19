@@ -6,6 +6,12 @@
 #include "mc/world/actor/ai/goal/RandomLookAroundGoal.h"
 #include "mc/world/level/Tick.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+struct GoalId;
+// clang-format on
+
 class RandomLookAroundAndSitGoal : public ::RandomLookAroundGoal {
 public:
     // member variables
@@ -18,6 +24,10 @@ public:
     ::ll::TypedStorage<4, 4, int>    mRandomLookAroundCooldown;
     ::ll::TypedStorage<8, 8, ::Tick> mNextAvailableSitTick;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RandomLookAroundAndSitGoal();
 
 public:
     // virtual functions
@@ -33,6 +43,18 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RandomLookAroundAndSitGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

@@ -24,6 +24,8 @@ MCNAPI ::HashedString const& MOB_GENERAL();
 
 MCNAPI ::HashedString const& MOB_INVENTORY();
 
+MCNAPI ::HashedString const& MOB_LIGHT_LEVEL();
+
 MCNAPI ::HashedString const& MOB_PERMUTATIONS();
 
 MCNAPI ::HashedString const& MOB_PROPERTIES();

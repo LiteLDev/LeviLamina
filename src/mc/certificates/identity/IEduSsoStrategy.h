@@ -54,9 +54,17 @@ public:
     virtual bool isDemoConversion() const = 0;
 
     virtual void signInGraph(
-        ::Identity::IEduAuth&                                                                                   auth,
-        ::std::string const&                                                                                    userId,
+        ::Identity::IEduAuth& auth,
+        ::std::string const&  userHint,
         ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)> callback
+    ) = 0;
+
+    virtual void signInSharePoint(
+        ::Identity::IEduAuth& auth,
+        ::std::string const&  userId,
+        ::std::string const&  spoResource,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>&&
+            callback
     ) = 0;
     // NOLINTEND
 };

@@ -15,6 +15,7 @@ class ClientInputHandlerProxy;
 class ClientInputMappingFactory;
 class Config;
 class IClientInstance;
+class IGameModuleApp;
 class InputHandler;
 class ItemStack;
 class ScreenContext;
@@ -61,6 +62,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ClientInputHandler(
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
+        ::InputHandler&                                                            inputHandler,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
+        ::IGameModuleApp&                                                          gameModuleApp
+    );
+
     MCAPI ::Actor* _interactWithEntity() const;
 
     MCAPI ::std::string _interactWithImmersiveReader() const;
@@ -126,6 +134,17 @@ public:
     MCAPI bool useFreeformPickDirection() const;
 
     MCAPI ~ClientInputHandler();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
+        ::InputHandler&                                                            inputHandler,
+        ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
+        ::IGameModuleApp&                                                          gameModuleApp
+    );
     // NOLINTEND
 
 public:

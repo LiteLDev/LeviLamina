@@ -32,4 +32,16 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                      mLightMultiplierExpressions;
     ::ll::TypedStorage<8, 24, ::std::vector<float>>                                 mLightMultiplierConstants;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~RenderControllerResources();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

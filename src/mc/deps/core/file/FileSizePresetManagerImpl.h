@@ -18,7 +18,7 @@ class FileSizePresetManagerImpl : public ::Core::FileSizePresetManager, public :
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk33addc;
+    ::ll::UntypedStorage<8, 80> mUnkea1e36;
     ::ll::UntypedStorage<8, 16> mUnkbcb807;
     // NOLINTEND
 

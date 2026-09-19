@@ -9,6 +9,8 @@
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/platform/brstd/copyable_function.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/safety/RedactableString.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/ContainerCloseListener.h"
@@ -59,7 +61,8 @@ public:
 
     [[nodiscard]] ItemStack const& operator[](int index) const { return this->getItem(index); }
 
-    using TransactionContext = std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>;
+    using TransactionContext =
+        ::brstd::copyable_function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>;
 
 public:
     using Iterator      = ContainerIterator<Container>;
@@ -185,11 +188,6 @@ public:
 
     virtual void addAdditionalSaveData(::CompoundTag& tag);
 
-    virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
-
     virtual void initializeContainerContents(::BlockSource& region);
 
     virtual bool isEmpty() const;
@@ -200,7 +198,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Container(::Container const& backingContainer);
+    MCAPI Container(::Container const&);
 
     MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
@@ -219,6 +217,11 @@ public:
 
     MCAPI void
     _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+
+    MCAPI void createTransactionContext(
+        ::brstd::copyable_function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::brstd::function_ref<void()>                                                               execute
+    );
 
     MCAPI int getItemCount(::ItemDescriptor const& descriptor) const;
 
@@ -245,7 +248,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Container const& backingContainer);
+    MCAPI void* $ctor(::Container const&);
 
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
@@ -304,11 +307,7 @@ public:
 
     MCAPI ::std::vector<::ItemStack const*> const $getSlots() const;
 
-#ifdef LL_PLAT_S
     MCAPI int $getEmptySlotsCount() const;
-#else // LL_PLAT_C
-    MCFOLD int $getEmptySlotsCount() const;
-#endif
 
     MCAPI int $getItemCount(::ItemStack const& compare) const;
 
@@ -335,11 +334,6 @@ public:
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag);
-
-    MCAPI void $createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
 
     MCFOLD void $initializeContainerContents(::BlockSource& region);
 

@@ -17,9 +17,7 @@ class IContentKeyProvider;
 class IResourcePackRepository;
 class ImportContext;
 class LevelLoader;
-class PackManifest;
 class PackManifestFactory;
-class PackReport;
 class PackSourceFactory;
 class PersonaRepository;
 class ResourceLoadManager;
@@ -146,15 +144,6 @@ public:
         ::PackSourceFactory&                                              packSourceFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>              resourceLoadManager,
         bool                                                              isEditorModeEnabled
-    );
-
-    MCAPI void _importMCPack(
-        ::std::shared_ptr<::ImportContext> context,
-        ::ResourceLocation const&          location,
-        ::PackManifest const&              manifest,
-        ::PackReport const&                report,
-        bool                               fromTemp,
-        bool                               isTitleLocked
     );
 
     MCAPI void _importMCWorld(

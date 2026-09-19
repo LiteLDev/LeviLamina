@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDestructibleByExplosionDescription : public ::BlockComponentDescription {
@@ -19,6 +18,12 @@ public:
     // NOLINTEND
 
 public:
+    explicit BlockDestructibleByExplosionDescription(float explosionResistance) {
+        mExplosionResistance = explosionResistance * 5.0f;
+        mInitializedFromCode = true;
+    }
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -26,14 +31,6 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
     // NOLINTEND
 
 public:

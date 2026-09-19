@@ -16,7 +16,6 @@ class MovePlayerPacket;
 class Player;
 class ReplayStateComponent;
 class UpdateAttributesPacket;
-class UpdatePlayerGameTypePacket;
 class Vec2;
 struct IMovementCorrection;
 // clang-format on
@@ -47,9 +46,6 @@ public:
 
     MCAPI static ::EventResult
     _onUpdateAttributesPacketReceived(::Actor& actor, ::std::shared_ptr<::UpdateAttributesPacket> packet);
-
-    MCAPI static ::EventResult
-    _onUpdatePlayerGameTypePacketReceived(::Actor& actor, ::UpdatePlayerGameTypePacket const& packet);
 
     MCAPI static ::ReplayStateComponent* tryGetReplayStateComponentForCorrection(::EntityContext& entity, uint64 tick);
     // NOLINTEND

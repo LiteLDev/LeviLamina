@@ -7,5 +7,6 @@ enum class ConnectionID : int {
     NetherBrickFence = 1,
     Wall             = 2,
     ThinFence        = 3,
-    Count            = 4,
+    TripWire         = 4,
+    Count            = 5,
 };

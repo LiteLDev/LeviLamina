@@ -14,6 +14,9 @@ public:
     // NOLINTEND
 
 public:
+    bool operator==(ContentIdentity const& rhs) const { return *mUUID == *rhs.mUUID; }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::std::string asString() const;
@@ -25,3 +28,10 @@ public:
     MCAPI static ::ContentIdentity& EMPTY();
     // NOLINTEND
 };
+
+namespace std {
+template <>
+struct hash<::ContentIdentity> {
+    size_t operator()(::ContentIdentity const& id) const noexcept { return hash<::mce::UUID>{}(id.mUUID.get()); }
+};
+} // namespace std

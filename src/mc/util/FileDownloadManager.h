@@ -29,6 +29,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnkf288de;
     ::ll::UntypedStorage<8, 8>   mUnk646146;
     ::ll::UntypedStorage<8, 8>   mUnk1fa5e5;
+    ::ll::UntypedStorage<4, 4>   mUnkd44287;
     ::ll::UntypedStorage<8, 24>  mUnk996181;
     ::ll::UntypedStorage<1, 1>   mUnkd59752;
     // NOLINTEND
@@ -70,6 +71,7 @@ public:
         uint64                              writeBytes,
         uint64                              offset,
         uint64                              progress,
+        int                                 chunkIndex,
         ::std::function<void(uint64, bool)> writeComplete
     );
 

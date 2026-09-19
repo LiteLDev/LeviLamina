@@ -79,12 +79,20 @@ public:
     MCNAPI void unbindAll();
 
     MCNAPI void unbindObservable(::std::string const& property, ::std::string const& path);
+
+    MCNAPI ~ScriptObservableDataStoreBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::IGameplayUserManagerConnector& userManagerConnector, ::ServerPlayer& player);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

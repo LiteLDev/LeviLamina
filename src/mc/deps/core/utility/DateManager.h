@@ -25,7 +25,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk38358c;
     ::ll::UntypedStorage<8, 8>  mUnka25ee2;
     ::ll::UntypedStorage<8, 8>  mUnk6da9eb;
-    ::ll::UntypedStorage<8, 80> mUnkb81dc2;
+    ::ll::UntypedStorage<8, 80> mUnk1c37a7;
     ::ll::UntypedStorage<8, 32> mUnk8d6b0a;
     ::ll::UntypedStorage<1, 1>  mUnk79feed;
     // NOLINTEND
@@ -80,9 +80,9 @@ public:
 
     MCNAPI static ::Bedrock::Result<int64> parseImfFixdate(::std::string const& dateHeader);
 
-#ifdef LL_PLAT_C
     MCNAPI static ::Bedrock::Result<::std::chrono::seconds> parseNetTimeSpan(::std::string_view str);
 
+#ifdef LL_PLAT_C
     MCNAPI static bool toDateTime(
         ::std::string const&         strTime,
         ::tm*                        result,
@@ -109,9 +109,7 @@ public:
 
     MCNAPI static ::std::string toString_DateTime(::tm const& time, ::DateManager::TimeZoneType outputType);
 
-#ifdef LL_PLAT_C
     MCNAPI static ::std::string toString_NetTimeSpan(::std::chrono::seconds value);
-#endif
     // NOLINTEND
 
 public:

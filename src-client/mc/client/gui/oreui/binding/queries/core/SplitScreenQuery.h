@@ -21,11 +21,11 @@ class SplitScreenQuery : public ::OreUI::QueryBase<::OreUI::SplitScreenQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                   mIsPrimaryUser;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mSplitScreenPosition;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                    mActivePlayers;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::SplitScreenDirection>> mSplitScreenDirection;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mChangeToken;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                     mIsPrimaryUser;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                       mSplitScreenPosition;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                       mActivePlayers;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::SplitScreenDirection, ::SplitScreenDirection>> mSplitScreenDirection;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                    mChangeToken;
     // NOLINTEND
 
 public:

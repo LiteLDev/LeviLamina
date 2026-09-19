@@ -11,10 +11,9 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class ActorInteraction;
 class DwellerComponent;
 class EntityContext;
-class InteractionResult;
+class Interaction;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -39,8 +38,7 @@ public:
 
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    virtual ::InteractionResult
-    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
     // NOLINTEND
@@ -80,8 +78,7 @@ public:
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCAPI ::InteractionResult
-    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 

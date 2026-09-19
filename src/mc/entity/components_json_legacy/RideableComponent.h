@@ -8,8 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
+class Interaction;
 class Player;
 class Vec3;
 // clang-format on
@@ -24,20 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RideableComponent();
+    MCAPI bool allowInteraction(::Actor& owner, ::Player& player) const;
 
     MCAPI bool canAddPassenger(::Actor const& vehicle, ::Actor& passenger) const;
 
     MCAPI bool getFirstAvailableSeatPosition(::Actor const& owner, ::Actor& potentialPassenger, ::Vec3& result) const;
 
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player) const;
 
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

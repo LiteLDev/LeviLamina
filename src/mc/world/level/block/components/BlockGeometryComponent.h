@@ -81,10 +81,6 @@ public:
     BlockGeometryComponent();
 
 #else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    BlockGeometryComponent(BlockGeometryComponent const&);
-
 #endif
 public:
     // member functions
@@ -93,12 +89,12 @@ public:
     MCAPI BlockGeometryComponent();
 #endif
 
+    MCAPI BlockGeometryComponent(::BlockGeometryComponent const& other);
+
     MCAPI
     BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
 
-#ifdef LL_PLAT_C
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
-#endif
 
     MCAPI ~BlockGeometryComponent();
     // NOLINTEND
@@ -109,6 +105,8 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void* $ctor();
 #endif
+
+    MCAPI void* $ctor(::BlockGeometryComponent const& other);
 
     MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
     // NOLINTEND

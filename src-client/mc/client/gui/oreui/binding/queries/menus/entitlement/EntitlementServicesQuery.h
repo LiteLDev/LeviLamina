@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
-#include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
+#include "mc/client/gui/oreui/binding/queries/menus/entitlement/SubscriptionInfo.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-class MarketplaceServicesManager;
+class ISubscriptionStateManager;
 namespace OreUI { class GameDependencies; }
-namespace OreUI { class SubscriptionInfo; }
 // clang-format on
 
 namespace OreUI {
@@ -20,20 +20,16 @@ class EntitlementServicesQuery : public ::OreUI::QueryBase<::OreUI::EntitlementS
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::MarketplaceServicesManager&> mMarketplaceServicesManager;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>     mHasAvailableRealmsTrial;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>     mHasAvailableMarketplacePassTrial;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::SubscriptionInfo, ::std::allocator<::OreUI::SubscriptionInfo>>>
-        mNextAvailableSubscriptions;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ISubscriptionStateManager>> mSubscriptionStateManager;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                 mHasAvailableRealmsTrial;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                 mHasAvailableMarketplacePassTrial;
+    ::ll::TypedStorage<8, 1600, ::std::optional<::OreUI::SubscriptionInfo>>   mNextAvailableRealmsCoreOffer;
+    ::ll::TypedStorage<8, 1600, ::std::optional<::OreUI::SubscriptionInfo>>   mNextAvailableRealmsPlusOffer;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mSubscriptionDataChangedSubscription;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EntitlementServicesQuery& operator=(EntitlementServicesQuery const&);
-    EntitlementServicesQuery(EntitlementServicesQuery const&);
     EntitlementServicesQuery();
 
 public:

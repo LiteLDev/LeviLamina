@@ -12,6 +12,7 @@ public:
     class PopRangeOfTypeScreenEvent;
     class FlushScreenEvent;
     class ReloadScreenEvent;
+    class RouteActionEvent;
     // clang-format on
 
     // SceneStack inner types define
@@ -30,4 +31,6 @@ public:
     class FlushScreenEvent {};
 
     class ReloadScreenEvent {};
+
+    class RouteActionEvent {};
 };

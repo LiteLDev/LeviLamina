@@ -6,6 +6,7 @@ class MinecraftGame {
 public:
     // MinecraftGame inner types declare
     // clang-format off
+    class ClientInterface;
     struct InitContext;
     struct FrameGapImpl;
     // clang-format on
@@ -18,6 +19,8 @@ public:
     enum class SurfaceState : int {};
 
     enum class WorkList : uint64 {};
+
+    class ClientInterface {};
 
     struct InitContext {};
 

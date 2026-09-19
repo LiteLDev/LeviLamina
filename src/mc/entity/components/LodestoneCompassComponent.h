@@ -47,14 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void tickSpinningCalculator();
-#endif
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::CompassSpriteCalculator& mSpinningLodestone();

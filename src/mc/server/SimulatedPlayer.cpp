@@ -15,6 +15,7 @@
 #include "mc/world/actor/provider/MobMovement.h"
 #include "mc/world/gamemode/GameMode.h"
 #include "mc/world/gamemode/InteractionResult.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/phys/HitResult.h"
@@ -103,7 +104,7 @@ bool SimulatedPlayer::simulateAttack(Actor* target) {
     if (*mInputCooldownTick && (currentTick - **mInputCooldownTick < 10)) {
         return false;
     }
-    swing(ActorSwingSource::Attack);
+    swing(ActorSwingSource::Attack, HandSlot::Mainhand);
     mInputCooldownTick = currentTick;
     return attack(*target, SharedTypes::Legacy::ActorDamageCause::EntityAttack);
 }
@@ -215,5 +216,5 @@ bool SimulatedPlayer::simulateInteract(::BlockPos const& pos, ::ScriptModuleMine
     auto& block = getDimensionBlockSource().getBlock(pos);
 
     Vec3 hitResult;
-    return block.use(*this, pos, static_cast<unsigned char>(face), hitResult);
+    return block.use(*this, pos, static_cast<unsigned char>(face), HandSlot::Mainhand, hitResult);
 }

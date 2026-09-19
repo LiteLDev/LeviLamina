@@ -56,7 +56,6 @@ class ResourceLocation;
 class ResourcePackFileUploadManager;
 class SearchQuery;
 class SkinPackCollectionModel;
-class SkinPickerUpsellTreatmentQuery;
 class StoreCatalogItem;
 class StoreCatalogRepository;
 class StoreSearchQuery;
@@ -79,17 +78,14 @@ struct RealmsPurchaseDetails;
 struct StoreDataDrivenScreenParams;
 struct SubmitItemRatingResult;
 struct WorldTemplateInfo;
-namespace Bedrock::Http { class Status; }
 namespace Bedrock::PubSub { class Subscription; }
-namespace Clubs { struct FeedItem; }
 namespace Core { class Path; }
 namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Realms { class RealmsWorldContext; }
-namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
 namespace Realms::Stories { class FacetStateManager; }
-namespace Realms::Stories { class RealmEvent; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
+namespace Safety { struct TextScanResult; }
 namespace Social { class User; }
 namespace Social { struct EduDedicatedServerDetails; }
 namespace mce { class UUID; }
@@ -170,14 +166,11 @@ public:
 
     MCAPI void cancelCreateRealmsWorld();
 
-    MCAPI void checkAndPostUnpublishedRealmEventsToRealm(
-        ::Realms::RealmId                                                       realmId,
-        ::std::function<void(::Realms::Stories::RealmEvent, ::Clubs::FeedItem)> onSuccessfulPostToRealm
-    );
-
     MCAPI bool checkStoreForAvailableUpdates() const;
 
     MCAPI void clearAllUserCache();
+
+    MCAPI void clearLayoutCache();
 
     MCAPI void clearScreenshotsCache();
 
@@ -222,8 +215,6 @@ public:
 
     MCAPI ::MinecoinCatalogModel& getMinecoinCatalogModel();
 
-    MCFOLD ::Bedrock::Threading::Async<bool> getNeedsOfflineAuthCode();
-
     MCAPI ::std::string_view getNewPlayerFlowTargetRoute() const;
 
     MCAPI ::std::shared_ptr<::Social::User> getPrimaryUser() const;
@@ -233,9 +224,6 @@ public:
     MCAPI ::std::shared_ptr<::Realms::RealmsWorldContext> const getRealmsWorldContext() const;
 
     MCAPI ::SkinPackCollectionModel& getSkinPackCollection();
-
-    MCAPI ::std::shared_ptr<::SkinPickerUpsellTreatmentQuery>
-    getSkinPickerUpsellTreatmentQuery(::std::function<void(::SearchQuery const*)> callback) const;
 
     MCAPI ::StoreCatalogItem& getStoreCatalogItemByProductId(::std::string const& productId);
 
@@ -271,6 +259,8 @@ public:
     MCAPI bool isAbleToFetch(bool signInFailed) const;
 
     MCAPI bool isAppStoreReady() const;
+
+    MCAPI bool isMarketplacePassTrialAvailable() const;
 
     MCAPI bool isNewPlayerPathV3ABCTest() const;
 
@@ -460,10 +450,8 @@ public:
 
     MCAPI ::std::unique_ptr<::DlcUIWrapper> newDlcUIWrapper(::MainMenuScreenController& controller);
 
-    MCAPI void performPlayerSafetyScanRequest(
-        ::std::string const&                                        feedback,
-        ::std::function<void(::Bedrock::Http::Status const&, bool)> callback
-    );
+    MCAPI ::Bedrock::Threading::Async<::Safety::TextScanResult>
+    performPlayerSafetyScanRequest(::std::string const& feedback);
 
     MCAPI bool prepareAppStoreForPurchases(::std::function<void(bool)> callback);
 
@@ -484,8 +472,6 @@ public:
 
     MCAPI ::Bedrock::PubSub::Subscription
     registerPrimaryUserSignInSubscriber(::std::function<void(uint, ::Social::IdentityType)> listener);
-
-    MCFOLD ::Bedrock::Threading::Async<bool> requestOfflineAuthCode();
 
     MCAPI void setDeepLinkListenerMainMenuParameters(::std::function<void(::DownloadError const&)> onDownloadError);
 

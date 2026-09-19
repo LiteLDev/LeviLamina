@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/platform/threading/UniqueLock.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading { class Mutex; }
-// clang-format on
-
 namespace Bedrock::Http {
 
 class LibHttpClientInstance {
@@ -36,7 +31,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Threading::Mutex& sMutex();
+    MCNAPI static ::std::mutex& sMutex();
     // NOLINTEND
 };
 

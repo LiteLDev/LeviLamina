@@ -85,6 +85,8 @@ public:
     // NOLINTBEGIN
     MCAPI void onJoinWorld(::IClientInstance& client);
 
+    MCAPI void onLeaveWorld();
+
     MCAPI void setupGameServerConnectionListener(::GameConnectionConnector const& gameConnectionConnector);
     // NOLINTEND
 

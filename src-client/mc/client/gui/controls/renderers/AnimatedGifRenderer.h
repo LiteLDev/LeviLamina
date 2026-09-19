@@ -72,4 +72,10 @@ public:
 
     MCFOLD int $getCustomId() const;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

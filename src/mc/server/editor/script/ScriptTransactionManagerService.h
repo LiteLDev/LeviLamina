@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptUserDefinedTransactionHandlerId; }
 namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -21,33 +20,13 @@ namespace Editor::ScriptModule {
 class ScriptTransactionManagerService
 : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptTransactionManagerService> {
 public:
-    // ScriptTransactionManagerService inner types declare
-    // clang-format off
-    struct UserDefinedOperationHandler;
-    // clang-format on
-
-    // ScriptTransactionManagerService inner types define
-    struct UserDefinedOperationHandler {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 112> mUnk11bc13;
-        ::ll::UntypedStorage<8, 112> mUnkee9e54;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UserDefinedOperationHandler& operator=(UserDefinedOperationHandler const&);
-        UserDefinedOperationHandler(UserDefinedOperationHandler const&);
-        UserDefinedOperationHandler();
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk5f49c3;
     ::ll::UntypedStorage<8, 16> mUnkd366ce;
-    ::ll::UntypedStorage<8, 64> mUnk21ded5;
+    ::ll::UntypedStorage<8, 16> mUnk30e8a1;
+    ::ll::UntypedStorage<8, 16> mUnkcdf0c8;
+    ::ll::UntypedStorage<8, 64> mUnk27b416;
     ::ll::UntypedStorage<8, 64> mUnk25294e;
     // NOLINTEND
 
@@ -72,12 +51,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> discardPendingTransaction(::mce::UUID const& uuid);
 
     MCNAPI ::Scripting::Result_deprecated<void> finalizePendingTransaction(::mce::UUID const& uuid);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Editor::ScriptModule::ScriptTransactionManagerService::UserDefinedOperationHandler>
-    getUserDefinedOperationHandler(
-        ::Editor::ScriptModule::ScriptUserDefinedTransactionHandlerId const& transactionHandler
-    );
 
     MCNAPI ::Editor::ScriptModule::ScriptTransactionManagerService&
     operator=(::Editor::ScriptModule::ScriptTransactionManagerService&& other);

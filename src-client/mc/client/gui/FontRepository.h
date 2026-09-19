@@ -33,19 +33,23 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                     mRuneFontId;
     ::ll::TypedStorage<8, 8, uint64>                                                     mUnicodeFontId;
     ::ll::TypedStorage<8, 8, uint64>                                                     mSmoothFontLatinFontId;
-    ::ll::TypedStorage<8, 8, uint64>                                                     mUIFontId;
-    ::ll::TypedStorage<8, 8, uint64>                                                     mSmoothSmallFontID;
-    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mFontHandle;
-    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mRuneFontHandle;
-    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mUnicodeFontHandle;
-    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mSmoothFontLatinHandle;
-    ::ll::TypedStorage<8, 80, ::FontHandle>                                              mUIFontHandle;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>>   mOriginalMinecraftFonts;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>>   mOverriddenFonts;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::Threading::Async<void>>>          mFontLoadingTaskTrackers;
-    ::ll::TypedStorage<8, 32, ::std::string>                                             mLanguageCode;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>>      mResourceLoadManager;
-    ::ll::TypedStorage<1, 1, bool>                                                       mIsOnLowMemoryDevice;
+    ::ll::TypedStorage<8, 8, uint64>        mSmoothFontWithHangulFallbackFontId;
+    ::ll::TypedStorage<8, 8, uint64>        mUIFontId;
+    ::ll::TypedStorage<8, 8, uint64>        mSmoothSmallFontID;
+    ::ll::TypedStorage<8, 80, ::FontHandle> mFontHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle> mRuneFontHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle> mUnicodeFontHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle> mSmoothFontLatinHandle;
+    ::ll::TypedStorage<8, 80, ::FontHandle> mUIFontHandle;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>> mOriginalMinecraftFonts;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>> mOverriddenFonts;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::Threading::Async<void>>>        mFontLoadingTaskTrackers;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::TextureGroup>>                  mFontTextureGroup;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mLanguageCode;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>>    mResourceLoadManager;
+    ::ll::TypedStorage<1, 1, bool>                                                     mIsOnLowMemoryDevice;
+    ::ll::TypedStorage<1, 1, bool>                                                     mHasLoggedFontLoadFailure;
+    ::ll::TypedStorage<1, 1, bool> mHasLoggedMissingSmoothFontWithHangulFallback;
     // NOLINTEND
 
 public:
@@ -84,6 +88,9 @@ public:
 
     MCAPI void _setFontIfOverride(uint64 const fontId, ::std::shared_ptr<::Font> font);
 
+    MCAPI void
+    _setMinecraftSmoothFontStyle(float guiScale, ::std::string const& languageCode, bool supportsCjkSmoothFont);
+
     MCAPI uint64 addPreloadedFont(::std::string const& fontName, ::gsl::not_null<::std::shared_ptr<::Font>> font);
 
     MCAPI ::FontHandle getFontFromFontType(::std::string const& fontType) const;
@@ -94,7 +101,11 @@ public:
 
     MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 
+    MCAPI bool haveDefaultFontsLoaded();
+
     MCAPI void initDefaultFontHandles();
+
+    MCAPI bool isRepositoryInitialized();
 
     MCAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
@@ -103,8 +114,6 @@ public:
     MCAPI void parseAndLoadMetadataFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI void reloadFontTextures(bool blockingLoad);
-
-    MCAPI void setMinecraftSmoothFontStyle(float guiScale, ::std::string const&);
 
     MCAPI void setMinecraftUIFontStyle(::std::string const& languageCode);
 

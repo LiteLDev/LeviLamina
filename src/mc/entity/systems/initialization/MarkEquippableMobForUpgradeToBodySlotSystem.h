@@ -11,7 +11,6 @@ class EquippableComponent;
 class StrictEntityContext;
 struct NeedsUpgradeToBodySlotFlagComponent;
 struct SkipBodySlotUpgradeFlagComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class MarkEquippableMobForUpgradeToBodySlotSystem {
@@ -23,7 +22,5 @@ public:
         ::EquippableComponent& equippableComponent,
         ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

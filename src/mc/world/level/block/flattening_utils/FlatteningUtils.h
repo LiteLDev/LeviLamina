@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/WeakPtr.h"
-
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockType;
 class CompoundTagUpdaterContext;
 class SemVersionConstant;
 struct ItemRegistryComplexAlias;
@@ -31,8 +27,8 @@ MCAPI void
 assignPreFlatteningDestructionParticlesTexture(::Block const& block, ::std::string& texture, ushort& auxValue);
 #endif
 
-MCAPI ::std::vector<::WeakPtr<::BlockType const>>
-getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
+MCAPI ::std::function<::Block const*(int)>
+getSimpleBlockComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
 MCAPI ::ItemRegistryComplexAlias
 getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, bool allowCommands);

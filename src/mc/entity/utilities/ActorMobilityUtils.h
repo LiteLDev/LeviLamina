@@ -107,6 +107,13 @@ MCAPI bool onHoverableBlock(::IConstBlockSource const& region, ::Vec3 const& pos
 
 MCAPI bool shouldApplyLava(::IConstBlockSource const& region, ::EntityContext const& entity);
 
+MCAPI bool shouldApplyLava(
+    ::IConstBlockSource const&  region,
+    ::AABBShapeComponent const& aabb,
+    ::SubBBsComponent const&    subBBs,
+    bool                        isImmuneToLava
+);
+
 MCAPI void startSpinAttack(::EntityContext& entity, int riptideLevel);
 // NOLINTEND
 

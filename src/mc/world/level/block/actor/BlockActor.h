@@ -13,6 +13,7 @@ class BlockActorDataPacket;
 class BlockSource;
 class BlockType;
 class CompoundTag;
+class ContainerBlockActorComponent;
 class DataLoadHelper;
 class DynamicPropertiesBlockActorComponent;
 class ILevel;
@@ -61,6 +62,7 @@ public:
     ::ll::TypedStorage<1, 1, ::BlockActorType const>                                        mType;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DynamicPropertiesBlockActorComponent>>     mDynamicProperties;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RandomizableContainerBlockActorComponent>> mRandomizableContainer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerBlockActorComponent>>             mContainer;
     // NOLINTEND
 
 public:
@@ -110,11 +112,7 @@ public:
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-#ifdef LL_PLAT_S
     virtual bool _playerCanUpdate(::Player const& player) const;
-#else // LL_PLAT_C
-    virtual bool _playerCanUpdate(::Player const& fromPlayer) const;
-#endif
 
     virtual ::IVanillaRenderBlockActorComponent const* _getRenderComponent() const;
 
@@ -138,8 +136,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockActor* _getBlockActor(::BlockSource& region, ::BlockPos const& pos);
-
     MCAPI static ::std::shared_ptr<::BlockActor> loadStatic(
         ::BlockType const&   block,
         ::BlockPos const&    pos,
@@ -206,11 +202,7 @@ public:
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-#ifdef LL_PLAT_S
     MCFOLD bool $_playerCanUpdate(::Player const& player) const;
-#else // LL_PLAT_C
-    MCFOLD bool $_playerCanUpdate(::Player const& fromPlayer) const;
-#endif
 
     MCFOLD ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
 

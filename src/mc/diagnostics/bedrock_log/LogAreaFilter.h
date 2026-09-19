@@ -4,6 +4,6 @@
 
 namespace BedrockLog {
 
-class LogAreaFilter : public ::std::bitset<52> {};
+class LogAreaFilter : public ::std::bitset<53> {};
 
 } // namespace BedrockLog

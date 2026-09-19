@@ -9,6 +9,6 @@ class MinecraftInputHandlerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::MinecraftInputHandlerProxyCallbacks const> mCallbacks;
+    ::ll::TypedStorage<8, 192, ::MinecraftInputHandlerProxyCallbacks const> mCallbacks;
     // NOLINTEND
 };

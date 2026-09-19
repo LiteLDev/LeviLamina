@@ -24,7 +24,6 @@ struct IsHorizontalPoseFlagComponent;
 struct OffsetsComponent;
 struct PlayerComponent;
 struct PlayerIsSleepingFlagComponent;
-struct TickingSystemWithInfo;
 struct VanillaOffsetComponent;
 // clang-format on
 
@@ -71,8 +70,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
-
     MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
     // NOLINTEND
 

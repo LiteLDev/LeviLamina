@@ -32,30 +32,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
+
+    virtual ~ActorEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ActorEvent(::BlockPos pos, ::Actor& entity, ::std::string const& name);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCFOLD void* $ctor(::BlockPos pos, ::Actor& entity, ::std::string const& name);
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCFOLD void $dtor();
-#endif
     // NOLINTEND
 
 public:
@@ -64,6 +60,12 @@ public:
     MCFOLD ::BlockSource const& $getBlockSource() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

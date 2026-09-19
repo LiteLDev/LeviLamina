@@ -53,10 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptScoreboard();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptScoreboard() = default;
@@ -65,8 +61,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptScoreboard(::Scoreboard& scoreboard, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
-
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>
     _getOrCreateScoreboardObjective(::Objective const& objective);
 
@@ -79,10 +73,6 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
             ::std::string> const& participant
     );
-
-    MCAPI void removeIdentityById(::ScoreboardId const& id);
-
-    MCAPI void removeObjectiveByName(::std::string const& objective);
 
     MCAPI ::ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
         ::std::variant<
@@ -103,12 +93,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Scoreboard& scoreboard, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

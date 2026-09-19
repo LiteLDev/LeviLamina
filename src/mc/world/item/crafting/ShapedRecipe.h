@@ -23,11 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ShapedRecipe() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ShapedRecipe() /*override*/;
-#endif
 
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
 
@@ -47,14 +43,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool matches(::CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

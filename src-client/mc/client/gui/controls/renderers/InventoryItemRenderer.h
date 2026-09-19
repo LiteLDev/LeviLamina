@@ -129,6 +129,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::UIItemRenderInfo getItemRenderInfo(::ItemStack const& item);
+
     MCAPI static ::ItemRenderChunkType getRenderTypeFromItem(::ItemStack const& item);
     // NOLINTEND
 

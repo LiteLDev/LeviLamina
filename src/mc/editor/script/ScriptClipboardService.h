@@ -3,10 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -25,6 +28,18 @@ public:
     ScriptClipboardService& operator=(ScriptClipboardService const&);
     ScriptClipboardService(ScriptClipboardService const&);
     ScriptClipboardService();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
+    create();
+
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
+    getPrimaryItem();
+    // NOLINTEND
 
 public:
     // static functions

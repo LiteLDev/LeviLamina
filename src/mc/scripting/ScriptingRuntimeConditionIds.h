@@ -10,6 +10,8 @@ namespace Scripting { struct RuntimeCondition; }
 namespace ScriptingRuntimeConditionIds {
 // static variables
 // NOLINTBEGIN
+MCNAPI ::Scripting::RuntimeCondition const& PoiExperiment();
+
 MCNAPI ::Scripting::RuntimeCondition const& SimplifiedSpawnRulesExperiment();
 // NOLINTEND
 

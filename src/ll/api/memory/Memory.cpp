@@ -56,7 +56,7 @@ LLAPI FuncPtr resolveSymbol(char const* symbol) { // for link
     }
     return res;
 }
-size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr, false); }
+size_t getUsableSize(void* ptr) { return getDefaultAllocator()._getUsableSize(ptr, false); }
 
 [[noreturn]] void throwMemoryException(size_t size) {
     if (size == std::numeric_limits<size_t>::max()) {

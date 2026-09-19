@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+
 // auto generated forward declare list
 // clang-format off
 struct TradeGroup;
@@ -13,5 +16,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint>                         mExpToUnlock;
     ::ll::TypedStorage<8, 24, ::std::vector<::TradeGroup>> mGroups;
+    ::ll::TypedStorage<8, 24, ::SemVersion>                mJsonVersion;
     // NOLINTEND
 };

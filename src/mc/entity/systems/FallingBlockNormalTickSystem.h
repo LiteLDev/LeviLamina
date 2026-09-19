@@ -13,7 +13,6 @@ class ITickDelegate;
 class StrictEntityContext;
 struct FallingBlockFlagComponent;
 struct InterpolateMovementNeededComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class FallingBlockNormalTickSystem {
@@ -32,7 +31,5 @@ public:
         ::ActorOwnerComponent& actorOwnerComponent,
         ::ITickDelegate&       onLand
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

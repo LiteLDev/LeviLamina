@@ -29,7 +29,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptBiomeAtmospherics& operator=(ScriptBiomeAtmospherics const&);
     ScriptBiomeAtmospherics(ScriptBiomeAtmospherics const&);
     ScriptBiomeAtmospherics();
 
@@ -52,6 +51,9 @@ public:
         float                                                            minValue,
         float                                                            maxValue
     );
+
+    MCNAPI ::ScriptModuleServerGraphics::ScriptBiomeAtmospherics&
+    operator=(::ScriptModuleServerGraphics::ScriptBiomeAtmospherics const&);
 
     MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> resetHorizonBlendMax();
 
@@ -108,12 +110,20 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError>
     setSunMieStrength(::std::variant<float, ::std::unordered_map<float, float>> const& sunMieStrength);
+
+    MCNAPI ~ScriptBiomeAtmospherics();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

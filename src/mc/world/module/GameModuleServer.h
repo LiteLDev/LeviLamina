@@ -37,7 +37,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::std::optional<::std::string>                                  worldId
     ) = 0;
 
     virtual void configureLevel(

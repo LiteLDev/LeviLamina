@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/OptionProperty.h"
+#include "mc/client/gui/oreui/binding/properties/Property.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,6 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::std::optional<::OreUI::OptionProperty<int>>> mValue;
+    ::ll::TypedStorage<8, 184, ::std::optional<::OreUI::Property<int, int>>>  mMin;
+    ::ll::TypedStorage<8, 184, ::std::optional<::OreUI::Property<int, int>>>  mMax;
+    ::ll::TypedStorage<8, 184, ::std::optional<::OreUI::Property<int, int>>>  mDefault;
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
 
     virtual void setRenderingSize(int w, int h) = 0;
 
-    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) = 0;
+    virtual void setUISize(int w, int h) = 0;
 
     virtual void muteAudio() = 0;
 

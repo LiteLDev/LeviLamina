@@ -15,7 +15,6 @@ struct ServerPlayerCurrentMovementComponent;
 struct ServerPlayerInteractComponent;
 struct ServerPlayerInventoryTransactionComponent;
 struct ServerPlayerMovementComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace ServerPlayerInputSystem {
@@ -29,8 +28,6 @@ MCAPI void _tickPlayerMovement(
         ::ServerPlayerInventoryTransactionComponent,
         ::ServerPlayerInteractComponent> modifier
 );
-
-MCAPI ::TickingSystemWithInfo create();
 
 MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
 

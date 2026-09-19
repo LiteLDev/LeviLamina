@@ -35,14 +35,20 @@ public:
 
     virtual void onSetter(::std::function<bool()> cb) /*override*/;
 
-    virtual void onMetaType(::std::function<bool()> setters, ::std::function<void()> members) /*override*/;
+    virtual void onMetaType(
+        ::entt::meta_any        from,
+        ::entt::meta_any        to,
+        ::std::function<bool()> setters,
+        ::std::function<void()> members
+    ) /*override*/;
 
-    virtual void onMetaData(
-        ::std::string_view                                                                                key,
-        uint                                                                                              id,
-        ::entt::meta_data                                                                                 data,
-        ::entt::meta_any                                                                                  from,
-        ::entt::meta_any                                                                                  to,
+    virtual bool onMetaData(
+        ::std::string_view key,
+        uint               id,
+        ::entt::meta_data  data,
+        ::entt::meta_any   from,
+        ::entt::meta_any   to,
+        bool               isDestinationOverridden,
         ::std::function<void(::entt::meta_data, ::entt::meta_any&, ::entt::meta_data, ::entt::meta_any&)> cb
     ) /*override*/;
 
@@ -70,14 +76,20 @@ public:
 
     MCNAPI void $onSetter(::std::function<bool()> cb);
 
-    MCNAPI void $onMetaType(::std::function<bool()> setters, ::std::function<void()> members);
+    MCNAPI void $onMetaType(
+        ::entt::meta_any        from,
+        ::entt::meta_any        to,
+        ::std::function<bool()> setters,
+        ::std::function<void()> members
+    );
 
-    MCNAPI void $onMetaData(
-        ::std::string_view                                                                                key,
-        uint                                                                                              id,
-        ::entt::meta_data                                                                                 data,
-        ::entt::meta_any                                                                                  from,
-        ::entt::meta_any                                                                                  to,
+    MCNAPI bool $onMetaData(
+        ::std::string_view key,
+        uint               id,
+        ::entt::meta_data  data,
+        ::entt::meta_any   from,
+        ::entt::meta_any   to,
+        bool               isDestinationOverridden,
         ::std::function<void(::entt::meta_data, ::entt::meta_any&, ::entt::meta_data, ::entt::meta_any&)> cb
     );
 

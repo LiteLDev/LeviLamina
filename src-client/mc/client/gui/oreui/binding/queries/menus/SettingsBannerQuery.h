@@ -22,10 +22,11 @@ class SettingsBannerQuery : public ::OreUI::QueryBase<::OreUI::SettingsBannerQue
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>                mSettingsRegistry;
-    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                              mCommonProperties;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::BannerType>>                 mBannerType;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>>      mCtaText;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>                     mSettingsRegistry;
+    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                                   mCommonProperties;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::BannerType, ::OreUI::BannerType>> mBannerType;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+                                                                                       mCtaText;
     ::ll::TypedStorage<8, 1048, ::std::optional<::OreUI::SettingsConfirmationRequest>> mConfirmationRequest;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                         mSettingsChangedSubscription;
     // NOLINTEND

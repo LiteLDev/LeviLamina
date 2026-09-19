@@ -35,7 +35,6 @@ struct ItemData;
 struct ItemIconInfo;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
-namespace Bedrock::Threading { class Mutex; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -61,7 +60,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::Mutex>> mMutex;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::mutex>> mMutex;
         // NOLINTEND
 
     public:
@@ -71,7 +70,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit LockGuard(::std::shared_ptr<::Bedrock::Threading::Mutex> mutex);
+        MCAPI explicit LockGuard(::std::shared_ptr<::std::mutex> mutex);
 
         MCAPI ~LockGuard();
         // NOLINTEND
@@ -79,7 +78,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::shared_ptr<::Bedrock::Threading::Mutex> mutex);
+        MCAPI void* $ctor(::std::shared_ptr<::std::mutex> mutex);
         // NOLINTEND
 
     public:

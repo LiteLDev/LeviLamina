@@ -13,7 +13,6 @@ struct IllagerBeastFlagComponent;
 struct InterpolateMovementNeededComponent;
 struct StateVectorComponent;
 struct SubBBsComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class IllagerBeastPostAIStepSystem {
@@ -33,7 +32,5 @@ public:
         ::StateVectorComponent const& stateVectorComponent,
         ::SubBBsComponent&            subBBsComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

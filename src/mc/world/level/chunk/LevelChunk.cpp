@@ -1,7 +1,36 @@
-// #include "mc/world/level/chunk/LevelChunk.h"
+#include "mc/world/level/chunk/LevelChunk.h"
 
-// #include "mc/world/level/chunk/SubChunk.h" // IWYU pragma: keep for std::vector<SubChunk>::size
-// #include "mc/world/level/dimension/Dimension.h"
+#include "mc/util/IDataInput.h"
+#include "mc/util/IDataOutput.h"
+#include "mc/world/level/biome/Biome.h"
+#include "mc/world/level/chunk/SubChunk.h" // IWYU pragma: keep for std::vector<SubChunk>::size
+#include "mc/world/level/dimension/Dimension.h"
+
+void LevelChunk::serializeBiomes(::IDataOutput& stream) const {
+    if (!mUse3DBiomeMaps) {
+        // The 2D biome ids occupy the head of mBiomes and go out verbatim, 256 columns of 2 bytes.
+        stream.writeBytes(mBiomes->m2DBiomes->data(), sizeof(::std::array<::BiomeIdType, 256>));
+        return;
+    }
+    for (auto const& subChunk : *mBiomes->mBiomeSubchunks) {
+        if (!subChunk) {
+            stream.writeByte(-1);
+            continue;
+        }
+        // Subchunk type tag: the 2*type+1 form never collides with the 0xFF empty marker.
+        stream.writeByte(static_cast<char>(2 * static_cast<int>(subChunk->getType()) + 1));
+        subChunk->_serialize(stream, [](::Biome const& biome) { return biome.mId->mValue; });
+    }
+}
+
+void LevelChunk::deserializeBorderBlocks(::IDataInput& stream) {
+    // A count byte followed by that many indices. The matching serializeBorderBlocks writes nothing
+    // when the map is empty, so callers only get here once they know there is a payload to read.
+    uchar const count = stream.readByte();
+    for (uchar i = 0; i < count; ++i) {
+        mBorderBlockMap.get()[stream.readByte()] = true;
+    }
+}
 
 // namespace {
 

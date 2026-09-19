@@ -31,6 +31,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _buildSchema(
+        ::JsonUtil::JsonSchemaObjectNode<
+            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode
+    );
+
     MCAPI static void _buildVanillaCanopyVariants(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,

@@ -75,11 +75,11 @@ public:
 
     MCFOLD bool $isConnected() const;
 
-    MCFOLD bool $isAdequateController() const;
+    MCAPI bool $isAdequateController() const;
 
     MCAPI void $pairControllerToClient(::SubClientId clientId);
 
-    MCFOLD void $unpairControllerFromClient();
+    MCAPI void $unpairControllerFromClient();
 
     MCAPI bool $isControllerPairedToClient() const;
 

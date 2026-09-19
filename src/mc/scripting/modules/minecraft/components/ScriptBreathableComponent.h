@@ -22,11 +22,17 @@ class ScriptBreathableComponent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getBreatheBlocks() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
 
@@ -35,6 +41,10 @@ public:
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getNonBreatheBlocks() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
     // NOLINTEND
 
 public:

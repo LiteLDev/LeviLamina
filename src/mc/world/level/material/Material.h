@@ -27,9 +27,19 @@ public:
     // NOLINTEND
 
 public:
+    bool operator==(Material const& rhs) const { return mType == rhs.mType; }
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setupMaterials();
+
+    // Falls back to index 1 when `type` is out of range rather than reading past the end of the material table.
+    [[nodiscard]] static ::Material const& getMaterial(::SharedTypes::v1_26_20::MaterialType type) {
+        auto const& materials = mMaterials();
+        auto const  index     = static_cast<size_t>(type);
+        return *materials[materials.size() >= index ? index : 1];
+    }
     // NOLINTEND
 
 public:

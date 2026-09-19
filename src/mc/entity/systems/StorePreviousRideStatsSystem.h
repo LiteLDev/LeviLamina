@@ -13,7 +13,6 @@ struct InterpolateMovementNeededComponent;
 struct LocalPlayerComponent;
 struct PassengerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct VanillaClientGameplayComponent;
 // clang-format on
 
@@ -34,7 +33,5 @@ public:
         ::StateVectorComponent const&     stateVectorComponent,
         ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

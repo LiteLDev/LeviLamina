@@ -106,11 +106,16 @@ public:
 
     virtual ::mce::Color getPlayerColor(::ActorUniqueID playerId) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setVanillaBiomeColorMap(
+        ::mce::UUID const&                                       minimapId,
+        ::std::unordered_map<::std::string, ::mce::Color> const& colorMap
+    ) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> updateVanillaColorMap(
+        ::mce::UUID const&   minimapId,
+        ::std::string const& biomeId,
+        ::mce::Color const&  color
+    ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
     setMinimapYLevel(::mce::UUID const& minimapId, int yLevel) /*override*/;
@@ -272,11 +277,13 @@ public:
 
     MCNAPI ::mce::Color $getPlayerColor(::ActorUniqueID playerId);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap);
+    MCNAPI ::Scripting::Result_deprecated<void> $setVanillaBiomeColorMap(
+        ::mce::UUID const&                                       minimapId,
+        ::std::unordered_map<::std::string, ::mce::Color> const& colorMap
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color);
+    $updateVanillaColorMap(::mce::UUID const& minimapId, ::std::string const& biomeId, ::mce::Color const& color);
 
     MCNAPI ::Scripting::Result_deprecated<void> $setMinimapYLevel(::mce::UUID const& minimapId, int yLevel);
 

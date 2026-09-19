@@ -19,6 +19,7 @@
 class ContentView;
 class IContentManagerContext;
 class MinecraftScreenModel;
+class PerfProgressScreenTimer;
 class ProgressHandler;
 namespace Json { class Value; }
 namespace Progress { class ProgressTips; }
@@ -80,6 +81,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mServerJoined;
     ::ll::TypedStorage<1, 1, bool>                          mPartyPartiallyEligible;
     ::ll::TypedStorage<1, 1, bool>                          mPartyNotEligible;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::PerfProgressScreenTimer>>> mScreenTimer;
     // NOLINTEND
 
 public:
@@ -94,6 +96,8 @@ public:
     virtual void onCreation() /*override*/;
 
     virtual void onOpen() /*override*/;
+
+    virtual void onLeave() /*override*/;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
@@ -192,6 +196,8 @@ public:
 
     MCAPI void $onOpen();
 
+    MCAPI void $onLeave();
+
     MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI ::ui::DirtyFlag $tick();
@@ -202,7 +208,7 @@ public:
 
     MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCAPI ::ui::SceneType $getSceneType() const;
 
     MCAPI bool $_getGamepadHelperVisible() const;
 

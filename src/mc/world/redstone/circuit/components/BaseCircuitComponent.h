@@ -102,8 +102,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseCircuitComponent();
-
     MCAPI void addSourceItem(::CircuitComponentList::Item const& item);
 
     MCAPI bool trackPowerSource(
@@ -113,12 +111,6 @@ public:
         int                          data,
         bool                         isDirectional
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

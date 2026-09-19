@@ -5,10 +5,7 @@
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/coro/CoroTask.h"
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/memory/Hook.h"
-#include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/service/Bedrock.h"
-#include "ll/api/service/ServerInfo.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/thread/ThreadPoolExecutor.h"
 #include "ll/api/utils/RandomUtils.h"
@@ -17,12 +14,13 @@
 
 #include "mc/common/BuildInfo.h"
 #include "mc/common/Common.h"
+#include "mc/common/StringConstants.h"
 #include "mc/server/PropertiesSettings.h"
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/level/Level.h"
 
 #include "cpr/cpr.h"
-#include "magic_enum/magic_enum_all.hpp"
+#include "magic_enum/magic_enum.hpp"
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
 
@@ -54,7 +52,7 @@ static nlohmann::json addAdvancedPie(std::string_view key, SmallDenseMap<std::st
     return json;
 }
 
-static nlohmann::json addSingleLineChart(std::string_view key, const int value) {
+static nlohmann::json addSingleLineChart(std::string_view key, int const value) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
@@ -66,7 +64,7 @@ static nlohmann::json addSingleLineChart(std::string_view key, const int value) 
 static nlohmann::json getCustomCharts() {
     nlohmann::json res;
     res.emplace_back(addSimplePie("levilamina_version", getLoaderVersion().to_string()));
-    res.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mGameVersion));
+    res.emplace_back(addSimplePie("minecraft_version", Common::_buildStringConstants().mBuildInfo->mGameVersion));
     res.emplace_back(addSingleLineChart(
         "players",
         service::getLevel().transform([](auto& level) { return level.getActivePlayerCount(); }).value_or(0)

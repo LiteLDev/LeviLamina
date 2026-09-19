@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/actor/KnockbackMode.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_30 {
 
 struct ApplyKnockbackRulesComponentDefinition {
@@ -54,12 +49,6 @@ public:
         24,
         ::std::vector<::SharedTypes::v1_26_30::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset>>
         mPresets;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

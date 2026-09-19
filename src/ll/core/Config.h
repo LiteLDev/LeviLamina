@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 39;
+    int version = 41;
 
     std::string language = "system";
     struct {
@@ -37,7 +37,6 @@ struct LeviConfig {
         } crashLogger{};
 
         bool disableAutoCompactionLog = true;
-        bool protocolCompatibility    = true;
 
     } modules{};
 

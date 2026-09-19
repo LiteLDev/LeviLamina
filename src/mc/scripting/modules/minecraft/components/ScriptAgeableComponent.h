@@ -8,10 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class AgeableDefinition;
+struct ActorDefinitionFeedItem;
 struct AgeableComponent;
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -23,15 +22,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
 
-    MCAPI ::Scripting::Result_deprecated<::ActorDefinitionTrigger> getGrowUp() const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::string> getTransformToItem() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
     // NOLINTEND
 };
 

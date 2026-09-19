@@ -89,6 +89,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkb77267;
     ::ll::UntypedStorage<1, 1>  mUnk8953d0;
     ::ll::UntypedStorage<8, 32> mUnkc455ca;
+    ::ll::UntypedStorage<8, 8>  mUnkddb755;
     // NOLINTEND
 
 public:
@@ -106,13 +107,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit ResourceLoadManager(::ResourceLoadManagerOptions&& ops);
 
+#ifdef LL_PLAT_C
     MCNAPI bool areDependenciesLoaded(::ResourceLoadType resourceLoadType) const;
+#endif
 
     MCNAPI bool isComplete() const;
 
+#ifdef LL_PLAT_C
     MCNAPI bool isComplete(::ResourceLoadType resourceLoadType) const;
 
     MCNAPI void printRunningTasks();
@@ -137,6 +140,7 @@ public:
         ::brstd::move_only_function<::TaskResult()> callback,
         uint                                        taskPriority
     );
+#endif
 
     MCNAPI void registerResourceLoadTaskGroup(
         ::std::string_view                                    groupName,
@@ -145,14 +149,13 @@ public:
         ::std::vector<::ResourceLoadType>                     dependencies
     );
 
+#ifdef LL_PLAT_C
     MCNAPI void setAppSuspended(bool suspended);
 
-    MCNAPI bool softCancel();
-
     MCNAPI void sync(::ResourceLoadType resourceLoadType);
+#endif
 
     MCNAPI void update();
-#endif
     // NOLINTEND
 
 public:
@@ -173,8 +176,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::ResourceLoadManagerOptions&& ops);
-#endif
     // NOLINTEND
 };

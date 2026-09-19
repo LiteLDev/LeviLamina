@@ -9,14 +9,38 @@
 
 class Random : public ::IRandom {
 public:
+    // Random inner types declare
+    // clang-format off
+    struct ISystemInterface;
+    class getThreadLocal;
+    // clang-format on
+
     // Random inner types define
+    struct ISystemInterface {
+    public:
+        // ISystemInterface inner types declare
+        // clang-format off
+        class OpenSSLRandomInterface;
+        // clang-format on
+
+        // ISystemInterface inner types define
+        class OpenSSLRandomInterface {};
+    };
+
+    class getThreadLocal {};
+
     using result_type = uint;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2536, ::Bedrock::Application::ThreadOwner<::Core::Random, 0>> mRandom;
+    ::ll::TypedStorage<8, 2544, ::std::optional<::Core::Random>>                      mOwnedRandom;
+    ::ll::TypedStorage<8, 8, ::Bedrock::Application::ThreadOwner<::Core::Random&, 0>> mRandom;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Random();
 
 public:
     // virtual functions
@@ -38,33 +62,25 @@ public:
     virtual double nextGaussianDouble() /*override*/;
 
     virtual void consumeCount(uint count) /*override*/;
-
-    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Random();
-
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
-
-#ifdef LL_PLAT_C
-    MCAPI float nextGaussianFloat();
-#endif
     // NOLINTEND
 
 public:
-    // static variables
+    // static functions
     // NOLINTBEGIN
-    MCAPI static ::Random& mThreadLocalRandom();
+    MCAPI static ::Random createSeedable();
+
+    MCAPI static ::Random& getThreadLocal();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 
@@ -86,8 +102,6 @@ public:
     MCAPI double $nextGaussianDouble();
 
     MCAPI void $consumeCount(uint count);
-
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
 
 
     // NOLINTEND

@@ -241,12 +241,6 @@ struct x509_st;
 struct evp_md_st;
 struct ssl_session_st;
 
-// abseil definitions
-namespace absl::hash_internal {
-template <typename T>
-struct Hash;
-}
-
 // Ungenerated cereal definitions
 namespace cereal {
 namespace internal {
@@ -400,7 +394,7 @@ namespace Puv {
 template <typename From, typename To, typename CustomData>
 class CerealUpgrader;
 
-template <typename T0, typename T1, typename T2, typename T3>
+template <typename T0, typename T1, typename T2, typename T3, typename T4>
 class SlicedLoader;
 }
 

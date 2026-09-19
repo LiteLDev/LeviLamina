@@ -18,6 +18,7 @@
 #include "mc/world/actor/TravelType.h"
 #include "mc/world/item/ClockSpriteCalculator.h"
 #include "mc/world/item/CompassSpriteCalculator.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -161,7 +162,7 @@ public:
 
     virtual float getItemUseIntervalProgress() const;
 
-    virtual bool swing(::ActorSwingSource swingSource) /*override*/;
+    virtual bool swing(::ActorSwingSource swingSource, ::HandSlot handSlot) /*override*/;
 
     virtual float getMaxHeadXRot();
 
@@ -254,8 +255,6 @@ public:
 
     virtual void renderDebugServerState(::IOptionsReader const& options) /*override*/;
 
-    virtual bool canFreeze() const /*override*/;
-
     virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -283,6 +282,8 @@ public:
 
     MCAPI ::BuiltInMobComponents _addBuiltInMobComponents();
 
+    MCAPI void _doSoulSpeedParticleEffect();
+
     MCAPI void _doSprintParticleEffect();
 
     MCAPI bool _initHardCodedComponents(bool isClientSide);
@@ -292,6 +293,8 @@ public:
     MCAPI bool _isDoingMaceSmashAttack() const;
 
     MCAPI void _processSoulSpeed();
+
+    MCAPI void _updateSprintingState();
 
     MCAPI void
     addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
@@ -326,17 +329,11 @@ public:
 
     MCAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getHurtSound(::SharedTypes::Legacy::ActorDamageCause cause) const;
-
     MCAPI float getJumpEffectAmplifierValue();
 
     MCAPI float getJumpMultiplier();
 
     MCAPI ::JumpPreventionResult getJumpPrevention();
-
-#ifdef LL_PLAT_S
-    MCAPI int getJumpTicks() const;
-#endif
 
     MCAPI int getModifiedSwingDuration() const;
 
@@ -368,8 +365,6 @@ public:
 
     MCAPI bool isAbleToMove() const;
 
-    MCAPI bool isTransitioningSitting() const;
-
     MCAPI void joinCaravan(::Mob* head);
 
     MCAPI void jumpFromGround();
@@ -379,8 +374,6 @@ public:
     MCAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
 
     MCAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
-
-    MCAPI void removeSpeedModifier(::mce::UUID const& attributeID);
 
     MCAPI void resetAttributes();
 
@@ -399,6 +392,8 @@ public:
     MCAPI bool shouldApplyWaterGravity();
 
     MCAPI void snapToYBodyRot(float yBodyRot);
+
+    MCAPI void tickMobEffectsVisuals();
 
     MCAPI void updateEquipment();
 
@@ -492,7 +487,7 @@ public:
 
     MCFOLD float $getItemUseIntervalProgress() const;
 
-    MCAPI bool $swing(::ActorSwingSource swingSource);
+    MCAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
     MCAPI float $getMaxHeadXRot();
 
@@ -578,8 +573,6 @@ public:
     MCAPI void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
     MCFOLD void $renderDebugServerState(::IOptionsReader const& options);
-
-    MCAPI bool $canFreeze() const;
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 

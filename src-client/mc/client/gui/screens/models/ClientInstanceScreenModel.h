@@ -253,8 +253,6 @@ public:
 
     MCAPI bool isPlayerHungry() const;
 
-    MCAPI bool isPlayerInWater() const;
-
     MCAPI bool isPlayerOnGround() const;
 
     MCAPI bool isPlayerRidingActorType(::ActorType type) const;

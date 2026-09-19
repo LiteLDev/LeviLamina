@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,7 +46,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>   mStateLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                  mStateLock;
     ::ll::TypedStorage<4, 4, ::AsyncCommandExecutor::State>  mCurrentState;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mAsyncTaskGroup;
     // NOLINTEND

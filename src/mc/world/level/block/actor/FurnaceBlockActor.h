@@ -163,6 +163,8 @@ public:
 
     MCAPI static float getItemBurnDuration(::Item const& item, float burnInterval);
 
+    MCAPI static int getXPRewardFromSmeltingItems(::ItemStackBase const& item, int numItemsSmelted);
+
     MCAPI static bool isItemAllowedInFuelSlot(int slot, ::ItemStackBase const& item, int amount);
     // NOLINTEND
 

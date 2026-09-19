@@ -34,7 +34,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::LegacySetSlot>> mLegacySetItemSlots;
     ::ll::TypedStorage<
         8,
-        272,
+        280,
         ::std::variant<
             ::NormalTransactionData,
             ::InventoryMismatchData,

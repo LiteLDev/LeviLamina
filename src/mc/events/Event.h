@@ -7,6 +7,7 @@
 namespace Json { class Value; }
 namespace Social::Events { class Measurement; }
 namespace Social::Events { class Property; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Social::Events {
@@ -41,12 +42,13 @@ public:
 public:
     // prevent constructor by default
     Event& operator=(Event const&);
-    Event(Event const&);
     Event();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Event(::Social::Events::Event const&);
+
     MCNAPI Event(
         uint                                                              id,
         ::std::string const&                                              eventName,
@@ -54,24 +56,41 @@ public:
         int                                                               eventTags
     );
 
+#ifdef LL_PLAT_C
+    MCNAPI bool _areAllPropertiesEqual(::Social::Events::Event const& other) const;
+#endif
+
     MCNAPI bool _areUniquePropertiesEqual(::Social::Events::Event const& other) const;
 
     MCNAPI void addMeasurement(::Social::Events::Measurement const& measurement);
 
     MCNAPI void addProperty(::Social::Events::Property const& property, bool isUniqueProperty);
 
+    MCNAPI ::std::optional<::std::reference_wrapper<::Social::Events::Property const>>
+    getProperty(::std::string const& propertyName) const;
+
 #ifdef LL_PLAT_C
     MCNAPI ::Json::Value measurementsAsJsonValue() const;
 
     MCNAPI ::Json::Value propertiesAsJsonValue() const;
+#endif
 
     MCNAPI ~Event();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Social::Events::Event const&);
+
     MCNAPI void* $ctor(
         uint                                                              id,
         ::std::string const&                                              eventName,
@@ -83,9 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
 
@@ -57,7 +58,7 @@ public:
         bool const         slotChanged
     ) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
@@ -135,7 +136,7 @@ public:
         bool const         slotChanged
     ) const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 

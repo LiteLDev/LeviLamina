@@ -7,6 +7,7 @@
 class Actor;
 class ProjectileComponent;
 namespace Json { class Value; }
+namespace SharedTypes::v1_26_50 { struct ProjectileOnHitSubcomponent; }
 // clang-format on
 
 class OnHitSubcomponent {
@@ -15,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~OnHitSubcomponent() = default;
 
-    virtual void readfromJSON(::Json::Value& component) = 0;
+    virtual void initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component) = 0;
 
     virtual void writetoJSON(::Json::Value& component) const = 0;
 

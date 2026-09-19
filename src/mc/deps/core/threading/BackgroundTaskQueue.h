@@ -16,12 +16,12 @@ class BackgroundTaskQueue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk17700f;
-    ::ll::UntypedStorage<8, 80> mUnka2b5ae;
+    ::ll::UntypedStorage<8, 80> mUnk1c3882;
+    ::ll::UntypedStorage<8, 80> mUnk34fd6a;
     ::ll::UntypedStorage<8, 80> mUnka498a2;
     ::ll::UntypedStorage<8, 8>  mUnkf87f35;
     ::ll::UntypedStorage<1, 1>  mUnk681617;
-    ::ll::UntypedStorage<8, 80> mUnk1cc761;
+    ::ll::UntypedStorage<8, 80> mUnk75b36f;
     ::ll::UntypedStorage<8, 24> mUnkcae1da;
     // NOLINTEND
 

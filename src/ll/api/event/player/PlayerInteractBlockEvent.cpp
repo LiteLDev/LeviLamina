@@ -7,7 +7,6 @@
 #include "mc/world/gamemode/InteractionResult.h"
 
 
-
 #include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event::inline player {
@@ -33,19 +32,19 @@ LL_TYPE_INSTANCE_HOOK(
     &GameMode::$useItemOn,
     InteractionResult,
     ItemStack&      item,
-    BlockPos const& blockPos,
+    BlockPos const& at,
     uchar           face,
-    Vec3 const&     clickPos,
-    Block const*    block,
+    Vec3 const&     hit,
+    HandSlot        handSlot,
+    Block const*    targetBlock,
     bool            isFirstEvent
 ) {
-    auto ev =
-        PlayerInteractBlockEvent(this->mPlayer, item, blockPos, *reinterpret_cast<FacingID*>(&face), clickPos, block);
+    auto ev = PlayerInteractBlockEvent(this->mPlayer, item, at, *reinterpret_cast<FacingID*>(&face), hit, targetBlock);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return {};
     }
-    return origin(item, blockPos, face, clickPos, block, isFirstEvent);
+    return origin(item, at, face, hit, handSlot, targetBlock, isFirstEvent);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

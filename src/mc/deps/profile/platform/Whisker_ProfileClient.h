@@ -12,6 +12,7 @@
 namespace Bedrock::Profile { class ScopeStackStorage; }
 namespace Bedrock::Profile::Whisker { struct ScopeData; }
 namespace Bedrock::Profiler::details { struct StaticProfLabel; }
+namespace Bedrock::RefCount::details { struct KeepAlive; }
 namespace Core::Profile { class ScopeToken; }
 namespace brstd { struct source_location; }
 // clang-format on
@@ -19,27 +20,6 @@ namespace brstd { struct source_location; }
 namespace Core::Profile {
 
 class Whisker_ProfileClient : public ::Core::Profile::ProfileClient {
-public:
-    // Whisker_ProfileClient inner types declare
-    // clang-format off
-    struct KeepAlive;
-    // clang-format on
-
-    // Whisker_ProfileClient inner types define
-    struct KeepAlive {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk671c1d;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        KeepAlive& operator=(KeepAlive const&);
-        KeepAlive(KeepAlive const&);
-        KeepAlive();
-    };
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -82,9 +62,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void fetchData(::gsl::span<::Bedrock::Profile::Whisker::ScopeData> output, ::std::thread::id thread) const;
-
-    MCNAPI ::std::shared_ptr<::Core::Profile::Whisker_ProfileClient::KeepAlive const>
-    makeActive(::std::string_view consumerName);
 
     MCNAPI void purgeAllRecords();
 

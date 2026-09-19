@@ -9,7 +9,9 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Mob;
 class Village;
+struct GoalId;
 // clang-format on
 
 class MoveToVillageGoal : public ::BaseMoveToGoal {
@@ -19,6 +21,10 @@ public:
     ::ll::TypedStorage<4, 4, int>  mVillageSearchRangeBlocks;
     ::ll::TypedStorage<1, 1, bool> mReachedVillage;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveToVillageGoal();
 
 public:
     // virtual functions
@@ -43,7 +49,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MoveToVillageGoal(
+        ::Mob&          mob,
+        ::std::string   name,
+        ::GoalId const& goalId,
+        float           speedModifier,
+        float           goalRadius,
+        float           cooldown,
+        int             searchRange
+    );
+
     MCAPI ::std::shared_ptr<::Village> _tryGetCurrentVillage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&          mob,
+        ::std::string   name,
+        ::GoalId const& goalId,
+        float           speedModifier,
+        float           goalRadius,
+        float           cooldown,
+        int             searchRange
+    );
     // NOLINTEND
 
 public:

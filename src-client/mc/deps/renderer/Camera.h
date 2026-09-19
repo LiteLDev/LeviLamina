@@ -28,6 +28,9 @@ public:
     // NOLINTEND
 
 public:
+    glm::mat4x4 getProjectionMatrix() const { return *projectionMatrixStack->top()._m; }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI void updateViewMatrixDependencies();

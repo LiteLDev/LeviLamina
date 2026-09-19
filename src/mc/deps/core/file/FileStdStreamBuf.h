@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _flushoutput();
+    MCNAPI int _flushoutput(bool syncToStorage);
     // NOLINTEND
 
 public:

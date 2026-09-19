@@ -12,8 +12,8 @@ struct MessToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk91d335;
-    ::ll::UntypedStorage<8, 32> mUnk65d12b;
+    ::ll::UntypedStorage<8, 32> mUnk325db6;
+    ::ll::UntypedStorage<8, 32> mUnkcdb8ea;
     ::ll::UntypedStorage<8, 32> mUnkcc6428;
     ::ll::UntypedStorage<8, 32> mUnk7a5ce8;
     // NOLINTEND

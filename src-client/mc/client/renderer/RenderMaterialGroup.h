@@ -9,7 +9,6 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/renderer/SamplerGroupCache.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,7 +29,7 @@ public:
                                                                                          mMaterials;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::PackIdVersion>>> mLoadedMaterialFiles;
     ::ll::TypedStorage<8, 56, ::ResourceLocation>                                        mBoundList;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                               mAsyncLoadLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                              mAsyncLoadLock;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                        mRestartAsyncLoad;
     ::ll::TypedStorage<8, 64, ::mce::SamplerGroupCache>                                  mSamplerGroupCache;
     ::ll::TypedStorage<8, 8, ::ResourcePackManager*>                                     mResourcePackManager;
@@ -43,7 +42,7 @@ public:
     // NOLINTBEGIN
     virtual void onAppResumed() /*override*/;
 
-    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) /*override*/;
+    virtual ::std::shared_ptr<::mce::RenderMaterialInfo> getMaterialInfo(::HashedString const& name) /*override*/;
 
     virtual void clearMaterial(::HashedString const& name) /*override*/;
     // NOLINTEND
@@ -68,12 +67,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void resetAll();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::RenderMaterialGroup& common();
@@ -92,7 +85,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onAppResumed();
 
-    MCAPI ::mce::RenderMaterialInfo& $getMaterialInfo(::HashedString const& name);
+    MCAPI ::std::shared_ptr<::mce::RenderMaterialInfo> $getMaterialInfo(::HashedString const& name);
 
     MCAPI void $clearMaterial(::HashedString const& name);
     // NOLINTEND

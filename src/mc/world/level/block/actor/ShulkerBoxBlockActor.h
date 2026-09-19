@@ -70,8 +70,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
 
-    MCAPI static bool itemAllowed(::ItemStackBase const& item);
-
 #ifdef LL_PLAT_C
     MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
 #endif
@@ -92,7 +90,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCFOLD bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
     MCAPI void $startOpen(::Actor& actor);
 

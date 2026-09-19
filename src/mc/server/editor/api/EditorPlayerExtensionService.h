@@ -7,12 +7,15 @@
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
+#include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/server/editor/api/EditorPlayerExtensionServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
+namespace Editor::Network { class ClientEditorUIReadyPayload; }
+namespace Editor::Network { class EditorSessionLifecyclePayload; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
@@ -21,7 +24,8 @@ namespace Scripting { struct ContextId; }
 namespace Editor::API {
 
 class EditorPlayerExtensionService : public ::Editor::Services::IEditorService,
-                                     public ::Editor::API::EditorPlayerExtensionServiceProvider {
+                                     public ::Editor::API::EditorPlayerExtensionServiceProvider,
+                                     public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,6 +33,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkd0eb60;
     ::ll::UntypedStorage<8, 16> mUnk9e4b1b;
     ::ll::UntypedStorage<8, 16> mUnkf7f171;
+    ::ll::UntypedStorage<1, 1>  mUnkca1a7a;
     ::ll::UntypedStorage<8, 24> mUnk69aec8;
     // NOLINTEND
 
@@ -56,6 +61,8 @@ public:
     virtual ::Scripting::Result_deprecated<void>
     startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) /*override*/;
 
+    virtual ::Scripting::Result_deprecated<void> initiateSessionLifecycle() /*override*/;
+
     virtual ::Scripting::Result_deprecated<void> stopExtensions() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> forEachExtension(
@@ -74,6 +81,10 @@ public:
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
     MCNAPI ::Scripting::Result_deprecated<void> _destroyExtensionContexts();
+
+    MCNAPI void _handleSessionLifecyclePayload(::Editor::Network::EditorSessionLifecyclePayload const&);
+
+    MCNAPI void _handleUIReadyPayload(::Editor::Network::ClientEditorUIReadyPayload const&);
     // NOLINTEND
 
 public:
@@ -91,6 +102,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     $startExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $initiateSessionLifecycle();
 
     MCNAPI ::Scripting::Result_deprecated<void> $stopExtensions();
 

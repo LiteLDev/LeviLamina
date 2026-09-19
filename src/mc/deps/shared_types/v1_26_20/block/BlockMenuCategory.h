@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> mCategory;
-    ::ll::TypedStorage<8, 32, ::std::string>                                               mGroupName;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                              mGroupName;
     ::ll::TypedStorage<1, 1, bool>                                                         mIsHiddenInCommands;
     // NOLINTEND
 

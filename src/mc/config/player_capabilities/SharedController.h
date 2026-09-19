@@ -23,6 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual bool canMessage(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
+
     virtual bool canChat(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
     virtual bool canTell(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
@@ -33,6 +35,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $canMessage(::PlayerCapabilities::IPlayerData const& player) const;
+
     MCNAPI bool $canChat(::PlayerCapabilities::IPlayerData const& player) const;
 
     MCNAPI bool $canTell(::PlayerCapabilities::IPlayerData const& player) const;

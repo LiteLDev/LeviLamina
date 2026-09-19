@@ -37,17 +37,6 @@ public:
     MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
     _getAuthor() const;
 
-    MCAPI ::Scripting::
-        Result<::std::vector<::std::optional<::std::string>>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
-        _getContents() const;
-
-    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _getPageCount() const;
-
-    MCAPI ::Scripting::Result<
-        ::std::vector<::std::optional<::ScriptModuleMinecraft::ScriptRawMessageInterface>>,
-        ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
-    _getRawContents() const;
-
     MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
     _getTitle() const;
 
@@ -63,8 +52,6 @@ public:
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> content
     );
-
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> _isSigned() const;
 
     MCAPI ::Scripting::Result<
         void,

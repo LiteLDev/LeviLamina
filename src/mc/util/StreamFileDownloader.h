@@ -76,8 +76,9 @@ public:
     ) /*override*/;
 
     virtual void downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
-        ::std::function<void(::DownloaderState)>                                                         endCallback
+        ::std::function<void(::std::vector<uchar>, uint64, uint64, int, ::std::function<void(uint64, bool)>)>
+                                                 dataCallback,
+        ::std::function<void(::DownloaderState)> endCallback
     ) /*override*/;
 
     virtual bool canCancelDownload() const /*override*/;
@@ -144,8 +145,9 @@ public:
     );
 
     MCNAPI void $downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
-        ::std::function<void(::DownloaderState)>                                                         endCallback
+        ::std::function<void(::std::vector<uchar>, uint64, uint64, int, ::std::function<void(uint64, bool)>)>
+                                                 dataCallback,
+        ::std::function<void(::DownloaderState)> endCallback
     );
 
     MCNAPI bool $canCancelDownload() const;

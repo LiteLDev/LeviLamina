@@ -110,6 +110,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ClientBindingFactory(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
+
     MCAPI ::RectangleArea
     _calculateClassicButtonRectangleWithOptionIDs(::OptionID posX, ::OptionID posY, ::OptionID scale) const;
 
@@ -126,8 +128,12 @@ public:
     MCAPI void setupBoolBindings();
 
     MCAPI void setupFloatBindings();
+    // NOLINTEND
 
-    MCAPI void setupFloatSetters();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
     // NOLINTEND
 
 public:

@@ -56,7 +56,8 @@ public:
         ::std::optional<::mce::Color> const& backgroundColor,
         bool                                 depthTest,
         bool                                 showBackface,
-        bool                                 showTextBackface
+        bool                                 showTextBackface,
+        float                                lineGapHeight
     ) const;
     // NOLINTEND
 
@@ -73,7 +74,8 @@ public:
         ::mce::MaterialPtr const*            textMatOverride,
         ::mce::Color const&                  tagColor,
         float                                scale,
-        ::std::optional<::Quaternion> const& rotation
+        ::std::optional<::Quaternion> const& rotation,
+        float                                lineGapHeight
     );
     // NOLINTEND
 

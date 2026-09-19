@@ -43,6 +43,8 @@ public:
         ::Random&            random,
         ::BoundingBox const& chunkBB
     ) = 0;
+
+    virtual ~TemplateStructurePiece() /*override*/;
     // NOLINTEND
 
 public:
@@ -57,6 +59,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(int depth);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -14,6 +14,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IRandom;
 class Random;
 class RenderParams;
 struct BiomeScatterParamData;
@@ -147,7 +148,7 @@ public:
         float                defaultValue
     );
 
-    MCAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random);
+    MCAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::IRandom& random);
 
     MCAPI static void initScatterParamIndices();
     // NOLINTEND

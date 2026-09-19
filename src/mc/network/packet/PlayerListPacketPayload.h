@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/player/PlayerListEntry.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Color.h"
@@ -43,8 +44,28 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        AddEntry();
+        AddEntry() {
+            mAction        = PlayerListPacketType::Add;
+            mBuildPlatform = BuildPlatform::Unknown;
+            mIsTeacher     = false;
+            mIsHost        = false;
+            mIsSubClient   = false;
+        }
+
+        AddEntry(PlayerListEntry const& entry) {
+            mAction           = PlayerListPacketType::Add;
+            mUUID             = entry.mUUID;
+            mId               = entry.mId;
+            mName             = entry.mName;
+            mXUID             = entry.mXUID;
+            mPlatformOnlineId = entry.mPlatformOnlineId;
+            mBuildPlatform    = entry.mBuildPlatform;
+            mSkin             = entry.mSkin;
+            mIsTeacher        = entry.mIsTeacher;
+            mIsHost           = entry.mIsHost;
+            mIsSubClient      = entry.mIsSubClient;
+            mColor            = entry.mColor;
+        }
 
     public:
         // member functions

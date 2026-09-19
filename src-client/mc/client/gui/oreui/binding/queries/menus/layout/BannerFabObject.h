@@ -9,9 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Services::layout::model { struct BannerFab; }
 namespace OreUI { class LinksToObject; }
-namespace OreUI::Detail { class IPropertyObject; }
 // clang-format on
 
 namespace OreUI {
@@ -24,26 +22,6 @@ public:
     ::ll::TypedStorage<8, 440, ::OreUI::ImageObject>                    mStaticImage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ImageObject>>   mAnimatedImage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LinksToObject>> mLinksTo;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerFabObject();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BannerFabObject(
-        ::OreUI::Detail::IPropertyObject*                    fabParent,
-        ::Bedrock::Services::layout::model::BannerFab const& fab
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::OreUI::Detail::IPropertyObject* fabParent, ::Bedrock::Services::layout::model::BannerFab const& fab);
     // NOLINTEND
 };
 

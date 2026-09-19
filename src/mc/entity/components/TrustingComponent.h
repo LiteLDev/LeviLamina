@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/Item.h"
+#include "mc/platform/brstd/flat_set.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
+class Interaction;
+class Item;
+class ItemStack;
 class Player;
 // clang-format on
 
@@ -17,13 +18,17 @@ struct TrustingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                      mChance;
-    ::ll::TypedStorage<8, 16, ::std::set<::Item const*>> mTrustItems;
+    ::ll::TypedStorage<4, 4, float> mChance;
+    ::ll::
+        TypedStorage<8, 24, ::brstd::flat_set<::Item const*, ::std::less<::Item const*>, ::std::vector<::Item const*>>>
+            mTrustItems;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool _canTrust(::ItemStack const& instance) const;
+
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
     // NOLINTEND
 };

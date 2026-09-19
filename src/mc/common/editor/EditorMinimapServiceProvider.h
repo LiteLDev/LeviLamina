@@ -58,11 +58,13 @@ public:
 
     virtual ::mce::Color getPlayerColor(::ActorUniqueID playerId) = 0;
 
-    virtual ::Scripting::Result_deprecated<void>
-    setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap) = 0;
+    virtual ::Scripting::Result_deprecated<void> setVanillaBiomeColorMap(
+        ::mce::UUID const&                                       minimapId,
+        ::std::unordered_map<::std::string, ::mce::Color> const& colorMap
+    ) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color) = 0;
+    updateVanillaColorMap(::mce::UUID const& minimapId, ::std::string const& biomeId, ::mce::Color const& color) = 0;
 
     virtual ::Scripting::Result_deprecated<void> setMinimapYLevel(::mce::UUID const& minimapId, int yLevel) = 0;
 

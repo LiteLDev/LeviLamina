@@ -38,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TelemetryFacet(::OreUI::ITelemetry& telemetry);
-
     MCAPI void discardTrackedOptions();
 
     MCAPI void fireEvent(
@@ -68,6 +66,8 @@ public:
         bool                 isOwner
     );
 
+    MCAPI void fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId);
+
     MCAPI void trackOptionChanged(::std::string const& optionName, int oldOption, int newOption);
     // NOLINTEND
 
@@ -75,12 +75,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ITelemetry& telemetry);
     // NOLINTEND
 
 public:

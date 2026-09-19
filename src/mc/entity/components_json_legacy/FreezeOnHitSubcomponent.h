@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_26_50/actor/FreezeOnHitSubcomponentDefinition.h"
 #include "mc/entity/components_json_legacy/OnHitSubcomponent.h"
 
 // auto generated forward declare list
@@ -10,28 +11,26 @@
 class Actor;
 class ProjectileComponent;
 namespace Json { class Value; }
+namespace SharedTypes::v1_26_50 { struct ProjectileOnHitSubcomponent; }
 // clang-format on
 
 class FreezeOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // FreezeOnHitSubcomponent inner types define
-    enum class Shape : uchar {
-        Cube   = 0,
-        Sphere = 1,
-    };
+    using Shape = ::SharedTypes::v1_26_50::FreezeOnHitSubcomponentDefinition::Shape;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::FreezeOnHitSubcomponent::Shape> mShape;
-    ::ll::TypedStorage<4, 4, float>                            mSize;
-    ::ll::TypedStorage<1, 1, bool>                             mSnapToBlock;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_50::FreezeOnHitSubcomponentDefinition::Shape> mShape;
+    ::ll::TypedStorage<4, 4, float>                                                             mSize;
+    ::ll::TypedStorage<1, 1, bool>                                                              mSnapToBlock;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void readfromJSON(::Json::Value& component) /*override*/;
+    virtual void initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component) /*override*/;
 
     virtual void writetoJSON(::Json::Value& component) const /*override*/;
 
@@ -43,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $readfromJSON(::Json::Value& component);
+    MCAPI void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component);
 
     MCAPI void $writetoJSON(::Json::Value& component) const;
 

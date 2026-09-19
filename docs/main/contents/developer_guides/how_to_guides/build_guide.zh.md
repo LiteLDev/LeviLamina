@@ -7,9 +7,13 @@
 ### 必需工具
 
 - **XMake 3.0.0+** — 构建系统 ([xmake.io](https://xmake.io))
-- **MSVC 2022+** — 支持 C++20 的 Microsoft Visual C++ 编译器
+- **LLVM/Clang** — Windows 构建使用 `clang-cl` 工具链
+- **MSVC 2022+** — 提供 `clang-cl` 所依赖的 Windows SDK 与标准库
 - **Git** — 用于版本控制和版本号生成
 - **Windows 10/11 x64** — 目前仅支持 Windows 构建
+
+具体的工具和依赖版本以 `xmake.lua` 为准；`.github/workflows/build.yml` 中的工作流展示了当前实际
+验证过的组合。
 
 ### 安装 XMake
 
@@ -24,6 +28,11 @@ scoop install xmake
 ### 安装 MSVC
 
 安装 Visual Studio 2022 并选择"使用 C++ 的桌面开发"工作负载，或安装 Visual Studio 2022 生成工具。
+
+### 安装 LLVM
+
+从 [releases.llvm.org](https://releases.llvm.org) 下载安装，或使用 `scoop install llvm`，并确保
+`clang-cl` 已加入 `PATH`。
 
 ## 构建命令
 
@@ -97,55 +106,65 @@ xmake
 
 ## 依赖项
 
-LeviLamina 依赖 25+ 个外部库，由 XMake 自动管理：
+LeviLamina 依赖 25+ 个外部库，全部通过 `xmake.lua` 中的 `add_requires` 声明，由 XMake 自动下载。
+**版本以 `xmake.lua` 为唯一来源**，因此本页只说明各依赖的用途。执行 `xmake require --list` 可查看
+当前配置下实际解析到的版本。
 
 ### 核心库
 
-| 库                | 版本    | 用途           |
-| ----------------- | ------- | -------------- |
-| **entt**          | v3.15.0 | 实体组件系统   |
-| **fmt**           | 11.2.0  | 字符串格式化   |
-| **nlohmann_json** | v3.11.3 | JSON 解析      |
-| **rapidjson**     | v1.1.0  | 快速 JSON 解析 |
-| **leveldb**       | 1.23    | 键值数据库     |
-| **gsl**           | v4.2.0  | 指南支持库     |
+| 库              | 用途           |
+| --------------- | -------------- |
+| `entt`          | 实体组件系统   |
+| `fmt`           | 字符串格式化   |
+| `nlohmann_json` | JSON 解析      |
+| `rapidjson`     | 快速 JSON 解析 |
+| `leveldb`       | 键值数据库     |
+| `gsl`           | 指南支持库     |
 
 ### 性能
 
-| 库                   | 版本   | 用途             |
-| -------------------- | ------ | ---------------- |
-| **mimalloc**         | v2.1.7 | 高性能内存分配器 |
-| **parallel-hashmap** | v2.0.0 | 快速哈希表       |
-| **concurrentqueue**  | v1.0.4 | 无锁队列         |
+| 库                 | 用途             |
+| ------------------ | ---------------- |
+| `mimalloc`         | 高性能内存分配器 |
+| `parallel-hashmap` | 快速哈希表       |
+| `concurrentqueue`  | 无锁队列         |
 
 ### 工具
 
-| 库                | 版本   | 用途                 |
-| ----------------- | ------ | -------------------- |
-| **ctre**          | 3.8.1  | 编译期正则表达式     |
-| **magic_enum**    | v0.9.7 | 枚举反射             |
-| **type_safe**     | v0.2.4 | 类型安全工具         |
-| **expected-lite** | v0.8.0 | Expected/Result 类型 |
-| **glm**           | 1.0.1  | 数学库               |
+| 库              | 用途                 |
+| --------------- | -------------------- |
+| `ctre`          | 编译期正则表达式     |
+| `magic_enum`    | 枚举反射             |
+| `type_safe`     | 类型安全工具         |
+| `expected-lite` | Expected/Result 类型 |
+| `glm`           | 数学库               |
+| `cpr`           | HTTP 客户端          |
+| `stb`           | 图像与字体解码       |
 
 ### LeviLamina 专用
 
-| 库                  | 版本      | 用途           |
-| ------------------- | --------- | -------------- |
-| **pcg_cpp**         | v1.0.0    | 随机数生成     |
-| **pfr**             | 2.1.1     | 反射           |
-| **demangler**       | v17.0.7   | C++ 名称反修饰 |
-| **levibuildscript** | 0.4.1     | 构建脚本       |
-| **preloader**       | v1.15.7   | DLL 预加载     |
-| **symbolprovider**  | v1.2.0    | 符号解析       |
-| **trampoline**      | 2024.11.7 | 函数钩子       |
+这些依赖来自 `levimc-repo` xmake 仓库，可通过 `--levimc_repo` 覆盖。
+
+| 库                | 用途           |
+| ----------------- | -------------- |
+| `pcg_cpp`         | 随机数生成     |
+| `pfr`             | 反射           |
+| `demangler`       | C++ 名称反修饰 |
+| `levibuildscript` | 构建脚本       |
+| `preloader`       | DLL 预加载     |
+| `symbolprovider`  | 符号解析       |
+| `trampoline`      | 函数钩子       |
 
 ### 平台特定
 
-| 库              | 版本      | 平台    | 用途                         |
-| --------------- | --------- | ------- | ---------------------------- |
-| **libhat**      | 0.4.0     | Windows | 内存操作                     |
-| **bedrockdata** | v1.21.132 | -       | MC头文件（server 或 client） |
+| 库            | 平台    | 用途                               |
+| ------------- | ------- | ---------------------------------- |
+| `libhat`      | Windows | 内存操作                           |
+| `bedrockdata` | Windows | MC 二进制与数据，按 `--target_type` |
+| `gtest`       | -       | 测试框架，仅在 `--tests=y` 时需要   |
+
+`bedrockdata` 与 LeviLamina 当前适配的 Minecraft 版本锁定，其 `-server` / `-client` 变体由
+`--target_type` 选择。升级它属于适配新 Minecraft 版本的工作，而非常规依赖更新。
 
 ## 版本号生成
 
@@ -159,9 +178,11 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 
 ### 示例
 
-- **正式版**: `v1.8.0`
-- **预发布版**: `v1.8.0-rc.2`
-- **开发版**: `v1.8.0-rc.2+ce09050f05`（`--publish=n` 时包含提交哈希）
+- **正式版**: `v26.51.1`
+- **预发布版**: `v26.51.1-rc.2`
+- **开发版**: `v26.51.1-rc.2+ce09050f05`（`--publish=n` 时包含提交哈希）
+
+主版本号与次版本号跟随所适配的 Minecraft 版本，当前版本参见 `tooth.json` 与 `CHANGELOG.md`。
 
 ### 版本来源优先级
 
@@ -174,8 +195,8 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 
 ```cpp
 // 生成的 Version.h
-#define LL_VERSION_MAJOR 1
-#define LL_VERSION_MINOR 8
+#define LL_VERSION_MAJOR 26
+#define LL_VERSION_MINOR 1
 #define LL_VERSION_PATCH 0
 #define LL_VERSION_PRERELEASE "rc.2"
 #define LL_VERSION_BUILD "ce09050f05"
@@ -188,10 +209,13 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 - **C++20** 必需
 - **C++23** 特性通过 `_HAS_CXX23=1` 启用
 
-### MSVC 标志
+### 编译器标志
+
+Windows 构建使用 `clang-cl`，采用兼容 MSVC 的标志。完整列表以 `xmake.lua` 中
+`target("LeviLamina")` 块为准。
 
 - **运行时**: `/MD`（动态，非调试）
-- **异常**: `/EHa`（SEH + C++ 异常）
+- **异常**: `/EHa` 与 `/EHs`，并在 xmake 层面关闭异常
 - **警告**: `/W4` 及特定升级：
   - `/w44265` — 虚函数无 override
   - `/w44289` — 循环变量在循环外使用
@@ -227,15 +251,14 @@ LeviLamina 使用 GitHub Actions 进行持续集成：
 
 ### 自动化构建
 
-- **触发器**: 推送到主分支或拉取请求
+- **触发器**: 任意分支的推送，以及改动源码或 `xmake.lua` 的拉取请求
 - **平台**: Windows x64
-- **目标**: 服务端和客户端
-- **测试**: `--tests=y` 时运行
+- **构建矩阵**: 服务端与客户端，各含 debug 与 release，测试开关各一份
 
 ### 发布流程
 
-1. 为提交打标签: `git tag v1.8.0`
-2. 推送标签: `git push origin v1.8.0`
+1. 为提交打标签: `git tag v26.1.0`
+2. 推送标签: `git push origin v26.1.0`
 3. CI 使用 `--publish=y` 构建
 4. 产物上传到 GitHub Releases
 
@@ -255,9 +278,10 @@ xmake f -c  # 重新配置
 xmake g --proxy_pac=github_mirror.lua
 ```
 
-### 找不到 MSVC
+### 找不到工具链
 
-确保已安装 Visual Studio 2022 或生成工具，并从"VS 2022 开发人员命令提示符"运行。
+确保已安装 Visual Studio 2022 或生成工具以提供 Windows SDK，已安装 LLVM 使 `clang-cl` 可在
+`PATH` 中解析，并从"VS 2022 开发人员命令提示符"运行。
 
 ## 相关文档
 

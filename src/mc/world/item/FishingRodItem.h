@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/ComponentItem.h"
 
 // auto generated forward declare list
@@ -30,7 +31,7 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual bool isHandEquipped() const /*override*/;
 
@@ -73,7 +74,7 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCFOLD bool $isHandEquipped() const;
 
@@ -83,7 +84,7 @@ public:
 
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
     MCFOLD int $getEnchantValue() const;
 

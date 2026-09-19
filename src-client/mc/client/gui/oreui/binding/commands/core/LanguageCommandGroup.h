@@ -18,18 +18,6 @@ public:
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<::std::string, int64>> mFormatDate;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<::std::string, int64>> mGetHowLongAgoAsString;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LanguageCommandGroup();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+class I18n;
 class PackCapabilityRegistry;
 class PackManifest;
 class PackReport;
@@ -31,7 +32,8 @@ public:
         bool                         allowVersionStrings,
         ::std::string const&         versionKey,
         ::std::string const&         idKey,
-        ::PackManifestFormat         formatVersion
+        ::PackManifestFormat         formatVersion,
+        ::I18n&                      loc
     );
 
     MCNAPI static void parseLegacyModuleDependencies(
@@ -57,7 +59,8 @@ public:
         ::PackManifest&              manifest,
         ::PackReport&                report,
         bool                         allowWarnings,
-        bool                         allowVersionStrings
+        bool                         allowVersionStrings,
+        ::I18n&                      loc
     );
 
     MCNAPI static void processBaseGameVersion(

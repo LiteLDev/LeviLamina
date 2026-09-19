@@ -17,7 +17,7 @@ class ClientUpdatesSupportQuery : public ::OreUI::QueryBase<::OreUI::ClientUpdat
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>> mIsLaunchStoreForClientUpdatesSupported;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mIsLaunchStoreForClientUpdatesSupported;
     // NOLINTEND
 
 public:

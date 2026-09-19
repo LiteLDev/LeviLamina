@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
+#include "mc/deps/core/minecraft/threading/EnableFIFOQueueForMainThread.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -14,12 +15,13 @@ namespace OreUI { class GameDependencies; }
 
 namespace OreUI {
 
-class FlightingConfigQueryString : public ::OreUI::QueryBase<::OreUI::FlightingConfigQueryString> {
+class FlightingConfigQueryString : public ::OreUI::QueryBase<::OreUI::FlightingConfigQueryString>,
+                                   public ::Bedrock::Threading::EnableFIFOQueueForMainThread {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mToken;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mValue;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mToken;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mValue;
     // NOLINTEND
 
 public:

@@ -10,6 +10,8 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_90 {
 // functions
 // NOLINTBEGIN
+MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+
 MCAPI void bindItemComponentTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 

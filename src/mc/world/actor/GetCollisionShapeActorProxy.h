@@ -38,7 +38,7 @@ public:
 
     virtual bool isWearingLeatherBoots() const /*override*/;
 
-    virtual bool hasLightWeightFamilyTag() const /*override*/;
+    virtual bool canStandOnPowderSnow() const /*override*/;
 
     virtual bool isWorldBuilder() const /*override*/;
 
@@ -62,7 +62,7 @@ public:
 
     MCAPI bool $isWearingLeatherBoots() const;
 
-    MCAPI bool $hasLightWeightFamilyTag() const;
+    MCAPI bool $canStandOnPowderSnow() const;
 
     MCAPI bool $isWorldBuilder() const;
 

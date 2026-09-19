@@ -19,7 +19,7 @@ class ContainerSizeQuery : public ::OreUI::QueryBase<::OreUI::ContainerSizeQuery
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                   mSize;
     ::ll::TypedStorage<1, 1, ::ContainerEnumName>                                             mContainerName;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND

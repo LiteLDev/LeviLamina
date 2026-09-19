@@ -11,6 +11,7 @@
 // clang-format off
 class Mob;
 class PetSleepWithOwnerState;
+struct GoalId;
 // clang-format on
 
 class PetSleepWithOwnerGoal : public ::BaseGoal {
@@ -54,13 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PetSleepWithOwnerGoal(::Mob& mob);
+    MCAPI PetSleepWithOwnerGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

@@ -34,6 +34,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                  mDepthTest;
     ::ll::TypedStorage<1, 1, bool>                                                  mShowBackface;
     ::ll::TypedStorage<1, 1, bool>                                                  mShowTextBackface;
+    ::ll::TypedStorage<4, 4, float>                                                 mLineGapHeight;
     // NOLINTEND
 
 public:
@@ -65,9 +66,17 @@ public:
 
     MCAPI ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> getText() const;
 
+    MCAPI void setDepthTest(bool depthTest);
+
+    MCAPI void setShowBackface(bool showBackface);
+
+    MCAPI void setShowTextBackface(bool showTextBackface);
+
     MCAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::Scripting::ArgumentOutOfBoundsError>
         setText(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text);
+
+    MCAPI void setUseRotation(bool useRotation);
     // NOLINTEND
 
 public:

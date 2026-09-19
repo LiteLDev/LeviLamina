@@ -12,10 +12,11 @@ class SettingsOption : public ::OreUI::PropertyObject<::OreUI::SettingsOption> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                            mValue;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                  mLabel;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mDescription;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>          mDisabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                     mValue;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mLabel;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+                                                                                                mDescription;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>, ::std::optional<bool>>> mDisabled;
     // NOLINTEND
 };
 

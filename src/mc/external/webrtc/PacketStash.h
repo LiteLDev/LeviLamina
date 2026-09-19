@@ -6,6 +6,12 @@
 #include "mc/external/absl/flat_hash_set.h"
 #include "mc/external/webrtc/ArrayView.h"
 
+// abseil definitions
+namespace absl::hash_internal {
+template <typename T>
+struct Hash;
+}
+
 namespace webrtc {
 
 class PacketStash {

@@ -120,6 +120,8 @@ public:
 
     MCAPI bool operator==(::GameRule const& other) const;
 
+    MCAPI ::GameRule& setName(::std::string const& name);
+
     MCAPI ~GameRule();
     // NOLINTEND
 

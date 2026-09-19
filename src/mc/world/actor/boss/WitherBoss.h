@@ -97,8 +97,6 @@ public:
 
     virtual void newServerAiStep() /*override*/;
 
-    virtual bool canFreeze() const /*override*/;
-
     virtual bool canBeAffected(uint effectId) const /*override*/;
 
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
@@ -190,8 +188,6 @@ public:
     MCAPI void $aiStep();
 
     MCAPI void $newServerAiStep();
-
-    MCFOLD bool $canFreeze() const;
 
     MCAPI bool $canBeAffected(uint effectId) const;
 

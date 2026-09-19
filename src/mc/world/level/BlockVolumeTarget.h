@@ -60,6 +60,10 @@ public:
 
     virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const /*override*/;
 
+    virtual bool hasAnyBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const /*override*/;
+
+    virtual bool hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const /*override*/;
+
     virtual bool setBlock(::BlockPos const& pos, ::Block const& newBlock, int) /*override*/;
 
     virtual bool setBlockSimple(::BlockPos const& pos, ::Block const& block) /*override*/;
@@ -114,6 +118,10 @@ public:
     $fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>);
 
     MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
+
+    MCAPI bool $hasAnyBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
+
+    MCAPI bool $hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
 
     MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int);
 

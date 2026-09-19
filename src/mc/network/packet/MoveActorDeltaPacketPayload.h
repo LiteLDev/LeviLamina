@@ -9,6 +9,6 @@ struct MoveActorDeltaPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::MoveActorDeltaData> mMoveData;
+    ::ll::TypedStorage<8, 80, ::MoveActorDeltaData> mMoveData;
     // NOLINTEND
 };

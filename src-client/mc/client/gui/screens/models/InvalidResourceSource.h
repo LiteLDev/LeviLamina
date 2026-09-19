@@ -9,17 +9,17 @@
 // auto generated forward declare list
 // clang-format off
 class IResourcePackRepository;
-class ResourceLocation;
 struct ContentItem;
+struct InvalidPack;
 // clang-format on
 
 struct InvalidResourceSource : public ::ContentSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IResourcePackRepository*>         mResourceRepository;
-    ::ll::TypedStorage<8, 24, ::InvalidPacksFilterGroup>         mFilter;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceLocation>> mInvalidPacks;
+    ::ll::TypedStorage<8, 8, ::IResourcePackRepository*>    mResourceRepository;
+    ::ll::TypedStorage<8, 24, ::InvalidPacksFilterGroup>    mFilter;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InvalidPack>> mInvalidPacks;
     // NOLINTEND
 
 public:

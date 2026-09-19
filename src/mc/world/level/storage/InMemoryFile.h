@@ -9,7 +9,7 @@ class InMemoryFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk7ae000;
+    ::ll::UntypedStorage<8, 80> mUnkf5b24e;
     ::ll::UntypedStorage<8, 24> mUnk64039c;
     ::ll::UntypedStorage<8, 32> mUnkea3443;
     ::ll::UntypedStorage<1, 1>  mUnk2c24f7;
@@ -27,10 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ::leveldb::Status append(::leveldb::Slice const& data);
-#endif
-
     MCNAPI ::Core::PathBuffer<::std::string> getFilename() const;
     // NOLINTEND
 };

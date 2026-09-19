@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5dcf1f;
-    ::ll::UntypedStorage<8, 64> mUnk9cc675;
+    ::ll::UntypedStorage<8, 8>  mUnk9cc675;
     // NOLINTEND
 
 public:

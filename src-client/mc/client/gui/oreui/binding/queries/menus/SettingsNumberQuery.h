@@ -20,14 +20,15 @@ class SettingsNumberQuery : public ::OreUI::QueryBase<::OreUI::SettingsNumberQue
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>>           mSettingsRegistry;
-    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                         mCommonProperties;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<double>>                         mValue;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mValueText;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<double>>                         mMin;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<double>>                         mMax;
-    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>>>        mStep;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mSettingsChangedSubscription;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>> mSettingsRegistry;
+    ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>               mCommonProperties;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<double, double>>       mValue;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+                                                                                                    mValueText;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<double, double>>                                   mMin;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<double, double>>                                   mMax;
+    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>, ::std::optional<double>>> mStep;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSettingsChangedSubscription;
     // NOLINTEND
 
 public:

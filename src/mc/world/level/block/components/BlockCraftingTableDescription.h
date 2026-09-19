@@ -22,14 +22,6 @@ public:
     ::ll::TypedStorage<8, 24, ::CraftingTagsProxy> mCraftingTags;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    BlockCraftingTableDescription& operator=(BlockCraftingTableDescription const&);
-    BlockCraftingTableDescription();
-
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -45,33 +37,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI BlockCraftingTableDescription(::BlockCraftingTableDescription const&);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(::BlockCraftingTableDescription const&);
-#endif
     // NOLINTEND
 
 public:

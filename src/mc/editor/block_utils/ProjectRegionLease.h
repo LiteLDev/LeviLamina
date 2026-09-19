@@ -34,12 +34,25 @@ public:
     // NOLINTBEGIN
     MCNAPI
     ProjectRegionLease(::Editor::ServiceProviderCollection& providers, ::WeakRef<::Editor::ProjectRegion> region);
+
+    MCNAPI explicit operator bool() const;
+
+    MCNAPI ::Editor::BlockUtils::Task::ProjectRegionLease&
+    operator=(::Editor::BlockUtils::Task::ProjectRegionLease&& other);
+
+    MCNAPI ~ProjectRegionLease();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers, ::WeakRef<::Editor::ProjectRegion> region);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

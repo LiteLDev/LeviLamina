@@ -27,12 +27,19 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mIsCounterPausedThisTick;
     ::ll::TypedStorage<1, 1, bool>                                mAmbient;
     ::ll::TypedStorage<1, 1, bool>                                mEffectVisible;
+    ::ll::TypedStorage<1, 1, bool>                                mIsLeveled;
     ::ll::TypedStorage<8, 96, ::MobEffect::FactorCalculationData> mFactorCalculationData;
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MobEffectInstance();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MobEffectInstance(uint id, ::EffectDuration duration);
+
     MCAPI ::std::string getDisplayName() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
@@ -54,5 +61,11 @@ public:
     MCAPI static ::MobEffectInstance const& NO_EFFECT();
 
     MCAPI static float& splashDurationMultiplier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint id, ::EffectDuration duration);
     // NOLINTEND
 };

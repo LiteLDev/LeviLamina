@@ -20,9 +20,9 @@ class MolangVariableMap;
 class Vec3;
 struct BreakingItemParticleData;
 struct ResolvedItemIconInfo;
-struct ScreenshotOptions;
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
+struct ScreenshotOptions;
 // clang-format on
 
 class LevelListener : public ::BlockSourceListener {

@@ -15,7 +15,6 @@ public:
     virtual ~IActiveDirectoryIdentityTelemetry() = default;
 
     virtual void fireEventSignInEdu(
-        ::std::string const&                                            mutsUserId,
         ::edu::Role                                                     role,
         ::Identity::EduSignInStage                                      stage,
         ::std::string const&                                            tenantType,

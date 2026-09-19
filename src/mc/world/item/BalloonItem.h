@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ChemistryItem.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,9 +30,14 @@ public:
 
     virtual bool isDyeable() const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -51,8 +57,14 @@ public:
 
     MCFOLD bool $isDyeable() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
 
 
     // NOLINTEND

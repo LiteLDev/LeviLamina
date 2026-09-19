@@ -12,7 +12,7 @@ class LicenseQuery : public ::OreUI::QueryBase<::OreUI::LicenseQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mFontLicense;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mFontLicense;
     // NOLINTEND
 
 public:

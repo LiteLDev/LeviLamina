@@ -12,12 +12,16 @@ public:
     virtual ~MineshaftStart() /*override*/ = default;
 
     virtual ::std::string_view getStructureName() const /*override*/;
+
+    virtual bool requiresNeighborAwareBlockUpgrade() const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string_view $getStructureName() const;
+
+    MCFOLD bool $requiresNeighborAwareBlockUpgrade() const;
 
 
     // NOLINTEND

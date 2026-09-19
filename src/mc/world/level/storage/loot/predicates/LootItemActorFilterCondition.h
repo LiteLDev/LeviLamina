@@ -27,8 +27,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool applies(::Random&, ::LootTableContext&) /*override*/;
-
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+
+    virtual bool _applies(::Random&, ::LootTableContext&) /*override*/;
     // NOLINTEND
 };

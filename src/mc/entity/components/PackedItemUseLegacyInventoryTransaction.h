@@ -18,6 +18,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::ItemStackLegacyRequestId>     mID;
     ::ll::TypedStorage<8, 24, ::std::vector<::LegacySetSlot>> mSlots;
-    ::ll::TypedStorage<8, 264, ::ItemUseInventoryTransaction> mTransaction;
+    ::ll::TypedStorage<8, 272, ::ItemUseInventoryTransaction> mTransaction;
     // NOLINTEND
 };

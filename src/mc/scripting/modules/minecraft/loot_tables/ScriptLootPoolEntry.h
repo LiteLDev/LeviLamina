@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 
 // auto generated forward declare list
@@ -27,13 +26,6 @@ public:
     virtual ~ScriptLootPoolEntry() = default;
 
     virtual ::LootPoolEntry const& _getEntry() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolEntry>>
-    getSubTable() const;
     // NOLINTEND
 
 public:

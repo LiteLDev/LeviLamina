@@ -15,20 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    ResourceMetadata& operator=(ResourceMetadata const&);
     ResourceMetadata(ResourceMetadata const&);
     ResourceMetadata();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
-
-    MCNAPI ~ResourceMetadata();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

@@ -20,9 +20,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class BlockDescriptor {
 public:
-    char filler[0xB8];
-
-public:
     // BlockDescriptor inner types declare
     // clang-format off
     class ResolveHelper;
@@ -122,6 +119,15 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                             mIsDeferred;
     ::ll::TypedStorage<8, 24, ::SpinLockImpl>                                  mLock;
     // NOLINTEND
+
+public:
+    static bool anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Block const& block) {
+        return std::ranges::any_of(blockDescriptors, [&block](BlockDescriptor const& des) {
+            if (des.matches(block)) {
+                return true;
+            }
+        });
+    }
 
 public:
     // prevent constructor by default

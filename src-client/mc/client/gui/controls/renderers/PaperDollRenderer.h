@@ -18,6 +18,7 @@ class IPaperDollRenderContext;
 class IPaperDollUIDefSource;
 class IPaperDollUpdateContext;
 class MinecraftUIRenderContext;
+class SkinPackPin;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
@@ -62,6 +63,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>>                     mAnimationComponent;
     ::ll::TypedStorage<8, 56, ::MolangVariableMap>                                         mVariables;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                      mSkinLastUpdated;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::SkinPackPin>>            mPinnedPacks;
     // NOLINTEND
 
 public:

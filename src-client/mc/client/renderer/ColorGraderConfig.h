@@ -151,12 +151,6 @@ public:
                 ToneMapping& operator=(ToneMapping const&);
                 ToneMapping(ToneMapping const&);
                 ToneMapping();
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
         public:

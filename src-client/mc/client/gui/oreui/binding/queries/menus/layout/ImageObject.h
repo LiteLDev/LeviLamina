@@ -17,7 +17,7 @@ class ImageObject : public ::OreUI::PropertyObject<::OreUI::ImageObject> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mUrl;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mUrl;
     // NOLINTEND
 
 public:

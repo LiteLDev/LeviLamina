@@ -81,6 +81,10 @@ public:
     MCAPI CommandBlockUpdatePacketPayload(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
 #endif
 
+    MCAPI ::std::string getRedactedName() const;
+
+    MCFOLD ::std::string getUnredactedName() const;
+
     MCAPI ~CommandBlockUpdatePacketPayload();
     // NOLINTEND
 

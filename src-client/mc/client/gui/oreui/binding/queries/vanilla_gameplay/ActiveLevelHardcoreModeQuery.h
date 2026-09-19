@@ -21,11 +21,11 @@ class ActiveLevelHardcoreModeQuery : public ::OreUI::QueryBase<::OreUI::ActiveLe
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Minecraft const>> mMinecraft;
-    ::ll::TypedStorage<8, 8, ::Level const*>                                    mCurrentLevel;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mLevelSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mIsHardcoreSubscription;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>        mIsHardcoreMode;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Minecraft const>>                 mMinecraft;
+    ::ll::TypedStorage<8, 8, ::Level const*>                                                    mCurrentLevel;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                  mLevelSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                  mIsHardcoreSubscription;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>, ::std::optional<bool>>> mIsHardcoreMode;
     // NOLINTEND
 
 public:

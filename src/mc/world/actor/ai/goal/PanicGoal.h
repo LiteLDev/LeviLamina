@@ -13,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct GoalId;
 // clang-format on
 
 class PanicGoal : public ::BaseGoal {
@@ -62,6 +63,8 @@ public:
     // NOLINTBEGIN
     MCAPI PanicGoal(
         ::Mob&                                                 mob,
+        ::std::string                                          name,
+        ::GoalId const&                                        goalId,
         float                                                  speedMultiplier,
         bool                                                   ignoreMobDamage,
         ::SharedTypes::Legacy::LevelSoundEvent                 sound,
@@ -77,6 +80,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Mob&                                                 mob,
+        ::std::string                                          name,
+        ::GoalId const&                                        goalId,
         float                                                  speedMultiplier,
         bool                                                   ignoreMobDamage,
         ::SharedTypes::Legacy::LevelSoundEvent                 sound,
@@ -103,11 +108,5 @@ public:
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

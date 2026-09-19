@@ -19,8 +19,8 @@ class ImmediateRespawnQuery : public ::OreUI::QueryBase<::OreUI::ImmediateRespaw
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Minecraft const>> mMinecraft;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>        mImmediateRespawn;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Minecraft const>>                 mMinecraft;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>, ::std::optional<bool>>> mImmediateRespawn;
     // NOLINTEND
 
 public:

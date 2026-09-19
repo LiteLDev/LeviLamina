@@ -10,7 +10,6 @@
 class ActorTickNeededComponent;
 class StrictEntityContext;
 struct EditorActorPauseTickNeededComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct EditorTickFilterSystem {
@@ -22,9 +21,5 @@ public:
         ::ActorTickNeededComponent&,
         ::EntityModifier<::EditorActorPauseTickNeededComponent>& modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createAddPauseTickNeeded();
-
-    MCAPI static ::TickingSystemWithInfo createRemoveActorTickNeeded();
     // NOLINTEND
 };

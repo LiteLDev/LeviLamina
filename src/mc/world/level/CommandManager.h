@@ -9,19 +9,19 @@
 // clang-format off
 class Command;
 class CommandOrigin;
+class DebuggerStat;
+class DebuggerStatCollector;
 class FunctionManager;
 class MinecraftCommands;
-class ScriptStat;
-class ScriptStatCollector;
 // clang-format on
 
 class CommandManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::MinecraftCommands&>                     mCommands;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FunctionManager>>     mFunctionManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptStatCollector>> mScriptStatCollector;
+    ::ll::TypedStorage<8, 8, ::MinecraftCommands&>                       mCommands;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FunctionManager>>       mFunctionManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>> mScriptStatCollector;
     // NOLINTEND
 
 public:
@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ScriptStat>
+    MCAPI ::std::optional<::DebuggerStat>
     _collectScriptStats(uint64 currentTick, uint64 lastCollectedTick, uint64 collectionFrequency);
 
     MCAPI void initialize(::std::unique_ptr<::FunctionManager> functionManager);

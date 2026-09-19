@@ -11,6 +11,8 @@
 #include "mc/world/level/Level.h"
 #include "mc/world/level/PlayerSleepManager.h"
 
+class SubChunkPacketHandler;
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -177,6 +179,10 @@ public:
         short          absoluteSubChunkIndex,
         bool           subChunkVisibilityChanged
     );
+
+    /// @brief Restored: inlined in the game, so it is reimplemented here.
+    ///        The insert manager is what actually owns the request queue.
+    LLAPI void addSubChunkPacketHandler(::std::shared_ptr<::SubChunkPacketHandler> handler);
 
     MCAPI void cameraTick();
     // NOLINTEND

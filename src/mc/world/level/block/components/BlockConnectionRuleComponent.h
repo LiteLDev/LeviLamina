@@ -11,7 +11,7 @@ struct BlockConnectionRuleComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::ConnectionID, 4>> mConnectionsFromMask;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::ConnectionID, 5>> mConnectionsFromMask;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::Facing::Name, 6>> mEnabledDirectionsMask;
     // NOLINTEND
 };

@@ -7,9 +7,13 @@ This guide covers building LeviLamina from source, including environment setup, 
 ### Required Tools
 
 - **XMake 3.0.0+** — Build system ([xmake.io](https://xmake.io))
-- **MSVC 2022+** — Microsoft Visual C++ compiler with C++20 support
+- **LLVM/Clang** — The Windows build uses the `clang-cl` toolchain
+- **MSVC 2022+** — Provides the Windows SDK and standard library that `clang-cl` builds against
 - **Git** — For version control and version number generation
 - **Windows 10/11 x64** — Currently only Windows builds are supported
+
+Exact tool and dependency versions are defined in `xmake.lua`; the CI workflow in
+`.github/workflows/build.yml` shows the combination that is actively tested.
 
 ### Installing XMake
 
@@ -24,6 +28,11 @@ scoop install xmake
 ### Installing MSVC
 
 Install Visual Studio 2022 with the "Desktop development with C++" workload, or install Build Tools for Visual Studio 2022.
+
+### Installing LLVM
+
+Install LLVM from [releases.llvm.org](https://releases.llvm.org) or via `scoop install llvm`, and
+make sure `clang-cl` is on `PATH`.
 
 ## Build Commands
 
@@ -97,55 +106,67 @@ xmake
 
 ## Dependencies
 
-LeviLamina depends on 25+ external libraries, automatically managed by XMake:
+LeviLamina depends on 25+ external libraries, all declared with `add_requires` in `xmake.lua` and
+downloaded automatically by XMake. **`xmake.lua` is the single source of truth for versions**, so
+this page lists only what each dependency is for. Run `xmake require --list` to see the versions
+resolved for your current configuration.
 
 ### Core Libraries
 
-| Library           | Version | Purpose                    |
-| ----------------- | ------- | -------------------------- |
-| **entt**          | v3.15.0 | Entity component system    |
-| **fmt**           | 11.2.0  | String formatting          |
-| **nlohmann_json** | v3.11.3 | JSON parsing               |
-| **rapidjson**     | v1.1.0  | Fast JSON parsing          |
-| **leveldb**       | 1.23    | Key-value database         |
-| **gsl**           | v4.2.0  | Guidelines Support Library |
+| Library         | Purpose                    |
+| --------------- | -------------------------- |
+| `entt`          | Entity component system    |
+| `fmt`           | String formatting          |
+| `nlohmann_json` | JSON parsing               |
+| `rapidjson`     | Fast JSON parsing          |
+| `leveldb`       | Key-value database         |
+| `gsl`           | Guidelines Support Library |
 
 ### Performance
 
-| Library              | Version | Purpose                    |
-| -------------------- | ------- | -------------------------- |
-| **mimalloc**         | v2.1.7  | High-performance allocator |
-| **parallel-hashmap** | v2.0.0  | Fast hash maps             |
-| **concurrentqueue**  | v1.0.4  | Lock-free queue            |
+| Library            | Purpose                    |
+| ------------------ | -------------------------- |
+| `mimalloc`         | High-performance allocator |
+| `parallel-hashmap` | Fast hash maps             |
+| `concurrentqueue`  | Lock-free queue            |
 
 ### Utilities
 
-| Library           | Version | Purpose               |
-| ----------------- | ------- | --------------------- |
-| **ctre**          | 3.8.1   | Compile-time regex    |
-| **magic_enum**    | v0.9.7  | Enum reflection       |
-| **type_safe**     | v0.2.4  | Type safety utilities |
-| **expected-lite** | v0.8.0  | Expected/Result type  |
-| **glm**           | 1.0.1   | Math library          |
+| Library         | Purpose               |
+| --------------- | --------------------- |
+| `ctre`          | Compile-time regex    |
+| `magic_enum`    | Enum reflection       |
+| `type_safe`     | Type safety utilities |
+| `expected-lite` | Expected/Result type  |
+| `glm`           | Math library          |
+| `cpr`           | HTTP client           |
+| `stb`           | Image and font decode |
 
 ### LeviLamina-Specific
 
-| Library             | Version   | Purpose                  |
-| ------------------- | --------- | ------------------------ |
-| **pcg_cpp**         | v1.0.0    | Random number generation |
-| **pfr**             | 2.1.1     | Reflection               |
-| **demangler**       | v17.0.7   | C++ name demangling      |
-| **levibuildscript** | 0.4.1     | Build scripts            |
-| **preloader**       | v1.15.7   | DLL preloading           |
-| **symbolprovider**  | v1.2.0    | Symbol resolution        |
-| **trampoline**      | 2024.11.7 | Function hooking         |
+These come from the `levimc-repo` xmake repository, overridable with `--levimc_repo`.
+
+| Library           | Purpose                  |
+| ----------------- | ------------------------ |
+| `pcg_cpp`         | Random number generation |
+| `pfr`             | Reflection               |
+| `demangler`       | C++ name demangling      |
+| `levibuildscript` | Build scripts            |
+| `preloader`       | DLL preloading           |
+| `symbolprovider`  | Symbol resolution        |
+| `trampoline`      | Function hooking         |
 
 ### Platform-Specific
 
-| Library         | Version   | Platform | Purpose                       |
-| --------------- | --------- | -------- | ----------------------------- |
-| **libhat**      | 0.4.0     | Windows  | Memory manipulation           |
-| **bedrockdata** | v1.21.132 | -        | MC headers (server or client) |
+| Library       | Platform | Purpose                                             |
+| ------------- | -------- | --------------------------------------------------- |
+| `libhat`      | Windows  | Memory manipulation                                 |
+| `bedrockdata` | Windows  | MC binaries and data, per `--target_type`            |
+| `gtest`       | -        | Test framework, only required when `--tests=y`       |
+
+`bedrockdata` is version-locked to the Minecraft version LeviLamina currently targets, and its
+`-server` / `-client` variant is selected by `--target_type`. Bumping it is part of adapting to a
+new Minecraft release, not a routine dependency update.
 
 ## Version Number Generation
 
@@ -159,9 +180,12 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 
 ### Examples
 
-- **Release**: `v1.8.0`
-- **Pre-release**: `v1.8.0-rc.2`
-- **Development**: `v1.8.0-rc.2+ce09050f05` (includes commit hash when `--publish=n`)
+- **Release**: `v26.1.0`
+- **Pre-release**: `v26.1.0-rc.2`
+- **Development**: `v26.1.0-rc.2+ce09050f05` (includes commit hash when `--publish=n`)
+
+Major and minor track the targeted Minecraft version. See `tooth.json` and `CHANGELOG.md` for the
+current one.
 
 ### Version Source Priority
 
@@ -174,8 +198,8 @@ The version is injected into `src/ll/core/Version.h.in` during build:
 
 ```cpp
 // Generated Version.h
-#define LL_VERSION_MAJOR 1
-#define LL_VERSION_MINOR 8
+#define LL_VERSION_MAJOR 26
+#define LL_VERSION_MINOR 1
 #define LL_VERSION_PATCH 0
 #define LL_VERSION_PRERELEASE "rc.2"
 #define LL_VERSION_BUILD "ce09050f05"
@@ -188,10 +212,13 @@ The version is injected into `src/ll/core/Version.h.in` during build:
 - **C++20** required
 - **C++23** features enabled via `_HAS_CXX23=1`
 
-### MSVC Flags
+### Compiler Flags
+
+The Windows build compiles with `clang-cl` using MSVC-compatible flags. See the
+`target("LeviLamina")` block in `xmake.lua` for the authoritative list.
 
 - **Runtime**: `/MD` (dynamic, non-debug)
-- **Exceptions**: `/EHa` (SEH + C++ exceptions)
+- **Exceptions**: `/EHa` and `/EHs`, with xmake-level exceptions disabled
 - **Warnings**: `/W4` with specific upgrades:
   - `/w44265` — Virtual function without override
   - `/w44289` — Loop variable used outside loop
@@ -227,15 +254,14 @@ LeviLamina uses GitHub Actions for continuous integration:
 
 ### Automated Builds
 
-- **Trigger**: Push to main branch or pull requests
+- **Trigger**: Pushes to any branch and pull requests touching sources or `xmake.lua`
 - **Platforms**: Windows x64
-- **Targets**: Both server and client
-- **Tests**: Run when `--tests=y`
+- **Matrix**: server and client, each in debug and release, with tests on and off
 
 ### Release Process
 
-1. Tag commit with version: `git tag v1.8.0`
-2. Push tag: `git push origin v1.8.0`
+1. Tag commit with version: `git tag v26.1.0`
+2. Push tag: `git push origin v26.1.0`
 3. CI builds with `--publish=y`
 4. Artifacts uploaded to GitHub Releases
 
@@ -255,9 +281,10 @@ xmake f -c  # Reconfigure
 xmake g --proxy_pac=github_mirror.lua
 ```
 
-### MSVC Not Found
+### Toolchain Not Found
 
-Ensure Visual Studio 2022 or Build Tools are installed and run from "Developer Command Prompt for VS 2022".
+Ensure Visual Studio 2022 or Build Tools are installed for the Windows SDK, that LLVM is installed
+so `clang-cl` resolves on `PATH`, and run from "Developer Command Prompt for VS 2022".
 
 ## Related
 

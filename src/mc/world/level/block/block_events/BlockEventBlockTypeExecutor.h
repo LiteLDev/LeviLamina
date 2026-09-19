@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated inclusion list
 #include "mc/platform/brstd/flat_map.h"

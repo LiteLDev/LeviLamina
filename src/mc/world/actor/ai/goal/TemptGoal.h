@@ -3,7 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/TemptBaseGoal.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionTrigger;
+class ItemDescriptor;
+class Mob;
+struct FloatRange;
+struct GoalId;
+// clang-format on
 
 class TemptGoal : public ::TemptBaseGoal {
 public:
@@ -11,6 +21,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mPathfinderWaitTicks;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TemptGoal();
 
 public:
     // virtual functions
@@ -28,6 +42,48 @@ public:
     virtual void stopMovement() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TemptGoal(
+        ::Mob&                                 mob,
+        ::std::string                          name,
+        ::GoalId const&                        goalId,
+        float                                  speed,
+        ::std::vector<::ItemDescriptor> const& itemList,
+        ::SharedTypes::Legacy::LevelSoundEvent sound,
+        ::FloatRange                           soundIntervalRange,
+        bool                                   canGetScared,
+        float                                  temptDistance,
+        float                                  stopDistance,
+        bool                                   canTemptVertically,
+        bool                                   canTemptWhileRidden,
+        ::ActorDefinitionTrigger const&        onStartEvent,
+        ::ActorDefinitionTrigger const&        onEndEvent
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                                 mob,
+        ::std::string                          name,
+        ::GoalId const&                        goalId,
+        float                                  speed,
+        ::std::vector<::ItemDescriptor> const& itemList,
+        ::SharedTypes::Legacy::LevelSoundEvent sound,
+        ::FloatRange                           soundIntervalRange,
+        bool                                   canGetScared,
+        float                                  temptDistance,
+        float                                  stopDistance,
+        bool                                   canTemptVertically,
+        bool                                   canTemptWhileRidden,
+        ::ActorDefinitionTrigger const&        onStartEvent,
+        ::ActorDefinitionTrigger const&        onEndEvent
+    );
     // NOLINTEND
 
 public:

@@ -7,8 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContainerModel;
 class ItemInstance;
+class Recipe;
+class RecipeIngredient;
 // clang-format on
 
 class CraftingInputContainerController : public ::CraftingContainerController {
@@ -18,13 +19,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRecipeItems;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CraftingInputContainerController();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,15 +35,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit CraftingInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+    MCNAPI void onRecipeSelectedWithSpecificIngredients(
+        ::Recipe const*                          recipe,
+        uint64                                   gridSize,
+        bool                                     displayGhostItems,
+        ::std::vector<::RecipeIngredient> const& ingredients
+    );
 #endif
     // NOLINTEND
 
@@ -65,11 +56,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

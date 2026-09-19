@@ -42,13 +42,26 @@ public:
 
 public:
     // prevent constructor by default
-    FolderSizeAndModifyDateSnapshot& operator=(FolderSizeAndModifyDateSnapshot const&);
     FolderSizeAndModifyDateSnapshot(FolderSizeAndModifyDateSnapshot const&);
     FolderSizeAndModifyDateSnapshot();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot const&);
+
+    MCNAPI ~FolderSizeAndModifyDateSnapshot();
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::FolderSizeAndModifyDateSnapshot> CaptureSnapshot(::Core::Path const& path);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

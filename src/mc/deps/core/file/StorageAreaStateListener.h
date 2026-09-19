@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/LevelStorageState.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>> mFileStorageArea;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                mMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                               mMutex;
     // NOLINTEND
 
 public:

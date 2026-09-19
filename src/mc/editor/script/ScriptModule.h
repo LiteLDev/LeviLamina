@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -13,14 +14,20 @@ namespace Editor { struct ProbabilityBlockPaletteItem; }
 namespace Editor { struct SimpleBlockPaletteItem; }
 namespace Editor::ScriptModule { class ScriptBlockPalette; }
 namespace Editor::ScriptModule { class ScriptIBlockPaletteItem; }
+namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct InterfaceBinding; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
 // functions
 // NOLINTBEGIN
+MCNAPI ::std::vector<::mce::UUID> _getIDsFromWeakHandles(
+    ::std::vector<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>> const& handles
+);
+
 MCNAPI ::Scripting::Result_deprecated<void> _validateStructureName(::std::string const& structureName);
 
 MCNAPI ::Scripting::EnumBinding bindAxisEnums();
@@ -44,6 +51,8 @@ MCNAPI ::Scripting::InterfaceBinding bindScriptLocalizationEntry();
 MCNAPI ::Scripting::EnumBinding bindScriptMouseActionCategory();
 
 MCNAPI ::Scripting::EnumBinding bindScriptMouseCursorIconType();
+
+MCNAPI ::Scripting::EnumBinding bindStructureSourceEnum();
 
 MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>
 convertServiceItemToScriptItem(

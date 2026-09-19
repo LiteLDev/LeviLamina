@@ -65,9 +65,15 @@ public:
 
     MCAPI ::AttributeInstanceConstRef getInstance(::Attribute const& attribute) const;
 
+#ifdef LL_PLAT_C
+    MCAPI ::AttributeInstanceRef getMutableInstance(::Attribute const& attribute);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
 
     MCAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
+#endif
 
     MCAPI ::AttributeInstanceRef registerAttribute(::Attribute const& baseAttribute);
     // NOLINTEND

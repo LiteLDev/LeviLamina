@@ -62,7 +62,11 @@ public:
 
     MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
+    MCAPI float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
+#else // LL_PLAT_C
     MCFOLD float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
+#endif
 
     MCFOLD int $getExtraRenderLayers() const;
 

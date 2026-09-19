@@ -8,7 +8,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/Subject.h"
 #include "mc/locale/I18n.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -61,14 +60,14 @@ public:
         32,
         ::Bedrock::Threading::
             SharedLockbox<::std::vector<::std::shared_ptr<::ImmutableLocalization>>, ::std::shared_mutex>>
-                                                                      mPackKeywordLanguages;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>     mPackReservedKeys;
-    ::ll::TypedStorage<1, 1, bool>                                    mLanguageSupportsHypenSplitting;
-    ::ll::TypedStorage<8, 8, ::ResourcePackManager*>                  mResourcePackManager;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                     mAdditionalTranslationsBackupMutex;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ImmutableLocalization>> mAdditionalTranslationsBackup;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                     mLocalizationMutex;
-    ::ll::TypedStorage<8, 104, ::Core::Subject<::I18nObserver, ::Bedrock::Threading::Mutex>> mSubject;
+                                                                              mPackKeywordLanguages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>             mPackReservedKeys;
+    ::ll::TypedStorage<1, 1, bool>                                            mLanguageSupportsHypenSplitting;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager*>                          mResourcePackManager;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                             mAdditionalTranslationsBackupMutex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ImmutableLocalization>>         mAdditionalTranslationsBackup;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                             mLocalizationMutex;
+    ::ll::TypedStorage<8, 104, ::Core::Subject<::I18nObserver, ::std::mutex>> mSubject;
     // NOLINTEND
 
 public:
@@ -269,11 +268,7 @@ public:
 
     MCAPI ::gsl::not_null<::std::shared_ptr<::Localization const>> $getCurrentLanguage();
 
-#ifdef LL_PLAT_S
     MCAPI bool $languageSupportsHypenSplitting();
-#else // LL_PLAT_C
-    MCFOLD bool $languageSupportsHypenSplitting();
-#endif
 
     MCAPI ::std::string
     $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);

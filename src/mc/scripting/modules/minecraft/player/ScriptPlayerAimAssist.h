@@ -10,7 +10,6 @@
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
-namespace ScriptModuleMinecraft { struct ScriptPlayerAimAssistSettings; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
@@ -36,12 +35,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> _getAimAssistSettings() const;
     // NOLINTEND
 
 public:

@@ -16,6 +16,7 @@
 #include "mc/client/gui/screens/controllers/MarketplacePassTabIndex.h"
 #include "mc/client/gui/screens/models/PlayScreenDefaultTab.h"
 #include "mc/client/options/SplitScreenDirection.h"
+#include "mc/client/persona/IPersonaClientProvider.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/connection/UIReturnTarget.h"
 #include "mc/client/store/StoreErrorCodes.h"
@@ -167,6 +168,7 @@ namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Automation { class AutomationClient; }
 namespace Bedrock::Http { class Status; }
+namespace Bedrock::Profiling { struct IProfilingOrchestratorProvider; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Editor { class IEditorManager; }
@@ -192,6 +194,7 @@ namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 class ClientInstance : public ::IClientInstance,
+                       public ::IPersonaClientProvider,
                        public ::Core::StorageAreaStateListener,
                        public ::GameCallbacks,
                        public ::PlayerListener,
@@ -310,7 +313,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk5da2d9;
     ::ll::UntypedStorage<1, 1>   mUnkfa0970;
     ::ll::UntypedStorage<8, 8>   mUnk291bf9;
-    ::ll::UntypedStorage<8, 8>   mUnkaebffe;
+    ::ll::UntypedStorage<8, 16>  mUnkdf5270;
     ::ll::UntypedStorage<8, 8>   mUnkc613e5;
     ::ll::UntypedStorage<8, 8>   mUnkf955c2;
     ::ll::UntypedStorage<1, 1>   mUnk563a7c;
@@ -325,13 +328,14 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk3430d4;
     ::ll::UntypedStorage<1, 1>   mUnk9f2b54;
     ::ll::UntypedStorage<1, 1>   mUnk962bb4;
+    ::ll::UntypedStorage<1, 1>   mUnk71d76f;
     ::ll::UntypedStorage<8, 792> mUnk58b85f;
     ::ll::UntypedStorage<1, 1>   mUnk1ef4d7;
     ::ll::UntypedStorage<1, 1>   mUnk29fbcb;
     ::ll::UntypedStorage<4, 4>   mUnkc07c6b;
     ::ll::UntypedStorage<1, 1>   mUnk923860;
     ::ll::UntypedStorage<8, 8>   mUnk108e78;
-    ::ll::UntypedStorage<4, 4>   mUnk7d3d83;
+    ::ll::UntypedStorage<8, 8>   mUnkb690b7;
     ::ll::UntypedStorage<8, 40>  mUnk4bd629;
     ::ll::UntypedStorage<8, 40>  mUnk8195f7;
     ::ll::UntypedStorage<8, 16>  mUnkcf1108;
@@ -359,7 +363,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk6182e1;
     ::ll::UntypedStorage<8, 8>   mUnk84dba0;
     ::ll::UntypedStorage<8, 8>   mUnk9ffd30;
-    ::ll::UntypedStorage<8, 264> mUnkfbb9ff;
+    ::ll::UntypedStorage<8, 400> mUnkfbb9ff;
     ::ll::UntypedStorage<8, 8>   mUnkf8bdff;
     ::ll::UntypedStorage<8, 24>  mUnkfbc948;
     ::ll::UntypedStorage<8, 24>  mUnk1e1098;
@@ -368,7 +372,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnkcef468;
     ::ll::UntypedStorage<4, 4>   mUnk573d1d;
     ::ll::UntypedStorage<8, 16>  mUnkdc75f9;
-    ::ll::UntypedStorage<8, 80>  mUnk3892fa;
+    ::ll::UntypedStorage<8, 80>  mUnk57af99;
     ::ll::UntypedStorage<8, 16>  mUnka5c62e;
     ::ll::UntypedStorage<8, 16>  mUnkd93a4c;
     ::ll::UntypedStorage<8, 8>   mUnkdfdcca;
@@ -555,7 +559,7 @@ public:
 
     virtual void refreshScreenSizeData() /*override*/;
 
-    virtual void onScreenSizeChanged(int width, int height, float forcedGuiScale) /*override*/;
+    virtual void onScreenSizeChanged(int width, int height) /*override*/;
 
     virtual void onGuiScaleOffsetChanged() /*override*/;
 
@@ -582,6 +586,8 @@ public:
     virtual ::IMinecraftEventing& getEventing() const /*override*/;
 
     virtual ::IConnectionEventing& getConnectionEventing() const /*override*/;
+
+    virtual ::Bedrock::Profiling::IProfilingOrchestratorProvider& getProfilingOrchestratorProvider() const /*override*/;
 
     virtual ::FontHandle getFontHandle() const /*override*/;
 
@@ -922,7 +928,7 @@ public:
 
     virtual void onMobEffectsChange() /*override*/;
 
-    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) /*override*/;
+    virtual void setUISize(int w, int h) /*override*/;
 
     virtual void forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)> callback) /*override*/;
 
@@ -1214,9 +1220,9 @@ public:
 
     virtual double getServerConnectionTime() const /*override*/;
 
-    virtual void setServerPingTime(int pingTime) /*override*/;
+    virtual void setServerPingTime(::std::chrono::milliseconds pingTime) /*override*/;
 
-    virtual int getServerPingTime() const /*override*/;
+    virtual ::std::chrono::milliseconds getServerPingTime() const /*override*/;
 
     virtual void setDefaultPlayscreenTab(::PlayScreenDefaultTab defaultTab) /*override*/;
 
@@ -1324,6 +1330,8 @@ public:
     virtual double getGameUpdateDurationInSeconds() const /*override*/;
 
     virtual ::std::optional<::ConnectionContextInfo> getConnectionContextInfo() const /*override*/;
+
+    virtual ::Bedrock::NonOwnerPointer<::PersonaClient> tryGetPersonaClient() const /*override*/;
     // NOLINTEND
 
 public:
@@ -1335,8 +1343,6 @@ public:
     _createNetworkHandler(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
 
     MCAPI bool _getIsConnectedToApplicationLayer() const;
-
-    MCAPI void _handleDisconnectionScreenRequests();
 
     MCAPI bool _isEditorModeOrInEditorWorld() const;
 
@@ -1363,7 +1369,7 @@ public:
     MCAPI void
     _tickBuildAction(::HitResult const& solidHitResult_, ::HitResult const& liquidHitResult_, bool advanceTime);
 
-    MCAPI void _updateScreenSizeVariables(::Vec2 const& totalScreenSize, ::Vec2 const& safeZone, float forcedGuiScale);
+    MCAPI void _updateScreenSizeVariables(::Vec2 const& totalScreenSize, ::Vec2 const& safeZone);
 
     MCAPI void fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode);
 
@@ -1547,7 +1553,7 @@ public:
 
     MCAPI void $refreshScreenSizeData();
 
-    MCAPI void $onScreenSizeChanged(int width, int height, float forcedGuiScale);
+    MCAPI void $onScreenSizeChanged(int width, int height);
 
     MCAPI void $onGuiScaleOffsetChanged();
 
@@ -1574,6 +1580,8 @@ public:
     MCAPI ::IMinecraftEventing& $getEventing() const;
 
     MCAPI ::IConnectionEventing& $getConnectionEventing() const;
+
+    MCAPI ::Bedrock::Profiling::IProfilingOrchestratorProvider& $getProfilingOrchestratorProvider() const;
 
     MCAPI ::FontHandle $getFontHandle() const;
 
@@ -1838,7 +1846,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> $getGuiData() const;
 
-    MCFOLD ::GuidedFlowManager& $getGuidedFlowManager();
+    MCAPI ::GuidedFlowManager& $getGuidedFlowManager();
 
     MCAPI ::PixelCalc const& $getDpadScale() const;
 
@@ -1910,7 +1918,7 @@ public:
 
     MCAPI void $onMobEffectsChange();
 
-    MCAPI void $setUISizeAndScale(int w, int h, float forcedGuiScale);
+    MCAPI void $setUISize(int w, int h);
 
     MCAPI void $forEachVisibleScreen(::brstd::function_ref<void(::AbstractScene&)> callback);
 
@@ -1946,7 +1954,7 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> $getMinecraftInput() const;
 
-    MCAPI ::KeyboardManager& $getKeyboardManager();
+    MCFOLD ::KeyboardManager& $getKeyboardManager();
 
     MCAPI void $setLastPointerLocation(float x, float y, float z);
 
@@ -1970,7 +1978,7 @@ public:
 
     MCAPI ::BuildActionIntention& $getInProgressBAI() const;
 
-    MCFOLD ::PacketSender& $getPacketSender();
+    MCAPI ::PacketSender& $getPacketSender();
 
     MCAPI ::ClientNetworkSystem& $getClientNetworkSystem();
 
@@ -2200,9 +2208,9 @@ public:
 
     MCAPI double $getServerConnectionTime() const;
 
-    MCAPI void $setServerPingTime(int pingTime);
+    MCAPI void $setServerPingTime(::std::chrono::milliseconds pingTime);
 
-    MCAPI int $getServerPingTime() const;
+    MCAPI ::std::chrono::milliseconds $getServerPingTime() const;
 
     MCAPI void $setDefaultPlayscreenTab(::PlayScreenDefaultTab defaultTab);
 
@@ -2230,7 +2238,7 @@ public:
 
     MCAPI void $sendClientEnteredLevel();
 
-    MCFOLD ::HitDetectSystem* $getHitDetectSystem();
+    MCAPI ::HitDetectSystem* $getHitDetectSystem();
 
     MCAPI bool $isPlaying() const;
 
@@ -2309,5 +2317,7 @@ public:
     MCAPI double $getGameUpdateDurationInSeconds() const;
 
     MCAPI ::std::optional<::ConnectionContextInfo> $getConnectionContextInfo() const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::PersonaClient> $tryGetPersonaClient() const;
     // NOLINTEND
 };

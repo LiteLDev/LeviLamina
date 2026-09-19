@@ -98,8 +98,6 @@ public:
     // NOLINTBEGIN
     MCAPI UIPropertyBag();
 
-    MCAPI explicit UIPropertyBag(::Json::Value const& jsonValue);
-
     MCAPI void _handlePropertyChangedNotifications(
         ::std::string_view             sourcePropertyName,
         ::Json::Value const&           newValue,
@@ -135,8 +133,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Json::Value const& jsonValue);
     // NOLINTEND
 
 public:

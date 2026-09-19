@@ -19,13 +19,14 @@ class PageableStandardMarketplaceItemPreviewObject
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mContinuationToken;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mContinuationToken;
     ::ll::TypedStorage<
         8,
         120,
         ::OreUI::PropertyVector<
             ::OreUI::StandardMarketplaceItemPreviewObject,
-            ::std::allocator<::OreUI::StandardMarketplaceItemPreviewObject>>>
+            ::OreUI::StandardMarketplaceItemPreviewObject>>
         mItems;
     // NOLINTEND
 };

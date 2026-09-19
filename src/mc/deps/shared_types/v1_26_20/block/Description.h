@@ -20,9 +20,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                               mIdentifier;
-    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_26_20::BlockDefinition::BlockMenuCategory> mMenuCategory;
+    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_26_20::BlockDefinition::BlockMenuCategory> mMenuCategory;
     ::ll::TypedStorage<8, 256, ::SharedTypes::v1_26_20::BlockDefinition::States>           mStates;
-    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_26_20::BlockDefinition::Traits>            mTraits;
+    ::ll::TypedStorage<8, 72, ::SharedTypes::v1_26_20::BlockDefinition::Traits>            mTraits;
     ::ll::TypedStorage<8, 80, ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::VanillaBlockData>>
         mVanillaBlockData;
     // NOLINTEND
@@ -34,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
+
     MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
@@ -41,6 +43,8 @@ public:
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::Description const&) const;
 
     MCAPI ~Description();
     // NOLINTEND
@@ -54,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
+
     MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
     // NOLINTEND
 

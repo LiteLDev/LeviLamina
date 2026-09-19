@@ -124,7 +124,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI TickingArea(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -138,7 +138,7 @@ public:
     );
 #endif
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI TickingArea(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -158,7 +158,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -172,7 +172,7 @@ public:
     );
 #endif
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,

@@ -13,6 +13,7 @@ class AnimationComponent;
 class IClientInstance;
 class SerializedSkinRef;
 class Skin;
+class SkinPackPin;
 struct PaperDollPlayerSkinInfo;
 struct SkinImages;
 namespace mce { class UUID; }
@@ -40,6 +41,8 @@ public:
 
     virtual ::Skin const* getSkinFromPack(uint64 packHash, int packIndex) /*override*/;
 
+    virtual ::SkinPackPin pinSkinPack(::mce::UUID const& packId) /*override*/;
+
     virtual bool isValidSelectedSkin(::mce::UUID const& packId, int skinIndex) const /*override*/;
 
     virtual void createOrUpdateSkin(
@@ -53,6 +56,8 @@ public:
     virtual ::SkinImages getSkinImages(::Skin const& skin, bool isPlayer) /*override*/;
 
     virtual bool isAnySkinOfNameInitialized(::std::string_view skin) const /*override*/;
+
+    virtual bool isRequiredPlayerAnimationLoaded() const /*override*/;
 
     virtual void markLocalPlayerAsDirty() /*override*/;
 
@@ -72,6 +77,8 @@ public:
 
     MCAPI ::Skin const* $getSkinFromPack(uint64 packHash, int packIndex);
 
+    MCAPI ::SkinPackPin $pinSkinPack(::mce::UUID const& packId);
+
     MCAPI bool $isValidSelectedSkin(::mce::UUID const& packId, int skinIndex) const;
 
     MCAPI void $createOrUpdateSkin(
@@ -86,6 +93,8 @@ public:
 
     MCAPI bool $isAnySkinOfNameInitialized(::std::string_view skin) const;
 
+    MCAPI bool $isRequiredPlayerAnimationLoaded() const;
+
     MCAPI void $markLocalPlayerAsDirty();
 
     MCAPI bool $shouldAllSkinsRotate() const;
@@ -93,5 +102,11 @@ public:
     MCAPI ::std::shared_ptr<::ActorAnimationGroup> $getActorAnimationGroup();
 
     MCAPI void $playUI(::std::string const& name, float volume, float pitch);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

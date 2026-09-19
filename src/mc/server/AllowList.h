@@ -54,14 +54,20 @@ public:
 #ifdef LL_PLAT_S
     MCAPI bool removeByName(::std::string_view name);
 
-    MCAPI bool removeByXuid(::std::string_view xuid);
-#endif
-
-    MCAPI void tryUpdateEntries(
+    MCAPI bool removeEntry(
         ::std::string_view name,
         ::std::string_view xuid,
         ::std::string_view psnId,
-        ::std::string_view nsaId
+        ::std::string_view nintendoId
+    );
+#endif
+
+    MCAPI bool tryUpdateEntries(
+        ::std::string_view name,
+        ::std::string_view xuid,
+        ::std::string_view psnId,
+        ::std::string_view nsaId,
+        bool               ignorePlayerLimit
     );
     // NOLINTEND
 

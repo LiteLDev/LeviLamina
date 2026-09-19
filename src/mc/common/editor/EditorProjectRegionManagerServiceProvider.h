@@ -14,6 +14,7 @@ struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ProjectRegion; }
 namespace Editor { struct ProjectRegionConfig; }
+namespace Editor { struct ProjectRegionGlobalMetrics; }
 namespace Editor { struct ProjectRegionManagerChunkProcessingState; }
 namespace mce { class UUID; }
 // clang-format on
@@ -50,6 +51,8 @@ public:
     virtual bool isProcessingChunks() const = 0;
 
     virtual ::std::optional<::Editor::ProjectRegionManagerChunkProcessingState> getChunkProcessingState() const = 0;
+
+    virtual ::Editor::ProjectRegionGlobalMetrics collectMetrics() const = 0;
 
     virtual ::Bedrock::PubSub::Subscription registerChunkProcessingChangeListener(
         ::std::function<void(::Scripting::Result_deprecated<::Editor::ProjectRegionManagerChunkProcessingState> const&)>

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_130 {
@@ -42,6 +43,12 @@ public:
     MCFOLD bool operator==(::SharedTypes::v1_21_130::ActorDocument const&) const;
 
     MCAPI ~ActorDocument();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

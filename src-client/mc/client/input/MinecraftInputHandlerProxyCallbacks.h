@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<void(bool)>>    mSetInputEnabled;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>        mReleaseButtonsAndSticks;
     ::ll::TypedStorage<8, 64, ::std::function<::InputMode()>> mGetCurrentInputMode;
     // NOLINTEND
 };

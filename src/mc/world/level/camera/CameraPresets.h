@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +12,8 @@ class Experiments;
 class IMinecraftEventing;
 class LinkedAssetValidator;
 class ResourcePackManager;
-namespace SharedTypes::v1_21_90 { struct CameraPreset; }
+namespace PuvLoadData { struct LoadResultWithTiming; }
+namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -52,7 +54,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_90::CameraPreset>> mPresets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_50::CameraPreset>> mPresets;
     ::ll::TypedStorage<8, 24, ::std::vector<::CameraPresets::CameraList>>           mLists;
     // NOLINTEND
 
@@ -65,6 +67,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraPreset(
+        ::std::string const&                                     fileData,
+        ::MolangVersion                                          molangVersion,
+        ::cereal::ReflectionCtx const&                           ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const validator
+    );
+#endif
+
     MCNAPI void _storeCameraList(::CameraPresets::CameraList&& list);
 
     MCNAPI void loadPresets(

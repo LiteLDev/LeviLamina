@@ -46,6 +46,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::cereal::BasicSerializerContext::ContextType>  mType;
         ::ll::TypedStorage<8, 16, ::cereal::BasicSerializerContext::TokenHolder> mToken;
+        ::ll::TypedStorage<4, 4, uint>                                           mTokenId;
         ::ll::TypedStorage<4, 4, uint>                                           mPrevIndex;
         // NOLINTEND
     };

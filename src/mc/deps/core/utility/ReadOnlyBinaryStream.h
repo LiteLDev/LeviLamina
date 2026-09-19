@@ -25,6 +25,16 @@ public:
         }
     }
 
+    [[nodiscard]] Bedrock::Result<void> ensureReadCompleted() const {
+        // Either we ran off the end of the buffer at some point, or we stopped short of it.
+        if (mHasOverflowed || mView.size() != mReadPointer) {
+            return nonstd::make_unexpected(
+                Bedrock::ErrorInfo<std::error_code>{std::make_error_code(std::errc::bad_message)}
+            );
+        }
+        return {};
+    }
+
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+struct SubChunk;
+// clang-format on
+
 namespace Poi {
 
 class Manager {
@@ -17,7 +23,24 @@ public:
     // prevent constructor by default
     Manager& operator=(Manager const&);
     Manager(Manager const&);
-    Manager();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI Manager();
+
+    MCNAPI Manager(::Poi::Manager&& o);
+
+    MCNAPI void syncSectionWithBlocks(::BlockPos pos, ::SubChunk const& blockSection);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::Poi::Manager&& o);
+    // NOLINTEND
 };
 
 } // namespace Poi

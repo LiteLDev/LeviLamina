@@ -11,6 +11,7 @@
 // clang-format off
 class EnderDragon;
 class Mob;
+struct GoalId;
 // clang-format on
 
 class DragonFlamingGoal : public ::BaseGoal {
@@ -54,13 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DragonFlamingGoal(::Mob& mob);
+    MCAPI DragonFlamingGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

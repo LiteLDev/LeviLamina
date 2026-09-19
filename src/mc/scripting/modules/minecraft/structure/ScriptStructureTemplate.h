@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
-#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/IScriptSerializable.h"
 
 // auto generated forward declare list
@@ -15,9 +14,7 @@ class BlockPos;
 class LevelStorage;
 class StructureManager;
 class StructureTemplate;
-class Vec3;
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
-namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -65,8 +62,6 @@ public:
 
     MCAPI ::Scripting::InvalidArgumentError
     _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
-
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 
     MCAPI ::StructureTemplate* getStructureTemplate() const;
     // NOLINTEND

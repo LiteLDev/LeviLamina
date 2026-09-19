@@ -11,6 +11,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Experiments;
 class WorldClockRegistry;
 // clang-format on
 
@@ -49,6 +50,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const>> mWorldClockRegistry;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::Experiments const*>>                      mExperiments;
         // NOLINTEND
     };
 

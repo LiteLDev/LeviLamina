@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ArgumentDetails; }
+namespace Scripting { struct PropertyBinding; }
 namespace Scripting::QuickJS { struct ParseContextData; }
 // clang-format on
 
@@ -49,7 +51,9 @@ public:
     MCNAPI void pushParseContext(
         ::Scripting::QuickJS::ParseContext       context,
         ::entt::meta_type const&                 type,
-        ::std::variant<::std::string_view, uint> arg
+        ::std::variant<::std::string_view, uint> arg,
+        ::Scripting::ArgumentDetails const*      argumentDetails,
+        ::Scripting::PropertyBinding const*      propertyBinding
     );
 
     MCNAPI void resetParseContextUntilVariant(bool removeVariant);

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_26_10/actor/MemoryGoalDefinition.h"
+#include "mc/deps/shared_types/v1_26_10/actor/BaseMemoryGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace SharedTypes::v1_26_10::Brain {
 
-struct BaseGenericGoalDefinition : public ::SharedTypes::v1_26_10::Brain::MemoryGoalDefinition {
+struct BaseGenericGoalDefinition : public ::SharedTypes::v1_26_10::Brain::BaseMemoryGoalDefinition {
 public:
     // static functions
     // NOLINTBEGIN

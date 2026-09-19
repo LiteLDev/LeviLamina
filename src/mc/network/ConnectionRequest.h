@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/certificates/identity/edu/Role.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/network/BaseConnectionRequest.h"
 #include "mc/network/EditorConnectionJoinIntent.h"
@@ -11,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AppPlatform;
 class ILevel;
 class WebToken;
 struct ConnectionAuthInfo;
@@ -64,6 +66,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static ::ConnectionRequest create(
+        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
         ::ConnectionAuthInfo const&               authInfo,
         ::std::string const&                      selfSignedId,
         ::std::string const&                      serverAddress,

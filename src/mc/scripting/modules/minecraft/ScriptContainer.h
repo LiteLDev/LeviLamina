@@ -17,7 +17,6 @@ namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptContainerRulesError; }
-namespace ScriptModuleMinecraft { struct ScriptInvalidContainerError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -83,6 +82,8 @@ public:
     virtual ::Container* _tryGetContainer() const = 0;
 
     virtual ::ItemContext _getItemContext(int slot) const = 0;
+
+    virtual void _onContainerChanged() const;
     // NOLINTEND
 
 public:
@@ -93,8 +94,6 @@ public:
         ::ScriptModuleMinecraft::ScriptContainerRulesError,
         ::Scripting::Error>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
-
-    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getWeight() const;
     // NOLINTEND
 
 public:
@@ -152,6 +151,8 @@ public:
     );
 
     MCAPI ::Scripting::Result_deprecated<void> $clearAll() const;
+
+    MCFOLD void $_onContainerChanged() const;
 
 
     // NOLINTEND

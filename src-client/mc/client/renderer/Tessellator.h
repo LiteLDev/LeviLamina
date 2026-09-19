@@ -41,7 +41,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                  mIsFormatFixed;
-    ::ll::TypedStorage<8, 336, ::mce::MeshData>                     mMeshData;
+    ::ll::TypedStorage<8, 352, ::mce::MeshData>                     mMeshData;
     ::ll::TypedStorage<1, 1, bool>                                  mHasNormals;
     ::ll::TypedStorage<8, 8, uint64>                                mNextReserve;
     ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>         mNextNormal;

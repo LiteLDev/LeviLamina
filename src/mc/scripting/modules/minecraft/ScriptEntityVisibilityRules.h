@@ -20,6 +20,16 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setShowDead(::std::optional<bool> showDead);
+
+    MCAPI void setShowInvisible(::std::optional<bool> showInvisible);
+
+    MCAPI void setShowSneaking(::std::optional<bool> showSneaking);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();

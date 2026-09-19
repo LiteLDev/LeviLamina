@@ -10,11 +10,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class DebuggerDiagnostics;
 class Level;
 class LevelEventCoordinator;
 class ScriptAsyncJobCoordinator;
 class ScriptDeferredEventCoordinator;
-class ScriptDiagnostics;
 class ScriptPluginManager;
 struct ServerPerformanceData;
 // clang-format on
@@ -27,7 +27,7 @@ public:
     ::ll::TypedStorage<8, 8, ::ScriptDeferredEventCoordinator&>       mDeferredEventCoordinator;
     ::ll::TypedStorage<8, 8, ::LevelEventCoordinator&>                mLevelEventCoordinator;
     ::ll::TypedStorage<8, 8, ::ScriptPluginManager&>                  mPluginManager;
-    ::ll::TypedStorage<8, 8, ::ScriptDiagnostics&>                    mDiagnostics;
+    ::ll::TypedStorage<8, 8, ::DebuggerDiagnostics&>                  mDiagnostics;
     ::ll::TypedStorage<8, 8, ::ScriptAsyncJobCoordinator&>            mAsyncJobCoordinator;
     ::ll::TypedStorage<8, 8, uint64>                                  mCurrentTick;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLevelTickStartTime;

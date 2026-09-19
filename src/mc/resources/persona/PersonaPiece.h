@@ -39,7 +39,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnkd82499;
     ::ll::UntypedStorage<8, 32>  mUnkca0cec;
     ::ll::UntypedStorage<4, 4>   mUnke8d659;
-    ::ll::UntypedStorage<8, 752> mUnka92f93;
+    ::ll::UntypedStorage<8, 672> mUnka92f93;
     ::ll::UntypedStorage<8, 32>  mUnk523c0d;
     ::ll::UntypedStorage<8, 32>  mUnk34f751;
     ::ll::UntypedStorage<8, 24>  mUnk676bf8;
@@ -98,21 +98,11 @@ public:
 
     MCNAPI bool loadGeometryFileJson(::Json::Value& outJson) const;
 
-    MCNAPI void setPackIdVersion(::PackIdVersion const& packIdVersion);
-
     MCNAPI void setPieceId(::mce::UUID const& pieceId);
 
     MCNAPI void setPieceNameAsLocKey(::std::string const& pieceName);
 
     MCNAPI ~PersonaPiece();
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::PersonaPiece const& getInvalidPiece();
 #endif
     // NOLINTEND
 

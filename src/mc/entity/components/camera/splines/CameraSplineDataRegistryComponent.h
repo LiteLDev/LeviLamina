@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
 #include "mc/deps/resource_processing/category/SharedSlicesTraits.h"
-#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_0::CameraSplineDefinition>> mSplines;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                   mRegistriesLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                  mRegistriesLock;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                          mEventing;
     // NOLINTEND
 

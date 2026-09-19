@@ -6,7 +6,7 @@ class LocalConstBlockSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 280> mUnk3a4771;
+    ::ll::UntypedStorage<8, 392> mUnk3a4771;
     // NOLINTEND
 
 public:

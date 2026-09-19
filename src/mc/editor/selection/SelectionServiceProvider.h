@@ -94,6 +94,12 @@ public:
         ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
     ) = 0;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace Editor::Services

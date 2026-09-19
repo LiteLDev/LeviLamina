@@ -16,7 +16,6 @@ struct InterpolateMovementNeededComponent;
 struct OnGroundFlagComponent;
 struct SlimeFlagComponent;
 struct SlimeWasOnGroundPreNormalTickComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class SlimePreNormalTickSystem {
@@ -39,7 +38,5 @@ public:
         ::Optional<::OnGroundFlagComponent const>                  onGround,
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

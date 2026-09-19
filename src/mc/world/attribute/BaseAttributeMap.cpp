@@ -7,7 +7,12 @@
 inline void BaseAttributeMap::setDirty(AttributeInstance const& attribute) { _onAttributeModified(attribute); }
 
 bool BaseAttributeMap::setCurrentValue(Attribute const& attribute, float value) {
-    if (auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr) {
+#ifdef LL_PLAT_C
+    auto ptr = getMutableInstance(attribute).mPtr;
+#else
+    auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr;
+#endif
+    if (ptr) {
         ptr->mCurrentValue = value;
         setDirty(*ptr);
         return true;
@@ -16,7 +21,12 @@ bool BaseAttributeMap::setCurrentValue(Attribute const& attribute, float value) 
 }
 
 bool BaseAttributeMap::setMaxValue(Attribute const& attribute, float value) {
-    if (auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr) {
+#ifdef LL_PLAT_C
+    auto ptr = getMutableInstance(attribute).mPtr;
+#else
+    auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr;
+#endif
+    if (ptr) {
         ptr->mCurrentMaxValue = value;
         ptr->mDefaultMaxValue = value;
         float& currentValue   = ptr->mCurrentValue;
@@ -28,7 +38,12 @@ bool BaseAttributeMap::setMaxValue(Attribute const& attribute, float value) {
 }
 
 bool BaseAttributeMap::setDefaultValue(Attribute const& attribute, float value) {
-    if (auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr) {
+#ifdef LL_PLAT_C
+    auto ptr = getMutableInstance(attribute).mPtr;
+#else
+    auto ptr = getMutableInstanceWithContext(attribute).mInstance->mPtr;
+#endif
+    if (ptr) {
         float& defaultValue = ptr->mDefaultValue;
         if (value != defaultValue) {
             defaultValue       = value;

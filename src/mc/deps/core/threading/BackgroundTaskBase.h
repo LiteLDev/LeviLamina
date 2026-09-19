@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/Globals.h"
+#include "mc/deps/core/threading/InternalTaskGroup.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/memory/MemoryCategory.h"
@@ -49,6 +51,9 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                           mTaskName;
     ::ll::TypedStorage<1, 1, ::Memory::MemoryCategory>                 mMemoryCategory;
     // NOLINTEND
+
+public:
+    [[nodiscard]] bool isOrphaned() const { return mGroup == &gInternalTaskGroup(); }
 
 public:
     // prevent constructor by default

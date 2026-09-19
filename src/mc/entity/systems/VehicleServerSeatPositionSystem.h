@@ -17,7 +17,6 @@ struct OffsetsComponent;
 struct PassengerComponent;
 struct PositionPassengerRequestComponent;
 struct SynchedActorDataComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -39,10 +38,4 @@ public:
         ::VehicleComponent const,
         ::ActorDataBoundingBoxComponent const,
         ::RideableComponent const>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
 };

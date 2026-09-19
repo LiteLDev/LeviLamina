@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct TickingSystemWithInfo;
-// clang-format on
-
 struct InsideBubbleColumnSystem {
 public:
     // InsideBubbleColumnSystem inner types declare
@@ -16,10 +11,4 @@ public:
 
     // InsideBubbleColumnSystem inner types define
     struct SpawnBubblesVisitor {};
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
-    // NOLINTEND
 };

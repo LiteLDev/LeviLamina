@@ -76,6 +76,8 @@ public:
 
     MCAPI ::NetworkIdentifier getLocalNetworkId() const;
 
+    MCAPI ::std::string getMultiplayerCorrelationId() const;
+
     MCAPI bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
 
 #ifdef LL_PLAT_S

@@ -14,15 +14,15 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::TaskResult requeueAfter(::std::chrono::nanoseconds requeueDelay);
+    MCAPI static ::TaskResult requeueAfter(::std::chrono::nanoseconds requeueDelay);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::TaskResult const& Done();
+    MCAPI static ::TaskResult const& Done();
 
-    MCNAPI static ::TaskResult const& Requeue();
+    MCAPI static ::TaskResult const& Requeue();
     // NOLINTEND
 };

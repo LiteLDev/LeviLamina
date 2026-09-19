@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/DiggerItem.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,9 +26,16 @@ public:
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
 
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    virtual ::InteractionResult _useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const /*override*/;
+
+    virtual ::std::string_view getEfficiencyLocalization() const /*override*/;
     // NOLINTEND
 
 public:
@@ -57,8 +65,16 @@ public:
     MCFOLD int $getEnchantSlot() const;
 #endif
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(
+        ::ItemStack&  instance,
+        ::Actor&      entity,
+        ::BlockPos    pos,
+        uchar         face,
+        ::HandSlot    handSlot,
+        ::Vec3 const& clickPos
+    ) const;
+
+    MCAPI ::std::string_view $getEfficiencyLocalization() const;
 
 
     // NOLINTEND

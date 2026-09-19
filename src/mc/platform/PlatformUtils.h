@@ -18,9 +18,7 @@ MCNAPI ::Core::PathBuffer<::std::string> getUWPInstallationPath();
 
 MCNAPI void initializeDeviceIdForDev(::std::string& deviceId, bool isAnonymous);
 
-#ifdef LL_PLAT_C
 MCNAPI void setAppDataFolderName(::std::string_view folderName);
-#endif
 // NOLINTEND
 
 } // namespace Bedrock::PlatformUtils

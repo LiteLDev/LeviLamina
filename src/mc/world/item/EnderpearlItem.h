@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -16,7 +17,7 @@ class EnderpearlItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual bool isThrowable() const /*override*/;
 
@@ -34,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCFOLD bool $isThrowable() const;
 

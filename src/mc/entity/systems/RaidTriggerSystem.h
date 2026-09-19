@@ -14,7 +14,6 @@ struct ActorTickedComponent;
 struct DimensionTypeComponent;
 struct GainedRaidOmenAtPositionComponent;
 struct RaidTriggerComponent;
-struct TickingSystemWithInfo;
 struct VillageManagerComponent;
 // clang-format on
 
@@ -37,7 +36,5 @@ public:
         ::ActorOwnerComponent&                     actorOwnerComponent,
         ::VillageManagerComponent const&           villageManagerComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

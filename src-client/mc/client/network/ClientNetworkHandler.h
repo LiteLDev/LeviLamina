@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/player/LocalPlayer.h"
+#include "mc/network/packet/SubChunkPacket.h"
 #include "mc/world/level/storage/Experiments.h"
 
 // auto generated inclusion list
@@ -81,6 +83,7 @@ class GuiDataPickItemPacket;
 class HashedString;
 class IClientInstance;
 class IContentManager;
+class IDataDrivenUIRepository;
 class IGameConnectionListener;
 class IGameServerStartup;
 class ILevel;
@@ -119,6 +122,7 @@ class PositionTrackingDBServerBroadcastPacket;
 class PrimitiveShapesPacket;
 class PrivateKeyManager;
 class Recipe;
+class RecordStartedPacket;
 class RefreshEntitlementsPacket;
 class RemoveObjectivePacket;
 class RemoveVolumeEntityPacket;
@@ -136,6 +140,7 @@ class ServerStoreInfoPacket;
 class ServerToClientHandshakePacket;
 class SetDisplayObjectivePacket;
 class SetLastHurtByPacket;
+class SetPlayerFurnaceOptionsPacket;
 class SetPlayerGameTypePacket;
 class SetPlayerInventoryOptionsPacket;
 class SetScorePacket;
@@ -194,13 +199,20 @@ public:
 public:
     LLAPI void _disconnectFromServer(::NetworkIdentifier const& source);
 
-    LLAPI void onChunkHandleCompleted(
-        ::NetworkIdentifier const& source,
-        ::ChunkPos const&          chunkPos,
-        ::Dimension const&         dimension
-    );
+    LLAPI void
+    onChunkHandleCompleted(::NetworkIdentifier const& source, ::ChunkPos const& chunkPos, ::Dimension const& dimension);
 
     LLAPI void _ensureVoxelShapeRegistryExists(::Experiments const& experiments);
+
+    LLAPI void _respondBlobCacheStatusForSubChunk(::SubChunkPacket::SubChunkPacketData const& subChunkData);
+
+    LLAPI void _handleSubChunkData(
+        ::NetworkIdentifier const&                  packet,
+        ::SubChunkPacket const&                     subChunkData,
+        ::SubChunkPacket::SubChunkPacketData const& localPlayer,
+        ::LocalPlayer const*                        levelAndPlayerExists,
+        bool
+    );
 
 public:
     // member variables
@@ -211,6 +223,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VoxelShapes::VoxelShapeRegistry>>            mVoxelShapeRegistry;
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                              mClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository const>> mDataDrivenUIRepository;
     ::ll::TypedStorage<8, 8, ::PacketSender&>                                                 mPacketSender;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IGameConnectionListener>>                     mGameConnectionListener;
     ::ll::TypedStorage<8, 8, ::IGameServerStartup&>                                           mGameServerStartup;
@@ -467,6 +480,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const& packet) /*override*/;
 
+    virtual void handle(::NetworkIdentifier const&, ::SetPlayerFurnaceOptionsPacket const& packet) /*override*/;
+
     virtual void handle(::NetworkIdentifier const&, ::AwardAchievementPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::ClientboundCloseFormPacket const&) /*override*/;
@@ -510,6 +525,8 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::SendPartyDestinationCookiePacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::RecordStartedPacket const& packet) /*override*/;
 
     virtual void onOutgoingPacket(
         ::NetworkIdentifier const& netId,
@@ -805,6 +822,8 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const& packet);
 
+    MCAPI void $handle(::NetworkIdentifier const&, ::SetPlayerFurnaceOptionsPacket const& packet);
+
     MCAPI void $handle(::NetworkIdentifier const&, ::AwardAchievementPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ClientboundCloseFormPacket const&);
@@ -846,6 +865,8 @@ public:
     MCAPI void $handle(::NetworkIdentifier const&, ::SendPartyDestinationCookiePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::RecordStartedPacket const& packet);
 
     MCAPI void $onOutgoingPacket(
         ::NetworkIdentifier const& netId,

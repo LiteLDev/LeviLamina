@@ -17,6 +17,18 @@ public:
     StorageInfo& operator=(StorageInfo const&);
     StorageInfo(StorageInfo const&);
     StorageInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~StorageInfo();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Poi

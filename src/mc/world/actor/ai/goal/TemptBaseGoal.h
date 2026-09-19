@@ -17,6 +17,7 @@
 class ItemDescriptor;
 class Mob;
 class Player;
+struct GoalId;
 // clang-format on
 
 class TemptBaseGoal : public ::BaseGoal {
@@ -77,6 +78,8 @@ public:
     // NOLINTBEGIN
     MCAPI TemptBaseGoal(
         ::Mob&                                 mob,
+        ::std::string                          name,
+        ::GoalId const&                        goalId,
         float                                  speed,
         ::std::vector<::ItemDescriptor> const& itemList,
         ::SharedTypes::Legacy::LevelSoundEvent sound,
@@ -96,6 +99,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Mob&                                 mob,
+        ::std::string                          name,
+        ::GoalId const&                        goalId,
         float                                  speed,
         ::std::vector<::ItemDescriptor> const& itemList,
         ::SharedTypes::Legacy::LevelSoundEvent sound,

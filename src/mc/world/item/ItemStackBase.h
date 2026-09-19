@@ -93,10 +93,13 @@ public:
     ::std::unique_ptr<::ItemInstance>       mChargedItem;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ItemStackBase();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -118,6 +121,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ItemStackBase();
+#endif
+
     MCAPI explicit ItemStackBase(::RecipeIngredient const& ingredient);
 
     MCAPI ItemStackBase(::ItemStackBase const& rhs);
@@ -169,12 +176,6 @@ public:
     MCAPI ::Block const* getBlockForRendering() const;
 #endif
 
-    MCAPI ::WeakPtr<::BlockType const> const& getBlockType() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
-#endif
-
     MCAPI ::mce::Color getColor() const;
 
     MCAPI ::std::vector<::std::string> getCustomLore() const;
@@ -194,11 +195,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::Bedrock::Safety::RedactableString getFormattedHovertext(::Level& level, bool showCategory) const;
-#endif
 
-    MCAPI ::HashedString const& getFullNameHash() const;
-
-#ifdef LL_PLAT_C
     MCAPI ::std::string getHoverName() const;
 #endif
 
@@ -213,8 +210,6 @@ public:
     MCAPI ::std::string getName() const;
 
     MCAPI float getPickupPopPercentage() const;
-
-    MCAPI ::HashedString const& getRawNameHash() const;
 
     MCAPI ::std::string getRawNameId() const;
 
@@ -238,6 +233,8 @@ public:
 
     MCAPI bool hurtAndBreak(int deltaDamage, ::Actor* owner);
 
+    MCAPI void init(::BlockType const& block, int count);
+
     MCAPI void init(int id, int count_, int aux_, bool doRemap);
 
     MCAPI void init(::Item const& item, int count, int auxValue, ::CompoundTag const* userData, bool doRemap);
@@ -258,7 +255,7 @@ public:
 
     MCAPI bool isHorseArmorItem() const;
 
-    MCAPI bool isHumanoidWearableBlockItem() const;
+    MCAPI bool isHumanoidWearableItem() const;
 
     MCAPI bool isInstance(::HashedString const& itemName, bool useItemLookup) const;
 
@@ -389,6 +386,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor();
+#endif
+
     MCAPI void* $ctor(::RecipeIngredient const& ingredient);
 
     MCAPI void* $ctor(::ItemStackBase const& rhs);

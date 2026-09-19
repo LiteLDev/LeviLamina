@@ -13,7 +13,6 @@ class StrictEntityContext;
 class Vec3;
 struct CurrentTickComponent;
 struct PassengerRenderingRidingOffsetComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 struct VehicleRenderingRidingOffsetComponent;
 // clang-format on
@@ -31,8 +30,6 @@ public:
         ::CurrentTickComponent const&                               currentTickComponent,
         ::EntityModifier<::PassengerRenderingRidingOffsetComponent> modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static ::Vec3 getInterpolatedRenderingRidingOffset(::Actor const& actor, float frameAlpha);
 

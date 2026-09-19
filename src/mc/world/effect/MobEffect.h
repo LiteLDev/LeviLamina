@@ -86,7 +86,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~MobEffect() = default;
+#else // LL_PLAT_C
+    virtual ~MobEffect();
+#endif
 
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
@@ -129,13 +133,11 @@ public:
 
     MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
 
-#ifdef LL_PLAT_C
     MCAPI void applyModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
         int                 amplification
     ) const;
-#endif
 
     MCAPI void updateModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
@@ -178,6 +180,14 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
@@ -198,5 +208,11 @@ public:
     MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

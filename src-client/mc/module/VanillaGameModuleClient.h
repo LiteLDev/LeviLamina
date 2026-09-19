@@ -39,9 +39,8 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkee2df3;
     ::ll::UntypedStorage<8, 8>  mUnkcb9508;
     ::ll::UntypedStorage<8, 16> mUnk33240b;
-    ::ll::UntypedStorage<8, 16> mUnk436b59;
-    ::ll::UntypedStorage<8, 16> mUnk67ec4f;
     ::ll::UntypedStorage<8, 24> mUnk31c50a;
+    ::ll::UntypedStorage<8, 16> mUnkc9162e;
     ::ll::UntypedStorage<8, 24> mUnkeda6d9;
     ::ll::UntypedStorage<8, 8>  mUnkd23d66;
     ::ll::UntypedStorage<8, 16> mUnkd24109;
@@ -79,6 +78,8 @@ public:
     ) /*override*/;
 
     virtual void deconfigureLevel(::IClientInstance& client) /*override*/;
+
+    virtual void onLeaveWorld() /*override*/;
 
     virtual void
     configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry) /*override*/;
@@ -134,6 +135,8 @@ public:
     );
 
     MCAPI void $deconfigureLevel(::IClientInstance& client);
+
+    MCAPI void $onLeaveWorld();
 
     MCFOLD void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
 

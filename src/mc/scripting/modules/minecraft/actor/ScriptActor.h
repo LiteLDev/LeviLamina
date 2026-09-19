@@ -29,6 +29,7 @@ namespace ScriptModuleMinecraft { class ScriptActorComponents; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockRaycastHit; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
+namespace ScriptModuleMinecraft { class ScriptDuration; }
 namespace ScriptModuleMinecraft { class ScriptEffectType; }
 namespace ScriptModuleMinecraft { class ScriptEntityRaycastHit; }
 namespace ScriptModuleMinecraft { class ScriptMobEffectInstance; }
@@ -159,7 +160,11 @@ public:
     MCAPI
     ScriptActor(::ScriptModuleMinecraft::ScriptActorData const& actorData, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::UnsupportedAPIError,
+        ::Scripting::Error>
     _teleport(
         ::Actor&                                                               self,
         ::Vec3 const&                                                          location,
@@ -184,7 +189,7 @@ public:
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effectType,
-        int                                                                                         duration,
+        ::std::variant<int, ::ScriptModuleMinecraft::ScriptDuration>                                duration,
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityEffectOptions> const&                  options
     );
 
@@ -194,6 +199,20 @@ public:
         int                                              duration,
         int                                              amplifier,
         bool                                             showParticles
+    );
+
+    MCAPI ::Scripting::Result<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::ArgumentOutOfBoundsError,
+        ::Scripting::InvalidArgumentError>
+    addEffect_V130(
+        ::Actor& self,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effectType,
+        int                                                                                         duration,
+        ::std::optional<::ScriptModuleMinecraft::ScriptEntityEffectOptions> const&                  options
     );
 
     MCAPI ::Scripting::
@@ -558,7 +577,11 @@ public:
     MCAPI ::Scripting::Result_deprecated<void>
     setVelocity_010(::Actor& self, ::ScriptModuleMinecraft::ScriptVector const& vel);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::UnsupportedAPIError,
+        ::Scripting::Error>
     teleport(
         ::Actor&                                                               self,
         ::Vec3 const&                                                          location,
@@ -589,7 +612,11 @@ public:
 
     MCAPI ::Actor* tryGetActor() const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::UnsupportedAPIError,
+        ::Scripting::Error>
     tryTeleport(
         ::Actor&                                                               self,
         ::Vec3 const&                                                          location,

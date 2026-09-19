@@ -34,4 +34,16 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mAttachablesSuppored;
     ::ll::TypedStorage<1, 1, bool>                                                    mHideArmor;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~ExtractedDataDataDrivenModel();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

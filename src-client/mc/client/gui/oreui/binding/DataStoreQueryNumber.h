@@ -13,9 +13,9 @@ class DataStoreQueryNumber : public ::OreUI::QueryBase<::OreUI::DataStoreQueryNu
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mScreenAPISubscription;
-    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>>> mValue;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mScreenAPISubscription;
+    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>, ::std::optional<double>>> mValue;
     // NOLINTEND
 };
 

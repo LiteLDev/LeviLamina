@@ -105,7 +105,7 @@ public:
 
     MCAPI void clearStartLocalWorldResult();
 
-    MCAPI ::OreUI::AsyncStatefulFunction_DEPRECATED<
+    MCFOLD ::OreUI::AsyncStatefulFunction_DEPRECATED<
         ::OreUI::WorldStartupFacet::BackupThenStartLocalWorldResult(::std::string const&)>&
     getBackupThenStartLocalWorldFunctor_DEPRECATED();
 

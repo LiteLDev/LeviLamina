@@ -19,17 +19,17 @@ class SafeZoneWarningScreenQuery : public ::OreUI::QueryBase<::OreUI::SafeZoneWa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<float>> mSafeZoneAll;
-    ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<bool>>  mHasSetSafeZone;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mSafeZoneXMin;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mSafeZoneXMax;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mSafeZoneYMin;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mSafeZoneYMax;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mSafeZoneAllMin;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mSafeZoneAllMax;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mDefaultSafeZoneScaleX;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>       mDefaultSafeZoneScaleY;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>        mNeedsSafeZoneAdjustment;
+    ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<float>>  mSafeZoneAll;
+    ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<bool>>   mHasSetSafeZone;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mSafeZoneXMin;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mSafeZoneXMax;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mSafeZoneYMin;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mSafeZoneYMax;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mSafeZoneAllMin;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mSafeZoneAllMax;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mDefaultSafeZoneScaleX;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mDefaultSafeZoneScaleY;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>   mNeedsSafeZoneAdjustment;
     // NOLINTEND
 
 public:

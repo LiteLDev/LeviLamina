@@ -19,8 +19,8 @@ class OneDSEventListener : public ::Social::Events::AggregationEventListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkafadd0;
-    ::ll::UntypedStorage<8, 80> mUnka7b550;
+    ::ll::UntypedStorage<1, 1>  mUnk86c723;
+    ::ll::UntypedStorage<8, 80> mUnka0f92a;
     ::ll::UntypedStorage<8, 8>  mUnkf9a652;
     ::ll::UntypedStorage<8, 8>  mUnkaf557e;
     ::ll::UntypedStorage<8, 32> mUnk7c0d06;

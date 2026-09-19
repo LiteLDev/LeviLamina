@@ -78,7 +78,7 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>&
+            ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
     virtual void singleTick(
@@ -95,8 +95,8 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>&,
-        ::StrictEntityContext&
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
     ) /*override*/;
     // NOLINTEND
 
@@ -115,6 +115,53 @@ public:
             ::Optional<::ActorDataBoundingBoxComponent>,
             ::Optional<::ActorDataSeatOffsetComponent>> const& tracked
     );
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::InterpolateMovementNeededComponent>,
+            ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+            ::Write<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
+
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::InterpolateMovementNeededComponent>,
+            ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+            ::Write<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    );
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

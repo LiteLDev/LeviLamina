@@ -6,7 +6,6 @@
 // clang-format off
 class StrictEntityContext;
 struct OfferFlowerTickComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class OfferFlowerTickSystem {
@@ -15,7 +14,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _doOfferFlowerTickSystem(::StrictEntityContext const&, ::OfferFlowerTickComponent& offerFlowerTickComponent);
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

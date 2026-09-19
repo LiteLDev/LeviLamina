@@ -41,8 +41,6 @@ public:
 
     virtual void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    virtual void setInfo(::std::string name, ::GoalId const& goalId);
-
     virtual ::GoalId getGoalId() const;
     // NOLINTEND
 
@@ -68,8 +66,6 @@ public:
     MCFOLD bool $isTargetGoal() const;
 
     MCFOLD void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
-
-    MCAPI void $setInfo(::std::string name, ::GoalId const& goalId);
 
     MCAPI ::GoalId $getGoalId() const;
 

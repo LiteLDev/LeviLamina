@@ -20,9 +20,7 @@ MCAPI bool areMonstersNearby(::BlockSource& region, ::Vec3 const& position);
 
 MCAPI bool canUseItemToIgnite(::ItemStack const& item, ::BaseGameVersion const& baseGameVersion);
 
-#ifdef LL_PLAT_S
 MCAPI void onAttackAwardAchievements(::Player& player, float damage);
-#endif
 // NOLINTEND
 
 } // namespace PlayerUtils

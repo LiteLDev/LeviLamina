@@ -30,7 +30,6 @@ namespace mce { class ImageResourceLoader; }
 namespace mce { class LRUCache; }
 namespace mce { class TextureContainer; }
 namespace mce { class TexturePtr; }
-namespace mce { struct TextureDescription; }
 namespace mce { struct TextureResourceService; }
 // clang-format on
 
@@ -126,9 +125,6 @@ public:
 
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool forceReload);
 
-    MCAPI ::cg::ImageBuffer*
-    insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer);
-
     MCAPI bool isLoaded(
         ::ResourceLocation const& resourceLocation,
         bool                      ignoreCreation,
@@ -156,9 +152,6 @@ public:
         ::std::vector<::ResourceLocation>   texturesToKeep,
         ::ImageCacheMode
     );
-
-    MCAPI void
-    setTextureMetadata(::ResourceLocation const& resourceLocation, ::mce::TextureDescription const& textureDescription);
 
     MCAPI void setTextureMetadata(
         ::ResourceLocation const&                                      resourceLocation,

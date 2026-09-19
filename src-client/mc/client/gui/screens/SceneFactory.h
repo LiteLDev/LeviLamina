@@ -46,11 +46,12 @@ class BlockActor;
 class BlockPos;
 class CachedScenes;
 class DlcId;
-class IAdvancedGraphicsOptions;
 class IClientInstance;
 class IContentKeyProvider;
 class IContentManager;
+class ILayoutServiceProvider;
 class IMinecraftGame;
+class ISceneFactoryImpl;
 class ISceneStack;
 class IStoreCatalogItem;
 class IUIDefRepository;
@@ -115,29 +116,21 @@ public:
         // NOLINTEND
     };
 
-    using InGameScreenCreator = ::std::function<::std::shared_ptr<::UIScene>(
-        ::SceneFactory&,
-        ::IMinecraftGame&,
-        ::IClientInstance&,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&,
-        ::std::string const&,
-        ::Player&,
-        ::BlockPos const&,
-        ::ActorUniqueID
-    )>;
+    using InGameScreenCreator = ::std::function<::std::shared_ptr<
+        ::UIScene>(::SceneFactory&, ::std::string const&, ::Player&, ::BlockPos const&, ::ActorUniqueID)>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>          mClient;
-    ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                          mMinecraft;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions>> mAdvancedGraphicsOptions;
-    ::ll::TypedStorage<1, 1, bool>                                                       mIsEditorModeEnabled;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                             mTaskGroup;
-    ::ll::TypedStorage<1, 1, bool>                                                       mUseClientInstanceStack;
-    ::ll::TypedStorage<8, 8, ::OreUI::SceneProvider&>                                    mSceneProvider;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UISoundPlayer>>                         mSoundPlayer;
-    ::ll::TypedStorage<8, 8, ::CachedScenes&>                                            mCachedScenes;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>> mClient;
+    ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                 mMinecraft;
+    ::ll::TypedStorage<8, 8, ::ILayoutServiceProvider&>                         mLayoutServiceProvider;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsEditorModeEnabled;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                    mTaskGroup;
+    ::ll::TypedStorage<1, 1, bool>                                              mUseClientInstanceStack;
+    ::ll::TypedStorage<8, 8, ::OreUI::SceneProvider&>                           mSceneProvider;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UISoundPlayer>>                mSoundPlayer;
+    ::ll::TypedStorage<8, 8, ::CachedScenes&>                                   mCachedScenes;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::SceneFactory::PreCachePackage>>> mPreCachePackages;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SceneFactoryProxy>>                             mProxy;
     ::ll::TypedStorage<
@@ -147,18 +140,11 @@ public:
             ::HashedString,
             ::std::pair<
                 ::std::string,
-                ::std::function<::std::shared_ptr<::UIScene>(
-                    ::SceneFactory&,
-                    ::IMinecraftGame&,
-                    ::IClientInstance&,
-                    ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&,
-                    ::std::string const&,
-                    ::Player&,
-                    ::BlockPos const&,
-                    ::ActorUniqueID
-                )>>>>
-                                                               mRegisteredInGameScreens;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSceneStackDestroyedSubscription;
+                ::std::function<::std::shared_ptr<
+                    ::UIScene>(::SceneFactory&, ::std::string const&, ::Player&, ::BlockPos const&, ::ActorUniqueID)>>>>
+                                                                     mRegisteredInGameScreens;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mSceneStackDestroyedSubscription;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ISceneFactoryImpl>> mFactoryImpl;
     // NOLINTEND
 
 public:
@@ -193,10 +179,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SceneFactory(
-        ::IMinecraftGame&                                                minecraft,
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          client,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
-        ::OreUI::SceneProvider&                                          sceneProvider
+        ::std::unique_ptr<::ISceneFactoryImpl>                  impl,
+        ::IMinecraftGame&                                       minecraft,
+        ::ILayoutServiceProvider&                               layoutServiceProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client,
+        ::OreUI::SceneProvider&                                 sceneProvider
     );
 
     MCAPI ::Json::Value _calculateSafeZoneSize(
@@ -660,12 +647,6 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSavesScreen(::Realms::World const& world);
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSettingsScreen(
-        ::Realms::World const& world,
-        ::SettingsTabIndex     initialTab,
-        ::std::string const&   initialPackId
-    );
-
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSharingLauncherScreen(::std::string const& realmsInvite);
 
     MCAPI ::std::shared_ptr<::AbstractScene>
@@ -735,12 +716,8 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createTradeScreen(::Player&, ::ActorUniqueID const& uniqueID);
 
-    MCAPI ::std::shared_ptr<::UIScene> createUIScene(
-        ::IMinecraftGame&                     mc,
-        ::IClientInstance&                    client,
-        ::std::string const&                  screenName,
-        ::std::shared_ptr<::ScreenController> controller
-    );
+    MCAPI ::std::shared_ptr<::UIScene>
+    createUIScene(::std::string const& screenName, ::std::shared_ptr<::ScreenController> controller);
 
     MCAPI ::std::shared_ptr<::AbstractScene>
     createUpdateWorldHeightScreen(::std::function<void(bool)> startWorldCallback);
@@ -790,16 +767,9 @@ public:
     MCAPI void registerInGameScreen(
         ::std::string const& registeredName,
         ::std::string const& resourceName,
-        ::std::function<::std::shared_ptr<::UIScene>(
-            ::SceneFactory&,
-            ::IMinecraftGame&,
-            ::IClientInstance&,
-            ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&,
-            ::std::string const&,
-            ::Player&,
-            ::BlockPos const&,
-            ::ActorUniqueID
-        )>                   creationFunc
+        ::std::function<::std::shared_ptr<
+            ::UIScene>(::SceneFactory&, ::std::string const&, ::Player&, ::BlockPos const&, ::ActorUniqueID)>
+            creationFunc
     );
 
     MCAPI void resetSceneStackForOutOfGameUse();
@@ -813,10 +783,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::IMinecraftGame&                                                minecraft,
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          client,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
-        ::OreUI::SceneProvider&                                          sceneProvider
+        ::std::unique_ptr<::ISceneFactoryImpl>                  impl,
+        ::IMinecraftGame&                                       minecraft,
+        ::ILayoutServiceProvider&                               layoutServiceProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client,
+        ::OreUI::SceneProvider&                                 sceneProvider
     );
     // NOLINTEND
 

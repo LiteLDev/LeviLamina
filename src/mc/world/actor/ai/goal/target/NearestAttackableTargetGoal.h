@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct GoalId;
 struct Tick;
 // clang-format on
 
@@ -32,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NearestAttackableTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -48,13 +53,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
-#endif
+    MCAPI NearestAttackableTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-#ifdef LL_PLAT_S
     MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
-#endif
 
     MCAPI bool _selectTarget();
 
@@ -62,11 +63,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

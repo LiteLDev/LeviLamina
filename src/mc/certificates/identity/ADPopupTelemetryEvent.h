@@ -23,7 +23,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void tryFireSignInEvent(
         ::IActiveDirectoryIdentityTelemetry& eventing,
-        ::std::string const&                 mutsUserId,
         ::edu::Role                          role,
         ::std::string const&                 tenantType
     ) const;

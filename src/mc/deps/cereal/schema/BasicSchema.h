@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class Constraint; }
-namespace cereal { class SerializerContext; }
 namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct MetaVisitor; }
 namespace cereal { struct SchemaDescription; }
@@ -30,7 +29,6 @@ class BasicSchema {
 public:
     // BasicSchema inner types declare
     // clang-format off
-    struct DynamicSetterArg;
     struct EnumMapping;
     struct GetterDescriptor;
     struct MemberDescriptor;
@@ -41,15 +39,6 @@ public:
     // clang-format on
 
     // BasicSchema inner types define
-    struct DynamicSetterArg {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 64, ::entt::meta_any>                                   mArg;
-        ::ll::TypedStorage<8, 8, ::gsl::not_null<::cereal::SerializerContext const*>> mContext;
-        // NOLINTEND
-    };
-
     struct EnumMapping {
     public:
         // EnumMapping inner types declare
@@ -103,7 +92,6 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::Constraint>>            mConstraint;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mNameExt;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mName;
-        ::ll::TypedStorage<8, 8, ::entt::meta_type (*)(::entt::meta_ctx const&)>     mDynamicSetterArgCtor;
         ::ll::TypedStorage<
             8,
             72,
@@ -202,10 +190,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-    using DynamicGetterWrapper = ::entt::meta_any (*)(::entt::meta_any const&, ::cereal::SerializerContext const&);
-
-    using DynamicSetterArgCtor = ::entt::meta_type (*)(::entt::meta_ctx const&);
 
     using IdType = uint;
 

@@ -14,7 +14,7 @@ enum class StructureLoadResult : int {
     MissingWorldOriginField                     = 8,
     WorldOriginIsNot3Elements                   = 9,
     MissingBlockIndicesField                    = 10,
-    BlockIndicesNot2Arrays                      = 11,
+    BlockIndicesNot1Or2Arrays                   = 11,
     BlockIndicesIsNotAList                      = 12,
     BlockIndicesListsNotSameSize                = 13,
     MismatchedSizeAndBlockIndicesSize           = 14,

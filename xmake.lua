@@ -11,7 +11,7 @@ local is_server = is_config("target_type", "server")
 
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
-add_requires("entt v3.15.0")
+add_requires("entt v4.0.0")
 add_requires("expected-lite v0.8.0")
 add_requires("fmt 11.2.0")
 add_requires("gsl v4.2.0")
@@ -51,11 +51,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v26.40.8-server.3")
+        add_requires("bedrockdata v26.51.1-server.3")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v26.40.5-client.3")
+        add_requires("bedrockdata v26.51.1-client.3")
     end
 end
 

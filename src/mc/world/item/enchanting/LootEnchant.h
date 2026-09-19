@@ -21,7 +21,11 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getMinCost(int level) const;
 
+#ifdef LL_PLAT_S
+    MCAPI int $getMaxCost(int level) const;
+#else // LL_PLAT_C
     MCFOLD int $getMaxCost(int level) const;
+#endif
 
     MCFOLD int $getMaxLevel() const;
 

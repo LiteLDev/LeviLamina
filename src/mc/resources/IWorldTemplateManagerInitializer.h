@@ -18,10 +18,4 @@ public:
 
     virtual ::WorldTemplateManagerInitDeps& getInitDeps() = 0;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::IWorldTemplateManagerInitializer> create(::WorldTemplateManagerInitDeps&& deps);
-    // NOLINTEND
 };

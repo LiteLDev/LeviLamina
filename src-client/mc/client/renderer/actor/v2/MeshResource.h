@@ -11,11 +11,12 @@ struct MeshResource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 616, ::mce::Mesh>            mMeshData;
-    ::ll::TypedStorage<4, 4, ::SkeletalHierarchyIndex> mSkeletalHierarchyIndex;
-    ::ll::TypedStorage<4, 4, uint>                     mSkeletonOffset;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>   mBoneIndices;
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>   mPartVisibilityIndices;
-    ::ll::TypedStorage<4, 24, ::AABB>                  mAABB;
+    ::ll::TypedStorage<8, 632, ::mce::Mesh>                          mMeshData;
+    ::ll::TypedStorage<4, 4, ::SkeletalHierarchyIndex>               mSkeletalHierarchyIndex;
+    ::ll::TypedStorage<4, 4, uint>                                   mSkeletonOffset;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                 mBoneIndices;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                 mPartVisibilityIndices;
+    ::ll::TypedStorage<4, 24, ::AABB>                                mAABB;
+    ::ll::TypedStorage<4, 16, ::std::pair<::glm::vec2, ::glm::vec2>> mUVAABB;
     // NOLINTEND
 };

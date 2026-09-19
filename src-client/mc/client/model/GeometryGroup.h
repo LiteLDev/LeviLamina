@@ -20,7 +20,6 @@ class SemVersion;
 class SemVersionConstant;
 struct ModelParent;
 struct TextureUVCoordinateSet;
-namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -31,7 +30,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk69fa9e;
-    ::ll::UntypedStorage<8, 80> mUnk15a0e0;
+    ::ll::UntypedStorage<8, 80> mUnk557494;
     ::ll::UntypedStorage<8, 8>  mUnk89a968;
     // NOLINTEND
 
@@ -51,10 +50,8 @@ public:
     // NOLINTBEGIN
     MCAPI GeometryGroup();
 
-    MCAPI ::std::shared_ptr<::GeometryInfo> _findOrAddGeometryInfo(
-        ::HashedString const&                                          name,
-        ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>& geometryLock
-    );
+    MCAPI ::std::shared_ptr<::GeometryInfo>
+    _findOrAddGeometryInfo(::HashedString const& name, ::Bedrock::Threading::UniqueLock<::std::mutex>& geometryLock);
 
     MCAPI void _loadModelsAsync(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,

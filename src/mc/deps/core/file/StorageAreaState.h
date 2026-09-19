@@ -18,7 +18,7 @@ class StorageAreaState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk26e6b4;
+    ::ll::UntypedStorage<8, 80> mUnkb0ec4d;
     ::ll::UntypedStorage<8, 32> mUnk94aba7;
     ::ll::UntypedStorage<1, 1>  mUnk3f48e4;
     ::ll::UntypedStorage<1, 1>  mUnk8adcca;

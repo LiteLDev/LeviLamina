@@ -25,7 +25,7 @@ struct fmt::formatter<BracketedArg<T>, Char> : formatter<T, Char> {
 
 namespace ll::io {
 
-static std::array<std::string_view, 6> levelNames{"FATAL", "ERROR", "WARN", "INFO", "DEBUG", "TRACE"};
+static std::array<std::string_view, 6> levelNames{"FTL", "ERR", "WRN", "IFO", "DBG", "TRC"};
 
 template <typename T>
 static constexpr auto makeBracketed(T const& value, bool bracketed) -> BracketedArg<std::remove_cvref_t<T>> {

@@ -64,6 +64,8 @@ public:
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
             activationClosure,
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+            sessionLifecycleClosure,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
                                                                           shutdownClosure,
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
         ::Editor::API::ServerScriptPackType                               packType
@@ -95,7 +97,7 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> createExtensionContexts() /*override*/;
+    virtual ::Scripting::Result_deprecated<void> createExtensionContexts(bool shouldNotify) /*override*/;
     // NOLINTEND
 
 public:
@@ -115,6 +117,8 @@ public:
         ::Scripting::WeakLifetimeScope scope,
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
             activationClosure,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+            sessionLifecycleClosure,
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
                                                                           shutdownClosure,
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
@@ -144,7 +148,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts();
+    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts(bool shouldNotify);
 
 
     // NOLINTEND

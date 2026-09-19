@@ -14,6 +14,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientInstanceScreenModel;
 class GameTip;
 class HudContainerManagerController;
 class Option;
@@ -43,6 +44,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameTipScreenController();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~GameTipScreenController() /*override*/ = default;
@@ -62,6 +67,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GameTipScreenController(
+        ::std::shared_ptr<::ClientInstanceScreenModel>     model,
+        ::std::shared_ptr<::HudContainerManagerController> mHudScreenManagerController
+    );
+
     MCAPI void _addInterruption(::GameTipConstants::Interruption interruption);
 
     MCAPI void _destroyActiveTip();
@@ -77,6 +87,15 @@ public:
     MCAPI void _removeInterruption(::GameTipConstants::Interruption interruption);
 
     MCAPI void _stopDisplayingActiveTip();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ClientInstanceScreenModel>     model,
+        ::std::shared_ptr<::HudContainerManagerController> mHudScreenManagerController
+    );
     // NOLINTEND
 
 public:

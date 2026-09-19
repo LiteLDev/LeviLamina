@@ -30,7 +30,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnkf310d5;
+        ::ll::UntypedStorage<8, 80> mUnk766e39;
         ::ll::UntypedStorage<8, 72> mUnk4655ba;
         ::ll::UntypedStorage<1, 1>  mUnkb8d676;
         ::ll::UntypedStorage<8, 16> mUnk262761;
@@ -47,7 +47,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnka1d340;
+        ::ll::UntypedStorage<8, 80> mUnk3660a2;
         ::ll::UntypedStorage<8, 64> mUnkff858f;
         // NOLINTEND
 
@@ -83,6 +83,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk693ed0;
     ::ll::UntypedStorage<8, 16>  mUnka4641f;
     ::ll::UntypedStorage<8, 72>  mUnkba8bc7;
+    ::ll::UntypedStorage<1, 1>   mUnke2c1f0;
     // NOLINTEND
 
 public:
@@ -120,6 +121,10 @@ public:
 
     MCNAPI ::Bedrock::Resources::PreloadState
     hasAssetFallback(::Core::Path const& path, ::Core::Path const& archivePath) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI void invalidate();
+#endif
     // NOLINTEND
 
 public:

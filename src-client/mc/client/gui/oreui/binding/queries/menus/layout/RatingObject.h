@@ -12,8 +12,8 @@ class RatingObject : public ::OreUI::PropertyObject<::OreUI::RatingObject> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>>> mAverage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>>>    mTotalCount;
+    ::ll::TypedStorage<8, 184, ::OreUI::Property<::std::optional<double>, ::std::optional<double>>> mAverage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<int>, ::std::optional<int>>>       mTotalCount;
     // NOLINTEND
 };
 

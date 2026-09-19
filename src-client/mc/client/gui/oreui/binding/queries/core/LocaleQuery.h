@@ -19,8 +19,8 @@ class LocaleQuery : public ::OreUI::QueryBase<::OreUI::LocaleQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mLocaleToken;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mLocale;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mLocaleToken;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mLocale;
     // NOLINTEND
 
 public:

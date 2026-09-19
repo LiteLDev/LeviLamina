@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
 class IMinecraftEventing;
+struct ChunkPerformanceData;
 // clang-format on
 
 class LevelChunkPerformanceTelemetry {
@@ -25,4 +30,17 @@ public:
     LevelChunkPerformanceTelemetry& operator=(LevelChunkPerformanceTelemetry const&);
     LevelChunkPerformanceTelemetry(LevelChunkPerformanceTelemetry const&);
     LevelChunkPerformanceTelemetry();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void
+    reset(::SubClientId subClientId, ::Bedrock::NonOwnerPointer<::ChunkPerformanceData> chunkPerformanceData);
+
+    MCNAPI void sendPerformanceTelemetry(::Bedrock::NonOwnerPointer<::ChunkPerformanceData> chunkPerformanceData);
+
+    MCNAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
+
+    MCNAPI void tick(::Bedrock::NonOwnerPointer<::ChunkPerformanceData> chunkPerformanceData);
+    // NOLINTEND
 };

@@ -30,6 +30,9 @@ public:
     // NOLINTEND
 
 public:
+    LLNDAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream) const;
+
+public:
     // prevent constructor by default
     PackInstance();
 
@@ -49,8 +52,6 @@ public:
         bool                                               isDependent,
         ::PackSettings*                                    packSettings
     );
-
-    MCAPI bool hasResource(::Core::Path const& resourceName) const;
 
     MCAPI ~PackInstance();
     // NOLINTEND

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ProjectRegionAvailabilityMode.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
@@ -68,8 +67,6 @@ public:
     MCNAPI ::Scripting::Error _getLocationError(::Vec3 const& location) const;
 
     MCNAPI void _handleBoundsChange(::Bounds const&);
-
-    MCNAPI ::Scripting::Result_deprecated<::Editor::ProjectRegionAvailabilityMode> getAvailabilityMode() const;
 
     MCNAPI ::std::string getId() const;
 

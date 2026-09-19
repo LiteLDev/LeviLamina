@@ -24,6 +24,7 @@ class PackSourceReport;
 class ResourceLocation;
 class ResourcePack;
 class ResourcePackStack;
+struct InvalidPack;
 struct InvalidPacksFilterGroup;
 struct PackIdVersion;
 struct PackInstanceId;
@@ -49,7 +50,7 @@ public:
     virtual ::ResourcePack*
     getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const = 0;
 
-    virtual ::ResourcePack* getResourcePackByUUID(::mce::UUID const& id) const = 0;
+    virtual ::std::vector<::ResourcePack*> getResourcePacksByUUID(::mce::UUID const& id) const = 0;
 
     virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const = 0;
 
@@ -73,7 +74,7 @@ public:
 
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const = 0;
 
-    virtual void addSystemPacksToStack(::ResourcePackStack& stack) const = 0;
+    virtual void addSystemPacksToStack(::ResourcePackStack& stack, ::std::optional<::std::string> worldId) const = 0;
 
     virtual void
     addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) = 0;
@@ -141,13 +142,20 @@ public:
 
     virtual void forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const = 0;
 
-    virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const = 0;
+    virtual ::std::vector<::InvalidPack> const& getInvalidPacks() const = 0;
 
-    virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const = 0;
+    virtual ::std::vector<::InvalidPack> getInvalidPacks(::PackType type) const = 0;
 
-    virtual void deletePack(::ResourceLocation const& packLocation) = 0;
+    virtual ::std::vector<::InvalidPack> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const = 0;
 
-    virtual void deletePackFiles(::ResourceLocation const& packLocation) = 0;
+    virtual ::std::vector<::InvalidPack> getInvalidPacks(::PackOrigin origin) const = 0;
+
+    virtual void
+    deletePacks(::gsl::span<::ResourceLocation const> packLocations, ::std::string_view deletionReason) = 0;
+
+    virtual void deletePack(::ResourceLocation const& packLocation, ::std::string_view deletionReason) = 0;
+
+    virtual void deletePackFiles(::ResourceLocation const& packLocation, ::std::string_view deletionReason) = 0;
 
     virtual void postDeletePack(::ResourceLocation const& packLocation) = 0;
 

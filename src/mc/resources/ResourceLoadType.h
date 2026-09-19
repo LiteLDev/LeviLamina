@@ -43,6 +43,7 @@ enum class ResourceLoadType : uint {
     JigsawStructure             = 37,
     BlockThumbnailAtlas         = 38,
     TextureShift                = 39,
-    All                         = 40,
-    Count                       = 40,
+    ServerLevelAssignResults    = 40,
+    All                         = 41,
+    Count                       = 41,
 };

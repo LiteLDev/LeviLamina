@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
-#include "mc/client/realms/MemberFilterOption.h"
-#include "mc/client/realms/MemberSortOption.h"
+#include "mc/client/realms/RealmMemberFilterOption.h"
+#include "mc/client/realms/RealmMemberSortOption.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -27,8 +27,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::string&>                                     mCommentInProgressBody;
     ::ll::TypedStorage<8, 8, ::std::string&>                                     mStoryScreenshotSelectionFilePath;
     ::ll::TypedStorage<8, 8, ::std::string&>                                     mCurrentMemberSearchText;
-    ::ll::TypedStorage<8, 8, ::Realms::Stories::MemberFilterOption&>             mCurrentMemberFilterOption;
-    ::ll::TypedStorage<8, 8, ::Realms::Stories::MemberSortOption&>               mCurrentMemberSortOption;
+    ::ll::TypedStorage<8, 8, ::Realms::Stories::RealmMemberFilterOption&>        mCurrentMemberFilterOption;
+    ::ll::TypedStorage<8, 8, ::Realms::Stories::RealmMemberSortOption&>          mCurrentMemberSortOption;
     ::ll::TypedStorage<8, 8, bool&>                                              mNewPostAvailable;
     ::ll::TypedStorage<1, 1, bool>                                               mDirty;
     // NOLINTEND
@@ -57,11 +57,11 @@ public:
 
     MCAPI ::std::string const& getCommentInProgressBody() const;
 
-    MCFOLD ::Realms::Stories::MemberFilterOption& getCurrentMemberFilterOption() const;
+    MCFOLD ::Realms::Stories::RealmMemberFilterOption& getCurrentMemberFilterOption() const;
 
     MCFOLD ::std::string const& getCurrentMemberSearchText() const;
 
-    MCFOLD ::Realms::Stories::MemberSortOption& getCurrentMemberSortOption() const;
+    MCFOLD ::Realms::Stories::RealmMemberSortOption& getCurrentMemberSortOption() const;
 
     MCFOLD ::std::string const& getCurrentStoryId() const;
 
@@ -73,11 +73,11 @@ public:
 
     MCAPI void setCommentInProgressBody(::std::string const& body);
 
-    MCAPI void setCurrentMemberFilterOption(::Realms::Stories::MemberFilterOption filterOption);
+    MCAPI void setCurrentMemberFilterOption(::Realms::Stories::RealmMemberFilterOption filterOption);
 
     MCAPI void setCurrentMemberSearchText(::std::string const& searchText);
 
-    MCAPI void setCurrentMemberSortOption(::Realms::Stories::MemberSortOption sortOption);
+    MCAPI void setCurrentMemberSortOption(::Realms::Stories::RealmMemberSortOption sortOption);
 
     MCAPI void setCurrentStoryId(::std::string const& id);
 

@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/definition/validate/block_definition_validate/ValidateContext.h"
+#include "mc/world/level/block/definition/block_definition_loader_traits/Loader.h"
 
 // auto generated forward declare list
 // clang-format off
-class BedrockLoadContext;
 class SemVersion;
 struct BlockDefinition;
 namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockDefinitionDocument; }
@@ -18,16 +17,8 @@ class BlockDefinitionModernLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        256,
-        ::Puv::SlicedLoader<
-            ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument,
-            ::BedrockLoadContext,
-            nullptr_t,
-            ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument>>
-                                                                          mLoader;
-    ::ll::TypedStorage<8, 32, ::BlockDefinitionValidate::ValidateContext> mValidationContext;
+    ::ll::TypedStorage<8, 272, ::BlockDefinitionLoaderTraits::Loader> mLoader;
+    ::ll::TypedStorage<1, 1, bool>                                    mUpcomingCreatorFeaturesEnabled;
     // NOLINTEND
 
 public:
@@ -38,8 +29,5 @@ public:
         ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&& source,
         ::SemVersion                                                        originalJsonVersion
     );
-
-    MCAPI static ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument
-    nonCerealizedBlockDefinitionUpgrader(::BlockDefinition&& source);
     // NOLINTEND
 };

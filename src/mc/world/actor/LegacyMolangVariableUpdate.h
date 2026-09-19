@@ -15,13 +15,7 @@ namespace LegacyMolangVariableUpdate {
 // NOLINTBEGIN
 MCAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
 
-#ifdef LL_PLAT_S
 MCAPI void initializeAgent(::EntityContext& entityContext);
-#endif
-
-#ifdef LL_PLAT_C
-MCAPI void initializeArmorStand(::EntityContext& entityContext);
-#endif
 
 MCAPI void initializeCat(::EntityContext& entityContext);
 
@@ -40,10 +34,6 @@ MCAPI void initializeHorse(::EntityContext& entityContext);
 MCAPI void initializeIronGolem(::EntityContext& entityContext);
 
 MCAPI void initializeLlama(::EntityContext& entityContext);
-
-#ifdef LL_PLAT_S
-MCAPI void initializeMob(::EntityContext& entityContext);
-#endif
 
 MCAPI void initializeOcelot(::EntityContext& entityContext);
 

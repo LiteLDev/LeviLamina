@@ -39,9 +39,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void _addCommand(::std::string const& entry);
+#endif
 
+#ifdef LL_PLAT_S
+    MCNAPI void _addCommand(::std::string const& entry);
+#endif
+
+#ifdef LL_PLAT_C
     MCNAPI void _executeAction(::RenderParams& params) const;
+#endif
+
+#ifdef LL_PLAT_S
+    MCNAPI void _executeAction(::RenderParams& params) const;
+#endif
     // NOLINTEND
 
 public:

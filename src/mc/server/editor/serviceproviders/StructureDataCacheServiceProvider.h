@@ -22,6 +22,10 @@ public:
         ::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef
     ) = 0;
 
+    virtual void unregisterStructureDataProvider(
+        ::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef
+    ) = 0;
+
     virtual void informStructureDataRemoved(::mce::UUID const& id) = 0;
 
     virtual void informStructureDataUpdated(

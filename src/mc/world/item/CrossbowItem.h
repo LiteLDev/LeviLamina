@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/RangedWeaponItem.h"
 #include "mc/world/item/ResolvedItemIconInfo.h"
@@ -45,7 +46,7 @@ public:
     getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
         /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
@@ -86,7 +87,7 @@ public:
     MCAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
@@ -94,7 +95,11 @@ public:
 
     MCAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
+#ifdef LL_PLAT_S
     MCAPI int $getEnchantSlot() const;
+#else // LL_PLAT_C
+    MCFOLD int $getEnchantSlot() const;
+#endif
 
     MCFOLD bool $canBeCharged() const;
 

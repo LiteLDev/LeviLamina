@@ -45,6 +45,8 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[19]> STORE_ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> WISHLIST_ROUTE();
     // NOLINTEND
 
 public:

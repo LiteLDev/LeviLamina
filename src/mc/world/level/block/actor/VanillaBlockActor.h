@@ -310,7 +310,7 @@ public:
 
     MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
 
-    MCNAPI static void** $vftableForBlockActor();
+    MCAPI static void** $vftableForBlockActor();
 
     MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND

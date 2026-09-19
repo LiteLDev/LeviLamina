@@ -11,7 +11,7 @@ class Actor;
 class DimensionManager;
 class IActorDimensionTransferer;
 class PortalForcer;
-class Vec3;
+struct ActorDimensionTransferRequest;
 struct DimensionType;
 // clang-format on
 
@@ -37,7 +37,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::PortalForcer>     portalForcer
     );
 
-    MCAPI void actorChangeDimension(::Actor& actor, ::DimensionType toId, ::std::optional<::Vec3> const& actorPosition);
+    MCAPI void
+    actorChangeDimension(::Actor& actor, ::ActorDimensionTransferRequest const& actorDimensionTransferRequest);
 
     MCAPI bool canChangeDimension(::Actor const& actor, ::DimensionType toId);
 

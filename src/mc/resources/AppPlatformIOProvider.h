@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class I18n;
 class IFileAccess;
 namespace Core { class FileHandlePool; }
 namespace Core { class Path; }
@@ -27,6 +28,8 @@ public:
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const /*override*/;
 
     virtual ::std::shared_ptr<::Core::FileHandlePool> getArchiveHandlePool() const /*override*/;
+
+    virtual ::I18n& getLoc() const /*override*/;
     // NOLINTEND
 
 public:
@@ -41,6 +44,8 @@ public:
     MCNAPI ::std::unique_ptr<::IPackIOProvider> $clone() const;
 
     MCNAPI ::std::shared_ptr<::Core::FileHandlePool> $getArchiveHandlePool() const;
+
+    MCNAPI ::I18n& $getLoc() const;
 
 
     // NOLINTEND

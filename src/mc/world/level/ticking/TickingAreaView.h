@@ -37,7 +37,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~TickingAreaView() /*override*/;
+#else // LL_PLAT_C
     virtual ~TickingAreaView() /*override*/ = default;
+#endif
 
     virtual void init(::Bounds const& bounds, bool isCircle) /*override*/;
 
@@ -82,6 +86,14 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkSource& parent);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

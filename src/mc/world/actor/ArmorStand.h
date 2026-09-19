@@ -13,11 +13,10 @@ class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
-class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class InteractionResult;
+class Interaction;
 class Player;
 struct ActorDefinitionIdentifier;
 struct HurtParameters;
@@ -65,8 +64,7 @@ public:
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual ::InteractionResult
-    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
 
     virtual void kill() /*override*/;
 
@@ -155,8 +153,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::InteractionResult
-    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
 
     MCAPI void $kill();
 

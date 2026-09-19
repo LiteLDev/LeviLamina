@@ -22,6 +22,14 @@ public:
     // NOLINTEND
 
 public:
+    /// `mItemSpecificSpeeds` is left to its default (empty) construction, which is what the game's
+    // inlined body zeroes it out to.
+    explicit BlockDestructibleByMiningDescription(float destroyTime) {
+        mSecondsToDestroy    = destroyTime;
+        mInitializedFromCode = true;
+    }
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -37,14 +45,6 @@ public:
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     virtual ~BlockDestructibleByMiningDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
     // NOLINTEND
 
 public:

@@ -44,15 +44,11 @@ public:
 
     virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) = 0;
 
-    virtual void addCustomServer(::std::string const& address, int port) = 0;
-
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const = 0;
-
-    virtual void clearServerList() = 0;
 
     virtual void update() = 0;
 
-    virtual float getPingTimeForGUID(::std::string const& guid) = 0;
+    virtual ::std::chrono::milliseconds getPingTimeForGUID(::std::string const& guid) = 0;
 
     virtual void checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,

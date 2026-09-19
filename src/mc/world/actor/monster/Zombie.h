@@ -24,7 +24,7 @@ public:
         Default   = 0,
         Villager  = 1,
         Husk      = 2,
-        Pigzombie = 3,
+        PigZombie = 3,
         Drowned   = 4,
     };
 

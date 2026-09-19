@@ -62,10 +62,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ::ItemStackNetResult
     handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
-#endif
 
     MCAPI void postRequest(bool wasSuccess);
     // NOLINTEND
@@ -88,5 +86,11 @@ public:
     MCFOLD ::Recipes const* $_getLevelRecipes() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class Mob;
+struct GoalId;
 struct SendEventData;
 // clang-format on
 
@@ -47,6 +48,24 @@ public:
     virtual void stop() /*override*/;
 
     virtual void tick() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SendEventGoal(
+        ::Mob&                                mob,
+        ::std::string                         name,
+        ::GoalId const&                       goalId,
+        ::std::vector<::SendEventData> const& spellTypes
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::std::vector<::SendEventData> const& spellTypes);
     // NOLINTEND
 
 public:

@@ -43,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCAPI void $reset();
 
     MCAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,

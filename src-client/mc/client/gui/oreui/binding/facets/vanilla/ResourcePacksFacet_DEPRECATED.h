@@ -319,7 +319,7 @@ public:
 
     MCAPI float getImportProgress() const;
 
-    MCAPI ::OreUI::FacetResourcePackId const& getLastactivatedPackId() const;
+    MCFOLD ::OreUI::FacetResourcePackId const& getLastactivatedPackId() const;
 
     MCFOLD ::OreUI::FacetResourcePackId const& getMarketplacePackId() const;
 

@@ -9,8 +9,8 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+class DebuggerDiagnosticsPublishToFile;
 class IScriptDebugger;
-class ScriptDiagnosticsPublishToFile;
 // clang-format on
 
 class ServerScriptDebugCommand : public ::ScriptDebugCommand {
@@ -34,7 +34,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScriptDiagnosticsPublishToFile*& sDiagnosticsPublishToFile();
+    MCAPI static ::DebuggerDiagnosticsPublishToFile*& sDiagnosticsPublishToFile();
 
     MCAPI static ::std::optional<ushort>& sForcedPort();
 

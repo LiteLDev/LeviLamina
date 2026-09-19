@@ -362,6 +362,28 @@ public:
     // NOLINTEND
 
 public:
+    void registerButtonPressedHandler(
+        uint                                                                   buttonId,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
+    ) {
+        // A "press" is entering Down, so it must not already have been Down.
+        registerButtonEventHandler(
+            buttonId,
+            ::ButtonState::Down,
+            PreviousButtonStateRequirement::NotDown,
+            std::move(callback)
+        );
+    }
+
+    [[nodiscard]] uint _getNameId(::std::string const& name) const {
+        uint hash = 0x811C9DC5u;
+        for (char const c : name) {
+            hash = (hash ^ c) * 0x01000193u;
+        }
+        return hash;
+    }
+
+public:
     // prevent constructor by default
     ScreenController();
 

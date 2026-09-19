@@ -47,6 +47,8 @@ public:
 
     constexpr bool operator==(typeid_t const& other) const { return value == other.value; }
 
+    constexpr bool operator<(typeid_t const& other) const { return value < other.value; }
+
     static std::atomic_ushort& _getCounter() {
 
         // MCAPI // error C2201

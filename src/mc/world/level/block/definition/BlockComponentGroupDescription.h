@@ -62,6 +62,9 @@ public:
     // NOLINTEND
 
 public:
+    LLNDAPI BlockComponentDescription* getComponentDescription(::std::string const& name) const;
+
+public:
     // prevent constructor by default
     BlockComponentGroupDescription(BlockComponentGroupDescription const&);
     BlockComponentGroupDescription();

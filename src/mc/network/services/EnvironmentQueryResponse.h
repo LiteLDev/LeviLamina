@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+namespace Bedrock::Services::discovery::model { struct EnvironmentQueryResponseData; }
 // clang-format on
 
 namespace Bedrock::Services {
@@ -13,8 +13,8 @@ struct EnvironmentQueryResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk1fb873;
-    ::ll::UntypedStorage<8, 16> mUnk891ef2;
+    ::ll::UntypedStorage<8, 64> mUnkd85b5a;
+    ::ll::UntypedStorage<8, 64> mUnkd6b7df;
     // NOLINTEND
 
 public:
@@ -26,13 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit EnvironmentQueryResponse(
+        ::Bedrock::Services::discovery::model::EnvironmentQueryResponseData&& responseData
+    );
+
 #ifdef LL_PLAT_C
     MCNAPI ::std::string GetDefaultEnvironment() const;
 
     MCNAPI ::std::string GetPropertyValue(::std::string const& serviceName, ::std::string const& propertyKey) const;
 #endif
 
-    MCNAPI void fromJsonShared(::Json::Value const& jsonValue);
+    MCNAPI ::std::unordered_map<::std::string, ::std::string> const*
+    GetServiceEnvironmentProperties(::std::string const& serviceName, ::std::string const& environmentName) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::Services::discovery::model::EnvironmentQueryResponseData&& responseData);
     // NOLINTEND
 };
 

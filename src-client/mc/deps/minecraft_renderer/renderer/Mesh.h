@@ -46,7 +46,7 @@ public:
     ::ll::TypedStorage<1, 1, ::mce::PrimitiveMode>                                    mPrimitiveMode;
     ::ll::TypedStorage<1, 1, ::mce::MeshDebugString>                                  mDebugName;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::mce::BufferResourceService>>          mBufferResourceService;
-    ::ll::TypedStorage<8, 336, ::mce::MeshData>                                       mMeshData;
+    ::ll::TypedStorage<8, 352, ::mce::MeshData>                                       mMeshData;
     ::ll::TypedStorage<
         8,
         24,

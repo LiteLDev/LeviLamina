@@ -77,6 +77,10 @@ public:
         ::std::function<void(::StackRefResult<::Editor::Prefabs::PrefabDBTemplateStructureRef>)> callback
     );
 
+    MCNAPI void forEachStructureRef(
+        ::std::function<void(::StackRefResult<::Editor::Prefabs::PrefabDBTemplateStructureRef const>)> callback
+    ) const;
+
     MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBTemplateStructureRef>
     getStructureRef(::mce::UUID const& prefabStructureId);
 

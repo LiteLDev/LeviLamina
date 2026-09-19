@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct PackExportFileEntry; }
 namespace Editor::Network { class PackExportWriteFilesPayload; }
 // clang-format on
@@ -21,10 +20,6 @@ namespace Editor::Services {
 class ServerEditorPlayerPackExportService : public ::Editor::Services::IEditorService,
                                             public ::Editor::ServerEditorPlayerPackExportServiceProvider,
                                             public ::Editor::Services::PayloadStoreHelper {
-public:
-    // prevent constructor by default
-    ServerEditorPlayerPackExportService();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,8 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ServerEditorPlayerPackExportService(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI void _onWriteFilesPayloadReceived(::Editor::Network::PackExportWriteFilesPayload const& payload);
     // NOLINTEND
 
@@ -56,12 +49,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& ServiceName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

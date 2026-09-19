@@ -20,7 +20,7 @@ struct BlockDefinitionDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 472, ::SharedTypes::v1_26_20::BlockDefinition::Description>                    mDescription;
+    ::ll::TypedStorage<8, 496, ::SharedTypes::v1_26_20::BlockDefinition::Description>                    mDescription;
     ::ll::TypedStorage<8, 48, ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents>                 mComponents;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_20::BlockDefinition::BlockPermutation>> mPermutations;
     ::ll::TypedStorage<
@@ -32,9 +32,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockDefinitionDocument();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDefinitionDocument();
+    MCAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
     MCAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
 
@@ -43,6 +47,8 @@ public:
 
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&) const;
 
     MCAPI ~BlockDefinitionDocument();
     // NOLINTEND
@@ -62,7 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
     // NOLINTEND

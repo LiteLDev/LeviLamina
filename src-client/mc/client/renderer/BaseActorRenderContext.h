@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/HistoricalFrameTimes.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/minecraft_renderer/resources/OffscreenCaptureDescription.h"
 #include "mc/platform/brstd/copyable_function.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +41,17 @@ public:
     // clang-format on
 
     // BaseActorRenderContext inner types define
-    struct Impl {};
+    struct Impl {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 40, ::OffscreenCaptureDescription> mOffscreenCaptureDescription;
+        ::ll::TypedStorage<4, 12, ::Vec3>                        mCameraTargetPosition;
+        ::ll::TypedStorage<4, 12, ::Vec3>                        mCameraPosition;
+        ::ll::TypedStorage<4, 24, ::AABB>                        mWorldClipRegion;
+        ::ll::TypedStorage<8, 488, ::HistoricalFrameTimes>       mHistoricalFrameTimes;
+        // NOLINTEND
+    };
 
     using ResetToken = ::gsl::final_action<::brstd::copyable_function<void()>>;
 

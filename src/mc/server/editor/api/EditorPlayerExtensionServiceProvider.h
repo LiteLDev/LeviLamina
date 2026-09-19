@@ -26,6 +26,8 @@ public:
     virtual ::Scripting::Result_deprecated<void>
     startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) = 0;
 
+    virtual ::Scripting::Result_deprecated<void> initiateSessionLifecycle() = 0;
+
     virtual ::Scripting::Result_deprecated<void> stopExtensions() = 0;
 
     virtual ::Scripting::Result_deprecated<void>

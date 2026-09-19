@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActor;
-class Container;
 class ContainerScreenContext;
 class ItemStack;
 // clang-format on
@@ -51,10 +50,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::BlockActor* _getBlockEntity();
-
-#ifdef LL_PLAT_C
-    MCAPI ::Container* _getRawContainer();
-#endif
     // NOLINTEND
 
 public:

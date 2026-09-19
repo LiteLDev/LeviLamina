@@ -15,6 +15,7 @@
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/options/OptionsObserver.h"
 #include "mc/client/renderer/texture/TextureAtlasStatus.h"
+#include "mc/client/services/layout/ILayoutServiceProvider.h"
 #include "mc/client/social/JoinGameStatus.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
@@ -83,6 +84,7 @@ class IEntitlementManager;
 class IExternalServerFile;
 class IGameModuleApp;
 class IGameModuleShared;
+class ILayoutServiceCache;
 class ILevelListCache;
 class IMinecraftEventing;
 class IOfferRepository;
@@ -94,6 +96,8 @@ class IUIDefRepository;
 class IUIRepository;
 class ItemRegistryRef;
 class LatencyGraphDisplay;
+class LayoutRefreshEventSource;
+class LayoutService;
 class LevelDbEnv;
 class LevelLoader;
 class LevelSettings;
@@ -162,6 +166,7 @@ struct RealmTransferActionFunc;
 struct ScreenshotOptions;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
+namespace Bedrock::Profiling { class ProfilingOrchestrator; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
@@ -200,6 +205,7 @@ namespace mce { class UUID; }
 // clang-format on
 
 class MinecraftGame : public ::IMinecraftGame,
+                      public ::ILayoutServiceProvider,
                       public ::App,
                       public ::LevelListener,
                       public ::ResourcePackListener,
@@ -211,6 +217,7 @@ class MinecraftGame : public ::IMinecraftGame,
 public:
     // MinecraftGame inner types declare
     // clang-format off
+    class ClientInterface;
     struct InitContext;
     struct FrameGapImpl;
     // clang-format on
@@ -241,11 +248,33 @@ public:
         Count         = 3,
     };
 
+    class ClientInterface {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk4882be;
+        ::ll::UntypedStorage<8, 16> mUnkf28199;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ClientInterface& operator=(ClientInterface const&);
+        ClientInterface(ClientInterface const&);
+        ClientInterface();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ::MinecraftGame::ClientInterface&
+        operator=(::gsl::not_null<::std::shared_ptr<::ClientInstance>> clientInstance);
+        // NOLINTEND
+    };
+
     struct InitContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk1f2a2b;
+        ::ll::UntypedStorage<8, 32> mUnka8b3b6;
         ::ll::UntypedStorage<8, 16> mUnkc9621b;
         // NOLINTEND
 
@@ -273,325 +302,327 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk31cb40;
-    ::ll::UntypedStorage<8, 64>  mUnk26362f;
-    ::ll::UntypedStorage<8, 8>   mUnk5833c3;
-    ::ll::UntypedStorage<8, 8>   mUnk707e20;
-    ::ll::UntypedStorage<8, 8>   mUnk77bae9;
-    ::ll::UntypedStorage<8, 8>   mUnk39dbf1;
-    ::ll::UntypedStorage<8, 8>   mUnkb9a1e2;
-    ::ll::UntypedStorage<8, 8>   mUnka617fc;
-    ::ll::UntypedStorage<8, 8>   mUnk847dc8;
-    ::ll::UntypedStorage<8, 8>   mUnk1a8ba7;
-    ::ll::UntypedStorage<8, 8>   mUnk8c1a51;
-    ::ll::UntypedStorage<8, 8>   mUnkdcd0a8;
-    ::ll::UntypedStorage<8, 8>   mUnk27a9f1;
-    ::ll::UntypedStorage<8, 8>   mUnk6449d7;
-    ::ll::UntypedStorage<8, 8>   mUnk18dd91;
-    ::ll::UntypedStorage<8, 8>   mUnke812cf;
-    ::ll::UntypedStorage<8, 8>   mUnk102e50;
-    ::ll::UntypedStorage<8, 8>   mUnkd0fa73;
-    ::ll::UntypedStorage<8, 8>   mUnk30cf6e;
-    ::ll::UntypedStorage<8, 8>   mUnkf2bb2d;
-    ::ll::UntypedStorage<1, 1>   mUnk73dd14;
-    ::ll::UntypedStorage<1, 1>   mUnk8622d0;
-    ::ll::UntypedStorage<8, 16>  mUnke052b6;
-    ::ll::UntypedStorage<8, 8>   mUnk79ddba;
-    ::ll::UntypedStorage<8, 8>   mUnkf926be;
-    ::ll::UntypedStorage<8, 8>   mUnk37afa1;
-    ::ll::UntypedStorage<8, 8>   mUnk68dc1e;
-    ::ll::UntypedStorage<8, 16>  mUnka2869f;
-    ::ll::UntypedStorage<8, 8>   mUnkde38fc;
-    ::ll::UntypedStorage<8, 8>   mUnk9a183a;
-    ::ll::UntypedStorage<8, 8>   mUnk46def3;
-    ::ll::UntypedStorage<8, 8>   mUnkc587de;
-    ::ll::UntypedStorage<8, 8>   mUnk4a17b1;
-    ::ll::UntypedStorage<8, 8>   mUnk812bde;
-    ::ll::UntypedStorage<8, 32>  mUnkb501e6;
-    ::ll::UntypedStorage<8, 8>   mUnk8f8079;
-    ::ll::UntypedStorage<8, 8>   mUnkcd6826;
-    ::ll::UntypedStorage<8, 16>  mUnk5849e3;
-    ::ll::UntypedStorage<8, 16>  mUnk336443;
-    ::ll::UntypedStorage<1, 1>   mUnkb6d61e;
-    ::ll::UntypedStorage<8, 16>  mUnkd61d74;
-    ::ll::UntypedStorage<4, 4>   mUnkda7647;
-    ::ll::UntypedStorage<4, 4>   mUnk730c95;
-    ::ll::UntypedStorage<1, 1>   mUnk391e21;
-    ::ll::UntypedStorage<4, 4>   mUnk859534;
-    ::ll::UntypedStorage<8, 8>   mUnk8b857f;
-    ::ll::UntypedStorage<8, 8>   mUnkeb3d6b;
-    ::ll::UntypedStorage<8, 16>  mUnk8598e2;
-    ::ll::UntypedStorage<8, 32>  mUnk29d8a4;
-    ::ll::UntypedStorage<8, 16>  mUnk8120e2;
-    ::ll::UntypedStorage<1, 1>   mUnkbf9e1f;
-    ::ll::UntypedStorage<1, 1>   mUnkf1c360;
-    ::ll::UntypedStorage<8, 8>   mUnkcc0494;
-    ::ll::UntypedStorage<8, 8>   mUnkc32677;
-    ::ll::UntypedStorage<8, 8>   mUnkfb38cb;
-    ::ll::UntypedStorage<1, 1>   mUnk2d6ae9;
-    ::ll::UntypedStorage<1, 1>   mUnk549470;
-    ::ll::UntypedStorage<4, 4>   mUnkdaeaa4;
-    ::ll::UntypedStorage<4, 4>   mUnk978a98;
-    ::ll::UntypedStorage<1, 1>   mUnk7186c4;
-    ::ll::UntypedStorage<1, 1>   mUnkeeb15c;
-    ::ll::UntypedStorage<1, 1>   mUnk21487c;
-    ::ll::UntypedStorage<1, 1>   mUnk7f0094;
-    ::ll::UntypedStorage<1, 1>   mUnk1f7e9d;
-    ::ll::UntypedStorage<1, 1>   mUnk71b5c7;
-    ::ll::UntypedStorage<8, 32>  mUnk570845;
-    ::ll::UntypedStorage<4, 4>   mUnk785de7;
-    ::ll::UntypedStorage<8, 416> mUnke04be5;
-    ::ll::UntypedStorage<1, 1>   mUnk19eccc;
-    ::ll::UntypedStorage<4, 4>   mUnk97e7f8;
-    ::ll::UntypedStorage<8, 16>  mUnk61cb9f;
-    ::ll::UntypedStorage<1, 1>   mUnk3ebcf8;
-    ::ll::UntypedStorage<1, 1>   mUnk39e2bc;
-    ::ll::UntypedStorage<1, 1>   mUnked6187;
-    ::ll::UntypedStorage<1, 1>   mUnk9e21e6;
-    ::ll::UntypedStorage<1, 1>   mUnkfed6cd;
-    ::ll::UntypedStorage<1, 1>   mUnk41cbb8;
-    ::ll::UntypedStorage<4, 4>   mUnk9b7c5f;
-    ::ll::UntypedStorage<1, 1>   mUnkc8c391;
-    ::ll::UntypedStorage<1, 1>   mUnka7b938;
-    ::ll::UntypedStorage<1, 1>   mUnk5907ad;
-    ::ll::UntypedStorage<1, 1>   mUnk6f26ef;
-    ::ll::UntypedStorage<8, 56>  mUnk2fd9a7;
-    ::ll::UntypedStorage<8, 8>   mUnke44711;
-    ::ll::UntypedStorage<8, 80>  mUnk27b53a;
-    ::ll::UntypedStorage<8, 8>   mUnk3ee8f3;
-    ::ll::UntypedStorage<8, 16>  mUnk5d44d0;
-    ::ll::UntypedStorage<1, 1>   mUnk64a982;
-    ::ll::UntypedStorage<1, 1>   mUnk456e9b;
-    ::ll::UntypedStorage<1, 1>   mUnkd57772;
-    ::ll::UntypedStorage<1, 1>   mUnk780cef;
-    ::ll::UntypedStorage<8, 8>   mUnkbbeca7;
-    ::ll::UntypedStorage<8, 8>   mUnk523cee;
-    ::ll::UntypedStorage<8, 40>  mUnka60eca;
-    ::ll::UntypedStorage<8, 32>  mUnk78c4dd;
-    ::ll::UntypedStorage<1, 1>   mUnka2f794;
-    ::ll::UntypedStorage<1, 1>   mUnk90b4e5;
-    ::ll::UntypedStorage<8, 16>  mUnk3fa9bf;
-    ::ll::UntypedStorage<8, 8>   mUnkfa9b14;
-    ::ll::UntypedStorage<8, 8>   mUnk975fa0;
-    ::ll::UntypedStorage<8, 8>   mUnkc95a9f;
-    ::ll::UntypedStorage<8, 16>  mUnk44f519;
-    ::ll::UntypedStorage<8, 8>   mUnka426aa;
-    ::ll::UntypedStorage<8, 16>  mUnkd412af;
-    ::ll::UntypedStorage<8, 16>  mUnk333c36;
-    ::ll::UntypedStorage<8, 8>   mUnkab5b49;
-    ::ll::UntypedStorage<8, 8>   mUnk2d070e;
-    ::ll::UntypedStorage<8, 8>   mUnkffc4a2;
-    ::ll::UntypedStorage<8, 8>   mUnk87a54d;
-    ::ll::UntypedStorage<8, 8>   mUnk80cd0e;
-    ::ll::UntypedStorage<8, 8>   mUnk692520;
-    ::ll::UntypedStorage<8, 8>   mUnkb8db74;
-    ::ll::UntypedStorage<8, 8>   mUnkb69251;
-    ::ll::UntypedStorage<8, 8>   mUnk138dbc;
-    ::ll::UntypedStorage<8, 8>   mUnk125782;
-    ::ll::UntypedStorage<8, 8>   mUnk6585d8;
-    ::ll::UntypedStorage<8, 8>   mUnk116bf2;
-    ::ll::UntypedStorage<8, 8>   mUnkf25a9b;
-    ::ll::UntypedStorage<8, 8>   mUnk75183c;
-    ::ll::UntypedStorage<8, 8>   mUnk984c5b;
-    ::ll::UntypedStorage<8, 16>  mUnk795ad2;
-    ::ll::UntypedStorage<8, 8>   mUnkd9da77;
-    ::ll::UntypedStorage<8, 16>  mUnkcc1ee6;
-    ::ll::UntypedStorage<8, 8>   mUnk291774;
-    ::ll::UntypedStorage<8, 8>   mUnk8f0421;
-    ::ll::UntypedStorage<8, 16>  mUnk9ac038;
-    ::ll::UntypedStorage<8, 64>  mUnk33501c;
-    ::ll::UntypedStorage<8, 8>   mUnk95a9d2;
-    ::ll::UntypedStorage<8, 8>   mUnk78243e;
-    ::ll::UntypedStorage<8, 8>   mUnkb0966b;
-    ::ll::UntypedStorage<8, 8>   mUnke4850d;
-    ::ll::UntypedStorage<8, 8>   mUnk949250;
-    ::ll::UntypedStorage<8, 8>   mUnk94c9dc;
-    ::ll::UntypedStorage<8, 8>   mUnk56924c;
-    ::ll::UntypedStorage<8, 8>   mUnk7c70a9;
-    ::ll::UntypedStorage<8, 8>   mUnka6f4b7;
-    ::ll::UntypedStorage<8, 8>   mUnk4c8c20;
-    ::ll::UntypedStorage<8, 16>  mUnkde6f9f;
-    ::ll::UntypedStorage<8, 16>  mUnk51caaa;
-    ::ll::UntypedStorage<8, 16>  mUnk88dd50;
-    ::ll::UntypedStorage<8, 8>   mUnkf13f9f;
-    ::ll::UntypedStorage<8, 8>   mUnk46f031;
-    ::ll::UntypedStorage<8, 8>   mUnkad7e31;
-    ::ll::UntypedStorage<8, 8>   mUnk41ce20;
-    ::ll::UntypedStorage<8, 8>   mUnk5cf030;
-    ::ll::UntypedStorage<8, 8>   mUnkb9503e;
-    ::ll::UntypedStorage<8, 8>   mUnk9c023b;
-    ::ll::UntypedStorage<8, 8>   mUnk5315ca;
-    ::ll::UntypedStorage<8, 8>   mUnk276668;
-    ::ll::UntypedStorage<8, 8>   mUnk3ec43f;
-    ::ll::UntypedStorage<8, 8>   mUnkb5e444;
-    ::ll::UntypedStorage<8, 16>  mUnk36c9d2;
-    ::ll::UntypedStorage<8, 8>   mUnk91e453;
-    ::ll::UntypedStorage<8, 8>   mUnk56d657;
-    ::ll::UntypedStorage<8, 8>   mUnkc1e9f3;
-    ::ll::UntypedStorage<8, 48>  mUnka02940;
-    ::ll::UntypedStorage<8, 16>  mUnk748223;
-    ::ll::UntypedStorage<8, 16>  mUnkec6beb;
-    ::ll::UntypedStorage<8, 8>   mUnk55dcf8;
-    ::ll::UntypedStorage<8, 8>   mUnk585275;
-    ::ll::UntypedStorage<8, 16>  mUnk5f5935;
-    ::ll::UntypedStorage<8, 8>   mUnkd12853;
-    ::ll::UntypedStorage<8, 8>   mUnk44d437;
-    ::ll::UntypedStorage<8, 8>   mUnk13a102;
-    ::ll::UntypedStorage<8, 16>  mUnk4877d7;
-    ::ll::UntypedStorage<8, 8>   mUnkd72bcd;
-    ::ll::UntypedStorage<8, 8>   mUnk6c5fec;
-    ::ll::UntypedStorage<8, 16>  mUnk2b5c1a;
-    ::ll::UntypedStorage<8, 16>  mUnkdaad93;
-    ::ll::UntypedStorage<8, 8>   mUnk2a83b2;
-    ::ll::UntypedStorage<8, 8>   mUnkd10826;
-    ::ll::UntypedStorage<8, 8>   mUnk64ddee;
-    ::ll::UntypedStorage<8, 64>  mUnkd24a7a;
-    ::ll::UntypedStorage<8, 8>   mUnkec79fd;
-    ::ll::UntypedStorage<8, 768> mUnk1ff378;
-    ::ll::UntypedStorage<8, 8>   mUnk74222f;
-    ::ll::UntypedStorage<8, 8>   mUnk468478;
-    ::ll::UntypedStorage<8, 8>   mUnkea13b7;
-    ::ll::UntypedStorage<8, 936> mUnk9947a0;
-    ::ll::UntypedStorage<8, 16>  mUnkbf42d0;
-    ::ll::UntypedStorage<8, 16>  mUnk469d3c;
-    ::ll::UntypedStorage<8, 8>   mUnkf245c7;
-    ::ll::UntypedStorage<8, 64>  mUnk30b039;
-    ::ll::UntypedStorage<8, 8>   mUnk6906a6;
-    ::ll::UntypedStorage<8, 8>   mUnka198d7;
-    ::ll::UntypedStorage<8, 64>  mUnk63da8b;
-    ::ll::UntypedStorage<8, 64>  mUnk19e15f;
-    ::ll::UntypedStorage<8, 8>   mUnk68bd55;
-    ::ll::UntypedStorage<8, 8>   mUnkd56e6e;
-    ::ll::UntypedStorage<8, 64>  mUnk6331f9;
-    ::ll::UntypedStorage<8, 64>  mUnkfb3c1e;
-    ::ll::UntypedStorage<8, 16>  mUnkc74988;
-    ::ll::UntypedStorage<8, 8>   mUnk4764de;
-    ::ll::UntypedStorage<8, 8>   mUnk2db41b;
-    ::ll::UntypedStorage<8, 64>  mUnk4282e8;
-    ::ll::UntypedStorage<8, 8>   mUnk313b8d;
-    ::ll::UntypedStorage<8, 16>  mUnka4d1d6;
-    ::ll::UntypedStorage<8, 16>  mUnk4a4bbd;
-    ::ll::UntypedStorage<8, 8>   mUnkb98e22;
-    ::ll::UntypedStorage<8, 64>  mUnk358786;
-    ::ll::UntypedStorage<8, 8>   mUnk633776;
-    ::ll::UntypedStorage<8, 8>   mUnkc61c3a;
-    ::ll::UntypedStorage<8, 8>   mUnk910337;
-    ::ll::UntypedStorage<8, 8>   mUnkd6ff96;
-    ::ll::UntypedStorage<8, 8>   mUnk51e772;
-    ::ll::UntypedStorage<8, 8>   mUnkf2c3d8;
-    ::ll::UntypedStorage<8, 64>  mUnkc5fc6f;
-    ::ll::UntypedStorage<8, 8>   mUnk7e94f8;
-    ::ll::UntypedStorage<8, 8>   mUnkf60a71;
-    ::ll::UntypedStorage<8, 16>  mUnk9f4932;
-    ::ll::UntypedStorage<8, 8>   mUnk93ccfd;
-    ::ll::UntypedStorage<1, 1>   mUnk4d836f;
-    ::ll::UntypedStorage<8, 16>  mUnk626810;
-    ::ll::UntypedStorage<8, 8>   mUnkce7b8c;
-    ::ll::UntypedStorage<8, 8>   mUnka05418;
-    ::ll::UntypedStorage<8, 16>  mUnkfb7cce;
-    ::ll::UntypedStorage<8, 8>   mUnk17a5e5;
-    ::ll::UntypedStorage<8, 8>   mUnk1d082c;
-    ::ll::UntypedStorage<8, 8>   mUnk721c07;
-    ::ll::UntypedStorage<8, 8>   mUnk75c011;
-    ::ll::UntypedStorage<8, 8>   mUnk662066;
-    ::ll::UntypedStorage<8, 8>   mUnka63939;
-    ::ll::UntypedStorage<8, 8>   mUnkd68cd6;
-    ::ll::UntypedStorage<8, 16>  mUnkd0c917;
-    ::ll::UntypedStorage<8, 8>   mUnka64c85;
-    ::ll::UntypedStorage<8, 8>   mUnk31922c;
-    ::ll::UntypedStorage<8, 8>   mUnkb92250;
-    ::ll::UntypedStorage<8, 8>   mUnkc46d8a;
-    ::ll::UntypedStorage<8, 8>   mUnk3dc5d4;
-    ::ll::UntypedStorage<8, 8>   mUnk6622a0;
-    ::ll::UntypedStorage<8, 16>  mUnke27718;
-    ::ll::UntypedStorage<8, 16>  mUnk88d837;
-    ::ll::UntypedStorage<8, 16>  mUnk9599c5;
-    ::ll::UntypedStorage<8, 8>   mUnk1498bc;
-    ::ll::UntypedStorage<8, 16>  mUnkc84d4d;
-    ::ll::UntypedStorage<8, 8>   mUnkeee60b;
-    ::ll::UntypedStorage<8, 8>   mUnk7757ed;
-    ::ll::UntypedStorage<8, 8>   mUnk8b5a69;
-    ::ll::UntypedStorage<8, 16>  mUnk8a114f;
-    ::ll::UntypedStorage<8, 8>   mUnk2c648f;
-    ::ll::UntypedStorage<8, 8>   mUnkef66f4;
-    ::ll::UntypedStorage<8, 8>   mUnk5cb7cc;
-    ::ll::UntypedStorage<8, 456> mUnke5c301;
-    ::ll::UntypedStorage<8, 8>   mUnkd18639;
-    ::ll::UntypedStorage<8, 8>   mUnk67d5dd;
-    ::ll::UntypedStorage<8, 8>   mUnkc0bd78;
-    ::ll::UntypedStorage<8, 8>   mUnk8ac119;
-    ::ll::UntypedStorage<8, 16>  mUnkddfaa0;
-    ::ll::UntypedStorage<8, 8>   mUnk82663e;
-    ::ll::UntypedStorage<8, 8>   mUnkb6a170;
-    ::ll::UntypedStorage<8, 8>   mUnk8673bc;
-    ::ll::UntypedStorage<8, 8>   mUnk1187d6;
-    ::ll::UntypedStorage<8, 8>   mUnk807b24;
-    ::ll::UntypedStorage<8, 8>   mUnke45c86;
-    ::ll::UntypedStorage<8, 8>   mUnk1cf921;
-    ::ll::UntypedStorage<8, 8>   mUnk70c996;
-    ::ll::UntypedStorage<8, 8>   mUnk89400e;
-    ::ll::UntypedStorage<8, 8>   mUnk946503;
-    ::ll::UntypedStorage<8, 8>   mUnk781ed2;
-    ::ll::UntypedStorage<8, 8>   mUnk871dc6;
-    ::ll::UntypedStorage<8, 8>   mUnkf2f2ba;
-    ::ll::UntypedStorage<8, 8>   mUnkde4441;
-    ::ll::UntypedStorage<8, 8>   mUnk8f12bc;
-    ::ll::UntypedStorage<8, 8>   mUnkc2e1c6;
-    ::ll::UntypedStorage<8, 8>   mUnk3ed686;
-    ::ll::UntypedStorage<8, 8>   mUnk45b4b1;
-    ::ll::UntypedStorage<8, 8>   mUnk777677;
-    ::ll::UntypedStorage<8, 8>   mUnk1d6e6b;
-    ::ll::UntypedStorage<8, 8>   mUnk7fca88;
-    ::ll::UntypedStorage<8, 8>   mUnk71d6b7;
-    ::ll::UntypedStorage<8, 8>   mUnk8d4567;
-    ::ll::UntypedStorage<8, 8>   mUnkfdb8ca;
-    ::ll::UntypedStorage<8, 8>   mUnkf68a87;
-    ::ll::UntypedStorage<8, 8>   mUnk45501b;
-    ::ll::UntypedStorage<8, 8>   mUnk10c987;
-    ::ll::UntypedStorage<8, 48>  mUnk3703bb;
-    ::ll::UntypedStorage<8, 8>   mUnkdd5b99;
-    ::ll::UntypedStorage<8, 16>  mUnk1c3779;
-    ::ll::UntypedStorage<8, 16>  mUnk4b4e23;
-    ::ll::UntypedStorage<8, 24>  mUnk698964;
-    ::ll::UntypedStorage<8, 24>  mUnk8d1118;
-    ::ll::UntypedStorage<8, 16>  mUnk99fad5;
-    ::ll::UntypedStorage<8, 24>  mUnk4f11c0;
-    ::ll::UntypedStorage<8, 24>  mUnk205f41;
-    ::ll::UntypedStorage<8, 8>   mUnk952a89;
-    ::ll::UntypedStorage<8, 8>   mUnk2ac62b;
-    ::ll::UntypedStorage<8, 8>   mUnk185e8d;
-    ::ll::UntypedStorage<8, 8>   mUnk94b524;
-    ::ll::UntypedStorage<8, 8>   mUnk308f25;
-    ::ll::UntypedStorage<8, 8>   mUnk5dd8f3;
-    ::ll::UntypedStorage<8, 8>   mUnkceb4ab;
-    ::ll::UntypedStorage<8, 8>   mUnk50a24d;
-    ::ll::UntypedStorage<8, 16>  mUnk976824;
-    ::ll::UntypedStorage<8, 8>   mUnkcd32cf;
-    ::ll::UntypedStorage<8, 8>   mUnk32d240;
-    ::ll::UntypedStorage<8, 16>  mUnkaa8c49;
-    ::ll::UntypedStorage<8, 872> mUnk6546c2;
-    ::ll::UntypedStorage<8, 16>  mUnka3a452;
-    ::ll::UntypedStorage<8, 8>   mUnk7f0a19;
-    ::ll::UntypedStorage<8, 8>   mUnk93ada3;
-    ::ll::UntypedStorage<8, 8>   mUnk67f34e;
-    ::ll::UntypedStorage<8, 8>   mUnkc456b9;
-    ::ll::UntypedStorage<8, 8>   mUnk804e62;
-    ::ll::UntypedStorage<8, 8>   mUnk92ee4c;
-    ::ll::UntypedStorage<8, 8>   mUnke4e7c9;
-    ::ll::UntypedStorage<8, 8>   mUnk5e4634;
-    ::ll::UntypedStorage<8, 64>  mUnk12c89f;
-    ::ll::UntypedStorage<8, 16>  mUnk42b15f;
-    ::ll::UntypedStorage<8, 16>  mUnka8e328;
-    ::ll::UntypedStorage<8, 24>  mUnkba1560;
-    ::ll::UntypedStorage<8, 16>  mUnk3bcf80;
-    ::ll::UntypedStorage<8, 16>  mUnka14281;
-    ::ll::UntypedStorage<1, 1>   mUnkd46ea8;
-    ::ll::UntypedStorage<8, 8>   mUnk205ada;
-    ::ll::UntypedStorage<8, 16>  mUnk41bdf3;
-    ::ll::UntypedStorage<8, 16>  mUnkad2805;
-    ::ll::UntypedStorage<8, 16>  mUnk6b22bf;
-    ::ll::UntypedStorage<8, 64>  mUnkf160e9;
-    ::ll::UntypedStorage<8, 64>  mUnk19d968;
+    ::ll::UntypedStorage<8, 16>   mUnk31cb40;
+    ::ll::UntypedStorage<8, 64>   mUnk26362f;
+    ::ll::UntypedStorage<8, 8>    mUnk5833c3;
+    ::ll::UntypedStorage<8, 8>    mUnk707e20;
+    ::ll::UntypedStorage<8, 8>    mUnk77bae9;
+    ::ll::UntypedStorage<8, 8>    mUnk39dbf1;
+    ::ll::UntypedStorage<8, 8>    mUnkb9a1e2;
+    ::ll::UntypedStorage<8, 8>    mUnka617fc;
+    ::ll::UntypedStorage<8, 8>    mUnk847dc8;
+    ::ll::UntypedStorage<8, 8>    mUnk1a8ba7;
+    ::ll::UntypedStorage<8, 8>    mUnk8c1a51;
+    ::ll::UntypedStorage<8, 8>    mUnkdcd0a8;
+    ::ll::UntypedStorage<8, 8>    mUnk27a9f1;
+    ::ll::UntypedStorage<8, 8>    mUnk6449d7;
+    ::ll::UntypedStorage<8, 8>    mUnk18dd91;
+    ::ll::UntypedStorage<8, 8>    mUnke812cf;
+    ::ll::UntypedStorage<8, 8>    mUnk102e50;
+    ::ll::UntypedStorage<8, 8>    mUnkd0fa73;
+    ::ll::UntypedStorage<8, 8>    mUnk30cf6e;
+    ::ll::UntypedStorage<8, 8>    mUnkf2bb2d;
+    ::ll::UntypedStorage<1, 1>    mUnk73dd14;
+    ::ll::UntypedStorage<1, 1>    mUnk8622d0;
+    ::ll::UntypedStorage<8, 16>   mUnke052b6;
+    ::ll::UntypedStorage<8, 8>    mUnk79ddba;
+    ::ll::UntypedStorage<8, 8>    mUnkf926be;
+    ::ll::UntypedStorage<8, 8>    mUnk37afa1;
+    ::ll::UntypedStorage<8, 8>    mUnk68dc1e;
+    ::ll::UntypedStorage<8, 16>   mUnka2869f;
+    ::ll::UntypedStorage<8, 8>    mUnkde38fc;
+    ::ll::UntypedStorage<8, 8>    mUnk9a183a;
+    ::ll::UntypedStorage<8, 8>    mUnk46def3;
+    ::ll::UntypedStorage<8, 8>    mUnkc587de;
+    ::ll::UntypedStorage<8, 8>    mUnk4a17b1;
+    ::ll::UntypedStorage<8, 8>    mUnk812bde;
+    ::ll::UntypedStorage<8, 32>   mUnkb501e6;
+    ::ll::UntypedStorage<8, 8>    mUnk8f8079;
+    ::ll::UntypedStorage<8, 8>    mUnkcd6826;
+    ::ll::UntypedStorage<8, 16>   mUnk5849e3;
+    ::ll::UntypedStorage<8, 16>   mUnk336443;
+    ::ll::UntypedStorage<1, 1>    mUnkb6d61e;
+    ::ll::UntypedStorage<8, 16>   mUnkd61d74;
+    ::ll::UntypedStorage<4, 4>    mUnkda7647;
+    ::ll::UntypedStorage<4, 4>    mUnk730c95;
+    ::ll::UntypedStorage<1, 1>    mUnk391e21;
+    ::ll::UntypedStorage<4, 4>    mUnk859534;
+    ::ll::UntypedStorage<8, 8>    mUnk8b857f;
+    ::ll::UntypedStorage<8, 8>    mUnkeb3d6b;
+    ::ll::UntypedStorage<8, 16>   mUnk8598e2;
+    ::ll::UntypedStorage<8, 32>   mUnk29d8a4;
+    ::ll::UntypedStorage<8, 16>   mUnk8120e2;
+    ::ll::UntypedStorage<1, 1>    mUnkbf9e1f;
+    ::ll::UntypedStorage<1, 1>    mUnkf1c360;
+    ::ll::UntypedStorage<8, 8>    mUnkcc0494;
+    ::ll::UntypedStorage<8, 8>    mUnkc32677;
+    ::ll::UntypedStorage<8, 8>    mUnkfb38cb;
+    ::ll::UntypedStorage<1, 1>    mUnk2d6ae9;
+    ::ll::UntypedStorage<1, 1>    mUnk549470;
+    ::ll::UntypedStorage<4, 4>    mUnkdaeaa4;
+    ::ll::UntypedStorage<4, 4>    mUnk978a98;
+    ::ll::UntypedStorage<1, 1>    mUnk7186c4;
+    ::ll::UntypedStorage<1, 1>    mUnkeeb15c;
+    ::ll::UntypedStorage<1, 1>    mUnk21487c;
+    ::ll::UntypedStorage<1, 1>    mUnk7f0094;
+    ::ll::UntypedStorage<1, 1>    mUnk1f7e9d;
+    ::ll::UntypedStorage<1, 1>    mUnk71b5c7;
+    ::ll::UntypedStorage<8, 32>   mUnk570845;
+    ::ll::UntypedStorage<4, 4>    mUnk785de7;
+    ::ll::UntypedStorage<8, 416>  mUnke04be5;
+    ::ll::UntypedStorage<1, 1>    mUnk19eccc;
+    ::ll::UntypedStorage<4, 4>    mUnk97e7f8;
+    ::ll::UntypedStorage<8, 16>   mUnk61cb9f;
+    ::ll::UntypedStorage<1, 1>    mUnk3ebcf8;
+    ::ll::UntypedStorage<1, 1>    mUnk39e2bc;
+    ::ll::UntypedStorage<1, 1>    mUnked6187;
+    ::ll::UntypedStorage<1, 1>    mUnk9e21e6;
+    ::ll::UntypedStorage<1, 1>    mUnkfed6cd;
+    ::ll::UntypedStorage<1, 1>    mUnk41cbb8;
+    ::ll::UntypedStorage<4, 4>    mUnk9b7c5f;
+    ::ll::UntypedStorage<1, 1>    mUnkc8c391;
+    ::ll::UntypedStorage<1, 1>    mUnka7b938;
+    ::ll::UntypedStorage<1, 1>    mUnk5907ad;
+    ::ll::UntypedStorage<1, 1>    mUnk6f26ef;
+    ::ll::UntypedStorage<8, 16>   mUnkedce32;
+    ::ll::UntypedStorage<8, 56>   mUnk2fd9a7;
+    ::ll::UntypedStorage<8, 8>    mUnke44711;
+    ::ll::UntypedStorage<8, 80>   mUnk27b53a;
+    ::ll::UntypedStorage<8, 8>    mUnk3ee8f3;
+    ::ll::UntypedStorage<8, 16>   mUnk5d44d0;
+    ::ll::UntypedStorage<1, 1>    mUnk64a982;
+    ::ll::UntypedStorage<1, 1>    mUnk456e9b;
+    ::ll::UntypedStorage<1, 1>    mUnkd57772;
+    ::ll::UntypedStorage<1, 1>    mUnk780cef;
+    ::ll::UntypedStorage<8, 8>    mUnkbbeca7;
+    ::ll::UntypedStorage<8, 8>    mUnk523cee;
+    ::ll::UntypedStorage<8, 40>   mUnka60eca;
+    ::ll::UntypedStorage<8, 32>   mUnk78c4dd;
+    ::ll::UntypedStorage<1, 1>    mUnka2f794;
+    ::ll::UntypedStorage<1, 1>    mUnk90b4e5;
+    ::ll::UntypedStorage<8, 16>   mUnk3fa9bf;
+    ::ll::UntypedStorage<8, 8>    mUnkfa9b14;
+    ::ll::UntypedStorage<8, 8>    mUnk975fa0;
+    ::ll::UntypedStorage<8, 8>    mUnkc95a9f;
+    ::ll::UntypedStorage<8, 16>   mUnk44f519;
+    ::ll::UntypedStorage<8, 8>    mUnka426aa;
+    ::ll::UntypedStorage<8, 16>   mUnkd412af;
+    ::ll::UntypedStorage<8, 16>   mUnk333c36;
+    ::ll::UntypedStorage<8, 8>    mUnkab5b49;
+    ::ll::UntypedStorage<8, 8>    mUnk2d070e;
+    ::ll::UntypedStorage<8, 8>    mUnkffc4a2;
+    ::ll::UntypedStorage<8, 8>    mUnk87a54d;
+    ::ll::UntypedStorage<8, 8>    mUnk80cd0e;
+    ::ll::UntypedStorage<8, 8>    mUnk692520;
+    ::ll::UntypedStorage<8, 8>    mUnkb8db74;
+    ::ll::UntypedStorage<8, 16>   mUnkb87b62;
+    ::ll::UntypedStorage<8, 8>    mUnkb69251;
+    ::ll::UntypedStorage<8, 8>    mUnk138dbc;
+    ::ll::UntypedStorage<8, 8>    mUnk125782;
+    ::ll::UntypedStorage<8, 8>    mUnk6585d8;
+    ::ll::UntypedStorage<8, 8>    mUnk116bf2;
+    ::ll::UntypedStorage<8, 8>    mUnkf25a9b;
+    ::ll::UntypedStorage<8, 8>    mUnk75183c;
+    ::ll::UntypedStorage<8, 8>    mUnk984c5b;
+    ::ll::UntypedStorage<8, 16>   mUnk795ad2;
+    ::ll::UntypedStorage<8, 8>    mUnkd9da77;
+    ::ll::UntypedStorage<8, 16>   mUnkcc1ee6;
+    ::ll::UntypedStorage<8, 8>    mUnk291774;
+    ::ll::UntypedStorage<8, 8>    mUnk8f0421;
+    ::ll::UntypedStorage<8, 16>   mUnk9ac038;
+    ::ll::UntypedStorage<8, 64>   mUnk33501c;
+    ::ll::UntypedStorage<8, 8>    mUnk95a9d2;
+    ::ll::UntypedStorage<8, 8>    mUnk78243e;
+    ::ll::UntypedStorage<8, 8>    mUnkb0966b;
+    ::ll::UntypedStorage<8, 8>    mUnke4850d;
+    ::ll::UntypedStorage<8, 8>    mUnk949250;
+    ::ll::UntypedStorage<8, 8>    mUnk94c9dc;
+    ::ll::UntypedStorage<8, 8>    mUnk56924c;
+    ::ll::UntypedStorage<8, 8>    mUnk7c70a9;
+    ::ll::UntypedStorage<8, 8>    mUnka6f4b7;
+    ::ll::UntypedStorage<8, 8>    mUnk4c8c20;
+    ::ll::UntypedStorage<8, 16>   mUnkde6f9f;
+    ::ll::UntypedStorage<8, 16>   mUnk51caaa;
+    ::ll::UntypedStorage<8, 16>   mUnk88dd50;
+    ::ll::UntypedStorage<8, 8>    mUnkf13f9f;
+    ::ll::UntypedStorage<8, 8>    mUnk46f031;
+    ::ll::UntypedStorage<8, 8>    mUnkad7e31;
+    ::ll::UntypedStorage<8, 8>    mUnk41ce20;
+    ::ll::UntypedStorage<8, 8>    mUnk5cf030;
+    ::ll::UntypedStorage<8, 8>    mUnkb9503e;
+    ::ll::UntypedStorage<8, 8>    mUnk9c023b;
+    ::ll::UntypedStorage<8, 8>    mUnk5315ca;
+    ::ll::UntypedStorage<8, 8>    mUnk276668;
+    ::ll::UntypedStorage<8, 8>    mUnk3ec43f;
+    ::ll::UntypedStorage<8, 8>    mUnkb5e444;
+    ::ll::UntypedStorage<8, 16>   mUnk36c9d2;
+    ::ll::UntypedStorage<8, 8>    mUnk91e453;
+    ::ll::UntypedStorage<8, 8>    mUnk56d657;
+    ::ll::UntypedStorage<8, 8>    mUnkc1e9f3;
+    ::ll::UntypedStorage<8, 48>   mUnka02940;
+    ::ll::UntypedStorage<8, 16>   mUnk748223;
+    ::ll::UntypedStorage<8, 16>   mUnkec6beb;
+    ::ll::UntypedStorage<8, 8>    mUnk55dcf8;
+    ::ll::UntypedStorage<8, 8>    mUnk585275;
+    ::ll::UntypedStorage<8, 16>   mUnk5f5935;
+    ::ll::UntypedStorage<8, 8>    mUnkd12853;
+    ::ll::UntypedStorage<8, 8>    mUnk44d437;
+    ::ll::UntypedStorage<8, 8>    mUnk98cc86;
+    ::ll::UntypedStorage<8, 8>    mUnk6725e8;
+    ::ll::UntypedStorage<8, 16>   mUnk7417c6;
+    ::ll::UntypedStorage<8, 8>    mUnkd72bcd;
+    ::ll::UntypedStorage<8, 8>    mUnk6c5fec;
+    ::ll::UntypedStorage<8, 16>   mUnk2b5c1a;
+    ::ll::UntypedStorage<8, 16>   mUnkdaad93;
+    ::ll::UntypedStorage<8, 8>    mUnk2a83b2;
+    ::ll::UntypedStorage<8, 8>    mUnkd10826;
+    ::ll::UntypedStorage<8, 8>    mUnk64ddee;
+    ::ll::UntypedStorage<8, 64>   mUnkd24a7a;
+    ::ll::UntypedStorage<8, 8>    mUnkec79fd;
+    ::ll::UntypedStorage<8, 1072> mUnk187d9e;
+    ::ll::UntypedStorage<8, 8>    mUnk74222f;
+    ::ll::UntypedStorage<8, 8>    mUnk468478;
+    ::ll::UntypedStorage<8, 8>    mUnkea13b7;
+    ::ll::UntypedStorage<8, 936>  mUnk9947a0;
+    ::ll::UntypedStorage<8, 16>   mUnkbf42d0;
+    ::ll::UntypedStorage<8, 16>   mUnk469d3c;
+    ::ll::UntypedStorage<8, 8>    mUnkf245c7;
+    ::ll::UntypedStorage<8, 64>   mUnk30b039;
+    ::ll::UntypedStorage<8, 8>    mUnk6906a6;
+    ::ll::UntypedStorage<8, 8>    mUnka198d7;
+    ::ll::UntypedStorage<8, 64>   mUnk63da8b;
+    ::ll::UntypedStorage<8, 8>    mUnk68bd55;
+    ::ll::UntypedStorage<8, 8>    mUnkd56e6e;
+    ::ll::UntypedStorage<8, 64>   mUnk6331f9;
+    ::ll::UntypedStorage<8, 64>   mUnkfb3c1e;
+    ::ll::UntypedStorage<8, 16>   mUnkc74988;
+    ::ll::UntypedStorage<8, 8>    mUnk4764de;
+    ::ll::UntypedStorage<8, 8>    mUnk2db41b;
+    ::ll::UntypedStorage<8, 64>   mUnk4282e8;
+    ::ll::UntypedStorage<8, 8>    mUnk313b8d;
+    ::ll::UntypedStorage<8, 16>   mUnka4d1d6;
+    ::ll::UntypedStorage<8, 16>   mUnk4a4bbd;
+    ::ll::UntypedStorage<8, 8>    mUnkb98e22;
+    ::ll::UntypedStorage<8, 64>   mUnk358786;
+    ::ll::UntypedStorage<8, 8>    mUnk633776;
+    ::ll::UntypedStorage<8, 8>    mUnkc61c3a;
+    ::ll::UntypedStorage<8, 8>    mUnk910337;
+    ::ll::UntypedStorage<8, 8>    mUnkd6ff96;
+    ::ll::UntypedStorage<8, 8>    mUnk51e772;
+    ::ll::UntypedStorage<8, 8>    mUnkf2c3d8;
+    ::ll::UntypedStorage<8, 64>   mUnkc5fc6f;
+    ::ll::UntypedStorage<8, 8>    mUnk7e94f8;
+    ::ll::UntypedStorage<8, 8>    mUnkf60a71;
+    ::ll::UntypedStorage<8, 16>   mUnk9f4932;
+    ::ll::UntypedStorage<8, 8>    mUnk93ccfd;
+    ::ll::UntypedStorage<1, 1>    mUnk4d836f;
+    ::ll::UntypedStorage<8, 16>   mUnk626810;
+    ::ll::UntypedStorage<8, 8>    mUnkce7b8c;
+    ::ll::UntypedStorage<8, 8>    mUnka05418;
+    ::ll::UntypedStorage<8, 16>   mUnkfb7cce;
+    ::ll::UntypedStorage<8, 8>    mUnk17a5e5;
+    ::ll::UntypedStorage<8, 8>    mUnk1d082c;
+    ::ll::UntypedStorage<8, 8>    mUnk721c07;
+    ::ll::UntypedStorage<8, 8>    mUnk75c011;
+    ::ll::UntypedStorage<8, 8>    mUnk662066;
+    ::ll::UntypedStorage<8, 8>    mUnka63939;
+    ::ll::UntypedStorage<8, 8>    mUnkd68cd6;
+    ::ll::UntypedStorage<8, 16>   mUnkd0c917;
+    ::ll::UntypedStorage<8, 8>    mUnka64c85;
+    ::ll::UntypedStorage<8, 8>    mUnk31922c;
+    ::ll::UntypedStorage<8, 8>    mUnkb92250;
+    ::ll::UntypedStorage<8, 8>    mUnkc46d8a;
+    ::ll::UntypedStorage<8, 8>    mUnk3dc5d4;
+    ::ll::UntypedStorage<8, 8>    mUnk6622a0;
+    ::ll::UntypedStorage<8, 16>   mUnke27718;
+    ::ll::UntypedStorage<8, 16>   mUnk88d837;
+    ::ll::UntypedStorage<8, 16>   mUnk9599c5;
+    ::ll::UntypedStorage<8, 8>    mUnk1498bc;
+    ::ll::UntypedStorage<8, 16>   mUnkc84d4d;
+    ::ll::UntypedStorage<8, 8>    mUnkeee60b;
+    ::ll::UntypedStorage<8, 8>    mUnk7757ed;
+    ::ll::UntypedStorage<8, 8>    mUnk8b5a69;
+    ::ll::UntypedStorage<8, 16>   mUnk8a114f;
+    ::ll::UntypedStorage<8, 8>    mUnk2c648f;
+    ::ll::UntypedStorage<8, 8>    mUnkef66f4;
+    ::ll::UntypedStorage<8, 8>    mUnk5cb7cc;
+    ::ll::UntypedStorage<8, 456>  mUnke5c301;
+    ::ll::UntypedStorage<8, 8>    mUnkd18639;
+    ::ll::UntypedStorage<8, 8>    mUnk67d5dd;
+    ::ll::UntypedStorage<8, 8>    mUnkc0bd78;
+    ::ll::UntypedStorage<8, 8>    mUnk8ac119;
+    ::ll::UntypedStorage<8, 16>   mUnkddfaa0;
+    ::ll::UntypedStorage<8, 8>    mUnk82663e;
+    ::ll::UntypedStorage<8, 8>    mUnkb6a170;
+    ::ll::UntypedStorage<8, 8>    mUnk8673bc;
+    ::ll::UntypedStorage<8, 8>    mUnk1187d6;
+    ::ll::UntypedStorage<8, 8>    mUnk807b24;
+    ::ll::UntypedStorage<8, 8>    mUnke45c86;
+    ::ll::UntypedStorage<8, 8>    mUnk1cf921;
+    ::ll::UntypedStorage<8, 8>    mUnk70c996;
+    ::ll::UntypedStorage<8, 8>    mUnk89400e;
+    ::ll::UntypedStorage<8, 8>    mUnk946503;
+    ::ll::UntypedStorage<8, 8>    mUnk781ed2;
+    ::ll::UntypedStorage<8, 8>    mUnk871dc6;
+    ::ll::UntypedStorage<8, 8>    mUnkf2f2ba;
+    ::ll::UntypedStorage<8, 8>    mUnkde4441;
+    ::ll::UntypedStorage<8, 8>    mUnk8f12bc;
+    ::ll::UntypedStorage<8, 8>    mUnkc2e1c6;
+    ::ll::UntypedStorage<8, 8>    mUnk3ed686;
+    ::ll::UntypedStorage<8, 8>    mUnk45b4b1;
+    ::ll::UntypedStorage<8, 8>    mUnk777677;
+    ::ll::UntypedStorage<8, 8>    mUnk1d6e6b;
+    ::ll::UntypedStorage<8, 8>    mUnk7fca88;
+    ::ll::UntypedStorage<8, 8>    mUnk71d6b7;
+    ::ll::UntypedStorage<8, 8>    mUnk8d4567;
+    ::ll::UntypedStorage<8, 8>    mUnkfdb8ca;
+    ::ll::UntypedStorage<8, 8>    mUnkf68a87;
+    ::ll::UntypedStorage<8, 8>    mUnk45501b;
+    ::ll::UntypedStorage<8, 8>    mUnk10c987;
+    ::ll::UntypedStorage<8, 48>   mUnk3703bb;
+    ::ll::UntypedStorage<8, 8>    mUnkdd5b99;
+    ::ll::UntypedStorage<8, 16>   mUnk1c3779;
+    ::ll::UntypedStorage<8, 16>   mUnk4b4e23;
+    ::ll::UntypedStorage<8, 24>   mUnk698964;
+    ::ll::UntypedStorage<8, 24>   mUnk8d1118;
+    ::ll::UntypedStorage<8, 16>   mUnk99fad5;
+    ::ll::UntypedStorage<8, 24>   mUnk4f11c0;
+    ::ll::UntypedStorage<8, 24>   mUnk205f41;
+    ::ll::UntypedStorage<8, 8>    mUnk952a89;
+    ::ll::UntypedStorage<8, 8>    mUnk2ac62b;
+    ::ll::UntypedStorage<8, 8>    mUnk185e8d;
+    ::ll::UntypedStorage<8, 8>    mUnk94b524;
+    ::ll::UntypedStorage<8, 8>    mUnk308f25;
+    ::ll::UntypedStorage<8, 8>    mUnk5dd8f3;
+    ::ll::UntypedStorage<8, 8>    mUnkceb4ab;
+    ::ll::UntypedStorage<8, 8>    mUnk50a24d;
+    ::ll::UntypedStorage<8, 16>   mUnk976824;
+    ::ll::UntypedStorage<8, 8>    mUnkcd32cf;
+    ::ll::UntypedStorage<8, 8>    mUnk32d240;
+    ::ll::UntypedStorage<8, 16>   mUnkaa8c49;
+    ::ll::UntypedStorage<8, 872>  mUnk6546c2;
+    ::ll::UntypedStorage<8, 16>   mUnka3a452;
+    ::ll::UntypedStorage<8, 8>    mUnk7f0a19;
+    ::ll::UntypedStorage<8, 8>    mUnk93ada3;
+    ::ll::UntypedStorage<8, 8>    mUnk67f34e;
+    ::ll::UntypedStorage<8, 8>    mUnkc456b9;
+    ::ll::UntypedStorage<8, 8>    mUnk804e62;
+    ::ll::UntypedStorage<8, 8>    mUnk92ee4c;
+    ::ll::UntypedStorage<8, 8>    mUnke4e7c9;
+    ::ll::UntypedStorage<8, 8>    mUnk5e4634;
+    ::ll::UntypedStorage<8, 64>   mUnk12c89f;
+    ::ll::UntypedStorage<8, 16>   mUnk42b15f;
+    ::ll::UntypedStorage<8, 16>   mUnka8e328;
+    ::ll::UntypedStorage<8, 24>   mUnkba1560;
+    ::ll::UntypedStorage<8, 16>   mUnk3bcf80;
+    ::ll::UntypedStorage<8, 16>   mUnka14281;
+    ::ll::UntypedStorage<1, 1>    mUnkd46ea8;
+    ::ll::UntypedStorage<8, 8>    mUnk205ada;
+    ::ll::UntypedStorage<8, 16>   mUnk41bdf3;
+    ::ll::UntypedStorage<8, 16>   mUnkad2805;
+    ::ll::UntypedStorage<8, 16>   mUnk6b22bf;
+    ::ll::UntypedStorage<8, 64>   mUnkf160e9;
+    ::ll::UntypedStorage<8, 64>   mUnk19d968;
     // NOLINTEND
 
 public:
@@ -625,7 +656,7 @@ public:
 
     virtual void stopSounds() /*override*/;
 
-    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) /*override*/;
+    virtual void setUISize(int w, int h) /*override*/;
 
     virtual void setRenderingSize(int w, int h) /*override*/;
 
@@ -740,6 +771,8 @@ public:
 
     virtual void setResetCallbackObject(::ResetCallbackObject* obj) /*override*/;
 
+    virtual void abortPendingGameJoin() /*override*/;
+
     virtual void requestLeaveGame(bool switchScreen, bool sync) /*override*/;
 
     virtual void requestLeaveThenJoinFriendsWorld(::std::string_view serverId) /*override*/;
@@ -823,11 +856,13 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> getNewPlayerSystem() const /*override*/;
 
-    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& getClientInstanceMap() const
+    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> getClientInstanceMap() /*override*/;
+
+    virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance const>> getClientInstanceMap() const
         /*override*/;
 
-    virtual ::std::shared_ptr<::IClientInstance> tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const
-        /*override*/;
+    virtual ::std::shared_ptr<::IClientInstance const>
+    tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const /*override*/;
 
     virtual uint getUIRenderClientMask() const /*override*/;
 
@@ -885,6 +920,12 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> getGatheringManager() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> getContentCatalogService() const /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LayoutService> getLayoutService() const /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LayoutRefreshEventSource> getLayoutRefreshEventSource() const /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> getLayoutServiceCache() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> getStoreCatalog() const /*override*/;
 
@@ -973,6 +1014,10 @@ public:
     virtual ::ClientNetworkSystem& getClientNetworkSystem() /*override*/;
 
     virtual ::ClientNetworkSystem const& getClientNetworkSystem() const /*override*/;
+
+    virtual ::Bedrock::Profiling::ProfilingOrchestrator const* getProfilingOrchestrator() const /*override*/;
+
+    virtual ::Bedrock::Profiling::ProfilingOrchestrator* getMutableProfilingOrchestrator() /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity() /*override*/;
 
@@ -1338,6 +1383,8 @@ public:
 
     MCAPI void _buildClientStartupStack();
 
+    MCAPI bool _checkIfEduPreventsPlay();
+
     MCAPI bool _clientUpdate();
 
     MCAPI void _configureLighting();
@@ -1353,6 +1400,8 @@ public:
     MCAPI ::std::unique_ptr<::GameModuleClient> _createGameModuleClient(::SubClientId id);
 
     MCAPI void _createPartySystem();
+
+    MCAPI void _createSceneFactory(::IClientInstance& client);
 
     MCAPI void _cycleRoundRobinClientSubId();
 
@@ -1583,6 +1632,8 @@ public:
 
     MCAPI void _onInitRemoteSystem(::std::function<void()> syncCompleteCallback);
 
+    MCAPI void _onItemAtlasReloaded();
+
     MCAPI void _onPrimaryUserConnectComplete(
         ::Social::UserPlatformConnectionResult status,
         bool                                   runStartScreen,
@@ -1633,6 +1684,8 @@ public:
 
     MCAPI void _onTTSOptionChanged(bool enabled);
 
+    MCAPI void _onTerrainAtlasReloaded();
+
     MCAPI void _onTextureAtlasStatus(::TextureAtlasStatus const& status);
 
     MCAPI void _onUserSigninXboxLive(uint userId);
@@ -1664,7 +1717,7 @@ public:
 
     MCAPI void _terminateRenderer();
 
-    MCAPI void _tryFireResourceLoadSession();
+    MCAPI void _tryFireWorldLoadPerformance();
 
     MCAPI void _unregisterOnInitUriListeners();
 
@@ -1692,7 +1745,7 @@ public:
 
     MCAPI ::SerialWorkList::WorkResult _waitForStorageMigration();
 
-    MCAPI void adjustClientsUISizeAndScale();
+    MCAPI void adjustClientsUISize();
 
     MCAPI void cleanReloadMaterials();
 
@@ -1757,7 +1810,7 @@ public:
 
     MCAPI void $stopSounds();
 
-    MCAPI void $setUISizeAndScale(int w, int h, float forcedGuiScale);
+    MCAPI void $setUISize(int w, int h);
 
     MCAPI void $setRenderingSize(int w, int h);
 
@@ -1872,6 +1925,8 @@ public:
 
     MCAPI void $setResetCallbackObject(::ResetCallbackObject* obj);
 
+    MCAPI void $abortPendingGameJoin();
+
     MCAPI void $requestLeaveGame(bool switchScreen, bool sync);
 
     MCAPI void $requestLeaveThenJoinFriendsWorld(::std::string_view serverId);
@@ -1955,9 +2010,12 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> $getNewPlayerSystem() const;
 
-    MCAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& $getClientInstanceMap() const;
+    MCAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> $getClientInstanceMap();
 
-    MCAPI ::std::shared_ptr<::IClientInstance> $tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const;
+    MCAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance const>> $getClientInstanceMap() const;
+
+    MCAPI ::std::shared_ptr<::IClientInstance const>
+    $tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const;
 
     MCAPI uint $getUIRenderClientMask() const;
 
@@ -1983,7 +2041,7 @@ public:
 
     MCAPI void $resetInput();
 
-    MCAPI ::PixelCalc const& $getDpadScale() const;
+    MCFOLD ::PixelCalc const& $getDpadScale() const;
 
     MCAPI void $setKeyboardForcedHeight(float height, bool isShowSignal);
 
@@ -1997,9 +2055,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository> $getSchematicsRepository() const;
 
-    MCAPI ::ParticleEffectGroup& $getParticleEffectGroup() const;
+    MCFOLD ::ParticleEffectGroup& $getParticleEffectGroup() const;
 
-    MCFOLD ::DeferredLighting& $getDeferredLighting() const;
+    MCAPI ::DeferredLighting& $getDeferredLighting() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition> $getContentAcquisition() const;
 
@@ -2012,6 +2070,12 @@ public:
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> $getGatheringManager() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> $getContentCatalogService() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LayoutService> $getLayoutService() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LayoutRefreshEventSource> $getLayoutRefreshEventSource() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> $getLayoutServiceCache() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalog() const;
 
@@ -2073,7 +2137,7 @@ public:
 
     MCAPI bool $hasAllValidCrossPlatformSkin() const;
 
-    MCFOLD ::PackDownloadManager& $getPackDownloadManager();
+    MCAPI ::PackDownloadManager& $getPackDownloadManager();
 
     MCAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> $getLinkedAssetValidator() const;
 
@@ -2094,6 +2158,10 @@ public:
     MCAPI ::ClientNetworkSystem& $getClientNetworkSystem();
 
     MCAPI ::ClientNetworkSystem const& $getClientNetworkSystem() const;
+
+    MCAPI ::Bedrock::Profiling::ProfilingOrchestrator const* $getProfilingOrchestrator() const;
+
+    MCAPI ::Bedrock::Profiling::ProfilingOrchestrator* $getMutableProfilingOrchestrator();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> $getActiveDirectoryIdentity();
 
@@ -2376,7 +2444,7 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::ChunkSource> $getClientGenChunkSource(::DimensionType const& dimensionType);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
 
     MCAPI double $getGameUpdateDurationInSeconds() const;
 

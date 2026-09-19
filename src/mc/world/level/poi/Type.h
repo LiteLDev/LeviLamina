@@ -21,6 +21,18 @@ public:
     Type& operator=(Type const&);
     Type(Type const&);
     Type();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~Type();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Poi

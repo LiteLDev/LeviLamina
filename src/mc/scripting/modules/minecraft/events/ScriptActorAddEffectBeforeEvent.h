@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptDuration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
     ::ll::TypedStorage<8, 32, ::std::string>                                                              mEffectType;
-    ::ll::TypedStorage<4, 4, int>                                                                         mDuration;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptDuration>                                     mDuration;
     ::ll::TypedStorage<1, 1, bool>                                                                        mCancel;
     // NOLINTEND
 

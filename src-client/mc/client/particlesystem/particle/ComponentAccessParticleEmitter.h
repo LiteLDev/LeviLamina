@@ -117,6 +117,8 @@ public:
     ) = 0;
 
     virtual bool getAreParticlesFromActorButWorldRelative() const = 0;
+
+    virtual ::AABB getEntityAABB() const = 0;
     // NOLINTEND
 
 public:

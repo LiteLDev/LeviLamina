@@ -11,7 +11,6 @@
 class ActorOwnerComponent;
 class StrictEntityContext;
 struct InterpolateMovementNeededComponent;
-struct TickingSystemWithInfo;
 struct WitchFlagComponent;
 // clang-format on
 
@@ -27,7 +26,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

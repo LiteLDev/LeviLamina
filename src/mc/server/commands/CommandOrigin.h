@@ -37,7 +37,7 @@ public:
     // NOLINTEND
 
 public:
-    CommandOrigin() { mUUID = Crypto::Random::generateUUID(); }
+    CommandOrigin() { mUUID = Crypto::Random::generateUUID(Crypto::Random::RandomPurpose::Public); }
     LLNDAPI std::string getLocaleCode() const;
 
 public:
@@ -68,6 +68,8 @@ public:
     virtual ::std::optional<::BlockPos> getCursorHitBlockPos() const;
 
     virtual ::std::optional<::Vec3> getCursorHitPos() const;
+
+    virtual bool hasMessagePerms() const;
 
     virtual bool hasChatPerms() const;
 
@@ -137,17 +139,13 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::optional<::BlockPos> $getCursorHitBlockPos() const;
 
     MCFOLD ::std::optional<::Vec3> $getCursorHitPos() const;
+
+    MCAPI bool $hasMessagePerms() const;
 
     MCAPI bool $hasChatPerms() const;
 

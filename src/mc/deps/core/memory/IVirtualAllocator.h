@@ -13,6 +13,8 @@ public:
     // clang-format on
 
     // IVirtualAllocator inner types define
+    enum class Protection : int {};
+
     struct Flags {};
 
     struct ReservationInfo {

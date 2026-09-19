@@ -29,6 +29,7 @@ public:
         ::ll::TypedStorage<1, 1, ::OreUI::InvocationState>  mState;
         ::ll::TypedStorage<1, 1, ::OreUI::InvocationResult> mResult;
         ::ll::TypedStorage<1, 1, uchar>                     mProgress;
+        ::ll::TypedStorage<4, 4, uint>                      mInvocationCount;
         ::ll::TypedStorage<4, 8, ::std::optional<int>>      mError;
         // NOLINTEND
     };

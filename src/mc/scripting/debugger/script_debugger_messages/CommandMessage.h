@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/scripting/debugger/script_debugger_messages/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace ScriptDebuggerMessages {
 
 struct CommandMessage : public ::ScriptDebuggerMessages::NetworkPayload<::ScriptDebuggerMessages::CommandMessage> {
@@ -23,52 +18,14 @@ public:
 
 public:
     // prevent constructor by default
+    CommandMessage& operator=(CommandMessage const&);
+    CommandMessage(CommandMessage const&);
     CommandMessage();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CommandMessage() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI CommandMessage(::ScriptDebuggerMessages::CommandMessage const&);
-
-    MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage&&);
-
-    MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& msPayloadType();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebuggerMessages::CommandMessage const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

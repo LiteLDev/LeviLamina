@@ -18,7 +18,7 @@ class VoxelShapeLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 264> mUnk7fbd7d;
+    ::ll::UntypedStorage<8, 272> mUnk7fbd7d;
     ::ll::UntypedStorage<8, 128> mUnkdf66d2;
     // NOLINTEND
 

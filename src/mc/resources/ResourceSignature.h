@@ -34,7 +34,9 @@ public:
     MCNAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
 #endif
 
+#ifdef LL_PLAT_C
     MCNAPI ~ResourceSignature();
+#endif
     // NOLINTEND
 
 public:
@@ -46,6 +48,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

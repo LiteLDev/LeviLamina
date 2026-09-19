@@ -153,7 +153,9 @@ enum class DisconnectFailReason : int {
     HostAcceptsNoTypeOfAuth                       = 145,
     NotAuthenticatedFastFail                      = 146,
     EditorNotAllowed                              = 147,
-    MaxDisconnectFailReason                       = 148,
+    MissingStructureData                          = 148,
+    UnsupportedTransport                          = 149,
+    MaxDisconnectFailReason                       = 150,
 };
 
 }

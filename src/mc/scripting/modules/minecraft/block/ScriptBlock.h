@@ -86,29 +86,15 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getLocalizationKey() const;
 
-    MCAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>,
-        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    getPermutation() const;
-
     MCAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getSkyLightLevel() const;
-
-    MCAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    getType() const;
 
     MCAPI ::Scripting::Result<
         ::std::string,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getTypeId() const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> getType_010() const;
 
     MCAPI ::Scripting::Result<
         bool,

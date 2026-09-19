@@ -117,13 +117,13 @@ public:
 
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getTitleText() const;
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::std::string $getTTSProgressMessage() const;
+    MCFOLD ::std::string $getTTSProgressMessage() const;
 
     MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
@@ -18,6 +19,7 @@
 class Actor;
 class Level;
 class Player;
+class WorldClock;
 struct ActorAddEffectEvent;
 struct ActorBeforeAcquireItemEvent;
 struct ActorBeforeHealEvent;
@@ -49,6 +51,7 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEve
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockRestartBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeBeforeEvent; }
 namespace ScriptModuleMinecraft { struct SignalNameSubscriberCount; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorHealEventFilter; }
@@ -56,6 +59,7 @@ namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorHurtBeforeEven
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorItemPickupEventFilter; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorTamedEventFilter; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptBlockEventFilter; }
+namespace ScriptModuleMinecraft::EventFilters { struct ScriptWorldClockEventFilter; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -215,6 +219,14 @@ public:
             1,
             ::ScriptModuleMinecraft::EventFilters::ScriptActorTamedEventFilter>>>
         mBeforeActorTamedEventSignal;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
+            ::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent,
+            1,
+            ::ScriptModuleMinecraft::EventFilters::ScriptWorldClockEventFilter>>>
+        mBeforeWorldClockRestartEventSignal;
     // NOLINTEND
 
 public:
@@ -298,6 +310,10 @@ public:
         ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
         int                                        duration
     ) /*override*/;
+
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
+    onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime) /*override*/;
     // NOLINTEND
 
 public:
@@ -409,6 +425,10 @@ public:
         ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
         int                                        duration
     );
+
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
+    $onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
 
 
     // NOLINTEND

@@ -62,6 +62,8 @@ public:
 
     virtual ::CommandOrigin const& getOutputReceiver() const /*override*/;
 
+    virtual bool hasMessagePerms() const /*override*/;
+
     virtual bool hasChatPerms() const /*override*/;
 
     virtual bool hasTellPerms() const /*override*/;
@@ -162,6 +164,8 @@ public:
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
     MCFOLD ::CommandOrigin const& $getOutputReceiver() const;
+
+    MCAPI bool $hasMessagePerms() const;
 
     MCAPI bool $hasChatPerms() const;
 

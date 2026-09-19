@@ -8,8 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Transactions { class PendingTransaction; }
 namespace Editor::Transactions { class TransactionContext; }
+namespace Editor::Transactions { struct TransactionEvent; }
+namespace Editor::Transactions { struct TransactionOperationEvent; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -38,6 +41,14 @@ public:
     virtual ::Scripting::Result_deprecated<void> finalizePendingTransaction(::mce::UUID const& id) = 0;
 
     virtual uint64 pendingTransactionCount() const = 0;
+
+    virtual ::Bedrock::PubSub::Subscription registerTransactionEventListener(
+        ::std::function<void(::Editor::Transactions::TransactionEvent const&)> callback
+    ) = 0;
+
+    virtual ::Bedrock::PubSub::Subscription registerTransactionOperationEventListener(
+        ::std::function<void(::Editor::Transactions::TransactionOperationEvent const&)> callback
+    ) = 0;
 
     virtual ::Scripting::Result_deprecated<void> undo() = 0;
 

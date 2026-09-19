@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class Mob;
+struct GoalId;
 // clang-format on
 
 class StrollTowardsVillageGoal : public ::MoveToVillageGoal {
@@ -18,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StrollTowardsVillageGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -25,6 +31,18 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual ::BlockPos _selectRandomPosInVillage() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StrollTowardsVillageGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

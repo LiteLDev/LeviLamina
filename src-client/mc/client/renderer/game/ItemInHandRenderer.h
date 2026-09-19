@@ -310,8 +310,6 @@ public:
 
     MCAPI void
     tessellateAtFrame(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int frame);
-
-    MCAPI void tick();
     // NOLINTEND
 
 public:
@@ -322,7 +320,8 @@ public:
     MCAPI static ::dragon::RenderMetadata _createRenderMetadata(
         ::BaseActorRenderContext const& renderContext,
         ::Actor const&                  entity,
-        ::ItemStack const&              item
+        ::ItemStack const&              item,
+        bool const                      isPaperDoll
     );
 
     MCAPI static void _tessellateTextureItem(

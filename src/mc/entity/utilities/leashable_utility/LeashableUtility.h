@@ -10,8 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
-class InteractionResult;
+class Interaction;
 class LeashableComponent;
 class Player;
 class Vec3;
@@ -22,7 +21,7 @@ struct LeashablePreset;
 namespace LeashableUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::InteractionResult attemptCutInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+MCAPI ::Interaction attemptCutInteraction(::Actor& owner, ::Player& player);
 
 MCAPI bool canLeashBeStolen(::Actor& actor);
 

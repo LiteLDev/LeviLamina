@@ -14,10 +14,4 @@ public:
     ::ll::TypedStorage<4, 4, float> mSnowAccumulationMin;
     ::ll::TypedStorage<4, 4, float> mSnowAccumulationMax;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

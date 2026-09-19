@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/AttachmentType.h"
-#include "mc/world/level/block/BigDripleafTilt.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/block/states/BlockState.h"
 #include "mc/world/level/block/states/BlockStateInstance.h"
 
@@ -138,6 +138,32 @@ public:
     template <typename T>
     optional_ref<Block const> trySetState(BlockState const& stateType, T val, ushort data) {
         return trySetState(stateType.mID, val, data);
+    }
+
+    /// @brief Sets whether this block counts as a base game (vanilla) block.
+    void setIsVanillaBlock(bool isVanilla) { mIsVanilla = isVanilla; }
+
+    /// @brief Initializes `blockComponentDescription` against this block's component storage.
+    ::BlockType& addComponent(::BlockComponentDescription const& blockComponentDescription) {
+        blockComponentDescription.initializeComponentFromCode(*mComponents);
+        return *this;
+    }
+
+    /// @brief Visits every permutation of this block, stopping as soon as `callback` returns false.
+    void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const {
+        for (auto const& permutation : mBlockPermutations.get()) {
+            if (permutation && !callback(*permutation)) {
+                break;
+            }
+        }
+    }
+
+    /// @brief Sets or clears one bit of the client prediction override set.
+    ///        Ignored unless the component storage currently allows modification.
+    void setClientPredictionOverride(::BlockClientPredictionOverrides type, bool value) {
+        if (mComponents->mAllowModifyingComponents) {
+            mClientPredictionOverrides.get().mContainer.set(static_cast<size_t>(type), value);
+        }
     }
 
 public:
@@ -307,7 +333,7 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockType>       tryGetFromRegistry(HashedString const& name);
+    LLNDAPI static optional_ref<BlockType const> tryGetFromRegistry(HashedString const& name);
     LLNDAPI static optional_ref<BlockType const> tryGetFromRegistry(uint legacyBlockID);
 
 public:
@@ -769,8 +795,6 @@ public:
     MCAPI ::ResourceDrops
     getResourceDrops(::Block const& block, ::IRandom& random, ::ResourceDropsContext const& resourceDropsContext) const;
 
-    MCAPI bool hasBlockEntity() const;
-
     MCAPI bool hasNonLegacyState(::HashedString const& name) const;
 
     MCAPI bool hasState(::HashedString const& name) const;
@@ -791,8 +815,6 @@ public:
     MCAPI bool matchesStates(::BlockType const& blockType) const;
 
     MCAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-
-    MCAPI ::BlockType& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
     MCAPI ::BlockType& setNameId(::std::string const& id);
 

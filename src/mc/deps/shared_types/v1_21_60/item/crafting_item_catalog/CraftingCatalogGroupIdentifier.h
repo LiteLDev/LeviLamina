@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_60/item/crafting_item_catalog/CraftingCatalogItem.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_60 {
 
 struct CraftingCatalogGroupIdentifier {
@@ -27,6 +32,12 @@ public:
     operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier const&);
 
     MCAPI ~CraftingCatalogGroupIdentifier();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -7,15 +7,16 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/client/game/ClientInstance.h"
+#include "mc/client/game/MinecraftGame.h"
 #include "mc/deps/application/AppPlatform.h"
 #include "mc/deps/core/utility/ServiceLocator.h"
+#include "mc/deps/entry/src_gamecore_pc/pc/WndProc_PC.h"
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/network/ClientNetworkSystem.h" // IWYU pragma: keep
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/ServerNetworkSystem.h"
 #include "mc/resources/ResourcePackRepository.h"
 #include "mc/server/ServerInstance.h"
-#include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
 #include "mc/world/Minecraft.h"
@@ -41,6 +42,17 @@ LL_TYPE_INSTANCE_HOOK(
     return res;
 }
 
+LL_TYPE_INSTANCE_HOOK(
+    ServerInstanceDestructor,
+    HookPriority::High,
+    ServerInstance,
+    &ServerInstance::_resetServerScriptManager,
+    void
+) {
+    serverInstance = nullptr;
+    origin();
+}
+
 // ClientInstance
 LL_TYPE_INSTANCE_HOOK(
     ClientInstanceConstructor,
@@ -53,6 +65,18 @@ LL_TYPE_INSTANCE_HOOK(
     auto res       = origin(std::move(args));
     clientInstance = this;
     return res;
+}
+
+LL_TYPE_INSTANCE_HOOK(
+    ClientInstanceDestructor,
+    HookPriority::High,
+    MainGameCore::WndProc_PC,
+    &MainGameCore::WndProc_PC::$onDestroy,
+    std::optional<int64>,
+    MainGameCore::WndProc::WndProcParams params
+) {
+    clientInstance = nullptr;
+    return origin(params);
 }
 
 optional_ref<AppPlatform> getAppPlatform() { return ServiceLocator<AppPlatform>::get().get().get(); }
@@ -130,7 +154,11 @@ optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide) {
     return nullptr;
 }
 
-using HookReg = memory::HookRegistrar<ServerInstanceConstructor, ClientInstanceConstructor>;
+using HookReg = memory::HookRegistrar<
+    ServerInstanceConstructor,
+    ServerInstanceDestructor,
+    ClientInstanceConstructor,
+    ClientInstanceDestructor>;
 
 static HookReg hookRegister;
 

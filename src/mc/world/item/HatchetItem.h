@@ -19,6 +19,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
+
+    virtual ::std::string_view getEfficiencyLocalization() const /*override*/;
     // NOLINTEND
 
 public:
@@ -37,6 +39,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $getEnchantSlot() const;
+
+    MCAPI ::std::string_view $getEfficiencyLocalization() const;
 
 
     // NOLINTEND

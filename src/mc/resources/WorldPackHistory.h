@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
 
@@ -20,21 +19,29 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk30ef62;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     WorldPackHistory& operator=(WorldPackHistory const&);
-    WorldPackHistory(WorldPackHistory const&);
     WorldPackHistory();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    WorldPackHistory();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI WorldPackHistory(::WorldPackHistory const&);
+
     MCNAPI bool initializeFromJson(::Json::Value const& value);
 
 #ifdef LL_PLAT_C
-    MCNAPI void setLocalizedNames(::std::unordered_map<::std::string, ::std::string> localizedMap);
+    MCNAPI ::WorldPackHistory& operator=(::WorldPackHistory const&);
 
-    MCNAPI void setPackIdVersion(::PackIdVersion const& packIdVersion);
+    MCNAPI void setLocalizedNames(::std::unordered_map<::std::string, ::std::string> localizedMap);
 #endif
 
     MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
@@ -42,6 +49,12 @@ public:
     MCNAPI ::Json::Value toJsonValue() const;
 
     MCNAPI ~WorldPackHistory();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::WorldPackHistory const&);
     // NOLINTEND
 
 public:

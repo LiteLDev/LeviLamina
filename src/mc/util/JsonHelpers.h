@@ -22,6 +22,8 @@ MCNAPI void addStringArrayField(
     ::std::string const&                fieldName,
     ::std::vector<::std::string> const& stringArray
 );
+
+MCNAPI ::std::optional<bool> getAsOptBool(::Json::Value const& value);
 #endif
 
 MCNAPI ::std::string getAsString(::Json::Value const& value, ::std::string_view defaultString);

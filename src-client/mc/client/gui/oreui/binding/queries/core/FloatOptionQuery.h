@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/OptionProperty.h"
+#include "mc/client/gui/oreui/binding/properties/Property.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +18,10 @@ class FloatOptionQuery : public ::OreUI::QueryBase<::OreUI::FloatOptionQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::std::optional<::OreUI::OptionProperty<float>>> mValue;
+    ::ll::TypedStorage<8, 128, ::std::optional<::OreUI::OptionProperty<float>>>  mValue;
+    ::ll::TypedStorage<8, 184, ::std::optional<::OreUI::Property<float, float>>> mMin;
+    ::ll::TypedStorage<8, 184, ::std::optional<::OreUI::Property<float, float>>> mMax;
+    ::ll::TypedStorage<8, 184, ::std::optional<::OreUI::Property<float, float>>> mDefault;
     // NOLINTEND
 
 public:

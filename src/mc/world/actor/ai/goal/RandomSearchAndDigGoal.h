@@ -15,6 +15,7 @@
 class BlockSource;
 class Mob;
 class Path;
+struct GoalId;
 // clang-format on
 
 class RandomSearchAndDigGoal : public ::BaseGoal {
@@ -95,7 +96,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RandomSearchAndDigGoal(::Mob& mob);
+    MCAPI RandomSearchAndDigGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
 
@@ -105,7 +106,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

@@ -50,10 +50,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptRelativeVolumeListBlockVolume(::std::optional<::Vec3> const& origin);
-
-    MCNAPI explicit ScriptRelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume const& rhs);
-
     MCNAPI ScriptRelativeVolumeListBlockVolume(::Vec3 const& location, ::std::optional<::Vec3> const& origin);
 
     MCNAPI
@@ -98,10 +94,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::optional<::Vec3> const& origin);
-
-    MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume const& rhs);
-
     MCNAPI void* $ctor(::Vec3 const& location, ::std::optional<::Vec3> const& origin);
 
     MCNAPI void* $ctor(::std::vector<::Vec3> const& locations, ::std::optional<::Vec3> const& origin);

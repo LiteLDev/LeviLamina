@@ -162,12 +162,16 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>         resourceAllowList
     );
 
+    MCAPI void _subscribeToProfile(::std::string const& xuid, ::std::string const& platformId, bool refetchIfFound);
+
     MCAPI ::OreUI::PlayerProfileFacet::PlayerProfileWrapper&
     _updateTrackedProfile(::Social::PlayerProfile const& playerProfile);
 
     MCFOLD ::std::vector<::OreUI::PlayerProfileFacet::PlayerProfileWrapper> const& getTrackedProfiles() const;
 
     MCAPI void refetchProfile(::std::string const& xuid, ::std::string const& platformId);
+
+    MCAPI void subscribeToOrRefetchProfile(::std::string const& xuid, ::std::string const& platformId);
 
     MCAPI void subscribeToProfile(::std::string const& xuid, ::std::string const& platformId);
     // NOLINTEND

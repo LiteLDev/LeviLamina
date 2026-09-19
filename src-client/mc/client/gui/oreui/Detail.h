@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/methods/CallableImpl.h"
 #include "mc/client/network/realms/RealmsServerMode.h"
+#include "mc/client/realms/PlayerRole.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/util/ProfanityFilterContext.h"
 #include "mc/world/containers/ContainerEnumName.h"
@@ -19,7 +20,11 @@ namespace cohtml { class Binder; }
 namespace OreUI::Detail {
 // functions
 // NOLINTBEGIN
+MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string, int>* callable);
+
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, bool>* callable);
+
+MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>* callable);
 
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string>* callable);
 
@@ -34,6 +39,8 @@ MCAPI void
 CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>* callable);
 
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, int>* callable);
+
+MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string, float>* callable);
 
 MCAPI void CoherentBind(
     ::cohtml::Binder*                                                                                     binder,
@@ -56,9 +63,6 @@ MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<
 
 MCAPI void
 CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::FileStorageDirectory>* callable);
-
-MCAPI void
-CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::vector<::std::string>>* callable);
 
 MCAPI void CoherentBind(
     ::cohtml::Binder*                                                               binder,
@@ -106,18 +110,15 @@ MCAPI void CoherentBind(
     ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, ::std::string, bool>* callable
 );
 
+MCAPI void
+CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::vector<::std::string>>* callable);
+
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, float, float, float>* callable);
 
 MCAPI void CoherentBind(
     ::cohtml::Binder*                                                        binder,
     ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, bool>* callable
 );
-
-MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>* callable);
-
-MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<bool>* callable);
-
-MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string, int>* callable);
 
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::std::string, double>* callable);
 
@@ -126,6 +127,26 @@ MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<
 MCAPI void CoherentBind(
     ::cohtml::Binder*                                                                        binder,
     ::OreUI::Detail::CallableImpl<void, int64, ::std::string, ::std::vector<::std::string>>* callable
+);
+
+MCAPI void CoherentBind(
+    ::cohtml::Binder* binder,
+    ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, ::std::string, int64, ::std::string, int, bool>*
+        callable
+);
+
+MCAPI void CoherentBind(
+    ::cohtml::Binder* binder,
+    ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, ::std::string, int64, ::std::string, int>*
+        callable
+);
+
+MCAPI void
+CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, int, ::std::string, int64>* callable);
+
+MCAPI void CoherentBind(
+    ::cohtml::Binder*                                                         binder,
+    ::OreUI::Detail::CallableImpl<void, ::std::string, ::Realms::PlayerRole>* callable
 );
 
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, int64, int>* callable);

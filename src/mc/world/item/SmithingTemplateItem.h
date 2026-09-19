@@ -14,21 +14,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class SmithingTemplateItem : public ::Item {
 public:
-    // SmithingTemplateItem inner types define
-    enum class UpgradeType : int {
-        NetheriteUpgrade = 0,
-        ArmorTrim        = 1,
-        Count            = 2,
-    };
-
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string const> mAppliesToText;
-    ::ll::TypedStorage<8, 32, ::std::string const> mIngredientsText;
-    // NOLINTEND
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void appendFormattedHovertext(

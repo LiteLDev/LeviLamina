@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 #include "mc/world/level/GameType.h"
@@ -11,6 +12,7 @@
 // clang-format off
 class Actor;
 class Player;
+class WorldClock;
 struct ActorAddEffectEvent;
 struct ActorBeforeAcquireItemEvent;
 struct ActorBeforeHealEvent;
@@ -39,6 +41,7 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEven
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockRestartBeforeEvent; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -116,6 +119,10 @@ public:
 
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent);
+
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
+    onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
     // NOLINTEND
 
 public:
@@ -188,6 +195,10 @@ public:
 
     MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent);
+
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
+    $onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
 
 
     // NOLINTEND

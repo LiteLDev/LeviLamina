@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/threading/SpinLockImpl.h"
+#include "mc/world/level/block/chunk_volume/SubVolumeViewOf.h"
 #include "mc/world/level/chunk/DirtyTicksCounter.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
@@ -67,6 +68,18 @@ public:
     // NOLINTEND
 
 public:
+    [[nodiscard]] bool isUniform(::Block const& block) const {
+        if (!mBlocksReadPtr[0]->isUniform(block)) {
+            return false;
+        }
+        // The extra layer is optional; a subchunk with only a standard layer is uniform whenever that layer is.
+        if (mBlocksReadPtr[1] != nullptr) {
+            return mBlocksReadPtr[1]->isUniform(block);
+        }
+        return true;
+    }
+
+public:
     // prevent constructor by default
     SubChunk& operator=(SubChunk const&);
     SubChunk(SubChunk const&);
@@ -125,7 +138,11 @@ public:
 
     MCAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
 
-    MCAPI void setFromBlockVolume(::BlockVolume const& box, short height);
+    MCAPI void setFromBlockVolume(
+        ::BlockVolume const&                           box,
+        short                                          height,
+        ::ChunkVolume::SubVolumeViewOf<::Block const*> scratchVolume
+    );
 
 #ifdef LL_PLAT_C
     MCAPI void setLight(ushort idx, ::SubChunkBrightnessStorage::LightPair pair);

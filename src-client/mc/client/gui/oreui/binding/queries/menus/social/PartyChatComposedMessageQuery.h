@@ -18,8 +18,8 @@ class PartyChatComposedMessageQuery : public ::OreUI::QueryBase<::OreUI::PartyCh
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mComposedMessage;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mComposedMessageChangedToken;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mComposedMessage;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mComposedMessageChangedToken;
     // NOLINTEND
 
 public:

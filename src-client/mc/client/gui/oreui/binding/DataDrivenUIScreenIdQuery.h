@@ -13,14 +13,9 @@ class DataDrivenUIScreenIdQuery : public ::OreUI::QueryBase<::OreUI::DataDrivenU
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mSubscription;
-    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mScreenId;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[37]> NAME();
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSubscription;
+    ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
+        mScreenId;
     // NOLINTEND
 };
 

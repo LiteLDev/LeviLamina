@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/VariantParameterListConst.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,4 +25,9 @@ public:
     ::ll::TypedStorage<8, 8, ::Actor*>          mDamager;
     ::ll::TypedStorage<8, 8, ::Actor*>          mHolder;
     // NOLINTEND
+
+public:
+    operator VariantParameterListConst() const {
+        return VariantParameterListConst{mSelf, mOther, mPlayer, mTarget, mParent, mBaby, mBlock, mDamager, mHolder};
+    }
 };

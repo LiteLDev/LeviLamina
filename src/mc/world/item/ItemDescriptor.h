@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/WeakPtr.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/platform/brstd/function_ref.h"
 
@@ -64,6 +63,8 @@ public:
 
         virtual ::std::string toString() const;
 
+        virtual ::std::string getNameAndAux() const;
+
         virtual ::ItemDescriptor::ItemEntry getItem() const;
 
         virtual bool forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
@@ -94,7 +95,9 @@ public:
         // NOLINTBEGIN
         MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-        MCAPI ::std::string $toString() const;
+        MCFOLD ::std::string $toString() const;
+
+        MCFOLD ::std::string $getNameAndAux() const;
 
         MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
 
@@ -156,7 +159,7 @@ public:
 
     MCAPI ::Block const* getBlock() const;
 
-    MCAPI ::WeakPtr<::BlockType const> const& getBlockType() const;
+    MCAPI ::BlockType const* getBlockType() const;
 
     MCAPI int getIdAux() const;
 

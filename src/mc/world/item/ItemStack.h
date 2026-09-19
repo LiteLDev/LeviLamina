@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetIdVariant.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemStackBase.h"
 
 // auto generated forward declare list
@@ -11,6 +12,7 @@
 class Actor;
 class Block;
 class BlockPalette;
+class BlockPos;
 class CompoundTag;
 class ILevel;
 class InteractionResult;
@@ -55,6 +57,10 @@ public:
 
     MCAPI ::ItemStack clone() const;
 
+#ifdef LL_PLAT_S
+    MCAPI float getDestroySpeed(::Block const& block) const;
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI ::Brightness getLightEmission() const;
 #endif
@@ -73,10 +79,9 @@ public:
 
     MCAPI ::InteractionResult useOn(
         ::Actor&                 entity,
-        int                      x,
-        int                      y,
-        int                      z,
+        ::BlockPos const&        pos,
         uchar                    face,
+        ::HandSlot               handSlot,
         ::Vec3 const&            clickPos,
         ::ItemUsedOnEventContext itemUsedOnEventContext
     );

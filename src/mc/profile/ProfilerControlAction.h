@@ -12,6 +12,7 @@ enum class ProfilerControlAction : int {
     FilterToMultipleEntities = 4,
     FilterToSingleEntity     = 5,
     FilterBySystem           = 6,
+    RequestCSV               = 7,
 };
 
 }

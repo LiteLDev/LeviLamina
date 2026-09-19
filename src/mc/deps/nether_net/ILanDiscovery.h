@@ -31,13 +31,13 @@ public:
     virtual void SendLanBroadcastResponse(
         ::webrtc::SocketAddress const& destination,
         ::NetherNet::NetworkID         from,
-        ::std::vector<::std::byte>     data
+        ::std::string                  data
     ) = 0;
 
     virtual void SendSignalingMessageTo(
-        ::NetherNet::NetworkID     networkIdFrom,
-        ::NetherNet::NetworkID     networkIdTo,
-        ::std::vector<::std::byte> data
+        ::NetherNet::NetworkID networkIdFrom,
+        ::NetherNet::NetworkID networkIdTo,
+        ::std::string          data
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) = 0;

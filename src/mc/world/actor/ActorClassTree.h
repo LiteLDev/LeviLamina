@@ -10,12 +10,12 @@
 class Actor;
 // clang-format on
 
-class ActorClassTree {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isHangingEntity(::Actor const& inEntity);
+namespace ActorClassTree {
+// functions
+// NOLINTBEGIN
+MCAPI bool isHangingEntity(::Actor const& inEntity);
 
-    MCAPI static bool isInstanceOf(::Actor const& inEntity, ::ActorType type);
-    // NOLINTEND
-};
+MCAPI bool isInstanceOf(::Actor const& inEntity, ::ActorType type);
+// NOLINTEND
+
+} // namespace ActorClassTree

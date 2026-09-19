@@ -7,6 +7,7 @@
 class HashedString;
 namespace Editor { struct ProbabilityBlockPaletteItem; }
 namespace Editor { struct SimpleBlockPaletteItem; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor {
@@ -41,6 +42,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
     MCNAPI static ::Editor::EditorBlockPalette createDefault();
     // NOLINTEND
 

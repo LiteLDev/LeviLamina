@@ -22,7 +22,6 @@ class TextureAtlasItem;
 class Vec3;
 struct TextureItem;
 struct TextureUVCoordinateSet;
-namespace Bedrock::Threading { class Mutex; }
 namespace BlockGeometry { struct Model; }
 namespace BlockTessellationFallbackUtils { struct TessellationConfigInfo; }
 namespace Json { class Value; }
@@ -153,6 +152,8 @@ public:
         ::BlockShape                                                        defaultBlockShape
     );
 
+    MCAPI static void reloadBlockTextures(::ResourcePackManager& packManager, ::Experiments const& experiments);
+
     MCAPI static void teardownBlocks();
     // NOLINTEND
 
@@ -161,7 +162,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, ::BlockGraphics*>& mBlockLookupMap();
 
-    MCAPI static ::Bedrock::Threading::Mutex& mBlockModelAccess();
+    MCAPI static ::std::mutex& mBlockModelAccess();
 
     MCAPI static ::std::unordered_map<uint, ::BlockGraphics*>& mBlocks();
 

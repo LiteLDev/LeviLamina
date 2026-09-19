@@ -12,7 +12,7 @@ template <typename T>
 class ISubChunkStoragePaletted;
 
 template <typename T>
-using RuntimeSerializationLookup = brstd::function_ref<unsigned long(T const&), unsigned long(T const&)>;
+using RuntimeSerializationLookup = brstd::function_ref<unsigned long long(T const&), unsigned long(T const&)>;
 
 template <typename T>
 using PersistentSerializationLookup = brstd::function_ref<CompoundTag const*(T const&), CompoundTag const*(T const&)>;
@@ -75,6 +75,12 @@ public:
         BoundingBox const&,
         brstd::function_ref<bool(T const&), bool(T const&)> const&,
         std::vector<BlockDataFetchResult<T>>&
+    ) const = 0;
+
+    virtual bool hasAnyElementInBox(
+        BlockPos const&,
+        BoundingBox const&,
+        brstd::function_ref<bool(T const&), bool(T const&)> const&
     ) const = 0;
 
     virtual bool hasAnyElementMatchingFilterInPalette(std::function<bool(T const&)> const&) const = 0;

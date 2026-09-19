@@ -7,7 +7,9 @@
 class ILayoutContentRefreshable;
 class ISceneFactory;
 class ISceneStack;
+class MinecraftScreenModel;
 class StoreDataDrivenScreenController;
+struct LinksToStyle;
 struct StoreDataDrivenScreenParams;
 namespace ClientInstanceNavigationHelper { struct CoinPurchaseScreenParams; }
 // clang-format on
@@ -17,11 +19,6 @@ namespace ClientInstanceNavigationHelper {
 // NOLINTBEGIN
 MCNAPI void navigateToCoinPurchaseScreen_AssumingHasQueriedProducts(
     ::ClientInstanceNavigationHelper::CoinPurchaseScreenParams& params
-);
-
-MCNAPI bool navigateToNonGenericKnownPageID(
-    ::StoreDataDrivenScreenParams const& params,
-    ::StoreDataDrivenScreenController&   controller
 );
 
 MCNAPI void navigateToStoreDataDrivenScreen(
@@ -40,6 +37,8 @@ MCNAPI void popBackToOrCreateNewStoreDataDrivenScreen(
     ::StoreDataDrivenScreenParams const& params,
     ::StoreDataDrivenScreenController&   controller
 );
+
+MCNAPI bool tryRedirectToOreUIScreen(::LinksToStyle& linksToStyle, ::MinecraftScreenModel& model);
 // NOLINTEND
 
 } // namespace ClientInstanceNavigationHelper

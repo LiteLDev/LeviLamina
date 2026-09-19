@@ -20,11 +20,11 @@ class RealmsEntitlementQuery : public ::OreUI::QueryBase<::OreUI::RealmsEntitlem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                            mExpirationDate;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                            mFriendlyId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64>>                                    mRealmId;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                     mIsActive;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                     mIsValid;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>             mExpirationDate;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>             mFriendlyId;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int64, int64>>                             mRealmId;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                               mIsActive;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                               mIsValid;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::IRealmsEntitlements>> mRealmsEntitlements;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                                 mTaskGroup;
     // NOLINTEND

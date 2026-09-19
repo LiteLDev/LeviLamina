@@ -104,4 +104,10 @@ public:
 
     MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

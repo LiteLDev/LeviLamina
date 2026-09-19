@@ -19,6 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                           mHasOpened;
     ::ll::TypedStorage<8, 192, ::PackSettingsInfo>           mPackSettingsInfo;
+    ::ll::TypedStorage<4, 4, int>                            mInitialSubpackIndex;
     ::ll::TypedStorage<8, 8, ::PackSettings*>                mPackSettings;
     ::ll::TypedStorage<8, 8, ::DynamicFormScreenController*> mDynamicFormScreenController;
     // NOLINTEND

@@ -2,14 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
-class IAdvancedGraphicsOptions;
-class IClientInstance;
-class IMinecraftGame;
 class SceneFactory;
 // clang-format on
 
@@ -19,10 +13,7 @@ class ScreenCreator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::SceneFactory&>                                                  mSceneFactory;
-    ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                                mMc;
-    ::ll::TypedStorage<8, 8, ::IClientInstance&>                                               mClient;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const> mAdvancedGraphicsOptions;
+    ::ll::TypedStorage<8, 8, ::SceneFactory&> mSceneFactory;
     // NOLINTEND
 
 public:

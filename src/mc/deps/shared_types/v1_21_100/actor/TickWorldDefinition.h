@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_100 {
 
 struct TickWorldDefinition {
@@ -16,12 +11,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>  mRadius;
     ::ll::TypedStorage<4, 4, float> mDistanceToPlayers;
     ::ll::TypedStorage<1, 1, bool>  mNeverDespawn;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -26,18 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::br::worldgen::StructureBlockInfo clone() const;
-#endif
-
     MCAPI ~StructureBlockInfo();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::StructureBlockInfo
-    from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState);
     // NOLINTEND
 
 public:

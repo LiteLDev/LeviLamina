@@ -18,8 +18,8 @@ class StaticFeatureFlagQuery : public ::OreUI::QueryBase<::OreUI::StaticFeatureF
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>     mEnabled;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mFlags;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>> mEnabled;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   mFlags;
     // NOLINTEND
 
 public:

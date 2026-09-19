@@ -20,6 +20,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                     mLocalId;
     ::ll::TypedStorage<8, 32, ::std::string>                     mMarketplaceId;
     ::ll::TypedStorage<8, 32, ::std::string>                     mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mAcquiredDate;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mThumbnailPath;
     ::ll::TypedStorage<1, 1, bool>                               mIsLocked;
     ::ll::TypedStorage<1, 1, bool>                               mIsInstalled;
@@ -35,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string const& getCreator() const;
+    MCAPI ::std::string const& getCreator() const;
 
     MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData const&);
 
@@ -60,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

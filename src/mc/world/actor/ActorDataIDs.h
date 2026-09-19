@@ -116,7 +116,7 @@ enum class ActorDataIDs : uchar {
     AmbientSoundEventName            = 110,
     FallDamageMultiplier             = 111,
     NameRawText                      = 112,
-    CanRideTarget                    = 113,
+    Reserved113                      = 113,
     LowTierCuredTradeDiscount        = 114,
     HighTierCuredTradeDiscount       = 115,
     NearbyCuredTradeDiscount         = 116,

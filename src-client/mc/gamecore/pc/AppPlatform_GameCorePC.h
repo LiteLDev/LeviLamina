@@ -35,6 +35,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk587e2e;
     ::ll::UntypedStorage<1, 1>  mUnk15dc10;
     ::ll::UntypedStorage<1, 1>  mUnkdc4ecc;
+    ::ll::UntypedStorage<8, 16> mUnkb81ef1;
     // NOLINTEND
 
 public:
@@ -63,7 +64,7 @@ public:
     virtual void hideKeyboard() /*override*/;
 
     virtual void updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
+        ::RectangleArea const&,
         ::RectangleArea const& selectionPosition,
         float const            guiScale
     ) /*override*/;
@@ -206,11 +207,8 @@ public:
 
     MCAPI void $hideKeyboard();
 
-    MCAPI void $updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
-        ::RectangleArea const& selectionPosition,
-        float const            guiScale
-    );
+    MCAPI void
+    $updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const& selectionPosition, float const guiScale);
 
     MCAPI float $getKeyboardHeight() const;
 
@@ -290,7 +288,7 @@ public:
 
     MCFOLD bool $devHotReloadRenderResources() const;
 
-    MCAPI bool $delayOptionSaveUntilCloudSync() const;
+    MCFOLD bool $delayOptionSaveUntilCloudSync() const;
 
     MCFOLD bool $requiresXboxLiveSigninToPlay() const;
 

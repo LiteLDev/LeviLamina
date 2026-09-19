@@ -13,7 +13,6 @@
 #include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/services/messaging/MessageData.h"
 #include "mc/client/social/ProfileImageOptions.h"
-#include "mc/client/social/UserListObserver.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -29,38 +28,10 @@ class InboxSurface;
 class MainMenuScreenModel;
 class SocialButtonScreenController;
 namespace Json { class Value; }
-namespace Social { class User; }
 namespace edu::auth { struct CredsAuthComplete; }
 // clang-format on
 
 class StartMenuScreenController : public ::MainMenuScreenController, public ::edu::auth::CredentialsObserver {
-public:
-    // StartMenuScreenController inner types declare
-    // clang-format off
-    class SignOutObserver;
-    // clang-format on
-
-    // StartMenuScreenController inner types define
-    class SignOutObserver : public ::Social::UserListObserver {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::StartMenuScreenController>> mStartMenuScreenController;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual void onUserRemoved(::std::shared_ptr<::Social::User> const& user) /*override*/;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCAPI void $onUserRemoved(::std::shared_ptr<::Social::User> const& user);
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -75,36 +46,34 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                        mAnimatedMessage;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>               mLastSigningInAnimation;
     ::ll::TypedStorage<8, 8, int64>                                                 mNextContentFetchTime;
-    ::ll::TypedStorage<8, 8, int64>                                                 mNextImportTime;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                              mExistenceTracker;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StartMenuScreenController::SignOutObserver>> mSignOutObserver;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                                  mProfileImage;
-    ::ll::TypedStorage<1, 1, bool>                                                            mProfileImageLoaded;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mProfileImageChangedSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                            mSetFocusToSignInButton;
-    ::ll::TypedStorage<1, 1, bool>                                            mCapabilitiesChanged;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                   mTaskGroup;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>> mStoreButtonArtSurface;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>> mPlayButtonArtSurface;
-    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                mStoreButtonArtData;
-    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                mPlayButtonArtData;
-    ::ll::TypedStorage<1, 1, bool>                                            mStoreButtonHovered;
-    ::ll::TypedStorage<1, 1, bool>                                            mPlayButtonHovered;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::InboxSurface>>     mInboxSurface;
-    ::ll::TypedStorage<4, 4, int>                                             mUnreadInvites;
-    ::ll::TypedStorage<1, 1, bool>                                            mInitialInboxAnimationPlayed;
-    ::ll::TypedStorage<1, 1, bool>                                            mShowingNewPlayerFlowButtons;
-    ::ll::TypedStorage<4, 4, ::InboxIconFlightingState>                       mInboxIconState;
-    ::ll::TypedStorage<1, 1, bool>                                            mNeedToPlayMainButtonsShowAnimation;
-    ::ll::TypedStorage<8, 248, ::std::optional<::ExperiencePromotion>>        mActivePromotion;
-    ::ll::TypedStorage<1, 1, bool>                                            mOwnsRealmsSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                            mRealmsFetched;
-    ::ll::TypedStorage<4, 4, ::Realms::GenericStatus>                         mRealmsStatus;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mPendingInviteCountSubscriber;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mPrimaryUserSignInSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mTrialModeUpdateSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mInboxIconStateSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                            mIsTrialModeEnabled;
+    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                        mProfileImage;
+    ::ll::TypedStorage<1, 1, bool>                                                  mProfileImageLoaded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mProfileImageChangedSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                                  mSetFocusToSignInButton;
+    ::ll::TypedStorage<1, 1, bool>                                                  mCapabilitiesChanged;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                         mTaskGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>       mStoreButtonArtSurface;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>       mPlayButtonArtSurface;
+    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                      mStoreButtonArtData;
+    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                      mPlayButtonArtData;
+    ::ll::TypedStorage<1, 1, bool>                                                  mStoreButtonHovered;
+    ::ll::TypedStorage<1, 1, bool>                                                  mPlayButtonHovered;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::InboxSurface>>           mInboxSurface;
+    ::ll::TypedStorage<4, 4, int>                                                   mUnreadInvites;
+    ::ll::TypedStorage<1, 1, bool>                                                  mInitialInboxAnimationPlayed;
+    ::ll::TypedStorage<1, 1, bool>                                                  mShowingNewPlayerFlowButtons;
+    ::ll::TypedStorage<4, 4, ::InboxIconFlightingState>                             mInboxIconState;
+    ::ll::TypedStorage<1, 1, bool>                                                  mNeedToPlayMainButtonsShowAnimation;
+    ::ll::TypedStorage<8, 248, ::std::optional<::ExperiencePromotion>>              mActivePromotion;
+    ::ll::TypedStorage<1, 1, bool>                                                  mOwnsRealmsSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                                  mRealmsFetched;
+    ::ll::TypedStorage<4, 4, ::Realms::GenericStatus>                               mRealmsStatus;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mPendingInviteCountSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mPrimaryUserSignInSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mTrialModeUpdateSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mInboxIconStateSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                                  mIsTrialModeEnabled;
     // NOLINTEND
 
 public:

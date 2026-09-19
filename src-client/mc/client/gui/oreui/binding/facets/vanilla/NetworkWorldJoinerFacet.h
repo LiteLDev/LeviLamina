@@ -79,6 +79,8 @@ public:
         ::OreUI::Router&                                     uiRouter
     );
 
+    MCAPI void abortPendingGameJoin();
+
     MCAPI void clearJoinExternalServerTaskState();
 
     MCAPI void clearJoinFriendServerTaskState();
@@ -116,6 +118,11 @@ public:
     MCAPI void joinFriendServer(::std::string const& serverID);
 
     MCAPI void joinLanServer(::std::string const& serverID);
+
+    MCAPI void joinRealmThroughWorldTransfer(
+        ::std::string const&                      realmIdString,
+        ::IMinecraftEventing::RealmConnectionFlow fromFlow
+    );
 
     MCAPI void joinRealmWorld(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
 

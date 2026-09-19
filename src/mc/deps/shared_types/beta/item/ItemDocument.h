@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ReflectMode.h"
 #include "mc/deps/shared_types/beta/item/ItemComponents.h"
 #include "mc/deps/shared_types/legacy/item/ComponentItemData.h"
 #include "mc/deps/shared_types/v1_21_110/item/ItemDescription.h"
@@ -44,7 +45,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&         ctx,
+        ::std::set<::std::string> const& activeExperiments,
+        ::cereal::ReflectMode            mode
+    );
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@ struct OwnedWorldTemplateDataBindings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 168, ::World::OwnedWorldTemplateData> mOwnedWorldTemplateData;
+    ::ll::TypedStorage<8, 200, ::World::OwnedWorldTemplateData> mOwnedWorldTemplateData;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>           mThumbnailPath;
     // NOLINTEND
 

@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DataDrivenRenderer_tempComponent_GuardianAdditionalRendering();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void preRender(
@@ -40,6 +44,20 @@ public:
     ) /*override*/;
 
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit DataDrivenRenderer_tempComponent_GuardianAdditionalRendering(
+        ::std::shared_ptr<::DataDrivenRenderer> renderer
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
     // NOLINTEND
 
 public:

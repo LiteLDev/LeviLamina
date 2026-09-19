@@ -13,12 +13,14 @@
 // clang-format off
 class Block;
 class BlockSource;
+class BlockType;
 class CompoundTag;
 class JigsawStructureBlockInfo;
 class LegacyStructureActorInfo;
 class LegacyStructureBlockInfo;
 class LegacyStructureSettings;
 class Random;
+struct StructureSpawnEntityInfo;
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
 // clang-format on
 
@@ -62,6 +64,8 @@ public:
     // NOLINTBEGIN
     MCAPI LegacyStructureTemplate();
 
+    MCAPI ::Block const* _fixExtraWaterBlock(::BlockType const& blockType);
+
     MCAPI ::BlockPos calculateConnectedPosition(
         ::LegacyStructureSettings const& settings1,
         ::BlockPos const&                connection1,
@@ -76,11 +80,12 @@ public:
         ::Random&
     ) const;
 
+    MCAPI ::std::unordered_map<::BlockPos, ::StructureSpawnEntityInfo>
+    getEntitiesToPlace(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
+
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-#ifdef LL_PLAT_C
     MCAPI void load(::CompoundTag const& tag);
-#endif
     // NOLINTEND
 
 public:

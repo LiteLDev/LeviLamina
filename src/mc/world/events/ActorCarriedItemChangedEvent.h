@@ -14,7 +14,7 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>       mEntity;
     ::ll::TypedStorage<8, 128, ::ItemInstance const> mPreviouslyCarriedItem;
     ::ll::TypedStorage<8, 128, ::ItemInstance const> mCarriedItem;
-    ::ll::TypedStorage<4, 4, ::HandSlot>             mHandSlot;
+    ::ll::TypedStorage<1, 1, ::HandSlot>             mHandSlot;
     // NOLINTEND
 
 public:

@@ -21,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
-
     MCAPI void set(::std::string const& key, ::BlockPos const& pos);
 
     MCAPI void set(::std::string const& key, ::Vec3 size);

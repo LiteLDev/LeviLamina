@@ -9,7 +9,6 @@
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/flat_set.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/storage/DBStoragePerformanceTelemetry.h"
 #include "mc/world/level/storage/LevelStorage.h"
 #include "mc/world/level/storage/LevelStorageWriteBatch.h"
@@ -103,9 +102,9 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mFullPath;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mDbPath;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mLevelId;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                          mCompactionMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                         mCompactionMutex;
     ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                   mWriteCacheMutex;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                          mCacheFlushMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                         mCacheFlushMutex;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>               mLastCompactionStartTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mCompactionInterval;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mWriteFlushInterval;

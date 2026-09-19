@@ -18,7 +18,6 @@ struct HorseWasOnGroundPreTravelComponent;
 struct InterpolateMovementNeededComponent;
 struct MobFlagComponent;
 struct OnGroundFlagComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -37,10 +36,4 @@ public:
     using ModType = ::EntityModifier<::HorseWasOnGroundPreTravelComponent>;
 
     using OnGroundViewType = ::ViewT<::StrictEntityContext, ::OnGroundFlagComponent const>;
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createHorsePreTravelSystem();
-    // NOLINTEND
 };

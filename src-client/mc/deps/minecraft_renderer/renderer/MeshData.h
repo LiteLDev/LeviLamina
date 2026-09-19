@@ -32,6 +32,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<uint>>                   mMERS;
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>>                  mGeoType;
     ::ll::TypedStorage<4, 24, ::std::pair<::glm::vec3, ::glm::vec3>> mAABB;
+    ::ll::TypedStorage<4, 16, ::std::pair<::glm::vec2, ::glm::vec2>> mUVAABB;
     ::ll::TypedStorage<1, 15, ::std::array<bool, 15>>                mFieldEnabled;
     // NOLINTEND
 

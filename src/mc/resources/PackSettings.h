@@ -12,6 +12,7 @@ struct PackSettingValueAndDefault;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct DropdownSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct LabelSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct MultiSelectSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct SliderSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct ToggleSetting; }
 // clang-format on
@@ -25,7 +26,11 @@ public:
         8,
         16,
         ::std::weak_ptr<::Bedrock::PubSub::Publisher<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&),
+            void(
+                ::mce::UUID const&,
+                ::std::string const&,
+                ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> const&
+            ),
             ::Bedrock::PubSub::ThreadModel::MultiThreaded,
             0>>>
                                                                                                  mOnChangePublisher;
@@ -41,12 +46,17 @@ public:
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const&  packSettingDef,
-        ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* userOverrides
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting>> const& packSettingDef,
+        ::std::map<::std::string, ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>>> const*
+            userOverrides
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI void setValue(::std::string const& name, ::std::variant<float, bool, ::std::string> const& value);
+    MCNAPI void setValue(
+        ::std::string const&                                                            name,
+        ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> const& value
+    );
 #endif
     // NOLINTEND
 };

@@ -113,6 +113,8 @@ public:
     MCNAPI ::Puv::LoadResultAny
     loadFromString(::cereal::ReflectionCtx const& ctx, ::std::string const& pointLightsJson);
 
+    MCNAPI ::std::optional<::std::string> serializeToString(::cereal::ReflectionCtx const& ctx) const;
+
     MCNAPI void setConfig(::LocalLightConfig::LocalLightConfigSettingsV0 const& other);
     // NOLINTEND
 

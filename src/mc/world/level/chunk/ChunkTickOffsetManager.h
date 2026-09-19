@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
+class Random;
 // clang-format on
 
 class ChunkTickOffsetManager {
@@ -19,6 +20,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(uint serverTickRange);
+
+    MCAPI void shuffleTickingOffsets(::Random& random);
     // NOLINTEND
 
 public:

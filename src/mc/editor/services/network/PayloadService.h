@@ -11,9 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class DebuggerStat;
 class EditorNetworkPacket;
 class PacketSender;
-class ScriptStat;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
@@ -30,6 +30,7 @@ public:
     // PayloadService inner types declare
     // clang-format off
     struct CachedPacket;
+    struct DeferredSend;
     struct PayloadFactory;
     struct PayloadPublisher;
     struct PayloadInfo;
@@ -60,6 +61,26 @@ public:
         CachedPacket& operator=(CachedPacket const&);
         CachedPacket(CachedPacket const&);
         CachedPacket();
+    };
+
+    struct DeferredSend {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk602310;
+        ::ll::UntypedStorage<8, 8>  mUnk418b94;
+        ::ll::UntypedStorage<4, 4>  mUnk37ab3c;
+        ::ll::UntypedStorage<8, 16> mUnk247113;
+        ::ll::UntypedStorage<1, 1>  mUnk67dac4;
+        ::ll::UntypedStorage<8, 8>  mUnkef2734;
+        ::ll::UntypedStorage<8, 8>  mUnkbcbd70;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DeferredSend& operator=(DeferredSend const&);
+        DeferredSend(DeferredSend const&);
+        DeferredSend();
     };
 
     struct PayloadFactory {
@@ -117,7 +138,10 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk5c8add;
     ::ll::UntypedStorage<1, 1>  mUnk89f9cd;
     ::ll::UntypedStorage<1, 1>  mUnkb98162;
-    ::ll::UntypedStorage<8, 8>  mUnk240e66;
+    ::ll::UntypedStorage<8, 64> mUnk699286;
+    ::ll::UntypedStorage<8, 16> mUnke8ca7c;
+    ::ll::UntypedStorage<1, 1>  mUnk39b4cf;
+    ::ll::UntypedStorage<8, 8>  mUnk12b642;
     // NOLINTEND
 
 public:
@@ -142,6 +166,8 @@ public:
 
     virtual void onReceivePayload(::EditorNetworkPacket const& packet) /*override*/;
 
+    virtual void flushDeferred(uint64 coalesceKey) /*override*/;
+
     virtual bool isCollectingMetrics() const /*override*/;
 
     virtual void clearMetrics() /*override*/;
@@ -158,6 +184,12 @@ public:
 
     virtual ::Scripting::Result_deprecated<void>
     _send(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> _sendDeferred(
+        ::std::shared_ptr<::Editor::Network::INetworkPayload> payload,
+        uint64                                                coalesceKey,
+        ::Editor::Network::PayloadMetrics*                    metrics
+    ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> _sendToManager(
         ::Editor::Network::INetworkPayload& payload,
@@ -203,7 +235,15 @@ public:
         bool                                 collectMetrics
     );
 
-    MCNAPI ::std::optional<::ScriptStat> _collectScriptStats(uint64, uint64, uint64);
+    MCNAPI void _buildRecipientListAndSend(
+        ::std::vector<::Actor*> const&     actors,
+        ::EditorNetworkPacket&             packet,
+        ::Editor::Network::PayloadMetrics* metrics
+    );
+
+    MCNAPI ::std::optional<::DebuggerStat> _collectScriptStats(uint64, uint64, uint64);
+
+    MCNAPI ::std::vector<::Actor*> _getEditorClientActors() const;
 
     MCNAPI ::Scripting::Result_deprecated<::EditorNetworkPacket> _populatePacket(
         ::Editor::Network::INetworkPayload*                 payload,
@@ -211,12 +251,20 @@ public:
         ::Editor::Network::PayloadMetrics*                  metrics
     );
 
+    MCNAPI void _pump();
+
     MCNAPI void _sendCachedPacketToTarget(::Editor::Network::PayloadService::CachedPacket& packet);
 
     MCNAPI ::Scripting::Result_deprecated<void> _sendToClient(
         ::Editor::Network::INetworkPayload&           payload,
         ::Editor::Network::PayloadService::SendTarget target,
         ::Editor::Network::PayloadMetrics*            metrics
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> _sendToClientTargets(
+        ::std::vector<::Actor*>            actorList,
+        ::EditorNetworkPacket&             outPacket,
+        ::Editor::Network::PayloadMetrics* metrics
     );
 
     MCNAPI ::Scripting::Result_deprecated<void> _sendToServer(
@@ -258,6 +306,8 @@ public:
 
     MCNAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
 
+    MCNAPI void $flushDeferred(uint64 coalesceKey);
+
     MCNAPI bool $isCollectingMetrics() const;
 
     MCNAPI void $clearMetrics();
@@ -273,6 +323,12 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     $_send(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $_sendDeferred(
+        ::std::shared_ptr<::Editor::Network::INetworkPayload> payload,
+        uint64                                                coalesceKey,
+        ::Editor::Network::PayloadMetrics*                    metrics
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void>
     $_sendToManager(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);

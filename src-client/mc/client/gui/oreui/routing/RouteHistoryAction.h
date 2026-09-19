@@ -8,7 +8,8 @@ enum class RouteHistoryAction : int {
     Push             = 0,
     Replace          = 1,
     GoBackAndReplace = 2,
-    Ignore           = 3,
+    GoBack           = 3,
+    Ignore           = 4,
 };
 
 }

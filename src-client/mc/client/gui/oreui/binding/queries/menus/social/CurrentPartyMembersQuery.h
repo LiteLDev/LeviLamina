@@ -7,6 +7,7 @@
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/gui/oreui/binding/queries/menus/social/CurrentPartyQuery.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -27,17 +28,11 @@ class CurrentPartyMembersQuery : public ::OreUI::QueryBase<::OreUI::CurrentParty
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mLeaderXuid;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint>>          mMaxMemberCount;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::SocialPlayerObject, ::std::allocator<::OreUI::SocialPlayerObject>>>
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mLeaderXuid;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint, uint>>                   mMaxMemberCount;
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::SocialPlayerObject, ::OreUI::SocialPlayerObject>>
         mMembers;
-    ::ll::TypedStorage<
-        8,
-        120,
-        ::OreUI::PropertyVector<::OreUI::SocialPlayerObject, ::std::allocator<::OreUI::SocialPlayerObject>>>
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::SocialPlayerObject, ::OreUI::SocialPlayerObject>>
                                                                                             mInvitees;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ProfileSystem>>                   mProfileSystem;
     ::ll::TypedStorage<8, 8, ::World::WorldPlayerListTracker&>                              mWorldPlayerListTracker;
@@ -46,6 +41,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>               mMemberProfileSubscriptions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::PlayerProfile>> mInviteeProfiles;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mInviteeProfileSubscriptions;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                   mTaskGroup;
     // NOLINTEND
 
 public:

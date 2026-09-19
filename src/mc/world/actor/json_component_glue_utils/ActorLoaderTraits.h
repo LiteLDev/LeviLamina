@@ -7,6 +7,7 @@
 class ActorMigratedDefinitionFactory;
 class BedrockLoadContext;
 namespace JsonComponentGlueUtils { struct CustomUpgradeData; }
+namespace Puv { class Logger; }
 namespace SharedTypes::Beta { struct ActorDocument; }
 namespace SharedTypes::Legacy { struct ActorDocument; }
 namespace SharedTypes::Legacy { struct ActorDocumentCorrected; }
@@ -20,6 +21,7 @@ namespace SharedTypes::v1_26_10 { struct ActorDocument; }
 namespace SharedTypes::v1_26_20 { struct ActorDocument; }
 namespace SharedTypes::v1_26_30 { struct ActorDocument; }
 namespace SharedTypes::v1_26_40 { struct ActorDocument; }
+namespace SharedTypes::v1_26_50 { struct ActorDocument; }
 // clang-format on
 
 namespace JsonComponentGlueUtils {
@@ -44,6 +46,7 @@ public:
         ::SharedTypes::v1_26_20::ActorDocument,
         ::SharedTypes::v1_26_30::ActorDocument,
         ::SharedTypes::v1_26_40::ActorDocument,
+        ::SharedTypes::v1_26_50::ActorDocument,
         ::SharedTypes::Beta::ActorDocument>;
 
 public:
@@ -55,6 +58,8 @@ public:
             ::SharedTypes::v1_26_40::ActorDocument,
             ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
     );
+
+    MCAPI static void validateFunction(::SharedTypes::v1_26_50::ActorDocument const& doc, ::Puv::Logger& logger);
     // NOLINTEND
 
 public:

@@ -17,18 +17,6 @@ public:
     operator=(ScriptWebSocketClientReceiveEventIntermediateData const&);
     ScriptWebSocketClientReceiveEventIntermediateData(ScriptWebSocketClientReceiveEventIntermediateData const&);
     ScriptWebSocketClientReceiveEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptWebSocketClientReceiveEventIntermediateData(::std::string const& message);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& message);
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraftNet

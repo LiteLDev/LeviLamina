@@ -9,12 +9,11 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
-class ActorInteraction;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class InteractionResult;
+class Interaction;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -49,8 +48,7 @@ public:
 
     virtual void remove() /*override*/;
 
-    virtual ::InteractionResult
-    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
 
     virtual void teleportTo(
         ::Vec3 const& pos,
@@ -104,8 +102,7 @@ public:
 
     MCAPI void $remove();
 
-    MCAPI ::InteractionResult
-    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
 
     MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);

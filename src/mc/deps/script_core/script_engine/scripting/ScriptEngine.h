@@ -20,30 +20,40 @@ namespace Scripting {
 
 class ScriptEngine {
 public:
+    // ScriptEngine inner types define
+    using RuntimeFactory = ::std::function<::std::shared_ptr<
+        ::Scripting::IRuntime>(::Scripting::ContextConfig const&, ::std::vector<::Scripting::ModuleDescriptor> const&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6e40b8;
-    ::ll::UntypedStorage<8, 8>  mUnk46b9bc;
-    ::ll::UntypedStorage<8, 64> mUnkda1d7a;
-    ::ll::UntypedStorage<8, 24> mUnk61ec6c;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scripting::RegistryManager>> mRegistryManagerUP;
+    ::ll::TypedStorage<8, 8, ::Scripting::RegistryManager*>                   mRegistryManager;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<::std::shared_ptr<::Scripting::IRuntime>(
+            ::Scripting::ContextConfig const&,
+            ::std::vector<::Scripting::ModuleDescriptor> const&
+        )>>
+                                                                                                    mRuntimeFactoryFn;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Scripting::IModuleBindingFactory>>> mModuleFactories;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptEngine& operator=(ScriptEngine const&);
-    ScriptEngine(ScriptEngine const&);
     ScriptEngine();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptEngine(::Scripting::RegistryManager* registryManager);
+    MCAPI explicit ScriptEngine(::Scripting::RegistryManager* registryManager);
 
-    MCNAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactoryByName(::std::string const& name) const;
+    MCAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactoryByName(::std::string const& name) const;
 
-    MCNAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
+    MCAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
 
-    MCNAPI ::Scripting::ScriptContextResult createScriptingContext(
+    MCAPI ::Scripting::ScriptContextResult createScriptingContext(
         ::Scripting::ContextConfig const&                   config,
         ::Scripting::ModuleDescriptor const&                forModule,
         ::std::vector<::Scripting::ModuleDescriptor> const& dependencies,
@@ -51,26 +61,26 @@ public:
         ::Scripting::IPrinter*                              printer
     );
 
-    MCNAPI ::std::optional<::Scripting::Version>
+    MCAPI ::std::optional<::Scripting::Version>
     getLatestVersionOfModuleWithPreRelease(::std::string const& name, ::std::string_view preRelease) const;
 
-    MCNAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
+    MCAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
 
-    MCNAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
+    MCAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
 
-    MCNAPI ~ScriptEngine();
+    MCAPI ~ScriptEngine();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::RegistryManager* registryManager);
+    MCAPI void* $ctor(::Scripting::RegistryManager* registryManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

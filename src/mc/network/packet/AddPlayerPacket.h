@@ -25,6 +25,12 @@ public:
     // NOLINTEND
 
 public:
+    template <typename... Args>
+    AddPlayerPacket(Args&&... args)
+    : PayloadPacket(std::forward<Args>(args)...),
+      mSerializationMode(SerializationMode::CerealOnly) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -65,7 +71,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::MinecraftPacketIds $getId() const;
+#else // LL_PLAT_C
     MCFOLD ::MinecraftPacketIds $getId() const;
+#endif
 
     MCAPI ::std::string_view $getName() const;
 

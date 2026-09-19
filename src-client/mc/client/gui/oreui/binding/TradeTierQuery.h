@@ -18,10 +18,10 @@ class TradeTierQuery : public ::OreUI::QueryBase<::OreUI::TradeTierQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mTierName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mIsTierVisible;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mIsTierUnlocked;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mTradeOffers;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>               mTierName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mIsTierVisible;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mIsTierUnlocked;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                   mTradeOffers;
     ::ll::TypedStorage<4, 4, int>                                                             mTradeTier;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND

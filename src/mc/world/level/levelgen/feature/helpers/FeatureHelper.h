@@ -28,6 +28,10 @@ MCAPI ::gsl::not_null<::Block const*> makeCompareBlock(::Block const& block);
 MCAPI ::RenderParams
 makeFeatureRenderParams(::BlockSource& source, ::BlockPos const& pos, ::MolangVariableMap& molangVariables);
 
+#ifdef LL_PLAT_C
+MCAPI bool passesAllowList(::Block const& block, ::std::vector<::BlockDescriptor> const& allowList);
+#endif
+
 MCAPI bool passesAllowList(
     ::IBlockWorldGenAPI const&              target,
     ::BlockPos const&                       pos,

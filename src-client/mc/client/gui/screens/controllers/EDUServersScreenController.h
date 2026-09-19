@@ -11,7 +11,6 @@
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/platform/brstd/flat_map.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/social/EduResponseError.h"
 
 // auto generated forward declare list
@@ -79,7 +78,7 @@ public:
                 ::std::less<::std::string>,
                 ::std::vector<::std::string>,
                 ::std::vector<::Social::EduDedicatedServerDetails>>,
-            ::Bedrock::Threading::Mutex>>
+            ::std::mutex>>
                                                                  mServersBox;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mCacheFilePath;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                      mTaskGroup;

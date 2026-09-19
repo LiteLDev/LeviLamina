@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Legacy { struct ItemDescriptor; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20 {
@@ -28,18 +27,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                 mPreferredBlocksChance;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mPreferredBlocks;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mForbiddenBlocks;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_26_20::JumpToBlockGoalDefinition const&) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

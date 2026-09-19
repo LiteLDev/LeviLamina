@@ -10,7 +10,6 @@
 class ActorOwnerComponent;
 class EntityRegistry;
 class InstantDespawnComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class InstantDespawnSystem : public ::ITickingSystem {
@@ -25,8 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::InstantDespawnComponent& instantDespawnComponent);
-
-    MCAPI static ::TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();
     // NOLINTEND
 
 public:

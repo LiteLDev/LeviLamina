@@ -30,7 +30,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CachedScenes(bool lowMemoryDevice);
+    MCAPI CachedScenes(
+        bool                                                                  lowMemoryDevice,
+        ::std::function<::std::unique_ptr<::TaskGroup>(::std::string)> const& taskGroupProvider
+    );
 
     MCAPI void cacheVisualTree(
         ::std::unique_ptr<::VisualTree>       screen,
@@ -38,13 +41,18 @@ public:
         ::std::unique_ptr<::LayoutManager>    layoutManager
     );
 
+    MCAPI ::std::unique_ptr<::CachedScene> getCachedScene(::Json::Value const& info);
+
     MCAPI ~CachedScenes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool lowMemoryDevice);
+    MCAPI void* $ctor(
+        bool                                                                  lowMemoryDevice,
+        ::std::function<::std::unique_ptr<::TaskGroup>(::std::string)> const& taskGroupProvider
+    );
     // NOLINTEND
 
 public:

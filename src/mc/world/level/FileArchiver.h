@@ -11,7 +11,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/FileArchiverOutcome.h"
 
 // auto generated forward declare list
@@ -119,7 +118,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, bool>           isCloudImport;
         ::ll::TypedStorage<1, 1, bool>           allowMultiplayer;
-        ::ll::TypedStorage<8, 32, ::std::string> educationOid;
+        ::ll::TypedStorage<8, 32, ::std::string> messUserId;
         ::ll::TypedStorage<8, 32, ::std::string> cTag;
         ::ll::TypedStorage<8, 32, ::std::string> name;
         // NOLINTEND
@@ -154,9 +153,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mProgressLock;
-        ::ll::TypedStorage<8, 32, ::std::string>               mProgressTitle;
-        ::ll::TypedStorage<8, 32, ::std::string>               mProgressMessage;
+        ::ll::TypedStorage<8, 80, ::std::mutex>  mProgressLock;
+        ::ll::TypedStorage<8, 32, ::std::string> mProgressTitle;
+        ::ll::TypedStorage<8, 32, ::std::string> mProgressMessage;
         // NOLINTEND
 
     public:
@@ -374,7 +373,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 192, ::FileArchiver::ProgressReporter>                          mProgress;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                mStateLock;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                               mStateLock;
     ::ll::TypedStorage<4, 4, ::FileArchiver::State>                                       mCurrentState;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>>     mFilePathManager;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>                mDisplayMessageCallback;
@@ -438,13 +437,6 @@ public:
         ::std::function<void(::FileArchiver::Result&)>                             cleanupTask,
         ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting,
         ::Core::Path const&                                                        targetFolder
-    );
-
-    MCAPI void _exportLevelFiles(
-        ::Core::Path const&                           outputFilePath,
-        bool                                          isBundle,
-        ::std::shared_ptr<::FileArchiver::ExportData> exportData,
-        ::Core::Path const&                           worldPath
     );
 
 #ifdef LL_PLAT_C

@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
-#include "mc/client/gui/oreui/binding/properties/OptionProperty.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
+#include "mc/deps/core/minecraft/threading/EnableFIFOQueueForMainThread.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,14 +16,17 @@ namespace OreUI { class ClientDependencies; }
 
 namespace OreUI {
 
-class ScreenReaderQuery : public ::OreUI::QueryBase<::OreUI::ScreenReaderQuery> {
+class ScreenReaderQuery : public ::OreUI::QueryBase<::OreUI::ScreenReaderQuery>,
+                          public ::Bedrock::Threading::EnableFIFOQueueForMainThread {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ITTSEventManager>> mTTSEventManager;
-    ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<bool>>      mIsChatTextToSpeechEnabled;
-    ::ll::TypedStorage<8, 120, ::OreUI::OptionProperty<bool>>      mIsUITextToSpeechEnabled;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>            mIsIdle;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>      mIsChatTextToSpeechEnabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>      mIsUITextToSpeechEnabled;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>      mIsIdle;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mChatTextToSpeechSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mUITextToSpeechSubscription;
     // NOLINTEND
 
 public:

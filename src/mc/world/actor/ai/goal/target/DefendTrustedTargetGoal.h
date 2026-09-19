@@ -11,6 +11,7 @@
 // clang-format off
 class Mob;
 struct ActorUniqueID;
+struct GoalId;
 struct TrustComponent;
 // clang-format on
 
@@ -39,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DefendTrustedTargetGoal(::Mob& mob);
+    MCAPI DefendTrustedTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
     MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
     // NOLINTEND
@@ -47,7 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:

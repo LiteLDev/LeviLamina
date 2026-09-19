@@ -13,7 +13,6 @@
 class BlockActor;
 class BlockPos;
 class BlockSource;
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BaseScriptBlockLiquidContainerComponentV010& operator=(BaseScriptBlockLiquidContainerComponentV010 const&);
-    BaseScriptBlockLiquidContainerComponentV010();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void> setFillLevel(int level);
@@ -40,26 +34,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseScriptBlockLiquidContainerComponentV010(
-        ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronLiquidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
-
-    MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&);
     // NOLINTEND
 
 public:
@@ -70,12 +48,6 @@ public:
     MCAPI bool $_isValid() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

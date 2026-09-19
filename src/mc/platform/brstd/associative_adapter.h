@@ -151,6 +151,27 @@ public:
     };
 
 public:
+    // mContainers is private, so the key container has to be exposed through an accessor of its own.
+    [[nodiscard]] key_container_type const& keys() const noexcept { return mContainers.keys; }
+
+    // In the original it is private and only reachable through an inlined public wrapper, which is why it is exposed
+    // here next to `emplace_hint`.
+    template <class K, class V>
+    std::pair<iterator, bool>
+    _emplace_before(typename key_container_type::const_iterator position, K&& key, V&& value) {
+        auto const offset = static_cast<size_t>(position - mContainers.keys.cbegin());
+        auto const keyIt  = mContainers.keys.insert(mContainers.keys.cbegin() + offset, ::std::forward<K>(key));
+        auto const valIt  = mContainers.values.insert(mContainers.values.cbegin() + offset, ::std::forward<V>(value));
+        return {iterator(keyIt, valIt), true};
+    }
+
+    /// @brief Inserts `key`/`value` at `position`, which the caller must have located using this
+    ///        container's own ordering.
+    template <class K, class V>
+    std::pair<iterator, bool> emplace_hint(typename key_container_type::const_iterator position, K&& key, V&& value) {
+        return _emplace_before(position, ::std::forward<K>(key), ::std::forward<V>(value));
+    }
+
     iterator       begin() noexcept { return iterator(mContainers.keys.begin(), mContainers.values.begin()); }
     const_iterator begin() const noexcept {
         return const_iterator(mContainers.keys.begin(), mContainers.values.begin());

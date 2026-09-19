@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/IOperation.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -48,8 +49,10 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk95977f;
     ::ll::UntypedStorage<8, 24> mUnkc3c05a;
     ::ll::UntypedStorage<8, 24> mUnk14143f;
-    ::ll::UntypedStorage<8, 8>  mUnk3b5778;
     ::ll::UntypedStorage<4, 4>  mUnk1afd03;
+    ::ll::UntypedStorage<8, 8>  mUnk3b5778;
+    ::ll::UntypedStorage<8, 24> mUnkfaed19;
+    ::ll::UntypedStorage<8, 64> mUnkda5207;
     // NOLINTEND
 
 public:
@@ -69,6 +72,9 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> _clearActiveProcess();
 
     MCNAPI ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& serviceProviders);
+
+    MCNAPI void
+    _tryDispatchOperationEvent(bool isUndo, ::Editor::Transactions::IOperation::ProcessResult const& result);
 
     MCNAPI ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& serviceProviders);
 

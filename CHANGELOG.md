@@ -7,6 +7,141 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.51.1] - 2026-09-19
+
+### Added
+
+- Added functions needed by [LeviStone](https://github.com/LiteLDev/LeviStone)
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
+## [26.51.0] - 2026-09-18
+
+### Changed
+
+- Adapted to Minecraft 26.51.1
+- Removed ProtocolCompatibility because it is unneeded
+- Bumped entt to v4.0.0
+
+## [26.40.6] - 2026-09-18
+
+### Added
+
+- Keep input line visible during console output @zimuya4153
+
+### Fixed
+
+- Added const mark for VariantParameterList's operator
+- Fixed missing include in ServerInfo.h @zimuya4153
+
+## [26.40.5] - 2026-09-17
+
+### Added
+
+- Readded ServerInstanceDestructor and ClientInstanceDestructor @kuangby
+- Implemented `BlockDescriptor::anyMatch`
+- Added conversation operator of VariantParameterListConst for VariantParameterList
+- Added missing destructor hooks for some services
+- Added constructor for `AddPlayerPacket` and `SetScorePacket`
+- Added constructor for `PlayerListPacketPayload::AddEntry`
+- Filled `MPMCQueue` and `BackgroundTask`
+
+  #### Camera & Matrix
+- Implemented `mce::Camera::getProjectionMatrix`
+- Implemented `MatrixStack::getTop`
+- Implemented `MatrixStack::top`
+
+  #### Actor
+- Implemented `Actor::getEquippedSlot`
+
+  #### Threading & Task System
+- Implemented `BackgroundTaskBase::isOrphaned`
+- Implemented `BackgroundWorker::getLocal`
+- Implemented `TaskGroup::getCurrentTaskGroup`
+- Implemented `Bedrock::Threading::SharedAsync`
+- Implemented `Bedrock::Threading::Async`
+
+  #### Content & Resources
+- Implemented `std::hash<ContentIdentity>`
+- Implemented `ContentIdentity::operator==`
+- Implemented `PackInstance::getResource`
+- Implemented `PacksInfoData::collectKeys`
+
+  #### Networking & Serialization
+- Implemented `ReadOnlyBinaryStream::ensureReadCompleted`
+- Implemented `SaveContextFactory::createNetworkSaveContext`
+- Implemented `ClientLevel::addSubChunkPacketHandler`
+- Implemented `ClientNetworkHandler::_respondBlobCacheStatusForSubChunk`
+- Implemented `ClientNetworkHandler::_handleSubChunkData`
+
+  #### Dimensions & Chunks
+- Implemented `Dimension::getHeightInSubchunks`
+- Implemented `LevelChunk::serializeBiomes`
+- Implemented `LevelChunk::deserializeBorderBlocks`
+- Implemented `SubChunk::isUniform`
+- Implemented `ChunkSource::getAvailableChunk`
+
+  #### Block System
+- Implemented `BlockDefinitionGroup::registerDataDrivenBlock`
+- Implemented `BlockDefinitionGroup::initializeBlocks`
+- Implemented `BlockDefinitionGroup::initBlockTypeFromDefinition`
+- Implemented `BlockType::forEachBlockPermutation`
+- Implemented `BlockPalette::initFromBlockDefinitions`
+- Implemented `Block::cacheComponentData`
+- Implemented `Block::_getBlockOcclusionType`
+
+  #### Block Components
+- Implemented `BlockComponentStorage::ComponentInstance`
+- Implemented `BlockComponentStorage::_addStatefulComponent`
+- Implemented `BlockComponentStorage::_findComponentTyped`
+- Implemented `BlockComponentGroupDescription::getComponentDescription`
+- Implemented `BlockComponentStorageFinalizer::finalizeComponentData`
+- Implemented `BlockTypeComponentStorageFinalizer::finalizeComponentData`
+
+  #### Animation
+- Implemented `HardcodedAnimationSystem::computeMovementThisTick`
+
+  #### UI
+- Implemented `ScreenController::registerButtonPressedHandler`
+
+### Changed
+
+- Bumped bedrock-runtime-data version to 26.40.5-client.9 and 26.40.8-server.9
+
+### Fixed
+
+- Fixed `Mob::getItemSlot`
+- Fixed `RuntimeSerializationLookup` type
+- Added missing virtual function for `SubChunkStorage` and `SubChunkStoragePaletted`
+
+## [26.40.4] - 2026-09-14
+
+### Fixed
+
+- Removed redundant extend for EventCoordinatorPimpl
+
+## [26.40.3] - 2026-09-14
+
+### Fixed
+
+- Moved absl::hash_internal::Hash definition to avoid namespace redefinition
+- Removed redundant filler which breaks the class size for BlockDescriptor
+
+## [26.40.2] - 2026-09-13
+
+### Added
+
+- Implemented Material::operator==
+- Implemented EventCoordinator and EventCoordinatorPimpl::_processEvent
+- Implemented BlockEventPublishingExecutor and BlockEventExecutor
+- Added constructor for BlockEvents::BlockEventBase and BlockRedstoneUpdateEvent
+
+### Changed
+
+- Bumped bedrock-runtime-data version
+
 ## [26.40.1] - 2026-09-12
 
 ### Added
@@ -1763,7 +1898,14 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.1...HEAD
+[26.51.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.0...v26.51.1
+[26.51.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.6...v26.51.0
+[26.40.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.5...v26.40.6
+[26.40.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.4...v26.40.5
+[26.40.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.3...v26.40.4
+[26.40.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.2...v26.40.3
+[26.40.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.1...v26.40.2
 [26.40.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.0...v26.40.1
 [26.40.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.2...v26.40.0
 [26.32.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.32.1...v26.32.2

@@ -18,15 +18,15 @@ class CloudStorageInformationQuery : public ::OreUI::QueryBase<::OreUI::CloudSto
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Social::IUserManager&>                 mUserManager;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastUpdate;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>               mIsCloudStorageSupported;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>             mStorageSize;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>             mStorageUsed;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>      mStorageAvailableSize;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>              mStoragePercentage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>               mIsStorageFull;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>               mIsStorageLow;
+    ::ll::TypedStorage<8, 8, ::Social::IUserManager&>                           mUserManager;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>           mLastUpdate;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsCloudStorageSupported;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64, uint64>>               mStorageSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64, uint64>>               mStorageUsed;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mStorageAvailableSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                 mStoragePercentage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsStorageFull;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsStorageLow;
     // NOLINTEND
 
 public:

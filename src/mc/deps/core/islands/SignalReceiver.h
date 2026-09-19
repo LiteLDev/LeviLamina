@@ -10,7 +10,6 @@
 namespace Bedrock::Detail { class SignalPublisher; }
 namespace Bedrock::PubSub { class DeferredSubscriptionHub; }
 namespace Bedrock::PubSub { class RawSubscription; }
-namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 namespace Bedrock {
@@ -41,7 +40,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk36537f;
+    ::ll::UntypedStorage<8, 80> mUnk434e13;
     ::ll::UntypedStorage<8, 8>  mUnk3a0287;
     ::ll::UntypedStorage<8, 16> mUnk350063;
     // NOLINTEND
@@ -50,12 +49,11 @@ public:
     // prevent constructor by default
     SignalReceiver& operator=(SignalReceiver const&);
     SignalReceiver(SignalReceiver const&);
+    SignalReceiver();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SignalReceiver();
-
 #ifdef LL_PLAT_C
     MCNAPI bool _connectSignal(
         ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)> const&
@@ -64,12 +62,6 @@ public:
         int                                 priority
     );
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

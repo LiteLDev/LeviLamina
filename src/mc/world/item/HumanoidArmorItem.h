@@ -6,6 +6,7 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -147,7 +148,7 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
 
     virtual int buildIdAux(short auxValue, ::CompoundTag const* userData) const /*override*/;
     // NOLINTEND
@@ -237,7 +238,7 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCAPI int $buildIdAux(short auxValue, ::CompoundTag const* userData) const;
 

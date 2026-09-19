@@ -24,10 +24,14 @@ LL_TYPE_INSTANCE_HOOK(
     dbStorage = this;
     return res;
 }
+LL_TYPE_INSTANCE_HOOK(DBStorageShutdownHook, HookPriority::High, DBStorage, &DBStorage::$checkShutdownDone, bool) {
+    dbStorage = nullptr;
+    return origin();
+}
 
 optional_ref<DBStorage> getDBStorage() { return dbStorage.load(); }
 
-using HookReg = memory::HookRegistrar<DBStorageHook>;
+using HookReg = memory::HookRegistrar<DBStorageHook, DBStorageShutdownHook>;
 
 static HookReg hookRegister;
 

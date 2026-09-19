@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ScriptStat;
+class DebuggerStat;
 class ServerLevel;
 // clang-format on
 
@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24>  mUnkfe1225;
-    ::ll::UntypedStorage<8, 368> mUnk247d3f;
-    ::ll::UntypedStorage<8, 368> mUnkb921d0;
+    ::ll::UntypedStorage<8, 368> mUnkd18e0a;
+    ::ll::UntypedStorage<8, 368> mUnk64561d;
     // NOLINTEND
 
 public:
@@ -29,10 +29,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::ScriptStat>
+    MCNAPI ::std::optional<::DebuggerStat>
     _collectEntityCountStats(::Bedrock::NotNullNonOwnerPtr<::ServerLevel> serverLevel, uint64, uint64, uint64);
 
-    MCNAPI ::std::optional<::ScriptStat> _collectLoadedChunkStats(
+    MCNAPI ::std::optional<::DebuggerStat> _collectLoadedChunkStats(
         ::Bedrock::NotNullNonOwnerPtr<::ServerLevel> serverLevel,
         uint64                                       currentTick,
         uint64,

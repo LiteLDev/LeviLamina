@@ -24,8 +24,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static ::std::string getStringFromType(::SharedTypes::persona::BodySizeType bodySizeType);
-
-    MCAPI static ::SharedTypes::persona::BodySizeType getTypeFromString(::std::string_view bodySizeStr);
 #endif
     // NOLINTEND
 

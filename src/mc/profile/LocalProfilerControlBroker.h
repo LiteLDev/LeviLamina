@@ -19,9 +19,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnkc64841;
+    ::ll::UntypedStorage<8, 80> mUnkc0d0aa;
     ::ll::UntypedStorage<8, 24> mUnk26bc3f;
-    ::ll::UntypedStorage<8, 80> mUnkd1b2ba;
+    ::ll::UntypedStorage<8, 80> mUnkcce867;
     ::ll::UntypedStorage<8, 24> mUnk954e2a;
     // NOLINTEND
 
@@ -35,10 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void enqueueRequest(::Bedrock::Profiling::Control::ProfilerControlRequest request);
-
-#ifdef LL_PLAT_C
-    MCNAPI void enqueueResult(::Bedrock::Profiling::Control::ProfilerControlResult result);
-#endif
 
     MCNAPI void forEachPendingResult(
         ::std::function<::LocalProfilerControlBroker::ResultResponse const(

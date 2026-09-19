@@ -25,6 +25,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                mScale;
     ::ll::TypedStorage<8, 24, ::std::variant<::std::shared_ptr<::mce::Mesh>, int>> mCustomNameplaceMeshOrBackgroundSize;
     ::ll::TypedStorage<4, 20, ::std::optional<::Quaternion>>                       mCustomRotation;
+    ::ll::TypedStorage<4, 4, float>                                                mLineHeight;
     // NOLINTEND
 
 public:

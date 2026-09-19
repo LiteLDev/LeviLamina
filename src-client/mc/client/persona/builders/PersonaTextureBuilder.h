@@ -4,17 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/client/persona/builders/TextureTint.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
-class IAdvancedGraphicsOptions;
-class IPersonaImageProvider;
+class IPersonaPieceProvider;
 class Pack;
-class ResourceLoadManager;
-class ResourcePackManager;
+class TaskGroup;
+struct PersonaCharacter;
 struct PersonaTextureResources;
-struct TextureHotReloader;
 namespace Json { class Value; }
 namespace mce { class TextureGroup; }
 namespace persona { struct TextureTint; }
@@ -40,15 +38,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PersonaTextureBuilder(
-        ::IPersonaImageProvider&                                  imageProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>      resourcePackManager,
-        ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
+    MCNAPI ::Bedrock::Threading::Async<bool> parseTextures(
+        ::std::string const&                      characterName,
+        ::TaskGroup&                              taskGroup,
+        ::IPersonaPieceProvider&                  pieceProvider,
+        ::std::unordered_map<::std::string, uint> sampledTexelWidths
     );
 
-    MCNAPI ~PersonaTextureBuilder();
+    MCNAPI void registerTexturesForHotReload(
+        ::PersonaCharacter&                        character,
+        ::std::function<void(::PersonaCharacter&)> onTextureReloaded
+    );
     // NOLINTEND
 
 public:
@@ -65,7 +65,8 @@ public:
         ::PersonaTextureResources& textureResources,
         ::std::string const&       pieceId,
         ::persona::TextureTint     texture,
-        bool                       isAnimated
+        bool                       isAnimated,
+        ::std::optional<uint>      sampledTexelWidth
     );
 
     MCNAPI static void _addTextureToConfiguration(
@@ -93,23 +94,5 @@ public:
     MCNAPI static ::std::string const& PERSONA_ANIMATED_ATLAS_TEST_PATH();
 
     MCNAPI static ::std::string const& PERSONA_ATLAS_TEST_PATH();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::IPersonaImageProvider&                                  imageProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>      resourcePackManager,
-        ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

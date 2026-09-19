@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/INetherNetTransportInterfaceCallbacks.h"
 #include "mc/deps/nether_net/NetworkID.h"
 #include "mc/network/Connector.h"
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
-#include "mc/platform/threading/Mutex.h"
+#include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
@@ -24,6 +25,7 @@ namespace Json { class Value; }
 namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace NetherNet { class INetherNetTransportInterface; }
 namespace Social { class GameConnectionInfo; }
+namespace cereal { struct SchemaWriter; }
 // clang-format on
 
 struct NetherNetConnector : public ::RemoteConnector, public ::NetherNet::INetherNetTransportInterfaceCallbacks {
@@ -81,7 +83,8 @@ public:
         NewOutgoingConnectionEvent();
     };
 
-    using BroadcastRequestCallback = ::std::function<bool(void*, int*)>;
+    using BroadcastRequestCallback = ::brstd::move_only_function<
+        ::brstd::move_only_function<bool(::cereal::SchemaWriter&, ::cereal::ContextArea)>()>;
 
     using BroadcastResponseCallback = ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>;
 
@@ -103,9 +106,14 @@ public:
         ::std::unique_ptr<
             ::NetherNet::INetherNetTransportInterface,
             ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>>
-                                                                  mTransport;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>        mBroadcastCallbackMutex;
-    ::ll::TypedStorage<8, 64, ::std::function<bool(void*, int*)>> mBroadcastRequestCallback;
+                                            mTransport;
+    ::ll::TypedStorage<8, 80, ::std::mutex> mBroadcastCallbackMutex;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::brstd::move_only_function<
+            ::brstd::move_only_function<bool(::cereal::SchemaWriter&, ::cereal::ContextArea)>()>>
+        mBroadcastRequestCallback;
     ::ll::TypedStorage<8, 64, ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>>
                                                       mBroadcastResponseCallback;
     ::ll::TypedStorage<8, 80, ::std::recursive_mutex> mEventsMutex;
@@ -175,9 +183,10 @@ public:
     ) /*override*/;
 
     virtual void
-    OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) /*override*/;
+    OnDiscoveryResponse(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) /*override*/;
 
-    virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) /*override*/;
+    virtual ::brstd::move_only_function<bool(::cereal::SchemaWriter&, ::cereal::ContextArea)>
+    OnDiscoveryRequest() /*override*/;
 
     virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags) /*override*/;
     // NOLINTEND
@@ -201,8 +210,6 @@ public:
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&
     );
 #endif
-
-    MCAPI void setBroadcastRequestCallback(::std::function<bool(void*, int*)>&& broadcastRequestCallback);
 
     MCAPI void setBroadcastResponseCallback(
         ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>&& broadcastResponseCallback
@@ -273,9 +280,9 @@ public:
         ::Json::Value              summary
     );
 
-    MCAPI void $OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size);
+    MCAPI void $OnDiscoveryResponse(::NetherNet::NetworkID networkID, void const* pApplicationData, int size);
 
-    MCAPI bool $OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize);
+    MCAPI ::brstd::move_only_function<bool(::cereal::SchemaWriter&, ::cereal::ContextArea)> $OnDiscoveryRequest();
 
     MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
 

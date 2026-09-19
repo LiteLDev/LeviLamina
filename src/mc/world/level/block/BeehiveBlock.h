@@ -44,6 +44,10 @@ public:
     // NOLINTBEGIN
     MCAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
+    MCAPI void evictAll(::BlockSource& region, ::BlockPos const& pos, bool angry) const;
+#endif
+
     MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -52,18 +56,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void _fillHoneyBottle(
-        ::Player&         player,
-        ::ItemStack&      emptyBottle,
-        ::ItemStack&      honeyBottle,
-        ::BlockSource&    region,
-        ::BlockPos const& pos
-    );
-
-    MCAPI static void _playShearSound(::BlockSource& region, ::BlockPos const& pos);
-#endif
-
     MCAPI static void deliverNectar(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
     MCAPI static ::ItemStack

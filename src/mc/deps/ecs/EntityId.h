@@ -4,11 +4,14 @@
 
 #include "mc/deps/ecs/EntityIdTraits.h"
 
+// entt v4 constrains `entt::entt_traits` with the `entity_like` concept, which is
+// only satisfied when `entt::internal::entt_traits` is defined for the type. It is
+// also the traits the generic `entt::entt_traits` is built from, so specializing it
+// makes `entt::entt_traits<EntityId>` resolve to `basic_entt_traits<EntityIdTraits>`.
+namespace entt::internal {
 template <>
-class entt::entt_traits<EntityId> : public entt::basic_entt_traits<EntityIdTraits> {
-public:
-    static constexpr entity_type page_size = ENTT_SPARSE_PAGE;
-};
+struct entt_traits<EntityId> : EntityIdTraits {};
+} // namespace entt::internal
 
 class EntityId : public entt::entt_traits<EntityId> {
 public:

@@ -5,8 +5,10 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/world/level/BlockPalette.h"
 #include "mc/world/level/block/BedrockBlockNames.h"
+#include "mc/world/level/block/VanillaBlockTypeIds.h"
 #include "mc/world/level/block/block_serialization_utils/BlockSerializationUtils.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
+#include "mc/world/level/material/Material.h"
 
 #include "ll/api/service/Bedrock.h"
 
@@ -80,3 +82,31 @@ optional_ref<Block const> Block::tryGetFromRegistry(class CompoundTag const& nbt
 }
 
 bool Block::isAir() const { return getBlockType().mNameInfo->mFullName->mStrHash == BedrockBlockNames::Air().mStrHash; }
+
+BlockOcclusionType Block::_getBlockOcclusionType() const {
+    if (hasProperty(BlockProperty::HalfSlab)) {
+        return BlockOcclusionType::HalfSlab;
+    }
+    if (hasProperty(BlockProperty::Leaves)) {
+        return BlockOcclusionType::Leaf;
+    }
+    if (hasProperty(BlockProperty::Connects2D)) {
+        return BlockOcclusionType::Connects2D;
+    }
+    auto const& material = mBlockType->mMaterial;
+    if (material.mLiquid) {
+        return BlockOcclusionType::IsLiquid;
+    }
+    if (hasProperty(BlockProperty::Portal)) {
+        return BlockOcclusionType::Portal;
+    }
+    if (material.mType == ::SharedTypes::v1_26_20::MaterialType::Ice) {
+        return BlockOcclusionType::Ice;
+    }
+    if (material.mType == ::SharedTypes::v1_26_20::MaterialType::Cactus) {
+        return BlockOcclusionType::Cactus;
+    }
+    return mBlockType->mNameInfo->mFullName->mStrHash == ::VanillaBlockTypeIds::SculkShrieker().mStrHash
+             ? BlockOcclusionType::SculkShrieker
+             : BlockOcclusionType::Default;
+}

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::JSONObject { class ObjectNode; }
-namespace Bedrock::Threading { class Mutex; }
 namespace Core::Profile { class ProfileGroupManager; }
 // clang-format on
 
@@ -27,7 +26,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnk53d76a;
         ::ll::UntypedStorage<1, 1>  mUnk232378;
         ::ll::UntypedStorage<8, 64> mUnkf8bb1c;
-        ::ll::UntypedStorage<8, 80> mUnk272e6e;
+        ::ll::UntypedStorage<8, 80> mUnkb77cf3;
         ::ll::UntypedStorage<8, 16> mUnkd2661b;
         // NOLINTEND
 
@@ -65,22 +64,11 @@ public:
     // prevent constructor by default
     ProfilingConfigManager& operator=(ProfilingConfigManager const&);
     ProfilingConfigManager(ProfilingConfigManager const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ProfilingConfigManager();
-    // NOLINTEND
+    ProfilingConfigManager();
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::JSONObject::ObjectNode const* getProfileObjectFromBootstrapConfig();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };

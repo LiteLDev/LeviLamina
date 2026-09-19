@@ -10,13 +10,13 @@
 #include "mc/network/Nonce.h"
 #include "mc/network/ResolvedExperienceInfo.h"
 #include "mc/network/ThirdPartyInfo.h"
+#include "mc/network/TransportLayer.h"
 #include "mc/network/services/signaling/player_messaging/NetworkID.h"
 
 // auto generated forward declare list
 // clang-format off
 class IIdentityAssertionVerifier;
 namespace Json { class Value; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace Social {
@@ -26,6 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::Social::ConnectionType>                                          mType;
+    ::ll::TypedStorage<4, 4, ::TransportLayer>                                                  mTransportType;
     ::ll::TypedStorage<8, 32, ::std::string>                                                    mHostIpAddress;
     ::ll::TypedStorage<8, 32, ::std::string>                                                    mUnresolvedUrl;
     ::ll::TypedStorage<8, 32, ::std::string>                                                    mServerRegion;
@@ -64,14 +65,6 @@ public:
 
     MCAPI GameConnectionInfo(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
 
-    MCAPI GameConnectionInfo(
-        ::RakNet::SystemAddress     connection,
-        ::RakNet::RakNetGUID const& rakGuid,
-        ::ThirdPartyInfo const&     serverInfo
-    );
-
-    MCAPI GameConnectionInfo(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
-
 #ifdef LL_PLAT_C
     MCAPI GameConnectionInfo(
         ::Social::ConnectionType            connectionType,
@@ -83,20 +76,6 @@ public:
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::ThirdPartyInfo const&       serverInfo
-    );
-
-    MCAPI GameConnectionInfo(
-        ::RakNet::SystemAddress     connection,
-        ::RakNet::RakNetGUID const& rakGuid,
-        ::ThirdPartyInfo const&     serverInfo,
-        ::std::string const&        externalServerName
-    );
-
-    MCAPI GameConnectionInfo(
-        ::Social::ConnectionType connectionType,
-        ::std::string const&     ipAddress,
-        int                      port,
-        ::ThirdPartyInfo const&  serverInfo
     );
 
     MCAPI GameConnectionInfo(
@@ -112,9 +91,27 @@ public:
         ::std::string&                serverRegion,
         int                           serviceQuality
     );
+#endif
 
     MCAPI GameConnectionInfo(
         ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
+        ::std::string const&     ipAddress,
+        int                      port
+    );
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
+        ::std::string const&     ipAddress,
+        int                      port,
+        ::ThirdPartyInfo const&  serverInfo
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
         int                      port,
         ::ThirdPartyInfo const&  serverInfo,
@@ -123,6 +120,7 @@ public:
 
     MCAPI GameConnectionInfo(
         ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
         int                      port,
         ::std::string&           serverRegion,
@@ -164,11 +162,6 @@ public:
 
     MCAPI void* $ctor(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
 
-    MCAPI void*
-    $ctor(::RakNet::SystemAddress connection, ::RakNet::RakNetGUID const& rakGuid, ::ThirdPartyInfo const& serverInfo);
-
-    MCAPI void* $ctor(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
-
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::Social::ConnectionType            connectionType,
@@ -180,20 +173,6 @@ public:
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::ThirdPartyInfo const&       serverInfo
-    );
-
-    MCAPI void* $ctor(
-        ::RakNet::SystemAddress     connection,
-        ::RakNet::RakNetGUID const& rakGuid,
-        ::ThirdPartyInfo const&     serverInfo,
-        ::std::string const&        externalServerName
-    );
-
-    MCAPI void* $ctor(
-        ::Social::ConnectionType connectionType,
-        ::std::string const&     ipAddress,
-        int                      port,
-        ::ThirdPartyInfo const&  serverInfo
     );
 
     MCAPI void* $ctor(
@@ -209,9 +188,27 @@ public:
         ::std::string&                serverRegion,
         int                           serviceQuality
     );
+#endif
 
     MCAPI void* $ctor(
         ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
+        ::std::string const&     ipAddress,
+        int                      port
+    );
+
+    MCAPI void* $ctor(
+        ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
+        ::std::string const&     ipAddress,
+        int                      port,
+        ::ThirdPartyInfo const&  serverInfo
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
         int                      port,
         ::ThirdPartyInfo const&  serverInfo,
@@ -220,6 +217,7 @@ public:
 
     MCAPI void* $ctor(
         ::Social::ConnectionType connectionType,
+        ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
         int                      port,
         ::std::string&           serverRegion,

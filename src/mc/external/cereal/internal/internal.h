@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ContextArea.h"
-#include "mc/deps/cereal/schema/BasicSchema.h"
 #include "mc/deps/cereal/schema/ReflectedType.h"
 #include "mc/platform/brstd/flat_set.h"
 
@@ -25,9 +24,6 @@ namespace cereal::internal {
 MCAPI void checkAndOverride(::entt::meta_type const& metaType, uint metaDataId);
 
 MCAPI void deprecateName(::entt::meta_type const& type, ::std::string_view name);
-
-MCAPI ::cereal::internal::BasicSchema::TypeDescriptor const*
-descriptorOrFail(::entt::meta_any const& any, ::entt::type_info const& expected);
 
 MCAPI ::std::string errorMessage(
     ::cereal::SerializerContext const& context,
@@ -71,7 +67,7 @@ MCAPI void getSchemaDescriptionAndDeps(
     ::std::vector<::cereal::SchemaDescription>&  descriptions,
     ::std::set<uint>&                            done,
     ::cereal::internal::ReflectionContext const& ctx,
-    ::entt::type_info                            info,
+    uint                                         typeId,
     ::cereal::DescriptionConfig                  config
 );
 #endif
@@ -81,7 +77,7 @@ MCAPI void getSchemaDescriptionAndDeps(
     ::std::vector<::cereal::SchemaDescription>&  descriptions,
     ::std::set<uint>&                            done,
     ::cereal::internal::ReflectionContext const& ctx,
-    ::entt::type_info                            info,
+    uint                                         typeId,
     ::cereal::DescriptionConfig                  config
 );
 #endif

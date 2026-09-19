@@ -85,6 +85,8 @@ public:
 
     MCAPI void reload();
 
+    MCAPI void sendLifecycleEvent();
+
     MCAPI void sendMessage(::std::string const& id, ::std::string const& payload);
     // NOLINTEND
 

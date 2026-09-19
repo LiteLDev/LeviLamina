@@ -12,6 +12,7 @@
 namespace Editor { class ProjectRegion; }
 namespace Editor::ScriptModule { class ScriptProjectRegion; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -52,6 +53,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+
+    MCNAPI static ::Scripting::InterfaceBinding bindScriptMetrics();
+
+    MCNAPI static ::Scripting::InterfaceBinding bindScriptPlayerMetrics();
     // NOLINTEND
 
 public:

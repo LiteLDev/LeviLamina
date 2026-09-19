@@ -60,6 +60,10 @@ public:
 
     virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
         /*override*/;
+
+    virtual ::std::string getEfficiencyHoverText(::ItemStackBase const& stack) const;
+
+    virtual ::std::string_view getEfficiencyLocalization() const;
     // NOLINTEND
 
 public:
@@ -89,6 +93,10 @@ public:
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
     MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+
+    MCAPI ::std::string $getEfficiencyHoverText(::ItemStackBase const& stack) const;
+
+    MCAPI ::std::string_view $getEfficiencyLocalization() const;
 
 
     // NOLINTEND

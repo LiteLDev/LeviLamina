@@ -20,6 +20,18 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos const>              mBufferWorldOrigin;
     ::ll::TypedStorage<4, 4, int const>                      mBufferSizeY;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~BiomeSamplesContainer();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };
 
 } // namespace BiomeChunkVolume

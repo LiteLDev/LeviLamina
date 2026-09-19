@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/threading/Mutex.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace OreUI::Debug { struct DevServer; }
@@ -48,7 +45,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<void(::gsl::span<::OreUI::Debug::DevServer const>)>> mOnDevServersChanged;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Debug::DevServer>>                            mDevServers;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                         mMessageQueueMutex;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                        mMessageQueueMutex;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Debug::DevServerListener::Message>>           mMessageQueue;
     ::ll::TypedStorage<8, 16, ::std::thread>                                                       mListeningThread;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Debug::DevServerListener::BroadcastListener>> mListener;
