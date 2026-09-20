@@ -112,8 +112,8 @@ void ClientNetworkHandler::_respondBlobCacheStatusForSubChunk(::SubChunkPacket::
                 if (cache != nullptr && cache->doesBlobExist(blobId)) {
                     hits->enqueue(blobId);
                     if (auto client = ll::service::getClientInstance()) {
-                        if (auto tracking = client->mUnke2a76f.as<MinecraftGame*>()
-                                                ->mUnke45c86.as<std::unique_ptr<SubChunkRequestTrackingData>>()
+                        if (auto tracking = static_cast<MinecraftGame&>(client->getMinecraftGame())
+                                                .mUnke45c86.as<std::unique_ptr<SubChunkRequestTrackingData>>()
                                                 .get()) {
                             ++*tracking->mClientSubChunksReusedFromCache;
                         }
@@ -166,8 +166,8 @@ void ClientNetworkHandler::_handleSubChunkData(
     if (subChunk == nullptr) {
         // Not in memory yet: count it so the request manager can retry this subchunk later.
         if (auto client = ll::service::getClientInstance()) {
-            if (auto tracking = client->mUnke2a76f.as<MinecraftGame*>()
-                                    ->mUnke45c86.as<std::unique_ptr<SubChunkRequestTrackingData>>()
+            if (auto tracking = static_cast<MinecraftGame&>(client->getMinecraftGame())
+                                    .mUnke45c86.as<std::unique_ptr<SubChunkRequestTrackingData>>()
                                     .get()) {
                 ++*tracking->mClientSubChunksNotProcessed;
             }

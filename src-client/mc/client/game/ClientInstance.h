@@ -245,6 +245,8 @@ public:
 public:
     LLAPI static bool tickDestroyBlock(::ClientInstance::ClientDestroyBlockState& destroyBlockState, bool advanceTime);
 
+    IMinecraftGame& getMinecraftGame() { return *mUnke2a76f.as<IMinecraftGame*>(); }
+
 public:
     // member variables
     // NOLINTBEGIN
