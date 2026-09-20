@@ -387,7 +387,13 @@ MCAPI bool NGXSafeInitializeLog(
 
 MCAPI ::PackType PackTypeFromString(::std::string const& value);
 
+#ifdef LL_PLAT_C
+MCAPI void PlatformBedrockLogOut(char const* buf, uint64 nullTerminatorPos);
+#endif
+
+#ifdef LL_PLAT_S
 MCAPI void PlatformBedrockLogOut(uint const _priority, char const* buf, uint64 nullTerminatorPos);
+#endif
 
 MCAPI void PushCircularReference(
     ::std::unordered_map<::BlockPos, ::RedstoneTorchCapacitor*>&                      relatedTorches,
