@@ -151,45 +151,14 @@ public:
     struct IceServer {
     public:
         // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                                   uri;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    urls;
-        ::ll::TypedStorage<8, 32, ::std::string>                                   username;
-        ::ll::TypedStorage<8, 32, ::std::string>                                   password;
-        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::TlsCertPolicy> tls_cert_policy;
-        ::ll::TypedStorage<8, 32, ::std::string>                                   hostname;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    tls_alpn_protocols;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    tls_elliptic_curves;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI IceServer();
-
-        MCNAPI IceServer(::webrtc::PeerConnectionInterface::IceServer const&);
-
-        MCNAPI ::webrtc::PeerConnectionInterface::IceServer&
-        operator=(::webrtc::PeerConnectionInterface::IceServer const&);
-
-        MCNAPI bool operator==(::webrtc::PeerConnectionInterface::IceServer const& o) const;
-
-        MCNAPI ~IceServer();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
-
-        MCNAPI void* $ctor(::webrtc::PeerConnectionInterface::IceServer const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
+        std::string                                    uri;
+        std::vector<::std::string>                     urls;
+        std::string                                    username;
+        std::string                                    password;
+        webrtc::PeerConnectionInterface::TlsCertPolicy tls_cert_policy;
+        std::string                                    hostname;
+        std::vector<::std::string>                     tls_alpn_protocols;
+        std::vector<::std::string>                     tls_elliptic_curves;
     };
 
     struct PortAllocatorConfig {

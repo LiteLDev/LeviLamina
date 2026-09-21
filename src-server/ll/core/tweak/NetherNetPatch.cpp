@@ -14,21 +14,17 @@
 // Modified by LeviMC in 2026
 
 #include "ll/core/tweak/NetherNetPatch.h"
-#include "ll/api/event/EventBus.h"
-#include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/deps/nether_net/INetherNetTransportInterface.h"
 #include "mc/deps/nether_net/INetherNetTransportInterfaceCallbacks.h"
-#include "mc/deps/nether_net/StunRelayServer.h"
+#include "mc/deps/nether_net/ServerNegotiator.h"
 #include "mc/deps/nether_net/TransportConfiguration.h"
 #include "mc/external/webrtc/Port.h"
 #include "mc/network/NetherNetConnector.h"
-#include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/ServerNetworkSystem.h"
 
 namespace ll::network::nether_net_patch {
@@ -108,8 +104,9 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 namespace {
-constexpr int StunErrorUnauthorized = 401;
-}
+constexpr int                                           StunErrorUnauthorized = 401;
+std::vector<webrtc::PeerConnectionInterface::IceServer> StunServers;
+} // namespace
 
 LL_TYPE_INSTANCE_HOOK(
     BindingErrorResponseHook,
@@ -132,40 +129,52 @@ LL_TYPE_INSTANCE_HOOK(
     origin(message, addr, error_code, reason);
 }
 
-void applyStunConfig() {
-    auto& servers = ll::getLeviConfig().targeted.netherNetPatch.stunServers;
-    if (auto handler = ll::service::getServerNetworkHandler();
-        handler && handler->mNetwork._isUsingNetherNetTransportLayer() && !servers.empty()) {
-        std::vector<NetherNet::StunRelayServer> stunServers;
-        for (auto& uri : servers) {
-            if (uri.empty()) {
-                continue;
-            }
-            // Bedrock rejects the whole configuration if any URI is malformed, which stops every
-            // session from being created, so drop the bad entry instead of passing it on.
-            if (!uri.starts_with("stun:") && !uri.starts_with("stuns:")) {
-                ll::getLogger().error("Ignoring STUN server '{}': only stun: and stuns: URIs are supported."_tr(uri));
-                continue;
-            }
-            if (uri.find('@') != std::string::npos || uri.find('?') != std::string::npos) {
-                ll::getLogger().error("Ignoring STUN server '{}': the URI must not contain '@' or '?'."_tr(uri));
-                continue;
-            }
-            stunServers.push_back({uri, {}, {}});
-        }
+LL_TYPE_INSTANCE_HOOK(
+    CreateAnswerHook,
+    HookPriority::High,
+    NetherNet::ServerNegotiator,
+    &NetherNet::ServerNegotiator::$createAnswer,
+    void,
+    webrtc::PeerConnectionInterface::RTCConfiguration const& config,
+    NetherNet::ConnectRequest const&                         offer,
+    brstd::move_only_function<
+        void(Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>)>&&
+        onComplete
+) {
+    auto& cfg = const_cast<webrtc::PeerConnectionInterface::RTCConfiguration&>(config);
+    cfg.servers->append_range(StunServers);
+    origin(config, offer, std::move(onComplete));
+}
 
-        auto connector = static_cast<NetherNetConnector*>(handler->mNetwork.mRemoteConnector.get());
-        connector->mTransport->get()->SetRelayConfig(stunServers);
-        ll::getLogger().info("Configured {} STUN server(s) for NetherNet."_tr(servers.size()));
+void loadStunConfig() {
+    auto& servers = ll::getLeviConfig().targeted.netherNetPatch.stunServers;
+    for (auto& uri : servers) {
+        if (uri.empty()) {
+            continue;
+        }
+        // Bedrock rejects the whole configuration if any URI is malformed, which stops every
+        // session from being created, so drop the bad entry instead of passing it on.
+        if (!uri.starts_with("stun:") && !uri.starts_with("stuns:")) {
+            ll::getLogger().error("Ignoring STUN server '{}': only stun: and stuns: URIs are supported."_tr(uri));
+            continue;
+        }
+        if (uri.find('@') != std::string::npos || uri.find('?') != std::string::npos) {
+            ll::getLogger().error("Ignoring STUN server '{}': the URI must not contain '@' or '?'."_tr(uri));
+            continue;
+        }
+        StunServers.push_back(webrtc::PeerConnectionInterface::IceServer{uri});
     }
+    ll::getLogger().info("Configured {} STUN server(s) for NetherNet."_tr(StunServers.size()));
 }
 
 void enablePatch() {
-    if (ll::getLeviConfig().targeted.netherNetPatch.singlePort) {
+    auto& config = ll::getLeviConfig().targeted.netherNetPatch;
+    if (config.singlePort) {
         static ll::memory::HookRegistrar<CreateTransportInterfaceHook, BindingErrorResponseHook> reg;
     }
-    ll::event::EventBus::getInstance().emplaceListener<ll::event::ServerStartedEvent>(
-        [](ll::event::ServerStartedEvent&) { applyStunConfig(); }
-    );
+    if (!config.stunServers.empty()) {
+        loadStunConfig();
+        static ll::memory::HookRegistrar<CreateAnswerHook> reg;
+    }
 }
 } // namespace ll::network::nether_net_patch
