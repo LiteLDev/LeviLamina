@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   "netherNetPatch": {
     "enable": true,
     "singlePort": true, // Use single port instead of opening new port for each player.
-    "serverIP": "", // The server's public IP address, this could also be configured by SERVER_IP environmental variable. For hosting, you can also configure server port by SERVER_PORT environmental variable.
+    "serverIP": "", // The server's public IP address, this could also be configured by SERVER_IP environmental variable. For hosting, you can also configure server port by SERVER_PORT environmental variable. In most cases, there's no need to configure this.
     "stunServers": [ // Custom stun servers, so a server behind NAT can tell clients its public address.
         "stun:stun.l.google.com:19302",
         "stun:stun.miwifi.com:3478"
