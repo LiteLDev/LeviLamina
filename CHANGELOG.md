@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.51.4] - 2026-09-21
+
+### Added
+
+- Added NetherNetPatch
+  Now LeviLamina servers use single port on NetherNet by default
+  And you can also configure stun servers in configuration file
+  This feature can be configured at `plugins/LeviLamina/config/Config.json`
+
+  ```jsonc
+  "netherNetPatch": {
+    "enable": true,
+    "singlePort": true, // Use single port instead of opening new port for each player.
+    "serverIP": "", // The server's public IP address, this could also be configured by SERVER_IP environmental variable. For hosting, you can also configure server port by SERVER_PORT environmental variable.
+    "stunServers": [ // Custom stun servers, so a server behind NAT can tell clients its public address.
+        "stun:stun.l.google.com:19302",
+        "stun:stun.miwifi.com:3478"
+    ]
+  }
+  ```
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
+### Fixed
+
+- Synced `std::hash<ActorUniqueID>` with latest Minecraft
+
 ## [26.51.3] - 2026-09-20
 
 ### Added
@@ -1943,7 +1972,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.4...HEAD
+[26.51.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.3...v26.51.4
 [26.51.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.2...v26.51.3
 [26.51.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.1...v26.51.2
 [26.51.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.0...v26.51.1
