@@ -3,9 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/AdapterType.h"
+#include "mc/external/webrtc/CryptoOptions.h"
+#include "mc/external/webrtc/MediaConfig.h"
 #include "mc/external/webrtc/MediaType.h"
+#include "mc/external/webrtc/PortPrunePolicy.h"
 #include "mc/external/webrtc/RTCErrorOr.h"
 #include "mc/external/webrtc/RefCountInterface.h"
+#include "mc/external/webrtc/SdpSemantics.h"
+#include "mc/external/webrtc/TimeDelta.h"
+#include "mc/external/webrtc/VpnPreference.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -19,6 +26,8 @@ namespace webrtc { class IceCandidate; }
 namespace webrtc { class MediaStreamInterface; }
 namespace webrtc { class MediaStreamTrackInterface; }
 namespace webrtc { class NetworkControllerInterface; }
+namespace webrtc { class NetworkMask; }
+namespace webrtc { class RTCCertificate; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class RTCStatsCollectorCallback; }
 namespace webrtc { class Resource; }
@@ -31,9 +40,11 @@ namespace webrtc { class SessionDescriptionInterface; }
 namespace webrtc { class SetLocalDescriptionObserverInterface; }
 namespace webrtc { class SetRemoteDescriptionObserverInterface; }
 namespace webrtc { class SetSessionDescriptionObserver; }
+namespace webrtc { class StaticStunServer; }
 namespace webrtc { class StatsObserver; }
 namespace webrtc { class StreamCollectionInterface; }
 namespace webrtc { class Thread; }
+namespace webrtc { class TurnCustomizer; }
 namespace webrtc { struct BandwidthEstimationSettings; }
 namespace webrtc { struct BitrateSettings; }
 namespace webrtc { struct DataChannelInit; }
@@ -141,14 +152,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk576f01;
-        ::ll::UntypedStorage<8, 24> mUnk4e9af7;
-        ::ll::UntypedStorage<8, 32> mUnk4e1cbe;
-        ::ll::UntypedStorage<8, 32> mUnkb9cffb;
-        ::ll::UntypedStorage<4, 4>  mUnk6919f5;
-        ::ll::UntypedStorage<8, 32> mUnkc51c70;
-        ::ll::UntypedStorage<8, 24> mUnk5c91d5;
-        ::ll::UntypedStorage<8, 24> mUnk64816a;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   uri;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    urls;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   username;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   password;
+        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::TlsCertPolicy> tls_cert_policy;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   hostname;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    tls_alpn_protocols;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    tls_elliptic_curves;
         // NOLINTEND
 
     public:
@@ -185,70 +196,66 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkcd0e3a;
-        ::ll::UntypedStorage<4, 4> mUnkdd1179;
-        ::ll::UntypedStorage<4, 4> mUnk49079f;
+        ::ll::TypedStorage<4, 4, int>  min_port;
+        ::ll::TypedStorage<4, 4, int>  max_port;
+        ::ll::TypedStorage<4, 4, uint> flags;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PortAllocatorConfig& operator=(PortAllocatorConfig const&);
-        PortAllocatorConfig(PortAllocatorConfig const&);
-        PortAllocatorConfig();
     };
 
     struct RTCConfiguration {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk273186;
-        ::ll::UntypedStorage<4, 4>  mUnk4830f7;
-        ::ll::UntypedStorage<4, 4>  mUnk717174;
-        ::ll::UntypedStorage<4, 4>  mUnk66c75f;
-        ::ll::UntypedStorage<8, 24> mUnk69353c;
-        ::ll::UntypedStorage<4, 4>  mUnkcdda20;
-        ::ll::UntypedStorage<1, 1>  mUnkbaaa3c;
-        ::ll::UntypedStorage<4, 4>  mUnkb9d49c;
-        ::ll::UntypedStorage<1, 1>  mUnk717484;
-        ::ll::UntypedStorage<4, 8>  mUnka6b41c;
-        ::ll::UntypedStorage<4, 4>  mUnk57bf83;
-        ::ll::UntypedStorage<4, 4>  mUnk1d9b32;
-        ::ll::UntypedStorage<4, 4>  mUnka8ff63;
-        ::ll::UntypedStorage<1, 1>  mUnk109734;
-        ::ll::UntypedStorage<4, 4>  mUnk384e2f;
-        ::ll::UntypedStorage<4, 4>  mUnkb20099;
-        ::ll::UntypedStorage<4, 4>  mUnk84f2bf;
-        ::ll::UntypedStorage<4, 4>  mUnkee5809;
-        ::ll::UntypedStorage<1, 1>  mUnk82a91e;
-        ::ll::UntypedStorage<4, 24> mUnk5e0fae;
-        ::ll::UntypedStorage<1, 1>  mUnk21e994;
-        ::ll::UntypedStorage<4, 4>  mUnkbb6c8c;
-        ::ll::UntypedStorage<1, 1>  mUnkf7f37d;
-        ::ll::UntypedStorage<1, 1>  mUnk7ee788;
-        ::ll::UntypedStorage<1, 1>  mUnkcf1bdf;
-        ::ll::UntypedStorage<1, 1>  mUnkba1108;
-        ::ll::UntypedStorage<4, 8>  mUnk95e9dc;
-        ::ll::UntypedStorage<4, 8>  mUnkc895be;
-        ::ll::UntypedStorage<4, 8>  mUnk7a4aa2;
-        ::ll::UntypedStorage<4, 8>  mUnk3cfc8b;
-        ::ll::UntypedStorage<4, 8>  mUnk4f8c77;
-        ::ll::UntypedStorage<4, 8>  mUnkd1a0da;
-        ::ll::UntypedStorage<4, 8>  mUnkfc6afe;
-        ::ll::UntypedStorage<8, 8>  mUnk8ad91f;
-        ::ll::UntypedStorage<4, 8>  mUnke742e3;
-        ::ll::UntypedStorage<4, 4>  mUnk920ef9;
-        ::ll::UntypedStorage<1, 1>  mUnk632fd4;
-        ::ll::UntypedStorage<8, 32> mUnk1685d5;
-        ::ll::UntypedStorage<1, 1>  mUnk3fa350;
-        ::ll::UntypedStorage<8, 32> mUnk1cc9e9;
-        ::ll::UntypedStorage<1, 1>  mUnk7e56fd;
-        ::ll::UntypedStorage<4, 8>  mUnk37c2ca;
-        ::ll::UntypedStorage<4, 8>  mUnkcaadd4;
-        ::ll::UntypedStorage<4, 4>  mUnkd8f345;
-        ::ll::UntypedStorage<8, 24> mUnkfcb0dd;
-        ::ll::UntypedStorage<4, 12> mUnk7726c8;
-        ::ll::UntypedStorage<8, 16> mUnk556434;
-        ::ll::UntypedStorage<8, 24> mUnkd8baa3;
+        ::ll::TypedStorage<8, 24, ::std::vector<::webrtc::PeerConnectionInterface::IceServer>>      servers;
+        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::IceTransportsType>              type;
+        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::BundlePolicy>                   bundle_policy;
+        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::RtcpMuxPolicy>                  rtcp_mux_policy;
+        ::ll::TypedStorage<8, 24, ::std::vector<::webrtc::scoped_refptr<::webrtc::RTCCertificate>>> certificates;
+        ::ll::TypedStorage<4, 4, int>                                                       ice_candidate_pool_size;
+        ::ll::TypedStorage<1, 1, bool>                                                      disable_ipv6_on_wifi;
+        ::ll::TypedStorage<4, 4, int>                                                       max_ipv6_networks;
+        ::ll::TypedStorage<1, 1, bool>                                                      disable_link_local_networks;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>                                      screencast_min_bitrate;
+        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::TcpCandidatePolicy>     tcp_candidate_policy;
+        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::CandidateNetworkPolicy> candidate_network_policy;
+        ::ll::TypedStorage<4, 4, int>  audio_jitter_buffer_max_packets;
+        ::ll::TypedStorage<1, 1, bool> audio_jitter_buffer_fast_accelerate;
+        ::ll::TypedStorage<4, 4, int>  audio_jitter_buffer_min_delay_ms;
+        ::ll::TypedStorage<4, 4, int>  ice_connection_receiving_timeout;
+        ::ll::TypedStorage<4, 4, int>  ice_backup_candidate_pair_ping_interval;
+        ::ll::TypedStorage<4, 4, ::webrtc::PeerConnectionInterface::ContinualGatheringPolicy>
+                                                            continual_gathering_policy;
+        ::ll::TypedStorage<1, 1, bool>                      prioritize_most_likely_ice_candidate_pairs;
+        ::ll::TypedStorage<4, 24, ::webrtc::MediaConfig>    media_config;
+        ::ll::TypedStorage<1, 1, bool>                      prune_turn_ports;
+        ::ll::TypedStorage<4, 4, ::webrtc::PortPrunePolicy> turn_port_prune_policy;
+        ::ll::TypedStorage<1, 1, bool>                      presume_writable_when_fully_relayed;
+        ::ll::TypedStorage<1, 1, bool>                      enable_ice_renomination;
+        ::ll::TypedStorage<1, 1, bool>                      redetermine_role_on_ice_restart;
+        ::ll::TypedStorage<1, 1, bool>                      surface_ice_candidates_on_ice_transport_type_changed;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>      ice_check_interval_strong_connectivity;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>      ice_check_interval_weak_connectivity;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>      ice_check_min_interval;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>      ice_unwritable_timeout;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>      ice_unwritable_min_checks;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>      ice_inactive_timeout;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>      stun_candidate_keepalive_interval;
+        ::ll::TypedStorage<8, 8, ::webrtc::TurnCustomizer*> turn_customizer;
+        ::ll::TypedStorage<4, 8, ::std::optional<::webrtc::AdapterType>> network_preference;
+        ::ll::TypedStorage<4, 4, ::webrtc::SdpSemantics>                 sdp_semantics;
+        ::ll::TypedStorage<1, 1, bool>                                   active_reset_srtp_params;
+        ::ll::TypedStorage<8, 32, ::webrtc::CryptoOptions>               crypto_options;
+        ::ll::TypedStorage<1, 1, bool>                                   offer_extmap_allow_mixed;
+        ::ll::TypedStorage<8, 32, ::std::string>                         turn_logging_id;
+        ::ll::TypedStorage<1, 1, bool>                                   enable_implicit_rollback;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>                   report_usage_pattern_delay_ms;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>                   stable_writable_connection_ping_interval_ms;
+        ::ll::TypedStorage<4, 4, ::webrtc::VpnPreference>                vpn_preference;
+        ::ll::TypedStorage<8, 24, ::std::vector<::webrtc::NetworkMask>>  vpn_list;
+        ::ll::TypedStorage<4, 12, ::webrtc::PeerConnectionInterface::PortAllocatorConfig> port_allocator_config;
+        ::ll::TypedStorage<8, 16, ::std::optional<::webrtc::TimeDelta>>                   pacer_burst_interval;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::webrtc::StaticStunServer const>>>
+            static_stun_servers;
         // NOLINTEND
 
     public:
@@ -285,22 +292,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkccf0d0;
-        ::ll::UntypedStorage<4, 4> mUnk5fb335;
-        ::ll::UntypedStorage<1, 1> mUnkb3b72c;
-        ::ll::UntypedStorage<1, 1> mUnk7bd78a;
-        ::ll::UntypedStorage<1, 1> mUnkaec6fd;
-        ::ll::UntypedStorage<1, 1> mUnk53e40f;
-        ::ll::UntypedStorage<4, 4> mUnk4d841f;
-        ::ll::UntypedStorage<1, 1> mUnk418f5d;
+        ::ll::TypedStorage<4, 4, int>  offer_to_receive_video;
+        ::ll::TypedStorage<4, 4, int>  offer_to_receive_audio;
+        ::ll::TypedStorage<1, 1, bool> voice_activity_detection;
+        ::ll::TypedStorage<1, 1, bool> ice_restart;
+        ::ll::TypedStorage<1, 1, bool> use_rtp_mux;
+        ::ll::TypedStorage<1, 1, bool> raw_packetization_for_video;
+        ::ll::TypedStorage<4, 4, int>  num_simulcast_layers;
+        ::ll::TypedStorage<1, 1, bool> use_obsolete_sctp_sdp;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RTCOfferAnswerOptions& operator=(RTCOfferAnswerOptions const&);
-        RTCOfferAnswerOptions(RTCOfferAnswerOptions const&);
-        RTCOfferAnswerOptions();
     };
+
+    using IceServers = ::std::vector<::webrtc::PeerConnectionInterface::IceServer>;
 
 public:
     // virtual functions
