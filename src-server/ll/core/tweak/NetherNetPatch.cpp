@@ -55,18 +55,15 @@ bool addPublishedAddress(NetherNet::TransportConfiguration& config, std::uint16_
             address = addressFromCfg;
         }
     }
-    if (config.mKnownMappedAddressRangeCount != 0) {
-        return false;
-    }
 
     auto const published = parsePort(ll::sys_utils::getEnvironmentVariable("SERVER_PORT"));
-    auto&      range     = config.mKnownMappedAddressRanges[0];
+    auto&      range     = config.mKnownMappedAddressRanges[config.mKnownMappedAddressRangeCount];
     range->mInternalAddress->reset();
-    range->mInternalPortMin              = local_port;
-    range->mInternalPortMax              = local_port;
-    range->mExternalAddress              = address;
-    range->mExternalPortOffset           = (published != 0 ? published : local_port) - local_port;
-    config.mKnownMappedAddressRangeCount = 1;
+    range->mInternalPortMin               = local_port;
+    range->mInternalPortMax               = local_port;
+    range->mExternalAddress               = address;
+    range->mExternalPortOffset            = (published != 0 ? published : local_port) - local_port;
+    config.mKnownMappedAddressRangeCount += 1;
 
     ll::getLogger().info(
         "Configured {}:{} as the mapped address for NetherNet."_tr(address, published != 0 ? published : local_port)
