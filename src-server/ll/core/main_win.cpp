@@ -29,6 +29,7 @@
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/io/Output.h"
 #include "ll/core/mod/ModRegistrar.h"
+#include "ll/core/tweak/NetherNetPatch.h"
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/deps/core/file/Path.h"
@@ -239,6 +240,9 @@ void leviLaminaMain() {
 
     if (config.targeted.vulnerabilityFixes.enable) {
         vulnerability_fixes::enableFixes();
+    }
+    if (config.targeted.netherNetPatch.enable) {
+        network::nether_net_patch::enablePatch();
     }
 }
 

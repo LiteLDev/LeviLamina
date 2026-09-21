@@ -7,11 +7,9 @@ namespace NetherNet {
 struct StunRelayServer {
 public:
     // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mUri;
-    ::ll::TypedStorage<8, 32, ::std::string> mUsername;
-    ::ll::TypedStorage<8, 32, ::std::string> mPassword;
-    // NOLINTEND
+    std::string mUri;
+    std::string mUsername;
+    std::string mPassword;
 
 public:
     // member functions

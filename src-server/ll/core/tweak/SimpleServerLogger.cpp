@@ -4,12 +4,11 @@
 #include "ll/api/event/command/ExecuteCommandEvent.h"
 #include "ll/api/event/player/PlayerChangePermEvent.h"
 #include "ll/api/event/player/PlayerChatEvent.h"
-#include "ll/api/event/player/ServerPlayerEvent.h"
 #include "ll/core/LeviLamina.h"
 
 #include "mc/server/commands/CommandOrigin.h"
 
-#include "magic_enum/magic_enum_all.hpp"
+#include "magic_enum/magic_enum.hpp"
 
 namespace ll {
 using namespace event;
