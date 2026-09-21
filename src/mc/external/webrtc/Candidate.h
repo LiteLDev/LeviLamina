@@ -3,12 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/AdapterType.h"
 #include "mc/external/webrtc/IceCandidateType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace webrtc { class SocketAddress; }
-// clang-format on
+#include "mc/external/webrtc/SocketAddress.h"
 
 namespace webrtc {
 
@@ -16,36 +13,36 @@ class Candidate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk649851;
-    ::ll::UntypedStorage<4, 4>  mUnkd4fbfc;
-    ::ll::UntypedStorage<8, 32> mUnk4bd855;
-    ::ll::UntypedStorage<8, 32> mUnkf2d428;
-    ::ll::UntypedStorage<8, 80> mUnkdd6b1a;
-    ::ll::UntypedStorage<4, 4>  mUnkced845;
-    ::ll::UntypedStorage<8, 32> mUnkdca21e;
-    ::ll::UntypedStorage<8, 32> mUnka229dc;
-    ::ll::UntypedStorage<4, 4>  mUnk36ceaa;
-    ::ll::UntypedStorage<8, 32> mUnk5983fb;
-    ::ll::UntypedStorage<4, 4>  mUnk6b0365;
-    ::ll::UntypedStorage<4, 4>  mUnk8c11db;
-    ::ll::UntypedStorage<4, 4>  mUnk3cefe8;
-    ::ll::UntypedStorage<8, 32> mUnk31febf;
-    ::ll::UntypedStorage<8, 80> mUnk123fd7;
-    ::ll::UntypedStorage<8, 32> mUnka98173;
-    ::ll::UntypedStorage<8, 32> mUnkb0c3e4;
-    ::ll::UntypedStorage<2, 2>  mUnk21d706;
-    ::ll::UntypedStorage<2, 2>  mUnk578d3d;
-    ::ll::UntypedStorage<8, 32> mUnkf5f76e;
+    ::ll::TypedStorage<8, 32, ::std::string>             id_;
+    ::ll::TypedStorage<4, 4, int>                        component_;
+    ::ll::TypedStorage<8, 32, ::std::string>             protocol_;
+    ::ll::TypedStorage<8, 32, ::std::string>             relay_protocol_;
+    ::ll::TypedStorage<8, 80, ::webrtc::SocketAddress>   address_;
+    ::ll::TypedStorage<4, 4, uint>                       priority_;
+    ::ll::TypedStorage<8, 32, ::std::string>             username_;
+    ::ll::TypedStorage<8, 32, ::std::string>             password_;
+    ::ll::TypedStorage<4, 4, ::webrtc::IceCandidateType> type_;
+    ::ll::TypedStorage<8, 32, ::std::string>             network_name_;
+    ::ll::TypedStorage<4, 4, ::webrtc::AdapterType>      network_type_;
+    ::ll::TypedStorage<4, 4, ::webrtc::AdapterType>      underlying_type_for_vpn_;
+    ::ll::TypedStorage<4, 4, uint>                       generation_;
+    ::ll::TypedStorage<8, 32, ::std::string>             foundation_;
+    ::ll::TypedStorage<8, 80, ::webrtc::SocketAddress>   related_address_;
+    ::ll::TypedStorage<8, 32, ::std::string>             tcptype_;
+    ::ll::TypedStorage<8, 32, ::std::string>             transport_name_;
+    ::ll::TypedStorage<2, 2, ushort>                     network_id_;
+    ::ll::TypedStorage<2, 2, ushort>                     network_cost_;
+    ::ll::TypedStorage<8, 32, ::std::string>             url_;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Candidate();
+    MCAPI Candidate();
 
-    MCNAPI Candidate(::webrtc::Candidate const&);
+    MCAPI Candidate(::webrtc::Candidate const&);
 
-    MCNAPI Candidate(
+    MCAPI Candidate(
         int                            component,
         ::std::string_view             protocol,
         ::webrtc::SocketAddress const& address,
@@ -59,61 +56,61 @@ public:
         ushort                         network_cost
     );
 
-    MCNAPI void ComputeFoundation(::webrtc::SocketAddress const& base_address, uint64 tie_breaker);
+    MCAPI void ComputeFoundation(::webrtc::SocketAddress const& base_address, uint64 tie_breaker);
 
-    MCNAPI void ComputePrflxFoundation();
+    MCAPI void ComputePrflxFoundation();
 
-    MCNAPI uint GetPriority(
+    MCAPI uint GetPriority(
         uint type_preference,
         int  network_adapter_preference,
         int  relay_preference,
         bool adjust_local_preference
     ) const;
 
-    MCNAPI bool IsEquivalent(::webrtc::Candidate const& c) const;
+    MCAPI bool IsEquivalent(::webrtc::Candidate const& c) const;
 
-    MCNAPI bool MatchesForRemoval(::webrtc::Candidate const& c) const;
+    MCAPI bool MatchesForRemoval(::webrtc::Candidate const& c) const;
 
-    MCNAPI ::webrtc::Candidate
+    MCAPI ::webrtc::Candidate
     ToSanitizedCopy(bool use_hostname_address, bool filter_related_address, bool filter_ufrag) const;
 
-    MCNAPI ::std::string ToStringInternal(bool sensitive) const;
+    MCAPI ::std::string ToStringInternal(bool sensitive) const;
 
-    MCNAPI void generate_id();
+    MCAPI void generate_id();
 
-    MCNAPI bool is_local() const;
+    MCAPI bool is_local() const;
 
-    MCNAPI bool is_prflx() const;
+    MCAPI bool is_prflx() const;
 
-    MCNAPI bool is_relay() const;
+    MCAPI bool is_relay() const;
 
-    MCNAPI bool is_stun() const;
+    MCAPI bool is_stun() const;
 
-    MCNAPI bool operator!=(::webrtc::Candidate const& o) const;
+    MCAPI bool operator!=(::webrtc::Candidate const& o) const;
 
-    MCNAPI ::webrtc::Candidate& operator=(::webrtc::Candidate const&);
+    MCAPI ::webrtc::Candidate& operator=(::webrtc::Candidate const&);
 
-    MCNAPI bool operator==(::webrtc::Candidate const& o) const;
+    MCAPI bool operator==(::webrtc::Candidate const& o) const;
 
-    MCNAPI ::std::string_view type_name() const;
+    MCAPI ::std::string_view type_name() const;
 
-    MCNAPI ~Candidate();
+    MCAPI ~Candidate();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void Assign(::std::string& s, ::std::string_view view);
+    MCFOLD static void Assign(::std::string& s, ::std::string_view view);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::webrtc::Candidate const&);
+    MCAPI void* $ctor(::webrtc::Candidate const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         int                            component,
         ::std::string_view             protocol,
         ::webrtc::SocketAddress const& address,
@@ -131,7 +128,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
