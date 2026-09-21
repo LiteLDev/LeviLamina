@@ -61,8 +61,7 @@ void NetherNetInfo::addSession(NetherNet::NetworkID const& id, std::string_view 
 
 void NetherNetInfo::addAddress(webrtc::Candidate const& candidate, std::pair<std::string, ushort> const& address) {
     std::lock_guard const lock(impl->mutex);
-    std::string userName = candidate.mUnkdca21e.as<std::string>(); // TODO: remove the as<> after next header generation
-    auto const  it       = impl->byUfrag.find(userName);
+    auto const            it = impl->byUfrag.find(candidate.username_);
     if (it == impl->byUfrag.end()) {
         return;
     }

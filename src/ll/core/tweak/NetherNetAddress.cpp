@@ -12,30 +12,23 @@
 namespace ll::network {
 
 std::pair<std::string, ushort> CandidateToAddress(webrtc::Candidate const& candidate) {
-    // TODO: remove these as<> after next header generation
-    auto&       socketAddress                = candidate.mUnkdd6b1a.as<webrtc::SocketAddress>();
-    auto const& ip                           = socketAddress.mUnkd77baf.as<webrtc::IPAddress>();
-    char        buffer[INET6_ADDRSTRLEN + 1] = {};
-    union IPUnion {
-        in_addr  ip4;
-        in6_addr ip6;
-    };
-    auto& un = ip.mUnk286fd5.as<IPUnion>();
-    switch (ip.mUnkc3f00a.as<int>()) { // family_
+    auto& socketAddress                = candidate.address_.get();
+    char  buffer[INET6_ADDRSTRLEN + 1] = {};
+    switch (socketAddress.ip_->family_) { // family_
     case AF_INET:
-        if (!inet_ntop(AF_INET, &un.ip4, buffer, sizeof(buffer))) {
+        if (!inet_ntop(AF_INET, &socketAddress.ip_->u_.mUnk9f400a.as<in_addr>(), buffer, sizeof(buffer))) {
             return {};
         }
         break;
     case AF_INET6:
-        if (!inet_ntop(AF_INET6, &un.ip6, buffer, sizeof(buffer))) {
+        if (!inet_ntop(AF_INET6, &socketAddress.ip_->u_.mUnkeb8c53.as<in6_addr>(), buffer, sizeof(buffer))) {
             return {};
         }
         break;
     default:
         return {};
     }
-    return {buffer, socketAddress.mUnk9157d3.as<ushort>()}; // port_
+    return {buffer, socketAddress.port_};
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
