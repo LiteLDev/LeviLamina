@@ -8,27 +8,21 @@ struct StunRelayServer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk86c3e4;
-    ::ll::UntypedStorage<8, 32> mUnkf37c87;
-    ::ll::UntypedStorage<8, 32> mUnkc4c5ea;
+    ::ll::TypedStorage<8, 32, ::std::string> mUri;
+    ::ll::TypedStorage<8, 32, ::std::string> mUsername;
+    ::ll::TypedStorage<8, 32, ::std::string> mPassword;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StunRelayServer& operator=(StunRelayServer const&);
-    StunRelayServer(StunRelayServer const&);
-    StunRelayServer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~StunRelayServer();
+    MCAPI ~StunRelayServer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 
