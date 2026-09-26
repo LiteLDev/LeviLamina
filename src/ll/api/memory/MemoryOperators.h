@@ -11,7 +11,11 @@
 
 extern "C" LL_SHARED_EXPORT int const ll_memory_operator_overrided{};
 
-void operator delete(void* p) noexcept { ::ll::memory::getDefaultAllocator()._release(p); }
+void operator delete(void* p) noexcept {
+    if (p != nullptr) {
+        ::ll::memory::getDefaultAllocator()._release(p);
+    }
+}
 
 void operator delete(void* p, std::nothrow_t const&) noexcept { operator delete(p); }
 
@@ -23,7 +27,11 @@ void operator delete(void* p, std::size_t) noexcept { operator delete(p); }
 
 void operator delete[](void* p, std::size_t) noexcept { operator delete[](p); }
 
-void operator delete(void* p, std::align_val_t) noexcept { ::ll::memory::getDefaultAllocator()._alignedRelease(p); }
+void operator delete(void* p, std::align_val_t) noexcept {
+    if (p != nullptr) {
+        ::ll::memory::getDefaultAllocator()._alignedRelease(p);
+    }
+}
 
 void operator delete(void* p, std::align_val_t alignment, std::nothrow_t const&) noexcept {
     operator delete(p, alignment);
