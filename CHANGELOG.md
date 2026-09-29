@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.51.6] - 2026-09-29
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
+### Fixed
+
+- Let the memory operators accept a null pointer (#1841)
+
 ## [26.51.5] - 2026-09-22
 
 ### Fixed
@@ -1978,7 +1988,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.5...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.6...HEAD
+[26.51.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.5...v26.51.6
 [26.51.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.4...v26.51.5
 [26.51.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.3...v26.51.4
 [26.51.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.2...v26.51.3
