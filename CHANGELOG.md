@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added client-side custom JSON UI support (client target only):
+  `ll::ui::CustomUIRendererRegistry` for binding mod renderers to JSON UI custom controls,
+  `ll::event::UISceneCreatedEvent` published on every UI scene creation,
+  `ll::ui::attachCustomControl` for runtime control tree injection,
+  and the `ll::ui::ModalScreen`/`ll::ui::OverlayElement` base classes for modal screens
+  and non-modal overlay elements
+
+### Removed
+
+- Removed `ll::ui::ModalScreen::onPointerHeld` and `ll::ui::detachCustomControl`:
+  pointer-held events never reach JSON UI scenes (drag input is routed through the
+  vanilla GestureComponent instead), and the detach helper had no callers
+
+### Fixed
+
+- Fixed scenes created by `ll::ui::ModalScreen` never being rendered by the game renderer:
+  the scene now receives a setup/cleanup strategy equivalent to the vanilla
+  `DefaultUIScreenSetupCleanupStrategy`, which GameRenderer requires to collect a scene
+  into its render lists
+- Reworked `ll::ui::ModalScreen` to follow the vanilla screen creation recipe: a
+  `ClientInstanceScreenModel` is created through `IScreenModelFactory::createModel`
+  (located by byte signature) and attached to a `ClientInstanceScreenController`, and
+  the mouse is released via `ClientInstance::releaseMouse` on open; Esc now closes the
+  screen by default through `button.menu_exit`
+
 ## [26.51.5] - 2026-09-22
 
 ### Fixed
