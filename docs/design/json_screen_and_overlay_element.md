@@ -1,4 +1,4 @@
-# ModalScreen / OverlayElement 实现计划（方案二）
+# JsonScreen / OverlayElement 实现计划（方案二）
 
 > 状态：实现计划（未实现）
 > 适用范围：client（`--target_type=client`），代码位于 `src-client/ll/api/ui/`
@@ -27,15 +27,15 @@
 | 1 | `CustomUIRendererRegistry`（hook `UIControlFactory::_createFromResolvedDef`，按 renderer 名补装渲染器） | 无 |
 | 2 | `UISceneCreatedEvent`（hook `SceneFactory::createUIScene`，origin 后发布） | 无 |
 | 3 | `attachCustomControl` / `detachCustomControl`（运行时控件注入） | 2 |
-| 4a | `ModalScreen` | 无（可独立于 1-3 先做） |
+| 4a | `JsonScreen` | 无（可独立于 1-3 先做） |
 | 4b | `OverlayElement` | 1、2、3 |
 
 另有关联任务（已记录在 todolist.md）：`HudVisibilityChangedEvent`（hook
 `BaseOptionRegistry::setHideGUI`）。
 
-## 2. ModalScreen（模态基类）
+## 2. JsonScreen（模态基类）
 
-文件：`src-client/ll/api/ui/ModalScreen.{h,cpp}`
+文件：`src-client/ll/api/ui/JsonScreen.{h,cpp}`
 
 ```cpp
 #pragma once
@@ -54,10 +54,10 @@ namespace ll::ui {
 /// 不包含任何渲染代码，也不预设任何控件。
 /// 界面内容完全由子类发布的 JSON UI 定义决定（子类可在自己的 JSON 里放任意
 /// 控件，包括自行注册的 custom renderer 控件——例如 ImGui 翻译层）。
-class ModalScreen {
+class JsonScreen {
 public:
-    ModalScreen();
-    virtual ~ModalScreen();
+    JsonScreen();
+    virtual ~JsonScreen();
 
     /// JSON UI 屏幕定义名（带命名空间，如 "coral_map.world_map"）。
     /// 该定义由子类以资源包形式发布，is_showing_menu / should_steal_mouse /
@@ -99,10 +99,10 @@ private:
 `.cpp` 核心逻辑：
 
 ```cpp
-class ModalScreen::Controller : public ::ScreenController {
-    ModalScreen& mOwner;
+class JsonScreen::Controller : public ::ScreenController {
+    JsonScreen& mOwner;
 public:
-    explicit Controller(ModalScreen& owner) : ::ScreenController(false), mOwner(owner) {}
+    explicit Controller(JsonScreen& owner) : ::ScreenController(false), mOwner(owner) {}
 
     void onOpen() override { mOwner.onOpen(); }
     void onTerminate() override { mOwner.onClose(); }  // 任意销毁路径都通知
@@ -117,7 +117,7 @@ public:
     }
 };
 
-void ModalScreen::open() {
+void JsonScreen::open() {
     if (isOpen()) return;
     auto client = ll::service::getClientInstance();
     if (!client) return;
@@ -127,7 +127,7 @@ void ModalScreen::open() {
     client->getCurrentSceneStack()->pushScreen(scene, /*flush=*/false);
 }
 
-void ModalScreen::close() {
+void JsonScreen::close() {
     if (auto client = ll::service::getClientInstance(); client && isOpen()) {
         client->getCurrentSceneStack()->schedulePopScreen(1);
     }
@@ -330,10 +330,10 @@ gMiniMap.enable();
 迁移收益：F1 隐藏、HUD 不透明度、安全区、分屏布局全部自动生效；删掉渲染用的
 `flushText` hook 和屏幕绘制部分 DX11 代码（DX11 仅保留给瓦片离屏生成，低频）。
 
-## 世界地图 → ModalScreen
+## 世界地图 → JsonScreen
 
 ```cpp
-class WorldMapScreen : public ll::ui::ModalScreen {
+class WorldMapScreen : public ll::ui::JsonScreen {
 public:
     std::string getScreenName() const override { return "coral_map.world_map"; }
 
@@ -376,7 +376,7 @@ ll::event::EventBus::getInstance().emplaceListener<ll::event::KeyInputEvent>(
 ```
 
 世界地图的渲染器（`coral_worldmap_renderer`）与小地图同理，由 mod 自己注册
-（`CustomUIRendererRegistry::registerRenderer`）——`ModalScreen` 基类不代办，符合
+（`CustomUIRendererRegistry::registerRenderer`）——`JsonScreen` 基类不代办，符合
 "基类零渲染、零预设控件"的约束。
 
 迁移收益：

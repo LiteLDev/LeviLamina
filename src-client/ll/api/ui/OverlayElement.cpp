@@ -108,6 +108,14 @@ void OverlayElement::enable() {
             }
             if (auto* scene = ev.tryGetUIScene()) {
                 mImpl->pendingScene = scene;
+                // 宿主场景是销毁重建的（如跨维度）：新场景创建时旧场景通常还在播放退出
+                // 转场，旧控件仍存活。若因 weak_ptr 未过期而跳过挂载，旧控件随旧场景
+                // 淡出销毁后，新场景将永远丢失本元素（场景创建事件不会重发）。
+                // 因此在新场景创建时主动放弃旧引用——旧控件反正随旧场景销毁。
+                if (!mImpl->attached.expired()) {
+                    mImpl->attached.reset();
+                    onDetach();
+                }
                 attach(*scene);
             }
         }

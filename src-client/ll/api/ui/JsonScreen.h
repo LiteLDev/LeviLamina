@@ -11,25 +11,28 @@ class UIPropertyBag;
 
 namespace ll::ui {
 
-/// Base class for modal screens: owns the hosting lifecycle of a screen (creating the
-/// scene and pushing it onto the scene stack). It contains no rendering code and
-/// creates no controls — the screen's content is entirely defined by the subclass's
-/// published JSON UI definition (which may freely include custom controls with
-/// renderers registered through CustomUIRendererRegistry, e.g. an ImGui bridge).
+/// Base class for screens defined by JSON UI: owns the hosting lifecycle of a screen
+/// (creating the scene and pushing it onto the scene stack). It contains no rendering
+/// code and creates no controls — the screen's content is entirely defined by the
+/// subclass's published JSON UI definition (which may freely include custom controls
+/// with renderers registered through CustomUIRendererRegistry, e.g. an ImGui bridge).
 ///
-/// Once pushed, input routing (top-of-stack capture), the focus system, the gamepad
-/// virtual cursor and mouse release all take effect automatically, driven by the scene
-/// stack and the JSON screen properties (is_showing_menu, should_steal_mouse,
-/// absorbs_input, button_mappings, ...).
+/// The class itself is modality-agnostic: behavior is selected by the subclass's JSON
+/// screen properties. A modal container-style screen uses is_modal/is_showing_menu/
+/// absorbs_input; a chat-like non-modal screen drops them; a HUD-like passive scene
+/// additionally sets render_game_behind. Once pushed, input routing (top-of-stack
+/// capture), the focus system, the gamepad virtual cursor and mouse grab/release all
+/// take effect automatically, driven by the scene stack and those JSON properties
+/// (is_showing_menu, should_steal_mouse, absorbs_input, button_mappings, ...).
 ///
 /// The standard exit path needs no code: map "button.menu_cancel" to "button.menu_exit"
 /// (global) in the screen's JSON button_mappings and the framework pops the screen.
-class ModalScreen {
+class JsonScreen {
 public:
-    LLAPI ModalScreen();
-    ModalScreen(ModalScreen const&)            = delete;
-    ModalScreen& operator=(ModalScreen const&) = delete;
-    LLAPI virtual ~ModalScreen();
+    LLAPI JsonScreen();
+    JsonScreen(JsonScreen const&)            = delete;
+    JsonScreen& operator=(JsonScreen const&) = delete;
+    LLAPI virtual ~JsonScreen();
 
     /// Namespaced JSON UI screen definition name (e.g. "coral_map.world_map"), published
     /// by the subclass as a resource pack.

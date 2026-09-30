@@ -1,4 +1,4 @@
-#include "ll/api/ui/ModalScreen.h"
+#include "ll/api/ui/JsonScreen.h"
 
 #include <mutex>
 #include <vector>
@@ -66,7 +66,7 @@ void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance
     if (fn != nullptr) {
         fn(screenContext, client);
     } else {
-        getLogger().warn("ModalScreen: setupForStandardUIDrawing signature not found; UI camera setup will be skipped");
+        getLogger().warn("JsonScreen: setupForStandardUIDrawing signature not found; UI camera setup will be skipped");
     }
 }
 
@@ -74,13 +74,13 @@ void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance
 // eye mask the scene is collected under, and the per-scene UI camera setup. SceneFactory::
 // createUIScene leaves the strategy empty, so mirror what SceneFactory::_createScreen does for
 // vanilla screens and install an equivalent of DefaultUIScreenSetupCleanupStrategy.
-class ModalScreenSetupCleanupStrategy : public ::AbstractScreenSetupCleanupStrategy {
+class JsonScreenSetupCleanupStrategy : public ::AbstractScreenSetupCleanupStrategy {
     ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> mClient;
 
     ::IClientInstance* tryGetClient() const { return mClient.get().get(); }
 
 public:
-    explicit ModalScreenSetupCleanupStrategy(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> client)
+    explicit JsonScreenSetupCleanupStrategy(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> client)
     : mClient(std::move(client)) {}
 
     void setupScreen(::ScreenContext& screenContext) override {
@@ -101,37 +101,6 @@ public:
 };
 
 } // namespace
-
-// IScreenModelFactory::createModel<ClientInstanceScreenModel> is a template instantiation with no
-// exported symbol, and real game environments ship no PDB, so it is located by a byte signature
-// instead. Sibling createModel<T> instantiations share the same prologue and body, differing only
-// in the trailing make_shared call target, so the signature includes that call's rel32 verbatim
-// (unique in the .text section of 1.26.51). A failed scan is safe: open() fails with a warning.
-::std::shared_ptr<::ClientInstanceScreenModel>
-createClientInstanceScreenModel(::std::string const& screenName, ::SceneFactory& sceneFactory) {
-    using Fn = void (*)(
-        ::IScreenModelFactory*,
-        ::std::shared_ptr<::ClientInstanceScreenModel>*,
-        ::std::string const&,
-        ::SceneFactory&
-    );
-    static Fn fn = []() -> Fn {
-        using namespace ll::literals;
-        return static_cast<Fn>(
-            ("55 56 57 48 81 EC 90 00 00 00 48 8D AC 24 80 00 00 00 48 C7 45 08 FE FF FF FF 48 89 D6 48 8B 01 48 8B "
-             "40 08 48 8D 55 A8 FF 15 ?? ?? ?? ?? 0F B6 45 00 3C 01 75 19 48 8D 55 A8 48 89 F1 E8 6E 01 00 00"_sig)
-                .resolve(true)
-        );
-    }();
-    if (fn == nullptr) {
-        getLogger().warn("ModalScreen: createModel<ClientInstanceScreenModel> signature not found");
-        return nullptr;
-    }
-    auto& modelFactory = sceneFactory.mFactoryImpl.get()->getScreenModelFactory();
-    ::std::shared_ptr<::ClientInstanceScreenModel> model;
-    fn(&modelFactory, &model, screenName, sceneFactory);
-    return model;
-}
 
 std::mutex sDeferredPopsMutex;
 
@@ -174,7 +143,7 @@ void requestPop(ISceneStack& stack, std::weak_ptr<UIScene> const& weakScene) {
 }
 
 LL_TYPE_INSTANCE_HOOK(
-    ModalScreenDeferredPopHook,
+    JsonScreenDeferredPopHook,
     memory::HookPriority::Normal,
     UIScene,
     &UIScene::$frameUpdate,
@@ -201,12 +170,12 @@ LL_TYPE_INSTANCE_HOOK(
     }
 }
 
-class ModalScreen::Controller : public ::ClientInstanceScreenController {
-    ModalScreen*        mOwner;
+class JsonScreen::Controller : public ::ClientInstanceScreenController {
+    JsonScreen*         mOwner;
     std::weak_ptr<bool> mOwnerAlive;
 
 public:
-    Controller(ModalScreen& owner, std::weak_ptr<bool> ownerAlive, std::shared_ptr<::ClientInstanceScreenModel> model)
+    Controller(JsonScreen& owner, std::weak_ptr<bool> ownerAlive, std::shared_ptr<::ClientInstanceScreenModel> model)
     : ::ClientInstanceScreenController(std::move(model)),
       mOwner(&owner),
       mOwnerAlive(std::move(ownerAlive)) {
@@ -248,44 +217,48 @@ public:
     }
 };
 
-ModalScreen::ModalScreen() : mAliveToken(std::make_shared<bool>()) {}
+JsonScreen::JsonScreen() : mAliveToken(std::make_shared<bool>()) {}
 
-ModalScreen::~ModalScreen() { close(); }
+JsonScreen::~JsonScreen() { close(); }
 
-std::vector<std::string> ModalScreen::getHandledButtonIds() const { return {}; }
+std::vector<std::string> JsonScreen::getHandledButtonIds() const { return {}; }
 
-void ModalScreen::onOpen() {}
+void JsonScreen::onOpen() {}
 
-void ModalScreen::onClose() {}
+void JsonScreen::onClose() {}
 
-void ModalScreen::onTick() {}
+void JsonScreen::onTick() {}
 
-bool ModalScreen::onButtonEvent(std::string const&, UIPropertyBag*) { return false; }
+bool JsonScreen::onButtonEvent(std::string const&, UIPropertyBag*) { return false; }
 
-void ModalScreen::open() {
+void JsonScreen::open() {
     if (isOpen()) {
         return;
     }
     auto client = service::getClientInstance();
     if (!client) {
+        getLogger().warn("JsonScreen diag: open() '{}' aborted: no client instance", getScreenName());
         return;
     }
     // The vanilla screen creation recipe (SceneCreationUtils::ScreenCreator::createScreen):
     // model first, then a controller holding the model, then the scene.
     auto& sceneFactory = client->getSceneFactory();
-    auto  model        = createClientInstanceScreenModel(getScreenName(), sceneFactory);
+    auto& modelFactory = sceneFactory.mFactoryImpl.get()->getScreenModelFactory();
+    auto  model        = modelFactory.createModel<::ClientInstanceScreenModel>(getScreenName(), sceneFactory);
     if (!model) {
+        getLogger().warn("JsonScreen diag: open() '{}' aborted: createModel failed", getScreenName());
         return;
     }
     mController = std::make_shared<Controller>(*this, mAliveToken, std::move(model));
     auto scene  = sceneFactory.createUIScene(getScreenName(), mController);
     if (!scene) {
+        getLogger().warn("JsonScreen diag: open() '{}' aborted: createUIScene failed", getScreenName());
         mController.reset();
         return;
     }
     mScene = scene;
     scene->$setScreenSetupCleanup(
-        std::make_unique<ModalScreenSetupCleanupStrategy>(::Bedrock::NotNullNonOwnerPtr<::IClientInstance>{
+        std::make_unique<JsonScreenSetupCleanupStrategy>(::Bedrock::NotNullNonOwnerPtr<::IClientInstance>{
             ::Bedrock::NonOwnerPointer<::IClientInstance>{
                                                           static_cast<::Bedrock::EnableNonOwnerReferences const&>(*client).mControlBlock,
                                                           static_cast<::IClientInstance*>(&*client)
@@ -296,14 +269,17 @@ void ModalScreen::open() {
         std::move(scene),
         ::OreUI::RouteAction{getScreenName(), ::OreUI::RouteHistoryAction::Push}
     );
-    // 与原版打开菜单一致：模态界面需要释放系统光标（解除视角锁定）供界面交互
-    client->releaseMouse();
+    // No explicit releaseMouse(): the game's push callback (ClientInstance.cpp:4453) decides
+    // grab vs release once from the pushed scene's shouldStealMouse() and the input state,
+    // and InGamePlayScreen::tick's per-tick grab is suppressed by isShowingMenu(). Mouse
+    // behavior is therefore driven entirely by the screen's JSON properties
+    // (should_steal_mouse / is_showing_menu), exactly like vanilla screens.
 
     static std::once_flag sDeferredPopHookOnce;
-    std::call_once(sDeferredPopHookOnce, [] { memory::HookRegistrar<ModalScreenDeferredPopHook>::hook(); });
+    std::call_once(sDeferredPopHookOnce, [] { memory::HookRegistrar<JsonScreenDeferredPopHook>::hook(); });
 }
 
-void ModalScreen::close() {
+void JsonScreen::close() {
     // Do not reset mScene here: popping is asynchronous, and the scene stays on the stack until
     // the stack processes the pop and destroys it. Resetting early would make isOpen() report
     // false while the scene is still up, letting open() push duplicate scenes onto the stack.
@@ -318,9 +294,9 @@ void ModalScreen::close() {
     requestPop(*client->getCurrentSceneStack(), mScene);
 }
 
-bool ModalScreen::isOpen() const { return !mScene.expired(); }
+bool JsonScreen::isOpen() const { return !mScene.expired(); }
 
-UIScene* ModalScreen::scene() const {
+UIScene* JsonScreen::scene() const {
     auto scene = mScene.lock();
     return scene ? scene.get() : nullptr;
 }

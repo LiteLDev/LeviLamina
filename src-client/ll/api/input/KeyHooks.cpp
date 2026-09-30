@@ -61,6 +61,7 @@ LL_TYPE_INSTANCE_HOOK(
             FocusImpact::Neutral
         );
     }
+    ll::input::KeyRegistry::getInstance().processMappingButtons(*this);
 }
 
 

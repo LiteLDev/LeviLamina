@@ -13,26 +13,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `ll::ui::CustomUIRendererRegistry` for binding mod renderers to JSON UI custom controls,
   `ll::event::UISceneCreatedEvent` published on every UI scene creation,
   `ll::ui::attachCustomControl` for runtime control tree injection,
-  and the `ll::ui::ModalScreen`/`ll::ui::OverlayElement` base classes for modal screens
+  and the `ll::ui::JsonScreen`/`ll::ui::OverlayElement` base classes for modal screens
   and non-modal overlay elements
+- Added `ll::input::ScreenButtonRegistry` (client target only), a registry for custom
+  abstract UI buttons produced by physical inputs in screen context — keyboard keys
+  (`registerKeyboardButton`) and mouse wheel (`registerMouseWheelButton`) — usable as
+  `from_button_id` in JSON UI button_mappings, the same mechanism vanilla screen
+  buttons (`button.menu_ok`, wheel-driven `button.inventory_left/right`) use. Button
+  names are additionally registered with the game's `InputHandler` so their events are
+  dispatched to screens (unregistered button ids are silently dropped before dispatch)
+- Added `ll::input::KeyRegistry::registerGameplayKeyboardButton` and
+  `registerInputMappingsKeyboardButton` (client target only), registering keyboard
+  abstract buttons with a direct callback into all gameplay input mappings
+  (`gamePlay*`) or an explicit list of input mapping stacks; bindings are re-applied
+  on every vanilla mapping rebuild and handlers are registered with the game's
+  `InputHandler` directly
 
-### Removed
 
-- Removed `ll::ui::ModalScreen::onPointerHeld` and `ll::ui::detachCustomControl`:
-  pointer-held events never reach JSON UI scenes (drag input is routed through the
-  vanilla GestureComponent instead), and the detach helper had no callers
+## [26.51.6] - 2026-09-29
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
 
 ### Fixed
 
-- Fixed scenes created by `ll::ui::ModalScreen` never being rendered by the game renderer:
-  the scene now receives a setup/cleanup strategy equivalent to the vanilla
-  `DefaultUIScreenSetupCleanupStrategy`, which GameRenderer requires to collect a scene
-  into its render lists
-- Reworked `ll::ui::ModalScreen` to follow the vanilla screen creation recipe: a
-  `ClientInstanceScreenModel` is created through `IScreenModelFactory::createModel`
-  (located by byte signature) and attached to a `ClientInstanceScreenController`, and
-  the mouse is released via `ClientInstance::releaseMouse` on open; Esc now closes the
-  screen by default through `button.menu_exit`
+- Let the memory operators accept a null pointer (#1841)
 
 ## [26.51.5] - 2026-09-22
 
@@ -2005,7 +2011,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.5...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.6...HEAD
+[26.51.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.5...v26.51.6
 [26.51.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.4...v26.51.5
 [26.51.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.3...v26.51.4
 [26.51.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.2...v26.51.3
