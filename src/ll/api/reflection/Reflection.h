@@ -6,9 +6,9 @@
 #include <type_traits>
 #include <utility>
 
+#include "ll/api/Expected.h"
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Meta.h"
-#include "ll/api/Expected.h"
 #include "ll/api/reflection/Serializer.h"
 #include "ll/api/reflection/TypeName.h"
 #include "ll/api/utils/StringUtils.h"
@@ -98,31 +98,29 @@ template <typename T, typename J, typename F>
 constexpr bool has_inplace_deserializer_v = requires(std::remove_cvref_t<T>& t, J&& j, F const& f) {
     {
         Serializer<std::remove_cvref_t<T>, std::remove_cvref_t<J>>::deserialize(t, std::forward<J>(j), f)
-        } -> std::convertible_to<ll::Expected<>>;
+    } -> std::convertible_to<ll::Expected<>>;
 } || requires(std::remove_cvref_t<T>& t, J&& j) {
     {
         Serializer<std::remove_cvref_t<T>, std::remove_cvref_t<J>>::deserialize(t, std::forward<J>(j))
-        } -> std::convertible_to<ll::Expected<>>;
+    } -> std::convertible_to<ll::Expected<>>;
 } || requires(std::remove_cvref_t<T>& t, J&& j, F const& f) {
-    { Serializer<std::remove_cvref_t<T>>::deserialize(t, std::forward<J>(j), f) } -> std::convertible_to<ll::Expected<>>;
+    {
+        Serializer<std::remove_cvref_t<T>>::deserialize(t, std::forward<J>(j), f)
+    } -> std::convertible_to<ll::Expected<>>;
 } || requires(std::remove_cvref_t<T>& t, J&& j) {
     { Serializer<std::remove_cvref_t<T>>::deserialize(t, std::forward<J>(j)) } -> std::convertible_to<ll::Expected<>>;
 } || requires(std::remove_cvref_t<T>& t, J&& j, F const& f) {
     {
         Serializer<std::remove_cvref_t<T>>::template deserialize<std::remove_cvref_t<J>>(t, std::forward<J>(j), f)
-        } -> std::convertible_to<ll::Expected<>>;
+    } -> std::convertible_to<ll::Expected<>>;
 } || requires(std::remove_cvref_t<T>& t, J&& j) {
     {
         Serializer<std::remove_cvref_t<T>>::template deserialize<std::remove_cvref_t<J>>(t, std::forward<J>(j))
-        } -> std::convertible_to<ll::Expected<>>;
+    } -> std::convertible_to<ll::Expected<>>;
 };
 
 template <typename T, typename J, typename F>
-constexpr bool has_inplace_serializer_v = requires(
-    T const& t,
-    std::remove_cvref_t<J>& j,
-    F const&                f
-) {
+constexpr bool has_inplace_serializer_v = requires(T const& t, std::remove_cvref_t<J>& j, F const& f) {
     { Serializer<T>::serialize(t, j, f) } -> std::convertible_to<ll::Expected<>>;
 } || requires(T const& t, std::remove_cvref_t<J>& j) {
     { Serializer<T>::serialize(t, j) } -> std::convertible_to<ll::Expected<>>;
@@ -206,9 +204,7 @@ constexpr std::optional<Enum> string_to_enum(std::string_view sv, F const& keyFo
         return *val;
     }
 
-    if constexpr (
-        magic_enum::detail::supported<enum_type>::value && has_typed_key_formatter_v<enum_type, F>
-    ) {
+    if constexpr (magic_enum::detail::supported<enum_type>::value && has_typed_key_formatter_v<enum_type, F>) {
         if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
             underlying_type result{};
             bool            matchedAny = false;
@@ -224,9 +220,9 @@ constexpr std::optional<Enum> string_to_enum(std::string_view sv, F const& keyFo
                 for (auto const value : magic_enum::enum_values<enum_type>()) {
                     auto const formatted = enum_name_to_string(value, keyFormatter);
                     if (formatted && *formatted == token) {
-                        result |= static_cast<underlying_type>(value);
-                        matchedAny = true;
-                        matched    = true;
+                        result     |= static_cast<underlying_type>(value);
+                        matchedAny  = true;
+                        matched     = true;
                         break;
                     }
                 }
@@ -259,6 +255,9 @@ constexpr std::optional<Enum> string_to_enum(std::string_view sv, F const& keyFo
 
     return std::nullopt;
 }
+
+constexpr auto default_key_formatter = [](std::string_view sv) -> std::string_view { return sv; };
+
 } // namespace detail
 
 template <typename F>
@@ -275,10 +274,6 @@ constexpr auto const member_count_v = boost::pfr::tuple_size_v<T>;
 
 template <size_t I, class T>
 using member_t = typename boost::pfr::tuple_element_t<I, T>;
-
-namespace builtin_key_formatter {
-constexpr auto default_key_formatter = [](std::string_view sv) -> std::string_view { return sv; };
-}
 
 template <class T>
 struct OffsetGetter {
@@ -339,7 +334,7 @@ constexpr std::string type_to_string(T const& t, F const& keyFormatter) {
 
 template <IsLeastStringifiableType T>
 constexpr std::string type_to_string(T const& t) {
-    return type_to_string(t, builtin_key_formatter::default_key_formatter);
+    return type_to_string(t, detail::default_key_formatter);
 }
 
 template <IsLeastStringifiableType T, IsKeyFormatter F>
@@ -370,7 +365,7 @@ constexpr std::optional<T> string_to_type(std::string_view sv, F const& keyForma
 
 template <IsLeastStringifiableType T>
 constexpr std::optional<T> string_to_type(std::string_view sv) {
-    return string_to_type<T>(sv, builtin_key_formatter::default_key_formatter);
+    return string_to_type<T>(sv, detail::default_key_formatter);
 }
 
 } // namespace ll::reflection

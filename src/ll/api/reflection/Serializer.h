@@ -3,11 +3,7 @@
 
 namespace ll::reflection {
 
-namespace detail {
-struct SerializerDefaultTag {};
-}
-
-template <typename T, typename J = detail::SerializerDefaultTag>
+template <typename T, typename J = void>
 struct Serializer {};
 
 template <>

@@ -2,8 +2,8 @@
 #include "ll/api/base/FixedString.h"
 #include "ll/api/base/TypeTraits.h"
 #include <ll/api/reflection/Reflection.h>
-#include <ll/api/reflection/Serializer.h>
 #include <ll/api/reflection/ReflectionError.h>
+#include <ll/api/reflection/Serializer.h>
 
 // Priority:
 // 11. Arithmetic
@@ -79,8 +79,8 @@ try {
 }
 
 template <typename J, typename T>
-inline Expected<J> serialize(T&& t) noexcept{
-    return serialize<J>(std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+inline Expected<J> serialize(T&& t) noexcept {
+    return serialize<J>(std::forward<T>(t), detail::default_key_formatter);
 }
 
 template <class J, class T, IsKeyFormatter F>
@@ -95,7 +95,7 @@ inline Expected<> serialize_to(J& j, T&& t, F const& keyFormatter) noexcept {
 
 template <class J, class T>
 inline Expected<> serialize_to(J& j, T&& t) noexcept {
-    return serialize_to<J>(j, std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+    return serialize_to<J>(j, std::forward<T>(t), detail::default_key_formatter);
 }
 
 template <auto MemberPtr, class J, class T, IsKeyFormatter F>
@@ -139,14 +139,14 @@ template <auto MemberPtr, class J, class T>
 inline Expected<> member_serialize(J& j, T&& t) noexcept
     requires(!std::is_const_v<std::remove_reference_t<J>>)
 {
-    return member_serialize<MemberPtr>(j, std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+    return member_serialize<MemberPtr>(j, std::forward<T>(t), detail::default_key_formatter);
 }
 
 template <ll::FixedString Key, class J, class T>
 inline Expected<> field_serialize(J& j, T&& t) noexcept
     requires(!std::is_const_v<std::remove_reference_t<J>>)
 {
-    return field_serialize<Key>(j, std::forward<T>(t), builtin_key_formatter::default_key_formatter);
+    return field_serialize<Key>(j, std::forward<T>(t), detail::default_key_formatter);
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
@@ -167,14 +167,14 @@ template <auto MemberPtr, class T, class J>
 inline Expected<> member(T&& t, J& j) noexcept
     requires(!std::is_const_v<std::remove_reference_t<J>>)
 {
-    return member<MemberPtr>(std::forward<T>(t), j, builtin_key_formatter::default_key_formatter);
+    return member<MemberPtr>(std::forward<T>(t), j, detail::default_key_formatter);
 }
 
 template <ll::FixedString Key, class T, class J>
 inline Expected<> field(T&& t, J& j) noexcept
     requires(!std::is_const_v<std::remove_reference_t<J>>)
 {
-    return field<Key>(std::forward<T>(t), j, builtin_key_formatter::default_key_formatter);
+    return field<Key>(std::forward<T>(t), j, detail::default_key_formatter);
 }
 
 namespace {
@@ -192,13 +192,15 @@ inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTa
 {
     using RT = std::remove_cvref_t<T>;
     if constexpr (detail::has_value_serializer_v<RT, J, F>) {
-        using JT = std::remove_cvref_t<J>;
+        using JT    = std::remove_cvref_t<J>;
         auto result = [&]() -> decltype(auto) {
             if constexpr (requires { Serializer<RT, JT>::serialize(std::forward<T>(t), keyFormatter); }) {
                 return Serializer<RT, JT>::serialize(std::forward<T>(t), keyFormatter);
             } else if constexpr (requires { Serializer<RT, JT>::serialize(std::forward<T>(t)); }) {
                 return Serializer<RT, JT>::serialize(std::forward<T>(t));
-            } else if constexpr (requires { Serializer<RT>::template serialize<JT>(std::forward<T>(t), keyFormatter); }) {
+            } else if constexpr (requires {
+                                     Serializer<RT>::template serialize<JT>(std::forward<T>(t), keyFormatter);
+                                 }) {
                 return Serializer<RT>::template serialize<JT>(std::forward<T>(t), keyFormatter);
             } else {
                 return Serializer<RT>::template serialize<JT>(std::forward<T>(t));
@@ -237,7 +239,7 @@ inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTa
 }
 
 template <typename J, typename T, IsKeyFormatter F>
-inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<9>) 
+inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<9>)
     requires(concepts::IsOptional<std::remove_cvref_t<T>>)
 {
     return t ? serialize_impl<J>(*std::forward<T>(t), keyFormatter, meta::PriorityTag<11>{}) : nullptr;
@@ -247,11 +249,7 @@ template <typename J, typename T, IsKeyFormatter F>
 inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTag<9>)
     requires(concepts::IsDispatcher<std::remove_cvref_t<T>>)
 {
-    return serialize_impl<J>(
-        std::forward<T>(t).storage,
-        keyFormatter,
-        meta::PriorityTag<11>{}
-    );
+    return serialize_impl<J>(std::forward<T>(t).storage, keyFormatter, meta::PriorityTag<11>{});
 }
 
 template <typename J, typename T, IsKeyFormatter F>
