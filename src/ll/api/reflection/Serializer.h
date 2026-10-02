@@ -15,19 +15,10 @@ struct Serializer<bool> {
 };
 
 template <typename T>
-    requires std::is_integral_v<T>
+    requires (std::is_arithmetic_v<T> && !std::is_same_v<T, bool> && !traits::is_char_v<T>)
 struct Serializer<T> {
     static std::string     to_string(T t) { return fmt::to_string(t); }
-    static ll::Expected<T> from_string(std::string_view s) { return ll::string_utils::svtonum<T>(s, nullptr, 10); }
-};
-
-template <typename T>
-    requires std::is_floating_point_v<T>
-struct Serializer<T> {
-    static std::string     to_string(T t) { return fmt::to_string(t); }
-    static ll::Expected<T> from_string(std::string_view s) {
-        return ll::string_utils::svtonum<T>(s, nullptr, std::chars_format::general);
-    }
+    static ll::Expected<T> from_string(std::string_view s) { return ll::string_utils::svtonum<T>(s); }
 };
 
 } // namespace ll::reflection
