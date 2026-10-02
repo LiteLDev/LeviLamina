@@ -49,7 +49,7 @@ void PatternFormatter::format(LogMessageView const& view, std::string& buffer) c
             std::back_inserter(buffer),
             fmt::runtime(pattern),
             "msg"_a = makeBracketed(string_utils::removeEscapeCode(view.msg), bracketed[0]),
-            "tit"_a = makeBracketed(view.tit, bracketed[1]),
+            "tit"_a = makeBracketed(string_utils::removeEscapeCode(view.tit), bracketed[1]),
             "lvl"_a = makeBracketed(levelNames[lvlIdx], bracketed[2]),
             "tm"_a  = makeBracketed(view.tm, bracketed[3])
         );

@@ -129,7 +129,7 @@ TEST(EventTest, EventBusPublishesAndRemovesListeners) {
             && !id.name.contains("ConsoleOut"))
             bus.addListener(
                 DynamicListener::create([](CompoundTag& nbt) {
-                    ll::getLogger().debug(nbt.toSnbt(SnbtFormat::PrettyChatPrint));
+                    ll::getLogger().debug(nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
                 }),
                 id
             );
