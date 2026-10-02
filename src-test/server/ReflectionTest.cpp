@@ -275,31 +275,6 @@ struct OnlyDeserialize : T {
 
 using ReadOnlyFlatSection = OnlyDeserialize<FlatSection>;
 
-template <>
-struct ll::reflection::Serializer<mce::UUID> {
-    static std::string to_string(mce::UUID const& value) { return value.asString(); }
-
-    static ll::Expected<mce::UUID> from_string(std::string_view sv) {
-        if (!mce::UUID::canParse(sv)) {
-            return ll::makeI18nStringError<"invalid uuid">();
-        }
-        return mce::UUID::fromString(sv);
-    }
-
-    template <typename J>
-    static J serialize(mce::UUID const& value) {
-        return value.asString();
-    }
-
-    template <typename J>
-    static ll::Expected<mce::UUID> deserialize(J const& j) {
-        if (!j.is_string()) {
-            return ll::reflection::makeDeserStringTypeError();
-        }
-        return from_string(std::string{j});
-    }
-};
-
 // TypedStorage is an ABI wrapper, so consumers opt in to transparent reflection explicitly.
 template <size_t Align, size_t Size, typename T>
 struct ll::reflection::Serializer<ll::TypedStorageImpl<Align, Size, T>> {
