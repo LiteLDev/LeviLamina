@@ -524,30 +524,30 @@ public:
     }
 };
 
-template <class J, class T>
-[[nodiscard]] inline Expected<J> serialize(T&& requirement) noexcept
-    requires(std::same_as<std::remove_cvref_t<T>, VersionRequirement>)
-try {
-    return requirement.to_string();
-} catch (...) {
-    return makeExceptionError();
-}
-
-template <class T, class J>
-[[nodiscard]] inline Expected<> deserialize(T& requirement, J const& j) noexcept
-    requires(std::same_as<T, VersionRequirement>)
-{
-    if (!j.is_string()) {
-        return reflection::makeDeserStringTypeError();
-    }
-    if (auto result = requirement.from_string_noexcept((std::string const&)j); result) {
-        return {};
-    } else {
-        return makeErrorCodeError(result.ec);
-    }
-}
-
 } // namespace ll::data
+
+template <>
+struct ll::reflection::Serializer<ll::data::VersionRequirement> {
+    static std::string                            to_string(data::VersionRequirement const& t) { return t.to_string(); }
+    static ll::Expected<data::VersionRequirement> from_string(std::string_view s) {
+        if (ll::data::VersionRequirement ver; auto res = ver.from_string_noexcept(s)) {
+            return ver;
+        } else {
+            return makeErrorCodeError(res.ec);
+        }
+    }
+
+    template <typename J>
+    static ll::Expected<> serialize(data::VersionRequirement const& t, J& j) {
+        j = t.to_string();
+        return {};
+    }
+    template <typename J>
+    static ll::Expected<data::VersionRequirement> deserialize(J const& j) {
+        if (!j.is_string()) return makeDeserStringTypeError();
+        return from_string(std::string_view{j});
+    }
+};
 
 namespace std {
 template <>

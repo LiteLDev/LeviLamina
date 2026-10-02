@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ll/api/Expected.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace mce {
@@ -35,6 +36,8 @@ public:
 
     LLNDAPI static bool canParse(std::string_view in);
 
+    LLNDAPI static ll::Expected<mce::UUID> tryFromString(::std::string_view str);
+
 public:
     // member functions
     // NOLINTBEGIN
@@ -64,3 +67,22 @@ struct hash<mce::UUID> {
     size_t operator()(mce::UUID const& id) const noexcept { return id.a ^ (522133279 * id.b); }
 };
 } // namespace std
+
+#include "ll/api/reflection/Serializer.h"
+
+template <>
+struct ll::reflection::Serializer<mce::UUID> {
+    static std::string             to_string(mce::UUID const& t) { return t.asString(); }
+    static ll::Expected<mce::UUID> from_string(std::string_view s) { return mce::UUID::tryFromString(s); }
+
+    template <typename J>
+    static ll::Expected<> serialize(mce::UUID const& t, J& j) {
+        j = to_string(t);
+        return {};
+    }
+    template <typename J>
+    static ll::Expected<mce::UUID> deserialize(J const& j) {
+        if (!j.is_string()) return makeDeserStringTypeError();
+        return from_string(std::string_view{j});
+    }
+};

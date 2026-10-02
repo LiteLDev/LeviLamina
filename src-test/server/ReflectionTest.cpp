@@ -1,4 +1,6 @@
+#include "ll/api/base/Concepts.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/api/reflection/Dispatcher.h"
@@ -23,11 +25,15 @@
 #include <cctype>
 #include <chrono>
 #include <cstdint>
+#include <filesystem>
 #include <format>
 #include <map>
 #include <optional>
 #include <string>
 #include <string_view>
+#include <tuple>
+#include <type_traits>
+#include <utility>
 #include <variant>
 #include <vector>
 
@@ -43,6 +49,7 @@ SerializedPersonaPieceHandle::SerializedPersonaPieceHandle()                    
 SemVersion::SemVersion()                                                                                   = default;
 Bedrock::StaticOptimizedString::StaticOptimizedString()                                                    = default;
 SerializedPersonaPieceHandle& SerializedPersonaPieceHandle::operator=(SerializedPersonaPieceHandle const&) = default;
+MinEngineVersion::MinEngineVersion()                                                                       = default;
 
 namespace {
 
@@ -202,11 +209,71 @@ struct NonDefaultConstructibleItem {
 };
 
 struct NonDefaultContainerRoot {
-    std::optional<NonDefaultConstructibleItem>        maybe;
-    std::vector<NonDefaultConstructibleItem>          items;
+    std::optional<NonDefaultConstructibleItem>         maybe;
+    std::vector<NonDefaultConstructibleItem>           items;
     std::map<std::string, NonDefaultConstructibleItem> named;
-    std::variant<int, NonDefaultConstructibleItem>    value = 0;
+    std::variant<int, NonDefaultConstructibleItem>     value = 0;
 };
+
+// A tuple-like wrapper can merge several object serializers into one flat object.
+template <typename... Types>
+struct FlatReflection : std::tuple<Types...> {
+    using Base = std::tuple<Types...>;
+    using Base::Base;
+
+    constexpr FlatReflection() = default;
+    constexpr FlatReflection(Types... values) : Base(std::move(values)...) {}
+};
+
+namespace std {
+template <typename... Types>
+struct tuple_size<FlatReflection<Types...>> : tuple_size<tuple<Types...>> {};
+
+template <size_t Index, typename... Types>
+struct tuple_element<Index, FlatReflection<Types...>> : tuple_element<Index, tuple<Types...>> {};
+
+template <size_t Index, typename... Types>
+constexpr decltype(auto) get(FlatReflection<Types...>& value) noexcept {
+    return get<Index>(static_cast<tuple<Types...>&>(value));
+}
+
+template <size_t Index, typename... Types>
+constexpr decltype(auto) get(FlatReflection<Types...> const& value) noexcept {
+    return get<Index>(static_cast<tuple<Types...> const&>(value));
+}
+
+template <size_t Index, typename... Types>
+constexpr decltype(auto) get(FlatReflection<Types...>&& value) noexcept {
+    return get<Index>(static_cast<tuple<Types...>&&>(value));
+}
+
+template <size_t Index, typename... Types>
+constexpr decltype(auto) get(FlatReflection<Types...> const&& value) noexcept {
+    return get<Index>(static_cast<tuple<Types...> const&&>(value));
+}
+} // namespace std
+
+struct FlatSection {
+    int         limit = 0;
+    std::string label;
+};
+
+struct FlatFlags {
+    bool enabled = false;
+};
+
+using FlattenedConfig = FlatReflection<FlatSection, FlatFlags>;
+
+template <typename T>
+struct OnlyDeserialize : T {
+    using Base = T;
+    using Base::Base;
+
+    OnlyDeserialize() = default;
+    explicit OnlyDeserialize(T value) : T(std::move(value)) {}
+};
+
+using ReadOnlyFlatSection = OnlyDeserialize<FlatSection>;
 
 template <>
 struct ll::reflection::Serializer<mce::UUID> {
@@ -931,6 +998,128 @@ struct ll::reflection::Serializer<NonDefaultConstructibleItem> {
     }
 };
 
+template <typename... Types>
+struct ll::reflection::Serializer<FlatReflection<Types...>> {
+    using Value = FlatReflection<Types...>;
+
+private:
+    template <typename J, typename F, size_t... I>
+    static ll::Expected<J> serializeElements(Value const& input, F const& keyFormatter, std::index_sequence<I...>) {
+        ll::Expected<J> output{J::object()};
+        auto            append = [&]<size_t Index>() {
+            if (!output) return;
+            auto value = ll::reflection::serialize<J>(std::get<Index>(input), keyFormatter);
+            if (!value) {
+                output = ll::forwardError(value.error());
+                return;
+            }
+            if (!value->is_object()) {
+                output = ll::reflection::makeSerObjectTypeError();
+                return;
+            }
+            for (auto const& [key, child] : value->items()) {
+                (*output)[key] = child;
+            }
+        };
+        (append.template operator()<I>(), ...);
+        return output;
+    }
+
+    template <typename J, typename F, size_t Index, typename... Values>
+    static ll::Expected<Value> deserializeElements(F const& keyFormatter, J remainder, Values&&... parsed) {
+        if constexpr (Index == sizeof...(Types)) {
+            return Value{std::forward<Values>(parsed)...};
+        } else {
+            using Element = std::tuple_element_t<Index, typename Value::Base>;
+            auto value    = ll::reflection::deserialize_construct<Element>(remainder, keyFormatter);
+            if (!value) return ll::forwardError(value.error());
+
+            auto serialized = ll::reflection::serialize<J>(*value, keyFormatter);
+            if (!serialized) return ll::forwardError(serialized.error());
+            if (!serialized->is_object()) return ll::reflection::makeDeserObjectTypeError();
+            for (auto const& item : serialized->items()) {
+                remainder.erase(item.key());
+            }
+
+            return deserializeElements<J, F, Index + 1>(
+                keyFormatter,
+                std::move(remainder),
+                std::forward<Values>(parsed)...,
+                std::move(*value)
+            );
+        }
+    }
+
+public:
+    template <typename J, typename F>
+    static ll::Expected<J> serialize(Value const& input, F const& keyFormatter) {
+        return serializeElements<J>(input, keyFormatter, std::index_sequence_for<Types...>{});
+    }
+
+    template <typename J, typename F>
+    static ll::Expected<Value> deserialize(J const& input, F const& keyFormatter) {
+        if (!input.is_object()) return ll::reflection::makeDeserObjectTypeError();
+        return deserializeElements<J, F, 0>(keyFormatter, input);
+    }
+};
+
+template <typename T>
+struct ll::reflection::Serializer<OnlyDeserialize<T>> {
+    using Type = OnlyDeserialize<T>;
+
+    template <typename J>
+    static ll::Expected<J> serialize(Type const&) {
+        return J::object();
+    }
+
+    template <typename J, typename F>
+    static ll::Expected<Type> deserialize(J const& input, F const& keyFormatter) {
+        auto value = ll::reflection::deserialize_construct<typename Type::Base>(input, keyFormatter);
+        if (!value) return ll::forwardError(value.error());
+        return Type{std::move(*value)};
+    }
+};
+
+template <>
+struct ll::reflection::Serializer<nlohmann::ordered_json, nlohmann::ordered_json> {
+    static ll::Expected<nlohmann::ordered_json> serialize(nlohmann::ordered_json const& value) { return value; }
+    static ll::Expected<nlohmann::ordered_json> deserialize(nlohmann::ordered_json const& value) { return value; }
+};
+
+template <>
+struct ll::reflection::Serializer<std::filesystem::path> {
+    using Path = std::filesystem::path;
+
+    template <typename J>
+    static ll::Expected<J> serialize(Path const& value) {
+        auto result = ll::string_utils::replaceAll(ll::string_utils::wstr2str(value.wstring()), "\\", "/");
+        if (value.has_root_name() || value.has_root_directory()) return result;
+        if (result.starts_with("./") || result.starts_with("../")) return result;
+        if (result == "." || result == "..") return result;
+        return "./" + result;
+    }
+
+    template <typename J>
+    static ll::Expected<Path> deserialize(J const& value) {
+        return Path{std::string{value}};
+    }
+};
+
+template <class R, class P>
+struct ll::reflection::Serializer<std::chrono::duration<R, P>> {
+    using Duration = std::chrono::duration<R, P>;
+
+    template <typename J>
+    static ll::Expected<J> serialize(Duration const& value) {
+        return value.count();
+    }
+
+    template <typename J>
+    static ll::Expected<Duration> deserialize(J const& value) {
+        return Duration{static_cast<typename Duration::rep>(value)};
+    }
+};
+
 TEST(ReflectionTest, SerializeAndDeserializeRespectKeyFormatterAndDispatcher) {
     resetDispatchListenerState();
 
@@ -1153,6 +1342,77 @@ TEST(ReflectionTest, ValueSerializerSpecializationSupportsSerializeAndDeserializ
     EXPECT_EQ(parsed->mMajor, 1);
     EXPECT_EQ(parsed->mMinor, 20);
     EXPECT_EQ(parsed->mPatch, 5);
+}
+
+TEST(ReflectionTest, FlatReflectionMergesObjectSerializersAndRoundTrips) {
+    FlattenedConfig value{
+        FlatSection{7, "economy"},
+        FlatFlags{true}
+    };
+
+    auto json = ll::reflection::serialize<nlohmann::json>(value, uppercaseAsciiKey);
+    ASSERT_TRUE(json.has_value()) << json.error().message();
+    EXPECT_EQ(json->at("LIMIT"), 7);
+    EXPECT_EQ(json->at("LABEL"), "economy");
+    EXPECT_EQ(json->at("ENABLED"), true);
+
+    auto parsed = ll::reflection::deserialize_to<FlattenedConfig>(*json, uppercaseAsciiKey);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(std::get<0>(*parsed).limit, 7);
+    EXPECT_EQ(std::get<0>(*parsed).label, "economy");
+    EXPECT_TRUE(std::get<1>(*parsed).enabled);
+}
+
+TEST(ReflectionTest, CustomDeserializerCanHideATypeDuringSerialization) {
+    ReadOnlyFlatSection value{
+        FlatSection{7, "economy"}
+    };
+
+    auto json = ll::reflection::serialize<nlohmann::json>(value);
+    ASSERT_TRUE(json.has_value()) << json.error().message();
+    EXPECT_TRUE(json->is_object());
+    EXPECT_TRUE(json->empty());
+
+    auto parsed = ll::reflection::deserialize_to<ReadOnlyFlatSection>(nlohmann::json{
+        {"limit",          9},
+        {"label", "restored"}
+    });
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(parsed->limit, 9);
+    EXPECT_EQ(parsed->label, "restored");
+}
+
+TEST(ReflectionTest, OrderedJsonAndFilesystemPathUseValueSpecializations) {
+    nlohmann::ordered_json ordered       = nlohmann::ordered_json::object({
+        { "first", 1},
+        {"second", 2}
+    });
+    auto                   orderedResult = ll::reflection::serialize<nlohmann::ordered_json>(ordered);
+    ASSERT_TRUE(orderedResult.has_value()) << orderedResult.error().message();
+    EXPECT_EQ(*orderedResult, ordered);
+
+    auto parsedOrdered = ll::reflection::deserialize_to<nlohmann::ordered_json>(*orderedResult);
+    ASSERT_TRUE(parsedOrdered.has_value()) << parsedOrdered.error().message();
+    EXPECT_EQ(*parsedOrdered, ordered);
+
+    std::filesystem::path const path{"config/economy.json"};
+    auto                        pathJson = ll::reflection::serialize<nlohmann::json>(path);
+    ASSERT_TRUE(pathJson.has_value()) << pathJson.error().message();
+    EXPECT_EQ(*pathJson, "./config/economy.json");
+
+    auto parsedPath = ll::reflection::deserialize_to<std::filesystem::path>(*pathJson);
+    ASSERT_TRUE(parsedPath.has_value()) << parsedPath.error().message();
+    EXPECT_EQ(parsedPath->generic_string(), "./config/economy.json");
+}
+
+TEST(ReflectionTest, DurationSpecializationSerializesTheUnderlyingCount) {
+    auto json = ll::reflection::serialize<nlohmann::json>(std::chrono::milliseconds{1250});
+    ASSERT_TRUE(json.has_value()) << json.error().message();
+    EXPECT_EQ(*json, 1250);
+
+    auto parsed = ll::reflection::deserialize_to<std::chrono::milliseconds>(*json);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(parsed->count(), 1250);
 }
 
 TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields) {

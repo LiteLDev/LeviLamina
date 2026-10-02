@@ -414,7 +414,7 @@ struct ll::reflection::Serializer<ll::data::Version> {
     }
     template <typename J>
     static ll::Expected<data::Version> deserialize(J const& j) {
-        if (!j.is_string()) return makeErrorCodeError(std::errc::invalid_argument);
+        if (!j.is_string()) return makeDeserStringTypeError();
         return from_string(std::string_view{j});
     }
 };

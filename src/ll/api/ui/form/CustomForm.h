@@ -100,11 +100,11 @@ public:
     LLAPI CustomForm& textField(TextValue label, ObservableString text, TextFieldOptions options = {});
     LLAPI CustomForm& toggle(TextValue label, ObservableBoolean toggled, ToggleOptions options = {});
 
-    LLNDAPI Expected<> show(Callback callback = {});
-    LLNDAPI coro::CoroTask<Result> showAsync();
+    LLAPI Expected<> show(Callback callback = {});
+    LLAPI coro::CoroTask<Result> showAsync();
 
-    LLNDAPI Expected<> close();
-    LLNDAPI bool       isShowing() const noexcept;
+    LLAPI Expected<> close();
+    LLNDAPI bool     isShowing() const noexcept;
 };
 
 } // namespace ll::ui
