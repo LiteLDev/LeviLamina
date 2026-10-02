@@ -5,6 +5,7 @@
 #include <string>
 #include <type_traits>
 #include <utility>
+#include <variant>
 
 namespace ll::traits {
 
@@ -205,5 +206,11 @@ constexpr bool is_awaitable_v =
 
 template <class T>
 struct is_awaitable : std::bool_constant<is_awaitable_v<T>> {};
+
+template <typename T>
+constexpr bool is_variant_v = requires { typename std::variant_size<std::remove_cvref_t<T>>::type; };
+
+template <typename T>
+constexpr bool is_string_convertible_v = std::is_constructible_v<std::string, T> || std::is_convertible_v<std::string, T>;
 
 } // namespace ll::traits

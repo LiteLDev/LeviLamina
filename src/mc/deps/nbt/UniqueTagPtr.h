@@ -38,6 +38,8 @@ class UniqueTagPtr {
         IntArrayTag>;
 
 public:
+    using string_t = std::string;
+
     [[nodiscard]] LL_CONSTEXPR23 UniqueTagPtr() noexcept {}
 
     [[nodiscard]] LL_CONSTEXPR23 UniqueTagPtr(nullptr_t) noexcept {}
@@ -135,11 +137,23 @@ public:
     [[nodiscard]] bool is_number_integer() const noexcept {
         return hold(Tag::Byte) || hold(Tag::Short) || hold(Tag::Int) || hold(Tag::Int64);
     }
+    [[nodiscard]] bool is_number_signed() const noexcept { return is_number_integer(); }
+    [[nodiscard]] bool is_number_unsigned() const noexcept { return false; }
     [[nodiscard]] bool is_object() const noexcept { return hold(Tag::Compound); }
     [[nodiscard]] bool is_string() const noexcept { return hold(Tag::String); }
     [[nodiscard]] bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
     [[nodiscard]] bool is_primitive() const noexcept { return is_null() || is_string() || is_number() || is_binary(); }
     [[nodiscard]] bool is_structured() const noexcept { return is_array() || is_object(); }
+    [[nodiscard]] std::string_view type_name() const noexcept {
+        if (is_null()) return "null";
+        if (is_object()) return "object";
+        if (is_array()) return "array";
+        if (is_string()) return "string";
+        if (is_boolean()) return "boolean";
+        if (is_number()) return "number";
+        if (is_binary()) return "binary";
+        return "unknown";
+    }
 
     [[nodiscard]] std::string
     toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept {
@@ -168,6 +182,20 @@ public:
     [[nodiscard]] operator std::string&() &;
     [[nodiscard]] operator std::string&&() &&;
     [[nodiscard]] operator std::string_view() const;
+
+    template <class Ref>
+    [[nodiscard]] Ref get_ref() &
+        requires(std::same_as<Ref, string_t&>)
+    {
+        return static_cast<string_t&>(*this);
+    }
+
+    template <class Ref>
+    [[nodiscard]] Ref get_ref() const&
+        requires(std::same_as<Ref, string_t const&>)
+    {
+        return static_cast<string_t const&>(*this);
+    }
 
     template <class T>
         requires(std::is_arithmetic_v<T> && !ll::traits::is_char_v<T>)

@@ -27,7 +27,7 @@ protected:
         if (auto* res = std::any_cast<std::reference_wrapper<Wrap>>(&any)) {
             return static_cast<Ret>(res->get());
         }
-        return static_cast<Ret>(std::any_cast<std::add_lvalue_reference_t<std::decay_t<Arg>>>(any));
+        return static_cast<Ret>(std::any_cast<std::add_lvalue_reference_t<Decay>>(any));
     }
 
 public:
