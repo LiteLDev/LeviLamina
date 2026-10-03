@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+
 // auto generated forward declare list
 // clang-format off
 class LocalPlayer;
@@ -11,8 +14,8 @@ struct LocalPlayerChangedConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk27af58;
-    ::ll::UntypedStorage<8, 8> mUnk6d5e5b;
+    ::ll::TypedStorage<8, 8, ::Bedrock::PubSub::Connector<void(::LocalPlayer const*)>&> mConnector;
+    ::ll::TypedStorage<8, 8, ::LocalPlayer const*>                                      mInitialValue;
     // NOLINTEND
 
 public:
@@ -24,7 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::function<void(::LocalPlayer const*)>
+    MCAPI static ::std::function<void(::LocalPlayer const*)>
     createLocalPlayerChangedCallback(::std::function<void()> initCallback, ::std::function<void()> resetCallback);
     // NOLINTEND
 };

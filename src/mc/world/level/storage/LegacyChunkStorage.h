@@ -57,20 +57,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyChunkStorage(
+    MCAPI LegacyChunkStorage(
         ::std::unique_ptr<::ChunkSource> parent,
         ::LevelStorage&                  levelStorage,
         ::StorageVersion                 v,
         ::Biome&                         defaultBiome
     );
 
-    MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
+    MCAPI void _markChunkAsImported(::ChunkPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::ChunkSource> parent,
         ::LevelStorage&                  levelStorage,
         ::StorageVersion                 v,
@@ -81,11 +81,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCNAPI bool $saveLiveChunk(::LevelChunk& lc);
+    MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
+    MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
 
     // NOLINTEND
