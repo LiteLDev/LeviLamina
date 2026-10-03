@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+
 // auto generated forward declare list
 // clang-format off
 class DebuggerStat;
+class DebuggerStatCollector;
 class DynamicProperties;
 class ILevelStorageManagerConnector;
 class LevelStorage;
@@ -15,50 +20,48 @@ class DynamicPropertiesManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkde8f1d;
-    ::ll::UntypedStorage<4, 4>  mUnke0cd59;
-    ::ll::UntypedStorage<8, 16> mUnk3126ff;
-    ::ll::UntypedStorage<8, 8>  mUnkdfddbd;
-    ::ll::UntypedStorage<8, 24> mUnk52c501;
-    ::ll::UntypedStorage<8, 8>  mUnk64f89f;
-    ::ll::UntypedStorage<8, 8>  mUnkb3337b;
+    ::ll::TypedStorage<8, 8, uint64>                                 mTotalBytesSaved;
+    ::ll::TypedStorage<4, 4, int>                                    mWatchdogTick;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnSaveLevelDataSubscription;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DynamicProperties>> mLevelDynamicProperties;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCerealContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>>                    mMemoryStatCollector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DebuggerStatCollector>>                    mPropertiesStatCollector;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DynamicPropertiesManager& operator=(DynamicPropertiesManager const&);
-    DynamicPropertiesManager(DynamicPropertiesManager const&);
     DynamicPropertiesManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DynamicPropertiesManager(::cereal::ReflectionCtx const& ctx);
+    MCAPI explicit DynamicPropertiesManager(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI ::std::optional<::DebuggerStat> _collectMemoryStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::DebuggerStat> _collectMemoryStats(uint64, uint64, uint64);
 
-    MCNAPI ::std::optional<::DebuggerStat> _collectPropertiesStats(uint64, uint64, uint64);
+    MCAPI ::std::optional<::DebuggerStat> _collectPropertiesStats(uint64, uint64, uint64);
 
-    MCNAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
+    MCAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
 
-    MCNAPI void readFromLevelStorage(::LevelStorage& levelStorage);
+    MCAPI void readFromLevelStorage(::LevelStorage& levelStorage);
 
-    MCNAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCNAPI void writeToLevelStorage(::LevelStorage& levelStorage);
+    MCAPI void writeToLevelStorage(::LevelStorage& levelStorage);
 
-    MCNAPI ~DynamicPropertiesManager();
+    MCAPI ~DynamicPropertiesManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

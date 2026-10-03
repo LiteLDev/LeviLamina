@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/world/level/storage/LevelSummary.h"
+
+// auto generated forward declare list
+// clang-format off
+class LevelData;
+// clang-format on
+
 class LevelCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 848> mUnk6a83ab;
-    ::ll::UntypedStorage<8, 16>  mUnk5b972a;
-    ::ll::UntypedStorage<1, 1>   mUnk541c7c;
-    ::ll::UntypedStorage<1, 1>   mUnkebaf06;
-    ::ll::UntypedStorage<1, 1>   mUnk403190;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                            summary;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelData>> data;
+    ::ll::TypedStorage<1, 1, bool>                                        dirtySummary;
+    ::ll::TypedStorage<1, 1, bool>                                        isPartiallyCopied;
+    ::ll::TypedStorage<1, 1, bool>                                        isLevelDataInvalid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelCache& operator=(LevelCache const&);
-    LevelCache(LevelCache const&);
-    LevelCache();
 };
