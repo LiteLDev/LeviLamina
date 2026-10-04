@@ -28,7 +28,6 @@ std::vector<std::pair<std::weak_ptr<bool>, OverlayElement*>> sPendingAttaches;
 
 void registerPending(OverlayElement& overlay, std::weak_ptr<bool> token) {
     std::unique_lock lock(sPendingMutex);
-    // 去重并顺手清理已失效/已挂载的条目
     std::erase_if(sPendingAttaches, [&](auto const& entry) {
         return entry.first.expired() || entry.second->isAttached() || entry.second == &overlay;
     });
@@ -50,8 +49,8 @@ struct OverlayElement::Impl {
     std::shared_ptr<bool>                                        aliveToken   = std::make_shared<bool>();
 };
 
-// 场景创建时控件树常未构建完成（异步加载），attach 失败的控件登记在这里，
-// 由宿主场景自身的 frameUpdate 持续驱动重试，直到父控件出现。
+// The control tree is often not fully built when the scene is created (async load);
+// failed attaches are retried from the host scene's own frameUpdate.
 LL_TYPE_INSTANCE_HOOK(
     UISceneFrameUpdateHook,
     memory::HookPriority::Normal,
@@ -61,8 +60,7 @@ LL_TYPE_INSTANCE_HOOK(
     MinecraftUIFrameUpdateContext& frameUpdateContext
 ) {
     origin(frameUpdateContext);
-    // 拷贝待处理列表后再遍历：tryAttachFrame 失败时会重新 registerPending（独占锁），
-    // 不能在持锁状态下调用，否则死锁
+    // tryAttachFrame re-registers on failure (exclusive lock): iterate a copy.
     std::vector<std::pair<std::weak_ptr<bool>, OverlayElement*>> pending;
     {
         std::shared_lock lock(sPendingMutex);
@@ -101,17 +99,15 @@ void OverlayElement::enable() {
 
     mImpl->listener = event::EventBus::getInstance().emplaceListener<event::UISceneCreatedEvent>(
         [this](event::UISceneCreatedEvent& ev) {
-            // 直接比较创建场景时使用的名字（即 UISceneCreatedEvent::getScreenName()），
-            // 不依赖 UIScene::equalsScreenName 的匹配语义
             if (ev.getScreenName() != getTargetSceneName()) {
                 return;
             }
             if (auto* scene = ev.tryGetUIScene()) {
                 mImpl->pendingScene = scene;
-                // 宿主场景是销毁重建的（如跨维度）：新场景创建时旧场景通常还在播放退出
-                // 转场，旧控件仍存活。若因 weak_ptr 未过期而跳过挂载，旧控件随旧场景
-                // 淡出销毁后，新场景将永远丢失本元素（场景创建事件不会重发）。
-                // 因此在新场景创建时主动放弃旧引用——旧控件反正随旧场景销毁。
+                // The host scene is destroyed and recreated (e.g. across dimensions) while
+                // the old scene is still playing its exit transition, so the old control is
+                // technically alive; drop the reference proactively, or the new scene would
+                // never get the element (the event does not re-fire).
                 if (!mImpl->attached.expired()) {
                     mImpl->attached.reset();
                     onDetach();
@@ -173,7 +169,6 @@ void OverlayElement::attach(UIScene& scene) {
         onAttach(**control);
         return;
     }
-    // 控件树尚未构建完成（异步加载）——登记到 frameUpdate 持续重试列表
     if (mImpl->pendingScene == &scene) {
         registerPending(*this, mImpl->aliveToken);
     }

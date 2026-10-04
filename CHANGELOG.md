@@ -27,7 +27,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   abstract buttons with a direct callback into all gameplay input mappings
   (`gamePlay*`) or an explicit list of input mapping stacks; bindings are re-applied
   on every vanilla mapping rebuild and handlers are registered with the game's
-  `InputHandler` directly
+  `InputHandler` directly. Negative key codes denote mouse buttons (raw mouse
+  button - 100, e.g. -99 for the left button) and are routed into the mouse input
+  mapping like vanilla does
+- Added `ll::ui::ModSettings` (client target only), accessible via
+  `ll::mod::Mod::getSettings`: a per-mod settings page under a new "Mods" tab in the
+  vanilla settings screen. Mods declaratively add toggles, dropdowns, buttons, text,
+  banners, int/float sliders, text inputs and rebindable key entries; values are
+  persisted to `<mod data dir>/settings.json` and change callbacks run on the client
+  main thread
+
+### Changed
+
+- `ll::ui::JsonScreen` (client target only) now pushes its scene with a bare
+  `ISceneStack::pushScreen` (matching every vanilla JSON UI screen) instead of an OreUI
+  `RouteAction` push, and exits controller-side: its controller overrides
+  `ScreenController::tryExit()` (the virtual the framework routes `button.menu_exit` into)
+  to pop exactly its own scene and consume the event — the vanilla
+  `menu_cancel -> button.menu_exit` JSON mapping works unchanged, without the double pop
+  the base-class exit path caused for route-less screens
+- `ll::ui::JsonScreen::close()` is now guarded against repeated calls while the scene is
+  still being popped (previously each call queued another `schedulePopScreen(1)`, popping
+  extra scenes)
+- `ll::input::KeyRegistry` / `ll::input::ScreenButtonRegistry` buttons are now tied to the
+  registering mod and removed when the mod is disabled; button handlers are registered
+  with the game's `InputHandler` as trampolines dispatching to the current registration,
+  so unregister/re-register and mod unload never leave stale callbacks behind
+
+### Fixed
+
+- Fixed `ll::input::KeyRegistry` key handlers registered via `getOrCreateKey()` never
+  firing (client target only): they were only registered with the game's `InputHandler`
+  from `MinecraftInputHandler::_registerInputHandlers`, which runs before mods enable —
+  handler registration now happens lazily on input mapping rebuilds
 
 
 ## [26.51.6] - 2026-09-29

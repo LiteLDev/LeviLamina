@@ -1,5 +1,6 @@
 #include "ll/api/ui/JsonScreen.h"
 
+#include <algorithm>
 #include <mutex>
 #include <vector>
 
@@ -12,8 +13,6 @@
 #include "mc/client/game/IClientInstance.h"
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/ViewRequest.h"
-#include "mc/client/gui/oreui/routing/RouteAction.h"
-#include "mc/client/gui/oreui/routing/RouteHistoryAction.h"
 #include "mc/client/gui/screens/AbstractScene.h"
 #include "mc/client/gui/screens/AbstractScreenSetupCleanupStrategy.h"
 #include "mc/client/gui/screens/BaseScreen.h"
@@ -22,6 +21,7 @@
 #include "mc/client/gui/screens/SceneFactory.h"
 #include "mc/client/gui/screens/ScreenContext.h"
 #include "mc/client/gui/screens/ScreenController.h"
+#include "mc/client/gui/screens/ScreenView.h"
 #include "mc/client/gui/screens/UIScene.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 #include "mc/client/gui/screens/interfaces/ISceneStack.h"
@@ -33,26 +33,20 @@
 
 namespace ll::ui {
 
-namespace {
-
-// AbstractScreenSetupCleanupStrategy::setupScreen has no exported definition, but deriving from
-// the class makes the compiler emit the base vtable locally, which references it. The base vtable
-// is never used at runtime (every strategy instance is the derived class below), so an empty
-// definition is enough.
-}
+namespace {}
 
 } // namespace ll::ui
 
+// The base setupScreen has no exported definition, but deriving from the class emits the
+// base vtable locally, which references it; the base vtable is never used at runtime.
 void AbstractScreenSetupCleanupStrategy::setupScreen(::ScreenContext&) {}
 
 namespace ll::ui {
 
 namespace {
 
-// ScreenSetupCleanupHelper::setupForStandardUIDrawing is a static helper with no exported symbol,
-// and real game environments ship no PDB, so it is located by a byte signature that is unique in
-// the .text section of 1.26.51. A failed scan is safe: the scene then renders with whatever camera
-// state the previously rendered scene left behind.
+// ScreenSetupCleanupHelper::setupForStandardUIDrawing has no exported symbol; located by a byte
+// signature (1.26.51). A failed scan is safe: the scene keeps the previous camera state.
 void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance& client) {
     using Fn     = void (*)(::ScreenContext&, ::IClientInstance&);
     static Fn fn = []() -> Fn {
@@ -70,10 +64,8 @@ void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance
     }
 }
 
-// GameRenderer only renders scenes that carry a setup/cleanup strategy: the strategy supplies the
-// eye mask the scene is collected under, and the per-scene UI camera setup. SceneFactory::
-// createUIScene leaves the strategy empty, so mirror what SceneFactory::_createScreen does for
-// vanilla screens and install an equivalent of DefaultUIScreenSetupCleanupStrategy.
+// GameRenderer only renders scenes carrying a setup/cleanup strategy, which
+// SceneFactory::createUIScene leaves empty; mirror DefaultUIScreenSetupCleanupStrategy.
 class JsonScreenSetupCleanupStrategy : public ::AbstractScreenSetupCleanupStrategy {
     ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> mClient;
 
@@ -89,10 +81,7 @@ public:
         }
     }
 
-    void cleanupScreen(::ScreenContext& screenContext) override {
-        // ScreenContext::isDrawingUI (not present in the generated headers)
-        *reinterpret_cast<bool*>(reinterpret_cast<char*>(&screenContext) + 0x7D) = false;
-    }
+    void cleanupScreen(::ScreenContext& screenContext) override { screenContext.isDrawingUI = false; }
 
     ::EyeRenderingModeBit getEyeRenderingMode() const override {
         auto* client = tryGetClient();
@@ -111,19 +100,12 @@ struct DeferredPop {
 
 std::vector<DeferredPop> sDeferredPops;
 
-// UIScene::canBeTransitioned reads ScreenView+1120/1121 (entrance-transition flags). The
-// AbstractScene vtable layout in the generated headers is unreliable, so read the bytes
-// directly (same expression the game evaluates in UIScene::canBeTransitioned).
 bool canSceneBeTransitioned(UIScene& scene) {
-    auto* screenView = *reinterpret_cast<char**>(reinterpret_cast<char*>(&scene) + 0x40);
-    return screenView == nullptr || (screenView[1120] | screenView[1121]) == 0;
+    return !scene.mScreenView || !(scene.mScreenView->mIsEntering || scene.mScreenView->mIsExiting);
 }
 
-// A bare scene->schedulePop() only sets flags whose consumer is unreliable (the scene can end
-// up stuck terminating forever), while popScreenWithRouteAction feeds the OreUI router, which
-// then tears down extra scenes. schedulePopScreen(1) goes through the reliable pending-change
-// queue with no router involvement — but it is silently dropped while the scene is mid-entrance,
-// so defer the request until the scene can be transitioned.
+// schedulePopScreen(1) is silently dropped while the scene is mid-entrance, so defer the
+// request until the scene can be transitioned.
 void requestPop(ISceneStack& stack, std::weak_ptr<UIScene> const& weakScene) {
     auto scene = weakScene.lock();
     if (!scene) {
@@ -179,7 +161,24 @@ public:
     : ::ClientInstanceScreenController(std::move(model)),
       mOwner(&owner),
       mOwnerAlive(std::move(ownerAlive)) {
-        for (auto const& name : owner.getHandledButtonIds()) {
+        auto handledButtons = owner.getHandledButtonIds();
+        // Raw buttons never reach controller handlers — only JSON button_mappings
+        // to_button_ids are dispatched — so this handler requires the screen's JSON to pass
+        // button.menu_cancel through (e.g. map it to itself).
+        if (std::ranges::find(handledButtons, "button.menu_cancel") == handledButtons.end()) {
+            registerButtonEventHandler(
+                StringHash{"button.menu_cancel"},
+                ButtonState::Down,
+                PreviousButtonStateRequirement::Any,
+                [this](UIPropertyBag*) -> ::ui::ViewRequest {
+                    if (!mOwnerAlive.expired()) {
+                        mOwner->close();
+                    }
+                    return ::ui::ViewRequest::ConsumeEvent;
+                }
+            );
+        }
+        for (auto const& name : handledButtons) {
             registerButtonEventHandler(
                 StringHash{name},
                 ButtonState::Down,
@@ -192,9 +191,6 @@ public:
                 }
             );
         }
-        // No default button.menu_exit handler: the screen is pushed with a route action, so an
-        // unhandled menu_cancel falls through to the game's own back navigation (the vanilla
-        // Esc-close path). Popping here as well would close one scene too many.
     }
 
     void onOpen() override {
@@ -203,8 +199,18 @@ public:
         }
     }
 
+    // The framework funnels button.menu_exit into this virtual. The base implementation pops
+    // without consuming the event, letting the default back navigation pop a second scene.
+    ::ui::ViewRequest tryExit() override {
+        if (!mOwnerAlive.expired()) {
+            mOwner->close();
+        }
+        return ::ui::ViewRequest::ConsumeEvent;
+    }
+
     void onTerminate() override {
         if (!mOwnerAlive.expired()) {
+            mOwner->mCloseRequested = false;
             mOwner->onClose();
         }
     }
@@ -237,26 +243,25 @@ void JsonScreen::open() {
     }
     auto client = service::getClientInstance();
     if (!client) {
-        getLogger().warn("JsonScreen diag: open() '{}' aborted: no client instance", getScreenName());
+        getLogger().warn("JsonScreen: open() '{}' aborted: no client instance", getScreenName());
         return;
     }
-    // The vanilla screen creation recipe (SceneCreationUtils::ScreenCreator::createScreen):
-    // model first, then a controller holding the model, then the scene.
     auto& sceneFactory = client->getSceneFactory();
     auto& modelFactory = sceneFactory.mFactoryImpl.get()->getScreenModelFactory();
     auto  model        = modelFactory.createModel<::ClientInstanceScreenModel>(getScreenName(), sceneFactory);
     if (!model) {
-        getLogger().warn("JsonScreen diag: open() '{}' aborted: createModel failed", getScreenName());
+        getLogger().warn("JsonScreen: open() '{}' aborted: createModel failed", getScreenName());
         return;
     }
     mController = std::make_shared<Controller>(*this, mAliveToken, std::move(model));
     auto scene  = sceneFactory.createUIScene(getScreenName(), mController);
     if (!scene) {
-        getLogger().warn("JsonScreen diag: open() '{}' aborted: createUIScene failed", getScreenName());
+        getLogger().warn("JsonScreen: open() '{}' aborted: createUIScene failed", getScreenName());
         mController.reset();
         return;
     }
-    mScene = scene;
+    mScene          = scene;
+    mCloseRequested = false;
     scene->$setScreenSetupCleanup(
         std::make_unique<JsonScreenSetupCleanupStrategy>(::Bedrock::NotNullNonOwnerPtr<::IClientInstance>{
             ::Bedrock::NonOwnerPointer<::IClientInstance>{
@@ -265,32 +270,23 @@ void JsonScreen::open() {
             }
     })
     );
-    client->getCurrentSceneStack()->pushScreenWithRouteAction(
-        std::move(scene),
-        ::OreUI::RouteAction{getScreenName(), ::OreUI::RouteHistoryAction::Push}
-    );
-    // No explicit releaseMouse(): the game's push callback (ClientInstance.cpp:4453) decides
-    // grab vs release once from the pushed scene's shouldStealMouse() and the input state,
-    // and InGamePlayScreen::tick's per-tick grab is suppressed by isShowingMenu(). Mouse
-    // behavior is therefore driven entirely by the screen's JSON properties
-    // (should_steal_mouse / is_showing_menu), exactly like vanilla screens.
+    client->getCurrentSceneStack()->pushScreen(std::move(scene), false);
 
     static std::once_flag sDeferredPopHookOnce;
     std::call_once(sDeferredPopHookOnce, [] { memory::HookRegistrar<JsonScreenDeferredPopHook>::hook(); });
 }
 
 void JsonScreen::close() {
-    // Do not reset mScene here: popping is asynchronous, and the scene stays on the stack until
-    // the stack processes the pop and destroys it. Resetting early would make isOpen() report
-    // false while the scene is still up, letting open() push duplicate scenes onto the stack.
-    // The weak_ptr expires on its own once the scene is destroyed.
-    if (!mScene.lock()) {
+    // mScene stays valid until the stack processes the pop; mCloseRequested keeps repeated
+    // close() calls in that window from queuing extra schedulePopScreen(1)s.
+    if (mCloseRequested || !mScene.lock()) {
         return;
     }
     auto client = service::getClientInstance();
     if (!client) {
         return;
     }
+    mCloseRequested = true;
     requestPop(*client->getCurrentSceneStack(), mScene);
 }
 

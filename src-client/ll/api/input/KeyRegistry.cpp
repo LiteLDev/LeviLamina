@@ -31,17 +31,15 @@ struct KeyRegistry::Impl {
         bool             allowRemap;
     };
 
-    // Buttons registered through registerGameplayKeyboardButton /
-    // registerInputMappingsKeyboardButton: appended to the matching input mappings on
-    // every mapping rebuild, with the handler registered directly with the
-    // InputHandler (MinecraftInputHandler::_registerInputHandlers runs before mods
-    // enable, so late-registered keys never reach the InputHandler through that path).
+    // Buttons from registerGameplayKeyboardButton / registerInputMappingsKeyboardButton,
+    // re-appended on every vanilla mapping rebuild.
     struct MappingButton {
         std::string              name;
         int                      keyCode;
         ::FocusImpact            focusImpact;
         ButtonDownHandler        handler;
         std::vector<std::string> mappingNames; // empty = all "gamePlay*" mappings
+        std::string              modName;
     };
 
     std::vector<PendingKeyMapping>  pendingKeyMappings;
@@ -158,30 +156,60 @@ void KeyRegistry::disableModKeys(std::string_view modName) {
     for (auto& [name, handle] : impl->keys) {
         handle.disableModOverloads(modName);
     }
+    std::erase_if(impl->mappingButtons, [&](Impl::MappingButton const& button) { return button.modName == modName; });
 }
 
 void KeyRegistry::registerAllKeysToInputHandler(MinecraftInputHandler& inputHandler) {
     std::lock_guard lock{impl->mutex};
+    registerKeyHandlers(*inputHandler.mInputHandler);
+}
 
+void KeyRegistry::registerKeyHandlers(::InputHandler& inputHandler) {
     for (auto& [name, handle] : impl->keys) {
-        auto keyCodes = handle.getKeyCodes();
-        for (int keyCode : keyCodes) {
-            inputHandler.mInputHandler->registerButtonDownHandler(
-                "button." + name,
-                [this, keyCode](::FocusImpact focusImpact, ::IClientInstance& client) {
-                    triggerKeyDownCallback(keyCode, focusImpact, client);
-                },
-                false
-            );
-
-            inputHandler.mInputHandler->registerButtonUpHandler(
-                "button." + name,
-                [this, keyCode](::FocusImpact focusImpact, ::IClientInstance& client) {
-                    triggerKeyUpCallback(keyCode, focusImpact, client);
-                },
-                false
-            );
+        if (!handle.isValid()) {
+            continue;
         }
+        std::string buttonName = "button." + name;
+        if (!impl->inputHandlerRegisteredNames.insert(buttonName).second) {
+            continue;
+        }
+        auto keyCodes = handle.getKeyCodes();
+        if (keyCodes.empty()) {
+            continue;
+        }
+        int keyCode = keyCodes.front();
+        inputHandler.registerButtonDownHandler(
+            buttonName,
+            [this, keyCode](::FocusImpact focusImpact, ::IClientInstance& client) {
+                triggerKeyDownCallback(keyCode, focusImpact, client);
+            },
+            false
+        );
+        inputHandler.registerButtonUpHandler(
+            buttonName,
+            [this, keyCode](::FocusImpact focusImpact, ::IClientInstance& client) {
+                triggerKeyUpCallback(keyCode, focusImpact, client);
+            },
+            false
+        );
+    }
+    for (auto const& button : impl->mappingButtons) {
+        if (!impl->inputHandlerRegisteredNames.insert(button.name).second) {
+            continue;
+        }
+        inputHandler.registerButtonDownHandler(
+            button.name,
+            [this, name = button.name](::FocusImpact focusImpact, ::IClientInstance& client) {
+                std::lock_guard lock{impl->mutex};
+                for (auto& mappingButton : impl->mappingButtons) {
+                    if (mappingButton.name == name) {
+                        mappingButton.handler(focusImpact, client);
+                        return;
+                    }
+                }
+            },
+            false
+        );
     }
 }
 
@@ -194,6 +222,8 @@ void KeyRegistry::registerKeyboardInputs(
 ) {
     std::lock_guard lock{impl->mutex};
 
+    auto layout = inputs.mKeyboardRemappingLayout.lock();
+
     for (auto& [name, handle] : impl->keys) {
         if (!handle.isValid()) continue;
 
@@ -201,12 +231,29 @@ void KeyRegistry::registerKeyboardInputs(
 
         std::string buttonName = "button." + name;
         std::string keyName    = "key." + name;
-        auto        keyMapping = inputs.mKeyboardRemappingLayout.lock()->getKeymappingByAction(keyName);
 
-        for (int key : *keyMapping.mKeys) {
-            if (!keyMapping.isAssigned()) continue;
-            if (keyMapping.isAltKey()) {
-                mouseMapping.buttonBindings->emplace_back(buttonName, key);
+        std::vector<int> keys;
+        bool             altKey = false;
+        if (layout) {
+            auto& keyMapping = layout->getKeymappingByAction(keyName);
+            if (keyMapping.mAction.get() == keyName) {
+                if (!keyMapping.isAssigned()) continue;
+                keys   = *keyMapping.mKeys;
+                altKey = keyMapping.isAltKey();
+            } else {
+                // Never entered the layout (registration raced past assignDefaultMapping):
+                // bind the default key codes directly.
+                keys = handle.getKeyCodes();
+            }
+        } else {
+            keys = handle.getKeyCodes();
+        }
+
+        for (int key : keys) {
+            if (altKey) {
+                // Matches vanilla _bindActionToKeyboardAndMouseInput: mouse keys are stored as
+                // rawKey - 100 and converted back with getAdjustedKey (key + 100).
+                mouseMapping.buttonBindings->emplace_back(buttonName, key + 100);
             } else {
                 keyboardMapping.keyBindings->emplace_back(buttonName, key, focusImpact);
             }
@@ -241,6 +288,10 @@ bool KeyRegistry::registerInputMappingsKeyboardButton(
     if (buttonName.empty() || !handler) {
         return false;
     }
+    std::string modName;
+    if (auto mod = mod::NativeMod::current()) {
+        modName = mod->getName();
+    }
     std::lock_guard lock{impl->mutex};
     for (auto const& button : impl->mappingButtons) {
         if (button.name == buttonName) {
@@ -248,7 +299,14 @@ bool KeyRegistry::registerInputMappingsKeyboardButton(
         }
     }
     impl->mappingButtons.push_back(
-        Impl::MappingButton{std::move(buttonName), keyCode, focusImpact, std::move(handler), std::move(mappingNames)}
+        Impl::MappingButton{
+            std::move(buttonName),
+            keyCode,
+            focusImpact,
+            std::move(handler),
+            std::move(mappingNames),
+            std::move(modName)
+        }
     );
     return true;
 }
@@ -264,12 +322,10 @@ bool KeyRegistry::unregisterMappingKeyboardButton(std::string_view buttonName) {
 
 void KeyRegistry::processMappingButtons(::VanillaClientInputMappingFactory& factory) {
     std::lock_guard lock{impl->mutex};
-    if (impl->mappingButtons.empty()) {
+    if (impl->mappingButtons.empty() && impl->keys.empty()) {
         return;
     }
 
-    // 1) Append the key bindings to the matching input mappings (re-applied on every
-    //    vanilla template rebuild, since origin() resets the mapping content).
     for (auto& [name, mapping] : *factory.mActiveInputMappings) {
         for (auto const& button : impl->mappingButtons) {
             bool const match = button.mappingNames.empty()
@@ -277,14 +333,19 @@ void KeyRegistry::processMappingButtons(::VanillaClientInputMappingFactory& fact
                                  : std::find(button.mappingNames.begin(), button.mappingNames.end(), name)
                                        != button.mappingNames.end();
             if (match) {
-                mapping.keyboardMapping->keyBindings->emplace_back(button.name, button.keyCode, button.focusImpact);
+                // Negative key codes are mouse buttons (KeyboardRemappingLayout::_rawKeyToKey
+                // stores them as rawKey - 100); route them into the mouse mapping with the
+                // raw button number, like vanilla _bindActionToKeyboardAndMouseInput does.
+                if (button.keyCode < 0) {
+                    mapping.mouseMapping->buttonBindings->emplace_back(button.name, button.keyCode + 100);
+                } else {
+                    mapping.keyboardMapping->keyBindings->emplace_back(button.name, button.keyCode, button.focusImpact);
+                }
             }
         }
     }
 
-    // 2) Register the handlers with the InputHandler so the button events are
-    //    dispatched at all (unregistered button ids are silently dropped before
-    //    dispatch). ClientInputHandler::mInputHandler is at +0x18.
+    // Unregistered button ids are silently dropped before dispatch.
     auto client = service::getClientInstance();
     if (!client) {
         return;
@@ -293,15 +354,7 @@ void KeyRegistry::processMappingButtons(::VanillaClientInputMappingFactory& fact
     if (!clientInput) {
         return;
     }
-    auto* inputHandler = *reinterpret_cast<::InputHandler**>(reinterpret_cast<char*>(clientInput) + 0x18);
-    if (!inputHandler) {
-        return;
-    }
-    for (auto const& button : impl->mappingButtons) {
-        if (impl->inputHandlerRegisteredNames.insert(button.name).second) {
-            inputHandler->registerButtonDownHandler(button.name, button.handler, false);
-        }
-    }
+    registerKeyHandlers(clientInput->mInputHandler);
 }
 
 } // namespace ll::input

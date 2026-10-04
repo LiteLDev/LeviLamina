@@ -25,8 +25,13 @@ namespace ll::ui {
 /// take effect automatically, driven by the scene stack and those JSON properties
 /// (is_showing_menu, should_steal_mouse, absorbs_input, button_mappings, ...).
 ///
-/// The standard exit path needs no code: map "button.menu_cancel" to "button.menu_exit"
-/// (global) in the screen's JSON button_mappings and the framework pops the screen.
+/// Exit path: the controller overrides ScreenController::tryExit() — the virtual the
+/// framework routes button.menu_exit into — popping exactly this scene and consuming the
+/// event. The vanilla menu_cancel -> button.menu_exit JSON mapping therefore works
+/// unchanged. (The base-class tryExit would also pop, but without consuming the event the
+/// default back navigation fires too and pops a second scene.) button.menu_cancel mapped
+/// to itself is likewise handled by a default handler. To take over Esc entirely, list
+/// "button.menu_cancel" in getHandledButtonIds() and handle it in onButtonEvent().
 class JsonScreen {
 public:
     LLAPI JsonScreen();
@@ -69,6 +74,7 @@ private:
     std::shared_ptr<Controller> mController;
     std::weak_ptr<UIScene>      mScene;
     std::shared_ptr<bool>       mAliveToken;
+    bool                        mCloseRequested = false;
 };
 
 } // namespace ll::ui

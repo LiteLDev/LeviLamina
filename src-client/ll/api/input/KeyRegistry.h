@@ -15,6 +15,8 @@
 #include "mc/client/input/VanillaClientInputMappingFactory.h"
 #include "mc/deps/input/enums/FocusImpact.h"
 
+class InputHandler;
+
 namespace ll::input {
 
 class KeyRegistry {
@@ -31,6 +33,8 @@ class KeyRegistry {
     void triggerKeyUpCallback(int keyCode, ::FocusImpact focusImpact, ::IClientInstance& client);
 
     LLAPI void registerAllKeysToInputHandler(class MinecraftInputHandler& inputHandler);
+
+    void registerKeyHandlers(::InputHandler& inputHandler);
 
     void registerKeyboardInputs(
         VanillaClientInputMappingFactory& inputs,
@@ -61,18 +65,10 @@ public:
 
     LLNDAPI std::vector<std::string> getRegisteredKeys() const;
 
-    /// Registers an abstract button produced by a keyboard key in every gameplay input
-    /// mapping (all "gamePlay*" stacks: normal, creative flight, swimming, boating,
-    /// spectator, ...). The button event fires in any gameplay state but goes inert
-    /// while a menu screen is active (the gameplay mappings are not on the input
-    /// stack then) — the same gating vanilla gameplay keybindings get.
-    /// The handler is registered with the InputHandler directly and is invoked on
-    /// button down. Use this for gameplay actions like "open my screen".
-    /// @param buttonName  Abstract button name; use a mod-prefixed name.
-    /// @param keyCode     Keyboard key code (Windows virtual key code).
-    /// @param handler     Called on button down in gameplay.
-    /// @param focusImpact Focus action on press. Default: FocusImpact::Neutral.
-    /// @return false if the name is empty, the handler is empty, or the name is taken.
+    /// Registers a keyboard button into all gameplay input mappings (`gamePlay*`).
+    /// `keyCode` is a virtual-key code; negative values denote mouse buttons as stored by
+    /// the remapping layout (raw mouse button - 100, e.g. -99 for the left button) and are
+    /// routed into the mouse input mapping.
     LLAPI bool registerGameplayKeyboardButton(
         std::string       buttonName,
         int               keyCode,
@@ -80,13 +76,8 @@ public:
         ::FocusImpact     focusImpact = ::FocusImpact::Neutral
     );
 
-    /// Registers an abstract button produced by a keyboard key in the given input
-    /// mappings only (e.g. {"gamePlayFlying"}, {"screen"}, {"gamePlayNormal",
-    /// "gamePlayFlying"}). Semantics are identical to registerGameplayKeyboardButton
-    /// but scoped to the named mappings instead of all gameplay mappings.
-    /// @param mappingNames Input mapping stack names (see docs/design/input_mappings.md).
-    /// @return false if the name is empty, the handler is empty, mappingNames is empty,
-    ///         or the name is taken.
+    /// Same as registerGameplayKeyboardButton, but binds into an explicit list of input
+    /// mapping stacks (empty = all `gamePlay*` mappings).
     LLAPI bool registerInputMappingsKeyboardButton(
         std::string              buttonName,
         int                      keyCode,
@@ -95,10 +86,6 @@ public:
         ::FocusImpact            focusImpact = ::FocusImpact::Neutral
     );
 
-    /// Removes a button registered with registerGameplayKeyboardButton() or
-    /// registerInputMappingsKeyboardButton(). Takes effect on the next input mapping
-    /// rebuild.
-    /// @return true if the button existed and was removed.
     LLAPI bool unregisterMappingKeyboardButton(std::string_view buttonName);
 
 private:

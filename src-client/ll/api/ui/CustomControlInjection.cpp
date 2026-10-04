@@ -61,10 +61,8 @@ attachCustomControl(UIScene& scene, std::string_view parentControlName, std::str
         return makeStringError("failed to create control tree: " + defName);
     }
     parent->addChild(control, ::ui::ChildInsertPosition::Back);
-    // UIControl::addChild 只维护父子关系，不会注册进场景树。
-    // 直接让 VisualTree 从根全量重建集合/绑定并同步处理脏树：
-    // 分类器会对整棵树重新分类（含 CustomRenderComponent 的控件进入
-    // ScreenView::mCustomRendererControls），新控件立即生效并完成布局
+    // UIControl::addChild only maintains the parent/child link; rebuild the visual tree's
+    // collections/bindings from the root so the new control takes effect immediately.
     auto& tree = scene.mScreenView->mVisualTree;
     tree->$updateControlCollectionFromRoot();
     tree->$updateBindsFromRoot();

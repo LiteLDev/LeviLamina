@@ -9,6 +9,10 @@
 #include "ll/api/io/Logger.h"
 #include "ll/api/mod/Manifest.h"
 
+namespace ll::ui {
+class ModSettings;
+}
+
 namespace ll::mod {
 
 LLNDAPI std::filesystem::path const& getModsRoot();
@@ -52,6 +56,12 @@ public:
     LLNDAPI std::filesystem::path const& getBehaviorDir() const;
 
     LLNDAPI io::Logger& getLogger() const;
+
+#ifdef LL_PLAT_C
+    /// Gets this mod's settings page, shown under the "Mods" tab of the vanilla settings
+    /// screen. Client only.
+    LLNDAPI ui::ModSettings& getSettings() const;
+#endif
 
     [[nodiscard]] bool isEnabled() const { return getState() == State::Enabled; }
 

@@ -21,9 +21,6 @@ namespace {
 std::shared_mutex                                                  sMutex;
 std::unordered_map<std::string, CustomUIRendererRegistry::Factory> sFactories;
 
-// Hardcoded renderer names inside UIControlFactory::_createFromResolvedDef.
-// Registering one of these would silently never fire (the vanilla branch wins),
-// so they are rejected up front.
 std::unordered_set<std::string_view> const sVanillaRendererNames = {
     "hotbar_renderer",
     "hotbar_cooldown_renderer",
@@ -60,8 +57,6 @@ std::unordered_set<std::string_view> const sVanillaRendererNames = {
     "bundle_tooltip_renderer",
 };
 
-// The CustomRenderComponent type is identified by vftable comparison (its $vftable()
-// thunk is provided by the runtime symbol database).
 CustomRenderComponent* findCustomRenderComponent(UIControl& control) {
     auto* vtbl = CustomRenderComponent::$vftable();
     for (auto& component : control.mComponents.get()) {
