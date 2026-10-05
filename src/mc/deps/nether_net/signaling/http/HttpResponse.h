@@ -2,24 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/basic_cstring_view.h"
+
 namespace NetherNet {
 
 struct HttpResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnka93091;
-    ::ll::UntypedStorage<8, 16> mUnkd251d0;
-    ::ll::UntypedStorage<8, 16> mUnkae12f3;
-    ::ll::UntypedStorage<8, 64> mUnk63bd8f;
-    ::ll::UntypedStorage<8, 32> mUnkec5d36;
+    ::ll::TypedStorage<2, 2, ushort>                                                       statusCode;
+    ::ll::TypedStorage<8, 16, ::brstd::basic_cstring_view<char, ::std::char_traits<char>>> statusText;
+    ::ll::TypedStorage<8, 16, ::brstd::basic_cstring_view<char, ::std::char_traits<char>>> contentType;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>>          headers;
+    ::ll::TypedStorage<8, 32, ::std::string>                                               body;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HttpResponse& operator=(HttpResponse const&);
-    HttpResponse(HttpResponse const&);
-    HttpResponse();
 };
 
 } // namespace NetherNet

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
@@ -23,18 +24,12 @@ class HttpServer : public ::NetherNet::ContextProxy, public ::sigslot::has_slots
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>   mUnk202df9;
-    ::ll::UntypedStorage<8, 32>  mUnk784a80;
-    ::ll::UntypedStorage<8, 8>   mUnkf36298;
-    ::ll::UntypedStorage<8, 24>  mUnk3d8f1e;
-    ::ll::UntypedStorage<8, 336> mUnka23eeb;
+    ::ll::TypedStorage<2, 2, ushort>                                                         mPort;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                 mBindAddress;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::webrtc::Socket>>                            mListenSocket;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::NetherNet::HttpConnection>>> mConnections;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                  mTaskGroup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HttpServer& operator=(HttpServer const&);
-    HttpServer(HttpServer const&);
-    HttpServer();
 
 public:
     // virtual functions
@@ -48,9 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onConnectionClosed(::NetherNet::HttpConnection* conn);
+    MCAPI void _onConnectionClosed(::NetherNet::HttpConnection* conn);
 
-    MCNAPI void _onListenReadEvent(::webrtc::Socket*);
+    MCAPI void _onListenReadEvent(::webrtc::Socket*);
     // NOLINTEND
 };
 
