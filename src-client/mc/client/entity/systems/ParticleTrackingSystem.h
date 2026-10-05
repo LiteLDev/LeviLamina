@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
 // auto generated forward declare list
@@ -12,6 +13,7 @@ class ClientParticleTerminationComponent;
 class ClientParticleTrackingComponent;
 class EntityContext;
 class EntityRegistry;
+class IClientInstance;
 class ParticleSystemEngine;
 struct ActorComponent;
 // clang-format on
@@ -20,14 +22,8 @@ class ParticleTrackingSystem : public ::ITickingSystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk50d5a6;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>> mClientInstance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleTrackingSystem& operator=(ParticleTrackingSystem const&);
-    ParticleTrackingSystem(ParticleTrackingSystem const&);
-    ParticleTrackingSystem();
 
 public:
     // virtual functions
@@ -38,14 +34,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickClientParticleComponent(
+    MCAPI static void _tickClientParticleComponent(
         ::EntityContext& entity,
         ::ActorComponent const&,
         ::ClientParticleInitializationComponent& clientParticleComponent,
         ::ParticleSystemEngine&                  particleSystemEngine
     );
 
-    MCNAPI static void tickClientParticleTrackingComponent(
+    MCAPI static void tickClientParticleTrackingComponent(
         ::EntityContext& entity,
         ::ActorComponent const&,
         ::ClientParticleTrackingComponent&    clientParticleTrackingComponent,
@@ -57,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:

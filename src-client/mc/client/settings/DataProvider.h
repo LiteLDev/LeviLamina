@@ -37,4 +37,8 @@ MCAPI ::std::optional<::std::unique_ptr<::Settings::IStringDataProvider>>
 createStringDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 // NOLINTEND
 
+template <typename T0>
+MCAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<T0>>>
+createNumberDataProvider(::OptionID optionId, ::IOptionRegistry& options, T0 value);
+
 } // namespace Settings::DataProvider

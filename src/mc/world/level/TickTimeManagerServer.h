@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/TickTimeManager.h"
 
 // auto generated forward declare list
@@ -16,6 +18,7 @@ class LevelEventCoordinator;
 class LevelStorage;
 class PacketSender;
 class WorldClockRegistry;
+class WorldClockRegistryServer;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,17 +26,16 @@ class TickTimeManagerServer : public ::TickTimeManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk99654e;
-    ::ll::UntypedStorage<8, 8>  mUnkb3ba6d;
-    ::ll::UntypedStorage<8, 16> mUnkf6dd5a;
-    ::ll::UntypedStorage<8, 16> mUnk787c63;
-    ::ll::UntypedStorage<8, 16> mUnk10fd1f;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::WorldClockRegistryServer>>>
+                                                               mWorldClockRegistry;
+    ::ll::TypedStorage<8, 8, int64>                            mLastTimePacketSent;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAdded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveLevelDataSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnWakeUpAllPlayersSubscription;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TickTimeManagerServer& operator=(TickTimeManagerServer const&);
-    TickTimeManagerServer(TickTimeManagerServer const&);
     TickTimeManagerServer();
 
 public:
@@ -51,32 +53,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TickTimeManagerServer(
+    MCAPI TickTimeManagerServer(
         ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&             levelData,
         ::cereal::ReflectionCtx&                                      ctx,
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const&          packetSender,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
     );
 
-    MCNAPI void _onWakeUpAllPlayers();
+    MCAPI void _onWakeUpAllPlayers();
 
-    MCNAPI void _saveWorldClocks(::LevelStorage& levelStorage) const;
+    MCAPI void _saveWorldClocks(::LevelStorage& levelStorage) const;
 
-    MCNAPI void
+    MCAPI void
     intitializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCNAPI void loadWorldClocks(::LevelStorage& levelStorage);
+    MCAPI void loadWorldClocks(::LevelStorage& levelStorage);
 
-    MCNAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCNAPI void
+    MCAPI void
     registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::LevelData> const&             levelData,
         ::cereal::ReflectionCtx&                                      ctx,
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const&          packetSender,
@@ -87,11 +89,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $update();
+    MCAPI void $update();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const $getWorldClockRegistry() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const $getWorldClockRegistry() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> const $getWorldClockRegistry();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> const $getWorldClockRegistry();
 
 
     // NOLINTEND

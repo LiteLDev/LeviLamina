@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <chrono>
-#include <cstring>
 #include <deque>
 #include <mutex>
 #include <unordered_map>
@@ -12,7 +11,6 @@
 
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/memory/Signature.h"
 #include "ll/api/mod/Mod.h"
 #include "ll/api/service/TargetedBedrock.h"
 #include "ll/core/LeviLamina.h"
@@ -24,8 +22,9 @@
 #include "mc/client/input/RemappingLayout.h"
 #include "mc/client/options/IOptionRegistry.h"
 #include "mc/client/settings/ActionComponent.h"
-#include "mc/client/settings/BooleanComponent.h"
-#include "mc/client/settings/ComponentState.h"
+#include "mc/client/settings/Builder.h"
+#include "mc/client/settings/ComponentVariant.h"
+#include "mc/client/settings/DataProvider.h"
 #include "mc/client/settings/FactoryUtil.h"
 #include "mc/client/settings/GroupInfoComponent.h"
 #include "mc/client/settings/IActionDataProvider.h"
@@ -34,9 +33,6 @@
 #include "mc/client/settings/INumberDataProvider.h"
 #include "mc/client/settings/IOptionsDataProvider.h"
 #include "mc/client/settings/IStringDataProvider.h"
-#include "mc/client/settings/InputBindingGroup.h"
-#include "mc/client/settings/InputBindingGroupData.h"
-#include "mc/client/settings/InputControlsSettingsHelper.h"
 #include "mc/client/settings/KeyboardAndMouseSettingsDetails.h"
 #include "mc/client/settings/Registry.h"
 #include "mc/client/settings/RegistryBuilder.h"
@@ -59,42 +55,9 @@ namespace ll::ui {
 
 namespace {
 
-// Layout of the settings component variant (1.26.51): the component is stored inline at
-// offset 0 and the variant discriminator at offset 0x3C8; total size 0x3D0. Components
-// are always constructed through the game's own constructors, so only these two constants
-// are needed. Version specific: re-check on game updates.
-constexpr size_t kComponentStorageSize = 0x3D0;
-constexpr size_t kComponentWhichOffset = 0x3C8;
-
-enum ComponentWhich : uint8_t {
-    ActionWhich    = 5,
-    TextWhich      = 6,
-    GroupInfoWhich = 7,
-};
-
-using ComponentVariant = std::variant<
-    ::Settings::BooleanComponent,
-    ::Settings::NumberComponent<int>,
-    ::Settings::NumberComponent<float>,
-    ::Settings::OptionComponent,
-    ::Settings::StringComponent,
-    ::Settings::ActionComponent,
-    ::Settings::TextComponent,
-    ::Settings::GroupInfoComponent,
-    ::Settings::BannerComponent>;
-using ComponentList = std::vector<std::unique_ptr<ComponentVariant>>;
-
-// Constructs a settings component inside a variant allocated exactly like the game does
-// (see SettingsTabsFactoryAnon::addTabGroup). The resulting pointer must only ever be
-// moved into a component list; destroying it outside the game would run the wrong
-// destructor.
-template <typename T, typename... Args>
-std::unique_ptr<ComponentVariant> makeComponent(ComponentWhich which, Args&&... args) {
-    void* storage = ::operator new(kComponentStorageSize);
-    new (storage) T(std::forward<Args>(args)...);
-    reinterpret_cast<uint8_t*>(storage)[kComponentWhichOffset] = static_cast<uint8_t>(which);
-    return std::unique_ptr<ComponentVariant>(static_cast<ComponentVariant*>(storage));
-}
+using ComponentVariant = ::Settings::ComponentVariant;
+using ComponentList    = ::Settings::ComponentList;
+using ::Settings::makeComponent;
 
 constexpr std::string_view kModsTabId    = "ll.mods";
 constexpr std::string_view kTabsGroupKey = "settings-tabs-groups";
@@ -107,176 +70,6 @@ std::string entryId(std::string_view modName, std::string_view key) {
 
 std::string entrySaveTag(std::string_view modName, std::string_view key) {
     return "ll_mod_" + std::string{modName} + "_" + std::string{key};
-}
-
-// ---- temporary signature-resolved symbols (1.26.51), pending mcapi whitelist ----
-// See docs/design/settings_registry.md section 7.5 for the symbol list these stand in for.
-
-using BuilderHeadCtorFn = void (*)(void* builder, std::string_view id, std::string_view name);
-using BuilderBuildFn    = void (*)(void* builder, std::optional<std::unique_ptr<ComponentVariant>>* result);
-using BuilderDtorFn     = void (*)(void* builder);
-
-void* resolveCallSiteTarget(ll::memory::SignatureView sig) {
-    auto* site = static_cast<uint8_t*>(sig.resolve(true));
-    if (site == nullptr || *site != 0xE8) {
-        return nullptr;
-    }
-    return site + 5 + *reinterpret_cast<int32_t*>(site + 1);
-}
-
-BuilderHeadCtorFn builderHeadCtor() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        return static_cast<BuilderHeadCtorFn>(
-            ("55 41 57 41 56 41 55 41 54 56 57 53 48 83 EC 58 48 8D 6C 24 ? 48 C7 45 ? ? ? ? ? 0F 57 C0 0F 11 41 ? 0F "
-             "11 01"_sig)
-                .resolve(true)
-        );
-    }();
-    return fn;
-}
-
-BuilderBuildFn stringComponentBuild() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        return static_cast<BuilderBuildFn>(
-            ("55 41 57 41 56 41 55 41 54 56 57 53 48 81 EC 68 02 00 00 48 8D AC 24 ? ? ? ? 0F 29 B5 ? ? ? ? 48 C7 85 "
-             "? ? ? ? ? ? ? ? 49 89 D5 48 8B B1"_sig)
-                .resolve(true)
-        );
-    }();
-    return fn;
-}
-
-BuilderDtorFn stringComponentBuilderDtor() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        return static_cast<BuilderDtorFn>(
-            ("41 56 56 57 53 48 83 EC 28 48 89 CE 48 8B B9 ? ? ? ? 48 85 FF 0F 84 ? ? ? ? 48 8D 9E ? ? ? ? 4C 8B B6 "
-             "? ? ? ? 4C 39 F7 75 ? EB ? 66 66 66 66 66 66 2E 0F 1F 84 00 ? ? ? ? 48 83 C7 40 4C 39 F7 74 ? 48 8B 4F "
-             "? 48 85 C9 74 ? 48 39 CF 0F 95 C2 48 8B 01 48 8B 40 ? FF 15 ? ? ? ? 48 C7 47 ? ? ? ? ? EB ? 48 8B 3B 48 "
-             "8B 96 ? ? ? ? 48 29 FA 48 81 FA 00 10 00 00 72 ? 48 8B 47 ? 48 83 C7 F8 48 29 C7 48 83 FF 20 0F 83"_sig)
-                .resolve(true)
-        );
-    }();
-    return fn;
-}
-
-BuilderBuildFn bannerComponentBuild() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        return static_cast<BuilderBuildFn>(
-            ("55 41 57 41 56 41 55 41 54 56 57 53 48 81 EC B8 02 00 00 48 8D AC 24 ? ? ? ? 0F 29 B5 ? ? ? ? 48 C7 85 "
-             "? ? ? ? ? ? ? ? 48 89 CF 48 83 79"_sig)
-                .resolve(true)
-        );
-    }();
-    return fn;
-}
-
-BuilderDtorFn bannerComponentBuilderDtor() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        return static_cast<BuilderDtorFn>(
-            ("56 48 83 EC 30 48 89 CE 80 B9 ? ? ? ? ? 75 ? 48 8D 8E ? ? ? ? E8 ? ? ? ? 48 8B 8E ? ? ? ? 48 85 C9 74 "
-             "? 48 8B 01"_sig)
-                .resolve(true)
-        );
-    }();
-    return fn;
-}
-
-BuilderBuildFn intNumberComponentBuild() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        // call-site signature: Builder<NumberComponent<int>>::build shares its prologue
-        // with the float instantiation, so resolve through a call site instead.
-        return static_cast<BuilderBuildFn>(
-            resolveCallSiteTarget("E8 ? ? ? ? 4D 85 FF 48 8B B5 ? ? ? ? 74 ? 48 8B 85"_sig)
-        );
-    }();
-    return fn;
-}
-
-BuilderDtorFn intNumberComponentBuilderDtor() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        return static_cast<BuilderDtorFn>(
-            ("41 56 56 57 53 48 83 EC 28 48 89 CE 48 8B B9 ? ? ? ? 48 85 FF 0F 84 ? ? ? ? 48 8D 9E ? ? ? ? 4C 8B B6 "
-             "? ? ? ? 4C 39 F7 75 ? EB ? 66 66 66 66 66 66 2E 0F 1F 84 00 ? ? ? ? 48 83 C7 40 4C 39 F7 74 ? 48 8B 4F "
-             "? 48 85 C9 74 ? 48 39 CF 0F 95 C2 48 8B 01 48 8B 40 ? FF 15 ? ? ? ? 48 C7 47 ? ? ? ? ? EB ? 48 8B 3B 48 "
-             "8B 96 ? ? ? ? 48 29 FA 48 81 FA 00 10 00 00 72 ? 48 8B 47 ? 48 83 C7 F8 48 29 C7 48 83 FF 20 73"_sig)
-                .resolve(true)
-        );
-    }();
-    return fn;
-}
-
-// Settings::DataProvider::createNumberDataProvider<int>(OptionID, IOptionRegistry&, int),
-// resolved through a call site.
-using CreateIntNumberProviderFn = void (*)(
-    std::optional<std::unique_ptr<::Settings::INumberDataProvider<int>>>* result,
-    ::OptionID,
-    ::IOptionRegistry&,
-    int
-);
-
-CreateIntNumberProviderFn createIntNumberProvider() {
-    static auto fn = [] {
-        using namespace ll::literals;
-        return static_cast<CreateIntNumberProviderFn>(resolveCallSiteTarget(
-            "E8 ? ? ? ? 48 89 F0 48 83 C4 20 5E C3 CC CC CC CC CC CC CC CC CC CC CC CC CC CC 48 8D 05 ? ? ? ? C3 CC CC "
-            "CC CC CC CC CC CC 55 56 57 53 48 81 EC 98"_sig
-        ));
-    }();
-    return fn;
-}
-
-// Layout of Settings::Builder<T> (1.26.51, from the per-T destructors; BaseBuilder head is
-// 0x178 bytes): mId @0x00, mName @0x20, mDescription @0x40 (has_value @0x60).
-// Tail offsets differ per component type:
-//   Builder<StringComponent>:       unique_ptr<IStringDataProvider> @0x178,
-//                                   optional<string> placeholder @0x180 (has_value @0x1A0)
-//   Builder<BannerComponent>:       (all tail members optional; zeroed = static banner)
-//   Builder<NumberComponent<int>>:  unique_ptr<INumberDataProvider<int>> @0x178
-constexpr size_t kBuilderBufferSize     = 0x400;
-constexpr size_t kBuilderHeadDescOffset = 0x40;
-constexpr size_t kBuilderTailOffset     = 0x178;
-
-// Runs a game's Settings::Builder<T> pipeline: shared BaseBuilder head constructor, custom
-// tail initialization, then the game's build() and destructor. All heavy lifting
-// (allocation, component constructor, subscriptions, variant packing) stays game-side.
-template <typename F>
-std::optional<std::unique_ptr<ComponentVariant>> buildWithGameBuilder(
-    std::string_view                  id,
-    std::string_view                  name,
-    std::optional<std::string> const& description,
-    BuilderBuildFn                    buildFn,
-    BuilderDtorFn                     dtorFn,
-    F&&                               tailInit
-) {
-    auto headCtor = builderHeadCtor();
-    if (headCtor == nullptr || buildFn == nullptr || dtorFn == nullptr) {
-        getLogger().warn("ModSettings: builder symbols not resolved for '{}'", id);
-        return std::nullopt;
-    }
-    void* builder = ::operator new(kBuilderBufferSize);
-    memset(builder, 0, kBuilderBufferSize);
-    headCtor(builder, id, name);
-    if (description.has_value()) {
-        new (static_cast<char*>(builder) + kBuilderHeadDescOffset) std::string(*description);
-        *(static_cast<uint8_t*>(builder) + kBuilderHeadDescOffset + 0x20) = 1;
-    }
-    tailInit(builder);
-    std::optional<std::unique_ptr<ComponentVariant>> result;
-    buildFn(builder, &result);
-    dtorFn(builder);
-    ::operator delete(builder);
-    if (!result.has_value() || !result->get()) {
-        getLogger().warn("ModSettings: builder produced no component for '{}'", id);
-        return std::nullopt;
-    }
-    return result;
 }
 
 struct Entry {
@@ -304,10 +97,10 @@ struct Entry {
     float                      stepFloat  = 0;
     std::function<void(float)> onFloatSlider;
 
-    std::string                      stringValue;
-    std::optional<std::string>       placeholder;
-    std::optional<int>               maxLength;
-    std::function<void(std::string)> onTextInput;
+    std::string                             stringValue;
+    std::optional<std::string>              placeholder;
+    std::optional<int>                      maxLength;
+    std::function<void(std::string const&)> onTextInput;
 
     std::string              action;
     int                      defaultKey  = 0;
@@ -316,13 +109,16 @@ struct Entry {
     bool                     showReset   = true;
     std::function<void(int)> onKeybind;
 
+    ModSettings::EntryStateProvider stateProvider;
+    ModSettings::EntryTextProvider  nameProvider;
+    ModSettings::EntryTextProvider  descriptionProvider;
+
     int optionId = -1;
 };
 
 struct ModPage {
-    std::string        modName;
-    std::vector<Entry> entries;
-    // deque: Subscription has no move constructor, so elements must never be relocated.
+    std::string                                 modName;
+    std::vector<Entry>                          entries;
     std::deque<::Bedrock::PubSub::Subscription> subscriptions;
     nlohmann::json                              stored;
     std::filesystem::path                       storePath;
@@ -330,8 +126,6 @@ struct ModPage {
 
 class ModSettingsManager;
 
-// Backs text inputs with LeviLamina's own storage instead of an Option (no OptionID slot
-// needed). Owned (and deleted) by the game together with the component.
 class ModStringDataProvider : public ::Settings::IStringDataProvider {
     ModPage&    mPage;
     std::string mKey;
@@ -354,7 +148,6 @@ public:
 
     void setValue(std::string_view value) override;
 
-    // The game-side defaults are not exported; apply-on-set makes them unnecessary.
     void commitValue() override {}
 
     bool flush() override { return true; }
@@ -362,24 +155,67 @@ public:
     bool canModify() const override { return true; }
 };
 
-// Reads the component id out of a settings component variant. Component layout
-// (1.26.51): vftable @0, mId (std::string) @8. Version specific: re-check on updates.
-std::string_view componentIdOf(ComponentVariant const& component) {
-    auto*  base = reinterpret_cast<char const*>(&component);
-    size_t size = *reinterpret_cast<size_t const*>(base + 24);
-    size_t res  = *reinterpret_cast<size_t const*>(base + 32);
-    auto*  data = res >= 0x10 ? *reinterpret_cast<char* const*>(base + 8) : base + 8;
-    return {data, size};
+enum class EntryProviderKind { State, Name, Description };
+
+void applyEntryProvider(ComponentVariant& component, Entry const& entry, EntryProviderKind kind) {
+    std::visit(
+        [&](auto& c) {
+            switch (kind) {
+            case EntryProviderKind::State: {
+                auto& slot = c.mStateOverrideProvider.get();
+                if (entry.stateProvider) {
+                    slot = [provider = entry.stateProvider](auto const&, ::Settings::ComponentState current) {
+                        return static_cast<::Settings::ComponentState>(
+                            provider(static_cast<ModSettings::EntryState>(current))
+                        );
+                    };
+                } else {
+                    slot = std::nullopt;
+                }
+                break;
+            }
+            case EntryProviderKind::Name: {
+                auto& fn = c.mNameOverrideProvider.get();
+                if (entry.nameProvider) {
+                    fn = [provider = entry.nameProvider](auto const&) { return provider(); };
+                } else {
+                    fn = nullptr;
+                }
+                break;
+            }
+            case EntryProviderKind::Description: {
+                auto& fn = c.mDescriptionOverrideProvider.get();
+                if (entry.descriptionProvider) {
+                    fn = [provider = entry.descriptionProvider](auto const&) { return provider(); };
+                } else {
+                    fn = nullptr;
+                }
+                break;
+            }
+            }
+        },
+        component
+    );
 }
 
-// Inserts the "Mods" tab after the given vanilla tab, or appends it when the anchor is
-// absent. Anchor order encodes placement: in a world the "game" tab (世界) exists and comes
-// right after core; pre-game there is no game tab, so the tab lands after core (可访问性).
+void applyEntryProviders(ComponentVariant& component, Entry const& entry) {
+    if (entry.stateProvider) {
+        applyEntryProvider(component, entry, EntryProviderKind::State);
+    }
+    if (entry.nameProvider) {
+        applyEntryProvider(component, entry, EntryProviderKind::Name);
+    }
+    if (entry.descriptionProvider) {
+        applyEntryProvider(component, entry, EntryProviderKind::Description);
+    }
+}
+
 void insertModsTab(ComponentList& tabs) {
-    auto modsTab = makeComponent<Settings::GroupInfoComponent>(GroupInfoWhich, kModsTabId, "Mods", std::nullopt);
+    auto modsTab = makeComponent<Settings::GroupInfoComponent>(kModsTabId, "Mods", std::nullopt);
     for (auto anchor : {"settings-game-group", "settings-realms-group", "settings-core-group"}) {
         for (size_t i = 0; i < tabs.size(); ++i) {
-            if (componentIdOf(*tabs[i]) == anchor) {
+            auto const& tabId = std::visit([](auto const& c) -> std::string const& { return c.mId.get(); }, *tabs[i]);
+            if (tabId == anchor) {
                 tabs.insert(tabs.begin() + static_cast<ptrdiff_t>(i) + 1, std::move(modsTab));
                 return;
             }
@@ -398,13 +234,29 @@ public:
         return instance;
     }
 
-    // Called from the KeyboardRemappingLayout::$setMappingWithRawInput hook.
+    void onKeymappingRefresh(uint64 index) {
+        auto client = service::getClientInstance();
+        if (!client) {
+            return;
+        }
+        auto layout = client->getOptions().getCurrentKeyboardRemapping();
+        if (!layout) {
+            return;
+        }
+        auto& mappings = layout->mKeymappings.get();
+        if (index >= mappings.size()) {
+            return;
+        }
+        onKeyRemapped(mappings[index].mAction.get());
+    }
+
     void onKeyRemapped(std::string const& action) {
         auto client = service::getClientInstance();
         if (!client) {
             return;
         }
-        bool changed = false;
+        bool                                                  changed = false;
+        std::vector<std::pair<std::function<void(int)>, int>> callbacks;
         {
             std::lock_guard lock{mMutex};
             auto            layout = client->getOptions().getCurrentKeyboardRemapping();
@@ -416,8 +268,8 @@ public:
                     if (entry.type != Entry::Type::Keybind || entry.action != action) {
                         continue;
                     }
-                    // 只要绑定动作落在我们的条目上就刷新时间戳（即使键值没变）——
-                    // 重新捕获的抑制窗口依赖它，绑定同一键时值不变但循环仍会发生。
+                    // Refresh even when the value is unchanged: the re-capture suppression
+                    // window relies on it.
                     mLastKeybindChange = std::chrono::steady_clock::now();
                     auto& keys         = layout->getKeymappingByAction(entry.action).mKeys.get();
                     int   current      = keys.empty() ? entry.defaultKey : keys.front();
@@ -428,15 +280,16 @@ public:
                     page->stored[entry.key] = current;
                     saveStored(*page);
                     if (entry.onKeybind) {
-                        entry.onKeybind(current);
+                        callbacks.emplace_back(entry.onKeybind, current);
                     }
                     changed = true;
                 }
             }
         }
-        // Apply the remap the way vanilla does: refreshClientInputConfig reruns
-        // ClientInputHandler::onConfigChanged, which rebuilds the input mappings from the
-        // live layout (and thereby re-reads the new binding).
+        // Mod callbacks run outside the lock: they may call back into ModSettings.
+        for (auto& [cb, value] : callbacks) {
+            cb(value);
+        }
         if (changed) {
             std::shared_ptr<::Settings::RegistryBuilder::IBuilderContext> context;
             {
@@ -449,19 +302,11 @@ public:
         }
     }
 
-    // OreUI buttons fire on release: rebinding with a mouse click on the row's button binds
-    // on press, then the release clicks the button again and restarts capture. The vanilla
-    // keyboard page avoids this by disabling the row while capturing (front-end logic the
-    // generic settings page does not have), so suppress capture starts in a short window
-    // after a successful rebind of one of our entries.
     bool shouldSuppressCaptureStart() {
         std::lock_guard lock{mMutex};
         return std::chrono::steady_clock::now() - mLastKeybindChange < std::chrono::milliseconds(500);
     }
 
-    // Drops our keybind actions from a vanilla keyboard-settings index list so they only
-    // show up under the Mods tab. Indices are ordinals among remappable keymappings
-    // (see RemappingLayout::defaultKeyAtIndex).
     void filterVanillaKeysIndex(::KeyboardRemappingLayout const& layout, std::vector<uint64>& indices) {
         std::lock_guard lock{mMutex};
         std::erase_if(indices, [&](uint64 ordinal) {
@@ -515,8 +360,6 @@ public:
         return *page;
     }
 
-    // Refreshes a live registry so entries added after the settings screen was built
-    // still show up without waiting for a rebuild.
     void onEntryAdded(ModPage& page) {
         auto client = service::getClientInstance();
         if (!client) {
@@ -526,23 +369,33 @@ public:
         if (!registry) {
             return;
         }
-        std::lock_guard lock{mMutex};
-        apply(*registry);
-        auto& materialized = static_cast<Settings::Registry&>(*registry).mSettingsMap.get();
-        auto  groupId      = modGroupId(page.modName);
-        auto  it           = materialized.find(groupId);
-        if (it == materialized.end() || page.entries.empty()) {
-            return;
+        auto                       groupId = modGroupId(page.modName);
+        std::optional<std::string> refreshId;
+        bool                       appended = false;
+        {
+            std::lock_guard lock{mMutex};
+            refreshId          = apply(*registry);
+            auto& materialized = static_cast<Settings::Registry&>(*registry).mSettingsMap.get();
+            auto  it           = materialized.find(groupId);
+            if (it != materialized.end() && !page.entries.empty()) {
+                appended = appendEntry(page, page.entries.back(), it->second);
+            }
         }
-        if (appendEntry(page, page.entries.back(), it->second)) {
-            static_cast<Settings::Registry&>(*registry).refresh(groupId);
+        auto& reg = static_cast<Settings::Registry&>(*registry);
+        if (refreshId) {
+            reg.refresh(*refreshId);
+        }
+        if (appended) {
+            reg.refresh(groupId);
         }
     }
 
-    // Injects the "Mods" tab and one group factory per mod into a (re)built registry.
-    // Must be called with mMutex held.
-    void apply(Settings::IRegistry& iregistry) {
-        auto& registry = static_cast<Settings::Registry&>(iregistry);
+    // Must be called with mMutex held. Returns the group to refresh afterwards (outside
+    // the lock): refresh dispatches component publishers synchronously, and mod providers
+    // may call back into ModSettings.
+    std::optional<std::string> apply(Settings::IRegistry& iregistry) {
+        auto&                      registry = static_cast<Settings::Registry&>(iregistry);
+        std::optional<std::string> refreshId;
         if (mAppliedRegistries.insert(&registry).second) {
             auto& factories = registry.mSettingsFactories.get();
             factories.emplace(std::string{kModsTabId}, [] {
@@ -550,7 +403,6 @@ public:
                 for (auto& page : getInstance().mPages) {
                     components.push_back(
                         makeComponent<Settings::GroupInfoComponent>(
-                            GroupInfoWhich,
                             modGroupId(page.second->modName),
                             page.second->modName,
                             std::nullopt
@@ -570,7 +422,7 @@ public:
             auto& materialized = registry.mSettingsMap.get();
             if (auto it = materialized.find(std::string{kTabsGroupKey}); it != materialized.end()) {
                 insertModsTab(it->second);
-                registry.refresh(kTabsGroupKey);
+                refreshId = std::string{kTabsGroupKey};
             }
         }
         auto& factories = registry.mSettingsFactories.get();
@@ -581,17 +433,18 @@ public:
                 factories.emplace(std::move(groupId), [pagePtr] { return getInstance().buildPage(*pagePtr); });
             }
         }
+        return refreshId;
     }
 
 private:
     std::unordered_map<::ll::mod::Mod const*, std::unique_ptr<ModPage>> mPages;
     std::unordered_set<void*>                                           mAppliedRegistries;
-    // EnumOption name maps are held by const reference inside the option; keep them alive
-    // at a stable address for the whole session.
-    std::deque<std::unordered_map<int, std::string>> mEnumNameMaps;
-    std::once_flag                                   mHookOnce;
-    int                                              mNextOptionId = 821;
-    std::chrono::steady_clock::time_point            mLastKeybindChange{};
+    std::deque<std::unordered_map<int, std::string>>                    mEnumNameMaps;
+    std::once_flag                                                      mHookOnce;
+    int                                                                 mNextOptionId = 821;
+    std::chrono::steady_clock::time_point                               mLastKeybindChange{};
+    ::Bedrock::PubSub::Subscription                                     mKeymappingRefreshSub;
+    std::shared_ptr<::KeyboardRemappingLayout>                          mSubscribedLayout;
 
     static void installHook();
 
@@ -605,8 +458,6 @@ private:
         return -1;
     }
 
-    // Creates the backing Option objects, restores stored values and subscribes observers.
-    // Idempotent; runs lazily because the option registry may not exist at declaration time.
     void ensureOptions(ModPage& page, ::IOptionRegistry& options) {
         for (auto& entry : page.entries) {
             if (entry.type == Entry::Type::Keybind) {
@@ -637,8 +488,6 @@ private:
                 );
                 break;
             case Entry::Type::Dropdown: {
-                // EnumOption stores the name map by const reference; the map must outlive
-                // the option, so it is kept in the manager (never relocated, never freed).
                 auto&            valueNameMap = mEnumNameMaps.emplace_back();
                 std::vector<int> values;
                 for (size_t i = 0; i < entry.valueNames.size(); ++i) {
@@ -677,8 +526,6 @@ private:
                 );
                 break;
             case Entry::Type::FloatSlider: {
-                // addInputFloatComponent requires an InputModeFloatOption (its provider
-                // factory checks OptionType::InputModeFloat); a plain FloatOption fails.
                 auto option = std::make_unique<::InputModeFloatOption>(
                     ::OptionID{id},
                     ::OptionOwnerType::User,
@@ -689,8 +536,6 @@ private:
                     entry.minFloat,
                     entry.maxFloat
                 );
-                // DELTA is the change-detection epsilon in InputModeFloatOption::set.
-                const_cast<float&>(option->DELTA) = 0.001f;
                 options._registerOption(std::move(option));
                 break;
             }
@@ -701,7 +546,6 @@ private:
             if (!option.has_value() || *option == nullptr) {
                 continue;
             }
-            // Restore the stored value; the observer skips it because the cache matches.
             switch (entry.type) {
             case Entry::Type::Toggle:
                 static_cast<::BoolOption*>(*option)->set(entry.boolValue, false);
@@ -718,7 +562,6 @@ private:
             }
             auto& slot = page.subscriptions.emplace_back();
             if (entry.type == Entry::Type::FloatSlider) {
-                // InputModeFloatOption::set only publishes to mInputModeChangedPublisher.
                 slot = (*option)->mImpl.get()->mInputModeChangedPublisher.get().connect(
                     [pagePtr = &page, key = entry.key](::Option const& opt, ::InputMode) {
                         getInstance().onOptionChanged(*pagePtr, key, opt);
@@ -734,13 +577,23 @@ private:
         }
     }
 
-    // Registers the keybind action into the keyboard remapping layout (once), restores the
-    // stored binding and subscribes to layout changes.
     void ensureKeybind(ModPage& page, Entry& entry, ::IOptionRegistry& options) {
+        auto layout = options.getCurrentKeyboardRemapping();
+        if (layout && mSubscribedLayout != layout) {
+            mKeymappingRefreshSub = layout->mRefreshKeymappingsPublisher.get()->connect(
+                [](::std::optional<uint64> index) {
+                    if (index.has_value()) {
+                        getInstance().onKeymappingRefresh(*index);
+                    }
+                },
+                ::Bedrock::PubSub::ConnectPosition::AtBack,
+                nullptr
+            );
+            mSubscribedLayout = layout;
+        }
         if (entry.layoutIndex != ~size_t(0)) {
             return;
         }
-        auto layout = options.getCurrentKeyboardRemapping();
         if (!layout) {
             return;
         }
@@ -766,177 +619,74 @@ private:
         }
     }
 
-
-    // The game's InputBindingGroupData has no usable constructor; mirror its layout.
-    struct InputBindingGroupDataMirror {
-        ::InputMode                                                                   mInputMode{};
-        std::function<std::optional<std::string>()>                                   mBindDescriptionCallback;
-        std::optional<::KeyboardType>                                                 mKeyboardType;
-        std::function<std::optional<std::string>(::Settings::ActionComponent const&)> mBindActionLabelProvider;
-        std::function<void()>                                                         mResetActionCallback;
-        std::function<
-            bool(::Settings::RegistryBuilder::IBuilderContext const&, std::string_view, std::optional<::KeyboardType>)>
-            mGetterCaptureStateCallback;
-    };
-    static_assert(
-        sizeof(InputBindingGroupDataMirror) == sizeof(::Settings::InputControlsSettingsHelper::InputBindingGroupData)
-    );
-
-    // Builds the vanilla keybind row through the game's own factory; the capture-state
-    // component of the binding group is filtered out (see below).
-    bool buildKeybindEntry(ModPage& page, Entry& entry, ComponentList& group) {
-        auto client = service::getClientInstance();
-        if (!client || !mBuilderContext || entry.layoutIndex == ~size_t(0)) {
-            return false;
-        }
-        auto layout = client->getOptions().getCurrentKeyboardRemapping();
-        if (!layout) {
-            return false;
-        }
-        InputBindingGroupDataMirror data{};
-        data.mInputMode = ::InputMode::Mouse;
-        // mBindDescriptionCallback 提供行左侧的标题文本（构建期即被求值）
-        data.mBindDescriptionCallback = [name = entry.displayName]() -> std::optional<std::string> { return name; };
-        // 与原版键位页一致（KeyboardAndMouseSettingsDetails.cpp:303）：拼接全部绑定键、
-        // 取未本地化的键名后整体过 I18n（鼠标键等特殊键才能显示为“按钮1”这类文本）。
-        // 待输入状态显示 ">_<"（原版由 OreUI 前端读 {action}.captureState 绘制，我们页面上
-        // 该组件已被过滤，改由 label 直接给出；捕获开始/结束都会触发组件变更通知，label 会
-        // 被重新求值）。
-        data.mBindActionLabelProvider =
-            [layout, index = entry.layoutIndex, action = entry.action, context = mBuilderContext](
-                ::Settings::ActionComponent const&
-            ) -> std::optional<std::string> {
-            if (context) {
-                auto& capturing = context->getInputSettingsHandler().mCapturingKeymapping.get();
-                if (capturing.has_value() && capturing->action.get() == action) {
-                    return std::string(">_<");
-                }
-            }
-            auto& mappings = layout->mKeymappings.get();
-            if (index >= mappings.size()) {
-                return std::nullopt;
-            }
-            auto& keys = mappings[index].mKeys.get();
-            if (keys.empty()) {
-                return std::nullopt;
-            }
-            std::string joined;
-            for (int key : keys) {
-                if (!joined.empty()) {
-                    joined += ", ";
-                }
-                joined += layout->getMappedKeyName(key, false);
-            }
-            return getI18n().get(joined, nullptr);
-        };
-        // 与原版重置一致（KeyboardAndMouseSettingsDetails.cpp:307）：恢复默认键并取消冲突键，
-        // 随后走 onKeyRemapped 同步 settings.json、触发 onChange 并重建输入映射。
-        data.mResetActionCallback = [layout, index = entry.layoutIndex, action = entry.action] {
-            layout->defaultKeyAtIndex(index);
-            layout->unassignDuplicateKeys(index);
-            getInstance().onKeyRemapped(action);
-        };
-        data.mGetterCaptureStateCallback = [](::Settings::RegistryBuilder::IBuilderContext const& ctx,
-                                              std::string_view                                    action,
-                                              std::optional<::KeyboardType>) {
-            auto& capturing = ctx.getInputSettingsHandler().mCapturingKeymapping.get();
-            return capturing.has_value() && capturing->action.get() == action;
-        };
-        auto bindingGroup = ::Settings::InputControlsSettingsHelper::createInputBindingGroup(
-            reinterpret_cast<::Settings::InputControlsSettingsHelper::InputBindingGroupData const&>(data),
-            *mBuilderContext,
-            *layout,
-            entry.action,
-            static_cast<uint64>(entry.layoutIndex)
-        );
-        // The group holds three components: "{action}.bind" (the rebind row),
-        // "{action}.reset" (a standalone reset button) and "{action}.captureState" (a
-        // capture flag the OreUI frontend consumes by id — it disables the row while
-        // capturing so the releasing click doesn't restart capture). Keep all three, but
-        // force the capture flag hidden: the generic renderer would draw it as a stray
-        // toggle. The reset button is dropped when the entry opts out of it.
-        std::string const captureId = entry.action + ".captureState";
-        std::string const resetId   = entry.action + ".reset";
-        for (auto& component : bindingGroup.mGroup.get()) {
-            auto id = componentIdOf(*component);
-            if (id == captureId) {
-                // Component<T> base layout (1.26.51, from the base destructor):
-                // mStateOverrideProvider (optional<std::function<ComponentState(T const&,
-                // ComponentState)>>) @0xF8. Version specific: re-check on updates.
-                using StateOverride = std::function<
-                    ::Settings::ComponentState(::Settings::BooleanComponent const&, ::Settings::ComponentState)>;
-                auto* slot =
-                    reinterpret_cast<std::optional<StateOverride>*>(reinterpret_cast<char*>(component.get()) + 0xF8);
-                slot->emplace([](::Settings::BooleanComponent const&, ::Settings::ComponentState) {
-                    return ::Settings::ComponentState::Hidden;
-                });
-            } else if (id == resetId && !entry.showReset) {
-                continue;
-            }
-            group.push_back(std::move(component));
-        }
-        return true;
-    }
+    bool buildKeybindEntry(ModPage& page, Entry& entry, ComponentList& group) const;
 
     void onOptionChanged(ModPage& page, std::string const& key, ::Option const& option) {
-        std::lock_guard lock{mMutex};
-        auto it = std::find_if(page.entries.begin(), page.entries.end(), [&](Entry const& e) { return e.key == key; });
-        if (it == page.entries.end()) {
-            return;
+        // The mod callback runs outside the lock: it may call back into ModSettings.
+        std::function<void()> notify;
+        {
+            std::lock_guard lock{mMutex};
+            auto            it =
+                std::find_if(page.entries.begin(), page.entries.end(), [&](Entry const& e) { return e.key == key; });
+            if (it == page.entries.end()) {
+                return;
+            }
+            auto& entry = *it;
+            if (entry.type == Entry::Type::Toggle) {
+                bool value = static_cast<::BoolOption const&>(option).mValue;
+                if (value == entry.boolValue) {
+                    return;
+                }
+                entry.boolValue  = value;
+                page.stored[key] = value;
+                saveStored(page);
+                if (entry.onToggle) {
+                    notify = [cb = entry.onToggle, value] { cb(value); };
+                }
+            } else if (entry.type == Entry::Type::Dropdown || entry.type == Entry::Type::IntSlider) {
+                int value = static_cast<::IntOption const&>(option).mValue;
+                if (value == entry.intValue) {
+                    return;
+                }
+                entry.intValue   = value;
+                page.stored[key] = value;
+                saveStored(page);
+                if (entry.onDropdown) {
+                    notify = [cb = entry.onDropdown, value] { cb(value); };
+                }
+            } else if (entry.type == Entry::Type::FloatSlider) {
+                float value =
+                    static_cast<::InputModeFloatOption const&>(option).mValues.get().contains(::InputMode::Mouse)
+                        ? static_cast<::InputModeFloatOption const&>(option).mValues.get().at(::InputMode::Mouse)
+                        : 0.0f;
+                if (value == entry.floatValue) {
+                    return;
+                }
+                entry.floatValue = value;
+                page.stored[key] = value;
+                saveStored(page);
+                if (entry.onFloatSlider) {
+                    notify = [cb = entry.onFloatSlider, value] { cb(value); };
+                }
+            }
         }
-        auto& entry = *it;
-        if (entry.type == Entry::Type::Toggle) {
-            bool value = static_cast<::BoolOption const&>(option).mValue;
-            if (value == entry.boolValue) {
-                return;
-            }
-            entry.boolValue  = value;
-            page.stored[key] = value;
-            saveStored(page);
-            if (entry.onToggle) {
-                entry.onToggle(value);
-            }
-        } else if (entry.type == Entry::Type::Dropdown || entry.type == Entry::Type::IntSlider) {
-            int value = static_cast<::IntOption const&>(option).mValue;
-            if (value == entry.intValue) {
-                return;
-            }
-            entry.intValue   = value;
-            page.stored[key] = value;
-            saveStored(page);
-            if (entry.onDropdown) {
-                entry.onDropdown(value);
-            }
-        } else if (entry.type == Entry::Type::FloatSlider) {
-            float value = static_cast<::InputModeFloatOption const&>(option).mValues.get().contains(::InputMode::Mouse)
-                            ? static_cast<::InputModeFloatOption const&>(option).mValues.get().at(::InputMode::Mouse)
-                            : 0.0f;
-            if (value == entry.floatValue) {
-                return;
-            }
-            entry.floatValue = value;
-            page.stored[key] = value;
-            saveStored(page);
-            if (entry.onFloatSlider) {
-                entry.onFloatSlider(value);
-            }
+        if (notify) {
+            notify();
         }
     }
 
     void saveStored(ModPage& page) { file_utils::writeFile(page.storePath, page.stored.dump(4)); }
 
-    // Builds a single non-FactoryUtil component (button/text/text input/banner/int slider).
-    // Option-backed entries are built through FactoryUtil, see appendEntry/buildPage.
     std::optional<std::unique_ptr<ComponentVariant>> buildSimpleEntry(ModPage& page, Entry& entry) {
         auto client = service::getClientInstance();
         if (!client) {
             return std::nullopt;
         }
-        auto id = entryId(page.modName, entry.key);
+        auto                                             id = entryId(page.modName, entry.key);
+        std::optional<std::unique_ptr<ComponentVariant>> result;
         switch (entry.type) {
         case Entry::Type::Button:
-            return makeComponent<Settings::ActionComponent>(
-                ActionWhich,
+            result = makeComponent<Settings::ActionComponent>(
                 id,
                 entry.displayName,
                 entry.description,
@@ -951,79 +701,65 @@ private:
                 std::nullopt,
                 nullptr
             );
+            break;
         case Entry::Type::Text:
-            return makeComponent<Settings::TextComponent>(TextWhich, id, entry.displayName, entry.description);
+            result = makeComponent<Settings::TextComponent>(id, entry.displayName, entry.description);
+            break;
         case Entry::Type::TextInput:
-            return buildWithGameBuilder(
+            result = Settings::buildComponent<Settings::StringComponent>(
                 id,
                 entry.displayName,
                 entry.description,
-                stringComponentBuild(),
-                stringComponentBuilderDtor(),
-                [&](void* builder) {
-                    auto* storage = static_cast<char*>(builder);
-                    *reinterpret_cast<void**>(storage + kBuilderTailOffset) =
-                        new ModStringDataProvider(page, entry.key);
+                [&](Settings::Builder<Settings::StringComponent>& builder) {
+                    builder.mDataProvider =
+                        std::unique_ptr<Settings::IStringDataProvider>(new ModStringDataProvider(page, entry.key));
                     if (entry.placeholder.has_value()) {
-                        // Builder<StringComponent> mPlaceholder @0x180, has_value @0x1A0.
-                        new (storage + kBuilderTailOffset + 0x08) std::string(*entry.placeholder);
-                        *(storage + kBuilderTailOffset + 0x28) = 1;
+                        builder.mPlaceholder.get() = *entry.placeholder;
                     }
-                    // Builder<StringComponent> mMaxLength @0x1A8, has_value @0x1B0. An absent
-                    // maxLength makes the OreUI text field always show the placeholder
-                    // (value.slice(0, null) === "" in its visibility check), so force one.
-                    *reinterpret_cast<int*>(storage + kBuilderTailOffset + 0x30) = entry.maxLength.value_or(INT32_MAX);
-                    *(storage + kBuilderTailOffset + 0x38)                       = 1;
+                    builder.mMaxLength.get() = static_cast<uint64>(entry.maxLength.value_or(INT32_MAX));
                 }
             );
+            break;
         case Entry::Type::Banner:
-            return buildWithGameBuilder(
+            result = Settings::buildComponent<Settings::BannerComponent>(
                 id,
                 entry.displayName,
                 entry.description,
-                bannerComponentBuild(),
-                bannerComponentBuilderDtor(),
-                [](void*) {}
+                [](Settings::Builder<Settings::BannerComponent>&) {}
             );
-        case Entry::Type::IntSlider: {
-            if (entry.optionId < 0) {
-                return std::nullopt;
-            }
-            auto createProvider = createIntNumberProvider();
-            if (createProvider == nullptr) {
-                getLogger().warn("ModSettings: createNumberDataProvider<int> signature not resolved for '{}'", id);
-                return std::nullopt;
-            }
-            return buildWithGameBuilder(
-                id,
-                entry.displayName,
-                entry.description,
-                intNumberComponentBuild(),
-                intNumberComponentBuilderDtor(),
-                [&](void* builder) {
-                    std::optional<std::unique_ptr<::Settings::INumberDataProvider<int>>> provider;
-                    createProvider(&provider, ::OptionID{entry.optionId}, client->getOptions(), entry.intValue);
-                    if (provider.has_value() && provider->get() != nullptr) {
-                        *reinterpret_cast<void**>(static_cast<char*>(builder) + kBuilderTailOffset) =
-                            provider->release();
-                    } else {
-                        getLogger().warn("ModSettings: no number provider for '{}'", id);
+            break;
+        case Entry::Type::IntSlider:
+            if (entry.optionId >= 0) {
+                result = Settings::buildComponent<Settings::NumberComponent<int>>(
+                    id,
+                    entry.displayName,
+                    entry.description,
+                    [&](Settings::Builder<Settings::NumberComponent<int>>& builder) {
+                        auto provider = Settings::DataProvider::createNumberDataProvider<int>(
+                            ::OptionID{entry.optionId},
+                            client->getOptions(),
+                            entry.intValue
+                        );
+                        if (provider.has_value() && *provider) {
+                            builder.mDataProvider = std::move(*provider);
+                        } else {
+                            getLogger().warn("ModSettings: no number provider for '{}'", id);
+                        }
+                        builder.mScaleFactor = 1;
+                        builder.mStep.get()  = entry.intStep;
                     }
-                    // Builder<NumberComponent<int>>: mScaleFactor @0x180 (zero breaks
-                    // display), mStep @0x184 (has_value @0x188, drives the tick marks).
-                    *reinterpret_cast<int*>(static_cast<char*>(builder) + kBuilderTailOffset + 0x08) = 1;
-                    *reinterpret_cast<int*>(static_cast<char*>(builder) + kBuilderTailOffset + 0x0C) = entry.intStep;
-                    *(static_cast<char*>(builder) + kBuilderTailOffset + 0x10)                       = 1;
-                }
-            );
-        }
+                );
+            }
+            break;
         default:
-            return std::nullopt;
+            break;
         }
+        if (!result.has_value() || !result.value()) {
+            getLogger().warn("ModSettings: could not build component for '{}'", id);
+        }
+        return result;
     }
 
-    // Appends one entry to an already materialized group. Returns false if the entry could
-    // not be built (e.g. no free OptionID).
     bool appendEntry(ModPage& page, Entry& entry, ComponentList& group) {
         auto client = service::getClientInstance();
         if (!client) {
@@ -1043,13 +779,13 @@ private:
                 client->getOptions(),
                 std::nullopt
             );
-            return true;
+            break;
         case Entry::Type::Dropdown:
             if (entry.optionId < 0) {
                 return false;
             }
             Settings::FactoryUtil::addOption(group, id, ::OptionID{entry.optionId}, client->getOptions());
-            return true;
+            break;
         case Entry::Type::FloatSlider:
             if (entry.optionId < 0) {
                 return false;
@@ -1063,66 +799,29 @@ private:
                 1.0f,
                 std::nullopt
             );
-            return true;
+            break;
         default:
             if (entry.type == Entry::Type::Keybind) {
                 return buildKeybindEntry(page, entry, group);
             }
             if (auto component = buildSimpleEntry(page, entry)) {
                 group.push_back(std::move(*component));
-                return true;
+            } else {
+                return false;
             }
-            return false;
+            break;
         }
+        applyEntryProviders(*group.back(), entry);
+        return true;
     }
 
     ComponentList buildPage(ModPage& page) {
         ComponentList components;
-        auto          client = service::getClientInstance();
-        if (!client) {
+        if (!service::getClientInstance()) {
             return components;
         }
-        ensureOptions(page, client->getOptions());
         for (auto& entry : page.entries) {
-            auto id = entryId(page.modName, entry.key);
-            switch (entry.type) {
-            case Entry::Type::Toggle:
-                if (entry.optionId >= 0) {
-                    Settings::FactoryUtil::addBoolean(
-                        components,
-                        id,
-                        ::OptionID{entry.optionId},
-                        client->getOptions(),
-                        std::nullopt
-                    );
-                }
-                break;
-            case Entry::Type::Dropdown:
-                if (entry.optionId >= 0) {
-                    Settings::FactoryUtil::addOption(components, id, ::OptionID{entry.optionId}, client->getOptions());
-                }
-                break;
-            case Entry::Type::FloatSlider:
-                if (entry.optionId >= 0) {
-                    Settings::FactoryUtil::addInputFloatComponent(
-                        components,
-                        id,
-                        ::OptionID{entry.optionId},
-                        ::InputMode::Mouse,
-                        client->getOptions(),
-                        1.0f,
-                        std::nullopt
-                    );
-                }
-                break;
-            default:
-                if (entry.type == Entry::Type::Keybind) {
-                    buildKeybindEntry(page, entry, components);
-                } else if (auto component = buildSimpleEntry(page, entry)) {
-                    components.push_back(std::move(*component));
-                }
-                break;
-            }
+            appendEntry(page, entry, components);
         }
         return components;
     }
@@ -1132,27 +831,307 @@ private:
         if (!client) {
             return;
         }
-        auto registry = client->getSettingsRegistry(); // fires the hook, which applies
+        auto registry = client->getSettingsRegistry();
         if (!registry) {
             return;
         }
-        std::lock_guard lock{mMutex};
-        apply(*registry);
-        // The mod list group may already be materialized; append the new section directly.
-        auto& materialized = static_cast<Settings::Registry&>(*registry).mSettingsMap.get();
-        if (auto it = materialized.find(std::string{kModsTabId}); it != materialized.end()) {
-            it->second.push_back(
-                makeComponent<Settings::GroupInfoComponent>(
-                    GroupInfoWhich,
-                    modGroupId(page.modName),
-                    page.modName,
-                    std::nullopt
-                )
-            );
-            static_cast<Settings::Registry&>(*registry).refresh(kModsTabId);
+        std::optional<std::string> refreshId;
+        bool                       tabAppended = false;
+        {
+            std::lock_guard lock{mMutex};
+            refreshId          = apply(*registry);
+            auto& materialized = static_cast<Settings::Registry&>(*registry).mSettingsMap.get();
+            if (auto it = materialized.find(std::string{kModsTabId}); it != materialized.end()) {
+                it->second.push_back(
+                    makeComponent<Settings::GroupInfoComponent>(modGroupId(page.modName), page.modName, std::nullopt)
+                );
+                tabAppended = true;
+            }
+        }
+        auto& reg = static_cast<Settings::Registry&>(*registry);
+        if (refreshId) {
+            reg.refresh(*refreshId);
+        }
+        if (tabAppended) {
+            reg.refresh(kModsTabId);
         }
     }
+
+public:
+    void applyProviderLive(ModPage& page, Entry& entry, EntryProviderKind kind) {
+        auto client = service::getClientInstance();
+        if (!client) {
+            return;
+        }
+        auto registry = client->getSettingsRegistry();
+        if (!registry) {
+            return;
+        }
+        auto groupId = modGroupId(page.modName);
+        {
+            std::lock_guard lock{mMutex};
+            auto&           reg    = static_cast<Settings::Registry&>(*registry);
+            auto&           groups = reg.mSettingsMap.get();
+            auto            it     = groups.find(groupId);
+            if (it == groups.end()) {
+                return;
+            }
+            auto id = entryId(page.modName, entry.key);
+            for (auto& component : it->second) {
+                auto const& cid =
+                    std::visit([](auto const& c) -> std::string const& { return c.mId.get(); }, *component);
+                if (cid == id) {
+                    applyEntryProvider(*component, entry, kind);
+                    break;
+                }
+            }
+        }
+        static_cast<Settings::Registry&>(*registry).refresh(groupId);
+    }
+
+    void refreshGroup(ModPage& page) {
+        auto client = service::getClientInstance();
+        if (!client) {
+            return;
+        }
+        auto registry = client->getSettingsRegistry();
+        if (!registry) {
+            return;
+        }
+        static_cast<Settings::Registry&>(*registry).refresh(modGroupId(page.modName));
+    }
 };
+
+class ModKeybindDataProvider : public ::Settings::IActionDataProvider {
+    ModPage&                              mPage;
+    std::string                           mKey;
+    ::Bedrock::PubSub::Subscription       mRawInputSub;
+    bool                                  mCapturing = false;
+    std::chrono::steady_clock::time_point mCaptureStartedAt{};
+    ModKeybindDataProvider*               mSibling = nullptr;
+
+    Entry* entry() const {
+        auto it =
+            std::find_if(mPage.entries.begin(), mPage.entries.end(), [&](Entry const& e) { return e.key == mKey; });
+        return it == mPage.entries.end() ? nullptr : &*it;
+    }
+
+    static ::KeyboardRemappingLayout* currentLayout() {
+        auto client = service::getClientInstance();
+        if (!client) {
+            return nullptr;
+        }
+        auto layout = client->getOptions().getCurrentKeyboardRemapping();
+        return layout ? layout.get() : nullptr;
+    }
+
+public:
+    ModKeybindDataProvider(ModPage& page, std::string key) : mPage(page), mKey(std::move(key)) {}
+
+    ~ModKeybindDataProvider() override { endCapture(); }
+
+    bool flush() override { return true; }
+
+    bool canModify() const override { return true; }
+
+    bool isCapturing() const { return mCapturing; }
+
+    void setSibling(ModKeybindDataProvider* sibling) { mSibling = sibling; }
+
+    bool isDefault() const {
+        auto* e = entry();
+        return e == nullptr || e->keyValue == e->defaultKey;
+    }
+
+    Settings::ComponentState resetRowState(::Settings::ComponentState current) const {
+        auto* e = entry();
+        if (e != nullptr && e->stateProvider
+            && e->stateProvider(static_cast<ModSettings::EntryState>(current)) == ModSettings::EntryState::Hidden) {
+            return ::Settings::ComponentState::Hidden;
+        }
+        return isDefault() ? ::Settings::ComponentState::Hidden : current;
+    }
+
+    // Current binding label, matching the vanilla keyboard page: all bound keys joined,
+    // unlocalized names passed through I18n as a whole. Read from the live layout on every
+    // evaluation.
+    std::optional<std::string> currentKeysLabel() const {
+        auto* e      = entry();
+        auto* layout = currentLayout();
+        if (e == nullptr || layout == nullptr) {
+            return std::nullopt;
+        }
+        for (auto& keymapping : layout->mKeymappings.get()) {
+            if (keymapping.mAction.get() != e->action) {
+                continue;
+            }
+            auto& keys = keymapping.mKeys.get();
+            if (keys.empty()) {
+                return std::nullopt;
+            }
+            std::string joined;
+            for (int key : keys) {
+                if (!joined.empty()) {
+                    joined += ", ";
+                }
+                joined += layout->getMappedKeyName(key, false);
+            }
+            return getI18n().get(joined, nullptr);
+        }
+        return std::nullopt;
+    }
+
+    void notifyChanged() {
+        if (auto& listener = mListener.get()) {
+            listener();
+        }
+        if (mSibling != nullptr) {
+            mSibling->notifyChanged();
+        }
+    }
+
+    void onRowClicked() {
+        if (mCapturing || ModSettingsManager::getInstance().shouldSuppressCaptureStart()) {
+            return;
+        }
+        startCapture();
+    }
+
+    void startCapture() {
+        auto* e       = entry();
+        auto  context = ModSettingsManager::getInstance().mBuilderContext;
+        if (e == nullptr || !context) {
+            return;
+        }
+        mCapturing = true;
+        context->setInputBindingMode(::InputBindingMode::MouseAndKeyboard);
+        mCaptureStartedAt = std::chrono::steady_clock::now();
+        auto& handler     = context->getInputSettingsHandler();
+        handler.setCapturingKeymapping({::InputMode::Mouse, std::nullopt, e->action});
+        mRawInputSub =
+            context->registerToRawInputEvent([this](int key, ::RawInputType type, ::ButtonState state, bool down) {
+                onRawInput(key, type, state, down);
+            });
+        notifyChanged();
+    }
+
+    void endCapture() {
+        if (!mCapturing) {
+            return;
+        }
+        mCapturing   = false;
+        mRawInputSub = ::Bedrock::PubSub::Subscription{};
+        if (auto context = ModSettingsManager::getInstance().mBuilderContext) {
+            context->getInputSettingsHandler().mCapturingKeymapping.get().reset();
+            context->setInputBindingMode(::InputBindingMode::Undefined);
+        }
+        notifyChanged();
+    }
+
+    void onRawInput(int key, ::RawInputType type, ::ButtonState /*state*/, bool down) {
+        if (!down || !mCapturing) {
+            return;
+        }
+        if (type == ::RawInputType::MouseButton
+            && std::chrono::steady_clock::now() - mCaptureStartedAt < std::chrono::milliseconds(250)) {
+            return;
+        }
+        auto* e      = entry();
+        auto* layout = currentLayout();
+        if (e == nullptr || layout == nullptr) {
+            endCapture();
+            return;
+        }
+        if (key == 27) {
+            layout->setMapping(e->action, {0});
+        } else {
+            layout->setMappingWithRawInput(e->action, key, type);
+            auto& mappings = layout->mKeymappings.get();
+            int   bound    = 0;
+            for (auto& keymapping : mappings) {
+                if (keymapping.mAction.get() == e->action) {
+                    auto& keys = keymapping.mKeys.get();
+                    bound      = keys.empty() ? 0 : keys.front();
+                }
+            }
+            for (auto& keymapping : mappings) {
+                if (keymapping.mAction.get() != e->action) {
+                    std::erase(keymapping.mKeys.get(), bound);
+                }
+            }
+        }
+        ModSettingsManager::getInstance().onKeyRemapped(e->action);
+        endCapture();
+    }
+
+    void resetToDefault() {
+        auto* e      = entry();
+        auto* layout = currentLayout();
+        if (e == nullptr || layout == nullptr) {
+            return;
+        }
+        layout->setMapping(e->action, {e->defaultKey});
+        ModSettingsManager::getInstance().onKeyRemapped(e->action);
+        notifyChanged();
+    }
+};
+
+bool ModSettingsManager::buildKeybindEntry(ModPage& page, Entry& entry, ComponentList& group) const {
+    auto client = service::getClientInstance();
+    if (!client || !mBuilderContext || entry.layoutIndex == ~size_t(0)) {
+        return false;
+    }
+    auto layout = client->getOptions().getCurrentKeyboardRemapping();
+    if (!layout) {
+        return false;
+    }
+    auto* provider  = new ModKeybindDataProvider(page, entry.key);
+    auto  component = makeComponent<Settings::ActionComponent>(
+        entryId(page.modName, entry.key),
+        entry.displayName,
+        entry.description,
+        "",
+        [provider](std::function<void(bool)> const& done) {
+            provider->onRowClicked();
+            done(true);
+        },
+        std::nullopt,
+        std::nullopt,
+        std::unique_ptr<::Settings::IActionDataProvider>(provider)
+    );
+    std::get<::Settings::ActionComponent>(*component).mActionLabelOverrideProvider =
+        [provider](::Settings::ActionComponent const&) -> std::optional<std::string> {
+        if (provider->isCapturing()) {
+            return std::string(">_<");
+        }
+        return provider->currentKeysLabel();
+    };
+    applyEntryProviders(*component, entry);
+    group.push_back(std::move(component));
+    if (entry.showReset) {
+        auto* resetProvider = new ModKeybindDataProvider(page, entry.key);
+        provider->setSibling(resetProvider);
+        auto resetComponent = makeComponent<Settings::ActionComponent>(
+            entryId(page.modName, entry.key) + ".reset",
+            "",
+            std::nullopt,
+            "options.key.reset.buttonLabel",
+            [provider](std::function<void(bool)> const& done) {
+                provider->resetToDefault();
+                done(true);
+            },
+            std::nullopt,
+            std::nullopt,
+            std::unique_ptr<::Settings::IActionDataProvider>(resetProvider)
+        );
+        std::get<::Settings::ActionComponent>(*resetComponent).mStateOverrideProvider.get() =
+            [resetProvider](::Settings::ActionComponent const&, ::Settings::ComponentState state) {
+                return resetProvider->resetRowState(state);
+            };
+        group.push_back(std::move(resetComponent));
+    }
+    return true;
+}
 
 void ModStringDataProvider::setValue(std::string_view value) {
     auto* e = entry();
@@ -1162,7 +1141,6 @@ void ModStringDataProvider::setValue(std::string_view value) {
     e->stringValue     = value;
     mPage.stored[mKey] = e->stringValue;
     file_utils::writeFile(mPage.storePath, mPage.stored.dump(4));
-    // Notify the owning component so its change publisher fires and the UI re-reads.
     if (auto& listener = mListener.get()) {
         listener();
     }
@@ -1171,24 +1149,6 @@ void ModStringDataProvider::setValue(std::string_view value) {
     }
 }
 
-LL_TYPE_INSTANCE_HOOK(
-    GetSettingsRegistryHook,
-    ll::memory::HookPriority::Normal,
-    ClientInstance,
-    &ClientInstance::$getSettingsRegistry,
-    std::shared_ptr<Settings::IRegistry>
-) {
-    auto result = origin();
-    if (result) {
-        auto&           manager = ModSettingsManager::getInstance();
-        std::lock_guard lock{manager.mMutex};
-        manager.apply(*result);
-    }
-    return result;
-}
-
-// Keybind rows are built through the game's createInputBindingGroup, which needs the
-// registry builder context; capture the latest one at every registry (re)build.
 LL_STATIC_HOOK(
     BuildDefaultSettingsRegistryHook,
     ll::memory::HookPriority::Normal,
@@ -1201,60 +1161,21 @@ LL_STATIC_HOOK(
         std::lock_guard lock{manager.mMutex};
         manager.mBuilderContext = context;
     }
-    return origin(std::move(context));
-}
-
-// Publisher layouts are incomplete in the headers (Connector subobject offset differs from
-// the game), so PubSub connect through the typed interface is unsafe; keybind change
-// notification goes through this hook instead.
-LL_TYPE_INSTANCE_HOOK(
-    SetMappingWithRawInputHook,
-    ll::memory::HookPriority::Normal,
-    KeyboardRemappingLayout,
-    &KeyboardRemappingLayout::$setMappingWithRawInput,
-    void,
-    std::string const& action,
-    int                rawKeyIndex,
-    ::RawInputType     rawKeyType
-) {
-    origin(action, rawKeyIndex, rawKeyType);
-    ModSettingsManager::getInstance().onKeyRemapped(action);
-}
-
-// The "start capture" callback of Settings::RebindActionDataProvider
-// (RebindActionDataProvider.cpp:67, no exported symbol — resolved by signature).
-// OreUI buttons fire on release, so rebinding by clicking the row's button with the mouse
-// binds on press and then restarts capture on release. The vanilla keyboard page suppresses
-// this in its front-end; the generic settings page has no such logic, so skip capture
-// starts in a short window after a rebind of one of our entries.
-uintptr_t rebindCaptureStartTarget() {
-    static auto addr = [] {
-        using namespace ll::literals;
-        return reinterpret_cast<uintptr_t>(
-            ("55 41 57 41 56 41 55 41 54 56 57 53 48 81 EC F8 00 00 00 48 8D AC 24 80 00 00 00 48 C7 45 70 FE FF FF "
-             "FF 4C 8B 61 08 49 8B 8C 24 80 00 00 00 48 8B 01 48 8B 80 28 01 00 00"_sig)
-                .resolve(true)
-        );
-    }();
-    return addr;
-}
-
-LL_STATIC_HOOK(
-    RebindCaptureStartHook,
-    ll::memory::HookPriority::Normal,
-    rebindCaptureStartTarget(),
-    void,
-    void* funcImpl
-) {
-    if (ModSettingsManager::getInstance().shouldSuppressCaptureStart()) {
-        return;
+    auto result = origin(std::move(context));
+    if (result) {
+        auto&                      manager = ModSettingsManager::getInstance();
+        std::optional<std::string> refreshId;
+        {
+            std::lock_guard lock{manager.mMutex};
+            refreshId = manager.apply(*result);
+        }
+        if (refreshId) {
+            static_cast<Settings::Registry&>(*result).refresh(*refreshId);
+        }
     }
-    origin(funcImpl);
+    return result;
 }
 
-// Vanilla keybinding pages enumerate the remapping layout themselves; hide our entries from
-// them (they are editable under the Mods tab). The three section enumerators all resolve to
-// ordinal lists, so filter each.
 LL_STATIC_HOOK(
     NormalKeysIndexHook,
     ll::memory::HookPriority::Normal,
@@ -1292,15 +1213,10 @@ LL_STATIC_HOOK(
 }
 
 void ModSettingsManager::installHook() {
-    ll::memory::HookRegistrar<GetSettingsRegistryHook>::hook();
     ll::memory::HookRegistrar<BuildDefaultSettingsRegistryHook>::hook();
-    ll::memory::HookRegistrar<SetMappingWithRawInputHook>::hook();
     ll::memory::HookRegistrar<NormalKeysIndexHook>::hook();
     ll::memory::HookRegistrar<ChordKeysIndexHook>::hook();
     ll::memory::HookRegistrar<MacroKeysIndexHook>::hook();
-    if (rebindCaptureStartTarget() != 0) {
-        ll::memory::HookRegistrar<RebindCaptureStartHook>::hook();
-    }
 }
 
 } // namespace
@@ -1314,7 +1230,6 @@ ModSettings::ModSettings(std::unique_ptr<Impl> impl) : mImpl(std::move(impl)) {}
 ModSettings::~ModSettings() = default;
 
 ModSettings& ModSettings::forMod(::ll::mod::Mod const& mod) {
-    // Handles are stable: pages live in the manager for the whole session.
     static std::unordered_map<ModPage*, std::unique_ptr<ModSettings>> handles;
     auto& page = ModSettingsManager::getInstance().pageForMod(mod);
     auto  it   = handles.find(&page);
@@ -1504,11 +1419,7 @@ ModSettings& ModSettings::addTextInput(
     }
     entry.placeholder = std::move(placeholder);
     entry.maxLength   = maxLength;
-    entry.onTextInput = [onChange = std::move(onChange)](std::string value) {
-        if (onChange) {
-            onChange(value);
-        }
-    };
+    entry.onTextInput = std::move(onChange);
     page.entries.push_back(std::move(entry));
     ModSettingsManager::getInstance().onEntryAdded(page);
     return *this;
@@ -1554,6 +1465,56 @@ int ModSettings::getKeybindValue(std::string_view key) const {
         }
     }
     return 0;
+}
+
+ModSettings& ModSettings::setEntryStateProvider(std::string key, EntryStateProvider provider) {
+    auto& page = *mImpl->page;
+    for (auto& entry : page.entries) {
+        if (entry.key == key) {
+            entry.stateProvider = std::move(provider);
+            ModSettingsManager::getInstance().applyProviderLive(page, entry, EntryProviderKind::State);
+            return *this;
+        }
+    }
+    getLogger().warn("ModSettings: no entry named '{}'", key);
+    return *this;
+}
+
+ModSettings& ModSettings::setEntryNameProvider(std::string key, EntryTextProvider provider) {
+    auto& page = *mImpl->page;
+    for (auto& entry : page.entries) {
+        if (entry.key == key) {
+            entry.nameProvider = std::move(provider);
+            ModSettingsManager::getInstance().applyProviderLive(page, entry, EntryProviderKind::Name);
+            return *this;
+        }
+    }
+    getLogger().warn("ModSettings: no entry named '{}'", key);
+    return *this;
+}
+
+ModSettings& ModSettings::setEntryDescriptionProvider(std::string key, EntryTextProvider provider) {
+    auto& page = *mImpl->page;
+    for (auto& entry : page.entries) {
+        if (entry.key == key) {
+            entry.descriptionProvider = std::move(provider);
+            ModSettingsManager::getInstance().applyProviderLive(page, entry, EntryProviderKind::Description);
+            return *this;
+        }
+    }
+    getLogger().warn("ModSettings: no entry named '{}'", key);
+    return *this;
+}
+
+ModSettings& ModSettings::refreshEntry(std::string_view key) {
+    auto& page = *mImpl->page;
+    for (auto& entry : page.entries) {
+        if (entry.key == key) {
+            ModSettingsManager::getInstance().refreshGroup(page);
+            break;
+        }
+    }
+    return *this;
 }
 
 int ModSettings::getIntSliderValue(std::string_view key) const {

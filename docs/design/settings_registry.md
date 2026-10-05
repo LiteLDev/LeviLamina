@@ -223,15 +223,14 @@ add*`、`GroupInfoComponent`/`TextComponent`/`ActionComponent` 构造函数、
 （0x1442271e0，LL 已是 MCAPI）——真实布局可从它反推。
 短期硬编码值：variant 大小 0x3D0，`_Which` 偏移 0x3C8，variant 索引见第 6 节。
 
-**FloatOption**：构造函数在二进制中被**完全内联，不存在可加白的符号**。两条路：
-
-- 加白 vftable `??_7FloatOption@@6B@`（0x14e778ef0，LL 现为 MCNAPI），然后用
-  `Option` 基类构造函数（`??0Option@@QEAA@W4OptionID@@W4OptionOwnerType@@W4OptionResetFlags@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3W4OptionType@@VGameVersion@@@Z`，
-  0x14091b6d0，LL 已是 MCAPI）+ 手动初始化 5 个 float 成员完成构造。
-  ctor 逻辑已完全摸清：`Option(id, owner, reset, captionId, saveTag, OptionType::Float=2, GameVersion{})`
-  → 写 vftable → `VALUE_MIN/VALUE_MAX/DELTA` → `mValue = mDefaultValue = clamp(默认值)`。
-- 或退而用 `InputModeFloatOption` 的构造函数（有符号 0x14091f240），
-  但它按输入模式分别存值，语义不符，不推荐。
+**FloatOption**：构造函数在二进制中被**完全内联，不存在可加白的符号**。vftable
+`??_7FloatOption@@6B@` 也未进白名单（`?$vftable@FloatOption@@SAPEAPEAXXZ` 链接不到）。
+已在 LL 手工还原构造函数（`FloatOption.h` 声明 + `src-client/mc/options/option_types/
+FloatOption.cpp` 定义，LL_PLAT_C 守卫）：`Option(id, owner, reset, captionId, saveTag,
+OptionType::Float=2, GameVersion{})` → VALUE_MIN/VALUE_MAX/DELTA=0.001f →
+`mValue = mDefaultValue = clamp(默认值)`；vftable 惰性从 options 注册表里的活体
+FloatOption 实例借用（原版 `_registerOptions` 里有 type=2 的实例，构造现场实测
+DELTA=0.001f）。若日后 vftable 加白可改回 `$vftable()` 直取。
 
 **StringComponent / BannerComponent**：构造函数同样被完全内联，且 vftable
 在二进制中没有命名符号（需额外 xref 分析定位）。第一期建议不做这两种组件：
@@ -305,7 +304,17 @@ Boolean builder 时调用的就是 ActionComponent 那个实例），因此这�
 
 - `??0?$BaseBuilder@V?$Builder@VActionComponent@Settings@@@Settings@@VActionComponent@2@@Settings@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z`（0x140be5610）
 
-构造配方（LL core 内部）：
+**26.51 白名单已落地**，这些符号都进了 bedrock_runtime_data，对应声明已手写到
+LL 头文件（生成器不发模板符号）：
+
+| 声明位置 | 内容 |
+|---|---|
+| `mc/client/settings/BaseBuilder.h` | `BaseBuilder` 模板 + ActionComponent 实例化构造（ICF 共享） |
+| `mc/client/settings/Builder.h` | `Builder<T>` 成员声明 + String/Banner/NumberComponent\<int\> 的 build/dtor MCTAPI 特化 |
+| `src-client/mc/client/settings/DataProvider.h` | `createNumberDataProvider<T>` 模板声明 |
+| `mc/options/option_types/FloatOption.h` + `src-client/.../FloatOption.cpp` | 手工还原的 FloatOption 构造（见 7.1） |
+
+构造配方（LL core 内部，`buildWithGameBuilder<T>` 即按此实现）：
 
 1. `::operator new(0x400)` 并清零（容量大于任何 Builder 实例）；
 2. 在偏移 0 调用共享 BaseBuilder ctor（id, name）——初始化公共头部
@@ -389,34 +398,39 @@ context，hook 它即可捕获，进而使用 `registerToRawInputEvent` 等能�
 
 ## 10. ModSettings::addKeybind 实现要点
 
-- 全部走 MCAPI/接口，无特征码：`createInputBindingGroup`（InputControlsSettingsHelper）、
-  `RemappingLayout`（ctor/setMapping/getKeymappingByAction 均 MCAPI）、
-  `IOptionRegistry::getCurrentKeyboardRemapping()`（虚接口）、
-  `RegistryBuilder::buildDefaultSettingsRegistry`（MCAPI，hook 它捕获 IBuilderContext）。
-- `InputBindingGroupData` 无可用构造函数，用同布局镜像结构体构造（static_assert 校验大小）。
-- keybind 行 = ActionComponent + RebindActionDataProvider（游戏侧 createInputBindingGroup
-  全权构建）；捕获输入由 provider 经 context->registerToRawInputEvent 完成。
-- **createInputBindingGroup 一次返回 3 个组件**（id 分别为 `{action}.bind` / `{action}.reset`
-  / `{action}.captureState`）：主行、"重置"按钮、以及一个无标签的 BooleanComponent
-  （OreUI 前端按 id 消费它来表示"等待按键"状态）。三个都保留，captureState 通过组件基类的
-  `mStateOverrideProvider`（基类偏移 0xF8，来自基类析构的实测布局）强制 Hidden，
-  否则通用渲染器会把它画成一个无标签开关。
-  注意：原版键位页里重置是主行内联的小图标，那是 OreUI 前端对键盘页的专有组合渲染；
-  通用渲染器一页一行，重置只能显示为独立整行。
+**自实现键位行（不再走 createInputBindingGroup）**：原版那条路依赖 RebindActionDataProvider
+的"开始捕获" lambda——lambda 通常不给白名单，借它修鼠标改绑循环只能特征码 hook。
+改为整条逻辑自己实现（`ModKeybindDataProvider : Settings::IActionDataProvider`）：
+
+- 行组件 = `ActionComponent`（MCAPI 构造）+ `mActionLabelOverrideProvider`（TypedStorage
+  成员直接赋值）+ `mActionCallback`（点击 → 我们的捕获逻辑）；重置按钮同理再造一行
+  （`showReset=false` 时不造）。
+- 捕获：`IBuilderContext::registerToRawInputEvent`（纯虚可直接调）订阅原始输入；
+  `InputSettingsHandler::setCapturingKeymapping`（MCAPI）标记捕获态让前端吞输入；
+  结束直接 `mCapturingKeymapping.reset()`（成员可见，无需符号）。
+  **关键**：开始捕获必须调 `IBuilderContext::setInputBindingMode(MouseAndKeyboard)`、
+  结束调回 `Undefined`——`KeyboardMapper::tick` 只在绑定模式为 1（MouseAndKeyboard）
+  时才把键盘事件入队为 type-5 原始事件，正常模式（0）下按键全走按钮映射路径，
+  原始输入事件根本不会发生（原版 RebindActionDataProvider.cpp:67 的
+  setInputBindingMode 调用做同一件事，漏了它订阅就永远收不到事件）。
+- 写入：`layout->setMappingWithRawInput`（我们的 hook 同步 json/回调/重建输入映射）；
+  ESC 取消指派走 `layout->setMapping(action, {0})`；冲突清键直接遍历 `mKeymappings`
+  向量做 `std::erase`（绕开 `defaultKeyAtIndex`/`unassignDuplicateKeys` 的
+  "可重映射序号"语义）。
+- UI 刷新：游戏构造组件时经 `setChangeListener` 接好 `mListener`（与
+  ModStringDataProvider 同一通路），捕获开始/结束/重置后调 `mListener()` 驱动前端
+  重新求值 label。
 - 键名显示对齐原版（KeyboardAndMouseSettingsDetails.cpp:303）：遍历 keymapping 的全部
   键，`getMappedKeyName(key, false)` 拼接 ", " 后整体过 `I18n::get`（鼠标键等特殊键
-  才能本地化为"按钮1"）。
-- 重置逻辑对齐原版（KeyboardAndMouseSettingsDetails.cpp:307）：`defaultKeyAtIndex` +
-  `unassignDuplicateKeys`（均 MCAPI），随后走我们的 onKeyRemapped 同步 json/回调/重建。
-- 待输入显示：原版是 OreUI 前端读 `{action}.captureState` 布尔画 ">_<"（二进制里没有
-  该字符串，纯前端硬编码）。我们额外让 label provider 在
-  `InputSettingsHandler::mCapturingKeymapping` 命中本 action 时直接返回 ">_<" 兜底；
-  RebindActionDataProvider 在捕获开始/结束都会触发组件变更通知，label 随之重估。
+  才能本地化为"按钮1"）；待输入状态 label 直接返回 ">_<"。
 - **鼠标改绑的重新捕获循环**：OreUI 按钮在松开时触发点击。用鼠标点击行上按钮改绑时，
-  按下完成绑定（捕获结束），松开那一下又点到按钮 → 重新进入捕获。原版键盘页由前端在
-  捕获期间禁用按钮规避；通用设置页没有这层（captureState 即使保留+隐藏也无效，实测）。
-  解决：hook "开始捕获" lambda（RebindActionDataProvider.cpp:67，无导出符号，特征码
-  定位），在我们的 entry 改绑完成后 500ms 窗口内跳过开始捕获。
+  按下完成绑定（捕获结束），松开那一下又点到按钮 → 重新进入捕获。现在由我们自己的
+  点击回调挡掉：改绑完成后 500ms 窗口内忽略"开始捕获"
+  （`shouldSuppressCaptureStart`，时间戳在 onKeyRemapped 命中我们的条目时刷新）。
+- **发起点击被自身捕获**：OreUI 的按钮回调先于游戏 input tick 处理——点击行按钮开始
+  捕获后，同一次点击的按下事件才以原始事件到达，若不处理会立即把左键绑上。
+  解决：startCapture 记录时间戳，250ms 窗口内忽略 RawInputType::MouseButton 的按下事件
+  （发起事件必在此窗口内；有意绑定鼠标键的下一次点击必在窗口外）。
 - 键值变更通知：hook `KeyboardRemappingLayout::$setMappingWithRawInput`（Publisher 布局
   不完整，不能直接订 `mRefreshKeymappingsPublisher`，见第 11 节）。
 - **改绑生效路径**：`setMappingWithRawInput` 只改 `mKeymappings` 并发布通知，不会重建
@@ -444,7 +458,22 @@ context，hook 它即可捕获，进而使用 `registerToRawInputEvent` 等能�
 
 ## 11. 已验证的坑（续）
 
-- **PubSub Publisher 布局不完整**：LL 头文件里 `DispatchingPublisherBase` 只有 32 字节，
-  游戏里 56 字节（Connector 基类在 +56）。通过类型化 `Publisher` 调 `connect()` 会按错误
-  偏移调整 this，vtable 读飞崩溃。需要订阅游戏发布器时不要走 `Connector::connect`——
-  改用功能 hook（键位变更通知即改 hook `KeyboardRemappingLayout::$setMappingWithRawInput`）。
+- **组件头文件的基类 `Settings::Component<T>` 是空壳，派生类成员偏移全部不可用**：
+  LL 的 `ActionComponent.h` 等按空基类计算成员偏移，与游戏真实布局（基类约 0x1D8 字节）
+  完全对不上。任何经 LL 头文件对组件成员的读写都会写错位置——实例：把
+  `mActionLabelOverrideProvider`（真实偏移 0x388，LL 算出 0x1B0）按 LL 布局赋值，
+  覆盖了基类 Publisher 的 Connector 虚表，OreUI `SettingsActionQuery` 构造时 connect
+  读到垃圾虚表 → CFG fast fail（0xC0000409）。规则：**组件成员只读真实偏移
+  （从游戏代码反推，如 getActionLabel 的 `[this+0x3C0]`），或只走游戏侧函数**。
+- **PubSub Publisher 布局已手工还原**（模板类不进自动生成，需手工维护）：
+  `Publisher<Sig, TM, Policy>` = `DispatchingPublisherBase<TM, SubscriptionBody>`（→
+  `ThreadingPublisherBase<TM>` → `FastDispatchPublisherBase_{Single,Multi}Threaded` →
+  `PublisherBase` → `PublisherDisconnector`）+ `Connector<Sig>`。实测布局（26.51，
+  以 `RemappingLayout::mRefreshKeymappingsPublisher` 的构造点为准）：
+  vtable@0、`mSubscriptions` 哨兵@8、`mSubscriberCount`@0x18、SingleThreaded 多一个
+  8B 的 `mFastDispatchInfo`@0x20（LL 头文件原本整个缺这个成员，已补）、Connector@0x28；
+  MultiThreaded 为 mutex(0x50)+mFastDispatchInfo(8)，Connector@0x78（本来就对）。
+  `ModSettings.cpp` 里有 `sizeof(Publisher<void(optional<uint64>), SingleThreaded, 0>)
+  == 0x30` 的 static_assert 守护。修好后 `mRefreshKeymappingsPublisher.connect()`
+  类型安全直连，keybind 变更通知已从 hook 换成真订阅（ESC 取消指派路径也经此
+  发布器，desync 问题顺带消除）。

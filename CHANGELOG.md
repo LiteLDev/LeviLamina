@@ -35,7 +35,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   vanilla settings screen. Mods declaratively add toggles, dropdowns, buttons, text,
   banners, int/float sliders, text inputs and rebindable key entries; values are
   persisted to `<mod data dir>/settings.json` and change callbacks run on the client
-  main thread
+  main thread. Entries can be hidden or disabled dynamically through
+  `ModSettings::setEntryStateProvider` and re-evaluated via `ModSettings::refreshEntry`;
+  entry names and descriptions can be computed dynamically through
+  `ModSettings::setEntryNameProvider` / `ModSettings::setEntryDescriptionProvider`
+- Added hand-restored client-side settings builder support (client target only):
+  `Settings::Builder<T>` layouts and constructors for string, banner and int number
+  components, the `Settings::BaseBuilder` and `Settings::Component<T>` member layouts,
+  `Settings::ComponentVariant`/`Settings::makeComponent`/`Settings::buildComponent`, and
+  `Settings::DataProvider::createNumberDataProvider<T>`; also added a hand-restored
+  `FloatOption` constructor
 
 ### Changed
 
@@ -60,7 +69,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   firing (client target only): they were only registered with the game's `InputHandler`
   from `MinecraftInputHandler::_registerInputHandlers`, which runs before mods enable —
   handler registration now happens lazily on input mapping rebuilds
+- Fixed the layout of `Bedrock::PubSub` single-threaded publishers (client target only):
+  `FastDispatchPublisherBase_SingleThreaded` is now modeled per the actual layout
+  (PublisherBase plus a stateless NullMutex member), fixing the `Connector` subobject
+  offset — `connect()` on game-owned single-threaded publishers (e.g.
+  `RemappingLayout::mRefreshKeymappingsPublisher`) previously crashed from a wrong
+  this-adjustment
+- Fixed a potential self-deadlock in `ll::ui::ModSettings` (client target only) when mod
+  change callbacks or entry state/name providers call back into the ModSettings API:
+  callbacks and UI refreshes now run outside the settings lock
+- Fixed `ll::ui::ModSettings` keybind rows caching the keyboard layout pointer and key
+  index in their label provider; the label now re-reads the live layout (client target
+  only)
 
+### Changed
+
+- Bumped bedrock-runtime-data versions
 
 ## [26.51.6] - 2026-09-29
 

@@ -2,9 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
+class CompactionListenerEnv;
+class EncryptedProxyEnv;
 class FlushableEnv;
+class LevelDbEnv;
+class SnapshotEnv;
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 // clang-format on
@@ -13,26 +21,20 @@ class DBStorageEnvironmentChain {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk5ef3ee;
-    ::ll::UntypedStorage<8, 8>  mUnkff82bf;
-    ::ll::UntypedStorage<8, 8>  mUnk556f35;
-    ::ll::UntypedStorage<8, 8>  mUnkdbbdca;
-    ::ll::UntypedStorage<8, 8>  mUnk715292;
-    ::ll::UntypedStorage<8, 24> mUnkd18cb9;
-    ::ll::UntypedStorage<8, 8>  mUnkdc46a3;
-    ::ll::UntypedStorage<8, 32> mUnk69e817;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EncryptedProxyEnv>>       mEncryptedEnv;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FlushableEnv>>            mFlushableEnv;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FlushableEnv>>            mPreSnapshotBufferEnv;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SnapshotEnv>>             mSnapshotEnv;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompactionListenerEnv>>   mCompactionListenerEnv;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>> mLevelDbEnv;
+    ::ll::TypedStorage<8, 8, ::leveldb::Env*>                              mWrappedEnv;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>           mDbPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DBStorageEnvironmentChain& operator=(DBStorageEnvironmentChain const&);
-    DBStorageEnvironmentChain(DBStorageEnvironmentChain const&);
-    DBStorageEnvironmentChain();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
+    MCAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
         ::leveldb::Env*                            currentEnv,
         ::std::shared_ptr<::Core::FileStorageArea> storageAreaForLevel,
         ::Core::Path const&                        dbPath

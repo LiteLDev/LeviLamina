@@ -64,8 +64,6 @@ void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance
     }
 }
 
-// GameRenderer only renders scenes carrying a setup/cleanup strategy, which
-// SceneFactory::createUIScene leaves empty; mirror DefaultUIScreenSetupCleanupStrategy.
 class JsonScreenSetupCleanupStrategy : public ::AbstractScreenSetupCleanupStrategy {
     ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> mClient;
 
@@ -104,8 +102,6 @@ bool canSceneBeTransitioned(UIScene& scene) {
     return !scene.mScreenView || !(scene.mScreenView->mIsEntering || scene.mScreenView->mIsExiting);
 }
 
-// schedulePopScreen(1) is silently dropped while the scene is mid-entrance, so defer the
-// request until the scene can be transitioned.
 void requestPop(ISceneStack& stack, std::weak_ptr<UIScene> const& weakScene) {
     auto scene = weakScene.lock();
     if (!scene) {
@@ -162,9 +158,6 @@ public:
       mOwner(&owner),
       mOwnerAlive(std::move(ownerAlive)) {
         auto handledButtons = owner.getHandledButtonIds();
-        // Raw buttons never reach controller handlers — only JSON button_mappings
-        // to_button_ids are dispatched — so this handler requires the screen's JSON to pass
-        // button.menu_cancel through (e.g. map it to itself).
         if (std::ranges::find(handledButtons, "button.menu_cancel") == handledButtons.end()) {
             registerButtonEventHandler(
                 StringHash{"button.menu_cancel"},
@@ -199,8 +192,6 @@ public:
         }
     }
 
-    // The framework funnels button.menu_exit into this virtual. The base implementation pops
-    // without consuming the event, letting the default back navigation pop a second scene.
     ::ui::ViewRequest tryExit() override {
         if (!mOwnerAlive.expired()) {
             mOwner->close();
@@ -277,8 +268,6 @@ void JsonScreen::open() {
 }
 
 void JsonScreen::close() {
-    // mScene stays valid until the stack processes the pop; mCloseRequested keeps repeated
-    // close() calls in that window from queuing extra schedulePopScreen(1)s.
     if (mCloseRequested || !mScene.lock()) {
         return;
     }

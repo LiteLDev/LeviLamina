@@ -8,6 +8,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class AllowListFile;
+class CDNConfig;
+class DedicatedServer;
+class Level;
+class MinecraftCommands;
+class PermissionsFile;
+struct ScriptSettings;
 struct SnapshotFilenameAndLength;
 // clang-format on
 
@@ -15,14 +22,14 @@ class ScriptDedicatedServerUtils : public ::IScriptDedicatedServerUtils {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk597c28;
-    ::ll::UntypedStorage<8, 8> mUnk9a2d8c;
-    ::ll::UntypedStorage<8, 8> mUnkc8884b;
-    ::ll::UntypedStorage<8, 8> mUnkb63ce9;
-    ::ll::UntypedStorage<8, 8> mUnk4217a0;
-    ::ll::UntypedStorage<8, 8> mUnk9e3b85;
-    ::ll::UntypedStorage<8, 8> mUnkd75f95;
-    ::ll::UntypedStorage<8, 8> mUnkc73a76;
+    ::ll::TypedStorage<8, 8, ::DedicatedServer&>   mServer;
+    ::ll::TypedStorage<8, 8, ::AllowListFile&>     mAllowListFile;
+    ::ll::TypedStorage<8, 8, ::PermissionsFile&>   mPermissionsFile;
+    ::ll::TypedStorage<8, 8, ::CDNConfig&>         mCDNConfig;
+    ::ll::TypedStorage<8, 8, ::Level*>             mLevel;
+    ::ll::TypedStorage<8, 8, ::ScriptSettings*>    mScriptSettings;
+    ::ll::TypedStorage<8, 8, ::MinecraftCommands*> mCommands;
+    ::ll::TypedStorage<8, 8, ::std::string const&> mSessionID;
     // NOLINTEND
 
 public:
@@ -79,42 +86,42 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $saveHold();
+    MCAPI bool $saveHold();
 
-    MCNAPI bool $saveResume();
+    MCAPI bool $saveResume();
 
-    MCNAPI ::std::optional<::std::vector<::SnapshotFilenameAndLength>> $saveQuery();
+    MCAPI ::std::optional<::std::vector<::SnapshotFilenameAndLength>> $saveQuery();
 
-    MCNAPI bool $addToAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
+    MCAPI bool $addToAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
 
-    MCNAPI bool $removeFromAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
+    MCAPI bool $removeFromAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
 
-    MCNAPI bool $allowListContains(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
+    MCAPI bool $allowListContains(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
 
-    MCNAPI ::std::vector<::IScriptDedicatedServerUtils::AllowListEntryInfo> $getAllowListEntries() const;
+    MCAPI ::std::vector<::IScriptDedicatedServerUtils::AllowListEntryInfo> $getAllowListEntries() const;
 
-    MCNAPI void $clearAllowList();
+    MCAPI void $clearAllowList();
 
-    MCNAPI bool $reloadAllowListFile();
+    MCAPI bool $reloadAllowListFile();
 
-    MCNAPI void $setAllowListEnabled(bool enabled);
+    MCAPI void $setAllowListEnabled(bool enabled);
 
-    MCNAPI bool $getAllowListEnabled() const;
+    MCAPI bool $getAllowListEnabled() const;
 
-    MCNAPI bool $reloadPermissionsFile();
+    MCAPI bool $reloadPermissionsFile();
 
-    MCNAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& $getPermissions() const;
+    MCAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& $getPermissions() const;
 
-    MCNAPI bool $setPermissions(::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& permissionData);
+    MCAPI bool $setPermissions(::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& permissionData);
 
-    MCNAPI bool $setPlayerPermission(::std::string const& xuid, ::PlayerPermissionLevel permission);
+    MCAPI bool $setPlayerPermission(::std::string const& xuid, ::PlayerPermissionLevel permission);
 
-    MCNAPI bool $reloadScriptConfig();
+    MCAPI bool $reloadScriptConfig();
 
-    MCNAPI bool $reloadCDNConfig();
+    MCAPI bool $reloadCDNConfig();
 
-    MCNAPI ::std::string const& $getSessionID() const;
+    MCAPI ::std::string const& $getSessionID() const;
 
-    MCNAPI void $stopServer();
+    MCAPI void $stopServer();
     // NOLINTEND
 };

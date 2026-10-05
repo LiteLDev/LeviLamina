@@ -7,6 +7,21 @@
 
 class FloatOption : public ::Option {
 public:
+#ifdef LL_PLAT_C
+    // hand-written additions (the game's constructor is fully inlined; restored by hand)
+    LLNDAPI FloatOption(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        float                value,
+        float                min,
+        float                max
+    );
+#endif
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float const> VALUE_MIN;

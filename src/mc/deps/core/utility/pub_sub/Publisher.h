@@ -39,4 +39,6 @@ private:
 template <typename Signature, typename ThreadingModel>
 using PublisherPtr = std::unique_ptr<Publisher<Signature, ThreadingModel>>;
 
+static_assert(sizeof(Publisher<void(::std::optional<uint64>), ThreadModel::SingleThreaded, 0>) == 0x30);
+
 } // namespace Bedrock::PubSub

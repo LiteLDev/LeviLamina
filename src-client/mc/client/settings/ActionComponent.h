@@ -92,4 +92,7 @@ public:
     // NOLINTEND
 };
 
+static_assert(sizeof(::Settings::Component<::Settings::ActionComponent>) == 0x1E0);
+static_assert(offsetof(::Settings::ActionComponent, mActionLabelOverrideProvider) == 0x388);
+
 } // namespace Settings

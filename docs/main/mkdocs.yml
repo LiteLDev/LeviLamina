@@ -56,6 +56,7 @@ nav:
           - Utils: api_reference/utils.md
           - Input (Client): api_reference/input.md
           - JSON UI (Client): api_reference/json_ui.md
+          - Mod Settings (Client): api_reference/mod_settings.md
 
       - Doxygen API 🔗: https://lamina.levimc.org/api
 

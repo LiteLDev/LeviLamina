@@ -61,6 +61,7 @@ LeviLamina 的 API 按以下模块组织：
 |------|------|----------|
 | [Input（输入系统）](input.zh.md) | 键盘/鼠标输入绑定、输入映射、自定义界面按钮和输入事件 | 仅客户端 |
 | [JSON UI](json_ui.zh.md) | 自定义 JSON UI 界面、HUD 叠加元素与自定义渲染器 | 仅客户端 |
+| [Mod 设置](mod_settings.zh.md) | 原版设置界面中的 mod 专属设置页 | 仅客户端 |
 
 ## 适用范围说明
 

@@ -61,6 +61,7 @@ LeviLamina's API is organized into the following modules:
 |--------|-------------|-------|
 | [Input](input.md) | Keyboard/mouse input binding, input mappings, custom UI buttons, and input events | Client Only |
 | [JSON UI](json_ui.md) | Custom JSON UI screens, HUD overlay elements, and custom renderers | Client Only |
+| [Mod Settings](mod_settings.md) | Per-mod settings pages in the vanilla settings screen | Client Only |
 
 ## Scope Legend
 
