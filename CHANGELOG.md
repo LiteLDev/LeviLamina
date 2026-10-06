@@ -48,17 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- `ll::ui::JsonScreen` (client target only) now pushes its scene with a bare
-  `ISceneStack::pushScreen` (matching every vanilla JSON UI screen) instead of an OreUI
-  `RouteAction` push, and exits controller-side: its controller overrides
-  `ScreenController::tryExit()` (the virtual the framework routes `button.menu_exit` into)
-  to pop exactly its own scene and consume the event — the vanilla
-  `menu_cancel -> button.menu_exit` JSON mapping works unchanged, without the double pop
-  the base-class exit path caused for route-less screens
-- `ll::ui::JsonScreen::close()` is now guarded against repeated calls while the scene is
-  still being popped (previously each call queued another `schedulePopScreen(1)`, popping
-  extra scenes)
-- `ll::input::KeyRegistry` / `ll::input::ScreenButtonRegistry` buttons are now tied to the
+- `ll::input::KeyRegistry` buttons are now tied to the
   registering mod and removed when the mod is disabled; button handlers are registered
   with the game's `InputHandler` as trampolines dispatching to the current registration,
   so unregister/re-register and mod unload never leave stale callbacks behind
@@ -69,22 +59,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   firing (client target only): they were only registered with the game's `InputHandler`
   from `MinecraftInputHandler::_registerInputHandlers`, which runs before mods enable —
   handler registration now happens lazily on input mapping rebuilds
-- Fixed the layout of `Bedrock::PubSub` single-threaded publishers (client target only):
-  `FastDispatchPublisherBase_SingleThreaded` is now modeled per the actual layout
-  (PublisherBase plus a stateless NullMutex member), fixing the `Connector` subobject
-  offset — `connect()` on game-owned single-threaded publishers (e.g.
-  `RemappingLayout::mRefreshKeymappingsPublisher`) previously crashed from a wrong
-  this-adjustment
-- Fixed a potential self-deadlock in `ll::ui::ModSettings` (client target only) when mod
-  change callbacks or entry state/name providers call back into the ModSettings API:
-  callbacks and UI refreshes now run outside the settings lock
-- Fixed `ll::ui::ModSettings` keybind rows caching the keyboard layout pointer and key
-  index in their label provider; the label now re-reads the live layout (client target
-  only)
-
-### Changed
-
-- Bumped bedrock-runtime-data versions
 
 ## [26.51.6] - 2026-09-29
 

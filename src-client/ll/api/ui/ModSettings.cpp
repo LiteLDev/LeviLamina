@@ -268,8 +268,6 @@ public:
                     if (entry.type != Entry::Type::Keybind || entry.action != action) {
                         continue;
                     }
-                    // Refresh even when the value is unchanged: the re-capture suppression
-                    // window relies on it.
                     mLastKeybindChange = std::chrono::steady_clock::now();
                     auto& keys         = layout->getKeymappingByAction(entry.action).mKeys.get();
                     int   current      = keys.empty() ? entry.defaultKey : keys.front();
@@ -286,7 +284,6 @@ public:
                 }
             }
         }
-        // Mod callbacks run outside the lock: they may call back into ModSettings.
         for (auto& [cb, value] : callbacks) {
             cb(value);
         }
@@ -390,9 +387,6 @@ public:
         }
     }
 
-    // Must be called with mMutex held. Returns the group to refresh afterwards (outside
-    // the lock): refresh dispatches component publishers synchronously, and mod providers
-    // may call back into ModSettings.
     std::optional<std::string> apply(Settings::IRegistry& iregistry) {
         auto&                      registry = static_cast<Settings::Registry&>(iregistry);
         std::optional<std::string> refreshId;
@@ -613,7 +607,6 @@ private:
     bool buildKeybindEntry(ModPage& page, Entry& entry, ComponentList& group) const;
 
     void onOptionChanged(ModPage& page, std::string const& key, ::Option const& option) {
-        // The mod callback runs outside the lock: it may call back into ModSettings.
         std::function<void()> notify;
         {
             std::lock_guard lock{mMutex};
@@ -949,9 +942,6 @@ public:
         return isDefault() ? ::Settings::ComponentState::Hidden : current;
     }
 
-    // Current binding label, matching the vanilla keyboard page: all bound keys joined,
-    // unlocalized names passed through I18n as a whole. Read from the live layout on every
-    // evaluation.
     std::optional<std::string> currentKeysLabel() const {
         auto* e      = entry();
         auto* layout = currentLayout();
