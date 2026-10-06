@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/world/level/dimension/DimensionIdType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
