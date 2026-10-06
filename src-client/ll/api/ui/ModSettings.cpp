@@ -42,7 +42,7 @@
 #include "mc/locale/I18n.h"
 #include "mc/options/option_types/BoolOption.h"
 #include "mc/options/option_types/EnumOption.h"
-#include "mc/options/option_types/InputModeFloatOption.h"
+#include "mc/options/option_types/FloatOption.h"
 #include "mc/options/option_types/IntOption.h"
 #include "mc/options/option_types/Option.h"
 #include "mc/options/option_types/OptionOwnerType.h"
@@ -88,13 +88,13 @@ struct Entry {
     std::string               buttonLabel;
     std::function<void()>     onClick;
 
-    int                        minInt     = 0;
-    int                        maxInt     = 0;
-    int                        intStep    = 1;
+    int                        minInt = 0;
+    int                        maxInt = 0;
+    std::optional<int>         intStep;
     float                      floatValue = 0;
     float                      minFloat   = 0;
     float                      maxFloat   = 0;
-    float                      stepFloat  = 0;
+    std::optional<float>       stepFloat;
     std::function<void(float)> onFloatSlider;
 
     std::string                             stringValue;
@@ -526,17 +526,18 @@ private:
                 );
                 break;
             case Entry::Type::FloatSlider: {
-                auto option = std::make_unique<::InputModeFloatOption>(
-                    ::OptionID{id},
-                    ::OptionOwnerType::User,
-                    ::OptionResetFlags::None,
-                    entry.displayName,
-                    entrySaveTag(page.modName, entry.key),
-                    entry.floatValue,
-                    entry.minFloat,
-                    entry.maxFloat
+                options._registerOption(
+                    std::make_unique<::FloatOption>(
+                        ::OptionID{id},
+                        ::OptionOwnerType::User,
+                        ::OptionResetFlags::None,
+                        entry.displayName,
+                        entrySaveTag(page.modName, entry.key),
+                        entry.floatValue,
+                        entry.minFloat,
+                        entry.maxFloat
+                    )
                 );
-                options._registerOption(std::move(option));
                 break;
             }
             default:
@@ -555,25 +556,15 @@ private:
                 static_cast<::IntOption*>(*option)->set(entry.intValue, false);
                 break;
             case Entry::Type::FloatSlider:
-                static_cast<::InputModeFloatOption*>(*option)->set(::InputMode::Mouse, entry.floatValue, false);
+                static_cast<::FloatOption*>(*option)->mValue = entry.floatValue;
                 break;
             default:
                 break;
             }
             auto& slot = page.subscriptions.emplace_back();
-            if (entry.type == Entry::Type::FloatSlider) {
-                slot = (*option)->mImpl.get()->mInputModeChangedPublisher.get().connect(
-                    [pagePtr = &page, key = entry.key](::Option const& opt, ::InputMode) {
-                        getInstance().onOptionChanged(*pagePtr, key, opt);
-                    },
-                    ::Bedrock::PubSub::ConnectPosition::AtBack,
-                    nullptr
-                );
-            } else {
-                slot = (*option)->registerObserver([pagePtr = &page, key = entry.key](::Option const& opt) {
-                    getInstance().onOptionChanged(*pagePtr, key, opt);
-                });
-            }
+            slot       = (*option)->registerObserver([pagePtr = &page, key = entry.key](::Option const& opt) {
+                getInstance().onOptionChanged(*pagePtr, key, opt);
+            });
         }
     }
 
@@ -655,10 +646,7 @@ private:
                     notify = [cb = entry.onDropdown, value] { cb(value); };
                 }
             } else if (entry.type == Entry::Type::FloatSlider) {
-                float value =
-                    static_cast<::InputModeFloatOption const&>(option).mValues.get().contains(::InputMode::Mouse)
-                        ? static_cast<::InputModeFloatOption const&>(option).mValues.get().at(::InputMode::Mouse)
-                        : 0.0f;
+                float value = static_cast<::FloatOption const&>(option).mValue;
                 if (value == entry.floatValue) {
                     return;
                 }
@@ -751,6 +739,29 @@ private:
                 );
             }
             break;
+        case Entry::Type::FloatSlider:
+            if (entry.optionId >= 0) {
+                result = Settings::buildComponent<Settings::NumberComponent<float>>(
+                    id,
+                    entry.displayName,
+                    entry.description,
+                    [&](Settings::Builder<Settings::NumberComponent<float>>& builder) {
+                        auto provider = Settings::DataProvider::createNumberDataProvider<float>(
+                            ::OptionID{entry.optionId},
+                            client->getOptions(),
+                            entry.floatValue
+                        );
+                        if (provider.has_value() && *provider) {
+                            builder.mDataProvider = std::move(*provider);
+                        } else {
+                            getLogger().warn("ModSettings: no number provider for '{}'", id);
+                        }
+                        builder.mScaleFactor = 1.0f;
+                        builder.mStep.get()  = entry.stepFloat;
+                    }
+                );
+            }
+            break;
         default:
             break;
         }
@@ -785,20 +796,6 @@ private:
                 return false;
             }
             Settings::FactoryUtil::addOption(group, id, ::OptionID{entry.optionId}, client->getOptions());
-            break;
-        case Entry::Type::FloatSlider:
-            if (entry.optionId < 0) {
-                return false;
-            }
-            Settings::FactoryUtil::addInputFloatComponent(
-                group,
-                id,
-                ::OptionID{entry.optionId},
-                ::InputMode::Mouse,
-                client->getOptions(),
-                1.0f,
-                std::nullopt
-            );
             break;
         default:
             if (entry.type == Entry::Type::Keybind) {
@@ -1342,7 +1339,7 @@ ModSettings& ModSettings::addIntSlider(
     std::string                displayName,
     int                        minValue,
     int                        maxValue,
-    int                        step,
+    std::optional<int>         step,
     int                        defaultValue,
     std::function<void(int)>   onChange,
     std::optional<std::string> description
@@ -1372,7 +1369,7 @@ ModSettings& ModSettings::addFloatSlider(
     std::string                displayName,
     float                      minValue,
     float                      maxValue,
-    float                      step,
+    std::optional<float>       step,
     float                      defaultValue,
     std::function<void(float)> onChange,
     std::optional<std::string> description

@@ -26,8 +26,8 @@ Mod 设置模块在原版设置界面中为每个 mod 提供专属设置页。�
 | `addDropdown(key, displayName, valueNames, defaultIndex, onChange, description)` | 字符串列表下拉框 | `int` 下标 |
 | `addButton(key, displayName, buttonLabel, onClick, description)` | 操作按钮 | — |
 | `addText(key, displayName, description)` | 静态文本行 | — |
-| `addIntSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | 带步进刻度的整数滑条 | `int` |
-| `addFloatSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | 连续滑条 | `float` |
+| `addIntSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | 整数滑条；`step` 显示刻度并按步长吸附，`nullopt` 两者皆无 | `int` |
+| `addFloatSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | 浮点滑条；设置 `step` 按步长吸附，`nullopt` 连续无级 | `float` |
 | `addTextInput(key, displayName, defaultValue, placeholder, maxLength, onChange, description)` | OreUI 文本输入框 | `std::string` |
 | `addBanner(key, displayName, description)` | 横幅块（`displayName` 为标题，`description` 为正文） | — |
 | `addKeybind(key, displayName, action, defaultKey, onChange, description, showReset)` | 可改绑的键位条目 | `int` 键码 |

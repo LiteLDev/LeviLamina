@@ -5,10 +5,10 @@
 #include <vector>
 
 #include "ll/api/memory/Hook.h"
-#include "ll/api/memory/Signature.h"
 #include "ll/api/service/TargetedBedrock.h"
 #include "ll/core/LeviLamina.h"
 
+#include "mc/ScreenSetupCleanupHelper.h"
 #include "mc/client/game/ClientInstance.h"
 #include "mc/client/game/IClientInstance.h"
 #include "mc/client/gui/DirtyFlag.h"
@@ -45,25 +45,6 @@ namespace ll::ui {
 
 namespace {
 
-// ScreenSetupCleanupHelper::setupForStandardUIDrawing has no exported symbol; located by a byte
-// signature (1.26.51). A failed scan is safe: the scene keeps the previous camera state.
-void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance& client) {
-    using Fn     = void (*)(::ScreenContext&, ::IClientInstance&);
-    static Fn fn = []() -> Fn {
-        using namespace ll::literals;
-        return static_cast<Fn>(
-            ("56 48 83 EC 40 0F 29 7C 24 30 0F 29 74 24 20 48 8B 81 A0 00 00 00 48 85 C0 74 0D F0 FF 40 08 48 8B B1 A0 "
-             "00 00 00"_sig)
-                .resolve(true)
-        );
-    }();
-    if (fn != nullptr) {
-        fn(screenContext, client);
-    } else {
-        getLogger().warn("JsonScreen: setupForStandardUIDrawing signature not found; UI camera setup will be skipped");
-    }
-}
-
 class JsonScreenSetupCleanupStrategy : public ::AbstractScreenSetupCleanupStrategy {
     ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> mClient;
 
@@ -75,7 +56,7 @@ public:
 
     void setupScreen(::ScreenContext& screenContext) override {
         if (auto* client = tryGetClient()) {
-            setupForStandardUIDrawing(screenContext, *client);
+            ::ScreenSetupCleanupHelper::setupForStandardUIDrawing(screenContext, *client);
         }
     }
 

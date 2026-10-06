@@ -55,7 +55,7 @@ public:
         std::string                displayName,
         int                        minValue,
         int                        maxValue,
-        int                        step,
+        std::optional<int>         step,
         int                        defaultValue,
         std::function<void(int)>   onChange    = {},
         std::optional<std::string> description = std::nullopt
@@ -66,7 +66,7 @@ public:
         std::string                displayName,
         float                      minValue,
         float                      maxValue,
-        float                      step,
+        std::optional<float>       step,
         float                      defaultValue,
         std::function<void(float)> onChange    = {},
         std::optional<std::string> description = std::nullopt

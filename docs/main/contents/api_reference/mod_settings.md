@@ -26,8 +26,8 @@ The Mod Settings module adds a per-mod settings page to the game's own settings 
 | `addDropdown(key, displayName, valueNames, defaultIndex, onChange, description)` | Dropdown from a string list | `int` index |
 | `addButton(key, displayName, buttonLabel, onClick, description)` | Action button | — |
 | `addText(key, displayName, description)` | Static text row | — |
-| `addIntSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | Integer slider with step ticks | `int` |
-| `addFloatSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | Continuous slider | `float` |
+| `addIntSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | Integer slider; `step` enables tick marks and snapping, `nullopt` shows neither | `int` |
+| `addFloatSlider(key, displayName, minValue, maxValue, step, defaultValue, onChange, description)` | Float slider; snaps to `step` increments when set, continuous with `nullopt` | `float` |
 | `addTextInput(key, displayName, defaultValue, placeholder, maxLength, onChange, description)` | OreUI text field | `std::string` |
 | `addBanner(key, displayName, description)` | Banner block (`displayName` is the title, `description` the body) | — |
 | `addKeybind(key, displayName, action, defaultKey, onChange, description, showReset)` | Rebindable key entry | `int` key code |

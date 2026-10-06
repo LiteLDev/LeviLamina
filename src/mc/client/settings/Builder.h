@@ -68,6 +68,25 @@ public:
 };
 
 template <>
+class Builder<::Settings::NumberComponent<float>>
+: public ::Settings::BaseBuilder<Builder<::Settings::NumberComponent<float>>, ::Settings::NumberComponent<float>> {
+public:
+    // member variables
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Settings::INumberDataProvider<float>>> mDataProvider;
+    ::ll::TypedStorage<4, 4, float>                                                     mScaleFactor;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                                    mStep;
+    ::ll::TypedStorage<8, 64, ::std::function<::std::optional<::std::string>(float, float, float)>>
+                                                                                  mValueTextOverrideProvider;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(float, float)>>> mChangeListeners;
+
+    LLAPI Builder(::std::string_view id, ::std::string_view name);
+
+    MCAPI ::std::optional<::std::unique_ptr<ComponentVariant>> build();
+
+    MCAPI ~Builder();
+};
+
+template <>
 class Builder<::Settings::BannerComponent>
 : public ::Settings::BaseBuilder<Builder<::Settings::BannerComponent>, ::Settings::BannerComponent> {
 public:
@@ -88,6 +107,8 @@ static_assert(sizeof(::Settings::Builder<::Settings::StringComponent>) == 0x218)
 static_assert(offsetof(::Settings::Builder<::Settings::StringComponent>, mMaxLength) == 0x1A8);
 static_assert(sizeof(::Settings::Builder<::Settings::NumberComponent<int>>) == 0x1E8);
 static_assert(offsetof(::Settings::Builder<::Settings::NumberComponent<int>>, mStep) == 0x184);
+static_assert(sizeof(::Settings::Builder<::Settings::NumberComponent<float>>) == 0x1E8);
+static_assert(offsetof(::Settings::Builder<::Settings::NumberComponent<float>>, mStep) == 0x184);
 static_assert(sizeof(::Settings::Builder<::Settings::BannerComponent>) == 0x278);
 static_assert(offsetof(::Settings::Builder<::Settings::BannerComponent>, mConfirmationRequest) == 0x1F0);
 
