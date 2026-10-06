@@ -118,7 +118,8 @@ Expected<CompoundTagVariant> checkRange(ldouble& num) {
         return R{(T)num};
     } else if constexpr (!std::is_floating_point_v<T>) {
         using unsigned_t = std::make_unsigned_t<T>;
-        if (std::numeric_limits<unsigned_t>::lowest() <= num && num <= static_cast<ldouble>(std::numeric_limits<unsigned_t>::max())) {
+        if (std::numeric_limits<unsigned_t>::lowest() <= num
+            && num <= static_cast<ldouble>(std::numeric_limits<unsigned_t>::max())) {
             return R{(unsigned_t)num};
         }
     }

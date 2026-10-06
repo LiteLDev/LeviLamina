@@ -20,9 +20,7 @@ inline bool emitterRegistration = [] {
 } // namespace detail
 
 template <auto F, std::derived_from<Event>... Ts>
-class Emitter
-: public EmitterBase,
-  private detail::StaticRegistrationAnchor<detail::emitterRegistration<F, Ts...>> {
+class Emitter : public EmitterBase, private detail::StaticRegistrationAnchor<detail::emitterRegistration<F, Ts...>> {
     static_assert((std::is_final_v<Ts> && ...), "Only final classes can be emitted");
 
 protected:

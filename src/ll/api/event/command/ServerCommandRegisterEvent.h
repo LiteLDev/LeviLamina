@@ -5,7 +5,7 @@
 namespace ll::event::inline command {
 
 class ServerCommandRegisterEvent final : public CommandRegisterEvent {
-    bool             mClientHostedServer;
+    bool mClientHostedServer;
 
 public:
     constexpr explicit ServerCommandRegisterEvent(CommandRegistry& commandRegistry, bool clientHostedServer)
@@ -14,7 +14,7 @@ public:
 
     LLAPI void serialize(CompoundTag&) const override;
 
-    LLNDAPI bool             isClientHostedServer() const;
+    LLNDAPI bool isClientHostedServer() const;
 };
 
 } // namespace ll::event::inline command

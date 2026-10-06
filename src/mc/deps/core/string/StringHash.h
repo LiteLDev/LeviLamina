@@ -15,5 +15,5 @@ public:
         }
     }
     [[nodiscard]] uint hash() const { return mHash; }
-    operator uint() const { return mHash; }
+                       operator uint() const { return mHash; }
 };

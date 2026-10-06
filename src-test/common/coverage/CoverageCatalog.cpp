@@ -199,9 +199,8 @@ bool CoverageCatalog::buildForModule(ModuleInfo mod) {
     exports = exportEnumerator->collectExportedAddresses(discovered);
 
     auto functionRecords = symbolProvider->enumerateFunctions(discovered);
-    auto hasLineInfo     = std::ranges::any_of(functionRecords, [](SymbolRecord const& record) {
-        return record.hasLineInfo;
-    });
+    auto hasLineInfo =
+        std::ranges::any_of(functionRecords, [](SymbolRecord const& record) { return record.hasLineInfo; });
     funcs.reserve(functionRecords.size());
     for (auto& record : functionRecords) {
         FunctionInfo info;
@@ -409,8 +408,8 @@ nlohmann::json CoverageCatalog::reportToJson() const {
 }
 
 void CoverageCatalog::dumpStats(ll::io::Logger& logger) const {
-    size_t                          totalModules = mModules.size();
-    std::vector<ModuleInfo const*>  pdbMissingModules;
+    size_t                         totalModules = mModules.size();
+    std::vector<ModuleInfo const*> pdbMissingModules;
     for (auto& module : mModules)
         if (!module.info.hasPdb) pdbMissingModules.push_back(&module.info);
 

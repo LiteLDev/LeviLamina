@@ -5,13 +5,13 @@
 To start the server in a Linux container, run the following command:
 
 ```sh
-docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
+docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
 ```
 
 Or, if you want to use a Windows container, run the following command:
 
 ```sh
-docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
+docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
 ```
 
 We also provide Docker Compose files for both Linux and Windows containers

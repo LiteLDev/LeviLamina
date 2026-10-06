@@ -7,9 +7,10 @@ namespace NetherNet::P2P {
 struct NetworkID {
 public:
     // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64> mValue;
-    // NOLINTEND
+    uint64 mValue;
+
+public:
+    std::strong_ordering operator<=>(NetworkID const& other) const = default;
 };
 
 } // namespace NetherNet::P2P

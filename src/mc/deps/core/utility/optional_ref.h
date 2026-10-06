@@ -48,7 +48,7 @@ public:
 
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
-    [[nodiscard]] constexpr optional_ref(const std::optional<U>& o) noexcept : mPtr(o ? &*o : nullptr) {}
+    [[nodiscard]] constexpr optional_ref(std::optional<U> const& o) noexcept : mPtr(o ? &*o : nullptr) {}
 
     template <typename U>
         requires(std::is_convertible_v<U*, T*>)
@@ -161,13 +161,13 @@ public:
 };
 // NOLINTEND
 template <typename T>
-optional_ref(T const&) -> optional_ref<const T>;
+optional_ref(T const&) -> optional_ref<T const>;
 
 template <typename T>
 optional_ref(T&) -> optional_ref<T>;
 
 template <typename T>
-optional_ref(std::optional<T> const&) -> optional_ref<const T>;
+optional_ref(std::optional<T> const&) -> optional_ref<T const>;
 
 template <typename T>
 optional_ref(std::optional<T>&) -> optional_ref<T>;

@@ -50,7 +50,6 @@
 #include "mc/world/events/PlayerUseNameTagEvent.h"
 
 
-
 template <typename Return>
 struct PlayerGameplayEvent;
 

@@ -5,21 +5,21 @@
 要在 Linux 容器中启动服务器，请运行第一条命令；如果您的服务器在中国大陆，请运行第二条命令以更快快速地安装：
 
 ```sh
-docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
+docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
 ```
 
 ```sh
-docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
+docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
 ```
 
 或者，如果您想使用 Windows 容器，请运行第一条命令；如果您的服务器在中国大陆，请运行第二条命令以更快快速地安装：
 
 ```sh
-docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
+docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
 ```
 
 ```sh
-docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
+docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
 ```
 
 我们还提供了适用于 Linux 和 Windows 容器的 Docker Compose

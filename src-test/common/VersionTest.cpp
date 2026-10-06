@@ -101,7 +101,7 @@ TEST(VersionTest, SeparatesPrecedenceFromIdentity) {
 TEST(VersionTest, SerializesAndDeserializesWithBuildMetadata) {
     Version version{"1.2.3-alpha.1+build.5-win"};
 
-    auto serialized = serialize<nlohmann::json>(version);
+    auto serialized = reflection::serialize<nlohmann::json>(version);
     ASSERT_TRUE(serialized);
     auto deserialized = reflection::deserialize_to<Version>(*serialized);
     ASSERT_TRUE(deserialized);
@@ -213,7 +213,7 @@ TEST(VersionRequirementTest, NormalizesEqualityHashAndSerialization) {
     EXPECT_EQ(first, second);
     EXPECT_EQ(std::hash<VersionRequirement>{}(first), std::hash<VersionRequirement>{}(second));
 
-    auto serialized = serialize<nlohmann::json>(first);
+    auto serialized = reflection::serialize<nlohmann::json>(first);
     ASSERT_TRUE(serialized);
     auto deserialized = reflection::deserialize_to<VersionRequirement>(*serialized);
     ASSERT_TRUE(deserialized);

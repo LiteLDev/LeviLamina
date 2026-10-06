@@ -124,12 +124,12 @@ TEST(EventTest, EventBusPublishesAndRemovesListeners) {
     EXPECT_TRUE(bus.removeListener(dynamicListener, ll::event::getEventId<TestEvent1>));
 
     using namespace ll::event;
-    for (auto [modName, id] : bus.events()) {
+    for (auto id : bus.events(ll::getSelfModIns()->getName())) {
         if (!id.name.ends_with("LevelTickEvent") && !id.name.ends_with("ChangedEvent")
             && !id.name.contains("ConsoleOut"))
             bus.addListener(
-                DynamicListener::create([modName](CompoundTag& nbt) {
-                    ll::getLogger().debug("event from {}, {}", modName, nbt.toSnbt(SnbtFormat::PrettyChatPrint));
+                DynamicListener::create([](CompoundTag& nbt) {
+                    ll::getLogger().debug(nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
                 }),
                 id
             );

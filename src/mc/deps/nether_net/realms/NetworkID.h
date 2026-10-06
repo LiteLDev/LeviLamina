@@ -10,9 +10,10 @@ namespace NetherNet::Realms {
 struct NetworkID {
 public:
     // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mValue;
-    // NOLINTEND
+    ::mce::UUID mValue;
+
+public:
+    std::strong_ordering operator<=>(NetworkID const& other) const = default;
 };
 
 } // namespace NetherNet::Realms

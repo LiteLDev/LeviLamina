@@ -10,7 +10,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                        mShouldAllowKnockback;
     // NOLINTEND
 
-    //TODO: check
+    // TODO: check
     operator bool() const {
         if (std::holds_alternative<bool>(*mHurtOrDamage)) {
             return std::get<bool>(*mHurtOrDamage);

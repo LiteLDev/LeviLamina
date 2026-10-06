@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BiomeIdType;
+// clang-format on
+
 class BlendingBiomeProvider2D {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk97c99f;
-    ::ll::UntypedStorage<1, 1> mUnk9de33d;
+    ::ll::TypedStorage<8, 8, ::std::array<::BiomeIdType, 256>&> mBiomes;
+    ::ll::TypedStorage<1, 1, uchar>                             mSubChunkBlockIndex;
     // NOLINTEND
 
 public:

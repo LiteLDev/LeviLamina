@@ -23,8 +23,8 @@ TEST(VTableTest, ReturnsNoIndexForNullOrUnsupportedMemberFunctions) {
 
 TEST(VTableTest, ExtractsClangClX64VtableIndexFromVirtualThunk) {
     std::array<std::uint8_t, 64> thunk{};
-    thunk[0] = 0xE9; // Jump to the virtual-call thunk at offset 16.
-    thunk[1] = 0x0B;
+    thunk[0]  = 0xE9; // Jump to the virtual-call thunk at offset 16.
+    thunk[1]  = 0x0B;
     thunk[16] = 0x48;
     thunk[17] = 0x8B;
     thunk[18] = 0x01;

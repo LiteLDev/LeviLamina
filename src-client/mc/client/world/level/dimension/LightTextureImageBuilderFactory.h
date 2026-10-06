@@ -15,12 +15,12 @@ class Scheduler;
 namespace LightTextureImageBuilderFactory {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerCustomDimensionLightImageBuilder(
+MCAPI void registerCustomDimensionLightImageBuilder(
     ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>& builderFactory,
     ::std::string_view                                                 dimensionName
 );
 
-MCNAPI void
+MCAPI void
 registerLightImageBuilders(::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>& builderFactory);
 // NOLINTEND
 

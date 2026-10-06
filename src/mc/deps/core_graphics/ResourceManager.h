@@ -17,9 +17,9 @@ protected:
     Container<ResourceLocation, ResourceType> mContainer;
 
 public:
-    ResourceType& operator[](const ResourceLocation& loc) { return mContainer[loc]; }
+    ResourceType& operator[](ResourceLocation const& loc) { return mContainer[loc]; }
 
-    ResourceType& addResource(const ResourceLocation& loc, ResourceType res) {
+    ResourceType& addResource(ResourceLocation const& loc, ResourceType res) {
         auto [it, inserted] = mContainer.try_emplace(loc, std::move(res));
         if (!inserted) it->second = std::move(res);
         return it->second;
@@ -27,15 +27,15 @@ public:
 
     void clear() { mContainer.clear(); }
 
-    ResourceHandle getResource(const ResourceLocation& loc) const {
+    ResourceHandle getResource(ResourceLocation const& loc) const {
         auto it = mContainer.find(loc);
         if (it == mContainer.end()) return nullptr;
         return it->second;
     }
 
-    bool removeResource(const ResourceLocation& loc) { return mContainer.erase(loc) > 0; }
+    bool removeResource(ResourceLocation const& loc) { return mContainer.erase(loc) > 0; }
 
-    bool extract(const ResourceLocation& loc, ResourceType& out) {
+    bool extract(ResourceLocation const& loc, ResourceType& out) {
         auto it = mContainer.find(loc);
         if (it == mContainer.end()) return false;
         out = std::move(it->second);

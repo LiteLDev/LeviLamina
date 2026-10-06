@@ -74,7 +74,7 @@ void* AnyExceptionRef::typeCast(std::type_info const& typeInfo) const {
 struct u8system_category : public std::_System_error_category {
     constexpr u8system_category() noexcept : _System_error_category() {}
     [[nodiscard]] std::string message(int errCode) const override {
-        const std::_System_error_message msg(static_cast<ulong>(errCode));
+        std::_System_error_message const msg(static_cast<ulong>(errCode));
         if (msg._Length) {
             std::string res{string_utils::str2str({msg._Str, msg._Length})};
             if (res.ends_with('\n')) {
@@ -214,7 +214,7 @@ static std::exception_ptr getNested(T const& e) {
         && (!std::is_base_of_v<std::nested_exception, T> || std::is_convertible_v<T*, std::nested_exception*>);
 
     if constexpr (can_use_dynamic_cast) {
-        const auto n = dynamic_cast<std::nested_exception const*>(std::addressof(e));
+        auto const n = dynamic_cast<std::nested_exception const*>(std::addressof(e));
         if (n) {
             return n->nested_ptr();
         }

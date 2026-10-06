@@ -27,7 +27,7 @@ protected:
         if (auto* res = std::any_cast<std::reference_wrapper<Wrap>>(&any)) {
             return static_cast<Ret>(res->get());
         }
-        return static_cast<Ret>(std::any_cast<std::add_lvalue_reference_t<std::decay_t<Arg>>>(any));
+        return static_cast<Ret>(std::any_cast<std::add_lvalue_reference_t<Decay>>(any));
     }
 
 public:
@@ -139,8 +139,9 @@ public:
     template <class Fn, class Ret, class... Args>
         requires(std::invocable<Fn, Args...>)
     AnyFunction(std::in_place_type_t<Ret(Args...)>, Fn&& fn) {
-        if constexpr (std::is_pointer_v<Fn> || traits::is_specialization_of_v<Fn, std::function>
-                      || std::is_member_pointer_v<Fn>) {
+        if constexpr (
+            std::is_pointer_v<Fn> || traits::is_specialization_of_v<Fn, std::function> || std::is_member_pointer_v<Fn>
+        ) {
             if (!fn) {
                 return;
             }

@@ -1,4 +1,4 @@
-#include "ll/core/tweak/ConsoleInput.h"
+#include "ll/core/tweak/PreserveInputLine.h"
 
 #include "ll/api/base/ScopedValue.h"
 #include "ll/api/event/EventBus.h"
@@ -7,7 +7,7 @@
 
 namespace ll {
 using namespace event;
-struct ConsoleInput::Impl {
+struct PreserveInputLine::Impl {
     ll::event::ListenerPtr mOutputtingEvent;
     ll::event::ListenerPtr mOutputtedEvent;
     std::wstring           mInput;
@@ -56,13 +56,13 @@ struct ConsoleInput::Impl {
         bus.removeListener(mOutputtedEvent);
     }
 };
-void ConsoleInput::call(bool enabled) {
+void PreserveInputLine::call(bool enabled) {
     if (enabled) {
         if (!impl) impl = std::make_unique<Impl>();
     } else {
         impl.reset();
     }
 }
-ConsoleInput::ConsoleInput()  = default;
-ConsoleInput::~ConsoleInput() = default;
+PreserveInputLine::PreserveInputLine()  = default;
+PreserveInputLine::~PreserveInputLine() = default;
 } // namespace ll

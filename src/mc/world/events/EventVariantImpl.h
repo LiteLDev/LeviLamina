@@ -11,7 +11,7 @@ public:
     template <typename T>
     EventVariantImpl(std::reference_wrapper<T> event) : variant_{std::in_place_type<Details::ValueOrRef<T>>, event} {}
 
-    EventVariantImpl(const EventVariantImpl& other)
+    EventVariantImpl(EventVariantImpl const& other)
     : variant_(const_cast<EventVariantImpl&>(other).visit([](auto&& arg) -> variant_t {
           using T = std::remove_reference_t<decltype(arg.value())>;
           if constexpr (std::is_const_v<T>) {

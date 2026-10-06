@@ -6,9 +6,10 @@
 #include "ll/api/reflection/Dispatcher.h"
 #include "ll/core/Statistics.h"
 #include "ll/core/protocol/ProtocolConfig.h"
-#include "ll/core/tweak/ConsoleInput.h"
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
+#include "ll/core/tweak/PreserveInputLine.h"
 #include "ll/core/tweak/SimpleServerLogger.h"
+#include "mc/deps/nether_net/StunRelayServer.h"
 
 namespace ll {
 struct TargetedConfig {
@@ -17,7 +18,13 @@ struct TargetedConfig {
     reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
     ll::reflection::Dispatcher<bool, ForceEnableCheatCommands>           forceEnableCheatCommands = true;
     bool                                                                 checkRunningBDS          = true;
-    ll::reflection::Dispatcher<bool, ConsoleInput>                       consoleInput             = true;
+    ll::reflection::Dispatcher<bool, PreserveInputLine>                  preserveInputLine        = true;
+    struct {
+        bool                     enable     = true;
+        bool                     singlePort = true;
+        std::string              serverIP;
+        std::vector<std::string> stunServers = {"stun:stun.l.google.com:19302", "stun:stun.miwifi.com:3478"};
+    } netherNetPatch;
     struct {
         bool alwaysLaunch = false;
     } playerInfo{};

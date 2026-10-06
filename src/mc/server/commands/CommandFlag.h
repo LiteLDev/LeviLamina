@@ -27,13 +27,13 @@ enum class CommandFlagValue : ushort {
     Removed                      = Hidden | HiddenFromAutomationOrigin,
 };
 
-[[nodiscard]] constexpr CommandFlagValue operator|(const CommandFlagValue l, const CommandFlagValue r) noexcept {
+[[nodiscard]] constexpr CommandFlagValue operator|(CommandFlagValue const l, CommandFlagValue const r) noexcept {
     return static_cast<CommandFlagValue>(
         static_cast<std::underlying_type_t<CommandFlagValue>>(l)
         | static_cast<std::underlying_type_t<CommandFlagValue>>(r)
     );
 }
-[[nodiscard]] constexpr CommandFlagValue operator&(const CommandFlagValue l, const CommandFlagValue r) noexcept {
+[[nodiscard]] constexpr CommandFlagValue operator&(CommandFlagValue const l, CommandFlagValue const r) noexcept {
     return static_cast<CommandFlagValue>(
         static_cast<std::underlying_type_t<CommandFlagValue>>(l)
         & static_cast<std::underlying_type_t<CommandFlagValue>>(r)

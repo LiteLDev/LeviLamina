@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/File.h"
+#include "mc/deps/core/file/PathBuffer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
@@ -10,19 +14,21 @@ namespace RakNet { class BitStream; }
 
 class RegionFile {
 public:
+    // RegionFile inner types define
+    using FreeSectorMap = ::std::map<int, bool>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>   mUnkca2fa5;
-    ::ll::UntypedStorage<8, 32>   mUnk99fc85;
-    ::ll::UntypedStorage<4, 4096> mUnkc2201d;
-    ::ll::UntypedStorage<4, 4096> mUnkc111dd;
-    ::ll::UntypedStorage<8, 16>   mUnke50b19;
+    ::ll::TypedStorage<8, 16, ::Core::File>                      mFile;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mFileName;
+    ::ll::TypedStorage<4, 4096, ::std::array<int, 1024>>         mOffsets;
+    ::ll::TypedStorage<4, 4096, ::std::array<int, 1024>>         mEmptyChunk;
+    ::ll::TypedStorage<8, 16, ::std::map<int, bool>>             mSectorFree;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    RegionFile& operator=(RegionFile const&);
-    RegionFile(RegionFile const&);
     RegionFile();
 
 public:
@@ -34,16 +40,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RegionFile(::Core::Path const& basePath);
+    MCAPI explicit RegionFile(::Core::Path const& basePath);
 
-    MCNAPI bool open();
+    MCAPI bool open();
 
-    MCNAPI bool readChunk(int x, int z, ::RakNet::BitStream** destChunkData);
+    MCAPI bool readChunk(int x, int z, ::RakNet::BitStream** destChunkData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::Path const& basePath);
+    MCAPI void* $ctor(::Core::Path const& basePath);
     // NOLINTEND
 };

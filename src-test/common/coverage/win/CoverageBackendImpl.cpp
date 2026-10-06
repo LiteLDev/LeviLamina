@@ -26,8 +26,9 @@ namespace {
 
 void configureSymbols() noexcept {
     auto options = SymGetOptions();
-    options &= ~(SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
-               | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH);
+    options &=
+        ~(SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
+          | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH);
     options |= SYMOPT_CASE_INSENSITIVE | SYMOPT_UNDNAME | SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES
              | SYMOPT_OMAP_FIND_NEAREST | SYMOPT_EXACT_SYMBOLS | SYMOPT_FAIL_CRITICAL_ERRORS | SYMOPT_AUTO_PUBLICS
              | SYMOPT_NO_PROMPTS;
@@ -304,12 +305,12 @@ void AddressSampler::installBreakpoints() {
             if (!VirtualQuery(reinterpret_cast<void*>(addr), &mbi, sizeof(mbi))) continue;
             uintptr_t pageBase = reinterpret_cast<uintptr_t>(mbi.BaseAddress);
             size_t    pageSize = mbi.RegionSize;
-            auto       byte     = *reinterpret_cast<uint8_t*>(addr);
+            auto      byte     = *reinterpret_cast<uint8_t*>(addr);
             if (byte == 0xCC) {
                 continue;
             }
 
-            bool      already  = false;
+            bool already = false;
             for (auto& p : mr.modifiedPages) {
                 if (p.base == pageBase) {
                     already = true;

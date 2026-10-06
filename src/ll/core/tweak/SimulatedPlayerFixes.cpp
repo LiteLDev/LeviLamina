@@ -3,10 +3,11 @@
 #include "ll/api/base/ScopedValue.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/memory/Memory.h"
+#include "mc/deps/script_core/binding_type/scripting/ClassBinding.h"
 #include "mc/gametest/MinecraftGameTestHelper.h"
 #include "mc/gametest/framework/GameTestError.h"
-#include "mc/scripting/modules/minecraft/Listener.h"
-#include "mc/scripting/modules/minecraft/events/ScriptActorGlobalEventListener.h"
+#include "mc/scripting/ScriptPluginManager.h"
+#include "mc/scripting/modules/gametest/player/ScriptSimulatedPlayer.h"
 #include "mc/server/ServerPlayer.h"
 #include "mc/server/SimulatedPlayer.h"
 #include "mc/world/actor/Actor.h"
@@ -179,31 +180,27 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 LL_TYPE_INSTANCE_HOOK(
-    SimulatedPlayerScriptActorCreatedHook,
+    ScriptSimulatedPlayerMetaHook,
     HookPriority::Highest,
-    ScriptModuleMinecraft::ScriptActorGlobalEventListener,
-    &ScriptModuleMinecraft::ScriptActorGlobalEventListener::$onActorCreated,
-    EventResult,
-    Actor&                    actor,
-    ActorInitializationMethod initializationMethod
+    ScriptPluginManager,
+    &ScriptPluginManager::_createPluginContext,
+    void,
+    ::ScriptPlugin&       plugin,
+    ::ScriptPluginResult& pluginResult
 ) {
-    if (!actor.isSimulatedPlayer()) {
-        return origin(actor, initializationMethod);
-    }
-    if (!isSpawningGameTestSimulatedPlayer) {
-        return EventResult::KeepGoing;
-    }
-
-    // Do not let callbacks triggered by the GameTest actor creation inherit its provenance.
-    ScopedValue scope{isSpawningGameTestSimulatedPlayer, false};
-    return origin(actor, initializationMethod);
+    ScriptModuleGameTest::ScriptSimulatedPlayer::bind();
+    origin(plugin, pluginResult);
 }
 
+
 void enable(bool enableChunkLoading) {
-    static memory::HookRegistrar<GameTestSimulatedPlayerSpawnHook> gameTestSimulatedPlayerRegistrar;
+    static memory::HookRegistrar<ScriptSimulatedPlayerMetaHook> gameTestSimulatedPlayerRegistrar;
 
     if (enableChunkLoading) {
-        static memory::HookRegistrar<SimulatedPlayerPrepareRegionHook, SimulatedPlayerCreateChunkSourceHook>
+        static memory::HookRegistrar<
+            SimulatedPlayerPrepareRegionHook,
+            SimulatedPlayerCreateChunkSourceHook,
+            GameTestSimulatedPlayerSpawnHook>
             simulatedPlayerChunkLoadingRegistrar;
     }
 }

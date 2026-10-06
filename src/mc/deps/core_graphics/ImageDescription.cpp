@@ -28,7 +28,7 @@ ImageDescription::ImageDescription(
   mImageType(type),
   mArraySizeOrDepth(arraySizeOrDepth) {}
 
-ImageDescription::ImageDescription(const mce::Image& image) {
+ImageDescription::ImageDescription(mce::Image const& image) {
     mArraySizeOrDepth = 1;
     mWidth            = image.mWidth;
     mHeight           = image.mHeight;
@@ -129,7 +129,7 @@ uint32 ImageDescription::getArraySize() const {
     return (mImageType == ImageType::CubemapDeprecated) ? 6 : mArraySizeOrDepth;
 }
 
-bool ImageDescription::operator!=(const ImageDescription& rhs) const {
+bool ImageDescription::operator!=(ImageDescription const& rhs) const {
     return mWidth != rhs.mWidth || mHeight != rhs.mHeight || mTextureFormat != rhs.mTextureFormat
         || mColorSpace != rhs.mColorSpace || mArraySizeOrDepth != rhs.mArraySizeOrDepth;
 }

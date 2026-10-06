@@ -30,29 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ClassBinding(::Scripting::ClassBinding&&);
+    MCAPI ClassBinding(::Scripting::ClassBinding&&);
 
-    MCNAPI ClassBinding(::Scripting::ClassBinding const&);
+    MCAPI ClassBinding(::Scripting::ClassBinding const&);
 
-    MCNAPI ::Scripting::ClassBinding& operator=(::Scripting::ClassBinding&&);
+    MCAPI ::Scripting::ClassBinding& operator=(::Scripting::ClassBinding&&);
 
-    MCNAPI ::Scripting::ClassBinding& operator=(::Scripting::ClassBinding const&);
+    MCAPI ::Scripting::ClassBinding& operator=(::Scripting::ClassBinding const&);
 
-    MCNAPI ~ClassBinding();
+    MCAPI ~ClassBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::ClassBinding&&);
+    MCAPI void* $ctor(::Scripting::ClassBinding&&);
 
-    MCNAPI void* $ctor(::Scripting::ClassBinding const&);
+    MCAPI void* $ctor(::Scripting::ClassBinding const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

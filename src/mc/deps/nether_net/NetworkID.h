@@ -16,6 +16,9 @@ namespace NetherNet {
 struct NetworkID
 : public ::std::variant<::std::monostate, ::NetherNet::P2P::NetworkID, ::NetherNet::Realms::NetworkID> {
 public:
+    std::strong_ordering operator<=>(NetworkID const& other) const = default;
+
+public:
     // prevent constructor by default
     NetworkID();
 

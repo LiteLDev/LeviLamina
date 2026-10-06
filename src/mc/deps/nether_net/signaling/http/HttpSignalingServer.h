@@ -5,37 +5,58 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/ISignalingInterface.h"
+#include "mc/deps/nether_net/signaling/MessageReceived.h"
 #include "mc/deps/nether_net/signaling/http/HttpServer.h"
+#include "mc/external/webrtc/scoped_refptr.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace NetherNet { struct HttpRequest; }
 namespace NetherNet { struct HttpResponse; }
 namespace NetherNet { struct ISignalingEventHandler; }
 namespace NetherNet { struct NetworkID; }
+namespace webrtc { class PendingTaskSafetyFlag; }
 // clang-format on
 
 namespace NetherNet {
 
 class HttpSignalingServer : public ::NetherNet::HttpServer, public ::NetherNet::ISignalingInterface {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnka951d0;
-    ::ll::UntypedStorage<8, 128> mUnkb54189;
-    ::ll::UntypedStorage<8, 64>  mUnk837d5d;
-    ::ll::UntypedStorage<8, 8>   mUnkaf0d99;
-    // NOLINTEND
+    // HttpSignalingServer inner types define
+    using PendingKey = ::std::pair<::NetherNet::NetworkID, ::std::string>;
+
+    using ResponsePromise = ::Bedrock::Threading::AsyncPromise<::Bedrock::Result<::NetherNet::HttpResponse>>;
+
+    using ResponseResult = ::Bedrock::Result<::NetherNet::HttpResponse>;
 
 public:
-    // prevent constructor by default
-    HttpSignalingServer& operator=(HttpSignalingServer const&);
-    HttpSignalingServer(HttpSignalingServer const&);
-    HttpSignalingServer();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::map<
+            ::std::pair<::NetherNet::NetworkID, ::std::string>,
+            ::Bedrock::Threading::AsyncPromise<::Bedrock::Result<::NetherNet::HttpResponse>>>>
+        mPendingJoinPromises;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::std::variant<::NetherNet::SignalingEvents::MessageReceived> const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+                                                                                               mEventDispatcher;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::Bedrock::Result<::std::string>()>> mGetServerInfo;
+    ::ll::TypedStorage<8, 8, ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>>         mSafetyFlag;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -55,12 +76,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    MCAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
     $SendSignal(::NetherNet::NetworkID, ::NetherNet::NetworkID to, ::std::string const& signal);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
+    MCAPI ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
     $onRequest(::NetherNet::HttpRequest request);
 
 

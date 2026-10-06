@@ -7,28 +7,20 @@ namespace NetherNet {
 struct StunRelayServer {
 public:
     // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk86c3e4;
-    ::ll::UntypedStorage<8, 32> mUnkf37c87;
-    ::ll::UntypedStorage<8, 32> mUnkc4c5ea;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StunRelayServer& operator=(StunRelayServer const&);
-    StunRelayServer(StunRelayServer const&);
-    StunRelayServer();
+    std::string mUri;
+    std::string mUsername;
+    std::string mPassword;
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~StunRelayServer();
+    MCAPI ~StunRelayServer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

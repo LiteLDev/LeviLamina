@@ -46,20 +46,19 @@ public:
         if (auto service = getService<T>(); service) {
             fn(*service);
         }
-        auto listener =
-            event::MultiListener<event::server::ServiceRegisterEvent, event::server::ServiceUnregisterEvent>::create(
-                [fn](auto&& event) {
-                    if (event.service()->getServiceId() == T::ServiceId) {
-                        if constexpr (std::is_same_v<
-                                          std::remove_cvref_t<decltype((event))>,
-                                          event::server::ServiceUnregisterEvent>) {
-                            fn(nullptr);
-                        } else {
-                            fn(std::static_pointer_cast<T>(event.service()));
-                        }
-                    }
+        auto listener = event::MultiListener<
+            event::server::ServiceRegisterEvent,
+            event::server::ServiceUnregisterEvent>::create([fn](auto&& event) {
+            if (event.service()->getServiceId() == T::ServiceId) {
+                if constexpr (
+                    std::is_same_v<std::remove_cvref_t<decltype((event))>, event::server::ServiceUnregisterEvent>
+                ) {
+                    fn(nullptr);
+                } else {
+                    fn(std::static_pointer_cast<T>(event.service()));
                 }
-            );
+            }
+        });
         event::EventBus::getInstance().addListener(listener);
         return listener;
     }
@@ -76,7 +75,7 @@ public:
     LLNDAPI Expected<std::shared_ptr<Service>> getService(ServiceIdView const& id);
 
     LLNDAPI std::optional<QueryServiceResult> queryService(std::string_view name);
-    LLNDAPI std::vector<QueryServiceResult>   queryServices(std::string_view name);
+    LLNDAPI std::vector<QueryServiceResult> queryServices(std::string_view name);
 
     LLAPI bool registerService(
         std::shared_ptr<Service> const&  service,

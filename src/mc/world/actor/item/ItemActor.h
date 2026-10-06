@@ -60,24 +60,24 @@ public:
     // NOLINTEND
 
 public:
-    LLNDAPI ItemStack&       item();
-    LLNDAPI ItemStack const& item() const;
-    LLNDAPI int&             age();
-    LLNDAPI int const&       age() const;
-    LLNDAPI int&             pickupDelay();
-    LLNDAPI int const&       pickupDelay() const;
-    LLNDAPI int&             throwTime();
-    LLNDAPI int const&       throwTime() const;
-    LLNDAPI float&           bobOffs();
-    LLNDAPI float const&     bobOffs() const;
-    LLNDAPI int&             health();
-    LLNDAPI int const&       health() const;
-    LLNDAPI int&             lifeTime();
-    LLNDAPI int const&       lifeTime() const;
-    LLNDAPI bool&            isInItemFrame();
-    LLNDAPI bool const&      isInItemFrame() const;
-    LLNDAPI bool&            isFromFishing();
-    LLNDAPI bool const&      isFromFishing() const;
+    LLNDAPI ItemStack&        item();
+    LLNDAPI ItemStack const&  item() const;
+    LLNDAPI int&              age();
+    LLNDAPI int const&        age() const;
+    LLNDAPI int&              pickupDelay();
+    LLNDAPI int const&        pickupDelay() const;
+    LLNDAPI int&              throwTime();
+    LLNDAPI int const&        throwTime() const;
+    LLNDAPI float&            bobOffs();
+    LLNDAPI float const&      bobOffs() const;
+    LLNDAPI int&              health();
+    LLNDAPI int const&        health() const;
+    LLNDAPI int&              lifeTime();
+    LLNDAPI int const&        lifeTime() const;
+    LLNDAPI bool&             isInItemFrame();
+    LLNDAPI bool const&       isInItemFrame() const;
+    LLNDAPI bool&             isFromFishing();
+    LLNDAPI bool const&       isFromFishing() const;
     LLNDAPI static ItemActor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
 public:

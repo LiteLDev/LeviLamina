@@ -3,13 +3,13 @@
 #include <memory>
 
 namespace ll {
-struct ConsoleInput {
+struct PreserveInputLine {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
     void call(bool);
-    ConsoleInput();
-    ~ConsoleInput();
+    PreserveInputLine();
+    ~PreserveInputLine();
 };
 
 } // namespace ll

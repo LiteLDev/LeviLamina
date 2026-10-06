@@ -210,7 +210,7 @@ LLNDAPI Expected<bool> svtobool(std::string_view);
 template <class T, class... Args>
 [[nodiscard]] LL_CONSTEXPR23 Expected<T> svtonum(std::string_view str, size_t* idx, Args&&... args) {
     T          result;
-    const auto ans = ::std::from_chars(&*str.begin(), &*str.end(), result, std::forward<Args>(args)...);
+    auto const ans = ::std::from_chars(&*str.begin(), &*str.end(), result, std::forward<Args>(args)...);
     if (ans.ec != std::errc{}) {
         return makeErrorCodeError(ans.ec);
     }

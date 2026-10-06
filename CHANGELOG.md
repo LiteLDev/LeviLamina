@@ -7,6 +7,100 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
+## [26.51.6] - 2026-09-29
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
+### Fixed
+
+- Let the memory operators accept a null pointer (#1841)
+
+## [26.51.5] - 2026-09-22
+
+### Fixed
+
+- Fixed wrong bedrock-runtime-data versions in tooth.json
+
+## [26.51.4] - 2026-09-21
+
+### Added
+
+- Added NetherNetPatch
+  Now LeviLamina servers use single port on NetherNet by default
+  And you can also configure stun servers in configuration file
+  This feature can be configured at `plugins/LeviLamina/config/Config.json`
+
+  ```jsonc
+  "netherNetPatch": {
+    "enable": true,
+    "singlePort": true, // Use single port instead of opening new port for each player.
+    "serverIP": "", // The server's public IP address, this could also be configured by SERVER_IP environmental variable. For hosting, you can also configure server port by SERVER_PORT environmental variable. In most cases, there's no need to configure this.
+    "stunServers": [ // Custom stun servers, so a server behind NAT can tell clients its public address.
+        "stun:stun.l.google.com:19302",
+        "stun:stun.miwifi.com:3478"
+    ]
+  }
+  ```
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
+### Fixed
+
+- Synced `std::hash<ActorUniqueID>` with latest Minecraft
+
+## [26.51.3] - 2026-09-20
+
+### Added
+
+- Added NetherNet support for `NetworkIdentifier::getIPAndPort`
+
+## [26.51.2] - 2026-09-20
+
+### Added
+
+- Added log file rotation, configurable under `logRotate` in `Config.json`: `logs/latest.log` is now
+  rotated by size and by date, archives are gzip compressed except for the newest few, and old
+  archives are removed by count, age and total size @OEOTYAN
+- Added `ll::io::ConsoleSink` and `ll::io::RotatePolicy`, along with `getDefaultFileSink` and
+  `makeDefaultSinks` in `ll/api/io/DefaultSinks.h` @OEOTYAN
+- Added `ll/api/utils/CompressUtils.h`: `Compressor` and `Decompressor` for streaming, plus
+  `compress`, `decompress`, `compressFile` and `decompressFile` for one-shot use. Supports gzip,
+  zlib framing @OEOTYAN
+- Complated `ResourcePointer`, `ClientResourcePointer`, `ServerResourcePointer`, and `ResourceBlock` @qiuzhizhe
+
+### Changed
+
+- `ll::io::FileSink` now takes a `RotatePolicy` in place of its open mode, defaulting to no rotation,
+  writes in binary mode so its size accounting matches the bytes on disk, and applies its flush level
+  to the file @OEOTYAN
+- `logs/latest.log` is no longer appended to across restarts; each run archives the previous file @OEOTYAN
+- Bumped bedrock-runtime-data versions
+
+### Removed
+
+- Removed `ll::io::DefaultSink`, which mixed console and file output into one sink and left
+  `setFormatter` and `setFlushLevel` without effect on the log file. Use `ConsoleSink` together with
+  `getDefaultFileSink`, or `makeDefaultSinks` for both
+
+### Fixed
+
+- Fixed the duplicate-instance prompt spinning forever when stdin is closed or redirected, as it is
+  under a service wrapper or CI: `getchar` returned EOF, which matched none of the answers, so the
+  question was re-asked as fast as the log could be written @OEOTYAN
+- Fixed the crash report upload failing on envelopes that do not compress: its gzip buffer was sized
+  at the input length, which a deflate stream can exceed. It now shares the compression utilities
+  rather than carrying its own copy @OEOTYAN
+- Regenerated Windows headers with verified parameter projections @Lovelylavender4
+- Solved the compatibility issue between sapi and simulatedPlayer @kuangby
+
 ## [26.51.1] - 2026-09-19
 
 ### Added
@@ -1898,7 +1992,12 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.6...HEAD
+[26.51.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.5...v26.51.6
+[26.51.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.4...v26.51.5
+[26.51.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.3...v26.51.4
+[26.51.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.2...v26.51.3
+[26.51.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.1...v26.51.2
 [26.51.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.0...v26.51.1
 [26.51.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.6...v26.51.0
 [26.40.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.40.5...v26.40.6

@@ -1,7 +1,7 @@
 #include "mc/deps/core_graphics/enums/ColorSpace.h"
 
 namespace cg {
-cg::ColorSpace translateImageUsage(const mce::ImageUsage imageUsage) {
+cg::ColorSpace translateImageUsage(mce::ImageUsage const imageUsage) {
     switch (imageUsage) {
     case mce::ImageUsage::Unknown:
         return ColorSpace::Unknown;

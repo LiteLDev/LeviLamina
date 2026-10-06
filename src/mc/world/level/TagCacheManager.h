@@ -3,54 +3,57 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class CommandManager;
-class HashedString;
 class IActorManagerConnector;
 class IDeregisterTagsFromActorProxy;
 // clang-format on
 
 class TagCacheManager {
 public:
+    // TagCacheManager inner types define
+    using TagCache = ::std::unordered_map<::HashedString, uint>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk919191;
-    ::ll::UntypedStorage<8, 24> mUnk87584e;
-    ::ll::UntypedStorage<8, 8>  mUnkc65211;
-    ::ll::UntypedStorage<8, 16> mUnke1eb64;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, uint>>              mTagCache;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::CommandManager> const>      mCommandManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IDeregisterTagsFromActorProxy> const> mDeregisterTagsFromActorProxy;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                         mOnRemoveActorEntityReferences;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TagCacheManager& operator=(TagCacheManager const&);
-    TagCacheManager(TagCacheManager const&);
     TagCacheManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TagCacheManager(
+    MCAPI TagCacheManager(
         ::Bedrock::NonOwnerPointer<::CommandManager>       commandManager,
         ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy
     );
 
-    MCNAPI void _deregisterTagsFromActor(::Actor& actor);
+    MCAPI void _deregisterTagsFromActor(::Actor& actor);
 
-    MCNAPI void decrementTagCache(::std::string const& tag);
+    MCAPI void decrementTagCache(::std::string const& tag);
 
-    MCNAPI void incrementTagCache(::std::string const& tag);
+    MCAPI void incrementTagCache(::std::string const& tag);
 
-    MCNAPI void initialize(::IActorManagerConnector& actorManagerConnector);
+    MCAPI void initialize(::IActorManagerConnector& actorManagerConnector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::CommandManager>       commandManager,
         ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy
     );

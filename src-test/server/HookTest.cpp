@@ -56,21 +56,15 @@ public:
     virtual int virtualConstMember() const { return 3; }
 };
 
-static_assert(
-    !ll::memory::virtualDetector<
-        decltype(&TestVirtualDetectorClass::nonVirtual),
-        &TestVirtualDetectorClass::nonVirtual>()
-);
-static_assert(
-    ll::memory::virtualDetector<
-        decltype(&TestVirtualDetectorClass::virtualMember),
-        &TestVirtualDetectorClass::virtualMember>()
-);
-static_assert(
-    ll::memory::virtualDetector<
-        decltype(&TestVirtualDetectorClass::virtualConstMember),
-        &TestVirtualDetectorClass::virtualConstMember>()
-);
+static_assert(!ll::memory::virtualDetector<
+              decltype(&TestVirtualDetectorClass::nonVirtual),
+              &TestVirtualDetectorClass::nonVirtual>());
+static_assert(ll::memory::virtualDetector<
+              decltype(&TestVirtualDetectorClass::virtualMember),
+              &TestVirtualDetectorClass::virtualMember>());
+static_assert(ll::memory::virtualDetector<
+              decltype(&TestVirtualDetectorClass::virtualConstMember),
+              &TestVirtualDetectorClass::virtualConstMember>());
 
 class HookExTestClass {
 protected:

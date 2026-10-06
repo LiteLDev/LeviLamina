@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/Path.h"
 #include "mc/events/PrivacyTagEnterprise.h"
 #include "mc/world/level/storage/DBStorageFolderWatcherSnapshotKind.h"
+#include "mc/world/level/storage/FolderSizeAndModifyDateSnapshot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,26 +17,20 @@ class DBStorageFolderWatcher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1d5032;
-    ::ll::UntypedStorage<8, 24> mUnk2a3157;
-    ::ll::UntypedStorage<8, 24> mUnk57c511;
-    ::ll::UntypedStorage<8, 72> mUnk6e028c;
-    ::ll::UntypedStorage<8, 24> mUnk484f55;
-    ::ll::UntypedStorage<8, 8>  mUnkc37605;
-    ::ll::UntypedStorage<8, 80> mUnk7dbac5;
+    ::ll::TypedStorage<8, 32, ::Core::Path>                                       mAbsolutePath;
+    ::ll::TypedStorage<8, 24, ::FolderSizeAndModifyDateSnapshot>                  mOpeningSnapshot;
+    ::ll::TypedStorage<8, 24, ::FolderSizeAndModifyDateSnapshot>                  mCurrentSnapshot;
+    ::ll::TypedStorage<8, 72, ::std::array<::FolderSizeAndModifyDateSnapshot, 3>> mSnapshotChain;
+    ::ll::TypedStorage<8, 24, ::FolderSizeAndModifyDateSnapshot>                  mClosingSnapshot;
+    ::ll::TypedStorage<8, 8, uint64>                                              mTelemetrySequence;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                       mWriteMtx;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DBStorageFolderWatcher& operator=(DBStorageFolderWatcher const&);
-    DBStorageFolderWatcher(DBStorageFolderWatcher const&);
-    DBStorageFolderWatcher();
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void toTelemetryEvent(
+    MCAPI void toTelemetryEvent(
         ::Social::Events::Event&               event,
         ::DBStorageFolderWatcherSnapshotKind   kind,
         ::Social::Events::PrivacyTagEnterprise privacyTag

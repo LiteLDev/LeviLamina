@@ -6,12 +6,7 @@ Keymapping::Keymapping(std::string const& action, std::vector<int> const& defaul
   mAllowRemap(true),
   mIsSharedKey(false) {}
 
-Keymapping::Keymapping(
-    std::string const&      action,
-    std::vector<int> const& defaultKeys,
-    bool                    allowRemap,
-    bool                    sharedKey
-)
+Keymapping::Keymapping(std::string const& action, std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey)
 : mAction(action),
   mKeys(defaultKeys),
   mAllowRemap(allowRemap),

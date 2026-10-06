@@ -26,6 +26,7 @@ add_requires("cpr[ssl=y] 1.11.1")
 add_requires("parallel-hashmap v2.0.0")
 add_requires("concurrentqueue v1.0.4")
 add_requires("stb 2025.03.14")
+add_requires("zlib v1.3.2")
 
 -- Dependencies from levimc-repo.
 add_requires("pcg_cpp v1.0.0")
@@ -51,11 +52,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v26.51.1-server.3")
+        add_requires("bedrockdata v26.51.1-server.10")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v26.51.1-client.3")
+        add_requires("bedrockdata v26.51.1-client.10")
     end
 end
 
@@ -130,6 +131,7 @@ target("LeviLamina")
         "parallel-hashmap",
         "concurrentqueue",
         "stb",
+        "zlib",
         {public = true}
     )
     add_defines("LL_EXPORT")

@@ -68,7 +68,7 @@ public:
 namespace std {
 template <>
 struct hash<::PackIdVersion> {
-    size_t operator()(const ::PackIdVersion& packIdVersion) const {
+    size_t operator()(::PackIdVersion const& packIdVersion) const {
         return std::hash<std::string>()(packIdVersion.mId->asString() + packIdVersion.mVersion->asString());
     }
 };

@@ -21,12 +21,12 @@ struct ImageDescription {
         cg::ImageType      imageType,
         uint32             arraySizeOrDepth
     );
-    LLAPI explicit ImageDescription(const mce::Image& image);
-    ImageDescription(const ImageDescription&)            = default;
-    ImageDescription& operator=(const ImageDescription&) = default;
+    LLAPI explicit ImageDescription(mce::Image const& image);
+    ImageDescription(ImageDescription const&)            = default;
+    ImageDescription& operator=(ImageDescription const&) = default;
 
-    LLAPI bool operator!=(const ImageDescription& rhs) const;
-    bool       operator==(const ImageDescription& rhs) const { return !(*this != rhs); }
+    LLAPI bool operator!=(ImageDescription const& rhs) const;
+    bool       operator==(ImageDescription const& rhs) const { return !(*this != rhs); }
 
 
     LLAPI void     setArraySize(uint32 size);

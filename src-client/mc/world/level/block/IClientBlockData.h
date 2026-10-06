@@ -2,4 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IClientBlockData {};
+// auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ClientBlockData;
+// clang-format on
+
+class IClientBlockData {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~IClientBlockData() = default;
+
+    virtual void visit(::brstd::function_ref<void(::ClientBlockData const&)> visitor) const;
+    // NOLINTEND
+};

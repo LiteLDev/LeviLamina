@@ -2,7 +2,7 @@
 
 #include <mutex>
 
-#include "ll/api/io/DefaultSink.h"
+#include "ll/api/io/DefaultSinks.h"
 #include "ll/api/io/LogMessage.h"
 #include "ll/api/io/PatternFormatter.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -50,7 +50,7 @@ Logger::~Logger() = default;
 
 Logger::Logger(PrivateTag, std::string_view title) : impl(std::make_unique<Impl>(title, getLogPool())) {
     impl->level = (LogLevel)(std::clamp(pl::pl_log_level - 1, 0, 5));
-    impl->sinks.push_back(std::make_shared<DefaultSink>());
+    impl->sinks = makeDefaultSinks();
 }
 
 std::string const& Logger::getTitle() const noexcept { return impl->title; }

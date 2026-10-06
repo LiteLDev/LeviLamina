@@ -12,15 +12,15 @@ namespace Bedrock::Threading {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCNAPI ::Bedrock::Threading::AssignedThread& getMainThread();
+MCAPI ::Bedrock::Threading::AssignedThread& getMainThread();
 #endif
 
-MCNAPI ::gsl::not_null<::Scheduler*> getMainThreadScheduler();
+MCAPI ::gsl::not_null<::Scheduler*> getMainThreadScheduler();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI uint64& sMainProcToken();
+MCAPI uint64& sMainProcToken();
 // NOLINTEND
 
 } // namespace Bedrock::Threading

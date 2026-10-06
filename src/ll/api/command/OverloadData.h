@@ -43,16 +43,16 @@ protected:
     LLNDAPI CommandParameterData& back();
 
     LLAPI CommandParameterData& addParamImpl(
-        Bedrock::typeid_t<CommandRegistry> id,
-        CommandRegistry::ParseFunction     parser,
-        std::string_view                   name,
-        CommandParameterDataType           type,
-        std::string_view                   enumNameOrPostfix,
-        std::string_view                   subChain,
-        int                                offset,
-        int                                flagOffset,
-        bool                               optional,
-        CommandParameterOption             options,
+        Bedrock::typeid_t<CommandRegistry>     id,
+        CommandRegistry::ParseFunction         parser,
+        std::string_view                       name,
+        CommandParameterDataType               type,
+        std::string_view                       enumNameOrPostfix,
+        std::string_view                       subChain,
+        int                                    offset,
+        int                                    flagOffset,
+        bool                                   optional,
+        CommandParameterOption                 options,
         CommandRegistry::ParamParseRule const* rule
     );
 

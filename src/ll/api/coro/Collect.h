@@ -90,8 +90,7 @@ public:
                         }
                     });
                 }(std::get<I>(tasks), std::get<I>(results)),
-                ...
-            );
+                ...);
         }(std::index_sequence_for<Ts...>());
     }
 
