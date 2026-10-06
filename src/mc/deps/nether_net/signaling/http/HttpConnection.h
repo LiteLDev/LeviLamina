@@ -5,10 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/external/sigslot/has_slots.h"
+#include "mc/external/sigslot/signal_with_thread_policy.h"
 #include "mc/external/sigslot/single_threaded.h"
+#include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace NetherNet { class HttpServer; }
+namespace webrtc { class PendingTaskSafetyFlag; }
 namespace webrtc { class Socket; }
 // clang-format on
 
@@ -20,11 +24,15 @@ class HttpConnection : public ::NetherNet::ContextProxy,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk9aa3ce;
-    ::ll::UntypedStorage<8, 8>  mUnk655767;
-    ::ll::UntypedStorage<8, 8>  mUnk1ddd04;
-    ::ll::UntypedStorage<8, 32> mUnke09860;
-    ::ll::UntypedStorage<8, 8>  mUnk880be3;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::sigslot::signal_with_thread_policy<::sigslot::single_threaded, ::NetherNet::HttpConnection*>>
+                                                                                       SignalClosed;
+    ::ll::TypedStorage<8, 8, ::NetherNet::HttpServer&>                                 mServer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::webrtc::Socket>>                      mSocket;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mBuffer;
+    ::ll::TypedStorage<8, 8, ::webrtc::scoped_refptr<::webrtc::PendingTaskSafetyFlag>> mSafetyFlag;
     // NOLINTEND
 
 public:
@@ -42,9 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onCloseEvent(::webrtc::Socket*, int);
+    MCAPI void _onCloseEvent(::webrtc::Socket*, int);
 
-    MCNAPI void _onReadEvent(::webrtc::Socket*);
+    MCAPI void _onReadEvent(::webrtc::Socket*);
     // NOLINTEND
 };
 
