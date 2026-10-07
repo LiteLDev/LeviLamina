@@ -29,6 +29,33 @@ struct TpTarget {
     bool                   convert{true};
 };
 
+namespace {
+constexpr int OverworldId = 0;
+constexpr int NetherId    = 1;
+constexpr int CustomIdMin = 1000;
+
+constexpr bool isOverworldLike(int id) { return id == OverworldId || id >= CustomIdMin; }
+
+// Only the nether <-> overworld pair has a meaningful destination for a direct teleport, so
+// scale just that and hand every other pair to the engine verbatim, which is what vanilla /tp
+// does. VanillaDimensions::convertPointBetweenDimensions is not usable here: it is
+// portal-flavoured, discards the requested position for every end-related pair in favour of
+// TheEndSpawnPoint or the world spawn point.
+Vec3 convertPosition(Level& level, DimensionType from, DimensionType to, Vec3 const& position, bool convert) {
+    if (!convert || from.mValue == to.mValue) {
+        return position;
+    }
+    auto scale             = static_cast<float>(level.getDimensionConversionData().mNetherScale);
+    bool fromOverworldLike = isOverworldLike(from.mValue);
+    if (fromOverworldLike && to.mValue == NetherId) {
+        return {position.x / scale, position.y, position.z / scale};
+    }
+    if (from.mValue == NetherId && isOverworldLike(to.mValue)) {
+        return {position.x * scale, position.y, position.z * scale};
+    }
+    return position;
+}
+} // namespace
 
 void registerTpdimCommand(bool isClientSide) {
     auto config = ll::getLeviConfig().modules.command.tpdimCommand;
@@ -49,19 +76,13 @@ void registerTpdimCommand(bool isClientSide) {
                 output.error("Not an actor origin"_trl(origin.getLocaleCode()));
                 return;
             }
-            Vec3 pos;
-            if (!param.convert) {
-                pos = origin.getExecutePosition(cmd.mVersion, param.destination);
-            } else if (!VanillaDimensions::convertPointBetweenDimensions(
-                           origin.getExecutePosition(cmd.mVersion, param.destination),
-                           pos,
-                           origin.getDimension()->getDimensionId(),
-                           param.dimension,
-                           origin.getLevel()->getDimensionConversionData()
-                       )) {
-                output.error("fail to convert position between dimensions"_trl(origin.getLocaleCode()));
-                return;
-            }
+            Vec3 pos = convertPosition(
+                *origin.getLevel(),
+                self->getDimensionId(),
+                param.dimension,
+                origin.getExecutePosition(cmd.mVersion, param.destination),
+                param.convert
+            );
             self->teleport(pos, param.dimension);
             output.success(
                 "Teleported {0} to {1} {2}"_trl(
@@ -83,28 +104,34 @@ void registerTpdimCommand(bool isClientSide) {
                 output.error("No target"_trl(origin.getLocaleCode()));
                 return;
             }
-            Vec3 pos;
-            if (!param.convert) {
-                pos = origin.getExecutePosition(cmd.mVersion, param.destination);
-            } else if (!VanillaDimensions::convertPointBetweenDimensions(
-                           origin.getExecutePosition(cmd.mVersion, param.destination),
-                           pos,
-                           origin.getDimension()->getDimensionId(),
-                           param.dimension,
-                           origin.getLevel()->getDimensionConversionData()
-                       )) {
-                output.error("fail to convert position between dimensions"_trl(origin.getLocaleCode()));
-                return;
-            }
+            Vec3 const destination = origin.getExecutePosition(cmd.mVersion, param.destination);
+            auto const first       = *victim.begin();
+            Vec3 const reported    = convertPosition(
+                *origin.getLevel(),
+                first->getDimensionId(),
+                param.dimension,
+                destination,
+                param.convert
+            );
             for (auto actor : victim) {
-                actor->teleport(pos, param.dimension);
+                // Each target may sit in its own dimension, so convert per actor.
+                actor->teleport(
+                    convertPosition(
+                        *origin.getLevel(),
+                        actor->getDimensionId(),
+                        param.dimension,
+                        destination,
+                        param.convert
+                    ),
+                    param.dimension
+                );
             }
             output.success(
                 "Teleported {0} to {1} {2}"_trl(
                     origin.getLocaleCode(),
                     CommandOutputParameter{victim}.mString,
                     VanillaDimensions::toString(param.dimension),
-                    pos.toString()
+                    reported.toString()
                 )
             );
         });

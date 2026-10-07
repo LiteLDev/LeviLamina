@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bumped bedrock-runtime-data versions
 - `reflection::Dispatcher` now requires its listener to be movable, and moves it when a dispatcher is handed over instead of quietly rebuilding a fresh one
 
+### Fixed
+
+- Fixed `/tpdim` landing on the wrong coordinates when the target dimension is not the overworld
+
 ## [26.51.6] - 2026-09-29
 
 ### Changed
