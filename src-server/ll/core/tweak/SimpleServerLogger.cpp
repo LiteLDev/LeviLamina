@@ -62,6 +62,8 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         impl.reset();
     }
 }
-SimpleServerLogger::SimpleServerLogger()  = default;
-SimpleServerLogger::~SimpleServerLogger() = default;
+SimpleServerLogger::SimpleServerLogger()                                         = default;
+SimpleServerLogger::SimpleServerLogger(SimpleServerLogger&&) noexcept            = default;
+SimpleServerLogger& SimpleServerLogger::operator=(SimpleServerLogger&&) noexcept = default;
+SimpleServerLogger::~SimpleServerLogger()                                        = default;
 } // namespace ll

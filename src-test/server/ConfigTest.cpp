@@ -6,6 +6,7 @@
 #include "ll/api/base/Containers.h"
 #include "ll/api/data/IndirectValue.h"
 #include "ll/api/data/Version.h"
+#include "ll/api/reflection/Dispatcher.h"
 
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
@@ -18,6 +19,7 @@
 
 #include <array>
 #include <map>
+#include <memory>
 #include <optional>
 #include <set>
 #include <string>
@@ -153,4 +155,61 @@ TEST(ConfigTest, MultidimensionalArrayReportsDimensionsAndSize) {
 
     EXPECT_EQ(arr.dim(), 3);
     EXPECT_EQ(arr.size(), 2 * 3 * 4);
+}
+
+// These live at file scope on purpose: reflection requires the reflected type to have external
+// linkage, so an anonymous namespace here would make boost::pfr reject DispatcherTestConfig.
+
+// A listener shaped like the real ones: it only allocates while it is being notified, so a transfer
+// that rebuilt the listener instead of moving it would leave the destination holding an empty one.
+// A listener that cannot be moved is rejected at compile time by reflection::Dispatcher itself.
+struct DispatcherTestListener {
+    struct Impl {
+        bool value = false;
+    };
+
+    // Counts every listener that was ever notified: deserializing must notify exactly one, not
+    // notify a temporary and then notify a rebuilt one.
+    static int& callCount() {
+        static int count = 0;
+        return count;
+    }
+
+    std::unique_ptr<Impl> impl;
+
+    void call(bool value) {
+        ++callCount();
+        if (!impl) {
+            impl = std::make_unique<Impl>();
+        }
+        impl->value = value;
+    }
+
+    DispatcherTestListener()                                             = default;
+    DispatcherTestListener(DispatcherTestListener&&) noexcept            = default;
+    DispatcherTestListener& operator=(DispatcherTestListener&&) noexcept = default;
+    ~DispatcherTestListener()                                            = default;
+};
+
+struct DispatcherTestConfig {
+    ll::reflection::Dispatcher<bool, DispatcherTestListener> flag = true;
+};
+
+TEST(ConfigTest, DispatcherMemberCarriesItsListenerThroughDeserialization) {
+    DispatcherTestListener::callCount() = 0;
+
+    auto config = DispatcherTestConfig{};
+    auto parsed = nlohmann::json{
+        {"flag", true}
+    };
+
+    auto result = ll::reflection::deserialize(config, parsed);
+    ASSERT_TRUE(result.has_value());
+
+    // The destination must own the listener that was notified, together with whatever it allocated
+    // while being notified, rather than a freshly default-constructed one.
+    EXPECT_TRUE(config.flag.storage);
+    ASSERT_NE(config.flag.listener.impl, nullptr);
+    EXPECT_TRUE(config.flag.listener.impl->value);
+    EXPECT_EQ(DispatcherTestListener::callCount(), 1);
 }

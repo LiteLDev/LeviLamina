@@ -63,6 +63,8 @@ void PreserveInputLine::call(bool enabled) {
         impl.reset();
     }
 }
-PreserveInputLine::PreserveInputLine()  = default;
-PreserveInputLine::~PreserveInputLine() = default;
+PreserveInputLine::PreserveInputLine()                                        = default;
+PreserveInputLine::PreserveInputLine(PreserveInputLine&&) noexcept            = default;
+PreserveInputLine& PreserveInputLine::operator=(PreserveInputLine&&) noexcept = default;
+PreserveInputLine::~PreserveInputLine()                                       = default;
 } // namespace ll

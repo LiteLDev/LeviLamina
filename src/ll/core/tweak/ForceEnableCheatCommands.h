@@ -10,6 +10,11 @@ struct ForceEnableCheatCommands {
 
     void call(bool);
     ForceEnableCheatCommands();
+
+    // Movable because reflection::Dispatcher requires its listener to be movable.
+    ForceEnableCheatCommands(ForceEnableCheatCommands&&) noexcept;
+    ForceEnableCheatCommands& operator=(ForceEnableCheatCommands&&) noexcept;
+
     ~ForceEnableCheatCommands();
 };
 } // namespace ll

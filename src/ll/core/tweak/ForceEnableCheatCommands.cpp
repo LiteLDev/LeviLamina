@@ -78,6 +78,8 @@ void ForceEnableCheatCommands::call(bool enable) {
     }
 }
 
-ForceEnableCheatCommands::ForceEnableCheatCommands()  = default;
-ForceEnableCheatCommands::~ForceEnableCheatCommands() = default;
+ForceEnableCheatCommands::ForceEnableCheatCommands()                                               = default;
+ForceEnableCheatCommands::ForceEnableCheatCommands(ForceEnableCheatCommands&&) noexcept            = default;
+ForceEnableCheatCommands& ForceEnableCheatCommands::operator=(ForceEnableCheatCommands&&) noexcept = default;
+ForceEnableCheatCommands::~ForceEnableCheatCommands()                                              = default;
 } // namespace ll

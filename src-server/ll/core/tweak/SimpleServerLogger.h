@@ -15,6 +15,11 @@ struct SimpleServerLogger {
 
     void call(SimpleServerLoggerConfig const&);
     SimpleServerLogger();
+
+    // Movable because reflection::Dispatcher requires its listener to be movable.
+    SimpleServerLogger(SimpleServerLogger&&) noexcept;
+    SimpleServerLogger& operator=(SimpleServerLogger&&) noexcept;
+
     ~SimpleServerLogger();
 };
 } // namespace ll
