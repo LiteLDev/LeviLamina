@@ -90,7 +90,7 @@ static nlohmann::json getCustomCharts() {
     return res;
 }
 
-struct Statistics::Impl {
+struct Statistics::Impl : std::enable_shared_from_this<Statistics::Impl> {
     nlohmann::json json;
 
     void submitData() {
@@ -117,6 +117,32 @@ struct Statistics::Impl {
         } catch (...) {}
     }
 
+    void start() {
+        std::weak_ptr<Impl> weak = weak_from_this();
+        coro::keepThis([weak]() -> coro::CoroTask<> {
+            // The task must not keep the Impl alive while it sleeps: an Impl that lost its owner
+            // would otherwise keep submitting data forever with nothing owning it. It borrows a
+            // strong reference for the duration of a single submission instead, and ends as soon as
+            // it cannot get one.
+            auto tick = [&]() -> bool {
+                auto self = weak.lock();
+                if (!self) {
+                    return false;
+                }
+                self->submitData();
+                return true;
+            };
+            co_await (1.0min * random_utils::rand(3.0, 6.0));
+            if (!tick()) co_return;
+            co_await (1.0min * random_utils::rand(1.0, 30.0));
+            if (!tick()) co_return;
+            while (true) {
+                co_await 30min;
+                if (!tick()) co_return;
+            }
+        }).launch(thread::ThreadPoolExecutor::getDefault());
+    }
+
     Impl() {
         json["serverUUID"] = getServiceUuid();
         json["osName"]     = sys_utils::isWine() ? "Linux(wine)" : "Windows";
@@ -124,28 +150,21 @@ struct Statistics::Impl {
         json["osVersion"]  = "";
         json["coreCount"]  = std::thread::hardware_concurrency();
 
-        coro::keepThis([&]() -> coro::CoroTask<> {
-            co_await (1.0min * random_utils::rand(3.0, 6.0));
-            submitData();
-            co_await (1.0min * random_utils::rand(1.0, 30.0));
-            submitData();
-            while (true) {
-                co_await 30min;
-                submitData();
-            }
-        }).launch(thread::ThreadPoolExecutor::getDefault());
         getLogger().info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
     }
 };
 
 void Statistics::call(bool enable) {
     if (enable && !impl) {
-        impl = std::make_unique<Impl>();
+        impl = std::make_shared<Impl>();
+        impl->start();
     } else if (!enable) {
         impl.reset();
     }
 }
 
-Statistics::Statistics()  = default;
-Statistics::~Statistics() = default;
+Statistics::Statistics()                                 = default;
+Statistics::Statistics(Statistics&&) noexcept            = default;
+Statistics& Statistics::operator=(Statistics&&) noexcept = default;
+Statistics::~Statistics()                                = default;
 } // namespace ll
