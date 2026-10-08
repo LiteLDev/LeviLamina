@@ -63,7 +63,7 @@ public:
     LLNDAPI std::string getTypeName() const;
     LLNDAPI std::string getDescriptionName() const;
     LLNDAPI bool        isEnchanted() const;
-    LLNDAPI bool        removeEnchants() const;
+    LLAPI bool          removeEnchants() const;
     LLAPI void          deserializeComponents(IDataInput& input);
     LLAPI bool          operator==(ItemStackBase const& other) const;
     LLNDAPI short       getId() const;

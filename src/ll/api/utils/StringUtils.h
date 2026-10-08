@@ -150,6 +150,21 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
 
 LLNDAPI std::string removeEscapeCode(std::string_view str);
 
+/// Length of the escape sequence that starts at `str[pos]`, or zero when it is incomplete.
+/// @note A console reads such a sequence across writes, so a string stopping in the middle of one
+/// leaves it waiting for the rest and makes it swallow everything printed after it.
+/// @param str The string to read.
+/// @param pos The index of the escape character.
+/// @return The number of characters the sequence takes, or zero when it is incomplete.
+LLNDAPI size_t escapeSequenceLength(std::wstring_view str, size_t pos);
+
+/// Removes what a console would draw somewhere else than at the cursor: a bare NUL, the control
+/// characters it reads as a new row, and incomplete escape sequences. Complete sequences are kept,
+/// so colours still work, and no message can disturb the state of the ones printed after it.
+/// @param str The text to sanitize.
+/// @return The text that is safe to hand to a console.
+LLNDAPI std::wstring sanitizeConsoleText(std::wstring_view str);
+
 LLNDAPI std::string replaceAnsiToMcCode(std::string_view str);
 
 LLNDAPI std::string replaceMcToAnsiCode(std::string_view str);

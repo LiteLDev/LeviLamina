@@ -239,6 +239,43 @@ std::string removeEscapeCode(std::string_view str) {
     return res;
 }
 
+size_t escapeSequenceLength(std::wstring_view str, size_t pos) {
+    size_t i = pos + 1;
+    if (i < str.size() && str[i] == L'[') { // Control sequence: ESC [ parameter* intermediate* final
+        ++i;
+        while (i < str.size() && str[i] >= 0x30 && str[i] <= 0x3f) ++i;
+        while (i < str.size() && str[i] >= 0x20 && str[i] <= 0x2f) ++i;
+        return i < str.size() && str[i] >= 0x40 && str[i] <= 0x7e ? i - pos + 1 : 0;
+    }
+    if (i < str.size() && str[i] == L']') { // Operating system command: ended by a bell or by a backslash
+        for (++i; i < str.size() && str[i] != L'\a' && str[i] != L'\x1b'; ++i) {}
+        if (i < str.size() && str[i] == L'\a') return i - pos + 1;
+        if (i + 1 < str.size() && str[i] == L'\x1b' && str[i + 1] == L'\\') return i - pos + 2;
+        return 0;
+    }
+    while (i < str.size() && str[i] >= 0x20 && str[i] <= 0x2f) ++i; // ESC intermediate* final
+    return i < str.size() && str[i] >= 0x30 && str[i] <= 0x7e ? i - pos + 1 : 0;
+}
+
+std::wstring sanitizeConsoleText(std::wstring_view str) {
+    std::wstring res;
+    res.reserve(str.size());
+    for (size_t i = 0; i < str.size(); ++i) {
+        auto c = str[i];
+        if (c == L'\0') continue;                // The console skips a NUL instead of drawing it.
+        if (c == L'\v' || c == L'\f') c = L'\n'; // The console starts a new row for these.
+        if (c != L'\x1b') {
+            res.push_back(c);
+            continue;
+        }
+        if (auto length = escapeSequenceLength(str, i)) {
+            res.append(str.substr(i, length));
+            i += length - 1;
+        }
+    }
+    return res;
+}
+
 std::string replaceAnsiToMcCode(std::string_view str) {
     std::string res;
     auto        i     = ctre::iterator<"\x1B(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~])">(str);

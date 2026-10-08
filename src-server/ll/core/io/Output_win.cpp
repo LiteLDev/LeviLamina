@@ -8,7 +8,7 @@ namespace ll::io {
 void defaultOutputImpl(std::string_view sv) {
     auto fd = _fileno(stdout);
     if (_isatty(fd)) {
-        auto wstr = string_utils::str2wstr(sv);
+        auto wstr = string_utils::sanitizeConsoleText(string_utils::str2wstr(sv));
         if (WriteConsoleW((HANDLE)_get_osfhandle(fd), wstr.data(), (DWORD)wstr.size(), nullptr, nullptr)) {
             return;
         }
