@@ -1,10 +1,11 @@
 #pragma once
 #include "ll/api/reflection/Dispatcher.h"
+#include "ll/core/protocol/ProtocolConfig.h"
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
-
 
 namespace ll {
 struct TargetedConfig {
+    protocol::ClientProtocolConfig                             protocol{};
     bool                                                       showOutputWindow         = false;
     ll::reflection::Dispatcher<bool, ForceEnableCheatCommands> forceEnableCheatCommands = true;
     struct {

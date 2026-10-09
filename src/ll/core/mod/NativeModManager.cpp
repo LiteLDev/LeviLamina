@@ -20,6 +20,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
+#include "ll/core/protocol/ModLifecycleIntegration.h"
 
 namespace ll::mod {
 NativeModManager::NativeModManager() : ModManager(NativeModManagerName) {
@@ -122,8 +123,14 @@ Expected<> NativeModManager::unload(std::string_view name) {
     if (!ptr->hasOnUnload()) {
         return makeI18nStringError<"The mod does not register an unload function">();
     }
+    if (auto prepared = protocol::prepareModUnload(*ptr); !prepared) {
+        return prepared;
+    }
     if (auto res = ptr->onUnload(); !res) {
         return res;
+    }
+    if (auto drained = protocol::finalizeModUnload(*ptr); !drained) {
+        return drained;
     }
     if (auto err = ptr->getDynamicLibrary().free(); err) {
         return makeExceptionError(std::make_exception_ptr(*err));
