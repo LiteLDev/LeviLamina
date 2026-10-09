@@ -68,3 +68,17 @@ public:
 };
 
 } // namespace br
+
+namespace entt {
+
+template <typename Entity>
+struct component_traits<::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>, Entity> {
+    using element_type = ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>;
+    using entity_type  = Entity;
+
+    static constexpr bool in_place_delete = false;
+
+    static constexpr std::size_t page_size = 1024;
+};
+
+} // namespace entt

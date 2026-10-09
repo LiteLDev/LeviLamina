@@ -13,6 +13,17 @@ template <>
 struct entt_traits<EntityId> : EntityIdTraits {};
 } // namespace entt::internal
 
+namespace entt {
+
+template <>
+struct entt_traits<EntityId> : basic_entt_traits<EntityIdTraits> {
+    using base_type = basic_entt_traits<EntityIdTraits>;
+
+    static constexpr std::size_t page_size = 2048;
+};
+
+} // namespace entt
+
 class EntityId : public entt::entt_traits<EntityId> {
 public:
     entity_type mRawId{entt::null};

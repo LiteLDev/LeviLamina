@@ -138,7 +138,7 @@ target("LeviLamina")
     add_defines(
         "FMT_USE_FULL_CACHE_DRAGONBOX=1",
         "ENTT_PACKED_PAGE=128",
-        "ENTT_SPARSE_PAGE=2048",
+        "ENTT_SPARSE_PAGE=4096",
         {public = true}
     )
 

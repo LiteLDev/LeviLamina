@@ -9,6 +9,9 @@ namespace br {
 
 struct ChunkBoundingBox {
 public:
+    static constexpr std::size_t page_size = 32;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 24, ::BoundingBox> box;
