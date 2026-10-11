@@ -422,7 +422,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
              fmt::fg(fmt::color::light_blue),
              }
         };
-        crashInfo.logger.setSink("console", std::make_shared<io::ConsoleSink>(std::move(formatter)));
+        crashInfo.logger.setSink("ll_default_console", std::make_shared<io::ConsoleSink>(std::move(formatter)));
         crashInfo.logger.setSink(
             "crash",
             std::make_shared<io::FileSink>(

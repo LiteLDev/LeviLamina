@@ -23,9 +23,6 @@ public:
 
     LLAPI ~FileSink() override;
 
-    /// The sink behind `logs/latest.log`, which the loader gives the rotation policy from its config.
-    /// @note Each logger writes to the file through a copy of this sink, so they all share its file
-    /// state and policy while keeping their own formatter and flush level.
     LLNDAPI static std::shared_ptr<FileSink> const& getDefault();
 
     LLAPI void setFormatter(Polymorphic<Formatter> fmter) override;

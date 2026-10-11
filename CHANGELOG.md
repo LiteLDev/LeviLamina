@@ -7,26 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- Added `sys_utils::normalizePath`
-- Added `Logger::setSink` and `Logger::removeSink`
-
 ### Changed
 
 - Bumped bedrock-runtime-data versions
 - `reflection::Dispatcher` now requires its listener to be movable, and moves it when a dispatcher is handed over instead of quietly rebuilding a fresh one
-- `FileSink` now shares file state by normalized path while keeping formatter and flush settings per sink, so logger-specific file formatting does not conflict
-- `Logger` now holds its sinks by name instead of by index, starting out with `"console"` and `"file"`:
-  `addSink` takes a name and returns whether it was added, `getSink` looks a sink up by name and
-  returns null when absent, `sinks()` yields each name with its sink, and `clearSink` is renamed
-  `clearSinks`
-
-### Removed
-
-- Removed `ll/api/io/DefaultSinks.h`: `getDefaultFileSink` moved to `FileSink::getDefault`, and
-  `makeDefaultSinks` is gone since a logger's `"console"` and `"file"` sinks can now be replaced one
-  at a time with `setSink`
 
 ### Fixed
 

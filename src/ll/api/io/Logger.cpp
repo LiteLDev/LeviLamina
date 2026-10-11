@@ -52,9 +52,8 @@ Logger::~Logger() = default;
 
 Logger::Logger(PrivateTag, std::string_view title) : impl(std::make_unique<Impl>(title, getLogPool())) {
     impl->level = (LogLevel)(std::clamp(pl::pl_log_level - 1, 0, 5));
-    impl->sinks.emplace("console", std::make_shared<ConsoleSink>());
-    // a copy shares latest.log's state, but leaves this logger's formatter its own
-    impl->sinks.emplace("file", std::make_shared<FileSink>(*FileSink::getDefault()));
+    impl->sinks.emplace("ll_default_console", std::make_shared<ConsoleSink>());
+    impl->sinks.emplace("ll_default_file", std::make_shared<FileSink>(*FileSink::getDefault()));
 }
 
 std::string const& Logger::getTitle() const noexcept { return impl->title; }
@@ -98,14 +97,6 @@ void Logger::flush() const {
     for (auto& [name, sink] : impl->sinks) {
         sink->flush();
     }
-}
-
-bool Logger::addSink(std::string_view name, std::shared_ptr<SinkBase> sink) const {
-    if (!sink) {
-        return false;
-    }
-    std::lock_guard lock{impl->sinkMutex};
-    return impl->sinks.try_emplace(name, std::move(sink)).second;
 }
 
 std::shared_ptr<SinkBase> Logger::setSink(std::string_view name, std::shared_ptr<SinkBase> sink) const {
