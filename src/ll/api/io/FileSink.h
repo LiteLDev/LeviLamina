@@ -8,12 +8,10 @@
 
 namespace ll::io {
 
-/// A sink that writes to a file, optionally rotating it by size and by date.
-/// @note Rotation is off by default, so the file is only appended to. Pass a `RotatePolicy` to have
-/// it archived; `RotatePolicy{}`'s own defaults are a sensible starting point.
 class FileSink : public Sink {
     struct Impl;
-    std::unique_ptr<Impl> impl;
+    std::shared_ptr<Impl> impl;
+    LogLevel              flushLevel{LogLevel::Off};
 
 public:
     LLAPI
@@ -25,6 +23,11 @@ public:
 
     LLAPI ~FileSink() override;
 
+    /// The sink behind `logs/latest.log`, which the loader gives the rotation policy from its config.
+    /// @note Each logger writes to the file through a copy of this sink, so they all share its file
+    /// state and policy while keeping their own formatter and flush level.
+    LLNDAPI static std::shared_ptr<FileSink> const& getDefault();
+
     LLAPI void setFormatter(Polymorphic<Formatter> fmter) override;
 
     LLAPI void append(LogMessageView const& view) override;
@@ -33,13 +36,8 @@ public:
 
     LLAPI void setFlushLevel(LogLevel level) override;
 
-    /// Replaces the rotation policy.
-    /// @note Honours `rotateOnOpen` if the file still holds content inherited from a previous run,
-    /// so a policy supplied shortly after construction behaves as if it had been passed to it.
     LLAPI void setPolicy(RotatePolicy policy);
 
-    /// Rotates now, regardless of what the policy would decide. Does nothing when the active file is
-    /// empty.
     LLAPI void rotate();
 };
 } // namespace ll::io

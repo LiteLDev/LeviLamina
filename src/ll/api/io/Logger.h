@@ -130,12 +130,29 @@ public:
 
     LLAPI void flush() const;
 
-    LLAPI void clearSink() const;
+    /// Adds a sink under `name`, leaving any sink already held under that name in place.
+    /// @return false when `name` is taken or `sink` is null.
+    LLAPI bool addSink(std::string_view name, std::shared_ptr<SinkBase> sink) const;
 
-    LLAPI size_t addSink(std::shared_ptr<SinkBase> sink) const;
+    /// Puts `sink` under `name`, replacing whatever was there. A null `sink` removes the entry.
+    /// @return the sink previously held under `name`, or null if there was none.
+    LLAPI std::shared_ptr<SinkBase> setSink(std::string_view name, std::shared_ptr<SinkBase> sink) const;
 
-    LLAPI std::shared_ptr<SinkBase> getSink(size_t index) const;
+    /// Removes the sink held under `name`.
+    /// @return the removed sink, or null if there was none.
+    LLAPI std::shared_ptr<SinkBase> removeSink(std::string_view name) const;
 
-    LLNDAPI coro::Generator<SinkBase&> sinks() const;
+    /// @return the sink held under `name`, or null if there is none.
+    /// @note Messages are written on a background thread, so changing a sink through this pointer
+    /// can race with a message being written to it, unless the sink guards its own state.
+    LLNDAPI std::shared_ptr<SinkBase> getSink(std::string_view name) const;
+
+    /// Removes every sink, the default ones included.
+    LLAPI void clearSinks() const;
+
+    /// Yields each sink with its name, in no particular order.
+    /// @note Sinks are locked while the generator is alive, so do not add or remove sinks from
+    /// inside the loop.
+    LLNDAPI coro::Generator<std::pair<std::string_view, SinkBase&>> sinks() const;
 };
 } // namespace ll::io

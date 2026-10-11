@@ -149,5 +149,5 @@ TEST(EventTest, EventBusPublishesAndRemovesListeners) {
             );
         }
     };
-    ll::getLogger().addSink(std::make_shared<BroadcastSink>());
+    ll::getLogger().addSink("broadcast", std::make_shared<BroadcastSink>());
 }

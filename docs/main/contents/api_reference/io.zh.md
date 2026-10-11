@@ -16,7 +16,6 @@ IO 模块提供了线程安全的格式化日志系统，支持多个输出目�
 | `ll/api/io/Sink.h` | 日志输出目标接口 |
 | `ll/api/io/FileSink.h` | 基于文件的日志输出，可选轮转 |
 | `ll/api/io/ConsoleSink.h` | 控制台日志输出 |
-| `ll/api/io/DefaultSinks.h` | 日志器默认使用的输出目标 |
 | `ll/api/io/RotatePolicy.h` | 日志文件何时轮转、归档保留多久 |
 | `ll/api/io/FileUtils.h` | 文件 I/O 工具 |
 | `ll/api/io/StdoutRedirector.h` | 将 stdout 重定向到日志 |
@@ -55,13 +54,19 @@ public:
     void setFlushLevel(LogLevel level);
     void setFormatter(Polymorphic<Formatter> formatter);
     void flush() const;
-    void clearSink() const;
-    size_t addSink(std::shared_ptr<SinkBase> sink) const;
-    std::shared_ptr<SinkBase> getSink(size_t index) const;
-    coro::Generator<SinkBase&> sinks() const;
+
+    bool addSink(std::string_view name, std::shared_ptr<SinkBase> sink) const;
+    std::shared_ptr<SinkBase> setSink(std::string_view name, std::shared_ptr<SinkBase> sink) const;
+    std::shared_ptr<SinkBase> removeSink(std::string_view name) const;
+    std::shared_ptr<SinkBase> getSink(std::string_view name) const;
+    void clearSinks() const;
+    coro::Generator<std::pair<std::string_view, SinkBase&>> sinks() const;
 };
 }
 ```
+
+Logger 按名称持有各个 sink。每个 logger 初始都带有一个名为 `"console"` 的控制台 sink，以及一个名为
+`"file"`、写入 `logs/latest.log` 的 sink。
 
 ### LogLevel
 
@@ -133,9 +138,43 @@ void addFileSink(ll::io::Logger& logger) {
         "logs/mymod.log",
         makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false)
     );
-    logger.addSink(fileSink);
+    logger.addSink("mymod", fileSink);
 }
 ```
+
+若同名的 sink 已经存在，`addSink` 会保留原有的 sink 并返回 false。要替换某个 sink，请使用 `setSink`，它会
+返回被替换掉的 sink；`removeSink` 则移除一个 sink 并将其返回。
+
+```cpp
+#include "ll/api/io/ConsoleSink.h"
+#include "ll/api/io/FileSink.h"
+#include "ll/api/io/Logger.h"
+#include "ll/api/io/PatternFormatter.h"
+
+void customizeSinks(ll::io::Logger& logger) {
+    // 只修改控制台输出的样式
+    logger.setSink(
+        "console",
+        std::make_shared<ll::io::ConsoleSink>(makePolymorphic<ll::io::PatternFormatter>("[{2}] {0}"))
+    );
+
+    // 改为写入模组自己的文件，而不是 logs/latest.log
+    logger.setSink(
+        "file",
+        std::make_shared<ll::io::FileSink>(
+            "logs/mymod.log",
+            makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false)
+        )
+    );
+}
+```
+
+日志消息在后台线程中写入。`Logger::setFormatter` 和 `Logger::setFlushLevel` 会等待正在进行的写入，因此在
+logger 使用期间，应优先使用它们或通过 `setSink` 替换 sink，而不是直接修改 `getSink` 返回的 sink。
+
+`FileSink` 会使用规范化后的路径定位共享的文件状态。指向同一文件的 sink 会共享文件句柄、轮转状态和策略，
+但每个 sink 保留自己的 formatter 和刷新级别。因此，不同 logger 可以向同一个文件写入不同格式的日志，而不
+会互相覆盖 formatter。
 
 ### 轮转日志文件
 
@@ -156,6 +195,7 @@ void addRotatingFileSink(ll::io::Logger& logger) {
     policy.maxFiles    = 64;                             // 最多保留 64 个归档
 
     logger.addSink(
+        "mymod",
         std::make_shared<ll::io::FileSink>(
             "logs/mymod.log",
             makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false),

@@ -16,7 +16,6 @@ The IO module provides a thread-safe, formatted logging system with multiple sin
 | `ll/api/io/Sink.h` | Log output sink interface |
 | `ll/api/io/FileSink.h` | File-based log sink, with optional rotation |
 | `ll/api/io/ConsoleSink.h` | Console log sink |
-| `ll/api/io/DefaultSinks.h` | The sinks a logger starts out with |
 | `ll/api/io/RotatePolicy.h` | When a log file rotates and how long archives are kept |
 | `ll/api/io/FileUtils.h` | File I/O utilities |
 | `ll/api/io/StdoutRedirector.h` | Redirect stdout to logger |
@@ -55,13 +54,19 @@ public:
     void setFlushLevel(LogLevel level);
     void setFormatter(Polymorphic<Formatter> formatter);
     void flush() const;
-    void clearSink() const;
-    size_t addSink(std::shared_ptr<SinkBase> sink) const;
-    std::shared_ptr<SinkBase> getSink(size_t index) const;
-    coro::Generator<SinkBase&> sinks() const;
+
+    bool addSink(std::string_view name, std::shared_ptr<SinkBase> sink) const;
+    std::shared_ptr<SinkBase> setSink(std::string_view name, std::shared_ptr<SinkBase> sink) const;
+    std::shared_ptr<SinkBase> removeSink(std::string_view name) const;
+    std::shared_ptr<SinkBase> getSink(std::string_view name) const;
+    void clearSinks() const;
+    coro::Generator<std::pair<std::string_view, SinkBase&>> sinks() const;
 };
 }
 ```
+
+A logger holds its sinks by name. Every logger starts out with a console sink named `"console"` and a
+`logs/latest.log` sink named `"file"`.
 
 ### LogLevel
 
@@ -133,9 +138,45 @@ void addFileSink(ll::io::Logger& logger) {
         "logs/mymod.log",
         makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false)
     );
-    logger.addSink(fileSink);
+    logger.addSink("mymod", fileSink);
 }
 ```
+
+`addSink` keeps a sink already held under the same name and returns false. To replace one, use
+`setSink`, which returns the sink it replaced; `removeSink` drops one and hands it back.
+
+```cpp
+#include "ll/api/io/ConsoleSink.h"
+#include "ll/api/io/FileSink.h"
+#include "ll/api/io/Logger.h"
+#include "ll/api/io/PatternFormatter.h"
+
+void customizeSinks(ll::io::Logger& logger) {
+    // Restyle the console output only
+    logger.setSink(
+        "console",
+        std::make_shared<ll::io::ConsoleSink>(makePolymorphic<ll::io::PatternFormatter>("[{2}] {0}"))
+    );
+
+    // Write to a file of the mod's own instead of logs/latest.log
+    logger.setSink(
+        "file",
+        std::make_shared<ll::io::FileSink>(
+            "logs/mymod.log",
+            makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false)
+        )
+    );
+}
+```
+
+Messages are written on a background thread. `Logger::setFormatter` and `Logger::setFlushLevel` wait
+for it, so prefer them, or replacing a sink with `setSink`, over changing a sink returned by `getSink`
+while the logger is in use.
+
+`FileSink` instances identify their shared file state by the normalized path. Sinks that point to the
+same file therefore share its handle, rotation state and policy, while each sink keeps its own formatter
+and flush level. Different loggers can write to one file with different formatting without replacing
+one another's formatter.
 
 ### Rotating a Log File
 
@@ -156,6 +197,7 @@ void addRotatingFileSink(ll::io::Logger& logger) {
     policy.maxFiles    = 64;                        // keep at most 64 archives
 
     logger.addSink(
+        "mymod",
         std::make_shared<ll::io::FileSink>(
             "logs/mymod.log",
             makePolymorphic<ll::io::PatternFormatter>("[{3:.3%F %T.} {2}][{1}] {0}", false),

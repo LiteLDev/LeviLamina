@@ -2,7 +2,9 @@
 
 #include <mutex>
 
-#include "ll/api/io/DefaultSinks.h"
+#include "ll/api/base/Containers.h"
+#include "ll/api/io/ConsoleSink.h"
+#include "ll/api/io/FileSink.h"
 #include "ll/api/io/LogMessage.h"
 #include "ll/api/io/PatternFormatter.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -41,8 +43,8 @@ struct Logger::Impl {
 
     thread::ThreadPoolExecutor& pool;
 
-    std::vector<std::shared_ptr<SinkBase>> sinks;
-    std::mutex                             sinkMutex;
+    SmallStringMap<std::shared_ptr<SinkBase>> sinks;
+    std::mutex                                sinkMutex;
 
     Impl(std::string_view title, thread::ThreadPoolExecutor& pool) : title(title), pool(pool) {}
 };
@@ -50,7 +52,9 @@ Logger::~Logger() = default;
 
 Logger::Logger(PrivateTag, std::string_view title) : impl(std::make_unique<Impl>(title, getLogPool())) {
     impl->level = (LogLevel)(std::clamp(pl::pl_log_level - 1, 0, 5));
-    impl->sinks = makeDefaultSinks();
+    impl->sinks.emplace("console", std::make_shared<ConsoleSink>());
+    // a copy shares latest.log's state, but leaves this logger's formatter its own
+    impl->sinks.emplace("file", std::make_shared<FileSink>(*FileSink::getDefault()));
 }
 
 std::string const& Logger::getTitle() const noexcept { return impl->title; }
@@ -64,7 +68,7 @@ void Logger::printStr(LogLevel level, std::string&& msg) const noexcept try {
                         msg    = LogMessage{std::move(msg), impl->title, level, sys_utils::getLocalTime()}] {
         try {
             std::lock_guard lock{logger->impl->sinkMutex};
-            for (auto& sink : logger->impl->sinks) {
+            for (auto& [name, sink] : logger->impl->sinks) {
                 sink->append(msg);
             }
         } catch (...) {
@@ -79,42 +83,65 @@ void Logger::setLevel(LogLevel level) { impl->level = level; }
 
 void Logger::setFlushLevel(LogLevel level) {
     std::lock_guard lock{impl->sinkMutex};
-    for (auto& sink : impl->sinks) {
+    for (auto& [name, sink] : impl->sinks) {
         sink->setFlushLevel(level);
     }
 }
 void Logger::setFormatter(Polymorphic<Formatter> formatter) {
     std::lock_guard lock{impl->sinkMutex};
-    for (auto& sink : impl->sinks) {
+    for (auto& [name, sink] : impl->sinks) {
         sink->setFormatter(formatter);
     }
 }
 void Logger::flush() const {
     std::lock_guard lock{impl->sinkMutex};
-    for (auto& sink : impl->sinks) {
+    for (auto& [name, sink] : impl->sinks) {
         sink->flush();
     }
 }
-void Logger::clearSink() const {
+
+bool Logger::addSink(std::string_view name, std::shared_ptr<SinkBase> sink) const {
+    if (!sink) {
+        return false;
+    }
+    std::lock_guard lock{impl->sinkMutex};
+    return impl->sinks.try_emplace(name, std::move(sink)).second;
+}
+
+std::shared_ptr<SinkBase> Logger::setSink(std::string_view name, std::shared_ptr<SinkBase> sink) const {
+    if (!sink) {
+        return removeSink(name);
+    }
+    std::lock_guard lock{impl->sinkMutex};
+    return std::exchange(impl->sinks[name], std::move(sink));
+}
+
+std::shared_ptr<SinkBase> Logger::removeSink(std::string_view name) const {
+    std::lock_guard lock{impl->sinkMutex};
+    auto            it = impl->sinks.find(name);
+    if (it == impl->sinks.end()) {
+        return nullptr;
+    }
+    auto sink = std::move(it->second);
+    impl->sinks.erase(it);
+    return sink;
+}
+
+std::shared_ptr<SinkBase> Logger::getSink(std::string_view name) const {
+    std::lock_guard lock{impl->sinkMutex};
+    auto            it = impl->sinks.find(name);
+    return it == impl->sinks.end() ? nullptr : it->second;
+}
+
+void Logger::clearSinks() const {
     std::lock_guard lock{impl->sinkMutex};
     impl->sinks.clear();
 }
 
-size_t Logger::addSink(std::shared_ptr<SinkBase> sink) const {
+coro::Generator<std::pair<std::string_view, SinkBase&>> Logger::sinks() const {
     std::lock_guard lock{impl->sinkMutex};
-    impl->sinks.emplace_back(std::move(sink));
-    return impl->sinks.size() - 1;
-}
-
-std::shared_ptr<SinkBase> Logger::getSink(size_t index) const {
-    std::lock_guard lock{impl->sinkMutex};
-    return impl->sinks.at(index);
-}
-
-coro::Generator<SinkBase&> Logger::sinks() const {
-    std::lock_guard lock{impl->sinkMutex};
-    for (auto& sink : impl->sinks) {
-        co_yield *sink;
+    for (auto& [name, sink] : impl->sinks) {
+        co_yield {name, *sink};
     }
 }
 } // namespace ll::io
