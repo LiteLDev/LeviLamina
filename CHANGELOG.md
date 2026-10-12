@@ -7,14 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.51.7] - 2026-10-12
+
+### Added
+
+- Filled `Util::NameIdStore`
+- Added `std::hash<DimensionIdType>` and `std::hash<BiomeIdType>`
+
 ### Changed
 
 - Bumped bedrock-runtime-data versions
+- Bumped PreLoader to 1.16.5
+- Rewrited the reflection (#1842) @zimuya4153 @OEOTYAN
 - `reflection::Dispatcher` now requires its listener to be movable, and moves it when a dispatcher is handed over instead of quietly rebuilding a fresh one
+- Removed the `ll::io::Pipe`
 
 ### Fixed
 
 - Fixed `/tpdim` landing on the wrong coordinates when the target dimension is not the overworld
+- Fixed preserve input line and abnormal character output @zimuya4153
+- Fixed entt page size @kuangby
+- Corrected RuntimePacket owned packet accessor name @OEOTYAN
 
 ## [26.51.6] - 2026-09-29
 
@@ -1997,7 +2010,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.6...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.7...HEAD
+[26.51.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.6...v26.51.7
 [26.51.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.5...v26.51.6
 [26.51.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.4...v26.51.5
 [26.51.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.3...v26.51.4
