@@ -3,19 +3,49 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/optional_ref.h"
+#include "mc/events/event_data/ServerTelemetryData.h"
+#include "mc/network/ClientOrServerNetworkSystemRef.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/platform/brstd/move_only_function.h"
+#include "mc/server/config/server_configuration/ServerConfigurationJoinInfo.h"
 
 // auto generated forward declare list
 // clang-format off
+class AllowList;
+class EditorAllowList;
 class FileArchiver;
+class GameCallbacks;
+class GameModuleServer;
+class ICommandsContextProvider;
 class IContentTierManager;
+class IImGuiModuleConnector;
+class ILevel;
+class IMinecraftApp;
+class IMinecraftEventing;
+class KeyManager;
 class MinecraftCommands;
+class MinecraftGameTest;
 class MinecraftServiceKeyManager;
+class PacketSender;
+class PermissionsFile;
+class PlayerListEntry;
+class PrivateKeyManager;
 class ResourcePackManager;
+class Scheduler;
+class ScriptPackSettingsCache;
 class ServerNetworkHandler;
+class TextFilteringProcessor;
+class Timer;
+struct AutoCompleteInformation;
+struct NetworkServerConfig;
+struct PackIdVersion;
+struct ServerNetworkHandlerDependencies;
 namespace Core { class FilePathManager; }
+namespace mce { class UUID; }
+class ServerMetrics;
 // clang-format on
 
 struct MinecraftArguments {
@@ -33,7 +63,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkfc63c8;
+        ::ll::TypedStorage<8, 8, ::ICommandsContextProvider&> mContext;
         // NOLINTEND
 
     public:
@@ -47,20 +77,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk7c6ff6;
-        ::ll::UntypedStorage<8, 8>  mUnkbb3d45;
-        ::ll::UntypedStorage<8, 8>  mUnkec036e;
-        ::ll::UntypedStorage<8, 8>  mUnk10cf6b;
-        ::ll::UntypedStorage<4, 4>  mUnk2ffc16;
-        ::ll::UntypedStorage<4, 4>  mUnk6aca64;
-        ::ll::UntypedStorage<8, 8>  mUnk9574e8;
-        ::ll::UntypedStorage<8, 8>  mUnk196507;
-        ::ll::UntypedStorage<8, 8>  mUnkdd1599;
-        ::ll::UntypedStorage<8, 8>  mUnk7ca080;
-        ::ll::UntypedStorage<8, 8>  mUnk40263c;
-        ::ll::UntypedStorage<8, 16> mUnkcf1eb4;
-        ::ll::UntypedStorage<8, 8>  mUnk9d358c;
-        ::ll::UntypedStorage<8, 8>  mUnk84fb6d;
+        ::ll::TypedStorage<8, 8, ::ILevel&>                                                   mLevel;
+        ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>                                        mServerKeys;
+        ::ll::TypedStorage<8, 8, ::MinecraftServiceKeyManager&>                               mMinecraftServiceKeys;
+        ::ll::TypedStorage<8, 8, ::KeyManager const&>                                         mHostPublicKey;
+        ::ll::TypedStorage<4, 4, int>                                                         mMaxChunkRadius;
+        ::ll::TypedStorage<4, 4, int>                                                         mMaxNumPlayers;
+        ::ll::TypedStorage<8, 8, ::MinecraftCommands&>                                        mCommands;
+        ::ll::TypedStorage<8, 8, ::std::unordered_map<::PackIdVersion, ::std::string> const&> mPackIdToContentKey;
+        ::ll::TypedStorage<8, 8, ::Scheduler&>                                                mScheduler;
+        ::ll::TypedStorage<8, 8, ::TextFilteringProcessor*>                                   mTextFilteringProcessor;
+        ::ll::TypedStorage<8, 8, ::NetworkServerConfig const&>                                mPacketHandlerConfig;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPackSettingsCache>>               mPackSettingsCache;
+        ::ll::TypedStorage<8, 8, ::ServerNetworkHandlerDependencies&&>                        mServerNetworkOptions;
+        ::ll::TypedStorage<8, 8, ::optional_ref<::MinecraftGameTest>>                         mGameTest;
         // NOLINTEND
 
     public:
@@ -74,26 +104,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkeb1411;
-        ::ll::UntypedStorage<8, 8> mUnke21dde;
+        ::ll::TypedStorage<8, 8, ::IImGuiModuleConnector*> mConnector;
+        ::ll::TypedStorage<
+            8,
+            8,
+            ::std::string (*)(
+                ::std::string const&,
+                ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&,
+                ::AutoCompleteInformation&
+            )>
+            mAutoCompletePlayerMention;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MinecraftCommandsFactoryArguments& operator=(MinecraftCommandsFactoryArguments const&);
-        MinecraftCommandsFactoryArguments(MinecraftCommandsFactoryArguments const&);
-        MinecraftCommandsFactoryArguments();
     };
 
     struct ServerNetworkHandlerFactoryArguments {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnk63a19e;
-        ::ll::UntypedStorage<8, 8>   mUnke87c76;
-        ::ll::UntypedStorage<8, 8>   mUnkc09c5e;
-        ::ll::UntypedStorage<8, 384> mUnk130965;
-        ::ll::UntypedStorage<8, 128> mUnk757f1a;
+        ::ll::TypedStorage<8, 8, ::AllowList&>       mAllowList;
+        ::ll::TypedStorage<8, 8, ::EditorAllowList&> mEditorAllowList;
+        ::ll::TypedStorage<8, 8, ::IMinecraftApp&>   mApp;
+        ::ll::TypedStorage<8, 384, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
+                                                                          mServerConfigurationJoinInfo;
+        ::ll::TypedStorage<8, 128, ::Social::Events::ServerTelemetryData> mServerTelemetryData;
         // NOLINTEND
 
     public:
@@ -103,28 +136,59 @@ public:
         ServerNetworkHandlerFactoryArguments();
     };
 
+    using GetFileArchiver = ::brstd::move_only_function<::Bedrock::NotNullNonOwnerPtr<::FileArchiver>() const>;
+
+    using MinecraftCommandsFactory = ::brstd::move_only_function<
+        ::std::unique_ptr<::MinecraftCommands>(::MinecraftArguments::CreateMinecraftCommandsArgs&&) const>;
+
+    using MinecraftServiceKeyManagerFactory = ::brstd::function_ref<
+        ::std::shared_ptr<::MinecraftServiceKeyManager>() const,
+        ::std::shared_ptr<::MinecraftServiceKeyManager>()>;
+
+    using RequestServerShutdownCallback = ::brstd::move_only_function<void() const>;
+
+    using ServerNetworkHandlerFactory = ::brstd::move_only_function<
+        ::std::unique_ptr<::ServerNetworkHandler>(::MinecraftArguments::CreateServerNetworkHandlerArgs&&)>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk13dd73;
-    ::ll::UntypedStorage<8, 8>  mUnk99bc61;
-    ::ll::UntypedStorage<8, 8>  mUnkc400a9;
-    ::ll::UntypedStorage<8, 8>  mUnk55bc06;
-    ::ll::UntypedStorage<8, 16> mUnk806b1f;
-    ::ll::UntypedStorage<8, 8>  mUnk146694;
-    ::ll::UntypedStorage<1, 1>  mUnk10fae3;
-    ::ll::UntypedStorage<8, 8>  mUnk4298d6;
-    ::ll::UntypedStorage<8, 8>  mUnkf34ccc;
-    ::ll::UntypedStorage<8, 8>  mUnk24e7ba;
-    ::ll::UntypedStorage<8, 8>  mUnk4ff601;
-    ::ll::UntypedStorage<8, 16> mUnk9b605a;
-    ::ll::UntypedStorage<8, 64> mUnk4e2b86;
-    ::ll::UntypedStorage<8, 64> mUnk979579;
-    ::ll::UntypedStorage<1, 1>  mUnk8f0ef7;
-    ::ll::UntypedStorage<8, 16> mUnk4389b9;
-    ::ll::UntypedStorage<8, 16> mUnka93f16;
-    ::ll::UntypedStorage<8, 64> mUnkd0ab0f;
-    ::ll::UntypedStorage<8, 64> mUnkb71d0a;
+    ::ll::TypedStorage<8, 8, ::GameCallbacks&>                           mGameCallbacks;
+    ::ll::TypedStorage<8, 8, ::PermissionsFile*>                         mPermissionsFile;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                     mMaxPlayerIdleTime;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                      mEventing;
+    ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef>          mNetwork;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>                            mPacketSender;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                              mClientSubId;
+    ::ll::TypedStorage<8, 8, ::Timer&>                                   mSimTimer;
+    ::ll::TypedStorage<8, 8, ::Timer&>                                   mRealTimer;
+    ::ll::TypedStorage<8, 8, ::ServerMetrics*>                           mServerMetrics;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackManager>>   mResourcePackManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PrivateKeyManager>>    mServerKeys;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void() const>> mRequestServerShutdown;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::brstd::move_only_function<
+            ::std::unique_ptr<::ServerNetworkHandler>(::MinecraftArguments::CreateServerNetworkHandlerArgs&&)>>
+                                                                     mCreateServerNetworkHandler;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsDedicatedServer;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameModuleServer>> mGameModuleServer;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::brstd::function_ref<
+            ::std::shared_ptr<::MinecraftServiceKeyManager>() const,
+            ::std::shared_ptr<::MinecraftServiceKeyManager>()>>
+        mCreateMinecraftServiceKeyManager;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::Bedrock::NotNullNonOwnerPtr<::FileArchiver>() const>>
+        mGetFileArchiver;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::brstd::move_only_function<
+            ::std::unique_ptr<::MinecraftCommands>(::MinecraftArguments::CreateMinecraftCommandsArgs&&) const>>
+        mCreateMinecraftCommands;
     // NOLINTEND
 
 public:
@@ -136,19 +200,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::brstd::move_only_function<
+    MCAPI ::brstd::move_only_function<
         ::std::unique_ptr<::ServerNetworkHandler>(::MinecraftArguments::CreateServerNetworkHandlerArgs&&)>
     createServerNetworkHandlerFactory(::MinecraftArguments::ServerNetworkHandlerFactoryArguments&& args);
 
 #ifdef LL_PLAT_C
-    MCNAPI ~MinecraftArguments();
+    MCAPI ~MinecraftArguments();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::ResourcePackManager> createResourcePackManager(
+    MCAPI static ::std::unique_ptr<::ResourcePackManager> createResourcePackManager(
         ::Core::FilePathManager const& filePathManager,
         ::IContentTierManager const&   contentTierManager
     );
@@ -158,7 +222,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

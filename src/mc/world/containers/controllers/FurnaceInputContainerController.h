@@ -39,7 +39,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI FurnaceInputContainerController(
+    MCAPI FurnaceInputContainerController(
         ::std::shared_ptr<::ContainerModel> containerModel,
         ::HashedString const&               recipeTag
     );
@@ -50,7 +50,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, ::HashedString const& recipeTag);
+    MCAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, ::HashedString const& recipeTag);
 #endif
     // NOLINTEND
 
@@ -58,7 +58,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
+    MCAPI bool $isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
 #endif
 
 

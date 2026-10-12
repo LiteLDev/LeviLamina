@@ -35,7 +35,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void onRecipeSelectedWithSpecificIngredients(
+    MCAPI void onRecipeSelectedWithSpecificIngredients(
         ::Recipe const*                          recipe,
         uint64                                   gridSize,
         bool                                     displayGhostItems,
@@ -48,11 +48,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+    MCAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
-    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+    MCAPI ::ItemInstance const& $getRecipeItem(int slot) const;
 
-    MCNAPI void $clearSelectedRecipe();
+    MCAPI void $clearSelectedRecipe();
 #endif
 
 

@@ -18,7 +18,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::ItemStackNetManagerScreen* push(::std::unique_ptr<::ItemStackNetManagerScreen> screen);
+    MCAPI ::ItemStackNetManagerScreen* push(::std::unique_ptr<::ItemStackNetManagerScreen> screen);
 #endif
     // NOLINTEND
 };

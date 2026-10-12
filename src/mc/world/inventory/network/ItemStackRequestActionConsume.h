@@ -22,7 +22,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionConsume(uchar amount, ::ItemStackRequestSlotInfo const& src);
+    MCAPI ItemStackRequestActionConsume(uchar amount, ::ItemStackRequestSlotInfo const& src);
 #endif
     // NOLINTEND
 
@@ -30,7 +30,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(uchar amount, ::ItemStackRequestSlotInfo const& src);
+    MCAPI void* $ctor(uchar amount, ::ItemStackRequestSlotInfo const& src);
 #endif
     // NOLINTEND
 

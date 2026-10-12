@@ -136,14 +136,14 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ContainerScreenSimulation(
+    MCAPI ContainerScreenSimulation(
         ::ContainerScreenContext const&                                           screenContext,
         ::ContainerValidationCaller                                               caller,
         ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
     );
 
-    MCNAPI ::ContainerScreenActionResult _tryTransfer(
+    MCAPI ::ContainerScreenActionResult _tryTransfer(
         ::ItemTransferType const             transferType,
         ::ContainerValidationSlotData const& srcSlot,
         ::ContainerValidationSlotData const& dstSlot,
@@ -151,15 +151,15 @@ public:
         ::ContainerScreenTransferBehaviour   transferBehaviour
     );
 
-    MCNAPI ::ContainerScreenActionResult _tryTransferSpecial(
+    MCAPI ::ContainerScreenActionResult _tryTransferSpecial(
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTransferAmount const           transferAmount,
         ::ItemSpecialLocation                location
     );
 
-    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
+    MCAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
 
-    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
+    MCAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
 #endif
     // NOLINTEND
 
@@ -167,7 +167,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ContainerScreenContext const&                                           screenContext,
         ::ContainerValidationCaller                                               caller,
         ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
@@ -180,7 +180,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 
@@ -188,55 +188,55 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::ContainerScreenActionResult
+    MCAPI ::ContainerScreenActionResult
     $tryPlaceOne(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
 
-    MCNAPI ::ContainerScreenActionResult $tryPlaceAmount(
+    MCAPI ::ContainerScreenActionResult $tryPlaceAmount(
         ::ContainerValidationSlotData const& srcSlot,
         int                                  amount,
         ::ContainerValidationSlotData const& dstSlot
     );
 
-    MCNAPI ::ContainerScreenActionResult
+    MCFOLD ::ContainerScreenActionResult
     $tryPlaceAll(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
 
-    MCNAPI ::ContainerScreenActionResult $tryTakeAmount(
+    MCAPI ::ContainerScreenActionResult $tryTakeAmount(
         ::ContainerValidationSlotData const& dstSlot,
         int                                  amount,
         ::ContainerValidationSlotData const& srcSlot
     );
 
-    MCNAPI ::ContainerScreenActionResult
+    MCAPI ::ContainerScreenActionResult
     $tryTakeAll(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
 
-    MCNAPI ::ContainerScreenActionResult
+    MCAPI ::ContainerScreenActionResult
     $tryTakeHalf(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
 
-    MCNAPI ::ContainerScreenActionResult
+    MCFOLD ::ContainerScreenActionResult
     $trySwap(::ContainerValidationSlotData const& slotA, ::ContainerValidationSlotData const& slotB);
 
-    MCNAPI ::ContainerScreenActionResult $tryAddToStack(
+    MCAPI ::ContainerScreenActionResult $tryAddToStack(
         ::ContainerValidationSlotData const& dstSlot,
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTakeType                       type
     );
 
-    MCNAPI ::ContainerScreenActionResult
+    MCAPI ::ContainerScreenActionResult
     $tryCoalesce(::ContainerValidationSlotData const& dstSlot, ::ContainerEnumName coalesceContainerEnum);
 
-    MCNAPI ::ContainerScreenActionResult $tryAutoPlace(
+    MCAPI ::ContainerScreenActionResult $tryAutoPlace(
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTransferAmount                 amount,
         ::ContainerScreenAutoplaceBehaviour  autoplaceBehaviour
     );
 
-    MCNAPI ::ContainerScreenActionResult $trySplitSingle(
+    MCAPI ::ContainerScreenActionResult $trySplitSingle(
         ::ContainerValidationSlotData const&            srcSlot,
         ::ContainerValidationSlotData const&            dstSlot,
         ::std::vector<::ContainerSimulationSplitStack>& containerSplitItemStackItems
     );
 
-    MCNAPI ::ContainerScreenActionResult $trySplitMultiple(
+    MCAPI ::ContainerScreenActionResult $trySplitMultiple(
         ::ContainerValidationSlotData const&            srcSlot,
         int                                             progressiveTake,
         ::ItemInstance const&                           itemTemplate,
@@ -245,20 +245,20 @@ public:
         int&                                            splitItemRemainder
     );
 
-    MCNAPI ::ContainerScreenActionResult
+    MCAPI ::ContainerScreenActionResult
     $tryDrop(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount, bool randomly);
 
-    MCNAPI ::ContainerScreenActionResult
+    MCAPI ::ContainerScreenActionResult
     $tryDestroy(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
 
-    MCNAPI ::ContainerScreenActionResult
+    MCAPI ::ContainerScreenActionResult
     $tryConsume(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
 
-    MCNAPI ::ContainerScreenActionResult $tryConsumeExpected(::ContainerValidationSlotData const& srcSlot);
+    MCAPI ::ContainerScreenActionResult $tryConsumeExpected(::ContainerValidationSlotData const& srcSlot);
 
-    MCNAPI void $_registerCoalesceOrder();
+    MCFOLD void $_registerCoalesceOrder();
 
-    MCNAPI void $_registerAutoPlaceOrder();
+    MCFOLD void $_registerAutoPlaceOrder();
 #endif
 
 

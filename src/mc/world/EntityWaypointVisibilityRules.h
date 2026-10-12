@@ -19,18 +19,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkdc4ee9;
+    ::ll::TypedStorage<1, 1, uchar> mFlags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityWaypointVisibilityRules& operator=(EntityWaypointVisibilityRules const&);
-    EntityWaypointVisibilityRules(EntityWaypointVisibilityRules const&);
-    EntityWaypointVisibilityRules();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator()(::Actor const& actor) const;
+    MCAPI bool operator()(::Actor const& actor) const;
     // NOLINTEND
 };
