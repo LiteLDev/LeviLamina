@@ -101,10 +101,19 @@ Naming follows `docs/main/contents/maintainer_guides/cpp_style_guide.md`:
 - directories `snake_case`, files and types `PascalCase`, namespaces lowercase
 - functions and locals `camelCase`, constants `PascalCase`, macros `UPPER_SNAKE_CASE`
 - non-public data members Hungarian `mMember`, public ones plain `camelCase`
-- `///` for Doxygen comments, `// TODO(#1234): ...` for TODOs
 
-New API in `src/ll/api` needs Doxygen comments on public members. Prefer `Expected<T>` for
-recoverable errors over exceptions; the Windows build sets `set_exceptions("none")` in xmake.
+Code explains itself: do not add explanatory or Doxygen comments, choose clear names instead, and
+put usage explanations and tutorials in `docs/main/contents`.
+
+Do not use anonymous namespaces. Give file-local functions and variables `static`, and put helper
+classes in the file's named namespace.
+
+Do not use `std::map`, `std::set`, `std::unordered_map` or `std::unordered_set`; use the aliases in
+`ll/api/base/Containers.h` (`DenseMap`, `SmallDenseSet`, `OrderedMap`, `StringMap`,
+`ConcurrentDenseMap`, ...).
+
+Prefer `Expected<T>` for recoverable errors over exceptions; the Windows build sets
+`set_exceptions("none")` in xmake.
 
 ## Changelog and commits
 

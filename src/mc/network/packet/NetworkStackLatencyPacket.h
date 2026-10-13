@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    template <typename... Args>
+    NetworkStackLatencyPacket(Args&&... args)
+    : PayloadPacket(std::forward<Args>(args)...),
+      mSerializationMode(SerializationMode::SideBySideLogOnMismatch) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
