@@ -1,15 +1,21 @@
 #include "ll/api/mod/ModManager.h"
 #include "ll/api/i18n/I18n.h"
 
+#include <utility>
+
 namespace ll::mod {
 struct ModManager::Impl {
     std::string                     type;
+    std::filesystem::path           loadDirectory;
     std::recursive_mutex            mutex;
     StringMap<std::shared_ptr<Mod>> mods;
-    explicit Impl(std::string type) : type(std::move(type)) {}
+    explicit Impl(std::string type, std::filesystem::path loadDirectory)
+    : type(std::move(type)),
+      loadDirectory(loadDirectory.empty() ? getModsRoot() : std::move(loadDirectory)) {}
 };
 
-ModManager::ModManager(std::string_view type) : impl(std::make_unique<Impl>(std::string{type})) {}
+ModManager::ModManager(std::string_view type, std::filesystem::path loadDirectory)
+: impl(std::make_unique<Impl>(std::string{type}, std::move(loadDirectory))) {}
 
 ModManager::~ModManager() = default;
 
@@ -37,14 +43,16 @@ Expected<> ModManager::disable(std::string_view name) {
     return getMod(name)->onDisable();
 }
 
-[[nodiscard]] std::string const& ModManager::getType() const { return impl->type; }
+std::string const& ModManager::getType() const { return impl->type; }
 
-[[nodiscard]] bool ModManager::hasMod(std::string_view name) const {
+std::filesystem::path const& ModManager::getLoadDirectory() const { return impl->loadDirectory; }
+
+bool ModManager::hasMod(std::string_view name) const {
     auto l(lock());
     return impl->mods.contains(name);
 }
 
-[[nodiscard]] std::shared_ptr<Mod> ModManager::getMod(std::string_view name) const {
+std::shared_ptr<Mod> ModManager::getMod(std::string_view name) const {
     auto l(lock());
     if (auto i = impl->mods.find(name); i != impl->mods.end()) {
         return i->second;
@@ -52,7 +60,7 @@ Expected<> ModManager::disable(std::string_view name) {
     return {};
 }
 
-[[nodiscard]] size_t ModManager::getModCount() const {
+size_t ModManager::getModCount() const {
     auto l(lock());
     return impl->mods.size();
 }

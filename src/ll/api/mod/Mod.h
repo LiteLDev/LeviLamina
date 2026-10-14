@@ -23,7 +23,11 @@ public:
     using callback_t = bool(Mod&);
     using CallbackFn = std::function<callback_t>;
 
-    LLNDAPI explicit Mod(Manifest manifest);
+    /// Constructs a mod and resolves its package directory from a load directory.
+    ///
+    /// The package directory is `<loadDirectory>/<manifest.name>`. When
+    /// `loadDirectory` is empty, the default mods directory is used.
+    LLNDAPI explicit Mod(Manifest manifest, std::filesystem::path loadDirectory = {});
 
     LLAPI ~Mod();
 
