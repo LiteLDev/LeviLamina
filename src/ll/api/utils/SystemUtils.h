@@ -30,6 +30,8 @@ LLNDAPI std::string getModuleFileName(HandleT handle, HandleT process = nullptr)
 }
 LLNDAPI std::span<std::byte> getImageRange(std::string_view name = "");
 
+LLNDAPI std::filesystem::path normalizePath(std::filesystem::path const& path);
+
 LLNDAPI std::string getSystemLocaleCode();
 
 LLNDAPI std::string const& getSystemName();

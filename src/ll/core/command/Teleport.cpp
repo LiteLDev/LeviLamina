@@ -29,19 +29,13 @@ struct TpTarget {
     bool                   convert{true};
 };
 
-namespace {
-constexpr int OverworldId = 0;
-constexpr int NetherId    = 1;
-constexpr int CustomIdMin = 1000;
+static constexpr int OverworldId = 0;
+static constexpr int NetherId    = 1;
+static constexpr int CustomIdMin = 1000;
 
-constexpr bool isOverworldLike(int id) { return id == OverworldId || id >= CustomIdMin; }
+static constexpr bool isOverworldLike(int id) { return id == OverworldId || id >= CustomIdMin; }
 
-// Only the nether <-> overworld pair has a meaningful destination for a direct teleport, so
-// scale just that and hand every other pair to the engine verbatim, which is what vanilla /tp
-// does. VanillaDimensions::convertPointBetweenDimensions is not usable here: it is
-// portal-flavoured, discards the requested position for every end-related pair in favour of
-// TheEndSpawnPoint or the world spawn point.
-Vec3 convertPosition(Level& level, DimensionType from, DimensionType to, Vec3 const& position, bool convert) {
+static Vec3 convertPosition(Level& level, DimensionType from, DimensionType to, Vec3 const& position, bool convert) {
     if (!convert || from.mValue == to.mValue) {
         return position;
     }
@@ -55,7 +49,6 @@ Vec3 convertPosition(Level& level, DimensionType from, DimensionType to, Vec3 co
     }
     return position;
 }
-} // namespace
 
 void registerTpdimCommand(bool isClientSide) {
     auto config = ll::getLeviConfig().modules.command.tpdimCommand;

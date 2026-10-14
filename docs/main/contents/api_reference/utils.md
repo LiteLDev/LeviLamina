@@ -244,8 +244,8 @@ ll::Expected<> compressToSocket(std::string_view chunk1, std::string_view chunk2
 `compressFile` and `decompressFile` wrap the same machinery for the file-to-file case, completing
 under a temporary name so an interrupted run leaves no half-written output behind.
 
-`decompress` caps its output, since a small input can expand enormously. Pass an explicit `maxSize`
-when the expected size is known.
+`decompress` does not limit its output unless given a `maxSize`. Pass one for data from an untrusted
+source, since a small input can expand enormously.
 
 ## Related
 

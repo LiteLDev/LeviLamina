@@ -31,9 +31,7 @@ namespace ll::network::nether_net_patch {
 
 using namespace ll::i18n_literals;
 
-namespace {
-
-std::uint16_t parsePort(std::string_view const value) {
+static std::uint16_t parsePort(std::string_view const value) {
     unsigned int port    = 0;
     auto const [ptr, ec] = std::from_chars(value.data(), value.data() + value.size(), port);
     if (ec != std::errc{} || ptr != value.data() + value.size() || port == 0 || port > 0xffff) {
@@ -42,10 +40,7 @@ std::uint16_t parsePort(std::string_view const value) {
     return static_cast<std::uint16_t>(port);
 }
 
-// Hosting panels run the server behind a bridge and publish one address, which they hand to the
-// process in the environment. Advertising it is what lets a client reach a server it can already
-// see, without the operator copying an address into server.properties.
-bool addPublishedAddress(NetherNet::TransportConfiguration& config, std::uint16_t const local_port) {
+static bool addPublishedAddress(NetherNet::TransportConfiguration& config, std::uint16_t const localPort) {
     auto address = ll::sys_utils::getEnvironmentVariable("SERVER_IP");
     if (address.empty() || address == "0.0.0.0" || address == "::") {
         auto& addressFromCfg = ll::getLeviConfig().targeted.netherNetPatch.serverIP;
@@ -59,19 +54,17 @@ bool addPublishedAddress(NetherNet::TransportConfiguration& config, std::uint16_
     auto const published = parsePort(ll::sys_utils::getEnvironmentVariable("SERVER_PORT"));
     auto&      range     = config.mKnownMappedAddressRanges[config.mKnownMappedAddressRangeCount];
     range->mInternalAddress->reset();
-    range->mInternalPortMin               = local_port;
-    range->mInternalPortMax               = local_port;
+    range->mInternalPortMin               = localPort;
+    range->mInternalPortMax               = localPort;
     range->mExternalAddress               = address;
-    range->mExternalPortOffset            = (published != 0 ? published : local_port) - local_port;
+    range->mExternalPortOffset            = (published != 0 ? published : localPort) - localPort;
     config.mKnownMappedAddressRangeCount += 1;
 
     ll::getLogger().info(
-        "Configured {}:{} as the mapped address for NetherNet."_tr(address, published != 0 ? published : local_port)
+        "Configured {}:{} as the mapped address for NetherNet."_tr(address, published != 0 ? published : localPort)
     );
     return true;
 }
-
-} // namespace
 
 LL_TYPE_INSTANCE_HOOK(
     CreateTransportInterfaceHook,
@@ -80,7 +73,7 @@ LL_TYPE_INSTANCE_HOOK(
     "?createTransportInterface@TransportFactoryImpl@?A0x30FC2A75@NetherNet@@UEAAPEAVINetherNetTransportInterface@2@"
     "AEBUNetworkID@2@AEBUTransportConfiguration@2@PEAVINetherNetTransportInterfaceCallbacks@2@@Z"_sym,
     NetherNet::INetherNetTransportInterface*,
-    NetherNet::NetworkID const&                       local_id,
+    NetherNet::NetworkID const&                       localId,
     NetherNet::TransportConfiguration const&          configuration,
     NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
 ) {
@@ -97,13 +90,11 @@ LL_TYPE_INSTANCE_HOOK(
         config.mGlobalUdpPort = true;
         addPublishedAddress(config, http->mPort);
     }
-    return origin(local_id, configuration, callbacks);
+    return origin(localId, configuration, callbacks);
 }
 
-namespace {
-constexpr int                                           StunErrorUnauthorized = 401;
-std::vector<webrtc::PeerConnectionInterface::IceServer> StunServers;
-} // namespace
+static constexpr int                                           StunErrorUnauthorized = 401;
+static std::vector<webrtc::PeerConnectionInterface::IceServer> StunServers;
 
 LL_TYPE_INSTANCE_HOOK(
     BindingErrorResponseHook,

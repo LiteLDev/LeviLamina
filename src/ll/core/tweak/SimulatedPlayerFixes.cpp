@@ -27,17 +27,16 @@
 #include <variant>
 
 namespace ll::simulated_player_fixes {
-namespace {
 
 using GameTestSimulatedPlayerSpawnResult = std::variant<gametest::GameTestError, SimulatedPlayer*>;
 
-thread_local bool isSpawningGameTestSimulatedPlayer = false;
+static thread_local bool isSpawningGameTestSimulatedPlayer = false;
 
-bool shouldUsePlayerChunkLoading(SimulatedPlayer const& player) {
+static bool shouldUsePlayerChunkLoading(SimulatedPlayer const& player) {
     return !isSpawningGameTestSimulatedPlayer && !*player.mGameTestHelper;
 }
 
-void configureSimulatedPlayerChunkRadius(SimulatedPlayer& player) {
+static void configureSimulatedPlayerChunkRadius(SimulatedPlayer& player) {
     auto const serverTickRange = player.getLevel().getLevelData().mServerTickRange;
     if (serverTickRange == 0) {
         return;
@@ -130,8 +129,6 @@ public:
     }
 };
 
-} // namespace
-
 LL_TYPE_INSTANCE_HOOK(
     SimulatedPlayerPrepareRegionHook,
     HookPriority::Highest,
@@ -191,7 +188,6 @@ LL_TYPE_INSTANCE_HOOK(
     ScriptModuleGameTest::ScriptSimulatedPlayer::bind();
     origin(plugin, pluginResult);
 }
-
 
 void enable(bool enableChunkLoading) {
     static memory::HookRegistrar<ScriptSimulatedPlayerMetaHook> gameTestSimulatedPlayerRegistrar;
