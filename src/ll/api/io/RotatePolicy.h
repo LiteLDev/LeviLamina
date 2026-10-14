@@ -24,23 +24,15 @@ struct ArchiveNameInfo {
 };
 
 struct RotateConfig {
-    bool rotateOnOpen = true;
-
-    uint64 maxFileSize = 32ull * 1024 * 1024;
-
-    RotateInterval interval = RotateInterval::Daily;
-
-    bool compress = true;
-
-    size_t keepUncompressed = 7;
-
-    bool cleanup = true;
-
-    size_t maxFiles = 1024;
-
-    int maxAgeDays = 120;
-
-    uint64 totalSizeCap = 512ull * 1024 * 1024;
+    bool           rotateOnOpen     = true;
+    uint64         maxFileSize      = 32ull * 1024 * 1024;
+    RotateInterval interval         = RotateInterval::Daily;
+    bool           compress         = true;
+    size_t         keepUncompressed = 7;
+    bool           cleanup          = true;
+    size_t         maxFiles         = 1024;
+    int            maxAgeDays       = 120;
+    uint64         totalSizeCap     = 512ull * 1024 * 1024;
 };
 
 class RotatePolicy : public RotateConfig {

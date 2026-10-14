@@ -243,7 +243,7 @@ ll::Expected<> compressToSocket(std::string_view chunk1, std::string_view chunk2
 文件到文件的场景用 `compressFile` 和 `decompressFile`,它们基于同一套机制,并且先写入临时文件再改名,
 因此中途被打断不会留下半个文件。
 
-`decompress` 会限制输出大小,因为很小的输入也可能解压出极大的数据。已知预期大小时请显式传入 `maxSize`。
+`decompress` 默认不限制输出大小，只有传入 `maxSize` 时才会限制。数据来源不可信时请传入它，因为很小的输入也可能解压出极大的数据。
 
 ## 相关模块
 

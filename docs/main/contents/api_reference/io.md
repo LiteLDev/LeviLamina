@@ -219,7 +219,8 @@ void addRotatingFileSink(ll::io::Logger& logger) {
 }
 ```
 
-The size and time triggers are independent, so whichever comes first rotates the file.
+The size and time triggers are independent, so whichever comes first rotates the file. `setPolicy`
+replaces the policy of an existing sink, and `rotate` rotates right away unless the file is empty.
 
 `maxFiles`, `maxAgeDays` and `totalSizeCap` each contribute independently and their results are
 unioned, so widening one never disables another. Retention only ever considers files matching the

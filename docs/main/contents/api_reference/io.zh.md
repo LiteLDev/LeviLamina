@@ -194,6 +194,18 @@ logger 使用期间，应优先使用它们或通过 `setSink` 替换 sink，而
 | `maxAgeDays` | `120` | 删除最后修改时间在这么多天之前的归档。设为 `0` 关闭 |
 | `totalSizeCap` | 512 MiB | 从最旧的开始删除归档，直到磁盘上的总体积不超过该值。设为 `0` 关闭 |
 
+| 字段 | 默认值 | 含义 |
+|------|--------|------|
+| `rotateOnOpen` | `true` | 打开文件时，如果里面还有上次运行留下的内容，就先把它归档 |
+| `maxFileSize` | 32 MiB | 写入下一条消息会超过此大小时先轮转；0 表示关闭。单条消息不会被拆开，超大的消息会单独占一个文件 |
+| `interval` | `Daily` | 按消息自身的时间跨过整点或日期时轮转；`None` 表示关闭 |
+| `compress` | `true` | 在后台线程中用 gzip 压缩归档 |
+| `keepUncompressed` | 7 | 最新的多少个归档保持不压缩 |
+| `cleanup` | `true` | 是否允许清理删除文件 |
+| `maxFiles` | 1024 | 最多保留的归档数；0 表示关闭 |
+| `maxAgeDays` | 120 | 删除最后修改时间早于这么多天的归档；0 表示关闭 |
+| `totalSizeCap` | 512 MiB | 从最旧的归档开始删除，直到磁盘上的总大小不超过此值；0 表示关闭 |
+
 ```cpp
 #include "ll/api/io/FileSink.h"
 #include "ll/api/io/PatternFormatter.h"
@@ -216,7 +228,8 @@ void addRotatingFileSink(ll::io::Logger& logger) {
 }
 ```
 
-大小与时间两个触发条件相互独立，哪个先满足就由它触发轮转。
+大小与时间两个触发条件相互独立，哪个先满足就由它触发轮转。`setPolicy` 用于替换已有 sink 的策略，
+`rotate` 会立即轮转（文件为空时什么都不做）。
 
 `maxFiles`、`maxAgeDays` 和 `totalSizeCap` 各自独立生效，最终取并集删除，因此放宽其中一个不会让另外
 两个失效。清理只会处理符合归档命名规则的文件，同目录下的其他文件不受影响。由于 `totalSizeCap` 统计的是

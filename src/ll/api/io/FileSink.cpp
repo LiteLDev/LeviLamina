@@ -172,8 +172,6 @@ struct FileSink::Impl {
         static std::mutex                                                        registryMutex;
         static DenseMap<std::filesystem::path::string_type, std::weak_ptr<Impl>> registry;
 
-        // normalizePath must stay inside the lock: an earlier acquire has then already created the file, so a
-        // differently cased path resolves to its on-disk name and lands on the same key
         std::lock_guard lock{registryMutex};
 
         auto  normalized = sys_utils::normalizePath(path);
@@ -208,7 +206,6 @@ struct FileSink::Impl {
         std::error_code ec;
         std::filesystem::create_directories(dir, ec);
 
-        // binary, so currentSize matches the bytes on disk
         auto mode = std::ios::out | std::ios::binary | (truncate ? std::ios::trunc : std::ios::app);
         file.open(path, mode);
         if (!file) {
@@ -259,7 +256,6 @@ struct FileSink::Impl {
         if (!policy.compress && !policy.cleanup) {
             return;
         }
-        // one task, so compression finishes before totalSizeCap weighs the archives
         getMaintenancePool().execute(
             [maintainer = ArchiveMaintainer{dir, path.filename().string(), extension, policy}] { maintainer.run(); }
         );
