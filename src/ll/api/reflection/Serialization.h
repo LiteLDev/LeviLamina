@@ -277,7 +277,7 @@ inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTa
     if (auto name = detail::enum_name_to_string<enum_type>(t, keyFormatter)) {
         return *std::move(name);
     }
-    return std::to_underlying(t);
+    return fmt::underlying(t);
 }
 
 template <class J, typename T, IsKeyFormatter F>

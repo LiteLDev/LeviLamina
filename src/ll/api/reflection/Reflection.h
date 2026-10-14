@@ -314,7 +314,7 @@ constexpr std::string type_to_string(T const& t, F const& keyFormatter) {
         if constexpr (detail::has_typed_key_formatter_v<T, F>) {
             return keyFormatter.template operator()<std::remove_cvref_t<T>>(t);
         }
-        return std::to_string(std::to_underlying(t));
+        return std::to_string(fmt::underlying(t));
     } else if constexpr (detail::has_typed_key_formatter_v<T, F>) {
         return keyFormatter.template operator()<std::remove_cvref_t<T>>(t);
     } else if constexpr (detail::has_custom_key_serializer_v<T, F>) {
