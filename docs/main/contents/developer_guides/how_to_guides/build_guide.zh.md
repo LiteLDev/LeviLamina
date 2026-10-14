@@ -125,7 +125,6 @@ LeviLamina 依赖 25+ 个外部库，全部通过 `xmake.lua` 中的 `add_requir
 
 | 库                 | 用途             |
 | ------------------ | ---------------- |
-| `mimalloc`         | 高性能内存分配器 |
 | `parallel-hashmap` | 快速哈希表       |
 | `concurrentqueue`  | 无锁队列         |
 

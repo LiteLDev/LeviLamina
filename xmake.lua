@@ -21,7 +21,6 @@ add_requires("magic_enum v0.9.7")
 add_requires("nlohmann_json v3.12.0")
 add_requires("rapidjson 2025.02.05")
 add_requires("type_safe v0.2.4")
-add_requires("mimalloc v3.5.0")
 add_requires("cpr[ssl=y] 1.11.1")
 add_requires("parallel-hashmap v2.0.0")
 add_requires("concurrentqueue v1.0.4")
@@ -112,7 +111,7 @@ target("LeviLamina")
     add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(builddir)/config")
     set_pcxxheader("src/ll/api/Global.h")
-    add_packages("demangler", "mimalloc", "ctre", "cpr", "trampoline", "preloader")
+    add_packages("demangler", "ctre", "cpr", "trampoline", "preloader")
     add_packages(
         "entt",
         "expected-lite",
