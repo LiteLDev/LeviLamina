@@ -3,6 +3,7 @@
 #include <array>
 #include <concepts>
 #include <string>
+#include <tuple>
 #include <type_traits>
 #include <utility>
 #include <variant>
@@ -51,6 +52,15 @@ struct function_traits;
 template <class Ret, class... Args>
 struct function_traits<Ret (*)(Args...)> : function_traits<Ret(Args...)> {};
 
+template <class Ret, class... Args>
+struct function_traits<Ret (*)(Args...) noexcept> : function_traits<Ret(Args...) noexcept> {};
+
+template <class Ret, class... Args>
+struct function_traits<Ret (&)(Args...)> : function_traits<Ret(Args...)> {};
+
+template <class Ret, class... Args>
+struct function_traits<Ret (&)(Args...) noexcept> : function_traits<Ret(Args...) noexcept> {};
+
 template <class F>
 struct function_traits : function_traits<decltype(&F::operator())> {};
 
@@ -63,16 +73,17 @@ struct function_traits : function_traits<decltype(&F::operator())> {};
         template <class T>                                                                                             \
         using cvref = T CVREF;                                                                                         \
                                                                                                                        \
-        using return_type = Ret;                                                                                       \
-        using args_tuple  = std::tuple<Args...>;                                                                       \
+        using return_type      = Ret;                                                                                  \
+        using args_tuple       = std::tuple<Args...>;                                                                  \
+        using function_pointer = Ret (*)(Args...);                                                                     \
         template <size_t I>                                                                                            \
         using arg = std::tuple_element_t<I, args_tuple>;                                                               \
                                                                                                                        \
         static constexpr size_t arity               = sizeof...(Args);                                                 \
         static constexpr bool   is_member_function  = false;                                                           \
         static constexpr bool   is_noexcept         = NOEXCEPT;                                                        \
-        static constexpr bool   is_const            = std::is_const_v<cvref<int>>;                                     \
-        static constexpr bool   is_volatile         = std::is_volatile_v<cvref<int>>;                                  \
+        static constexpr bool   is_const            = std::is_const_v<std::remove_reference_t<cvref<int>>>;            \
+        static constexpr bool   is_volatile         = std::is_volatile_v<std::remove_reference_t<cvref<int>>>;         \
         static constexpr bool   is_reference        = std::is_reference_v<cvref<int>>;                                 \
         static constexpr bool   is_lvalue_reference = std::is_lvalue_reference_v<cvref<int>>;                          \
         static constexpr bool   is_rvalue_reference = std::is_rvalue_reference_v<cvref<int>>;                          \
@@ -80,7 +91,9 @@ struct function_traits : function_traits<decltype(&F::operator())> {};
     template <class Ret, class Cls, class... Args>                                                                     \
     struct function_traits<Ret (Cls::*)(Args...) CVREF noexcept(NOEXCEPT)>                                             \
     : function_traits<Ret(Args...) CVREF noexcept(NOEXCEPT)> {                                                         \
-        using class_type = Cls;                                                                                        \
+        using class_type       = Cls;                                                                                  \
+        using object_pointer   = std::add_pointer_t<Cls CVREF>;                                                        \
+        using function_pointer = Ret (*)(object_pointer, Args...);                                                     \
                                                                                                                        \
         static constexpr bool is_member_function = true;                                                               \
     };

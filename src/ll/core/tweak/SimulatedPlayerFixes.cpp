@@ -1,6 +1,7 @@
 #include "ll/core/tweak/SimulatedPlayerFixes.h"
 
 #include "ll/api/base/ScopedValue.h"
+#include "ll/api/base/TypeTraits.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/memory/Memory.h"
 #include "mc/deps/script_core/binding_type/scripting/ClassBinding.h"
@@ -51,25 +52,11 @@ void configureSimulatedPlayerChunkRadius(SimulatedPlayer& player) {
     }
 }
 
-template <class>
-struct MemberFunctionToFunctionPointer;
-
-template <class R, class C, class... Args>
-struct MemberFunctionToFunctionPointer<R (C::*)(Args...)> {
-    using type = R (*)(C*, Args...);
-};
-
-template <class R, class C, class... Args>
-struct MemberFunctionToFunctionPointer<R (C::*)(Args...) const> {
-    using type = R (*)(C const*, Args...);
-};
-
-template <class T>
-using MemberFunctionToFunctionPointerT = typename MemberFunctionToFunctionPointer<T>::type;
-
 class SimulatedPlayerChunkLoadingVtablePatch {
-    using GetSpawnChunkLimit = MemberFunctionToFunctionPointerT<decltype(&SimulatedPlayer::_getSpawnChunkLimit)>;
-    using UpdateChunkView    = MemberFunctionToFunctionPointerT<decltype(&SimulatedPlayer::_updateChunkPublisherView)>;
+    using GetSpawnChunkLimit =
+        traits::function_traits<decltype(&SimulatedPlayer::_getSpawnChunkLimit)>::function_pointer;
+    using UpdateChunkView =
+        traits::function_traits<decltype(&SimulatedPlayer::_updateChunkPublisherView)>::function_pointer;
 
     inline static GetSpawnChunkLimit mOriginalGetSpawnChunkLimit{};
     inline static UpdateChunkView    mOriginalUpdateChunkView{};
