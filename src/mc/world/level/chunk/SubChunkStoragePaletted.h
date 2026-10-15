@@ -10,7 +10,7 @@
 template <typename T, unsigned long BITS_PER_ELEMENT, SubChunkStorageUnit::Type SERIALIZATION_TYPE>
 class SubChunkStoragePaletted : public ISubChunkStoragePaletted<T> {
 public:
-    using PACKED_WORD    = uint32_t;
+    using PACKED_WORD    = uint32;
     using GenericPalette = GenericPaletteBase<T>;
     using VolumeView     = ChunkVolume::VolumeOf<T>::ConstSubViewType;
 
@@ -36,9 +36,9 @@ public:
 
     MCAPI bool isPaletteUniform(T const&) const override;
 
-    MCAPI T const& getElement(uint16_t) const override;
+    MCAPI T const& getElement(uint16) const override;
 
-    MCAPI bool trySetElement(uint16_t, T const&) override;
+    MCAPI bool trySetElement(uint16, T const&) override;
 
     MCAPI size_t getElementTypeCapacity() const override;
 
@@ -53,8 +53,8 @@ public:
     MCAPI void fetchElementInCylinder(
         BlockPos const&,
         BlockPos const&,
-        uint32_t,
-        uint32_t,
+        uint32,
+        uint32,
         brstd::function_ref<bool(T const&), bool(T const&)> const&,
         std::vector<BlockDataFetchResult<T>>&
     ) const override;
@@ -84,7 +84,7 @@ public:
 
     MCAPI gsl::span<T const* const> getPaletteSnapshot() const override;
 
-    MCAPI void _zeroIndicesGreaterEqualThan(uint16_t max);
+    MCAPI void _zeroIndicesGreaterEqualThan(uint16 max);
 };
 
 template <typename T>
@@ -106,9 +106,9 @@ public:
 
     MCAPI bool isPaletteUniform(T const&) const override;
 
-    MCAPI T const& getElement(uint16_t) const override;
+    MCAPI T const& getElement(uint16) const override;
 
-    MCAPI bool trySetElement(uint16_t, T const&) override;
+    MCAPI bool trySetElement(uint16, T const&) override;
 
     MCAPI size_t getElementTypeCapacity() const override;
 
@@ -123,8 +123,8 @@ public:
     MCAPI void fetchElementInCylinder(
         BlockPos const&,
         BlockPos const&,
-        uint32_t,
-        uint32_t,
+        uint32,
+        uint32,
         brstd::function_ref<bool(T const&), bool(T const&)> const&,
         std::vector<BlockDataFetchResult<T>>&
     ) const override;
@@ -154,5 +154,5 @@ public:
 
     MCAPI gsl::span<T const* const> getPaletteSnapshot() const override;
 
-    MCAPI void _zeroIndicesGreaterEqualThan(uint16_t max);
+    MCAPI void _zeroIndicesGreaterEqualThan(uint16 max);
 };

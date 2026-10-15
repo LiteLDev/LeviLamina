@@ -21,7 +21,7 @@ namespace ll::ui {
 
 using ScreenCloseReason = ::DataDrivenScreenClosedReason;
 
-enum class ScreenSessionState : std::uint8_t {
+enum class ScreenSessionState : uint8 {
     Ready   = 0,
     Showing = 1,
     Closed  = 2,

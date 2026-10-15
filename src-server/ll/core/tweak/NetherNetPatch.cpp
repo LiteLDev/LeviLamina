@@ -33,19 +33,19 @@ using namespace ll::i18n_literals;
 
 namespace {
 
-std::uint16_t parsePort(std::string_view const value) {
+uint16 parsePort(std::string_view const value) {
     unsigned int port    = 0;
     auto const [ptr, ec] = std::from_chars(value.data(), value.data() + value.size(), port);
     if (ec != std::errc{} || ptr != value.data() + value.size() || port == 0 || port > 0xffff) {
         return 0;
     }
-    return static_cast<std::uint16_t>(port);
+    return static_cast<uint16>(port);
 }
 
 // Hosting panels run the server behind a bridge and publish one address, which they hand to the
 // process in the environment. Advertising it is what lets a client reach a server it can already
 // see, without the operator copying an address into server.properties.
-bool addPublishedAddress(NetherNet::TransportConfiguration& config, std::uint16_t const local_port) {
+bool addPublishedAddress(NetherNet::TransportConfiguration& config, uint16 const local_port) {
     auto address = ll::sys_utils::getEnvironmentVariable("SERVER_IP");
     if (address.empty() || address == "0.0.0.0" || address == "::") {
         auto& addressFromCfg = ll::getLeviConfig().targeted.netherNetPatch.serverIP;

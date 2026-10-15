@@ -260,8 +260,8 @@ public:
     [[nodiscard]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
 
     [[nodiscard]] uint toARGB() {
-        auto const toByte = [](float component) -> std::uint8_t {
-            return static_cast<std::uint8_t>(std::round(255.0f * std::clamp(component, 0.0f, 1.0f)));
+        auto const toByte = [](float component) -> uint8 {
+            return static_cast<uint8>(std::round(255.0f * std::clamp(component, 0.0f, 1.0f)));
         };
 
         return (static_cast<uint>(toByte(a)) << 24) | (static_cast<uint>(toByte(r)) << 16)

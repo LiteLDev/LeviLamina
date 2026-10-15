@@ -5,6 +5,7 @@
 #include <memory>
 #include <utility>
 
+#include "ll/api/base/StdInt.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 namespace ll::data {
@@ -13,7 +14,7 @@ template <class T>
 class Observable {
 public:
     using Callback       = brstd::move_only_function<void(T const&)>;
-    using SubscriptionId = std::uint32_t;
+    using SubscriptionId = uint32;
 
 private:
     struct State {

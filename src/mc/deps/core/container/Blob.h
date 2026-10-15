@@ -6,7 +6,7 @@ namespace mce {
 
 class Blob {
 public:
-    using value_type      = std::uint8_t;
+    using value_type      = uint8;
     using delete_function = void (*)(value_type*);
     using size_type       = std::size_t;
     using pointer         = value_type*;
@@ -59,7 +59,7 @@ public:
     LLNDAPI gsl::span<unsigned char> getSpan();
     LLNDAPI gsl::span<unsigned char const> getSpan() const;
 
-    LLAPI void fillBlob(std::uint8_t val);
+    LLAPI void fillBlob(uint8 val);
     LLAPI void swap(Blob& other) noexcept;
 };
 

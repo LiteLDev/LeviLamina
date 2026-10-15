@@ -308,7 +308,7 @@ std::string replaceMcToAnsiCode(std::string_view str) {
 
 bool isu8str(std::string_view str) noexcept {
     bool res = true;
-    fmt::detail::for_each_codepoint(str, [&](uint32_t cp, fmt::string_view) {
+    fmt::detail::for_each_codepoint(str, [&](uint32 cp, fmt::string_view) {
         if (cp == fmt::detail::invalid_code_point) {
             res = false;
             return false;

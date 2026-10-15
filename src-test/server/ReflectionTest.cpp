@@ -184,7 +184,7 @@ struct PlainVariantRoot {
     std::vector<PlainVariant> values;
 };
 
-using ArithmeticVariant = std::variant<bool, std::int64_t, std::uint64_t, double>;
+using ArithmeticVariant = std::variant<bool, int64, uint64, double>;
 
 enum class ItemInfoType {
     Name,
@@ -380,7 +380,7 @@ static_assert(ll::concepts::BorrowableStringSource<JsonValueNode>);
 static_assert(ll::concepts::BorrowableStringSource<CompoundTagVariant>);
 static_assert(ll::concepts::BorrowableStringSource<nlohmann::json>);
 
-enum class NodeKind : std::uint8_t { Basic, Advanced };
+enum class NodeKind : uint8 { Basic, Advanced };
 
 struct NodeChild {
     int         id = 0;
@@ -645,7 +645,7 @@ enum class VariantEnumTag {
 
 using EnumIndexedVariant = VariantWithEnumIndex<VariantEnumTag, std::variant<int, TestVersion>>;
 
-enum class PascalCasePermission : uint8_t {
+enum class PascalCasePermission : uint8 {
     ReadPermission    = 1 << 0,
     WritePermission   = 1 << 1,
     ExecutePermission = 1 << 2,
@@ -959,8 +959,8 @@ struct ll::reflection::Serializer<Json::Value, nlohmann::json> {
         case nlohmann::json::value_t::binary:
             return ll::base64_utils::encode(
                 std::string_view{
-                    reinterpret_cast<char const*>(j.template get<std::vector<uint8_t>>().data()),
-                    j.template get<std::vector<uint8_t>>().size()
+                    reinterpret_cast<char const*>(j.template get<std::vector<uint8>>().data()),
+                    j.template get<std::vector<uint8>>().size()
                 }
             );
         default:
@@ -1640,7 +1640,7 @@ TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields)
     value.mAnimationData       = std::string{"animation-data"};
     value.mCapeId              = std::string{"cape-id"};
 
-    std::uint8_t skinBytes[]{1, 2, 3, 4};
+    uint8 skinBytes[]{1, 2, 3, 4};
     value.mSkinImage->setImageDescription(1, 1, mce::ImageFormat::RGBA8Unorm, mce::ImageUsage::SRGB);
     value.mSkinImage->mImageBytes = mce::Blob{skinBytes, std::size(skinBytes)};
     value.mCapeImage->setImageDescription(2, 1, mce::ImageFormat::RG8Unorm, mce::ImageUsage::Data);
@@ -1927,13 +1927,13 @@ TEST(ReflectionTest, PlainVariantPrefersExactArithmeticAlternativeMatches) {
 
     auto parsedSigned = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(-7));
     ASSERT_TRUE(parsedSigned.has_value()) << parsedSigned.error().message();
-    EXPECT_TRUE(std::holds_alternative<std::int64_t>(*parsedSigned));
-    EXPECT_EQ(std::get<std::int64_t>(*parsedSigned), -7);
+    EXPECT_TRUE(std::holds_alternative<int64>(*parsedSigned));
+    EXPECT_EQ(std::get<int64>(*parsedSigned), -7);
 
-    auto parsedUnsigned = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(std::uint64_t{7}));
+    auto parsedUnsigned = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(uint64{7}));
     ASSERT_TRUE(parsedUnsigned.has_value()) << parsedUnsigned.error().message();
-    EXPECT_TRUE(std::holds_alternative<std::uint64_t>(*parsedUnsigned));
-    EXPECT_EQ(std::get<std::uint64_t>(*parsedUnsigned), 7u);
+    EXPECT_TRUE(std::holds_alternative<uint64>(*parsedUnsigned));
+    EXPECT_EQ(std::get<uint64>(*parsedUnsigned), 7u);
 
     auto parsedDouble = ll::reflection::deserialize_to<ArithmeticVariant>(nlohmann::json(1.5));
     ASSERT_TRUE(parsedDouble.has_value()) << parsedDouble.error().message();
@@ -2438,13 +2438,13 @@ TEST(ReflectionTest, JsonValueNodeFeedsEveryScalarAccessorOfAVariant) {
 
     auto signedValue = parse(::Json::Value{-7});
     ASSERT_TRUE(signedValue.has_value()) << signedValue.error().message();
-    ASSERT_TRUE(std::holds_alternative<std::int64_t>(*signedValue));
-    EXPECT_EQ(std::get<std::int64_t>(*signedValue), -7);
+    ASSERT_TRUE(std::holds_alternative<int64>(*signedValue));
+    EXPECT_EQ(std::get<int64>(*signedValue), -7);
 
     auto unsignedValue = parse(::Json::Value{::Json::Value::UInt{7}});
     ASSERT_TRUE(unsignedValue.has_value()) << unsignedValue.error().message();
-    ASSERT_TRUE(std::holds_alternative<std::uint64_t>(*unsignedValue));
-    EXPECT_EQ(std::get<std::uint64_t>(*unsignedValue), 7u);
+    ASSERT_TRUE(std::holds_alternative<uint64>(*unsignedValue));
+    EXPECT_EQ(std::get<uint64>(*unsignedValue), 7u);
 
     auto doubleValue = parse(::Json::Value{1.5});
     ASSERT_TRUE(doubleValue.has_value()) << doubleValue.error().message();

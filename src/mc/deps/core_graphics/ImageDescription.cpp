@@ -103,7 +103,7 @@ uint32 ImageDescription::getStrideFromFormat(mce::TextureFormat textureFormat) {
 }
 
 
-uint64_t ImageDescription::getStorageSize() const {
+uint64 ImageDescription::getStorageSize() const {
     using namespace mce;
     if ((uint32)((uint32)mTextureFormat - 117) <= 0x1B)
         return mce::getCompressedImageSize(mTextureFormat, mWidth, mHeight, 1);
@@ -113,7 +113,7 @@ uint64_t ImageDescription::getStorageSize() const {
     uint32 subSize = mWidth && mHeight ? mWidth * mHeight * getStrideFromFormat(mTextureFormat) : 0;
 
     uint32 cubeFaces = (mImageType == ImageType::TextureCube) ? 6 : 1;
-    return static_cast<uint64_t>(subSize) * depthOrArray * cubeFaces;
+    return static_cast<uint64>(subSize) * depthOrArray * cubeFaces;
 }
 
 uint32 ImageDescription::getDepth() const {

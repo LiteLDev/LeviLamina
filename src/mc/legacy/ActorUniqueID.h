@@ -33,10 +33,10 @@ namespace std {
 template <>
 struct hash<ActorUniqueID> {
     size_t operator()(ActorUniqueID const& id) const noexcept {
-        static std::hash<std::int64_t> hasher;
-        std::size_t                    seed  = 0;
-        seed                                ^= hasher(id.rawID >> 32) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
-        seed                                ^= hasher(id.rawID & 0xffffffff) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+        static std::hash<int64> hasher;
+        std::size_t             seed  = 0;
+        seed                         ^= hasher(id.rawID >> 32) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+        seed                         ^= hasher(id.rawID & 0xffffffff) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
         return seed;
     }
 };

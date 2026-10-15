@@ -101,7 +101,7 @@ size_t getCompressedImageSize(mce::TextureFormat format, uint32 width, uint32 he
 
     CompressedBlockInfo const block = texd::getCompressedBlockSize(scheme);
 
-    uint64_t totalSize = 0;
+    uint64 totalSize = 0;
     for (unsigned level = 0; level < mipLevelCount; ++level) {
         unsigned w = width >> level;
         if (w == 0) w = 1;
@@ -111,7 +111,7 @@ size_t getCompressedImageSize(mce::TextureFormat format, uint32 width, uint32 he
         unsigned blocksX = (w + block.width - 1) / block.width;
         unsigned blocksY = (h + block.height - 1) / block.height;
 
-        totalSize += static_cast<uint64_t>(block.sizeInBytes) * blocksX * blocksY;
+        totalSize += static_cast<uint64>(block.sizeInBytes) * blocksX * blocksY;
     }
     return totalSize;
 }

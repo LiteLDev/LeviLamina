@@ -11,7 +11,7 @@ extern std::chrono::steady_clock::time_point severStartEndTime;
 
 static bool serverStarted = false;
 
-bool tryModifyBedrockLogInfo(uint32_t, std::string& line) {
+bool tryModifyBedrockLogInfo(uint32, std::string& line) {
     if (serverStarted) return true;
 
     if (line != "Server started.") {

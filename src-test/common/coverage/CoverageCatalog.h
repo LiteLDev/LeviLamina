@@ -26,7 +26,7 @@ namespace ll::test::coverage {
 
 struct LineKey {
     std::string file;
-    uint32_t    line{};
+    uint32      line{};
 
     bool operator==(LineKey const& other) const noexcept { return file == other.file && line == other.line; }
 };
@@ -37,19 +37,19 @@ struct LineKeyHash {
     }
 };
 
-enum class FunctionTag : uint8_t {
+enum class FunctionTag : uint8 {
     None             = 0,
     SourceFunction   = 1 << 0,
     ExportedFunction = 1 << 1,
 };
 
 inline FunctionTag operator|(FunctionTag a, FunctionTag b) noexcept {
-    return static_cast<FunctionTag>(static_cast<uint8_t>(a) | static_cast<uint8_t>(b));
+    return static_cast<FunctionTag>(static_cast<uint8>(a) | static_cast<uint8>(b));
 }
 inline FunctionTag operator&(FunctionTag a, FunctionTag b) noexcept {
-    return static_cast<FunctionTag>(static_cast<uint8_t>(a) & static_cast<uint8_t>(b));
+    return static_cast<FunctionTag>(static_cast<uint8>(a) & static_cast<uint8>(b));
 }
-inline bool hasTag(FunctionTag flags, FunctionTag tag) noexcept { return static_cast<uint8_t>(flags & tag) != 0; }
+inline bool hasTag(FunctionTag flags, FunctionTag tag) noexcept { return static_cast<uint8>(flags & tag) != 0; }
 
 struct FunctionInfo {
     std::string name;
@@ -57,8 +57,8 @@ struct FunctionInfo {
     uintptr_t   start{};
     uintptr_t   end{};
     std::string sourceFile;
-    uint32_t    startLine{};
-    uint32_t    endLine{};
+    uint32      startLine{};
+    uint32      endLine{};
     FunctionTag tags{FunctionTag::None};
     bool        hasLineInfo{};
     size_t      addressCount{};
@@ -67,8 +67,8 @@ struct FunctionInfo {
 struct SourceFileInfo {
     std::string path;
     struct LineEntry {
-        uint32_t line{};
-        size_t   addressCount{};
+        uint32 line{};
+        size_t addressCount{};
     };
     std::vector<LineEntry> lines;
 };
@@ -100,13 +100,13 @@ public:
     };
 
     struct ModuleData {
-        ModuleInfo                         info;
-        std::vector<FunctionInfo>          functions;
-        std::vector<LineInfo>              lines;
-        std::vector<uintptr_t>             instrumentedAddresses;
-        std::vector<std::vector<uint32_t>> addressToLines;
-        std::vector<std::vector<uint32_t>> addressToFunctions;
-        std::unordered_set<uintptr_t>      exportedAddresses;
+        ModuleInfo                       info;
+        std::vector<FunctionInfo>        functions;
+        std::vector<LineInfo>            lines;
+        std::vector<uintptr_t>           instrumentedAddresses;
+        std::vector<std::vector<uint32>> addressToLines;
+        std::vector<std::vector<uint32>> addressToFunctions;
+        std::unordered_set<uintptr_t>    exportedAddresses;
     };
 
     bool buildForProcess();
@@ -130,11 +130,11 @@ public:
     bool isTargetSourceFile(std::string const& path) const;
     void collectExports(ModuleInfo const& mod, std::unordered_set<uintptr_t>& out);
     void accumulateModuleHitSummary(
-        size_t                   moduleIndex,
-        std::span<uint8_t const> addressHits,
-        CoverageHitSummary&      summary
+        size_t                 moduleIndex,
+        std::span<uint8 const> addressHits,
+        CoverageHitSummary&    summary
     ) const;
-    nlohmann::json     moduleHitsToJson(size_t moduleIndex, std::span<uint8_t const> addressHits) const;
+    nlohmann::json     moduleHitsToJson(size_t moduleIndex, std::span<uint8 const> addressHits) const;
     CoverageHitSummary summarizeHits() const;
     nlohmann::json     reportToJson() const;
 

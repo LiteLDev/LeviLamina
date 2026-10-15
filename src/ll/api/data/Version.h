@@ -44,37 +44,36 @@ constexpr bool is_letter(char c) noexcept { return (c >= 'A' && c <= 'Z') || (c 
 
 constexpr bool is_identifier_char(char c) noexcept { return is_digit(c) || is_letter(c) || c == '-'; }
 
-constexpr std::uint16_t to_digit(char c) noexcept { return static_cast<std::uint16_t>(c - '0'); }
+constexpr uint16 to_digit(char c) noexcept { return static_cast<uint16>(c - '0'); }
 
-constexpr void append_number(std::string& output, std::uint16_t value) {
+constexpr void append_number(std::string& output, uint16 value) {
     char   digits[5];
     size_t size{};
     do {
         digits[size++] = static_cast<char>('0' + value % 10);
-        value          = static_cast<std::uint16_t>(value / 10);
+        value          = static_cast<uint16>(value / 10);
     } while (value != 0);
     while (size != 0) {
         output.push_back(digits[--size]);
     }
 }
 
-constexpr from_chars_result from_chars(char const* first, char const* last, std::uint16_t& value) noexcept {
+constexpr from_chars_result from_chars(char const* first, char const* last, uint16& value) noexcept {
     if (first == nullptr || last == nullptr || first >= last || !is_digit(*first)) {
         return {first, std::errc::invalid_argument};
     }
-    std::uint32_t parsed = 0;
+    uint32 parsed = 0;
     for (; first != last && is_digit(*first); ++first) {
         parsed = parsed * 10 + to_digit(*first);
-        if (parsed > (std::numeric_limits<std::uint16_t>::max)()) {
+        if (parsed > (std::numeric_limits<uint16>::max)()) {
             return {first, std::errc::result_out_of_range};
         }
     }
-    value = static_cast<std::uint16_t>(parsed);
+    value = static_cast<uint16>(parsed);
     return {first, std::errc{}};
 }
 
-constexpr from_chars_result
-parse_numeric_identifier(char const* first, char const* last, std::uint16_t& value) noexcept {
+constexpr from_chars_result parse_numeric_identifier(char const* first, char const* last, uint16& value) noexcept {
     if (first == nullptr || last == nullptr || first >= last || (last - first > 1 && *first == '0')) {
         return {first, std::errc::invalid_argument};
     }
@@ -113,7 +112,7 @@ constexpr from_chars_result validate_identifiers(char const* first, char const* 
 } // namespace detail
 
 struct PreRelease {
-    std::vector<std::variant<std::string, std::uint16_t>> values;
+    std::vector<std::variant<std::string, uint16>> values;
 
     constexpr PreRelease()  = default;
     constexpr ~PreRelease() = default;
@@ -131,8 +130,8 @@ struct PreRelease {
                 }
             } else if (std::holds_alternative<std::string>(other.values[i])) {
                 return std::strong_ordering::less;
-            } else if (std::get<std::uint16_t>(values[i]) != std::get<std::uint16_t>(other.values[i])) {
-                return std::get<std::uint16_t>(values[i]) <=> std::get<std::uint16_t>(other.values[i]);
+            } else if (std::get<uint16>(values[i]) != std::get<uint16>(other.values[i])) {
+                return std::get<uint16>(values[i]) <=> std::get<uint16>(other.values[i]);
             }
         }
         return values.size() <=> other.values.size();
@@ -145,8 +144,8 @@ struct PreRelease {
             return {first, std::errc::invalid_argument};
         }
 
-        std::vector<std::variant<std::string, std::uint16_t>> parsed;
-        auto                                                  current = first;
+        std::vector<std::variant<std::string, uint16>> parsed;
+        auto                                           current = first;
         while (current != last && *current != '+') {
             auto identifierBegin = current;
             while (current != last && *current != '.' && *current != '+') {
@@ -161,8 +160,8 @@ struct PreRelease {
 
             bool numeric = std::all_of(identifierBegin, current, detail::is_digit);
             if (numeric) {
-                std::uint16_t value{};
-                auto          result = detail::parse_numeric_identifier(identifierBegin, current, value);
+                uint16 value{};
+                auto   result = detail::parse_numeric_identifier(identifierBegin, current, value);
                 if (!result) {
                     return result;
                 }
@@ -205,7 +204,7 @@ struct PreRelease {
             if (std::holds_alternative<std::string>(value)) {
                 str += std::get<std::string>(value);
             } else {
-                detail::append_number(str, std::get<std::uint16_t>(value));
+                detail::append_number(str, std::get<uint16>(value));
             }
         }
         return str;
@@ -213,9 +212,9 @@ struct PreRelease {
 };
 
 struct Version {
-    std::uint16_t              major = 0;
-    std::uint16_t              minor = 1;
-    std::uint16_t              patch = 0;
+    uint16                     major = 0;
+    uint16                     minor = 1;
+    uint16                     patch = 0;
     std::optional<PreRelease>  preRelease;
     std::optional<std::string> build;
 
@@ -223,9 +222,9 @@ struct Version {
     constexpr ~Version() = default;
 
     constexpr Version(
-        std::uint16_t              mj,
-        std::uint16_t              mn,
-        std::uint16_t              pt,
+        uint16                     mj,
+        uint16                     mn,
+        uint16                     pt,
         std::optional<PreRelease>  prt = {},
         std::optional<std::string> bu  = {}
     ) noexcept
@@ -235,13 +234,7 @@ struct Version {
       preRelease{std::move(prt)},
       build{std::move(bu)} {}
 
-    constexpr Version(
-        std::uint16_t              mj,
-        std::uint16_t              mn,
-        std::uint16_t              pt,
-        std::string_view           prt,
-        std::optional<std::string> bu = {}
-    )
+    constexpr Version(uint16 mj, uint16 mn, uint16 pt, std::string_view prt, std::optional<std::string> bu = {})
     : major{mj},
       minor{mn},
       patch{pt},
@@ -256,7 +249,7 @@ struct Version {
             return {first, std::errc::invalid_argument};
         }
 
-        auto parseCorePart = [last](char const*& current, std::uint16_t& value) -> detail::from_chars_result {
+        auto parseCorePart = [last](char const*& current, uint16& value) -> detail::from_chars_result {
             auto begin  = current;
             auto result = detail::from_chars(current, last, value);
             if (!result) {
@@ -269,10 +262,10 @@ struct Version {
             return result;
         };
 
-        auto          current = first;
-        std::uint16_t parsedMajor{};
-        std::uint16_t parsedMinor{};
-        std::uint16_t parsedPatch{};
+        auto   current = first;
+        uint16 parsedMajor{};
+        uint16 parsedMinor{};
+        uint16 parsedPatch{};
 
         if (auto result = parseCorePart(current, parsedMajor); !result) {
             return result;

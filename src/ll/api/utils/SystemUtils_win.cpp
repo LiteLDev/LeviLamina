@@ -71,9 +71,9 @@ data::Version getSystemVersion() {
         return osVersionInfoW;
     }();
     data::Version version{
-        (uint16_t)osVersionInfoW.dwMajorVersion,
-        (uint16_t)osVersionInfoW.dwMinorVersion,
-        (uint16_t)osVersionInfoW.dwBuildNumber
+        (uint16)osVersionInfoW.dwMajorVersion,
+        (uint16)osVersionInfoW.dwMinorVersion,
+        (uint16)osVersionInfoW.dwBuildNumber
     };
     if (osVersionInfoW.szCSDVersion[0] != 0) {
         version.preRelease.emplace(wstr2str(osVersionInfoW.szCSDVersion));

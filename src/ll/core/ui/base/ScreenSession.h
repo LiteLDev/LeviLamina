@@ -31,7 +31,7 @@ public:
     using Callback = ScreenSession::Callback;
 
 private:
-    enum class Phase : std::uint8_t {
+    enum class Phase : uint8 {
         Ready,
         Showing,
         CloseRequested,

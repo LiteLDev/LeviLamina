@@ -16,15 +16,15 @@
 namespace {
 
 struct ResolvedModuleHits {
-    std::vector<uint8_t> lineHits;
-    std::vector<uint8_t> functionHits;
+    std::vector<uint8> lineHits;
+    std::vector<uint8> functionHits;
 };
 
 ResolvedModuleHits
-resolveModuleHits(ll::test::coverage::CoverageCatalog::ModuleData const& module, std::span<uint8_t const> addressHits) {
+resolveModuleHits(ll::test::coverage::CoverageCatalog::ModuleData const& module, std::span<uint8 const> addressHits) {
     ResolvedModuleHits resolved{
-        .lineHits     = std::vector<uint8_t>(module.lines.size(), 0),
-        .functionHits = std::vector<uint8_t>(module.functions.size(), 0),
+        .lineHits     = std::vector<uint8>(module.lines.size(), 0),
+        .functionHits = std::vector<uint8>(module.functions.size(), 0),
     };
 
     auto const limit = (std::min)(addressHits.size(), module.instrumentedAddresses.size());
@@ -33,10 +33,10 @@ resolveModuleHits(ll::test::coverage::CoverageCatalog::ModuleData const& module,
             continue;
         }
 
-        for (uint32_t lineIndex : module.addressToLines[addressIndex]) {
+        for (uint32 lineIndex : module.addressToLines[addressIndex]) {
             resolved.lineHits[lineIndex] = 1;
         }
-        for (uint32_t functionIndex : module.addressToFunctions[addressIndex]) {
+        for (uint32 functionIndex : module.addressToFunctions[addressIndex]) {
             resolved.functionHits[functionIndex] = 1;
         }
     }
@@ -286,10 +286,10 @@ bool CoverageCatalog::buildForModule(ModuleInfo mod) {
     addrLns.resize(addrs.size());
     addrFns.resize(addrs.size());
 
-    std::unordered_map<LineKey, uint32_t, LineKeyHash> lineToIndex;
+    std::unordered_map<LineKey, uint32, LineKeyHash> lineToIndex;
     lines.reserve(lineAddresses.size());
     for (auto const& [lineKey, lineAddrs] : lineAddresses) {
-        auto lineIndex = static_cast<uint32_t>(lines.size());
+        auto lineIndex = static_cast<uint32>(lines.size());
         lineToIndex.emplace(lineKey, lineIndex);
         lines.push_back(LineInfo{lineKey, lineAddrs.size()});
         for (uintptr_t address : lineAddrs) {
@@ -308,7 +308,7 @@ bool CoverageCatalog::buildForModule(ModuleInfo mod) {
         auto       it          = std::lower_bound(addrs.begin(), addrs.end(), fn.start);
         while (it != addrs.end() && *it < functionEnd) {
             auto const addressIndex = static_cast<size_t>(it - addrs.begin());
-            addrFns[addressIndex].push_back(static_cast<uint32_t>(functionIndex));
+            addrFns[addressIndex].push_back(static_cast<uint32>(functionIndex));
             ++functionAddressCounts[functionIndex];
             ++it;
         }
@@ -323,15 +323,15 @@ bool CoverageCatalog::buildForModule(ModuleInfo mod) {
 }
 
 void CoverageCatalog::accumulateModuleHitSummary(
-    size_t                   moduleIndex,
-    std::span<uint8_t const> addressHits,
-    CoverageHitSummary&      summary
+    size_t                 moduleIndex,
+    std::span<uint8 const> addressHits,
+    CoverageHitSummary&    summary
 ) const {
     auto const& module       = this->module(moduleIndex);
     auto const  resolvedHits = resolveModuleHits(module, addressHits);
 
     summary.totalLines += module.lines.size();
-    for (uint8_t hit : resolvedHits.lineHits) {
+    for (uint8 hit : resolvedHits.lineHits) {
         if (hit != 0) {
             ++summary.hitLines;
         }
@@ -356,7 +356,7 @@ void CoverageCatalog::accumulateModuleHitSummary(
     }
 }
 
-nlohmann::json CoverageCatalog::moduleHitsToJson(size_t moduleIndex, std::span<uint8_t const> addressHits) const {
+nlohmann::json CoverageCatalog::moduleHitsToJson(size_t moduleIndex, std::span<uint8 const> addressHits) const {
     auto const& module       = this->module(moduleIndex);
     auto const  resolvedHits = resolveModuleHits(module, addressHits);
     return buildModuleJson(module, &resolvedHits);

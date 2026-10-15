@@ -3,5 +3,5 @@
 #include <string>
 
 namespace ll {
-bool tryModifyBedrockLogInfo(uint32_t priority, std::string& line);
+bool tryModifyBedrockLogInfo(uint32 priority, std::string& line);
 }

@@ -21,7 +21,7 @@
 namespace ll::data {
 
 struct VersionRequirement {
-    enum class Operator : std::uint8_t {
+    enum class Operator : uint8 {
         Equal,
         Greater,
         GreaterEqual,
@@ -40,11 +40,11 @@ struct VersionRequirement {
 
 private:
     struct PartialVersion {
-        std::optional<std::uint16_t> major;
-        std::optional<std::uint16_t> minor;
-        std::optional<std::uint16_t> patch;
-        std::optional<Version>       exact;
-        std::uint8_t                 precision{};
+        std::optional<uint16>  major;
+        std::optional<uint16>  minor;
+        std::optional<uint16>  patch;
+        std::optional<Version> exact;
+        uint8                  precision{};
     };
 
     std::vector<ComparatorSet> alternatives{{}};
@@ -65,7 +65,7 @@ private:
         return value;
     }
 
-    static constexpr bool parseNumber(std::string_view value, std::uint16_t& result) noexcept {
+    static constexpr bool parseNumber(std::string_view value, uint16& result) noexcept {
         if (value.empty() || (value.size() > 1 && value.front() == '0')) {
             return false;
         }
@@ -120,7 +120,7 @@ private:
                 return false;
             }
 
-            std::uint16_t number{};
+            uint16 number{};
             if (!parseNumber(parts[i], number)) {
                 return false;
             }
@@ -131,7 +131,7 @@ private:
             } else {
                 result.patch = number;
             }
-            result.precision = static_cast<std::uint8_t>(i + 1);
+            result.precision = static_cast<uint8>(i + 1);
         }
 
         if (result.precision == 3) {
@@ -145,22 +145,22 @@ private:
     }
 
     static constexpr std::optional<Version> nextMajor(Version const& version) noexcept {
-        if (version.major == (std::numeric_limits<std::uint16_t>::max)()) {
+        if (version.major == (std::numeric_limits<uint16>::max)()) {
             return std::nullopt;
         }
-        return Version{static_cast<std::uint16_t>(version.major + 1), 0, 0};
+        return Version{static_cast<uint16>(version.major + 1), 0, 0};
     }
 
     static constexpr std::optional<Version> nextMinor(Version const& version) noexcept {
-        if (version.minor != (std::numeric_limits<std::uint16_t>::max)()) {
-            return Version{version.major, static_cast<std::uint16_t>(version.minor + 1), 0};
+        if (version.minor != (std::numeric_limits<uint16>::max)()) {
+            return Version{version.major, static_cast<uint16>(version.minor + 1), 0};
         }
         return nextMajor(version);
     }
 
     static constexpr std::optional<Version> nextPatch(Version const& version) noexcept {
-        if (version.patch != (std::numeric_limits<std::uint16_t>::max)()) {
-            return Version{version.major, version.minor, static_cast<std::uint16_t>(version.patch + 1)};
+        if (version.patch != (std::numeric_limits<uint16>::max)()) {
+            return Version{version.major, version.minor, static_cast<uint16>(version.patch + 1)};
         }
         return nextMinor(version);
     }
@@ -553,9 +553,7 @@ namespace std {
 template <>
 struct hash<ll::data::VersionRequirement::Comparator> {
     size_t operator()(ll::data::VersionRequirement::Comparator const& comparator) const noexcept {
-        return ll::hash_utils::HashCombiner{}
-            .add(static_cast<std::uint8_t>(comparator.operation))
-            .add(comparator.version);
+        return ll::hash_utils::HashCombiner{}.add(static_cast<uint8>(comparator.operation)).add(comparator.version);
     }
 };
 

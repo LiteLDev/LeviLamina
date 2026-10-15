@@ -46,9 +46,9 @@ public:
 
     bool addModule(uintptr_t baseAddress, size_t imageSize, std::span<uintptr_t const> instrumentedAddresses) override;
 
-    [[nodiscard]] size_t                   moduleCount() const override;
-    [[nodiscard]] std::span<uint8_t const> addressHits(size_t moduleIndex) const override;
-    [[nodiscard]] bool                     isRunning() const override;
+    [[nodiscard]] size_t                 moduleCount() const override;
+    [[nodiscard]] std::span<uint8 const> addressHits(size_t moduleIndex) const override;
+    [[nodiscard]] bool                   isRunning() const override;
 
 private:
     struct ModuleRuntime {
@@ -56,9 +56,9 @@ private:
         size_t    size{};
 
         std::vector<uintptr_t> addrs;
-        std::vector<uint8_t>   origBytes;
-        std::vector<uint8_t>   instrumented;
-        std::vector<uint8_t>   addressHits;
+        std::vector<uint8>     origBytes;
+        std::vector<uint8>     instrumented;
+        std::vector<uint8>     addressHits;
 
         struct PageInfo {
             uintptr_t base{};

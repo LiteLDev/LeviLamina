@@ -16,8 +16,8 @@ class Player;
 namespace ll::ui {
 
 struct MessageBoxResult {
-    ScreenCloseReason            closeReason;
-    std::optional<std::uint32_t> selection;
+    ScreenCloseReason     closeReason;
+    std::optional<uint32> selection;
 };
 
 class MessageBox {
