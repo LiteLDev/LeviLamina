@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorUniqueID;
+struct ActorUniqueID;
 
 // auto generated forward declare list
 // clang-format off

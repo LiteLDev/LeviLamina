@@ -1,5 +1,6 @@
 #pragma once
 
+#include <filesystem>
 #include <memory>
 #include <string_view>
 
@@ -22,7 +23,7 @@ protected:
     sys_utils::DynamicLibrary& getDynamicLibrary();
 
 public:
-    NativeMod(Manifest manifest, sys_utils::HandleT handle = nullptr);
+    NativeMod(Manifest manifest, sys_utils::HandleT handle = nullptr, std::filesystem::path loadDirectory = {});
     ~NativeMod();
 
     LLNDAPI sys_utils::HandleT getHandle() const;

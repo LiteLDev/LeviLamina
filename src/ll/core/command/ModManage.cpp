@@ -16,6 +16,7 @@
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 
+#include <ranges>
 #include <string>
 #include <string_view>
 
@@ -72,6 +73,20 @@ void registerModManageCommand(bool isClientSide) {
             }
         }
     );
+    cmd.overload<LeviCommand3>().text("load").required("mod").text("cascade").execute(
+        [](CommandOrigin const& origin, CommandOutput& output, LeviCommand3 const& param) {
+            if (ll::mod::ModManagerRegistry::getInstance().hasMod(param.mod)) {
+                output.error("Mod {0} already loaded"_trl(origin.getLocaleCode(), param.mod));
+                return;
+            }
+            if (auto res = ll::mod::ModRegistrar::getInstance().loadMod(param.mod, true); res) {
+                output.success("Load mod {0} and its dependents successfully"_trl(origin.getLocaleCode(), param.mod));
+            } else {
+                output.error("Failed to load mod {0}"_trl(origin.getLocaleCode(), param.mod));
+                res.error().log(output, origin.getLocaleCode());
+            }
+        }
+    );
     cmd.overload<LeviCommand>()
         .required("operation")
         .required("mod")
@@ -91,7 +106,7 @@ void registerModManageCommand(bool isClientSide) {
                 }
                 break;
             case LeviCommandOperation::reload:
-                if (auto res = reg.unloadMod(param.mod).and_then([&] { return reg.loadMod(param.mod); }); res) {
+                if (auto res = reg.reloadMod(param.mod); res) {
                     output.success("Reload mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
                     output.error("Failed to reload mod {0}"_trl(origin.getLocaleCode(), param.mod));
@@ -101,6 +116,55 @@ void registerModManageCommand(bool isClientSide) {
             case LeviCommandOperation::reactivate:
                 if (auto res = reg.disableMod(param.mod).and_then([&] { return reg.enableMod(param.mod); }); res) {
                     output.success("Reactivate mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
+                } else {
+                    output.error("Failed to reactivate mod {0}"_trl(origin.getLocaleCode(), param.mod));
+                    res.error().log(output, origin.getLocaleCode());
+                }
+                break;
+            default:
+                LL_UNREACHABLE;
+            }
+        });
+    cmd.overload<LeviCommand>()
+        .required("operation")
+        .required("mod")
+        .text("cascade")
+        .execute([](CommandOrigin const& origin, CommandOutput& output, LeviCommand const& param) {
+            if (!ll::mod::ModManagerRegistry::getInstance().hasMod(param.mod)) {
+                output.error("Mod {0} not found"_trl(origin.getLocaleCode(), param.mod));
+                return;
+            }
+            auto& reg = ll::mod::ModRegistrar::getInstance();
+            switch (param.operation) {
+            case LeviCommandOperation::unload:
+                if (auto res = reg.unloadMod(param.mod, true); res) {
+                    output.success(
+                        "Unload mod {0} and its dependents successfully"_trl(origin.getLocaleCode(), param.mod)
+                    );
+                } else {
+                    output.error("Failed to unload mod {0}"_trl(origin.getLocaleCode(), param.mod));
+                    res.error().log(output, origin.getLocaleCode());
+                }
+                break;
+            case LeviCommandOperation::reload:
+                if (auto res = reg.reloadMod(param.mod, true); res) {
+                    output.success(
+                        "Reload mod {0} and its dependents successfully"_trl(origin.getLocaleCode(), param.mod)
+                    );
+                } else {
+                    output.error("Failed to reload mod {0}"_trl(origin.getLocaleCode(), param.mod));
+                    res.error().log(output, origin.getLocaleCode());
+                }
+                break;
+            case LeviCommandOperation::reactivate:
+                if (auto res = reg.disableMod(param.mod, true).and_then([&] { return reg.enableMod(param.mod, true); });
+                    res) {
+                    output.success(
+                        "Reactivate mod {0} and its dependency chain successfully"_trl(
+                            origin.getLocaleCode(),
+                            param.mod
+                        )
+                    );
                 } else {
                     output.error("Failed to reactivate mod {0}"_trl(origin.getLocaleCode(), param.mod));
                     res.error().log(output, origin.getLocaleCode());
@@ -163,6 +227,44 @@ void registerModManageCommand(bool isClientSide) {
                 }
                 break;
             }
+            default:
+                LL_UNREACHABLE;
+            }
+        });
+    cmd.overload<LeviCommand2>()
+        .required("operation")
+        .required("mod")
+        .text("cascade")
+        .execute([](CommandOrigin const& origin, CommandOutput& output, LeviCommand2 const& param) {
+            if (!ll::mod::ModManagerRegistry::getInstance().hasMod(param.mod)) {
+                output.error("Mod {0} not found"_trl(origin.getLocaleCode(), param.mod));
+                return;
+            }
+            auto& reg = ll::mod::ModRegistrar::getInstance();
+            switch (param.operation) {
+            case LeviCommandOperation2::enable:
+                if (auto res = reg.enableMod(param.mod, true); res) {
+                    output.success(
+                        "Enable mod {0} and its dependencies successfully"_trl(origin.getLocaleCode(), param.mod)
+                    );
+                } else {
+                    output.error("Failed to enable mod {0}"_trl(origin.getLocaleCode(), param.mod));
+                    res.error().log(output, origin.getLocaleCode());
+                }
+                break;
+            case LeviCommandOperation2::disable:
+                if (auto res = reg.disableMod(param.mod, true); res) {
+                    output.success(
+                        "Disable mod {0} and its dependents successfully"_trl(origin.getLocaleCode(), param.mod)
+                    );
+                } else {
+                    output.error("Failed to disable mod {0}"_trl(origin.getLocaleCode(), param.mod));
+                    res.error().log(output, origin.getLocaleCode());
+                }
+                break;
+            case LeviCommandOperation2::show:
+                output.error("The show operation does not support cascade"_trl(origin.getLocaleCode()));
+                break;
             default:
                 LL_UNREACHABLE;
             }

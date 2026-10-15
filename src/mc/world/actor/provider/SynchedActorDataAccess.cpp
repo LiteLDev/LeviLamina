@@ -2,10 +2,10 @@
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/vanilla_components/ActorDataFlagComponent.h"
 
-bool SynchedActorDataAccess::getActorFlag(::EntityContext const& entity, ::ActorFlags flag) {
-    auto component = entity.tryGetComponent<ActorDataFlagComponent>();
-    if (component) {
-        return component->mValue.test(static_cast<size_t>(flag));
-    }
-    return false;
-}
+// bool SynchedActorDataAccess::getActorFlag(::EntityContext const& entity, ::ActorFlags flag) {
+//     auto component = entity.tryGetComponent<ActorDataFlagComponent>();
+//     if (component) {
+//         return component->mValue.test(static_cast<size_t>(flag));
+//     }
+//     return false;
+// }

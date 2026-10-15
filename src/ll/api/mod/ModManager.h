@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <filesystem>
 #include <functional>
 #include <memory>
 #include <mutex>
@@ -24,6 +25,8 @@ class ModManager {
 public:
     LLNDAPI std::string const& getType() const;
 
+    LLNDAPI std::filesystem::path const& getLoadDirectory() const;
+
     LLNDAPI bool hasMod(std::string_view name) const;
 
     LLNDAPI std::shared_ptr<Mod> getMod(std::string_view name) const;
@@ -35,7 +38,7 @@ public:
 protected:
     LLNDAPI std::lock_guard<std::recursive_mutex> lock() const;
 
-    LLNDAPI explicit ModManager(std::string_view type);
+    LLNDAPI explicit ModManager(std::string_view type, std::filesystem::path loadDirectory = {});
 
     LLAPI virtual ~ModManager();
 
