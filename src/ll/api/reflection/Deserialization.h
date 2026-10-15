@@ -1,9 +1,12 @@
 #pragma once
+#include "fmt/format.h"
 #include "ll/api/base/FixedString.h"
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/reflection/ReflectionError.h"
 #include "ll/api/reflection/Serializer.h"
 #include "mc/deps/nbt/CompoundTagVariant.h"
+#include <cmath>
+#include <limits>
 #include <memory>
 
 // Priority:
@@ -23,17 +26,6 @@
 namespace ll::reflection {
 
 namespace {
-
-template <class T, class J, class F>
-constexpr bool use_convertible_deserialize_fallback_v =
-    !std::is_arithmetic_v<std::remove_cvref_t<T>> && !detail::has_value_deserializer_v<std::remove_cvref_t<T>, J, F>
-    && !concepts::IsOptional<std::remove_cvref_t<T>> && !concepts::IsDispatcher<std::remove_cvref_t<T>>
-    && !concepts::IsVectorBase<std::remove_cvref_t<T>> && !std::is_enum_v<std::remove_cvref_t<T>>
-    && !concepts::IsVariant<std::remove_cvref_t<T>>
-    && !(concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>&, std::string>)
-    && !std::same_as<std::remove_cvref_t<T>, std::string_view> && !concepts::TupleLike<std::remove_cvref_t<T>>
-    && !concepts::ArrayLike<std::remove_cvref_t<T>> && !concepts::Associative<std::remove_cvref_t<T>>
-    && !Reflectable<std::remove_cvref_t<T>> && std::convertible_to<J, std::remove_cvref_t<T>>;
 
 template <class T, class J, IsKeyFormatter F>
 inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<11>)
@@ -81,8 +73,7 @@ template <class T, class J, IsKeyFormatter F>
 inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<1>)
     requires(Reflectable<std::remove_cvref_t<T>>);
 template <class T, class J, IsKeyFormatter F>
-inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<0>)
-    requires(use_convertible_deserialize_fallback_v<T, J, F>);
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<0>);
 
 template <class T, class J, IsKeyFormatter F>
 inline Expected<> deserialize_inplace_impl(T& t, J&& j, F const& keyFormatter)
@@ -90,6 +81,9 @@ inline Expected<> deserialize_inplace_impl(T& t, J&& j, F const& keyFormatter)
 
 template <class T, class V>
 inline void replace_deserialized_value(T& target, V&& value);
+
+template <class T, class J, IsKeyFormatter F>
+inline Expected<std::remove_cvref_t<T>> deserialize_construct(J&& j, F const& keyFormatter);
 
 } // namespace
 
@@ -115,7 +109,7 @@ inline Expected<> deserialize(T& t, J&& j) noexcept {
 
 template <class T, class J, IsKeyFormatter F>
 inline Expected<T> deserialize_to(J&& j, F const& keyFormatter) noexcept try {
-    return deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
+    return deserialize_construct<T>(std::forward<J>(j), keyFormatter);
 } catch (...) {
     return makeExceptionError();
 }
@@ -126,11 +120,6 @@ inline Expected<T> deserialize_to(J&& j) noexcept {
 }
 
 namespace {
-
-template <class T, class J, IsKeyFormatter F>
-constexpr bool can_deserialize_to_v = requires(J&& j, F const& keyFormatter) {
-    deserialize_impl<T>(std::forward<J>(j), keyFormatter, meta::PriorityTag<11>{});
-};
 
 template <class T, class J, IsKeyFormatter F>
 constexpr bool can_deserialize_construct_from_inplace_v =
@@ -183,9 +172,7 @@ inline void replace_deserialized_value(T& target, V&& value) {
 }
 
 template <class T, class J, IsKeyFormatter F>
-inline Expected<std::remove_cvref_t<T>> deserialize_construct(J&& j, F const& keyFormatter)
-    requires(can_deserialize_to_v<T, J, F> || can_deserialize_construct_from_inplace_v<T, J, F>)
-{
+inline Expected<std::remove_cvref_t<T>> deserialize_construct(J&& j, F const& keyFormatter) {
     using RT = std::remove_cvref_t<T>;
     if constexpr (can_deserialize_construct_from_inplace_v<RT, J, F>) {
         RT   value{};
@@ -810,13 +797,82 @@ inline Expected<std::remove_cvref_t<T>> reflectable_deserialize_value(J&& j, F c
     }
 }
 
+// std::in_range rejects the character types on the MSVC STL, so the check is spelled out here.
+template <class RT>
+    requires(std::integral<RT>)
+constexpr bool isRepresentable(int64 value) noexcept {
+    if constexpr (std::is_signed_v<RT>) {
+        return value >= static_cast<int64>((std::numeric_limits<RT>::lowest)())
+            && value <= static_cast<int64>((std::numeric_limits<RT>::max)());
+    } else {
+        return value >= 0 && static_cast<uint64>(value) <= static_cast<uint64>((std::numeric_limits<RT>::max)());
+    }
+}
+
+template <class RT>
+    requires(std::integral<RT>)
+constexpr bool isRepresentable(uint64 value) noexcept {
+    return value <= static_cast<uint64>((std::numeric_limits<RT>::max)());
+}
+
+template <class RT>
+    requires(std::integral<RT> && !std::same_as<RT, bool>)
+inline Expected<RT> narrowIntegral(int64 value) {
+    if (!isRepresentable<RT>(value)) {
+        return makeDeserNumberRangeError(fmt::to_string(value), type_name_v<RT>);
+    }
+    return static_cast<RT>(value);
+}
+
+template <class RT>
+    requires(std::integral<RT> && !std::same_as<RT, bool>)
+inline Expected<RT> narrowIntegral(uint64 value) {
+    if (!isRepresentable<RT>(value)) {
+        return makeDeserNumberRangeError(fmt::to_string(value), type_name_v<RT>);
+    }
+    return static_cast<RT>(value);
+}
+
 template <class T, class J, IsKeyFormatter F>
 inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const&, meta::PriorityTag<11>)
     requires(std::is_arithmetic_v<std::remove_cvref_t<T>>)
 {
     using RT = std::remove_cvref_t<T>;
     if (!j.is_number() && !j.is_boolean()) return makeDeserArithmeticTypeError();
-    return static_cast<RT>(j);
+
+    if constexpr (std::same_as<RT, bool>) {
+        return static_cast<RT>(j);
+    } else if constexpr (std::integral<RT> && !std::same_as<RT, bool>) {
+        if (!j.is_number()) return static_cast<RT>(static_cast<bool>(j));
+        if (j.is_number_float()) {
+            auto value = static_cast<double>(j);
+            if (std::trunc(value) != value) return makeDeserNumberFractionError(fmt::to_string(value));
+            // Both bounds are powers of two and therefore exact, so widening below cannot overflow and
+            // the remaining range check is left to narrowIntegral.
+            if constexpr (std::unsigned_integral<RT>) {
+                if (value < 0.0 || value >= std::ldexp(1.0, 64)) {
+                    return makeDeserNumberRangeError(fmt::to_string(value), type_name_v<RT>);
+                }
+                return narrowIntegral<RT>(static_cast<uint64>(value));
+            } else {
+                if (value < -std::ldexp(1.0, 63) || value >= std::ldexp(1.0, 63)) {
+                    return makeDeserNumberRangeError(fmt::to_string(value), type_name_v<RT>);
+                }
+                return narrowIntegral<RT>(static_cast<int64>(value));
+            }
+        }
+        if (j.is_number_unsigned()) return narrowIntegral<RT>(static_cast<uint64>(j));
+        return narrowIntegral<RT>(static_cast<int64>(j));
+    } else {
+        // Report values that would otherwise silently turn into an infinity.
+        if (j.is_number_float()) {
+            auto value = static_cast<double>(j);
+            if (std::abs(value) > static_cast<double>((std::numeric_limits<RT>::max)())) {
+                return makeDeserNumberRangeError(fmt::to_string(value), type_name_v<RT>);
+            }
+        }
+        return static_cast<RT>(j);
+    }
 }
 
 template <class T, class J, IsKeyFormatter F>
@@ -948,8 +1004,8 @@ template <class T, class J, IsKeyFormatter F>
 inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyFormatter, meta::PriorityTag<6>)
     requires(concepts::IsVariant<std::remove_cvref_t<T>>)
 {
-    using RT             = std::remove_cvref_t<T>;
-    Expected<RT> matched = makeDeserVariantCastError(j.type_name(), j.dump());
+    using RT = std::remove_cvref_t<T>;
+    std::optional<RT> matched;
 
     [&]<typename... Ts>(std::type_identity<std::variant<Ts...>>) {
         (
@@ -960,18 +1016,27 @@ inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyForm
                         if constexpr (std::same_as<Ts, bool>) {
                             if (j.is_boolean()) return j.template get<bool>();
                         } else if constexpr (std::is_floating_point_v<Ts>) {
-                            if (j.is_number_float()) return static_cast<Ts>(j.template get<double>());
+                            if (j.is_number_float()) {
+                                auto number = j.template get<double>();
+                                if (std::abs(number) <= static_cast<double>((std::numeric_limits<Ts>::max)())) {
+                                    return static_cast<Ts>(number);
+                                }
+                            }
                         } else if constexpr (std::is_signed_v<Ts>) {
                             if (j.is_number_integer() && !j.is_number_unsigned()) {
-                                return static_cast<Ts>(j.template get<std::int64_t>());
+                                auto number = j.template get<int64>();
+                                if (isRepresentable<Ts>(number)) return static_cast<Ts>(number);
                             }
                         } else if constexpr (std::is_unsigned_v<Ts>) {
-                            if (j.is_number_unsigned()) return static_cast<Ts>(j.template get<std::uint64_t>());
+                            if (j.is_number_unsigned()) {
+                                auto number = j.template get<uint64>();
+                                if (isRepresentable<Ts>(number)) return static_cast<Ts>(number);
+                            }
                         }
                         return makeDeserNumberTypeError(j.type_name());
                     }();
                     if (value) {
-                        matched = RT{std::in_place_type<Ts>, std::move(*value)};
+                        matched.emplace(std::in_place_type<Ts>, std::move(*value));
                     }
                 }
             }(),
@@ -983,13 +1048,14 @@ inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyForm
             [&] {
                 if (matched.has_value()) return;
                 if (auto value = deserialize_construct<Ts>(std::forward<J>(j), keyFormatter); value) {
-                    matched = RT{std::in_place_type<Ts>, std::move(*value)};
+                    matched.emplace(std::in_place_type<Ts>, std::move(*value));
                 }
             }(),
             ...);
     }(std::type_identity<RT>{});
 
-    return matched;
+    if (!matched) return makeDeserVariantCastError(j.type_name(), j.dump());
+    return std::move(*matched);
 }
 
 template <class T, class J, IsKeyFormatter F>
@@ -1054,7 +1120,8 @@ inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyForm
     using RT = std::remove_cvref_t<T>;
     static_assert(
         detail::is_key_stringifiable_v<typename RT::key_type>,
-        "the key type of the associative container must be convertible from a string"
+        "an associative container key has to be a string, an enum, or a type with a "
+        "ll::reflection::Serializer<T>::to_string / from_string specialization"
     );
     J const& jConst = j;
     if (!jConst.is_object()) return makeDeserObjectTypeError();
@@ -1087,12 +1154,30 @@ inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const& keyForm
     return reflectable_deserialize_value<RT>(std::forward<J>(j), keyFormatter);
 }
 
+template <class T, class J, class F>
+constexpr bool use_convertible_deserialize_fallback_v =
+    !std::is_arithmetic_v<std::remove_cvref_t<T>> && !detail::has_value_deserializer_v<std::remove_cvref_t<T>, J, F>
+    && !concepts::IsOptional<std::remove_cvref_t<T>> && !concepts::IsDispatcher<std::remove_cvref_t<T>>
+    && !concepts::IsVectorBase<std::remove_cvref_t<T>> && !std::is_enum_v<std::remove_cvref_t<T>>
+    && !concepts::IsVariant<std::remove_cvref_t<T>>
+    && !(concepts::IsString<std::remove_cvref_t<T>> && std::is_assignable_v<std::remove_cvref_t<T>&, std::string>)
+    && !std::same_as<std::remove_cvref_t<T>, std::string_view> && !concepts::TupleLike<std::remove_cvref_t<T>>
+    && !concepts::ArrayLike<std::remove_cvref_t<T>> && !concepts::Associative<std::remove_cvref_t<T>>
+    && !Reflectable<std::remove_cvref_t<T>> && std::convertible_to<J, std::remove_cvref_t<T>>;
+
 template <class T, class J, IsKeyFormatter F>
-inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const&, meta::PriorityTag<0>)
-    requires(use_convertible_deserialize_fallback_v<T, J, F>)
-{
+inline Expected<std::remove_cvref_t<T>> deserialize_impl(J&& j, F const&, meta::PriorityTag<0>) {
     using RT = std::remove_cvref_t<T>;
-    return static_cast<RT>(j);
+    if constexpr (use_convertible_deserialize_fallback_v<T, J, F>) {
+        return static_cast<RT>(j);
+    } else {
+        static_assert(
+            traits::always_false<RT>,
+            "cannot deserialize this type: provide a ll::reflection::Serializer<T> specialization, or use an "
+            "arithmetic type, a string, an optional, a dispatcher, an enum, a variant, a tuple-like, an array-like "
+            "or associative container, or a reflectable aggregate"
+        );
+    }
 }
 
 } // namespace

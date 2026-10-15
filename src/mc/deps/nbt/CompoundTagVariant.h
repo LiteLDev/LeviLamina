@@ -42,7 +42,7 @@ public:
         ::CompoundTag,
         ::IntArrayTag>;
 
-    using Variant = Types::to<::std::variant>;
+    using Variant  = Types::to<::std::variant>;
     using string_t = std::string;
 
     template <bool Const>
@@ -331,6 +331,12 @@ public:
         requires(std::same_as<Ref, string_t const&>)
     {
         return static_cast<string_t const&>(get<StringTag>());
+    }
+
+    template <class T>
+        requires(std::is_arithmetic_v<T> && !ll::traits::is_char_v<T>)
+    [[nodiscard]] constexpr T get() const {
+        return static_cast<T>(*this);
     }
 
     [[nodiscard]] Tag& get() { return reinterpret_cast<Tag&>(mTagStorage); }

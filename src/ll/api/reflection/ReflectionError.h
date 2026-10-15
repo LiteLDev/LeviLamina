@@ -18,6 +18,8 @@ LLNDAPI Unexpected makeDeserIndexError(std::size_t idx, Error& err) noexcept;
 LLNDAPI Unexpected makeDeserKeyError(std::string_view key, Error& err) noexcept;
 LLNDAPI Unexpected makeDeserArithmeticTypeError() noexcept;
 LLNDAPI Unexpected makeDeserNumberTypeError(std::string_view actualType) noexcept;
+LLNDAPI Unexpected makeDeserNumberRangeError(std::string_view valueText, std::string_view targetType) noexcept;
+LLNDAPI Unexpected makeDeserNumberFractionError(std::string_view valueText) noexcept;
 LLNDAPI Unexpected makeDeserStringTypeError() noexcept;
 LLNDAPI Unexpected makeDeserStringViewLifetimeError() noexcept;
 LLNDAPI Unexpected makeDeserArrayTypeError() noexcept;

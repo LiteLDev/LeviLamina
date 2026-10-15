@@ -51,6 +51,7 @@ nav:
           - Mod: api_reference/mod.md
           - Network: api_reference/network.md
           - Reflection: api_reference/reflection.md
+          - Reflection (Advanced): api_reference/reflection_advanced.md
           - Service: api_reference/service.md
           - Thread: api_reference/thread.md
           - Utils: api_reference/utils.md
@@ -157,6 +158,7 @@ plugins:
             Mod: 模组系统
             Network: 网络
             Reflection: 反射
+            Reflection (Advanced): 反射（进阶）
             Service: 服务系统
             Thread: 线程工具
             Utils: 工具函数

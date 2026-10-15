@@ -14,6 +14,7 @@ LeviLamina 的 API 按以下模块组织：
 | [Expected（错误处理）](expected.zh.md) | `Expected<T>` 和 `Error` 类型的错误处理 | 通用 |
 | [Config（配置系统）](config.zh.md) | 基于 JSON 序列化的配置加载与保存 | 通用 |
 | [Reflection（反射）](reflection.zh.md) | 编译期反射、序列化和反序列化 | 通用 |
+| [Reflection（反射 · 进阶）](reflection_advanced.zh.md) | 调度模型、特化签名与复杂示例 | 通用 |
 
 ### 核心系统
 

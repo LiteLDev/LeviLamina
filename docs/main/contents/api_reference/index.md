@@ -14,6 +14,7 @@ LeviLamina's API is organized into the following modules:
 | [Expected](expected.md) | Error handling with `Expected<T>` and `Error` types | Common |
 | [Config](config.md) | Configuration loading and saving with JSON serialization | Common |
 | [Reflection](reflection.md) | Compile-time reflection, serialization, and deserialization | Common |
+| [Reflection (Advanced)](reflection_advanced.md) | Dispatch model, specialization signatures, and worked examples | Common |
 
 ### Core Systems
 

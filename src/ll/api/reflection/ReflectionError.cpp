@@ -82,16 +82,27 @@ Unexpected makeDeserKeyError(std::string_view key, Error& err) noexcept {
     return makePathError(fmt::format("[\"{}\"]", key), std::move(err));
 }
 
-Unexpected makeDeserArithmeticTypeError() noexcept { return makeI18nStringError<"field must be a number or boolean">(); }
+Unexpected makeDeserArithmeticTypeError() noexcept {
+    return makeI18nStringError<"field must be a number or boolean">();
+}
 
 Unexpected makeDeserNumberTypeError(std::string_view actualType) noexcept {
     return makeI18nStringError<"type must be a number, but got {0}">(std::string{actualType});
 }
 
+Unexpected makeDeserNumberRangeError(std::string_view valueText, std::string_view targetType) noexcept {
+    return makeI18nStringError<"number {0} is out of range for {1}">(std::string{valueText}, std::string{targetType});
+}
+
+Unexpected makeDeserNumberFractionError(std::string_view valueText) noexcept {
+    return makeI18nStringError<"number {0} is not an integer">(std::string{valueText});
+}
+
 Unexpected makeDeserStringTypeError() noexcept { return makeI18nStringError<"field must be a string">(); }
 
 Unexpected makeDeserStringViewLifetimeError() noexcept {
-    return makeI18nStringError<"field cannot be safely deserialized into string_view from a temporary or non-borrowing source">();
+    return makeI18nStringError<
+        "field cannot be safely deserialized into string_view from a temporary or non-borrowing source">();
 }
 
 Unexpected makeDeserArrayTypeError() noexcept { return makeI18nStringError<"field must be an array">(); }

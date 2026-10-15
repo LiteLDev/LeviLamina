@@ -1,4 +1,5 @@
 #include "ll/api/base/Concepts.h"
+#include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Memory.h"
@@ -28,6 +29,7 @@
 #include <filesystem>
 #include <format>
 #include <map>
+#include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -208,6 +210,216 @@ struct NonDefaultConstructibleItem {
     auto operator<=>(NonDefaultConstructibleItem const&) const = default;
 };
 
+// 刻意不是聚合体，而且文档里这个成员叫 "name"：默认反射产不出下面断言的值，只有走原地式特化
+// 才可能通过。入口要是选错了特化，这里会直接编译不过。
+struct InPlaceItem {
+    int         id = 0;
+    std::string label;
+    bool        touched = false;
+
+    InPlaceItem() = default;
+};
+static_assert(!std::is_aggregate_v<InPlaceItem>);
+
+// 把 Bedrock 的 Json::Value 接到反射协议上的节点适配类型：框架对目标类型 J 完全泛型，想让别的
+// 数据结构也能用，就要提供它真正调用的那些成员。这个类型同时是个可写视图——拷贝节点是浅拷贝
+// （共享同一份 Json::Value），赋值会写穿到底层值，元素访问返回子节点缓存里的引用；每个子槽位
+// 只缓存一份，反复遍历不会越攒越多。
+class JsonValueNode {
+public:
+    JsonValueNode() : mValue(std::make_shared<::Json::Value>()) {}
+    JsonValueNode(std::nullptr_t) : JsonValueNode() {}
+    JsonValueNode(::Json::Value value) : mValue(std::make_shared<::Json::Value>(std::move(value))) {}
+    JsonValueNode(JsonValueNode const& other) : mValue(other.mValue) {}
+    JsonValueNode(JsonValueNode&& other) noexcept : mValue(std::move(other.mValue)) {}
+
+    template <class T>
+        requires(std::is_arithmetic_v<T>)
+    JsonValueNode(T value) : JsonValueNode{::Json::Value{value}} {}
+    JsonValueNode(std::string value) : JsonValueNode{::Json::Value{std::move(value)}} {}
+    JsonValueNode(char const* value) : JsonValueNode{::Json::Value{value}} {}
+
+    [[nodiscard]] static JsonValueNode object() { return JsonValueNode{::Json::Value{::Json::ValueType::ObjectValue}}; }
+    [[nodiscard]] static JsonValueNode array() { return JsonValueNode{::Json::Value{::Json::ValueType::ArrayValue}}; }
+
+    [[nodiscard]] ::Json::Value const& value() const { return *mValue; }
+    [[nodiscard]] ::Json::Value&       value() { return *mValue; }
+
+    [[nodiscard]] bool is_null() const { return mValue->isNull(); }
+    [[nodiscard]] bool is_object() const { return mValue->isObject(); }
+    [[nodiscard]] bool is_array() const { return mValue->isArray(); }
+    [[nodiscard]] bool is_string() const { return mValue->isString(); }
+    [[nodiscard]] bool is_boolean() const { return mValue->isBool(); }
+    [[nodiscard]] bool is_number() const { return mValue->isNumeric(); }
+    [[nodiscard]] bool is_number_float() const { return mValue->type() == ::Json::ValueType::RealValue; }
+    [[nodiscard]] bool is_number_integer() const {
+        auto const type = mValue->type();
+        return type == ::Json::ValueType::IntValue || type == ::Json::ValueType::UintValue;
+    }
+    [[nodiscard]] bool is_number_unsigned() const { return mValue->type() == ::Json::ValueType::UintValue; }
+
+    [[nodiscard]] std::size_t size() const { return mValue->size(); }
+
+    [[nodiscard]] std::string_view type_name() const {
+        switch (mValue->type()) {
+        case ::Json::ValueType::NullValue:
+            return "null";
+        case ::Json::ValueType::ObjectValue:
+            return "object";
+        case ::Json::ValueType::ArrayValue:
+            return "array";
+        case ::Json::ValueType::StringValue:
+            return "string";
+        case ::Json::ValueType::BooleanValue:
+            return "boolean";
+        default:
+            return "number";
+        }
+    }
+
+    [[nodiscard]] std::string dump() const { return mValue->toStyledString(); }
+
+    // 借出字符串：Json::Value 只能按值交出字符串，所以节点缓存一份，get_ref 返回它的引用，
+    // 调用方再自己构造需要的类型（这里是 std::string_view）。文本随本节点存活。
+    using string_t = std::string;
+
+    template <class T>
+        requires(std::same_as<T, string_t const&>)
+    [[nodiscard]] T const& get_ref() const {
+        mBorrowed = mValue->asString("");
+        return mBorrowed;
+    }
+
+    [[nodiscard]] bool contains(std::string_view key) const { return mValue->isMember(std::string{key}); }
+
+    JsonValueNode& operator[](std::string_view key) const {
+        if (auto found = mKeyChildren.find(key); found != mKeyChildren.end()) {
+            return *found->second;
+        }
+        auto           owned = std::string{key};
+        ::Json::Value& slot  = (*mValue)[owned];
+        auto           node  = std::unique_ptr<JsonValueNode>{
+            new JsonValueNode{std::shared_ptr<::Json::Value>{mValue, std::addressof(slot)}}
+        };
+        return *mKeyChildren.emplace(std::move(owned), std::move(node)).first->second;
+    }
+
+    JsonValueNode& operator[](char const* key) const { return (*this)[std::string_view{key}]; }
+
+    template <std::integral I>
+    JsonValueNode& operator[](I index) const {
+        auto const position = static_cast<std::size_t>(index);
+        if (position >= mIndexChildren.size()) {
+            mIndexChildren.resize(position + 1);
+        }
+        auto& node = mIndexChildren[position];
+        if (!node) {
+            ::Json::Value& slot = (*mValue)[static_cast<::Json::Value::ArrayIndex>(position)];
+            node                = std::unique_ptr<JsonValueNode>{
+                new JsonValueNode{std::shared_ptr<::Json::Value>{mValue, std::addressof(slot)}}
+            };
+        }
+        return *node;
+    }
+
+    void push_back(JsonValueNode const& value) { mValue->append(*value.mValue); }
+    void push_back(JsonValueNode&& value) { mValue->append(std::move(*value.mValue)); }
+
+    [[nodiscard]] std::vector<std::pair<std::string, JsonValueNode>> items() const {
+        std::vector<std::pair<std::string, JsonValueNode>> result;
+        for (auto const& name : mValue->getMemberNames()) {
+            result.emplace_back(name, (*this)[name]);
+        }
+        return result;
+    }
+
+    // 不要给字符类型提供转换：std::string{j} 是花括号初始化，一旦存在到 char 的隐式转换，
+    // 它会走 initializer_list<char> 那条构造函数，造出一个 1 字节的字符串。
+    template <class T>
+        requires(std::is_arithmetic_v<T> && !ll::traits::is_char_v<T>)
+    operator T() const {
+        if constexpr (std::same_as<T, bool>) {
+            return mValue->asBool(false);
+        } else if constexpr (std::is_floating_point_v<T>) {
+            return static_cast<T>(mValue->asDouble(0.0));
+        } else if (mValue->type() == ::Json::ValueType::UintValue) {
+            return static_cast<T>(mValue->asUInt64(0));
+        } else {
+            return static_cast<T>(mValue->asInt64(0));
+        }
+    }
+
+    template <class T>
+    [[nodiscard]] T get() const {
+        return static_cast<T>(*this);
+    }
+
+    operator std::string() const { return mValue->asString({}); }
+
+    [[nodiscard]] operator std::string_view() const { return get_ref<std::string const&>(); }
+
+    JsonValueNode& operator=(JsonValueNode const& other) {
+        *mValue = *other.mValue;
+        return *this;
+    }
+    JsonValueNode& operator=(JsonValueNode&& other) {
+        *mValue = std::move(*other.mValue);
+        return *this;
+    }
+
+private:
+    explicit JsonValueNode(std::shared_ptr<::Json::Value> value) : mValue(std::move(value)) {}
+
+    std::shared_ptr<::Json::Value>                                             mValue;
+    mutable std::map<std::string, std::unique_ptr<JsonValueNode>, std::less<>> mKeyChildren{};
+    mutable std::vector<std::unique_ptr<JsonValueNode>>                        mIndexChildren{};
+    mutable std::string                                                        mBorrowed{};
+};
+
+static_assert(ll::concepts::BorrowableStringSource<JsonValueNode>);
+static_assert(ll::concepts::BorrowableStringSource<CompoundTagVariant>);
+static_assert(ll::concepts::BorrowableStringSource<nlohmann::json>);
+
+enum class NodeKind : std::uint8_t { Basic, Advanced };
+
+struct NodeChild {
+    int         id = 0;
+    std::string label;
+
+    auto operator<=>(NodeChild const&) const = default;
+};
+
+struct NodeAggregate {
+    std::string                    name{};
+    int                            count{};
+    double                         ratio{};
+    bool                           enabled{};
+    std::optional<std::string>     note{};
+    NodeKind                       kind{NodeKind::Basic};
+    std::vector<int>               values{};
+    std::map<std::string, int>     named{};
+    NodeChild                      child{};
+    std::variant<int, std::string> either{};
+    TestVersion                    version{};
+
+    auto operator<=>(NodeAggregate const&) const = default;
+};
+
+struct NodeRangeTarget {
+    int8  small{};
+    uint8 positive{};
+};
+
+struct NodeStringViewTarget {
+    std::string_view text;
+};
+
+// 两个 LL 内置的"字符串型"类型：它们的 Serializer 写的是 std::string_view{j}
+struct NodeStringyTypes {
+    mce::UUID         uuid{};
+    ll::data::Version version{};
+};
+
 struct NonDefaultContainerRoot {
     std::optional<NonDefaultConstructibleItem>         maybe;
     std::vector<NonDefaultConstructibleItem>           items;
@@ -215,7 +427,7 @@ struct NonDefaultContainerRoot {
     std::variant<int, NonDefaultConstructibleItem>     value = 0;
 };
 
-// A tuple-like wrapper can merge several object serializers into one flat object.
+// tuple-like 包装：可以把几个对象序列化器的结果合并成同一个扁平对象。
 template <typename... Types>
 struct FlatReflection : std::tuple<Types...> {
     using Base = std::tuple<Types...>;
@@ -275,7 +487,7 @@ struct OnlyDeserialize : T {
 
 using ReadOnlyFlatSection = OnlyDeserialize<FlatSection>;
 
-// TypedStorage is an ABI wrapper, so consumers opt in to transparent reflection explicitly.
+// TypedStorage 是 ABI 包装，所以由使用者显式开启透明反射。
 template <size_t Align, size_t Size, typename T>
 struct ll::reflection::Serializer<ll::TypedStorageImpl<Align, Size, T>> {
     using storage_type = ll::TypedStorageImpl<Align, Size, T>;
@@ -411,7 +623,7 @@ struct ll::reflection::Serializer<VariantWithEnumIndex<Enum, Variant>> {
             return ll::makeI18nStringError<"invalid variant">();
         }
 
-        auto type = ll::reflection::deserialize_to<Enum>(j.at(typeKey), keyFormatter);
+        auto type = ll::reflection::deserialize_to<Enum>(j[typeKey], keyFormatter);
         if (!type) {
             return ll::forwardError(type.error());
         }
@@ -419,7 +631,7 @@ struct ll::reflection::Serializer<VariantWithEnumIndex<Enum, Variant>> {
         auto const index = static_cast<std::size_t>(static_cast<std::underlying_type_t<Enum>>(*type));
         return deserialize_by_index(
             index,
-            j.at(valueKey),
+            j[valueKey],
             keyFormatter,
             std::make_index_sequence<std::variant_size_v<variant_type>>{}
         );
@@ -478,9 +690,9 @@ struct ll::reflection::Serializer<TestVersion> {
             return ll::makeI18nStringError<"invalid version">();
         }
 
-        auto major = ll::string_utils::svtonum<int>(sv.substr(0, p1), nullptr, 10);
-        auto minor = ll::string_utils::svtonum<int>(sv.substr(p1 + 1, p2 - p1 - 1), nullptr, 10);
-        auto patch = ll::string_utils::svtonum<int>(sv.substr(p2 + 1), nullptr, 10);
+        auto major = ll::string_utils::svtoi(sv.substr(0, p1));
+        auto minor = ll::string_utils::svtoi(sv.substr(p1 + 1, p2 - p1 - 1));
+        auto patch = ll::string_utils::svtoi(sv.substr(p2 + 1));
         if (major && minor && patch) {
             return TestVersion{*major, *minor, *patch};
         }
@@ -501,7 +713,9 @@ struct ll::reflection::Serializer<mce::Blob> {
             return ll::reflection::makeDeserStringTypeError();
         }
 
-        auto decoded = ll::base64_utils::decode(j.template get_ref<std::string const&>());
+        // 取出 string_t const&，再自己构造需要的类型
+        auto const& text    = j.template get_ref<typename std::remove_cvref_t<J>::string_t const&>();
+        auto        decoded = ll::base64_utils::decode(std::string_view{text});
         return mce::Blob{reinterpret_cast<uint8 const*>(decoded.data()), decoded.size()};
     }
 };
@@ -606,7 +820,8 @@ struct ll::reflection::Serializer<Bedrock::StaticOptimizedString> {
         if (!j.is_string()) {
             return ll::reflection::makeDeserStringTypeError();
         }
-        return from_string(std::string_view{j.template get_ref<std::string const&>()});
+        auto const& text = j.template get_ref<typename std::remove_cvref_t<J>::string_t const&>();
+        return from_string(std::string_view{text});
     }
 };
 
@@ -970,6 +1185,31 @@ struct ll::reflection::Serializer<NonDefaultConstructibleItem> {
         LL_REFLECTION_TEST_TRY(required_field<"id">(id, j, keyFormatter));
         LL_REFLECTION_TEST_TRY(required_field<"name">(name, j, keyFormatter));
         return NonDefaultConstructibleItem{id, std::move(name)};
+    }
+};
+
+template <>
+struct ll::reflection::Serializer<InPlaceItem> {
+    template <typename J, typename F>
+    static ll::Expected<> serialize(InPlaceItem const& value, J& j, F const& keyFormatter) {
+        using ll::reflection::field;
+        j = J::object();
+        LL_REFLECTION_TEST_TRY(field<"id">(value.id, j, keyFormatter));
+        LL_REFLECTION_TEST_TRY(field<"name">(value.label, j, keyFormatter));
+        if (value.touched) {
+            LL_REFLECTION_TEST_TRY(field<"touched">(value.touched, j, keyFormatter));
+        }
+        return {};
+    }
+
+    template <typename J, typename F>
+    static ll::Expected<> deserialize(InPlaceItem& out, J const& j, F const& keyFormatter) {
+        using ll::reflection::required_field;
+        if (!j.is_object()) return ll::reflection::makeDeserObjectTypeError();
+        LL_REFLECTION_TEST_TRY(required_field<"id">(out.id, j, keyFormatter));
+        LL_REFLECTION_TEST_TRY(required_field<"name">(out.label, j, keyFormatter));
+        out.touched = true;
+        return {};
     }
 };
 
@@ -1910,4 +2150,348 @@ TEST(ReflectionTest, PascalCaseFlagEnumValuesSerializeToSnakeCaseAndDeserializeB
         ll::reflection::string_to_type<PascalCasePermission>("read_permission|write_permission", formatter);
     ASSERT_TRUE(parsedFromText.has_value());
     EXPECT_EQ(std::to_underlying(*parsedFromText), std::to_underlying(value));
+}
+
+TEST(ReflectionTest, InPlaceDeserializerIsUsedByDeserializeAndDeserializeTo) {
+    auto json = nlohmann::json::parse(R"({
+        "id": 7,
+        "name": "torch"
+    })");
+
+    auto parsed = ll::reflection::deserialize_to<InPlaceItem>(json);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(parsed->id, 7);
+    EXPECT_EQ(parsed->label, "torch");
+    EXPECT_TRUE(parsed->touched);
+
+    InPlaceItem target;
+    auto        targetResult = ll::reflection::deserialize(target, json);
+    ASSERT_TRUE(targetResult.has_value()) << targetResult.error().message();
+    EXPECT_EQ(target.id, 7);
+    EXPECT_EQ(target.label, "torch");
+    EXPECT_TRUE(target.touched);
+
+    auto serialized = ll::reflection::serialize<nlohmann::json>(*parsed);
+    ASSERT_TRUE(serialized.has_value()) << serialized.error().message();
+    EXPECT_EQ(serialized->at("id"), 7);
+    EXPECT_EQ(serialized->at("name"), "torch");
+    EXPECT_EQ(serialized->at("touched"), true);
+
+    auto roundTripped = ll::reflection::deserialize_to<InPlaceItem>(*serialized);
+    ASSERT_TRUE(roundTripped.has_value()) << roundTripped.error().message();
+    EXPECT_EQ(roundTripped->label, "torch");
+    EXPECT_TRUE(roundTripped->touched);
+}
+
+TEST(ReflectionTest, NumericDeserializationRejectsOutOfRangeAndFractionalValues) {
+    auto tooLarge = ll::reflection::deserialize_to<int8>(nlohmann::json(300));
+    ASSERT_FALSE(tooLarge.has_value());
+    expectErrorMessageContains(tooLarge.error(), "is out of range for");
+
+    auto negativeUnsigned = ll::reflection::deserialize_to<uint8>(nlohmann::json(-1));
+    ASSERT_FALSE(negativeUnsigned.has_value());
+    expectErrorMessageContains(negativeUnsigned.error(), "is out of range for");
+
+    auto unsignedOverflow = ll::reflection::deserialize_to<int64>(nlohmann::json((std::numeric_limits<uint64>::max)()));
+    ASSERT_FALSE(unsignedOverflow.has_value());
+    expectErrorMessageContains(unsignedOverflow.error(), "is out of range for");
+
+    auto fractional = ll::reflection::deserialize_to<int>(nlohmann::json(1.5));
+    ASSERT_FALSE(fractional.has_value());
+    expectErrorMessageContains(fractional.error(), "is not an integer");
+
+    auto boundary = ll::reflection::deserialize_to<int8>(nlohmann::json(127));
+    ASSERT_TRUE(boundary.has_value()) << boundary.error().message();
+    EXPECT_EQ(static_cast<int>(*boundary), 127);
+
+    auto integralFloat = ll::reflection::deserialize_to<int>(nlohmann::json(2.0));
+    ASSERT_TRUE(integralFloat.has_value()) << integralFloat.error().message();
+    EXPECT_EQ(*integralFloat, 2);
+
+    // 错误信息承诺"数字或布尔"的地方，布尔值同样被接受。
+    auto boolean = ll::reflection::deserialize_to<int>(nlohmann::json(true));
+    ASSERT_TRUE(boolean.has_value()) << boolean.error().message();
+    EXPECT_EQ(*boolean, 1);
+
+    // NBT 后端会报出和 JSON 后端相同的失败。
+    auto nbtTooLarge = ll::reflection::deserialize_to<int8>(CompoundTagVariant{300});
+    ASSERT_FALSE(nbtTooLarge.has_value());
+    expectErrorMessageContains(nbtTooLarge.error(), "is out of range for");
+
+    auto nbtFractional = ll::reflection::deserialize_to<int>(CompoundTagVariant{1.5});
+    ASSERT_FALSE(nbtFractional.has_value());
+    expectErrorMessageContains(nbtFractional.error(), "is not an integer");
+}
+
+TEST(ReflectionTest, JsonValueNodeSerializesAggregatesIntoJsonValue) {
+    NodeAggregate value;
+    value.name    = "node";
+    value.count   = 7;
+    value.ratio   = 1.5;
+    value.enabled = true;
+    value.kind    = NodeKind::Advanced;
+    value.values  = {1, 2, 3};
+    value.named   = {
+        {"a", 1},
+        {"b", 2}
+    };
+    value.child   = NodeChild{42, "kid"};
+    value.either  = std::string{"text"};
+    value.version = TestVersion{1, 20, 5};
+
+    auto node = ll::reflection::serialize<JsonValueNode>(value);
+    ASSERT_TRUE(node.has_value()) << node.error().message();
+
+    auto const& json = node->value();
+    ASSERT_TRUE(json.isObject());
+    EXPECT_EQ(json["name"].asString(""), "node");
+    EXPECT_EQ(json["count"].asInt64(0), 7);
+    EXPECT_DOUBLE_EQ(json["ratio"].asDouble(0.0), 1.5);
+    EXPECT_EQ(json["enabled"].asBool(false), true);
+    EXPECT_FALSE(json.isMember("note"));              // 空的 optional 会省略整个键
+    EXPECT_EQ(json["kind"].asString(""), "Advanced"); // 枚举按名字写出
+    ASSERT_TRUE(json["values"].isArray());
+    EXPECT_EQ(json["values"].size(), 3u);
+    EXPECT_EQ(json["values"][1].asInt64(0), 2);
+    EXPECT_EQ(json["named"]["b"].asInt64(0), 2);
+    EXPECT_EQ(json["child"]["id"].asInt64(0), 42);
+    EXPECT_EQ(json["child"]["label"].asString(""), "kid");
+    ASSERT_TRUE(json["either"].isString()); // variant 写出的是当前分支
+    EXPECT_EQ(json["either"].asString(""), "text");
+    EXPECT_EQ(json["version"]["mMajor"].asInt64(0), 1); // 自定义 Serializer 也落到 Json::Value
+    EXPECT_EQ(json["version"]["mPatch"].asInt64(0), 5);
+
+    auto parsed = ll::reflection::deserialize_to<NodeAggregate>(*node);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(*parsed, value);
+}
+
+TEST(ReflectionTest, JsonValueNodeDeserializesFromAConstJsonValue) {
+    ::Json::Value document{::Json::ValueType::ObjectValue};
+    document["name"]    = "manual";
+    document["count"]   = 11;
+    document["ratio"]   = 0.25;
+    document["enabled"] = true;
+    document["kind"]    = "Advanced";
+    ::Json::Value values{::Json::ValueType::ArrayValue};
+    values.append(4);
+    values.append(5);
+    document["values"] = values;
+    ::Json::Value named{::Json::ValueType::ObjectValue};
+    named["x"]                    = 9;
+    document["named"]             = named;
+    document["child"]["id"]       = 5;
+    document["child"]["label"]    = "kid2";
+    document["either"]            = 3;
+    document["version"]["mMajor"] = 9;
+    document["version"]["mMinor"] = 8;
+    document["version"]["mPatch"] = 7;
+
+    JsonValueNode const node{document}; // 只读来源同样可以用
+    auto                parsed = ll::reflection::deserialize_to<NodeAggregate>(node);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+
+    EXPECT_EQ(parsed->name, "manual");
+    EXPECT_EQ(parsed->count, 11);
+    EXPECT_DOUBLE_EQ(parsed->ratio, 0.25);
+    EXPECT_TRUE(parsed->enabled);
+    EXPECT_FALSE(parsed->note.has_value()); // 缺键 → nullopt
+    EXPECT_EQ(parsed->kind, NodeKind::Advanced);
+    EXPECT_EQ(parsed->values, (std::vector<int>{4, 5}));
+    EXPECT_EQ(parsed->named.at("x"), 9);
+    EXPECT_EQ(parsed->child, (NodeChild{5, "kid2"}));
+    EXPECT_TRUE(std::holds_alternative<int>(parsed->either));
+    EXPECT_EQ(std::get<int>(parsed->either), 3);
+    EXPECT_EQ(parsed->version, (TestVersion{9, 8, 7}));
+}
+
+TEST(ReflectionTest, JsonValueNodeReportsPathsRangesAndUnsupportedTargets) {
+    auto const makeDocument = [] {
+        ::Json::Value document{::Json::ValueType::ObjectValue};
+        document["name"]    = "node";
+        document["count"]   = 7;
+        document["ratio"]   = 1.5;
+        document["enabled"] = true;
+        document["kind"]    = "Basic";
+        ::Json::Value values{::Json::ValueType::ArrayValue};
+        values.append(1);
+        document["values"] = values;
+        ::Json::Value named{::Json::ValueType::ObjectValue};
+        named["a"]                    = 1;
+        document["named"]             = named;
+        document["child"]["id"]       = 1;
+        document["child"]["label"]    = "kid";
+        document["either"]            = 1;
+        document["version"]["mMajor"] = 1;
+        document["version"]["mMinor"] = 2;
+        document["version"]["mPatch"] = 3;
+        return document;
+    };
+
+    // 类型不匹配，且错误信息带嵌套字段路径
+    {
+        auto document           = makeDocument();
+        document["child"]["id"] = "oops";
+        auto parsed             = ll::reflection::deserialize_to<NodeAggregate>(JsonValueNode{document});
+        ASSERT_FALSE(parsed.has_value());
+        expectErrorMessageContains(parsed.error(), "Reflection error in field 'child.id':");
+        expectErrorMessageContains(parsed.error(), "field must be a number or boolean");
+    }
+
+    // 缺必选字段
+    {
+        auto document = makeDocument();
+        document.removeMember("count");
+        auto parsed = ll::reflection::deserialize_to<NodeAggregate>(JsonValueNode{document});
+        ASSERT_FALSE(parsed.has_value());
+        expectErrorMessageContains(parsed.error(), R"(missing required field "count" when deserializing)");
+    }
+
+    // 数值严格：带小数 / 越界 / 负数进无符号 / 布尔转数字
+    {
+        auto document     = makeDocument();
+        document["count"] = 1.5;
+        auto parsed       = ll::reflection::deserialize_to<NodeAggregate>(JsonValueNode{document});
+        ASSERT_FALSE(parsed.has_value());
+        expectErrorMessageContains(parsed.error(), "is not an integer");
+    }
+    {
+        ::Json::Value document{::Json::ValueType::ObjectValue};
+        document["small"]    = 300;
+        document["positive"] = 1;
+        auto parsed          = ll::reflection::deserialize_to<NodeRangeTarget>(JsonValueNode{document});
+        ASSERT_FALSE(parsed.has_value());
+        expectErrorMessageContains(parsed.error(), "is out of range for");
+    }
+    {
+        ::Json::Value document{::Json::ValueType::ObjectValue};
+        document["small"]    = 1;
+        document["positive"] = -1;
+        auto parsed          = ll::reflection::deserialize_to<NodeRangeTarget>(JsonValueNode{document});
+        ASSERT_FALSE(parsed.has_value());
+        expectErrorMessageContains(parsed.error(), "is out of range for");
+    }
+    {
+        auto document     = makeDocument();
+        document["count"] = true; // 布尔值写进算术类型会变成 0 / 1
+        auto parsed       = ll::reflection::deserialize_to<NodeAggregate>(JsonValueNode{document});
+        ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+        EXPECT_EQ(parsed->count, 1);
+    }
+
+    // variant 无法匹配时，错误里带类型名和 dump
+    {
+        auto document      = makeDocument();
+        document["either"] = ::Json::Value{::Json::ValueType::ArrayValue};
+        auto parsed        = ll::reflection::deserialize_to<NodeAggregate>(JsonValueNode{document});
+        ASSERT_FALSE(parsed.has_value());
+        expectErrorMessageContains(parsed.error(), "could not cast target array");
+    }
+
+    // string_view 目标：只有左值来源才安全借用，临时（右值）节点会被判定为生命周期不安全
+    {
+        ::Json::Value document{::Json::ValueType::ObjectValue};
+        document["text"] = "borrowed";
+        auto parsed      = ll::reflection::deserialize_to<NodeStringViewTarget>(JsonValueNode{document});
+        ASSERT_FALSE(parsed.has_value());
+        expectErrorMessageContains(parsed.error(), "cannot be safely deserialized into string_view");
+    }
+}
+
+TEST(ReflectionTest, JsonValueNodeBorrowsStringViewsFromAnLvalueSource) {
+    ::Json::Value document{::Json::ValueType::ObjectValue};
+    document["text"] = "borrowed";
+    JsonValueNode const node{document};
+
+    auto parsed = ll::reflection::deserialize_to<NodeStringViewTarget>(node);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(parsed->text, "borrowed");
+    EXPECT_EQ(std::string{node["text"]}, "borrowed"); // 花括号初始化也必须走字符串转换，而不是字面量列表
+    // 文本缓存在适配节点里：同一个子节点重复借出拿到的是同一份
+    EXPECT_EQ(
+        std::addressof(node["text"].get_ref<std::string const&>()),
+        std::addressof(node["text"].get_ref<std::string const&>())
+    );
+}
+
+TEST(ReflectionTest, PlainVariantDeserializesFromNbt) {
+    auto parsedInt = ll::reflection::deserialize_to<PlainVariant>(CompoundTagVariant{42});
+    ASSERT_TRUE(parsedInt.has_value()) << parsedInt.error().message();
+    ASSERT_TRUE(std::holds_alternative<int>(*parsedInt));
+    EXPECT_EQ(std::get<int>(*parsedInt), 42);
+
+    auto parsedString = ll::reflection::deserialize_to<PlainVariant>(CompoundTagVariant{std::string{"text"}});
+    ASSERT_TRUE(parsedString.has_value()) << parsedString.error().message();
+    ASSERT_TRUE(std::holds_alternative<std::string>(*parsedString));
+    EXPECT_EQ(std::get<std::string>(*parsedString), "text");
+}
+
+TEST(ReflectionTest, JsonValueNodeFeedsEveryScalarAccessorOfAVariant) {
+    auto const parse = [](::Json::Value value) {
+        return ll::reflection::deserialize_to<ArithmeticVariant>(JsonValueNode{std::move(value)});
+    };
+
+    auto boolValue = parse(::Json::Value{true});
+    ASSERT_TRUE(boolValue.has_value()) << boolValue.error().message();
+    ASSERT_TRUE(std::holds_alternative<bool>(*boolValue));
+    EXPECT_TRUE(std::get<bool>(*boolValue));
+
+    auto signedValue = parse(::Json::Value{-7});
+    ASSERT_TRUE(signedValue.has_value()) << signedValue.error().message();
+    ASSERT_TRUE(std::holds_alternative<std::int64_t>(*signedValue));
+    EXPECT_EQ(std::get<std::int64_t>(*signedValue), -7);
+
+    auto unsignedValue = parse(::Json::Value{::Json::Value::UInt{7}});
+    ASSERT_TRUE(unsignedValue.has_value()) << unsignedValue.error().message();
+    ASSERT_TRUE(std::holds_alternative<std::uint64_t>(*unsignedValue));
+    EXPECT_EQ(std::get<std::uint64_t>(*unsignedValue), 7u);
+
+    auto doubleValue = parse(::Json::Value{1.5});
+    ASSERT_TRUE(doubleValue.has_value()) << doubleValue.error().message();
+    ASSERT_TRUE(std::holds_alternative<double>(*doubleValue));
+    EXPECT_DOUBLE_EQ(std::get<double>(*doubleValue), 1.5);
+}
+
+TEST(ReflectionTest, JsonValueNodeSupportsTheBuiltInStringifiedTypes) {
+    NodeStringyTypes value{};
+    value.uuid = mce::UUID::fromString("01234567-89ab-cdef-0123-456789abcdef");
+    ASSERT_TRUE(value.version.from_string_noexcept("1.20.5"));
+
+    auto node = ll::reflection::serialize<JsonValueNode>(value);
+    ASSERT_TRUE(node.has_value()) << node.error().message();
+    ASSERT_TRUE(node->value().isObject());
+    EXPECT_EQ(node->value()["uuid"].asString(""), value.uuid.asString());
+    EXPECT_EQ(node->value()["version"].asString(""), value.version.to_string());
+
+    auto parsed = ll::reflection::deserialize_to<NodeStringyTypes>(*node);
+    ASSERT_TRUE(parsed.has_value()) << parsed.error().message();
+    EXPECT_EQ(parsed->uuid.asString(), value.uuid.asString());
+    EXPECT_EQ(parsed->version, value.version);
+}
+
+TEST(ReflectionTest, JsonValueNodeWritesThroughAndSharesItsValue) {
+    JsonValueNode node{::Json::Value{::Json::ValueType::ObjectValue}};
+    node["a"]           = JsonValueNode{1};
+    node["nested"]["b"] = JsonValueNode{std::string{"x"}};
+    EXPECT_EQ(node.value()["a"].asInt64(0), 1);
+    EXPECT_EQ(node.value()["nested"]["b"].asString(""), "x");
+
+    JsonValueNode copy = node; // 浅拷贝：共享同一份 Json::Value
+    copy["c"]          = JsonValueNode{true};
+    EXPECT_TRUE(node.value().isMember("c"));
+
+    JsonValueNode& first  = node["a"];
+    JsonValueNode& second = node["a"];
+    EXPECT_EQ(std::addressof(first), std::addressof(second)); // 同一个子槽位只缓存一份视图
+
+    JsonValueNode array = JsonValueNode::array();
+    array.push_back(JsonValueNode{3});
+    array.push_back(JsonValueNode{std::string{"tail"}});
+    EXPECT_EQ(array.value().size(), 2u);
+    EXPECT_EQ(array.value()[0].asInt64(0), 3);
+    EXPECT_EQ(array.value()[1].asString(""), "tail");
+
+    auto nulled = ll::reflection::serialize<JsonValueNode>(std::optional<int>{});
+    ASSERT_TRUE(nulled.has_value()) << nulled.error().message();
+    EXPECT_TRUE(nulled->is_null());
 }
