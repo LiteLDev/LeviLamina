@@ -229,6 +229,7 @@ export async function buildSite(cfg: ResolvedConfig, opts: { changed?: Set<strin
     titleTemplate: cfg.titleTemplate,
     lastUpdated: cfg.lastUpdated,
     homePaths,
+    header: cfg.header, // [kit patch: tabs row]
   };
 
   return { cfg, scan, site, routes, pages, searchIndexes, assets, warnings, tokenCss: styles.css() };

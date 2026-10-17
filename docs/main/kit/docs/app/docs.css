@@ -210,7 +210,8 @@
     }
   }
   /* [kit patch: tabs row] navs too wide for the header row get their own row below brand + actions
-     (MkDocs Material navigation.tabs); SiteHeader adds .has-tabs-row. At ≤ 960px the drawer takes over.
+     (MkDocs Material navigation.tabs); SiteHeader adds .has-tabs-row when the config sets
+     `header: { tabsRow: true }`. At ≤ 960px the drawer takes over.
      6.5rem = the 3.75rem header row (--spacing-header) + a 2.75rem tabs row. The header height is set
      directly so the layout holds without :has(); :has() only moves the sticky/scroll offsets. */
   @media (width > 960px) {
@@ -325,6 +326,10 @@
   .kit-doc-layout:not([data-sidebar]) .kit-doc-article,
   .kit-doc-layout:not([data-sidebar]) .kit-doc-footer {
     max-width: 50rem;
+  }
+  /* [kit patch: toc measure] same column as the article (as in the lip port) */
+  .kit-doc-layout:not([data-sidebar]) .kit-toc-mobile {
+    max-width: calc(min(100%, 50rem) - 4px);
   }
   .kit-doc-toc {
     position: sticky;
@@ -519,7 +524,9 @@
   }
   .kit-toc-mobile {
     --px-border: var(--color-line);
-    margin: 0 2px 1.75rem;
+    /* [kit patch: toc measure] share the article's measure and centring (the 2px frame is drawn outside the box) */
+    max-width: calc(min(100%, var(--spacing-measure)) - 4px);
+    margin: 0 auto 1.75rem;
     background: var(--color-surface);
     box-shadow:
       0 -2px 0 0 var(--px-border),

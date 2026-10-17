@@ -1,9 +1,10 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import type { NavItem, RouteMeta, SidebarData } from '../../shared/types';
 import { href, site } from '../data';
 import { KitLink } from './KitLink';
 import { Sidebar } from './Sidebar';
 import { useFocusTrap } from './focus';
+import { afterPaint, revealIn } from './reveal';
 import { PixelIcon } from '../../../components/PixelIcon';
 import type { UiStrings } from '../../../components/i18n';
 
@@ -26,6 +27,14 @@ export function MobileDrawer({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useFocusTrap(ref, open, onClose);
+  // [kit patch: sidebar reveal] open the drawer with the current page's link in view
+  useEffect(() => {
+    if (!open) return;
+    return afterPaint(() => {
+      const d = ref.current;
+      revealIn(d, d?.querySelector<HTMLElement>('.kit-sb-link.is-active') ?? d?.querySelector<HTMLElement>('.kit-drawer-link.is-active') ?? null, 'center');
+    });
+  }, [open, path]);
   const items: NavItem[] = site.nav[locale] ?? [];
   return (
     <div className="kit-drawer-root" data-open={open ? '' : undefined} hidden={!open}>

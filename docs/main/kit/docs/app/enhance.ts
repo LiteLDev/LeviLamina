@@ -1,5 +1,6 @@
 // Progressive enhancement of rendered markdown (event delegation on the [data-doc-content] element):
-// copy buttons, hotbar tabs (WAI-ARIA keyboard pattern) and client-side navigation for internal links.
+// copy buttons, hotbar tabs (WAI-ARIA keyboard pattern), client-side navigation for internal links and
+// keyboard access to tables that scroll horizontally.
 import { useEffect, type RefObject } from 'react';
 import { useNavigate } from 'react-router';
 import { internalTarget, isPlainLeftClick } from './components/KitLink';
@@ -98,6 +99,8 @@ export function useContentEnhancements(ref: RefObject<HTMLElement | null>, key: 
       if (!id) return;
       const el = document.getElementById(id);
       if (!el || !root.contains(el)) return;
+      // [kit patch: tab ids] a hash naming a tab (#__tabbed_1_2) selects it
+      if (el.getAttribute('role') === 'tab' && el.closest('[data-kit-tabs]')) selectTab(el);
       for (let p: HTMLElement | null = el; p && p !== root; p = p.parentElement) {
         if (p instanceof HTMLDetailsElement) p.open = true;
         if (p.getAttribute('role') === 'tabpanel' && p.hidden) {
@@ -108,10 +111,23 @@ export function useContentEnhancements(ref: RefObject<HTMLElement | null>, key: 
     };
     revealHash();
     window.addEventListener('hashchange', revealHash);
+    // [kit patch: table keyboard] Tables that overflow horizontally must be scrollable from the keyboard (WCAG 2.1.1).
+    const tableWraps = [...root.querySelectorAll<HTMLElement>('.kit-table-wrap')];
+    const syncScrollable = () => {
+      for (const w of tableWraps) {
+        if (w.scrollWidth > w.clientWidth + 1) w.tabIndex = 0;
+        else if (w !== document.activeElement) w.removeAttribute('tabindex'); // never pull focus from under the user
+      }
+    };
+    syncScrollable();
+    const resizeObserver = tableWraps.length && typeof ResizeObserver !== 'undefined' ? new ResizeObserver(syncScrollable) : undefined;
+    // Watch the table too: web fonts loading later change its width without resizing the wrapper.
+    for (const w of tableWraps) for (const el of [w, w.firstElementChild]) if (el) resizeObserver?.observe(el);
     return () => {
       root.removeEventListener('click', onClick);
       root.removeEventListener('keydown', onKey);
       window.removeEventListener('hashchange', revealHash);
+      resizeObserver?.disconnect();
     };
   }, [key, navigate]);
 }

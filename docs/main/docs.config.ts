@@ -29,6 +29,9 @@ export default defineDocsConfig({
   markdown: { compat: 'python-markdown', lineNumbers: true, codeTitle: 'pygments' },
   lastUpdated: true,
   sidebar: 'tabs',
+  // The 7 top-level sections are too wide to share the header row with the brand and the actions:
+  // show them as a row of tabs under it, like MkDocs Material's navigation.tabs (kit patch "tabs row").
+  header: { tabsRow: true },
   nav: [
     { Home: 'index.md' },
     {
@@ -42,9 +45,13 @@ export default defineDocsConfig({
     },
     {
       'Developer Guides': [
-        { Tutorials: ['developer_guides/tutorials/create_your_first_mod.md'] },
+        // Groups written in the { text, collapsed, items } form so that, like MkDocs Material, only the group
+        // holding the current page starts open (navTranslations apply to `text` as well).
+        { text: 'Tutorials', collapsed: true, items: ['developer_guides/tutorials/create_your_first_mod.md'] },
         {
-          'How-to Guides': [
+          text: 'How-to Guides',
+          collapsed: true,
+          items: [
             'developer_guides/how_to_guides/event_guide.md',
             'developer_guides/how_to_guides/interface_export_guide.md',
             'developer_guides/how_to_guides/find_function_guide.md',
@@ -61,7 +68,9 @@ export default defineDocsConfig({
         { FAQ: 'developer_guides/faq.md' },
         { Architecture: 'developer_guides/architecture.md' },
         {
-          'API Reference': [
+          text: 'API Reference',
+          collapsed: true,
+          items: [
             'api_reference/index.md',
             { Base: 'api_reference/base.md' },
             { Chrono: 'api_reference/chrono.md' },

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Prerender every route of a levimc-kit docs site into static HTML (run after the client + SSR builds).
 // Usage: node kit/docs/prerender.mjs [--root <appDir>]
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -42,7 +42,7 @@ export async function prerenderDocs({ root = process.cwd(), outDir } = {}) {
   let d = dirname(templatePath);
   while (d.startsWith(out) && d !== out) {
     try {
-      rmSync(d);
+      rmdirSync(d); // [kit patch: empty dirs] only removes empty folders (rmSync throws EISDIR on any folder)
     } catch {
       break;
     }

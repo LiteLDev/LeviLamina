@@ -4,9 +4,19 @@ import type { RouteMeta, SiteData } from './types.ts';
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 export function pageTitle(site: SiteData, route: RouteMeta | undefined, fallback?: string): string {
-  if (!route) return fallback ? `${fallback} | ${site.title}` : site.title;
+  const fill = (title: string) => site.titleTemplate.replace(':title', () => title).replace(':site', () => site.title);
+  if (!route) return fallback ? fill(fallback) : site.title;
+  // [kit patch: home title] MkDocs (directory URLs) titles the site root page with the bare site name (Material's
+  // `page.is_homepage`), i.e. the title template without its ':title' part: ':title - LeviLamina Docs' → 'LeviLamina Docs'.
+  if (site.urlStyle === 'directory' && route.path === '') return siteName(site);
   if (route.layout === 'home' || route.title === site.title) return site.title;
-  return site.titleTemplate.replace(':title', route.title).replace(':site', site.title);
+  return fill(route.title);
+}
+
+/** The title template without its ':title' part (':title - :site' → site.title). */
+function siteName(site: SiteData): string {
+  const rest = site.titleTemplate.replace(/^\s*:title\s*[-|·:–—]?\s*/, '').replace(/\s*[-|·:–—]?\s*:title\s*$/, '');
+  return (rest.includes(':title') || !rest.trim() ? ':site' : rest).replace(':site', () => site.title);
 }
 
 export function absoluteUrl(site: SiteData, path: string): string {

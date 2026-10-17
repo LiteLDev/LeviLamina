@@ -66,6 +66,10 @@ jobs:
       - run: |
           npm ci
 
+      # tsc --noEmit over docs.config.ts and the vendored kit (the Vite build strips types without checking them)
+      - run: |
+          npm run typecheck
+
       - run: |
           npm run build
 

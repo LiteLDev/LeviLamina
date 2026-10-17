@@ -135,6 +135,11 @@ export interface DocsConfig {
   ui?: Record<string, Partial<UiStrings>>;
   /** <title> template; ':title' and ':site' are replaced. Default ':title | :site'. */
   titleTemplate?: string;
+  /**
+   * [kit patch: tabs row] Header layout. `tabsRow: true` puts the header nav in its own row below the brand and
+   * the actions above 960px (MkDocs Material navigation.tabs), for navs too wide to share the row with them.
+   */
+  header?: { tabsRow?: boolean };
   /** Output directory (default 'dist'). */
   outDir?: string;
   /** Exclude pages from the search index (globs on page keys). */

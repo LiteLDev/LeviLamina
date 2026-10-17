@@ -20,7 +20,7 @@ Obviously, if you have opened IDA Pro and looked at the generated function list,
 
 Why is that?
 
-At this point, if we open LeviLamina’s [`Fake Header`](https://github.com/LiteLDev/LeviLamina/blob/main/src/mc/world/actor/player/Player.h#L129) file about the Player class, we find that the class is defined like this:
+At this point, if we open LeviLamina’s [`Fake Header`](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/world/actor/player/Player.h#L129) file about the Player class, we find that the class is defined like this:
 
 ```cpp
 class Player : public ::Mob {
@@ -237,7 +237,7 @@ This is clearly a call to a virtual function, eventually returning a Player poin
 
 We could copy this directly, but it’s not elegant.
 
-And by consulting LeviLamina's information about [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/main/src/mc/network/ServerNetworkHandler.h#L625), we can know that the ServerNetworkHandler class provides a virtual function `_getServerPlayer`, which is used to get a player pointer. But, as seen in the pseudocode and the above context, directly calling _getServerPlayer is not feasible; we need to make a -16 offset to the NetworkIdentifier pointer to correctly get the player pointer. For convenience, LeviLamina provides a wrapper, and we can skip this step and directly use this wrapper to get the player pointer.
+And by consulting LeviLamina's information about [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/network/ServerNetworkHandler.h#L625), we can know that the ServerNetworkHandler class provides a virtual function `_getServerPlayer`, which is used to get a player pointer. But, as seen in the pseudocode and the above context, directly calling _getServerPlayer is not feasible; we need to make a -16 offset to the NetworkIdentifier pointer to correctly get the player pointer. For convenience, LeviLamina provides a wrapper, and we can skip this step and directly use this wrapper to get the player pointer.
 
 Thus, we have achieved our goal. We can hook this function to implement our feature.
 

@@ -31,7 +31,9 @@
     position: relative;
     overflow-wrap: anywhere;
     color: var(--color-ink);
-    scroll-margin-top: calc(var(--spacing-header) + 1.25rem);
+    /* [kit patch: anchor offset] html's scroll-padding-top already reserves the sticky header + 1rem; the
+       two add up, so only the extra 0.25rem goes here (heading lands 1.25rem below the header). */
+    scroll-margin-top: 0.25rem;
     text-wrap: balance;
   }
   .kit-prose h1 {

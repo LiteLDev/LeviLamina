@@ -35,19 +35,10 @@ function NavDropdown({ item, active }: { item: NavItem; active: boolean }) {
   );
 }
 
-// [kit patch: tabs row] Header navs too wide to share one row with the brand and the actions (≈752px at a
-// 1280px viewport) move to a second "tabs" row (MkDocs Material navigation.tabs). Decided once per site from
-// every locale's labels, so server and client render the same markup and switching language keeps the layout.
-const WIDE_CHAR = /[ᄀ-ᅟ⺀-꓏가-힣豈-﫿︰-﹏＀-｠￠-￦]/;
-function textWidth(text: string, latin: number, wide: number): number {
-  let w = 0;
-  for (const ch of text) w += WIDE_CHAR.test(ch) ? wide : latin;
-  return w;
-}
-function navWidth(items: NavItem[]): number {
-  return items.reduce((w, it) => w + textWidth(it.text, 7.7, 14) + 26 + (it.external || it.items ? 17 : 0), 0);
-}
-const TABS_ROW = Object.values(site.nav).some((items) => navWidth(items) + textWidth(site.title, 8.7, 17) > 750);
+// [kit patch: tabs row] `header.tabsRow` in docs.config.ts moves the header nav to a second "tabs" row below the
+// brand and the actions (MkDocs Material navigation.tabs) for navs too wide to share one row with them. It is
+// static site data, so server and client render the same markup and switching language keeps the layout.
+const TABS_ROW = !!site.header?.tabsRow;
 
 export interface SiteHeaderProps {
   route?: RouteMeta;

@@ -236,6 +236,14 @@ export async function renderMarkdown(source: string, o: RenderOptions): Promise<
 
   // ---- containers (admonitions, tabs, code groups)
   let tabSet = 0;
+  // [kit patch: tab ids] python-markdown compat: the tab buttons take pymdownx.tabbed's ids (__tabbed_<set>_<n>,
+  // sets numbered in document order) so old #__tabbed_1_2 deep links still reach and select that tab.
+  const pyTabSets = new Map<Element, number>();
+  if (o.compat === 'python-markdown') {
+    visit(tree, 'element', (el: Element) => {
+      if (el.properties.dataKitContainer === 'tabs') pyTabSets.set(el, pyTabSets.size + 1);
+    });
+  }
   const containerPass = (parent: HastRoot | Element) => {
     for (let i = 0; i < parent.children.length; i++) {
       const node = parent.children[i];
@@ -294,6 +302,8 @@ export async function renderMarkdown(source: string, o: RenderOptions): Promise<
         let sel = tabs.findIndex((t) => t.selected);
         if (sel < 0) sel = 0;
         const id = `kit-tabs-${tabSet}`;
+        const pySet = pyTabSets.get(node);
+        const tabId = (n: number) => (pySet ? `__tabbed_${pySet}_${n + 1}` : `${id}-t${n + 1}`);
         parent.children[i] = h('div', { className: ['kit-tabs'], dataKitTabs: '' }, [
           h(
             'div',
@@ -304,7 +314,7 @@ export async function renderMarkdown(source: string, o: RenderOptions): Promise<
                 {
                   type: 'button',
                   role: 'tab',
-                  id: `${id}-t${n + 1}`,
+                  id: tabId(n),
                   ariaSelected: n === sel ? 'true' : 'false',
                   ariaControls: [`${id}-p${n + 1}`],
                   tabIndex: n === sel ? 0 : -1,
@@ -320,7 +330,7 @@ export async function renderMarkdown(source: string, o: RenderOptions): Promise<
                 className: ['kit-tab-panel'],
                 role: 'tabpanel',
                 id: `${id}-p${n + 1}`,
-                ariaLabelledBy: [`${id}-t${n + 1}`],
+                ariaLabelledBy: [tabId(n)],
                 tabIndex: 0,
                 ...(n === sel ? {} : { hidden: true }),
               },

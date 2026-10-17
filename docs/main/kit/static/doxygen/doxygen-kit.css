@@ -183,6 +183,9 @@ body {
 }
 #top > .kit-gbar {
   position: relative;
+  /* [kit patch: doxygen layers] above Doxygen's own layers in #top (main menu .sm 9999, #MSearchBox 102, search
+     select/results windows 10000/10001), so the open Docs / sites menus are painted and clickable on top */
+  z-index: 10002;
   flex: 0 0 100%;
   width: 100%;
   order: -1;
@@ -233,6 +236,15 @@ html.dark-mode #titlearea {
 .sm-dox a.highlighted,
 .sm-dox a:hover {
   border-radius: 0 !important;
+}
+/* [kit patch: doxygen search contrast] search.css greys the idle field (#909090, 3.1:1 on the light header);
+   use the muted ink (AA in both themes). The active field keeps doxygen-awesome's --searchbar-foreground. */
+#MSearchField {
+  color: var(--page-secondary-foreground-color);
+}
+#MSearchField::placeholder {
+  color: var(--page-secondary-foreground-color);
+  opacity: 1;
 }
 #MSearchBox {
   border-radius: 0 !important;

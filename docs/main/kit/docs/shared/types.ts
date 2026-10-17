@@ -107,6 +107,8 @@ export interface SiteData {
   titleTemplate: string;
   lastUpdated: boolean;
   homePaths: Record<string, string>;
+  /** [kit patch: tabs row] header layout options (config `header`). */
+  header?: { tabsRow?: boolean };
 }
 
 export interface PageData {

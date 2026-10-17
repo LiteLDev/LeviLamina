@@ -34,7 +34,7 @@
 - [C++ Tutorial](https://www.w3schools.com/cpp/)
 - [C++ Language Tutorial](https://cplusplus.com/doc/tutorial/)
 - [hacking C++](https://hackingcpp.com/)
-- [C++ Core Guidelines](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
+- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
 ## 设置工作区
 
