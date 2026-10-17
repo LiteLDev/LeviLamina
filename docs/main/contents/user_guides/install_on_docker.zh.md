@@ -36,7 +36,7 @@ docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITH
 - `GO_MODULE_PROXY_URL`：可设置为Go模块代理URL，以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
 
 - `PACKAGES`：可设置为以空格分隔的包列表，用于首次运行时安装。每个包必须符合`lip`包名规范(参见
-  `https://lip.levimc.org/cli/commands/install.html`)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。
+  `https://docs.levimc.org/lip/cli/commands/install.html`)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。
 
 - `VERSION`(`LATEST`)：可设置为特定的LeviLamina版本(参见`https://github.com/LiteLDev/LeviLamina/tags`)，或设置为`
   LATEST`以自动下载最新版本。

@@ -1,4 +1,5 @@
 site_name: LeviLamina Docs
+site_url: https://docs.levimc.org/LeviLamina/
 repo_url: https://github.com/LiteLDev/LeviLamina
 docs_dir: contents
 
@@ -57,14 +58,14 @@ nav:
           - Utils: api_reference/utils.md
           - Input (Client): api_reference/input.md
 
-      - Doxygen API 🔗: https://lamina.levimc.org/api
+      - Doxygen API 🔗: https://docs.levimc.org/LeviLamina/api
 
   - Maintainer Guides:
       - maintainer_guides/cpp_style_guide.md
 
   - Supported Versions: versions.md
 
-  - LegacyScriptEngine: https://lse.levimc.org/
+  - LegacyScriptEngine: https://docs.levimc.org/LegacyScriptEngine/
 
   - About: https://levimc.org/about
 

@@ -27,7 +27,13 @@
         }
         const targetPath = langMap[userLang]; // e.g. '/zh/'
 
-        const pathname = window.location.pathname || '/';
+        // site base path, e.g. '/LeviLamina'
+        const basePath = new URL('{{ config.site_url }}').pathname.replace(/\/+$/, '');
+
+        let pathname = window.location.pathname || '/';
+        if (pathname.toLowerCase().startsWith(basePath.toLowerCase())) {
+            pathname = pathname.slice(basePath.length) || '/';
+        }
         const search = window.location.search || '';
         const hash = window.location.hash || '';
 
@@ -58,7 +64,7 @@
         // avoid double slashes when building new path
         let newPath = targetNorm.replace(/\/+$/,'') + cleanPath.replace(/^\/+/,'/');
         // normalize multiple slashes
-        newPath = newPath.replace(/\/+/g, '/');
+        newPath = (basePath + newPath).replace(/\/+/g, '/');
 
         // append search/hash back
         newPath = newPath + search + hash;
