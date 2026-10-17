@@ -1,0 +1,51 @@
+{
+  "name": "levilamina-docs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "node kit/docs/build.mjs",
+    "preview": "node kit/scripts/serve-pages.mjs dist --base /LeviLamina/ --port 4173",
+    "typecheck": "tsc --noEmit",
+    "linkcheck": "node kit/scripts/linkcheck.mjs dist --base /LeviLamina/ --site-origin https://docs.levimc.org --ignore-paths /LeviLamina/api/",
+    "smoke": "node kit/scripts/smoke.mjs --url http://127.0.0.1:4173/LeviLamina/"
+  },
+  "dependencies": {
+    "minisearch": "7.2.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router": "7.18.4"
+  },
+  "devDependencies": {
+    "@shikijs/transformers": "4.5.0",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/hast": "3.0.5",
+    "@types/mdast": "4.0.4",
+    "@types/node": "24.19.2",
+    "@types/picomatch": "4.0.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/unist": "3.0.3",
+    "@vitejs/plugin-react": "6.1.2",
+    "hast-util-to-html": "9.0.5",
+    "hast-util-to-string": "3.0.1",
+    "mdast-util-to-string": "4.0.0",
+    "picomatch": "4.0.7",
+    "rehype-raw": "7.0.0",
+    "remark-frontmatter": "5.0.0",
+    "remark-gfm": "4.0.1",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.1.2",
+    "shiki": "4.5.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "unified": "11.0.5",
+    "unist-util-visit": "5.1.0",
+    "vite": "8.3.4",
+    "yaml": "2.9.1"
+  }
+}

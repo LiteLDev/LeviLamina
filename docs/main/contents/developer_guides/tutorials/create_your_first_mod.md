@@ -30,7 +30,7 @@ This tutorial covers the following topics:
 These tutorials require basic knowledge of the C++ programming language. If you are just starting with C++ or need a refresher, here is a non-exhaustive list of resources.
 
 - [C++ Developer Roadmap](https://roadmap.sh/cpp)
-- [cppreference.com](https://en.cppreference.com/w/)
+- [cppreference.com](https://en.cppreference.com/)
 - [C++ Tutorial](https://www.w3schools.com/cpp/)
 - [C++ Language Tutorial](https://cplusplus.com/doc/tutorial/)
 - [hacking C++](https://hackingcpp.com/)

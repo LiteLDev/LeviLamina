@@ -10,7 +10,7 @@ Before you begin, it's best if you have already read the [Hook Guide](hook_guide
 
 `IDA Pro`: Used for decompiling the binary files of BDS.
 !!! Note
-    If you haven't purchased IDA Pro, you can use [IDA Free](https://hex-rays.com/ida-free/), but IDA Free does not have the feature to decompile functions into C language.
+    If you haven't purchased IDA Pro, you can use [IDA Free](https://hex-rays.com/ida-free), but IDA Free does not have the feature to decompile functions into C language.
 
 ## Why Understand BDS Functions?
 
@@ -20,7 +20,7 @@ Obviously, if you have opened IDA Pro and looked at the generated function list,
 
 Why is that?
 
-At this point, if we open LeviLamina’s [`Fake Header`](https://github.com/LiteLDev/LeviLamina/blob/develop/src/mc/world/actor/player/Player.h#L54C30-L54C30) file about the Player class, we find that the class is defined like this:
+At this point, if we open LeviLamina’s [`Fake Header`](https://github.com/LiteLDev/LeviLamina/blob/main/src/mc/world/actor/player/Player.h#L129) file about the Player class, we find that the class is defined like this:
 
 ```cpp
 class Player : public ::Mob {
@@ -237,7 +237,7 @@ This is clearly a call to a virtual function, eventually returning a Player poin
 
 We could copy this directly, but it’s not elegant.
 
-And by consulting LeviLamina's information about [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/develop/src/mc/network/ServerNetworkHandler.h#L57C1-L63C6), we can know that the ServerNetworkHandler class provides a virtual function `_getServerPlayer`, which is used to get a player pointer. But, as seen in the pseudocode and the above context, directly calling _getServerPlayer is not feasible; we need to make a -16 offset to the NetworkIdentifier pointer to correctly get the player pointer. For convenience, LeviLamina provides a wrapper, and we can skip this step and directly use this wrapper to get the player pointer.
+And by consulting LeviLamina's information about [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/main/src/mc/network/ServerNetworkHandler.h#L625), we can know that the ServerNetworkHandler class provides a virtual function `_getServerPlayer`, which is used to get a player pointer. But, as seen in the pseudocode and the above context, directly calling _getServerPlayer is not feasible; we need to make a -16 offset to the NetworkIdentifier pointer to correctly get the player pointer. For convenience, LeviLamina provides a wrapper, and we can skip this step and directly use this wrapper to get the player pointer.
 
 Thus, we have achieved our goal. We can hook this function to implement our feature.
 

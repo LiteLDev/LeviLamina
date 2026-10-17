@@ -1,0 +1,7 @@
+/* Source for static/kit.css: the full levimc-kit theme for pages that are not React apps
+   (Doxygen API reference, docs.levimc.org root redirect/404 pages). Built by build-static.mjs. */
+@import "tailwindcss";
+@import "../theme/index.css";
+@source "./globalbar.html";
+@source "./footer.html";
+@source "./pages";

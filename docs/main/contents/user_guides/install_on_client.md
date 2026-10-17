@@ -11,7 +11,7 @@ To install LeviLamina onto the Minecraft Bedrock Edition client, you also need t
 
 * [Visual C++ Redistributable for Visual Studio 2015, 2017, 2019, and 2022](https://aka.ms/vs/17/release/vc_redist.x64.exe)
 * [LeviLauncher](https://github.com/LiteLDev/LeviLauncher/releases)
-* [lip](https://github.com/futrime/lip/releases)
+* [lip](https://github.com/LiteLDev/lip/releases)
 
 ## Automatic Installation via LeviLauncher
 
@@ -25,7 +25,7 @@ To install LeviLamina onto the Minecraft Bedrock Edition client, you also need t
 ## Installation via lip
 
 1. Install a client version supported by LeviLamina through LeviLauncher. You can refer to
-   the [Supported Versions](https://www.google.com/search?q=../versions.md) for specific details.
+   the [Supported Versions](../versions.md) for specific details.
 2. Open the client directory via LeviLauncher, then open a command line terminal (you can type `cmd` in the address bar
    and press Enter).
 3. Run the following command to install LeviLamina:

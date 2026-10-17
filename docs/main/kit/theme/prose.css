@@ -1,0 +1,535 @@
+/*
+ * levimc-kit — document typography. Apply `.kit-prose` to the element that wraps rendered markdown.
+ * Calm canvas, ~76ch measure, AA contrast; pixel details only on small affordances (bullets, anchors, keys).
+ */
+
+@layer components {
+  .kit-prose {
+    --prose-gap: 1.125rem;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+  .kit-prose:lang(zh),
+  .kit-prose:lang(ja),
+  .kit-prose:lang(ko) {
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+  }
+
+  .kit-prose > :first-child {
+    margin-top: 0;
+  }
+  .kit-prose > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------------------------------------------------------------- headings */
+  .kit-prose :is(h1, h2, h3, h4, h5, h6) {
+    position: relative;
+    overflow-wrap: anywhere;
+    color: var(--color-ink);
+    scroll-margin-top: calc(var(--spacing-header) + 1.25rem);
+    text-wrap: balance;
+  }
+  .kit-prose h1 {
+    margin: 0 0 1.5rem;
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-size: clamp(2rem, 1.6rem + 1.4vw, 2.625rem);
+    font-weight: 560;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .kit-prose h2 {
+    margin: 3rem 0 1rem;
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 650;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+    border-top: 1px solid var(--color-line);
+  }
+  .kit-prose h3 {
+    margin: 2.25rem 0 0.75rem;
+    font-size: 1.1875rem;
+    font-weight: 650;
+    line-height: 1.4;
+    letter-spacing: -0.006em;
+  }
+  .kit-prose h4 {
+    margin: 1.875rem 0 0.625rem;
+    font-size: 1.0625rem;
+    font-weight: 650;
+    line-height: 1.45;
+  }
+  .kit-prose :is(h5, h6) {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 650;
+    line-height: 1.5;
+  }
+  .kit-prose h6 {
+    color: var(--color-muted);
+  }
+  .kit-prose :is(h1, h2, h3, h4) code {
+    font-size: 0.86em;
+  }
+
+  /* Heading permalink: a pixel '#' that appears in the left margin on hover/focus. */
+  .kit-prose .kit-anchor {
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    display: inline-grid;
+    place-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -0.625rem;
+    color: var(--color-faint);
+    opacity: 0;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .kit-prose h2 .kit-anchor {
+    top: calc(50% + 0.75rem);
+  }
+  .kit-prose :is(h1, h2, h3, h4, h5, h6):hover .kit-anchor,
+  .kit-prose .kit-anchor:focus-visible {
+    opacity: 1;
+  }
+  .kit-prose .kit-anchor:hover {
+    color: var(--color-primary-strong);
+  }
+  .kit-prose .kit-anchor svg {
+    width: 16px;
+    height: 16px;
+  }
+  @media (max-width: 960px) {
+    .kit-prose .kit-anchor {
+      left: auto;
+      right: -0.25rem;
+      position: relative;
+      top: auto;
+      margin: 0 0 0 0.375rem;
+      vertical-align: middle;
+      opacity: 0.55;
+    }
+    .kit-prose h2 .kit-anchor {
+      top: auto;
+    }
+  }
+  .kit-prose h1 .kit-anchor {
+    display: none;
+  }
+  .kit-prose :is(h1, h2, h3, h4, h5, h6):target {
+    animation: kit-target-flash 1.6s var(--ease-soft);
+  }
+
+  /* ---------------------------------------------------------------- text */
+  .kit-prose p {
+    margin: var(--prose-gap) 0;
+  }
+  .kit-prose strong {
+    font-weight: 650;
+    color: var(--color-ink);
+  }
+  .kit-prose em {
+    font-style: italic;
+  }
+  .kit-prose :is(del, s) {
+    color: var(--color-muted);
+  }
+  .kit-prose mark {
+    background: var(--color-mark);
+    color: inherit;
+    padding: 0 0.15em;
+  }
+  .kit-prose small {
+    font-size: 0.875em;
+  }
+  .kit-prose u,
+  .kit-prose ins {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .kit-prose abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+  }
+  .kit-prose sub,
+  .kit-prose sup {
+    font-size: 0.75em;
+    line-height: 0;
+  }
+
+  .kit-prose a {
+    color: var(--color-link);
+    font-weight: 500;
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-link) 38%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    transition:
+      text-decoration-color 0.15s,
+      color 0.15s;
+  }
+  .kit-prose a:hover {
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+  }
+  .kit-prose a code {
+    color: inherit;
+  }
+  /* external links get a tiny pixel arrow (CSS only, not part of the text) */
+  .kit-prose a[target="_blank"]:not(:has(img))::after {
+    content: "";
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    margin-left: 0.15em;
+    vertical-align: 0.05em;
+    background: currentColor;
+    opacity: 0.55;
+    -webkit-mask: var(--kit-icon-external) center / contain no-repeat;
+    mask: var(--kit-icon-external) center / contain no-repeat;
+  }
+
+  /* ---------------------------------------------------------------- lists: pixel bullets */
+  .kit-prose :is(ul, ol) {
+    margin: var(--prose-gap) 0;
+    padding-left: 1.625rem;
+  }
+  .kit-prose li {
+    margin: 0.375rem 0;
+    padding-left: 0.125rem;
+  }
+  .kit-prose li > :is(ul, ol) {
+    margin: 0.375rem 0;
+  }
+  .kit-prose li > p {
+    margin: 0.5rem 0;
+  }
+  .kit-prose ul {
+    list-style: none;
+  }
+  .kit-prose ul > li {
+    position: relative;
+  }
+  .kit-prose ul > li::before {
+    content: "";
+    position: absolute;
+    left: -1.125rem;
+    top: 0.72em;
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    box-shadow: 2px 2px 0 0 color-mix(in srgb, var(--color-primary) 35%, transparent);
+  }
+  .kit-prose ul ul > li::before {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--color-accent-1);
+  }
+  .kit-prose ul ul ul > li::before {
+    background: var(--color-accent-2);
+    box-shadow: none;
+    width: 4px;
+    height: 4px;
+    top: 0.8em;
+  }
+  .kit-prose ol {
+    list-style: decimal;
+  }
+  .kit-prose ol > li::marker {
+    color: var(--color-muted);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  /* GFM task lists */
+  .kit-prose li.task-list-item {
+    list-style: none;
+  }
+  .kit-prose ul > li.task-list-item::before {
+    display: none;
+  }
+  .kit-prose .task-list-item input[type="checkbox"] {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    margin: 0 0.5rem 0 -1.25rem;
+    vertical-align: -2px;
+    background: var(--color-surface);
+    box-shadow: inset 0 0 0 2px var(--color-line-strong);
+  }
+  .kit-prose .task-list-item input[type="checkbox"]:checked {
+    background:
+      var(--kit-icon-check-mask, none) center / 12px 12px no-repeat,
+      var(--color-primary);
+    box-shadow: inset 0 0 0 2px var(--color-primary-strong);
+  }
+
+  /* ---------------------------------------------------------------- definition lists */
+  .kit-prose dl {
+    margin: var(--prose-gap) 0;
+  }
+  .kit-prose dt {
+    font-weight: 650;
+  }
+  .kit-prose dd {
+    margin: 0.25rem 0 0.75rem 1.5rem;
+  }
+
+  /* ---------------------------------------------------------------- inline code & keys */
+  .kit-prose :not(pre) > code {
+    padding: 0.125em 0.375em;
+    font-size: 0.86em;
+    color: var(--color-code-ink);
+    background: color-mix(in srgb, var(--color-ink) 6%, var(--color-surface));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink) 9%, transparent);
+    overflow-wrap: anywhere;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  .dark .kit-prose :not(pre) > code {
+    background: color-mix(in srgb, #ffffff 7%, var(--color-canvas));
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
+  }
+  .kit-prose kbd {
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0 0.375em 0.0625em;
+    font-size: 0.8em;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--color-ink);
+    background: var(--color-surface);
+    box-shadow:
+      0 -2px 0 0 var(--color-line-strong),
+      0 2px 0 0 var(--color-line-strong),
+      -2px 0 0 0 var(--color-line-strong),
+      2px 0 0 0 var(--color-line-strong),
+      inset 0 -2px 0 0 color-mix(in srgb, var(--color-ink) 14%, transparent);
+    margin: 0 0.2em;
+  }
+
+  /* ---------------------------------------------------------------- blockquote */
+  .kit-prose blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 1.125rem;
+    color: var(--color-muted);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--color-accent-2) 9%, transparent), transparent 70%);
+    box-shadow: inset 4px 0 0 0 var(--color-accent-2);
+  }
+  .kit-prose blockquote > p {
+    margin: 0.625rem 0;
+  }
+  .kit-prose blockquote strong {
+    color: inherit;
+  }
+
+  /* ---------------------------------------------------------------- tables */
+  .kit-prose .kit-table-wrap {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    max-width: 100%;
+    background: var(--color-surface);
+    box-shadow:
+      0 -1px 0 0 var(--color-line),
+      0 1px 0 0 var(--color-line),
+      -1px 0 0 0 var(--color-line),
+      1px 0 0 0 var(--color-line);
+  }
+  .kit-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    font-variant-numeric: tabular-nums;
+  }
+  .kit-prose .kit-table-wrap > table {
+    margin: 0;
+  }
+  .kit-prose :is(th, td) {
+    padding: 0.625rem 0.875rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .kit-prose :is(th, td) + :is(th, td) {
+    border-left: 1px solid color-mix(in srgb, var(--color-line) 60%, transparent);
+  }
+  .kit-prose th {
+    font-size: 0.8125rem;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+    color: var(--color-ink);
+    background: color-mix(in srgb, var(--color-ink) 4%, var(--color-surface));
+    border-bottom: 2px solid var(--color-line-strong);
+    white-space: nowrap;
+  }
+  .kit-prose tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--color-ink) 1.8%, transparent);
+  }
+  .kit-prose tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  .kit-prose tbody tr:hover {
+    background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  }
+  .kit-prose td code {
+    font-size: 0.82em;
+  }
+  /* tables scroll horizontally instead of breaking words mid-way */
+  .kit-prose .kit-table-wrap table,
+  .kit-prose .kit-table-wrap :not(pre) > code {
+    overflow-wrap: normal;
+  }
+
+  /* ---------------------------------------------------------------- media, rules */
+  .kit-prose img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  .kit-prose p > img:only-child,
+  .kit-prose figure img {
+    display: block;
+    margin: 1.5rem auto;
+    box-shadow:
+      0 -2px 0 0 var(--color-line),
+      0 2px 0 0 var(--color-line),
+      -2px 0 0 0 var(--color-line),
+      2px 0 0 0 var(--color-line);
+  }
+  .kit-prose figure {
+    margin: 1.5rem 0;
+  }
+  .kit-prose figcaption {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+  }
+  .kit-prose hr {
+    height: 2px;
+    margin: 2.5rem 0;
+    border: 0;
+    background: repeating-linear-gradient(90deg, var(--color-line-strong) 0 4px, transparent 4px 10px);
+  }
+
+  /* ---------------------------------------------------------------- raw <details> */
+  .kit-prose details:not(.kit-adm) {
+    margin: 1.25rem 0;
+    padding: 0.5rem 1rem;
+    background: var(--color-surface);
+    box-shadow:
+      0 -2px 0 0 var(--color-line),
+      0 2px 0 0 var(--color-line),
+      -2px 0 0 0 var(--color-line),
+      2px 0 0 0 var(--color-line);
+  }
+  .kit-prose details:not(.kit-adm) > summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .kit-prose details:not(.kit-adm) > summary::-webkit-details-marker {
+    display: none;
+  }
+  .kit-prose details:not(.kit-adm) > summary::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    flex: none;
+    background: currentColor;
+    -webkit-mask: var(--kit-icon-chevron-right) center / contain no-repeat;
+    mask: var(--kit-icon-chevron-right) center / contain no-repeat;
+    transition: transform 0.15s var(--ease-pixel);
+  }
+  .kit-prose details:not(.kit-adm)[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  .kit-prose details:not(.kit-adm)[open] > summary {
+    margin-bottom: 0.5rem;
+  }
+
+  /* ---------------------------------------------------------------- footnotes */
+  .kit-prose sup > a[data-footnote-ref],
+  .kit-prose .footnote-ref {
+    display: inline-block;
+    min-width: 1.25em;
+    padding: 0 0.25em;
+    margin-left: 0.1em;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-primary-strong);
+    background: var(--color-primary-soft);
+    vertical-align: 0.4em;
+  }
+  .dark .kit-prose sup > a[data-footnote-ref] {
+    color: var(--color-primary);
+  }
+  .kit-prose section.footnotes,
+  .kit-prose .footnotes {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-line);
+  }
+  .kit-prose .footnotes ol {
+    padding-left: 1.5rem;
+  }
+  .kit-prose .footnotes li:target {
+    background: color-mix(in srgb, var(--color-accent-4) 18%, transparent);
+  }
+  .kit-prose .footnotes .data-footnote-backref,
+  .kit-prose .footnotes [data-footnote-backref] {
+    margin-left: 0.25rem;
+    text-decoration: none;
+    font-family: var(--font-mono);
+  }
+  .kit-prose .footnotes h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  /* ---------------------------------------------------------------- misc blocks */
+  .kit-prose .kit-math,
+  .kit-prose .arithmatex {
+    overflow-x: auto;
+  }
+  .kit-prose iframe,
+  .kit-prose video {
+    max-width: 100%;
+  }
+}
+
+@keyframes kit-target-flash {
+  0% {
+    background: color-mix(in srgb, var(--color-accent-4) 45%, transparent);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+:root {
+  --kit-icon-check-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Cpath fill='white' d='M12 3h2v2h-2v2h-2v2H8v2H6v2H4v-2H2V9h2v2h2V9h2V7h2V5h2z'/%3E%3C/svg%3E");
+}

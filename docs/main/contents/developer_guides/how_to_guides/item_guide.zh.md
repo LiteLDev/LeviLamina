@@ -24,7 +24,7 @@ ItemStack{"diamond", 1};
 // 通过物品名称和NBT创建物品栈：
 ItemStack::fromTag(tag);
 ```
-更多的请自行查看 LeviLamina 提供的 头文件 [ItemStack.h](https://github.com/LiteLDev/LeviLamina/blob/develop/src/mc/world/item/registry/ItemStack.h#L12)
+更多的请自行查看 LeviLamina 提供的 头文件 [ItemStack.h](https://github.com/LiteLDev/LeviLamina/blob/main/src/mc/world/item/ItemStack.h#L26)
 
 ## 物品
 

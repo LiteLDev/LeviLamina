@@ -10,7 +10,7 @@ In short, we hope these guidelines help you understand what you can and cannot d
 
 ### Important Legal Agreements
 
-[The LeviLamina End User License Agreement](https://github.com/LiteLDev/LeviLamina/blob/HEAD/EULA.en.md) (EULA) is a legal agreement between you and us ([*LeviMC*](https://github.com/LeviMC)). The EULA covers your use of *LeviLamina* products and governs your use of our website and how we resolve disputes. It is your responsibility to understand and comply with the EULA.
+[The LeviLamina End User License Agreement](https://github.com/LiteLDev/LeviLamina/blob/HEAD/EULA.en.md) (EULA) is a legal agreement between you and us ([*LeviMC*](https://github.com/LiteLDev)). The EULA covers your use of *LeviLamina* products and governs your use of our website and how we resolve disputes. It is your responsibility to understand and comply with the EULA.
 
 These guidelines should be followed alongside the EULA but do not form part of the EULA. They exist because we currently believe that allowing some flexibility in the use of *LeviLamina* is a good idea.
 
@@ -42,7 +42,7 @@ If you use any part of any name, brand, or asset, then:
   - You (rather than us) are responsible for the products or services (including events, servers, books, and handmade items).
   - Who the publisher, manufacturer, seller, organizer, and/or owner is.
   - The contact and contact information for products, services, or any related purchases (chat and forum links are not acceptable).
-- Attempting to obtain any data that violates the [Minecraft EULA](https://www.minecraft.net/en-us/eula) or could harm the security of [Minecraft](https://www.minecraft.net/) by dumping [*LeviLamina*](https://github.com/LiteLDev/LeviLamina) or any of [our other products](https://github.com/orgs/LiteLDev/repositories) (see the first entry under "**DEFINITIONS**" for more details) is unwise!
+- Attempting to obtain any data that violates the [Minecraft EULA](https://www.minecraft.net/en-us/eula) or could harm the security of [Minecraft](https://www.minecraft.net/en-us) by dumping [*LeviLamina*](https://github.com/LiteLDev/LeviLamina) or any of [our other products](https://github.com/orgs/LiteLDev/repositories) (see the first entry under "**DEFINITIONS**" for more details) is unwise!
 - **Do not** attempt to reverse *LeviLamina* for malicious purposes!
 - We do **not** want you to use *LeviLamina* to develop any programs that could compromise Minecraft's security, or any other products that we consider to be a threat to Minecraft's security.
 

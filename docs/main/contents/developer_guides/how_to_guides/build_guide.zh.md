@@ -285,5 +285,5 @@ xmake g --proxy_pac=github_mirror.lua
 
 ## 相关文档
 
-- [项目架构](architecture.md) — 项目结构和设计
-- [测试指南](how_to_guides/testing_guide.md) — 运行和编写测试
+- [项目架构](../architecture.md) — 项目结构和设计
+- [测试指南](#构建并启用测试) — 运行和编写测试

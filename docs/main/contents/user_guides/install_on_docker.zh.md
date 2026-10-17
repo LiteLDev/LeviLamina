@@ -29,7 +29,7 @@ docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITH
 
 ### 环境变量
 
-- `EULA`: 必须设置为`TRUE`以接受[Minecraft最终用户许可协议](https://minecraft.net/terms)。
+- `EULA`: 必须设置为`TRUE`以接受[Minecraft最终用户许可协议](https://www.minecraft.net/zh-hans/eula)。
 
 - `GITHUB_MIRROR_URL`：可设置为GitHub镜像URL，以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
 

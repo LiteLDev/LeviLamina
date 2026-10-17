@@ -33,6 +33,7 @@ jobs:
           sudo chmod +x /usr/local/bin/doxygen
           doxygen --version
 
+      # Header, footer, stylesheets and kit.js come from the vendored levimc-kit (docs/main/kit/static/).
       - run: |
           doxygen docs/api/Doxyfile
 
@@ -45,30 +46,46 @@ jobs:
           path: |
             artifact.tar
 
-  build-mkdocs:
+  build-docs:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs/main
     steps:
       - uses: actions/checkout@v7
+        with:
+          # full history for the "Last updated" dates
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: docs/main/package-lock.json
 
       - run: |
-          pip install -r docs/main/requirements.txt
+          npm ci
 
       - run: |
-          mkdocs build -f docs/main/mkdocs.yml -d ../../site
+          npm run build
+
+      # internal links, anchors and redirects (the Doxygen output under /LeviLamina/api/ is merged below)
+      - run: |
+          npm run linkcheck
 
       - run: |
-          tar -cvf artifact.tar -C site/ .
+          tar -cvf ../../artifact.tar -C dist/ .
 
       - uses: actions/upload-artifact@v7
         with:
-          name: mkdocs-pages
+          name: docs-pages
           path: |
             artifact.tar
 
   merge:
     needs:
       - build-doxygen
-      - build-mkdocs
+      - build-docs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v8
@@ -79,7 +96,7 @@ jobs:
         run: |
           mkdir site
           tar -xvf artifacts/doxygen-pages/artifact.tar -C site/
-          tar -xvf artifacts/mkdocs-pages/artifact.tar -C site/
+          tar -xvf artifacts/docs-pages/artifact.tar -C site/
 
       - uses: actions/upload-pages-artifact@v5
         with:

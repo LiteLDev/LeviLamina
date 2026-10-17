@@ -23,7 +23,7 @@ ItemStack{"diamond", 1};
 // Create an ItemStack with the item name and NBT:
 ItemStack::fromTag(tag);
 ```
-For more, please refer to the header file provided by LeviLamina [ItemStack.h](https://github.com/LiteLDev/LeviLamina/blob/develop/src/mc/world/item/registry/ItemStack.h#L12)
+For more, please refer to the header file provided by LeviLamina [ItemStack.h](https://github.com/LiteLDev/LeviLamina/blob/main/src/mc/world/item/ItemStack.h#L26)
 
 ## Item
 

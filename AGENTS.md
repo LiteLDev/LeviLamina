@@ -14,7 +14,8 @@ C++23 features enabled), built with xmake and clang-cl on Windows x64.
 | `src-client`  | Client-only code, compiled when `target_type=client`.                  |
 | `src-test`    | GTest suites split into `common/`, `server/`, `client/`.               |
 | `scripts`     | `format_all.py`, `coverage_report.py`, `validate_release.py`.          |
-| `docs/main`   | mkdocs sources; every page is mirrored as `*.md` and `*.zh.md`.        |
+| `docs/main`   | Docs site (levimc-kit); pages in `contents/`, as `*.md` + `*.zh.md`.   |
+| `docs/api`    | Doxygen config for the API reference at `/LeviLamina/api/`.            |
 
 ## Editing `src/mc` (and `mc/` under src-server/src-client)
 
@@ -119,4 +120,24 @@ output or bump versions manually.
 ## Docs
 
 Documentation in `docs/main/contents` is bilingual. When you change an English page, update its
-`.zh.md` sibling in the same pass, and register new pages in `docs/main/mkdocs.yml`.
+`.zh.md` sibling in the same pass, and register new pages in the `nav` of `docs/main/docs.config.ts`
+(with their Chinese label in `navTranslations.zh` when the entry is titled).
+
+The site is built with the vendored levimc-kit (`docs/main/kit/`, Vite + React, statically
+prerendered); do not edit files under `kit/`, re-vendor the kit instead. Until levimc-kit ships it,
+the vendored copy carries one local patch marked `[kit patch: tabs row]` (in
+`kit/docs/app/components/SiteHeader.tsx` and `kit/docs/app/docs.css`, it moves the wide header nav
+into its own row); re-apply it after re-vendoring. Markdown follows MkDocs /
+Python-Markdown conventions (4-space list nesting, `!!! note` admonitions, `=== "Tab"` tabs) and links
+use relative `.md` paths. From `docs/main` (Node 24):
+
+```sh
+npm ci
+npm run build       # → dist/; prints unresolved links and missing anchors
+npm run preview     # http://127.0.0.1:4173/LeviLamina/ with GitHub Pages semantics
+npm run linkcheck   # internal links, anchors and redirects of dist/ (`-- --external` checks external URLs)
+npm run dev         # dev server with hot reload
+```
+
+The Doxygen reference (`docs/api/Doxyfile`, run from the repository root) uses the kit's header,
+footer and stylesheets from `docs/main/kit/static/`; CI merges it into the site under `api/`.

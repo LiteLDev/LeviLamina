@@ -1,0 +1,356 @@
+/*
+ * levimc-kit overlay for doxygen-awesome-css v2.4.1 ("Impression, Craft" on Doxygen API pages).
+ *
+ * Doxyfile:
+ *   HTML_HEADER            = docs/api/header.html          (copy of kit/static/doxygen/header.html)
+ *   HTML_FOOTER            = docs/api/footer.html          (copy of kit/static/doxygen/footer.html)
+ *   HTML_EXTRA_STYLESHEET  = docs/api/doxygen-awesome-css/doxygen-awesome.css \
+ *                            kit/static/kit-chrome.css \
+ *                            kit/static/doxygen/doxygen-kit.css
+ *   HTML_EXTRA_FILES       = kit/static/kit.js
+ *   HTML_COLORSTYLE        = LIGHT      (the kit scripts toggle html.dark-mode / html.light-mode)
+ * Do NOT include doxygen-awesome-darkmode-toggle.js: kit.js owns the theme (localStorage "levimc-theme").
+ */
+
+html {
+  --primary-color: #3a7047;
+  --primary-dark-color: #2b5636;
+  --primary-light-color: #6fbf73;
+  --on-primary-color: #ffffff;
+  --link-color: #356b42;
+
+  --page-background-color: #f7f3e8;
+  --page-foreground-color: #1f2a33;
+  --page-secondary-foreground-color: #5b6770;
+  --separator-color: #e2dacb;
+
+  --border-radius-large: 0px;
+  --border-radius-small: 0px;
+  --border-radius-medium: 0px;
+
+  --box-shadow: 0 2px 0 0 rgb(31 42 51 / 0.12), 0 6px 0 0 rgb(31 42 51 / 0.05);
+  --odd-color: rgb(31 42 51 / 0.025);
+
+  --font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-family-monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --page-font-size: 15.5px;
+  --content-line-height: 27px;
+
+  --warning-color: #faf1dc;
+  --warning-color-dark: #b7791f;
+  --warning-color-darker: #5c3d0c;
+  --note-color: #e3edf3;
+  --note-color-dark: #3e6e8e;
+  --note-color-darker: #1f3a4d;
+  --todo-color: #ece6f6;
+  --todo-color-dark: #7a63a8;
+  --todo-color-darker: #3b2c5c;
+  --deprecated-color: #eeebe3;
+  --deprecated-color-dark: #6f7479;
+  --deprecated-color-darker: #3c3f42;
+  --bug-color: #f8e1e0;
+  --bug-color-dark: #c0392b;
+  --bug-color-darker: #6e1d16;
+  --invariant-color: #e3eddc;
+  --invariant-color-dark: #2f8a4f;
+  --invariant-color-darker: #1d4a2c;
+
+  --blockquote-background: #f0ebdd;
+  --blockquote-foreground: #5b6770;
+  --tablehead-background: #f0ebdd;
+  --tablehead-foreground: #1f2a33;
+
+  --menu-focus-foreground: #ffffff;
+  --menu-focus-background: #3a7047;
+  --menu-selected-background: rgb(79 138 91 / 0.12);
+
+  --header-background: #fffdf7;
+  --header-foreground: #1f2a33;
+  --searchbar-background: #fffdf7;
+  --searchbar-foreground: #1f2a33;
+  --searchbar-border-radius: 0px;
+
+  --code-background: #fbf8ef;
+  --code-foreground: #26323b;
+  --fragment-background: #fbf8ef;
+  --fragment-foreground: #26323b;
+  --fragment-keyword: #7a3f9c;
+  --fragment-keywordtype: #0e6a73;
+  --fragment-keywordflow: #a12f4f;
+  --fragment-token: #2f6f3d;
+  --fragment-comment: #69737b;
+  --fragment-link: #2a5d84;
+  --fragment-preprocessor: #a12f4f;
+  --fragment-linenumber-color: #9aa0a3;
+  --fragment-linenumber-background: #f1ecdf;
+  --fragment-linenumber-border: #e2dacb;
+
+  --side-nav-background: #fbf8ef;
+  --side-nav-foreground: #1f2a33;
+  --toc-background: #fffdf7;
+  --toc-foreground: #1f2a33;
+  --webkit-scrollbar-color: #c4b9a2;
+}
+
+html.dark-mode {
+  color-scheme: dark;
+  --primary-color: #6fbf73;
+  --primary-dark-color: #8fd48f;
+  --primary-light-color: #3a7047;
+  --on-primary-color: #0f1b26;
+  --link-color: #7fcc83;
+
+  --page-background-color: #0f1b26;
+  --page-foreground-color: #e8eef2;
+  --page-secondary-foreground-color: #9aaab8;
+  --separator-color: #233648;
+  --box-shadow: 0 2px 0 0 rgb(0 0 0 / 0.35), 0 6px 0 0 rgb(0 0 0 / 0.18);
+  --odd-color: rgb(255 255 255 / 0.025);
+
+  --warning-color: #2b2416;
+  --warning-color-dark: #f2b05e;
+  --warning-color-darker: #f7d9a8;
+  --note-color: #17283a;
+  --note-color-dark: #78aedb;
+  --note-color-darker: #cfe3f3;
+  --todo-color: #221d33;
+  --todo-color-dark: #b7a4e6;
+  --todo-color-darker: #e3daf7;
+  --deprecated-color: #1c2731;
+  --deprecated-color-dark: #a3adb6;
+  --deprecated-color-darker: #dce3e8;
+  --bug-color: #2e1a1d;
+  --bug-color-dark: #f07a6e;
+  --bug-color-darker: #f8cdc8;
+  --invariant-color: #15291f;
+  --invariant-color-dark: #6fcf8a;
+  --invariant-color-darker: #cdeed5;
+
+  --blockquote-background: #152535;
+  --blockquote-foreground: #9aaab8;
+  --tablehead-background: #1a2d3f;
+  --tablehead-foreground: #e8eef2;
+  --menu-selected-background: rgb(111 191 115 / 0.14);
+  --menu-focus-foreground: #0f1b26;
+  --menu-focus-background: #6fbf73;
+
+  --header-background: #152535;
+  --header-foreground: #e8eef2;
+  --searchbar-background: #0b1620;
+  --searchbar-foreground: #e8eef2;
+
+  --code-background: #0b1620;
+  --code-foreground: #dce5ec;
+  --fragment-background: #0b1620;
+  --fragment-foreground: #dce5ec;
+  --fragment-keyword: #c6a8ff;
+  --fragment-keywordtype: #e9c46a;
+  --fragment-keywordflow: #f394b4;
+  --fragment-token: #9bd69e;
+  --fragment-comment: #8496a8;
+  --fragment-link: #8fd3e0;
+  --fragment-preprocessor: #f394b4;
+  --fragment-linenumber-color: #5d7184;
+  --fragment-linenumber-background: #0e1b27;
+  --fragment-linenumber-border: #1a2d3f;
+
+  --side-nav-background: #122130;
+  --side-nav-foreground: #e8eef2;
+  --toc-background: #152535;
+  --toc-foreground: #e8eef2;
+  --webkit-scrollbar-color: #36506a;
+}
+
+/* doxygen-awesome applies its own dark palette for prefers-color-scheme: dark unless html.light-mode is set;
+   the kit's theme-init script always sets exactly one of .dark-mode / .light-mode, so mirror the dark
+   values here for that media query too (covers the first paint before kit.js loads). */
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) {
+    --page-background-color: #0f1b26;
+    --page-foreground-color: #e8eef2;
+    --side-nav-background: #122130;
+    --header-background: #152535;
+  }
+}
+
+/* ------------------------------------------------------------------ page frame */
+body {
+  background: var(--page-background-color);
+}
+#top {
+  background: var(--header-background);
+  border-bottom: 0;
+}
+#top > .kit-gbar {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  order: -1;
+}
+#top > #titlearea {
+  flex: 1 1 100%;
+}
+#titlearea {
+  position: relative;
+  padding: 14px 20px 18px;
+  border-bottom: 0;
+  background:
+    linear-gradient(90deg, var(--header-background) 0%, color-mix(in srgb, var(--header-background) 82%, transparent) 46%, transparent 100%),
+    var(--kit-paint-lilies) center 32% / cover no-repeat;
+}
+html.dark-mode #titlearea {
+  background:
+    linear-gradient(90deg, var(--header-background) 0%, color-mix(in srgb, var(--header-background) 80%, transparent) 46%, transparent 100%),
+    var(--kit-paint-sunrise) center 30% / cover no-repeat;
+}
+#titlearea::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8px;
+  background: var(--kit-grass-strip) repeat-x 0 0 / 16px 8px;
+  image-rendering: pixelated;
+}
+#projectname {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+#projectlogo img {
+  max-height: 44px;
+}
+#main-nav {
+  border-bottom: 1px solid var(--separator-color);
+}
+.sm-dox,
+.sm-dox a,
+.sm-dox a:hover {
+  font-family: var(--font-family);
+}
+.sm-dox a.highlighted,
+.sm-dox a:hover {
+  border-radius: 0 !important;
+}
+#MSearchBox {
+  border-radius: 0 !important;
+  box-shadow:
+    0 -2px 0 0 var(--separator-color),
+    0 2px 0 0 var(--separator-color),
+    -2px 0 0 0 var(--separator-color),
+    2px 0 0 0 var(--separator-color) !important;
+}
+
+/* page title in the display face */
+div.header .title,
+div.headertitle .title {
+  font-family: "Fraunces", Georgia, "PingFang SC", "Microsoft YaHei", serif;
+  font-weight: 560;
+  letter-spacing: -0.015em;
+}
+
+/* side tree: active item like the docs sidebar */
+#nav-tree .selected {
+  background: var(--menu-selected-background) !important;
+  box-shadow: inset 3px 0 0 0 var(--primary-color);
+  text-shadow: none;
+}
+#nav-tree .selected a {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+/* members & fragments get stepped pixel frames instead of rounded cards */
+.memitem,
+div.fragment,
+pre.fragment,
+.memproto,
+table.memberdecls,
+table.fieldtable,
+div.contents table.doxtable,
+div.contents table.markdownTable {
+  border-radius: 0 !important;
+}
+.memitem {
+  box-shadow:
+    0 -2px 0 0 var(--separator-color),
+    0 2px 0 0 var(--separator-color),
+    -2px 0 0 0 var(--separator-color),
+    2px 0 0 0 var(--separator-color),
+    0 6px 0 0 var(--odd-color) !important;
+  margin: 2px 2px 28px;
+}
+.memtitle {
+  border-radius: 0 !important;
+  background: var(--tablehead-background) !important;
+  font-family: var(--font-family-monospace);
+}
+div.fragment {
+  box-shadow:
+    0 -2px 0 0 var(--fragment-linenumber-border),
+    0 2px 0 0 var(--fragment-linenumber-border),
+    -2px 0 0 0 var(--fragment-linenumber-border),
+    2px 0 0 0 var(--fragment-linenumber-border);
+  border: 0 !important;
+  margin: 12px 2px;
+}
+
+/* @note / @warning / @bug …: kit admonition edge */
+dl.section {
+  border-radius: 0 !important;
+  border-left-width: 4px !important;
+}
+
+/* footer from the kit */
+.kit-dox-footer .kit-footer {
+  margin-top: 3rem;
+}
+#nav-path {
+  border-radius: 0;
+}
+
+/* focus ring */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #8e5cf6;
+  outline-offset: 2px;
+}
+html.dark-mode a:focus-visible,
+html.dark-mode button:focus-visible,
+html.dark-mode summary:focus-visible {
+  outline-color: #5de0e6;
+}
+
+/* ------------------------------------------------------------------ kit chrome inside Doxygen
+   doxygen-awesome forces `a:link … { color: var(--link-color) !important }`; restore the chrome colours. */
+.kit-gbar a:is(:link, :visited, :hover, :focus, :active),
+.kit-gbar summary {
+  color: var(--gbar-muted) !important;
+  font-weight: 500;
+  text-decoration: none !important;
+  background: transparent;
+}
+.kit-gbar a.kit-gbar-brand:is(:link, :visited, :hover, :focus, :active),
+.kit-gbar a.kit-gbar-link:is(:hover, [aria-current="page"]),
+.kit-gbar a.kit-gbar-icon:hover {
+  color: #ffffff !important;
+}
+.kit-gbar .kit-menu-panel a:is(:link, :visited, :hover, :focus, :active) {
+  color: var(--color-ink) !important;
+}
+.kit-footer a:is(:link, :visited, :active, :focus) {
+  color: #e0d3bc !important;
+  font-weight: 400;
+}
+.kit-footer a:hover {
+  color: #ffffff !important;
+}
+.kit-footer a.kit-footer-logo:is(:link, :visited, :hover) {
+  color: #ffffff !important;
+}
+.kit-footer a.kit-footer-social-link:is(:link, :visited, :hover) {
+  color: #eadfcb !important;
+}
