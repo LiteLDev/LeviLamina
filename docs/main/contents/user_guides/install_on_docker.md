@@ -30,7 +30,7 @@ respectively. To use them, download the file to an empty directory and run `dock
   LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
 
 - `PACKAGES`: can be set to a space-separated list of packages to install on first run. Each package must be a
-  valid [lip specification](https://lip.levimc.org/cli/commands/install.html). Both local and remote lip teeth are
+  valid [lip specification](https://docs.levimc.org/lip/cli/commands/install.html). Both local and remote lip teeth are
   supported. For local packages, you may need to mount the packages to the container.
 
 - `VERSION` (`LATEST`): can be set to a specific [LeviLamina](https://github.com/LiteLDev/LeviLamina/tags) version or

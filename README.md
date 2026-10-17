@@ -17,7 +17,7 @@ LeviLamina is an unofficial mod loader designed to provide essential API support
 
 Developers can easily write mods in C++. This seamless integration allows developers to expand and personalize the game’s functionality effortlessly, providing an intuitive and highly flexible development experience.
 
-For more information, please refer to [the documentation](https://lamina.levimc.org).
+For more information, please refer to [the documentation](https://docs.levimc.org/LeviLamina).
 
 ## EULA & Usage Guidelines
 
@@ -26,7 +26,7 @@ For more information, please refer to [the documentation](https://lamina.levimc.
 
 ## Install & Usage
 
-Please refer to [Install on Server](https://lamina.levimc.org/user_guides/install/) and [Install on Client](https://lamina.levimc.org/user_guides/install_on_client/).
+Please refer to [Install on Server](https://docs.levimc.org/LeviLamina/user_guides/install/) and [Install on Client](https://docs.levimc.org/LeviLamina/user_guides/install_on_client/).
 
 ## Star History
 
