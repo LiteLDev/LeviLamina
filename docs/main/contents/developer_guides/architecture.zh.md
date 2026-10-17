@@ -245,7 +245,6 @@ option("target_type")
 
 ### 分配策略
 
-- **mimalloc** — 默认分配器，提升性能
 - **智能指针** — `std::shared_ptr`、`std::unique_ptr` 用于所有权
 - **optional_ref** — 对 Bedrock 对象的非拥有引用
 

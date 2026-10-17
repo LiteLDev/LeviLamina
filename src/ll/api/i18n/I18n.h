@@ -74,7 +74,7 @@ public:
 public:
     std::string message() const noexcept override { return message(ll::i18n::getDefaultLocaleCode()); }
     std::string message(std::string_view localeCode) const noexcept override try {
-        auto pattern = mI18n->get(mKey, localeCode.empty() ? ll::i18n::getDefaultLocaleCode() : localeCode);
+        auto pattern = mI18n->get(mKey, localeCode);
         if (!pattern.empty()) try {
                 return fmt::vformat(pattern, mArgs);
             } catch (...) {}
