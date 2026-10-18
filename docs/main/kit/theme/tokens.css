@@ -13,13 +13,13 @@
 
 @theme {
   /* ---- type ---- */
-  --font-sans: "Inter", "InterVariable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC",
+  --font-sans: "Inter", "InterVariable", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Noto Color Emoji";
-  --font-display: "Fraunces", ui-serif, Georgia, "Songti SC", "Noto Serif SC", "PingFang SC", "Microsoft YaHei",
+  --font-display: "Fraunces", "Fraunces Fallback", "Fraunces Fallback Times", ui-serif, Georgia, "Songti SC", "Noto Serif SC", "PingFang SC", "Microsoft YaHei",
     serif;
-  --font-pixel: "Silkscreen", ui-monospace, "JetBrains Mono", monospace;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "PingFang SC",
+  --font-pixel: "Silkscreen", "Silkscreen Fallback", ui-monospace, "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "PingFang SC",
     "Microsoft YaHei", monospace;
 
   /* ---- semantic surfaces (light defaults; dark overrides below) ---- */
@@ -90,7 +90,7 @@
   /* ---- geometry ---- */
   --px: 2px; /* one "pixel" of the pixel vocabulary */
   --radius-none: 0;
-  --spacing-header: 3.75rem;
+  --spacing-header: 3.25rem;
   --spacing-globalbar: 2.5rem;
   --spacing-sidebar: 17.5rem;
   --spacing-toc: 14rem;

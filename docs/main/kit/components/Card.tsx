@@ -24,8 +24,11 @@ export function Card({ title, description, icon, eyebrow, href, external, footer
     <>
       {icon ? <span className="kit-card-icon kit-slot">{typeof icon === 'string' ? <PixelIcon name={icon as PixelIconName} size={32} /> : icon}</span> : null}
       <span className="kit-card-body">
+        {/* spaces between the block spans keep the words apart in textContent (search, copy, screen readers) */}
         {eyebrow ? <span className="kit-card-eyebrow kit-pixel-label">{eyebrow}</span> : null}
+        {eyebrow ? ' ' : null}
         <span className="kit-card-title">{title}</span>
+        {description ? ' ' : null}
         {description ? <span className="kit-card-desc">{description}</span> : null}
         {children}
       </span>

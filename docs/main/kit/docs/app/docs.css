@@ -10,38 +10,35 @@
     min-height: 100dvh;
   }
 
-  /* ================================================================== site header */
+  /* ================================================================== site header (the docs' own row) */
+  /* One header, two rows: the LeviMC bar (dark, scrolls away) and this light row of project identity +
+     section tabs + search, which sticks. It sits on the page's own canvas — no second bar, border or shadow;
+     a hairline fades in only once it is stuck over scrolled content. */
+  :root:has(.kit-site-header) {
+    --kit-sticky-offset: var(--spacing-header);
+  }
   .kit-site-header {
     position: sticky;
     top: 0;
     z-index: 50;
     height: var(--spacing-header);
-    /* near-opaque so scrolled text never bleeds through; the blur softens what little does */
-    background: color-mix(in srgb, var(--color-canvas) 95%, transparent);
-    -webkit-backdrop-filter: saturate(1.2) blur(16px);
-    backdrop-filter: saturate(1.2) blur(16px);
-    box-shadow: 0 1px 0 0 var(--color-line);
+    background: color-mix(in srgb, var(--color-canvas) 90%, transparent);
+    -webkit-backdrop-filter: saturate(1.2) blur(14px);
+    backdrop-filter: saturate(1.2) blur(14px);
+    box-shadow: 0 1px 0 0 color-mix(in srgb, var(--color-line) 70%, transparent);
   }
-  .kit-site-header::after {
-    /* pixel horizon: one row of grass over one row of dirt, 2px each */
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 4px;
-    background:
-      linear-gradient(var(--color-mc-grass) 0 2px, transparent 2px),
-      linear-gradient(to bottom, transparent 2px, color-mix(in srgb, var(--color-mc-dirt) 55%, transparent) 2px 4px);
-    opacity: 0.55;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    pointer-events: none;
+  @supports (animation-timeline: scroll()) {
+    /* the hairline appears only while the row is stuck (after the LeviMC bar has scrolled away) */
+    .kit-site-header {
+      animation: kit-subnav-stuck linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 var(--spacing-globalbar);
+    }
   }
   .kit-site-header-inner {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.25rem;
     height: 100%;
     max-width: 90rem;
     margin: 0 auto;
@@ -50,16 +47,20 @@
   .kit-site-brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.625rem;
+    gap: 0.5rem;
     flex: 0 1 auto;
     min-width: 0;
-    margin-right: 0.75rem;
+    height: 100%;
+    padding-right: 1rem;
+    margin-right: 0.5rem;
     color: var(--color-ink);
     text-decoration: none;
+    /* a short rule between the project and its sections */
+    background: linear-gradient(var(--color-line), var(--color-line)) right center / 1px 1.25rem no-repeat;
   }
   .kit-site-logo {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
     flex: none;
   }
@@ -67,10 +68,19 @@
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.0625rem;
+    font-size: 0.9375rem;
     font-weight: 700;
     letter-spacing: -0.01em;
     white-space: nowrap;
+  }
+  .kit-site-brand:hover .kit-site-title {
+    color: var(--color-primary-strong);
+  }
+  .dark .kit-site-brand:hover .kit-site-title {
+    color: var(--color-primary);
+  }
+  .kit-site-spacer {
+    flex: 1;
   }
   .kit-site-nav {
     flex: 1;
@@ -80,16 +90,23 @@
   .kit-site-nav > ul {
     display: flex;
     align-items: stretch;
-    gap: 0.125rem;
+    gap: 0;
     height: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
+    /* without JS (or before the fit script runs) a nav that is too long scrolls instead of being cut off */
     overflow-x: auto;
     scrollbar-width: none;
   }
+  /* an open dropdown must not be clipped by the scrolling list (a scroll container clips both axes) */
+  .kit-site-nav > ul:has(> li > .kit-menu[open]) {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
   .kit-site-nav > ul > li {
     display: flex;
+    flex: none; /* never squeeze items (and their external-link icons): see the nav fit in SiteHeader */
   }
   .kit-site-nav-link {
     position: relative;
@@ -113,21 +130,18 @@
     color: var(--color-ink);
     font-weight: 600;
   }
+  /* current section: a 2px pixel rule in the primary colour, flush with the row's bottom edge */
   .kit-site-nav-link.is-active::after {
     content: "";
     position: absolute;
     left: 0.75rem;
     right: 0.75rem;
     bottom: 0;
-    height: 4px;
+    height: 2px;
     background: var(--color-primary);
-    box-shadow:
-      inset 0 2px 0 0 color-mix(in srgb, #fff 30%, transparent),
-      -2px 2px 0 0 var(--color-primary),
-      2px 2px 0 0 var(--color-primary);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .kit-site-nav-ext {
+    flex: none;
     width: 12px;
     height: 12px;
     opacity: 0.6;
@@ -138,37 +152,37 @@
   .kit-site-nav-menu .kit-menu-panel {
     left: 0;
     right: auto;
+    top: calc(100% + 2px);
   }
   .kit-site-actions {
     display: flex;
     align-items: center;
-    gap: 0.125rem;
+    gap: 0.25rem;
     margin-left: auto;
     flex: none;
   }
   .kit-search-trigger {
-    --px-border: var(--color-line-strong);
+    --px-border: var(--color-line);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    height: 2.25rem;
-    min-width: 12.5rem;
-    margin: 0 0.5rem 0 2px;
-    padding: 0 0.375rem 0 0.75rem;
-    font-size: 0.875rem;
+    height: 2rem;
+    min-width: 13rem;
+    margin: 0 2px 0 0.75rem;
+    padding: 0 0.3125rem 0 0.625rem;
+    font-size: 0.8125rem;
     color: var(--color-muted);
-    background: var(--color-surface);
+    background: color-mix(in srgb, var(--color-surface) 80%, transparent);
     cursor: pointer;
     box-shadow:
       0 -2px 0 0 var(--px-border),
       0 2px 0 0 var(--px-border),
       -2px 0 0 0 var(--px-border),
-      2px 0 0 0 var(--px-border),
-      inset 0 2px 0 0 color-mix(in srgb, var(--color-ink) 5%, transparent);
+      2px 0 0 0 var(--px-border);
     transition: color 0.12s;
   }
   .kit-search-trigger:hover {
-    --px-border: color-mix(in srgb, var(--color-primary) 60%, var(--color-line-strong));
+    --px-border: color-mix(in srgb, var(--color-primary) 55%, var(--color-line-strong));
     color: var(--color-ink);
   }
   .kit-search-trigger:focus-visible {
@@ -180,80 +194,109 @@
     margin-left: auto;
   }
   .kit-search-trigger-keys .mc-kbd {
-    height: 1.25rem;
-    min-width: 1.25rem;
-    font-size: 0.6875rem;
-    padding: 0 0.3rem 0.1rem;
+    height: 1.125rem;
+    min-width: 1.125rem;
+    font-size: 0.625rem;
+    padding: 0 0.25rem 0.1rem;
+  }
+  /* compact search: the icon only; "Search" stays the accessible name (visually hidden, not removed) */
+  .kit-search-trigger-label {
+    white-space: nowrap;
   }
   .kit-nav-toggle {
     display: none;
     margin-left: -0.5rem;
   }
-  .kit-site-locale .kit-menu-trigger-label {
-    max-width: 7rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .kit-site-social {
+    width: 2rem;
+    height: 2rem;
   }
-  @media (max-width: 1180px) {
-    .kit-search-trigger {
+
+  /* ---- nav fit (html[data-kit-nav-fit], measured by SiteHeader before the first paint and on resize) */
+  @media (width > 960px) {
+    :root:is([data-kit-nav-fit="search"], [data-kit-nav-fit="tabs"], [data-kit-nav-fit="drawer"]) .kit-search-trigger {
+      width: 2rem;
       min-width: 0;
-    }
-    .kit-search-trigger-label,
-    .kit-search-trigger-keys {
-      display: none;
-    }
-    .kit-search-trigger {
-      width: 2.25rem;
       padding: 0;
       justify-content: center;
-      margin-right: 0.25rem;
     }
-  }
-  /* [kit patch: tabs row] navs too wide for the header row get their own row below brand + actions
-     (MkDocs Material navigation.tabs); SiteHeader adds .has-tabs-row when the config sets
-     `header: { tabsRow: true }`. At ≤ 960px the drawer takes over.
-     6.5rem = the 3.75rem header row (--spacing-header) + a 2.75rem tabs row. The header height is set
-     directly so the layout holds without :has(); :has() only moves the sticky/scroll offsets. */
-  @media (width > 960px) {
+    :root:is([data-kit-nav-fit="search"], [data-kit-nav-fit="tabs"], [data-kit-nav-fit="drawer"]) .kit-search-trigger-keys {
+      display: none;
+    }
+    :root:is([data-kit-nav-fit="search"], [data-kit-nav-fit="tabs"], [data-kit-nav-fit="drawer"]) .kit-search-trigger-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+    /* the tabs get their own row under brand + search (MkDocs Material navigation.tabs), still one light header */
+    :root[data-kit-nav-fit="tabs"],
     :root:has(.kit-site-header.has-tabs-row) {
-      --spacing-header: 6.5rem;
+      --spacing-header: 5.75rem;
     }
-    .kit-site-header.has-tabs-row {
-      height: 6.5rem;
-    }
+    :root[data-kit-nav-fit="tabs"] .kit-site-header-inner,
     .kit-site-header.has-tabs-row .kit-site-header-inner {
       flex-wrap: wrap;
       align-content: flex-start;
       row-gap: 0;
     }
-    .kit-site-header.has-tabs-row .kit-site-brand,
-    .kit-site-header.has-tabs-row .kit-site-actions {
-      height: 3.75rem;
+    :root[data-kit-nav-fit="tabs"] .kit-site-header,
+    .kit-site-header.has-tabs-row {
+      height: 5.75rem;
     }
+    :root[data-kit-nav-fit="tabs"] :is(.kit-site-brand, .kit-site-actions),
+    .kit-site-header.has-tabs-row :is(.kit-site-brand, .kit-site-actions) {
+      height: 3.25rem;
+    }
+    :root[data-kit-nav-fit="tabs"] .kit-site-brand,
+    .kit-site-header.has-tabs-row .kit-site-brand {
+      background: none;
+    }
+    :root[data-kit-nav-fit="tabs"] .kit-site-nav,
     .kit-site-header.has-tabs-row .kit-site-nav {
       order: 3;
       flex: 1 0 100%;
-      height: 2.75rem;
+      height: 2.5rem;
       margin: 0 -0.75rem;
-      box-shadow: inset 0 1px 0 0 color-mix(in srgb, var(--color-line) 70%, transparent);
+    }
+    :root[data-kit-nav-fit="drawer"] .kit-site-nav {
+      display: none;
+    }
+    :root[data-kit-nav-fit="drawer"] .kit-site-brand {
+      margin-right: auto;
+      background: none;
+    }
+    :root[data-kit-nav-fit="drawer"] .kit-nav-toggle {
+      display: inline-grid;
     }
   }
-  @media (960px < width <= 1180px) {
-    .kit-site-header.has-tabs-row .kit-search-trigger {
-      min-width: 12.5rem;
-      width: auto;
-      padding: 0 0.375rem 0 0.75rem;
-      justify-content: flex-start;
-      margin: 0 0.5rem 0 2px;
+  @media (max-width: 1180px) {
+    .kit-search-trigger {
+      width: 2rem;
+      min-width: 0;
+      padding: 0;
+      justify-content: center;
     }
-    .kit-site-header.has-tabs-row .kit-search-trigger-label,
-    .kit-site-header.has-tabs-row .kit-search-trigger-keys {
-      display: inline-flex;
+    .kit-search-trigger-keys {
+      display: none;
+    }
+    .kit-search-trigger-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
     }
   }
   @media (max-width: 960px) {
     .kit-site-nav {
       display: none;
+    }
+    .kit-site-brand {
+      margin-right: auto;
+      padding-right: 0.5rem;
+      background: none;
     }
     .kit-nav-toggle {
       display: inline-grid;
@@ -262,19 +305,16 @@
       padding: 0 1rem;
       gap: 0.25rem;
     }
-    .kit-site-locale .kit-menu-trigger-label {
-      display: none;
-    }
-    .kit-site-social {
-      display: none;
-    }
   }
   @media (max-width: 420px) {
-    .kit-site-title {
-      font-size: 1rem;
-      max-width: 9.5rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .kit-site-header-inner {
+      padding: 0 0.75rem;
+    }
+    .kit-nav-toggle {
+      margin-left: -0.25rem;
+    }
+    .kit-site-brand {
+      gap: 0.5rem;
     }
   }
 
@@ -327,7 +367,6 @@
   .kit-doc-layout:not([data-sidebar]) .kit-doc-footer {
     max-width: 50rem;
   }
-  /* [kit patch: toc measure] same column as the article (as in the lip port) */
   .kit-doc-layout:not([data-sidebar]) .kit-toc-mobile {
     max-width: calc(min(100%, 50rem) - 4px);
   }
@@ -511,6 +550,12 @@
   .kit-toc-list li[data-level="2"] a {
     padding-left: 2.375rem;
   }
+  .kit-toc-list li[data-level="3"] a {
+    padding-left: 3.125rem;
+  }
+  .kit-toc-list li[data-level="4"] a {
+    padding-left: 3.875rem;
+  }
   .kit-toc-list a:hover {
     color: var(--color-ink);
   }
@@ -524,7 +569,7 @@
   }
   .kit-toc-mobile {
     --px-border: var(--color-line);
-    /* [kit patch: toc measure] share the article's measure and centring (the 2px frame is drawn outside the box) */
+    /* the article's measure and centring (the 2px frame is drawn outside the box) */
     max-width: calc(min(100%, var(--spacing-measure)) - 4px);
     margin: 0 auto 1.75rem;
     background: var(--color-surface);
@@ -656,6 +701,10 @@
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
     gap: 1rem 1.25rem;
   }
+  /* exactly 4 features: 2 × 2 (never 3 + an orphan); still 1 column when two 22rem columns don't fit */
+  .kit-home-features-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, max(22rem, calc(50% - 0.75rem))), 1fr));
+  }
   .kit-home-features .kit-card {
     height: calc(100% - 4px);
   }
@@ -699,11 +748,16 @@
     font-weight: 560;
     line-height: 1.15;
     letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .kit-notfound-title:lang(ja) {
+    word-break: auto-phrase; /* break between phrases (迷子 stays whole); ignored where unsupported */
   }
   .kit-notfound-text {
     margin: 1rem auto 0;
     max-width: 26rem;
     color: var(--color-muted);
+    text-wrap: pretty;
   }
   .kit-notfound-actions {
     display: flex;
@@ -919,12 +973,18 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    height: var(--spacing-header);
+    height: 3.25rem;
     padding: 0 0.5rem 0 1.25rem;
     background: color-mix(in srgb, var(--color-canvas) 96%, transparent);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-line);
+  }
+  .kit-drawer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
   }
   .kit-drawer-title {
     min-width: 0;
@@ -972,12 +1032,38 @@
     color: var(--color-muted);
   }
   .kit-drawer-sidebar {
-    margin: 0.75rem 0.75rem 2rem;
+    margin: 0.75rem 0.75rem 0;
     padding-top: 1rem;
     border-top: 1px solid var(--color-line);
   }
+  .kit-drawer-network {
+    margin: 1rem 0.75rem 2rem;
+    padding: 0.75rem 0 0;
+    border-top: 1px solid var(--color-line);
+  }
+  .kit-drawer-network-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0.75rem 0.25rem;
+    font-family: var(--font-pixel);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+  }
+  .kit-drawer-network .kit-gbar-more-link {
+    font-size: 0.9375rem;
+  }
 }
 
+@keyframes kit-subnav-stuck {
+  from {
+    background-color: transparent;
+    box-shadow: 0 1px 0 0 transparent;
+    -webkit-backdrop-filter: saturate(1) blur(0px);
+    backdrop-filter: saturate(1) blur(0px);
+  }
+}
 @keyframes kit-fade {
   from {
     opacity: 0;

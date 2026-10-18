@@ -75,7 +75,7 @@ Next, it is recommended to manually pin the LeviLamina version used by your mod.
 add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
 ```
 
-Next, modify the contents of `tooth.json`. `tooth.json` provides information required by lip to install mod packages. After proper configuration, your mod will be included in [Bedrinth](https://pkg.levimc.org) and [LeviLauncher](https://github.com/LiteLDev/LeviLauncher), allowing users worldwide to download and install it.
+Next, modify the contents of `tooth.json`. `tooth.json` provides information required by lip to install mod packages. After proper configuration, your mod will be included in [LeviMC Mods](https://pkg.levimc.org) and [LeviLauncher](https://github.com/LiteLDev/LeviLauncher), allowing users worldwide to download and install it.
 
 !!! tip
     In `tooth.json`, a `variant` with an empty `label` represents the server version, while a `variant` with `label` set to `client` represents the client version. If your mod is only available on the server or client, you can remove the unnecessary variant. In lip, you can install them using the following commands:
@@ -88,7 +88,7 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides information req
     ```
 
 * Change the value of the `tooth` field to your mod's GitHub repository URL, and fill in the information fields in `info`.
-  `info.avatar_url` will be displayed on the mod pages of Bedrinth and LeviLauncher. Choosing a suitable icon is also an important part of presenting your mod. For convenience, this tutorial directly uses the author's GitHub avatar.
+  `info.avatar_url` will be displayed on the mod pages of LeviMC Mods and LeviLauncher. Choosing a suitable icon is also an important part of presenting your mod. For convenience, this tutorial directly uses the author's GitHub avatar.
 * Change the LeviLamina target version in the `dependencies` section of each `variant` to the actual LeviLamina version used by your mod.
 * Fill in the `asset_url` field according to the repository release URL, update the required LeviLamina version, and modify the `src` and `dest` fields in `place` according to the mod name specified in `xmake.lua`. For this tutorial's mod, the following is a possible example:
 
@@ -782,4 +782,4 @@ After waiting a few minutes, your mod will automatically be compiled and uploade
 
 !!! warning
     You must use a version number that starts with `v` and follows [Semantic Versioning](https://semver.org/).  
-    Otherwise, your mod cannot be properly included by Bedrinth and LeviLauncher!
+    Otherwise, your mod cannot be properly included by LeviMC Mods and LeviLauncher!

@@ -16,7 +16,7 @@ export function stripBase(pathname: string, base: string): string | null {
 /** All the request paths GitHub Pages would serve for a canonical route path. */
 export function pathVariants(path: string): string[] {
   const out = [path];
-  if (path === '' || path.endsWith('/')) out.push(path + 'index.html');
+  if (path === '' || path.endsWith('/')) out.push(path + 'index.html', path + 'index');
   else if (path.endsWith('.html')) out.push(path.slice(0, -5));
   else out.push(path + '.html', path + '/');
   return out;

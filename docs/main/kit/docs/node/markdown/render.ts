@@ -8,7 +8,7 @@ import rehypeRaw from 'rehype-raw';
 import { toHtml } from 'hast-util-to-html';
 import { visit, SKIP } from 'unist-util-visit';
 import { parse as parseYaml } from 'yaml';
-import type { Root as MdRoot, Html, Blockquote, Paragraph, Text } from 'mdast';
+import type { Root as MdRoot, Html, Blockquote, Paragraph, Text, FootnoteDefinition } from 'mdast';
 import type { Element, ElementContent, Root as HastRoot, RootContent, Properties } from 'hast';
 import { preprocess, escAttr } from './preprocess.ts';
 import { createSlugger, type SlugMode } from './slug.ts';
@@ -206,6 +206,15 @@ export async function renderMarkdown(source: string, o: RenderOptions): Promise<
     })
     .use(rehypeRaw);
   const mdast = processor.parse(pre);
+  // footnote labels as written, keyed like mdast-util-to-hast's ids (upper- then lower-cased, URI-normalised)
+  const footnoteLabels = new Map<string, string>();
+  visit(mdast, 'footnoteDefinition', (n: FootnoteDefinition) => {
+    const safe = n.identifier
+      .toUpperCase()
+      .toLowerCase()
+      .replace(/[^A-Za-z0-9!#$&'()*+,\-./:;=?@_~%]/g, (c) => encodeURIComponent(c));
+    footnoteLabels.set(safe, n.label ?? n.identifier);
+  });
   const tree = (await processor.run(mdast)) as HastRoot;
 
   // ---- code blocks (Shiki)
@@ -236,7 +245,7 @@ export async function renderMarkdown(source: string, o: RenderOptions): Promise<
 
   // ---- containers (admonitions, tabs, code groups)
   let tabSet = 0;
-  // [kit patch: tab ids] python-markdown compat: the tab buttons take pymdownx.tabbed's ids (__tabbed_<set>_<n>,
+  // python-markdown compat: the tab buttons take pymdownx.tabbed's ids (__tabbed_<set>_<n>,
   // sets numbered in document order) so old #__tabbed_1_2 deep links still reach and select that tab.
   const pyTabSets = new Map<Element, number>();
   if (o.compat === 'python-markdown') {
@@ -342,6 +351,33 @@ export async function renderMarkdown(source: string, o: RenderOptions): Promise<
     }
   };
   containerPass(tree);
+
+  // ---- Python-Markdown footnote ids (fn:1, fnref:1, fnref2:1) so old #fn: deep links keep working.
+  // remark lower-cases the label in its ids (fn-note); Python-Markdown keeps the author's case (fn:Note).
+  if (o.compat === 'python-markdown') {
+    const notes: Element[] = [];
+    const refs: Element[] = [];
+    visit(tree, 'element', (el: Element) => {
+      if ('dataFootnotes' in el.properties) {
+        for (const ol of el.children) if (isEl(ol, 'ol')) notes.push(...ol.children.filter((li): li is Element => isEl(li, 'li')));
+      } else if (el.tagName === 'a' && ('dataFootnoteRef' in el.properties || 'dataFootnoteBackref' in el.properties)) refs.push(el);
+    });
+    const labels = new Set(notes.map((li) => String(li.properties.id ?? '')).filter((id) => id.startsWith('fn-')).map((id) => id.slice(3)));
+    const label = (safe: string) => footnoteLabels.get(safe) ?? safe;
+    const pyId = (id: string): string => {
+      if (id.startsWith('fn-') && labels.has(id.slice(3))) return 'fn:' + label(id.slice(3));
+      if (!id.startsWith('fnref-')) return id;
+      const r = id.slice(6);
+      if (labels.has(r)) return 'fnref:' + label(r);
+      const m = /^(.*)-(\d+)$/.exec(r);
+      return m && labels.has(m[1]!) ? `fnref${m[2]}:${label(m[1]!)}` : id;
+    };
+    for (const li of notes) if (li.properties.id !== undefined) li.properties.id = pyId(String(li.properties.id));
+    for (const a of refs) {
+      if (a.properties.id !== undefined) a.properties.id = pyId(String(a.properties.id));
+      if (typeof a.properties.href === 'string' && a.properties.href.startsWith('#')) a.properties.href = '#' + pyId(a.properties.href.slice(1));
+    }
+  }
 
   // ---- heading ids, permalinks, toc
   const slugger = createSlugger(o.slug);

@@ -12,11 +12,20 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    scroll-padding-top: calc(var(--spacing-header) + 1rem);
+    /* sticky headers set --kit-sticky-offset (docs header, a sticky GlobalBar); other pages only keep 1rem */
+    scroll-padding-top: calc(var(--kit-sticky-offset, 0px) + 1rem);
     tab-size: 4;
   }
   html.dark {
     color-scheme: dark;
+  }
+  /* Korean breaks between words, never inside one (components' overflow-wrap still breaks over-long runs). */
+  html:lang(ko) {
+    word-break: keep-all;
+  }
+  /* Fraunces has no Cyrillic: Russian display text uses the sans, so a heading never mixes two typefaces. */
+  html:lang(ru) {
+    --font-display: var(--font-sans);
   }
   body {
     min-height: 100dvh;
