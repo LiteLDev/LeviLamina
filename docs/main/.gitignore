@@ -1,3 +1,5 @@
 node_modules/
 dist/
 .kit/
+# levimc-kit, fetched from levimc.org by `npm ci` (scripts/fetch-kit.mjs)
+/kit/
