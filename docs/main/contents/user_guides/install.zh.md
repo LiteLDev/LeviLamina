@@ -60,11 +60,11 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
 
 ## 搜寻模组
 
-在添加 Mods 之前，请先了解各种选项。最佳资源来源为 [Bedrinth](https://pkg.levimc.org)，当然你也可以在其他网站上找到更多资源。
+在添加 Mods 之前，请先了解各种选项。最佳资源来源为 [LeviMC 模组](https://pkg.levimc.org)，当然你也可以在其他网站上找到更多资源。
 
 ## 安装模组
 
-大多数 Mods（尤其是 Bedrinth 上列出的）都可通过运行提供的命令进行安装。例如，要安装 [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
+大多数 Mods（尤其是 LeviMC 模组 上列出的）都可通过运行提供的命令进行安装。例如，要安装 [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
 
 ```shell
 lip install github.com/LiteLDev/LeviAntiCheat

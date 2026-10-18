@@ -74,7 +74,7 @@ target("ExampleMod") -- Change this to your mod name.
 add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
 ```
 
-接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[Bedrinth](https://pkg.levimc.org)和[LeviLauncher](https://github.com/LiteLDev/LeviLauncher)收录，并能被全世界的用户下载安装。  
+接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[LeviMC 模组](https://pkg.levimc.org)和[LeviLauncher](https://github.com/LiteLDev/LeviLauncher)收录，并能被全世界的用户下载安装。  
 !!! tip
     其中`label`为空的`variant`代表服务端，`label`为`client`的variant代表客户端，如果您的模组只在服务端/客户端可用，可以将无用的variant删掉。在lip中可以用以下命令来安装：
     ```shell
@@ -84,7 +84,7 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
     lip install https://github.com/ShrBox/ExampleMod#client
     ```
 - 将`tooth`字段的值改为这个模组的GitHub仓库地址，填写`info`中各个信息字段  
-  `info.avatar_url`会显示在Bedrinth以及LeviLauncher的模组页面中，为模组挑选一个适合的图标也是展示您的模组的重要一环，这里为了方便直接使用教程编写者的GitHub头像  
+  `info.avatar_url`会显示在LeviMC 模组以及LeviLauncher的模组页面中，为模组挑选一个适合的图标也是展示您的模组的重要一环，这里为了方便直接使用教程编写者的GitHub头像  
 - 修改各个`variant`中的`dependencies`里的LeviLamina目标版本为模组实际使用的LeviLamina版本  
 - 然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`place`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
 
@@ -578,4 +578,4 @@ bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
 GitHub Actions会自动将CHANGELOG.md的内容写进release，稍等几分钟，你的模组将会自动被编译并上传到release
 
 !!! warning
-    一定要使用以v开头并且符合[语义化版本](https://semver.org/lang/zh-CN/)的版本号，否则无法正常被Bedrinth和LeviLauncher收录！
+    一定要使用以v开头并且符合[语义化版本](https://semver.org/lang/zh-CN/)的版本号，否则无法正常被LeviMC 模组和LeviLauncher收录！

@@ -51,12 +51,12 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
 
 ## Finding Mods
 
-Before adding mods, explore your options. The best source is [Bedrinth](https://pkg.levimc.org), although you can discover
+Before adding mods, explore your options. The best source is [LeviMC Mods](https://pkg.levimc.org), although you can discover
 many elsewhere around the web.
 
 ## Installing Mods
 
-Most mods, especially those listed on Bedrinth, can be installed by pasting the provided command. For example, to
+Most mods, especially those listed on LeviMC Mods, can be installed by pasting the provided command. For example, to
 install [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
 
 ```shell
