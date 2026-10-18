@@ -2,15 +2,16 @@
 // Serve a built site exactly like GitHub Pages would:
 //   existing file                     → 200
 //   /x  where x.html exists           → 200 (x.html)
-//   /x  where x/ is a dir with index  → 301 → /x/
+//   /x  where x/ is a directory       → 301 → /x/ (with or without an index.html, like GitHub Pages)
+//   //x//y/ (repeated slashes)        → served as /x/y/ (GitHub Pages collapses them, no redirect)
 //   /x/ (directory)                   → 200 (x/index.html)
 //   anything else                     → the site's 404.html with status 404
 // Usage: node serve-pages.mjs <dist> --base /<Project>/ [--port 4173] [--host 127.0.0.1] [--quiet]
 // Also importable: `import { createPagesServer, resolvePagesPath } from './serve-pages.mjs'`.
 import { createServer } from 'node:http';
-import { createReadStream, existsSync, statSync } from 'node:fs';
+import { createReadStream, existsSync, statSync, realpathSync } from 'node:fs';
 import { extname, join, resolve, sep } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 
 export const CONTENT_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -67,6 +68,7 @@ export function resolvePagesPath(dist, base, pathname) {
   } catch {
     return notFound();
   }
+  p = p.replace(/\/{2,}/g, '/');
   // The site lives under `base` (e.g. /LeviLamina/); /LeviLamina → /LeviLamina/
   if (p + '/' === base) return { status: 301, location: base };
   if (!p.startsWith(base)) return notFound();
@@ -79,7 +81,7 @@ export function resolvePagesPath(dist, base, pathname) {
   }
   if (isFile(target)) return { status: 200, file: target };
   if (isFile(target + '.html')) return { status: 200, file: target + '.html' };
-  if (isDir(target) && isFile(join(target, 'index.html'))) return { status: 301, location: p + '/' };
+  if (isDir(target)) return { status: 301, location: p + '/' };
   return notFound();
 }
 
@@ -87,7 +89,8 @@ export function createPagesServer({ dist, base = '/', log = true }) {
   if (!base.startsWith('/')) base = '/' + base;
   if (!base.endsWith('/')) base += '/';
   return createServer((req, res) => {
-    const url = new URL(req.url ?? '/', 'http://localhost');
+    // a leading '//' would parse as a host name: GitHub Pages treats it as a path
+    const url = new URL((req.url ?? '/').replace(/^\/{2,}/, '/'), 'http://localhost');
     const r = resolvePagesPath(dist, base, url.pathname);
     if (r.status === 301) {
       if (log) console.log(`301 ${url.pathname} → ${r.location}`);
@@ -109,7 +112,8 @@ export function createPagesServer({ dist, base = '/', log = true }) {
   });
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+// run as a CLI (compares real paths, so a symlinked or relative script path still counts)
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2);
   const opt = (name, def) => (args.includes(name) ? args[args.indexOf(name) + 1] : def);
   const dist = args.find((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--') && !['--quiet'].includes(args[i - 1])));

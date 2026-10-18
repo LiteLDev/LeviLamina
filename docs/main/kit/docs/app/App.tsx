@@ -4,6 +4,7 @@ import type { PageData, RouteMeta } from '../shared/types';
 import { href, langOf, loadPage, localeOf, matchPathname, site, stringsFor } from './data';
 import { pageTitle } from '../shared/head';
 import { SiteHeader } from './components/SiteHeader';
+import { KitLink } from './components/KitLink';
 import { MobileDrawer } from './components/MobileDrawer';
 import { SearchModal } from './components/SearchModal';
 import { DocLayout } from './layouts/DocLayout';
@@ -18,8 +19,10 @@ import { GlobalBar } from '../../components/GlobalBar';
 import { SiteFooter } from '../../components/SiteFooter';
 import { PaintedBackdrop } from '../../components/PaintedBackdrop';
 import { ThemeProvider } from '../../components/theme';
+import { readLanguagePreference } from '../../components/prefs';
+import { revealPendingChrome } from '../../components/locale';
 import type { LocaleOption } from '../../components/LocaleSwitcher';
-import type { UiStrings } from '../../components/i18n';
+import { resolveUiLocale, uiStrings, type UiStrings } from '../../components/i18n';
 
 const isBrowser = typeof window !== 'undefined';
 const useIsoLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
@@ -58,6 +61,42 @@ function useHead(route: RouteMeta | undefined, locale: string, t: UiStrings) {
       }
     }
   }, [route, locale, t]);
+}
+
+/**
+ * Sites with a single locale: the chrome (LeviMC bar, footer, the drawer's LeviMC links) follows the visitor's
+ * stored language preference, like the static pages' kit.js — the content stays in the site's language.
+ * Returns the chrome's UI locale once known (undefined: the site's own). The pre-paint script hid the chrome
+ * (html.kit-chrome-pending) when the preference differs; it is shown again once the chrome was re-rendered.
+ */
+function useChromeLocale(enabled: boolean): string | undefined {
+  const [ui, setUi] = useState<string>();
+  const [synced, setSynced] = useState(false);
+  useIsoLayoutEffect(() => {
+    if (!enabled) return;
+    const sync = () => {
+      const p = readLanguagePreference();
+      setUi(p ? resolveUiLocale(p) : undefined);
+      setSynced(true);
+    };
+    sync();
+    const onPref = (e: Event) => {
+      if ((e as CustomEvent<{ kind: string }>).detail?.kind === 'lang') sync();
+    };
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') sync();
+    };
+    window.addEventListener('levimc-pref-change', onPref);
+    document.addEventListener('visibilitychange', onVisible);
+    return () => {
+      window.removeEventListener('levimc-pref-change', onPref);
+      document.removeEventListener('visibilitychange', onVisible);
+    };
+  }, [enabled]);
+  useIsoLayoutEffect(() => {
+    if (synced) revealPendingChrome();
+  }, [synced, ui]);
+  return ui;
 }
 
 /** Scroll to top / hash target after navigation; restore positions on back/forward. */
@@ -142,15 +181,16 @@ export function App() {
     lang: l.lang,
     href: href(route?.alternates[l.code] ?? site.homePaths[l.code] ?? l.prefix),
   }));
-  const onLocaleSelect = (code: string) => {
-    try {
-      localStorage.setItem(`levimc-locale-${site.siteKey}`, code);
-    } catch {
-      /* ignore */
-    }
-  };
+  // The language menu of the top bar is this site's locale switcher: choosing one stores it as the visitor's
+  // cross-site language preference (LocaleSwitcher) and opens the equivalent page.
+  const single = site.locales.length < 2;
+  const languages = single ? undefined : { options: localeOptions, current: locale, linkComponent: KitLink };
+  // single-locale sites: the bar offers the 9 chrome languages; a choice re-renders the chrome in place
+  // (useChromeLocale hears the stored preference change) instead of reloading the page
+  const chromeUi = useChromeLocale(single);
+  const chromeLang = chromeUi && chromeUi !== resolveUiLocale(lang) ? chromeUi : lang;
+  const chromeT = useMemo(() => (chromeLang === lang ? t : uiStrings(chromeLang)), [chromeLang, lang, t]);
   const sidebar = route?.sidebar ? site.sidebars[route.sidebar] : undefined;
-  const hasDrawer = !!sidebar || (site.nav[locale]?.length ?? 0) > 0;
 
   return (
     <ThemeProvider>
@@ -159,25 +199,33 @@ export function App() {
       </a>
       <PaintedBackdrop scene={route?.layout !== 'home'} />
       <div className="kit-shell kit-above-backdrop" data-layout={route?.layout ?? '404'}>
-        <GlobalBar current="docs" currentDocs={site.project} locale={lang} />
-        <SiteHeader
-          route={route}
-          locale={locale}
-          lang={lang}
-          t={t}
-          localeOptions={localeOptions}
-          onLocaleSelect={onLocaleSelect}
-          onOpenSearch={openSearch}
-          onOpenDrawer={() => setDrawerOpen(true)}
-          drawerOpen={drawerOpen}
-          hasDrawer={hasDrawer}
+        <GlobalBar
+          current="docs"
+          currentDocs={site.project}
+          locale={chromeLang}
+          strings={chromeT}
+          languages={languages}
+          onLanguageChange={single ? () => undefined : undefined}
+          github={site.github}
+          menu={false}
         />
+        <SiteHeader route={route} locale={locale} t={t} onOpenSearch={openSearch} onOpenDrawer={() => setDrawerOpen(true)} drawerOpen={drawerOpen} />
         <Suspense fallback={<main id="kit-main" className="kit-loading" aria-busy="true" />}>
           <RoutePage route={route} t={t} onSearch={openSearch} locale={locale} />
         </Suspense>
-        <SiteFooter locale={lang} extra={site.footer?.copyright ?? site.footer?.message} />
+        <SiteFooter locale={chromeLang} strings={chromeT} extra={site.footer?.message} copyright={site.footer?.copyright} />
       </div>
-      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} route={route} locale={locale} sidebar={sidebar} path={route?.path ?? ''} t={t} />
+      <MobileDrawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        route={route}
+        locale={locale}
+        sidebar={sidebar}
+        path={route?.path ?? ''}
+        t={t}
+        chromeLang={chromeLang}
+        chromeT={chromeT}
+      />
       <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} locale={locale} t={t} />
     </ThemeProvider>
   );

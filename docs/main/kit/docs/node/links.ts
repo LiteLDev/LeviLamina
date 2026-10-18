@@ -99,7 +99,8 @@ export function createLinkResolver(ctx: LinkContext, page: PageRoute) {
         const src = found.src;
         const routes = scan.byKey.get(src.key);
         if (!routes) return null;
-        const want = found.explicit ? src.locale : page.locale;
+        // folder mode (VitePress): a link names one file, so `/` from zh-CN/index.md is the English home
+        const want = found.explicit || (cfg.i18nMode === 'folder' && !page.fallback) ? src.locale : page.locale;
         const r = routes.get(want) ?? routes.get(cfg.defaultLocale) ?? [...routes.values()][0]!;
         return { url: routeUrl(r), route: r };
       }

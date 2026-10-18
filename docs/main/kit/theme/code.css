@@ -171,7 +171,9 @@
     outline: var(--px) solid var(--color-focus);
     outline-offset: calc(var(--px) * -1);
   }
-  .kit-code code {
+  /* Shiki blocks: one row per line, as wide as the longest (the pre scrolls). Plain <code> placed in a .kit-code
+     box (e.g. an install command) keeps normal wrapping and its own font. */
+  .kit-code pre > code {
     display: block;
     min-width: max-content;
     font: inherit;

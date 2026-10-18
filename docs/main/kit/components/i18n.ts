@@ -10,6 +10,7 @@ export interface UiStrings {
   home: string;
   projects: string;
   docs: string;
+  /** Top-bar / footer label of pkg.levimc.org ("Mods"; the id stays `packages`). */
   packages: string;
   community: string;
   blog: string;
@@ -29,7 +30,9 @@ export interface UiStrings {
   theme: string;
   themeLight: string;
   themeDark: string;
+  /** kit 1.0 label of the follow-the-system state (kept for overrides; the switcher shows `themeAuto`). */
   themeSystem: string;
+  themeAuto: string;
   switchTheme: string;
   language: string;
   // docs UI
@@ -55,6 +58,10 @@ export interface UiStrings {
   copyCode: string;
   copied: string;
   external: string;
+  /** Display name of pkg.levimc.org ("LeviMC Mods"). */
+  modsName: string;
+  /** One-line description of pkg.levimc.org. */
+  modsBlurb: string;
   /** Short description of each docs project, keyed by project id. */
   projectBlurbs: Record<string, string>;
 }
@@ -64,7 +71,7 @@ const en: UiStrings = {
   home: 'Home',
   projects: 'Projects',
   docs: 'Docs',
-  packages: 'Packages',
+  packages: 'Mods',
   community: 'Community',
   blog: 'Blog',
   about: 'About',
@@ -82,6 +89,7 @@ const en: UiStrings = {
   themeLight: 'Light',
   themeDark: 'Dark',
   themeSystem: 'System',
+  themeAuto: 'Auto',
   switchTheme: 'Switch theme',
   language: 'Language',
   skipToContent: 'Skip to content',
@@ -106,6 +114,8 @@ const en: UiStrings = {
   copyCode: 'Copy code',
   copied: 'Copied!',
   external: 'opens in a new tab',
+  modsName: 'LeviMC Mods',
+  modsBlurb: 'Mods and plugins for LeviLamina, ready to install with lip',
   projectBlurbs: {
     LeviLamina: 'Mod loader for Bedrock Dedicated Server',
     LegacyScriptEngine: 'Script engine for legacy LLSE plugins',
@@ -120,7 +130,7 @@ const zhCN: UiStrings = {
   home: '首页',
   projects: '项目',
   docs: '文档',
-  packages: '包',
+  packages: '模组',
   community: '社区',
   blog: '博客',
   about: '关于',
@@ -138,6 +148,7 @@ const zhCN: UiStrings = {
   themeLight: '浅色',
   themeDark: '深色',
   themeSystem: '跟随系统',
+  themeAuto: '自动',
   switchTheme: '切换主题',
   language: '语言',
   skipToContent: '跳到正文',
@@ -162,6 +173,8 @@ const zhCN: UiStrings = {
   copyCode: '复制代码',
   copied: '已复制！',
   external: '在新标签页中打开',
+  modsName: 'LeviMC 模组',
+  modsBlurb: 'LeviLamina 的模组与插件，可用 lip 一键安装',
   projectBlurbs: {
     LeviLamina: '基岩版专用服务器模组加载器',
     LegacyScriptEngine: '运行旧版 LLSE 插件的脚本引擎',
@@ -177,7 +190,7 @@ const zhHK: UiStrings = {
   home: '首頁',
   projects: '專案',
   docs: '文檔',
-  packages: '套件',
+  packages: '模組',
   community: '社群',
   blog: '網誌',
   about: '關於',
@@ -193,6 +206,7 @@ const zhHK: UiStrings = {
   themeLight: '淺色',
   themeDark: '深色',
   themeSystem: '跟隨系統',
+  themeAuto: '自動',
   switchTheme: '切換主題',
   language: '語言',
   skipToContent: '跳到正文',
@@ -217,6 +231,8 @@ const zhHK: UiStrings = {
   copyCode: '複製程式碼',
   copied: '已複製！',
   external: '在新分頁中開啟',
+  modsName: 'LeviMC 模組',
+  modsBlurb: 'LeviLamina 的模組與插件，可用 lip 一鍵安裝',
   projectBlurbs: {
     LeviLamina: '基岩版專用伺服器模組載入器',
     LegacyScriptEngine: '執行舊版 LLSE 外掛的腳本引擎',
@@ -231,7 +247,7 @@ const es: UiStrings = {
   home: 'Inicio',
   projects: 'Proyectos',
   docs: 'Documentación',
-  packages: 'Paquetes',
+  packages: 'Mods',
   community: 'Comunidad',
   blog: 'Blog',
   about: 'Acerca de',
@@ -249,6 +265,7 @@ const es: UiStrings = {
   themeLight: 'Claro',
   themeDark: 'Oscuro',
   themeSystem: 'Sistema',
+  themeAuto: 'Automático',
   switchTheme: 'Cambiar tema',
   language: 'Idioma',
   skipToContent: 'Saltar al contenido',
@@ -273,6 +290,8 @@ const es: UiStrings = {
   copyCode: 'Copiar código',
   copied: '¡Copiado!',
   external: 'se abre en una pestaña nueva',
+  modsName: 'LeviMC Mods',
+  modsBlurb: 'Mods y plugins para LeviLamina, listos para instalar con lip',
   projectBlurbs: {
     LeviLamina: 'Cargador de mods para Bedrock Dedicated Server',
     LegacyScriptEngine: 'Motor de scripts para plugins LLSE heredados',
@@ -287,7 +306,7 @@ const ru: UiStrings = {
   home: 'Главная',
   projects: 'Проекты',
   docs: 'Документация',
-  packages: 'Пакеты',
+  packages: 'Моды',
   community: 'Сообщество',
   blog: 'Блог',
   about: 'О нас',
@@ -305,6 +324,7 @@ const ru: UiStrings = {
   themeLight: 'Светлая',
   themeDark: 'Тёмная',
   themeSystem: 'Системная',
+  themeAuto: 'Авто',
   switchTheme: 'Сменить тему',
   language: 'Язык',
   skipToContent: 'Перейти к содержимому',
@@ -329,6 +349,8 @@ const ru: UiStrings = {
   copyCode: 'Копировать код',
   copied: 'Скопировано!',
   external: 'откроется в новой вкладке',
+  modsName: 'LeviMC Mods',
+  modsBlurb: 'Моды и плагины для LeviLamina, устанавливаются через lip',
   projectBlurbs: {
     LeviLamina: 'Загрузчик модов для Bedrock Dedicated Server',
     LegacyScriptEngine: 'Скриптовый движок для плагинов LLSE',
@@ -343,7 +365,7 @@ const de: UiStrings = {
   home: 'Startseite',
   projects: 'Projekte',
   docs: 'Dokumentation',
-  packages: 'Pakete',
+  packages: 'Mods',
   community: 'Community',
   blog: 'Blog',
   about: 'Über uns',
@@ -361,6 +383,7 @@ const de: UiStrings = {
   themeLight: 'Hell',
   themeDark: 'Dunkel',
   themeSystem: 'System',
+  themeAuto: 'Automatisch',
   switchTheme: 'Design wechseln',
   language: 'Sprache',
   skipToContent: 'Zum Inhalt springen',
@@ -385,6 +408,8 @@ const de: UiStrings = {
   copyCode: 'Code kopieren',
   copied: 'Kopiert!',
   external: 'öffnet in einem neuen Tab',
+  modsName: 'LeviMC Mods',
+  modsBlurb: 'Mods und Plugins für LeviLamina, installierbar mit lip',
   projectBlurbs: {
     LeviLamina: 'Mod-Loader für Bedrock Dedicated Server',
     LegacyScriptEngine: 'Skript-Engine für ältere LLSE-Plugins',
@@ -399,7 +424,7 @@ const ja: UiStrings = {
   home: 'ホーム',
   projects: 'プロジェクト',
   docs: 'ドキュメント',
-  packages: 'パッケージ',
+  packages: 'MOD',
   community: 'コミュニティ',
   blog: 'ブログ',
   about: '概要',
@@ -417,6 +442,7 @@ const ja: UiStrings = {
   themeLight: 'ライト',
   themeDark: 'ダーク',
   themeSystem: 'システム',
+  themeAuto: '自動',
   switchTheme: 'テーマを切り替え',
   language: '言語',
   skipToContent: '本文へスキップ',
@@ -441,6 +467,8 @@ const ja: UiStrings = {
   copyCode: 'コードをコピー',
   copied: 'コピーしました！',
   external: '新しいタブで開きます',
+  modsName: 'LeviMC Mods',
+  modsBlurb: 'LeviLamina 用の MOD とプラグイン（lip でインストール）',
   projectBlurbs: {
     LeviLamina: 'Bedrock Dedicated Server 用 Mod ローダー',
     LegacyScriptEngine: '旧 LLSE プラグイン用スクリプトエンジン',
@@ -455,7 +483,7 @@ const ko: UiStrings = {
   home: '홈',
   projects: '프로젝트',
   docs: '문서',
-  packages: '패키지',
+  packages: '모드',
   community: '커뮤니티',
   blog: '블로그',
   about: '소개',
@@ -473,6 +501,7 @@ const ko: UiStrings = {
   themeLight: '라이트',
   themeDark: '다크',
   themeSystem: '시스템',
+  themeAuto: '자동',
   switchTheme: '테마 전환',
   language: '언어',
   skipToContent: '본문으로 건너뛰기',
@@ -497,6 +526,8 @@ const ko: UiStrings = {
   copyCode: '코드 복사',
   copied: '복사됨!',
   external: '새 탭에서 열림',
+  modsName: 'LeviMC Mods',
+  modsBlurb: 'lip으로 설치하는 LeviLamina용 모드와 플러그인',
   projectBlurbs: {
     LeviLamina: 'Bedrock Dedicated Server용 모드 로더',
     LegacyScriptEngine: '레거시 LLSE 플러그인용 스크립트 엔진',
@@ -511,7 +542,7 @@ const fr: UiStrings = {
   home: 'Accueil',
   projects: 'Projets',
   docs: 'Documentation',
-  packages: 'Paquets',
+  packages: 'Mods',
   community: 'Communauté',
   blog: 'Blog',
   about: 'À propos',
@@ -529,6 +560,7 @@ const fr: UiStrings = {
   themeLight: 'Clair',
   themeDark: 'Sombre',
   themeSystem: 'Système',
+  themeAuto: 'Automatique',
   switchTheme: 'Changer de thème',
   language: 'Langue',
   skipToContent: 'Aller au contenu',
@@ -553,6 +585,8 @@ const fr: UiStrings = {
   copyCode: 'Copier le code',
   copied: 'Copié !',
   external: 's’ouvre dans un nouvel onglet',
+  modsName: 'LeviMC Mods',
+  modsBlurb: 'Mods et plugins pour LeviLamina, à installer avec lip',
   projectBlurbs: {
     LeviLamina: 'Chargeur de mods pour Bedrock Dedicated Server',
     LegacyScriptEngine: 'Moteur de scripts pour les plugins LLSE historiques',
@@ -593,3 +627,16 @@ export function uiStrings(tag: string | undefined | null, overrides?: Partial<Ui
   const base = UI_STRINGS[resolveUiLocale(tag)];
   return overrides ? { ...base, ...overrides, projectBlurbs: { ...base.projectBlurbs, ...overrides.projectBlurbs } } : base;
 }
+
+/** Native names of the UI locales (the chrome's language menu lists each in its own language). */
+export const UI_LOCALE_NAMES: Record<UiLocale, string> = {
+  en: 'English',
+  'zh-CN': '简体中文',
+  'zh-HK': '繁體中文',
+  es: 'Español',
+  ru: 'Русский',
+  de: 'Deutsch',
+  ja: '日本語',
+  ko: '한국어',
+  fr: 'Français',
+};

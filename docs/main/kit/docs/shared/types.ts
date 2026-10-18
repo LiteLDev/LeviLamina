@@ -81,6 +81,8 @@ export interface SidebarData {
   items: NavItem[];
   /** VitePress semantics: every group is open unless `collapsed: true`. MkDocs: nested groups open only on the active path. */
   expand?: boolean;
+  /** MkDocs 'tabs' sidebar without navigation.expand: every group starts closed unless it holds the current page. */
+  collapseGroups?: boolean;
 }
 
 export interface SiteData {
@@ -107,8 +109,10 @@ export interface SiteData {
   titleTemplate: string;
   lastUpdated: boolean;
   homePaths: Record<string, string>;
-  /** [kit patch: tabs row] header layout options (config `header`). */
-  header?: { tabsRow?: boolean };
+  /** Docs header layout (config `header`). */
+  header: { tabsRow: boolean | 'auto' };
+  /** GitHub button target in the top bar (the site's repository, else the LiteLDev organisation). */
+  github?: string;
 }
 
 export interface PageData {

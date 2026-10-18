@@ -99,7 +99,7 @@ export function useContentEnhancements(ref: RefObject<HTMLElement | null>, key: 
       if (!id) return;
       const el = document.getElementById(id);
       if (!el || !root.contains(el)) return;
-      // [kit patch: tab ids] a hash naming a tab (#__tabbed_1_2) selects it
+      // a hash naming a tab (#__tabbed_1_2) selects it
       if (el.getAttribute('role') === 'tab' && el.closest('[data-kit-tabs]')) selectTab(el);
       for (let p: HTMLElement | null = el; p && p !== root; p = p.parentElement) {
         if (p instanceof HTMLDetailsElement) p.open = true;
@@ -111,7 +111,7 @@ export function useContentEnhancements(ref: RefObject<HTMLElement | null>, key: 
     };
     revealHash();
     window.addEventListener('hashchange', revealHash);
-    // [kit patch: table keyboard] Tables that overflow horizontally must be scrollable from the keyboard (WCAG 2.1.1).
+    // Tables that overflow horizontally must be scrollable from the keyboard (WCAG 2.1.1).
     const tableWraps = [...root.querySelectorAll<HTMLElement>('.kit-table-wrap')];
     const syncScrollable = () => {
       for (const w of tableWraps) {

@@ -1,5 +1,5 @@
 {
-  "//": "Copy the fields below into <app>/package.json. Versions are pinned exactly; levimc-kit 1.0.0 was verified with this set (Node 24, npm 11). Remove the 'docs:*' scripts for non-docs apps and the 'ssg:*' scripts for docs apps.",
+  "//": "Copy the fields below into <app>/package.json. Versions are pinned exactly; levimc-kit 1.1.0 was verified with this set (Node 24, npm 11; TypeScript 6.0.x works too). Docs apps keep build/preview/linkcheck/smoke; plain apps use ssg:build and smoke:app instead and only need react, react-dom, react-router, vite, @vitejs/plugin-react, tailwindcss, @tailwindcss/vite, typescript and the @types packages.",
   "private": true,
   "type": "module",
   "engines": {
@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit",
     "linkcheck": "node kit/scripts/linkcheck.mjs dist --base /<Project>/ --site-origin https://docs.levimc.org",
     "smoke": "node kit/scripts/smoke.mjs --url http://127.0.0.1:4173/<Project>/",
+    "smoke:app": "node kit/scripts/smoke.mjs --app --url http://127.0.0.1:4173/",
     "ssg:build": "vite build && vite build --ssr src/entry-server.tsx --outDir .kit/ssr && node prerender.mjs"
   },
   "dependencies": {
