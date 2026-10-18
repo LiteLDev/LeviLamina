@@ -1,0 +1,5 @@
+/* One-line entry for apps: Tailwind v4 + the full levimc-kit theme + kit sources for class detection. */
+@import "tailwindcss";
+@import "./index.css";
+@source "../components";
+@source "../docs/app";

@@ -39,7 +39,7 @@
   - 您（而非我们）对产品或服务（包括事件、服务器、书籍和手工物品）负责。
   - 谁是出版商、制造商、卖家、组织者和/或所有者。
   - 产品、服务或任何相关购买的联系方式和联系信息（聊天和论坛链接不可接受）。
-- 尝试获取违反 [Minecraft EULA](https://www.minecraft.net/en-us/eula) 的数据或可能危害 [Minecraft](https://www.minecraft.net/) 安全的行为，例如对 [*LeviLamina*](https://github.com/LiteLDev/LeviLamina) 或我们其他产品的 dump（详见 "**定义**" 部分的第一个条目）是不明智的！
+- 尝试获取违反 [Minecraft EULA](https://www.minecraft.net/en-us/eula) 的数据或可能危害 [Minecraft](https://www.minecraft.net/zh-hans) 安全的行为，例如对 [*LeviLamina*](https://github.com/LiteLDev/LeviLamina) 或我们其他产品的 dump（详见 "**定义**" 部分的第一个条目）是不明智的！
 - **不要**出于恶意目的进行 *LeviLamina* 的反向工程！
 - 我们**不**希望您使用 *LeviLamina* 开发任何可能危害 Minecraft 安全的程序，或任何我们认为会危害 Minecraft 安全的其他产品。
 

@@ -10,7 +10,7 @@
 
 `IDA Pro`：用于反编译 BDS 的二进制文件。
 !!! Note
-    如果你没有购买 IDA Pro，可以使用[IDA Free](https://hex-rays.com/ida-free/)，但是 IDA Free 没有将函数反编译为C语言的功能。
+    如果你没有购买 IDA Pro，可以使用[IDA Free](https://hex-rays.com/ida-free)，但是 IDA Free 没有将函数反编译为C语言的功能。
 
 ## 为什么要理解BDS的函数？
 
@@ -20,7 +20,7 @@
 
 为什么呢？
 
-这时候，我们打开 LeviLamina 关于 Player 类的 [`Fake Header`](https://github.com/LiteLDev/LeviLamina/blob/develop/src/mc/world/actor/player/Player.h#L54C30-L54C30) 文件，你会发现这个类的定义是这样的：
+这时候，我们打开 LeviLamina 关于 Player 类的 [`Fake Header`](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/world/actor/player/Player.h#L129) 文件，你会发现这个类的定义是这样的：
 
 ```cpp
 
@@ -238,7 +238,7 @@ v5 = (const struct Player *)(*(__int64 (__fastcall **)(char *, const struct Netw
 
 我们可以直接抄下来，但是这样很不优雅。
 
-而查阅 LeviLamina 提供的有关 [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/develop/src/mc/network/ServerNetworkHandler.h#L57C1-L63C6) 的内容
+而查阅 LeviLamina 提供的有关 [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/network/ServerNetworkHandler.h#L625) 的内容
 我们可以得知，ServerNetworkHandler 类提供了一个虚函数 `_getServerPlayer`，这个函数的作用是获取一个玩家的指针。
 但是，上下文中的：
 

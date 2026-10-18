@@ -1,0 +1,147 @@
+/* levimc-kit — base layer: document defaults shared by every LeviMC site. */
+
+@layer base {
+  html {
+    color-scheme: light;
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03"; /* Inter: single-storey a, open digits */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--spacing-header) + 1rem);
+    tab-size: 4;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    line-height: 1.6;
+    overflow-x: clip;
+  }
+  /* Theme switches should not animate every property on the page. The toggle adds this class for 1 frame. */
+  .kit-no-transition,
+  .kit-no-transition * {
+    transition: none !important;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 28%, transparent);
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+
+  :focus {
+    outline: none;
+  }
+  /* Pixel focus outline: a hard 2px ring in the enchant colour (diamond in dark). */
+  :focus-visible {
+    outline: var(--px) solid var(--color-focus);
+    outline-offset: var(--px);
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  kbd,
+  code,
+  pre,
+  samp {
+    font-family: var(--font-mono);
+    font-feature-settings: "calt" 0, "liga" 0;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  /* Thin, flat scrollbars that pick up the palette. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+}
+
+@layer components {
+  /* Accessible skip link — visible only when focused. */
+  .kit-skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 0.75rem;
+    z-index: 100;
+    transform: translateY(-200%);
+    padding: 0.5rem 0.875rem;
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-weight: 600;
+    font-size: 0.875rem;
+    box-shadow:
+      0 calc(var(--px) * -1) 0 0 var(--color-focus),
+      0 var(--px) 0 0 var(--color-focus),
+      calc(var(--px) * -1) 0 0 0 var(--color-focus),
+      var(--px) 0 0 0 var(--color-focus);
+  }
+  .kit-skip-link:focus,
+  .kit-skip-link:focus-visible {
+    transform: none;
+    outline: none;
+  }
+
+  .kit-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Short Latin micro-labels only (badges, eyebrows, version tags). Never CJK, never body copy. */
+  .kit-pixel-label {
+    font-family: var(--font-pixel);
+    font-weight: 400;
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .kit-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
+    letter-spacing: -0.015em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

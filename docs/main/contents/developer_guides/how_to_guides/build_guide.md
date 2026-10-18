@@ -288,5 +288,5 @@ so `clang-cl` resolves on `PATH`, and run from "Developer Command Prompt for VS 
 
 ## Related
 
-- [Architecture](architecture.md) — Project structure and design
-- [Testing Guide](how_to_guides/testing_guide.md) — Running and writing tests
+- [Architecture](../architecture.md) — Project structure and design
+- [Testing Guide](#build-with-tests) — Running and writing tests

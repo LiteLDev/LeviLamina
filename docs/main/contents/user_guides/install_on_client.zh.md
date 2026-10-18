@@ -11,7 +11,7 @@
 
 - [Visual C++ Redistributable for Visual Studio 2015, 2017, 2019, and 2022](https://aka.ms/vs/17/release/vc_redist.x64.exe)
 - [LeviLauncher](https://github.com/LiteLDev/LeviLauncher/releases)
-- [lip](https://github.com/futrime/lip/releases)
+- [lip](https://github.com/LiteLDev/lip/releases)
 
 ## 使用LeviLauncher自动安装
 

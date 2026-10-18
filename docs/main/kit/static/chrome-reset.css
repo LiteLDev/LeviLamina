@@ -1,0 +1,55 @@
+/* Scoped reset for the kit chrome when it is embedded in foreign pages (no Tailwind preflight there). */
+.kit-gbar,
+.kit-gbar *,
+.kit-gbar *::before,
+.kit-gbar *::after,
+.kit-footer,
+.kit-footer *,
+.kit-footer *::before,
+.kit-footer *::after {
+  box-sizing: border-box;
+}
+.kit-gbar,
+.kit-footer {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+}
+.kit-gbar :is(div, p, span, ul, li, nav, details, summary, a, button),
+.kit-footer :is(div, p, span, ul, li, nav, a) {
+  font-size: inherit;
+  font-family: inherit;
+}
+.kit-gbar :is(ul, ol, p, h1, h2, h3),
+.kit-footer :is(ul, ol, p, h1, h2, h3) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.kit-gbar button,
+.kit-footer button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.kit-gbar a,
+.kit-footer a {
+  text-decoration: none;
+}
+.kit-gbar svg,
+.kit-footer svg {
+  display: block;
+}
+.kit-gbar summary {
+  display: inline-flex;
+  list-style: none;
+}
+.kit-gbar summary::marker {
+  content: "";
+}
+.kit-gbar summary::before {
+  content: none !important;
+}

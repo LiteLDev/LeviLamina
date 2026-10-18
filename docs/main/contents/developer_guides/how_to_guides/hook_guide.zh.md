@@ -10,7 +10,7 @@ wikipedia 关于 Hook 的解释：[Hooking](https://en.wikipedia.org/wiki/Hookin
 
 ## Hook的类型
 
-在[`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L180C1-L180C1) 中，我们定义了以下几种Hook 宏：
+在[`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/main/src/ll/api/memory/Hook.h#L261) 中，我们定义了以下几种Hook 宏：
 
 ```cpp
 #define LL_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
@@ -44,7 +44,7 @@ wikipedia 关于 Hook 的解释：[Hooking](https://en.wikipedia.org/wiki/Hookin
 
 `DEF_TYPE`：你给你这个 Hook 的起的类型名。
 
-`PRIORITY`：[Hook的优先级](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L73)，例如`ll::memory::HookPriority::Normal`
+`PRIORITY`：[Hook的优先级](https://github.com/LiteLDev/LeviLamina/blob/main/src/ll/api/memory/Hook.h#L45)，例如`ll::memory::HookPriority::Normal`
 
 !!! note
     一般不是特殊需求，我们不推荐过高的优先级，Normal 即可。
@@ -59,7 +59,7 @@ wikipedia 关于 Hook 的解释：[Hooking](https://en.wikipedia.org/wiki/Hookin
 
 ## Hook的使用
 
-你可以查阅 LeviLamina 提供的[`Fake Header`](https://github.com/LiteLDev/LeviLamina/tree/develop/src/mc)来获取你想要 Hook 的函数的定义。
+你可以查阅 LeviLamina 提供的[`Fake Header`](https://github.com/LiteLDev/LeviLamina/tree/main/src/mc)来获取你想要 Hook 的函数的定义。
 
 ### 简单的Hook示例
 
