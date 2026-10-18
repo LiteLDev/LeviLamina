@@ -22,6 +22,9 @@
   .hotbar {
     --px-border: var(--color-line-strong);
     --px-ring-color: transparent;
+    /* reset per element: a .px-card's drop (or a button's bevel) must not leak into px elements nested in it */
+    --px-bevel: 0 0 #0000;
+    --px-drop: 0 0 #0000;
     box-shadow:
       0 calc(var(--px) * -1) 0 0 var(--px-border),
       0 var(--px) 0 0 var(--px-border),
@@ -31,8 +34,8 @@
       0 calc(var(--px) * 2) 0 0 var(--px-ring-color),
       calc(var(--px) * -2) 0 0 0 var(--px-ring-color),
       calc(var(--px) * 2) 0 0 0 var(--px-ring-color),
-      var(--px-bevel, 0 0 #0000),
-      var(--px-drop, 0 0 #0000);
+      var(--px-bevel),
+      var(--px-drop);
   }
 
   /* Pixel focus ring for any px element (sits outside the frame, corners stay stepped). */

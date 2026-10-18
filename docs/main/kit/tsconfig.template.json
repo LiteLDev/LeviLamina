@@ -1,4 +1,5 @@
-// Copy to <app>/tsconfig.json. Covers the vendored kit (kit/**) and the app's own sources.
+// Copy to <app>/tsconfig.json. Covers the vendored kit (kit/**) and the app's own sources (TypeScript 7.x or 6.0.x).
+// Plain apps (no docs engine and its markdown packages): include ["kit/components", "src", "*.ts"] instead of kit/**.
 {
   "compilerOptions": {
     "target": "ES2022",

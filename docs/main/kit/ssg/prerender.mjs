@@ -17,9 +17,13 @@
 //
 // Each route is written in directory style ('/about/' → about/index.html) unless it ends in '.html'.
 // Routes are full paths including the Vite base (e.g. '/' for levimc.org, or '/Demo/x/').
-import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync, existsSync, realpathSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
+
+// <meta name="generator"> on every page, so a deployment's kit version is verifiable
+const KIT_VERSION = readFileSync(new URL('../VERSION', import.meta.url), 'utf8').trim();
+const GENERATOR_META = `<meta name="generator" content="levimc-kit ${KIT_VERSION}">`;
 
 /**
  * @param {object} o
@@ -58,9 +62,12 @@ export async function prerenderRoutes(o) {
   const fill = (r) => {
     let html = template;
     if (r.lang) html = html.replace(/<html([^>]*?)\slang="[^"]*"/, `<html$1 lang="${r.lang}"`);
-    html = html.includes('<!--app-head-->') ? html.replace('<!--app-head-->', r.head ?? '') : html.replace('</head>', `${r.head ?? ''}\n</head>`);
+    // Replacement functions, not strings: rendered content may contain `$&`, `$'`, `` $` `` or `$$`,
+    // which String.prototype.replace would expand as patterns.
+    html = html.includes('<!--app-head-->') ? html.replace('<!--app-head-->', () => r.head ?? '') : html.replace('</head>', () => `${r.head ?? ''}\n</head>`);
+    if (!/<meta name="generator"/.test(html)) html = html.replace('</head>', () => `${GENERATOR_META}\n</head>`);
     if (!html.includes('<!--app-html-->')) throw new Error('prerenderRoutes: template is missing <!--app-html-->');
-    return html.replace('<!--app-html-->', r.html);
+    return html.replace('<!--app-html-->', () => r.html);
   };
 
   const files = [];
@@ -84,7 +91,8 @@ export async function prerenderRoutes(o) {
   return { files };
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+// run as a CLI (compares real paths, so a symlinked or relative script path still counts)
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
   // CLI: node kit/ssg/prerender.mjs /route/ /other/ [--not-found /404] [--base /]
   const args = process.argv.slice(2);
   const nf = args.includes('--not-found') ? args[args.indexOf('--not-found') + 1] : undefined;

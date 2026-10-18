@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { TocEntry } from '../../shared/types';
+import { revealIn } from './reveal';
 
 /** Scroll-spy: the last heading above 30% of the viewport is active. */
 export function useActiveHeading(ids: string[]): string | null {
@@ -52,9 +53,15 @@ export function TocList({ toc, active, onNavigate }: { toc: TocEntry[]; active: 
 
 export function Toc({ toc, title }: { toc: TocEntry[]; title: string }) {
   const active = useActiveHeading(toc.map((t) => t.id));
+  const ref = useRef<HTMLElement>(null);
+  // long outlines: keep the highlighted entry visible in the sticky column
+  useEffect(() => {
+    const nav = ref.current;
+    if (active) revealIn(nav?.closest<HTMLElement>('.kit-doc-toc') ?? null, nav?.querySelector<HTMLElement>('a.is-active') ?? null);
+  }, [active]);
   if (!toc.length) return null;
   return (
-    <nav className="kit-toc" aria-label={title}>
+    <nav ref={ref} className="kit-toc" aria-label={title}>
       <p className="kit-toc-title">{title}</p>
       <TocList toc={toc} active={active} />
     </nav>

@@ -64,6 +64,11 @@
     background-image: var(--kit-paint-sunrise);
     opacity: var(--kit-scene-opacity-dark, 0.42);
   }
+  /* A page with a painted hero has its scene there: no second scene band behind the header above it, so the
+     header looks the same on every hero page (a home layout, a custom layout with PaintedHero, an app page). */
+  :root:has(.kit-hero) .kit-backdrop-scene {
+    display: none;
+  }
   .kit-backdrop-brush {
     inset: 0;
     background-image: var(--kit-brush);

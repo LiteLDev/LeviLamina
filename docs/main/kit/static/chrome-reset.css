@@ -1,4 +1,7 @@
-/* Scoped reset for the kit chrome when it is embedded in foreign pages (no Tailwind preflight there). */
+/* Scoped reset for the kit chrome when it is embedded in foreign pages (no Tailwind preflight there).
+   chrome-entry.css imports this BEFORE the kit's chrome rules: one class + :where() = specificity (0,1,0), which
+   beats the host page's element selectors (Doxygen's `div, p { font-family }`, `ul { margin }` …) while every
+   kit rule of equal or higher specificity, coming later, still wins (menu item padding, pixel font …). */
 .kit-gbar,
 .kit-gbar *,
 .kit-gbar *::before,
@@ -16,34 +19,34 @@
   -webkit-font-smoothing: antialiased;
   text-align: left;
 }
-.kit-gbar :is(div, p, span, ul, li, nav, details, summary, a, button),
-.kit-footer :is(div, p, span, ul, li, nav, a) {
+.kit-gbar :where(div, p, span, ul, li, nav, details, summary, a, button),
+.kit-footer :where(div, p, span, ul, li, nav, a) {
   font-size: inherit;
   font-family: inherit;
 }
-.kit-gbar :is(ul, ol, p, h1, h2, h3),
-.kit-footer :is(ul, ol, p, h1, h2, h3) {
+.kit-gbar :where(ul, ol, p, h1, h2, h3),
+.kit-footer :where(ul, ol, p, h1, h2, h3) {
   margin: 0;
   padding: 0;
   border: 0;
 }
-.kit-gbar button,
-.kit-footer button {
+.kit-gbar :where(button),
+.kit-footer :where(button) {
   font: inherit;
   color: inherit;
   background: none;
   border: 0;
   padding: 0;
 }
-.kit-gbar a,
-.kit-footer a {
+.kit-gbar :where(a),
+.kit-footer :where(a) {
   text-decoration: none;
 }
-.kit-gbar svg,
-.kit-footer svg {
+.kit-gbar :where(svg),
+.kit-footer :where(svg) {
   display: block;
 }
-.kit-gbar summary {
+.kit-gbar :where(summary) {
   display: inline-flex;
   list-style: none;
 }

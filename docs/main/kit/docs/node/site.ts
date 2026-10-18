@@ -220,7 +220,9 @@ export async function buildSite(cfg: ResolvedConfig, opts: { changed?: Set<strin
     locales: cfg.locales.map((l) => ({ code: l.code, label: l.label, lang: l.lang, prefix: l.prefix })),
     nav,
     sidebars,
-    social: cfg.social ?? (cfg.repo ? [{ icon: 'github', link: cfg.repo }] : []),
+    // GitHub lives in the top bar (the repository); other social links stay in the docs header
+    social: (cfg.social ?? []).filter((s) => s.icon !== 'github'),
+    github: cfg.social?.find((s) => s.icon === 'github')?.link ?? cfg.repo,
     editLink: cfg.editLink ? { text: cfg.editLink.text } : undefined,
     footer: cfg.footer,
     outline: cfg.outline,
@@ -229,7 +231,7 @@ export async function buildSite(cfg: ResolvedConfig, opts: { changed?: Set<strin
     titleTemplate: cfg.titleTemplate,
     lastUpdated: cfg.lastUpdated,
     homePaths,
-    header: cfg.header, // [kit patch: tabs row]
+    header: { tabsRow: cfg.header?.tabsRow ?? 'auto' },
   };
 
   return { cfg, scan, site, routes, pages, searchIndexes, assets, warnings, tokenCss: styles.css() };

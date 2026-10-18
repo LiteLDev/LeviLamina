@@ -130,7 +130,9 @@ for (const file of files) {
     internal.checked++;
     const r = resolvePagesPath(dist, base, u.pathname);
     if (r.status === 301) {
-      internal.redirects.push({ page: pageRel, url: raw, location: r.location });
+      // a directory without index.html also answers 301 (GitHub Pages), but its target is a 404
+      if (resolvePagesPath(dist, base, r.location).status !== 200) internal.broken.push({ page: pageRel, url: raw, reason: `301 → 404 (${r.location})` });
+      else internal.redirects.push({ page: pageRel, url: raw, location: r.location });
       continue;
     }
     if (r.status !== 200) {

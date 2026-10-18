@@ -29,9 +29,8 @@ export default defineDocsConfig({
   markdown: { compat: 'python-markdown', lineNumbers: true, codeTitle: 'pygments' },
   lastUpdated: true,
   sidebar: 'tabs',
-  // The 7 top-level sections are too wide to share the header row with the brand and the actions:
-  // show them as a row of tabs under it, like MkDocs Material's navigation.tabs (kit patch "tabs row").
-  header: { tabsRow: true },
+  // The header row (logo + name, the top-level sections, search) fits itself to the width (kit `header.tabsRow`
+  // 'auto'): one row on wide screens, the sections in their own row below when they no longer fit, then the drawer.
   nav: [
     { Home: 'index.md' },
     {

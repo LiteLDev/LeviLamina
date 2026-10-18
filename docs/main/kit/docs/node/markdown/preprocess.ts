@@ -150,7 +150,12 @@ function processBlock(lines: string[], o: Required<PreprocessOptions>): string[]
   const out: string[] = [];
   const py = o.compat === 'python-markdown';
   const escText = (t: string) => (o.literalBackslashes ? pythonEscapes(t) : t);
-  const pyEsc = (l: string) => (py && o.literalBackslashes ? mapOutsideCode(l, pythonEscapes) : l);
+  // `code`: the line may be part of an indented code block, whose backticks are literal.
+  const pyEsc = (l: string, code = false) => {
+    if (!py) return l;
+    const s = code ? l : pyCodeSpans(l);
+    return o.literalBackslashes ? mapOutsideCode(s, pythonEscapes) : s;
+  };
   let prev: Kind = 'blank';
   // list context (python-markdown compat)
   let inList = false;
@@ -160,6 +165,8 @@ function processBlock(lines: string[], o: Required<PreprocessOptions>): string[]
   let literalMarkers = false;
   let lastBlank = true;
   let tabGroupOpen = false;
+  // Python-Markdown: a '>' line makes the rest of its block (up to a blank line) part of the quote
+  let quoteOpen = false;
 
   const emitWrapped = (ind: number, open: string, body: string[], close = '</div>') => {
     const pad = ' '.repeat(ind);
@@ -191,6 +198,7 @@ function processBlock(lines: string[], o: Required<PreprocessOptions>): string[]
       }
       prev = 'block';
       lastBlank = false;
+      quoteOpen = false;
       continue;
     }
 
@@ -200,7 +208,24 @@ function processBlock(lines: string[], o: Required<PreprocessOptions>): string[]
       i++;
       prev = 'blank';
       lastBlank = true;
+      quoteOpen = false;
       continue;
+    }
+
+    // ---------------------------------------------------------------- python-markdown: blockquote continuation
+    if (py && quoteOpen && !/^ {0,3}>/.test(line)) {
+      if (classify(trimmed) === 'heading' || HR_RE.test(line) || /^(=+|-+)\s*$/.test(trimmed) || (o.mkdocs && (ADM_RE.test(trimmed) || TAB_RE.test(trimmed)))) {
+        // headings, rules and MkDocs containers split the block before the quote processor sees them
+        quoteOpen = false;
+      } else {
+        // CommonMark ends the quote after an empty '>' line (no lazy continuation); Python-Markdown keeps the line
+        // as quote text (its indentation never starts code there)
+        out.push(pyEsc('> ' + trimmed));
+        i++;
+        prev = 'block';
+        lastBlank = false;
+        continue;
+      }
     }
 
     // ---------------------------------------------------------------- python-markdown: list boundaries
@@ -469,7 +494,7 @@ function processBlock(lines: string[], o: Required<PreprocessOptions>): string[]
           continue;
         }
         if (ind >= 4) {
-          out.push(pyEsc(line));
+          out.push(pyEsc(line, ind >= (depth + 2) * 4));
           i++;
           prev = 'list';
           lastBlank = false;
@@ -495,7 +520,8 @@ function processBlock(lines: string[], o: Required<PreprocessOptions>): string[]
       }
     }
 
-    out.push(pyEsc(line));
+    out.push(pyEsc(line, ind >= 4 && prev !== 'para'));
+    if (py && !inList && ind <= 3 && trimmed.startsWith('>')) quoteOpen = true;
     i++;
     prev = classify(trimmed);
     lastBlank = false;
@@ -507,7 +533,36 @@ function processBlock(lines: string[], o: Required<PreprocessOptions>): string[]
 function rewriteMarker(line: string, newIndent: number, marker: string, ordered: boolean): string {
   const m = LIST_RE.exec(line)!;
   const mk = ordered ? m[2]! : marker;
-  return ' '.repeat(newIndent) + mk + (m[3] || ' ') + m[4];
+  // Python-Markdown strips the gap after the marker; in CommonMark 5+ spaces would start an indented code block.
+  const gap = m[3] && m[3].length < 5 ? m[3] : ' ';
+  return ' '.repeat(newIndent) + mk + gap + m[4];
+}
+
+// Python-Markdown's code-span pattern (markdown/inlinepatterns.py BACKTICK_RE). Unlike CommonMark, an opening run
+// without a closing run of the same length still matches with fewer backticks: "``a` b" → <code>`a</code> b.
+const PY_BACKTICK = /(?<!\\)((?:\\{2})+)(?=`+)|(?<!\\)(`+)(.+?)(?<!`)\2(?!`)/g;
+const cmCodes = (line: string) =>
+  codeSegments(line)
+    .filter(([code]) => code)
+    .map(([, t]) => t.replace(/^`+|`+$/g, '').trim());
+/**
+ * python-markdown compat: rewrite the code spans of a line that holds a run of 2+ backticks so CommonMark pairs
+ * them exactly like Python-Markdown did. The line is left alone unless the rewritten spans match Python's.
+ */
+function pyCodeSpans(line: string): string {
+  if (!line.includes('``')) return line;
+  const py: string[] = [];
+  const out = line.replace(PY_BACKTICK, (m: string, _esc: string | undefined, ticks: string | undefined, content: string) => {
+    if (!ticks) return m;
+    const c = content.trim();
+    py.push(c);
+    const longest = Math.max(0, ...(c.match(/`+/g) ?? []).map((r) => r.length));
+    const fence = '`'.repeat(longest + 1);
+    const pad = c.startsWith('`') || c.endsWith('`') ? ' ' : '';
+    return fence + pad + c + pad + fence;
+  });
+  const cm = cmCodes(out);
+  return cm.length === py.length && cm.every((c, n) => c === py[n]) ? out : line;
 }
 
 function classify(trimmed: string): Kind {

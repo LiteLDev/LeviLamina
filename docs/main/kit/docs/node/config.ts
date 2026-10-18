@@ -115,6 +115,17 @@ export interface DocsConfig {
    * active section), 'tree' (whole nav), false, or explicit VitePress sidebars (shared or per locale code).
    */
   sidebar?: 'tabs' | 'tree' | false | SidebarConfig | Record<string, SidebarConfig>;
+  /**
+   * MkDocs Material `navigation.expand` for the 'tabs' sidebar: open every group. Default false (Material's
+   * default): only the group holding the current page starts open, plus groups marked `collapsed: false`.
+   */
+  sidebarExpand?: boolean;
+  /**
+   * Docs header layout. `tabsRow`: 'auto' (default) keeps brand, section tabs and search in one row and, only
+   * when the tabs do not fit, first shortens search to its icon, then moves the tabs to a second row below,
+   * then into the drawer; true always uses the second row above 960px; false never does (icon search, then drawer).
+   */
+  header?: { tabsRow?: boolean | 'auto' };
   /** Globs (relative to contentDir) excluded from the build. */
   exclude?: string[];
   /** Image/asset handling for files referenced from markdown: 'verbatim' (keep path) or 'hashed' (assets/x.hash.ext). */
@@ -135,11 +146,6 @@ export interface DocsConfig {
   ui?: Record<string, Partial<UiStrings>>;
   /** <title> template; ':title' and ':site' are replaced. Default ':title | :site'. */
   titleTemplate?: string;
-  /**
-   * [kit patch: tabs row] Header layout. `tabsRow: true` puts the header nav in its own row below the brand and
-   * the actions above 960px (MkDocs Material navigation.tabs), for navs too wide to share the row with them.
-   */
-  header?: { tabsRow?: boolean };
   /** Output directory (default 'dist'). */
   outDir?: string;
   /** Exclude pages from the search index (globs on page keys). */

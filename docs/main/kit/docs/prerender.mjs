@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // Prerender every route of a levimc-kit docs site into static HTML (run after the client + SSR builds).
 // Usage: node kit/docs/prerender.mjs [--root <appDir>]
-import { existsSync, mkdirSync, readFileSync, rmdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmdirSync, rmSync, writeFileSync, realpathSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 
 export async function prerenderDocs({ root = process.cwd(), outDir } = {}) {
   const ssrEntry = join(root, '.kit/ssr/entry-server.js');
@@ -20,9 +20,9 @@ export async function prerenderDocs({ root = process.cwd(), outDir } = {}) {
   const fill = (r, preload) =>
     template
       .replace(/<html lang="[^"]*"/, `<html lang="${r.lang}"`)
-      .replace('<!--kit-head-->', r.head + preload)
-      .replace('<!--kit-app-->', r.html)
-      .replace('<!--kit-page-data-->', r.pageData ? `<script type="application/json" id="kit-page-data">${escJson(r.pageData)}</script>` : '');
+      .replace('<!--kit-head-->', () => r.head + preload)
+      .replace('<!--kit-app-->', () => r.html)
+      .replace('<!--kit-page-data-->', () => r.pageData ? `<script type="application/json" id="kit-page-data">${escJson(r.pageData)}</script>` : '');
 
   let count = 0;
   for (const route of routes) {
@@ -42,7 +42,7 @@ export async function prerenderDocs({ root = process.cwd(), outDir } = {}) {
   let d = dirname(templatePath);
   while (d.startsWith(out) && d !== out) {
     try {
-      rmdirSync(d); // [kit patch: empty dirs] only removes empty folders (rmSync throws EISDIR on any folder)
+      rmdirSync(d); // only removes empty folders (rmSync throws EISDIR on any folder)
     } catch {
       break;
     }
@@ -51,7 +51,8 @@ export async function prerenderDocs({ root = process.cwd(), outDir } = {}) {
   return { count };
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+// run as a CLI (compares real paths, so a symlinked or relative script path still counts)
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2);
   const root = args.includes('--root') ? resolve(args[args.indexOf('--root') + 1]) : process.cwd();
   const t0 = Date.now();

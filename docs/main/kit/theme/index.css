@@ -7,6 +7,7 @@
  *
  * or simply `@import "../kit/theme/tailwind.css";` which does exactly that.
  */
+@import "./fonts.css";
 @import "./tokens.css";
 @import "./generated.css";
 @import "./base.css";

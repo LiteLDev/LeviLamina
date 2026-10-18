@@ -10,7 +10,7 @@ In LeviLamina, we provide well-packaged Hook APIs, allowing you to quickly and c
 
 ## Defines of Hooks
 
-In [`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/main/src/ll/api/memory/Hook.h#L261), we defined the following Hook macros:
+In [`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/a4e181914f7a4cc3a6a574fe9d4e9976a25a684a/src/ll/api/memory/Hook.h#L261), we defined the following Hook macros:
 
 ```cpp
 #define LL_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
@@ -45,7 +45,7 @@ For hooking member functions.
 
 `DEF_TYPE`: The type name you give to your Hook.
 
-`PRIORITY`: [Hook priority](https://github.com/LiteLDev/LeviLamina/blob/main/src/ll/api/memory/Hook.h#L45), e.g., `ll::memory::HookPriority::Normal`
+`PRIORITY`: [Hook priority](https://github.com/LiteLDev/LeviLamina/blob/a4e181914f7a4cc3a6a574fe9d4e9976a25a684a/src/ll/api/memory/Hook.h#L45), e.g., `ll::memory::HookPriority::Normal`
 
 !!! note
     Generally, unless there's a special need, we do not recommend a very high priority; Normal is sufficient.

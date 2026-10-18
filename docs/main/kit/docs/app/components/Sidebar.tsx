@@ -18,11 +18,14 @@ interface ItemProps {
   onNavigate?: () => void;
   idPath: string;
   expand?: boolean;
+  collapse?: boolean;
 }
 
-function Group({ item, path, depth, onNavigate, idPath, expand }: ItemProps) {
+function Group({ item, path, depth, onNavigate, idPath, expand, collapse }: ItemProps) {
   const active = containsPath(item, path);
-  const [open, setOpen] = useState(active || (!item.collapsed && (expand || depth === 0)));
+  // open: the group holding the current page; groups marked collapsed: false; else VitePress (expand) opens all
+  // but `collapsed: true`, MkDocs opens the top level unless the tabs sidebar collapses groups (Material default)
+  const [open, setOpen] = useState(active || item.collapsed === false || (!item.collapsed && (expand || (depth === 0 && !collapse))));
   // reveal the current page after client-side navigation
   useEffect(() => {
     if (active) setOpen(true);
@@ -36,15 +39,15 @@ function Group({ item, path, depth, onNavigate, idPath, expand }: ItemProps) {
       </button>
       <ul id={listId} className="kit-sb-list" hidden={!open}>
         {item.items!.map((c, i) => (
-          <Item key={i} item={c} path={path} depth={depth + 1} onNavigate={onNavigate} idPath={`${idPath}-${i}`} expand={expand} />
+          <Item key={i} item={c} path={path} depth={depth + 1} onNavigate={onNavigate} idPath={`${idPath}-${i}`} expand={expand} collapse={collapse} />
         ))}
       </ul>
     </li>
   );
 }
 
-function Item({ item, path, depth, onNavigate, idPath, expand }: ItemProps) {
-  if (item.items) return <Group item={item} path={path} depth={depth} onNavigate={onNavigate} idPath={idPath} expand={expand} />;
+function Item({ item, path, depth, onNavigate, idPath, expand, collapse }: ItemProps) {
+  if (item.items) return <Group item={item} path={path} depth={depth} onNavigate={onNavigate} idPath={idPath} expand={expand} collapse={collapse} />;
   if (!item.link) return null;
   const current = !item.external && item.link === path;
   return (
@@ -52,7 +55,7 @@ function Item({ item, path, depth, onNavigate, idPath, expand }: ItemProps) {
       {item.external ? (
         <a className="kit-sb-link" href={item.link} target="_blank" rel="noopener">
           <span>{item.text}</span>
-          {/* [kit patch: link glyph] a label that already ends in a link glyph ("Doxygen API 🔗") gets no second one */}
+          {/* a label that already ends in a link glyph ("Doxygen API 🔗") gets no second one */}
           {LINK_GLYPH_END.test(item.text) ? null : <PixelIcon name="external" className="kit-sb-ext" />}
         </a>
       ) : (
@@ -67,7 +70,7 @@ function Item({ item, path, depth, onNavigate, idPath, expand }: ItemProps) {
 export function Sidebar({ data, path, label, onNavigate }: { data: SidebarData; path: string; label: string; onNavigate?: () => void }) {
   const ref = useRef<HTMLElement>(null);
   const revealed = useRef(false);
-  // [kit patch: sidebar reveal] keep the current page's link in view in the sticky sidebar (after its group has opened):
+  // keep the current page's link in view in the sticky sidebar (after its group has opened):
   // centred on the first page, then only nudged inside the edges so a clicked link does not jump under the pointer
   useEffect(
     () =>
@@ -83,7 +86,7 @@ export function Sidebar({ data, path, label, onNavigate }: { data: SidebarData; 
       {data.title ? <p className="kit-sb-title">{data.title}</p> : null}
       <ul className="kit-sb-list kit-sb-root">
         {data.items.map((it, i) => (
-          <Item key={i} item={it} path={path} depth={0} onNavigate={onNavigate} idPath={String(i)} expand={data.expand} />
+          <Item key={i} item={it} path={path} depth={0} onNavigate={onNavigate} idPath={String(i)} expand={data.expand} collapse={data.collapseGroups} />
         ))}
       </ul>
     </nav>

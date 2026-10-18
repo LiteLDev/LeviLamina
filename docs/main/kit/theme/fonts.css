@@ -1,0 +1,47 @@
+/*
+ * levimc-kit — metric-matched fallback faces for the web fonts (Google Fonts, display=swap).
+ * Until Inter / Fraunces / JetBrains Mono / Silkscreen arrive, text is set in a local font scaled to the web
+ * font's average width and vertical metrics, so the swap does not reflow the page (no layout shift).
+ * Values: @capsizecss/metrics (xWidthAvg, ascent, descent, lineGap), computed like fontaine / next/font.
+ * Each family lists metric-compatible locals (Liberation/Arimo/Tinos/Cousine share Arial/Times/Courier metrics).
+ */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Arimo"), local("Helvetica");
+  size-adjust: 107.12%;
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia");
+  size-adjust: 105.2%;
+  ascent-override: 92.96%;
+  descent-override: 24.24%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Fraunces Fallback Times";
+  src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("Tinos");
+  size-adjust: 115.45%;
+  ascent-override: 84.71%;
+  descent-override: 22.09%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "JetBrains Mono Fallback";
+  src: local("Courier New"), local("CourierNewPSMT"), local("Liberation Mono"), local("Cousine");
+  size-adjust: 99.98%;
+  ascent-override: 102.02%;
+  descent-override: 30%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Silkscreen Fallback";
+  src: local("Courier New"), local("CourierNewPSMT"), local("Liberation Mono"), local("Cousine");
+  size-adjust: 111.15%;
+  ascent-override: 92.67%;
+  descent-override: 22.49%;
+  line-gap-override: 0%;
+}

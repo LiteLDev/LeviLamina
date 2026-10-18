@@ -9,7 +9,7 @@
  *                            kit/static/doxygen/doxygen-kit.css
  *   HTML_EXTRA_FILES       = kit/static/kit.js
  *   HTML_COLORSTYLE        = LIGHT      (the kit scripts toggle html.dark-mode / html.light-mode)
- * Do NOT include doxygen-awesome-darkmode-toggle.js: kit.js owns the theme (localStorage "levimc-theme").
+ * Do NOT include doxygen-awesome-darkmode-toggle.js: kit.js owns the theme (cookie levimc_theme, shared by every LeviMC site).
  */
 
 html {
@@ -173,60 +173,366 @@ html.dark-mode {
   }
 }
 
-/* ------------------------------------------------------------------ page frame */
+/* ------------------------------------------------------------------ one header
+   The LeviMC bar, then the project's own row — logo + name, the same tabs as the docs row (Developer Guides, which
+   holds the API reference, is the current one) and Doxygen's search — exactly like the header of the docs pages:
+   one light row on the page's canvas with the docs row's "stuck" hairline under it (the content scrolls below it,
+   so it is always stuck). Doxygen's menubar (Main Page,
+   Related Pages, Classes, Files) is hidden on wide screens: the tree on the left lists the same pages. Phones:
+   Doxygen's menu button is the only one (the bar's menu is off); it opens the docs sections, Doxygen's menu and
+   the LeviMC links in one panel under the row. */
 body {
   background: var(--page-background-color);
 }
 #top {
-  background: var(--header-background);
+  background: var(--page-background-color);
   border-bottom: 0;
+  /* the docs row's hairline (.kit-site-header while stuck), not a border */
+  box-shadow: 0 1px 0 0 color-mix(in srgb, var(--color-line) 70%, transparent);
+}
+/* skip link (first in <body>): kit-chrome.css has no base layer, so its style is here; above Doxygen's layers */
+a.kit-skip-link:is(:link, :visited) {
+  position: fixed;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 10003;
+  transform: translateY(-200%);
+  padding: 0.5rem 0.875rem;
+  background: var(--color-surface);
+  color: var(--color-ink) !important;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  box-shadow:
+    0 calc(var(--px) * -1) 0 0 var(--color-focus),
+    0 var(--px) 0 0 var(--color-focus),
+    calc(var(--px) * -1) 0 0 0 var(--color-focus),
+    var(--px) 0 0 0 var(--color-focus);
+}
+a.kit-skip-link:focus,
+a.kit-skip-link:focus-visible {
+  transform: none;
+  outline: none;
+}
+#doc-content:focus {
+  outline: none;
 }
 #top > .kit-gbar {
   position: relative;
-  /* [kit patch: doxygen layers] above Doxygen's own layers in #top (main menu .sm 9999, #MSearchBox 102, search
+  /* above Doxygen's own layers in #top (main menu .sm 9999, #MSearchBox 102, search
      select/results windows 10000/10001), so the open Docs / sites menus are painted and clickable on top */
   z-index: 10002;
   flex: 0 0 100%;
   width: 100%;
   order: -1;
 }
-#top > #titlearea {
-  flex: 1 1 100%;
+#titlearea.kit-dox-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+  min-width: 0;
+  height: var(--spacing-header);
+  padding: 0 0 0 1.5rem;
+  background: none;
+  border: 0;
+  color: var(--page-foreground-color);
+  font-family: var(--font-family);
 }
-#titlearea {
+a.kit-dox-brand:is(:link, :visited, :hover, :focus, :active) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 1 auto;
+  min-width: 0;
+  padding-right: 1rem;
+  margin-right: 0.5rem;
+  color: var(--page-foreground-color) !important;
+  text-decoration: none !important;
+  /* a short rule between the project and its sections */
+  background: linear-gradient(var(--separator-color), var(--separator-color)) right center / 1px 1.25rem no-repeat;
+}
+.kit-dox-logo {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+#projectname.kit-dox-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-family);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+a.kit-dox-brand:hover .kit-dox-title {
+  color: var(--primary-color);
+}
+.kit-dox-tabs {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.kit-dox-tabs > ul {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.kit-dox-tabs li {
+  display: flex;
+  flex: none;
+  margin: 0;
+}
+a.kit-dox-tab:is(:link, :visited, :hover, :focus, :active) {
   position: relative;
-  padding: 14px 20px 18px;
-  border-bottom: 0;
-  background:
-    linear-gradient(90deg, var(--header-background) 0%, color-mix(in srgb, var(--header-background) 82%, transparent) 46%, transparent 100%),
-    var(--kit-paint-lilies) center 32% / cover no-repeat;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--page-secondary-foreground-color) !important;
+  text-decoration: none !important;
+  white-space: nowrap;
 }
-html.dark-mode #titlearea {
-  background:
-    linear-gradient(90deg, var(--header-background) 0%, color-mix(in srgb, var(--header-background) 80%, transparent) 46%, transparent 100%),
-    var(--kit-paint-sunrise) center 30% / cover no-repeat;
+a.kit-dox-tab:hover,
+a.kit-dox-tab.is-active {
+  color: var(--page-foreground-color) !important;
 }
-#titlearea::after {
+a.kit-dox-tab.is-active {
+  font-weight: 600;
+}
+/* external tabs (LegacyScriptEngine, About): the docs row's external mark */
+a.kit-dox-tab,
+a.kit-dox-drawer-link {
+  gap: 0.3rem;
+}
+.kit-dox-tab-ext {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
+}
+/* current section: a 2px pixel rule in the primary colour, flush with the row's bottom edge */
+a.kit-dox-tab.is-active::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 0.75rem;
+  right: 0.75rem;
   bottom: 0;
-  height: 8px;
-  background: var(--kit-grass-strip) repeat-x 0 0 / 16px 8px;
-  image-rendering: pixelated;
+  height: 2px;
+  background: var(--primary-color);
 }
-#projectname {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 28px;
+.kit-dox-search {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 1rem;
+}
+/* the phone panel (see the 767px block) */
+.kit-dox-drawer {
+  display: none;
+}
+.kit-dox-drawer-sections > ul {
+  margin: 0;
+  padding: 0.375rem 0.75rem 0.5rem;
+  list-style: none;
+}
+.kit-dox-drawer-sections li {
+  margin: 0;
+}
+a.kit-dox-drawer-link:is(:link, :visited, :hover, :focus, :active) {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--page-foreground-color) !important;
+  text-decoration: none !important;
+}
+a.kit-dox-drawer-link.is-active {
+  color: var(--primary-color) !important;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  background: var(--menu-selected-background);
+  box-shadow: inset 3px 0 0 0 var(--primary-color);
 }
-#projectlogo img {
-  max-height: 44px;
+.kit-dox-drawer-network {
+  padding: 0.75rem 0.75rem 1rem;
+  border-top: 1px solid var(--separator-color);
 }
-#main-nav {
-  border-bottom: 1px solid var(--separator-color);
+.kit-dox-drawer-title {
+  margin: 0 0.75rem 0.25rem;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--page-secondary-foreground-color);
+}
+.kit-dox-drawer-network a:is(:link, :visited, :hover, :focus, :active) {
+  color: var(--color-ink) !important;
+  text-decoration: none !important;
+}
+
+@media screen and (min-width: 768px) {
+  #top {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  #titlearea.kit-dox-row {
+    flex: 1 1 0;
+  }
+  /* Doxygen's phone menu button + search holder (kit.js moves it into the row): empty on wide screens */
+  :is(#top, #titlearea) > .sm-dox {
+    display: none;
+  }
+  /* Doxygen's search moves into the row; its menubar items are hidden (the tree lists them) */
+  #main-nav {
+    flex: none;
+    display: flex;
+    align-items: center;
+    height: var(--spacing-header);
+    padding: 0 1.5rem 0 0.5rem;
+  }
+  #main-nav #main-menu {
+    padding: 0;
+    background: none;
+    line-height: normal;
+  }
+  #main-menu > li:not(#searchBoxPos2) {
+    display: none !important;
+  }
+  #main-menu > li#searchBoxPos2 {
+    float: none !important;
+    padding: 0;
+  }
+}
+/* too narrow for brand + sections + search in one row: the sections get their own row below (like the docs
+   header's tabs row; Doxygen keeps its menu button off until 768px, so on the narrowest of these widths the
+   tabs wrap onto a second line instead of being clipped) */
+@media screen and (min-width: 768px) and (max-width: 1299px) {
+  /* the sections row takes the full width (as on the docs pages); the search sits at the right of the brand row */
+  #top {
+    position: relative;
+  }
+  #titlearea.kit-dox-row {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  #main-nav {
+    position: absolute;
+    top: var(--spacing-globalbar);
+    right: 0;
+  }
+  a.kit-dox-brand:is(:link, :visited, :hover, :focus, :active) {
+    height: var(--spacing-header);
+    background: none;
+  }
+  .kit-dox-tabs {
+    flex: 0 0 100%;
+    margin-left: -0.75rem;
+  }
+  .kit-dox-tabs > ul {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .kit-dox-tabs li {
+    height: 2.75rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #top {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  #top > .kit-gbar {
+    flex: none;
+  }
+  /* room for Doxygen's menu button (left) and its search box (right), which sit on this row */
+  #titlearea.kit-dox-row {
+    order: 0;
+    position: relative;
+    padding: 0 calc(10.5rem + 1.25rem) 0 3.25rem;
+  }
+  a.kit-dox-brand:is(:link, :visited, :hover, :focus, :active) {
+    padding-right: 0;
+    margin-right: 0;
+    background: none;
+  }
+  .kit-dox-tabs {
+    display: none;
+  }
+  /* Doxygen's menu button (left) and search (right) on the row: menu.js inserts them before #main-nav and
+     kit.js moves them into header#titlearea (so they are inside its landmark) */
+  :is(#top, #titlearea) > .sm-dox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--spacing-header);
+    padding: 0;
+    background: none;
+    pointer-events: none;
+  }
+  #top > .sm-dox {
+    top: var(--spacing-globalbar);
+  }
+  :is(#top, #titlearea) > .sm-dox > * {
+    pointer-events: auto;
+  }
+  /* the menu button is a label for a visually hidden checkbox: show the kit's pixel focus ring on the label */
+  #main-menu-state:focus-visible + .main-menu-btn {
+    outline: var(--px) solid var(--color-focus);
+    outline-offset: var(--px);
+  }
+  :is(#top, #titlearea) > .sm-dox > .main-menu-btn {
+    position: absolute;
+    top: calc((var(--spacing-header) - 36px) / 2);
+    left: 0.625rem;
+    margin: 0;
+  }
+  :is(#top, #titlearea) > .sm-dox > label.main-menu-btn ~ #searchBoxPos1 {
+    top: calc((var(--spacing-header) - 36px) / 2) !important;
+    right: 1rem !important;
+    left: auto !important;
+    width: 10.5rem;
+    align-items: center;
+  }
+  :is(#top, #titlearea) > .sm-dox > #searchBoxPos1 > #MSearchBox {
+    width: 100%;
+    margin: 0;
+  }
+  #searchBoxPos1 #MSearchField {
+    width: calc(100% - 56px);
+  }
+  .kit-dox-drawer-sections {
+    order: 1;
+  }
+  #main-nav {
+    order: 2;
+    padding: 0 0.75rem;
+  }
+  .kit-dox-drawer-network {
+    order: 3;
+  }
+  #top:has(#main-menu-state:checked) > .kit-dox-drawer {
+    display: block;
+  }
+}
+@media screen and (max-width: 400px) {
+  #titlearea.kit-dox-row {
+    padding-right: calc(8.5rem + 1.25rem);
+  }
+  :is(#top, #titlearea) > .sm-dox > label.main-menu-btn ~ #searchBoxPos1 {
+    width: 8.5rem;
+  }
 }
 .sm-dox,
 .sm-dox a,
@@ -237,7 +543,7 @@ html.dark-mode #titlearea {
 .sm-dox a:hover {
   border-radius: 0 !important;
 }
-/* [kit patch: doxygen search contrast] search.css greys the idle field (#909090, 3.1:1 on the light header);
+/* search.css greys the idle field (#909090, 3.1:1 on the light header);
    use the muted ink (AA in both themes). The active field keeps doxygen-awesome's --searchbar-foreground. */
 #MSearchField {
   color: var(--page-secondary-foreground-color);

@@ -154,7 +154,7 @@ export function buildNavigation({ cfg, scan, titles, warn }: NavBuildInput): Nav
       });
       if (mode === 'tree') sidebars[`${code}:tree`] = { items: tree };
       tree.forEach((it, i) => {
-        if (mode === 'tabs' && it.items) sidebars[`${code}:tab${i}`] = { title: it.text, items: it.items };
+        if (mode === 'tabs' && it.items) sidebars[`${code}:tab${i}`] = { title: it.text, items: it.items, collapseGroups: !cfg.sidebarExpand };
       });
       const flat = flatten(tree);
       for (const r of scan.routes.filter((x) => x.locale === code)) {
@@ -170,7 +170,12 @@ export function buildNavigation({ cfg, scan, titles, warn }: NavBuildInput): Nav
       }
     } else {
       // VitePress: explicit nav + sidebar(s)
-      nav[code] = tree.map((it) => ({ ...it, activePrefix: it.link && !it.external ? posix.dirname('/' + it.link).replace(/^\/$/, '') + '/' : undefined }));
+      const prefixOf = (link: string) => posix.dirname('/' + link).replace(/^\/$/, '') + '/';
+      nav[code] = tree.map((it) => ({ ...it, activePrefix: it.link && !it.external ? prefixOf(it.link) : undefined }));
+      // active prefixes per header item (build-time only): its own, or a dropdown's internal links'
+      const navPrefixes = nav[code]!.map((it) =>
+        it.activePrefix ? [it.activePrefix] : [...new Set((it.items ?? []).filter((c) => c.link && !c.external).map((c) => prefixOf(c.link!)))],
+      );
       let sb: SidebarConfig | undefined;
       if (mode && typeof mode === 'object') {
         const rec = mode as Record<string, SidebarConfig> | SidebarConfig;
@@ -200,16 +205,22 @@ export function buildNavigation({ cfg, scan, titles, warn }: NavBuildInput): Nav
         const g = groups.filter((x) => url.startsWith(x.prefix) || ('/' + r.source.rel).startsWith(x.prefix)).sort((a, b) => b.prefix.length - a.prefix.length)[0];
         const flat = g ? flatten(g.items) : [];
         const pos = flat.findIndex((it) => it.key === r.key);
-        // header item: exact match first, else longest active prefix
+        // header item: exact match first, then a dropdown listing the page (VitePress), else the longest active
+        // prefix; on a tie a plain link beats a dropdown, then the earlier item wins
         const items = nav[code]!;
         let navIdx = items.findIndex((it) => it.key === r.key);
+        if (navIdx < 0) navIdx = items.findIndex((it) => !!it.items && contains(it, r.key));
         if (navIdx < 0) {
           let best = -1;
           let bestLen = 1;
-          items.forEach((it, i) => {
-            if (it.activePrefix && it.activePrefix.length > bestLen && url.startsWith(it.activePrefix)) {
-              best = i;
-              bestLen = it.activePrefix.length;
+          navPrefixes.forEach((prefixes, i) => {
+            for (const p of prefixes) {
+              if (!url.startsWith(p)) continue;
+              const tieWin = p.length === bestLen && best >= 0 && !!items[best]!.items && !items[i]!.items;
+              if (p.length > bestLen || tieWin) {
+                best = i;
+                bestLen = p.length;
+              }
             }
           });
           navIdx = best;

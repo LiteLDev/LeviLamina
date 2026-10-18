@@ -12,6 +12,7 @@
 
 import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { gzipSync } from 'node:zlib';
 import { dirname, extname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Plugin, PluginOption, ViteDevServer } from 'vite';
@@ -20,8 +21,10 @@ import tailwindcss from '@tailwindcss/vite';
 import { resolveConfig, type DocsConfig, type ResolvedConfig } from './config.ts';
 import { buildSite, type BuiltSite } from './site.ts';
 import { localeRedirectScript } from '../shared/head.ts';
-import { themeInitScript } from '../../components/theme.ts';
+import { createThemeInitScript, themeInitScript } from '../../components/theme.ts';
+import { UI_LOCALES } from '../../components/i18n.ts';
 import { GOOGLE_FONTS_HREF } from '../../components/fonts.ts';
+import { noJsDarkCss } from '../../static/nojs-dark.mjs';
 
 const SITE_ID = 'virtual:kit-docs/site';
 const PAGE_PREFIX = 'virtual:kit-docs/page/';
@@ -168,6 +171,8 @@ export function kitDocs(userConfig: DocsConfig, options: KitDocsPluginOptions = 
       async handler(html) {
         const b = await ensure();
         const redirect = localeRedirectScript(b.site);
+        // single-locale sites: the chrome follows the stored language (App's useChromeLocale); hide it until then
+        const init = b.site.locales.length < 2 ? createThemeInitScript({ chromeLocales: UI_LOCALES }) : themeInitScript;
         const favicon = b.site.favicon ?? b.site.logo?.src;
         const headExtra = (cfg.head ?? [])
           .map(([tag, attrs, content]) => {
@@ -181,7 +186,7 @@ export function kitDocs(userConfig: DocsConfig, options: KitDocsPluginOptions = 
         const entryClient = '/' + relative(root, join(KIT_DOCS_APP_DIR, 'entry-client.tsx')).split('\\').join('/');
         return html
           .replace('src="./entry-client.tsx"', `src="${entryClient}"`)
-          .replace('<!--kit-theme-->', `<script>${themeInitScript}</script>${redirect ? `\n    <script>${redirect}</script>` : ''}`)
+          .replace('<!--kit-theme-->', `<script>${init}</script>${redirect ? `\n    <script>${redirect}</script>` : ''}`)
           .replace(
             '<!--kit-fonts-->',
             `<link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link rel="stylesheet" href="${GOOGLE_FONTS_HREF}">`,
@@ -266,16 +271,31 @@ export function kitDocs(userConfig: DocsConfig, options: KitDocsPluginOptions = 
             return `  <url>\n    <loc>${cfg.hostname}${cfg.base}${encodeURI(r.path)}</loc>\n${lastmod}${links}  </url>`;
           })
           .join('\n');
-        this.emitFile({
-          type: 'asset',
-          fileName: 'sitemap.xml',
-          source: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`,
-        });
+        const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
+        this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap });
+        // MkDocs also published sitemap.xml.gz; keep that URL alive for crawlers that registered it
+        if (cfg.urlStyle === 'directory') this.emitFile({ type: 'asset', fileName: 'sitemap.xml.gz', source: gzipSync(sitemap, { level: 9 }) });
       }
     },
-    writeBundle() {
+    writeBundle(_opts, bundle) {
       if (isSsr || !built) return;
       const b = built;
+      // Readers without JavaScript get the dark theme when their system is dark (the theme class on <html> is
+      // set by the pre-paint script): the stylesheet's .dark rules as :root rules, loaded inside <noscript>
+      // with media="(prefers-color-scheme: dark)" — as on the kit's static pages (kit-nojs-dark.css).
+      const css = Object.values(bundle)
+        .filter((o) => o.type === 'asset' && o.fileName.endsWith('.css'))
+        .map((o) => (o.type === 'asset' ? String(o.source) : ''))
+        .join('\n');
+      const tplFile = join(cfg.outRoot, relative(root, appHtml));
+      if (css && existsSync(tplFile)) {
+        const dark = noJsDarkCss(css, { source: 'the levimc-kit docs build from the site stylesheet' });
+        const file = `assets/kit-nojs-dark.${hash8(dark)}.css`;
+        mkdirSync(join(cfg.outRoot, 'assets'), { recursive: true });
+        writeFileSync(join(cfg.outRoot, file), dark);
+        const tag = `<noscript><link rel="stylesheet" href="${cfg.base}${file}" media="(prefers-color-scheme: dark)"></noscript>`;
+        writeFileSync(tplFile, readFileSync(tplFile, 'utf8').replace('</head>', () => `  ${tag}\n  </head>`));
+      }
       // MkDocs: every non-markdown file in the content dir is copied verbatim (logo.svg, favicon.ico, img/…)
       if (cfg.copyContentAssets) {
         for (const rel of b.scan.assets) {
