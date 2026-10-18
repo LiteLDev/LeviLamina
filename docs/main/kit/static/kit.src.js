@@ -151,11 +151,13 @@
         // a value is [label, url], or just the url (links whose content is not text, e.g. the logo)
         var hrefOnly = false;
         for (var k in m) if (typeof m[k] === 'string') hrefOnly = true;
-        if (!a.hasAttribute('data-kit-l10n-default')) a.setAttribute('data-kit-l10n-default', JSON.stringify([hrefOnly ? null : a.textContent, a.getAttribute('href')]));
+        // the label is the link's text, or its [data-kit-l10n-text] child when it has an icon too (external tabs)
+        var txt = a.querySelector('[data-kit-l10n-text]') || a;
+        if (!a.hasAttribute('data-kit-l10n-default')) a.setAttribute('data-kit-l10n-default', JSON.stringify([hrefOnly ? null : txt.textContent, a.getAttribute('href')]));
         var d = JSON.parse(a.getAttribute('data-kit-l10n-default'));
         var x = loc ? m[loc.c] : null;
         var v = x ? (hrefOnly ? [null, x] : x) : d;
-        if (v[0] !== null) a.textContent = v[0];
+        if (v[0] !== null) txt.textContent = v[0];
         a.setAttribute('href', v[1]);
         if (x && !hrefOnly) a.setAttribute('lang', loc.l);
         else a.removeAttribute('lang');
@@ -306,6 +308,9 @@
         if (LANDMARKS[li][2]) le.setAttribute('aria-label', LANDMARKS[li][2]);
       }
     }
+    // the skip link's target (#doc-content) takes focus, so the next Tab continues inside the page content
+    var dmain = document.getElementById('doc-content');
+    if (dmain && !dmain.hasAttribute('tabindex')) dmain.setAttribute('tabindex', '-1');
     var adopt = function () {
       var m = dtop.querySelector(':scope > .sm-dox');
       if (m) drow.appendChild(m);

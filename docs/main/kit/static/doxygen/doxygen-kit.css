@@ -174,9 +174,10 @@ html.dark-mode {
 }
 
 /* ------------------------------------------------------------------ one header
-   The LeviMC bar, then the project's own row — logo + name, the docs sections with an active "Doxygen API" tab,
-   and Doxygen's search — exactly like the header of the docs pages: one light row on the page's canvas, a
-   hairline under it (the content scrolls below it, so it is always "stuck"). Doxygen's menubar (Main Page,
+   The LeviMC bar, then the project's own row — logo + name, the same tabs as the docs row (Developer Guides, which
+   holds the API reference, is the current one) and Doxygen's search — exactly like the header of the docs pages:
+   one light row on the page's canvas with the docs row's "stuck" hairline under it (the content scrolls below it,
+   so it is always stuck). Doxygen's menubar (Main Page,
    Related Pages, Classes, Files) is hidden on wide screens: the tree on the left lists the same pages. Phones:
    Doxygen's menu button is the only one (the bar's menu is off); it opens the docs sections, Doxygen's menu and
    the LeviMC links in one panel under the row. */
@@ -185,7 +186,37 @@ body {
 }
 #top {
   background: var(--page-background-color);
-  border-bottom: 1px solid var(--separator-color);
+  border-bottom: 0;
+  /* the docs row's hairline (.kit-site-header while stuck), not a border */
+  box-shadow: 0 1px 0 0 color-mix(in srgb, var(--color-line) 70%, transparent);
+}
+/* skip link (first in <body>): kit-chrome.css has no base layer, so its style is here; above Doxygen's layers */
+a.kit-skip-link:is(:link, :visited) {
+  position: fixed;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 10003;
+  transform: translateY(-200%);
+  padding: 0.5rem 0.875rem;
+  background: var(--color-surface);
+  color: var(--color-ink) !important;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  box-shadow:
+    0 calc(var(--px) * -1) 0 0 var(--color-focus),
+    0 var(--px) 0 0 var(--color-focus),
+    calc(var(--px) * -1) 0 0 0 var(--color-focus),
+    var(--px) 0 0 0 var(--color-focus);
+}
+a.kit-skip-link:focus,
+a.kit-skip-link:focus-visible {
+  transform: none;
+  outline: none;
+}
+#doc-content:focus {
+  outline: none;
 }
 #top > .kit-gbar {
   position: relative;
@@ -277,6 +308,17 @@ a.kit-dox-tab.is-active {
 a.kit-dox-tab.is-active {
   font-weight: 600;
 }
+/* external tabs (LegacyScriptEngine, About): the docs row's external mark */
+a.kit-dox-tab,
+a.kit-dox-drawer-link {
+  gap: 0.3rem;
+}
+.kit-dox-tab-ext {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
+}
 /* current section: a 2px pixel rule in the primary colour, flush with the row's bottom edge */
 a.kit-dox-tab.is-active::after {
   content: "";
@@ -306,7 +348,8 @@ a.kit-dox-tab.is-active::after {
   margin: 0;
 }
 a.kit-dox-drawer-link:is(:link, :visited, :hover, :focus, :active) {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 0.5rem 0.75rem;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -370,11 +413,22 @@ a.kit-dox-drawer-link.is-active {
   }
 }
 /* too narrow for brand + sections + search in one row: the sections get their own row below (like the docs
-   header's tabs row; Doxygen keeps its menu button off until 768px) */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+   header's tabs row; Doxygen keeps its menu button off until 768px, so on the narrowest of these widths the
+   tabs wrap onto a second line instead of being clipped) */
+@media screen and (min-width: 768px) and (max-width: 1299px) {
+  /* the sections row takes the full width (as on the docs pages); the search sits at the right of the brand row */
+  #top {
+    position: relative;
+  }
   #titlearea.kit-dox-row {
+    flex: 1 1 100%;
     flex-wrap: wrap;
     height: auto;
+  }
+  #main-nav {
+    position: absolute;
+    top: var(--spacing-globalbar);
+    right: 0;
   }
   a.kit-dox-brand:is(:link, :visited, :hover, :focus, :active) {
     height: var(--spacing-header);
@@ -382,8 +436,14 @@ a.kit-dox-drawer-link.is-active {
   }
   .kit-dox-tabs {
     flex: 0 0 100%;
-    height: 2.75rem;
     margin-left: -0.75rem;
+  }
+  .kit-dox-tabs > ul {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .kit-dox-tabs li {
+    height: 2.75rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -426,6 +486,11 @@ a.kit-dox-drawer-link.is-active {
   }
   :is(#top, #titlearea) > .sm-dox > * {
     pointer-events: auto;
+  }
+  /* the menu button is a label for a visually hidden checkbox: show the kit's pixel focus ring on the label */
+  #main-menu-state:focus-visible + .main-menu-btn {
+    outline: var(--px) solid var(--color-focus);
+    outline-offset: var(--px);
   }
   :is(#top, #titlearea) > .sm-dox > .main-menu-btn {
     position: absolute;

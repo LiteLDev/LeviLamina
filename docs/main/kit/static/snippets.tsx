@@ -2,6 +2,7 @@
 // kit.js drives their menus (theme, language) and translates the chrome into the visitor's language.
 import { renderToStaticMarkup } from 'react-dom/server';
 import { GlobalBar, GlobalNavList } from '../components/GlobalBar';
+import { PixelIcon, type PixelIconName } from '../components/PixelIcon';
 import { SiteFooter } from '../components/SiteFooter';
 import type { DocsProjectId, SiteId } from '../components/projects';
 
@@ -18,4 +19,9 @@ export function globalNavListHtml(opts: { locale?: string; current?: SiteId; cur
 
 export function footerHtml(opts: { locale?: string; extra?: string } = {}): string {
   return renderToStaticMarkup(<SiteFooter locale={opts.locale} extra={opts.extra} />);
+}
+
+/** A decorative pixel icon (aria-hidden) as plain SVG markup, e.g. the external-link mark on the Doxygen row. */
+export function pixelIconHtml(name: PixelIconName, className?: string): string {
+  return renderToStaticMarkup(<PixelIcon name={name} className={className} />);
 }
