@@ -30,11 +30,11 @@
 这些教程需要C++编程语言的基础知识。如果您刚刚开始使用C++或需要复习一下，以下是一个非详尽的列表。
 
 - [C++ Developer Roadmap](https://roadmap.sh/cpp)
-- [cppreference.com](https://en.cppreference.com/w/)
+- [cppreference.com](https://en.cppreference.com/)
 - [C++ Tutorial](https://www.w3schools.com/cpp/)
 - [C++ Language Tutorial](https://cplusplus.com/doc/tutorial/)
 - [hacking C++](https://hackingcpp.com/)
-- [C++ Core Guidelines](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
+- [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
 ## 设置工作区
 

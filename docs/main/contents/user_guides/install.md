@@ -16,7 +16,7 @@ To run Bedrock Dedicated Server for Minecraft, you need to install the following
 
 ## Installing via lip
 
-1. Download the installer ends with **setup.exe** from [here](https://github.com/futrime/lip/releases), execute it to install lip.
+1. Download the installer ends with **setup.exe** from [here](https://github.com/LiteLDev/lip/releases), execute it to install lip.
 2. Begin by creating a directory for your Minecraft server and navigating into it:
     ```shell
     mkdir myserver

@@ -16,7 +16,7 @@
 
 ## 通过lip安装
 
-1. 前往[此处](https://github.com/futrime/lip/releases)，下载以**setup.exe**结尾的安装包，执行以安装
+1. 前往[此处](https://github.com/LiteLDev/lip/releases)，下载以**setup.exe**结尾的安装包，执行以安装
 2. (可选)可以通过`lip config set`命令来设置GitHub和GoProxy镜像，例如:
     ```shell
     lip config set go_module_proxy https://goproxy.cn

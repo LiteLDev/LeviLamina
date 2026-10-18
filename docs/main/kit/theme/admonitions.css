@@ -1,0 +1,196 @@
+/*
+ * levimc-kit — admonitions (MkDocs `!!!`/`???`, VitePress `:::`, GitHub `> [!NOTE]`) and content tabs.
+ *
+ *   <div class="kit-adm" data-type="Warning" data-kind="warning">           (static)
+ *     <p class="kit-adm-title">Warning</p><div class="kit-adm-body">…</div></div>
+ *   <details class="kit-adm" data-kind="tip" open>                          (collapsible: ??? / ???+ / ::: details)
+ *     <summary class="kit-adm-title">Tip</summary><div class="kit-adm-body">…</div></details>
+ *
+ * data-kind is the canonical style (aliases resolved by the engine): note abstract info tip success question
+ * warning failure danger bug example quote details. Icons are 16×16 pixel sprites from theme/generated.css.
+ */
+
+@layer components {
+  .kit-adm {
+    --adm: var(--color-adm-note);
+    --adm-icon: var(--kit-icon-book-quill);
+    --adm-frame: color-mix(in srgb, var(--adm) 32%, var(--color-line));
+    position: relative;
+    margin: 1.5rem var(--px);
+    padding: 0;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    background: color-mix(in srgb, var(--adm) 6.5%, var(--color-surface));
+    box-shadow:
+      0 calc(var(--px) * -1) 0 0 var(--adm-frame),
+      0 var(--px) 0 0 var(--adm-frame),
+      calc(var(--px) * -1) 0 0 0 var(--adm-frame),
+      var(--px) 0 0 0 var(--adm-frame),
+      inset calc(var(--px) * 2) 0 0 0 var(--adm);
+  }
+  .dark .kit-adm {
+    background: color-mix(in srgb, var(--adm) 9%, var(--color-surface));
+    --adm-frame: color-mix(in srgb, var(--adm) 30%, var(--color-line));
+  }
+
+  .kit-adm > .kit-adm-title,
+  .kit-adm-title {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 0.75rem 1rem 0.125rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 650;
+    line-height: 1.45;
+    color: var(--color-ink);
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .kit-adm-title-text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .kit-adm-title::before {
+    content: "";
+    flex: none;
+    width: 16px;
+    height: 16px;
+    background: var(--adm-icon) center / 16px 16px no-repeat;
+    image-rendering: pixelated;
+  }
+  .kit-adm-body {
+    padding: 0.25rem 1.125rem 0.875rem 1.25rem;
+  }
+  .kit-adm-body > :first-child {
+    margin-top: 0.25rem;
+  }
+  .kit-adm-body > :last-child {
+    margin-bottom: 0;
+  }
+  .kit-adm:not(:has(> .kit-adm-title)) > .kit-adm-body {
+    padding-top: 0.875rem;
+  }
+  .kit-adm .kit-adm {
+    margin: 1rem var(--px);
+  }
+  .kit-adm .kit-code {
+    margin: 1rem var(--px);
+  }
+
+  /* monochrome glyph kinds: tint the sprite with the kind colour */
+  .kit-adm:is([data-kind="question"], [data-kind="quote"]) > .kit-adm-title::before {
+    background: var(--adm);
+    -webkit-mask: var(--adm-icon) center / 16px 16px no-repeat;
+    mask: var(--adm-icon) center / 16px 16px no-repeat;
+  }
+
+  /* collapsible */
+  details.kit-adm > summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    padding-bottom: 0.75rem;
+  }
+  details.kit-adm[open] > summary {
+    padding-bottom: 0.125rem;
+  }
+  details.kit-adm > summary::-webkit-details-marker {
+    display: none;
+  }
+  details.kit-adm > summary::after {
+    content: "";
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    background: var(--color-muted);
+    -webkit-mask: var(--kit-icon-chevron-right) center / 16px 16px no-repeat;
+    mask: var(--kit-icon-chevron-right) center / 16px 16px no-repeat;
+    transition: transform 0.18s var(--ease-pixel);
+  }
+  details.kit-adm[open] > summary::after {
+    transform: rotate(90deg);
+  }
+  details.kit-adm > summary:hover::after {
+    background: var(--color-ink);
+  }
+  details.kit-adm > summary:focus-visible {
+    outline: var(--px) solid var(--color-focus);
+    outline-offset: calc(var(--px) * -1);
+  }
+
+  /* kinds */
+  .kit-adm[data-kind="abstract"] {
+    --adm: var(--color-adm-abstract);
+    --adm-icon: var(--kit-icon-paper);
+  }
+  .kit-adm[data-kind="info"] {
+    --adm: var(--color-adm-info);
+    --adm-icon: var(--kit-icon-compass);
+  }
+  .kit-adm[data-kind="tip"] {
+    --adm: var(--color-adm-tip);
+    --adm-icon: var(--kit-icon-emerald);
+  }
+  .kit-adm[data-kind="success"] {
+    --adm: var(--color-adm-success);
+    --adm-icon: var(--kit-icon-diamond);
+  }
+  .kit-adm[data-kind="question"] {
+    --adm: var(--color-adm-question);
+    --adm-icon: var(--kit-icon-question);
+  }
+  .kit-adm[data-kind="warning"] {
+    --adm: var(--color-adm-warning);
+    --adm-icon: var(--kit-icon-torch);
+  }
+  .kit-adm[data-kind="failure"] {
+    --adm: var(--color-adm-failure);
+    --adm-icon: var(--kit-icon-tnt);
+  }
+  .kit-adm[data-kind="danger"] {
+    --adm: var(--color-adm-danger);
+    --adm-icon: var(--kit-icon-tnt);
+  }
+  .kit-adm[data-kind="bug"] {
+    --adm: var(--color-adm-bug);
+    --adm-icon: var(--kit-icon-bug);
+  }
+  .kit-adm[data-kind="example"] {
+    --adm: var(--color-adm-example);
+    --adm-icon: var(--kit-icon-potion);
+  }
+  .kit-adm[data-kind="quote"] {
+    --adm: var(--color-adm-quote);
+    --adm-icon: var(--kit-icon-quote);
+  }
+  .kit-adm[data-kind="details"] {
+    --adm: var(--color-line-strong);
+    --adm-icon: var(--kit-icon-chest);
+  }
+  .dark .kit-adm[data-kind="details"] {
+    --adm: #4a6580;
+  }
+
+  /* ---------------------------------------------------------------- content tabs (pymdownx.tabbed) */
+  .kit-tabs {
+    margin: 1.5rem 0;
+  }
+  .kit-tabs-bar {
+    margin-bottom: 0.875rem;
+  }
+  .kit-tab-panel > :first-child {
+    margin-top: 0;
+  }
+  .kit-tab-panel > :last-child {
+    margin-bottom: 0;
+  }
+  .kit-tab-panel > .kit-code:first-child {
+    margin-top: var(--px);
+  }
+  .kit-tab-panel:focus-visible {
+    outline: var(--px) dashed var(--color-focus);
+    outline-offset: 4px;
+  }
+}
