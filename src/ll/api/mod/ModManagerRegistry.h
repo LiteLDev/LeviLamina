@@ -35,6 +35,8 @@ class ModManagerRegistry {
 
     Expected<> onModDisable(std::string_view name) const noexcept;
 
+    uint64 getLoadConfigurationRevision() const;
+
 public:
     using CallbackId = uint64;
 
@@ -48,9 +50,9 @@ public:
 
     LLNDAPI static ModManagerRegistry& getInstance();
 
-    LLNDAPI bool addManager(std::shared_ptr<ModManager> const& manager);
+    LLAPI bool addManager(std::shared_ptr<ModManager> const& manager);
 
-    LLNDAPI bool eraseManager(std::string_view type);
+    LLAPI bool eraseManager(std::string_view type);
 
     LLNDAPI bool hasManager(std::string_view type) const;
 
