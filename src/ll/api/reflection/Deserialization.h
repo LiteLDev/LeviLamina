@@ -362,14 +362,14 @@ inline Expected<> field_deserialize_default_impl(T& t, J&& j, F const& keyFormat
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
 inline Expected<> member_deserialize(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize_impl<MemberPtr, true>(t, std::forward<J>(j), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
 inline Expected<> member_deserialize_required(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize_impl<MemberPtr, false>(t, std::forward<J>(j), keyFormatter);
 }
@@ -378,7 +378,7 @@ template <auto MemberPtr, class T, class D, class J, IsKeyFormatter F>
 inline Expected<> member_deserialize_or(T& t, J&& j, D&& defaultValue, F const& keyFormatter) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return member_deserialize_or_impl<MemberPtr>(t, std::forward<J>(j), std::forward<D>(defaultValue), keyFormatter);
@@ -386,14 +386,14 @@ inline Expected<> member_deserialize_or(T& t, J&& j, D&& defaultValue, F const& 
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
 inline Expected<> field_deserialize(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize_impl<Key, true>(t, std::forward<J>(j), keyFormatter);
 }
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
 inline Expected<> field_deserialize_required(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize_impl<Key, false>(t, std::forward<J>(j), keyFormatter);
 }
@@ -402,7 +402,7 @@ template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
 inline Expected<> field_deserialize_or(T& t, J&& j, D&& defaultValue, F const& keyFormatter) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return field_deserialize_or_impl<Key>(t, std::forward<J>(j), std::forward<D>(defaultValue), keyFormatter);
@@ -444,14 +444,14 @@ inline Expected<> field_deserialize_or(T& t, J const& j, D&& defaultValue, F con
 
 template <auto MemberPtr, class T, class J>
 inline Expected<> member_deserialize(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize<MemberPtr>(t, std::forward<J>(j), detail::default_key_formatter);
 }
 
 template <auto MemberPtr, class T, class J>
 inline Expected<> member_deserialize_required(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize_required<MemberPtr>(t, std::forward<J>(j), detail::default_key_formatter);
 }
@@ -460,7 +460,7 @@ template <auto MemberPtr, class T, class D, class J>
 inline Expected<> member_deserialize_or(T& t, J&& j, D&& defaultValue) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return member_deserialize_or<MemberPtr>(
@@ -473,14 +473,14 @@ inline Expected<> member_deserialize_or(T& t, J&& j, D&& defaultValue) noexcept
 
 template <ll::FixedString Key, class T, class J>
 inline Expected<> field_deserialize(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize<Key>(t, std::forward<J>(j), detail::default_key_formatter);
 }
 
 template <ll::FixedString Key, class T, class J>
 inline Expected<> field_deserialize_required(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize_required<Key>(t, std::forward<J>(j), detail::default_key_formatter);
 }
@@ -489,7 +489,7 @@ template <ll::FixedString Key, class T, class D, class J>
 inline Expected<> field_deserialize_or(T& t, J&& j, D&& defaultValue) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return field_deserialize_or<Key>(
@@ -536,14 +536,14 @@ inline Expected<> field_deserialize_or(T& t, J const& j, D&& defaultValue) noexc
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
 inline Expected<> member(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize<MemberPtr>(t, std::forward<J>(j), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
 inline Expected<> required_member(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize_required<MemberPtr>(t, std::forward<J>(j), keyFormatter);
 }
@@ -552,7 +552,7 @@ template <auto MemberPtr, class T, class D, class J, IsKeyFormatter F>
 inline Expected<> default_member(T& t, J&& j, D&& defaultValue, F const& keyFormatter) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return member_deserialize_or<MemberPtr>(t, std::forward<J>(j), std::forward<D>(defaultValue), keyFormatter);
@@ -560,21 +560,21 @@ inline Expected<> default_member(T& t, J&& j, D&& defaultValue, F const& keyForm
 
 template <auto MemberPtr, class T, class J, IsKeyFormatter F>
 inline Expected<> default_member(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize_default_impl<MemberPtr>(t, std::forward<J>(j), keyFormatter);
 }
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
 inline Expected<> field(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize<Key>(t, std::forward<J>(j), keyFormatter);
 }
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
 inline Expected<> required_field(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize_required<Key>(t, std::forward<J>(j), keyFormatter);
 }
@@ -583,7 +583,7 @@ template <ll::FixedString Key, class T, class D, class J, IsKeyFormatter F>
 inline Expected<> default_field(T& t, J&& j, D&& defaultValue, F const& keyFormatter) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return field_deserialize_or<Key>(t, std::forward<J>(j), std::forward<D>(defaultValue), keyFormatter);
@@ -591,21 +591,21 @@ inline Expected<> default_field(T& t, J&& j, D&& defaultValue, F const& keyForma
 
 template <ll::FixedString Key, class T, class J, IsKeyFormatter F>
 inline Expected<> default_field(T& t, J&& j, F const& keyFormatter) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize_default_impl<Key>(t, std::forward<J>(j), keyFormatter);
 }
 
 template <auto MemberPtr, class T, class J>
 inline Expected<> member(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member<MemberPtr>(t, std::forward<J>(j), detail::default_key_formatter);
 }
 
 template <auto MemberPtr, class T, class J>
 inline Expected<> required_member(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return required_member<MemberPtr>(t, std::forward<J>(j), detail::default_key_formatter);
 }
@@ -614,7 +614,7 @@ template <auto MemberPtr, class T, class D, class J>
 inline Expected<> default_member(T& t, J&& j, D&& defaultValue) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return default_member<MemberPtr>(
@@ -627,21 +627,21 @@ inline Expected<> default_member(T& t, J&& j, D&& defaultValue) noexcept
 
 template <auto MemberPtr, class T, class J>
 inline Expected<> default_member(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return member_deserialize_default_impl<MemberPtr>(t, std::forward<J>(j), detail::default_key_formatter);
 }
 
 template <ll::FixedString Key, class T, class J>
 inline Expected<> field(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field<Key>(t, std::forward<J>(j), detail::default_key_formatter);
 }
 
 template <ll::FixedString Key, class T, class J>
 inline Expected<> required_field(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return required_field<Key>(t, std::forward<J>(j), detail::default_key_formatter);
 }
@@ -650,7 +650,7 @@ template <ll::FixedString Key, class T, class D, class J>
 inline Expected<> default_field(T& t, J&& j, D&& defaultValue) noexcept
     requires(
         !IsKeyFormatter<std::remove_cvref_t<D>>
-        && (!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+        && (!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
     )
 {
     return default_field<Key>(t, std::forward<J>(j), std::forward<D>(defaultValue), detail::default_key_formatter);
@@ -658,7 +658,7 @@ inline Expected<> default_field(T& t, J&& j, D&& defaultValue) noexcept
 
 template <ll::FixedString Key, class T, class J>
 inline Expected<> default_field(T& t, J&& j) noexcept
-    requires(!std::is_lvalue_reference_v<J &&> || std::is_const_v<std::remove_reference_t<J>>)
+    requires(!std::is_lvalue_reference_v<J&&> || std::is_const_v<std::remove_reference_t<J>>)
 {
     return field_deserialize_default_impl<Key>(t, std::forward<J>(j), detail::default_key_formatter);
 }

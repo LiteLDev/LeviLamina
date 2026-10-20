@@ -42,7 +42,7 @@ public:
         ::CompoundTag,
         ::IntArrayTag>;
 
-    using Variant = Types::to<::std::variant>;
+    using Variant  = Types::to<::std::variant>;
     using string_t = std::string;
 
     template <bool Const>

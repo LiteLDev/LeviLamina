@@ -1,6 +1,6 @@
 #include "ll/api/io/Logger.h"
 
-#include <mutex>
+#include <shared_mutex>
 
 #include "ll/api/base/Containers.h"
 #include "ll/api/io/ConsoleSink.h"
@@ -37,14 +37,32 @@ static thread::ThreadPoolExecutor& getLogPool() {
     return ins;
 }
 
+class SinkMap : public ConcurrentDenseMap<std::string, std::shared_ptr<SinkBase>> {
+    using Base  = ConcurrentDenseMap<std::string, std::shared_ptr<SinkBase>>;
+    using Inner = typename Base::Inner;
+
+public:
+    class LockedSubmap {
+        Inner const*                        inner;
+        std::shared_lock<std::shared_mutex> lock;
+
+    public:
+        explicit LockedSubmap(Inner const& inner) : inner(&inner), lock(const_cast<Inner&>(inner)) {}
+
+        auto begin() const { return inner->set_.begin(); }
+        auto end() const { return inner->set_.end(); }
+    };
+
+    LockedSubmap lockedSubmap(size_t index) const { return LockedSubmap{this->get_inner(index)}; }
+};
+
 struct Logger::Impl {
     std::string title;
     LogLevel    level;
 
     thread::ThreadPoolExecutor& pool;
 
-    SmallStringMap<std::shared_ptr<SinkBase>> sinks;
-    std::mutex                                sinkMutex;
+    SinkMap sinks;
 
     Impl(std::string_view title, thread::ThreadPoolExecutor& pool) : title(title), pool(pool) {}
 };
@@ -66,10 +84,7 @@ void Logger::printStr(LogLevel level, std::string&& msg) const noexcept try {
     impl->pool.execute([logger = shared_from_this(),
                         msg    = LogMessage{std::move(msg), impl->title, level, sys_utils::getLocalTime()}] {
         try {
-            std::lock_guard lock{logger->impl->sinkMutex};
-            for (auto& [name, sink] : logger->impl->sinks) {
-                sink->append(msg);
-            }
+            logger->impl->sinks.for_each_m([&](auto& pair) { pair.second->append(msg); });
         } catch (...) {
             printLogError(msg.msg);
         }
@@ -81,58 +96,51 @@ void Logger::printStr(LogLevel level, std::string&& msg) const noexcept try {
 void Logger::setLevel(LogLevel level) { impl->level = level; }
 
 void Logger::setFlushLevel(LogLevel level) {
-    std::lock_guard lock{impl->sinkMutex};
-    for (auto& [name, sink] : impl->sinks) {
-        sink->setFlushLevel(level);
-    }
+    impl->sinks.for_each_m([&](auto& pair) { pair.second->setFlushLevel(level); });
 }
 void Logger::setFormatter(Polymorphic<Formatter> formatter) {
-    std::lock_guard lock{impl->sinkMutex};
-    for (auto& [name, sink] : impl->sinks) {
-        sink->setFormatter(formatter);
-    }
+    impl->sinks.for_each_m([&](auto& pair) { pair.second->setFormatter(formatter); });
 }
 void Logger::flush() const {
-    std::lock_guard lock{impl->sinkMutex};
-    for (auto& [name, sink] : impl->sinks) {
-        sink->flush();
-    }
+    impl->sinks.for_each_m([&](auto& pair) { pair.second->flush(); });
 }
 
 std::shared_ptr<SinkBase> Logger::setSink(std::string_view name, std::shared_ptr<SinkBase> sink) const {
     if (!sink) {
         return removeSink(name);
     }
-    std::lock_guard lock{impl->sinkMutex};
-    return std::exchange(impl->sinks[name], std::move(sink));
+    std::shared_ptr<SinkBase> old;
+    impl->sinks.lazy_emplace_l(
+        name,
+        [&](auto& pair) { old = std::exchange(pair.second, std::move(sink)); },
+        [&](auto const& ctor) { ctor(std::string{name}, std::move(sink)); }
+    );
+    return old;
 }
 
 std::shared_ptr<SinkBase> Logger::removeSink(std::string_view name) const {
-    std::lock_guard lock{impl->sinkMutex};
-    auto            it = impl->sinks.find(name);
-    if (it == impl->sinks.end()) {
-        return nullptr;
-    }
-    auto sink = std::move(it->second);
-    impl->sinks.erase(it);
+    std::shared_ptr<SinkBase> sink;
+    impl->sinks.erase_if(name, [&](auto& pair) {
+        sink = std::move(pair.second);
+        return true;
+    });
     return sink;
 }
 
 std::shared_ptr<SinkBase> Logger::getSink(std::string_view name) const {
-    std::lock_guard lock{impl->sinkMutex};
-    auto            it = impl->sinks.find(name);
-    return it == impl->sinks.end() ? nullptr : it->second;
+    std::shared_ptr<SinkBase> sink;
+    impl->sinks.if_contains(name, [&](auto const& pair) { sink = pair.second; });
+    return sink;
 }
 
-void Logger::clearSinks() const {
-    std::lock_guard lock{impl->sinkMutex};
-    impl->sinks.clear();
-}
+void Logger::clearSinks() const { impl->sinks.clear(); }
 
 coro::Generator<std::pair<std::string_view, SinkBase&>> Logger::sinks() const {
-    std::lock_guard lock{impl->sinkMutex};
-    for (auto& [name, sink] : impl->sinks) {
-        co_yield {name, *sink};
+    for (size_t index = 0; index < impl->sinks.subcnt(); ++index) {
+        auto submap = impl->sinks.lockedSubmap(index);
+        for (auto const& [name, sink] : submap) {
+            co_yield {name, *sink};
+        }
     }
 }
 } // namespace ll::io
