@@ -126,7 +126,6 @@ resolved for your current configuration.
 
 | Library            | Purpose                    |
 | ------------------ | -------------------------- |
-| `mimalloc`         | High-performance allocator |
 | `parallel-hashmap` | Fast hash maps             |
 | `concurrentqueue`  | Lock-free queue            |
 
