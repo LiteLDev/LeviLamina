@@ -14,6 +14,7 @@
 
 #include <array>
 #include <atomic>
+#include <semaphore>
 #include <thread>
 #include <vector>
 
@@ -151,6 +152,57 @@ TEST(ExecTest, CallbackTransformerStopsAfterValueGreaterThanTen) {
 
     ASSERT_TRUE(result.has_value());
     EXPECT_EQ(result.value(), 11);
+}
+
+namespace {
+
+constexpr size_t waiterCount = 4;
+
+struct MultiSleepContext {
+    InterruptableSleep    sleeper;
+    std::binary_semaphore started{0};
+    std::atomic_size_t    finished{0};
+};
+
+CoroTask<void> multiSleepWaiter(MultiSleepContext& ctx) {
+    ctx.started.release();
+    co_await ctx.sleeper.sleep();
+    ++ctx.finished;
+}
+
+CoroTask<size_t> multiSleepAll(MultiSleepContext& ctx) {
+    std::vector<CoroTask<void>> tasks;
+    tasks.reserve(waiterCount);
+    for (size_t i = 0; i < waiterCount; ++i) {
+        tasks.emplace_back(multiSleepWaiter(ctx));
+    }
+    co_await collectAll(std::move(tasks));
+    co_return ctx.finished.load();
+}
+
+} // namespace
+
+TEST(ExecTest, InterruptableSleepInterruptsAllWaiters) {
+    MultiSleepContext  ctx;
+    std::atomic_size_t interrupted{0};
+
+    std::thread interrupter{[&ctx, &interrupted] {
+        for (size_t i = 0; i < waiterCount; ++i) {
+            ctx.started.acquire();
+        }
+        // An interrupt may arrive before a waiter has registered, so keep waking until all of them are done.
+        while (ctx.finished.load() < waiterCount) {
+            interrupted += ctx.sleeper.interrupt();
+            std::this_thread::yield();
+        }
+    }};
+
+    auto result = multiSleepAll(ctx).syncLaunch(thread::ThreadPoolExecutor::getDefault());
+    interrupter.join();
+
+    ASSERT_TRUE(result.has_value());
+    EXPECT_EQ(result.value(), waiterCount);
+    EXPECT_EQ(interrupted.load(), waiterCount);
 }
 
 TEST(ExecTest, GeneratorProducesExpectedSequence) {
