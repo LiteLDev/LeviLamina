@@ -74,7 +74,7 @@ target("ExampleMod") -- Change this to your mod name.
 add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
 ```
 
-接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[LeviMC 模组](https://pkg.levimc.org)和[LeviLauncher](https://github.com/LiteLDev/LeviLauncher)收录，并能被全世界的用户下载安装。  
+接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[LeviMC 模组](https://levimc.org/mods/)和[LeviLauncher](https://github.com/LiteLDev/LeviLauncher)收录，并能被全世界的用户下载安装。  
 !!! tip
     其中`label`为空的`variant`代表服务端，`label`为`client`的variant代表客户端，如果您的模组只在服务端/客户端可用，可以将无用的variant删掉。在lip中可以用以下命令来安装：
     ```shell
