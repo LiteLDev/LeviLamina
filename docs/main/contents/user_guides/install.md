@@ -57,7 +57,7 @@ many elsewhere around the web.
 ## Installing Mods
 
 Most mods, especially those listed on LeviMC Mods, can be installed by pasting the provided command. For example, to
-install [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
+install [LeviAntiCheat](https://levimc.org/mods/github.com/LiteLDev/LeviAntiCheat/):
 
 ```shell
 lip install github.com/LiteLDev/LeviAntiCheat

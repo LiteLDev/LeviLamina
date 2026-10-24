@@ -64,7 +64,7 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
 
 ## 安装模组
 
-大多数 Mods（尤其是 LeviMC 模组 上列出的）都可通过运行提供的命令进行安装。例如，要安装 [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
+大多数 Mods（尤其是 LeviMC 模组 上列出的）都可通过运行提供的命令进行安装。例如，要安装 [LeviAntiCheat](https://levimc.org/mods/github.com/LiteLDev/LeviAntiCheat/):
 
 ```shell
 lip install github.com/LiteLDev/LeviAntiCheat
