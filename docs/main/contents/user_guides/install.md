@@ -51,7 +51,7 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
 
 ## Finding Mods
 
-Before adding mods, explore your options. The best source is [LeviMC Mods](https://pkg.levimc.org), although you can discover
+Before adding mods, explore your options. The best source is [LeviMC Mods](https://levimc.org/mods/), although you can discover
 many elsewhere around the web.
 
 ## Installing Mods

@@ -75,7 +75,7 @@ Next, it is recommended to manually pin the LeviLamina version used by your mod.
 add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
 ```
 
-Next, modify the contents of `tooth.json`. `tooth.json` provides information required by lip to install mod packages. After proper configuration, your mod will be included in [LeviMC Mods](https://pkg.levimc.org) and [LeviLauncher](https://github.com/LiteLDev/LeviLauncher), allowing users worldwide to download and install it.
+Next, modify the contents of `tooth.json`. `tooth.json` provides information required by lip to install mod packages. After proper configuration, your mod will be included in [LeviMC Mods](https://levimc.org/mods/) and [LeviLauncher](https://github.com/LiteLDev/LeviLauncher), allowing users worldwide to download and install it.
 
 !!! tip
     In `tooth.json`, a `variant` with an empty `label` represents the server version, while a `variant` with `label` set to `client` represents the client version. If your mod is only available on the server or client, you can remove the unnecessary variant. In lip, you can install them using the following commands:
