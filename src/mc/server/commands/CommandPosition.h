@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+#include <cmath>
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
@@ -27,9 +29,10 @@ public:
     BlockPos getBlockPos(int version, CommandOrigin const& origin, Vec3 const& offset) const {
         BlockPos result;
         auto     pos = getPosition(version, origin, offset);
-        result.x     = pos.x + 0.001f;
-        result.y     = pos.y + 0.001f;
-        result.z     = pos.z + 0.001f;
+        // rounded down like the game's own BlockPos(Vec3): -4.5 is block -5, not -4
+        result.x     = static_cast<int>(std::floor(pos.x + 0.001f));
+        result.y     = static_cast<int>(std::floor(pos.y + 0.001f));
+        result.z     = static_cast<int>(std::floor(pos.z + 0.001f));
         return result;
     }
 

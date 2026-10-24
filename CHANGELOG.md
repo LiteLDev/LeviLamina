@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- `CommandPosition::getBlockPos` rounds down instead of toward zero, so negative coordinates no longer land one block off @futrime
+
 ## [26.51.8] - 2026-10-24
 
 ### Changed
