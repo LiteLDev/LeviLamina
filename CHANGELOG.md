@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.51.8] - 2026-10-24
+
+### Changed
+
+- Enhanced reflection @zimuya4153
+- Enhanced function_traits @zimuya4153
+- Point the translation link at Crowdin @futrime
+
+### Fixed
+
+- Fixed non-HAS_CXX23 compilation @zimuya4153
+- Fixed IAsyncGetResult @killcerr
+
 ## [26.51.7] - 2026-10-12
 
 ### Added
@@ -2010,7 +2023,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.7...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.8...HEAD
+[26.51.8]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.7...v26.51.8
 [26.51.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.6...v26.51.7
 [26.51.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.5...v26.51.6
 [26.51.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.4...v26.51.5
