@@ -153,6 +153,7 @@ public:
 public:
     // mContainers is private, so the key container has to be exposed through an accessor of its own.
     [[nodiscard]] key_container_type const& keys() const noexcept { return mContainers.keys; }
+    [[nodiscard]] mapped_container_type const& values() const noexcept { return mContainers.values; }
 
     // In the original it is private and only reachable through an inlined public wrapper, which is why it is exposed
     // here next to `emplace_hint`.
