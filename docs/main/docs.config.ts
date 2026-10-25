@@ -21,7 +21,9 @@ export default defineDocsConfig({
     defaultLocale: 'en',
     locales: [
       { code: 'en', label: 'English', lang: 'en' },
-      { code: 'zh', label: '中文', lang: 'zh' },
+      { code: 'zh', label: '简体中文', lang: 'zh' },
+      // Traditional Chinese, generated from the zh pages (levimc-kit convertFrom)
+      { code: 'zh-Hant', label: '繁體中文', lang: 'zh-Hant', convertFrom: 'zh' },
     ],
   },
   urlStyle: 'directory',

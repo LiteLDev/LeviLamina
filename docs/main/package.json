@@ -36,6 +36,7 @@
     "hast-util-to-html": "9.0.5",
     "hast-util-to-string": "3.0.1",
     "mdast-util-to-string": "4.0.0",
+    "opencc-js": "1.4.2",
     "picomatch": "4.0.7",
     "rehype-raw": "7.0.0",
     "remark-frontmatter": "5.0.0",
