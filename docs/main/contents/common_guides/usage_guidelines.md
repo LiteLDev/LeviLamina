@@ -42,7 +42,7 @@ If you use any part of any name, brand, or asset, then:
   - You (rather than us) are responsible for the products or services (including events, servers, books, and handmade items).
   - Who the publisher, manufacturer, seller, organizer, and/or owner is.
   - The contact and contact information for products, services, or any related purchases (chat and forum links are not acceptable).
-- Attempting to obtain any data that violates the [Minecraft EULA](https://www.minecraft.net/en-us/eula) or could harm the security of [Minecraft](https://www.minecraft.net/en-us) by dumping [*LeviLamina*](https://github.com/LiteLDev/LeviLamina) or any of [our other products](https://github.com/orgs/LiteLDev/repositories) (see the first entry under "**DEFINITIONS**" for more details) is unwise!
+- Attempting to obtain any data that violates the [Minecraft EULA](https://www.minecraft.net/en-us/eula) or could harm the security of [Minecraft](https://www.minecraft.net/en-us) by dumping [*LeviLamina*](https://github.com/LiteLDev/LeviLamina) or any of [our other products](https://github.com/orgs/LiteLDev/repositories) (see the first entry under "**Definitions**" in the [EULA](https://github.com/LiteLDev/LeviLamina/blob/HEAD/EULA.en.md) for more details) is unwise!
 - **Do not** attempt to reverse *LeviLamina* for malicious purposes!
 - We do **not** want you to use *LeviLamina* to develop any programs that could compromise Minecraft's security, or any other products that we consider to be a threat to Minecraft's security.
 

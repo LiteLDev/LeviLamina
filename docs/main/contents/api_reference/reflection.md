@@ -1,3 +1,5 @@
+# Reflection
+
 `ll/api/reflection/` · **Common**
 
 ## Overview
@@ -222,7 +224,7 @@ Notes:
 
 - **Write both layers.** With only `to_string` / `from_string` the type works as a key, but as an ordinary member it is still expanded member by member (for an aggregate) or reported as unsupported (for a non-aggregate).
 - **Match the signatures exactly and never return `void`**, or the specialization is silently ignored — the full checklist is in the [advanced page](reflection_advanced.md).
-- This is exactly what LL does for `mce::UUID` and `ll::data::Version`; they pair an in-place `serialize(t, j)` that writes the string into the target with a value `deserialize`, and the framework accepts both spellings.
+- This is exactly what LeviLamina does for `mce::UUID` and `ll::data::Version`; they pair an in-place `serialize(t, j)` that writes the string into the target with a value `deserialize`, and the framework accepts both spellings.
 - To change only *how a key is spelled* (uppercase UUID keys, say) without making the type a string, use a key formatter, below.
 
 ## Optionals and Required Fields

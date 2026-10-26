@@ -172,5 +172,5 @@ void callVirtual(void* obj) {
 
 ## 相关模块
 
-- [操作指南：钩子](../developer_guides/how_to_guides/hook_guide.md) — 分步教程
-- [操作指南：查找函数](../developer_guides/how_to_guides/find_function_guide.md) — 逆向工程指南
+- [操作指南：钩子](../developer_guides/how_to_guides/hook_guide.zh.md) — 分步教程
+- [操作指南：查找函数](../developer_guides/how_to_guides/find_function_guide.zh.md) — 逆向工程指南

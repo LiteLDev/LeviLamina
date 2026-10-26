@@ -11,22 +11,22 @@
 [![English](https://img.shields.io/badge/English-informational?style=for-the-badge)](README.md)
 ![中文](https://img.shields.io/badge/简体中文-inactive?style=for-the-badge)
 
-轻量级、模块化和多功能的基岩版模组加载器，LiteLoaderBDS 的后继者
+轻量级、模块化和多功能的 Minecraft 基岩版模组加载器，LiteLoaderBDS 的后继者
 
-LeviLamina 是一个非官方的模组加载器，旨在为基岩版提供必不可少的 API 支持。它拥有全面的API，一系列的实用接口，一个强大的事件系统，以及对基本接口的全面支持。它提供了一个广泛的 API，一个强大的事件系统，以及丰富的封装开发基础设施接口，为增强基岩版的附加游戏特征和功能提供了坚实的基础。利用模组，扩展游戏功能的过程变得轻而易举，具有用户友好的开发过程和灵活的方法。
+LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版提供必不可少的 API 支持。它拥有全面的 API、一系列实用接口、强大的事件系统，以及对基本接口的广泛支持。LeviLamina 为给 Minecraft 增加游戏特性和功能提供了坚实的基础，用户友好的开发环境和灵活的方式让模组开发变得轻而易举。
 
-开发者可以轻松地用 C++ 编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，促进了直观的学习体验和无与伦比的灵活性。
+开发者可以轻松地用 C++ 编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，带来直观且高度灵活的开发体验。
 
 有关更多信息，请参阅[文档](https://docs.levimc.org/LeviLamina/zh/).
 
-## EULA 和使用准则
+## EULA 和使用指南
 
 > [!WARNING]
-> **你应该仔细阅读并遵守我们的 [EULA](EULA.zh.md) 与 [使用准则](docs/main/contents/common_guides/usage_guidelines.zh.md)。**
+> **你应该仔细阅读并遵守我们的 [EULA](EULA.zh.md) 与 [使用指南](docs/main/contents/common_guides/usage_guidelines.zh.md)。**
 
 ## 安装和使用
 
-请参考 [在服务器上安装](https://docs.levimc.org/LeviLamina/zh/user_guides/install/) 和 [在客户端上安装](https://docs.levimc.org/LeviLamina/zh/user_guides/install_on_client/)。
+请参考 [在Windows上安装服务器](https://docs.levimc.org/LeviLamina/zh/user_guides/install/) 和 [在Windows上安装客户端](https://docs.levimc.org/LeviLamina/zh/user_guides/install_on_client/)。
 
 ## 星标蹭蹭涨
 
@@ -40,7 +40,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为基岩版提供必不
 
 欢迎参与贡献！你可以[提出问题](https://github.com/LiteLDev/LeviLamina/issues/new/choose)或为我们提交拉取请求。
 
-LeviLamina 遵循 [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) 行为准则。
+LeviLamina 遵循 [Contributor Covenant](https://www.contributor-covenant.org/zh-cn/version/2/1/code_of_conduct/) 行为准则。
 
 ### 贡献者
 

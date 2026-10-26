@@ -1,8 +1,10 @@
+# Reflection (Advanced)
+
 `ll/api/reflection/` · **Common** · Advanced
 
 ## Who This Page Is For
 
-If you only want to store a plain struct as JSON, or give a type a string form, read [Reflection (Basics)](reflection.md) first. This page is for when you need to:
+If you only want to store a plain struct as JSON, or give a type a string form, read [Reflection](reflection.md) first. This page is for when you need to:
 
 - write specializations that control field names, required fields, and output shape;
 - understand how the framework picks a specialization, and why one you wrote appears to do nothing;
@@ -354,7 +356,7 @@ The framework is fully generic over its target type `J`: there is no base class,
 | Queries | `is_object` / `is_array` / `is_string` / `is_null` / `is_boolean` / `is_number` / `is_number_float` / `is_number_integer` / `is_number_unsigned`, `type_name()`, `size()` | trim to the branches you actually use |
 | Objects | `contains(key)`, `operator[](key)`, `items()` (usable as `for (auto&& [k, v] : …)`) | reading and writing objects |
 | Arrays | `operator[](index)`, `push_back(value)` | reading and writing arrays and tuples |
-| Scalars | `static_cast`-able to arithmetic types, implicitly convertible to `std::string` and `std::string_view` | reading scalars; the latter is what LL's built-in stringified specializations (`mce::UUID`, `ll::data::Version`, ...) use |
+| Scalars | `static_cast`-able to arithmetic types, implicitly convertible to `std::string` and `std::string_view` | reading scalars; the latter is what LeviLamina's built-in stringified specializations (`mce::UUID`, `ll::data::Version`, ...) use |
 | Variant only | `get<bool>()` / `get<double>()` / `get<int64>()` / `get<uint64>()`, `dump()` | only when `std::variant` appears |
 | string_view only | a `using string_t = ...;` member alias plus `template <class T> T const& get_ref() const` (the `BorrowableStringSource` concept) | only when `std::string_view` appears, see Borrowing Strings below |
 
@@ -488,6 +490,6 @@ Test: `SerializeAndDeserializeRespectKeyFormatterAndDispatcher`.
 
 ## Related
 
-- [Reflection (Basics)](reflection.md): first-time usage and the simplest specialization
+- [Reflection](reflection.md): first-time usage and the simplest specialization
 - [Config](config.md): the config system, the main consumer of reflection
 - [Base](base.md): the base utilities reflection builds on (concepts, containers, `Expected`)

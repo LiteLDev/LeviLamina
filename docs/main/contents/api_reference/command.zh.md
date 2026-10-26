@@ -25,7 +25,7 @@ Command 模块提供了在 Minecraft 基岩版中注册自定义命令的高级 
 
 ### CommandRegistrar
 
-管理所有命令注册的单例，通过 `getInstance()` 获取。
+管理所有命令注册的单例，通过 `getInstance(bool isClientSide)`（或简写 `getServerInstance()` / `getClientInstance()`）获取。
 
 ```cpp
 namespace ll::command {
@@ -272,4 +272,4 @@ void registerMultiOverload() {
 ## 相关模块
 
 - [Event（事件系统）](event.zh.md) — `ExecuteCommandEvent` 用于拦截命令
-- [操作指南：命令](../developer_guides/how_to_guides/command_guide.md) — 分步教程
+- [操作指南：命令](../developer_guides/how_to_guides/command_guide.zh.md) — 分步教程

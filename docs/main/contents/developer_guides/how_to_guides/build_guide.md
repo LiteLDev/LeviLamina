@@ -10,7 +10,8 @@ This guide covers building LeviLamina from source, including environment setup, 
 - **LLVM/Clang** — The Windows build uses the `clang-cl` toolchain
 - **MSVC 2022+** — Provides the Windows SDK and standard library that `clang-cl` builds against
 - **Git** — For version control and version number generation
-- **Windows 10/11 x64** — Currently only Windows builds are supported
+- **Windows 10/11 x64** — The main build platform. Server builds can also target Linux x86_64 (`-p linux`, which uses
+  the `clang` toolchain); client builds are Windows-only
 
 Exact tool and dependency versions are defined in `xmake.lua`; the CI workflow in
 `.github/workflows/build.yml` shows the combination that is actively tested.
@@ -180,9 +181,9 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 
 ### Examples
 
-- **Release**: `v26.1.0`
-- **Pre-release**: `v26.1.0-rc.2`
-- **Development**: `v26.1.0-rc.2+ce09050f05` (includes commit hash when `--publish=n`)
+- **Release**: `v26.51.8`
+- **Pre-release**: `v26.51.8-rc.2`
+- **Development**: `v26.51.8-rc.2+ce09050f05` (includes commit hash when `--publish=n`)
 
 Major and minor track the targeted Minecraft version. See `tooth.json` and `CHANGELOG.md` for the
 current one.
@@ -199,8 +200,8 @@ The version is injected into `src/ll/core/Version.h.in` during build:
 ```cpp
 // Generated Version.h
 #define LL_VERSION_MAJOR 26
-#define LL_VERSION_MINOR 1
-#define LL_VERSION_PATCH 0
+#define LL_VERSION_MINOR 51
+#define LL_VERSION_PATCH 8
 #define LL_VERSION_PRERELEASE "rc.2"
 #define LL_VERSION_BUILD "ce09050f05"
 ```
@@ -260,8 +261,8 @@ LeviLamina uses GitHub Actions for continuous integration:
 
 ### Release Process
 
-1. Tag commit with version: `git tag v26.1.0`
-2. Push tag: `git push origin v26.1.0`
+1. Tag commit with version: `git tag v26.51.8`
+2. Push tag: `git push origin v26.51.8`
 3. CI builds with `--publish=y`
 4. Artifacts uploaded to GitHub Releases
 

@@ -10,7 +10,7 @@
 - **LLVM/Clang** — Windows 构建使用 `clang-cl` 工具链
 - **MSVC 2022+** — 提供 `clang-cl` 所依赖的 Windows SDK 与标准库
 - **Git** — 用于版本控制和版本号生成
-- **Windows 10/11 x64** — 目前仅支持 Windows 构建
+- **Windows 10/11 x64** — 主要构建平台。服务端构建也可以面向 Linux x86_64（`-p linux`，使用 `clang` 工具链）；客户端只能在 Windows 上构建
 
 具体的工具和依赖版本以 `xmake.lua` 为准；`.github/workflows/build.yml` 中的工作流展示了当前实际
 验证过的组合。
@@ -178,9 +178,9 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 
 ### 示例
 
-- **正式版**: `v26.51.1`
-- **预发布版**: `v26.51.1-rc.2`
-- **开发版**: `v26.51.1-rc.2+ce09050f05`（`--publish=n` 时包含提交哈希）
+- **正式版**: `v26.51.8`
+- **预发布版**: `v26.51.8-rc.2`
+- **开发版**: `v26.51.8-rc.2+ce09050f05`（`--publish=n` 时包含提交哈希）
 
 主版本号与次版本号跟随所适配的 Minecraft 版本，当前版本参见 `tooth.json` 与 `CHANGELOG.md`。
 
@@ -196,8 +196,8 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 ```cpp
 // 生成的 Version.h
 #define LL_VERSION_MAJOR 26
-#define LL_VERSION_MINOR 1
-#define LL_VERSION_PATCH 0
+#define LL_VERSION_MINOR 51
+#define LL_VERSION_PATCH 8
 #define LL_VERSION_PRERELEASE "rc.2"
 #define LL_VERSION_BUILD "ce09050f05"
 ```
@@ -257,8 +257,8 @@ LeviLamina 使用 GitHub Actions 进行持续集成：
 
 ### 发布流程
 
-1. 为提交打标签: `git tag v26.1.0`
-2. 推送标签: `git push origin v26.1.0`
+1. 为提交打标签: `git tag v26.51.8`
+2. 推送标签: `git push origin v26.51.8`
 3. CI 使用 `--publish=y` 构建
 4. 产物上传到 GitHub Releases
 
@@ -285,5 +285,5 @@ xmake g --proxy_pac=github_mirror.lua
 
 ## 相关文档
 
-- [项目架构](../architecture.md) — 项目结构和设计
+- [项目架构](../architecture.zh.md) — 项目结构和设计
 - [测试指南](#构建并启用测试) — 运行和编写测试

@@ -67,12 +67,12 @@ First, modify the mod name in `xmake.lua`. Changing the mod name specifies the n
 target("ExampleMod") -- Change this to your mod name.
 ```
 
-Next, it is recommended to manually pin the LeviLamina version used by your mod. For example, if we want to use the latest version of LeviLamina 26.20, we add `26.20.*` after `levilamina` as the version requirement. You can also specify a specific commit as the version, which is useful when adapting your mod to a new LeviLamina version before an official release is available.
+Next, it is recommended to manually pin the LeviLamina version used by your mod. For example, if we want to use the latest version of LeviLamina 26.51, we add `26.51.*` after `levilamina` as the version requirement. You can also specify a specific commit as the version, which is useful when adapting your mod to a new LeviLamina version before an official release is available.
 
 ```lua
 -- add_requires("levilamina x.x.x") for a specific version
 -- add_requires("levilamina develop") to use develop version
-add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
+add_requires("levilamina 26.51.*", {configs = {target_type = get_config("target_type")}})
 ```
 
 Next, modify the contents of `tooth.json`. `tooth.json` provides information required by lip to install mod packages. After proper configuration, your mod will be included in [LeviMC Mods](https://levimc.org/mods/) and [LeviLauncher](https://github.com/LiteLDev/LeviLauncher), allowing users worldwide to download and install it.
@@ -81,22 +81,22 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides information req
     In `tooth.json`, a `variant` with an empty `label` represents the server version, while a `variant` with `label` set to `client` represents the client version. If your mod is only available on the server or client, you can remove the unnecessary variant. In lip, you can install them using the following commands:
     ```shell
     # Server
-    lip install https://github.com/ShrBox/ExampleMod
+    lip install github.com/ShrBox/ExampleMod
 
     # Client
-    lip install https://github.com/ShrBox/ExampleMod#client
+    lip install github.com/ShrBox/ExampleMod#client
     ```
 
-* Change the value of the `tooth` field to your mod's GitHub repository URL, and fill in the information fields in `info`.
+* Change the value of the `tooth` field to your mod's GitHub repository path without `https://` (for example `github.com/ShrBox/ExampleMod`), and fill in the information fields in `info`.
   `info.avatar_url` will be displayed on the mod pages of LeviMC Mods and LeviLauncher. Choosing a suitable icon is also an important part of presenting your mod. For convenience, this tutorial directly uses the author's GitHub avatar.
 * Change the LeviLamina target version in the `dependencies` section of each `variant` to the actual LeviLamina version used by your mod.
-* Fill in the `asset_url` field according to the repository release URL, update the required LeviLamina version, and modify the `src` and `dest` fields in `place` according to the mod name specified in `xmake.lua`. For this tutorial's mod, the following is a possible example:
+* Fill in the `urls` of each entry in `assets` according to the repository release URL, update the required LeviLamina version, and modify the `src` and `dest` fields in `placements` according to the mod name specified in `xmake.lua`. For this tutorial's mod, the following is a possible example:
 
 ```json
 {
   "format_version": 3,
   "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
-  "tooth": "https://github.com/ShrBox/ExampleMod",
+  "tooth": "github.com/ShrBox/ExampleMod",
   "version": "0.1.0",
   "info": {
     "name": "ExampleMod",
@@ -112,7 +112,7 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides information req
       "label": "",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "26.20.*"
+        "github.com/LiteLDev/LeviLamina": "26.51.*"
       },
       "assets": [
         {
@@ -135,8 +135,6 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides information req
         "pre_install": [],
         "install": [],
         "post_install": [],
-        "pre_pack": [],
-        "post_pack": [],
         "pre_uninstall": [],
         "uninstall": [],
         "post_uninstall": []
@@ -146,7 +144,7 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides information req
       "label": "client",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina#client": "26.20.*"
+        "github.com/LiteLDev/LeviLamina#client": "26.51.*"
       },
       "assets": [
         {
@@ -169,8 +167,6 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides information req
         "pre_install": [],
         "install": [],
         "post_install": [],
-        "pre_pack": [],
-        "post_pack": [],
         "pre_uninstall": [],
         "uninstall": [],
         "post_uninstall": []
@@ -334,7 +330,7 @@ Let's break down the code above using the comments inside it.
 LeviLamina's command system supports directly registering or obtaining commands using the `CommandRegistrar::getOrCreateCommand()` function.
 
 ```cpp
-auto& command = ll::command::CommandRegistrar::getInstance()
+auto& command = ll::command::CommandRegistrar::getInstance(false)
                         .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
 ```
 
@@ -508,12 +504,12 @@ std::unique_ptr<ll::data::KeyValueDB> playerDb;
 ```
 
 !!! note
-    Why use `std::unique_ptr<ll::KeyValueDB>` instead of `ll::KeyValueDB`?  
-    This is because `ll::KeyValueDB` cannot be copied and can only be moved.  
-    Therefore, we need to use `std::unique_ptr` to store an instance of `ll::KeyValueDB`.
+    Why use `std::unique_ptr<ll::data::KeyValueDB>` instead of `ll::data::KeyValueDB`?  
+    This is because `ll::data::KeyValueDB` cannot be copied and can only be moved.  
+    Therefore, we need to use `std::unique_ptr` to store an instance of `ll::data::KeyValueDB`.
 
 !!! warning
-    Please do not use ordinary pointers to store the `ll::KeyValueDB` instance, because this can easily make lifetime management complicated and lead to memory leaks or other problems.  
+    Please do not use ordinary pointers to store the `ll::data::KeyValueDB` instance, because this can easily make lifetime management complicated and lead to memory leaks or other problems.  
     Remember: you are writing C++, not C.
 
 Then, initialize the database instance in the `load` method.
@@ -538,7 +534,7 @@ Then we call `std::make_unique<ll::data::KeyValueDB>()` to create a database ins
 If the database path does not exist, `std::make_unique<ll::data::KeyValueDB>()` will automatically create it.
 
 !!! note
-    Since database initialization is performed in the constructor, we can ensure that the database has already been initialized successfully in later operations.
+    Since database initialization is performed inside the loading method, we can ensure that the database has already been initialized successfully in later operations.
 
 ## Giving Players a Clock When They First Join the Game
 
@@ -574,7 +570,8 @@ bool ExampleMod::enable() { // Called by LeviLamina when enabling all mods
             if (!playerDb->get(uuid.asString())) {
 
                 // Construct an ItemStack object
-                ItemStack itemStack("minecraft::clock", 1, 0, nullptr);
+                ItemStack itemStack;
+                itemStack.reinit("minecraft:clock", 1, 0);
 
                 // Add the ItemStack object to the player's inventory
                 player.add(itemStack);
@@ -728,8 +725,8 @@ The constructor parameters are:
 
 1. The title of the form
 2. The message content displayed in the form
-3. The text of the upper-left button
-4. The text of the lower-right button
+3. The text of the upper button
+4. The text of the lower button
 
 The callback function receives three parameters:
 

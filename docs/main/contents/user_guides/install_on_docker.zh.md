@@ -1,25 +1,25 @@
-# 在Docker(Linux)上安装服务器
+# 在Docker上安装服务器
 
 ## 安装
 
-要在 Linux 容器中启动服务器，请运行第一条命令；如果您的服务器在中国大陆，请运行第二条命令以更快快速地安装：
+要在 Linux 容器中启动服务器，请运行第一条命令；如果您的服务器在中国大陆，请运行第二条命令以更快地安装：
 
 ```sh
 docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
 ```
 
 ```sh
-docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
+docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
 ```
 
-或者，如果您想使用 Windows 容器，请运行第一条命令；如果您的服务器在中国大陆，请运行第二条命令以更快快速地安装：
+或者，如果您想使用 Windows 容器，请运行第一条命令；如果您的服务器在中国大陆，请运行第二条命令以更快地安装：
 
 ```sh
 docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
 ```
 
 ```sh
-docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
+docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
 ```
 
 我们还提供了适用于 Linux 和 Windows 容器的 Docker Compose
@@ -31,17 +31,15 @@ docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITH
 
 - `EULA`: 必须设置为`TRUE`以接受[Minecraft最终用户许可协议](https://www.minecraft.net/zh-hans/eula)。
 
-- `GITHUB_MIRROR_URL`：可设置为GitHub镜像URL，以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
+- `GITHUB_MIRROR_URL`：可设置为GitHub镜像URL（例如`https://mirror.ghproxy.com/`），以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
 
-- `GO_MODULE_PROXY_URL`：可设置为Go模块代理URL，以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
+- `PACKAGES`：可设置为以空格分隔的包列表，用于首次运行时安装。每个包必须符合
+  [lip包名规范](https://docs.levimc.org/lip/zh/cli/commands/install.html)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。
 
-- `PACKAGES`：可设置为以空格分隔的包列表，用于首次运行时安装。每个包必须符合`lip`包名规范(参见
-  `https://docs.levimc.org/lip/cli/commands/install.html`)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。
+- `VERSION`(`LATEST`)：可设置为特定的[LeviLamina](https://github.com/LiteLDev/LeviLamina/tags)版本，或设置为
+  `LATEST`以自动下载最新版本。
 
-- `VERSION`(`LATEST`)：可设置为特定的LeviLamina版本(参见`https://github.com/LiteLDev/LeviLamina/tags`)，或设置为`
-  LATEST`以自动下载最新版本。
-
-- `WINEDEBUG`(`-all`)：可设置以自定义Wine的调试输出。欲了解更多信息，请参见 `https://wiki.winehq.org/Debugging` 。仅在Wine镜像中可用。
+- `WINEDEBUG`(`-all`)：可设置以自定义Wine的调试输出。欲了解更多信息，请参见[Wine Debugging](https://gitlab.winehq.org/wine/wine/-/wikis/Debug-Channels)。仅在Wine镜像中可用。
 
 - `LANG`：可设置容器中使用的语言环境。默认值为`en_US.UTF-8`。
 

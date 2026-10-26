@@ -126,7 +126,7 @@ export default defineDocsConfig({
       Expected: '错误处理',
       Form: '表单 UI',
       I18n: '国际化',
-      'IO & Logger': '日志系统',
+      'IO & Logger': '输入输出与日志',
       'Memory & Hook': '内存与钩子',
       Mod: '模组系统',
       Network: '网络',

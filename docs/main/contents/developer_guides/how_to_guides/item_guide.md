@@ -17,19 +17,20 @@ Roughly speaking, an ItemStack is the information of the item in a slot, includi
 There are several ways to create an ItemStack:
 
 ```cpp
-// Create an ItemStack with the item name and quantity:
-ItemStack{"diamond", 1};
+// Create an ItemStack from an item name, count and aux value:
+ItemStack stack;
+stack.reinit("minecraft:diamond", 1, 0);
 
-// Create an ItemStack with the item name and NBT:
+// Create an ItemStack from an NBT CompoundTag:
 ItemStack::fromTag(tag);
 ```
-For more, please refer to the header file provided by LeviLamina [ItemStack.h](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/world/item/ItemStack.h#L26)
+For more, please refer to the header file provided by LeviLamina [ItemStack.h](https://github.com/LiteLDev/LeviLamina/blob/main/src/mc/world/item/ItemStack.h)
 
 ## Item
 
 An item is the basic information of an ItemStack, including the item's name, maximum stack size, etc.
 
-LeviLmaina currently does not provide an interface for registering custom items. This content will be provided in future versions.
+LeviLamina currently does not provide an interface for registering custom items. This content will be provided in future versions.
 
 ## Some Notes
 

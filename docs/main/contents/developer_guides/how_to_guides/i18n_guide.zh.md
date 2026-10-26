@@ -2,14 +2,14 @@
 
 ## 介绍
 
-LeviLamina提供了一个简单的i18n类，用于为自身和Mod提供多语言支持。
+LeviLamina提供了一个简单的i18n类，用于为自身和模组提供多语言支持。
 
 ## 使用
 
 ### 加载语言文件
 
 - 引用头文件`ll/api/i18n/I18n.h`。
-- 在Mod的`load`方法中调用`ll::i18n::getInstance().load`方法，传入语言文件所在路径，一般为文件夹，也可以使用单个json文件。LeviLamina提供了
+- 在模组的`load`方法中调用`ll::i18n::getInstance().load`方法，传入语言文件所在路径，一般为文件夹，也可以使用单个json文件。LeviLamina提供了
   `Mod::getLangDir`方法供开发者获取规范的语言文件路径。
 
 ```cpp
@@ -17,8 +17,8 @@ LeviLamina提供了一个简单的i18n类，用于为自身和Mod提供多语言
 
 bool MyMod::load() {
     if (auto res = ll::i18n::getInstance().load(getSelf().getLangDir()); !res) {
-        getLogger().error("i18n load failed");
-        res.error().log(getLogger());
+        getSelf().getLogger().error("i18n load failed");
+        res.error().log(getSelf().getLogger());
     }
     return true;
 }
@@ -58,7 +58,7 @@ bool MyMod::load() {
 }
 ```
 
-### 使用I18N来翻译文本
+### 使用I18n来翻译文本
 
 - 引用头文件`ll/api/i18n/I18n.h`。
 - 在源文件中使用`using namespace ll::i18n_literals`指令。
@@ -69,7 +69,7 @@ bool MyMod::load() {
 
 using namespace ll::i18n_literals;
 
-void MyMod::enable() {
+bool MyMod::enable() {
     getSelf().getLogger().info("Hello, world!"_tr());
     getSelf().getLogger().info("This is a text with parameter: {0}"_tr("parameter"));
     return true;

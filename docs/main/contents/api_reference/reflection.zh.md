@@ -1,3 +1,5 @@
+# Reflection（反射）
+
 `ll/api/reflection/` · **通用**
 
 ## 概述
@@ -16,7 +18,7 @@ Reflection 模块让 C++ 结构体和 JSON / NBT 之间来回映射，而不必�
 
 1. 想把普通结构体存成 JSON —— 看「快速上手」；
 2. 想让某个类型以字符串形式出现（比如版本号、UUID）—— 看「给一个类型写最简单的特化」；
-3. 需要控制必选规则、写复杂特化、或者"特化明明写了却没生效" —— 看[反射（进阶篇）](reflection_advanced.zh.md)。
+3. 需要控制必选规则、写复杂特化、或者"特化明明写了却没生效" —— 看[Reflection（反射 · 进阶）](reflection_advanced.zh.md)。
 
 ## 头文件
 
@@ -148,7 +150,7 @@ template <class T, class J, IsKeyFormatter F>
 Expected<T> deserialize_to(J&& input, F const& keyFormatter) noexcept;
 ```
 
-所有公开入口都返回 `ll::Expected`，用法和 LL 其它 API 一致：
+所有公开入口都返回 `ll::Expected`，用法和 LeviLamina 其它 API 一致：
 
 ```cpp
 auto json = ll::reflection::serialize<nlohmann::json>(value);
@@ -222,7 +224,7 @@ struct PlayerProfile {
 
 - **两层要一起写**：只写 `to_string` / `from_string` 时，类型当键没问题，但作为普通成员仍然会按成员展开（聚合体）或直接报错（非聚合体）。
 - **签名要对齐、返回值不要写 `void`**，否则特化会被静默忽略——完整清单见[进阶篇](reflection_advanced.zh.md)。
-- LL 内部对 `mce::UUID`、`ll::data::Version` 就是这套做法；它们用的是「原地式序列化 + 值式反序列化」的组合（`serialize(t, j)` 把字符串写进目标），框架两种写法都接受。
+- LeviLamina 内部对 `mce::UUID`、`ll::data::Version` 就是这套做法；它们用的是「原地式序列化 + 值式反序列化」的组合（`serialize(t, j)` 把字符串写进目标），框架两种写法都接受。
 - 只想改变"键的写法"（例如 UUID 键全大写）而不想让类型本身变成字符串，请用 key formatter，见下一节。
 
 ## 可选与必选字段
@@ -300,7 +302,7 @@ field must be a number or boolean
 
 ## 下一步
 
-需要以下内容时看[反射（进阶篇）](reflection_advanced.zh.md)：
+需要以下内容时看[Reflection（反射 · 进阶）](reflection_advanced.zh.md)：
 
 - 完整签名表、返回值约束，以及"特化没生效"的自查清单；
 - 成员辅助函数（`member` / `field` / `required_field` / `default_field`：条件必选、缺省值）；
@@ -310,6 +312,6 @@ field must be a number or boolean
 
 ## 相关文档
 
-- [反射（进阶篇）](reflection_advanced.zh.md)
+- [Reflection（反射 · 进阶）](reflection_advanced.zh.md)
 - [Config](config.zh.md)：配置系统，反射最主要的消费者
 - [Base](base.zh.md)：反射依赖的基础类型工具（概念、容器、`Expected`）

@@ -4,7 +4,7 @@
 
 ## 概述
 
-Network 模块支持在客户端和服务器之间注册和处理自定义网络数据包。
+Network 模块支持在客户端和服务端之间注册和处理自定义网络数据包。
 
 ## 头文件
 
@@ -92,13 +92,13 @@ void sendCustomPacket() {
     MyCustomPacket packet;
     packet.setData(42);
     
-    // 发送到服务器（从客户端）
+    // 发送到服务端（从客户端）
     packet.sendToServer();
     
-    // 或发送到特定客户端（从服务器）
+    // 或发送到特定客户端（从服务端）
     // packet.sendToClient(networkId, subClientId);
     
-    // 或广播到所有客户端（从服务器）
+    // 或广播到所有客户端（从服务端）
     // packet.sendBroadcast();
 }
 ```

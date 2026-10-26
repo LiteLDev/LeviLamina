@@ -6,7 +6,7 @@
 
 在这个教程中，我们将会创建一个简单的模组，用于实现以下功能：
 
-- 玩家可以输入`/suicide`指令自杀
+- 玩家可以输入`/suicide`命令自杀
 - 玩家首次进入世界时给予一个钟
 - 玩家使用钟时，弹出确认窗口询问是否自杀，如果确认则自杀
 
@@ -14,7 +14,7 @@
 
 - 日志输出
 - 订阅事件
-- 注册指令
+- 注册命令
 - 读取配置文件
 - 数据库存取
 - 使用表单
@@ -66,12 +66,12 @@
 target("ExampleMod") -- Change this to your mod name.
 ```
 
-然后，最好手动固定一下Mod使用的LeviLamina版本，比如，我们需要使用LeviLamina 26.20的最新版本，我们在levilamina后面添加`26.20.*`作为版本号。也支持使用某个commit作为版本号，这在LeviLamina未能发布新版本时提前为模组适配新版本时很有用。
+然后，最好手动固定一下模组使用的LeviLamina版本，比如，我们需要使用LeviLamina 26.51的最新版本，我们在levilamina后面添加`26.51.*`作为版本号。也支持使用某个commit作为版本号，这在LeviLamina未能发布新版本时提前为模组适配新版本时很有用。
 
 ```lua
 -- add_requires("levilamina x.x.x") for a specific version
 -- add_requires("levilamina develop") to use develop version
-add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_type")}})
+add_requires("levilamina 26.51.*", {configs = {target_type = get_config("target_type")}})
 ```
 
 接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[LeviMC 模组](https://levimc.org/mods/)和[LeviLauncher](https://github.com/LiteLDev/LeviLauncher)收录，并能被全世界的用户下载安装。  
@@ -79,20 +79,20 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
     其中`label`为空的`variant`代表服务端，`label`为`client`的variant代表客户端，如果您的模组只在服务端/客户端可用，可以将无用的variant删掉。在lip中可以用以下命令来安装：
     ```shell
     # 服务端
-    lip install https://github.com/ShrBox/ExampleMod
+    lip install github.com/ShrBox/ExampleMod
     # 客户端
-    lip install https://github.com/ShrBox/ExampleMod#client
+    lip install github.com/ShrBox/ExampleMod#client
     ```
-- 将`tooth`字段的值改为这个模组的GitHub仓库地址，填写`info`中各个信息字段  
+- 将`tooth`字段的值改为这个模组的GitHub仓库路径（不带`https://`，例如`github.com/ShrBox/ExampleMod`），填写`info`中各个信息字段  
   `info.avatar_url`会显示在LeviMC 模组以及LeviLauncher的模组页面中，为模组挑选一个适合的图标也是展示您的模组的重要一环，这里为了方便直接使用教程编写者的GitHub头像  
 - 修改各个`variant`中的`dependencies`里的LeviLamina目标版本为模组实际使用的LeviLamina版本  
-- 然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`place`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
+- 然后根据仓库release地址填写`assets`中各项的`urls`，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`placements`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
 
 ```json
 {
   "format_version": 3,
   "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
-  "tooth": "https://github.com/ShrBox/ExampleMod",
+  "tooth": "github.com/ShrBox/ExampleMod",
   "version": "0.1.0",
   "info": {
     "name": "ExampleMod",
@@ -108,7 +108,7 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
       "label": "",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "26.20.*"
+        "github.com/LiteLDev/LeviLamina": "26.51.*"
       },
       "assets": [
         {
@@ -131,8 +131,6 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
         "pre_install": [],
         "install": [],
         "post_install": [],
-        "pre_pack": [],
-        "post_pack": [],
         "pre_uninstall": [],
         "uninstall": [],
         "post_uninstall": []
@@ -142,7 +140,7 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
       "label": "client",
       "platform": "win-x64",
       "dependencies": {
-        "github.com/LiteLDev/LeviLamina#client": "26.20.*"
+        "github.com/LiteLDev/LeviLamina#client": "26.51.*"
       },
       "assets": [
         {
@@ -165,8 +163,6 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
         "pre_install": [],
         "install": [],
         "post_install": [],
-        "pre_pack": [],
-        "post_pack": [],
         "pre_uninstall": [],
         "uninstall": [],
         "post_uninstall": []
@@ -178,9 +174,9 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
 
 然后，你需要修改`LICENSE`文件中的版权信息。你可以在[这里](https://choosealicense.com/licenses/)选择一个适合你的模组的开源协议。请放心，你的模组不需要开源，因为模组模板使用了CC0协议，你可以随意修改或删除`LICENSE`文件。但是，我们建议你使用一个开源协议，因为这样可以让其他人更容易地使用你的模组和帮助你改进你的模组。
 
-接下来，你需要修改`README.md`文件中的内容。这个文件将会在你的模组仓库主页显示，你可以在这里介绍你的模组的功能、使用方法、配置文件、指令等等。
+接下来，你需要修改`README.md`文件中的内容。这个文件将会在你的模组仓库主页显示，你可以在这里介绍你的模组的功能、使用方法、配置文件、命令等等。
 
-最后，你需要修改命名空间名。将`MyMod.cpp`和`MyMod.h`中命名空间`my_mod`以及类`MyMod`改成你想要的名字。按照C++常见惯例，命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们将命名空间统一改成`example_mod`，类名改为`ExmapleMod`。同样，你可以将`MyMod.cpp`和`MyMod.h`改为你想要的名字，但同时要记得把源文件中的`#include MyMod.h`改为新的头文件名。
+最后，你需要修改命名空间名。将`MyMod.cpp`和`MyMod.h`中命名空间`my_mod`以及类`MyMod`改成你想要的名字。按照C++常见惯例，命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们将命名空间统一改成`example_mod`，类名改为`ExampleMod`。同样，你可以将`MyMod.cpp`和`MyMod.h`改为你想要的名字，但同时要记得把源文件中的`#include MyMod.h`改为新的头文件名。
 
 ## 构建你的模组
 
@@ -200,19 +196,19 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
 
 然后点击VSCode底栏的**Build the given target**图标来构建模组
 
-## 注册指令`/suicide`
+## 注册命令`/suicide`
 
-在Minecraft中，指令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。因此，你不能在模组加载时注册模组，在服务端中，你可以在模组启用时注册指令，因为此时服务端已完全启动，但在客户端中，你不能这么做，因为自26.10版本开始，客户端会在游戏启动完成时启用模组，而非在本地世界加载完成时。  
-所以，在本教程中，我们将通过监听`ServerCommandRegisterEvent`来注册指令。
+在Minecraft中，命令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。因此，你不能在模组加载时注册命令，在服务端中，你可以在模组启用时注册命令，因为此时服务端已完全启动，但在客户端中，你不能这么做，因为自26.10版本开始，客户端会在游戏启动完成时启用模组，而非在本地世界加载完成时。  
+所以，在本教程中，我们将通过监听`ServerCommandRegisterEvent`来注册命令。
 
 !!! warning
-    模组在加载时，会调用其加载方法。但请不要将事件订阅、指令注册等任何与游戏相关的操作放在加载方法中，因为这些操作需要在游戏加载完成后才能进行。如果你在加载方法中进行了这些操作，那么你的模组将很有可能会在加载时崩溃。
+    模组在加载时，会调用其加载方法。但请不要将事件订阅、命令注册等任何与游戏相关的操作放在加载方法中，因为这些操作需要在游戏加载完成后才能进行。如果你在加载方法中进行了这些操作，那么你的模组将很有可能会在加载时崩溃。
 
 !!! tip
     一般来说，模组的构造函数中只需要进行一些与游戏无关初始化操作即可，例如初始化日志系统、初始化配置文件、初始化数据库等等。
 
 1. include一些我们需要的头文件  
-   如前文所说，我们需要在`ServerCommandRegisterEvent`中注册指令，所以我们需要include下面的头文件
+   如前文所说，我们需要在`ServerCommandRegisterEvent`中注册命令，所以我们需要include下面的头文件
    ```cpp
    #include "ll/api/command/CommandHandle.h"
    #include "ll/api/command/CommandRegistrar.h"
@@ -220,7 +216,7 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
    #include "ll/api/event/command/ServerCommandRegisterEvent.h"
    ```
 
-2. 在`ExampleMod::enable()`中实现我们的事件监听以及指令注册
+2. 在`ExampleMod::enable()`中实现我们的事件监听以及命令注册
    ```cpp
    bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
        auto& logger = getSelf().getLogger();
@@ -237,19 +233,19 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
            auto& command =
                ll::command::CommandRegistrar::getInstance(
                    false
-               ) // CommandRegistrar是单例，通过getInstance()方法获取实例，参数表示是否为客户端侧指令，传入false表示为服务端
+               ) // CommandRegistrar是单例，通过getInstance()方法获取实例，参数表示是否为客户端侧命令，传入false表示为服务端
                    .getOrCreateCommand(
                        "suicide",
                        "Commits suicide.",
                        CommandPermissionLevel::Any
-                   ); // 获取或创建指令，第一个参数为指令名称，第二个参数为指令描述，会出现在客户端的指令提示以及服务端的help中，第三个参数为最低指令权限等级
+                   ); // 获取或创建命令，第一个参数为命令名称，第二个参数为命令描述，会出现在客户端的命令提示以及服务端的help中，第三个参数为最低命令权限等级
    
            command.overload().execute([&logger](
                                           CommandOrigin const& origin,
                                           CommandOutput&       output
-                                      ) { // 重载指令并且注册指令回调
+                                      ) { // 重载命令并且注册命令回调
    
-               auto* entity = origin.getEntity(); // 通过CommandOrigin获取执行指令的实体对象
+               auto* entity = origin.getEntity(); // 通过CommandOrigin获取执行命令的实体对象
 
                if (entity == nullptr
                    || !entity->isPlayer()) { // 如果实体对象为空指针或实体对象并非玩家
@@ -278,15 +274,15 @@ add_requires("levilamina 26.20.*", {configs = {target_type = get_config("target_
    ```
 
 我们结合以上代码中的注释将以上的代码拆开来理解
-LeviLamina的指令系统支持使用`CommandRegistrar::getOrCreateCommand()`函数直接注册或获取指令。
+LeviLamina的命令系统支持使用`CommandRegistrar::getOrCreateCommand()`函数直接注册或获取命令。
 
 ```cpp
-auto& command = ll::command::CommandRegistrar::getInstance()
+auto& command = ll::command::CommandRegistrar::getInstance(false)
                         .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
 ```
 
-第三个参数为执行指令至少需要的权限等级，如果我们希望普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应权限至少为Operator（通过控制台OP指令赋予权限或通过暂停菜单提升为操作员）的玩家，`Host`对应控制台的权限。  
-然后，我们需要为指令增加一个重载并设置对应的回调。
+第三个参数为执行命令至少需要的权限等级，如果我们希望普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应权限至少为Operator（通过控制台OP命令赋予权限或通过暂停菜单提升为操作员）的玩家，`Host`对应控制台的权限。  
+然后，我们需要为命令增加一个重载并设置对应的回调。
 
 ```cpp
 command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
@@ -295,8 +291,8 @@ command.overload().execute([this](CommandOrigin const& origin, CommandOutput& ou
 ```
 
 !!! note
-    指令的重载意味着指令的一个模式，例如`ll <unload|reload|reactivate> <mod:string>` 是一个重载，而`ll list`是另一个重载。  
-    下面是一个例子，来自LeviLamina的模组管理指令：
+    命令的重载意味着命令的一个模式，例如`ll <unload|reload|reactivate> <mod:string>` 是一个重载，而`ll list`是另一个重载。  
+    下面是一个例子，来自LeviLamina的模组管理命令：
 
 ```cpp
 enum LeviCommandOperation : int {
@@ -335,7 +331,7 @@ void registerModManageCommand() {
 !!! tip
     你可能注意到另一个函数`player->getName()`，但我们并没有使用它。这是因为玩家的名字是可以通过模组或其它方式进行修改的，而`player->getRealName()`的结果则是固定的。
 
-到这一步，指令对象已经配置完毕，当服务器启动后或客户端进入本地世界后，指令对象将被加载到游戏中。  
+到这一步，命令对象已经配置完毕，当服务器启动后或客户端进入本地世界后，命令对象将被加载到游戏中。  
 如果在`enable()`函数中返回了`false`，则LeviLamina会认为模组启用失败，并在控制台上提示错误信息。
 
 ## 读取配置文件
@@ -404,10 +400,10 @@ std::unique_ptr<ll::data::KeyValueDB> playerDb;
 ```
 
 !!! note
-    为什么是`std::unique_ptr<ll::KeyValueDB>`而不是`ll::KeyValueDB`？这是因为`ll::KeyValueDB`禁止拷贝，只能移动。因此，我们需要使用`std::unique_ptr`来保存`ll::KeyValueDB`的实例。
+    为什么是`std::unique_ptr<ll::data::KeyValueDB>`而不是`ll::data::KeyValueDB`？这是因为`ll::data::KeyValueDB`禁止拷贝，只能移动。因此，我们需要使用`std::unique_ptr`来保存`ll::data::KeyValueDB`的实例。
 
 !!! warning
-    请不要使用普通的指针来保存`ll::KeyValueDB`的实例，因为这样很容易使得生命周期管理变得复杂，从而导致内存泄漏和其他问题。请记住：你在写C++，而不是C。
+    请不要使用普通的指针来保存`ll::data::KeyValueDB`的实例，因为这样很容易使得生命周期管理变得复杂，从而导致内存泄漏和其他问题。请记住：你在写C++，而不是C。
 
 然后，我们在`load`方法中，初始化数据库实例。
 
@@ -426,7 +422,7 @@ bool ExampleMod::load() { // 会被LeviLamina加载所有模组
 在这段代码中，我们首先获取模组的数据库路径，然后调用`std::make_unique<ll::data::KeyValueDB>()`函数，创建一个数据库实例。如果数据库路径不存在，那么`std::make_unique<ll::data::KeyValueDB>()`函数会自动创建数据库路径。
 
 !!! note
-    由于数据库初始化是在构造函数内进行的，所以在后续操作中可以保证数据库已经初始化成功了。
+    由于数据库初始化是在加载方法内进行的，所以在后续操作中可以保证数据库已经初始化成功了。
 
 ## 玩家首次进入游戏时，给予一个钟
 
@@ -451,7 +447,8 @@ bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
             if (!playerDb->get(uuid.asString())) {
 
                 // 构造ItemStack对象
-                ItemStack itemStack("minecraft::clock", 1, 0, nullptr);
+                ItemStack itemStack;
+                itemStack.reinit("minecraft:clock", 1, 0);
                 // 给玩家的背包添加ItemStack对象
                 player.add(itemStack);
 
@@ -539,8 +536,8 @@ bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
 在这里我们使用了最简单的模态表单`ModalForm`，其构造函数的参数分别是：
 1. 表单的标题
 2. 表单提示内容
-3. 左下角按钮内容
-4. 右下角按钮内容。
+3. 上方按钮内容
+4. 下方按钮内容。
 
 回调函数接收三个参数，分别是：
 1. 表单发送向的玩家
@@ -573,7 +570,7 @@ bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
     changelog --format markdownlint
     ```
     来格式化`CHANGELOG.md`
-6. 在GitHub上创建新的release，例如`v0.1.0`
+5. 在GitHub上创建新的release，例如`v0.1.0`
 
 GitHub Actions会自动将CHANGELOG.md的内容写进release，稍等几分钟，你的模组将会自动被编译并上传到release
 

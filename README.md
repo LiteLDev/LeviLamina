@@ -11,7 +11,7 @@
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)
 [![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
-A lightweight, modular, and versatile mod loader for Minecraft Bedrock Edition, formerly known as LiteLoaderBDS
+A lightweight, modular, and versatile mod loader for Minecraft Bedrock Edition, the successor to LiteLoaderBDS
 
 LeviLamina is an unofficial mod loader designed to provide essential API support for Minecraft Bedrock Edition. It features a comprehensive API, a range of utility interfaces, a powerful event system, and extensive support for basic interfaces. LeviLamina offers a solid foundation for augmenting Minecraft with additional gameplay features and functionalities, making the modding process effortless through its user-friendly development environment and flexible approach.
 
@@ -22,11 +22,11 @@ For more information, please refer to [the documentation](https://docs.levimc.or
 ## EULA & Usage Guidelines
 
 > [!WARNING]
-> **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/contents/common_guides/usage_guidelines.en.md).**
+> **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/contents/common_guides/usage_guidelines.md).**
 
 ## Install & Usage
 
-Please refer to [Install on Server](https://docs.levimc.org/LeviLamina/user_guides/install/) and [Install on Client](https://docs.levimc.org/LeviLamina/user_guides/install_on_client/).
+Please refer to [Install server on Windows](https://docs.levimc.org/LeviLamina/user_guides/install/) and [Install client on Windows](https://docs.levimc.org/LeviLamina/user_guides/install_on_client/).
 
 ## Star History
 

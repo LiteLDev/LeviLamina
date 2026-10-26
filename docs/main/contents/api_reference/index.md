@@ -60,7 +60,7 @@ LeviLamina's API is organized into the following modules:
 
 | Module | Description | Scope |
 |--------|-------------|-------|
-| [Input](input.md) | Keyboard/mouse input binding and input events | Client Only |
+| [Input (Client)](input.md) | Keyboard/mouse input binding and input events | Client Only |
 
 ## Scope Legend
 

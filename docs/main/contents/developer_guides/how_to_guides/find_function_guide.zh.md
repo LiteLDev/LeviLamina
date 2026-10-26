@@ -4,7 +4,7 @@
 
 ## 如何开始？
 
-在开始之前，你最好已经阅读了[Hook指南](hook_guide.md)。并且对 C++ 和底层知识有一定的了解。
+在开始之前，你最好已经阅读了[Hook指南](hook_guide.zh.md)。并且对 C++ 和底层知识有一定的了解。
 
 ### 需要的工具
 
@@ -23,11 +23,9 @@
 这时候，我们打开 LeviLamina 关于 Player 类的 [`Fake Header`](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/world/actor/player/Player.h#L129) 文件，你会发现这个类的定义是这样的：
 
 ```cpp
-
 class Player : public ::Mob {
 ...
 };
-
 ```
 
 很明显，Player 继承了 Mob 类，而依次类推，Mob 又是继承的 Actor，在 Actor 类中，我们终于找到了
@@ -107,7 +105,7 @@ public: virtual void __cdecl ServerNetworkHandler::handle(class NetworkIdentifie
 //symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
 ```
 
-利用我们在[Hook指南](hook_guide.md)中学到的知识，我们可以很容易的 Hook 这个函数，实现我们的功能。（吗？）
+利用我们在[Hook指南](hook_guide.zh.md)中学到的知识，我们可以很容易的 Hook 这个函数，实现我们的功能。（吗？）
 
 好吧，事实上我们遇到第二个问题，这里似乎没有一个 `std::string` 类型的参数，我们似乎无法获取到玩家的聊天内容。
 
@@ -239,26 +237,19 @@ v5 = (const struct Player *)(*(__int64 (__fastcall **)(char *, const struct Netw
 我们可以直接抄下来，但是这样很不优雅。
 
 而查阅 LeviLamina 提供的有关 [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/network/ServerNetworkHandler.h#L625) 的内容
-我们可以得知，ServerNetworkHandler 类提供了一个虚函数 `_getServerPlayer`，这个函数的作用是获取一个玩家的指针。
-但是，上下文中的：
+我们可以得知，ServerNetworkHandler 类提供了一个虚函数 `_getServerPlayer`，这个函数的作用是获取一个玩家的指针。但是，从前面的伪代码和上下文可以看出，直接调用 _getServerPlayer 并不可行，我们需要对 `this` 指针做一个 -16 的偏移才能正确的获取玩家指针。为了方便开发，LeviLamina 的 Hook 宏提供了 `thisFor<T>()`，它会替你完成这个偏移，所以在 Hook 中可以直接获取玩家的指针（LeviLamina 自己的 `PlayerChatEvent` 就是这样做的）：
 
 ```cpp
-    // Do not use _getServerPlayer directly
-    // Please get SubID from the packet
-    [[nodiscard]] inline optional_ref<ServerPlayer>
-    getServerPlayer(class NetworkIdentifier const& source, ::SubClientId subId) {
-        auto& handler = ll::memory::dAccess<ServerNetworkHandler>(this, -16);
-        return {handler._getServerPlayer(source, subId)};
-    }
+// 在 LL_TYPE_INSTANCE_HOOK(..., ServerNetworkHandler, &ServerNetworkHandler::$handle, void,
+//                         NetworkIdentifier const& identifier, TextPacket const& packet) 中
+auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mSenderSubId);
 ```
-
-和前面的伪代码可以看出，直接调用 _getServerPlayer 并不可行，我们需要对NetworkIdentifier 指针做一个 -16 的偏移才能正确的获取玩家指针，为了方便开发，LeviLamina提供了一个封装，我们可以跳过这个步骤，直接使用这个封装来获取玩家的指针。
 
 就此，我们已经实现了我们的目标，我们可以Hook这个函数，实现我们的功能。
 
 具体的代码实现，限于篇幅，不再赘述。
 
-而LeviLamina在新版本提供了部分数据包的结构体信息，你可以在 [TextPacket.h](https://github.com/LiteLDev/LeviLamina/blob/19e0aeb44c13967307bb1ed0795325fca41e0e48/src/mc/network/packet/TextPacket.h#L13) 中看到，LLDEV 已经补全了这个数据包的结构体信息。
+而LeviLamina在新版本提供了部分数据包的结构体信息，你可以在 [TextPacket.h](https://github.com/LiteLDev/LeviLamina/blob/19e0aeb44c13967307bb1ed0795325fca41e0e48/src/mc/network/packet/TextPacket.h#L13) 中看到，LeviLamina 开发者已经补全了这个数据包的结构体信息。
 
 ```cpp
 std::string              mMessage;    // this+0x58

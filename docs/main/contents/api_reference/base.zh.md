@@ -25,7 +25,7 @@ Base 模块提供了 LeviLamina API 的基础构建块：导出宏、C++20 概�
 
 定义在 `Macro.h` 中，这些宏控制 LeviLamina 和模组之间的符号可见性：
 
-| 宏 | 构建 LL 时的展开 | 模组使用时的展开 |
+| 宏 | 构建 LeviLamina 时的展开 | 模组使用时的展开 |
 |----|------------------|------------------|
 | `LLAPI` | `[[maybe_unused]] __declspec(dllexport)` | `[[maybe_unused]] __declspec(dllimport)` |
 | `LLNDAPI` | `[[nodiscard]] LLAPI` | `[[nodiscard]] LLAPI` |

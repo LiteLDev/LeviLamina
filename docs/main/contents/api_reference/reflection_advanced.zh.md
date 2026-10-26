@@ -1,8 +1,10 @@
+# Reflection（反射 · 进阶）
+
 `ll/api/reflection/` · **通用** · 进阶
 
 ## 这篇文档给谁看
 
-如果你只是想把普通结构体存成 JSON、或者给一个类型写个"字符串形式"的特化，先看 [反射（基础篇）](reflection.zh.md)。这一篇面向需要：
+如果你只是想把普通结构体存成 JSON、或者给一个类型写个"字符串形式"的特化，先看 [Reflection（反射）](reflection.zh.md)。这一篇面向需要：
 
 - 精确控制字段名、必选规则、输出形态的自定义特化；
 - 弄清框架到底按什么规则挑特化、为什么"明明写了却没生效"；
@@ -354,7 +356,7 @@ struct OnlyDeserialize : T {
 | 查询 | `is_object` / `is_array` / `is_string` / `is_null` / `is_boolean` / `is_number` / `is_number_float` / `is_number_integer` / `is_number_unsigned`、`type_name()`、`size()` | 按实际用到的分支裁剪即可 |
 | 对象 | `contains(key)`、`operator[](key)`、`items()`（能 `for (auto&& [k, v] : …)`） | 读 / 写对象 |
 | 数组 | `operator[](index)`、`push_back(value)` | 读 / 写数组与 tuple |
-| 标量 | 能 `static_cast` 成算术类型、能隐式转成 `std::string` 与 `std::string_view` | 读标量；后者是 LL 内置的字符串型特化（`mce::UUID`、`ll::data::Version` 等）会用的写法 |
+| 标量 | 能 `static_cast` 成算术类型、能隐式转成 `std::string` 与 `std::string_view` | 读标量；后者是 LeviLamina 内置的字符串型特化（`mce::UUID`、`ll::data::Version` 等）会用的写法 |
 | variant 专用 | `get<bool>()` / `get<double>()` / `get<int64>()` / `get<uint64>()`、`dump()` | 只有当类型里有 `std::variant` |
 | string_view 专用 | 成员别名 `using string_t = ...;` + `template <class T> T const& get_ref() const`（即 `BorrowableStringSource`） | 只有当类型里有 `std::string_view`；见下文"借用字符串" |
 
@@ -488,6 +490,6 @@ struct GameOptions {
 
 ## 相关文档
 
-- [反射（基础篇）](reflection.zh.md)：第一次使用的用法与最简单的特化
+- [Reflection（反射）](reflection.zh.md)：第一次使用的用法与最简单的特化
 - [Config](config.zh.md)：配置系统，反射最主要的消费者
 - [Base](base.zh.md)：反射依赖的基础类型工具（概念、容器、`Expected`）

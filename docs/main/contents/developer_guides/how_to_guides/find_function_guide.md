@@ -237,13 +237,19 @@ This is clearly a call to a virtual function, eventually returning a Player poin
 
 We could copy this directly, but it’s not elegant.
 
-And by consulting LeviLamina's information about [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/network/ServerNetworkHandler.h#L625), we can know that the ServerNetworkHandler class provides a virtual function `_getServerPlayer`, which is used to get a player pointer. But, as seen in the pseudocode and the above context, directly calling _getServerPlayer is not feasible; we need to make a -16 offset to the NetworkIdentifier pointer to correctly get the player pointer. For convenience, LeviLamina provides a wrapper, and we can skip this step and directly use this wrapper to get the player pointer.
+And by consulting LeviLamina's information about [ServerNetworkHandler](https://github.com/LiteLDev/LeviLamina/blob/53135ef92ccc4ee5cda12772651e1d7e319300e8/src/mc/network/ServerNetworkHandler.h#L625), we can know that the ServerNetworkHandler class provides a virtual function `_getServerPlayer`, which is used to get a player pointer. But, as seen in the pseudocode and the above context, directly calling _getServerPlayer is not feasible; we need to make a -16 offset to the `this` pointer to correctly get the player pointer. For convenience, LeviLamina's hook macros provide `thisFor<T>()`, which applies this adjustment for you, so in a hook you can get the player pointer directly (this is how LeviLamina's own `PlayerChatEvent` does it):
+
+```cpp
+// Inside LL_TYPE_INSTANCE_HOOK(..., ServerNetworkHandler, &ServerNetworkHandler::$handle, void,
+//                              NetworkIdentifier const& identifier, TextPacket const& packet)
+auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mSenderSubId);
+```
 
 Thus, we have achieved our goal. We can hook this function to implement our feature.
 
 The specific code implementation is omitted due to space constraints.
 
-And in the new version, LeviLamina has provided some structural information about the packets. You can see in [TextPacket.h](https://github.com/LiteLDev/LeviLamina/blob/19e0aeb44c13967307bb1ed0795325fca41e0e48/src/mc/network/packet/TextPacket.h#L13) that LLDEV has completed the structure information of this packet.
+And in the new version, LeviLamina has provided some structural information about the packets. You can see in [TextPacket.h](https://github.com/LiteLDev/LeviLamina/blob/19e0aeb44c13967307bb1ed0795325fca41e0e48/src/mc/network/packet/TextPacket.h#L13) that the LeviLamina developers have completed the structure information of this packet.
 
 ```cpp
 std::string              mMessage;    // this+0x58

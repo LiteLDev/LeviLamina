@@ -10,19 +10,34 @@ To install LeviLamina, you need one of the following Windows versions:
 - Windows Server 2022
 - Windows Server 2025
 
-To run Bedrock Dedicated Server for Minecraft, you need to install the following software:
+To run Bedrock Dedicated Server (BDS), you need to install the following software:
 
-- [Visual C++ Redistributable](https://aka.ms/vc14/vc_redist.x64.exe)
+- [Microsoft Visual C++ Redistributable (x64)](https://aka.ms/vc14/vc_redist.x64.exe)
 
 ## Installing via lip
 
-1. Download the installer ends with **setup.exe** from [here](https://github.com/LiteLDev/lip/releases), execute it to install lip.
-2. Begin by creating a directory for your Minecraft server and navigating into it:
+1. Install [lip](https://github.com/LiteLDev/lip). The default way is npm; winget and the **setup.exe** installer
+   from [lip's releases](https://github.com/LiteLDev/lip/releases/latest) also work (see
+   [lip's installation guide](https://docs.levimc.org/lip/intro/installation)):
+    ```shell
+    npm install -g @levimc/lip
+    # or
+    winget install levimc.lip
+    ```
+2. (Optional) Set a GitHub mirror with `lip config set`, for example:
+    ```shell
+    lip config set github_proxy https://mirror.ghproxy.com/
+    ```
+3. (Optional) Set the `BDSDOWN_MIRROR_URL` environment variable to choose the site BDS is downloaded from, for example
+   `https://www.minecraft.net`. You can also download BDS yourself from the Minecraft website and put the archive in the
+   `.cache/bdsdown` directory (create it if it does not exist). This directory is inside the directory you install BDS
+   into, for example `C:\Users\YourName\BDS\.cache\bdsdown`.
+4. Begin by creating a directory for your Minecraft server and navigating into it:
     ```shell
     mkdir myserver
     cd myserver
     ```
-3. Then, install LeviLamina (bundled with Bedrock Dedicated Server) using lip:
+5. Then, install LeviLamina (bundled with Bedrock Dedicated Server) using lip:
     ```shell
     # Install the latest version
     lip install github.com/LiteLDev/LeviLamina
@@ -30,7 +45,9 @@ To run Bedrock Dedicated Server for Minecraft, you need to install the following
     # Install a specific version (replace x.y.z with the desired version)
     lip install github.com/LiteLDev/LeviLamina@x.y.z
     ```
-4. Launch your server by running:
+   During installation, PeEditor creates `bedrock_server_mod.exe`, a copy of `bedrock_server.exe` that loads
+   LeviLamina, and keeps the original executable as `bedrock_server.exe.bak`.
+6. Launch your server by running:
     ```shell
     ./bedrock_server_mod.exe
     ```

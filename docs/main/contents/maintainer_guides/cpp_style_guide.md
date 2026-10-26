@@ -22,9 +22,9 @@ In camel case, e.g. `myVariable`.
 
 #### Class and Struct Data Members
 
-For non-public ones, in Hungarian, e.g. `mMyMember`.
+For non-public (private and protected) ones, in Hungarian, e.g. `mMyMember`.
 
-For public ones, in camelCase, e.g. `myMember`.
+For public ones, in camel case, e.g. `myMember`.
 
 ### Constant Names
 
@@ -36,7 +36,7 @@ In camel case, e.g. `myFunction`.
 
 ### Namespace Names
 
-In lower case, e.g. `my_namespace`.
+In snake case, e.g. `my_namespace`.
 
 ### Enumerator Names
 

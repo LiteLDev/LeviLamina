@@ -353,7 +353,7 @@ The `ScreenSession` must remain alive for its `Property` and `Binding<T>` handle
 | UI does not update after changing a plain variable | Bind an Observable and call its `setData()` |
 | `close()` reports that the form is not showing | Call it only after successful startup and before completion |
 | NaN or infinity is rejected | DDUI numeric values must be finite |
-| Another player's menu should remain open | Use the form's `close()`, not `closeScreen(player)` on that player |
+| Only one screen should close | Use the form's `close()`, not `closeScreen(player)`, which closes all of that player's DDUI screens |
 
 ## Further reading
 

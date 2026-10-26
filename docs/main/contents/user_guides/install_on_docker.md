@@ -1,17 +1,27 @@
-# Install server on Docker(Linux)
+# Install server on Docker
 
 ## Installation
 
-To start the server in a Linux container, run the following command:
+To start the server in a Linux container, run the first command. If your server is in mainland China, run the second
+command to install faster:
 
 ```sh
 docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
 ```
 
-Or, if you want to use a Windows container, run the following command:
+```sh
+docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
+```
+
+Or, if you want to use a Windows container, run the first command. If your server is in mainland China, run the second
+command to install faster:
 
 ```sh
 docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
+```
+
+```sh
+docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
 ```
 
 We also provide Docker Compose files for both Linux and Windows containers
@@ -23,10 +33,7 @@ respectively. To use them, download the file to an empty directory and run `dock
 
 - `EULA`: must be set to `TRUE` to accept the [Minecraft End User License Agreement](https://www.minecraft.net/en-us/eula).
 
-- `GITHUB_MIRROR_URL`: can be set to a GitHub mirror URL to speed up the installation of
-  LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
-
-- `GO_MODULE_PROXY_URL`: can be set to a Go module proxy URL to speed up the installation of
+- `GITHUB_MIRROR_URL`: can be set to a GitHub mirror URL (for example `https://mirror.ghproxy.com/`) to speed up the installation of
   LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
 
 - `PACKAGES`: can be set to a space-separated list of packages to install on first run. Each package must be a

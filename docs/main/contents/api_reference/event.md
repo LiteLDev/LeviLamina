@@ -328,5 +328,5 @@ void setupMulti() {
 ## Related
 
 - [How-to Guide: Events](../developer_guides/how_to_guides/event_guide.md) — Step-by-step tutorial
-- [Input](input.md) — Client-only input event details
+- [Input (Client)](input.md) — Client-only input event details
 - [Service](service.md) — Service registration/unregistration events

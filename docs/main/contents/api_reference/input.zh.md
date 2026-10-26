@@ -1,6 +1,6 @@
-# Input（输入系统）
+# Input（输入系统 · 客户端）
 
-`src-client/ll/api/` · **仅客户端**
+`ll/api/input/`、`ll/api/event/input/`（`src-client/`）· **仅客户端**
 
 ## 概述
 
@@ -10,8 +10,8 @@ Input 模块为客户端提供键盘和鼠标输入绑定。允许模组注册�
 
 | 头文件 | 说明 |
 |--------|------|
-| `ll/api/KeyRegistry.h` | 按键绑定注册表单例 |
-| `ll/api/KeyHandle.h` | 单个按键绑定句柄 |
+| `ll/api/input/KeyRegistry.h` | 按键绑定注册表单例 |
+| `ll/api/input/KeyHandle.h` | 单个按键绑定句柄 |
 | `ll/api/event/input/KeyInputEvent.h` | 键盘输入事件 |
 | `ll/api/event/input/MouseInputEvent.h` | 鼠标输入事件 |
 
@@ -20,17 +20,22 @@ Input 模块为客户端提供键盘和鼠标输入绑定。允许模组注册�
 ### KeyRegistry
 
 ```cpp
-namespace ll {
+namespace ll::input {
 class KeyRegistry {
 public:
+    using ButtonDownHandler = KeyHandle::ButtonDownHandler;
+    using ButtonUpHandler   = KeyHandle::ButtonUpHandler;
+
     static KeyRegistry& getInstance();
-    
-    KeyHandle& getOrCreateKey(std::string const& name, std::weak_ptr<mod::Mod> mod);
-    bool hasKey(std::string const& name) const;
+
+    KeyHandle& getOrCreateKey(
+        std::string_view        name,
+        std::vector<int> const& defaultKeyCodes,
+        bool                    allowRemap = true,
+        std::weak_ptr<mod::Mod> mod        = mod::NativeMod::current()
+    );
+    bool hasKey(std::string_view name);
     std::vector<std::string> getRegisteredKeys() const;
-    
-    void triggerKeyDownCallback(std::string const& name);
-    void triggerKeyUpCallback(std::string const& name);
 };
 }
 ```
@@ -38,16 +43,24 @@ public:
 ### KeyHandle
 
 ```cpp
-namespace ll {
+namespace ll::input {
 class KeyHandle {
 public:
+    using ButtonDownHandler = std::function<void(::FocusImpact, ::IClientInstance&)>;
+    using ButtonUpHandler   = std::function<void(::FocusImpact, ::IClientInstance&)>;
+
     std::string const& getName() const;
-    std::weak_ptr<mod::Mod> getMod() const;
-    std::vector<int> getKeyCodes() const;
-    
-    KeyHandle& setAllowRemap(bool allow);
-    KeyHandle& registerButtonDownHandler(std::function<void()> callback);
-    KeyHandle& registerButtonUpHandler(std::function<void()> callback);
+    std::shared_ptr<mod::Mod> getMod() const;
+    std::string getFullName() const;
+    std::vector<int> const& getKeyCodes() const;
+    bool isValid() const;
+
+    bool isAllowRemap() const;
+    void setAllowRemap(bool allowRemap);
+    void registerButtonDownHandler(ButtonDownHandler handler, bool suspendable = false);
+    void registerButtonUpHandler(ButtonUpHandler handler, bool suspendable = false);
+    void setInputMappingStack(std::vector<std::string> stacks);
+    bool containsInputMappingStack(std::string_view stack) const;
 };
 }
 ```
@@ -57,13 +70,15 @@ public:
 ### KeyInputEvent
 
 ```cpp
-namespace ll::event {
-class KeyInputEvent : public Cancellable<InputEvent> {
+namespace ll::event::inline input {
+class KeyInputEvent final : public Cancellable<InputEvent> {
 public:
-    ClientInstance& controller() const;
-    int keyCode() const;
-    int action() const;
-    bool isDown() const;
+    enum class Action : int { Up = 0, Down = 1 };
+
+    HIDController& controller() const;
+    int&           keyCode() const;
+    Action         action() const;
+    bool           isDown() const;
 };
 }
 ```
@@ -71,15 +86,15 @@ public:
 ### MouseInputEvent
 
 ```cpp
-namespace ll::event {
-class MouseInputEvent : public Cancellable<InputEvent> {
+namespace ll::event::inline input {
+class MouseInputEvent final : public Cancellable<InputEvent> {
 public:
-    int actionButtonId() const;
-    int buttonData() const;
-    float x() const;
-    float y() const;
-    float dx() const;
-    float dy() const;
+    char&  actionButtonId() const;
+    schar& buttonData() const;
+    short& x() const;
+    short& y() const;
+    short& dx() const;
+    short& dy() const;
 };
 }
 ```
@@ -89,19 +104,19 @@ public:
 ### 注册按键绑定
 
 ```cpp
-#include "ll/api/KeyRegistry.h"
-#include "ll/api/mod/NativeMod.h"
+#include "ll/api/input/KeyRegistry.h"
 
 void registerKeys() {
-    auto& registry = ll::KeyRegistry::getInstance();
+    auto& registry = ll::input::KeyRegistry::getInstance();
     
-    auto& myKey = registry.getOrCreateKey("mymod.toggle", ll::mod::NativeMod::current());
+    // 默认绑定 K 键；所属模组默认为当前模组
+    auto& myKey = registry.getOrCreateKey("toggle", {'K'});
     
-    myKey.registerButtonDownHandler([] {
+    myKey.registerButtonDownHandler([](FocusImpact, IClientInstance&) {
         // 按键按下时调用
     });
     
-    myKey.registerButtonUpHandler([] {
+    myKey.registerButtonUpHandler([](FocusImpact, IClientInstance&) {
         // 按键释放时调用
     });
 }

@@ -11,7 +11,7 @@ LeviLamina提供了一套易用的命令注册系统，分为编译期和运行�
     #include "ll/api/command/CommandHandle.h"
     #include "ll/api/command/CommandRegistrar.h"
     ```
-2. 调用`CommandRegistrar::getInstance().getOrCreateCommand`方法获取或创建一个命令，并将其赋值为`auto& command`
+2. 调用`CommandRegistrar::getInstance(false).getOrCreateCommand`方法获取或创建一个命令，并将其赋值为`auto& command`。`getInstance`的参数表示是否为客户端命令（传入`false`注册服务端命令）；也可以使用简写`getServerInstance()`和`getClientInstance()`
 3. 调用`command.overload`重载命令，如果你不需要一个可以传入参数的命令，可以不传入模板参数，比如: `command.overload()`
 4. 调用`required`方法来添加一个必须的参数，该方法和`optional`方法需要传入对应结构中的变量名称。调用`optional`
    方法来添加一个可选参数，但需要注意判断用户是否传入了参数。调用
@@ -32,7 +32,7 @@ struct NewCommand {
 
 void registerCommand() {
     using namespace ll::command;
-    auto& command = CommandRegistrar::getInstance().getOrCreateCommand("new", "A example command");
+    auto& command = CommandRegistrar::getInstance(false).getOrCreateCommand("new", "A example command");
     command.overload<NewCommand>().text("test").required("enum1").required("str").optional("number").execute(
         [](CommandOrigin const& origin, CommandOutput& output, NewCommand const& param) {
             output.success("test! {} {} {}", param.enum1, param.str, param.number);
@@ -42,7 +42,7 @@ void registerCommand() {
 ```
 
 在此示例中，我们定义了一个名为`NewCommand`的结构，其中存储了命令的各项参数。通过`getOrCreateCommand`
-方法创建了一个名为**new**的命令，通过`overload`方法重载了名为**text**的子命令、枚举、字符串和整数参数。在游戏中的效果如下:
+方法创建了一个名为**new**的命令，通过`overload`方法重载了名为**test**的子命令（通过`text("test")`添加）、枚举、字符串和整数参数。在游戏中的效果如下:
 
 ```
 /new test <enum1> <str> [number]

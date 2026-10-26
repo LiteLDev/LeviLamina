@@ -1,4 +1,4 @@
-# I18N Guide
+# I18n Guide
 
 ## Introduction
 
@@ -18,8 +18,8 @@ LeviLamina provides a simple i18n class to support multilingual functionality fo
 
 bool MyMod::load() {
     if (auto res = ll::i18n::getInstance().load(getSelf().getLangDir()); !res) {
-        getLogger().error("i18n load failed");
-        res.error().log(getLogger());
+        getSelf().getLogger().error("i18n load failed");
+        res.error().log(getSelf().getLogger());
     }
     return true;
 }
@@ -59,7 +59,7 @@ Example language file content:
 }
 ```
 
-### Using I18N to Translate Text
+### Using I18n to Translate Text
 
 - Include the header file `ll/api/i18n/I18n.h`.
 - Use the directive `using namespace ll::i18n_literals` in your source file.
@@ -70,7 +70,7 @@ Example language file content:
 
 using namespace ll::i18n_literals;
 
-void MyMod::enable() {
+bool MyMod::enable() {
     getSelf().getLogger().info("Hello, world!"_tr());
     getSelf().getLogger().info("This is a text with parameter: {0}"_tr("parameter"));
     return true;
