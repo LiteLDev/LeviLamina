@@ -69,9 +69,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
+    MCAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
 
-    MCNAPI bool _checkBlockAndNeighborsProperty(
+    MCAPI bool _checkBlockAndNeighborsProperty(
         ::ActorPathingData const&                                data,
         ::BlockPos const&                                        pos,
         ::Block const&                                           block,
@@ -81,14 +81,14 @@ public:
         ::std::function<bool(::Block const&, ::BlockPos const&)> extraCondition
     );
 
-    MCNAPI ::NodeType _classifyDoorNode(
+    MCAPI ::NodeType _classifyDoorNode(
         ::ActorPathingData const& data,
         ::Block const&            testBlock,
         ::BlockPos const&         testPos,
         ::BlockPos const&         lastPathPos
     );
 
-    MCNAPI ::NodeType _classifyNode(
+    MCAPI ::NodeType _classifyNode(
         ::ActorPathingData const& data,
         ::BlockPos const&         lastPathPos,
         ::Block const&            testBlock,
@@ -97,13 +97,13 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCNAPI bool
+    MCAPI bool
     _findNearestPathableNeighbor(::BlockPos& outPos, ::ActorPathingData const& data, ::BlockPos const& testPos);
 
-    MCNAPI ::std::unique_ptr<::Path>
+    MCAPI ::std::unique_ptr<::Path>
     _findPath(::ActorPathingData const& actorData, float xt, float yt, float zt, float maxDist);
 
-    MCNAPI ::std::unique_ptr<::Path> _findPath(
+    MCAPI ::std::unique_ptr<::Path> _findPath(
         ::ActorPathingData const& data,
         ::PathfinderNode*         from,
         ::PathfinderNode*         to,
@@ -111,15 +111,15 @@ public:
         float                     maxDist
     );
 
-    MCNAPI ::AABB _getAABBForHeightComputation(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::AABB _getAABBForHeightComputation(::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float const mobHeight) const;
+    MCAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float const mobHeight) const;
 
-    MCNAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float const mobHeight) const;
+    MCAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float const mobHeight) const;
 
-    MCNAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
+    MCAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
 
-    MCNAPI ::PathfinderNode* _getNode(
+    MCAPI ::PathfinderNode* _getNode(
         ::ActorPathingData const& data,
         ::BlockPos const&         fromPos,
         ::BlockPos const&         blockPos,
@@ -128,37 +128,37 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCNAPI ::std::optional<::NodeType> _getPartialBlockNodeType(
+    MCAPI ::std::optional<::NodeType> _getPartialBlockNodeType(
         ::BlockPos const&         currentBlockPos,
         ::BlockPos const&         lastBlockPos,
         ::ActorPathingData const& data
     );
 
-    MCNAPI float _getPathfindingMalus(::ActorPathingData const& data, ::NodeType nodeType, ::BlockPos const& blockPos);
+    MCAPI float _getPathfindingMalus(::ActorPathingData const& data, ::NodeType nodeType, ::BlockPos const& blockPos);
 
-    MCNAPI ::PathfinderNode*
+    MCAPI ::PathfinderNode*
     _getWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
 
-    MCNAPI ::NodeType _isFreeStartNode(
+    MCAPI ::NodeType _isFreeStartNode(
         ::ActorPathingData const& data,
         ::AABB const&             entityAABB,
         ::BlockPos const&         testPos,
         ::BlockPos const&         size
     );
 
-    MCNAPI bool _isNeighborPotentiallyValid(
+    MCAPI bool _isNeighborPotentiallyValid(
         ::PathfinderNode const& node,
         ::PathfinderNode const& target,
         ::BlockPos const&       offset,
         uint                    maxDistSqr
     );
 
-    MCNAPI ::std::unique_ptr<::Path>
+    MCAPI ::std::unique_ptr<::Path>
     _reconstructPath(::PathfinderNode* to, ::PathCompletionType const completionType, ::ActorUniqueID const actorId);
 
-    MCNAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
+    MCAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
 
-    MCNAPI ::NodeType isFree(
+    MCAPI ::NodeType isFree(
         ::ActorPathingData const& data,
         ::BlockPos const&         lastPathPos,
         ::BlockPos const&         testPos,
@@ -167,13 +167,13 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCNAPI ~PathFinder();
+    MCAPI ~PathFinder();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ActorPathingData extractPathingData(
+    MCAPI static ::ActorPathingData extractPathingData(
         ::Actor&                        mutableActor,
         ::PathFinder::ExtractionPurpose purpose,
         ::std::optional<::Vec3>         targetPos
@@ -183,18 +183,18 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::PreferredPathComponent const& DEFAULT_DESC();
+    MCAPI static ::PreferredPathComponent const& DEFAULT_DESC();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockSource& region, ::NavigationComponent const& navigation);
+    MCAPI void* $ctor(::BlockSource& region, ::NavigationComponent const& navigation);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

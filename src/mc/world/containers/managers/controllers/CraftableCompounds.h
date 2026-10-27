@@ -17,16 +17,12 @@ class CraftableCompounds {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnke6f603;
-    ::ll::UntypedStorage<8, 64> mUnk7112c4;
-    ::ll::UntypedStorage<8, 64> mUnk34bcd8;
-    ::ll::UntypedStorage<8, 64> mUnk938d66;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ItemStack>>            mComponentsToCompound;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::vector<::ItemStack>>>       mCompoundToComponents;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::LabTableReactionType>> mComponentsToReaction;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::CompoundContainerType>>
+        mComponentsToContainerOverride;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftableCompounds& operator=(CraftableCompounds const&);
-    CraftableCompounds(CraftableCompounds const&);
 
 public:
     // virtual functions
@@ -44,18 +40,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CraftableCompounds();
+    MCAPI CraftableCompounds();
 
-    MCNAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
+    MCAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
 
-    MCNAPI void _registerCompound(
+    MCAPI void _registerCompound(
         ::std::vector<::ChemistryIngredient> const& input,
         ::ItemStack const&                          result,
         ::LabTableReactionType                      reaction,
         ::CompoundContainerType                     containerOverride
     );
 
-    MCNAPI void _registerCompound(
+    MCAPI void _registerCompound(
         ::std::vector<::ChemistryIngredient> const& input,
         ::CompoundType                              result,
         ::LabTableReactionType                      reaction,
@@ -63,33 +59,33 @@ public:
         int                                         stackCount
     );
 
-    MCNAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
+    MCAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
 
 #ifdef LL_PLAT_C
-    MCNAPI ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
+    MCAPI ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
 #endif
 
-    MCNAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
+    MCAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
 
-    MCNAPI void registerCompounds();
+    MCAPI void registerCompounds();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_registerCompound(
+    MCAPI void $_registerCompound(
         ::std::vector<::ItemStack> const& input,
         ::ItemStack const&                result,
         ::LabTableReactionType            reaction,

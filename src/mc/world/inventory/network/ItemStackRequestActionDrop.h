@@ -39,7 +39,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionDrop(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
+    MCAPI ItemStackRequestActionDrop(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
 #endif
     // NOLINTEND
 
@@ -47,16 +47,16 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
+    MCAPI void* $ctor(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_write(::BinaryStream& stream) const;
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
 
     // NOLINTEND

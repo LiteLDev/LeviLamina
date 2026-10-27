@@ -43,18 +43,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Vec3 currentPos(::Actor const* actor) const;
+    MCAPI ::Vec3 currentPos(::Actor const* actor) const;
 
-    MCNAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
+    MCAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
 
-    MCNAPI void setSize(uint64 length);
+    MCAPI void setSize(uint64 length);
 
-    MCNAPI ~Path();
+    MCAPI ~Path();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -11,29 +11,23 @@ class BinaryHeap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbb48fa;
-    ::ll::UntypedStorage<4, 4>  mUnkb6697e;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PathfinderNode*>> heap;
+    ::ll::TypedStorage<4, 4, int>                               sizeVar;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BinaryHeap& operator=(BinaryHeap const&);
-    BinaryHeap(BinaryHeap const&);
-    BinaryHeap();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void changeCost(::PathfinderNode* node, float newCost);
+    MCAPI void changeCost(::PathfinderNode* node, float newCost);
 
-    MCNAPI ::PathfinderNode* insert(::PathfinderNode* node);
+    MCAPI ::PathfinderNode* insert(::PathfinderNode* node);
 
-    MCNAPI ~BinaryHeap();
+    MCAPI ~BinaryHeap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

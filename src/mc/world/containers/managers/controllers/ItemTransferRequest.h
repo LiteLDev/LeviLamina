@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/SlotData.h"
+
 // auto generated forward declare list
 // clang-format off
 struct AutoPlaceResult;
@@ -19,36 +22,24 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 40> mUnkd2b85b;
-        ::ll::UntypedStorage<4, 4>  mUnk53d560;
-        ::ll::UntypedStorage<4, 4>  mUnk120630;
+        ::ll::TypedStorage<8, 40, ::SlotData> mSlot;
+        ::ll::TypedStorage<4, 4, int>         mAmount;
+        ::ll::TypedStorage<4, 4, int>         mGroup;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Entry& operator=(Entry const&);
-        Entry(Entry const&);
-        Entry();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk83539b;
-    ::ll::UntypedStorage<8, 24> mUnke68a94;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemTransferRequest::Entry>> mInputs;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemTransferRequest::Entry>> mOutputs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemTransferRequest& operator=(ItemTransferRequest const&);
-    ItemTransferRequest(ItemTransferRequest const&);
-    ItemTransferRequest();
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
+    MCAPI void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
 #endif
     // NOLINTEND
 };

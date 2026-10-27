@@ -102,21 +102,19 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit AnvilContainerManagerController(
-        ::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel
-    );
+    MCAPI explicit AnvilContainerManagerController(::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel);
 
-    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI bool _mayPickup();
+    MCAPI bool _mayPickup();
 
-    MCNAPI bool areItemsIncompatible();
+    MCAPI bool areItemsIncompatible();
 
-    MCNAPI ::std::string getCostText();
+    MCAPI ::std::string getCostText();
 
-    MCNAPI bool shouldDrawGreen();
+    MCAPI bool shouldDrawGreen();
 
-    MCNAPI bool shouldDrawRed();
+    MCAPI bool shouldDrawRed();
 #endif
     // NOLINTEND
 
@@ -124,7 +122,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel);
+    MCAPI void* $ctor(::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel);
 #endif
     // NOLINTEND
 
@@ -132,42 +130,42 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
+    MCAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
-    MCNAPI void $updatePreviewItem();
+    MCAPI void $updatePreviewItem();
 
-    MCNAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
+    MCAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
 
-    MCNAPI void $setItemName(::Bedrock::Safety::RedactableString const& name);
+    MCAPI void $setItemName(::Bedrock::Safety::RedactableString const& name);
 
-    MCNAPI ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
+    MCFOLD ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
 
-    MCNAPI ::Bedrock::Safety::RedactableString const& $getItemName() const;
+    MCFOLD ::Bedrock::Safety::RedactableString const& $getItemName() const;
 
-    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
+    MCAPI bool $isOutputSlot(::std::string const& collectionName) const;
 
-    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
 
-    MCNAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
 
-    MCNAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCNAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
-    MCNAPI int $handleAutoPlace(
+    MCAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );
 
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+    MCAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
-    MCNAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&);
+    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&);
 
-    MCNAPI void $_updateItemStackRequest(
+    MCAPI void $_updateItemStackRequest(
         ::ContainerScreenRequestActionType,
         ::ContainerScreenActionResult const& result,
         ::ItemStackRequestScope&             requestScope

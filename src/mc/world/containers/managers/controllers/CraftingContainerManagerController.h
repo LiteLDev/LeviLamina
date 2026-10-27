@@ -49,9 +49,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk1d4d7a;
-        ::ll::UntypedStorage<8, 8>  mUnk2b9a4e;
-        ::ll::UntypedStorage<8, 64> mUnk2519ad;
+        ::ll::TypedStorage<8, 8, ::BlockSource*>           mUnsafeSourcePointer;
+        ::ll::TypedStorage<8, 8, ::BlockPos const&>        mPos;
+        ::ll::TypedStorage<8, 64, ::std::function<void()>> mCallback;
         // NOLINTEND
 
     public:
@@ -84,7 +84,7 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI void $onBlockChanged(
+        MCAPI void $onBlockChanged(
             ::BlockSource&                 source,
             ::BlockPos const&              pos,
             uint                           layer,
@@ -96,7 +96,7 @@ public:
             ::Actor*                       blockChangeSource
         );
 
-        MCNAPI void $onSourceDestroyed(::BlockSource& source);
+        MCAPI void $onSourceDestroyed(::BlockSource& source);
 #endif
 
 
@@ -189,80 +189,80 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit CraftingContainerManagerController(
+    MCAPI explicit CraftingContainerManagerController(
         ::std::weak_ptr<::CraftingContainerManagerModel> containerManagerModel
     );
 
-    MCNAPI void _filterRecipes();
+    MCAPI void _filterRecipes();
 
-    MCNAPI ::std::vector<::RecipeSearchResult> _getRecipesForItem(
+    MCAPI ::std::vector<::RecipeSearchResult> _getRecipesForItem(
         ::ItemInstance const&               recipeItem,
         ::std::vector<::std::string> const& tags,
         ::ItemRegistryRef const             itemRegistry,
         bool
     );
 
-    MCNAPI void _handleItemCraftedEvents(
+    MCAPI void _handleItemCraftedEvents(
         ::ItemInstance const&               resultItem,
         ::std::vector<short> const&         ingredientIds,
         ::ShapedRecipeTriggeredEvent const& shapedRecipeTriggeredEvent
     );
 
-    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI void _handleTransferCraftExtraResults(::std::vector<::ItemInstance>& allResults);
+    MCAPI void _handleTransferCraftExtraResults(::std::vector<::ItemInstance>& allResults);
 
-    MCNAPI ::CreateContainerItemScope _makeCreateItemScopeCrafting(
+    MCAPI ::CreateContainerItemScope _makeCreateItemScopeCrafting(
         ::SlotData const&              srcSlot,
         ::ItemTransferAmount const&    takeAmount,
         ::std::vector<::ItemInstance>& allResults
     );
 
-    MCNAPI ::CreateContainerItemScope
+    MCAPI ::CreateContainerItemScope
     _makeCreateItemScopeCreative(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
 
-    MCNAPI void _updateCraftingResultItem();
+    MCAPI void _updateCraftingResultItem();
 
-    MCNAPI bool
+    MCAPI bool
     autoCraftItem(::SlotData const& recipeSlot, ::ItemCraftType craftAmount, ::std::vector<::AutoPlaceItem> const&);
 
-    MCNAPI void clearAllRecipes();
+    MCAPI void clearAllRecipes();
 
-    MCNAPI void evacuateCraftingContainerToInventory(
+    MCAPI void evacuateCraftingContainerToInventory(
         ::ContainerController*                container,
         ::std::vector<::AutoPlaceItem> const& autoPlace
     );
 
-    MCNAPI int getBackgroundStyle(::std::string const& containerName, int collectionIndex) const;
+    MCAPI int getBackgroundStyle(::std::string const& containerName, int collectionIndex) const;
 
-    MCNAPI ::CraftableCountingData getCraftableCount(::ItemInstance const& item);
+    MCAPI ::CraftableCountingData getCraftableCount(::ItemInstance const& item);
 
-    MCNAPI ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
+    MCFOLD ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
 
-    MCNAPI int getIndexForCreativeItem(::std::string const& collectionName, ::ItemStackBase const& item) const;
+    MCAPI int getIndexForCreativeItem(::std::string const& collectionName, ::ItemStackBase const& item) const;
 
-    MCNAPI ::ItemInstance const& getRecipeItem(::std::string const& collectionName, int collectionIndex) const;
+    MCAPI ::ItemInstance const& getRecipeItem(::std::string const& collectionName, int collectionIndex) const;
 
-    MCNAPI ::std::string const& getSearchString() const;
+    MCAPI ::std::string const& getSearchString() const;
 
-    MCNAPI void handleRecipeSelect(
+    MCAPI void handleRecipeSelect(
         ::std::string const&                  collectionName,
         int                                   collectionIndex,
         bool                                  displayOnly,
         ::std::vector<::AutoPlaceItem> const& autoPlace
     );
 
-    MCNAPI bool isCreativeContainer(::std::string const& containerName) const;
+    MCAPI bool isCreativeContainer(::std::string const& containerName) const;
 
-    MCNAPI bool isExpandableItemFiltered(::std::string const& collectionName, int collectionIndex) const;
+    MCFOLD bool isExpandableItemFiltered(::std::string const& collectionName, int collectionIndex) const;
 
-    MCNAPI bool isTakeableContainer(::std::string const& containerName) const;
+    MCAPI bool isTakeableContainer(::std::string const& containerName) const;
 
-    MCNAPI bool setLastCraftedItem(::ItemInstance const& item);
+    MCAPI bool setLastCraftedItem(::ItemInstance const& item);
 
-    MCNAPI void setOnItemExpandedCallback(::std::function<void(::std::string const&, int, int)> callback);
+    MCAPI void setOnItemExpandedCallback(::std::function<void(::std::string const&, int, int)> callback);
 
-    MCNAPI void switchExpandoItem(::std::string const& collectionName, int collectionIndex);
+    MCAPI void switchExpandoItem(::std::string const& collectionName, int collectionIndex);
 #endif
     // NOLINTEND
 
@@ -270,7 +270,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::weak_ptr<::CraftingContainerManagerModel> containerManagerModel);
+    MCAPI void* $ctor(::std::weak_ptr<::CraftingContainerManagerModel> containerManagerModel);
 #endif
     // NOLINTEND
 
@@ -278,47 +278,47 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
+    MCAPI bool $isOutputSlot(::std::string const& collectionName) const;
 
-    MCNAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
 
-    MCNAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
-    MCNAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCNAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI int $handleAutoPlace(
+    MCAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );
 
-    MCNAPI int $handleAutoPlaceStack(
+    MCAPI int $handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
         ::ItemTakeType                        type,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );
 
-    MCNAPI void $handleSplitSingle(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCAPI void $handleSplitSingle(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI void $handleSplitMultiple(
+    MCAPI void $handleSplitMultiple(
         ::SelectedSlotInfo const& selected,
         ::ItemInstance const&     itemTemplate,
         ::SlotData const&         dstSlot
     );
 
-    MCNAPI bool $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
+    MCAPI bool $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
 
-    MCNAPI bool $handleDrop(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+    MCAPI bool $handleDrop(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
 
-    MCNAPI void $closeContainers();
+    MCAPI void $closeContainers();
 
-    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
 #endif
 
 

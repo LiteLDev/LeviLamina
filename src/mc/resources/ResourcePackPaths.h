@@ -16,74 +16,74 @@ namespace ResourcePackPaths {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCNAPI ::Core::PathBuffer<::std::string> addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform&));
+MCAPI ::Core::PathBuffer<::std::string> addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform&));
 #endif
 
-MCNAPI ::Core::PathBuffer<::std::string>
+MCAPI ::Core::PathBuffer<::std::string>
     addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
 
-MCNAPI ::ResourcePackPaths::AllPaths getAllPaths(::AppPlatform& platform);
+MCAPI ::ResourcePackPaths::AllPaths getAllPaths(::AppPlatform& platform);
 
 #ifdef LL_PLAT_C
-MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);
+MCAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);
 
-MCNAPI ::Core::PathBuffer<::std::string> getCachedResourcePacksPath(::AppPlatform& platform);
+MCAPI ::Core::PathBuffer<::std::string> getCachedResourcePacksPath(::AppPlatform& platform);
 
-MCNAPI ::Core::PathBuffer<::std::string> getGlobalResourcePacksPath();
+MCAPI ::Core::PathBuffer<::std::string> getGlobalResourcePacksPath();
 
-MCNAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath(::AppPlatform const& platform);
+MCAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath(::AppPlatform const& platform);
 #endif
 
-MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const& platform);
+MCAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const& platform);
 
 #ifdef LL_PLAT_C
-MCNAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath(::AppPlatform const& platform);
+MCAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath(::AppPlatform const& platform);
 
-MCNAPI ::Core::PathBuffer<::std::string> getPremiumSkinPackPath(::AppPlatform const& platform);
+MCAPI ::Core::PathBuffer<::std::string> getPremiumSkinPackPath(::AppPlatform const& platform);
 #endif
 
-MCNAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath(::AppPlatform const& platform);
+MCAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath(::AppPlatform const& platform);
 
 #ifdef LL_PLAT_C
-MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumBehaviorPacksPath(::AppPlatform& platform);
+MCAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumBehaviorPacksPath(::AppPlatform& platform);
 
-MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumResourcePacksPath(::AppPlatform& platform);
+MCAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumResourcePacksPath(::AppPlatform& platform);
 
-MCNAPI ::Core::PathBuffer<::std::string> getZippedPackDownloadPath(::AppPlatform& platform);
+MCAPI ::Core::PathBuffer<::std::string> getZippedPackDownloadPath(::AppPlatform& platform);
 #endif
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& BEHAVIOR_PACK_PATH();
+MCAPI ::std::string const& BEHAVIOR_PACK_PATH();
 
-MCNAPI ::std::string const& CUSTOM_SKIN_CACHE_PATH();
+MCAPI ::std::string const& CUSTOM_SKIN_CACHE_PATH();
 
-MCNAPI ::std::string const& DEVELOPMENT_BEHAVIOR_PACKS_PATH();
+MCAPI ::std::string const& DEVELOPMENT_BEHAVIOR_PACKS_PATH();
 
-MCNAPI ::std::string const& DEVELOPMENT_RESOURCE_PACKS_PATH();
+MCAPI ::std::string const& DEVELOPMENT_RESOURCE_PACKS_PATH();
 
-MCNAPI ::std::string const& DEVELOPMENT_SKIN_PACKS_PATH();
+MCAPI ::std::string const& DEVELOPMENT_SKIN_PACKS_PATH();
 
-MCNAPI ::std::vector<::std::string> const& EXPECTED_EXTENSIONS();
+MCAPI ::std::vector<::std::string> const& EXPECTED_EXTENSIONS();
 
-MCNAPI ::Core::PathBuffer<::std::string> const& GLOBAL_RESOURCE_PACKS_FILENAME();
+MCAPI ::Core::PathBuffer<::std::string> const& GLOBAL_RESOURCE_PACKS_FILENAME();
 
-MCNAPI ::Core::Path const& MANIFEST_PATH();
+MCAPI ::Core::Path const& MANIFEST_PATH();
 
-MCNAPI ::Core::Path const& MANIFEST_PATH_OLD();
+MCAPI ::Core::Path const& MANIFEST_PATH_OLD();
 
-MCNAPI ::std::string const& RESOURCE_PACKS_PATH();
+MCAPI ::std::string const& RESOURCE_PACKS_PATH();
 
-MCNAPI ::std::string const& SKIN_PACKS_PATH();
+MCAPI ::std::string const& SKIN_PACKS_PATH();
 
-MCNAPI ::std::string const& SYSTEM_BEHAVIOR_PACKS_PATH();
+MCAPI ::std::string const& SYSTEM_BEHAVIOR_PACKS_PATH();
 
-MCNAPI ::std::string const& SYSTEM_RESOURCE_PACKS_PATH();
+MCAPI ::std::string const& SYSTEM_RESOURCE_PACKS_PATH();
 
-MCNAPI ::Core::PathBuffer<::std::string> const& TEXTURES_LIST_PATH();
+MCAPI ::Core::PathBuffer<::std::string> const& TEXTURES_LIST_PATH();
 
-MCNAPI ::std::string const& TREATMENT_PACK_PATH();
+MCAPI ::std::string const& TREATMENT_PACK_PATH();
 // NOLINTEND
 
 } // namespace ResourcePackPaths

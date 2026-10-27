@@ -8,15 +8,16 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class CachedChunkBlockSource;
 // clang-format on
 
 class PathBlockSource : public ::IPathBlockSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf4b1d0;
-    ::ll::UntypedStorage<1, 1> mUnka0ab3a;
-    ::ll::UntypedStorage<8, 8> mUnkf2f219;
+    ::ll::TypedStorage<1, 1, bool const>                mIsInWater;
+    ::ll::TypedStorage<1, 1, bool const>                mIsInLava;
+    ::ll::TypedStorage<8, 8, ::CachedChunkBlockSource&> mBlockSource;
     // NOLINTEND
 
 public:
@@ -44,15 +45,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInWater() const;
+    MCFOLD bool $isInWater() const;
 
-    MCNAPI bool $isInLava() const;
+    MCAPI bool $isInLava() const;
 
-    MCNAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
+    MCAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
 
-    MCNAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
+    MCAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
 
-    MCNAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
+    MCAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
 
 
     // NOLINTEND
