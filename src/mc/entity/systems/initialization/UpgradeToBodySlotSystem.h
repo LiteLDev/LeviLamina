@@ -20,7 +20,7 @@ public:
     MCAPI static void _upgrade(
         ::StrictEntityContext& strictEntityContext,
         ::ActorOwnerComponent& actorOwnerComponent,
-        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier
+        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent> const& modifier
     );
     // NOLINTEND
 };

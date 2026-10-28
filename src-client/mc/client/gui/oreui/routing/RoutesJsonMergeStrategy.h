@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/resources/ResourcePackMergeStrategy.h"
-#include "mc/world/level/PackInstanceId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,9 +18,8 @@ class RoutesJsonMergeStrategy : public ::ResourcePackMergeStrategy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::vector<::OreUI::RouteData>&>     mRoutes;
-    ::ll::TypedStorage<8, 8, ::std::vector<::PackIdVersion>&>        mRoutesMetadata;
-    ::ll::TypedStorage<8, 8, ::std::vector<::PackInstanceId> const&> mFullStackMetadata;
+    ::ll::TypedStorage<8, 8, ::std::vector<::OreUI::RouteData>&> mRoutes;
+    ::ll::TypedStorage<8, 8, ::std::vector<::PackIdVersion>&>    mRoutesMetadata;
     // NOLINTEND
 
 public:

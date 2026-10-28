@@ -20,14 +20,6 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> get() const = 0;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::WorkerPool& operator*() const;
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock

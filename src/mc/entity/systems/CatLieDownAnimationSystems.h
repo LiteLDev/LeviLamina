@@ -4,13 +4,15 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntitySystems;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace CatLieDownAnimationSystems {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& registry, bool isClientSide);
+MCAPI ::TickingSystemWithInfo createQueuePurrSoundSystem();
+
+MCAPI ::TickingSystemWithInfo createUpdateLieDownAmountSystem();
 // NOLINTEND
 
 } // namespace CatLieDownAnimationSystems

@@ -32,8 +32,8 @@ public:
         ::Optional<::FallingBlockFlagComponent const> fallingBlockFlagComponent,
         ::Optional<::PassengerComponent const>        passengerComponent,
         ::Optional<::WasInWaterFlagComponent const>   wasInWaterComponent,
-        ::EntityModifier<::WasInWaterFlagComponent, ::WaterSplashEffectRequestComponent>   modifier,
-        ::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent, ::VehicleComponent>> boatVehicle
+        ::EntityModifier<::WasInWaterFlagComponent, ::WaterSplashEffectRequestComponent> const&   modifier,
+        ::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent, ::VehicleComponent>> const& boatVehicle
     );
     // NOLINTEND
 };

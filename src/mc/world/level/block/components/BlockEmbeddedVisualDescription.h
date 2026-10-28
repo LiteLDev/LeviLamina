@@ -11,7 +11,6 @@
 // clang-format off
 class BlockComponentStorage;
 class SemVersion;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockEmbeddedVisualDescription : public ::NetworkedBlockComponentDescription<::BlockEmbeddedVisualDescription> {
@@ -32,14 +31,6 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
     // NOLINTEND
 
 public:

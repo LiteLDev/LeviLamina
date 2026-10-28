@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GamePadRemappingLayout();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~GamePadRemappingLayout() /*override*/ = default;
@@ -53,6 +57,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GamePadRemappingLayout(bool swapAB, bool swapXY);
+
     MCAPI ::std::string _getKeySpriteLocationInternal(
         int        key,
         bool       checkUserConfiguredButtonSwapping,
@@ -67,6 +73,12 @@ public:
     MCAPI ::std::string getKeySpriteName(int key, bool checkPlatformButtonSwapping) const;
 
     MCAPI ::std::string getKeyTextName(int key, bool checkUserConfiguredButtonSwapping) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool swapAB, bool swapXY);
     // NOLINTEND
 
 public:

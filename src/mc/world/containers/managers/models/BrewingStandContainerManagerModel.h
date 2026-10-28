@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
+class ItemInstance;
 class ItemStack;
-class Player;
 // clang-format on
 
 class BrewingStandContainerManagerModel : public ::ContainerManagerModel {
@@ -23,10 +22,6 @@ public:
     ::ll::TypedStorage<4, 4, int>         mLastFuelAmount;
     ::ll::TypedStorage<4, 4, int>         mLastFuelTotal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BrewingStandContainerManagerModel();
 
 public:
     // virtual functions
@@ -51,21 +46,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BrewingStandContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
 #ifdef LL_PLAT_C
+    MCAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+
     MCAPI int getBrewProgress(int max);
+
+    MCAPI int getBubbleProgress(int);
 
     MCAPI int getFuelProgress(int max);
 
     MCAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

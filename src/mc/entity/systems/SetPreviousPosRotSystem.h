@@ -19,10 +19,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setPreviousPosRot(
-        ::StrictEntityContext&                                 entity,
-        ::StateVectorComponent&                                stateVectorComponent,
-        ::ActorRotationComponent&                              actorRotationComponent,
-        ::EntityModifier<::PrevPosRotSetThisTickFlagComponent> modifier
+        ::StrictEntityContext&                                        entity,
+        ::StateVectorComponent&                                       stateVectorComponent,
+        ::ActorRotationComponent&                                     actorRotationComponent,
+        ::EntityModifier<::PrevPosRotSetThisTickFlagComponent> const& modifier
     );
 
     MCAPI static void _setPreviousPosRotSystem(::EntityContext const& entity);

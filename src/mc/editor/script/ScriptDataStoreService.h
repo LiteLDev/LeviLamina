@@ -35,6 +35,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk2e76b8;
     ::ll::UntypedStorage<8, 32> mUnk4248d0;
     ::ll::UntypedStorage<8, 16> mUnk77f17f;
+    ::ll::UntypedStorage<8, 16> mUnk165115;
     // NOLINTEND
 
 public:
@@ -46,6 +47,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptDataStoreService(::Editor::ScriptModule::ScriptDataStoreService&& other);
+
     MCNAPI ScriptDataStoreService(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,
@@ -75,6 +78,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreService&& other);
+
     MCNAPI void* $ctor(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,

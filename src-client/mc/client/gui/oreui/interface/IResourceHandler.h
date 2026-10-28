@@ -35,7 +35,7 @@ public:
 
     virtual void update() = 0;
 
-    virtual void onViewCreate(::IClientInstance& primaryClient);
+    virtual void onViewCreate(::IClientInstance& client);
 
     virtual void onAppPreSuspend();
     // NOLINTEND
@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onViewCreate(::IClientInstance& primaryClient);
+    MCFOLD void $onViewCreate(::IClientInstance& client);
 
     MCFOLD void $onAppPreSuspend();
     // NOLINTEND

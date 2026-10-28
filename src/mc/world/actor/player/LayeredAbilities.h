@@ -24,23 +24,30 @@ public:
     ::ll::TypedStorage<4, 1440, ::std::array<::Abilities, 6>> mLayers;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     LayeredAbilities(LayeredAbilities const&);
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI LayeredAbilities();
 
+#ifdef LL_PLAT_S
+    MCAPI LayeredAbilities(::LayeredAbilities const& other);
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI void addSaveData(::CompoundTag& parentTag) const;
-#endif
 
     MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, char const*)> const& callback,
         ::Ability::Options                                          requiredOptions
     ) const;
+#endif
 
     MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
@@ -90,6 +97,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::LayeredAbilities const& other);
+#endif
     // NOLINTEND
 
 public:

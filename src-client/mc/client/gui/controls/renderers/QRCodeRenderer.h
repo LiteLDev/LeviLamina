@@ -23,7 +23,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>        mQrCodeContent;
     ::ll::TypedStorage<4, 16, ::mce::Color>         mForegroundColor;
     ::ll::TypedStorage<4, 16, ::mce::Color>         mBackgroundColor;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture> mTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture> mTexture;
     // NOLINTEND
 
 public:

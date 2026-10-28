@@ -13,7 +13,6 @@
 // clang-format off
 class Container;
 class ContainerWeakRef;
-class ItemDescriptor;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
@@ -117,10 +116,6 @@ public:
 
     MCAPI void _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-#ifdef LL_PLAT_C
-    MCAPI int getItemCount(::ItemDescriptor const& descriptor) const;
-#endif
-
     MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI void
@@ -170,11 +165,7 @@ public:
 
     MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
-#ifdef LL_PLAT_S
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
-#else // LL_PLAT_C
-    MCFOLD ::ItemInstance const& $getItemInstance(int modelSlot) const;
-#endif
 
     MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 

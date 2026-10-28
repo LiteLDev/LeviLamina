@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemUseMethod.h"
 
 // auto generated forward declare list
@@ -29,7 +30,7 @@ public:
 
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) = 0;
 
-    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) = 0;
+    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot) = 0;
 
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,

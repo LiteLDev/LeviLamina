@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/entity/components_json_legacy/DismountMode.h"
+#include "mc/deps/shared_types/v1_26_60/actor/RideableComponentDefinition.h"
 #include "mc/util/HashStringHashGreater.h"
 
 // auto generated forward declare list
@@ -25,9 +25,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                       mPullInEntities;
     ::ll::TypedStorage<1, 1, bool>                                                       mPassengerCanPick;
     ::ll::TypedStorage<4, 4, float>                                                      mPassengerMaxWidth;
-    ::ll::TypedStorage<1, 1, ::DismountMode>                                             mDismountMode;
-    ::ll::TypedStorage<8, 32, ::std::string>                                             mOnRiderEnterEvent;
-    ::ll::TypedStorage<8, 32, ::std::string>                                             mOnRiderExitEvent;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_60::RideableComponentDefinition::DismountMode> mDismountMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                     mOnRiderEnterEvent;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                     mOnRiderExitEvent;
     // NOLINTEND
 
 public:

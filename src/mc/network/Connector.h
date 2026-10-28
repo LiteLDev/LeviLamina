@@ -10,6 +10,7 @@
 // clang-format off
 class NetworkIdentifier;
 class NetworkPeer;
+class WebKey;
 namespace Json { class Value; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { struct ResolvedExperienceInfo; }
@@ -29,8 +30,11 @@ public:
         // NOLINTBEGIN
         virtual ~ConnectionCallbacks() = default;
 
-        virtual bool
-        onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;
+        virtual bool onNewIncomingConnection(
+            ::NetworkIdentifier const&         id,
+            ::std::shared_ptr<::NetworkPeer>&& peer,
+            ::std::optional<::WebKey>          identityPublicKey
+        ) = 0;
 
         virtual bool
         onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;

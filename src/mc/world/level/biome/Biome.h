@@ -76,6 +76,12 @@ public:
     // NOLINTBEGIN
     MCAPI Biome(::BiomeIdType id, ::std::string_view name);
 
+#ifdef LL_PLAT_S
+    MCAPI int getMapFoliageColor() const;
+
+    MCAPI int getMapGrassColor(::BlockPos const& pos) const;
+#endif
+
     MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
@@ -84,14 +90,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void buildCachedTemperatureNoise(::LevelChunk& chunk);
 
-#ifdef LL_PLAT_C
     MCAPI static ::mce::Color getColorBySamplingSurroundings(
         ::BlockSource&                                                     region,
         ::BlockPos const&                                                  pos,
         ::std::vector<::BlockPos> const&                                   pattern,
         ::gsl::not_null<int (*)(::Biome const&, ::BlockPos const&)> const& sampler
     );
-#endif
     // NOLINTEND
 
 public:

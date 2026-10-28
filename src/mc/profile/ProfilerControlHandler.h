@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class LocalProfilerControlBroker;
+class ProfilerUsageEventing;
 namespace ECS::Profiling { class EntitySystemProfiler; }
 // clang-format on
 
@@ -15,29 +16,22 @@ class ProfilerControlHandler {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke8d3cf;
     ::ll::UntypedStorage<8, 16> mUnka97f2c;
     ::ll::UntypedStorage<8, 16> mUnk251810;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ProfilerControlHandler& operator=(ProfilerControlHandler const&);
     ProfilerControlHandler(ProfilerControlHandler const&);
     ProfilerControlHandler();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ProfilerControlHandler& operator=(ProfilerControlHandler const&);
-    ProfilerControlHandler(ProfilerControlHandler const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ProfilerControlHandler();
+    MCNAPI explicit ProfilerControlHandler(::Bedrock::NonOwnerPointer<::ProfilerUsageEventing> profilerUsageEventing);
 
     MCNAPI void _tickLocalProfilerControlBroker(
         ::Bedrock::NotNullNonOwnerPtr<::LocalProfilerControlBroker>           profilerControlBroker,
@@ -57,7 +51,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::ProfilerUsageEventing> profilerUsageEventing);
 #endif
     // NOLINTEND
 };

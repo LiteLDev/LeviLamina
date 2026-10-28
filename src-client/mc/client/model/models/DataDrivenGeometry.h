@@ -14,7 +14,6 @@
 class BoneOrientation;
 class ModelPart;
 class ModelPartLocator;
-class RenderController;
 class RenderParams;
 class SkinnedMeshGroup;
 // clang-format on
@@ -39,20 +38,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataDrivenGeometry() = default;
+    virtual ~DataDrivenGeometry();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void copyBoneMatricesToActor(
-        ::RenderParams&                      renderParams,
-        ::gsl::span<::BoneOrientation const> boneOrientations,
-        ::RenderController const*            renderControllerId
-    );
-
     MCAPI void copyTransformMatricesToModelParts(::RenderParams& renderParams);
 
     MCAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ MCAPI void comparePlayerActionComponent(
     ::AttributesComponent&                            attributes,
     ::Optional<::ActorUniqueIDComponent const> const& actorUniqueId,
     ::Optional<::AbilitiesComponent const> const&     abilities,
-    ::EntityModifier<::SendPacketsComponent>          modifier
+    ::EntityModifier<::SendPacketsComponent> const&   modifier
 );
 
 MCAPI void registerServerSystems(::EntitySystems& systemRegistry);

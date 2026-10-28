@@ -24,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptWorldClockEventFilterData const& filterData);
-
     MCAPI ~ScriptWorldClockEventFilter();
     // NOLINTEND
 

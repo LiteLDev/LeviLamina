@@ -81,8 +81,6 @@ public:
         ::std::function<void(::std::function<void()>)> postUploadWorldToRealm
     );
 
-    MCAPI void _initLevelData(::LevelDataWrapper& levelData, bool platformMultiplayerRestrictions);
-
     MCAPI void _initNewWorldLevelData(::LevelDataWrapper& levelData);
 
     MCAPI ::ui::ViewRequest _playWorld(
@@ -96,18 +94,9 @@ public:
 
     MCAPI void _removeResourcePacks();
 
-    MCAPI void confirmationHardcoreDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
     MCAPI void confirmationNoAchievementsDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void setUpCallbacksForBooleanOption(::OptionID optionID, ::std::string const& toggleName);
-
-    MCAPI void setUpCallbacksForBooleanOption(
-        ::OptionID           optionID,
-        ::std::string const& toggleName,
-        ::std::string const& valueBindingName,
-        ::std::string const& enabledBindingName
-    );
 
     MCAPI void setUpCallbacksForBooleanOption(
         ::std::string const&        toggleName,

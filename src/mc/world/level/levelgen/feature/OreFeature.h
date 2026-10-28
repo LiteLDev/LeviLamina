@@ -19,17 +19,28 @@ class OreFeature : public ::IFeature {
 public:
     // OreFeature inner types declare
     // clang-format off
+    struct AcceleratedRule;
     struct ReplaceRulesAccelerator;
     struct SphereData;
     struct ScratchData;
     // clang-format on
 
     // OreFeature inner types define
+    struct AcceleratedRule {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Block const*>                     mBlock;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockType const*>> mReplaceableTypes;
+        ::ll::TypedStorage<1, 1, bool>                               mReplaceAny;
+        // NOLINTEND
+    };
+
     struct ReplaceRulesAccelerator {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Block const*, ::std::vector<::BlockType const*>>>> mRules;
+        ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::AcceleratedRule>> mRules;
         // NOLINTEND
     };
 

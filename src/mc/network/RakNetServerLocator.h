@@ -175,6 +175,7 @@ public:
     ::ll::UntypedStorage<8, 104> mUnk8970d6;
     ::ll::UntypedStorage<4, 4>   mUnk8d92b1;
     ::ll::UntypedStorage<8, 40>  mUnk7ba1da;
+    ::ll::UntypedStorage<8, 24>  mUnk54d289;
     // NOLINTEND
 
 public:
@@ -229,6 +230,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI RakNetServerLocator(
         ::RakNetConnector&                               rakNetConnector,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
@@ -241,6 +243,7 @@ public:
         ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>()>
             createUniqueRakPeerFunc
     );
+#endif
 
     MCNAPI void _activate();
 
@@ -291,6 +294,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(
         ::RakNetConnector&                               rakNetConnector,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
@@ -303,6 +307,7 @@ public:
         ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>()>
             createUniqueRakPeerFunc
     );
+#endif
     // NOLINTEND
 
 public:

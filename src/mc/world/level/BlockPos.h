@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
-
 // auto generated forward declare list
 // clang-format off
-class Vec3;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class BlockPos {
@@ -31,9 +27,13 @@ public:
 
     MCAPI ::std::string toString() const;
 
-    MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
-
     MCAPI ::BlockPos west() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

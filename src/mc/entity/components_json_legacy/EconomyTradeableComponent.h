@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/util/IntRange.h"
 #include "mc/world/ContainerID.h"
 
 // auto generated forward declare list
@@ -15,9 +16,9 @@ class Interaction;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
-struct IntRange;
 struct Tick;
 struct TradeTable;
+namespace SharedTypes::v1_26_60 { struct EconomyTradeableComponentDefinition; }
 // clang-format on
 
 class EconomyTradeableComponent {
@@ -31,6 +32,17 @@ public:
     ::ll::TypedStorage<8, 8, ::Actor&>                                mOwner;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MerchantRecipeList>> mOffers;
     ::ll::TypedStorage<8, 32, ::std::string>                          mDisplayName;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mTradeTablePath;
+    ::ll::TypedStorage<1, 1, bool>                                    mUseNewTradeScreen;
+    ::ll::TypedStorage<4, 4, int>                                     mHeroDemandDiscount;
+    ::ll::TypedStorage<4, 8, ::IntRange>                              mCuredDiscount;
+    ::ll::TypedStorage<4, 8, ::IntRange>                              mMaxCuredDiscount;
+    ::ll::TypedStorage<4, 4, int>                                     mNearbyCuredDiscount;
+    ::ll::TypedStorage<4, 4, int>                                     mMaxNearbyCuredDiscount;
+    ::ll::TypedStorage<1, 1, bool>                                    mPersistTrades;
+    ::ll::TypedStorage<1, 1, bool>                                    mConvertTradesEconomy;
+    ::ll::TypedStorage<1, 1, bool>                                    mShowTradeScreen;
+    ::ll::TypedStorage<1, 1, bool>                                    mUseLegacyPrices;
     ::ll::TypedStorage<8, 32, ::std::string>                          mGeneratedTablePath;
     ::ll::TypedStorage<1, 1, bool>                                    mConvertedFromVillagerV1;
     ::ll::TypedStorage<4, 4, int>                                     mDiscountDegradationTimeStamp;
@@ -73,6 +85,10 @@ public:
 
     MCAPI bool hasSupplyRemaining() const;
 
+    MCAPI void initFromDefinition();
+
+    MCAPI void initFromDefinition(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const& definition);
+
     MCAPI ::std::string const& loadDisplayName();
 
     MCAPI void matchExpAndTier();
@@ -102,11 +118,19 @@ public:
     MCAPI void tryIncrementNearbyCuredDiscount();
 
     MCAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
+
+    MCAPI ~EconomyTradeableComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

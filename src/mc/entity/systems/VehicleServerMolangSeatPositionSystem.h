@@ -24,7 +24,7 @@ public:
         ::PassengerComponent const&          passengerComponent,
         ::ActorOwnerComponent&               actorComponent,
         ::PositionPassengerRequestComponent& positionPassengerRequestComponent,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
+        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> const& vehicleView
     );
     // NOLINTEND
 };

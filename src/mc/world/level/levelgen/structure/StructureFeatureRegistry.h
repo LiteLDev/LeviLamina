@@ -40,7 +40,8 @@ public:
         ::BlockPos&                     pos,
         ::BiomeSource const&            biomeSource,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     );
 
     MCAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);

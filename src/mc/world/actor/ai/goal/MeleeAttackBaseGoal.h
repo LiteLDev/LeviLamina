@@ -71,6 +71,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                       mHasAttacked;
     ::ll::TypedStorage<1, 1, bool>                                       mSetPersistent;
     ::ll::TypedStorage<1, 1, bool>                                       mCanSpreadOnFire;
+    ::ll::TypedStorage<1, 1, bool>                                       mCheckTargetInsideAABB;
     // NOLINTEND
 
 public:

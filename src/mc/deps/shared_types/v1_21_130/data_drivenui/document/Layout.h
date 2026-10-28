@@ -6,6 +6,7 @@
 // clang-format off
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Context; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormPanel; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Panel; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -22,14 +23,33 @@ public:
         ::std::vector<::std::variant<
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
+            ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormPanel>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>>>
         mMarkup;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~Layout();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

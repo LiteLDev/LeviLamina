@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EDUServersScreenController;
+class EduServersScreenController;
 class MinecraftScreenModel;
 // clang-format on
 
@@ -18,7 +18,7 @@ class EduServerFetchProgressHandler : public ::EmptyProgressHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::EDUServersScreenController>> mEduServersScreenController;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::EduServersScreenController>> mEduServersScreenController;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mEduServerFetchStartTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds const>                         mMinimumDisplayInterval;
     ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds const>                         mTimeOutTime;
@@ -51,14 +51,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EduServerFetchProgressHandler(
-        ::Bedrock::NonOwnerPointer<::EDUServersScreenController> eduServersScreenController
+        ::Bedrock::NonOwnerPointer<::EduServersScreenController> eduServersScreenController
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::EDUServersScreenController> eduServersScreenController);
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::EduServersScreenController> eduServersScreenController);
     // NOLINTEND
 
 public:

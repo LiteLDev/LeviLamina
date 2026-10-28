@@ -28,6 +28,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Result<::Json::Value> toJson(::std::optional<::std::string> kid) const;
+
+    MCNAPI ~WebKey();
     // NOLINTEND
 
 public:
@@ -36,5 +38,11 @@ public:
     MCNAPI static ::Bedrock::Result<::WebKey> fromRawPublicKey(::std::string const& publicKey);
 
     MCNAPI static ::Bedrock::Result<::WebKey> parse(::Json::Value const& jwk);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

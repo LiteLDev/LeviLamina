@@ -25,7 +25,6 @@
 #include "mc/deps/input/PointerType.h"
 #include "mc/events/NetworkType.h"
 #include "mc/platform/MultiplayerLockedContext.h"
-#include "mc/profile/IProfilingOrchestratorProvider.h"
 #include "mc/sound/MusicRepeatMode.h"
 
 // auto generated forward declare list
@@ -47,14 +46,14 @@ class CubemapBackgroundResources;
 class DateManager;
 class DeferredLighting;
 class DevConsoleLogger;
-class EDUSystems;
+class EduSystems;
 class EmoticonManager;
 class EntityContext;
+class ExperienceSystemsManager;
 class ExternalContentManager;
 class FlightingService;
 class FontRepository;
 class GameRenderer;
-class GatheringManager;
 class GeometryGroup;
 class GlobalResourcesCrashRecovery;
 class GuiData;
@@ -159,7 +158,6 @@ class IMinecraftGame : public ::Bedrock::EnableNonOwnerReferences,
                        public ::IGameServerStartup,
                        public ::IGameServerShutdown,
                        public ::INetworkGameConnector,
-                       public ::Bedrock::Profiling::IProfilingOrchestratorProvider,
                        public ::IClientInstances,
                        public ::IWorldTransfer,
                        public ::AppExtensions::AppExtensionsOwner,
@@ -460,7 +458,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PersonaService> getPersonaService() const = 0;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> getGatheringManager() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager> getExperienceSystemsManager() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> getContentCatalogService() const = 0;
 
@@ -636,9 +634,9 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint> const getContentFileLogEndPoint() const = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems const> getEduSystems() const = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() = 0;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems> getEduSystems() = 0;
 
     virtual ::std::shared_ptr<::OptionRegistry> getPrimaryUserOptions() = 0;
 

@@ -23,10 +23,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class FrogSpawnBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    FrogSpawnBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
@@ -59,17 +55,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FrogSpawnBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

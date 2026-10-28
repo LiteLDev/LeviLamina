@@ -49,7 +49,7 @@ MCAPI void tickPowderSnowMovementSlowdown(
         ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
         ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
         ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>> modifier
+        ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>> const& modifier
 );
 
 MCAPI void tickWebMovementSlowdown(
@@ -70,7 +70,7 @@ MCAPI void tickWebMovementSlowdown(
         ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
         ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
         ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>> modifier
+        ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>> const& modifier
 );
 // NOLINTEND
 

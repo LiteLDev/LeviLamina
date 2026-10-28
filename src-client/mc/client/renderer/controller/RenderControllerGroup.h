@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class MinEngineVersion;
 class RenderControllerInfo;
 class ResourceLoadManager;
 class ResourcePackManager;
@@ -41,6 +42,12 @@ public:
     MCNAPI RenderControllerGroup();
 
     MCNAPI ::std::shared_ptr<::RenderControllerInfo> getRenderControllerInfo(::HashedString const& name);
+
+    MCNAPI void loadRenderController(
+        ::std::string&&           fileData,
+        ::MinEngineVersion const& minEngineVersion,
+        ::std::string const&      filenameWithExtension
+    );
 
     MCNAPI void loadRenderControllers(
         ::ResourcePackManager&                               resourcePackManager,

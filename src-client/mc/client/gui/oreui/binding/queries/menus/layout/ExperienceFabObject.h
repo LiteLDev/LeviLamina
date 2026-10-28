@@ -13,7 +13,7 @@ class ExperienceFabObject : public ::OreUI::PropertyObject<::OreUI::ExperienceFa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2152, ::OreUI::ExperiencePreviewObject> mExperience;
+    ::ll::TypedStorage<8, 2192, ::OreUI::ExperiencePreviewObject> mExperience;
     ::ll::TypedStorage<8, 440, ::OreUI::LocalizedStringObject>    mTitle;
     // NOLINTEND
 };

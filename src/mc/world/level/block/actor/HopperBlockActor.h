@@ -146,7 +146,11 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
+#ifdef LL_PLAT_S
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+#else // LL_PLAT_C
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+#endif
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 

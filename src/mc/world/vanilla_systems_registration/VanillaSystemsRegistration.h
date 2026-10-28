@@ -12,6 +12,7 @@ class EntitySystems;
 class Experiments;
 class ILevel;
 struct PlayerMovementSettings;
+struct TickingSystemWithInfo;
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
 
@@ -52,6 +53,14 @@ MCAPI void registerBlockPosTrackerSystems(
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
+MCAPI void registerClientVariableTickingSystems(
+    ::EntitySystems& systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const&,
+    ::std::vector<::TickingSystemWithInfo> systems20Hz,
+    ::std::vector<::TickingSystemWithInfo> systems5Hz,
+    ::std::vector<::TickingSystemWithInfo> systems1Hz
+);
+
 MCAPI void registerEditorPauseFilterSystems(::EntitySystems& systemRegistry);
 #endif
 
@@ -61,7 +70,10 @@ MCAPI void registerMovementInputSystems(
 );
 
 #ifdef LL_PLAT_C
-MCAPI void registerSharedVanillaPlayerInteractionSystems(::EntitySystems& systemRegistry);
+MCAPI void registerSharedVanillaPlayerInteractionSystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
 
 MCAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);
 

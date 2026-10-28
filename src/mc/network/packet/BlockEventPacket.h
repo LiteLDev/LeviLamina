@@ -64,11 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCFOLD ::MinecraftPacketIds $getId() const;
-#else // LL_PLAT_C
     MCAPI ::MinecraftPacketIds $getId() const;
-#endif
 
     MCAPI ::std::string_view $getName() const;
 

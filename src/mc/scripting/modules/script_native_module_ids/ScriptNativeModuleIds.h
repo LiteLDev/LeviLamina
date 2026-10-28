@@ -11,7 +11,7 @@ namespace mce { class UUID; }
 namespace ScriptNativeModuleIds {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::array<::mce::UUID, 11>
+MCNAPI ::std::array<::mce::UUID, 14>
 getAll(::ScriptNativeModuleIds::Environment const& environment, ::mce::UUID const& missing);
 // NOLINTEND
 

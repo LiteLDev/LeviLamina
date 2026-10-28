@@ -32,6 +32,12 @@ public:
 
         MCAPI void init(::BaseGameVersion const& baseGameVersion);
         // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static ::Motif::Registry& get();
+        // NOLINTEND
     };
 
 public:

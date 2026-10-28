@@ -220,6 +220,8 @@ public:
 
     virtual bool isNaturalDimension() const /*override*/;
 
+    virtual bool shouldRenderClouds() const /*override*/;
+
     virtual bool isValidSpawn(int x, int z) const;
 
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
@@ -339,15 +341,11 @@ public:
 
     MCAPI ::Player* fetchNearestInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
 
-#ifdef LL_PLAT_C
     MCAPI ::Player* findPlayer(::brstd::function_ref<bool(::Player const&)> pred) const;
-#endif
 
     MCAPI void flagEntityforChunkMove(::Actor& e);
 
     MCAPI void flushRunTimeLighting();
-
-    MCAPI ::ChunkSource& getChunkSource() const;
 
 #ifdef LL_PLAT_C
     MCAPI float getSkyDarken(float a) const;
@@ -401,6 +399,8 @@ public:
 
     MCFOLD bool $isNaturalDimension() const;
 
+    MCFOLD bool $shouldRenderClouds() const;
+
     MCFOLD bool $isValidSpawn(int x, int z) const;
 
     MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
@@ -437,7 +437,7 @@ public:
 
     MCFOLD ::BiomeRegistry const& $getBiomeRegistry() const;
 
-    MCFOLD ::BlockSource& $getBlockSourceFromMainChunkSource() const;
+    MCAPI ::BlockSource& $getBlockSourceFromMainChunkSource() const;
 
     MCAPI ::Actor* $fetchEntity(::ActorUniqueID actorID, bool getRemoved) const;
 

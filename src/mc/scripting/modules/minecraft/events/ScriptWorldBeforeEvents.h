@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/TypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
@@ -32,6 +31,7 @@ struct ItemUseEvent;
 struct ItemUseOnEvent;
 struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityBeforeEvent;
+struct PlayerItemAttackEntityBeforeEvent;
 struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { struct EmptyFilter; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
@@ -48,6 +48,7 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerGameModeChangeBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerItemAttackEntityBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
@@ -167,6 +168,14 @@ public:
         8,
         32,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
+            ::ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent,
+            1,
+            ::ScriptModuleMinecraft::EmptyFilter>>>
+        mBeforePlayerItemAttackEntityEventSignal;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent,
             1,
             ::ScriptModuleMinecraft::EmptyFilter>>>
@@ -280,6 +289,14 @@ public:
     ) /*override*/;
 
     virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>>
+    onBeforePlayerItemAttackEntity(
+        ::Player&                                  player,
+        ::Actor&                                   target,
+        ::PlayerItemAttackEntityBeforeEvent const& eventData
+    ) /*override*/;
+
+    virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     onBeforePlayerInteractWithEntity(
         ::Player&                                    player,
@@ -313,7 +330,7 @@ public:
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
-    onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime) /*override*/;
+    onBeforeWorldClockRestart(::gsl::not_null<::WorldClock*> clock, int newTime) /*override*/;
     // NOLINTEND
 
 public:
@@ -395,6 +412,14 @@ public:
     $onBeforePlayerInteractWithBlock(::Player& player, ::PlayerInteractWithBlockBeforeEvent const& eventData);
 
     MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>>
+    $onBeforePlayerItemAttackEntity(
+        ::Player&                                  player,
+        ::Actor&                                   target,
+        ::PlayerItemAttackEntityBeforeEvent const& eventData
+    );
+
+    MCAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(
         ::Player&                                    player,
@@ -428,7 +453,7 @@ public:
 
     MCAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
-    $onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
+    $onBeforeWorldClockRestart(::gsl::not_null<::WorldClock*> clock, int newTime);
 
 
     // NOLINTEND

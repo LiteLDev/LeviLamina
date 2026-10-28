@@ -58,7 +58,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CatalogCollection>>                       mCatalogCollection;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ImportContext>>                           mImportContext;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::Core::PathBuffer<::std::string>>> mCachedImagePaths;
-    ::ll::TypedStorage<4, 4, int>                                                           mItemsFoundOnMarketplace;
     ::ll::TypedStorage<4, 4, int>                                                           mItemsThumbnailsFetched;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GenericEntitlementChangeListener>>        mEntitlementChangeListener;
     // NOLINTEND

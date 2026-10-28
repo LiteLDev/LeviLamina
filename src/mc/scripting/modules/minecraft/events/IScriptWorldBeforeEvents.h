@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 #include "mc/world/level/GameType.h"
@@ -25,6 +24,7 @@ struct ItemUseEvent;
 struct ItemUseOnEvent;
 struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityBeforeEvent;
+struct PlayerItemAttackEntityBeforeEvent;
 struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
@@ -39,6 +39,7 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerGameModeChangeBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerItemAttackEntityBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldClockRestartBeforeEvent; }
@@ -63,6 +64,14 @@ public:
         ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
         ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
         int                                        duration
+    );
+
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>>
+    onBeforePlayerItemAttackEntity(
+        ::Player&                                  player,
+        ::Actor&                                   target,
+        ::PlayerItemAttackEntityBeforeEvent const& eventData
     );
 
     virtual ::std::optional<
@@ -122,7 +131,7 @@ public:
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
-    onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
+    onBeforeWorldClockRestart(::gsl::not_null<::WorldClock*> clock, int newTime);
     // NOLINTEND
 
 public:
@@ -139,6 +148,14 @@ public:
         ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
         ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
         int                                        duration
+    );
+
+    MCFOLD ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>>
+    $onBeforePlayerItemAttackEntity(
+        ::Player&                                  player,
+        ::Actor&                                   target,
+        ::PlayerItemAttackEntityBeforeEvent const& eventData
     );
 
     MCFOLD ::std::optional<
@@ -196,9 +213,9 @@ public:
     MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent);
 
-    MCAPI ::std::optional<
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
-    $onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
+    $onBeforeWorldClockRestart(::gsl::not_null<::WorldClock*> clock, int newTime);
 
 
     // NOLINTEND

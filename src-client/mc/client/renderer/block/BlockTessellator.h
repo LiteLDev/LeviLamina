@@ -291,6 +291,12 @@ public:
         ::OffscreenCaptureDescription const& capture
     );
 
+    MCAPI void resetCache(::BlockPos const& pos);
+
+    MCAPI void resetCacheToAir(::BlockPos const& pos);
+
+    MCAPI void resetRegion();
+
     MCAPI bool rotateCommandBlockFaces(::Block const& block);
 
     MCAPI void setRegion(::BlockSource& region);

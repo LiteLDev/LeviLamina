@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/CompactionStatus.h"
+
 class CompactionListenerEnv : public ::leveldb::EnvWrapper {
 public:
     // member variables
@@ -22,6 +25,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
+#endif
     // NOLINTEND
 
 public:

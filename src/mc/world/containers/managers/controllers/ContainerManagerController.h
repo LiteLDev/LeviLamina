@@ -256,12 +256,6 @@ public:
 
     MCAPI bool _handleAutoPlace(::ItemTransferRequest const& request);
 
-    MCAPI void _handleSplitMultiple(
-        ::SelectedSlotInfo const& selected,
-        ::ItemInstance const&     itemTemplate,
-        ::SlotData const&         dstSlot
-    );
-
     MCAPI bool _isContainerSimulationEnabled() const;
 
     MCAPI void _onItemTransferring(
@@ -366,6 +360,8 @@ public:
     MCAPI bool isItemFiltered(::std::vector<::std::string> containerNames, ::ItemStackBase const& item) const;
 
     MCAPI bool playerHasRoomForItem(::ItemInstance const& item) const;
+
+    MCAPI void resetSplitStack();
 #endif
     // NOLINTEND
 

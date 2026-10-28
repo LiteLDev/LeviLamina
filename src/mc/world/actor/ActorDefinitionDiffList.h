@@ -51,7 +51,21 @@ public:
 
     MCAPI void clearChangedDescription();
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::string definitionListToString(::std::string const& delimiter) const;
+
+    MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
+
+    MCAPI bool hasDefinition(::std::string const& def) const;
+#endif
+
     MCAPI void removeDefinition(::std::string const& def);
+
+#ifdef LL_PLAT_C
+    MCAPI void setDefinitionStack(::std::vector<::DiffListPair>& stack);
+
+    MCAPI void unlockChanges();
+#endif
     // NOLINTEND
 
 public:

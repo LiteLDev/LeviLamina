@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -32,11 +34,27 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptPlaytestLauncher(
+        ::Editor::ServiceProviderCollection&  serviceProviders,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindClass();
 
     MCNAPI static ::Scripting::EnumBinding bindSessionResultEnums();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

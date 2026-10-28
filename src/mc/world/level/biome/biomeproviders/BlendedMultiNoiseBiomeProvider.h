@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/ParameterList.h"
+#include "mc/world/level/biome/RTree.h"
+#include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -41,6 +43,12 @@ public:
     );
 
     MCAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
+
+    MCAPI ::Biome const* tryGetBiome(
+        ::GetBiomeOptions const&                  getBiomeOptions,
+        ::ChunkLocalNoiseCache::CacheEntry const& xzCacheEntry,
+        ::RTree::Hint*                            hint
+    ) const;
     // NOLINTEND
 
 public:

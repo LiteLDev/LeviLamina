@@ -9,11 +9,9 @@
 // clang-format off
 class EnchantmentInstance;
 class ItemStackBase;
-class LootItemCondition;
 class LootTableContext;
 class Random;
 struct Trade;
-namespace Json { class Value; }
 // clang-format on
 
 class EnchantBookForTradingFunction : public ::LootItemFunction {
@@ -59,15 +57,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
-    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
-#endif
     // NOLINTEND
 
 public:

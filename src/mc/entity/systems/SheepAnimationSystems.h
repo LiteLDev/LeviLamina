@@ -4,13 +4,15 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntitySystems;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace SheepAnimationSystems {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& registry, bool isClientSide);
+MCAPI ::TickingSystemWithInfo createEatAnimationSystem();
+
+MCAPI ::TickingSystemWithInfo createJebificationSystem();
 // NOLINTEND
 
 } // namespace SheepAnimationSystems

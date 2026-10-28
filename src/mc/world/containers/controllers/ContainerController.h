@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/controllers/ItemAddType.h"
 #include "mc/world/containers/controllers/ItemPlaceType.h"
 #include "mc/world/containers/controllers/ItemSetType.h"
 
@@ -41,52 +40,25 @@ public:
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
-#ifdef LL_PLAT_S
-    virtual ::ItemSetType
-    _canSet(::ContainerScreenContext const&, int, ::ItemStackBase const&, ::ItemTransferAmount) const;
-#else // LL_PLAT_C
     virtual ::ItemSetType _canSet(
         ::ContainerScreenContext const& context,
         int                             modelSlot,
         ::ItemStackBase const&          item,
         ::ItemTransferAmount            transferAmount
     ) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual int _getAvailableSetCount(::ContainerScreenContext const&, int, ::ItemStackBase const&) const;
-#else // LL_PLAT_C
     virtual int
     _getAvailableSetCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& item) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual bool _canRemove(int, int) const;
-#else // LL_PLAT_C
     virtual bool _canRemove(int modelSlot, int removeCount) const;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual void _onItemChanged(int);
-#else // LL_PLAT_C
     virtual void _onItemChanged(int modelSlot);
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI int _addItem(::ContainerScreenContext const& context, int modelSlot, int addCount);
-
-    MCAPI ::ItemAddType _canAdd(
-        ::ContainerScreenContext const& context,
-        int                             slot,
-        ::ItemStackBase const&          item,
-        ::ItemTransferAmount            transferAmount
-    ) const;
-
     MCFOLD bool canConsume(int modelSlot, int removeCount) const;
 
     MCFOLD bool canDestroy(int modelSlot, int removeCount) const;
@@ -131,7 +103,7 @@ public:
 #ifdef LL_PLAT_C
     MCFOLD ::ItemInstance const& $getRecipeItem(int index) const;
 
-    MCAPI bool $canRemove(int slot, int removeCount) const;
+    MCFOLD bool $canRemove(int slot, int removeCount) const;
 
     MCFOLD bool $isItemAllowed(::ItemStackBase const& item) const;
 
@@ -155,11 +127,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -33,6 +33,8 @@ public:
 
     MCAPI ::std::string getAddress() const;
 
+    MCAPI ::std::string getCorrelationId() const;
+
     MCAPI uint64 getHash() const;
 
     MCAPI bool isUnassigned() const;

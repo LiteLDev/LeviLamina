@@ -15,6 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 224> mUnkcb1415;
     ::ll::UntypedStorage<8, 88>  mUnkb06cd8;
+    ::ll::UntypedStorage<8, 48>  mUnkfdd0c5;
     // NOLINTEND
 
 public:
@@ -22,6 +23,12 @@ public:
     ScriptMessageBoxButtonOptions& operator=(ScriptMessageBoxButtonOptions const&);
     ScriptMessageBoxButtonOptions(ScriptMessageBoxButtonOptions const&);
     ScriptMessageBoxButtonOptions();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::ScriptModuleMinecraftServerUI::ScriptMessageBoxButtonOptions const& other) const;
+    // NOLINTEND
 
 public:
     // static functions

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseMoveToBlockGoalDefinition.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_10 {
 
 struct RaidGardenGoalDefinition : public ::SharedTypes::BaseMoveToBlockGoalDefinition {
@@ -21,18 +16,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                           mEatDelay;
     ::ll::TypedStorage<4, 4, int>                           mInitialEatDelay;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mEatBlocks;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_26_10::RaidGardenGoalDefinition const&) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -24,6 +24,7 @@ namespace OreUI { class InboxSession; }
 namespace OreUI { struct MessageImage; }
 namespace OreUI { struct MessageItem; }
 namespace Realms { class InvitesService; }
+namespace Realms { class RealmsList; }
 // clang-format on
 
 namespace OreUI {
@@ -65,6 +66,7 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::MessageItem>>         mItems;
         ::ll::TypedStorage<8, 232, ::std::optional<::OreUI::MessageGamedrop>>  mGamedrop;
         ::ll::TypedStorage<8, 40, ::std::optional<::OreUI::SentimentQuestion>> mSentimentQuestion;
+        ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>              mGiftId;
         ::ll::TypedStorage<4, 4, ::Invites::Invite::InvitationType>            mInvitationType;
         ::ll::TypedStorage<4, 4, ::Invites::Invite::InvitationStatus>          mInvitationStatus;
         ::ll::TypedStorage<1, 1, ::PlayerMessaging::MessageStyle>              mStyle;
@@ -145,6 +147,7 @@ public:
     MCAPI InboxFacet(
         ::IClientInstance&                                         client,
         ::std::weak_ptr<::RealmsAPI>                               realmsApi,
+        ::std::shared_ptr<::Realms::RealmsList>                    realmsList,
         ::PlayerMessagingService&                                  service,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,
@@ -197,6 +200,7 @@ public:
     MCAPI void* $ctor(
         ::IClientInstance&                                         client,
         ::std::weak_ptr<::RealmsAPI>                               realmsApi,
+        ::std::shared_ptr<::Realms::RealmsList>                    realmsList,
         ::PlayerMessagingService&                                  service,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>       entitlementManager,

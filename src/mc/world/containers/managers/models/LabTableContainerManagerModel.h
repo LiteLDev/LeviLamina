@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -11,7 +10,6 @@
 // clang-format off
 class ContainerScreenContext;
 class ItemStack;
-class Player;
 // clang-format on
 
 class LabTableContainerManagerModel : public ::LevelContainerManagerModel {
@@ -20,10 +18,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LabTableContainerManagerModel();
 
 public:
     // virtual functions
@@ -43,18 +37,6 @@ public:
     virtual void broadcastChanges() /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LabTableContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

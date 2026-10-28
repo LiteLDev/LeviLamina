@@ -72,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InGamePlayScreen() /*override*/ = default;
+    virtual ~InGamePlayScreen() /*override*/;
 
     virtual void applyInput(float a) /*override*/;
 
@@ -150,6 +150,25 @@ public:
     virtual bool _shouldPushHUD();
 
     virtual void _updateInGameCursor();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    InGamePlayScreen(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

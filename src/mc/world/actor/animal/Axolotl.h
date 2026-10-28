@@ -9,19 +9,12 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class ActorDefinitionGroup;
 class BlockPos;
-class EntityContext;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Axolotl : public ::Animal {
-public:
-    // prevent constructor by default
-    Axolotl();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,26 +24,6 @@ public:
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     virtual ::AABB _getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Axolotl(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

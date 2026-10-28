@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/interface/RouteMode.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -29,8 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RouteModeInputHandler(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> clientInstance);
-
-    MCAPI void onRouteModeChanged(::OreUI::RouteMode previousMode, ::OreUI::RouteMode currentMode);
     // NOLINTEND
 
 public:

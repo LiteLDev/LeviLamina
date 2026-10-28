@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/Owner.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -11,6 +12,7 @@
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/packet/LevelSoundEventPacket.h"
 #include "mc/world/level/ILevelSoundManagerConnector.h"
+#include "mc/world/level/ServerAudioContentRegistry.h"
 #include "mc/world/level/ServerSoundDefinitionRegistry.h"
 #include "mc/world/level/ServerSoundInstanceManager.h"
 
@@ -29,7 +31,6 @@ class ServerSoundInstance;
 class SoundPlayerInterface;
 class Vec3;
 struct BroadcastOptions;
-struct ClientboundUpdateSoundDataPacketPayload;
 struct DimensionType;
 struct PlaySoundOptions;
 struct SoundEventIdentifier;
@@ -90,8 +91,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::ServerSoundDefinitionRegistry>                    mServerSoundDefinitionRegistry;
-    ::ll::TypedStorage<8, 200, ::ServerSoundInstanceManager>                      mServerSoundInstanceManager;
+    ::ll::TypedStorage<8, 104, ::Bedrock::Owner<::ServerSoundDefinitionRegistry>> mServerSoundDefinitionRegistry;
+    ::ll::TypedStorage<8, 168, ::ServerAudioContentRegistry>                      mServerAudioContentRegistry;
+    ::ll::TypedStorage<8, 208, ::ServerSoundInstanceManager>                      mServerSoundInstanceManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SoundPlayerInterface>> mSoundPlayer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PacketSender>>      mLevelPacketSender;
     ::ll::TypedStorage<1, 1, bool>                                                mIsClientSide;
@@ -142,6 +144,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerDisconnectedSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerConnectedSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerLeftDimensionSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPauseStateChangeSubscription;
     // NOLINTEND
 
 public:
@@ -216,10 +219,6 @@ public:
         ::std::optional<::BroadcastOptions>           broadcast
     );
 
-#ifdef LL_PLAT_C
-    MCAPI void handleUpdateSoundData(::ClientboundUpdateSoundDataPacketPayload const& payload);
-#endif
-
     MCAPI void onViewRegionMoved(
         ::NetworkIdentifierWithSubId const& player,
         ::BlockPos const&                   position,
@@ -249,6 +248,7 @@ public:
         ::std::optional<::Vec3> const&         fireAtPosition
     );
 
+#ifdef LL_PLAT_C
     MCAPI void playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float volume, float pitch);
 
     MCAPI void playSound(
@@ -268,6 +268,7 @@ public:
         bool                                   isGlobal,
         ::Player*                              primaryLocalPlayer
     );
+#endif
 
     MCAPI void playSynchronizedSound_DEPRECATED(
         ::IDimension&                          dimension,
@@ -280,13 +281,11 @@ public:
         ::std::optional<::Vec3> const&         fireAtPosition
     );
 
+#ifdef LL_PLAT_C
     MCAPI void processQueuedSoundPackets();
+#endif
 
-    MCAPI void sendRecordStarted(
-        ::std::vector<::NetworkIdentifierWithSubId> const& recipients,
-        ::BlockPos const&                                  blockPos,
-        ::ServerSoundHandle                                serverSoundHandle
-    );
+    MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
     MCAPI void subscribeToPlayerConnectionEvents(::IPlayerConnectionConnector& connector);
 
@@ -317,7 +316,7 @@ public:
 
     MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
 

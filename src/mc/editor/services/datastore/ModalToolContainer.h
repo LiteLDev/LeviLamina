@@ -4,20 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/IModalToolContainer.h"
 #include "mc/editor/Mode.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/datastore/container/Container.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
+namespace Editor::DataStore { struct SelectedToolChangeRequest; }
 namespace Json { class Value; }
 // clang-format on
 
 namespace Editor::DataStore {
 
-class ModalToolContainer : public ::Editor::DataStore::Container {
+class ModalToolContainer : public ::Editor::DataStore::Container, public ::Editor::DataStore::IModalToolContainer {
 public:
     // member variables
     // NOLINTBEGIN
@@ -26,6 +29,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk9e375a;
     ::ll::UntypedStorage<8, 24> mUnkdb5cbf;
     ::ll::UntypedStorage<8, 64> mUnkf874f4;
+    ::ll::UntypedStorage<8, 48> mUnk92fdfd;
     // NOLINTEND
 
 public:
@@ -40,6 +44,10 @@ public:
     virtual ~ModalToolContainer() /*override*/ = default;
 
     virtual void clear() /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription onSelectedToolChangeRequested(
+        ::std::function<void(::Editor::DataStore::SelectedToolChangeRequest&)> callback
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -97,13 +105,18 @@ public:
     // NOLINTBEGIN
     MCNAPI void $clear();
 
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $onSelectedToolChangeRequested(::std::function<void(::Editor::DataStore::SelectedToolChangeRequest&)> callback);
+
 
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIModalToolContainer();
+
+    MCNAPI static void** $vftableForContainer();
     // NOLINTEND
 };
 

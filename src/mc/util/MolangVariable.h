@@ -43,6 +43,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static bool& mHasInitializedVariableMaps();
+
     MCAPI static bool& mHasSetWatermark();
 
     MCAPI static ::std::unordered_map<::MolangVariableIndex, ::HashedString>& mIndexToVariableNameMap();

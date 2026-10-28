@@ -36,15 +36,13 @@ public:
     public:
         // prevent constructor by default
         WeightedBlockDescriptor& operator=(WeightedBlockDescriptor const&);
+        WeightedBlockDescriptor(WeightedBlockDescriptor const&);
         WeightedBlockDescriptor();
 
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI WeightedBlockDescriptor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor&&);
-
-        MCAPI
-        WeightedBlockDescriptor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor const&);
 
         MCAPI bool operator==(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor const&) const;
         // NOLINTEND
@@ -53,8 +51,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor&&);
-
-        MCAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor const&);
         // NOLINTEND
     };
 

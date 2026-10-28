@@ -25,8 +25,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                   mShouldDrawThisFrame;
     ::ll::TypedStorage<8, 24, ::std::vector<::ModelPart*>>           mSkinnedParts;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                          mSkinnedMeshQuads;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                          mSkinnedMeshTris;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                          mSkinnedMeshQuads;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                          mSkinnedMeshTris;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::mat4x4>>          mBoneMatrices;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::mat4x4>>          mPreviousBoneMatrices;
     ::ll::TypedStorage<4, 24, ::std::pair<::glm::vec3, ::glm::vec3>> mBounds;
@@ -38,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkinnedMesh();
-
     MCAPI void constructMesh(::ScreenContext& screenContext);
 
     MCAPI void
@@ -60,12 +58,6 @@ public:
     );
 
     MCAPI ~SkinnedMesh();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

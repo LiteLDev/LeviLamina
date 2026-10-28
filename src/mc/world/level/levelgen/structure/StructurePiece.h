@@ -120,6 +120,8 @@ public:
         bool                 skipAir
     );
 
+    MCAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+
     MCAPI ushort getOrientationData(::Block const* block, ushort data);
 
     MCAPI bool isReplaceableBlock(::Block const& block);

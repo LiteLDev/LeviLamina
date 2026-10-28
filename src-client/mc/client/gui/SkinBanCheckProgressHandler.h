@@ -65,7 +65,7 @@ public:
 
     MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
-    MCFOLD ::std::string $getTitleText() const;
+    MCAPI ::std::string $getTitleText() const;
 
     MCAPI ::std::string $getName() const;
     // NOLINTEND

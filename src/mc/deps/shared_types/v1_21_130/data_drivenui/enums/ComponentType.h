@@ -27,6 +27,11 @@ enum class ComponentType : uchar {
     FormSwitch               = 19,
     FormTextField            = 20,
     Visibility               = 21,
+    FormHorizontalStack      = 22,
+    FormPanel                = 23,
+    FormText                 = 24,
+    FormSpacing              = 25,
+    FormCloseButton          = 26,
 };
 
 }

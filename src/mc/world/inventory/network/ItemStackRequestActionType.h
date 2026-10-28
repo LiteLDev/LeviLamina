@@ -21,6 +21,7 @@ enum class ItemStackRequestActionType : uchar {
     CraftRecipeOptional                     = 15,
     CraftRepairAndDisenchant                = 16,
     CraftLoom                               = 17,
-    CraftNonImplementedDeprecatedasktylaing = 18,
-    CraftResultsDeprecatedasktylaing        = 19,
+    CraftDiscPress                          = 18,
+    CraftNonImplementedDeprecatedasktylaing = 19,
+    CraftResultsDeprecatedasktylaing        = 20,
 };

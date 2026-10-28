@@ -32,10 +32,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

@@ -24,6 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ~EnchantRandomlyFunction() /*override*/ = default;
+
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
 
     virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&) /*override*/;

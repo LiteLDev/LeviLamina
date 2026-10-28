@@ -24,6 +24,7 @@ public:
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>             mScreenAnimationEnabled;
     ::ll::TypedStorage<8, 8, ::Option*>                                   mAnimationOption;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>> mClient;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mAnimationOptionChangedToken;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mRouteChangedToken;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mSplitScreenChangedToken;
     // NOLINTEND

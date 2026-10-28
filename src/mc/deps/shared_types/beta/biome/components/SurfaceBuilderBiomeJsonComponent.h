@@ -12,11 +12,6 @@
 #include "mc/deps/shared_types/v1_21_100/biome/components/TheEndSurfaceSettings.h"
 #include "mc/deps/shared_types/v1_26_30/biome/components/NoiseGradientSurfaceSettings.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::Beta {
 
 struct SurfaceBuilderBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonComponent {
@@ -35,12 +30,6 @@ public:
             ::SharedTypes::v1_21_100::SurfaceBuilder::TheEndSurfaceSettings,
             ::SharedTypes::v1_26_30::SurfaceBuilder::NoiseGradientSurfaceSettings>>
         mBuilder;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

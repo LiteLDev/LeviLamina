@@ -31,21 +31,28 @@ public:
     // clang-format on
 
     // GameMode inner types define
+    enum class BuildActionMode : int {
+        None             = 0,
+        Interacting      = 1,
+        AlignedPlacement = 2,
+    };
+
     struct BuildContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>        mHasBuildDirection;
-        ::ll::TypedStorage<1, 1, bool>        mHasLastBuiltPosition;
-        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockWasInteractive;
-        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockAlignedPlacement;
-        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockHadSuccessfulUse;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mLastBuiltBlockPosition;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mBuildDirection;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mNextBuildPos;
-        ::ll::TypedStorage<4, 12, ::Vec3>     mInitialClickPos;
-        ::ll::TypedStorage<1, 1, uchar>       mContinueFacing;
-        ::ll::TypedStorage<1, 1, ::HandSlot>  mLastBuildHandSlot;
+        ::ll::TypedStorage<1, 1, bool>                        mHasBuildDirection;
+        ::ll::TypedStorage<1, 1, bool>                        mHasLastBuiltPosition;
+        ::ll::TypedStorage<1, 1, bool>                        mLastBuildBlockWasInteractive;
+        ::ll::TypedStorage<1, 1, bool>                        mLastBuildBlockAlignedPlacement;
+        ::ll::TypedStorage<1, 1, bool>                        mLastBuildBlockHadSuccessfulUse;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                 mLastBuiltBlockPosition;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                 mBuildDirection;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                 mNextBuildPos;
+        ::ll::TypedStorage<4, 12, ::Vec3>                     mInitialClickPos;
+        ::ll::TypedStorage<1, 1, uchar>                       mContinueFacing;
+        ::ll::TypedStorage<1, 1, ::HandSlot>                  mLastBuildHandSlot;
+        ::ll::TypedStorage<4, 4, ::GameMode::BuildActionMode> mActionMode;
         // NOLINTEND
     };
 
@@ -87,7 +94,7 @@ public:
     ::ll::TypedStorage<8, 8, double>                                  mLastDestroyTime;
     ::ll::TypedStorage<4, 4, float>                                   mDistanceTravelled;
     ::ll::TypedStorage<4, 12, ::Vec3>                                 mPlayerLastPosition;
-    ::ll::TypedStorage<4, 60, ::GameMode::BuildContext>               mBuildContext;
+    ::ll::TypedStorage<4, 64, ::GameMode::BuildContext>               mBuildContext;
     ::ll::TypedStorage<4, 4, float>                                   mMinPlayerSpeed;
     ::ll::TypedStorage<4, 4, int>                                     mContinueBreakBlockCount;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastBuildTime;
@@ -124,7 +131,7 @@ public:
 
     virtual bool buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
 
-    virtual void continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
+    virtual void continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, float buildDelayScale);
 
     virtual void stopBuildBlock();
 
@@ -174,10 +181,6 @@ public:
 
     MCAPI bool _enableBlockBreakDelay() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool _sendTryDestroyBlock(::BlockPos const& pos, uchar face);
-#endif
-
 #ifdef LL_PLAT_C
     MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 #endif
@@ -186,7 +189,8 @@ public:
 
     MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
 
-    MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr, ::HandSlot handSlot);
+    MCAPI void
+    continueBuildBlockAction(::Player const& player, ::HitResult const& hr, ::HandSlot handSlot, float buildDelayScale);
 
     MCAPI float getDestroyRate(::Block const& block);
 
@@ -239,7 +243,7 @@ public:
 
     MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
 
-    MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
+    MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, float buildDelayScale);
 
     MCAPI void $stopBuildBlock();
 

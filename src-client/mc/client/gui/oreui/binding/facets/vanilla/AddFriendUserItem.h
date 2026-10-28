@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                   xuid;
     ::ll::TypedStorage<8, 32, ::std::string>                   gamertag;
-    ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage> profileImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage> profileImage;
     ::ll::TypedStorage<1, 1, bool>                             isOnline;
     ::ll::TypedStorage<1, 1, bool>                             isFollowingMe;
     ::ll::TypedStorage<1, 1, bool>                             isFollowedByMe;
@@ -41,21 +41,6 @@ public:
         ::Social::XboxLiveUserProfileData const&                   profileData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI AddFriendUserItem(
-        ::std::string const&                  xuid,
-        ::std::string const&                  gamertag,
-        ::OreUI::AllowListProfileImage const& profileImage,
-        bool                                  isOnline,
-        bool                                  isFollowingMe,
-        bool                                  isFollowedByMe,
-        bool                                  isFriend,
-        bool                                  isFriendRequestReceived,
-        bool                                  isFriendRequestSent,
-        ::std::string const&                  description
-    );
-
-    MCAPI ~AddFriendUserItem();
     // NOLINTEND
 
 public:
@@ -65,25 +50,6 @@ public:
         ::Social::XboxLiveUserProfileData const&                   profileData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI void* $ctor(
-        ::std::string const&                  xuid,
-        ::std::string const&                  gamertag,
-        ::OreUI::AllowListProfileImage const& profileImage,
-        bool                                  isOnline,
-        bool                                  isFollowingMe,
-        bool                                  isFollowedByMe,
-        bool                                  isFriend,
-        bool                                  isFriendRequestReceived,
-        bool                                  isFriendRequestSent,
-        ::std::string const&                  description
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

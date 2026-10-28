@@ -15,14 +15,34 @@ struct NetherNetConnector;
 
 class WebRTCNetworkPeer : public ::NetworkPeer {
 public:
+    // WebRTCNetworkPeer inner types declare
+    // clang-format off
+    struct WebRtcNetworkStatus;
+    // clang-format on
+
+    // WebRTCNetworkPeer inner types define
+    struct WebRtcNetworkStatus : public ::NetworkPeer::NetworkStatus {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk8e653d;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WebRtcNetworkStatus& operator=(WebRtcNetworkStatus const&);
+        WebRtcNetworkStatus(WebRtcNetworkStatus const&);
+        WebRtcNetworkStatus();
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector> const> mNetherNetConnector;
     ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>                              mPeerId;
     ::ll::TypedStorage<8, 8, uint64 const>                                               mSessionId;
     ::ll::TypedStorage<1, 1, bool const>                                                 mIsLan;
-    ::ll::TypedStorage<8, 72, ::NetworkPeer::NetworkStatus>                              mNetherNetNetworkStatus;
-    ::ll::TypedStorage<4, 4, uint>                                                       mNumNetworkStatusUpdates;
+    ::ll::TypedStorage<8, 80, ::WebRTCNetworkPeer::WebRtcNetworkStatus>                  mNetherNetNetworkStatus;
     // NOLINTEND
 
 public:

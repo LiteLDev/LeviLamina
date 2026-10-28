@@ -67,7 +67,7 @@ public:
             biomeIdToResolvedData
     ) /*override*/;
 
-    virtual void configureNewPlayer(::Player& player) /*override*/;
+    virtual void configureNewPlayer(::Player&) /*override*/;
 
     virtual void configureDocumentation(
         ::IGameModuleDocumentation& moduleDocumentation,
@@ -109,7 +109,7 @@ public:
             biomeIdToResolvedData
     );
 
-    MCFOLD void $configureNewPlayer(::Player& player);
+    MCFOLD void $configureNewPlayer(::Player&);
 
     MCFOLD void
     $configureDocumentation(::IGameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);

@@ -16,6 +16,7 @@ class RealmsFeatureFlagsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::Re
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::RealmsAPI>> mRealmsAPI;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mRealmsFeatureFlags;
     ::ll::TypedStorage<8, 32, ::std::string>                mCommerceV2PlatformFeatureName;
     // NOLINTEND
@@ -55,7 +56,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCAPI bool $update();
     // NOLINTEND
 };
 

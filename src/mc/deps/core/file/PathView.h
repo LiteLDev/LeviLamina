@@ -27,6 +27,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool isChildOf(::Core::PathView const& rhs) const;
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Core::PathView const& EMPTY();

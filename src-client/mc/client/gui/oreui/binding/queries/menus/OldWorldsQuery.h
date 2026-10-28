@@ -25,6 +25,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageManager::WorldConverter>>        mStorageWorldConverter;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mOldWorldsFetchedSubscription;
+    ::ll::TypedStorage<1, 1, ::StorageManager::ContentType>                               mType;
     ::ll::TypedStorage<8, 296, ::OreUI::StorageContentCommonProperties>                   mCommon;
     // NOLINTEND
 

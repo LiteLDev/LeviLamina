@@ -11,23 +11,23 @@ namespace Identity { class IEduAuth; }
 namespace Social { class IEduMultiplayerHeadless; }
 // clang-format on
 
-class IEDUSystems : public ::Bedrock::EnableNonOwnerReferences {
+class IEduSystems : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk28a258;
+    ::ll::UntypedStorage<8, 8> mUnk2a5edf;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    IEDUSystems& operator=(IEDUSystems const&);
-    IEDUSystems(IEDUSystems const&);
-    IEDUSystems();
+    IEduSystems& operator=(IEduSystems const&);
+    IEduSystems(IEduSystems const&);
+    IEduSystems();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEDUSystems() /*override*/ = default;
+    virtual ~IEduSystems() /*override*/ = default;
 
     virtual ::Identity::IEduAuth& getEduAuth() const = 0;
 

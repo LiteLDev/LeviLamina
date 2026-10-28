@@ -41,6 +41,8 @@ public:
     MCAPI ::ReplayCorrectionResult
     applyFrameCorrection(::Actor& actor, ::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
+    MCAPI void clearHistory();
+
 #ifdef LL_PLAT_C
     MCAPI ::IReplayableActorInput* getCurrentCapturedInput();
 #endif

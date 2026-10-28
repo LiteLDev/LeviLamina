@@ -14,6 +14,8 @@ class Experiments : public ::ExperimentStorage {
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Experiments();
+
 #ifdef LL_PLAT_C
     MCAPI bool _shouldShowAsExperimentalLevel(
         ::std::vector<bool> const&       experimentData,
@@ -30,5 +32,11 @@ public:
 #ifdef LL_PLAT_C
     MCAPI bool shouldShowAsExperimentalLevel() const;
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

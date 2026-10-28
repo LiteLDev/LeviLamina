@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/v1_26_20/block/components/GeometryComponent.h"
 #include "mc/world/level/block/components/BlockRendererDescription.h"
 
 // auto generated forward declare list
@@ -24,6 +25,11 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ExpressionNode>>      mBoneVisibilities;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
     ::ll::TypedStorage<4, 52, ::BlockRendererDescription>                       mRenderer;
+    ::ll::TypedStorage<
+        8,
+        104,
+        ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping>>
+        mNWayVisualRotation;
     // NOLINTEND
 };
 

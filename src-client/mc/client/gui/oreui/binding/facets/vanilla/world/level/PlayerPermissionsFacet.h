@@ -89,8 +89,6 @@ public:
         ::std::function<bool()>              isHostingLocalDedicatedServer
     );
 
-    MCAPI bool _evaluateCanKickPlayer(::ActorUniqueID playerId);
-
     MCAPI void _evaluateStates();
 
     MCAPI void _initResources();
@@ -117,7 +115,7 @@ public:
 
     MCAPI bool getPlayerIdInvalidFlag() const;
 
-    MCFOLD ::std::vector<::OreUI::PlayerAbilityBindings> const& getPlayerPermissionList() const;
+    MCAPI ::std::vector<::OreUI::PlayerAbilityBindings> const& getPlayerPermissionList() const;
 
     MCAPI bool getPlayerPermissionsMissingFlag() const;
 

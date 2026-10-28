@@ -48,19 +48,19 @@ public:
 #ifdef LL_PLAT_S
 public:
     // prevent constructor by default
+    ScriptItemStack(ScriptItemStack const&);
     ScriptItemStack();
 
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ScriptItemStack(ScriptItemStack const&);
     ScriptItemStack();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
 #endif
 
@@ -147,7 +147,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
 #endif
 

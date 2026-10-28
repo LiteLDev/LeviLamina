@@ -139,14 +139,10 @@ public:
 
     MCAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigRuinsMossy();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigWarmRuins();
-
     MCAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsBrick();
 
     MCAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsCracked();
 
     MCAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsMossy();
-
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[8]> warmRuins();
     // NOLINTEND
 };

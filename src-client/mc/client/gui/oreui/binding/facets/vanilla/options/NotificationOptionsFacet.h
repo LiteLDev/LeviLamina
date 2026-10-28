@@ -57,6 +57,8 @@ public:
 
     MCAPI bool getDoNotShowManageShowcaseReplaceWarning() const;
 
+    MCFOLD bool getDoNotShowMarioMashUpWarning() const;
+
     MCAPI bool getDoNotShowMultiplayerIpSafetyWarning() const;
 
     MCAPI bool getDoNotShowMultiplayerOnlineSafetyWarning() const;
@@ -108,6 +110,8 @@ public:
     MCAPI void setDoNotShowManageShowcaseClearWarning(bool newValue);
 
     MCAPI void setDoNotShowManageShowcaseReplaceWarning(bool newValue);
+
+    MCFOLD void setDoNotShowMarioMashUpWarning(bool newValue);
 
     MCAPI void setDoNotShowMultiplayerIpSafetyWarning(bool newValue);
 

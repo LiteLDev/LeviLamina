@@ -9,8 +9,8 @@
 // clang-format off
 namespace Core { class SingleThreadedLock; }
 namespace Social { struct Nonce; }
-namespace mce { class UUID; }
 namespace Social { struct OnlineId; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Social {

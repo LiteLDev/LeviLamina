@@ -28,7 +28,6 @@ public:
     // prevent constructor by default
     OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&);
     OceanFrozenSurfaceBuilder(OceanFrozenSurfaceBuilder const&);
-    OceanFrozenSurfaceBuilder();
 
 public:
     // virtual functions
@@ -46,6 +45,18 @@ public:
     ) const /*override*/;
 
     virtual bool getUsesDepthValue() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI OceanFrozenSurfaceBuilder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

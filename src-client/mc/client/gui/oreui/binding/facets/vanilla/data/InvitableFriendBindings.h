@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                   mUserId;
     ::ll::TypedStorage<8, 32, ::std::string>                   mPlayerName;
     ::ll::TypedStorage<4, 4, ::Social::UserPresenceResult>     mPresence;
-    ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage> mProfileImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage> mProfileImage;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>          mPlatformImage;
     // NOLINTEND
 

@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseGameTestInstance() = default;
+    virtual ~BaseGameTestInstance();
 
     virtual void initialize();
 
@@ -112,8 +112,6 @@ public:
     MCNAPI void setRunOnFinish(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI void succeed();
-
-    MCNAPI void tick();
     // NOLINTEND
 
 public:
@@ -123,6 +121,12 @@ public:
         ::gametest::BaseGameTestFunction const&                testFunction,
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -137,6 +141,12 @@ public:
     MCNAPI void $_removeSimulatedPlayers();
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/network/Connector.h"
 #include "mc/network/NetworkEnableDisableListener.h"
+#include "mc/platform/brstd/copyable_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,6 +20,10 @@ namespace Social { class GameConnectionInfo; }
 class RemoteConnector : public ::Connector,
                         public ::NetworkEnableDisableListener,
                         public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // prevent constructor by default
+    RemoteConnector();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,8 +55,34 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI RemoteConnector(
+        ::Connector::ConnectionCallbacks&        callbacks,
+        ::brstd::copyable_function<bool() const> isNetworkAllowed
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Connector::ConnectionCallbacks& callbacks, ::brstd::copyable_function<bool() const> isNetworkAllowed);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForConnector();
+
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
+
+    MCNAPI static void** $vftableForNetworkEnableDisableListener();
     // NOLINTEND
 };

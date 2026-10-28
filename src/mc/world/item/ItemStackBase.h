@@ -30,6 +30,7 @@ class Level;
 class NetworkItemStackDescriptor;
 class Player;
 class RecipeIngredient;
+class RenderParams;
 class SaveContext;
 class Vec3;
 struct ItemTag;
@@ -77,24 +78,26 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ItemStackBase();
 
+#else // LL_PLAT_C
 #endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ItemStackBase();
 
-    virtual void reinit(::Item const& item, int count, int auxValue);
+    virtual void reinit(::Item const& item, int count, int auxValue) = 0;
 
-    virtual void reinit(::Block const& block, int count);
+    virtual void reinit(::Block const& block, int count) = 0;
 
-    virtual void reinit(::std::string_view const name, int count, int auxValue);
+    virtual void reinit(::std::string_view const name, int count, int auxValue) = 0;
 
     virtual void setNull(::std::optional<::std::string> reason);
+
+    virtual explicit operator bool() const;
 
     virtual ::std::string toString() const;
 
@@ -104,7 +107,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ItemStackBase();
 #endif
 
@@ -136,9 +139,17 @@ public:
 
     MCAPI void _setChargedItem(::ItemInstance const& item);
 
+#ifdef LL_PLAT_C
     MCAPI bool _setItem(int id, bool doRemap);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI bool _setItem(int id, bool doRemap);
+#endif
 
     MCAPI void _updateCompareHashes();
+
+    MCAPI void add(int inCount);
 
     MCAPI bool addComponents(::Json::Value const& root, ::std::string& errorMsg);
 
@@ -183,13 +194,13 @@ public:
 
     MCAPI int getIdAux() const;
 
-#ifdef LL_PLAT_C
-    MCAPI int getIdAuxEnchanted() const;
-#endif
-
     MCAPI uchar getMaxStackSize() const;
 
     MCAPI ::std::string getName() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::unique_ptr<::CompoundTag> getNetworkUserData() const;
+#endif
 
     MCAPI float getPickupPopPercentage() const;
 
@@ -211,13 +222,17 @@ public:
 
     MCAPI bool hasSameUserData(::ItemStackBase const& other) const;
 
+#ifdef LL_PLAT_C
     MCAPI bool hasTag(::ItemTag const& string) const;
+#endif
 
     MCAPI bool hurtAndBreak(int deltaDamage, ::Actor* owner);
 
     MCAPI void init(::BlockType const& block, int count);
 
+#ifdef LL_PLAT_C
     MCAPI void init(int id, int count_, int aux_, bool doRemap);
+#endif
 
     MCAPI void init(::Item const& item, int count, int auxValue, ::CompoundTag const* userData, bool doRemap);
 
@@ -231,10 +246,6 @@ public:
 
     MCAPI bool isDamaged() const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool isEnchanted() const;
-#endif
-
     MCAPI bool isEnchantingBook() const;
 
     MCAPI bool isFullStack() const;
@@ -246,10 +257,6 @@ public:
     MCAPI bool isInstance(::HashedString const& itemName, bool useItemLookup) const;
 
     MCAPI bool isNull() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isOnCooldown(::Player& player, ::SharedTypes::ItemCooldownType type) const;
-#endif
 
     MCAPI bool
     isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
@@ -278,9 +285,9 @@ public:
 
     MCAPI bool matchesItem(::ItemStackBase const& other) const;
 
-    MCAPI explicit operator bool() const;
-
     MCAPI ::ItemStackBase& operator=(::ItemStackBase const& rhs);
+
+    MCAPI void remove(int inCount);
 
     MCAPI void resetHoverName();
 
@@ -289,6 +296,10 @@ public:
     MCAPI ::std::unique_ptr<::CompoundTag> save(::SaveContext const& saveContext) const;
 
     MCAPI void saveEnchantsToUserData(::ItemEnchants const& enchant);
+
+#ifdef LL_PLAT_S
+    MCAPI bool sendEventTriggered(::std::string const& event, ::RenderParams const& params);
+#endif
 
     MCAPI void serializeComponents(::IDataOutput& output) const;
 
@@ -300,6 +311,10 @@ public:
 
     MCAPI void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
+#ifdef LL_PLAT_S
+    MCAPI void setDamageValue(short newDamage);
+#endif
+
     MCAPI void setDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
@@ -307,8 +322,6 @@ public:
     );
 
     MCAPI void setJustBrewed(bool justBrewed);
-
-    MCAPI void setPickupTime();
 
     MCAPI void setRepairCost(int cost);
 
@@ -372,7 +385,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void* $ctor();
 #endif
 
@@ -396,12 +409,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reinit(::Item const& item, int count, int auxValue);
-
-    MCFOLD void $reinit(::Block const& block, int count);
-
-    MCFOLD void $reinit(::std::string_view const name, int count, int auxValue);
-
     MCAPI void $setNull(::std::optional<::std::string> reason);
 
     MCAPI ::std::string $toString() const;

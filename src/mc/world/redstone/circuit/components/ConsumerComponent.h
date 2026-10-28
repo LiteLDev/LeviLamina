@@ -72,11 +72,7 @@ public:
 
     MCFOLD bool $canConsumerPower() const;
 
-#ifdef LL_PLAT_S
     MCAPI bool $isSecondaryPowered() const;
-#else // LL_PLAT_C
-    MCFOLD bool $isSecondaryPowered() const;
-#endif
 
     MCAPI bool $needsUpdate();
 

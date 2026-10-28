@@ -14,6 +14,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Player;
+class Random;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -58,6 +59,8 @@ public:
 
     MCAPI ::std::optional<::BlockPos>
     _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
+
+    MCAPI bool _growSapling(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
     // NOLINTEND

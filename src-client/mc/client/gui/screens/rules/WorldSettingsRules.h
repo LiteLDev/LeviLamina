@@ -58,9 +58,9 @@ public:
 
     MCAPI bool _isPlatformServiceMultiplayerConnected() const;
 
-    MCAPI bool isMultiplayerSupported() const;
+    MCAPI bool isLanMultiplayerAvailable() const;
 
-    MCAPI bool isPlatformBroadcastFriendsOfFriendsOptionSupported() const;
+    MCAPI bool isMultiplayerSupported() const;
 
     MCAPI ~WorldSettingsRules();
     // NOLINTEND

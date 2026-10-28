@@ -309,7 +309,7 @@ public:
 
     MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getActiveTexturePacks() const;
 
-    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
+    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
 
     MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableTexturePacks() const;
 
@@ -331,7 +331,7 @@ public:
 
     MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getUnownedTexturePacks() const;
+    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getUnownedTexturePacks() const;
 
     MCAPI bool isRealmsPlusSubscriptionActive() const;
 

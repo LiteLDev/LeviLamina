@@ -15,6 +15,7 @@ class CompoundTag;
 class ContainerBlockActorComponent;
 class DataLoadHelper;
 class DynamicPropertiesBlockActorComponent;
+class EntityStorageBlockActorComponent;
 class ILevel;
 class IVanillaMainBlockActorComponent;
 class IVanillaRenderBlockActorComponent;
@@ -32,6 +33,7 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                                                   mPosition;
     ::ll::TypedStorage<1, 1, ::BlockActorType const>                                        mType;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DynamicPropertiesBlockActorComponent>>     mDynamicProperties;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EntityStorageBlockActorComponent>>         mEntityStorage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RandomizableContainerBlockActorComponent>> mRandomizableContainer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerBlockActorComponent>>             mContainer;
     // NOLINTEND

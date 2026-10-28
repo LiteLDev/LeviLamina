@@ -72,8 +72,6 @@ public:
         ::gsl::span<::std::reference_wrapper<::WorkerPool>> helperPools
     );
 
-    MCAPI void generateAndQueue(::std::function<void(::CommandListTaskContext&)> func);
-
     MCAPI ::CommandListFuture generateAsync(::std::function<void(::CommandListTaskContext&)> func);
 
     MCAPI bool isAsync() const;

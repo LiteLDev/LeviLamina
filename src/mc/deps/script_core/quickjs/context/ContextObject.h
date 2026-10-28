@@ -111,9 +111,6 @@ public:
         ::entt::meta_type const&                                 expectedReturnType
     );
 
-    MCNAPI ::Scripting::QuickJS::ContextObject::ImportAllowedResult
-    checkModuleImportAllowed(::std::string const& baseName, ::std::string const& moduleName, bool dynamicImport) const;
-
     MCNAPI void processUnhandledPromiseRejection();
     // NOLINTEND
 

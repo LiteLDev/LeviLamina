@@ -9,6 +9,7 @@
 #include "mc/client/game/ControlOptionType.h"
 #include "mc/client/game/DiskStatus.h"
 #include "mc/client/game/IClientInstance.h"
+#include "mc/client/game/IConnectionContextEvents.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/StoreNavigationOrigin.h"
@@ -30,7 +31,6 @@
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core_graphics/math/Rect.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/PointerType.h"
 #include "mc/deps/input/enums/WYSIWYGState.h"
@@ -71,12 +71,11 @@ class ClientNetworkEventCoordinator;
 class ClientNetworkSystem;
 class ClientRequirementVerifier;
 class ClientScriptEventCoordinator;
-class ClientScriptManager;
 class DateManager;
 class DeferredLighting;
 class DevConsoleLogger;
 class DisconnectionRequestHandler;
-class EDUSystems;
+class EduSystems;
 class EntityContext;
 class EntitySystems;
 class FileDataRequest;
@@ -84,6 +83,7 @@ class FogDefinitionRegistry;
 class FogManager;
 class FontHandle;
 class FrameUpdateContext;
+class GameClientScriptManager;
 class GameModuleClient;
 class GameRenderer;
 class GeometryGroup;
@@ -109,7 +109,6 @@ class ItemRegistryRef;
 class ItemRenderer;
 class KeyboardManager;
 class LatencyGraphDisplay;
-class LegacyClientNetworkHandler;
 class Level;
 class LevelRenderer;
 class LevelRendererCameraProxy;
@@ -168,7 +167,6 @@ namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Automation { class AutomationClient; }
 namespace Bedrock::Http { class Status; }
-namespace Bedrock::Profiling { struct IProfilingOrchestratorProvider; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Editor { class IEditorManager; }
@@ -176,7 +174,6 @@ namespace Editor { class IEditorPlayer; }
 namespace OreUI { class ITelemetry; }
 namespace OreUI { class Router; }
 namespace OreUI { class SceneProvider; }
-namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Realms { struct World; }
 namespace Scripting { class ScriptEngine; }
@@ -185,6 +182,7 @@ namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class User; }
+namespace Social::ManagedChat { class ManagedChatClient; }
 namespace World { class WorldSystem; }
 namespace mce { class Camera; }
 namespace mce { class Texture; }
@@ -198,6 +196,7 @@ class ClientInstance : public ::IClientInstance,
                        public ::Core::StorageAreaStateListener,
                        public ::GameCallbacks,
                        public ::PlayerListener,
+                       public ::IConnectionContextEvents,
                        public ::std::enable_shared_from_this<::ClientInstance> {
 public:
     // ClientInstance inner types declare
@@ -249,6 +248,7 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnkab1ca4;
     ::ll::UntypedStorage<8, 64>  mUnk2c0603;
     ::ll::UntypedStorage<8, 64>  mUnk53ac0e;
+    ::ll::UntypedStorage<8, 24>  mUnkcb66e4;
     ::ll::UntypedStorage<8, 24>  mUnk4f1aef;
     ::ll::UntypedStorage<8, 8>   mUnk9379d1;
     ::ll::UntypedStorage<8, 24>  mUnk421768;
@@ -276,7 +276,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk20b577;
     ::ll::UntypedStorage<1, 1>   mUnka7e48d;
     ::ll::UntypedStorage<4, 4>   mUnk9e92ce;
-    ::ll::UntypedStorage<8, 32>  mUnk6638d4;
+    ::ll::UntypedStorage<8, 24>  mUnk5b1109;
     ::ll::UntypedStorage<1, 1>   mUnk48d2a2;
     ::ll::UntypedStorage<1, 1>   mUnk44a215;
     ::ll::UntypedStorage<8, 64>  mUnkc2143d;
@@ -311,6 +311,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkfa0970;
     ::ll::UntypedStorage<8, 8>   mUnk291bf9;
     ::ll::UntypedStorage<8, 16>  mUnkdf5270;
+    ::ll::UntypedStorage<8, 8>   mUnkbd816a;
     ::ll::UntypedStorage<8, 8>   mUnkc613e5;
     ::ll::UntypedStorage<8, 8>   mUnkf955c2;
     ::ll::UntypedStorage<1, 1>   mUnk563a7c;
@@ -326,7 +327,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk9f2b54;
     ::ll::UntypedStorage<1, 1>   mUnk962bb4;
     ::ll::UntypedStorage<1, 1>   mUnk71d76f;
-    ::ll::UntypedStorage<8, 792> mUnk58b85f;
+    ::ll::UntypedStorage<8, 760> mUnk58b85f;
     ::ll::UntypedStorage<1, 1>   mUnk1ef4d7;
     ::ll::UntypedStorage<1, 1>   mUnk29fbcb;
     ::ll::UntypedStorage<4, 4>   mUnkc07c6b;
@@ -350,13 +351,12 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk6aa9fd;
     ::ll::UntypedStorage<8, 8>   mUnk8a8a63;
     ::ll::UntypedStorage<8, 24>  mUnk5c4c80;
-    ::ll::UntypedStorage<8, 8>   mUnkd7ca73;
+    ::ll::UntypedStorage<8, 8>   mUnk89808f;
     ::ll::UntypedStorage<8, 16>  mUnk52193b;
     ::ll::UntypedStorage<8, 8>   mUnkc4e9e8;
     ::ll::UntypedStorage<8, 8>   mUnk82a9fa;
     ::ll::UntypedStorage<8, 8>   mUnk8ca999;
     ::ll::UntypedStorage<8, 24>  mUnk7ffd34;
-    ::ll::UntypedStorage<8, 16>  mUnk99ef24;
     ::ll::UntypedStorage<8, 16>  mUnk6182e1;
     ::ll::UntypedStorage<8, 8>   mUnk84dba0;
     ::ll::UntypedStorage<8, 8>   mUnk9ffd30;
@@ -377,6 +377,8 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk4efc95;
     ::ll::UntypedStorage<8, 16>  mUnkc2c7c8;
     ::ll::UntypedStorage<8, 16>  mUnk6335eb;
+    ::ll::UntypedStorage<8, 128> mUnk7a7c65;
+    ::ll::UntypedStorage<8, 128> mUnk3f1857;
     // NOLINTEND
 
 public:
@@ -407,8 +409,6 @@ public:
 
     virtual void stop() /*override*/;
 
-    virtual void teardown() /*override*/;
-
     virtual void preShutDown() /*override*/;
 
     virtual void setGameConnectionInfo(::Social::GameConnectionInfo const& gameConnection) /*override*/;
@@ -424,6 +424,8 @@ public:
         ::Social::MultiplayerServiceIdentifier service,
         ::PlayerJoinWorldContext               context
     ) /*override*/;
+
+    virtual void onStartLocalServer(::std::string const& worldName) /*override*/;
 
     virtual void onCancelJoinGame() /*override*/;
 
@@ -449,7 +451,7 @@ public:
 
     virtual void preFrameTick() /*override*/;
 
-    virtual bool update(bool isInitFinished) /*override*/;
+    virtual bool update(bool isInitFinished, bool allowGameUpdate) /*override*/;
 
     virtual void endFrame() /*override*/;
 
@@ -576,15 +578,13 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems> getEduSystems() /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems const> getEduSystems() const /*override*/;
 
     virtual ::IMinecraftEventing& getEventing() const /*override*/;
 
     virtual ::IConnectionEventing& getConnectionEventing() const /*override*/;
-
-    virtual ::Bedrock::Profiling::IProfilingOrchestratorProvider& getProfilingOrchestratorProvider() const /*override*/;
 
     virtual ::FontHandle getFontHandle() const /*override*/;
 
@@ -658,8 +658,7 @@ public:
 
     virtual void navigateToCoinPurchaseScreen(int neededCoins, ::std::function<void(bool, int)> callback) /*override*/;
 
-    virtual void
-    navigateToPurchaseOfferScreen(::StoreCatalogItem& item, ::StoreNavigationOrigin, bool const) /*override*/;
+    virtual void navigateToPurchaseOfferScreen(::StoreCatalogItem& item, ::StoreNavigationOrigin) /*override*/;
 
     virtual void navigateToDressingRoomOfferScreen(::std::string const& offerId) /*override*/;
 
@@ -902,8 +901,6 @@ public:
 
     virtual ::OreUI::ITelemetry& getOreUITelemetry() /*override*/;
 
-    virtual ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> getOreUIBlockThumbnailAtlasManager() const /*override*/;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> prepareSceneFor(
         ::ui::SceneType const                                 sceneTypeToFind,
         ::std::function<::std::shared_ptr<::AbstractScene>()> createScreenCallback
@@ -1025,8 +1022,6 @@ public:
     virtual void setupPersistentControls(::InputMode currentMode) /*override*/;
 
     virtual void resetPlayerMovement() /*override*/;
-
-    virtual void suspendPredictedMovement() /*override*/;
 
     virtual void onClientInputInitComplete() /*override*/;
 
@@ -1243,6 +1238,8 @@ public:
 
     virtual ::GameModuleClient* getGameModule() /*override*/;
 
+    virtual void setupStandardCommands() /*override*/;
+
     virtual ::ClientHitDetectCoordinator& getHitEventCoordinator() /*override*/;
 
     virtual void sendClientEnteredLevel() /*override*/;
@@ -1290,7 +1287,7 @@ public:
 
     virtual void setRemoteServerNetworkTimeMs(float time) /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::ClientScriptManager> getClientScriptManager() /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::GameClientScriptManager> getGameClientScriptManager() /*override*/;
 
     virtual ::Scripting::ScriptEngine* getScriptingEngine() /*override*/;
 
@@ -1336,8 +1333,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ClientInstance(::ClientInstanceArguments&& args);
 
-    MCAPI ::std::unique_ptr<::LegacyClientNetworkHandler>
-    _createNetworkHandler(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
+    MCAPI void _fireOnDisconnect(
+        ::Connection::DisconnectFailReason failReason,
+        ::std::string const&               titleMessage,
+        ::std::string const&               errorMessage,
+        ::std::string const&               codeword
+    );
 
     MCAPI bool _getIsConnectedToApplicationLayer() const;
 
@@ -1363,6 +1364,10 @@ public:
 
     MCAPI void _startWorldPrimaryClient(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
 
+    MCAPI void _startWorldSubClient(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
+
+    MCAPI ::std::shared_ptr<void const> _teardown();
+
     MCAPI void
     _tickBuildAction(::HitResult const& solidHitResult_, ::HitResult const& liquidHitResult_, bool advanceTime);
 
@@ -1374,6 +1379,9 @@ public:
         ::DisconnectionScreenParams const& params,
         ::Connection::UIReturnTarget       uiReturnTarget
     );
+
+    MCAPI void
+    setManagedChatClient(::Bedrock::NonOwnerPointer<::Social::ManagedChat::ManagedChatClient> managedChatClient);
     // NOLINTEND
 
 public:
@@ -1402,8 +1410,6 @@ public:
 
     MCFOLD void $stop();
 
-    MCAPI void $teardown();
-
     MCAPI void $preShutDown();
 
     MCAPI void $setGameConnectionInfo(::Social::GameConnectionInfo const& gameConnection);
@@ -1419,6 +1425,8 @@ public:
         ::Social::MultiplayerServiceIdentifier service,
         ::PlayerJoinWorldContext               context
     );
+
+    MCAPI void $onStartLocalServer(::std::string const& worldName);
 
     MCAPI void $onCancelJoinGame();
 
@@ -1444,7 +1452,7 @@ public:
 
     MCAPI void $preFrameTick();
 
-    MCAPI bool $update(bool isInitFinished);
+    MCAPI bool $update(bool isInitFinished, bool allowGameUpdate);
 
     MCFOLD void $endFrame();
 
@@ -1560,7 +1568,7 @@ public:
 
     MCAPI void $quit(::std::string const& src, ::std::string const& reason);
 
-    MCAPI ::IMinecraftGame& $getMinecraftGame_DEPRECATED() const;
+    MCFOLD ::IMinecraftGame& $getMinecraftGame_DEPRECATED() const;
 
     MCAPI ::IClientInstances& $getClientInstances() const;
 
@@ -1570,15 +1578,13 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems> $getEDUSystems();
+    MCAPI ::Bedrock::NonOwnerPointer<::EduSystems> $getEduSystems();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems const> $getEDUSystems() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::EduSystems const> $getEduSystems() const;
 
     MCAPI ::IMinecraftEventing& $getEventing() const;
 
     MCAPI ::IConnectionEventing& $getConnectionEventing() const;
-
-    MCAPI ::Bedrock::Profiling::IProfilingOrchestratorProvider& $getProfilingOrchestratorProvider() const;
 
     MCAPI ::FontHandle $getFontHandle() const;
 
@@ -1650,7 +1656,7 @@ public:
 
     MCAPI void $navigateToCoinPurchaseScreen(int neededCoins, ::std::function<void(bool, int)> callback);
 
-    MCAPI void $navigateToPurchaseOfferScreen(::StoreCatalogItem& item, ::StoreNavigationOrigin, bool const);
+    MCAPI void $navigateToPurchaseOfferScreen(::StoreCatalogItem& item, ::StoreNavigationOrigin);
 
     MCAPI void $navigateToDressingRoomOfferScreen(::std::string const& offerId);
 
@@ -1727,7 +1733,7 @@ public:
 
     MCAPI bool $isInRealm();
 
-    MCAPI bool $readyForShutdown() const;
+    MCFOLD bool $readyForShutdown() const;
 
     MCAPI bool $isPrimaryClient() const;
 
@@ -1737,9 +1743,9 @@ public:
 
     MCAPI bool $isInControlCustomization() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getServerData();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getServerData();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> $getServerData() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> $getServerData() const;
 
     MCAPI ::ClientLevel* $getLevel();
 
@@ -1807,13 +1813,13 @@ public:
 
     MCAPI void $setLevelTexture(::mce::Texture* tex);
 
-    MCFOLD ::mce::Texture* $getLevelTexture();
+    MCAPI ::mce::Texture* $getLevelTexture();
 
     MCAPI void $setUICursorTexture(::mce::TexturePtr tex);
 
     MCAPI ::mce::TexturePtr $getUICursorTexture() const;
 
-    MCAPI ::mce::Camera& $getCamera();
+    MCFOLD ::mce::Camera& $getCamera();
 
     MCAPI ::ShaderColor& $getShaderColor();
 
@@ -1892,8 +1898,6 @@ public:
 
     MCAPI ::OreUI::ITelemetry& $getOreUITelemetry();
 
-    MCAPI ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> $getOreUIBlockThumbnailAtlasManager() const;
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $prepareSceneFor(
         ::ui::SceneType const                                 sceneTypeToFind,
         ::std::function<::std::shared_ptr<::AbstractScene>()> createScreenCallback
@@ -1934,7 +1938,7 @@ public:
 
     MCAPI void $showPlayerProfile(::std::string const& xuid, ::std::string const& platformId);
 
-    MCAPI bool $isInGameInputEnabled() const;
+    MCFOLD bool $isInGameInputEnabled() const;
 
     MCAPI void $setInGameInputEnabled(bool isEnabled);
 
@@ -1951,7 +1955,7 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> $getMinecraftInput() const;
 
-    MCFOLD ::KeyboardManager& $getKeyboardManager();
+    MCAPI ::KeyboardManager& $getKeyboardManager();
 
     MCAPI void $setLastPointerLocation(float x, float y, float z);
 
@@ -1975,7 +1979,7 @@ public:
 
     MCAPI ::BuildActionIntention& $getInProgressBAI() const;
 
-    MCAPI ::PacketSender& $getPacketSender();
+    MCFOLD ::PacketSender& $getPacketSender();
 
     MCAPI ::ClientNetworkSystem& $getClientNetworkSystem();
 
@@ -2014,8 +2018,6 @@ public:
     MCAPI void $setupPersistentControls(::InputMode currentMode);
 
     MCAPI void $resetPlayerMovement();
-
-    MCAPI void $suspendPredictedMovement();
 
     MCAPI void $onClientInputInitComplete();
 
@@ -2150,7 +2152,7 @@ public:
 
     MCAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCFOLD void $onAppResumed();
 
     MCAPI void $onActiveResourcePacksChanged(
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& entityResourceDefGroup
@@ -2170,7 +2172,7 @@ public:
 
     MCAPI ::ItemInHandRenderer* $getItemInHandRenderer();
 
-    MCAPI ::ItemRenderer* $getItemRenderer();
+    MCFOLD ::ItemRenderer* $getItemRenderer();
 
     MCAPI ::HudIconActorRenderer* $getHudIconActorRenderer();
 
@@ -2231,6 +2233,8 @@ public:
 
     MCAPI ::GameModuleClient* $getGameModule();
 
+    MCAPI void $setupStandardCommands();
+
     MCAPI ::ClientHitDetectCoordinator& $getHitEventCoordinator();
 
     MCAPI void $sendClientEnteredLevel();
@@ -2277,7 +2281,7 @@ public:
 
     MCAPI void $setRemoteServerNetworkTimeMs(float time);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ClientScriptManager> $getClientScriptManager();
+    MCAPI ::Bedrock::NonOwnerPointer<::GameClientScriptManager> $getGameClientScriptManager();
 
     MCAPI ::Scripting::ScriptEngine* $getScriptingEngine();
 

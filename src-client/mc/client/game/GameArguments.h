@@ -12,6 +12,7 @@
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/json/ValueType.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -78,6 +79,8 @@ public:
         bool                                      fromTemp,
         ::LoadImportedLevelData                   loadLevelData
     );
+
+    MCAPI void _loadGameTypeActivity(::GameType gameType);
 
     MCAPI void _onUri(::ActivationUri const& uri);
 

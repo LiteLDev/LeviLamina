@@ -6,6 +6,11 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_130 {
 
 struct ExploreOutskirtsGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -23,6 +28,12 @@ public:
     ::ll::TypedStorage<4, 4, float>   mMinimumDistanceFromTarget;
     ::ll::TypedStorage<4, 4, float>   mWaitTimerRatio;
     ::ll::TypedStorage<4, 12, ::Vec3> mDistanceFromBoundary;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -24,9 +24,6 @@ createBooleanDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 MCAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<int>>>
 createFixedNumberDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 
-MCAPI ::std::optional<::std::unique_ptr<::Settings::IBooleanDataProvider>>
-createInputBooleanDataProvider(::OptionID optionId, ::InputMode inputMode, ::IOptionRegistry& options);
-
 MCAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<float>>>
 createInputFloatDataProvider(::OptionID optionId, ::InputMode inputMode, ::IOptionRegistry& options);
 

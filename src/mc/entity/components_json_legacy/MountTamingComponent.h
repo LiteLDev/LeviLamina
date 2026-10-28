@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCAPI void becomeTame(::Actor& owner, bool tamingParticles);
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
     MCAPI ::MountTamingComponent& operator=(::MountTamingComponent const&);
 

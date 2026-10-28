@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class Objective;
 class Scoreboard;
 // clang-format on
@@ -29,14 +28,6 @@ public:
     modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
     MCAPI bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::ScoreboardIdentityRef const& toSave);
-#endif
     // NOLINTEND
 
 public:

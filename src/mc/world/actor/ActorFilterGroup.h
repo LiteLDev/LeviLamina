@@ -38,7 +38,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::FilterGroup::CollectionType>        mType;
+        ::ll::TypedStorage<1, 1, ::FilterGroup::CollectionType>        mType;
         ::ll::TypedStorage<8, 8, ::FilterTest::Definition const&>      mFilterDef;
         ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mSubject;
         ::ll::TypedStorage<2, 2, ::FilterOperator>                     mOperator;

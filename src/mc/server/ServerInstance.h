@@ -60,6 +60,7 @@ struct ServerInstanceArguments;
 struct ServerInstanceInitArguments;
 struct ServerNetworkHandlerDependencies;
 struct ServerPerformanceData;
+struct WorldSaveAndExitPackTelemetryData;
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class RegistryManager; }
@@ -212,20 +213,22 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerScriptManager>>                         mServerScriptManager;
     ::ll::TypedStorage<8, 64, ::std::function<void(char const*)>> mScriptWatchdogCriticalErrorCallback;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Connection::DisconnectFailReason, char const*)>>
-                                                                                      mUnrecoverableErrorCallback;
-    ::ll::TypedStorage<1, 1, bool>                                                    mHandledLevelCorruption;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TextFilteringProcessor>>             mTextFilteringProcessor;
-    ::ll::TypedStorage<8, 8, ::std::chrono::microseconds>                             mWakeupInterval;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mLevelId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mServerName;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldSessionEndPoint>>               mWorldSessionEndPoint;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>>             mStorageAreaForLevel;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemRegistry>>                      mServerItemRegistry;
-    ::ll::TypedStorage<1, 1, bool>                                                    mEnableItemStackNetManager;
-    ::ll::TypedStorage<1, 1, bool>                                                    mEnableRealmsStories;
-    ::ll::TypedStorage<1, 1, bool>                                                    mbFlaggedForEarlyDestruction;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerInstance>>            mServiceRegistrationToken;
-    ::ll::TypedStorage<1, 1, bool>                                                    mHasScheduledLeaveGame;
+                                                                           mUnrecoverableErrorCallback;
+    ::ll::TypedStorage<1, 1, bool>                                         mHandledLevelCorruption;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TextFilteringProcessor>>  mTextFilteringProcessor;
+    ::ll::TypedStorage<8, 8, ::std::chrono::microseconds>                  mWakeupInterval;
+    ::ll::TypedStorage<8, 32, ::std::string>                               mLevelId;
+    ::ll::TypedStorage<8, 32, ::std::string>                               mServerName;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldSessionEndPoint>>    mWorldSessionEndPoint;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>>  mStorageAreaForLevel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemRegistry>>           mServerItemRegistry;
+    ::ll::TypedStorage<1, 1, bool>                                         mEnableItemStackNetManager;
+    ::ll::TypedStorage<1, 1, bool>                                         mEnableRealmsStories;
+    ::ll::TypedStorage<1, 1, bool>                                         mbFlaggedForEarlyDestruction;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerInstance>> mServiceRegistrationToken;
+    ::ll::TypedStorage<1, 1, bool>                                         mHasScheduledLeaveGame;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::WorldSaveAndExitPackTelemetryData>>>
+                                                                                      mWorldSaveAndExitPackTelemetry;
     ::ll::TypedStorage<1, 1, bool>                                                    mCriticalDiskErrorTelemetrySent;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorManager>>             mEditorManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::CDNConfig>>                mCDNConfig;
@@ -290,8 +293,6 @@ public:
 
     MCAPI ::Bedrock::Threading::Async<bool> _postLevelInitialization(::ServerInstance::PostLevelArgs&& args);
 
-    MCAPI void _resetServerScriptManager();
-
 #ifdef LL_PLAT_C
     MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
 #endif
@@ -312,6 +313,8 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool requestInGamePause(bool status);
+
+    MCAPI void setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs);
 #endif
 
     MCAPI void startLeaveGame();

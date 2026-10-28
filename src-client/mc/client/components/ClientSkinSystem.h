@@ -34,12 +34,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setupPersonaLodRenderControllers(
-        ::ClientSkin const&                                           skin,
+        bool                                                          lodReady,
         ::std::shared_ptr<::ActorResourceDefinition> const&           resourceDef,
         ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup> const& renderControllerGroup
     );
 
-    MCAPI static void _setupPersonaLodTextureAndGeometry(
+    MCAPI static bool _setupPersonaLodTextureAndGeometry(
         ::ClientSkin const&                                                  skin,
         ::SerializedSkinRef const&                                           serializedSkin,
         ::std::shared_ptr<::ActorResourceDefinition> const&                  resourceDef,
@@ -58,6 +58,8 @@ public:
     );
 
     MCAPI static void addPlayerToFireEvent(::HashedString identifier, ::Player const* player);
+
+    MCAPI static void applySkinToPlayer(::IClientInstance& client, ::Player& player, ::SerializedSkinRef const& skin);
 
     MCAPI static void createOrUpdate(
         ::IClientInstance&         client,

@@ -37,11 +37,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static ::std::string _getName(::CompoundType type);
-#endif
 
-    MCAPI static void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
-
-#ifdef LL_PLAT_C
     MCAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
 #endif
 

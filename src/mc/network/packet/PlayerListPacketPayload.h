@@ -33,6 +33,7 @@ public:
         ::ll::TypedStorage<8, 8, ::ActorUniqueID>        mId;
         ::ll::TypedStorage<8, 32, ::std::string>         mName;
         ::ll::TypedStorage<8, 32, ::std::string>         mXUID;
+        ::ll::TypedStorage<8, 32, ::std::string>         mPlayFabId;
         ::ll::TypedStorage<8, 32, ::std::string>         mPlatformOnlineId;
         ::ll::TypedStorage<4, 4, ::BuildPlatform>        mBuildPlatform;
         ::ll::TypedStorage<8, 16, ::SerializedSkinRef>   mSkin;

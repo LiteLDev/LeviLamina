@@ -10,7 +10,7 @@
 class Mob;
 class MoveControlComponent;
 class Vec3;
-struct MoveControlDescription;
+namespace SharedTypes::v1_26_60 { struct MoveControlComponentDefinition; }
 // clang-format on
 
 class MoveControl : public ::Control {
@@ -19,7 +19,8 @@ public:
     // NOLINTBEGIN
     virtual ~MoveControl() /*override*/ = default;
 
-    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription const* description);
+    virtual void
+    initializeInternal(::Mob& mob, ::SharedTypes::v1_26_60::MoveControlComponentDefinition const* description);
 
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob);
 
@@ -27,32 +28,21 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI float
-    calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
-
-#ifdef LL_PLAT_S
-    MCAPI float calculateYRotation(
-        ::MoveControlComponent const& parent,
-        ::Mob const&                  mob,
-        ::Vec3 const&                 positionDifference,
-        float                         maxMoveSpeed
-    );
-#endif
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI static float calculateMoveSpeed(
+        ::MoveControlComponent const& parent,
+        ::Mob&                        mob,
+        ::Vec3 const&                 endPosition,
+        float const                   maxMoveSpeed
+    );
+
     MCAPI static float calculateYRotation(
         ::MoveControlComponent const& parent,
         ::Mob const&                  mob,
         ::Vec3 const&                 positionDifference,
         float const                   maxMoveSpeed
     );
-#endif
 
     MCAPI static bool
     shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float const endDistanceSqr);
@@ -61,7 +51,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob& mob, ::MoveControlDescription const* description);
+    MCFOLD void
+    $initializeInternal(::Mob& mob, ::SharedTypes::v1_26_60::MoveControlComponentDefinition const* description);
 
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 

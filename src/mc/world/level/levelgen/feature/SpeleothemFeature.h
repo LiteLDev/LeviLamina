@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::HashedString const&>                                                mBaseBlock;
-    ::ll::TypedStorage<8, 8, ::HashedString const&>                                                mPointedBlock;
+    ::ll::TypedStorage<8, 8, ::HashedString const&>                                                mSpeleothemBlock;
     ::ll::TypedStorage<8, 8, ::std::vector<::std::reference_wrapper<::HashedString const>> const&> mReplaceableBlocks;
     // NOLINTEND
 
@@ -38,11 +38,5 @@ public:
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

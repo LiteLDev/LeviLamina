@@ -14,4 +14,10 @@ enum class UploadError : int {
     CreateLevelStorageFailed = 8,
     WorldNameNonCompliant    = 9,
     Unknown                  = 10,
+    SingleUploadFailed       = 11,
+    MultiUploadFailed        = 12,
+    BlockListFailed          = 13,
+    UploadCompleteFailed     = 14,
+    RefreshSessionFailed     = 15,
+    ProcessingFailed         = 16,
 };

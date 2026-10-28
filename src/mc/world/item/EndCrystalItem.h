@@ -26,7 +26,7 @@ public:
 
     virtual ::InteractionResult _useOn(
         ::ItemStack&  instance,
-        ::Actor&      usingActor,
+        ::Actor&      entity,
         ::BlockPos    pos,
         uchar         face,
         ::HandSlot    handSlot,
@@ -43,7 +43,7 @@ public:
 
     MCAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
-        ::Actor&      usingActor,
+        ::Actor&      entity,
         ::BlockPos    pos,
         uchar         face,
         ::HandSlot    handSlot,

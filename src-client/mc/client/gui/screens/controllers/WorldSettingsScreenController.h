@@ -64,7 +64,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                       mRespawnRadiusString;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                   mWorldImagePath;
     ::ll::TypedStorage<8, 848, ::LevelSummary>                                     mEditedLevel;
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                mLevelData;
+    ::ll::TypedStorage<8, 1712, ::LevelDataWrapper>                                mLevelData;
     ::ll::TypedStorage<8, 72, ::ExperimentStorage>                                 mOriginalExperiments;
     ::ll::TypedStorage<4, 4, ::EduCloud::WorldSyncState const>                     mEditedLevelSyncState;
     ::ll::TypedStorage<1, 1, bool>                                                 mEditedLevelDeleted;
@@ -178,8 +178,6 @@ public:
 
     MCAPI int _getDifficulty();
 
-    MCAPI bool _getMultiplayerEnabled() const;
-
     MCAPI ::std::string _getPlatformMultiplayerWarningText() const;
 
     MCAPI ::std::string _getWorldName();
@@ -187,8 +185,6 @@ public:
     MCAPI ::std::string _getXBLMultiplayerWarningText() const;
 
     MCAPI void _init();
-
-    MCAPI bool _isGameRuleEnabled() const;
 
     MCAPI bool _passedLockedContentCheck();
 
@@ -202,8 +198,6 @@ public:
 
     MCAPI void _setGameRule(int value, ::GameRuleId gameRuleId, bool suppressOuput);
 
-    MCAPI void _setLevelEditorWorldFlag();
-
     MCAPI void _setMultiplayerEnabled(bool value);
 
     MCAPI void _setWorldGameModeHelper(int value);
@@ -211,6 +205,8 @@ public:
     MCAPI void _setWorldName(::std::string value);
 
     MCAPI void _setWorldTypeHelper(int value);
+
+    MCAPI bool _shouldShowMultiplayerWarningMessages() const;
 
     MCAPI ::ui::ViewRequest _startEducationWorld(bool shouldHost);
 

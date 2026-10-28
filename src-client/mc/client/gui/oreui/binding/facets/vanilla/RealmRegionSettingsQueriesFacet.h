@@ -52,7 +52,7 @@ public:
         ::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings
     );
 
-    MCFOLD bool getDoNotShowPingWarning() const;
+    MCAPI bool getDoNotShowPingWarning() const;
 
     MCFOLD bool getLowPingWarning() const;
 

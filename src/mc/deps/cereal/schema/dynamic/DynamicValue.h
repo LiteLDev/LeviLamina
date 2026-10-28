@@ -63,18 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::cereal::DynamicValue>& asArray();
-
-    MCAPI bool const& asBool() const;
-
-    MCAPI int64 const& asInteger() const;
-
-    MCAPI double const& asNumber() const;
-
-    MCAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue>& asObject();
-
-    MCAPI ::std::string const& asString() const;
-
     MCAPI bool hasMember(::std::string const& member) const;
 
     MCAPI uint64 hash() const;

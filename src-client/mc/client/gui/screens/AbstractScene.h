@@ -159,6 +159,8 @@ public:
 
     virtual ::std::string getRawScreenName() const = 0;
 
+    virtual bool equalsRawScreenName(::std::string_view comparison) const = 0;
+
     virtual ::std::string getRoute() const = 0;
 
     virtual ::std::string getScreenTelemetryName() const = 0;

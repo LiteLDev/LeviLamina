@@ -41,7 +41,8 @@ public:
         ::Vec3 const& clickPos
     ) const /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
+    virtual bool
+    _calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const
         /*override*/;
     // NOLINTEND
 
@@ -65,7 +66,8 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool
+    $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
 
     // NOLINTEND

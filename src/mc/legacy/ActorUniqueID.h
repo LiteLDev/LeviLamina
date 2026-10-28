@@ -13,6 +13,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint64 getHash() const;
+
+    MCFOLD ::std::string toString() const;
     // NOLINTEND
 
 public:

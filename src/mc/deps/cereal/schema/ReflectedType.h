@@ -21,7 +21,8 @@ enum class ReflectedType : int {
     Enum                 = 13,
     SequenceContainer    = 14,
     AssociativeContainer = 15,
-    Object               = 16,
+    ComponentStorage     = 16,
+    Object               = 17,
 };
 
 }

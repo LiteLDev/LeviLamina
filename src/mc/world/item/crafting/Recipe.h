@@ -34,6 +34,11 @@ public:
     // clang-format on
 
     // Recipe inner types define
+    enum class IngredientSearchMode : int {
+        AllPermutations  = 0,
+        FirstPermutation = 1,
+    };
+
     class Results {
     public:
         // member variables
@@ -144,7 +149,12 @@ public:
 
     virtual bool isShapeless() const = 0;
 
+#ifdef LL_PLAT_S
+    virtual bool
+    matches(::CraftingContainer const& craftingContainer, ::CraftingContext const& craftingContext) const = 0;
+#else // LL_PLAT_C
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const = 0;
+#endif
 
     virtual int size() const = 0;
 
@@ -156,7 +166,8 @@ public:
 
     virtual bool hasDataDrivenResult() const;
 
-    virtual bool itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
+    virtual bool
+    itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item, ::CraftingContext const*) const;
 
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
 
@@ -172,8 +183,11 @@ public:
     MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
 
 #ifdef LL_PLAT_C
-    MCAPI ::IngredientSearchResults
-    checkContainerItemsForUsability(::std::vector<::ContainerModel*> const& containers) const;
+    MCAPI ::IngredientSearchResults checkContainerItemsForUsability(
+        ::std::vector<::ContainerModel*> const& containers,
+        ::CraftingContext const*                craftingContext,
+        ::Recipe::IngredientSearchMode          searchMode
+    ) const;
 #endif
 
     MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
@@ -208,7 +222,8 @@ public:
 
     MCFOLD bool $hasDataDrivenResult() const;
 
-    MCAPI bool $itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
+    MCAPI bool
+    $itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item, ::CraftingContext const*) const;
 
     MCAPI bool $itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
 

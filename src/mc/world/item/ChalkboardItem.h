@@ -28,7 +28,8 @@ public:
 
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase const&, ::Actor const& entity, uchar& face, ::BlockPos& pos) const
+        /*override*/;
 
     virtual ::InteractionResult _useOn(
         ::ItemStack&  instance,
@@ -55,7 +56,7 @@ public:
 
     MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
     MCAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,

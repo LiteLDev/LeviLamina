@@ -26,7 +26,7 @@ MCAPI void _tickPlayerMovement(
     ::EntityModifier<
         ::ServerPlayerCurrentMovementComponent,
         ::ServerPlayerInventoryTransactionComponent,
-        ::ServerPlayerInteractComponent> modifier
+        ::ServerPlayerInteractComponent> const& modifier
 );
 
 MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);

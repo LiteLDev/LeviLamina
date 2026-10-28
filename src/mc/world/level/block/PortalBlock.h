@@ -26,10 +26,6 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class PortalBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    PortalBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
@@ -69,8 +65,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PortalBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
@@ -86,12 +80,6 @@ public:
     MCAPI static void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
 
     MCAPI static bool trySpawnPortal(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

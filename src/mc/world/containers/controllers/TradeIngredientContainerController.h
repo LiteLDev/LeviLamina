@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContainerModel;
 class ItemStackBase;
 // clang-format on
 
@@ -19,33 +18,10 @@ public:
     ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    TradeIngredientContainerController();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isItemAllowed(::ItemStackBase const& item) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit TradeIngredientContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
-#endif
     // NOLINTEND
 
 public:
@@ -56,11 +32,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

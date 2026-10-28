@@ -42,6 +42,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChatLoggingEventListener();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ChatLoggingEventListener() /*override*/;
@@ -72,7 +76,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChatLoggingEventListener();
+    MCNAPI explicit ChatLoggingEventListener(
+        ::std::optional<::Core::PathBuffer<::std::string>> const& chatLogPathOverride
+    );
 
     MCNAPI void _write(::std::string const& message, bool includeTime);
     // NOLINTEND
@@ -80,7 +86,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::std::optional<::Core::PathBuffer<::std::string>> const& chatLogPathOverride);
     // NOLINTEND
 
 public:

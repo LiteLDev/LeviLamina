@@ -29,6 +29,7 @@ class PlayerRenderView;
 class Tessellator;
 class TickingTextureStage;
 struct FrameRenderObject;
+namespace Gameface { class IOffscreenRenderer; }
 namespace mce { class Color; }
 namespace mce { class RenderContext; }
 namespace mce { class RenderStage; }
@@ -71,43 +72,44 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>>
-                                                                                     mFrameObject_NoAccessOutsideRender;
-    ::ll::TypedStorage<8, 16, ::LinearAllocator<::FrameRenderObject>>                mLinearAllocator;
-    ::ll::TypedStorage<8, 208, ::MinecraftGraphicsPipeline>                          mMinecraftGraphicsPipeline;
-    ::ll::TypedStorage<8, 8, ::MinecraftGraphics&>                                   mMinecraftGraphics;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IClientInstance>>         mClient;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>      mPrimaryClient;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector>> mFrameAnomalyDetector;
-    ::ll::TypedStorage<8, 24, ::GameRenderer::Overlays>                              mOverlays;
-    ::ll::TypedStorage<8, 88, ::mce::RenderGraph>                                    mRenderGraph;
-    ::ll::TypedStorage<4, 24, ::mce::Clock>                                          mClock;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Tessellator>>                       mTessellator;
-    ::ll::TypedStorage<8, 8, ::TickingTextureStage*>                                 mTickingTextureStage;
-    ::ll::TypedStorage<4, 4, float>                                                  mLastClockTime;
-    ::ll::TypedStorage<1, 1, bool>                                                   mFlushedInitCommandList;
-    ::ll::TypedStorage<4, 4, int>                                                    _tick;
-    ::ll::TypedStorage<2, 2, short>                                                  mPointerX;
-    ::ll::TypedStorage<2, 2, short>                                                  mPointerY;
-    ::ll::TypedStorage<1, 1, bool>                                                   mUseLowFrequencyUIRender;
-    ::ll::TypedStorage<4, 8, ::std::optional<::GameRenderer::FrameCaptureMode>>      mFrameCaptureMode;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InsideCubeRenderer>>                mInsideCubeRenderer;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                             mLastFrameTime;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PlayerRenderView>>>  mPlayerViews;
-    ::ll::TypedStorage<8, 8, ::optional_ref<::mce::RenderStage>>                     mDirectOutputStage;
-    ::ll::TypedStorage<8, 8, ::optional_ref<::CommandListQueue>>                     mCommandListQueue;
-    ::ll::TypedStorage<8, 280, ::std::optional<::ScreenContext>>                     mCurrentFrameScreenContext;
-    ::ll::TypedStorage<4, 64, ::Matrix>                                              mLastLevelViewMatrix;
-    ::ll::TypedStorage<4, 64, ::Matrix>                                              mLastLevelViewMatrixAbsolute;
-    ::ll::TypedStorage<4, 64, ::Matrix>                                              mLastLevelProjMatrix;
-    ::ll::TypedStorage<4, 64, ::Matrix>                                              mLastLevelWorldMatrix;
-    ::ll::TypedStorage<4, 64, ::Matrix>                                              mCubemapWorldMatrix;
-    ::ll::TypedStorage<1, 1, bool>                                                   mCubemapRotationPaused;
-    ::ll::TypedStorage<8, 8, double>                                                 mCubemapRotationSeconds;
-    ::ll::TypedStorage<1, 1, bool>                                                   mHasCustomSoftwareCursor;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                     mCustomSoftwareCursorAsset;
-    ::ll::TypedStorage<8, 32, ::std::string>                                         mExperimentsString;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRenderChunkGarbageCollection>>     mGarbageCollection;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPauseSubscription;
+                                                                                mFrameObject_NoAccessOutsideRender;
+    ::ll::TypedStorage<8, 16, ::LinearAllocator<::FrameRenderObject>>           mLinearAllocator;
+    ::ll::TypedStorage<8, 208, ::MinecraftGraphicsPipeline>                     mMinecraftGraphicsPipeline;
+    ::ll::TypedStorage<8, 8, ::MinecraftGraphics&>                              mMinecraftGraphics;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IClientInstance>>    mClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>> mPrimaryClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Gameface::IOffscreenRenderer>> mGamefaceOffscreenRenderer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector>>         mFrameAnomalyDetector;
+    ::ll::TypedStorage<8, 24, ::GameRenderer::Overlays>                                      mOverlays;
+    ::ll::TypedStorage<8, 88, ::mce::RenderGraph>                                            mRenderGraph;
+    ::ll::TypedStorage<4, 24, ::mce::Clock>                                                  mClock;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Tessellator>>                               mTessellator;
+    ::ll::TypedStorage<8, 8, ::TickingTextureStage*>                                         mTickingTextureStage;
+    ::ll::TypedStorage<4, 4, float>                                                          mLastClockTime;
+    ::ll::TypedStorage<1, 1, bool>                                                           mFlushedInitCommandList;
+    ::ll::TypedStorage<4, 4, int>                                                            _tick;
+    ::ll::TypedStorage<2, 2, short>                                                          mPointerX;
+    ::ll::TypedStorage<2, 2, short>                                                          mPointerY;
+    ::ll::TypedStorage<1, 1, bool>                                                           mUseLowFrequencyUIRender;
+    ::ll::TypedStorage<4, 8, ::std::optional<::GameRenderer::FrameCaptureMode>>              mFrameCaptureMode;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InsideCubeRenderer>>                        mInsideCubeRenderer;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                     mLastFrameTime;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PlayerRenderView>>>          mPlayerViews;
+    ::ll::TypedStorage<8, 8, ::optional_ref<::mce::RenderStage>>                             mDirectOutputStage;
+    ::ll::TypedStorage<8, 8, ::optional_ref<::CommandListQueue>>                             mCommandListQueue;
+    ::ll::TypedStorage<8, 312, ::std::optional<::ScreenContext>>                             mCurrentFrameScreenContext;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                                      mLastLevelViewMatrix;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                          mLastLevelViewMatrixAbsolute;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                          mLastLevelProjMatrix;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                          mLastLevelWorldMatrix;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                          mCubemapWorldMatrix;
+    ::ll::TypedStorage<1, 1, bool>                                               mCubemapRotationPaused;
+    ::ll::TypedStorage<8, 8, double>                                             mCubemapRotationSeconds;
+    ::ll::TypedStorage<1, 1, bool>                                               mHasCustomSoftwareCursor;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                 mCustomSoftwareCursorAsset;
+    ::ll::TypedStorage<8, 32, ::std::string>                                     mExperimentsString;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRenderChunkGarbageCollection>> mGarbageCollection;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mPauseSubscription;
     // NOLINTEND
 
 public:
@@ -126,9 +128,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameRenderer(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&      ci,
-        ::MinecraftGraphics&                                         graphics,
-        ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&       ci,
+        ::MinecraftGraphics&                                          graphics,
+        ::Bedrock::NotNullNonOwnerPtr<::Gameface::IOffscreenRenderer> gamefaceOffscreenRenderer,
+        ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const&  frameAnomalyDetector
     );
 
     MCAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
@@ -172,9 +175,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&      ci,
-        ::MinecraftGraphics&                                         graphics,
-        ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&       ci,
+        ::MinecraftGraphics&                                          graphics,
+        ::Bedrock::NotNullNonOwnerPtr<::Gameface::IOffscreenRenderer> gamefaceOffscreenRenderer,
+        ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const&  frameAnomalyDetector
     );
     // NOLINTEND
 };

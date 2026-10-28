@@ -20,9 +20,9 @@ namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Json { class Value; }
 // clang-format on
 
-class EDUWorldsScreenController : public ::SettingsScreenControllerBase {
+class EduWorldsScreenController : public ::SettingsScreenControllerBase {
 public:
-    // EDUWorldsScreenController inner types define
+    // EduWorldsScreenController inner types define
     enum class StartWorldCaller : int {
         Play     = 0,
         Host     = 1,
@@ -53,14 +53,14 @@ public:
 
 public:
     // prevent constructor by default
-    EDUWorldsScreenController& operator=(EDUWorldsScreenController const&);
-    EDUWorldsScreenController(EDUWorldsScreenController const&);
-    EDUWorldsScreenController();
+    EduWorldsScreenController& operator=(EduWorldsScreenController const&);
+    EduWorldsScreenController(EduWorldsScreenController const&);
+    EduWorldsScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldsScreenController() /*override*/ = default;
+    virtual ~EduWorldsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -78,7 +78,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EDUWorldsScreenController(::std::shared_ptr<::PlayScreenModel> model);
+    MCAPI explicit EduWorldsScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
     MCAPI void _closeEduCloudConflictPopup(bool keepLocal);
 
@@ -96,9 +96,9 @@ public:
 
     MCAPI void _showEduCloudConflictPopup();
 
-    MCAPI void _startWorld(::std::string const& levelId, ::EDUWorldsScreenController::StartWorldCaller caller);
+    MCAPI void _startWorld(::std::string const& levelId, ::EduWorldsScreenController::StartWorldCaller caller);
 
-    MCAPI void _startWorld(::LocalWorldInfo* worldInfo, ::EDUWorldsScreenController::StartWorldCaller caller);
+    MCAPI void _startWorld(::LocalWorldInfo* worldInfo, ::EduWorldsScreenController::StartWorldCaller caller);
     // NOLINTEND
 
 public:

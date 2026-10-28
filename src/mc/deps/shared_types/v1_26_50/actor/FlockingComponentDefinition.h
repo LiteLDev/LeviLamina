@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_50 {
 
 struct FlockingComponentDefinition {
@@ -34,50 +29,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_BLOCK_DISTANCE();
-
-    MCAPI static float const& DEFAULT_BLOCK_WEIGHT();
-
-    MCAPI static float const& DEFAULT_BREACH_INFLUENCE();
-
-    MCAPI static float const& DEFAULT_COHESION_THRESHOLD();
-
-    MCAPI static float const& DEFAULT_COHESION_WEIGHT();
-
-    MCAPI static float const& DEFAULT_GOAL_WEIGHT();
-
-    MCAPI static int const& DEFAULT_HIGH_FLOCK_LIMIT();
-
-    MCAPI static float const& DEFAULT_INFLUENCE_RADIUS();
-
-    MCAPI static float const& DEFAULT_INNER_COHESION_THRESHOLD();
-
-    MCAPI static bool const& DEFAULT_IN_WATER();
-
-    MCAPI static float const& DEFAULT_LONER_CHANCE();
-
-    MCAPI static int const& DEFAULT_LOW_FLOCK_LIMIT();
-
-    MCAPI static bool const& DEFAULT_MATCH_VARIANTS();
-
-    MCAPI static float const& DEFAULT_MAX_HEIGHT();
-
-    MCAPI static float const& DEFAULT_MIN_HEIGHT();
-
-    MCAPI static float const& DEFAULT_SEPARATION_THRESHOLD();
-
-    MCAPI static float const& DEFAULT_SEPARATION_WEIGHT();
-
-    MCAPI static bool const& DEFAULT_USE_CENTER_OF_MASS();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

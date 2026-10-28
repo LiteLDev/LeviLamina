@@ -36,6 +36,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void clear(::OreUI::ViewId viewId);
+
+    MCAPI ~FramesToPaintQueue();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

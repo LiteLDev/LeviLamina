@@ -15,6 +15,7 @@ class BlockSource;
 class PulseCapacitor;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockStateChangeEvent; }
 // clang-format on
 
 class ObserverBlock : public ::BlockType {
@@ -33,6 +34,8 @@ public:
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
 
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
@@ -57,6 +60,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
 
+    MCFOLD void _onStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
+
     MCAPI void
     _updateState(::BlockSource& region, ::BlockPos const& pos, ::PulseCapacitor& component, bool turnOn) const;
 
@@ -77,6 +82,8 @@ public:
     MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;

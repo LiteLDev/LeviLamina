@@ -43,6 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptContainerSlot(::ScriptModuleMinecraft::ScriptContainerSlot&&);
+
     MCAPI ScriptContainerSlot(::ScriptModuleMinecraft::ScriptContainerSlot const&);
 
     MCAPI ScriptContainerSlot(::ItemContext itemContext, ::Scripting::WeakLifetimeScope scope);
@@ -75,6 +77,8 @@ public:
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError> isStackable() const;
 
+    MCAPI ::ScriptModuleMinecraft::ScriptContainerSlot& operator=(::ScriptModuleMinecraft::ScriptContainerSlot&&);
+
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError, ::Scripting::Error>
     setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
@@ -104,6 +108,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainerSlot&&);
+
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainerSlot const&);
 
     MCAPI void* $ctor(::ItemContext itemContext, ::Scripting::WeakLifetimeScope scope);

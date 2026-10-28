@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/DiggerItem.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +23,8 @@ public:
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
 
-    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
+    virtual void
+    executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const
         /*override*/;
 
     virtual ::std::string_view getEfficiencyLocalization() const /*override*/;
@@ -45,7 +47,8 @@ public:
     // NOLINTBEGIN
     MCAPI int $getEnchantSlot() const;
 
-    MCFOLD void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    MCFOLD void
+    $executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const;
 
     MCAPI ::std::string_view $getEfficiencyLocalization() const;
 

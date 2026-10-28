@@ -17,7 +17,7 @@ class WorldSystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 168, ::World::WorldSystemModules> mModules;
+    ::ll::TypedStorage<8, 184, ::World::WorldSystemModules> mModules;
     // NOLINTEND
 
 public:

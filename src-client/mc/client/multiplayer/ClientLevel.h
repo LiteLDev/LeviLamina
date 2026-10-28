@@ -16,7 +16,6 @@
 class Actor;
 class ArmorTrimIconGenerator;
 class ArmorTrimUnloader;
-class AtomicClientEntityManager;
 class BlockSource;
 class CameraRegistry;
 class ChunkSource;
@@ -45,6 +44,7 @@ struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct ClientLevelArguments;
 struct Tick;
 namespace GameModeExt { struct MessengerFactory; }
+namespace ServerInitialization { class IServerInitializer; }
 // clang-format on
 
 class ClientLevel : public ::Level, public ::BeforeLevelForLevelHoldingOwnership {
@@ -66,11 +66,10 @@ public:
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::SubChunkManager>>> mSubChunkManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                   mOnSubChunkLoaded;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DisplayActorManager>>>
-                                                                             mDisplayActorManager;
-    ::ll::TypedStorage<8, 40, ::PlayerSleepManager>                          mPlayerSleepManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimIconGenerator>>    mArmorTrimIconGenerator;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimUnloader>>         mArmorTrimUnloader;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AtomicClientEntityManager>> mAtomicClientEntityManager;
+                                                                                                mDisplayActorManager;
+    ::ll::TypedStorage<8, 40, ::PlayerSleepManager>                                             mPlayerSleepManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimIconGenerator>>                       mArmorTrimIconGenerator;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimUnloader>>                            mArmorTrimUnloader;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::MapDataManager>>> mMapDataManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientSubChunkLighter>>                       mClientSubChunkLighter;
     // NOLINTEND
@@ -93,7 +92,8 @@ public:
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
+            biomeIdToResolvedData,
+        ::ServerInitialization::IServerInitializer*
     ) /*override*/;
 
     virtual ::Tick const getCurrentServerTick() const /*override*/;
@@ -197,7 +197,8 @@ public:
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
+            biomeIdToResolvedData,
+        ::ServerInitialization::IServerInitializer*
     );
 
     MCAPI ::Tick const $getCurrentServerTick() const;

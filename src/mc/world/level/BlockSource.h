@@ -48,6 +48,7 @@ class Level;
 class LevelChunk;
 class LevelSeed64;
 class Material;
+class NeighborChangeHistory;
 class SubChunkPos;
 class Vec3;
 class WeakEntityRef;
@@ -163,7 +164,7 @@ public:
         ::Block const&    block,
         ::BlockPos const& pos,
         uchar             face,
-        ::Actor*          placer,
+        ::Actor const*    placer,
         bool              ignoreEntities,
         ::Vec3            clickPos
     ) /*override*/;
@@ -344,7 +345,7 @@ public:
         int                            updateFlags,
         bool                           fireEvent,
         ::ActorBlockSyncMessage const* syncMsg,
-        ::Actor*                       blockChangeSource
+        ::BlockChangeContext const&    changeContext
     );
 
     MCAPI void _fetchEntityHelper(
@@ -356,6 +357,13 @@ public:
     );
 
     MCAPI ::Brightness _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool accountForNight) const;
+
+    MCAPI void _tryRecordNeighborChange(
+        ::BlockPos const&              notifiedPos,
+        ::BlockPos const&              changedPos,
+        ::Block const&                 notifiedBlock,
+        ::NeighborChangeHistory const& history
+    );
 
     MCAPI void addToRandomTickingQueue(
         ::BlockPos const& pos,
@@ -382,6 +390,8 @@ public:
     MCAPI bool canSeeSky(::BlockPos const& pos) const;
 
     MCAPI bool canSeeSkyFromBelowWater(::BlockPos const& pos);
+
+    MCAPI void connectionUpdate(::BlockPos const& neighPos, ::BlockPos const& myPos);
 
     MCAPI bool containsAnyBlockOfType(::BlockPos const& min, ::BlockPos const& max, ::Block const& type) const;
 
@@ -435,9 +445,7 @@ public:
 
     MCAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
 
-#ifdef LL_PLAT_C
     MCAPI void fireBlockEntityAboutToBeRemoved(::std::shared_ptr<::BlockActor> te);
-#endif
 
     MCAPI ::Biome const& getBiome(::BlockPos const& pos) const;
 
@@ -468,12 +476,22 @@ public:
 
     MCAPI bool hasTickInCurrentTick(::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_C
+    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos) const;
+
+    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::BlockType const& block) const;
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::TickingQueueType queueType) const;
 
     MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::Block const& block, ::TickingQueueType queueType) const;
 
     MCAPI bool
     hasTickInPendingTicks(::BlockPos const& pos, ::BlockType const& block, ::TickingQueueType queueType) const;
+#endif
 
 #ifdef LL_PLAT_C
     MCAPI bool isPositionUnderSnow(::Vec3 const& p);
@@ -481,9 +499,8 @@ public:
 
     MCAPI bool isTouchingMaterial(::BlockPos const& pos, ::SharedTypes::v1_26_20::MaterialType type) const;
 
-    MCAPI bool isUnobstructedByEntities(::AABB const& aabb, ::Actor const* ignoreEntity);
-
-    MCAPI void neighborChanged(::BlockPos const& neighPos, ::BlockPos const& myPos);
+    MCAPI void
+    neighborChanged(::BlockPos const& neighPos, ::BlockPos const& myPos, ::NeighborChangeHistory const& history);
 
     MCAPI bool setBlock(
         ::BlockPos const&               pos,
@@ -496,13 +513,18 @@ public:
 
     MCAPI bool setBlockAndRetainCompatibleBlockActor(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
+    MCAPI bool setExtraBlockSimple(::BlockPos const& pos, ::Block const& block);
+
+#ifdef LL_PLAT_C
+    MCAPI void setGrassColor(int grassColor, ::BlockPos const& pos, int flags);
+#endif
+
     MCAPI void tickPreservedBlockEntities();
 
-    MCAPI void updateConnectionsAt(::BlockPos const& pos);
+    MCAPI void updateNeighborsAt(::BlockPos const& pos, ::NeighborChangeHistory const& history);
 
-    MCAPI void updateNeighborsAt(::BlockPos const& pos);
-
-    MCAPI void updateNeighborsAtExceptFromFacing(::BlockPos const& pos, int skipFacing);
+    MCAPI void
+    updateNeighborsAtExceptFromFacing(::BlockPos const& pos, int skipFacing, ::NeighborChangeHistory const& history);
     // NOLINTEND
 
 public:
@@ -587,7 +609,7 @@ public:
         ::Block const&    block,
         ::BlockPos const& pos,
         uchar             face,
-        ::Actor*          placer,
+        ::Actor const*    placer,
         bool              ignoreEntities,
         ::Vec3            clickPos
     );

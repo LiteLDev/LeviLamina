@@ -12,8 +12,10 @@
 // clang-format off
 class TaskGroup;
 namespace Audio { class IOnlineAudioFetcherUpdateHandle; }
+namespace Audio { class OnlineAudioEncryptionData; }
 namespace Audio { class OnlineStreamedAudioBuffer; }
 namespace Audio { struct HttpRangeResponse; }
+namespace Audio { struct OnlineAudioFetchStartRequest; }
 namespace Audio { struct OnlineAudioFetcherSnapshot; }
 namespace Audio { struct OnlineStreamConfig; }
 // clang-format on
@@ -38,9 +40,7 @@ public:
     // NOLINTBEGIN
     virtual ~HttpAudioFetcher() /*override*/ = default;
 
-    virtual void start() /*override*/;
-
-    virtual void seekTo(uint64 offset) /*override*/;
+    virtual void start(::Audio::OnlineAudioFetchStartRequest request) /*override*/;
 
     virtual void stop() /*override*/;
 
@@ -58,7 +58,8 @@ public:
     MCNAPI static ::brstd::move_only_function<::std::unique_ptr<::Audio::IOnlineAudioFetcher>(
         ::std::string const&,
         ::std::shared_ptr<::Audio::OnlineStreamedAudioBuffer>,
-        ::Audio::OnlineStreamConfig const&
+        ::Audio::OnlineStreamConfig const&,
+        ::std::optional<::Audio::OnlineAudioEncryptionData>
     )> createFetcherFactory(::Bedrock::NotNullNonOwnerPtr<::TaskGroup> const& taskGroup);
 #endif
     // NOLINTEND
@@ -67,9 +68,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $start();
-
-    MCNAPI void $seekTo(uint64 offset);
+    MCNAPI void $start(::Audio::OnlineAudioFetchStartRequest request);
 
     MCNAPI void $stop();
 

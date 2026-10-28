@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BoundingBox;
+class Dimension;
+// clang-format on
+
 class GameTestClearTask {
 public:
     // member variables
@@ -22,6 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void tick();
+    MCNAPI GameTestClearTask(::Dimension& dimension, ::BoundingBox const& bounds);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Dimension& dimension, ::BoundingBox const& bounds);
     // NOLINTEND
 };

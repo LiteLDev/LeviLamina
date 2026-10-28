@@ -28,6 +28,7 @@ public:
     ::ll::TypedStorage<4, 8, ::FloatRange> mProjectileDamage;
     ::ll::TypedStorage<4, 4, ::ActorType>  mFilter;
     ::ll::TypedStorage<1, 1, bool>         mCatchFire;
+    ::ll::TypedStorage<1, 1, bool>         mSpreadFire;
     ::ll::TypedStorage<1, 1, bool>         mChanneling;
     ::ll::TypedStorage<1, 1, bool>         mKnockback;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_50::ImpactDamageSubcomponentDefinition::DifficultyRandomization>

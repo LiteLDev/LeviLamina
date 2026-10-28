@@ -17,10 +17,6 @@ struct BlockAnimateTickData;
 
 class ShortDryGrassBlock : public ::FoliageBlock {
 public:
-    // prevent constructor by default
-    ShortDryGrassBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -35,18 +31,6 @@ public:
         /*override*/;
 
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShortDryGrassBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

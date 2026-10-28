@@ -250,7 +250,7 @@ public:
 
     virtual bool isScreenReplaceable() const = 0;
 
-    virtual void handleTextChar(::std::string const& inputUtf8) = 0;
+    virtual void handleTextChar(::std::string_view inputUtf8) = 0;
 
     virtual void setBufferTextCharEvents(bool pushTextCharEvents) = 0;
 
@@ -258,7 +258,7 @@ public:
 
     virtual bool isOnSceneStack(::ui::SceneType sceneType) const = 0;
 
-    virtual bool isOnSceneStack(::std::string const& screenName) const = 0;
+    virtual bool isOnSceneStack(::std::string_view screenName) const = 0;
 
     virtual ::SceneStackProxy* getProxy() = 0;
 

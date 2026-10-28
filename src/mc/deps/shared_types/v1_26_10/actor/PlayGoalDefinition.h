@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_10 {
@@ -27,18 +26,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                    mRandomPosSearchRange;
     ::ll::TypedStorage<4, 4, int>                                    mRandomPosSearchHeight;
     ::ll::TypedStorage<4, 4, int>                                    mFollowDistanceInBlocks;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_26_10::PlayGoalDefinition const&) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

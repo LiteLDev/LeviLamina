@@ -13,6 +13,7 @@ struct RouteJsonMetadata {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                            mIsSolidGameplay;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackIdVersion>> mRouteSource;
     // NOLINTEND
 };

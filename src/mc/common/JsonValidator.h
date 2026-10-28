@@ -40,8 +40,6 @@ public:
         // NOLINTBEGIN
         MCNAPI Property(::JsonValidator::Property const&);
 
-        MCNAPI ::JsonValidator::Property& addChildProperty(::JsonValidator::Property const& prop);
-
         MCNAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 

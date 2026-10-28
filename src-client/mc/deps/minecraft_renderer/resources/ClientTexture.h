@@ -48,12 +48,6 @@ public:
             ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>>&& inner
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace mce

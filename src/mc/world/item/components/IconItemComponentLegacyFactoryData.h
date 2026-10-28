@@ -29,4 +29,10 @@ public:
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

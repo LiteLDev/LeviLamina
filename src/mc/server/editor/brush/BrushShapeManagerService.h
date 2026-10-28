@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/BrushElevationMode.h"
-#include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/BrushElevationMode.h"
+#include "mc/editor/DirectionalPlacementMode.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/editor/services/native_brush/BrushFlattenMode.h"

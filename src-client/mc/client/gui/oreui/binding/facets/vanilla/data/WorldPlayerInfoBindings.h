@@ -31,7 +31,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                           mXUID;
     ::ll::TypedStorage<8, 32, ::std::string>                           mPlatformOnlineId;
     ::ll::TypedStorage<8, 32, ::std::string>                           mPlayerName;
-    ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage>         mProfileImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage>         mProfileImage;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>                  mPlatformImage;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mProfileSubscription;
     ::ll::TypedStorage<1, 2, ::std::optional<::PlayerPermissionLevel>> mPermissionLevel;
@@ -42,11 +42,14 @@ public:
 
 public:
     // prevent constructor by default
+    WorldPlayerInfoBindings& operator=(WorldPlayerInfoBindings const&);
     WorldPlayerInfoBindings();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldPlayerInfoBindings(::OreUI::WorldPlayerInfoBindings const& data);
+
     MCAPI WorldPlayerInfoBindings(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,
@@ -62,12 +65,14 @@ public:
         ::BuildPlatform                          platform
     );
 
-    MCAPI ::std::string const& getActiveProfileImage() const;
+    MCAPI ~WorldPlayerInfoBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::WorldPlayerInfoBindings const& data);
+
     MCAPI void* $ctor(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,
@@ -82,6 +87,12 @@ public:
         bool                                     isHost,
         ::BuildPlatform                          platform
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

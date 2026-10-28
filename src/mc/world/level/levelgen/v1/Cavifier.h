@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class CavifierNoises;
-class Vec3;
 // clang-format on
 
 class Cavifier {
@@ -22,10 +21,4 @@ public:
     Cavifier& operator=(Cavifier const&);
     Cavifier(Cavifier const&);
     Cavifier();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI float cavify(::Vec3 worldPos, int, float density) const;
-    // NOLINTEND
 };

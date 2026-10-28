@@ -166,8 +166,6 @@ public:
 
     MCAPI void simulateStopMoving();
 
-    MCAPI bool simulateUseItem(::ItemStack& item);
-
     MCAPI bool simulateUseItemInSlot(int slot);
 
     MCAPI bool simulateUseItemInSlotOnBlock(

@@ -7,7 +7,6 @@
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SculkSensorBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
@@ -41,6 +36,8 @@ public:
     virtual void onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
 
     virtual bool isSignalSource() const /*override*/;
 
@@ -69,8 +66,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkSensorBlock(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -101,12 +96,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
@@ -114,6 +103,8 @@ public:
     MCAPI void $onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCFOLD bool $isSignalSource() const;
 

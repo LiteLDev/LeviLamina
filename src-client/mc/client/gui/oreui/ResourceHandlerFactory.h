@@ -53,12 +53,6 @@ public:
         64,
         ::brstd::move_only_function<
             ::std::unique_ptr<::Gameface::IResourceHandler>(::OreUI::RegisterResourceHandlersArguments const&) const>>
-        mCreateBlockResourceHandler;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::brstd::move_only_function<
-            ::std::unique_ptr<::Gameface::IResourceHandler>(::OreUI::RegisterResourceHandlersArguments const&) const>>
         mCreateStructureResourceHandler;
     ::ll::TypedStorage<
         8,

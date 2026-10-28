@@ -4,19 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/client/persona/builders/TextureTint.h"
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class IAdvancedGraphicsOptions;
 class IPersonaImageProvider;
-class IPersonaPieceProvider;
 class Pack;
 class ResourceLoadManager;
 class ResourcePackManager;
-class TaskGroup;
-struct PersonaCharacter;
 struct PersonaTextureResources;
 struct TextureHotReloader;
 namespace Json { class Value; }
@@ -44,17 +40,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::Async<bool> parseTextures(
-        ::std::string const&                      characterName,
-        ::TaskGroup&                              taskGroup,
-        ::IPersonaPieceProvider&                  pieceProvider,
-        ::std::unordered_map<::std::string, uint> sampledTexelWidths
+    MCAPI PersonaTextureBuilder(
+        ::IPersonaImageProvider&                                  imageProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>      resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
     );
 
-    MCAPI void registerTexturesForHotReload(
-        ::PersonaCharacter&                        character,
-        ::std::function<void(::PersonaCharacter&)> onTextureReloaded
-    );
+    MCAPI ~PersonaTextureBuilder();
     // NOLINTEND
 
 public:
@@ -100,5 +94,23 @@ public:
     MCAPI static ::std::string const& PERSONA_ANIMATED_ATLAS_TEST_PATH();
 
     MCAPI static ::std::string const& PERSONA_ATLAS_TEST_PATH();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IPersonaImageProvider&                                  imageProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>      resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

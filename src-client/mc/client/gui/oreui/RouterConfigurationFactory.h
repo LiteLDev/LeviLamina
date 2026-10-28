@@ -25,7 +25,6 @@ namespace Core { class FileSystem; }
 namespace Core { class Path; }
 namespace OreUI { class RouterConfiguration; }
 namespace Realms { class IRealmsUGCPackUploader; }
-namespace Realms { class RealmsList; }
 namespace Realms { class RealmsWorldContext; }
 namespace Realms { class RealmsWorldEditor; }
 namespace Realms { class RealmsWorldPackContext; }
@@ -48,8 +47,8 @@ MCAPI ::OreUI::RouterConfiguration createRouterConfiguration(
     ::std::function<::ServerInstance*()>                     getServerInstance,
     ::std::function<::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>()>,
     ::std::function<::Bedrock::NotNullNonOwnerPtr<::IOfferRepository>()>                 getOfferRepository,
+    ::std::function<::IOfferRepository*()>                                               getOptionalOfferRepository,
     ::std::function<::Bedrock::NotNullNonOwnerPtr<::SunsettingManager>()>                getSunsettingManager,
-    ::std::function<::std::shared_ptr<::Realms::RealmsList>()>                           getRealmsList,
     ::std::function<::std::shared_ptr<::Realms::RealmsWorldContext>()>                   getRealmsWorldContext,
     ::std::function<::std::shared_ptr<::Realms::RealmsWorldEditor>()>                    getRealmsWorldEditor,
     ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackContext>()>&& getRealmsWorldPackContext,
@@ -65,7 +64,8 @@ MCAPI ::OreUI::RouterConfiguration createRouterConfiguration(
     ::std::function<void()>                                                              clearAllRequiredTTSEvents,
     ::std::function<bool()>                                                              isInGame,
     ::std::function<bool()>                                                              isInServer,
-    ::std::function<bool()>                                                              isInRealm
+    ::std::function<bool()>                                                              isInRealm,
+    ::std::function<bool()> isUsingWebComponentsGameplayScreens
 );
 // NOLINTEND
 

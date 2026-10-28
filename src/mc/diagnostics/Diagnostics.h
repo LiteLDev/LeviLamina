@@ -12,8 +12,6 @@ namespace Bedrock::Diagnostics {
 // NOLINTBEGIN
 MCNAPI void debugBreak();
 
-MCNAPI bool handleAssert(char const* msgFormat, char const* arg, int line, char const* file, char const* function, ...);
-
 MCNAPI void
 log(::BedrockLog::LogCategory category,
     ::std::bitset<3>          channelMask,

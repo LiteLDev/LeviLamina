@@ -41,4 +41,10 @@ public:
     ::ll::TypedStorage<4, 4, float>           mDarknessFactorPreviousFrame;
     ::ll::TypedStorage<4, 4, float>           mTheEndLightSourceIntensity;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::BaseLightData const& rhs) const;
+    // NOLINTEND
 };

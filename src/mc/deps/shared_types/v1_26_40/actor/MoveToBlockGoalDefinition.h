@@ -11,7 +11,6 @@
 // clang-format off
 namespace SharedTypes::Legacy { struct ItemDescriptor; }
 namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_40 {
@@ -46,6 +45,7 @@ public:
 public:
     // prevent constructor by default
     MoveToBlockGoalDefinition& operator=(MoveToBlockGoalDefinition const&);
+    MoveToBlockGoalDefinition(MoveToBlockGoalDefinition const&);
     MoveToBlockGoalDefinition();
 
 public:
@@ -53,20 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI MoveToBlockGoalDefinition(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&&);
 
-    MCAPI MoveToBlockGoalDefinition(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition const&);
-
-    MCAPI ::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&
-    operator=(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&&);
-
-    MCAPI bool operator==(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition const&) const;
-
     MCAPI ~MoveToBlockGoalDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -79,8 +66,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition const&);
     // NOLINTEND
 
 public:

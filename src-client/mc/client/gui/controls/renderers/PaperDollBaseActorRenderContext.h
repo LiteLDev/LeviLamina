@@ -8,10 +8,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class ActorRenderData;
+class ActorRenderDispatcher;
 class BaseActorRenderContext;
 class HashedString;
 class MatrixStack;
+class MinecraftGameplayGraphicsResources;
 struct OffscreenCaptureDescription;
 // clang-format on
 
@@ -37,7 +40,7 @@ public:
 
     virtual ::MatrixStack& getWorldMatrixStack() /*override*/;
 
-    virtual float getYOffset(float screenScale) /*override*/;
+    virtual float getLegacyGuiOffsetY(float screenScale) /*override*/;
 
     virtual void renderGui(
         ::HashedString const&                rendererName,
@@ -45,11 +48,19 @@ public:
         ::OffscreenCaptureDescription const* capture
     ) /*override*/;
 
+    virtual ::std::optional<::std::string> getCoCoEntityIdentifier(::std::string const& pieceId) /*override*/;
+
+    virtual ::ActorRenderDispatcher* getActorRenderDispatcher() /*override*/;
+
+    virtual ::MinecraftGameplayGraphicsResources& getGameplayGraphicsResources() /*override*/;
+
     virtual float getLastTimestamp() /*override*/;
 
     virtual ::glm::vec2 getMouseMove(::glm::vec2 const& ownerPos) /*override*/;
 
     virtual ::SubClientId getClientSubId() /*override*/;
+
+    virtual ::std::optional<::AABB> getDefaultPoseBounds(::HashedString const& rendererName) /*override*/;
     // NOLINTEND
 
 public:
@@ -61,7 +72,7 @@ public:
 
     MCAPI ::MatrixStack& $getWorldMatrixStack();
 
-    MCAPI float $getYOffset(float screenScale);
+    MCAPI float $getLegacyGuiOffsetY(float screenScale);
 
     MCAPI void $renderGui(
         ::HashedString const&                rendererName,
@@ -69,11 +80,19 @@ public:
         ::OffscreenCaptureDescription const* capture
     );
 
+    MCAPI ::std::optional<::std::string> $getCoCoEntityIdentifier(::std::string const& pieceId);
+
+    MCAPI ::ActorRenderDispatcher* $getActorRenderDispatcher();
+
+    MCAPI ::MinecraftGameplayGraphicsResources& $getGameplayGraphicsResources();
+
     MCAPI float $getLastTimestamp();
 
     MCAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
 
     MCAPI ::SubClientId $getClientSubId();
+
+    MCAPI ::std::optional<::AABB> $getDefaultPoseBounds(::HashedString const& rendererName);
     // NOLINTEND
 
 public:

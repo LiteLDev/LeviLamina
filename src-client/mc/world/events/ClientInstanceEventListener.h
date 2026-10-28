@@ -37,7 +37,7 @@ public:
 
     virtual ::EventResult onClientSuspend(::ClientInstance&);
 
-    virtual ::EventResult onClientEnteredWorld(::ClientInstance& clientInstance);
+    virtual ::EventResult onClientEnteredWorld(::ClientInstance& instance);
 
     virtual ::EventResult onStartLeaveGame(::ClientInstance& client);
 
@@ -61,7 +61,7 @@ public:
 
     MCFOLD ::EventResult $onClientSuspend(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientEnteredWorld(::ClientInstance& clientInstance);
+    MCFOLD ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
 
     MCFOLD ::EventResult $onStartLeaveGame(::ClientInstance& client);
 

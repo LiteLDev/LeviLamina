@@ -16,27 +16,30 @@
 #include "mc/deps/shared_types/v1_26_40/actor/TrustComponentDefinition.h"
 #include "mc/deps/shared_types/v1_26_50/actor/PreferredPathComponentDefinition.h"
 #include "mc/deps/shared_types/v1_26_50/actor/ProjectileComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/AmphibiousMoveControlComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/EconomyTradeableComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/GenericMoveControlComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/GlideMoveControlComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/MoveControlBasicComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/MoveControlDolphinComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/MoveControlFlyComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/MoveControlHoverComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/MoveControlSkipComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/MoveControlSwayComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/SlimeMoveControlComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/StrengthComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/TeleportComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/TrailComponentDefinition.h"
+#include "mc/deps/shared_types/v1_26_60/actor/TransformationComponentDefinition.h"
 #include "mc/entity/components/BehaviorTreeDescription.h"
 #include "mc/entity/components/BreakDoorAnnotationDescription.h"
 #include "mc/entity/components/CommandBlockDescription.h"
 #include "mc/entity/components_json_legacy/BreakBlocksDescription.h"
 #include "mc/entity/components_json_legacy/ContainerDescription.h"
 #include "mc/entity/components_json_legacy/DwellerDescription.h"
-#include "mc/entity/components_json_legacy/EconomyTradeableDescription.h"
 #include "mc/entity/components_json_legacy/IllagerBeastBlockedDescription.h"
-#include "mc/entity/components_json_legacy/TeleportDescription.h"
-#include "mc/entity/components_json_legacy/TransformationDescription.h"
-#include "mc/entity/definitions/AmphibiousMoveControlDescription.h"
 #include "mc/entity/definitions/AttackDescription.h"
-#include "mc/entity/definitions/GenericMoveControlDescription.h"
-#include "mc/entity/definitions/GlideMoveControlDescription.h"
 #include "mc/entity/definitions/MobEffectChangeDescription.h"
-#include "mc/entity/definitions/MoveControlBasicDescription.h"
-#include "mc/entity/definitions/MoveControlDolphinDescription.h"
-#include "mc/entity/definitions/MoveControlFlyDescription.h"
-#include "mc/entity/definitions/MoveControlHoverDescription.h"
-#include "mc/entity/definitions/MoveControlSkipDescription.h"
-#include "mc/entity/definitions/MoveControlSwayDescription.h"
 #include "mc/entity/definitions/NavigationClimbDescription.h"
 #include "mc/entity/definitions/NavigationFloatDescription.h"
 #include "mc/entity/definitions/NavigationFlyDescription.h"
@@ -44,9 +47,6 @@
 #include "mc/entity/definitions/NavigationHoverDescription.h"
 #include "mc/entity/definitions/NavigationSwimDescription.h"
 #include "mc/entity/definitions/NavigationWalkDescription.h"
-#include "mc/entity/definitions/SlimeMoveControlDescription.h"
-#include "mc/entity/definitions/StrengthDescription.h"
-#include "mc/entity/definitions/TrailDescription.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/world/actor/ActorAliasDescription.h"
 #include "mc/world/actor/ActorDefinitionDescriptor.h"
@@ -92,6 +92,7 @@ public:
     ::ll::TypedStorage<8, 32, ::ActorAliasDescription>                                     mActorAliasDescription;
     ::ll::TypedStorage<8, 16, ::SpawnCategoryDescription>                                  mSpawnCategoryDescription;
     ::ll::TypedStorage<8, 32, ::ActorVersionDescription>                                   mActorVersionDescription;
+    ::ll::TypedStorage<1, 1, bool>                                                         mAttemptOffhandInteractions;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionAttribute>>                   mAttributes;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mEventHandlers;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mUpgradeHandlers;
@@ -101,26 +102,26 @@ public:
     ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition>                               mDynamicPropertiesDefinition;
     ::ll::TypedStorage<8, 56, ::AttackDescription>                                         mAttack;
     ::ll::TypedStorage<8, 56, ::MobEffectChangeDescription>                                mMobEffects;
-    ::ll::TypedStorage<8, 16, ::AmphibiousMoveControlDescription>                          mAmphibiousMoveControl;
-    ::ll::TypedStorage<8, 40, ::BehaviorTreeDescription>                                   mBehavior;
-    ::ll::TypedStorage<8, 72, ::BreakBlocksDescription>                                    mBreakBlocks;
-    ::ll::TypedStorage<8, 16, ::BreakDoorAnnotationDescription>                            mBreakDoorAnnotation;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::BucketableComponentDefinition>       mBucketable;
-    ::ll::TypedStorage<8, 24, ::CommandBlockDescription>                                   mCommandBlock;
-    ::ll::TypedStorage<8, 24, ::ContainerDescription>                                      mContainer;
-    ::ll::TypedStorage<8, 128, ::DwellerDescription>                                       mDweller;
-    ::ll::TypedStorage<8, 16, ::GenericMoveControlDescription>                             mGenericMoveControl;
-    ::ll::TypedStorage<8, 24, ::GlideMoveControlDescription>                               mGlideMoveControl;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::HideComponentDefinition>             mHide;
-    ::ll::TypedStorage<8, 40, ::IllagerBeastBlockedDescription>                            mIllagerBeastBlocked;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_60::AmphibiousMoveControlComponentDefinition> mAmphibiousMoveControl;
+    ::ll::TypedStorage<8, 40, ::BehaviorTreeDescription>                                        mBehavior;
+    ::ll::TypedStorage<8, 72, ::BreakBlocksDescription>                                         mBreakBlocks;
+    ::ll::TypedStorage<8, 16, ::BreakDoorAnnotationDescription>                                 mBreakDoorAnnotation;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::BucketableComponentDefinition>            mBucketable;
+    ::ll::TypedStorage<8, 24, ::CommandBlockDescription>                                        mCommandBlock;
+    ::ll::TypedStorage<8, 24, ::ContainerDescription>                                           mContainer;
+    ::ll::TypedStorage<8, 128, ::DwellerDescription>                                            mDweller;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_60::GenericMoveControlComponentDefinition>    mGenericMoveControl;
+    ::ll::TypedStorage<4, 12, ::SharedTypes::v1_26_60::GlideMoveControlComponentDefinition>     mGlideMoveControl;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::HideComponentDefinition>                  mHide;
+    ::ll::TypedStorage<8, 40, ::IllagerBeastBlockedDescription>                                 mIllagerBeastBlocked;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::ManagedWanderingTraderComponentDefinition>
                                                                                               mManagedWanderingTrader;
-    ::ll::TypedStorage<8, 16, ::MoveControlBasicDescription>                                  mMoveControl;
-    ::ll::TypedStorage<8, 16, ::MoveControlDolphinDescription>                                mDolphinSwimControl;
-    ::ll::TypedStorage<8, 16, ::MoveControlFlyDescription>                                    mFlyControl;
-    ::ll::TypedStorage<8, 16, ::MoveControlSkipDescription>                                   mHopControl;
-    ::ll::TypedStorage<8, 16, ::MoveControlHoverDescription>                                  mHoverControl;
-    ::ll::TypedStorage<8, 24, ::MoveControlSwayDescription>                                   mSwimControl;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_60::MoveControlBasicComponentDefinition>    mMoveControl;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_60::MoveControlDolphinComponentDefinition>  mDolphinSwimControl;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_60::MoveControlFlyComponentDefinition>      mFlyControl;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_60::MoveControlSkipComponentDefinition>     mHopControl;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_60::MoveControlHoverComponentDefinition>    mHoverControl;
+    ::ll::TypedStorage<4, 12, ::SharedTypes::v1_26_60::MoveControlSwayComponentDefinition>    mSwimControl;
     ::ll::TypedStorage<8, 88, ::NavigationClimbDescription>                                   mWallClimberNavigation;
     ::ll::TypedStorage<8, 88, ::NavigationFloatDescription>                                   mFloatNavigation;
     ::ll::TypedStorage<8, 88, ::NavigationFlyDescription>                                     mFlyingNavigation;
@@ -131,15 +132,15 @@ public:
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::PersistentComponentDefinition>          mPersistent;
     ::ll::TypedStorage<8, 40, ::SharedTypes::v1_26_50::PreferredPathComponentDefinition>      mPreferredPath;
     ::ll::TypedStorage<8, 536, ::SharedTypes::v1_26_50::ProjectileComponentDefinition>        mProjectile;
-    ::ll::TypedStorage<8, 24, ::SlimeMoveControlDescription>                                  mSlimeMoveControl;
-    ::ll::TypedStorage<8, 24, ::StrengthDescription>                                          mStrength;
-    ::ll::TypedStorage<8, 136, ::TrailDescription>                                            mTrail;
-    ::ll::TypedStorage<8, 120, ::TeleportDescription>                                         mTeleport;
+    ::ll::TypedStorage<4, 12, ::SharedTypes::v1_26_60::SlimeMoveControlComponentDefinition>   mSlimeMoveControl;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::v1_26_60::StrengthComponentDefinition>            mStrength;
+    ::ll::TypedStorage<8, 312, ::SharedTypes::v1_26_60::TrailComponentDefinition>             mTrail;
+    ::ll::TypedStorage<8, 120, ::SharedTypes::v1_26_60::TeleportComponentDefinition>          mTeleport;
     ::ll::TypedStorage<4, 12, ::SharedTypes::v1_21_100::TickWorldDefinition>                  mTickWorld;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::TradeResupplyComponentDefinition>       mTradeResupply;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::TrustComponentDefinition>               mTrust;
-    ::ll::TypedStorage<8, 112, ::EconomyTradeableDescription>                                 mEconomyTradeable;
-    ::ll::TypedStorage<8, 320, ::TransformationDescription>                                   mTransformation;
+    ::ll::TypedStorage<8, 104, ::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition>  mEconomyTradeable;
+    ::ll::TypedStorage<8, 168, ::SharedTypes::v1_26_60::TransformationComponentDefinition>    mTransformation;
     ::ll::TypedStorage<4, 36, ::SharedTypes::v1_26_40::DynamicJumpControlComponentDefinition> mDynamicJumpControl;
     ::ll::TypedStorage<4, 36, ::SharedTypes::v1_26_40::JumpControlComponentDefinition>        mJumpControl;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_40::OpenDoorAnnotationComponentDefinition>  mOpenDoorAnnotation;

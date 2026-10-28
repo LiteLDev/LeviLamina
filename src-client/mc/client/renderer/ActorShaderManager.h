@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/helpers/shaderpacking/BlockLightingFlags.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 
 // auto generated forward declare list
@@ -154,18 +155,6 @@ public:
     );
 
     MCAPI static void setupShaderParameters(
-        ::ScreenContext&                                               screenContext,
-        ::BlockSource&                                                 source,
-        ::BlockPos const&                                              pos,
-        float                                                          a,
-        bool                                                           ignoreLighting,
-        ::LightTexture&                                                lightTexture,
-        ::std::weak_ptr<::LightPropagation::LightVolumeManager> const& lightVolumeManager,
-        ::Vec2 const&                                                  uvScale,
-        ::Vec4 const&                                                  uvAnim
-    );
-
-    MCAPI static void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  entity,
@@ -176,6 +165,19 @@ public:
         float                     br,
         float,
         bool isEnchanted
+    );
+
+    MCAPI static void setupShaderParameters(
+        ::ScreenContext&                                               screenContext,
+        ::BlockSource&                                                 source,
+        ::BlockPos const&                                              pos,
+        float                                                          a,
+        bool                                                           ignoreLighting,
+        ::LightTexture&                                                lightTexture,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> const& lightVolumeManager,
+        ::Vec2 const&                                                  uvScale,
+        ::Vec4 const&                                                  uvAnim,
+        ::shaderpacking::BlockLightingFlags                            flags
     );
 
     MCAPI static void setupShaderParameters(

@@ -8,12 +8,10 @@
 #include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/util/ChatMessageRestrictions.h"
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/input/enums/WYSIWYGState.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/packet/StructureTemplateRequestOperation.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/ProfanityFilterContext.h"
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/ChalkboardSize.h"
 
@@ -25,10 +23,8 @@ class BlockEventListener;
 class BlockPos;
 class BlockSource;
 class BookScreenManager;
-class BoundingBox;
 class CommandOrigin;
 class GuiMessage;
-class HudContainerManagerController;
 class ItemStack;
 class MinecartCommandBlockManager;
 class MinecraftglTFExporter;
@@ -71,19 +67,11 @@ public:
     // NOLINTBEGIN
     MCAPI void addPhotoToPortfolio(::std::string const& photoName, ::std::string const& newPhotoName);
 
-    MCAPI void addToDevConsoleMessageHistory(::std::string const& message);
-
-    MCAPI void addToSentMessageHistory(::std::string const& message);
-
-    MCAPI void calculatePlacePos(uchar& face, ::BlockPos& pos) const;
-
     MCAPI bool canAttachBalloonToBlock(::BlockPos const& blockPos) const;
 
     MCAPI bool canAttachLeashedActorsToBlock(::BlockPos const& blockPos) const;
 
     MCAPI bool canCollectFromCauldron(::BlockPos const& blockPos) const;
-
-    MCAPI bool canDrinkMedicine(::ItemStack const& medicine) const;
 
     MCAPI bool canEmptyIntoCauldron(::BlockPos const& blockPos) const;
 
@@ -105,8 +93,6 @@ public:
 
     MCAPI bool canUseSeed() const;
 
-    MCAPI void clearInvalidDownKeys();
-
     MCAPI void clearTitleMessages();
 
     MCAPI void consumeNewScreenModal(::ModalScreenData& outModalScreenData) const;
@@ -116,13 +102,9 @@ public:
     MCAPI ::std::unique_ptr<::MinecartCommandBlockManager>
     createCommandBlockManager(bool isMinecart, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
 
-    MCAPI ::std::shared_ptr<::HudContainerManagerController> createHudContainerManagerController();
-
     MCAPI void createPhotoItem(::PhotoRecord const& record);
 
     MCAPI ::std::unique_ptr<::PortfolioScreenManager> createPortfolioScreenManager();
-
-    MCAPI ::BoundingBox detectStructureBlockCorners(::BlockPos const& pos);
 
     MCAPI void displaySubtitleMessage(::std::string const& message, ::SoundDirection direction, bool isLocalPlayer);
 
@@ -131,10 +113,6 @@ public:
         ::std::string const&     ttsMessage,
         ::ProfanityFilterContext profanityFilterContext
     );
-
-    MCAPI float distanceSqrFromPlayerToBlockCenter(::Vec3 const& pos);
-
-    MCAPI bool doOtherConfigsExistInThisCategory() const;
 
     MCAPI bool endPortalFrameBlockHasEye(::BlockPos const& blockPos) const;
 
@@ -160,6 +138,8 @@ public:
 
     MCAPI ::std::unique_ptr<::CommandOrigin> getDevConsoleCommandOrigin() const;
 
+    MCAPI ::glm::vec2 getEditorChatOffset() const;
+
     MCAPI ::std::vector<::GuiMessage>& getGuiMessageList();
 
     MCAPI ::std::string getInteractionText() const;
@@ -171,10 +151,6 @@ public:
     MCAPI ::std::string const getLastFilteredChatMessage();
 
     MCAPI ::Block const& getLiquidBlockAt(::BlockPos const& blockPos) const;
-
-    MCAPI ::Bedrock::Threading::Async<::ResourceLocation> getLocalThirdPartyGamerpic() const;
-
-    MCAPI int getNumberOfActiveConfigs() const;
 
     MCAPI int getNumberOfDaysPlayed() const;
 
@@ -209,17 +185,11 @@ public:
 
     MCAPI ::TitleMessage const& getTitleMessage() const;
 
-    MCAPI ::WYSIWYGState getWYSIWYGState() const;
-
     MCAPI float getXToScreenRatio(float x) const;
 
     MCAPI float getYToScreenRatio(float y) const;
 
-    MCAPI void handleQuitButtonPress();
-
     MCAPI bool hasNewScreenModal() const;
-
-    MCAPI bool hasPlayerSleepFlagSet() const;
 
     MCAPI ::StructureTemplate* importStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
 
@@ -243,19 +213,13 @@ public:
 
     MCAPI bool isDimensionReady() const;
 
-    MCAPI bool isEmoteChatMute() const;
-
     MCAPI bool const isHudElementVisible(::HudElement hudElement) const;
 
     MCAPI bool isInteracting() const;
 
-    MCAPI bool isNoConfigSelected() const;
-
     MCAPI bool isPlayerHungry() const;
 
     MCAPI bool isPlayerOnGround() const;
-
-    MCAPI bool isPlayerRidingActorType(::ActorType type) const;
 
     MCAPI bool isRemoteProfanityFilterEnabled() const;
 
@@ -308,8 +272,6 @@ public:
 
     MCAPI void sendCommandBlockUpdatePacket(::BlockPos const& pos);
 
-    MCAPI void sendRespawnRequest() const;
-
     MCAPI void sendStructureBlockUpdatePacket(
         ::BlockPos const&            pos,
         ::StructureEditorData const& structureEditorData,
@@ -332,7 +294,7 @@ public:
 
     MCAPI bool shouldDisplayPlayerPosition() const;
 
-    MCAPI void splitVibrate(int milliSeconds);
+    MCAPI bool shouldShowChatInEditor() const;
 
     MCAPI ::Bedrock::PubSub::Subscription subscribeToProfanityToggleEvent(::std::function<void(bool, bool)> callback);
 
@@ -340,15 +302,9 @@ public:
 
     MCAPI void toggleChatMute();
 
-    MCAPI void toggleEmoteChatMute();
-
     MCAPI bool tryBroadcastGlobalPause(bool status);
 
     MCAPI bool tryGetAgentPosition(::BlockPos& result) const;
-
-    MCAPI void unregisterBlockEventListener(::BlockEventListener& listener);
-
-    MCAPI void unregisterClientPlayerEventCoordinatorListener(::PlayerEventListener& listener);
 
     MCAPI void unregisterNpcEventListener(::NpcEventListener& listener);
     // NOLINTEND

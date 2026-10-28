@@ -57,8 +57,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _getColorName(int data) const;
-
     MCAPI void _storeActivationTimestamp(::ItemStack& item, uint64 curTime, int desiredPercent) const;
 
     MCAPI bool _tick(::ItemStack& item, uint64 curTime) const;

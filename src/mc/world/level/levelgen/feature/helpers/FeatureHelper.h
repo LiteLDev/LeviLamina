@@ -12,7 +12,6 @@ class BlockDescriptor;
 class BlockPos;
 class BlockSource;
 class FeaturePlacementFailureLogProxy;
-class IBlockWorldGenAPI;
 class IFeature;
 class MolangVariableMap;
 class Random;
@@ -28,15 +27,7 @@ MCAPI ::gsl::not_null<::Block const*> makeCompareBlock(::Block const& block);
 MCAPI ::RenderParams
 makeFeatureRenderParams(::BlockSource& source, ::BlockPos const& pos, ::MolangVariableMap& molangVariables);
 
-#ifdef LL_PLAT_C
 MCAPI bool passesAllowList(::Block const& block, ::std::vector<::BlockDescriptor> const& allowList);
-#endif
-
-MCAPI bool passesAllowList(
-    ::IBlockWorldGenAPI const&              target,
-    ::BlockPos const&                       pos,
-    ::std::vector<::BlockDescriptor> const& allowList
-);
 
 MCAPI ::FeatureHelper::PlaceFeatureResult placeFeature(
     ::IFeature const&                 feature,

@@ -36,7 +36,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 456, ::std::optional<::cereal::internal::ConstraintDescription>>            mConstraint;
+    ::ll::TypedStorage<8, 504, ::std::optional<::cereal::internal::ConstraintDescription>>            mConstraint;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::internal::EnumValue>>>          mEnumValues;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::SchemaDescription>>>            mParents;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::SchemaDescription>>>            mSetters;
@@ -51,6 +51,9 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<::cereal::SerializationTraits>> mSerializationTraits;
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                         mOrdinalIndex;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mNonPublicFlag;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mSetterFunction;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsDefaultSetter;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsOptional;
     // NOLINTEND
 
 public:
@@ -88,7 +91,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

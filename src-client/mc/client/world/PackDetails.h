@@ -14,6 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                            mName;
     ::ll::TypedStorage<8, 32, ::std::string>                            mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mCreator;
     ::ll::TypedStorage<8, 32, ::std::string>                            mDescription;
     ::ll::TypedStorage<8, 32, ::std::string>                            mSize;
     ::ll::TypedStorage<8, 32, ::std::string>                            mId;

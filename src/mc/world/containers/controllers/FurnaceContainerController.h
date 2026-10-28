@@ -31,11 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~FurnaceContainerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~FurnaceContainerController() /*override*/;
-#endif
 
     virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
 
@@ -65,14 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -88,11 +76,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

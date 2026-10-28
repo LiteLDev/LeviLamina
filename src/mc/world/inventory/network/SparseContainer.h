@@ -104,12 +104,6 @@ public:
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
 
-    MCAPI int _getAvailableAddCount(
-        ::ContainerScreenContext const& context,
-        ::ContainerEnumName             name,
-        ::ItemStack const&              itemInSlot
-    ) const;
-
     MCAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI void addAvailableSetCountCallback(

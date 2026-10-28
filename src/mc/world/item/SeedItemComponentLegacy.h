@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
@@ -39,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit SeedItemComponentLegacy(::Item& owner);
+
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
 #ifdef LL_PLAT_C
@@ -47,13 +50,25 @@ public:
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
 
-    MCAPI bool
-    useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const& clickPos);
+    MCAPI bool useOn(
+        ::ItemStack&      instance,
+        ::Actor&          actor,
+        ::BlockPos const& blockPos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        ::HandSlot
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Item& owner);
     // NOLINTEND
 };

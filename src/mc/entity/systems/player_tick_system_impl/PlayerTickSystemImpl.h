@@ -18,10 +18,10 @@ namespace PlayerTickSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void _addMovementTickNeededForCatchup(
-    ::StrictEntityContext const&                         entity,
-    ::ServerPlayerMovementComponent const&               serverPlayerMovement,
-    ::Optional<::PassengerComponent const> const&        passengerComponent,
-    ::EntityModifier<::ActorMovementTickNeededComponent> modifier
+    ::StrictEntityContext const&                                entity,
+    ::ServerPlayerMovementComponent const&                      serverPlayerMovement,
+    ::Optional<::PassengerComponent const> const&               passengerComponent,
+    ::EntityModifier<::ActorMovementTickNeededComponent> const& modifier
 );
 // NOLINTEND
 

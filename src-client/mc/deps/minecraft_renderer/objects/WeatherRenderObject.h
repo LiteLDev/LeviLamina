@@ -93,9 +93,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                             mParticleMesh;
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                          mWeatherTexture;
-    ::ll::TypedStorage<8, 24, ::mce::ServerTexture>                                       mWeatherSnowOcclusionTexture;
-    ::ll::TypedStorage<8, 24, ::mce::ServerTexture>                                       mWeatherOcclusionTexture;
-    ::ll::TypedStorage<8, 24, ::mce::ServerTexture>                                       mBrightnessTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ServerTexture>                                       mWeatherSnowOcclusionTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ServerTexture>                                       mWeatherOcclusionTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ServerTexture>                                       mBrightnessTexture;
     ::ll::TypedStorage<4, 4, int>                                                         mOcclusionHeightOffset;
     ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mRainMat;
     ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mSnowMat;
@@ -118,31 +118,5 @@ public:
     ::ll::TypedStorage<4, 4, float>        mLuminance;
     ::ll::TypedStorage<4, 4, int>          mParticleCount;
     ::ll::TypedStorage<4, 12, ::glm::vec3> mLastOcclusionBlock;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeatherRenderObject& operator=(WeatherRenderObject const&);
-    WeatherRenderObject(WeatherRenderObject const&);
-    WeatherRenderObject();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WeatherRenderObject(::WeatherRenderObject&&);
-
-    MCAPI ~WeatherRenderObject();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::WeatherRenderObject&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

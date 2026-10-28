@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ::AttributeInstanceRef _getMutableInstance(::AttributeModificationContext& context) const;
 #endif
     // NOLINTEND

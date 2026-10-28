@@ -19,11 +19,11 @@ namespace BuoyancySystem {
 // functions
 // NOLINTBEGIN
 MCAPI void checkAndAddFloatRequest(
-    ::StrictEntityContext const&                       entity,
-    ::StateVectorComponent const&                      stateVectorComponent,
-    ::BuoyancyComponent&                               buoyancyComponent,
-    ::EntityModifier<::BuoyancyFloatRequestComponent>& mod,
-    ::IConstBlockSource const&                         region
+    ::StrictEntityContext const&                             entity,
+    ::StateVectorComponent const&                            stateVectorComponent,
+    ::BuoyancyComponent&                                     buoyancyComponent,
+    ::EntityModifier<::BuoyancyFloatRequestComponent> const& mod,
+    ::IConstBlockSource const&                               region
 );
 
 MCAPI void registerSystems(::EntitySystems& systemRegistry);

@@ -17,6 +17,7 @@ class StrictEntityContext;
 struct PlayerChangeDimensionRequestComponent;
 struct PlayerComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class DimensionTransitionSystem {
@@ -29,11 +30,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createPortalTransition();
+
+#ifdef LL_PLAT_C
+    MCAPI static ::TickingSystemWithInfo createReadyToContinueClient();
+#endif
+
+    MCAPI static ::TickingSystemWithInfo createReadyToContinueServer();
+
+    MCAPI static ::TickingSystemWithInfo createVehicleDismount();
+
     MCAPI static void requestPlayerChangeDimension(
-        ::StrictEntityContext const&                                                      player,
-        ::ChangeDimensionRequest&&                                                        request,
-        ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> playerData,
-        ::EntityModifier<::PlayerChangeDimensionRequestComponent>                         modifier
+        ::StrictEntityContext const&                                                             player,
+        ::ChangeDimensionRequest&&                                                               request,
+        ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> const& playerData,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent> const&                         modifier
     );
 
     MCAPI static void tryHandleChangeDimensionRequestLevel(
@@ -41,8 +52,8 @@ public:
             ::StrictEntityContext,
             ::Include<::PlayerComponent>,
             ::PlayerChangeDimensionRequestComponent,
-            ::ActorOwnerComponent>                                         requests,
-        ::EntityModifier<::PlayerChangeDimensionRequestComponent>          modifier,
+            ::ActorOwnerComponent> const&                                  requests,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent> const&   modifier,
         ::std::function<bool(::Player&, ::ChangeDimensionRequest&)> const& callback,
         ::std::function<bool(::Player&)> const&                            isSuspended
     );

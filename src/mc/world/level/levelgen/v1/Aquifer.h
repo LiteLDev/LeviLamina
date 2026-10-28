@@ -9,7 +9,6 @@
 // clang-format off
 class AquiferNoises;
 class Block;
-class ChunkPos;
 class SurfaceLevelCache;
 struct OverworldNoises3d;
 // clang-format on
@@ -84,16 +83,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Aquifer(
-        ::ChunkPos const&          chunkPos,
-        ::AquiferNoises const&     aquiferNoises,
-        ::OverworldNoises3d const& terrainNoises,
-        ::SurfaceLevelCache const& surfaceLevelCache,
-        int                        dimensionMinHeight,
-        int                        levelGenHeight,
-        int                        seaLevel
-    );
-
     MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
     MCAPI void computeAt(::BlockPos const& worldPos);
@@ -103,19 +92,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ChunkPos const&          chunkPos,
-        ::AquiferNoises const&     aquiferNoises,
-        ::OverworldNoises3d const& terrainNoises,
-        ::SurfaceLevelCache const& surfaceLevelCache,
-        int                        dimensionMinHeight,
-        int                        levelGenHeight,
-        int                        seaLevel
-    );
     // NOLINTEND
 };

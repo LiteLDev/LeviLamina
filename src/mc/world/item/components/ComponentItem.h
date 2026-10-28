@@ -11,6 +11,7 @@
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
+#include "mc/world/item/ItemTransformType.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/level/block/BlockShape.h"
 
@@ -33,6 +34,7 @@ class ItemDescriptor;
 class ItemStack;
 class ItemStackBase;
 class Level;
+class Matrix;
 class Mob;
 class Player;
 class SemVersion;
@@ -42,7 +44,7 @@ struct LegacyEventItemComponentData;
 struct ResolvedItemIconInfo;
 struct SoundEventIdentifier;
 namespace Bedrock::Safety { class RedactableString; }
-namespace SharedTypes::v1_26_30 { struct ItemDocument; }
+namespace SharedTypes::v1_26_50 { struct ItemDocument; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -79,7 +81,7 @@ public:
     virtual ~ComponentItem() /*override*/;
 
     virtual void initServer(
-        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SharedTypes::v1_26_50::ItemDocument&&         data,
         ::SemVersion const&                             documentVersion,
         ::Experiments const&                            experiments,
         ::std::optional<::LegacyEventItemComponentData> legacyEventData
@@ -230,8 +232,10 @@ public:
 
     virtual int getVariant(int, int, bool) const;
 
+    virtual ::Matrix getItemTransform(::ItemTransformType type, float normalizedUnitScale) const /*override*/;
+
     virtual void initClient(
-        ::SharedTypes::v1_26_30::ItemDocument&& data,
+        ::SharedTypes::v1_26_50::ItemDocument&& data,
         ::SemVersion const&                     documentVersion,
         ::Experiments const&                    experiments,
         ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
@@ -264,7 +268,8 @@ public:
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const
         /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
+    virtual bool
+    _calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const
         /*override*/;
 
     virtual bool _shouldAutoCalculatePlacePos() const /*override*/;
@@ -294,7 +299,7 @@ public:
     MCAPI float getMovementModifier() const;
 
     MCAPI void init(
-        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SharedTypes::v1_26_50::ItemDocument&&         data,
         ::SemVersion const&                             documentVersion,
         ::std::optional<::LegacyEventItemComponentData> legacyEventData,
         ::Experiments const&                            experiments
@@ -337,7 +342,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initServer(
-        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SharedTypes::v1_26_50::ItemDocument&&         data,
         ::SemVersion const&                             documentVersion,
         ::Experiments const&                            experiments,
         ::std::optional<::LegacyEventItemComponentData> legacyEventData
@@ -482,8 +487,10 @@ public:
 
     MCFOLD int $getVariant(int, int, bool) const;
 
+    MCAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
+
     MCAPI void $initClient(
-        ::SharedTypes::v1_26_30::ItemDocument&& data,
+        ::SharedTypes::v1_26_50::ItemDocument&& data,
         ::SemVersion const&                     documentVersion,
         ::Experiments const&                    experiments,
         ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
@@ -515,7 +522,8 @@ public:
     MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool
+    $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
     MCAPI bool $_shouldAutoCalculatePlacePos() const;
 

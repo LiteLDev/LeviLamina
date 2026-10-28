@@ -15,8 +15,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_COOLDOWN();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

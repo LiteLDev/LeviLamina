@@ -7,6 +7,7 @@
 class ChunkPos;
 class ChunkSource;
 namespace Bedrock { struct ChunkDebugData; }
+namespace Bedrock { struct ChunkTimingData; }
 // clang-format on
 
 namespace Bedrock {
@@ -16,6 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk781096;
+    ::ll::UntypedStorage<8, 24> mUnkb88120;
     // NOLINTEND
 
 public:
@@ -27,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::ChunkDimensionDebugData& SetFromChunkSource(::ChunkSource const& source);
+    MCNAPI ::Bedrock::ChunkDimensionDebugData& SetFromChunkSource(::ChunkSource const& source, bool includeTimings);
     // NOLINTEND
 };
 

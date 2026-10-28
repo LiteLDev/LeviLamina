@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorMigratedDefinitionFactory;
+class AtomicClientEntityFactory;
 class BaseGameVersion;
 class BiomeRegistry;
 class ClientInputMappingFactory;
@@ -17,6 +18,7 @@ class CommandRegistry;
 class Experiments;
 class GameModuleDocumentation;
 class IClientInstance;
+class IEducationOptions;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
@@ -42,6 +44,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk31c50a;
     ::ll::UntypedStorage<8, 16> mUnkc9162e;
     ::ll::UntypedStorage<8, 24> mUnkeda6d9;
+    ::ll::UntypedStorage<8, 64> mUnk31c75f;
     ::ll::UntypedStorage<8, 8>  mUnkd23d66;
     ::ll::UntypedStorage<8, 16> mUnkd24109;
     ::ll::UntypedStorage<8, 16> mUnk852403;
@@ -67,7 +70,8 @@ public:
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
         ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::IEducationOptions const*                                      educationOptions
     ) /*override*/;
 
     virtual void configureLevel(
@@ -86,9 +90,13 @@ public:
 
     virtual void tick(::IClientInstance const& client) /*override*/;
 
-    virtual void setupStandardCommands(::CommandRegistry& commandRegistry) /*override*/;
+    virtual void setupStandardCommands(
+        ::CommandRegistry&           commandRegistry,
+        ::AtomicClientEntityFactory& atomicClientEntityFactory,
+        ::IEducationOptions const&   educationOptions
+    ) /*override*/;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) /*override*/;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry&) /*override*/;
 
     virtual void setupUI() /*override*/;
 
@@ -105,6 +113,8 @@ public:
     ) const /*override*/;
 
     virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() /*override*/;
+
+    virtual ::std::shared_ptr<void const> getWorldSystemsScope() /*override*/;
     // NOLINTEND
 
 public:
@@ -124,7 +134,8 @@ public:
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
         ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::IEducationOptions const*                                      educationOptions
     );
 
     MCAPI void $configureLevel(
@@ -142,9 +153,13 @@ public:
 
     MCAPI void $tick(::IClientInstance const& client);
 
-    MCAPI void $setupStandardCommands(::CommandRegistry& commandRegistry);
+    MCAPI void $setupStandardCommands(
+        ::CommandRegistry&           commandRegistry,
+        ::AtomicClientEntityFactory& atomicClientEntityFactory,
+        ::IEducationOptions const&   educationOptions
+    );
 
-    MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry& commandRegistry);
+    MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry&);
 
     MCAPI void $setupUI();
 
@@ -160,5 +175,7 @@ public:
     ) const;
 
     MCAPI ::ServerboundDiagnosticsPacket $createServerboundDiagnosticsPacket();
+
+    MCAPI ::std::shared_ptr<void const> $getWorldSystemsScope();
     // NOLINTEND
 };

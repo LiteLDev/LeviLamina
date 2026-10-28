@@ -57,10 +57,6 @@ public:
 
     MCAPI bool performCommand(::BlockSource& region, ::ActorUniqueID const& minecartId);
 
-#ifdef LL_PLAT_C
-    MCAPI bool performCommand(::BlockSource& region, ::BlockPos const& pos, bool& markForSaving);
-#endif
-
     MCAPI bool save(::CompoundTag& tag) const;
 
     MCAPI void setCommand(::BlockSource& region, ::ActorUniqueID const& entityId, ::std::string const& command);
@@ -68,8 +64,6 @@ public:
     MCAPI void setCommand(::BlockSource& region, ::BlockPos const& pos, ::std::string const& command);
 
     MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
-
-    MCAPI void setTrackOutput(bool trackOutput);
 
     MCAPI ~BaseCommandBlock();
     // NOLINTEND

@@ -10,11 +10,11 @@
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
 class UIPropertyBag;
-struct EDULibraryCategory;
+struct EduLibraryCategory;
 namespace Json { class Value; }
 // clang-format on
 
-class EDULibraryCategoryScreenController : public ::MainMenuScreenController {
+class EduLibraryCategoryScreenController : public ::MainMenuScreenController {
 public:
     // member variables
     // NOLINTBEGIN
@@ -24,13 +24,13 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                         mDescription;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mScreenshotRatio;
     ::ll::TypedStorage<4, 4, int>                                                    mColumnCount;
-    ::ll::TypedStorage<8, 24, ::std::vector<::EDULibraryCategory>>                   mLibraryCategories;
+    ::ll::TypedStorage<8, 24, ::std::vector<::EduLibraryCategory>>                   mLibraryCategories;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LibrarySearchBarScreenController>> mSearchBarSubController;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EDULibraryCategoryScreenController();
+    EduLibraryCategoryScreenController();
 
 public:
     // virtual functions
@@ -43,18 +43,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDULibraryCategoryScreenController(
+    MCAPI EduLibraryCategoryScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string                            title,
         ::std::string                            icon,
         ::std::string                            description,
         ::std::string                            screenshotRatio,
         int                                      columnCount,
-        ::std::vector<::EDULibraryCategory>      libraryCategories,
+        ::std::vector<::EduLibraryCategory>      libraryCategories,
         bool                                     firstPage
     );
 
-    MCAPI ::EDULibraryCategory* _getCategory(::UIPropertyBag const& bag);
+    MCAPI ::EduLibraryCategory* _getCategory(::UIPropertyBag const& bag);
     // NOLINTEND
 
 public:
@@ -67,7 +67,7 @@ public:
         ::std::string                            description,
         ::std::string                            screenshotRatio,
         int                                      columnCount,
-        ::std::vector<::EDULibraryCategory>      libraryCategories,
+        ::std::vector<::EduLibraryCategory>      libraryCategories,
         bool                                     firstPage
     );
     // NOLINTEND

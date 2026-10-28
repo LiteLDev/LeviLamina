@@ -70,6 +70,9 @@ class ClientboundDataDrivenUIShowScreenPacket;
 class ClientboundDataStorePacket;
 class ClientboundDebugRendererPacket;
 class ClientboundMapItemDataPacket;
+class ClientboundMatchmakingStatePacket;
+class ClientboundPlayAudioContentPacket;
+class ClientboundStonecutterSetRecipePacket;
 class ClientboundTextureShiftPacket;
 class ClientboundUpdateSoundDataPacket;
 class CodeBuilderPacket;
@@ -196,11 +199,15 @@ class ServerSettingsResponsePacket;
 class ServerStatsPacket;
 class ServerStoreInfoPacket;
 class ServerToClientHandshakePacket;
+class ServerboundCursorItemDragPacket;
 class ServerboundDataDrivenScreenClosedPacket;
 class ServerboundDataStorePacket;
 class ServerboundDiagnosticsPacket;
 class ServerboundLoadingScreenPacket;
+class ServerboundMatchmakingCancelPacket;
 class ServerboundPackSettingChangePacket;
+class ServerboundRegisterAudioContentPacket;
+class ServerboundStonecutterSetRecipePacket;
 class SetActorDataPacket;
 class SetActorLinkPacket;
 class SetActorMotionPacket;
@@ -212,6 +219,7 @@ class SetHealthPacket;
 class SetHudPacket;
 class SetLastHurtByPacket;
 class SetLocalPlayerAsInitializedPacket;
+class SetPassengerOfBlockPacket;
 class SetPlayerFurnaceOptionsPacket;
 class SetPlayerGameTypePacket;
 class SetPlayerInventoryOptionsPacket;
@@ -294,7 +302,6 @@ public:
     virtual void onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 #endif
 
-#ifdef LL_PLAT_S
     virtual void onDisconnect(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
@@ -304,17 +311,6 @@ public:
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
     );
-#else // LL_PLAT_C
-    virtual void onDisconnect(
-        ::NetworkIdentifier const&               source,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     messageFromServer,
-        ::std::string const&                     messageBodyOverride,
-        bool                                     skipMessage,
-        ::std::string const&                     telemetryOverride
-    );
-#endif
 
 #ifdef LL_PLAT_S
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
@@ -755,6 +751,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
 
+    virtual void handle(::NetworkIdentifier const& source, ::ServerboundCursorItemDragPacket const& packet);
+
     virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const&);
@@ -925,6 +923,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::SetLocalPlayerAsInitializedPacket const& packet);
 
+    virtual void handle(::NetworkIdentifier const&, ::SetPassengerOfBlockPacket const&);
+
     virtual void handle(::NetworkIdentifier const& source, ::ScriptMessagePacket const& packet);
 
 #ifdef LL_PLAT_S
@@ -1093,7 +1093,20 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const&);
 
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundPlayAudioContentPacket const&);
+
+    virtual void
+    handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ServerboundRegisterAudioContentPacket> packet);
+
     virtual void handle(::NetworkIdentifier const&, ::RecordStartedPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundMatchmakingStatePacket const&);
+
+    virtual void handle(::NetworkIdentifier const& source, ::ServerboundStonecutterSetRecipePacket const& packet);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundStonecutterSetRecipePacket const&);
+
+    virtual void handle(::NetworkIdentifier const& source, ::ServerboundMatchmakingCancelPacket const& packet);
     // NOLINTEND
 
 public:
@@ -1125,7 +1138,6 @@ public:
     MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 #endif
 
-#ifdef LL_PLAT_S
     MCFOLD void $onDisconnect(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
@@ -1135,17 +1147,6 @@ public:
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
     );
-#else // LL_PLAT_C
-    MCFOLD void $onDisconnect(
-        ::NetworkIdentifier const&               source,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     messageFromServer,
-        ::std::string const&                     messageBodyOverride,
-        bool                                     skipMessage,
-        ::std::string const&                     telemetryOverride
-    );
-#endif
 
     MCFOLD void $onWebsocketRequest(
         ::std::string const&    serverAddress,
@@ -1572,6 +1573,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
 
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ServerboundCursorItemDragPacket const& packet);
+
     MCFOLD void $handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const&);
@@ -1742,6 +1745,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::SetLocalPlayerAsInitializedPacket const& packet);
 
+    MCFOLD void $handle(::NetworkIdentifier const&, ::SetPassengerOfBlockPacket const&);
+
     MCFOLD void $handle(::NetworkIdentifier const& source, ::ScriptMessagePacket const& packet);
 
 #ifdef LL_PLAT_S
@@ -1910,7 +1915,20 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const&);
 
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundPlayAudioContentPacket const&);
+
+    MCFOLD void
+    $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ServerboundRegisterAudioContentPacket> packet);
+
     MCFOLD void $handle(::NetworkIdentifier const&, ::RecordStartedPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundMatchmakingStatePacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ServerboundStonecutterSetRecipePacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundStonecutterSetRecipePacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::ServerboundMatchmakingCancelPacket const& packet);
 
 
     // NOLINTEND

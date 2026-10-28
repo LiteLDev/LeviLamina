@@ -10,7 +10,8 @@ enum class CrashDumpLogSectionType : int {
     GamePlay     = 4,
     Render       = 5,
     Player       = 6,
-    FirstAsserts = 7,
-    LastAsserts  = 8,
-    Count        = 9,
+    FileEvent    = 7,
+    FirstAsserts = 8,
+    LastAsserts  = 9,
+    Count        = 10,
 };

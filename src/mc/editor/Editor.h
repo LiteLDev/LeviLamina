@@ -9,12 +9,15 @@
 // clang-format off
 class CompoundTag;
 namespace Editor { struct LocalizationEntry; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor {
 // functions
 // NOLINTBEGIN
 MCNAPI ::std::unordered_set<uint64> _getFilteredBlockSet();
+
+MCNAPI void bindHotbarCollectionSnapshotTypes(::cereal::ReflectionCtx& ctx);
 
 #ifdef LL_PLAT_C
 MCNAPI ::Bedrock::Result<::CompoundTag> compoundTagFromString(::std::string_view data);
@@ -23,6 +26,8 @@ MCNAPI ::Bedrock::Result<::CompoundTag> compoundTagFromString(::std::string_view
 MCNAPI ::Bedrock::Result<::std::string> compoundTagToString(::CompoundTag const& tag);
 
 #ifdef LL_PLAT_C
+MCNAPI ::std::string convertChatFormattingToEditorMarkup(::std::string_view text);
+
 MCNAPI ::std::string getLocalizedString(::std::variant<::std::string, ::Editor::LocalizationEntry> const& locale);
 #endif
 // NOLINTEND

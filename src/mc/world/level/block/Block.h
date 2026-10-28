@@ -18,6 +18,7 @@
 class AABB;
 class Actor;
 class BaseGameVersion;
+class BlockChangeContext;
 class BlockPos;
 class BlockSource;
 class BlockState;
@@ -126,7 +127,8 @@ public:
         ::std::string const& eventName,
         ::BlockSource&       region,
         ::BlockPos const&    pos,
-        ::Actor*             actor
+        ::Actor&             actor,
+        ::HandSlot           handSlot
     ) const;
 
     MCAPI void finalizeBlockComponentStorage();
@@ -155,7 +157,7 @@ public:
 
     MCAPI ::Block const& keepStates(::std::vector<::BlockState const*> const& statesToKeep) const;
 
-    MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* placer) const;
+    MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor const* placer) const;
 
     MCAPI void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -164,6 +166,13 @@ public:
     MCAPI void onActorInternalEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
     MCAPI void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void onStateChange(
+        ::BlockSource&              region,
+        ::BlockPos const&           pos,
+        ::Block const&              previousBlock,
+        ::BlockChangeContext const& changeSourceContext
+    ) const;
 
     MCAPI void playerDestroy(::Player& player, ::BlockPos const& pos) const;
 

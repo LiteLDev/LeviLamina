@@ -81,24 +81,38 @@ public:
         ::std::function<void(::VarIntDataOutput&)>&& serialize
     );
 
+    MCAPI void addChunksToQueue(::std::vector<::ChunkPos> const& chunkPositions, bool isBiomeUpdate);
+
     MCAPI void clearRegion();
 
     MCAPI void destroyRegion();
 
 #ifdef LL_PLAT_C
     MCAPI void handleGenerationRequests();
+#endif
+
+    MCAPI void moveRegion(
+        ::BlockPos const& position,
+        uint              blockRadius,
+        ::Vec3 const&     direction,
+        bool              notifyBroadcastSounds,
+        float             minDistance
+    );
 
     MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
 
+#ifdef LL_PLAT_C
     MCAPI void queueChunkGenerationRequests(
         ::ChunkPos                       moveCenter,
         int                              chunkRadius,
         ::Vec3 const&                    direction,
         ::std::vector<::ChunkPos> const& serverChunks
     );
+#endif
 
     MCAPI void sendQueuedChunks();
 
+#ifdef LL_PLAT_C
     MCAPI void setClientsNetworkChunkSource(::std::shared_ptr<::ChunkSource> networkChunkSource);
 #endif
     // NOLINTEND

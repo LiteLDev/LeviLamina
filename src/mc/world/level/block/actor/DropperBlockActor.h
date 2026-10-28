@@ -35,8 +35,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static bool
     _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
+#endif
+
+#ifdef LL_PLAT_C
+    MCAPI static bool
+    _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
+#endif
 
     MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
     // NOLINTEND
@@ -48,7 +55,11 @@ public:
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
+#ifdef LL_PLAT_S
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+#else // LL_PLAT_C
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+#endif
 
 
     // NOLINTEND

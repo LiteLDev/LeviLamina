@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
-#include "mc/common/editor/MouseActionCategory.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/editor/MouseActionCategory.h"
 #include "mc/editor/input/KeyInputType.h"
 #include "mc/editor/input/Modifier.h"
 

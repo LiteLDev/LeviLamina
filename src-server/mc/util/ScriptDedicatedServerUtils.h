@@ -43,9 +43,9 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptDedicatedServerUtils() /*override*/ = default;
 
-    virtual bool saveHold() /*override*/;
+    virtual void saveHold(::std::function<void(bool)>&& callback) /*override*/;
 
-    virtual bool saveResume() /*override*/;
+    virtual void saveResume(::std::function<void(bool)>&& callback) /*override*/;
 
     virtual ::std::optional<::std::vector<::SnapshotFilenameAndLength>> saveQuery() /*override*/;
 
@@ -86,9 +86,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $saveHold();
+    MCAPI void $saveHold(::std::function<void(bool)>&& callback);
 
-    MCAPI bool $saveResume();
+    MCAPI void $saveResume(::std::function<void(bool)>&& callback);
 
     MCAPI ::std::optional<::std::vector<::SnapshotFilenameAndLength>> $saveQuery();
 

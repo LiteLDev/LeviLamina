@@ -6,11 +6,6 @@
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace ScriptModuleMinecraft {
 
 class ScriptItemDurabilityComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
@@ -26,12 +21,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
 
     MCAPI ::Scripting::Result_deprecated<int> getMaxDurability();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

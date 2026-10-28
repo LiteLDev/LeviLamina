@@ -119,6 +119,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::pair<::NetworkWorldInfo const, ::NetworkWorldType>>>
                                                                   mLastNetworkSelection;
     ::ll::TypedStorage<1, 1, bool>                                mIsDirty;
+    ::ll::TypedStorage<1, 1, bool>                                mServerDetailsRequested;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>    mHttpProbePermission;
     ::ll::TypedStorage<8, 24, ::std::vector<::LocalWorldInfo>>    mLocalWorldList;
     ::ll::TypedStorage<8, 24, ::std::vector<::LocalWorldInfo>>    mBetaRetailLocalWorldList;
     ::ll::TypedStorage<8, 24, ::std::vector<::WorldTemplateInfo>> mWorldTemplates;
@@ -275,6 +277,10 @@ public:
 
     MCAPI ::std::vector<::ResourceLocation> getLoadingPacks(::PackType type) const;
 
+    MCAPI int getOwnedActiveUnpairedParentRealmWorldCount() const;
+
+    MCAPI int getRealmWorldCount() const;
+
     MCAPI void handleLegacyWorldConversionComplete(::ImportResult const& result);
 
     MCAPI bool hasLocalWorldWithId(::std::string const& levelId);
@@ -295,8 +301,6 @@ public:
     MCAPI void
     navigateToEditWorldScreen(::std::string const& levelId, ::std::function<void(::Core::Path const&)> onErrorCallback);
 
-    MCAPI void navigateToRealmsSharingLauncherScreen(::std::string const& realmsInvite);
-
     MCAPI void navigateToWorldSyncModalScreen(
         ::std::string const&                                                                     levelId,
         ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)> onCompleteCallback
@@ -305,6 +309,8 @@ public:
     MCAPI ::LocalWorldInfo refreshLocalWorldInfo(::LocalWorldInfo const& worldInfo);
 
     MCAPI void repopulateLocalWorlds();
+
+    MCAPI void setServerDetailsRequested(bool requested);
 
     MCAPI void startNetworkWorld(::NetworkWorldInfo worldInfo, ::NetworkWorldType worldType);
 

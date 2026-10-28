@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/gui/oreui/DollUrlInfo.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/DollUrlInfo.h"
 #include "mc/client/gui/oreui/ITileResourceResolver.h"
 
 // auto generated forward declare list
@@ -29,7 +29,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::OreUI::DollUrlInfo> mInfo;
+        ::ll::TypedStorage<8, 40, ::OreUI::GeometryAtlasResourceHandlerAnon::DollUrlInfo> mInfo;
         // NOLINTEND
 
     public:

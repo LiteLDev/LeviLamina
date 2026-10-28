@@ -149,7 +149,7 @@ public:
 
     MCAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
 
-    MCAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
+    MCFOLD ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
     MCFOLD bool $canAppSelfTerminate() const;
 
@@ -165,7 +165,11 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
+#else // LL_PLAT_C
+    MCFOLD ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
+#endif
 
 #ifdef LL_PLAT_S
     MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;

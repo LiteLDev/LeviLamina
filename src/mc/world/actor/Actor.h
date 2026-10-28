@@ -19,6 +19,8 @@
 #include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/input/NewInteractionModel.h"
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/platform/brstd/bitset.h"
+#include "mc/platform/brstd/flat_map.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/util/MolangVariableMap.h"
 #include "mc/util/VariantParameterList.h"
@@ -92,6 +94,7 @@ class UpdateTradePacket;
 class Vec2;
 struct ActorDefinitionIdentifier;
 struct ActorLink;
+struct BoneCacheKey;
 struct DimensionType;
 struct DistanceSortedActor;
 struct DynamicRenderOffsetComponent;
@@ -116,7 +119,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::EntityContext>                               mEntityContext;
-    ::ll::TypedStorage<8, 72, ::VariantParameterList>                        mInitParams;
+    ::ll::TypedStorage<8, 80, ::VariantParameterList>                        mInitParams;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mCustomInitEventName;
     ::ll::TypedStorage<1, 1, ::ActorInitializationMethod>                    mInitMethod;
     ::ll::TypedStorage<1, 1, bool>                                           mForceInitMethodToSpawnOnReload;
@@ -127,7 +130,15 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                 mAlias;
     ::ll::TypedStorage<4, 68, ::std::optional<::glm::mat4x4>>                mPreviousRenderTransform;
     ::ll::TypedStorage<4, 4, int>                                            mLastHurtByPlayerTime;
-    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::vector<::std::vector<::glm::mat4x4>>>>
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::brstd::flat_map<
+            ::BoneCacheKey,
+            ::Matrix,
+            ::std::less<::BoneCacheKey>,
+            ::std::vector<::BoneCacheKey>,
+            ::std::vector<::Matrix>>>
                                                                            mPreviousBoneMatrices;
     ::ll::TypedStorage<8, 48, ::SynchedActorDataEntityWrapper>             mEntityData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpatialActorNetworkData>> mNetworkData;
@@ -162,7 +173,7 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>                              mActorRendererId;
     ::ll::TypedStorage<4, 4, ::ActorCategory>                              mCategories;
     ::ll::TypedStorage<4, 4, ::ActorVersion>                               mVersion;
-    ::ll::TypedStorage<8, 32, ::BuiltInActorComponents>                    mBuiltInComponents;
+    ::ll::TypedStorage<8, 24, ::BuiltInActorComponents>                    mBuiltInComponents;
     ::ll::TypedStorage<8, 48, ::HashedString> mActorRendererIdThatAnimationComponentWasInitializedWith;
     ::ll::TypedStorage<1, 1, bool>            mChanged;
     ::ll::TypedStorage<1, 1, bool>            mRemoved;
@@ -457,7 +468,7 @@ public:
 
     virtual bool drop(::ItemStack const& item, bool const randomly);
 
-    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location);
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
 
     virtual bool canDestroyBlock(::Block const& block) const;
 
@@ -564,8 +575,6 @@ public:
 
     MCAPI bool canBeginOrContinueClimbingLadder() const;
 
-    MCAPI bool canFly() const;
-
     MCAPI bool canMate(::Actor const& partner) const;
 
     MCAPI bool canReceiveMobEffectsFromGameplay() const;
@@ -606,7 +615,9 @@ public:
 
     MCAPI float evaluateSeatRotation(::RideableComponent const& rideable, bool useVehicleRenderParams);
 
+#ifdef LL_PLAT_S
     MCAPI bool executeEvent(::std::string const& name, ::VariantParameterList const& list);
+#endif
 
     MCAPI void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail);
 
@@ -656,8 +667,6 @@ public:
 
     MCAPI ::MobEffectInstance const* getEffect(uint effectId) const;
 
-    MCAPI ::StackRefResult<::EntityRegistry> getEntityRegistry();
-
     MCAPI ::ActorType getEntityTypeId() const;
 
     MCAPI int getEquipSlots() const;
@@ -685,10 +694,6 @@ public:
     MCAPI ::Vec3 getInterpolatedPosition(float a) const;
 
     MCAPI ::Vec3 getInterpolatedRidingPosition(float a) const;
-
-#ifdef LL_PLAT_S
-    MCAPI ::Vec2 getInterpolatedRotation(float a) const;
-#endif
 
     MCAPI int getInventorySize() const;
 
@@ -808,6 +813,8 @@ public:
 
     MCAPI bool isCreative() const;
 
+    MCAPI bool isDancing() const;
+
     MCAPI bool isDoorOpener() const;
 
     MCAPI bool isImmersedInWater() const;
@@ -833,6 +840,8 @@ public:
     MCAPI bool isInvertedHealAndHarm() const;
 
     MCAPI bool isJumping() const;
+
+    MCAPI bool isLayingDown() const;
 
     MCAPI bool isLeashed() const;
 
@@ -860,7 +869,7 @@ public:
 
     MCAPI bool isSurvival() const;
 
-    MCAPI bool isSwimmer() const;
+    MCAPI bool isSwimming() const;
 
     MCAPI bool isTame() const;
 
@@ -871,8 +880,6 @@ public:
     MCAPI bool isUnderLiquid(::SharedTypes::v1_26_20::MaterialType type) const;
 
     MCAPI bool isUseNewTradeScreen() const;
-
-    MCAPI bool isWalker() const;
 
     MCAPI bool isWearingLeatherArmor() const;
 
@@ -894,6 +901,12 @@ public:
     MCAPI void moveTo(::Vec3 const& pos, ::Vec2 const& rot);
 
     MCAPI bool onClimbableBlock() const;
+
+    MCAPI void onEffectUpdated(::MobEffectInstance& effect);
+
+#ifdef LL_PLAT_C
+    MCAPI void onSynchedFlagUpdate(::brstd::bitset<131, uint64> const& changedFlags);
+#endif
 
     MCAPI void pickUpItem(::ItemActor& itemActor, int count);
 
@@ -933,6 +946,10 @@ public:
     MCAPI void pushBackActionEventToActionQueue(::ActionEvent actionEvent);
 
     MCAPI void pushOutOfBlocks(::Vec3 const& vec);
+
+#ifdef LL_PLAT_C
+    MCAPI void refreshComponents();
+#endif
 
     MCAPI void reload();
 
@@ -988,7 +1005,11 @@ public:
 
     MCAPI void setRuntimeID(::ActorRuntimeID id);
 
+    MCAPI void setScoreTag(::std::string const& score);
+
     MCAPI void setStrength(int strength);
+
+    MCAPI void setStrengthMax(int strength);
 
 #ifdef LL_PLAT_C
     MCAPI void setTradingPlayer(::Player* player);
@@ -1029,7 +1050,9 @@ public:
 
     MCAPI bool tryTeleportTo(::Vec3 const& pos, bool landOnBlock, bool avoidLiquid, int cause, int entityType);
 
+#ifdef LL_PLAT_S
     MCAPI void updateDescription();
+#endif
 
     MCAPI void updateDimensionChunkMove();
 
@@ -1331,7 +1354,7 @@ public:
 
     MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
-    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
 
     MCFOLD bool $canDestroyBlock(::Block const& block) const;
 

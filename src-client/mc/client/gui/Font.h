@@ -59,7 +59,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 632, ::mce::Mesh>      mMesh;
+            ::ll::TypedStorage<8, 608, ::mce::Mesh>      mMesh;
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mTexture;
             ::ll::TypedStorage<4, 4, int>                mSheet;
             // NOLINTEND
@@ -141,6 +141,7 @@ public:
 
 public:
     // prevent constructor by default
+    Font& operator=(Font const&);
     Font();
 
 public:
@@ -184,7 +185,7 @@ public:
 
     virtual float getScaleFactor() const = 0;
 
-    virtual float getScaleFactor(int c) const;
+    virtual float getScaleFactor(int uniChar) const;
 
     virtual ::Vec2 getTranslationFactor() const;
 
@@ -211,7 +212,8 @@ public:
         ::mce::Color const&    textColor,
         bool                   hasShadow,
         uint                   textureWidth,
-        uint                   textureHeight
+        uint                   textureHeight,
+        bool                   isUnicode
     ) const;
 
     virtual void onAppSuspended();
@@ -239,6 +241,8 @@ public:
 
     virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const = 0;
 
+    virtual float getGlyphHeight(int glyphSheet, bool isUnicode) const;
+
     virtual void loadFontData(bool uploadTextureImmediately) = 0;
 
     virtual int _getReplacementCharacter();
@@ -252,11 +256,19 @@ public:
     virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool forceUnicode) const = 0;
 
     virtual ::std::string _remapString(::std::string_view str) const;
+
+    virtual uchar _getAsciiSheetCount() const;
+
+    virtual int _getAsciiGlyphsPerPage() const;
+
+    virtual bool _usesLegacyAsciiMapping() const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Font(::Font const& rhs);
+
     MCAPI explicit Font(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI bool _chopString(
@@ -268,7 +280,8 @@ public:
         bool                                                                                 showColorSymbol,
         bool                                                                                 centered,
         float                                                                                fontSize,
-        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> const currentLineCallback
+        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> const currentLineCallback,
+        int&                                                                                 outRemainingCharacterCount
     );
 
     MCAPI int _drawWordWrap(
@@ -285,6 +298,11 @@ public:
         bool                showColorSymbol,
         ::mce::MaterialPtr* optionalMat
     );
+
+    MCAPI int _getSheet(int uniChar, int& replacementC, bool forceUnicode);
+
+    MCAPI int
+    _getStringChopAmount(::std::string_view currentLine, bool showColorSymbol, float maxWidth, bool reserveHyphenWidth);
 
     MCAPI ::std::shared_ptr<::Font::TextObject> _makeTextObject(
         ::Tessellator&      tessellator,
@@ -316,6 +334,8 @@ public:
     );
 
     MCAPI void calculateTextWidths(::std::string_view text, ::std::vector<int>& widths);
+
+    MCAPI bool containsWideChar(::std::string_view str);
 
     MCAPI void drawShadow(
         ::ScreenContext&    screenContext,
@@ -373,6 +393,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool shouldInsertHyphenAtLineBreak(
+        ::std::string_view textBeforeBreak,
+        ::std::string_view textAfterBreak,
+        bool               languageSupportsHyphenSplitting
+    );
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Core::PathBuffer<::std::string> const& NOT_FOUND_PAGE();
@@ -383,6 +413,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Font const& rhs);
+
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
@@ -420,7 +452,7 @@ public:
 
     MCAPI int $getLineLength(::std::string_view str, float fontSize, bool showColorSymbol);
 
-    MCAPI float $getScaleFactor(int c) const;
+    MCAPI float $getScaleFactor(int uniChar) const;
 
     MCFOLD ::Vec2 $getTranslationFactor() const;
 
@@ -441,7 +473,8 @@ public:
         ::mce::Color const&    textColor,
         bool                   hasShadow,
         uint                   textureWidth,
-        uint                   textureHeight
+        uint                   textureHeight,
+        bool                   isUnicode
     ) const;
 
     MCFOLD void $onAppSuspended();
@@ -459,9 +492,17 @@ public:
 
     MCFOLD void $onLanguageChanged(::std::string_view languageCode);
 
+    MCAPI float $getGlyphHeight(int glyphSheet, bool isUnicode) const;
+
     MCAPI int $_getReplacementCharacter();
 
     MCAPI ::std::string $_remapString(::std::string_view str) const;
+
+    MCFOLD uchar $_getAsciiSheetCount() const;
+
+    MCFOLD int $_getAsciiGlyphsPerPage() const;
+
+    MCFOLD bool $_usesLegacyAsciiMapping() const;
     // NOLINTEND
 
 public:

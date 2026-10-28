@@ -8,6 +8,8 @@ struct ConstraintDescription {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint>                                                          mConstraintId;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                               mConstraintFunction;
     ::ll::TypedStorage<8, 16, ::std::optional<double>>                                      mMultipleOf;
     ::ll::TypedStorage<8, 16, ::std::optional<double>>                                      mMinimum;
     ::ll::TypedStorage<8, 16, ::std::optional<double>>                                      mExclusiveMinimum;

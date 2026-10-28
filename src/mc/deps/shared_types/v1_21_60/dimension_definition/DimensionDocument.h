@@ -17,7 +17,22 @@ struct DimensionDocument {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mFormatVersion;
     ::ll::TypedStorage<8, 72, ::SharedTypes::v1_21_60::DimensionDefinition::Dimension> mDimension;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DimensionDocument(DimensionDocument const&);
+    DimensionDocument();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument&
+    operator=(::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument const&);
+
+    MCAPI ~DimensionDocument();
     // NOLINTEND
 
 public:
@@ -30,6 +45,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

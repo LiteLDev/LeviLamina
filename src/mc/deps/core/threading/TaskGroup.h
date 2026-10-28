@@ -38,7 +38,6 @@ struct AsyncJoinDeny;
 struct MinecraftServiceKeyInfo;
 struct MinecraftServiceKeysMetadata;
 struct PackSourceLoadResult;
-struct PingedCompatibleServer;
 struct SignalingClientConfiguration;
 struct TaskStartInfo;
 namespace Bedrock::Http { class HeaderCollection; }
@@ -48,8 +47,12 @@ namespace Bedrock::Http { struct Url; }
 namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
 namespace Bedrock::Services { struct EnvironmentQueryResponse; }
 namespace Bedrock::Services { struct ServiceError; }
+namespace Bedrock::Services::chat::model { struct BroadcastChatMessageResponseData; }
+namespace Bedrock::Services::chat::model { struct SignChatMessageResponseData; }
 namespace Bedrock::Services::discovery::model { struct EnvironmentQueryResponseData; }
 namespace Bedrock::Services::discovery::model { struct ManagedServiceEnvironmentMetadata; }
+namespace Bedrock::Services::entitlements::model { struct ConfirmRedeemCodeResponseData; }
+namespace Bedrock::Services::entitlements::model { struct PrepareRedeemCodePreviewResponseData; }
 namespace Bedrock::Services::gatherings::model { struct CheckPartyEligibilityResponseData; }
 namespace Bedrock::Services::gatherings::model { struct ExperiencePlayerCountResponseData; }
 namespace Bedrock::Services::gatherings::model { struct GetAllExperienceDiscoveryMetadataResponseData; }
@@ -60,15 +63,11 @@ namespace Bedrock::Services::layout::model { struct LayoutResponseData; }
 namespace Bedrock::Services::layout::model { struct PageableDataBase; }
 namespace Bedrock::Services::layout::model { struct PageableExperiences; }
 namespace Bedrock::Services::layout::model { struct PageableStandardMarketplaceItemPreview; }
+namespace Bedrock::Services::layout::model { struct PageableTiles; }
 namespace Bedrock::Services::layout::model { struct SessionConfig; }
 namespace Bedrock::Services::multiplayer::model { struct Party; }
 namespace Bedrock::Services::multiplayer::model { struct PartyInvite; }
 namespace Bedrock::Services::multiplayer::model { struct PartySummary; }
-namespace Bedrock::Services::safety::model { struct RoomResponseData; }
-namespace Bedrock::Services::safety::model { struct ScanResponseData; }
-namespace Bedrock::Services::safety_client::model { struct ImageValidationResult; }
-namespace Bedrock::Services::safety_client::model { struct SkinValidationResult; }
-namespace Bedrock::Services::safety_client::model { struct TextValidationResult; }
 namespace Bedrock::Threading { struct CachedAsyncRetry; }
 namespace Json { class Value; }
 namespace JsonRpc { class JsonRpcError; }
@@ -124,7 +123,7 @@ public:
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
+        ::brstd::move_only_function<void()>&&         callback
     ) /*override*/;
 
     virtual ::Bedrock::Threading::Async<void> queueSync_DEPRECATED(
@@ -181,7 +180,7 @@ public:
     MCAPI static ::Bedrock::Threading::Async<void> queueChild_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
+        ::brstd::move_only_function<void()>&&         callback
     );
     // NOLINTEND
 
@@ -203,7 +202,7 @@ public:
     MCAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
+        ::brstd::move_only_function<void()>&&         callback
     );
 
     MCAPI ::Bedrock::Threading::Async<void>

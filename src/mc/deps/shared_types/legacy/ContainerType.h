@@ -45,6 +45,7 @@ enum class ContainerType : schar {
     DecoratedPot        = 35,
     Crafter             = 36,
     DataDrivenContainer = 37,
+    DiscPress           = 38,
 };
 
 }

@@ -31,6 +31,8 @@ public:
     MCNAPI
     ScopedGameTestTickingArea(::Dimension& dimension, ::BoundingBox const& bounds, ::std::string const& structureName);
 
+    MCNAPI void _createTickingArea();
+
     MCNAPI void _removeTickingArea();
 
     MCNAPI bool areChunksLoaded();

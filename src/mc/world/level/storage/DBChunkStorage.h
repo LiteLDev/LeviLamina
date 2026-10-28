@@ -16,10 +16,12 @@ class BlendingDataProvider;
 class ChunkKey;
 class ChunkViewSource;
 class DBStorage;
+class Experiments;
 class IDataInput;
 class LevelChunk;
 class LevelChunkMetaDataDictionary;
 class LevelStorageWriteBatch;
+class Scheduler;
 class TaskGroup;
 struct ActorUnloadedChunkTransferEntry;
 struct ChunkDeletionMetadata;
@@ -158,6 +160,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI DBChunkStorage(
+        ::std::unique_ptr<::ChunkSource> parent,
+        ::DBStorage&                     storage,
+        ::Scheduler&                     scheduler,
+        ::Experiments const&             experiments
+    );
+#endif
+
     MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(
         ::ChunkPos                        chunkPos,
         bool                              isCompleted,
@@ -196,6 +207,10 @@ public:
     MCAPI ::std::string _upgradeActorStorage(::ChunkKey chunkKey, ::std::string_view& legacyActorData);
 
     MCAPI void _writeDiscardChunksBatch();
+
+#ifdef LL_PLAT_S
+    MCAPI void freeCaches();
+#endif
     // NOLINTEND
 
 public:
@@ -214,13 +229,22 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCFOLD void $shutdown();
-#else // LL_PLAT_C
-    MCAPI void $shutdown();
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::ChunkSource> parent,
+        ::DBStorage&                     storage,
+        ::Scheduler&                     scheduler,
+        ::Experiments const&             experiments
+    );
 #endif
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $shutdown();
 
     MCAPI bool $isShutdownDone();
 

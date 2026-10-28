@@ -14,6 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                     mRequired;
     ::ll::TypedStorage<1, 1, bool>                                     mDeprecated;
+    ::ll::TypedStorage<1, 1, bool>                                     mPatternMember;
     ::ll::TypedStorage<8, 80, ::std::optional<::cereal::DynamicValue>> mDefaultValue;
     ::ll::TypedStorage<8, 80, ::std::optional<::cereal::DynamicValue>> mConstValue;
     // NOLINTEND

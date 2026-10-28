@@ -10,7 +10,7 @@ namespace Social { struct UserBanDetails; }
 namespace OreUI::EntryPoints::PlayerBanned {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute(::Social::UserBanDetails const& ban);
+MCAPI ::std::string composeRoute(::Social::UserBanDetails const& ban, ::std::string const& banReasonLocKey);
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::PlayerBanned

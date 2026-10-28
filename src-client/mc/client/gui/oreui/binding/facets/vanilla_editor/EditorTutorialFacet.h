@@ -65,6 +65,8 @@ public:
     MCAPI void reportStageCondition(::HashedString const& stageId, ::HashedString const& condition);
 
     MCAPI void skipToNextStage();
+
+    MCAPI void skipToNextStageGroup();
     // NOLINTEND
 
 public:

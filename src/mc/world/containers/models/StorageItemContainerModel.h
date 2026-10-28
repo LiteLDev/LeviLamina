@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
 // auto generated forward declare list
@@ -13,6 +14,7 @@ class ItemStack;
 class StorageItemComponent;
 class StorageWeightLimitItemComponent;
 struct FullContainerName;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class StorageItemContainerModel : public ::ContainerModel {
@@ -22,6 +24,14 @@ public:
     ::ll::TypedStorage<8, 8, ::StorageItemComponent const*>            mStorageItemComponent;
     ::ll::TypedStorage<8, 8, ::StorageWeightLimitItemComponent const*> mStorageWeightLimitComponent;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>>            mContainer;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(int, ::ItemStack const&, ::ItemStack const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mContainerChangedPublisher;
     // NOLINTEND
 
 public:
@@ -85,11 +95,7 @@ public:
 
     MCFOLD int $_getContainerOffset() const;
 
-#ifdef LL_PLAT_S
     MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-#else // LL_PLAT_C
-    MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-#endif
 
     MCAPI ::Container* $_getContainer() const;
 

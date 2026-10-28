@@ -39,7 +39,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $frameUpdate(::UIFrameUpdateContext& frameUpdateContext, ::UIControl& owner);
+    MCFOLD void $frameUpdate(::UIFrameUpdateContext& frameUpdateContext, ::UIControl& owner);
 
     MCFOLD void $frameUpdate(::MinecraftUIFrameUpdateContext&, ::UIControl&);
 

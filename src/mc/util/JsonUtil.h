@@ -19,4 +19,9 @@ MCNAPI bool serializeToFile(::Json::Value const& json, ::Core::Path const& path)
 #endif
 // NOLINTEND
 
+// static variables
+// NOLINTBEGIN
+MCNAPI uint64 const& kMaxJsonDocumentBytes();
+// NOLINTEND
+
 } // namespace Core::JsonUtil

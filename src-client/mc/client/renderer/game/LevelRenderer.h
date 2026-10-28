@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/chunks/render_chunk_vertex_streaming/RenderChunkVertexStreamPlanRegistry.h"
 #include "mc/client/renderer/debug/DebugRenderer.h"
 #include "mc/client/renderer/game/LevelBuilder.h"
 #include "mc/client/renderer/game/ShadowCascadeState.h"
@@ -25,6 +26,7 @@
 // clang-format off
 class Actor;
 class ActorResourceDefinitionGroup;
+class AtomicClientEntityDefinitionGroup;
 class Block;
 class BlockActorRenderDispatcher;
 class BlockPos;
@@ -66,6 +68,7 @@ namespace LightPropagation { class LightPropagationCoordinator; }
 namespace LightPropagation { class LightVolumeManager; }
 namespace PointLighting { class PointLightCoordinator; }
 namespace PointLighting { class PointLightShadowProbeManager; }
+namespace PointLighting { class StaticLightTransitionManager; }
 namespace cg { class ImageBuffer; }
 namespace dragon::atlas { class IAtlasUserOperations; }
 namespace mce { class Mesh; }
@@ -80,7 +83,9 @@ public:
                                                                                         mRenderChunkCoordinators;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PointLighting::PointLightCoordinator>> mPointLightCoordinator;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PointLighting::PointLightShadowProbeManager>>
-                                                                                         mPointLightShadowProbeManager;
+        mPointLightShadowProbeManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PointLighting::StaticLightTransitionManager>>
+                                                                                         mStaticLightTransitionManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightVolumeManager>> mLightVolumeManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightPropagationCoordinator>>
                                                                                   mLightPropagationCoordinator;
@@ -117,17 +122,20 @@ public:
     ::ll::TypedStorage<8, 8, ::ClientLevel&>                                      mLevel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OptionRegistry>>                mOptions;
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                  mClientInstance;
+    ::ll::TypedStorage<8, 8, ::AtomicClientEntityDefinitionGroup&>                mAtomicClientEntityDefinitionGroup;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>                                    mLocalUser;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                  mReleaseParticleSystemInterfaceProxyCallback;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererPlayer>> mLevelRendererPlayer;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>>       mLevelRendererShadowCamera;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>>       mLevelRendererCloudShadowCamera;
-    ::ll::TypedStorage<4, 4, ::ShadowCascadeState>                                  mShadowCascadeState;
-    ::ll::TypedStorage<1, 1, bool>                                                  mTextureShiftsEnabled;
-    ::ll::TypedStorage<8, 1456, ::LevelBuilder>                                     mLevelBuilder;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelRendererProxy>>               mProxy;
-    ::ll::TypedStorage<4, 16, ::mce::Color>                                         mClearBufferColor;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PlayerRenderView>>                  mPlayerView;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>> mLevelRendererShadowCamera;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>> mLevelRendererCloudShadowCamera;
+    ::ll::TypedStorage<4, 4, ::ShadowCascadeState>                            mShadowCascadeState;
+    ::ll::TypedStorage<1, 1, bool>                                            mTextureShiftsEnabled;
+    ::ll::TypedStorage<8, 152, ::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry>
+                                                                      mRenderChunkVertexStreamPlanRegistry;
+    ::ll::TypedStorage<8, 1456, ::LevelBuilder>                       mLevelBuilder;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelRendererProxy>> mProxy;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                           mClearBufferColor;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PlayerRenderView>>    mPlayerView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererV2RequiredData>> mDataDrivenRendererV2RequiredData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UniversalEntityRenderer>>          mUniversalEntityRenderer;
     // NOLINTEND
@@ -190,7 +198,8 @@ public:
         ::SoundMapping const&                                                      sounds,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager,
-        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps
+        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps,
+        ::AtomicClientEntityDefinitionGroup&                                       atomicClientEntityDefinitionGroup
     );
 
     MCAPI void _createMeshes(::Tessellator& tessellator);
@@ -206,15 +215,11 @@ public:
 
     MCAPI ::BlockTessellator& getBlockRenderer();
 
-    MCAPI ::ParticleEngine& getParticleEngine() const;
-
     MCAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
 
     MCAPI void onDimensionChanged();
 
     MCAPI void onOptionsChanged();
-
-    MCAPI void onWillChangeDimension();
 
     MCAPI void preRenderUpdate(
         ::ScreenContext&                        screenContext,
@@ -256,7 +261,8 @@ public:
         ::SoundMapping const&                                                      sounds,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager,
-        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps
+        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps,
+        ::AtomicClientEntityDefinitionGroup&                                       atomicClientEntityDefinitionGroup
     );
     // NOLINTEND
 

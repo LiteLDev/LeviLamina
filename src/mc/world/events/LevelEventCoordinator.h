@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/EventCoordinator.h"
-#include "mc/world/events/EventRef.h"
-#include "mc/world/events/MutableLevelGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -53,8 +49,6 @@ public:
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
-
     MCAPI void sendLevelRemovedActor(::Actor& actor);
 
     MCAPI void sendLevelWeatherChanged(
@@ -65,14 +59,7 @@ public:
         bool                 isLightning
     );
 
-    MCAPI void sendWorldClockPaused(::Bedrock::NotNullNonOwnerPtr<::WorldClock> clock);
-
-    MCAPI void sendWorldClockResumed(::Bedrock::NotNullNonOwnerPtr<::WorldClock> clock);
-
-    MCAPI void
-    sendWorldClockTimeMarker(::Bedrock::NotNullNonOwnerPtr<::WorldClock> clock, ::std::string const& timeMarkerName);
-
-    MCAPI void sendWorldClockTimeModified(::Bedrock::NotNullNonOwnerPtr<::WorldClock> clock);
+    MCAPI void sendWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
     // NOLINTEND
 
 public:

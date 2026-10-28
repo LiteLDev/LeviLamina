@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 #include "mc/deps/shared_types/util/Reference.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_50 {
 
 struct PlanterItemComponent {
@@ -33,12 +28,6 @@ public:
     MCAPI ::SharedTypes::v1_20_50::PlanterItemComponent& operator=(::SharedTypes::v1_20_50::PlanterItemComponent&&);
 
     MCAPI ~PlanterItemComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -51,6 +51,12 @@ public:
         // NOLINTEND
 
     public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
+        // NOLINTEND
+
+    public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject const&);

@@ -6,7 +6,6 @@
 #include "mc/client/world/SessionTrackerOperationResult.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/TaskGroup.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/events/ClientInstanceEventListener.h"
 #include "mc/world/events/EventResult.h"
@@ -14,7 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstance;
-namespace Social { class IUserManager; }
 namespace World { class WorldJoinedRecord; }
 // clang-format on
 
@@ -32,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldActivitySessionTracker();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorldActivitySessionTracker() /*override*/ = default;
@@ -46,18 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldActivitySessionTracker(::Core::PathBuffer<::std::string> const& tempDirectory);
-
     MCAPI ::World::SessionTrackerOperationResult
     _addOrUpdate(::std::unique_ptr<::World::WorldJoinedRecord> pJoinedRecord);
-
-    MCAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::PathBuffer<::std::string> const& tempDirectory);
     // NOLINTEND
 
 public:

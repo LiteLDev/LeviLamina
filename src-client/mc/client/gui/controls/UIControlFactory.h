@@ -116,24 +116,6 @@ public:
 
     MCAPI void _populateTextComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI ::std::shared_ptr<::UIControl> createControlTree(
-        ::UIControl const&        templateControl,
-        ::UIControl*              parent,
-        ::ui::ChildInsertPosition childInsertPosition
-    );
-
-    MCAPI ::std::shared_ptr<::UIControl> createControlTree(
-        ::std::string_view        name,
-        ::ControlScreenAction&    controlScreenAction,
-        ::UIControl*              parent,
-        ::ui::ChildInsertPosition childInsertPosition,
-        ::Json::Value*            additionalVars,
-        bool                      isTemplateControl
-    );
-
-    MCAPI ::std::shared_ptr<::UIControl>
-    createControlTreeRootOnly(::std::string_view name, ::ControlScreenAction& controlScreenAction);
-
     MCAPI ~UIControlFactory();
     // NOLINTEND
 

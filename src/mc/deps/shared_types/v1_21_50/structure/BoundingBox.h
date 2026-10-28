@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_50 {
 
 struct BoundingBox {
@@ -14,6 +19,12 @@ public:
     ::ll::TypedStorage<4, 4, int> mMaxX;
     ::ll::TypedStorage<4, 4, int> mMaxY;
     ::ll::TypedStorage<4, 4, int> mMaxZ;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

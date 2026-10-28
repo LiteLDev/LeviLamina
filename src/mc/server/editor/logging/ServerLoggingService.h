@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/LogChannel.h"
+#include "mc/editor/LogChannel.h"
 #include "mc/editor/logging/LogLevel.h"
 #include "mc/editor/logging/LoggingService.h"
 
@@ -12,6 +12,7 @@
 class HashedString;
 class Player;
 namespace Editor { class LogMessage; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct LogContent; }
 // clang-format on
 
@@ -41,11 +42,24 @@ public:
         ::Player*                       player,
         ::Editor::LogLevel              level,
         ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannelMask) /*override*/;
+        ::Editor::LogChannel            logChannelMask,
+        ::std::optional<bool>           alert) /*override*/;
 
     virtual void flush() /*override*/;
 
     virtual ::std::vector<::Editor::LogMessage> const& getMessages() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ServerLoggingService(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -58,7 +72,8 @@ public:
         ::Player*                       player,
         ::Editor::LogLevel              level,
         ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannelMask
+        ::Editor::LogChannel            logChannelMask,
+        ::std::optional<bool>           alert
     );
 
     MCNAPI void $flush();
@@ -66,6 +81,14 @@ public:
     MCNAPI ::std::vector<::Editor::LogMessage> const& $getMessages() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForLoggingServiceProvider();
+
+    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

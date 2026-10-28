@@ -6,7 +6,7 @@ struct ClientLevelArguments {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 312> mUnk13f328;
+    ::ll::UntypedStorage<8, 344> mUnk13f328;
     ::ll::UntypedStorage<8, 16>  mUnkc86228;
     ::ll::UntypedStorage<8, 8>   mUnk5058c7;
     ::ll::UntypedStorage<8, 216> mUnk293af1;

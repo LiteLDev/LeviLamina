@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ThemeSettingsColorKey.h"
+#include "mc/editor/ThemeSettingsColorKey.h"
 #include "mc/editor/network/NetworkPayload.h"
 
 // auto generated forward declare list

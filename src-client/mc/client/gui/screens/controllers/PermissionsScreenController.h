@@ -23,7 +23,7 @@ class PermissionsScreenController : public ::ClientInstanceScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                         mEDUPermissionsPopupActive;
+    ::ll::TypedStorage<1, 1, bool>                                         mEduPermissionsPopupActive;
     ::ll::TypedStorage<1, 1, bool>                                         mPermissionDropdownActive;
     ::ll::TypedStorage<8, 1464, ::LayeredAbilities>                        mStartAbilityCache;
     ::ll::TypedStorage<8, 1464, ::LayeredAbilities>                        mAbilities;

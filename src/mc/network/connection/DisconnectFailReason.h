@@ -155,7 +155,8 @@ enum class DisconnectFailReason : int {
     EditorNotAllowed                              = 147,
     MissingStructureData                          = 148,
     UnsupportedTransport                          = 149,
-    MaxDisconnectFailReason                       = 150,
+    SubClientLoginNotBound                        = 150,
+    MaxDisconnectFailReason                       = 151,
 };
 
 }

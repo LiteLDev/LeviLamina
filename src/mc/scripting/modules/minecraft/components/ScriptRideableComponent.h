@@ -9,15 +9,16 @@
 // auto generated forward declare list
 // clang-format off
 class RideableComponent;
-class RideableDefinition;
 struct SeatDescription;
 namespace Scripting { struct ClassBinding; }
+namespace SharedTypes::v1_26_60 { struct RideableComponentDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptRideableComponent
-: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::RideableComponent, ::RideableDefinition> {
+: public ::ScriptModuleMinecraft::
+      ECSScriptActorComponent<::RideableComponent, ::SharedTypes::v1_26_60::RideableComponentDefinition> {
 public:
     // member functions
     // NOLINTBEGIN

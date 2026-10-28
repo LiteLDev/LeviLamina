@@ -17,6 +17,7 @@
 class Dimension;
 class DimensionRegistry;
 class IDimensionFactory;
+class ILevelStorageManagerConnector;
 class LevelStorage;
 struct DimensionIdType;
 struct DimensionType;
@@ -101,6 +102,11 @@ public:
 
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
 
+    MCAPI void serverInitialize(
+        ::ILevelStorageManagerConnector& levelStorageManagerConnector,
+        ::DimensionDefinitionGroup       jsonDefinitionGroup
+    );
+
     MCAPI void serverSaveDimensionNameIdStoreTable(::LevelStorage& levelStorage) const;
 
     MCAPI ::std::optional<::DimensionType> tryGetDimensionType(::std::string_view identifier) const;
@@ -122,10 +128,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void(::DimensionManager&)>& $getOnReadyForCustomDimensionRegistrationConnector();
+#else // LL_PLAT_C
     MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
     $getOnReadyForCustomDimensionRegistrationConnector();
+#endif
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
 
 
     // NOLINTEND

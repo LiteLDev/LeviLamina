@@ -112,7 +112,7 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
 #endif
 
-    MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
+    MCAPI bool getResource(::Core::PathView const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
 #ifdef LL_PLAT_C
     MCAPI ::std::optional<::StreamableAssetSource> getStreamableSource(
@@ -124,11 +124,9 @@ public:
     MCAPI ::Json::Value getTexturesList(int subpackIndex) const;
 
     MCAPI bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
-
-    MCAPI bool hasIcon(::PackIconType iconType) const;
 #endif
 
-    MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
+    MCAPI bool hasResource(::Core::PathView const& resourceName, int subpackIndex) const;
 
 #ifdef LL_PLAT_C
     MCAPI void invalidatePreloadCache();

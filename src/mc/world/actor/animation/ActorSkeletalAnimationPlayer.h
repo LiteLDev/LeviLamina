@@ -83,6 +83,8 @@ public:
         ::AnimationComponent&       animationComponent,
         ::ExpressionNode const&     blendExpression
     );
+
+    MCAPI void _fireSoundEvents(::RenderParams& renderParams);
 #endif
 
     MCAPI void _setDefaultPose(
@@ -137,11 +139,5 @@ public:
     MCAPI void $visit(::AnimationVisitor&& dispatcher);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

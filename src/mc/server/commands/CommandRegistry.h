@@ -668,6 +668,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::Packet const&)>>                            mNetworkUpdateCallback;
     ::ll::TypedStorage<8, 64, ::std::function<int(bool&, ::std::string const&, ::Actor const&)>> mGetScoreForObjective;
     ::ll::TypedStorage<1, 1, bool>                                                               mIsEduMode;
+    ::ll::TypedStorage<1, 1, bool>                                                               mIsCodeBuilderEnabled;
     ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::ParseRule>>                       mRules;
     ::ll::TypedStorage<8, 16, ::std::map<uint, ::CommandRegistry::ParseTable>>                   mParseTables;
     ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::OptionalParameterChain>>          mOptionals;
@@ -872,7 +873,8 @@ public:
         ::std::string const&            commandLine,
         ::CommandPermissionLevel const& permissionLevel,
         bool                            cheatsEnabled,
-        bool                            isEditorWorld
+        bool                            isEditorWorld,
+        bool                            isTeacher
     ) const;
 #endif
 
@@ -907,7 +909,9 @@ public:
 
     MCAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
+#endif
 
     MCAPI ::std::vector<::std::string> getAliases(::std::string const& command) const;
 

@@ -129,7 +129,11 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+#else // LL_PLAT_C
+    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+#endif
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&,

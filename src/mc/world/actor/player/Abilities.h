@@ -68,8 +68,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<char const*, 20>& ABILITY_NAMES();
-
 #ifdef LL_PLAT_C
     MCAPI static ::std::string const& DIFF_ABILITIY_AT();
 #endif

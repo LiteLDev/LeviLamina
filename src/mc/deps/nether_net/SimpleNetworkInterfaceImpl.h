@@ -11,6 +11,7 @@
 #include "mc/deps/nether_net/ISignalingEventHandler.h"
 #include "mc/deps/nether_net/SignalingChannelId.h"
 #include "mc/deps/nether_net/utils/ErrorOr.h"
+#include "mc/external/webrtc/PeerConnectionInterface.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,9 +48,10 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk407f9c;
     ::ll::UntypedStorage<8, 8>   mUnkb5d73e;
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
+    ::ll::UntypedStorage<8, 80>  mUnk56d4d8;
     ::ll::UntypedStorage<8, 416> mUnkcf1ee0;
-    ::ll::UntypedStorage<1, 1>   mUnk49643d;
-    ::ll::UntypedStorage<1, 1>   mUnkbea55f;
+    ::ll::UntypedStorage<1, 1>   mUnk2d030b;
+    ::ll::UntypedStorage<1, 1>   mUnk28957f;
     ::ll::UntypedStorage<8, 16>  mUnk6e9a1e;
     ::ll::UntypedStorage<8, 16>  mUnkd76d91;
     ::ll::UntypedStorage<8, 16>  mUnk9e7ad4;
@@ -143,7 +145,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Finalize();
+    MCAPI ::webrtc::PeerConnectionInterface::RTCConfiguration GetRTCConfig(::NetherNet::NetworkID peerId) const;
 
     MCAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 

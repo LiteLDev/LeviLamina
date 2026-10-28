@@ -249,6 +249,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                         mUsesErrorInfo;
     ::ll::TypedStorage<8, 1728, ::ScreenViewCommand>                       mScreenViewCommand;
     ::ll::TypedStorage<1, 1, bool>                                         mIsScrollingLocked;
+    ::ll::TypedStorage<1, 1, bool>                                         mBindingRefreshRequested;
     ::ll::TypedStorage<
         8,
         64,
@@ -601,6 +602,8 @@ public:
         ::brstd::move_only_function<bool(int) const>          condition
     );
 
+    MCAPI bool consumeBindingRefreshRequest();
+
     MCAPI bool hasFinishedAsyncTasks() const;
 
     MCAPI void queueAsyncTask(::brstd::move_only_function<::TaskResult()>&& task, ::std::function<void()>&& callback);
@@ -671,6 +674,14 @@ public:
         uint                                                                           buttonId,
         ::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const> callback
     );
+
+    MCAPI void
+    setControlFactoryCreateCallback(::std::function<void(::std::string const&, ::UIPropertyBag const&)> callback);
+
+    MCAPI void setControlFactoryDestroyAllCallback(::std::function<void(::std::string const&)> callback);
+
+    MCAPI void
+    setControlFactoryDestroyCallback(::std::function<void(::std::string const&, ::std::string const&)> callback);
     // NOLINTEND
 
 public:
@@ -765,7 +776,7 @@ public:
 
     MCFOLD uint $getSceneId() const;
 
-    MCFOLD ::ScreenControllerProxy* $getProxy();
+    MCAPI ::ScreenControllerProxy* $getProxy();
 
     MCFOLD void $onEntered();
 

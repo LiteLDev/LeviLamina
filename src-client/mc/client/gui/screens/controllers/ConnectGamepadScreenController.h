@@ -17,7 +17,8 @@ class ConnectGamepadScreenController : public ::MinecraftScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<void()>> mOnCompleteCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>  mOnCompleteCallback;
+    ::ll::TypedStorage<1, 1, ::GameControllerErrorType> mControllerError;
     // NOLINTEND
 
 public:

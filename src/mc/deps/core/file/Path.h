@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 
 namespace Core {
 
@@ -16,10 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit Path(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& rhs);
-#endif
-
     MCAPI explicit Path(::Core::PathBuffer<::std::string> const& rhs);
     // NOLINTEND
 
@@ -32,10 +27,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& rhs);
-#endif
-
     MCFOLD void* $ctor(::Core::PathBuffer<::std::string> const& rhs);
     // NOLINTEND
 };

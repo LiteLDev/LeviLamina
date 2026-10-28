@@ -43,6 +43,12 @@ public:
         // NOLINTEND
 
     public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static ::std::shared_ptr<void> create(::ItemRegistryRef registryRef);
+        // NOLINTEND
+
+    public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);

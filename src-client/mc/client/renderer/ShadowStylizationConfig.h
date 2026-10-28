@@ -52,6 +52,12 @@ public:
             ShadowStylizationSettings& operator=(ShadowStylizationSettings const&);
             ShadowStylizationSettings(ShadowStylizationSettings const&);
             ShadowStylizationSettings();
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
         };
 
     public:

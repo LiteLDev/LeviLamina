@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/block/tessellation_pipeline/client_block_pipeline/UvGenerationType.h"
 #include "mc/client/renderer/block/tessellation_pipeline/vanilla_block_tessellation/PipelineType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/SubChunkPos.h"
@@ -33,6 +34,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository>> mMaterialRepository;
     ::ll::TypedStorage<4, 12, ::SubChunkPos>                                                mRenderChunkPos;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const>> mOverrideMaterial;
+    ::ll::TypedStorage<4, 4, ::ClientBlockPipeline::UvGenerationType>                            mUvGenerationType;
     ::ll::TypedStorage<8, 8, ::BiomeTintCache*>                                                  mBiomeTintCache;
     // NOLINTEND
 

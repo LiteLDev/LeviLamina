@@ -4,12 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptServerStateMonitor.h"
 
 // auto generated forward declare list
 // clang-format off
 class WorldClockRegistryServer;
 struct ServerScriptManagerEvents;
+namespace ScriptModuleMinecraft { struct ScriptWorldClockInvalidRegistryError; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockRegistrationError; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockRegistrationOptions; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockReloadNewWorldClockError; }
+namespace ScriptModuleMinecraft { struct ScriptWorldClockReloadTimeMarkerError; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -31,6 +38,18 @@ public:
     MCAPI ScriptCustomWorldClockRegistry(
         ::ServerScriptManagerEvents&                              events,
         ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> worldClockRegistry
+    );
+
+    MCAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptWorldClockRegistrationError,
+        ::ScriptModuleMinecraft::ScriptWorldClockReloadNewWorldClockError,
+        ::ScriptModuleMinecraft::ScriptWorldClockReloadTimeMarkerError,
+        ::ScriptModuleMinecraft::ScriptWorldClockInvalidRegistryError>
+    tryRegisterClock(
+        ::Scripting::WeakLifetimeScope&,
+        ::std::string const&                                                          name,
+        ::std::optional<::ScriptModuleMinecraft::ScriptWorldClockRegistrationOptions> registrationOptions
     );
     // NOLINTEND
 

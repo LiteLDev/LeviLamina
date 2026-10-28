@@ -60,8 +60,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::World::MarketplacePassWorldTemplateManager> marketplacePassWorldTemplateManager
     );
 
-    MCAPI void _beginTemplateDownload();
-
     MCAPI void _updateDownloadProgress();
 
     MCAPI bool canDownloadBeCancelled();

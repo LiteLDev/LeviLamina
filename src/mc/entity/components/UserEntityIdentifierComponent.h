@@ -34,7 +34,7 @@ public:
 
     MCAPI ::std::string getPlayFabId() const;
 
-    MCAPI ::std::string getTenantId() const;
+    MCFOLD ::std::string getTenantId() const;
 
     MCAPI ::std::string getXuid() const;
     // NOLINTEND

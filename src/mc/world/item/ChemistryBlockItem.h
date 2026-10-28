@@ -12,6 +12,12 @@ class ItemStackBase;
 
 class ChemistryBlockItem : public ::BlockItem {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const> mIsChemistryEnabled;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
@@ -23,5 +29,11 @@ public:
     MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

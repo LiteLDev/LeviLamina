@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/shared_types/v1_26_60/actor/ShareableComponentDefinition.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/BaseGoal.h"
@@ -18,7 +19,6 @@ class Path;
 class WeakEntityRef;
 struct DistanceSortedActor;
 struct GoalId;
-struct Shareable;
 // clang-format on
 
 class PickupItemsGoal : public ::BaseGoal {
@@ -82,7 +82,8 @@ public:
     MCAPI ::std::vector<::WeakEntityRef>
     _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities) const;
 
-    MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
+    MCAPI ::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData const*
+    _getShareableItem(::ItemStack const& item) const;
 
     MCAPI bool _hasRoomForCarriedItem() const;
     // NOLINTEND

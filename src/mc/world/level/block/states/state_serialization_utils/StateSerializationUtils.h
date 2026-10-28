@@ -31,6 +31,7 @@
 #include "mc/world/level/block/PortalAxis.h"
 #include "mc/world/level/block/PotentSulfurState.h"
 #include "mc/world/level/block/PrismarineBlockType.h"
+#include "mc/world/level/block/RedstoneSide.h"
 #include "mc/world/level/block/SandType.h"
 #include "mc/world/level/block/SandstoneType.h"
 #include "mc/world/level/block/SaplingType_DEPRECATED.h"
@@ -118,6 +119,8 @@ MCAPI ::StateSerializationUtils::EnumStateMapper<::PortalAxis> const& PORTAL_AXI
 MCAPI ::StateSerializationUtils::EnumStateMapper<::PotentSulfurState> const& POTENT_SULFUR_STATE_MAPPER();
 
 MCAPI ::StateSerializationUtils::EnumStateMapper<::PrismarineBlockType> const& PRISMARINE_BLOCK_TYPE_MAPPER();
+
+MCAPI ::StateSerializationUtils::EnumStateMapper<::RedstoneSide> const& REDSTONE_SIDE_MAPPER();
 
 MCAPI ::StateSerializationUtils::EnumStateMapper<::SandstoneType> const& SANDSTONE_TYPE_MAPPER();
 

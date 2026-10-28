@@ -17,6 +17,8 @@ MCAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
 
 MCAPI void initializeAgent(::EntityContext& entityContext);
 
+MCAPI void initializeArmorStand(::EntityContext& entityContext);
+
 MCAPI void initializeCat(::EntityContext& entityContext);
 
 MCAPI void initializeChicken(::EntityContext& entityContext);

@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockCollisionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
+    MCAPI BlockCollisionBoxDescription(::Vec3 const& min, ::Vec3 const& max, bool hasLegacyCoordinates);
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
+    MCAPI void* $ctor(::Vec3 const& min, ::Vec3 const& max, bool hasLegacyCoordinates);
     // NOLINTEND
 
 public:

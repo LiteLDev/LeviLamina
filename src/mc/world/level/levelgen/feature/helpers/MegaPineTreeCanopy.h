@@ -40,8 +40,8 @@ public:
         ::Random&                        random,
         ::RenderParams&,
         ::TreeHelper::TreeParams const& treeParams,
-        ::std::vector<::BlockPos> const&,
-        ::std::vector<::ITreeCanopy::BranchSize> const&
+        int,
+        ::std::vector<::ITreeCanopy::AttachmentInfo> const&
     ) const /*override*/;
     // NOLINTEND
 
@@ -55,8 +55,8 @@ public:
         ::Random&                        random,
         ::RenderParams&,
         ::TreeHelper::TreeParams const& treeParams,
-        ::std::vector<::BlockPos> const&,
-        ::std::vector<::ITreeCanopy::BranchSize> const&
+        int,
+        ::std::vector<::ITreeCanopy::AttachmentInfo> const&
     ) const;
 
 

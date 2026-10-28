@@ -15,10 +15,10 @@ public:
     // NOLINTBEGIN
     virtual ~IWorkProducer() = default;
 
-    virtual void addAsyncWork(::std::unique_ptr<::IAsyncWorkItem>) = 0;
+    virtual void addAsyncWork(::std::unique_ptr<::IAsyncWorkItem> item, ::AssetLoadWorkKey orderHint) = 0;
 
-    virtual void addSyncWork(::AssetLoadWorkKey const&, ::std::unique_ptr<::ISyncWorkItem>) = 0;
+    virtual void addSyncWork(::AssetLoadWorkKey const& key, ::std::unique_ptr<::ISyncWorkItem> item) = 0;
 
-    virtual void addFence(::AssetLoadWorkKey const&, ::std::unique_ptr<::ISyncWorkItem>) = 0;
+    virtual void addFence(::AssetLoadWorkKey const& key, ::std::unique_ptr<::ISyncWorkItem> item) = 0;
     // NOLINTEND
 };

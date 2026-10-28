@@ -38,6 +38,12 @@ public:
     // NOLINTBEGIN
     MCAPI void $WriteLog(char const* message, uint64 length);
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace OreUI

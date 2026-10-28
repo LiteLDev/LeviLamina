@@ -49,7 +49,7 @@ isAddressWithinCIDRMasks_IPv4(::std::string const& ipAddrStr, ::std::vector<::st
 MCNAPI bool
 isAddressWithinCIDRMasks_IPv6(::std::string const& ipAddrStr, ::std::vector<::std::string> const& ipAddressCIDRMasks);
 
-MCNAPI bool isValidHostname(::std::string const& address);
+MCNAPI bool isValidHostname(::std::string_view address);
 
 MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 #endif
@@ -64,15 +64,17 @@ MCNAPI bool parseOutCIDRValue(::std::string& modifiableAddress, int& CIDRValue);
 
 MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
 
-#ifdef LL_PLAT_C
 MCNAPI ::std::string setQueryParameter(::std::string_view url, ::std::string_view key, ::std::string_view value);
 
+#ifdef LL_PLAT_C
 MCNAPI bool startsWithMatchingFullPathSegments(::std::string_view route, ::std::string_view start);
 
 MCNAPI ::std::string stripProtocol(::std::string const& url);
+#endif
 
 MCNAPI ::std::string stripQueryParameters(::std::string const& url);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::optional<::std::string> urlDecode(::std::string_view value, bool replacePlusWithSpace);
 #endif
 

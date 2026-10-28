@@ -106,6 +106,8 @@ public:
         ::BlockVolume&    volume
     ) const;
 
+    MCAPI void initialize(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
+
 #ifdef LL_PLAT_C
     MCAPI bool isPlaceHolderSubChunk() const;
 #endif

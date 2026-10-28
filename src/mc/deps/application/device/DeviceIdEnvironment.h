@@ -12,20 +12,7 @@ public:
     // clang-format on
 
     // DeviceIdEnvironment inner types define
-    struct RecordPathInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk50ea9a;
-        ::ll::UntypedStorage<1, 1>  mUnka4ffc5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RecordPathInfo& operator=(RecordPathInfo const&);
-        RecordPathInfo(RecordPathInfo const&);
-        RecordPathInfo();
-    };
+    struct RecordPathInfo {};
 
 public:
     // member variables

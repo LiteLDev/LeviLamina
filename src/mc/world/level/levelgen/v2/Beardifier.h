@@ -19,6 +19,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::Rigid>>          mPieces;
     ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawJunction>> mJunctions;
+    ::ll::TypedStorage<4, 4, int>                                            mMinAffectedY;
+    ::ll::TypedStorage<4, 4, int>                                            mMaxAffectedY;
     // NOLINTEND
 
 public:

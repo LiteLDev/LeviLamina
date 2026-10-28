@@ -40,7 +40,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
+#ifdef LL_PLAT_S
+    MCAPI void $applyNaturalSlowdown(::BlockSource& region);
+#else // LL_PLAT_C
     MCFOLD void $applyNaturalSlowdown(::BlockSource& region);
+#endif
 
     MCFOLD ::MinecartType $getType();
 

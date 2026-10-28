@@ -155,7 +155,7 @@ public:
 
     MCAPI void finishReport();
 
-    MCAPI bool getHasReachedReportLimit() const;
+    MCAPI bool getHasReachedWarningThreshold() const;
 
     MCAPI bool isPartyChatAvailable() const;
 

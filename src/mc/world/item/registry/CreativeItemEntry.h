@@ -25,16 +25,16 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     CreativeItemEntry();
 
-#else // LL_PLAT_C
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI CreativeItemEntry(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,
@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,

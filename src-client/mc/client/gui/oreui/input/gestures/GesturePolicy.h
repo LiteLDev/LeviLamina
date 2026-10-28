@@ -12,6 +12,7 @@
 // clang-format off
 namespace OreUI { class ITouchSystem; }
 namespace OreUI { struct GestureParameters; }
+namespace OreUI { struct TouchEventData; }
 // clang-format on
 
 namespace OreUI {
@@ -63,6 +64,8 @@ public:
         ::std::function<::std::chrono::milliseconds()> const& getTime,
         bool                                                  isTTSEnabled
     );
+
+    MCAPI void onTouchesUpdate(::std::vector<::OreUI::TouchEventData> const& events);
     // NOLINTEND
 
 public:

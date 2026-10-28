@@ -23,9 +23,11 @@ public:
 
     virtual bool canReserve(::BlockPos const&) const /*override*/;
 
-    virtual bool acquired(::BlockPos const&) const /*override*/;
+    virtual bool
+    acquired(::BlockPos const&, ::mce::PointLightParameters const&, ::PointLighting::AnalyticLightResources&) const
+        /*override*/;
 
-    virtual void reserve(
+    virtual void beginTransition(
         ::BlockPos const&,
         ::mce::PointLightParameters const&,
         float const,
@@ -33,6 +35,12 @@ public:
     ) /*override*/;
 
     virtual void release(::BlockPos const&, ::PointLighting::AnalyticLightResources&) /*override*/;
+
+    virtual void refresh(
+        ::BlockPos const&,
+        ::mce::PointLightParameters const&,
+        ::PointLighting::AnalyticLightResources&
+    ) /*override*/;
 
     virtual void advance(::BlockPos const&, ::PointLighting::AnalyticLightResources&, float) /*override*/;
 

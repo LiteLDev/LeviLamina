@@ -64,7 +64,8 @@ public:
         ::std::optional<::NetherNet::NetworkID>                      networkId,
         ::Bedrock::NonOwnerPointer<::SignalingService>               signalingService,
         ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
-        ::std::unique_ptr<::IPacketSerializationController>          packetController
+        ::std::unique_ptr<::IPacketSerializationController>          packetController,
+        ::std::shared_ptr<void>                                      httpLibraryToken
     );
 
 #ifdef LL_PLAT_C
@@ -75,8 +76,6 @@ public:
 #endif
 
     MCAPI ::NetworkIdentifier getLocalNetworkId() const;
-
-    MCAPI ::std::string getMultiplayerCorrelationId() const;
 
     MCAPI bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
 
@@ -101,7 +100,8 @@ public:
         ::std::optional<::NetherNet::NetworkID>                      networkId,
         ::Bedrock::NonOwnerPointer<::SignalingService>               signalingService,
         ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
-        ::std::unique_ptr<::IPacketSerializationController>          packetController
+        ::std::unique_ptr<::IPacketSerializationController>          packetController,
+        ::std::shared_ptr<void>                                      httpLibraryToken
     );
     // NOLINTEND
 };

@@ -17,6 +17,8 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/utilities/GetCollisionShapeViews.h"
+#include "mc/entity/utilities/ViewEachWithBlockSourceArgs.h"
 #include "mc/util/BaseGameVersion.h"
 
 // auto generated forward declare list
@@ -41,6 +43,7 @@ struct ExitFromPassengerFlagComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
 struct HorseFlagComponent;
+struct IsBeingTeleportedFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct MobBodyRotationComponent;
 struct MobFlagComponent;
@@ -96,7 +99,139 @@ struct ExitVehicleSystemImpl : public ::IStrictTickingSystem<::StrictExecutionCo
                                    ::GlobalWrite<>,
                                    ::EntityFactoryT<>>> {
 public:
+    // ExitVehicleSystemImpl inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
     // ExitVehicleSystemImpl inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            96,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::StopRidingRequestComponent const>,
+                ::Exclude<::IsBeingTeleportedFlagComponent const>,
+                ::PassengerComponent const,
+                ::AABBShapeComponent const,
+                ::StateVectorComponent const,
+                ::OffsetsComponent const,
+                ::ActorDataSeatOffsetComponent const,
+                ::ActorRotationComponent,
+                ::Optional<::ExitFromPassengerFlagComponent const>,
+                ::Optional<::ActorIsBeingDestroyedFlagComponent const>,
+                ::Optional<::EjectedByActivatorRailFlagComponent const>>>
+            mPassengers;
+        ::ll::TypedStorage<
+            8,
+            72,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::VehicleComponent>,
+                ::Exclude<::DoesServerAuthOnlyDismountFlagComponent>,
+                ::StateVectorComponent const,
+                ::ActorRotationComponent const,
+                ::PostTickPositionDeltaComponent const,
+                ::Optional<::MovementInterpolatorComponent const>>>
+                                                                                       mVehicles;
+        ::ll::TypedStorage<8, 8, ::EntityModifier<::ActorSetPositionRequestComponent>> mModifier;
+        ::ll::TypedStorage<8, 32, ::ViewEachWithBlockSourceArgs>                       mBlockSource;
+        ::ll::TypedStorage<8, 728, ::GetCollisionShapeViews>                           mCollisionViews;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Views();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit Views(
+            ::StrictExecutionContext<
+                ::Filter<
+                    ::CanStandOnPowderSnowComponent,
+                    ::CanStandOnPowderSnowFromEquipmentComponent,
+                    ::HorseFlagComponent,
+                    ::MobFlagComponent,
+                    ::ParrotFlagComponent,
+                    ::VehicleComponent,
+                    ::CamelFlagComponent,
+                    ::PlayerComponent,
+                    ::StopRidingRequestComponent>,
+                ::Read<
+                    ::AABBShapeComponent,
+                    ::MovementAbilitiesComponent,
+                    ::ActorTypeComponent,
+                    ::FallDistanceComponent,
+                    ::PassengerComponent,
+                    ::ActorGameTypeComponent,
+                    ::ActorDataFlagComponent,
+                    ::VehicleComponent,
+                    ::ActorRotationComponent,
+                    ::MobBodyRotationComponent,
+                    ::RenderRotationComponent,
+                    ::StandAnimationComponent,
+                    ::OffsetsComponent,
+                    ::VanillaOffsetComponent,
+                    ::PassengerRenderingRidingOffsetComponent,
+                    ::DimensionTypeComponent,
+                    ::EjectedByActivatorRailFlagComponent,
+                    ::PostTickPositionDeltaComponent>,
+                ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+                ::AddRemove<::ActorSetPositionRequestComponent>,
+                ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>& context
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::StrictExecutionContext<
+                ::Filter<
+                    ::CanStandOnPowderSnowComponent,
+                    ::CanStandOnPowderSnowFromEquipmentComponent,
+                    ::HorseFlagComponent,
+                    ::MobFlagComponent,
+                    ::ParrotFlagComponent,
+                    ::VehicleComponent,
+                    ::CamelFlagComponent,
+                    ::PlayerComponent,
+                    ::StopRidingRequestComponent>,
+                ::Read<
+                    ::AABBShapeComponent,
+                    ::MovementAbilitiesComponent,
+                    ::ActorTypeComponent,
+                    ::FallDistanceComponent,
+                    ::PassengerComponent,
+                    ::ActorGameTypeComponent,
+                    ::ActorDataFlagComponent,
+                    ::VehicleComponent,
+                    ::ActorRotationComponent,
+                    ::MobBodyRotationComponent,
+                    ::RenderRotationComponent,
+                    ::StandAnimationComponent,
+                    ::OffsetsComponent,
+                    ::VanillaOffsetComponent,
+                    ::PassengerRenderingRidingOffsetComponent,
+                    ::DimensionTypeComponent,
+                    ::EjectedByActivatorRailFlagComponent,
+                    ::PostTickPositionDeltaComponent>,
+                ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+                ::AddRemove<::ActorSetPositionRequestComponent>,
+                ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>& context
+        );
+        // NOLINTEND
+    };
+
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
         ::Filter<
             ::CanStandOnPowderSnowComponent,
@@ -136,8 +271,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion const> mVersion;
-    ::ll::TypedStorage<1, 1, bool const>               mIsClient;
+    ::ll::TypedStorage<8, 944, ::std::optional<::ExitVehicleSystemImpl::Views>> mViews;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion const>                          mVersion;
+    ::ll::TypedStorage<1, 1, bool const>                                        mIsClient;
     // NOLINTEND
 
 public:
@@ -244,44 +380,10 @@ public:
             ::ActorRotationComponent const,
             ::PostTickPositionDeltaComponent const,
             ::Optional<::MovementInterpolatorComponent const>> const& vehicleView,
-        ::EntityModifier<::ActorSetPositionRequestComponent>&         modifier,
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnPowderSnowComponent,
-                ::CanStandOnPowderSnowFromEquipmentComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::StopRidingRequestComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::EjectedByActivatorRailFlagComponent,
-                ::PostTickPositionDeltaComponent>,
-            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
-            ::AddRemove<::ActorSetPositionRequestComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>&   executionContext,
-        bool                       isClientSide,
-        ::IConstBlockSource const& region
+        ::EntityModifier<::ActorSetPositionRequestComponent> const&   modifier,
+        bool                                                          isClientSide,
+        ::GetCollisionShapeViews const&                               collisionViews,
+        ::IConstBlockSource const&                                    region
     );
     // NOLINTEND
 

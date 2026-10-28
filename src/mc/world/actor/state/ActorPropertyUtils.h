@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/state/PropertyMetadata.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class EntityOverrides;
 class HashedString;
 class PropertyComponent;
+class PropertyGroup;
+class PropertyMetadata;
 struct ActorUniqueID;
 struct MolangScriptArg;
 struct PropertySyncData;
@@ -16,6 +21,12 @@ struct PropertySyncData;
 namespace ActorPropertyUtils {
 // functions
 // NOLINTBEGIN
+MCAPI ::PropertyMetadata const* _getMetadataIfTypeMatches(
+    ::PropertyGroup const&            propertyGroup,
+    uint64                            propertyNameHash,
+    ::PropertyMetadata::ContainedType propertyType
+);
+
 MCAPI void addPendingEventResponseChange(
     ::PropertyComponent const& props,
     ::Actor&                   actor,

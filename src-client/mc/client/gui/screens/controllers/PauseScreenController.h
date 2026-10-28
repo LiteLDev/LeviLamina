@@ -34,7 +34,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::UserDataScreenController>>       mUserDataScreenController;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PermissionsScreenController>>    mPermissionsScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PauseScreenModel>>             mPauseScreenModel;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                     mProfileImage;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions>                    mProfileImage;
     ::ll::TypedStorage<1, 1, bool>                                               mOldPauseStatus;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mOnPlayerListEntryRemovedSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mPauseOptionSubscription;

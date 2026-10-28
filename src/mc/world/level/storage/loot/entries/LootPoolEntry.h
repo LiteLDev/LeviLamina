@@ -12,6 +12,7 @@ class LootItemCondition;
 class LootTableContext;
 class Random;
 class SemVersionConstant;
+namespace Json { class Value; }
 // clang-format on
 
 class LootPoolEntry {
@@ -40,32 +41,26 @@ public:
     virtual bool
     _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const = 0;
 
-#ifdef LL_PLAT_S
     virtual ~LootPoolEntry() = default;
-#else // LL_PLAT_C
-    virtual ~LootPoolEntry();
-#endif
 
     virtual ::LootPoolEntry::EntryType getEntryType() const = 0;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
+        ::Json::Value const& entryJson,
+        bool                 usingUpcomingCreatorFeaturesExperiment,
+        ::SemVersion const&  jsonVersion
+    );
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& START_VERSIONING_VERSION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

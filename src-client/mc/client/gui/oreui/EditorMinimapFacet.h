@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
-#include "mc/common/editor/MinimapMarkerType.h"
-#include "mc/common/editor/MinimapTrackingMode.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/editor/MinimapMarkerType.h"
+#include "mc/editor/MinimapTrackingMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -109,24 +109,13 @@ public:
     ::ll::TypedStorage<8, 8, ::Editor::Services::EditorMinimapServiceProvider*> mMinimapService;
     ::ll::TypedStorage<8, 8, ::Editor::ServiceProviderCollection*>              mServices;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData>> mMinimaps;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::unordered_map<::std::string, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>>>
-                                                                                                  mMarkers;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>> mGlobalMarkers;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData>>
         mMinimapsSnapshot;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::unordered_map<::std::string, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>>>
-        mMarkersSnapshot;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>>
                                                                    mGlobalMarkersSnapshot;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mVisibleMinimapUIs;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mMinimapDataChangedSub;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mMarkersChangedSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mMeMarkerChangedSub;
     // NOLINTEND
 
@@ -147,17 +136,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EditorMinimapFacet(::Editor::ServiceProviderCollection* services);
 
-    MCAPI void _handleMarkersChanged(::mce::UUID const& minimapId);
-
     MCAPI void _handleMeMarkerChanged();
 
     MCAPI void _handleMinimapDataChanged(::mce::UUID const& minimapId);
 
-    MCAPI ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData> const& getGlobalMarkers();
-
-    MCFOLD ::std::
-        unordered_map<::std::string, ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData>> const&
-        getMarkers();
+    MCFOLD ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData> const& getGlobalMarkers();
 
     MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData> const& getMinimaps();
 

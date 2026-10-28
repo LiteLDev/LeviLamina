@@ -16,9 +16,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::dragon::RenderMetadata createRenderMetadata(
-        int64 const                                             id,
+        int64                                                   id,
         ::mce::framebuilder::CustomSurfaceShaderMetadata const& cssMetadata,
-        bool const                                              isItem,
+        bool                                                    isItem,
         ::OffscreenCaptureDescription const&                    offscreenCaptureDescription
     );
     // NOLINTEND

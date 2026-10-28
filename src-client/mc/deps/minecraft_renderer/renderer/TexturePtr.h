@@ -24,10 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TexturePtr();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TexturePtr();
-
     MCAPI TexturePtr(::std::shared_ptr<::mce::TextureGroupBase> group, ::ResourceLocation const& resourceLocation);
 
     MCAPI TexturePtr(
@@ -50,8 +52,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> group, ::ResourceLocation const& resourceLocation);
 
     MCAPI void* $ctor(

@@ -37,7 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::v1_21_60::Spawn::Herd from(::SharedTypes::Legacy::Spawn::Herd const& val);
+    MCFOLD static ::SharedTypes::v1_21_60::Spawn::Herd from(::SharedTypes::Legacy::Spawn::Herd const& val);
     // NOLINTEND
 
 public:

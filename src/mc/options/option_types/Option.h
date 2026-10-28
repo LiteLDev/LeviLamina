@@ -102,13 +102,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Option::Impl>> mImpl;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Option();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -130,7 +127,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI Option(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
@@ -141,24 +137,26 @@ public:
         ::GameVersion        version
     );
 
+#ifdef LL_PLAT_C
     MCAPI void _resetOption(::InputMode inputMode, bool saveOptionChange);
+#endif
 
     MCAPI void _updatePropertyVector(
         ::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector,
         ::std::string const&                                      value
     );
 
+#ifdef LL_PLAT_C
     MCAPI bool canModify() const;
 
     MCAPI bool isDefaultValue(::InputMode inputMode) const;
 
     MCAPI bool isNewVersion(::GameVersion currentVersion) const;
+#endif
 
     MCAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
 
-    MCAPI ::Bedrock::PubSub::Subscription
-    registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
-
+#ifdef LL_PLAT_C
     MCAPI void setCoerceSaveValueCallback(::std::function<int(int)> callback);
 
     MCAPI void setCoerceValueCallback(::std::function<::std::string(::std::string const&)> f);
@@ -178,15 +176,14 @@ public:
     MCAPI static bool read(::std::string const& valueString, int& output);
 
     MCAPI static bool read(::std::string const& valueString, float& output);
+#endif
 
     MCAPI static bool read(::std::string const& valueString, bool& output);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
@@ -196,7 +193,6 @@ public:
         ::OptionType         optionType,
         ::GameVersion        version
     );
-#endif
     // NOLINTEND
 
 public:

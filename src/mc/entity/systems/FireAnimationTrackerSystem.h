@@ -13,6 +13,7 @@ class EntityContext;
 class EntityRegistry;
 class FireAnimationTrackerComponent;
 struct OnFireComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class FireAnimationTrackerSystem : public ::ITickingSystem {
@@ -32,6 +33,8 @@ public:
         ::FireAnimationTrackerComponent&    fireAnimationTrackerComponent,
         ::Optional<::OnFireComponent const> onFireComponent
     );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
 #endif
     // NOLINTEND
 

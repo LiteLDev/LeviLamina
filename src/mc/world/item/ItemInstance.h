@@ -17,12 +17,12 @@ class ItemInstance : public ::ItemStackBase {
 public:
     // prevent constructor by default
     ItemInstance& operator=(ItemInstance const&);
-    ItemInstance();
 
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
     ItemInstance& operator=(ItemInstance const&);
+    ItemInstance();
 
 #endif
 public:
@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI ItemInstance();
 #endif
 
@@ -62,7 +62,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void* $ctor();
 #endif
 

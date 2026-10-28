@@ -41,7 +41,7 @@ public:
         // NOLINTBEGIN
         MCAPI BiomeReplacement(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
 
-        MCAPI bool operator==(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&) const;
+        MCFOLD bool operator==(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&) const;
         // NOLINTEND
 
     public:

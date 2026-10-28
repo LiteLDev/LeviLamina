@@ -38,6 +38,8 @@ public:
 
     virtual void onFrameTransition(uchar previousFrameType);
 
+    virtual ::std::string_view getName() const;
+
     virtual bool isConditionalAndExternalProfiler() const;
 
     virtual bool isActivelyConsumingData() const;
@@ -174,6 +176,8 @@ public:
     MCNAPI void $setProfileStamp(::std::string_view);
 
     MCNAPI void $onFrameTransition(uchar previousFrameType);
+
+    MCNAPI ::std::string_view $getName() const;
 
     MCNAPI bool $isConditionalAndExternalProfiler() const;
 

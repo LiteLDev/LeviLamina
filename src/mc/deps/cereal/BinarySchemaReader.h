@@ -32,6 +32,8 @@ public:
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
 
+    virtual ::std::optional<uint64> remainingInputBytes() const /*override*/;
+
     virtual ::cereal::SchemaRWType expectedType() const /*override*/;
 
     virtual ::Bedrock::Result<void> asNull() /*override*/;
@@ -86,6 +88,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isValid() const;
+
+    MCFOLD ::std::optional<uint64> $remainingInputBytes() const;
 
     MCFOLD ::cereal::SchemaRWType $expectedType() const;
 

@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/v1_26_20/block/BlockArchetype.h"
 #include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct VanillaBlockData {
@@ -30,12 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~VanillaBlockData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

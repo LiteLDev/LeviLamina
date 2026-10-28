@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class AddActorPacket;
 class PredictedMovementComponent;
 struct ActorHeadRotationComponent;
 struct ActorRotationComponent;
@@ -38,8 +37,6 @@ MCAPI void _tickPredictedMovement(
 
 #ifdef LL_PLAT_C
 MCAPI void _updateRuntimeData(::PredictedMovementComponent& component);
-
-MCAPI bool tryAddPredictionMoveData(::AddActorPacket const& packet, ::PredictedMovementComponent* component);
 #endif
 // NOLINTEND
 

@@ -101,7 +101,7 @@ public:
 
     MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCFOLD ::std::optional<::Vec2> $getRotation() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
     MCFOLD ::Level* $getLevel() const;
 

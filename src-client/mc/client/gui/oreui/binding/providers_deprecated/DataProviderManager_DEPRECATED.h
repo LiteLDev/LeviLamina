@@ -2,14 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
-class IAdvancedGraphicsOptions;
-class ILayoutServiceProvider;
 class IMinecraftGame;
+class MainMenuScreenModel;
 class SuggestedContentOffersProvider;
 namespace OreUI { class WorldSettingsProvider_DEPRECATED; }
 // clang-format on
@@ -32,20 +28,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DataProviderManager_DEPRECATED(
-        ::IMinecraftGame&                                                minecraftGame,
-        ::ILayoutServiceProvider&                                        layoutServiceProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
+        ::IMinecraftGame&                        minecraftGame,
+        ::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IMinecraftGame&                                                minecraftGame,
-        ::ILayoutServiceProvider&                                        layoutServiceProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
-    );
+    MCAPI void* $ctor(::IMinecraftGame& minecraftGame, ::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel);
     // NOLINTEND
 };
 

@@ -82,11 +82,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~LootItemFunction() = default;
-#else // LL_PLAT_C
     virtual ~LootItemFunction();
-#endif
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const = 0;
 
@@ -94,9 +90,9 @@ public:
 
     virtual int applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
 
-    virtual void apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    virtual void apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
-    virtual int apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
+    virtual int apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
     // NOLINTEND
 
 public:
@@ -131,9 +127,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:
@@ -141,9 +135,9 @@ public:
     // NOLINTBEGIN
     MCAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
 
-    MCAPI void $apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI int $apply26U5(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
+    MCAPI int $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
 
 
     // NOLINTEND

@@ -48,6 +48,12 @@ public:
         ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string, ::std::string>>
                                                                     mDownloadBackup;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mCancelBackupDownload;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string, ::std::string, ::std::string>>
+                                                                    mDownload;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mResetDownload;
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/blockactor/BlockActorRenderer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
@@ -13,10 +14,13 @@ class BannerModel;
 class BaseActorRenderContext;
 class BlockActor;
 class ItemStack;
+class ResourceLoadManager;
+class ResourcePackManager;
 class TextureAtlas;
 struct BlockActorRenderData;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class Color; }
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class BannerRenderer : public ::BlockActorRenderer {
@@ -34,6 +38,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BannerRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void
@@ -43,6 +51,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BannerRenderer(
+        ::std::shared_ptr<::mce::TextureGroup>               textureGroup,
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
+    );
+
     MCAPI void _setConstants(
         ::BaseActorRenderContext& baseActorRenderContext,
         int                       index,
@@ -68,6 +82,16 @@ public:
         float                           scale,
         bool                            asStanding,
         float                           lightMultiplier
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::mce::TextureGroup>               textureGroup,
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
     );
     // NOLINTEND
 

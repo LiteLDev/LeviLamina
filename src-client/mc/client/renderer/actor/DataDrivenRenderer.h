@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/actor/ActorRenderer.h"
+#include "mc/client/renderer/actor/DataDrivenRendererLifecycle.h"
 #include "mc/deps/core/container/small_vector_base.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
@@ -31,9 +32,10 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString const>                                                 mName;
     ::ll::TypedStorage<1, 1, bool const>                                                            mIsAttachable;
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                                    mDefaultSkin;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode> mUpdateBonesAndEffectsIfOffScreen;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode> mUpdateEffectsIfOffScreen;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode> mHideHeldItems;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                   mUpdateBonesAndEffectsIfOffScreen;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                   mUpdateEffectsIfOffScreen;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                   mHideHeldItems;
+    ::ll::TypedStorage<4, 4, ::DataDrivenRendererLifecycle const> mLifecycle;
     // NOLINTEND
 
 public:
@@ -75,44 +77,15 @@ public:
     // NOLINTBEGIN
     MCAPI DataDrivenRenderer(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
-        ::std::shared_ptr<::mce::TextureGroup>       textureGroup
+        ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
+        ::DataDrivenRendererLifecycle                lifecycle
     );
-
-    MCAPI void addAgentAdditionalRendering();
-
-    MCAPI void addBalloonAdditionalRendering();
-
-    MCAPI void addEnderCrystalAdditionalRendering();
-
-    MCAPI void addEnderDragonAdditionalRendering();
-
-    MCAPI void addEnderManAdditionalRendering(::BlockTessellator* blockTesselator);
-
-    MCAPI void addFoxAdditionalRendering();
 
     MCAPI void addGuardianAdditionalRendering();
 
     MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void addIronGolemAdditionalRendering(::BlockTessellator* blockTesselator);
-
     MCAPI void addMinecartAdditionalRendering(::BlockTessellator& commonBlockRenderer);
-
-    MCAPI void addMushroomCowAdditionalRendering(::BlockTessellator& commonBlockRenderer);
-
-    MCAPI void addPandaAdditionalRendering();
-
-    MCAPI void addSnowGolemAdditionalRendering(::BlockTessellator* blockTesselator);
-
-    MCAPI void addVexAdditionalRendering();
-
-    MCAPI void addVillagerAdditionalRendering();
-
-    MCFOLD void addVillagerV2AdditionalRendering();
-
-    MCFOLD void addWanderingTraderAdditionalRendering();
-
-    MCAPI void addWitchAdditionalRendering();
     // NOLINTEND
 
 public:
@@ -124,8 +97,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::shared_ptr<::ActorResourceDefinition> definition, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ActorResourceDefinition> definition,
+        ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
+        ::DataDrivenRendererLifecycle                lifecycle
+    );
     // NOLINTEND
 
 public:

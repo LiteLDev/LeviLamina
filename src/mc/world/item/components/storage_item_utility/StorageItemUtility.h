@@ -6,6 +6,7 @@
 // clang-format off
 class CompoundTag;
 class ContainerManagerController;
+class IContainerRegistryAccess;
 class ItemStackBase;
 class SaveContext;
 struct FullContainerName;
@@ -28,6 +29,10 @@ getStorageItemWeightDataClient(::ItemStackBase const& item, ::ContainerManagerCo
 
 MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataServer(::ItemStackBase const& item);
+
+#ifdef LL_PLAT_S
+MCAPI bool isStorageItemEmpty(::ItemStackBase const& storageItem, ::IContainerRegistryAccess& containerRegistryAccess);
+#endif
 
 MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
     ::std::unique_ptr<::CompoundTag> tag,

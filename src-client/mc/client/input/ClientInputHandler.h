@@ -5,11 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputBindingMode.h"
-#include "mc/deps/input/InputMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ClientBindingFactory;
 class ClientInputHandlerProxy;
 class ClientInputMappingFactory;
@@ -17,7 +15,6 @@ class Config;
 class IClientInstance;
 class IGameModuleApp;
 class InputHandler;
-class ItemStack;
 class ScreenContext;
 struct ActorDataFlagComponent;
 struct MobEffectsComponent;
@@ -69,21 +66,13 @@ public:
         ::IGameModuleApp&                                                          gameModuleApp
     );
 
-    MCAPI ::Actor* _interactWithEntity() const;
-
     MCAPI ::std::string _interactWithImmersiveReader() const;
 
-    MCAPI ::ItemStack const& _interactWithItem() const;
-
-    MCAPI bool _shouldUseGameInputMapping() const;
+    MCAPI bool allowPicking() const;
 
     MCAPI bool canInteract() const;
 
-    MCAPI bool canPaddle() const;
-
     MCAPI ::std::string getBoatExitText() const;
-
-    MCAPI ::InputMode getCurrentInputMode() const;
 
     MCAPI void getCursorPos(float& xCursor, float& yCursor) const;
 
@@ -97,8 +86,6 @@ public:
 
     MCAPI void onConfigChanged(::Config const& c);
 
-    MCAPI void popInputMapping(bool inGame);
-
     MCAPI void pushInputMapping(bool inGame);
 
     MCAPI void releaseButtonsAndSticks();
@@ -109,13 +96,7 @@ public:
 
     MCAPI void setBlockSelectToggle(bool value);
 
-    MCAPI void setDisableInput(bool disable);
-
-    MCAPI void setSuspendDirectionalInput(bool suspendDirectionalInput);
-
-    MCAPI void setSuspendInput(bool suspendInput);
-
-    MCAPI bool showBoatExit() const;
+    MCAPI bool showImmersiveReader() const;
 
     MCAPI void updateInputMapping();
 

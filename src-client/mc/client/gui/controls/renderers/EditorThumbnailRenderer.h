@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::UIScene>>                                  mUIScene;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StructureVolumeRenderer>>                  mStructureVolumeRenderer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenContext>>                             mScreenContext;
-    ::ll::TypedStorage<8, 24, ::mce::ClientResourcePointer<::dragon::ResolvedImageResource>> mTargetImage;
+    ::ll::TypedStorage<8, 16, ::mce::ClientResourcePointer<::dragon::ResolvedImageResource>> mTargetImage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>>                               mChunkSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockSource>>                               mBlockSource;
     ::ll::TypedStorage<8, 32, ::std::string>                                                 mLabel;

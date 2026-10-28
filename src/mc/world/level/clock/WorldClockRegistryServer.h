@@ -56,8 +56,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI WorldClockRegistryServer(
-        ::cereal::ReflectionCtx&                                      cerealContext,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
+        ::cereal::ReflectionCtx&                            cerealContext,
+        ::Bedrock::NonOwnerPointer<::LevelEventCoordinator> eventCoordinator
     );
 
     MCAPI bool loadData(::LevelStorage const& levelStorage);
@@ -76,10 +76,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::cereal::ReflectionCtx&                                      cerealContext,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
-    );
+    MCAPI void*
+    $ctor(::cereal::ReflectionCtx& cerealContext, ::Bedrock::NonOwnerPointer<::LevelEventCoordinator> eventCoordinator);
     // NOLINTEND
 
 public:
@@ -88,11 +86,5 @@ public:
     MCAPI void $tick(::PacketSender& packetSender, ::LevelData const& levelData);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

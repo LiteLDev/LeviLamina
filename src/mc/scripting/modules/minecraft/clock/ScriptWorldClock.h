@@ -33,8 +33,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>              mScope;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::WorldClock>> mClock;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::WorldClock*>>  mClock;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClock>
-    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Bedrock::NotNullNonOwnerPtr<::WorldClock> clock);
+    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::WorldClock*> clock);
     // NOLINTEND
 };
 

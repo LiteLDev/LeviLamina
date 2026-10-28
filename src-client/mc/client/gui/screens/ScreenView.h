@@ -152,6 +152,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mLastPointInTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mCurrentTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                mTimeAccumulator;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::steady_clock::time_point>> mScreenEntranceTime;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::nanoseconds>>              mTimeToFirstRender;
     ::ll::TypedStorage<4, 4, ::std::chrono::duration<float, ::std::ratio<1, 1>> const>  mFixedAnimationUpdateRate;
     ::ll::TypedStorage<4, 4, float>                                                     mKeyboardHeight;
     ::ll::TypedStorage<1, 1, bool>                                                      mShouldShowKeyboard;
@@ -250,10 +252,6 @@ public:
 
     MCAPI void _handleStickScrolling(::DirectionId directionId);
 
-    MCAPI void _passViewCommand();
-
-    MCAPI void _processControllerCursorMove(::DirectionId directionId);
-
     MCAPI void _processControllerDirection(::DirectionId directionId);
 
     MCAPI void _processEvents(::ScreenInputContext& context);
@@ -289,8 +287,6 @@ public:
     MCAPI void _setGamepadCursorFocusMode(bool focusModeEnabled);
 
     MCAPI void _setKeyboardHeight(float height);
-
-    MCAPI void _setupControlFactoryCallbacks();
 
     MCAPI void _switchTabToTargetIndex(::std::vector<::std::shared_ptr<::UIControl>>& tabControls, int targetIndex);
 
@@ -328,7 +324,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isFocusEnabled(::std::shared_ptr<::UIControl> const& control);
+    MCAPI static bool _hasStateControlInDifferentTree(
+        ::UIControl const*                  currentVisualTreeRoot,
+        ::std::weak_ptr<::UIControl> const& stateControl
+    );
 
     MCAPI static bool _isFocusMagnetEnabled(::std::shared_ptr<::UIControl> const& control);
 

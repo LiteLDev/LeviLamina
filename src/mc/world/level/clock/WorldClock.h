@@ -12,12 +12,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class LevelEventCoordinator;
 class PacketSender;
 class TimeMarker;
 struct TimeMarkerError;
 struct WorldClockData;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class WorldClock {
@@ -57,10 +57,11 @@ public:
             ::std::less<uint64>,
             ::std::vector<uint64>,
             ::std::vector<::Bedrock::UniqueOwnerPointer<::TimeMarker>>>>
-                                                                              mTimeMarkers;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                          mTimeMarkersToAdd;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                          mTimeMarkersToRemove;
-    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::WorldClock::DirtyFlags, 3>> mDirtyFlags;
+                                                                                   mTimeMarkers;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelEventCoordinator>> mLevelEventCoordinator;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                               mTimeMarkersToAdd;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                               mTimeMarkersToRemove;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::WorldClock::DirtyFlags, 3>>      mDirtyFlags;
     ::ll::TypedStorage<
         8,
         128,
@@ -104,6 +105,8 @@ public:
 
     MCAPI WorldClock(::WorldClock const& rhs);
 
+    MCAPI void _fireTimeMarkerEvents();
+
     MCAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
 
     MCAPI void _sendRemoveTimeMarker(::PacketSender& packetSender) const;
@@ -115,10 +118,17 @@ public:
     MCAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::TimeMarker>, ::TimeMarkerError>
     addTimeMarker(::TimeMarker const& timeMarker, bool isVanilla);
 
+#ifdef LL_PLAT_C
+    MCAPI void
+    initializeLevelEventCoordinator(::Bedrock::NonOwnerPointer<::LevelEventCoordinator> const eventCoordinator);
+#endif
+
     MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
 
     MCAPI ::std::optional<::TimeMarkerError>
     serverReloadCreatorTimeMarkers(::std::vector<::TimeMarker> const& timeMarkers);
+
+    MCAPI void setIsPaused(bool isPaused);
 
 #ifdef LL_PLAT_C
     MCAPI void tick();
@@ -127,12 +137,6 @@ public:
     MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker const> const tryGetTimeMarker(uint64 timeMarkerId) const;
 
     MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -10,9 +10,9 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/platform/brstd/function_ref.h"
 #include "mc/resources/IContentSourceRepository.h"
 #include "mc/resources/IResourcePackRepository.h"
+#include "mc/resources/ResourcePackSelectionPolicy.h"
 #include "mc/resources/repository_loading/IRepositoryLoader.h"
 
 // auto generated forward declare list
@@ -152,8 +152,11 @@ public:
 
     virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const /*override*/;
 
-    virtual ::std::shared_ptr<::ResourcePack>
-    getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const /*override*/;
+    virtual ::std::shared_ptr<::ResourcePack> getResourcePackSatisfiesPackId(
+        ::PackIdVersion const&        idAndVersion,
+        bool                          requireOwnership,
+        ::ResourcePackSelectionPolicy selectionPolicy
+    ) const /*override*/;
 
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const /*override*/;
 
@@ -284,8 +287,6 @@ public:
     );
 
     MCAPI void _postDeletePacks(::gsl::span<::ResourceLocation const> packLocations);
-
-    MCAPI void _removePacksIf(::brstd::function_ref<bool(::ResourcePack const&)> callback);
     // NOLINTEND
 
 public:
@@ -331,8 +332,11 @@ public:
 
     MCAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI ::std::shared_ptr<::ResourcePack>
-    $getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const;
+    MCAPI ::std::shared_ptr<::ResourcePack> $getResourcePackSatisfiesPackId(
+        ::PackIdVersion const&        idAndVersion,
+        bool                          requireOwnership,
+        ::ResourcePackSelectionPolicy selectionPolicy
+    ) const;
 
     MCAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
 

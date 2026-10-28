@@ -10,7 +10,6 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
-#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/deps/minecraft_renderer/resources/ServerTexture.h"
 #include "mc/world/phys/AABB.h"
 
@@ -46,39 +45,6 @@ public:
         ::ll::TypedStorage<4, 4, float>               mTranslateX;
         ::ll::TypedStorage<4, 4, float>               mTranslateY;
         ::ll::TypedStorage<8, 56, ::ResourceLocation> mServerResourceLocation;
-        ::ll::TypedStorage<8, 56, ::ResourceLocation> mAtlasResourceLocation;
-        ::ll::TypedStorage<8, 32, ::mce::TexturePtr>  mAtlasTexturePtr;
-        ::ll::TypedStorage<8, 8, uint64>              mAtlasTexturePtrHash;
-        ::ll::TypedStorage<8, 32, ::std::string>      mServerTextureName;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AtlasInfo& operator=(AtlasInfo const&);
-        AtlasInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI AtlasInfo(::UIThumbnailAtlasRenderer::AtlasInfo const&);
-
-        MCAPI AtlasInfo(::UIThumbnailAtlasRenderer::AtlasInfo&&);
-
-        MCAPI ~AtlasInfo();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::UIThumbnailAtlasRenderer::AtlasInfo const&);
-
-        MCAPI void* $ctor(::UIThumbnailAtlasRenderer::AtlasInfo&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -87,21 +53,21 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 232, ::UIThumbnailAtlasRenderer::AtlasInfo>                          mAtlasInfo;
+    ::ll::TypedStorage<8, 104, ::UIThumbnailAtlasRenderer::AtlasInfo>                          mAtlasInfo;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>                mClient;
-    ::ll::TypedStorage<8, 24, ::mce::ServerTexture>                                            mServerTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ServerTexture>                                            mServerTexture;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenContext>>                               mScreenContext;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseActorRenderContext>>                      mRenderContext;
     ::ll::TypedStorage<4, 24, ::AABB>                                                          mArea;
     ::ll::TypedStorage<4, 64, ::Matrix>                                                        mWorldMatrix;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                                                    mMesh;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                                                    mMesh;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::framebuilder::RenderUIMeshDescription>> mMeshDescription;
     ::ll::TypedStorage<4, 16, ::mce::Color>                                                    mTint;
     ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>                                    mClipRegion;
     ::ll::TypedStorage<8, 8, uint64>                                                           mMaxColumns;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::std::unordered_map<::HashedString, ::HashedString>>>
                                                                                              mSubstitutions;
-    ::ll::TypedStorage<8, 24, ::mce::ClientResourcePointer<::dragon::ResolvedImageResource>> mTargetImage;
+    ::ll::TypedStorage<8, 16, ::mce::ClientResourcePointer<::dragon::ResolvedImageResource>> mTargetImage;
     // NOLINTEND
 
 public:
@@ -121,7 +87,6 @@ public:
         ::OreUI::AtlasIndex&                         items,
         ::TaskGroup&                                 taskGroup,
         ::std::function<void(::cg::ImageBuffer&&)>&& callback,
-        bool                                         isResume,
         ::UIThumbnailAtlasRenderer::AtlasInfo const& atlasInfo
     );
 

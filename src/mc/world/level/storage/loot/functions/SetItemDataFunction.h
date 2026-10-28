@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/WeakPtr.h"
 #include "mc/world/level/storage/loot/RandomValueBounds.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
 // clang-format off
+class Item;
 class ItemStackBase;
 class LootItemCondition;
 class LootTableContext;
@@ -42,6 +44,27 @@ public:
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
 
     virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
+
+    virtual void apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
+        ::Item const*&       inOutItemDef,
+        ::std::string const& originalItemName,
+        ::Random&            random,
+        int&                 outResultAux
+    );
+
+    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
+        ::std::string const& originalItemName,
+        ::std::string const& itemRawNameId,
+        ::Random&            random,
+        int&                 outAux,
+        ::WeakPtr<::Item>&   outItem
+    );
     // NOLINTEND
 
 public:
@@ -58,6 +81,14 @@ public:
 
     MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
+    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

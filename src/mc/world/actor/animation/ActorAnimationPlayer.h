@@ -30,11 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ActorAnimationPlayer() = default;
-#else // LL_PLAT_C
-    virtual ~ActorAnimationPlayer();
-#endif
 
 #ifdef LL_PLAT_S
     virtual void applyToPose(
@@ -73,14 +69,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
@@ -97,11 +85,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

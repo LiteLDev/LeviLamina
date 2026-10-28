@@ -20,6 +20,7 @@ struct FallDistanceComponent;
 struct LavaTravelFlagComponent;
 struct MobTravelComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class LavaMoveSystem {
@@ -37,4 +38,10 @@ public:
         ::StateVectorComponent,
         ::Optional<::CanStandOnPowderSnowComponent const>,
         ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const>>;
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createLavaMoveSystem();
+    // NOLINTEND
 };

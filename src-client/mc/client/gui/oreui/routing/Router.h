@@ -88,8 +88,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     );
 
-    MCAPI ::std::vector<::OreUI::RouterLocation> _buildProjectedHistory() const;
-
     MCAPI void _onChange(
         ::std::optional<::OreUI::RouterLocation> const& oldLocation,
         ::std::optional<::OreUI::RouterLocation> const& currentLocation

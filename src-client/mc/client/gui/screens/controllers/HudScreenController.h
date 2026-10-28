@@ -24,8 +24,6 @@ class Block;
 class ClientInstanceScreenModel;
 class GameTipScreenController;
 class HudContainerManagerController;
-class Keymapping;
-class RemappingLayout;
 class ScoreboardScreenController;
 class UIPropertyBag;
 namespace Json { class Value; }
@@ -81,7 +79,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mOnBossEventWithPacketSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mOnBossEventSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mOnLevelSoundEvent;
-    ::ll::TypedStorage<1, 1, bool>                                                mEDUDiscoveryObserved;
+    ::ll::TypedStorage<1, 1, bool>                                                mEduDiscoveryObserved;
     ::ll::TypedStorage<4, 4, int>                                                 mInputDelayTimer;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mPopupItemText;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mPopupJukeboxText;
@@ -245,13 +243,7 @@ public:
 
     MCAPI void _getFloatCustomizableOptionValue(::OptionID optionID);
 
-    MCAPI ::Keymapping const& _getGamepadMapping(::Remapping::ActionEnum action) const;
-
     MCAPI float _getHudAlpha();
-
-    MCAPI ::Keymapping const& _getKeyboardMapping(::Remapping::ActionEnum action) const;
-
-    MCAPI ::Keymapping const& _getMapping(::Remapping::ActionEnum action, ::RemappingLayout const& layout) const;
 
     MCAPI void _handleNewActionBarMessage();
 

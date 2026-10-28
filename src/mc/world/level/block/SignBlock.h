@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
@@ -134,8 +135,6 @@ public:
     MCAPI static bool
     _canUseDye(::SignBlockActor& blockActor, ::SignTextSide side, ::mce::Color const& dyeColor, ::Player& player);
 
-    MCAPI static bool _canUseHoneyComb(::SignBlockActor& blockActor, ::Player& player);
-
     MCAPI static bool _canUseInkSac(::SignBlockActor& blockActor, ::SignTextSide side, ::Player& player);
 
 #ifdef LL_PLAT_C
@@ -149,7 +148,7 @@ public:
     );
 
     MCAPI static ::SignBlock::SignInteractionResult
-    getInteractResult(::Player& player, ::BlockPos const& pos, uchar face);
+    getInteractResult(::Player& player, ::BlockPos const& pos, uchar face, ::HandSlot handSlot);
 #endif
 
     MCAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
@@ -169,11 +168,7 @@ public:
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
-#else // LL_PLAT_C
-    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
-#endif
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 

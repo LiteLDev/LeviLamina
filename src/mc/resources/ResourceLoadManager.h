@@ -65,7 +65,7 @@ public:
         // NOLINTBEGIN
         MCNAPI ::Bedrock::Threading::Async<void> queue(
             ::brstd::move_only_function<::TaskResult()> threadedCallback,
-            ::std::function<void()>                     mainThreadCallback,
+            ::brstd::move_only_function<void()>         mainThreadCallback,
             uint                                        taskPriority
         );
 
@@ -124,7 +124,7 @@ public:
     MCNAPI ::Bedrock::Threading::Async<void> queue(
         ::ResourceLoadType                          resourceLoadType,
         ::brstd::move_only_function<::TaskResult()> threadedCallback,
-        ::std::function<void()>                     mainThreadCallback,
+        ::brstd::move_only_function<void()>         mainThreadCallback,
         uint                                        taskPriority
     );
 
@@ -134,7 +134,16 @@ public:
         ::brstd::move_only_function<::TaskResult()> callback,
         uint                                        taskPriority
     );
+#endif
 
+    MCNAPI ::Bedrock::Threading::Async<void> queueFromBackground(
+        ::ResourceLoadType                          resourceLoadType,
+        ::brstd::move_only_function<::TaskResult()> threadedCallback,
+        ::brstd::move_only_function<void()>         mainThreadCallback,
+        uint                                        taskPriority
+    );
+
+#ifdef LL_PLAT_C
     MCNAPI ::Bedrock::Threading::Async<void> queueSync(
         ::ResourceLoadType                          resourceLoadType,
         ::brstd::move_only_function<::TaskResult()> callback,
@@ -161,14 +170,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::function<void()> _wrapMainThreadCallback(
-        ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
-        ::std::function<void()>&&                     mainThreadCallback
-    );
-
     MCNAPI static void queueChild(
         ::brstd::move_only_function<::TaskResult()> threadedCallback,
-        ::std::function<void()>                     mainThreadCallback,
+        ::brstd::move_only_function<void()>         mainThreadCallback,
         uint                                        taskPriority
     );
     // NOLINTEND

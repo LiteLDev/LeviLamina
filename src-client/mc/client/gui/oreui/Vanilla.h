@@ -7,6 +7,8 @@ namespace OreUI::Vanilla {
 // NOLINTBEGIN
 MCAPI void setupCommands();
 
+MCAPI void setupGameplayModels();
+
 MCAPI void setupQueries();
 // NOLINTEND
 

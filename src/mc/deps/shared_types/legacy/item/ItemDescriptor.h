@@ -23,6 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::string const& getFullName() const;
+
     MCAPI ~ItemDescriptor();
     // NOLINTEND
 

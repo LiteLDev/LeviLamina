@@ -18,10 +18,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class SnifferEggBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    SnifferEggBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -39,17 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SnifferEggBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

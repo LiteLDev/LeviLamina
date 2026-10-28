@@ -46,6 +46,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& ExplosionResistanceId();
+
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

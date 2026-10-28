@@ -83,6 +83,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void
+    _init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine, ::CompoundTag const* tag);
+
     MCAPI void move(::Vec3 const& delta);
     // NOLINTEND
 

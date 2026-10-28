@@ -75,7 +75,8 @@ public:
         ::std::string const&                 alias,
         ::Core::Path const&                  asciiName,
         ::Core::Path const&                  unicodeName,
-        ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr
+        ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr,
+        uchar                                asciiSheetCount
     );
 
     MCAPI void _queueMsdfFont(

@@ -38,9 +38,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DynamicPropertiesManager(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI ::std::optional<::DebuggerStat> _collectMemoryStats(uint64, uint64, uint64);
+    MCAPI void _collectMemoryStats(::DebuggerStat& dynamicPropertiesStats);
 
-    MCAPI ::std::optional<::DebuggerStat> _collectPropertiesStats(uint64, uint64, uint64);
+    MCAPI void _collectPropertiesStats(::DebuggerStat& dynamicProperties);
 
     MCAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
 

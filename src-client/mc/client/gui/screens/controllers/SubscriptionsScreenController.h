@@ -42,8 +42,6 @@ public:
     MCAPI bool _platformMatches();
 
     MCAPI void _registerBindings();
-
-    MCAPI bool shouldShowSubscriptionsTab() const;
     // NOLINTEND
 
 public:

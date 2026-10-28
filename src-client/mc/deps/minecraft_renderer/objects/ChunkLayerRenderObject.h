@@ -23,5 +23,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>                      mVisibleCameraMask;
     ::ll::TypedStorage<1, 1, bool>                      mShouldFallBackToUnsorted;
     ::ll::TypedStorage<1, 1, ::TerrainLayerLOD>         mTerrainLayerLOD;
+    ::ll::TypedStorage<1, 1, uchar>                     mStreamGroupIdx;
     // NOLINTEND
 };

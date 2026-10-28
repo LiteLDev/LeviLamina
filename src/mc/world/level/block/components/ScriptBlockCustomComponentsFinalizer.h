@@ -24,5 +24,13 @@ public:
     // NOLINTBEGIN
     MCAPI void
     finalizeBlock(::BlockType& block, ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>>& customComps);
+
+    MCAPI ~ScriptBlockCustomComponentsFinalizer();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

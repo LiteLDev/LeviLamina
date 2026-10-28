@@ -77,16 +77,6 @@ public:
 
     MCAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex const coordIndex, uint& subChunkIndex);
 
-    MCAPI ::SubChunk*
-    _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
-
-    MCAPI ::SubChunk* _getBlock(
-        ::SubChunkLightIndex const coordIndex,
-        ::Block const*&            block,
-        ::Block const*&            extraBlock,
-        uint&                      subChunkIndex
-    ) const;
-
     MCAPI void _propagateBlockLight();
 
     MCAPI void _propagateSkyLight();
@@ -116,6 +106,8 @@ public:
         ::Brightness         oldAbsorption,
         ::Brightness         newAbsorption
     );
+
+    MCAPI void getBlock(::Pos const& pos, ::Block const*& block, ::Block const*& extraBlock);
 
     MCAPI ::SubChunkBrightnessStorage::LightPair getLightPair(::Pos const& coord) const;
 

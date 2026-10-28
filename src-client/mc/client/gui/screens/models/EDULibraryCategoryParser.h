@@ -5,12 +5,12 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-struct EDULibraryCategory;
+struct EduLibraryCategory;
 // clang-format on
 
-struct EDULibraryCategoryParser {
+struct EduLibraryCategoryParser {
 public:
-    // EDULibraryCategoryParser inner types define
+    // EduLibraryCategoryParser inner types define
     enum class CategoryType : int {
         SubCategory = 0,
         Worlds      = 1,
@@ -40,7 +40,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void getCategories(
-        ::std::unordered_map<::std::string, ::EDULibraryCategory>& returnRef,
+        ::std::unordered_map<::std::string, ::EduLibraryCategory>& returnRef,
         ::std::string const&                                       jsonString,
         ::std::function<void(
             ::std::shared_ptr<::MainMenuScreenModel>,

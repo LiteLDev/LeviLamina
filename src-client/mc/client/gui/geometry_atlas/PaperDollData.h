@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/geometry_atlas/Rect.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace GeometryAtlas { class PaperDollHandle; }
@@ -18,6 +21,8 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                mPosY;
     ::ll::TypedStorage<4, 4, float>                                                mScaleX;
     ::ll::TypedStorage<4, 4, float>                                                mScaleY;
+    ::ll::TypedStorage<4, 16, ::GeometryAtlas::Rect>                               mProjectionBounds;
+    ::ll::TypedStorage<4, 16, ::GeometryAtlas::Rect>                               mScreenBounds;
     // NOLINTEND
 };
 

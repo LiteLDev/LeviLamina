@@ -9,8 +9,11 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackBase;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+class SemVersion;
+namespace Json { class Value; }
 // clang-format on
 
 class RandomBlockStateFunction : public ::LootItemFunction {
@@ -29,12 +32,61 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>      mBlockStateName;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    RandomBlockStateFunction();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
 
     virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
+
+    virtual void apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI RandomBlockStateFunction(
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
+        ::RandomValueBounds&                                   values,
+        ::std::string const&                                   blockStateName
+    );
+#endif
+
+    MCAPI void _internalApply(
+        ::ItemStackBase&          item,
+        ::Random&                 random,
+        ::LootTableContext const& context,
+        ::SemVersion const&       jsonVersion
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
+        ::RandomValueBounds&                                   values,
+        ::std::string const&                                   blockStateName
+    );
+#endif
     // NOLINTEND
 
 public:
@@ -44,6 +96,14 @@ public:
 
     MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
+    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

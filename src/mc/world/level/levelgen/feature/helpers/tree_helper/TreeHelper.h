@@ -32,6 +32,7 @@ MCAPI ::std::optional<::BlockPos> placeBaseBlock(
     ::std::vector<::BlockDescriptor> const& validBaseBlocks
 );
 
+#ifdef LL_PLAT_S
 MCAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
     ::IBlockWorldGenAPI& target,
     ::BlockPos const&    pos,
@@ -42,6 +43,7 @@ MCAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
     bool                                    simplify,
     ::std::vector<::BlockDescriptor> const& mayGrowThrough
 );
+#endif
 
 MCAPI bool prepareSpawn(
     ::IBlockWorldGenAPI const&              target,

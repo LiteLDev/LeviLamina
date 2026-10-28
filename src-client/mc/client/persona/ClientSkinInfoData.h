@@ -23,6 +23,7 @@ public:
     ::ll::TypedStorage<8, 48, ::BedrockTexture>                mCapeTexture;
     ::ll::TypedStorage<8, 48, ::mce::Image>                    mLodSkinImage;
     ::ll::TypedStorage<8, 48, ::BedrockTexture>                mLodSkinTexture;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mLodSkinProfileHash;
     ::ll::TypedStorage<1, 1, bool>                             mValid;
     // NOLINTEND
 
@@ -45,9 +46,9 @@ public:
     // NOLINTBEGIN
     MCAPI ClientSkinInfoData();
 
-    MCAPI void setLodSkinImage(::mce::Image&& image);
-
     MCAPI void setSkinAnimatedTextures(::std::vector<::BedrockTexture>&& newTextures);
+
+    MCAPI bool trySetLodSkinImage(::mce::Image&& image, ::std::string const& profileHash);
 
     MCAPI void unload();
     // NOLINTEND
@@ -69,7 +70,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $updateSkin(::SerializedSkinRef const& skin, ::mce::Image const* skinData, ::mce::Image const* capeData);
 
-    MCFOLD bool $hasValidTexture();
+    MCAPI bool $hasValidTexture();
     // NOLINTEND
 
 public:

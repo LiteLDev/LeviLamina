@@ -24,10 +24,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class TripWireBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    TripWireBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -55,8 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TripWireBlock(::std::string const& nameId, int id);
-
     MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -74,12 +68,6 @@ public:
 #ifdef LL_PLAT_C
     MCFOLD static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

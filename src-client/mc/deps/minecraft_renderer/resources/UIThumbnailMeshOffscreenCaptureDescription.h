@@ -9,6 +9,6 @@ struct UIThumbnailMeshOffscreenCaptureDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::OffscreenCaptureData> mCaptureData;
+    ::ll::TypedStorage<8, 24, ::OffscreenCaptureData> mCaptureData;
     // NOLINTEND
 };

@@ -58,13 +58,13 @@ public:
     );
 
     MCAPI static void updateStopEmotingRequest(
-        ::StrictEntityContext const&                           entity,
-        ::RawMoveInputComponent const&                         rawMoveInput,
-        ::ActorDataFlagComponent&                              actorDataFlag,
-        ::ActorDataDirtyFlagsComponent&                        actorDataDirtyFlags,
-        ::ClientInputLockComponent&                            clientInputLock,
-        ::VanillaClientGameplayComponent&                      vanillaClientGameplay,
-        ::EntityModifier<::ShouldStopEmotingRequestComponent>& modifier
+        ::StrictEntityContext const&                                 entity,
+        ::RawMoveInputComponent const&                               rawMoveInput,
+        ::ActorDataFlagComponent&                                    actorDataFlag,
+        ::ActorDataDirtyFlagsComponent&                              actorDataDirtyFlags,
+        ::ClientInputLockComponent&                                  clientInputLock,
+        ::VanillaClientGameplayComponent&                            vanillaClientGameplay,
+        ::EntityModifier<::ShouldStopEmotingRequestComponent> const& modifier
     );
     // NOLINTEND
 };

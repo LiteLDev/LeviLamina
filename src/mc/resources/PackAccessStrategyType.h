@@ -7,5 +7,6 @@ enum class PackAccessStrategyType : int {
     Zip             = 1,
     DirectoryAndZip = 2,
     Encrypted       = 3,
-    Invalid         = 4,
+    BrPackaged      = 4,
+    Invalid         = 5,
 };

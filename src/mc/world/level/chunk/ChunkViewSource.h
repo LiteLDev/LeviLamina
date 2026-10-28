@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
@@ -23,9 +24,9 @@ class ChunkViewSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode>                       mParentLoadMode;
-    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>> mArea;
-    ::ll::TypedStorage<8, 8, ::ChunkSource&>                                mMainSource;
+    ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode> mParentLoadMode;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>, ::Bedrock::Threading::SharedLockbox>> mArea;
+    ::ll::TypedStorage<8, 8, ::ChunkSource&> mMainSource;
     // NOLINTEND
 
 public:

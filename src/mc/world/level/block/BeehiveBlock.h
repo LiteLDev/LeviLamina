@@ -44,10 +44,6 @@ public:
     // NOLINTBEGIN
     MCAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_S
-    MCAPI void evictAll(::BlockSource& region, ::BlockPos const& pos, bool angry) const;
-#endif
-
     MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;

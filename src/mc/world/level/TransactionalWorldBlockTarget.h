@@ -117,15 +117,15 @@ public:
 
     MCAPI bool $apply() const;
 
-    MCAPI bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
+    MCFOLD bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
 
-    MCAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
     MCFOLD bool $mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const;
 
     MCFOLD bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI short $getMaxHeight() const;
 
@@ -143,11 +143,7 @@ public:
 
     MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::LevelData const& $getLevelData() const;
-#else // LL_PLAT_C
-    MCFOLD ::LevelData const& $getLevelData() const;
-#endif
 
     MCFOLD ::WorldGenContext const& $getContext();
 

@@ -49,6 +49,10 @@ public:
 
     MCAPI explicit CommandOutputParameter(char const* text);
 
+    MCAPI explicit CommandOutputParameter(int value);
+
+    MCAPI explicit CommandOutputParameter(float value);
+
     MCAPI ~CommandOutputParameter();
     // NOLINTEND
 
@@ -70,6 +74,10 @@ public:
     MCAPI void* $ctor(::std::string const& text);
 
     MCAPI void* $ctor(char const* text);
+
+    MCAPI void* $ctor(int value);
+
+    MCAPI void* $ctor(float value);
     // NOLINTEND
 
 public:

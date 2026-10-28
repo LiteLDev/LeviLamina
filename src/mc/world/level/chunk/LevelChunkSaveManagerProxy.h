@@ -14,6 +14,7 @@ class Dimension;
 class DimensionManager;
 class LevelChunk;
 class Random;
+class Scheduler;
 class TaskGroup;
 class TaskResult;
 // clang-format on
@@ -61,6 +62,18 @@ public:
     virtual void queueTaskForChunkSave(::brstd::move_only_function<::TaskResult()>&& task) /*override*/;
 
     virtual void startLeaveGame() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LevelChunkSaveManagerProxy(::Random& random, ::Scheduler& scheduler);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Random& random, ::Scheduler& scheduler);
     // NOLINTEND
 
 public:

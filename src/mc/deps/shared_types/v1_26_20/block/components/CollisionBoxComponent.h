@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_26_20/block/BoundingBoxData.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct CollisionBoxComponent {
@@ -28,16 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& MAX_BOUNDS();
-
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

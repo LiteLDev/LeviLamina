@@ -43,6 +43,9 @@ enum class ESessionError : int {
     ESessionErrorGenericFailure                             = 35,
     ESessionErrorFailedToCreateIdentityAssertion            = 36,
     ESessionErrorIdentityNotAllowed                         = 37,
+    ESessionErrorNotAuthenticated                           = 38,
+    ESessionErrorNotAllowed                                 = 39,
+    ESessionErrorServerFull                                 = 40,
 };
 
 }

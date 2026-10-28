@@ -33,13 +33,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCAPI ~SoundAddition();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -55,28 +59,26 @@ public:
     ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<20>> mUnderwaterMood;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
+    AmbientSoundsClientBiomeJsonComponent& operator=(AmbientSoundsClientBiomeJsonComponent const&);
     AmbientSoundsClientBiomeJsonComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
-
-    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
-
-    MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
-    operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
-
-    MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
-    operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+#endif
     // NOLINTEND
 
 public:
@@ -88,19 +90,29 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::add_lvalue_reference_t<char const[25]> SCHEMA_NAME();
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:

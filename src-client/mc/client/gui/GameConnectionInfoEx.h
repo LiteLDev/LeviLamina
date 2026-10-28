@@ -10,7 +10,7 @@ struct GameConnectionInfoEx {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 784, ::Social::GameConnectionInfo> connectionInfo;
+    ::ll::TypedStorage<8, 752, ::Social::GameConnectionInfo> connectionInfo;
     ::ll::TypedStorage<8, 32, ::std::string>                 serverName;
     ::ll::TypedStorage<8, 32, ::std::string>                 worldName;
     ::ll::TypedStorage<4, 4, ::NetworkType>                  networkTypeOverride;

@@ -22,6 +22,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mHasCustomPocketToast;
     ::ll::TypedStorage<1, 1, bool>                                mUseCustomPocketToast;
     ::ll::TypedStorage<1, 1, bool>                                mIsSilent;
+    ::ll::TypedStorage<1, 1, bool>                                mIsPersistent;
     ::ll::TypedStorage<4, 4, ::ToastMessageType>                  mType;
     ::ll::TypedStorage<8, 32, ::std::string>                      mTitle;
     ::ll::TypedStorage<8, 32, ::std::string>                      mSubtitle;

@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 512, ushort[256]>                                                  m_viewRemap;
     ::ll::TypedStorage<4, 256, float[16][4]>                                                 m_colorPalette;
-    ::ll::TypedStorage<8, 131072, ::bgfx::View[256]>                                         m_view;
+    ::ll::TypedStorage<4, 81920, ::bgfx::View[256]>                                          m_view;
     ::ll::TypedStorage<4, 1024, int[256]>                                                    m_occlusion;
     ::ll::TypedStorage<8, 524288, uint64[65536]>                                             m_sortKeys;
     ::ll::TypedStorage<2, 131072, ushort[65536]>                                             m_sortValues;
@@ -87,7 +87,7 @@ public:
     ::ll::TypedStorage<2, 65538, ::bgfx::Frame::FreeHandle<::bgfx::AccelerationStructureHandle, 32768>>
                                                                 m_freeAccelerationStructure;
     ::ll::TypedStorage<8, 8, ::bgfx::TextVideoMem*>             m_textVideoMem;
-    ::ll::TypedStorage<8, 208, ::bgfx::Stats>                   m_perfStats;
+    ::ll::TypedStorage<8, 216, ::bgfx::Stats>                   m_perfStats;
     ::ll::TypedStorage<2, 2, ushort>                            m_numViewStats;
     ::ll::TypedStorage<8, 79872, ::bgfx::ViewStats[256]>        m_viewStats;
     ::ll::TypedStorage<8, 8, int64>                             m_waitSubmit;
@@ -96,7 +96,7 @@ public:
     ::ll::TypedStorage<4, 488, ::bgfx::RayTracingConfiguration> m_rtConfig;
     ::ll::TypedStorage<8, 192, ::bgfx::RayTracingResources>     m_rtResources;
     ::ll::TypedStorage<1, 1, bool>                              m_capture;
-    ::ll::TypedStorage<1, 63, bool>                             m_skipFlip;
+    ::ll::TypedStorage<1, 55, bool>                             m_skipFlip;
     // NOLINTEND
 
 public:

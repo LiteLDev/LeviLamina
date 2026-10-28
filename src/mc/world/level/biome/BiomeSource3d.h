@@ -56,6 +56,9 @@ public:
     virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const
         /*override*/;
 
+    virtual bool collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const
+        /*override*/;
+
     virtual bool hasBiomeById(::BiomeIdType id) const /*override*/;
 
     virtual bool hasBiomeByNameHash(::BiomeHashType hash) const /*override*/;
@@ -100,6 +103,8 @@ public:
     $getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
     MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
+
+    MCAPI bool $collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const;
 
     MCAPI bool $hasBiomeById(::BiomeIdType id) const;
 

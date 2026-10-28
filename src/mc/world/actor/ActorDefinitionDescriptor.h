@@ -22,7 +22,6 @@ class Actor;
 class ActorDefinitionEvent;
 class ActorDefinitionTrigger;
 struct ActorDefinitionAttribute;
-struct AmphibiousMoveControlDescription;
 struct AttackDescription;
 struct BehaviorTreeDescription;
 struct BreakBlocksDescription;
@@ -30,18 +29,9 @@ struct BreakDoorAnnotationDescription;
 struct CommandBlockDescription;
 struct ContainerDescription;
 struct DwellerDescription;
-struct EconomyTradeableDescription;
-struct GenericMoveControlDescription;
-struct GlideMoveControlDescription;
 struct IllagerBeastBlockedDescription;
 struct LegacyGoalDefinition;
 struct MobEffectChangeDescription;
-struct MoveControlBasicDescription;
-struct MoveControlDolphinDescription;
-struct MoveControlFlyDescription;
-struct MoveControlHoverDescription;
-struct MoveControlSkipDescription;
-struct MoveControlSwayDescription;
 struct NavigationClimbDescription;
 struct NavigationFloatDescription;
 struct NavigationFlyDescription;
@@ -49,11 +39,6 @@ struct NavigationGenericDescription;
 struct NavigationHoverDescription;
 struct NavigationSwimDescription;
 struct NavigationWalkDescription;
-struct SlimeMoveControlDescription;
-struct StrengthDescription;
-struct TeleportDescription;
-struct TrailDescription;
-struct TransformationDescription;
 struct VariantParameterList;
 namespace SharedTypes::v1_21_100 { struct TickWorldDefinition; }
 namespace SharedTypes::v1_26_40 { struct BucketableComponentDefinition; }
@@ -67,6 +52,21 @@ namespace SharedTypes::v1_26_40 { struct TradeResupplyComponentDefinition; }
 namespace SharedTypes::v1_26_40 { struct TrustComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct PreferredPathComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct ProjectileComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct AmphibiousMoveControlComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct EconomyTradeableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct GenericMoveControlComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct GlideMoveControlComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct MoveControlBasicComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct MoveControlDolphinComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct MoveControlFlyComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct MoveControlHoverComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct MoveControlSkipComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct MoveControlSwayComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct SlimeMoveControlComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct StrengthComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct TeleportComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct TrailComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct TransformationComponentDefinition; }
 // clang-format on
 
 class ActorDefinitionDescriptor {
@@ -90,26 +90,27 @@ public:
     ::ll::TypedStorage<8, 144, ::GoalDefinitionInstanceGroup>                              mGoalDefinitionGroup;
     ::ll::TypedStorage<8, 8, ::AttackDescription const*>                                   mAttack;
     ::ll::TypedStorage<8, 8, ::MobEffectChangeDescription const*>                          mMobEffects;
-    ::ll::TypedStorage<8, 8, ::AmphibiousMoveControlDescription const*>                    mAmphibiousMoveControl;
-    ::ll::TypedStorage<8, 8, ::BehaviorTreeDescription const*>                             mBehavior;
-    ::ll::TypedStorage<8, 8, ::BreakBlocksDescription const*>                              mBreakBlocks;
-    ::ll::TypedStorage<8, 8, ::BreakDoorAnnotationDescription const*>                      mBreakDoorAnnotation;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::AmphibiousMoveControlComponentDefinition const*>
+                                                                                            mAmphibiousMoveControl;
+    ::ll::TypedStorage<8, 8, ::BehaviorTreeDescription const*>                              mBehavior;
+    ::ll::TypedStorage<8, 8, ::BreakBlocksDescription const*>                               mBreakBlocks;
+    ::ll::TypedStorage<8, 8, ::BreakDoorAnnotationDescription const*>                       mBreakDoorAnnotation;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::BucketableComponentDefinition const*> mBucketable;
     ::ll::TypedStorage<8, 8, ::CommandBlockDescription const*>                              mCommandBlock;
     ::ll::TypedStorage<8, 8, ::ContainerDescription const*>                                 mContainer;
     ::ll::TypedStorage<8, 8, ::DwellerDescription const*>                                   mDweller;
-    ::ll::TypedStorage<8, 8, ::GenericMoveControlDescription const*>                        mGenericMoveControl;
-    ::ll::TypedStorage<8, 8, ::GlideMoveControlDescription const*>                          mGlideMoveControl;
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::HideComponentDefinition const*>       mHide;
-    ::ll::TypedStorage<8, 8, ::IllagerBeastBlockedDescription const*>                       mIllagerBeastBlocked;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::GenericMoveControlComponentDefinition const*> mGenericMoveControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::GlideMoveControlComponentDefinition const*>   mGlideMoveControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::HideComponentDefinition const*>               mHide;
+    ::ll::TypedStorage<8, 8, ::IllagerBeastBlockedDescription const*> mIllagerBeastBlocked;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::ManagedWanderingTraderComponentDefinition const*>
-                                                                                               mManagedWanderingTrader;
-    ::ll::TypedStorage<8, 8, ::MoveControlBasicDescription const*>                             mMoveControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlDolphinDescription const*>                           mDolphinSwimControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlFlyDescription const*>                               mFlyControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlSkipDescription const*>                              mHopControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlHoverDescription const*>                             mHoverControl;
-    ::ll::TypedStorage<8, 8, ::MoveControlSwayDescription const*>                              mSwimControl;
+        mManagedWanderingTrader;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::MoveControlBasicComponentDefinition const*>   mMoveControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::MoveControlDolphinComponentDefinition const*> mDolphinSwimControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::MoveControlFlyComponentDefinition const*>     mFlyControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::MoveControlSkipComponentDefinition const*>    mHopControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::MoveControlHoverComponentDefinition const*>   mHoverControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::MoveControlSwayComponentDefinition const*>    mSwimControl;
     ::ll::TypedStorage<8, 8, ::NavigationClimbDescription const*>                              mWallClimberNavigation;
     ::ll::TypedStorage<8, 8, ::NavigationFloatDescription const*>                              mFloatNavigation;
     ::ll::TypedStorage<8, 8, ::NavigationFlyDescription const*>                                mFlyingNavigation;
@@ -120,15 +121,15 @@ public:
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::PersistentComponentDefinition const*>    mPersistent;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_50::PreferredPathComponentDefinition const*> mPreferredPath;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_50::ProjectileComponentDefinition const*>    mProjectile;
-    ::ll::TypedStorage<8, 8, ::SlimeMoveControlDescription const*>                             mSlimeMoveControl;
-    ::ll::TypedStorage<8, 8, ::StrengthDescription const*>                                     mStrength;
-    ::ll::TypedStorage<8, 8, ::TrailDescription const*>                                        mTrail;
-    ::ll::TypedStorage<8, 8, ::TeleportDescription const*>                                     mTeleport;
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_100::TickWorldDefinition const*>             mTickWorld;
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::TradeResupplyComponentDefinition const*> mTradeResupply;
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::TrustComponentDefinition const*>         mTrust;
-    ::ll::TypedStorage<8, 8, ::EconomyTradeableDescription const*>                             mEconomyTradeable;
-    ::ll::TypedStorage<8, 8, ::TransformationDescription const*>                               mTransformation;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::SlimeMoveControlComponentDefinition const*>   mSlimeMoveControl;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::StrengthComponentDefinition const*>           mStrength;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::TrailComponentDefinition const*>              mTrail;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::TeleportComponentDefinition const*>           mTeleport;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_100::TickWorldDefinition const*>                  mTickWorld;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::TradeResupplyComponentDefinition const*>      mTradeResupply;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::TrustComponentDefinition const*>              mTrust;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const*>   mEconomyTradeable;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_60::TransformationComponentDefinition const*>     mTransformation;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::DynamicJumpControlComponentDefinition const*> mDynamicJumpControl;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::JumpControlComponentDefinition const*>        mJumpControl;
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_40::OpenDoorAnnotationComponentDefinition const*> mOpenDoorAnnotation;
@@ -150,6 +151,12 @@ public:
 
     MCAPI ::std::optional<::ActorDefinitionAttribute> findAttributeByName(::std::string const& attributeName) const;
 
+#ifdef LL_PLAT_C
+    MCFOLD bool hasComponent(::HashedString const& name) const;
+
+    MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
+#endif
+
     MCAPI ::ActorDefinitionDescriptor& subtract(::ActorDefinitionDescriptor const& rhs);
 
     MCAPI ~ActorDefinitionDescriptor();
@@ -162,6 +169,10 @@ public:
 
     MCAPI static bool
     executeTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
+
+#ifdef LL_PLAT_C
+    MCAPI static bool executeUpgrade(::Actor& entity, ::std::string const& name, ::VariantParameterList const& list);
+#endif
 
     MCAPI static void
     forceExecuteTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);

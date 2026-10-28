@@ -21,12 +21,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AllowListQRCode(::std::string id, ::std::string target);
+
+    MCAPI ~AllowListQRCode();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string id, ::std::string target);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

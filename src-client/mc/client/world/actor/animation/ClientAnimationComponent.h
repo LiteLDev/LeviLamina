@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientAnimationComponent() /*override*/;
+    virtual ~ClientAnimationComponent() /*override*/ = default;
 
     virtual ::ClientAnimationComponent* tryGetClient() /*override*/;
 
@@ -81,12 +81,6 @@ public:
         ::std::shared_ptr<::DataDrivenModel> itemModel,
         ::RenderParams&                      renderParamsToUseForRenderControllerEvalulation
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

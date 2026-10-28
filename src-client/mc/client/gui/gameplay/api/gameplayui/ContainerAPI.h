@@ -4,17 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/gameplay/api/gameplayui/AnvilInfo.h"
+#include "mc/client/gui/gameplay/api/gameplayui/RecipeBookTab.h"
 #include "mc/client/gui/gameplay/data/gameplayui/ChestType.h"
 #include "mc/client/gui/gameplay/data/gameplayui/ContainerColorMode.h"
 #include "mc/client/gui/gameplay/data/gameplayui/ContainerInteractionsHandler.h"
 #include "mc/client/gui/gameplay/data/gameplayui/ContainerItemType.h"
+#include "mc/client/gui/gameplay/data/gameplayui/ContainerSlot.h"
+#include "mc/client/gui/oreui/input/GamepadButton.h"
+#include "mc/client/gui/oreui/input/MouseButton.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/controllers/ItemCraftType.h"
-#include "mc/world/item/ItemGroup.h"
 #include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -25,11 +28,13 @@ class BrewingStandContainerManagerModel;
 class ChestContainerManagerModel;
 class ContainerManagerController;
 class ContainerModel;
+class CraftingContainerManagerController;
 class CraftingContainerManagerModel;
 class DispenserContainerManagerModel;
 class DropperContainerManagerModel;
 class FurnaceContainerManagerModel;
 class GrindstoneContainerManagerModel;
+class GuiData;
 class HopperContainerManagerModel;
 class ItemRegistryRef;
 class ItemStackBase;
@@ -37,8 +42,11 @@ class LocalPlayer;
 class Trade2ContainerManagerModel;
 namespace GameplayUI { struct BrewingStandInfo; }
 namespace GameplayUI { struct ContainerAction; }
+namespace GameplayUI { struct ContainerInputLegendEntry; }
 namespace GameplayUI { struct ContainerInteractionsContext; }
 namespace GameplayUI { struct ContainerItem; }
+namespace GameplayUI { struct FurnaceInfo; }
+namespace GameplayUI { struct RecipeBookTabData; }
 namespace GameplayUI { struct TradeOfferInfo; }
 namespace GameplayUI { struct TradeOverview; }
 namespace GameplayUI { struct TradeTierInfo; }
@@ -48,39 +56,14 @@ namespace GameplayUI {
 
 class ContainerAPI {
 public:
-    // ContainerAPI inner types declare
-    // clang-format off
-    struct SplitMultipleState;
-    struct SplitSingleState;
-    // clang-format on
-
-    // ContainerAPI inner types define
-    struct SplitMultipleState {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 136, ::ItemGroup> distributionSource;
-        ::ll::TypedStorage<8, 40, ::SlotData>   lastPlaceAllSlot;
-        ::ll::TypedStorage<4, 4, int>           lastPlaceAllAmount;
-        // NOLINTEND
-    };
-
-    struct SplitSingleState {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneSelectedSlot;
-        ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneDestinationSlot;
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::LocalPlayer*>                                        mLocalPlayer;
     ::ll::TypedStorage<8, 64, ::std::function<::ItemRegistryRef()>>                 mGetItemRegistryRef;
-    ::ll::TypedStorage<4, 12, ::GameplayUI::ContainerInteractionsHandler>           mInteractionsHandler;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GuiData>>             mGuiData;
+    ::ll::TypedStorage<4, 76, ::GameplayUI::ContainerInteractionsHandler>           mInteractionsHandler;
     ::ll::TypedStorage<8, 128, ::ItemInstance>                                      mSplitMultipleItemTemplate;
+    ::ll::TypedStorage<4, 4, int>                                                   mLastPlaceAllAmount;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerManagerController>>       mContainerManagerController;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::AnvilContainerManagerModel>>        mAnvilContainerManagerModel;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BrewingStandContainerManagerModel>> mBrewingStandContainerManagerModel;
@@ -95,9 +78,8 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                                           mContainerBlockPos;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mUniqueActorId;
     ::ll::TypedStorage<8, 112, ::GameplayUI::AnvilInfo>                             mAnvilInfo;
-    ::ll::TypedStorage<8, 184, ::GameplayUI::ContainerAPI::SplitMultipleState>      mSplitMultipleState_DEPRECATED;
-    ::ll::TypedStorage<8, 88, ::std::optional<::GameplayUI::ContainerAPI::SplitSingleState>>
-        mSplitSingleState_DEPRECATED;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GameplayUI::ContainerInputLegendEntry>> mInputLegend;
+    ::ll::TypedStorage<4, 12, ::std::optional<::GameplayUI::ContainerSlot>>           mFocusedContainerSlot;
     // NOLINTEND
 
 public:
@@ -117,23 +99,25 @@ public:
 
     MCAPI void _recipeAutoCraft(::ContainerEnumName collectionName, int collectionIndex, ::ItemCraftType craftType);
 
+    MCAPI void _refreshInputLegend();
+
+    MCAPI void _resetSelectedRecipeTabIfEmpty(
+        ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerModel>> const& containers
+    );
+
     MCAPI ::std::shared_ptr<::ContainerModel> _tryGetContainerModel(::ContainerEnumName containerName) const;
+
+    MCAPI ::CraftingContainerManagerController* _tryGetCraftingContainerManagerController() const;
 
     MCAPI void _tryUpdateCraftingContainer();
 
-    MCAPI void autoPlaceItems_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
-
     MCAPI void closeContainer();
 
-    MCAPI void coalesceItems(::ContainerEnumName destinationName, int destinationIndex, ::ContainerEnumName sourceName);
-
-    MCAPI void coalesceOrAutoPlaceItems_DEPRECATED(::ContainerEnumName destinationName, int destinationIndex);
-
-    MCAPI void dropAllItems_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
-
-    MCAPI void dropOneItem_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
+    MCAPI ::std::vector<::GameplayUI::RecipeBookTab> getActiveRecipeBookTabs() const;
 
     MCAPI ::std::optional<::GameplayUI::AnvilInfo> getAnvilInfo() const;
+
+    MCAPI ::std::vector<::GameplayUI::RecipeBookTabData> getAvailableRecipeBookTabs() const;
 
     MCAPI ::std::optional<::GameplayUI::BrewingStandInfo> getBrewingStandInfo() const;
 
@@ -148,25 +132,50 @@ public:
 
     MCAPI ::std::string getContainerName() const;
 
-    MCAPI ::std::optional<::GameplayUI::ContainerItem>
-    getCraftingScreenContainerItem(::ContainerEnumName containerName, int index) const;
+    MCAPI ::std::optional<::GameplayUI::ContainerItem> getFocusedBundle() const;
+
+    MCAPI ::std::string getFocusedSlotTooltip() const;
+
+    MCAPI ::std::optional<::GameplayUI::FurnaceInfo> getFurnaceInfo() const;
 
     MCAPI ::std::string getRecipeBookSearchString() const;
+
+    MCAPI ::GameplayUI::ContainerItem getSelectedBundleItem() const;
 
     MCAPI ::GameplayUI::TradeOfferInfo getTradeOfferInfo(int tradeTier, int tradeIndex) const;
 
     MCAPI ::GameplayUI::TradeOverview getTradeOverview() const;
 
-    MCAPI ::GameplayUI::ContainerItem getTradeScreenResultPreviewContainerItem(int index) const;
-
     MCAPI ::GameplayUI::TradeTierInfo getTradeTierInfo(int tradeTier) const;
 
-    MCAPI void handleSlotMouseDrag(int button, ::ContainerEnumName container, int slot);
+    MCAPI void handleSlotGamepadDrag(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
+
+    MCAPI void handleSlotGamepadLongPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
 
     MCAPI void
-    handleSlotMousePress(int button, ::ContainerEnumName container, int slot, bool isDoubleClick, bool isShiftClick);
+    handleSlotGamepadPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot, bool isDoubleClick);
 
-    MCAPI void handleSlotMouseRelease(int button, ::ContainerEnumName container, int slot);
+    MCAPI void handleSlotMouseDrag(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
+
+    MCAPI void handleSlotMousePress(
+        ::OreUI::MouseButton button,
+        ::ContainerEnumName  container,
+        int                  slot,
+        bool                 isDoubleClick,
+        bool                 isShiftClick
+    );
+
+    MCAPI void handleSlotMouseRelease(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
+
+    MCAPI void handleSlotTouchDrag(::ContainerEnumName container, int slot);
+
+    MCAPI void handleSlotTouchLongPressMove(::ContainerEnumName container, int slot, float normalizedValue);
+
+    MCAPI void handleSlotTouchLongPressStart(::ContainerEnumName container, int slot);
+
+    MCAPI void handleSlotTouchRelease(::ContainerEnumName container, int slot, bool isDoubleClick);
+
+    MCAPI bool isRecipeBookAvailable() const;
 
     MCAPI void onPlayerOpenContainer(
         ::SharedTypes::Legacy::ContainerType containerType,
@@ -176,83 +185,17 @@ public:
 
     MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void placeAllItems_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
-
-    MCAPI void placeAmountOfItems_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        int                 amount
-    );
-
-    MCAPI void placeOneItem_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
-
     MCAPI void pullInIngredientsForSelectedTrade();
-
-    MCAPI void resetSplitStack_DEPRECATED();
 
     MCAPI void selectTrade(int tradeTier, int tradeIndex);
 
     MCAPI void setAnvilPreviewItemName(::std::string const& name);
 
-    MCAPI void setDistributeAllSource_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
-
     MCAPI void setRecipeBookFiltering(bool isFiltering);
 
     MCAPI void setRecipeBookSearchString(::std::string const& searchText);
 
-    MCAPI void splitMultipleItemsTouch_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
-
-    MCAPI void splitMultipleItems_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
-
-    MCAPI void splitSingleItem_DEPRECATED(
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
-
-    MCAPI void takeAllItems_DEPRECATED(
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex
-    );
-
-    MCAPI void takeHalfItems_DEPRECATED(
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex
-    );
-
-    MCAPI void takeOneItem_DEPRECATED(
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex
-    );
+    MCAPI void setRecipeBookVisibility(bool visible);
 
     MCAPI ~ContainerAPI();
     // NOLINTEND

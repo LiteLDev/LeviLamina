@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -14,11 +13,11 @@ namespace OreUI { struct ViewId; }
 
 namespace OreUI {
 
-class IViewProvider : public ::Bedrock::EnableNonOwnerReferences {
+class IViewProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IViewProvider() /*override*/ = default;
+    virtual ~IViewProvider() = default;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::IView> get(::OreUI::ViewId viewId) const = 0;
 

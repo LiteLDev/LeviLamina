@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class PlayerMovementStatePayload; }
 namespace Editor::Network { class PlayerZoomPayload; }
 namespace Editor::Settings { struct SpeedProps; }
@@ -65,8 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ServerPlayerStateControllerService(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI void _handlePlayerMovementStatePayload(::Editor::Network::PlayerMovementStatePayload const& payload);
 
     MCNAPI void _handlePlayerZoomPayload(::Editor::Network::PlayerZoomPayload const& payload);
@@ -80,12 +77,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _updateAbilitiesOnClient(::Player& player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

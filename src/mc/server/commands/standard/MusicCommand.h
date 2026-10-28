@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/audio/ServerSoundHandle.h"
 #include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/server/commands/Command.h"
 #include "mc/sound/MusicRepeatMode.h"
@@ -35,11 +36,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::MusicCommand::Action> mAction;
-        ::ll::TypedStorage<8, 32, ::std::string>         mTrackName;
-        ::ll::TypedStorage<4, 4, float>                  mVolume;
-        ::ll::TypedStorage<4, 4, float>                  mFadeSeconds;
-        ::ll::TypedStorage<1, 1, ::MusicRepeatMode>      mRepeatMode;
+        ::ll::TypedStorage<1, 1, ::MusicCommand::Action>                mAction;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mTrackName;
+        ::ll::TypedStorage<4, 4, float>                                 mVolume;
+        ::ll::TypedStorage<4, 4, float>                                 mFadeSeconds;
+        ::ll::TypedStorage<1, 1, ::MusicRepeatMode>                     mRepeatMode;
+        ::ll::TypedStorage<8, 16, ::std::optional<::ServerSoundHandle>> mHandle;
         // NOLINTEND
 
     public:

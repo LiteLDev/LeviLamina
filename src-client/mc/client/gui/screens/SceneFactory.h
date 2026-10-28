@@ -52,16 +52,17 @@ class IContentManager;
 class ILayoutServiceProvider;
 class IMinecraftGame;
 class ISceneFactoryImpl;
-class ISceneStack;
 class IStoreCatalogItem;
 class IUIDefRepository;
 class LayoutManager;
 class LibraryCollection;
 class LibraryItem;
+class MainMenuScreenModel;
 class MinecraftScreenModel;
 class OfferCollectionComponent;
 class OnlineSafetyProgressHandler;
 class PackManifestFactory;
+class PlayScreenModel;
 class Player;
 class ProgressHandler;
 class RealmsCreateParams;
@@ -78,7 +79,7 @@ struct ActiveDirectoryModalArgs;
 struct ActorUniqueID;
 struct ContentItem;
 struct DimensionType;
-struct EDULibraryCategory;
+struct EduLibraryCategory;
 struct INpcDialogueData;
 struct LevelSummary;
 struct ModalScreenData;
@@ -316,29 +317,29 @@ public:
         bool                              requireCancelToExit
     );
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createEDULibraryCategoryScreen(
-        ::std::string const&                       title,
-        ::std::string const&                       icon,
-        ::std::string const&                       description,
-        ::std::string const&                       screenshotRatio,
-        int                                        columnCount,
-        ::std::vector<::EDULibraryCategory> const& categories,
-        bool                                       firstPage
-    );
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createEDUPlayScreen(::std::string initialCode);
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createEDUServersScreen();
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createEDUWorldTemplatesScreen();
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createEDUWorldsScreen();
-
     MCAPI ::std::shared_ptr<::AbstractScene> createEditWorldScreen(
         ::LevelSummary const&   levelSummary,
         ::std::string const&    packId,
         ::std::function<void()> onOpenCallback
     );
+
+    MCAPI ::std::shared_ptr<::AbstractScene> createEduLibraryCategoryScreen(
+        ::std::string const&                       title,
+        ::std::string const&                       icon,
+        ::std::string const&                       description,
+        ::std::string const&                       screenshotRatio,
+        int                                        columnCount,
+        ::std::vector<::EduLibraryCategory> const& categories,
+        bool                                       firstPage
+    );
+
+    MCAPI ::std::shared_ptr<::AbstractScene> createEduPlayScreen(::std::string initialCode);
+
+    MCAPI ::std::shared_ptr<::AbstractScene> createEduServersScreen();
+
+    MCAPI ::std::shared_ptr<::AbstractScene> createEduWorldTemplatesScreen();
+
+    MCAPI ::std::shared_ptr<::AbstractScene> createEduWorldsScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createEmoteWheelScreen();
 
@@ -388,6 +389,8 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createHowToPlayScreen(::HowToPlayTopicIndex startingTopicIndex);
 
+    MCAPI ::std::shared_ptr<::AbstractScene> createHudCrosshairOverlayScreen();
+
     MCAPI ::std::shared_ptr<::AbstractScene> createHudScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createIPSafetyDialogScreen(int externalServerId);
@@ -425,8 +428,6 @@ public:
     createLegacyCreateWorldFromTemplateScreen(::LevelSummary const& levelSummary);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createLegacyCreateWorldScreen();
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createLegacyRealmsPlusEndedScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createLegacyWorldTemplateLoadingScreen(::std::string const& manifestId);
 
@@ -471,6 +472,8 @@ public:
         int                                                   slotIndex,
         ::std::function<void(::UploadState, ::Realms::World)> callbackAfterUpload
     );
+
+    MCAPI ::std::shared_ptr<::MainMenuScreenModel> createMainMenuScreenModel();
 
     MCAPI ::std::shared_ptr<::AbstractScene>
     createMakeInfiniteScreen(::LevelSummary const& editedLevel, ::StorageVersion storageVersion);
@@ -572,6 +575,8 @@ public:
     MCAPI ::std::shared_ptr<::AbstractScene>
     createPlatformStoreConnectConfirmationScreen(::std::function<void(bool)> callback);
 
+    MCAPI ::std::shared_ptr<::PlayScreenModel> createPlayScreenModel();
+
     MCAPI ::std::shared_ptr<::AbstractScene> createPortfolioScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createProgressScreen(
@@ -645,14 +650,7 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsPlusPurchaseWarningScreen(::std::function<void()> callback);
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSavesScreen(::Realms::World const& world);
-
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSharingLauncherScreen(::std::string const& realmsInvite);
-
-    MCAPI ::std::shared_ptr<::AbstractScene>
-    createRealmsSlotSettingsScreen(::Realms::World const& world, ::SettingsTabIndex initialTab);
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSlotsScreen(::Realms::World& world);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsStoriesTransitionScreen(::Realms::World const& world);
 
@@ -682,6 +680,9 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene>
     createServerTrustModalScreen(::std::string serverAddress, ::Bedrock::Threading::AsyncPromise<bool> resultPromise);
+
+    MCAPI ::std::shared_ptr<::AbstractScene>
+    createSignInErrorScreen(::std::string errorMessage, ::std::function<void()> onDismiss);
 
     MCAPI ::std::shared_ptr<::AbstractScene>
     createSignScreen(::BlockPos const& pos, ::BlockActorType blockActorType, bool isFrontSide);
@@ -759,8 +760,6 @@ public:
     );
 
     MCAPI ::Json::Value generateGlobalVars(::std::string const& screenName, ::ScreenController& controller);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> getCurrentSceneStack();
 
     MCAPI void precacheGameplayScreens();
 

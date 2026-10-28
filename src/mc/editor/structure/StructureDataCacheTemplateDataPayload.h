@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -33,12 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI StructureDataCacheTemplateDataPayload(::mce::UUID const& itemId, ::CompoundTag const& data);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -14,6 +14,7 @@ class BaseGameVersion;
 class Block;
 class BlockActor;
 class BlockPos;
+class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -53,6 +54,12 @@ public:
     MCAPI PowderSnowBlock(::std::string const& nameId, int id, ::Material const& material);
 
     MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void clearFire(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
     // NOLINTEND
 
 public:

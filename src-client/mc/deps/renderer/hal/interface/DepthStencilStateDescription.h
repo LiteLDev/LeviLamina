@@ -25,6 +25,12 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                         originalStencilRef;
     ::ll::TypedStorage<1, 1, bool>                          overwroteStencilRef;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::mce::DepthStencilStateDescription const&) const;
+    // NOLINTEND
 };
 
 } // namespace mce

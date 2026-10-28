@@ -26,9 +26,21 @@ public:
     ScriptInternalHttpRequestError();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ScriptInternalHttpRequestError(::std::error_code const& error);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::error_code const& error);
     // NOLINTEND
 };
 

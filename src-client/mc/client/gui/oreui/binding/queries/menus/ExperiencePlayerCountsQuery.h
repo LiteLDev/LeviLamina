@@ -12,7 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class GatheringManager;
+class ExperienceSystemsManager;
 namespace OreUI { class ExperiencePlayerCountObject; }
 namespace OreUI { class GameDependencies; }
 // clang-format on
@@ -28,9 +28,9 @@ public:
         8,
         120,
         ::OreUI::PropertyVector<::OreUI::ExperiencePlayerCountObject, ::OreUI::ExperiencePlayerCountObject>>
-                                                                                 mPlayerCounts;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GatheringManager>> mGatheringManager;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                      mTaskGroup;
+                                                                                         mPlayerCounts;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager>> mExperienceSystemsManager;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                              mTaskGroup;
     // NOLINTEND
 
 public:

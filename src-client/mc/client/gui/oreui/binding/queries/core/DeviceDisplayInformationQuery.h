@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
-#include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -18,8 +17,7 @@ namespace OreUI { class GameDependencies; }
 
 namespace OreUI {
 
-class DeviceDisplayInformationQuery : public ::OreUI::QueryBase<::OreUI::DeviceDisplayInformationQuery>,
-                                      public ::AppPlatformListener {
+class DeviceDisplayInformationQuery : public ::OreUI::QueryBase<::OreUI::DeviceDisplayInformationQuery> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,12 +39,6 @@ public:
     DeviceDisplayInformationQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual void onResizeEnd() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI
@@ -59,12 +51,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $onResizeEnd();
     // NOLINTEND
 };
 

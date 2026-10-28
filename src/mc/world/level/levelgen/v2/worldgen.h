@@ -15,6 +15,7 @@ class ChunkPos;
 class IRandom;
 class IStructureTemplate;
 class JigsawStructureRegistry;
+class StructurePoolElement;
 class StructureTemplatePool;
 namespace JigsawStructureUtils { class MetadataCache; }
 namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
@@ -64,13 +65,21 @@ MCAPI bool placeInWorld(
     ::IRandom&                                    random
 );
 
+#ifdef LL_PLAT_S
+MCAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
+#endif
+
 #ifdef LL_PLAT_C
 MCAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
 #endif
 
-#ifdef LL_PLAT_S
-MCAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
-#endif
+MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
+    ::StructurePoolElement const& source,
+    ::std::string_view            name,
+    ::BlockPos                    pos,
+    ::Rotation                    rot,
+    ::IRandom&                    random
+);
 
 MCAPI ::std::vector<uint64>
 shuffledJigsawBlockIndexes(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata, ::IRandom& random);

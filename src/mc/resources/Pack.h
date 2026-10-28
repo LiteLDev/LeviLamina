@@ -39,6 +39,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                       mMetadata;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::PackIdVersion> const>> mDependenciesUpgrade;
     ::ll::TypedStorage<1, 1, uchar>                                                   mRevision;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                   mIsBaseGameOverride;
     // NOLINTEND
 
 public:
@@ -53,7 +54,8 @@ public:
         ::std::unique_ptr<::PackManifest>       manifest,
         ::std::unique_ptr<::PackAccessStrategy> accessStrategy,
         ::SubpackInfoCollection                 subpacks,
-        ::std::unique_ptr<::PackMetadata>       metadata
+        ::std::unique_ptr<::PackMetadata>       metadata,
+        ::std::optional<bool>                   isBaseGameOverride
     );
 
     MCAPI void move(::Pack&& pack);
@@ -99,7 +101,8 @@ public:
         ::std::unique_ptr<::PackManifest>       manifest,
         ::std::unique_ptr<::PackAccessStrategy> accessStrategy,
         ::SubpackInfoCollection                 subpacks,
-        ::std::unique_ptr<::PackMetadata>       metadata
+        ::std::unique_ptr<::PackMetadata>       metadata,
+        ::std::optional<bool>                   isBaseGameOverride
     );
     // NOLINTEND
 

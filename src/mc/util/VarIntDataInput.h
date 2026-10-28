@@ -67,7 +67,11 @@ public:
 
     MCAPI ::Bedrock::Result<int64> $readLongLongResult();
 
+#ifdef LL_PLAT_S
     MCFOLD ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
+#else // LL_PLAT_C
+    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
+#endif
 
     MCAPI uint64 $numBytesLeft() const;
 

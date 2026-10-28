@@ -261,6 +261,8 @@ public:
 
     MCAPI void clearInvalidDownKeys(int controllerId);
 
+    MCAPI ::InputMode getCurrentInputMode(int controllerId) const;
+
     MCAPI void initNewControllerIdOwner(int controllerId, ::InputMode initialInputMode);
 
     MCAPI void popInputMapping(int controllerId);

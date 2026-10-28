@@ -20,13 +20,10 @@ public:
     ::ll::TypedStorage<4, 48, ::Bounds> mLimitArea;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     WorldLimitChunkSource();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,18 +44,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI
     WorldLimitChunkSource(::std::unique_ptr<::ChunkSource> storage, ::BlockPos const& center, int width, int depth);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> storage, ::BlockPos const& center, int width, int depth);
-#endif
     // NOLINTEND
 
 public:

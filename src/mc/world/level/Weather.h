@@ -51,10 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI Weather(::Dimension& d, ::IRandom& random);
-#endif
-
     MCAPI int calcSnowBlockDepth(::BlockSource& region, ::BlockPos const& pos, int maxLayerDepth) const;
 
     MCAPI bool canPlaceTopSnow(
@@ -81,14 +77,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void rebuildTopSnowToDepth(::BlockSource& region, ::BlockPos const& testPos, int desiredDepth);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Dimension& d, ::IRandom& random);
-#endif
     // NOLINTEND
 
 public:

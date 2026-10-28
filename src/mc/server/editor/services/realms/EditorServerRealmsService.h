@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/RealmsWorldUploadResult.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/RealmsWorldUploadResult.h"
 #include "mc/editor/services/realms/EditorRealmsService.h"
 
 // auto generated forward declare list

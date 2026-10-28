@@ -15,6 +15,7 @@
 #include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockClientPredictionOverrides.h"
 #include "mc/world/level/block/BlockProperty.h"
@@ -27,6 +28,7 @@
 #include "mc/world/level/block/components/BlockComponentStorage.h"
 #include "mc/world/level/block/components/NetEaseBlockComponentStorage.h"
 #include "mc/world/level/block/core/Cache.h"
+#include "mc/world/level/material/Material.h"
 #include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
@@ -51,7 +53,6 @@ class IResourceDropsStrategy;
 class ItemActor;
 class ItemInstance;
 class ItemStack;
-class Material;
 class MobSpawnerData;
 class NeighborBlockDirections;
 class Player;
@@ -241,7 +242,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                      mDescriptionId;
-    ::ll::TypedStorage<8, 8, ::Material const&>                   mMaterial;
+    ::ll::TypedStorage<1, 2, ::Material>                          mMaterial;
     ::ll::TypedStorage<8, 96, ::BlockComponentStorage>            mComponents;
     ::ll::TypedStorage<8, 160, ::BlockType::NameInfo>             mNameInfo;
     ::ll::TypedStorage<8, 8, ::BlockProperty>                     mProperties;
@@ -303,8 +304,6 @@ public:
 
 public:
     // prevent constructor by default
-    BlockType& operator=(BlockType const&);
-    BlockType(BlockType const&);
     BlockType();
 
 public:
@@ -474,6 +473,8 @@ public:
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
+    virtual bool requiresLegacyRedstoneSetup() const;
+
     virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
     virtual bool isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
@@ -506,7 +507,13 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    virtual bool tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const;
 
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
@@ -664,12 +671,14 @@ public:
 
     MCAPI bool canProvideFullSupport(::Block const& block, uchar face) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::Block const& connectionUpdate(
         ::BlockSource&                   region,
         ::Block const&                   block,
         ::BlockPos const&                pos,
         ::NeighborBlockDirections const& neighborBlockDirections
     ) const;
+#endif
 
     MCAPI void createBlockPermutations(uint latestUpdaterVersion);
 
@@ -689,10 +698,6 @@ public:
 
     MCAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
-    MCAPI float getDestroySpeed() const;
-
-    MCAPI float getExplosionResistance() const;
-
     MCAPI ::ResourceDrops
     getResourceDrops(::Block const& block, ::IRandom& random, ::ResourceDropsContext const& resourceDropsContext) const;
 
@@ -703,8 +708,6 @@ public:
     MCAPI bool hasState(::BlockState const& stateType) const;
 
     MCAPI bool hasTag(::HashedString const& tag) const;
-
-    MCAPI void initializeBlockStateGroup();
 
     MCAPI bool isValidSpawn(
         ::BlockSource&                 region,
@@ -940,6 +943,8 @@ public:
 
     MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
+
     MCFOLD bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
     MCFOLD bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
@@ -972,7 +977,13 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCFOLD bool $tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const;
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 

@@ -127,6 +127,8 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
     _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view const newNamespace);
+
+    MCAPI ::std::optional<::std::string> _tryClaimAlias(::std::string const& commandName);
     // NOLINTEND
 
 public:

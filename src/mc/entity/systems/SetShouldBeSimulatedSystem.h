@@ -20,9 +20,9 @@ namespace SetShouldBeSimulatedSystem {
 MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 
 MCAPI void setShouldBeSimulatedIfClientPredicted(
-    ::StrictEntityContext const&                        entity,
-    ::optional_ref<::VehicleInputIntentComponent const> vehicleInputIntent,
-    ::EntityModifier<::ShouldBeSimulatedComponent>&     modifier
+    ::StrictEntityContext const&                          entity,
+    ::optional_ref<::VehicleInputIntentComponent const>   vehicleInputIntent,
+    ::EntityModifier<::ShouldBeSimulatedComponent> const& modifier
 );
 // NOLINTEND
 

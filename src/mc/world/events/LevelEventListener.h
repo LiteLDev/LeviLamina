@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
@@ -49,16 +48,14 @@ public:
 
     virtual ::EventResult onRealmsStory(::std::string const& storyData);
 
-    virtual ::EventResult onWorldClockTimeModified(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    virtual ::EventResult onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
 
-    virtual ::EventResult onWorldClockPaused(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    virtual ::EventResult onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
 
-    virtual ::EventResult onWorldClockResumed(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    virtual ::EventResult onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
 
-    virtual ::EventResult onWorldClockTimeMarker(
-        ::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock,
-        ::std::string const&                              timeMarkerName
-    );
+    virtual ::EventResult
+    onWorldClockTimeMarker(::gsl::not_null<::WorldClock*> clock, ::std::string const& timeMarkerName);
 
     virtual ::EventResult onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
@@ -90,16 +87,14 @@ public:
 
     MCFOLD ::EventResult $onRealmsStory(::std::string const& storyData);
 
-    MCFOLD ::EventResult $onWorldClockTimeModified(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    MCFOLD ::EventResult $onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockPaused(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    MCFOLD ::EventResult $onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockResumed(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    MCFOLD ::EventResult $onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockTimeMarker(
-        ::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock,
-        ::std::string const&                              timeMarkerName
-    );
+    MCFOLD ::EventResult
+    $onWorldClockTimeMarker(::gsl::not_null<::WorldClock*> clock, ::std::string const& timeMarkerName);
 
     MCFOLD ::EventResult $onEvent(::LevelNotificationEvent const& event);
 

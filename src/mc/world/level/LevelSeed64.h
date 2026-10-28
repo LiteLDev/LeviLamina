@@ -12,4 +12,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mValue;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::std::string toUiString() const;
+    // NOLINTEND
 };

@@ -15,6 +15,7 @@ class AppPlatform_GameCore;
 class GameControllerHandler_GameCore;
 class HIDControllerGameCoreDesktop;
 class IMinecraftEventing;
+struct XGameActivationInfo;
 struct XTaskQueueObject;
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock { class GameHolder; }
@@ -38,7 +39,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::HIDControllerGameCoreDesktop>>   mHIDController;
     ::ll::TypedStorage<1, 1, bool>                                                 mResetCalled;
     ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>                                  mTaskQueue;
-    ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                        mGameProtocolToken;
+    ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                        mGameActivationToken;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameControllerHandler_GameCore>> mGameControllerHandler_Shim;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppPlatform_GameCore>>            mPlatform_Shim;
     ::ll::TypedStorage<8, 8, ::HWND__*>                                            mHwnd;
@@ -96,7 +97,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void onProtocolActivation(void* context, char const* uri);
+    MCAPI static void onActivation(void* context, ::XGameActivationInfo const* activationInfo);
     // NOLINTEND
 
 public:

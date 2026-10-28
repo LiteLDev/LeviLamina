@@ -12,6 +12,7 @@ class ServerSoundHandle;
 class Vec3;
 struct LoopingSoundAttributes;
 struct LoopingSoundState;
+struct PlayMusicOptions;
 struct PlaySoundOptions;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
@@ -33,9 +34,9 @@ public:
 
     virtual ::std::optional<::std::string> getSubtitle(::std::string const&) const /*override*/;
 
-    virtual void playMusic(::std::string const&, float, uint&) /*override*/;
+    virtual void playMusic(::PlayMusicOptions) /*override*/;
 
-    virtual void playMusic(::std::string const&, float) /*override*/;
+    virtual void playMusic(::PlayMusicOptions, uint&) /*override*/;
 
     virtual bool isLoadingMusic() const /*override*/;
 
@@ -92,6 +93,8 @@ public:
 
     virtual bool isPlayingSound(::ServerSoundHandle) const /*override*/;
 
+    virtual bool wasSoundStoppedExplicitly(::ServerSoundHandle) const /*override*/;
+
     virtual uint64 playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&) /*override*/;
 
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const /*override*/;
@@ -113,9 +116,9 @@ public:
 
     MCNAPI ::std::optional<::std::string> $getSubtitle(::std::string const&) const;
 
-    MCNAPI void $playMusic(::std::string const&, float, uint&);
+    MCNAPI void $playMusic(::PlayMusicOptions);
 
-    MCNAPI void $playMusic(::std::string const&, float);
+    MCNAPI void $playMusic(::PlayMusicOptions, uint&);
 
     MCNAPI bool $isLoadingMusic() const;
 
@@ -170,6 +173,8 @@ public:
     MCNAPI bool $isPlayingSound(::Core::Path const&) const;
 
     MCNAPI bool $isPlayingSound(::ServerSoundHandle) const;
+
+    MCNAPI bool $wasSoundStoppedExplicitly(::ServerSoundHandle) const;
 
     MCNAPI uint64 $playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
 

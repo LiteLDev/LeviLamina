@@ -49,8 +49,8 @@ public:
     MCAPI static ::std::string
     composeRoute(::PlayScreenDefaultTab tab, bool isEditorMode, ::std::string const& dirtyLevelId);
 
-    MCAPI static ::std::string
-    getLastPlayScreenTab(::std::vector<::OreUI::RouterLocation> const& routerHistory, bool isEditorMode);
+    MCAPI static ::std::vector<::std::string>
+    getPlayScreenRoutes(::std::vector<::OreUI::RouterLocation> const& routerHistory, bool isEditorMode);
 
     MCAPI static ::PlayScreenDefaultTab resolveEditorTabFromRoute(::std::string const& route);
     // NOLINTEND

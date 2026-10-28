@@ -22,7 +22,7 @@ public:
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
         ::TaskStartInfo const&,
         ::brstd::move_only_function<::TaskResult()>&&,
-        ::std::function<void()>&&
+        ::brstd::move_only_function<void()>&&
     ) /*override*/;
 
     virtual ::Bedrock::Threading::Async<void>
@@ -42,8 +42,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<void>
-    $queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&);
+    MCNAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(
+        ::TaskStartInfo const&,
+        ::brstd::move_only_function<::TaskResult()>&&,
+        ::brstd::move_only_function<void()>&&
+    );
 
     MCNAPI ::Bedrock::Threading::Async<void>
     $queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&);

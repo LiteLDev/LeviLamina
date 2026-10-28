@@ -124,7 +124,7 @@ public:
 
     virtual ::std::vector<::std::string> getExcludedCatalogueTags() const;
 
-    virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
+    virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool shouldIncludeEduResourcePacks) const;
 
     virtual ::std::unique_ptr<::IScreenCapabilities> getScreenCapabilities(::std::string const& screenName) const;
 
@@ -226,7 +226,7 @@ public:
 
     MCFOLD ::std::vector<::std::string> $getExcludedCatalogueTags() const;
 
-    MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
+    MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool shouldIncludeEduResourcePacks) const;
 
     MCAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
 

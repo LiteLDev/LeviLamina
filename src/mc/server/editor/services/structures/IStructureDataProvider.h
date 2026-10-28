@@ -20,6 +20,8 @@ public:
     // NOLINTBEGIN
     virtual bool hasStructureData(::mce::UUID const& id) const = 0;
 
+    virtual bool canAccessStructureData(::mce::UUID const& id, ::mce::UUID const& clientId) const = 0;
+
     virtual ::Scripting::Result_deprecated<::std::variant<
         ::StructureTemplate const*,
         ::Editor::EditorStructureTemplate const*,

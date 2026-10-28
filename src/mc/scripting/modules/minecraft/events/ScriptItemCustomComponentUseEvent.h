@@ -8,6 +8,7 @@
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
@@ -35,11 +36,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 152, ::ItemStack const>    mItemStack;
         ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mPlayer;
+        ::ll::TypedStorage<1, 1, ::HandSlot const>       mHandSlot;
         // NOLINTEND
     };
 
     using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
-        void(::ItemOnUseResult&, ::ItemStack&, ::Player&)>;
+        void(::ItemOnUseResult&, ::ItemStack&, ::Player&, ::HandSlot)>;
 
 public:
     // member variables

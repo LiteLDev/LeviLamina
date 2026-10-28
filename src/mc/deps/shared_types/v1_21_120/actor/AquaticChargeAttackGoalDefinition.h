@@ -19,6 +19,12 @@ public:
     ::ll::TypedStorage<4, 4, float>                     mChargeOvershootDistance;
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mChargeCooldownTime;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_120

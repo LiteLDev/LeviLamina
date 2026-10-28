@@ -7,11 +7,10 @@
 class ItemDescriptor;
 class ItemStackRequestAction;
 class ItemStackRequestData;
-class NetworkItemInstanceDescriptor;
-class RecipeIngredient;
 namespace ItemStackRequestCereal { struct BeaconPaymentActionData; }
 namespace ItemStackRequestCereal { struct ConsumeActionData; }
 namespace ItemStackRequestCereal { struct CraftCreativeActionData; }
+namespace ItemStackRequestCereal { struct CraftDiscPressActionData; }
 namespace ItemStackRequestCereal { struct CraftLoomActionData; }
 namespace ItemStackRequestCereal { struct CraftNonImplementedActionData; }
 namespace ItemStackRequestCereal { struct CraftRecipeActionData; }
@@ -28,9 +27,7 @@ namespace ItemStackRequestCereal { struct ItemTagDescriptorData; }
 namespace ItemStackRequestCereal { struct LabTableCombineActionData; }
 namespace ItemStackRequestCereal { struct MineBlockActionData; }
 namespace ItemStackRequestCereal { struct MolangItemDescriptorData; }
-namespace ItemStackRequestCereal { struct NetworkItemInstanceDescriptorData; }
 namespace ItemStackRequestCereal { struct PlaceActionData; }
-namespace ItemStackRequestCereal { struct RecipeIngredientData; }
 namespace ItemStackRequestCereal { struct RequestData; }
 namespace ItemStackRequestCereal { struct SwapActionData; }
 namespace ItemStackRequestCereal { struct TakeActionData; }
@@ -44,11 +41,7 @@ MCAPI void bindActionData(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindItemDescriptorData(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindNetworkItemInstanceDescriptorData(::cereal::ReflectionCtx& ctx);
-
 MCAPI void bindRequestData(::cereal::ReflectionCtx& ctx);
-
-MCAPI void bindSlotInfoData(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindTextProcessingEventOrigin(::cereal::ReflectionCtx& ctx);
 
@@ -71,6 +64,7 @@ MCAPI ::std::variant<
     ::ItemStackRequestCereal::CraftRecipeOptionalActionData,
     ::ItemStackRequestCereal::CraftRepairAndDisenchantActionData,
     ::ItemStackRequestCereal::CraftLoomActionData,
+    ::ItemStackRequestCereal::CraftDiscPressActionData,
     ::ItemStackRequestCereal::CraftNonImplementedActionData,
     ::ItemStackRequestCereal::CraftResultsActionData>
 toActionData(::ItemStackRequestAction const& action);
@@ -108,22 +102,10 @@ MCAPI ::std::unique_ptr<::ItemStackRequestAction> toItemStackRequestAction(
         ::ItemStackRequestCereal::CraftRecipeOptionalActionData,
         ::ItemStackRequestCereal::CraftRepairAndDisenchantActionData,
         ::ItemStackRequestCereal::CraftLoomActionData,
+        ::ItemStackRequestCereal::CraftDiscPressActionData,
         ::ItemStackRequestCereal::CraftNonImplementedActionData,
         ::ItemStackRequestCereal::CraftResultsActionData> const& data
 );
-
-MCAPI ::std::vector<::ItemStackRequestCereal::NetworkItemInstanceDescriptorData>
-toNetworkItemInstanceDescriptorDataList(::std::vector<::NetworkItemInstanceDescriptor> const& descriptors);
-
-MCAPI ::std::vector<::NetworkItemInstanceDescriptor> toNetworkItemInstanceDescriptors(
-    ::std::vector<::ItemStackRequestCereal::NetworkItemInstanceDescriptorData> const& dataDescriptors
-);
-
-MCAPI ::std::vector<::ItemStackRequestCereal::RecipeIngredientData>
-toRecipeIngredientDataList(::std::vector<::RecipeIngredient> const& ingredients);
-
-MCAPI ::std::vector<::RecipeIngredient>
-toRecipeIngredients(::std::vector<::ItemStackRequestCereal::RecipeIngredientData> const& dataIngredients);
 
 MCAPI ::ItemStackRequestCereal::RequestData toRequestData(::ItemStackRequestData const& request);
 // NOLINTEND

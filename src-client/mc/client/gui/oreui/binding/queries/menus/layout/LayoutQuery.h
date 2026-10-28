@@ -14,8 +14,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class ILayoutServiceCache;
+class ILocalHydratingLayoutServiceCache;
 struct LayoutCacheSnapshot;
+namespace OreUI { class LocalizedStringObject; }
 // clang-format on
 
 namespace OreUI {
@@ -28,10 +29,12 @@ public:
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
                                                                                       mVariant;
     ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::std::string, ::std::string>> mFabIds;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache>>   mLayoutServiceCache;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                           mTaskGroup;
-    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::SharedAsync<void>>                mFetchTask;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mRefreshSubscription;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LocalizedStringObject>>       mTitle;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache>>
+                                                                       mLocalHydratingLayoutServiceCache;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                            mTaskGroup;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::SharedAsync<void>> mFetchTask;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mRefreshSubscription;
     // NOLINTEND
 
 public:
@@ -47,8 +50,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    LayoutQuery(::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> layoutServiceCache, ::std::string const& layoutId);
+    MCAPI LayoutQuery(
+        ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache> layoutServiceCache,
+        ::std::string const&                                               layoutId
+    );
 
     MCAPI void _applyLayout(::LayoutCacheSnapshot const& layout);
 
@@ -60,8 +65,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> layoutServiceCache, ::std::string const& layoutId);
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache> layoutServiceCache,
+        ::std::string const&                                               layoutId
+    );
     // NOLINTEND
 };
 

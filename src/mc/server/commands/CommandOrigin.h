@@ -114,6 +114,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::CommandArea>
     getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool isTeacher() const;
+#endif
     // NOLINTEND
 
 public:

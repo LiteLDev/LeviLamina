@@ -30,11 +30,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isValid() const;
 
-#ifdef LL_PLAT_S
     MCAPI bool $requiresNeighborAwareBlockUpgrade() const;
-#else // LL_PLAT_C
-    MCFOLD bool $requiresNeighborAwareBlockUpgrade() const;
-#endif
 
     MCAPI ::std::string_view $getStructureName() const;
 

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/game/LeaveGameResourceBehavior.h"
+
 struct IGameServerShutdown {
 public:
     // virtual functions
@@ -10,7 +13,7 @@ public:
 
     virtual void abortPendingGameJoin() = 0;
 
-    virtual void requestLeaveGame(bool switchScreen, bool sync) = 0;
+    virtual void requestLeaveGame(bool switchScreen, bool sync, ::LeaveGameResourceBehavior resourceBehavior) = 0;
 
     virtual void requestLeaveThenJoinFriendsWorld(::std::string_view serverId) = 0;
 

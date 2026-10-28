@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaReader.h"
 #include "mc/platform/Result.h"
+#include "mc/util/JsonDocumentParseResult.h"
 
 namespace cereal {
 
@@ -50,7 +52,8 @@ public:
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator>>
-        mDoc;
+                                                                        mDoc;
+    ::ll::TypedStorage<4, 4, ::Core::JsonUtil::JsonDocumentParseResult> mParseResult;
     // NOLINTEND
 
 public:
@@ -61,6 +64,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
+
+    virtual ::std::optional<::cereal::ResultCode> inputError() const /*override*/;
 
     virtual ::cereal::SchemaRWType expectedType() const /*override*/;
 
@@ -117,7 +122,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RapidJSONSchemaReader(::std::string const& data);
+    MCAPI explicit RapidJSONSchemaReader(::std::string_view data);
 
     MCAPI explicit RapidJSONSchemaReader(
         ::rapidjson::GenericValue<
@@ -129,7 +134,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& data);
+    MCAPI void* $ctor(::std::string_view data);
 
     MCAPI void* $ctor(
         ::rapidjson::GenericValue<
@@ -148,6 +153,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isValid() const;
+
+    MCFOLD ::std::optional<::cereal::ResultCode> $inputError() const;
 
     MCFOLD ::cereal::SchemaRWType $expectedType() const;
 

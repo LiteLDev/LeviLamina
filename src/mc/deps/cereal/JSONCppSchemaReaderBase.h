@@ -121,7 +121,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JSONCppSchemaReaderBase(::std::string const& data);
+    MCAPI explicit JSONCppSchemaReaderBase(::std::string_view data);
 
     MCAPI explicit JSONCppSchemaReaderBase(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
@@ -129,7 +129,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& data);
+    MCAPI void* $ctor(::std::string_view data);
 
     MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND

@@ -368,7 +368,7 @@ public:
 
     virtual bool isScreenReplaceable() const /*override*/;
 
-    virtual void handleTextChar(::std::string const& inputUtf8) /*override*/;
+    virtual void handleTextChar(::std::string_view inputUtf8) /*override*/;
 
     virtual void setBufferTextCharEvents(bool pushTextCharEvents) /*override*/;
 
@@ -376,7 +376,7 @@ public:
 
     virtual bool isOnSceneStack(::ui::SceneType sceneType) const /*override*/;
 
-    virtual bool isOnSceneStack(::std::string const& screenName) const /*override*/;
+    virtual bool isOnSceneStack(::std::string_view screenName) const /*override*/;
 
     virtual ::SceneStackProxy* getProxy() /*override*/;
 
@@ -603,7 +603,7 @@ public:
 
     MCAPI bool $isScreenReplaceable() const;
 
-    MCAPI void $handleTextChar(::std::string const& inputUtf8);
+    MCAPI void $handleTextChar(::std::string_view inputUtf8);
 
     MCAPI void $setBufferTextCharEvents(bool pushTextCharEvents);
 
@@ -611,7 +611,7 @@ public:
 
     MCAPI bool $isOnSceneStack(::ui::SceneType sceneType) const;
 
-    MCAPI bool $isOnSceneStack(::std::string const& screenName) const;
+    MCAPI bool $isOnSceneStack(::std::string_view screenName) const;
 
     MCAPI ::SceneStackProxy* $getProxy();
 

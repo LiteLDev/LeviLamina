@@ -36,7 +36,7 @@ public:
     ::ll::TypedStorage<8, 192, ::std::array<::mce::TexturePtr, 6>>                  mPanoramaImages;
     ::ll::TypedStorage<8, 336, ::std::array<::ResourceLocation, 6>>                 mPanormaResourceLocations;
     ::ll::TypedStorage<8, 336, ::std::array<::ResourceLocation, 6>>                 mPanoramaHDRResourceLocations;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>                                 mCubemapTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture>                                 mCubemapTexture;
     ::ll::TypedStorage<8, 56, ::ResourceLocation>                                   mOverlayLocation;
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                    mOverlayTexture;
     ::ll::TypedStorage<4, 4, int>                                                   mTextureRefCount;

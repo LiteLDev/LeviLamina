@@ -48,6 +48,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
@@ -68,6 +69,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );

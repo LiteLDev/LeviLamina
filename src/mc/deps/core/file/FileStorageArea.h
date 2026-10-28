@@ -236,7 +236,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::unique_ptr<::Core::FileSystemImpl>
+    MCAPI ::std::unique_ptr<::Core::FileSystemImpl>
     $createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
     MCFOLD void $setUsedSizeOverride(uint64 fileSize);

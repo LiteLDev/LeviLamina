@@ -40,7 +40,7 @@ MCAPI void _tickAddLocalPlayerEntityMovedSystemAsynchronous1(
     ::EntityModifier<
         ::ActorChunkMoveFlagComponent,
         ::ActorLocalPlayerEntityMovedFlagComponent,
-        ::ActorSetPositionRequestComponent> modifier
+        ::ActorSetPositionRequestComponent> const& modifier
 );
 
 MCAPI void _tickChunkMoveNeededSystemAsynchronous4(
@@ -50,7 +50,7 @@ MCAPI void _tickChunkMoveNeededSystemAsynchronous4(
     ::EntityModifier<
         ::ActorChunkMoveFlagComponent,
         ::ActorLocalPlayerEntityMovedFlagComponent,
-        ::ActorSetPositionRequestComponent> modifier
+        ::ActorSetPositionRequestComponent> const& modifier
 );
 
 MCAPI void _tickChunkMoveNeededSystemSynchronous4(

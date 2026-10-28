@@ -9,6 +9,8 @@ struct SkinImage : public ::mce::Image {
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI bool operator==(::SkinImage const& rhs) const;
+#endif
     // NOLINTEND
 };

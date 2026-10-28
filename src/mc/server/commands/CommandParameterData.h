@@ -72,30 +72,6 @@ public:
     // NOLINTBEGIN
     MCAPI CommandParameterData(::CommandParameterData const& p);
 
-    MCAPI CommandParameterData(
-        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
-        ::CommandRegistry::ParamParseRule const* parseRule,
-        char const*                              name,
-        ::CommandParameterDataType               paramType,
-        char const*                              enumNameOrPostfix,
-        char const*                              chainedSubcommand,
-        int                                      offset,
-        bool                                     optional,
-        int                                      setOffset
-    );
-
-    MCAPI CommandParameterData(
-        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
-        ::CommandRegistry::ParamParseRule const* parseRule,
-        char const*                              name,
-        ::CommandParameterDataType               paramType,
-        char const*                              enumNameOrPostfix,
-        int                                      index,
-        bool                                     optional,
-        void* (*getFn)(::Command*, int),
-        bool* (*isSetFn)(::Command*, int)
-    );
-
     MCAPI ~CommandParameterData();
     // NOLINTEND
 
@@ -103,30 +79,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CommandParameterData const& p);
-
-    MCAPI void* $ctor(
-        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
-        ::CommandRegistry::ParamParseRule const* parseRule,
-        char const*                              name,
-        ::CommandParameterDataType               paramType,
-        char const*                              enumNameOrPostfix,
-        char const*                              chainedSubcommand,
-        int                                      offset,
-        bool                                     optional,
-        int                                      setOffset
-    );
-
-    MCAPI void* $ctor(
-        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
-        ::CommandRegistry::ParamParseRule const* parseRule,
-        char const*                              name,
-        ::CommandParameterDataType               paramType,
-        char const*                              enumNameOrPostfix,
-        int                                      index,
-        bool                                     optional,
-        void* (*getFn)(::Command*, int),
-        bool* (*isSetFn)(::Command*, int)
-    );
     // NOLINTEND
 
 public:

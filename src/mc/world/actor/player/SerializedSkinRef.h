@@ -44,13 +44,12 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkinRef();
 
-    MCAPI SerializedSkinRef(::std::string const& playFabId, ::ConnectionRequest const& connectionRequest);
+    MCAPI explicit SerializedSkinRef(::ConnectionRequest const& connectionRequest);
 
-    MCAPI SerializedSkinRef(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCAPI explicit SerializedSkinRef(::SubClientConnectionRequest const& request);
 
     MCAPI SerializedSkinRef(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,
@@ -116,11 +115,7 @@ public:
     MCAPI void
     setPieceTintColors(::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors);
 
-    MCAPI void setPlayFabId(::std::string const& playFabId);
-
     MCAPI void setProfileHash(::std::string const& profileHash);
-
-    MCAPI void setResourcePatch(::std::string const& resourcePatch);
 
     MCAPI void setSkinColor(::mce::Color const& color);
 
@@ -138,13 +133,12 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::ConnectionRequest const& connectionRequest);
+    MCAPI void* $ctor(::ConnectionRequest const& connectionRequest);
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCAPI void* $ctor(::SubClientConnectionRequest const& request);
 
     MCAPI void* $ctor(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,

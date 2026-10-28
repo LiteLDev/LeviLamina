@@ -27,6 +27,8 @@ public:
     MCAPI int toARGB() const;
 
     MCAPI ::std::string toHexString() const;
+
+    MCAPI ::std::string toRGBAHexString() const;
 #endif
     // NOLINTEND
 

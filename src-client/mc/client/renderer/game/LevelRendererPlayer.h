@@ -420,8 +420,6 @@ public:
         ::Random&                               random
     );
 
-    MCAPI void updateDestroyBlock(::BlockPos const& tp, float destroyRate);
-
     MCAPI void updateDestroyProgress();
 
     MCAPI void updateListenerState(float alpha);
@@ -472,7 +470,7 @@ public:
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCFOLD void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
     MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
@@ -492,7 +490,7 @@ public:
 
     MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
-    MCFOLD void $addCameraListenerToRenderChunkCoordinator();
+    MCAPI void $addCameraListenerToRenderChunkCoordinator();
 
     MCAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
 

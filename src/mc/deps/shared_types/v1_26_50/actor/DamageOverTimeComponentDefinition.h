@@ -15,10 +15,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_DAMAGE_PER_HURT();
-
-    MCAPI static float const& DEFAULT_TIME_BETWEEN_HURT();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

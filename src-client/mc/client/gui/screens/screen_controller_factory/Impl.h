@@ -10,8 +10,11 @@
 // clang-format off
 class InviteScreenController;
 class MinecraftScreenModel;
+class PersonaScreenModel;
 class ScreenController;
+class StoreDataDrivenScreenController;
 class ToastScreenController;
+struct StoreDataDrivenScreenParams;
 // clang-format on
 
 namespace ScreenControllerFactory {
@@ -20,7 +23,7 @@ class Impl : public ::IScreenControllerFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::ScreenControllerFactory::FactoryFunctions> mFactories;
+    ::ll::TypedStorage<8, 192, ::ScreenControllerFactory::FactoryFunctions> mFactories;
     // NOLINTEND
 
 public:
@@ -35,6 +38,12 @@ public:
         ::IScreenControllerFactory::ControllerType<::InviteScreenController>,
         ::std::shared_ptr<::MinecraftScreenModel> model
     ) /*override*/;
+
+    virtual ::std::shared_ptr<::ScreenController> createScreenController(
+        ::IScreenControllerFactory::ControllerType<::StoreDataDrivenScreenController>,
+        ::std::shared_ptr<::PersonaScreenModel> model,
+        ::StoreDataDrivenScreenParams const&    params
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -48,6 +57,12 @@ public:
     MCAPI ::std::shared_ptr<::ScreenController> $createScreenController(
         ::IScreenControllerFactory::ControllerType<::InviteScreenController>,
         ::std::shared_ptr<::MinecraftScreenModel> model
+    );
+
+    MCAPI ::std::shared_ptr<::ScreenController> $createScreenController(
+        ::IScreenControllerFactory::ControllerType<::StoreDataDrivenScreenController>,
+        ::std::shared_ptr<::PersonaScreenModel> model,
+        ::StoreDataDrivenScreenParams const&    params
     );
     // NOLINTEND
 };

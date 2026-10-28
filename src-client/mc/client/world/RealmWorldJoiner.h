@@ -31,6 +31,7 @@ namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace World { struct RealmsJoinData; }
+namespace World { struct RecentlyPlayedPendingTargetData; }
 // clang-format on
 
 namespace World {
@@ -56,7 +57,9 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()>>
         mGetPartyProvider;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::Realms::World const&, ::Realms::PlayerRoleActions)>>
-                                                                mCanUserDoRealmRoleAction;
+        mCanUserDoRealmRoleAction;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::World::RecentlyPlayedPendingTargetData)>>
+                                                                mPrepareRecentlyPlayedTarget;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AsyncTracker>> mAsyncTracker;
     ::ll::TypedStorage<1, 1, bool>                              mJoinRealmWorldInProgress;
     ::ll::TypedStorage<1, 1, bool>                              mIsEditorMode;

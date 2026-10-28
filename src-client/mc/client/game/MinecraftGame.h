@@ -9,6 +9,7 @@
 #include "mc/client/game/DeferredTaskCategory.h"
 #include "mc/client/game/IMinecraftGame.h"
 #include "mc/client/game/IMultiPlayerServices.h"
+#include "mc/client/game/LeaveGameResourceBehavior.h"
 #include "mc/client/game/SerialWorkList.h"
 #include "mc/client/game/StartIntent.h"
 #include "mc/client/game/local_server_launcher/ILocalServerLauncherImpl.h"
@@ -59,16 +60,16 @@ class CubemapBackgroundResources;
 class DateManager;
 class DeferredLighting;
 class DevConsoleLogger;
-class EDUSystems;
+class EduSystems;
 class EmoticonManager;
 class EntityContext;
+class ExperienceSystemsManager;
 class ExternalContentManager;
 class FileArchiver;
 class FlightingService;
 class FontRepository;
 class GameModuleClient;
 class GameRenderer;
-class GatheringManager;
 class GeometryGroup;
 class GlobalResourcesCrashRecovery;
 class GuiData;
@@ -84,8 +85,8 @@ class IEntitlementManager;
 class IExternalServerFile;
 class IGameModuleApp;
 class IGameModuleShared;
-class ILayoutServiceCache;
 class ILevelListCache;
+class ILocalHydratingLayoutServiceCache;
 class IMinecraftEventing;
 class IOfferRepository;
 class IResourcePackRepository;
@@ -166,7 +167,6 @@ struct RealmTransferActionFunc;
 struct ScreenshotOptions;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
-namespace Bedrock::Profiling { class ProfilingOrchestrator; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
@@ -188,6 +188,7 @@ namespace Realms { class RealmsSystem; }
 namespace Realms { class SubscriptionService; }
 namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
+namespace ServerInitialization { class IServerInitializer; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace Social { class MultiplayerGameInfo; }
@@ -195,6 +196,7 @@ namespace Social { class MultiplayerServiceManager; }
 namespace Social { class PresenceManager; }
 namespace Social { class SocialSystem; }
 namespace Social { class User; }
+namespace Social::ManagedChat { class ManagedChatClient; }
 namespace World { class WorldSystem; }
 namespace dragon::framerenderer { struct DebugParameters; }
 namespace edu::auth { struct CredentialsAcquired; }
@@ -253,6 +255,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk4882be;
+        ::ll::UntypedStorage<8, 8>  mUnk78052f;
         ::ll::UntypedStorage<8, 16> mUnkf28199;
         // NOLINTEND
 
@@ -274,7 +277,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnka8b3b6;
+        ::ll::UntypedStorage<8, 40> mUnka8b3b6;
         ::ll::UntypedStorage<8, 16> mUnkc9621b;
         // NOLINTEND
 
@@ -308,6 +311,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk707e20;
     ::ll::UntypedStorage<8, 8>    mUnk77bae9;
     ::ll::UntypedStorage<8, 8>    mUnk39dbf1;
+    ::ll::UntypedStorage<8, 24>   mUnk6dea75;
     ::ll::UntypedStorage<8, 8>    mUnkb9a1e2;
     ::ll::UntypedStorage<8, 8>    mUnka617fc;
     ::ll::UntypedStorage<8, 8>    mUnk847dc8;
@@ -410,6 +414,7 @@ public:
     ::ll::UntypedStorage<8, 16>   mUnk333c36;
     ::ll::UntypedStorage<8, 8>    mUnkab5b49;
     ::ll::UntypedStorage<8, 8>    mUnk2d070e;
+    ::ll::UntypedStorage<8, 8>    mUnke5aa79;
     ::ll::UntypedStorage<8, 8>    mUnkffc4a2;
     ::ll::UntypedStorage<8, 8>    mUnk87a54d;
     ::ll::UntypedStorage<8, 8>    mUnk80cd0e;
@@ -417,6 +422,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnkb8db74;
     ::ll::UntypedStorage<8, 16>   mUnkb87b62;
     ::ll::UntypedStorage<8, 8>    mUnkb69251;
+    ::ll::UntypedStorage<8, 16>   mUnk9aa48f;
     ::ll::UntypedStorage<8, 8>    mUnk138dbc;
     ::ll::UntypedStorage<8, 8>    mUnk125782;
     ::ll::UntypedStorage<8, 8>    mUnk6585d8;
@@ -466,16 +472,25 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk585275;
     ::ll::UntypedStorage<8, 16>   mUnk5f5935;
     ::ll::UntypedStorage<8, 8>    mUnkd12853;
-    ::ll::UntypedStorage<8, 8>    mUnk44d437;
     ::ll::UntypedStorage<8, 8>    mUnk98cc86;
-    ::ll::UntypedStorage<8, 8>    mUnk6725e8;
+    ::ll::UntypedStorage<8, 16>   mUnk9f4932;
+    ::ll::UntypedStorage<8, 8>    mUnk44d437;
+    ::ll::UntypedStorage<8, 8>    mUnkc35e69;
+    ::ll::UntypedStorage<8, 8>    mUnk4cf444;
+    ::ll::UntypedStorage<8, 8>    mUnk3c00e8;
+    ::ll::UntypedStorage<8, 8>    mUnk23314e;
+    ::ll::UntypedStorage<8, 16>   mUnk85603d;
     ::ll::UntypedStorage<8, 16>   mUnk7417c6;
+    ::ll::UntypedStorage<8, 16>   mUnk4f8e0c;
     ::ll::UntypedStorage<8, 8>    mUnkd72bcd;
+    ::ll::UntypedStorage<1, 1>    mUnkfa1924;
+    ::ll::UntypedStorage<1, 1>    mUnkfcac97;
     ::ll::UntypedStorage<8, 8>    mUnk6c5fec;
     ::ll::UntypedStorage<8, 16>   mUnk2b5c1a;
     ::ll::UntypedStorage<8, 16>   mUnkdaad93;
-    ::ll::UntypedStorage<8, 8>    mUnk2a83b2;
+    ::ll::UntypedStorage<8, 8>    mUnk2852bc;
     ::ll::UntypedStorage<8, 8>    mUnkd10826;
+    ::ll::UntypedStorage<8, 8>    mUnk39a871;
     ::ll::UntypedStorage<8, 8>    mUnk64ddee;
     ::ll::UntypedStorage<8, 64>   mUnkd24a7a;
     ::ll::UntypedStorage<8, 8>    mUnkec79fd;
@@ -483,7 +498,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk74222f;
     ::ll::UntypedStorage<8, 8>    mUnk468478;
     ::ll::UntypedStorage<8, 8>    mUnkea13b7;
-    ::ll::UntypedStorage<8, 936>  mUnk9947a0;
+    ::ll::UntypedStorage<8, 904>  mUnk9947a0;
     ::ll::UntypedStorage<8, 16>   mUnkbf42d0;
     ::ll::UntypedStorage<8, 16>   mUnk469d3c;
     ::ll::UntypedStorage<8, 8>    mUnkf245c7;
@@ -496,6 +511,7 @@ public:
     ::ll::UntypedStorage<8, 64>   mUnk6331f9;
     ::ll::UntypedStorage<8, 64>   mUnkfb3c1e;
     ::ll::UntypedStorage<8, 16>   mUnkc74988;
+    ::ll::UntypedStorage<8, 8>    mUnk4473f3;
     ::ll::UntypedStorage<8, 8>    mUnk4764de;
     ::ll::UntypedStorage<8, 8>    mUnk2db41b;
     ::ll::UntypedStorage<8, 64>   mUnk4282e8;
@@ -509,11 +525,11 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk910337;
     ::ll::UntypedStorage<8, 8>    mUnkd6ff96;
     ::ll::UntypedStorage<8, 8>    mUnk51e772;
-    ::ll::UntypedStorage<8, 8>    mUnkf2c3d8;
+    ::ll::UntypedStorage<8, 8>    mUnkb96d1f;
     ::ll::UntypedStorage<8, 64>   mUnkc5fc6f;
     ::ll::UntypedStorage<8, 8>    mUnk7e94f8;
     ::ll::UntypedStorage<8, 8>    mUnkf60a71;
-    ::ll::UntypedStorage<8, 16>   mUnk9f4932;
+    ::ll::UntypedStorage<8, 8>    mUnk23be26;
     ::ll::UntypedStorage<8, 8>    mUnk93ccfd;
     ::ll::UntypedStorage<1, 1>    mUnk4d836f;
     ::ll::UntypedStorage<8, 16>   mUnk626810;
@@ -528,29 +544,34 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnka63939;
     ::ll::UntypedStorage<8, 8>    mUnkd68cd6;
     ::ll::UntypedStorage<8, 16>   mUnkd0c917;
-    ::ll::UntypedStorage<8, 8>    mUnka64c85;
+    ::ll::UntypedStorage<8, 8>    mUnk900af7;
     ::ll::UntypedStorage<8, 8>    mUnk31922c;
     ::ll::UntypedStorage<8, 8>    mUnkb92250;
+    ::ll::UntypedStorage<8, 8>    mUnkab832e;
     ::ll::UntypedStorage<8, 8>    mUnkc46d8a;
     ::ll::UntypedStorage<8, 8>    mUnk3dc5d4;
     ::ll::UntypedStorage<8, 8>    mUnk6622a0;
     ::ll::UntypedStorage<8, 16>   mUnke27718;
     ::ll::UntypedStorage<8, 16>   mUnk88d837;
+    ::ll::UntypedStorage<8, 16>   mUnk8c76bf;
     ::ll::UntypedStorage<8, 16>   mUnk9599c5;
     ::ll::UntypedStorage<8, 8>    mUnk1498bc;
     ::ll::UntypedStorage<8, 16>   mUnkc84d4d;
     ::ll::UntypedStorage<8, 8>    mUnkeee60b;
+    ::ll::UntypedStorage<8, 8>    mUnkf2c3d8;
     ::ll::UntypedStorage<8, 8>    mUnk7757ed;
     ::ll::UntypedStorage<8, 8>    mUnk8b5a69;
     ::ll::UntypedStorage<8, 16>   mUnk8a114f;
     ::ll::UntypedStorage<8, 8>    mUnk2c648f;
-    ::ll::UntypedStorage<8, 8>    mUnkef66f4;
+    ::ll::UntypedStorage<8, 8>    mUnkecb2c5;
     ::ll::UntypedStorage<8, 8>    mUnk5cb7cc;
     ::ll::UntypedStorage<8, 456>  mUnke5c301;
     ::ll::UntypedStorage<8, 8>    mUnkd18639;
     ::ll::UntypedStorage<8, 8>    mUnk67d5dd;
     ::ll::UntypedStorage<8, 8>    mUnkc0bd78;
     ::ll::UntypedStorage<8, 8>    mUnk8ac119;
+    ::ll::UntypedStorage<8, 8>    mUnkc00161;
+    ::ll::UntypedStorage<8, 8>    mUnkf6a92e;
     ::ll::UntypedStorage<8, 16>   mUnkddfaa0;
     ::ll::UntypedStorage<8, 8>    mUnk82663e;
     ::ll::UntypedStorage<8, 8>    mUnkb6a170;
@@ -600,7 +621,9 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnkcd32cf;
     ::ll::UntypedStorage<8, 8>    mUnk32d240;
     ::ll::UntypedStorage<8, 16>   mUnkaa8c49;
-    ::ll::UntypedStorage<8, 872>  mUnk6546c2;
+    ::ll::UntypedStorage<8, 840>  mUnk6546c2;
+    ::ll::UntypedStorage<8, 8>    mUnk2481e4;
+    ::ll::UntypedStorage<8, 16>   mUnke67a32;
     ::ll::UntypedStorage<8, 16>   mUnka3a452;
     ::ll::UntypedStorage<8, 8>    mUnk7f0a19;
     ::ll::UntypedStorage<8, 8>    mUnk93ada3;
@@ -617,12 +640,16 @@ public:
     ::ll::UntypedStorage<8, 16>   mUnk3bcf80;
     ::ll::UntypedStorage<8, 16>   mUnka14281;
     ::ll::UntypedStorage<1, 1>    mUnkd46ea8;
+    ::ll::UntypedStorage<4, 4>    mUnk1e1225;
     ::ll::UntypedStorage<8, 8>    mUnk205ada;
     ::ll::UntypedStorage<8, 16>   mUnk41bdf3;
     ::ll::UntypedStorage<8, 16>   mUnkad2805;
     ::ll::UntypedStorage<8, 16>   mUnk6b22bf;
     ::ll::UntypedStorage<8, 64>   mUnkf160e9;
     ::ll::UntypedStorage<8, 64>   mUnk19d968;
+    ::ll::UntypedStorage<8, 64>   mUnkb3be1c;
+    ::ll::UntypedStorage<8, 64>   mUnk917e15;
+    ::ll::UntypedStorage<1, 1>    mUnk2bc3a4;
     // NOLINTEND
 
 public:
@@ -666,12 +693,13 @@ public:
 
     virtual void setUIFontStyle() /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(
-        ::std::string const&     levelId,
-        ::std::string const&     levelName,
-        ::ContentIdentity const& premiumTemplateContentIdentity,
-        ::LevelSettings const&   settings,
-        ::StartIntent            startIntent
+    virtual ::Bedrock::Threading::Async<void> _startLocalServerAsync(
+        ::std::string const&                                          levelId,
+        ::std::string const&                                          levelName,
+        ::ContentIdentity const&                                      premiumTemplateContentIdentity,
+        ::LevelSettings const&                                        settings,
+        ::std::unique_ptr<::ServerInitialization::IServerInitializer> initializer,
+        ::StartIntent                                                 startIntent
     ) /*override*/;
 
     virtual void createAndUploadWorldToRealm(
@@ -773,7 +801,8 @@ public:
 
     virtual void abortPendingGameJoin() /*override*/;
 
-    virtual void requestLeaveGame(bool switchScreen, bool sync) /*override*/;
+    virtual void
+    requestLeaveGame(bool switchScreen, bool sync, ::LeaveGameResourceBehavior resourceBehavior) /*override*/;
 
     virtual void requestLeaveThenJoinFriendsWorld(::std::string_view serverId) /*override*/;
 
@@ -917,7 +946,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PersonaService> getPersonaService() const /*override*/;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> getGatheringManager() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager> getExperienceSystemsManager() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> getContentCatalogService() const /*override*/;
 
@@ -925,7 +954,8 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LayoutRefreshEventSource> getLayoutRefreshEventSource() const /*override*/;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> getLayoutServiceCache() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache>
+    getLocalHydratingLayoutServiceCache() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> getStoreCatalog() const /*override*/;
 
@@ -1015,10 +1045,6 @@ public:
 
     virtual ::ClientNetworkSystem const& getClientNetworkSystem() const /*override*/;
 
-    virtual ::Bedrock::Profiling::ProfilingOrchestrator const* getProfilingOrchestrator() const /*override*/;
-
-    virtual ::Bedrock::Profiling::ProfilingOrchestrator* getMutableProfilingOrchestrator() /*override*/;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity() /*override*/;
 
     virtual void clearCache() /*override*/;
@@ -1077,9 +1103,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Social::PresenceManager> getPresenceManager() /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems> getEduSystems() /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems const> getEduSystems() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft> getPrimaryMinecraft() /*override*/;
 
@@ -1421,175 +1447,23 @@ public:
         bool                                         isLan
     );
 
-    MCAPI ::SerialWorkList::WorkResult _initAudio();
-
-    MCAPI ::SerialWorkList::WorkResult _initCheckStorage();
-
-    MCAPI ::SerialWorkList::WorkResult _initClientNetworkSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initCrashReporting();
-
-    MCAPI ::SerialWorkList::WorkResult
-    _initCreatePrimaryClient(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
-
-    MCAPI ::SerialWorkList::WorkResult _initDatabase();
-
-    MCAPI ::SerialWorkList::WorkResult _initDefaultFonts();
-
-    MCAPI ::SerialWorkList::WorkResult _initDeviceDebugConfig();
-
-    MCAPI ::SerialWorkList::WorkResult _initEventing();
-
-    MCAPI ::SerialWorkList::WorkResult _initFileSystemSpaceTracking();
-
-    MCAPI ::SerialWorkList::WorkResult _initFinish(::std::shared_ptr<::MinecraftGame::InitContext>& initContext);
-
-    MCAPI ::SerialWorkList::WorkResult _initFontHandles();
-
-    MCAPI ::SerialWorkList::WorkResult _initFontMetadata();
-
-    MCAPI ::SerialWorkList::WorkResult _initHideSplashScreen();
-
-    MCAPI ::SerialWorkList::WorkResult _initHttp();
-
-    MCAPI ::SerialWorkList::WorkResult _initIssueHardwareCursorLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initLoadRendererAssets();
-
-    MCAPI ::SerialWorkList::WorkResult _initLoadingBarMaterials();
-
     MCAPI ::SerialWorkList::WorkResult _initLogging();
 
     MCAPI void _initMinecraftGame();
 
-    MCAPI ::SerialWorkList::WorkResult _initMultiplayerMgr();
-
-    MCAPI ::SerialWorkList::WorkResult _initMultiplayerRequestHandler();
-
-    MCAPI ::SerialWorkList::WorkResult _initNetworkSessionOwner();
-
-    MCAPI ::SerialWorkList::WorkResult _initNewPlayerSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initNotifyOnActiveResourcePacksChanged();
-
-    MCAPI ::SerialWorkList::WorkResult _initOnGameSessionReset();
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIAssets();
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIDataProviderManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIRendering();
-
     MCAPI ::SerialWorkList::WorkResult _initOreUISystem(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIViewsCoordinator();
-
-    MCAPI ::SerialWorkList::WorkResult _initPacks();
-
-    MCAPI ::SerialWorkList::WorkResult _initPartySystem();
 
     MCAPI void _initPerMachineOptionObservers();
 
     MCAPI void _initPerUserOptionObservers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI ::SerialWorkList::WorkResult _initPostA();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostB();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostC();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostE();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostFontAsync();
-
-    MCAPI ::SerialWorkList::WorkResult _initPreCacheOutOfGameViews();
-
-    MCAPI ::SerialWorkList::WorkResult
-    _initPrimaryClientComplete(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
-
-    MCAPI ::SerialWorkList::WorkResult _initPrimaryIdentity();
-
-    MCAPI ::SerialWorkList::WorkResult _initProgressTips();
-
-    MCAPI ::SerialWorkList::WorkResult _initPushAlwaysActiveScreen();
-
-    MCAPI ::SerialWorkList::WorkResult _initRealmsSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initRepopulateLevelInfoCache();
-
-    MCAPI ::SerialWorkList::WorkResult _initResourceLoader();
-
     MCAPI void _initServicesManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initSocialSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep1();
 
     MCAPI ::SerialWorkList::WorkResult _initStep2();
 
-    MCAPI ::SerialWorkList::WorkResult _initStep2A();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep2B();
-
     MCAPI ::SerialWorkList::WorkResult _initStep3();
 
-    MCAPI ::SerialWorkList::WorkResult _initStep5();
-
-    MCFOLD ::SerialWorkList::WorkResult _initStorageMigration();
-
-    MCAPI ::SerialWorkList::WorkResult _initTTS();
-
-    MCAPI ::SerialWorkList::WorkResult _initTestClientInterface();
-
-    MCAPI ::SerialWorkList::WorkResult _initTimePlayedNotifier();
-
-    MCAPI ::SerialWorkList::WorkResult _initTriggerSignIn();
-
-    MCAPI ::SerialWorkList::WorkResult _initUILoadAsyncWait();
-
-    MCAPI ::SerialWorkList::WorkResult _initUpdateAppLaunchedCount();
-
-    MCAPI ::SerialWorkList::WorkResult _initUpdateFontsBasedOffOfOverrideEnable();
-
-    MCAPI ::SerialWorkList::WorkResult _initUser();
-
     MCAPI ::SerialWorkList::WorkResult _initUserComplete();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForContentManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForDefaultFontsToLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForDiscoveryService();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForEntitlementCacheLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForFontMetadataToLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForFrameBuilder();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForInitialServicePacks();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForLocalization();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForMainMenuResources();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForOfferLicense();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForOfferRepo();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForOreUIAssets() const;
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForPrimaryUser();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForRepopulateLevelInfoCache();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForResourceRepository();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForSkinRepo();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForWorldTemplateManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initWorldSystem();
 
     MCAPI ::SerialWorkList::WorkResult _initializeFrameBuilder();
 
@@ -1612,15 +1486,11 @@ public:
         ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
     );
 
-    MCAPI ::SerialWorkList::WorkResult _loadGlobalResourcePacks();
-
     MCAPI void _loadInitialPackResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
     MCAPI void _loadLanguageData();
 
     MCAPI void _loadLastGlobalResourcePacksFromFile(bool waitForUIReload);
-
-    MCAPI ::SerialWorkList::WorkResult _notifyOnFullVanillaPackOnStack();
 
     MCAPI void _onActiveResourcePacksChanged(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
@@ -1629,8 +1499,6 @@ public:
     MCAPI void _onEntitlementsChanged();
 
     MCAPI void _onEntitlementsChangedNotifyUI();
-
-    MCAPI void _onInitRemoteSystem(::std::function<void()> syncCompleteCallback);
 
     MCAPI void _onItemAtlasReloaded();
 
@@ -1692,7 +1560,7 @@ public:
 
     MCAPI void _performNetworkReadyActions();
 
-    MCAPI void _preCacheOutOfGameViews();
+    MCAPI void _preCacheOutOfGameOreUIViews();
 
     MCAPI void _recomputeResolution();
 
@@ -1737,14 +1605,6 @@ public:
 
     MCAPI void _updateTextureAtlasPBRData(::TextureAtlas const& textureAtlas, bool terrain);
 
-    MCAPI ::SerialWorkList::WorkResult _waitForAudio();
-
-    MCAPI ::SerialWorkList::WorkResult _waitForFileSystemSpaceTracking();
-
-    MCAPI ::SerialWorkList::WorkResult _waitForLoadRendererAssets();
-
-    MCAPI ::SerialWorkList::WorkResult _waitForStorageMigration();
-
     MCAPI void adjustClientsUISize();
 
     MCAPI void cleanReloadMaterials();
@@ -1755,13 +1615,15 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> getClientInstance(::SubClientId subid);
 
+    MCAPI ::Bedrock::NonOwnerPointer<::Social::ManagedChat::ManagedChatClient> getManagedChatClient();
+
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
     MCAPI void handleShowUpsellScreen(bool timeExpired);
 
     MCAPI void initEventing();
 
-    MCAPI bool isInEDUMultiplayerSession();
+    MCAPI bool isInEduMultiplayerSession();
 
     MCAPI bool isServerVisible();
 
@@ -1820,12 +1682,13 @@ public:
 
     MCAPI void $setUIFontStyle();
 
-    MCAPI ::Bedrock::Threading::Async<void> $startLocalServerAsync(
-        ::std::string const&     levelId,
-        ::std::string const&     levelName,
-        ::ContentIdentity const& premiumTemplateContentIdentity,
-        ::LevelSettings const&   settings,
-        ::StartIntent            startIntent
+    MCAPI ::Bedrock::Threading::Async<void> $_startLocalServerAsync(
+        ::std::string const&                                          levelId,
+        ::std::string const&                                          levelName,
+        ::ContentIdentity const&                                      premiumTemplateContentIdentity,
+        ::LevelSettings const&                                        settings,
+        ::std::unique_ptr<::ServerInitialization::IServerInitializer> initializer,
+        ::StartIntent                                                 startIntent
     );
 
     MCAPI void $createAndUploadWorldToRealm(
@@ -1927,7 +1790,7 @@ public:
 
     MCAPI void $abortPendingGameJoin();
 
-    MCAPI void $requestLeaveGame(bool switchScreen, bool sync);
+    MCAPI void $requestLeaveGame(bool switchScreen, bool sync, ::LeaveGameResourceBehavior resourceBehavior);
 
     MCAPI void $requestLeaveThenJoinFriendsWorld(::std::string_view serverId);
 
@@ -2067,7 +1930,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::PersonaService> $getPersonaService() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> $getGatheringManager() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager> $getExperienceSystemsManager() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> $getContentCatalogService() const;
 
@@ -2075,7 +1938,8 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::LayoutRefreshEventSource> $getLayoutRefreshEventSource() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> $getLayoutServiceCache() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache>
+    $getLocalHydratingLayoutServiceCache() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalog() const;
 
@@ -2159,10 +2023,6 @@ public:
 
     MCAPI ::ClientNetworkSystem const& $getClientNetworkSystem() const;
 
-    MCAPI ::Bedrock::Profiling::ProfilingOrchestrator const* $getProfilingOrchestrator() const;
-
-    MCAPI ::Bedrock::Profiling::ProfilingOrchestrator* $getMutableProfilingOrchestrator();
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> $getActiveDirectoryIdentity();
 
     MCAPI void $clearCache();
@@ -2220,9 +2080,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::PresenceManager> $getPresenceManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems> $getEDUSystems();
+    MCAPI ::Bedrock::NonOwnerPointer<::EduSystems> $getEduSystems();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems const> $getEDUSystems() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::EduSystems const> $getEduSystems() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
 
@@ -2282,11 +2142,11 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::EmoticonManager const> $getEmoticonManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper const> $getTextToIconMapper() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper const> $getTextToIconMapper() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper> $getTextToIconMapper();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper> $getTextToIconMapper();
 
-    MCAPI bool $getMouseGrabbed() const;
+    MCFOLD bool $getMouseGrabbed() const;
 
     MCAPI void $navigateToPlayScreenFriendsTab();
 
@@ -2444,7 +2304,7 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::ChunkSource> $getClientGenChunkSource(::DimensionType const& dimensionType);
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
 
     MCAPI double $getGameUpdateDurationInSeconds() const;
 

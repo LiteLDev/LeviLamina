@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/LogChannel.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/LogChannel.h"
 #include "mc/editor/logging/LogLevel.h"
 
 // auto generated forward declare list
@@ -30,14 +30,16 @@ public:
         ::Player*                       player,
         ::Editor::LogLevel              level,
         ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannelMask) = 0;
+        ::Editor::LogChannel            logChannelMask,
+        ::std::optional<bool>           alert) = 0;
 #else // LL_PLAT_C
     virtual void
     log(::Editor::LogContent            content,
         ::Player*                       player,
         ::Editor::LogLevel              level,
         ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannel) = 0;
+        ::Editor::LogChannel            logChannel,
+        ::std::optional<bool>           alert) = 0;
 #endif
 
     virtual void flush() = 0;

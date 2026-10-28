@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
@@ -153,7 +154,8 @@ public:
         ::BlockSource&     region,
         ::ShelfBlockActor& blockActor,
         ::Vec3 const&      blockHit,
-        uchar              hitFace
+        uchar              hitFace,
+        ::HandSlot         handSlot
     );
 
     MCAPI static void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos);

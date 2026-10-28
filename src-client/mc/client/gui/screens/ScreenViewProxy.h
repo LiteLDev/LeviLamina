@@ -9,6 +9,6 @@ class ScreenViewProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 320, ::ScreenViewProxyCallbacks const> mCallbacks;
+    ::ll::TypedStorage<8, 384, ::ScreenViewProxyCallbacks const> mCallbacks;
     // NOLINTEND
 };

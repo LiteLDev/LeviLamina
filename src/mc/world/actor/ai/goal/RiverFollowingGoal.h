@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct GoalId;
 // clang-format on
 
 class RiverFollowingGoal : public ::BaseGoal {
@@ -41,6 +42,18 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RiverFollowingGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, float lookAhead, float speed);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, float lookAhead, float speed);
     // NOLINTEND
 
 public:

@@ -50,6 +50,7 @@ public:
     ::ll::TypedStorage<8, 80, ::std::recursive_mutex>                                                mCacheLock;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> const>              mAppPlatform;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>> mCheckIsSafeToFlushCache;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>> mCheckIsCloudSyncAvailable;
     // NOLINTEND
 
 public:
@@ -159,7 +160,8 @@ public:
     MCAPI LevelListCache(
         ::LevelStorageSource&                              levelStorageSource,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform,
-        ::std::function<bool()>&&                          checkIsSafeToFlushCache
+        ::std::function<bool()>&&                          checkIsSafeToFlushCache,
+        ::std::function<bool()>&&                          checkIsCloudSyncAvailable
     );
 
     MCAPI ::LevelCache* _addOrReplaceCache(::Core::Path const& path);
@@ -193,7 +195,8 @@ public:
     MCAPI void* $ctor(
         ::LevelStorageSource&                              levelStorageSource,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform,
-        ::std::function<bool()>&&                          checkIsSafeToFlushCache
+        ::std::function<bool()>&&                          checkIsSafeToFlushCache,
+        ::std::function<bool()>&&                          checkIsCloudSyncAvailable
     );
     // NOLINTEND
 
@@ -286,7 +289,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
+    MCFOLD ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
 
 
     // NOLINTEND

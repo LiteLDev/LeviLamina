@@ -46,6 +46,7 @@ public:
     ::ll::TypedStorage<4, 4, int>            mPotionEffect;
     ::ll::TypedStorage<4, 4, float>          mSplashRange;
     ::ll::TypedStorage<1, 1, bool>           mCatchFire;
+    ::ll::TypedStorage<1, 1, bool>           mSpreadFire;
     ::ll::TypedStorage<4, 4, float>          mInertiaMod;
     ::ll::TypedStorage<4, 4, float>          mLiquidInertia;
     ::ll::TypedStorage<8, 32, ::std::string> mHitEntitySound;

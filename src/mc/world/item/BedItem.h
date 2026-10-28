@@ -70,13 +70,8 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-#ifdef LL_PLAT_S
     MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
-#else // LL_PLAT_C
-    MCAPI bool
-    $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
-#endif
 
 
     // NOLINTEND

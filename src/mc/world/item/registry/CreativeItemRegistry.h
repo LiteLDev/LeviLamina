@@ -34,12 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~CreativeItemRegistry() /*override*/;
-#else // LL_PLAT_C
     virtual ~CreativeItemRegistry() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
@@ -56,18 +51,20 @@ public:
         ::std::vector<::SharedTypes::CreativeItemCategory>,
         ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>> createCategories();
 
-#ifdef LL_PLAT_S
-    MCAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;
-#endif
-
 #ifdef LL_PLAT_C
+    MCAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;
+
     MCAPI void initializeFromCreativeContentPacket(
         ::CreativeContentPacket const& creativeContentPacket,
         ::BlockPalette const&          blockPalette
     );
+#endif
 
+#ifdef LL_PLAT_S
     MCAPI ::CreativeItemEntry* newItemEntry(::CreativeItemNetId const& creativeNetId, ::ItemInstance const& item);
+#endif
 
+#ifdef LL_PLAT_C
     MCAPI void updateNetIdMap();
 #endif
     // NOLINTEND
@@ -77,14 +74,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $dtor();
 #endif
     // NOLINTEND
 

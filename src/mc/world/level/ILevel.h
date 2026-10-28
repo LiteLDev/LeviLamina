@@ -21,6 +21,7 @@
 #include "mc/util/OwnerPtrFactory.h"
 #include "mc/util/TagRegistry.h"
 #include "mc/world/actor/ActorEvent.h"
+#include "mc/world/level/BlockDestroySound.h"
 #include "mc/world/level/CommandOriginSystem.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/storage/StorageVersion.h"
@@ -202,6 +203,7 @@ namespace GameModeExt { struct MessengerFactory; }
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
+namespace ServerInitialization { class IServerInitializer; }
 namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 namespace cereal { struct ReflectionCtx; }
@@ -231,7 +233,8 @@ public:
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
+                                                    biomeIdToResolvedData,
+        ::ServerInitialization::IServerInitializer* init
     ) = 0;
 
     virtual void startLeaveGame() = 0;
@@ -825,7 +828,8 @@ public:
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         bool                        dropResources,
-        ::BlockChangeContext const& changeSourceContext
+        ::BlockChangeContext const& changeSourceContext,
+        ::BlockDestroySound         destroySound
     ) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> getLevelBlockDestroyer() = 0;

@@ -22,7 +22,7 @@ public:
 
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const /*override*/;
 
-    virtual void doPostItemHurtActor(::Actor& attacker, ::Actor&, int enchantLevel) const /*override*/;
+    virtual void doPostItemHurtActor(::Actor& attacker, ::Actor& victim, int enchantLevel) const /*override*/;
 
     virtual bool isTreasureOnly() const /*override*/;
 
@@ -40,7 +40,7 @@ public:
 
     MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCAPI void $doPostItemHurtActor(::Actor& attacker, ::Actor&, int enchantLevel) const;
+    MCAPI void $doPostItemHurtActor(::Actor& attacker, ::Actor& victim, int enchantLevel) const;
 
     MCFOLD bool $isTreasureOnly() const;
 

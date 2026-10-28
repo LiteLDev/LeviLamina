@@ -18,6 +18,7 @@ public:
     // BackgroundTaskBase inner types declare
     // clang-format off
     class CurrentTaskAutoScope;
+    struct DiagnosticInfo;
     class PendingComparer;
     class PriorityComparer;
     // clang-format on
@@ -28,6 +29,38 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BackgroundTaskBase*> mPrev;
+        // NOLINTEND
+    };
+
+    struct DiagnosticInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64>              mTaskId;
+        ::ll::TypedStorage<8, 8, void const*>         mAsync;
+        ::ll::TypedStorage<8, 8, void const*>         mPredecessor;
+        ::ll::TypedStorage<8, 32, ::std::string>      mName;
+        ::ll::TypedStorage<8, 16, ::std::string_view> mSourceFile;
+        ::ll::TypedStorage<4, 4, uint>                mSourceLine;
+        ::ll::TypedStorage<8, 8, uint64>              mPredecessorPendingCount;
+        ::ll::TypedStorage<8, 8, uint64>              mPredecessorTotalCount;
+        ::ll::TypedStorage<1, 1, bool>                mPredecessorHasPendingCount;
+        ::ll::TypedStorage<1, 1, bool>                mPredecessorCancellationLinked;
+        ::ll::TypedStorage<8, 8, uint64>              mSuccessorCount;
+        ::ll::TypedStorage<1, 1, bool>                mWaitingForPredecessor;
+        ::ll::TypedStorage<4, 4, float>               mWaitDurationSeconds;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~DiagnosticInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -45,8 +78,11 @@ public:
     ::ll::TypedStorage<4, 4, int>                                      mPriority;
     ::ll::TypedStorage<4, 4, ::std::thread::id>                        mAffinity;
     ::ll::TypedStorage<4, 4, int const>                                mBackDownPriorityAmount;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>  mStartAfterTime;
     ::ll::TypedStorage<8, 32, ::std::string>                           mTaskName;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>  mStartAfterTime;
+    ::ll::TypedStorage<8, 16, ::std::string_view>                      mSourceFile;
+    ::ll::TypedStorage<4, 4, uint>                                     mSourceLine;
+    ::ll::TypedStorage<8, 8, uint64>                                   mDiagnosticId;
     ::ll::TypedStorage<1, 1, ::Memory::MemoryCategory>                 mMemoryCategory;
     // NOLINTEND
 
@@ -64,6 +100,8 @@ public:
     virtual bool isReady() const = 0;
 
     virtual ::TaskRunResult run(::ITaskExecutionContext const* executionContext, bool isAsyncContext) = 0;
+
+    virtual ::BackgroundTaskBase::DiagnosticInfo getDiagnosticInfo() const = 0;
     // NOLINTEND
 
 public:

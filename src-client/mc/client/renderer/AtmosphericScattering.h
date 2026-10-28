@@ -11,9 +11,11 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class IMinecraftEventing;
 class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
+class SemVersionConstant;
 namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
@@ -201,9 +203,21 @@ public:
         AtmosphericScatteringConfigSettingsV1();
 
     public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~AtmosphericScatteringConfigSettingsV1();
+        // NOLINTEND
+
+    public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -223,7 +237,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AtmosphericScattering() /*override*/ = default;
+    virtual ~AtmosphericScattering() /*override*/;
 
     virtual void loadDataSync(
         ::cereal::ReflectionCtx const&                     ctx,
@@ -243,10 +257,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit AtmosphericScattering(::IMinecraftEventing& eventing);
+
     MCNAPI ::dragon::framerenderer::modules::AtmosphericScatteringParameters calculateAtmosphericScatteringParameters(
         ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const& atmosphereSettings,
         float                                                                 timeOfDay
     ) const;
+
+    MCNAPI bool containsAtmosphereSettings(::HashedString const& identifier) const;
 
     MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettingsV1 const&
     findAtmosphereSettings(::HashedString const& identifier) const;
@@ -283,6 +301,18 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $loadDataSync(
@@ -298,5 +328,11 @@ public:
     );
 
     MCNAPI void $_setDefaultIdentifierImpl(::HashedString const& defaultIdentifier);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

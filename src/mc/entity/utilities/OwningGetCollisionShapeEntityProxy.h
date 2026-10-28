@@ -3,52 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/strict/AddRemove.h"
-#include "mc/deps/ecs/strict/EntityFactoryT.h"
-#include "mc/deps/ecs/strict/Filter.h"
-#include "mc/deps/ecs/strict/GlobalRead.h"
-#include "mc/deps/ecs/strict/GlobalWrite.h"
-#include "mc/deps/ecs/strict/Read.h"
-#include "mc/deps/ecs/strict/StrictExecutionContext.h"
-#include "mc/deps/ecs/strict/Write.h"
 #include "mc/entity/utilities/GetCollisionShapeEntityProxy.h"
 
-// auto generated forward declare list
-// clang-format off
-struct AABBShapeComponent;
-struct ActorDataFlagComponent;
-struct ActorGameTypeComponent;
-struct ActorTypeComponent;
-struct CanStandOnPowderSnowComponent;
-struct CanStandOnPowderSnowFromEquipmentComponent;
-struct ExternalDataComponent;
-struct FallDistanceComponent;
-struct MovementAbilitiesComponent;
-struct PassengerComponent;
-struct VehicleComponent;
-// clang-format on
-
-class OwningGetCollisionShapeEntityProxy
-: public ::GetCollisionShapeEntityProxy<::StrictExecutionContext<
-      ::Filter<::CanStandOnPowderSnowComponent, ::CanStandOnPowderSnowFromEquipmentComponent>,
-      ::Read<
-          ::AABBShapeComponent,
-          ::MovementAbilitiesComponent,
-          ::ActorTypeComponent,
-          ::FallDistanceComponent,
-          ::PassengerComponent,
-          ::ActorGameTypeComponent,
-          ::ActorDataFlagComponent,
-          ::VehicleComponent>,
-      ::Write<>,
-      ::AddRemove<>,
-      ::GlobalRead<::ExternalDataComponent>,
-      ::GlobalWrite<>,
-      ::EntityFactoryT<>>> {
+class OwningGetCollisionShapeEntityProxy : public ::GetCollisionShapeEntityProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc9873d;
+    ::ll::UntypedStorage<8, 728> mUnk534bef;
     // NOLINTEND
 
 public:

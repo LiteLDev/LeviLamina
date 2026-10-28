@@ -10,6 +10,7 @@
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -45,6 +46,42 @@ struct ClientEnderDragonTickDeathSystemImpl
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
+    // ClientEnderDragonTickDeathSystemImpl inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
+    // ClientEnderDragonTickDeathSystemImpl inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            112,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
+                ::DeathTickingComponent const,
+                ::ActorOwnerComponent,
+                ::ParticleEventDispatcherComponent,
+                ::RandomReferenceComponent,
+                ::StateVectorComponent,
+                ::WingFlapDataComponent>>
+                                                                                     mDeathView;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::RandomComponent>> mRandomView;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::ParticleEventRequestQueueComponent>>
+            mParticleEventRequestQueueView;
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 168, ::std::optional<::ClientEnderDragonTickDeathSystemImpl::Views>> mViews;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -69,14 +106,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void _tick(
         ::StrictEntityContext const&,
-        ::DeathTickingComponent const&                                       deathTicking,
-        ::ActorOwnerComponent&                                               actorOwner,
-        ::ParticleEventDispatcherComponent&                                  particleEventDispatcherComponent,
-        ::RandomReferenceComponent&                                          randomReference,
-        ::StateVectorComponent&                                              stateVector,
-        ::WingFlapDataComponent&                                             wingFlapData,
-        ::ViewT<::StrictEntityContext, ::RandomComponent>                    randomView,
-        ::ViewT<::StrictEntityContext, ::ParticleEventRequestQueueComponent> particleEventRequestQueueView
+        ::DeathTickingComponent const&                                              deathTicking,
+        ::ActorOwnerComponent&                                                      actorOwner,
+        ::ParticleEventDispatcherComponent&                                         particleEventDispatcherComponent,
+        ::RandomReferenceComponent&                                                 randomReference,
+        ::StateVectorComponent&                                                     stateVector,
+        ::WingFlapDataComponent&                                                    wingFlapData,
+        ::ViewT<::StrictEntityContext, ::RandomComponent> const&                    randomView,
+        ::ViewT<::StrictEntityContext, ::ParticleEventRequestQueueComponent> const& particleEventRequestQueueView
     );
     // NOLINTEND
 
@@ -100,11 +137,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

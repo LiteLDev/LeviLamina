@@ -580,7 +580,8 @@ enum class LevelSoundEvent : uint {
     Mount                              = 611,
     Dismount                           = 612,
     StrawBedBreakLeave                 = 613,
-    Undefined                          = 614,
+    IceBallBreak                       = 614,
+    Undefined                          = 615,
 };
 
 }

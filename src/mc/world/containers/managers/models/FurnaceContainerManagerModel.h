@@ -16,7 +16,6 @@
 // clang-format off
 class ContainerModel;
 class ContainerScreenContext;
-class ItemDescriptor;
 class ItemInstance;
 class ItemStack;
 class Player;
@@ -96,22 +95,13 @@ public:
     MCAPI void _populateRecipeBook();
 
 #ifdef LL_PLAT_C
-    MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
-
-    MCAPI void fireItemSmeltedEvent(::ItemDescriptor const& itemDescriptor);
-
     MCAPI int getBurnProgress(int max);
 
     MCAPI int getLitProgress(int max);
-#endif
 
     MCAPI ::std::vector<::ItemInstance> getUnlockedRecipeIngredientsForResult(::ItemInstance const& item) const;
 
-#ifdef LL_PLAT_C
-    MCAPI void grantExperienceForSmelting(::ItemInstance const& item, int count);
-
     MCAPI bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
-#endif
 
     MCAPI ::IngredientSearchInfo searchIngredientInContainers(
         ::ItemInstance const&                   itemInstance,
@@ -120,7 +110,6 @@ public:
 
     MCAPI void setIsFiltering(bool smeltableFilterOn);
 
-#ifdef LL_PLAT_C
     MCAPI void setSearchString(::std::string const& searchString);
 #endif
     // NOLINTEND

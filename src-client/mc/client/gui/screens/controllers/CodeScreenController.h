@@ -91,7 +91,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool validateUri(::std::string const& uri);
+    MCAPI static bool _validateAllowedUriInternal(::std::string const& uri);
     // NOLINTEND
 
 public:

@@ -187,10 +187,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static bool isValidRegisteredPOI(::BlockSource& region, ::Block const& block, ::BlockPos const& position);
-#endif
-
     MCAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
     // NOLINTEND
 

@@ -60,6 +60,9 @@ public:
         int               maxHorizontalSpread,
         int               depth
     );
+
+    MCAPI static void
+    generatePlant(::BlockSource& region, ::BlockPos const& target, ::Random& random, int maxHorizontalSpread);
     // NOLINTEND
 
 public:

@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUScreenHelpers {
+namespace EduScreenHelpers {
 
 class TemplateWrapper {};
 
-} // namespace EDUScreenHelpers
+} // namespace EduScreenHelpers

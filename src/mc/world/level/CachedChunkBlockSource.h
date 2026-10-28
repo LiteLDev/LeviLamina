@@ -40,8 +40,6 @@ public:
 
     MCAPI ::Block const& getBlock(::BlockPos const& position);
 
-    MCAPI ::Block const& getLiquidBlock(::BlockPos const& position);
-
     MCAPI ::Material const& getMaterial(::BlockPos const& pos);
     // NOLINTEND
 };

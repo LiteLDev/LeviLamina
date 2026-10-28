@@ -146,7 +146,6 @@ public:
 
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-#ifdef LL_PLAT_C
     MCAPI static ::std::function<
         ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*
     queryFunctionAccessorFromString(
@@ -155,7 +154,6 @@ public:
         ::MolangQueryFunctionReturnType& functionReturnType,
         bool                             missingIsOkay_returnNullIfSo
     );
-#endif
 
     MCAPI static ::MolangQueryFunction& registerQueryFunction(
         ::std::string_view queryFunctionName,

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class StaticOptimizedString; }
-namespace cereal { class LogCheckpoint; }
 // clang-format on
 
 namespace cereal {
@@ -41,8 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
-
-    MCAPI ::cereal::LogCheckpoint getLogCheckpoint();
 
     MCAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
 

@@ -18,10 +18,6 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class ChemicalHeatBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    ChemicalHeatBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getExtraRenderLayers() const /*override*/;
@@ -32,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChemicalHeatBlock(::std::string const& nameId, int id);
-
     MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -41,12 +35,6 @@ public:
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

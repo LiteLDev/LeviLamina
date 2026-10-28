@@ -70,8 +70,14 @@ public:
     // NOLINTBEGIN
     MCAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
 
+#ifdef LL_PLAT_C
+    MCAPI void _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI void
     _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int const tickDelay, int const priorityOffset);
+#endif
 
     MCAPI void _eliminateTicksForZeroAndAbove(::BlockTickingQueue::TickDataSet& queue);
 

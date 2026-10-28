@@ -128,6 +128,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FurnaceBlockActor(::BlockPos const& pos);
+
     MCAPI FurnaceBlockActor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
@@ -140,8 +142,6 @@ public:
     );
 
     MCAPI bool canBurn(::Recipes const& recipes);
-
-    MCAPI void checkForAlternativeFuelAchievement(::BlockSource& region, ::ItemStack const& item);
 
     MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
 
@@ -158,8 +158,6 @@ public:
     MCAPI static float _getXPRewardMultiplier(::ItemStackBase const& item);
 
     MCAPI static int getAvailableFuelSetCount(int slot, ::ItemStackBase const& item);
-
-    MCAPI static float getBurnDuration(::ItemStackBase const& itemInstance, float burnInterval);
 
     MCAPI static float getItemBurnDuration(::Item const& item, float burnInterval);
 
@@ -193,6 +191,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+
     MCAPI void* $ctor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,

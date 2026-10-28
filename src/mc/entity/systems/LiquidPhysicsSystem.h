@@ -12,7 +12,6 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ItemActorFlagComponent;
 struct LiquidBlockEntry;
-struct MovementAbilitiesComponent;
 struct StateVectorComponent;
 struct SubBBsComponent;
 struct TickingSystemWithInfo;
@@ -31,11 +30,6 @@ MCAPI void _liquidBlockFetch(
     ::Optional<::ItemActorFlagComponent const> maybeItem,
     ::std::vector<::LiquidBlockEntry>&         scratch,
     ::IConstBlockSource const&                 region
-);
-
-MCAPI void _markForLiquidFlow(
-    ::UpdateWaterStateRequestComponent&                   updateWaterStateRequest,
-    ::Optional<::MovementAbilitiesComponent const> const& abilities
 );
 
 MCAPI ::TickingSystemWithInfo createFilterSystem(bool isClientSide);

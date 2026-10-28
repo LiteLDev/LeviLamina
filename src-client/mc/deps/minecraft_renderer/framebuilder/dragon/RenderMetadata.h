@@ -15,7 +15,7 @@ public:
     ::ll::TypedStorage<8, 8, int64 const>                                            mID;
     ::ll::TypedStorage<4, 8, ::mce::framebuilder::CustomSurfaceShaderMetadata const> mCSSMetadata;
     ::ll::TypedStorage<1, 1, bool const>                                             mIsItem;
-    ::ll::TypedStorage<8, 40, ::OffscreenCaptureDescription>                         mOffscreenCaptureDescription;
+    ::ll::TypedStorage<8, 32, ::OffscreenCaptureDescription>                         mOffscreenCaptureDescription;
     // NOLINTEND
 
 public:

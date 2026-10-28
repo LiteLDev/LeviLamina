@@ -49,7 +49,7 @@ public:
     ::ll::TypedStorage<8, 352, ::mce::MeshData>                                       mMeshData;
     ::ll::TypedStorage<
         8,
-        24,
+        16,
         ::mce::ClientResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Buffer,
@@ -58,7 +58,7 @@ public:
         mVertexBuffer;
     ::ll::TypedStorage<
         8,
-        24,
+        16,
         ::mce::ClientResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Buffer,

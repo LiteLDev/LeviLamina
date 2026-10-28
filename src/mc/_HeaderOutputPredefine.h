@@ -256,6 +256,15 @@ template <typename T>
 struct Hash;
 }
 
+namespace CompoundTagUpdaterAnon {
+struct SingleUpdate;
+struct UpdateGroup;
+} 
+
+namespace AgentCommands {
+enum class SubCommand : int;
+}
+
 // Ungenerated cereal definitions
 namespace cereal {
 namespace internal {

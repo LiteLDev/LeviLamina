@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/world/actor/Mob.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,32 +17,12 @@ class DataLoadHelper;
 class EntityContext;
 class Interaction;
 class Player;
+class Vec3;
 struct ActorDefinitionIdentifier;
 struct HurtParameters;
 // clang-format on
 
 class ArmorStand : public ::Mob {
-public:
-    // ArmorStand inner types declare
-    // clang-format off
-    struct Pose;
-    // clang-format on
-
-    // ArmorStand inner types define
-    struct Pose {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::Vec3> mHeadPose;
-        ::ll::TypedStorage<4, 12, ::Vec3> mBodyPose;
-        ::ll::TypedStorage<4, 12, ::Vec3> mRightArmPose;
-        ::ll::TypedStorage<4, 12, ::Vec3> mLeftArmPose;
-        ::ll::TypedStorage<4, 12, ::Vec3> mRightLegPose;
-        ::ll::TypedStorage<4, 12, ::Vec3> mLeftLegPose;
-        ::ll::TypedStorage<4, 12, ::Vec3> mRightItemPose;
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +43,7 @@ public:
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot) /*override*/;
 
     virtual void kill() /*override*/;
 
@@ -99,39 +78,7 @@ public:
 
     MCAPI void _hurtByProjectile(::Actor& sourceActor);
 
-    MCAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
-
     MCAPI void setPoseIndex(int poseIndex);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::ArmorStand::Pose const& POSE_ATHENA();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_BRANDISH();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_A();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_B();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_DEFAULT();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_ENTERTAIN();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_HERO();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_HONOR();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_RIPOSTE();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_SALUTE();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_SOLEMN();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_ZERO_ROTATION();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_ZOMBIE();
     // NOLINTEND
 
 public:
@@ -153,7 +100,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
 
     MCAPI void $kill();
 

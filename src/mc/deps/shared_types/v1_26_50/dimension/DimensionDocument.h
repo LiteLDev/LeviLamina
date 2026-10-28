@@ -17,7 +17,14 @@ struct DimensionDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 112, ::SharedTypes::v1_26_50::DimensionDefinition::Dimension> mDimension;
+    ::ll::TypedStorage<8, 32, ::std::string>                                            mFormatVersion;
+    ::ll::TypedStorage<8, 120, ::SharedTypes::v1_26_50::DimensionDefinition::Dimension> mDimension;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~DimensionDocument();
     // NOLINTEND
 
 public:
@@ -30,6 +37,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

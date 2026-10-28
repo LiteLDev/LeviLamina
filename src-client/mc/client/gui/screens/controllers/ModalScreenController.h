@@ -50,7 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onInit();
+    MCAPI void $onInit();
 
     MCAPI ::ui::DirtyFlag $tick();
     // NOLINTEND

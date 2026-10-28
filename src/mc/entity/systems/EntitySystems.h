@@ -20,6 +20,7 @@ struct IEntitySystemsCollection;
 struct SystemCategory;
 struct SystemInfo;
 struct TickingSystemId;
+namespace VariableTickRateSystem { struct VariableTickController; }
 // clang-format on
 
 class EntitySystems : public ::IEntitySystems, public ::Bedrock::EnableNonOwnerReferences {
@@ -73,6 +74,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>           mPreSystemInvoke;
     ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>           mPostSystemInvoke;
     ::ll::TypedStorage<8, 8, ::Bedrock::Profiler::details::PredeclaredAnnotation> mTickingAnnotation;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VariableTickRateSystem::VariableTickController>> mVariableTick;
     // NOLINTEND
 
 public:
@@ -101,7 +103,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
+    MCAPI EntitySystems(
+        ::std::unique_ptr<::IEntitySystemsCollection> systems,
+        ::std::string_view                            name,
+        bool                                          useVariableTicks
+    );
+
+    MCAPI void realTick(::EntityRegistry& registry);
 
     MCAPI void registerEvents(::EntityRegistry& registry);
 
@@ -126,7 +134,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
+    MCAPI void*
+    $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name, bool useVariableTicks);
     // NOLINTEND
 
 public:

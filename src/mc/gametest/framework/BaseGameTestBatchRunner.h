@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/Rotation.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestFunction; }
@@ -48,6 +51,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _addTestInstanceWithRotation(
+        ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>>& instances,
+        ::std::shared_ptr<::gametest::BaseGameTestFunction>                 testFunction,
+        ::Rotation                                                          rotation
+    );
+
     MCNAPI void _runBatch(int batchIndex);
 
     MCNAPI void forceStop();

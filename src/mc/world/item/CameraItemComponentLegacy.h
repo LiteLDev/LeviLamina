@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/ICameraItemComponent.h"
 
 // auto generated forward declare list
@@ -53,12 +54,18 @@ public:
 
     virtual void takePictureNow(::Player& player, ::Actor* camera, ::Actor* target) /*override*/;
 
-    virtual void use(::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) /*override*/;
 
     virtual void releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft) /*override*/;
 
-    virtual bool
-    useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&) /*override*/;
+    virtual bool useOn(
+        ::ItemStack&      instance,
+        ::Actor&          actor,
+        ::BlockPos const& blockPos,
+        uchar             face,
+        ::Vec3 const&,
+        ::HandSlot handSlot
+    ) /*override*/;
 
     virtual bool canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const
         /*override*/;
@@ -100,11 +107,18 @@ public:
     // NOLINTBEGIN
     MCAPI void $takePictureNow(::Player& player, ::Actor* camera, ::Actor* target);
 
-    MCAPI void $use(::ItemStack& instance, ::Player& player);
+    MCAPI void $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
     MCAPI void $releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft);
 
-    MCAPI bool $useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&);
+    MCAPI bool $useOn(
+        ::ItemStack&      instance,
+        ::Actor&          actor,
+        ::BlockPos const& blockPos,
+        uchar             face,
+        ::Vec3 const&,
+        ::HandSlot handSlot
+    );
 
     MCAPI bool $canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const;
 
@@ -114,7 +128,7 @@ public:
 
     MCAPI float $shutterScreenRatio() const;
 
-    MCAPI float $shutterDuration() const;
+    MCFOLD float $shutterDuration() const;
 
     MCAPI float $pictureDuration() const;
 

@@ -31,13 +31,11 @@ MCAPI void _breakIntoWordsAndFindProfanity(
     ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
     ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
 );
-#endif
 
-#ifdef LL_PLAT_S
 MCAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
 #endif
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
 #endif
 
@@ -53,9 +51,7 @@ MCAPI void _recordProfanityLocationInWord(
     ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
     ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
 );
-#endif
 
-#ifdef LL_PLAT_S
 MCAPI int _splitInto(
     ::std::string const&                str,
     ::std::vector<::std::string> const& delims,
@@ -64,7 +60,7 @@ MCAPI int _splitInto(
 );
 #endif
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCAPI int _splitInto(
     ::std::string const&                str,
     ::std::vector<::std::string> const& delims,
@@ -85,13 +81,11 @@ MCAPI ::std::string caseFold(::std::string_view str);
 
 #ifdef LL_PLAT_C
 MCAPI uint64 countSplitAndDiscardEmpty(::std::string const& str, char delim);
-#endif
 
-#ifdef LL_PLAT_S
 MCAPI ::std::string cpToUTF8(::std::unordered_map<uchar, ::std::string> const& codePageMap, ::std::string_view content);
 #endif
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
 MCAPI ::std::string cpToUTF8(::std::unordered_map<uchar, ::std::string> const& codePageMap, ::std::string_view content);
 #endif
 
@@ -141,8 +135,6 @@ MCAPI ::std::string getPackDataDownloadProgressString(
 MCAPI ::std::string getVirtualCurrencyStringTTS(uint amount);
 
 MCAPI ::std::string getVirtualCurrencyStringTTS(::std::string const& currency);
-
-MCAPI bool isIntegral(::std::string const& str, bool allowPlusSign);
 #endif
 
 MCAPI bool isValidNamespaceFormat(::std::string_view name);
@@ -237,9 +229,9 @@ MCAPI ::std::string toLocalizedString(
     ::std::string const& digitGroupSeparator,
     ::std::string const& decimalSeparator
 );
+#endif
 
 MCAPI ::std::string toLower(char const* inString);
-#endif
 
 MCAPI ::std::string toLower(::std::string_view inString);
 
@@ -250,8 +242,6 @@ MCAPI bool toSafeNumber(::std::string const& str, uint& output);
 
 MCAPI bool toSafeNumber(::std::string const& str, uint64& output);
 #endif
-
-MCFOLD ::std::string toString(::std::string_view inputStr);
 
 MCAPI ::std::string toStringWithPaddedZeroes(uint number, uchar digitCount);
 

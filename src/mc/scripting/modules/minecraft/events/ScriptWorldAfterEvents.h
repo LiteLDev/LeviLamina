@@ -54,6 +54,8 @@ namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEventIntermediat
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakingBlockAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerButtonInputIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerCraftRecipeIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerCursorItemTransferIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerDimensionChangeIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerEmoteIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerGameModeChangeIntermediateData; }
@@ -311,6 +313,18 @@ public:
 
     virtual void onPlayerInventoryItemChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData>& inventoryEvent
+    ) /*override*/;
+
+    virtual void onPlayerCursorItemGrab(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    ) /*override*/;
+
+    virtual void onPlayerCursorItemRelease(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    ) /*override*/;
+
+    virtual void onPlayerCraftRecipe(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCraftRecipeIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onPlayerJoin(
@@ -626,6 +640,18 @@ public:
 
     MCAPI void $onPlayerInventoryItemChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData>& inventoryEvent
+    );
+
+    MCAPI void $onPlayerCursorItemGrab(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    );
+
+    MCAPI void $onPlayerCursorItemRelease(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    );
+
+    MCAPI void $onPlayerCraftRecipe(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCraftRecipeIntermediateData>& eventData
     );
 
     MCAPI void

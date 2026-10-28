@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUDiscovery {
+namespace EduDiscovery {
 
 struct Error {};
 
-} // namespace EDUDiscovery
+} // namespace EduDiscovery

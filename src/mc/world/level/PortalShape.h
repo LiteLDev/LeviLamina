@@ -37,7 +37,11 @@ public:
 
     MCAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
 
-    MCAPI void updateNeighboringBlocks(::BlockSource& source, ::Vec3 const& perpendicularAxis) const;
+    MCAPI void updateNeighboringBlocks(
+        ::BlockSource&                  source,
+        ::WorldChangeTransaction const& transaction,
+        ::Vec3 const&                   perpendicularAxis
+    ) const;
     // NOLINTEND
 
 public:

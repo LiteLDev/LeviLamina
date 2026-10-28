@@ -95,6 +95,8 @@ public:
 
     virtual void generateItems(::ContentSource* source) = 0;
 
+    virtual ::Bedrock::Threading::Async<void> refreshPackSources(bool saveSources) = 0;
+
     virtual ::Bedrock::Threading::Async<void> reloadSources(bool saveSources) = 0;
 
     virtual void reloadItems() = 0;

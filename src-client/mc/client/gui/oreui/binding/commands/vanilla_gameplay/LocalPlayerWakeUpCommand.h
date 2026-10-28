@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { class ClientDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -23,21 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LocalPlayerWakeUpCommand();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LocalPlayerWakeUpCommand(::OreUI::ClientDependencies const& client);
-
     MCAPI void wakeUp();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

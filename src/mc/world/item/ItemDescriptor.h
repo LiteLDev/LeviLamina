@@ -14,7 +14,6 @@ class BlockType;
 class CompoundTag;
 class Item;
 class ItemInstance;
-class ItemStack;
 class ReadOnlyBinaryStream;
 struct ItemTag;
 namespace Json { class Value; }
@@ -123,7 +122,6 @@ public:
 
 public:
     // prevent constructor by default
-    ItemDescriptor(ItemDescriptor const&);
     ItemDescriptor();
 
 public:
@@ -173,13 +171,7 @@ public:
 
     MCAPI bool isValid(bool shouldResolve) const;
 
-#ifdef LL_PLAT_C
     MCAPI explicit operator ::ItemInstance() const;
-#endif
-
-    MCAPI void operator=(::ItemDescriptor const& rhs);
-
-    MCAPI bool sameItem(::ItemStack const& item, bool compareAux) const;
 
     MCAPI bool sameItem(::ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
     // NOLINTEND

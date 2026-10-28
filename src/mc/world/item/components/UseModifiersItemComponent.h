@@ -12,7 +12,7 @@
 // clang-format off
 class ComponentItem;
 class SemVersion;
-namespace SharedTypes::Beta { struct UseModifiersItemComponent; }
+namespace SharedTypes::v1_26_50 { struct UseModifiersItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UseModifiersItemComponent(::SharedTypes::Beta::UseModifiersItemComponent component);
+    MCAPI explicit UseModifiersItemComponent(::SharedTypes::v1_26_50::UseModifiersItemComponent component);
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Beta::UseModifiersItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_26_50::UseModifiersItemComponent component);
     // NOLINTEND
 
 public:

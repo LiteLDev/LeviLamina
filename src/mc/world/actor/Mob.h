@@ -25,6 +25,7 @@
 // clang-format off
 class AABB;
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class BaseAttributeMap;
 class Block;
@@ -40,6 +41,7 @@ class Player;
 class SaveContext;
 class SynchedActorDataWriter;
 class Vec3;
+struct ActorDefinitionIdentifier;
 struct CalculateAttackDamageSettings;
 struct DimensionType;
 struct HurtEffectsSettings;
@@ -57,28 +59,28 @@ class Mob : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                      mHurtDir;
-    ::ll::TypedStorage<4, 4, float>                      mOTilt;
-    ::ll::TypedStorage<4, 4, float>                      mTilt;
-    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mCompassSpriteCalc;
-    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mRecoveryCompassSpriteCalc;
-    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>   mClockSpriteCalc;
-    ::ll::TypedStorage<4, 4, float>                      mAttackAnim;
-    ::ll::TypedStorage<4, 4, int>                        mSwingTime;
-    ::ll::TypedStorage<8, 24, ::BuiltInMobComponents>    mBuiltInMobComponents;
-    ::ll::TypedStorage<4, 4, float>                      mMovementComponentCurrentSpeed;
-    ::ll::TypedStorage<1, 1, bool>                       mSwinging;
-    ::ll::TypedStorage<1, 1, bool>                       mSurfaceMob;
-    ::ll::TypedStorage<1, 1, bool>                       mNaturallySpawned;
-    ::ll::TypedStorage<1, 1, bool>                       mWantsToBeJockey;
-    ::ll::TypedStorage<1, 1, bool>                       mHasBoundOrigin;
-    ::ll::TypedStorage<1, 1, ::MobSpawnMethod>           mSpawnMethod;
-    ::ll::TypedStorage<1, 1, bool>                       mCreateAiOnReload;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mCaravanHead;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mCaravanTail;
-    ::ll::TypedStorage<4, 4, float>                      mOAttackAnim;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                mBoundOrigin;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mTargetCaptainId;
+    ::ll::TypedStorage<4, 4, float>                       mHurtDir;
+    ::ll::TypedStorage<4, 4, float>                       mOTilt;
+    ::ll::TypedStorage<4, 4, float>                       mTilt;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator>  mCompassSpriteCalc;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator>  mRecoveryCompassSpriteCalc;
+    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>    mClockSpriteCalc;
+    ::ll::TypedStorage<4, 4, float>                       mAttackAnim;
+    ::ll::TypedStorage<4, 4, int>                         mSwingTime;
+    ::ll::TypedStorage<8, 32, ::BuiltInMobComponents>     mBuiltInMobComponents;
+    ::ll::TypedStorage<4, 4, float>                       mMovementComponentCurrentSpeed;
+    ::ll::TypedStorage<1, 2, ::std::optional<::HandSlot>> mSwingingHand;
+    ::ll::TypedStorage<1, 1, bool>                        mSurfaceMob;
+    ::ll::TypedStorage<1, 1, bool>                        mNaturallySpawned;
+    ::ll::TypedStorage<1, 1, bool>                        mWantsToBeJockey;
+    ::ll::TypedStorage<1, 1, bool>                        mHasBoundOrigin;
+    ::ll::TypedStorage<1, 1, ::MobSpawnMethod>            mSpawnMethod;
+    ::ll::TypedStorage<1, 1, bool>                        mCreateAiOnReload;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>             mCaravanHead;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>             mCaravanTail;
+    ::ll::TypedStorage<4, 4, float>                       mOAttackAnim;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                 mBoundOrigin;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>             mTargetCaptainId;
     // NOLINTEND
 
 public:
@@ -273,6 +275,11 @@ public:
     // NOLINTBEGIN
     MCAPI Mob(::ILevel& level, ::EntityContext& entityContext);
 
+    MCAPI
+    Mob(::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext);
+
     MCAPI ::BuiltInMobComponents _addBuiltInMobComponents();
 
     MCAPI void _doSoulSpeedParticleEffect();
@@ -308,8 +315,6 @@ public:
 
     MCAPI void emitJumpPreventedEvent(::BlockPos const& pos);
 
-    MCAPI void frostWalk();
-
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<int> getAllArmorID() const;
 #endif
@@ -328,7 +333,7 @@ public:
 
     MCAPI ::JumpPreventionResult getJumpPrevention();
 
-    MCAPI int getModifiedSwingDuration() const;
+    MCAPI int getModifiedSwingDuration(::HandSlot handSlot) const;
 
     MCAPI int getNoActionTime() const;
 
@@ -357,6 +362,8 @@ public:
     MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
     MCAPI bool isAbleToMove() const;
+
+    MCAPI bool isTransitioningSitting() const;
 
     MCAPI void joinCaravan(::Mob* head);
 
@@ -396,6 +403,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _registerMobAttributes(::BaseAttributeMap& attributes);
+
 #ifdef LL_PLAT_C
     MCAPI static void setSprinting(::BaseAttributeMap& attributes, ::SynchedActorDataWriter data, bool shouldSprint);
 #endif
@@ -407,6 +416,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ILevel& level, ::EntityContext& entityContext);
+
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

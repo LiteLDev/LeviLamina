@@ -14,7 +14,6 @@ class IdentityDefinition;
 class Level;
 class Objective;
 class Scoreboard;
-class ScoreboardIdentityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardListener; }
@@ -66,20 +65,6 @@ public:
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>
     getOrCreateScoreboardIdentity(::IdentityDefinition const& identity);
-
-    MCAPI ::ScoreboardIdentityRef* getOrCreateScoreboardIdentityRef(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-            ::std::string> const& participant
-    );
-
-    MCAPI ::ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-            ::std::string> const& participant
-    ) const;
 
     MCAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
         ::std::variant<

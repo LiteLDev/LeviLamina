@@ -8,9 +8,7 @@ struct CameraFirstPersonDefinition {
 public:
     // static variables
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::std::string_view const& NAME();
-#endif
     // NOLINTEND
 };
 

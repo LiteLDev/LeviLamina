@@ -4,6 +4,15 @@
 
 namespace Editor {
 
-class Gizmo {};
+class Gizmo {
+public:
+    // Gizmo inner types declare
+    // clang-format off
+    struct PendingTerminalRotation;
+    // clang-format on
+
+    // Gizmo inner types define
+    struct PendingTerminalRotation {};
+};
 
 } // namespace Editor

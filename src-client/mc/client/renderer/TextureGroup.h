@@ -158,8 +158,6 @@ public:
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition
     );
 
-    MCAPI bool shouldLoadPBRResources() const;
-
     MCAPI void unloadAllTextures();
 
     MCAPI bool unloadTexture(::ResourceLocation const& resourceLocation, bool assertOnFailure);

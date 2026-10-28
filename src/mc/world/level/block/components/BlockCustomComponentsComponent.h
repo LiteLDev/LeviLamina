@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/scripting/modules/minecraft/ScriptCustomComponentParameterCacheHandle.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentEventTypes.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
@@ -61,6 +62,11 @@ public:
         ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry> const& registry,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                  parameterCache
     );
+
+    MCAPI bool hasRegisteredEventHandler(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes eventType,
+        ::BlockType const&                                            baseBlock
+    ) const;
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,

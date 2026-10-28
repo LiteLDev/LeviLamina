@@ -11,14 +11,15 @@ class AllowListProfileImage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                 mID;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mURL;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions> mImageOptions;
-    ::ll::TypedStorage<4, 4, int>                            mCacheBust;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mID;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mURL;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions> mImageOptions;
+    ::ll::TypedStorage<4, 4, int>                             mCacheBust;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    AllowListProfileImage& operator=(AllowListProfileImage const&);
     AllowListProfileImage();
 
 public:
@@ -29,8 +30,6 @@ public:
     MCAPI AllowListProfileImage(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
 
     MCAPI void invalidate();
-
-    MCAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage const&);
 
     MCAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage&&);
 
@@ -48,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

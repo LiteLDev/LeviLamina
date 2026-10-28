@@ -65,22 +65,30 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::OreUI::RouteDataParser>                                mRouteDataParser;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RouteJsonMetadata>>               mCurrentRouteJsonMetadata;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Route>>                           mDefaultRoutes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Route>>                           mInGameRoutes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Route>>                           mOutOfGameRoutes;
+    ::ll::TypedStorage<8, 88, ::OreUI::RouteDataParser>                  mRouteDataParser;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                   mIsUsingWebComponentsGameplayScreens;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RouteJsonMetadata>> mCurrentRouteJsonMetadata;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Route>>             mDefaultRoutes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Route>>             mInGameRoutes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Route>>             mOutOfGameRoutes;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RouterConfiguration::EntryPoint>> mEntryPoints;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    RouterConfiguration& operator=(RouterConfiguration const&);
+    RouterConfiguration(RouterConfiguration const&);
     RouterConfiguration();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RouterConfiguration(::OreUI::RouteDataParser&& routeDataParser);
+    MCAPI RouterConfiguration(::OreUI::RouterConfiguration&&);
+
+    MCAPI RouterConfiguration(
+        ::OreUI::RouteDataParser&& routeDataParser,
+        ::std::function<bool()>    isUsingWebComponentsGameplayScreens
+    );
 
     MCAPI void _fillRoutes(::std::vector<::OreUI::RouteData> const& routeData);
 
@@ -101,7 +109,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RouteDataParser&& routeDataParser);
+    MCAPI void* $ctor(::OreUI::RouterConfiguration&&);
+
+    MCAPI void*
+    $ctor(::OreUI::RouteDataParser&& routeDataParser, ::std::function<bool()> isUsingWebComponentsGameplayScreens);
     // NOLINTEND
 
 public:

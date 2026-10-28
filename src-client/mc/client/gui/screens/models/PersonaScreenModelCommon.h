@@ -138,6 +138,8 @@ public:
     MCAPI ::mce::Color
     getTintColor(::persona::PersonaCharacterHandle const& handle, ::SharedTypes::persona::PieceType type, int channel);
 
+    MCAPI bool isEmoteSlotSetOnCurrentAppearance(int emoteWheelSlot);
+
     MCAPI void removePieceByType(
         ::persona::PersonaCharacterHandle const& handle,
         ::SharedTypes::persona::PieceType const& pieceTypeToRemove,

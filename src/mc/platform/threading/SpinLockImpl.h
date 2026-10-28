@@ -14,16 +14,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void lock();
-
     MCAPI void unlock();
-
-    MCAPI ~SpinLockImpl();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

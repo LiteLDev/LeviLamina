@@ -10,6 +10,7 @@
 class Scheduler;
 class TaskGroup;
 class WorkerPool;
+struct TaskStartInfo;
 // clang-format on
 
 namespace Bedrock::Threading {
@@ -39,6 +40,8 @@ public:
     MCAPI ::Bedrock::Threading::Async<void> queue(::std::function<void()>&& callback);
 
 #ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Threading::Async<void> queue(::TaskStartInfo const& startInfo, ::std::function<void()>&& callback);
+
     MCAPI ::Bedrock::Threading::Async<void> queueAutoRequeue(::std::function<bool()>&& callback);
 #endif
     // NOLINTEND

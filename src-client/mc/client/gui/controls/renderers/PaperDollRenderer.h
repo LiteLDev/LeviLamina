@@ -18,6 +18,7 @@ class IPaperDollRenderContext;
 class IPaperDollUIDefSource;
 class IPaperDollUpdateContext;
 class MinecraftUIRenderContext;
+class PersonaCoCoPaperDollHost;
 class SkinPackPin;
 class UIControl;
 class UICustomRenderer;
@@ -31,11 +32,12 @@ class PaperDollRenderer : public ::MinecraftUICustomRenderer {
 public:
     // PaperDollRenderer inner types define
     enum class RotationStyle : int {
-        None      = 0,
-        Automatic = 1,
-        GestureX  = 2,
-        CustomY   = 3,
-        Lerping   = 4,
+        None                   = 0,
+        Automatic              = 1,
+        GestureX               = 2,
+        CustomY                = 3,
+        CustomYHeadFollowMouse = 4,
+        Lerping                = 5,
     };
 
 public:
@@ -45,7 +47,6 @@ public:
     ::ll::TypedStorage<4, 4, ::PaperDollRenderer::RotationStyle>                           mPreviousRotationStyle;
     ::ll::TypedStorage<1, 1, bool>                                                         mUseSelectedSkin;
     ::ll::TypedStorage<1, 1, bool>                                                         mUseSkinByName;
-    ::ll::TypedStorage<1, 1, bool>                                                         mUseUUID;
     ::ll::TypedStorage<4, 4, float>                                                        mDeltaTime;
     ::ll::TypedStorage<4, 4, float>                                                        mElapsedTime;
     ::ll::TypedStorage<4, 4, float>                                                        mRotation;
@@ -53,17 +54,21 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                        mCameraTiltInDeg;
     ::ll::TypedStorage<4, 4, float>                                                        mRotationSpeedMultiplier;
     ::ll::TypedStorage<8, 32, ::std::string>                                               mSkinName;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                                                 mCurrentPlayerUUID;
     ::ll::TypedStorage<8, 16, ::mce::UUID>                                                 mPaperDollPackId;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                              mCoCoPieceId;
+    ::ll::TypedStorage<8, 56, ::std::optional<::HashedString>>                             mCoCoEntityIdentifier;
     ::ll::TypedStorage<4, 4, int>                                                          mPaperDollSkinIdx;
     ::ll::TypedStorage<1, 1, bool>                                                         mWaitForSkinInitialize;
     ::ll::TypedStorage<1, 1, bool>                                                         mMarkLocalPlayerAsDirty;
+    ::ll::TypedStorage<1, 1, bool>                                                         mShowPersonaCoCo;
+    ::ll::TypedStorage<1, 1, bool>                                                         mShrinkToFit;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::std::string_view) const>> mRemoveSkin;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>>        mParticleEffectsMap;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>>                     mAnimationComponent;
     ::ll::TypedStorage<8, 56, ::MolangVariableMap>                                         mVariables;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                      mSkinLastUpdated;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::SkinPackPin>>            mPinnedPacks;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PersonaCoCoPaperDollHost>>                mCoCoHost;
     // NOLINTEND
 
 public:

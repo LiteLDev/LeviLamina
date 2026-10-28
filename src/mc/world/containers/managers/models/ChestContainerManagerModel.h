@@ -3,17 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ContainerScreenContext;
 class ItemInstance;
-class Player;
-struct ActorUniqueID;
 // clang-format on
 
 class ChestContainerManagerModel : public ::LevelContainerManagerModel {
@@ -22,10 +18,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::BlockActorType> mBlockActorType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChestContainerManagerModel();
 
 public:
     // virtual functions
@@ -40,27 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
-
-    MCAPI ChestContainerManagerModel(
-        ::ContainerID     containerId,
-        ::Player&         player,
-        ::BlockPos const& blockPos,
-        ::BlockActorType  blockActorType
-    );
-
 #ifdef LL_PLAT_C
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
-
-    MCAPI void*
-    $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
     // NOLINTEND
 
 public:

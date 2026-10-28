@@ -65,7 +65,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<
             8,
-            32,
+            24,
             ::std::variant<
                 ::std::monostate,
                 ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>,
@@ -73,6 +73,18 @@ public:
                 ::std::shared_ptr<::GeometryAtlas::IAtlasTile>>>
                                                                 mTexture;
         ::ll::TypedStorage<8, 64, ::dragon::TextureDescription> mDesc;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~TextureStorage();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

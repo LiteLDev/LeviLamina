@@ -53,7 +53,8 @@ public:
     // NOLINTBEGIN
     virtual ~AppPlatform_win32() /*override*/;
 
-    virtual ::Bedrock::Result<::std::string> _readAssetFileInternal(::Core::PathView filename) /*override*/;
+    virtual ::Bedrock::Result<::std::string>
+    _readAssetFileInternal(::Core::PathView filename, ::std::string& buffer) /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
 
@@ -118,8 +119,6 @@ public:
     virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
 
     virtual ::std::string getPlatformString() const /*override*/;
-
-    virtual ::std::string getSubPlatformString() const /*override*/;
 
     virtual uint64 getFreeMemory() const /*override*/;
 
@@ -193,7 +192,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<::std::string> $_readAssetFileInternal(::Core::PathView filename);
+    MCAPI ::Bedrock::Result<::std::string> $_readAssetFileInternal(::Core::PathView filename, ::std::string& buffer);
 
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
@@ -258,8 +257,6 @@ public:
     MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
     MCAPI ::std::string $getPlatformString() const;
-
-    MCAPI ::std::string $getSubPlatformString() const;
 
     MCAPI uint64 $getFreeMemory() const;
 

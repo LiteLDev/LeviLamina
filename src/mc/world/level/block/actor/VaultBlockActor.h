@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/level/block/VaultBlockState.h"
@@ -135,6 +136,7 @@ public:
             ::BlockSource&                        region,
             ::Player&                             player,
             ::BlockPos                            pos,
+            ::HandSlot                            handSlot,
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData,
             ::VaultBlockActor::VaultServerData&   serverData

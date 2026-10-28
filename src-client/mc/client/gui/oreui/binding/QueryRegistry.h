@@ -192,8 +192,6 @@ public:
         ::std::unique_ptr<::OreUI::Detail::IQuery> query,
         int                                        rank
     );
-
-    MCAPI void _syncQueries();
     // NOLINTEND
 
 public:

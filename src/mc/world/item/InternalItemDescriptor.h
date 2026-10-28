@@ -53,7 +53,7 @@ public:
 
     MCAPI ::std::string $getNameAndAux() const;
 
-    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
+    MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
 
     MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 

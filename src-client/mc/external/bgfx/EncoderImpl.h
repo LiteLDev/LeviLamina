@@ -6,6 +6,7 @@
 #include "mc/external/bgfx/RenderBind.h"
 #include "mc/external/bgfx/RenderCompute.h"
 #include "mc/external/bgfx/RenderDraw.h"
+#include "mc/external/bgfx/RenderNative.h"
 #include "mc/external/bgfx/SortKey.h"
 #include "mc/external/bgfx/access/Enum.h"
 #include "mc/external/bgfx/texture_format/Enum.h"
@@ -15,6 +16,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace bgfx { struct Frame; }
+namespace bgfx { struct NativeCommandListScope; }
 namespace bgfx { struct OcclusionQueryHandle; }
 namespace bgfx { struct ProgramHandle; }
 namespace bgfx { struct RangedBindings; }
@@ -40,7 +42,8 @@ public:
     ::ll::TypedStorage<4, 56, ::bgfx::SortKey>                                            m_key;
     ::ll::TypedStorage<8, 128, ::bgfx::RenderDraw>                                        m_draw;
     ::ll::TypedStorage<4, 64, ::bgfx::RenderCompute>                                      m_compute;
-    ::ll::TypedStorage<4, 1088, ::bgfx::RenderBind>                                       m_bind;
+    ::ll::TypedStorage<8, 64, ::bgfx::RenderNative>                                       m_native;
+    ::ll::TypedStorage<4, 1344, ::bgfx::RenderBind>                                       m_bind;
     ::ll::TypedStorage<8, 8, ::bgfx::RangedBindings*>                                     m_rangedBindings;
     ::ll::TypedStorage<1, 1, bool>                                                        m_isDirty;
     ::ll::TypedStorage<4, 4, uint>                                                        m_numSubmitted;
@@ -61,7 +64,7 @@ public:
     // NOLINTBEGIN
     MCAPI void discard();
 
-    MCAPI void dispatch(ushort _id, ::bgfx::ProgramHandle _handle, uint _numX, uint _numY, uint _numZ, uchar _flags);
+    MCAPI void dispatch(ushort _id, ::bgfx::ProgramHandle _handle, uint _numX, uint _numY, uint _numZ);
 
     MCAPI void doAllRayTracing(
         ushort                                 _id,
@@ -70,6 +73,8 @@ public:
         uint                                   _width,
         uint                                   _height
     );
+
+    MCAPI void native(ushort _id, void (*_callback)(void*, ::bgfx::NativeCommandListScope*), void* _userData);
 
     MCAPI void setBuffersAsRanged(
         uchar                             _stage,

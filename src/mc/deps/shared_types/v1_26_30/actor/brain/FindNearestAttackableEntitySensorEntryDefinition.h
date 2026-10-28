@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 struct WorldBlockPosition;
-namespace SharedTypes::Brain { struct EntityRefMemory; }
+namespace SharedTypes::Brain { struct EntityRef; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,7 +31,7 @@ public:
     ::ll::TypedStorage<
         8,
         48,
-        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRefMemory>>
+        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRef>>
         mFoundEntityMemory;
     ::ll::TypedStorage<
         8,
@@ -43,6 +43,7 @@ public:
     ::ll::TypedStorage<4, 20, ::AttackableTargetOptions>                 mAttackableTargetOptions;
     ::ll::TypedStorage<4, 4, float>                                      mSecondsBeforeForgettingLostTarget;
     ::ll::TypedStorage<4, 4, float>                                      mSensingFOVDegrees;
+    ::ll::TypedStorage<1, 1, bool>                                       mForgetLostTarget;
     // NOLINTEND
 
 public:
@@ -76,9 +77,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& ATTACKABLE_TARGET_OPTIONS_NAME();
 
-    MCAPI static ::std::string_view const& CAN_IGNORE_LINE_OF_SIGHT_NAME();
+    MCAPI static ::std::string_view const& CAN_BE_IN_SUNLIGHT_NAME();
 
-    MCAPI static ::std::string_view const& CAN_IGNORE_SUNLIGHT_NAME();
+    MCAPI static ::std::string_view const& CAN_IGNORE_LINE_OF_SIGHT_NAME();
 
     MCAPI static ::std::string_view const& CAN_IGNORE_TARGET_DISGUISES_NAME();
 
@@ -87,6 +88,8 @@ public:
     MCAPI static ::std::string_view const& CAN_TARGET_OWNER_NAME();
 
     MCAPI static ::std::string_view const& CAN_TARGET_PLAYING_DEAD_NAME();
+
+    MCAPI static ::std::string_view const& FORGET_LOST_TARGET_NAME();
 
     MCAPI static ::std::string_view const& FOUND_ENTITY_MEMORY_NAME();
 

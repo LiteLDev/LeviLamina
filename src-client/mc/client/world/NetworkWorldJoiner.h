@@ -11,11 +11,12 @@
 #include "mc/client/world/ServerURLResolver.h"
 #include "mc/client/world/ServerWorldJoiner.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/events/IMinecraftEventing.h"
 
 // auto generated forward declare list
 // clang-format off
-class GatheringManager;
+class ExperienceSystemsManager;
 class IAppPlatform;
 class IClientInstance;
 class IMinecraftEventing;
@@ -25,7 +26,6 @@ class ProgressHandler;
 class RealmsAPI;
 class ServerLocator;
 struct IGameServerShutdown;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Network { struct ServerID; }
 namespace OreUI { class Router; }
 namespace Parties { class IPartyProvider; }
@@ -46,8 +46,10 @@ class NetworkWorldJoiner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 528, ::World::RealmWorldJoiner>       mRealmWorldJoiner;
-    ::ll::TypedStorage<8, 264, ::World::ServerWorldJoiner>      mServerWorldJoiner;
+    ::ll::TypedStorage<8, 8, ::IGameServerShutdown&>            mGameServerShutdown;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mRealmsWorldJoinerJoinRealmWorldResultSubscription;
+    ::ll::TypedStorage<8, 592, ::World::RealmWorldJoiner>       mRealmWorldJoiner;
+    ::ll::TypedStorage<8, 328, ::World::ServerWorldJoiner>      mServerWorldJoiner;
     ::ll::TypedStorage<8, 8, ::World::ServerURLResolver>        mServerURLResolver;
     ::ll::TypedStorage<8, 8, ::World::ExternalServerWorldList&> mExternalServerWorldList;
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>                  mRouter;
@@ -78,14 +80,14 @@ public:
         ::World::LanServerWorldList&                                             lanServerWorldList,
         ::World::ThirdPartyWorldList&                                            thirdPartyWorldList,
         bool                                                                     isEduMode,
-        ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> const&                 gatheringManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager> const&         experienceSystemsManager,
         ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
         ::OreUI::Router&                                                         router,
         ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,
         ::std::function<bool(::Realms::World, ::Realms::PlayerRoleActions)>      canUserDoRealmRoleAction
     );
 
-    MCFOLD ::std::string const getRealmErrorData();
+    MCAPI ::std::string const getRealmErrorData();
 
     MCAPI void joinExternalNetworkWorld(
         ::std::string const&                                                            id,
@@ -156,7 +158,7 @@ public:
         ::World::LanServerWorldList&                                             lanServerWorldList,
         ::World::ThirdPartyWorldList&                                            thirdPartyWorldList,
         bool                                                                     isEduMode,
-        ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> const&                 gatheringManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager> const&         experienceSystemsManager,
         ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
         ::OreUI::Router&                                                         router,
         ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,

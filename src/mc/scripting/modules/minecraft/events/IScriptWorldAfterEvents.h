@@ -41,6 +41,8 @@ namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEventIntermediat
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakingBlockAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerButtonInputIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerCraftRecipeIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerCursorItemTransferIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerDimensionChangeIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerEmoteIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerGameModeChangeIntermediateData; }
@@ -219,6 +221,17 @@ public:
     virtual void onPlayerInventoryItemChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData>& inventoryEvent
     );
+
+    virtual void onPlayerCursorItemGrab(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    );
+
+    virtual void onPlayerCursorItemRelease(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    );
+
+    virtual void
+    onPlayerCraftRecipe(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCraftRecipeIntermediateData>& eventData);
 
     virtual void
     onPlayerJoin(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData>& eventData);
@@ -470,6 +483,18 @@ public:
 
     MCFOLD void $onPlayerInventoryItemChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData>& inventoryEvent
+    );
+
+    MCFOLD void $onPlayerCursorItemGrab(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    );
+
+    MCFOLD void $onPlayerCursorItemRelease(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
+    );
+
+    MCFOLD void $onPlayerCraftRecipe(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCraftRecipeIntermediateData>& eventData
     );
 
     MCFOLD void

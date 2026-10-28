@@ -13,7 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptBlockMaskList; }
 namespace Editor::ScriptModule { class ScriptBlockUtilityShapeVolumeOptionsCone; }
 namespace Editor::ScriptModule { class ScriptBlockUtilityShapeVolumeOptionsCuboid; }
@@ -24,7 +23,6 @@ namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
 namespace Editor::ScriptModule { struct ScriptBlockUtilityManifest; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace Scripting { class ScriptObjectFactory; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -51,11 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockUtilityTaskService(
-        ::Editor::ServiceProviderCollection&  serviceProviders,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptTaskPromise<
             ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>>>
@@ -140,13 +133,6 @@ public:
     MCNAPI static ::Scripting::EnumBinding bindFloodMatchCriteriaEnum();
 
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

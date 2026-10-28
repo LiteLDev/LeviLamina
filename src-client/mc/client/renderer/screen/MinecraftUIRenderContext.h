@@ -48,16 +48,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Font&>             mFont;
-        ::ll::TypedStorage<4, 16, ::RectangleArea>    mArea;
-        ::ll::TypedStorage<8, 32, ::std::string>      mText;
-        ::ll::TypedStorage<4, 16, ::mce::Color>       mColor;
-        ::ll::TypedStorage<1, 1, bool>                mShadow;
-        ::ll::TypedStorage<1, 1, bool>                mShowColorSymbol;
-        ::ll::TypedStorage<4, 4, int>                 mCaretLocation;
-        ::ll::TypedStorage<4, 4, float>               mFontScale;
-        ::ll::TypedStorage<4, 4, float>               mLinePadding;
-        ::ll::TypedStorage<4, 4, ::ui::TextAlignment> mAlignment;
+        ::ll::TypedStorage<8, 8, ::Font&>                                            mFont;
+        ::ll::TypedStorage<4, 16, ::RectangleArea>                                   mArea;
+        ::ll::TypedStorage<8, 40, ::std::variant<::std::string, ::std::string_view>> mText;
+        ::ll::TypedStorage<4, 16, ::mce::Color>                                      mColor;
+        ::ll::TypedStorage<4, 4, int>                                                mCaretLocation;
+        ::ll::TypedStorage<4, 4, float>                                              mFontScale;
+        ::ll::TypedStorage<4, 4, float>                                              mLinePadding;
+        ::ll::TypedStorage<4, 4, ::ui::TextAlignment>                                mAlignment;
+        ::ll::TypedStorage<1, 1, bool>                                               mShadow;
+        ::ll::TypedStorage<1, 1, bool>                                               mShowColorSymbol;
         // NOLINTEND
 
     public:
@@ -140,6 +140,17 @@ public:
         ::Font&                   font,
         ::RectangleArea const&    rect,
         ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
+    ) /*override*/;
+
+    virtual void drawText(
+        ::Font&                   font,
+        ::RectangleArea const&    rect,
+        ::std::string_view        text,
         ::mce::Color const&       color,
         float                     alpha,
         ::ui::TextAlignment       alignment,
@@ -287,6 +298,17 @@ public:
         ::Font&                   font,
         ::RectangleArea const&    rect,
         ::std::string&&           text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
+    );
+
+    MCAPI void $drawText(
+        ::Font&                   font,
+        ::RectangleArea const&    rect,
+        ::std::string_view        text,
         ::mce::Color const&       color,
         float                     alpha,
         ::ui::TextAlignment       alignment,

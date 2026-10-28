@@ -84,7 +84,7 @@ public:
 
     MCAPI bool getMobsDropLoot() const;
 
-    MCAPI bool getNaturalRegeneration() const;
+    MCFOLD bool getNaturalRegeneration() const;
 
     MCFOLD int getPlayerWaypointsMode() const;
 

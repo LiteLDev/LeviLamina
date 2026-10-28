@@ -22,6 +22,7 @@ class CompoundTag;
 class Container;
 class ContainerContentChangeListener;
 class DataLoadHelper;
+class DynamicContainerTracker;
 class ILevel;
 class IVanillaRenderBlockActorComponent;
 class ItemStack;
@@ -172,6 +173,8 @@ public:
 
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
+    virtual void receiveContainerLifetimes(::DynamicContainerTracker const& tracker) /*override*/;
+
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
@@ -314,6 +317,8 @@ public:
     MCAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
 
     MCAPI void $initializeContainerContents(::BlockSource& region);
+
+    MCAPI void $receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 

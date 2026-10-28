@@ -179,11 +179,7 @@ public:
 
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage&) const;
 
-#ifdef LL_PLAT_S
-    MCAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
-#else // LL_PLAT_C
     MCFOLD void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
-#endif
 
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 

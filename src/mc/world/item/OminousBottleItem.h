@@ -26,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::ResolvedItemIconInfo> mIconInfo;
-    ::ll::TypedStorage<8, 144, ::MobEffectInstance>   mMobEffect;
+    ::ll::TypedStorage<8, 168, ::MobEffectInstance>   mMobEffect;
     // NOLINTEND
 
 public:

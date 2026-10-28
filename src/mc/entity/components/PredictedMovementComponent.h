@@ -9,10 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class AddActorPacket;
-class MotionPredictionHintsPacket;
 class MoveActorAbsoluteData;
-class SetActorMotionPacket;
 class Vec2;
 class Vec3;
 struct PredictedMovementSystemParams;
@@ -237,26 +234,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
-#endif
-
         MCAPI void _clearHistory();
-
-#ifdef LL_PLAT_C
-        MCAPI void
-        addHistory(::AddActorPacket const& actorData, ::std::chrono::steady_clock::time_point const& receiveTimepoint);
-
-        MCAPI void addHistory(
-            ::SetActorMotionPacket const&                  motionData,
-            ::std::chrono::steady_clock::time_point const& receiveTimepoint
-        );
-
-        MCAPI void addHistory(
-            ::MotionPredictionHintsPacket const&           motionPredictionHints,
-            ::std::chrono::steady_clock::time_point const& receiveTimepoint
-        );
-#endif
 
         MCAPI void addHistory(
             ::MoveActorAbsoluteData const&                 moveData,
@@ -302,62 +280,6 @@ public:
         virtual float getYHeadRot() const /*override*/;
 
         virtual bool isOnGround() const /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI MotionHistoryItem(
-            ::Vec3 const&                                                                   motion,
-            bool                                                                            onGround,
-            bool                                                                            isMotionHintItem,
-            ::std::chrono::steady_clock::time_point const&                                  timepoint,
-            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
-            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
-            bool                                                                            didAdjustTimepoint,
-            ::std::chrono::milliseconds const&                                              timepointDiff
-        );
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(
-            ::Vec3 const&                                                                   motion,
-            bool                                                                            onGround,
-            bool                                                                            isMotionHintItem,
-            ::std::chrono::steady_clock::time_point const&                                  timepoint,
-            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
-            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
-            bool                                                                            didAdjustTimepoint,
-            ::std::chrono::milliseconds const&                                              timepointDiff
-        );
-#endif
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD bool $isValidStartItem() const;
-
-        MCAPI bool $isAddedActorItem() const;
-
-        MCAPI bool $isMotionHintItem() const;
-
-        MCAPI ::Vec3 const& $getPos() const;
-
-        MCFOLD ::Vec2 const& $getRot() const;
-
-        MCAPI float $getYHeadRot() const;
-
-        MCFOLD bool $isOnGround() const;
-#endif
-
-
         // NOLINTEND
     };
 

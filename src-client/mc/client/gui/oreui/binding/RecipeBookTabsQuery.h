@@ -1,0 +1,48 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/client/gui/gameplay/api/gameplayui/RecipeBookTab.h"
+#include "mc/client/gui/oreui/binding/QueryBase.h"
+#include "mc/client/gui/oreui/binding/properties/Property.h"
+#include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace GameplayUI { struct GameplayUIContext; }
+// clang-format on
+
+namespace OreUI {
+
+class RecipeBookTabsQuery : public ::OreUI::QueryBase<::OreUI::RecipeBookTabsQuery> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::GameplayUI::RecipeBookTab, ::GameplayUI::RecipeBookTab>>
+                                                                                              mAvailableTabs;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                                 mCanFilterCraftable;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
+    // NOLINTEND
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual void update(double) /*override*/;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[35]> NAME();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $update(double);
+    // NOLINTEND
+};
+
+} // namespace OreUI

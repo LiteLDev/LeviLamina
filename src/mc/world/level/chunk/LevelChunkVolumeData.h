@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IDataInput;
 class StructureSpawnRegistry;
 class StructureStart;
 namespace br::worldgen { class StructureInstance; }
@@ -49,12 +48,6 @@ public:
     MCAPI void addStructureReference(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
     MCFOLD void addStructureReference(::StructureStart const& start);
-
-#ifdef LL_PLAT_S
-    MCAPI void deserializeAabbVolumes(::IDataInput& stream);
-
-    MCAPI void deserializeHardcodedSpawners(::IDataInput& stream);
-#endif
 
     MCAPI ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>> getOverlappingStructures() const;
 

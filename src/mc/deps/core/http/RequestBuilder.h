@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Core { class Path; }
@@ -30,6 +31,8 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Http::RequestBuilder& addHeaders(::Bedrock::Http::HeaderCollection headers);
+
     MCNAPI ::Bedrock::Http::RequestBuilder& body(::gsl::span<uchar> const& binaryData);
 
     MCNAPI ::Bedrock::Http::RequestBuilder&

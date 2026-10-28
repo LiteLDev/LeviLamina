@@ -35,6 +35,10 @@ MCAPI void _initAreaFilterMap();
 
 MCAPI void _initPriorityFilterMap();
 
+#ifdef LL_PLAT_S
+MCAPI void closeAllLogs();
+#endif
+
 MCAPI void closeAndResetAllLogs();
 
 MCAPI void closeAndResetLog(::BedrockLog::LogCategory category);
@@ -48,6 +52,18 @@ MCAPI void createLog(
     bool                      _createLogFile,
     ::LogSettingsUpdater*     _settings,
     double                    _logCycleInS
+);
+
+MCAPI void log_fmt(
+    ::BedrockLog::LogCategory                          category,
+    ::std::bitset<3>                                   channelMask,
+    ::BedrockLog::LogRule                              rule,
+    ::LogAreaID                                        area,
+    uint                                               priority,
+    char const*                                        function,
+    int                                                line,
+    ::fmt::v11::basic_string_view<char>                format,
+    ::fmt::v11::basic_format_args<::fmt::v11::context> args
 );
 
 MCAPI void log_va(

@@ -38,6 +38,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                             mModified;
     ::ll::TypedStorage<1, 1, bool>                                             mUpdateIntellisense;
     ::ll::TypedStorage<1, 1, bool>                                             mTextBoxEditing;
+    ::ll::TypedStorage<1, 1, bool>                                             mCommandTextBoxSelected;
     ::ll::TypedStorage<1, 1, bool>                                             mShouldUseFilteredMessage;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mProfanityToggleSubscription;
     // NOLINTEND

@@ -66,8 +66,6 @@ MCAPI ::std::string getActorName(::Actor const& actor);
 
 MCAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
 
-MCAPI ::std::string getTelemetryErrorList(::CommandOutput const& output);
-
 MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEntry, ::std::string const& resolvedPath);
 
 MCAPI void nameEntity(::Actor& actor, bool nameSet, ::Bedrock::Safety::RedactableString const& actorName);

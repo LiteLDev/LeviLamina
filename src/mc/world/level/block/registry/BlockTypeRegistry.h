@@ -13,8 +13,6 @@
 // clang-format off
 class Block;
 class BlockType;
-class BlockTypeRegistryRWLock;
-class Experiments;
 class LinkedAssetValidator;
 class ServerScriptManager;
 namespace VoxelShapes { class VoxelShapeRegistry; }
@@ -122,8 +120,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                  mKnownNamespaces;
     ::ll::TypedStorage<8, 72, ::entt::dense_map<uint64, ::HashedString>>  mBlockNameHashToStringMap;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTypeRegistry::DirectAccessBlocks>> mDirectAccessBlocks;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::VoxelShapes::VoxelShapeRegistry>>        mShapeRegistry;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistryRWLock>>              mRWLock;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry>>      mShapeRegistry;
     // NOLINTEND
 
 public:
@@ -151,8 +148,6 @@ public:
 
     MCAPI uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion) const;
 
-    MCAPI void finalizeBlockComponentStorage();
-
 #ifdef LL_PLAT_C
     MCAPI void finalizeBlockComponentStorageForRendering(::brstd::function_ref<void(::BlockType&)> finalizer);
 #endif
@@ -160,12 +155,8 @@ public:
     MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
 #ifdef LL_PLAT_C
-    MCFOLD void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
+    MCAPI void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
 #endif
-
-    MCAPI void forEachBlockMutable(::brstd::function_ref<bool(::Block&)> callback);
-
-    MCFOLD void forEachBlockType(::brstd::function_ref<bool(::BlockType const&)> callback) const;
 
     MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
@@ -178,15 +169,9 @@ public:
 
     MCAPI ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound) const;
 
-    MCAPI ::BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks() const;
-
 #ifdef LL_PLAT_C
     MCAPI int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
 #endif
-
-    MCAPI void initHardCodedBlockComponents(::Experiments const& experiments);
-
-    MCAPI void initRWLock();
 
     MCAPI bool isComplexAliasBlock(::HashedString const& blockName) const;
 
@@ -207,8 +192,6 @@ public:
         ::HashedString                                                       defaultNewBlockName,
         int                                                                  startVariant
     );
-
-    MCAPI void unregisterBlock(::HashedString const& name);
 
     MCAPI void unregisterBlocks();
 

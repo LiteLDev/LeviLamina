@@ -13,6 +13,9 @@ struct PlayerAddLevelEvent;
 struct PlayerArmorExchangeEvent;
 struct PlayerCloseContainerEvent;
 struct PlayerClosedContainerEvent;
+struct PlayerCraftRecipeAfterEvent;
+struct PlayerCursorItemGrabEvent;
+struct PlayerCursorItemReleaseEvent;
 struct PlayerDamageEvent;
 struct PlayerDataDrivenScreenClosedEvent;
 struct PlayerDestroyBlockEvent;
@@ -37,6 +40,7 @@ struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityAfterEvent;
 struct PlayerInteractWithEntityBeforeEvent;
 struct PlayerInventoryItemChangeEvent;
+struct PlayerItemAttackEntityBeforeEvent;
 struct PlayerMeCommandEvent;
 struct PlayerOpenContainerEvent;
 struct PlayerOpenedContainerEvent;
@@ -63,6 +67,7 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerAddExpEvent const,
                                      ::PlayerAddLevelEvent const,
                                      ::PlayerArmorExchangeEvent const,
+                                     ::PlayerCraftRecipeAfterEvent const,
                                      ::PlayerDestroyBlockEvent const,
                                      ::PlayerUseNameTagEvent const,
                                      ::PlayerDropItemEvent const,
@@ -93,6 +98,8 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerEmoteEvent const,
                                      ::PlayerScriptInputEvent const,
                                      ::PlayerInventoryItemChangeEvent const,
+                                     ::PlayerCursorItemGrabEvent const,
+                                     ::PlayerCursorItemReleaseEvent const,
                                      ::PlayerHotbarSelectedSlotChangeEvent const,
                                      ::PlayerInputPermissionCategoryChangeEvent const,
                                      ::PlayerMeCommandEvent const,
@@ -103,6 +110,7 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerTitleRawCommandEvent const,
                                      ::PlayerGetExperienceOrbEvent const,
                                      ::PlayerInteractEvent const,
+                                     ::PlayerItemAttackEntityBeforeEvent const,
                                      ::PlayerInteractWithEntityBeforeEvent const,
                                      ::PlayerInteractWithBlockBeforeEvent const,
                                      ::PlayerGameModeChangeEvent const> {};

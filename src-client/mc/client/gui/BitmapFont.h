@@ -20,14 +20,18 @@ class BitmapFont : public ::Font {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mAsciiFontName;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mUnicodeFontName;
-    ::ll::TypedStorage<4, 1024, float[256]>                      mCharWidths;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Image>>   mBitmapFontImage;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>  mUnicodeWidths;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>  mUnicodeOffsets;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>  mUnicodePageGlyphWidths;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>         mSheetScannedForWidthsAndOffsets;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                          mAsciiFontName;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                          mUnicodeFontName;
+    ::ll::TypedStorage<1, 1, uchar>                                                       mAsciiSheetCount;
+    ::ll::TypedStorage<1, 1, uchar>                                                       mAsciiCharacterHeight;
+    ::ll::TypedStorage<4, 4, int>                                                         mAsciiCharacterYOffset;
+    ::ll::TypedStorage<1, 1, bool>                                                        mUseExtendedAscii;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::array<float, 256>>>        mCharWidths;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::shared_ptr<::mce::Image>>> mBitmapFontImages;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>                           mUnicodeWidths;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>                           mUnicodeOffsets;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>                           mUnicodePageGlyphWidths;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>> mSheetScannedForWidthsAndOffsets;
     // NOLINTEND
 
 public:
@@ -64,6 +68,8 @@ public:
 
     virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
+    virtual float getGlyphHeight(int glyphSheet, bool isUnicode) const /*override*/;
+
     virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
     virtual float buildChar(
@@ -83,6 +89,12 @@ public:
 
     virtual ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     getFontSources() const /*override*/;
+
+    virtual uchar _getAsciiSheetCount() const /*override*/;
+
+    virtual int _getAsciiGlyphsPerPage() const /*override*/;
+
+    virtual bool _usesLegacyAsciiMapping() const /*override*/;
     // NOLINTEND
 
 public:
@@ -94,8 +106,11 @@ public:
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        uchar                                  asciiSheetCount,
         bool                                   uploadOnConstruction
     );
+
+    MCAPI ::Core::PathBuffer<::std::string> getAsciiFontNameWithPage(uchar const page) const;
     // NOLINTEND
 
 public:
@@ -107,6 +122,7 @@ public:
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        uchar                                  asciiSheetCount,
         bool                                   uploadOnConstruction
     );
     // NOLINTEND
@@ -138,6 +154,8 @@ public:
 
     MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
 
+    MCAPI float $getGlyphHeight(int glyphSheet, bool isUnicode) const;
+
     MCAPI void $loadFontData(bool uploadTextureImmediately);
 
     MCAPI float $buildChar(
@@ -157,5 +175,11 @@ public:
 
     MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
+
+    MCAPI uchar $_getAsciiSheetCount() const;
+
+    MCAPI int $_getAsciiGlyphsPerPage() const;
+
+    MCAPI bool $_usesLegacyAsciiMapping() const;
     // NOLINTEND
 };

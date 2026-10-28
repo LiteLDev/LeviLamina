@@ -121,7 +121,7 @@ public:
 
     MCFOLD ::std::vector<::OreUI::EditorLoggingFacet::LogMessage> const& getMessages() const;
 
-    MCFOLD uint64 const getNotificationQueueCount() const;
+    MCAPI uint64 const getNotificationQueueCount() const;
 
     MCAPI bool getNotificationsEnabled() const;
 

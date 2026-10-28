@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockDestroySound.h"
 #include "mc/world/level/ILevelBlockDestroyerProxy.h"
 
 // auto generated forward declare list
@@ -22,7 +23,8 @@ public:
         ::LevelEventManager& levelEventManager,
         ::BlockSource&       region,
         ::BlockPos const&    pos,
-        ::Block const&       block
+        ::Block const&       block,
+        ::BlockDestroySound  destroySound
     ) /*override*/;
 
     virtual void dropResources(
@@ -40,7 +42,8 @@ public:
         ::LevelEventManager& levelEventManager,
         ::BlockSource&       region,
         ::BlockPos const&    pos,
-        ::Block const&       block
+        ::Block const&       block,
+        ::BlockDestroySound  destroySound
     );
 
     MCAPI void

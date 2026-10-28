@@ -14,7 +14,6 @@
 class BlockPos;
 class XoroshiroPositionalRandomFactory;
 struct TargetPoint;
-struct TerrainInfo;
 // clang-format on
 
 struct OverworldNoises3d {
@@ -58,8 +57,6 @@ public:
     _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos) const;
 
     MCAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
-
-    MCAPI ::TerrainInfo computeOffsetAndFactor(::DividedPos2d<4> const& worldQuartPos) const;
 
     MCAPI ::TargetPoint sample(::BlockPos position) const;
 

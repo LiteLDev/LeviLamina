@@ -6,7 +6,7 @@
 #include "mc/deps/cereal/Constraint.h"
 #include "mc/deps/cereal/ConstraintHandle.h"
 #include "mc/deps/cereal/ContextArea.h"
-#include "mc/deps/cereal/MinSizeConstraint.h"
+#include "mc/deps/cereal/MinSizeConstraintData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,9 +20,9 @@ class SequenceContainerConstraint : public ::cereal::ConstraintHandle<::cereal::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::cereal::internal::MinSizeConstraint>    mConstraint;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::Constraint>> mValueConstraint;
-    ::ll::TypedStorage<1, 1, bool>                                     mNoDuplicates;
+    ::ll::TypedStorage<8, 8, ::cereal::internal::MinSizeConstraintData> mConstraint;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::Constraint>>  mValueConstraint;
+    ::ll::TypedStorage<1, 1, bool>                                      mNoDuplicates;
     // NOLINTEND
 
 public:

@@ -36,6 +36,8 @@ public:
     MCFOLD bool isBetaBuild() const;
 
     MCFOLD bool isInDeveloperMode() const;
+
+    MCFOLD bool isPartnerBuild() const;
     // NOLINTEND
 
 public:

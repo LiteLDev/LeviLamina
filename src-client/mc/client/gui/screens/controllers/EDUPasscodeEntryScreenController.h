@@ -7,9 +7,9 @@
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/social/EduDedicatedServerDetails.h"
 
-class EDUPasscodeEntryScreenController : public ::MinecraftScreenController {
+class EduPasscodeEntryScreenController : public ::MinecraftScreenController {
 public:
-    // EDUPasscodeEntryScreenController inner types define
+    // EduPasscodeEntryScreenController inner types define
     using OnConfirmPasscode = ::std::function<void(::Social::EduDedicatedServerDetails const&, ::std::string const&)>;
 
 public:
@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUPasscodeEntryScreenController() /*override*/ = default;
+    virtual ~EduPasscodeEntryScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND

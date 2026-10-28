@@ -127,13 +127,9 @@ public:
         bool                                  uncompleteWorldFileOnDisk,
         ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
     );
-
-    MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getEducationCreatorId() const;
@@ -149,8 +145,6 @@ public:
     MCAPI ::LevelSummary& operator=(::LevelSummary const&);
 
     MCAPI bool operator==(::LevelSummary const& rhs) const;
-
-    MCAPI void reinitializeWorldSize(::Core::Path const& directory);
 
     MCAPI void setCloudSave(::CloudSaveLevelInfo const& value);
 

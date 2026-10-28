@@ -11,6 +11,7 @@ class EditorNetworkPacket;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Network { class INetworkPayload; }
 namespace Editor::Network { struct PayloadMetrics; }
+namespace Editor::Network { struct PayloadSenderContext; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -27,6 +28,9 @@ public:
     virtual ::Scripting::Result_deprecated<void> dispatchToSelf(::Editor::Network::INetworkPayload& payload) = 0;
 
     virtual void onReceivePayload(::EditorNetworkPacket const& packet) = 0;
+
+    virtual void
+    onReceivePayload(::EditorNetworkPacket const& packet, ::Editor::Network::PayloadSenderContext const& sender);
 
     virtual ::std::vector<::std::pair<::std::string, ::Editor::Network::PayloadMetrics>>
     collectMetricsReport() const = 0;
@@ -78,6 +82,12 @@ public:
         char const*                                                      payloadName,
         ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber
     ) = 0;
+
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> _listenForWithSender(
+        char const* payloadName,
+        ::std::function<void(::Editor::Network::INetworkPayload const&, ::Editor::Network::PayloadSenderContext const&)>
+            fnSubscriber
+    );
     // NOLINTEND
 };
 

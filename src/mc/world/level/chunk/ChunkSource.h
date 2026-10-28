@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/brstd/move_only_function.h"
@@ -196,7 +197,7 @@ public:
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
 #ifdef LL_PLAT_C
-    MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
+    MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>, ::Bedrock::Threading::SharedLockbox> createEmptyView(
         ::ChunkSource::LoadMode                                             lm,
         bool                                                                circle,
         ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)> add,
@@ -313,7 +314,11 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
+#ifdef LL_PLAT_S
+    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+#else // LL_PLAT_C
     MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+#endif
 
     MCAPI bool $canLaunchTasks() const;
 

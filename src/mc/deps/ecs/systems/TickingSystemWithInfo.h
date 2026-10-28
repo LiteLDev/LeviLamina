@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ITickingSystem>> mTickingSystem;
-    ::ll::TypedStorage<8, 200, ::SystemInfo>                      mInfo;
+    ::ll::TypedStorage<8, 208, ::SystemInfo>                      mInfo;
     // NOLINTEND
 
 public:

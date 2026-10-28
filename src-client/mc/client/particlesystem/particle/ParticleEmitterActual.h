@@ -406,11 +406,11 @@ public:
 
     MCAPI void $setMaxNumParticles(uint64 num);
 
-    MCFOLD uint64 $getMaxNumParticles() const;
+    MCAPI uint64 $getMaxNumParticles() const;
 
     MCAPI uint64 $getNumParticles() const;
 
-    MCAPI uint64 $getNumParticlesEmitted() const;
+    MCFOLD uint64 $getNumParticlesEmitted() const;
 
     MCAPI void $setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity);
 

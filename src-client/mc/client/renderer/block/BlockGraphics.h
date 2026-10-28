@@ -89,6 +89,8 @@ public:
 
     MCAPI ::std::string const getDefaultTextureName(uint64 textureSlot) const;
 
+    MCAPI ::BlockRenderLayer getRenderLayer() const;
+
     MCAPI ::TextureUVCoordinateSet const& getTexture(uint64 textureSlot, int blockVariant) const;
 
     MCAPI ::TextureUVCoordinateSet const& getTexture(::BlockPos const& p, uint64 textureSlot, int blockVariant) const;
@@ -184,7 +186,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockRenderLayer $getRenderLayer(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD ::BlockRenderLayer $getRenderLayer(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD int $getColor(int auxData) const;
 

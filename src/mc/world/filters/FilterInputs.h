@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/legacy/FilterSubject.h"
-#include "mc/world/filters/FilterOperator.h"
-
-// auto generated forward declare list
-// clang-format off
-class FilterInput;
-// clang-format on
-
 struct FilterInputs {
 public:
     // member variables
@@ -30,21 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilterInputs(
-        ::SharedTypes::Legacy::FilterSubject subject,
-        ::FilterInput                        domain,
-        ::FilterOperator                     op,
-        ::FilterInput                        value
-    );
-
     MCNAPI ~FilterInputs();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::SharedTypes::Legacy::FilterSubject subject, ::FilterInput domain, ::FilterOperator op, ::FilterInput value);
     // NOLINTEND
 
 public:

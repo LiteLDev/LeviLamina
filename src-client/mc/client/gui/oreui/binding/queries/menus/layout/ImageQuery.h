@@ -43,12 +43,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ImageQuery(::OreUI::GameDependencies const& game, ::std::string const& url);
+
+    MCAPI void _resolveImage(::std::string const& url);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& url);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForPropertyObject();
+
+    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

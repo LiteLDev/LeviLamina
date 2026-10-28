@@ -17,7 +17,8 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::FocusManagerProxy*()>> mGetFocusManager;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                 mIsInitialized;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&, ::ScreenEvent&)>>
-                                                       mTestAutomationHandleRawInputEvent;
-    ::ll::TypedStorage<8, 64, ::std::function<bool()>> mIsAnyFocusControlHovered;
+                                                                         mTestAutomationHandleRawInputEvent;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                   mIsAnyFocusControlHovered;
+    ::ll::TypedStorage<8, 64, ::std::function<::std::optional<float>()>> mGetTimeToFirstRenderMs;
     // NOLINTEND
 };

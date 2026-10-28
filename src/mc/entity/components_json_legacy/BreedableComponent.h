@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,6 +13,7 @@ class BreedableDefinition;
 class CompoundTag;
 class DataLoadHelper;
 class Interaction;
+class ItemStack;
 class Player;
 class WeakEntityRef;
 // clang-format on
@@ -48,11 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _canBreed(::Actor& owner, ::Player& player, ::ItemStack const& playerItem, ::HandSlot handSlot);
+
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
     MCAPI ::std::vector<::WeakEntityRef> mate(::Actor& owner, ::Actor& partner);
 

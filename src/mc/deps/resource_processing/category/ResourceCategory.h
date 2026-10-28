@@ -17,6 +17,14 @@ enum class ResourceCategory : ushort {
     PoiTag              = 9,
     CraftingItemCatalog = 10,
     Block               = 11,
+    LegacyClientBiome   = 12,
+    UiGlobalVariables   = 13,
+    SoundMapping        = 14,
+    SoundDefinitions    = 15,
+    MusicDefinitions    = 16,
+    TickingTexture      = 17,
+    UiDefinition        = 18,
+    Count               = 19,
 };
 
 }

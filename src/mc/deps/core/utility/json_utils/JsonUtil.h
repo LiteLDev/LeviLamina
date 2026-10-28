@@ -105,6 +105,7 @@ namespace SharedTypes::v1_26_50 { struct AngerLevelComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct BarterComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct BossComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct CollisionBoxComponentDefinition; }
+namespace SharedTypes::v1_26_50 { struct DamageOverTimeComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct ExhaustionComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct FlockingComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct GameEventMovementTrackingComponentDefinition; }
@@ -115,6 +116,17 @@ namespace SharedTypes::v1_26_50 { struct InstantDespawnComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct LegacyTradeableComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct MountTamingComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct PhysicsComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct BuoyancyComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct DashActionComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct EconomyTradeableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct HealableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct RailMovementComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct RideableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct ScaleByAgeComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct ShareableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct StrengthComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct TeleportComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct TimerComponentDefinition; }
 // clang-format on
 
 namespace JsonUtil {
@@ -156,9 +168,33 @@ MCNAPI void buildActorDefinitionSchema(
 );
 
 MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_60::BuoyancyComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
     ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::EmptyClass,
         ::SharedTypes::v1_26_50::CollisionBoxComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_50::DamageOverTimeComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_60::DashActionComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition>>& root
 );
 
 MCNAPI void buildActorDefinitionSchema(
@@ -189,6 +225,12 @@ MCNAPI void buildActorDefinitionSchema(
     ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::EmptyClass,
         ::SharedTypes::v1_26_50::GrowsCropComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_60::HealableComponentDefinition>>&
+        root
 );
 
 MCNAPI void buildActorDefinitionSchema(
@@ -281,6 +323,48 @@ MCNAPI void buildActorDefinitionSchema(
 MCNAPI void buildActorDefinitionSchema(
     ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_50::PhysicsComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_60::RailMovementComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_60::RideableComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_60::ScaleByAgeComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_60::ShareableComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_60::StrengthComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_60::TeleportComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_60::TimerComponentDefinition>>&
         root
 );
 

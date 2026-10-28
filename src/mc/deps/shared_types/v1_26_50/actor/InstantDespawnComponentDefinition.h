@@ -25,8 +25,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& DEFAULT_REMOVE_CHILD_ENTITIES();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

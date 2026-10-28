@@ -41,12 +41,6 @@ public:
         ::OreUI::RouteType               routeType
     );
 
-    MCFOLD ::std::string const& getFragment() const;
-
-    MCFOLD ::std::string const& getPath() const;
-
-    MCFOLD ::std::string const& getQuery() const;
-
     MCAPI ::std::string getTelemetryId() const;
 
     MCAPI bool isValid() const;

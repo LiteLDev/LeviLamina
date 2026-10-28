@@ -32,6 +32,7 @@ class TaskGroup;
 class TaskResult;
 struct DBStorageConfig;
 struct SnapshotFilenameAndLength;
+struct WorldSaveAndExitPackTelemetryData;
 namespace Core { class Path; }
 // clang-format on
 
@@ -217,6 +218,9 @@ public:
     virtual void setCompactionCallback(::std::function<void(::CompactionStatus)> callback) /*override*/;
 
     virtual void setCriticalSyncSaveCallback(::std::function<void()> callback) /*override*/;
+
+    virtual void
+    setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs) /*override*/;
     // NOLINTEND
 
 public:
@@ -309,6 +313,8 @@ public:
     MCAPI void $setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
 
     MCAPI void $setCriticalSyncSaveCallback(::std::function<void()> callback);
+
+    MCAPI void $setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs);
 
 
     // NOLINTEND

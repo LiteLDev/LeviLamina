@@ -41,6 +41,14 @@ public:
     MCAPI ::LodestoneCompassComponentCalculator*
     _createCalculator(::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId);
 
+#ifdef LL_PLAT_S
+    MCAPI int getAnimationFrame(
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
+        ::BlockPos const&                                                                lookFromPosition,
+        ::DimensionType const&                                                           lookFromDimension
+    );
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI bool tick(::Level& level);
 #endif

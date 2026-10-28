@@ -70,7 +70,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::GameCallbacks&>                                      mGameCallbacks;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                 mEventing;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackManager>>              mResourceLoader;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::ResourcePackManager>>                    mResourceLoader;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureManager>>                 mStructureManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameModuleServer>>                mGameModuleServer;
     ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                    mPermissionsFile;
@@ -185,12 +185,14 @@ public:
 
     MCAPI ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
 
-    MCAPI void resetGameSession();
+    MCAPI bool requestInGamePause(bool status);
 
     MCAPI void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
 #endif
 
     MCAPI void startLeaveGame(bool stopNetwork);
+
+    MCAPI void unpauseServerForDimensionTransfer();
 
     MCAPI bool update();
     // NOLINTEND

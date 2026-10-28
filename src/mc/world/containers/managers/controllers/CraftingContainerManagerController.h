@@ -212,6 +212,8 @@ public:
 
     MCAPI void _handleTransferCraftExtraResults(::std::vector<::ItemInstance>& allResults);
 
+    MCAPI bool _inventoryContainsItemForRecipeInputSlot(::std::string const& containerName, int collectionIndex) const;
+
     MCAPI ::CreateContainerItemScope _makeCreateItemScopeCrafting(
         ::SlotData const&              srcSlot,
         ::ItemTransferAmount const&    takeAmount,
@@ -238,6 +240,8 @@ public:
     MCAPI ::CraftableCountingData getCraftableCount(::ItemInstance const& item);
 
     MCFOLD ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
+
+    MCAPI ::ItemInstance const& getGhostItem(::std::string const& collectionName, int collectionIndex) const;
 
     MCAPI int getIndexForCreativeItem(::std::string const& collectionName, ::ItemStackBase const& item) const;
 

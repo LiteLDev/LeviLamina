@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI LayoutOffset(::ui::LayoutOffset const&);
 
-    MCAPI explicit LayoutOffset(::glm::vec2 size);
+    MCAPI explicit LayoutOffset(::glm::vec2 const size);
 
     MCAPI explicit LayoutOffset(::Json::Value const& val);
 
@@ -50,7 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ui::LayoutOffset const&);
 
-    MCAPI void* $ctor(::glm::vec2 size);
+    MCAPI void* $ctor(::glm::vec2 const size);
 
     MCAPI void* $ctor(::Json::Value const& val);
 

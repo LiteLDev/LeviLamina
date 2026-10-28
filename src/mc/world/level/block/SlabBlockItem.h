@@ -41,7 +41,8 @@ public:
         ::Vec3 const& clickPos
     ) const /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const
+    virtual bool
+    _calculatePlacePos(::ItemStackBase const& instance, ::Actor const& actor, uchar& face, ::BlockPos& pos) const
         /*override*/;
     // NOLINTEND
 
@@ -50,7 +51,8 @@ public:
     // NOLINTBEGIN
     MCAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
 
-    MCAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor&, uchar& face, ::Block const& block) const;
+    MCAPI bool
+    _canConvertToDoubleBlock(::ItemStackBase const& instance, ::Actor const&, uchar& face, ::Block const& block) const;
     // NOLINTEND
 
 public:
@@ -71,7 +73,8 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool
+    $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
 
 
     // NOLINTEND

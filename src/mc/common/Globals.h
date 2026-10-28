@@ -44,18 +44,20 @@
 #include "mc/external/cgltf/cgltf_type.h"
 #include "mc/external/lib_http_client/http_stl_allocator.h"
 #include "mc/external/libsrtp/srtp_err_status_t.h"
+#include "mc/external/mimalloc/mi_delayed_e.h"
 #include "mc/molang/MolangVersion.h"
 #include "mc/network/packet/AgentActionType.h"
 #include "mc/network/packet/TextPacketType.h"
 #include "mc/options/DiscoveryEnvironment.h"
 #include "mc/options/option_types/OptionID.h"
-#include "mc/platform/Result.h"
+#include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/platform/brstd/move_only_function.h"
+#include "mc/resources/AssetWorkItemFactory.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/Direction.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ActorTypeNamespaceRules.h"
@@ -96,6 +98,7 @@ class CompoundTag;
 class DamageOverTimeComponent;
 class DanceComponent;
 class DataLoadHelper;
+class DebuggerStat;
 class DimensionHeightRange;
 class EntityContext;
 class ExplodeComponent;
@@ -123,6 +126,7 @@ class LinkedAssetValidator;
 class ListTag;
 class Matrix;
 class NavigationComponent;
+class PackInstance;
 class Player;
 class PoolAliasBinding;
 class Recipe;
@@ -150,10 +154,10 @@ struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifier;
 struct ActorHeadRotationComponent;
 struct ActorRotationComponent;
-struct AgeableComponent;
 struct AgentCapabilities;
 struct AirSpeedComponent;
 struct AirTravelFlagComponent;
+struct AnyWorkItem;
 struct BlockLayer;
 struct BossComponent;
 struct BurnsInDaylightComponent;
@@ -171,6 +175,7 @@ struct GroundTravelFlagComponent;
 struct HCTraceImplArea;
 struct HorseWasOnGroundPreTravelComponent;
 struct ImmuneToLavaDragComponent;
+struct IteratePackResult;
 struct JumpPendingScaleComponent;
 struct KeyOrNameResult;
 struct KineticDamageSettings;
@@ -188,6 +193,7 @@ struct MovementInterpolatorComponent;
 struct OnGroundFlagComponent;
 struct PackIdVersion;
 struct PackMaps;
+struct ParseJsonResult;
 struct PlayerComponent;
 struct PlayerFlyingTravelComponent;
 struct PlayerPositionModeComponent;
@@ -250,7 +256,6 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 class TraceState;
 struct HC_CALL;
-class DataDrivenModel;
 class DataDrivenRenderer;
 class ExprToken;
 class IClientInstance;
@@ -261,10 +266,7 @@ class TrialManager;
 class UIControl;
 class UIPropertyBag;
 class WorldSeedModel;
-struct AttachablesPreprocessingContext;
 struct BakedRenderControllerResults;
-struct BlockLightConfiguration;
-struct ClientSkin;
 struct CloudConfiguration;
 struct CommonLocTextPair;
 struct ContentCatalogQueryData;
@@ -281,6 +283,21 @@ struct ResourceOffset;
 struct SkinPackMeta;
 struct cgltf_options;
 struct jsmn_parser;
+struct mi_block_s;
+struct mi_commit_mask_s;
+struct mi_heap_s;
+struct mi_memid_s;
+struct mi_os_mem_config_s;
+struct mi_os_tld_s;
+struct mi_page_queue_s;
+struct mi_page_s;
+struct mi_process_info_s;
+struct mi_random_cxt_s;
+struct mi_segment_s;
+struct mi_segments_tld_s;
+struct mi_stat_count_s;
+struct mi_stat_counter_s;
+struct mi_stats_s;
 namespace MainGameCore { class WinMain; }
 namespace ParticleSystem { class ParticleEffectComponentRegistry; }
 namespace Social { class IUserManager; }
@@ -320,7 +337,13 @@ MCAPI ::SharedTypes::CreativeItemCategory CreativeItemCategoryFromString(::std::
 MCAPI void* DefaultMemAllocFunction(uint64 size, uint memoryType);
 
 MCAPI void DefaultMemFreeFunction(void* pointer, uint memoryType);
+#endif
 
+#ifdef LL_PLAT_C
+MCAPI long DoesLocalGameRuntimeDllExist(bool& exists);
+#endif
+
+#ifdef LL_PLAT_S
 MCAPI bool DoesMockCallMatch(::HC_CALL const* mockCall, ::HC_CALL const* originalCall);
 #endif
 
@@ -353,7 +376,15 @@ MCAPI long InitializeGameRuntimeDll(uint64 flags, ::_INITIALIZE_OPTIONS* const o
 MCAPI ::InventoryContentPacket InventoryContentPacketFromPlayerInventoryId(::ContainerID id, ::Player& player);
 
 #ifdef LL_PLAT_C
+MCAPI long IsPackageFamilyNameInstalled(ushort const* familyName, bool& isInstalled);
+
+MCAPI bool IsUseLocalServicesRegistryOverrideSet();
+
 MCAPI long LoadGameRuntimeDll();
+
+MCAPI auto LoadGetPackagesByPackageFamilyFn() -> int64 (*)();
+
+MCAPI auto LoadRegGetValueWFn() -> int64 (*)();
 #endif
 
 #ifdef LL_PLAT_S
@@ -403,6 +434,8 @@ MCAPI void PushCircularReference(
 
 #ifdef LL_PLAT_C
 MCAPI bool ReadJpegFile(::Core::Path const& fileName, int readMode);
+
+MCAPI bool ShouldUseDllLocalServices();
 
 MCAPI long StringCchCatW(wchar_t* pszDest, uint64 cchDest, wchar_t const* pszSrc);
 
@@ -520,6 +553,8 @@ MCAPI void _forEachObject(
 
 MCAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
 
+MCAPI ::std::vector<::std::string> _getPlatfromLegacyTranserPackIdList();
+
 MCAPI ::cg::MipMapSupport _globalMipMapSupport();
 
 MCAPI bool _haveSameScrollSection(::std::weak_ptr<::UIControl> const& a, ::std::weak_ptr<::UIControl> const& b);
@@ -530,6 +565,292 @@ MCAPI bool _isLegacyDurableSku(::ProductSku const& sku);
 #endif
 
 MCAPI ::Block const* _loadLayerBlock(::Json::Value const& layer);
+
+#ifdef LL_PLAT_C
+MCAPI void _mi_abandoned_collect(::mi_heap_s* heap, bool force, ::mi_segments_tld_s* tld);
+
+MCAPI void _mi_abandoned_reclaim_all(::mi_heap_s* heap, ::mi_segments_tld_s* tld);
+
+MCAPI void* _mi_arena_alloc_aligned(
+    uint64         size,
+    uint64         alignment,
+    uint64         align_offset,
+    bool           commit,
+    bool           allow_large,
+    int            req_arena_id,
+    ::mi_memid_s*  memid,
+    ::mi_os_tld_s* tld
+);
+
+MCAPI void _mi_arena_collect(bool force_purge, ::mi_stats_s* stats);
+
+MCAPI void _mi_arena_free(void* p, uint64 size, uint64 committed_size, ::mi_memid_s memid, ::mi_stats_s* stats);
+
+MCAPI bool _mi_arena_memid_is_suitable(::mi_memid_s memid, int request_arena_id);
+
+MCAPI void _mi_arena_unsafe_destroy_all(::mi_stats_s* stats);
+
+MCAPI bool
+_mi_bitmap_claim(::std::atomic<uint64>* bitmap, uint64 bitmap_fields, uint64 count, uint64 bitmap_idx, bool* any_zero);
+
+MCAPI bool _mi_bitmap_claim_across(
+    ::std::atomic<uint64>* bitmap,
+    uint64                 bitmap_fields,
+    uint64                 count,
+    uint64                 bitmap_idx,
+    bool*                  pany_zero
+);
+
+MCAPI bool
+_mi_bitmap_is_claimed_across(::std::atomic<uint64>* bitmap, uint64 bitmap_fields, uint64 count, uint64 bitmap_idx);
+
+MCAPI bool _mi_bitmap_try_claim(::std::atomic<uint64>* bitmap, uint64 bitmap_fields, uint64 count, uint64 bitmap_idx);
+
+MCAPI bool _mi_bitmap_try_find_claim_field(::std::atomic<uint64>* bitmap, uint64 idx, uint64 count, uint64* bitmap_idx);
+
+MCAPI bool _mi_bitmap_try_find_from_claim_across(
+    ::std::atomic<uint64>* bitmap,
+    uint64                 bitmap_fields,
+    uint64                 start_field_idx,
+    uint64                 count,
+    uint64*                bitmap_idx
+);
+
+MCAPI bool _mi_bitmap_unclaim(::std::atomic<uint64>* bitmap, uint64 bitmap_fields, uint64 count, uint64 bitmap_idx);
+
+MCAPI bool
+_mi_bitmap_unclaim_across(::std::atomic<uint64>* bitmap, uint64 bitmap_fields, uint64 count, uint64 bitmap_idx);
+
+MCAPI int64 _mi_clock_end(int64 start);
+
+MCAPI int64 _mi_clock_now();
+
+MCAPI int64 _mi_clock_start();
+
+MCAPI uint64 _mi_commit_mask_committed_size(::mi_commit_mask_s const* cm, uint64 total);
+
+MCAPI uint64 _mi_current_thread_count();
+
+MCAPI void _mi_deferred_free(::mi_heap_s* heap, bool force);
+
+MCAPI void _mi_error_message(int err, char const* fmt, ...);
+
+MCAPI void _mi_fprintf(void (*out)(char const*, void*), void* arg, char const* fmt, ...);
+
+MCAPI void _mi_fputs(void (*out)(char const*, void*), void* arg, char const* prefix, char const* message);
+
+MCAPI bool _mi_free_delayed_block(::mi_block_s* block);
+
+MCAPI void _mi_free_generic(::mi_segment_s const* segment, ::mi_page_s* page, bool is_local, void* p);
+
+MCAPI void _mi_heap_collect_abandon(::mi_heap_s* heap);
+
+MCAPI void _mi_heap_collect_retired(::mi_heap_s* heap, bool force);
+
+MCAPI void _mi_heap_delayed_free_all(::mi_heap_s* heap);
+
+MCAPI bool _mi_heap_delayed_free_partial(::mi_heap_s* heap);
+
+MCAPI void _mi_heap_destroy_pages(::mi_heap_s* heap);
+
+MCAPI void* _mi_heap_malloc_zero(::mi_heap_s* heap, uint64 size, bool zero);
+
+MCAPI void* _mi_heap_malloc_zero_ex(::mi_heap_s* heap, uint64 size, bool zero, uint64 huge_alignment);
+
+MCAPI bool _mi_heap_memid_is_suitable(::mi_heap_s* heap, ::mi_memid_s memid);
+
+MCAPI uint64 _mi_heap_random_next(::mi_heap_s* heap);
+
+MCAPI void _mi_heap_set_default_direct(::mi_heap_s* heap);
+
+MCAPI void _mi_heap_unsafe_destroy_all();
+
+MCAPI bool _mi_is_main_thread();
+
+MCAPI void* _mi_malloc_generic(::mi_heap_s* heap, uint64 size, bool zero, uint64 huge_alignment);
+
+MCAPI void _mi_options_init();
+
+MCAPI void* _mi_os_alloc(uint64 size, ::mi_memid_s* memid, ::mi_stats_s* tld_stats);
+
+MCAPI void* _mi_os_alloc_aligned(
+    uint64        size,
+    uint64        alignment,
+    bool          commit,
+    bool          allow_large,
+    ::mi_memid_s* memid,
+    ::mi_stats_s* tld_stats
+);
+
+MCAPI void* _mi_os_alloc_aligned_at_offset(
+    uint64        size,
+    uint64        alignment,
+    uint64        offset,
+    bool          commit,
+    bool          allow_large,
+    ::mi_memid_s* memid,
+    ::mi_stats_s* tld_stats
+);
+
+MCAPI void* _mi_os_alloc_huge_os_pages(
+    uint64        pages,
+    int           numa_node,
+    int64         max_msecs,
+    uint64*       pages_reserved,
+    uint64*       psize,
+    ::mi_memid_s* memid
+);
+
+MCAPI bool _mi_os_commit(void* addr, uint64 size, bool* is_zero, ::mi_stats_s* tld_stats);
+
+MCAPI void _mi_os_free(void* p, uint64 size, ::mi_memid_s memid, ::mi_stats_s* tld_stats);
+
+MCAPI void _mi_os_free_ex(void* addr, uint64 size, bool still_committed, ::mi_memid_s memid, ::mi_stats_s* tld_stats);
+
+MCAPI void* _mi_os_get_aligned_hint(uint64 try_alignment, uint64 size);
+
+MCAPI uint64 _mi_os_good_alloc_size(uint64 size);
+
+MCAPI bool _mi_os_has_overcommit();
+
+MCAPI bool _mi_os_has_virtual_reserve();
+
+MCAPI void _mi_os_init();
+
+MCAPI uint64 _mi_os_large_page_size();
+
+MCAPI uint64 _mi_os_numa_node_count_get();
+
+MCAPI int _mi_os_numa_node_get(::mi_os_tld_s* tld);
+
+MCAPI uint64 _mi_os_page_size();
+
+MCAPI bool _mi_os_purge(void* p, uint64 size, ::mi_stats_s* stats);
+
+MCAPI bool _mi_os_purge_ex(void* p, uint64 size, bool allow_reset, ::mi_stats_s* stats);
+
+MCAPI uint64 _mi_os_random_weak(uint64 extra_seed);
+
+MCAPI bool _mi_os_reset(void* addr, uint64 size, ::mi_stats_s* stats);
+
+MCAPI bool _mi_os_use_large_page(uint64 size, uint64 alignment);
+
+MCAPI void _mi_page_abandon(::mi_page_s* page, ::mi_page_queue_s* pq);
+
+MCAPI void _mi_page_free(::mi_page_s* page, ::mi_page_queue_s* pq, bool force);
+
+MCAPI void _mi_page_free_collect(::mi_page_s* page, bool force);
+
+MCAPI void* _mi_page_malloc(::mi_heap_s* heap, ::mi_page_s* page, uint64 size, bool zero);
+
+MCAPI ::mi_block_s* _mi_page_ptr_unalign(::mi_segment_s const* segment, ::mi_page_s const* page, void const* p);
+
+MCAPI uint64 _mi_page_queue_append(::mi_heap_s* heap, ::mi_page_queue_s* pq, ::mi_page_queue_s* append);
+
+MCAPI void _mi_page_reclaim(::mi_heap_s* heap, ::mi_page_s* page);
+
+MCAPI void _mi_page_retire(::mi_page_s* page);
+
+MCAPI bool _mi_page_try_use_delayed_free(::mi_page_s* page, ::mi_delayed_e delay, bool override_never);
+
+MCAPI void _mi_page_unfull(::mi_page_s* page);
+
+MCAPI void _mi_page_use_delayed_free(::mi_page_s* page, ::mi_delayed_e delay, bool override_never);
+
+MCAPI bool _mi_preloading();
+
+MCAPI int _mi_prim_alloc(
+    uint64 size,
+    uint64 try_alignment,
+    bool   commit,
+    bool   allow_large,
+    bool*  is_large,
+    bool*  is_zero,
+    void** addr
+);
+
+MCAPI int _mi_prim_alloc_huge_os_pages(void* hint_addr, uint64 size, int numa_node, bool* is_zero, void** addr);
+
+MCAPI int64 _mi_prim_clock_now();
+
+MCAPI int _mi_prim_commit(void* addr, uint64 size, bool* is_zero);
+
+MCAPI int _mi_prim_decommit(void* addr, uint64 size, bool* needs_recommit);
+
+MCAPI int _mi_prim_free(void* addr, uint64 size);
+
+MCAPI bool _mi_prim_getenv(char const* name, char* result, uint64 result_size);
+
+MCAPI void _mi_prim_mem_init(::mi_os_mem_config_s* config);
+
+MCAPI uint64 _mi_prim_numa_node();
+
+MCAPI uint64 _mi_prim_numa_node_count();
+
+MCAPI void _mi_prim_out_stderr(char const* msg);
+
+MCAPI void _mi_prim_process_info(::mi_process_info_s* pinfo);
+
+MCAPI bool _mi_prim_random_buf(void* buf, uint64 buf_len);
+
+MCAPI int _mi_prim_reset(void* addr, uint64 size);
+
+MCAPI void _mi_prim_thread_associate_default_heap(::mi_heap_s* heap);
+
+MCAPI void _mi_prim_thread_done_auto_done();
+
+MCAPI void _mi_prim_thread_init_auto_done();
+
+MCAPI void _mi_random_init(::mi_random_cxt_s* ctx);
+
+MCAPI void _mi_random_init_weak(::mi_random_cxt_s* ctx);
+
+MCAPI uint64 _mi_random_next(::mi_random_cxt_s* ctx);
+
+MCAPI void _mi_random_reinit_if_weak(::mi_random_cxt_s* ctx);
+
+MCAPI void _mi_segment_huge_page_reset(::mi_segment_s* segment, ::mi_page_s* page, ::mi_block_s* block);
+
+MCAPI void _mi_segment_map_allocated_at(::mi_segment_s const* segment);
+
+MCAPI void _mi_segment_map_freed_at(::mi_segment_s const* segment);
+
+MCAPI void _mi_segment_page_abandon(::mi_page_s* page, ::mi_segments_tld_s* tld);
+
+MCAPI ::mi_page_s* _mi_segment_page_alloc(
+    ::mi_heap_s*         heap,
+    uint64               block_size,
+    uint64               page_alignment,
+    ::mi_segments_tld_s* tld,
+    ::mi_os_tld_s*       os_tld
+);
+
+MCAPI void _mi_segment_page_free(::mi_page_s* page, bool force, ::mi_segments_tld_s* tld);
+
+MCAPI uchar* _mi_segment_page_start(::mi_segment_s const* segment, ::mi_page_s const* page, uint64* page_size);
+
+MCFOLD void _mi_segment_thread_collect(::mi_segments_tld_s* tld);
+
+MCAPI void _mi_stat_counter_increase(::mi_stat_counter_s* stat, uint64 amount);
+
+MCAPI void _mi_stat_decrease(::mi_stat_count_s* stat, uint64 amount);
+
+MCAPI void _mi_stat_increase(::mi_stat_count_s* stat, uint64 amount);
+
+MCAPI void _mi_stats_done(::mi_stats_s* stats);
+
+MCAPI uint64 _mi_strlen(char const* s);
+
+MCAPI void _mi_thread_data_collect();
+
+MCAPI void _mi_thread_done(::mi_heap_s* heap);
+
+MCAPI uint64 _mi_thread_id();
+
+MCAPI void _mi_verbose_message(char const* fmt, ...);
+
+MCAPI void _mi_warning_message(char const* fmt, ...);
+#endif
 
 MCAPI bool _parseEnchantInfo(::Json::Value& enchants, ::SpecificEnchantFunction::EnchantInfo& info);
 
@@ -575,8 +896,6 @@ MCAPI void _tickAbilitiesComponent(
     ::PlayerComponent&     playerComponent,
     ::AgentCapabilities&   capabilities
 );
-
-MCAPI void _tickAgeableComponent(::ActorOwnerComponent& actorOwnerComponent, ::AgeableComponent& ageableComponent);
 
 MCAPI void _tickBalloonComponent(::ActorOwnerComponent& actorOwnerComponent, ::BalloonComponent& balloonComponent);
 
@@ -690,14 +1009,6 @@ MCAPI void addToFillQueue(
 );
 
 #ifdef LL_PLAT_C
-MCAPI void bakeAttachable(::std::shared_ptr<::DataDrivenRenderer> renderer, ::AttachablesPreprocessingContext& ctx);
-
-MCAPI void bakeDataDrivenRenderer(
-    ::std::weak_ptr<::DataDrivenModel>        weakModelPtr,
-    ::ExtractedDataDataDrivenModel const&     extractedData,
-    ::DataDrivenRendererPreprocessingContext& ctx
-);
-
 MCAPI ushort bakeGeneratedDraws(
     ::ExtractedDataDataDrivenModel const&     extractedData,
     uint                                      geoIdx,
@@ -898,12 +1209,30 @@ MCAPI void convertBiomesFilterToGenericFilter(::Json::Value& tradeItem);
 
 #ifdef LL_PLAT_C
 MCAPI ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)> createDefaultUniqueRakPeer();
+#endif
 
+MCAPI ::AssetWorkItemFactory<
+    ::IteratePackResult,
+    ::brstd::move_only_function<::AnyWorkItem(::brstd::copyable_function<::AnyWorkItem(::IteratePackResult&&)>)>>
+createIteratePackWorkItem(
+    ::PackInstance const& pack,
+    uint                  packIndex,
+    ::Core::Path          path,
+    ::Core::Path          extension,
+    ::std::vector<uint>   advancePackLayers,
+    uint                  batchSize
+);
+
+#ifdef LL_PLAT_S
+MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeEventMap();
+#endif
+
+#ifdef LL_PLAT_C
 MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeEventMap();
 #endif
 
 #ifdef LL_PLAT_S
-MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeEventMap();
+MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeLOCMap();
 #endif
 
 #ifdef LL_PLAT_C
@@ -911,14 +1240,17 @@ MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeLOCMap();
 #endif
 
 #ifdef LL_PLAT_S
-MCAPI ::std::unordered_map<int, ::std::string> createPackParseErrorTypeLOCMap();
-
 MCAPI ::std::unordered_map<::PackType, ::std::string> createPackTypeToStringMap();
 #endif
 
 #ifdef LL_PLAT_C
 MCAPI ::std::unordered_map<::PackType, ::std::string> createPackTypeToStringMap();
 #endif
+
+MCAPI ::AssetWorkItemFactory<
+    ::ParseJsonResult,
+    ::brstd::move_only_function<::AnyWorkItem(::brstd::copyable_function<::AnyWorkItem(::ParseJsonResult&&)>)>>
+createParseJsonFileWorkItem(::IteratePackResult packFile);
 
 #ifdef LL_PLAT_S
 MCAPI ::std::unordered_map<::std::string, ::PackType> createStringToPackTypeMap();
@@ -949,13 +1281,13 @@ MCAPI ::std::string dlcCheckerResultToString(::DlcCheckResult result);
 #endif
 
 MCAPI void doHorsePreTravelSystem(
-    ::StrictEntityContext&                                        context,
-    ::Optional<::VehicleComponent>                                vehicleComponent,
-    ::ActorDataFlagComponent const&                               synchedActorDataComponent,
-    ::AirSpeedComponent&                                          airSpeed,
-    ::ViewT<::StrictEntityContext, ::MobFlagComponent const>      mobCheck,
-    ::ViewT<::StrictEntityContext, ::OnGroundFlagComponent const> onGroundCheck,
-    ::EntityModifier<::HorseWasOnGroundPreTravelComponent>        mod
+    ::StrictEntityContext&                                               context,
+    ::Optional<::VehicleComponent>                                       vehicleComponent,
+    ::ActorDataFlagComponent const&                                      synchedActorDataComponent,
+    ::AirSpeedComponent&                                                 airSpeed,
+    ::ViewT<::StrictEntityContext, ::MobFlagComponent const> const&      mobCheck,
+    ::ViewT<::StrictEntityContext, ::OnGroundFlagComponent const> const& onGroundCheck,
+    ::EntityModifier<::HorseWasOnGroundPreTravelComponent> const&        mod
 );
 
 MCAPI void doLavaMoveSystem(
@@ -1006,11 +1338,11 @@ MCAPI void doTeleportPositionModeEventSystem(
 );
 
 MCAPI void doTickNavigationTravelSystem(
-    ::StrictEntityContext&                 context,
-    ::ActorOwnerComponent&                 actorOwnerComponent,
-    ::MobTravelComponent&                  mobTravelComponent,
-    ::NavigationComponent&                 navigationComponent,
-    ::EntityModifier<::MobTravelComponent> mod
+    ::StrictEntityContext&                        context,
+    ::ActorOwnerComponent&                        actorOwnerComponent,
+    ::MobTravelComponent&                         mobTravelComponent,
+    ::NavigationComponent&                        navigationComponent,
+    ::EntityModifier<::MobTravelComponent> const& mod
 );
 
 MCAPI void doTickTriggerJumpSystem(
@@ -1027,8 +1359,8 @@ MCAPI void doTickTriggerJumpSystem(
     ::Optional<::MobIsJumpingFlagComponent const>   mobIsJumping,
     ::Optional<::WasInLavaFlagComponent const>      wasInLava,
     ::Optional<::WasInWaterFlagComponent const>     wasInWater,
-    ::EntityModifier<::TriggerJumpRequestComponent, ::PowerJumpFlagComponent, ::DashJumpFlagComponent> mod,
-    ::IConstBlockSource const&                                                                         region
+    ::EntityModifier<::TriggerJumpRequestComponent, ::PowerJumpFlagComponent, ::DashJumpFlagComponent> const& mod,
+    ::IConstBlockSource const&                                                                                region
 );
 
 #ifdef LL_PLAT_C
@@ -1055,8 +1387,8 @@ MCAPI void doTravelTypeSensingSystem(
         ::LavaTravelFlagComponent,
         ::WaterTravelFlagComponent,
         ::PlayerFlyingTravelComponent,
-        ::LiquidTravelFlagComponent> mod,
-    ::IConstBlockSource const&       region
+        ::LiquidTravelFlagComponent> const& mod,
+    ::IConstBlockSource const&              region
 );
 
 #ifdef LL_PLAT_C
@@ -1088,7 +1420,7 @@ MCFOLD ::srtp_err_status_t external_hmac_update(void*, uchar const*, int);
 
 #ifdef LL_PLAT_C
 MCAPI ::std::optional<::ExtractedDataDataDrivenModel>
-extractModelData(::HashedString const& name, ::std::shared_ptr<::DataDrivenRenderer> rendererPtr);
+extractModelData(::HashedString const& name, ::std::shared_ptr<::DataDrivenRenderer> const rendererPtr);
 
 MCAPI void fillLangValue(
     ::std::string const&                                jsonFieldStr,
@@ -1210,11 +1542,13 @@ MCAPI ::std::string getStringOrParsedTextObject(
 MCAPI ::SubChunk::SubChunkState getSubChunkState(::LevelChunk& levelChunk, short absoluteIndex);
 
 MCAPI void getVisibleControlsInternal(::std::function<void(::UIControl&)> const& action, ::UIControl& control);
+#endif
+
+MCAPI void initBuildingBlocks();
 
 MCAPI bool isChunkAtStage(::std::weak_ptr<::LevelChunk> lcwp, ::ChunkState stateToCheck);
 
-MCAPI bool isPersonaLodReady(::ClientSkin const& skin);
-
+#ifdef LL_PLAT_C
 MCAPI bool isSkinPackExpiredRealms(::SkinPackMeta const& meta);
 #endif
 
@@ -1421,7 +1755,12 @@ MCAPI void setProgressPercent(
     ::std::function<float()>     getMax
 );
 
-MCAPI bool shouldConnectToSideOrBelow(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type dir);
+MCAPI bool shouldRenderAnyAttachables(
+    bool     modelAttachablesAreEnabled,
+    ::Actor& actor,
+    bool     lessThanOrEqualToVersion_1_16_210,
+    bool     hideArmor
+);
 #endif
 
 #ifdef LL_PLAT_S
@@ -1492,12 +1831,12 @@ MCAPI void visitTreeInternal(
     bool                                           ancestorVisible
 );
 #endif
-
-MCAPI ::Bedrock::Result<void> writeFileContent(::Core::Path const& path, ::std::string const& content);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
+MCAPI ::std::string_view const& ACTOR_DEFINITIONS_VERSION_TRACKER();
+
 MCAPI ::std::vector<::HudElement> const& ALL_HUD_ELEMENTS();
 
 #ifdef LL_PLAT_C
@@ -1508,15 +1847,11 @@ MCAPI ::HashedString const& BLAST_FURNACE_TAG();
 
 MCAPI ::HashedString const& CAMPFIRE_TAG();
 
-MCAPI ::std::string_view const& CEREAL_DEFAULT_SCOPE();
-
 MCAPI ::std::string_view const& CEREAL_DOCUMENTATION_TAG();
 
 MCAPI ::std::string_view const& CEREAL_JSON_SCHEMA_PROPERTY();
 
-#ifdef LL_PLAT_S
 MCAPI ::std::string_view const& CEREAL_ROOT_SCHEMA_PROPERTY();
-#endif
 
 MCAPI ::std::unordered_map<::ContainerEnumName, ::std::string>& ContainerCollectionNameMap();
 
@@ -1525,6 +1860,10 @@ MCAPI ::std::string const& DEFAULT_DRIVE_CONTENTS_PATH();
 #endif
 
 MCAPI ::HashedString const& FURNACE_TAG();
+
+#ifdef LL_PLAT_C
+MCAPI ushort const*& GAME_RUNTIME_DLL_NAME();
+#endif
 
 MCAPI ::std::array<::std::pair<::HudElement, ::std::string>, 13> const& HUD_ELEMENTS_TO_STRINGS();
 
@@ -1584,6 +1923,24 @@ MCAPI uint const& UNINITIALIZED_BLOCK_NETWORKID();
 MCAPI ::std::array<::HashedString, 25> const& VanillaStructureFeatureTypes();
 
 #ifdef LL_PLAT_C
+MCAPI bool& _mi_cpu_has_fsrm();
+
+MCAPI ::std::add_lvalue_reference_t<void*[]> _mi_externs();
+
+MCAPI ::mi_heap_s*& _mi_heap_default();
+
+MCAPI ::mi_heap_s const& _mi_heap_empty();
+
+MCAPI ::mi_heap_s& _mi_heap_main();
+
+MCAPI ::std::atomic<uint64>& _mi_numa_node_count();
+
+MCAPI ::mi_page_s const& _mi_page_empty();
+
+MCAPI bool& _mi_process_is_initialized();
+
+MCAPI ::mi_stats_s& _mi_stats_main();
+
 MCAPI ::std::unordered_map<int, ::std::string> const& autoUpdateModeLabels();
 
 MCAPI ::std::unordered_map<int, ::std::string> const& blockLightQualityLabels();
@@ -1617,9 +1974,9 @@ MCAPI ::SubChunkDelayedDeleter<::SubChunkStorage<::Block>>& gBlockStorageGC();
 
 MCAPI ::InternalTaskGroup& gInternalTaskGroup();
 
-#ifdef LL_PLAT_C
 MCAPI ::SubChunkDelayedDeleter<::SubChunkBrightnessStorage>& gLightStorageGC();
 
+#ifdef LL_PLAT_C
 MCAPI ::MainGameCore::WinMain*& gWinMainInstance();
 
 MCAPI bool& g_forceDLSSFallback_Dx12();

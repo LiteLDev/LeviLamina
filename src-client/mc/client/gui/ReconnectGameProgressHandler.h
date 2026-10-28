@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        864,
+        832,
         ::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,

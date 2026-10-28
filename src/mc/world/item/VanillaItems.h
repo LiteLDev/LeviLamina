@@ -11,6 +11,7 @@ class BaseGameVersion;
 class BlockDefinitionGroup;
 class CreativeItemRegistry;
 class Experiments;
+class IEducationOptions;
 class IMinecraftEventing;
 class ItemRegistryRef;
 class LinkedAssetValidator;
@@ -24,19 +25,21 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static void applyHardcodedLegacyIconsClient(
-        ::ItemRegistryRef        itemRegistry,
-        ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&     experiments
+        ::ItemRegistryRef          itemRegistry,
+        ::BaseGameVersion const&   baseGameVersion,
+        ::Experiments const&       experiments,
+        ::IEducationOptions const& educationOptions
     );
 #endif
 
     MCAPI static void registerHardCodedItemTags(::ItemRegistryRef itemRegistry);
 
     MCAPI static void registerItems(
-        ::cereal::ReflectionCtx& ctx,
-        ::ItemRegistryRef        itemRegistry,
-        ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&     experiments
+        ::cereal::ReflectionCtx&   ctx,
+        ::ItemRegistryRef          itemRegistry,
+        ::BaseGameVersion const&   baseGameVersion,
+        ::Experiments const&       experiments,
+        ::IEducationOptions const& educationOptions
     );
 
     MCAPI static void serverInitCreativeItemsCallback(
@@ -48,7 +51,8 @@ public:
         ::ResourcePackManager const&                       resourcePackManager,
         ::cereal::ReflectionCtx const&                     ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
-        ::IMinecraftEventing&                              eventing
+        ::IMinecraftEventing&                              eventing,
+        ::IEducationOptions const&                         educationOptions
     );
     // NOLINTEND
 };

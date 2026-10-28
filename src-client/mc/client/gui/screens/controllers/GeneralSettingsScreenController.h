@@ -59,7 +59,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                              mOverrideBetaVersion;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IContentManagerContext>> mContentManagerContext;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GeneralSettingsScreenControllerProxy>> mProxy;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                            mProfileImage;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions>                           mProfileImage;
     ::ll::TypedStorage<8, 32, ::std::string>                                            mUserDisplayName;
     ::ll::TypedStorage<1, 1, bool>                                                      mDirty;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageManagementScreenController>>
@@ -126,7 +126,7 @@ public:
 
     MCAPI void _setResourcePackStack();
 
-    MCAPI void _updateProfileImage();
+    MCAPI void _updateDisplayNameOnScreenFromUser();
 
     MCAPI void setGuiScaleOption(int guiScaleOffset);
     // NOLINTEND

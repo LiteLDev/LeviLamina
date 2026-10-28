@@ -20,8 +20,6 @@ MCAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlotForEntityArmorEquipmentSlot(:
 MCAPI ::SharedTypes::Legacy::EquipmentSlot nameToEquipmentSlot(::std::string const& slotName);
 
 MCAPI ::SharedTypes::Legacy::SlotWithDropChance nbtKeyToSlotWithDropChance(::std::string const& nbtKey);
-
-MCAPI ::std::string slotWithDropChanceToNbtKey(::SharedTypes::Legacy::SlotWithDropChance slot);
 // NOLINTEND
 
 } // namespace EquipmentSlots

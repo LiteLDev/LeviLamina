@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/ProgressHandler.h"
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/actor/player/LoadingState.h"
@@ -32,11 +33,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::MakeInfiniteProgressHandler::State>           mState;
-    ::ll::TypedStorage<8, 8, ::LevelSummary const&>                          mEditedLevel;
-    ::ll::TypedStorage<4, 4, ::StorageVersion>                               mStorageVersion;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>              mUnloaded;
-    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>>  mView;
+    ::ll::TypedStorage<4, 4, ::MakeInfiniteProgressHandler::State> mState;
+    ::ll::TypedStorage<8, 8, ::LevelSummary const&>                mEditedLevel;
+    ::ll::TypedStorage<4, 4, ::StorageVersion>                     mStorageVersion;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>    mUnloaded;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>, ::Bedrock::Threading::SharedLockbox>> mView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>>               mLegacySource;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelStorage>> mLevelStorage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                 mIOTaskGroup;

@@ -6,6 +6,7 @@
 #include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/gamemode/entity_attack/ValidationMode.h"
 #include "mc/world/inventory/transaction/IItemUseTransactionSubject.h"
 #include "mc/world/item/HandSlot.h"
 
@@ -102,6 +103,8 @@ public:
     virtual ::DepenetrationComponent& getDepenetrationComponent() /*override*/;
 
     virtual ::Experiments const& getExperiments() const /*override*/;
+
+    virtual ::EntityAttack::ValidationMode getEntityAttackRequestCompatibilityMode() const /*override*/;
     // NOLINTEND
 
 public:
@@ -168,6 +171,8 @@ public:
     MCAPI ::DepenetrationComponent& $getDepenetrationComponent();
 
     MCAPI ::Experiments const& $getExperiments() const;
+
+    MCAPI ::EntityAttack::ValidationMode $getEntityAttackRequestCompatibilityMode() const;
 
 
     // NOLINTEND

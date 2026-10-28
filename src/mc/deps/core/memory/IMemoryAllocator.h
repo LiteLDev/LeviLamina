@@ -33,12 +33,6 @@ public:
 #endif
 
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void* allocate(uint64 size);
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Memory

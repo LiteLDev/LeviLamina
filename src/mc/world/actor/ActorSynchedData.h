@@ -16,6 +16,8 @@ MCAPI void updateAction(::Actor& actor);
 
 MCAPI void updateAlwaysShowNameTag(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
+MCAPI void updateAmbientSound(::EntityContext& entity);
+
 MCAPI void updateBoundingBox(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
 MCAPI void updateBuoyancyData(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);

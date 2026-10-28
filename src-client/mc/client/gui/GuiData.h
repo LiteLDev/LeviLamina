@@ -30,7 +30,6 @@ class Config;
 class DevConsoleLogger;
 class GuiMessage;
 class IClientInstance;
-class ItemStackBase;
 class TextObjectRoot;
 class Vec2;
 struct ContentLogMessage;
@@ -164,9 +163,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mShowProgress;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mTipMessage;
     ::ll::TypedStorage<4, 4, float>                                                   mTipMessageLength;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                                           mRcFeedbackOuter;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                                           mRcFeedbackInner;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                                           mVignette;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                                           mRcFeedbackOuter;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                                           mRcFeedbackInner;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                                           mVignette;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mInvFillMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mCursorMat;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger>>      mDevConsoleLogger;
@@ -199,6 +198,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit GuiData(::IClientInstance& client);
+
+    MCAPI void _addMessage(::GuiMessage message, ::ProfanityFilterContext profanityFilterContext);
 
     MCAPI void _addMessage(::GuiData::MessageConfig messageConfig, ::ProfanityFilterContext profanityFilterContext);
 
@@ -326,8 +327,6 @@ public:
     MCAPI ::RectangleArea setTouchToolbarArea(::RectangleArea const& toolbarArea);
 
     MCAPI void showJukeboxPopupNotice(::std::string const& message, ::std::string const& subtitle);
-
-    MCAPI void showPopupNotice(::ItemStackBase const& item);
 
     MCAPI void showPopupNotice(::std::string const& message, ::std::string const& subtitle);
 

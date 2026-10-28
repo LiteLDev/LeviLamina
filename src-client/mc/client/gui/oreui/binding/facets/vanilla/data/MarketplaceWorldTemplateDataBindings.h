@@ -38,7 +38,7 @@ public:
 
     MCFOLD ::std::string const& getId() const;
 
-    MCAPI bool getIsExpired() const;
+    MCFOLD bool getIsExpired() const;
 
     MCFOLD bool getIsFree() const;
 

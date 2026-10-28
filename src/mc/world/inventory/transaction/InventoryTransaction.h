@@ -12,7 +12,6 @@
 class InventoryAction;
 class InventoryTransactionItemGroup;
 class ItemStack;
-class Player;
 // clang-format on
 
 class InventoryTransaction {
@@ -30,17 +29,9 @@ public:
 
     MCAPI void addItemToContent(::ItemStack const& item, int count);
 
-#ifdef LL_PLAT_S
-    MCAPI ::InventoryTransactionError executeFull(::Player& p, bool isSenderAuthority) const;
-#endif
-
     MCAPI void forceBalanceTransaction();
 
-#ifdef LL_PLAT_S
-    MCAPI void recalculateBalance();
-
-    MCAPI ::InventoryTransactionError verifyFull(::Player& p, bool isSenderAuthority) const;
-#endif
+    MCAPI ::std::vector<::InventoryAction> const& getActions(::InventorySource const& source) const;
 
     MCAPI ~InventoryTransaction();
     // NOLINTEND

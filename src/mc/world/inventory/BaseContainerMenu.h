@@ -68,7 +68,11 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const = 0;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
+
+    virtual void setSelectedRecipeIndex(int, bool) /*override*/;
+
+    virtual ::std::optional<int> getSelectedRecipeIndex() const /*override*/;
 
     virtual ::ContainerID getContainerId() const /*override*/;
 
@@ -102,7 +106,11 @@ public:
 
     MCFOLD void $containerContentChanged(int slot);
 
-    MCFOLD void $setData(int id, int value);
+    MCFOLD void $setData(int, int);
+
+    MCFOLD void $setSelectedRecipeIndex(int, bool);
+
+    MCFOLD ::std::optional<int> $getSelectedRecipeIndex() const;
 
     MCFOLD ::ContainerID $getContainerId() const;
 

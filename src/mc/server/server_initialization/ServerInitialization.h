@@ -16,6 +16,8 @@ namespace ServerInitialization { struct ServerInitResult; }
 namespace ServerInitialization {
 // functions
 // NOLINTBEGIN
+MCNAPI ::std::unique_ptr<::ServerInitialization::IServerInitializer> createServerInitializer(uchar asyncCount);
+
 MCNAPI ::ServerInitialization::ServerInitResult initializeLevel(
     ::ServerInitialization::IServerInitializer&                      server,
     ::brstd::move_only_function<void()>                              init,

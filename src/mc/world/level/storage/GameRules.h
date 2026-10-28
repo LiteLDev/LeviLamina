@@ -10,6 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class CompoundTag;
 class GameRule;
 class GameRulesChangedPacket;
 class GameRulesChangedPacketData;
@@ -122,6 +124,10 @@ public:
 
     MCAPI bool getBool(::GameRuleId ruleType, bool defaultValue) const;
 
+#ifdef LL_PLAT_C
+    MCAPI void getTagData(::CompoundTag const& tag, ::BaseGameVersion const& version);
+#endif
+
     MCAPI ::GameRules& operator=(::GameRules&& rhs);
 
     MCAPI ::GameRules& operator=(::GameRules const& rhs);
@@ -131,6 +137,10 @@ public:
 #endif
 
     MCAPI void setMarketplaceOverrides();
+
+#ifdef LL_PLAT_C
+    MCAPI void setTagData(::CompoundTag& tag) const;
+#endif
     // NOLINTEND
 
 public:

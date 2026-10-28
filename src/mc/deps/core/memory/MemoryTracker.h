@@ -28,6 +28,12 @@ public:
 
     virtual ::Memory::MemoryCategory getCurrentCategory() const;
 
+#ifdef LL_PLAT_S
+    virtual void setManuallyTrackedCategoryBytes(::Memory::MemoryCategory, uint64);
+#else // LL_PLAT_C
+    virtual void setManuallyTrackedCategoryBytes(::Memory::MemoryCategory category, uint64 bytes);
+#endif
+
     virtual uint64 getCategoryAllocationCount(uint) const;
 
 #ifdef LL_PLAT_S
@@ -63,6 +69,12 @@ public:
 #endif
 
     MCFOLD ::Memory::MemoryCategory $getCurrentCategory() const;
+
+#ifdef LL_PLAT_S
+    MCFOLD void $setManuallyTrackedCategoryBytes(::Memory::MemoryCategory, uint64);
+#else // LL_PLAT_C
+    MCFOLD void $setManuallyTrackedCategoryBytes(::Memory::MemoryCategory category, uint64 bytes);
+#endif
 
     MCFOLD uint64 $getCategoryAllocationCount(uint) const;
 

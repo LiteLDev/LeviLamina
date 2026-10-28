@@ -16,6 +16,10 @@ public:
     // NOLINTBEGIN
     virtual void pushToast(::ToastMessage&& message) = 0;
 
+    virtual void pushPersistentToast(::ToastMessage&& message) = 0;
+
+    virtual void removePersistentToast() = 0;
+
     virtual bool isEditorModeEnabled() const = 0;
     // NOLINTEND
 };

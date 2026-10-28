@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/DefaultSmallOptionalTraits.h"
+#include "mc/deps/core/utility/SmallOptional.h"
 #include "mc/world/level/ChunkPos.h"
-#include "mc/world/level/ScalarOptional.h"
 #include "mc/world/level/biome/BiomeIdType.h"
 
 // auto generated forward declare list
@@ -35,15 +36,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                                               mDistanceToBlendTarget;
-        ::ll::TypedStorage<4, 4, float>                                               mWeightedHeight;
-        ::ll::TypedStorage<4, 4, float>                                               mTotalHeightWeight;
-        ::ll::TypedStorage<4, 4, float>                                               mTotalDensityWeight;
-        ::ll::TypedStorage<4, 164, ::std::array<::ScalarOptional<float>, 41>>         mWeightedDensities;
-        ::ll::TypedStorage<1, 41, ::std::array<::ScalarOptional<schar>, 41>>          mBlockTypeWeights;
-        ::ll::TypedStorage<2, 192, ::std::array<::ScalarOptional<::BiomeIdType>, 96>> mBiome;
-        ::ll::TypedStorage<1, 1, bool>                                                mHaveBlockTypes;
-        ::ll::TypedStorage<1, 1, bool>                                                mSyncPoint;
+        ::ll::TypedStorage<4, 4, float> mDistanceToBlendTarget;
+        ::ll::TypedStorage<4, 4, float> mWeightedHeight;
+        ::ll::TypedStorage<4, 4, float> mTotalHeightWeight;
+        ::ll::TypedStorage<4, 4, float> mTotalDensityWeight;
+        ::ll::TypedStorage<
+            4,
+            164,
+            ::std::array<::Bedrock::SmallOptional<float, ::Bedrock::DefaultSmallOptionalTraits<float>>, 41>>
+            mWeightedDensities;
+        ::ll::TypedStorage<
+            1,
+            41,
+            ::std::array<::Bedrock::SmallOptional<schar, ::Bedrock::DefaultSmallOptionalTraits<schar>>, 41>>
+            mBlockTypeWeights;
+        ::ll::TypedStorage<
+            2,
+            192,
+            ::std::array<
+                ::Bedrock::SmallOptional<::BiomeIdType, ::Bedrock::DefaultSmallOptionalTraits<::BiomeIdType>>,
+                96>>
+                                       mBiome;
+        ::ll::TypedStorage<1, 1, bool> mHaveBlockTypes;
+        ::ll::TypedStorage<1, 1, bool> mSyncPoint;
         // NOLINTEND
     };
 
@@ -63,8 +78,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void freeChunkBlenderCache();
-
     MCAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
     // NOLINTEND
 };

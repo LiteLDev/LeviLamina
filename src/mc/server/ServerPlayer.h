@@ -142,7 +142,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerPlayer() /*override*/;
+    virtual ~ServerPlayer() /*override*/ = default;
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -291,7 +291,7 @@ public:
 
     virtual ::std::optional<::PlayerPartyInfo> getPartyInfo_UNTRUSTED() const /*override*/;
 
-    virtual void addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions) /*override*/;
+    virtual void addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate) /*override*/;
 
     virtual int _getSpawnChunkLimit() const;
 
@@ -331,6 +331,8 @@ public:
         ::CrashDumpLogStringID option3,
         ::CrashDumpLogStringID option4
     );
+
+    MCAPI void _logPartyState() const;
 
     MCAPI void _removeNearbyEntities();
 
@@ -416,12 +418,6 @@ public:
         ::InputMode                                        inputMode,
         ::SyncedClientOptionsComponent                     clientOptions
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -570,7 +566,7 @@ public:
 
     MCAPI ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
 
-    MCAPI void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions);
+    MCAPI void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate);
 
     MCAPI int $_getSpawnChunkLimit() const;
 

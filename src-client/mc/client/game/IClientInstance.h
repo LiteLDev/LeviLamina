@@ -24,7 +24,6 @@
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core_graphics/math/Rect.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/PointerType.h"
 #include "mc/deps/input/enums/WYSIWYGState.h"
@@ -62,12 +61,11 @@ class ClientNetworkEventCoordinator;
 class ClientNetworkSystem;
 class ClientRequirementVerifier;
 class ClientScriptEventCoordinator;
-class ClientScriptManager;
 class DateManager;
 class DeferredLighting;
 class DevConsoleLogger;
 class DisconnectionRequestHandler;
-class EDUSystems;
+class EduSystems;
 class EntityContext;
 class EntitySystems;
 class FileDataRequest;
@@ -76,6 +74,7 @@ class FogManager;
 class FontHandle;
 class FrameUpdateContext;
 class GameCallbacks;
+class GameClientScriptManager;
 class GameModuleClient;
 class GameRenderer;
 class GeometryGroup;
@@ -157,7 +156,6 @@ namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Automation { class AutomationClient; }
 namespace Bedrock::Http { class Status; }
-namespace Bedrock::Profiling { struct IProfilingOrchestratorProvider; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Editor { class IEditorManager; }
@@ -165,7 +163,6 @@ namespace Editor { class IEditorPlayer; }
 namespace OreUI { class ITelemetry; }
 namespace OreUI { class Router; }
 namespace OreUI { class SceneProvider; }
-namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Realms { struct World; }
 namespace Scripting { class ScriptEngine; }
@@ -215,8 +212,6 @@ public:
 
     virtual void stop() = 0;
 
-    virtual void teardown() = 0;
-
     virtual void preShutDown() = 0;
 
     virtual void setGameConnectionInfo(::Social::GameConnectionInfo const& gameConnection) = 0;
@@ -255,7 +250,7 @@ public:
 
     virtual void frameUpdate(::FrameUpdateContext& frameUpdateContext) = 0;
 
-    virtual bool update(bool isInitFinished) = 0;
+    virtual bool update(bool isInitFinished, bool allowGameUpdate) = 0;
 
     virtual void preFrameTick() = 0;
 
@@ -383,15 +378,13 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() = 0;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems> getEduSystems() = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems const> getEduSystems() const = 0;
 
     virtual ::IMinecraftEventing& getEventing() const = 0;
 
     virtual ::IConnectionEventing& getConnectionEventing() const = 0;
-
-    virtual ::Bedrock::Profiling::IProfilingOrchestratorProvider& getProfilingOrchestratorProvider() const = 0;
 
     virtual ::FontHandle getFontHandle() const = 0;
 
@@ -463,7 +456,7 @@ public:
 
     virtual void navigateToCoinPurchaseScreen(int neededCoins, ::std::function<void(bool, int)> callback) = 0;
 
-    virtual void navigateToPurchaseOfferScreen(::StoreCatalogItem&, ::StoreNavigationOrigin, bool const) = 0;
+    virtual void navigateToPurchaseOfferScreen(::StoreCatalogItem&, ::StoreNavigationOrigin) = 0;
 
     virtual void navigateToDressingRoomOfferScreen(::std::string const& offerId) = 0;
 
@@ -681,8 +674,6 @@ public:
 
     virtual ::OreUI::SceneProvider& getSceneProvider() const = 0;
 
-    virtual ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> getOreUIBlockThumbnailAtlasManager() const = 0;
-
     virtual ::ui::ScreenTechStackSelector& getScreenTechStackSelector() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> getClientSceneStack() const = 0;
@@ -826,8 +817,6 @@ public:
     virtual void setupPersistentControls(::InputMode currentMode) = 0;
 
     virtual void resetPlayerMovement() = 0;
-
-    virtual void suspendPredictedMovement() = 0;
 
     virtual void onClientInputInitComplete() = 0;
 
@@ -1008,6 +997,8 @@ public:
 
     virtual ::GameModuleClient* getGameModule() = 0;
 
+    virtual void setupStandardCommands() = 0;
+
     virtual ::ClientHitDetectCoordinator& getHitEventCoordinator() = 0;
 
     virtual ::GameCallbacks& getGameCallbacks() = 0;
@@ -1058,7 +1049,7 @@ public:
 
     virtual void setRemoteServerNetworkTimeMs(float time) = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::ClientScriptManager> getClientScriptManager() = 0;
+    virtual ::Bedrock::NonOwnerPointer<::GameClientScriptManager> getGameClientScriptManager() = 0;
 
     virtual ::Scripting::ScriptEngine* getScriptingEngine() = 0;
 

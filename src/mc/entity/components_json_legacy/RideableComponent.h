@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/components_json_legacy/RideableComponentData.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +30,7 @@ public:
 
     MCAPI bool getFirstAvailableSeatPosition(::Actor const& owner, ::Actor& potentialPassenger, ::Vec3& result) const;
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player) const;
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot) const;
 
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
     // NOLINTEND

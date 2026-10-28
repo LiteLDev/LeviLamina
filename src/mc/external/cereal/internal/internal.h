@@ -10,9 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class DynamicValue; }
-namespace cereal { class SerializerContext; }
 namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct SchemaDescription; }
+namespace cereal::internal { class BasicSchema; }
 namespace cereal::internal { struct OverrideState; }
 namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::util::internal { struct StringViewHash; }
@@ -24,12 +24,6 @@ namespace cereal::internal {
 MCAPI void checkAndOverride(::entt::meta_type const& metaType, uint metaDataId);
 
 MCAPI void deprecateName(::entt::meta_type const& type, ::std::string_view name);
-
-MCAPI ::std::string errorMessage(
-    ::cereal::SerializerContext const& context,
-    ::entt::type_info const&           expected,
-    ::entt::meta_any const&            got
-);
 
 MCAPI void fillEnumDescription(
     ::cereal::internal::ReflectionContext const& ctx,
@@ -60,7 +54,8 @@ MCAPI bool findAndOverride(
 );
 #endif
 
-MCAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
+MCAPI ::cereal::internal::ReflectedType
+getReflectedType(::cereal::internal::ReflectionContext const& ctx, ::entt::meta_type const& type);
 
 #ifdef LL_PLAT_S
 MCAPI void getSchemaDescriptionAndDeps(
@@ -81,6 +76,8 @@ MCAPI void getSchemaDescriptionAndDeps(
     ::cereal::DescriptionConfig                  config
 );
 #endif
+
+MCAPI ::cereal::internal::BasicSchema const* lookup(::entt::meta_ctx const& ctx, uint id);
 
 MCAPI ::std::string makeEnumErrorMsg(::entt::meta_type const& type, ::cereal::ContextArea area);
 

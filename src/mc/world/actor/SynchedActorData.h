@@ -68,8 +68,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mItemsArray;
-    ::ll::TypedStorage<8, 24, ::std::bitset<141>>                           mDirtyFlags;
-    ::ll::TypedStorage<8, 24, ::std::bitset<141>>                           mHasComponentData;
+    ::ll::TypedStorage<8, 24, ::std::bitset<142>>                           mDirtyFlags;
+    ::ll::TypedStorage<8, 24, ::std::bitset<142>>                           mHasComponentData;
     // NOLINTEND
 
 public:

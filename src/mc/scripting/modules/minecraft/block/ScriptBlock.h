@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
@@ -12,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class Dimension;
 class Vec3;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace ScriptModuleMinecraft { class ScriptBlockComponents; }
@@ -164,6 +166,13 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding
     bind(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockComponents> const& blockComponents);
+
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>
+    createOptionalHandle(
+        ::WeakRef<::Dimension>                dimension,
+        ::BlockPos const&                     blockPos,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
     MCAPI static ::Scripting::Result<
         void,

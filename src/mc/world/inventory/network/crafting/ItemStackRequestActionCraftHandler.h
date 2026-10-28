@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/ItemStackRequestActionType.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +15,6 @@ class ItemInstance;
 class ItemStackRequestActionConsume;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING;
-class ItemStackRequestActionCreate;
 class ItemStackRequestActionHandler;
 class Player;
 class SimpleSparseContainer;
@@ -30,6 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mIsCraftRequest;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SimpleSparseContainer>>       mCreatedOutputSparseContainer;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mCraftResults;
+    ::ll::TypedStorage<8, 160, ::std::optional<::ItemStack>>                    mPendingCraftRecipeItem;
     // NOLINTEND
 
 public:
@@ -62,15 +63,13 @@ public:
     MCAPI ::ItemStackNetResult
     handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
 
-#ifdef LL_PLAT_S
-    MCAPI ::ItemStackNetResult handleCreate(::ItemStackRequestActionCreate const& requestAction);
-#endif
-
     MCAPI bool isCraftRequest() const;
 
     MCAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
+
+    MCAPI void sendPlayerCraftRecipe();
     // NOLINTEND
 
 public:

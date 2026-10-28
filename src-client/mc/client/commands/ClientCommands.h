@@ -14,6 +14,7 @@ class IApp;
 class IMinecraftGame;
 class Level;
 class MinecraftCommands;
+namespace AppScripting { class IAppScriptManager; }
 namespace Bedrock::DevTools { class CommandExecutor; }
 namespace mce { class TextureGroup; }
 // clang-format on
@@ -26,7 +27,8 @@ public:
         ::CommandRegistry&                                                  registry,
         ::IMinecraftGame&                                                   minecraftClient,
         ::Bedrock::NotNullNonOwnerPtr<::IApp> const&                        app,
-        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::DevTools::CommandExecutor> devToolsCommandExecutor
+        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::DevTools::CommandExecutor> devToolsCommandExecutor,
+        ::std::weak_ptr<::AppScripting::IAppScriptManager>                  appScriptManager
     );
 
     MCAPI static void setupStandard(

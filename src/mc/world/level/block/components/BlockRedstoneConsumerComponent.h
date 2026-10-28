@@ -10,6 +10,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+namespace BlockEvents { class BlockStateChangeEvent; }
 // clang-format on
 
 class BlockRedstoneConsumerComponent : public ::IBlockComponent {
@@ -27,6 +28,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                        mAcceptHalfPulse;
     ::ll::TypedStorage<1, 1, bool>                                        mIgnoreFirstUpdate;
     ::ll::TypedStorage<8, 8, void (*)(::BlockSource&, ::BlockPos const&)> mOnSetupRedstoneComponentCallback;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void onEvent(::BlockEvents::BlockStateChangeEvent const& ev) const;
     // NOLINTEND
 
 public:

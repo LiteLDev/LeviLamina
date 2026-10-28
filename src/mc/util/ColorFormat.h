@@ -29,6 +29,10 @@ MCNAPI ::std::string const& AQUA();
 
 MCNAPI ::std::string const& BLUE();
 
+#ifdef LL_PLAT_C
+MCNAPI ::std::string const& BOLD();
+#endif
+
 MCNAPI ::std::string const& DARK_GRAY();
 
 MCNAPI ::std::string const& DARK_GREEN();

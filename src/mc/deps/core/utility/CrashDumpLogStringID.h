@@ -95,5 +95,8 @@ enum class CrashDumpLogStringID : ushort {
     MimallocOutOfMemory                     = 89,
     FileOpenError                           = 90,
     FileFlushFailed                         = 91,
-    Count                                   = 92,
+    FileOpenForWrite                        = 92,
+    FileClosedForWrite                      = 93,
+    FileDelete                              = 94,
+    Count                                   = 95,
 };

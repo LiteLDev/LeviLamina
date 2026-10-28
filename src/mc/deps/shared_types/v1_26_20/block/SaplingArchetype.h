@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct SaplingArchetype {
@@ -32,12 +27,6 @@ public:
     MCFOLD bool operator==(::SharedTypes::v1_26_20::BlockDefinition::SaplingArchetype const&) const;
 
     MCAPI ~SaplingArchetype();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

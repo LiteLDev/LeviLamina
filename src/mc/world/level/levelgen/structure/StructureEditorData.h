@@ -27,14 +27,25 @@ public:
     ::ll::TypedStorage<8, 104, ::StructureSettings>                mSettings;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     StructureEditorData& operator=(StructureEditorData const&);
     StructureEditorData();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    StructureEditorData& operator=(StructureEditorData const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI StructureEditorData();
+#endif
+
     MCAPI StructureEditorData(::StructureEditorData&&);
 
     MCAPI StructureEditorData(::StructureEditorData const&);
@@ -67,6 +78,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
+
     MCAPI void* $ctor(::StructureEditorData&&);
 
     MCAPI void* $ctor(::StructureEditorData const&);

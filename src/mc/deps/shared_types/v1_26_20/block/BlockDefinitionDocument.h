@@ -42,13 +42,13 @@ public:
 
     MCAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
+    MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
+    MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&) const;
+    MCFOLD bool operator==(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&) const;
 
     MCAPI ~BlockDefinitionDocument();
     // NOLINTEND
@@ -68,15 +68,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
+    MCFOLD void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
+    MCFOLD void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

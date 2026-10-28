@@ -97,10 +97,6 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
-#ifdef LL_PLAT_S
-    MCAPI void _addRef(::ActorDefinitionPtr& ptr);
-#endif
-
     MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
         ::PackLoadContext&                   packLoadContext,

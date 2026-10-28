@@ -60,7 +60,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI bool _canPickup(::Player const& player) const;
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI bool _canPickup(::Player const& player) const;
+#endif
 
     MCAPI void _defineEntityData();
     // NOLINTEND

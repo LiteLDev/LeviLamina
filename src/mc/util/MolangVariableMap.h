@@ -61,10 +61,14 @@ public:
         ::MolangScriptArg const& value
     );
 
-#ifdef LL_PLAT_C
     MCAPI void setMolangVariable(::HashedString const& variableName, ::MolangScriptArg const& value);
 
+#ifdef LL_PLAT_C
+    MCAPI void setMolangVariable(::HashedString const& variableName, float value);
+
     MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
+
+    MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, float value);
 #endif
 
     MCAPI ~MolangVariableMap();

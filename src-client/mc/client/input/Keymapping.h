@@ -21,10 +21,9 @@ public:
     // NOLINTBEGIN
     MCAPI Keymapping(::Keymapping const&);
 
-    MCAPI Keymapping(::std::string const& action, int defaultKey);
+    MCAPI Keymapping(::std::string_view action, int defaultKey);
 
-    MCAPI
-    Keymapping(::std::string const& action, ::std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey);
+    MCAPI Keymapping(::std::string_view action, ::std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey);
 
     MCAPI void operator=(::Keymapping const& rhs);
 
@@ -36,10 +35,10 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Keymapping const&);
 
-    MCAPI void* $ctor(::std::string const& action, int defaultKey);
+    MCAPI void* $ctor(::std::string_view action, int defaultKey);
 
     MCAPI void*
-    $ctor(::std::string const& action, ::std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey);
+    $ctor(::std::string_view action, ::std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey);
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
 
 // auto generated forward declare list
@@ -50,7 +51,8 @@ public:
         ::Player&                      player,
         ::ItemStack                    heldItem,
         ::ChiseledBookshelfBlockActor& bookshelfActor,
-        int const                      hitSlot
+        int                            hitSlot,
+        ::HandSlot                     handSlot
     ) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;

@@ -316,7 +316,15 @@ MCAPI ::HashedString const& Hopper();
 
 MCAPI ::HashedString const& HopperMinecart();
 
+#ifdef LL_PLAT_C
+MCAPI ::HashedString const& IceBall();
+#endif
+
 MCAPI ::HashedString const& IceBomb();
+
+MCAPI ::HashedString const& IceCrystal();
+
+MCAPI ::HashedString const& Icicle();
 
 MCAPI ::HashedString const& InkSac();
 

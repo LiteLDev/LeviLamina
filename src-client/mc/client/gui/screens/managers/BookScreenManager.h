@@ -87,10 +87,6 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> getScreenshotPath(::PageContent const& page);
 
-    MCAPI ::std::string const& getSignedAuthor();
-
-    MCAPI ::std::string const& getXUID();
-
     MCAPI bool lecternHasBook() const;
 
     MCAPI bool lecternIsValid() const;

@@ -94,6 +94,7 @@ public:
     ::ll::UntypedStorage<8, 48> mUnk188742;
     ::ll::UntypedStorage<8, 24> mUnk436aea;
     ::ll::UntypedStorage<8, 24> mUnkf990cc;
+    ::ll::UntypedStorage<8, 40> mUnk3cccc4;
     ::ll::UntypedStorage<8, 40> mUnk7c3256;
     ::ll::UntypedStorage<8, 24> mUnka9cde2;
     ::ll::UntypedStorage<8, 24> mUnk8a2dfc;
@@ -130,7 +131,8 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> discardPendingTransaction(::mce::UUID const& id) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> finalizePendingTransaction(::mce::UUID const& id) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    finalizePendingTransaction(::mce::UUID const& id, ::std::function<void(::std::string)> activity) /*override*/;
 
     virtual uint64 pendingTransactionCount() const /*override*/;
 
@@ -205,7 +207,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $discardPendingTransaction(::mce::UUID const& id);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $finalizePendingTransaction(::mce::UUID const& id);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $finalizePendingTransaction(::mce::UUID const& id, ::std::function<void(::std::string)> activity);
 
     MCNAPI uint64 $pendingTransactionCount() const;
 

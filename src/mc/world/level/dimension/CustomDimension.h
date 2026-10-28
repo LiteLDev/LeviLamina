@@ -28,6 +28,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::unique_ptr<::WorldGenerator>(::Dimension&)>> mGeneratorCreator;
     ::ll::TypedStorage<2, 2, ::BiomeIdType>                                                       mDefaultBiome;
+    ::ll::TypedStorage<2, 2, short>                                                               mDefaultCloudHeight;
+    ::ll::TypedStorage<1, 1, bool>                                                                mRenderClouds;
     // NOLINTEND
 
 public:
@@ -52,6 +54,10 @@ public:
 
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
         /*override*/;
+
+    virtual short getCloudHeight() const /*override*/;
+
+    virtual bool shouldRenderClouds() const /*override*/;
 
     virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) /*override*/;
 
@@ -98,23 +104,15 @@ public:
 
     MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
+    MCAPI short $getCloudHeight() const;
+
+    MCAPI bool $shouldRenderClouds() const;
+
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion);
 
     MCAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForSavedData();
-
-    MCNAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };
