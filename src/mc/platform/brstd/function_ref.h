@@ -119,7 +119,7 @@ public:
 
     template <auto f, class U, class T = std::remove_reference_t<U>>
     constexpr function_ref(nontype_t<f>, U&& obj) noexcept
-        requires(!std::is_rvalue_reference_v<U &&> && is_invocable_using<decltype(f), cvref<T>>)
+        requires(!std::is_rvalue_reference_v<U&&> && is_invocable_using<decltype(f), cvref<T>>)
     : fptr_([](storage this_, transform_param_t<Args>... args) noexcept(noex) -> R {
           cvref<T> obj = *get<T>(this_);
           return invoke_r<R>(f, obj, static_cast<decltype(args)>(args)...);

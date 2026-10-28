@@ -11,11 +11,9 @@
 
 namespace ll::mod {
 
-namespace {
-
 using Adjacency = DenseMap<std::string, SmallDenseSet<std::string>>;
 
-void addEdge(
+static void addEdge(
     Adjacency&                     adjacency,
     DenseMap<std::string, size_t>& indegree,
     std::string const&             before,
@@ -26,13 +24,13 @@ void addEdge(
     }
 }
 
-std::vector<std::string> sortedNames(DenseSet<std::string> const& names) {
+static std::vector<std::string> sortedNames(DenseSet<std::string> const& names) {
     std::vector<std::string> result{names.begin(), names.end()};
     std::ranges::sort(result);
     return result;
 }
 
-std::vector<std::string> topologicalSort(
+static std::vector<std::string> topologicalSort(
     DenseSet<std::string> const&  active,
     Adjacency const&              adjacency,
     DenseMap<std::string, size_t> indegree
@@ -63,7 +61,8 @@ std::vector<std::string> topologicalSort(
     return result;
 }
 
-std::vector<std::vector<std::string>> findCycles(DenseSet<std::string> const& active, Adjacency const& adjacency) {
+static std::vector<std::vector<std::string>>
+findCycles(DenseSet<std::string> const& active, Adjacency const& adjacency) {
     DenseMap<std::string, size_t>         index;
     DenseMap<std::string, size_t>         lowLink;
     DenseSet<std::string>                 onStack;
@@ -122,8 +121,6 @@ std::vector<std::vector<std::string>> findCycles(DenseSet<std::string> const& ac
     std::ranges::sort(cycles);
     return cycles;
 }
-
-} // namespace
 
 bool ModLoadPlanner::matchesDependency(Manifest const& manifest, Dependency const& dependency) noexcept {
     if (!dependency.version) {

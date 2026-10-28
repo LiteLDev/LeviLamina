@@ -92,6 +92,23 @@ TEST_F(LogRotateTest, WritesInPlaceWhenRotationIsExplicitlyDisabled) {
     EXPECT_EQ(names(), std::vector<std::string>{"latest.log"});
 }
 
+TEST_F(LogRotateTest, SharesStateByNormalizedPathButKeepsFormattersPerSink) {
+    auto alias = dir / "." / "latest.log";
+    {
+        FileSink first{active(), makePolymorphic<PatternFormatter>("[first] {0}", false), RotatePolicy::disabled()};
+        FileSink second{alias, makePolymorphic<PatternFormatter>("[second] {0}", false), RotatePolicy::disabled()};
+
+        auto tm = timeAt(2026, 9, 19, 10);
+        first.append(message("one", tm));
+        second.append(message("two", tm));
+        first.append(message("three", tm));
+    }
+
+    std::ifstream input{active(), std::ios::binary};
+    std::string   content{std::istreambuf_iterator<char>{input}, std::istreambuf_iterator<char>{}};
+    EXPECT_EQ(content, "[first] one\n[second] two\n[first] three\n");
+}
+
 TEST_F(LogRotateTest, DefaultConstructedPolicyNamesArchivesWithoutHelp) {
     // The namer defaults to defaultNamer, so no caller has to check it for emptiness.
     RotatePolicy policy{};
