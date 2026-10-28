@@ -20,6 +20,9 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class FoliageBlock : public ::BlockType {
 public:
+    LLAPI FoliageBlock(::std::string const& nameId, int id);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const

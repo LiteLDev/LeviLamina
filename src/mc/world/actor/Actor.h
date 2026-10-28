@@ -925,8 +925,6 @@ public:
 
     MCAPI bool isCreative() const;
 
-    MCAPI bool isDancing() const;
-
     MCAPI bool isDoorOpener() const;
 
     MCAPI bool isImmersedInWater() const;
@@ -978,8 +976,6 @@ public:
     MCAPI bool isStanding() const;
 
     MCAPI bool isSurvival() const;
-
-    MCAPI bool isSwimming() const;
 
     MCAPI bool isTame() const;
 

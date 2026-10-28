@@ -5,7 +5,6 @@
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
 #include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/registry/BlockTypeRegistryModificationsLock.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
@@ -134,8 +133,6 @@ public:
     template <class TBlockType, class... Args>
     TBlockType& registerBlock(::HashedString const& blockName, Args&&... args) {
         ::std::string nameId = blockName.getString();
-
-        BlockTypeRegistryModificationsLock lock(mRWLock);
 
         auto* block = new TBlockType(nameId, ::std::forward<Args>(args)...);
 

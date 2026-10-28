@@ -16,6 +16,9 @@ class BlockSource;
 
 class BushBlock : public ::FoliageBlock {
 public:
+    LLAPI BushBlock(::std::string const& nameId, int id);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;

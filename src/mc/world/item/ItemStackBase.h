@@ -167,8 +167,6 @@ public:
 
     MCAPI void _updateCompareHashes();
 
-    MCAPI void add(int inCount);
-
     MCAPI bool addComponents(::Json::Value const& root, ::std::string& errorMsg);
 
     MCAPI void addCustomUserData(::ContainerComponent const& containerComponent);
@@ -305,8 +303,6 @@ public:
 
     MCAPI ::ItemStackBase& operator=(::ItemStackBase const& rhs);
 
-    MCAPI void remove(int inCount);
-
     MCAPI void resetHoverName();
 
     MCAPI bool sameItem(::ItemStackBase const& other, ::ItemStackBase::ComparisonOptions const& options) const;
@@ -328,10 +324,6 @@ public:
     MCAPI void setCustomLore(::std::vector<::std::string> const& lore);
 
     MCAPI void setCustomName(::Bedrock::Safety::RedactableString const& name);
-
-#ifdef LL_PLAT_S
-    MCAPI void setDamageValue(short newDamage);
-#endif
 
     MCAPI void setDynamicProperty(
         ::std::string const&                                              key,

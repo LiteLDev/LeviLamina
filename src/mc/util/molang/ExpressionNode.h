@@ -106,15 +106,13 @@ public:
 
     LLAPI MolangScriptArg const& evalGeneric(RenderParams& renderParams) const;
 
-#ifdef LL_PLAT_S
-    static std::function<::MolangScriptArg const&(RenderParams&, std::vector<::ExpressionNode> const&)> const*
+    LLAPI static std::function<::MolangScriptArg const&(RenderParams&, std::vector<::ExpressionNode> const&)> const*
     queryFunctionAccessorFromString(
         ::HashedString const&            functionName,
         ::MolangVersion                  molangVersion,
         ::MolangQueryFunctionReturnType& functionReturnType,
         bool                             missingIsOkay_returnNullIfSo
     );
-#endif
 
 public:
     // prevent constructor by default
@@ -172,15 +170,6 @@ public:
     MCAPI static bool _initializeMolangQueries(::ExpressionQueries&& queries);
 
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::std::function<
-        ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*
-    queryFunctionAccessorFromString(
-        ::HashedString const&            functionName,
-        ::MolangVersion                  molangVersion,
-        ::MolangQueryFunctionReturnType& functionReturnType,
-        bool                             missingIsOkay_returnNullIfSo
-    );
 
     MCAPI static ::MolangQueryFunction& registerQueryFunction(
         ::std::string_view queryFunctionName,

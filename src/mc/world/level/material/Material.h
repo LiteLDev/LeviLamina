@@ -23,7 +23,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::MaterialType> mType;
-<<<<<<< HEAD
     ::ll::TypedStorage<1, 1, bool>                                  mNeverBuildable;
     ::ll::TypedStorage<1, 1, bool>                                  mLiquid;
     ::ll::TypedStorage<1, 1, bool>                                  mBlocksMotion;

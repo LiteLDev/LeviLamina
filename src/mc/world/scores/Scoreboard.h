@@ -165,8 +165,6 @@ public:
 
     MCAPI void removeScoreListener(::Player const& player, ::std::string const& objective);
 
-    MCAPI bool resetPlayerScore(::ScoreboardId const& id, ::Objective& objective);
-
     MCAPI void resetPlayerScore(::ScoreboardId const& id);
 
     MCAPI ::std::optional<::ScoreInfo> tryGetIdScore(::ScoreboardId const& id, uint64 const& objectiveHash) const;

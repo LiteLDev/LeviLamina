@@ -9,6 +9,7 @@ namespace cereal { struct ReflectionCtx; }
 
 class AABB;
 class BoundingBox;
+class Vec3;
 
 class BlockPos : public ll::math::intN3<BlockPos> {
 public:

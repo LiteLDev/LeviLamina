@@ -4,7 +4,6 @@
 #include "mc/deps/vanilla_components/AABBShapeComponent.h"
 #include "mc/deps/vanilla_components/StateVectorComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
-#include "mc/entity/components/ActorWalkAnimationComponent.h"
 
 // auto generated forward declare list
 // clang-format off

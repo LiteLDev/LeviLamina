@@ -20,10 +20,5 @@ public:
     // NOLINTEND
 
     // TODO: check
-    operator bool() const {
-        if (std::holds_alternative<bool>(*mHurtOrDamage)) {
-            return std::get<bool>(*mHurtOrDamage);
-        }
-        return std::get<float>(*mHurtOrDamage) > 0;
-    }
+    operator bool() const { return mDamageAmount->value_or(0.0f) > 0; }
 };

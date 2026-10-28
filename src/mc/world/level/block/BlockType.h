@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
-#include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/block/states/BlockState.h"
 #include "mc/world/level/block/states/BlockStateInstance.h"
 

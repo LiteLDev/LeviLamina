@@ -61,9 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    static ::BackgroundWorker* getLocal() { return gLocalWorkerMappingSingleton(); }
-
-public:
     // prevent constructor by default
     BackgroundWorker& operator=(BackgroundWorker const&);
     BackgroundWorker(BackgroundWorker const&);

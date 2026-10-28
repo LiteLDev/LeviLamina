@@ -98,18 +98,17 @@ LL_TYPE_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,
     HookPriority::Normal,
     ::BedrockLog::LogDetails,
-    &::BedrockLog::LogDetails::_makeLogString,
-    std::string,
-    std::string        timestamp,
-    LogAreaID          area,
-    uint               priority,
-    std::string        functionName,
-    int                lineNumber,
-    int                messageId,
-    std::string const& logMessage
+    &::BedrockLog::LogDetails::_appendLogEntryMetadata,
+    void,
+    std::string&     logEntry,
+    std::string_view timestamp,
+    LogAreaID        area,
+    uint             priority,
+    std::string_view functionName,
+    int              lineNumber,
+    int              _messageId
 ) {
     // Block from adding LOG metadata
-    return logMessage;
 }
 
 LL_TYPE_INSTANCE_HOOK(

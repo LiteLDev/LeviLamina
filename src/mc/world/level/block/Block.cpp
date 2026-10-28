@@ -94,16 +94,16 @@ BlockOcclusionType Block::_getBlockOcclusionType() const {
         return BlockOcclusionType::Connects2D;
     }
     auto const& material = mBlockType->mMaterial;
-    if (material.mLiquid) {
+    if (material->mLiquid) {
         return BlockOcclusionType::IsLiquid;
     }
     if (hasProperty(BlockProperty::Portal)) {
         return BlockOcclusionType::Portal;
     }
-    if (material.mType == ::SharedTypes::v1_26_20::MaterialType::Ice) {
+    if (material->mType == ::SharedTypes::v1_26_20::MaterialType::Ice) {
         return BlockOcclusionType::Ice;
     }
-    if (material.mType == ::SharedTypes::v1_26_20::MaterialType::Cactus) {
+    if (material->mType == ::SharedTypes::v1_26_20::MaterialType::Cactus) {
         return BlockOcclusionType::Cactus;
     }
     return mBlockType->mNameInfo->mFullName->mStrHash == ::VanillaBlockTypeIds::SculkShrieker().mStrHash

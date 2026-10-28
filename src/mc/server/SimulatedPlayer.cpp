@@ -144,7 +144,9 @@ bool SimulatedPlayer::simulateDropSelectedItem() {
     }
     return false;
 }
-bool SimulatedPlayer::simulateInteract(Actor& actor) { return isAlive() && interact(actor, 0).mSuccess; }
+bool SimulatedPlayer::simulateInteract(Actor& actor) {
+    return isAlive() && interact(actor, 0, HandSlot::Mainhand).mSuccess;
+}
 void SimulatedPlayer::simulateStopInteracting() { deleteContainerManager(); }
 bool SimulatedPlayer::isSimulatingDestroyingBlock() { return *mDestroyingBlockPos && *mDestroyingBlockFace; }
 // void SimulatedPlayer::simulateLookAt(Vec3 const& pos, sim::LookDuration lookType) {

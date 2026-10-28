@@ -121,8 +121,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
     ItemDescriptor() { mImpl = nullptr; }
+
+    LLAPI ItemDescriptor& operator=(::ItemDescriptor const& rhs);
 
 public:
     // virtual functions
