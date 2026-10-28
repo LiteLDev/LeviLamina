@@ -13,6 +13,8 @@ namespace AppliedPotionUtil {
 // NOLINTBEGIN
 MCNAPI ::std::optional<int>
 calculateAppliedPotionAuxValue(::std::shared_ptr<::Potion const> const& potion, ::ItemStackBase const& item);
+
+MCNAPI ::std::shared_ptr<::Potion const> getAppliedPotionFromItem(::ItemStackBase const& item);
 // NOLINTEND
 
 } // namespace AppliedPotionUtil

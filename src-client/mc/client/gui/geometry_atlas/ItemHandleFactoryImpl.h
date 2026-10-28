@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockType;
 class ItemRegistryRef;
 class PropertyBag;
 class TickingTextures;
@@ -29,6 +30,12 @@ public:
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::GeometryAtlas::IItemHandle>
     createItem(::std::string_view name, ::std::unique_ptr<::PropertyBag> bag) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::optional<int> _resolveBlockIDAux(::BlockType const& blockType) const;
     // NOLINTEND
 
 public:

@@ -71,21 +71,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::DebuggerStat> _collectHandleCountStats(uint64, uint64, uint64);
+    MCAPI void _collectHandleCountStats(::DebuggerStat& pluginStats, uint64, uint64, uint64);
 
-    MCAPI ::std::optional<::DebuggerStat> _collectMemoryStats(uint64, uint64, uint64);
+    MCAPI void _collectMemoryStats(::DebuggerStat& javaScriptStats);
 
-    MCAPI ::std::optional<::DebuggerStat> _collectQuickJsStats(uint64, uint64, uint64);
+    MCAPI void _collectQuickJsStats(::DebuggerStat& javaScriptStats);
 
-    MCAPI ::std::optional<::DebuggerStat>
-    _collectScriptingStats(::std::reference_wrapper<::ServerLevel> serverLevel, uint64, uint64, uint64);
+    MCAPI void
+    _collectScriptingStats(::std::reference_wrapper<::ServerLevel> serverLevel, ::DebuggerStat& allScriptingStats);
 
-    MCAPI ::std::optional<::DebuggerStat> _collectSubscriberCountStats(
+    MCAPI void _collectSubscriberCountStats(
         ::Bedrock::NotNullNonOwnerPtr<::ServerLevel>     serverLevel,
         ::gsl::not_null<::Scripting::DependencyLocator*> locator,
-        uint64,
-        uint64,
-        uint64
+        ::DebuggerStat&                                  subscriberStats
     );
 
 #ifdef LL_PLAT_C
@@ -127,8 +125,6 @@ public:
     );
 
     MCAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
-
-    MCAPI ::std::vector<::Scripting::ModuleDescriptor> getPluginModuleDescriptors() const;
 
     MCAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 

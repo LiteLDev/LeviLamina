@@ -7,6 +7,7 @@
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorDataIDs.h"
 #include "mc/world/actor/npc/ActionContainer.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,7 +67,7 @@ public:
 
     MCAPI ::std::vector<int> getCommandCounts() const;
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot);
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string const& getInteractiveRawText(::Actor const& owner) const;

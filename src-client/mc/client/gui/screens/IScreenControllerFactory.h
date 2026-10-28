@@ -6,8 +6,11 @@
 // clang-format off
 class InviteScreenController;
 class MinecraftScreenModel;
+class PersonaScreenModel;
 class ScreenController;
+class StoreDataDrivenScreenController;
 class ToastScreenController;
+struct StoreDataDrivenScreenParams;
 // clang-format on
 
 class IScreenControllerFactory {
@@ -34,6 +37,12 @@ public:
     virtual ::std::shared_ptr<::ScreenController> createScreenController(
         ::IScreenControllerFactory::ControllerType<::InviteScreenController>,
         ::std::shared_ptr<::MinecraftScreenModel>
+    ) = 0;
+
+    virtual ::std::shared_ptr<::ScreenController> createScreenController(
+        ::IScreenControllerFactory::ControllerType<::StoreDataDrivenScreenController>,
+        ::std::shared_ptr<::PersonaScreenModel>,
+        ::StoreDataDrivenScreenParams const&
     ) = 0;
     // NOLINTEND
 };

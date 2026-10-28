@@ -65,7 +65,8 @@ public:
         ::BlockPos const&               origin,
         ::BlockPos&                     pos,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     ) /*override*/;
 
     virtual void
@@ -123,7 +124,8 @@ public:
         ::BlockPos const&               origin,
         ::BlockPos&                     pos,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     );
 
     MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool);

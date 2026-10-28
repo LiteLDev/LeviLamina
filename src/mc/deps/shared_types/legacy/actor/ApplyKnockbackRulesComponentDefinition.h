@@ -33,6 +33,12 @@ public:
             ::SharedTypes::Legacy::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset const& other
         ) const;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::string_view const& NAME();
+        // NOLINTEND
     };
 
 public:
@@ -43,6 +49,12 @@ public:
         24,
         ::std::vector<::SharedTypes::Legacy::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset>>
         mPresets;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

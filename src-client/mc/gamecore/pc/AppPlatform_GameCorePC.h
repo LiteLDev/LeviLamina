@@ -35,6 +35,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk587e2e;
     ::ll::UntypedStorage<1, 1>  mUnk15dc10;
     ::ll::UntypedStorage<1, 1>  mUnkdc4ecc;
+    ::ll::UntypedStorage<1, 1>  mUnk934996;
     ::ll::UntypedStorage<8, 16> mUnkb81ef1;
     // NOLINTEND
 
@@ -138,8 +139,6 @@ public:
 
     virtual ::std::string getPlatformString() const /*override*/;
 
-    virtual ::std::string getSubPlatformString() const /*override*/;
-
     virtual ::std::string getClientUpdateUrl() const /*override*/;
 
     virtual ::std::string getEdition() const /*override*/;
@@ -169,6 +168,10 @@ public:
     virtual float getDefaultScreenPositionX() const /*override*/;
 
     virtual float getDefaultScreenPositionY() const /*override*/;
+
+    virtual void showXboxLiveUserSettings() /*override*/;
+
+    virtual bool canLaunchUri(::std::string const& uri) /*override*/;
 
     virtual void setStorageDirectory(
         ::FileStorageDirectory      dir,
@@ -278,8 +281,6 @@ public:
 
     MCAPI ::std::string $getPlatformString() const;
 
-    MCAPI ::std::string $getSubPlatformString() const;
-
     MCAPI ::std::string $getClientUpdateUrl() const;
 
     MCAPI ::std::string $getEdition() const;
@@ -309,6 +310,10 @@ public:
     MCFOLD float $getDefaultScreenPositionX() const;
 
     MCFOLD float $getDefaultScreenPositionY() const;
+
+    MCAPI void $showXboxLiveUserSettings();
+
+    MCAPI bool $canLaunchUri(::std::string const& uri);
 
     MCAPI void $setStorageDirectory(
         ::FileStorageDirectory      dir,

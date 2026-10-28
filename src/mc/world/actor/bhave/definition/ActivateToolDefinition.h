@@ -29,7 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
 
     // NOLINTEND

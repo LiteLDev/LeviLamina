@@ -18,7 +18,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getId(::std::string const& type);
 
+#ifdef LL_PLAT_C
     MCAPI static ::std::string const& getName(::SharedTypes::Legacy::LevelSoundEvent type);
+#endif
 
     MCAPI static ::SoundEventIdentifier resolve(::SharedTypes::Versionless::SoundEventName const& name);
     // NOLINTEND

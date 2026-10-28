@@ -18,4 +18,10 @@ public:
     RecipeOptionalCraftInputs& operator=(RecipeOptionalCraftInputs const&);
     RecipeOptionalCraftInputs(RecipeOptionalCraftInputs const&);
     RecipeOptionalCraftInputs();
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

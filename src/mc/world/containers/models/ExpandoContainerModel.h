@@ -94,7 +94,7 @@ public:
 
     MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
-    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCFOLD ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
     MCAPI int $getContainerSize() const;
 

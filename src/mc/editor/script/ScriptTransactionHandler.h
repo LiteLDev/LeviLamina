@@ -52,8 +52,6 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptTransactionHandler&
     operator=(::Editor::ScriptModule::ScriptTransactionHandler&& other);
-
-    MCNAPI ~ScriptTransactionHandler();
     // NOLINTEND
 
 public:
@@ -68,12 +66,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptTransactionHandler&& other);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

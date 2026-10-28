@@ -11,6 +11,7 @@ class ActorOwnerComponent;
 class CameraShakeComponent;
 class EntityContext;
 class EntityRegistry;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class CameraShakeSystem : public ::ITickingSystem {
@@ -29,6 +30,8 @@ public:
         ::ActorOwnerComponent&  actorOwnerComponent,
         ::CameraShakeComponent& cameraShakeComponent
     );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
 #endif
     // NOLINTEND
 

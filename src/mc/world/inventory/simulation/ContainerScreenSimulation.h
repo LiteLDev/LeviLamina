@@ -18,6 +18,7 @@
 class Container;
 class ContainerScreenActionScope;
 class ContainerScreenValidation;
+class IContainerTransfer;
 class ItemInstance;
 struct AutoPlaceTarget;
 struct ContainerScreenActionResult;
@@ -26,7 +27,6 @@ struct ContainerValidationResult;
 struct ContainerValidationSlotData;
 struct FullContainerName;
 struct ItemTransferAmount;
-class IContainerTransfer;
 // clang-format on
 
 class ContainerScreenSimulation : public ::Bedrock::EnableNonOwnerReferences {
@@ -143,11 +143,13 @@ public:
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
     );
 
+    MCAPI void _leaveActionScope(::ContainerScreenActionResult& result);
+
     MCAPI ::ContainerScreenActionResult _tryTransfer(
-        ::ItemTransferType const             transferType,
+        ::ItemTransferType                   transferType,
         ::ContainerValidationSlotData const& srcSlot,
         ::ContainerValidationSlotData const& dstSlot,
-        ::ItemTransferAmount const           transferAmount,
+        ::ItemTransferAmount                 transferAmount,
         ::ContainerScreenTransferBehaviour   transferBehaviour
     );
 

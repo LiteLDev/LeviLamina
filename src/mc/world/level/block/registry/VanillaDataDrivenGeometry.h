@@ -12,6 +12,6 @@ class VanillaDataDrivenGeometry {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addComponentsToBlocks(::BaseGameVersion const& baseGameVersion, ::Experiments const&);
+    MCAPI static void addComponentsToBlocks(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
     // NOLINTEND
 };

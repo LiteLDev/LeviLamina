@@ -4,15 +4,6 @@
 
 namespace PointLighting::UpdatePhases {
 
-struct ScoreCompute {
-public:
-    // ScoreCompute inner types declare
-    // clang-format off
-    struct PerHeuristicState;
-    // clang-format on
-
-    // ScoreCompute inner types define
-    struct PerHeuristicState {};
-};
+struct ScoreCompute {};
 
 } // namespace PointLighting::UpdatePhases

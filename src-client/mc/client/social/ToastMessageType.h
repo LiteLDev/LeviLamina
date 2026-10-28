@@ -25,4 +25,5 @@ enum class ToastMessageType : int {
     PartyDestinationCookieOptOut = 19,
     PartyDestinationCookieOptIn  = 20,
     ReturnToGame                 = 21,
+    Matchmaking                  = 22,
 };

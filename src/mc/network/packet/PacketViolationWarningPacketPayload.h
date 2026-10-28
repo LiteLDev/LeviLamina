@@ -31,15 +31,6 @@ public:
         ::MinecraftPacketIds      violatingPacketId,
         ::std::string const&      violationContext
     );
-
-#ifdef LL_PLAT_C
-    MCAPI PacketViolationWarningPacketPayload(
-        ::PacketViolationSeverity violationSeverity,
-        ::PacketViolationType     violationType,
-        ::MinecraftPacketIds      violatingPacketId,
-        ::std::string const&      violationContext
-    );
-#endif
     // NOLINTEND
 
 public:
@@ -51,14 +42,5 @@ public:
         ::MinecraftPacketIds      violatingPacketId,
         ::std::string const&      violationContext
     );
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::PacketViolationSeverity violationSeverity,
-        ::PacketViolationType     violationType,
-        ::MinecraftPacketIds      violatingPacketId,
-        ::std::string const&      violationContext
-    );
-#endif
     // NOLINTEND
 };

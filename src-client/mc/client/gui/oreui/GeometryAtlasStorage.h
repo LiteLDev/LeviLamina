@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/GeometryProtocolType.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,6 +14,7 @@ namespace Gameface { class TemporaryTextureHolder; }
 namespace GeometryAtlas { class IGeometryAtlas; }
 namespace GeometryAtlas { class IGeometryAtlasCaptureService; }
 namespace GeometryAtlas { class IPaperDollHandleFactory; }
+namespace OreUI { class AllKnownTiles; }
 namespace OreUI { class IGeometryAtlasKnownTilesReader; }
 namespace OreUI { class IItemHandleFactory; }
 namespace OreUI { class ILiveViewCollectionPublisher; }
@@ -38,6 +40,7 @@ public:
         ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mTileChangeSubscription;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::IGeometryAtlasKnownTilesReader>> mKnownItems;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::IGeometryAtlasKnownTilesReader>> mKnownDolls;
+        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void()>>                        mClearItemCache;
         // NOLINTEND
 
     public:
@@ -87,6 +90,8 @@ public:
     );
 
     MCAPI ::OreUI::LiveViewCollection createLiveViewCollection();
+
+    MCAPI ::std::unique_ptr<::OreUI::AllKnownTiles> getKnownTiles();
     // NOLINTEND
 
 public:

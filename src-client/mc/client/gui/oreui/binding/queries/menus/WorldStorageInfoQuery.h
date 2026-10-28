@@ -8,6 +8,7 @@
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/storagemanager/ContentType.h"
 #include "mc/client/world/SyncState.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -30,6 +31,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mWorldDataChangedSubscription;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 8, ::World::IWorldCloudSyncer&>                                 mWorldCloudSyncer;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                          mWorldsBasePath;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>           mWorldId;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>           mName;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>           mSize;

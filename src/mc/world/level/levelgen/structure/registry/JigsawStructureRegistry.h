@@ -33,7 +33,7 @@ public:
     ::ll::TypedStorage<8, 88, ::JigsawStructureBlockTagRulesRegistry> mJigsawBlockTagRulesRegistry;
     ::ll::TypedStorage<8, 88, ::JigsawStructureActorRulesRegistry>    mJigsawActorRulesRegistry;
     ::ll::TypedStorage<8, 64, ::JigsawStructureElementRegistry>       mJigsawElementRegistry;
-    ::ll::TypedStorage<8, 72, ::br::worldgen::StructureRegistry>      mStructureRegistry;
+    ::ll::TypedStorage<8, 168, ::br::worldgen::StructureRegistry>     mStructureRegistry;
     ::ll::TypedStorage<8, 72, ::br::worldgen::StructureSetRegistry>   mStructureSetRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
     // NOLINTEND

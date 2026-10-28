@@ -22,6 +22,8 @@ public:
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
+
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool hasComparatorSignal() const /*override*/;
@@ -52,6 +54,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -16,9 +16,10 @@ struct MultiSelectSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v3_0_0::PackManifestDefinition::SettingType>                    mType;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                                mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                                mText;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v3_0_0::PackManifestDefinition::SettingType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mText;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mSelectionText;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption>> mOptions;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                                 mDefaults;
     // NOLINTEND

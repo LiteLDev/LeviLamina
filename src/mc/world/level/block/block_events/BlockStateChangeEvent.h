@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockChangeContext;
 class BlockSource;
 // clang-format on
 
@@ -17,8 +18,9 @@ class BlockStateChangeEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&> mPreviousBlock;
-    ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
+    ::ll::TypedStorage<8, 8, ::Block const&>              mPreviousBlock;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>              mRegion;
+    ::ll::TypedStorage<8, 8, ::BlockChangeContext const&> mContext;
     // NOLINTEND
 
 public:

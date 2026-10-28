@@ -112,6 +112,8 @@ public:
     // NOLINTBEGIN
     MCAPI ClientBindingFactory(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
 
+    MCAPI bool _blockSelectEnabled() const;
+
     MCAPI ::RectangleArea
     _calculateClassicButtonRectangleWithOptionIDs(::OptionID posX, ::OptionID posY, ::OptionID scale) const;
 

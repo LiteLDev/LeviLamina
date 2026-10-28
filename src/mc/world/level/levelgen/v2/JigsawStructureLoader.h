@@ -86,29 +86,69 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
+#ifdef LL_PLAT_S
     MCAPI bool _parseJigsawDefinitionData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
 
+#ifdef LL_PLAT_C
+    MCAPI bool _parseJigsawDefinitionData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI bool _parseProcessorsData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
 
+#ifdef LL_PLAT_C
+    MCAPI bool _parseProcessorsData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI bool _parseStructureSetData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
 
+#ifdef LL_PLAT_C
+    MCAPI bool _parseStructureSetData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_S
     MCAPI bool _parseTemplatePoolsData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
+
+#ifdef LL_PLAT_C
+    MCAPI bool _parseTemplatePoolsData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
 
     MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
     // NOLINTEND

@@ -33,7 +33,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
+    MCFOLD static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronFluidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
 
     MCAPI static ::std::optional<
@@ -49,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCFOLD bool $_isValid() const;
 
 
     // NOLINTEND

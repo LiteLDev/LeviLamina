@@ -66,10 +66,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void preRender(
@@ -90,11 +86,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer,
-        ::std::shared_ptr<::mce::TextureGroup>  textureGroup
-    );
-
     MCAPI void _renderChestGear(
         ::BaseActorRenderContext&              renderContext,
         ::dragon::RenderMetadata const         renderMetadata,
@@ -126,8 +117,6 @@ public:
         ::Mob&                            mob,
         ::std::vector<::BoneOrientation>* boneOrientations
     );
-
-    MCAPI void prepareCarriedOffhandItem(::Mob&, ::ItemStack const& item);
     // NOLINTEND
 
 public:
@@ -153,13 +142,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Core::PathBuffer<::std::string> const& ELYTRA_TEXTURE_LOCATION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:

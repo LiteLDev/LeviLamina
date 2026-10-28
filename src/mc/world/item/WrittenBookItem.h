@@ -76,10 +76,6 @@ public:
     MCAPI static ::std::vector<::PageContent> getPages(::ItemStackBase const& book);
 
     MCAPI static ::std::string const& getTitle(::ItemStackBase const& book);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::std::string const& getXUID(::ItemStackBase const& book);
-#endif
     // NOLINTEND
 
 public:

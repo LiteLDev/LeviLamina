@@ -8,9 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -20,10 +17,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mRidingLoop;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Nautilus();
 
 public:
     // virtual functions
@@ -37,26 +30,6 @@ public:
     virtual void normalTick() /*override*/;
 
     virtual bool checkSpawnRules(bool) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Nautilus(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

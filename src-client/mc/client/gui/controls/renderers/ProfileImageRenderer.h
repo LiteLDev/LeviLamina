@@ -24,12 +24,12 @@ class ProfileImageRenderer : public ::MinecraftUICustomRenderer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                    mProfileImageOptions;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions>                   mProfileImageOptions;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                     mTaskGroup;
     ::ll::TypedStorage<8, 24, ::std::optional<::Bedrock::PubSub::Subscription>> mProfileImageChangedSubscription;
     ::ll::TypedStorage<1, 1, bool>                                              mIsLoadingImage;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Image>>                  mImage;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>                             mTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture>                             mTexture;
     ::ll::TypedStorage<1, 1, bool>                                              mFetchReturnedEmpty;
     // NOLINTEND
 

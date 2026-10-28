@@ -268,7 +268,11 @@ public:
 
     MCAPI ::gsl::not_null<::std::shared_ptr<::Localization const>> $getCurrentLanguage();
 
+#ifdef LL_PLAT_S
     MCAPI bool $languageSupportsHypenSplitting();
+#else // LL_PLAT_C
+    MCFOLD bool $languageSupportsHypenSplitting();
+#endif
 
     MCAPI ::std::string
     $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);

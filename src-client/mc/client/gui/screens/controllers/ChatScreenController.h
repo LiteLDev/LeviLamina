@@ -115,6 +115,8 @@ public:
         ::StringHash const&                    collectionName
     );
 
+    MCAPI void _registerSubControllers();
+
     MCAPI void _sendChatMessage();
 
     MCAPI void _teleportWhereHelper();

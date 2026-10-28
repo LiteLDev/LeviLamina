@@ -20,4 +20,21 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::WorldSettingsScreenControllerProxy*()>>
         mGetWorldSettingsScreenController;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SettingsScreenControllerProxyCallbacks& operator=(SettingsScreenControllerProxyCallbacks const&);
+    SettingsScreenControllerProxyCallbacks();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SettingsScreenControllerProxyCallbacks(::SettingsScreenControllerProxyCallbacks const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SettingsScreenControllerProxyCallbacks const&);
+    // NOLINTEND
 };

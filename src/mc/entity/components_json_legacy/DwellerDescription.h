@@ -31,14 +31,14 @@ public:
     virtual char const* getJsonName() const /*override*/;
 
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
+
+    virtual ~DwellerDescription() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

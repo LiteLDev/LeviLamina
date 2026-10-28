@@ -13,7 +13,7 @@
 class Actor;
 class Player;
 class Scoreboard;
-class ServerSoundHandle;
+class ServerSoundInstance;
 class Vec3;
 class WeakEntityRef;
 struct ScoreboardId;
@@ -117,7 +117,7 @@ public:
     MCAPI ::Scripting::Result_deprecated<void> _playSoundInternal(
         ::std::string const                                                soundID,
         ::std::optional<::ScriptModuleMinecraft::ScriptPlayerSoundOptions> soundOptions,
-        ::std::optional<::ServerSoundHandle>                               serverSoundHandle
+        ::ServerSoundInstance const*                                       serverSoundInstance
     );
 
     MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>

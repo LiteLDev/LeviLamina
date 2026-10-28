@@ -50,24 +50,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool Bool(bool b);
-
-    MCNAPI bool Double(double d);
-
-    MCNAPI bool Int(int i);
-
-    MCNAPI bool Int64(int64 i);
-
-    MCNAPI bool Key(char const* str, uint length, bool copy);
-
-    MCNAPI bool Null();
-
-    MCNAPI bool String(char const* str, uint length, bool copy);
-
-    MCNAPI bool Uint(uint u);
-
-    MCNAPI bool Uint64(uint64 u);
-
     MCNAPI bool _addObjectOrArray(::Bedrock::JSONObject::ValueWrapper const& value);
     // NOLINTEND
 };

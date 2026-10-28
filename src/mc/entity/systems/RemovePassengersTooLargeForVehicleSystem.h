@@ -24,7 +24,7 @@ public:
         ::PassengerComponent const&                                      passengerComponent,
         ::AABBShapeComponent const&                                      aabbShapeComponent,
         ::ViewT<::StrictEntityContext, ::RideableComponent const> const& vehicleView,
-        ::EntityModifier<::StopRidingRequestComponent>&                  modifier
+        ::EntityModifier<::StopRidingRequestComponent> const&            modifier
     );
     // NOLINTEND
 };

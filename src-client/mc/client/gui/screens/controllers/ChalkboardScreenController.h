@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
-class DeferredTextObject;
 namespace Json { class Value; }
 // clang-format on
 
@@ -18,9 +17,9 @@ class ChalkboardScreenController : public ::ClientInstanceScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DeferredTextObject>> mDeferredTextObject;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                             mBlockPosition;
-    ::ll::TypedStorage<1, 1, bool>                                    mLockVisible;
+    ::ll::TypedStorage<8, 32, ::std::string> mMessage;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPosition;
+    ::ll::TypedStorage<1, 1, bool>           mLockVisible;
     // NOLINTEND
 
 public:
@@ -53,8 +52,6 @@ public:
         ::BlockPos const&                              blockPos,
         bool                                           lockVisible
     );
-
-    MCAPI void _checkForTextObjectMessage();
     // NOLINTEND
 
 public:

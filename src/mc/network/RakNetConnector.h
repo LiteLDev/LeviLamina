@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/MPMCQueue.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/ConnectionDefinition.h"
 #include "mc/network/Connector.h"
@@ -15,11 +14,11 @@
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 class PrivateKeyManager;
 namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace RakNet { class RakPeerInterface; }
@@ -150,7 +149,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier>          mNATPunchServerId;
-    ::ll::TypedStorage<8, 784, ::Social::GameConnectionInfo> mBackupGameConnection;
+    ::ll::TypedStorage<8, 752, ::Social::GameConnectionInfo> mBackupGameConnection;
     ::ll::TypedStorage<1, 1, bool>                           mTryBackupConnection;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>>
                                                                    mRakPeer;
@@ -161,7 +160,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                 mIsServer;
     ::ll::TypedStorage<1, 1, bool>                                 mIsDisconnecting;
     ::ll::TypedStorage<1, 1, bool>                                 mConnectingToClient;
-    ::ll::TypedStorage<8, 784, ::Social::GameConnectionInfo>       mConnectedGameInfo;
+    ::ll::TypedStorage<8, 752, ::Social::GameConnectionInfo>       mConnectedGameInfo;
     ::ll::TypedStorage<
         8,
         64,
@@ -241,14 +240,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI RakNetConnector(
-        ::RakNetConnector::ConnectionCallbacks&          callbacks,
-        ::RakPeerHelper::IPSupportInterface&             ipInterface,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
-        ::RakNet::RakPeerConfiguration const&            rakPeerConfig
+        ::RakNetConnector::ConnectionCallbacks&  callbacks,
+        ::RakPeerHelper::IPSupportInterface&     ipInterface,
+        ::brstd::copyable_function<bool() const> isNetworkAllowed,
+        ::RakNet::RakPeerConfiguration const&    rakPeerConfig
     );
 
-#ifdef LL_PLAT_C
     MCAPI void getPingTimeForConnection(
         ::std::string const&                                           address,
         int                                                            port,
@@ -262,12 +261,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
-        ::RakNetConnector::ConnectionCallbacks&          callbacks,
-        ::RakPeerHelper::IPSupportInterface&             ipInterface,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
-        ::RakNet::RakPeerConfiguration const&            rakPeerConfig
+        ::RakNetConnector::ConnectionCallbacks&  callbacks,
+        ::RakPeerHelper::IPSupportInterface&     ipInterface,
+        ::brstd::copyable_function<bool() const> isNetworkAllowed,
+        ::RakNet::RakPeerConfiguration const&    rakPeerConfig
     );
+#endif
     // NOLINTEND
 
 public:

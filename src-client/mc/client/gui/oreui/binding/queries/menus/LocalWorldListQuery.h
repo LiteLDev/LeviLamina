@@ -33,6 +33,7 @@ public:
         ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mId;
         ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mName;
         ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mAllContentOwned;
+        ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsMarioMashUp;
         // NOLINTEND
     };
 

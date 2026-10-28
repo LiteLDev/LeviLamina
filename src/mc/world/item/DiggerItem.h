@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -58,7 +59,8 @@ public:
 
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
-    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
+    virtual void
+    executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const
         /*override*/;
 
     virtual ::std::string getEfficiencyHoverText(::ItemStackBase const& stack) const;
@@ -92,7 +94,8 @@ public:
 
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    MCAPI void
+    $executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const;
 
     MCAPI ::std::string $getEfficiencyHoverText(::ItemStackBase const& stack) const;
 

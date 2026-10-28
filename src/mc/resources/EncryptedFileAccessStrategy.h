@@ -48,10 +48,11 @@ public:
 
     virtual bool isWritable() const /*override*/;
 
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+    virtual bool hasAsset(::Core::PathView const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
         /*override*/;
 
-    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+    virtual bool
+    getAsset(::Core::PathView const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
@@ -70,7 +71,14 @@ public:
 
     virtual ::std::string _getRawContentsFile() const;
 
-    virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+    virtual void _getEncryptedAssetStream(::Core::PathView const& packRelativePath, ::std::string& result) const;
+
+    virtual bool _getArchiveAssetFallback(
+        ::Core::PathView const&     packRelativePath,
+        ::Core::PathView const&     packRelativeArchivePath,
+        ::EncryptedAssetInfo const& entryInfo,
+        ::std::string&              result
+    ) const;
 
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
@@ -145,9 +153,10 @@ public:
 
     MCNAPI bool $isWritable() const;
 
-    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    MCNAPI bool $hasAsset(::Core::PathView const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
-    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+    MCNAPI bool
+    $getAsset(::Core::PathView const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
     MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
@@ -164,7 +173,14 @@ public:
 
     MCNAPI ::std::string $_getRawContentsFile() const;
 
-    MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+    MCNAPI void $_getEncryptedAssetStream(::Core::PathView const& packRelativePath, ::std::string& result) const;
+
+    MCNAPI bool $_getArchiveAssetFallback(
+        ::Core::PathView const&     packRelativePath,
+        ::Core::PathView const&     packRelativeArchivePath,
+        ::EncryptedAssetInfo const& entryInfo,
+        ::std::string&              result
+    ) const;
 
     MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     $_loadArchive(::Core::Path const& packRelativePath) const;

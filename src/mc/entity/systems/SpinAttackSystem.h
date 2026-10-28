@@ -12,38 +12,30 @@
 class EntitySystems;
 class StrictEntityContext;
 struct AABBShapeComponent;
-struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
-struct DamageNearbyMobsComponent;
 struct DimensionTypeComponent;
 struct LocalSpatialEntityFetcherFactoryComponent;
 struct MobFlagComponent;
-struct PlayerActionComponent;
-struct ShouldUpdateBoundingBoxRequestComponent;
 struct SpinAttackResultsComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace SpinAttackSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _fetchEntitiesForSpinAttack(
-    ::StrictEntityContext const&                                  entity,
-    ::AABBShapeComponent const&                                   aabb,
-    ::ActorDataFlagComponent const&                               actorData,
-    ::DimensionTypeComponent const&                               dimension,
-    ::LocalSpatialEntityFetcherFactoryComponent&                  factory,
-    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>> mobView,
-    ::EntityModifier<::SpinAttackResultsComponent>                modifier
+    ::StrictEntityContext const&                                         entity,
+    ::AABBShapeComponent const&                                          aabb,
+    ::ActorDataFlagComponent const&                                      actorData,
+    ::DimensionTypeComponent const&                                      dimension,
+    ::LocalSpatialEntityFetcherFactoryComponent&                         factory,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>> const& mobView,
+    ::EntityModifier<::SpinAttackResultsComponent> const&                modifier
 );
 
-MCAPI void _stopSpinAttack(
-    ::StrictEntityContext const&                                entity,
-    ::ActorDataFlagComponent&                                   actorData,
-    ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
-    ::DamageNearbyMobsComponent&                                damageNearbyMobs,
-    ::PlayerActionComponent&                                    playerAction,
-    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
-);
+MCAPI ::TickingSystemWithInfo createFetchEntitySystem();
+
+MCAPI ::TickingSystemWithInfo createStartSpinAttackSystem();
 
 MCAPI void createSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EDUDiscoveryDialogCallbacks {
+struct EduDiscoveryDialogCallbacks {
 public:
     // member variables
     // NOLINTBEGIN
@@ -13,7 +13,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~EDUDiscoveryDialogCallbacks();
+    MCAPI ~EduDiscoveryDialogCallbacks();
     // NOLINTEND
 
 public:

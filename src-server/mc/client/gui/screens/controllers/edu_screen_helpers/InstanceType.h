@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUScreenHelpers {
+namespace EduScreenHelpers {
 
 enum class InstanceType : uchar {};
 

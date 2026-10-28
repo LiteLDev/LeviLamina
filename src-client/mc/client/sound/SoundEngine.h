@@ -10,6 +10,7 @@
 #include "mc/deps/audio/SoundPlayerInterface.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/game_refs/WeakRef.h"
@@ -32,6 +33,7 @@ class Vec3;
 struct ListenerState;
 struct LoopingSoundAttributes;
 struct LoopingSoundState;
+struct PlayMusicOptions;
 struct PlaySoundOptions;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
@@ -74,22 +76,23 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mTextToSpeechVolumeOptionSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mOnPauseStateChangeSubscription;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mSoundCategoryVolumeOptionSubscriptions;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePackManager>>             mResourceManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>>            mLinkedAssetValidator;
-    ::ll::TypedStorage<4, 140, ::VolumeMultipliers<5>>                                       mMusicVolumeMultipliers;
-    ::ll::TypedStorage<4, 4, float>                                                          mMainVolume;
-    ::ll::TypedStorage<4, 4, float>                                                          mTTSVolume;
-    ::ll::TypedStorage<1, 1, bool>                                                           mMuted;
-    ::ll::TypedStorage<1, 1, bool>                                                           mFadeToStopMusic;
-    ::ll::TypedStorage<8, 392, ::SoundMapping>                                               mSounds;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Audio::OnlineAudioStreamManager>>           mOnlineStreamManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StreamingAudioExperiment> const>            mStreamingExperiment;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Core::FileSystem>>                mFileSystem;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>>                     mFileAccess;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                             mDataPath;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::SoundLoadScheduler>> const> mSoundLoadScheduler;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                            mResourceLoadManagerMutex;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourceLoadManager>>             mResourceLoadManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePackManager>>                mResourceManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>>               mLinkedAssetValidator;
+    ::ll::TypedStorage<4, 140, ::VolumeMultipliers<5>>                                          mMusicVolumeMultipliers;
+    ::ll::TypedStorage<4, 4, float>                                                             mMainVolume;
+    ::ll::TypedStorage<4, 4, float>                                                             mTTSVolume;
+    ::ll::TypedStorage<1, 1, bool>                                                              mMuted;
+    ::ll::TypedStorage<1, 1, bool>                                                              mFadeToStopMusic;
+    ::ll::TypedStorage<1, 1, bool>                                                              mSoundsReady;
+    ::ll::TypedStorage<8, 392, ::SoundMapping>                                                  mSounds;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::Audio::OnlineAudioStreamManager>> mOnlineStreamManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StreamingAudioExperiment> const>               mStreamingExperiment;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Core::FileSystem>>                   mFileSystem;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>>                        mFileAccess;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                                mDataPath;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::SoundLoadScheduler>> const>    mSoundLoadScheduler;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                mResourceLoadManagerMutex;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourceLoadManager>> mResourceLoadManager;
     // NOLINTEND
 
 public:
@@ -137,9 +140,9 @@ public:
 
     virtual uint64 playUI(::std::string const& name, float volume, float pitch) /*override*/;
 
-    virtual void playMusic(::std::string const& eventName, float volume, uint& playlistIndex) /*override*/;
+    virtual void playMusic(::PlayMusicOptions options) /*override*/;
 
-    virtual void playMusic(::std::string const& eventName, float volume) /*override*/;
+    virtual void playMusic(::PlayMusicOptions options, uint& playlistIndex) /*override*/;
 
     virtual bool isLoadingMusic() const /*override*/;
 
@@ -170,6 +173,8 @@ public:
 
     virtual bool isPlayingSound(::ServerSoundHandle serverSoundHandle) const /*override*/;
 
+    virtual bool wasSoundStoppedExplicitly(::ServerSoundHandle serverSoundHandle) const /*override*/;
+
     virtual uint64 playAttached(
         ::std::string const&                                eventName,
         ::std::function<void(::SoundInstanceProperties&)>&& getSoundProperties
@@ -193,8 +198,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
-    _tryPlayMusicFromStreamingExperiment(::std::string const& eventName, ::SoundItem const& soundItem, float volume);
+    MCAPI void _playMusic(::PlayMusicOptions options, ::SoundItem soundItem);
 
     MCAPI void load(
         bool,
@@ -276,9 +280,9 @@ public:
 
     MCAPI uint64 $playUI(::std::string const& name, float volume, float pitch);
 
-    MCAPI void $playMusic(::std::string const& eventName, float volume, uint& playlistIndex);
+    MCAPI void $playMusic(::PlayMusicOptions options);
 
-    MCAPI void $playMusic(::std::string const& eventName, float volume);
+    MCAPI void $playMusic(::PlayMusicOptions options, uint& playlistIndex);
 
     MCAPI bool $isLoadingMusic() const;
 
@@ -308,6 +312,8 @@ public:
     MCAPI bool $isPlayingSound(::Core::Path const& soundName) const;
 
     MCAPI bool $isPlayingSound(::ServerSoundHandle serverSoundHandle) const;
+
+    MCAPI bool $wasSoundStoppedExplicitly(::ServerSoundHandle serverSoundHandle) const;
 
     MCAPI uint64 $playAttached(
         ::std::string const&                                eventName,

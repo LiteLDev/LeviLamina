@@ -55,7 +55,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
 
-    MCAPI ::std::string const& getCommentInProgressBody() const;
+    MCFOLD ::std::string const& getCommentInProgressBody() const;
 
     MCFOLD ::Realms::Stories::RealmMemberFilterOption& getCurrentMemberFilterOption() const;
 

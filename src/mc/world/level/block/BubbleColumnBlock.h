@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BubbleColumnBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
@@ -85,8 +81,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BubbleColumnBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -104,12 +98,6 @@ public:
     MCAPI static bool shouldDragDown(::Block const& block);
 
     MCAPI static void spawnBubbles(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

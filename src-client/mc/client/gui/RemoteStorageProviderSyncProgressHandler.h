@@ -32,7 +32,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::RemoteStorageProviderSyncProgressHandler::State>                  mState;
+        ::ll::TypedStorage<4, 4, ::std::atomic<::RemoteStorageProviderSyncProgressHandler::State>>   mState;
         ::ll::TypedStorage<8, 72, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>> mSyncSuccess;
         ::ll::TypedStorage<
             8,

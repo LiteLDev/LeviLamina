@@ -22,10 +22,6 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class SoulSandBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    SoulSandBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -51,8 +47,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SoulSandBlock(::std::string const& nameId, int id);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
@@ -66,12 +60,6 @@ public:
     MCAPI static ::AABB& BLOCK_AABB();
 
     MCAPI static ::BaseGameVersion const& SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

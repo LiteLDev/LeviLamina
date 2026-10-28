@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class Tag;
 namespace cereal { struct NullType; }
 // clang-format on
@@ -113,8 +112,6 @@ public:
     MCNAPI NBTSchemaWriter();
 
     MCNAPI bool _serializeTag(::std::unique_ptr<::Tag> tag);
-
-    MCNAPI ::CompoundTag getSavedCompoundTag();
     // NOLINTEND
 
 public:

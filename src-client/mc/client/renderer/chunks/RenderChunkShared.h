@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/chunks/VisibilityNode.h"
+#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/minecraft_renderer/framebuilder/dragon/RenderMetadata.h"
 #include "mc/world/level/ActorBlockSyncMessage.h"
 #include "mc/world/level/BlockActorBlockSyncMessage.h"
@@ -16,6 +17,7 @@ class RenderChunkBuilder;
 class RenderChunkGeometry;
 class SubChunkPos;
 class Vec3;
+namespace RenderChunkVertexStreaming { class RenderChunkVertexStreamPlanRegistry; }
 namespace mce { struct BufferResourceService; }
 // clang-format on
 
@@ -84,7 +86,7 @@ public:
         mEntityBlockMessageList;
     ::ll::TypedStorage<8, 24, ::std::vector<::RenderChunkShared::BlockActorBlockSyncMessageWithVersion>>
                                                         mBlockEntityBlockMessageList;
-    ::ll::TypedStorage<8, 64, ::dragon::RenderMetadata> mRenderMetadata;
+    ::ll::TypedStorage<8, 56, ::dragon::RenderMetadata> mRenderMetadata;
     // NOLINTEND
 
 public:
@@ -96,14 +98,24 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RenderChunkShared(::SubChunkPos const& rcp);
 
-    MCAPI void
-    endRebuild(::RenderChunkBuilder& builder, ::mce::BufferResourceService& bufferResourceService, bool useSplitStream);
+    MCAPI void addBlockEntityBlockSyncMessages(::buffer_span<::BlockActorBlockSyncMessage> syncMsgList);
+
+    MCAPI void addEntityBlockSyncMessages(::buffer_span<::ActorBlockSyncMessage> syncMsgList);
+
+    MCAPI void endRebuild(
+        ::RenderChunkBuilder&                                                    builder,
+        ::mce::BufferResourceService&                                            bufferResourceService,
+        ::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry const& renderChunkVertexStreamPlanRegistry,
+        bool                                                                     useSplitStream
+    );
 
     MCAPI ::std::vector<::BlockActorBlockSyncMessage> getAndPruneBlockEntityBlockSyncMessages(uchar version);
 
     MCAPI ::std::vector<::ActorBlockSyncMessage> getAndPruneEntityBlockSyncMessages(uchar version);
 
     MCAPI void rebuildVisbility(::BlockSource& region);
+
+    MCAPI void setVisibilityToEmptyAndSkyLit();
 
     MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
 

@@ -6,6 +6,7 @@
 #include "mc/client/gui/interface/IUIDefRepository.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/json/Value.h"
+#include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/SharedLock.h"
 #include "mc/resources/ResourceLoadType.h"
 
@@ -15,7 +16,8 @@ class ItemRegistryRef;
 class PackReport;
 class ResourceLoadManager;
 class ResourceLocation;
-class ResourcePackStack;
+class ResourcePackLoader;
+struct PackInstanceId;
 // clang-format on
 
 class UIDefRepository : public ::IUIDefRepository {
@@ -54,7 +56,7 @@ public:
 
     using DefEntriesPtr = ::std::shared_ptr<::std::vector<::UIDefRepository::DefEntry>>;
 
-    using ReportsPtr = ::std::shared_ptr<::std::vector<::PackReport>>;
+    using ReportsPtr = ::std::shared_ptr<::std::unordered_map<::PackInstanceId, ::PackReport>>;
 
     using UIDefNamespaceMap = ::std::unordered_map<::std::string, ::UIDefRepository::UIDefNamespace>;
 
@@ -75,15 +77,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void loadDefsList(
-        ::ResourceLocation const&                           defsListFile,
-        ::ResourcePackStack const&                          packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&                                                                      defsListFile,
+        ::ResourcePackLoader const&                                                                    packLoader,
+        ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     ) /*override*/;
 
     virtual void validateDefEntries(
-        ::ResourceLocation const&                           defsListFile,
-        ::std::shared_ptr<::ResourcePackStack const>        packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&                                                                      defsListFile,
+        ::ResourcePackLoader const&                                                                    packLoader,
+        ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     ) const /*override*/;
 
     virtual ::Json::Value const& findDef(::std::string const& defNamespace, ::std::string const& defName) const
@@ -121,11 +123,11 @@ public:
     MCAPI void _applyGlobalColorFormat();
 
     MCAPI void _collectAllDefEntries(
-        ::ResourceLoadType                                            loadType,
-        ::ResourceLocation const&                                     defsListFile,
-        ::ResourcePackStack const&                                    packStack,
-        ::std::shared_ptr<::std::vector<::UIDefRepository::DefEntry>> allDefEntries,
-        ::std::shared_ptr<::std::vector<::PackReport>>                packReports
+        ::ResourceLoadType                                                      loadType,
+        ::ResourceLocation const&                                               defsListFile,
+        ::ResourcePackLoader const&                                             packLoader,
+        ::std::shared_ptr<::std::vector<::UIDefRepository::DefEntry>>           allDefEntries,
+        ::std::shared_ptr<::std::unordered_map<::PackInstanceId, ::PackReport>> packReports
     ) const;
 
     MCAPI void _forEachControl(
@@ -145,15 +147,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $loadDefsList(
-        ::ResourceLocation const&                           defsListFile,
-        ::ResourcePackStack const&                          packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&                                                                      defsListFile,
+        ::ResourcePackLoader const&                                                                    packLoader,
+        ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     );
 
     MCAPI void $validateDefEntries(
-        ::ResourceLocation const&                           defsListFile,
-        ::std::shared_ptr<::ResourcePackStack const>        packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&                                                                      defsListFile,
+        ::ResourcePackLoader const&                                                                    packLoader,
+        ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     ) const;
 
     MCAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;

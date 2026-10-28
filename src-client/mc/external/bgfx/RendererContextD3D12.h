@@ -184,6 +184,7 @@ public:
     ::ll::TypedStorage<8, 8, void*>                                                           m_swapchainWaitableObject;
     ::ll::TypedStorage<8, 8, ::IDXGISwapChain3*>                                              m_swapChain;
     ::ll::TypedStorage<8, 8, ::ID3D12Resource*>                                               m_msaaRenderTarget;
+    ::ll::TypedStorage<4, 4, uint>                                                            m_numRecordingThreads;
     ::ll::TypedStorage<8, 8, int64>                                                           m_presentElapsed;
     ::ll::TypedStorage<2, 2, ushort>                                                          m_numWindows;
     ::ll::TypedStorage<2, 256, ::bgfx::FrameBufferHandle[128]>                                m_windows;

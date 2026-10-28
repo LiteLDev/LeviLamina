@@ -23,6 +23,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>>   mDurationNormal;
     ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>>   mDurationHard;
     ::ll::TypedStorage<4, 4, int>                                 mAmplifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mEffects;
     ::ll::TypedStorage<1, 1, bool>                                mDisplayOnScreenTextureAnimation;
     ::ll::TypedStorage<1, 1, bool>                                mIsCounterPausedThisTick;
     ::ll::TypedStorage<1, 1, bool>                                mAmbient;
@@ -33,6 +34,8 @@ public:
 
 public:
     // prevent constructor by default
+    MobEffectInstance& operator=(MobEffectInstance const&);
+    MobEffectInstance(MobEffectInstance const&);
     MobEffectInstance();
 
 public:
@@ -42,9 +45,17 @@ public:
 
     MCAPI ::std::string getDisplayName() const;
 
+    MCAPI ::MobEffectInstance& operator=(::MobEffectInstance&&);
+
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
+    MCAPI bool tick();
+
+    MCAPI void update(::MobEffectInstance const& takeOver);
+
     MCAPI void updateEffects(::Actor& mob) const;
+
+    MCAPI ~MobEffectInstance();
     // NOLINTEND
 
 public:
@@ -67,5 +78,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(uint id, ::EffectDuration duration);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

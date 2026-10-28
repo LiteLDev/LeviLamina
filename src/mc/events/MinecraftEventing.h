@@ -23,6 +23,7 @@
 #include "mc/deps/application/crash_manager/CrashTelemetryProcessor.h"
 #include "mc/deps/application/storage_migration/StorageMigrationType.h"
 #include "mc/deps/application/storage_migration/WorldRecoveryTelemetryHandler.h"
+#include "mc/deps/core/file/FileStorageArea.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
@@ -131,11 +132,14 @@ struct ResourceProcessingPerfData;
 struct SplitScreenUpdatedEventData;
 struct StackStats;
 struct WebviewDownloadInfo;
+struct WorldSaveAndExitPackTelemetryData;
+struct WorldSaveAndExitStorageTelemetryData;
 namespace Bedrock { class SessionInfo; }
 namespace Bedrock { struct CrashUploadStatus; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
 namespace Bedrock { struct WorldRecoveryTelemetryEvent; }
+namespace Bedrock::ChunkDiag { struct CombinedChunkHealthScores; }
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::Profiling::Orchestrator { struct ProfilerCaptureParams; }
 namespace Bedrock::Profiling::Orchestrator { struct ProfilerMetadataParams; }
@@ -158,6 +162,7 @@ namespace Social::Events { class PlayerTelemetry; }
 namespace Social::Events { class Property; }
 namespace Social::Events { class ScreenFlow; }
 namespace Social::Events { class TelemetryHeartbeat; }
+namespace Social::Events { struct OreUIScreenTrackingData; }
 namespace Social::Events { struct ServerTelemetryData; }
 namespace Webview { struct TelemetryCommonProperties; }
 namespace dragon::texturestreaming { struct TextureStreamingPerformanceTelemetryData; }
@@ -270,7 +275,8 @@ public:
         MonsterHunter                   = 124,
         Diamonds                        = 125,
         PlethoraOfCats                  = 126,
-        Count                           = 127,
+        WhatGoesAroundComesAround       = 127,
+        Count                           = 128,
     };
 
     enum class BlockPlacementMethod : int {
@@ -736,6 +742,15 @@ public:
 
     virtual void fireEventEduDemoConversion(::edu::Role role, ::LastClickedSource lastClickedSource) /*override*/;
 
+    virtual void fireEventCloudSpoAuthenticationEdu(
+        ::std::string const&             cloudWorldCorrelationId,
+        ::EduCloudUtils::Operation const spoTokenAcquisitionOperation,
+        bool const                       spoTokenAcquisitionSucceeded,
+        ::std::optional<int64>           spoTokenTimeToExpiry,
+        ::std::optional<int64>           spoTokenAge,
+        ::std::optional<bool>            spoTokenAcquiredIsNew
+    ) /*override*/;
+
     virtual void fireEventCloudOperationStartedEdu(
         ::EduCloudUtils::Operation const      operation,
         ::EduCloud::CloudItemType const       cloudItemType,
@@ -843,12 +858,22 @@ public:
 
     virtual void fireEventRenderingSizeChanged() /*override*/;
 
-    virtual void
-    fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode, uint64 freeSpace) /*override*/;
+    virtual void fireEventDiskStatus(
+        ::DiskStatus              status,
+        ::Core::LevelStorageState errorCode,
+        uint64                    freeSpace,
+        int64 const               remoteRemainingStorageB
+    ) /*override*/;
 
     virtual void fireEventStorageAreaFull(
         ::std::string const&                            areaPath,
         ::std::vector<::Bedrock::DirectoryEntry> const& diskSizeData
+    ) /*override*/;
+
+    virtual void fireEventUserStorageAreaSpaceInfo(
+        ::IMinecraftEventing::UserStorageAreaSpaceInfoStatus spaceInfoStatus,
+        ::std::function<uint64()>                            worldsSizeOnDiskFn,
+        ::Core::FileStorageArea::StorageAreaSpaceInfo        storageAreaSpaceInfo
     ) /*override*/;
 
     virtual void fireEventAppPaused() /*override*/;
@@ -1155,11 +1180,16 @@ public:
         int                                                                                         fpsThrottle
     ) /*override*/;
 
+    virtual void fireEventProfilerUsed(::std::string_view const profilerName) /*override*/;
+
     virtual void
     fireEventProfilerMetadata(::Bedrock::Profiling::Orchestrator::ProfilerMetadataParams const& params) /*override*/;
 
     virtual void
     fireEventProfilerCapture(::Bedrock::Profiling::Orchestrator::ProfilerCaptureParams const& params) /*override*/;
+
+    virtual void
+    fireEventChunkProfilerCapture(::Bedrock::ChunkDiag::CombinedChunkHealthScores const& scores) /*override*/;
 
     virtual void fireTextureStreamingPerf(
         ::dragon::texturestreaming::TextureStreamingPerformanceTelemetryData const& perfData
@@ -1191,12 +1221,20 @@ public:
         uint64 numLevels,
         uint64 totalSizeMB,
         uint64 largestLevelMB,
-        uint64 smallestLevelMB
+        uint64 smallestLevelMB,
+        uint64 totalRemoteStorageMB,
+        uint64 avgRemoteStorageMB
     ) /*override*/;
 
     virtual void fireEventStorage(int state, ::std::string const& extra) /*override*/;
 
     virtual void fireEventStorageReport(::std::string const& report) /*override*/;
+
+    virtual void fireEventWorldSaveAndExit(
+        ::LevelStorageEventingContext const&                      context,
+        ::WorldSaveAndExitStorageTelemetryData const&             storageData,
+        ::std::vector<::WorldSaveAndExitPackTelemetryData> const& packs
+    ) /*override*/;
 
     virtual void fireEventPlayerMessageSay(::std::string const& fromName, ::std::string const& message) /*override*/;
 
@@ -1871,6 +1909,11 @@ public:
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer
     ) /*override*/;
 
+    virtual void fireEventOreUIScreenTracking(
+        uint const&                                      userId,
+        ::Social::Events::OreUIScreenTrackingData const& trackingData
+    ) /*override*/;
+
     virtual void fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,
         ::std::string const& action,
@@ -2460,8 +2503,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static void fireEventPortalUsed(::Player* player, ::DimensionType dimToId, ::DimensionType dimFromId);
 
-    MCAPI static void fireEventPotionBrewed(::Player* player, ::ItemDescriptor const& item, uint itemCount);
-
     MCAPI static void fireEventSignedBookOpened(::Player* player, bool isAuthor);
 #endif
 
@@ -2892,6 +2933,15 @@ public:
 
     MCAPI void $fireEventEduDemoConversion(::edu::Role role, ::LastClickedSource lastClickedSource);
 
+    MCAPI void $fireEventCloudSpoAuthenticationEdu(
+        ::std::string const&             cloudWorldCorrelationId,
+        ::EduCloudUtils::Operation const spoTokenAcquisitionOperation,
+        bool const                       spoTokenAcquisitionSucceeded,
+        ::std::optional<int64>           spoTokenTimeToExpiry,
+        ::std::optional<int64>           spoTokenAge,
+        ::std::optional<bool>            spoTokenAcquiredIsNew
+    );
+
     MCAPI void $fireEventCloudOperationStartedEdu(
         ::EduCloudUtils::Operation const      operation,
         ::EduCloud::CloudItemType const       cloudItemType,
@@ -3011,11 +3061,22 @@ public:
 
     MCAPI void $fireEventRenderingSizeChanged();
 
-    MCAPI void $fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode, uint64 freeSpace);
+    MCAPI void $fireEventDiskStatus(
+        ::DiskStatus              status,
+        ::Core::LevelStorageState errorCode,
+        uint64                    freeSpace,
+        int64 const               remoteRemainingStorageB
+    );
 
     MCAPI void $fireEventStorageAreaFull(
         ::std::string const&                            areaPath,
         ::std::vector<::Bedrock::DirectoryEntry> const& diskSizeData
+    );
+
+    MCAPI void $fireEventUserStorageAreaSpaceInfo(
+        ::IMinecraftEventing::UserStorageAreaSpaceInfoStatus spaceInfoStatus,
+        ::std::function<uint64()>                            worldsSizeOnDiskFn,
+        ::Core::FileStorageArea::StorageAreaSpaceInfo        storageAreaSpaceInfo
     );
 
     MCAPI void $fireEventAppPaused();
@@ -3369,9 +3430,13 @@ public:
     );
 #endif
 
+    MCAPI void $fireEventProfilerUsed(::std::string_view const profilerName);
+
     MCAPI void $fireEventProfilerMetadata(::Bedrock::Profiling::Orchestrator::ProfilerMetadataParams const& params);
 
     MCAPI void $fireEventProfilerCapture(::Bedrock::Profiling::Orchestrator::ProfilerCaptureParams const& params);
+
+    MCAPI void $fireEventChunkProfilerCapture(::Bedrock::ChunkDiag::CombinedChunkHealthScores const& scores);
 
     MCAPI void
     $fireTextureStreamingPerf(::dragon::texturestreaming::TextureStreamingPerformanceTelemetryData const& perfData);
@@ -3398,11 +3463,23 @@ public:
     MCAPI void $fireEventAndroidHelpRequest();
 
 #ifdef LL_PLAT_S
-    MCFOLD void
-    $fireEventWorldFilesListed(uint64 numLevels, uint64 totalSizeMB, uint64 largestLevelMB, uint64 smallestLevelMB);
+    MCFOLD void $fireEventWorldFilesListed(
+        uint64 numLevels,
+        uint64 totalSizeMB,
+        uint64 largestLevelMB,
+        uint64 smallestLevelMB,
+        uint64 totalRemoteStorageMB,
+        uint64 avgRemoteStorageMB
+    );
 #else // LL_PLAT_C
-    MCAPI void
-    $fireEventWorldFilesListed(uint64 numLevels, uint64 totalSizeMB, uint64 largestLevelMB, uint64 smallestLevelMB);
+    MCAPI void $fireEventWorldFilesListed(
+        uint64 numLevels,
+        uint64 totalSizeMB,
+        uint64 largestLevelMB,
+        uint64 smallestLevelMB,
+        uint64 totalRemoteStorageMB,
+        uint64 avgRemoteStorageMB
+    );
 #endif
 
 #ifdef LL_PLAT_S
@@ -3416,6 +3493,12 @@ public:
 #else // LL_PLAT_C
     MCAPI void $fireEventStorageReport(::std::string const& report);
 #endif
+
+    MCAPI void $fireEventWorldSaveAndExit(
+        ::LevelStorageEventingContext const&                      context,
+        ::WorldSaveAndExitStorageTelemetryData const&             storageData,
+        ::std::vector<::WorldSaveAndExitPackTelemetryData> const& packs
+    );
 
     MCAPI void $fireEventPlayerMessageSay(::std::string const& fromName, ::std::string const& message);
 
@@ -4078,6 +4161,9 @@ public:
         uint const&                                                                                 userId,
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer
     );
+
+    MCAPI void
+    $fireEventOreUIScreenTracking(uint const& userId, ::Social::Events::OreUIScreenTrackingData const& trackingData);
 
     MCAPI void $fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,

@@ -29,13 +29,12 @@ public:
 public:
     // prevent constructor by default
     RouteDataParser& operator=(RouteDataParser const&);
+    RouteDataParser(RouteDataParser const&);
     RouteDataParser();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouteDataParser(::OreUI::RouteDataParser const&);
-
     MCAPI RouteDataParser(
         ::ResourcePackManager const&                             packManager,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&      fileAccess,
@@ -49,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RouteDataParser const&);
-
     MCAPI void* $ctor(
         ::ResourcePackManager const&                             packManager,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&      fileAccess,

@@ -14,6 +14,12 @@ MCNAPI ::HashedString const& COMPONENT_GROUPS();
 
 MCNAPI ::HashedString const& DEBUG_BLOCK();
 
+MCNAPI ::HashedString const& EAS_ATTRIBUTE_LAYERS();
+
+MCNAPI ::HashedString const& EAS_TIMELINE_CONFIGURATION();
+
+MCNAPI ::HashedString const& EAS_TIMELINE_RUNTIME_STATE();
+
 MCNAPI ::HashedString const& EVENTS();
 
 MCNAPI ::HashedString const& GOALS();

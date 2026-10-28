@@ -14,17 +14,12 @@ class CompoundTag;
 class LevelChunk;
 class Vec3;
 class WorldGenerator;
-struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
 
 class OverworldDimension : public ::Dimension {
-public:
-    // prevent constructor by default
-    OverworldDimension();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -55,21 +50,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit OverworldDimension(::DerivedDimensionArguments&& args);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
     MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
@@ -82,7 +65,7 @@ public:
 
     MCAPI short $getCloudHeight() const;
 
-    MCFOLD ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
     MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 

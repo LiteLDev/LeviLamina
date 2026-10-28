@@ -35,6 +35,8 @@ public:
 
     virtual ::std::string getFormattedHoverText(::ItemStackBase const& item, bool const showCategory) /*override*/;
 
+    virtual ::std::string getFilteredItemName(::ItemStackBase const& item) /*override*/;
+
     virtual bool achievementsWillBeDisabledOnLoad() /*override*/;
 
     virtual bool hasAchievementsDisabled() /*override*/;
@@ -94,6 +96,8 @@ public:
     MCAPI bool $hasCommandsEnabled() const;
 
     MCAPI ::std::string $getFormattedHoverText(::ItemStackBase const& item, bool const showCategory);
+
+    MCAPI ::std::string $getFilteredItemName(::ItemStackBase const& item);
 
     MCAPI bool $achievementsWillBeDisabledOnLoad();
 

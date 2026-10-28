@@ -26,7 +26,7 @@ public:
     ::ll::UntypedStorage<8, 56> mUnkee374a;
     ::ll::UntypedStorage<8, 32> mUnk7f19e8;
     ::ll::UntypedStorage<8, 32> mUnka60262;
-    ::ll::UntypedStorage<8, 64> mUnk8d8c35;
+    ::ll::UntypedStorage<8, 64> mUnkb97d57;
     ::ll::UntypedStorage<1, 1>  mUnk5799dd;
     // NOLINTEND
 
@@ -51,12 +51,13 @@ public:
 
     virtual bool isTrusted() const /*override*/;
 
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+    virtual bool hasAsset(::Core::PathView const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
         /*override*/;
 
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+    virtual bool
+    getAsset(::Core::PathView const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
     virtual void forEachIn(
@@ -88,18 +89,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI DirectoryPackAccessStrategy(
-        ::ResourceLocation const&                                  packLocation,
-        bool                                                       recurse,
-        ::std::function<::std::string(::Core::Path const&)>        reader,
-        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+        ::ResourceLocation const&                                                                   packLocation,
+        bool                                                                                        recurse,
+        ::std::function<::Bedrock::Result<::std::string>(::Core::PathView const&, ::std::string&&)> reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>>                                  handlePool
     );
 
     MCNAPI DirectoryPackAccessStrategy(
-        ::std::unique_ptr<::PackAssetSet>&&                        assetSet,
-        ::ResourceLocation const&                                  packLocation,
-        bool                                                       recurse,
-        ::std::function<::std::string(::Core::Path const&)>        reader,
-        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+        ::std::unique_ptr<::PackAssetSet>&&                                                         assetSet,
+        ::ResourceLocation const&                                                                   packLocation,
+        bool                                                                                        recurse,
+        ::std::function<::Bedrock::Result<::std::string>(::Core::PathView const&, ::std::string&&)> reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>>                                  handlePool
     );
     // NOLINTEND
 
@@ -107,18 +108,18 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::ResourceLocation const&                                  packLocation,
-        bool                                                       recurse,
-        ::std::function<::std::string(::Core::Path const&)>        reader,
-        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+        ::ResourceLocation const&                                                                   packLocation,
+        bool                                                                                        recurse,
+        ::std::function<::Bedrock::Result<::std::string>(::Core::PathView const&, ::std::string&&)> reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>>                                  handlePool
     );
 
     MCNAPI void* $ctor(
-        ::std::unique_ptr<::PackAssetSet>&&                        assetSet,
-        ::ResourceLocation const&                                  packLocation,
-        bool                                                       recurse,
-        ::std::function<::std::string(::Core::Path const&)>        reader,
-        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>> handlePool
+        ::std::unique_ptr<::PackAssetSet>&&                                                         assetSet,
+        ::ResourceLocation const&                                                                   packLocation,
+        bool                                                                                        recurse,
+        ::std::function<::Bedrock::Result<::std::string>(::Core::PathView const&, ::std::string&&)> reader,
+        ::gsl::not_null<::std::shared_ptr<::Core::FileHandlePool>>                                  handlePool
     );
     // NOLINTEND
 
@@ -141,11 +142,12 @@ public:
 
     MCNAPI bool $isTrusted() const;
 
-    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    MCNAPI bool $hasAsset(::Core::PathView const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
     MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
-    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+    MCNAPI bool
+    $getAsset(::Core::PathView const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
     MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,

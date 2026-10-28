@@ -13,7 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
-struct GoalId;
 // clang-format on
 
 class PanicGoal : public ::BaseGoal {
@@ -61,35 +60,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PanicGoal(
-        ::Mob&                                                 mob,
-        ::std::string                                          name,
-        ::GoalId const&                                        goalId,
-        float                                                  speedMultiplier,
-        bool                                                   ignoreMobDamage,
-        ::SharedTypes::Legacy::LevelSoundEvent                 sound,
-        ::FloatRange                                           soundIntervalRange,
-        bool                                                   forceUse,
-        bool                                                   preferWater,
-        ::std::vector<::SharedTypes::Legacy::ActorDamageCause> damageCauses
-    );
-    // NOLINTEND
+    MCAPI bool _shouldTryToMoveAway();
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                                 mob,
-        ::std::string                                          name,
-        ::GoalId const&                                        goalId,
-        float                                                  speedMultiplier,
-        bool                                                   ignoreMobDamage,
-        ::SharedTypes::Legacy::LevelSoundEvent                 sound,
-        ::FloatRange                                           soundIntervalRange,
-        bool                                                   forceUse,
-        bool                                                   preferWater,
-        ::std::vector<::SharedTypes::Legacy::ActorDamageCause> damageCauses
-    );
+    MCAPI ::std::optional<::Vec3> _tryGeneratePathEnd() const;
     // NOLINTEND
 
 public:
@@ -101,12 +74,18 @@ public:
 
     MCAPI void $stop();
 
-    MCFOLD bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
     MCAPI void $tick();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

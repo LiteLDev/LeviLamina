@@ -44,8 +44,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mLevelDataWrapper;
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
+    ::ll::TypedStorage<8, 1712, ::LevelDataWrapper>                                       mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1712, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
     ::ll::TypedStorage<8, 8, ::TrialManager const&>                                       mTrialManager;
     ::ll::TypedStorage<8, 2472, ::WorldCreationHelper>                                    mWorldCreator;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataBindings;

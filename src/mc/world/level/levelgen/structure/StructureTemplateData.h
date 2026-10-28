@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/chunk/NeighborAwareBlockUpgradeVersionType.h"
+#include "mc/world/level/levelgen/structure/StructureCompression.h"
 #include "mc/world/level/levelgen/structure/StructureLoadResult.h"
 
 // auto generated forward declare list
@@ -47,27 +48,11 @@ public:
 
     MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseFormatVersion(::CompoundTag const& tag);
-
-    MCAPI ::StructureLoadResult _parseNeighborAwareBlockUpgradeVersion(::CompoundTag const& tag);
-
     MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
-
-    MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
-
-    MCAPI ::CompoundTag const* _parseStructureTag(::CompoundTag const& tag);
-
-    MCAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
-
-    MCAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
-
-    MCAPI void _saveEntities(::CompoundTag& structureTag) const;
-
-    MCAPI void _savePalettes(::CompoundTag& structureTag) const;
 
     MCAPI void _saveSize(::CompoundTag& tag) const;
 
-    MCAPI void _saveStructureTag(::CompoundTag& tag) const;
+    MCAPI bool _saveStructureTag(::CompoundTag& tag, ::StructureCompression compression) const;
 
     MCAPI void _saveStructureWorldOrigin(::CompoundTag& tag) const;
 
@@ -83,7 +68,7 @@ public:
 
     MCAPI bool operator==(::StructureTemplateData const& other) const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> save(::StructureCompression compression) const;
 
     MCAPI void setBlockIndices(::std::vector<int> blockIndices);
     // NOLINTEND
@@ -91,14 +76,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::CompoundTag const* _parseStructureTag(
+        ::CompoundTag const&              tag,
+        ::StructureCompression            compression,
+        ::std::unique_ptr<::CompoundTag>& decompressedStructure
+    );
+
     MCAPI static bool _readBlockIndexArray(::Tag const& tag, int formatVersion, ::std::vector<int>& blockIndices);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& CURRENT_FORMAT_VERSION();
-
     MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
 
     MCAPI static int const& NO_BLOCK_INDEX_VALUE();

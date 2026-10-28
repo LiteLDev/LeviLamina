@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
@@ -69,7 +70,8 @@ public:
 
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
-    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void
+    use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot) /*override*/;
 
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,
@@ -115,7 +117,7 @@ public:
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player);
+    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
     MCAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,

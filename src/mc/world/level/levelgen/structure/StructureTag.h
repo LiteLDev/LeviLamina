@@ -5,17 +5,13 @@
 namespace StructureTag {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& BLOCK_INDICES();
-
+#ifdef LL_PLAT_C
 MCAPI ::std::string const& BLOCK_PALETTE();
+#endif
 
 MCAPI ::std::string const& FORMAT_VERSION();
 
-MCAPI ::std::string const& SIZE();
-
-MCAPI ::std::string const& STRUCTURE();
-
-MCAPI ::std::string const& STRUCTURE_WORLD_ORIGIN();
+MCAPI ::std::string const& NEIGHBOR_CHANGED_QUEUE_SEQUENCE();
 // NOLINTEND
 
 } // namespace StructureTag

@@ -39,6 +39,12 @@ public:
             ::SharedTypes::v1_26_30::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset const& other
         ) const;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::string_view const& NAME();
+        // NOLINTEND
     };
 
 public:

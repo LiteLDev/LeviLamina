@@ -14,6 +14,7 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/utilities/ViewEachWithBlockSourceArgs.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,6 +30,7 @@ struct MonsterFlagComponent;
 struct NoActionTimeComponent;
 struct OffsetsComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 struct MonsterAiStepSystem
@@ -45,7 +47,33 @@ struct MonsterAiStepSystem
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
+    // MonsterAiStepSystem inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
     // MonsterAiStepSystem inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            88,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::ActorMovementTickNeededComponent, ::MonsterFlagComponent>,
+                ::AABBShapeComponent const,
+                ::OffsetsComponent const,
+                ::StateVectorComponent const,
+                ::NoActionTimeComponent>>
+                                                                                                       mView;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>>>     mBlazeView;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>>> mLavaSlimeView;
+        ::ll::TypedStorage<8, 32, ::ViewEachWithBlockSourceArgs>                                       mBlockSource;
+        // NOLINTEND
+    };
+
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
         ::Filter<
             ::ActorMovementTickNeededComponent,
@@ -58,6 +86,12 @@ public:
         ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
         ::GlobalWrite<>,
         ::EntityFactoryT<>>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MonsterAiStepSystem::Views>> mViews;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -76,20 +110,24 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
     ) /*override*/;
+
+    virtual ~MonsterAiStepSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createSystem();
+
     MCAPI static void tickMonsterAiStep(
-        ::StrictEntityContext const&                                        entity,
-        ::AABBShapeComponent const&                                         aabbShapeComponent,
-        ::OffsetsComponent const&                                           offsetsComponent,
-        ::StateVectorComponent const&                                       stateVectorComponent,
-        ::NoActionTimeComponent&                                            noActionTimeComponent,
-        ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>>     blazeView,
-        ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> lavaSlimeView,
-        ::IConstBlockSource const&                                          region
+        ::StrictEntityContext const&                                               entity,
+        ::AABBShapeComponent const&                                                aabbShapeComponent,
+        ::OffsetsComponent const&                                                  offsetsComponent,
+        ::StateVectorComponent const&                                              stateVectorComponent,
+        ::NoActionTimeComponent&                                                   noActionTimeComponent,
+        ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>> const&     blazeView,
+        ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> const& lavaSlimeView,
+        ::IConstBlockSource const&                                                 region
     );
     // NOLINTEND
 
@@ -112,11 +150,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

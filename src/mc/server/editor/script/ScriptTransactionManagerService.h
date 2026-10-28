@@ -12,7 +12,6 @@ namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -47,10 +46,6 @@ public:
     );
 
     MCNAPI ::Scripting::Error _getInvalidTransactionServiceError() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> discardPendingTransaction(::mce::UUID const& uuid);
-
-    MCNAPI ::Scripting::Result_deprecated<void> finalizePendingTransaction(::mce::UUID const& uuid);
 
     MCNAPI ::Editor::ScriptModule::ScriptTransactionManagerService&
     operator=(::Editor::ScriptModule::ScriptTransactionManagerService&& other);

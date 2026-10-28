@@ -15,6 +15,9 @@
 // clang-format off
 class Player;
 struct PlayerClosedContainerEvent;
+struct PlayerCraftRecipeAfterEvent;
+struct PlayerCursorItemGrabEvent;
+struct PlayerCursorItemReleaseEvent;
 struct PlayerDimensionChangeAfterEvent;
 struct PlayerEmoteEvent;
 struct PlayerGameModeChangeEvent;
@@ -70,6 +73,10 @@ public:
 
     virtual ::EventResult onEvent(::PlayerInventoryItemChangeEvent const& e) /*override*/;
 
+    virtual ::EventResult onEvent(::PlayerCursorItemGrabEvent const& e) /*override*/;
+
+    virtual ::EventResult onEvent(::PlayerCursorItemReleaseEvent const& e) /*override*/;
+
     virtual ::EventResult onEvent(::PlayerSwingStartEvent const& e) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& nameTagEvent) /*override*/;
@@ -93,6 +100,8 @@ public:
     virtual ::EventResult onEvent(::PlayerOpenedContainerEvent const& e) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerClosedContainerEvent const& e) /*override*/;
+
+    virtual ::EventResult onEvent(::PlayerCraftRecipeAfterEvent const& e) /*override*/;
     // NOLINTEND
 
 public:
@@ -111,6 +120,10 @@ public:
     MCAPI ::EventResult $onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent);
 
     MCAPI ::EventResult $onEvent(::PlayerInventoryItemChangeEvent const& e);
+
+    MCAPI ::EventResult $onEvent(::PlayerCursorItemGrabEvent const& e);
+
+    MCAPI ::EventResult $onEvent(::PlayerCursorItemReleaseEvent const& e);
 
     MCAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
 
@@ -135,6 +148,8 @@ public:
     MCAPI ::EventResult $onEvent(::PlayerOpenedContainerEvent const& e);
 
     MCAPI ::EventResult $onEvent(::PlayerClosedContainerEvent const& e);
+
+    MCAPI ::EventResult $onEvent(::PlayerCraftRecipeAfterEvent const& e);
 
 
     // NOLINTEND

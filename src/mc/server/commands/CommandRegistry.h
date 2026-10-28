@@ -672,6 +672,7 @@ public:
     ::std::function<void(::Packet const&)>                   mNetworkUpdateCallback;
     ScoreboardScoreAccessor                                  mGetScoreForObjective;
     bool                                                     mIsEduMode;
+    bool                                                     mIsCodeBuilderEnabled;
     ::std::vector<::CommandRegistry::ParseRule>              mRules;
     ::std::map<uint, ::CommandRegistry::ParseTable>          mParseTables;
     ::std::vector<::CommandRegistry::OptionalParameterChain> mOptionals;
@@ -910,7 +911,8 @@ public:
         ::std::string const&            commandLine,
         ::CommandPermissionLevel const& permissionLevel,
         bool                            cheatsEnabled,
-        bool                            isEditorWorld
+        bool                            isEditorWorld,
+        bool                            isTeacher
     ) const;
 #endif
 
@@ -945,7 +947,9 @@ public:
 
     MCAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
+#endif
 
     MCAPI ::std::vector<::std::string> getAliases(::std::string const& command) const;
 

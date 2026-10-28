@@ -23,11 +23,15 @@ MCAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
 
 MCAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
 
+MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionDown();
+
 MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionEast();
 
 MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionNorth();
 
 MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionSouth();
+
+MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionUp();
 
 MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionWest();
 

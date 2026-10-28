@@ -20,11 +20,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _preventEjectionIfNeeded(
-        ::StrictEntityContext&                                               strictEntityContext,
-        ::PassengerComponent const&                                          passengerComponent,
-        ::AABBShapeComponent const&                                          aabbShapeComponent,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const> const&     vehicleView,
-        ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent>& modifier
+        ::StrictEntityContext&                                                     strictEntityContext,
+        ::PassengerComponent const&                                                passengerComponent,
+        ::AABBShapeComponent const&                                                aabbShapeComponent,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const> const&           vehicleView,
+        ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent> const& modifier
     );
     // NOLINTEND
 };

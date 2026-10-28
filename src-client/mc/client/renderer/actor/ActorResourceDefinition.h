@@ -21,8 +21,6 @@ class GeometryPtr;
 class MaterialVariants;
 class RenderControllerPtr;
 class ResourceLocation;
-class Vec2;
-class Vec3;
 struct ActorTextureInfo;
 struct PBRTexturePtrs;
 namespace mce { class MaterialPtr; }
@@ -151,13 +149,7 @@ public:
         bool                                         returnFirstIfNotFound
     );
 
-    MCAPI static ::Vec2 getRenderDimensions(
-        ::std::shared_ptr<::ActorResourceDefinition> definition,
-        ::std::string const&                         name,
-        bool                                         returnFirstIfNotFound
-    );
-
-    MCAPI static ::Vec3 getRenderDimensionsOffset(
+    MCAPI static ::mce::TexturePtr getColorTexture(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::string const&                         name,
         bool                                         returnFirstIfNotFound

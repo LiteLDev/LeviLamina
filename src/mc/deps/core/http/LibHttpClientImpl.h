@@ -24,7 +24,6 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnk419653;
     ::ll::UntypedStorage<8, 80>  mUnk807d26;
     ::ll::UntypedStorage<8, 336> mUnk2fe4b9;
-    ::ll::UntypedStorage<8, 8>   mUnkf64a92;
     // NOLINTEND
 
 public:
@@ -50,8 +49,10 @@ public:
     // NOLINTBEGIN
     MCNAPI LibHttpClientImpl();
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>
-    _tryGetResponseBody(::gsl::not_null<::HC_CALL*> call);
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>>
+    _getResponseBody(::gsl::not_null<::HC_CALL*> call);
+
+    MCNAPI void _logRequestUrl(::gsl::not_null<::HC_CALL*> callHandle);
     // NOLINTEND
 
 public:

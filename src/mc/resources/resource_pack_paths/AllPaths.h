@@ -21,6 +21,8 @@ public:
     ::ll::UntypedStorage<8, 32> mUnka4f4d6;
     ::ll::UntypedStorage<8, 32> mUnk5e3ccc;
     ::ll::UntypedStorage<8, 32> mUnk86a380;
+    ::ll::UntypedStorage<8, 24> mUnk3e05a4;
+    ::ll::UntypedStorage<8, 24> mUnkf3bc57;
     // NOLINTEND
 
 public:
@@ -28,18 +30,6 @@ public:
     AllPaths& operator=(AllPaths const&);
     AllPaths(AllPaths const&);
     AllPaths();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~AllPaths();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ResourcePackPaths

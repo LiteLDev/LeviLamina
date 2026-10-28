@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string getInteractText() const;
+    MCAPI ::std::string getInteractText() const;
     // NOLINTEND
 
 public:

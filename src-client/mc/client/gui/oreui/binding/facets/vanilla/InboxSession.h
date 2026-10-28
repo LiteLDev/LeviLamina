@@ -18,6 +18,7 @@ class RealmsAPI;
 namespace Core { class Path; }
 namespace OreUI { class IResourceAllowList; }
 namespace Realms { class InvitesService; }
+namespace Realms { class RealmsList; }
 // clang-format on
 
 namespace OreUI {
@@ -31,6 +32,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::InboxFacet::InboxMessageData>>       mData;
     ::ll::TypedStorage<1, 5, ::OreUI::InboxFacet::InboxSettings>                          mSettings;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::RealmsAPI>>                               mRealmsApi;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsList>>                    mRealmsList;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService>>    mInvitesService;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::DateManager const>>            mDateManager;
@@ -66,8 +68,6 @@ public:
         ::OreUI::InboxFacet::InboxMessageData const& inMessage,
         ::Invites::Invite::InvitationStatus const&   status
     );
-
-    MCAPI void saveSettings();
     // NOLINTEND
 };
 

@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionDescriptor;
-struct MoveControlDescription;
+namespace SharedTypes::v1_26_60 { struct MoveControlComponentDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -18,7 +18,10 @@ class MovementScriptActorComponent : public ::ScriptModuleMinecraft::ScriptActor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::MoveControlDescription const* (*)(::ActorDefinitionDescriptor const&)>
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::SharedTypes::v1_26_60::MoveControlComponentDefinition const* (*)(::ActorDefinitionDescriptor const&)>
         mDescriptionGetter;
     // NOLINTEND
 

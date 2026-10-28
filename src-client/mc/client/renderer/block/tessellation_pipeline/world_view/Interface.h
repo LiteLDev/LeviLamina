@@ -31,7 +31,7 @@ public:
 
     virtual ::BlockPos getRelativeMin(::BlockPos const& worldMin) const = 0;
 
-    virtual ::BlockPos getRelativeMax(::BlockPos const& worldMax) const = 0;
+    virtual ::BlockPos getRelativeMax(::BlockPos const& worldMin) const = 0;
 
     virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const& dimensions) const = 0;
     // NOLINTEND

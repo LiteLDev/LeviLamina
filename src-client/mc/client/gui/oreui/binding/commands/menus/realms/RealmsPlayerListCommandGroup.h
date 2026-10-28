@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/CommandGroupBase.h"
 #include "mc/client/gui/oreui/binding/methods/CallableImpl.h"
+#include "mc/client/realms/PlayerPermission.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +29,10 @@ public:
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mRemovePlayer;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mBlockPlayer;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mUnblockPlayer;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                               mResetManageState;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::Realms::PlayerPermission>>
+                                                                                   mSetDefaultPermissionLevel;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>> mRemoveAllRealmMembers;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                mResetManageState;
     // NOLINTEND
 
 public:

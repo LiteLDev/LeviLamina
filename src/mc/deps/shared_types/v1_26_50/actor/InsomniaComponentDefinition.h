@@ -25,8 +25,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_DAYS_UNTIL_INSOMNIA();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

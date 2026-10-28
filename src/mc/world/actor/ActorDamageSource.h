@@ -97,8 +97,6 @@ public:
     MCAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
     MCAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
-
-    MCAPI static ::std::string const& lookupCauseName(::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:

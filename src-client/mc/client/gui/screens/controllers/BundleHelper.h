@@ -52,12 +52,6 @@ public:
         ::ContainerScreenController&                   controller,
         ::BundleHelper::BundleItemScrollWheelDirection direction
     );
-
-    MCAPI bool shouldHandleBundleIdlePlaceAll(
-        ::ContainerScreenController& controller,
-        ::std::string const&         collectionName,
-        int                          collectionIndex
-    ) const;
     // NOLINTEND
 
 public:

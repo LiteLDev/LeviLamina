@@ -12,6 +12,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Container;
+class ItemStack;
 class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -47,7 +48,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void _setAllowUnderwater(::Actor* e);
 
-    MCAPI static bool tryLightTnt(::Player& player, ::BlockPos const& pos);
+    MCAPI static bool tryLightTnt(::Player& player, ::BlockPos const& pos, ::ItemStack const& item);
     // NOLINTEND
 
 public:

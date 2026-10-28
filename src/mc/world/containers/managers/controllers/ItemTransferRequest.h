@@ -40,6 +40,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
+
+    MCAPI void reset();
 #endif
     // NOLINTEND
 };

@@ -26,8 +26,6 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Carve
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChemistryTableIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoarseIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CobblestoneWallIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ColoredTorchIds();
@@ -73,6 +71,10 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Fence
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassPaneIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& IcicleReplaceable();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LargeIcicleReplaceable();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LeavesBlockIds();
 

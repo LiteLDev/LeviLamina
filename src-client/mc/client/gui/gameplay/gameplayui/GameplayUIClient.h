@@ -88,6 +88,8 @@ public:
     MCAPI void onLeaveWorld();
 
     MCAPI void setupGameServerConnectionListener(::GameConnectionConnector const& gameConnectionConnector);
+
+    MCAPI void update();
     // NOLINTEND
 
 public:

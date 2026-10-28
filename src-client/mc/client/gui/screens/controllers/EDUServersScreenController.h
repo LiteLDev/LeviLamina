@@ -16,8 +16,8 @@
 // auto generated forward declare list
 // clang-format off
 class DlcUIWrapper;
-class EDUAddServerScreenController;
-class EDUPasscodeEntryScreenController;
+class EduAddServerScreenController;
+class EduPasscodeEntryScreenController;
 class IContentManager;
 class PlayScreenModel;
 class UIPropertyBag;
@@ -27,7 +27,7 @@ namespace Json { class Value; }
 namespace Social { struct EduDedicatedServerDetails; }
 // clang-format on
 
-class EDUServersScreenController : public ::SettingsScreenControllerBase {
+class EduServersScreenController : public ::SettingsScreenControllerBase {
 public:
     // member variables
     // NOLINTBEGIN
@@ -66,8 +66,8 @@ public:
             ::std::vector<::std::string>,
             ::std::vector<::std::string>>>
                                                                                      mUnmatchedServers;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUAddServerScreenController>>     mAddServerScreenController;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUPasscodeEntryScreenController>> mPasscodeEntryScreenController;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduAddServerScreenController>>     mAddServerScreenController;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduPasscodeEntryScreenController>> mPasscodeEntryScreenController;
     ::ll::TypedStorage<
         8,
         128,
@@ -86,14 +86,14 @@ public:
 
 public:
     // prevent constructor by default
-    EDUServersScreenController& operator=(EDUServersScreenController const&);
-    EDUServersScreenController(EDUServersScreenController const&);
-    EDUServersScreenController();
+    EduServersScreenController& operator=(EduServersScreenController const&);
+    EduServersScreenController(EduServersScreenController const&);
+    EduServersScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUServersScreenController() /*override*/ = default;
+    virtual ~EduServersScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -109,7 +109,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EDUServersScreenController(::std::shared_ptr<::PlayScreenModel> model);
+    MCAPI explicit EduServersScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
     MCAPI void _closeAddServerModal();
 

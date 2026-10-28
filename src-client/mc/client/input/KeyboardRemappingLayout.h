@@ -15,6 +15,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    KeyboardRemappingLayout();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~KeyboardRemappingLayout() /*override*/ = default;
@@ -31,6 +35,18 @@ public:
     virtual ::std::string getSaveString(::std::string const& action) const /*override*/;
 
     virtual int _rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit KeyboardRemappingLayout(::KeyboardType keyboardType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::KeyboardType keyboardType);
     // NOLINTEND
 
 public:

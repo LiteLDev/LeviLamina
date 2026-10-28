@@ -30,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
@@ -62,8 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlock(::std::string const& nameId, int id, ::CommandBlockMode mode);
-
     MCAPI bool _executeChainBlock(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
@@ -91,12 +85,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<int[]> mCBModeMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::CommandBlockMode mode);
     // NOLINTEND
 
 public:

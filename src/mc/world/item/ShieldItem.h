@@ -54,8 +54,8 @@ public:
         ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
+        bool const,
+        bool const slotChanged
     ) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
@@ -95,7 +95,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static int const getBaseColor(::CompoundTag const* data);
+    MCAPI static int getBaseColor(::CompoundTag const* data);
 #endif
     // NOLINTEND
 
@@ -132,11 +132,11 @@ public:
         ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
+        bool const,
+        bool const slotChanged
     ) const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 

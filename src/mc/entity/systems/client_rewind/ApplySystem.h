@@ -45,7 +45,38 @@ struct ApplySystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                          ::GlobalWrite<>,
                          ::EntityFactoryT<>>> {
 public:
+    // ApplySystem inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
     // ApplySystem inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            56,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::ClientRewind::ApplyReplayStateTrackerRequestComponent,
+                ::ActorDataDirtyFlagsComponent>>
+            mView;
+        ::ll::TypedStorage<
+            8,
+            24,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::ActorDataFlagComponent,
+                ::Optional<::ActorDataHorseFlagComponent>,
+                ::Optional<::ActorDataJumpDurationComponent>,
+                ::Optional<::ActorDataBoundingBoxComponent>,
+                ::Optional<::ActorDataSeatOffsetComponent>>>
+            mTracked;
+        // NOLINTEND
+    };
+
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
         ::Filter<::InterpolateMovementNeededComponent>,
         ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
@@ -60,6 +91,12 @@ public:
         ::GlobalRead<>,
         ::GlobalWrite<>,
         ::EntityFactoryT<>>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 88, ::std::optional<::ClientRewind::ApplySystem::Views>> mViews;
+    // NOLINTEND
 
 public:
     // virtual functions

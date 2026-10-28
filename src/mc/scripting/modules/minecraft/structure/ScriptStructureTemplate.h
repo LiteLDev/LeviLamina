@@ -13,7 +13,6 @@
 class BlockPos;
 class LevelStorage;
 class StructureManager;
-class StructureTemplate;
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
@@ -62,8 +61,6 @@ public:
 
     MCAPI ::Scripting::InvalidArgumentError
     _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
-
-    MCAPI ::StructureTemplate* getStructureTemplate() const;
     // NOLINTEND
 
 public:

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -29,12 +32,13 @@ public:
         ::Player&                  player,
         ::AgeableDefinition const& definition,
         ::ItemStack const&         item,
-        bool const                 growthPaused
+        bool                       growthPaused,
+        ::HandSlot                 handSlot
     );
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::Interaction getInteraction(::Actor& actor, ::Player& player);
+    MCAPI ::Interaction getInteraction(::Actor& actor, ::Player& player, ::HandSlot handSlot);
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND

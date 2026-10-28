@@ -6,12 +6,14 @@
 #include "mc/client/model/models/Model.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/animation/AttachableSlotIndex.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorRenderData;
 class ActorResourceDefinition;
+class BaseActorRenderContext;
 class DataDrivenRenderer;
 class ExpressionNode;
 class GameVersion;
@@ -27,6 +29,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ActorResourceDefinition>>                       mResourceDefinition;
     ::ll::TypedStorage<8, 48, ::HashedString>                                                   mName;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::weak_ptr<::DataDrivenRenderer>>> mItemToRendererMap;
+    ::ll::TypedStorage<4, 24, ::AABB>                                                           mDefaultPoseAABB;
     ::ll::TypedStorage<1, 1, bool>                                                              mEnableAttachables;
     ::ll::TypedStorage<1, 1, bool>                                                              mHideArmor;
     // NOLINTEND
@@ -54,10 +57,14 @@ public:
         ::RenderParams&                      childRenderParams
     );
 
+    MCAPI ::AABB calculateDefaultPoseAABB() const;
+
     MCAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
 
     MCAPI ::std::weak_ptr<::DataDrivenRenderer>
     getDataDrivenRenderer(::RenderParams& renderParams, ::ItemStack const& itemInstance);
+
+    MCAPI ::AABB getOrCalculateDefaultPoseAABB(::BaseActorRenderContext& renderContext);
 
     MCAPI ::std::string getResourceDefinitionName() const;
 

@@ -21,18 +21,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                          mDefaultRoute;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SupportedRoute>> mSupportedRoutes;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~RouteData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

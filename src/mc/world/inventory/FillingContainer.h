@@ -77,8 +77,6 @@ public:
 
     MCAPI int _getSlotWithRemainingSpace(::ItemStack const& newItem) const;
 
-    MCAPI void _release(int slot);
-
     MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
 
     MCAPI bool removeResource(int type);

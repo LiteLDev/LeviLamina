@@ -7,5 +7,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mDynamicProperties;
+    ::ll::TypedStorage<1, 1, bool> mEntityStorage;
     // NOLINTEND
 };

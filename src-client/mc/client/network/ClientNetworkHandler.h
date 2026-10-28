@@ -59,6 +59,9 @@ class ClientboundDataDrivenUIShowScreenPacket;
 class ClientboundDataStorePacket;
 class ClientboundDebugRendererPacket;
 class ClientboundMapItemDataPacket;
+class ClientboundMatchmakingStatePacket;
+class ClientboundPlayAudioContentPacket;
+class ClientboundStonecutterSetRecipePacket;
 class ClientboundTextureShiftPacket;
 class ClientboundUpdateSoundDataPacket;
 class CodeBuilderPacket;
@@ -179,6 +182,7 @@ struct NetworkIdentifierWithSubId;
 struct ToastIconData;
 namespace ClientBlobCache { class Cache; }
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
+namespace Social::ManagedChat { class ManagedChatClient; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
 
@@ -257,9 +261,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                            mIOTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager>> mVideoCaptureSessionManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager>>     mTextureShiftManager;
-    ::ll::TypedStorage<8, 128, ::ClientNetworkPackDependencies>                         mPackDependencies;
+    ::ll::TypedStorage<8, 192, ::ClientNetworkPackDependencies>                         mPackDependencies;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CachedHostPackIdProvider>>            mCachedHostPackIdProvider;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mHostPacksReceivedSub;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Social::ManagedChat::ManagedChatClient>> mManagedChatClient;
     // NOLINTEND
 
 public:
@@ -309,7 +314,11 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet) /*override*/;
 
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundMatchmakingStatePacket const& packet) /*override*/;
+
     virtual void handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundStonecutterSetRecipePacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet) /*override*/;
 
@@ -526,6 +535,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const& packet) /*override*/;
 
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundPlayAudioContentPacket const& packet) /*override*/;
+
     virtual void handle(::NetworkIdentifier const&, ::RecordStartedPacket const& packet) /*override*/;
 
     virtual void onOutgoingPacket(
@@ -652,7 +663,11 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet);
 
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundMatchmakingStatePacket const& packet);
+
     MCAPI void $handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundStonecutterSetRecipePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet);
 
@@ -865,6 +880,8 @@ public:
     MCAPI void $handle(::NetworkIdentifier const&, ::SendPartyDestinationCookiePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundPlayAudioContentPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::RecordStartedPacket const& packet);
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/options/oreui/GameplayUIMode.h"
 #include "mc/client/options/oreui/PlayScreenWorldLayoutMode.h"
 
 // auto generated forward declare list
@@ -40,13 +41,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScreenSpecificOptionsFacet(::IOptionRegistry& options);
 
-    MCAPI bool getDevOreUIGameplayUI() const;
+    MCAPI ::OreUI::GameplayUIMode getDevOreUIGameplayUI() const;
 
     MCAPI bool getDevPlayScreenHideLanWorlds() const;
 
     MCAPI ::OreUI::PlayScreenWorldLayoutMode getPlayScreenWorldLayoutMode() const;
 
-    MCAPI void setDevOreUIGameplayUI(bool value);
+    MCAPI void setDevOreUIGameplayUI(::OreUI::GameplayUIMode mode);
 
     MCAPI void setDevPlayScreenHideLanWorlds(bool value);
 

@@ -37,8 +37,6 @@ public:
 
     MCAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
 
-    MCAPI void updateSensorPos(::Vec3 const& newPos);
-
     MCAPI ~BlockBreakSensorComponent();
     // NOLINTEND
 

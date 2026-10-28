@@ -41,8 +41,6 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     virtual void onRemoved(::BlockSource& region) /*override*/;
-
-    virtual ~SculkSensorBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -55,12 +53,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

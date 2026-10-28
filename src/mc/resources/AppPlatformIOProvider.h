@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/Result.h"
 #include "mc/resources/IPackIOProvider.h"
 
 // auto generated forward declare list
@@ -13,6 +14,7 @@ class I18n;
 class IFileAccess;
 namespace Core { class FileHandlePool; }
 namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class AppPlatformIOProvider : public ::IPackIOProvider {
@@ -21,7 +23,8 @@ public:
     // NOLINTBEGIN
     virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem system) const /*override*/;
 
-    virtual ::std::function<::std::string(::Core::Path const&)> getAssetReader() const /*override*/;
+    virtual ::std::function<::Bedrock::Result<::std::string>(::Core::PathView const&, ::std::string&&)>
+    getAssetReader() const /*override*/;
 
     virtual ::Core::Path getOnDiskScratchPath() const /*override*/;
 
@@ -37,7 +40,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> $getFileAccess(::ResourceFileSystem system) const;
 
-    MCNAPI ::std::function<::std::string(::Core::Path const&)> $getAssetReader() const;
+    MCNAPI ::std::function<::Bedrock::Result<::std::string>(::Core::PathView const&, ::std::string&&)>
+    $getAssetReader() const;
 
     MCNAPI ::Core::Path $getOnDiskScratchPath() const;
 

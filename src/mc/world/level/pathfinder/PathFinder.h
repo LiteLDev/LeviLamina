@@ -139,6 +139,8 @@ public:
     MCAPI ::PathfinderNode*
     _getWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
 
+    MCAPI bool _isBlockWater(::BlockPos const& pos) const;
+
     MCAPI ::NodeType _isFreeStartNode(
         ::ActorPathingData const& data,
         ::AABB const&             entityAABB,

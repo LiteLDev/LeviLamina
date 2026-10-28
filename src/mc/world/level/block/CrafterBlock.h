@@ -21,10 +21,6 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 
 class CrafterBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    CrafterBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -57,19 +53,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrafterBlock(::std::string const& nameId, int id);
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

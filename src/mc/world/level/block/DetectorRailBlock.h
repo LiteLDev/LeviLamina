@@ -24,6 +24,8 @@ public:
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
+
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
@@ -54,6 +56,8 @@ public:
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 

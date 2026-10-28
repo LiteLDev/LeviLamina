@@ -106,10 +106,6 @@ public:
 
     MCAPI ::OwnerPtr<::EntityContext> removeActorEntityAndTakeEntity(::WeakEntityRef entityRef);
 
-#ifdef LL_PLAT_C
-    MCAPI void removeActorEntityReferencesForDeletion(::Actor& actor);
-#endif
-
     MCAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
 
 #ifdef LL_PLAT_C
@@ -131,9 +127,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+#else // LL_PLAT_C
     MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+#endif
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
+    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
     $getRegisterPostReloadActorConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();

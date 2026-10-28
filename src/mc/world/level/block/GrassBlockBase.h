@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockType.h"
 
@@ -45,8 +46,13 @@ public:
 
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
-    virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
-        /*override*/;
+    virtual bool tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const /*override*/;
 
     virtual bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::IRandom& random) const = 0;
 
@@ -101,7 +107,13 @@ public:
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 
-    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCAPI bool $tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const;
 
 
     // NOLINTEND

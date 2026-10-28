@@ -19,7 +19,7 @@ public:
     MCAPI static void _addPauseTickNeeded(
         ::StrictEntityContext& entity,
         ::ActorTickNeededComponent&,
-        ::EntityModifier<::EditorActorPauseTickNeededComponent>& modifier
+        ::EntityModifier<::EditorActorPauseTickNeededComponent> const& modifier
     );
     // NOLINTEND
 };

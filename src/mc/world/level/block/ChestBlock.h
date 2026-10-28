@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
@@ -31,13 +30,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChestBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -80,13 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChestBlock(
-        ::std::string const&                  nameId,
-        int                                   id,
-        ::ChestType                           type,
-        ::SharedTypes::v1_26_20::MaterialType materialType
-    );
-
     MCAPI void onPairedWith(::BlockSource& region, ::BlockPos const& mainPos, ::BlockPos const& attachedPos) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -97,16 +87,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::ChestType type, ::SharedTypes::v1_26_20::MaterialType materialType);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -111,6 +111,10 @@ public:
     virtual ::ContainerScreenContext _postInit() = 0;
 
     virtual void _onDynamicContainerContentsChanged();
+
+    virtual void setSelectedRecipeIndex(int recipeIndex, bool fromNetwork) /*override*/;
+
+    virtual ::std::optional<int> getSelectedRecipeIndex() const /*override*/;
     // NOLINTEND
 
 public:
@@ -122,9 +126,9 @@ public:
 
     MCAPI ::std::shared_ptr<::ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
 
-#ifdef LL_PLAT_C
     MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
 
+#ifdef LL_PLAT_C
     MCAPI ::std::string getBlockDisplayName(::BlockPos const& blockPos) const;
 
     MCAPI ::HashedString getBlockLocName(::BlockPos const& blockPos) const;
@@ -184,6 +188,10 @@ public:
     MCAPI void $broadcastChanges();
 
     MCFOLD void $_onDynamicContainerContentsChanged();
+
+    MCFOLD void $setSelectedRecipeIndex(int recipeIndex, bool fromNetwork);
+
+    MCFOLD ::std::optional<int> $getSelectedRecipeIndex() const;
 
 
     // NOLINTEND

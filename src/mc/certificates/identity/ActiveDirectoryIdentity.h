@@ -11,7 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IEDUSystems;
+class IEduSystems;
 struct AccessTokenInfo;
 namespace Identity { class IEduAuth; }
 namespace Identity { struct ActiveDirectoryIdentityParameters; }
@@ -38,7 +38,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk4fb49a;
     ::ll::UntypedStorage<8, 16>   mUnk16c98e;
     ::ll::UntypedStorage<8, 8>    mUnkde78f1;
-    ::ll::UntypedStorage<8, 24>   mUnkf84d67;
+    ::ll::UntypedStorage<8, 24>   mUnk51f69f;
     ::ll::UntypedStorage<8, 88>   mUnk3ae843;
     ::ll::UntypedStorage<8, 80>   mUnke3078c;
     // NOLINTEND
@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ActiveDirectoryIdentity(
-        ::Bedrock::NotNullNonOwnerPtr<::IEDUSystems>    eduSystems,
+        ::Bedrock::NotNullNonOwnerPtr<::IEduSystems>    eduSystems,
         ::Identity::ActiveDirectoryIdentityParameters&& parameters
     );
 
@@ -133,7 +133,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IEDUSystems>    eduSystems,
+        ::Bedrock::NotNullNonOwnerPtr<::IEduSystems>    eduSystems,
         ::Identity::ActiveDirectoryIdentityParameters&& parameters
     );
 #endif

@@ -194,7 +194,7 @@ public:
     ::ll::TypedStorage<1, 64, ::bx::Mutex>                               m_resourceApiLock;
     ::ll::TypedStorage<8, 464, ::bx::Thread>                             m_thread;
     ::ll::TypedStorage<1, 64, ::bx::Mutex>                               m_perfStatsApiLock;
-    ::ll::TypedStorage<8, 208, ::bgfx::Stats>                            m_lastPerfStats;
+    ::ll::TypedStorage<8, 216, ::bgfx::Stats>                            m_lastPerfStats;
     ::ll::TypedStorage<2, 2, ushort>                                     m_lastNumViewStats;
     ::ll::TypedStorage<8, 79872, ::bgfx::ViewStats[256]>                 m_lastViewStats;
     ::ll::TypedStorage<2, 2, ushort>                                     m_lastNumEncoderStats;
@@ -203,8 +203,8 @@ public:
     ::ll::TypedStorage<8, 8, ::bgfx::EncoderStats*>                      m_encoderStats;
     ::ll::TypedStorage<8, 8, ::bgfx::Encoder*>                           m_encoder0;
     ::ll::TypedStorage<8, 8, ::bgfx::EncoderImpl*>                       m_encoder;
-    ::ll::TypedStorage<8, 40, ::bx::HandleAlloc*>                        m_encoderHandle;
-    ::ll::TypedStorage<8, 30413696, ::bgfx::Frame[2]>                    m_frame;
+    ::ll::TypedStorage<8, 32, ::bx::HandleAlloc*>                        m_encoderHandle;
+    ::ll::TypedStorage<8, 30315392, ::bgfx::Frame[2]>                    m_frame;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_render;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_submit;
     ::ll::TypedStorage<8, 524280, uint64[65535]>                         m_tempKeys;
@@ -247,7 +247,7 @@ public:
     ::ll::TypedStorage<4, 17288, ::bgfx::VertexDeclRef>                   m_declRef;
     ::ll::TypedStorage<2, 512, ushort[256]>                               m_viewRemap;
     ::ll::TypedStorage<4, 1056, uint[256]>                                m_seq;
-    ::ll::TypedStorage<8, 131072, ::bgfx::View[256]>                      m_view;
+    ::ll::TypedStorage<4, 81920, ::bgfx::View[256]>                       m_view;
     ::ll::TypedStorage<4, 256, float[16][4]>                              m_clearColor;
     ::ll::TypedStorage<1, 1, uchar>                                       m_colorPaletteDirty;
     ::ll::TypedStorage<8, 64, ::bgfx::Init>                               m_init;
@@ -407,8 +407,6 @@ public:
     MCAPI void rendererExecCommands(::bgfx::CommandBuffer& _cmdbuf);
 
     MCAPI void reset(uint _width, uint _height, uint _flags);
-
-    MCAPI void setName(::bgfx::TextureHandle _handle, ::bx::StringView const& _name);
 
     MCAPI void setName(::bgfx::ShaderHandle _handle, ::bx::StringView const& _name);
 

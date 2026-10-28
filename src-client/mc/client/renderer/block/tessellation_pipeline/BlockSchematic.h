@@ -31,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> getCopy() const;
+
     MCAPI ~BlockSchematic();
     // NOLINTEND
 

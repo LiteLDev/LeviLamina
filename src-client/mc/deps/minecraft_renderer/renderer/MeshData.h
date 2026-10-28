@@ -39,12 +39,11 @@ public:
 public:
     // prevent constructor by default
     MeshData& operator=(MeshData const&);
+    MeshData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeshData();
-
     MCAPI MeshData(::mce::MeshData&&);
 
     MCAPI MeshData(::mce::MeshData const&);
@@ -65,8 +64,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::mce::MeshData&&);
 
     MCAPI void* $ctor(::mce::MeshData const&);

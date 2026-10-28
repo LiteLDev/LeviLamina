@@ -6,6 +6,6 @@ struct ActorDataDirtyFlagsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::bitset<141>> mDirtyFlags;
+    ::ll::TypedStorage<8, 24, ::std::bitset<142>> mDirtyFlags;
     // NOLINTEND
 };

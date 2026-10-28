@@ -22,16 +22,15 @@ class Option;
 class ScreenContext;
 struct TextBoxStateChange;
 namespace OreUI { class BedrockInputSource; }
-namespace OreUI { class FacetBinder; }
-namespace OreUI { class IFacetRegistry; }
+namespace OreUI { class FocusNavigationBinding; }
+namespace OreUI { class FocusNavigationController; }
 namespace OreUI { class IScene; }
 namespace OreUI { class ITelemetry; }
 namespace OreUI { class IViewTestHelper; }
 namespace OreUI { class RouterLocation; }
 namespace OreUI { class ViewInputHandler; }
 namespace OreUI { class ViewRenderer; }
-namespace OreUI::Detail { class Binder; }
-namespace OreUI::Detail { class ViewContext; }
+namespace OreUI::Detail { class ViewBindings; }
 namespace cohtml { class IClientSideSocket; }
 namespace cohtml { class ISocketListener; }
 namespace cohtml { class View; }
@@ -46,19 +45,17 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::cohtml::View*>                                           mGamefaceView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewRenderer>>                  mRenderer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FocusNavigationBinding>>        mFocusNavigationBinding;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FocusNavigationController>>     mFocusNavigationController;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewInputHandler>>              mInputHandler;
     ::ll::TypedStorage<8, 32, ::std::string>                                            mUrl;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::OreUI::IScene>>> mScenes;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::BedrockInputSource>>            mBedrockInputSource;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>         mClientInstance;
     ::ll::TypedStorage<8, 8, ::KeyboardManager&>                                        mKeyboardManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FacetBinder>>                   mFacetBinder;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IFacetRegistry>>                mFacetRegistry;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::Binder>>                mBinder;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::ViewContext>>           mViewContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::ViewBindings>>          mBindings;
     ::ll::TypedStorage<8, 8, ::OreUI::ITelemetry&>                                      mTelemetry;
     ::ll::TypedStorage<8, 400, ::std::optional<::OreUI::ScreenPerformanceTelemetry>>    mScreenPerformanceTelemetry;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                             mUpdatedFacets;
     ::ll::TypedStorage<1, 1, ::OreUI::ViewState>                                        mState;
     ::ll::TypedStorage<4, 4, ::OreUI::RouteMode>                                        mRouteMode;
     ::ll::TypedStorage<8, 8, double>                                                    mLastUpdateTime;
@@ -89,6 +86,8 @@ public:
     virtual void update(double time) /*override*/;
 
     virtual void render(::ScreenContext& screenContext) /*override*/;
+
+    virtual void renderOffscreen(::ScreenContext& screenContext) /*override*/;
 
     virtual void resize(uint width, uint height) /*override*/;
 
@@ -180,6 +179,8 @@ public:
     MCAPI void $update(double time);
 
     MCAPI void $render(::ScreenContext& screenContext);
+
+    MCAPI void $renderOffscreen(::ScreenContext& screenContext);
 
     MCAPI void $resize(uint width, uint height);
 

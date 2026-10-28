@@ -52,6 +52,7 @@ struct LevelTagIDType;
 struct LevelTagSetIDType;
 namespace GameModeExt { struct MessengerFactory; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
+namespace ServerInitialization { class IServerInitializer; }
 // clang-format on
 
 class ServerLevel : public ::Level {
@@ -103,7 +104,8 @@ public:
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
+                                                    biomeIdToResolvedData,
+        ::ServerInitialization::IServerInitializer* init
     ) /*override*/;
 
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
@@ -203,7 +205,8 @@ public:
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
+                                                    biomeIdToResolvedData,
+        ::ServerInitialization::IServerInitializer* init
     );
 
     MCAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;

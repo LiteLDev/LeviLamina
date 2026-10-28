@@ -3,17 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
 #include "mc/entity/components/LocalConstBlockSource.h"
 #include "mc/entity/components/LocalSpatialEntityFetcher.h"
+#include "mc/entity/utilities/GetCollisionShapeViews.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -101,6 +106,7 @@ public:
     // clang-format off
     struct SpatialQueries;
     struct SpatialQueryFactories;
+    struct Views;
     // clang-format on
 
     // System inner types define
@@ -122,14 +128,147 @@ public:
         // NOLINTEND
     };
 
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            72,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::DimensionTypeComponent const,
+                ::AABBShapeComponent const,
+                ::MaxAutoStepComponent const,
+                ::Optional<::CollidableMobNearFlagComponent const>,
+                ::MoveRequestComponent,
+                ::Optional<::MinecartFlagComponent const>>>
+            mMainView;
+        ::ll::TypedStorage<
+            8,
+            56,
+            ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const>>
+            mCollidableMobs;
+        ::ll::TypedStorage<
+            8,
+            56,
+            ::ViewT<::StrictEntityContext, ::AABBShapeComponent const, ::ActorDataFlagComponent const>>
+            mStackable;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>>>
+                                                                                                mFallingBlocks;
+        ::ll::TypedStorage<8, 8, ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent>>     mBlockSourceFactory;
+        ::ll::TypedStorage<8, 8, ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>> mFetcherFactory;
+        ::ll::TypedStorage<8, 728, ::GetCollisionShapeViews>                                    mCollisionViews;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Views();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit Views(
+            ::StrictExecutionContext<
+                ::Filter<
+                    ::CanStandOnPowderSnowComponent,
+                    ::CanStandOnPowderSnowFromEquipmentComponent,
+                    ::HorseFlagComponent,
+                    ::MobFlagComponent,
+                    ::ParrotFlagComponent,
+                    ::VehicleComponent,
+                    ::CamelFlagComponent,
+                    ::PlayerComponent,
+                    ::CollidableMobFlagComponent,
+                    ::FallingBlockFlagComponent>,
+                ::Read<
+                    ::AABBShapeComponent,
+                    ::MovementAbilitiesComponent,
+                    ::ActorTypeComponent,
+                    ::FallDistanceComponent,
+                    ::PassengerComponent,
+                    ::ActorGameTypeComponent,
+                    ::ActorDataFlagComponent,
+                    ::VehicleComponent,
+                    ::ActorRotationComponent,
+                    ::MobBodyRotationComponent,
+                    ::RenderRotationComponent,
+                    ::StandAnimationComponent,
+                    ::OffsetsComponent,
+                    ::VanillaOffsetComponent,
+                    ::PassengerRenderingRidingOffsetComponent,
+                    ::DimensionTypeComponent,
+                    ::MaxAutoStepComponent,
+                    ::CollidableMobNearFlagComponent,
+                    ::MinecartFlagComponent>,
+                ::Write<::MoveRequestComponent>,
+                ::AddRemove<>,
+                ::GlobalRead<
+                    ::ExternalDataComponent,
+                    ::LocalConstBlockSourceFactoryComponent,
+                    ::LocalSpatialEntityFetcherFactoryComponent>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>& context
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::StrictExecutionContext<
+                ::Filter<
+                    ::CanStandOnPowderSnowComponent,
+                    ::CanStandOnPowderSnowFromEquipmentComponent,
+                    ::HorseFlagComponent,
+                    ::MobFlagComponent,
+                    ::ParrotFlagComponent,
+                    ::VehicleComponent,
+                    ::CamelFlagComponent,
+                    ::PlayerComponent,
+                    ::CollidableMobFlagComponent,
+                    ::FallingBlockFlagComponent>,
+                ::Read<
+                    ::AABBShapeComponent,
+                    ::MovementAbilitiesComponent,
+                    ::ActorTypeComponent,
+                    ::FallDistanceComponent,
+                    ::PassengerComponent,
+                    ::ActorGameTypeComponent,
+                    ::ActorDataFlagComponent,
+                    ::VehicleComponent,
+                    ::ActorRotationComponent,
+                    ::MobBodyRotationComponent,
+                    ::RenderRotationComponent,
+                    ::StandAnimationComponent,
+                    ::OffsetsComponent,
+                    ::VanillaOffsetComponent,
+                    ::PassengerRenderingRidingOffsetComponent,
+                    ::DimensionTypeComponent,
+                    ::MaxAutoStepComponent,
+                    ::CollidableMobNearFlagComponent,
+                    ::MinecartFlagComponent>,
+                ::Write<::MoveRequestComponent>,
+                ::AddRemove<>,
+                ::GlobalRead<
+                    ::ExternalDataComponent,
+                    ::LocalConstBlockSourceFactoryComponent,
+                    ::LocalSpatialEntityFetcherFactoryComponent>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>& context
+        );
+        // NOLINTEND
+    };
+
     using CollisionShapeVec = ::std::vector<::BlockSourceVisitor::CollisionShape>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockSourceVisitor::CollisionShape>> mScratchTempCollisionShapes;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockSourceVisitor::CollisionShape>> mScratchTempCollisionShapes2;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>                               mScratchTempShapes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockSourceVisitor::CollisionShape>>    mScratchTempCollisionShapes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockSourceVisitor::CollisionShape>>    mScratchTempCollisionShapes2;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>                                  mScratchTempShapes;
+    ::ll::TypedStorage<8, 960, ::std::optional<::MoveCollisionSystem::System::Views>> mViews;
     // NOLINTEND
 
 public:
@@ -221,53 +360,6 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::MoveCollisionSystem::System::SpatialQueryFactories> createSpatialQueryFactories(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnPowderSnowComponent,
-                ::CanStandOnPowderSnowFromEquipmentComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::CollidableMobFlagComponent,
-                ::FallingBlockFlagComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::MaxAutoStepComponent,
-                ::CollidableMobNearFlagComponent,
-                ::MinecartFlagComponent>,
-            ::Write<::MoveRequestComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<
-                ::ExternalDataComponent,
-                ::LocalConstBlockSourceFactoryComponent,
-                ::LocalSpatialEntityFetcherFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
     // NOLINTEND
 
 public:

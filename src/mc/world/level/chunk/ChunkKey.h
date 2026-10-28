@@ -13,4 +13,10 @@ public:
     ::ll::TypedStorage<8, 8, ::ChunkPos const>      pos;
     ::ll::TypedStorage<4, 4, ::DimensionType const> id;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI uint64 hashCode() const;
+    // NOLINTEND
 };

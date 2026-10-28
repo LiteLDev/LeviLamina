@@ -92,7 +92,7 @@ public:
 
     MCAPI bool $isDyeable() const;
 
-    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
     MCFOLD void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

@@ -26,6 +26,7 @@ public:
         Husk      = 2,
         PigZombie = 3,
         Drowned   = 4,
+        Frostbite = 5,
     };
 
 public:

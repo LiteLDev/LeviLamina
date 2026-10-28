@@ -57,6 +57,17 @@ public:
         ::CaretMeasureData const& caretData
     ) = 0;
 
+    virtual void drawText(
+        ::Font&                   font,
+        ::RectangleArea const&    rect,
+        ::std::string_view        text,
+        ::mce::Color const&       color,
+        float                     alpha,
+        ::ui::TextAlignment       alignment,
+        ::TextMeasureData const&  textData,
+        ::CaretMeasureData const& caretData
+    ) = 0;
+
     virtual void flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime) = 0;
 
     virtual void drawImage(

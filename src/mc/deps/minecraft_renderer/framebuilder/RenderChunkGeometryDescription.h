@@ -12,7 +12,19 @@ public:
     // clang-format on
 
     // RenderChunkGeometryDescription inner types define
-    struct PerChunkData {};
+    struct PerChunkData {
+    public:
+        // PerChunkData inner types declare
+        // clang-format off
+        struct DirectBuffers;
+        struct LayerGroupBuffers;
+        // clang-format on
+
+        // PerChunkData inner types define
+        struct DirectBuffers {};
+
+        struct LayerGroupBuffers {};
+    };
 };
 
 } // namespace mce::framebuilder

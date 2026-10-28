@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -17,6 +18,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 432, ::std::optional<::ScriptModuleMinecraft::ScriptActorFilter>> mActorFilter;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator()(::std::optional<::ScriptModuleMinecraft::ScriptActorData> const& actorData) const;
     // NOLINTEND
 
 public:

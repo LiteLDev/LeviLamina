@@ -101,6 +101,10 @@ public:
 
     MCNAPI void _fail(::std::string const& error, ::CloseStatusCode code);
 
+    MCNAPI ::std::string _generateBase64SHA1Key(::std::string const& key);
+
+    MCNAPI void _processDataFrames(::RakNet::BitStream& newIncoming);
+
     MCNAPI bool
     _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
 

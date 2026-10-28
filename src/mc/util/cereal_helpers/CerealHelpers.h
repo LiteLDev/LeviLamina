@@ -48,20 +48,9 @@ MCNAPI ::Core::Result _endLoadFromJsonFile(
 
 MCNAPI void bindBoundingBox(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindBrightness(::cereal::ReflectionCtx& ctx);
-
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 
-MCNAPI void bindIntRange(::cereal::ReflectionCtx& ctx);
-
 MCNAPI void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);
-
-MCNAPI bool checkBrightnessSchema(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value,
-    uchar                                                                                                         min,
-    uchar                                                                                                         max
-);
 
 MCNAPI bool checkColor255RGBSchema(
     ::rapidjson::

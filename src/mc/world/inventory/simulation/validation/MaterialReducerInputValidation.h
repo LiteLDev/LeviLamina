@@ -44,9 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI bool isItemAllowed(::ItemStackBase const& item) const;
-#endif
     // NOLINTEND
 
 public:

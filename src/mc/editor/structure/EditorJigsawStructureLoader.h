@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/JigsawJsonType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/editor/JigsawJsonType.h"
 #include "mc/world/level/levelgen/v2/JigsawStructureLoader.h"
 
 // auto generated forward declare list

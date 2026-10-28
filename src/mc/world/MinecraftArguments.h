@@ -6,6 +6,8 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/resource_processing/category/CategoryMergeStrategyFactory.h"
 #include "mc/events/event_data/ServerTelemetryData.h"
 #include "mc/network/ClientOrServerNetworkSystemRef.h"
 #include "mc/platform/brstd/function_ref.h"
@@ -21,11 +23,13 @@ class GameCallbacks;
 class GameModuleServer;
 class ICommandsContextProvider;
 class IContentTierManager;
+class IEducationOptions;
 class IImGuiModuleConnector;
 class ILevel;
 class IMinecraftApp;
 class IMinecraftEventing;
 class KeyManager;
+class LoadedResourceData;
 class MinecraftCommands;
 class MinecraftGameTest;
 class MinecraftServiceKeyManager;
@@ -42,7 +46,9 @@ class Timer;
 struct AutoCompleteInformation;
 struct NetworkServerConfig;
 struct PackIdVersion;
+struct ResourceMergeOptions;
 struct ServerNetworkHandlerDependencies;
+namespace Bedrock::Resources { class CategoryFileMapping; }
 namespace Core { class FilePathManager; }
 namespace mce { class UUID; }
 class ServerMetrics;
@@ -113,7 +119,24 @@ public:
                 ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&,
                 ::AutoCompleteInformation&
             )>
-            mAutoCompletePlayerMention;
+                                                                                   mAutoCompletePlayerMention;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IEducationOptions>> mEducationOptions;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI ~MinecraftCommandsFactoryArguments();
+#endif
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -163,7 +186,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Timer&>                                   mSimTimer;
     ::ll::TypedStorage<8, 8, ::Timer&>                                   mRealTimer;
     ::ll::TypedStorage<8, 8, ::ServerMetrics*>                           mServerMetrics;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackManager>>   mResourcePackManager;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::ResourcePackManager>>         mResourcePackManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PrivateKeyManager>>    mServerKeys;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void() const>> mRequestServerShutdown;
     ::ll::TypedStorage<
@@ -212,9 +235,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ResourcePackManager> createResourcePackManager(
-        ::Core::FilePathManager const& filePathManager,
-        ::IContentTierManager const&   contentTierManager
+    MCAPI static ::OwnerPtr<::ResourcePackManager> createResourcePackManager(
+        ::Core::FilePathManager const&            filePathManager,
+        ::IContentTierManager const&              contentTierManager,
+        ::Bedrock::Resources::CategoryFileMapping categoryFileMapping,
+        ::Bedrock::Resources::CategoryMergeStrategyFactory<::LoadedResourceData, ::ResourceMergeOptions>
+            mergeStrategyFactory
     );
     // NOLINTEND
 

@@ -8,6 +8,11 @@
 #include "mc/client/gui/oreui/binding/queries/menus/layout/ImageObject.h"
 #include "mc/client/gui/oreui/binding/queries/menus/layout/LocalizedStringObject.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Services::layout::model { struct ExperiencePdpActivity; }
+// clang-format on
+
 namespace OreUI {
 
 class ExperiencePdpActivityObject : public ::OreUI::PropertyObject<::OreUI::ExperiencePdpActivityObject> {
@@ -20,6 +25,25 @@ public:
     ::ll::TypedStorage<8, 440, ::OreUI::ImageObject>           mImage;
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
         mWorldId;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ExperiencePdpActivityObject();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ExperiencePdpActivityObject(
+        ::std::string const&                                             name,
+        ::Bedrock::Services::layout::model::ExperiencePdpActivity const& src
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, ::Bedrock::Services::layout::model::ExperiencePdpActivity const& src);
     // NOLINTEND
 };
 

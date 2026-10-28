@@ -60,13 +60,6 @@ public:
         ::FeatureRegistry&                                                                   features
     );
 
-#ifdef LL_PLAT_S
-    MCAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(
-        ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const& jigsawData,
-        ::IWorldRegistriesProvider&                                         registries
-    );
-#endif
-
     MCAPI static ::std::string
     serializeStructureInstanceForLevelStorage(::br::worldgen::StructureInstance const& instance);
     // NOLINTEND

@@ -29,6 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Poi::Chunk* get(::BlockPos pos) const;
+
     MCNAPI ::Poi::Chunk& getOrCreate(::BlockPos pos);
     // NOLINTEND
 };

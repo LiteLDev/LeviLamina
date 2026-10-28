@@ -135,7 +135,7 @@ public:
 
     MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCFOLD ::std::unique_ptr<::ChunkSource>
+    MCAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 

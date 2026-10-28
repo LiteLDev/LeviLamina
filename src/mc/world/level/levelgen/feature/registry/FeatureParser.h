@@ -14,7 +14,6 @@ namespace FeatureLoading { struct FeatureRootParseContext; }
 namespace JsonUtil { class EmptyClass; }
 namespace Puv { class Input; }
 namespace Puv { class LoadResultAny; }
-namespace Puv { class VersionRange; }
 // clang-format on
 
 class FeatureParser : public ::Puv::ParserBase {
@@ -41,34 +40,6 @@ public:
     // NOLINTBEGIN
     virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI FeatureParser(
-        ::Puv::VersionRange     versionRange,
-        ::FeatureParserContext& context,
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>> const&
-            schema
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(
-        ::Puv::VersionRange     versionRange,
-        ::FeatureParserContext& context,
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>> const&
-            schema
-    );
-#endif
     // NOLINTEND
 
 public:

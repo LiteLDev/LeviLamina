@@ -71,6 +71,8 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI static ::Block const& getCandleCakeFromCandle(::Block const& candleBlock);
+
     MCAPI static ::Block const& getCandleFromCandleCake(::Block const& candleCakeBlock);
 #endif
 

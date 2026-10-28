@@ -127,8 +127,6 @@ public:
         ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> setter
     );
 
-    MCAPI void _registerPostCreateCallback(::std::function<void(::UIControl&)> setter);
-
     MCAPI void _resolveControlNames(::UIControl& rootControl);
 
     MCAPI void _resolvePostCreate();

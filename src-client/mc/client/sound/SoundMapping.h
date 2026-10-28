@@ -15,6 +15,7 @@
 class ActorSoundIdentifier;
 class LinkedAssetValidator;
 class Random;
+struct ActorDefinitionIdentifier;
 struct Sound;
 namespace Json { class Value; }
 // clang-format on
@@ -124,6 +125,11 @@ public:
     ) const;
 
     MCAPI void _loadSounds(::Json::Value const& json, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+
+    MCAPI bool canPlayEntitySound(
+        ::SharedTypes::Legacy::LevelSoundEvent eventType,
+        ::ActorDefinitionIdentifier const&     identifier
+    ) const;
 
     MCAPI ::Sound const& getEntitySound(
         ::SharedTypes::Legacy::LevelSoundEvent eventType,

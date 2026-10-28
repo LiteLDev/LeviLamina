@@ -2,4 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AtomicEntityInitializationSystem {};
+class AtomicEntityInitializationSystem {
+public:
+    // AtomicEntityInitializationSystem inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
+    // AtomicEntityInitializationSystem inner types define
+    struct Views {};
+};

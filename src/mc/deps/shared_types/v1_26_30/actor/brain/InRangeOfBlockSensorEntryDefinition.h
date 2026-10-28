@@ -20,10 +20,7 @@ struct InRangeOfBlockSensorEntryDefinition
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        56,
-        ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>>
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>
                                              mTargetPositionMemory;
     ::ll::TypedStorage<8, 32, ::std::string> mInRangeEventName;
     ::ll::TypedStorage<8, 32, ::std::string> mOutOfRangeEventName;

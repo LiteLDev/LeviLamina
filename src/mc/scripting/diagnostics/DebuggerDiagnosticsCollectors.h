@@ -16,9 +16,9 @@ class DebuggerDiagnosticsCollectors {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 368> mUnk8a29f6;
-    ::ll::UntypedStorage<8, 368> mUnka3fb85;
-    ::ll::UntypedStorage<8, 368> mUnk9ddeb2;
+    ::ll::UntypedStorage<8, 432> mUnk8a29f6;
+    ::ll::UntypedStorage<8, 432> mUnka3fb85;
+    ::ll::UntypedStorage<8, 432> mUnk9ddeb2;
     ::ll::UntypedStorage<8, 8>   mUnkbcba06;
     // NOLINTEND
 
@@ -36,12 +36,16 @@ public:
         ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager
     );
 
-    MCNAPI ::std::optional<::DebuggerStat> _collectClientStats(uint64, uint64, uint64);
+    MCNAPI void _collectClientStats(::DebuggerStat& clientStats);
 
-    MCNAPI ::std::optional<::DebuggerStat> _collectMemoryStats(uint64, uint64, uint64);
+    MCNAPI void _collectMemoryStats(::DebuggerStat& appMemory);
 
-    MCNAPI ::std::optional<::DebuggerStat>
-    _collectNetworkStats(uint64 currentTick, uint64 lastCollectedTick, uint64 collectTickFrequency);
+    MCNAPI void _collectNetworkStats(
+        ::DebuggerStat& networkingStat,
+        uint64          currentTick,
+        uint64          lastCollectedTick,
+        uint64          collectTickFrequency
+    );
     // NOLINTEND
 
 public:

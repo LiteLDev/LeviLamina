@@ -14,7 +14,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ~StructureElementId();
 #endif
     // NOLINTEND
@@ -22,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCFOLD void $dtor();
 #endif
     // NOLINTEND

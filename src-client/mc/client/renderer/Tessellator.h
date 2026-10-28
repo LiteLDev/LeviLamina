@@ -12,7 +12,6 @@
 // clang-format off
 class Vec2;
 struct TessellatorQuadInfo;
-namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
 namespace mce { class Mesh; }
 namespace mce { class TexturePtr; }
@@ -100,8 +99,6 @@ public:
     MCAPI void beginOverride(::Tessellator::DebugContextCallback debugContextCallback);
 
     MCAPI void clear();
-
-    MCAPI void color(::mce::Color const& c);
 
     MCAPI void color(float r, float g, float b, float a);
 

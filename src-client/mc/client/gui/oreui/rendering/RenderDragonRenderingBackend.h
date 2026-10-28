@@ -9,6 +9,7 @@
 #include "mc/deps/minecraft_renderer/framebuilder/GamefaceBatchDraw.h"
 #include "mc/deps/minecraft_renderer/framebuilder/GamefaceBatchDrawMesh.h"
 #include "mc/deps/minecraft_renderer/framebuilder/GamefacePipelineState.h"
+#include "mc/deps/minecraft_renderer/framebuilder/GamefaceRenderTarget.h"
 #include "mc/external/gameface/renoir/CBType.h"
 #include "mc/external/gameface/renoir/ConstantBufferObject.h"
 #include "mc/external/gameface/renoir/IndexBufferObject.h"
@@ -69,7 +70,7 @@ public:
             // member variables
             // NOLINTBEGIN
             ::ll::TypedStorage<8, 136, ::dragon::mesh::VertexFormat> dragonFormat;
-            ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>>
+            ::ll::TypedStorage<8, 16, ::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource>>
                 dragonVertexBuffer;
             // NOLINTEND
         };
@@ -103,7 +104,7 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
         ::ll::TypedStorage<
             8,
-            168,
+            160,
             ::std::variant<
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonVertexBuffer,
                 ::OreUI::RenderDragonRenderingBackend::VertexBuffer::DragonInstanceData>>
@@ -120,7 +121,7 @@ public:
         ::ll::TypedStorage<4, 4, uint>                  count;
         ::ll::TypedStorage<1, 1, uchar>                 mStride;
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> data;
-        ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>>
+        ::ll::TypedStorage<8, 16, ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>>
             dragonIndexBuffer;
         // NOLINTEND
     };
@@ -167,8 +168,10 @@ public:
         ::std::unordered_map<::renoir::ConstantBufferObject, ::OreUI::RenderDragonRenderingBackend::ConstantBuffer>>
         mConstantBuffers;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::Gameface::IRenderingBackendTextureStorage>>> mTextures;
-    ::ll::TypedStorage<8, 144, ::mce::framebuilder::GamefacePipelineState> mCurrentPipelineState;
-    ::ll::TypedStorage<8, 424, ::mce::framebuilder::GamefaceBatchDrawMesh> mMesh;
+    ::ll::TypedStorage<4, 36, ::mce::framebuilder::GamefacePipelineState>  mCurrentPipelineState;
+    ::ll::TypedStorage<8, 88, ::mce::framebuilder::GamefaceRenderTarget>   mCurrentRenderTarget;
+    ::ll::TypedStorage<1, 1, uchar>                                        mCurrentStencilRef;
+    ::ll::TypedStorage<8, 416, ::mce::framebuilder::GamefaceBatchDrawMesh> mMesh;
     ::ll::TypedStorage<8, 24, ::mce::framebuilder::GamefaceBatchDraw>      mBatch;
     // NOLINTEND
 

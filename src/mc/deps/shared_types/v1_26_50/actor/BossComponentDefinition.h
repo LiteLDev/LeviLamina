@@ -16,10 +16,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_HUD_RANGE();
-
-    MCAPI static bool const& DEFAULT_SHOULD_DARKEN_SKY();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

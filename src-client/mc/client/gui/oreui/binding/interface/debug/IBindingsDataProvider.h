@@ -22,6 +22,8 @@ public:
     virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const = 0;
 
     virtual ::std::vector<::OreUI::Detail::ICommandGroup*> getCommands() const = 0;
+
+    virtual ::std::vector<::std::string> const& getUpdatedFacets() const = 0;
     // NOLINTEND
 };
 

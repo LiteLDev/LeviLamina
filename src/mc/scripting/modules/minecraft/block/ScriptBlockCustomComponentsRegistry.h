@@ -29,6 +29,7 @@ struct ServerScriptManagerEvents;
 namespace BlockEvents { class ActorEvent; }
 namespace BlockEvents { class BlockBreakEvent; }
 namespace BlockEvents { class BlockEntityFallOnEvent; }
+namespace BlockEvents { class BlockNeighborChangedEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerDestroyEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -40,6 +41,7 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 namespace BlockEvents { class BlockStateChangeEvent; }
 namespace BlockEvents { class BlockStepOffEvent; }
 namespace BlockEvents { class BlockStepOnEvent; }
+namespace BlockEvents { class NamedTickEvent; }
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
@@ -71,9 +73,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 14>>
+        ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 16>>
             mEventsUsed;
-        ::ll::TypedStorage<8, 288, ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface>>
+        ::ll::TypedStorage<8, 320, ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface>>
                                                         mClosures;
         ::ll::TypedStorage<8, 40, ::Scripting::Version> mVersionBoundWith;
         ::ll::TypedStorage<1, 1, bool>                  mInitialized;
@@ -104,7 +106,7 @@ public:
             ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData>>
                                                                                             mComponents;
     ::ll::TypedStorage<8, 24, ::ScriptModuleMinecraft::ScriptCustomComponentAfterEventList> mAsyncEventQueues;
-    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 14>>
+    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 16>>
         mV1EventSubscriptionList;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&>
         mCustomComponentParameterCache;
@@ -190,8 +192,10 @@ public:
 
     MCAPI void beforeOnPlayerPlace(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
 
-    MCAPI bool
-    hasSubscriptionFor(::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type, ::Block const& block) const;
+    MCAPI bool hasSubscriptionFor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type,
+        ::BlockCustomComponentsComponent const&                       customComponents
+    ) const;
 
     MCAPI void onActor(::BlockEvents::ActorEvent const& eventData) const;
 
@@ -200,6 +204,10 @@ public:
     MCAPI void onBreak(::BlockEvents::BlockBreakEvent const& eventData) const;
 
     MCAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+
+    MCAPI void onNamedTick(::BlockEvents::NamedTickEvent const& eventData) const;
+
+    MCAPI void onNeighborChanged(::BlockEvents::BlockNeighborChangedEvent const& eventData) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent const& eventData) const;
 

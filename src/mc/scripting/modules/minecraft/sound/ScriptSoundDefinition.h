@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/sound/ScriptSoundDefinitionDurationInfo.h"
 #include "mc/scripting/modules/minecraft/sound/ScriptSoundDefinitionMusicInfo.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace ServerSoundRuntime { struct Definition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,6 +30,18 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 48, ::HashedString> mId;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Key();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -56,6 +71,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundDefinition>
+    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::ServerSoundRuntime::Definition const& definition);
     // NOLINTEND
 
 public:

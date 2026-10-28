@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/PaperDollBaseActorRenderContext.h"
 #include "mc/client/gui/geometry_atlas/IPaperDollRenderContext.h"
+#include "mc/client/gui/geometry_atlas/Rect.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,21 +22,32 @@ class DollRenderContextImpl : public ::GeometryAtlas::details::IPaperDollRenderC
 public:
     // DollRenderContextImpl inner types declare
     // clang-format off
-    struct NoOffsetRenderContext;
+    struct RenderContext;
     // clang-format on
 
     // DollRenderContextImpl inner types define
-    struct NoOffsetRenderContext : public ::PaperDollBaseActorRenderContext {
+    struct RenderContext : public ::PaperDollBaseActorRenderContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 16, ::GeometryAtlas::Rect> mGuiBounds;
+        ::ll::TypedStorage<4, 16, ::GeometryAtlas::Rect> mProjectionBounds;
+        // NOLINTEND
+
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual float getYOffset(float screenScale) /*override*/;
+        virtual float getLegacyGuiOffsetY(float screenScale) /*override*/;
+
+        virtual ::glm::vec2 getMouseMove(::glm::vec2 const& ownerPos) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD float $getYOffset(float screenScale);
+        MCFOLD float $getLegacyGuiOffsetY(float screenScale);
+
+        MCAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
         // NOLINTEND
     };
 
@@ -44,6 +56,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::PaperDollRenderer&>      mRenderer;
     ::ll::TypedStorage<8, 8, ::BaseActorRenderContext&> mContext;
+    ::ll::TypedStorage<4, 16, ::GeometryAtlas::Rect>    mScreenBounds;
+    ::ll::TypedStorage<4, 16, ::GeometryAtlas::Rect>    mProjectionBounds;
     // NOLINTEND
 
 public:

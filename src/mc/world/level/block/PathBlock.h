@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
@@ -55,8 +56,13 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
-        /*override*/;
+    virtual bool tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const /*override*/;
 
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
     // NOLINTEND
@@ -104,7 +110,13 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCFOLD bool $tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 

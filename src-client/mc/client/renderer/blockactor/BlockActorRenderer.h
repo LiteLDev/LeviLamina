@@ -9,7 +9,6 @@
 // clang-format off
 class BaseActorRenderContext;
 class BlockActor;
-class ClientPBRTextureData;
 class Model;
 class ScreenContext;
 class Tessellator;
@@ -45,28 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _renderModel(
-        ::ScreenContext&                screenContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Model&                        model,
-        ::ClientPBRTextureData const&   actorTextureData
-    ) const;
-
-    MCAPI void _renderModel(
-        ::ScreenContext&                screenContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Model&                        model,
-        ::ActorTextureInfo const&       actorTextureInfo
-    ) const;
-
-    MCAPI void _renderModel(
-        ::ScreenContext&                screenContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Model&                        model,
-        ::ClientPBRTextureData const&   actorTextureData,
-        ::mce::MaterialPtr const&       forcedMaterial
-    ) const;
-
     MCAPI void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,

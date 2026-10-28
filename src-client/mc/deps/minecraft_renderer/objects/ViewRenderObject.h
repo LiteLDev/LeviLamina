@@ -24,8 +24,8 @@ public:
     ::ll::TypedStorage<8, 1280, ::ChunkRenderObjectCollection>      mChunksState;
     ::ll::TypedStorage<8, 128, ::ActorShadowRenderObjectCollection> mEntityShadowsState;
     ::ll::TypedStorage<8, 144, ::ParticleRenderObjectCollection>    mParticleState;
-    ::ll::TypedStorage<8, 320, ::SkyRenderObject>                   mSkyState;
-    ::ll::TypedStorage<8, 10848, ::WeatherRenderObject>             mWeatherState;
+    ::ll::TypedStorage<8, 312, ::SkyRenderObject>                   mSkyState;
+    ::ll::TypedStorage<8, 10824, ::WeatherRenderObject>             mWeatherState;
     ::ll::TypedStorage<8, 72, ::CrackRenderObjectCollection>        mCrackState;
     ::ll::TypedStorage<8, 40, ::NameTagRenderObjectCollection>      mNameTagState;
     // NOLINTEND

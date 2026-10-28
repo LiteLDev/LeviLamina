@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityId;
 struct ActorIsBeingDestroyedFlagComponent;
 struct ExitFromPassengerFlagComponent;
 struct StopRidingRequestComponent;
@@ -21,9 +22,10 @@ MCAPI void removeAllPassengers(
     bool                      actorIsBeingDestroyed,
     bool                      exitFromPassenger,
     ::EntityModifier<
+        ::EntityId,
         ::ActorIsBeingDestroyedFlagComponent,
         ::ExitFromPassengerFlagComponent,
-        ::StopRidingRequestComponent>& modifier
+        ::StopRidingRequestComponent> const& modifier
 );
 // NOLINTEND
 

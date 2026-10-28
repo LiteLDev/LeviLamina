@@ -24,6 +24,7 @@
 class Actor;
 class BlockSource;
 class CompoundTag;
+class DynamicContainerTracker;
 class ItemDescriptor;
 class ItemStack;
 class Random;
@@ -193,6 +194,8 @@ public:
     virtual bool isEmpty() const;
 
     virtual bool isSlotDisabled(int slot) const;
+
+    virtual void receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
     // NOLINTEND
 
 public:
@@ -329,7 +332,11 @@ public:
 
     MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
+#ifdef LL_PLAT_S
     MCAPI bool $hasCustomName() const;
+#else // LL_PLAT_C
+    MCFOLD bool $hasCustomName() const;
+#endif
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag);
 
@@ -340,6 +347,8 @@ public:
     MCAPI bool $isEmpty() const;
 
     MCFOLD bool $isSlotDisabled(int slot) const;
+
+    MCAPI void $receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
 
 
     // NOLINTEND

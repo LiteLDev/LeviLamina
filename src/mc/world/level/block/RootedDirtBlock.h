@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -27,8 +28,13 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
-        /*override*/;
+    virtual bool tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const /*override*/;
 
     virtual bool canBeOriginalSurface(bool) const /*override*/;
     // NOLINTEND
@@ -47,7 +53,13 @@ public:
 
     MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCAPI bool $tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const;
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 

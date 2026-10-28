@@ -25,6 +25,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::FertilizerType> mType;
+    ::ll::TypedStorage<1, 1, bool>             mIsChemistryEnabled;
     // NOLINTEND
 
 public:
@@ -35,7 +36,8 @@ public:
 
     virtual bool isFertilizer() const /*override*/;
 
-    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
+    virtual void
+    executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const
         /*override*/;
 
     virtual ::InteractionResult _useOn(
@@ -55,7 +57,8 @@ public:
 
     MCFOLD bool $isFertilizer() const;
 
-    MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    MCAPI void
+    $executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const;
 
     MCAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,

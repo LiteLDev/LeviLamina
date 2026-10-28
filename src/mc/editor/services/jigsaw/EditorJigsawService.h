@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/JigsawJsonType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/JigsawJsonType.h"
 #include "mc/editor/serviceproviders/EditorJigsawServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
@@ -130,6 +130,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorJigsawService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _reportJigsawFileError(::std::string_view localizationKey, ::std::vector<::std::string> params);
+
+    MCNAPI void _saveJigsawRegistryFiles(::std::string const& registryName);
 
     MCNAPI bool
     _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);

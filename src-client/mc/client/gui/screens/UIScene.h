@@ -200,6 +200,8 @@ public:
 
     virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
 
+    virtual bool equalsRawScreenName(::std::string_view comparison) const /*override*/;
+
     virtual ::std::string getRoute() const /*override*/;
 
     virtual ::std::string getScreenTelemetryName() const /*override*/;
@@ -393,6 +395,8 @@ public:
     MCAPI bool $equalsScreenName(::std::string_view comparison) const;
 
     MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+
+    MCAPI bool $equalsRawScreenName(::std::string_view comparison) const;
 
     MCAPI ::std::string $getRoute() const;
 

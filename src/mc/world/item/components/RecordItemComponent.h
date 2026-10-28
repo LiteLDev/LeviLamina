@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
 namespace Bedrock::Safety { class RedactableString; }
 namespace SharedTypes::Beta { struct RecordItemComponent; }
@@ -47,8 +46,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

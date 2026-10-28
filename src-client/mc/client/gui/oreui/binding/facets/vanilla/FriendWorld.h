@@ -18,7 +18,7 @@ public:
     ::ll::TypedStorage<4, 4, ::GameType>                      mGameType;
     ::ll::TypedStorage<1, 1, bool>                            mIsHardcore;
     ::ll::TypedStorage<4, 4, int>                             mPlayerCount;
-    ::ll::TypedStorage<4, 4, int>                             mCapacity;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>            mCapacity;
     ::ll::TypedStorage<1, 1, bool>                            mFriendOfFriendWorld;
     ::ll::TypedStorage<1, 1, bool>                            mIsSupportedForPartyTravel;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRealmId;

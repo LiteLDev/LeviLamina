@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class PackAccessStrategy;
 class ResourcePackManager;
 struct OptionalString;
 // clang-format on
@@ -46,13 +47,15 @@ public:
 
     MCAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
 
-#ifdef LL_PLAT_C
     MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
-#endif
 
     MCAPI ::OptionalString _getSimple(::std::string const& id) const;
 
     MCAPI void addKeys(::Localization&& from);
+
+    MCAPI void appendTranslations(
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& locStrings
+    );
 
     MCAPI void appendTranslations(::Localization const& other);
 
@@ -75,10 +78,18 @@ public:
     MCAPI ::std::string getIETFLanguageCode() const;
 #endif
 
+    MCAPI void loadFromPack(
+        ::std::string const&                keyPrefix,
+        ::PackAccessStrategy const&         accessStrategy,
+        ::std::vector<::std::string> const& allowedKeys
+    );
+
     MCAPI void loadFromResourcePackManager(
         ::ResourcePackManager&              resourcePackManager,
         ::std::vector<::std::string> const& blockedKeys
     );
+
+    MCAPI void replaceIdentifiers();
 
     MCAPI ~Localization();
     // NOLINTEND
@@ -86,27 +97,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
-#endif
-
-#ifdef LL_PLAT_C
     MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
-#endif
 
     MCAPI static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
 
-#ifdef LL_PLAT_C
     MCAPI static ::std::string getLanguageCode(::std::string const& fullCode);
 
+#ifdef LL_PLAT_C
     MCAPI static ::std::string getRegionCode(::std::string const& fullCode);
 
     MCAPI static void replaceTokens(::std::string& string, ::std::vector<::std::string> const& params);

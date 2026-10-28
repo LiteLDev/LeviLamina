@@ -72,6 +72,10 @@ public:
 
     virtual void onContainerScreenOpen(::ContainerScreenContext const& screenContext) /*override*/;
 
+    virtual void beginCursorItemDrag() /*override*/;
+
+    virtual void endCursorItemDrag() /*override*/;
+
     virtual void _initScreen(::ItemStackNetManagerScreen& screen) /*override*/;
     // NOLINTEND
 
@@ -89,9 +93,7 @@ public:
 
     MCAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
 
-#ifdef LL_PLAT_S
     MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
-#endif
 
     MCAPI void handleRequest(
         ::std::unique_ptr<::ItemStackRequestData>            request,
@@ -124,6 +126,10 @@ public:
     MCAPI bool $allowInventoryTransactionManager() const;
 
     MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+
+    MCAPI void $beginCursorItemDrag();
+
+    MCAPI void $endCursorItemDrag();
 
     MCAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
 

@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/client/renderer/block/BakedBlockLightType.h"
 #include "mc/client/renderer/chunks/render_chunk_metrics/MetricData.h"
+#include "mc/client/renderer/chunks/render_chunk_vertex_streaming/PackedRenderChunkLayerGroupBuffers.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/game/RangeIndices.h"
 #include "mc/world/phys/AABB.h"
@@ -28,6 +30,7 @@ namespace ClientBlockPipeline { class BlockTessellatorPipeline; }
 namespace ClientBlockPipeline { class Description; }
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { class TessellatorContext; }
+namespace RenderChunkVertexStreaming { class RenderChunkVertexStreamPlanRegistry; }
 namespace mce { class Mesh; }
 namespace mce { class MeshData; }
 namespace mce::framebuilder { struct FrameLightingModelCapabilities; }
@@ -57,12 +60,19 @@ public:
     ::ll::TypedStorage<8, 8, ::Tessellator&>                                                     mTessellator;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::Mesh>>                                     mBuiltMesh;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::MeshData>>                                 mMeshData;
-    ::ll::TypedStorage<1, 1, bool>                                                               mGUIRendering;
+    ::ll::TypedStorage<8, 352, ::std::optional<::RenderChunkVertexStreaming::PackedRenderChunkLayerGroupBuffers>>
+                                                                      mPackedRenderChunkLayerGroupBuffers;
+    ::ll::TypedStorage<1, 1, bool>                                    mGUIRendering;
     ::ll::TypedStorage<1, 1, bool>                                    mUseNewTessellationPipeline;
     ::ll::TypedStorage<1, 1, bool>                                    mTextureShiftsEnabled;
     ::ll::TypedStorage<4, 24, ::AABB>                                 mBuildBoundingBox;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IRenderChunkGarbage>> mRenderChunkGarbage;
     ::ll::TypedStorage<8, 16, ::WeakRef<::RenderChunkCoordinator>>    mRenderChunkCoordinator;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::Bedrock::NonOwnerPointer<::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry const>>
+        mRenderChunkVertexStreamPlanRegistry;
     // NOLINTEND
 
 public:
@@ -89,11 +99,14 @@ public:
     );
 
     MCAPI RenderChunkBuilder(
-        ::MinecraftGameplayGraphicsResources&      minecraftGameplayGraphicsResources,
-        ::ClientBlockPipeline::TessellatorContext& pipelineTessellatorContext,
-        ::ChunkSource&                             mainSource,
-        ::WeakRef<::RenderChunkCoordinator>        coordinator
+        ::MinecraftGameplayGraphicsResources&                                    minecraftGameplayGraphicsResources,
+        ::ClientBlockPipeline::TessellatorContext&                               pipelineTessellatorContext,
+        ::ChunkSource&                                                           mainSource,
+        ::WeakRef<::RenderChunkCoordinator>                                      coordinator,
+        ::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry const& renderChunkVertexStreamPlanRegistry
     );
+
+    MCAPI ::RenderChunkVertexStreaming::PackedRenderChunkLayerGroupBuffers acquirePackedRenderChunkLayerGroupBuffers();
 
     MCAPI void build(
         ::RenderChunkGeometry&                                     renderChunkGeometry,
@@ -134,10 +147,11 @@ public:
     );
 
     MCAPI void* $ctor(
-        ::MinecraftGameplayGraphicsResources&      minecraftGameplayGraphicsResources,
-        ::ClientBlockPipeline::TessellatorContext& pipelineTessellatorContext,
-        ::ChunkSource&                             mainSource,
-        ::WeakRef<::RenderChunkCoordinator>        coordinator
+        ::MinecraftGameplayGraphicsResources&                                    minecraftGameplayGraphicsResources,
+        ::ClientBlockPipeline::TessellatorContext&                               pipelineTessellatorContext,
+        ::ChunkSource&                                                           mainSource,
+        ::WeakRef<::RenderChunkCoordinator>                                      coordinator,
+        ::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry const& renderChunkVertexStreamPlanRegistry
     );
     // NOLINTEND
 

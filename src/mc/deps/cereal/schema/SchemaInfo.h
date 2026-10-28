@@ -18,8 +18,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SchemaInfo(SchemaInfo const&);
+    SchemaInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::cereal::internal::SchemaInfo& operator=(::cereal::internal::SchemaInfo const&);
+
     MCAPI ~SchemaInfo();
     // NOLINTEND
 

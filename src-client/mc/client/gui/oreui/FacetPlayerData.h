@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 416, ::Realms::Stories::Player>                            mPlayer;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Realms::Stories::FacetStateManager>> mStoriesFacetStateManager;
-    ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage>                       mProfileImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage>                       mProfileImage;
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
 
     MCAPI bool getIsPlayingOnRealm() const;
 
-    MCFOLD int64 getLastSeenTime() const;
+    MCAPI int64 getLastSeenTime() const;
 
     MCAPI bool getOnlineStatus() const;
 
@@ -46,7 +46,7 @@ public:
 
     MCAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
 
-    MCAPI ::Realms::PlayerRole getRealmsRole() const;
+    MCFOLD ::Realms::PlayerRole getRealmsRole() const;
 
     MCFOLD ::std::string const& getXuid() const;
     // NOLINTEND

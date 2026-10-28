@@ -83,7 +83,7 @@ public:
 
     MCAPI ::std::string getRedactedName() const;
 
-    MCFOLD ::std::string getUnredactedName() const;
+    MCAPI ::std::string getUnredactedName() const;
 
     MCAPI ~CommandBlockUpdatePacketPayload();
     // NOLINTEND

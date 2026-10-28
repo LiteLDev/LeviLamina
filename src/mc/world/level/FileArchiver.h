@@ -213,7 +213,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::FileArchiver::Result const&);
+        MCFOLD void* $ctor(::FileArchiver::Result const&);
         // NOLINTEND
 
     public:

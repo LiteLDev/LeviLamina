@@ -14,11 +14,14 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class BlockSource;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Level;
 class StructureEditorData;
+class StructureSettings;
+struct ActorUniqueID;
 // clang-format on
 
 class StructureCommand : public ::Command {
@@ -60,12 +63,26 @@ public:
         ::StructureEditorData& settings
     ) const;
 
+    MCAPI uint _generateSeed() const;
+
     MCAPI ::std::string _getFullName() const;
+
+    MCAPI ::ActorUniqueID _getPlayerId(::CommandOrigin const& origin) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _editorSave(
+        ::CommandOrigin const&     origin,
+        ::CommandOutput&           output,
+        ::BlockSource&             region,
+        ::std::string const&       fullName,
+        ::BlockPos                 from,
+        ::BlockPos                 to,
+        ::StructureSettings const& settings
+    );
+
     MCAPI static void setup(::CommandRegistry& registry, bool isEditorWorld);
     // NOLINTEND
 

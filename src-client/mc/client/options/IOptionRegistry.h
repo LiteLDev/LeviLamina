@@ -674,10 +674,6 @@ public:
 
     virtual bool getShownPlatformPremiumUpsell() const = 0;
 
-    virtual void setAppLaunchedCount(int value) = 0;
-
-    virtual int getAppLaunchedCount() const = 0;
-
     virtual void setEcoMode(bool value) = 0;
 
     virtual bool getEcoMode() const = 0;

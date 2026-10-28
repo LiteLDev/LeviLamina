@@ -130,7 +130,7 @@ public:
 
     MCFOLD bool $isKeyboardActive() const;
 
-    MCAPI bool $wasEnabledWithMultiline() const;
+    MCFOLD bool $wasEnabledWithMultiline() const;
 
     MCAPI bool $isNumbersOnly() const;
 

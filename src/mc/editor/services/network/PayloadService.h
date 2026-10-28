@@ -20,6 +20,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class INetworkPayload; }
 namespace Editor::Network { struct PayloadMetrics; }
+namespace Editor::Network { struct PayloadSenderContext; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -102,6 +103,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk27a74f;
+        ::ll::UntypedStorage<8, 8> mUnkfa22c2;
         // NOLINTEND
 
     public:
@@ -117,7 +119,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk20af30;
         ::ll::UntypedStorage<8, 64> mUnk34ed57;
-        ::ll::UntypedStorage<8, 8>  mUnka29ebc;
+        ::ll::UntypedStorage<8, 16> mUnka29ebc;
         ::ll::UntypedStorage<8, 8>  mUnkff84cc;
         // NOLINTEND
 
@@ -165,6 +167,11 @@ public:
     dispatchToSelf(::Editor::Network::INetworkPayload& payload) /*override*/;
 
     virtual void onReceivePayload(::EditorNetworkPacket const& packet) /*override*/;
+
+    virtual void onReceivePayload(
+        ::EditorNetworkPacket const&                   packet,
+        ::Editor::Network::PayloadSenderContext const& sender
+    ) /*override*/;
 
     virtual void flushDeferred(uint64 coalesceKey) /*override*/;
 
@@ -222,6 +229,12 @@ public:
         char const*                                                      payloadName,
         ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber
     ) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> _listenForWithSender(
+        char const* payloadName,
+        ::std::function<void(::Editor::Network::INetworkPayload const&, ::Editor::Network::PayloadSenderContext const&)>
+            fnSubscriber
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -241,9 +254,12 @@ public:
         ::Editor::Network::PayloadMetrics* metrics
     );
 
-    MCNAPI ::std::optional<::DebuggerStat> _collectScriptStats(uint64, uint64, uint64);
+    MCNAPI void _collectScriptStats(::DebuggerStat& editorNetworkStats);
 
     MCNAPI ::std::vector<::Actor*> _getEditorClientActors() const;
+
+    MCNAPI ::std::shared_ptr<::Editor::Network::INetworkPayload>
+    _loadReceivedPayload(::EditorNetworkPacket const& packet);
 
     MCNAPI ::Scripting::Result_deprecated<::EditorNetworkPacket> _populatePacket(
         ::Editor::Network::INetworkPayload*                 payload,
@@ -306,6 +322,9 @@ public:
 
     MCNAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
 
+    MCNAPI void
+    $onReceivePayload(::EditorNetworkPacket const& packet, ::Editor::Network::PayloadSenderContext const& sender);
+
     MCNAPI void $flushDeferred(uint64 coalesceKey);
 
     MCNAPI bool $isCollectingMetrics() const;
@@ -355,6 +374,12 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $_listenFor(char const* payloadName, ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber);
+
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $_listenForWithSender(
+        char const* payloadName,
+        ::std::function<void(::Editor::Network::INetworkPayload const&, ::Editor::Network::PayloadSenderContext const&)>
+            fnSubscriber
+    );
 
 
     // NOLINTEND

@@ -5,13 +5,11 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorInfoRegistry;
 class BaseGameVersion;
 class BlockDefinitionGroup;
 class BlockPalette;
@@ -22,17 +20,14 @@ class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
+class IEducationOptions;
 class IMinecraftEventing;
 class Item;
 class ItemInstance;
 class ItemRegistry;
-class LevelData;
 class LinkedAssetValidator;
 class ResourcePackManager;
-class ServerScriptManager;
 class TagUpdateToken;
-struct ItemData;
-struct ItemIconInfo;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
 namespace cereal { struct ReflectionCtx; }
@@ -97,7 +92,8 @@ public:
         ::ResourcePackManager const&,
         ::cereal::ReflectionCtx const&,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const,
-        ::IMinecraftEventing&
+        ::IMinecraftEventing&,
+        ::IEducationOptions const&
     );
 
 public:
@@ -113,52 +109,27 @@ public:
 
     MCAPI ::TagUpdateToken allowTagUpdate() const;
 
-    MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* infoRegistry, ::LevelData& levelData) const;
-
-    MCAPI void bindDynamicScriptTypes(::ServerScriptManager& scripts) const;
-
-#ifdef LL_PLAT_C
-    MCAPI void buildClientRegistryFromServer(
-        ::std::vector<::ItemData> const& serverItemData,
-        ::Experiments const&             experiments,
-        ::BaseGameVersion const&         baseGameVersion
-    ) const;
-#endif
-
     MCAPI void buildServerRegistry(
         ::Experiments const&                               experiments,
         ::BaseGameVersion const&                           baseGameVersion,
+        ::IEducationOptions const&                         educationOptions,
         ::ResourcePackManager*                             rpm,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
         ::IMinecraftEventing&                              eventing
     ) const;
 
-    MCAPI bool canUpdateTags() const;
-
     MCAPI ::Bedrock::NonOwnerPointer<::cereal::ReflectionCtx const> cerealContext() const;
 
     MCAPI void clearDeadItemRegistry() const;
 
-#ifdef LL_PLAT_C
-    MCAPI void findAllAttachableDefinitions() const;
-#endif
-
     MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasSplitNames(::HashedString const& oldName) const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> getCreativeItemRegistry() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::CreativeItemRegistry> getCreativeItemRegistry();
 
     MCFOLD ::WeakPtr<::Item> getItem(::HashedString const& id) const;
 
     MCAPI ::WeakPtr<::Item> getItem(short itemId) const;
-
-    MCAPI int getItemCount() const;
-
-#ifdef LL_PLAT_C
-    MCAPI uint getMaxItemID() const;
-#endif
 
     MCAPI ::HashedString getNameFromLegacyID(short id) const;
 
@@ -179,6 +150,7 @@ public:
         ::ResourcePackManager const&                       resourcePackManager,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
         ::IMinecraftEventing&                              eventing,
+        ::IEducationOptions const&                         educationOptions,
         ::std::function<void(
             ::ItemRegistryRef,
             ::BlockDefinitionGroup const&,
@@ -188,17 +160,14 @@ public:
             ::ResourcePackManager const&,
             ::cereal::ReflectionCtx const&,
             ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
-            ::IMinecraftEventing&
+            ::IMinecraftEventing&,
+            ::IEducationOptions const&
         )>                                                 registerCallback
     ) const;
 
     MCAPI bool isComplexAlias(::HashedString const& oldName) const;
 
     MCAPI bool isCreativeItem(::ItemInstance const& itemInstance) const;
-
-    MCAPI bool isRegistryInitialized() const;
-
-    MCAPI bool isServerInitializingCreativeItems() const;
 
     MCAPI ::ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
@@ -218,21 +187,11 @@ public:
 
     MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>* onFinishedInitServer() const;
-
     MCAPI void onLevelInit(
         ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
         ::WeakRef<::IContainerRegistryAccess>       containerAccess,
         ::WeakRef<::IContainerRegistryTracker>      containerTracker
     ) const;
-
-#ifdef LL_PLAT_C
-    MCAPI void populateClientItemData(
-        ::ResourcePackManager& packManager,
-        ::Experiments const&   experiments,
-        ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
-    ) const;
-#endif
 
     MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion) const;
@@ -250,20 +209,10 @@ public:
         ::BaseGameVersion const& fromVersion
     ) const;
 
-    MCAPI uint64 remapToFullLegacyNameByHash(uint64 newHash) const;
-
     MCAPI uint64 remapToLegacyNameByHash(uint64 newHash) const;
 
     MCAPI void setCheckForItemWorldCompatibility(bool value) const;
 
-    MCAPI void setServerInitializingCreativeItems(bool value) const;
-
-    MCAPI bool shouldCheckForItemWorldCompatibility() const;
-
-    MCAPI void shutdown() const;
-
     MCAPI void unregisterItem(::HashedString const& itemName) const;
-
-    MCAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& itemData);
     // NOLINTEND
 };

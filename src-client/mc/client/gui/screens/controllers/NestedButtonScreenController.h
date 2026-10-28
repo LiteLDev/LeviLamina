@@ -37,8 +37,27 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setUpCallbacksForNestedButtonInCollection(
+        ::std::string const&                         nestedBaseButtonId,
+        ::std::string const&                         nestedControlEnabledBinding,
+        ::std::vector<uint>                          ignoredControls,
+        ::std::function<int(::UIPropertyBag&)>       indexSelectionFunc,
+        ::std::function<bool(::UIPropertyBag&, int)> visibilityFunction,
+        ::std::string                                firstControlName
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

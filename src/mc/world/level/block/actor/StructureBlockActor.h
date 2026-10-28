@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -61,8 +57,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StructureBlockActor(::BlockPos const& pos);
-
     MCAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
 
     MCAPI bool _saveStructure(::BlockSource& region, ::BlockPos const& position, bool redstoneTriggered);
@@ -75,12 +69,6 @@ public:
     MCAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
     MCAPI void setStructureData(::StructureEditorData const& data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -98,7 +86,7 @@ public:
 
     MCAPI void $onChunkLoaded(::LevelChunk& lc);
 
-    MCAPI void $onSubChunkLoaded(::LevelChunk& lc, short, bool);
+    MCFOLD void $onSubChunkLoaded(::LevelChunk& lc, short, bool);
 
     MCAPI void $onChunkUnloaded(::LevelChunk& lc);
 

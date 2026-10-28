@@ -57,7 +57,7 @@ public:
 
     MCAPI float $getKnockbackResistanceValue() const;
 
-    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
 
     // NOLINTEND

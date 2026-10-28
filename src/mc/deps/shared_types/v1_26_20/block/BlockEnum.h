@@ -18,12 +18,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindBlockRenderLayer(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindChestObstructionRule(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void bindConnectionID(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void bindConnectionType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static void bindDirection(::cereal::ReflectionCtx& ctx);
 
     MCAPI static void bindEnum(::cereal::ReflectionCtx& ctx);

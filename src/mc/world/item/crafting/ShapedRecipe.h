@@ -33,8 +33,7 @@ public:
 
     virtual bool isShapeless() const /*override*/;
 
-    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
-        /*override*/;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
     virtual int size() const /*override*/;
     // NOLINTEND
@@ -56,7 +55,7 @@ public:
 
     MCFOLD bool $isShapeless() const;
 
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
     MCAPI int $size() const;
 

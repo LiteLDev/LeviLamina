@@ -37,7 +37,7 @@ public:
     ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID>                                           mNetherNetId;
     ::ll::TypedStorage<8, 16, ::PlayerMessaging::NetworkID>                                     mPlayerMessagingId;
     ::ll::TypedStorage<1, 2, ::ServerSupportedAuthenticationTypes>                              mSupportedAuth;
-    ::ll::TypedStorage<8, 200, ::ThirdPartyInfo>                                                mThirdPartyServerInfo;
+    ::ll::TypedStorage<8, 168, ::ThirdPartyInfo>                                                mThirdPartyServerInfo;
     ::ll::TypedStorage<8, 312, ::std::optional<::Social::ResolvedExperienceInfo>>               mResolvedExperienceInfo;
     ::ll::TypedStorage<1, 1, bool>                                                              mAllowSmallDownloads;
     ::ll::TypedStorage<1, 1, bool>                                                              mDisableTrickleIce;

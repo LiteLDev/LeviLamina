@@ -269,11 +269,11 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     LegacyGoalDefinition& operator=(LegacyGoalDefinition const&);
 
-#else // LL_PLAT_C
 #endif
 public:
     // member functions
@@ -284,7 +284,7 @@ public:
 
     MCAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
 #endif
 

@@ -59,6 +59,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
 
+    MCAPI void cleanupIndependentRenderer(::HashedString const& name);
+
     MCAPI void clearEntityRenderers();
 
     MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
@@ -85,7 +87,7 @@ public:
         bool                                                                 supportsNewVertexFormat
     );
 
-    MCAPI bool initializePlayerRenderer(
+    MCAPI bool initializeIndependentRenderer(
         ::std::shared_ptr<::ActorResourceDefinition> resources,
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup
     );

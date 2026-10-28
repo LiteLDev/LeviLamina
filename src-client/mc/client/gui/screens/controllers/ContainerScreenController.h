@@ -243,10 +243,6 @@ public:
 
     MCAPI void _handleUnselectSlot();
 
-    MCAPI bool _hasItems(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI bool _isCursorSelectedActive() const;
-
     MCAPI bool _isInValidCraftingResultContainer(::std::string_view collectionName, int collectionIndex) const;
 
     MCAPI void _loadLastSelectedSlot();

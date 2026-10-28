@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _replaceBaseBlockAt(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void
     placeBaseCluster(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int trunkWidth) const;
 #endif

@@ -18,11 +18,22 @@ class StructureBlockPalette {
 public:
     // StructureBlockPalette inner types declare
     // clang-format off
+    struct NamedTickingQueueData;
     struct TickingQueueData;
     struct BlockPositionData;
     // clang-format on
 
     // StructureBlockPalette inner types define
+    struct NamedTickingQueueData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> mNamespace;
+        ::ll::TypedStorage<8, 32, ::std::string> mEventName;
+        ::ll::TypedStorage<8, 8, uint64>         mTickDelay;
+        // NOLINTEND
+    };
+
     struct TickingQueueData {
     public:
         // member variables
@@ -35,8 +46,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>>                          mBlockEntityData;
-        ::ll::TypedStorage<8, 24, ::std::vector<::StructureBlockPalette::TickingQueueData>> mTickData;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>>                               mBlockEntityData;
+        ::ll::TypedStorage<8, 24, ::std::vector<::StructureBlockPalette::TickingQueueData>>      mTickData;
+        ::ll::TypedStorage<8, 24, ::std::vector<::StructureBlockPalette::NamedTickingQueueData>> mNamedTickData;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTag>>> mNeighborChangedQueueData;
         // NOLINTEND
 
     public:
@@ -61,7 +74,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -76,6 +89,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(::CompoundTag const& tag);
 
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionDataList(::CompoundTag const& tag);
@@ -84,9 +98,8 @@ public:
 
     MCAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
 
-    MCAPI void addBlockPositionData(uint64 id, ::StructureBlockPalette::BlockPositionData blockPositionData);
-
     MCAPI ::StructureBlockPalette clone() const;
+#endif
 
     MCAPI ::Block const& getBlock(
         ::BlockPalette const&                                   blockPalette,
@@ -96,7 +109,9 @@ public:
 
     MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
 
+#ifdef LL_PLAT_C
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+#endif
 
     MCAPI ::Block const*
     tryGetBlock(uint64 paletteId, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry) const;

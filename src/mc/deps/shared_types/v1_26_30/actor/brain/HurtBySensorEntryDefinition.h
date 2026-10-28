@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 struct WorldBlockPosition;
-namespace SharedTypes::Brain { struct BlockRefMemory; }
-namespace SharedTypes::Brain { struct EntityRefMemory; }
+namespace SharedTypes::Brain { struct BlockRef; }
+namespace SharedTypes::Brain { struct EntityRef; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,14 +26,12 @@ public:
     ::ll::TypedStorage<
         8,
         56,
-        ::std::optional<
-            ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRefMemory>>>
+        ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRef>>>
         mDamagingEntityMemory;
     ::ll::TypedStorage<
         8,
         56,
-        ::std::optional<
-            ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::BlockRefMemory>>>
+        ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::BlockRef>>>
         mDamagingBlockMemory;
     ::ll::TypedStorage<
         8,

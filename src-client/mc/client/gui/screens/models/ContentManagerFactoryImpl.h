@@ -12,6 +12,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -146,6 +147,8 @@ public:
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     ) const /*override*/;
 
+    virtual ::Bedrock::Threading::Async<void> refreshPacksAsync() const /*override*/;
+
     virtual bool allowsResourcePackDevelopment() const /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::AppPlatform> getPlatform() const /*override*/;
@@ -225,6 +228,8 @@ public:
         ::PackType                                                  packType,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     ) const;
+
+    MCAPI ::Bedrock::Threading::Async<void> $refreshPacksAsync() const;
 
     MCAPI bool $allowsResourcePackDevelopment() const;
 

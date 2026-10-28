@@ -147,8 +147,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
-
-    MCAPI ~TrialSpawner();
 #endif
     // NOLINTEND
 
@@ -166,14 +164,6 @@ public:
     MCAPI static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
 
     MCAPI static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

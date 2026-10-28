@@ -1,0 +1,21 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ContainerScreenActionResult;
+struct ContainerTransferScope;
+// clang-format on
+
+class IContainerTransfer {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~IContainerTransfer() = default;
+
+    virtual ::std::unique_ptr<::ContainerTransferScope> preTransfer() = 0;
+
+    virtual void postTransfer(::ContainerTransferScope* transferScope, ::ContainerScreenActionResult const& result) = 0;
+    // NOLINTEND
+};

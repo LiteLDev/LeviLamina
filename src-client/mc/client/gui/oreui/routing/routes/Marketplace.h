@@ -35,6 +35,9 @@ public:
     MCAPI static ::StoreDataDrivenScreenParams _getParamsFromQuery(::std::string const& url);
 
     MCAPI static ::std::string composeRouteForProduct(::std::string const& productId);
+
+    MCAPI static ::std::string
+    composeRouteForSearch(::std::string const& searchText, ::std::string const& packTypeFilter);
     // NOLINTEND
 
 public:
@@ -43,6 +46,10 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<char const[23]> INVENTORY_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SEARCH_ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[46]> SKIN_MISSING_MARIO_MASHUP_MODAL_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[19]> STORE_ROUTE();
 

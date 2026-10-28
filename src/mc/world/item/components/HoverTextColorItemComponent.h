@@ -11,7 +11,6 @@
 // clang-format off
 class ComponentItem;
 class SemVersion;
-namespace SharedTypes::v1_20_50 { struct HoverTextColorItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,19 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HoverTextColorItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
     // NOLINTEND
 
 public:
@@ -46,12 +35,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
     // NOLINTEND
 
 public:

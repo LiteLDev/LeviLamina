@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 struct SentryEnvelopePayloadSdk {
 public:
     // SentryEnvelopePayloadSdk inner types define
@@ -26,10 +21,4 @@ public:
     SentryEnvelopePayloadSdk& operator=(SentryEnvelopePayloadSdk const&);
     SentryEnvelopePayloadSdk(SentryEnvelopePayloadSdk const&);
     SentryEnvelopePayloadSdk();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 };

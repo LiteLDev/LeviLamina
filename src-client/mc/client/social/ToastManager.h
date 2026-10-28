@@ -34,8 +34,9 @@ public:
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                             mClient;
     ::ll::TypedStorage<4, 4, ::ToastState>                                                   mState;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>>          mResourcePackManager;
-    ::ll::TypedStorage<8, 376, ::std::optional<::ToastMessage>>                              mCurrentMessage;
+    ::ll::TypedStorage<8, 384, ::std::optional<::ToastMessage>>                              mCurrentMessage;
     ::ll::TypedStorage<8, 24, ::std::vector<::ToastMessage>>                                 mQueuedToastMessages;
+    ::ll::TypedStorage<8, 384, ::std::optional<::ToastMessage>>                              mPersistentToastMessage;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ToastChannel, ::IToastListener*>>> mListeners;
     ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::IToastEventListener*>>>        mEventListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RecipeToastDataViewer>>                     mIconsViewer;
@@ -43,12 +44,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                           mToastsEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                           mRefreshPendingInvites;
     ::ll::TypedStorage<1, 1, bool>                                                           mDestroyToast;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                        mToastStartTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                        mToastEndTime;
-    ::ll::TypedStorage<4, 4, float>                                                          mDeltaTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                        mLastUpdateTimePoint;
-    ::ll::TypedStorage<8, 8, ::Option*>                                                      mEnableDebugToastsOption;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                 mLongestRecipeText;
+    ::ll::TypedStorage<1, 1, bool>                                    mMatchmakingJoiningToastExpired;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mToastStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mToastEndTime;
+    ::ll::TypedStorage<4, 4, float>                                   mDeltaTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastUpdateTimePoint;
+    ::ll::TypedStorage<8, 8, ::Option*>                               mEnableDebugToastsOption;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mLongestRecipeText;
     // NOLINTEND
 
 public:
@@ -63,6 +65,10 @@ public:
     virtual ~ToastManager() /*override*/ = default;
 
     virtual void pushToast(::ToastMessage&& message) /*override*/;
+
+    virtual void pushPersistentToast(::ToastMessage&& message) /*override*/;
+
+    virtual void removePersistentToast() /*override*/;
 
     virtual bool isEditorModeEnabled() const /*override*/;
 
@@ -86,6 +92,8 @@ public:
 
     MCAPI bool _isToastAllowed(::ToastMessageType messageType) const;
 
+    MCAPI void _removePendingPersistentToast();
+
     MCAPI void _reportClick();
 
     MCAPI void _sendShowToast(bool const animateIn);
@@ -97,6 +105,8 @@ public:
     MCAPI void _showNewToast();
 
     MCAPI void _updateLongestRecipeText();
+
+    MCAPI void _updatePersistentToast();
 
     MCAPI ::std::string getMoreRecipesTitle() const;
 
@@ -125,6 +135,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $pushToast(::ToastMessage&& message);
+
+    MCAPI void $pushPersistentToast(::ToastMessage&& message);
+
+    MCAPI void $removePersistentToast();
 
     MCAPI bool $isEditorModeEnabled() const;
 

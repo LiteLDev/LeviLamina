@@ -120,8 +120,6 @@ public:
     // NOLINTBEGIN
     MCAPI TheEndGenerator(::Dimension& dimension, uint seed, ::Biome const* overrideBiome);
 
-    MCAPI ::Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
-
     MCAPI float
     getIslandHeightValue(int const chunkX, int const chunkZ, int const cellOffsetX, int const cellOffsetZ) const;
     // NOLINTEND

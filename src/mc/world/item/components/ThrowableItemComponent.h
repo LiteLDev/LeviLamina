@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -46,10 +47,11 @@ public:
         ::ItemStack&                     item,
         ::Player&                        player,
         ::ProjectileItemComponent const& projectileComponent,
-        float                            power
+        float                            power,
+        ::HandSlot                       handSlot
     ) const;
 
-    MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft, ::HandSlot handSlot) const;
     // NOLINTEND
 
 public:

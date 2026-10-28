@@ -3,16 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/packet/SyncWorldClocksPacketPayload.h"
 #include "mc/world/level/clock/WorldClockRegistry.h"
 
 // auto generated forward declare list
 // clang-format off
 class LevelData;
+class LevelEventCoordinator;
 class PacketSender;
 // clang-format on
 
 class WorldClockRegistryClient : public ::WorldClockRegistry {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    WorldClockRegistryClient();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -25,6 +34,8 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI explicit WorldClockRegistryClient(::Bedrock::NonOwnerPointer<::LevelEventCoordinator> eventCoordinator);
+
     MCAPI void _addTimeMarker(::SyncWorldClocksPacketPayload::AddTimeMarkerData const& data);
 
     MCAPI void _initializeRegistry(::SyncWorldClocksPacketPayload::InitializeRegistryData const& data);
@@ -36,6 +47,14 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelEventCoordinator> eventCoordinator);
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -43,11 +62,5 @@ public:
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

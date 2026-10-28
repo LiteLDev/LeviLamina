@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                   mFilePath;
     ::ll::TypedStorage<1, 1, bool>                             mSourceChanged;
     ::ll::TypedStorage<1, 1, bool>                             mUseAnimations;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>            mFrameTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture>            mFrameTexture;
     ::ll::TypedStorage<8, 136, ::std::optional<::AnimatedGif>> mAnimatedGif;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                    mTaskGroup;
     // NOLINTEND

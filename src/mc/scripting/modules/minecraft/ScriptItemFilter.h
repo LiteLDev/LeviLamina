@@ -46,6 +46,8 @@ public:
     MCAPI ::ScriptModuleMinecraft::ScriptItemFilter& operator=(::ScriptModuleMinecraft::ScriptItemFilter&&);
 
     MCAPI void processItemQueryOptions(::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI ~ScriptItemFilter();
     // NOLINTEND
 
 public:
@@ -58,6 +60,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

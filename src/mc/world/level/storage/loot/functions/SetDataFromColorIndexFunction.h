@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Item;
 class ItemStackBase;
 class LootTableContext;
 class Random;
@@ -19,6 +21,19 @@ public:
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
 
     virtual void applyPreVersion(::ItemStackBase& item, ::Random&, ::LootTableContext& context) /*override*/;
+
+    virtual void apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _applyImpl(
+        ::Item const*&       inOutItemDef,
+        ::Actor const*       thisEntity,
+        ::std::string const& originalItemName,
+        int&                 outResultAux
+    );
     // NOLINTEND
 
 public:
@@ -28,6 +43,14 @@ public:
 
     MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random&, ::LootTableContext& context);
 
+    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -46,6 +46,10 @@ public:
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+#ifdef LL_PLAT_S
+    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
+#endif
+
     MCAPI ::JigsawEditorData& operator=(::JigsawEditorData const&);
 
     MCAPI void save(::CompoundTag& tag) const;

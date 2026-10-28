@@ -12,7 +12,6 @@
 class Experiments;
 class ItemComponent;
 class PackLoadRequirement;
-struct PackLoadInfo;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -105,14 +104,5 @@ public:
 
     MCAPI static void
     updateReleasedMinFormatVersionForAnyComponentIfLower(::CerealItemComponentFactory& instance, ::SemVersion version);
-
-#ifdef LL_PLAT_C
-    MCAPI static bool validateCerealComponent(
-        ::std::string const&           componentName,
-        ::SemVersion const&            documentVersion,
-        ::PackLoadInfo const&          packLoadInfo,
-        ::cereal::ReflectionCtx const& ctx
-    );
-#endif
     // NOLINTEND
 };

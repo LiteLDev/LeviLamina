@@ -32,6 +32,10 @@ public:
 
     MCAPI ::Json::Value createJsonValue() const;
 
+#ifdef LL_PLAT_C
+    MCAPI ::SemVersion getSemVersion() const;
+#endif
+
     MCAPI bool operator==(::MinEngineVersion const& rhs) const;
     // NOLINTEND
 

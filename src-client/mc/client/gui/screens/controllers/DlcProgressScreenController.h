@@ -60,6 +60,8 @@ public:
         bool                                     processingUpdates,
         bool                                     disableExitWhileInProgress
     );
+
+    MCAPI ::std::string const _getImportProgress() const;
     // NOLINTEND
 
 public:

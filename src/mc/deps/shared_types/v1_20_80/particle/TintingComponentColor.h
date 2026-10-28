@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/v1_20_80/particle/ColorExpr.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ColorGradient.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct TintingComponentColor {
@@ -37,12 +32,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI TintingComponentColor(::SharedTypes::v1_20_80::TintingComponentColor const&);
 #endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

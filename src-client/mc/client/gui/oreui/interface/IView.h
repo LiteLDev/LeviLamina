@@ -35,6 +35,8 @@ public:
 
     virtual void render(::ScreenContext& screenContext) = 0;
 
+    virtual void renderOffscreen(::ScreenContext& screenContext) = 0;
+
     virtual void resize(uint width, uint height) = 0;
 
     virtual void reload() = 0;

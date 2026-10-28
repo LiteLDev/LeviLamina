@@ -6,6 +6,7 @@
 #include "mc/entity/utilities/leashable_utility/UnleashReason.h"
 #include "mc/platform/brstd/flat_set.h"
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,7 +22,7 @@ struct LeashablePreset;
 namespace LeashableUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::Interaction attemptCutInteraction(::Actor& owner, ::Player& player);
+MCAPI ::Interaction attemptCutInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
 MCAPI bool canLeashBeStolen(::Actor& actor);
 

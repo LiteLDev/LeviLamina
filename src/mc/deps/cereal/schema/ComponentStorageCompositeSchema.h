@@ -21,6 +21,12 @@ namespace cereal::internal {
 
 class ComponentStorageCompositeSchema : public ::cereal::internal::DefaultCompositeSchema {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint> mTypeId;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void doSave(

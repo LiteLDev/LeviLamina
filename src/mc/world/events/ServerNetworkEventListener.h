@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 struct DiagnosticsEvent;
+struct MatchmakingTicketCancelRequestedEvent;
 struct MessageEvent;
 struct PartyChangedEvent;
 struct PartyDestinationCookieResponseEvent;
@@ -33,6 +34,8 @@ public:
     virtual ::EventResult onPartyChanged(::PartyChangedEvent const& event);
 
     virtual ::EventResult onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
+
+    virtual ::EventResult onMatchmakingTicketCancelRequested(::MatchmakingTicketCancelRequestedEvent const& event);
     // NOLINTEND
 
 public:
@@ -47,6 +50,8 @@ public:
     MCFOLD ::EventResult $onPartyChanged(::PartyChangedEvent const& event);
 
     MCFOLD ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
+
+    MCFOLD ::EventResult $onMatchmakingTicketCancelRequested(::MatchmakingTicketCancelRequestedEvent const& event);
 
 
     // NOLINTEND

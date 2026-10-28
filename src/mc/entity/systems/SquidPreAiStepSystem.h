@@ -6,6 +6,7 @@
 // clang-format off
 class StrictEntityContext;
 struct LocalMoveVelocityComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class SquidPreAiStepSystem {
@@ -14,5 +15,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _doSquidPreAiStepSystem(::StrictEntityContext const&, ::LocalMoveVelocityComponent& localMoveVelocityComponent);
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

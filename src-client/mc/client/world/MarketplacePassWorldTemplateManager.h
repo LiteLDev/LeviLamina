@@ -54,6 +54,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager>   worldTemplateManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::IContentAcquisition&                                   contentAquisition,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
@@ -86,6 +87,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager>   worldTemplateManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::IContentAcquisition&                                   contentAquisition,
         ::MarketplaceServicesManager&                            marketplaceServicesManager

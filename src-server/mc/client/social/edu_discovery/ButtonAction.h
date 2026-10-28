@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUDiscovery {
+namespace EduDiscovery {
 
 enum class ButtonAction : uchar {};
 

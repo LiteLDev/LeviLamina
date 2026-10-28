@@ -11,6 +11,7 @@
 class BiomeSource;
 class Dimension;
 namespace br::worldgen { struct BlockVolumeCacheItem; }
+namespace br::worldgen { struct ColumnBiomes; }
 // clang-format on
 
 namespace br::worldgen {
@@ -30,6 +31,8 @@ public:
             ::ChunkPos,
             ::std::unique_ptr<::std::vector<short>, ::std::default_delete<::std::vector<short>>>>>>
         mChunkHeightCache;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<uint64, ::br::worldgen::ColumnBiomes>>>
+        mColumnBiomeCache;
     // NOLINTEND
 
 public:
@@ -40,6 +43,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ChunkAccessor(::Dimension& dimension, ::BiomeSource const& biomeSource);
+
+#ifdef LL_PLAT_S
+    MCAPI ::br::worldgen::ColumnBiomes const& _getColumnBiomes(int x, int z) const;
+#endif
 
     MCAPI int getFirstFreeHeight(int x, int z, ::br::worldgen::HeightmapProjection::Type heightmapProjection) const;
 

@@ -14,7 +14,6 @@
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemTag.h"
-#include "mc/world/item/registry/ItemRegistrationOrder.h"
 #include "mc/world/item/registry/ItemRegistrationState.h"
 #include "mc/world/item/registry/ItemRegistryRef.h"
 
@@ -24,6 +23,7 @@ class ActorInfoRegistry;
 class BlockDefinitionGroup;
 class CreativeItemRegistry;
 class Experiments;
+class IEducationOptions;
 class IMinecraftEventing;
 class ItemEventResponseFactory;
 class ItemRegistryRef;
@@ -112,7 +112,8 @@ public:
         ::ResourcePackManager const&,
         ::cereal::ReflectionCtx const&,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const,
-        ::IMinecraftEventing&
+        ::IMinecraftEventing&,
+        ::IEducationOptions const&
     );
 
 public:
@@ -149,7 +150,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                   mAddToPreRegistry;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::SharedPtr<::Item>>>
                                                                         mHardcodedVanillaItemPreRegistry;
-    ::ll::TypedStorage<1, 1, ::ItemRegistrationOrder>                   mItemRegistrationOrder;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                        mWorldBaseGameVersion;
     ::ll::TypedStorage<1, 1, bool>                                      mCheckForItemWorldCompatibility;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::mutex>>          mCompatibilityCheckMutex;
@@ -184,13 +184,27 @@ public:
     MCAPI ::ItemRegistryRef::LoadedItem
     _tryRegisterAndInitItem(::ItemRegistry::LoadedItemAsset const& loadedItemAsset, ::ItemParseContext& parseContext);
 
+    MCAPI void addItemToTagMap(::Item const& item);
+
     MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
 
 #ifdef LL_PLAT_C
     MCAPI void buildClientRegistryFromServer(
         ::std::vector<::ItemData> const& serverItemData,
         ::Experiments const&             experiments,
-        ::BaseGameVersion const&         baseGameVersion
+        ::BaseGameVersion const&         baseGameVersion,
+        ::IEducationOptions const&       educationOptions
+    );
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void buildServerRegistry(
+        ::Experiments const&                               experiments,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::IEducationOptions const&                         educationOptions,
+        ::ResourcePackManager*                             rpm,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing
     );
 #endif
 

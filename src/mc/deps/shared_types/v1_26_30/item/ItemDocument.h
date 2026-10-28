@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::ItemDocument&&);
+    MCFOLD void* $ctor(::SharedTypes::v1_26_30::ItemDocument&&);
 
     MCFOLD void* $ctor(::SharedTypes::v1_26_30::ItemDocument const&);
     // NOLINTEND

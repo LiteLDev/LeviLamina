@@ -202,8 +202,6 @@ public:
 
     MCAPI void _focusCollectionItem(::std::string const& collectionName, int collectionIndex, bool forceFocus);
 
-    MCAPI void _handleCraftItem(::ItemCraftType);
-
     MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex, bool displayOnly);
 
     MCAPI bool _isConstructionTabVisible() const;

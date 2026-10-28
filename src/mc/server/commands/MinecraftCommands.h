@@ -98,9 +98,11 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void registerChatPermissionsCallback(::std::function<bool()> callback);
+#endif
 
     MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
 
+#ifdef LL_PLAT_C
     MCAPI ::MCRESULT requestCommandExecution(
         ::std::unique_ptr<::CommandOrigin> origin,
         ::std::string const&               commandLine,

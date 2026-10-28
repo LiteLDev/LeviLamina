@@ -21,10 +21,6 @@ class ItemInstance;
 
 class HangingSignBlock : public ::SignBlock {
 public:
-    // prevent constructor by default
-    HangingSignBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -53,8 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HangingSignBlock(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
-
     MCAPI bool _canAttachTo(::BlockSource& region, ::BlockPos const attachPos, uchar attachFace, uchar ourFace) const;
     // NOLINTEND
 
@@ -68,12 +62,6 @@ public:
     MCAPI static bool _isVShapedChainAttached(::Block const& block);
 
     MCAPI static bool isSideAttachedHangingSign(::Block const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
     // NOLINTEND
 
 public:

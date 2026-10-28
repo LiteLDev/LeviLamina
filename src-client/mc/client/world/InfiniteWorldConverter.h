@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/world/WorldID.h"
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/util/GridArea.h"
@@ -39,14 +40,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                                  mTaskGroup;
-    ::ll::TypedStorage<8, 8, ::ILevelListCache&>                                              mLevelListCache;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>>     mKeyProvider;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>>                    mLevelDbEnv;
-    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelStorage>>                  mLevelStorage;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>>                                mLegacySource;
-    ::ll::TypedStorage<4, 4, ::World::InfiniteWorldConverter::State>                          mState;
-    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>>                   mView;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                              mTaskGroup;
+    ::ll::TypedStorage<8, 8, ::ILevelListCache&>                                          mLevelListCache;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>> mKeyProvider;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>>                mLevelDbEnv;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelStorage>>              mLevelStorage;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>>                            mLegacySource;
+    ::ll::TypedStorage<4, 4, ::World::InfiniteWorldConverter::State>                      mState;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>, ::Bedrock::Threading::SharedLockbox>> mView;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>                               mUnloaded;
     ::ll::TypedStorage<4, 4, float>                                                           mProgress;
     ::ll::TypedStorage<8, 32, ::World::WorldID>                                               mWorldId;

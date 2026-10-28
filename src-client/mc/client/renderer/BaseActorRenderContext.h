@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorBlockRenderer;
 class ActorRenderDispatcher;
 class BlockActorRenderDispatcher;
@@ -28,7 +27,6 @@ class ItemRenderer;
 class ParticleSystemEngine;
 class ScreenContext;
 class SortedMeshDrawList;
-class Vec2;
 struct DataDrivenRendererContinuousData;
 namespace LightPropagation { class LightVolumeManager; }
 // clang-format on
@@ -45,7 +43,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 40, ::OffscreenCaptureDescription> mOffscreenCaptureDescription;
+        ::ll::TypedStorage<8, 32, ::OffscreenCaptureDescription> mOffscreenCaptureDescription;
         ::ll::TypedStorage<4, 12, ::Vec3>                        mCameraTargetPosition;
         ::ll::TypedStorage<4, 12, ::Vec3>                        mCameraPosition;
         ::ll::TypedStorage<4, 24, ::AABB>                        mWorldClipRegion;
@@ -108,13 +106,9 @@ public:
         ::IMinecraftGame&  minecraftGame
     );
 
-    MCAPI ::Vec2 getCameraRotation(float a) const;
-
     MCAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle();
-
-    MCAPI float getFrameAlpha(::Actor const& actor) const;
     // NOLINTEND
 
 public:

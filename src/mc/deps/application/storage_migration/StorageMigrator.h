@@ -41,22 +41,6 @@ public:
         MigrationProgress& operator=(MigrationProgress const&);
         MigrationProgress(MigrationProgress const&);
         MigrationProgress();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~MigrationProgress();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:

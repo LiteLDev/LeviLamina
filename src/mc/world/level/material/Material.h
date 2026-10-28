@@ -7,6 +7,11 @@
 
 class Material {
 public:
+    // Material inner types declare
+    // clang-format off
+    class Builder;
+    // clang-format on
+
     // Material inner types define
     enum class Settings : int {
         Solid    = 0,
@@ -18,6 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::MaterialType> mType;
+<<<<<<< HEAD
     ::ll::TypedStorage<1, 1, bool>                                  mNeverBuildable;
     ::ll::TypedStorage<1, 1, bool>                                  mLiquid;
     ::ll::TypedStorage<1, 1, bool>                                  mBlocksMotion;
@@ -46,5 +52,13 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::unique_ptr<::Material>>& mMaterials();
+    // NOLINTEND
+};
+
+class Material::Builder {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 2, ::Material> mMaterial;
     // NOLINTEND
 };

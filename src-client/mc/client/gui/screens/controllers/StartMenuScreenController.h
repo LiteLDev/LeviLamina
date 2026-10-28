@@ -47,7 +47,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>               mLastSigningInAnimation;
     ::ll::TypedStorage<8, 8, int64>                                                 mNextContentFetchTime;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                              mExistenceTracker;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                        mProfileImage;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions>                       mProfileImage;
     ::ll::TypedStorage<1, 1, bool>                                                  mProfileImageLoaded;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mProfileImageChangedSubscription;
     ::ll::TypedStorage<1, 1, bool>                                                  mSetFocusToSignInButton;
@@ -55,8 +55,8 @@ public:
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                         mTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>       mStoreButtonArtSurface;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>       mPlayButtonArtSurface;
-    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                      mStoreButtonArtData;
-    ::ll::TypedStorage<8, 808, ::std::optional<::MessageData>>                      mPlayButtonArtData;
+    ::ll::TypedStorage<8, 848, ::std::optional<::MessageData>>                      mStoreButtonArtData;
+    ::ll::TypedStorage<8, 848, ::std::optional<::MessageData>>                      mPlayButtonArtData;
     ::ll::TypedStorage<1, 1, bool>                                                  mStoreButtonHovered;
     ::ll::TypedStorage<1, 1, bool>                                                  mPlayButtonHovered;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::InboxSurface>>           mInboxSurface;
@@ -137,8 +137,6 @@ public:
     MCAPI bool _isSignInVisible();
 
     MCAPI bool _realmsPromoEnabled() const;
-
-    MCAPI void _updateProfileImage();
 
     MCAPI void resetInboxAnimation();
 

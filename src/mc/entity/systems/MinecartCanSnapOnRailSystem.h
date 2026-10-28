@@ -29,10 +29,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _checkCanSnapOnRail(
-        ::StrictEntityContext const&            context,
-        ::StateVectorComponent const&           stateVectorComponent,
-        ::EntityModifier<::SnapOnRailComponent> mod,
-        ::IConstBlockSource const&              constBlockSource
+        ::StrictEntityContext const&                   context,
+        ::StateVectorComponent const&                  stateVectorComponent,
+        ::EntityModifier<::SnapOnRailComponent> const& mod,
+        ::IConstBlockSource const&                     constBlockSource
     );
     // NOLINTEND
 };

@@ -2,9 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUDiscovery {
+namespace EduDiscovery {
 
 template <typename T0>
 class QueryContext {};
 
-} // namespace EDUDiscovery
+} // namespace EduDiscovery

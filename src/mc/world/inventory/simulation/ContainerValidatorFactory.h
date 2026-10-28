@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Container;
 class ContainerScreenContext;
+class ContainerScreenValidatorBase;
 class ContainerValidationBase;
 struct FullContainerName;
 // clang-format on
@@ -16,10 +18,20 @@ class ContainerValidatorFactory {
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::ContainerScreenValidatorBase>
+    createContainerScreenValidator(::ContainerScreenContext const& screenContext);
+#endif
+
     MCAPI static ::std::shared_ptr<::ContainerValidationBase const> createContainerValidator(
         ::FullContainerName const&      containerId,
         ::ContainerScreenContext const& screenContext,
         ::ContainerValidationCaller     caller
     );
+
+#ifdef LL_PLAT_S
+    MCAPI static ::Container*
+    getBackingContainer(::FullContainerName const& containerEnumName, ::ContainerScreenContext const& screenContext);
+#endif
     // NOLINTEND
 };

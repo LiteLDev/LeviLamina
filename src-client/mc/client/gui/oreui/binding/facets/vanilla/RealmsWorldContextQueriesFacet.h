@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/realms/PlayerPermission.h"
 #include "mc/client/realms/RealmsWorldContextState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -33,6 +34,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                             mClosed;
     ::ll::TypedStorage<1, 1, bool>                                             mExpired;
     ::ll::TypedStorage<1, 1, bool>                                             mFull;
+    ::ll::TypedStorage<4, 4, ::Realms::PlayerPermission>                       mDefaultPermission;
     // NOLINTEND
 
 public:
@@ -57,6 +59,8 @@ public:
     MCFOLD int getActiveSlotIndex() const;
 
     MCFOLD int getDaysLeft() const;
+
+    MCAPI ::Realms::PlayerPermission getDefaultPermission() const;
 
     MCFOLD ::std::string const& getFriendlyId() const;
 

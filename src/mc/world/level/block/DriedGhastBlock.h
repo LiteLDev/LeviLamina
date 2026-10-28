@@ -17,10 +17,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class DriedGhastBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    DriedGhastBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onRemove(::BlockSource& region, ::BlockPos const& position) const /*override*/;
@@ -33,17 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DriedGhastBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

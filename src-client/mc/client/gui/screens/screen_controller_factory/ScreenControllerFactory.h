@@ -9,7 +9,9 @@
 // clang-format off
 class IScreenControllerFactory;
 class MinecraftScreenModel;
+class PersonaScreenModel;
 class ScreenController;
+struct StoreDataDrivenScreenParams;
 // clang-format on
 
 namespace ScreenControllerFactory {
@@ -19,7 +21,10 @@ MCAPI ::std::unique_ptr<::IScreenControllerFactory> createScreenControllerFactor
     ::brstd::move_only_function<::std::shared_ptr<::ScreenController>(::std::shared_ptr<::MinecraftScreenModel>)>
         createToastScreenController,
     ::brstd::move_only_function<::std::shared_ptr<::ScreenController>(::std::shared_ptr<::MinecraftScreenModel>)>
-        createInviteScreenController
+        createInviteScreenController,
+    ::brstd::move_only_function<::std::shared_ptr<
+        ::ScreenController>(::std::shared_ptr<::PersonaScreenModel>, ::StoreDataDrivenScreenParams const&)>
+        createStoreDataDrivenScreenController
 );
 // NOLINTEND
 

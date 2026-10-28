@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20 {
@@ -26,16 +27,14 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_REACH_MOB_DISTANCE();
-
-    MCAPI static float const& DEFAULT_RUN_SPEED();
-
-    MCAPI static float const& DEFAULT_THROW_FORCE();
-
-    MCAPI static float const& DEFAULT_VERTICAL_THROW_MUL();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

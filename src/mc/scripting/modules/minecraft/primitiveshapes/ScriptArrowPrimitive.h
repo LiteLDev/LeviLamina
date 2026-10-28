@@ -33,9 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ScriptArrowPrimitive();
-#endif
 
     MCAPI void setHeadLength(float length);
 
@@ -51,9 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor();
-#endif
     // NOLINTEND
 
 public:

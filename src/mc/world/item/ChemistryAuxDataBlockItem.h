@@ -12,8 +12,22 @@ class ItemStackBase;
 
 class ChemistryAuxDataBlockItem : public ::AuxDataBlockItem {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const> mIsChemistryEnabled;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+
+
     // NOLINTEND
 };

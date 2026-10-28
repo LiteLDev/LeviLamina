@@ -13,7 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_60::DimensionDefinition::Description> mDescription;
-    ::ll::TypedStorage<8, 80, ::SharedTypes::v1_26_50::DimensionDefinition::Components>  mComponents;
+    ::ll::TypedStorage<8, 88, ::SharedTypes::v1_26_50::DimensionDefinition::Components>  mComponents;
     // NOLINTEND
 
 public:

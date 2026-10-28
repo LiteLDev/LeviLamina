@@ -16,6 +16,8 @@ class SharedAttributes {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _isDefaultAttribute(::AttributeInstance const& instance, ::AttributeInstance const& defaults);
+
     MCAPI static ::AttributeInstanceRef
     _legacyGetInstance(::BaseAttributeMap& attributes, ::std::string const& attributeName);
 
@@ -23,9 +25,11 @@ public:
 
     MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
 
-    MCAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);
+    MCAPI static void
+    loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list, ::BaseAttributeMap const* defaults);
 
-    MCAPI static ::std::unique_ptr<::ListTag> saveAttributes(::BaseAttributeMap const* attributes);
+    MCAPI static ::std::unique_ptr<::ListTag>
+    saveAttributes(::BaseAttributeMap const* attributes, ::BaseAttributeMap const* defaults);
     // NOLINTEND
 
 public:

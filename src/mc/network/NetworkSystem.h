@@ -34,7 +34,7 @@ class Scheduler;
 class ServerLocator;
 class TaskGroup;
 class WeakEntityRef;
-struct NetworkIdentifierWithSubId;
+class WebKey;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
@@ -157,8 +157,11 @@ public:
 
     virtual void _onEnable() /*override*/;
 
-    virtual bool
-    onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) /*override*/;
+    virtual bool onNewIncomingConnection(
+        ::NetworkIdentifier const&         id,
+        ::std::shared_ptr<::NetworkPeer>&& peer,
+        ::std::optional<::WebKey>          identityPublicKey
+    ) /*override*/;
 
     virtual bool
     onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) /*override*/;
@@ -196,8 +199,6 @@ public:
 
     MCAPI ::std::shared_ptr<::IPacketSecurityController> _createPacketSecurityController(::NetworkIdentifier const& id);
 
-    MCAPI bool _isUsingNetherNetTransportLayer() const;
-
     MCAPI void _sendInternal(::NetworkIdentifier const& id, ::Packet const& packet, ::std::string const& data);
 
 #ifdef LL_PLAT_C
@@ -220,7 +221,8 @@ public:
 
     MCAPI void send(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
 
-    MCAPI void sendToMultiple(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
+    MCAPI void
+    setCloseConnection(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason closeConnectionReason);
 
     MCAPI void update(::std::vector<::WeakEntityRef> const* userList);
     // NOLINTEND
@@ -252,7 +254,11 @@ public:
 
     MCAPI void $_onEnable();
 
-    MCAPI bool $onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
+    MCAPI bool $onNewIncomingConnection(
+        ::NetworkIdentifier const&         id,
+        ::std::shared_ptr<::NetworkPeer>&& peer,
+        ::std::optional<::WebKey>          identityPublicKey
+    );
 
     MCAPI bool $onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
 

@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -22,6 +24,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canSpreadToBlock(::BlockSource const& region, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

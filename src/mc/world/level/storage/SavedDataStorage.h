@@ -25,14 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _save(::SavedData const& data);
-
     MCNAPI bool loadAndSet(::SavedData& inoutData, ::std::string const& id);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

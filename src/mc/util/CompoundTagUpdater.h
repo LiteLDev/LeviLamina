@@ -46,8 +46,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag) const;
+    MCAPI static bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag);
     // NOLINTEND
 };

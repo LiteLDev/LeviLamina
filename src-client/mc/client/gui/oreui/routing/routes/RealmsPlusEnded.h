@@ -32,6 +32,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[46]> SUBSCRIPTIONS_SETTINGS_ROUTE();
     // NOLINTEND
 
 public:

@@ -119,15 +119,11 @@ public:
 
     MCAPI void closeDialog(::StoreDataDrivenScreenController& controller);
 
-    MCAPI void createSelectedPersona();
-
     MCAPI ::std::string getAppearanceName() const;
 
     MCAPI ::std::string getPersonaConfirmText() const;
 
     MCAPI ::std::string getPreviewImageFilePath(int index) const;
-
-    MCAPI bool isSelectedCharacterReady() const;
 
     MCAPI void launchDifferenceInformationPopup();
 

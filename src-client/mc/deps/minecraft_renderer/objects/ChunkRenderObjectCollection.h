@@ -8,7 +8,8 @@ struct ChunkLayerRenderObject;
 struct ChunkRenderData;
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
-namespace mce { class IndexBufferContainer; }
+struct RenderChunkLayerGroupIndexData;
+struct RenderChunkLayerGroupVertexData;
 namespace mce { class Mesh; }
 namespace mce { struct ServerTexture; }
 // clang-format on
@@ -39,17 +40,16 @@ public:
     MCAPI uint64 addToChunkQueue(
         ::std::variant<
             ::std::monostate,
-            ::std::shared_ptr<::mce::IndexBufferContainer>,
-            ::std::shared_ptr<::RenderChunkDirectIndexData>> const& chunkIndices,
+            ::std::shared_ptr<::RenderChunkDirectIndexData>,
+            ::std::shared_ptr<::RenderChunkLayerGroupIndexData>> const& chunkIndices,
         ::std::variant<
             ::std::monostate,
             ::std::shared_ptr<::mce::Mesh>,
-            ::std::shared_ptr<::RenderChunkDirectVertexData>> const& chunkMesh,
-        ::glm::ivec3 const&                                          chunkPos,
-        double                                                       timeDiff
+            ::std::shared_ptr<::RenderChunkDirectVertexData>,
+            ::std::shared_ptr<::RenderChunkLayerGroupVertexData>> const& chunkMesh,
+        ::glm::ivec3 const&                                              chunkPos,
+        double                                                           timeDiff
     );
-
-    MCAPI ~ChunkRenderObjectCollection();
     // NOLINTEND
 
 public:
@@ -58,11 +58,5 @@ public:
     MCAPI void* $ctor(::ChunkRenderObjectCollection&& other);
 
     MCAPI void* $ctor(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[17]);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

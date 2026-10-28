@@ -9,9 +9,6 @@
 // clang-format off
 class BlockSource;
 class Rope;
-class Vec3;
-struct RopeParams;
-struct RopeWave;
 // clang-format on
 
 class RopeSystem {
@@ -24,24 +21,14 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                 mCutTicks;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>        mEndPinEntity;
     ::ll::TypedStorage<4, 4, ::std::atomic_flag>     mTicking;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>    mRopeMutex;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>    mRenderMutex;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void addWave(uint64 index, ::RopeWave&& wave);
-#endif
-
-    MCAPI void initialize(::RopeParams const& params, uint64 initialRopeCount);
-
-    MCAPI void initializePins(::Vec3 const& startPin, ::Vec3 const& endPin);
-
     MCAPI void queueTick(::BlockSource& region, ::std::shared_ptr<::RopeSystem>& self);
-
-#ifdef LL_PLAT_C
-    MCAPI void setRopeCount(uint64 ropeCount);
 #endif
     // NOLINTEND
 

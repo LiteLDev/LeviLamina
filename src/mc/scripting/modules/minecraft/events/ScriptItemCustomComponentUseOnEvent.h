@@ -10,6 +10,7 @@
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemUseOnEvent.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -45,6 +46,7 @@ public:
         ::ll::TypedStorage<4, 12, ::BlockPos const>      mBlockPos;
         ::ll::TypedStorage<1, 1, uchar const>            mFace;
         ::ll::TypedStorage<4, 12, ::Vec3 const>          mFaceLocation;
+        ::ll::TypedStorage<1, 1, ::HandSlot const>       mHandSlot;
         // NOLINTEND
 
     public:
@@ -55,7 +57,7 @@ public:
     };
 
     using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
-        void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&)>;
+        void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&, ::HandSlot)>;
 
 public:
     // member variables

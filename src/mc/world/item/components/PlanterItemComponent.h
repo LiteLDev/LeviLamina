@@ -72,7 +72,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent component);
 
-    MCAPI bool calculatePlacePos(::ItemStackBase const& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool
+    calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
 #ifdef LL_PLAT_C
     MCAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;

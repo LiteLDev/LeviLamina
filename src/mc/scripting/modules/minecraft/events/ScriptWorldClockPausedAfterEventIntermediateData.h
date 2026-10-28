@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
 class WorldClock;
@@ -16,7 +13,7 @@ struct ScriptWorldClockPausedAfterEventIntermediateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::WorldClock> const> mClock;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::WorldClock*> const> mClock;
     // NOLINTEND
 };
 

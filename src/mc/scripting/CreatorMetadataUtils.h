@@ -110,9 +110,11 @@ MCAPI void generateVanillaDataDocumentation(
 );
 
 MCAPI ::CreatorMetadataUtils::ServerMetadataOutputPaths getAndCleanServerMetadataPaths();
-#endif
 
 MCAPI ::std::string getGameSemVersionAsString();
+#endif
+
+MCAPI ::CreatorMetadataUtils::ServerMetadataOutputPaths getServerMetadataPaths();
 
 #ifdef LL_PLAT_S
 MCAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);

@@ -27,12 +27,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& DEFAULT_HAS_COLLISION();
-
-    MCAPI static bool const& DEFAULT_HAS_GRAVITY();
-
-    MCAPI static bool const& DEFAULT_PUSH_TOWARDS_CLOSEST_SPACE();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

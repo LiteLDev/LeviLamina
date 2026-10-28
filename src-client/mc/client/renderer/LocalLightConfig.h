@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
 class LocalPlayer;
-class ResourcePackManager;
 class SemVersionConstant;
 namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
@@ -62,21 +60,9 @@ public:
         LocalLightConfigSettingsV0();
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~LocalLightConfigSettingsV0();
-        // NOLINTEND
-
-    public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static ::SemVersionConstant const& VERSION();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -98,17 +84,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalLightConfig() /*override*/;
+    virtual ~LocalLightConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LocalLightConfig(::IMinecraftEventing& eventing);
-
     MCNAPI void finalizeResources();
-
-    MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
 
     MCNAPI ::Puv::LoadResultAny
     loadFromString(::cereal::ReflectionCtx const& ctx, ::std::string const& pointLightsJson);
@@ -136,23 +118,5 @@ public:
     MCNAPI static ::std::string_view const& LOCAL_LIGHTS_GLOBAL_CONFIG_FILE();
 
     MCNAPI static ::std::string_view const& PAYLOAD_KEY_V0();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

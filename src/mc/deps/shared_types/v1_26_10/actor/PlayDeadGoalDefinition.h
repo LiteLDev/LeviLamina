@@ -8,11 +8,6 @@
 #include "mc/deps/shared_types/shared_types/IntRange.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_10 {
 
 struct PlayDeadGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -29,36 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayDeadGoalDefinition& operator=(PlayDeadGoalDefinition const&);
-    PlayDeadGoalDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayDeadGoalDefinition(::SharedTypes::v1_26_10::PlayDeadGoalDefinition const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_DURATION();
-
-    MCAPI static float const& DEFAULT_RANDOM_START_CHANCE();
-
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::PlayDeadGoalDefinition const&);
     // NOLINTEND
 };
 

@@ -57,7 +57,9 @@ public:
         ::std::string const& row3
     );
 
+#ifdef LL_PLAT_C
     MCAPI bool hasPattern() const;
+#endif
 
     MCAPI bool matchesPatternItem(::ItemStackBase const& item) const;
     // NOLINTEND

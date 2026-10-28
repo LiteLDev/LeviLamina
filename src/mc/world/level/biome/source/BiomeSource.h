@@ -50,6 +50,8 @@ public:
 
     virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const = 0;
 
+    virtual bool collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const;
+
     virtual bool hasBiomeById(::BiomeIdType id) const = 0;
 
     virtual bool hasBiomeByNameHash(::BiomeHashType hash) const = 0;
@@ -62,15 +64,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ::ChunkVolume::VolumeOf<::Biome> $getBiomeVolumeToFill(
         short                         chunkHeight,
         ::BlockPos                    chunkMin,
         uint                          levelSeed,
         ::ChunkLocalNoiseCache const* chunkLocalNoiseCache
     ) const;
+#else // LL_PLAT_C
+    MCFOLD ::ChunkVolume::VolumeOf<::Biome> $getBiomeVolumeToFill(
+        short                         chunkHeight,
+        ::BlockPos                    chunkMin,
+        uint                          levelSeed,
+        ::ChunkLocalNoiseCache const* chunkLocalNoiseCache
+    ) const;
+#endif
 
     MCFOLD ::std::optional<::OperationGraphResult<::Biome const*> const>
     $getBiomeAreaToFill(::LevelChunk const& levelChunk) const;
+
+    MCFOLD bool $collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const;
 
 
     // NOLINTEND

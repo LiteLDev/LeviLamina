@@ -26,20 +26,12 @@ public:
     MCAPI explicit SocialPlayer(::OreUI::SocialPlayerData const& data);
 
     MCAPI ::std::string const& getActiveProfileImageUrl() const;
-
-    MCAPI ~SocialPlayer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::SocialPlayerData const& data);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -15,7 +15,6 @@ class NetworkDebugManager;
 class NetworkIdentifier;
 class Packet;
 class ServerNetworkSystem;
-class WeakEntityRef;
 namespace Core { class OutputFileStream; }
 // clang-format on
 
@@ -52,7 +51,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>>   mCurrentPacketStats;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentSourceNetworkIdentifierStrings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentTargetNetworkIdentifierStrings;
-    ::ll::TypedStorage<8, 11296, ::std::array<::std::string, 353>>               mPacketNames;
+    ::ll::TypedStorage<8, 11552, ::std::array<::std::string, 361>>               mPacketNames;
     ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats>                mCurrentOverview;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkStatistics::OverviewStats>> mLastSeconds;
     ::ll::TypedStorage<8, 8, double>                                             mStartSeconds;
@@ -104,8 +103,6 @@ public:
 #ifdef LL_PLAT_S
     MCAPI ::std::string getVerboseInfo() const;
 #endif
-
-    MCAPI void tick(::std::vector<::WeakEntityRef> const* userList);
 
 #ifdef LL_PLAT_C
     MCAPI void updateCSV(double time);

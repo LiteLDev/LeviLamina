@@ -24,11 +24,11 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static void _tickEntity(
         ::StrictEntityContext const&,
-        ::VehicleComponent const&                                   vehicleComponent,
-        ::ActorOwnerComponent&                                      actorOwnerComponent,
-        ::VehicleRenderingRidingOffsetComponent&                    vehicleOffsetComponent,
-        ::CurrentTickComponent const&                               currentTickComponent,
-        ::EntityModifier<::PassengerRenderingRidingOffsetComponent> modifier
+        ::VehicleComponent const&                                          vehicleComponent,
+        ::ActorOwnerComponent&                                             actorOwnerComponent,
+        ::VehicleRenderingRidingOffsetComponent&                           vehicleOffsetComponent,
+        ::CurrentTickComponent const&                                      currentTickComponent,
+        ::EntityModifier<::PassengerRenderingRidingOffsetComponent> const& modifier
     );
 
     MCAPI static ::Vec3 getInterpolatedRenderingRidingOffset(::Actor const& actor, float frameAlpha);

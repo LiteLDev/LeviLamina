@@ -17,7 +17,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsBackups>> mRealmsBackups;
-    ::ll::TypedStorage<1, 1, bool>                                        mIsDirty;
     // NOLINTEND
 
 public:

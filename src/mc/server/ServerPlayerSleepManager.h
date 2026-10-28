@@ -66,9 +66,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $updateSleepingPlayerList();
 
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
+#else // LL_PLAT_C
     MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
+#endif
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
 
 
     // NOLINTEND

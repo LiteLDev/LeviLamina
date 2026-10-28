@@ -12,6 +12,7 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/systems/mob_jump_from_ground_system_impl/JumpViews.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -136,6 +137,12 @@ public:
         ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
         ::GlobalWrite<>,
         ::EntityFactoryT<>>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 1152, ::std::optional<::MobJumpFromGroundSystemImpl::JumpViews>> mViews;
+    // NOLINTEND
 
 public:
     // virtual functions

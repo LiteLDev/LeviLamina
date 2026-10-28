@@ -26,6 +26,8 @@ public:
 
     virtual ::std::string getFormattedHoverText(::ItemStackBase const& item, bool const showCategory) = 0;
 
+    virtual ::std::string getFilteredItemName(::ItemStackBase const& item) = 0;
+
     virtual bool achievementsWillBeDisabledOnLoad() = 0;
 
     virtual bool hasAchievementsDisabled() = 0;

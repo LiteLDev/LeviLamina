@@ -112,6 +112,7 @@ public:
         ::ll::TypedStorage<2, 2, ushort>                                             remoteSystemIndex;
         ::ll::TypedStorage<4, 4, ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode> connectMode;
         ::ll::TypedStorage<1, 1, bool>                                               applicationHandshakeCompleted;
+        ::ll::TypedStorage<1, 1, bool>                                               addressVerified;
         // NOLINTEND
     };
 

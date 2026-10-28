@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { struct LevelChunkTimingData; }
 namespace Bedrock::Profiling { class PerfClock; }
 // clang-format on
 
@@ -31,6 +32,8 @@ public:
         // NOLINTEND
     };
 
+    using AtomicStateTimes = ::std::array<::std::atomic<int64>, 12>;
+
     using AtomicTime = ::std::atomic<int64>;
 
     using Clock = ::Bedrock::Profiling::PerfClock;
@@ -38,8 +41,6 @@ public:
     using Lock = ::std::lock_guard<::SpinLockImpl>;
 
     using LockMutex = ::SpinLockImpl;
-
-    using StateTimes = ::std::array<::std::atomic<int64>, 12>;
 
 public:
     // member variables
@@ -52,6 +53,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Bedrock::LevelChunkTimingData cloneAllTimingData() const;
+
     MCAPI void onStateChange(::ChunkState from, ::ChunkState to);
     // NOLINTEND
 };

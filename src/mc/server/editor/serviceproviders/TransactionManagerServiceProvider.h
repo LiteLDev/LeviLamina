@@ -38,7 +38,8 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> discardPendingTransaction(::mce::UUID const& id) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> finalizePendingTransaction(::mce::UUID const& id) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    finalizePendingTransaction(::mce::UUID const& id, ::std::function<void(::std::string)> activity) = 0;
 
     virtual uint64 pendingTransactionCount() const = 0;
 

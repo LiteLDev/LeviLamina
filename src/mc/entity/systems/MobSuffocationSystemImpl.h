@@ -16,6 +16,8 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/utilities/GetAttachPositionViews.h"
+#include "mc/entity/utilities/ViewEachWithBlockSourceArgs.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,7 +27,6 @@ struct AABBShapeComponent;
 struct ActorInWallDetectionComponent;
 struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
-struct GetAttachPositionViews;
 struct MobFlagComponent;
 struct MobIsSuffocatingFlagComponent;
 struct OffsetsComponent;
@@ -55,6 +56,44 @@ class MobSuffocationSystemImpl
       ::GlobalRead<>,
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
+public:
+    // MobSuffocationSystemImpl inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
+    // MobSuffocationSystemImpl inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            96,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+                ::ActorInWallDetectionComponent const,
+                ::StateVectorComponent const,
+                ::AABBShapeComponent const,
+                ::SynchedActorDataComponent const,
+                ::OffsetsComponent const,
+                ::Optional<::VehicleComponent const>>>
+                                                                 mMainView;
+        ::ll::TypedStorage<8, 32, ::ViewEachWithBlockSourceArgs> mBlockSource;
+        ::ll::TypedStorage<8, 480, ::GetAttachPositionViews>     mAttachViews;
+        ::ll::TypedStorage<8, 56, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>>>
+                                                                                    mPlayerPassengers;
+        ::ll::TypedStorage<8, 8, ::EntityModifier<::MobIsSuffocatingFlagComponent>> mModifier;
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 680, ::std::optional<::MobSuffocationSystemImpl::Views>> mViews;
+    // NOLINTEND
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -91,7 +130,7 @@ public:
         ::Optional<::VehicleComponent const>   vehicleComponent,
         ::GetAttachPositionViews const&        getAttachPosViews,
         ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers,
-        ::EntityModifier<::MobIsSuffocatingFlagComponent>                                         modifier,
+        ::EntityModifier<::MobIsSuffocatingFlagComponent> const&                                  modifier,
         ::IConstBlockSource const&                                                                region
     );
     // NOLINTEND

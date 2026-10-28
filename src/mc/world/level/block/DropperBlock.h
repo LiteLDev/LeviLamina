@@ -13,25 +13,9 @@ class BlockSource;
 
 class DropperBlock : public ::DispenserBlock {
 public:
-    // prevent constructor by default
-    DropperBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DropperBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

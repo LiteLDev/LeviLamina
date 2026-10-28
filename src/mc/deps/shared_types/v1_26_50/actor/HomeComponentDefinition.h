@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_50 {
 
 struct HomeComponentDefinition {
@@ -24,12 +19,6 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::v1_26_50::HomeComponentDefinition::RestrictionType> mRestrictionType;
     ::ll::TypedStorage<4, 4, int>                                                               mRestrictionRadius;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                     mHomeBlockNames;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -7,6 +7,7 @@ public:
     // ItemInHandRenderer inner types declare
     // clang-format off
     struct OffsetForLowAspectRatio;
+    struct HandAnimationState;
     // clang-format on
 
     // ItemInHandRenderer inner types define
@@ -22,4 +23,6 @@ public:
 
         struct Scoped {};
     };
+
+    struct HandAnimationState {};
 };

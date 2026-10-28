@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/StoreNavigationOrigin.h"
+#include "mc/client/gui/StoreOfferNavigationResult.h"
 #include "mc/client/gui/screens/controllers/MarketplacePassTabIndex.h"
 #include "mc/client/gui/screens/controllers/SlotSelectedAction.h"
 #include "mc/client/gui/screens/models/IMainMenuScreenModel.h"
@@ -19,7 +20,6 @@
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/identity/IdentityType.h"
-#include "mc/network/EditorConnectionJoinIntent.h"
 #include "mc/options/FeedbackType.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/DownloadError.h"
@@ -33,7 +33,7 @@ class CloudSaveLevelInfo;
 class DlcChecker;
 class DlcId;
 class DlcUIWrapper;
-class EDUServersScreenController;
+class EduServersScreenController;
 class IContentAccessibilityProvider;
 class IMinecraftEventing;
 class IStoreCatalogItem;
@@ -50,7 +50,6 @@ class PlatformOfferModel;
 class PlatformOfferTransactionContext;
 class PlayScreenModel;
 class ProgressHandler;
-class RealmsCreateParams;
 class RealmsTransactionContext;
 class ResourceLocation;
 class ResourcePackFileUploadManager;
@@ -64,7 +63,7 @@ class WorldFileDownloadManager;
 class WorldFileUploadManager;
 class WorldSeedCatalogModel;
 class WorldTemplateManager;
-struct EDULibraryCategory;
+struct EduLibraryCategory;
 struct ExperienceJoinRequestInfo;
 struct ExperiencePromotion;
 struct LevelSummary;
@@ -160,6 +159,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MainMenuScreenModel(::MinecraftScreenModelContext context);
 
+    MCAPI ::std::string _pushPurchaseOfferScreen(::IStoreCatalogItem const& item, ::StoreNavigationOrigin origin);
+
     MCAPI void _showAnnouncementIfAvailable(::Bedrock::NonOwnerPointer<::AnnouncementSurface> surface);
 
     MCAPI bool canDisableRecipeUnlockingAsDefault() const;
@@ -180,7 +181,7 @@ public:
     MCAPI ::std::shared_ptr<::CatalogCollection>
     createCatalogCollection(::StoreSearchQuery const& query, int maxVisibleOffers);
 
-    MCAPI ::std::vector<::EDULibraryCategory> createLibraryCategoryPage(::std::vector<::std::string> const& pages);
+    MCAPI ::std::vector<::EduLibraryCategory> createLibraryCategoryPage(::std::vector<::std::string> const& pages);
 
     MCAPI ::std::shared_ptr<::LibraryCollection>
     createLibraryCollection(::std::shared_ptr<::LibraryCollectionConfig> config);
@@ -211,7 +212,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider const> getAccessibilityProvider() const;
 
-    MCAPI ::EDULibraryCategory* getLibraryCategory(::std::string const& name);
+    MCAPI ::EduLibraryCategory* getLibraryCategory(::std::string const& name);
 
     MCAPI ::MinecoinCatalogModel& getMinecoinCatalogModel();
 
@@ -298,26 +299,24 @@ public:
 
     MCAPI void navigateToCreateWorldUpsellScreen(bool firstTimeShown, ::std::string const& additionalScreenInfo);
 
-    MCAPI void navigateToEDUFetchProgressHandler(::std::shared_ptr<::PlayScreenModel> model);
+    MCAPI void navigateToEduFetchProgressHandler(::std::shared_ptr<::PlayScreenModel> model);
 
-    MCAPI void navigateToEDUFetchServersProgressHandler(
-        ::Bedrock::NonOwnerPointer<::EDUServersScreenController> eduServersScreenController
+    MCAPI void navigateToEduFetchServersProgressHandler(
+        ::Bedrock::NonOwnerPointer<::EduServersScreenController> eduServersScreenController
     );
 
-    MCAPI void navigateToEDULibraryRoot();
+    MCAPI void navigateToEduLibraryRoot();
 
-    MCAPI void navigateToEDUPlayScreen();
-
-    MCAPI void navigateToEDUServerResolvingProgressHandler(
+    MCAPI void navigateToEduServerResolvingProgressHandler(
         ::Social::EduDedicatedServerDetails const& details,
         ::std::string const&                       passcode,
         ::std::shared_ptr<::PlayScreenModel>       model,
         ::brstd::move_only_function<void()>&       reopenPasscodeEntry
     );
 
-    MCAPI void navigateToEDUServersScreen();
+    MCAPI void navigateToEduServersScreen();
 
-    MCAPI void navigateToEDUUploadProgressHandler(
+    MCAPI void navigateToEduUploadProgressHandler(
         ::std::string const&                                        levelId,
         ::std::string const&                                        levelName,
         ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> eduCloudSaveSystem,
@@ -389,22 +388,20 @@ public:
 
     MCAPI void navigateToPromotionAction(::ExperiencePromotion const& promotion);
 
-    MCAPI void navigateToPurchaseOfferScreen(::IStoreCatalogItem const& item, ::StoreNavigationOrigin origin, bool);
+    MCAPI void navigateToPurchaseOfferScreen(::IStoreCatalogItem const& item, ::StoreNavigationOrigin origin);
+
+    MCAPI void
+    navigateToPurchaseOfferScreen(::std::string const& productId, ::StoreNavigationOrigin origin, ::std::string const&);
 
     MCAPI void navigateToPurchaseOfferScreen(
-        ::std::string const&    productId,
-        ::StoreNavigationOrigin origin,
-        ::std::string const&,
-        bool
+        ::mce::UUID const&                                  uuid,
+        ::StoreNavigationOrigin                             origin,
+        ::std::string const&                                contentType,
+        ::std::function<void(::StoreOfferNavigationResult)> onNavigationComplete
     );
 
     MCAPI void
-    navigateToPurchaseOfferScreen(::mce::UUID const& uuid, ::StoreNavigationOrigin origin, ::std::string const&, bool);
-
-    MCAPI void
     navigateToRealmsAllowListScreen(::Realms::World const& world, ::std::function<void()> followUpActionAfterCreation);
-
-    MCAPI void navigateToRealmsCreateScreen(::RealmsCreateParams const& createParams);
 
     MCAPI bool navigateToRealmsOffers(::StoreDataDrivenScreenParams const& params);
 
@@ -418,6 +415,8 @@ public:
         ::std::unique_ptr<::ProgressHandler> progressHandler,
         ::std::function<void()>              onlineSafetyCancelledCallback
     );
+
+    MCAPI void navigateToRedeem5x5Screen();
 
     MCAPI void navigateToStoreInventoryScreen();
 
@@ -474,8 +473,6 @@ public:
     registerPrimaryUserSignInSubscriber(::std::function<void(uint, ::Social::IdentityType)> listener);
 
     MCAPI void setDeepLinkListenerMainMenuParameters(::std::function<void(::DownloadError const&)> onDownloadError);
-
-    MCAPI void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent editorConnectionJoinIntent);
 
     MCAPI void setHasSeenSonyTokenPopup(bool newValue);
 

@@ -14,10 +14,6 @@ namespace cereal { struct SchemaDescription; }
 namespace cereal {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
-MCNAPI ::std::string_view getName(::entt::meta_type const& type);
-#endif
-
 MCNAPI ::std::string_view getName(::entt::meta_type const& type, uint member);
 
 #ifdef LL_PLAT_S

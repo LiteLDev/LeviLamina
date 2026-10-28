@@ -54,7 +54,7 @@ public:
 
     MCFOLD ::std::vector<::Realms::RealmsSubscriptionInfo> const& getRealmsSubscriptionInfo() const;
 
-    MCAPI ::Realms::RealmsSubscriptionsState getState() const;
+    MCFOLD ::Realms::RealmsSubscriptionsState getState() const;
     // NOLINTEND
 
 public:

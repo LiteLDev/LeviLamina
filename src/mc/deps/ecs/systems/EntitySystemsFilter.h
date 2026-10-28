@@ -15,5 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::SystemCategory>> mIncludeType;
+    ::ll::TypedStorage<1, 1, bool>                                  mUseSkipHints;
+    ::ll::TypedStorage<1, 1, bool>                                  mUseRemoveHints;
     // NOLINTEND
 };

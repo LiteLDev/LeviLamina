@@ -11,6 +11,7 @@
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -44,7 +45,39 @@ struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                            ::GlobalWrite<>,
                            ::EntityFactoryT<>>> {
 public:
+    // PublishSystem inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
     // PublishSystem inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::InterpolateMovementNeededComponent>,
+                ::ReplayStateComponent,
+                ::ReplayStateTrackerComponent>>
+            mView;
+        ::ll::TypedStorage<
+            8,
+            24,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::ActorDataFlagComponent const,
+                ::Optional<::ActorDataHorseFlagComponent const>,
+                ::Optional<::ActorDataJumpDurationComponent const>,
+                ::Optional<::ActorDataBoundingBoxComponent const>,
+                ::Optional<::ActorDataSeatOffsetComponent const>>>
+            mTracked;
+        // NOLINTEND
+    };
+
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
         ::Filter<::InterpolateMovementNeededComponent>,
         ::Read<
@@ -58,6 +91,12 @@ public:
         ::GlobalRead<>,
         ::GlobalWrite<>,
         ::EntityFactoryT<>>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 96, ::std::optional<::ClientRewind::PublishSystem::Views>> mViews;
+    // NOLINTEND
 
 public:
     // virtual functions

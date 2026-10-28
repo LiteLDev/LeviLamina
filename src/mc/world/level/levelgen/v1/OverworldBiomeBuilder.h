@@ -103,7 +103,17 @@ public:
 
     MCAPI static ::ClimateUtils::Parameter const& dripstoneCavesContinentalness();
 
+    MCAPI static ::ClimateUtils::Parameter const& dripstoneCavesHumidity();
+
     MCAPI static ::ClimateUtils::Parameter const& farInlandContinentalness();
+
+    MCAPI static ::ClimateUtils::Parameter const& iceCavesContinentalness();
+
+    MCAPI static ::ClimateUtils::Parameter const& iceCavesHumidity();
+
+    MCAPI static ::ClimateUtils::Parameter const& iceCavesTemperature();
+
+    MCAPI static ::ClimateUtils::Parameter const& iceCavesWeirdness();
 
     MCAPI static ::ClimateUtils::Parameter const& inlandContinentalness();
 
@@ -120,6 +130,8 @@ public:
     MCAPI static ::ClimateUtils::Parameter const& sulfurCavesContinentalness();
 
     MCAPI static ::ClimateUtils::Parameter const& sulfurCavesErosion();
+
+    MCAPI static ::ClimateUtils::Parameter const& sulfurCavesHumidity();
 
     MCAPI static ::ClimateUtils::Parameter const& sulfurCavesWeirdness();
     // NOLINTEND

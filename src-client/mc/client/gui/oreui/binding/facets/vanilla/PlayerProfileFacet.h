@@ -42,10 +42,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 584, ::Social::PlayerProfileData>    playerProfileData;
-        ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage> profileImage;
+        ::ll::TypedStorage<8, 648, ::Social::PlayerProfileData>    playerProfileData;
+        ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage> profileImage;
         ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>          platformProfilePic;
-        ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage> avatar;
+        ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage> avatar;
         ::ll::TypedStorage<4, 4, ::OreUI::ProfileImageState>       avatarState;
         ::ll::TypedStorage<8, 96, ::OreUI::AllowListQRCode>        qrCode;
         ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> profileSubscription;
@@ -78,9 +78,9 @@ public:
 
         MCAPI ::Social::RelationToCurrentUser getRelationship() const;
 
-        MCFOLD ::std::string const& getTitleName() const;
+        MCAPI ::std::string const& getTitleName() const;
 
-        MCFOLD ::std::string const& getUrl() const;
+        MCAPI ::std::string const& getUrl() const;
 
         MCFOLD ::std::string const& getXblName() const;
 
@@ -97,27 +97,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::Social::PlayerProfileState>                            state;
-        ::ll::TypedStorage<8, 1096, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper> data;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerProfileWrapper();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI PlayerProfileWrapper(
-            ::Social::PlayerProfileState                            inState,
-            ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void*
-        $ctor(::Social::PlayerProfileState inState, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData);
+        ::ll::TypedStorage<8, 1224, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper> data;
         // NOLINTEND
     };
 
@@ -126,12 +106,14 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                                              mDirty;
     ::ll::TypedStorage<1, 1, bool>                                                              mImagesDirty;
+    ::ll::TypedStorage<1, 1, bool>                                                              mHasOfflineProfile;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerProfileFacet::PlayerProfileWrapper>> mTrackedProfiles;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ProfileSystem>>                       mProfileSystem;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>>            mUserManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>       mResourceAllowList;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>>
                                                                                      mMultiplayerServiceManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mCurrentUserSignInSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mAsyncImageSubscriber;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mImageUpdatedSubscriber;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mBuildGameListSubscription;

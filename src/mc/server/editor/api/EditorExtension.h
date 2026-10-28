@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ClassBinding; }
+// clang-format on
+
 namespace Editor::API {
 
 class EditorExtension : public ::Bedrock::EnableNonOwnerReferences {
@@ -33,6 +38,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EditorExtension() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 };
 

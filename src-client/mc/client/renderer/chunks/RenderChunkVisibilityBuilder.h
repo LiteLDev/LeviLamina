@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class RenderChunkShared;
 // clang-format on
 
 class RenderChunkVisibilityBuilder {
@@ -26,4 +27,10 @@ public:
     RenderChunkVisibilityBuilder& operator=(RenderChunkVisibilityBuilder const&);
     RenderChunkVisibilityBuilder(RenderChunkVisibilityBuilder const&);
     RenderChunkVisibilityBuilder();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void buildVisibilityData(::RenderChunkShared& renderChunkShared);
+    // NOLINTEND
 };

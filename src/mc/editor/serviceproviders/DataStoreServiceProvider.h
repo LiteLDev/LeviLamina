@@ -11,6 +11,7 @@
 class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::DataStore { class IContentBadgeContainer; }
+namespace Editor::DataStore { class IModalToolContainer; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 // clang-format on
@@ -24,6 +25,8 @@ public:
     virtual ~DataStoreServiceProvider() = default;
 
     virtual ::Editor::DataStore::IContentBadgeContainer& getContentBadgeContainer() = 0;
+
+    virtual ::Editor::DataStore::IModalToolContainer& getModalToolContainer() = 0;
 
     virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&                          dataTag,

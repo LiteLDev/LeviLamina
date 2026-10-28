@@ -14,13 +14,10 @@ struct ActorDefinitionIdentifier;
 // clang-format on
 
 class MushroomCow : public ::Animal {
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     MushroomCow();
 
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,25 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI MushroomCow(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-#endif
     // NOLINTEND
 
 public:

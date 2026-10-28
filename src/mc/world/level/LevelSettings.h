@@ -23,6 +23,7 @@
 #include "mc/world/level/PackInstanceId.h"
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/WorldVersion.h"
+#include "mc/world/level/editor/EditorLevelMigrationVersion.h"
 #include "mc/world/level/storage/CloudSaveLevelInfo.h"
 #include "mc/world/level/storage/ExperimentStorage.h"
 #include "mc/world/level/storage/GameRules.h"
@@ -51,6 +52,7 @@ public:
     ::ll::TypedStorage<8, 48, ::SpawnSettings>                            mSpawnSettings;
     ::ll::TypedStorage<1, 1, bool>                                        mAchievementsDisabled;
     ::ll::TypedStorage<4, 4, ::Editor::WorldType>                         mEditorWorldType;
+    ::ll::TypedStorage<1, 1, ::Editor::EditorLevelMigrationVersion>       mEditorLevelMigrationVersion;
     ::ll::TypedStorage<1, 1, bool>                                        mAllowAnonymousBlockDropsInEditorWorlds;
     ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>              mServerEditorConnectionPolicy;
     ::ll::TypedStorage<1, 1, bool>                                        mIsCreatedInEditor;

@@ -26,33 +26,33 @@ namespace MobMovementGravity {
 MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
 MCAPI void tickDefaultGravity(
-    ::StrictEntityContext const&               context,
-    ::ActorDataFlagComponent const&            synchedActorData,
-    ::MobEffectsComponent const&               mobEffects,
-    ::StateVectorComponent const&              stateVector,
-    ::EntityModifier<::ApplyGravityComponent>& modifier
+    ::StrictEntityContext const&                     context,
+    ::ActorDataFlagComponent const&                  synchedActorData,
+    ::MobEffectsComponent const&                     mobEffects,
+    ::StateVectorComponent const&                    stateVector,
+    ::EntityModifier<::ApplyGravityComponent> const& modifier
 );
 
 MCAPI void tickLavaGravity(
-    ::StrictEntityContext const&              context,
-    ::Optional<::NavigationComponent const>   navigation,
-    ::Optional<::PhysicsComponent const>      physics,
-    ::AABBShapeComponent const&               aabbShape,
-    ::ActorDataFlagComponent const&           synchedActorData,
-    ::StateVectorComponent const&             stateVector,
-    ::EntityModifier<::ApplyGravityComponent> modifier,
-    ::IConstBlockSource const&                region
+    ::StrictEntityContext const&                     context,
+    ::Optional<::NavigationComponent const>          navigation,
+    ::Optional<::PhysicsComponent const>             physics,
+    ::AABBShapeComponent const&                      aabbShape,
+    ::ActorDataFlagComponent const&                  synchedActorData,
+    ::StateVectorComponent const&                    stateVector,
+    ::EntityModifier<::ApplyGravityComponent> const& modifier,
+    ::IConstBlockSource const&                       region
 );
 
 MCAPI void tickMobWaterGravity(
-    ::StrictEntityContext const&              context,
-    ::Optional<::NavigationComponent const>   navigation,
-    ::Optional<::PhysicsComponent const>      physics,
-    ::AABBShapeComponent const&               aabbShape,
-    ::ActorDataFlagComponent const&           synchedActorData,
-    ::StateVectorComponent const&             stateVector,
-    ::EntityModifier<::ApplyGravityComponent> modifier,
-    ::IConstBlockSource const&                region
+    ::StrictEntityContext const&                     context,
+    ::Optional<::NavigationComponent const>          navigation,
+    ::Optional<::PhysicsComponent const>             physics,
+    ::AABBShapeComponent const&                      aabbShape,
+    ::ActorDataFlagComponent const&                  synchedActorData,
+    ::StateVectorComponent const&                    stateVector,
+    ::EntityModifier<::ApplyGravityComponent> const& modifier,
+    ::IConstBlockSource const&                       region
 );
 // NOLINTEND
 

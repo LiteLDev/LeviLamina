@@ -31,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BannerBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
@@ -62,8 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerBlock(::std::string const& nameId, int id, bool onGround);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -87,12 +81,6 @@ public:
     MCAPI static ::AABB& STANDING_AABB();
 
     MCAPI static ::AABB& WEST_AABB();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround);
     // NOLINTEND
 
 public:

@@ -21,6 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool processShiftBufferUpdates();
+
     MCNAPI void reset();
 
     MCNAPI void tickUpdate(float currentTime, uint64 ticksPassed);

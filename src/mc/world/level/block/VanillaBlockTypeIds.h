@@ -768,6 +768,8 @@ MCAPI ::HashedString const& Dirt();
 
 MCAPI ::HashedString const& DirtWithRoots();
 
+MCAPI ::HashedString const& DiscPress();
+
 MCAPI ::HashedString const& Dispenser();
 
 MCAPI ::HashedString const& DoubleCutCopperSlab();
@@ -1059,6 +1061,10 @@ MCAPI ::HashedString const& HornCoralFan();
 MCAPI ::HashedString const& HornCoralWallFan();
 
 MCAPI ::HashedString const& Ice();
+
+MCAPI ::HashedString const& IceCrystal();
+
+MCAPI ::HashedString const& Icicle();
 
 MCAPI ::HashedString const& InfestedChiseledStoneBricks();
 

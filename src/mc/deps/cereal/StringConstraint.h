@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
 #include "mc/deps/cereal/ContextArea.h"
-#include "mc/deps/cereal/internal/StringConstraint.h"
+#include "mc/deps/cereal/StringConstraintData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ class StringConstraint : public ::cereal::ConstraintHandle<::cereal::StringConst
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::cereal::internal::StringConstraint> mConstraint;
+    ::ll::TypedStorage<8, 80, ::cereal::internal::StringConstraintData> mConstraint;
     // NOLINTEND
 
 public:
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

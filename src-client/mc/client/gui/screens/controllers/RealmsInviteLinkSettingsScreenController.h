@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class MainMenuScreenModel;
+class TaskGroup;
 // clang-format on
 
 class RealmsInviteLinkSettingsScreenController : public ::SettingsScreenControllerBase {
@@ -36,11 +36,8 @@ public:
     ::ll::TypedStorage<4, 4, ::RealmsInviteLinkSettingsScreenController::ExpirationDuration> mExpirationDuration;
     ::ll::TypedStorage<1, 1, bool>                                                           mReadyForCopy;
     ::ll::TypedStorage<1, 1, bool>                                                           mRefreshScreen;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                                 mTaskGroup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RealmsInviteLinkSettingsScreenController();
 
 public:
     // virtual functions
@@ -55,25 +52,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsInviteLinkSettingsScreenController(
-        ::std::shared_ptr<::MainMenuScreenModel> model,
-        ::Realms::World const&                   world,
-        ::Realms::InviteLink const&              link
-    );
-
     MCAPI void _displayLinkErrorModal(::std::string const& title, ::std::string const& body);
 
     MCAPI void _updateInviteLink(::Realms::InviteLink tempLink);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::MainMenuScreenModel> model,
-        ::Realms::World const&                   world,
-        ::Realms::InviteLink const&              link
-    );
     // NOLINTEND
 
 public:

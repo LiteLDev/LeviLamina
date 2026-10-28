@@ -9,8 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackBase;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class SetItemCountFunction : public ::LootItemFunction {
@@ -26,6 +28,15 @@ public:
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
 
     virtual void applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&) /*override*/;
+
+    virtual void apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
@@ -35,6 +46,14 @@ public:
 
     MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&);
 
+    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

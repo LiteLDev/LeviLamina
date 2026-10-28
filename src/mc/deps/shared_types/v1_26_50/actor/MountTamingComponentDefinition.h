@@ -85,12 +85,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_ATTEMPT_TEMPER_MOD();
-
-    MCAPI static int const& DEFAULT_MAX_TEMPER();
-
-    MCAPI static int const& DEFAULT_MIN_TEMPER();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

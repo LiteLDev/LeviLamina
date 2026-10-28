@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
-#include "mc/common/editor/ThemeSettingsColorKey.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/editor/ThemeSettingsColorKey.h"
 
 // auto generated forward declare list
 // clang-format off

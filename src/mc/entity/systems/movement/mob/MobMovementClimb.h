@@ -32,7 +32,7 @@ MCAPI void tickAutoClimbingMob(
     ::ActorDataFlagComponent const&                                synchedActorData,
     ::AABBShapeComponent const&                                    aabbShape,
     ::StateVectorComponent&                                        stateVector,
-    ::EntityModifier<::AutoClimbTravelFlagComponent>               climbModifier,
+    ::EntityModifier<::AutoClimbTravelFlagComponent> const&        climbModifier,
     ::IConstBlockSource const&                                     region
 );
 
@@ -44,7 +44,7 @@ MCAPI void tickAutoClimbingMobInLava(
     ::ActorDataFlagComponent const&                                synchedActorData,
     ::AABBShapeComponent const&                                    aabbShape,
     ::StateVectorComponent&                                        stateVector,
-    ::EntityModifier<::AutoClimbTravelFlagComponent>               climbModifier,
+    ::EntityModifier<::AutoClimbTravelFlagComponent> const&        climbModifier,
     ::IConstBlockSource const&                                     region
 );
 // NOLINTEND

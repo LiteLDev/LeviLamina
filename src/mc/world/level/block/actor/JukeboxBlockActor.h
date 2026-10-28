@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/ServerSoundInstance.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
@@ -16,8 +17,8 @@ class CompoundTag;
 class Container;
 class DataLoadHelper;
 class ILevel;
-class RecordItemComponent;
 class SaveContext;
+struct MusicDiscPlaybackInfo;
 // clang-format on
 
 class JukeboxBlockActor : public ::RandomizableBlockActorContainer {
@@ -29,7 +30,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                     mRecordingFinished;
     ::ll::TypedStorage<4, 4, int>                                      mTicksPlaying;
     ::ll::TypedStorage<1, 1, bool>                                     mPostBlockChangeGameEvent;
-    ::ll::TypedStorage<8, 304, ::std::optional<::ServerSoundInstance>> mServerSoundInstance;
+    ::ll::TypedStorage<8, 296, ::std::optional<::ServerSoundInstance>> mServerSoundInstance;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mOnChunkDiscardedSubscription;
     // NOLINTEND
 
 public:
@@ -77,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _startRecordSound(::BlockSource& region, ::RecordItemComponent const& record);
+    MCAPI void _startRecordSound(::BlockSource& region, ::MusicDiscPlaybackInfo const& playback);
 
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 

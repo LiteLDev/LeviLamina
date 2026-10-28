@@ -17,6 +17,12 @@ class StoreCatalogItem;
 
 class MarketplacePassOffersProvider : public ::MarketplaceContentOffersProvider {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const> mVibrantVisualsSupported;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     MarketplacePassOffersProvider();
 
@@ -32,6 +38,7 @@ public:
     MCAPI MarketplacePassOffersProvider(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
@@ -43,6 +50,7 @@ public:
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );

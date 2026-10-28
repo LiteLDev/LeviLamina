@@ -33,8 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::DebuggerStat>
-    _collectScriptStats(uint64 currentTick, uint64 lastCollectedTick, uint64 collectionFrequency);
+    MCAPI void _collectScriptStats(
+        ::DebuggerStat& commandRunCounts,
+        uint64          currentTick,
+        uint64          lastCollectedTick,
+        uint64          collectionFrequency
+    );
 
     MCAPI void initialize(::std::unique_ptr<::FunctionManager> functionManager);
 

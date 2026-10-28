@@ -52,7 +52,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> thirdPartyServerRepository,
         ::ServerLocator&                                             serverLocator,
         bool                                                         isEditorMode,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext,
+        ::ServicesManager&                                           servicesManager
     );
 
     MCAPI void _fetchWorlds(bool forceFetch);
@@ -69,7 +70,7 @@ public:
 
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
-    MCAPI void update(double timestampMs);
+    MCAPI ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
     // NOLINTEND
 
 public:
@@ -80,7 +81,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> thirdPartyServerRepository,
         ::ServerLocator&                                             serverLocator,
         bool                                                         isEditorMode,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext,
+        ::ServicesManager&                                           servicesManager
     );
     // NOLINTEND
 };

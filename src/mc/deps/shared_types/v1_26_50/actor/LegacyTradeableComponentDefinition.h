@@ -45,12 +45,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& DEFAULT_CONVERT_TRADES_ECONOMY();
-
-    MCAPI static bool const& DEFAULT_NEW_SCREEN();
-
-    MCAPI static bool const& DEFAULT_PERSIST_TRADES();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

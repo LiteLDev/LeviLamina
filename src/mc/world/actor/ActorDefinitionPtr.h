@@ -16,24 +16,14 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorDefinition*>      mPtr;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ActorDefinitionPtr(ActorDefinitionPtr const&);
-    ActorDefinitionPtr();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ActorDefinitionPtr();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
-#endif
 
     MCAPI ::ActorDefinitionPtr& operator=(::ActorDefinitionPtr const& rhs);
 
@@ -49,9 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::ActorDefinitionPtr const& rhs);
-#endif
     // NOLINTEND
 
 public:

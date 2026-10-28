@@ -18,6 +18,7 @@ class GenericEntitlementChangeListener;
 class IEntitlementManager;
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
+namespace Safety { class SafetyConfigService; }
 namespace Social { class User; }
 // clang-format on
 
@@ -48,7 +49,8 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MainMenuScreenModel>>            mMainMenuScreenModel;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlatformMultiplayerRestrictions>> mPlatformMultiplayerRestrictions;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::User>>                   mUser;
-    ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>         mUnlinkAccountTask;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Safety::SafetyConfigService>> mSafetyConfigService;
+    ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>               mUnlinkAccountTask;
     ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::Social::UserPlatformConnectionResult>>
                                                                                      mSignInToPlatformNetworkTask;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                          mTaskGroup;
@@ -72,9 +74,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI UserAccountFacet(
-        ::std::shared_ptr<::MainMenuScreenModel>             model,
-        ::std::shared_ptr<::Social::User>                    user,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
+        ::std::shared_ptr<::MainMenuScreenModel>                  model,
+        ::std::shared_ptr<::Social::User>                         user,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>      entitlementManager,
+        ::Bedrock::NonOwnerPointer<::Safety::SafetyConfigService> safetyConfigService
     );
 
     MCAPI bool _isMarketplacePassSubscriptionActive() const;
@@ -121,8 +124,6 @@ public:
 
     MCAPI bool isSignedInPlatformNetwork() const;
 
-    MCAPI void manageMicrosoftAccount();
-
     MCAPI void resetSignInToPlatformNetwork();
 
     MCAPI void showPremiumNetworkUpsellModal();
@@ -146,9 +147,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::shared_ptr<::MainMenuScreenModel>             model,
-        ::std::shared_ptr<::Social::User>                    user,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
+        ::std::shared_ptr<::MainMenuScreenModel>                  model,
+        ::std::shared_ptr<::Social::User>                         user,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>      entitlementManager,
+        ::Bedrock::NonOwnerPointer<::Safety::SafetyConfigService> safetyConfigService
     );
     // NOLINTEND
 

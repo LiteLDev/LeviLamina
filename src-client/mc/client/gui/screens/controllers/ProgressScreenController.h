@@ -79,8 +79,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mDownloadAlreadyConfirmedByUser;
     ::ll::TypedStorage<1, 1, bool>                          mCurrentlyShowAddonWarning;
     ::ll::TypedStorage<1, 1, bool>                          mServerJoined;
-    ::ll::TypedStorage<1, 1, bool>                          mPartyPartiallyEligible;
-    ::ll::TypedStorage<1, 1, bool>                          mPartyNotEligible;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::PerfProgressScreenTimer>>> mScreenTimer;
     // NOLINTEND
 

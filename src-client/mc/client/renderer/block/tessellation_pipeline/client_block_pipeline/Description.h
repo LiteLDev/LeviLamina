@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ClientBlockPipeline { class Instance; }
 namespace ClientBlockPipeline { class Step; }
 // clang-format on
 
@@ -50,8 +49,6 @@ public:
         ::std::shared_ptr<::ClientBlockPipeline::Step const> step,
         ::std::shared_ptr<::ClientBlockPipeline::Step const> dependency
     );
-
-    MCAPI ::std::unique_ptr<::ClientBlockPipeline::Instance> makeInstance() const;
 
     MCAPI ~Description();
     // NOLINTEND

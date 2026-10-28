@@ -45,7 +45,7 @@ public:
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,
         ::MinEngineVersion const& minEngineVersion,
-        ::CurrentCmdVersion const packCommandVersion
+        ::CurrentCmdVersion       packCommandVersion
     );
 
 #ifdef LL_PLAT_C

@@ -29,8 +29,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                         mTextureIsCreated;
     ::ll::TypedStorage<8, 104, ::mce::Texture>             mTexture;
     ::ll::TypedStorage<8, 104, ::mce::Texture>             mDSTexture;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>        mRenderDragonTexture;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>        mRenderDragonDepthStencilToken;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture>        mRenderDragonTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture>        mRenderDragonDepthStencilToken;
     ::ll::TypedStorage<4, 64, ::mce::TextureDescription>   mTextureDescription;
     ::ll::TypedStorage<8, 8, ::cohtml::ViewRenderer*>      mViewRenderer;
     ::ll::TypedStorage<8, 8, ::OreUI::LayoutScheduler&>    mLayoutScheduler;
@@ -46,6 +46,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
+
+    MCAPI void _paintPendingFrames(::ScreenContext& screenContext);
     // NOLINTEND
 };
 

@@ -19,6 +19,20 @@ public:
     URLPathSaver& operator=(URLPathSaver const&);
     URLPathSaver(URLPathSaver const&);
     URLPathSaver();
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Services

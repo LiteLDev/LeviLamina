@@ -15,7 +15,7 @@ class PlayScreenModel;
 class UIPropertyBag;
 // clang-format on
 
-class EDUWorldTemplatesScreenController : public ::MainMenuScreenController {
+class EduWorldTemplatesScreenController : public ::MainMenuScreenController {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,12 +29,12 @@ public:
 
 public:
     // prevent constructor by default
-    EDUWorldTemplatesScreenController();
+    EduWorldTemplatesScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldTemplatesScreenController() /*override*/ = default;
+    virtual ~EduWorldTemplatesScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -44,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EDUWorldTemplatesScreenController(::std::shared_ptr<::PlayScreenModel> model);
+    MCAPI explicit EduWorldTemplatesScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
-    MCAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EDUScreenHelpers::InstanceType instanceType);
+    MCAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EduScreenHelpers::InstanceType instanceType);
 
     MCAPI void _useTemplate(
         ::PackManifest const&            manifest,
-        ::EDUScreenHelpers::InstanceType type,
+        ::EduScreenHelpers::InstanceType type,
         ::std::string_view               templateName
     );
     // NOLINTEND

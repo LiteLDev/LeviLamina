@@ -64,7 +64,9 @@ public:
     // NOLINTBEGIN
     MCAPI LegacyStructureTemplate();
 
+#ifdef LL_PLAT_C
     MCAPI ::Block const* _fixExtraWaterBlock(::BlockType const& blockType);
+#endif
 
     MCAPI ::BlockPos calculateConnectedPosition(
         ::LegacyStructureSettings const& settings1,
@@ -84,8 +86,6 @@ public:
     getEntitiesToPlace(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
-
-    MCAPI void load(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
@@ -93,7 +93,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void _fixItemStack(::CompoundTag& itemTag, int const dataVersion);
 
+#ifdef LL_PLAT_C
     MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+#endif
+
+#ifdef LL_PLAT_C
+    MCAPI static ::Block const*
+    _mapPropertyToExtraBlock(::std::string const& propertyString, ::std::string const& valueString);
 
     MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
         ::std::unique_ptr<::CompoundTag> originalTag,
@@ -101,6 +111,16 @@ public:
         int                              dataVersion,
         ::Block const*&                  block
     );
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
+        ::std::unique_ptr<::CompoundTag> originalTag,
+        ::std::string const&             javaBlockName,
+        int const                        dataVersion,
+        ::Block const*&                  block
+    );
+#endif
 
     MCAPI static ::Block const* _mapToBlock(::std::string const& blockName);
 

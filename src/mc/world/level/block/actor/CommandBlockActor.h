@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -33,10 +32,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                 mExecuteFirstTickOnPlace;
     ::ll::TypedStorage<2, 2, ::CommandBlockMode>   mLastPerformedCBMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandBlockActor();
 
 public:
     // virtual functions
@@ -70,21 +65,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockActor(::BlockPos const& pos, ::CommandBlockMode mode);
+    MCAPI bool getConditionalMode(::BlockSource& region) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void _setAutomatic(::BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
+    MCAPI ::std::string getLastOutput() const;
 #endif
-
-    MCAPI bool getConditionalMode(::BlockSource& region) const;
 
     MCAPI bool markConditionMet(::BlockSource& region);
 
     MCAPI bool performCommand(::BlockSource& region);
 
-#ifdef LL_PLAT_S
     MCAPI void setAutomatic(::BlockSource& region, bool automatic, ::CommandBlockMode oldMode);
-#endif
 
     MCAPI void updateBlock(
         ::BlockSource&                             region,
@@ -97,12 +88,6 @@ public:
         int                                        tickDelay,
         bool                                       executeFirstTick
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::CommandBlockMode mode);
     // NOLINTEND
 
 public:

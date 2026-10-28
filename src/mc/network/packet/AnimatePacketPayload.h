@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/world/actor/ActorSwingSource.h"
+#include "mc/world/item/HandSlot.h"
 
 struct AnimatePacketPayload {
 public:
@@ -24,5 +25,6 @@ public:
     ::ll::TypedStorage<1, 1, ::AnimatePacketPayload::Action>      mAction;
     ::ll::TypedStorage<4, 4, float>                               mData;
     ::ll::TypedStorage<1, 2, ::std::optional<::ActorSwingSource>> mSwingSource;
+    ::ll::TypedStorage<1, 1, ::HandSlot>                          mHandSlot;
     // NOLINTEND
 };

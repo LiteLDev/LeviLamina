@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCAPI Timer(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
 
-    MCAPI void advanceTime(float preferredFrameStep);
+    MCAPI void advanceTime(float preferredFrameStep, bool forceOnlySingleTick);
     // NOLINTEND
 
 public:

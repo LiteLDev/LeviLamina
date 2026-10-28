@@ -4,16 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/IStyleTextureInfoProvider.h"
 #include "mc/resources/ResourcePackListener.h"
 #include "mc/resources/interface/IDataDrivenUIRepository.h"
 
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 class IMinecraftEventing;
+class LinkedAssetValidator;
 class ResourceLoadManager;
 class ResourcePackManager;
 namespace Bedrock::PubSub { class Subscription; }
 namespace PuvLoadData { struct TelemetryEventData; }
+namespace SharedTypes::Beta::DataDrivenUI::Styling { struct Style; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerFixedGridLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerTextField; }
@@ -21,12 +25,17 @@ namespace SharedTypes::v1_21_130::DataDrivenUI { struct Context; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContextList; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct ExtensionPoint; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormButton; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormCloseButton; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormDivider; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormDropdown; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormHorizontalStack; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormImage; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormPanel; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormScrollView; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormSlider; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormSpacing; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormSwitch; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormText; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct FormTextField; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Panel; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct PanelCloseButton; }
@@ -38,6 +47,7 @@ namespace SharedTypes::v1_21_130::DataDrivenUI { struct UIComposition; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct UIRoot; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Visibility; }
 namespace mce { class UUID; }
+class IStyleTextureInfoProvider;
 // clang-format on
 
 class DataDrivenUIRepository : public ::IDataDrivenUIRepository, public ::ResourcePackListener {
@@ -46,14 +56,19 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24>  mUnkf7c36c;
     ::ll::UntypedStorage<8, 24>  mUnka0c594;
+    ::ll::UntypedStorage<8, 8>   mUnk565d9e;
     ::ll::UntypedStorage<8, 8>   mUnk93c79f;
+    ::ll::UntypedStorage<8, 24>  mUnkeed427;
     ::ll::UntypedStorage<8, 8>   mUnk45cd72;
     ::ll::UntypedStorage<8, 264> mUnk45c653;
     ::ll::UntypedStorage<8, 264> mUnk952e0d;
     ::ll::UntypedStorage<8, 264> mUnk7fd127;
     ::ll::UntypedStorage<8, 264> mUnk37444b;
+    ::ll::UntypedStorage<8, 264> mUnka0c47b;
+    ::ll::UntypedStorage<8, 264> mUnk4cc14d;
     ::ll::UntypedStorage<8, 24>  mUnk1ec5f7;
     ::ll::UntypedStorage<8, 24>  mUnk64ee12;
+    ::ll::UntypedStorage<8, 24>  mUnk3f106d;
     ::ll::UntypedStorage<8, 128> mUnkb4c13b;
     // NOLINTEND
 
@@ -68,11 +83,13 @@ public:
     // NOLINTBEGIN
     virtual ~DataDrivenUIRepository() /*override*/ = default;
 
+    virtual void setStyleTextureInfoProvider(::IStyleTextureInfoProvider& styleTextureInfoProvider) /*override*/;
+
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
 
     virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager) /*override*/;
 
-    virtual void load(::ResourcePackManager const& resourcePackManager) /*override*/;
+    virtual void load(::ResourcePackManager const& resourcePackManager, bool const betaApis) /*override*/;
 
     virtual bool hasRootDefinition(::std::string const& identifier) const /*override*/;
 
@@ -81,12 +98,15 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormImage>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
@@ -94,7 +114,8 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormHorizontalStack>>> const&
     getComposition(::std::string const& identifier) const /*override*/;
 
     virtual ::mce::UUID const& getCompositionPackId(::std::string const& identifier) const /*override*/;
@@ -102,22 +123,28 @@ public:
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormPanel>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const&
     getRoot(::std::string const& identifier) const /*override*/;
 
     virtual ::mce::UUID const& getRootPackId(::std::string const& identifier) const /*override*/;
+
+    virtual void getStyles(::std::vector<::SharedTypes::Beta::DataDrivenUI::Styling::Style>& styles) const /*override*/;
 
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormImage>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
@@ -125,11 +152,15 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormHorizontalStack>>>
     getExtensionPointContents(::std::string const& name) const /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
     subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback) /*override*/;
+
+    virtual ::std::optional<::IStyleTextureInfoProvider::Info> getStyleTextureInfo(::std::string_view texturePath) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -139,7 +170,8 @@ public:
     MCNAPI DataDrivenUIRepository(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::ResourcePackManager&                               resourcePackManager,
-        ::IMinecraftEventing&                                eventing
+        ::IMinecraftEventing&                                eventing,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>   linkedAssetValidator
     );
 
     MCNAPI void _initializeLoaders(
@@ -158,6 +190,29 @@ public:
         bool const                                                  isBuiltinPack
     );
 
+    MCNAPI void _initializeStyleContext(
+        ::Puv::SlicedLoader<
+            ::SharedTypes::Beta::DataDrivenUI::Styling::Style,
+            ::BedrockLoadContext,
+            nullptr_t,
+            ::SharedTypes::Beta::DataDrivenUI::Styling::Style,
+            ::SharedTypes::Beta::DataDrivenUI::Styling::Style>& styleLoader,
+        bool const                                              isBuiltinPack,
+        bool const                                              betaApis
+    );
+
+    MCNAPI void _initializeStyleLoader(
+        ::Puv::SlicedLoader<
+            ::SharedTypes::Beta::DataDrivenUI::Styling::Style,
+            ::BedrockLoadContext,
+            nullptr_t,
+            ::SharedTypes::Beta::DataDrivenUI::Styling::Style,
+            ::SharedTypes::Beta::DataDrivenUI::Styling::Style>& styleLoader,
+        bool const                                              isBuiltinPack
+    );
+
+    MCNAPI void _loadAllDataDrivenUIData(::ResourcePackManager const& resourcePackManager);
+
     MCNAPI bool _parseAndLoadUICompositionData(
         char const*                        filenameStr,
         ::std::string const&               fileData,
@@ -167,6 +222,14 @@ public:
     );
 
     MCNAPI bool _parseAndLoadUIRootData(
+        char const*                        filenameStr,
+        ::std::string const&               fileData,
+        bool const                         isBuiltinPack,
+        ::PuvLoadData::TelemetryEventData& eventData,
+        ::mce::UUID const                  packId
+    );
+
+    MCNAPI bool _parseAndLoadUIStyleData(
         char const*                        filenameStr,
         ::std::string const&               fileData,
         bool const                         isBuiltinPack,
@@ -183,7 +246,8 @@ public:
     MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::ResourcePackManager&                               resourcePackManager,
-        ::IMinecraftEventing&                                eventing
+        ::IMinecraftEventing&                                eventing,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>   linkedAssetValidator
     );
 #endif
     // NOLINTEND
@@ -192,11 +256,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI void $setStyleTextureInfoProvider(::IStyleTextureInfoProvider& styleTextureInfoProvider);
+
     MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
 
     MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
 
-    MCNAPI void $load(::ResourcePackManager const& resourcePackManager);
+    MCNAPI void $load(::ResourcePackManager const& resourcePackManager, bool const betaApis);
 
     MCNAPI bool $hasRootDefinition(::std::string const& identifier) const;
 
@@ -205,12 +271,15 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormImage>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
@@ -218,7 +287,8 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormHorizontalStack>>> const&
     $getComposition(::std::string const& identifier) const;
 
     MCNAPI ::mce::UUID const& $getCompositionPackId(::std::string const& identifier) const;
@@ -226,22 +296,28 @@ public:
     MCNAPI ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormPanel>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const&
     $getRoot(::std::string const& identifier) const;
 
     MCNAPI ::mce::UUID const& $getRootPackId(::std::string const& identifier) const;
+
+    MCNAPI void $getStyles(::std::vector<::SharedTypes::Beta::DataDrivenUI::Styling::Style>& styles) const;
 
     MCNAPI ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormImage>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSpacing>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
@@ -249,11 +325,15 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ScrollableGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormHorizontalStack>>>
     $getExtensionPointContents(::std::string const& name) const;
 
     MCNAPI ::Bedrock::PubSub::Subscription
     $subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback);
+
+    MCNAPI ::std::optional<::IStyleTextureInfoProvider::Info>
+    $getStyleTextureInfo(::std::string_view texturePath) const;
 #endif
 
 

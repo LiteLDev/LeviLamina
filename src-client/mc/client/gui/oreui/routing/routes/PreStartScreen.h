@@ -46,11 +46,15 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ACCESSIBILITY_SETTINGS_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> AUTO_SAVE_WARNING_ROUTE();
+    MCAPI static ::std::add_lvalue_reference_t<char const[21]> AUTO_SAVE_WARNING_ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[30]> FIRST_TIME_SIGN_IN_ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[23]> MSA_PROFILE_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SAFE_AREA_WARNING_ROUTE();
+    MCAPI static ::std::add_lvalue_reference_t<char const[23]> SAFE_AREA_WARNING_ROUTE();
     // NOLINTEND
 
 public:

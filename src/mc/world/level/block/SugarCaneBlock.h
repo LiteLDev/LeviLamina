@@ -25,10 +25,6 @@ struct BlockGraphicsModeChangeContext;
 
 class SugarCaneBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    SugarCaneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -60,17 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SugarCaneBlock(::std::string const& nameId, int id);
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUDiscovery {
+namespace EduDiscovery {
 
 struct ServerDetails {};
 
-} // namespace EDUDiscovery
+} // namespace EduDiscovery

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/input/MouseButton.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -23,14 +24,6 @@ public:
     // clang-format on
 
     // EditorInputStateFacet inner types define
-    enum class MouseButton : uchar {
-        Left    = 0,
-        Middle  = 1,
-        Right   = 2,
-        Back    = 3,
-        Forward = 4,
-    };
-
     struct KeyBindingStateFacet {
     public:
         // member variables
@@ -94,16 +87,9 @@ public:
 
     MCFOLD bool isViewportFocused() const;
 
-    MCAPI bool
-    onViewportMouseButtonDown(::OreUI::EditorInputStateFacet::MouseButton button, bool shift, bool ctrl, bool alt);
+    MCAPI bool onViewportMouseButtonDown(::OreUI::MouseButton button, bool shift, bool ctrl, bool alt);
 
-    MCAPI bool onViewportMouseButtonUp(
-        ::OreUI::EditorInputStateFacet::MouseButton button,
-        bool                                        shift,
-        bool                                        ctrl,
-        bool                                        alt,
-        bool                                        hasDragged
-    );
+    MCAPI bool onViewportMouseButtonUp(::OreUI::MouseButton button, bool shift, bool ctrl, bool alt, bool hasDragged);
 
     MCAPI bool onViewportMouseDelta(float dx, float dy);
 

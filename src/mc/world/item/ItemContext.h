@@ -93,8 +93,6 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI ::ItemContext& operator=(::ItemContext&&);
-
     MCAPI ::ItemContext& operator=(::ItemContext const&);
 
     MCAPI bool setAmount(int amount);

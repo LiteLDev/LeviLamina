@@ -21,6 +21,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::Bedrock::Result<::BiomeWeightedData> read(::ReadOnlyBinaryStream& stream);
+#endif
     // NOLINTEND
 };

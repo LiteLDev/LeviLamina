@@ -95,7 +95,7 @@ public:
 
     MCAPI ::std::string const& getRealmsDescription() const;
 
-    MCFOLD ::std::string const& getRealmsName() const;
+    MCAPI ::std::string const& getRealmsName() const;
 
     MCFOLD int getSimulationDistance() const;
 
@@ -109,7 +109,7 @@ public:
 
     MCAPI bool getUseFlatWorld() const;
 
-    MCAPI int64 const getWorldSeed() const;
+    MCFOLD int64 const getWorldSeed() const;
     // NOLINTEND
 
 public:

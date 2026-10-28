@@ -133,9 +133,7 @@ public:
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
     );
 
-#ifdef LL_PLAT_C
     MCAPI ~ScriptWorld();
-#endif
     // NOLINTEND
 
 public:
@@ -162,9 +160,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

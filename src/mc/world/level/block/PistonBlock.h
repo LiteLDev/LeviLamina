@@ -19,6 +19,7 @@ class IConstBlockSource;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockStateChangeEvent; }
 // clang-format on
 
 class PistonBlock : public ::ActorBlock {
@@ -43,6 +44,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
@@ -78,6 +81,8 @@ public:
     // NOLINTBEGIN
     MCAPI PistonBlock(::std::string const& nameId, int id, ::PistonBlock::Type isSticky);
 
+    MCAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -99,6 +104,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,

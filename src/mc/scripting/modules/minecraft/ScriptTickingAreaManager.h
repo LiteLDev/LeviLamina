@@ -12,6 +12,7 @@
 #include "mc/world/events/LevelEventListener.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/dimension/DimensionType.h"
+#include "mc/world/level/ticking/TransientTickingAreaLimits.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -67,10 +68,10 @@ public:
         ::std::map<
             ::DimensionType,
             ::std::unordered_map<::ChunkPos, ::ScriptModuleMinecraft::ScriptTickingAreaManager::Counter>>>
-                                                              mTickingChunksCache;
-    ::ll::TypedStorage<4, 4, int const>                       mMaxNumberOfChunks;
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>> mLevel;
+                                                                 mTickingChunksCache;
+    ::ll::TypedStorage<4, 8, ::TransientTickingAreaLimits const> mLimitPolicy;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>    mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>>    mLevel;
     // NOLINTEND
 
 public:

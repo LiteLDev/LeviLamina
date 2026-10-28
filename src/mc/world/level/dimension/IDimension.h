@@ -29,6 +29,8 @@ public:
 
     virtual bool isNaturalDimension() const = 0;
 
+    virtual bool shouldRenderClouds() const = 0;
+
     virtual ::DimensionType getDimensionId() const = 0;
 
     virtual void sendPacketForPosition(::BlockPos const& position, ::Packet const& packet, ::Player const* except) = 0;

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPalette;
 class ItemStack;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -40,6 +41,8 @@ public:
     MCAPI NetworkItemStackDescriptor(::NetworkItemStackDescriptor const&);
 
     MCAPI explicit NetworkItemStackDescriptor(::ItemStack const& item);
+
+    MCAPI ::ItemStack getItemStack(::BlockPalette const& blockPalette) const;
 
     MCAPI bool operator==(::NetworkItemStackDescriptor const& rhs) const;
 

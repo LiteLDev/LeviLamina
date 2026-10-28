@@ -21,11 +21,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void _doBounceEventingSystem(
         ::StrictEntityContext const&,
-        ::StateVectorComponent const&                                   stateVectorComponent,
-        ::ActorUniqueIDComponent const&                                 actorUniqueIDComponent,
-        ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
-        ::BounceComponent&                                              bounceComponent,
-        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
+        ::StateVectorComponent const&                                          stateVectorComponent,
+        ::ActorUniqueIDComponent const&                                        actorUniqueIDComponent,
+        ::EventingDispatcherComponent const&                                   eventingDispatcherComponent,
+        ::BounceComponent&                                                     bounceComponent,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> const& requestQueueView
     );
     // NOLINTEND
 };

@@ -22,6 +22,7 @@ namespace SharedTypes::v1_26_20 { struct ActorDocument; }
 namespace SharedTypes::v1_26_30 { struct ActorDocument; }
 namespace SharedTypes::v1_26_40 { struct ActorDocument; }
 namespace SharedTypes::v1_26_50 { struct ActorDocument; }
+namespace SharedTypes::v1_26_60 { struct ActorDocument; }
 // clang-format on
 
 namespace JsonComponentGlueUtils {
@@ -47,6 +48,7 @@ public:
         ::SharedTypes::v1_26_30::ActorDocument,
         ::SharedTypes::v1_26_40::ActorDocument,
         ::SharedTypes::v1_26_50::ActorDocument,
+        ::SharedTypes::v1_26_60::ActorDocument,
         ::SharedTypes::Beta::ActorDocument>;
 
 public:
@@ -59,7 +61,7 @@ public:
             ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
     );
 
-    MCAPI static void validateFunction(::SharedTypes::v1_26_50::ActorDocument const& doc, ::Puv::Logger& logger);
+    MCAPI static void validateFunction(::SharedTypes::v1_26_60::ActorDocument const& doc, ::Puv::Logger& logger);
     // NOLINTEND
 
 public:

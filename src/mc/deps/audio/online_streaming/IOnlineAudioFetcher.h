@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Audio { class IOnlineAudioFetcherUpdateHandle; }
+namespace Audio { struct OnlineAudioFetchStartRequest; }
 namespace Audio { struct OnlineAudioFetcherSnapshot; }
 // clang-format on
 
@@ -16,9 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ~IOnlineAudioFetcher() = default;
 
-    virtual void start() = 0;
-
-    virtual void seekTo(uint64 offset) = 0;
+    virtual void start(::Audio::OnlineAudioFetchStartRequest request) = 0;
 
     virtual void stop() = 0;
 

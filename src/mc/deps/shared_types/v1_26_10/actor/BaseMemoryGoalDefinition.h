@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
 // auto generated forward declare list
@@ -20,6 +21,7 @@ public:
     ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mConditionalFilters;
     ::ll::TypedStorage<4, 4, float>                                      mChanceToStart;
     ::ll::TypedStorage<4, 4, float>                                      mRetryAttemptCooldownSeconds;
+    ::ll::TypedStorage<4, 16, ::std::optional<::std::variant<float, ::SharedTypes::FloatRange>>> mDurationSeconds;
     // NOLINTEND
 
 public:

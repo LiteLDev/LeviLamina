@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/realms_screen_utils/RealmsSubscriptionsLoadingState.h"
+#include "mc/client/network/realms/RealmsTier.h"
 #include "mc/client/store/iap/RealmsOfferTier.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -14,6 +15,7 @@ class IEntitlement;
 class IEntitlementManager;
 class MainMenuScreenModel;
 struct RealmsWorldInfo;
+namespace Json { class Value; }
 namespace Realms { class SubscriptionService; }
 namespace Realms { struct SubscriptionInfo; }
 namespace Realms { struct World; }
@@ -43,6 +45,8 @@ MCAPI bool isRealmsPlusSubscriptionActive(
     ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> const& entitlementManager,
     ::Bedrock::NonOwnerPointer<::DateManager const> const&      dateManager
 );
+
+MCAPI ::Realms::RealmsTier parseRealmsTierFromJson(::Json::Value const& json, ::std::string const& fieldName);
 
 MCAPI void populateRealmsWorldLoadingDetailsGroup(
     ::std::weak_ptr<::RealmsScreenUtils::RealmsWorldLoadingDetailsGroup> weakGroup,

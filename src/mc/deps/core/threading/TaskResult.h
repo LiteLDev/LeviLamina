@@ -23,6 +23,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::TaskResult const& Done();
 
-    MCAPI static ::TaskResult const& Requeue();
+    MCAPI static ::TaskResult const& RequeueImmediateAggressive();
     // NOLINTEND
 };

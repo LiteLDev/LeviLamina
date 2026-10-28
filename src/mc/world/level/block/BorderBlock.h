@@ -38,6 +38,8 @@ public:
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
+
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
     // NOLINTEND
 
@@ -74,6 +76,8 @@ public:
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

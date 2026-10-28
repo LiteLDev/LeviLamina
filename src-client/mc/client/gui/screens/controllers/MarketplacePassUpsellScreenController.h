@@ -26,6 +26,10 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MarketplacePassUpsellScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
+    MCAPI bool _isMarketplacePassTrialAvailableAndReady() const;
+
+    MCAPI bool _isPlanPickerTryFreeTreatmentEnabled() const;
+
     MCAPI void _registerBindings();
     // NOLINTEND
 

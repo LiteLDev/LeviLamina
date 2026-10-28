@@ -15,7 +15,7 @@ class JoincodeEntryScreenController;
 class PlayScreenModel;
 // clang-format on
 
-class EDUPlayScreenController : public ::MainMenuScreenController, public ::EduDeeplinkObserver {
+class EduPlayScreenController : public ::MainMenuScreenController, public ::EduDeeplinkObserver {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,12 +29,12 @@ public:
 
 public:
     // prevent constructor by default
-    EDUPlayScreenController();
+    EduPlayScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUPlayScreenController() /*override*/ = default;
+    virtual ~EduPlayScreenController() /*override*/ = default;
 
     virtual void onEntered() /*override*/;
 
@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDUPlayScreenController(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
+    MCAPI EduPlayScreenController(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
     // NOLINTEND
 
 public:

@@ -8,8 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Beta { struct DurabilitySensorItemComponent; }
-namespace SharedTypes::v1_21_10 { struct DurabilitySensorItemComponent; }
+namespace SharedTypes::v1_26_50 { struct DurabilitySensorItemComponent; }
 // clang-format on
 
 class DurabilitySensorItemComponent : public ::ItemComponent {
@@ -26,17 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::Beta::DurabilitySensorItemComponent data);
-
-    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
+    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_26_50::DurabilitySensorItemComponent data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Beta::DurabilitySensorItemComponent data);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::DurabilitySensorItemComponent data);
+    MCAPI void* $ctor(::SharedTypes::v1_26_50::DurabilitySensorItemComponent data);
     // NOLINTEND
 
 public:

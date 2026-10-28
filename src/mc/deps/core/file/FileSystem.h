@@ -107,6 +107,8 @@ public:
 
     virtual ::Core::Result deleteEmptyDirectory(::Core::PathView dirPath) = 0;
 
+    virtual ::Core::Result deleteEmptyDirectoryRecursively(::Core::PathView dirPath) = 0;
+
     virtual ::Core::Result deleteDirectoryAndContentsRecursively(::Core::PathView dirName) = 0;
 
     virtual ::Core::Result deleteDirectoryContentsRecursively(::Core::PathView directoryName) = 0;

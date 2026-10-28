@@ -32,7 +32,7 @@ public:
             ::StandAnimationComponent const,
             ::RenderRotationComponent const,
             ::Include<::VehicleComponent>,
-            ::RenderPositionComponent const> horseView
+            ::RenderPositionComponent const> const& horseView
     );
     // NOLINTEND
 };

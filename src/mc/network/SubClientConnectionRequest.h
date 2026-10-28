@@ -35,6 +35,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SubClientConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+
+    MCAPI ::std::string getPrimaryPlayFabId() const;
     // NOLINTEND
 
 public:
@@ -55,7 +57,8 @@ public:
         ::std::string const&                      platformOfflineId,
         bool                                      compatibleWithClientSideChunkGen,
         ::SyncedClientOptionsComponent const&     options,
-        ::std::optional<::Social::Nonce> const&   nonce
+        ::std::optional<::Social::Nonce> const&   nonce,
+        ::std::string const&                      primaryPlayFabId
     );
 #endif
 

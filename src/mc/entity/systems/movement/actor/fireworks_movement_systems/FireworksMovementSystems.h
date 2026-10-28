@@ -30,7 +30,7 @@ MCAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity
     ::ActorRotationComponent&          rocketRotation,
     ::LocalSpatialEntityFetcher&       fetcher,
     ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors,
-    ::EntityModifier<::ActorSetPositionRequestComponent>                                               modifier
+    ::EntityModifier<::ActorSetPositionRequestComponent> const&                                        modifier
 );
 
 MCAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);

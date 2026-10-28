@@ -13,6 +13,7 @@ class IExternalServerFile;
 class ProfanityContext;
 class ServerLocator;
 struct NetworkWorldInfo;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -57,7 +58,7 @@ public:
 
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
-    MCAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
+    MCAPI ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
     // NOLINTEND
 
 public:

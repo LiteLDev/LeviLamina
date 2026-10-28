@@ -19,9 +19,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void removePassengersWithoutSeat(
         ::StrictEntityContext&,
-        ::RideableComponent const&                      rideableComponent,
-        ::VehicleComponent&                             vehicleComponent,
-        ::EntityModifier<::StopRidingRequestComponent>& modifier
+        ::RideableComponent const&                            rideableComponent,
+        ::VehicleComponent&                                   vehicleComponent,
+        ::EntityModifier<::StopRidingRequestComponent> const& modifier
     );
     // NOLINTEND
 };

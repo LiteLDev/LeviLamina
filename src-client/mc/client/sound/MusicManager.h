@@ -10,7 +10,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/sound/MusicRepeatMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +27,7 @@ class MusicManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::CustomMusic>                                                  mCustomMusic;
+    ::ll::TypedStorage<8, 232, ::CustomMusic>                                                  mCustomMusic;
     ::ll::TypedStorage<1, 1, bool>                                                             mPaused;
     ::ll::TypedStorage<4, 4, int>                                                              mNextSongDelay;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SoundPlayerInterface>>              mSoundPlayer;
@@ -72,9 +71,6 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>                          validator,
         ::std::shared_ptr<::std::vector<::Bedrock::Resources::PreloadedPathHandle>> preloadHandles
     );
-
-    MCAPI void
-    playCustomMusic(::std::string const& eventName, float volume, float fadeoutSeconds, ::MusicRepeatMode playMode);
 
     MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 

@@ -113,11 +113,15 @@ public:
 
     MCAPI ::LevelChunk* $getChunk(::ChunkPos const& pos);
 
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlock(::BlockPos const& pos) const;
 
     MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
+    MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+#else // LL_PLAT_C
     MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+#endif
 
     MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 

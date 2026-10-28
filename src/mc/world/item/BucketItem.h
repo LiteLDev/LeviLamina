@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/item/BucketFillType.h"
 #include "mc/world/item/HandSlot.h"
 #include "mc/world/item/Item.h"
@@ -17,7 +16,6 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Container;
-class HashedString;
 class InteractionResult;
 class ItemDescriptor;
 class ItemInstance;
@@ -32,23 +30,6 @@ namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class BucketItem : public ::Item {
-public:
-    // BucketItem inner types declare
-    // clang-format off
-    struct FillTypeEntityData;
-    // clang-format on
-
-    // BucketItem inner types define
-    struct FillTypeEntityData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ::BucketFillType> mBucketFillType;
-        ::ll::TypedStorage<4, 4, ::ActorType>      mActorType;
-        ::ll::TypedStorage<8, 32, ::std::string>   mInitEvent;
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -110,8 +91,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _broadcastBucketEmptySound(::BlockSource& region, ::Actor& entity, ::BlockPos const& pos) const;
-
     MCAPI bool _emptyBucket(
         ::BlockSource&     region,
         ::Block const&     contents,
@@ -120,11 +99,6 @@ public:
         ::ItemStack const& instance,
         uchar              face
     ) const;
-
-    MCAPI bool
-    _supportsWaterlessEntity(::Actor const& entity, ::HashedString& bucketType, bool const onlyCheckActorType) const;
-
-    MCAPI bool _takePowderSnow(::ItemStack& item, ::Actor& actor, ::BlockPos const& pos) const;
 
     MCAPI bool readBucketEntitySaveData(
         ::BlockSource&        region,
@@ -140,12 +114,6 @@ public:
     MCAPI static void _broadcastBucketFillSound(::BlockSource& region, ::Actor& entity, ::Material const& material);
 
     MCAPI static void _replaceWithEmptyBucket(::ItemStack& instance, ::Actor& entity);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::BucketItem::FillTypeEntityData> const& mFillTypeEntityData();
     // NOLINTEND
 
 public:

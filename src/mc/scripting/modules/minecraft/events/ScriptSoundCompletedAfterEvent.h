@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(
+    MCAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptSoundCompletedAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&
     );

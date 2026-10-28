@@ -9,8 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackBase;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class SetItemDamageFunction : public ::LootItemFunction {
@@ -29,6 +31,13 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
@@ -36,5 +45,11 @@ public:
     MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

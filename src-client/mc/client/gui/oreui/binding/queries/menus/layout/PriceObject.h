@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Services::layout::model { struct Price; }
 namespace OreUI { class SaleInfoObject; }
+namespace OreUI::Detail { class IPropertyObject; }
 // clang-format on
 
 namespace OreUI {
@@ -23,6 +25,30 @@ public:
         mCurrencyId;
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>, ::std::optional<::std::string>>>
         mVirtualCurrencyType;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PriceObject();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PriceObject(
+        ::std::string const&                             name,
+        ::OreUI::Detail::IPropertyObject*                parent,
+        ::Bedrock::Services::layout::model::Price const& src
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&                             name,
+        ::OreUI::Detail::IPropertyObject*                parent,
+        ::Bedrock::Services::layout::model::Price const& src
+    );
     // NOLINTEND
 };
 

@@ -54,27 +54,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _appendLogEntryMetadata(
+        ::std::string&     logEntry,
+        ::std::string_view timestamp,
+        ::LogAreaID        area,
+        uint               priority,
+        ::std::string_view functionName,
+        int                lineNumber,
+        int                _messageId
+    );
+
+    MCAPI void
+    _log(::LogAreaID _area, uint _priority, char const* _function, int line, int _messageId, ::std::string message);
+
     MCAPI void _logToFile(::std::string const& debugEvent);
-
-    MCAPI void _log_va(
-        ::LogAreaID _area,
-        uint        _priority,
-        char const* _function,
-        int         line,
-        int         _messageId,
-        char const* pszFormat,
-        char*       argptr
-    );
-
-    MCAPI ::std::string _makeLogString(
-        ::std::string        timestamp,
-        ::LogAreaID          area,
-        uint                 priority,
-        ::std::string        functionName,
-        int                  lineNumber,
-        int                  messageId,
-        ::std::string const& logMessage
-    );
 
     MCAPI void _openLogFile();
 

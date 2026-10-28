@@ -145,7 +145,7 @@ public:
         ::Block const&    block,
         ::BlockPos const& pos,
         uchar             face,
-        ::Actor*          placer,
+        ::Actor const*    placer,
         bool              ignoreEntities,
         ::Vec3            clickPos
     ) = 0;

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace Editor::ScriptModule {
 
 class ScriptEditorConstants : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptEditorConstants> {
@@ -25,12 +20,6 @@ public:
     ScriptEditorConstants& operator=(ScriptEditorConstants const&);
     ScriptEditorConstants(ScriptEditorConstants const&);
     ScriptEditorConstants();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

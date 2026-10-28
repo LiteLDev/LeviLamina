@@ -8,21 +8,21 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class SingleThreadedLock; }
-namespace EDUDiscovery { struct JoinCode; }
-namespace EDUDiscovery { struct ServerInvalidationDetails; }
+namespace EduDiscovery { struct JoinCode; }
+namespace EduDiscovery { struct ServerInvalidationDetails; }
 // clang-format on
 
-namespace EDUDiscovery {
+namespace EduDiscovery {
 
-class DiscoveryObserver : public ::Core::Observer<::EDUDiscovery::DiscoveryObserver, ::Core::SingleThreadedLock> {
+class DiscoveryObserver : public ::Core::Observer<::EduDiscovery::DiscoveryObserver, ::Core::SingleThreadedLock> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onServerInvalidated(::EDUDiscovery::ServerInvalidationDetails const&);
+    virtual void onServerInvalidated(::EduDiscovery::ServerInvalidationDetails const&);
 
     virtual void onHeartbeat();
 
-    virtual void onJoinCodeGenerated(::EDUDiscovery::JoinCode const&);
+    virtual void onJoinCodeGenerated(::EduDiscovery::JoinCode const&);
 
     virtual void onCredentialsInvalidated();
     // NOLINTEND
@@ -34,4 +34,4 @@ public:
     // NOLINTEND
 };
 
-} // namespace EDUDiscovery
+} // namespace EduDiscovery

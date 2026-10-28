@@ -113,12 +113,6 @@ public:
         // NOLINTBEGIN
         virtual ~Timer() = default;
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     class ManualTimer : public ::ImguiProfiler::Timer {
@@ -171,12 +165,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ImguiProfiler();
+#endif
 
     MCAPI ::TimeAccumulator
     getTimeAccumulator(::std::string const& group, ::std::string const& name, bool isClientSide);
 
+#ifdef LL_PLAT_S
     MCAPI void update();
+#endif
     // NOLINTEND
 
 public:
@@ -198,12 +196,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+#endif
     // NOLINTEND
 };

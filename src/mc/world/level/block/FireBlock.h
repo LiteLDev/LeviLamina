@@ -16,6 +16,7 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class IRandom;
+class NeighborBlockDirections;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -71,6 +72,17 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static ::Block const& getConnectedBlock(
+        ::IConstBlockSource const& region,
+        ::Block const&             block,
+        ::BlockPos const&          pos,
+        ::NeighborBlockDirections  directionsToCheck
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI static ::NeighborBlockDirections getConnectionsFromState(::Block const& block);
+#endif
 
     MCAPI static bool isValidFireLocation(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND

@@ -22,8 +22,8 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                  xblName;
     ::ll::TypedStorage<8, 32, ::std::string>                  platformName;
     ::ll::TypedStorage<8, 32, ::std::string>                  realName;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>  profileImage;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>  avatarImage;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions> profileImage;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions> avatarImage;
     ::ll::TypedStorage<8, 56, ::Social::UserPicturePath>      platformProfilePic;
     ::ll::TypedStorage<4, 4, ::Social::RelationToCurrentUser> relation;
     ::ll::TypedStorage<1, 1, bool>                            isOnline;

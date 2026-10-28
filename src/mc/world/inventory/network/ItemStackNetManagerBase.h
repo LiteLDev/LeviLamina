@@ -43,6 +43,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackNetManagerScreenStack>> mScreenStack;
     ::ll::TypedStorage<1, 1, bool>                                                mCurrentRequestHasCraftAction;
     ::ll::TypedStorage<8, 16, ::ItemStackLegacyRequestId>                         mLegacyTransactionRequestId;
+    ::ll::TypedStorage<1, 1, bool>                                                mCursorItemDragActive;
     // NOLINTEND
 
 public:
@@ -80,6 +81,10 @@ public:
     );
 #endif
 
+    virtual void beginCursorItemDrag() = 0;
+
+    virtual void endCursorItemDrag() = 0;
+
 #ifdef LL_PLAT_S
     virtual void _addLegacyTransactionRequestSetItemSlot(
         ::ItemStackNetManagerScreen&,
@@ -102,15 +107,9 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStackNetManagerBase(::Player& player, bool isClientSide, bool isEnabled);
 
-#ifdef LL_PLAT_C
     MCAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
 
     MCAPI void _pushScreen(::ContainerScreenContext screenContext);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void _pushScreen(::ContainerScreenContext screenContext);
-#endif
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
     // NOLINTEND
@@ -118,8 +117,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest(::Player* player);
-
     MCAPI static bool setPlayerContainer(
         ::Player&                                        player,
         ::SharedTypes::Legacy::ContainerType             containerType,

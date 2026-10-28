@@ -155,6 +155,8 @@ public:
 
     virtual void generateItems(::ContentSource* source) /*override*/;
 
+    virtual ::Bedrock::Threading::Async<void> refreshPackSources(bool saveSources) /*override*/;
+
     virtual ::Bedrock::Threading::Async<void> reloadSources(bool saveSources) /*override*/;
 
     virtual void reloadItems() /*override*/;
@@ -337,6 +339,8 @@ public:
 
     MCAPI void $generateItems(::ContentSource* source);
 
+    MCAPI ::Bedrock::Threading::Async<void> $refreshPackSources(bool saveSources);
+
     MCAPI ::Bedrock::Threading::Async<void> $reloadSources(bool saveSources);
 
     MCAPI void $reloadItems();
@@ -375,7 +379,7 @@ public:
 
     MCAPI void $beginAsyncInit(::TaskGroup& taskGroup);
 
-    MCAPI bool $isInitialized() const;
+    MCFOLD bool $isInitialized() const;
 
     MCAPI void $onLanguageChanged();
 
@@ -394,7 +398,7 @@ public:
 
     MCAPI ::std::shared_ptr<::StorageManager::ContentItemProvider> $getStorageContentItemProvider();
 
-    MCAPI ::StorageManager::IContentHandler& $getStorageContentHandler();
+    MCFOLD ::StorageManager::IContentHandler& $getStorageContentHandler();
 
     MCAPI ::std::shared_ptr<::StorageManager::WorldConverter> $getStorageWorldConverter();
 

@@ -67,6 +67,8 @@ public:
 
     MCAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
 
+    MCAPI bool _isValidAttach(::BlockPos attachPos, uchar direction);
+
     MCAPI void _peekAmountTick();
 
     MCAPI bool _tryAttachingToNeighbouringFaces(::BlockPos currentPos);

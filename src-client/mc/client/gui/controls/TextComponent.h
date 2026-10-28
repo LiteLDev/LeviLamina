@@ -42,6 +42,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                 mLastFilteredTextHash;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mFilteredText;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mMeasuredText;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mRenderTextScratch;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mCachedText;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mLOCCachedText;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mCachedLangCode;
@@ -92,7 +93,7 @@ public:
 
     MCAPI int _getCaretPosition() const;
 
-    MCAPI ::std::string _getMeasuredText(::UIRenderContext& context);
+    MCAPI ::std::string const& _getMeasuredText(::UIRenderContext& context);
 
     MCAPI ::std::string calculateUpdatedText();
 

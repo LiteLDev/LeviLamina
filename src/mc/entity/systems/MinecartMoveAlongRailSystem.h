@@ -68,26 +68,26 @@ public:
             ::StrictEntityContext,
             ::Include<::PlayerComponent>,
             ::ActorRotationComponent const,
-            ::LocalMoveVelocityComponent const>  playerView,
-        ::EntityModifier<::MoveRequestComponent> mod
+            ::LocalMoveVelocityComponent const> const&  playerView,
+        ::EntityModifier<::MoveRequestComponent> const& mod
     );
 
     MCAPI static void _postRailMovementCalculateMinecartPositionSystem(
-        ::StrictEntityContext const&                         context,
-        ::SnapOnRailComponent const&                         snapOnRailComponent,
-        ::StateVectorComponent&                              stateVectorComponent,
-        ::EntityModifier<::ActorSetPositionRequestComponent> mod,
-        ::IConstBlockSource const&                           constBlockSource
+        ::StrictEntityContext const&                                context,
+        ::SnapOnRailComponent const&                                snapOnRailComponent,
+        ::StateVectorComponent&                                     stateVectorComponent,
+        ::EntityModifier<::ActorSetPositionRequestComponent> const& mod,
+        ::IConstBlockSource const&                                  constBlockSource
     );
 
     MCAPI static void _preRailMovementCalculateMinecartPositionSystem(
-        ::StrictEntityContext const&                         context,
-        ::OffsetsComponent const&                            offsetsComponent,
-        ::StateVectorComponent const&                        stateVectorComponent,
-        ::FallDistanceComponent&                             fallDistanceComponent,
-        ::SnapOnRailComponent&                               snapOnRailComponent,
-        ::EntityModifier<::ActorSetPositionRequestComponent> mod,
-        ::IConstBlockSource const&                           constBlockSource
+        ::StrictEntityContext const&                                context,
+        ::OffsetsComponent const&                                   offsetsComponent,
+        ::StateVectorComponent const&                               stateVectorComponent,
+        ::FallDistanceComponent&                                    fallDistanceComponent,
+        ::SnapOnRailComponent&                                      snapOnRailComponent,
+        ::EntityModifier<::ActorSetPositionRequestComponent> const& mod,
+        ::IConstBlockSource const&                                  constBlockSource
     );
     // NOLINTEND
 };

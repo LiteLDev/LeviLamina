@@ -145,6 +145,8 @@ public:
     );
 
     MCAPI void _init();
+
+    MCAPI void _registerSubControllers();
     // NOLINTEND
 
 public:
@@ -156,7 +158,6 @@ public:
         bool                                isWorldEdit,
         bool                                isTemplateCreate,
         bool                                isRealmsEdit,
-        bool                                isRealmsSlot,
         bool                                isMultiplayerHost,
         bool                                isMultiplayerClient,
         bool                                isNonConfigRealmsEnv,

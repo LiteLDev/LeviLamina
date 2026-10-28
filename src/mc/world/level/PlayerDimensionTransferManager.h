@@ -60,6 +60,8 @@ public:
 
     MCAPI void handleChangeDimensionRequests();
 
+    MCAPI bool isAnyPlayerChangingDimension();
+
     MCAPI void requestPlayerChangeDimension(::Player const& player, ::ChangeDimensionRequest&& changeRequest);
 
     MCAPI ~PlayerDimensionTransferManager();

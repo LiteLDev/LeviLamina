@@ -24,6 +24,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mIsEduMode;
+    ::ll::TypedStorage<1, 1, bool> mIsCodeBuilderEnabled;
     ::ll::TypedStorage<
         8,
         8,

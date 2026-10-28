@@ -12,13 +12,13 @@
 // clang-format off
 class PauseScreenModel;
 struct ActorUniqueID;
-namespace EDUDiscovery { struct JoinCode; }
-namespace EDUDiscovery { struct ServerInvalidationDetails; }
+namespace EduDiscovery { struct JoinCode; }
+namespace EduDiscovery { struct ServerInvalidationDetails; }
 namespace Json { class Value; }
 // clang-format on
 
 class JoincodePauseMenuScreenController : public ::EduMultiplayerPauseMenuScreenController,
-                                          public ::EDUDiscovery::DiscoveryObserver {
+                                          public ::EduDiscovery::DiscoveryObserver {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,9 +42,9 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual void onServerInvalidated(::EDUDiscovery::ServerInvalidationDetails const&) /*override*/;
+    virtual void onServerInvalidated(::EduDiscovery::ServerInvalidationDetails const&) /*override*/;
 
-    virtual void onJoinCodeGenerated(::EDUDiscovery::JoinCode const&) /*override*/;
+    virtual void onJoinCodeGenerated(::EduDiscovery::JoinCode const&) /*override*/;
 
     virtual void onCredentialsInvalidated() /*override*/;
     // NOLINTEND
@@ -77,9 +77,9 @@ public:
 
     MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onServerInvalidated(::EDUDiscovery::ServerInvalidationDetails const&);
+    MCAPI void $onServerInvalidated(::EduDiscovery::ServerInvalidationDetails const&);
 
-    MCAPI void $onJoinCodeGenerated(::EDUDiscovery::JoinCode const&);
+    MCAPI void $onJoinCodeGenerated(::EduDiscovery::JoinCode const&);
 
     MCAPI void $onCredentialsInvalidated();
     // NOLINTEND

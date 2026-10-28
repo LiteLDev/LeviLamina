@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/nether_net/LogSeverity.h"
 #include "mc/deps/nether_net/NetworkID.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
@@ -23,8 +24,10 @@
 #include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/server/config/server_configuration/ServerConfigInfo.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
+#include "mc/world/gamemode/entity_attack/ValidationSettings.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/GeneratorType.h"
+#include "mc/world/level/ticking/TickingAreaLimitPolicy.h"
 
 struct PropertiesSettings {
 public:
@@ -97,7 +100,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mEmitServerTelemetry;
     ::ll::TypedStorage<4, 4, ::LogLevel>                                          mContentLogLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mIsContentLogConsoleOutputEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsServerLogFileEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mIsContentLogFileEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsChatLogFileEnabled;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>>> mServerLogPathOverride;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>>> mContentLogPathOverride;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>>> mChatLogPathOverride;
     ::ll::TypedStorage<4, 4, ::NetherNet::LogSeverity>                            mTransportLogLevel;
     ::ll::TypedStorage<4, 4, ::HCTraceLevel>                                      mHttpLogLevel;
     ::ll::TypedStorage<4, 4, float>                                               mWebsocketRetryTime;
@@ -105,7 +113,9 @@ public:
     ::ll::TypedStorage<4, 20, ::NetworkSettingOptions>                            mNetworkSettings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
     ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                           mPlayerMovementSettings;
+    ::ll::TypedStorage<4, 8, ::EntityAttack::ValidationSettings>                  mEntityAttackValidationSettings;
     ::ll::TypedStorage<8, 800, ::ScriptSettings>                                  mScriptSettings;
+    ::ll::TypedStorage<4, 24, ::TickingAreaLimitPolicy>                           mTickingAreaLimitPolicy;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                              mChatRestrictionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mPersonaDisabled;
     ::ll::TypedStorage<1, 1, bool>                                                mCustomSkinsDisabled;
@@ -117,7 +127,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mRakNetJoinFloodProtection;
     ::ll::TypedStorage<1, 1, bool>                                                mAllowUnconnectedPings;
     ::ll::TypedStorage<1, 1, bool>                                                mAllowSubClientLogin;
-    ::ll::TypedStorage<1, 1, bool>                                                mJigsawPersistenceEnabled;
     ::ll::TypedStorage<1, 1, ::NetworkPermissions>                                mNetworkPermissions;
     ::ll::TypedStorage<4, 4, ::ServerPlayerJoinBehavior>                          mPlayerJoinBehavior;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mAppId;
@@ -126,12 +135,11 @@ public:
     ::ll::TypedStorage<4, 8, ::Bedrock::Services::DiscoveryConfig>                mDiscoveryConfig;
     ::ll::TypedStorage<1, 1, bool>                                                mRealmsStoriesEnabled;
     ::ll::TypedStorage<4, 4, ::EducationServicesEnvironment>                      mEducationServicesEnvironment;
-    ::ll::TypedStorage<1, 1, bool>                                                mIsChatLoggingEnabled;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mServiceOverrides;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                               mScriptSentryMaxEventsPerWindow;
     ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>>            mScriptSentryRateLimitWindow;
     ::ll::TypedStorage<8, 160, ::PropertiesSettings::TelemetrySettings>           mTelemetry;
-    ::ll::TypedStorage<8, 440, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
+    ::ll::TypedStorage<8, 448, ::ServerConfiguration::ServerConfigInfo>           mServerConfiguration;
     ::ll::TypedStorage<1, 1, bool>                                                mEditorNetworkMetricsEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mConvertWorldToEditorProject;
     ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>                      mEditorConnectionPolicy;

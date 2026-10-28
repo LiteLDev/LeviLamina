@@ -8,7 +8,6 @@ enum class SettingsScreenMode : int {
     CreateFromTemplate       = 2,
     EditWorld                = 3,
     RealmsSettings           = 4,
-    RealmsSlot               = 5,
     PlayWorld                = 6,
     RealmsInviteLinkSettings = 7,
 };

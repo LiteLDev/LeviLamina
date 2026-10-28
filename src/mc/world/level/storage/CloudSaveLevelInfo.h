@@ -28,9 +28,9 @@ public:
     // NOLINTBEGIN
     MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
 
+#ifdef LL_PLAT_C
     MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
-#ifdef LL_PLAT_C
     MCAPI CloudSaveLevelInfo(
         ::std::string driveItemId,
         ::std::string cTag,
@@ -47,9 +47,9 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool operator==(::CloudSaveLevelInfo const& other) const;
-#endif
 
     MCAPI void serialize(::CompoundTag& tag) const;
+#endif
 
     MCAPI ~CloudSaveLevelInfo();
     // NOLINTEND
@@ -59,9 +59,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::CloudSaveLevelInfo const&);
 
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::CompoundTag const& tag);
 
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::std::string driveItemId,
         ::std::string cTag,

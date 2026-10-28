@@ -9,6 +9,7 @@
 #include "mc/deps/core/utility/ScopeExit.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/network/PacketGroupDefinition.h"
 #include "mc/server/ServerExitCode.h"
 
@@ -21,7 +22,7 @@ class ConsoleInputReader;
 class EditorAllowList;
 class EditorBootstrapper;
 class FileArchiver;
-class IEDUSystems;
+class IEduSystems;
 class IGameModuleShared;
 class LevelDbEnv;
 class LevelSettings;
@@ -69,19 +70,20 @@ public:
     ::ll::TypedStorage<8, 64, ::Bedrock::ScopeExit>                      mOnDestructioncloseAndResetAllLogs;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelDbEnv>>            mLevelDbEnv;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CodeBuilder::IManager>> mCodeBuilder;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>>      mCodeBuilderRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                       mImguiProfiler;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>              mImguiProfilerRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProfilingConfigManager>>              mProfilingConfigManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>                        mFileArchiver;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>>                  mEditorBootstrapper;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>                           mCDNConfig;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>>                  mServerTextSettings;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>                   mSignalingService;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>>          mSignalingServiceSignInJob;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>> mCodeBuilderRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                  mImguiProfiler;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>         mImguiProfilerRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProfilingConfigManager>>         mProfilingConfigManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>                   mFileArchiver;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mEditorProjectShutdownSaveSubscription;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>>         mEditorBootstrapper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>                  mCDNConfig;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>>         mServerTextSettings;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>          mSignalingService;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>> mSignalingServiceSignInJob;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> mDiscoveryServiceHelper;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::AuthHelper>>      mAuthServiceHelper;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEDUSystems>>                         mEduSystems;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEduSystems>>                         mEduSystems;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDedicatedServerUtils>>          mScriptDedicatedServerUtils;
     // NOLINTEND
 
@@ -128,9 +130,17 @@ public:
         ::TestConfig&                                                testConfig
     );
 
+    MCAPI void shutdownServices();
+
     MCAPI ::ServerExitCode start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
 
     MCAPI bool stop();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _warnAllowListEmpty();
     // NOLINTEND
 
 public:

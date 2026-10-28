@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptDebuggerMessages { class INetworkPayload; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,6 +28,23 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool deserialize(::std::string const& rawData, ::cereal::ReflectionCtx const& cerealContext);
+
+    MCNAPI ::std::string serialize(::cereal::ReflectionCtx const& cerealContext) const;
+
+    MCNAPI ~ScriptDebuggerPacket();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::ScriptDebuggerMessages::ScriptDebuggerPacket
+    fromPayload(::ScriptDebuggerMessages::INetworkPayload const& payload, ::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

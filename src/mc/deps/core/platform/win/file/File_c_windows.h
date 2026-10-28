@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/file_system/FileImpl.h"
+#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,7 +67,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string getExtendedLengthPath(::Core::PathView path);
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getExtendedLengthPath(::Core::PathView path);
     // NOLINTEND
 
 public:

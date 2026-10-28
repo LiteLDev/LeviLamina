@@ -7,7 +7,6 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/FullscreenMode.h"
-#include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/win/AppPlatformWindows.h"
@@ -19,7 +18,6 @@ class ITextBoxController;
 class PropertyBag;
 class SecureStorage;
 class SecureStorageKey;
-struct XTaskQueueObject;
 namespace Bedrock { class CommonPlatform; }
 namespace Bedrock { class Platform_GameCore; }
 namespace Bedrock::PubSub { class Subscription; }
@@ -42,8 +40,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                 mAppName;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectivityHint_GameCore>> mConnectivityHint;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Bedrock::Platform_GameCore*>> mPlatformGameCore;
-    ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>                            mTaskQueue;
-    ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                  mGameInviteToken;
     ::ll::TypedStorage<
         8,
         128,
@@ -197,12 +193,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _onInviteReceived(void* context, char const* inviteUri);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
@@ -337,6 +327,6 @@ public:
 
     MCAPI int $getPlatformDpi() const;
 
-    MCFOLD ::Bedrock::CommonPlatform* $getPlatformShim() const;
+    MCAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
     // NOLINTEND
 };

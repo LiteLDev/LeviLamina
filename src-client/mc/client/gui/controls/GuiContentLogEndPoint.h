@@ -47,6 +47,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool getLogMessage(::std::string& message, ::LogLevel& level);
+
     MCAPI bool pushMessagesToUI(::Bedrock::NotNullNonOwnerPtr<::GuiData> const& guiData);
     // NOLINTEND
 

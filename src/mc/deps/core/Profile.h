@@ -11,6 +11,10 @@ namespace Core::Profile {
 // functions
 // NOLINTBEGIN
 MCNAPI ::Core::Profile::ProfileGroup& findOrCreateGroup(::std::string_view name, uint color);
+
+#ifdef LL_PLAT_C
+MCNAPI bool isPrimaryProfilerActivelyOutputtingExternalData();
+#endif
 // NOLINTEND
 
 } // namespace Core::Profile

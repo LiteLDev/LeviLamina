@@ -5,10 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/persona/PieceType.h"
+#include "mc/world/actor/player/persona/ProfileType.h"
 #include "mc/world/actor/player/persona/Rarity.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Json { class Value; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 class UIPropertyBag;
@@ -23,7 +25,15 @@ namespace persona {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
+MCAPI void ParseProfileHashes(
+    ::std::unordered_map<::persona::ProfileType, ::std::string>& updatedProfileHashes,
+    ::Json::Value const&                                         response,
+    ::std::string const&                                         objectName
+);
+
 MCAPI ::mce::Color getPieceRarityColor(::UIPropertyBag const& bag, ::persona::Rarity pieceRarity);
+
+MCAPI ::persona::ProfileType parseProfileTypeFromHashKey(::std::string const& key);
 
 MCAPI ::persona::Rarity pieceRarityFromString(::std::string const& rarityTypeStr);
 #endif
@@ -100,6 +110,7 @@ MCAPI ::std::string const& PIECE_SIDE_BOTH_STR();
 MCAPI ::std::string const& PIECE_SIDE_LEFT_STR();
 
 MCAPI ::std::string const& PIECE_SIDE_RIGHT_STR();
+#endif
 
 MCAPI ::std::string const&& PIECE_TYPE_ARMS_STR();
 
@@ -112,6 +123,8 @@ MCAPI ::std::string const&& PIECE_TYPE_BOTTOM_STR();
 MCAPI ::std::string const&& PIECE_TYPE_CAPES_STR();
 
 MCAPI ::std::string const&& PIECE_TYPE_CLASSIC_SKIN_STR();
+
+MCAPI ::std::string const&& PIECE_TYPE_COCO_STR();
 
 MCAPI ::std::string const&& PIECE_TYPE_DRESS_STR();
 
@@ -161,6 +174,7 @@ MCAPI ::std::string const&& PIECE_TYPE_UNKNOWN_STR();
 
 MCAPI ::std::string const&& PIECE_TYPE_UNSUPPORTED_STR();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::string const& RARITY_NONE();
 
 MCAPI ::std::unordered_map<::persona::Rarity, ::std::string> const& RarityToStringMap();

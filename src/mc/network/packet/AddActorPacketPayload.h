@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/vanilla_components/PassengerOfBlockArguments.h"
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/SynchedActorData.h"
@@ -21,18 +22,19 @@ struct AddActorPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                       mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                      mRuntimeId;
-    ::ll::TypedStorage<8, 32, ::std::string>                        mActorType;
-    ::ll::TypedStorage<4, 12, ::Vec3>                               mPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                               mVelocity;
-    ::ll::TypedStorage<4, 8, ::Vec2>                                mRot;
-    ::ll::TypedStorage<4, 4, float>                                 mYHeadRotation;
-    ::ll::TypedStorage<4, 4, float>                                 mYBodyRotation;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SyncedAttribute>>     mAttributes;
-    ::ll::TypedStorage<8, 24, ::SynchedActorData::CopyableDataList> mData;
-    ::ll::TypedStorage<8, 48, ::PropertySyncData>                   mSynchedProperties;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>           mLinks;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mActorType;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
+    ::ll::TypedStorage<4, 4, float>                                         mYHeadRotation;
+    ::ll::TypedStorage<4, 4, float>                                         mYBodyRotation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SyncedAttribute>>             mAttributes;
+    ::ll::TypedStorage<8, 24, ::SynchedActorData::CopyableDataList>         mData;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;
+    ::ll::TypedStorage<4, 40, ::std::optional<::PassengerOfBlockArguments>> mPassengerOfBlockData;
     // NOLINTEND
 
 public:

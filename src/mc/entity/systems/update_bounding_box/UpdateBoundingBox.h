@@ -70,15 +70,15 @@ MCAPI void transformPlayerSizeRequest(
 );
 
 MCAPI void visitCommonSetSize(
-    ::StrictEntityContext const&                                entity,
-    ::ShouldUpdateBoundingBoxRequestComponent const&            request,
-    ::StateVectorComponent const&                               stateVector,
-    ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
-    ::ActorDataBoundingBoxComponent&                            actorData,
-    ::AABBShapeComponent&                                       aabbShape,
-    ::DepenetrationComponent&                                   depenetration,
-    ::optional_ref<::CollisionBoxComponent const>               collisionBox,
-    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
+    ::StrictEntityContext const&                                       entity,
+    ::ShouldUpdateBoundingBoxRequestComponent const&                   request,
+    ::StateVectorComponent const&                                      stateVector,
+    ::ActorDataDirtyFlagsComponent&                                    actorDataDirtyFlags,
+    ::ActorDataBoundingBoxComponent&                                   actorData,
+    ::AABBShapeComponent&                                              aabbShape,
+    ::DepenetrationComponent&                                          depenetration,
+    ::optional_ref<::CollisionBoxComponent const>                      collisionBox,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> const& modifier
 );
 // NOLINTEND
 

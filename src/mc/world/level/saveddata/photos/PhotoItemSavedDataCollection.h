@@ -26,7 +26,7 @@ public:
     MCAPI ::PhotoItemSavedData*
     _loadPhotoData(::ActorUniqueID const& id, ::ActorUniqueID const& owner, ::std::string const& name);
 
-    MCAPI ::PhotoItemSavedData* getPhotoSavedData(::CompoundTag const& instance);
+    MCAPI ::PhotoItemSavedData* getPhotoSavedData(::CompoundTag const* instance);
 #endif
     // NOLINTEND
 };

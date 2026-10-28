@@ -76,6 +76,8 @@ public:
         ::Material const&     mat,
         ::HashedString const& otherSlab
     );
+
+    MCAPI ::Block const& getDoubleSlab() const;
     // NOLINTEND
 
 public:

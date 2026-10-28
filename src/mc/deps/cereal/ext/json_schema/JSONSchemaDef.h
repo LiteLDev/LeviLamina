@@ -35,6 +35,7 @@ public:
     ::ll::TypedStorage<8, 72, ::std::optional<::std::unordered_set<::std::string>>> mExtraSerializationTraits;
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                                mExtraOrdinalIndex;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                       mExtraNonPublicProperty;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<int64>>>                mExtraEnumBinaryValue;
     ::ll::TypedStorage<8, 72, ::std::optional<::std::unordered_map<::std::string, ::std::vector<::std::string>>>>
         mExtraNonPublicEnumValues;
     // NOLINTEND

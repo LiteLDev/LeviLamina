@@ -9,21 +9,11 @@
 // clang-format off
 class AppPlatform;
 namespace Core { class Path; }
-namespace ResourcePackPaths { struct AllPaths; }
 // clang-format on
 
 namespace ResourcePackPaths {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
-MCAPI ::Core::PathBuffer<::std::string> addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform&));
-#endif
-
-MCAPI ::Core::PathBuffer<::std::string>
-    addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
-
-MCAPI ::ResourcePackPaths::AllPaths getAllPaths(::AppPlatform& platform);
-
 #ifdef LL_PLAT_C
 MCAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);
 
@@ -37,6 +27,10 @@ MCAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath(::AppPlatform
 MCAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const& platform);
 
 #ifdef LL_PLAT_C
+MCAPI ::Core::PathBuffer<::std::string> getPremiumPersonaPackDevPath(::AppPlatform const& platform);
+
+MCAPI ::Core::PathBuffer<::std::string> getPremiumPersonaPackPath(::AppPlatform const& platform);
+
 MCAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath(::AppPlatform const& platform);
 
 MCAPI ::Core::PathBuffer<::std::string> getPremiumSkinPackPath(::AppPlatform const& platform);
@@ -61,6 +55,8 @@ MCAPI ::std::string const& CUSTOM_SKIN_CACHE_PATH();
 
 MCAPI ::std::string const& DEVELOPMENT_BEHAVIOR_PACKS_PATH();
 
+MCAPI ::std::string const& DEVELOPMENT_PERSONA_PACKS_PATH();
+
 MCAPI ::std::string const& DEVELOPMENT_RESOURCE_PACKS_PATH();
 
 MCAPI ::std::string const& DEVELOPMENT_SKIN_PACKS_PATH();
@@ -72,6 +68,12 @@ MCAPI ::Core::PathBuffer<::std::string> const& GLOBAL_RESOURCE_PACKS_FILENAME();
 MCAPI ::Core::Path const& MANIFEST_PATH();
 
 MCAPI ::Core::Path const& MANIFEST_PATH_OLD();
+
+#ifdef LL_PLAT_C
+MCAPI ::std::string const& PERSONA_PACKS_DEV_PATH();
+
+MCAPI ::std::string const& PERSONA_PACKS_PATH();
+#endif
 
 MCAPI ::std::string const& RESOURCE_PACKS_PATH();
 

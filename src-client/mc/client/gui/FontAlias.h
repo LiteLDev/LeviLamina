@@ -92,7 +92,8 @@ public:
         ::mce::Color const&    textColor,
         bool                   hasShadow,
         uint                   textureWidth,
-        uint                   textureHeight
+        uint                   textureHeight,
+        bool                   isUnicode
     ) const /*override*/;
 
     virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
@@ -169,7 +170,8 @@ public:
         ::mce::Color const&    textColor,
         bool                   hasShadow,
         uint                   textureWidth,
-        uint                   textureHeight
+        uint                   textureHeight,
+        bool                   isUnicode
     ) const;
 
     MCFOLD void $loadFontData(bool uploadTextureImmediately);

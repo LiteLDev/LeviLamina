@@ -108,8 +108,6 @@ public:
 
     MCAPI bool _mayPickup();
 
-    MCAPI bool areItemsIncompatible();
-
     MCAPI ::std::string getCostText();
 
     MCAPI bool shouldDrawGreen();

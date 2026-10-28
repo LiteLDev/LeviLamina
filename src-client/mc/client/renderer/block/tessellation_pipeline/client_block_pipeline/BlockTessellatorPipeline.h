@@ -69,8 +69,6 @@ public:
 
     MCAPI static ::ClientBlockPipeline::Inputs
     setupStandardInputs(::AABB&& aabb, ::ClientBlockPipeline::Transforms&& transforms, ::ChunkViewSource& source);
-
-    MCAPI static bool useNewTessellation(::Block const& block, bool onlyNew);
     // NOLINTEND
 
 public:

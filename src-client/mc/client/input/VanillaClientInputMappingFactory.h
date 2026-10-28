@@ -53,9 +53,6 @@ public:
         ::MouseInputMapping&    screenMouseMapping
     );
 
-    MCAPI void
-    _addDebugKeyboardControls(::KeyboardInputMapping& keyboardMapping, ::MouseInputMapping& mouseMapping) const;
-
     MCAPI void _addFullKeyboardGamePlayControls(
         ::KeyboardInputMapping& keyboardMapping,
         ::MouseInputMapping&    mouseMapping,
@@ -113,11 +110,6 @@ public:
     _createDeathKeyboardAndMouseMapping(::KeyboardInputMapping& keyboardMapping, ::MouseInputMapping& mouseMapping);
 
     MCAPI ::GameControllerInputMapping _createEmoteGameControllerMapping();
-
-    MCAPI void _createExpediateEmoteKeyboardAndMouseMapping(
-        ::KeyboardInputMapping& emoteKeyboardMapping,
-        ::MouseInputMapping&    emoteMouseMapping
-    );
 
     MCAPI ::GameControllerInputMapping _createFlyingGameControllerMapping();
 
@@ -181,8 +173,6 @@ public:
     MCAPI bool _isUsingActionButtons() const;
 
     MCAPI void _populateFullKeyboardDefaults(::RemappingLayout& layout) const;
-
-    MCAPI void _populateGamepadDefaults(::RemappingLayout& layout) const;
 
     MCAPI void _populateKeyboardDefaults(::RemappingLayout& layout) const;
     // NOLINTEND

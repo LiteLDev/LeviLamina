@@ -49,8 +49,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::OreUI::FacetRegistryLocation>                         mLocation;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                          mUpdatingFacets;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetRegistry::FacetEntry>>     mFacets;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetRegistry::FacetPrototype>> mFacetPrototypes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetRegistry::FacetEntry>>     mFacets;
     ::ll::TypedStorage<1, 1, bool>                                                   mIsActivationDisabled;
     // NOLINTEND
 
@@ -73,8 +73,6 @@ public:
 
     virtual ::std::optional<::OreUI::IFacetRegistry::Error>
     deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id) /*override*/;
-
-    virtual void clearAllFacets() /*override*/;
 
     virtual void suspendAllFacets() /*override*/;
 
@@ -103,8 +101,6 @@ public:
 
     MCAPI ::std::optional<::OreUI::IFacetRegistry::Error>
     $deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id);
-
-    MCAPI void $clearAllFacets();
 
     MCAPI void $suspendAllFacets();
 

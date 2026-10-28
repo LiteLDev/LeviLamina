@@ -159,8 +159,6 @@ public:
     MCAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
     MCAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
-
-    MCAPI void updateEnabledStatus();
     // NOLINTEND
 
 public:

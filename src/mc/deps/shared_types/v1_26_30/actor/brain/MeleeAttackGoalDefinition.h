@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Brain { struct EntityRefMemory; }
+namespace SharedTypes::Brain { struct EntityRef; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,7 +22,7 @@ public:
     ::ll::TypedStorage<
         8,
         48,
-        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRefMemory>>
+        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRef>>
                                                                                  mTargetMemory;
     ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnAttack;
     ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnKill;
@@ -51,6 +51,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

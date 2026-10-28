@@ -10,6 +10,7 @@
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/ResourcePackSelectionPolicy.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,8 +55,11 @@ public:
 
     virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const = 0;
 
-    virtual ::std::shared_ptr<::ResourcePack>
-    getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const = 0;
+    virtual ::std::shared_ptr<::ResourcePack> getResourcePackSatisfiesPackId(
+        ::PackIdVersion const&        idAndVersion,
+        bool                          requireOwnership,
+        ::ResourcePackSelectionPolicy selectionPolicy
+    ) const = 0;
 
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const = 0;
 

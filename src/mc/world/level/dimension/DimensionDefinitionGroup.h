@@ -28,6 +28,8 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int>             mMinY;
         ::ll::TypedStorage<4, 4, int>             mHeightRange;
+        ::ll::TypedStorage<4, 4, int>             mCloudHeight;
+        ::ll::TypedStorage<1, 1, bool>            mRenderClouds;
         ::ll::TypedStorage<4, 4, ::GeneratorType> mGeneratorType;
         ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
         ::ll::TypedStorage<8, 16, ::mce::UUID>    mPackId;

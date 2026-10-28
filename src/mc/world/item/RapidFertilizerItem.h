@@ -20,8 +20,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

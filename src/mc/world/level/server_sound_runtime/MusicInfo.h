@@ -12,6 +12,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkfc93ac;
     ::ll::UntypedStorage<8, 40> mUnkf54897;
     ::ll::UntypedStorage<8, 40> mUnk4b7bce;
+    ::ll::UntypedStorage<8, 56> mUnk98c6d3;
     // NOLINTEND
 
 public:
@@ -19,18 +20,6 @@ public:
     MusicInfo& operator=(MusicInfo const&);
     MusicInfo(MusicInfo const&);
     MusicInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~MusicInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ServerSoundRuntime

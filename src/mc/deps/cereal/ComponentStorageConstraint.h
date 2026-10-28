@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::initializer_list<::std::string> keys);
+    MCAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::unordered_set<::std::string> keys);
 
     MCAPI void validateValue(::cereal::ComponentStorage const& storage, ::cereal::SerializerContext& context) const;
     // NOLINTEND

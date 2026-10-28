@@ -17,6 +17,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
     // NOLINTEND
 
 public:
@@ -29,6 +31,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
 
     // NOLINTEND

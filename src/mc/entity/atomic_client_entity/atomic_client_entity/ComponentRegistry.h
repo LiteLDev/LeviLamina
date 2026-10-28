@@ -36,6 +36,8 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI ComponentRegistry();
 
+    MCNAPI ::AtomicClientEntity::ComponentInitializer const* getInitializer(::std::string const& componentName) const;
+
     MCNAPI void registerInitializer(::std::unique_ptr<::AtomicClientEntity::ComponentInitializer> initializer);
 #endif
     // NOLINTEND

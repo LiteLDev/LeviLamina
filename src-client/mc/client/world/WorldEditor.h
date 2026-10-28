@@ -174,7 +174,8 @@ public:
     MCAPI void saveWorld(
         ::World::WorldID const&                        worldID,
         ::std::function<void()>                        onCompleteCallback,
-        ::std::function<void(::World::SaveWorldError)> onErrorCallback
+        ::std::function<void(::World::SaveWorldError)> onErrorCallback,
+        bool                                           isTrialMode
     );
     // NOLINTEND
 

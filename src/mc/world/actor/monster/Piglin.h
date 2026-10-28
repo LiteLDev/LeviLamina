@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/monster/HumanoidMonster.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot) /*override*/;
 
     virtual bool isDarkEnoughToSpawn() const /*override*/;
     // NOLINTEND
@@ -51,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 

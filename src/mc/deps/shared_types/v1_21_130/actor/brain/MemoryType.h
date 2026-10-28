@@ -22,10 +22,12 @@ public:
         BlockRef    = 6,
         BlockPos    = 7,
         BlockPosVec = 8,
-        PoiMemory   = 9,
+        PoiRef      = 9,
         DamageCause = 10,
         Countdown   = 11,
-        Count       = 12,
+        WorldPos    = 12,
+        Vec3        = 13,
+        Count       = 14,
     };
 
     struct Names {
@@ -53,6 +55,10 @@ public:
         MCAPI static ::std::string_view const& POI_MEMORY();
 
         MCAPI static ::std::string_view const& STRING();
+
+        MCAPI static ::std::string_view const& VEC3();
+
+        MCAPI static ::std::string_view const& WORLD_POS();
         // NOLINTEND
     };
 };

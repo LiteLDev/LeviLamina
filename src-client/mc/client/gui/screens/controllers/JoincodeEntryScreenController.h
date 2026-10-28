@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-namespace EDUDiscovery { struct JoinServerQueryState; }
+namespace EduDiscovery { struct JoinServerQueryState; }
 // clang-format on
 
 class JoincodeEntryScreenController : public ::MinecraftScreenController {
@@ -30,15 +30,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUDiscovery::QueryContext<::EDUDiscovery::JoinServerQueryState>>>
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduDiscovery::QueryContext<::EduDiscovery::JoinServerQueryState>>>
         mJoinContext;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUDiscovery::QueryContext<::EDUDiscovery::Availability>>>
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduDiscovery::QueryContext<::EduDiscovery::Availability>>>
                                                                             mAvailabilityContext;
-    ::ll::TypedStorage<8, 40, ::EDUDiscovery::Error>                        mJoinError;
+    ::ll::TypedStorage<8, 40, ::EduDiscovery::Error>                        mJoinError;
     ::ll::TypedStorage<8, 32, ::std::string>                                mHostUsername;
     ::ll::TypedStorage<8, 32, ::std::string>                                mWorldName;
     ::ll::TypedStorage<4, 4, ::JoincodeEntryScreenController::ActiveScreen> mActiveScreen;
-    ::ll::TypedStorage<8, 32, ::EDUDiscovery::JoinCode>                     mEnteredJoincode;
+    ::ll::TypedStorage<8, 32, ::EduDiscovery::JoinCode>                     mEnteredJoincode;
     ::ll::TypedStorage<4, 4, int>                                           mHoveredEntry;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string)>>         mUpdateIdHeaderText;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                      mCheckForServiceDialog;
@@ -63,7 +63,7 @@ public:
 
     MCAPI void _openEntryScreen();
 
-    MCAPI void _openErrorScreen(::EDUDiscovery::Error const& error);
+    MCAPI void _openErrorScreen(::EduDiscovery::Error const& error);
 
     MCAPI void _openIPEntryScreen();
 
@@ -72,7 +72,7 @@ public:
 
     MCAPI void _requestJoinServer(
         ::std::function<
-            void(::std::shared_ptr<::JoincodeEntryScreenController>, ::EDUDiscovery::JoinServerQueryState const&)>
+            void(::std::shared_ptr<::JoincodeEntryScreenController>, ::EduDiscovery::JoinServerQueryState const&)>
             joinCallback
     );
 

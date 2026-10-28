@@ -69,6 +69,11 @@ public:
         TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
                                                                         mVisibleTo;
     ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mVisibleToClients;
+    ::ll::
+        TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+                                                                        mHiddenFrom;
+    ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mHiddenFromClients;
+    ::ll::TypedStorage<1, 1, bool>                                      mDefaultVisibleToAll;
     ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mSentToClients;
     ::ll::TypedStorage<8, 8, uint64>                                    mNetworkId;
     ::ll::TypedStorage<4, 4, uint>                                      mFlags;
@@ -108,11 +113,21 @@ public:
         bool                                                                            isDebugShape
     );
 
+    MCFOLD ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
+    getHiddenFrom() const;
+
+    MCFOLD ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
+    getVisibleTo() const;
+
     MCAPI ::ScriptModuleMinecraft::ScriptPrimitiveShape&
     operator=(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
     MCAPI void setAttachedTo(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& attachedTo
+    );
+
+    MCAPI void setHiddenFrom(
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& hiddenFrom
     );
 
     MCAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);

@@ -20,7 +20,7 @@ namespace SharedTypes::v1_21_20 { struct FilterTestData; }
 class FilterGroup {
 public:
     // FilterGroup inner types define
-    enum class CollectionType : int {
+    enum class CollectionType : uchar {
         And = 0,
         Or  = 1,
         Not = 2,
@@ -31,7 +31,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::FilterGroup::CollectionType>                    mCollectionType;
+    ::ll::TypedStorage<1, 1, ::FilterGroup::CollectionType>                    mCollectionType;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::FilterGroup>>> mChildren;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::FilterTest>>>  mMembers;
     // NOLINTEND

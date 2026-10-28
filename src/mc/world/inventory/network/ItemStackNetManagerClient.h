@@ -196,6 +196,10 @@ public:
 
     virtual bool allowInventoryTransactionManager() const /*override*/;
 
+    virtual void beginCursorItemDrag() /*override*/;
+
+    virtual void endCursorItemDrag() /*override*/;
+
     virtual ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest() /*override*/;
 
 #ifdef LL_PLAT_S
@@ -277,6 +281,10 @@ public:
     MCAPI ::ItemStackRequestId $getRequestId() const;
 
     MCAPI bool $allowInventoryTransactionManager() const;
+
+    MCAPI void $beginCursorItemDrag();
+
+    MCAPI void $endCursorItemDrag();
 
     MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 

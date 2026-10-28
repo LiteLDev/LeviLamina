@@ -12,6 +12,7 @@
 class ActorOwnerComponent;
 class StrictEntityContext;
 struct InterpolateMovementNeededComponent;
+struct TickingSystemWithInfo;
 struct WitherBossFlagComponent;
 struct WitherBossPreAIStepResultComponent;
 // clang-format on
@@ -30,9 +31,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doWitherBossPreAIStepSystem(
-        ::StrictEntityContext&                                 context,
-        ::ActorOwnerComponent&                                 actorOwnerComponent,
-        ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
+        ::StrictEntityContext&                                        context,
+        ::ActorOwnerComponent&                                        actorOwnerComponent,
+        ::EntityModifier<::WitherBossPreAIStepResultComponent> const& mod
     );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

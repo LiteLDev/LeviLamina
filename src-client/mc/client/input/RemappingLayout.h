@@ -39,6 +39,7 @@ public:
 public:
     // prevent constructor by default
     RemappingLayout(RemappingLayout const&);
+    RemappingLayout();
 
 public:
     // virtual functions
@@ -66,37 +67,27 @@ public:
 
     virtual ::std::string getKeySpriteLocation(::Keymapping const& keyMapping) const;
 
-    virtual int _rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const = 0;
+    virtual int _rawKeyToKey(int rawInputKey, ::RawInputType rawInputType) const = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RemappingLayout();
-
     MCAPI void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
 
     MCAPI void defaultKeyAtIndex(uint64 index);
 
     MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
-    MCAPI ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
+    MCAPI ::Keymapping const& getKeymappingByAction(::std::string_view action) const;
 
     MCAPI ::RemappingLayout& operator=(::RemappingLayout const& other);
 
-    MCAPI void setMapping(::std::string const& action, ::std::vector<int> const& keys);
+    MCAPI void setMapping(::std::string_view action, ::std::vector<int> const& keys);
 
     MCAPI void unassignDuplicateKeys(uint64 index);
 
-    MCAPI void unassignKey(::DuplicateKey duplicateKey);
-
     MCAPI void unassignKeyAtIndex(uint64 index);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

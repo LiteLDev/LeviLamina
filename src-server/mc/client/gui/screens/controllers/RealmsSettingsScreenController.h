@@ -14,10 +14,6 @@ public:
     // RealmsSettingsScreenController inner types define
     enum class PurchaseIntent : int {};
 
-    enum class SaveType : int {};
-
-    enum class RealmsSaveAction : int {};
-
     struct SaveStatusTracker {};
 
     struct RealmsVersionState {};

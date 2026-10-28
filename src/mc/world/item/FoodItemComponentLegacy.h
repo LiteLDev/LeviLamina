@@ -5,18 +5,22 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/world/effect/EffectDuration.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class CompoundTag;
 class Item;
 class ItemStack;
 class Level;
 class Player;
 struct ItemOnUseResult;
+namespace Json { class Value; }
 // clang-format on
 
 class FoodItemComponentLegacy : public ::IFoodItemComponent {
@@ -79,7 +83,8 @@ public:
 
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
-    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void
+    use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot) /*override*/;
 
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
@@ -94,6 +99,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
+
+    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+
+    MCAPI bool init(::Json::Value const& data, ::MolangVersion);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
@@ -111,7 +126,7 @@ public:
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player);
+    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
     MCAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
@@ -122,5 +137,11 @@ public:
     );
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

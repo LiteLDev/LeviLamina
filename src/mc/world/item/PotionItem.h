@@ -21,7 +21,6 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Player;
-class ThrownPotion;
 class Vec3;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
@@ -70,14 +69,6 @@ public:
         ::HandSlot    handSlot,
         ::Vec3 const& clickPos
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static void applyEffect(::ThrownPotion* potion, ::ItemStack const& slotItem);
-#endif
     // NOLINTEND
 
 public:

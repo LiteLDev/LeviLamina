@@ -79,6 +79,8 @@ public:
     MCAPI static int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static ::Block const& getBlockForFace(uchar face);
+
+    MCAPI static bool isAcceptableNeighbour(::Block const& block);
     // NOLINTEND
 
 public:

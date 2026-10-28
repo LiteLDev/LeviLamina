@@ -46,13 +46,20 @@ public:
     public:
         // prevent constructor by default
         BroadcastInfo& operator=(BroadcastInfo const&);
-        BroadcastInfo(BroadcastInfo const&);
         BroadcastInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI BroadcastInfo(::ServerSoundInstanceManager::BroadcastInfo const&);
+
         MCNAPI ::ServerSoundInstanceManager::BroadcastInfo& operator=(::ServerSoundInstanceManager::BroadcastInfo&&);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::ServerSoundInstanceManager::BroadcastInfo const&);
         // NOLINTEND
     };
 
@@ -126,6 +133,7 @@ public:
         ::ll::UntypedStorage<4, 4>   mUnkc362e8;
         ::ll::UntypedStorage<1, 1>   mUnka55ecb;
         ::ll::UntypedStorage<1, 1>   mUnkaf0af3;
+        ::ll::UntypedStorage<1, 1>   mUnk2b66aa;
         ::ll::UntypedStorage<8, 8>   mUnk26f4f1;
         ::ll::UntypedStorage<8, 104> mUnk7c2aaa;
         // NOLINTEND
@@ -141,6 +149,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnkb93fd6;
+    ::ll::UntypedStorage<1, 1>   mUnk8bb819;
     ::ll::UntypedStorage<8, 24>  mUnk326bec;
     ::ll::UntypedStorage<8, 16>  mUnka661b6;
     ::ll::UntypedStorage<8, 128> mUnk3886a2;

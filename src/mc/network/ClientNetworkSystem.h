@@ -93,7 +93,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>                networkSessionOwner,
         ::std::unique_ptr<::IPacketSerializationController>                 packetController,
         ::std::unique_ptr<::SecureStorage>                                  serverTrustStoreStorage,
-        ::Bedrock::NonOwnerPointer<::flighting::IFlightReader const>        controlTower
+        ::Bedrock::NonOwnerPointer<::flighting::IFlightReader const>        controlTower,
+        ::std::shared_ptr<void>                                             httpLibraryToken
     );
 
     MCAPI bool _connectLan(::Social::GameConnectionInfo const& primary, ::Social::GameConnectionInfo const& backup);
@@ -157,7 +158,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>                networkSessionOwner,
         ::std::unique_ptr<::IPacketSerializationController>                 packetController,
         ::std::unique_ptr<::SecureStorage>                                  serverTrustStoreStorage,
-        ::Bedrock::NonOwnerPointer<::flighting::IFlightReader const>        controlTower
+        ::Bedrock::NonOwnerPointer<::flighting::IFlightReader const>        controlTower,
+        ::std::shared_ptr<void>                                             httpLibraryToken
     );
 #endif
     // NOLINTEND

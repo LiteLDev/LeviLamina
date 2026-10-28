@@ -168,6 +168,8 @@ public:
 
     virtual ::std::string getRawScreenName() const /*override*/;
 
+    virtual bool equalsRawScreenName(::std::string_view comparison) const /*override*/;
+
     virtual ::std::string getRoute() const /*override*/;
 
     virtual ::std::string getScreenTelemetryName() const /*override*/;
@@ -366,6 +368,8 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCFOLD ::std::string $getRawScreenName() const;
+
+    MCAPI bool $equalsRawScreenName(::std::string_view comparison) const;
 
     MCAPI ::std::string $getRoute() const;
 

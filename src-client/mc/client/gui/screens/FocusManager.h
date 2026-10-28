@@ -89,6 +89,8 @@ public:
 
     MCAPI void addControl(::UIControl& control);
 
+    MCAPI void clearFocusTreeState();
+
     MCAPI void defaultFocus();
 
     MCAPI void removeControl(

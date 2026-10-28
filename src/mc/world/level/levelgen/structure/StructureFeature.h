@@ -75,23 +75,13 @@ public:
         ::Dimension const&                   dimension
     ) = 0;
 
-#ifdef LL_PLAT_S
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
-        ::ChunkPos const&                    chunkPos,
+        ::ChunkPos const&                    lc,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) = 0;
-#else // LL_PLAT_C
-    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&                         dimension,
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        ::ChunkPos const&                    cp,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    ) = 0;
-#endif
 
     virtual ::StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
     // NOLINTEND

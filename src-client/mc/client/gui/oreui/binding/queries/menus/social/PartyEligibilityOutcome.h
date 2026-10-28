@@ -10,6 +10,7 @@ enum class PartyEligibilityOutcome : uchar {
     Partial       = 2,
     None          = 3,
     PartyTooLarge = 4,
+    RequestError  = 5,
 };
 
 }

@@ -29,16 +29,19 @@ public:
 
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI static void buildNetworkTag(
         ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype const& archetypeData,
         ::CompoundTag&                                                  tag,
         ::cereal::ReflectionCtx const&                                  ctx
     );
+#endif
 
 #ifdef LL_PLAT_C
     MCAPI static ::BlockShape getBlockShape(::std::string const& blockName);
 #endif
 
+#ifdef LL_PLAT_S
     MCAPI static void initializeFromNetwork(
         ::CompoundTag const&                                      tag,
         ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype& archetypeData,
@@ -52,5 +55,6 @@ public:
         int                                                             blockID,
         ::Material const&                                               material
     );
+#endif
     // NOLINTEND
 };

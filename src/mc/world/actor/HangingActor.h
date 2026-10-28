@@ -79,12 +79,10 @@ public:
 
     MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
-#ifdef LL_PLAT_C
     MCAPI void _calculateAABB();
-#endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _calculateAABB();
+    MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 #endif
 
 #ifdef LL_PLAT_C
@@ -92,14 +90,10 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
-#endif
-
-#ifdef LL_PLAT_C
     MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
 #endif
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
 #endif
     // NOLINTEND

@@ -9,6 +9,7 @@
 #include "mc/util/Bounds.h"
 #include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/ticking/AddTickingAreaStatus.h"
+#include "mc/world/level/ticking/TickingAreaLimitPolicy.h"
 #include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
 // auto generated forward declare list
@@ -74,6 +75,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::vector<::PendingArea>>> mPendingAreas;
     ::ll::TypedStorage<1, 1, bool>                                                                 mIsPreloadDone;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelStorage> const>                    mLevelStorage;
+    ::ll::TypedStorage<4, 24, ::TickingAreaLimitPolicy const>                                      mLimitPolicy;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPostReloadActorAdded;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnCanStartGameSaveTimerCheckSubscription;
     // NOLINTEND
@@ -85,7 +87,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TickingAreasManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage);
+    MCAPI
+    TickingAreasManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, ::TickingAreaLimitPolicy limitPolicy);
 
     MCAPI ::AddTickingAreaStatus _addArea(
         ::DimensionType                       dimensionId,
@@ -174,6 +177,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage);
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, ::TickingAreaLimitPolicy limitPolicy);
     // NOLINTEND
 };

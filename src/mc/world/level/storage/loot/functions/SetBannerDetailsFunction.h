@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackBase;
+class LootItemCondition;
 class LootTableContext;
 class Random;
 namespace Json { class Value; }
@@ -41,6 +42,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     _parseBannerPattern(::std::vector<::std::pair<uchar, ::ItemColor>>& patternVec, ::Json::Value const& object);
+
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+#endif
     // NOLINTEND
 
 public:

@@ -142,7 +142,7 @@ public:
 
     virtual void doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
 
-    virtual void doPostItemHurtActor(::Actor&, ::Actor&, int) const;
+    virtual void doPostItemHurtActor(::Actor& attacker, ::Actor& victim, int enchantLevel) const;
 
     virtual void doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
@@ -243,7 +243,7 @@ public:
 
     MCFOLD void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
 
-    MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
+    MCFOLD void $doPostItemHurtActor(::Actor& attacker, ::Actor& victim, int enchantLevel) const;
 
     MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 

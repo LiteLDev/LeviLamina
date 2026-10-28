@@ -7,7 +7,7 @@
 class MainMenuScreenModel;
 // clang-format on
 
-struct EDULibraryCategory {
+struct EduLibraryCategory {
 public:
     // member variables
     // NOLINTBEGIN
@@ -21,21 +21,21 @@ public:
 
 public:
     // prevent constructor by default
-    EDULibraryCategory& operator=(EDULibraryCategory const&);
-    EDULibraryCategory();
+    EduLibraryCategory& operator=(EduLibraryCategory const&);
+    EduLibraryCategory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDULibraryCategory(::EDULibraryCategory const&);
+    MCAPI EduLibraryCategory(::EduLibraryCategory const&);
 
-    MCAPI ~EDULibraryCategory();
+    MCAPI ~EduLibraryCategory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EDULibraryCategory const&);
+    MCAPI void* $ctor(::EduLibraryCategory const&);
     // NOLINTEND
 
 public:

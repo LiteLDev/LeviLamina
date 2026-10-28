@@ -5,13 +5,17 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyObject.h"
+#include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/gui/oreui/binding/queries/menus/layout/ExperienceListingObject.h"
+#include "mc/client/gui/oreui/binding/queries/menus/layout/ImageObject.h"
 #include "mc/client/gui/oreui/binding/queries/menus/layout/LocalizedStringObject.h"
 #include "mc/client/store/services/ExperienceMode.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Services::layout::model { struct ExperiencePreview; }
+namespace OreUI { class ActiveBadgeObject; }
+namespace OreUI { class ExperiencePdpActivityObject; }
 namespace OreUI { class LinksToObject; }
 namespace OreUI::Detail { class IPropertyObject; }
 // clang-format on
@@ -35,6 +39,16 @@ public:
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mCreatorId;
     ::ll::TypedStorage<8, 688, ::OreUI::ExperienceListingObject>                mListing;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LinksToObject>>         mLinksTo;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ActiveBadgeObject>>     mBadge;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<
+            ::OreUI::PropertyVector<::OreUI::ExperiencePdpActivityObject, ::OreUI::ExperiencePdpActivityObject>>>
+                                                                                mActivities;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LocalizedStringObject>> mDescription;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ImageObject>>           mBackgroundImage;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ImageObject>>           mLogoImage;
     // NOLINTEND
 
 public:

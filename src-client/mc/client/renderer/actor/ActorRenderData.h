@@ -13,7 +13,6 @@ class Actor;
 class AnimationComponent;
 class BaseActorRenderContext;
 class ItemStack;
-class Matrix;
 class Mob;
 class MolangVariableMap;
 class Vec4;
@@ -69,8 +68,6 @@ public:
         bool,
         bool
     ) const;
-
-    MCAPI void applyGlobalAnims(::Matrix& worldMatrix, ::BaseActorRenderContext& renderContext) const;
     // NOLINTEND
 
 public:

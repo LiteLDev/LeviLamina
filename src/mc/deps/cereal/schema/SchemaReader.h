@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SerializationTraitsSupport.h"
 #include "mc/platform/Result.h"
@@ -29,6 +30,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const = 0;
+
+    virtual ::std::optional<::cereal::ResultCode> inputError() const;
+
+    virtual ::std::optional<uint64> remainingInputBytes() const;
 
     virtual ::cereal::SchemaRWType expectedType() const = 0;
 
@@ -78,6 +83,16 @@ public:
     virtual void pushElement(uint64 index) = 0;
 
     virtual void pop() = 0;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCFOLD ::std::optional<::cereal::ResultCode> $inputError() const;
+
+    MCFOLD ::std::optional<uint64> $remainingInputBytes() const;
+
+
     // NOLINTEND
 };
 

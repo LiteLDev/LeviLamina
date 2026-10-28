@@ -19,8 +19,14 @@ class ScreenRenderBatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::RenderControlMetadata>>       mRenderControls;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ComponentRenderBatch>>        mRenderBatches;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RenderControlMetadata>> mRenderControls;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ComponentRenderBatch>>  mRenderBatches;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::reverse_iterator<
+            ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::ComponentRenderBatch>>>>>
+                                                                            mEndValidRenderBatches;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::TextureState>> mTextureStates;
     // NOLINTEND
 
@@ -34,6 +40,8 @@ public:
         ::ClippedControlMetadata&   clippedControlData,
         bool                        hasRenderableComponent
     );
+
+    MCAPI ::ComponentRenderBatch& _findOrAddRenderBatch(::BatchKey&& batchKey);
 
     MCAPI bool _populateRenderControlsCollection(
         ::UIControl&                control,

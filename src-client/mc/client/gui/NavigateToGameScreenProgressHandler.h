@@ -16,9 +16,11 @@ class NavigateToGameScreenProgressHandler : public ::ProgressHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::LoadingState>                                            state;
-    ::ll::TypedStorage<1, 1, bool>                                                      hasWaitedToUnloadAssets;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ILocalPlayerEntityGetter const> const> mLocalPlayerEntityGetter;
+    ::ll::TypedStorage<4, 4, ::LoadingState> state;
+    ::ll::TypedStorage<1, 1, bool>           hasWaitedToUnloadAssets;
+    ::ll::TypedStorage<1, 1, bool>           mHasNavigated;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILocalPlayerEntityGetter const>> const>
+        mLocalPlayerEntityGetter;
     // NOLINTEND
 
 public:
@@ -56,7 +58,7 @@ public:
 
     MCFOLD void $onExit(::MinecraftScreenModel&);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 

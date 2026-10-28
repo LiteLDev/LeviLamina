@@ -15,8 +15,8 @@ struct RenderChunkDirectIndexData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::std::optional<::dragon::RenderMetadata> const> mRenderMetadata;
-    ::ll::TypedStorage<8, 32, ::std::optional<::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>>>
+    ::ll::TypedStorage<8, 64, ::std::optional<::dragon::RenderMetadata> const> mRenderMetadata;
+    ::ll::TypedStorage<8, 24, ::std::optional<::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>>>
                                   mIndexData;
     ::ll::TypedStorage<4, 4, int> mIterationCount;
     // NOLINTEND

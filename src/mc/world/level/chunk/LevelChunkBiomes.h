@@ -13,8 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class BiomeRegistry;
-class ChunkBlockPos;
 // clang-format on
 
 class LevelChunkBiomes {
@@ -46,13 +44,13 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     LevelChunkBiomes& operator=(LevelChunkBiomes const&);
     LevelChunkBiomes(LevelChunkBiomes const&);
     LevelChunkBiomes();
 
-#else // LL_PLAT_C
 #endif
 public:
     // member functions
@@ -61,7 +59,7 @@ public:
 
     MCAPI void makeUniformBiomes(::Biome const& biome);
 
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI ::LevelChunkBiomes& operator=(::LevelChunkBiomes&& otherChunkBiomes);
 #endif
 
@@ -73,24 +71,16 @@ public:
         ::Bedrock::Threading::UniqueLock<::std::shared_mutex> const& lock
     );
 
-#ifdef LL_PLAT_S
-    MCAPI void set2DBiomesFrom3D(
-        ::Biome const&                                                      defaultBiome,
-        ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>> const& biomeSubChunks
-    );
-
-    MCAPI void setAllBiomesFrom2D(
-        ::std::array<::BiomeIdType, 256>& legacyBiomes,
-        ::Biome const&                    defaultBiome,
-        ::BiomeRegistry const&            biomeRegistry,
-        ushort                            dimensionNumSubChunks
-    );
-
-    MCAPI void
-    setBiome(::Biome const& biome, ::ChunkBlockPos const& pos, bool fillYDimension, ushort dimensionSubchunkHeight);
-#endif
-
     MCAPI void setBiomeFromVolume(::ChunkVolume::VolumeOf<::Biome> const& volume, ushort dimensionNumSubChunks);
+
+    MCAPI void setBiomeInSubChunk3D(
+        ::Biome const&                                               biome,
+        ushort                                                       subChunkIndex,
+        ushort                                                       storageIndex,
+        ushort                                                       dimensionSubchunkHeight,
+        ::Bedrock::Threading::UniqueLock<::std::shared_mutex> const& writeLock,
+        bool                                                         allowRebuildingAdditionalSubChunk
+    );
 
     MCAPI void
     setBiomeStorages(::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>> biomes, ushort biomeStackSize);
@@ -102,6 +92,8 @@ public:
         bool           allowRebuildingAdditionalSubChunk
     );
 
+#ifdef LL_PLAT_C
     MCAPI void setBiomes(::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>> biomes, ushort biomeStackSize);
+#endif
     // NOLINTEND
 };

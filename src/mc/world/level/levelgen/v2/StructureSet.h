@@ -50,16 +50,16 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     StructureSet();
 
-#else // LL_PLAT_C
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI StructureSet(
         ::std::vector<::br::worldgen::StructureSet::Entry> entries,
         ::br::worldgen::StructurePlacement                 placement
@@ -79,7 +79,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+#ifdef LL_PLAT_C
     MCAPI void*
     $ctor(::std::vector<::br::worldgen::StructureSet::Entry> entries, ::br::worldgen::StructurePlacement placement);
 #endif

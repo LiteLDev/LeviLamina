@@ -14,7 +14,6 @@ class IClientInstance;
 class SerializedSkinRef;
 class Skin;
 class SkinPackPin;
-struct PaperDollPlayerSkinInfo;
 struct SkinImages;
 namespace mce { class UUID; }
 // clang-format on
@@ -51,13 +50,9 @@ public:
         ::SkinImages const&        images
     ) /*override*/;
 
-    virtual ::std::optional<::PaperDollPlayerSkinInfo> getSkinFromPlayer(::mce::UUID const& id) /*override*/;
-
     virtual ::SkinImages getSkinImages(::Skin const& skin, bool isPlayer) /*override*/;
 
-    virtual bool isAnySkinOfNameInitialized(::std::string_view skin) const /*override*/;
-
-    virtual bool isRequiredPlayerAnimationLoaded() const /*override*/;
+    virtual bool isSkinReadyToRender(::std::string_view skin) const /*override*/;
 
     virtual void markLocalPlayerAsDirty() /*override*/;
 
@@ -87,13 +82,9 @@ public:
         ::SkinImages const&        images
     );
 
-    MCAPI ::std::optional<::PaperDollPlayerSkinInfo> $getSkinFromPlayer(::mce::UUID const& id);
-
     MCAPI ::SkinImages $getSkinImages(::Skin const& skin, bool isPlayer);
 
-    MCAPI bool $isAnySkinOfNameInitialized(::std::string_view skin) const;
-
-    MCAPI bool $isRequiredPlayerAnimationLoaded() const;
+    MCAPI bool $isSkinReadyToRender(::std::string_view skin) const;
 
     MCAPI void $markLocalPlayerAsDirty();
 

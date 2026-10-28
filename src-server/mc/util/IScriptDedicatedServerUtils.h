@@ -55,9 +55,9 @@ public:
     // NOLINTBEGIN
     virtual ~IScriptDedicatedServerUtils() = default;
 
-    virtual bool saveHold() = 0;
+    virtual void saveHold(::std::function<void(bool)>&& callback) = 0;
 
-    virtual bool saveResume() = 0;
+    virtual void saveResume(::std::function<void(bool)>&& callback) = 0;
 
     virtual ::std::optional<::std::vector<::SnapshotFilenameAndLength>> saveQuery() = 0;
 

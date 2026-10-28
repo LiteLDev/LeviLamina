@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraftNet { struct ScriptNetModuleConfig; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -42,6 +43,9 @@ public:
     MCNAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager const&);
 
     MCNAPI explicit ScriptPackConfigurationManager(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
+
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetModuleConfig
+    getNetModuleConfig(::std::string const& packIdentifier) const;
 
     MCNAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 

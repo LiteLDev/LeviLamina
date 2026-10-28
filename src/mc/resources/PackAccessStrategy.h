@@ -52,12 +52,13 @@ public:
 
     virtual bool isTrusted() const = 0;
 
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const = 0;
+    virtual bool
+    hasAsset(::Core::PathView const& packRelativePath, bool trustedContentOnly, bool caseSensative) const = 0;
 
     virtual bool hasFolder(::Core::Path const& packRelativePath) const = 0;
 
     virtual bool
-    getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const = 0;
+    getAsset(::Core::PathView const& packRelativePath, ::std::string& result, bool trustedContentOnly) const = 0;
 
     virtual void forEachIn(
         ::Core::Path const&                        packRelativePath,

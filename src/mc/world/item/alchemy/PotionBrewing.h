@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEducationOptions;
 class Item;
 class ItemDescriptor;
 class ItemInstance;
@@ -48,7 +49,7 @@ public:
 
     MCAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);
 
-    MCAPI static void initPotionBrewing();
+    MCAPI static void initPotionBrewing(::IEducationOptions const& educationOptions);
 
     MCAPI static bool isFuel(::ItemDescriptor const& item);
 

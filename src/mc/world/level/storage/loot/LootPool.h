@@ -31,9 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
+#endif
+
     MCAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCAPI void deserialize(
         ::Json::Value const& pool,
         bool                 usingUpcomingCreatorFeaturesExperiment,

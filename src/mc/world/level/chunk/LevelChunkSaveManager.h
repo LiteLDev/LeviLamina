@@ -71,11 +71,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager
     );
 
-    MCAPI void _findRandomChunkToSave();
-
     MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
-
-    MCAPI bool _shouldDoSave() const;
 
     MCAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 

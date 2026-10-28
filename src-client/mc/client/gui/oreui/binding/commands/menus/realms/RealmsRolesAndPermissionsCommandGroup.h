@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/CommandGroupBase.h"
 #include "mc/client/gui/oreui/binding/methods/CallableImpl.h"
+#include "mc/client/realms/PlayerPermission.h"
 #include "mc/client/realms/PlayerRole.h"
 
 // auto generated forward declare list
@@ -22,11 +23,17 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsRolesAndPermissions>> mRolesAndPermissions;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>    mInitRolesAndActions;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::Realms::PlayerRole>>
-        mInitUserRolesAndActions;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::Realms::PlayerRole>> mSetUserRole;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>>        mSaveUserRole;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                                      mResetState;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::OreUI::Detail::CallableImpl<void, ::std::string, ::Realms::PlayerRole, ::Realms::PlayerPermission>>
+        mInitRealmsPlayerRoleAndPermission;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::Realms::PlayerRole>> mSetPlayerRole;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mSavePlayerRole;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::Realms::PlayerPermission>>
+                                                                                                  mSetPlayerPermission;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mSavePlayerPermission;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                               mResetState;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mRefreshUserRolesAndActions;
     // NOLINTEND
 

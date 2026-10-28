@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/FPSVal.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/move_only_function.h"
 
@@ -59,18 +60,24 @@ public:
         ScopedChangeScheduler();
     };
 
+    using Clock = ::std::chrono::steady_clock;
+
+    using FPSVal = ::SchedulerDetails::FPSVal;
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Scheduler::CoroutinePolicy>> mCoroutinePolicy;
-    ::ll::TypedStorage<4, 4, uint>                                           mTotalFrames;
-    ::ll::TypedStorage<4, 4, uint>                                           mStarvedFrames;
-    ::ll::TypedStorage<4, 4, uint>                                           mPromotionFrames;
-    ::ll::TypedStorage<4, 4, uint>                                           mTargetFPS;
-    ::ll::TypedStorage<4, 4, uint>                                           mEffectiveFPS;
+    ::ll::TypedStorage<4, 4, uint>                                           mConsideredGoodFrames;
+    ::ll::TypedStorage<4, 4, uint>                                           mObservedGoodFrames;
+    ::ll::TypedStorage<4, 4, uint>                                           mConsideredBadFrames;
+    ::ll::TypedStorage<4, 4, uint>                                           mObservedBadFrames;
+    ::ll::TypedStorage<2, 2, ushort>                                         mIdealNonBoostedFPS;
+    ::ll::TypedStorage<2, 2, ushort>                                         mIdealFPS;
+    ::ll::TypedStorage<2, 2, ushort>                                         mEffectiveTargetFPS;
     ::ll::TypedStorage<4, 4, uint>                                           mTotalRunCoroutines;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                     mPredictedCoroutineDuration;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                     mTotalCoroutineDuration;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                     mPredictedCoroutineDuration;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorkerPool>>                mCoroutinePool;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mNextStarveCheckTime;
     ::ll::TypedStorage<4, 4, ::std::thread::id>                              mThreadID;
@@ -94,7 +101,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Scheduler(::std::string_view name, uint FPS);
+    MCAPI Scheduler(::std::string_view name, ::SchedulerDetails::FPSVal idealFPS);
 
     MCAPI void processCoroutines(
         ::std::chrono::nanoseconds     timeSinceSwap,
@@ -110,7 +117,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view name, uint FPS);
+    MCAPI void* $ctor(::std::string_view name, ::SchedulerDetails::FPSVal idealFPS);
     // NOLINTEND
 
 public:

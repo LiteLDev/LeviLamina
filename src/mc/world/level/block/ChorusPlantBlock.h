@@ -16,6 +16,7 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class NeighborBlockDirections;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
@@ -34,15 +35,18 @@ public:
         /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&,
+        ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const
-        /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
 
@@ -52,13 +56,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::AABB const&
+    _getShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+#endif
+
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AABB const& _getShape(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue);
+    MCAPI static ::Block const& getConnectedBlock(
+        ::IConstBlockSource const& region,
+        ::Block const&             block,
+        ::BlockPos const&          pos,
+        ::NeighborBlockDirections  directionsToCheck
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI static ::NeighborBlockDirections getConnectionsFromState(::Block const& block);
+#endif
     // NOLINTEND
 
 public:
@@ -73,14 +91,18 @@ public:
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
+        ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    MCAPI ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
     MCFOLD bool $isLavaBlocking() const;
 

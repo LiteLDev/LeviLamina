@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Audio { struct OnlineAudioFetcherUpdateInput; }
+namespace Audio { struct OnlineAudioFetcherUpdateOutput; }
+// clang-format on
+
 namespace Audio {
 
 class IOnlineAudioFetcherUpdateHandle {
@@ -10,7 +16,10 @@ public:
     // NOLINTBEGIN
     virtual ~IOnlineAudioFetcherUpdateHandle() = default;
 
-    virtual void update(::std::chrono::steady_clock::time_point currentTime, uint64 decoderReadPosition) = 0;
+    virtual ::Audio::OnlineAudioFetcherUpdateOutput update(
+        ::std::chrono::steady_clock::time_point       currentTime,
+        ::Audio::OnlineAudioFetcherUpdateInput const& input
+    ) = 0;
     // NOLINTEND
 };
 

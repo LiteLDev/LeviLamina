@@ -76,6 +76,7 @@ class SetDefaultGameTypePacket;
 class SetDifficultyPacket;
 class SetHealthPacket;
 class SetHudPacket;
+class SetPassengerOfBlockPacket;
 class SetSpawnPositionPacket;
 class SetTimePacket;
 class SpawnParticleEffectPacket;
@@ -230,6 +231,8 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::SetHealthPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::SetPassengerOfBlockPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::SetSpawnPositionPacket const& packet) /*override*/;
 
@@ -394,6 +397,8 @@ public:
     MCAPI void $handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::SetHealthPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::SetPassengerOfBlockPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::SetSpawnPositionPacket const& packet);
 

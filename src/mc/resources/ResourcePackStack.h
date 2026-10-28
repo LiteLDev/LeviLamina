@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,14 +12,12 @@ class ContentIdentity;
 class ContentTierInfo;
 class I18n;
 class IResourcePackRepository;
-class LoadedResourceData;
 class PackInstance;
+class PackReport;
 class PackSourceReport;
-class ResourceLocation;
 struct PackIdVersion;
 struct PackInstanceId;
 struct UnextractablePacks;
-class ResourcePackMergeStrategy;
 // clang-format on
 
 class ResourcePackStack {
@@ -49,17 +46,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ResourcePackStack();
-
-    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
-
-    virtual bool
-    loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
-
-    virtual bool loadAllVersionsOf(
-        ::ResourceLocation const&                          resourceLocation,
-        ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
-        ::ResourcePackMergeStrategy&                       mergeStrategy
-    ) const;
     // NOLINTEND
 
 public:
@@ -83,8 +69,6 @@ public:
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void clearPackReports();
-
     MCAPI void ensureSupportedSubpacks(::ContentTierInfo const& contentInfoTier);
 #endif
 
@@ -99,11 +83,9 @@ public:
     MCAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;
 
     MCAPI bool isOnStack(::PackIdVersion const& packIdentity) const;
-#endif
 
-    MCAPI void removeInvalidPacks();
+    MCAPI void mergePackReports(::std::unordered_map<::PackInstanceId, ::PackReport>& packReports);
 
-#ifdef LL_PLAT_C
     MCAPI void serialize(::std::ostream& fileStream) const;
 
     MCAPI bool supportsVibrantVisuals() const;
@@ -157,23 +139,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
-
-    MCAPI bool
-    $loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
-
-    MCAPI bool $loadAllVersionsOf(
-        ::ResourceLocation const&                          resourceLocation,
-        ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
-        ::ResourcePackMergeStrategy&                       mergeStrategy
-    ) const;
-
-
     // NOLINTEND
 
 public:

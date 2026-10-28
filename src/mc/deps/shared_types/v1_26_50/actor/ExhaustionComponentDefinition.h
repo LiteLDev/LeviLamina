@@ -23,26 +23,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_ATTACK();
-
-    MCAPI static float const& DEFAULT_DAMAGE();
-
-    MCAPI static float const& DEFAULT_HEAL();
-
-    MCAPI static float const& DEFAULT_JUMP();
-
-    MCAPI static float const& DEFAULT_LUNGE();
-
-    MCAPI static float const& DEFAULT_MINE();
-
-    MCAPI static float const& DEFAULT_SPRINT();
-
-    MCAPI static float const& DEFAULT_SPRINT_JUMP();
-
-    MCAPI static float const& DEFAULT_SWIM();
-
-    MCAPI static float const& DEFAULT_WALK();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

@@ -22,7 +22,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::XAsyncBlock>> mAsyncBlock;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::weak_ptr<::Bedrock::Threading::AsyncResult::ToXAsyncBlock>>>
-        mAsyncContext;
+                                   mAsyncContext;
+    ::ll::TypedStorage<1, 1, bool> mInvoked;
     // NOLINTEND
 
 public:
@@ -36,7 +37,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::XAsyncBlock* _getAsyncBlock();
 
-    MCAPI void _handleResult(long hr);
+    MCAPI void _handleResult(long hr, ::XAsyncBlock* asyncBlock);
     // NOLINTEND
 };
 

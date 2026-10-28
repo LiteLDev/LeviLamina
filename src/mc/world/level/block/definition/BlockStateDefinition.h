@@ -34,6 +34,10 @@ public:
     MCAPI BlockStateDefinition(::BlockStateDefinition const& rhs);
 #endif
 
+#ifdef LL_PLAT_C
+    MCAPI void _copy(::BlockStateDefinition const& rhs);
+#endif
+
     MCAPI ~BlockStateDefinition();
     // NOLINTEND
 

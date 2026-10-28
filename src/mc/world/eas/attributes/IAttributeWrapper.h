@@ -16,6 +16,8 @@ public:
     // NOLINTBEGIN
     virtual ~IAttributeWrapper() = default;
 
+    virtual bool isSerializable() const = 0;
+
     virtual ::EAS::EnvironmentAttributeData toData() const = 0;
 
     virtual void tick(::WorldClockRegistry const&) = 0;

@@ -25,16 +25,4 @@ public:
     ::ll::TypedStorage<4, 4, int>                                            mMeshSize;
     ::ll::TypedStorage<4, 4, int>                                            mGridSize;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CloudRenderObject();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

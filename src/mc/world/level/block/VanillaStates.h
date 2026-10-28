@@ -30,6 +30,7 @@
 #include "mc/world/level/block/PortalAxis.h"
 #include "mc/world/level/block/PotentSulfurState.h"
 #include "mc/world/level/block/PrismarineBlockType.h"
+#include "mc/world/level/block/RedstoneSide.h"
 #include "mc/world/level/block/SandType.h"
 #include "mc/world/level/block/SandstoneType.h"
 #include "mc/world/level/block/SaplingType_DEPRECATED.h"
@@ -285,7 +286,15 @@ MCAPI ::BlockStateVariant<bool> const& RailDataBit();
 
 MCAPI ::BlockStateVariant<int> const& RailDirection();
 
+MCAPI ::BlockStateVariant<::RedstoneSide> const& RedstoneEast();
+
+MCAPI ::BlockStateVariant<::RedstoneSide> const& RedstoneNorth();
+
 MCAPI ::BlockStateVariant<int> const& RedstoneSignal();
+
+MCAPI ::BlockStateVariant<::RedstoneSide> const& RedstoneSouth();
+
+MCAPI ::BlockStateVariant<::RedstoneSide> const& RedstoneWest();
 
 MCAPI ::BlockStateVariant<int> const& RehydrationLevel();
 

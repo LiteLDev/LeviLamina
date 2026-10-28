@@ -46,11 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::DynamicProperties::PropertyCollection const*
-    _getPropertyCollection(::std::string const& collectionName) const;
-
-    MCFOLD ::DynamicProperties::PropertyCollection* _getPropertyCollection(::std::string const& collectionName);
-
     MCAPI void clearCollection(::std::string const& collectionName);
 
     MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
@@ -59,6 +54,8 @@ public:
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
     MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
+
+    MCFOLD uint64 getTotalByteCount(::std::string const& collectionName) const;
 
     MCAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
 

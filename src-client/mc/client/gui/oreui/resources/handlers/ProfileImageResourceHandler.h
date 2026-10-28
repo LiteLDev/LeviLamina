@@ -34,10 +34,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Gameface::ResourceResponse>   response;
-        ::ll::TypedStorage<8, 32, ::std::string>                 requestUrl;
-        ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions> imageOptions;
-        ::ll::TypedStorage<1, 1, bool>                           succeeded;
+        ::ll::TypedStorage<8, 8, ::Gameface::ResourceResponse>    response;
+        ::ll::TypedStorage<8, 32, ::std::string>                  requestUrl;
+        ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions> imageOptions;
+        ::ll::TypedStorage<1, 1, bool>                            succeeded;
         // NOLINTEND
 
     public:

@@ -19,6 +19,7 @@ class LevelStorageObserver;
 class LevelStorageWriteBatch;
 class Player;
 struct SnapshotFilenameAndLength;
+struct WorldSaveAndExitPackTelemetryData;
 namespace Core { struct LevelStorageResult; }
 // clang-format on
 
@@ -106,6 +107,8 @@ public:
     virtual void setCompactionCallback(::std::function<void(::CompactionStatus)> callback) = 0;
 
     virtual void setCriticalSyncSaveCallback(::std::function<void()> callback) = 0;
+
+    virtual void setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs) = 0;
 
     virtual void corruptLevel();
     // NOLINTEND

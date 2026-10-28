@@ -15,7 +15,6 @@ class ActorSoundIdentifier;
 class BlockPatternMatcher;
 class BlockSource;
 class ChunkViewSource;
-class EndGatewayBlockActor;
 class EnderCrystal;
 class EnderDragon;
 // clang-format on
@@ -41,18 +40,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                 mPlaceNewBlocks;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
         ::ll::TypedStorage<4, 12, ::BlockPos>                          mPosition;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~GateWayGenerator();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -125,8 +112,6 @@ public:
     MCAPI void spawnNewGatewayChunks(::BlockPos const& pos, bool placeEntryBlocks, bool placeExitBlocks);
 
     MCAPI void tryRespawn();
-
-    MCAPI void verifyExitPositions(::EndGatewayBlockActor& endGatewayBlockActor);
     // NOLINTEND
 
 public:

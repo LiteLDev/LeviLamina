@@ -31,7 +31,7 @@ public:
     ::ll::TypedStorage<8, 8, ::AABBShapeComponent&>                          mAabbComponent;
     ::ll::TypedStorage<8, 8, ::DepenetrationComponent&>                      mDepenetration;
     ::ll::TypedStorage<8, 8, ::optional_ref<::CollisionBoxComponent const>&> mCollisionBox;
-    ::ll::TypedStorage<8, 8, ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>&> mModifier;
+    ::ll::TypedStorage<8, 8, ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> const&> mModifier;
     // NOLINTEND
 
 public:

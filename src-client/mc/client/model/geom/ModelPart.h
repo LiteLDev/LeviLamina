@@ -154,11 +154,9 @@ public:
     MCAPI void expandAABB(::AABB& bb) const;
 
     MCAPI void LL_CC_V generateBoneTransformMatrices(
-        ::RenderParams&                renderParams,
         ::gsl::span<::BoneOrientation> boneOrientations,
-        ::RenderController const*      renderControllerId,
         ::DirectX::XMMATRIX const      boneToEntitySpaceMatrix
-    );
+    ) const;
 
     MCAPI bool isVisible(::RenderParams& renderParams, ::RenderController const* renderControllerId) const;
 

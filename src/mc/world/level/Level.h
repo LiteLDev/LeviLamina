@@ -25,6 +25,7 @@
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/item/registry/ItemRegistryRef.h"
 #include "mc/world/level/ActorValidationError.h"
+#include "mc/world/level/BlockDestroySound.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/BlockSourceListener.h"
 #include "mc/world/level/CommandOriginSystem.h"
@@ -146,7 +147,6 @@ class NavigationComponent;
 class NetEventCallback;
 class NetworkIdentifier;
 class NpcDialogueStorage;
-class NpcEventCoordinator;
 class PacketSender;
 class ParticleProvider;
 class Path;
@@ -233,6 +233,7 @@ struct Tick;
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
+namespace ServerInitialization { class IServerInitializer; }
 namespace SharedTypes::v1_26_50 { struct CameraPreset; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 namespace cereal { struct ReflectionCtx; }
@@ -273,6 +274,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::LevelListener*>>                    mListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageManager>>            mLevelStorageManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelData> const>   mLevelData;
+    ::ll::TypedStorage<1, 1, bool const>                                          mConstructedAsNewLevel;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockSource*>>               mRegions;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>> mLinkedAssetValidator;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDefinitionGroup>>           mEntityDefinitions;
@@ -303,6 +305,7 @@ public:
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::ILevelRandom>>>    mLevelRandom;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::NetEventCallback>> mNetEventCallback;
     ::ll::TypedStorage<1, 1, bool const>                                      mIsClientSide;
+    ::ll::TypedStorage<1, 1, bool const>                                      mIsTrialMode;
     ::ll::TypedStorage<1, 1, ::SubClientId>                                   mSubClientId;
     ::ll::TypedStorage<1, 1, bool>                                            mIsExporting;
     ::ll::TypedStorage<1, 1, bool>                                            mDisablePlayerInteractions;
@@ -441,7 +444,8 @@ public:
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
+                                                    biomeIdToResolvedData,
+        ::ServerInitialization::IServerInitializer* init
     ) /*override*/;
 
     virtual void startLeaveGame() /*override*/;
@@ -1060,7 +1064,8 @@ public:
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         bool                        dropResources,
-        ::BlockChangeContext const& changeSourceContext
+        ::BlockChangeContext const& changeSourceContext,
+        ::BlockDestroySound         destroySound
     ) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> getLevelBlockDestroyer() /*override*/;
@@ -1520,12 +1525,6 @@ public:
 
     MCAPI void earlyShutdownMainthread();
 
-    MCAPI ::LinkedAssetValidator& getLinkedAssetValidator();
-
-#ifdef LL_PLAT_C
-    MCAPI ::NpcEventCoordinator& getNpcEventCoordinator();
-#endif
-
     MCAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
 
     MCAPI ::NodeType isFree(
@@ -1538,6 +1537,8 @@ public:
     );
 
     MCAPI void loadShapeRegistry();
+
+    MCAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
     // NOLINTEND
 
 public:
@@ -1548,8 +1549,6 @@ public:
         ::Scheduler&                                  scheduler,
         ::IMinecraftEventing&                         eventing
     );
-
-    MCFOLD static uint createRandomSeed();
 
     MCAPI static ::LevelSeed64 parseLevelSeed64(::std::string const& seedString);
     // NOLINTEND
@@ -1576,7 +1575,8 @@ public:
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
+                                                    biomeIdToResolvedData,
+        ::ServerInitialization::IServerInitializer* init
     );
 
     MCAPI void $startLeaveGame();
@@ -1614,19 +1614,15 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::BossEventSubscriptionManager> $getBossEventSubscriptionManager();
 
-    MCAPI ::ProjectileFactory& $getProjectileFactory() const;
+    MCFOLD ::ProjectileFactory& $getProjectileFactory() const;
 
-    MCFOLD ::ActorDefinitionGroup* $getEntityDefinitions() const;
+    MCAPI ::ActorDefinitionGroup* $getEntityDefinitions() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> $getActorAnimationGroup() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::ActorAnimationControllerGroup> $getActorAnimationControllerGroup() const;
 
-#ifdef LL_PLAT_S
     MCAPI ::BlockDefinitionGroup* $getBlockDefinitions() const;
-#else // LL_PLAT_C
-    MCFOLD ::BlockDefinitionGroup* $getBlockDefinitions() const;
-#endif
 
     MCFOLD ::PropertyGroupManager& $getActorPropertyGroup() const;
 
@@ -1795,9 +1791,9 @@ public:
 
     MCFOLD ::SurfaceBuilderRegistry& $getSurfaceBuilderRegistry();
 
-    MCAPI ::BiomeManager const& $getBiomeManager() const;
+    MCFOLD ::BiomeManager const& $getBiomeManager() const;
 
-    MCAPI ::BiomeManager& $getBiomeManager();
+    MCFOLD ::BiomeManager& $getBiomeManager();
 
     MCFOLD ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&> const& $getDimensionFactory() const;
 
@@ -2169,7 +2165,8 @@ public:
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         bool                        dropResources,
-        ::BlockChangeContext const& changeSourceContext
+        ::BlockChangeContext const& changeSourceContext,
+        ::BlockDestroySound         destroySound
     );
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> $getLevelBlockDestroyer();
@@ -2282,7 +2279,7 @@ public:
 
     MCAPI void $setLevelId(::std::string LevelId);
 
-    MCFOLD ::TaskGroup& $getSyncTasksGroup();
+    MCAPI ::TaskGroup& $getSyncTasksGroup();
 
     MCAPI ::TaskGroup& $getIOTasksGroup();
 
@@ -2520,7 +2517,7 @@ public:
 
     MCAPI ::Recipes& $getRecipes() const;
 
-    MCAPI ::BlockReducer* $getBlockReducer() const;
+    MCFOLD ::BlockReducer* $getBlockReducer() const;
 
     MCFOLD ::std::weak_ptr<::TrimPatternRegistry const> $getTrimPatternRegistry() const;
 

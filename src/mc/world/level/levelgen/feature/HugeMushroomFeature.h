@@ -15,21 +15,24 @@ class Random;
 
 class HugeMushroomFeature : public ::Feature {
 public:
+    // HugeMushroomFeature inner types define
+    enum class MushroomVariant : int {
+        Brown         = 0,
+        Red           = 1,
+        Count         = 2,
+        RandomVariant = 3,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mForcedType;
+    ::ll::TypedStorage<4, 4, ::HugeMushroomFeature::MushroomVariant> mForcedType;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool placeFixed(::BlockSource& region, ::BlockPos const& pos, int mushroomType, int height) const;
     // NOLINTEND
 
 public:

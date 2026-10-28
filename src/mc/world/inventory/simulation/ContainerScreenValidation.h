@@ -73,8 +73,15 @@ public:
 
     MCAPI void _commit();
 
+#ifdef LL_PLAT_C
     MCAPI ::ContainerValidationSlotInfo
     _createContainerValidatorSlotInfo(::ContainerValidationSlotData const& slotData);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI ::ContainerValidationSlotInfo
+    _createContainerValidatorSlotInfo(::ContainerValidationSlotData const& slotData);
+#endif
 
     MCAPI bool _dropItems();
 
@@ -106,6 +113,10 @@ public:
 
     MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
+
+#ifdef LL_PLAT_C
+    MCAPI void postRequest();
+#endif
 
     MCAPI bool tryCommitActionResults();
 

@@ -39,8 +39,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::PackIdVersion const& EDUOreUIResourcePack();
+    MCNAPI static ::PackIdVersion const& EduOreUIResourcePack();
 
-    MCNAPI static ::PackIdVersion const& EDUResourcePack();
+    MCNAPI static ::PackIdVersion const& EduResourcePack();
     // NOLINTEND
 };

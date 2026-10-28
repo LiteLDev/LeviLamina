@@ -66,12 +66,6 @@ public:
         // NOLINTEND
 
     public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellStage const&);

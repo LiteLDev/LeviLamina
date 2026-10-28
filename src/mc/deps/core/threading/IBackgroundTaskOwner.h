@@ -23,7 +23,7 @@ public:
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
+        ::brstd::move_only_function<void()>&&         callback
     ) = 0;
 
     virtual ::Bedrock::Threading::Async<void>

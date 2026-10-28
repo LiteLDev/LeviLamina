@@ -31,13 +31,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                        mOverrideStackMatrix;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    BoneOrientation();
-
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -47,24 +40,17 @@ public:
     MCAPI BoneOrientation(::BoneOrientation&&);
 
     MCAPI explicit BoneOrientation(::HashedString const& boneName);
-#endif
 
     MCAPI BoneOrientation(::BoneOrientation const& rhs);
 
     MCAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
 
-    MCAPI void LL_CC_V
-    rotateAndUpdateLocalPreTransformMatrix(::DirectX::XMMATRIX matrix, float rotationInDegrees, ::Vec3 const& axis);
-
-#ifdef LL_PLAT_C
     MCAPI void setBoneBindingExpression(::std::string const& bindingExpression, ::MolangVersion molangVersion);
 
     MCAPI void LL_CC_V updateBoneTransform(::Vec3 const* offset, ::DirectX::XMMATRIX& boneToEntitySpaceMatrix);
-#endif
-
-    MCAPI ::DirectX::XMMATRIX LL_CC_V updateLocalPreTransformMatrix();
 
     MCAPI ~BoneOrientation();
+#endif
     // NOLINTEND
 
 public:
@@ -84,14 +70,16 @@ public:
     MCAPI void* $ctor(::BoneOrientation&&);
 
     MCAPI void* $ctor(::HashedString const& boneName);
-#endif
 
     MCAPI void* $ctor(::BoneOrientation const& rhs);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

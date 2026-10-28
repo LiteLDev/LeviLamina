@@ -30,7 +30,9 @@ MCNAPI ::HashedString& LIMITED_WORLD_DEPTH();
 
 MCNAPI ::HashedString& LIMITED_WORLD_WIDTH();
 
+#ifdef LL_PLAT_S
 MCNAPI ::HashedString& LOADED_PLAYER_TAG();
+#endif
 
 MCNAPI ::HashedString& SEED();
 

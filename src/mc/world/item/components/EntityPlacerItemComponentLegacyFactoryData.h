@@ -6,6 +6,13 @@
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/block/BlockDescriptor.h"
+#include "mc/world/level/storage/AllExperiments.h"
+
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
 
 struct EntityPlacerItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
 public:
@@ -16,28 +23,43 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedDispenseBlocks;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     EntityPlacerItemComponentLegacyFactoryData& operator=(EntityPlacerItemComponentLegacyFactoryData const&);
     EntityPlacerItemComponentLegacyFactoryData(EntityPlacerItemComponentLegacyFactoryData const&);
     EntityPlacerItemComponentLegacyFactoryData();
 
-#else // LL_PLAT_C
-#endif
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~EntityPlacerItemComponentLegacyFactoryData() /*override*/;
+    // NOLINTEND
+
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ::EntityPlacerItemComponentLegacyFactoryData& operator=(::EntityPlacerItemComponentLegacyFactoryData&&);
-#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $dtor();
-#endif
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

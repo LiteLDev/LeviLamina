@@ -9,6 +9,7 @@
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/gui/screens/models/PackListType.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/resources/InvalidPacksFilterGroup.h"
 #include "mc/resources/PackScope.h"
 
@@ -49,6 +50,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::IContentManager&>                      mContentManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>        mContentReloadSubscription;
     ::ll::TypedStorage<8, 8, ::ContentView*>                          mSelectedContentView;
     ::ll::TypedStorage<8, 8, ::ContentView*>                          mAvailableContentView;
     ::ll::TypedStorage<8, 8, ::ContentView*>                          mRealmsContentView;

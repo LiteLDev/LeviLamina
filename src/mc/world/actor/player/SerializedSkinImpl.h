@@ -26,7 +26,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                 mId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mPlayFabId;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mFullId;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mResourcePatch;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mDefaultGeometryName;
@@ -56,13 +55,12 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkinImpl();
 
-    MCAPI SerializedSkinImpl(::std::string const& playFabId, ::ConnectionRequest const& request);
+    MCAPI explicit SerializedSkinImpl(::ConnectionRequest const& request);
 
-    MCAPI SerializedSkinImpl(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
 
     MCAPI SerializedSkinImpl(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,
@@ -109,13 +107,12 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::ConnectionRequest const& request);
+    MCAPI void* $ctor(::ConnectionRequest const& request);
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCAPI void* $ctor(::SubClientConnectionRequest const& request);
 
     MCAPI void* $ctor(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,

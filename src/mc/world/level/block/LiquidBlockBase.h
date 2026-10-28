@@ -66,10 +66,6 @@ public:
 
     MCAPI static int getDepth(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
 
-#ifdef LL_PLAT_C
-    MCAPI static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);
-#endif
-
     MCAPI static void trySpreadFire(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
     // NOLINTEND
 

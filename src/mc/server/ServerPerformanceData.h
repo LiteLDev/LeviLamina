@@ -43,8 +43,12 @@ public:
     // NOLINTBEGIN
     MCAPI ServerPerformanceData();
 
-    MCAPI ::std::optional<::DebuggerStat>
-    _collectScriptStats(uint64 currentTick, uint64 lastCollectedTick, uint64 collectionFrequency) const;
+    MCAPI void _collectScriptStats(
+        ::DebuggerStat& serverTickStats,
+        uint64          currentTick,
+        uint64          lastCollectedTick,
+        uint64          collectionFrequency
+    ) const;
     // NOLINTEND
 
 public:

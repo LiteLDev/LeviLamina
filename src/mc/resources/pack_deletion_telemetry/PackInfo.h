@@ -19,18 +19,6 @@ public:
     PackInfo& operator=(PackInfo const&);
     PackInfo(PackInfo const&);
     PackInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PackInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PackDeletionTelemetry

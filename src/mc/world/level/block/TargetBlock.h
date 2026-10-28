@@ -22,6 +22,8 @@ public:
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    virtual bool requiresLegacyRedstoneSetup() const /*override*/;
+
     virtual bool isSignalSource() const /*override*/;
 
     virtual bool
@@ -51,6 +53,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCFOLD bool $requiresLegacyRedstoneSetup() const;
 
     MCFOLD bool $isSignalSource() const;
 

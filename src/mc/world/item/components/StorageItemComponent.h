@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
+class FillingContainer;
 class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
@@ -19,6 +21,7 @@ class ItemDescriptor;
 class ItemStack;
 class Player;
 class SemVersion;
+struct FullContainerName;
 struct ItemOnUseResult;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -63,6 +66,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::std::shared_ptr<::FillingContainer>
+    getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
+#endif
+
     MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
 
     MCAPI void setContainerRegistryHandlers(
@@ -85,7 +93,7 @@ public:
     MCAPI static ::HashedString const& getIdentifier();
 #endif
 
-    MCAPI static void use(::ItemOnUseResult& result, ::ItemStack const& item, ::Player& player);
+    MCAPI static void use(::ItemOnUseResult& result, ::ItemStack const& item, ::Player& player, ::HandSlot handSlot);
     // NOLINTEND
 
 public:

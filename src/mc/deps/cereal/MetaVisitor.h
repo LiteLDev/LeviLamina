@@ -14,6 +14,10 @@ namespace cereal {
 
 struct MetaVisitor {
 public:
+    // MetaVisitor inner types define
+    using VisitorData = ::std::shared_ptr<void>;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
@@ -37,20 +41,23 @@ public:
     virtual void onSetter(::std::function<bool()> cb) = 0;
 
     virtual void onMetaType(
-        ::entt::meta_any        from,
-        ::entt::meta_any        to,
-        ::std::function<bool()> setters,
-        ::std::function<void()> members
+        ::entt::meta_any               from,
+        ::entt::meta_any               to,
+        ::std::function<bool()>        setters,
+        ::std::function<void()>        members,
+        ::std::shared_ptr<void> const& visitorData
     ) = 0;
 
     virtual bool onMetaData(
         ::std::string_view key,
         uint               id,
-        ::entt::meta_data  data,
+        ::entt::meta_data  sourceData,
+        ::entt::meta_data  targetData,
         ::entt::meta_any   from,
         ::entt::meta_any   to,
         bool               isDestinationOverridden,
-        ::std::function<void(::entt::meta_data, ::entt::meta_any&, ::entt::meta_data, ::entt::meta_any&)> cb
+        ::std::function<void(::entt::meta_data, ::entt::meta_any&, ::entt::meta_data, ::entt::meta_any&)> cb,
+        ::std::shared_ptr<void> const&                                                                    visitorData
     ) = 0;
     // NOLINTEND
 

@@ -26,18 +26,18 @@ namespace FoodExhaustionSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void doFoodExhaustion(
-    ::StrictEntityContext const&                  entity,
-    ::Optional<::OnGroundFlagComponent const>     onGround,
-    ::Optional<::WasInWaterFlagComponent const>   wasInWater,
-    ::ExhaustionComponent const&                  exhaustion,
-    ::ActorGameTypeComponent const&               playerGameType,
-    ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
-    ::StateVectorComponent const&                 stateVectorComponent,
-    ::ActorDataFlagComponent const&               actorData,
-    ::GetAttachPositionViews const&               views,
-    ::EntityModifier<::AttributeRequestComponent> modifier,
-    ::GameType                                    defaultGameType,
-    ::IConstBlockSource const&                    region
+    ::StrictEntityContext const&                         entity,
+    ::Optional<::OnGroundFlagComponent const>            onGround,
+    ::Optional<::WasInWaterFlagComponent const>          wasInWater,
+    ::ExhaustionComponent const&                         exhaustion,
+    ::ActorGameTypeComponent const&                      playerGameType,
+    ::ServerPlayerCurrentMovementComponent const&        serverPlayerCurrentMovementComponent,
+    ::StateVectorComponent const&                        stateVectorComponent,
+    ::ActorDataFlagComponent const&                      actorData,
+    ::GetAttachPositionViews const&                      views,
+    ::EntityModifier<::AttributeRequestComponent> const& modifier,
+    ::GameType                                           defaultGameType,
+    ::IConstBlockSource const&                           region
 );
 // NOLINTEND
 

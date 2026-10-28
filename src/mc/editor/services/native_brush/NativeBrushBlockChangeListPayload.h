@@ -10,7 +10,6 @@
 class BlockPos;
 class HashedString;
 class Vec3;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -46,12 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
@@ -61,6 +54,14 @@ public:
         uchar                                faceId,
         ::Vec3 const&                        faceIntersection
     );
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

@@ -10,6 +10,7 @@ class AngerLevelComponent;
 class AvoidBlockGoal;
 class AvoidMobTypeGoal;
 class BegGoal;
+class BuoyancyComponent;
 class ChargeHeldItemGoal;
 class CollisionBoxComponent;
 class DefendTrustedTargetGoal;
@@ -22,6 +23,7 @@ class EmergeGoal;
 class EntityContext;
 class ExperienceRewardComponent;
 class FireAtTargetGoal;
+class FloatTemptGoal;
 class FlockingComponent;
 class FollowCaravanGoal;
 class FollowMobGoal;
@@ -29,6 +31,7 @@ class GameEventMovementTrackingComponent;
 class GoAndGiveItemsToNoteblockGoal;
 class GoAndGiveItemsToOwnerGoal;
 class GoHomeGoal;
+class HealableComponent;
 class HoldGroundGoal;
 class HomeComponent;
 class InteractComponent;
@@ -44,6 +47,7 @@ class Mob;
 class MountTamingComponent;
 class MoveToBlockGoal;
 class NapGoal;
+class PanicGoal;
 class PickupItemsGoal;
 class PlaceBlockGoal;
 class PlayDeadGoal;
@@ -53,7 +57,10 @@ class RaiderCelebrationGoal;
 class RamAttackGoal;
 class RandomSearchAndDigGoal;
 class RangedAttackGoal;
+class RideableComponent;
+class SendEventGoal;
 class ShareItemsGoal;
+class ShareableComponent;
 class SnackGoal;
 class SneezeGoal;
 class SummonActorGoal;
@@ -63,6 +70,7 @@ class TakeBlockGoal;
 class TakeFlowerGoal;
 class TargetGoal;
 class TargetWhenPushedGoal;
+class TemptGoal;
 class TimerActorFlagBaseGoal;
 class TransportItemsGoal;
 class VillagerCelebrationGoal;
@@ -71,12 +79,16 @@ struct AddRiderComponent;
 struct ApplyKnockbackRulesComponent;
 struct BlockMovementSlowdownImmunityComponent;
 struct BossComponent;
+struct DashActionComponent;
+struct EconomyTradeableDefinitionTag;
 struct LegacyGoalDefinition;
 struct OnEquipmentChangedComponent;
 struct OutOfControlComponent;
 struct PhysicsComponent;
 struct PushableByEntityComponent;
 struct SpawnOnDeathComponent;
+struct StrengthComponent;
+struct TimerComponent;
 struct VibrationListenerComponent;
 namespace SharedTypes { struct TargetGoalDefinition; }
 namespace SharedTypes { struct TimerActorFlagBaseGoalDefinition; }
@@ -160,6 +172,18 @@ namespace SharedTypes::v1_26_50 { struct InteractComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct MountTamingComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct PhysicsComponentDefinition; }
 namespace SharedTypes::v1_26_50 { struct RangedAttackGoalDefinition; }
+namespace SharedTypes::v1_26_60 { struct BuoyancyComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct DashActionComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct EconomyTradeableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct FloatTemptGoalDefinition; }
+namespace SharedTypes::v1_26_60 { struct HealableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct PanicGoalDefinition; }
+namespace SharedTypes::v1_26_60 { struct RideableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct SendEventGoalDefinition; }
+namespace SharedTypes::v1_26_60 { struct ShareableComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct StrengthComponentDefinition; }
+namespace SharedTypes::v1_26_60 { struct TemptGoalDefinition; }
+namespace SharedTypes::v1_26_60 { struct TimerComponentDefinition; }
 // clang-format on
 
 namespace JsonComponentGlueUtils {
@@ -175,6 +199,18 @@ MCAPI void initialize(
     ::EntityContext&,
     ::SpawnOnDeathComponent&                                 component,
     ::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition definition
+);
+
+MCAPI void initialize(
+    ::EntityContext&,
+    ::HealableComponent&                                        component,
+    ::SharedTypes::v1_26_60::HealableComponentDefinition const& definition
+);
+
+MCAPI void initialize(
+    ::EntityContext&,
+    ::ShareableComponent&                                        component,
+    ::SharedTypes::v1_26_60::ShareableComponentDefinition const& definition
 );
 
 MCAPI void initialize(
@@ -238,6 +274,12 @@ MCAPI void initialize(
     ::SharedTypes::v1_26_30::FireAtTargetGoalDefinition const& definition
 );
 
+MCFOLD void initialize(
+    ::EntityContext&,
+    ::FloatTemptGoal&                                        goal,
+    ::SharedTypes::v1_26_60::FloatTemptGoalDefinition const& definition
+);
+
 MCAPI void initialize(
     ::EntityContext&,
     ::FollowCaravanGoal&                                        goal,
@@ -297,6 +339,9 @@ MCAPI void initialize(
 
 MCAPI void initialize(::EntityContext&, ::NapGoal& goal, ::SharedTypes::v1_26_40::NapGoalDefinition const& definition);
 
+MCAPI void
+initialize(::EntityContext&, ::PanicGoal& goal, ::SharedTypes::v1_26_60::PanicGoalDefinition const& definition);
+
 MCAPI void initialize(
     ::EntityContext&,
     ::PickupItemsGoal&                                        goal,
@@ -342,6 +387,9 @@ MCAPI void initialize(
     ::SharedTypes::v1_26_50::RangedAttackGoalDefinition const& definition
 );
 
+MCAPI void
+initialize(::EntityContext&, ::SendEventGoal& goal, ::SharedTypes::v1_26_60::SendEventGoalDefinition const& definition);
+
 MCAPI void initialize(
     ::EntityContext&,
     ::ShareItemsGoal&                                        goal,
@@ -386,6 +434,9 @@ MCAPI void initialize(
     ::TargetWhenPushedGoal&                                        goal,
     ::SharedTypes::v1_26_30::TargetWhenPushedGoalDefinition const& definition
 );
+
+MCFOLD void
+initialize(::EntityContext&, ::TemptGoal& goal, ::SharedTypes::v1_26_60::TemptGoalDefinition const& definition);
 
 MCAPI void initialize(
     ::EntityContext&,
@@ -509,14 +560,38 @@ MCAPI void initialize(
 
 MCAPI void initialize(
     ::EntityContext& entity,
+    ::EconomyTradeableDefinitionTag&,
+    ::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const& definition
+);
+
+MCAPI void initialize(
+    ::EntityContext& entity,
     ::PhysicsComponent&,
     ::SharedTypes::v1_26_50::PhysicsComponentDefinition const& definition
+);
+
+MCAPI void initialize(
+    ::EntityContext& entity,
+    ::StrengthComponent&,
+    ::SharedTypes::v1_26_60::StrengthComponentDefinition const& definition
 );
 
 MCAPI void initialize(
     ::EntityContext&              entity,
     ::VibrationListenerComponent& component,
     ::SharedTypes::v1_26_20::VibrationListenerComponentDefinition const&
+);
+
+MCAPI void initialize(
+    ::EntityContext&                                              entity,
+    ::DashActionComponent&                                        component,
+    ::SharedTypes::v1_26_60::DashActionComponentDefinition const& definition
+);
+
+MCAPI void initialize(
+    ::EntityContext&                                         entity,
+    ::TimerComponent&                                        component,
+    ::SharedTypes::v1_26_60::TimerComponentDefinition const& definition
 );
 
 MCAPI void initialize(
@@ -529,6 +604,12 @@ MCAPI void initialize(
     ::EntityContext&                                               entity,
     ::MountTamingComponent&                                        component,
     ::SharedTypes::v1_26_50::MountTamingComponentDefinition const& definition
+);
+
+MCAPI void initialize(
+    ::EntityContext&                                            entity,
+    ::RideableComponent&                                        component,
+    ::SharedTypes::v1_26_60::RideableComponentDefinition const& definition
 );
 
 MCAPI void initialize(
@@ -553,6 +634,12 @@ MCFOLD void initialize(
     ::EntityContext&                                                 entity,
     ::LookAtTradingPlayerGoal&                                       goal,
     ::SharedTypes::v1_26_0::LookAtTradingPlayerGoalDefinition const& definition
+);
+
+MCAPI void initialize(
+    ::EntityContext&                                            entity,
+    ::BuoyancyComponent&                                        runtimeComponent,
+    ::SharedTypes::v1_26_60::BuoyancyComponentDefinition const& definition
 );
 
 MCAPI void initialize(
@@ -596,8 +683,26 @@ MCFOLD void transformToVersionedWitherTargetHighestDamage(
 
 MCAPI void uninitialize(
     ::EntityContext& entity,
+    ::DashActionComponent&,
+    ::SharedTypes::v1_26_60::DashActionComponentDefinition const&
+);
+
+MCAPI void uninitialize(
+    ::EntityContext& entity,
     ::OutOfControlComponent&,
     ::SharedTypes::v1_26_20::OutOfControlComponentDefinition const&
+);
+
+MCAPI void uninitialize(
+    ::EntityContext& entity,
+    ::RideableComponent&,
+    ::SharedTypes::v1_26_60::RideableComponentDefinition const&
+);
+
+MCAPI void uninitialize(
+    ::EntityContext& entity,
+    ::BuoyancyComponent&,
+    ::SharedTypes::v1_26_60::BuoyancyComponentDefinition const& definition
 );
 
 MCAPI bool validate(::SharedTypes::v1_26_0::NearestAttackableTargetGoalDefinition const& definition, ::Mob const& mob);

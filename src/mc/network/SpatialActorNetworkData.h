@@ -101,7 +101,7 @@ public:
     MCNAPI void handleServerData(
         ::MoveActorAbsoluteData const&                 moveData,
         ::std::chrono::steady_clock::time_point const& receiveTimepoint,
-        bool                                           isPredictableActor
+        bool                                           isPredictableProjectile
     );
 #endif
 
@@ -116,15 +116,7 @@ public:
     );
 #endif
 
-    MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
-
     MCNAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool isPredictedMovementComponentEnabled();
     // NOLINTEND
 
 public:

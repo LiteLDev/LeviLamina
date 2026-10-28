@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/brstd/flat_set.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,6 +30,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool _canTrust(::ItemStack const& instance) const;
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
     // NOLINTEND
 };

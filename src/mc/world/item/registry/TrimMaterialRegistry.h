@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/item/registry/TrimMaterial.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 class TrimMaterialRegistry {
 public:
     // member variables
@@ -15,6 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
+
     MCAPI void initializeServer();
     // NOLINTEND
 };

@@ -10,7 +10,6 @@ class GameVersion;
 class HashedString;
 class MinecraftGameplayGraphicsResources;
 struct DataDrivenRendererContinuousData;
-struct DataDrivenRendererPreprocessingContext;
 // clang-format on
 
 class DataDrivenRendererV2RequiredData {
@@ -20,7 +19,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererRegistry>>       mProcessedData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererContinuousData>> mContinuousData;
     ::ll::TypedStorage<1, 1, bool>                                                  mEnabled;
-    ::ll::TypedStorage<1, 1, bool> mActorsWithAttachablesEnabledAndPlayers;
+    ::ll::TypedStorage<1, 1, bool> mActorsWithAttachablesAndIndependentRenderersEnabled;
     // NOLINTEND
 
 public:
@@ -48,17 +47,12 @@ public:
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCAPI bool removeRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
-    // NOLINTEND
+    MCAPI bool removeIndependentRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _tryAddRenderer(
+    MCAPI bool tryAddIndependentRenderer(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
-        ::DataDrivenRendererPreprocessingContext&      ctx,
-        bool                                           supportPlayers
+        ::MinecraftGameplayGraphicsResources&          graphicsResources
     );
     // NOLINTEND
 

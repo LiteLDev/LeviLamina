@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/geometry_atlas/AtlasDimensions.h"
 #include "mc/client/gui/geometry_atlas/CommandDispatcherArgs.h"
 #include "mc/client/gui/geometry_atlas/IGeometryAtlas.h"
 #include "mc/client/gui/geometry_atlas/ItemData.h"
@@ -35,6 +36,7 @@ public:
     // clang-format off
     class TileEntry;
     struct CommandArgs;
+    struct AtlasEntry;
     struct Data;
     struct TileDirtyUpdate;
     struct mDispatcher;
@@ -59,7 +61,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 40, ::std::variant<::GeometryAtlas::ItemData, ::GeometryAtlas::PaperDollData>> mData;
+        ::ll::TypedStorage<8, 72, ::std::variant<::GeometryAtlas::ItemData, ::GeometryAtlas::PaperDollData>> mData;
         ::ll::TypedStorage<1, 1, bool>                                                       mIsAnimated;
         ::ll::TypedStorage<4, 8, ::dragon::atlas::AtlasTileDescription const>                mTileDescription;
         ::ll::TypedStorage<1, 1, ::GeometryAtlas::AtlasImpl::TileEntry::Status>              mStatus;
@@ -90,11 +92,20 @@ public:
         CommandArgs();
     };
 
+    struct AtlasEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::dragon::atlas::IAtlasHandle>> mHandle;
+        ::ll::TypedStorage<2, 4, ::GeometryAtlas::AtlasDimensions>                  mDimensions;
+        // NOLINTEND
+    };
+
     struct Data {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::dragon::atlas::IAtlasHandle>>>   mAtlases;
+        ::ll::TypedStorage<8, 24, ::std::vector<::GeometryAtlas::AtlasImpl::AtlasEntry>>             mAtlases;
         ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::GeometryAtlas::AtlasImpl::TileEntry>> mTiles;
         ::ll::TypedStorage<
             8,

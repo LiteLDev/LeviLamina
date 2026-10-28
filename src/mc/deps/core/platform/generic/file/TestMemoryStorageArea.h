@@ -43,6 +43,8 @@ public:
 
     virtual bool canExtendSize() const /*override*/;
 
+    virtual ::Core::Result getExtendSizeThreshold(uint64&) const /*override*/;
+
     virtual void preemptiveExtendSize(uint64 const, ::std::function<void()>, ::std::function<void()>) /*override*/;
 
     virtual uint64 getTransactionWriteSizeLimit() const /*override*/;

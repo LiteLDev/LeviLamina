@@ -6,6 +6,8 @@
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/realms/BackupDownloadState.h"
+#include "mc/client/realms/DownloadBackupFailureReason.h"
+#include "mc/client/realms/DownloadBackupState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -24,7 +26,18 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsBackupDownloader>> mBackupDownloader;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::BackupDownloadState, ::Realms::BackupDownloadState>> mState;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::DownloadBackupState, ::Realms::DownloadBackupState>>
+        mDownloadState;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::Property<
+            ::std::optional<::Realms::DownloadBackupFailureReason>,
+            ::std::optional<::Realms::DownloadBackupFailureReason>>>
+                                                                mDownloadFailureReason;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>> mDownloadProgress;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mChangedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mDownloadStateChangedSubscription;
     // NOLINTEND
 
 public:
@@ -35,6 +48,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsBackupDownloadQuery(::OreUI::GameDependencies const& game);
+
+    MCAPI void _updateProperties();
     // NOLINTEND
 
 public:

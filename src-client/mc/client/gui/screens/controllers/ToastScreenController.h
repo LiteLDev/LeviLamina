@@ -14,6 +14,8 @@
 // clang-format off
 class IOptionRegistry;
 class IStoreCatalogItem;
+class MatchmakingQueueState;
+class MatchmakingRequestSender;
 class MinecraftScreenModel;
 class PartySystemSubController;
 class PerfTurtleScreenController;
@@ -30,16 +32,20 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                           mVerifiedCreateCallback;
     ::ll::TypedStorage<1, 1, bool>                                           mSplitscreenJoinPopupActive;
+    ::ll::TypedStorage<1, 1, bool>                                           mMatchmakingTouchExpanded;
+    ::ll::TypedStorage<4, 4, int>                                            mMatchmakingElapsedSeconds;
     ::ll::TypedStorage<4, 4, float>                                          mPopupVerticalAnchor;
     ::ll::TypedStorage<4, 4, ::ui::DirtyFlag>                                mDirty;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PerfTurtleScreenController>> mPerfTurtleScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PartySystemSubController>> mPartySystemController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PlayerMessagingToastSubController>>
-                                                                          mPlayerMessagingToastSubController;
-    ::ll::TypedStorage<8, 8, ::PersonaRepository&>                        mPersonaRepository;
-    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                          mOptions;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ToastManager>> mToastManager;
-    ::ll::TypedStorage<8, 376, ::std::optional<::ToastMessage>>           mToastMessage;
+                                                                                   mPlayerMessagingToastSubController;
+    ::ll::TypedStorage<8, 8, ::PersonaRepository&>                                 mPersonaRepository;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                                   mOptions;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ToastManager>>          mToastManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::MatchmakingQueueState>> mMatchmakingQueueState;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::MatchmakingRequestSender>> mMatchmakingRequestSender;
+    ::ll::TypedStorage<8, 384, ::std::optional<::ToastMessage>>                       mToastMessage;
     // NOLINTEND
 
 public:
@@ -70,11 +76,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ToastScreenController(
-        ::std::shared_ptr<::MinecraftScreenModel>          model,
-        ::PersonaRepository&                               personaRepository,
-        ::IOptionRegistry&                                 Options,
-        ::ToastManager&                                    toastManager,
-        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
+        ::std::shared_ptr<::MinecraftScreenModel>                        model,
+        ::PersonaRepository&                                             personaRepository,
+        ::IOptionRegistry&                                               Options,
+        ::ToastManager&                                                  toastManager,
+        ::Bedrock::NotNullNonOwnerPtr<::MatchmakingQueueState> const&    matchmakingQueueState,
+        ::Bedrock::NotNullNonOwnerPtr<::MatchmakingRequestSender> const& matchmakingRequestSender,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem>               partySystem
     );
 
     MCAPI ::IStoreCatalogItem const* _getAchievementPersonaPiece();
@@ -86,11 +94,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::shared_ptr<::MinecraftScreenModel>          model,
-        ::PersonaRepository&                               personaRepository,
-        ::IOptionRegistry&                                 Options,
-        ::ToastManager&                                    toastManager,
-        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
+        ::std::shared_ptr<::MinecraftScreenModel>                        model,
+        ::PersonaRepository&                                             personaRepository,
+        ::IOptionRegistry&                                               Options,
+        ::ToastManager&                                                  toastManager,
+        ::Bedrock::NotNullNonOwnerPtr<::MatchmakingQueueState> const&    matchmakingQueueState,
+        ::Bedrock::NotNullNonOwnerPtr<::MatchmakingRequestSender> const& matchmakingRequestSender,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem>               partySystem
     );
     // NOLINTEND
 

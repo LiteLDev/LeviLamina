@@ -10,6 +10,7 @@
 #include "mc/network/Connector.h"
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
+#include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/UniqueLock.h"
 
@@ -20,7 +21,6 @@ class NetworkIdentifier;
 class PrivateKeyManager;
 class WebRTCNetworkPeer;
 struct ConnectionDefinition;
-namespace Bedrock::Http { class LibHttpClientInstance; }
 namespace Json { class Value; }
 namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace NetherNet { class INetherNetTransportInterface; }
@@ -60,6 +60,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk7e0875;
+        ::ll::UntypedStorage<8, 48> mUnkd149c4;
         // NOLINTEND
 
     public:
@@ -93,13 +94,15 @@ public:
         ::NetherNetConnector::NewOutgoingConnectionEvent,
         ::NetherNetConnector::DisconnectEvent>;
 
+    using HttpLibraryToken = ::std::shared_ptr<void>;
+
     using UniqueLock = ::Bedrock::Threading::UniqueLock<::std::recursive_mutex>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance> const> mHttpLibrary;
-    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>                                    mNetworkID;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<void> const> mHttpLibrary;
+    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>  mNetworkID;
     ::ll::TypedStorage<
         8,
         72,
@@ -195,9 +198,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI NetherNetConnector(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkId
+        ::NetherNetTransportFactory const&       factory,
+        ::Connector::ConnectionCallbacks&        callbacks,
+        ::std::shared_ptr<void>                  httpLibrary,
+        ::brstd::copyable_function<bool() const> isNetworkAllowed,
+        ::std::optional<::NetherNet::NetworkID>  networkId
     );
 
 #ifdef LL_PLAT_C
@@ -211,6 +216,8 @@ public:
     );
 #endif
 
+    MCAPI void _resetEventQueue();
+
     MCAPI void setBroadcastResponseCallback(
         ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>&& broadcastResponseCallback
     );
@@ -220,9 +227,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkId
+        ::NetherNetTransportFactory const&       factory,
+        ::Connector::ConnectionCallbacks&        callbacks,
+        ::std::shared_ptr<void>                  httpLibrary,
+        ::brstd::copyable_function<bool() const> isNetworkAllowed,
+        ::std::optional<::NetherNet::NetworkID>  networkId
     );
     // NOLINTEND
 

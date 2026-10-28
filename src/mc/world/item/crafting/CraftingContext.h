@@ -11,6 +11,7 @@
 // clang-format off
 class CompoundTag;
 class ILevel;
+class ItemStackBase;
 class MapItemSavedData;
 class TrimMaterialRegistry;
 class TrimPatternRegistry;
@@ -39,6 +40,7 @@ public:
             mGetMapSavedDataByCampoundTag;
         ::ll::TypedStorage<8, 64, ::std::function<::ActorUniqueID(::ActorUniqueID, bool)>> mExpandMapByID;
         ::ll::TypedStorage<8, 64, ::std::function<bool(::ActorUniqueID, ::ActorUniqueID)>> mCopyAndLockMap;
+        ::ll::TypedStorage<8, 64, ::std::function<bool(::ItemStackBase const&)>>           mIsStorageItemEmpty;
         // NOLINTEND
 
     public:

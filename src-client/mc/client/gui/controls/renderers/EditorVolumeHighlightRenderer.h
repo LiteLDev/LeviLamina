@@ -73,6 +73,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EditorVolumeHighlightRenderer();
+
     MCAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area) const;
 
     MCAPI void _initializeChunkBuilder(
@@ -101,6 +103,12 @@ public:
         ::Vec3 const&             offset,
         bool                      renderAlphaLayer
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -80,7 +80,7 @@ class GameCallbacks;
 class GameSpecificNetEventCallback;
 class GameTestNetworkAdapter;
 class GameTestRequestPacket;
-class IEDUSystems;
+class IEduSystems;
 class ILevel;
 class IMinecraftApp;
 class IPacketSecurityController;
@@ -131,15 +131,20 @@ class Scheduler;
 class ScriptMessagePacket;
 class ScriptPackSettingsCache;
 class SerializedSkinRef;
+class ServerAudioContentRegistrationHandler;
 class ServerConnectionAuthValidator;
 class ServerLocator;
 class ServerNetworkSystem;
 class ServerPlayer;
+class ServerboundCursorItemDragPacket;
 class ServerboundDataDrivenScreenClosedPacket;
 class ServerboundDataStorePacket;
 class ServerboundDiagnosticsPacket;
 class ServerboundLoadingScreenPacket;
+class ServerboundMatchmakingCancelPacket;
 class ServerboundPackSettingChangePacket;
+class ServerboundRegisterAudioContentPacket;
+class ServerboundStonecutterSetRecipePacket;
 class SetDefaultGameTypePacket;
 class SetDifficultyPacket;
 class SetLocalPlayerAsInitializedPacket;
@@ -167,7 +172,6 @@ struct AsyncJoinDeny;
 struct DimensionType;
 struct IServerNetworkController;
 struct MessToken;
-struct PackInfoData;
 namespace Automation { class AutomationClient; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::Safety { class RedactableString; }
@@ -223,8 +227,6 @@ public:
         Client(::std::unique_ptr<::ConnectionRequest> primaryRequest, ::PlayerAuthenticationInfo primaryPlayerInfo);
 
         MCAPI void addSubClientPlayerInfo(::SubClientId subClientId, ::PlayerAuthenticationInfo playerInfo);
-
-        MCAPI void removeSubClientPlayerInfo(::SubClientId subClientId);
         // NOLINTEND
 
     public:
@@ -250,12 +252,14 @@ public:
         8,
         64,
         ::std::unordered_map<::NetworkIdentifier, ::std::unique_ptr<::ServerNetworkHandler::Client>>>
-                                                                                    mClients;
-    ::ll::TypedStorage<8, 8, ::GameCallbacks&>                                      mGameCallbacks;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ILevel>>                 mLevel;
-    ::ll::TypedStorage<8, 24, ::ServerPlayerLoader>                                 mPlayerLoader;
-    ::ll::TypedStorage<8, 8, ::ServerNetworkSystem&>                                mNetwork;
-    ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>                                  mServerKeys;
+                                                                    mClients;
+    ::ll::TypedStorage<8, 8, ::GameCallbacks&>                      mGameCallbacks;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ILevel>> mLevel;
+    ::ll::TypedStorage<8, 24, ::ServerPlayerLoader>                 mPlayerLoader;
+    ::ll::TypedStorage<8, 8, ::ServerNetworkSystem&>                mNetwork;
+    ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>                  mServerKeys;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ServerAudioContentRegistrationHandler>>>
+                                                                                    mAudioContentRegistrationHandler;
     ::ll::TypedStorage<8, 8, ::ServerLocator&>                                      mServerLocator;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::PacketSender*>>                      mPacketSender;
     ::ll::TypedStorage<8, 8, ::AllowList&>                                          mAllowList;
@@ -311,7 +315,7 @@ public:
     ::ll::TypedStorage<8, 40, ::ServiceReference<::AppConfigs>>                    mAppConfigs;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>> mBiomeDefinitionListWithoutCSCG;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>> mBiomeDefinitionListWithCSCG;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IEDUSystems>>           mEduSystems;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IEduSystems>>           mEduSystems;
     ::ll::TypedStorage<8, 384, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
                                                                          mServerConfigurationJoinInfo;
     ::ll::TypedStorage<8, 128, ::Social::Events::ServerTelemetryData>    mServerTelemetryData;
@@ -459,6 +463,9 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet) /*override*/;
 
+    virtual void
+    handle(::NetworkIdentifier const& source, ::ServerboundCursorItemDragPacket const& packet) /*override*/;
+
     virtual void handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::DebugInfoPacket const& packet) /*override*/;
@@ -515,6 +522,11 @@ public:
     handle(::NetworkIdentifier const& source, ::PositionTrackingDBClientRequestPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet) /*override*/;
+
+    virtual void handle(
+        ::NetworkIdentifier const&                                 source,
+        ::std::shared_ptr<::ServerboundRegisterAudioContentPacket> packet
+    ) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::RequestChunkRadiusPacket const& packet) /*override*/;
 
@@ -596,6 +608,12 @@ public:
 
     virtual void
     handle(::NetworkIdentifier const& source, ::ServerboundDataDrivenScreenClosedPacket const& packet) /*override*/;
+
+    virtual void
+    handle(::NetworkIdentifier const& source, ::ServerboundStonecutterSetRecipePacket const& packet) /*override*/;
+
+    virtual void
+    handle(::NetworkIdentifier const& source, ::ServerboundMatchmakingCancelPacket const& packet) /*override*/;
 
     virtual void sendSubClientLoginMessageLocal(
         ::NetworkIdentifier const&          source,
@@ -779,7 +797,7 @@ public:
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void setEduSystems(::Bedrock::NonOwnerPointer<::IEDUSystems> eduSystems);
+    MCAPI void setEduSystems(::Bedrock::NonOwnerPointer<::IEduSystems> eduSystems);
 #endif
 
     MCAPI bool tryToLoadPlayer(
@@ -797,12 +815,6 @@ public:
     MCAPI static void _decideIfSkinIsTrusted(::SerializedSkinRef& skin);
 
     MCAPI static bool _isServerTextEnabled(::ServerTextEvent const& textEvent);
-
-    MCAPI static void _populateCDNValues(
-        ::std::vector<::PackInfoData>&                            resourcePacksData,
-        ::std::vector<::std::pair<::std::string, ::std::string>>& cdnUrls,
-        ::std::string const&                                      deviceModel
-    );
 
     MCAPI static void _updateCommandBlock(
         ::BlockSource&                             region,
@@ -954,6 +966,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
 
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundCursorItemDragPacket const& packet);
+
     MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::DebugInfoPacket const& packet);
@@ -1007,6 +1021,9 @@ public:
     MCAPI void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBClientRequestPacket const& packet);
 
     MCFOLD void $handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet);
+
+    MCAPI void
+    $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ServerboundRegisterAudioContentPacket> packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::RequestChunkRadiusPacket const& packet);
 
@@ -1081,6 +1098,10 @@ public:
     MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundDataStorePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundDataDrivenScreenClosedPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundStonecutterSetRecipePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundMatchmakingCancelPacket const& packet);
 
     MCAPI void $sendSubClientLoginMessageLocal(
         ::NetworkIdentifier const&          source,

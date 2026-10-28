@@ -33,7 +33,8 @@ public:
         ::HashedString       feature,
         ::BlockPos const&    origin,
         ::BiomeSource const& biomeSource,
-        bool                 mustBeInNewChunks
+        bool                 mustBeInNewChunks,
+        int                  searchRadiusCells
     ) const;
 
     MCAPI ~ChunkGeneratorStructureState();

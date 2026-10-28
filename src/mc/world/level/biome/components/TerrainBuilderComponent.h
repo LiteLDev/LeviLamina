@@ -13,4 +13,22 @@ public:
     ::ll::TypedStorage<8, 32, ::SurfaceBuilderData>                  mSurfaceBuilderData;
     ::ll::TypedStorage<8, 40, ::std::optional<::SurfaceBuilderData>> mSubsurfaceBuilderData;
     // NOLINTEND
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~TerrainBuilderComponent() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

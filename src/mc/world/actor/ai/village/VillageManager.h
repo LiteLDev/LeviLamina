@@ -109,10 +109,6 @@ public:
 
     MCAPI void _assignPOIOnly(::std::shared_ptr<::POIInstance>&& pi);
 
-#ifdef LL_PLAT_S
-    MCAPI void _clusterPOIs();
-#endif
-
     MCAPI void _loadPOIBlueprints();
 
     MCAPI void _processNextUnclusteredPOIQuery();
@@ -134,15 +130,11 @@ public:
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-#ifdef LL_PLAT_S
     MCAPI bool isValidPOIType(::BlockPos const& pos, ::Block const& block) const;
-#endif
 
     MCAPI void submitFindPOIQuery(::ActorUniqueID const& actorID);
 
-#ifdef LL_PLAT_C
     MCAPI void tick(::Tick const& tick);
-#endif
 
     MCAPI void tickVillages(::Tick const& tick, ::Vec3 const& position, ::BlockSource& region);
     // NOLINTEND

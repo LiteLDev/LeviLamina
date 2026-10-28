@@ -40,6 +40,10 @@ public:
 
     virtual void setData(int id, int value) = 0;
 
+    virtual void setSelectedRecipeIndex(int recipeIndex, bool fromNetwork) = 0;
+
+    virtual ::std::optional<int> getSelectedRecipeIndex() const = 0;
+
     virtual void setFullContainerSlot(int, ::FullContainerName const&, ::ItemStack const&, bool) = 0;
 
     virtual ::ItemStack const& getFullContainerSlot(int slot, ::FullContainerName const& name) const = 0;

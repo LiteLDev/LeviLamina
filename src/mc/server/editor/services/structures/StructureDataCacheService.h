@@ -15,6 +15,7 @@ namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class StructureDataCacheReleaseStructurePayload; }
 namespace Editor::Network { class StructureDataCacheRequestStructurePayload; }
+namespace Editor::Network { struct PayloadSenderContext; }
 namespace Editor::StructureDataCache { class IStructureDataProvider; }
 namespace mce { class UUID; }
 // clang-format on
@@ -74,12 +75,16 @@ public:
     MCNAPI explicit StructureDataCacheService(::Editor::ServiceProviderCollection& providers);
 
     MCNAPI void _handleStructureDataCacheReleaseStructurePayload(
-        ::Editor::Network::StructureDataCacheReleaseStructurePayload const& payload
+        ::Editor::Network::StructureDataCacheReleaseStructurePayload const& payload,
+        ::Editor::Network::PayloadSenderContext const&                      sender
     );
 
     MCNAPI void _handleStructureDataCacheRequestStructurePayload(
-        ::Editor::Network::StructureDataCacheRequestStructurePayload const& payload
+        ::Editor::Network::StructureDataCacheRequestStructurePayload const& payload,
+        ::Editor::Network::PayloadSenderContext const&                      sender
     );
+
+    MCNAPI void _recordClientOwnership(::mce::UUID const& structureId, ::mce::UUID const& clientId);
     // NOLINTEND
 
 public:

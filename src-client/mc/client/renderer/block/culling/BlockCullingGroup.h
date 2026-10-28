@@ -42,8 +42,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BlockCullingGroup(::IMinecraftEventing& eventing);
 
-    MCAPI ::BlockCullingData const* getBlockCullingDataPtr(::HashedString const& identifier);
-
     MCAPI void loadBlockCullingDataAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,

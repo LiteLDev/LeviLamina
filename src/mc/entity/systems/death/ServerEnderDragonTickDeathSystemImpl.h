@@ -11,6 +11,8 @@
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -57,6 +59,46 @@ struct ServerEnderDragonTickDeathSystemImpl
       ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
       ::EntityFactoryT<>>> {
 public:
+    // ServerEnderDragonTickDeathSystemImpl inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
+    // ServerEnderDragonTickDeathSystemImpl inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            136,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
+                ::ActorDataFlagComponent const,
+                ::ActorDefinitionIdentifierComponent const,
+                ::ActorUniqueIDComponent const,
+                ::DeathTickingComponent const,
+                ::DimensionTypeComponent const,
+                ::SoundEventPlayerComponent const,
+                ::ActorOwnerComponent,
+                ::StateVectorComponent,
+                ::WingFlapDataComponent,
+                ::Optional<::BossComponent>>>
+                                                                                              mDeathView;
+        ::ll::TypedStorage<8, 8, ::OptionalGlobal<::SpawnExperienceOrbRequestQueueComponent>> mExperienceOrbRequest;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>>
+            mSoundEventRequestView;
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 176, ::std::optional<::ServerEnderDragonTickDeathSystemImpl::Views>> mViews;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -86,19 +128,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tick(
-        ::StrictEntityContext const&                                      entity,
-        ::ActorDataFlagComponent const&                                   actorFlags,
-        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
-        ::ActorUniqueIDComponent const&                                   actorUniqueID,
-        ::DeathTickingComponent const&                                    deathTicking,
-        ::DimensionTypeComponent const&                                   dimensionType,
-        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
-        ::ActorOwnerComponent&                                            actorOwner,
-        ::StateVectorComponent&                                           stateVector,
-        ::WingFlapDataComponent&                                          wingFlapData,
-        ::Optional<::BossComponent>                                       boss,
-        ::SpawnExperienceOrbRequestQueueComponent&                        experienceOrbRequestQueueComponent,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> soundRequestQueueView
+        ::StrictEntityContext const&                                             entity,
+        ::ActorDataFlagComponent const&                                          actorFlags,
+        ::ActorDefinitionIdentifierComponent const&                              actorIdentifier,
+        ::ActorUniqueIDComponent const&                                          actorUniqueID,
+        ::DeathTickingComponent const&                                           deathTicking,
+        ::DimensionTypeComponent const&                                          dimensionType,
+        ::SoundEventPlayerComponent const&                                       soundEventPlayerComponent,
+        ::ActorOwnerComponent&                                                   actorOwner,
+        ::StateVectorComponent&                                                  stateVector,
+        ::WingFlapDataComponent&                                                 wingFlapData,
+        ::Optional<::BossComponent>                                              boss,
+        ::SpawnExperienceOrbRequestQueueComponent&                               experienceOrbRequestQueueComponent,
+        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> const& soundRequestQueueView
     );
     // NOLINTEND
 

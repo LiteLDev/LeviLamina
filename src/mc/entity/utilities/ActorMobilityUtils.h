@@ -64,41 +64,44 @@ MCAPI void endJump(
     ::ActorDataDirtyFlagsComponent&   actorDataDirtyFlags,
     ::MobJumpComponent&               mobJumpComponent,
     ::VehicleComponent const*         vehicleComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>, ::PassengerComponent const> parrotPassengers,
-    ::EntityModifier<::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent, ::MobIsJumpingFlagComponent>&
+    ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>, ::PassengerComponent const> const&
+        parrotPassengers,
+    ::EntityModifier<::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent, ::MobIsJumpingFlagComponent> const&
         modifier
 );
 
 MCAPI float getBrightness(
-    ::StrictEntityContext const&                                        context,
-    float                                                               alpha,
-    ::IConstBlockSource const&                                          region,
-    ::AABBShapeComponent const&                                         aabbShapeComponent,
-    ::OffsetsComponent const&                                           offsetsComponent,
-    ::StateVectorComponent const&                                       stateVectorComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>>     blazeView,
-    ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> lavaSlimeView
+    ::StrictEntityContext const&                                               context,
+    float                                                                      alpha,
+    ::IConstBlockSource const&                                                 region,
+    ::AABBShapeComponent const&                                                aabbShapeComponent,
+    ::OffsetsComponent const&                                                  offsetsComponent,
+    ::StateVectorComponent const&                                              stateVectorComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>> const&     blazeView,
+    ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> const& lavaSlimeView
 );
 
 MCAPI bool isImmobile(
     ::StrictEntityContext const& context,
-    ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>*
-        actorView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorDataFlagComponent const,
+        ::Optional<::ActorIsImmobileFlagComponent const>> const* actorView,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::MobFlagComponent>,
         ::MovementAttributesComponent const,
         ::ActorDataFlagComponent const,
         ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>,
-        ::Optional<::MovedOnSpawnComponent const>>* mobView,
+        ::Optional<::MovedOnSpawnComponent const>> const* mobView,
     ::ViewT<
         ::StrictEntityContext,
         ::ActorDataFlagComponent const,
         ::Optional<::VehicleInputIntentComponent const>,
         ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>,
-        ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>>*               horseView,
-    ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>>*                                onlyHorseView,
-    ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const>* playerView
+        ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>> const*               horseView,
+    ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>> const*                                onlyHorseView,
+    ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const> const* playerView
 );
 
 MCAPI void moveBBs(::Vec3 const& pos, ::AABBShapeComponent& aabb, ::SubBBsComponent& subBBs);

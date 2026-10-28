@@ -201,7 +201,7 @@ public:
 
     MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ActorUniqueID, ::DimensionType)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::ActorUniqueID, ::DimensionType)>&
     $getOnAnyPlayerChangeDimensionCompleteConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::NetworkIdentifierWithSubId const&, ::DimensionType)>&

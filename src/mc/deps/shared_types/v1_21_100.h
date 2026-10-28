@@ -14,8 +14,6 @@ namespace SharedTypes::v1_21_100 {
 // NOLINTBEGIN
 MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindLookMode(::cereal::ReflectionCtx& ctx);
-
 MCAPI void bindPlayerViewMode(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindRotationSpace(::cereal::ReflectionCtx& ctx);

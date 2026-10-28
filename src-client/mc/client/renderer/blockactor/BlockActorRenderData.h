@@ -26,9 +26,9 @@ public:
     ::ll::TypedStorage<8, 8, ::Vec3 const&>                        renderPosition;
     ::ll::TypedStorage<4, 12, ::BlockPos const>                    worldPosition;
     ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const&>            forcedMat;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture const>          forcedTex;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture const>          forcedTex;
     ::ll::TypedStorage<4, 4, int>                                  breakingAmount;
-    ::ll::TypedStorage<8, 64, ::dragon::RenderMetadata const>      actorRenderMetadata;
+    ::ll::TypedStorage<8, 56, ::dragon::RenderMetadata const>      actorRenderMetadata;
     // NOLINTEND
 
 public:

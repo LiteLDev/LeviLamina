@@ -11,6 +11,7 @@
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -58,6 +59,47 @@ struct ClientMobTickDeathSystemImpl
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
+    // ClientMobTickDeathSystemImpl inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
+    // ClientMobTickDeathSystemImpl inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            152,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::Include<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
+                ::AABBShapeComponent const,
+                ::ActorDefinitionIdentifierComponent const,
+                ::ActorUniqueIDComponent const,
+                ::DimensionTypeComponent const,
+                ::OffsetsComponent const,
+                ::SoundEventPlayerComponent const,
+                ::StateVectorComponent const,
+                ::ActorDataFlagComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::ActorOwnerComponent,
+                ::DeathTickingComponent,
+                ::Optional<::PlayerComponent>>>
+            mDeathView;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>>
+            mSoundEventRequestView;
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 184, ::std::optional<::ClientMobTickDeathSystemImpl::Views>> mViews;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -88,20 +130,20 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tick(
-        ::StrictEntityContext&                                             entity,
-        ::AABBShapeComponent const&                                        aabbShape,
-        ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
-        ::ActorUniqueIDComponent const&                                    actorUniqueID,
-        ::DimensionTypeComponent const&                                    dimensionType,
-        ::OffsetsComponent const&                                          offsets,
-        ::SoundEventPlayerComponent const&                                 soundEventPlayer,
-        ::StateVectorComponent const&                                      stateVector,
-        ::ActorDataFlagComponent&                                          actorFlags,
-        ::ActorDataDirtyFlagsComponent&                                    actorDirtyFlags,
-        ::ActorOwnerComponent&                                             actorOwner,
-        ::DeathTickingComponent&                                           deathTicking,
-        ::Optional<::PlayerComponent>                                      player,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& soundRequestQueueView
+        ::StrictEntityContext&                                                   entity,
+        ::AABBShapeComponent const&                                              aabbShape,
+        ::ActorDefinitionIdentifierComponent const&                              actorIdentifier,
+        ::ActorUniqueIDComponent const&                                          actorUniqueID,
+        ::DimensionTypeComponent const&                                          dimensionType,
+        ::OffsetsComponent const&                                                offsets,
+        ::SoundEventPlayerComponent const&                                       soundEventPlayer,
+        ::StateVectorComponent const&                                            stateVector,
+        ::ActorDataFlagComponent&                                                actorFlags,
+        ::ActorDataDirtyFlagsComponent&                                          actorDirtyFlags,
+        ::ActorOwnerComponent&                                                   actorOwner,
+        ::DeathTickingComponent&                                                 deathTicking,
+        ::Optional<::PlayerComponent>                                            player,
+        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> const& soundRequestQueueView
     );
     // NOLINTEND
 
@@ -132,11 +174,5 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

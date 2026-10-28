@@ -80,6 +80,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
+        ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                    mGetterFunction;
         ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                              mAllowedAreas;
         // NOLINTEND
     };
@@ -89,6 +90,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<void>>                           mVisitorData;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::Constraint>>            mConstraint;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mNameExt;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mName;
@@ -119,7 +121,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI MemberDescriptor();
+
         MCAPI ~MemberDescriptor();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -145,6 +155,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::Constraint>>            mConstraint;
+        ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                    mSetterFunction;
         ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                              mAllowedAreas;
         // NOLINTEND
     };
@@ -163,6 +174,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<void>>                           mVisitorData;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mName;
         ::ll::TypedStorage<8, 24, ::cereal::internal::BasicSchema::EnumMapping>      mEnumMapping;
         ::ll::TypedStorage<
@@ -231,13 +243,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(
-        ::cereal::SchemaReader&              value,
-        ::entt::meta_any&                    any,
-        ::entt::meta_any const&              udata,
-        ::cereal::internal::LoadState const& state
-    ) const;
-
     MCAPI bool
     map(::cereal::internal::BasicSchema const& schema,
         ::entt::meta_any&                      src,

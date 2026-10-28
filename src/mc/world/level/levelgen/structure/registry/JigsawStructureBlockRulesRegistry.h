@@ -65,17 +65,5 @@ public:
         ::std::unique_ptr<::std::vector<
             ::std::unique_ptr<::StructurePoolBlockRule, ::std::default_delete<::StructurePoolBlockRule>>>>&& ruleList
     );
-
-#ifdef LL_PLAT_C
-    MCAPI ~JigsawStructureBlockRulesRegistry();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };

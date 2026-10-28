@@ -625,7 +625,7 @@ public:
 
     MCAPI void $setPlayerGameType(::GameType gameType);
 
-    MCFOLD ::ActorUniqueID $getControllingPlayer() const;
+    MCAPI ::ActorUniqueID $getControllingPlayer() const;
 
     MCAPI void $_fireDimensionChanged();
 

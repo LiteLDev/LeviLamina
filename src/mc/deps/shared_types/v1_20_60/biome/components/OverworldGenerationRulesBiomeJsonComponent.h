@@ -48,6 +48,12 @@ public:
             ::std::vector<::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName>>
             mWeightedBiomeNames;
         // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
     };
 
     struct WeightedTemperatureCategory {
@@ -61,6 +67,12 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 16, ::std::array<::std::variant<::BiomeTemperatureCategory, uint>, 2>> mValues;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 

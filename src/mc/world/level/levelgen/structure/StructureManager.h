@@ -20,7 +20,6 @@ class IUnknownBlockTypeRegistry;
 class LegacyStructureTemplate;
 class Level;
 class LevelStorage;
-class PackInstance;
 class ResourcePackManager;
 class ServerLevel;
 class StructureAnimationData;
@@ -89,6 +88,10 @@ public:
 
     MCAPI ::std::string _createLevelStorageId(::std::string const& dimensionPrefix, ::std::string const& saveId);
 
+#ifdef LL_PLAT_C
+    MCAPI ::LegacyStructureTemplate* _readLegacyStructure(::std::string const& name);
+#endif
+
     MCAPI ::StructureTemplate&
     cloneStructure(::StructureTemplate const& structureTemplate, ::std::string const& structureName);
 
@@ -137,12 +140,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _findResource(
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& structurePath,
-        ::PackInstance const&                                           pack,
-        ::std::string&                                                  resourceStream
-    );
-
     MCAPI static void
     _removePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
 
@@ -155,6 +152,10 @@ public:
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);
+
+#ifdef LL_PLAT_S
+    MCAPI static bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
+#endif
     // NOLINTEND
 
 public:

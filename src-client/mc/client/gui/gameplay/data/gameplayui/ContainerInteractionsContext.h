@@ -11,10 +11,24 @@ struct ContainerInteractionsContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 136, ::GameplayUI::ContainerItem> slotItem;
-    ::ll::TypedStorage<8, 136, ::GameplayUI::ContainerItem> cursorItem;
+    ::ll::TypedStorage<8, 304, ::GameplayUI::ContainerItem> slotItem;
+    ::ll::TypedStorage<8, 304, ::GameplayUI::ContainerItem> cursorItem;
+    ::ll::TypedStorage<8, 304, ::GameplayUI::ContainerItem> selectedItem;
+    ::ll::TypedStorage<1, 1, bool>                          isCreativeMode;
     ::ll::TypedStorage<1, 1, bool>                          isDoubleClick;
     ::ll::TypedStorage<1, 1, bool>                          isShiftClick;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~ContainerInteractionsContext();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -49,12 +49,19 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mDeleteContentSubscription;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsUsingExternalStorage;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsUsingAppDataStorage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64, uint64>>                       mStorageSize;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64, uint64>>                       mStorageUsed;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                         mStorageSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                         mStorageUsed;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>>         mStorageAvailableSize;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mSupportsSizeQuery;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsStorageFull;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsStorageLow;
+    ::ll::TypedStorage<1, 1, bool>                                                      mRunOnMarketplaceStorage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                           mIsUsingMarketplaceStorage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                         mMarketplaceStorageSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float, float>>                         mMarketplaceStorageUsed;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mMarketplaceStorageAvailableSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsMarketplaceStorageFull;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsMarketplaceStorageLow;
     // NOLINTEND
 
 public:
@@ -88,6 +95,11 @@ public:
     MCAPI explicit DeviceStorageInformationQuery(::OreUI::GameDependencies const& game);
 
     MCAPI void _updateProperties();
+
+    MCAPI void callOnBothStorageAreas(
+        ::std::function<void(::std::shared_ptr<::Core::FileStorageArea>)> onSuccess,
+        ::std::function<void()>                                           onFailure
+    );
     // NOLINTEND
 
 public:

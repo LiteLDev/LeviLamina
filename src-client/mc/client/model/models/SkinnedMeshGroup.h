@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseActorRenderContext;
 class ClientPBRTextureData;
 class ExpressionNode;
 class MaterialVariants;
@@ -45,18 +44,13 @@ public:
         uint64       skinnedMeshGroupIndex
     );
 
-    MCAPI bool canRegisterPart(::ModelPart const& modelPart, int skinnedMeshGroupIdentifier) const;
-
-    MCAPI void
-    constructMesh(::BaseActorRenderContext& baseActorRenderContext, ::MaterialVariants const& defaultMaterialVariants);
-
     MCAPI void copyBoneMatrixToSkinnedMesh(
-        int                            meshIndex,
-        int                            partIndex,
-        bool                           isVisible,
-        ::Matrix const&                matrix,
-        int                            vertexCount,
-        ::std::optional<::glm::mat4x4> previousMatrix
+        int                                                       meshIndex,
+        int                                                       partIndex,
+        bool                                                      isVisible,
+        ::Matrix const&                                           matrix,
+        int                                                       vertexCount,
+        ::std::optional<::std::reference_wrapper<::Matrix const>> previousMatrix
     );
 
     MCAPI void dataDrivenDraw(
@@ -75,10 +69,9 @@ public:
         ::std::optional<::MERSUniformData> const& mersUniforms
     );
 
-    MCAPI bool
-    isMaterialExpressionMapEqual(::std::unordered_map<::RenderController const*, ::ExpressionNode> const& rhs) const;
-
     MCAPI void registerPart(::ModelPart& part, int groupIndex);
+
+    MCAPI ~SkinnedMeshGroup();
     // NOLINTEND
 
 public:
@@ -86,5 +79,11 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::ModelPart& modelPart, int skinnedMeshGroupIdentifier, bool isUniqueGroup, uint64 skinnedMeshGroupIndex);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -9,6 +9,7 @@
 #include "mc/client/renderer/culling/FrustumCuller.h"
 #include "mc/client/renderer/game/ActorRenderCandidates.h"
 #include "mc/client/renderer/game/LevelRendererCameraType.h"
+#include "mc/client/renderer/game/LevelRendererLockbox.h"
 #include "mc/client/renderer/game/TerrainMaterialVariationManager.h"
 #include "mc/client/world/level/fog/FogDistanceSetting.h"
 #include "mc/client/world/level/fog/ResolvedFogVolumetricCoefficientSetting.h"
@@ -17,6 +18,7 @@
 #include "mc/deps/core/math/FrustumEdges.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core_graphics/ImageBuffer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
@@ -172,7 +174,10 @@ public:
 
     using ActorList = ::std::vector<::Actor*>;
 
-    using LevelRendererArea = ::GridArea<::std::shared_ptr<::RenderChunkInstanced>>;
+    using LevelRendererArea = ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox>;
+
+    using ThreadSafeLevelRendererArea =
+        ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::Bedrock::Threading::SharedLockbox>;
 
     using ActorRenderQueue = ::brstd::flat_map<
         ::gsl::not_null<::Actor*>,
@@ -216,7 +221,7 @@ public:
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                             wireframeMaterial;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                             mCubemapMaterial;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::TexturePtr>>               mCubemapTextures;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>                           mCubemapTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture>                           mCubemapTexture;
     ::ll::TypedStorage<8, 8, uint64 const>                                    mAmbientSamplesDefaultSize;
     ::ll::TypedStorage<8, 56, ::std::optional<::cg::ImageBuffer>>             mSkyAmbientSamplesBuffer;
     ::ll::TypedStorage<8, 136, ::TerrainMaterialVariationManager>             mTerrainMaterialVariationManager;
@@ -253,7 +258,11 @@ public:
     ::ll::TypedStorage<4, 4, float>                                           mRenderDistance;
     ::ll::TypedStorage<4, 4, float>                                           mCullEndDistance;
     ::ll::TypedStorage<4, 4, int const>                                       mMaxInflightChunks;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GridArea<::std::shared_ptr<::RenderChunkInstanced>>>> mViewArea;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox>>>
+                                                                               mViewArea;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                      mLastFaceSortPos;
     ::ll::TypedStorage<4, 12, ::Vec3>                                          mLastFaceSortDir;
     ::ll::TypedStorage<4, 12, ::Vec3>                                          mLastDirtySortPos;
@@ -314,7 +323,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelRendererCamera();
+    virtual ~LevelRendererCamera() = default;
 
     virtual ::LevelRendererCameraType getCameraType() const;
 
@@ -389,8 +398,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelRendererCamera(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
-
     MCAPI void _addToRenderChunkQueue(
         ::ChunkRenderObjectCollection&           collection,
         ::TerrainMaterialVariationManager const& terrainVariationMgr,
@@ -415,10 +422,10 @@ public:
 
     MCAPI void _initCubemapTextures(::Dimension const& dimension);
 
-    MCAPI void _releaseResources();
-
-    MCAPI void
-    _resortNearbyChunks(::Vec3 const& viewPos, ::GridArea<::std::shared_ptr<::RenderChunkInstanced>> const& viewArea);
+    MCAPI void _resortNearbyChunks(
+        ::Vec3 const&                                                                        viewPos,
+        ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox> const& viewArea
+    );
 
     MCAPI bool _shouldRenderLeashedEntity(::Actor* actor, ::Vec3 cameraPos);
 
@@ -427,19 +434,13 @@ public:
         ::std::map<::ChunkPos, ::std::unordered_set<::BlockPos>> const& skipList
     );
 
-    MCAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>>& _viewAreaMutable();
+    MCAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox>& _viewAreaMutable();
 
     MCAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
 
     MCAPI ::LevelRendererCamera::RainState doRainUpdate();
 
-    MCAPI void doneQueuingChunks();
-
-    MCAPI ::optional_ref<::TerrainMaterialVariationManager const> getCurrentVariationManager() const;
-
     MCAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
-
-    MCAPI ::RenderChunkInstanced* getRenderChunkInstancedAt(::SubChunkPos const& rcp) const;
 
     MCAPI ::std::shared_ptr<::RenderChunkInstanced> getRenderChunkInstancedAtShared(::SubChunkPos const& rcp) const;
 
@@ -448,15 +449,6 @@ public:
     MCAPI uint64 getRenderChunkInstancedEstimatedIndexMemoryUsed();
 
     MCAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
-
-    MCAPI void mergeShadowActorRenderQueue(
-        ::brstd::flat_map<
-            ::gsl::not_null<::Actor*>,
-            ::ShadowContext,
-            ::std::less<::gsl::not_null<::Actor*>>,
-            ::std::vector<::gsl::not_null<::Actor*>>,
-            ::std::vector<::ShadowContext>>& actorRenderQueue
-    );
 
     MCAPI void onViewRadiusChanged(bool resetAll);
 
@@ -483,25 +475,9 @@ public:
 
     MCAPI void resetChunkCullingData(::ChunkPos const& cp);
 
-    MCAPI void setDirLightShadowRenderChunksPerfCounter(int chunkCount);
-
-    MCAPI bool shouldCullThisFrame(uint64 lastNumRenderChunksVisibleFromCullingPoint);
-
     MCAPI void updateFarChunksDistance();
 
     MCAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -509,7 +485,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::LevelRendererCameraType $getCameraType() const;
 
-    MCFOLD void $addCameraListenerToRenderChunkCoordinator();
+    MCAPI void $addCameraListenerToRenderChunkCoordinator();
 
     MCAPI void $onAppSuspended();
 

@@ -70,6 +70,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void applyCustomConnectionToBlockType(
+        ::BlockType&              blockType,
+        ::NeighborBlockDirections enabledDirections,
+        ::Block const& (*updateFunction)(
+            ::IConstBlockSource const&,
+            ::Block const&,
+            ::BlockPos const&,
+            ::NeighborBlockDirections
+        ),
+        int updateFlags
+    );
+
     MCAPI static ::NeighborBlockDirections getConnectedDirections(
         ::IConstBlockSource const& region,
         ::Block const&             block,

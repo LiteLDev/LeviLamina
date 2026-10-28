@@ -29,6 +29,7 @@ public:
         // clang-format off
         struct AsyncItem;
         struct WorkMap;
+        class AsyncItemQueue;
         // clang-format on
 
         // Impl inner types define
@@ -36,7 +37,8 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 8> mUnka3f0de;
+            ::ll::UntypedStorage<4, 12> mUnkd35444;
+            ::ll::UntypedStorage<8, 8>  mUnka3f0de;
             // NOLINTEND
 
         public:
@@ -99,12 +101,26 @@ public:
             WorkMap();
         };
 
+        class AsyncItemQueue {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::UntypedStorage<8, 104> mUnk7533b0;
+            // NOLINTEND
+
+        public:
+            // prevent constructor by default
+            AsyncItemQueue& operator=(AsyncItemQueue const&);
+            AsyncItemQueue(AsyncItemQueue const&);
+            AsyncItemQueue();
+        };
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>   mUnk72b766;
         ::ll::UntypedStorage<8, 64>  mUnk9a9f78;
-        ::ll::UntypedStorage<8, 616> mUnkdf7a35;
+        ::ll::UntypedStorage<8, 104> mUnk34799c;
         ::ll::UntypedStorage<8, 216> mUnkf3fd8e;
         // NOLINTEND
 
@@ -118,13 +134,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual uint createLayer(::AssetLoadWorkRange) = 0;
+    virtual uint createLayer(::AssetLoadWorkRange range) = 0;
 
     virtual void queueWorkers(
-        ::AssetLoadWorkOptions const&,
-        ::gsl::not_null<::std::shared_ptr<::IAssetLoadWorkQueue>>,
+        ::AssetLoadWorkOptions const&                             ops,
+        ::gsl::not_null<::std::shared_ptr<::IAssetLoadWorkQueue>> processor,
         ::brstd::move_only_function<
-            void(::brstd::move_only_function<::TaskResult()>, ::brstd::copyable_function<void()>)>
+            void(::brstd::move_only_function<::TaskResult()>, ::brstd::copyable_function<void()>)> queueWork
     ) = 0;
 
     virtual ::IAssetLoadWorkQueue::Impl& _getImpl() = 0;

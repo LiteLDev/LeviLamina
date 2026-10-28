@@ -249,7 +249,11 @@ public:
 
     MCAPI void _showLiveMultiplayerModal();
 
+    MCAPI void _showMobileDataBlockedModal();
+
     MCAPI void _showNoWifiModal();
+
+    MCAPI void _showServerCapacityFullModal();
 
     MCAPI bool _tryNavigateToXblUpsellScreen();
 
@@ -432,7 +436,7 @@ public:
 
     MCAPI void $leaveScreen(::std::string const& expectedScreenName);
 
-    MCFOLD void $onInit();
+    MCAPI void $onInit();
 
     MCAPI void $onDelete();
 

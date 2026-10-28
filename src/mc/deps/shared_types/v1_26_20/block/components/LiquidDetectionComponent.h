@@ -26,6 +26,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::std::string_view const& DetectionRulesId();
+
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/PrefabSource.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/PrefabSource.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/server/editor/serviceproviders/PrefabDBServerPlayerServiceProvider.h"
@@ -18,6 +18,7 @@
 // clang-format off
 class BlockPalette;
 class BlockSource;
+class BoundingBox;
 class ChunkPos;
 class Vec3;
 class WeakEntityRef;
@@ -41,6 +42,28 @@ class PrefabDBService : public ::Editor::Services::IEditorService,
                         public ::Editor::Prefabs::PrefabDBServerPlayerServiceProvider,
                         public ::Editor::Services::PayloadStoreHelper {
 public:
+    // PrefabDBService inner types declare
+    // clang-format off
+    struct CachedPrefabInstanceBounds;
+    // clang-format on
+
+    // PrefabDBService inner types define
+    struct CachedPrefabInstanceBounds {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 24> mUnkf19fe7;
+        ::ll::UntypedStorage<8, 8>  mUnkae7e63;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CachedPrefabInstanceBounds& operator=(CachedPrefabInstanceBounds const&);
+        CachedPrefabInstanceBounds(CachedPrefabInstanceBounds const&);
+        CachedPrefabInstanceBounds();
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnke4ef26;
@@ -51,6 +74,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk156c5f;
     ::ll::UntypedStorage<8, 48> mUnk7e0a09;
     ::ll::UntypedStorage<8, 48> mUnk811b7b;
+    ::ll::UntypedStorage<8, 64> mUnkdec7d0;
+    ::ll::UntypedStorage<8, 8>  mUnk2b47c2;
     // NOLINTEND
 
 public:
@@ -74,6 +99,9 @@ public:
 
     virtual ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
     getInstancesInChunk(::DimensionType const& dimension, ::ChunkPos const& chunkPos) const /*override*/;
+
+    virtual ::BoundingBox getPrefabInstanceBounds(::Editor::Prefabs::PrefabDBPrefabInstance const& instance) const
+        /*override*/;
 
     virtual ::std::optional<::Editor::Prefabs::VisiblePrefabInstance> generateVisibleInstanceDataFromPrefabInstance(
         ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance const> instanceRef
@@ -202,6 +230,8 @@ public:
     MCNAPI ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
     $getInstancesInChunk(::DimensionType const& dimension, ::ChunkPos const& chunkPos) const;
 
+    MCNAPI ::BoundingBox $getPrefabInstanceBounds(::Editor::Prefabs::PrefabDBPrefabInstance const& instance) const;
+
     MCNAPI ::std::optional<::Editor::Prefabs::VisiblePrefabInstance> $generateVisibleInstanceDataFromPrefabInstance(
         ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance const> instanceRef
     ) const;
@@ -284,16 +314,6 @@ public:
     );
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPrefabDBServiceProvider();
-
-    MCNAPI static void** $vftableForPrefabDBServerPlayerServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

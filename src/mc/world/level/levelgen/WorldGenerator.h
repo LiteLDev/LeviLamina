@@ -80,7 +80,8 @@ public:
         ::BlockPos const&               origin,
         ::BlockPos&                     pos,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     );
 
     virtual ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
@@ -163,10 +164,6 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
     );
 
-#ifdef LL_PLAT_S
-    MCAPI void tick();
-#endif
-
     MCAPI void waitForStructures();
     // NOLINTEND
 
@@ -196,7 +193,8 @@ public:
         ::BlockPos const&               origin,
         ::BlockPos&                     pos,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     );
 
     MCAPI ::StructureFeature* $getStructureFeatureOfType(::HashedString type) const;
@@ -207,7 +205,7 @@ public:
 
     MCAPI void $postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+    MCFOLD ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
 
     MCFOLD void $debugRender();
 

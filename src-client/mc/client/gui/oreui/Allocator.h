@@ -42,9 +42,15 @@ public:
 
     MCAPI void $AlignedDeallocate(void* ptr, ::cohtml::MemTags::MemTagsType);
 
-    MCAPI void* $VirtualAllocate(void*, uint, int, int, ::cohtml::MemTags::MemTagsType);
+    MCFOLD void* $VirtualAllocate(void*, uint, int, int, ::cohtml::MemTags::MemTagsType);
 
-    MCAPI bool $VirtualFree(void*, uint, int, ::cohtml::MemTags::MemTagsType);
+    MCFOLD bool $VirtualFree(void*, uint, int, ::cohtml::MemTags::MemTagsType);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

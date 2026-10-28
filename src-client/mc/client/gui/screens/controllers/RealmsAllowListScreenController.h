@@ -45,7 +45,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::RealmPlayer>                                      EMPTY_PLAYER;
+    ::ll::TypedStorage<8, 240, ::RealmPlayer>                                      EMPTY_PLAYER;
     ::ll::TypedStorage<1, 1, bool>                                                 mLoading;
     ::ll::TypedStorage<1, 1, bool>                                                 mListsLoaded;
     ::ll::TypedStorage<1, 1, bool>                                                 mFromExistingWorld;
@@ -143,8 +143,6 @@ public:
     MCAPI ::RealmPlayer*
     _getRealmPlayerAtIndex(int const index, ::RealmsAllowListScreenController::RealmPlayerList const realmPlayerList);
 
-    MCAPI ::RealmPlayer* _getRealmPlayerFromXuid(::std::string const& xuid);
-
     MCAPI void _handleDoesNotHavePermission(::std::function<void()> newWorldCallback);
 
     MCAPI void _handlePlayerInvite(::RealmPlayer& player);
@@ -152,6 +150,10 @@ public:
     MCAPI void _initializePlayerList(::std::function<void()> callback);
 
     MCAPI void _joinRealm();
+
+    MCAPI void _markStatusNoLongerChanged(::std::map<::std::string, ::RealmsAPI::InviteAction> const& changed);
+
+    MCAPI void _refreshPlayerList();
 
     MCAPI void _requestPlatformGamerpic(::Social::PlatformUserProfileData const& platformEntry);
 
@@ -211,6 +213,6 @@ public:
 
     MCAPI ::std::string $_getButtonBDescription();
 
-    MCAPI bool $_getGamepadHelperVisible() const;
+    MCFOLD bool $_getGamepadHelperVisible() const;
     // NOLINTEND
 };

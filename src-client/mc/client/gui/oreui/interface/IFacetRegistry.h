@@ -48,8 +48,6 @@ public:
     virtual ::std::optional<::OreUI::IFacetRegistry::Error>
     deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id) = 0;
 
-    virtual void clearAllFacets() = 0;
-
     virtual void suspendAllFacets() = 0;
 
     virtual void disableFacetActivation() = 0;

@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockPos;
 class BlockSource;
 class Player;
@@ -22,9 +24,7 @@ MCNAPI void emitScrapeParticlesAroundPosition(::BlockSource& region, ::Vec3 cons
 MCNAPI void emitWaxParticlesAroundPosition(::BlockSource& region, ::Vec3 const& pos, ::mce::Color const& color);
 #endif
 
-#ifdef LL_PLAT_S
-MCNAPI bool shouldUseInteractableBlockAsCopper(::Actor const& actor);
-#endif
+MCNAPI bool tryDecrementAge(::BlockSource& region, ::BlockPos const& pos, ::CopperBehavior const& behavior);
 
 MCNAPI bool tryIncrementAge(
     ::BlockSource&          region,
@@ -36,7 +36,13 @@ MCNAPI bool tryIncrementAge(
 
 MCNAPI bool tryLightningHitBlock(::BlockSource& region, ::BlockPos const& pos, ::CopperBehavior const& behavior);
 
-MCNAPI bool tryUseBlock(::Player& player, ::BlockPos const& pos, bool consumeTool, ::CopperBehavior const& behavior);
+MCNAPI bool tryUseBlock(
+    ::Player&               player,
+    ::BlockPos const&       pos,
+    bool                    consumeTool,
+    ::HandSlot              handSlot,
+    ::CopperBehavior const& behavior
+);
 // NOLINTEND
 
 } // namespace CopperBlockUtil

@@ -44,9 +44,9 @@ public:
         ::std::string const& saveTag,
         bool                 value
     );
+#endif
 
     MCAPI void set(bool v, bool saveOptionChange);
-#endif
     // NOLINTEND
 
 public:

@@ -25,10 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MonumentBuilding();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
@@ -41,16 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MonumentBuilding(::Random& random, short seaLevel, int west, int north, int& orientation);
-
     MCAPI void
     generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Random& random, short seaLevel, int west, int north, int& orientation);
     // NOLINTEND
 
 public:

@@ -6,14 +6,17 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
+#include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
 #include "mc/entity/systems/play_jump_sound_system/SoundType.h"
+#include "mc/entity/utilities/ViewEachWithBlockSourceArgs.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,9 +51,89 @@ struct PlayJumpSoundSystemImpl : public ::IStrictTickingSystem<::StrictExecution
                                      ::GlobalWrite<>,
                                      ::EntityFactoryT<>>> {
 public:
+    // PlayJumpSoundSystemImpl inner types declare
+    // clang-format off
+    struct Views;
+    // clang-format on
+
+    // PlayJumpSoundSystemImpl inner types define
+    struct Views {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            104,
+            ::ViewT<
+                ::StrictEntityContext,
+                ::ActorDataFlagComponent const,
+                ::ActorDefinitionIdentifierComponent const,
+                ::ActorUniqueIDComponent const,
+                ::DimensionTypeComponent const,
+                ::SoundEventPlayerComponent const,
+                ::StateVectorComponent const,
+                ::AABBShapeComponent const,
+                ::Include<::TriggerJumpRequestComponent>,
+                ::Exclude<::LavaSlimeFlagComponent>>>
+                                                                                                     mReadAndFilter;
+        ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>> mSoundQueue;
+        ::ll::TypedStorage<8, 32, ::ViewEachWithBlockSourceArgs>                                     mBlockSource;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Views();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit Views(
+            ::StrictExecutionContext<
+                ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+                ::Read<
+                    ::ActorDataFlagComponent,
+                    ::ActorDefinitionIdentifierComponent,
+                    ::ActorUniqueIDComponent,
+                    ::DimensionTypeComponent,
+                    ::SoundEventPlayerComponent,
+                    ::StateVectorComponent,
+                    ::AABBShapeComponent>,
+                ::Write<>,
+                ::AddRemove<>,
+                ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>& c
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::StrictExecutionContext<
+                ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+                ::Read<
+                    ::ActorDataFlagComponent,
+                    ::ActorDefinitionIdentifierComponent,
+                    ::ActorUniqueIDComponent,
+                    ::DimensionTypeComponent,
+                    ::SoundEventPlayerComponent,
+                    ::StateVectorComponent,
+                    ::AABBShapeComponent>,
+                ::Write<>,
+                ::AddRemove<>,
+                ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>& c
+        );
+        // NOLINTEND
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::PlayJumpSoundSystem::SoundType const> mJumpType;
+    ::ll::TypedStorage<8, 168, ::std::optional<::PlayJumpSoundSystemImpl::Views>> mViews;
+    ::ll::TypedStorage<4, 4, ::PlayJumpSoundSystem::SoundType const>              mJumpType;
     // NOLINTEND
 
 public:
@@ -98,17 +181,17 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void doPlayJumpSoundSystem(
-        ::StrictEntityContext const&                                      entity,
-        ::ActorDataFlagComponent const&                                   actorFlags,
-        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
-        ::ActorUniqueIDComponent const&                                   actorUniqueID,
-        ::DimensionTypeComponent const&                                   dimensionType,
-        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
-        ::StateVectorComponent const&                                     stateVectorComponent,
-        ::AABBShapeComponent const&                                       aabbShapeComponent,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView,
-        ::PlayJumpSoundSystem::SoundType const                            jumpType,
-        ::IConstBlockSource const&                                        region
+        ::StrictEntityContext const&                                             entity,
+        ::ActorDataFlagComponent const&                                          actorFlags,
+        ::ActorDefinitionIdentifierComponent const&                              actorIdentifier,
+        ::ActorUniqueIDComponent const&                                          actorUniqueID,
+        ::DimensionTypeComponent const&                                          dimensionType,
+        ::SoundEventPlayerComponent const&                                       soundEventPlayerComponent,
+        ::StateVectorComponent const&                                            stateVectorComponent,
+        ::AABBShapeComponent const&                                              aabbShapeComponent,
+        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> const& requestQueueView,
+        ::PlayJumpSoundSystem::SoundType const                                   jumpType,
+        ::IConstBlockSource const&                                               region
     );
     // NOLINTEND
 

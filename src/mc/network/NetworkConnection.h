@@ -8,9 +8,9 @@
 #include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
+#include "mc/deps/certificates/WebKey.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/NetworkIdentifier.h"
-#include "mc/network/NetworkPeer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
@@ -76,6 +76,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                               mEncryptionDisabled;
     ::ll::TypedStorage<4, 4, ::Connection::DisconnectFailReason>              mShouldCloseConnectionReason;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IPacketSecurityController>> mPacketSecurityController;
+    ::ll::TypedStorage<8, 48, ::std::optional<::WebKey>>                      mIdentityPublicKey;
     // NOLINTEND
 
 public:
@@ -93,12 +94,8 @@ public:
         ::Scheduler&                                   mainThread,
         bool                                           isRawRecordingEnabled,
         ::NetworkSettingOptions const&                 settings,
-        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController
-    );
-
-    MCAPI ::NetworkPeer::DataStatus receivePacket(
-        ::std::string&                                                    receiveBuffer,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController,
+        ::std::optional<::WebKey>                      identityPublicKey
     );
 
 #ifdef LL_PLAT_C
@@ -117,7 +114,8 @@ public:
         ::Scheduler&                                   mainThread,
         bool                                           isRawRecordingEnabled,
         ::NetworkSettingOptions const&                 settings,
-        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController
+        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController,
+        ::std::optional<::WebKey>                      identityPublicKey
     );
     // NOLINTEND
 };

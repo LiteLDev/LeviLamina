@@ -135,8 +135,6 @@ public:
 #endif
 
     MCAPI void postNormalTick();
-
-    MCAPI void setSourceEntity(::Actor const* owner);
     // NOLINTEND
 
 public:

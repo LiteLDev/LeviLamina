@@ -28,10 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_EnderDragonAdditionalRendering();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void preRender(
@@ -47,20 +43,6 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DataDrivenRenderer_tempComponent_EnderDragonAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
     // NOLINTEND
 
 public:

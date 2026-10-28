@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/resource_processing/PreloadState.h"
+#include "mc/platform/brstd/flat_set.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,6 +12,8 @@ namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
 namespace Bedrock::Resources::Archive { class TOCReader; }
 namespace Core { class Path; }
+namespace Core { class PathView; }
+namespace Core { struct PathLessTransparent; }
 // clang-format on
 
 namespace Bedrock::Resources {
@@ -63,7 +66,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnkea2f7b;
-        ::ll::UntypedStorage<8, 64> mUnk31b19a;
+        ::ll::UntypedStorage<8, 48> mUnkf8d77d;
         // NOLINTEND
 
     public:
@@ -78,11 +81,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 136> mUnk3091c8;
+    ::ll::UntypedStorage<8, 120> mUnk3091c8;
     ::ll::UntypedStorage<8, 16>  mUnk407c1f;
     ::ll::UntypedStorage<8, 8>   mUnk693ed0;
     ::ll::UntypedStorage<8, 16>  mUnka4641f;
-    ::ll::UntypedStorage<8, 72>  mUnkba8bc7;
+    ::ll::UntypedStorage<8, 32>  mUnkb934c9;
     ::ll::UntypedStorage<1, 1>   mUnke2c1f0;
     // NOLINTEND
 
@@ -105,11 +108,9 @@ public:
 
     MCNAPI ::Bedrock::Resources::PreloadState _getAsset(
         ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,
-        ::Core::Path const&                                             path,
+        ::Core::PathView const&                                         path,
         ::std::string*                                                  assetData
     ) const;
-
-    MCNAPI bool _isNegativelyCached(::Core::Path const& archivePath) const;
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle
     addPreloadedPath(::Core::Path const& path, ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> archiveReader);
@@ -117,7 +118,7 @@ public:
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle findPreloadedPath(::Core::Path const& path) const;
 
     MCNAPI ::Bedrock::Resources::PreloadState
-    getAsset(::Core::Path const& path, ::Core::Path const& archivePath, ::std::string& contents) const;
+    getAsset(::Core::PathView const& path, ::Core::PathView const& archivePath, ::std::string& contents) const;
 
     MCNAPI ::Bedrock::Resources::PreloadState
     hasAssetFallback(::Core::Path const& path, ::Core::Path const& archivePath) const;

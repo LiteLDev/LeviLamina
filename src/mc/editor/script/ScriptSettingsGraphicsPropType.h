@@ -16,6 +16,8 @@ enum class ScriptSettingsGraphicsPropType : int {
     DisableBlockEntityRendering = 8,
     DisableParticleRendering    = 9,
     DisableWeatherRendering     = 10,
+    DisableCloudRendering       = 11,
+    ShowChat                    = 12,
 };
 
 }

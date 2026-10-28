@@ -9,9 +9,6 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
-class FileArchiver;
-class Level;
-struct SnapshotFilenameAndLength;
 // clang-format on
 
 class SaveCommand : public ::ServerCommand {
@@ -21,13 +18,6 @@ public:
         Hold   = 0,
         Resume = 1,
         Query  = 2,
-    };
-
-    enum class State : int {
-        Idle     = 0,
-        Saving   = 1,
-        Complete = 2,
-        Failed   = 3,
     };
 
 public:
@@ -40,26 +30,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool saveHold(::Level& level, ::FileArchiver* fileArchiver);
-
-    MCAPI static bool saveResume(::Level& level);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string& mGeneratedVanillaLevelDataPath();
-
-    MCAPI static ::std::vector<::SnapshotFilenameAndLength>& mSaveAllFileList();
-
-    MCAPI static ::std::mutex& mSaveAllMutex();
-
-    MCAPI static ::SaveCommand::State& mState();
     // NOLINTEND
 
 public:

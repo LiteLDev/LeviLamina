@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/block/actor/BlockPushResult.h"
 #include "mc/world/level/block/actor/PistonState.h"
 #include "mc/world/level/block/actor/VanillaBlockActor.h"
 
@@ -11,6 +12,7 @@
 // clang-format off
 class AABB;
 class Actor;
+class Block;
 class BlockActor;
 class BlockActorDataPacket;
 class BlockSource;
@@ -71,6 +73,8 @@ public:
 
     MCAPI bool _checkAttachedBlocks(::BlockSource& region);
 
+    MCAPI bool _hasBlockAttached(::BlockPos const& blockPos);
+
     MCAPI void _moveCollidedEntities(::BlockSource& region);
 
     MCAPI void _moveCollidedEntitiesHelper(
@@ -87,9 +91,18 @@ public:
 
     MCAPI void _spawnMovingBlocks(::BlockSource& region);
 
+    MCAPI ::Block const* getCorrectArmBlock() const;
+
     MCAPI ::BlockPos const& getFacingDir(::IConstBlockSource const& region) const;
 
     MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
+
+    MCAPI ::BlockPushResult pushOrHurtCollidedEntity(::Actor& entity, ::Vec3 const& pushDelta);
+
+    MCAPI void
+    resetAfterCommandStateChange(::BlockSource& region, ::BlockPos const& pos, ::Block const& previousPiston);
+
+    MCAPI void resetToRetracted();
     // NOLINTEND
 
 public:

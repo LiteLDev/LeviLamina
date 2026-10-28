@@ -11,7 +11,6 @@
 namespace cereal { class Constraint; }
 namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct SchemaDescription; }
-namespace cereal::internal { struct ReflectionContext; }
 // clang-format on
 
 namespace cereal::internal {
@@ -30,12 +29,6 @@ public:
     findMinVariantPriorityLevel(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
 
     MCAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
-
-    MCAPI ::cereal::SchemaDescription makeDescriptionForType(
-        ::cereal::internal::ReflectionContext const& ctx,
-        ::entt::meta_type const&                     type,
-        ::cereal::DescriptionConfig                  config
-    ) const;
     // NOLINTEND
 };
 

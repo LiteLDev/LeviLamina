@@ -33,19 +33,29 @@ MCAPI ::std::add_lvalue_reference_t<char const[]> ExtensionPointName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormButtonName();
 
+MCAPI ::std::add_lvalue_reference_t<char const[]> FormCloseButtonName();
+
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormDividerName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormDropdownName();
 
+MCAPI ::std::add_lvalue_reference_t<char const[]> FormHorizontalStackName();
+
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormImageName();
+
+MCAPI ::std::add_lvalue_reference_t<char const[]> FormPanelName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormScrollViewName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormSliderName();
 
+MCAPI ::std::add_lvalue_reference_t<char const[]> FormSpacingName();
+
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormSwitchName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> FormTextFieldName();
+
+MCAPI ::std::add_lvalue_reference_t<char const[]> FormTextName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> PanelCloseButtonName();
 

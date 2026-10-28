@@ -5,10 +5,11 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class IClientInstance;
+namespace GameplayUI { struct GameplayUIContext; }
 // clang-format on
 
 namespace OreUI {
@@ -17,9 +18,9 @@ class FurnaceQuery : public ::OreUI::QueryBase<::OreUI::FurnaceQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>> mClient;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mLitProgress;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>               mBurnProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                   mLitProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int, int>>                                   mBurnProgress;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 
 public:

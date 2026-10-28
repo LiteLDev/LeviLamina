@@ -37,9 +37,9 @@ public:
         ::LocalSpatialEntityFetcher& fetcher,
         ::AABB const&                actorAABB,
         ::AABB const&                intersectTestBox,
-        ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const> view,
-        ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
-        ::CollisionShapes&                                                     collisionShapes
+        ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const> const& view,
+        ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> const& fallingBlockView,
+        ::CollisionShapes&                                                            collisionShapes
     );
 
     MCAPI static void testForEntityStacking(

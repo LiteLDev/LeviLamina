@@ -18,6 +18,8 @@
 class BaseGameVersion;
 class Block;
 class Experiments;
+class IAssetLoadWorkQueue;
+class IEducationOptions;
 class ILevel;
 class Item;
 class ItemStack;
@@ -98,9 +100,11 @@ public:
         8,
         64,
         ::std::unordered_map<uint64, ::std::unordered_map<uint64, ::std::shared_ptr<::std::vector<::ItemInstance>>>>>
-                                                                         mRecipesByInput;
-    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Recipe*>>> mUnlockableRecipes;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>       mUniqueUnlockableRecipeIds;
+                                                                                  mRecipesByInput;
+    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Recipe*>>>          mUnlockableRecipes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<short, ::std::vector<uint64>>> mUnlockableRecipeIndicesByItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                              mUnindexedUnlockableRecipeIndices;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                mUniqueUnlockableRecipeIds;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::unordered_map<int, ::ItemInstance>>> mFurnaceResults;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::weak_ptr<bool>, ::std::function<void()>>>> mListeners;
     ::ll::TypedStorage<8, 8, ::ILevel*>                                                                   mLevel;
@@ -123,7 +127,7 @@ public:
     MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
 #endif
 
-    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const&);
+    MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
     MCAPI ::RecipeIngredient const _loadIngredientFromJson(
         ::Json::Value const& obj,
@@ -335,9 +339,9 @@ public:
     ) const;
 
     MCAPI void forEachRecipeFor(
-        ::ItemInstance const&                        result,
-        ::HashedString const&                        tag,
-        ::brstd::function_ref<void(::Recipe const&)> callback
+        ::ItemInstance const&                              result,
+        ::HashedString const&                              tag,
+        ::brstd::function_ref<void(::Recipe const&)> const callback
     ) const;
 
     MCAPI void forEachRecipeFor(
@@ -350,11 +354,24 @@ public:
     forEachRecipeUntil(::HashedString const& tag, ::brstd::function_ref<bool(::Recipe const&)> callback) const;
 
     MCAPI void forEachRecipeUntil(
+        ::ItemInstance const&                              result,
+        ::HashedString const&                              tag,
+        ::brstd::function_ref<bool(::Recipe const&)> const callback
+    ) const;
+
+    MCAPI void forEachRecipeUntil(
         ::ItemInstance const&                        result,
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<bool(::Recipe const&)> callback
     ) const;
+#endif
 
+    MCAPI void forEachUnlockableRecipeForIngredients(
+        ::std::vector<::RecipeIngredient> const&     ingredients,
+        ::brstd::function_ref<void(::Recipe const&)> callback
+    ) const;
+
+#ifdef LL_PLAT_C
     MCAPI ::std::vector<::ItemInstance>
     getFurnaceRecipeFor(::ItemStackBase const& output, ::HashedString const& tag) const;
 #endif
@@ -366,10 +383,12 @@ public:
     MCAPI ::Recipe* getRecipeFor(::ItemInstance const& result, ::HashedString const& tag) const;
 
     MCAPI void init(
-        ::ResourcePackManager&   resourcePackManager,
-        ::ExternalRecipeStore&   recipeStorage,
-        ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&     experiments
+        ::ResourcePackManager&     resourcePackManager,
+        ::ExternalRecipeStore&     recipeStorage,
+        ::IAssetLoadWorkQueue&     queue,
+        ::BaseGameVersion const&   baseGameVersion,
+        ::Experiments const&       experiments,
+        ::IEducationOptions const& educationOptions
     );
 
 #ifdef LL_PLAT_C

@@ -15,6 +15,7 @@
 #include "mc/deps/core/NetworkConnectionType.h"
 #include "mc/deps/core/debug/AssertDialogResponse.h"
 #include "mc/deps/core/file/FileAccessType.h"
+#include "mc/deps/core/file/FileStorageArea.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/AppFocusState.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
@@ -366,6 +367,8 @@ public:
 
     virtual bool supportsFilePicking() const;
 
+    virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getPrimaryUserStorageAreaSpaceInfo();
+
     virtual bool supportsTouch() const;
 
     virtual bool supportsKeyboardMouse() const;
@@ -592,7 +595,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename);
 
-    virtual ::Bedrock::Result<::std::string> _readAssetFileInternal(::Core::PathView filename);
+    virtual ::Bedrock::Result<::std::string> _readAssetFileInternal(::Core::PathView filename, ::std::string& buffer);
 
     virtual bool hasAssetFile(::Core::Path const& filename);
 
@@ -658,8 +661,6 @@ public:
     virtual ::std::string getPackageFamilyName() const;
 
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
-
-    virtual ::std::string getSubPlatformString() const = 0;
 
     virtual int getNumberOfParticleFramesToInterpolate() const;
 
@@ -753,7 +754,7 @@ public:
 
     virtual void collectGraphicsHardwareDetails();
 
-    virtual ::std::string getEdition() const;
+    virtual ::std::string getEdition() const /*override*/;
 
     virtual ::OsVersion getOSVersion() const;
 
@@ -1011,7 +1012,7 @@ public:
 #endif
 
     MCAPI ::Bedrock::Result<::std::string>
-    readAssetFile(::Core::PathView filename, ::AppPlatform::ReadMode const& readMode);
+    readAssetFile(::Core::PathView filename, ::AppPlatform::ReadMode const& readMode, ::std::string&& buffer);
 
 #ifdef LL_PLAT_C
     MCAPI bool requiresNetworkOutageMessaging() const;
@@ -1026,7 +1027,8 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::Bedrock::Result<::std::string> _readAssetFileGeneric(::Core::PathView filename);
+    MCAPI static ::Bedrock::Result<::std::string>
+    _readAssetFileGeneric(::Core::PathView filename, ::std::string& buffer);
 #endif
 
 #ifdef LL_PLAT_C
@@ -1235,7 +1237,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
-    MCAPI ::Bedrock::Result<::std::string> $_readAssetFileInternal(::Core::PathView filename);
+    MCAPI ::Bedrock::Result<::std::string> $_readAssetFileInternal(::Core::PathView filename, ::std::string& buffer);
 
     MCAPI bool $hasAssetFile(::Core::Path const& filename);
 
@@ -1656,7 +1658,7 @@ public:
 
     MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
 
-    MCAPI void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
+    MCFOLD void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
 
     MCFOLD bool $hasHardwareBackButton();
 
@@ -1667,6 +1669,8 @@ public:
     MCFOLD bool $supportsManualAddedServers() const;
 
     MCFOLD bool $supportsFilePicking() const;
+
+    MCFOLD ::Core::FileStorageArea::StorageAreaSpaceInfo $getPrimaryUserStorageAreaSpaceInfo();
 
     MCFOLD bool $supportsTouch() const;
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct BlockEntityComponent {
@@ -21,13 +16,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, uchar> mSlotCount;
+        ::ll::TypedStorage<1, 1, uchar>                           mSlotCount;
+        ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mTitle;
         // NOLINTEND
 
     public:
         // static variables
         // NOLINTBEGIN
         MCAPI static ::std::string_view const& SlotCountId();
+
+        MCAPI static ::std::string_view const& TitleId();
         // NOLINTEND
     };
 
@@ -36,16 +34,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mDynamicProperties;
     ::ll::TypedStorage<
-        1,
-        2,
+        8,
+        56,
         ::std::optional<::SharedTypes::v1_26_20::BlockDefinition::BlockEntityComponent::ContainerData>>
         mContainer;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

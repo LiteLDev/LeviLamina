@@ -20,7 +20,7 @@ public:
     MCAPI static void _markForUpgradeIfNeeded(
         ::StrictEntityContext& strictEntityContext,
         ::EquippableComponent& equippableComponent,
-        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier
+        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent> const& modifier
     );
     // NOLINTEND
 };

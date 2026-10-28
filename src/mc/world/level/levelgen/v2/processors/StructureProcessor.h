@@ -66,6 +66,8 @@ public:
 
     MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Rule(::std::vector<::br::worldgen::processors::RuleSet> rules);
+
+    MCAPI static void bootstrap();
     // NOLINTEND
 
 public:
@@ -94,6 +96,12 @@ public:
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

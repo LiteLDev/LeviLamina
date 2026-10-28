@@ -11,7 +11,7 @@
 class SemVersion;
 struct LegacyEventItemComponentData;
 struct PackLoadInfo;
-namespace SharedTypes::v1_26_30 { struct ItemDocument; }
+namespace SharedTypes::v1_26_50 { struct ItemDocument; }
 // clang-format on
 
 class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::LegacyEventItemComponentData> makeLegacyEvents(
         ::SemVersion const&                          documentVersion,
-        ::SharedTypes::v1_26_30::ItemDocument const& itemDocument
+        ::SharedTypes::v1_26_50::ItemDocument const& itemDocument
     ) const;
     // NOLINTEND
 

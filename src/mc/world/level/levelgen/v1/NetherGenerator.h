@@ -139,7 +139,7 @@ public:
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCFOLD ::BiomeSource const& $getBiomeSource() const;
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 

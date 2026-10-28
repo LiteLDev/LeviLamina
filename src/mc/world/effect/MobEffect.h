@@ -86,11 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~MobEffect() = default;
-#else // LL_PLAT_C
-    virtual ~MobEffect();
-#endif
 
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
@@ -161,7 +157,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::mce::Color const& DEFAULT_COLOR();
 
-    MCAPI static ::Bedrock::DenseEnumMap<::MobEffectIds, ::std::unique_ptr<::MobEffect>, 38>& mMobEffects();
+    MCAPI static ::Bedrock::DenseEnumMap<::MobEffectIds, ::std::unique_ptr<::MobEffect>, 39>& mMobEffects();
     // NOLINTEND
 
 public:
@@ -177,14 +173,6 @@ public:
         ::std::string const& iconName,
         bool                 drawParticles
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:
@@ -208,11 +196,5 @@ public:
     MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -6,6 +6,7 @@
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/Mob.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,7 +48,7 @@ public:
 
     virtual void remove() /*override*/;
 
-    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location) /*override*/;
+    virtual ::Interaction getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot) /*override*/;
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
@@ -88,7 +89,7 @@ public:
 
     MCAPI void $remove();
 
-    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
 
     MCAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);

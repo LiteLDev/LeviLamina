@@ -32,9 +32,11 @@ public:
     MCAPI void rotate(float a, ::glm::vec3 const& axis);
 
     MCAPI void rotate(float a, float x, float y, float z);
+#endif
 
     MCAPI void rotateXYZ(::Vec3 const& rotation);
 
+#ifdef LL_PLAT_C
     MCAPI void scale(float x);
 
     MCAPI void scale(float x, float y, float z);

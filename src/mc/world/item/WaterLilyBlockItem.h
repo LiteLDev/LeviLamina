@@ -29,7 +29,8 @@ public:
         ::Vec3 const& clickPos
     ) const /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor&, uchar& face, ::BlockPos& pos) const /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase const&, ::Actor const&, uchar& face, ::BlockPos& pos) const
+        /*override*/;
 
     virtual bool isLiquidClipItem() const /*override*/;
     // NOLINTEND
@@ -46,7 +47,7 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor&, uchar& face, ::BlockPos& pos) const;
+    MCFOLD bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const&, uchar& face, ::BlockPos& pos) const;
 
     MCFOLD bool $isLiquidClipItem() const;
 

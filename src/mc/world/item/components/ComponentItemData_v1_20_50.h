@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct ComponentItemData_v1_20_50 {
@@ -20,14 +19,6 @@ public:
     ::ll::TypedStorage<8, 96, ::SharedTypes::v1_20_20::ItemDescription>              mDescription;
     ::ll::TypedStorage<8, 904, ::SharedTypes::v1_20_50::ComponentItemComponentData>  mItemComponents;
     ::ll::TypedStorage<8, 872, ::SharedTypes::v1_20_50::ItemDeprecatedComponentData> mDeprecatedItemComponents;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
     // NOLINTEND
 
 public:

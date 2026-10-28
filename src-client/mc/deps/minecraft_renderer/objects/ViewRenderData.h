@@ -30,6 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>          mDrawParticles;
     ::ll::TypedStorage<1, 1, bool>          mIsFancyRendering;
     ::ll::TypedStorage<1, 1, bool>          mDrawSky;
+    ::ll::TypedStorage<1, 1, bool>          mDrawSkyObjects;
     ::ll::TypedStorage<1, 1, bool>          mDrawWeather;
     ::ll::TypedStorage<1, 1, bool>          mIsShadowPass;
     ::ll::TypedStorage<1, 1, bool>          mShowChunkMap;

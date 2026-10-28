@@ -12,7 +12,9 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/timing/Stopwatch.h"
+#include "mc/deps/core/utility/DefaultSmallOptionalTraits.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/SmallOptional.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
@@ -31,6 +33,7 @@
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
+#include "mc/world/actor/player/ActorInteractionHandResult.h"
 #include "mc/world/actor/player/BedSleepingResult.h"
 #include "mc/world/actor/player/PlayerItemInUse.h"
 #include "mc/world/actor/player/PlayerSpawnFallbackType.h"
@@ -67,7 +70,6 @@ class ComplexInventoryTransaction;
 class CompoundTag;
 class Container;
 class ContainerManagerModel;
-class CreativeItemRegistry;
 class DataLoadHelper;
 class EnderChestContainer;
 class EntityContext;
@@ -740,6 +742,8 @@ public:
 
     virtual ::std::string getXuid() const;
 
+    virtual ::std::string getPlayFabId() const;
+
     virtual ::PlayerMovementSettings const& getMovementSettings() const;
 
     virtual bool canInteractWithOtherEntitiesInGame() const /*override*/;
@@ -782,7 +786,7 @@ public:
 
     virtual ::std::unique_ptr<::ISparseContainerSetListener> createSparseContainerListener();
 
-    virtual void addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions);
+    virtual void addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate);
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
@@ -858,9 +862,9 @@ public:
     );
 #endif
 
-    MCAPI void _handleCarriedItemInteractText();
-
     MCAPI bool _isChunkSourceLoaded(::Vec3 const& spawnPosition, ::BlockSource const& region) const;
+
+    MCAPI void _setInteractionSynchedData(::std::string text, ::ActorInteractionHandResult handResult);
 
     MCAPI void _setPlayerGameType(::GameType gameType);
 
@@ -918,15 +922,18 @@ public:
 
     MCFOLD ::LayeredAbilities& getAbilities();
 
+    MCAPI ::Bedrock::SmallOptional<::HandSlot, ::Bedrock::DefaultSmallOptionalTraits<::HandSlot>>
+    getActiveShieldSlot() const;
+
     MCAPI ::Agent* getAgentIfAllowed(bool callerCanAccessOtherAgents, ::ActorUniqueID callerAgentID) const;
+
+    MCAPI ::SoundEventIdentifier getAttackCriticalHitSound() const;
 
     MCAPI ::SoundEventIdentifier getAttackHitSound() const;
 
     MCAPI ::SoundEventIdentifier getAttackMissSound() const;
 
     MCAPI ::std::string getChatDisplayName() const;
-
-    MCAPI ::ItemStack const& getCurrentActiveShield() const;
 
     MCAPI float getDestroyProgress(::Block const& block);
 
@@ -969,7 +976,7 @@ public:
 
     MCAPI bool hasResource(::ItemDescriptor const& resource);
 
-    MCAPI ::InteractionResult interact(::Actor& actor, ::Vec3 const& location);
+    MCAPI ::InteractionResult interact(::Actor& actor, ::Vec3 const& location, ::HandSlot handSlot);
 
     MCAPI void inventoryChanged(
         ::Container&,
@@ -1050,7 +1057,7 @@ public:
     MCAPI void
     startItemUseOn(uchar face, ::BlockPos const& blockPos, ::BlockPos const& buildBlockPos, ::ItemStack const& item);
 
-    MCAPI void startUsingItem(::ItemStack const& instance, int duration);
+    MCAPI void startUsingItem(::ItemStack const& instance, int duration, ::HandSlot handSlot);
 
     MCAPI void stopGliding();
 
@@ -1065,8 +1072,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void unRegisterTrackedBoss(::ActorUniqueID mob);
 
-    MCAPI void updateCreativeItemList(::CreativeItemRegistry const& creativeItemRegistry);
-
     MCAPI bool updateEmoteMessageData(::PersonaPiece const& emotePiece);
 #endif
 
@@ -1076,7 +1081,7 @@ public:
 
     MCAPI void updateTouch();
 
-    MCAPI void useSelectedItem(::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void useItemInHandSlot(::HandSlot handSlot, ::ItemUseMethod itemUseMethod, bool consumeItem);
     // NOLINTEND
 
 public:
@@ -1405,6 +1410,8 @@ public:
 
     MCAPI ::std::string $getXuid() const;
 
+    MCAPI ::std::string $getPlayFabId() const;
+
     MCAPI ::PlayerMovementSettings const& $getMovementSettings() const;
 
     MCAPI bool $canInteractWithOtherEntitiesInGame() const;
@@ -1447,7 +1454,7 @@ public:
 
     MCFOLD ::std::unique_ptr<::ISparseContainerSetListener> $createSparseContainerListener();
 
-    MCFOLD void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions);
+    MCFOLD void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate);
 
     MCAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);

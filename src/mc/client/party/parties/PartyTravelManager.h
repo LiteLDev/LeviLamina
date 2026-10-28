@@ -4,6 +4,10 @@
 
 namespace Parties {
 
-class PartyTravelManager {};
+class PartyTravelManager {
+public:
+    // PartyTravelManager inner types define
+    enum class DestinationCheckResult : int {};
+};
 
 } // namespace Parties

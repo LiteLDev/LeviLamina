@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/BakedBlockLightType.h"
+#include "mc/client/renderer/block/tessellation_pipeline/client_block_pipeline/UvGenerationType.h"
 #include "mc/client/renderer/block/tessellation_pipeline/client_block_pipeline/VisualReference.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -50,7 +51,8 @@ MCAPI void _tessellateBlockWithPipeline(
 
 MCAPI ::VanillaBlockTessellation::Config createCrackPipelineConfig(
     ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository>      materialRepository,
-    ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride
+    ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride,
+    ::ClientBlockPipeline::UvGenerationType                           uvGenerationType
 );
 
 MCAPI ::VanillaBlockTessellation::Config createWorldPipelineConfig(

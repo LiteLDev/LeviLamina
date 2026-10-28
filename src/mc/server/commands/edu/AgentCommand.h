@@ -88,8 +88,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void createAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
     MCAPI void reportSuccess(bool success, ::CommandOutput& output) const;
     // NOLINTEND
 

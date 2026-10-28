@@ -78,6 +78,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mIsPlatformLocked;
     ::ll::TypedStorage<1, 1, bool>                                    mIsRandomSeedAllowed;
     ::ll::TypedStorage<1, 1, bool>                                    mHasClientScript;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasAppScript;
     ::ll::TypedStorage<1, 1, bool>                                    mHasEducationMetadata;
     ::ll::TypedStorage<1, 1, bool>                                    mHasPlugins;
     ::ll::TypedStorage<1, 1, bool>                                    mHasValidUUID;
@@ -173,8 +174,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PackScope StringToPackScope(::std::string const& str);
-
     MCAPI static void _serializeVersion(::Json::Value& destination, ::SemVersion const& version);
     // NOLINTEND
 
@@ -182,6 +181,10 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& MarioPackId();
+
+    MCAPI static ::std::string const& MarioPackSkinsId();
+
+    MCAPI static ::std::string const& MarioPackWorldId();
     // NOLINTEND
 
 public:

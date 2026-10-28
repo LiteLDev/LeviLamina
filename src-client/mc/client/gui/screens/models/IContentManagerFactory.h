@@ -8,6 +8,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -100,6 +101,8 @@ public:
 
     virtual ::std::unique_ptr<::CompositePackSource>
     createCompositePackSource(::std::vector<::PackSource*> sources) const = 0;
+
+    virtual ::Bedrock::Threading::Async<void> refreshPacksAsync() const = 0;
 
     virtual bool allowsResourcePackDevelopment() const = 0;
 

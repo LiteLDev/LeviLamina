@@ -107,9 +107,7 @@ public:
 
     MCAPI void endLevel(::Level& level);
 
-#ifdef LL_PLAT_C
     MCAPI void recordChunkDeleted(::LevelChunk const& lc);
-#endif
 
     MCAPI void startLevel(::Level const& level);
 
