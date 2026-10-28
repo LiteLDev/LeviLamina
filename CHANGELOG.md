@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Packets can declare a compile-time `CustomPacketId` instead of relying on their type name, and a `PacketVersion`
+- `Packet::canSendTo` and `Packet::canSendToServer` tell whether the other side handles an optional packet
+- Packets declare the side that handles them with `Side`, and are required unless they declare `Optional`; a client or server lacking a required packet is disconnected during login with a message listing it
+- `PacketRegistrar` can unregister packets and handlers at runtime, and drops those of a mod when it is unloaded
+
+### Changed
+
+- Packet handlers receive the `PacketSide` they are called on, as a new parameter before the packet
+
+### Removed
+
+- `ll/api/network/packet/runtime/RuntimePacket.h` is internal now; send and handle packets through `ll::network::Packet`
+
 ## [26.51.9] - 2026-10-27
 
 ### Added

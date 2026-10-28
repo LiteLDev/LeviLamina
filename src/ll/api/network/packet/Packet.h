@@ -4,8 +4,10 @@
 #include <string>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/base/Meta.h"
 #include "ll/api/network/packet/PacketRegistrar.h"
 #include "ll/api/reflection/TypeName.h"
+#include "ll/api/utils/HashUtils.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/raknet/PacketPriority.h"
 #include "mc/network/Compressibility.h"
@@ -35,6 +37,14 @@ public:
     NetworkPeer::Reliability mReliability;
     SubClientId              mSenderSubId;
     Compressibility          mCompressible;
+
+    static constexpr std::string_view CustomPacketId{};
+
+    static constexpr uint PacketVersion{0};
+
+    static constexpr PacketSide Side{PacketSide::Both};
+
+    static constexpr bool Optional{false};
 
     [[nodiscard]] constexpr explicit Packet(
         PacketPriority           priority    = PacketPriority::MediumPriority,
@@ -66,69 +76,99 @@ public:
     LLAPI void sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exceptSubid) const;
 
     LLAPI void sendToServer() const;
+
+    LLNDAPI bool canSendTo(Player const& player) const;
+
+    LLNDAPI bool canSendTo(NetworkIdentifier const& identifier) const;
+
+    LLNDAPI bool canSendToServer() const;
 };
 
 class IPacketHandler {
 public:
     virtual ~IPacketHandler() = default;
-    virtual void
-    handle(NetworkIdentifier const& netId, NetEventCallback& callback, ll::network::Packet const& packet) const = 0;
+    virtual void handle(
+        NetworkIdentifier const&   netId,
+        NetEventCallback&          callback,
+        PacketSide                 side,
+        ll::network::Packet const& packet
+    ) const = 0;
 };
 
-namespace detail {
-template <bool&>
-struct StaticRegistrationAnchor {};
+template <class T>
+constexpr std::string_view getPacketId = []() -> std::string_view {
+    using self = std::remove_cvref_t<T>;
+    if constexpr (!self::CustomPacketId.empty()) {
+        return self::CustomPacketId;
+    } else {
+        return reflection::type_unprefix_name_v<self>;
+    }
+}();
 
+[[nodiscard]] constexpr PacketRuntimeId makePacketRuntimeId(std::string_view id, uint version = 0) {
+    auto hash = hash_utils::doHash(id);
+    return version == 0 ? hash : hash_utils::HashCombiner{hash}.add(version).hash();
+}
+
+namespace detail {
 template <class Derived>
 inline bool packetRegistration = [] {
     PacketRegistrar::getInstance().registerPacket(
-        reflection::type_unprefix_name_v<Derived>,
-        ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>),
-        []() -> std::unique_ptr<Packet> { return std::make_unique<Derived>(); }
+        getPacketId<Derived>,
+        makePacketRuntimeId(getPacketId<Derived>, Derived::PacketVersion),
+        []() -> std::unique_ptr<Packet> { return std::make_unique<Derived>(); },
+        Derived::Side,
+        Derived::Optional
     );
     return true;
 }();
 
-template <class Derived, class PacketType>
+template <class Derived, class PacketType, PacketSide Side>
 inline bool packetHandlerRegistration = [] {
     static Derived instance;
     PacketRegistrar::getInstance().registerHandler(
-        reflection::type_unprefix_name_v<PacketType>,
-        ll::hash_utils::doHash(reflection::type_unprefix_name_v<PacketType>),
-        instance
+        getPacketId<PacketType>,
+        makePacketRuntimeId(getPacketId<PacketType>, PacketType::PacketVersion),
+        instance,
+        Side
     );
     return true;
 }();
 } // namespace detail
 
 template <class Derived>
-class PacketBase : public Packet, private detail::StaticRegistrationAnchor<detail::packetRegistration<Derived>> {
+class PacketBase : public Packet, private meta::StaticRegistrationAnchor<detail::packetRegistration<Derived>> {
     static bool ensureRegistered() { return detail::packetRegistration<Derived>; }
 
 protected:
     using Packet::Packet;
 
 public:
-    [[nodiscard]] ::std::string_view getName() const override { return reflection::type_unprefix_name_v<Derived>; }
+    [[nodiscard]] ::std::string_view getName() const override { return getPacketId<Derived>; }
     [[nodiscard]] PacketRuntimeId    getRuntimeId() const override {
-        constexpr PacketRuntimeId runtimeId = ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>);
+        constexpr PacketRuntimeId runtimeId = makePacketRuntimeId(getPacketId<Derived>, Derived::PacketVersion);
         return runtimeId;
     }
 
     inline static bool sRegistered = ensureRegistered();
 };
 
-template <class Derived, class PacketType>
+template <class Derived, class PacketType, PacketSide Side = PacketType::Side>
 class PacketHandlerBase
 : public IPacketHandler,
-  private detail::StaticRegistrationAnchor<detail::packetHandlerRegistration<Derived, PacketType>> {
-    static bool ensureRegistered() { return detail::packetHandlerRegistration<Derived, PacketType>; }
+  private meta::StaticRegistrationAnchor<detail::packetHandlerRegistration<Derived, PacketType, Side>> {
+    static bool ensureRegistered() { return detail::packetHandlerRegistration<Derived, PacketType, Side>; }
 
     inline static bool sRegistered = ensureRegistered();
 
 public:
-    void handle(NetworkIdentifier const& netId, NetEventCallback& callback, Packet const& packet) const final {
-        static_cast<Derived const*>(this)->handlePacket(netId, callback, static_cast<PacketType const&>(packet));
+    void handle(
+        NetworkIdentifier const& netId,
+        NetEventCallback&        callback,
+        PacketSide               side,
+        Packet const&            packet
+    ) const final {
+        static_cast<Derived const*>(this)->handlePacket(netId, callback, side, static_cast<PacketType const&>(packet));
     }
 };
 

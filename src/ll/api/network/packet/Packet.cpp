@@ -8,8 +8,9 @@
 
 #include "ll/api/service/Bedrock.h"
 
-#include "ll/api/network/packet/runtime/RuntimePacket.h"
 #include "ll/api/utils/HashUtils.h"
+#include "ll/core/network/PacketPeers.h"
+#include "ll/core/network/RuntimePacket.h"
 
 namespace ll::network {
 
@@ -40,5 +41,13 @@ void Packet::sendToClients(NetworkIdentifier const& exceptId, SubClientId except
 }
 
 void Packet::sendToServer() const { RuntimePacket{*this}.sendToServer(); }
+
+bool Packet::canSendTo(Player const& player) const { return canSendTo(player.getNetworkIdentifier()); }
+
+bool Packet::canSendTo(NetworkIdentifier const& identifier) const {
+    return PacketPeers::getInstance().clientHandles(identifier, getRuntimeId());
+}
+
+bool Packet::canSendToServer() const { return PacketPeers::getInstance().serverHandles(getRuntimeId()); }
 
 } // namespace ll::network
