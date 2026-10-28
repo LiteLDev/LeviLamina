@@ -1052,7 +1052,6 @@ struct ll::reflection::Serializer<SerializedSkinImpl> {
 
         auto result = J::object();
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mId>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mPlayFabId>(value, result, keyFormatter));
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mFullId>(value, result, keyFormatter));
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mResourcePatch>(value, result, keyFormatter));
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mDefaultGeometryName>(value, result, keyFormatter));
@@ -1083,7 +1082,6 @@ struct ll::reflection::Serializer<SerializedSkinImpl> {
 
         SerializedSkinImpl value{};
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mId>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mPlayFabId>(value, j, keyFormatter));
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mFullId>(value, j, keyFormatter));
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mResourcePatch>(value, j, keyFormatter));
         LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mDefaultGeometryName>(value, j, keyFormatter));
@@ -1633,7 +1631,6 @@ TEST(ReflectionTest, DurationSpecializationSerializesTheUnderlyingCount) {
 TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields) {
     SerializedSkinImpl value;
     value.mId                  = std::string{"skin-id"};
-    value.mPlayFabId           = std::string{"playfab-id"};
     value.mFullId              = std::string{"full-id"};
     value.mResourcePatch       = std::string{"resource-patch"};
     value.mDefaultGeometryName = std::string{"geometry.default"};
@@ -1728,7 +1725,6 @@ TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields)
     auto               result = ll::reflection::deserialize(parsed, *json, camelToSnakeWithoutM);
     ASSERT_TRUE(result.has_value()) << result.error().message();
     EXPECT_EQ(parsed.mId.get(), "skin-id");
-    EXPECT_EQ(parsed.mPlayFabId.get(), "playfab-id");
     EXPECT_EQ(parsed.mFullId.get(), "full-id");
     EXPECT_EQ(parsed.mResourcePatch.get(), "resource-patch");
     EXPECT_EQ(parsed.mDefaultGeometryName.get(), "geometry.default");
