@@ -37,11 +37,21 @@ struct Mod::Impl {
     ~Impl() { io::LoggerRegistry::getInstance().erase(manifest.name); }
 };
 
-Mod::Mod(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
-    mImpl->manifest    = std::move(manifest);
-    mImpl->state       = State::Disabled;
-    mImpl->logger      = io::LoggerRegistry::getInstance().getOrCreate(mImpl->manifest.name);
-    mImpl->modDir      = getModsRoot() / string_utils::str2u8str(mImpl->manifest.name);
+Mod::Mod(Manifest manifest, std::filesystem::path loadDirectory) : mImpl(std::make_unique<Impl>()) {
+    mImpl->manifest = std::move(manifest);
+    mImpl->state    = State::Disabled;
+    mImpl->logger   = io::LoggerRegistry::getInstance().getOrCreate(mImpl->manifest.name);
+
+    auto modDir =
+        (loadDirectory.empty() ? getModsRoot() : loadDirectory) / string_utils::str2u8str(mImpl->manifest.name);
+    std::error_code ec;
+    if (auto c = std::filesystem::canonical(modDir, ec); ec.value() == 0) {
+        modDir = c;
+    } else {
+        modDir = modDir.lexically_normal();
+    }
+    mImpl->modDir = modDir;
+
     mImpl->dataDir     = mImpl->modDir / u8"data";
     mImpl->configDir   = mImpl->modDir / u8"config";
     mImpl->langDir     = mImpl->modDir / u8"lang";

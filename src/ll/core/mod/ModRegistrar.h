@@ -34,13 +34,20 @@ public:
 
     void disableAllMods() noexcept;
 
-    Expected<> loadMod(std::string_view name) noexcept;
+    /// Loads a mod and, when requested, all mods that require it.
+    ///
+    /// Required dependencies are loaded before the target by the registry. When
+    /// `loadDependents` is true, the required reverse-dependency closure is then
+    /// loaded in dependency order as well.
+    Expected<> loadMod(std::string_view name, bool loadDependents = false) noexcept;
 
-    Expected<> unloadMod(std::string_view name) noexcept;
+    Expected<> reloadMod(std::string_view name, bool reloadDependents = false) noexcept;
 
-    Expected<> enableMod(std::string_view name) noexcept;
+    Expected<> unloadMod(std::string_view name, bool unloadDependents = false) noexcept;
 
-    Expected<> disableMod(std::string_view name) noexcept;
+    Expected<> enableMod(std::string_view name, bool enableDependencies = false) noexcept;
+
+    Expected<> disableMod(std::string_view name, bool disableDependents = false) noexcept;
 };
 
 } // namespace ll::mod
