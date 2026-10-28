@@ -4,6 +4,9 @@
 
 class SpinLockImpl {
 public:
+    LLAPI void lock();
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64 const>          mNoThreadId;

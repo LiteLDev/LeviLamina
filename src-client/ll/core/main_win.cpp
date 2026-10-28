@@ -115,17 +115,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(code, languageSystemInitializing);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    EnableAllModsHook,
-    HookPriority::High,
-    MinecraftGame,
-    &MinecraftGame::_initFinish,
-    SerialWorkList::WorkResult,
-    ::std::shared_ptr<::MinecraftGame::InitContext>& initContext
-) {
+LL_AUTO_TYPE_INSTANCE_HOOK(EnableAllModsHook, HookPriority::High, MinecraftGame, &MinecraftGame::_InitComplete, void) {
     mod::ModRegistrar::getInstance().enableAllMods();
     setGamingStatus(GamingStatus::Running);
-    return origin(initContext);
+    origin();
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -174,7 +167,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::ResourcePackStack&                                            stack,
     ::BaseGameVersion const&                                        baseGameVersion,
     ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
-    bool                                                            includeEditorPacks
+    bool                                                            includeEditorPacks,
+    ::IEducationOptions const*                                      educationOptions
 ) {
     repo->forEachPack([&](::ResourcePack const& pack) {
         if (pack.mImpl->mPack->mManifest->mPackType == PackType::Resources) {
@@ -191,7 +185,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             }
         }
     });
-    origin(experiments, repo, stack, baseGameVersion, loadingPhase, includeEditorPacks);
+    origin(experiments, repo, stack, baseGameVersion, loadingPhase, includeEditorPacks, educationOptions);
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
