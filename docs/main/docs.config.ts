@@ -66,6 +66,24 @@ export default defineDocsConfig({
             'developer_guides/how_to_guides/build_guide.md',
           ],
         },
+        // Native mods for Minecraft on Android: loaded by LeviLauncher's Android version through the Preloader SDK
+        // (moved here from LeviLauncher's docs); titles are the pages' own.
+        {
+          text: 'Android Native Mods',
+          collapsed: true,
+          items: [
+            'developer_guides/android/index.md',
+            'developer_guides/android/api/mod.md',
+            'developer_guides/android/api/mod_menu.md',
+            'developer_guides/android/api/config.md',
+            'developer_guides/android/api/input.md',
+            'developer_guides/android/api/hook.md',
+            'developer_guides/android/api/signature.md',
+            'developer_guides/android/api/patch.md',
+            'developer_guides/android/api/memory_hook_macros.md',
+            'developer_guides/android/api/types_and_macros.md',
+          ],
+        },
         { FAQ: 'developer_guides/faq.md' },
         { Architecture: 'developer_guides/architecture.md' },
         {
@@ -112,6 +130,7 @@ export default defineDocsConfig({
       'Developer Guides': '开发者指南',
       Tutorials: '教程',
       'How-to Guides': '如何做到······',
+      'Android Native Mods': 'Android 原生模组',
       Architecture: '项目架构',
       'API Reference': 'API 参考',
       'API Guides': 'API 指南',
