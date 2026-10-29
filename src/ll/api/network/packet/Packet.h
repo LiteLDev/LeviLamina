@@ -82,6 +82,12 @@ public:
     LLNDAPI bool canSendTo(NetworkIdentifier const& identifier) const;
 
     LLNDAPI bool canSendToServer() const;
+
+    LLNDAPI static bool canSendTo(PacketRuntimeId runtimeId, Player const& player);
+
+    LLNDAPI static bool canSendTo(PacketRuntimeId runtimeId, NetworkIdentifier const& identifier);
+
+    LLNDAPI static bool canSendToServer(PacketRuntimeId runtimeId);
 };
 
 class IPacketHandler {
@@ -110,12 +116,16 @@ constexpr std::string_view getPacketId = []() -> std::string_view {
     return version == 0 ? hash : hash_utils::HashCombiner{hash}.add(version).hash();
 }
 
+template <class T>
+constexpr PacketRuntimeId getPacketRuntimeId =
+    makePacketRuntimeId(getPacketId<T>, std::remove_cvref_t<T>::PacketVersion);
+
 namespace detail {
 template <class Derived>
 inline bool packetRegistration = [] {
     PacketRegistrar::getInstance().registerPacket(
         getPacketId<Derived>,
-        makePacketRuntimeId(getPacketId<Derived>, Derived::PacketVersion),
+        getPacketRuntimeId<Derived>,
         []() -> std::unique_ptr<Packet> { return std::make_unique<Derived>(); },
         Derived::Side,
         Derived::Optional
@@ -126,12 +136,8 @@ inline bool packetRegistration = [] {
 template <class Derived, class PacketType, PacketSide Side>
 inline bool packetHandlerRegistration = [] {
     static Derived instance;
-    PacketRegistrar::getInstance().registerHandler(
-        getPacketId<PacketType>,
-        makePacketRuntimeId(getPacketId<PacketType>, PacketType::PacketVersion),
-        instance,
-        Side
-    );
+    PacketRegistrar::getInstance()
+        .registerHandler(getPacketId<PacketType>, getPacketRuntimeId<PacketType>, instance, Side);
     return true;
 }();
 } // namespace detail
@@ -145,10 +151,17 @@ protected:
 
 public:
     [[nodiscard]] ::std::string_view getName() const override { return getPacketId<Derived>; }
-    [[nodiscard]] PacketRuntimeId    getRuntimeId() const override {
-        constexpr PacketRuntimeId runtimeId = makePacketRuntimeId(getPacketId<Derived>, Derived::PacketVersion);
-        return runtimeId;
+    [[nodiscard]] PacketRuntimeId    getRuntimeId() const override { return getPacketRuntimeId<Derived>; }
+
+    [[nodiscard]] static bool canSendTo(Player const& player) {
+        return Packet::canSendTo(getPacketRuntimeId<Derived>, player);
     }
+
+    [[nodiscard]] static bool canSendTo(NetworkIdentifier const& identifier) {
+        return Packet::canSendTo(getPacketRuntimeId<Derived>, identifier);
+    }
+
+    [[nodiscard]] static bool canSendToServer() { return Packet::canSendToServer(getPacketRuntimeId<Derived>); }
 
     inline static bool sRegistered = ensureRegistered();
 };

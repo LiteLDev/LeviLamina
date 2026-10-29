@@ -138,6 +138,18 @@ if (packet.canSendToServer()) {   // client side
 
 Both stay up to date: when a mod is loaded or unloaded, peers are told about just the packets it handles.
 
+The checks are local lookups, nothing is sent. They are also static on `PacketBase`, so a packet doesn't have to be
+built just to ask, which helps when picking between versions of a packet. For packets registered at runtime, pass the
+runtime id to `Packet::canSendTo(id, player)` and `Packet::canSendToServer(id)`:
+
+```cpp
+if (SetLabelPacketV2::canSendToServer()) {
+    SetLabelPacketV2{/* ... */}.sendToServer();
+} else {
+    SetLabelPacket{/* ... */}.sendToServer();
+}
+```
+
 ### Registering at Runtime
 
 Script engines and other mods that define packets at runtime use `PacketRegistrar` directly. Pass the mod that owns
