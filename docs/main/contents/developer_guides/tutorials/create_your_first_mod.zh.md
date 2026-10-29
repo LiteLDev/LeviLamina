@@ -76,13 +76,15 @@ add_requires("levilamina 26.51.*", {configs = {target_type = get_config("target_
 
 接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[LeviMC 模组](https://levimc.org/mods/)和[LeviLauncher](https://github.com/LiteLDev/LeviLauncher)收录，并能被全世界的用户下载安装。  
 !!! tip
-    其中`label`为空的`variant`代表服务端，`label`为`client`的variant代表客户端，如果您的模组只在服务端/客户端可用，可以将无用的variant删掉。在lip中可以用以下命令来安装：
+    其中`label`为空的`variant`代表服务端，`label`为`client`的variant代表客户端，如果您的模组只在服务端/客户端可用，可以将无用的variant删掉。服主用 lip 安装服务端版本：
     ```shell
-    # 服务端
     lip install github.com/ShrBox/ExampleMod
-    # 客户端
-    lip install github.com/ShrBox/ExampleMod#client
     ```
+    lip 只管理服务端工作区；玩家通过 [LeviLauncher](https://docs.levimc.org/LeviLauncher/zh-CN/guide/mods-integrations?platform=windows) 安装客户端版本，它会为客户端实例选择客户端版本。
+
+!!! note
+    模板仍使用 `tooth.json` 描述包，lip 仍能安装它，但已将其视为旧格式。lip 当前的包格式是 `manifest.json`（format 4），可以用 `lip migrate` 转换 `tooth.json`。参见 lip 的[创建包](https://docs.levimc.org/lip/zh/guides/creating_packages.html)和[迁移包](https://docs.levimc.org/lip/zh/guides/migrating_packages.html)。
+
 - 将`tooth`字段的值改为这个模组的GitHub仓库路径（不带`https://`，例如`github.com/ShrBox/ExampleMod`），填写`info`中各个信息字段  
   `info.avatar_url`会显示在LeviMC 模组以及LeviLauncher的模组页面中，为模组挑选一个适合的图标也是展示您的模组的重要一环，这里为了方便直接使用教程编写者的GitHub头像  
 - 修改各个`variant`中的`dependencies`里的LeviLamina目标版本为模组实际使用的LeviLamina版本  
@@ -546,7 +548,7 @@ bool ExampleMod::enable() { // 会被LeviLamina启用所有模组时调用
 
 ## 运行你的模组
 
-如果你的模组正常构建完毕，你应该能看到`bin/`目录内有一个以你的模组名为名的目录。将这个目录拷贝到LeviLamina服务端目录中的`plugins/`目录或LeviLamina客户端目录中的`mods`目录中（如果没有，请创建）。  
+如果你的模组正常构建完毕，你应该能看到`bin/`目录内有一个以你的模组名为名的目录。将这个目录拷贝到LeviLamina服务端或客户端目录中的`mods/`目录中（如果没有，请创建）。在由 lip 配置的服务端中，`plugins/`是指向`mods/`的链接，两个路径都可以。  
 然后运行LeviLamina服务端（`bedrock_server_mod.exe`）或LeviLamina客户端即可。
 
 ## 发布你的模组
