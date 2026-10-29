@@ -78,14 +78,14 @@ add_requires("levilamina 26.51.*", {configs = {target_type = get_config("target_
 Next, modify the contents of `tooth.json`. `tooth.json` provides information required by lip to install mod packages. After proper configuration, your mod will be included in [LeviMC Mods](https://levimc.org/mods/) and [LeviLauncher](https://github.com/LiteLDev/LeviLauncher), allowing users worldwide to download and install it.
 
 !!! tip
-    In `tooth.json`, a `variant` with an empty `label` represents the server version, while a `variant` with `label` set to `client` represents the client version. If your mod is only available on the server or client, you can remove the unnecessary variant. In lip, you can install them using the following commands:
+    In `tooth.json`, a `variant` with an empty `label` represents the server version, while a `variant` with `label` set to `client` represents the client version. If your mod is only available on the server or client, you can remove the unnecessary variant. Server owners install the server version with lip:
     ```shell
-    # Server
     lip install github.com/ShrBox/ExampleMod
-
-    # Client
-    lip install github.com/ShrBox/ExampleMod#client
     ```
+    lip manages server workspaces only; players install the client version through [LeviLauncher](https://docs.levimc.org/LeviLauncher/guide/mods-integrations?platform=windows), which picks it for client instances.
+
+!!! note
+    The template still describes its package with `tooth.json`, which lip installs but treats as legacy. lip's current package format is `manifest.json` (format 4); `lip migrate` converts a `tooth.json`. See lip's [Creating Packages](https://docs.levimc.org/lip/guides/creating_packages.html) and [Migrating Packages](https://docs.levimc.org/lip/guides/migrating_packages.html).
 
 * Change the value of the `tooth` field to your mod's GitHub repository path without `https://` (for example `github.com/ShrBox/ExampleMod`), and fill in the information fields in `info`.
   `info.avatar_url` will be displayed on the mod pages of LeviMC Mods and LeviLauncher. Choosing a suitable icon is also an important part of presenting your mod. For convenience, this tutorial directly uses the author's GitHub avatar.
@@ -740,7 +740,7 @@ The third parameter is not used in this example.
 
 If your mod has been built successfully, you should see a directory named after your mod inside the `bin/` directory.
 
-Copy this directory to the `plugins/` directory of the LeviLamina server or the `mods` directory of the LeviLamina client.
+Copy this directory to the `mods/` directory of the LeviLamina server or client. (On a server set up by lip, `plugins/` is a link to `mods/`, so either path works.)
 
 (Create the directory manually if it does not exist.)
 

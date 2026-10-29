@@ -38,7 +38,6 @@ export default defineDocsConfig({
     {
       'User Guides': [
         'user_guides/install.md',
-        'user_guides/install_on_docker.md',
         'user_guides/install_on_client.md',
         'user_guides/troubleshooting.md',
         'common_guides/usage_guidelines.md',
@@ -104,6 +103,12 @@ export default defineDocsConfig({
     { 'Maintainer Guides': ['maintainer_guides/cpp_style_guide.md'] },
     { 'Supported Versions': 'versions.md' },
   ],
+  // The Docker install page became a section of the one server install page.
+  redirects: {
+    'user_guides/install_on_docker/': 'user_guides/install/#install-with-docker',
+    'zh/user_guides/install_on_docker/': 'zh/user_guides/install/#通过-docker-安装',
+    'zh-Hant/user_guides/install_on_docker/': 'zh-Hant/user_guides/install/#通過-docker-安裝',
+  },
   navTranslations: {
     zh: {
       Home: '主页',
