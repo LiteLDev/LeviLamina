@@ -102,8 +102,6 @@ export default defineDocsConfig({
     },
     { 'Maintainer Guides': ['maintainer_guides/cpp_style_guide.md'] },
     { 'Supported Versions': 'versions.md' },
-    { LegacyScriptEngine: 'https://docs.levimc.org/LegacyScriptEngine/' },
-    { About: 'https://levimc.org/about/' },
   ],
   navTranslations: {
     zh: {
@@ -139,7 +137,6 @@ export default defineDocsConfig({
       'Doxygen API 🔗': 'Doxygen API 🔗',
       'Maintainer Guides': '维护者指南',
       'Supported Versions': '支持的版本',
-      About: '关于我们',
     },
   },
 });
