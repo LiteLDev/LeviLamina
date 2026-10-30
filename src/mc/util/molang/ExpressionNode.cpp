@@ -6,7 +6,7 @@
 #include "mc/world/level/storage/AllExperiments.h"
 #include "mc/world/level/storage/Experiments.h"
 
-using ll::memory_literals::operator""_sym;
+using namespace ll::memory_literals;
 
 MolangScriptArg const& ExpressionNode::evalGeneric(RenderParams& renderParams) const {
     if (auto const& impl = std::get<0>(*mImpl)) return impl->evalGeneric(renderParams);
@@ -49,11 +49,11 @@ ExpressionNode::queryFunctionAccessorFromString(
         if (!queryFunction.mExperiments->empty()) {
 #ifdef LL_PLAT_C
             auto experiments =
-                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x10A4F501@@3VExperimentStorage@@A.llvm.10811897775780657989"_sym
+                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x11AC57C3@@3VExperimentStorage@@A.llvm.13271481743649403461"_sym
                     .resolve();
 #else
             auto experiments =
-                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x42C71F9@@3VExperimentStorage@@A.llvm.1039915497221347259"_sym
+                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x1FF8E18A@@3VExperimentStorage@@A.llvm.16085123331980427291"_sym
                     .resolve();
 #endif
 
