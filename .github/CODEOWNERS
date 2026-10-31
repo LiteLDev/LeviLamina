@@ -1,0 +1,31 @@
+# Default
+*                         @ShrBox @OEOTYAN
+
+# Build and CI
+/xmake.lua                @ShrBox @OEOTYAN
+/.github/                 @ShrBox @OEOTYAN
+/scripts/                 @ShrBox @OEOTYAN
+
+# Docs
+/docs/                    @ShrBox @OEOTYAN
+
+# Tests
+/src-test/                @ShrBox @OEOTYAN
+
+# Client
+/src-client/              @ShrBox @OEOTYAN
+
+# Loader internals
+/src/ll/core/             @ShrBox @OEOTYAN
+/src-server/ll/core/      @ShrBox @OEOTYAN
+/src-client/ll/core/      @ShrBox @OEOTYAN
+
+# Public API
+/src/ll/api/              @ShrBox @OEOTYAN
+/src-server/ll/api/       @ShrBox @OEOTYAN
+/src-client/ll/api/       @ShrBox @OEOTYAN
+
+# MC headers
+/src/mc/                  @ShrBox @OEOTYAN
+/src-server/mc/           @ShrBox @OEOTYAN
+/src-client/mc/           @ShrBox @OEOTYAN
