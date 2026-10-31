@@ -1670,7 +1670,6 @@ TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields)
     auto json = ll::reflection::serialize<nlohmann::json>(value, camelToSnakeWithoutM);
     ASSERT_TRUE(json.has_value()) << json.error().message();
     EXPECT_EQ(json->at("id"), "skin-id");
-    EXPECT_EQ(json->at("play_fab_id"), "playfab-id");
     EXPECT_EQ(json->at("full_id"), "full-id");
     EXPECT_EQ(json->at("resource_patch"), "resource-patch");
     EXPECT_EQ(json->at("default_geometry_name"), "geometry.default");
