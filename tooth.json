@@ -30,7 +30,7 @@
                         {
                             "type": "dir",
                             "src": "LeviLamina/",
-                            "dest": "plugins/LeviLamina/"
+                            "dest": "mods/LeviLamina/"
                         }
                     ]
                 }

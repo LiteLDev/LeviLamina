@@ -246,7 +246,6 @@ Implemented via service system:
 
 ### Allocation Strategy
 
-- **mimalloc** — Default allocator for performance
 - **Smart pointers** — `std::shared_ptr`, `std::unique_ptr` for ownership
 - **optional_ref** — Non-owning references to Bedrock objects
 
