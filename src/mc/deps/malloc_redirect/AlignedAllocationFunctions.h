@@ -8,17 +8,11 @@ struct AlignedAllocationFunctions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka0cbee;
-    ::ll::UntypedStorage<8, 8> mUnkc1d834;
-    ::ll::UntypedStorage<8, 8> mUnk68d8c0;
-    ::ll::UntypedStorage<8, 8> mUnkaac40b;
+    ::ll::TypedStorage<8, 8, void* (*)(uint64, uint64)>        allocate;
+    ::ll::TypedStorage<8, 8, void (*)(void*)>                  deallocate;
+    ::ll::TypedStorage<8, 8, void* (*)(void*, uint64, uint64)> reallocate;
+    ::ll::TypedStorage<8, 8, uint64 (*)(void*, uint64)>        getSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AlignedAllocationFunctions& operator=(AlignedAllocationFunctions const&);
-    AlignedAllocationFunctions(AlignedAllocationFunctions const&);
-    AlignedAllocationFunctions();
 };
 
 } // namespace Bedrock::MallocRedirect
