@@ -5,9 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/http/DispatcherProcess.h"
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class LibHttpClientInstance; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
@@ -20,16 +22,11 @@ class LibHttpClientImpl : public ::Bedrock::Http::DispatcherProcess {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkcb3229;
-    ::ll::UntypedStorage<8, 64>  mUnk419653;
-    ::ll::UntypedStorage<8, 80>  mUnk807d26;
-    ::ll::UntypedStorage<8, 336> mUnk2fe4b9;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance>> mHttpLibrary;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::Bedrock::Http::Request>>    mRequestCache;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                              mRequestCacheMutex;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                              mTaskGroup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LibHttpClientImpl& operator=(LibHttpClientImpl const&);
-    LibHttpClientImpl(LibHttpClientImpl const&);
 
 public:
     // virtual functions
