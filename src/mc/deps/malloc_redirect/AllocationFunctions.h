@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/malloc_redirect/AlignedAllocationFunctions.h"
+#include "mc/deps/malloc_redirect/RegularAllocationFunctions.h"
+
 namespace Bedrock::MallocRedirect {
 
 struct AllocationFunctions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk76e4cb;
-    ::ll::UntypedStorage<8, 32> mUnka2b303;
+    ::ll::TypedStorage<8, 32, ::Bedrock::MallocRedirect::RegularAllocationFunctions> regular;
+    ::ll::TypedStorage<8, 32, ::Bedrock::MallocRedirect::AlignedAllocationFunctions> aligned;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AllocationFunctions& operator=(AllocationFunctions const&);
-    AllocationFunctions(AllocationFunctions const&);
-    AllocationFunctions();
 };
 
 } // namespace Bedrock::MallocRedirect

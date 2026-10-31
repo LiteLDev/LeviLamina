@@ -9,9 +9,9 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::std::add_lvalue_reference_t<void (*)()> mDisableForCurrentThread();
+    MCAPI static ::std::add_lvalue_reference_t<void (*)()> mDisableForCurrentThread();
 
-    MCNAPI static ::std::add_lvalue_reference_t<void (*)()> mEnableForCurrentThread();
+    MCAPI static ::std::add_lvalue_reference_t<void (*)()> mEnableForCurrentThread();
 #endif
     // NOLINTEND
 };

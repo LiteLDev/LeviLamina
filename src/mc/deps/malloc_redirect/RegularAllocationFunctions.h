@@ -8,17 +8,11 @@ struct RegularAllocationFunctions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk145ff8;
-    ::ll::UntypedStorage<8, 8> mUnkbadf37;
-    ::ll::UntypedStorage<8, 8> mUnk20ee17;
-    ::ll::UntypedStorage<8, 8> mUnk1c209c;
+    ::ll::TypedStorage<8, 8, void* (*)(uint64)>        allocate;
+    ::ll::TypedStorage<8, 8, void (*)(void*)>          deallocate;
+    ::ll::TypedStorage<8, 8, void* (*)(void*, uint64)> reallocate;
+    ::ll::TypedStorage<8, 8, uint64 (*)(void*)>        getSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RegularAllocationFunctions& operator=(RegularAllocationFunctions const&);
-    RegularAllocationFunctions(RegularAllocationFunctions const&);
-    RegularAllocationFunctions();
 };
 
 } // namespace Bedrock::MallocRedirect
