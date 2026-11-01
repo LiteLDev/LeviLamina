@@ -36,20 +36,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateLayoutSize();
+    MCNAPI void _updateLayoutSize();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getUIMaterialName(::UIMaterialType type);
+    MCNAPI static ::HashedString const& getUIMaterialName(::UIMaterialType type);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $updateUI(::UIMeasureStrategy const& context);
+    MCNAPI void $updateUI(::UIMeasureStrategy const& context);
 
-    MCFOLD bool $isRenderableComponent() const;
+    MCNAPI bool $isRenderableComponent() const;
     // NOLINTEND
 };

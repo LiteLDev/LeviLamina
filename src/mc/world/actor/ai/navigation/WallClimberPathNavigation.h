@@ -43,21 +43,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isInsideBorderBlock(::AABB const& aabb, ::BlockSource const& region, float grow) const;
+    MCNAPI bool _isInsideBorderBlock(::AABB const& aabb, ::BlockSource const& region, float grow) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
+    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
-    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
+    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
+    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
 
-    MCAPI bool $canUpdatePath(::Mob const& mob) const;
+    MCNAPI bool $canUpdatePath(::Mob const& mob) const;
 
 
     // NOLINTEND

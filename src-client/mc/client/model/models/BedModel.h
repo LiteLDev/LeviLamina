@@ -40,25 +40,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BedModel(::GeometryPtr source);
+    MCNAPI explicit BedModel(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    MCNAPI void* $ctor(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:

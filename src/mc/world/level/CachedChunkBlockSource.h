@@ -36,10 +36,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ushort _updateCacheAndGetIndex(::BlockPos const& position);
+    MCNAPI ushort _updateCacheAndGetIndex(::BlockPos const& position);
 
-    MCAPI ::Block const& getBlock(::BlockPos const& position);
+    MCNAPI ::Block const& getBlock(::BlockPos const& position);
 
-    MCAPI ::Material const& getMaterial(::BlockPos const& pos);
+    MCNAPI ::Material const& getMaterial(::BlockPos const& pos);
     // NOLINTEND
 };

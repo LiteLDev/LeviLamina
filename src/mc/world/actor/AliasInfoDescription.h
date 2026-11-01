@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~AliasInfoDescription();
+    MCNAPI ~AliasInfoDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

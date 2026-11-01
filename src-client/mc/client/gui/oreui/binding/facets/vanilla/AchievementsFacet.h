@@ -70,32 +70,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AchievementsFacet(
+    MCNAPI AchievementsFacet(
         ::std::function<::std::shared_ptr<::Social::User>()>              userProvider,
         ::persona::AchievementOfferCollectionManager&                     achievementOfferCollectionManager,
         ::gsl::not_null<::Option*>                                        manualTrackingOption,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
 
-    MCAPI void _refreshPersona(::OreUI::FacetAchievementData& facetAchievement) const;
+    MCNAPI void _refreshPersona(::OreUI::FacetAchievementData& facetAchievement) const;
 
-    MCFOLD ::OreUI::FacetPlayerAchievementData const& getFacetPlayerAchievementData() const;
+    MCNAPI ::OreUI::FacetPlayerAchievementData const& getFacetPlayerAchievementData() const;
 
-    MCFOLD ::OreUI::AchievementsFacet::AchievementFacetStatus getStatus() const;
+    MCNAPI ::OreUI::AchievementsFacet::AchievementFacetStatus getStatus() const;
 
-    MCAPI void setTrackedStatus(::std::string const& achievementId, bool tracked);
+    MCNAPI void setTrackedStatus(::std::string const& achievementId, bool tracked);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::std::shared_ptr<::Social::User>()>              userProvider,
         ::persona::AchievementOfferCollectionManager&                     achievementOfferCollectionManager,
         ::gsl::not_null<::Option*>                                        manualTrackingOption,
@@ -106,7 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

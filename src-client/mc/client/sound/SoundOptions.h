@@ -42,22 +42,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SoundOptions(::Bedrock::NonOwnerPointer<::SoundPlayerInterface> soundEngine);
+    MCNAPI explicit SoundOptions(::Bedrock::NonOwnerPointer<::SoundPlayerInterface> soundEngine);
 
-    MCAPI void volumeUpdated(::std::string const& sliderName, bool isMainMenu);
+    MCNAPI void volumeUpdated(::std::string const& sliderName, bool isMainMenu);
 
-    MCAPI ~SoundOptions();
+    MCNAPI ~SoundOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::SoundPlayerInterface> soundEngine);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::SoundPlayerInterface> soundEngine);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

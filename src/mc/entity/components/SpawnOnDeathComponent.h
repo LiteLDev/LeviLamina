@@ -27,22 +27,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnOnDeathComponent(::SpawnOnDeathComponent const&);
+    MCNAPI SpawnOnDeathComponent(::SpawnOnDeathComponent const&);
 
-    MCAPI ::SpawnOnDeathComponent& operator=(::SpawnOnDeathComponent&&);
+    MCNAPI ::SpawnOnDeathComponent& operator=(::SpawnOnDeathComponent&&);
 
-    MCAPI ~SpawnOnDeathComponent();
+    MCNAPI ~SpawnOnDeathComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SpawnOnDeathComponent const&);
+    MCNAPI void* $ctor(::SpawnOnDeathComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -65,26 +65,26 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit MolangClientTextureSet(::HashedString const& name);
+    MCNAPI explicit MolangClientTextureSet(::HashedString const& name);
 
     MCAPI MolangClientTextureSet(::MolangClientTextureSet const& rhs);
 
-    MCAPI MolangClientTextureSet(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
+    MCNAPI MolangClientTextureSet(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
 
-    MCAPI MolangClientTextureSet(
+    MCNAPI MolangClientTextureSet(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr
     );
 
-    MCAPI MolangClientTextureSet(
+    MCNAPI MolangClientTextureSet(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
         ::mce::TexturePtr     normalTexturePtr
     );
 
-    MCAPI MolangClientTextureSet(
+    MCNAPI MolangClientTextureSet(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
@@ -93,7 +93,7 @@ public:
         ::NormalTextureMode   normalTextureMode
     );
 
-    MCAPI MolangClientTextureSet(
+    MCNAPI MolangClientTextureSet(
         ::HashedString const&                     name,
         ::mce::TexturePtr                         colorTexturePtr,
         ::mce::TexturePtr                         mersTexturePtr,
@@ -111,22 +111,22 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::HashedString const& name);
+    MCNAPI void* $ctor(::HashedString const& name);
 
     MCAPI void* $ctor(::MolangClientTextureSet const& rhs);
 
-    MCAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
+    MCNAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
 
-    MCAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr, ::mce::TexturePtr mersTexturePtr);
+    MCNAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr, ::mce::TexturePtr mersTexturePtr);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
         ::mce::TexturePtr     normalTexturePtr
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
@@ -135,7 +135,7 @@ public:
         ::NormalTextureMode   normalTextureMode
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                     name,
         ::mce::TexturePtr                         colorTexturePtr,
         ::mce::TexturePtr                         mersTexturePtr,

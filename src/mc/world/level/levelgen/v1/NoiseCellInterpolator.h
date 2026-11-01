@@ -29,6 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx);
+    MCNAPI void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx);
     // NOLINTEND
 };

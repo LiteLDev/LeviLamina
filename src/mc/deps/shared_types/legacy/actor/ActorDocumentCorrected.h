@@ -32,36 +32,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocumentCorrected(::SharedTypes::Legacy::ActorDocumentCorrected const&);
+    MCNAPI ActorDocumentCorrected(::SharedTypes::Legacy::ActorDocumentCorrected const&);
 
-    MCFOLD ::SharedTypes::Legacy::ActorDocumentCorrected&
+    MCNAPI ::SharedTypes::Legacy::ActorDocumentCorrected&
     operator=(::SharedTypes::Legacy::ActorDocumentCorrected const&);
 
-    MCAPI ~ActorDocumentCorrected();
+    MCNAPI ~ActorDocumentCorrected();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Legacy::ActorDocumentCorrected const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::ActorDocumentCorrected const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

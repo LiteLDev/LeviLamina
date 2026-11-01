@@ -12,9 +12,9 @@ struct MusicDiscPlaybackInfo;
 namespace MusicDiscPlayback {
 // functions
 // NOLINTBEGIN
-MCAPI bool canInsert(::ItemStackBase const& stack);
+MCNAPI bool canInsert(::ItemStackBase const& stack);
 
-MCAPI ::std::optional<::MusicDiscPlaybackInfo> resolve(::ItemStackBase const& stack, ::Level& level);
+MCNAPI ::std::optional<::MusicDiscPlaybackInfo> resolve(::ItemStackBase const& stack, ::Level& level);
 // NOLINTEND
 
 } // namespace MusicDiscPlayback

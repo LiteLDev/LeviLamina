@@ -5,67 +5,67 @@
 namespace mce::Math {
 // functions
 // NOLINTBEGIN
-MCAPI float clampRotate(float current, float target, float maxDelta);
+MCNAPI float clampRotate(float current, float target, float maxDelta);
 
-MCAPI float easeInBack(float from, float to, float alpha);
+MCNAPI float easeInBack(float from, float to, float alpha);
 
-MCAPI float easeInBounce(float from, float to, float alpha);
+MCNAPI float easeInBounce(float from, float to, float alpha);
 
-MCAPI float easeInCirc(float from, float to, float alpha);
+MCNAPI float easeInCirc(float from, float to, float alpha);
 
-MCAPI float easeInCubic(float from, float to, float alpha);
+MCNAPI float easeInCubic(float from, float to, float alpha);
 
-MCAPI float easeInElastic(float from, float to, float alpha);
+MCNAPI float easeInElastic(float from, float to, float alpha);
 
-MCAPI float easeInExpo(float from, float to, float alpha);
+MCNAPI float easeInExpo(float from, float to, float alpha);
 
-MCAPI float easeInOutBack(float from, float to, float alpha);
+MCNAPI float easeInOutBack(float from, float to, float alpha);
 
-MCAPI float easeInOutBounce(float from, float to, float alpha);
+MCNAPI float easeInOutBounce(float from, float to, float alpha);
 
-MCAPI float easeInOutCirc(float from, float to, float alpha);
+MCNAPI float easeInOutCirc(float from, float to, float alpha);
 
-MCAPI float easeInOutCubic(float from, float to, float alpha);
+MCNAPI float easeInOutCubic(float from, float to, float alpha);
 
-MCAPI float easeInOutElastic(float from, float to, float alpha);
+MCNAPI float easeInOutElastic(float from, float to, float alpha);
 
-MCAPI float easeInOutExpo(float from, float to, float alpha);
+MCNAPI float easeInOutExpo(float from, float to, float alpha);
 
-MCAPI float easeInOutQuad(float from, float to, float alpha);
+MCNAPI float easeInOutQuad(float from, float to, float alpha);
 
-MCAPI float easeInOutQuart(float from, float to, float alpha);
+MCNAPI float easeInOutQuart(float from, float to, float alpha);
 
-MCAPI float easeInOutQuint(float from, float to, float alpha);
+MCNAPI float easeInOutQuint(float from, float to, float alpha);
 
-MCAPI float easeInOutSine(float from, float to, float alpha);
+MCNAPI float easeInOutSine(float from, float to, float alpha);
 
-MCAPI float easeInQuad(float from, float to, float alpha);
+MCNAPI float easeInQuad(float from, float to, float alpha);
 
-MCAPI float easeInQuart(float from, float to, float alpha);
+MCNAPI float easeInQuart(float from, float to, float alpha);
 
-MCAPI float easeInQuint(float from, float to, float alpha);
+MCNAPI float easeInQuint(float from, float to, float alpha);
 
-MCAPI float easeInSine(float from, float to, float alpha);
+MCNAPI float easeInSine(float from, float to, float alpha);
 
-MCAPI float easeOutBack(float from, float to, float alpha);
+MCNAPI float easeOutBack(float from, float to, float alpha);
 
-MCAPI float easeOutBounce(float from, float to, float alpha);
+MCNAPI float easeOutBounce(float from, float to, float alpha);
 
-MCAPI float easeOutCirc(float from, float to, float alpha);
+MCNAPI float easeOutCirc(float from, float to, float alpha);
 
-MCAPI float easeOutCubic(float from, float to, float alpha);
+MCNAPI float easeOutCubic(float from, float to, float alpha);
 
-MCAPI float easeOutElastic(float from, float to, float alpha);
+MCNAPI float easeOutElastic(float from, float to, float alpha);
 
-MCAPI float easeOutExpo(float from, float to, float alpha);
+MCNAPI float easeOutExpo(float from, float to, float alpha);
 
-MCAPI float easeOutQuad(float from, float to, float alpha);
+MCNAPI float easeOutQuad(float from, float to, float alpha);
 
-MCAPI float easeOutQuart(float from, float to, float alpha);
+MCNAPI float easeOutQuart(float from, float to, float alpha);
 
-MCAPI float easeOutQuint(float from, float to, float alpha);
+MCNAPI float easeOutQuint(float from, float to, float alpha);
 
-MCAPI float easeOutSine(float from, float to, float alpha);
+MCNAPI float easeOutSine(float from, float to, float alpha);
 // NOLINTEND
 
 } // namespace mce::Math

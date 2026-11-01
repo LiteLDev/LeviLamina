@@ -54,16 +54,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _pushLayer(::FogManager::LayerType type, ::std::vector<::WeakRef<::FogDefinition const>> definitions);
+    MCNAPI void _pushLayer(::FogManager::LayerType type, ::std::vector<::WeakRef<::FogDefinition const>> definitions);
 
-    MCAPI void pushFogDefinitionAverageLayer(
+    MCNAPI void pushFogDefinitionAverageLayer(
         ::FogManager::LayerType                         type,
         ::std::vector<::WeakRef<::FogDefinition const>> definitions
     );
 
-    MCAPI void pushFogDefinitionLayer(::FogManager::LayerType type, ::WeakRef<::FogDefinition const> const& definition);
+    MCNAPI void
+    pushFogDefinitionLayer(::FogManager::LayerType type, ::WeakRef<::FogDefinition const> const& definition);
 
-    MCAPI void updateServerDirectedLayers(
+    MCNAPI void updateServerDirectedLayers(
         ::std::vector<::std::string> const&                          fogStack,
         ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry const> fogRegistry
     );

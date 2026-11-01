@@ -33,17 +33,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameVersionObject(::std::string name, ::OreUI::Detail::IPropertyObject* parent);
+    MCNAPI GameVersionObject(::std::string name, ::OreUI::Detail::IPropertyObject* parent);
 
-    MCAPI void set(::GameVersion const& version);
+    MCNAPI void set(::GameVersion const& version);
 
-    MCAPI void set(::BaseGameVersion const& version);
+    MCNAPI void set(::BaseGameVersion const& version);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name, ::OreUI::Detail::IPropertyObject* parent);
+    MCNAPI void* $ctor(::std::string name, ::OreUI::Detail::IPropertyObject* parent);
     // NOLINTEND
 
 public:

@@ -49,19 +49,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Blaze(
+    MCNAPI Blaze(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void preTravel();
+    MCNAPI void preTravel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -71,17 +71,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCAPI bool $isOnFire() const;
+    MCNAPI bool $isOnFire() const;
 
-    MCFOLD bool $isDarkEnoughToSpawn() const;
+    MCNAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
 
     // NOLINTEND
@@ -89,6 +89,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

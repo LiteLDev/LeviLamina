@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OreUI::RoutePrerequisiteState
+    MCNAPI ::OreUI::RoutePrerequisiteState
     $handleRoutePrerequisites(::OreUI::RoutePrerequisite prerequisite, ::std::string const& newRoute);
     // NOLINTEND
 

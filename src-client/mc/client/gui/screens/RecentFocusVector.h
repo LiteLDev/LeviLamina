@@ -19,21 +19,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UIControl>
+    MCNAPI ::std::shared_ptr<::UIControl>
     _getValidControl(int startIndex, int endIndex, ::std::shared_ptr<::UIControl> lastFocusedControl);
 
-    MCAPI bool _isCurrentIndexControl(::std::weak_ptr<::UIControl> control) const;
+    MCNAPI bool _isCurrentIndexControl(::std::weak_ptr<::UIControl> control) const;
 
-    MCAPI void addRecentFocusControl(::std::weak_ptr<::UIControl> control);
+    MCNAPI void addRecentFocusControl(::std::weak_ptr<::UIControl> control);
 
-    MCAPI ::std::shared_ptr<::UIControl> getLastGoodFocusedControl(::std::shared_ptr<::UIControl> lastFocusedControl);
+    MCNAPI ::std::shared_ptr<::UIControl> getLastGoodFocusedControl(::std::shared_ptr<::UIControl> lastFocusedControl);
 
-    MCAPI ~RecentFocusVector();
+    MCNAPI ~RecentFocusVector();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

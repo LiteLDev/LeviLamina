@@ -132,7 +132,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExternalContentManager(
+    MCNAPI ExternalContentManager(
         ::Bedrock::NotNullNonOwnerPtr<::LevelLoader> const&               levelLoader,
         ::IResourcePackRepository&                                        packRepository,
         ::ResourcePackManager&                                            packManager,
@@ -146,7 +146,7 @@ public:
         bool                                                              isEditorModeEnabled
     );
 
-    MCAPI void _importMCWorld(
+    MCNAPI void _importMCWorld(
         ::std::shared_ptr<::ImportContext> context,
         ::Core::Path const&                mcWorldPath,
         bool                               fromTemp,
@@ -154,13 +154,13 @@ public:
         ::std::string const&               levelId
     );
 
-    MCAPI void _packImportCompleted();
+    MCNAPI void _packImportCompleted();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::LevelLoader> const&               levelLoader,
         ::IResourcePackRepository&                                        packRepository,
         ::ResourcePackManager&                                            packManager,
@@ -178,7 +178,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $importContent(
+    MCNAPI void $importContent(
         ::std::shared_ptr<::ImportContext>       context,
         ::Core::PathBuffer<::std::string> const& mcContentPath,
         bool                                     fromTemp,

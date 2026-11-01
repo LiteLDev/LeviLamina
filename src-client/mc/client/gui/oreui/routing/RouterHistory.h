@@ -38,18 +38,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getAction() const;
+    MCNAPI ::std::string const& getAction() const;
 
-    MCAPI void goBack();
+    MCNAPI void goBack();
 
-    MCAPI void push(
+    MCNAPI void push(
         ::std::weak_ptr<::AbstractScene> const& scene,
         ::std::string const&                    url,
         ::OreUI::RouteMode                      mode,
         ::OreUI::RouteType                      routeType
     );
 
-    MCAPI void replace(
+    MCNAPI void replace(
         ::std::weak_ptr<::AbstractScene> const& scene,
         ::std::string const&                    url,
         ::OreUI::RouteMode                      mode,
@@ -60,13 +60,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_POP();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_POP();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_PUSH();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_PUSH();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_REPLACE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_REPLACE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_UNKNOWN();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ACTION_UNKNOWN();
     // NOLINTEND
 };
 

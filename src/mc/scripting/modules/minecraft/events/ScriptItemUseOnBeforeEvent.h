@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnBeforeEvent(
+    MCNAPI ScriptItemUseOnBeforeEvent(
         ::ItemUseOnEvent const&               itemEvent,
         ::Player const&                       player,
         ::Scripting::WeakLifetimeScope const& scope
@@ -39,15 +39,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ItemUseOnEvent const& itemEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

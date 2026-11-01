@@ -97,7 +97,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnderDragon(
+    MCNAPI EnderDragon(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -105,32 +105,32 @@ public:
 
     MCAPI bool _checkWalls(::AABB bb);
 
-    MCAPI ::ActorHurtResult _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
+    MCNAPI ::ActorHurtResult _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
 
-    MCAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+    MCNAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
-    MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
+    MCNAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
-    MCAPI ::std::unique_ptr<::Path>
+    MCNAPI ::std::unique_ptr<::Path>
     _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType const completionType);
 
-    MCAPI int findClosestNode();
+    MCNAPI int findClosestNode();
 
-    MCAPI ::std::unique_ptr<::Path> findPath(int startIndex, int endIndex, ::PathfinderNode* finalNode);
+    MCNAPI ::std::unique_ptr<::Path> findPath(int startIndex, int endIndex, ::PathfinderNode* finalNode);
 
-    MCAPI ::std::vector<float> const getLatencyPos(int step, float a) const;
+    MCNAPI ::std::vector<float> const getLatencyPos(int step, float a) const;
 
-    MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
+    MCNAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
 
-    MCAPI void postAiStep();
+    MCNAPI void postAiStep();
 
-    MCAPI void setDragonKilledCallback(::std::function<void(::EnderDragon&)> onKilled);
+    MCNAPI void setDragonKilledCallback(::std::function<void(::EnderDragon&)> onKilled);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -140,29 +140,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI void $setSitting(bool value);
+    MCNAPI void $setSitting(bool value);
 
-    MCFOLD bool $canBeAffected(uint id) const;
+    MCNAPI bool $canBeAffected(uint id) const;
 
-    MCAPI bool $isImmobile() const;
+    MCNAPI bool $isImmobile() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
-    MCAPI ::Vec3 $getHeadLookVector(float a) const;
+    MCNAPI ::Vec3 $getHeadLookVector(float a) const;
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCFOLD bool $canBePulledIntoVehicle() const;
+    MCNAPI bool $canBePulledIntoVehicle() const;
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 

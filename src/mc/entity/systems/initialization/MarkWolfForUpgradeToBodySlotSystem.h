@@ -15,7 +15,7 @@ class MarkWolfForUpgradeToBodySlotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void _markForUpgrade(
+    MCNAPI static void _markForUpgrade(
         ::StrictEntityContext&                                         strictEntityContext,
         ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent> const& modifier
     );

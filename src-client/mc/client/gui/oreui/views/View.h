@@ -170,93 +170,93 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode);
+    MCNAPI void $pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode);
 
-    MCAPI bool $hasScenes() const;
+    MCNAPI bool $hasScenes() const;
 
-    MCAPI void $removeScene(::OreUI::IScene const& scene);
+    MCNAPI void $removeScene(::OreUI::IScene const& scene);
 
-    MCAPI void $update(double time);
+    MCNAPI void $update(double time);
 
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
 
-    MCAPI void $renderOffscreen(::ScreenContext& screenContext);
+    MCNAPI void $renderOffscreen(::ScreenContext& screenContext);
 
-    MCAPI void $resize(uint width, uint height);
+    MCNAPI void $resize(uint width, uint height);
 
-    MCAPI void $reload();
+    MCNAPI void $reload();
 
-    MCAPI void $leave();
+    MCNAPI void $leave();
 
-    MCAPI void $onSuspend();
+    MCNAPI void $onSuspend();
 
-    MCAPI void $onResume();
+    MCNAPI void $onResume();
 
-    MCAPI void $onRouteChanged(
+    MCNAPI void $onRouteChanged(
         ::std::optional<::OreUI::RouterLocation> const& previousLocation,
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
 
-    MCAPI ::std::string_view $getUrl() const;
+    MCNAPI ::std::string_view $getUrl() const;
 
-    MCAPI ::OreUI::RouteMode $getRouteMode() const;
+    MCNAPI ::OreUI::RouteMode $getRouteMode() const;
 
-    MCAPI uint $getWidth() const;
+    MCNAPI uint $getWidth() const;
 
-    MCAPI uint $getHeight() const;
+    MCNAPI uint $getHeight() const;
 
-    MCAPI ::OreUI::ViewState $getState() const;
+    MCNAPI ::OreUI::ViewState $getState() const;
 
-    MCAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
+    MCNAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
 
-    MCAPI void $onKeyboardDismissed();
+    MCNAPI void $onKeyboardDismissed();
 
-    MCAPI void $setCaretLocation(int caretLocation);
+    MCNAPI void $setCaretLocation(int caretLocation);
 
-    MCAPI void $triggerEvent(::std::string const& eventName, ::std::string const& eventData);
+    MCNAPI void $triggerEvent(::std::string const& eventName, ::std::string const& eventData);
 
-    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
+    MCNAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
 
-    MCAPI void $OnLoadFailed(char const* url, char const* error);
+    MCNAPI void $OnLoadFailed(char const* url, char const* error);
 
-    MCAPI void $OnReadyForBindings();
+    MCNAPI void $OnReadyForBindings();
 
-    MCAPI void $OnBindingsReleased();
+    MCNAPI void $OnBindingsReleased();
 
-    MCAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
+    MCNAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
 
-    MCAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
+    MCNAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
 
-    MCAPI void $OnCaretRectChanged(int x, int y, uint width, uint height);
+    MCNAPI void $OnCaretRectChanged(int x, int y, uint width, uint height);
 
-    MCAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*);
+    MCNAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*);
 
-    MCFOLD ::cohtml::IClientSideSocket* $OnCreateWebSocket(
+    MCNAPI ::cohtml::IClientSideSocket* $OnCreateWebSocket(
         ::cohtml::ISocketListener* listener,
         char const*                url,
         char const**               protocols,
         uint                       protocolsCount
     );
 
-    MCAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
+    MCNAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
 
-    MCAPI void $OnAudioStreamClosed(int id);
+    MCNAPI void $OnAudioStreamClosed(int id);
 
-    MCAPI void $OnAudioStreamPlay(int id);
+    MCNAPI void $OnAudioStreamPlay(int id);
 
-    MCAPI void $OnAudioStreamPause(int id);
+    MCNAPI void $OnAudioStreamPause(int id);
 
-    MCAPI void $OnAudioDataReceived(int id, int samples, float** pcm, int channels);
+    MCNAPI void $OnAudioDataReceived(int id, int samples, float** pcm, int channels);
 
-    MCAPI void $OnAudioStreamEnded(int id);
+    MCNAPI void $OnAudioStreamEnded(int id);
 
-    MCAPI void $OnAudioStreamVolumeChanged(int id, float volume);
+    MCNAPI void $OnAudioStreamVolumeChanged(int id, float volume);
 
-    MCAPI void $OnClipboardTextSet(char const* text, uint lengthBytes);
+    MCNAPI void $OnClipboardTextSet(char const* text, uint lengthBytes);
 
-    MCAPI void $OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
+    MCNAPI void $OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
 
-    MCFOLD ::OreUI::IViewTestHelper* $getViewTestHelper();
+    MCNAPI ::OreUI::IViewTestHelper* $getViewTestHelper();
     // NOLINTEND
 };
 

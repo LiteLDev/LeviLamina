@@ -46,13 +46,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::GenerationStub>
+    MCNAPI ::std::optional<::br::worldgen::GenerationStub>
     $findValidGenerationPoint(::br::worldgen::GenerationContext& context) const;
 
 

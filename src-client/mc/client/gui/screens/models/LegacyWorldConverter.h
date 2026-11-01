@@ -45,14 +45,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void convertLegacyWorld(
+    MCNAPI void convertLegacyWorld(
         ::LegacyWorldInfo                                                                       worldInfo,
         ::std::string const&                                                                    newWorldDir,
         ::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)> callback
     );
 
-    MCAPI ::Core::PathBuffer<::std::string> createUniquePathForWorld() const;
+    MCNAPI ::Core::PathBuffer<::std::string> createUniquePathForWorld() const;
 
-    MCAPI void handleLegacyWorldConversionComplete(::ImportResult const& result);
+    MCNAPI void handleLegacyWorldConversionComplete(::ImportResult const& result);
     // NOLINTEND
 };

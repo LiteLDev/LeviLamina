@@ -49,9 +49,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setHUDOpacity(float opacity);
+    MCNAPI void $setHUDOpacity(float opacity);
 
-    MCAPI void $renderGuiItemInChunk(
+    MCNAPI void $renderGuiItemInChunk(
         ::ItemRenderChunkType                            itemRenderChunkType,
         ::ItemStack const&                               item,
         float                                            x,

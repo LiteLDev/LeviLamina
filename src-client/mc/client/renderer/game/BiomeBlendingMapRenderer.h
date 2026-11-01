@@ -63,24 +63,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeBlendingMapRenderer(
+    MCNAPI BiomeBlendingMapRenderer(
         ::SubClientId          subClientId,
         ::IClientInstance&     clientInstance,
         ::LevelRendererCamera& levelRendererCamera
     );
 
-    MCAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
+    MCNAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
 
-    MCAPI ::BiomeBlendingSample
+    MCNAPI ::BiomeBlendingSample
     sampleAtPosition(::glm::vec3 const& samplePosition, ::std::vector<::DeferredBiomeInfo> const& biomeInfo) const;
 
-    MCAPI void updateTexture(::std::vector<::DeferredBiomeInfo> const& biomeInfo);
+    MCNAPI void updateTexture(::std::vector<::DeferredBiomeInfo> const& biomeInfo);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::SubClientId subClientId, ::IClientInstance& clientInstance, ::LevelRendererCamera& levelRendererCamera);
     // NOLINTEND
 };

@@ -88,7 +88,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit DevConsoleCommandOrigin(::Player& player);
+    MCNAPI explicit DevConsoleCommandOrigin(::Player& player);
 #endif
     // NOLINTEND
 
@@ -96,7 +96,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Player& player);
+    MCNAPI void* $ctor(::Player& player);
 #endif
     // NOLINTEND
 
@@ -104,43 +104,43 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::std::string const& $getRequestId() const;
+    MCNAPI ::std::string const& $getRequestId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI ::BlockPos $getBlockPosition() const;
+    MCNAPI ::BlockPos $getBlockPosition() const;
 
-    MCAPI ::Vec3 $getWorldPosition() const;
+    MCNAPI ::Vec3 $getWorldPosition() const;
 
-    MCFOLD ::std::optional<::Vec2> $getRotation() const;
+    MCNAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCFOLD ::Level* $getLevel() const;
+    MCNAPI ::Level* $getLevel() const;
 
-    MCAPI ::Dimension* $getDimension() const;
+    MCNAPI ::Dimension* $getDimension() const;
 
-    MCAPI ::Actor* $getEntity() const;
+    MCNAPI ::Actor* $getEntity() const;
 
-    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCFOLD bool $isSelectorExpansionAllowed() const;
+    MCNAPI bool $isSelectorExpansionAllowed() const;
 
-    MCFOLD ::NetworkIdentifier const& $getSourceId() const;
+    MCNAPI ::NetworkIdentifier const& $getSourceId() const;
 
-    MCAPI ::SubClientId $getSourceSubId() const;
+    MCNAPI ::SubClientId $getSourceSubId() const;
 
-    MCFOLD ::CommandOriginType $getOriginType() const;
+    MCNAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI ::CommandOriginData $toCommandOriginData() const;
+    MCNAPI ::CommandOriginData $toCommandOriginData() const;
 
-    MCFOLD ::CompoundTag $serialize() const;
+    MCNAPI ::CompoundTag $serialize() const;
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD bool $requiresValidLevel() const;
+    MCNAPI bool $requiresValidLevel() const;
 #endif
 
 

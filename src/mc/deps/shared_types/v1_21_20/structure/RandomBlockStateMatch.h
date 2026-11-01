@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch const&);
     // NOLINTEND
 };

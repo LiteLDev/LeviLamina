@@ -57,19 +57,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TripodCamera(
+    MCNAPI TripodCamera(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void startTakingPicture(::Player& player);
+    MCNAPI void startTakingPicture(::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -79,19 +79,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCFOLD bool $isTargetable() const;
+    MCNAPI bool $isTargetable() const;
 
-    MCFOLD bool $canExistWhenDisallowMob() const;
+    MCNAPI bool $canExistWhenDisallowMob() const;
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
+    MCNAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 

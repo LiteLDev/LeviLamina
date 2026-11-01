@@ -31,40 +31,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBiomeFilter(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
+    MCNAPI ScriptBiomeFilter(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getExcludeBiomes() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> getExcludeBiomes() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getExcludeTags() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> getExcludeTags() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getIncludeBiomes() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> getIncludeBiomes() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getIncludeTags() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> getIncludeTags() const;
 
-    MCAPI void
+    MCNAPI void
     setBiomes(::std::vector<::std::string>& biomeContainer, ::std::optional<::std::vector<::std::string>> biomes);
 
-    MCAPI void setExcludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
+    MCNAPI void setExcludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
 
-    MCAPI void setExcludeTags(::std::optional<::std::vector<::std::string>> tags);
+    MCNAPI void setExcludeTags(::std::optional<::std::vector<::std::string>> tags);
 
-    MCAPI void setIncludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
+    MCNAPI void setIncludeBiomes(::std::optional<::std::vector<::std::string>> biomes);
 
-    MCAPI void setIncludeTags(::std::optional<::std::vector<::std::string>> tags);
+    MCNAPI void setIncludeTags(::std::optional<::std::vector<::std::string>> tags);
 
-    MCAPI void setTags(::std::vector<::std::string>& tagContainer, ::std::optional<::std::vector<::std::string>> tags);
+    MCNAPI void setTags(::std::vector<::std::string>& tagContainer, ::std::optional<::std::vector<::std::string>> tags);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
     // NOLINTEND
 };
 

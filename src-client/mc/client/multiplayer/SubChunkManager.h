@@ -58,13 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void pruneSubChunkChanges(::DimensionType const playerDimension);
+    MCNAPI void pruneSubChunkChanges(::DimensionType const playerDimension);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>&
     $getOnSubChunkLoadedConnector();
     // NOLINTEND
 };

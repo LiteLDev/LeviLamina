@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
 
     // NOLINTEND

@@ -47,29 +47,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
+    MCNAPI static void _setDepenetrationOverride(::EntityContext& entity);
 
     MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
     fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
 
-    MCAPI static ::std::string const getTransactionTypeName(::ComplexInventoryTransaction::Type type);
+    MCNAPI static ::std::string const getTransactionTypeName(::ComplexInventoryTransaction::Type type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, ::std::string> const&
+    MCNAPI static ::BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, ::std::string> const&
     transactionTypeMap();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
-    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
 
     // NOLINTEND

@@ -10,11 +10,11 @@ struct TickingSystemWithInfo;
 namespace MobMovementDrag {
 // functions
 // NOLINTBEGIN
-MCAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void forWingFlapDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forWingFlapDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 // NOLINTEND
 
 } // namespace MobMovementDrag

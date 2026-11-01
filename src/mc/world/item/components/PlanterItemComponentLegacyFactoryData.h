@@ -37,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData&&);
+    MCNAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

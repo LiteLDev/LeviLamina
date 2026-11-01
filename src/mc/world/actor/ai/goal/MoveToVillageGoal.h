@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToVillageGoal(
+    MCNAPI MoveToVillageGoal(
         ::Mob&          mob,
         ::std::string   name,
         ::GoalId const& goalId,
@@ -59,13 +59,13 @@ public:
         int             searchRange
     );
 
-    MCAPI ::std::shared_ptr<::Village> _tryGetCurrentVillage();
+    MCNAPI ::std::shared_ptr<::Village> _tryGetCurrentVillage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&          mob,
         ::std::string   name,
         ::GoalId const& goalId,
@@ -79,21 +79,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $_moveToBlock();
+    MCNAPI void $_moveToBlock();
 
-    MCAPI ::BlockPos $_selectRandomPosInVillage();
+    MCNAPI ::BlockPos $_selectRandomPosInVillage();
 
 
     // NOLINTEND

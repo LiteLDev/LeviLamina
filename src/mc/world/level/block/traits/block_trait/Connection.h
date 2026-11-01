@@ -70,7 +70,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void applyCustomConnectionToBlockType(
+    MCNAPI static void applyCustomConnectionToBlockType(
         ::BlockType&              blockType,
         ::NeighborBlockDirections enabledDirections,
         ::Block const& (*updateFunction)(
@@ -82,7 +82,7 @@ public:
         int updateFlags
     );
 
-    MCAPI static ::NeighborBlockDirections getConnectedDirections(
+    MCNAPI static ::NeighborBlockDirections getConnectedDirections(
         ::IConstBlockSource const& region,
         ::Block const&             block,
         ::BlockPos const&          pos,
@@ -93,13 +93,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyToBlockType(::BlockType& blockType) const;
+    MCNAPI void $applyToBlockType(::BlockType& blockType) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& compoundTag, ::cereal::ReflectionCtx const&);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& compoundTag, ::cereal::ReflectionCtx const&);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCAPI ::std::string const& $_getName() const;
+    MCNAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

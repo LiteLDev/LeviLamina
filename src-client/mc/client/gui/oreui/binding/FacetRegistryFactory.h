@@ -47,7 +47,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FacetData(
+        MCNAPI FacetData(
             char const*                                                                         name,
             ::OreUI::FacetAvailability                                                          availability,
             ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
@@ -57,7 +57,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             char const*                                                                         name,
             ::OreUI::FacetAvailability                                                          availability,
             ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
@@ -86,23 +86,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FacetRegistryFactory(
+    MCNAPI FacetRegistryFactory(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&       appPlatform,
         ::OreUI::ScreenModelProvider::FactoryFunctions          screenModelFactoryFunctions
     );
 
-    MCAPI void _registerVanillaFacets();
+    MCNAPI void _registerVanillaFacets();
 
     MCAPI ::std::unique_ptr<::OreUI::IFacetRegistry> createFacetRegistry(::OreUI::FacetRegistryLocation location);
 
-    MCAPI ~FacetRegistryFactory();
+    MCNAPI ~FacetRegistryFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&       appPlatform,
         ::OreUI::ScreenModelProvider::FactoryFunctions          screenModelFactoryFunctions
@@ -112,7 +112,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

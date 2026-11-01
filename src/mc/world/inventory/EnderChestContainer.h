@@ -34,13 +34,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $startOpen(::Actor& actor);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCAPI void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
 
-    MCAPI bool $hasRemovedSubscribers() const;
+    MCNAPI bool $hasRemovedSubscribers() const;
 
 
     // NOLINTEND
@@ -48,6 +48,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

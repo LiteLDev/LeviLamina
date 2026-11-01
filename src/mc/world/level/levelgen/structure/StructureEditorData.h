@@ -43,53 +43,53 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI StructureEditorData();
+    MCNAPI StructureEditorData();
 #endif
 
-    MCAPI StructureEditorData(::StructureEditorData&&);
+    MCNAPI StructureEditorData(::StructureEditorData&&);
 
-    MCAPI StructureEditorData(::StructureEditorData const&);
+    MCNAPI StructureEditorData(::StructureEditorData const&);
 
-    MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::StructureEditorData& operator=(::StructureEditorData&&);
+    MCNAPI ::StructureEditorData& operator=(::StructureEditorData&&);
 
-    MCAPI bool operator==(::StructureEditorData const& rhs) const;
+    MCNAPI bool operator==(::StructureEditorData const& rhs) const;
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void setFilteredStructureName(::std::string const& filteredName);
+    MCNAPI void setFilteredStructureName(::std::string const& filteredName);
 
-    MCAPI ~StructureEditorData();
+    MCNAPI ~StructureEditorData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
+    MCNAPI static ::std::string const& DEFAULT_EXPORT_NAME();
 #endif
 
-    MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
+    MCNAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
 
-    MCAPI static ::std::string const& NAME_PREFIX();
+    MCNAPI static ::std::string const& NAME_PREFIX();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
 
-    MCAPI void* $ctor(::StructureEditorData&&);
+    MCNAPI void* $ctor(::StructureEditorData&&);
 
-    MCAPI void* $ctor(::StructureEditorData const&);
+    MCNAPI void* $ctor(::StructureEditorData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -41,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockSource const& $getBlockSource() const;
+    MCNAPI ::BlockSource const& $getBlockSource() const;
 
 
     // NOLINTEND

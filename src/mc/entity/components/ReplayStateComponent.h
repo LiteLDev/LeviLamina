@@ -31,28 +31,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AdvanceFrameResult _applyCorrection(
+    MCNAPI ::AdvanceFrameResult _applyCorrection(
         ::std::shared_ptr<::IMovementCorrection> correction,
         ::Actor&                                 actor,
         uint64                                   destinationTimestamp,
         bool                                     addInput
     ) const;
 
-    MCAPI ::ReplayCorrectionResult
+    MCNAPI ::ReplayCorrectionResult
     applyFrameCorrection(::Actor& actor, ::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
-    MCAPI void clearHistory();
+    MCNAPI void clearHistory();
 
 #ifdef LL_PLAT_C
     MCAPI ::IReplayableActorInput* getCurrentCapturedInput();
 #endif
 
-    MCAPI ~ReplayStateComponent();
+    MCNAPI ~ReplayStateComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

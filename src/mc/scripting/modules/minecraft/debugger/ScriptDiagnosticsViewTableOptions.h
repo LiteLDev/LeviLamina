@@ -29,15 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleDebugUtilities::ScriptDiagnosticsViewTableOptions const& other) const;
+    MCNAPI bool operator==(::ScriptModuleDebugUtilities::ScriptDiagnosticsViewTableOptions const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindTypeEnum();
+    MCNAPI static ::Scripting::EnumBinding bindTypeEnum();
     // NOLINTEND
 };
 

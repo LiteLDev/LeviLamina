@@ -12,14 +12,14 @@ namespace LeashableSystem {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
+MCNAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
 
-MCAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
+MCNAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
 
-MCAPI void registerClientSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerClientSystems(::EntitySystems& systemRegistry);
 #endif
 
-MCAPI void registerServerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace LeashableSystem

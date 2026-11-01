@@ -41,11 +41,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentNeighborChangedAfterEvent(
+    MCNAPI ScriptBlockCustomComponentNeighborChangedAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentNeighborChangedAfterEvent const&
     );
 
-    MCAPI ScriptBlockCustomComponentNeighborChangedAfterEvent(
+    MCNAPI ScriptBlockCustomComponentNeighborChangedAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentNeighborChangedAfterEventIntermediateStorage const& storage,
         ::Scripting::WeakLifetimeScope const&                                                                  scope
     );
@@ -54,15 +54,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentNeighborChangedAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentNeighborChangedAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentNeighborChangedAfterEventIntermediateStorage const& storage,
         ::Scripting::WeakLifetimeScope const&                                                                  scope
     );

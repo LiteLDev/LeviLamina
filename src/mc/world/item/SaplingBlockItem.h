@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
 
@@ -31,6 +31,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

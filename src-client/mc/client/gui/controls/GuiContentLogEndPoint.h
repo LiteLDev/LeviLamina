@@ -47,29 +47,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getLogMessage(::std::string& message, ::LogLevel& level);
+    MCNAPI bool getLogMessage(::std::string& message, ::LogLevel& level);
 
-    MCAPI bool pushMessagesToUI(::Bedrock::NotNullNonOwnerPtr<::GuiData> const& guiData);
+    MCNAPI bool pushMessagesToUI(::Bedrock::NotNullNonOwnerPtr<::GuiData> const& guiData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
+    MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
-    MCAPI void $setEnabled(bool newState);
+    MCNAPI void $setEnabled(bool newState);
 
-    MCFOLD bool $isEnabled() const;
+    MCNAPI bool $isEnabled() const;
 
-    MCFOLD void $flush();
+    MCNAPI void $flush();
 
-    MCFOLD bool $logOnlyOnce() const;
+    MCNAPI bool $logOnlyOnce() const;
     // NOLINTEND
 
 public:

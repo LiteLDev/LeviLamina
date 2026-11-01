@@ -85,24 +85,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>
     _getTickingArea(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const& context) const;
 
-    MCAPI bool _hasCapacity(::DimensionType const& dimensionId, ::Bounds const& bounds);
+    MCNAPI bool _hasCapacity(::DimensionType const& dimensionId, ::Bounds const& bounds);
 
-    MCAPI bool _removeTickingAreas(::std::vector<::mce::UUID> const& uuids);
+    MCNAPI bool _removeTickingAreas(::std::vector<::mce::UUID> const& uuids);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::LevelTickingAreaFinishedLoadingEvent const& event);
+    MCNAPI ::EventResult $onEvent(::LevelTickingAreaFinishedLoadingEvent const& event);
 
 
     // NOLINTEND

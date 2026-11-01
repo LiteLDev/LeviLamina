@@ -34,12 +34,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI RenderDescription(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
+    MCNAPI RenderDescription(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
 
-    MCAPI ::SharedTypes::Beta::AtomicClientEntity::RenderDescription&
+    MCNAPI ::SharedTypes::Beta::AtomicClientEntity::RenderDescription&
     operator=(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
 
-    MCAPI ~RenderDescription();
+    MCNAPI ~RenderDescription();
 #endif
     // NOLINTEND
 
@@ -47,7 +47,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
+    MCNAPI void* $ctor(::SharedTypes::Beta::AtomicClientEntity::RenderDescription&&);
 #endif
     // NOLINTEND
 
@@ -55,7 +55,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

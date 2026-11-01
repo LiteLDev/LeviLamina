@@ -38,29 +38,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LiquidBlockDynamic(
+    MCNAPI LiquidBlockDynamic(
         ::std::string const& nameId,
         int                  id,
         ::Material const&    material,
         ::LiquidBlock const& liquidBlock
     );
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string const& nameId, int id, ::Material const& material, ::LiquidBlock const& liquidBlock);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
 
     // NOLINTEND
@@ -68,6 +68,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

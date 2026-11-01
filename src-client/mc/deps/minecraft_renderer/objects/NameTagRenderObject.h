@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI NameTagRenderObject(::NameTagRenderObject const&);
 
-    MCAPI ::NameTagRenderObject& operator=(::NameTagRenderObject&&);
+    MCNAPI ::NameTagRenderObject& operator=(::NameTagRenderObject&&);
 
     MCAPI ~NameTagRenderObject();
     // NOLINTEND

@@ -34,39 +34,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsStoriesRealmDataFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    MCNAPI explicit RealmsStoriesRealmDataFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
 
-    MCAPI bool getIsFetchingRealm() const;
+    MCNAPI bool getIsFetchingRealm() const;
 
-    MCAPI bool getIsHardcoreRealm() const;
+    MCNAPI bool getIsHardcoreRealm() const;
 
-    MCAPI bool getIsRealmValid() const;
+    MCNAPI bool getIsRealmValid() const;
 
-    MCAPI ::std::string const& getOwnerXuid();
+    MCNAPI ::std::string const& getOwnerXuid();
 
-    MCAPI ::std::string const& getRealmDescription();
+    MCNAPI ::std::string const& getRealmDescription();
 
-    MCAPI ::std::string const& getRealmName();
+    MCNAPI ::std::string const& getRealmName();
 
-    MCAPI ::std::string const& getUserXuid();
+    MCNAPI ::std::string const& getUserXuid();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

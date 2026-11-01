@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
+    MCNAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
     // NOLINTEND
 };
 

@@ -11,9 +11,9 @@ namespace mce { struct VertexLayout; }
 namespace mce::MeshGenUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::mce::VertexLayout findVertexLayout(::mce::MeshData const& data, bool splitStream);
+MCNAPI ::mce::VertexLayout findVertexLayout(::mce::MeshData const& data, bool splitStream);
 
-MCAPI void generateOldStyleVertexBufferData(
+MCNAPI void generateOldStyleVertexBufferData(
     ::mce::MeshData const&                      data,
     ::mce::VertexLayout const&                  layout,
     ::std::vector<uchar>&                       dataOut,
@@ -22,7 +22,7 @@ MCAPI void generateOldStyleVertexBufferData(
     ::std::optional<::gsl::span<::glm::mat4x4>> previousBones
 );
 
-MCAPI void normalizeVerticesToOrthogonalFrame(
+MCNAPI void normalizeVerticesToOrthogonalFrame(
     ::mce::MeshData&   meshData,
     uint               startingVertexIndex,
     ::glm::vec2 const& frameMin,

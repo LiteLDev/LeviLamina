@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos const& $getSharedSpawnPosition() const;
+    MCNAPI ::BlockPos const& $getSharedSpawnPosition() const;
 
 
     // NOLINTEND

@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Interaction _growthToggle(
+    MCNAPI ::Interaction _growthToggle(
         ::Actor&                   actor,
         ::Player&                  player,
         ::AgeableDefinition const& definition,
@@ -36,10 +36,10 @@ public:
         ::HandSlot                 handSlot
     );
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::Interaction getInteraction(::Actor& actor, ::Player& player, ::HandSlot handSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& actor, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 };

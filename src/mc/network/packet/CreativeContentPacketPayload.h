@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CreativeContentPacketPayload(
+    MCNAPI explicit CreativeContentPacketPayload(
         ::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> creativeItemRegistryForWrite
     );
     // NOLINTEND
@@ -35,6 +35,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> creativeItemRegistryForWrite);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> creativeItemRegistryForWrite);
     // NOLINTEND
 };

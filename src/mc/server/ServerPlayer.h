@@ -306,7 +306,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerPlayer(
+    MCNAPI ServerPlayer(
         ::Level&                                           level,
         ::PacketSender&                                    packetSender,
         ::ServerNetworkSystem&                             network,
@@ -328,73 +328,73 @@ public:
         ::SyncedClientOptionsComponent                     clientOptions
     );
 
-    MCAPI void _logCDEvent(
+    MCNAPI void _logCDEvent(
         ::CrashDumpLogStringID option1,
         ::CrashDumpLogStringID option2,
         ::CrashDumpLogStringID option3,
         ::CrashDumpLogStringID option4
     );
 
-    MCAPI void _logPartyState() const;
+    MCNAPI void _logPartyState() const;
 
-    MCAPI void _removeNearbyEntities();
+    MCNAPI void _removeNearbyEntities();
 
     MCAPI void _setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> menu);
 
-    MCAPI void addActorToReplicationList(::gsl::not_null<::Actor*> actor, bool autonomous);
+    MCNAPI void addActorToReplicationList(::gsl::not_null<::Actor*> actor, bool autonomous);
 
-    MCAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
+    MCNAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
 
     MCAPI void disconnect();
 
     MCAPI void doDeleteContainerManager(bool forceDisconnect);
 
-    MCAPI void doInitialSpawn();
+    MCNAPI void doInitialSpawn();
 
     MCAPI ::std::string getLanguageCode() const;
 
-    MCAPI void handleActorPickRequestOnServer(::Actor& target, bool withData, bool isActorAgentAndEduMode);
+    MCNAPI void handleActorPickRequestOnServer(::Actor& target, bool withData, bool isActorAgentAndEduMode);
 
     MCAPI void handleBlockPickRequestOnServer(::BlockPos const& position, bool withData);
 
-    MCAPI void hideAllExcept(::std::optional<::std::vector<::HudElement>> const& hudElements);
+    MCNAPI void hideAllExcept(::std::optional<::std::vector<::HudElement>> const& hudElements);
 
     MCAPI void initiateContainerClose();
 
-    MCAPI bool isInPickRangeOf(::BlockPos const& pos) const;
+    MCNAPI bool isInPickRangeOf(::BlockPos const& pos) const;
 
-    MCAPI ::ContainerID openUnmanagedContainer(
+    MCNAPI ::ContainerID openUnmanagedContainer(
         ::SharedTypes::Legacy::ContainerType        containerType,
         ::std::variant<::BlockPos, ::ActorUniqueID> owner
     );
 
-    MCAPI void postReplicationTick(::Tick const& currentTick);
+    MCNAPI void postReplicationTick(::Tick const& currentTick);
 
-    MCAPI void preReplicationTick(::Tick const& currentTick);
+    MCNAPI void preReplicationTick(::Tick const& currentTick);
 
     MCAPI bool selectItem(::ItemStack const& item);
 
-    MCAPI void sendPlayerContainerClosedEvent();
+    MCNAPI void sendPlayerContainerClosedEvent();
 
-    MCAPI void sendPlayerContainerOpenedEvent(
+    MCNAPI void sendPlayerContainerOpenedEvent(
         ::SharedTypes::Legacy::ContainerType        type,
         ::std::variant<::BlockPos, ::ActorUniqueID> owner
     );
 
     MCAPI void setClientChunkRadius(uint requestedRadius, uchar clientMaxChunkRadius);
 
-    MCAPI void setHudVisibilityState(
+    MCNAPI void setHudVisibilityState(
         ::HudVisibility                                     hudVisibility,
         ::std::optional<::std::vector<::HudElement>> const& hudElements
     );
 
-    MCAPI void updatePartyState(::std::optional<::PlayerPartyInfo> partyInfo);
+    MCNAPI void updatePartyState(::std::optional<::PlayerPartyInfo> partyInfo);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Level&                                           level,
         ::PacketSender&                                    packetSender,
         ::ServerNetworkSystem&                             network,
@@ -420,61 +420,61 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
+    MCNAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void $moveView();
+    MCNAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
+    MCNAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
 
-    MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
+    MCNAPI void $frameUpdate(::FrameUpdateContextBase&);
 
-    MCAPI bool $isValidTarget(::Actor* attacker) const;
+    MCNAPI bool $isValidTarget(::Actor* attacker) const;
 
-    MCAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
+    MCNAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
-    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
+    MCNAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
 
-    MCAPI void $sendArmorDamage(::std::bitset<5> const damagedSlots);
+    MCNAPI void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 
-    MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
+    MCNAPI void $sendArmor(::std::bitset<5> const armorSlots);
 
-    MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+    MCNAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    MCAPI void $sendInventory(bool shouldSelectSlot);
+    MCNAPI void $sendInventory(bool shouldSelectSlot);
 
-    MCAPI void $sendInventoryTransaction(::InventoryTransaction const& transaction) const;
+    MCNAPI void $sendInventoryTransaction(::InventoryTransaction const& transaction) const;
 
-    MCAPI void $sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const;
+    MCNAPI void $sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const;
 
-    MCAPI void $sendNetworkPacket(::Packet& packet) const;
+    MCNAPI void $sendNetworkPacket(::Packet& packet) const;
 
-    MCAPI void $displayTextObjectMessage(
+    MCNAPI void $displayTextObjectMessage(
         ::TextObjectRoot const& textObject,
         ::std::string const&    fromXuid,
         ::std::string const&    fromPlatformId
     );
 
-    MCAPI void $displayTextObjectWhisperMessage(
+    MCNAPI void $displayTextObjectWhisperMessage(
         ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
 
-    MCAPI void $displayTextObjectWhisperMessage(
+    MCNAPI void $displayTextObjectWhisperMessage(
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     );
 
-    MCAPI void $displayWhisperMessage(
+    MCNAPI void $displayWhisperMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
         ::std::optional<::std::string> const filteredMessage,
@@ -482,27 +482,27 @@ public:
         ::std::string const&                 platformId
     );
 
-    MCAPI void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
+    MCNAPI void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
 
-    MCFOLD void $openPortfolio();
+    MCNAPI void $openPortfolio();
 
-    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+    MCNAPI void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
 
-    MCAPI void $openInventory();
+    MCNAPI void $openInventory();
 
-    MCAPI void $openBook(int, bool, int, ::BlockActor* lectern);
+    MCNAPI void $openBook(int, bool, int, ::BlockActor* lectern);
 
-    MCAPI void $openSign(::BlockPos const& position, bool isFrontSide);
+    MCNAPI void $openSign(::BlockPos const& position, bool isFrontSide);
 
-    MCAPI void $checkMovementStats(::Vec3 const& d);
+    MCNAPI void $checkMovementStats(::Vec3 const& d);
 
-    MCAPI ::HashedString $getCurrentStructureFeature() const;
+    MCNAPI ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
-    MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
+    MCNAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 
-    MCAPI void $slotChanged(
+    MCNAPI void $slotChanged(
         ::IContainerManager& menu,
         ::Container&         container,
         int                  slot,
@@ -511,65 +511,65 @@ public:
         bool                 isResultSlot
     );
 
-    MCAPI void $refreshContainer(::IContainerManager& menu);
+    MCNAPI void $refreshContainer(::IContainerManager& menu);
 
-    MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
+    MCNAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
-    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item);
+    MCNAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item);
 
-    MCAPI void $setOffhandSlot(::ItemStack const& item);
+    MCNAPI void $setOffhandSlot(::ItemStack const& item);
 
-    MCAPI void $clearVanishEnchantedItemsOnDeath();
+    MCNAPI void $clearVanishEnchantedItemsOnDeath();
 
-    MCAPI bool $canChangeDimensionsUsingPortal() const;
+    MCNAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCAPI void $changeDimension(::DimensionType toId);
+    MCNAPI void $changeDimension(::DimensionType toId);
 
-    MCAPI void $changeDimensionWithCredits(::DimensionType dimension);
+    MCNAPI void $changeDimensionWithCredits(::DimensionType dimension);
 
-    MCAPI void $setPlayerGameType(::GameType gameType);
+    MCNAPI void $setPlayerGameType(::GameType gameType);
 
-    MCAPI void $prepareRegion(::ChunkSource& mainChunkSource);
+    MCNAPI void $prepareRegion(::ChunkSource& mainChunkSource);
 
-    MCAPI bool $isActorRelevant(::Actor const& actor);
+    MCNAPI bool $isActorRelevant(::Actor const& actor);
 
-    MCAPI ::ActorUniqueID $getControllingPlayer() const;
+    MCNAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCAPI void $destroyRegion();
+    MCNAPI void $destroyRegion();
 
-    MCAPI void $onSuspension();
+    MCNAPI void $onSuspension();
 
-    MCAPI void $onLinkedSlotsChanged();
+    MCNAPI void $onLinkedSlotsChanged();
 
-    MCAPI bool $isTeacher() const;
+    MCNAPI bool $isTeacher() const;
 
-    MCAPI bool $isExternalCommunicationAllowed() const;
+    MCNAPI bool $isExternalCommunicationAllowed() const;
 
-    MCAPI bool $isLoading() const;
+    MCNAPI bool $isLoading() const;
 
-    MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $isPlayerInitialized() const;
+    MCNAPI bool $isPlayerInitialized() const;
 
-    MCAPI void $respawn();
+    MCNAPI void $respawn();
 
-    MCAPI ::PlayerEventCoordinator& $getPlayerEventCoordinator();
+    MCNAPI ::PlayerEventCoordinator& $getPlayerEventCoordinator();
 
-    MCAPI void $destroyEditorPlayer();
+    MCNAPI void $destroyEditorPlayer();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> $getEditorPlayer() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> $getEditorPlayer() const;
 
-    MCAPI uchar $getMaxChunkBuildRadius() const;
+    MCNAPI uchar $getMaxChunkBuildRadius() const;
 
-    MCAPI ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
+    MCNAPI ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
 
-    MCAPI void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate);
+    MCNAPI void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate);
 
-    MCAPI int $_getSpawnChunkLimit() const;
+    MCNAPI int $_getSpawnChunkLimit() const;
 
-    MCAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
+    MCNAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
 
-    MCAPI void $_serverInitItemStackIds();
+    MCNAPI void $_serverInitItemStackIds();
 
 
     // NOLINTEND

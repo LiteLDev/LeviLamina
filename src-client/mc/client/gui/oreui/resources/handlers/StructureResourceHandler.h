@@ -93,12 +93,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureResourceHandler(
+    MCNAPI StructureResourceHandler(
         ::ResourcePackManager const&        packManager,
         ::Gameface::TemporaryTextureHolder& textureHolder
     );
 
-    MCAPI bool _sendFetchAsync(
+    MCNAPI bool _sendFetchAsync(
         ::std::string_view                                                            id,
         ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse> const& reqResponsePair
     );
@@ -107,20 +107,20 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& textureHolder);
+    MCNAPI void* $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& textureHolder);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI void $onViewCreate(::IClientInstance& client);
+    MCNAPI void $onViewCreate(::IClientInstance& client);
 
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
     // NOLINTEND
 

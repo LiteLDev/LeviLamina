@@ -56,39 +56,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToPOIGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::POIType poiType);
+    MCNAPI MoveToPOIGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::POIType poiType);
 
-    MCAPI bool _canReachPOI(::Vec3 const& pos, float const radiusSqr, bool usingBoundingBox);
+    MCNAPI bool _canReachPOI(::Vec3 const& pos, float const radiusSqr, bool usingBoundingBox);
 
-    MCAPI void _updatePOIBooking();
+    MCNAPI void _updatePOIBooking();
 
-    MCAPI bool getPOI(::POIType type);
+    MCNAPI bool getPOI(::POIType type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::POIType poiType);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::POIType poiType);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $_moveToBlock();
+    MCNAPI void $_moveToBlock();
 
-    MCAPI ::Vec3 $_getTargetPosition() const;
+    MCNAPI ::Vec3 $_getTargetPosition() const;
 
-    MCAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
+    MCNAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
 
 
     // NOLINTEND

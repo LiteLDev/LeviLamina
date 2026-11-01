@@ -28,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeFromData(::Actor& actor, ::GameEventMovementTrackingSettings settings);
+    MCNAPI void initializeFromData(::Actor& actor, ::GameEventMovementTrackingSettings settings);
     // NOLINTEND
 };

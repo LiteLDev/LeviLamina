@@ -55,27 +55,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void sendAllDeferredEvents();
+    MCNAPI void sendAllDeferredEvents();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
+    MCNAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
     sEventExecutionOrder();
     // NOLINTEND
 

@@ -27,61 +27,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Abilities(::Abilities const& rhs);
+    MCNAPI Abilities(::Abilities const& rhs);
 
-    MCAPI explicit Abilities(bool setToDefaults);
+    MCNAPI explicit Abilities(bool setToDefaults);
 
-    MCAPI void addSaveData(::CompoundTag& parentTag) const;
+    MCNAPI void addSaveData(::CompoundTag& parentTag) const;
 
-    MCFOLD void forEachAbility(
+    MCNAPI void forEachAbility(
         ::std::function<void(::Ability&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                         requiredOptions
     );
 
-    MCAPI void forEachAbility(
+    MCNAPI void forEachAbility(
         ::std::function<void(::Ability const&, char const*)> const& callback,
         ::Ability::Options                                          requiredOptions
     ) const;
 
-    MCFOLD void forEachAbility(
+    MCNAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                               requiredOptions
     ) const;
 
-    MCAPI bool loadSaveData(::CompoundTag const& parentTag);
+    MCNAPI bool loadSaveData(::CompoundTag const& parentTag);
 
-    MCAPI void setFromPermissions(::PlayerPermissionLevel permissions);
+    MCNAPI void setFromPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::Ability const, 20> _initDefaultAbilities();
+    MCNAPI static ::std::array<::Ability const, 20> _initDefaultAbilities();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::std::string> getDiff(::Abilities const& lhs, ::Abilities const& rhs);
+    MCNAPI static ::std::optional<::std::string> getDiff(::Abilities const& lhs, ::Abilities const& rhs);
 #endif
 
-    MCAPI static ::AbilitiesIndex nameToAbilityIndex(::std::string const& name);
+    MCNAPI static ::AbilitiesIndex nameToAbilityIndex(::std::string const& name);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& DIFF_ABILITIY_AT();
+    MCNAPI static ::std::string const& DIFF_ABILITIY_AT();
 #endif
 
     MCAPI static ::Ability& INVALID_ABILITY();
 
-    MCAPI static ::std::string const& SERIALIZATION_TAG();
+    MCNAPI static ::std::string const& SERIALIZATION_TAG();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Abilities const& rhs);
+    MCNAPI void* $ctor(::Abilities const& rhs);
 
-    MCAPI void* $ctor(bool setToDefaults);
+    MCNAPI void* $ctor(bool setToDefaults);
     // NOLINTEND
 };

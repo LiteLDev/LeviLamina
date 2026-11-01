@@ -57,9 +57,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::std::vector<short>> computeHeightMap() const;
 
-    MCAPI short findHighestNonAirBlock() const;
+    MCNAPI short findHighestNonAirBlock() const;
 
-    MCAPI short
+    MCNAPI short
     getAboveTopSolidBlock(::BlockPos const& start, bool dimensionShowsSky, bool includeWater, bool includeLeaves) const;
     // NOLINTEND
 };

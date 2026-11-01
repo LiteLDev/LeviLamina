@@ -42,18 +42,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $tryToTill(
+    MCNAPI bool $tryToTill(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Actor&          entity,
@@ -61,7 +61,7 @@ public:
         ::HandSlot        handSlot
     ) const;
 
-    MCFOLD bool $canBeOriginalSurface(bool) const;
+    MCNAPI bool $canBeOriginalSurface(bool) const;
 
 
     // NOLINTEND
@@ -69,6 +69,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

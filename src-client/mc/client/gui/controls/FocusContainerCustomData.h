@@ -18,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FocusContainerCustomData(::FocusContainerCustomData const&);
+    MCNAPI FocusContainerCustomData(::FocusContainerCustomData const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::FocusContainerCustomData const&);
+    MCNAPI void* $ctor(::FocusContainerCustomData const&);
     // NOLINTEND
 };

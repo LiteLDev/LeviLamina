@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Pillager(
+    MCNAPI Pillager(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -53,11 +53,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isDarkEnoughToSpawn() const;
+    MCNAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
 
     // NOLINTEND
@@ -65,6 +65,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

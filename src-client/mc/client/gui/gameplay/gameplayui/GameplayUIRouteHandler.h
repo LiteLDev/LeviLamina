@@ -23,13 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onLeaveWorld();
+    MCNAPI void onLeaveWorld();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isManagedRoute(::std::string const& route, ::IOptionRegistry const& options);
+    MCNAPI static bool isManagedRoute(::std::string const& route, ::IOptionRegistry const& options);
     // NOLINTEND
 };
 

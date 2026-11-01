@@ -38,21 +38,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void validateValue(::entt::meta_associative_container cont, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(::entt::meta_associative_container cont, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea req) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea req) const;
 
-    MCAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
+    MCNAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
 
 
     // NOLINTEND

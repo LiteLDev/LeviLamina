@@ -36,11 +36,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
+    MCNAPI int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      actor,
         ::BlockPos    pos,
@@ -55,6 +55,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

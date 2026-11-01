@@ -64,18 +64,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClassroomSettingsScreenController(
+    MCNAPI ClassroomSettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>            model,
         ::ClassroomSettingsScreenControllerCallbacks const& screenCallbacks
     );
 
-    MCAPI void _setEduSharedResourceValue();
+    MCNAPI void _setEduSharedResourceValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>            model,
         ::ClassroomSettingsScreenControllerCallbacks const& screenCallbacks
     );
@@ -84,8 +84,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

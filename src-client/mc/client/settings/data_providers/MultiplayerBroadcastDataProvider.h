@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultiplayerBroadcastDataProvider(
+    MCNAPI MultiplayerBroadcastDataProvider(
         ::Settings::RegistryBuilder::IBuilderContext& context,
         ::Settings::MultiplayerBroadcastStateInfo     stateInfo
     );
@@ -63,24 +63,24 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Settings::RegistryBuilder::IBuilderContext& context, ::Settings::MultiplayerBroadcastStateInfo stateInfo);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+    MCNAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
 
-    MCAPI int $getValue() const;
+    MCNAPI int $getValue() const;
 
-    MCFOLD void $setValue(int);
+    MCNAPI void $setValue(int);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
 
-    MCFOLD bool $canModify() const;
+    MCNAPI bool $canModify() const;
     // NOLINTEND
 };
 

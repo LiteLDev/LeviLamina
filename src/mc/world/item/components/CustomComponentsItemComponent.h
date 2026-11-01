@@ -35,11 +35,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CustomComponentsItemComponent(
+    MCNAPI explicit CustomComponentsItemComponent(
         ::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
     );
 
-    MCAPI explicit CustomComponentsItemComponent(
+    MCNAPI explicit CustomComponentsItemComponent(
         ::entt::iterable_adaptor<
             ::cereal::internal::ComponentStorageIterator<
                 ::brstd::associative_adapter<
@@ -56,15 +56,15 @@ public:
             ::cereal::ComponentStorageSentinelType> customComponentsData
     );
 
-    MCAPI void _addComponent(::HashedString compName, ::cereal::DynamicValue data);
+    MCNAPI void _addComponent(::HashedString compName, ::cereal::DynamicValue data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::entt::iterable_adaptor<
             ::cereal::internal::ComponentStorageIterator<
                 ::brstd::associative_adapter<

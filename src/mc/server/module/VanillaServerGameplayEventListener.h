@@ -52,19 +52,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
+    MCNAPI ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
 
-    MCFOLD ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
-    MCAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
+    MCNAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
 
-    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
+    MCNAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
-    MCAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
+    MCNAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI ::EventResult
+    MCNAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
 

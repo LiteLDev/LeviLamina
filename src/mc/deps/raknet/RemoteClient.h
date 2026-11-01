@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SendOrBuffer(char const** data, uint const* lengths, int const numParameters);
+    MCNAPI void SendOrBuffer(char const** data, uint const* lengths, int const numParameters);
     // NOLINTEND
 };
 

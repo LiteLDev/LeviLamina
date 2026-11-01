@@ -34,22 +34,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void const _generateCodenames(
+    MCNAPI void const _generateCodenames(
         ::std::vector<::std::string> const& treatments,
         ::std::vector<::std::string>&       codenamesInUse,
         ::std::stringstream&                inoutStream
     );
 
-    MCAPI void generateNewCodenames(
+    MCNAPI void generateNewCodenames(
         ::std::vector<::std::string> const& realmFeatures,
         ::std::vector<::std::string> const& treatments
     );
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     registerCodenameUpdatedListener(::std::function<void(::std::string_view)> callback);
 
-    MCAPI void registerRealmsFeatureNamesListener(::RealmsAPI& realmsAPI);
+    MCNAPI void registerRealmsFeatureNamesListener(::RealmsAPI& realmsAPI);
 
-    MCAPI void registerTreatmentsListener(::std::weak_ptr<::FlightingService> flightingService);
+    MCNAPI void registerTreatmentsListener(::std::weak_ptr<::FlightingService> flightingService);
     // NOLINTEND
 };

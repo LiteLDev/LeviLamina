@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI QueueItem(::AgentComponents::Actions::QueueItem const&);
+    MCNAPI QueueItem(::AgentComponents::Actions::QueueItem const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AgentComponents::Actions::QueueItem const&);
+    MCNAPI void* $ctor(::AgentComponents::Actions::QueueItem const&);
     // NOLINTEND
 };
 

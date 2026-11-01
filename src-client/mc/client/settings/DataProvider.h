@@ -18,19 +18,19 @@ namespace Settings { class IStringDataProvider; }
 namespace Settings::DataProvider {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::std::unique_ptr<::Settings::IBooleanDataProvider>>
+MCNAPI ::std::optional<::std::unique_ptr<::Settings::IBooleanDataProvider>>
 createBooleanDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 
-MCAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<int>>>
+MCNAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<int>>>
 createFixedNumberDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 
-MCAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<float>>>
+MCNAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<float>>>
 createInputFloatDataProvider(::OptionID optionId, ::InputMode inputMode, ::IOptionRegistry& options);
 
-MCAPI ::std::optional<::std::unique_ptr<::Settings::IOptionsDataProvider>>
+MCNAPI ::std::optional<::std::unique_ptr<::Settings::IOptionsDataProvider>>
 createOptionsDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 
-MCAPI ::std::optional<::std::unique_ptr<::Settings::IStringDataProvider>>
+MCNAPI ::std::optional<::std::unique_ptr<::Settings::IStringDataProvider>>
 createStringDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 // NOLINTEND
 

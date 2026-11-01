@@ -31,13 +31,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Description();
+        MCNAPI ~Description();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -56,33 +56,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraDocument(::SharedTypes::v1_21_100::CameraDocument const&);
+    MCNAPI CameraDocument(::SharedTypes::v1_21_100::CameraDocument const&);
 
-    MCAPI ~CameraDocument();
+    MCNAPI ~CameraDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_100::CameraDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_100::CameraDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

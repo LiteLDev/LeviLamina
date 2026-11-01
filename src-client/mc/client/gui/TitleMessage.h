@@ -25,26 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearTitleMessages();
+    MCNAPI void clearTitleMessages();
 
-    MCAPI ::TitleMessage& copyTitleMessageWithSubtitle(::TitleMessage const& sourceTitle);
+    MCNAPI ::TitleMessage& copyTitleMessageWithSubtitle(::TitleMessage const& sourceTitle);
 
-    MCAPI ::TitleMessage& operator=(::TitleMessage const&);
+    MCNAPI ::TitleMessage& operator=(::TitleMessage const&);
 
-    MCAPI void resetTitle();
+    MCNAPI void resetTitle();
 
-    MCAPI void setActionBarMessage(::std::string const& message, ::std::optional<::std::string> filteredMessage);
+    MCNAPI void setActionBarMessage(::std::string const& message, ::std::optional<::std::string> filteredMessage);
 
-    MCAPI void setSubtitle(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
+    MCNAPI void setSubtitle(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
 
-    MCAPI void setTitle(::std::string const& title, ::std::optional<::std::string> filteredTitle);
+    MCNAPI void setTitle(::std::string const& title, ::std::optional<::std::string> filteredTitle);
 
-    MCAPI ~TitleMessage();
+    MCNAPI ~TitleMessage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

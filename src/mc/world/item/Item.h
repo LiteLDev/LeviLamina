@@ -455,16 +455,17 @@ public:
     // NOLINTBEGIN
     MCAPI Item(::std::string const& nameId, short id);
 
-    MCAPI bool _dispenseHoneycombItem(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos) const;
+    MCNAPI bool
+    _dispenseHoneycombItem(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos) const;
 
-    MCAPI void _helpChangeInventoryItemInPlace(
+    MCNAPI void _helpChangeInventoryItemInPlace(
         ::Actor&                actor,
         ::ItemStack&            startingItem,
         ::ItemStack&            replacementItem,
         ::ItemAcquisitionMethod acquisitionMethod
     ) const;
 
-    MCAPI ::CoordinatorResult _sendTryPlaceBlockEvent(
+    MCNAPI ::CoordinatorResult _sendTryPlaceBlockEvent(
         ::Block const&       block,
         ::BlockSource const& region,
         ::Actor const&       actor,
@@ -473,18 +474,18 @@ public:
         ::Vec3 const&        clickPos
     ) const;
 
-    MCAPI void addOnResetBAICallback(::std::function<void()> callback);
+    MCNAPI void addOnResetBAICallback(::std::function<void()> callback);
 
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
     MCAPI ::Item& addTag(::HashedString const& tag);
 
-    MCAPI void clearTags();
+    MCNAPI void clearTags();
 
-    MCAPI ::std::vector<::CommandName> getCommandNames() const;
+    MCNAPI ::std::vector<::CommandName> getCommandNames() const;
 
 #ifdef LL_PLAT_C
-    MCAPI short getDamageValue(::CompoundTag const* userData) const;
+    MCNAPI short getDamageValue(::CompoundTag const* userData) const;
 #endif
 
     MCAPI ::std::string getSerializedName() const;
@@ -495,7 +496,7 @@ public:
 
     MCAPI void setDamageValue(::ItemStackBase& stack, short newDamage) const;
 
-    MCAPI void
+    MCNAPI void
     updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
 
     MCAPI ::InteractionResult useOn(
@@ -514,19 +515,19 @@ public:
     // NOLINTBEGIN
     MCAPI static bool isElytra(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI static bool isFlyEnabled(::ItemInstance const& item);
+    MCNAPI static bool isFlyEnabled(::ItemInstance const& item);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& DATA_DRIVEN_NEXT_VERSION();
+    MCNAPI static ::SemVersionConstant const& DATA_DRIVEN_NEXT_VERSION();
 
-    MCAPI static ::SemVersionConstant const& DATA_DRIVEN_VERSION();
+    MCNAPI static ::SemVersionConstant const& DATA_DRIVEN_VERSION();
 
-    MCAPI static ::std::string const& ICON_DESCRIPTION_PREFIX();
+    MCNAPI static ::std::string const& ICON_DESCRIPTION_PREFIX();
 
-    MCAPI static ::std::string const& TAG_DAMAGE();
+    MCNAPI static ::std::string const& TAG_DAMAGE();
     // NOLINTEND
 
 public:
@@ -832,22 +833,22 @@ public:
 
     MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 
-    MCAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
+    MCNAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
 
     MCAPI bool
     $calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCAPI ::std::string $_getHoverTextDescription() const;
+    MCNAPI ::std::string $_getHoverTextDescription() const;
 
-    MCFOLD bool
+    MCNAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCFOLD bool $_shouldAutoCalculatePlacePos() const;
+    MCNAPI bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,

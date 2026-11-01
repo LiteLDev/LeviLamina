@@ -21,7 +21,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ResourcePackChunkRequestPacketPayload(::std::string const& name, int chunk);
+    MCNAPI ResourcePackChunkRequestPacketPayload(::std::string const& name, int chunk);
 #endif
     // NOLINTEND
 
@@ -29,7 +29,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::std::string const& name, int chunk);
+    MCNAPI void* $ctor(::std::string const& name, int chunk);
 #endif
     // NOLINTEND
 };

@@ -38,45 +38,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
+    MCNAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
-    MCAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
+    MCNAPI BlockDefinitionDocument(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
 
-    MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
-    MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
 
-    MCFOLD bool operator==(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&) const;
 
-    MCAPI ~BlockDefinitionDocument();
+    MCNAPI ~BlockDefinitionDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&&);
 
-    MCFOLD void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

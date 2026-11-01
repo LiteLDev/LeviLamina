@@ -22,13 +22,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkAdapter();
+    MCNAPI NetworkAdapter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

@@ -27,19 +27,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& AcceptConnectionsFromId();
+    MCNAPI static ::std::string_view const& AcceptConnectionsFromId();
 
-    MCAPI static ::std::string_view const& EnabledDirectionsId();
+    MCNAPI static ::std::string_view const& EnabledDirectionsId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
 
-    MCAPI static ::std::string_view const& VanillaConnectionsFromId();
+    MCNAPI static ::std::string_view const& VanillaConnectionsFromId();
     // NOLINTEND
 };
 

@@ -72,7 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ViewBindings(
+    MCNAPI ViewBindings(
         ::cohtml::View&                            view,
         ::OreUI::Detail::BindingRegistryFactory&   bindingRegistryFactory,
         ::std::unique_ptr<::OreUI::IFacetRegistry> facets,
@@ -84,7 +84,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cohtml::View&                            view,
         ::OreUI::Detail::BindingRegistryFactory&   bindingRegistryFactory,
         ::std::unique_ptr<::OreUI::IFacetRegistry> facets,
@@ -96,25 +96,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onReadyForBindings();
+    MCNAPI void $onReadyForBindings();
 
-    MCAPI void $onSuspend();
+    MCNAPI void $onSuspend();
 
-    MCAPI void $onBindingsReleased();
+    MCNAPI void $onBindingsReleased();
 
-    MCAPI void $update(double time);
+    MCNAPI void $update(double time);
 
-    MCFOLD ::std::vector<::std::string> const& $getUpdatedFacets() const;
+    MCNAPI ::std::vector<::std::string> const& $getUpdatedFacets() const;
 
-    MCAPI ::std::vector<::OreUI::Debug::QueryInformation> $getQueryInformation() const;
+    MCNAPI ::std::vector<::OreUI::Debug::QueryInformation> $getQueryInformation() const;
 
-    MCAPI ::std::vector<::OreUI::Detail::ICommandGroup*> $getCommands() const;
+    MCNAPI ::std::vector<::OreUI::Detail::ICommandGroup*> $getCommands() const;
     // NOLINTEND
 };
 

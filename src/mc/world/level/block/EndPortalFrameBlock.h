@@ -54,13 +54,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addAABBs(
+    MCNAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -68,7 +68,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCFOLD bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -77,15 +77,16 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
 
     // NOLINTEND
@@ -93,6 +94,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

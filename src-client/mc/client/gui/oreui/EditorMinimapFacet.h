@@ -47,7 +47,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[24]> NAME();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[24]> NAME();
         // NOLINTEND
     };
 
@@ -62,7 +62,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[20]> NAME();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[20]> NAME();
         // NOLINTEND
     };
 
@@ -81,7 +81,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[18]> NAME();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[18]> NAME();
         // NOLINTEND
     };
 
@@ -98,7 +98,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[23]> NAME();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[23]> NAME();
         // NOLINTEND
     };
 
@@ -134,40 +134,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorMinimapFacet(::Editor::ServiceProviderCollection* services);
+    MCNAPI explicit EditorMinimapFacet(::Editor::ServiceProviderCollection* services);
 
-    MCAPI void _handleMeMarkerChanged();
+    MCNAPI void _handleMeMarkerChanged();
 
-    MCAPI void _handleMinimapDataChanged(::mce::UUID const& minimapId);
+    MCNAPI void _handleMinimapDataChanged(::mce::UUID const& minimapId);
 
-    MCFOLD ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData> const& getGlobalMarkers();
+    MCNAPI ::std::vector<::OreUI::EditorMinimapFacet::MinimapOreUIMarkerData> const& getGlobalMarkers();
 
-    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData> const& getMinimaps();
+    MCNAPI ::std::unordered_map<::std::string, ::OreUI::EditorMinimapFacet::MinimapData> const& getMinimaps();
 
-    MCAPI ::OreUI::EditorMinimapFacet::MinimapHoverInfo
+    MCNAPI ::OreUI::EditorMinimapFacet::MinimapHoverInfo
     queryMinimapPosition(::std::string const& minimapId, float worldX, float worldZ);
 
-    MCAPI void registerMinimapUI(::std::string const& mapId);
+    MCNAPI void registerMinimapUI(::std::string const& mapId);
 
-    MCAPI void unregisterMinimapUI(::std::string const& mapId);
+    MCNAPI void unregisterMinimapUI(::std::string const& mapId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection* services);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

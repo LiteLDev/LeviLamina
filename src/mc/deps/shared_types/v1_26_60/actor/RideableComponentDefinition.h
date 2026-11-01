@@ -45,7 +45,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::SharedTypes::v1_26_60::RideableComponentDefinition::SeatDescription const& seat) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_60::RideableComponentDefinition::SeatDescription const& seat) const;
         // NOLINTEND
     };
 
@@ -74,43 +74,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RideableComponentDefinition(::SharedTypes::v1_26_60::RideableComponentDefinition const&);
+    MCNAPI RideableComponentDefinition(::SharedTypes::v1_26_60::RideableComponentDefinition const&);
 
-    MCAPI void addFamilyTypeByName(::std::string const& name);
+    MCNAPI void addFamilyTypeByName(::std::string const& name);
 
-    MCAPI ::SharedTypes::v1_26_60::RideableComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::RideableComponentDefinition&
     operator=(::SharedTypes::v1_26_60::RideableComponentDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_60::RideableComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::RideableComponentDefinition&
     operator=(::SharedTypes::v1_26_60::RideableComponentDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::RideableComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::RideableComponentDefinition const&) const;
 
-    MCAPI ~RideableComponentDefinition();
+    MCNAPI ~RideableComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::RideableComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::RideableComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

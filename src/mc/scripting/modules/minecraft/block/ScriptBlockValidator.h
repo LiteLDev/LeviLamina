@@ -31,10 +31,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
     getChunkAtPositionLoadedAndTickingError();
 
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getPositionWithinWorldBoundsError();
     // NOLINTEND
 };

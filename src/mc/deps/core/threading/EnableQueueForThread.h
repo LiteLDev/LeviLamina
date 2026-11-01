@@ -35,27 +35,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnableQueueForThread(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string name);
+    MCNAPI EnableQueueForThread(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string name);
 
-    MCAPI ::Bedrock::Threading::Async<void> queue(::std::function<void()>&& callback);
+    MCNAPI ::Bedrock::Threading::Async<void> queue(::std::function<void()>&& callback);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Threading::Async<void> queue(::TaskStartInfo const& startInfo, ::std::function<void()>&& callback);
+    MCNAPI ::Bedrock::Threading::Async<void>
+    queue(::TaskStartInfo const& startInfo, ::std::function<void()>&& callback);
 
-    MCAPI ::Bedrock::Threading::Async<void> queueAutoRequeue(::std::function<bool()>&& callback);
+    MCNAPI ::Bedrock::Threading::Async<void> queueAutoRequeue(::std::function<bool()>&& callback);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string name);
+    MCNAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

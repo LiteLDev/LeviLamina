@@ -41,25 +41,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FriendWorldListFacet(
+    MCNAPI FriendWorldListFacet(
         ::World::FriendServerWorldList&                           friendServerWorldList,
         ::std::shared_ptr<::Social::FriendList>                   friendList,
         ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager> partyTravelManager
     );
 
-    MCFOLD ::std::vector<::OreUI::FriendWorld> const& getFriendWorlds() const;
+    MCNAPI ::std::vector<::OreUI::FriendWorld> const& getFriendWorlds() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::FriendServerWorldList&                           friendServerWorldList,
         ::std::shared_ptr<::Social::FriendList>                   friendList,
         ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager> partyTravelManager
@@ -69,7 +69,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

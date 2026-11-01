@@ -31,11 +31,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 
 public:

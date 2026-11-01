@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
 
     // NOLINTEND

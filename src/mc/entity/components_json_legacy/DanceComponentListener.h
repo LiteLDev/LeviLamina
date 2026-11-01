@@ -29,14 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setLevel(::ILevel& level);
+    MCNAPI void setLevel(::ILevel& level);
 
-    MCAPI ~DanceComponentListener();
+    MCNAPI ~DanceComponentListener();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -21,7 +21,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::InsideBlockNotifierDefinition>>&
             root
     );

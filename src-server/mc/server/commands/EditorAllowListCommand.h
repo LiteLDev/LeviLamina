@@ -34,12 +34,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::EditorAllowList*& mEditorAllowList();
+    MCNAPI static ::EditorAllowList*& mEditorAllowList();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
     // NOLINTEND
 };

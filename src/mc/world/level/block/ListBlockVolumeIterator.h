@@ -46,11 +46,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI void $_begin();
+    MCNAPI void $_begin();
 
-    MCAPI void $_end();
+    MCNAPI void $_end();
 
 
     // NOLINTEND
@@ -58,6 +58,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

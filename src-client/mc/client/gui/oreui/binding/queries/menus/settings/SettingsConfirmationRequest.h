@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SettingsConfirmationRequest(
+    MCNAPI SettingsConfirmationRequest(
         ::OreUI::Detail::IPropertyObject* parent,
         ::std::string                     title,
         ::std::string                     description,
@@ -42,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::Detail::IPropertyObject* parent,
         ::std::string                     title,
         ::std::string                     description,

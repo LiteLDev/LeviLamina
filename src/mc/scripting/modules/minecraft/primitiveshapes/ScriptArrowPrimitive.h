@@ -33,31 +33,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptArrowPrimitive();
+    MCNAPI ScriptArrowPrimitive();
 
-    MCAPI void setHeadLength(float length);
+    MCNAPI void setHeadLength(float length);
 
-    MCAPI void setHeadRadius(float radius);
+    MCNAPI void setHeadRadius(float radius);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $populatePacketData(::PrimitiveShapeDataPayload& packetShapeData) const;
+    MCNAPI void $populatePacketData(::PrimitiveShapeDataPayload& packetShapeData) const;
 
-    MCAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& existing);
+    MCNAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& existing);
 
 
     // NOLINTEND

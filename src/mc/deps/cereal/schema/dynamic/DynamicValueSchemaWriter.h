@@ -74,63 +74,63 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool write(::cereal::DynamicValue value);
+    MCNAPI bool write(::cereal::DynamicValue value);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $write(::cereal::NullType);
+    MCNAPI bool $write(::cereal::NullType);
 
-    MCAPI bool $write(bool value);
+    MCNAPI bool $write(bool value);
 
-    MCAPI bool $write(schar value);
+    MCNAPI bool $write(schar value);
 
-    MCAPI bool $write(uchar value);
+    MCNAPI bool $write(uchar value);
 
-    MCAPI bool $write(short value);
+    MCNAPI bool $write(short value);
 
-    MCAPI bool $write(ushort value);
+    MCNAPI bool $write(ushort value);
 
-    MCAPI bool $write(int value);
+    MCNAPI bool $write(int value);
 
-    MCAPI bool $write(uint value);
+    MCNAPI bool $write(uint value);
 
-    MCFOLD bool $write(int64 value);
+    MCNAPI bool $write(int64 value);
 
-    MCFOLD bool $write(uint64 value);
+    MCNAPI bool $write(uint64 value);
 
-    MCAPI bool $write(float value);
+    MCNAPI bool $write(float value);
 
-    MCAPI bool $write(double value);
+    MCNAPI bool $write(double value);
 
-    MCAPI bool $write(::std::string_view const value);
+    MCNAPI bool $write(::std::string_view const value);
 
-    MCAPI bool $write(::gsl::span<uchar const> view);
+    MCNAPI bool $write(::gsl::span<uchar const> view);
 
-    MCAPI void $writeAdditionalData(bool);
+    MCNAPI void $writeAdditionalData(bool);
 
-    MCFOLD void $writeAdditionalData(uint);
+    MCNAPI void $writeAdditionalData(uint);
 
-    MCFOLD void $writeAdditionalData(::std::string_view const);
+    MCNAPI void $writeAdditionalData(::std::string_view const);
 
-    MCAPI bool $pushMember(::std::string_view const value);
+    MCNAPI bool $pushMember(::std::string_view const value);
 
-    MCAPI void $popMember();
+    MCNAPI void $popMember();
 
-    MCAPI ::cereal::SchemaRWType $openObject();
+    MCNAPI ::cereal::SchemaRWType $openObject();
 
-    MCAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
-    MCAPI void $close();
+    MCNAPI void $close();
 
 
     // NOLINTEND

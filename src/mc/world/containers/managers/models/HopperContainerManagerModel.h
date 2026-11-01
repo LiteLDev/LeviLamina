@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -30,6 +30,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,6 +12,6 @@ struct BlockComponentStorageFinalizerHelper {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void finalizeBoneVisibility(::Block const& block, ::BlockGeometryComponent* geometryComponent);
+    MCNAPI static void finalizeBoneVisibility(::Block const& block, ::BlockGeometryComponent* geometryComponent);
     // NOLINTEND
 };

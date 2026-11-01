@@ -56,49 +56,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Trade2ContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
+    MCNAPI Trade2ContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
 
 #ifdef LL_PLAT_C
-    MCAPI int getCurrentTradeExp() const;
+    MCNAPI int getCurrentTradeExp() const;
 
-    MCFOLD ::std::string getDisplayName();
+    MCNAPI ::std::string getDisplayName();
 
-    MCAPI ::std::string getDisplayNameTag() const;
+    MCNAPI ::std::string getDisplayNameTag() const;
 
     MCAPI int getEntityTradeTier() const;
 
-    MCAPI ::std::vector<int> getNumberOfTradesByTier() const;
+    MCNAPI ::std::vector<int> getNumberOfTradesByTier() const;
 
-    MCAPI int getTradeExpForCurrentRequirement(uint currentExp) const;
+    MCNAPI int getTradeExpForCurrentRequirement(uint currentExp) const;
 
-    MCAPI int getTradeExpToNextRequirement(uint currentExp) const;
+    MCNAPI int getTradeExpToNextRequirement(uint currentExp) const;
 
     MCAPI int getTradeIndex(int tier, int index) const;
 
-    MCAPI bool hasAvailableTradeWithSecondItem() const;
+    MCNAPI bool hasAvailableTradeWithSecondItem() const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
+    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCFOLD void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -106,6 +106,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

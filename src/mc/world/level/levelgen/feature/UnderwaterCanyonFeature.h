@@ -49,9 +49,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isDiggable(::BlockType const& block) const;
+    MCNAPI bool $_isDiggable(::BlockType const& block) const;
 
-    MCAPI bool $_carve(
+    MCNAPI bool $_carve(
         ::BlockVolume&       blocks,
         ::BiomeSource const& localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const&,

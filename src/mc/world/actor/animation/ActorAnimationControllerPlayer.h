@@ -74,7 +74,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationControllerPlayer(
+    MCNAPI ActorAnimationControllerPlayer(
         ::HashedString const&                                      friendlyName,
         ::ActorAnimationControllerPtr const&                       animationControllerPtr,
         ::AnimationComponent&                                      animationComponent,
@@ -83,7 +83,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer>
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer>
     getStatePlayer(::HashedString const& stateName, ::AnimationComponent& animationComponent, bool createIfMissing);
 #endif
     // NOLINTEND
@@ -91,7 +91,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void blendViaShortestPath(
+    MCNAPI static void blendViaShortestPath(
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>> const&
             blendOutBoneOrientationsMap,
@@ -105,7 +105,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                                      friendlyName,
         ::ActorAnimationControllerPtr const&                       animationControllerPtr,
         ::AnimationComponent&                                      animationComponent,
@@ -117,28 +117,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyToPose(
+    MCNAPI void $applyToPose(
         ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight
     );
 
-    MCAPI void $resetAnimation();
+    MCNAPI void $resetAnimation();
 
-    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
+    MCNAPI void
+    $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
-    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+    MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
-    MCAPI bool $hasAnimationFinished() const;
+    MCNAPI bool $hasAnimationFinished() const;
 
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
+    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
 
-    MCFOLD ::ActorAnimationType $getAnimationType() const;
+    MCNAPI ::ActorAnimationType $getAnimationType() const;
 
-    MCAPI ::HashedString const& $getRawName() const;
+    MCNAPI ::HashedString const& $getRawName() const;
 
-    MCAPI void $visit(::AnimationVisitor&& dispatcher);
+    MCNAPI void $visit(::AnimationVisitor&& dispatcher);
 
 
     // NOLINTEND

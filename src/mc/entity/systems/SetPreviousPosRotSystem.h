@@ -18,13 +18,13 @@ struct SetPreviousPosRotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setPreviousPosRot(
+    MCNAPI static void _setPreviousPosRot(
         ::StrictEntityContext&                                        entity,
         ::StateVectorComponent&                                       stateVectorComponent,
         ::ActorRotationComponent&                                     actorRotationComponent,
         ::EntityModifier<::PrevPosRotSetThisTickFlagComponent> const& modifier
     );
 
-    MCAPI static void _setPreviousPosRotSystem(::EntityContext const& entity);
+    MCNAPI static void _setPreviousPosRotSystem(::EntityContext const& entity);
     // NOLINTEND
 };

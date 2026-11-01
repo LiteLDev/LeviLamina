@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::BlockGameplayEvent<::CoordinatorResult>> const& event);
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::BlockGameplayEvent<::CoordinatorResult>> const& event);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableBlockGameplayEvent<::CoordinatorResult>> event);
     // NOLINTEND

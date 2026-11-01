@@ -36,15 +36,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
 
     // NOLINTEND
@@ -52,6 +52,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

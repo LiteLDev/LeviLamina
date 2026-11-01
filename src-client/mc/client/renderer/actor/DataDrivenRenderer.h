@@ -75,29 +75,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRenderer(
+    MCNAPI DataDrivenRenderer(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
         ::DataDrivenRendererLifecycle                lifecycle
     );
 
-    MCAPI void addGuardianAdditionalRendering();
+    MCNAPI void addGuardianAdditionalRendering();
 
-    MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void addMinecartAdditionalRendering(::BlockTessellator& commonBlockRenderer);
+    MCNAPI void addMinecartAdditionalRendering(::BlockTessellator& commonBlockRenderer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void getLeashOffsets(::Actor& actor, bool legacyOffset, ::Bedrock::small_vector_base<::Vec3>& output);
+    MCNAPI static void getLeashOffsets(::Actor& actor, bool legacyOffset, ::Bedrock::small_vector_base<::Vec3>& output);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup,
         ::DataDrivenRendererLifecycle                lifecycle
@@ -107,7 +107,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $getLeashOffsets(
+    MCNAPI void $getLeashOffsets(
         ::Actor& actor,
         float,
         float,
@@ -116,20 +116,20 @@ public:
         ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
-    MCAPI void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    MCNAPI void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
-    MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
+    MCNAPI ::AABB $getRenderBounds(::Actor const& entity) const;
 
-    MCAPI void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void $setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
+    MCNAPI void $setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
 
-    MCAPI bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
+    MCNAPI bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    MCAPI bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
+    MCNAPI bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    MCAPI bool $shouldHideHeldItems(::RenderParams& renderParams) const;
+    MCNAPI bool $shouldHideHeldItems(::RenderParams& renderParams) const;
     // NOLINTEND
 };

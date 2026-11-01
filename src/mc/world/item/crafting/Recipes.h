@@ -117,10 +117,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Recipes(::ILevel* level);
+    MCNAPI explicit Recipes(::ILevel* level);
 
 #ifdef LL_PLAT_C
-    MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
+    MCNAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
 #endif
 
 #ifdef LL_PLAT_S
@@ -129,14 +129,14 @@ public:
 
     MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
-    MCAPI ::RecipeIngredient const _loadIngredientFromJson(
+    MCNAPI ::RecipeIngredient const _loadIngredientFromJson(
         ::Json::Value const& obj,
         ::MolangVersion      molangVersion,
         bool                 allowItemCount,
         bool                 allowItemGroup
     ) const;
 
-    MCAPI ::RecipeIngredient const
+    MCNAPI ::RecipeIngredient const
     _loadInputIngredientFromJson(::Json::Value const& obj, ::MinEngineVersion const& minEngineVersion) const;
 
     MCAPI bool _loadRecipe(
@@ -149,13 +149,13 @@ public:
         ::Recipes::Buffers&       buffers
     );
 
-    MCAPI ::std::optional<::RecipeUnlockingRequirement> _loadUnlockingRequirementFromJson(
+    MCNAPI ::std::optional<::RecipeUnlockingRequirement> _loadUnlockingRequirementFromJson(
         ::Json::Value const& obj,
         ::MolangVersion      molangVersion,
         ::std::string const& recipeId
     ) const;
 
-    MCAPI void addDyedItemRecipe(
+    MCNAPI void addDyedItemRecipe(
         ::std::string                      recipeId,
         ::ItemInstance const&              result,
         ::RecipeIngredient const           itemToDye,
@@ -166,12 +166,12 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void addNetMappedRecipe(::RecipeNetId const& recipeNetId, ::std::unique_ptr<::Recipe> recipe);
+    MCNAPI void addNetMappedRecipe(::RecipeNetId const& recipeNetId, ::std::unique_ptr<::Recipe> recipe);
 
     MCAPI void addRecipeListener(::std::weak_ptr<bool> lifePtr, ::std::function<void()> callback);
 #endif
 
-    MCAPI void addShapedRecipe(
+    MCNAPI void addShapedRecipe(
         ::std::string                         recipeId,
         ::ItemInstance const&                 result,
         ::std::string const&                  r0,
@@ -196,7 +196,7 @@ public:
         bool const                            assumeSymmetry
     );
 
-    MCAPI void addShapedRecipe(
+    MCNAPI void addShapedRecipe(
         ::std::string                         recipeId,
         ::std::vector<::ItemInstance> const&  result,
         ::std::vector<::std::string> const&   rows,
@@ -246,7 +246,7 @@ public:
         bool const                            assumeSymmetry
     );
 
-    MCAPI void addShapedRecipe(
+    MCNAPI void addShapedRecipe(
         ::std::string                         recipeId,
         ::ItemInstance const&                 result,
         ::std::string const&                  r0,
@@ -272,7 +272,7 @@ public:
         bool                                  assumeSymmetry
     );
 
-    MCAPI void addShapedRecipe(
+    MCNAPI void addShapedRecipe(
         ::std::string                         recipeId,
         ::ItemInstance const&                 result,
         ::std::string const&                  r0,
@@ -299,7 +299,7 @@ public:
         bool                                  assumeSymmetry
     );
 
-    MCAPI void addShapelessRecipe(
+    MCNAPI void addShapelessRecipe(
         ::std::string                         recipeId,
         ::ItemInstance const&                 result,
         ::std::vector<::Recipes::Type> const& types,
@@ -319,7 +319,7 @@ public:
         ::SemVersion const&                   formatVersion
     );
 
-    MCAPI void addShulkerBoxRecipe(
+    MCNAPI void addShulkerBoxRecipe(
         ::std::string&                        recipeId,
         ::ItemInstance const&                 result,
         ::std::vector<::Recipes::Type> const& types,
@@ -333,46 +333,46 @@ public:
     MCAPI void forEachRecipeFor(::HashedString const& tag, ::brstd::function_ref<void(::Recipe const&)> callback) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void forEachRecipeFor(
+    MCNAPI void forEachRecipeFor(
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
-    MCAPI void forEachRecipeFor(
+    MCNAPI void forEachRecipeFor(
         ::ItemInstance const&                              result,
         ::HashedString const&                              tag,
         ::brstd::function_ref<void(::Recipe const&)> const callback
     ) const;
 
-    MCAPI void forEachRecipeFor(
+    MCNAPI void forEachRecipeFor(
         ::ItemInstance const&                        result,
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
-    MCAPI void
+    MCNAPI void
     forEachRecipeUntil(::HashedString const& tag, ::brstd::function_ref<bool(::Recipe const&)> callback) const;
 
-    MCAPI void forEachRecipeUntil(
+    MCNAPI void forEachRecipeUntil(
         ::ItemInstance const&                              result,
         ::HashedString const&                              tag,
         ::brstd::function_ref<bool(::Recipe const&)> const callback
     ) const;
 
-    MCAPI void forEachRecipeUntil(
+    MCNAPI void forEachRecipeUntil(
         ::ItemInstance const&                        result,
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<bool(::Recipe const&)> callback
     ) const;
 #endif
 
-    MCAPI void forEachUnlockableRecipeForIngredients(
+    MCNAPI void forEachUnlockableRecipeForIngredients(
         ::std::vector<::RecipeIngredient> const&     ingredients,
         ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::vector<::ItemInstance>
+    MCNAPI ::std::vector<::ItemInstance>
     getFurnaceRecipeFor(::ItemStackBase const& output, ::HashedString const& tag) const;
 #endif
 
@@ -380,7 +380,7 @@ public:
 
     MCAPI ::Recipe const* getRecipeByNetId(::RecipeNetId const& netId) const;
 
-    MCAPI ::Recipe* getRecipeFor(::ItemInstance const& result, ::HashedString const& tag) const;
+    MCNAPI ::Recipe* getRecipeFor(::ItemInstance const& result, ::HashedString const& tag) const;
 
     MCAPI void init(
         ::ResourcePackManager&     resourcePackManager,
@@ -392,23 +392,23 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void notifyRecipeListeners();
+    MCNAPI void notifyRecipeListeners();
 
-    MCAPI void removeRecipeListener(::std::weak_ptr<bool> lifePtr);
+    MCNAPI void removeRecipeListener(::std::weak_ptr<bool> lifePtr);
 #endif
 
-    MCAPI ~Recipes();
+    MCNAPI ~Recipes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ILevel* level);
+    MCNAPI void* $ctor(::ILevel* level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

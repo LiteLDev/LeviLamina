@@ -12,9 +12,9 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_20 {
 // functions
 // NOLINTBEGIN
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                            legacyGoal,
     ::SharedTypes::v1_26_20::PickupItemsGoalDefinition& sharedGoal
 );

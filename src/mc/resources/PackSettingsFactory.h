@@ -113,23 +113,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     PackSettingsFactory(uint64 maxGlobalPackSettingEntriesPerFile, ::std::optional<::Core::PathView> globalPathRoot);
 
-    MCAPI ::PackSettings* _getGlobalPackSettings(::PackManifest const& manifest);
+    MCNAPI ::PackSettings* _getGlobalPackSettings(::PackManifest const& manifest);
 
-    MCAPI ::PackSettings* _getWorldPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
+    MCNAPI ::PackSettings*
+    _getWorldPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_26_40::PackSettingsDefinition::Document>
+    MCNAPI ::std::unique_ptr<::SharedTypes::v1_26_40::PackSettingsDefinition::Document>
     _loadUserOverridesFromFile(::Core::Path const& path) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool _saveUserOverridesToFile(
+    MCNAPI bool _saveUserOverridesToFile(
         ::SharedTypes::v1_26_40::PackSettingsDefinition::Document doc,
         ::Core::Path const&                                       path
     ) const;
 
-    MCAPI void _syncPackSettingsToSaveDoc(
+    MCNAPI void _syncPackSettingsToSaveDoc(
         ::mce::UUID                                                packId,
         ::PackSettings const&                                      packSettings,
         ::SharedTypes::v1_26_40::PackSettingsDefinition::Document& userOverrides,
@@ -139,14 +140,14 @@ public:
 
     MCAPI ::PackSettings* getPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
-    MCAPI bool loadPerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
+    MCNAPI bool loadPerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
 
 #ifdef LL_PLAT_C
-    MCAPI bool saveGlobalUserOverrides();
+    MCNAPI bool saveGlobalUserOverrides();
 
-    MCAPI bool savePerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
+    MCNAPI bool savePerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
 
-    MCAPI ::std::string serializePackSettingsNameValueMap(
+    MCNAPI ::std::string serializePackSettingsNameValueMap(
         ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const& packSettingsNameValueMap
     ) const;
 #endif
@@ -155,23 +156,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::brstd::basic_cstring_view<char, ::std::char_traits<char>> const&
+    MCNAPI static ::brstd::basic_cstring_view<char, ::std::char_traits<char>> const&
     GLOBAL_RESOURCE_PACK_SETTINGS_FILENAME();
 
-    MCAPI static ::brstd::basic_cstring_view<char, ::std::char_traits<char>> const&
+    MCNAPI static ::brstd::basic_cstring_view<char, ::std::char_traits<char>> const&
     WORLD_BEHAVIOR_PACK_SETTINGS_FILENAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 maxGlobalPackSettingEntriesPerFile, ::std::optional<::Core::PathView> globalPathRoot);
+    MCNAPI void* $ctor(uint64 maxGlobalPackSettingEntriesPerFile, ::std::optional<::Core::PathView> globalPathRoot);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uint64 $getAccessTimestamp() const;
+    MCNAPI uint64 $getAccessTimestamp() const;
 
 
     // NOLINTEND

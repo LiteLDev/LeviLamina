@@ -36,11 +36,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMaxYSpawnOffset() const;
+    MCNAPI int $getMaxYSpawnOffset() const;
 
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
 
-    MCAPI bool $requiresNeighborAwareBlockUpgrade() const;
+    MCNAPI bool $requiresNeighborAwareBlockUpgrade() const;
 
 
     // NOLINTEND

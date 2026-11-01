@@ -28,7 +28,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void queueTick(::BlockSource& region, ::std::shared_ptr<::RopeSystem>& self);
+    MCNAPI void queueTick(::BlockSource& region, ::std::shared_ptr<::RopeSystem>& self);
 #endif
     // NOLINTEND
 
@@ -36,7 +36,7 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static bool& sEnabled();
+    MCNAPI static bool& sEnabled();
 #endif
     // NOLINTEND
 };

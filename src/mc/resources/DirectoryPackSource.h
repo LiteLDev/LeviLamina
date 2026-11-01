@@ -53,23 +53,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
+    MCNAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
 
-    MCAPI void deleteAllPacksAndReset();
+    MCNAPI void deleteAllPacksAndReset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path);
+    MCNAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path);
 
-    MCAPI static void checkAndRemoveIncompletePacks(
+    MCNAPI static void checkAndRemoveIncompletePacks(
         ::Core::Path const&      path,
         ::IPackIOProvider const& io,
         bool                     saveEncryptedWorldTemplatePacksAsZips
     );
 
-    MCAPI static void purgeOptimizedPremiumPacksIfRequested(
+    MCNAPI static void purgeOptimizedPremiumPacksIfRequested(
         bool                                                                   purgeRequested,
         ::Core::Path const&                                                    path,
         ::IPackIOProvider const*                                               io,
@@ -80,17 +80,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DirectoryPackSourceOptions options);
+    MCNAPI void* $ctor(::DirectoryPackSourceOptions options);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::PackOrigin $getPackOrigin() const;
+    MCNAPI ::PackOrigin $getPackOrigin() const;
 
-    MCFOLD ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
 
-    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
 
 
     // NOLINTEND

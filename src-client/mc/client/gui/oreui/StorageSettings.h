@@ -8,14 +8,14 @@
 namespace OreUI::EntryPoints::StorageSettings {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute(::StorageManager::ContentType type);
+MCNAPI ::std::string composeRoute(::StorageManager::ContentType type);
 
-MCAPI ::std::optional<::StorageManager::ContentType> getContentTypeFromRoute(::std::string const& route);
+MCNAPI ::std::optional<::StorageManager::ContentType> getContentTypeFromRoute(::std::string const& route);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::StorageSettings

@@ -82,7 +82,7 @@ public:
     // NOLINTBEGIN
     MCAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const& transaction);
 
-    MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
+    MCNAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 
     MCAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
@@ -90,15 +90,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
+    MCNAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
 
-    MCAPI static void resendPlayerState(::Player& player);
+    MCNAPI static void resendPlayerState(::Player& player);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, ::std::string> const&
+    MCNAPI static ::BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, ::std::string> const&
     actionTypeMap();
     // NOLINTEND
 
@@ -111,17 +111,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
 
     // NOLINTEND
@@ -135,5 +135,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCAPI bool operator==(::ItemUseInventoryTransaction const& lhs, ::ItemUseInventoryTransaction const& rhs);
+MCNAPI bool operator==(::ItemUseInventoryTransaction const& lhs, ::ItemUseInventoryTransaction const& rhs);
 // NOLINTEND

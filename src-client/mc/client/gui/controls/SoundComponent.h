@@ -46,7 +46,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SoundEventInfo(
+        MCNAPI SoundEventInfo(
             ::std::string                 soundName,
             float                         volume,
             float                         pitch,
@@ -59,7 +59,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::std::string                 soundName,
             float                         volume,
             float                         pitch,
@@ -102,7 +102,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addSoundEvent(
+    MCNAPI void addSoundEvent(
         ::std::string const&          soundName,
         float                         volume,
         float                         pitch,
@@ -115,13 +115,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+    MCNAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,

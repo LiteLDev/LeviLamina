@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void loadResources(::ResourcePackManager const& resourcePackManager, ::cereal::ReflectionCtx& ctx);
+    MCNAPI void loadResources(::ResourcePackManager const& resourcePackManager, ::cereal::ReflectionCtx& ctx);
 
-    MCAPI void sendRegistryToClient(::PacketSender& packetSender, ::NetworkIdentifier const& source);
+    MCNAPI void sendRegistryToClient(::PacketSender& packetSender, ::NetworkIdentifier const& source);
     // NOLINTEND
 
 public:

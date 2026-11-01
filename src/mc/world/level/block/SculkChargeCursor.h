@@ -27,18 +27,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
+    MCNAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
 
-    MCAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
+    MCNAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
 
-    MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
+    MCNAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
     // NOLINTEND
 };

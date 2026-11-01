@@ -184,7 +184,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftingScreenController(
+    MCNAPI CraftingScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -192,42 +192,42 @@ public:
         ::CraftingType                                 craftingType
     );
 
-    MCAPI bool _currentItemIsSelected(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI bool _currentItemIsSelected(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void _cycleLayout(int dir);
+    MCNAPI void _cycleLayout(int dir);
 
     MCAPI void _evacuateCraftingGrid();
 
-    MCAPI int _findNextLeftSideInventoryTab(int dir) const;
+    MCNAPI int _findNextLeftSideInventoryTab(int dir) const;
 
-    MCAPI void _focusCollectionItem(::std::string const& collectionName, int collectionIndex, bool forceFocus);
+    MCNAPI void _focusCollectionItem(::std::string const& collectionName, int collectionIndex, bool forceFocus);
 
-    MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex, bool displayOnly);
+    MCNAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex, bool displayOnly);
 
-    MCAPI bool _isConstructionTabVisible() const;
+    MCNAPI bool _isConstructionTabVisible() const;
 
-    MCAPI bool _isEquipmentTabVisible() const;
+    MCNAPI bool _isEquipmentTabVisible() const;
 
-    MCAPI bool _isItemsTabVisible() const;
+    MCNAPI bool _isItemsTabVisible() const;
 
-    MCAPI bool _isNatureTabVisible() const;
+    MCNAPI bool _isNatureTabVisible() const;
 
-    MCAPI bool _isRecipeSlotCraftable(::SlotData const& slotData);
+    MCNAPI bool _isRecipeSlotCraftable(::SlotData const& slotData);
 
-    MCAPI ::ui::ViewRequest
+    MCNAPI ::ui::ViewRequest
     _recipeAutoCraft(::std::string const& collectionName, int collectionIndex, ::ItemCraftType craftType);
 
-    MCAPI void _refreshFilters(::InventoryLeftTabIndex tab, bool forceRefresh);
+    MCNAPI void _refreshFilters(::InventoryLeftTabIndex tab, bool forceRefresh);
 
-    MCAPI void _savePlayerInventoryOptions();
+    MCNAPI void _savePlayerInventoryOptions();
 
-    MCAPI void _sendActiveLayoutInfo();
+    MCNAPI void _sendActiveLayoutInfo();
 
-    MCAPI void _setLeftSideInventoryTab(int tabIndex, bool saveOptions);
+    MCNAPI void _setLeftSideInventoryTab(int tabIndex, bool saveOptions);
 
-    MCAPI ::std::string _tabIndexToCollectionName(::InventoryLeftTabIndex index) const;
+    MCNAPI ::std::string _tabIndexToCollectionName(::InventoryLeftTabIndex index) const;
 
-    MCAPI int _tryAutoPlaceItemIntoContainer(
+    MCNAPI int _tryAutoPlaceItemIntoContainer(
         ::SlotData const&                 srcSlot,
         ::ItemTakeType                    type,
         ::ContainerEnumName               containerName,
@@ -238,19 +238,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addStaticScreenVars(::Json::Value& globalVars, bool pocket);
+    MCNAPI static void addStaticScreenVars(::Json::Value& globalVars, bool pocket);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::CraftingScreenController::CategoryTabInfo> const& mCategoryTabs();
+    MCNAPI static ::std::vector<::CraftingScreenController::CategoryTabInfo> const& mCategoryTabs();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -262,61 +262,61 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $showToast(::ToastMessage message, bool animateIn);
+    MCNAPI void $showToast(::ToastMessage message, bool animateIn);
 
-    MCAPI void $removeToast();
+    MCNAPI void $removeToast();
 
-    MCAPI void $refreshToast();
+    MCNAPI void $refreshToast();
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
+    MCNAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
 
-    MCAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
+    MCNAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
 
-    MCAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
+    MCNAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI ::ItemStackBase const&
+    MCNAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI ::std::string $_getButtonBDescription();
+    MCNAPI ::std::string $_getButtonBDescription();
 
-    MCAPI ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
 
-    MCAPI ::std::string $_getButtonYDescription();
+    MCNAPI ::std::string $_getButtonYDescription();
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 
-    MCAPI bool $_onTouchScrollStartedWithSelectedSlot();
+    MCNAPI bool $_onTouchScrollStartedWithSelectedSlot();
 
-    MCAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
+    MCNAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
 
-    MCAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
+    MCNAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
 
-    MCAPI bool $_shouldSwap(
+    MCNAPI bool $_shouldSwap(
         ::std::string const& collectionName,
         int                  collectionIndex,
         ::std::string const& otherCollectionName,
         int                  otherCollectionIndex
     ) const;
 
-    MCAPI bool $_isTargetSwappable(::std::string const& otherCollectionName, int otherCollectionIndex) const;
+    MCNAPI bool $_isTargetSwappable(::std::string const& otherCollectionName, int otherCollectionIndex) const;
 
-    MCAPI void $_sendFlyingItem(
+    MCNAPI void $_sendFlyingItem(
         ::ItemStackBase const& item,
         ::std::string const&   fromName,
         int                    fromIndex,
@@ -325,10 +325,10 @@ public:
         ::FadeInIconBehavior   fadeInIconBehavior
     );
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
 
-    MCAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
+    MCNAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
     // NOLINTEND
 };

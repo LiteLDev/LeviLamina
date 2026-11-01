@@ -23,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     place(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::HashedString const& plantType) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

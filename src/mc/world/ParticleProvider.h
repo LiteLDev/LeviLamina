@@ -104,7 +104,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
@@ -112,9 +112,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCFOLD void $addSprintParticleEffect(::Actor const&, ::IConstBlockSource const&, ::IRandom&);
+    MCNAPI void $addSprintParticleEffect(::Actor const&, ::IConstBlockSource const&, ::IRandom&);
 #else // LL_PLAT_C
-    MCFOLD void $addSprintParticleEffect(::Actor const& mob, ::IConstBlockSource const& region, ::IRandom& random);
+    MCNAPI void $addSprintParticleEffect(::Actor const& mob, ::IConstBlockSource const& region, ::IRandom& random);
 #endif
 
 

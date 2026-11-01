@@ -18,9 +18,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& OriginId();
+    MCNAPI static ::std::string_view const& OriginId();
 
-    MCAPI static ::std::string_view const& SizeId();
+    MCNAPI static ::std::string_view const& SizeId();
     // NOLINTEND
 };
 

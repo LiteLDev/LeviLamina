@@ -25,7 +25,7 @@ struct InWaterSensingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doInWaterSensing(
+    MCNAPI static void doInWaterSensing(
         ::StrictEntityContext&                        entity,
         ::UpdateWaterStateRequestComponent const&     updateWaterStateRequestComponent,
         ::FallDistanceComponent&                      fallDistanceComponent,

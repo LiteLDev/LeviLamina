@@ -35,20 +35,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouteDataParser(
+    MCNAPI RouteDataParser(
         ::ResourcePackManager const&                             packManager,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&      fileAccess,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const& fileSystem,
         ::Core::Path const&                                      dataPath
     );
 
-    MCAPI ~RouteDataParser();
+    MCNAPI ~RouteDataParser();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourcePackManager const&                             packManager,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&      fileAccess,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const& fileSystem,
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

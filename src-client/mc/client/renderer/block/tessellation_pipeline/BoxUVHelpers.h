@@ -13,7 +13,7 @@ namespace ClientBlockPipeline { struct BoxSchematic; }
 namespace ClientBlockPipeline::BoxUVHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void computeBoxUvs(
+MCNAPI void computeBoxUvs(
     ::Geometry::Box const&               box,
     ::glm::vec2 const&                   textureDimensions,
     ::ClientBlockPipeline::BoxSchematic& boxSchematic,

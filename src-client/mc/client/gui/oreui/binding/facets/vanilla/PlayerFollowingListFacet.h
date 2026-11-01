@@ -45,28 +45,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerFollowingListFacet(
+    MCNAPI PlayerFollowingListFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList
     );
 
-    MCFOLD ::std::vector<::OreUI::AddFriendUserItem>& getDisplayableList();
+    MCNAPI ::std::vector<::OreUI::AddFriendUserItem>& getDisplayableList();
 
-    MCAPI bool isDataLoading() const;
+    MCNAPI bool isDataLoading() const;
 
-    MCAPI void load(::std::string const& xuid);
+    MCNAPI void load(::std::string const& xuid);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList
     );
@@ -75,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

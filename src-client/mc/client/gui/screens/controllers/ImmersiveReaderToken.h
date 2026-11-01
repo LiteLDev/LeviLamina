@@ -32,6 +32,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
     // NOLINTEND
 };

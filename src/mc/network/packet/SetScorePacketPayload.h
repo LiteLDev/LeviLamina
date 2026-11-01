@@ -28,13 +28,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SetScorePacketPayload change(
+    MCNAPI static ::SetScorePacketPayload change(
         ::std::vector<::std::variant<::RemoveScore, ::ChangePlayerScore, ::ChangeEntityScore, ::ChangeFakePlayerScore>>
             info
     );
 
     MCAPI static ::SetScorePacketPayload change(::ScoreboardId const& id, ::Objective const& objective);
 
-    MCAPI static ::SetScorePacketPayload remove(::ScoreboardId const& id, ::Objective const& objective);
+    MCNAPI static ::SetScorePacketPayload remove(::ScoreboardId const& id, ::Objective const& objective);
     // NOLINTEND
 };

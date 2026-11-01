@@ -26,19 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DamageAbsorptionItemComponent(
+    MCNAPI explicit DamageAbsorptionItemComponent(
         ::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& absorbableDamageCauses
     );
 
-    MCAPI explicit DamageAbsorptionItemComponent(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
+    MCNAPI explicit DamageAbsorptionItemComponent(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& absorbableDamageCauses);
+    MCNAPI void* $ctor(::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& absorbableDamageCauses);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
     // NOLINTEND
 
 public:

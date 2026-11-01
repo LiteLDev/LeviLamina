@@ -45,30 +45,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftGameplayGraphicsResources(::mce::RenderContext& renderContext);
+    MCNAPI explicit MinecraftGameplayGraphicsResources(::mce::RenderContext& renderContext);
 
-    MCAPI void cleanImageCachesForActiveResourcePackChange();
+    MCNAPI void cleanImageCachesForActiveResourcePackChange();
 
-    MCAPI void flushResourceService();
+    MCNAPI void flushResourceService();
 
-    MCAPI ::mcr::DeferredResourceTransactions getDeferredResourceTransactions();
+    MCNAPI ::mcr::DeferredResourceTransactions getDeferredResourceTransactions();
 
-    MCAPI void reloadTickingTextures();
+    MCNAPI void reloadTickingTextures();
 
-    MCAPI void resume();
+    MCNAPI void resume();
 
-    MCAPI ~MinecraftGameplayGraphicsResources();
+    MCNAPI ~MinecraftGameplayGraphicsResources();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::RenderContext& renderContext);
+    MCNAPI void* $ctor(::mce::RenderContext& renderContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

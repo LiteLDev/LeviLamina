@@ -23,35 +23,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllowListPath(::OreUI::AllowListPath const&);
+    MCNAPI AllowListPath(::OreUI::AllowListPath const&);
 
-    MCAPI AllowListPath(::std::string id, ::Core::Path path);
+    MCNAPI AllowListPath(::std::string id, ::Core::Path path);
 
-    MCFOLD ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath&&);
+    MCNAPI ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath&&);
 
-    MCFOLD ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath const&);
+    MCNAPI ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath const&);
 
-    MCAPI ~AllowListPath();
+    MCNAPI ~AllowListPath();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::OreUI::AllowListPath const& empty();
+    MCNAPI static ::OreUI::AllowListPath const& empty();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OreUI::AllowListPath const&);
+    MCNAPI void* $ctor(::OreUI::AllowListPath const&);
 
-    MCAPI void* $ctor(::std::string id, ::Core::Path path);
+    MCNAPI void* $ctor(::std::string id, ::Core::Path path);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addItem(::std::string const& item, ::OreUI::AtlasIndex::ItemEntry const& entry);
+    MCNAPI void addItem(::std::string const& item, ::OreUI::AtlasIndex::ItemEntry const& entry);
     // NOLINTEND
 };
 

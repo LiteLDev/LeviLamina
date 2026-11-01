@@ -28,15 +28,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Container* $_tryGetContainer() const;
+    MCNAPI ::Container* $_tryGetContainer() const;
 
-    MCFOLD ::ItemContext $_getItemContext(int slot) const;
+    MCNAPI ::ItemContext $_getItemContext(int slot) const;
 
 
     // NOLINTEND

@@ -29,29 +29,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Style(::SharedTypes::Beta::DataDrivenUI::Styling::Style const&);
+    MCNAPI Style(::SharedTypes::Beta::DataDrivenUI::Styling::Style const&);
 
-    MCAPI ~Style();
+    MCNAPI ~Style();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& UI_STYLE_PAYLOAD_KEY();
+    MCNAPI static ::std::string_view const& UI_STYLE_PAYLOAD_KEY();
 
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Beta::DataDrivenUI::Styling::Style const&);
+    MCNAPI void* $ctor(::SharedTypes::Beta::DataDrivenUI::Styling::Style const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

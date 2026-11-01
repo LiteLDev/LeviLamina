@@ -22,9 +22,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::std::optional<::PotionType> tryResolvePotionType(::std::string const& potionTypeId);
+    MCNAPI static ::std::optional<::PotionType> tryResolvePotionType(::std::string const& potionTypeId);
     // NOLINTEND
 };
 

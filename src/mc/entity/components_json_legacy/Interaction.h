@@ -22,7 +22,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Interaction
+    MCNAPI static ::Interaction
     Success(::Bedrock::StaticOptimizedString interactText, ::brstd::move_only_function<void() &&> callback);
     // NOLINTEND
 };

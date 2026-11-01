@@ -16,12 +16,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~AsyncJoinDeny();
+    MCNAPI ~AsyncJoinDeny();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

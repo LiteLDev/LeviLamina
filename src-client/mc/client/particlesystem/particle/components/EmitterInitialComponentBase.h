@@ -30,9 +30,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
+    MCNAPI ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
-    MCFOLD void $update(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
+    MCNAPI void $update(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 };
 

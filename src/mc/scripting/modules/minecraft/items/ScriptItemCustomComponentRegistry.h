@@ -128,7 +128,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentRegistry(
+    MCNAPI ScriptItemCustomComponentRegistry(
         ::ServerScriptManagerEvents&      events,
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
@@ -136,9 +136,9 @@ public:
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                            parameterCache
     );
 
-    MCAPI void _subscribeItemsToComponents();
+    MCNAPI void _subscribeItemsToComponents();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -154,7 +154,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerScriptManagerEvents&      events,
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
@@ -166,7 +166,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -178,7 +178,7 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -190,28 +190,24 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCAPI ::std::vector<::std::string_view> $getValidComponentsForItem(
+    MCNAPI ::std::vector<::std::string_view> $getValidComponentsForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
     ) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     $tryGetCustomComponentParametersForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
         ::std::string_view                                                           componentName,
         ::Scripting::WeakLifetimeScope const&                                        scope
     ) const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::ScriptDeferredEventListener& $getEventListener();
-#else // LL_PLAT_C
-    MCFOLD ::ScriptDeferredEventListener& $getEventListener();
-#endif
+    MCNAPI ::ScriptDeferredEventListener& $getEventListener();
 
-    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
+    MCNAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void $_onReload();
+    MCNAPI void $_onReload();
 
-    MCAPI void $_onScriptInitializationComplete();
+    MCNAPI void $_onScriptInitializationComplete();
 
 
     // NOLINTEND

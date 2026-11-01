@@ -26,19 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EmoticonManager(::std::string const& listFilename);
+    MCNAPI explicit EmoticonManager(::std::string const& listFilename);
 
-    MCAPI ::std::string emoticonifyText(::std::string const& text) const;
+    MCNAPI ::std::string emoticonifyText(::std::string const& text) const;
 
-    MCAPI void emoticonifyTextInPlace(::std::string& text) const;
+    MCNAPI void emoticonifyTextInPlace(::std::string& text) const;
 
-    MCAPI void resetEmoticonData();
+    MCNAPI void resetEmoticonData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& listFilename);
+    MCNAPI void* $ctor(::std::string const& listFilename);
     // NOLINTEND
 
 public:

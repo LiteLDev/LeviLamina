@@ -42,19 +42,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsPlayerListCommandGroup(::OreUI::GameDependencies const& game);
+    MCNAPI explicit RealmsPlayerListCommandGroup(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

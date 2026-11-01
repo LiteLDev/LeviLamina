@@ -41,29 +41,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConstraintDescription(::cereal::internal::ConstraintDescription&&);
+    MCNAPI ConstraintDescription(::cereal::internal::ConstraintDescription&&);
 
-    MCAPI ConstraintDescription(::cereal::internal::ConstraintDescription const&);
+    MCNAPI ConstraintDescription(::cereal::internal::ConstraintDescription const&);
 
-    MCAPI void merge(::cereal::internal::ConstraintDescription const& other);
+    MCNAPI void merge(::cereal::internal::ConstraintDescription const& other);
 
-    MCAPI ::cereal::internal::ConstraintDescription& operator=(::cereal::internal::ConstraintDescription&&);
+    MCNAPI ::cereal::internal::ConstraintDescription& operator=(::cereal::internal::ConstraintDescription&&);
 
-    MCAPI ~ConstraintDescription();
+    MCNAPI ~ConstraintDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::internal::ConstraintDescription&&);
+    MCNAPI void* $ctor(::cereal::internal::ConstraintDescription&&);
 
-    MCAPI void* $ctor(::cereal::internal::ConstraintDescription const&);
+    MCNAPI void* $ctor(::cereal::internal::ConstraintDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

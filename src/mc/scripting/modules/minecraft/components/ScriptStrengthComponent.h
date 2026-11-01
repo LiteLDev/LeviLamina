@@ -23,27 +23,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getMax() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getMax() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getValue() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getValue() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

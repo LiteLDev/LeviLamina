@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerProfileQuery(
+    MCNAPI PlayerProfileQuery(
         ::OreUI::GameDependencies const&   game,
         ::OreUI::ClientDependencies const& client,
         ::std::string const&               playerId
@@ -49,7 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::GameDependencies const&   game,
         ::OreUI::ClientDependencies const& client,
         ::std::string const&               playerId

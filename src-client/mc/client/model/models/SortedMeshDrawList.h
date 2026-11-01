@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DrawsByTexture* getDraw(
+    MCNAPI ::DrawsByTexture* getDraw(
         ::RenderController const*     renderController,
         ::mce::MaterialPtr const&     materialPtr,
         ::mce::Mesh*                  mesh,

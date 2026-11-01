@@ -52,28 +52,28 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     BlockIgnore(::std::vector<::SharedTypes::Reference<0>> const& blocks);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Capped(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Protected(::HashedString const& tag);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Protected(::std::string_view tag);
 
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Rule(::std::vector<::br::worldgen::processors::RuleSet> rules);
 
-    MCAPI static void bootstrap();
+    MCNAPI static void bootstrap();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
+    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
@@ -82,7 +82,7 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
-    MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
+    MCNAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
         ::IBlockSource&                                          region,
         ::BlockPos                                               pos,
         ::BlockPos                                               structurePos,
@@ -91,9 +91,9 @@ public:
         ::br::worldgen::StructurePlaceSettings const&            settings
     ) const;
 
-    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
+    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

@@ -71,43 +71,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+    MCNAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
 
-    MCAPI RenderMaterial(::mce::RenderMaterial const& parent);
+    MCNAPI RenderMaterial(::mce::RenderMaterial const& parent);
 
-    MCAPI ::mce::ActorMaterialVariation
+    MCNAPI ::mce::ActorMaterialVariation
     getActorVariation(::mce::MaterialRenderType renderType, bool pointLightShadingEnabled);
 
-    MCAPI ::std::optional<::mce::MaterialType> const getMaterialType();
+    MCNAPI ::std::optional<::mce::MaterialType> const getMaterialType();
 
-    MCAPI bool
+    MCNAPI bool
     validateTextures(::ServerPBRTextureData const& textureData, ::HashedString const& renderControllerName) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+    MCNAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
 
-    MCAPI void* $ctor(::mce::RenderMaterial const& parent);
+    MCNAPI void* $ctor(::mce::RenderMaterial const& parent);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $buildHeader(::std::set<::std::string> const& defines);
+    MCNAPI ::std::string $buildHeader(::std::set<::std::string> const& defines);
 
-    MCAPI void $parseRuntimeStates(::Json::Value const& root);
+    MCNAPI void $parseRuntimeStates(::Json::Value const& root);
 
-    MCAPI void $parseShader(::Json::Value const& root);
+    MCNAPI void $parseShader(::Json::Value const& root);
 
-    MCFOLD void $appendShaderPathForGfxAPI();
+    MCNAPI void $appendShaderPathForGfxAPI();
     // NOLINTEND
 
 public:

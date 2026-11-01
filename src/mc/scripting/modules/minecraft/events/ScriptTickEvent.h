@@ -20,7 +20,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 };
 

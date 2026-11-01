@@ -41,16 +41,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     DeviceDisplayInformationQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
 
-    MCAPI void _updateProperties();
+    MCNAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

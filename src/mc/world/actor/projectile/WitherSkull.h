@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WitherSkull(
+    MCNAPI WitherSkull(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -70,18 +70,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCFOLD bool $shouldBurn();
+    MCNAPI bool $shouldBurn();
 
-    MCFOLD bool $isOnFire() const;
+    MCNAPI bool $isOnFire() const;
 
-    MCAPI bool $canDestroyBlock(::Block const& block) const;
+    MCNAPI bool $canDestroyBlock(::Block const& block) const;
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCAPI float $getInertia();
+    MCNAPI float $getInertia();
 
 
     // NOLINTEND
@@ -89,6 +89,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

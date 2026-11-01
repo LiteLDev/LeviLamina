@@ -45,17 +45,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

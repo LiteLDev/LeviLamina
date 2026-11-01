@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
+    MCNAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
 
-    MCAPI void _placeCoralBase(
+    MCNAPI void _placeCoralBase(
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::Random&                  random,
@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

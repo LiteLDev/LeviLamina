@@ -83,7 +83,7 @@ public:
     MCFOLD ::std::optional<::OperationGraphResult<::Biome const*> const>
     $getBiomeAreaToFill(::LevelChunk const& levelChunk) const;
 
-    MCFOLD bool $collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const;
+    MCNAPI bool $collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const;
 
 
     // NOLINTEND

@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseActorRenderer();
+    MCNAPI BaseActorRenderer();
 
     MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
         ::Tessellator&                       tessellator,
@@ -64,7 +64,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NameTagRenderObject _extractRenderTextObject(
+    MCNAPI static ::NameTagRenderObject _extractRenderTextObject(
         ::Tessellator&                       tessellator,
         ::std::string const&                 str,
         ::std::vector<int> const&            widths,
@@ -84,18 +84,18 @@ public:
     // NOLINTBEGIN
     MCAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR();
 
-    MCAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR_EDU();
+    MCNAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR_EDU();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

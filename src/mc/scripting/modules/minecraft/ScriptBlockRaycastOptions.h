@@ -25,9 +25,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 };
 

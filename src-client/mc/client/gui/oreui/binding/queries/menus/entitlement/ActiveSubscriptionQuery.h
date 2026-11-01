@@ -36,21 +36,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveSubscriptionQuery(::OreUI::GameDependencies const& game, ::std::string friendlyId);
+    MCNAPI ActiveSubscriptionQuery(::OreUI::GameDependencies const& game, ::std::string friendlyId);
 
-    MCAPI void _refresh(::std::string const& friendlyId);
+    MCNAPI void _refresh(::std::string const& friendlyId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string friendlyId);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string friendlyId);
     // NOLINTEND
 };
 

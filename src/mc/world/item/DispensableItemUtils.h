@@ -19,13 +19,13 @@ class Mob;
 namespace DispensableItemUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canDispenseToHumanoids(::Mob const& mob);
+MCNAPI bool canDispenseToHumanoids(::Mob const& mob);
 
-MCAPI bool canDispenseToNonPlayerHumanoids(::Mob const& mob);
+MCNAPI bool canDispenseToNonPlayerHumanoids(::Mob const& mob);
 
-MCAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
+MCNAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
 
-MCAPI bool tryDispenseEquipment(
+MCNAPI bool tryDispenseEquipment(
     ::BlockSource&                            region,
     ::Container&                              container,
     int                                       slot,

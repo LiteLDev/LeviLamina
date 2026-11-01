@@ -152,19 +152,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RakNet::InternalPacket* AllocateFromInternalPacketPool();
+    MCNAPI ::RakNet::InternalPacket* AllocateFromInternalPacketPool();
 
-    MCAPI void ClearPacketsAndDatagrams();
+    MCNAPI void ClearPacketsAndDatagrams();
 
-    MCAPI ::RakNet::InternalPacket* CreateInternalPacketFromBitStream(::RakNet::BitStream* bitStream, uint64 time);
+    MCNAPI ::RakNet::InternalPacket* CreateInternalPacketFromBitStream(::RakNet::BitStream* bitStream, uint64 time);
 
-    MCAPI void FreeInternalPacketData(::RakNet::InternalPacket* internalPacket, char const* file, uint line);
+    MCNAPI void FreeInternalPacketData(::RakNet::InternalPacket* internalPacket, char const* file, uint line);
 
-    MCAPI void FreeThreadSafeMemory();
+    MCNAPI void FreeThreadSafeMemory();
 
-    MCAPI ::RakNet::RakNetStatistics* GetStatistics(::RakNet::RakNetStatistics* rns);
+    MCNAPI ::RakNet::RakNetStatistics* GetStatistics(::RakNet::RakNetStatistics* rns);
 
-    MCAPI bool HandleSocketReceiveFromConnectedPlayer(
+    MCNAPI bool HandleSocketReceiveFromConnectedPlayer(
         char const*                                          buffer,
         uint                                                 length,
         ::RakNet::SystemAddress&                             systemAddress,
@@ -176,15 +176,15 @@ public:
         ::RakNet::BitStream&                                 updateBitStream
     );
 
-    MCAPI void InitializeVariables();
+    MCNAPI void InitializeVariables();
 
-    MCAPI void PushDatagram();
+    MCNAPI void PushDatagram();
 
-    MCAPI void PushPacket(uint64 time, ::RakNet::InternalPacket* internalPacket, bool isReliable);
+    MCNAPI void PushPacket(uint64 time, ::RakNet::InternalPacket* internalPacket, bool isReliable);
 
-    MCAPI ReliabilityLayer();
+    MCNAPI ReliabilityLayer();
 
-    MCAPI bool Send(
+    MCNAPI bool Send(
         char*               data,
         uint                numberOfBitsToSend,
         ::PacketPriority    priority,
@@ -196,7 +196,7 @@ public:
         uint                receipt
     );
 
-    MCAPI void SendACKs(
+    MCNAPI void SendACKs(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         uint64                   time,
@@ -204,7 +204,7 @@ public:
         ::RakNet::BitStream&     updateBitStream
     );
 
-    MCAPI void Update(
+    MCNAPI void Update(
         ::RakNet::RakNetSocket2*                             s,
         ::RakNet::SystemAddress&                             systemAddress,
         int                                                  MTUSize,
@@ -215,19 +215,19 @@ public:
         ::RakNet::BitStream&                                 updateBitStream
     );
 
-    MCAPI ~ReliabilityLayer();
+    MCNAPI ~ReliabilityLayer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

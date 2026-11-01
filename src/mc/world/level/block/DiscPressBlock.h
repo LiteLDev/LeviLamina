@@ -43,19 +43,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isCraftingBlock() const;
+    MCNAPI bool $isCraftingBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCAPI ::HitResult $clip(
+    MCNAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,

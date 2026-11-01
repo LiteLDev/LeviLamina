@@ -18,13 +18,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ResolvedTextureData();
+    MCNAPI ~ResolvedTextureData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -14,7 +14,7 @@ class ShapelessChemistryRecipe : public ::ShapelessRecipe {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& ID();
+    MCNAPI static ::mce::UUID const& ID();
     // NOLINTEND
 
 public:

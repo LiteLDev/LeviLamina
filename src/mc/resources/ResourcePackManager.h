@@ -91,63 +91,63 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ResourcePackManager(::ResourcePackLoader::ConstructorKey, ::ResourcePackManager::ResourcePackManagerArgs args);
 
-    MCAPI void _calculateMinEngineVersionFromFullStack();
+    MCNAPI void _calculateMinEngineVersionFromFullStack();
 
-    MCAPI void _composeFullStack();
+    MCNAPI void _composeFullStack();
 
-    MCAPI void _updateLanguageSubpacks();
+    MCNAPI void _updateLanguageSubpacks();
 
 #ifdef LL_PLAT_C
-    MCAPI ::ContentTierIncompatibleReason canSupportPacks();
+    MCNAPI ::ContentTierIncompatibleReason canSupportPacks();
 #endif
 
-    MCAPI void clearStack(::ResourcePackStackType stackType);
+    MCNAPI void clearStack(::ResourcePackStackType stackType);
 
-    MCAPI int composeFullStack(
+    MCNAPI int composeFullStack(
         ::ResourcePackStack&       output,
         ::ResourcePackStack const& globalStack,
         ::ResourcePackStack const& levelStack
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void finishLoadingLinkedAssets(::LinkedAssetValidator& validator);
+    MCNAPI void finishLoadingLinkedAssets(::LinkedAssetValidator& validator);
 
-    MCAPI ::SemVersion getFullStackMinEngineVersion_DEPRECATED() const;
+    MCNAPI ::SemVersion getFullStackMinEngineVersion_DEPRECATED() const;
 
-    MCAPI ::std::vector<::PackInstance> getIncompatiblePacks() const;
+    MCNAPI ::std::vector<::PackInstance> getIncompatiblePacks() const;
 #endif
 
     MCAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void onLanguageChanged();
+    MCNAPI void onLanguageChanged();
 
-    MCAPI void releasePreloadCacheHandles();
+    MCNAPI void releasePreloadCacheHandles();
 #endif
 
-    MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
+    MCNAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
 
 #ifdef LL_PLAT_C
-    MCAPI void removePacks(::std::vector<::gsl::not_null<::ResourcePack const*>> const& packs);
+    MCNAPI void removePacks(::std::vector<::gsl::not_null<::ResourcePack const*>> const& packs);
 
-    MCAPI void removeUnsupportedPacks();
+    MCNAPI void removeUnsupportedPacks();
 #endif
 
-    MCAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
+    MCNAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OwnerPtr<::ResourcePackManager> create(::ResourcePackManager::ResourcePackManagerArgs args);
+    MCNAPI static ::OwnerPtr<::ResourcePackManager> create(::ResourcePackManager::ResourcePackManagerArgs args);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackLoader::ConstructorKey, ::ResourcePackManager::ResourcePackManagerArgs args);
+    MCNAPI void* $ctor(::ResourcePackLoader::ConstructorKey, ::ResourcePackManager::ResourcePackManagerArgs args);
     // NOLINTEND
 };

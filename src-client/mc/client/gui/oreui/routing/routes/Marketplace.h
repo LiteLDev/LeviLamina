@@ -32,36 +32,36 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::StoreDataDrivenScreenParams _getParamsFromQuery(::std::string const& url);
+    MCNAPI static ::StoreDataDrivenScreenParams _getParamsFromQuery(::std::string const& url);
 
-    MCAPI static ::std::string composeRouteForProduct(::std::string const& productId);
+    MCNAPI static ::std::string composeRouteForProduct(::std::string const& productId);
 
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     composeRouteForSearch(::std::string const& searchText, ::std::string const& packTypeFilter);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[23]> INVENTORY_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[23]> INVENTORY_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SEARCH_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SEARCH_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[46]> SKIN_MISSING_MARIO_MASHUP_MODAL_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[46]> SKIN_MISSING_MARIO_MASHUP_MODAL_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[19]> STORE_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[19]> STORE_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> WISHLIST_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> WISHLIST_ROUTE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

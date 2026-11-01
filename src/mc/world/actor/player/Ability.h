@@ -39,6 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator!=(::Ability const& rhs) const;
+    MCNAPI bool operator!=(::Ability const& rhs) const;
     // NOLINTEND
 };

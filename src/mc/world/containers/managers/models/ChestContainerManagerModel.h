@@ -33,16 +33,16 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
+    MCNAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -50,6 +50,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

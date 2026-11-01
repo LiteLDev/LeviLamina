@@ -88,17 +88,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::atomic<int64>& mEmitterLifetimeCounter();
+    MCNAPI static ::std::atomic<int64>& mEmitterLifetimeCounter();
 
-    MCAPI static ::std::atomic<int64>& mEmitterRateCounter();
+    MCNAPI static ::std::atomic<int64>& mEmitterRateCounter();
 
-    MCAPI static ::std::atomic<int64>& mParticleAppearanceCounter();
+    MCNAPI static ::std::atomic<int64>& mParticleAppearanceCounter();
 
-    MCAPI static ::std::atomic<int64>& mParticleEmitterTickCount();
+    MCNAPI static ::std::atomic<int64>& mParticleEmitterTickCount();
 
-    MCAPI static ::std::atomic<int64>& mParticleLifetimeCounter();
+    MCNAPI static ::std::atomic<int64>& mParticleLifetimeCounter();
 
-    MCAPI static ::std::atomic<int64>& mParticleMotionCounter();
+    MCNAPI static ::std::atomic<int64>& mParticleMotionCounter();
     // NOLINTEND
 };
 

@@ -36,19 +36,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InvitableFriendBindings(
+    MCNAPI InvitableFriendBindings(
         ::Social::FriendData const&                                friendData,
         ::Social::FriendInviteType                                 inviteEntryType,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::std::string const& getActiveProfileImage() const;
+    MCNAPI ::std::string const& getActiveProfileImage() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::FriendData const&                                friendData,
         ::Social::FriendInviteType                                 inviteEntryType,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList

@@ -34,14 +34,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickClientParticleComponent(
+    MCNAPI static void _tickClientParticleComponent(
         ::EntityContext& entity,
         ::ActorComponent const&,
         ::ClientParticleInitializationComponent& clientParticleComponent,
         ::ParticleSystemEngine&                  particleSystemEngine
     );
 
-    MCAPI static void tickClientParticleTrackingComponent(
+    MCNAPI static void tickClientParticleTrackingComponent(
         ::EntityContext& entity,
         ::ActorComponent const&,
         ::ClientParticleTrackingComponent&    clientParticleTrackingComponent,
@@ -53,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 
 public:

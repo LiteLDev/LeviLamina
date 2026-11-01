@@ -40,19 +40,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerFriendListQuery(
+    MCNAPI PlayerFriendListQuery(
         ::OreUI::GameDependencies const&   game,
         ::OreUI::ClientDependencies const& client,
         ::std::string const&               xuid
     );
 
-    MCAPI void _fetchData();
+    MCNAPI void _fetchData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client, ::std::string const& xuid);
     // NOLINTEND
 };

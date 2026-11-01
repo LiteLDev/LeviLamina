@@ -28,12 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SetActorMotionPacketPayload(::Actor const& entity);
+    MCNAPI explicit SetActorMotionPacketPayload(::Actor const& entity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& entity);
+    MCNAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
 };

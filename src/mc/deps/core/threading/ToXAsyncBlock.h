@@ -35,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::XAsyncBlock* _getAsyncBlock();
+    MCNAPI ::XAsyncBlock* _getAsyncBlock();
 
-    MCAPI void _handleResult(long hr, ::XAsyncBlock* asyncBlock);
+    MCNAPI void _handleResult(long hr, ::XAsyncBlock* asyncBlock);
     // NOLINTEND
 };
 

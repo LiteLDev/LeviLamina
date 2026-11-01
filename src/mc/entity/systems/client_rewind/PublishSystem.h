@@ -122,7 +122,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void tickEntity(
+    MCNAPI static void tickEntity(
         ::StrictEntityContext const&   entity,
         ::ReplayStateComponent&        replay,
         ::ReplayStateTrackerComponent& tracker,
@@ -141,7 +141,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<

@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;
+    MCNAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;
     // NOLINTEND
 
 public:

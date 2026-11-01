@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BuildMatch match(::BlockPos const& pos) const;
+    MCNAPI ::BuildMatch match(::BlockPos const& pos) const;
 
-    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex) const;
+    MCNAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex) const;
 
-    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up) const;
+    MCNAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up) const;
 
-    MCAPI void replaceBlocks(
+    MCNAPI void replaceBlocks(
         char                                                           subPattern,
         ::BuildMatch const&                                            buildMatch,
         ::Block const&                                                 block,
@@ -48,6 +48,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void noopCallback(::Block const&, ::BlockPos const&);
+    MCNAPI static void noopCallback(::Block const&, ::BlockPos const&);
     // NOLINTEND
 };

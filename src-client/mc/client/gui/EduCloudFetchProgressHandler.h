@@ -44,29 +44,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EduCloudFetchProgressHandler(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI explicit EduCloudFetchProgressHandler(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD ::ProgressAnimation $showLoadingBar() const;
+    MCNAPI ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 
 public:

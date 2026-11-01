@@ -24,23 +24,23 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit PropertyBag(::std::string const& serializedJson);
+    MCNAPI explicit PropertyBag(::std::string const& serializedJson);
 
-    MCAPI bool has(::std::string_view key) const;
+    MCNAPI bool has(::std::string_view key) const;
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PropertyBag& EMPTY();
+    MCNAPI static ::PropertyBag& EMPTY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string const& serializedJson);
+    MCNAPI void* $ctor(::std::string const& serializedJson);
 #endif
     // NOLINTEND
 };

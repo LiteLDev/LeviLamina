@@ -173,13 +173,8 @@ public:
 
     MCFOLD ::std::string $toString() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<void>
     $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
-#else // LL_PLAT_C
-    MCFOLD ::Bedrock::Result<void>
-    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
-#endif
 
 
     // NOLINTEND
@@ -187,7 +182,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

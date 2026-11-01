@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldConversionCompleteScreenController(
+    MCNAPI WorldConversionCompleteScreenController(
         ::std::shared_ptr<::WorldConversionCompleteModel> model,
         ::std::string const&                              levelId,
         ::std::function<void()>                           cancelCallback
@@ -46,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::WorldConversionCompleteModel> model,
         ::std::string const&                              levelId,
         ::std::function<void()>                           cancelCallback
@@ -56,6 +56,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

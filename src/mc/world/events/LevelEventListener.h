@@ -63,21 +63,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onLevelInitialized(::Level& level);
+    MCNAPI ::EventResult $onLevelInitialized(::Level& level);
 
-    MCFOLD ::EventResult $onLevelAddedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
 
-    MCFOLD ::EventResult $onLevelRemovedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
-    MCFOLD ::EventResult $onLevelRemovedActor(::Actor& actor);
+    MCNAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
 
-    MCFOLD ::EventResult $onLevelTick(::Level& level);
+    MCNAPI ::EventResult $onLevelTick(::Level& level);
 
-    MCFOLD ::EventResult $onLevelTickStart(::Level& level);
+    MCNAPI ::EventResult $onLevelTickStart(::Level& level);
 
-    MCFOLD ::EventResult $onLevelTickEnd(::Level&);
+    MCNAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCFOLD ::EventResult $onLevelWeatherChange(
+    MCNAPI ::EventResult $onLevelWeatherChange(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -85,18 +85,18 @@ public:
         bool                 isLightning
     );
 
-    MCFOLD ::EventResult $onRealmsStory(::std::string const& storyData);
+    MCNAPI ::EventResult $onRealmsStory(::std::string const& storyData);
 
-    MCFOLD ::EventResult $onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
+    MCNAPI ::EventResult $onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
+    MCNAPI ::EventResult $onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
+    MCNAPI ::EventResult $onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onWorldClockTimeMarker(::gsl::not_null<::WorldClock*> clock, ::std::string const& timeMarkerName);
 
-    MCFOLD ::EventResult $onEvent(::LevelNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
 
 
     // NOLINTEND

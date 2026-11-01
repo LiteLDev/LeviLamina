@@ -24,18 +24,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag _update(::VisualTree& visualTree, ::UIControl const* currentFocusedControl);
+    MCNAPI ::ui::DirtyFlag _update(::VisualTree& visualTree, ::UIControl const* currentFocusedControl);
 
-    MCAPI void processDelayedLayout();
+    MCNAPI void processDelayedLayout();
 
-    MCAPI ::ui::DirtyFlag update(::VisualTree& visualTree, ::UIControl const* currentFocusedControl);
+    MCNAPI ::ui::DirtyFlag update(::VisualTree& visualTree, ::UIControl const* currentFocusedControl);
 
-    MCAPI ~LayoutManager();
+    MCNAPI ~LayoutManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

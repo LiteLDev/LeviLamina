@@ -23,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TeleportTarget();
+    MCNAPI ~TeleportTarget();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -76,15 +76,15 @@ public:
 
     MCFOLD int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
-    MCFOLD void $startOpen(::Actor&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCFOLD void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
@@ -96,6 +96,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

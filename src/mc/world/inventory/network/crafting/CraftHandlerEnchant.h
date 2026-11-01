@@ -43,11 +43,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI void $_postCraftRequest(bool const wasSuccess);
+    MCNAPI void $_postCraftRequest(bool const wasSuccess);
 
-    MCAPI void $endRequestBatch();
+    MCNAPI void $endRequestBatch();
 
 
     // NOLINTEND

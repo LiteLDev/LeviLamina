@@ -40,13 +40,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GiftRecipientEligibilityMembersQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit GiftRecipientEligibilityMembersQuery(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

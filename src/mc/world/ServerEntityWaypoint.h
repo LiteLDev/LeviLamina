@@ -39,13 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ActorUniqueID> $tryGetActorID() const;
+    MCNAPI ::std::optional<::ActorUniqueID> $tryGetActorID() const;
 
-    MCAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
+    MCNAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
 
-    MCAPI void $update(::Player const& viewingPlayer);
+    MCNAPI void $update(::Player const& viewingPlayer);
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
 
     // NOLINTEND

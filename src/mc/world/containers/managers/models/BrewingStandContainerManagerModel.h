@@ -47,34 +47,34 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+    MCNAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 
-    MCAPI int getBrewProgress(int max);
+    MCNAPI int getBrewProgress(int max);
 
-    MCAPI int getBubbleProgress(int);
+    MCNAPI int getBubbleProgress(int);
 
-    MCAPI int getFuelProgress(int max);
+    MCNAPI int getFuelProgress(int max);
 
-    MCAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
+    MCNAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int id, int value);
+    MCNAPI void $setData(int id, int value);
 
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -82,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

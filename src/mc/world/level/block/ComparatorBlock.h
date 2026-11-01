@@ -71,64 +71,64 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComparatorBlock(::std::string const& nameId, int id, bool on);
+    MCNAPI ComparatorBlock(::std::string const& nameId, int id, bool on);
 
-    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool loading) const;
+    MCNAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool loading) const;
 
-    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCNAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCFOLD void _onStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
+    MCNAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength);
+    MCNAPI static void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, bool on);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCNAPI bool $canSpawnOn(::Actor*) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $requiresLegacyRedstoneSetup() const;
+    MCNAPI bool $requiresLegacyRedstoneSetup() const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
+    MCNAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
-    MCFOLD bool $isSignalSource() const;
+    MCNAPI bool $isSignalSource() const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
+    MCNAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
+    MCNAPI bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
 
     // NOLINTEND
@@ -136,6 +136,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

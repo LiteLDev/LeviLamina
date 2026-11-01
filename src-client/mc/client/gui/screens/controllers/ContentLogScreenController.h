@@ -17,7 +17,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 
 public:

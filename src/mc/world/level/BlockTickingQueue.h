@@ -54,7 +54,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _pruneQueueForMemory();
+        MCNAPI void _pruneQueueForMemory();
         // NOLINTEND
     };
 
@@ -73,20 +73,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
+    MCNAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
 
 #ifdef LL_PLAT_C
-    MCAPI void _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
+    MCNAPI void _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void
+    MCNAPI void
     _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int const tickDelay, int const priorityOffset);
 #endif
 
-    MCAPI void _eliminateTicksForZeroAndAbove(::BlockTickingQueue::TickDataSet& queue);
+    MCNAPI void _eliminateTicksForZeroAndAbove(::BlockTickingQueue::TickDataSet& queue);
 
-    MCAPI void _saveQueue(::ListTag& list, ::BlockTickingQueue::TickDataSet const& queue) const;
+    MCNAPI void _saveQueue(::ListTag& list, ::BlockTickingQueue::TickDataSet const& queue) const;
 
     MCAPI void
     add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
@@ -99,31 +99,31 @@ public:
         int               priorityOffset
     );
 
-    MCAPI void eliminateDuplicatesOf(::BlockType const& block);
+    MCNAPI void eliminateDuplicatesOf(::BlockType const& block);
 
-    MCAPI void finishInstaticking();
+    MCNAPI void finishInstaticking();
 
     MCAPI bool getNextUpdateForPos(::BlockPos const& pos, ::Tick& tick) const;
 
-    MCAPI ::std::unordered_multimap<::BlockPos, ::TickDelayBlock>
+    MCNAPI ::std::unordered_multimap<::BlockPos, ::TickDelayBlock>
     getTickDelaysInArea(::BoundingBox const& boundingBox) const;
 
-    MCAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
+    MCNAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
 
-    MCAPI void remove(::brstd::function_ref<bool(::TickNextTickData const&)> removeCondition);
+    MCNAPI void remove(::brstd::function_ref<bool(::TickNextTickData const&)> removeCondition);
 
-    MCAPI void remove(::BlockPos const& pos, ::Block const& block);
+    MCNAPI void remove(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
     MCAPI bool tickPendingTicks(::BlockSource& region, ::Tick const& until, int max, bool instaTick_);
 
-    MCAPI ~BlockTickingQueue();
+    MCNAPI ~BlockTickingQueue();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

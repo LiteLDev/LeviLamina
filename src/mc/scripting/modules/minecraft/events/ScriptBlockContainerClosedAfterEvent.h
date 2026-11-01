@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockContainerClosedAfterEvent(
+    MCNAPI ScriptBlockContainerClosedAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData> const&
                                               eventData,
         ::Scripting::WeakLifetimeScope const& scope
@@ -43,13 +43,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData> const&
                                               eventData,
         ::Scripting::WeakLifetimeScope const& scope

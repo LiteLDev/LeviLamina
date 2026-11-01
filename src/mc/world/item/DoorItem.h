@@ -39,7 +39,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      actor,
         ::BlockPos    pos,
@@ -54,6 +54,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryAction();
+    MCNAPI InventoryAction();
 
     MCAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
 
-    MCAPI ::InventoryAction& operator=(::InventoryAction const&);
+    MCNAPI ::InventoryAction& operator=(::InventoryAction const&);
 
-    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
     MCAPI ~InventoryAction();
     // NOLINTEND
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
     MCAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
     // NOLINTEND

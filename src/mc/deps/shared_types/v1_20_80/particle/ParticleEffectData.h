@@ -36,44 +36,44 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData&&);
+    MCNAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData&&);
 #endif
 
-    MCAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData const&);
+    MCNAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
-    MCAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData const&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectData const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectData const&) const;
 
-    MCAPI ~ParticleEffectData();
+    MCNAPI ~ParticleEffectData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData&&);
 #endif
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

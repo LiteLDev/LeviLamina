@@ -56,56 +56,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearDuplicateWorldTaskState();
+    MCNAPI void clearDuplicateWorldTaskState();
 
-    MCAPI void clearExportWorldResult();
+    MCNAPI void clearExportWorldResult();
 
-    MCAPI void clearMakeWorldInfinite();
+    MCNAPI void clearMakeWorldInfinite();
 
-    MCAPI void clearPlayerData(::World::ClearPlayerDataType type, ::std::string const& worldID);
+    MCNAPI void clearPlayerData(::World::ClearPlayerDataType type, ::std::string const& worldID);
 
-    MCAPI ::std::optional<::World::DeleteWorldError> deleteWorld(::std::string const& worldID);
+    MCNAPI ::std::optional<::World::DeleteWorldError> deleteWorld(::std::string const& worldID);
 
-    MCAPI void exportWorld(::std::string const& worldID, ::World::ExportWorldFlags flags);
+    MCNAPI void exportWorld(::std::string const& worldID, ::World::ExportWorldFlags flags);
 
-    MCAPI void exportWorldAsTemplate(::std::string const& worldID, ::World::ExportWorldFlags flags);
+    MCNAPI void exportWorldAsTemplate(::std::string const& worldID, ::World::ExportWorldFlags flags);
 
-    MCFOLD ::OreUI::FacetTaskState getClearPlayerDataTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getClearPlayerDataTaskState() const;
 
-    MCFOLD ::std::optional<::World::IWorldStorageHandler::DuplicateWorldResult> const& getDuplicateWorldError() const;
+    MCNAPI ::std::optional<::World::IWorldStorageHandler::DuplicateWorldResult> const& getDuplicateWorldError() const;
 
-    MCFOLD ::OreUI::FacetTaskState getDuplicateWorldTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getDuplicateWorldTaskState() const;
 
-    MCAPI ::std::optional<::World::IWorldStorageHandler::ExportWorldResult> const& getExportWorldTaskResult() const;
+    MCNAPI ::std::optional<::World::IWorldStorageHandler::ExportWorldResult> const& getExportWorldTaskResult() const;
 
-    MCAPI ::std::optional<::World::InfiniteWorldConverter::Result> const& getMakeWorldInfiniteError() const;
+    MCNAPI ::std::optional<::World::InfiniteWorldConverter::Result> const& getMakeWorldInfiniteError() const;
 
-    MCAPI float getMakeWorldInfiniteProgress() const;
+    MCNAPI float getMakeWorldInfiniteProgress() const;
 
-    MCFOLD ::OreUI::FacetTaskState getMakeWorldInfiniteState() const;
+    MCNAPI ::OreUI::FacetTaskState getMakeWorldInfiniteState() const;
 
-    MCAPI void makeWorldInfinite(::std::string const& worldID);
+    MCNAPI void makeWorldInfinite(::std::string const& worldID);
 
-    MCAPI void resetClearPlayerData();
+    MCNAPI void resetClearPlayerData();
 
-    MCAPI void resetWorldIconToDefault(::std::string const& worldID);
+    MCNAPI void resetWorldIconToDefault(::std::string const& worldID);
 
-    MCAPI void
+    MCNAPI void
     saveScreenshotAsWorldIcon(::std::string const& worldID, ::std::string const& path, ::std::string const& imageID);
 
-    MCAPI void startDuplicateWorld(::std::string const& worldID);
+    MCNAPI void startDuplicateWorld(::std::string const& worldID);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

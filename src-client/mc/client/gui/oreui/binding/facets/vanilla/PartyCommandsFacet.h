@@ -47,53 +47,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PartyCommandsFacet(
+    MCNAPI PartyCommandsFacet(
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem>                  partySystem,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance
     );
 
-    MCAPI void _runCommandAndUpdateState(
+    MCNAPI void _runCommandAndUpdateState(
         ::Bedrock::Threading::Async<bool>                  task,
         ::OreUI::CommandState<::OreUI::PartyCommandError>& state
     );
 
-    MCAPI void acceptInvite(::std::string const& partyId, ::std::string const& connectionString);
+    MCNAPI void acceptInvite(::std::string const& partyId, ::std::string const& connectionString);
 
-    MCAPI void createParty();
+    MCNAPI void createParty();
 
-    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getAcceptInviteState() const;
+    MCNAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getAcceptInviteState() const;
 
-    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getCreatePartyState() const;
+    MCNAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getCreatePartyState() const;
 
-    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
+    MCNAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
 
-    MCAPI void ignoreInvite(::std::string const& partyId, ::std::string const& inviterXuid);
+    MCNAPI void ignoreInvite(::std::string const& partyId, ::std::string const& inviterXuid);
 
-    MCAPI void joinParty(::std::string const& partyId);
+    MCNAPI void joinParty(::std::string const& partyId);
 
-    MCAPI void leaveParty();
+    MCNAPI void leaveParty();
 
-    MCAPI void removeMember(::std::string const& memberXuid, bool preventRejoin);
+    MCNAPI void removeMember(::std::string const& memberXuid, bool preventRejoin);
 
-    MCAPI void sendInvite(::std::string const& xuid);
+    MCNAPI void sendInvite(::std::string const& xuid);
 
-    MCAPI void setLeader(::std::string const& memberXuid);
+    MCNAPI void setLeader(::std::string const& memberXuid);
 
-    MCAPI void setPrivacy(::Parties::PartyPrivacy newPrivacy);
+    MCNAPI void setPrivacy(::Parties::PartyPrivacy newPrivacy);
 
-    MCAPI void travelToDestination();
+    MCNAPI void travelToDestination();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem>                  partySystem,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance
     );
@@ -102,7 +102,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

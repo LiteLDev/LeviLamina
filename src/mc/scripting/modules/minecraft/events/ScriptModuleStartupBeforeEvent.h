@@ -49,9 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptModuleStartupBeforeEvent(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
+    MCNAPI ScriptModuleStartupBeforeEvent(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
 
-    MCAPI ScriptModuleStartupBeforeEvent(
+    MCNAPI ScriptModuleStartupBeforeEvent(
         ::ScriptModuleStartupEvent const&     eventData,
         ::Scripting::WeakLifetimeScope const& scope
     );
@@ -60,15 +60,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
 
-    MCAPI void* $ctor(::ScriptModuleStartupEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::ScriptModuleStartupEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

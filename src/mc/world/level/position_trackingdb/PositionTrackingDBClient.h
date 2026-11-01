@@ -33,20 +33,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PositionTrackingDBClient(::Level& level);
+    MCNAPI explicit PositionTrackingDBClient(::Level& level);
 
-    MCAPI ::PositionTrackingDB::ResultCode
+    MCNAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
 
 #ifdef LL_PLAT_C
-    MCAPI void onReceivePacket(::PositionTrackingDBServerBroadcastPacket const& packet);
+    MCNAPI void onReceivePacket(::PositionTrackingDBServerBroadcastPacket const& packet);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
+    MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 };
 

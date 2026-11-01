@@ -10,419 +10,419 @@ class HashedString;
 namespace VanillaItemNames {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& AcaciaBoat();
+MCNAPI ::HashedString const& AcaciaBoat();
 
-MCAPI ::HashedString const& AcaciaChestBoat();
+MCNAPI ::HashedString const& AcaciaChestBoat();
 
-MCAPI ::HashedString const& AcaciaDoor();
+MCNAPI ::HashedString const& AcaciaDoor();
 
-MCAPI ::HashedString const& AcaciaHangingSign();
+MCNAPI ::HashedString const& AcaciaHangingSign();
 
-MCAPI ::HashedString const& AcaciaSign();
+MCNAPI ::HashedString const& AcaciaSign();
 
-MCAPI ::HashedString const& AmethystShard();
+MCNAPI ::HashedString const& AmethystShard();
 
-MCAPI ::HashedString const& Apple();
+MCNAPI ::HashedString const& Apple();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& ArmadilloScute();
+MCNAPI ::HashedString const& ArmadilloScute();
 #endif
 
-MCAPI ::HashedString const& ArmorStand();
+MCNAPI ::HashedString const& ArmorStand();
 
-MCAPI ::HashedString const& Arrow();
+MCNAPI ::HashedString const& Arrow();
 
-MCAPI ::HashedString const& AxolotlBucket();
+MCNAPI ::HashedString const& AxolotlBucket();
 
-MCAPI ::HashedString const& BakedPotato();
+MCNAPI ::HashedString const& BakedPotato();
 
-MCAPI ::HashedString const& Balloon();
+MCNAPI ::HashedString const& Balloon();
 
-MCAPI ::HashedString const& BambooChestRaft();
+MCNAPI ::HashedString const& BambooChestRaft();
 
-MCAPI ::HashedString const& BambooDoor();
+MCNAPI ::HashedString const& BambooDoor();
 
-MCAPI ::HashedString const& BambooHangingSign();
+MCNAPI ::HashedString const& BambooHangingSign();
 
-MCAPI ::HashedString const& BambooRaft();
+MCNAPI ::HashedString const& BambooRaft();
 
-MCAPI ::HashedString const& BambooSign();
+MCNAPI ::HashedString const& BambooSign();
 
-MCAPI ::HashedString const& Banner();
+MCNAPI ::HashedString const& Banner();
 
-MCAPI ::HashedString const& Bed();
+MCNAPI ::HashedString const& Bed();
 
-MCAPI ::HashedString const& Beetroot();
+MCNAPI ::HashedString const& Beetroot();
 
 MCAPI ::HashedString const& BeetrootSeeds();
 
-MCAPI ::HashedString const& BirchBoat();
+MCNAPI ::HashedString const& BirchBoat();
 
-MCAPI ::HashedString const& BirchChestBoat();
+MCNAPI ::HashedString const& BirchChestBoat();
 
-MCAPI ::HashedString const& BirchDoor();
+MCNAPI ::HashedString const& BirchDoor();
 
-MCAPI ::HashedString const& BirchHangingSign();
+MCNAPI ::HashedString const& BirchHangingSign();
 
-MCAPI ::HashedString const& BirchSign();
+MCNAPI ::HashedString const& BirchSign();
 
-MCAPI ::HashedString const& BlackBundle();
+MCNAPI ::HashedString const& BlackBundle();
 
-MCAPI ::HashedString const& BlackCushion();
+MCNAPI ::HashedString const& BlackCushion();
 
 MCAPI ::HashedString const& BlackDye();
 
-MCAPI ::HashedString const& BlackHarness();
+MCNAPI ::HashedString const& BlackHarness();
 
-MCAPI ::HashedString const& BlazePowder();
+MCNAPI ::HashedString const& BlazePowder();
 
-MCAPI ::HashedString const& Bleach();
+MCNAPI ::HashedString const& Bleach();
 
-MCAPI ::HashedString const& BlueBundle();
+MCNAPI ::HashedString const& BlueBundle();
 
-MCAPI ::HashedString const& BlueCushion();
+MCNAPI ::HashedString const& BlueCushion();
 
 MCAPI ::HashedString const& BlueDye();
 
-MCAPI ::HashedString const& BlueHarness();
+MCNAPI ::HashedString const& BlueHarness();
 
 MCAPI ::HashedString const& BoneMeal();
 
-MCAPI ::HashedString const& Book();
+MCNAPI ::HashedString const& Book();
 
-MCAPI ::HashedString const& BookAndQuill();
+MCNAPI ::HashedString const& BookAndQuill();
 
-MCAPI ::HashedString const& BordureIndentedBannerPattern();
+MCNAPI ::HashedString const& BordureIndentedBannerPattern();
 
 MCAPI ::HashedString const& Bow();
 
-MCAPI ::HashedString const& Bowl();
+MCNAPI ::HashedString const& Bowl();
 
-MCAPI ::HashedString const& Bread();
+MCNAPI ::HashedString const& Bread();
 
-MCAPI ::HashedString const& BreezeRod();
+MCNAPI ::HashedString const& BreezeRod();
 
-MCAPI ::HashedString const& BrewingStand();
+MCNAPI ::HashedString const& BrewingStand();
 
-MCAPI ::HashedString const& Brick();
+MCNAPI ::HashedString const& Brick();
 
-MCAPI ::HashedString const& BrownBundle();
+MCNAPI ::HashedString const& BrownBundle();
 
-MCAPI ::HashedString const& BrownCushion();
+MCNAPI ::HashedString const& BrownCushion();
 
 MCAPI ::HashedString const& BrownDye();
 
-MCAPI ::HashedString const& BrownHarness();
+MCNAPI ::HashedString const& BrownHarness();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& Brush();
+MCNAPI ::HashedString const& Brush();
 #endif
 
-MCAPI ::HashedString const& Bucket();
+MCNAPI ::HashedString const& Bucket();
 
-MCAPI ::HashedString const& Bundle();
+MCNAPI ::HashedString const& Bundle();
 
-MCAPI ::HashedString const& Cake();
+MCNAPI ::HashedString const& Cake();
 
-MCAPI ::HashedString const& Camera();
+MCNAPI ::HashedString const& Camera();
 
-MCAPI ::HashedString const& CampFire();
+MCNAPI ::HashedString const& CampFire();
 
 MCAPI ::HashedString const& Carrot();
 
-MCAPI ::HashedString const& CarrotOnAStick();
+MCNAPI ::HashedString const& CarrotOnAStick();
 
-MCAPI ::HashedString const& Cauldron();
+MCNAPI ::HashedString const& Cauldron();
 
-MCAPI ::HashedString const& ChalkBoard();
+MCNAPI ::HashedString const& ChalkBoard();
 
-MCAPI ::HashedString const& Charcoal();
+MCNAPI ::HashedString const& Charcoal();
 
-MCAPI ::HashedString const& CherryBoat();
+MCNAPI ::HashedString const& CherryBoat();
 
-MCAPI ::HashedString const& CherryChestBoat();
+MCNAPI ::HashedString const& CherryChestBoat();
 
-MCAPI ::HashedString const& CherryDoor();
+MCNAPI ::HashedString const& CherryDoor();
 
-MCAPI ::HashedString const& CherryHangingSign();
+MCNAPI ::HashedString const& CherryHangingSign();
 
-MCAPI ::HashedString const& CherrySign();
+MCNAPI ::HashedString const& CherrySign();
 
-MCAPI ::HashedString const& ChestMinecart();
+MCNAPI ::HashedString const& ChestMinecart();
 
-MCAPI ::HashedString const& ChorusFruit();
+MCNAPI ::HashedString const& ChorusFruit();
 
-MCAPI ::HashedString const& ClayBall();
+MCNAPI ::HashedString const& ClayBall();
 
-MCAPI ::HashedString const& Clock();
+MCNAPI ::HashedString const& Clock();
 
-MCAPI ::HashedString const& Coal();
+MCNAPI ::HashedString const& Coal();
 
-MCAPI ::HashedString const& CocoaBeans();
+MCNAPI ::HashedString const& CocoaBeans();
 
-MCAPI ::HashedString const& CodBucket();
+MCNAPI ::HashedString const& CodBucket();
 
-MCAPI ::HashedString const& CommandBlockMinecart();
+MCNAPI ::HashedString const& CommandBlockMinecart();
 
-MCAPI ::HashedString const& Comparator();
+MCNAPI ::HashedString const& Comparator();
 
-MCAPI ::HashedString const& Compass();
+MCNAPI ::HashedString const& Compass();
 
-MCAPI ::HashedString const& Compound();
+MCNAPI ::HashedString const& Compound();
 
-MCAPI ::HashedString const& Cookie();
+MCNAPI ::HashedString const& Cookie();
 
-MCAPI ::HashedString const& CopperDoor();
+MCNAPI ::HashedString const& CopperDoor();
 
-MCAPI ::HashedString const& CopperIngot();
+MCNAPI ::HashedString const& CopperIngot();
 
-MCAPI ::HashedString const& CreeperBannerPattern();
+MCNAPI ::HashedString const& CreeperBannerPattern();
 
-MCAPI ::HashedString const& CrimsonDoor();
+MCNAPI ::HashedString const& CrimsonDoor();
 
-MCAPI ::HashedString const& CrimsonHangingSign();
+MCNAPI ::HashedString const& CrimsonHangingSign();
 
-MCAPI ::HashedString const& CrimsonSign();
+MCNAPI ::HashedString const& CrimsonSign();
 
 MCAPI ::HashedString const& Crossbow();
 
-MCAPI ::HashedString const& CyanBundle();
+MCNAPI ::HashedString const& CyanBundle();
 
-MCAPI ::HashedString const& CyanCushion();
+MCNAPI ::HashedString const& CyanCushion();
 
 MCAPI ::HashedString const& CyanDye();
 
-MCAPI ::HashedString const& CyanHarness();
+MCNAPI ::HashedString const& CyanHarness();
 
-MCAPI ::HashedString const& DarkOakBoat();
+MCNAPI ::HashedString const& DarkOakBoat();
 
-MCAPI ::HashedString const& DarkOakChestBoat();
+MCNAPI ::HashedString const& DarkOakChestBoat();
 
-MCAPI ::HashedString const& DarkOakDoor();
+MCNAPI ::HashedString const& DarkOakDoor();
 
-MCAPI ::HashedString const& DarkOakHangingSign();
+MCNAPI ::HashedString const& DarkOakHangingSign();
 
-MCAPI ::HashedString const& DarkOakSign();
+MCNAPI ::HashedString const& DarkOakSign();
 
-MCAPI ::HashedString const& Diamond();
+MCNAPI ::HashedString const& Diamond();
 
-MCAPI ::HashedString const& DiamondHoe();
+MCNAPI ::HashedString const& DiamondHoe();
 
-MCAPI ::HashedString const& DragonBreath();
+MCNAPI ::HashedString const& DragonBreath();
 
-MCAPI ::HashedString const& DriedKelp();
+MCNAPI ::HashedString const& DriedKelp();
 
-MCAPI ::HashedString const& Egg();
+MCNAPI ::HashedString const& Egg();
 
-MCAPI ::HashedString const& Elytra();
+MCNAPI ::HashedString const& Elytra();
 
-MCAPI ::HashedString const& Emerald();
+MCNAPI ::HashedString const& Emerald();
 
-MCAPI ::HashedString const& EmptyMap();
+MCNAPI ::HashedString const& EmptyMap();
 
-MCAPI ::HashedString const& EnchantedBook();
-
-#ifdef LL_PLAT_C
-MCAPI ::HashedString const& EnchantedGoldenApple();
-#endif
-
-MCAPI ::HashedString const& EndCrystal();
-
-MCAPI ::HashedString const& EnderEye();
-
-MCAPI ::HashedString const& EnderPearl();
-
-MCAPI ::HashedString const& ExperienceBottle();
-
-MCAPI ::HashedString const& ExposedCopperDoor();
-
-MCAPI ::HashedString const& Feather();
-
-MCAPI ::HashedString const& FieldMasonedBannerPattern();
-
-MCAPI ::HashedString const& FilledMap();
-
-MCAPI ::HashedString const& FireCharge();
-
-MCAPI ::HashedString const& FireworkRocket();
-
-MCAPI ::HashedString const& FireworkStar();
-
-MCAPI ::HashedString const& FishingRod();
-
-MCAPI ::HashedString const& Flint();
-
-MCAPI ::HashedString const& FlintAndSteel();
-
-MCAPI ::HashedString const& FlowBannerPattern();
-
-MCAPI ::HashedString const& FlowerBannerPattern();
-
-MCAPI ::HashedString const& FlowerPot();
-
-MCAPI ::HashedString const& GlassBottle();
-
-MCAPI ::HashedString const& GlobeBannerPattern();
-
-MCAPI ::HashedString const& GlowBerries();
-
-MCAPI ::HashedString const& GlowInkSac();
-
-MCAPI ::HashedString const& GlowItemFrame();
-
-MCAPI ::HashedString const& GlowStick();
-
-MCAPI ::HashedString const& GlowStoneDust();
-
-MCAPI ::HashedString const& GoatHorn();
-
-MCAPI ::HashedString const& GoldIngot();
-
-MCAPI ::HashedString const& GoldNugget();
+MCNAPI ::HashedString const& EnchantedBook();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& GoldenApple();
+MCNAPI ::HashedString const& EnchantedGoldenApple();
 #endif
 
-MCAPI ::HashedString const& GrayBundle();
+MCNAPI ::HashedString const& EndCrystal();
 
-MCAPI ::HashedString const& GrayCushion();
+MCNAPI ::HashedString const& EnderEye();
+
+MCNAPI ::HashedString const& EnderPearl();
+
+MCNAPI ::HashedString const& ExperienceBottle();
+
+MCNAPI ::HashedString const& ExposedCopperDoor();
+
+MCNAPI ::HashedString const& Feather();
+
+MCNAPI ::HashedString const& FieldMasonedBannerPattern();
+
+MCNAPI ::HashedString const& FilledMap();
+
+MCNAPI ::HashedString const& FireCharge();
+
+MCNAPI ::HashedString const& FireworkRocket();
+
+MCNAPI ::HashedString const& FireworkStar();
+
+MCNAPI ::HashedString const& FishingRod();
+
+MCNAPI ::HashedString const& Flint();
+
+MCNAPI ::HashedString const& FlintAndSteel();
+
+MCNAPI ::HashedString const& FlowBannerPattern();
+
+MCNAPI ::HashedString const& FlowerBannerPattern();
+
+MCNAPI ::HashedString const& FlowerPot();
+
+MCNAPI ::HashedString const& GlassBottle();
+
+MCNAPI ::HashedString const& GlobeBannerPattern();
+
+MCNAPI ::HashedString const& GlowBerries();
+
+MCNAPI ::HashedString const& GlowInkSac();
+
+MCNAPI ::HashedString const& GlowItemFrame();
+
+MCNAPI ::HashedString const& GlowStick();
+
+MCNAPI ::HashedString const& GlowStoneDust();
+
+MCNAPI ::HashedString const& GoatHorn();
+
+MCNAPI ::HashedString const& GoldIngot();
+
+MCNAPI ::HashedString const& GoldNugget();
+
+#ifdef LL_PLAT_C
+MCNAPI ::HashedString const& GoldenApple();
+#endif
+
+MCNAPI ::HashedString const& GrayBundle();
+
+MCNAPI ::HashedString const& GrayCushion();
 
 MCAPI ::HashedString const& GrayDye();
 
-MCAPI ::HashedString const& GrayHarness();
+MCNAPI ::HashedString const& GrayHarness();
 
-MCAPI ::HashedString const& GreenBundle();
+MCNAPI ::HashedString const& GreenBundle();
 
-MCAPI ::HashedString const& GreenCushion();
+MCNAPI ::HashedString const& GreenCushion();
 
 MCAPI ::HashedString const& GreenDye();
 
-MCAPI ::HashedString const& GreenHarness();
+MCNAPI ::HashedString const& GreenHarness();
 
-MCAPI ::HashedString const& Gunpowder();
+MCNAPI ::HashedString const& Gunpowder();
 
-MCAPI ::HashedString const& GusterBannerPattern();
-
-#ifdef LL_PLAT_C
-MCAPI ::HashedString const& HeartOfTheSea();
-#endif
-
-MCAPI ::HashedString const& HoneyBottle();
-
-MCAPI ::HashedString const& HoneyComb();
-
-MCAPI ::HashedString const& Hopper();
-
-MCAPI ::HashedString const& HopperMinecart();
+MCNAPI ::HashedString const& GusterBannerPattern();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& IceBall();
+MCNAPI ::HashedString const& HeartOfTheSea();
 #endif
 
-MCAPI ::HashedString const& IceBomb();
+MCNAPI ::HashedString const& HoneyBottle();
 
-MCAPI ::HashedString const& IceCrystal();
+MCNAPI ::HashedString const& HoneyComb();
 
-MCAPI ::HashedString const& Icicle();
+MCNAPI ::HashedString const& Hopper();
 
-MCAPI ::HashedString const& InkSac();
+MCNAPI ::HashedString const& HopperMinecart();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& IronBoots();
-
-MCAPI ::HashedString const& IronChestplate();
+MCNAPI ::HashedString const& IceBall();
 #endif
 
-MCAPI ::HashedString const& IronDoor();
+MCNAPI ::HashedString const& IceBomb();
 
-MCAPI ::HashedString const& IronHelmet();
+MCNAPI ::HashedString const& IceCrystal();
 
-MCAPI ::HashedString const& IronIngot();
+MCNAPI ::HashedString const& Icicle();
+
+MCNAPI ::HashedString const& InkSac();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& IronLeggings();
+MCNAPI ::HashedString const& IronBoots();
+
+MCNAPI ::HashedString const& IronChestplate();
 #endif
 
-MCAPI ::HashedString const& ItemFrame();
+MCNAPI ::HashedString const& IronDoor();
 
-MCAPI ::HashedString const& JungleBoat();
+MCNAPI ::HashedString const& IronHelmet();
 
-MCAPI ::HashedString const& JungleChestBoat();
+MCNAPI ::HashedString const& IronIngot();
 
-MCAPI ::HashedString const& JungleDoor();
+#ifdef LL_PLAT_C
+MCNAPI ::HashedString const& IronLeggings();
+#endif
 
-MCAPI ::HashedString const& JungleHangingSign();
+MCNAPI ::HashedString const& ItemFrame();
 
-MCAPI ::HashedString const& JungleSign();
+MCNAPI ::HashedString const& JungleBoat();
 
-MCAPI ::HashedString const& Kelp();
+MCNAPI ::HashedString const& JungleChestBoat();
 
-MCAPI ::HashedString const& LapisLazuli();
+MCNAPI ::HashedString const& JungleDoor();
 
-MCAPI ::HashedString const& LavaBucket();
+MCNAPI ::HashedString const& JungleHangingSign();
 
-MCAPI ::HashedString const& Lead();
+MCNAPI ::HashedString const& JungleSign();
 
-MCAPI ::HashedString const& Leather();
+MCNAPI ::HashedString const& Kelp();
 
-MCAPI ::HashedString const& LeatherBoots();
+MCNAPI ::HashedString const& LapisLazuli();
 
-MCAPI ::HashedString const& LeatherChestplate();
+MCNAPI ::HashedString const& LavaBucket();
 
-MCAPI ::HashedString const& LeatherHelmet();
+MCNAPI ::HashedString const& Lead();
 
-MCAPI ::HashedString const& LeatherHorseArmor();
+MCNAPI ::HashedString const& Leather();
 
-MCAPI ::HashedString const& LeatherLeggings();
+MCNAPI ::HashedString const& LeatherBoots();
 
-MCAPI ::HashedString const& LightBlueBundle();
+MCNAPI ::HashedString const& LeatherChestplate();
 
-MCAPI ::HashedString const& LightBlueCushion();
+MCNAPI ::HashedString const& LeatherHelmet();
+
+MCNAPI ::HashedString const& LeatherHorseArmor();
+
+MCNAPI ::HashedString const& LeatherLeggings();
+
+MCNAPI ::HashedString const& LightBlueBundle();
+
+MCNAPI ::HashedString const& LightBlueCushion();
 
 MCAPI ::HashedString const& LightBlueDye();
 
-MCAPI ::HashedString const& LightBlueHarness();
+MCNAPI ::HashedString const& LightBlueHarness();
 
-MCAPI ::HashedString const& LightGrayBundle();
+MCNAPI ::HashedString const& LightGrayBundle();
 
-MCAPI ::HashedString const& LightGrayCushion();
+MCNAPI ::HashedString const& LightGrayCushion();
 
 MCAPI ::HashedString const& LightGrayDye();
 
-MCAPI ::HashedString const& LightGrayHarness();
+MCNAPI ::HashedString const& LightGrayHarness();
 
-MCAPI ::HashedString const& LimeBundle();
+MCNAPI ::HashedString const& LimeBundle();
 
-MCAPI ::HashedString const& LimeCushion();
+MCNAPI ::HashedString const& LimeCushion();
 
 MCAPI ::HashedString const& LimeDye();
 
-MCAPI ::HashedString const& LimeHarness();
+MCNAPI ::HashedString const& LimeHarness();
 
-MCAPI ::HashedString const& LingeringPotion();
+MCNAPI ::HashedString const& LingeringPotion();
 
-MCAPI ::HashedString const& LodestoneCompass();
+MCNAPI ::HashedString const& LodestoneCompass();
 
-MCAPI ::HashedString const& Mace();
+MCNAPI ::HashedString const& Mace();
 
-MCAPI ::HashedString const& MagentaBundle();
+MCNAPI ::HashedString const& MagentaBundle();
 
-MCAPI ::HashedString const& MagentaCushion();
+MCNAPI ::HashedString const& MagentaCushion();
 
 MCAPI ::HashedString const& MagentaDye();
 
-MCAPI ::HashedString const& MagentaHarness();
+MCNAPI ::HashedString const& MagentaHarness();
 
-MCAPI ::HashedString const& MangroveBoat();
+MCNAPI ::HashedString const& MangroveBoat();
 
-MCAPI ::HashedString const& MangroveChestBoat();
+MCNAPI ::HashedString const& MangroveChestBoat();
 
-MCAPI ::HashedString const& MangroveDoor();
+MCNAPI ::HashedString const& MangroveDoor();
 
-MCAPI ::HashedString const& MangroveHangingSign();
+MCNAPI ::HashedString const& MangroveHangingSign();
 
-MCAPI ::HashedString const& MangroveSign();
+MCNAPI ::HashedString const& MangroveSign();
 
 #ifdef LL_PLAT_C
 MCAPI ::HashedString const& Medicine();
@@ -430,301 +430,301 @@ MCAPI ::HashedString const& Medicine();
 
 MCAPI ::HashedString const& MelonSeeds();
 
-MCAPI ::HashedString const& MelonSlice();
+MCNAPI ::HashedString const& MelonSlice();
 
 MCAPI ::HashedString const& MilkBucket();
 
-MCAPI ::HashedString const& Minecart();
+MCNAPI ::HashedString const& Minecart();
 
-MCAPI ::HashedString const& MojangBannerPattern();
-
-#ifdef LL_PLAT_C
-MCAPI ::HashedString const& MusicDisc11();
-
-MCAPI ::HashedString const& MusicDisc13();
-
-MCAPI ::HashedString const& MusicDiscBlocks();
-
-MCAPI ::HashedString const& MusicDiscBounce();
-
-MCAPI ::HashedString const& MusicDiscCat();
-
-MCAPI ::HashedString const& MusicDiscChirp();
-
-MCAPI ::HashedString const& MusicDiscFar();
-
-MCAPI ::HashedString const& MusicDiscMall();
-
-MCAPI ::HashedString const& MusicDiscMellohi();
-
-MCAPI ::HashedString const& MusicDiscStal();
-
-MCAPI ::HashedString const& MusicDiscStrad();
-
-MCAPI ::HashedString const& MusicDiscWait();
-
-MCAPI ::HashedString const& MusicDiscWard();
-#endif
-
-MCAPI ::HashedString const& NameTag();
-
-MCAPI ::HashedString const& NetherSprouts();
-
-MCAPI ::HashedString const& NetherWart();
-
-MCAPI ::HashedString const& NetheriteBoots();
-
-MCAPI ::HashedString const& NetheriteChestplate();
-
-MCAPI ::HashedString const& NetheriteHelmet();
-
-MCAPI ::HashedString const& NetheriteIngot();
-
-MCAPI ::HashedString const& NetheriteLeggings();
-
-MCAPI ::HashedString const& NetheriteUpgradeSmithingTemplate();
-
-MCAPI ::HashedString const& OakBoat();
-
-MCAPI ::HashedString const& OakChestBoat();
-
-MCAPI ::HashedString const& OakDoor();
-
-MCAPI ::HashedString const& OakHangingSign();
-
-MCAPI ::HashedString const& OakSign();
-
-MCAPI ::HashedString const& OminousBottle();
+MCNAPI ::HashedString const& MojangBannerPattern();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& OminousTrialKey();
+MCNAPI ::HashedString const& MusicDisc11();
+
+MCNAPI ::HashedString const& MusicDisc13();
+
+MCNAPI ::HashedString const& MusicDiscBlocks();
+
+MCNAPI ::HashedString const& MusicDiscBounce();
+
+MCNAPI ::HashedString const& MusicDiscCat();
+
+MCNAPI ::HashedString const& MusicDiscChirp();
+
+MCNAPI ::HashedString const& MusicDiscFar();
+
+MCNAPI ::HashedString const& MusicDiscMall();
+
+MCNAPI ::HashedString const& MusicDiscMellohi();
+
+MCNAPI ::HashedString const& MusicDiscStal();
+
+MCNAPI ::HashedString const& MusicDiscStrad();
+
+MCNAPI ::HashedString const& MusicDiscWait();
+
+MCNAPI ::HashedString const& MusicDiscWard();
 #endif
 
-MCAPI ::HashedString const& OrangeBundle();
+MCNAPI ::HashedString const& NameTag();
 
-MCAPI ::HashedString const& OrangeCushion();
+MCNAPI ::HashedString const& NetherSprouts();
+
+MCNAPI ::HashedString const& NetherWart();
+
+MCNAPI ::HashedString const& NetheriteBoots();
+
+MCNAPI ::HashedString const& NetheriteChestplate();
+
+MCNAPI ::HashedString const& NetheriteHelmet();
+
+MCNAPI ::HashedString const& NetheriteIngot();
+
+MCNAPI ::HashedString const& NetheriteLeggings();
+
+MCNAPI ::HashedString const& NetheriteUpgradeSmithingTemplate();
+
+MCNAPI ::HashedString const& OakBoat();
+
+MCNAPI ::HashedString const& OakChestBoat();
+
+MCNAPI ::HashedString const& OakDoor();
+
+MCNAPI ::HashedString const& OakHangingSign();
+
+MCNAPI ::HashedString const& OakSign();
+
+MCNAPI ::HashedString const& OminousBottle();
+
+#ifdef LL_PLAT_C
+MCNAPI ::HashedString const& OminousTrialKey();
+#endif
+
+MCNAPI ::HashedString const& OrangeBundle();
+
+MCNAPI ::HashedString const& OrangeCushion();
 
 MCAPI ::HashedString const& OrangeDye();
 
-MCAPI ::HashedString const& OrangeHarness();
+MCNAPI ::HashedString const& OrangeHarness();
 
-MCAPI ::HashedString const& OxidizedCopperDoor();
+MCNAPI ::HashedString const& OxidizedCopperDoor();
 
-MCAPI ::HashedString const& Painting();
+MCNAPI ::HashedString const& Painting();
 
-MCAPI ::HashedString const& PaleOakBoat();
+MCNAPI ::HashedString const& PaleOakBoat();
 
-MCAPI ::HashedString const& PaleOakChestBoat();
+MCNAPI ::HashedString const& PaleOakChestBoat();
 
-MCAPI ::HashedString const& PaleOakDoor();
+MCNAPI ::HashedString const& PaleOakDoor();
 
-MCAPI ::HashedString const& PaleOakHangingSign();
+MCNAPI ::HashedString const& PaleOakHangingSign();
 
-MCAPI ::HashedString const& PaleOakSign();
+MCNAPI ::HashedString const& PaleOakSign();
 
-MCAPI ::HashedString const& Paper();
+MCNAPI ::HashedString const& Paper();
 
-MCAPI ::HashedString const& PhantomMembrane();
+MCNAPI ::HashedString const& PhantomMembrane();
 
-MCAPI ::HashedString const& PhotoItem();
+MCNAPI ::HashedString const& PhotoItem();
 
-MCAPI ::HashedString const& PiglinBannerPattern();
+MCNAPI ::HashedString const& PiglinBannerPattern();
 
-MCAPI ::HashedString const& PinkBundle();
+MCNAPI ::HashedString const& PinkBundle();
 
-MCAPI ::HashedString const& PinkCushion();
+MCNAPI ::HashedString const& PinkCushion();
 
 MCAPI ::HashedString const& PinkDye();
 
-MCAPI ::HashedString const& PinkHarness();
+MCNAPI ::HashedString const& PinkHarness();
 
-MCAPI ::HashedString const& PitcherPod();
+MCNAPI ::HashedString const& PitcherPod();
 
-MCAPI ::HashedString const& PoisonousPotato();
+MCNAPI ::HashedString const& PoisonousPotato();
 
-MCAPI ::HashedString const& PoplarBoat();
+MCNAPI ::HashedString const& PoplarBoat();
 
-MCAPI ::HashedString const& PoplarChestBoat();
+MCNAPI ::HashedString const& PoplarChestBoat();
 
-MCAPI ::HashedString const& PoplarDoor();
+MCNAPI ::HashedString const& PoplarDoor();
 
-MCAPI ::HashedString const& PoplarHangingSign();
+MCNAPI ::HashedString const& PoplarHangingSign();
 
-MCAPI ::HashedString const& PoplarSign();
+MCNAPI ::HashedString const& PoplarSign();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& PortfolioBook();
+MCNAPI ::HashedString const& PortfolioBook();
 #endif
 
 MCAPI ::HashedString const& Potato();
 
 MCAPI ::HashedString const& Potion();
 
-MCAPI ::HashedString const& PowderSnowBucket();
+MCNAPI ::HashedString const& PowderSnowBucket();
 
-MCAPI ::HashedString const& PrismarineCrystals();
+MCNAPI ::HashedString const& PrismarineCrystals();
 
-MCAPI ::HashedString const& PufferfishBucket();
+MCNAPI ::HashedString const& PufferfishBucket();
 
-MCAPI ::HashedString const& PumpkinPie();
+MCNAPI ::HashedString const& PumpkinPie();
 
 MCAPI ::HashedString const& PumpkinSeeds();
 
-MCAPI ::HashedString const& PurpleBundle();
+MCNAPI ::HashedString const& PurpleBundle();
 
-MCAPI ::HashedString const& PurpleCushion();
+MCNAPI ::HashedString const& PurpleCushion();
 
 MCAPI ::HashedString const& PurpleDye();
 
-MCAPI ::HashedString const& PurpleHarness();
+MCNAPI ::HashedString const& PurpleHarness();
 
-MCAPI ::HashedString const& Quartz();
+MCNAPI ::HashedString const& Quartz();
 
-MCAPI ::HashedString const& RapidFertilizer();
+MCNAPI ::HashedString const& RapidFertilizer();
 
-MCAPI ::HashedString const& RawCopper();
+MCNAPI ::HashedString const& RawCopper();
 
-MCAPI ::HashedString const& RawGold();
+MCNAPI ::HashedString const& RawGold();
 
-MCAPI ::HashedString const& RawIron();
+MCNAPI ::HashedString const& RawIron();
 
-MCAPI ::HashedString const& RecoveryCompass();
+MCNAPI ::HashedString const& RecoveryCompass();
 
-MCAPI ::HashedString const& RedBundle();
+MCNAPI ::HashedString const& RedBundle();
 
-MCAPI ::HashedString const& RedCushion();
+MCNAPI ::HashedString const& RedCushion();
 
 MCAPI ::HashedString const& RedDye();
 
-MCAPI ::HashedString const& RedHarness();
+MCNAPI ::HashedString const& RedHarness();
 
-MCAPI ::HashedString const& RedStone();
+MCNAPI ::HashedString const& RedStone();
 
-MCAPI ::HashedString const& Repeater();
+MCNAPI ::HashedString const& Repeater();
 
-MCAPI ::HashedString const& ResinBrick();
-
-#ifdef LL_PLAT_C
-MCAPI ::HashedString const& RottenFlesh();
-#endif
-
-MCAPI ::HashedString const& Saddle();
-
-MCAPI ::HashedString const& SalmonBucket();
-
-MCAPI ::HashedString const& Shears();
-
-MCAPI ::HashedString const& Shield();
-
-MCAPI ::HashedString const& ShulkerShell();
-
-MCAPI ::HashedString const& SkullBannerPattern();
+MCNAPI ::HashedString const& ResinBrick();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& SlimeBall();
+MCNAPI ::HashedString const& RottenFlesh();
 #endif
 
-MCAPI ::HashedString const& SnowBall();
+MCNAPI ::HashedString const& Saddle();
 
-MCAPI ::HashedString const& SoulCampfire();
+MCNAPI ::HashedString const& SalmonBucket();
 
-MCAPI ::HashedString const& Sparkler();
+MCNAPI ::HashedString const& Shears();
 
-MCAPI ::HashedString const& SpawnEggLegacy();
+MCNAPI ::HashedString const& Shield();
 
-MCAPI ::HashedString const& SplashPotion();
+MCNAPI ::HashedString const& ShulkerShell();
 
-MCAPI ::HashedString const& SpruceBoat();
+MCNAPI ::HashedString const& SkullBannerPattern();
 
-MCAPI ::HashedString const& SpruceChestBoat();
+#ifdef LL_PLAT_C
+MCNAPI ::HashedString const& SlimeBall();
+#endif
 
-MCAPI ::HashedString const& SpruceDoor();
+MCNAPI ::HashedString const& SnowBall();
 
-MCAPI ::HashedString const& SpruceHangingSign();
+MCNAPI ::HashedString const& SoulCampfire();
 
-MCAPI ::HashedString const& SpruceSign();
+MCNAPI ::HashedString const& Sparkler();
 
-MCAPI ::HashedString const& Spyglass();
+MCNAPI ::HashedString const& SpawnEggLegacy();
 
-MCAPI ::HashedString const& Stick();
+MCNAPI ::HashedString const& SplashPotion();
 
-MCAPI ::HashedString const& StrawBed();
+MCNAPI ::HashedString const& SpruceBoat();
 
-MCAPI ::HashedString const& String();
+MCNAPI ::HashedString const& SpruceChestBoat();
 
-MCAPI ::HashedString const& Sugar();
+MCNAPI ::HashedString const& SpruceDoor();
+
+MCNAPI ::HashedString const& SpruceHangingSign();
+
+MCNAPI ::HashedString const& SpruceSign();
+
+MCNAPI ::HashedString const& Spyglass();
+
+MCNAPI ::HashedString const& Stick();
+
+MCNAPI ::HashedString const& StrawBed();
+
+MCNAPI ::HashedString const& String();
+
+MCNAPI ::HashedString const& Sugar();
 
 MCAPI ::HashedString const& SugarCane();
 
-MCAPI ::HashedString const& SulfurCubeBucket();
+MCNAPI ::HashedString const& SulfurCubeBucket();
 
-MCAPI ::HashedString const& SuspiciousStew();
+MCNAPI ::HashedString const& SuspiciousStew();
 
-MCAPI ::HashedString const& SweetBerries();
+MCNAPI ::HashedString const& SweetBerries();
 
-MCAPI ::HashedString const& TadpoleBucket();
+MCNAPI ::HashedString const& TadpoleBucket();
 
-MCAPI ::HashedString const& TntMinecart();
+MCNAPI ::HashedString const& TntMinecart();
 
-MCAPI ::HashedString const& TorchflowerSeeds();
+MCNAPI ::HashedString const& TorchflowerSeeds();
 
 MCAPI ::HashedString const& TotemOfUndying();
 
-MCAPI ::HashedString const& TrialKey();
+MCNAPI ::HashedString const& TrialKey();
 
-MCAPI ::HashedString const& Trident();
+MCNAPI ::HashedString const& Trident();
 
-MCAPI ::HashedString const& TropicalFishBucket();
+MCNAPI ::HashedString const& TropicalFishBucket();
 
-MCAPI ::HashedString const& TurtleHelmet();
+MCNAPI ::HashedString const& TurtleHelmet();
 
-MCAPI ::HashedString const& TurtleScute();
+MCNAPI ::HashedString const& TurtleScute();
 
-MCAPI ::HashedString const& WarpedDoor();
+MCNAPI ::HashedString const& WarpedDoor();
 
-MCAPI ::HashedString const& WarpedFungusOnAStick();
+MCNAPI ::HashedString const& WarpedFungusOnAStick();
 
-MCAPI ::HashedString const& WarpedHangingSign();
+MCNAPI ::HashedString const& WarpedHangingSign();
 
-MCAPI ::HashedString const& WarpedSign();
+MCNAPI ::HashedString const& WarpedSign();
 
-MCAPI ::HashedString const& WaterBucket();
+MCNAPI ::HashedString const& WaterBucket();
 
-MCAPI ::HashedString const& WaxedCopperDoor();
+MCNAPI ::HashedString const& WaxedCopperDoor();
 
-MCAPI ::HashedString const& WaxedExposedCopperDoor();
+MCNAPI ::HashedString const& WaxedExposedCopperDoor();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperDoor();
+MCNAPI ::HashedString const& WaxedOxidizedCopperDoor();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperDoor();
+MCNAPI ::HashedString const& WaxedWeatheredCopperDoor();
 
-MCAPI ::HashedString const& WeatheredCopperDoor();
+MCNAPI ::HashedString const& WeatheredCopperDoor();
 
-MCAPI ::HashedString const& Wheat();
+MCNAPI ::HashedString const& Wheat();
 
 MCAPI ::HashedString const& WheatSeeds();
 
-MCAPI ::HashedString const& WhiteBundle();
+MCNAPI ::HashedString const& WhiteBundle();
 
-MCAPI ::HashedString const& WhiteCushion();
+MCNAPI ::HashedString const& WhiteCushion();
 
 MCAPI ::HashedString const& WhiteDye();
 
-MCAPI ::HashedString const& WhiteHarness();
+MCNAPI ::HashedString const& WhiteHarness();
 
-MCAPI ::HashedString const& WindCharge();
+MCNAPI ::HashedString const& WindCharge();
 
-MCAPI ::HashedString const& WolfArmor();
+MCNAPI ::HashedString const& WolfArmor();
 
-MCAPI ::HashedString const& WrittenBook();
+MCNAPI ::HashedString const& WrittenBook();
 
-MCAPI ::HashedString const& YellowBundle();
+MCNAPI ::HashedString const& YellowBundle();
 
-MCAPI ::HashedString const& YellowCushion();
+MCNAPI ::HashedString const& YellowCushion();
 
 MCAPI ::HashedString const& YellowDye();
 
-MCAPI ::HashedString const& YellowHarness();
+MCNAPI ::HashedString const& YellowHarness();
 // NOLINTEND
 
 } // namespace VanillaItemNames

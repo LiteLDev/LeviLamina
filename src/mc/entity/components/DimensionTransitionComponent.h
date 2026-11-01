@@ -27,24 +27,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& AXIS_TAG();
+    MCNAPI static ::std::string const& AXIS_TAG();
 
-    MCAPI static ::std::string const& COMPONENT_TAG();
+    MCNAPI static ::std::string const& COMPONENT_TAG();
 
-    MCAPI static ::std::string const& DIMENSION_TAG();
+    MCNAPI static ::std::string const& DIMENSION_TAG();
 
-    MCAPI static ::std::string const& POSITION_X_TAG();
+    MCNAPI static ::std::string const& POSITION_X_TAG();
 
-    MCAPI static ::std::string const& POSITION_Y_TAG();
+    MCNAPI static ::std::string const& POSITION_Y_TAG();
 
-    MCAPI static ::std::string const& POSITION_Z_TAG();
+    MCNAPI static ::std::string const& POSITION_Z_TAG();
     // NOLINTEND
 };

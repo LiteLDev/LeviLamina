@@ -33,11 +33,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkRenderObjectCollection(::ChunkRenderObjectCollection&& other);
+    MCNAPI ChunkRenderObjectCollection(::ChunkRenderObjectCollection&& other);
 
-    MCAPI ChunkRenderObjectCollection(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[17]);
+    MCNAPI ChunkRenderObjectCollection(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[17]);
 
-    MCAPI uint64 addToChunkQueue(
+    MCNAPI uint64 addToChunkQueue(
         ::std::variant<
             ::std::monostate,
             ::std::shared_ptr<::RenderChunkDirectIndexData>,
@@ -55,8 +55,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkRenderObjectCollection&& other);
+    MCNAPI void* $ctor(::ChunkRenderObjectCollection&& other);
 
-    MCAPI void* $ctor(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[17]);
+    MCNAPI void* $ctor(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[17]);
     // NOLINTEND
 };

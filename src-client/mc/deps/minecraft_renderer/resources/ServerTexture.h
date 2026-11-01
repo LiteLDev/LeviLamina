@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerTexture(
+    MCNAPI explicit ServerTexture(
         ::mce::ResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Texture,
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::ResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Texture,

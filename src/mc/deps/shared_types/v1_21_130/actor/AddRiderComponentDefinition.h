@@ -43,28 +43,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_130::AddRiderComponentDefinition&
+    MCNAPI ::SharedTypes::v1_21_130::AddRiderComponentDefinition&
     operator=(::SharedTypes::v1_21_130::AddRiderComponentDefinition&&);
 
-    MCAPI ~AddRiderComponentDefinition();
+    MCNAPI ~AddRiderComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -43,23 +43,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $nextInt();
+    MCNAPI int $nextInt();
 
-    MCAPI int $nextInt(int const bound);
+    MCNAPI int $nextInt(int const bound);
 
-#ifdef LL_PLAT_S
-    MCAPI int64 $nextLong();
-#else // LL_PLAT_C
-    MCFOLD int64 $nextLong();
-#endif
+    MCNAPI int64 $nextLong();
 
-    MCFOLD bool $nextBoolean();
+    MCNAPI bool $nextBoolean();
 
-    MCAPI double $nextDouble();
+    MCNAPI double $nextDouble();
 
-    MCAPI double $nextGaussianDouble();
+    MCNAPI double $nextGaussianDouble();
 
-    MCFOLD void $consumeCount(uint count);
+    MCNAPI void $consumeCount(uint count);
 
 
     // NOLINTEND

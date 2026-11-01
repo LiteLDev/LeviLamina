@@ -16,9 +16,9 @@ struct NoteBlockInstrumentEnum {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindNoteBlockInstrument(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindNoteBlockInstrument(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::string noteBlockInstrumentToString(::SharedTypes::v1_26_20::NoteBlockInstrument instrument);
+    MCNAPI static ::std::string noteBlockInstrumentToString(::SharedTypes::v1_26_20::NoteBlockInstrument instrument);
     // NOLINTEND
 };
 

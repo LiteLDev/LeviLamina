@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RatingObject(
+    MCNAPI RatingObject(
         ::std::string const&                              name,
         ::OreUI::Detail::IPropertyObject*                 parent,
         ::Bedrock::Services::layout::model::Rating const& src
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                              name,
         ::OreUI::Detail::IPropertyObject*                 parent,
         ::Bedrock::Services::layout::model::Rating const& src

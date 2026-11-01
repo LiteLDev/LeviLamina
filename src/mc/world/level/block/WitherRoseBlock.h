@@ -40,20 +40,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCAPI bool $canSpawnOn(::Actor* actor) const;
+    MCNAPI bool $canSpawnOn(::Actor* actor) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND
@@ -61,6 +61,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

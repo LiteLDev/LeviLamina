@@ -10,7 +10,7 @@ class ScreenContext;
 namespace ScreenContextHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::ScreenContext makeScreenContextAlphaOverride(::ScreenContext& screenContext, float a);
+MCNAPI ::ScreenContext makeScreenContextAlphaOverride(::ScreenContext& screenContext, float a);
 // NOLINTEND
 
 } // namespace ScreenContextHelper

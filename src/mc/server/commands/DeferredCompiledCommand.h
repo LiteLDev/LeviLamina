@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::MinecraftCommands&);
+    MCNAPI void $execute(::MinecraftCommands&);
 
 
     // NOLINTEND

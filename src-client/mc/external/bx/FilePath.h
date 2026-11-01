@@ -18,15 +18,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FilePath(char const* _rhs);
+    MCNAPI explicit FilePath(char const* _rhs);
 
-    MCFOLD char const* get() const;
+    MCNAPI char const* get() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(char const* _rhs);
+    MCNAPI void* $ctor(char const* _rhs);
     // NOLINTEND
 };
 

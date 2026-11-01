@@ -57,30 +57,30 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _parseEvent(::ConstDeserializeDataParams const& deserializeDataParams, ::std::vector<::HashedString>& eventList);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+    MCNAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI void $handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+    MCNAPI void $handleCreation(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
 
-    MCAPI void $handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
+    MCNAPI void $handleExpiration(::ParticleSystem::ComponentAccessParticleEmitter& emitter);
 
-    MCAPI void $handleTimelineEvents(
+    MCNAPI void $handleTimelineEvents(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::std::chrono::nanoseconds const                  lastAge,
         ::std::chrono::nanoseconds                        age
     );
 
-    MCAPI void $handleTravelDistanceEvents(
+    MCNAPI void $handleTravelDistanceEvents(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         float                                             lastDistance,
         float                                             distance

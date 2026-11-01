@@ -74,7 +74,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fetchPathableNeighbors(
+    MCNAPI void fetchPathableNeighbors(
         ::std::vector<::BlockPos>& outNeighbors,
         ::BlockSource&             region,
         ::BlockPos const&          pos,
@@ -85,36 +85,36 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
+    MCNAPI static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCNAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShapeInWorld(
+    MCNAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::AABB& bufferAABB
     ) const;
 
-    MCAPI ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -123,17 +123,17 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool $isFenceBlock() const;
+    MCNAPI bool $isFenceBlock() const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD ::HitResult $clip(
+    MCNAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -149,6 +149,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -92,49 +92,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextureGroup(
+    MCNAPI TextureGroup(
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
         ::mce::TextureResourceService&                            textureResourceService
     );
 
-    MCAPI TextureGroup(
+    MCNAPI TextureGroup(
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
         ::mce::TextureResourceService&                            textureResourceService,
         ::std::shared_ptr<::mce::ImageResourceLoader>             imageResourceLoader
     );
 
-    MCAPI void _loadTextureAsyncUrgentlyIfTouched(
+    MCNAPI void _loadTextureAsyncUrgentlyIfTouched(
         ::std::pair<::ResourceLocation, ::TextureLoadMode> const& textureLoadKey,
         ::std::optional<::ResourceLoadType> const                 optionalLoadType
     );
 
-    MCAPI void _loadTexturesAsync(
+    MCNAPI void _loadTexturesAsync(
         ::gsl::span<::ResourceLocationPair> const locationPairs,
         ::std::optional<::ResourceLoadType> const resourceLoadType
     );
 
-    MCAPI void addEmptyTexture(::ResourceLocation const& resourceLocation, int width, int height);
+    MCNAPI void addEmptyTexture(::ResourceLocation const& resourceLocation, int width, int height);
 
-    MCAPI void enableLRUCache(uint64 cacheSize);
+    MCNAPI void enableLRUCache(uint64 cacheSize);
 
-    MCAPI uint64 estimateMemoryUsage() const;
+    MCNAPI uint64 estimateMemoryUsage() const;
 
-    MCAPI ::cg::ImageBuffer* getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad);
+    MCNAPI ::cg::ImageBuffer* getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad);
 
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool forceReload);
 
-    MCAPI bool isLoaded(
+    MCNAPI bool isLoaded(
         ::ResourceLocation const& resourceLocation,
         bool                      ignoreCreation,
         ::cg::TextureSetLayerType textureType
     ) const;
 
-    MCAPI ::nonstd::expected<void, ::std::error_condition>
+    MCNAPI ::nonstd::expected<void, ::std::error_condition>
     loadImageSyncAndInsertIntoCache(::ResourceLocation const& resourceLocation, bool splitAsArray);
 
-    MCAPI ::Bedrock::Threading::Async<void> loadTextureAsync(
+    MCNAPI ::Bedrock::Threading::Async<void> loadTextureAsync(
         ::ResourceLocation const&           resourceLocation,
         ::TextureLoadMode                   textureLoadMode,
         ::std::optional<::ResourceLoadType> resourceLoadType,
@@ -144,21 +144,21 @@ public:
     MCAPI void
     loadTexturesAsync(::gsl::span<::ResourceLocation> locations, ::std::optional<::ResourceLoadType> resourceLoadType);
 
-    MCAPI void reloadAllTextures();
+    MCNAPI void reloadAllTextures();
 
-    MCAPI void reloadImages(
+    MCNAPI void reloadImages(
         ::gsl::span<::ResourceLocationPair> imagesToLoadAsync,
         ::gsl::span<::ResourceLocation>     imagesToImmediatelyLoad,
         ::std::vector<::ResourceLocation>   texturesToKeep,
         ::ImageCacheMode
     );
 
-    MCAPI void setTextureMetadata(
+    MCNAPI void setTextureMetadata(
         ::ResourceLocation const&                                      resourceLocation,
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition
     );
 
-    MCAPI void unloadAllTextures();
+    MCNAPI void unloadAllTextures();
 
     MCAPI bool unloadTexture(::ResourceLocation const& resourceLocation, bool assertOnFailure);
 
@@ -166,12 +166,12 @@ public:
 
     MCAPI ::BedrockTexture& uploadTexture(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer imageBuffer);
 
-    MCAPI ::BedrockTexture& uploadTexture(
+    MCNAPI ::BedrockTexture& uploadTexture(
         ::ResourceLocation const&                                      resourceLocation,
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition
     );
 
-    MCAPI ::BedrockTexture& uploadTexture(
+    MCNAPI ::BedrockTexture& uploadTexture(
         ::ResourceLocation const& resourceLocation,
         ::mce::TextureContainer&& textureContainer,
         ::std::string_view        optionalIdentifier
@@ -181,13 +181,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
         ::mce::TextureResourceService&                            textureResourceService
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
         ::mce::TextureResourceService&                            textureResourceService,
@@ -198,13 +198,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::TexturePtr $getTexture(
+    MCNAPI ::mce::TexturePtr $getTexture(
         ::ResourceLocation const&       resourceLocation,
         bool const                      forceReload,
         ::std::optional<uint>           optLoadOrder,

@@ -73,11 +73,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorVolumeHighlightRenderer();
+    MCNAPI EditorVolumeHighlightRenderer();
 
-    MCAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area) const;
+    MCNAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area) const;
 
-    MCAPI void _initializeChunkBuilder(
+    MCNAPI void _initializeChunkBuilder(
         ::ClientBlockPipeline::TessellatorContext& pipelineContext,
         ::BlockSource&                             region,
         ::Tessellator&                             tessellator,
@@ -85,7 +85,7 @@ public:
         ::AABB const&                              area
     );
 
-    MCAPI bool _renderBlocks(
+    MCNAPI bool _renderBlocks(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
         ::AABB const&             area,
@@ -96,7 +96,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _renderBlockEntities(
+    MCNAPI static bool _renderBlockEntities(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
         ::AABB const&             area,
@@ -108,19 +108,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
 
-    MCFOLD void $onSourceDestroyed(::BlockSource& source);
+    MCNAPI void $onSourceDestroyed(::BlockSource& source);
 
-    MCAPI void $onBlockChanged(
+    MCNAPI void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
         uint                           layer,

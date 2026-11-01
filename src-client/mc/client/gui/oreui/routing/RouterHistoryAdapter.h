@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RouterHistoryAdapter(::OreUI::Router& router);
+    MCNAPI explicit RouterHistoryAdapter(::OreUI::Router& router);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::Router& router);
+    MCNAPI void* $ctor(::OreUI::Router& router);
     // NOLINTEND
 };
 

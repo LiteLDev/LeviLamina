@@ -41,11 +41,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI bool $getCollisionShapeForCamera(
+    MCNAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -58,6 +58,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

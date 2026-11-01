@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundCreatorScreenController(
+    MCNAPI CompoundCreatorScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -53,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -64,12 +64,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

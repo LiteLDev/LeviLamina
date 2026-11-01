@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CameraAimAssistActorPriorityPacketPayload(
+    MCNAPI explicit CameraAimAssistActorPriorityPacketPayload(
         ::CameraAimAssistActorPriorityServerComponent const& aimAssistActorPriorityComponent
     );
     // NOLINTEND
@@ -30,6 +30,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CameraAimAssistActorPriorityServerComponent const& aimAssistActorPriorityComponent);
+    MCNAPI void* $ctor(::CameraAimAssistActorPriorityServerComponent const& aimAssistActorPriorityComponent);
     // NOLINTEND
 };

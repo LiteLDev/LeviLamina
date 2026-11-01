@@ -17,7 +17,7 @@ struct VehicleComponent;
 namespace RemoveAllPassengersSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void removeAllPassengers(
+MCNAPI void removeAllPassengers(
     ::VehicleComponent const& vehicleComponent,
     bool                      actorIsBeingDestroyed,
     bool                      exitFromPassenger,

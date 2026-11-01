@@ -72,45 +72,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateCurrentItems();
+    MCNAPI void _generateCurrentItems();
 
-    MCAPI void _refreshContainer(bool fullRefresh);
+    MCNAPI void _refreshContainer(bool fullRefresh);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+    MCNAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
-    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+    MCNAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
 
-    MCFOLD bool $isItemInstanceBased() const;
+    MCNAPI bool $isItemInstanceBased() const;
 
-    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCFOLD ::ItemStack const& $getItemStack(int modelSlot) const;
+    MCNAPI ::ItemStack const& $getItemStack(int modelSlot) const;
 
-    MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
+    MCNAPI ::std::vector<::ItemStack> const& $getItems() const;
 
-    MCFOLD ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCNAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
-    MCAPI int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCAPI int $getFilteredContainerSize() const;
+    MCNAPI int $getFilteredContainerSize() const;
 
-    MCAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
+    MCNAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
 
-    MCAPI ::std::string const& $getItemGroupName(int itemId) const;
+    MCNAPI ::std::string const& $getItemGroupName(int itemId) const;
 
-    MCAPI void $switchItemExpando(int itemId);
+    MCNAPI void $switchItemExpando(int itemId);
 
-    MCAPI void $refreshContainer(bool fullRefresh);
+    MCNAPI void $refreshContainer(bool fullRefresh);
 
-    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+    MCNAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
 
-    MCAPI void $_init();
+    MCNAPI void $_init();
 
 
     // NOLINTEND

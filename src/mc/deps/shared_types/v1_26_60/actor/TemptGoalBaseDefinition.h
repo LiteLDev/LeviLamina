@@ -41,35 +41,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TemptGoalBaseDefinition(::SharedTypes::v1_26_60::TemptGoalBaseDefinition&&);
+    MCNAPI TemptGoalBaseDefinition(::SharedTypes::v1_26_60::TemptGoalBaseDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_60::TemptGoalBaseDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::TemptGoalBaseDefinition&
     operator=(::SharedTypes::v1_26_60::TemptGoalBaseDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_60::TemptGoalBaseDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::TemptGoalBaseDefinition&
     operator=(::SharedTypes::v1_26_60::TemptGoalBaseDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::TemptGoalBaseDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::TemptGoalBaseDefinition const&) const;
 
-    MCAPI ~TemptGoalBaseDefinition();
+    MCNAPI ~TemptGoalBaseDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::TemptGoalBaseDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::TemptGoalBaseDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

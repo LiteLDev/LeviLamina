@@ -12,10 +12,11 @@ namespace LoadingScreenSystems {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI void registerClientSystems(::EntitySystems& entitySystems, ::LoadingScreenSystems::IClientFactory const& factory);
+MCNAPI void
+registerClientSystems(::EntitySystems& entitySystems, ::LoadingScreenSystems::IClientFactory const& factory);
 #endif
 
-MCAPI void registerServerSystems(::EntitySystems& entitySystems);
+MCNAPI void registerServerSystems(::EntitySystems& entitySystems);
 // NOLINTEND
 
 } // namespace LoadingScreenSystems

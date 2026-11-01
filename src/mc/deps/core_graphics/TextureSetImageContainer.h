@@ -36,14 +36,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void _removeLayer(::cg::TextureSetLayerType const& layerType);
+    MCNAPI void _removeLayer(::cg::TextureSetLayerType const& layerType);
 
-    MCAPI void addImage(::cg::TextureSetLayerType const& layerType, ::cg::ImageBuffer imageBuffer);
+    MCNAPI void addImage(::cg::TextureSetLayerType const& layerType, ::cg::ImageBuffer imageBuffer);
 
-    MCAPI void
+    MCNAPI void
     addImage(::cg::TextureSetLayerType const& layerType, ::std::shared_ptr<::cg::ImageResource> imageResource);
 
-    MCAPI ::cg::ImageDescription getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
+    MCNAPI ::cg::ImageDescription
+    getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
 #endif
     // NOLINTEND
 
@@ -51,7 +52,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

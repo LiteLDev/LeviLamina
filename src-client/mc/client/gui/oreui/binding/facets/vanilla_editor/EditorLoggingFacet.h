@@ -40,15 +40,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::string const& getContentMessage() const;
+        MCNAPI ::std::string const& getContentMessage() const;
 
-        MCFOLD ::Editor::LogContext getLogContext() const;
+        MCNAPI ::Editor::LogContext getLogContext() const;
 
-        MCFOLD ::Editor::LogLevel getLogLevel() const;
+        MCNAPI ::Editor::LogLevel getLogLevel() const;
 
-        MCAPI ::std::string getTagListString() const;
+        MCNAPI ::std::string getTagListString() const;
 
-        MCFOLD ::std::string const& getTimeStamp() const;
+        MCNAPI ::std::string const& getTimeStamp() const;
         // NOLINTEND
     };
 
@@ -101,57 +101,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorLoggingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI explicit EditorLoggingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI void _handleGraphicSettingsChanged(::Editor::Settings::GraphicsProps const& graphicProp);
+    MCNAPI void _handleGraphicSettingsChanged(::Editor::Settings::GraphicsProps const& graphicProp);
 
-    MCAPI void _handleNewLogMessage(::Editor::LogMessage const& message);
+    MCNAPI void _handleNewLogMessage(::Editor::LogMessage const& message);
 
-    MCAPI void _handleScriptReload(::Editor::Network::ServerScriptTeardownRebuildPayload const& payload);
+    MCNAPI void _handleScriptReload(::Editor::Network::ServerScriptTeardownRebuildPayload const& payload);
 
-    MCAPI void _refreshLogMessages();
+    MCNAPI void _refreshLogMessages();
 
-    MCAPI bool _shouldFilterMessage(::Editor::LogMessage const& message);
+    MCNAPI bool _shouldFilterMessage(::Editor::LogMessage const& message);
 
-    MCAPI ::std::optional<::OreUI::EditorLoggingFacet::LogNotification> acquireNotification();
+    MCNAPI ::std::optional<::OreUI::EditorLoggingFacet::LogNotification> acquireNotification();
 
-    MCAPI void flush();
+    MCNAPI void flush();
 
-    MCFOLD ::Editor::LogLevelFilter getLogLevelFilter() const;
+    MCNAPI ::Editor::LogLevelFilter getLogLevelFilter() const;
 
-    MCFOLD ::std::vector<::OreUI::EditorLoggingFacet::LogMessage> const& getMessages() const;
+    MCNAPI ::std::vector<::OreUI::EditorLoggingFacet::LogMessage> const& getMessages() const;
 
-    MCAPI uint64 const getNotificationQueueCount() const;
+    MCNAPI uint64 const getNotificationQueueCount() const;
 
-    MCAPI bool getNotificationsEnabled() const;
+    MCNAPI bool getNotificationsEnabled() const;
 
-    MCFOLD ::HashedString const& getTagFilter() const;
+    MCNAPI ::HashedString const& getTagFilter() const;
 
-    MCFOLD ::std::vector<::HashedString> const& getTagList() const;
+    MCNAPI ::std::vector<::HashedString> const& getTagList() const;
 
-    MCAPI void setLogLevelFilter(::Editor::LogLevelFilter filter);
+    MCNAPI void setLogLevelFilter(::Editor::LogLevelFilter filter);
 
-    MCAPI void setNotificationsEnabled(bool isEnabled);
+    MCNAPI void setNotificationsEnabled(bool isEnabled);
 
-    MCAPI void setTagFilter(::HashedString const& filter);
+    MCNAPI void setTagFilter(::HashedString const& filter);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

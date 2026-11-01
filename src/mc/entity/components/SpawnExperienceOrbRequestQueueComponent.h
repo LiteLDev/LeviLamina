@@ -22,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool tryAddRequest(::SpawnExperienceOrbRequest const& request, ::DimensionType const& dimensionType);
+    MCNAPI bool tryAddRequest(::SpawnExperienceOrbRequest const& request, ::DimensionType const& dimensionType);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& SUGGESTED_MAX_REQUESTS_PER_DIMENSION();
+    MCNAPI static uint64 const& SUGGESTED_MAX_REQUESTS_PER_DIMENSION();
     // NOLINTEND
 };

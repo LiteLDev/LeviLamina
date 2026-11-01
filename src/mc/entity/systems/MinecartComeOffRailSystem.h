@@ -34,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _minecartComeOffRailSystem(
+    MCNAPI static void _minecartComeOffRailSystem(
         ::StrictEntityContext&                          context,
         ::RailMovementComponent const&                  railMovementComponent,
         ::StateVectorComponent&                         stateVectorComponent,

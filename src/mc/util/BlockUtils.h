@@ -15,15 +15,15 @@ class BlockPos;
 namespace BlockUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canSee(::Actor const& actor, ::BlockPos const& pos, ::ShapeType obstructionType);
+MCNAPI bool canSee(::Actor const& actor, ::BlockPos const& pos, ::ShapeType obstructionType);
 
-MCAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
+MCNAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
 
-MCAPI bool isBeehiveInducingBlock(::Block const& block);
+MCNAPI bool isBeehiveInducingBlock(::Block const& block);
 
-MCAPI bool isDownwardFlowingLiquid(::Block const& block);
+MCNAPI bool isDownwardFlowingLiquid(::Block const& block);
 
-MCAPI bool isFullFlowingLiquid(::Block const& block);
+MCNAPI bool isFullFlowingLiquid(::Block const& block);
 
 MCAPI bool isLiquidSource(::Block const& block);
 // NOLINTEND

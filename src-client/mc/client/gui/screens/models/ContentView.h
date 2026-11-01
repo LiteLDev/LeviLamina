@@ -40,11 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onReload(::std::function<void()> callback);
+    MCNAPI void onReload(::std::function<void()> callback);
 
-    MCAPI void reload();
+    MCNAPI void reload();
 
-    MCAPI void setSortFunc(
+    MCNAPI void setSortFunc(
         ::std::function<bool(::std::shared_ptr<::ContentItem> const&, ::std::shared_ptr<::ContentItem> const&)> sortFunc
     );
     // NOLINTEND

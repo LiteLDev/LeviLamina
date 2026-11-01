@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SignRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void _renderSign(
+    MCNAPI void _renderSign(
         ::BaseActorRenderContext&                               renderContext,
         ::Block const&                                          block,
         float const                                             size,
@@ -76,7 +76,7 @@ public:
         ::mce::framebuilder::CustomSurfaceShaderMetadata const& cssMetadata
     );
 
-    MCAPI void _renderText(
+    MCNAPI void _renderText(
         ::BaseActorRenderContext&            renderContext,
         ::IVanillaRenderBlockActorComponent& renderComponent,
         float                                size,

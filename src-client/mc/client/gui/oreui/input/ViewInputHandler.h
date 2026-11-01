@@ -65,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ViewInputHandler(
+    MCNAPI ViewInputHandler(
         ::SubClientId                                                              subClientId,
         ::std::unique_ptr<::OreUI::TextInputHandler>                               textInputHandler,
         ::std::unique_ptr<::OreUI::TouchInputHandler>                              touchInputHandler,
@@ -78,15 +78,15 @@ public:
         ::IOptionRegistry&                                                         options
     );
 
-    MCAPI bool _handleFocusNavigationKey(::cohtml::KeyEventData const& keyEvent) const;
+    MCNAPI bool _handleFocusNavigationKey(::cohtml::KeyEventData const& keyEvent) const;
 
-    MCAPI void handleKeyboardInput(::KeyboardAction const& keyboardAction);
+    MCNAPI void handleKeyboardInput(::KeyboardAction const& keyboardAction);
 
-    MCAPI void handleMouseInput(::MouseAction const& mouseAction);
+    MCNAPI void handleMouseInput(::MouseAction const& mouseAction);
 
-    MCAPI void setFocusController(::OreUI::FocusNavigationController* controller);
+    MCNAPI void setFocusController(::OreUI::FocusNavigationController* controller);
 
-    MCAPI bool shouldHandleGamepad(::std::shared_ptr<::IGameController> gamePad);
+    MCNAPI bool shouldHandleGamepad(::std::shared_ptr<::IGameController> gamePad);
 
     MCAPI ~ViewInputHandler();
     // NOLINTEND
@@ -94,7 +94,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::SubClientId                                                              subClientId,
         ::std::unique_ptr<::OreUI::TextInputHandler>                               textInputHandler,
         ::std::unique_ptr<::OreUI::TouchInputHandler>                              touchInputHandler,

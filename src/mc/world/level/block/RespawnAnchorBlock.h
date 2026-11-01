@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
@@ -51,30 +51,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _bumpCharge(::BlockSource& region, ::BlockPos const& pos, ::Player* source, short const delta);
+    MCNAPI static void _bumpCharge(::BlockSource& region, ::BlockPos const& pos, ::Player* source, short const delta);
 
-    MCAPI static bool
+    MCNAPI static bool
     addItem(::ItemStack const& item, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
 
     // NOLINTEND
@@ -82,6 +83,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

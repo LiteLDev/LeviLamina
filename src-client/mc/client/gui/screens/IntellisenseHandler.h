@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::AutoCompleteInformation> _getAutoCompleteOptions(
+    MCNAPI ::std::unique_ptr<::AutoCompleteInformation> _getAutoCompleteOptions(
         ::CommandOrigin const& origin,
         ::std::string const&   _cmdLine,
         uint                   cursorPositionUnsafe,
@@ -54,10 +54,10 @@ public:
         bool                   isPlayerMention
     ) const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin>
+    MCNAPI ::std::unique_ptr<::CommandOrigin>
     _getCommandOrigin(::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel) const;
 
-    MCAPI void _updateAutoCompleteMessages(
+    MCNAPI void _updateAutoCompleteMessages(
         ::AutoCompleteInformation const& autocompleteInfo,
         ::CommandOrigin const&           origin,
         ::CommandRegistry const&         registry,
@@ -65,23 +65,23 @@ public:
         bool                             isCommand
     );
 
-    MCAPI int getAutoCompleteItemId(int index);
+    MCNAPI int getAutoCompleteItemId(int index);
 
-    MCAPI ::std::string getAutoCompleteText(int index);
+    MCNAPI ::std::string getAutoCompleteText(int index);
 
-    MCAPI void handleClickComplete(
+    MCNAPI void handleClickComplete(
         ::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel,
         ::std::string&                               currentMessage,
         int                                          clickedIndex
     );
 
-    MCAPI void handleTabComplete(
+    MCNAPI void handleTabComplete(
         ::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel,
         ::std::string&                               currentMessage,
         int                                          index
     );
 
-    MCAPI void handleTabComplete(
+    MCNAPI void handleTabComplete(
         ::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel,
         ::CommandOrigin const&                       origin,
         ::std::string&                               currentMessage,
@@ -89,17 +89,17 @@ public:
         bool                                         isSlashRequired
     );
 
-    MCAPI void updateIntellisense(
+    MCNAPI void updateIntellisense(
         ::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel,
         ::std::string const&                         currentMessage
     );
 
-    MCAPI ~IntellisenseHandler();
+    MCNAPI ~IntellisenseHandler();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

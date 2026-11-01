@@ -32,28 +32,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
+    MCNAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
 
-    MCAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
+    MCNAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
 
-    MCAPI ~Metadata();
+    MCNAPI ~Metadata();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
 
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

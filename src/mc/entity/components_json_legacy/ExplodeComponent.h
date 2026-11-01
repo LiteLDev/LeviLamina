@@ -40,10 +40,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void explode(::Actor& actor, ::Vec3 const& explosionPosition);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 };

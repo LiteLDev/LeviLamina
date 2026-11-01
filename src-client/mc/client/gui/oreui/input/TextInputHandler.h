@@ -86,45 +86,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextInputHandler(::Bedrock::NotNullNonOwnerPtr<::GuiData> guiData, ::KeyboardManager& keyboardManager);
+    MCNAPI TextInputHandler(::Bedrock::NotNullNonOwnerPtr<::GuiData> guiData, ::KeyboardManager& keyboardManager);
 
-    MCAPI void _handleLostFocus();
+    MCNAPI void _handleLostFocus();
 
-    MCAPI void _sendTextChangedEvent(::OreUI::InputUtils::TextInputResult const& inputResult);
+    MCNAPI void _sendTextChangedEvent(::OreUI::InputUtils::TextInputResult const& inputResult);
 
-    MCAPI ::std::optional<::RectangleArea> getTextInputControlArea();
+    MCNAPI ::std::optional<::RectangleArea> getTextInputControlArea();
 
-    MCAPI ::std::string getTextInputText();
+    MCNAPI ::std::string getTextInputText();
 
-    MCAPI void handleNativeTextInput(::std::string_view text);
+    MCNAPI void handleNativeTextInput(::std::string_view text);
 
-    MCAPI void imeConfirmComposition();
+    MCNAPI void imeConfirmComposition();
 
-    MCAPI void imeConfirmComposition(::std::string const& utf8Text);
+    MCNAPI void imeConfirmComposition(::std::string const& utf8Text);
 
-    MCAPI void imeEndComposition();
+    MCNAPI void imeEndComposition();
 
-    MCAPI void imeReplaceCompositionTextRange(::std::string const& replacement, int from, int to);
+    MCNAPI void imeReplaceCompositionTextRange(::std::string const& replacement, int from, int to);
 
-    MCAPI void imeStartComposition();
+    MCNAPI void imeStartComposition();
 
-    MCAPI void imeUpdateCompositionText(::std::string const& utf8Text);
+    MCNAPI void imeUpdateCompositionText(::std::string const& utf8Text);
 
-    MCAPI void setText(::std::string const& text, ::std::optional<::TextBoxSelection> const& selection);
+    MCNAPI void setText(::std::string const& text, ::std::optional<::TextBoxSelection> const& selection);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GuiData> guiData, ::KeyboardManager& keyboardManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GuiData> guiData, ::KeyboardManager& keyboardManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection);
+    MCNAPI void $OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection);
 
-    MCAPI void $OnTextChanged(
+    MCNAPI void $OnTextChanged(
         ::cohtml::IInputProxy* proxy,
         char const*            addedChars,
         uint                   addedCount,
@@ -133,9 +133,9 @@ public:
         uint                   index
     );
 
-    MCAPI void $OnFocus(::cohtml::IInputProxy* proxy);
+    MCNAPI void $OnFocus(::cohtml::IInputProxy* proxy);
 
-    MCAPI void $OnBlur(::cohtml::IInputProxy*);
+    MCNAPI void $OnBlur(::cohtml::IInputProxy*);
     // NOLINTEND
 
 public:

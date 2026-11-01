@@ -53,19 +53,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _increaseCracking(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool propagate) const;
+    MCNAPI void _increaseCracking(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool propagate) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $_shouldActorIncreaseCracking(::Actor const&, ::BlockPos const&) const;
+    MCNAPI bool $_shouldActorIncreaseCracking(::Actor const&, ::BlockPos const&) const;
 
 
     // NOLINTEND

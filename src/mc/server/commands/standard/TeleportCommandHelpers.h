@@ -15,7 +15,7 @@ class Vec3;
 namespace TeleportCommandHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI ::TeleportAnalysis
+MCNAPI ::TeleportAnalysis
 actorToLocationTeleportAnalysis(::BlockSource const& region, ::Actor const& actor, ::Vec3 destination);
 // NOLINTEND
 

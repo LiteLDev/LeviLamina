@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPackSettingChangeIntermediateData(
+    MCNAPI ScriptPackSettingChangeIntermediateData(
         ::std::string const&                                                     settingName,
         ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> settingValue
     );
@@ -28,7 +28,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                                     settingName,
         ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> settingValue
     );

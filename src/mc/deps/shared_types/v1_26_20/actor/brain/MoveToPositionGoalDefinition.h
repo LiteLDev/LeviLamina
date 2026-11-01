@@ -37,39 +37,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     MoveToPositionGoalDefinition(::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition&
     operator=(::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition const&) const;
 
-    MCAPI ~MoveToPositionGoalDefinition();
+    MCNAPI ~MoveToPositionGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemoryGoals::MoveToPositionGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

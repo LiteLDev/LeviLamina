@@ -51,29 +51,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UIRepository(::ResourceLoader& resourceLoader);
+    MCNAPI explicit UIRepository(::ResourceLoader& resourceLoader);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourceLoader& resourceLoader);
+    MCNAPI void* $ctor(::ResourceLoader& resourceLoader);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clearLoadedUITextureInfo();
+    MCNAPI void $clearLoadedUITextureInfo();
 
-    MCAPI void $reloadGroup();
+    MCNAPI void $reloadGroup();
 
-    MCAPI void $addRef(::UITextureInfoPtr& ptr);
+    MCNAPI void $addRef(::UITextureInfoPtr& ptr);
 
-    MCAPI void $removeRef(::UITextureInfoPtr& ptr);
+    MCNAPI void $removeRef(::UITextureInfoPtr& ptr);
 
-    MCAPI ::UITextureInfoPtr $getUITextureInfoPtr(::ResourceLocation const& resourceLocation, bool forceReload);
+    MCNAPI ::UITextureInfoPtr $getUITextureInfoPtr(::ResourceLocation const& resourceLocation, bool forceReload);
 
-    MCAPI ::UITextureInfo*
+    MCNAPI ::UITextureInfo*
     $getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload, bool loadIfNeeded);
     // NOLINTEND
 

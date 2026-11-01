@@ -123,7 +123,7 @@ public:
     MCFOLD ::EventResult $onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
 
 #ifdef LL_PLAT_C
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     MCFOLD ::EventResult $onEvent(::BlockNotificationEvent const& event);

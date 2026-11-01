@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TradeTables::TradeTableLoadData _parseAndStoreTradeTable(
+    MCNAPI ::TradeTables::TradeTableLoadData _parseAndStoreTradeTable(
         ::Level&                                                 level,
         ::ResourcePackManager*                                   resourceLoader,
         ::Core::Path const&                                      tradeTablePath,
@@ -50,8 +50,8 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const validator
     );
 
-    MCFOLD ::TradeTable* fetchTable(::std::string const& path);
+    MCNAPI ::TradeTable* fetchTable(::std::string const& path);
 
-    MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);
+    MCNAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);
     // NOLINTEND
 };

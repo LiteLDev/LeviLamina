@@ -27,7 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::function<void(::LocalPlayer const*)>
+    MCNAPI static ::std::function<void(::LocalPlayer const*)>
     createLocalPlayerChangedCallback(::std::function<void()> initCallback, ::std::function<void()> resetCallback);
     // NOLINTEND
 };

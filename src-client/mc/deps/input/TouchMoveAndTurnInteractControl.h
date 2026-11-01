@@ -59,9 +59,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isClientCurrentActivePointer(int processedPointerId) const;
+    MCNAPI bool _isClientCurrentActivePointer(int processedPointerId) const;
 
-    MCAPI void _renderJoystick(
+    MCNAPI void _renderJoystick(
         ::InputRenderContext&  context,
         ::JoystickState        state,
         bool                   initialized,
@@ -77,9 +77,9 @@ public:
         bool                   joystickAlwaysVisible
     ) const;
 
-    MCAPI void _setPreviousActionPointer(int processedPointerId);
+    MCNAPI void _setPreviousActionPointer(int processedPointerId);
 
-    MCAPI void drawJoystick(
+    MCNAPI void drawJoystick(
         ::InputRenderContext& context,
         ::JoystickState       joystickState,
         float                 x,
@@ -93,14 +93,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void calibrateMoveDelta(float& dx, float& dy);
+    MCNAPI static void calibrateMoveDelta(float& dx, float& dy);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCNAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
-    MCAPI void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
     // NOLINTEND
 };

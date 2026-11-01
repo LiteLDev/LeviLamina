@@ -27,33 +27,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canPickupItem(
+    MCNAPI bool _canPickupItem(
         ::ItemStack const& item,
         ::ItemStack const& carriedItem,
         int                maxAmount,
         bool               singularPickupOnly
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     _shouldReplaceItem(::ItemStack const& itemToReplace, ::ItemStack const& newItem, bool canPickupAnyItem) const;
 
-    MCAPI int getCountToPickUp(::Actor const& owner, ::ItemStack const& item) const;
+    MCNAPI int getCountToPickUp(::Actor const& owner, ::ItemStack const& item) const;
 
-    MCAPI int getSlotToSwap(::Actor const& owner, ::ItemActor const& itemActor) const;
+    MCNAPI int getSlotToSwap(::Actor const& owner, ::ItemActor const& itemActor) const;
 
-    MCAPI int hasSurplus(
+    MCNAPI int hasSurplus(
         ::Actor const&     owner,
         ::ItemStack const& item,
         ::ItemStack&       resultStack,
         bool               includeStackSizeofItem
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     itemBelongsInInventory(::Actor const& owner, ::ItemStack const& item, bool canPickupToHandOrEquipment) const;
 
-    MCAPI int wantsMore(::Actor const& owner, ::ItemStack const& item) const;
+    MCNAPI int wantsMore(::Actor const& owner, ::ItemStack const& item) const;
 
-    MCAPI bool willPickup(
+    MCNAPI bool willPickup(
         ::Actor const&     owner,
         ::ItemStack const& item,
         bool               canPickupAnyItem,
@@ -64,8 +64,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _useLegacySurplusRules(::Level const& level);
+    MCNAPI static bool _useLegacySurplusRules(::Level const& level);
 
-    MCAPI static bool tryBuildDescriptor(::std::string_view name, ::ItemDescriptor& itemDescriptorOut);
+    MCNAPI static bool tryBuildDescriptor(::std::string_view name, ::ItemDescriptor& itemDescriptorOut);
     // NOLINTEND
 };

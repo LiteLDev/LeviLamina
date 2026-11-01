@@ -40,13 +40,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const& $getRenderBlock() const;
+    MCNAPI ::Block const& $getRenderBlock() const;
 
-    MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,

@@ -29,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TileObject(::std::string const& name, ::Bedrock::Services::layout::model::TileBase const& tile);
+    MCNAPI TileObject(::std::string const& name, ::Bedrock::Services::layout::model::TileBase const& tile);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::Bedrock::Services::layout::model::TileBase const& tile);
+    MCNAPI void* $ctor(::std::string const& name, ::Bedrock::Services::layout::model::TileBase const& tile);
     // NOLINTEND
 };
 

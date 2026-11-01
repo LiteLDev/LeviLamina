@@ -50,27 +50,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
+    MCNAPI static bool
     isDotOrDirectLine(::CircuitSceneGraph& graph, ::BlockPos const& nearestPos, ::BlockPos const& deltaIn);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool
+    MCNAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& directlyPowered);
+    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& directlyPowered);
 
-    MCFOLD bool $canConsumerPower() const;
+    MCNAPI bool $canConsumerPower() const;
 
-    MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
+    MCNAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
 
 
     // NOLINTEND

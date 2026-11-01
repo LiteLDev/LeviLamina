@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isBlockDangerous(::Block const& block) const;
+    MCNAPI bool isBlockDangerous(::Block const& block) const;
     // NOLINTEND
 };
 

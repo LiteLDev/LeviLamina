@@ -14,6 +14,6 @@ class BlockRegistryManager {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::SubClientId, ::std::weak_ptr<::BlockTypeRegistry>>& mClientIdRegistryMap();
+    MCNAPI static ::std::unordered_map<::SubClientId, ::std::weak_ptr<::BlockTypeRegistry>>& mClientIdRegistryMap();
     // NOLINTEND
 };

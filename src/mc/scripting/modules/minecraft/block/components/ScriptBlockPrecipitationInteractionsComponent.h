@@ -18,19 +18,19 @@ class ScriptBlockPrecipitationInteractionsComponent : public ::ScriptModuleMinec
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     accumulatesSnow() const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     isSnowLoggable() const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>

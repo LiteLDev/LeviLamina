@@ -64,16 +64,16 @@ public:
         int                _messageId
     );
 
-    MCAPI void
+    MCNAPI void
     _log(::LogAreaID _area, uint _priority, char const* _function, int line, int _messageId, ::std::string message);
 
-    MCAPI void _logToFile(::std::string const& debugEvent);
+    MCNAPI void _logToFile(::std::string const& debugEvent);
 
-    MCAPI void _openLogFile();
+    MCNAPI void _openLogFile();
 
-    MCAPI void closeLog();
+    MCNAPI void closeLog();
 
-    MCAPI void createLog(
+    MCNAPI void createLog(
         ::Core::Path const&   _logFilePath,
         ::std::string const&  _logFileName,
         ::std::string const&  _debugLogTimestamp,
@@ -83,7 +83,7 @@ public:
     );
 
 #ifdef LL_PLAT_S
-    MCAPI void updateLogFilter(
+    MCNAPI void updateLogFilter(
         ::std::unique_ptr<::LogSettingsUpdater> options,
         ::std::string const&                    filterType,
         ::std::vector<::std::string> const&     filters,
@@ -92,7 +92,7 @@ public:
     );
 #endif
 
-    MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
+    MCNAPI void updateLogSetting(::std::string const& setting, bool newValue);
     // NOLINTEND
 };
 

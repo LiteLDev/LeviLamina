@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FurnaceScreenControllerProxy(::FurnaceScreenControllerProxyCallbacks callbacks);
+    MCNAPI explicit FurnaceScreenControllerProxy(::FurnaceScreenControllerProxyCallbacks callbacks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FurnaceScreenControllerProxyCallbacks callbacks);
+    MCNAPI void* $ctor(::FurnaceScreenControllerProxyCallbacks callbacks);
     // NOLINTEND
 
 public:

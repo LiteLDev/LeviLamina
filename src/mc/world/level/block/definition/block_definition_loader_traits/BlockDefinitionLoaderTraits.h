@@ -11,7 +11,7 @@ namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockDefinitionDocumen
 namespace BlockDefinitionLoaderTraits {
 // functions
 // NOLINTBEGIN
-MCAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument
+MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument
 blockLegacyToDocument(::BlockDefinition&& source);
 // NOLINTEND
 

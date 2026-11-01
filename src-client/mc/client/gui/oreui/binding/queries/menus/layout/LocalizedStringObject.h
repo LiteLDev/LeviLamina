@@ -27,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     LocalizedStringObject(::std::string const& name, ::OreUI::Detail::IPropertyObject* parent, ::std::string value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::OreUI::Detail::IPropertyObject* parent, ::std::string value);
+    MCNAPI void* $ctor(::std::string const& name, ::OreUI::Detail::IPropertyObject* parent, ::std::string value);
     // NOLINTEND
 };
 

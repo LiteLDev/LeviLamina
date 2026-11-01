@@ -43,11 +43,11 @@ inline nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setP
 MCAPI ::std::optional<::std::variant<double, bool, ::std::string>>
 convertToPrimitive(::cereal::DynamicValue const& obj);
 
-MCAPI ::nonstd::
+MCNAPI ::nonstd::
     expected<::std::vector<::std::variant<::std::string, uint>>, ::Bedrock::DDUI::PathUtility::PathQueryError>
     parsePath(::std::string const& wholePath);
 
-MCAPI ::std::string rebuildPath(
+MCNAPI ::std::string rebuildPath(
     ::std::string const&                                      datastore,
     ::std::string const&                                      property,
     ::std::vector<::std::variant<::std::string, uint>> const& tokens,

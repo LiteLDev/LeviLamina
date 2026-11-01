@@ -53,9 +53,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientboundMapItemDataPacketPayload(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
+    MCNAPI ClientboundMapItemDataPacketPayload(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCAPI ClientboundMapItemDataPacketPayload(
+    MCNAPI ClientboundMapItemDataPacketPayload(
         ::ActorUniqueID mapId,
         schar           scale,
         ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
@@ -71,11 +71,11 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
+    MCNAPI void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
 
-    MCAPI ::std::vector<::ActorUniqueID> getMapIds() const;
+    MCNAPI ::std::vector<::ActorUniqueID> getMapIds() const;
 
-    MCAPI void resampleClientMap(
+    MCNAPI void resampleClientMap(
         ::MapItemSavedData& map,
         ::BlockSource&      region,
         ::BlockPos const&   updatePosition,
@@ -83,15 +83,15 @@ public:
     ) const;
 #endif
 
-    MCAPI ~ClientboundMapItemDataPacketPayload();
+    MCNAPI ~ClientboundMapItemDataPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
+    MCNAPI void* $ctor(::gsl::not_null<::MapItemSavedData*> newMapItem, ::Level& level);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorUniqueID mapId,
         schar           scale,
         ::std::vector<::std::pair<::MapItemTrackedActor::UniqueId, ::std::shared_ptr<::MapDecoration>>> const&
@@ -110,6 +110,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

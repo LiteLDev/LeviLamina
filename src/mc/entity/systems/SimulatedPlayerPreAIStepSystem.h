@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doSimulatedPlayerPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 };

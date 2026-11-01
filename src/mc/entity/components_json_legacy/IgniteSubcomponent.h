@@ -29,13 +29,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const&);
+    MCNAPI void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const&);
 
-    MCFOLD void $writetoJSON(::Json::Value&) const;
+    MCNAPI void $writetoJSON(::Json::Value&) const;
 
-    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent&);
+    MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent&);
 
-    MCAPI char const* $getName() const;
+    MCNAPI char const* $getName() const;
 
 
     // NOLINTEND

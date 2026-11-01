@@ -34,27 +34,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Header(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
+    MCNAPI Header(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header&&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Header&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
 
-    MCAPI ~Header();
+    MCNAPI ~Header();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Header const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

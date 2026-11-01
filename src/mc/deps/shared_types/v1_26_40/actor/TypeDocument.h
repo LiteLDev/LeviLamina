@@ -32,37 +32,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TypeDocument(::SharedTypes::v1_26_40::Poi::TypeDocument const&);
+    MCNAPI TypeDocument(::SharedTypes::v1_26_40::Poi::TypeDocument const&);
 
-    MCAPI ::SharedTypes::v1_26_40::Poi::TypeDocument& operator=(::SharedTypes::v1_26_40::Poi::TypeDocument&&);
+    MCNAPI ::SharedTypes::v1_26_40::Poi::TypeDocument& operator=(::SharedTypes::v1_26_40::Poi::TypeDocument&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_40::Poi::TypeDocument const& rhs) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_40::Poi::TypeDocument const& rhs) const;
 
-    MCAPI ~TypeDocument();
+    MCNAPI ~TypeDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::Poi::TypeDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::Poi::TypeDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -114,9 +114,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DedicatedServer();
+    MCNAPI DedicatedServer();
 
-    MCAPI void _runPackOptimizerIfRequested();
+    MCNAPI void _runPackOptimizerIfRequested();
 
     MCAPI ::ServerExitCode runDedicatedServerLoop(
         ::Core::FilePathManager&                                     filePathManager,
@@ -130,9 +130,9 @@ public:
         ::TestConfig&                                                testConfig
     );
 
-    MCAPI void shutdownServices();
+    MCNAPI void shutdownServices();
 
-    MCAPI ::ServerExitCode start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
+    MCNAPI ::ServerExitCode start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
 
     MCAPI bool stop();
     // NOLINTEND
@@ -140,40 +140,40 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _warnAllowListEmpty();
+    MCNAPI static void _warnAllowListEmpty();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
-    MCAPI bool $isEduMode() const;
+    MCNAPI bool $isEduMode() const;
 
-    MCFOLD bool $isDedicatedServer() const;
+    MCNAPI bool $isDedicatedServer() const;
 
-    MCFOLD void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
+    MCNAPI void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
 
-    MCFOLD ::IGameModuleShared& $getGameModuleShared();
+    MCNAPI ::IGameModuleShared& $getGameModuleShared();
 
-    MCAPI void $requestServerShutdown();
+    MCNAPI void $requestServerShutdown();
 
-    MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
+    MCNAPI bool $requestInGamePause(::SubClientId const&, bool);
     // NOLINTEND
 };

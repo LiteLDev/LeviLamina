@@ -20,9 +20,9 @@ class ScriptAgeableComponent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
     // NOLINTEND
 };
 

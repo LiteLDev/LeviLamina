@@ -21,7 +21,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
 #endif
     // NOLINTEND
 };

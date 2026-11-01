@@ -34,7 +34,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ~SoundAddition();
+        MCNAPI ~SoundAddition();
 #endif
         // NOLINTEND
 
@@ -42,7 +42,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -77,25 +77,26 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+    MCNAPI
+    AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::std::add_lvalue_reference_t<char const[25]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[25]> SCHEMA_NAME();
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
 #endif
     // NOLINTEND
 
@@ -103,7 +104,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
 #endif
     // NOLINTEND
 
@@ -111,14 +112,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ClientBiomeComponentVersion $getType() const;
+    MCNAPI ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

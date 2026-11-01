@@ -33,12 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobVariableIndexComponent();
+    MCNAPI MobVariableIndexComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

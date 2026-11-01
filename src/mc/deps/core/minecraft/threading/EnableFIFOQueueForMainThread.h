@@ -30,9 +30,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit EnableFIFOQueueForMainThread(::std::string name);
+    MCNAPI explicit EnableFIFOQueueForMainThread(::std::string name);
 
-    MCAPI void queueForMainThreadFIFO(::std::function<void()>&& task);
+    MCNAPI void queueForMainThreadFIFO(::std::function<void()>&& task);
 #endif
     // NOLINTEND
 
@@ -40,7 +40,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string name);
+    MCNAPI void* $ctor(::std::string name);
 #endif
     // NOLINTEND
 
@@ -48,7 +48,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

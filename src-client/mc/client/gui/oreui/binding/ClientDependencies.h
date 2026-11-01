@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Social::IUserManager& getUserManager() const;
+    MCNAPI ::Social::IUserManager& getUserManager() const;
 
-    MCAPI ~ClientDependencies();
+    MCNAPI ~ClientDependencies();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

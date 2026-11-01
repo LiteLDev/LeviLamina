@@ -36,11 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperimentalFeatureToggle(::OreUI::ExperimentalFeatureToggle&&);
+    MCNAPI ExperimentalFeatureToggle(::OreUI::ExperimentalFeatureToggle&&);
 
-    MCAPI ExperimentalFeatureToggle(::OreUI::ExperimentalFeatureToggle const&);
+    MCNAPI ExperimentalFeatureToggle(::OreUI::ExperimentalFeatureToggle const&);
 
-    MCAPI ExperimentalFeatureToggle(
+    MCNAPI ExperimentalFeatureToggle(
         ::LevelDataWrapper&        levelData,
         ::std::string const&       fourCc,
         ::AllExperiments const     experiment,
@@ -49,23 +49,23 @@ public:
         ::ExperimentCategory const category
     );
 
-    MCAPI bool getIsEnabled() const;
+    MCNAPI bool getIsEnabled() const;
 
-    MCAPI bool getIsTogglePermanentlyDisabled();
+    MCNAPI bool getIsTogglePermanentlyDisabled();
 
-    MCAPI void setIsEnabled(bool const newValue);
+    MCNAPI void setIsEnabled(bool const newValue);
 
-    MCAPI ~ExperimentalFeatureToggle();
+    MCNAPI ~ExperimentalFeatureToggle();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OreUI::ExperimentalFeatureToggle&&);
+    MCNAPI void* $ctor(::OreUI::ExperimentalFeatureToggle&&);
 
-    MCFOLD void* $ctor(::OreUI::ExperimentalFeatureToggle const&);
+    MCNAPI void* $ctor(::OreUI::ExperimentalFeatureToggle const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LevelDataWrapper&        levelData,
         ::std::string const&       fourCc,
         ::AllExperiments const     experiment,
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

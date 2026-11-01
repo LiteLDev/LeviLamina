@@ -51,9 +51,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
+    MCNAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
 
-    MCAPI static void _outputFormattedCommand(
+    MCNAPI static void _outputFormattedCommand(
         ::ActorUniqueID                     callingPlayerUniqueId,
         ::Level*                            level,
         ::std::string const&                prefix,
@@ -66,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

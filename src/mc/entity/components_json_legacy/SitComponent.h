@@ -16,6 +16,6 @@ class SitComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Interaction getInteraction(::Actor& actor, ::Player& player, ::HandSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& actor, ::Player& player, ::HandSlot);
     // NOLINTEND
 };

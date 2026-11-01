@@ -113,35 +113,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RamAttackGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI RamAttackGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI void _findTreeBehindTarget();
+    MCNAPI void _findTreeBehindTarget();
 
-    MCAPI bool _initiateRamAttack();
+    MCNAPI bool _initiateRamAttack();
 
-    MCAPI void _tryKnockbackTarget();
+    MCNAPI void _tryKnockbackTarget();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

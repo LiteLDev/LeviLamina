@@ -83,68 +83,68 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VisualTree(::std::string const& rootControlName, ::Json::Value const& initGlobalVars);
+    MCNAPI VisualTree(::std::string const& rootControlName, ::Json::Value const& initGlobalVars);
 
     MCAPI ::std::shared_ptr<::UIControl> getControlByName(::std::string const& name, bool visibleOnly);
 
-    MCAPI ::std::vector<::std::shared_ptr<::UIControl>>
+    MCNAPI ::std::vector<::std::shared_ptr<::UIControl>>
     getControls(::std::function<bool(::UIControl const&)> predicate);
 
-    MCAPI ::std::vector<::std::shared_ptr<::UIControl>>
+    MCNAPI ::std::vector<::std::shared_ptr<::UIControl>>
     getVisibleControls(::std::function<bool(::UIControl const&)> predicate);
 
-    MCAPI ::std::unique_ptr<::VisualTree> recreateControlTree(::UIControlFactory& controlFactory);
+    MCNAPI ::std::unique_ptr<::VisualTree> recreateControlTree(::UIControlFactory& controlFactory);
 
-    MCAPI void removeDeadDependencies();
+    MCNAPI void removeDeadDependencies();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _destroyAsync(::TaskGroup& taskGroup, ::std::shared_ptr<::UIControl> control);
+    MCNAPI static void _destroyAsync(::TaskGroup& taskGroup, ::std::shared_ptr<::UIControl> control);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& rootControlName, ::Json::Value const& initGlobalVars);
+    MCNAPI void* $ctor(::std::string const& rootControlName, ::Json::Value const& initGlobalVars);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UIControl> $getControlWithName(::std::string const& name);
+    MCNAPI ::std::shared_ptr<::UIControl> $getControlWithName(::std::string const& name);
 
-    MCAPI bool $getDirty();
+    MCNAPI bool $getDirty();
 
-    MCAPI bool $getDirty(::ui::DirtyFlag flag);
+    MCNAPI bool $getDirty(::ui::DirtyFlag flag);
 
-    MCFOLD ::ui::DirtyFlag $getDirtyValue();
+    MCNAPI ::ui::DirtyFlag $getDirtyValue();
 
-    MCAPI void $addDirtyFlag(::ui::DirtyFlag flag);
+    MCNAPI void $addDirtyFlag(::ui::DirtyFlag flag);
 
-    MCAPI void $measureControls(::UIControl& measureRoot);
+    MCNAPI void $measureControls(::UIControl& measureRoot);
 
-    MCAPI void $markToRemoveDeadDependencies(::std::shared_ptr<::UIControl> control);
+    MCNAPI void $markToRemoveDeadDependencies(::std::shared_ptr<::UIControl> control);
 
-    MCAPI void $updateControlCollection(::std::shared_ptr<::UIControl> control);
+    MCNAPI void $updateControlCollection(::std::shared_ptr<::UIControl> control);
 
-    MCAPI void $updateControlCollectionFromRoot();
+    MCNAPI void $updateControlCollectionFromRoot();
 
-    MCAPI void $removeFromControlCollection(::std::shared_ptr<::UIControl> control);
+    MCNAPI void $removeFromControlCollection(::std::shared_ptr<::UIControl> control);
 
-    MCAPI void $updateControlBinds(::std::shared_ptr<::UIControl> control);
+    MCNAPI void $updateControlBinds(::std::shared_ptr<::UIControl> control);
 
-    MCAPI void $updateBindsFromRoot();
+    MCNAPI void $updateBindsFromRoot();
 
-    MCAPI void $markTextEditFocusChanged();
+    MCNAPI void $markTextEditFocusChanged();
 
-    MCAPI void $markTextEditAlwaysListeningChanged();
+    MCNAPI void $markTextEditAlwaysListeningChanged();
     // NOLINTEND
 };

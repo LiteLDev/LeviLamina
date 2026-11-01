@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithBlockEvent(
+    MCNAPI ScriptPlayerInteractWithBlockEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
         ::ScriptModuleMinecraft::ScriptFacing                                       blockFace,
@@ -46,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
         ::ScriptModuleMinecraft::ScriptFacing                                       blockFace,

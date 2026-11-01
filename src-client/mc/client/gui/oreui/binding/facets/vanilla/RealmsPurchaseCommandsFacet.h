@@ -36,34 +36,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsPurchaseCommandsFacet(
+    MCNAPI RealmsPurchaseCommandsFacet(
         ::std::shared_ptr<::Realms::LegacyRealmsPurchase>           realmsPurchase,
         ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler
     );
 
-    MCAPI void fulfillPriorRealmsPurchase(::std::string const& xuid);
+    MCNAPI void fulfillPriorRealmsPurchase(::std::string const& xuid);
 
-    MCAPI void prepareAppStoreForReconciliation(::std::string const& xuid);
+    MCNAPI void prepareAppStoreForReconciliation(::std::string const& xuid);
 
-    MCAPI void prepareAppStoreForTrialPurchases(::std::string const& xuid, ::std::string const& worldName);
+    MCNAPI void prepareAppStoreForTrialPurchases(::std::string const& xuid, ::std::string const& worldName);
 
-    MCAPI void purchaseTrial(::std::string const& xuid, ::std::string const& worldName);
+    MCNAPI void purchaseTrial(::std::string const& xuid, ::std::string const& worldName);
 
-    MCAPI void resetPurchase();
+    MCNAPI void resetPurchase();
 
-    MCAPI void resetReconciler();
+    MCNAPI void resetReconciler();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::LegacyRealmsPurchase>           realmsPurchase,
         ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler
     );
@@ -72,7 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

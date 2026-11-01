@@ -92,11 +92,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DeviceStorageInformationQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit DeviceStorageInformationQuery(::OreUI::GameDependencies const& game);
 
-    MCAPI void _updateProperties();
+    MCNAPI void _updateProperties();
 
-    MCAPI void callOnBothStorageAreas(
+    MCNAPI void callOnBothStorageAreas(
         ::std::function<void(::std::shared_ptr<::Core::FileStorageArea>)> onSuccess,
         ::std::function<void()>                                           onFailure
     );
@@ -105,22 +105,22 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
 
-    MCAPI void $onLowDiskSpace(bool, uint64);
+    MCNAPI void $onLowDiskSpace(bool, uint64);
 
-    MCAPI void $onOutOfDiskSpace(bool, uint64);
+    MCNAPI void $onOutOfDiskSpace(bool, uint64);
 
-    MCAPI void
+    MCNAPI void
     $onExtendDiskSpace(bool, ::std::weak_ptr<::Core::FileStorageArea> const&, uint64, ::std::function<void()>);
 
-    MCAPI void $onCriticalDiskError(bool, ::Core::LevelStorageState const&);
+    MCNAPI void $onCriticalDiskError(bool, ::Core::LevelStorageState const&);
     // NOLINTEND
 };
 

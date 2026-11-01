@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NamedTickEvent(
+    MCNAPI NamedTickEvent(
         ::BlockSource const& region,
         ::BlockPos           blockPos,
         ::BlockType const&   blockType,
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockSource const& region,
         ::BlockPos           blockPos,
         ::BlockType const&   blockType,
@@ -74,7 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockSource const& $getBlockSource() const;
+    MCNAPI ::BlockSource const& $getBlockSource() const;
 
 
     // NOLINTEND

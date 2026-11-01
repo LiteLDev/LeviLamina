@@ -38,27 +38,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ElementInfo getElementInfo(::ElementType e);
+    MCNAPI static ::ElementInfo getElementInfo(::ElementType e);
 
-    MCAPI static void initElements();
+    MCNAPI static void initElements();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::BlockType const*>& mElements();
+    MCNAPI static ::std::vector<::BlockType const*>& mElements();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
-    MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
+    MCNAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
 
 
     // NOLINTEND
@@ -66,6 +66,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

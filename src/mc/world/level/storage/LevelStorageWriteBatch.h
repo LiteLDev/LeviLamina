@@ -78,12 +78,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _writeKey(::std::string const& key, ::std::shared_ptr<::std::string>&& data, ::DBHelpers::Category category);
 
-    MCAPI void addFlushCallback(::std::function<void()> callback);
+    MCNAPI void addFlushCallback(::std::function<void()> callback);
 
-    MCAPI void clear();
+    MCNAPI void clear();
     // NOLINTEND
 
 public:
@@ -113,6 +113,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -52,27 +52,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData(::SharedTypes::Legacy::ComponentItemData const&);
+    MCNAPI ComponentItemData(::SharedTypes::Legacy::ComponentItemData const&);
 
-    MCAPI ::SharedTypes::Legacy::ComponentItemData& operator=(::SharedTypes::Legacy::ComponentItemData&&);
+    MCNAPI ::SharedTypes::Legacy::ComponentItemData& operator=(::SharedTypes::Legacy::ComponentItemData&&);
 
-    MCAPI ::SharedTypes::Legacy::ComponentItemData& operator=(::SharedTypes::Legacy::ComponentItemData const&);
+    MCNAPI ::SharedTypes::Legacy::ComponentItemData& operator=(::SharedTypes::Legacy::ComponentItemData const&);
 
-    MCAPI bool operator==(::SharedTypes::Legacy::ComponentItemData const&) const;
+    MCNAPI bool operator==(::SharedTypes::Legacy::ComponentItemData const&) const;
 
-    MCAPI ~ComponentItemData();
+    MCNAPI ~ComponentItemData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::ComponentItemData const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::ComponentItemData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

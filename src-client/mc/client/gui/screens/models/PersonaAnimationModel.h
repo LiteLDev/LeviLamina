@@ -71,32 +71,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PersonaAnimationModel(::IPersonaRepository const& personaRepo);
+    MCNAPI explicit PersonaAnimationModel(::IPersonaRepository const& personaRepo);
 
-    MCAPI void _populateReactAnimations();
+    MCNAPI void _populateReactAnimations();
 
-    MCAPI void playEmote(::IStoreCatalogItem const& emoteCatalogOffer);
+    MCNAPI void playEmote(::IStoreCatalogItem const& emoteCatalogOffer);
 
-    MCAPI void playEmote(::persona::PieceOfferWrapper const& emoteCatalogOffer);
+    MCNAPI void playEmote(::persona::PieceOfferWrapper const& emoteCatalogOffer);
 
-    MCAPI void playReactAnimations(::SharedTypes::persona::PieceType pieceType, bool offer);
+    MCNAPI void playReactAnimations(::SharedTypes::persona::PieceType pieceType, bool offer);
 
-    MCAPI void updateAppearanceData(::persona::PieceOfferWrapper const& offer, bool isOwned);
+    MCNAPI void updateAppearanceData(::persona::PieceOfferWrapper const& offer, bool isOwned);
 
-    MCAPI void updatePaperDollAnimation(::UIPropertyBag& bag);
+    MCNAPI void updatePaperDollAnimation(::UIPropertyBag& bag);
 
-    MCAPI ~PersonaAnimationModel();
+    MCNAPI ~PersonaAnimationModel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IPersonaRepository const& personaRepo);
+    MCNAPI void* $ctor(::IPersonaRepository const& personaRepo);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

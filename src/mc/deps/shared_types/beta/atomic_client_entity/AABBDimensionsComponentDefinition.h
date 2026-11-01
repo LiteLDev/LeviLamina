@@ -21,18 +21,18 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& HEIGHT();
+    MCNAPI static ::std::string_view const& HEIGHT();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
 
-    MCAPI static ::std::string_view const& WIDTH();
+    MCNAPI static ::std::string_view const& WIDTH();
     // NOLINTEND
 };
 

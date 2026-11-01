@@ -45,7 +45,7 @@ public:
     MCAPI ChunkAccessor(::Dimension& dimension, ::BiomeSource const& biomeSource);
 
 #ifdef LL_PLAT_S
-    MCAPI ::br::worldgen::ColumnBiomes const& _getColumnBiomes(int x, int z) const;
+    MCNAPI ::br::worldgen::ColumnBiomes const& _getColumnBiomes(int x, int z) const;
 #endif
 
     MCAPI int getFirstFreeHeight(int x, int z, ::br::worldgen::HeightmapProjection::Type heightmapProjection) const;

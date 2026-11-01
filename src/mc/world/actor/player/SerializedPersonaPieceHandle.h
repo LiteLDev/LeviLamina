@@ -35,7 +35,7 @@ public:
         ::std::string const&              productId
     );
 
-    MCAPI bool operator==(::SerializedPersonaPieceHandle const& rhs) const;
+    MCNAPI bool operator==(::SerializedPersonaPieceHandle const& rhs) const;
     // NOLINTEND
 
 public:

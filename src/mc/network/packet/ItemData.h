@@ -26,6 +26,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
+    MCNAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

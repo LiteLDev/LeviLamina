@@ -35,25 +35,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptComponent(::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    MCNAPI ScriptComponent(::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameServerConnectProgressHandler(
+    MCNAPI GameServerConnectProgressHandler(
         ::GameConnectionType                                                       connection,
         ::std::function<void()>                                                    startCallback,
         bool                                                                       handOverProgress,
@@ -72,7 +72,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::GameConnectionType                                                       connection,
         ::std::function<void()>                                                    startCallback,
         bool                                                                       handOverProgress,
@@ -84,22 +84,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel&);
+    MCNAPI void $onStart(::MinecraftScreenModel&);
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 };

@@ -25,17 +25,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& CAN_DASH_UNDERWATER_NAME();
+    MCNAPI static ::std::string_view const& CAN_DASH_UNDERWATER_NAME();
 
-    MCAPI static ::std::string_view const& COOLDOWN_SECONDS_NAME();
+    MCNAPI static ::std::string_view const& COOLDOWN_SECONDS_NAME();
 
-    MCAPI static ::std::string_view const& DIRECTION_NAME();
+    MCNAPI static ::std::string_view const& DIRECTION_NAME();
 
-    MCAPI static ::std::string_view const& HORIZONTAL_MOMENTUM_NAME();
+    MCNAPI static ::std::string_view const& HORIZONTAL_MOMENTUM_NAME();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
 
-    MCAPI static ::std::string_view const& VERTICAL_MOMENTUM_NAME();
+    MCNAPI static ::std::string_view const& VERTICAL_MOMENTUM_NAME();
     // NOLINTEND
 };
 

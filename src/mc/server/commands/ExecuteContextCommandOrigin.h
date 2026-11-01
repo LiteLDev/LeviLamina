@@ -81,35 +81,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string const& $getRequestId() const;
+    MCNAPI ::std::string const& $getRequestId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI ::BlockPos $getBlockPosition() const;
+    MCNAPI ::BlockPos $getBlockPosition() const;
 
-    MCAPI ::Vec3 $getWorldPosition() const;
+    MCNAPI ::Vec3 $getWorldPosition() const;
 
-    MCAPI ::std::optional<::Vec2> $getRotation() const;
+    MCNAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI ::Actor* $getEntity() const;
+    MCNAPI ::Actor* $getEntity() const;
 
-    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCFOLD ::CommandOriginType $getOriginType() const;
+    MCNAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI ::CompoundTag $serialize() const;
+    MCNAPI ::CompoundTag $serialize() const;
 
-    MCAPI void $updateValues();
+    MCNAPI void $updateValues();
 
-    MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
+    MCNAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
 
-    MCFOLD ::Level* $getLevel() const;
+    MCNAPI ::Level* $getLevel() const;
 
-    MCAPI ::Dimension* $getDimension() const;
+    MCNAPI ::Dimension* $getDimension() const;
 
 
     // NOLINTEND

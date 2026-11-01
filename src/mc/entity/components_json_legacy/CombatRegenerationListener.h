@@ -40,19 +40,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CombatRegenerationListener(::ActorEventCoordinator& coordinator);
+    MCNAPI explicit CombatRegenerationListener(::ActorEventCoordinator& coordinator);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorEventCoordinator& coordinator);
+    MCNAPI void* $ctor(::ActorEventCoordinator& coordinator);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::ActorNotificationEvent const& event);
 
 
     // NOLINTEND

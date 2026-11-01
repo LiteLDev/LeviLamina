@@ -27,19 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VoxelShapesPacketPayload(
+    MCNAPI VoxelShapesPacketPayload(
         ::std::vector<::VoxelShapes::VoxelShape> const&                            shapes,
         ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle> const& nameMap,
         ushort                                                                     customShapeCount
     );
 
-    MCAPI ~VoxelShapesPacketPayload();
+    MCNAPI ~VoxelShapesPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::VoxelShapes::VoxelShape> const&                            shapes,
         ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle> const& nameMap,
         ushort                                                                     customShapeCount
@@ -49,6 +49,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -35,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::HitResult $clip(
+    MCNAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -51,6 +51,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

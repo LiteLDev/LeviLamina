@@ -25,29 +25,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllowListProfileImage(::OreUI::AllowListProfileImage const&);
+    MCNAPI AllowListProfileImage(::OreUI::AllowListProfileImage const&);
 
-    MCAPI AllowListProfileImage(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
+    MCNAPI AllowListProfileImage(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
 
-    MCAPI void invalidate();
+    MCNAPI void invalidate();
 
-    MCAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage&&);
+    MCNAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage&&);
 
-    MCAPI ~AllowListProfileImage();
+    MCNAPI ~AllowListProfileImage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::AllowListProfileImage const&);
+    MCNAPI void* $ctor(::OreUI::AllowListProfileImage const&);
 
-    MCAPI void* $ctor(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
+    MCNAPI void* $ctor(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

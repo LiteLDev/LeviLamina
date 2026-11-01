@@ -45,32 +45,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackResolver(
+    MCNAPI ResourcePackResolver(
         ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>          uiRepository,
         ::ResourcePackManager&                                  resourcePackManager
     );
 
-    MCAPI ::std::vector<::UI::Resources::ResolvedPropertyData> _evaluateProperties(
+    MCNAPI ::std::vector<::UI::Resources::ResolvedPropertyData> _evaluateProperties(
         ::UIResolvedDef const&              resolvedDef,
         ::std::vector<::std::string> const& propertiesToResolve
     ) const;
 
-    MCAPI ::std::vector<::UI::Resources::ResolvedTextureData>
+    MCNAPI ::std::vector<::UI::Resources::ResolvedTextureData>
     _evaluateTextures(::UIResolvedDef const& resolvedDef, ::std::vector<::std::string> const& texturesToResolve) const;
 
-    MCAPI bool doesDefinitionContainNonBaseGameTextures(
+    MCNAPI bool doesDefinitionContainNonBaseGameTextures(
         ::std::vector<::UI::Resources::ResolvedDefinition> const& definitions
     ) const;
 
-    MCAPI ::std::vector<::UI::Resources::ResolvedDefinition>
+    MCNAPI ::std::vector<::UI::Resources::ResolvedDefinition>
     resolveDefinitions(::std::vector<::UI::Resources::DefinitionPropertyNames> const& definitionsToResolve);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>          uiRepository,
         ::ResourcePackManager&                                  resourcePackManager
@@ -80,13 +80,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
+    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };
 

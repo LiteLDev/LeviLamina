@@ -43,18 +43,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenUIGenericNode(::OreUI::DataDrivenUIGenericNode const& other);
+    MCNAPI DataDrivenUIGenericNode(::OreUI::DataDrivenUIGenericNode const& other);
 
-    MCAPI DataDrivenUIGenericNode(::OreUI::DataDrivenUIGenericNode&& other);
+    MCNAPI DataDrivenUIGenericNode(::OreUI::DataDrivenUIGenericNode&& other);
 
-    MCAPI DataDrivenUIGenericNode(
+    MCNAPI DataDrivenUIGenericNode(
         ::std::optional<::std::string>                  component,
         ::std::optional<::std::string>                  text,
         ::std::optional<::std::string>                  dynamicAttribs,
         ::std::vector<::OreUI::DataDrivenUIGenericNode> childrenNodes
     );
 
-    MCAPI DataDrivenUIGenericNode(
+    MCNAPI DataDrivenUIGenericNode(
         ::std::optional<::std::string> component,
         ::std::optional<::std::string> text,
         ::std::optional<::std::string> dynamicAttribs,
@@ -65,18 +65,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OreUI::DataDrivenUIGenericNode const& other);
+    MCNAPI void* $ctor(::OreUI::DataDrivenUIGenericNode const& other);
 
-    MCFOLD void* $ctor(::OreUI::DataDrivenUIGenericNode&& other);
+    MCNAPI void* $ctor(::OreUI::DataDrivenUIGenericNode&& other);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::optional<::std::string>                  component,
         ::std::optional<::std::string>                  text,
         ::std::optional<::std::string>                  dynamicAttribs,
         ::std::vector<::OreUI::DataDrivenUIGenericNode> childrenNodes
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::optional<::std::string> component,
         ::std::optional<::std::string> text,
         ::std::optional<::std::string> dynamicAttribs,
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

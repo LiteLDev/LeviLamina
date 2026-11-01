@@ -12,6 +12,6 @@ class PassengerFreezeMovementSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
+    MCNAPI static void _freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
     // NOLINTEND
 };

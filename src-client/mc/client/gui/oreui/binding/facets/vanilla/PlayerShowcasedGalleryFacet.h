@@ -47,46 +47,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerShowcasedGalleryFacet(
+    MCNAPI PlayerShowcasedGalleryFacet(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
 
-    MCAPI ::Bedrock::Result<void> _resetIfUserChanged(::std::string const& xuidString);
+    MCNAPI ::Bedrock::Result<void> _resetIfUserChanged(::std::string const& xuidString);
 
-    MCAPI uint64 getCount() const;
+    MCNAPI uint64 getCount() const;
 
-    MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
+    MCNAPI ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
 
-    MCAPI uint64 getMaxScreenshots() const;
+    MCNAPI uint64 getMaxScreenshots() const;
 
-    MCAPI ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
+    MCNAPI ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
 
-    MCAPI bool isLoadingCount() const;
+    MCNAPI bool isLoadingCount() const;
 
-    MCAPI bool isLoadingFeaturedScreenshot() const;
+    MCNAPI bool isLoadingFeaturedScreenshot() const;
 
-    MCAPI bool isLoadingScreenshots() const;
+    MCNAPI bool isLoadingScreenshots() const;
 
-    MCAPI void loadCount(::std::string const& xuid);
+    MCNAPI void loadCount(::std::string const& xuid);
 
-    MCAPI void loadFeaturedScreenshot(::std::string const& xuid);
+    MCNAPI void loadFeaturedScreenshot(::std::string const& xuid);
 
-    MCAPI void loadGallery(::std::string const& xuid);
+    MCNAPI void loadGallery(::std::string const& xuid);
 
-    MCAPI void loadShowcasedScreenshot(::std::string const& id) const;
+    MCNAPI void loadShowcasedScreenshot(::std::string const& id) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
@@ -95,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

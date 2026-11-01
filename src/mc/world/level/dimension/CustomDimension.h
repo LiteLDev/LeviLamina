@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomDimension(
+    MCNAPI CustomDimension(
         ::DerivedDimensionArguments&&   args,
         ::DimensionType                 id,
         ::std::string const&            name,
@@ -81,7 +81,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::DerivedDimensionArguments&&   args,
         ::DimensionType                 id,
         ::std::string const&            name,
@@ -92,25 +92,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator> $createGenerator(::br::worldgen::StructureSetRegistry const&);
+    MCNAPI ::std::unique_ptr<::WorldGenerator> $createGenerator(::br::worldgen::StructureSetRegistry const&);
 
     MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const&) const;
 
-    MCFOLD void $upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&);
+    MCNAPI void $upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&);
 
     MCFOLD void $fixWallChunk(::ChunkSource&, ::LevelChunk&);
 
-    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+    MCNAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
-    MCAPI short $getCloudHeight() const;
+    MCNAPI short $getCloudHeight() const;
 
-    MCAPI bool $shouldRenderClouds() const;
+    MCNAPI bool $shouldRenderClouds() const;
 
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion);
 
-    MCAPI ::std::unique_ptr<::ChunkSource>
+    MCNAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 

@@ -164,7 +164,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerScriptManager(
+    MCNAPI ServerScriptManager(
         ::ScriptSettings&&                                       settings,
         ::ServerLevel&                                           serverLevel,
         ::std::shared_ptr<::ScriptPackSettingsCache>             packSettingsCache,
@@ -179,13 +179,13 @@ public:
         ::Bedrock::NonOwnerPointer<::DebuggerDiagnostics>        diagnostics
     );
 
-    MCAPI void _checkForSystemPackErrors(::ScriptPluginManagerResult const& result);
+    MCNAPI void _checkForSystemPackErrors(::ScriptPluginManagerResult const& result);
 
-    MCAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
+    MCNAPI void _loadPlugins(::ServerLevel& serverLevel, bool fromReload);
 
-    MCAPI void _runPlugins(::PluginExecutionGroup exeGroup, ::ServerInstance& serverInstance);
+    MCNAPI void _runPlugins(::PluginExecutionGroup exeGroup, ::ServerInstance& serverInstance);
 
-    MCAPI void addModuleFilter(
+    MCNAPI void addModuleFilter(
         ::std::function<::ScriptModuleFilters::FilterResult(
             ::PackManifest const&,
             ::Scripting::ModuleDescriptor const&,
@@ -194,13 +194,13 @@ public:
         )> moduleFilter
     );
 
-    MCAPI void setBlockCustomComponentCerealContext(::cereal::ReflectionCtx& ctx);
+    MCNAPI void setBlockCustomComponentCerealContext(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptSettings&&                                       settings,
         ::ServerLevel&                                           serverLevel,
         ::std::shared_ptr<::ScriptPackSettingsCache>             packSettingsCache,
@@ -219,13 +219,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
+    MCNAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+    MCNAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
+    MCNAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
 
-    MCAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent);
+    MCNAPI ::EventResult $onEvent(::LevelStartLeaveGameEvent const& levelStartLeaveGameEvent);
 
 
     // NOLINTEND

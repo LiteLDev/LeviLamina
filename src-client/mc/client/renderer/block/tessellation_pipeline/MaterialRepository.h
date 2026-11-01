@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::AtlasItemManager const& atlasItemManager);
+    MCNAPI void initialize(::AtlasItemManager const& atlasItemManager);
 
-    MCAPI void initializeMaterials(
+    MCNAPI void initializeMaterials(
         ::BlockMaterialInstancesComponent& materialInstance,
         ::AtlasItemManager const&          atlasItemManager,
         ::TextureShiftManager const&       textureShiftManager,
@@ -38,7 +38,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::TextureUVCoordinateSet>& mDefaultTexture();
+    MCNAPI static ::std::vector<::TextureUVCoordinateSet>& mDefaultTexture();
     // NOLINTEND
 };
 

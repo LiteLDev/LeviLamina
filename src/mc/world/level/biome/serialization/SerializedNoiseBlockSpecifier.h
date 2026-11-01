@@ -19,7 +19,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ~SerializedNoiseBlockSpecifier();
+    MCNAPI ~SerializedNoiseBlockSpecifier();
 #endif
     // NOLINTEND
 
@@ -27,7 +27,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

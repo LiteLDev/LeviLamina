@@ -35,7 +35,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[16]> NAME();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[16]> NAME();
         // NOLINTEND
     };
 
@@ -49,7 +49,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[17]> NAME();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[17]> NAME();
         // NOLINTEND
     };
 
@@ -84,41 +84,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorProjectConstantsFacet(::Editor::ServiceProviderCollection* services);
+    MCNAPI explicit EditorProjectConstantsFacet(::Editor::ServiceProviderCollection* services);
 
-    MCAPI void _setBlockColors(::std::shared_ptr<::Editor::BlockColorSnapshot const> snapshot);
+    MCNAPI void _setBlockColors(::std::shared_ptr<::Editor::BlockColorSnapshot const> snapshot);
 
-    MCAPI void _subscribeToBlockColors(::Editor::ServiceProviderCollection& managerServices);
+    MCNAPI void _subscribeToBlockColors(::Editor::ServiceProviderCollection& managerServices);
 
-    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::BlockInfo> const&
+    MCNAPI ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::BlockInfo> const&
     getBlockInfoMap() const;
 
-    MCFOLD ::std::vector<::std::string> const& getBlocknameList() const;
+    MCNAPI ::std::vector<::std::string> const& getBlocknameList() const;
 
-    MCFOLD ::std::vector<::std::string> const& getEntityIdList() const;
+    MCNAPI ::std::vector<::std::string> const& getEntityIdList() const;
 
-    MCFOLD ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::EntityInfo> const&
+    MCNAPI ::std::unordered_map<::std::string, ::OreUI::EditorProjectConstantsFacet::EntityInfo> const&
     getEntityInfoMap() const;
 
-    MCAPI bool const isBlockAtlasAvailable() const;
+    MCNAPI bool const isBlockAtlasAvailable() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection* services);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

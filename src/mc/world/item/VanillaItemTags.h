@@ -12,91 +12,91 @@ namespace VanillaItemTags {
 // NOLINTBEGIN
 MCAPI ::ItemTag const& Armor();
 
-MCAPI ::ItemTag const& Arrows();
+MCNAPI ::ItemTag const& Arrows();
 
-MCAPI ::ItemTag const& Banners();
+MCNAPI ::ItemTag const& Banners();
 
-MCAPI ::ItemTag const& Boat();
+MCNAPI ::ItemTag const& Boat();
 
-MCAPI ::ItemTag const& Boats();
+MCNAPI ::ItemTag const& Boats();
 
-MCAPI ::ItemTag const& BookshelfBooks();
+MCNAPI ::ItemTag const& BookshelfBooks();
 
-MCAPI ::ItemTag const& ChainmailTier();
+MCNAPI ::ItemTag const& ChainmailTier();
 
-MCAPI ::ItemTag const& ChestBoat();
+MCNAPI ::ItemTag const& ChestBoat();
 
-MCAPI ::ItemTag const& Coals();
+MCNAPI ::ItemTag const& Coals();
 
-MCAPI ::ItemTag const& Cooked();
+MCNAPI ::ItemTag const& Cooked();
 
-MCAPI ::ItemTag const& CopperTier();
+MCNAPI ::ItemTag const& CopperTier();
 
-MCAPI ::ItemTag const& CrimsonStems();
+MCNAPI ::ItemTag const& CrimsonStems();
 
-MCAPI ::ItemTag const& DecoratedPotSherds();
+MCNAPI ::ItemTag const& DecoratedPotSherds();
 
-MCAPI ::ItemTag const& DiamondTier();
+MCNAPI ::ItemTag const& DiamondTier();
 
-MCAPI ::ItemTag const& Digger();
+MCNAPI ::ItemTag const& Digger();
 
-MCAPI ::ItemTag const& Door();
+MCNAPI ::ItemTag const& Door();
 
-MCAPI ::ItemTag const& Egg();
+MCNAPI ::ItemTag const& Egg();
 
-MCAPI ::ItemTag const& Fishes();
+MCNAPI ::ItemTag const& Fishes();
 
-MCAPI ::ItemTag const& Food();
+MCNAPI ::ItemTag const& Food();
 
-MCAPI ::ItemTag const& GoldenTier();
+MCNAPI ::ItemTag const& GoldenTier();
 
-MCAPI ::ItemTag const& HangingActor();
+MCNAPI ::ItemTag const& HangingActor();
 
 MCAPI ::ItemTag const& HangingSign();
 
-MCAPI ::ItemTag const& Harness();
+MCNAPI ::ItemTag const& Harness();
 
-MCAPI ::ItemTag const& Hatchet();
+MCNAPI ::ItemTag const& Hatchet();
 
 MCAPI ::ItemTag const& Hoe();
 
-MCAPI ::ItemTag const& HorseArmor();
+MCNAPI ::ItemTag const& HorseArmor();
 
-MCAPI ::ItemTag const& IronTier();
+MCNAPI ::ItemTag const& IronTier();
 
-MCAPI ::ItemTag const& LeatherTier();
+MCNAPI ::ItemTag const& LeatherTier();
 
-MCAPI ::ItemTag const& LecternBooks();
+MCNAPI ::ItemTag const& LecternBooks();
 
 MCAPI ::ItemTag const& Logs();
 
-MCAPI ::ItemTag const& LogsThatBurn();
+MCNAPI ::ItemTag const& LogsThatBurn();
 
-MCAPI ::ItemTag const& MangroveLogs();
+MCNAPI ::ItemTag const& MangroveLogs();
 
-MCAPI ::ItemTag const& Meat();
+MCNAPI ::ItemTag const& Meat();
 
-MCAPI ::ItemTag const& MetalNuggets();
+MCNAPI ::ItemTag const& MetalNuggets();
 
-MCAPI ::ItemTag const& Minecart();
+MCNAPI ::ItemTag const& Minecart();
 
-MCAPI ::ItemTag const& MushroomsForStew();
+MCNAPI ::ItemTag const& MushroomsForStew();
 
-MCAPI ::ItemTag const& MusicDiscs();
+MCNAPI ::ItemTag const& MusicDiscs();
 
-MCAPI ::ItemTag const& NautilusArmor();
+MCNAPI ::ItemTag const& NautilusArmor();
 
-MCAPI ::ItemTag const& NetheriteTier();
+MCNAPI ::ItemTag const& NetheriteTier();
 
 MCAPI ::ItemTag const& Pickaxe();
 
-MCAPI ::ItemTag const& PiglinLoved();
+MCNAPI ::ItemTag const& PiglinLoved();
 
-MCAPI ::ItemTag const& PiglinRepellents();
+MCNAPI ::ItemTag const& PiglinRepellents();
 
 MCAPI ::ItemTag const& Planks();
 
-MCAPI ::ItemTag const& Sand();
+MCNAPI ::ItemTag const& Sand();
 
 MCAPI ::ItemTag const& Shears();
 
@@ -104,71 +104,71 @@ MCAPI ::ItemTag const& Shovel();
 
 MCAPI ::ItemTag const& Sign();
 
-MCAPI ::ItemTag const& SoulFireBaseBlocks();
+MCNAPI ::ItemTag const& SoulFireBaseBlocks();
 
-MCAPI ::ItemTag const& SpawnEgg();
+MCNAPI ::ItemTag const& SpawnEgg();
 
-MCAPI ::ItemTag const& Spear();
+MCNAPI ::ItemTag const& Spear();
 
-MCAPI ::ItemTag const& StoneBricks();
+MCNAPI ::ItemTag const& StoneBricks();
 
-MCAPI ::ItemTag const& StoneCraftingMaterials();
+MCNAPI ::ItemTag const& StoneCraftingMaterials();
 
-MCAPI ::ItemTag const& StoneTier();
+MCNAPI ::ItemTag const& StoneTier();
 
-MCAPI ::ItemTag const& StoneToolMaterials();
+MCNAPI ::ItemTag const& StoneToolMaterials();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeBouncy();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeBouncy();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeExplosive();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeExplosive();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeFastFlat();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeFastFlat();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeFastSliding();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeFastSliding();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeHighResistance();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeHighResistance();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeHot();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeHot();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeLight();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeLight();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeRegular();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeRegular();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeSlowBouncy();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeSlowBouncy();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeSlowFlat();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeSlowFlat();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeSlowSliding();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeSlowSliding();
 
-MCAPI ::ItemTag const& SulfurCubeArchetypeSticky();
+MCNAPI ::ItemTag const& SulfurCubeArchetypeSticky();
 
 MCAPI ::ItemTag const& Sword();
 
-MCAPI ::ItemTag const& Tool();
+MCNAPI ::ItemTag const& Tool();
 
-MCAPI ::ItemTag const& TransformMaterials();
+MCNAPI ::ItemTag const& TransformMaterials();
 
-MCAPI ::ItemTag const& TransformTemplates();
+MCNAPI ::ItemTag const& TransformTemplates();
 
 MCAPI ::ItemTag const& TransformableItems();
 
-MCAPI ::ItemTag const& Trident();
+MCNAPI ::ItemTag const& Trident();
 
-MCAPI ::ItemTag const& TrimMaterials();
+MCNAPI ::ItemTag const& TrimMaterials();
 
-MCAPI ::ItemTag const& TrimTemplates();
+MCNAPI ::ItemTag const& TrimTemplates();
 
-MCAPI ::ItemTag const& TrimmableArmors();
+MCNAPI ::ItemTag const& TrimmableArmors();
 
-MCAPI ::ItemTag const& VibrationDamper();
+MCNAPI ::ItemTag const& VibrationDamper();
 
-MCAPI ::ItemTag const& WarpedStems();
+MCNAPI ::ItemTag const& WarpedStems();
 
-MCAPI ::ItemTag const& WoodenSlabs();
+MCNAPI ::ItemTag const& WoodenSlabs();
 
-MCAPI ::ItemTag const& WoodenTier();
+MCNAPI ::ItemTag const& WoodenTier();
 
-MCAPI ::ItemTag const& Wool();
+MCNAPI ::ItemTag const& Wool();
 // NOLINTEND
 
 } // namespace VanillaItemTags

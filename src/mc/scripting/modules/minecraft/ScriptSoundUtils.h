@@ -12,14 +12,14 @@ namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
 namespace ScriptModuleMinecraft::ScriptSoundUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::LevelEventGenericPacket> createPlayMusicPacket(
+MCNAPI ::std::unique_ptr<::LevelEventGenericPacket> createPlayMusicPacket(
     ::std::string const&                                         trackId,
     ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
     ::std::optional<::ServerSoundHandle>                         serverSoundHandle,
     bool                                                         shouldQueue
 );
 
-MCAPI ::std::unique_ptr<::LevelEventGenericPacket> createStopMusicPacket();
+MCNAPI ::std::unique_ptr<::LevelEventGenericPacket> createStopMusicPacket();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::ScriptSoundUtils

@@ -55,22 +55,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void
+    MCNAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCNAPI ::GameEvents::PositionSource const& $getPositionSource() const;
 
-    MCFOLD uint $getRange() const;
+    MCNAPI uint $getRange() const;
 
-    MCFOLD ::IGameEventListener::DeliveryMode $getDeliveryMode() const;
+    MCNAPI ::IGameEventListener::DeliveryMode $getDeliveryMode() const;
 
 
     // NOLINTEND
@@ -80,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
 
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
     MCNAPI static void** $vftable();
 

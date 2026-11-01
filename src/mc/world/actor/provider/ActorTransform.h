@@ -12,14 +12,14 @@ class Vec3;
 namespace ActorTransform {
 // functions
 // NOLINTBEGIN
-MCAPI ::Vec2 const& getRenderRotation(::EntityContext const& entity);
+MCNAPI ::Vec2 const& getRenderRotation(::EntityContext const& entity);
 
-MCAPI void initializeActor(::EntityContext& entity);
+MCNAPI void initializeActor(::EntityContext& entity);
 
-MCAPI void setRenderPosition(::EntityContext& entity, ::Vec3 const& newRenderPos);
+MCNAPI void setRenderPosition(::EntityContext& entity, ::Vec3 const& newRenderPos);
 
 #ifdef LL_PLAT_C
-MCAPI void setRenderRotation(::EntityContext& entity, ::Vec2 const& newRenderRot);
+MCNAPI void setRenderRotation(::EntityContext& entity, ::Vec2 const& newRenderRot);
 #endif
 // NOLINTEND
 

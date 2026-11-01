@@ -35,6 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setCapturingKeymapping(::InputSettingsHandler::KeymappingInfo info);
+    MCNAPI void setCapturingKeymapping(::InputSettingsHandler::KeymappingInfo info);
     // NOLINTEND
 };

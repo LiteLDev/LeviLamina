@@ -22,31 +22,31 @@ class ScriptRideableComponent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getControllingSeat() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getControllingSeat() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getCrouchingSkipInteract() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getCrouchingSkipInteract() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getFamilyTypes() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getFamilyTypes() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getPassengerCanInteract() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getPassengerCanInteract() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getPullInEntities() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getPullInEntities() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getSeatCount() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getSeatCount() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::SeatDescription>> getSeats() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::SeatDescription>> getSeats() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

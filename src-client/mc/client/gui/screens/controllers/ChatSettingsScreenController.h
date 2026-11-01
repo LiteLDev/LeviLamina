@@ -58,14 +58,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _handleFontColorChanged(int fontColorIndex, ::ChatSettingsScreenController::ColorSubsection colorType);
+    MCNAPI void _handleFontColorChanged(int fontColorIndex, ::ChatSettingsScreenController::ColorSubsection colorType);
 
-    MCAPI void _setInitialSettings();
+    MCNAPI void _setInitialSettings();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
+    MCNAPI void $setViewCommand(::ScreenViewCommand const& callback);
     // NOLINTEND
 };

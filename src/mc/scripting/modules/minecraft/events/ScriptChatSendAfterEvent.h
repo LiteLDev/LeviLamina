@@ -43,57 +43,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptChatSendAfterEvent(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+    MCNAPI ScriptChatSendAfterEvent(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
 
-    MCAPI ScriptChatSendAfterEvent(
+    MCNAPI ScriptChatSendAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                             scope
     );
 
-    MCAPI ScriptChatSendAfterEvent(
+    MCNAPI ScriptChatSendAfterEvent(
         ::ChatEvent const&                    chatEvent,
         ::Player const&                       player,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI void copyTo(::ChatEvent& chatEvent) const;
+    MCNAPI void copyTo(::ChatEvent& chatEvent) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     getTargets_V010();
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setTargets_V010(::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> targets);
 
-    MCAPI ~ScriptChatSendAfterEvent();
+    MCNAPI ~ScriptChatSendAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                             scope
     );
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ChatEvent const& chatEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

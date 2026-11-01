@@ -28,13 +28,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Effect();
+        MCNAPI ~Effect();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -50,14 +50,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addEffect(::FeedItem::Effect const& effect);
+    MCNAPI void addEffect(::FeedItem::Effect const& effect);
 
-    MCAPI ~FeedItem();
+    MCNAPI ~FeedItem();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

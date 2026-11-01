@@ -66,39 +66,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TouchMapper(::std::function<::std::vector<::RectangleArea>()> areaFunc);
+    MCNAPI explicit TouchMapper(::std::function<::std::vector<::RectangleArea>()> areaFunc);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<::std::vector<::RectangleArea>()> areaFunc);
+    MCNAPI void* $ctor(::std::function<::std::vector<::RectangleArea>()> areaFunc);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMapping(
+    MCNAPI void $setMapping(
         ::InputEventQueue&      eventQueue,
         ::BindingFactory const& bindingFactory,
         ::InputMapping const&   inputMapping,
         int                     controllerId
     );
 
-    MCAPI void $clearMapping(int controllerId);
+    MCNAPI void $clearMapping(int controllerId);
 
-    MCAPI bool
+    MCNAPI bool
     $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
 
-    MCAPI void $clearInputDeviceQueue();
+    MCNAPI void $clearInputDeviceQueue();
 
-    MCFOLD ::InputMode $getInputMode() const;
+    MCNAPI ::InputMode $getInputMode() const;
 
-    MCFOLD void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
 
-    MCFOLD void $setWindowSize(int width, int height);
+    MCNAPI void $setWindowSize(int width, int height);
 
-    MCAPI void $changeControllerId(int oldId, int newId);
+    MCNAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND
 
 public:

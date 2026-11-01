@@ -11,32 +11,32 @@ namespace VanillaActorRendererId {
 // static variables
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& _map();
+MCNAPI ::HashedString const& _map();
 
-MCAPI ::HashedString const& _photo();
+MCNAPI ::HashedString const& _photo();
 #endif
 
-MCAPI ::HashedString const& _query();
+MCNAPI ::HashedString const& _query();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& elderGuardian();
+MCNAPI ::HashedString const& elderGuardian();
 #endif
 
-MCAPI ::HashedString const& elderGuardianGhost();
+MCNAPI ::HashedString const& elderGuardianGhost();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& itemEntity();
+MCNAPI ::HashedString const& itemEntity();
 #endif
 
-MCAPI ::HashedString const& lingeringPotion();
+MCNAPI ::HashedString const& lingeringPotion();
 
-MCAPI ::HashedString const& player();
+MCNAPI ::HashedString const& player();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& shield();
+MCNAPI ::HashedString const& shield();
 #endif
 
-MCAPI ::HashedString const& thrownPotion();
+MCNAPI ::HashedString const& thrownPotion();
 // NOLINTEND
 
 } // namespace VanillaActorRendererId

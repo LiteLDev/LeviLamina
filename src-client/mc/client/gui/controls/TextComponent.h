@@ -89,36 +89,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextComponent(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
+    MCNAPI TextComponent(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
 
-    MCAPI int _getCaretPosition() const;
+    MCNAPI int _getCaretPosition() const;
 
-    MCAPI ::std::string const& _getMeasuredText(::UIRenderContext& context);
+    MCNAPI ::std::string const& _getMeasuredText(::UIRenderContext& context);
 
-    MCAPI ::std::string calculateUpdatedText();
+    MCNAPI ::std::string calculateUpdatedText();
 
-    MCAPI void setFontType(::std::string const& fontType);
+    MCNAPI void setFontType(::std::string const& fontType);
 
-    MCAPI void setTextTTS(::std::string const& label);
+    MCNAPI void setTextTTS(::std::string const& label);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
+    MCNAPI void* $ctor(::UIControl& owner, ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> fontRepository);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $render(::UIRenderContext& context);
+    MCNAPI void $render(::UIRenderContext& context);
 
-    MCAPI void $updateUI(::UIMeasureStrategy const& uiMeasureStrategy);
+    MCNAPI void $updateUI(::UIMeasureStrategy const& uiMeasureStrategy);
 
-    MCAPI ::std::string const& $getTextToSpeechComponentValue() const;
+    MCNAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientboundDataDrivenUIShowScreenPacketPayload(
+    MCNAPI ClientboundDataDrivenUIShowScreenPacketPayload(
         ::std::string const&  screenId,
         uint                  formId,
         ::std::optional<uint> dataInstanceId
@@ -28,6 +28,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& screenId, uint formId, ::std::optional<uint> dataInstanceId);
+    MCNAPI void* $ctor(::std::string const& screenId, uint formId, ::std::optional<uint> dataInstanceId);
     // NOLINTEND
 };

@@ -36,13 +36,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkItemInstanceDescriptorData(::ItemStackRequestCereal::NetworkItemInstanceDescriptorData const&);
+    MCNAPI NetworkItemInstanceDescriptorData(::ItemStackRequestCereal::NetworkItemInstanceDescriptorData const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestCereal::NetworkItemInstanceDescriptorData const&);
+    MCNAPI void* $ctor(::ItemStackRequestCereal::NetworkItemInstanceDescriptorData const&);
     // NOLINTEND
 };
 

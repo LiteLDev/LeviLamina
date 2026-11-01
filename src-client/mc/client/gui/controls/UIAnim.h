@@ -68,36 +68,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIAnim(::ui::AnimationType animType, ::UIResolvedDef const& def);
+    MCNAPI UIAnim(::ui::AnimationType animType, ::UIResolvedDef const& def);
 
-    MCAPI bool _hasEndEventId(uint id, ::std::set<void const*>& otherAnimations) const;
+    MCNAPI bool _hasEndEventId(uint id, ::std::set<void const*>& otherAnimations) const;
 
-    MCAPI bool _hasPlayEventId(uint playEventId, ::std::set<void const*>& otherAnimations) const;
+    MCNAPI bool _hasPlayEventId(uint playEventId, ::std::set<void const*>& otherAnimations) const;
 
-    MCAPI void destroy();
+    MCNAPI void destroy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ui::AnimationType animType, ::UIResolvedDef const& def);
+    MCNAPI void* $ctor(::ui::AnimationType animType, ::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UIAnim> $clone();
+    MCNAPI ::std::shared_ptr<::UIAnim> $clone();
 
-    MCAPI char const* $getInitialValueKey() const;
+    MCNAPI char const* $getInitialValueKey() const;
 
-    MCAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
+    MCNAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
 
-    MCAPI void $updateProperties(::UIAnimationComponent& animComponent);
+    MCNAPI void $updateProperties(::UIAnimationComponent& animComponent);
 
-    MCAPI void $onResourcesLoaded(::UIAnimationComponent& animComponent);
+    MCNAPI void $onResourcesLoaded(::UIAnimationComponent& animComponent);
 
-    MCAPI void $_reset(::UIControl& ownerControl);
+    MCNAPI void $_reset(::UIControl& ownerControl);
 
-    MCAPI void $_play();
+    MCNAPI void $_play();
     // NOLINTEND
 };

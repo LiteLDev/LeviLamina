@@ -8,7 +8,7 @@ class ScriptBlockFluidContainerComponentV1 {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ComponentId();
+    MCNAPI static ::std::string const& ComponentId();
     // NOLINTEND
 };
 

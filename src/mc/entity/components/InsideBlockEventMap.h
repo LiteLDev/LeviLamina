@@ -27,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~InsideBlockEventMap();
+    MCNAPI ~InsideBlockEventMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

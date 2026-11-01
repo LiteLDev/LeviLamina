@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void reset(::bgfx::Frame const* _frame);
+    MCNAPI void reset(::bgfx::Frame const* _frame);
     // NOLINTEND
 };
 

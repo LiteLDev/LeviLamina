@@ -272,7 +272,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::LegacyTelemetryEventPacketPayload::SlashCommand&
+        MCNAPI ::LegacyTelemetryEventPacketPayload::SlashCommand&
         operator=(::LegacyTelemetryEventPacketPayload::SlashCommand&&);
         // NOLINTEND
     };

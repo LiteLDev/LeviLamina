@@ -128,73 +128,73 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProjectileComponent();
+    MCNAPI ProjectileComponent();
 
-    MCAPI ProjectileComponent(::ProjectileComponent&&);
+    MCNAPI ProjectileComponent(::ProjectileComponent&&);
 
-    MCAPI ProjectileComponent(::ProjectileComponent const&);
+    MCNAPI ProjectileComponent(::ProjectileComponent const&);
 
-    MCAPI void _selectNextMoveDirection(::Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
+    MCNAPI void _selectNextMoveDirection(::Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
 
-    MCAPI void _tryReflectOnHurt(::Actor& owner, ::ActorDamageSource const& damageSource);
+    MCNAPI void _tryReflectOnHurt(::Actor& owner, ::ActorDamageSource const& damageSource);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::std::vector<::ActorType> const getIgnoredEntities() const;
+    MCNAPI ::std::vector<::ActorType> const getIgnoredEntities() const;
 
-    MCAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
+    MCNAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
 
-    MCAPI void handleMovementAndGravity(::Actor& owner, bool skipPositionUpdate);
+    MCNAPI void handleMovementAndGravity(::Actor& owner, bool skipPositionUpdate);
 
-    MCAPI void handleMovementHoming(::Actor& owner);
+    MCNAPI void handleMovementHoming(::Actor& owner);
 
-    MCAPI void hurt(::Actor& owner, ::ActorDamageSource const& damageSource);
+    MCNAPI void hurt(::Actor& owner, ::ActorDamageSource const& damageSource);
 
-    MCAPI void initFromDefinition(::Actor& owner);
+    MCNAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI void lerpMotion(::Actor& owner, ::Vec3 const& delta);
+    MCNAPI void lerpMotion(::Actor& owner, ::Vec3 const& delta);
 
-    MCAPI void onComponentRemoved(::EntityContext& entity);
+    MCNAPI void onComponentRemoved(::EntityContext& entity);
 
     MCAPI void onHit(::Actor& owner, ::HitResult const& hitResult);
 
-    MCAPI ::ProjectileComponent& operator=(::ProjectileComponent&&);
+    MCNAPI ::ProjectileComponent& operator=(::ProjectileComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setActiveTarget(::Actor const& owner, ::Actor* target);
+    MCNAPI void setActiveTarget(::Actor const& owner, ::Actor* target);
 
-    MCAPI void shoot(::Actor& owner, ::Actor& shooter);
+    MCNAPI void shoot(::Actor& owner, ::Actor& shooter);
 
     MCAPI void
     shoot(::Actor& owner, ::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed, ::Actor* target);
 
-    MCAPI void tryApplyOffset(::Actor& owner, ::Actor* sender) const;
+    MCNAPI void tryApplyOffset(::Actor& owner, ::Actor* sender) const;
 
-    MCAPI ~ProjectileComponent();
+    MCNAPI ~ProjectileComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isLoyaltyTrident(::Actor const& owner);
+    MCNAPI static bool _isLoyaltyTrident(::Actor const& owner);
 
-    MCAPI static ::Vec2 dampenShooterAngle(::Vec2 const& angle, float angleOffset, ::BaseGameVersion const& version);
+    MCNAPI static ::Vec2 dampenShooterAngle(::Vec2 const& angle, float angleOffset, ::BaseGameVersion const& version);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ProjectileComponent&&);
+    MCNAPI void* $ctor(::ProjectileComponent&&);
 
-    MCAPI void* $ctor(::ProjectileComponent const&);
+    MCNAPI void* $ctor(::ProjectileComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

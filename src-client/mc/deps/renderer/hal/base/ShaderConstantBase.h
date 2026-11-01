@@ -29,13 +29,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $syncUniform(int uniformLocation, int elementCount);
+    MCNAPI void $syncUniform(int uniformLocation, int elementCount);
     // NOLINTEND
 
 public:

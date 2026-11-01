@@ -21,29 +21,30 @@ class VanillaBiomes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initBiomeComponentGlue(::BiomeJsonDocumentGlue& biomeJsonDocumentGlue);
+    MCNAPI static void initBiomeComponentGlue(::BiomeJsonDocumentGlue& biomeJsonDocumentGlue);
 
-    MCAPI static void initBiomeDimensionComponent(::BiomeRegistry& registry);
+    MCNAPI static void initBiomeDimensionComponent(::BiomeRegistry& registry);
 
-    MCAPI static void initBiomes(
+    MCNAPI static void initBiomes(
         ::BiomeRegistry&         registry,
         ::SpawnSettings const&   spawnSettings,
         ::BaseGameVersion const& baseGameVersion,
         ::Experiments const&     experiments
     );
 
-    MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
+    MCNAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
 
-    MCAPI static void initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI static void
+    initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
 
-    MCAPI static void initVanillaBiomeTypeComponent(::BiomeRegistry& registry);
+    MCNAPI static void initVanillaBiomeTypeComponent(::BiomeRegistry& registry);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::set<::BiomeIdType>& mPlayerValidSpawns();
+    MCNAPI static ::std::set<::BiomeIdType>& mPlayerValidSpawns();
 
-    MCAPI static ::SpawnBiomeType& mSpawnBiomeType();
+    MCNAPI static ::SpawnBiomeType& mSpawnBiomeType();
     // NOLINTEND
 };

@@ -38,11 +38,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Candidate();
+    MCNAPI Candidate();
 
-    MCAPI Candidate(::webrtc::Candidate const&);
+    MCNAPI Candidate(::webrtc::Candidate const&);
 
-    MCAPI Candidate(
+    MCNAPI Candidate(
         int                            component,
         ::std::string_view             protocol,
         ::webrtc::SocketAddress const& address,
@@ -56,61 +56,61 @@ public:
         ushort                         network_cost
     );
 
-    MCAPI void ComputeFoundation(::webrtc::SocketAddress const& base_address, uint64 tie_breaker);
+    MCNAPI void ComputeFoundation(::webrtc::SocketAddress const& base_address, uint64 tie_breaker);
 
-    MCAPI void ComputePrflxFoundation();
+    MCNAPI void ComputePrflxFoundation();
 
-    MCAPI uint GetPriority(
+    MCNAPI uint GetPriority(
         uint type_preference,
         int  network_adapter_preference,
         int  relay_preference,
         bool adjust_local_preference
     ) const;
 
-    MCAPI bool IsEquivalent(::webrtc::Candidate const& c) const;
+    MCNAPI bool IsEquivalent(::webrtc::Candidate const& c) const;
 
-    MCAPI bool MatchesForRemoval(::webrtc::Candidate const& c) const;
+    MCNAPI bool MatchesForRemoval(::webrtc::Candidate const& c) const;
 
-    MCAPI ::webrtc::Candidate
+    MCNAPI ::webrtc::Candidate
     ToSanitizedCopy(bool use_hostname_address, bool filter_related_address, bool filter_ufrag) const;
 
-    MCAPI ::std::string ToStringInternal(bool sensitive) const;
+    MCNAPI ::std::string ToStringInternal(bool sensitive) const;
 
-    MCAPI void generate_id();
+    MCNAPI void generate_id();
 
-    MCAPI bool is_local() const;
+    MCNAPI bool is_local() const;
 
-    MCAPI bool is_prflx() const;
+    MCNAPI bool is_prflx() const;
 
-    MCAPI bool is_relay() const;
+    MCNAPI bool is_relay() const;
 
-    MCAPI bool is_stun() const;
+    MCNAPI bool is_stun() const;
 
-    MCAPI bool operator!=(::webrtc::Candidate const& o) const;
+    MCNAPI bool operator!=(::webrtc::Candidate const& o) const;
 
-    MCAPI ::webrtc::Candidate& operator=(::webrtc::Candidate const&);
+    MCNAPI ::webrtc::Candidate& operator=(::webrtc::Candidate const&);
 
-    MCAPI bool operator==(::webrtc::Candidate const& o) const;
+    MCNAPI bool operator==(::webrtc::Candidate const& o) const;
 
-    MCAPI ::std::string_view type_name() const;
+    MCNAPI ::std::string_view type_name() const;
 
-    MCAPI ~Candidate();
+    MCNAPI ~Candidate();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void Assign(::std::string& s, ::std::string_view view);
+    MCNAPI static void Assign(::std::string& s, ::std::string_view view);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::Candidate const&);
+    MCNAPI void* $ctor(::webrtc::Candidate const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         int                            component,
         ::std::string_view             protocol,
         ::webrtc::SocketAddress const& address,
@@ -128,7 +128,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

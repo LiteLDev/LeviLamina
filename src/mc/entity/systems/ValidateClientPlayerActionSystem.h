@@ -22,7 +22,7 @@ struct ServerPlayerCurrentMovementComponent;
 namespace ValidateClientPlayerActionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void comparePlayerActionComponent(
+MCNAPI void comparePlayerActionComponent(
     ::StrictEntityContext const&                      entity,
     ::PlayerActionComponent const&                    serverPlayerAction,
     ::ServerPlayerCurrentMovementComponent const&     serverPlayerCurrentMovement,
@@ -33,7 +33,7 @@ MCAPI void comparePlayerActionComponent(
     ::EntityModifier<::SendPacketsComponent> const&   modifier
 );
 
-MCAPI void registerServerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace ValidateClientPlayerActionSystem

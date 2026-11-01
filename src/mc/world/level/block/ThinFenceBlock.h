@@ -79,19 +79,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
+    MCNAPI static ::BlockType::HorizontalDirectionBits getConnectionsFromState(::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCNAPI static ::BaseGameVersion const& THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addAABBs(
+    MCNAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -99,7 +99,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCFOLD bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -108,39 +108,39 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI ::AABB const& $getVisualShapeInWorld(
+    MCNAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::AABB& bufferAABB
     ) const;
 
-    MCAPI ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI bool $getCollisionShapeForCamera(
+    MCNAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const;
 
-    MCFOLD ::AABB const& $getOutline(
+    MCNAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD bool $isThinFenceBlock() const;
+    MCNAPI bool $isThinFenceBlock() const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
 
     // NOLINTEND
@@ -148,6 +148,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

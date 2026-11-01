@@ -56,9 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackCopyProgressHandler(::std::string const& levelID, ::std::function<void()> callback);
+    MCNAPI ResourcePackCopyProgressHandler(::std::string const& levelID, ::std::function<void()> callback);
 
-    MCAPI ::Bedrock::Threading::Async<void> start(
+    MCNAPI ::Bedrock::Threading::Async<void> start(
         ::Core::PathBuffer<::std::string> const&             worldPath,
         ::IResourcePackRepository&                           resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
@@ -68,26 +68,26 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& levelID, ::std::function<void()> callback);
+    MCNAPI void* $ctor(::std::string const& levelID, ::std::function<void()> callback);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 };

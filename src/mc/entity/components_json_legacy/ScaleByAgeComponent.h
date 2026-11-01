@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initializeScale(::EntityContext& entity);
+    MCNAPI void _initializeScale(::EntityContext& entity);
     // NOLINTEND
 };

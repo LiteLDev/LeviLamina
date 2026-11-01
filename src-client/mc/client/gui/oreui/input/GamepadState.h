@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateJoysticks(::std::vector<::OreUI::GamepadInput::StickEvent> const& stickEvents);
+    MCNAPI void _updateJoysticks(::std::vector<::OreUI::GamepadInput::StickEvent> const& stickEvents);
     // NOLINTEND
 };
 

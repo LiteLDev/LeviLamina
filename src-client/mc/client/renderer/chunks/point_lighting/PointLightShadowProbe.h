@@ -51,7 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::dragon::rendering::Camera createTileCamera(
+    MCNAPI static ::dragon::rendering::Camera createTileCamera(
         ::glm::vec3 const&                   probePos,
         ::glm::vec3 const&                   worldOrigin,
         ::dragon::rendering::TextureCubeFace face,

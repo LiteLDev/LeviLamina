@@ -10,7 +10,7 @@ namespace ScriptModuleMinecraft { class IScriptActorComponentFactory; }
 namespace ScriptModuleMinecraft::ScriptPropertyComponents {
 // functions
 // NOLINTBEGIN
-MCAPI void registerScriptPropertyComponents(
+MCNAPI void registerScriptPropertyComponents(
     ::std::unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory>>&
         factories
 );

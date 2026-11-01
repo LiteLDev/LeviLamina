@@ -45,19 +45,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RaftModel(::GeometryPtr source);
+    MCNAPI explicit RaftModel(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    MCNAPI void* $ctor(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
         ::Actor&         entity,
         float            time,

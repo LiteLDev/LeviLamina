@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit TickingAreaView(::ChunkSource& parent);
 
-    MCAPI bool _tickChunk(
+    MCNAPI bool _tickChunk(
         ::Tick const&                  currentTick,
         ::BlockSource&                 region,
         ::Level&                       level,

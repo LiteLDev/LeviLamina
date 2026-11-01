@@ -33,9 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void bind();
+    MCNAPI void bind();
 
-    MCAPI void triggerFocusActivate(uint focusedId, ::OreUI::GamepadButton button);
+    MCNAPI void triggerFocusActivate(uint focusedId, ::OreUI::GamepadButton button);
     // NOLINTEND
 };
 

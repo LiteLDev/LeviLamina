@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommonProperties(::std::string_view id, ::OreUI::Detail::IPropertyObject* parent);
+    MCNAPI CommonProperties(::std::string_view id, ::OreUI::Detail::IPropertyObject* parent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view id, ::OreUI::Detail::IPropertyObject* parent);
+    MCNAPI void* $ctor(::std::string_view id, ::OreUI::Detail::IPropertyObject* parent);
     // NOLINTEND
 };
 

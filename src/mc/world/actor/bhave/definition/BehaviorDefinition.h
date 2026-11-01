@@ -36,9 +36,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
-    MCAPI ::std::unique_ptr<::BehaviorNode>
+    MCNAPI ::std::unique_ptr<::BehaviorNode>
     $createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
 
 

@@ -15,7 +15,7 @@ struct BlockCollisionBoxComponent : public ::BlockShapeComponentData {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool addComponentCollisionShapes(
+    MCNAPI static bool addComponentCollisionShapes(
         ::BlockCollisionBoxComponent const& component,
         ::BlockPos const&                   pos,
         ::BlockPos const&                   randomOffsetPos,

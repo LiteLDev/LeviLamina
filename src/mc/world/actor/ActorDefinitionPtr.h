@@ -23,9 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
+    MCNAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
 
-    MCAPI ::ActorDefinitionPtr& operator=(::ActorDefinitionPtr const& rhs);
+    MCNAPI ::ActorDefinitionPtr& operator=(::ActorDefinitionPtr const& rhs);
 
     MCAPI ~ActorDefinitionPtr();
     // NOLINTEND
@@ -33,13 +33,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorDefinitionPtr const& NONE();
+    MCNAPI static ::ActorDefinitionPtr const& NONE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionPtr const& rhs);
+    MCNAPI void* $ctor(::ActorDefinitionPtr const& rhs);
     // NOLINTEND
 
 public:

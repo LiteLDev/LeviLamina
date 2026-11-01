@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeasureResult(
+    MCNAPI MeasureResult(
         ::std::string      formattedText,
         ::glm::vec2 const& size,
         ::std::vector<int> caretOffsets,
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string      formattedText,
         ::glm::vec2 const& size,
         ::std::vector<int> caretOffsets,

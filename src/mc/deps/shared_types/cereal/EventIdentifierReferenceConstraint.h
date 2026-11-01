@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void validateValue(::SharedTypes::Reference<1> const& ref, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(::SharedTypes::Reference<1> const& ref, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
     // NOLINTEND

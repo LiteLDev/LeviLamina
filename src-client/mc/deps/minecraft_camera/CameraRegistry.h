@@ -59,20 +59,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraRegistry();
+    MCNAPI CameraRegistry();
 
-    MCAPI void createEntities(::EntityRegistry& entityRegistry, ::EcsEventDispatcher& dispatcher);
+    MCNAPI void createEntities(::EntityRegistry& entityRegistry, ::EcsEventDispatcher& dispatcher);
 
-    MCAPI void loadFrom(::ResourcePackManager const& packManager, ::IMinecraftEventing& eventing);
+    MCNAPI void loadFrom(::ResourcePackManager const& packManager, ::IMinecraftEventing& eventing);
 
-    MCAPI void
+    MCNAPI void
     setupPresets(::EntityRegistry& entityRegistry, ::CameraPresets const& presets, ::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _applyPresetValues(
+    MCNAPI static void _applyPresetValues(
         uint64                                       presetIndex,
         ::OwnerPtr<::EntityId>&                      cameraEntity,
         ::SharedTypes::v1_26_50::CameraPreset const& preset,
@@ -83,7 +83,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

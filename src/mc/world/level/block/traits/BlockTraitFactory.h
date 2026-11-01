@@ -47,26 +47,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::BlockTrait::ITrait>
+    MCNAPI ::std::unique_ptr<::BlockTrait::ITrait>
     createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI ~BlockTraitFactory();
+    MCNAPI ~BlockTraitFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata> const*
+    MCNAPI static ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata> const*
     registeredTraits(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+    MCNAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

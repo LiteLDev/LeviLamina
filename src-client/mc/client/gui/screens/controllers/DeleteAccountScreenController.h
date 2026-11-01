@@ -38,18 +38,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DeleteAccountScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit DeleteAccountScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 };

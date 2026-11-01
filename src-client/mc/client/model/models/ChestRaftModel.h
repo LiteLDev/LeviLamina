@@ -47,25 +47,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChestRaftModel(::GeometryPtr source);
+    MCNAPI explicit ChestRaftModel(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    MCNAPI void* $ctor(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
         ::Actor&         entity,
         float            time,

@@ -42,35 +42,35 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit QuadBuffer(uint64 estimatedQuadCount);
+        MCNAPI explicit QuadBuffer(uint64 estimatedQuadCount);
 
-        MCAPI ~QuadBuffer();
+        MCNAPI ~QuadBuffer();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(uint64 estimatedQuadCount);
+        MCNAPI void* $ctor(uint64 estimatedQuadCount);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void blit(
+    MCNAPI void blit(
         ::ScreenContext&          screenContext,
         ::mce::TexturePtr const&  tex,
         ::IntRectangle const&     rect,
         ::mce::MaterialPtr const* optionalMat
     );
 
-    MCAPI void blit(
+    MCNAPI void blit(
         ::ScreenContext& screenContext,
         ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
         int                                                                                                    x,
@@ -86,7 +86,7 @@ public:
         float                     vs
     );
 
-    MCAPI void blit(
+    MCNAPI void blit(
         ::ScreenContext&          screenContext,
         ::mce::TexturePtr const&  texture,
         int                       x,
@@ -102,7 +102,7 @@ public:
         float                     vs
     );
 
-    MCAPI void blitQuadBuffer(
+    MCNAPI void blitQuadBuffer(
         ::ScreenRenderer::QuadBuffer const& quadBuffer,
         float                               quadW,
         float                               quadH,
@@ -114,7 +114,7 @@ public:
     MCAPI void
     fill(::ScreenContext& screenContext, float x0, float y0, float x1, float y1, ::mce::Color const& color) const;
 
-    MCAPI void fillGradient(
+    MCNAPI void fillGradient(
         ::ScreenContext&    screenContext,
         float               x0,
         float               y0,
@@ -124,7 +124,7 @@ public:
         ::mce::Color const& color2
     );
 
-    MCAPI void fillHorizontalGradient(
+    MCNAPI void fillHorizontalGradient(
         ::ScreenContext&    screenContext,
         float               x0,
         float               y0,
@@ -134,9 +134,9 @@ public:
         ::mce::Color const& color2
     );
 
-    MCAPI void fillStencil(::ScreenContext& screenContext, float x0, float y0, float x1, float y1) const;
+    MCNAPI void fillStencil(::ScreenContext& screenContext, float x0, float y0, float x1, float y1) const;
 
-    MCAPI bool tessellateQuadBuffer(
+    MCNAPI bool tessellateQuadBuffer(
         ::ScreenRenderer::QuadBuffer const& quadBuffer,
         float                               quadW,
         float                               quadH,
@@ -148,7 +148,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void loadMaterials();
+    MCNAPI static void loadMaterials();
 
     MCAPI static ::ScreenRenderer& singleton();
     // NOLINTEND
@@ -158,6 +158,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<::mce::MaterialPtr[]> mScreenMaterials();
 
-    MCAPI static ::std::unique_ptr<::ScreenRenderer>& singletonPtr();
+    MCNAPI static ::std::unique_ptr<::ScreenRenderer>& singletonPtr();
     // NOLINTEND
 };

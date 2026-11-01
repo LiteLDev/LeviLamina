@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SocialPlayer(::OreUI::SocialPlayerData const& data);
+    MCNAPI explicit SocialPlayer(::OreUI::SocialPlayerData const& data);
 
-    MCAPI ::std::string const& getActiveProfileImageUrl() const;
+    MCNAPI ::std::string const& getActiveProfileImageUrl() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::SocialPlayerData const& data);
+    MCNAPI void* $ctor(::OreUI::SocialPlayerData const& data);
     // NOLINTEND
 };
 

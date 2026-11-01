@@ -45,6 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::BaseLightData const& rhs) const;
+    MCNAPI bool operator==(::BaseLightData const& rhs) const;
     // NOLINTEND
 };

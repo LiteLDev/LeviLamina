@@ -19,13 +19,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorEventFilterData();
+    MCNAPI ~ScriptActorEventFilterData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

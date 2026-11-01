@@ -29,9 +29,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
+    MCNAPI void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd);
 
-    MCAPI void addImage(::cg::ImageBuffer imageToAdd);
+    MCNAPI void addImage(::cg::ImageBuffer imageToAdd);
 #endif
     // NOLINTEND
 };

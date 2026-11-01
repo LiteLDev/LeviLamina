@@ -15,7 +15,7 @@ class GlideInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doGlideInputSystem(
+    MCNAPI static void doGlideInputSystem(
         ::MovementAbilitiesComponent const& abilitiesComponent,
         ::MoveInputComponent const&         moveInputComponent,
         ::ActorDataFlagComponent const&     synchedActorDataComponent,

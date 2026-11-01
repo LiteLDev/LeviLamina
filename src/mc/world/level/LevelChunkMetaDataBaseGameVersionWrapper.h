@@ -20,8 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeLevelChunkMetaData(::LevelChunkMetaData& metaData, bool use3DBiomeMaps) const;
+    MCNAPI void initializeLevelChunkMetaData(::LevelChunkMetaData& metaData, bool use3DBiomeMaps) const;
 
-    MCAPI void updateLevelChunkMetaDataForSaving(::LevelChunkMetaData& metaData) const;
+    MCNAPI void updateLevelChunkMetaDataForSaving(::LevelChunkMetaData& metaData) const;
     // NOLINTEND
 };

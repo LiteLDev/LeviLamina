@@ -39,30 +39,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GamepadInputHandler(::IOptionRegistry& options);
+    MCNAPI explicit GamepadInputHandler(::IOptionRegistry& options);
 
-    MCAPI void _triggerButtonEvents(
+    MCNAPI void _triggerButtonEvents(
         ::cohtml::View&              view,
         ::OreUI::GamepadMode         gamepadMode,
         ::OreUI::GamepadInput const& gamepadInput
     );
 
-    MCAPI void
+    MCNAPI void
     handle(::OreUI::GamepadInput const& gamepadInput, ::cohtml::View& view, ::OreUI::GamepadMode gamepadMode);
 
-    MCAPI ~GamepadInputHandler();
+    MCNAPI ~GamepadInputHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IOptionRegistry& options);
+    MCNAPI void* $ctor(::IOptionRegistry& options);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

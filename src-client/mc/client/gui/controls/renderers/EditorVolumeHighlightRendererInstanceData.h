@@ -27,22 +27,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorVolumeHighlightRendererInstanceData();
+    MCNAPI EditorVolumeHighlightRendererInstanceData();
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI ~EditorVolumeHighlightRendererInstanceData();
+    MCNAPI ~EditorVolumeHighlightRendererInstanceData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

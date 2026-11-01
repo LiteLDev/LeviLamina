@@ -86,34 +86,34 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI BlockGeometryComponent();
+    MCNAPI BlockGeometryComponent();
 #endif
 
-    MCAPI BlockGeometryComponent(::BlockGeometryComponent const& other);
+    MCNAPI BlockGeometryComponent(::BlockGeometryComponent const& other);
 
-    MCAPI
+    MCNAPI
     BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
 
-    MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
+    MCNAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
 
-    MCAPI ~BlockGeometryComponent();
+    MCNAPI ~BlockGeometryComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
 
-    MCAPI void* $ctor(::BlockGeometryComponent const& other);
+    MCNAPI void* $ctor(::BlockGeometryComponent const& other);
 
-    MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
+    MCNAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription, ::BlockType const* blockType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

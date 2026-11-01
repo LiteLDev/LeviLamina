@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Tadpole(
+    MCNAPI Tadpole(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityId
@@ -41,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityId
@@ -51,9 +51,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
 
     // NOLINTEND
@@ -61,6 +61,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ namespace Remapping { struct Action; }
 namespace Remapping {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<::Remapping::Action const[]> ActionList();
+MCNAPI ::std::add_lvalue_reference_t<::Remapping::Action const[]> ActionList();
 // NOLINTEND
 
 } // namespace Remapping

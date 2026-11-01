@@ -120,7 +120,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -131,7 +131,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -143,7 +143,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
+    MCNAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,

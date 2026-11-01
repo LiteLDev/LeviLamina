@@ -67,45 +67,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrossbowItem(::std::string const& name, int id);
+    MCNAPI CrossbowItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCNAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int
+    MCNAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
+    MCNAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
-#ifdef LL_PLAT_S
-    MCAPI int $getEnchantSlot() const;
-#else // LL_PLAT_C
-    MCFOLD int $getEnchantSlot() const;
-#endif
+    MCNAPI int $getEnchantSlot() const;
 
-    MCFOLD bool $canBeCharged() const;
+    MCNAPI bool $canBeCharged() const;
 
-    MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
+    MCNAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
-    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+    MCNAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
 
     // NOLINTEND

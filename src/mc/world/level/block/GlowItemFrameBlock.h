@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString $getSpawnedItemName() const;
+    MCNAPI ::HashedString $getSpawnedItemName() const;
 
 
     // NOLINTEND
@@ -28,6 +28,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

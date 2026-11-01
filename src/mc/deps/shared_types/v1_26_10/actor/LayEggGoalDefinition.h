@@ -31,39 +31,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayEggGoalDefinition();
+    MCNAPI LayEggGoalDefinition();
 
-    MCAPI LayEggGoalDefinition(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
+    MCNAPI LayEggGoalDefinition(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_10::LayEggGoalDefinition& operator=(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
+    MCNAPI ::SharedTypes::v1_26_10::LayEggGoalDefinition& operator=(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
 
-    MCAPI ~LayEggGoalDefinition();
+    MCNAPI ~LayEggGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEFAULT_EGG_TYPE();
+    MCNAPI static ::std::string_view const& DEFAULT_EGG_TYPE();
 
-    MCAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_BLOCKS();
+    MCNAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_BLOCKS();
 
-    MCAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_MATERIALS_ABOVE_BLOCK_STRINGS();
+    MCNAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_MATERIALS_ABOVE_BLOCK_STRINGS();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

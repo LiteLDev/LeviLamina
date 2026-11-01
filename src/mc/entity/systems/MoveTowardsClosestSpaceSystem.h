@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace MoveTowardsClosestSpaceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::array<::TickingSystemWithInfo, 2> createSystems(bool isClientSide);
+MCNAPI ::std::array<::TickingSystemWithInfo, 2> createSystems(bool isClientSide);
 // NOLINTEND
 
 } // namespace MoveTowardsClosestSpaceSystem

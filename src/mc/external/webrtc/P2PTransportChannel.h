@@ -243,68 +243,69 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddAllocatorSession(::std::unique_ptr<::webrtc::PortAllocatorSession> session);
+    MCNAPI void AddAllocatorSession(::std::unique_ptr<::webrtc::PortAllocatorSession> session);
 
-    MCAPI void AddConnection(::webrtc::Connection* connection);
+    MCNAPI void AddConnection(::webrtc::Connection* connection);
 
-    MCAPI void
+    MCNAPI void
     AddRemoteCandidateWithResult(::webrtc::Candidate candidate, ::webrtc::AsyncDnsResolverResult const& result);
 
-    MCAPI void CheckLocalNetworkAccessPermission(::webrtc::Candidate const& candidate);
+    MCNAPI void CheckLocalNetworkAccessPermission(::webrtc::Candidate const& candidate);
 
-    MCAPI ::webrtc::IceTransportState ComputeIceTransportState() const;
+    MCNAPI ::webrtc::IceTransportState ComputeIceTransportState() const;
 
-    MCAPI ::webrtc::IceTransportStateInternal ComputeState() const;
+    MCNAPI ::webrtc::IceTransportStateInternal ComputeState() const;
 
-    MCAPI ::webrtc::NetworkRoute ConfigureNetworkRoute(::webrtc::Connection const* conn);
+    MCNAPI ::webrtc::NetworkRoute ConfigureNetworkRoute(::webrtc::Connection const* conn);
 
-    MCAPI bool CreateConnection(
+    MCNAPI bool CreateConnection(
         ::webrtc::PortInterface*   port,
         ::webrtc::Candidate const& remote_candidate,
         ::webrtc::PortInterface*   origin_port
     );
 
-    MCAPI void FinishAddingRemoteCandidate(::webrtc::Candidate const& new_remote_candidate);
+    MCNAPI void FinishAddingRemoteCandidate(::webrtc::Candidate const& new_remote_candidate);
 
-    MCAPI void HandleAllTimedOut();
+    MCNAPI void HandleAllTimedOut();
 
-    MCAPI bool IsDuplicateRemoteCandidate(::webrtc::Candidate const& candidate);
+    MCNAPI bool IsDuplicateRemoteCandidate(::webrtc::Candidate const& candidate);
 
-    MCAPI void OnCandidateError(::webrtc::PortAllocatorSession*, ::webrtc::IceCandidateErrorEvent const& event);
+    MCNAPI void OnCandidateError(::webrtc::PortAllocatorSession*, ::webrtc::IceCandidateErrorEvent const& event);
 
-    MCAPI void OnCandidateFilterChanged(uint prev_filter, uint cur_filter);
+    MCNAPI void OnCandidateFilterChanged(uint prev_filter, uint cur_filter);
 
-    MCAPI void OnCandidateResolved(::webrtc::AsyncDnsResolverInterface* resolver);
+    MCNAPI void OnCandidateResolved(::webrtc::AsyncDnsResolverInterface* resolver);
 
-    MCAPI void OnCandidatesAllocationDone(::webrtc::PortAllocatorSession*);
+    MCNAPI void OnCandidatesAllocationDone(::webrtc::PortAllocatorSession*);
 
-    MCAPI void OnCandidatesReady(::webrtc::PortAllocatorSession*, ::std::vector<::webrtc::Candidate> const& candidates);
+    MCNAPI void
+    OnCandidatesReady(::webrtc::PortAllocatorSession*, ::std::vector<::webrtc::Candidate> const& candidates);
 
-    MCAPI void
+    MCNAPI void
     OnCandidatesRemoved(::webrtc::PortAllocatorSession* session, ::std::vector<::webrtc::Candidate> const& candidates);
 
-    MCAPI void OnConnectionDestroyed(::webrtc::Connection* connection);
+    MCNAPI void OnConnectionDestroyed(::webrtc::Connection* connection);
 
-    MCAPI void OnConnectionStateChange(::webrtc::Connection* connection);
+    MCNAPI void OnConnectionStateChange(::webrtc::Connection* connection);
 
-    MCAPI void OnLocalNetworkAccessResult(
+    MCNAPI void OnLocalNetworkAccessResult(
         ::webrtc::LocalNetworkAccessPermissionInterface* permission_query,
         ::webrtc::LocalNetworkAccessPermissionStatus     status
     );
 
-    MCAPI void OnNominated(::webrtc::Connection* conn);
+    MCNAPI void OnNominated(::webrtc::Connection* conn);
 
-    MCAPI void OnPortReady(::webrtc::PortAllocatorSession*, ::webrtc::PortInterface* port);
+    MCNAPI void OnPortReady(::webrtc::PortAllocatorSession*, ::webrtc::PortInterface* port);
 
-    MCAPI void OnPortsPruned(::webrtc::PortAllocatorSession*, ::std::vector<::webrtc::PortInterface*> const& ports);
+    MCNAPI void OnPortsPruned(::webrtc::PortAllocatorSession*, ::std::vector<::webrtc::PortInterface*> const& ports);
 
-    MCAPI void OnReadyToSend(::webrtc::Connection* connection);
+    MCNAPI void OnReadyToSend(::webrtc::Connection* connection);
 
-    MCAPI void OnSelectedConnectionDestroyed();
+    MCNAPI void OnSelectedConnectionDestroyed();
 
-    MCAPI void OnSentPacket(::webrtc::SentPacketInfo const& sent_packet);
+    MCNAPI void OnSentPacket(::webrtc::SentPacketInfo const& sent_packet);
 
-    MCAPI void OnUnknownAddress(
+    MCNAPI void OnUnknownAddress(
         ::webrtc::PortInterface*       port,
         ::webrtc::SocketAddress const& address,
         ::webrtc::ProtocolType         proto,
@@ -313,7 +314,7 @@ public:
         bool                           port_muxed
     );
 
-    MCAPI P2PTransportChannel(
+    MCNAPI P2PTransportChannel(
         ::webrtc::Environment const&                                  env,
         ::std::string_view                                            transport_name,
         int                                                           component,
@@ -325,39 +326,39 @@ public:
         ::webrtc::ActiveIceControllerFactoryInterface*                active_ice_controller_factory
     );
 
-    MCAPI void ParseFieldTrials(::webrtc::FieldTrialsView const& field_trials);
+    MCNAPI void ParseFieldTrials(::webrtc::FieldTrialsView const& field_trials);
 
-    MCAPI bool PresumedWritable(::webrtc::Connection const* conn) const;
+    MCNAPI bool PresumedWritable(::webrtc::Connection const* conn) const;
 
-    MCAPI void
+    MCNAPI void
     RememberRemoteCandidate(::webrtc::Candidate const& remote_candidate, ::webrtc::PortInterface* origin_port);
 
-    MCAPI void RemoveConnection(::webrtc::Connection* connection);
+    MCNAPI void RemoveConnection(::webrtc::Connection* connection);
 
-    MCAPI void ResolveHostnameCandidate(::webrtc::Candidate const& candidate);
+    MCNAPI void ResolveHostnameCandidate(::webrtc::Candidate const& candidate);
 
-    MCAPI ::webrtc::Candidate SanitizeRemoteCandidate(::webrtc::Candidate const& c) const;
+    MCNAPI ::webrtc::Candidate SanitizeRemoteCandidate(::webrtc::Candidate const& c) const;
 
-    MCAPI void SendPingRequestInternal(::webrtc::Connection* connection);
+    MCNAPI void SendPingRequestInternal(::webrtc::Connection* connection);
 
-    MCAPI void SwitchSelectedConnectionInternal(::webrtc::Connection* conn, ::webrtc::IceSwitchReason reason);
+    MCNAPI void SwitchSelectedConnectionInternal(::webrtc::Connection* conn, ::webrtc::IceSwitchReason reason);
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI void UpdateTransportState();
+    MCNAPI void UpdateTransportState();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::webrtc::P2PTransportChannel>
+    MCNAPI static ::std::unique_ptr<::webrtc::P2PTransportChannel>
     Create(::std::string_view transport_name, int component, ::webrtc::IceTransportInit init);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::Environment const&                                  env,
         ::std::string_view                                            transport_name,
         int                                                           component,
@@ -373,93 +374,93 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::IceTransportStateInternal $GetState() const;
+    MCNAPI ::webrtc::IceTransportStateInternal $GetState() const;
 
-    MCAPI ::webrtc::IceTransportState $GetIceTransportState() const;
+    MCNAPI ::webrtc::IceTransportState $GetIceTransportState() const;
 
-    MCAPI ::std::string const& $transport_name() const;
+    MCNAPI ::std::string const& $transport_name() const;
 
-    MCAPI int $component() const;
+    MCNAPI int $component() const;
 
-    MCAPI bool $writable() const;
+    MCNAPI bool $writable() const;
 
-    MCAPI bool $receiving() const;
+    MCNAPI bool $receiving() const;
 
-    MCAPI void $SetIceRole(::webrtc::IceRole ice_role);
+    MCNAPI void $SetIceRole(::webrtc::IceRole ice_role);
 
-    MCAPI ::webrtc::IceRole $GetIceRole() const;
+    MCNAPI ::webrtc::IceRole $GetIceRole() const;
 
-    MCAPI void $SetIceParameters(::webrtc::IceParameters const& ice_params);
+    MCNAPI void $SetIceParameters(::webrtc::IceParameters const& ice_params);
 
-    MCAPI void $SetRemoteIceParameters(::webrtc::IceParameters const& ice_params);
+    MCNAPI void $SetRemoteIceParameters(::webrtc::IceParameters const& ice_params);
 
-    MCAPI void $SetRemoteIceMode(::webrtc::IceMode mode);
+    MCNAPI void $SetRemoteIceMode(::webrtc::IceMode mode);
 
-    MCAPI void $MaybeStartGathering();
+    MCNAPI void $MaybeStartGathering();
 
-    MCAPI ::webrtc::IceGatheringState $gathering_state() const;
+    MCNAPI ::webrtc::IceGatheringState $gathering_state() const;
 
-    MCAPI void $AddRemoteCandidate(::webrtc::Candidate const& candidate);
+    MCNAPI void $AddRemoteCandidate(::webrtc::Candidate const& candidate);
 
-    MCAPI void $RemoveRemoteCandidate(::webrtc::Candidate const& cand_to_remove);
+    MCNAPI void $RemoveRemoteCandidate(::webrtc::Candidate const& cand_to_remove);
 
-    MCAPI void $RemoveAllRemoteCandidates();
+    MCNAPI void $RemoveAllRemoteCandidates();
 
-    MCAPI void $SetIceConfig(::webrtc::IceConfig const& config);
+    MCNAPI void $SetIceConfig(::webrtc::IceConfig const& config);
 
-    MCAPI ::webrtc::IceConfig const& $config() const;
+    MCNAPI ::webrtc::IceConfig const& $config() const;
 
-    MCAPI int $SendPacket(char const* data, uint64 len, ::webrtc::AsyncSocketPacketOptions const& options, int flags);
+    MCNAPI int $SendPacket(char const* data, uint64 len, ::webrtc::AsyncSocketPacketOptions const& options, int flags);
 
-    MCAPI int $SetOption(::webrtc::Socket::Option opt, int value);
+    MCNAPI int $SetOption(::webrtc::Socket::Option opt, int value);
 
-    MCAPI bool $GetOption(::webrtc::Socket::Option opt, int* value);
+    MCNAPI bool $GetOption(::webrtc::Socket::Option opt, int* value);
 
-    MCAPI int $GetError();
+    MCNAPI int $GetError();
 
-    MCAPI bool $GetStats(::webrtc::IceTransportStats* ice_transport_stats);
+    MCNAPI bool $GetStats(::webrtc::IceTransportStats* ice_transport_stats);
 
-    MCAPI ::std::optional<int> $GetRttEstimate();
+    MCNAPI ::std::optional<int> $GetRttEstimate();
 
-    MCAPI ::webrtc::Connection const* $selected_connection() const;
+    MCNAPI ::webrtc::Connection const* $selected_connection() const;
 
-    MCAPI ::std::optional<::webrtc::CandidatePair const> $GetSelectedCandidatePair() const;
+    MCNAPI ::std::optional<::webrtc::CandidatePair const> $GetSelectedCandidatePair() const;
 
-    MCAPI void $OnStartedPinging();
+    MCNAPI void $OnStartedPinging();
 
-    MCAPI int64 $GetLastPingSentMs() const;
+    MCNAPI int64 $GetLastPingSentMs() const;
 
-    MCAPI void $UpdateConnectionStates();
+    MCNAPI void $UpdateConnectionStates();
 
-    MCAPI void $UpdateState();
+    MCNAPI void $UpdateState();
 
-    MCAPI void $SendPingRequest(::webrtc::Connection const* connection);
+    MCNAPI void $SendPingRequest(::webrtc::Connection const* connection);
 
-    MCAPI void $SwitchSelectedConnection(::webrtc::Connection const* new_connection, ::webrtc::IceSwitchReason reason);
+    MCNAPI void $SwitchSelectedConnection(::webrtc::Connection const* new_connection, ::webrtc::IceSwitchReason reason);
 
-    MCAPI void $ForgetLearnedStateForConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections);
+    MCNAPI void $ForgetLearnedStateForConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections);
 
-    MCAPI bool $PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections);
+    MCNAPI bool $PruneConnections(::webrtc::ArrayView<::webrtc::Connection const* const> connections);
 
-    MCAPI ::std::optional<::webrtc::NetworkRoute> $network_route() const;
+    MCNAPI ::std::optional<::webrtc::NetworkRoute> $network_route() const;
 
-    MCAPI ::std::optional<::std::reference_wrapper<::webrtc::StunDictionaryWriter>> $GetDictionaryWriter();
+    MCNAPI ::std::optional<::std::reference_wrapper<::webrtc::StunDictionaryWriter>> $GetDictionaryWriter();
 
-    MCAPI ::webrtc::FieldTrialsView const* $field_trials() const;
+    MCNAPI ::webrtc::FieldTrialsView const* $field_trials() const;
 
-    MCAPI void $ResetDtlsStunPiggybackCallbacks();
+    MCNAPI void $ResetDtlsStunPiggybackCallbacks();
 
-    MCAPI void $SetDtlsStunPiggybackCallbacks(::webrtc::DtlsStunPiggybackCallbacks&& callbacks);
+    MCNAPI void $SetDtlsStunPiggybackCallbacks(::webrtc::DtlsStunPiggybackCallbacks&& callbacks);
 
-    MCAPI ::webrtc::IceParameters const* $local_ice_parameters() const;
+    MCNAPI ::webrtc::IceParameters const* $local_ice_parameters() const;
 
-    MCAPI ::webrtc::IceParameters const* $remote_ice_parameters() const;
+    MCNAPI ::webrtc::IceParameters const* $remote_ice_parameters() const;
 
 
     // NOLINTEND

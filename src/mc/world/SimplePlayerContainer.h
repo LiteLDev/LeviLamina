@@ -37,9 +37,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
 
     // NOLINTEND
@@ -47,6 +47,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

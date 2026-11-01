@@ -14,9 +14,9 @@ class ActorComponentFactory : public ::EntityComponentFactoryJson {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initializeComponentDefinitions(::Experiments const& experiments);
+    MCNAPI void _initializeComponentDefinitions(::Experiments const& experiments);
 
-    MCAPI void _initializePropertyDefinitions(::Experiments const& experiments);
+    MCNAPI void _initializePropertyDefinitions(::Experiments const& experiments);
     // NOLINTEND
 
 public:

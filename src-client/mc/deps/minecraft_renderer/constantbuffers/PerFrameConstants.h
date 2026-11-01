@@ -37,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void getShaderConstants();
+    MCNAPI void getShaderConstants();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCNAPI void $init();
     // NOLINTEND
 
 public:

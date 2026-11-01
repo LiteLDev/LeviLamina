@@ -30,10 +30,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void tick(::Actor& owner);
+    MCNAPI void tick(::Actor& owner);
     // NOLINTEND
 };

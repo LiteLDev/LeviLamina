@@ -111,7 +111,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::ClientBlockPipeline::PipelineError> extractCustomBlock(
+    MCNAPI static ::std::optional<::ClientBlockPipeline::PipelineError> extractCustomBlock(
         ::Block const&                                                       block,
         ::ClientBlockPipeline::WorldExtractorStep::BlockIterationData const& iterData,
         ::ClientBlockPipeline::WorldExtractorStep::ExtractionData&           extraction,
@@ -128,7 +128,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
+    MCNAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
     // NOLINTEND
 };
 

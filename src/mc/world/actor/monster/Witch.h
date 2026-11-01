@@ -39,19 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Witch(
+    MCNAPI Witch(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void preAiStep();
+    MCNAPI void preAiStep();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -61,11 +61,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
-    MCAPI ::Vec3 $getFiringPos() const;
+    MCNAPI ::Vec3 $getFiringPos() const;
 
-    MCAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
+    MCNAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
 
 
     // NOLINTEND
@@ -73,6 +73,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -34,14 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_110::SonicBoomGoalDefinition&
+    MCNAPI ::SharedTypes::v1_21_110::SonicBoomGoalDefinition&
     operator=(::SharedTypes::v1_21_110::SonicBoomGoalDefinition&&);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

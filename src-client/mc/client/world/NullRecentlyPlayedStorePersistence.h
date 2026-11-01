@@ -46,20 +46,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Core::PathBuffer<::std::string> const& $getSettingsDirectoryPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getSettingsDirectoryPath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> const& $getRecordFilePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getRecordFilePath() const;
 
-    MCFOLD ::std::string const& $getAccountKey() const;
+    MCNAPI ::std::string const& $getAccountKey() const;
 
-    MCFOLD bool $hasLoadedProfile() const;
+    MCNAPI bool $hasLoadedProfile() const;
 
-    MCAPI ::nonstd::expected<::World::RecentlyPlayedStoreLoadData, ::World::RecentlyPlayedLoadError>
+    MCNAPI ::nonstd::expected<::World::RecentlyPlayedStoreLoadData, ::World::RecentlyPlayedLoadError>
     $load(::Core::Path const&, ::std::string const&);
 
-    MCFOLD void $clearLoadedProfile();
+    MCNAPI void $clearLoadedProfile();
 
-    MCFOLD void $persist(::gsl::span<::World::RecentlyPlayedEntry const>);
+    MCNAPI void $persist(::gsl::span<::World::RecentlyPlayedEntry const>);
     // NOLINTEND
 };
 

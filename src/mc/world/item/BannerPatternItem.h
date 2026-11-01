@@ -40,16 +40,16 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string_view getItemNameIdForType(::BannerPatternItem::Type type);
+    MCNAPI static ::std::string_view getItemNameIdForType(::BannerPatternItem::Type type);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isPattern() const;
+    MCNAPI bool $isPattern() const;
 
-    MCFOLD int $getPatternIndex() const;
+    MCNAPI int $getPatternIndex() const;
 
 
     // NOLINTEND
@@ -57,6 +57,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

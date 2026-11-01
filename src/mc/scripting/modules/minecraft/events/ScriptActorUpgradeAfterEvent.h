@@ -37,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorUpgradeAfterEvent(::ScriptModuleMinecraft::ScriptActorUpgradeAfterEvent const&);
+    MCNAPI ScriptActorUpgradeAfterEvent(::ScriptModuleMinecraft::ScriptActorUpgradeAfterEvent const&);
 
-    MCAPI ScriptActorUpgradeAfterEvent(
+    MCNAPI ScriptActorUpgradeAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorUpgradeAfterEventIntermediateData> actorUpgradeEvent,
         ::Scripting::WeakLifetimeScope const&                                                    scope
     );
@@ -48,15 +48,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptActorUpgradeAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorUpgradeAfterEvent const&);
 
-    MCFOLD void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorUpgradeAfterEventIntermediateData> actorUpgradeEvent,
         ::Scripting::WeakLifetimeScope const&                                                    scope
     );

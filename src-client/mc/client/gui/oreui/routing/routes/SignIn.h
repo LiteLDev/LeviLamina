@@ -31,9 +31,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

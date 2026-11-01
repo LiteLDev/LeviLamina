@@ -50,13 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -65,15 +65,15 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
+    MCNAPI bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
 
     // NOLINTEND
@@ -81,6 +81,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

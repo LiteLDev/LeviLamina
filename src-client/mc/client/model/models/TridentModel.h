@@ -46,19 +46,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TridentModel(::GeometryPtr source);
+    MCNAPI explicit TridentModel(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    MCNAPI void* $ctor(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
         ::Actor&         e,
         float            time,

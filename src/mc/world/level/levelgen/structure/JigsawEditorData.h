@@ -32,9 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawEditorData(::JigsawEditorData const&);
+    MCNAPI JigsawEditorData(::JigsawEditorData const&);
 
-    MCAPI JigsawEditorData(
+    MCNAPI JigsawEditorData(
         ::std::string const&           name,
         ::std::string const&           target,
         ::std::string const&           targetPool,
@@ -44,31 +44,31 @@ public:
         int                            selection
     );
 
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 #ifdef LL_PLAT_S
-    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
+    MCNAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
 #endif
 
-    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData const&);
+    MCNAPI ::JigsawEditorData& operator=(::JigsawEditorData const&);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI ~JigsawEditorData();
+    MCNAPI ~JigsawEditorData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
+    MCNAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::JigsawEditorData const&);
+    MCNAPI void* $ctor(::JigsawEditorData const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&           name,
         ::std::string const&           target,
         ::std::string const&           targetPool,
@@ -82,6 +82,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

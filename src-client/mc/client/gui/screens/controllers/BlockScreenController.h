@@ -32,17 +32,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setAssociatedBlockPos(::BlockPos const& pos);
+    MCNAPI void $setAssociatedBlockPos(::BlockPos const& pos);
 
-    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
+    MCNAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
     // NOLINTEND
 
 public:

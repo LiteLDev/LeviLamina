@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalArmor();
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalArmor();
 
-    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalToughness();
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalToughness();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

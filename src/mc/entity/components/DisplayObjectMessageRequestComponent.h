@@ -22,9 +22,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI DisplayObjectMessageRequestComponent(::DisplayObjectMessageRequestComponent const&);
+    MCNAPI DisplayObjectMessageRequestComponent(::DisplayObjectMessageRequestComponent const&);
 
-    MCFOLD ::DisplayObjectMessageRequestComponent& operator=(::DisplayObjectMessageRequestComponent&&);
+    MCNAPI ::DisplayObjectMessageRequestComponent& operator=(::DisplayObjectMessageRequestComponent&&);
 #endif
     // NOLINTEND
 
@@ -32,7 +32,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::DisplayObjectMessageRequestComponent const&);
+    MCNAPI void* $ctor(::DisplayObjectMessageRequestComponent const&);
 #endif
     // NOLINTEND
 };

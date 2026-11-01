@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendEvents(
+    MCNAPI void $sendEvents(
         ::LevelEventManager& levelEventManager,
         ::BlockSource&       region,
         ::BlockPos const&    pos,
@@ -46,7 +46,7 @@ public:
         ::BlockDestroySound  destroySound
     );
 
-    MCAPI void
+    MCNAPI void
     $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor const* actorContext);
 
 

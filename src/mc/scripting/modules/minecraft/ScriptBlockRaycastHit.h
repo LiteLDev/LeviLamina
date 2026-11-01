@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockRaycastHit(
+    MCNAPI ScriptBlockRaycastHit(
         ::BlockSource&                        source,
         ::BlockPos const&                     pos,
         uchar                                 face,
@@ -47,13 +47,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockSource&                        source,
         ::BlockPos const&                     pos,
         uchar                                 face,

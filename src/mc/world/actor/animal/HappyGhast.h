@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HappyGhast(
+    MCNAPI HappyGhast(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -54,7 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -64,15 +64,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
 
     // NOLINTEND

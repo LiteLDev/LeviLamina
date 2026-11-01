@@ -75,24 +75,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
+    MCNAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
 
     MCAPI void enableCacheFor(::NetworkIdentifier const& client);
 
-    MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob>
+    MCNAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob>
     rememberBlob(uint64 id, ::std::string& data, bool isChunkInTickRange);
 
-    MCAPI ::ClientBlobCache::Server::TransferBuilder startTransfer(::NetworkIdentifier const& client) const;
+    MCNAPI ::ClientBlobCache::Server::TransferBuilder startTransfer(::NetworkIdentifier const& client) const;
 
-    MCAPI ::ClientBlobCache::Server::TransferBuilder tryStartTransfer(::NetworkIdentifier const& client) const;
+    MCNAPI ::ClientBlobCache::Server::TransferBuilder tryStartTransfer(::NetworkIdentifier const& client) const;
 
-    MCAPI void updateNetworkConditions(::ServerNetworkSystem& handler);
+    MCNAPI void updateNetworkConditions(::ServerNetworkSystem& handler);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -69,9 +69,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::ContentTierInfo $getContentTierInfo() const;
+        MCNAPI ::ContentTierInfo $getContentTierInfo() const;
 
-        MCAPI ::std::string const*
+        MCNAPI ::std::string const*
         $getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const;
         // NOLINTEND
     };
@@ -157,7 +157,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PackManagerContentSourceArgs createPackManagerArgs(
+    MCNAPI ::PackManagerContentSourceArgs createPackManagerArgs(
         ::ContentType                                   type,
         ::ContentFlags                                  flags,
         ::std::vector<::PackManagerContentSourceData>&& data
@@ -167,14 +167,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::WorldContentSource> $createWorldContentSource() const;
+    MCNAPI ::std::unique_ptr<::WorldContentSource> $createWorldContentSource() const;
 
-    MCAPI ::std::unique_ptr<::WorldTemplateSource> $createWorldTemplateSource() const;
+    MCNAPI ::std::unique_ptr<::WorldTemplateSource> $createWorldTemplateSource() const;
 
-    MCAPI ::std::unique_ptr<::InvalidResourceSource>
+    MCNAPI ::std::unique_ptr<::InvalidResourceSource>
     $createInvalidResourceSource(::InvalidPacksFilterGroup const& filter) const;
 
-    MCAPI ::std::unique_ptr<::ContentSource> $createWorldPackManagerContentSource(
+    MCNAPI ::std::unique_ptr<::ContentSource> $createWorldPackManagerContentSource(
         ::std::string const&                            worldID,
         ::Core::PathBuffer<::std::string>               worldPath,
         ::ContentFlags                                  flags,
@@ -182,57 +182,57 @@ public:
         ::std::weak_ptr<::CachedHostPackIdProvider>     provider
     ) const;
 
-    MCAPI ::std::unique_ptr<::ContentSource> $createRealmPackManagerContentSource(
+    MCNAPI ::std::unique_ptr<::ContentSource> $createRealmPackManagerContentSource(
         int64                                           realmID,
         ::ContentFlags                                  flags,
         ::std::vector<::PackManagerContentSourceData>&& data
     ) const;
 
-    MCAPI ::std::unique_ptr<::ContentSource> $createRealmsWorldPackManagerContentSource(
+    MCNAPI ::std::unique_ptr<::ContentSource> $createRealmsWorldPackManagerContentSource(
         ::Realms::RealmId                               realmId,
         ::std::vector<::Realms::Content>&&              serviceAppliedContent,
         ::ContentFlags                                  flags,
         ::std::vector<::PackManagerContentSourceData>&& data
     ) const;
 
-    MCAPI ::std::unique_ptr<::ContentSource> $createPackManagerContentSource(
+    MCNAPI ::std::unique_ptr<::ContentSource> $createPackManagerContentSource(
         ::ContentType                                   type,
         ::ContentFlags                                  flags,
         ::std::vector<::PackManagerContentSourceData>&& data
     ) const;
 
-    MCAPI ::std::unique_ptr<::CompositePackSource>
+    MCNAPI ::std::unique_ptr<::CompositePackSource>
     $createCompositePackSource(::std::vector<::PackSource*> sources) const;
 
-    MCAPI ::PackSource* $getInPackagePackSource(::PackType type) const;
+    MCNAPI ::PackSource* $getInPackagePackSource(::PackType type) const;
 
-    MCAPI ::PackSource* $getDirectoryPackSource(::Core::Path const& path, ::PackType type) const;
+    MCNAPI ::PackSource* $getDirectoryPackSource(::Core::Path const& path, ::PackType type) const;
 
-    MCAPI ::PackSource&
+    MCNAPI ::PackSource&
     $createDirectoryPackSource(::Core::Path const& path, ::PackType type, ::PackOrigin origin) const;
 
-    MCAPI ::PackSource&
+    MCNAPI ::PackSource&
     $createWorldTemplatePackSource(::mce::UUID const& id, ::PackType type, ::PackOrigin origin) const;
 
-    MCAPI ::ContentCatalogPackSource& $createContentCatalogPackSource(
+    MCNAPI ::ContentCatalogPackSource& $createContentCatalogPackSource(
         ::std::weak_ptr<::ContentManagerUtils::ISourcesAsyncReloader>&& weakSourcesAsyncReloader,
         bool                                                            enabled
     ) const;
 
-    MCAPI ::PackSource& $createWorldHistoryPackSource(::Core::Path const& path, ::PackType type) const;
+    MCNAPI ::PackSource& $createWorldHistoryPackSource(::Core::Path const& path, ::PackType type) const;
 
-    MCAPI ::RealmsUnknownPackSources& $getRealmsUnknownPackSources() const;
+    MCNAPI ::RealmsUnknownPackSources& $getRealmsUnknownPackSources() const;
 
-    MCAPI ::std::unique_ptr<::Realms::RealmsServicePackSource> $createRealmsServicePackSource(
+    MCNAPI ::std::unique_ptr<::Realms::RealmsServicePackSource> $createRealmsServicePackSource(
         int64                                                       realmId,
         ::PackType                                                  packType,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     ) const;
 
-    MCAPI ::Bedrock::Threading::Async<void> $refreshPacksAsync() const;
+    MCNAPI ::Bedrock::Threading::Async<void> $refreshPacksAsync() const;
 
-    MCAPI bool $allowsResourcePackDevelopment() const;
+    MCNAPI bool $allowsResourcePackDevelopment() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::AppPlatform> $getPlatform() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::AppPlatform> $getPlatform() const;
     // NOLINTEND
 };

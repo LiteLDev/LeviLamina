@@ -35,7 +35,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ChunkSingleViewSource(::std::shared_ptr<::LevelChunk> lc);
+    MCNAPI explicit ChunkSingleViewSource(::std::shared_ptr<::LevelChunk> lc);
 #endif
     // NOLINTEND
 
@@ -43,7 +43,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::shared_ptr<::LevelChunk> lc);
+    MCNAPI void* $ctor(::std::shared_ptr<::LevelChunk> lc);
 #endif
     // NOLINTEND
 
@@ -51,7 +51,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
+    MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
 #endif
 
 
@@ -60,6 +60,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -39,25 +39,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorEvent(::BlockPos pos, ::Actor& entity, ::std::string const& name);
+    MCNAPI ActorEvent(::BlockPos pos, ::Actor& entity, ::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::BlockPos pos, ::Actor& entity, ::std::string const& name);
+    MCNAPI void* $ctor(::BlockPos pos, ::Actor& entity, ::std::string const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockSource const& $getBlockSource() const;
+    MCNAPI ::BlockSource const& $getBlockSource() const;
 
 
     // NOLINTEND

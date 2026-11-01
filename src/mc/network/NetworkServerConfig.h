@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkServerConfig(::NetworkServerConfig const&);
+    MCNAPI NetworkServerConfig(::NetworkServerConfig const&);
 
-    MCAPI ~NetworkServerConfig();
+    MCNAPI ~NetworkServerConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetworkServerConfig const&);
+    MCNAPI void* $ctor(::NetworkServerConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

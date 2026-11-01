@@ -32,16 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initFromDefinition(::Actor& actor);
+    MCNAPI void initFromDefinition(::Actor& actor);
 
-    MCAPI void initFromDefinition(::SharedTypes::v1_26_60::TeleportComponentDefinition const& definition);
+    MCNAPI void initFromDefinition(::SharedTypes::v1_26_60::TeleportComponentDefinition const& definition);
 
-    MCAPI bool randomTeleport(::Actor& owner);
+    MCNAPI bool randomTeleport(::Actor& owner);
 
-    MCAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
+    MCNAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
 
-    MCAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
+    MCNAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
 
-    MCAPI bool tryTeleportFromProjectileHit(::Actor& owner, ::Actor const& projectile);
+    MCNAPI bool tryTeleportFromProjectileHit(::Actor& owner, ::Actor const& projectile);
     // NOLINTEND
 };

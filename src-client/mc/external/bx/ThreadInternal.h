@@ -15,7 +15,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ulong threadFunc(void* _arg);
+    MCNAPI static ulong threadFunc(void* _arg);
     // NOLINTEND
 };
 

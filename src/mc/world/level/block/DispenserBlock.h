@@ -55,19 +55,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCNAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
+    MCNAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void dropAllItemsFromContainer(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void dropAllItemsFromContainer(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void
     ejectItem(::BlockSource& region, ::Vec3 const& pos, uchar face, ::ItemStack const& item, int countLimit);
@@ -82,17 +82,17 @@ public:
         int                countLimit
     );
 
-    MCAPI static void openInventoryContainer(::Player& player, ::BlockPos const& pos);
+    MCNAPI static void openInventoryContainer(::Player& player, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -100,21 +100,22 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isContainerBlock() const;
+    MCNAPI bool $isContainerBlock() const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD int $getTickDelay() const;
+    MCNAPI int $getTickDelay() const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCNAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND
@@ -122,6 +123,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

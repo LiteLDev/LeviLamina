@@ -73,11 +73,11 @@ public:
 
     MCAPI bool _checkAttachedBlocks(::BlockSource& region);
 
-    MCAPI bool _hasBlockAttached(::BlockPos const& blockPos);
+    MCNAPI bool _hasBlockAttached(::BlockPos const& blockPos);
 
-    MCAPI void _moveCollidedEntities(::BlockSource& region);
+    MCNAPI void _moveCollidedEntities(::BlockSource& region);
 
-    MCAPI void _moveCollidedEntitiesHelper(
+    MCNAPI void _moveCollidedEntitiesHelper(
         ::BlockSource&    region,
         ::AABB const&     insideBlockAABB,
         ::BlockPos const& facingDir,
@@ -85,50 +85,50 @@ public:
         uint              searchHeight
     );
 
-    MCAPI void _spawnBlocks(::BlockSource& region);
+    MCNAPI void _spawnBlocks(::BlockSource& region);
 
     MCAPI void _spawnMovingBlock(::BlockSource& region, ::BlockPos const& blockPos);
 
     MCAPI void _spawnMovingBlocks(::BlockSource& region);
 
-    MCAPI ::Block const* getCorrectArmBlock() const;
+    MCNAPI ::Block const* getCorrectArmBlock() const;
 
     MCAPI ::BlockPos const& getFacingDir(::IConstBlockSource const& region) const;
 
-    MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
+    MCNAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
 
-    MCAPI ::BlockPushResult pushOrHurtCollidedEntity(::Actor& entity, ::Vec3 const& pushDelta);
+    MCNAPI ::BlockPushResult pushOrHurtCollidedEntity(::Actor& entity, ::Vec3 const& pushDelta);
 
-    MCAPI void
+    MCNAPI void
     resetAfterCommandStateChange(::BlockSource& region, ::BlockPos const& pos, ::Block const& previousPiston);
 
-    MCAPI void resetToRetracted();
+    MCNAPI void resetToRetracted();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::PistonBlockActor const* getOwningPiston(::BlockActor const& blockActor, ::BlockSource& region);
+    MCNAPI static ::PistonBlockActor const* getOwningPiston(::BlockActor const& blockActor, ::BlockSource& region);
 
-    MCFOLD static ::PistonBlockActor* getOwningPiston(::BlockActor& blockActor, ::BlockSource& region);
+    MCNAPI static ::PistonBlockActor* getOwningPiston(::BlockActor& blockActor, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& tag) const;
+    MCNAPI bool $saveItemInstanceData(::CompoundTag& tag) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

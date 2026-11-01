@@ -28,11 +28,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DIRECTION_ID();
+    MCNAPI static ::std::string_view const& DIRECTION_ID();
 
-    MCAPI static ::std::string_view const& ENABLED_STATES_ID();
+    MCNAPI static ::std::string_view const& ENABLED_STATES_ID();
 
-    MCAPI static ::std::string_view const& PART_COUNT_ID();
+    MCNAPI static ::std::string_view const& PART_COUNT_ID();
     // NOLINTEND
 };
 

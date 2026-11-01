@@ -19,21 +19,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
+    MCNAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
 
 #ifdef LL_PLAT_C
-    MCAPI void remove(uint64 index);
+    MCNAPI void remove(uint64 index);
 #endif
 
-    MCAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
+    MCNAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
 
-    MCAPI ~ActionContainer();
+    MCNAPI ~ActionContainer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -28,25 +28,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataDrivenActorTriggerEventFilterData(
+    MCNAPI ScriptDataDrivenActorTriggerEventFilterData(
         ::std::string const&   eventType,
         ::ActorUniqueID const& actorId,
         ::HashedString const&  typeIdHash
     );
 
-    MCAPI ~ScriptDataDrivenActorTriggerEventFilterData();
+    MCNAPI ~ScriptDataDrivenActorTriggerEventFilterData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& eventType, ::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
+    MCNAPI void*
+    $ctor(::std::string const& eventType, ::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

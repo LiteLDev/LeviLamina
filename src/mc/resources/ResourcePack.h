@@ -54,13 +54,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Impl();
+        MCNAPI ~Impl();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -79,19 +79,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePack(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
+    MCNAPI ResourcePack(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
-    MCAPI void _createSubpack(::I18n& loc, ::SubpackInfo const& subpackInfo);
+    MCNAPI void _createSubpack(::I18n& loc, ::SubpackInfo const& subpackInfo);
 
-    MCAPI void _createSubpacks(::I18n& loc);
+    MCNAPI void _createSubpacks(::I18n& loc);
 
 #ifdef LL_PLAT_C
-    MCAPI void _gatherBehaviorPackTelemetry(::BehaviorPackContents& counts) const;
+    MCNAPI void _gatherBehaviorPackTelemetry(::BehaviorPackContents& counts) const;
 
-    MCAPI void _gatherResourcePackTelemetry(::ResourcePackContents& counts) const;
+    MCNAPI void _gatherResourcePackTelemetry(::ResourcePackContents& counts) const;
 #endif
 
-    MCAPI bool areKnownFilesValid();
+    MCNAPI bool areKnownFilesValid();
 
     MCAPI void forEachIn(
         ::Core::Path const&                        filePath,
@@ -100,70 +100,70 @@ public:
         bool                                       recurseAnyways
     ) const;
 
-    MCAPI void forEachInAssetSet(
+    MCNAPI void forEachInAssetSet(
         ::Core::Path const&                        filePath,
         ::std::function<void(::Core::Path const&)> callback,
         int                                        subpackIndex
     ) const;
 
-    MCAPI void generateAssetSet();
+    MCNAPI void generateAssetSet();
 
 #ifdef LL_PLAT_C
-    MCAPI ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
+    MCNAPI ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
 #endif
 
     MCAPI bool getResource(::Core::PathView const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::optional<::StreamableAssetSource> getStreamableSource(
+    MCNAPI ::std::optional<::StreamableAssetSource> getStreamableSource(
         ::Core::Path const&               resourceName,
         int                               subpackIndex,
         ::std::optional<::Core::PathView> tempDirectory
     ) const;
 
-    MCAPI ::Json::Value getTexturesList(int subpackIndex) const;
+    MCNAPI ::Json::Value getTexturesList(int subpackIndex) const;
 
-    MCAPI bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
+    MCNAPI bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
 #endif
 
-    MCAPI bool hasResource(::Core::PathView const& resourceName, int subpackIndex) const;
+    MCNAPI bool hasResource(::Core::PathView const& resourceName, int subpackIndex) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void invalidatePreloadCache();
+    MCNAPI void invalidatePreloadCache();
 #endif
 
-    MCAPI bool isAssetExtractionViable() const;
+    MCNAPI bool isAssetExtractionViable() const;
 
-    MCAPI ::Bedrock::Resources::PreloadedPathHandle
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle
     preloadArchive(::Core::Path const& packRelativePath, int subpackIndex) const;
 
-    MCAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     preloadPath(::Core::Path const& packRelativePath, int subpackIndex, bool) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void regenerateAssetSet();
+    MCNAPI void regenerateAssetSet();
 
-    MCAPI void resumeFallbackCache();
+    MCNAPI void resumeFallbackCache();
 #endif
 
-    MCAPI void setLocale(::std::string const& code);
+    MCNAPI void setLocale(::std::string const& code);
 
 #ifdef LL_PLAT_C
-    MCAPI void suspendFallbackCache();
+    MCNAPI void suspendFallbackCache();
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& RESOURCE_PACK_BUG_ICON_PATH();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& RESOURCE_PACK_BUG_ICON_PATH();
 
-    MCAPI static ::Core::PathBuffer<::std::string> const& RESOURCE_PACK_ICON_PATH();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& RESOURCE_PACK_ICON_PATH();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
+    MCNAPI void* $ctor(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
     // NOLINTEND
 };

@@ -44,21 +44,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ChatMessageData(::OreUI::PlayerReportFacet::ChatMessageData const&);
+        MCNAPI ChatMessageData(::OreUI::PlayerReportFacet::ChatMessageData const&);
 
-        MCAPI ~ChatMessageData();
+        MCNAPI ~ChatMessageData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::PlayerReportFacet::ChatMessageData const&);
+        MCNAPI void* $ctor(::OreUI::PlayerReportFacet::ChatMessageData const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,13 +77,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DropdownOption(::std::string label, int value);
+        MCNAPI DropdownOption(::std::string label, int value);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string label, int value);
+        MCNAPI void* $ctor(::std::string label, int value);
         // NOLINTEND
     };
 
@@ -98,13 +98,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ChatSelection();
+        MCNAPI ~ChatSelection();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -146,35 +146,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerReportFacet(
+    MCNAPI PlayerReportFacet(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI void decideReportReasonOptions();
+    MCNAPI void decideReportReasonOptions();
 
-    MCAPI void finishReport();
+    MCNAPI void finishReport();
 
-    MCAPI bool getHasReachedWarningThreshold() const;
+    MCNAPI bool getHasReachedWarningThreshold() const;
 
-    MCAPI bool isPartyChatAvailable() const;
+    MCNAPI bool isPartyChatAvailable() const;
 
-    MCAPI bool isWorldChatAvailable() const;
+    MCNAPI bool isWorldChatAvailable() const;
 
-    MCAPI void
+    MCNAPI void
     startReport(::std::string const& xuid, ::std::string const& platformId, ::std::string const& galleryScreenshotId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -183,7 +183,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

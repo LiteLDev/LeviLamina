@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void renderInGui(
+    MCNAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::BlockActor&                   entity,
@@ -61,14 +61,14 @@ public:
         float                           lightMultiplier
     );
 
-    MCAPI void renderInHand(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void renderInHand(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

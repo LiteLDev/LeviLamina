@@ -40,27 +40,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExpressionNode(::std::string string, short molangVersion);
+    MCNAPI ExpressionNode(::std::string string, short molangVersion);
 
-    MCAPI ~ExpressionNode();
+    MCNAPI ~ExpressionNode();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string string, short molangVersion);
+    MCNAPI void* $ctor(::std::string string, short molangVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

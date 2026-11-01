@@ -17,19 +17,19 @@ class ItemIconManager {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TextureUVCoordinateSet const& getIcon(::ResolvedItemIconInfo const& texInfo, bool inInventoryPane);
+    MCNAPI static ::TextureUVCoordinateSet const& getIcon(::ResolvedItemIconInfo const& texInfo, bool inInventoryPane);
 
-    MCAPI static ::TextureUVCoordinateSet const&
+    MCNAPI static ::TextureUVCoordinateSet const&
     getIcon(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane);
 
-    MCAPI static ::TextureUVCoordinateSet const& getTextureUVCoordinateSet(::std::string const& name, int id);
+    MCNAPI static ::TextureUVCoordinateSet const& getTextureUVCoordinateSet(::std::string const& name, int id);
 
-    MCAPI static void initTextureTessellatorData(
+    MCNAPI static void initTextureTessellatorData(
         ::ItemRegistryRef                                                          registry,
         ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>&& availableIconTextures
     );
 
-    MCAPI static void updateTextureTessellatorDataForHotReload(
+    MCNAPI static void updateTextureTessellatorDataForHotReload(
         ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>&& maybeUpdatedTextures
     );
     // NOLINTEND
@@ -37,13 +37,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::TextureUVCoordinateSet const& mInvalidTextureUVCoordinateSet();
+    MCNAPI static ::TextureUVCoordinateSet const& mInvalidTextureUVCoordinateSet();
 
-    MCAPI static ::std::weak_ptr<::AtlasItemManager>& mItemTextureItems();
+    MCNAPI static ::std::weak_ptr<::AtlasItemManager>& mItemTextureItems();
 
-    MCAPI static ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>&
+    MCNAPI static ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>&
     mTextureTessellatorSourceData();
 
-    MCAPI static ::std::unordered_map<::std::string, ::TextureUVCoordinateSet>& mUnstoredFrameSet();
+    MCNAPI static ::std::unordered_map<::std::string, ::TextureUVCoordinateSet>& mUnstoredFrameSet();
     // NOLINTEND
 };

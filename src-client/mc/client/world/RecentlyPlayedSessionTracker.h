@@ -45,18 +45,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager);
+    MCNAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager);
 
-    MCAPI void preparePendingTarget(::World::RecentlyPlayedPendingTargetData target);
+    MCNAPI void preparePendingTarget(::World::RecentlyPlayedPendingTargetData target);
 
-    MCAPI ::nonstd::expected<uint64, ::World::RecentlyPlayedSessionTrackerError>
+    MCNAPI ::nonstd::expected<uint64, ::World::RecentlyPlayedSessionTrackerError>
     reloadForPrimaryUser(::World::RecentlyPlayedReloadMode reloadMode);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onClientEnteredWorld(::ClientInstance& client);
+    MCNAPI ::EventResult $onClientEnteredWorld(::ClientInstance& client);
     // NOLINTEND
 
 public:

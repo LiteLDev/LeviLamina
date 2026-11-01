@@ -41,40 +41,40 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
+    MCNAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
 
-    MCAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
+    MCNAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
+    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
+    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&) const;
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NameID();
+    MCNAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
+    MCNAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

@@ -37,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScreenLoadTimeTracker(::IUIEventTelemetry& eventing);
+    MCNAPI explicit ScreenLoadTimeTracker(::IUIEventTelemetry& eventing);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IUIEventTelemetry& eventing);
+    MCNAPI void* $ctor(::IUIEventTelemetry& eventing);
     // NOLINTEND
 
 public:

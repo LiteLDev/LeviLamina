@@ -30,24 +30,24 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createPortalTransition();
+    MCNAPI static ::TickingSystemWithInfo createPortalTransition();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::TickingSystemWithInfo createReadyToContinueClient();
+    MCNAPI static ::TickingSystemWithInfo createReadyToContinueClient();
 #endif
 
-    MCAPI static ::TickingSystemWithInfo createReadyToContinueServer();
+    MCNAPI static ::TickingSystemWithInfo createReadyToContinueServer();
 
-    MCAPI static ::TickingSystemWithInfo createVehicleDismount();
+    MCNAPI static ::TickingSystemWithInfo createVehicleDismount();
 
-    MCAPI static void requestPlayerChangeDimension(
+    MCNAPI static void requestPlayerChangeDimension(
         ::StrictEntityContext const&                                                             player,
         ::ChangeDimensionRequest&&                                                               request,
         ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> const& playerData,
         ::EntityModifier<::PlayerChangeDimensionRequestComponent> const&                         modifier
     );
 
-    MCAPI static void tryHandleChangeDimensionRequestLevel(
+    MCNAPI static void tryHandleChangeDimensionRequestLevel(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::PlayerComponent>,

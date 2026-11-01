@@ -47,25 +47,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onClientInitializeStart(::ClientInstance&);
+    MCNAPI ::EventResult $onClientInitializeStart(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientInitializeEnd(::ClientInstance&);
+    MCNAPI ::EventResult $onClientInitializeEnd(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientMinecraftInitialized(::ClientInstance&, ::Minecraft&);
+    MCNAPI ::EventResult $onClientMinecraftInitialized(::ClientInstance&, ::Minecraft&);
 
-    MCFOLD ::EventResult $onClientCreatedLevel(::ClientInstance& client, ::Level& level);
+    MCNAPI ::EventResult $onClientCreatedLevel(::ClientInstance& client, ::Level& level);
 
-    MCFOLD ::EventResult $onClientUpdateStart(::ClientInstance& instance);
+    MCNAPI ::EventResult $onClientUpdateStart(::ClientInstance& instance);
 
-    MCFOLD ::EventResult $onClientUpdateEnd(::ClientInstance&);
+    MCNAPI ::EventResult $onClientUpdateEnd(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientSuspend(::ClientInstance&);
+    MCNAPI ::EventResult $onClientSuspend(::ClientInstance&);
 
-    MCFOLD ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
+    MCNAPI ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
 
-    MCFOLD ::EventResult $onStartLeaveGame(::ClientInstance& client);
+    MCNAPI ::EventResult $onStartLeaveGame(::ClientInstance& client);
 
-    MCFOLD ::EventResult $onEvent(::ClientInstanceNotificationEvent const&);
+    MCNAPI ::EventResult $onEvent(::ClientInstanceNotificationEvent const&);
     // NOLINTEND
 
 public:

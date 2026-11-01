@@ -41,25 +41,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AccessibilityScreenQuery(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit AccessibilityScreenQuery(::OreUI::ClientDependencies const& client);
 
-    MCAPI void _updateTTSSupport();
+    MCNAPI void _updateTTSSupport();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLanguageChanged(::std::string const&, bool);
+    MCNAPI void $onLanguageChanged(::std::string const&, bool);
 
-    MCFOLD void $onLanguageKeywordsLoadedFromPack(::PackManifest const&);
+    MCNAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const&);
 
-    MCFOLD void $onLanguagesLoaded();
+    MCNAPI void $onLanguagesLoaded();
     // NOLINTEND
 };
 

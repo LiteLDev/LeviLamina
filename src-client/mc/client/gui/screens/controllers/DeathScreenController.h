@@ -51,24 +51,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DeathScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI explicit DeathScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onDelete();
+    MCNAPI void $onDelete();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

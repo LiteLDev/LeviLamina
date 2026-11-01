@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _handleRunSet(
+    MCNAPI void _handleRunSet(
         ::MinecraftGameTest&   gameTest,
         ::BlockSource&         region,
         ::CommandOrigin const& origin,
@@ -65,7 +65,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addGameTestNameEnums(::MinecraftGameTest& gameTest, ::CommandRegistry& commandRegistry);
+    MCNAPI static void addGameTestNameEnums(::MinecraftGameTest& gameTest, ::CommandRegistry& commandRegistry);
 
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
@@ -73,7 +73,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

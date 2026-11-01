@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _renderModel(
+    MCNAPI void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
@@ -57,7 +57,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _renderModel(
+    MCNAPI static void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
@@ -66,7 +66,7 @@ public:
         ::mce::ClientTexture const&     forcedTexture
     );
 
-    MCAPI static void _renderModel(
+    MCNAPI static void _renderModel(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,

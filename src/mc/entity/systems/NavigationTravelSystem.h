@@ -11,6 +11,6 @@ class NavigationTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createNavigationTravelSystem();
+    MCNAPI static ::TickingSystemWithInfo createNavigationTravelSystem();
     // NOLINTEND
 };

@@ -27,7 +27,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI SubChunkRequestPacketPayload(
+    MCNAPI SubChunkRequestPacketPayload(
         ::DimensionType                     dimensionType,
         ::SubChunkPos const&                playerPos,
         ::std::vector<::SubChunkPos> const& positions
@@ -39,7 +39,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void*
+    MCNAPI void*
     $ctor(::DimensionType dimensionType, ::SubChunkPos const& playerPos, ::std::vector<::SubChunkPos> const& positions);
 #endif
     // NOLINTEND

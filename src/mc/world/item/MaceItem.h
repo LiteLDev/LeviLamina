@@ -42,30 +42,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MaceItem(::std::string const& name, int id, ::ItemTier const& tier);
+    MCNAPI MaceItem(::std::string const& name, int id, ::ItemTier const& tier);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI bool
+    MCNAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI float $getAttackDamageBonus(::Actor const& attacker) const;
+    MCNAPI float $getAttackDamageBonus(::Actor const& attacker) const;
 
-    MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI bool $canDestroySpecial(::Block const& block) const;
+    MCNAPI bool $canDestroySpecial(::Block const& block) const;
 
 
     // NOLINTEND
@@ -73,6 +73,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

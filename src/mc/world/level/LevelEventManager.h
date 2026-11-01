@@ -60,35 +60,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void broadcastLevelEvent(
+    MCNAPI void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::CompoundTag const&                   tag,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
-    MCAPI void broadcastLevelEvent(
+    MCNAPI void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::Vec3 const&                          pos,
         int                                    data,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
-    MCAPI void
+    MCNAPI void
     broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     $getLevelEventDataConnector();
-#else // LL_PLAT_C
-    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
-    $getLevelEventDataConnector();
-#endif
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
     $getLevelEventCompoundTagConnector();
 
 

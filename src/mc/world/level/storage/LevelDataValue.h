@@ -33,7 +33,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_S
-        MCAPI Tag();
+        MCNAPI Tag();
 #endif
         // NOLINTEND
 
@@ -41,7 +41,7 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_S
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
 #endif
         // NOLINTEND
     };
@@ -69,12 +69,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~LevelDataValue();
+    MCNAPI ~LevelDataValue();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

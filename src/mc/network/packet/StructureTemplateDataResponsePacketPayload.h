@@ -26,24 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataResponsePacketPayload(::StructureTemplateDataResponsePacketPayload const& other);
+    MCNAPI StructureTemplateDataResponsePacketPayload(::StructureTemplateDataResponsePacketPayload const& other);
 
-    MCAPI StructureTemplateDataResponsePacketPayload(
+    MCNAPI StructureTemplateDataResponsePacketPayload(
         ::std::string const&             structureName,
         ::std::unique_ptr<::CompoundTag> structureTag,
         ::StructureTemplateResponseType  type
     );
 
-    MCAPI ::StructureTemplateDataResponsePacketPayload&
+    MCNAPI ::StructureTemplateDataResponsePacketPayload&
     operator=(::StructureTemplateDataResponsePacketPayload const& other);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplateDataResponsePacketPayload const& other);
+    MCNAPI void* $ctor(::StructureTemplateDataResponsePacketPayload const& other);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&             structureName,
         ::std::unique_ptr<::CompoundTag> structureTag,
         ::StructureTemplateResponseType  type

@@ -58,19 +58,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ServerPerformanceData& _getServerPerfData();
+    MCNAPI ::ServerPerformanceData& _getServerPerfData();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onLevelTickStart(::Level& level);
+    MCNAPI ::EventResult $onLevelTickStart(::Level& level);
 
-    MCAPI ::EventResult $onLevelTickEnd(::Level&);
+    MCNAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCAPI void $onScriptTickStart();
+    MCNAPI void $onScriptTickStart();
 
-    MCAPI void $onScriptTickEnd();
+    MCNAPI void $onScriptTickEnd();
 
 
     // NOLINTEND

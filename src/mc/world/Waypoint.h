@@ -50,31 +50,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setWorldPosition(::WorldPosition const& worldPosition);
+    MCNAPI void $setWorldPosition(::WorldPosition const& worldPosition);
 
-    MCAPI void $setColor(::std::optional<::mce::Color> const& color);
+    MCNAPI void $setColor(::std::optional<::mce::Color> const& color);
 
-    MCAPI void $setIsVisible(bool isVisible);
+    MCNAPI void $setIsVisible(bool isVisible);
 
-#ifdef LL_PLAT_S
-    MCAPI void $setClientPositionAuthority(bool clientPositionAuthority);
-#else // LL_PLAT_C
-    MCFOLD void $setClientPositionAuthority(bool clientPositionAuthority);
-#endif
+    MCNAPI void $setClientPositionAuthority(bool clientPositionAuthority);
 
-    MCAPI void $setTexturePath(::std::optional<::std::string> const& texturePath);
+    MCNAPI void $setTexturePath(::std::optional<::std::string> const& texturePath);
 
-    MCAPI void $setIconSize(::Vec2 const& iconSize);
+    MCNAPI void $setIconSize(::Vec2 const& iconSize);
 
-    MCFOLD ::std::optional<::ActorUniqueID> $tryGetActorID() const;
+    MCNAPI ::std::optional<::ActorUniqueID> $tryGetActorID() const;
 
-    MCFOLD void $update(::Player const& viewingPlayer);
+    MCNAPI void $update(::Player const& viewingPlayer);
 
 
     // NOLINTEND

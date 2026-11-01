@@ -46,34 +46,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setFrom(::Vec3 const& from);
+    MCNAPI void setFrom(::Vec3 const& from);
 
-    MCAPI void setTo(::Vec3 const& to);
+    MCNAPI void setTo(::Vec3 const& to);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindEnums();
+    MCNAPI static ::Scripting::EnumBinding bindEnums();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
-    MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
+    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
 
-    MCAPI ::std::vector<::Vec3> $getFoundBlocks(
+    MCNAPI ::std::vector<::Vec3> $getFoundBlocks(
         ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
         ::BlockSource const&                                 region,
         ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
     ) const;
 
-    MCAPI bool $containsBlock(
+    MCNAPI bool $containsBlock(
         ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
         ::BlockSource const&                                 region,
         ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter

@@ -27,7 +27,7 @@ namespace br::worldgen { struct StructureProcessor; }
 namespace br::worldgen {
 // functions
 // NOLINTBEGIN
-MCAPI int expansionHackCalc(
+MCNAPI int expansionHackCalc(
     ::JigsawStructureUtils::MetadataCache&                             cache,
     ::BlockPos const&                                                  offset,
     ::Rotation                                                         rotation,
@@ -37,14 +37,14 @@ MCAPI int expansionHackCalc(
     ::JigsawStructureRegistry const&                                   pools
 );
 
-MCAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
+MCNAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
 
-MCAPI ::std::vector<uint64> getJigsawBlockIds(::StructureTemplatePool const& pool);
+MCNAPI ::std::vector<uint64> getJigsawBlockIds(::StructureTemplatePool const& pool);
 
-MCAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const&
+MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const&
 getProjectionProcessors(::Projection projection);
 
-MCFOLD int noopCalc(
+MCNAPI int noopCalc(
     ::JigsawStructureUtils::MetadataCache&,
     ::BlockPos const&,
     ::Rotation,
@@ -54,9 +54,9 @@ MCFOLD int noopCalc(
     ::JigsawStructureRegistry const&
 );
 
-MCFOLD void noopEval(int, ::BoundingBox&);
+MCNAPI void noopEval(int, ::BoundingBox&);
 
-MCAPI bool placeInWorld(
+MCNAPI bool placeInWorld(
     ::IStructureTemplate const&                   tmpl,
     ::BlockSource&                                region,
     ::BlockPos                                    position,
@@ -66,14 +66,14 @@ MCAPI bool placeInWorld(
 );
 
 #ifdef LL_PLAT_S
-MCAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
+MCNAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
+MCNAPI bool probabilityReducer(int64 seed, int64 salt, ::ChunkPos chunkPos, float probability);
 #endif
 
-MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
+MCNAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
     ::StructurePoolElement const& source,
     ::std::string_view            name,
     ::BlockPos                    pos,
@@ -81,7 +81,7 @@ MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
     ::IRandom&                    random
 );
 
-MCAPI ::std::vector<uint64>
+MCNAPI ::std::vector<uint64>
 shuffledJigsawBlockIndexes(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata, ::IRandom& random);
 // NOLINTEND
 

@@ -66,46 +66,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArrowItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI ArrowItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
 
-    MCAPI void applyEffect(::Arrow* arrow, ::ItemInstance const& slotItem) const;
+    MCNAPI void applyEffect(::Arrow* arrow, ::ItemInstance const& slotItem) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::Actor* $createProjectileActor(
+    MCNAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
         ::Vec3 const&      pos,
         ::Vec3 const&      direction
     ) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool                                 showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
+    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
 

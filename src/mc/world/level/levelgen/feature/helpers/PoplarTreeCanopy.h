@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeLayerOfLeaves(
+    MCNAPI void _placeLayerOfLeaves(
         ::IBlockWorldGenAPI&            target,
         ::Block const&                  leavesBlock,
         ::TreeHelper::TreeParams const& treeParams,
@@ -80,7 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                origin,
         ::ITreeCanopy::BranchSize const& trunkSize,

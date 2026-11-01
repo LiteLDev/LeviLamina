@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnGroupData(::std::string const& identifier, ::MobSpawnRules& spawnRules);
+    MCNAPI SpawnGroupData(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
-    MCAPI ~SpawnGroupData();
+    MCNAPI ~SpawnGroupData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& identifier, ::MobSpawnRules& spawnRules);
+    MCNAPI void* $ctor(::std::string const& identifier, ::MobSpawnRules& spawnRules);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DBStorageConfig(::Scheduler& scheduler, ::Core::Path const& path, ::std::string const& levelId);
+    MCNAPI DBStorageConfig(::Scheduler& scheduler, ::Core::Path const& path, ::std::string const& levelId);
 
     MCAPI ~DBStorageConfig();
     // NOLINTEND
@@ -53,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scheduler& scheduler, ::Core::Path const& path, ::std::string const& levelId);
+    MCNAPI void* $ctor(::Scheduler& scheduler, ::Core::Path const& path, ::std::string const& levelId);
     // NOLINTEND
 
 public:

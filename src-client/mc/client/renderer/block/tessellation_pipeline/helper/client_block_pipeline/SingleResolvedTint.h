@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color const& $get(int, uchar) const;
+    MCNAPI ::mce::Color const& $get(int, uchar) const;
     // NOLINTEND
 
 public:

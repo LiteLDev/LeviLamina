@@ -43,23 +43,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::MainGameCore::WndProc> $_createWndProcInstance();
+    MCNAPI ::std::unique_ptr<::MainGameCore::WndProc> $_createWndProcInstance();
 
-    MCAPI void $_prepareForWindowCreation(::Bedrock::ActivationArguments const&);
+    MCNAPI void $_prepareForWindowCreation(::Bedrock::ActivationArguments const&);
 
-    MCAPI ::tagWNDCLASSEXW $_createWindowClass(::HINSTANCE__* hInstance);
+    MCNAPI ::tagWNDCLASSEXW $_createWindowClass(::HINSTANCE__* hInstance);
 
-    MCAPI ::tagRECT $_getInitialClientAreaAndShowCommand(int& showCommand);
+    MCNAPI ::tagRECT $_getInitialClientAreaAndShowCommand(int& showCommand);
 
-    MCAPI void $_postWindowCreationSetup(::HWND__* hwnd);
+    MCNAPI void $_postWindowCreationSetup(::HWND__* hwnd);
 
-    MCAPI ::gsl::not_null<::Bedrock::ApplicationInitHandler*> $_getAppInitHandler();
+    MCNAPI ::gsl::not_null<::Bedrock::ApplicationInitHandler*> $_getAppInitHandler();
     // NOLINTEND
 
 public:

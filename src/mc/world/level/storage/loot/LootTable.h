@@ -31,6 +31,6 @@ public:
 
     MCAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD ::std::string getDir() const;
+    MCNAPI ::std::string getDir() const;
     // NOLINTEND
 };

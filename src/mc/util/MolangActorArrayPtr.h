@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MolangActorArrayPtr(::std::vector<::Actor*> actors);
+    MCNAPI explicit MolangActorArrayPtr(::std::vector<::Actor*> actors);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::Actor*> actors);
+    MCNAPI void* $ctor(::std::vector<::Actor*> actors);
     // NOLINTEND
 };

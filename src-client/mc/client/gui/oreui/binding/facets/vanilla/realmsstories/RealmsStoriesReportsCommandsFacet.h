@@ -35,58 +35,58 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsStoriesReportsCommandsFacet(
+    MCNAPI explicit RealmsStoriesReportsCommandsFacet(
         ::std::shared_ptr<::Realms::Stories::RealmsFeedModeration> feedModeration
     );
 
-    MCAPI void _clearDeletionStatuses();
+    MCNAPI void _clearDeletionStatuses();
 
-    MCAPI void _clearReportFeedStatus();
+    MCNAPI void _clearReportFeedStatus();
 
-    MCAPI void _clearReportStatuses(::std::string const& feedItemId);
+    MCNAPI void _clearReportStatuses(::std::string const& feedItemId);
 
-    MCAPI void _dismiss(::std::string const& storyId, ::std::string const& reason);
+    MCNAPI void _dismiss(::std::string const& storyId, ::std::string const& reason);
 
-    MCAPI void _fetchReportImage(::std::string const& storyId);
+    MCNAPI void _fetchReportImage(::std::string const& storyId);
 
-    MCAPI void _fetchReportPaths();
+    MCNAPI void _fetchReportPaths();
 
-    MCAPI void _loadReportsSlice(int fromIndex, int toIndex);
+    MCNAPI void _loadReportsSlice(int fromIndex, int toIndex);
 
-    MCAPI void _reportFeedItemToXbox(
+    MCNAPI void _reportFeedItemToXbox(
         ::std::string const& feedItemId,
         ::std::string const& reportReason,
         ::std::string const& comment
     );
 
-    MCAPI void _reportGamertagToXbox(
+    MCNAPI void _reportGamertagToXbox(
         ::std::string const& gamertag,
         ::std::string const& feedItemId,
         ::std::string const& reportReason,
         ::std::string const& comment
     );
 
-    MCAPI void _reset();
+    MCNAPI void _reset();
 
-    MCAPI void _retryLoadItem(int index);
+    MCNAPI void _retryLoadItem(int index);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::RealmsFeedModeration> feedModeration);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::Stories::RealmsFeedModeration> feedModeration);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

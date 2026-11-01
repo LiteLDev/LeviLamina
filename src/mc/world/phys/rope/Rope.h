@@ -56,15 +56,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI Rope();
+    MCNAPI Rope();
 
-    MCAPI void _finalizeBucket(::AABBBucket& bucket);
+    MCNAPI void _finalizeBucket(::AABBBucket& bucket);
 
-    MCAPI float _solveCollisions(bool const checkDenyList);
+    MCNAPI float _solveCollisions(bool const checkDenyList);
 
-    MCAPI void initializePins(::std::optional<::RopeParams> parameters);
+    MCNAPI void initializePins(::std::optional<::RopeParams> parameters);
 
-    MCAPI ~Rope();
+    MCNAPI ~Rope();
 #endif
     // NOLINTEND
 
@@ -72,7 +72,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 
@@ -80,7 +80,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

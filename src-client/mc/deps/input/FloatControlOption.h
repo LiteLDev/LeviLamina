@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FloatControlOption(
+    MCNAPI FloatControlOption(
         uint                         controlOptionId,
         ::std::function<void(float)> floatSetter,
         ::std::function<float()>     floatGetter,
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         uint                         controlOptionId,
         ::std::function<void(float)> floatSetter,
         ::std::function<float()>     floatGetter,

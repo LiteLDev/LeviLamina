@@ -62,30 +62,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CubemapBackgroundResources(
+    MCNAPI CubemapBackgroundResources(
         ::std::shared_ptr<::mce::TextureGroup>           textureGroup,
         ::ResourcePackManager&                           resourcePackManager,
         ::CubemapBackgroundResources::CubemapType const& cubemapType
     );
 
-    MCAPI void _checkHDRTexturesAvailableAndFallback(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void _checkHDRTexturesAvailableAndFallback(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void _unloadPanoramaTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void _unloadPanoramaTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI bool arePanoramaTexturesLoadedInGroup(::std::shared_ptr<::mce::TextureGroup> textures) const;
+    MCNAPI bool arePanoramaTexturesLoadedInGroup(::std::shared_ptr<::mce::TextureGroup> textures) const;
 
-    MCAPI void frameUpdate(::IClientInstance& clientInstance, ::FrameUpdateContext& frameUpdateContext);
+    MCNAPI void frameUpdate(::IClientInstance& clientInstance, ::FrameUpdateContext& frameUpdateContext);
 
-    MCAPI void loadAssets(
+    MCNAPI void loadAssets(
         ::mce::TextureResourceService&         textureResourceService,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
 
-    MCAPI void unloadAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void unloadAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void updateAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void updateAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void updateCubemapType(
+    MCNAPI void updateCubemapType(
         ::CubemapBackgroundResources::CubemapType const& cubemapType,
         ::std::shared_ptr<::mce::TextureGroup>           textureGroup
     );
@@ -94,7 +94,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::mce::TextureGroup>           textureGroup,
         ::ResourcePackManager&                           resourcePackManager,
         ::CubemapBackgroundResources::CubemapType const& cubemapType
@@ -104,6 +104,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
+    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };

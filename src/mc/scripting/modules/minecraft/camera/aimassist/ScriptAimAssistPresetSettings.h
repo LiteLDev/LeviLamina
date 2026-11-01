@@ -27,32 +27,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTagTargets() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTagTargets() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTargets() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedBlockTargets() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTargets() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTargets() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTypeFamilyTargets() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTypeFamilyTargets() const;
 
-    MCAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
+    MCNAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
 
-    MCAPI void setExcludedBlockTagTargets(::std::optional<::std::vector<::std::string>> blockTagTargets);
+    MCNAPI void setExcludedBlockTagTargets(::std::optional<::std::vector<::std::string>> blockTagTargets);
 
-    MCAPI void setExcludedBlockTargets(::std::optional<::std::vector<::std::string>> blockTargets);
+    MCNAPI void setExcludedBlockTargets(::std::optional<::std::vector<::std::string>> blockTargets);
 
-    MCAPI void setExcludedEntityTargets(::std::optional<::std::vector<::std::string>> entityTargets);
+    MCNAPI void setExcludedEntityTargets(::std::optional<::std::vector<::std::string>> entityTargets);
 
-    MCAPI void
+    MCNAPI void
     setExcludedEntityTypeFamilyTargets(::std::optional<::std::vector<::std::string>> entityTypeFamilyTargets);
 
-    MCAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
+    MCNAPI void setLiquidTargetingItems(::std::optional<::std::vector<::std::string>> items);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CssColorProperty(
+    MCNAPI CssColorProperty(
         ::std::string const&                                                     propertyName,
         ::std::variant<::SharedTypes::Color255RGBA, ::SharedTypes::Color255RGB>& value
     );
@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                                     propertyName,
         ::std::variant<::SharedTypes::Color255RGBA, ::SharedTypes::Color255RGB>& value
     );
@@ -56,7 +56,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $convertToCss(
+    MCNAPI ::std::string $convertToCss(
         ::OreUI::Styling::CssParsingOptions const& options,
         ::std::unordered_set<::std::string>&       addedProperties
     );

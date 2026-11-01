@@ -45,27 +45,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OminousItemSpawner(
+    MCNAPI OminousItemSpawner(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::ItemStack const& _getItem();
+    MCNAPI ::ItemStack const& _getItem();
 #endif
 
-    MCAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
+    MCNAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Actor* tryGetOrCreateDisplayEntity();
+    MCNAPI ::Actor* tryGetOrCreateDisplayEntity();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -75,13 +75,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $baseTick();
+    MCNAPI void $baseTick();
 
 
     // NOLINTEND
@@ -89,6 +89,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

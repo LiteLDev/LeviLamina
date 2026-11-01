@@ -23,13 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::NpcComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::NpcComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NpcDefinition>>& root);
     // NOLINTEND
 };

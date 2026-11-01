@@ -36,32 +36,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DynamicPropertiesManager(::cereal::ReflectionCtx const& ctx);
+    MCNAPI explicit DynamicPropertiesManager(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void _collectMemoryStats(::DebuggerStat& dynamicPropertiesStats);
+    MCNAPI void _collectMemoryStats(::DebuggerStat& dynamicPropertiesStats);
 
-    MCAPI void _collectPropertiesStats(::DebuggerStat& dynamicProperties);
+    MCNAPI void _collectPropertiesStats(::DebuggerStat& dynamicProperties);
 
-    MCAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
+    MCNAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
 
-    MCAPI void readFromLevelStorage(::LevelStorage& levelStorage);
+    MCNAPI void readFromLevelStorage(::LevelStorage& levelStorage);
 
-    MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCNAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI void writeToLevelStorage(::LevelStorage& levelStorage);
+    MCNAPI void writeToLevelStorage(::LevelStorage& levelStorage);
 
-    MCAPI ~DynamicPropertiesManager();
+    MCNAPI ~DynamicPropertiesManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

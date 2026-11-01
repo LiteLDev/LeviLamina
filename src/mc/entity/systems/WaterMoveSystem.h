@@ -11,6 +11,6 @@ class WaterMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createWaterMoveSystem();
+    MCNAPI static ::TickingSystemWithInfo createWaterMoveSystem();
     // NOLINTEND
 };

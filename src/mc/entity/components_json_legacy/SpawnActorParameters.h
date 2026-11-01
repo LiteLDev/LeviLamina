@@ -33,36 +33,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnActorParameters(::SpawnActorParameters&&);
+    MCNAPI SpawnActorParameters(::SpawnActorParameters&&);
 
-    MCAPI SpawnActorParameters(::SpawnActorParameters const&);
+    MCNAPI SpawnActorParameters(::SpawnActorParameters const&);
 
-    MCAPI void setItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void setItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void setSpawnEntity(::std::string const& name);
+    MCNAPI void setSpawnEntity(::std::string const& name);
 
-    MCAPI void setSpawnEvent(::std::string const& name);
+    MCNAPI void setSpawnEvent(::std::string const& name);
 
-    MCAPI void setSpawnSound(::std::string const& name);
+    MCNAPI void setSpawnSound(::std::string const& name);
 
-    MCAPI void setSpawnTimeMax(int const& value);
+    MCNAPI void setSpawnTimeMax(int const& value);
 
-    MCAPI void setSpawnTimeMin(int const& value);
+    MCNAPI void setSpawnTimeMin(int const& value);
 
-    MCAPI ~SpawnActorParameters();
+    MCNAPI ~SpawnActorParameters();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SpawnActorParameters&&);
+    MCNAPI void* $ctor(::SpawnActorParameters&&);
 
-    MCAPI void* $ctor(::SpawnActorParameters const&);
+    MCNAPI void* $ctor(::SpawnActorParameters const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

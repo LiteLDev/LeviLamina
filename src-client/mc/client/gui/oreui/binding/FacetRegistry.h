@@ -89,28 +89,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $registerFacet(::std::string const& name, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const& constructor);
 
-    MCAPI ::std::optional<::OreUI::IFacetRegistry::Error> $activateFacet(
+    MCNAPI ::std::optional<::OreUI::IFacetRegistry::Error> $activateFacet(
         ::OreUI::FacetBinder&                                                                   binder,
         ::std::string const&                                                                    name,
         ::std::string const&                                                                    id,
         ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const& payload
     );
 
-    MCAPI ::std::optional<::OreUI::IFacetRegistry::Error>
+    MCNAPI ::std::optional<::OreUI::IFacetRegistry::Error>
     $deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id);
 
-    MCAPI void $suspendAllFacets();
+    MCNAPI void $suspendAllFacets();
 
-    MCAPI void $disableFacetActivation();
+    MCNAPI void $disableFacetActivation();
 
-    MCAPI void $bind(::OreUI::FacetBinder& binder);
+    MCNAPI void $bind(::OreUI::FacetBinder& binder);
 
-    MCAPI ::std::vector<::std::string> const& $update(::OreUI::FacetBinder& binder);
+    MCNAPI ::std::vector<::std::string> const& $update(::OreUI::FacetBinder& binder);
 
-    MCAPI ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>> $getActiveFacets();
+    MCNAPI ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>> $getActiveFacets();
     // NOLINTEND
 };
 

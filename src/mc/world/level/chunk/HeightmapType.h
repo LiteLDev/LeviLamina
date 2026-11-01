@@ -10,7 +10,7 @@ class Block;
 namespace br::spawn::HeightmapType {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block const&)>>> defaults();
+MCNAPI ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block const&)>>> defaults();
 // NOLINTEND
 
 } // namespace br::spawn::HeightmapType

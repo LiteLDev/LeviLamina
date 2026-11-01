@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LakeFeature(
+    MCNAPI LakeFeature(
         ::HashedString                                                       fluidBlock,
         ::HashedString                                                       barrierBlock,
         ::std::vector<::std::reference_wrapper<::HashedString const>> const& prohibitedBlocks
@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString                                                       fluidBlock,
         ::HashedString                                                       barrierBlock,
         ::std::vector<::std::reference_wrapper<::HashedString const>> const& prohibitedBlocks
@@ -57,13 +57,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

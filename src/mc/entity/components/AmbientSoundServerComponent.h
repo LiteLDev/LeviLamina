@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AmbientSoundServerComponent(::AmbientSoundServerComponent const&);
+    MCNAPI AmbientSoundServerComponent(::AmbientSoundServerComponent const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AmbientSoundServerComponent const&);
+    MCNAPI void* $ctor(::AmbientSoundServerComponent const&);
     // NOLINTEND
 };

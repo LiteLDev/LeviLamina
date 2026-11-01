@@ -28,13 +28,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onObjectiveAdded(::std::string const&);
+    MCNAPI ::EventResult $onObjectiveAdded(::std::string const&);
 
-    MCFOLD ::EventResult $onObjectiveRemoved(::std::string const& objective);
+    MCNAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
 
-    MCFOLD ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
+    MCNAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
 
-    MCFOLD ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
+    MCNAPI ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
 
 
     // NOLINTEND

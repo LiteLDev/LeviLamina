@@ -52,9 +52,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
+    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCAPI void
+    MCNAPI void
     $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
     // NOLINTEND
 };

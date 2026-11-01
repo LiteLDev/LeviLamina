@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::LegacyEventItemComponentData> makeLegacyEvents(
+    MCNAPI ::std::optional<::LegacyEventItemComponentData> makeLegacyEvents(
         ::SemVersion const&                          documentVersion,
         ::SharedTypes::v1_26_50::ItemDocument const& itemDocument
     ) const;
@@ -37,9 +37,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFactory(::PackLoadInfo const& packLoadInfo);
+    MCNAPI void $initializeFactory(::PackLoadInfo const& packLoadInfo);
 
-    MCAPI void $initSchema();
+    MCNAPI void $initSchema();
 
 
     // NOLINTEND

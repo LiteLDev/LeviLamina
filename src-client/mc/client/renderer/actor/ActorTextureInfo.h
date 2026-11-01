@@ -19,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorTextureInfo();
+    MCNAPI ~ActorTextureInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

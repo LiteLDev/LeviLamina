@@ -92,13 +92,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SurfaceBuilderParameters(::Biome const& biome, ::SurfaceBuilderData const* surfaceBuilderData);
+        MCNAPI SurfaceBuilderParameters(::Biome const& biome, ::SurfaceBuilderData const* surfaceBuilderData);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Biome const& biome, ::SurfaceBuilderData const* surfaceBuilderData);
+        MCNAPI void* $ctor(::Biome const& biome, ::SurfaceBuilderData const* surfaceBuilderData);
         // NOLINTEND
     };
 

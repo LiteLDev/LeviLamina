@@ -12,7 +12,7 @@ struct ClientChunkGenerationValidationData {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _captureChunkData(::std::map<::ChunkPos, ::std::vector<::std::string>>& data, ::ChunkSource& chunkSource);
     // NOLINTEND
 };

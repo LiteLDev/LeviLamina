@@ -70,32 +70,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void closeContainer();
+    MCNAPI void closeContainer();
 
-    MCAPI void handleBackgroundMouseRelease(::OreUI::MouseButton button);
+    MCNAPI void handleBackgroundMouseRelease(::OreUI::MouseButton button);
 
-    MCAPI void handleBackgroundTouchTap();
+    MCNAPI void handleBackgroundTouchTap();
 
-    MCAPI void handleBundleSlotTouchTap(int bundleID, int index);
+    MCNAPI void handleBundleSlotTouchTap(int bundleID, int index);
 
-    MCAPI void handleFocusedSlotChanged(::ContainerEnumName container, int slot);
+    MCNAPI void handleFocusedSlotChanged(::ContainerEnumName container, int slot);
 
-    MCAPI void handleFocusedSlotNone();
+    MCNAPI void handleFocusedSlotNone();
 
-    MCAPI void handleGamepadRelease(::OreUI::GamepadButton button);
+    MCNAPI void handleGamepadRelease(::OreUI::GamepadButton button);
 
-    MCAPI void handlePanelMouseRelease();
+    MCNAPI void handlePanelMouseRelease();
 
-    MCAPI void handleSlotGamepadDrag(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotGamepadDrag(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotGamepadLongPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotGamepadLongPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void
+    MCNAPI void
     handleSlotGamepadPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot, bool isDoubleClick);
 
-    MCAPI void handleSlotMouseDrag(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotMouseDrag(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotMousePress(
+    MCNAPI void handleSlotMousePress(
         ::OreUI::MouseButton button,
         ::ContainerEnumName  container,
         int                  slot,
@@ -103,39 +103,39 @@ public:
         bool                 isShiftClick
     );
 
-    MCAPI void handleSlotMouseRelease(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotMouseRelease(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotTouchDrag(::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotTouchDrag(::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotTouchLongPressMove(::ContainerEnumName container, int slot, float normalizedValue);
+    MCNAPI void handleSlotTouchLongPressMove(::ContainerEnumName container, int slot, float normalizedValue);
 
-    MCAPI void handleSlotTouchLongPressStart(::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotTouchLongPressStart(::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotTouchRelease(::ContainerEnumName container, int slot, bool isDoubleClick);
+    MCNAPI void handleSlotTouchRelease(::ContainerEnumName container, int slot, bool isDoubleClick);
 
-    MCAPI void handleTouchEnd();
+    MCNAPI void handleTouchEnd();
 
-    MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
+    MCNAPI void performAutoTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void pullInIngredientsForSelectedTrade();
+    MCNAPI void pullInIngredientsForSelectedTrade();
 
-    MCAPI void selectTrade(int tradeTier, int tradeIndex);
+    MCNAPI void selectTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void setPreviewItemName(::std::string name);
+    MCNAPI void setPreviewItemName(::std::string name);
 
-    MCAPI void setRecipeBookFiltering(bool filtering);
+    MCNAPI void setRecipeBookFiltering(bool filtering);
 
-    MCAPI void setRecipeBookSearchString(::std::string searchText);
+    MCNAPI void setRecipeBookSearchString(::std::string searchText);
 
-    MCAPI void setRecipeBookTab(::InventoryLeftTabIndex tabIndex);
+    MCNAPI void setRecipeBookTab(::InventoryLeftTabIndex tabIndex);
 
-    MCAPI void setRecipeBookVisibility(bool visible);
+    MCNAPI void setRecipeBookVisibility(bool visible);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[36]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[36]> NAME();
     // NOLINTEND
 };
 

@@ -68,53 +68,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SeaPickleBlock(::std::string const& nameId, int id);
+    MCNAPI SeaPickleBlock(::std::string const& nameId, int id);
 
-    MCAPI void _randomTick(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _randomTick(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCNAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND
@@ -122,6 +122,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -17,7 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
+    MCNAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
 
     MCAPI ~Subscription();
     // NOLINTEND

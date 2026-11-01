@@ -16,7 +16,7 @@ class VanillaBastionJigsawStructures {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initialize(
+    MCNAPI static void initialize(
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager,
         ::FeatureRegistry&                                         featureRegistry,
         ::JigsawStructureRegistry&                                 registry

@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI TextureUVCoordinateSet();
 
-    MCAPI TextureUVCoordinateSet(
+    MCNAPI TextureUVCoordinateSet(
         float              u0,
         float              v0,
         float              u1,
@@ -48,15 +48,15 @@ public:
         ushort             sourceImageHeight
     );
 
-    MCAPI ::TextureUVCoordinateSet getFlippedHorizontal() const;
+    MCNAPI ::TextureUVCoordinateSet getFlippedHorizontal() const;
 
-    MCAPI ::TextureUVCoordinateSet getFlippedVertically() const;
+    MCNAPI ::TextureUVCoordinateSet getFlippedVertically() const;
 
     MCAPI ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet const&);
 
-    MCAPI bool operator==(::TextureUVCoordinateSet const& other) const;
+    MCNAPI bool operator==(::TextureUVCoordinateSet const& other) const;
 
-    MCAPI ::TextureUVCoordinateSet subTexture(float u0ffset, float v0ffset, int sizeW, int sizeH) const;
+    MCNAPI ::TextureUVCoordinateSet subTexture(float u0ffset, float v0ffset, int sizeW, int sizeH) const;
 
     MCAPI ~TextureUVCoordinateSet();
     // NOLINTEND
@@ -66,7 +66,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         float              u0,
         float              v0,
         float              u1,

@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
 
     // NOLINTEND

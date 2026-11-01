@@ -10,7 +10,7 @@ class ChunkLocalHeight;
 namespace LevelChunkConstants {
 // static variables
 // NOLINTBEGIN
-MCAPI ::ChunkLocalHeight const& INVALID_RAIN_HEIGHT();
+MCNAPI ::ChunkLocalHeight const& INVALID_RAIN_HEIGHT();
 // NOLINTEND
 
 } // namespace LevelChunkConstants

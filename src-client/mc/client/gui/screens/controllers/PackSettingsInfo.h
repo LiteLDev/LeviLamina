@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackSettingsInfo(
+    MCNAPI PackSettingsInfo(
         ::std::unique_ptr<::PackManifest>                       packManifest,
         ::std::optional<::std::string>                          worldId,
         ::std::optional<::Core::PathBuffer<::std::string>>      worldPath,
@@ -46,13 +46,13 @@ public:
         ::std::function<void(::PackSettingsInfo const&)> const& callback
     );
 
-    MCAPI ~PackSettingsInfo();
+    MCNAPI ~PackSettingsInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::PackManifest>                       packManifest,
         ::std::optional<::std::string>                          worldId,
         ::std::optional<::Core::PathBuffer<::std::string>>      worldPath,
@@ -66,6 +66,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

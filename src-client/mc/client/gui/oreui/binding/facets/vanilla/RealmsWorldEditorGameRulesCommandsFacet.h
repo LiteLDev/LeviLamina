@@ -35,71 +35,71 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsWorldEditorGameRulesCommandsFacet(
+    MCNAPI explicit RealmsWorldEditorGameRulesCommandsFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor
     );
 
-    MCAPI void setCommandBlocksEnabled(bool commandsBlockEnabled);
+    MCNAPI void setCommandBlocksEnabled(bool commandsBlockEnabled);
 
-    MCAPI void setEntitiesDropLoot(bool entitiesDropLoot);
+    MCNAPI void setEntitiesDropLoot(bool entitiesDropLoot);
 
-    MCAPI void setFireSpreads(bool shouldFireSpread);
+    MCNAPI void setFireSpreads(bool shouldFireSpread);
 
-    MCAPI void setFriendlyFireEnabled(bool friendlyFireEnabled);
+    MCNAPI void setFriendlyFireEnabled(bool friendlyFireEnabled);
 
-    MCAPI void setImmediateRespawn(bool shouldImmediateRespawn);
+    MCNAPI void setImmediateRespawn(bool shouldImmediateRespawn);
 
-    MCAPI void setKeepInventory(bool keepInventory);
+    MCNAPI void setKeepInventory(bool keepInventory);
 
-    MCAPI void setMobGriefing(bool mobGriefing);
+    MCNAPI void setMobGriefing(bool mobGriefing);
 
-    MCAPI void setMobSpawn(bool mobSpawn);
+    MCNAPI void setMobSpawn(bool mobSpawn);
 
-    MCAPI void setMobsDropLoot(bool shouldMobsDropLoot);
+    MCNAPI void setMobsDropLoot(bool shouldMobsDropLoot);
 
-    MCAPI void setNaturalRegeneration(bool shouldHaveNaturalRegeneration);
+    MCNAPI void setNaturalRegeneration(bool shouldHaveNaturalRegeneration);
 
-    MCAPI void setPlayerWaypointsMode(int playerWaypointsMode);
+    MCNAPI void setPlayerWaypointsMode(int playerWaypointsMode);
 
-    MCAPI void setRandomTickSpeed(int randomTickSpeed);
+    MCNAPI void setRandomTickSpeed(int randomTickSpeed);
 
-    MCAPI void setRecipesUnlock(bool shouldRecipesUnlock);
+    MCNAPI void setRecipesUnlock(bool shouldRecipesUnlock);
 
-    MCAPI void setRespawnBlocksExplode(bool shouldRespawnBlocksExplode);
+    MCNAPI void setRespawnBlocksExplode(bool shouldRespawnBlocksExplode);
 
-    MCAPI void setRespawnRadius(int respawnRadius);
+    MCNAPI void setRespawnRadius(int respawnRadius);
 
-    MCAPI void setShowCoordinates(bool shouldshowCoordinates);
+    MCNAPI void setShowCoordinates(bool shouldshowCoordinates);
 
-    MCAPI void setShowDaysPlayed(bool shouldShowDaysPlayed);
+    MCNAPI void setShowDaysPlayed(bool shouldShowDaysPlayed);
 
-    MCAPI void setSleepSkipNight(bool shouldSleepSkipNight);
+    MCNAPI void setSleepSkipNight(bool shouldSleepSkipNight);
 
-    MCAPI void setSleepSkipNightPercent(int sleepSkipNightValue);
+    MCNAPI void setSleepSkipNightPercent(int sleepSkipNightValue);
 
-    MCAPI void setTNTExplodes(bool shouldTNTExplode);
+    MCNAPI void setTNTExplodes(bool shouldTNTExplode);
 
-    MCAPI void setTileDrops(bool shouldTilesDrop);
+    MCNAPI void setTileDrops(bool shouldTilesDrop);
 
-    MCAPI void setWeatherCycle(bool weatherCycle);
+    MCNAPI void setWeatherCycle(bool weatherCycle);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

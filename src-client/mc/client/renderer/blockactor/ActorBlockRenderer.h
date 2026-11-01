@@ -25,9 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorBlockRenderer();
+    MCNAPI ActorBlockRenderer();
 
-    MCAPI void render(
+    MCNAPI void render(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::BlockSource&                  renderSource,
@@ -40,6 +40,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

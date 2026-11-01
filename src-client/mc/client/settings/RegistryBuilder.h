@@ -11,7 +11,7 @@ namespace Settings::RegistryBuilder { class IBuilderContext; }
 namespace Settings::RegistryBuilder {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::shared_ptr<::Settings::IRegistry>
+MCNAPI ::std::shared_ptr<::Settings::IRegistry>
 buildDefaultSettingsRegistry(::std::shared_ptr<::Settings::RegistryBuilder::IBuilderContext> context);
 // NOLINTEND
 

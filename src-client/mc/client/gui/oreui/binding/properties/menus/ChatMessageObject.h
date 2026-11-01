@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatMessageObject(
+    MCNAPI ChatMessageObject(
         ::OreUI::Detail::IPropertyObject*                 parent,
         ::std::string                                     id,
         uint                                              order,
@@ -50,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::Detail::IPropertyObject*                 parent,
         ::std::string                                     id,
         uint                                              order,

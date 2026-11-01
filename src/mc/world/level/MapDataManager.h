@@ -81,61 +81,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapDataManager(
+    MCNAPI MapDataManager(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
         ::std::function<::ActorUniqueID()>          getNewUniqueID
     );
 
-    MCAPI ::std::unique_ptr<::MapItemSavedData> _deserializeMapData(::ActorUniqueID const& uuid);
+    MCNAPI ::std::unique_ptr<::MapItemSavedData> _deserializeMapData(::ActorUniqueID const& uuid);
 
-    MCAPI void _onSaveLevelData(::LevelStorage& levelStorage);
+    MCNAPI void _onSaveLevelData(::LevelStorage& levelStorage);
 
-    MCAPI ::MapItemSavedData*
+    MCNAPI ::MapItemSavedData*
     _publishMapData(::ActorUniqueID const& uuid, ::std::unique_ptr<::MapItemSavedData> loadedMap);
 
-    MCAPI bool copyAndLockMap(::ActorUniqueID originalMapUuid, ::ActorUniqueID newMapUuid);
+    MCNAPI bool copyAndLockMap(::ActorUniqueID originalMapUuid, ::ActorUniqueID newMapUuid);
 
-    MCAPI ::MapItemSavedData& createMapSavedData(
+    MCNAPI ::MapItemSavedData& createMapSavedData(
         ::std::vector<::ActorUniqueID> const& mapIds,
         ::BlockPos const&                     origin,
         ::DimensionType                       dimension,
         int                                   returnScaleLevel
     );
 
-    MCAPI ::MapItemSavedData& createMapSavedData(
+    MCNAPI ::MapItemSavedData& createMapSavedData(
         ::ActorUniqueID const& uuid,
         ::BlockPos const&      origin,
         ::DimensionType        dimension,
         int                    returnScaleLevel
     );
 
-    MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
+    MCNAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
 
-    MCAPI ::MapItemSavedData* getMapSavedData(::ActorUniqueID uuid);
+    MCNAPI ::MapItemSavedData* getMapSavedData(::ActorUniqueID uuid);
 
-    MCAPI void loadMapDataForDeferredPublish(::ActorUniqueID uuid);
+    MCNAPI void loadMapDataForDeferredPublish(::ActorUniqueID uuid);
 
-    MCAPI void onStartLeaveGame();
+    MCNAPI void onStartLeaveGame();
 
-    MCAPI void publishDeferredMapData();
+    MCNAPI void publishDeferredMapData();
 
-    MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCNAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool hasMapToCopy(::Player& player, ::ActorUniqueID const& uuid);
+    MCNAPI static bool hasMapToCopy(::Player& player, ::ActorUniqueID const& uuid);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::DimensionManager&                         dimensionManager,
         ::LevelStorage*                             levelStorage,
         ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
@@ -146,19 +146,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
+    MCNAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 
-    MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
+    MCNAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
-    MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
+    MCNAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
 
 
     // NOLINTEND

@@ -33,26 +33,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SerializedActorModel();
+    MCNAPI SerializedActorModel();
 
-    MCAPI void load(::GeometryPtr geo, ::gsl::span<::std::string_view const> modelNodeOrder);
+    MCNAPI void load(::GeometryPtr geo, ::gsl::span<::std::string_view const> modelNodeOrder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 };

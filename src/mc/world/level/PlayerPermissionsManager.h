@@ -61,45 +61,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerPermissionsManager(
+    MCNAPI PlayerPermissionsManager(
         ::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager,
         ::Bedrock::NonOwnerPointer<::PlayerListManager>      playerListManager,
         ::std::function<::Player*()>                         getPrimaryLocalPlayer
     );
 
-    MCAPI void _loadLocalPermissionsList();
+    MCNAPI void _loadLocalPermissionsList();
 
 #ifdef LL_PLAT_C
-    MCAPI void _updatePermissionLevel();
+    MCNAPI void _updatePermissionLevel();
 
-    MCAPI void _updatePermissionsList();
+    MCNAPI void _updatePermissionsList();
 
-    MCAPI bool arePermissionsSynced(
+    MCNAPI bool arePermissionsSynced(
         ::std::optional<::PlayerPermissionLevel>           playerPermissionLevel,
         ::std::vector<::std::pair<::AbilitiesIndex, bool>> playerPermissions
     ) const;
 
-    MCAPI bool evaluateCanEditPermissions(
+    MCNAPI bool evaluateCanEditPermissions(
         ::ActorUniqueID localPlayerId,
         bool            isPrimaryClient,
         bool            isHostingLocalDedicatedServer
     ) const;
 
-    MCAPI bool evaluateCanKickPlayer(::ActorUniqueID playerId, ::ActorUniqueID localPlayerId);
+    MCNAPI bool evaluateCanKickPlayer(::ActorUniqueID playerId, ::ActorUniqueID localPlayerId);
 
-    MCAPI ::std::optional<::std::vector<::std::pair<::AbilitiesIndex, bool>>>
+    MCNAPI ::std::optional<::std::vector<::std::pair<::AbilitiesIndex, bool>>>
     getCurrentPlayerPermissionsList(::ActorUniqueID playerId) const;
 
-    MCAPI bool loadPlayerPermissions(::ActorUniqueID playerId);
+    MCNAPI bool loadPlayerPermissions(::ActorUniqueID playerId);
 
-    MCAPI bool savePlayerPermissions(::ActorUniqueID playerId);
+    MCNAPI bool savePlayerPermissions(::ActorUniqueID playerId);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager,
         ::Bedrock::NonOwnerPointer<::PlayerListManager>      playerListManager,
         ::std::function<::Player*()>                         getPrimaryLocalPlayer
@@ -109,7 +109,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $hasPlayerPermissions(::ActorUniqueID playerId) const;
+    MCNAPI bool $hasPlayerPermissions(::ActorUniqueID playerId) const;
 
 
     // NOLINTEND

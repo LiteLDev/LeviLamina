@@ -171,7 +171,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ClientLevel(::ClientLevelArguments&& args);
+    MCNAPI explicit ClientLevel(::ClientLevelArguments&& args);
 
     MCAPI void _onSubChunkLoaded(
         ::ChunkSource& source,
@@ -184,19 +184,19 @@ public:
     ///        The insert manager is what actually owns the request queue.
     LLAPI void addSubChunkPacketHandler(::std::shared_ptr<::SubChunkPacketHandler> handler);
 
-    MCAPI void cameraTick();
+    MCNAPI void cameraTick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientLevelArguments&& args);
+    MCNAPI void* $ctor(::ClientLevelArguments&& args);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initialize(
+    MCNAPI bool $initialize(
         ::std::string const&   levelName,
         ::LevelSettings const& levelSettings,
         ::Experiments const&   experiments,
@@ -207,73 +207,73 @@ public:
         ::ServerInitialization::IServerInitializer*
     );
 
-    MCAPI ::Tick const $getCurrentServerTick() const;
+    MCNAPI ::Tick const $getCurrentServerTick() const;
 
-    MCAPI void $startLeaveGame();
+    MCNAPI void $startLeaveGame();
 
-    MCAPI ::ResourcePackManager* $getClientResourcePackManager() const;
+    MCNAPI ::ResourcePackManager* $getClientResourcePackManager() const;
 
-    MCAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::OwnerPtr<::EntityContext> $removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef);
+    MCNAPI ::OwnerPtr<::EntityContext> $removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCAPI ::OwnerPtr<::EntityContext> $takeEntity(::WeakEntityRef entityRef, ::LevelChunk& lc);
+    MCNAPI ::OwnerPtr<::EntityContext> $takeEntity(::WeakEntityRef entityRef, ::LevelChunk& lc);
 
-    MCAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void $removeDisplayEntity(::WeakEntityRef entity);
+    MCNAPI void $removeDisplayEntity(::WeakEntityRef entity);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
 
-    MCAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
+    MCNAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
 
-    MCAPI ::PlayerSleepManager& $getPlayerSleepManager();
+    MCNAPI ::PlayerSleepManager& $getPlayerSleepManager();
 
-    MCAPI void $notifySubChunkRequestManager(::SubChunkPacket const& packet);
+    MCNAPI void $notifySubChunkRequestManager(::SubChunkPacket const& packet);
 
-    MCAPI ::SubChunkRequestManager* $getSubChunkRequestManager();
+    MCNAPI ::SubChunkRequestManager* $getSubChunkRequestManager();
 
-    MCAPI void $onSubChunkLoaded(
+    MCNAPI void $onSubChunkLoaded(
         ::ChunkSource& source,
         ::LevelChunk&  lc,
         short          absoluteSubChunkIndex,
         bool           subChunkVisibilityChanged
     );
 
-    MCAPI ::Bedrock::NonOwnerPointer<::SubChunkManager> $getSubChunkManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::SubChunkManager> $getSubChunkManager();
 
-    MCAPI bool $canUseSkin(
+    MCNAPI bool $canUseSkin(
         ::SerializedSkinRef const& skin,
         ::NetworkIdentifier const& networkIdentifier,
         ::ActorUniqueID const&     playerId
     ) const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> $getTrustedSkinHelper() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> $getTrustedSkinHelper() const;
 
-    MCFOLD ::ClientLevel* $asClientLevel();
+    MCNAPI ::ClientLevel* $asClientLevel();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
+    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
+    MCNAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
 
-    MCAPI ::ArmorTrimUnloader* $getArmorTrimUnloader();
+    MCNAPI ::ArmorTrimUnloader* $getArmorTrimUnloader();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
 
-    MCAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
+    MCNAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
 
-    MCAPI void $subChunkTickAndSendRequests();
+    MCNAPI void $subChunkTickAndSendRequests();
 
-    MCAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+    MCNAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
 
-    MCAPI ::TickTimeManager const& $_getTickTimeManager() const;
+    MCNAPI ::TickTimeManager const& $_getTickTimeManager() const;
 
-    MCAPI ::TickTimeManager& $_getTickTimeManager();
+    MCNAPI ::TickTimeManager& $_getTickTimeManager();
 
-    MCAPI ::MapDataManager& $_getMapDataManager();
+    MCNAPI ::MapDataManager& $_getMapDataManager();
 
-    MCAPI void $_subTick();
+    MCNAPI void $_subTick();
     // NOLINTEND
 };

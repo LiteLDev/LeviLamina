@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      spawningActor,
         ::BlockPos    pos,
@@ -52,7 +52,7 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
 
     // NOLINTEND

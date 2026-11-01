@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduExternalScreenController(
+    MCNAPI EduExternalScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void()>                   storageLocationChangedCallback,
         ::std::function<uint64()>                 worldCountCallback
@@ -41,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void()>                   storageLocationChangedCallback,
         ::std::function<uint64()>                 worldCountCallback

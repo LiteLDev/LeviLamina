@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeedbackPromptController(
+    MCNAPI FeedbackPromptController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::std::string const&                           titleId,
         ::std::string const&                           image,
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::std::string const&                           titleId,
         ::std::string const&                           image,

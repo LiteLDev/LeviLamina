@@ -42,9 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
+    MCNAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
 
-    MCAPI ScriptItemComponent(
+    MCNAPI ScriptItemComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope,
         ::std::string                                                                  id
@@ -54,15 +54,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemComponent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemComponent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope,
         ::std::string                                                                  id
@@ -72,13 +72,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

@@ -16,79 +16,79 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_50 {
 // functions
 // NOLINTBEGIN
-MCAPI void _addEffectFromJSON(::SharedTypes::v1_26_50::MobEffectSubcomponentDefinition& def, ::Json::Value& component);
+MCNAPI void _addEffectFromJSON(::SharedTypes::v1_26_50::MobEffectSubcomponentDefinition& def, ::Json::Value& component);
 
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCAPI void deserializeActorDefinitionEventSubcomponent(
+MCNAPI void deserializeActorDefinitionEventSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeArrowEffectSubcomponent(
+MCNAPI void deserializeArrowEffectSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeCatchFireSubcomponent(
+MCNAPI void deserializeCatchFireSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeFreezeOnHitSubcomponent(
+MCNAPI void deserializeFreezeOnHitSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void
+MCNAPI void
 deserializeGrantXPSubcomponent(::Json::Value& component, ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands);
 
-MCAPI void deserializeHurtOwnerSubcomponent(
+MCNAPI void deserializeHurtOwnerSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeImpactDamageSubcomponent(
+MCNAPI void deserializeImpactDamageSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_50::PreferredPathComponentDefinition& desc,
     ::DeserializeDataParams                                    deserializeDataParams
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_50::ProjectileComponentDefinition& desc,
     ::DeserializeDataParams                                 deserializeDataParams
 );
 
-MCAPI void deserializeMobEffectSubcomponent(
+MCNAPI void deserializeMobEffectSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeParticleOnHitSubcomponent(
+MCNAPI void deserializeParticleOnHitSubcomponent(
     ::Json::Value&                                 value,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeSpawnAoECloudSubcomponent(
+MCNAPI void deserializeSpawnAoECloudSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeSpawnChanceSubcomponent(
+MCNAPI void deserializeSpawnChanceSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeStickInGroundSubcomponent(
+MCNAPI void deserializeStickInGroundSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );
 
-MCAPI void deserializeThrownPotionEffectSubcomponent(
+MCNAPI void deserializeThrownPotionEffectSubcomponent(
     ::Json::Value&                                 component,
     ::SharedTypes::v1_26_50::OnHitCommandsStorage& onHitCommands
 );

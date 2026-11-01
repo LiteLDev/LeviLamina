@@ -26,30 +26,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSkeletalAnimationPtr(
+    MCNAPI ActorSkeletalAnimationPtr(
         ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> const& animationGroup,
         ::HashedString const&                                       name
     );
 
-    MCAPI ~ActorSkeletalAnimationPtr();
+    MCNAPI ~ActorSkeletalAnimationPtr();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorSkeletalAnimationPtr const& NONE();
+    MCNAPI static ::ActorSkeletalAnimationPtr const& NONE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> const& animationGroup, ::HashedString const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

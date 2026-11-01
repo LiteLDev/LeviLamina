@@ -57,12 +57,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PrecompCache _getCache();
+    MCNAPI ::PrecompCache _getCache();
 
-    MCAPI void calculate(uchar face);
+    MCNAPI void calculate(uchar face);
 
-    MCAPI void calculateBoxAverage(bool);
+    MCNAPI void calculateBoxAverage(bool);
 
-    MCAPI void calculateWithCache(uchar face);
+    MCNAPI void calculateWithCache(uchar face);
     // NOLINTEND
 };

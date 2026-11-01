@@ -55,14 +55,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PackContentItem(::ContentSource* src);
+    MCNAPI explicit PackContentItem(::ContentSource* src);
 
-    MCAPI ::std::vector<::std::shared_ptr<::PackContentItem const>> getDependentContent() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::PackContentItem const>> getDependentContent() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentSource* src);
+    MCNAPI void* $ctor(::ContentSource* src);
     // NOLINTEND
 };

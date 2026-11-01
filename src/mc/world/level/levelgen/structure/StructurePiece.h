@@ -76,7 +76,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void generateBox(
+    MCNAPI void generateBox(
         ::BlockSource&         region,
         ::BoundingBox const&   chunkBB,
         int                    x0,
@@ -90,7 +90,7 @@ public:
         ::BlockSelector const& selector
     );
 
-    MCAPI void generateMaybeBox(
+    MCNAPI void generateMaybeBox(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         ::Random&            random,
@@ -107,7 +107,7 @@ public:
         bool                 excludeSky
     );
 
-    MCAPI void generateUpperHalfSphere(
+    MCNAPI void generateUpperHalfSphere(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         int                  x0,
@@ -120,13 +120,13 @@ public:
         bool                 skipAir
     );
 
-    MCAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+    MCNAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCAPI ushort getOrientationData(::Block const* block, ushort data);
+    MCNAPI ushort getOrientationData(::Block const* block, ushort data);
 
-    MCAPI bool isReplaceableBlock(::Block const& block);
+    MCNAPI bool isReplaceableBlock(::Block const& block);
 
-    MCAPI void maybeGenerateBlockIfNotFloating(
+    MCNAPI void maybeGenerateBlockIfNotFloating(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         ::Random&            random,
@@ -147,7 +147,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
+    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
 
     MCFOLD ::StructurePieceType $getType() const;
 

@@ -38,43 +38,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
+    MCNAPI AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
 
-    MCFOLD ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&&);
 
-    MCFOLD ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ClientBiomeComponentVersion $getType() const;
+    MCNAPI ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

@@ -26,21 +26,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HatchetItem(::std::string const& name, int id, ::ItemTier const& tier);
+    MCNAPI HatchetItem(::std::string const& name, int id, ::ItemTier const& tier);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI ::std::string_view $getEfficiencyLocalization() const;
+    MCNAPI ::std::string_view $getEfficiencyLocalization() const;
 
 
     // NOLINTEND
@@ -48,6 +48,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

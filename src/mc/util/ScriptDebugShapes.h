@@ -10,7 +10,7 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace ScriptModuleDebugUtilities::ScriptDebugShapes {
 // functions
 // NOLINTBEGIN
-MCAPI void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+MCNAPI void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 // NOLINTEND
 
 } // namespace ScriptModuleDebugUtilities::ScriptDebugShapes

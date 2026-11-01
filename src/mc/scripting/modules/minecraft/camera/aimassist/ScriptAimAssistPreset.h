@@ -27,29 +27,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
+    MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getDefaultItemSettings() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getDefaultItemSettings() const;
 
-    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::EngineError>
     getExcludedBlockTagTargets() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedBlockTargets() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedBlockTargets() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedEntityTargets() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getExcludedEntityTargets() const;
 
-    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::Scripting::EngineError>
     getExcludedEntityTypeFamilyTargets() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHandSettings() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHandSettings() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getLiquidTargetingItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getLiquidTargetingItems() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

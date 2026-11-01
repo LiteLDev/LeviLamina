@@ -127,7 +127,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ~MinecraftCommandsFactoryArguments();
+        MCNAPI ~MinecraftCommandsFactoryArguments();
 #endif
         // NOLINTEND
 
@@ -135,7 +135,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -223,19 +223,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::brstd::move_only_function<
+    MCNAPI ::brstd::move_only_function<
         ::std::unique_ptr<::ServerNetworkHandler>(::MinecraftArguments::CreateServerNetworkHandlerArgs&&)>
     createServerNetworkHandlerFactory(::MinecraftArguments::ServerNetworkHandlerFactoryArguments&& args);
 
 #ifdef LL_PLAT_C
-    MCAPI ~MinecraftArguments();
+    MCNAPI ~MinecraftArguments();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OwnerPtr<::ResourcePackManager> createResourcePackManager(
+    MCNAPI static ::OwnerPtr<::ResourcePackManager> createResourcePackManager(
         ::Core::FilePathManager const&            filePathManager,
         ::IContentTierManager const&              contentTierManager,
         ::Bedrock::Resources::CategoryFileMapping categoryFileMapping,
@@ -248,7 +248,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

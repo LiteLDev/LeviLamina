@@ -78,69 +78,69 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initListener(float priority);
+    MCNAPI void initListener(float priority);
 
 #ifdef LL_PLAT_C
-    MCAPI void terminate();
+    MCNAPI void terminate();
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onAppPaused();
+    MCNAPI void $onAppPaused();
 
-    MCFOLD void $onAppUnpaused();
+    MCNAPI void $onAppUnpaused();
 
-    MCFOLD void $onAppPreSuspended();
+    MCNAPI void $onAppPreSuspended();
 
-    MCFOLD void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCFOLD void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCFOLD void $onAppFocusLost();
+    MCNAPI void $onAppFocusLost();
 
-    MCFOLD void $onAppFocusGained();
+    MCNAPI void $onAppFocusGained();
 
-    MCFOLD void $onAppTerminated();
+    MCNAPI void $onAppTerminated();
 
-    MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
+    MCNAPI void $onOperationModeChanged(::OperationMode const operationMode);
 
-    MCFOLD void $onPerformanceModeChanged(bool const boost);
+    MCNAPI void $onPerformanceModeChanged(bool const boost);
 
-    MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
+    MCNAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCFOLD void $onRefreshRateChanged(::RefreshRate const refreshRate);
+    MCNAPI void $onRefreshRateChanged(::RefreshRate const refreshRate);
 
-    MCFOLD void $onResizeBegin();
+    MCNAPI void $onResizeBegin();
 
-    MCFOLD void $onResizeEnd();
+    MCNAPI void $onResizeEnd();
 
-    MCFOLD void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
 
-    MCFOLD void $onAppSurfaceCreated();
+    MCNAPI void $onAppSurfaceCreated();
 
-    MCFOLD void $onAppSurfaceDestroyed();
+    MCNAPI void $onAppSurfaceDestroyed();
 
 #ifdef LL_PLAT_S
-    MCFOLD void $onClipboardCopy(::std::string const&);
+    MCNAPI void $onClipboardCopy(::std::string const&);
 #else // LL_PLAT_C
-    MCFOLD void $onClipboardCopy(::std::string const& clipString);
+    MCNAPI void $onClipboardCopy(::std::string const& clipString);
 #endif
 
 #ifdef LL_PLAT_S
-    MCFOLD void $onClipboardPaste(::std::string const&);
+    MCNAPI void $onClipboardPaste(::std::string const&);
 #else // LL_PLAT_C
-    MCFOLD void $onClipboardPaste(::std::string const& clipString);
+    MCNAPI void $onClipboardPaste(::std::string const& clipString);
 #endif
 
-    MCFOLD void $onLowMemory(::LowMemorySeverity);
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
 
 
     // NOLINTEND

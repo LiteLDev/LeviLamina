@@ -18,32 +18,32 @@ class LogSettingsUpdater;
 namespace BedrockLog {
 // functions
 // NOLINTBEGIN
-MCAPI bool
+MCNAPI bool
 _constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::LogAreaFilter& logAreaFilter);
 
 #ifdef LL_PLAT_S
-MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
+MCNAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
 #endif
 
-MCAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
+MCNAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
 
 #ifdef LL_PLAT_S
-MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
+MCNAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
 #endif
 
-MCAPI void _initAreaFilterMap();
+MCNAPI void _initAreaFilterMap();
 
-MCAPI void _initPriorityFilterMap();
+MCNAPI void _initPriorityFilterMap();
 
 #ifdef LL_PLAT_S
-MCAPI void closeAllLogs();
+MCNAPI void closeAllLogs();
 #endif
 
-MCAPI void closeAndResetAllLogs();
+MCNAPI void closeAndResetAllLogs();
 
-MCAPI void closeAndResetLog(::BedrockLog::LogCategory category);
+MCNAPI void closeAndResetLog(::BedrockLog::LogCategory category);
 
-MCAPI void createLog(
+MCNAPI void createLog(
     ::Core::Path const&       _path,
     ::std::string const&      _labelDescription,
     ::std::string const&      _debugLogTimestamp,
@@ -54,7 +54,7 @@ MCAPI void createLog(
     double                    _logCycleInS
 );
 
-MCAPI void log_fmt(
+MCNAPI void log_fmt(
     ::BedrockLog::LogCategory                          category,
     ::std::bitset<3>                                   channelMask,
     ::BedrockLog::LogRule                              rule,
@@ -78,14 +78,14 @@ MCAPI void log_va(
     char*                     argptr
 );
 
-MCFOLD int rakDebugLog(char const* fstr, ...);
+MCNAPI int rakDebugLog(char const* fstr, ...);
 
-MCAPI void update();
+MCNAPI void update();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::BedrockLog::CategoryLogs& sCategory();
+MCNAPI ::BedrockLog::CategoryLogs& sCategory();
 // NOLINTEND
 
 } // namespace BedrockLog

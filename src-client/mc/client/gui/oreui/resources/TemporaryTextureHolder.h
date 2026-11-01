@@ -38,9 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void dropImageBuffer(uint64 id);
+    MCNAPI void dropImageBuffer(uint64 id);
 
-    MCAPI uint64 holdTexturePtr(::mce::TexturePtr texture);
+    MCNAPI uint64 holdTexturePtr(::mce::TexturePtr texture);
     // NOLINTEND
 };
 

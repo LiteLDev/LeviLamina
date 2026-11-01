@@ -43,18 +43,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::shared_ptr<::ContainerValidationCommitObject>
+    MCNAPI ::std::shared_ptr<::ContainerValidationCommitObject>
     $postCommitItemRemoved(::ContainerEnumName const containerEnumName, int const slot, ::ItemStack const& item);
 
-    MCFOLD bool $isCraftingImplemented();
+    MCNAPI bool $isCraftingImplemented();
 
-    MCAPI ::ContainerValidationCraftResult $getCraftResult(
+    MCNAPI ::ContainerValidationCraftResult $getCraftResult(
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,

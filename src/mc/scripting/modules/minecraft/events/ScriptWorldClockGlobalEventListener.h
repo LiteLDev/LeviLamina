@@ -39,13 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
+    MCNAPI ::EventResult $onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
 
-    MCAPI ::EventResult $onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
+    MCNAPI ::EventResult $onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
 
-    MCAPI ::EventResult $onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
+    MCNAPI ::EventResult $onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
 
-    MCAPI ::EventResult
+    MCNAPI ::EventResult
     $onWorldClockTimeMarker(::gsl::not_null<::WorldClock*> clock, ::std::string const& timeMarkerName);
 
 

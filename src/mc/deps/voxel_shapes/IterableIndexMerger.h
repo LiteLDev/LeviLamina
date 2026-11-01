@@ -36,7 +36,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ::VoxelShapes::IterableIndexMerger::Iterator& operator++();
+        MCNAPI ::VoxelShapes::IterableIndexMerger::Iterator& operator++();
 #endif
         // NOLINTEND
     };

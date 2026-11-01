@@ -46,32 +46,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::AABB& BLOCK_AABB();
+    MCNAPI static ::AABB& BLOCK_AABB();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD bool $canBeOriginalSurface(bool) const;
+    MCNAPI bool $canBeOriginalSurface(bool) const;
 
-    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $getCollisionShapeForCamera(
+    MCNAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -84,6 +84,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

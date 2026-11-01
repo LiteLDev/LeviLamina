@@ -29,19 +29,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& COOLDOWN();
+    MCNAPI static ::HashedString const& COOLDOWN();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
-    MCAPI ::HashedString const& $getCooldownCategory() const;
+    MCNAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownDuration() const;
+    MCNAPI int $getCooldownDuration() const;
 
 
     // NOLINTEND

@@ -59,50 +59,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorResourceDefinition(::ActorResourceDefinition const& rhs);
+    MCNAPI ActorResourceDefinition(::ActorResourceDefinition const& rhs);
 
-    MCAPI ActorResourceDefinition(
+    MCNAPI ActorResourceDefinition(
         ::HashedString      name,
         bool                isAttachable,
         ::SemVersion const& fullStackMinEngineVersion,
         ::SemVersion const& actorJsonMinEngineVersion
     );
 
-    MCAPI ::ActorTextureInfo const getActorTextureInfo(::std::string_view name, bool returnFirstIfNotFound) const;
+    MCNAPI ::ActorTextureInfo const getActorTextureInfo(::std::string_view name, bool returnFirstIfNotFound) const;
 
-    MCAPI ::PBRTexturePtrs const getActorTexturePtrs(::std::string const& name, bool returnFirstIfNotFound) const;
+    MCNAPI ::PBRTexturePtrs const getActorTexturePtrs(::std::string const& name, bool returnFirstIfNotFound) const;
 
-    MCAPI ::mce::TexturePtr const getColorTexture(::std::string const& name, bool returnFirstIfNotFound) const;
+    MCNAPI ::mce::TexturePtr const getColorTexture(::std::string const& name, bool returnFirstIfNotFound) const;
 
-    MCAPI ::ResourceLocation const
+    MCNAPI ::ResourceLocation const
     getColorTextureResourceLocation(::std::string const& name, bool returnFirstIfNotFound) const;
 
-    MCAPI ::GeometryPtr const getGeometry(::std::string_view name, bool returnFirstIfNotFound) const;
+    MCNAPI ::GeometryPtr const getGeometry(::std::string_view name, bool returnFirstIfNotFound) const;
 
-    MCAPI ::MaterialVariants const& getMaterialVariants(::std::string const& name) const;
+    MCNAPI ::MaterialVariants const& getMaterialVariants(::std::string const& name) const;
 
-    MCAPI void mergeGeometry(::std::string const& name, ::GeometryPtr geometryPtr);
+    MCNAPI void mergeGeometry(::std::string const& name, ::GeometryPtr geometryPtr);
 
-    MCAPI void mergeHeldItemScale(::ExpressionNode heldItemScale);
+    MCNAPI void mergeHeldItemScale(::ExpressionNode heldItemScale);
 
-    MCAPI void mergeMaterial(
+    MCNAPI void mergeMaterial(
         ::std::string const& name,
         ::mce::MaterialPtr   skinningMaterialPtr,
         ::mce::MaterialPtr   skinningColorMaterialPtr
     );
 
-    MCAPI void mergeParticleEffects(::std::unordered_map<::HashedString, ::HashedString> actorParticleEffects);
+    MCNAPI void mergeParticleEffects(::std::unordered_map<::HashedString, ::HashedString> actorParticleEffects);
 
-    MCAPI void
+    MCNAPI void
     mergeRenderControllers(::std::vector<::std::pair<::RenderControllerPtr, ::ExpressionNode>> renderControllerPtrs);
 
-    MCAPI void mergeScript(::std::string name, ::ExpressionNode expression);
+    MCNAPI void mergeScript(::std::string name, ::ExpressionNode expression);
 
-    MCAPI void mergeSoundEffects(::std::string name, ::std::string soundEffectName);
+    MCNAPI void mergeSoundEffects(::std::string name, ::std::string soundEffectName);
 
-    MCAPI void mergeTexture(::std::string const& name, ::ActorTextureInfo const& inInfo);
+    MCNAPI void mergeTexture(::std::string const& name, ::ActorTextureInfo const& inInfo);
 
-    MCAPI void mergeTexture(
+    MCNAPI void mergeTexture(
         ::std::string const&                name,
         ::ResourceLocation const&           colorResourceLocation,
         ::mce::TexturePtr                   colorTexture,
@@ -114,42 +114,42 @@ public:
         ::NormalTextureMode                 normalTextureMode
     );
 
-    MCAPI void patch(
+    MCNAPI void patch(
         ::std::shared_ptr<::GeometryGroup>                 geometryGroup,
         ::std::shared_ptr<::ActorAnimationGroup>           animationGroup,
         ::std::shared_ptr<::ActorAnimationControllerGroup> animationControllerGroup,
         ::std::string const&                               jsonPatchInfo
     );
 
-    MCAPI void removeRenderController(::std::string const& controllerName);
+    MCNAPI void removeRenderController(::std::string const& controllerName);
 
-    MCAPI void setColorTexture(
+    MCNAPI void setColorTexture(
         ::std::string const&      name,
         ::ResourceLocation const& resourceLocation,
         ::mce::TexturePtr const&  texture
     );
 
-    MCAPI void setQueryableGeometryName(::HashedString name);
+    MCNAPI void setQueryableGeometryName(::HashedString name);
 
-    MCAPI void setSpawnEgg(::SpawnEggInfo spawnEgg);
+    MCNAPI void setSpawnEgg(::SpawnEggInfo spawnEgg);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ActorTextureInfo getActorTextureInfo(
+    MCNAPI static ::ActorTextureInfo getActorTextureInfo(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::string_view                           name,
         bool                                         returnFirstIfNotFound
     );
 
-    MCAPI static ::PBRTexturePtrs getActorTexturePtrs(
+    MCNAPI static ::PBRTexturePtrs getActorTexturePtrs(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::string const&                         name,
         bool                                         returnFirstIfNotFound
     );
 
-    MCAPI static ::mce::TexturePtr getColorTexture(
+    MCNAPI static ::mce::TexturePtr getColorTexture(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::string const&                         name,
         bool                                         returnFirstIfNotFound
@@ -159,9 +159,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorResourceDefinition const& rhs);
+    MCNAPI void* $ctor(::ActorResourceDefinition const& rhs);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString      name,
         bool                isAttachable,
         ::SemVersion const& fullStackMinEngineVersion,

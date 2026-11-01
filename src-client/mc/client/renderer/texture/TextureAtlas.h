@@ -76,13 +76,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextureAtlas(
+    MCNAPI TextureAtlas(
         ::ResourceLocation const&                                              metaFile,
         ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager,
         ::TextureAtlas::PaddingMode                                            paddingMode
     );
 
-    MCAPI void _addElementCollection(
+    MCNAPI void _addElementCollection(
         ::ResourcePackManager&                 resourcePackManager,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::Json::Value const&                   texture,
@@ -105,7 +105,7 @@ public:
             outCopyOfSourceImages
     );
 
-    MCAPI ::TextureAtlasResourceCallbacks createAtlasFromJson(
+    MCNAPI ::TextureAtlasResourceCallbacks createAtlasFromJson(
         ::Json::Value const&                               json,
         ::ResourcePackManager&                             resourcePackManager,
         ::std::function<void(::TextureAtlasStatus const&)> statusCallback,
@@ -117,7 +117,7 @@ public:
             outCopyOfSourceImages
     );
 
-    MCAPI ::TextureAtlasResourceCallbacks createAtlasFromList(
+    MCNAPI ::TextureAtlasResourceCallbacks createAtlasFromList(
         ::std::string const&                               atlasName,
         ::std::vector<::std::string> const&                textures,
         ::ResourcePackManager&                             resourcePackManager,
@@ -130,9 +130,9 @@ public:
             outCopyOfSourceImages
     );
 
-    MCAPI ::ResourceLocation const& getPathFromName(::std::string const& name) const;
+    MCNAPI ::ResourceLocation const& getPathFromName(::std::string const& name) const;
 
-    MCAPI ::TextureAtlasResourceCallbacks loadMetaFile(
+    MCNAPI ::TextureAtlasResourceCallbacks loadMetaFile(
         ::ResourcePackManager&                             resourcePackManager,
         ::std::function<void(::TextureAtlasStatus const&)> statusCallback,
         ::std::function<void()>                            imageAtlasFinishedCallback,
@@ -143,7 +143,7 @@ public:
             outCopyOfSourceImages
     );
 
-    MCAPI ::TextureAtlasResourceCallbacks recreateAtlas(
+    MCNAPI ::TextureAtlasResourceCallbacks recreateAtlas(
         ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
         ::std::function<void(::TextureAtlasStatus const&)> statusCallback,
         ::std::function<void()>                            imageAtlasFinishedCallback,
@@ -157,7 +157,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourceLocation const&                                              metaFile,
         ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager,
         ::TextureAtlas::PaddingMode                                            paddingMode

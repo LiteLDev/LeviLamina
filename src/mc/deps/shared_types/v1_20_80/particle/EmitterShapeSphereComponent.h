@@ -41,33 +41,33 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
+    MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
+    MCNAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
+    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
+    MCNAPI ::SharedTypes::v1_20_80::EmitterShapeSphereComponent&
     operator=(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
 #endif
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NameID();
+    MCNAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
 #endif
     // NOLINTEND
 
@@ -75,14 +75,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
+    MCNAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

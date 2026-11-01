@@ -13,10 +13,10 @@ struct PushablePreset;
 namespace PushableByEntityUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::PushablePreset const&
+MCNAPI ::PushablePreset const&
 getPreset(::Actor const& owner, ::PushableByEntityComponent const& component, ::Actor const& other);
 
-MCAPI void pullToRide(::Actor& owner, ::Actor& other);
+MCNAPI void pullToRide(::Actor& owner, ::Actor& other);
 
 MCAPI void push(::Actor& owner, ::Vec3 const& vec);
 

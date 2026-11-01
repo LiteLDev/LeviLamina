@@ -60,18 +60,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance const> at(::BlockPos pos) const;
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance const> at(::BlockPos pos) const;
 
-    MCAPI ::std::vector<::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
+    MCNAPI ::std::vector<::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
     collectGroupByStep() const;
 
-    MCAPI bool setInstanceForStructure(
+    MCNAPI bool setInstanceForStructure(
         ::br::worldgen::Structure const&                       structure,
         ::std::shared_ptr<::br::worldgen::StructureInstance>&& instance,
         ::ChunkPos                                             chunkPos
     );
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 };
 

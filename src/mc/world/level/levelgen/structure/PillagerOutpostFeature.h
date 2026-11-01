@@ -83,9 +83,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
+    MCNAPI ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
 
-    MCAPI bool $getNearestGeneratedFeature(
+    MCNAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -95,7 +95,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI bool $isFeatureChunk(
+    MCNAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    lc,
@@ -104,11 +104,11 @@ public:
         ::Dimension const&
     );
 
-    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
+    MCNAPI bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCFOLD bool $shouldPostProcessMobs() const;
+    MCNAPI bool $shouldPostProcessMobs() const;
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
         ::Random&         random,

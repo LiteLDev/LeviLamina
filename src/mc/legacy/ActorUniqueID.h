@@ -19,9 +19,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 getHash() const;
+    MCNAPI uint64 getHash() const;
 
-    MCFOLD ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
     // NOLINTEND
 
 public:

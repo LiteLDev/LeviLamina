@@ -17,12 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ServerboundPackSettingChangePacketPayload();
+    MCNAPI ~ServerboundPackSettingChangePacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

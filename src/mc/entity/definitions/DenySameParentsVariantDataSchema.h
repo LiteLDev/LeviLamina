@@ -9,6 +9,6 @@ struct DenySameParentsVariantDataSchema {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

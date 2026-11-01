@@ -63,35 +63,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudCameraRenderer();
+    MCNAPI HudCameraRenderer();
 
-    MCAPI void
+    MCNAPI void
     _drawBlackBars(::ScreenContext& screenContext, float barToScreenRatio, int screenWidth, int screenHeight);
 
-    MCAPI void
+    MCNAPI void
     _drawPicture(::ScreenContext& screenContext, float slideOffScreenRatio, int screenWidth, int screenHeight);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
 
-    MCAPI void $onTakePictureNow(::Player& player, ::Actor* camera, ::Actor* target);
+    MCNAPI void $onTakePictureNow(::Player& player, ::Actor* camera, ::Actor* target);
 
-    MCAPI void $onStartTakingPicture(::Player& player);
+    MCNAPI void $onStartTakingPicture(::Player& player);
 
-    MCAPI void $onEndTakingPicture(::Player& player, ::Actor* camera, ::Actor* target);
+    MCNAPI void $onEndTakingPicture(::Player& player, ::Actor* camera, ::Actor* target);
     // NOLINTEND
 
 public:

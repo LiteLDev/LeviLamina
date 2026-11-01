@@ -33,7 +33,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI AddBiomeIsland(
+    MCNAPI AddBiomeIsland(
         ::BiomeRegistry const& biomeRegistry,
         ::Biome const&         defaultIslandBiome,
         ::Biome const&         specialIslandBiome
@@ -45,7 +45,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void*
+    MCNAPI void*
     $ctor(::BiomeRegistry const& biomeRegistry, ::Biome const& defaultIslandBiome, ::Biome const& specialIslandBiome);
 #endif
     // NOLINTEND

@@ -23,27 +23,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::string> _getAllowedItems() const;
+    MCNAPI ::std::vector<::std::string> _getAllowedItems() const;
 
-    MCAPI ::std::vector<::std::string> _getBannedItems() const;
+    MCNAPI ::std::vector<::std::string> _getBannedItems() const;
 
-    MCAPI void _setAllowedItems(::std::vector<::std::string> const& allowedItems);
+    MCNAPI void _setAllowedItems(::std::vector<::std::string> const& allowedItems);
 
-    MCAPI void _setBannedItems(::std::vector<::std::string> const& bannedItems);
+    MCNAPI void _setBannedItems(::std::vector<::std::string> const& bannedItems);
 
-    MCAPI ~ScriptContainerRules();
+    MCNAPI ~ScriptContainerRules();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -78,53 +78,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ToastManager(
+    MCNAPI ToastManager(
         ::IClientInstance&                                   client,
         ::Option*                                            enableDebugToastsOption,
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
     );
 
-    MCAPI void _destroyToast();
+    MCNAPI void _destroyToast();
 
-    MCAPI ::std::string _getNewRecipesText() const;
+    MCNAPI ::std::string _getNewRecipesText() const;
 
-    MCAPI void _handleInvite(bool parseJSON);
+    MCNAPI void _handleInvite(bool parseJSON);
 
-    MCAPI bool _isToastAllowed(::ToastMessageType messageType) const;
+    MCNAPI bool _isToastAllowed(::ToastMessageType messageType) const;
 
-    MCAPI void _removePendingPersistentToast();
+    MCNAPI void _removePendingPersistentToast();
 
-    MCAPI void _reportClick();
+    MCNAPI void _reportClick();
 
-    MCAPI void _sendShowToast(bool const animateIn);
+    MCNAPI void _sendShowToast(bool const animateIn);
 
-    MCAPI void _sendTTS(bool useIndication, ::std::string const& message) const;
+    MCNAPI void _sendTTS(bool useIndication, ::std::string const& message) const;
 
-    MCAPI void _setInitialToastValues();
+    MCNAPI void _setInitialToastValues();
 
-    MCAPI void _showNewToast();
+    MCNAPI void _showNewToast();
 
-    MCAPI void _updateLongestRecipeText();
+    MCNAPI void _updateLongestRecipeText();
 
-    MCAPI void _updatePersistentToast();
+    MCNAPI void _updatePersistentToast();
 
-    MCAPI ::std::string getMoreRecipesTitle() const;
+    MCNAPI ::std::string getMoreRecipesTitle() const;
 
-    MCAPI ::std::string getRecipeTranslationText();
+    MCNAPI ::std::string getRecipeTranslationText();
 
-    MCAPI ::ui::ViewRequest handleToastButton();
+    MCNAPI ::ui::ViewRequest handleToastButton();
 
-    MCAPI void pushNotificationReceived(::PushNotificationMessage const& msg);
+    MCNAPI void pushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCAPI void unregisterListener(::IToastListener* listener);
+    MCNAPI void unregisterListener(::IToastListener* listener);
 
-    MCAPI void update();
+    MCNAPI void update();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                                   client,
         ::Option*                                            enableDebugToastsOption,
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
@@ -134,14 +134,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $pushToast(::ToastMessage&& message);
+    MCNAPI void $pushToast(::ToastMessage&& message);
 
-    MCAPI void $pushPersistentToast(::ToastMessage&& message);
+    MCNAPI void $pushPersistentToast(::ToastMessage&& message);
 
-    MCAPI void $removePersistentToast();
+    MCNAPI void $removePersistentToast();
 
-    MCAPI bool $isEditorModeEnabled() const;
+    MCNAPI bool $isEditorModeEnabled() const;
 
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
+    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };

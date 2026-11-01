@@ -18,18 +18,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SpinLock();
+    MCNAPI ~SpinLock();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void Lock(::std::atomic_flag& flag);
+    MCNAPI static void Lock(::std::atomic_flag& flag);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -201,7 +201,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,

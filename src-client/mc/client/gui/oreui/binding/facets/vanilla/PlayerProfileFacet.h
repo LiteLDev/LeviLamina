@@ -56,39 +56,39 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::RelationshipStatus favoriteStatus() const;
+        MCNAPI ::RelationshipStatus favoriteStatus() const;
 
-        MCFOLD ::std::string const& getOfflineName() const;
+        MCNAPI ::std::string const& getOfflineName() const;
 
-        MCAPI ::OreUI::PartyPresence getPartyPresence() const;
+        MCNAPI ::OreUI::PartyPresence getPartyPresence() const;
 
-        MCFOLD ::std::string const& getPlatformId() const;
+        MCNAPI ::std::string const& getPlatformId() const;
 
-        MCFOLD ::std::string const& getPlatformName() const;
+        MCNAPI ::std::string const& getPlatformName() const;
 
-        MCAPI ::std::string const& getPlayingOnRealmId() const;
+        MCNAPI ::std::string const& getPlayingOnRealmId() const;
 
-        MCAPI ::std::string const& getPlayingOnServerId() const;
+        MCNAPI ::std::string const& getPlayingOnServerId() const;
 
-        MCAPI ::OreUI::SocialPresence getPresence() const;
+        MCNAPI ::OreUI::SocialPresence getPresence() const;
 
-        MCAPI ::std::string const& getPresenceMessage() const;
+        MCNAPI ::std::string const& getPresenceMessage() const;
 
-        MCFOLD ::std::string const& getRealName() const;
+        MCNAPI ::std::string const& getRealName() const;
 
-        MCAPI ::Social::RelationToCurrentUser getRelationship() const;
+        MCNAPI ::Social::RelationToCurrentUser getRelationship() const;
 
-        MCAPI ::std::string const& getTitleName() const;
+        MCNAPI ::std::string const& getTitleName() const;
 
-        MCAPI ::std::string const& getUrl() const;
+        MCNAPI ::std::string const& getUrl() const;
 
-        MCFOLD ::std::string const& getXblName() const;
+        MCNAPI ::std::string const& getXblName() const;
 
-        MCFOLD ::std::string const& getXuid() const;
+        MCNAPI ::std::string const& getXuid() const;
 
-        MCAPI bool isBlocked() const;
+        MCNAPI bool isBlocked() const;
 
-        MCAPI bool isMuted() const;
+        MCNAPI bool isMuted() const;
         // NOLINTEND
     };
 
@@ -136,7 +136,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerProfileFacet(
+    MCNAPI PlayerProfileFacet(
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>              partyProvider,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>              userManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
@@ -144,30 +144,30 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>         resourceAllowList
     );
 
-    MCAPI void _subscribeToProfile(::std::string const& xuid, ::std::string const& platformId, bool refetchIfFound);
+    MCNAPI void _subscribeToProfile(::std::string const& xuid, ::std::string const& platformId, bool refetchIfFound);
 
-    MCAPI ::OreUI::PlayerProfileFacet::PlayerProfileWrapper&
+    MCNAPI ::OreUI::PlayerProfileFacet::PlayerProfileWrapper&
     _updateTrackedProfile(::Social::PlayerProfile const& playerProfile);
 
-    MCFOLD ::std::vector<::OreUI::PlayerProfileFacet::PlayerProfileWrapper> const& getTrackedProfiles() const;
+    MCNAPI ::std::vector<::OreUI::PlayerProfileFacet::PlayerProfileWrapper> const& getTrackedProfiles() const;
 
-    MCAPI void refetchProfile(::std::string const& xuid, ::std::string const& platformId);
+    MCNAPI void refetchProfile(::std::string const& xuid, ::std::string const& platformId);
 
-    MCAPI void subscribeToOrRefetchProfile(::std::string const& xuid, ::std::string const& platformId);
+    MCNAPI void subscribeToOrRefetchProfile(::std::string const& xuid, ::std::string const& platformId);
 
-    MCAPI void subscribeToProfile(::std::string const& xuid, ::std::string const& platformId);
+    MCNAPI void subscribeToProfile(::std::string const& xuid, ::std::string const& platformId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>              partyProvider,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>              userManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
@@ -179,7 +179,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

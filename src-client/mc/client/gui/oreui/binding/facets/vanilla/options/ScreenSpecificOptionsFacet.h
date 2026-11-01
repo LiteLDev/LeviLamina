@@ -39,37 +39,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScreenSpecificOptionsFacet(::IOptionRegistry& options);
+    MCNAPI explicit ScreenSpecificOptionsFacet(::IOptionRegistry& options);
 
-    MCAPI ::OreUI::GameplayUIMode getDevOreUIGameplayUI() const;
+    MCNAPI ::OreUI::GameplayUIMode getDevOreUIGameplayUI() const;
 
-    MCAPI bool getDevPlayScreenHideLanWorlds() const;
+    MCNAPI bool getDevPlayScreenHideLanWorlds() const;
 
-    MCAPI ::OreUI::PlayScreenWorldLayoutMode getPlayScreenWorldLayoutMode() const;
+    MCNAPI ::OreUI::PlayScreenWorldLayoutMode getPlayScreenWorldLayoutMode() const;
 
-    MCAPI void setDevOreUIGameplayUI(::OreUI::GameplayUIMode mode);
+    MCNAPI void setDevOreUIGameplayUI(::OreUI::GameplayUIMode mode);
 
-    MCAPI void setDevPlayScreenHideLanWorlds(bool value);
+    MCNAPI void setDevPlayScreenHideLanWorlds(bool value);
 
-    MCAPI void setPlayScreenWorldLayoutMode(::OreUI::PlayScreenWorldLayoutMode layoutMode);
+    MCNAPI void setPlayScreenWorldLayoutMode(::OreUI::PlayScreenWorldLayoutMode layoutMode);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IOptionRegistry& options);
+    MCNAPI void* $ctor(::IOptionRegistry& options);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

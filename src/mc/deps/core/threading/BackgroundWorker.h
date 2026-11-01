@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BackgroundWorker(
+    MCNAPI BackgroundWorker(
         ::std::string_view                            name,
         ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
@@ -89,19 +89,19 @@ public:
         ::WorkerPool&                                 workerPool
     );
 
-    MCAPI bool _processNextTask(::RunTaskOptions const& options);
+    MCNAPI bool _processNextTask(::RunTaskOptions const& options);
 
-    MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
+    MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
-    MCAPI void requestStop(bool wait);
+    MCNAPI void requestStop(bool wait);
 
-    MCAPI void start();
+    MCNAPI void start();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view                            name,
         ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
@@ -115,9 +115,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isAsync() const;
+    MCNAPI bool $isAsync() const;
 
-    MCAPI bool $canTaskRunAgain() const;
+    MCNAPI bool $canTaskRunAgain() const;
 
 
     // NOLINTEND

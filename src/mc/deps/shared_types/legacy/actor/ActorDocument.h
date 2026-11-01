@@ -37,35 +37,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocument(::SharedTypes::Legacy::ActorDocument const&);
+    MCNAPI ActorDocument(::SharedTypes::Legacy::ActorDocument const&);
 
-    MCAPI ::SharedTypes::Legacy::ActorDocument& operator=(::SharedTypes::Legacy::ActorDocument const&);
+    MCNAPI ::SharedTypes::Legacy::ActorDocument& operator=(::SharedTypes::Legacy::ActorDocument const&);
 
-    MCAPI ~ActorDocument();
+    MCNAPI ~ActorDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::ActorDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::ActorDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

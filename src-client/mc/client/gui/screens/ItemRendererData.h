@@ -34,9 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemRendererData(::ItemRendererData const&);
+    MCNAPI ItemRendererData(::ItemRendererData const&);
 
-    MCAPI bool operator==(::ItemRendererData const& rhs) const;
+    MCNAPI bool operator==(::ItemRendererData const& rhs) const;
 
     MCAPI ~ItemRendererData();
     // NOLINTEND
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemRendererData const&);
+    MCNAPI void* $ctor(::ItemRendererData const&);
     // NOLINTEND
 
 public:

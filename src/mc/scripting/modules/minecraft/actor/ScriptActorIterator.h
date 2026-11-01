@@ -20,7 +20,7 @@ class ScriptActorIterator : public ::ScriptModuleMinecraft::ScriptVectorIterator
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -32,6 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TickingAreaDescription getDescription() const;
+    MCNAPI ::TickingAreaDescription getDescription() const;
     // NOLINTEND
 };

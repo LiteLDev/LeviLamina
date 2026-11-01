@@ -28,7 +28,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI StructureTemplateDataRequestPacketPayload(
+    MCNAPI StructureTemplateDataRequestPacketPayload(
         ::std::string const&                structureName,
         ::BlockPos const&                   blockPos,
         ::StructureSettings const&          structureSettings,
@@ -41,7 +41,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                structureName,
         ::BlockPos const&                   blockPos,
         ::StructureSettings const&          structureSettings,

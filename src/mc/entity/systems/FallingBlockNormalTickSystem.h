@@ -27,12 +27,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doFallingBlockNormalTickSystem(
+    MCNAPI static void _doFallingBlockNormalTickSystem(
         ::StrictEntityContext const&,
         ::ActorOwnerComponent& actorOwnerComponent,
         ::ITickDelegate&       onLand
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

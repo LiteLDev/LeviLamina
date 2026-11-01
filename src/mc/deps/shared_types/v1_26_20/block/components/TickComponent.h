@@ -39,13 +39,13 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::string_view const& ConstraintDescription();
+        MCNAPI static ::std::string_view const& ConstraintDescription();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+        MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
         // NOLINTEND
@@ -67,17 +67,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& IntervalRangeId();
+    MCNAPI static ::std::string_view const& IntervalRangeId();
 
-    MCAPI static ::std::string_view const& LoopingId();
+    MCNAPI static ::std::string_view const& LoopingId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

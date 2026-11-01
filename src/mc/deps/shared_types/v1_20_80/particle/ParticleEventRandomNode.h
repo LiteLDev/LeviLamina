@@ -17,7 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEventRandomNode const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleEventRandomNode const&) const;
     // NOLINTEND
 };
 

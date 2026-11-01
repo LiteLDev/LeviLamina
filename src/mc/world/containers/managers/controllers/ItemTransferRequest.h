@@ -39,9 +39,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
+    MCNAPI void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
 
-    MCAPI void reset();
+    MCNAPI void reset();
 #endif
     // NOLINTEND
 };

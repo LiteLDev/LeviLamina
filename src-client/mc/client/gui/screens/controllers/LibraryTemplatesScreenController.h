@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LibraryTemplatesScreenController(
+    MCNAPI LibraryTemplatesScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::shared_ptr<::LibraryCollection>   collection,
         uint64
@@ -44,13 +44,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::shared_ptr<::LibraryCollection> collection, uint64);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

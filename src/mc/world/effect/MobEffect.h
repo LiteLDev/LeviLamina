@@ -109,7 +109,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEffect(
+    MCNAPI MobEffect(
         uint                 id,
         ::std::string const& resourceName,
         ::std::string const& locName,
@@ -120,22 +120,22 @@ public:
         bool                 drawParticles
     );
 
-    MCAPI ::TemporalAttributeBuff
+    MCNAPI ::TemporalAttributeBuff
     _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
 
-    MCAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
+    MCNAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
 
-    MCAPI void addAttributeBuff(::Attribute const& attribute, ::std::shared_ptr<::AttributeBuff> buff);
+    MCNAPI void addAttributeBuff(::Attribute const& attribute, ::std::shared_ptr<::AttributeBuff> buff);
 
-    MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
+    MCNAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
 
-    MCAPI void applyModsAndBuffs(
+    MCNAPI void applyModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
         int                 amplification
     ) const;
 
-    MCAPI void updateModsAndBuffs(
+    MCNAPI void updateModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
         int                 amplification
@@ -147,15 +147,15 @@ public:
     // NOLINTBEGIN
     MCAPI static ::MobEffect const* getByName(::std::string const& name);
 
-    MCAPI static ::std::string getNameById(uint effectId);
+    MCNAPI static ::std::string getNameById(uint effectId);
 
-    MCAPI static void initEffects(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCNAPI static void initEffects(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color const& DEFAULT_COLOR();
+    MCNAPI static ::mce::Color const& DEFAULT_COLOR();
 
     MCAPI static ::Bedrock::DenseEnumMap<::MobEffectIds, ::std::unique_ptr<::MobEffect>, 39>& mMobEffects();
     // NOLINTEND
@@ -163,7 +163,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         uint                 id,
         ::std::string const& resourceName,
         ::std::string const& locName,
@@ -178,22 +178,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
+    MCNAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) const;
+    MCNAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) const;
 
-    MCFOLD void $onEffectExpired(::Actor& target) const;
+    MCNAPI void $onEffectExpired(::Actor& target) const;
 
-    MCFOLD void $onActorDied(::Actor& target, int amplifier) const;
+    MCNAPI void $onActorDied(::Actor& target, int amplifier) const;
 
-    MCFOLD void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
+    MCNAPI void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
 
-    MCAPI void
+    MCNAPI void
     $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
 
-    MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+    MCNAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
 
 
     // NOLINTEND

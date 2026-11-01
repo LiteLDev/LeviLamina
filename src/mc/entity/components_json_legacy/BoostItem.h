@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
+    MCNAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
     // NOLINTEND
 };

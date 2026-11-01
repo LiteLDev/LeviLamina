@@ -38,17 +38,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> IN_GAME_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> IN_GAME_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher& routeMatcher,
         ::SceneFactory&,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&

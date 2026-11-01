@@ -82,9 +82,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameDependencies(::OreUI::GameDependencies&&);
+    MCNAPI GameDependencies(::OreUI::GameDependencies&&);
 
-    MCAPI GameDependencies(
+    MCNAPI GameDependencies(
         ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&                    game,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&          graphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&                       platform,
@@ -103,23 +103,23 @@ public:
         ::std::function<::CloudSyncTrigger*()>                                    cloudSyncTriggerProvider
     );
 
-    MCAPI ::FlightingService& getFlightingService() const;
+    MCNAPI ::FlightingService& getFlightingService() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MatchmakingQueueState> getMatchmakingQueueState() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MatchmakingQueueState> getMatchmakingQueueState() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MatchmakingRequestSender> getMatchmakingRequestSender() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MatchmakingRequestSender> getMatchmakingRequestSender() const;
 
-    MCAPI ::std::shared_ptr<::ISubscriptionStateManager> getSubscriptionStateManager() const;
+    MCNAPI ::std::shared_ptr<::ISubscriptionStateManager> getSubscriptionStateManager() const;
 
-    MCAPI ~GameDependencies();
+    MCNAPI ~GameDependencies();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies&&);
+    MCNAPI void* $ctor(::OreUI::GameDependencies&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IMinecraftGame> const&                    game,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&          graphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&                       platform,
@@ -142,7 +142,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

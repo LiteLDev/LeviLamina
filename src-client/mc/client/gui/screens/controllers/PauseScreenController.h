@@ -82,61 +82,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PauseScreenController(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
+    MCNAPI PauseScreenController(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
 
-    MCAPI bool _isInviteButtonEnabled() const;
+    MCNAPI bool _isInviteButtonEnabled() const;
 
-    MCAPI bool _isInviteButtonVisible() const;
+    MCNAPI bool _isInviteButtonVisible() const;
 
-    MCAPI bool _isMultiplayerLocked() const;
+    MCNAPI bool _isMultiplayerLocked() const;
 
-    MCAPI bool _isProfileButtonAEnabled() const;
+    MCNAPI bool _isProfileButtonAEnabled() const;
 
-    MCAPI bool _isProfileButtonBEnabled() const;
+    MCNAPI bool _isProfileButtonBEnabled() const;
 
-    MCAPI void _navigateToPermissions(::ActorUniqueID const& id);
+    MCNAPI void _navigateToPermissions(::ActorUniqueID const& id);
 
-    MCAPI void _onPlayerListEntryRemoved(
+    MCNAPI void _onPlayerListEntryRemoved(
         ::PlayerListEntry const&,
         ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& list
     );
 
-    MCAPI void _pauseToggleOptionCallback(::Option const& pauseFeatureToggle);
+    MCNAPI void _pauseToggleOptionCallback(::Option const& pauseFeatureToggle);
 
-    MCAPI void _populateClientIds();
+    MCNAPI void _populateClientIds();
 
-    MCAPI bool _showRealmsButtons() const;
+    MCNAPI bool _showRealmsButtons() const;
 
-    MCAPI bool _useMovedInviteButton() const;
+    MCNAPI bool _useMovedInviteButton() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
+    MCNAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $queueTitleNarration();
+    MCNAPI void $queueTitleNarration();
 
-    MCAPI ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnderMan(
+    MCNAPI EnderMan(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -70,7 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -80,22 +80,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $newServerAiStep();
+    MCNAPI void $newServerAiStep();
 
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
+    MCNAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 
-    MCFOLD bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
+    MCNAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
     // NOLINTEND

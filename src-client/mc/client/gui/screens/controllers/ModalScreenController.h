@@ -37,22 +37,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ModalScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::ModalScreenData const& modalData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::ModalScreenData const& modalData);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::ModalScreenData const& modalData);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 
 public:

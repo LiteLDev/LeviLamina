@@ -24,18 +24,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Node(
+    MCNAPI Node(
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onEnter,
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onExit
     );
 
-    MCAPI ~Node();
+    MCNAPI ~Node();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onEnter,
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onExit
     );
@@ -44,6 +44,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

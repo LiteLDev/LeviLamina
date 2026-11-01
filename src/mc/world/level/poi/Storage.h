@@ -38,28 +38,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Poi::Chunk* get(::BlockPos pos) const;
+    MCNAPI ::Poi::Chunk* get(::BlockPos pos) const;
 
-    MCAPI ::Poi::Chunk& getOrCreate(::BlockPos pos);
+    MCNAPI ::Poi::Chunk& getOrCreate(::BlockPos pos);
 
-    MCAPI void swap(::Poi::Storage& other);
+    MCNAPI void swap(::Poi::Storage& other);
 
-    MCAPI void tick(::LevelStorage& storage);
+    MCNAPI void tick(::LevelStorage& storage);
 
-    MCAPI ~Storage();
+    MCNAPI ~Storage();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Poi::Storage
+    MCNAPI static ::Poi::Storage
     from(::Poi::Registry const& registry, ::Dimension const& dimension, ::LevelStorage& storage);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

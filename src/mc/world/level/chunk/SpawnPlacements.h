@@ -117,22 +117,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnPlacements();
+    MCNAPI SpawnPlacements();
 
-    MCAPI void clearReloadablePredicates();
+    MCNAPI void clearReloadablePredicates();
 
-    MCAPI bool isEntityPredicateKeyRecordable(::std::string_view key) const;
+    MCNAPI bool isEntityPredicateKeyRecordable(::std::string_view key) const;
 
-    MCAPI bool isObstructionPredicateKeyRecordable(::std::string_view key) const;
+    MCNAPI bool isObstructionPredicateKeyRecordable(::std::string_view key) const;
 
-    MCAPI ::br::spawn::SpawnPlacements::PlacementRecord record(
+    MCNAPI ::br::spawn::SpawnPlacements::PlacementRecord record(
         ::std::string_view                typeId,
         ::br::spawn::PlacementTypeToken   placementType,
         ::br::spawn::HeightmapToken       heightmap,
         ::br::spawn::EntityPredicateToken spawnPlacement
     );
 
-    MCAPI ::br::spawn::EntityPredicateToken record(
+    MCNAPI ::br::spawn::EntityPredicateToken record(
         ::std::string_view key,
         ::std::function<bool(
             ::br::spawn::EntityType const&,
@@ -143,7 +143,7 @@ public:
         )>                 predicate
     );
 
-    MCAPI ::br::spawn::EntityPredicateToken recordReloadable(
+    MCNAPI ::br::spawn::EntityPredicateToken recordReloadable(
         ::std::string_view key,
         ::std::function<bool(
             ::br::spawn::EntityType const&,
@@ -154,24 +154,24 @@ public:
         )>                 predicate
     );
 
-    MCAPI ::br::spawn::ObstructionPredicateToken recordReloadable(
+    MCNAPI ::br::spawn::ObstructionPredicateToken recordReloadable(
         ::std::string_view                                                                  key,
         ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> predicate
     );
 
-    MCAPI ~SpawnPlacements();
+    MCNAPI ~SpawnPlacements();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

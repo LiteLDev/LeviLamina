@@ -66,29 +66,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldStorageInfoQuery(
+    MCNAPI WorldStorageInfoQuery(
         ::OreUI::GameDependencies const& game,
         ::std::string const&             worldId,
         ::std::string const&             type
     );
 
-    MCAPI void _tryUpdateCloudProperties();
+    MCNAPI void _tryUpdateCloudProperties();
 
-    MCAPI void _tryUpdateProperties();
+    MCNAPI void _tryUpdateProperties();
 
-    MCAPI void _updateCloudProperties(::std::optional<::World::SyncState> syncState);
+    MCNAPI void _updateCloudProperties(::std::optional<::World::SyncState> syncState);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& worldId, ::std::string const& type);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& worldId, ::std::string const& type);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

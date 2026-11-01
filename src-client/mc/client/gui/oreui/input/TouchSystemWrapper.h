@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchSystemWrapper(
+    MCNAPI TouchSystemWrapper(
         ::std::function<void(::std::vector<::cohtml::TouchEventData>&)> const& touchEventsCallback,
         ::std::function<void(::cohtml::GestureEventData&)> const&              gestureEventCallback,
         ::std::function<void(::cohtml::MouseEventData const&)> const&          mouseEventCallback
@@ -53,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<void(::std::vector<::cohtml::TouchEventData>&)> const& touchEventsCallback,
         ::std::function<void(::cohtml::GestureEventData&)> const&              gestureEventCallback,
         ::std::function<void(::cohtml::MouseEventData const&)> const&          mouseEventCallback
@@ -63,11 +63,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendTouchEvents(::std::vector<::OreUI::TouchEventData> const& events);
+    MCNAPI void $sendTouchEvents(::std::vector<::OreUI::TouchEventData> const& events);
 
-    MCAPI void $sendGestureEvent(::OreUI::GestureEventData const& event);
+    MCNAPI void $sendGestureEvent(::OreUI::GestureEventData const& event);
 
-    MCAPI void $sendMouseMoveEvent(::Vec2 const& pos);
+    MCNAPI void $sendMouseMoveEvent(::Vec2 const& pos);
     // NOLINTEND
 
 public:

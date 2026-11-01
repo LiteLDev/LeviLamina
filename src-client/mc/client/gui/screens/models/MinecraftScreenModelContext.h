@@ -38,12 +38,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~MinecraftScreenModelContext();
+    MCNAPI ~MinecraftScreenModelContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

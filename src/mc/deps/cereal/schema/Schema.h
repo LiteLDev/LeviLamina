@@ -27,14 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool load(
+    MCNAPI bool load(
         ::cereal::SchemaReader&       reader,
         ::entt::meta_handle           data,
         ::entt::meta_any const&       loadContext,
         ::cereal::LoaderConfig const& config
     );
 
-    MCAPI bool save(::cereal::SchemaWriter& writer, ::entt::meta_handle data, ::cereal::SaverConfig const& config);
+    MCNAPI bool save(::cereal::SchemaWriter& writer, ::entt::meta_handle data, ::cereal::SaverConfig const& config);
     // NOLINTEND
 };
 

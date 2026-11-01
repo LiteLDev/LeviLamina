@@ -25,19 +25,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MesaSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
+    MCNAPI MesaSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
 
-    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&&);
 
-    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
     // NOLINTEND
 };
 

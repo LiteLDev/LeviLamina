@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void animate(
+    MCNAPI void animate(
         ::RenderParams&     renderParams,
         ::BoneOrientation&  destBoneOrientation,
         float               scale,
@@ -36,7 +36,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void computeCubicPolynomial(
+    MCNAPI static void computeCubicPolynomial(
         ::KeyFrameTransform* p0,
         ::KeyFrameTransform& p1,
         ::KeyFrameTransform& p2,

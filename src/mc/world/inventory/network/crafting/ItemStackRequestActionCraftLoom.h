@@ -34,21 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackRequestActionCraftLoom(::std::string const& patternNameId, uchar numCrafts);
+    MCNAPI ItemStackRequestActionCraftLoom(::std::string const& patternNameId, uchar numCrafts);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& patternNameId, uchar numCrafts);
+    MCNAPI void* $ctor(::std::string const& patternNameId, uchar numCrafts);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_write(::BinaryStream& stream) const;
+    MCNAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
 
     // NOLINTEND

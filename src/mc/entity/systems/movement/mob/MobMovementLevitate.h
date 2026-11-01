@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace MobMovementLevitate {
 // functions
 // NOLINTBEGIN
-MCAPI void forSystem(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forSystem(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 // NOLINTEND
 
 } // namespace MobMovementLevitate

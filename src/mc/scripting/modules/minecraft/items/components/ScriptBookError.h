@@ -35,21 +35,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBookError(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
+    MCNAPI ScriptBookError(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
+    MCNAPI void* $ctor(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
     // NOLINTEND
 };
 

@@ -29,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -39,7 +39,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

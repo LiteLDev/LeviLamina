@@ -42,31 +42,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsPurchaseReconcilerQueriesFacet(
+    MCNAPI explicit RealmsPurchaseReconcilerQueriesFacet(
         ::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler
     );
 
-    MCFOLD ::Realms::LegacyRealmsPurchaseReconcilerFailureReason getFailureReason() const;
+    MCNAPI ::Realms::LegacyRealmsPurchaseReconcilerFailureReason getFailureReason() const;
 
-    MCFOLD ::Realms::LegacyRealmsPurchaseReconcilerState getState() const;
+    MCNAPI ::Realms::LegacyRealmsPurchaseReconcilerState getState() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::LegacyRealmsPurchaseReconciler> realmsPurchaseReconciler);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -64,22 +64,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoomScreenController(
+    MCNAPI LoomScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void _changeLeftTab(int dir);
+    MCNAPI void _changeLeftTab(int dir);
 
-    MCAPI void _updateVisualPatternItem();
+    MCNAPI void _updateVisualPatternItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -90,17 +90,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
 
-    MCAPI ::ItemStackBase const&
+    MCNAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
     // NOLINTEND
 };

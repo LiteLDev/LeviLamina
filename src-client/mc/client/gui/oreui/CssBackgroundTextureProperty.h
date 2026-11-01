@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CssBackgroundTextureProperty(
+    MCNAPI CssBackgroundTextureProperty(
         ::std::string const&                               propertyName,
         ::std::optional<::SharedTypes::FileReference<21>>& filePath
     );
@@ -52,13 +52,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& propertyName, ::std::optional<::SharedTypes::FileReference<21>>& filePath);
+    MCNAPI void* $ctor(::std::string const& propertyName, ::std::optional<::SharedTypes::FileReference<21>>& filePath);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $convertToCss(
+    MCNAPI ::std::string $convertToCss(
         ::OreUI::Styling::CssParsingOptions const& options,
         ::std::unordered_set<::std::string>&       addedProperties
     );

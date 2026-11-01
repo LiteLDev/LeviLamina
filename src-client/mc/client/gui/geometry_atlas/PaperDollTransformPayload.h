@@ -23,13 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PaperDollTransformPayload();
+    MCNAPI ~PaperDollTransformPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

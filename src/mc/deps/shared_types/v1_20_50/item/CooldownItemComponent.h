@@ -24,27 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~CooldownItemComponent();
+    MCNAPI ~CooldownItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_CATEGORY();
+    MCNAPI static ::std::string const& DEFAULT_CATEGORY();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -71,35 +71,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCFOLD ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+    MCNAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
-    MCFOLD void $onNotifyChildAdded();
+    MCNAPI void $onNotifyChildAdded();
 
-    MCFOLD void $onNotifyChildRemoved();
+    MCNAPI void $onNotifyChildRemoved();
 
-    MCFOLD void $onRemoved();
+    MCNAPI void $onRemoved();
 
-    MCFOLD void $onAdded();
+    MCNAPI void $onAdded();
 
-    MCFOLD void $onVisibilityChanged(bool visible);
+    MCNAPI void $onVisibilityChanged(bool visible);
 
-    MCFOLD void $onEnabledChanged(bool enabled);
+    MCNAPI void $onEnabledChanged(bool enabled);
 
-    MCFOLD bool $isRenderableComponent() const;
+    MCNAPI bool $isRenderableComponent() const;
 
-    MCFOLD bool $isCustomFrameUpdateComponent() const;
+    MCNAPI bool $isCustomFrameUpdateComponent() const;
 
-    MCFOLD bool $onLayoutChange();
+    MCNAPI bool $onLayoutChange();
 
-    MCFOLD void $reload(::UIComponent const& rhs);
+    MCNAPI void $reload(::UIComponent const& rhs);
 
-    MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
+    MCNAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

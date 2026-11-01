@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SuggestedContentOffersScreenController(
+    MCNAPI SuggestedContentOffersScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string const&                     upsellQueryName,
         ::StoreNavigationOrigin                  storeOrigin,
@@ -52,13 +52,13 @@ public:
         ::std::string const&                     optionalBindingSuffix
     );
 
-    MCAPI ::std::string _getSuggestedOffersTitle() const;
+    MCNAPI ::std::string _getSuggestedOffersTitle() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string const&                     upsellQueryName,
         ::StoreNavigationOrigin                  storeOrigin,
@@ -70,10 +70,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

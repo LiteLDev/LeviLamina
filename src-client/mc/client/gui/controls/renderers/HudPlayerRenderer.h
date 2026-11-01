@@ -39,11 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
     // NOLINTEND
 
 public:

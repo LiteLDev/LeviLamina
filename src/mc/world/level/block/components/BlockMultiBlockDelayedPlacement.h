@@ -47,12 +47,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
+    MCNAPI static bool isValidTag(::CompoundTag const& tag);
 
-    MCAPI static ::std::unique_ptr<::BlockMultiBlockDelayedPlacement>
+    MCNAPI static ::std::unique_ptr<::BlockMultiBlockDelayedPlacement>
     load(::CompoundTag const& tag, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry);
 
-    MCAPI static bool tryQueueOrExecuteAction(
+    MCNAPI static bool tryQueueOrExecuteAction(
         ::BlockSource const&        region,
         ::Block const&              blockToPlace,
         ::BlockPos const&           pos,
@@ -64,9 +64,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel&, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel&, ::Dimension& dimension);
 
-    MCAPI void $serialize(::CompoundTag& tag);
+    MCNAPI void $serialize(::CompoundTag& tag);
 
 
     // NOLINTEND

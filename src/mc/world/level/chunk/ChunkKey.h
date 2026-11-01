@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 hashCode() const;
+    MCNAPI uint64 hashCode() const;
     // NOLINTEND
 };

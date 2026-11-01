@@ -81,11 +81,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelSummary();
+    MCNAPI LevelSummary();
 
-    MCAPI LevelSummary(::LevelSummary const&);
+    MCNAPI LevelSummary(::LevelSummary const&);
 
-    MCAPI LevelSummary(
+    MCNAPI LevelSummary(
         ::std::string const& levelId,
         ::LevelData const&   levelData,
         ::Core::Path const&  levelDirectory,
@@ -94,7 +94,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI LevelSummary(
+    MCNAPI LevelSummary(
         ::std::string const&                  id,
         ::std::string const&                  name,
         int64                                 lastSaved,
@@ -129,38 +129,38 @@ public:
     );
 #endif
 
-    MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
+    MCNAPI void _initializeWorldIconPath(::Core::Path const& directory);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getEducationCreatorId() const;
+    MCNAPI ::std::string getEducationCreatorId() const;
 
-    MCAPI ::std::string getEducationCreatorWorldId() const;
+    MCNAPI ::std::string getEducationCreatorWorldId() const;
 
-    MCAPI bool hasCloudSaveAssociation() const;
+    MCNAPI bool hasCloudSaveAssociation() const;
 
-    MCAPI bool isEditionCompatible() const;
+    MCNAPI bool isEditionCompatible() const;
 
-    MCAPI bool isGameVersionCompatible() const;
+    MCNAPI bool isGameVersionCompatible() const;
 
-    MCAPI ::LevelSummary& operator=(::LevelSummary const&);
+    MCNAPI ::LevelSummary& operator=(::LevelSummary const&);
 
-    MCAPI bool operator==(::LevelSummary const& rhs) const;
+    MCNAPI bool operator==(::LevelSummary const& rhs) const;
 
-    MCAPI void setCloudSave(::CloudSaveLevelInfo const& value);
+    MCNAPI void setCloudSave(::CloudSaveLevelInfo const& value);
 
-    MCAPI ::LevelSummary& setId(::std::string Id);
+    MCNAPI ::LevelSummary& setId(::std::string Id);
 #endif
 
-    MCAPI ::LevelSummary& setName(::std::string Name);
+    MCNAPI ::LevelSummary& setName(::std::string Name);
 
-    MCAPI ~LevelSummary();
+    MCNAPI ~LevelSummary();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::Core::PathBuffer<::std::string>
+    MCNAPI static ::Core::PathBuffer<::std::string>
     buildScreenshotIconPath(::Core::Path const& worldDirectory, ::Core::Path const& previousScreenshotIconPath);
 #endif
     // NOLINTEND
@@ -168,29 +168,29 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& CUSTOM_ICON_FILENAME();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& CUSTOM_ICON_FILENAME();
 
-    MCAPI static ::std::string const& DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME();
+    MCNAPI static ::std::string const& DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME();
 
-    MCAPI static ::std::string const& DEFAULT_WORLD_ICON_FILENAME();
+    MCNAPI static ::std::string const& DEFAULT_WORLD_ICON_FILENAME();
 
-    MCAPI static ::std::string const& INVALID_LEVEL_ID();
+    MCNAPI static ::std::string const& INVALID_LEVEL_ID();
 
-    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_EXTENSION();
+    MCNAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_EXTENSION();
 
-    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_PREFIX();
+    MCNAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_PREFIX();
 
-    MCAPI static ::Core::PathBuffer<::std::string> const& WORLD_ICON_FILENAME();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& WORLD_ICON_FILENAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::LevelSummary const&);
+    MCNAPI void* $ctor(::LevelSummary const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& levelId,
         ::LevelData const&   levelData,
         ::Core::Path const&  levelDirectory,
@@ -199,7 +199,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                  id,
         ::std::string const&                  name,
         int64                                 lastSaved,
@@ -238,6 +238,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

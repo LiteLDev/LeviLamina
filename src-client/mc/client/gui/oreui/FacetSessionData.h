@@ -25,17 +25,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int64 getLoginTime() const;
+    MCNAPI int64 getLoginTime() const;
 
-    MCAPI int64 getLogoutTime() const;
+    MCNAPI int64 getLogoutTime() const;
 
-    MCFOLD ::std::string const& getUserXuid() const;
+    MCNAPI ::std::string const& getUserXuid() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[30]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[30]> NAME();
     // NOLINTEND
 };
 

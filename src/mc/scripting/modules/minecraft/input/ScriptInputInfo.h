@@ -26,21 +26,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptInputInfo(::ScriptModuleMinecraft::ScriptActorData const& playerData);
+    MCNAPI explicit ScriptInputInfo(::ScriptModuleMinecraft::ScriptActorData const& playerData);
 
-    MCAPI void updatePlayerData(::ScriptModuleMinecraft::ScriptActorData const& playerData);
+    MCNAPI void updatePlayerData(::ScriptModuleMinecraft::ScriptActorData const& playerData);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData);
     // NOLINTEND
 };
 

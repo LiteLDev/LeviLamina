@@ -55,17 +55,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fetchBiomes(::Bedrock::small_vector_base<::gsl::not_null<::Biome const*>>& output) const;
+    MCNAPI void fetchBiomes(::Bedrock::small_vector_base<::gsl::not_null<::Biome const*>>& output) const;
 
-    MCAPI void makeUniformBiomes(::Biome const& biome);
+    MCNAPI void makeUniformBiomes(::Biome const& biome);
 
 #ifdef LL_PLAT_C
-    MCAPI ::LevelChunkBiomes& operator=(::LevelChunkBiomes&& otherChunkBiomes);
+    MCNAPI ::LevelChunkBiomes& operator=(::LevelChunkBiomes&& otherChunkBiomes);
 #endif
 
-    MCAPI void pruneBiomesSubChunk3D(ushort subChunkIndex, ::SubChunkStorageUnit::PruneType pruneType);
+    MCNAPI void pruneBiomesSubChunk3D(ushort subChunkIndex, ::SubChunkStorageUnit::PruneType pruneType);
 
-    MCAPI void rebuildMissingBiomeSubChunks(
+    MCNAPI void rebuildMissingBiomeSubChunks(
         ushort                                                       numSubChunksToCreate,
         ushort                                                       dimensionSubchunkHeight,
         ::Bedrock::Threading::UniqueLock<::std::shared_mutex> const& lock
@@ -73,7 +73,7 @@ public:
 
     MCAPI void setBiomeFromVolume(::ChunkVolume::VolumeOf<::Biome> const& volume, ushort dimensionNumSubChunks);
 
-    MCAPI void setBiomeInSubChunk3D(
+    MCNAPI void setBiomeInSubChunk3D(
         ::Biome const&                                               biome,
         ushort                                                       subChunkIndex,
         ushort                                                       storageIndex,
@@ -82,10 +82,10 @@ public:
         bool                                                         allowRebuildingAdditionalSubChunk
     );
 
-    MCAPI void
+    MCNAPI void
     setBiomeStorages(::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>> biomes, ushort biomeStackSize);
 
-    MCAPI void setBiomeSubChunk3D(
+    MCNAPI void setBiomeSubChunk3D(
         ::Biome const& biome,
         ushort         subChunkIndex,
         ushort         dimensionSubchunkHeight,
@@ -93,7 +93,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void setBiomes(::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>> biomes, ushort biomeStackSize);
+    MCNAPI void setBiomes(::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>> biomes, ushort biomeStackSize);
 #endif
     // NOLINTEND
 };

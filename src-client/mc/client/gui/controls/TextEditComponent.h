@@ -73,61 +73,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TextEditComponent(::UIControl& owner);
+    MCNAPI explicit TextEditComponent(::UIControl& owner);
 
-    MCAPI void _hidePlaceHolderControl();
+    MCNAPI void _hidePlaceHolderControl();
 
-    MCAPI void _showPlaceHolderControl();
+    MCNAPI void _showPlaceHolderControl();
 
-    MCAPI bool _textFitsInControl(::std::string const& text) const;
+    MCNAPI bool _textFitsInControl(::std::string const& text) const;
 
-    MCAPI void deselectControl();
+    MCNAPI void deselectControl();
 
-    MCAPI ::RectangleArea getMinTextArea() const;
+    MCNAPI ::RectangleArea getMinTextArea() const;
 
-    MCAPI ::std::string getText() const;
+    MCNAPI ::std::string getText() const;
 
-    MCAPI ::RectangleArea getTextArea() const;
+    MCNAPI ::RectangleArea getTextArea() const;
 
-    MCAPI void handleFocusSet(bool focused);
+    MCNAPI void handleFocusSet(bool focused);
 
-    MCAPI ::TextCharEventResult handleTextCharEvent(::VisualTree& visualTree, ::std::string const& inputUtf8);
+    MCNAPI ::TextCharEventResult handleTextCharEvent(::VisualTree& visualTree, ::std::string const& inputUtf8);
 
-    MCAPI void registerPropertyChangedNotifications();
+    MCNAPI void registerPropertyChangedNotifications();
 
-    MCAPI void selectControl();
+    MCNAPI void selectControl();
 
-    MCAPI void setText(::std::string const& text);
+    MCNAPI void setText(::std::string const& text);
 
-    MCAPI bool trySetText(::std::string text);
+    MCNAPI bool trySetText(::std::string text);
 
-    MCAPI void updateCaretBlink(float dt);
+    MCNAPI void updateCaretBlink(float dt);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCNAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reload(::UIComponent const& rhs);
+    MCNAPI void $reload(::UIComponent const& rhs);
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCAPI void $onVisibilityChanged(bool visible);
+    MCNAPI void $onVisibilityChanged(bool visible);
 
-    MCAPI ::std::string const& $getTextToSpeechComponentValue() const;
+    MCNAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

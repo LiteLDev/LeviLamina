@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SentimentQuestion(::SentimentQuestionData const& item);
+    MCNAPI explicit SentimentQuestion(::SentimentQuestionData const& item);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SentimentQuestionData const& item);
+    MCNAPI void* $ctor(::SentimentQuestionData const& item);
     // NOLINTEND
 };
 

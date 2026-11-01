@@ -10,13 +10,13 @@ struct PushablePreset;
 namespace PushableByEntity::Defaults {
 // static variables
 // NOLINTBEGIN
-MCAPI ::PushablePreset const& BOAT_PRESET();
+MCNAPI ::PushablePreset const& BOAT_PRESET();
 
-MCAPI ::PushablePreset const& DEFAULT_PRESET_WITHOUT_OVERLAP_CHECK();
+MCNAPI ::PushablePreset const& DEFAULT_PRESET_WITHOUT_OVERLAP_CHECK();
 
-MCAPI ::PushablePreset const& DEFAULT_PRESET_WITH_OVERLAP_CHECK();
+MCNAPI ::PushablePreset const& DEFAULT_PRESET_WITH_OVERLAP_CHECK();
 
-MCAPI ::PushablePreset const& MINECART_PRESET();
+MCNAPI ::PushablePreset const& MINECART_PRESET();
 // NOLINTEND
 
 } // namespace PushableByEntity::Defaults

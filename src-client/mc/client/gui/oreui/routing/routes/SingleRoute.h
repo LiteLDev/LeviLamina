@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SingleRoute(
+    MCNAPI SingleRoute(
         ::std::string const&                                                                       route,
         ::std::string const&                                                                       screenId,
         ::std::function<::std::shared_ptr<::AbstractScene>(::SceneFactory&, ::std::string const&)> sceneCreationCallback
@@ -63,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                                                       route,
         ::std::string const&                                                                       screenId,
         ::std::function<::std::shared_ptr<::AbstractScene>(::SceneFactory&, ::std::string const&)> sceneCreationCallback
@@ -73,15 +73,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

@@ -24,16 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Dimension(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
+    MCNAPI Dimension(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
 
-    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
+    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
     // NOLINTEND
 };
 

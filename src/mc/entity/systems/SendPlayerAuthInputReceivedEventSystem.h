@@ -13,7 +13,7 @@ class SendPlayerAuthInputReceivedEventSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doSendPlayerAuthInputReceivedEvent(
+    MCNAPI static void _doSendPlayerAuthInputReceivedEvent(
         ::StrictEntityContext&,
         ::PlayerComponent const& playerComponent,
         ::ActorOwnerComponent&   actorOwnerComponent

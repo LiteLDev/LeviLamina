@@ -39,13 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AdvanceFrameResult $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&);
+    MCNAPI ::AdvanceFrameResult $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&);
 
-    MCAPI void $advanceFrame(::EntityContext& entity) const;
+    MCNAPI void $advanceFrame(::EntityContext& entity) const;
 
-    MCAPI void $advanceLiveFrame(::Actor& actor, ::std::optional<uint64>);
+    MCNAPI void $advanceLiveFrame(::Actor& actor, ::std::optional<uint64>);
 
-    MCAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
+    MCNAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
     // NOLINTEND
 
 public:

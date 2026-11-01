@@ -81,28 +81,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+    MCNAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+    MCNAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $flush(::std::function<void()>&& callback);
+    MCNAPI void $flush(::std::function<void()>&& callback);
 
-    MCAPI void
+    MCNAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );

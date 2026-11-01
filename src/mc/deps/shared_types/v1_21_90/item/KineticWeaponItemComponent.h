@@ -31,19 +31,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool operator==(::SharedTypes::v1_21_90::KineticWeaponItemComponent const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_90::KineticWeaponItemComponent const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

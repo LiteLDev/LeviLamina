@@ -60,15 +60,15 @@ public:
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
-    MCAPI void addMessage(
+    MCNAPI void addMessage(
         ::std::string_view                             msgId,
         ::std::vector<::CommandOutputParameter> const& params,
         ::CommandOutputMessageType                     type
     );
 
-    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
+    MCNAPI void addToResultList(::std::string const& key, ::std::string const& element);
 
-    MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
+    MCNAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
     MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
 
@@ -78,9 +78,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::string> _mDataGetter(::CommandOutput const& payload);
+    MCNAPI static ::std::optional<::std::string> _mDataGetter(::CommandOutput const& payload);
 
-    MCAPI static void _mDataSetter(::CommandOutput& payload, ::std::optional<::std::string> jsonString);
+    MCNAPI static void _mDataSetter(::CommandOutput& payload, ::std::optional<::std::string> jsonString);
     // NOLINTEND
 
 public:

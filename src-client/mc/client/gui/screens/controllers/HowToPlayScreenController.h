@@ -53,33 +53,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HowToPlayScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::HowToPlayTopicIndex topic);
+    MCNAPI HowToPlayScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::HowToPlayTopicIndex topic);
 
-    MCAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
+    MCNAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::HowToPlayTopicIndex topic);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::HowToPlayTopicIndex topic);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI bool $bind(
+    MCNAPI bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,
         ::UIPropertyBag&     bag
     );
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

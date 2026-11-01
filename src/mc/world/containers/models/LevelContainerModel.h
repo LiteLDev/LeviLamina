@@ -61,38 +61,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void containerRemoved();
+    MCNAPI void containerRemoved();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Container* getContainerHelper(::Player& player, ::ActorUniqueID const& actorUniqueId);
+    MCNAPI static ::Container* getContainerHelper(::Player& player, ::ActorUniqueID const& actorUniqueId);
 
-    MCAPI static ::Container*
+    MCNAPI static ::Container*
     getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $releaseResources();
+    MCNAPI void $releaseResources();
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCAPI bool $isValid();
+    MCNAPI bool $isValid();
 
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCAPI void $postInit();
+    MCNAPI void $postInit();
 
-    MCAPI bool $isSlotDisabled(int slot) const;
+    MCNAPI bool $isSlotDisabled(int slot) const;
 
-    MCAPI int $_getContainerOffset() const;
+    MCNAPI int $_getContainerOffset() const;
 
-    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI ::Container* $_getContainer() const;
+    MCNAPI ::Container* $_getContainer() const;
 
 
     // NOLINTEND
@@ -100,6 +100,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

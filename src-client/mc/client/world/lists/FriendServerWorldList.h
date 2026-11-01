@@ -37,28 +37,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FriendServerWorldList(
+    MCNAPI FriendServerWorldList(
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>()>
                                                  getMultiplayerServiceManager,
         ::std::function<bool(::Realms::RealmId)> isRealmJoinable,
         ::std::function<bool()>                  isEditorModeEnabled
     );
 
-    MCAPI void _refreshWorlds();
+    MCNAPI void _refreshWorlds();
 
-    MCAPI ::std::optional<::Network::ServerID> getServerIdByUserId(::std::string const& userId) const;
+    MCNAPI ::std::optional<::Network::ServerID> getServerIdByUserId(::std::string const& userId) const;
 
-    MCAPI ::NetworkWorldInfo const* getWorld(::Network::ServerID const& serverId) const;
+    MCNAPI ::NetworkWorldInfo const* getWorld(::Network::ServerID const& serverId) const;
 
-    MCAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
+    MCNAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
 
-    MCFOLD void userControlledUpdateGameList();
+    MCNAPI void userControlledUpdateGameList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>()>
                                                  getMultiplayerServiceManager,
         ::std::function<bool(::Realms::RealmId)> isRealmJoinable,

@@ -26,11 +26,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCFOLD bool $canDestroy(::ContainerScreenContext const& screenContext) const;
+    MCNAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
 
 
     // NOLINTEND

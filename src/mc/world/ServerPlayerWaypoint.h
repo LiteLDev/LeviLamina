@@ -27,7 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
+    MCNAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
 
 
     // NOLINTEND

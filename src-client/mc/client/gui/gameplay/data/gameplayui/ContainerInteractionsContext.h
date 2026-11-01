@@ -22,13 +22,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ContainerInteractionsContext();
+    MCNAPI ~ContainerInteractionsContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

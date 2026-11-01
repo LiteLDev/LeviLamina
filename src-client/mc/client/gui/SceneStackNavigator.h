@@ -33,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $toMainMenu(::ui::RouteOperation routeOperation);
+    MCNAPI void $toMainMenu(::ui::RouteOperation routeOperation);
     // NOLINTEND
 
 public:

@@ -73,14 +73,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _outputError(::CommandOutput& output, ::Util::ReplacementResults const errorDetails, ::Actor const* entity) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _outputSuccess(::CommandOutput& output, int numItemsDropped);
+    MCNAPI static void _outputSuccess(::CommandOutput& output, int numItemsDropped);
 
     MCAPI static void setup(::CommandRegistry& registry, ::ItemRegistryRef itemRegistry);
     // NOLINTEND
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

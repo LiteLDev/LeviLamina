@@ -15,7 +15,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
+    MCNAPI ::npc::ActionValue& operator=(::std::string_view newName);
     // NOLINTEND
 };
 

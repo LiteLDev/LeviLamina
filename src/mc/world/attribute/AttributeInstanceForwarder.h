@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void removeModifier(::std::shared_ptr<::AttributeModifier> modifier);
+    MCNAPI void removeModifier(::std::shared_ptr<::AttributeModifier> modifier);
     // NOLINTEND
 };

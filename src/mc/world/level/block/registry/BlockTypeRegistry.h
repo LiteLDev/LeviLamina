@@ -54,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -170,64 +170,65 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTypeRegistry();
+    MCNAPI BlockTypeRegistry();
 
-    MCAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+    MCNAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
         ::HashedString const&                        name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,
         bool                                         logNotFound
     ) const;
 
-    MCAPI ::Block const* _lookupByNameImplSetNewBlockStates(
+    MCNAPI ::Block const* _lookupByNameImplSetNewBlockStates(
         ::Block const&                                                         block,
         ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void addBlocksToValidator(::LinkedAssetValidator& validator, ::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI void addBlocksToValidator(::LinkedAssetValidator& validator, ::BaseGameVersion const& baseGameVersion) const;
 #endif
 
-    MCAPI void checkBlockPermutationCap() const;
+    MCNAPI void checkBlockPermutationCap() const;
 
-    MCAPI uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion) const;
+    MCNAPI uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion) const;
 
 #ifdef LL_PLAT_C
     MCAPI void finalizeBlockComponentStorageForRendering(::brstd::function_ref<void(::BlockType&)> finalizer);
 #endif
 
-    MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
+    MCNAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
 #ifdef LL_PLAT_C
-    MCAPI void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
+    MCNAPI void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
 #endif
 
     MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
-    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
+    MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasPostSplitBlockNames(::HashedString const& oldName) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::HashedString const* getComplexAliasPreSplitBlockName(::HashedString const& postSplitName) const;
+    MCNAPI ::HashedString const* getComplexAliasPreSplitBlockName(::HashedString const& postSplitName) const;
 #endif
 
     MCAPI ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound = false) const;
 
 #ifdef LL_PLAT_C
-    MCAPI int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
+    MCNAPI int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
 #endif
 
     MCAPI bool isComplexAliasBlock(::HashedString const& blockName) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
+    MCNAPI bool
+    isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
 #endif
 
-    MCAPI void prepareBlocks(uint latestUpdaterVersion);
+    MCNAPI void prepareBlocks(uint latestUpdaterVersion);
 
-    MCAPI void registerAlias(::HashedString const& alias, ::HashedString const& name);
+    MCNAPI void registerAlias(::HashedString const& alias, ::HashedString const& name);
 
-    MCAPI void registerComplexAlias(
+    MCNAPI void registerComplexAlias(
         ::HashedString const&                                                alias,
         ::std::function<::Block const*(int)>                                 callback,
         ::std::vector<::std::reference_wrapper<::HashedString const>> const& postSplitBlockNames,
@@ -237,9 +238,9 @@ public:
         int                                                                  startVariant
     );
 
-    MCAPI void unregisterBlocks();
+    MCNAPI void unregisterBlocks();
 
-    MCAPI ~BlockTypeRegistry();
+    MCNAPI ~BlockTypeRegistry();
     // NOLINTEND
 
 public:
@@ -251,12 +252,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

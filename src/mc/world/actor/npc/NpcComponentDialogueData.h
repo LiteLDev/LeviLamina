@@ -51,27 +51,27 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::std::string const& $getDialogueText() const;
+    MCNAPI ::std::string const& $getDialogueText() const;
 
-    MCAPI ::std::string const& $getRawDialogueText() const;
+    MCNAPI ::std::string const& $getRawDialogueText() const;
 
-    MCAPI ::std::string const& $getNameText() const;
+    MCNAPI ::std::string const& $getNameText() const;
 
-    MCAPI ::std::string const& $getNameRawText() const;
+    MCNAPI ::std::string const& $getNameRawText() const;
 
-    MCFOLD ::std::string const& $getSceneName() const;
+    MCNAPI ::std::string const& $getSceneName() const;
 
-    MCFOLD ::npc::ActionContainer* $getActionsContainer();
+    MCNAPI ::npc::ActionContainer* $getActionsContainer();
 
-    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
+    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
 
-    MCFOLD ::ActorUniqueID $getActorUniqueID();
+    MCNAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCFOLD ::Actor* $getActor();
+    MCNAPI ::Actor* $getActor();
 
-    MCFOLD ::Actor const* $getActor() const;
+    MCNAPI ::Actor const* $getActor() const;
 
-    MCFOLD bool $isRemoteFire();
+    MCNAPI bool $isRemoteFire();
 #endif
 
 
@@ -80,6 +80,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

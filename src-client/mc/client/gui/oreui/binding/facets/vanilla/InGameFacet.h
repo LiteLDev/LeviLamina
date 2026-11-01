@@ -42,30 +42,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InGameFacet(
+    MCNAPI InGameFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
         ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
 
-    MCFOLD ::std::string const& getCurrentLevelId() const;
+    MCNAPI ::std::string const& getCurrentLevelId() const;
 
-    MCFOLD bool getIsHosting() const;
+    MCNAPI bool getIsHosting() const;
 
-    MCFOLD bool getIsInGame() const;
+    MCNAPI bool getIsInGame() const;
 
-    MCFOLD bool getIsInMultiplayerSession() const;
+    MCNAPI bool getIsInMultiplayerSession() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
         ::std::function<::ClientLevel*()>                                  getCurrentLevel
     );
@@ -74,7 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

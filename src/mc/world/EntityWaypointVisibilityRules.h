@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator()(::Actor const& actor) const;
+    MCNAPI bool operator()(::Actor const& actor) const;
     // NOLINTEND
 };

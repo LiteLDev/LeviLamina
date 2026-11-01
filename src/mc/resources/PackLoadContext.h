@@ -33,34 +33,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackLoadContext(
+    MCNAPI PackLoadContext(
         ::PackInstance const&                              pack,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
 #ifdef LL_PLAT_C
-    MCAPI PackLoadContext(
+    MCNAPI PackLoadContext(
         ::PackLoadInfo const&                              packLoadInfo,
         ::MinEngineVersion const&                          minEngineVersion,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 #endif
 
-    MCAPI ~PackLoadContext();
+    MCNAPI ~PackLoadContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::PackInstance const&                              pack,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::PackLoadInfo const&                              packLoadInfo,
         ::MinEngineVersion const&                          minEngineVersion,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
@@ -71,6 +71,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

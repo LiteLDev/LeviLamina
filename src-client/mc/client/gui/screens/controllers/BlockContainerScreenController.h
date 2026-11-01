@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockContainerScreenController(
+    MCNAPI BlockContainerScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -62,17 +62,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 
 public:

@@ -34,16 +34,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initFromDefinition(::Actor const& actor);
+    MCNAPI void initFromDefinition(::Actor const& actor);
 
-    MCAPI ::TrailComponent& operator=(::TrailComponent&&);
+    MCNAPI ::TrailComponent& operator=(::TrailComponent&&);
 
-    MCAPI ~TrailComponent();
+    MCNAPI ~TrailComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -44,20 +44,20 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static bool canAttachToBlock(::BlockPos const& blockPos, ::BlockSource const& region);
+    MCNAPI static bool canAttachToBlock(::BlockPos const& blockPos, ::BlockSource const& region);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const*, ::ItemDescriptor const& instance) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const*, ::ItemDescriptor const& instance) const;
 
-    MCFOLD bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,
@@ -72,6 +72,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

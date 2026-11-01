@@ -36,7 +36,7 @@ namespace ui { class ScreenTechStackSelector; }
 namespace OreUI::RouterConfigurationFactory {
 // functions
 // NOLINTBEGIN
-MCAPI ::OreUI::RouterConfiguration createRouterConfiguration(
+MCNAPI ::OreUI::RouterConfiguration createRouterConfiguration(
     ::ResourcePackManager&                                   resourcePackManager,
     ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&      appPackageFileAccess,
     ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const& fileSystem,

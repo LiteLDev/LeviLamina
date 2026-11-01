@@ -16,6 +16,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setSlotFromEquipmentSlotName(::std::string const& equipmentSlotName);
+    MCNAPI void setSlotFromEquipmentSlotName(::std::string const& equipmentSlotName);
     // NOLINTEND
 };

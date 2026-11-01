@@ -21,13 +21,13 @@ struct VehicleComponent;
 namespace ControlledByLocalInstanceSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void _addOrRemoveCBLI(
+MCNAPI void _addOrRemoveCBLI(
     ::StrictEntityContext const&                                  entity,
     ::EntityModifier<::ControlledByLocalInstanceComponent> const& modifier,
     bool                                                          isLocallyControlled
 );
 
-MCAPI void _calculateBoatControlledByLocalInstanceSystem(
+MCNAPI void _calculateBoatControlledByLocalInstanceSystem(
     ::StrictEntityContext const& entity,
     ::VehicleComponent const&    vehicleComponent,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
@@ -40,7 +40,7 @@ MCAPI void _calculateBoatControlledByLocalInstanceSystem(
     )
 );
 
-MCAPI void _calculateHorseControlledByLocalInstanceSystem(
+MCNAPI void _calculateHorseControlledByLocalInstanceSystem(
     ::StrictEntityContext const&    entity,
     ::VehicleComponent const&       vehicleComponent,
     ::ActorDataFlagComponent const& actorData,
@@ -54,24 +54,24 @@ MCAPI void _calculateHorseControlledByLocalInstanceSystem(
     )
 );
 
-MCFOLD void setControlledByLocalInstanceClient(
+MCNAPI void setControlledByLocalInstanceClient(
     ::StrictEntityContext const&                                  entity,
     ::EntityModifier<::ControlledByLocalInstanceComponent> const& modifier
 );
 
-MCAPI void setControlledByLocalInstanceServer(
+MCNAPI void setControlledByLocalInstanceServer(
     ::StrictEntityContext const&                                  entity,
     ::EntityModifier<::ControlledByLocalInstanceComponent> const& modifier
 );
 
-MCAPI void setVehicleControlledByLocalInstanceClient(
+MCNAPI void setVehicleControlledByLocalInstanceClient(
     ::StrictEntityContext const&                  entity,
     ::std::optional<::StrictEntityContext> const& controllingPlayer,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& playerView,
     ::EntityModifier<::ControlledByLocalInstanceComponent> const&                                           modifier
 );
 
-MCAPI void setVehicleControlledByLocalInstanceServer(
+MCNAPI void setVehicleControlledByLocalInstanceServer(
     ::StrictEntityContext const&                  entity,
     ::std::optional<::StrictEntityContext> const& controllingPlayer,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& playerView,

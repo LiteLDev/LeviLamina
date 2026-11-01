@@ -23,9 +23,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
 
     // NOLINTEND

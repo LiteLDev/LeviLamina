@@ -20,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerBlockProperty(::ServerBlockProperty const& other);
+    MCNAPI ServerBlockProperty(::ServerBlockProperty const& other);
 
-    MCAPI ::ServerBlockProperty& operator=(::ServerBlockProperty const& other);
+    MCNAPI ::ServerBlockProperty& operator=(::ServerBlockProperty const& other);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerBlockProperty const& other);
+    MCNAPI void* $ctor(::ServerBlockProperty const& other);
     // NOLINTEND
 };

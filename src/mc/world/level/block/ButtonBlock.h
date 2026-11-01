@@ -95,53 +95,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ButtonBlock(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
+    MCNAPI ButtonBlock(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
 
-    MCAPI void
+    MCNAPI void
     _buttonUnpressed(::BlockSource& region, ::Block const& buttonBlock, ::Vec3 const& pos, ::Actor* sourceActor) const;
 
-    MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
+    MCNAPI void
     buttonPressed(::BlockSource& region, ::Block const& buttonBlock, ::Vec3 const& pos, ::Actor* sourceActor) const;
 
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canAttachTo(::BlockSource& region, ::BlockPos const& pos, uchar facing);
+    MCNAPI static bool canAttachTo(::BlockSource& region, ::BlockPos const& pos, uchar facing);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&                                  pos,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::AABB const& $getUIShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getUIShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI void $addAABBs(
+    MCNAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -149,13 +149,13 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -163,23 +163,23 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor&) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor&) const;
 
-    MCAPI bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
+    MCNAPI bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCNAPI bool $canSpawnOn(::Actor*) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
+    MCNAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
 
 
     // NOLINTEND
@@ -187,6 +187,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

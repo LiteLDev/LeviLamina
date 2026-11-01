@@ -67,15 +67,15 @@ public:
 
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
-    MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::HashedString getHashedPath() const;
+    MCNAPI ::HashedString getHashedPath() const;
 
-    MCAPI bool operator==(::ResourceLocation const& rhs) const;
+    MCNAPI bool operator==(::ResourceLocation const& rhs) const;
 #endif
 
-    MCAPI void setRelativePath(::Core::PathBuffer<::std::string> const& path);
+    MCNAPI void setRelativePath(::Core::PathBuffer<::std::string> const& path);
 
     MCAPI ~ResourceLocation();
     // NOLINTEND

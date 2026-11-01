@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AtlasTileCaptureDescription(::AtlasTileCaptureDescription const& description);
+    MCNAPI AtlasTileCaptureDescription(::AtlasTileCaptureDescription const& description);
 
     MCAPI ~AtlasTileCaptureDescription();
     // NOLINTEND
@@ -34,7 +34,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AtlasTileCaptureDescription const& description);
+    MCNAPI void* $ctor(::AtlasTileCaptureDescription const& description);
     // NOLINTEND
 
 public:

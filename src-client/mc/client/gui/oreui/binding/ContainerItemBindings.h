@@ -49,15 +49,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerItemBindings(::OreUI::Detail::IPropertyObject* parent, ::GameplayUI::ContainerItem item);
+    MCNAPI ContainerItemBindings(::OreUI::Detail::IPropertyObject* parent, ::GameplayUI::ContainerItem item);
 
-    MCAPI void update(::GameplayUI::ContainerItem const& item);
+    MCNAPI void update(::GameplayUI::ContainerItem const& item);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::Detail::IPropertyObject* parent, ::GameplayUI::ContainerItem item);
+    MCNAPI void* $ctor(::OreUI::Detail::IPropertyObject* parent, ::GameplayUI::ContainerItem item);
     // NOLINTEND
 };
 

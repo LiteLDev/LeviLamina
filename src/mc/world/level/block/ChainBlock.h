@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
 
     // NOLINTEND
@@ -34,6 +34,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

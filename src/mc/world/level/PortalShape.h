@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void createPortalBlocks(::WorldChangeTransaction& transaction) const;
+    MCNAPI void createPortalBlocks(::WorldChangeTransaction& transaction) const;
 
     MCAPI void evaluate(::BlockPos const& originalPosition, ::BlockSource const& source);
 
-    MCAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
+    MCNAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
 
-    MCAPI void updateNeighboringBlocks(
+    MCNAPI void updateNeighboringBlocks(
         ::BlockSource&                  source,
         ::WorldChangeTransaction const& transaction,
         ::Vec3 const&                   perpendicularAxis
@@ -47,7 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int
+    MCNAPI static int
     _getDistanceUntilEdge(::BlockPos const& pos, ::Facing::Name direction, ::BlockSource const& source);
     // NOLINTEND
 };

@@ -9,6 +9,6 @@ struct AdultRidingHeightOffsetComponent : public ::FloatComponent {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& SITTING_ANIMATION_OFFSET();
+    MCNAPI static float const& SITTING_ANIMATION_OFFSET();
     // NOLINTEND
 };

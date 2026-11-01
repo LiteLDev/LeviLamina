@@ -32,7 +32,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI Shore(::BiomeRegistry const& registry, ::Biome const& defaultShore);
+    MCNAPI Shore(::BiomeRegistry const& registry, ::Biome const& defaultShore);
 #endif
     // NOLINTEND
 
@@ -40,7 +40,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::BiomeRegistry const& registry, ::Biome const& defaultShore);
+    MCNAPI void* $ctor(::BiomeRegistry const& registry, ::Biome const& defaultShore);
 #endif
     // NOLINTEND
 };

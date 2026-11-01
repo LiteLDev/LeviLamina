@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerInputTick(::EntityContext const& entity);
+    MCNAPI explicit PlayerInputTick(::EntityContext const& entity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityContext const& entity);
+    MCNAPI void* $ctor(::EntityContext const& entity);
     // NOLINTEND
 };

@@ -62,27 +62,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $preRenderSetup(::UIRenderContext& renderContext);
+    MCNAPI void $preRenderSetup(::UIRenderContext& renderContext);
 
-    MCFOLD bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
-    MCFOLD ::UIBatchType $getBatchType() const;
+    MCNAPI ::UIBatchType $getBatchType() const;
 
-    MCFOLD int $getCustomId() const;
+    MCNAPI int $getCustomId() const;
 
-    MCFOLD int $getNumRenderPasses() const;
+    MCNAPI int $getNumRenderPasses() const;
 
-    MCAPI ::ResourceLocation $getResourceLocation(int textureSlot, int pass) const;
+    MCNAPI ::ResourceLocation $getResourceLocation(int textureSlot, int pass) const;
 
-    MCFOLD ::UIMaterialType $getUIMaterialType(int pass) const;
+    MCNAPI ::UIMaterialType $getUIMaterialType(int pass) const;
 
-    MCFOLD bool $getRequiresPreRenderSetup(int pass) const;
+    MCNAPI bool $getRequiresPreRenderSetup(int pass) const;
 
-    MCFOLD void $onVisibilityChanged(bool visible);
+    MCNAPI void $onVisibilityChanged(bool visible);
 
-    MCFOLD void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
+    MCNAPI void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
 
-    MCFOLD ::UIItemRenderInfo $getItemRenderInfo() const;
+    MCNAPI ::UIItemRenderInfo $getItemRenderInfo() const;
     // NOLINTEND
 
 public:

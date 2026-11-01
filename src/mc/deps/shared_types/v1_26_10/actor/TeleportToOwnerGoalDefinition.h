@@ -24,27 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TeleportToOwnerGoalDefinition();
+    MCNAPI TeleportToOwnerGoalDefinition();
 
-    MCFOLD bool operator==(::SharedTypes::v1_26_10::TeleportToOwnerGoalDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_10::TeleportToOwnerGoalDefinition const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

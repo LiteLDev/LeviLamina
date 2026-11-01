@@ -41,22 +41,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ModalScreenData(::ModalScreenData const&);
+    MCNAPI ModalScreenData(::ModalScreenData const&);
 
-    MCAPI ::ModalScreenData& operator=(::ModalScreenData&&);
+    MCNAPI ::ModalScreenData& operator=(::ModalScreenData&&);
 
-    MCAPI ~ModalScreenData();
+    MCNAPI ~ModalScreenData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ModalScreenData const&);
+    MCNAPI void* $ctor(::ModalScreenData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

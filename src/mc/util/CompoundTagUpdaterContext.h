@@ -43,13 +43,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Impl();
+        MCNAPI Impl();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -62,6 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTagUpdaterResult update(::CompoundTag& tag, uint version) const;
+    MCNAPI ::CompoundTagUpdaterResult update(::CompoundTag& tag, uint version) const;
     // NOLINTEND
 };

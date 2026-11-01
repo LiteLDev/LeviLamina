@@ -19,15 +19,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
 
-    MCFOLD bool $isSerializable() const;
+    MCNAPI bool $isSerializable() const;
 
 
     // NOLINTEND
@@ -35,6 +35,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

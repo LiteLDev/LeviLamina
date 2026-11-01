@@ -14,10 +14,10 @@ namespace SculkShriekerBlockActorInternal { struct NearbyPlayer; }
 namespace SculkShriekerBlockActorInternal {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::SculkShriekerBlockActorInternal::NearbyPlayer>
+MCNAPI ::std::vector<::SculkShriekerBlockActorInternal::NearbyPlayer>
 _getNearbyPlayers(::BlockSource& region, ::BlockPos pos, float radius, ::Actor const* except);
 
-MCAPI void _shriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
+MCNAPI void _shriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
 // NOLINTEND
 
 } // namespace SculkShriekerBlockActorInternal

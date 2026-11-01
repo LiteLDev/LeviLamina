@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setError(::bx::ErrorResult _errorResult, ::bx::StringView const& _msg);
+    MCNAPI void setError(::bx::ErrorResult _errorResult, ::bx::StringView const& _msg);
     // NOLINTEND
 };
 

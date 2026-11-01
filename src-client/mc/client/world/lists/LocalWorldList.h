@@ -64,27 +64,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LocalWorldList(
+    MCNAPI LocalWorldList(
         ::ILevelListCache&                                   levelListCache,
         ::std::shared_ptr<::OptionRegistry>                  options,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
         bool                                                 isEditorMode
     );
 
-    MCAPI void _checkIfOtherStorageContainsWorlds();
+    MCNAPI void _checkIfOtherStorageContainsWorlds();
 
-    MCAPI void
+    MCNAPI void
     _filterWorlds(::std::vector<::LevelSummary>& worlds, ::TrialManager const& trialManager, bool isEditorMode);
 
-    MCAPI void onEntitlementRefresh();
+    MCNAPI void onEntitlementRefresh();
 
-    MCAPI void update(::TrialManager const& trialManager);
+    MCNAPI void update(::TrialManager const& trialManager);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ILevelListCache&                                   levelListCache,
         ::std::shared_ptr<::OptionRegistry>                  options,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
@@ -95,15 +95,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
+    MCNAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
-    MCAPI void $onLevelUpdated(::std::string const& levelId);
+    MCNAPI void $onLevelUpdated(::std::string const& levelId);
 
-    MCAPI void $onLevelDeleted(::std::string const& levelId);
+    MCNAPI void $onLevelDeleted(::std::string const& levelId);
 
-    MCAPI void $onSummaryUpdated(::std::string const& levelId);
+    MCNAPI void $onSummaryUpdated(::std::string const& levelId);
 
-    MCAPI void $onStorageChanged();
+    MCNAPI void $onStorageChanged();
     // NOLINTEND
 };
 

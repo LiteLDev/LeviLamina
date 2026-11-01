@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduHeadlessPauseMenuScreenController(
+    MCNAPI EduHeadlessPauseMenuScreenController(
         ::std::shared_ptr<::PauseScreenModel> model,
         ::std::vector<::ActorUniqueID> const& clientIds
     );
@@ -37,13 +37,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, ::std::vector<::ActorUniqueID> const& clientIds);
+    MCNAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, ::std::vector<::ActorUniqueID> const& clientIds);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 
 public:

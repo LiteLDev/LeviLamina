@@ -49,32 +49,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsStoriesReportsQueriesFacet(
+    MCNAPI RealmsStoriesReportsQueriesFacet(
         ::std::shared_ptr<::Realms::Stories::RealmsFeedModeration> feedModeration,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::Realms::Stories::DeletionStatus _getHasDeleted() const;
+    MCNAPI ::Realms::Stories::DeletionStatus _getHasDeleted() const;
 
-    MCAPI int _getPageLength() const;
+    MCNAPI int _getPageLength() const;
 
-    MCAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
 
-    MCAPI int _getStoryFeedTotalStories() const;
+    MCNAPI int _getStoryFeedTotalStories() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::Stories::RealmsFeedModeration> feedModeration,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
@@ -85,7 +85,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

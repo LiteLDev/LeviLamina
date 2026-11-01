@@ -87,28 +87,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     BindingRegistryFactory(::OreUI::GameDependencies gameDependencies, ::OreUI::ClientDependencies clientDependencies);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::function<void(
+    MCNAPI static ::std::vector<::std::function<void(
         ::OreUI::Detail::CommandRegistry&,
         ::OreUI::Detail::BindingRegistryFactory&,
         ::OreUI::FocusShortcutRegistry&
     )>>&
     _commandStorage();
 
-    MCAPI static ::std::vector<::std::function<void(
+    MCNAPI static ::std::vector<::std::function<void(
         ::OreUI::Experimental::Detail::GameplayModelRegistry&,
         ::OreUI::Detail::BindingRegistryFactory&,
         ::OreUI::FocusShortcutRegistry&
     )>>&
     _gameplayModelStorage();
 
-    MCAPI static ::std::vector<::std::function<void(
+    MCNAPI static ::std::vector<::std::function<void(
         ::OreUI::Detail::QueryRegistry&,
         ::OreUI::Detail::BindingRegistryFactory&,
         ::OreUI::FocusShortcutRegistry&
@@ -119,7 +119,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies gameDependencies, ::OreUI::ClientDependencies clientDependencies);
+    MCNAPI void* $ctor(::OreUI::GameDependencies gameDependencies, ::OreUI::ClientDependencies clientDependencies);
     // NOLINTEND
 };
 

@@ -22,7 +22,7 @@ struct LocalSpatialEntityFetcherFactoryComponent;
 namespace DolphinBoostSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickFindDolphins(
+MCNAPI void _tickFindDolphins(
     ::StrictEntityContext const&                                             context,
     ::AABBShapeComponent const&                                              aabbShapeComponent,
     ::DimensionTypeComponent const&                                          dimensionComponent,
@@ -32,7 +32,7 @@ MCAPI void _tickFindDolphins(
     ::LocalSpatialEntityFetcher&                                             spatialEntityFetcher
 );
 
-MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace DolphinBoostSystem

@@ -56,19 +56,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
+    MCNAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
 
-    MCAPI void finalize(
+    MCNAPI void finalize(
         ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry> const& registry,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                  parameterCache
     );
 
-    MCAPI bool hasRegisteredEventHandler(
+    MCNAPI bool hasRegisteredEventHandler(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes eventType,
         ::BlockType const&                                            baseBlock
     ) const;
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>
     tryGetComponentsToExecute(::BlockType const& baseBlock) const;

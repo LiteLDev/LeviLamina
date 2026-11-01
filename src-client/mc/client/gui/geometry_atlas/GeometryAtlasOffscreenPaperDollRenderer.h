@@ -47,16 +47,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $beginCapturePaperDollImage(
+    MCNAPI void $beginCapturePaperDollImage(
         uint                                                         screenshotWidth,
         uint                                                         screenshotHeight,
         ::std::string const&                                         skinName,
         ::std::vector<::GeometryAtlas::PaperdollCaptureFrame> const& frames
     );
 
-    MCAPI bool $isCaptureReady() const;
+    MCNAPI bool $isCaptureReady() const;
 
-    MCAPI ::cg::ImageBuffer $retrieveCaptureAsImageBuffer() const;
+    MCNAPI ::cg::ImageBuffer $retrieveCaptureAsImageBuffer() const;
     // NOLINTEND
 
 public:

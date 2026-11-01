@@ -121,21 +121,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI MemberDescriptor();
+        MCNAPI MemberDescriptor();
 
-        MCAPI ~MemberDescriptor();
+        MCNAPI ~MemberDescriptor();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -193,13 +193,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~TypeDescriptor();
+        MCNAPI ~TypeDescriptor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -243,7 +243,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     map(::cereal::internal::BasicSchema const& schema,
         ::entt::meta_any&                      src,
         ::entt::meta_any&                      dst,
@@ -253,13 +253,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isGreedy(::entt::meta_ctx const& ctx) const;
+    MCNAPI bool $isGreedy(::entt::meta_ctx const& ctx) const;
 
-    MCFOLD ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
+    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
 
-    MCFOLD bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    MCNAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
-    MCFOLD ::cereal::internal::BasicSchema const& $doUnwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
+    MCNAPI ::cereal::internal::BasicSchema const& $doUnwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
 
 
     // NOLINTEND

@@ -30,31 +30,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextureContainer(::cg::ImageBuffer&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
+    MCNAPI TextureContainer(::cg::ImageBuffer&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
 
-    MCAPI TextureContainer(::std::shared_ptr<::cg::ImageResource>&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
+    MCNAPI TextureContainer(::std::shared_ptr<::cg::ImageResource>&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
 
-    MCAPI TextureContainer(::std::vector<::cg::ImageBuffer>&& rhs, ::mce::TextureDescription const& textureDescription);
+    MCNAPI
+    TextureContainer(::std::vector<::cg::ImageBuffer>&& rhs, ::mce::TextureDescription const& textureDescription);
 
-    MCAPI ::mce::TextureContainer& operator=(::cg::ImageBuffer&& rhs);
+    MCNAPI ::mce::TextureContainer& operator=(::cg::ImageBuffer&& rhs);
 
-    MCAPI ~TextureContainer();
+    MCNAPI ~TextureContainer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cg::ImageBuffer&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
+    MCNAPI void* $ctor(::cg::ImageBuffer&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
 
-    MCAPI void* $ctor(::std::shared_ptr<::cg::ImageResource>&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
+    MCNAPI void* $ctor(::std::shared_ptr<::cg::ImageResource>&& rhs, ::mce::AllowDroppingMips allowDroppingMips);
 
-    MCAPI void* $ctor(::std::vector<::cg::ImageBuffer>&& rhs, ::mce::TextureDescription const& textureDescription);
+    MCNAPI void* $ctor(::std::vector<::cg::ImageBuffer>&& rhs, ::mce::TextureDescription const& textureDescription);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

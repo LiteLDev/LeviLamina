@@ -67,13 +67,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Dependencies();
+        MCNAPI ~Dependencies();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -195,9 +195,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
+    MCNAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
 
-    MCAPI ::std::shared_ptr<::IPacketSecurityController> _createPacketSecurityController(::NetworkIdentifier const& id);
+    MCNAPI ::std::shared_ptr<::IPacketSecurityController>
+    _createPacketSecurityController(::NetworkIdentifier const& id);
 
     MCAPI void _sendInternal(::NetworkIdentifier const& id, ::Packet const& packet, ::std::string const& data);
 
@@ -209,60 +210,60 @@ public:
     );
 #endif
 
-    MCAPI void disconnect();
+    MCNAPI void disconnect();
 
-    MCAPI void enableAsyncFlush(::NetworkIdentifier const& id);
+    MCNAPI void enableAsyncFlush(::NetworkIdentifier const& id);
 
     MCAPI ::NetworkPeer* getPeerForUser(::NetworkIdentifier const& id);
 
-    MCAPI bool isServer() const;
+    MCNAPI bool isServer() const;
 
     MCAPI void runEvents(bool networkIsCritical);
 
     MCAPI void send(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
 
-    MCAPI void
+    MCNAPI void
     setCloseConnection(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason closeConnectionReason);
 
-    MCAPI void update(::std::vector<::WeakEntityRef> const* userList);
+    MCNAPI void update(::std::vector<::WeakEntityRef> const* userList);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetworkSystem::Dependencies&& deps);
+    MCNAPI void* $ctor(::NetworkSystem::Dependencies&& deps);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $useIPv4Only() const;
+    MCNAPI bool $useIPv4Only() const;
 
-    MCAPI bool $useIPv6Only() const;
+    MCNAPI bool $useIPv6Only() const;
 
-    MCAPI ushort $getDefaultGamePort() const;
+    MCNAPI ushort $getDefaultGamePort() const;
 
-    MCAPI ushort $getDefaultGamePortv6() const;
+    MCNAPI ushort $getDefaultGamePortv6() const;
 
-    MCAPI void $_onDisable();
+    MCNAPI void $_onDisable();
 
-    MCAPI void $_onEnable();
+    MCNAPI void $_onEnable();
 
-    MCAPI bool $onNewIncomingConnection(
+    MCNAPI bool $onNewIncomingConnection(
         ::NetworkIdentifier const&         id,
         ::std::shared_ptr<::NetworkPeer>&& peer,
         ::std::optional<::WebKey>          identityPublicKey
     );
 
-    MCAPI bool $onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
+    MCNAPI bool $onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
 
-    MCAPI void $onConnectionClosed(
+    MCNAPI void $onConnectionClosed(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
         ::std::string const&                     messageFromServer,
@@ -271,14 +272,14 @@ public:
         ::Json::Value const&                     sessionSummary
     );
 
-    MCAPI void $onAllConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage);
+    MCNAPI void $onAllConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage);
 
-    MCAPI void
+    MCNAPI void
     $onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage);
 
-    MCAPI void $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason);
+    MCNAPI void $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason);
 
-    MCAPI void $onWebsocketRequest(
+    MCNAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,
         ::std::string const&    payload,
         ::std::function<void()> errorCallback

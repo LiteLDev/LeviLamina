@@ -15,7 +15,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canBeOriginalSurface(bool) const;
+    MCNAPI bool $canBeOriginalSurface(bool) const;
 
 
     // NOLINTEND
@@ -23,6 +23,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

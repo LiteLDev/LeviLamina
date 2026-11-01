@@ -25,25 +25,25 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::CameraAimAssist::PriorityCategory const& getPriorityCategory(::HashedString const& id) const;
+    MCNAPI ::CameraAimAssist::PriorityCategory const& getPriorityCategory(::HashedString const& id) const;
 #endif
 
-    MCAPI ::CameraAimAssist::PriorityPreset const& getPriorityPreset(::HashedString const& id) const;
+    MCNAPI ::CameraAimAssist::PriorityPreset const& getPriorityPreset(::HashedString const& id) const;
 
 #ifdef LL_PLAT_C
-    MCFOLD bool hasPriorityPreset(::HashedString const& id) const;
+    MCNAPI bool hasPriorityPreset(::HashedString const& id) const;
 
-    MCAPI void loadRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
+    MCNAPI void loadRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
 #endif
 
-    MCAPI void updateRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
+    MCNAPI void updateRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
 
-    MCAPI ~CameraAimAssistRegistryComponent();
+    MCNAPI ~CameraAimAssistRegistryComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

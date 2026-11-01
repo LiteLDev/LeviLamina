@@ -280,149 +280,149 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Mob(::ILevel& level, ::EntityContext& entityContext);
+    MCNAPI Mob(::ILevel& level, ::EntityContext& entityContext);
 
-    MCAPI
+    MCNAPI
     Mob(::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext);
 
-    MCAPI ::BuiltInMobComponents _addBuiltInMobComponents();
+    MCNAPI ::BuiltInMobComponents _addBuiltInMobComponents();
 
-    MCAPI void _doSoulSpeedParticleEffect();
+    MCNAPI void _doSoulSpeedParticleEffect();
 
-    MCAPI void _doSprintParticleEffect();
+    MCNAPI void _doSprintParticleEffect();
 
-    MCAPI bool _initHardCodedComponents(bool isClientSide);
+    MCNAPI bool _initHardCodedComponents(bool isClientSide);
 
-    MCAPI void _initialize(::EntityContext& entityContext, bool isClientSide);
+    MCNAPI void _initialize(::EntityContext& entityContext, bool isClientSide);
 
-    MCAPI bool _isDoingMaceSmashAttack() const;
+    MCNAPI bool _isDoingMaceSmashAttack() const;
 
-    MCAPI void _processSoulSpeed();
+    MCNAPI void _processSoulSpeed();
 
-    MCAPI void _updateSprintingState();
+    MCNAPI void _updateSprintingState();
 
-    MCAPI void
+    MCNAPI void
     addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
 
-    MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
+    MCNAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
-    MCAPI float calculateAttackDamage(::Actor const& target, ::CalculateAttackDamageSettings const& settings) const;
+    MCNAPI float calculateAttackDamage(::Actor const& target, ::CalculateAttackDamageSettings const& settings) const;
 
-    MCAPI ::std::optional<float> checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
+    MCNAPI ::std::optional<float> checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
 
-    MCAPI void clearMainHandSlot();
+    MCNAPI void clearMainHandSlot();
 
-    MCAPI void containerChanged(int iSlot);
+    MCNAPI void containerChanged(int iSlot);
 
-    MCAPI void createAI(::std::vector<::LegacyGoalDefinition> goals);
+    MCNAPI void createAI(::std::vector<::LegacyGoalDefinition> goals);
 
-    MCAPI void dropContainer();
+    MCNAPI void dropContainer();
 
-    MCAPI void emitJumpPreventedEvent(::BlockPos const& pos);
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::vector<int> getAllArmorID() const;
-#endif
-
-    MCAPI int getArmorTypeHash();
-
-    MCAPI int getCarriedItemKnockbackBonus() const;
-
-    MCAPI float getDamageAfterArmorReduction(::ActorDamageSource const& source, float damage) const;
-
-    MCAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
-
-    MCAPI float getJumpEffectAmplifierValue();
-
-    MCAPI float getJumpMultiplier();
-
-    MCAPI ::JumpPreventionResult getJumpPrevention();
-
-    MCAPI int getModifiedSwingDuration(::HandSlot handSlot) const;
-
-    MCAPI int getNoActionTime() const;
+    MCNAPI void emitJumpPreventedEvent(::BlockPos const& pos);
 
 #ifdef LL_PLAT_C
-    MCAPI float getPassengerLockedBodyRot() const;
-
-    MCAPI float getPassengerRotLimit() const;
+    MCNAPI ::std::vector<int> getAllArmorID() const;
 #endif
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getSpawnSound() const;
+    MCNAPI int getArmorTypeHash();
+
+    MCNAPI int getCarriedItemKnockbackBonus() const;
+
+    MCNAPI float getDamageAfterArmorReduction(::ActorDamageSource const& source, float damage) const;
+
+    MCNAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
+
+    MCNAPI float getJumpEffectAmplifierValue();
+
+    MCNAPI float getJumpMultiplier();
+
+    MCNAPI ::JumpPreventionResult getJumpPrevention();
+
+    MCNAPI int getModifiedSwingDuration(::HandSlot handSlot) const;
+
+    MCNAPI int getNoActionTime() const;
 
 #ifdef LL_PLAT_C
-    MCAPI float getSwimSpeedMultiplier() const;
+    MCNAPI float getPassengerLockedBodyRot() const;
+
+    MCNAPI float getPassengerRotLimit() const;
 #endif
 
-    MCAPI int getToughnessValue() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent getSpawnSound() const;
 
-    MCAPI ::TravelType getTravelType();
+#ifdef LL_PLAT_C
+    MCNAPI float getSwimSpeedMultiplier() const;
+#endif
+
+    MCNAPI int getToughnessValue() const;
+
+    MCNAPI ::TravelType getTravelType();
 
     MCAPI float getYBodyRotation() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::InterpolationPair getYBodyRotationsNewOld() const;
+    MCNAPI ::InterpolationPair getYBodyRotationsNewOld() const;
 #endif
 
-    MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
+    MCNAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
-    MCAPI bool isAbleToMove() const;
+    MCNAPI bool isAbleToMove() const;
 
-    MCAPI bool isTransitioningSitting() const;
+    MCNAPI bool isTransitioningSitting() const;
 
-    MCAPI void joinCaravan(::Mob* head);
+    MCNAPI void joinCaravan(::Mob* head);
 
-    MCAPI void jumpFromGround();
+    MCNAPI void jumpFromGround();
 
-    MCAPI void leaveCaravan();
+    MCNAPI void leaveCaravan();
 
-    MCAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
+    MCNAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
 
-    MCAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCNAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCAPI void resetAttributes();
+    MCNAPI void resetAttributes();
 
-    MCAPI void resetNoActionTime();
+    MCNAPI void resetNoActionTime();
 
-    MCAPI ::std::unique_ptr<::ListTag> saveOffhand(::SaveContext const& saveContext) const;
+    MCNAPI ::std::unique_ptr<::ListTag> saveOffhand(::SaveContext const& saveContext) const;
 
-    MCAPI void setJumpTicks(int ticks);
+    MCNAPI void setJumpTicks(int ticks);
 
-    MCAPI void setSpeedModifier(float speed);
+    MCNAPI void setSpeedModifier(float speed);
 
     MCAPI void setYBodyRotation(float rotation);
 
     MCAPI void setYBodyRotations(float rotation, float oldRotation);
 
-    MCAPI bool shouldApplyWaterGravity();
+    MCNAPI bool shouldApplyWaterGravity();
 
-    MCAPI void snapToYBodyRot(float yBodyRot);
+    MCNAPI void snapToYBodyRot(float yBodyRot);
 
-    MCAPI void tickMobEffectsVisuals();
+    MCNAPI void tickMobEffectsVisuals();
 
-    MCAPI void updateEquipment();
+    MCNAPI void updateEquipment();
 
-    MCAPI void updateGlidingDurability();
+    MCNAPI void updateGlidingDurability();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _registerMobAttributes(::BaseAttributeMap& attributes);
+    MCNAPI static void _registerMobAttributes(::BaseAttributeMap& attributes);
 
 #ifdef LL_PLAT_C
-    MCAPI static void setSprinting(::BaseAttributeMap& attributes, ::SynchedActorDataWriter data, bool shouldSprint);
+    MCNAPI static void setSprinting(::BaseAttributeMap& attributes, ::SynchedActorDataWriter data, bool shouldSprint);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ILevel& level, ::EntityContext& entityContext);
+    MCNAPI void* $ctor(::ILevel& level, ::EntityContext& entityContext);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -432,181 +432,181 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
+    MCNAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
-    MCAPI void $kill();
+    MCNAPI void $kill();
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI bool $shouldDropDeathLoot() const;
+    MCNAPI bool $shouldDropDeathLoot() const;
 
-    MCFOLD void $spawnAnim();
+    MCNAPI void $spawnAnim();
 
-    MCAPI bool $isAlive() const;
+    MCNAPI bool $isAlive() const;
 
-    MCAPI bool $isSleeping() const;
+    MCNAPI bool $isSleeping() const;
 
-    MCAPI void $setSleeping(bool val);
+    MCNAPI void $setSleeping(bool val);
 
-    MCAPI bool $isBlocking() const;
+    MCNAPI bool $isBlocking() const;
 
-    MCAPI void $setSprinting(bool shouldSprint);
+    MCNAPI void $setSprinting(bool shouldSprint);
 
-    MCFOLD bool $canBePulledIntoVehicle() const;
+    MCNAPI bool $canBePulledIntoVehicle() const;
 
-    MCAPI float $getSpeed() const;
+    MCNAPI float $getSpeed() const;
 
-    MCAPI void $setSpeed(float speed);
+    MCNAPI void $setSpeed(float speed);
 
-    MCAPI float $getYawSpeedInDegreesPerSecond() const;
+    MCNAPI float $getYawSpeedInDegreesPerSecond() const;
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $baseTick();
+    MCNAPI void $baseTick();
 
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
+    MCNAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 
-    MCAPI void $damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
+    MCNAPI void $damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
 
-    MCAPI ::ActorHurtResult $doFireHurt(int amount);
+    MCNAPI ::ActorHurtResult $doFireHurt(int amount);
 
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCAPI void $pushActors();
+    MCNAPI void $pushActors();
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCNAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool $checkSpawnObstruction() const;
+    MCNAPI bool $checkSpawnObstruction() const;
 
-    MCAPI void $addPassenger(::Actor& newPassenger);
+    MCNAPI void $addPassenger(::Actor& newPassenger);
 
-    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
-    MCFOLD int $getItemUseDuration() const;
+    MCNAPI int $getItemUseDuration() const;
 
-    MCFOLD float $getItemUseStartupProgress() const;
+    MCNAPI float $getItemUseStartupProgress() const;
 
-    MCFOLD float $getItemUseIntervalProgress() const;
+    MCNAPI float $getItemUseIntervalProgress() const;
 
-    MCAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
+    MCNAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
-    MCAPI float $getMaxHeadXRot();
+    MCNAPI float $getMaxHeadXRot();
 
-    MCAPI bool $isImmobile() const;
+    MCNAPI bool $isImmobile() const;
 
-    MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
+    MCNAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCAPI void $setTarget(::Actor* target);
+    MCNAPI void $setTarget(::Actor* target);
 
-    MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCNAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
-    MCFOLD bool $isAlliedTo(::Mob* other);
+    MCNAPI bool $isAlliedTo(::Mob* other);
 
-    MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCNAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
-    MCAPI ::SharedTypes::Legacy::ActorDamageCause $getBlockDamageCause(::Block const& block) const;
+    MCNAPI ::SharedTypes::Legacy::ActorDamageCause $getBlockDamageCause(::Block const& block) const;
 
-    MCAPI bool $inCaravan() const;
+    MCNAPI bool $inCaravan() const;
 
-    MCAPI int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
+    MCNAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
 
-    MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+    MCNAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    MCFOLD void $sendArmorDamage(::std::bitset<5> const damagedSlots);
+    MCNAPI void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 
-    MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
+    MCNAPI void $sendArmor(::std::bitset<5> const armorSlots);
 
-    MCAPI ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
+    MCNAPI ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
 
-    MCAPI int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
+    MCNAPI int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
 
-    MCAPI float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const;
+    MCNAPI float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const;
 
-    MCAPI ::std::vector<::ItemStack const*> $getAllHandEquipment() const;
+    MCNAPI ::std::vector<::ItemStack const*> $getAllHandEquipment() const;
 
-    MCAPI ::std::vector<::ItemStack const*> $getAllEquipment() const;
+    MCNAPI ::std::vector<::ItemStack const*> $getAllEquipment() const;
 
-    MCAPI int $getDeathTime() const;
+    MCNAPI int $getDeathTime() const;
 
-    MCAPI void $dropEquipmentOnDeath(::ActorDamageSource const& source);
+    MCNAPI void $dropEquipmentOnDeath(::ActorDamageSource const& source);
 
-    MCAPI void $dropEquipmentOnDeath();
+    MCNAPI void $dropEquipmentOnDeath();
 
-    MCAPI void $clearVanishEnchantedItemsOnDeath();
+    MCNAPI void $clearVanishEnchantedItemsOnDeath();
 
-    MCAPI void $sendInventory(bool shouldSelectSlot);
+    MCNAPI void $sendInventory(bool shouldSelectSlot);
 
-    MCAPI void $buildDebugInfo(::std::string& out) const;
+    MCNAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCAPI float $getInterpolatedBodyRot(float a) const;
+    MCNAPI float $getInterpolatedBodyRot(float a) const;
 
-    MCAPI float $getInterpolatedHeadRot(float a) const;
+    MCNAPI float $getInterpolatedHeadRot(float a) const;
 
-    MCAPI float $getInterpolatedBodyYaw(float a) const;
+    MCNAPI float $getInterpolatedBodyYaw(float a) const;
 
-    MCAPI bool $isSurfaceMob() const;
+    MCNAPI bool $isSurfaceMob() const;
 
-    MCAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
+    MCNAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
 
-    MCAPI bool $createAIGoals();
+    MCNAPI bool $createAIGoals();
 
-    MCFOLD void $onBorn(::Actor&, ::Actor&);
+    MCNAPI void $onBorn(::Actor&, ::Actor&);
 
-    MCAPI bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
+    MCNAPI bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
-    MCAPI void $setTransitioningSitting(bool value);
+    MCNAPI void $setTransitioningSitting(bool value);
 
-    MCAPI bool $hasComponent(::HashedString const& name) const;
+    MCNAPI bool $hasComponent(::HashedString const& name) const;
 
-    MCAPI bool $canChangeDimensionsUsingPortal() const;
+    MCNAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCAPI void
+    MCNAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI bool $canExistWhenDisallowMob() const;
+    MCNAPI bool $canExistWhenDisallowMob() const;
 
-    MCAPI bool $canPowerJump() const;
+    MCNAPI bool $canPowerJump() const;
 
-    MCAPI void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
+    MCNAPI void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
-    MCFOLD void $renderDebugServerState(::IOptionsReader const& options);
+    MCNAPI void $renderDebugServerState(::IOptionsReader const& options);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
+    MCNAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+    MCNAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
-    MCAPI void $outOfWorld();
+    MCNAPI void $outOfWorld();
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCAPI void $newServerAiStep();
+    MCNAPI void $newServerAiStep();
 
-    MCAPI void $_doInitialMove();
+    MCNAPI void $_doInitialMove();
 
-    MCAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const;
+    MCNAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const;
 
 
     // NOLINTEND
@@ -614,6 +614,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

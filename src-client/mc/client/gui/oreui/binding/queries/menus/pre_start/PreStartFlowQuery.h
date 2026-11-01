@@ -67,15 +67,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PreStartFlowQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI PreStartFlowQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
 
-    MCAPI void _updateProperties();
+    MCNAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

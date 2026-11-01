@@ -10,7 +10,7 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::InfestedBlock {
 // functions
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::Instance get();
+MCNAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
 } // namespace FlatteningUtils::InfestedBlock

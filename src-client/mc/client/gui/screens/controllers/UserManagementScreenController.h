@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UserManagementScreenController(
+    MCNAPI UserManagementScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::UserManagementModalScreenData const&    screenData,
         ::std::function<void(bool)>               callback
@@ -50,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::UserManagementModalScreenData const&    screenData,
         ::std::function<void(bool)>               callback
@@ -60,10 +60,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
     // NOLINTEND
 };

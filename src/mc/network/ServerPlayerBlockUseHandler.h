@@ -18,7 +18,7 @@ class TextFilteringProcessor;
 namespace ServerPlayerBlockUseHandler {
 // functions
 // NOLINTBEGIN
-MCAPI bool isValidSourceRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
+MCNAPI bool isValidSourceRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
 
 MCAPI void onBeforeMovementSimulation(
     ::ServerPlayer&                                      player,
@@ -29,7 +29,7 @@ MCAPI void onBeforeMovementSimulation(
 
 MCAPI void onStartDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int face);
 
-MCAPI void serverTickBlockBreaking(::ServerPlayer& player, ::BlockPos const& destroyBlockPos, int facing);
+MCNAPI void serverTickBlockBreaking(::ServerPlayer& player, ::BlockPos const& destroyBlockPos, int facing);
 // NOLINTEND
 
 } // namespace ServerPlayerBlockUseHandler

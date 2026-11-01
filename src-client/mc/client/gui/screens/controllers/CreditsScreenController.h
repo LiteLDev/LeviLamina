@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreditsScreenController(
+    MCNAPI CreditsScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::CreditsType                             contentType,
         ::std::function<void()>                   finishedCallback
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::CreditsType                             contentType,
         ::std::function<void()>                   finishedCallback
@@ -55,8 +55,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
     // NOLINTEND
 };

@@ -30,16 +30,16 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
 
 
     // NOLINTEND
@@ -47,6 +47,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

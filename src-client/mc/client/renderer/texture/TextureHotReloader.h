@@ -69,7 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextureHotReloader(
+    MCNAPI TextureHotReloader(
         ::std::unique_ptr<::mce::IResourceWatcher<
             ::cg::ResourceLoader<
                 ::std::shared_ptr<::mce::Image>,
@@ -81,14 +81,14 @@ public:
         ::TextureHotReloaderMode     mode
     );
 
-    MCAPI void cacheTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void cacheTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI bool
+    MCNAPI bool
     isFileWatched(::ResourceLocation const& resloc, ::IResourceLocationExpander const& resourceLocationExpander);
 
-    MCAPI void loadCachedTextureData(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void loadCachedTextureData(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void registerAtlas(
+    MCNAPI void registerAtlas(
         ::TextureAtlas&                                        textureAtlas,
         ::std::shared_ptr<::mce::TextureGroup>                 textureGroup,
         ::IResourceLocationExpander const&                     resourceLocationExpander,
@@ -102,7 +102,7 @@ public:
         )>                                                     textureAtlasReloadCallback
     );
 
-    MCAPI void registerTexture(
+    MCNAPI void registerTexture(
         ::ResourceLocation const&                        resLoc,
         ::std::shared_ptr<::mce::TextureGroup>           textureGroup,
         ::IResourceLocationExpander const&               resourceLocationExpander,
@@ -113,7 +113,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::mce::IResourceWatcher<
             ::cg::ResourceLoader<
                 ::std::shared_ptr<::mce::Image>,

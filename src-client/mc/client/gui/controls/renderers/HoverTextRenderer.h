@@ -40,23 +40,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HoverTextRenderer(::UIResolvedDef const& def);
+    MCNAPI explicit HoverTextRenderer(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def);
+    MCNAPI void* $ctor(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
     // NOLINTEND
 
 public:

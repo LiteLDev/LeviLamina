@@ -103,13 +103,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
+    MCNAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
             ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,

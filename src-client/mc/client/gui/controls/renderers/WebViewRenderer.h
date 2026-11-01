@@ -40,13 +40,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
-    MCAPI void $render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI void $onVisibilityChanged(bool visible);
+    MCNAPI void $onVisibilityChanged(bool visible);
     // NOLINTEND
 
 public:

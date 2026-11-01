@@ -27,15 +27,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addNameAction(::NameAction const& nameAction);
+    MCNAPI void addNameAction(::NameAction const& nameAction);
 
-    MCAPI void initialize(::EntityContext& entity, ::NameableComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::NameableComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NameableDefinition>>& root
     );
     // NOLINTEND

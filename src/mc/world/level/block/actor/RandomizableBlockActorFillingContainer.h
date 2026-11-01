@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RandomizableBlockActorFillingContainer(
+    MCNAPI RandomizableBlockActorFillingContainer(
         ::BlockActorType                     blockEntityType,
         ::BlockPos const&                    pos,
         int                                  numTotalSlots,
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockActorType                     blockEntityType,
         ::BlockPos const&                    pos,
         int                                  numTotalSlots,
@@ -67,17 +67,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
-    MCAPI void $startOpen(::Actor& actor);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCNAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCFOLD void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCNAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCFOLD void $initializeContainerContents(::BlockSource& region);
+    MCNAPI void $initializeContainerContents(::BlockSource& region);
 
 
     // NOLINTEND

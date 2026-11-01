@@ -22,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemRegistryPacketPayload(::ItemRegistryRef itemRegistry);
+    MCNAPI explicit ItemRegistryPacketPayload(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemRegistryRef itemRegistry);
+    MCNAPI void* $ctor(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

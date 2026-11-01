@@ -121,32 +121,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StartMenuScreenController(
+    MCNAPI StartMenuScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
 
-    MCAPI bool _YHelperVisible() const;
+    MCNAPI bool _YHelperVisible() const;
 
-    MCAPI void _fetchUserOrientedContent(bool const signInFailed);
+    MCNAPI void _fetchUserOrientedContent(bool const signInFailed);
 
-    MCAPI bool _isProfileButtonAEnabled() const;
+    MCNAPI bool _isProfileButtonAEnabled() const;
 
-    MCAPI bool _isProfileButtonBEnabled() const;
+    MCNAPI bool _isProfileButtonBEnabled() const;
 
-    MCAPI bool _isSignInVisible();
+    MCNAPI bool _isSignInVisible();
 
-    MCAPI bool _realmsPromoEnabled() const;
+    MCNAPI bool _realmsPromoEnabled() const;
 
-    MCAPI void resetInboxAnimation();
+    MCNAPI void resetInboxAnimation();
 
-    MCAPI void startInboxAnimation();
+    MCNAPI void startInboxAnimation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
@@ -155,33 +155,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleLicenseChanged();
+    MCNAPI void $handleLicenseChanged();
 
-    MCAPI ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI void $queueTitleNarration();
+    MCNAPI void $queueTitleNarration();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
 
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const& state);
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const& state);
 
-    MCAPI ::std::string $_getButtonYDescription();
+    MCNAPI ::std::string $_getButtonYDescription();
 
-    MCAPI ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
 
-    MCAPI ::ui::ViewRequest
+    MCNAPI ::ui::ViewRequest
     $promptConnect(bool signInOnSuccess, ::std::function<void(::Social::UserPlatformConnectionResult)> signInCallback);
     // NOLINTEND
 };

@@ -42,25 +42,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD ::ProgressAnimation $showLoadingBar() const;
+    MCNAPI ::ProgressAnimation $showLoadingBar() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

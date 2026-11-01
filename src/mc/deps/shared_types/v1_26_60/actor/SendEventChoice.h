@@ -39,33 +39,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SendEventChoice(::SharedTypes::v1_26_60::SendEventChoice&&);
+    MCNAPI SendEventChoice(::SharedTypes::v1_26_60::SendEventChoice&&);
 
-    MCAPI SendEventChoice(::SharedTypes::v1_26_60::SendEventChoice const&);
+    MCNAPI SendEventChoice(::SharedTypes::v1_26_60::SendEventChoice const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::SendEventChoice const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::SendEventChoice const&) const;
 
-    MCAPI ~SendEventChoice();
+    MCNAPI ~SendEventChoice();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::SendEventChoice&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::SendEventChoice&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::SendEventChoice const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::SendEventChoice const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

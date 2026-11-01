@@ -59,13 +59,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~WorldSystemModules();
+    MCNAPI ~WorldSystemModules();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::World::WorldSystemModules create(
+    MCNAPI static ::World::WorldSystemModules create(
         ::World::WorldSystemModuleGameDependencies&&     game,
         ::World::WorldSystemModulePlatformDependencies&& platform
     );
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::ILevel& level) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag, ::ILevel& level) const;
     // NOLINTEND
 };

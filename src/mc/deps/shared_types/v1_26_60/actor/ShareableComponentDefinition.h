@@ -46,24 +46,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData&
+        MCNAPI ::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData&
         operator=(::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData const&);
 
-        MCAPI bool operator==(::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData const&) const;
 
-        MCAPI ~ShareableData();
+        MCNAPI ~ShareableData();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,21 +82,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addShareable(::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData const& shareable);
+    MCNAPI void addShareable(::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData const& shareable);
 
-    MCAPI void addShareableByName(::SharedTypes::Legacy::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addShareableByName(::SharedTypes::Legacy::ItemDescriptor const& itemDescriptor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

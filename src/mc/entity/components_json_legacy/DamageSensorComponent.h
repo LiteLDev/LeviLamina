@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::Legacy::DealsDamage _recordDamageAndCheckIfDealt(
+    MCNAPI ::SharedTypes::Legacy::DealsDamage _recordDamageAndCheckIfDealt(
         ::Actor&                                       owner,
         ::Actor*                                       sender,
         ::SharedTypes::Legacy::ActorDamageCause const& cause,
@@ -39,9 +39,9 @@ public:
         bool                                           willTrigger
     );
 
-    MCAPI float getAdjustedDamage(::Actor& owner, ::ActorDamageSource const& source, float amount) const;
+    MCNAPI float getAdjustedDamage(::Actor& owner, ::ActorDamageSource const& source, float amount) const;
 
-    MCAPI ::SharedTypes::Legacy::DealsDamage recordBlockDamageAndCheckIfDealt(
+    MCNAPI ::SharedTypes::Legacy::DealsDamage recordBlockDamageAndCheckIfDealt(
         ::Actor&                                owner,
         ::SharedTypes::Legacy::ActorDamageCause cause,
         float                                   amount,
@@ -61,7 +61,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _fillParameters(::VariantParameterList& inOutParameters, ::Actor& owner, ::Actor* sender, ::Actor* damager);
     // NOLINTEND
 };

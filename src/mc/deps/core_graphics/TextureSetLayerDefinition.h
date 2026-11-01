@@ -34,12 +34,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI TextureSetLayerDefinition(
+    MCNAPI TextureSetLayerDefinition(
         ::cg::TextureSetLayerType const&                                            type,
         ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
     );
 
-    MCAPI ::std::optional<::std::string> hasValidationError() const;
+    MCNAPI ::std::optional<::std::string> hasValidationError() const;
 #endif
     // NOLINTEND
 
@@ -47,7 +47,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cg::TextureSetLayerType const&                                            type,
         ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
     );
@@ -58,7 +58,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

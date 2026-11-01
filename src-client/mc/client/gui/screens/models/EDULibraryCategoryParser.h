@@ -39,7 +39,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void getCategories(
+    MCNAPI static void getCategories(
         ::std::unordered_map<::std::string, ::EduLibraryCategory>& returnRef,
         ::std::string const&                                       jsonString,
         ::std::function<void(

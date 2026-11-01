@@ -46,13 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::mce::MaterialPtr& getEntityMaterial();
+    MCNAPI ::mce::MaterialPtr& getEntityMaterial();
 
-    MCAPI ::mce::MaterialPtr& getStaticMaterial();
+    MCNAPI ::mce::MaterialPtr& getStaticMaterial();
 
-    MCAPI ::mce::MaterialPtr& getTransparentEntityMaterial();
+    MCNAPI ::mce::MaterialPtr& getTransparentEntityMaterial();
 
-    MCAPI void setupFoilShaderParameters(
+    MCNAPI void setupFoilShaderParameters(
         ::ScreenContext&                    screenContext,
         ::BaseActorRenderContext&           entityContext,
         ::Actor&                            entity,
@@ -94,9 +94,9 @@ public:
         float                  uvRot2
     );
 
-    MCAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
+    MCNAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
 
-    MCAPI static void setupFoilShaderParameters(
+    MCNAPI static void setupFoilShaderParameters(
         ::ScreenContext&    screenContext,
         ::mce::Color const& overlay,
         ::mce::Color const& changeColor,
@@ -233,15 +233,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ResourceLocation const& GLINT_ACTOR_TEXTURE_LOCATION();
+    MCNAPI static ::ResourceLocation const& GLINT_ACTOR_TEXTURE_LOCATION();
 
-    MCAPI static ::ResourceLocation const& GLINT_ITEM_TEXTURE_LOCATION();
+    MCNAPI static ::ResourceLocation const& GLINT_ITEM_TEXTURE_LOCATION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -29,12 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RenderChunkDirectVertexData();
+    MCNAPI ~RenderChunkDirectVertexData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

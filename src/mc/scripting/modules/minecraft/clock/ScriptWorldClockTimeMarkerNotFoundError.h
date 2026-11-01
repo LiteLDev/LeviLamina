@@ -20,19 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWorldClockTimeMarkerNotFoundError(::std::string const& clockName, ::std::string const& timeMarkerName);
+    MCNAPI ScriptWorldClockTimeMarkerNotFoundError(::std::string const& clockName, ::std::string const& timeMarkerName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& clockName, ::std::string const& timeMarkerName);
+    MCNAPI void* $ctor(::std::string const& clockName, ::std::string const& timeMarkerName);
     // NOLINTEND
 };
 

@@ -9,13 +9,13 @@ class SmokerContainerScreenValidator : public ::FurnaceContainerScreenValidator 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SmokerContainerScreenValidator();
+    MCNAPI SmokerContainerScreenValidator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -25,8 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
+    MCNAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
 
-    MCAPI void stopAdmiring();
+    MCNAPI void stopAdmiring();
     // NOLINTEND
 };

@@ -69,9 +69,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FontRepository(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> manager, bool isOnLowMemoryDevice);
+    MCNAPI FontRepository(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> manager, bool isOnLowMemoryDevice);
 
-    MCAPI void _queueBitmapFont(
+    MCNAPI void _queueBitmapFont(
         ::std::string const&                 alias,
         ::Core::Path const&                  asciiName,
         ::Core::Path const&                  unicodeName,
@@ -79,65 +79,65 @@ public:
         uchar                                asciiSheetCount
     );
 
-    MCAPI void _queueMsdfFont(
+    MCNAPI void _queueMsdfFont(
         ::std::string const&                 alias,
         ::Core::Path const&                  fontPagePrefix,
         ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr
     );
 
-    MCAPI void _setDefaultFont(::std::string const& fontName, uint64 const fontId, ::std::shared_ptr<::Font> font);
+    MCNAPI void _setDefaultFont(::std::string const& fontName, uint64 const fontId, ::std::shared_ptr<::Font> font);
 
-    MCAPI void _setFontIfOverride(uint64 const fontId, ::std::shared_ptr<::Font> font);
+    MCNAPI void _setFontIfOverride(uint64 const fontId, ::std::shared_ptr<::Font> font);
 
-    MCAPI void
+    MCNAPI void
     _setMinecraftSmoothFontStyle(float guiScale, ::std::string const& languageCode, bool supportsCjkSmoothFont);
 
-    MCAPI uint64 addPreloadedFont(::std::string const& fontName, ::gsl::not_null<::std::shared_ptr<::Font>> font);
+    MCNAPI uint64 addPreloadedFont(::std::string const& fontName, ::gsl::not_null<::std::shared_ptr<::Font>> font);
 
     MCAPI ::FontHandle getFontFromFontType(::std::string const& fontType) const;
 
-    MCAPI ::FontHandle getFontHandle(uint64 const fontId);
+    MCNAPI ::FontHandle getFontHandle(uint64 const fontId);
 
-    MCAPI uint64 getFontIdentifier(::std::string const& fontName);
+    MCNAPI uint64 getFontIdentifier(::std::string const& fontName);
 
-    MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
+    MCNAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 
-    MCAPI bool haveDefaultFontsLoaded();
+    MCNAPI bool haveDefaultFontsLoaded();
 
-    MCAPI void initDefaultFontHandles();
+    MCNAPI void initDefaultFontHandles();
 
-    MCAPI bool isRepositoryInitialized();
+    MCNAPI bool isRepositoryInitialized();
 
-    MCAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void onLanguageChanged(::std::string const& languageCode);
+    MCNAPI void onLanguageChanged(::std::string const& languageCode);
 
-    MCAPI void parseAndLoadMetadataFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void parseAndLoadMetadataFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void reloadFontTextures(bool blockingLoad);
+    MCNAPI void reloadFontTextures(bool blockingLoad);
 
-    MCAPI void setMinecraftUIFontStyle(::std::string const& languageCode);
+    MCNAPI void setMinecraftUIFontStyle(::std::string const& languageCode);
 
-    MCAPI void setUseFontOverrides(bool useOverrides);
+    MCNAPI void setUseFontOverrides(bool useOverrides);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64& INVALID_FONT();
+    MCNAPI static uint64& INVALID_FONT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> manager, bool isOnLowMemoryDevice);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> manager, bool isOnLowMemoryDevice);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
     // NOLINTEND
 };

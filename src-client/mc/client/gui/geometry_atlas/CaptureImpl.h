@@ -89,9 +89,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $processCaptureRequests(::dragon::atlas::IAtlasRenderOperations& renderOps);
+    MCNAPI void $processCaptureRequests(::dragon::atlas::IAtlasRenderOperations& renderOps);
 
-    MCAPI ::Bedrock::Threading::Async<::GeometryAtlas::GeometryAtlasCapture>
+    MCNAPI ::Bedrock::Threading::Async<::GeometryAtlas::GeometryAtlasCapture>
     $requestCapture(::std::vector<::std::shared_ptr<::GeometryAtlas::IAtlasTile>>&& tiles);
     // NOLINTEND
 

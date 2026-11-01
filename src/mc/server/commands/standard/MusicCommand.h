@@ -48,7 +48,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+        MCNAPI bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 #endif
         // NOLINTEND
     };
@@ -72,11 +72,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _handleActionQueueOrPlay(::CompoundTag& data, ::CommandOutput& output) const;
+    MCNAPI void _handleActionQueueOrPlay(::CompoundTag& data, ::CommandOutput& output) const;
 
-    MCAPI void _handleActionStop(::CompoundTag& data, ::CommandOutput& output) const;
+    MCNAPI void _handleActionStop(::CompoundTag& data, ::CommandOutput& output) const;
 
-    MCAPI void _handleActionVolume(::CompoundTag& data, ::CommandOutput& output) const;
+    MCNAPI void _handleActionVolume(::CompoundTag& data, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

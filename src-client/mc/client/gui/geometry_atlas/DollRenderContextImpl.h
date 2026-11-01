@@ -45,9 +45,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD float $getLegacyGuiOffsetY(float screenScale);
+        MCNAPI float $getLegacyGuiOffsetY(float screenScale);
 
-        MCAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
+        MCNAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
         // NOLINTEND
     };
 
@@ -81,9 +81,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(::PaperDollUpdateOwnerData const& data);
+    MCNAPI void $update(::PaperDollUpdateOwnerData const& data);
 
-    MCAPI void
+    MCNAPI void
     $render(::PaperDollRenderOwnerData const& data, ::OffscreenCaptureDescription const* capture, bool isRenderingUI);
     // NOLINTEND
 };

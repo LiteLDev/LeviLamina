@@ -61,21 +61,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GuiScaleDataProvider(
+    MCNAPI GuiScaleDataProvider(
         ::Settings::RegistryBuilder::IBuilderContext& context,
         ::std::function<float()>                      getOptimalGuiScale,
         ::std::function<float()>                      getMaxGuiScale
     );
 
-    MCAPI void _updateInfo();
+    MCNAPI void _updateInfo();
 
-    MCAPI void _updateOptions();
+    MCNAPI void _updateOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Settings::RegistryBuilder::IBuilderContext& context,
         ::std::function<float()>                      getOptimalGuiScale,
         ::std::function<float()>                      getMaxGuiScale
@@ -85,15 +85,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canModify() const;
+    MCNAPI bool $canModify() const;
 
-    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+    MCNAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
 
-    MCAPI int $getValue() const;
+    MCNAPI int $getValue() const;
 
-    MCAPI void $setValue(int value);
+    MCNAPI void $setValue(int value);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
     // NOLINTEND

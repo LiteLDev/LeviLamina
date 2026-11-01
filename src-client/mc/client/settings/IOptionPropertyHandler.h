@@ -28,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>
+    MCNAPI ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>
     $getInfo();
     // NOLINTEND
 };

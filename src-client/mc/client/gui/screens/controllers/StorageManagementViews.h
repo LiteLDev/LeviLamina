@@ -48,10 +48,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::shared_ptr<::ContentItem const>> getAndExpandSelectedItems() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::ContentItem const>> getAndExpandSelectedItems() const;
 
-    MCAPI ::ContentItemCollection& getSelectedView();
+    MCNAPI ::ContentItemCollection& getSelectedView();
 
-    MCAPI ::std::array<::gsl::not_null<::std::shared_ptr<::StorageManagementViews::ContentTab>>, 6> getTabs();
+    MCNAPI ::std::array<::gsl::not_null<::std::shared_ptr<::StorageManagementViews::ContentTab>>, 6> getTabs();
     // NOLINTEND
 };

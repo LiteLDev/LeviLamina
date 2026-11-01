@@ -33,13 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
+    MCNAPI static ::Scripting::ClassBinding bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
     // NOLINTEND
 };
 

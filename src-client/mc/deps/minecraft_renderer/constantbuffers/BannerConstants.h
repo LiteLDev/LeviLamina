@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void init();
+    MCNAPI void init();
     // NOLINTEND
 };
 

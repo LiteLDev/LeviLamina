@@ -5,11 +5,11 @@
 namespace OreUI::Vanilla {
 // functions
 // NOLINTBEGIN
-MCAPI void setupCommands();
+MCNAPI void setupCommands();
 
-MCAPI void setupGameplayModels();
+MCNAPI void setupGameplayModels();
 
-MCAPI void setupQueries();
+MCNAPI void setupQueries();
 // NOLINTEND
 
 } // namespace OreUI::Vanilla

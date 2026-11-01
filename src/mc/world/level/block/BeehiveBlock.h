@@ -42,40 +42,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
+    MCNAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void deliverNectar(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
+    MCNAPI static void deliverNectar(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI static ::ItemStack
+    MCNAPI static ::ItemStack
     getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
 
-    MCAPI static bool hasHoneyToHarvest(::Block const& block);
+    MCNAPI static bool hasHoneyToHarvest(::Block const& block);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
+    MCNAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
 
     // NOLINTEND
@@ -83,6 +84,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -71,48 +71,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _disableCoreTextEdit();
+    MCNAPI void _disableCoreTextEdit();
 
-    MCAPI void _enableCoreTextEdit();
+    MCNAPI void _enableCoreTextEdit();
 
-    MCAPI void _notifyCoreTextEdit(bool textChanged);
+    MCNAPI void _notifyCoreTextEdit(bool textChanged);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI void
+    MCNAPI void
     $onShowKeyboard(::std::string_view const currentText, int maxLength, bool isMultiline, ::InputMode inputMode);
 
-    MCAPI void $onHideKeyboard();
+    MCNAPI void $onHideKeyboard();
 
-    MCAPI void $onTextEditComponentGainedFocus(::std::string_view const currentText, int maxLength);
+    MCNAPI void $onTextEditComponentGainedFocus(::std::string_view const currentText, int maxLength);
 
-    MCAPI void $onTextEditComponentLostFocus();
+    MCNAPI void $onTextEditComponentLostFocus();
 
-    MCAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin);
+    MCNAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin);
 
-    MCAPI void $onKeyUp(int keyCode);
+    MCNAPI void $onKeyUp(int keyCode);
 
-    MCAPI void $updateEditContext(int keyCode);
+    MCNAPI void $updateEditContext(int keyCode);
 
-    MCAPI void $onTextInput(::std::string const& utf8Text);
+    MCNAPI void $onTextInput(::std::string const& utf8Text);
 
-    MCAPI void $imeStartComposition();
+    MCNAPI void $imeStartComposition();
 
-    MCAPI void $imeUpdateCompositionText(::std::string const& utf8Text);
+    MCNAPI void $imeUpdateCompositionText(::std::string const& utf8Text);
 
-    MCAPI void $imeConfirmComposition(::std::string const& utf8Text);
+    MCNAPI void $imeConfirmComposition(::std::string const& utf8Text);
 
-    MCAPI void $imeEndComposition();
+    MCNAPI void $imeEndComposition();
 
-    MCAPI void $setCaretPosition(int position);
+    MCNAPI void $setCaretPosition(int position);
 
-    MCAPI void $onAppFocusLost();
+    MCNAPI void $onAppFocusLost();
 
-    MCAPI void $onAppFocusGained();
+    MCNAPI void $onAppFocusGained();
     // NOLINTEND
 
 public:

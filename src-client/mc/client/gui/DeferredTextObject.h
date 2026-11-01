@@ -14,8 +14,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setParseRawInputCallback(::std::function<void()> callback);
+    MCNAPI void setParseRawInputCallback(::std::function<void()> callback);
 
-    MCAPI void setRawText(::std::string const& str);
+    MCNAPI void setRawText(::std::string const& str);
     // NOLINTEND
 };

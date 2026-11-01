@@ -65,18 +65,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void copyData(::std::string const& from, ::std::string const& to, ::BehaviorData& other);
+    MCNAPI void copyData(::std::string const& from, ::std::string const& to, ::BehaviorData& other);
 
-    MCAPI bool hasData(::std::string const& strId) const;
+    MCNAPI bool hasData(::std::string const& strId) const;
 
-    MCAPI bool hasDataOfType(::std::string const& strId, ::BehaviorData::DataType type) const;
+    MCNAPI bool hasDataOfType(::std::string const& strId, ::BehaviorData::DataType type) const;
 
-    MCAPI ~BehaviorData();
+    MCNAPI ~BehaviorData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void getCachedRealmsWorlds(
+    MCNAPI void getCachedRealmsWorlds(
         ::std::function<bool(::Realms::World const&, ::Realms::PlayerRoleActions)> canUserDoRealmAction
     );
     // NOLINTEND

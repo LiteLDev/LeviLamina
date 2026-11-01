@@ -25,16 +25,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorInfo();
+    MCNAPI ActorInfo();
 
-    MCAPI void load(::CompoundTag const* tag);
+    MCNAPI void load(::CompoundTag const* tag);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

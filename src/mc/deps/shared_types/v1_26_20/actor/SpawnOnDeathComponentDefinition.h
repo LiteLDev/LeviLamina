@@ -33,38 +33,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnOnDeathComponentDefinition(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition const&);
+    MCNAPI SpawnOnDeathComponentDefinition(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition&
     operator=(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition const&) const;
 
-    MCAPI ~SpawnOnDeathComponentDefinition();
+    MCNAPI ~SpawnOnDeathComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

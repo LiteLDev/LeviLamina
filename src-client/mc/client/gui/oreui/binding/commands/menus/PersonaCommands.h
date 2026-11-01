@@ -31,21 +31,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PersonaCommands(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit PersonaCommands(::OreUI::ClientDependencies const& client);
 
-    MCAPI void _equipDefaultSkin();
+    MCNAPI void _equipDefaultSkin();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

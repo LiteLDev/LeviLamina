@@ -22,15 +22,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool parseDescription(::ActorDocumentDataParams actorDocumentDataParams);
+    MCNAPI bool parseDescription(::ActorDocumentDataParams actorDocumentDataParams);
 
-    MCAPI bool parseDescription(::DeserializeDataParams deserializeDataParams);
+    MCNAPI bool parseDescription(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

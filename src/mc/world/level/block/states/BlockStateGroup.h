@@ -29,35 +29,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockStateGroup();
+    MCNAPI BlockStateGroup();
 
-    MCAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
+    MCNAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
 
-    MCAPI ::BlockStateMeta const* getBlockStateFromName(::std::string const& name) const;
+    MCNAPI ::BlockStateMeta const* getBlockStateFromName(::std::string const& name) const;
 
-    MCAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
+    MCNAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
 
-    MCAPI void registerExistingBlockState(::BlockState const& state);
+    MCNAPI void registerExistingBlockState(::BlockState const& state);
 
-    MCAPI ~BlockStateGroup();
+    MCNAPI ~BlockStateGroup();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
+    MCNAPI static bool
     loadBlockStateFromJson(::BlockStateDefinition& blockState, ::std::string const& name, ::Json::Value const& root);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

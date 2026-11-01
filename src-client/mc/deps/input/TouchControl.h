@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getNewActivePointer(
+    MCNAPI int getNewActivePointer(
         ::TouchPointResults&                  touchPointResults,
         ::RectangleArea const&                area,
         float&                                x,
@@ -55,23 +55,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uint $getHoldButtonId() const;
+    MCNAPI uint $getHoldButtonId() const;
 
-    MCFOLD int $getActivePointerId() const;
+    MCNAPI int $getActivePointerId() const;
 
-    MCFOLD bool $releaseOnClear() const;
+    MCNAPI bool $releaseOnClear() const;
 
-    MCFOLD void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
 
-    MCFOLD void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCNAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
-    MCFOLD void $release(::InputEventQueue& eventQueue);
+    MCNAPI void $release(::InputEventQueue& eventQueue);
     // NOLINTEND
 
 public:

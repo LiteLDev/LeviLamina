@@ -72,9 +72,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
-    MCAPI void $addRoom(
+    MCNAPI void $addRoom(
         ::IBlockWorldGenAPI&                                                blocks,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -85,7 +85,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCAPI void $addTunnel(
+    MCNAPI void $addTunnel(
         ::IBlockWorldGenAPI&                                                blocks,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           _random,
@@ -102,7 +102,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCAPI void $addFeature(
+    MCNAPI void $addFeature(
         ::IBlockWorldGenAPI&                                                blocks,
         ::ChunkPos const&                                                   chunkPos,
         ::Random&                                                           random,

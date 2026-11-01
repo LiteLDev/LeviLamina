@@ -39,12 +39,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ViewRenderObject(::ViewRenderObject&&);
+    MCNAPI ViewRenderObject(::ViewRenderObject&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ViewRenderObject&&);
+    MCNAPI void* $ctor(::ViewRenderObject&&);
     // NOLINTEND
 };

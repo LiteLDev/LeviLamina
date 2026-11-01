@@ -58,23 +58,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudLocatorBarRenderer();
+    MCNAPI HudLocatorBarRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
     // NOLINTEND
 
 public:

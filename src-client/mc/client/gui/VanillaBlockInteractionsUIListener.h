@@ -33,18 +33,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit VanillaBlockInteractionsUIListener(::SceneFactory& sceneFactory);
+    MCNAPI explicit VanillaBlockInteractionsUIListener(::SceneFactory& sceneFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SceneFactory& sceneFactory);
+    MCNAPI void* $ctor(::SceneFactory& sceneFactory);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
     // NOLINTEND
 };

@@ -11,6 +11,6 @@ class InstantDespawnComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onDespawn(::Actor& actor);
+    MCNAPI void onDespawn(::Actor& actor);
     // NOLINTEND
 };

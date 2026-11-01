@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addCreativeItemEntry(::CreativeItemEntry* itemEntry);
+    MCNAPI void _addCreativeItemEntry(::CreativeItemEntry* itemEntry);
     // NOLINTEND
 
 public:

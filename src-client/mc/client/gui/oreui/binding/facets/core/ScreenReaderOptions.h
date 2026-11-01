@@ -18,7 +18,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[25]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[25]> NAME();
     // NOLINTEND
 };
 

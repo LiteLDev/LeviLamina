@@ -132,7 +132,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool onUpdatePacket(::CompoundTag const& data, ::BlockSource& region, ::Player const* fromPlayer);
+    MCNAPI bool onUpdatePacket(::CompoundTag const& data, ::BlockSource& region, ::Player const* fromPlayer);
     // NOLINTEND
 
 public:
@@ -150,19 +150,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& KEY_VERSION();
+    MCNAPI static ::std::string const& KEY_VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -174,17 +174,17 @@ public:
 
     MCFOLD void $onCustomTagLoadDone(::BlockSource& region);
 
-    MCFOLD void $loadStatic();
+    MCNAPI void $loadStatic();
 
-    MCFOLD void $onPlace(::BlockSource& region);
+    MCNAPI void $onPlace(::BlockSource& region);
 
     MCFOLD void $onMove();
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
     MCFOLD void $onChunkLoaded(::LevelChunk& lc);
 
-    MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
+    MCNAPI void $onChunkUnloaded(::LevelChunk& lc);
 
     MCFOLD void $onSubChunkLoaded(::LevelChunk&, short, bool);
 
@@ -200,23 +200,23 @@ public:
         ::BlockSource const*          region
     ) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCFOLD bool $_playerCanUpdate(::Player const& player) const;
+    MCNAPI bool $_playerCanUpdate(::Player const& player) const;
 
-    MCFOLD ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
+    MCNAPI ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
 
-    MCFOLD ::IVanillaRenderBlockActorComponent* $_getRenderComponent();
+    MCNAPI ::IVanillaRenderBlockActorComponent* $_getRenderComponent();
 
-    MCFOLD ::IVanillaTickBlockActorComponent const* $_getTickComponent() const;
+    MCNAPI ::IVanillaTickBlockActorComponent const* $_getTickComponent() const;
 
-    MCFOLD ::IVanillaTickBlockActorComponent* $_getTickComponent();
+    MCNAPI ::IVanillaTickBlockActorComponent* $_getTickComponent();
 
-    MCFOLD ::IVanillaMainBlockActorComponent const* $_getMainComponent() const;
+    MCNAPI ::IVanillaMainBlockActorComponent const* $_getMainComponent() const;
 
-    MCFOLD ::IVanillaMainBlockActorComponent* $_getMainComponent();
+    MCNAPI ::IVanillaMainBlockActorComponent* $_getMainComponent();
 
 
     // NOLINTEND
@@ -224,6 +224,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

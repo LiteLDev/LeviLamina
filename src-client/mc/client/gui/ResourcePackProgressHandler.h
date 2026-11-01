@@ -68,40 +68,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ResourcePackProgressHandler(bool localServer);
+    MCNAPI explicit ResourcePackProgressHandler(bool localServer);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool localServer);
+    MCNAPI void* $ctor(bool localServer);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onGameEventNotification(
+    MCNAPI void $onGameEventNotification(
         ::MinecraftScreenModel&            minecraftScreenModel,
         ::ui::GameEventNotification const& notification
     );
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

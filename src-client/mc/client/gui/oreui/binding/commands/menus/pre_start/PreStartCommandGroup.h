@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PreStartCommandGroup(::OreUI::GameDependencies const& game);
+    MCNAPI explicit PreStartCommandGroup(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

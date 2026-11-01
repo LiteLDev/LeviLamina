@@ -68,81 +68,81 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorSettingsFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI explicit EditorSettingsFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI ::Editor::Services::EditorPersistenceServiceProvider* _getEditorPersistenceProvider();
+    MCNAPI ::Editor::Services::EditorPersistenceServiceProvider* _getEditorPersistenceProvider();
 
-    MCAPI ::Editor::Services::EditorSettingsServiceProvider* _getEditorSettingsProvider();
+    MCNAPI ::Editor::Services::EditorSettingsServiceProvider* _getEditorSettingsProvider();
 
-    MCAPI void _handleCurrentThemeChanged(::std::string const& newThemeId);
+    MCNAPI void _handleCurrentThemeChanged(::std::string const& newThemeId);
 
-    MCAPI void _handleNewThemeCreated(::std::string const& newThemeId);
+    MCNAPI void _handleNewThemeCreated(::std::string const& newThemeId);
 
-    MCAPI void _handleThemeColorUpdated(
+    MCNAPI void _handleThemeColorUpdated(
         ::std::string const&                      themeId,
         ::Editor::Settings::ThemeSettingsColorKey key,
         ::mce::Color const&                       color
     );
 
-    MCAPI void _handleThemeDeleted(::std::string const& newThemeId);
+    MCNAPI void _handleThemeDeleted(::std::string const& newThemeId);
 
-    MCAPI void _handleThemeSettingsChanged(::Editor::Settings::ThemeProps const& themeProp);
+    MCNAPI void _handleThemeSettingsChanged(::Editor::Settings::ThemeProps const& themeProp);
 
-    MCAPI void _saveSettings();
+    MCNAPI void _saveSettings();
 
-    MCAPI void addNewTheme(
+    MCNAPI void addNewTheme(
         ::std::string&                  themeId,
         ::std::optional<::std::string>& name,
         ::std::optional<::std::string>& sourceThemeId
     );
 
-    MCAPI void deleteTheme(::std::string& id);
+    MCNAPI void deleteTheme(::std::string& id);
 
-    MCFOLD ::std::string const& getCurrentThemeId() const;
+    MCNAPI ::std::string const& getCurrentThemeId() const;
 
-    MCFOLD int getFontZoom() const;
+    MCNAPI int getFontZoom() const;
 
-    MCAPI ::std::string getKey(::std::string const& key) const;
+    MCNAPI ::std::string getKey(::std::string const& key) const;
 
-    MCFOLD ::OreUI::EditorSettingsFacet::EditorOperatorType getSelectedOperator() const;
+    MCNAPI ::OreUI::EditorSettingsFacet::EditorOperatorType getSelectedOperator() const;
 
-    MCFOLD ::std::string const& getSelectedTool() const;
+    MCNAPI ::std::string const& getSelectedTool() const;
 
-    MCFOLD ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> const& getThemesMap() const;
+    MCNAPI ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> const& getThemesMap() const;
 
-    MCAPI bool hasKey(::std::string const& key) const;
+    MCNAPI bool hasKey(::std::string const& key) const;
 
-    MCAPI void setCurrentThemeId(::std::string const& themeId);
+    MCNAPI void setCurrentThemeId(::std::string const& themeId);
 
-    MCAPI void setFontZoom(int fontZoom);
+    MCNAPI void setFontZoom(int fontZoom);
 
-    MCAPI void setKey(::std::string const& key, ::std::string const& value);
+    MCNAPI void setKey(::std::string const& key, ::std::string const& value);
 
-    MCAPI void setKeys(::std::unordered_map<::std::string, ::std::string> const& entries);
+    MCNAPI void setKeys(::std::unordered_map<::std::string, ::std::string> const& entries);
 
-    MCAPI void setSelectedOperator(::OreUI::EditorSettingsFacet::EditorOperatorType operatorType);
+    MCNAPI void setSelectedOperator(::OreUI::EditorSettingsFacet::EditorOperatorType operatorType);
 
-    MCAPI void setSelectedTool(::std::string const& toolId);
+    MCNAPI void setSelectedTool(::std::string const& toolId);
 
-    MCAPI void updateThemeColor(::std::string& id, ::std::string& key, ::mce::Color newColor);
+    MCNAPI void updateThemeColor(::std::string& id, ::std::string& key, ::mce::Color newColor);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -106,9 +106,9 @@ public:
         ::IMinecraftGame&  minecraftGame
     );
 
-    MCAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
+    MCNAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle();
     // NOLINTEND
 
 public:

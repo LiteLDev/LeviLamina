@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EnchantingScreenControllerProxy(::EnchantingScreenControllerProxyCallbacks& callbacks);
+    MCNAPI explicit EnchantingScreenControllerProxy(::EnchantingScreenControllerProxyCallbacks& callbacks);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EnchantingScreenControllerProxyCallbacks& callbacks);
+    MCNAPI void* $ctor(::EnchantingScreenControllerProxyCallbacks& callbacks);
     // NOLINTEND
 
 public:

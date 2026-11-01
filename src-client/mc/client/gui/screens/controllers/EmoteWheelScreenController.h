@@ -41,24 +41,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EmoteWheelScreenController(
+    MCNAPI EmoteWheelScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> clientModel,
         ::std::shared_ptr<::PersonaScreenModelCommon>  model
     );
 
-    MCAPI ::std::string _getChangeOrExitInstructions() const;
+    MCNAPI ::std::string _getChangeOrExitInstructions() const;
 
-    MCAPI ::std::string _getEmoteScreenInstructions();
+    MCNAPI ::std::string _getEmoteScreenInstructions();
 
-    MCAPI void _onButtonPress(int emoteIndex);
+    MCNAPI void _onButtonPress(int emoteIndex);
 
-    MCAPI void _sendButtonPressedMessage(bool slotSet) const;
+    MCNAPI void _sendButtonPressedMessage(bool slotSet) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> clientModel,
         ::std::shared_ptr<::PersonaScreenModelCommon>  model
     );
@@ -67,10 +67,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $_getButtonStartDescription();
+    MCNAPI ::std::string $_getButtonStartDescription();
     // NOLINTEND
 };

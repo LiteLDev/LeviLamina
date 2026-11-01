@@ -20,12 +20,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~VisibilityCacheComponent();
+    MCNAPI ~VisibilityCacheComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

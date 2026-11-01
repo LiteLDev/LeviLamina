@@ -32,19 +32,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent const&);
+    MCNAPI PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent const&);
 
-    MCAPI ::SharedTypes::v1_26_0::PlanterItemComponent& operator=(::SharedTypes::v1_26_0::PlanterItemComponent&&);
+    MCNAPI ::SharedTypes::v1_26_0::PlanterItemComponent& operator=(::SharedTypes::v1_26_0::PlanterItemComponent&&);
 
-    MCAPI ~PlanterItemComponent();
+    MCNAPI ~PlanterItemComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::std::optional<::SharedTypes::v1_21_40::PlanterItemComponent>& oldDefinition,
         ::std::optional<::SharedTypes::v1_26_0::PlanterItemComponent>&  newDefinition
     );
@@ -53,19 +53,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_0::PlanterItemComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_0::PlanterItemComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

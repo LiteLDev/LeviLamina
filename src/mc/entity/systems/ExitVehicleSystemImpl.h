@@ -150,7 +150,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Views(
+        MCNAPI explicit Views(
             ::StrictExecutionContext<
                 ::Filter<
                     ::CanStandOnPowderSnowComponent,
@@ -192,7 +192,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::StrictExecutionContext<
                 ::Filter<
                     ::CanStandOnPowderSnowComponent,
@@ -360,7 +360,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickExitVehicle(
+    MCNAPI static void _tickExitVehicle(
         ::StrictEntityContext const&                            entity,
         ::PassengerComponent const&                             passenger,
         ::AABBShapeComponent const&                             aabb,
@@ -390,7 +390,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,
@@ -428,7 +428,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,

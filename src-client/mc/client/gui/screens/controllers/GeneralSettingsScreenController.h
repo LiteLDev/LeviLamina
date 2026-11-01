@@ -99,7 +99,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeneralSettingsScreenController(
+    MCNAPI GeneralSettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         bool                                     isGlobalSettings,
         bool                                     reloadTexturePacksOnExit,
@@ -107,41 +107,41 @@ public:
         bool                                     legacySyncOnly
     );
 
-    MCAPI bool _areAnyPackImportsPending() const;
+    MCNAPI bool _areAnyPackImportsPending() const;
 
-    MCAPI void _chooseLanguage(::std::string const& selectedLanguageCode, int selectedLanguageIndex);
+    MCNAPI void _chooseLanguage(::std::string const& selectedLanguageCode, int selectedLanguageIndex);
 
-    MCAPI ::std::string _generateAccountInformation() const;
+    MCNAPI ::std::string _generateAccountInformation() const;
 
-    MCAPI ::std::string _generateBuildInformation() const;
+    MCNAPI ::std::string _generateBuildInformation() const;
 
-    MCAPI ::std::vector<int> _getGUIScaleValues() const;
+    MCNAPI ::std::vector<int> _getGUIScaleValues() const;
 
-    MCAPI void _processPendingImports();
+    MCNAPI void _processPendingImports();
 
-    MCAPI void _registerControllerCallbacks();
+    MCNAPI void _registerControllerCallbacks();
 
-    MCAPI void
+    MCNAPI void
     _setGlobalStack(::std::vector<::PackInstanceId> const& modelManagerIdentities, bool anyVersion, bool saveStack);
 
-    MCAPI void _setResourcePackStack();
+    MCNAPI void _setResourcePackStack();
 
-    MCAPI void _updateDisplayNameOnScreenFromUser();
+    MCNAPI void _updateDisplayNameOnScreenFromUser();
 
-    MCAPI void setGuiScaleOption(int guiScaleOffset);
+    MCNAPI void setGuiScaleOption(int guiScaleOffset);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     addStaticScreenVars(::Json::Value& globalVars, bool isTexturePackRequired, bool showFeedbackButton);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         bool                                     isGlobalSettings,
         bool                                     reloadTexturePacksOnExit,
@@ -153,14 +153,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI bool $canExit();
+    MCNAPI bool $canExit();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

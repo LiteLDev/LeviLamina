@@ -38,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkWorldDetails();
+    MCNAPI NetworkWorldDetails();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

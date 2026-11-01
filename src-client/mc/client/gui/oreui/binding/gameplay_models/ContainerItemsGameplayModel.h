@@ -35,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

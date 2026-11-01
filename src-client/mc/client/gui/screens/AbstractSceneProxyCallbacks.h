@@ -28,12 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AbstractSceneProxyCallbacks(::AbstractSceneProxyCallbacks const&);
+    MCNAPI AbstractSceneProxyCallbacks(::AbstractSceneProxyCallbacks const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::AbstractSceneProxyCallbacks const&);
+    MCNAPI void* $ctor(::AbstractSceneProxyCallbacks const&);
     // NOLINTEND
 };

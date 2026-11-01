@@ -10,7 +10,7 @@ class AABB;
 namespace PathConsts {
 // static variables
 // NOLINTBEGIN
-MCAPI ::AABB const& PATH_BLOCK_VISUAL_SHAPE();
+MCNAPI ::AABB const& PATH_BLOCK_VISUAL_SHAPE();
 // NOLINTEND
 
 } // namespace PathConsts

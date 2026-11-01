@@ -195,46 +195,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
+    MCNAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
-    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+    MCNAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCFOLD bool $canLaunchUri(::std::string const& uri);
+    MCNAPI bool $canLaunchUri(::std::string const& uri);
 
-    MCAPI void $launchUri(::std::string const& uri);
+    MCNAPI void $launchUri(::std::string const& uri);
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getDataUrl() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getDataUrl() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
 
-    MCAPI void $setStorageDirectory(
+    MCNAPI void $setStorageDirectory(
         ::FileStorageDirectory      dir,
         bool                        isCallback,
         ::PropertyBag const&        extraData,
         ::std::function<void(bool)> onComplete
     );
 
-    MCFOLD bool $usesAsyncOptionSaving() const;
+    MCNAPI bool $usesAsyncOptionSaving() const;
 
-    MCFOLD bool $supportsKeyboardMouse() const;
+    MCNAPI bool $supportsKeyboardMouse() const;
 
-    MCFOLD void $updateKeyboard();
+    MCNAPI void $updateKeyboard();
 
-    MCAPI void $initializeOnScreenKeyboard(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController>);
+    MCNAPI void $initializeOnScreenKeyboard(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController>);
 
-    MCFOLD void $deinitializeOnScreenKeyboard();
+    MCNAPI void $deinitializeOnScreenKeyboard();
 
-    MCFOLD bool $supportsMSAA() const;
+    MCNAPI bool $supportsMSAA() const;
 
-    MCAPI void $_fireAppFocusGained();
+    MCNAPI void $_fireAppFocusGained();
 
-    MCAPI void $_fireAppFocusLost();
+    MCNAPI void $_fireAppFocusLost();
 
-    MCAPI void $textEditComponentGainedFocus(
+    MCNAPI void $textEditComponentGainedFocus(
         ::std::string const& currentText,
         int                  maxLength,
         bool                 limitInput,
@@ -242,91 +242,91 @@ public:
         bool                 isMultiline
     );
 
-    MCAPI void $textEditComponentLostFocus();
+    MCNAPI void $textEditComponentLostFocus();
 
-    MCFOLD void $setClipboard(::std::string const& value) const;
+    MCNAPI void $setClipboard(::std::string const& value) const;
 
-    MCAPI ::std::wstring $getClipboardText() const;
+    MCNAPI ::std::wstring $getClipboardText() const;
 
-    MCFOLD void $swapBuffers();
+    MCNAPI void $swapBuffers();
 
-    MCFOLD void $discardBackbuffer();
+    MCNAPI void $discardBackbuffer();
 
-    MCAPI ::std::string $createUUID();
+    MCNAPI ::std::string $createUUID();
 
-    MCFOLD auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
+    MCNAPI auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
-    MCFOLD bool $supportsVibration() const;
+    MCNAPI bool $supportsVibration() const;
 
-    MCFOLD bool $supportsFliteTTS() const;
+    MCNAPI bool $supportsFliteTTS() const;
 
-    MCFOLD bool $getSimulateTouchWithMouse() const;
+    MCNAPI bool $getSimulateTouchWithMouse() const;
 
-    MCAPI int $getScreenWidth() const;
+    MCNAPI int $getScreenWidth() const;
 
-    MCAPI int $getScreenHeight() const;
+    MCNAPI int $getScreenHeight() const;
 
-    MCAPI void $setScreenSize(int width, int height);
+    MCNAPI void $setScreenSize(int width, int height);
 
-    MCAPI void $setWindowSize(int width, int height);
+    MCNAPI void $setWindowSize(int width, int height);
 
-    MCFOLD void $screenToClient(int& x, int& y) const;
+    MCNAPI void $screenToClient(int& x, int& y) const;
 
-    MCFOLD bool $hasBuyButtonWhenInvalidLicense();
+    MCNAPI bool $hasBuyButtonWhenInvalidLicense();
 
-    MCAPI ::std::string $getApplicationId() const;
+    MCNAPI ::std::string $getApplicationId() const;
 
-    MCFOLD bool $isMouseInsideClient() const;
+    MCNAPI bool $isMouseInsideClient() const;
 
-    MCFOLD bool $canScroll() const;
+    MCNAPI bool $canScroll() const;
 
-    MCFOLD bool $isRemoteSession() const;
+    MCNAPI bool $isRemoteSession() const;
 
-    MCFOLD bool $isMouseClickLockEnabled() const;
+    MCNAPI bool $isMouseClickLockEnabled() const;
 
-    MCFOLD bool $isMouseSonarEnabled() const;
+    MCNAPI bool $isMouseSonarEnabled() const;
 
-    MCFOLD uint $getMouseClickLockTime() const;
+    MCNAPI uint $getMouseClickLockTime() const;
 
-    MCAPI uint64 $getFreeMemory() const;
+    MCNAPI uint64 $getFreeMemory() const;
 
-    MCAPI uint64 $getMemoryLimit() const;
+    MCNAPI uint64 $getMemoryLimit() const;
 
-    MCAPI uint64 $getUsedMemory();
+    MCNAPI uint64 $getUsedMemory();
 
-    MCAPI uint64 $getTotalPhysicalMemory() const;
+    MCNAPI uint64 $getTotalPhysicalMemory() const;
 
-    MCAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
+    MCNAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
 
-    MCFOLD bool $isWebviewSupported() const;
+    MCNAPI bool $isWebviewSupported() const;
 
-    MCAPI ::dragon::platform::SurfaceParameters $getRenderSurfaceParameters() const;
+    MCNAPI ::dragon::platform::SurfaceParameters $getRenderSurfaceParameters() const;
 
-    MCAPI bool $isLANAvailable() const;
+    MCNAPI bool $isLANAvailable() const;
 
-    MCAPI bool $isNetworkAllowed() const;
+    MCNAPI bool $isNetworkAllowed() const;
 
-    MCAPI bool $isNetworkAvailable() const;
+    MCNAPI bool $isNetworkAvailable() const;
 
-    MCAPI bool $isInternetAvailable() const;
+    MCNAPI bool $isInternetAvailable() const;
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
 
-    MCFOLD bool $isHandheldDevice() const;
+    MCNAPI bool $isHandheldDevice() const;
 
-    MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
+    MCNAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
-    MCAPI ::std::unique_ptr<::SecureStorage> $getSharedSecureStorage();
+    MCNAPI ::std::unique_ptr<::SecureStorage> $getSharedSecureStorage();
 
-    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
+    MCNAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
-    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+    MCNAPI void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
-    MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const&);
+    MCNAPI bool $compareAppReceiptToLocalReceipt(::std::string const&);
 
-    MCAPI int $getPlatformDpi() const;
+    MCNAPI int $getPlatformDpi() const;
 
-    MCAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
+    MCNAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
     // NOLINTEND
 };

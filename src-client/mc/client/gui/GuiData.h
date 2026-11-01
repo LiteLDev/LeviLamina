@@ -75,9 +75,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI MessageConfig(::GuiData::MessageConfig const&);
+        MCNAPI MessageConfig(::GuiData::MessageConfig const&);
 
-        MCAPI MessageConfig(
+        MCNAPI MessageConfig(
             ::GuiMessage::MessageType             _messageType,
             ::std::string const&                  _username,
             ::std::string const&                  _message,
@@ -90,15 +90,15 @@ public:
             ::std::string const&                  _platformId
         );
 
-        MCAPI ~MessageConfig();
+        MCNAPI ~MessageConfig();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::GuiData::MessageConfig const&);
+        MCNAPI void* $ctor(::GuiData::MessageConfig const&);
 
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::GuiMessage::MessageType             _messageType,
             ::std::string const&                  _username,
             ::std::string const&                  _message,
@@ -115,7 +115,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -203,17 +203,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GuiData(::IClientInstance& client);
+    MCNAPI explicit GuiData(::IClientInstance& client);
 
-    MCAPI void _addMessage(::GuiMessage message, ::ProfanityFilterContext profanityFilterContext);
+    MCNAPI void _addMessage(::GuiMessage message, ::ProfanityFilterContext profanityFilterContext);
 
-    MCAPI void _addMessage(::GuiData::MessageConfig messageConfig, ::ProfanityFilterContext profanityFilterContext);
+    MCNAPI void _addMessage(::GuiData::MessageConfig messageConfig, ::ProfanityFilterContext profanityFilterContext);
 
-    MCAPI void _setSubtitleInternal(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
+    MCNAPI void _setSubtitleInternal(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
 
-    MCAPI void _setTitleInternal(::std::string const& title, ::std::optional<::std::string> filteredTitle);
+    MCNAPI void _setTitleInternal(::std::string const& title, ::std::optional<::std::string> filteredTitle);
 
-    MCAPI void addSubtitle(::std::string const& message, ::SoundDirection direction, bool isLocalPlayer);
+    MCNAPI void addSubtitle(::std::string const& message, ::SoundDirection direction, bool isLocalPlayer);
 
     MCAPI float calculateGuiScale(
         ::Vec2 const&                  totalScreenSize,
@@ -221,22 +221,22 @@ public:
         ::cg::math::Rect<float> const& clientViewportModifiers
     );
 
-    MCAPI int calculateMaxGuiScaleIndex(::Vec2 const& screenSize) const;
+    MCNAPI int calculateMaxGuiScaleIndex(::Vec2 const& screenSize) const;
 
-    MCAPI int calculateOptimalGuiScaleIndex(::Vec2 const& safezoneClientScreenSize) const;
+    MCNAPI int calculateOptimalGuiScaleIndex(::Vec2 const& safezoneClientScreenSize) const;
 
-    MCAPI void clearPlayerMessages();
+    MCNAPI void clearPlayerMessages();
 
-    MCAPI void clearSessionState();
+    MCNAPI void clearSessionState();
 
-    MCAPI void displayAnnouncementMessage(
+    MCNAPI void displayAnnouncementMessage(
         ::std::string const&                  message,
         ::std::optional<::std::string> const& filteredMessage,
         ::std::string const&                  xuid,
         ::std::string const&                  platformId
     );
 
-    MCAPI void displayChatMessage(
+    MCNAPI void displayChatMessage(
         ::std::string const&                  author,
         ::std::string const&                  message,
         ::std::optional<::std::string> const& filteredMessage,
@@ -250,43 +250,43 @@ public:
         bool                                  ttsRequired
     );
 
-    MCAPI void displayDevConsoleMessage(::std::string const& messages);
+    MCNAPI void displayDevConsoleMessage(::std::string const& messages);
 
-    MCAPI void displayLocalizableMessage(
+    MCNAPI void displayLocalizableMessage(
         ::std::string const&                  message,
         ::std::optional<::std::string> const& filteredMessage,
         ::std::vector<::std::string> const&   params
     );
 
-    MCAPI void
+    MCNAPI void
     displayLocalizedMessage(::std::string const& message, ::std::optional<::std::string> const& filteredMessage);
 
-    MCAPI void displaySystemMessage(
+    MCNAPI void displaySystemMessage(
         ::std::string const&                  message,
         ::std::optional<::std::string> const& filteredMessage,
         ::std::string const&                  ttsMessage,
         ::ProfanityFilterContext              profanityFilterContext
     );
 
-    MCAPI void displayTextObjectMessage(
+    MCNAPI void displayTextObjectMessage(
         ::TextObjectRoot const& textObject,
         ::std::string const&    xuid,
         ::std::string const&    platformId
     );
 
-    MCAPI void displayTextObjectWhisperMessage(
+    MCNAPI void displayTextObjectWhisperMessage(
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     );
 
-    MCAPI void displayTextObjectWhisperMessage(
+    MCNAPI void displayTextObjectWhisperMessage(
         ::TextObjectRoot const& textObject,
         ::std::string const&    xuid,
         ::std::string const&    platformId
     );
 
-    MCAPI void displayWhisperMessage(
+    MCNAPI void displayWhisperMessage(
         ::std::string const&                  author,
         ::std::string const&                  message,
         ::std::optional<::std::string> const& filteredMessage,
@@ -294,68 +294,68 @@ public:
         ::std::string const&                  platformId
     );
 
-    MCAPI void flushQueuedDevConsoleMessages();
+    MCNAPI void flushQueuedDevConsoleMessages();
 
-    MCAPI int getClampedGuiScaleOffset() const;
+    MCNAPI int getClampedGuiScaleOffset() const;
 
     MCAPI float getGuiScale() const;
 
-    MCAPI ::std::string const getLastFilteredChatMessage();
+    MCNAPI ::std::string const getLastFilteredChatMessage();
 
-    MCAPI ::RectangleArea getLayoutCustomizationMainPanelRectangle() const;
+    MCNAPI ::RectangleArea getLayoutCustomizationMainPanelRectangle() const;
 
-    MCAPI bool getNewJukeboxPopupNotice(::std::string& message, ::std::string& subtitle);
+    MCNAPI bool getNewJukeboxPopupNotice(::std::string& message, ::std::string& subtitle);
 
-    MCAPI bool getNewPopupNotice(::std::string& message, ::std::string& subtitle);
+    MCNAPI bool getNewPopupNotice(::std::string& message, ::std::string& subtitle);
 
-    MCAPI ::RectangleArea getSafeScreenZoneArea() const;
+    MCNAPI ::RectangleArea getSafeScreenZoneArea() const;
 
-    MCAPI ::RectangleArea getWYSIWYGBottomHudReservedArea() const;
+    MCNAPI ::RectangleArea getWYSIWYGBottomHudReservedArea() const;
 
-    MCAPI ::RectangleArea getWYSIWYGTopReservedArea() const;
+    MCNAPI ::RectangleArea getWYSIWYGTopReservedArea() const;
 
-    MCAPI bool handleClick();
+    MCNAPI bool handleClick();
 
-    MCAPI void postError(int errCode);
+    MCNAPI void postError(int errCode);
 
-    MCAPI ::RectangleArea const& recomputeHUDHotbarRectangle(float scale);
+    MCNAPI ::RectangleArea const& recomputeHUDHotbarRectangle(float scale);
 
     MCAPI void setActionBarMessage(::std::string const& message, ::std::optional<::std::string> const& filteredMessage);
 
-    MCAPI void setScreenSizeData(::ScreenSizeData const& screenSizeData);
+    MCNAPI void setScreenSizeData(::ScreenSizeData const& screenSizeData);
 
-    MCAPI void setSubtitle(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
+    MCNAPI void setSubtitle(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
 
-    MCAPI void setTextToSpeechEnabled(bool enabled);
+    MCNAPI void setTextToSpeechEnabled(bool enabled);
 
-    MCAPI void setTitle(::std::string const& title, ::std::optional<::std::string> filteredTitle);
+    MCNAPI void setTitle(::std::string const& title, ::std::optional<::std::string> filteredTitle);
 
-    MCAPI ::RectangleArea setTouchToolbarArea(::RectangleArea const& toolbarArea);
+    MCNAPI ::RectangleArea setTouchToolbarArea(::RectangleArea const& toolbarArea);
 
-    MCAPI void showJukeboxPopupNotice(::std::string const& message, ::std::string const& subtitle);
+    MCNAPI void showJukeboxPopupNotice(::std::string const& message, ::std::string const& subtitle);
 
-    MCAPI void showPopupNotice(::std::string const& message, ::std::string const& subtitle);
+    MCNAPI void showPopupNotice(::std::string const& message, ::std::string const& subtitle);
 
-    MCAPI void showTipMessage(::std::string const& message);
+    MCNAPI void showTipMessage(::std::string const& message);
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<float, 8> const& GUI_SCALE_VALUES();
+    MCNAPI static ::std::array<float, 8> const& GUI_SCALE_VALUES();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& client);
+    MCNAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onConfigChanged(::Config const& c);
+    MCNAPI void $onConfigChanged(::Config const& c);
     // NOLINTEND
 };

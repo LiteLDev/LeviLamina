@@ -34,39 +34,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperienceRewardComponentDefinition(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&);
+    MCNAPI ExperienceRewardComponentDefinition(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&);
 
-    MCAPI void addBredExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
+    MCNAPI void addBredExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
 
-    MCAPI void addDeathExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
+    MCNAPI void addDeathExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&) const;
 
-    MCAPI ~ExperienceRewardComponentDefinition();
+    MCNAPI ~ExperienceRewardComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

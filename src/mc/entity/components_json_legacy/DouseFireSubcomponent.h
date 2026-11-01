@@ -31,19 +31,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const&);
+    MCNAPI void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const&);
 
-    MCFOLD void $writetoJSON(::Json::Value&) const;
+    MCNAPI void $writetoJSON(::Json::Value&) const;
 
-    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
+    MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCAPI char const* $getName() const;
+    MCNAPI char const* $getName() const;
 
 
     // NOLINTEND

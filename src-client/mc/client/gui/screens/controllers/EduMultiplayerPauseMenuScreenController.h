@@ -40,32 +40,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduMultiplayerPauseMenuScreenController(
+    MCNAPI EduMultiplayerPauseMenuScreenController(
         ::std::shared_ptr<::PauseScreenModel> model,
         ::std::vector<::ActorUniqueID> const& clientIds
     );
 
-    MCAPI ::PlayerListEntry const& _getLevelLocalPlayerListEntry();
+    MCNAPI ::PlayerListEntry const& _getLevelLocalPlayerListEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, ::std::vector<::ActorUniqueID> const& clientIds);
+    MCNAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, ::std::vector<::ActorUniqueID> const& clientIds);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 
 public:

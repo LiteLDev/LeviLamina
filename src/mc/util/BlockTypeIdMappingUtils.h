@@ -10,16 +10,16 @@ class BlockType;
 namespace BlockTypeIdMappingUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void addBlockTypeIdMappings();
+MCNAPI void addBlockTypeIdMappings();
 
-MCAPI void clearMappings();
+MCNAPI void clearMappings();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
 MCAPI ::std::unordered_map<uint, ::BlockType const*>& mBlockIdToVanillaBlockTypesMap();
 
-MCAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
+MCNAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
 // NOLINTEND
 
 } // namespace BlockTypeIdMappingUtils

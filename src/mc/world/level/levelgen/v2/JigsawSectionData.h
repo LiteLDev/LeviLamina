@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::br::worldgen::JigsawSectionDataKey push(::StructurePoolElement const* element, int depth);
+    MCNAPI ::br::worldgen::JigsawSectionDataKey push(::StructurePoolElement const* element, int depth);
     // NOLINTEND
 };
 

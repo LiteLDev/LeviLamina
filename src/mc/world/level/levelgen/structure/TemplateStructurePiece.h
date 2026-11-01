@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit TemplateStructurePiece(int depth);
 
-    MCAPI void _setBoundingBoxFromTemplate();
+    MCNAPI void _setBoundingBoxFromTemplate();
     // NOLINTEND
 
 public:

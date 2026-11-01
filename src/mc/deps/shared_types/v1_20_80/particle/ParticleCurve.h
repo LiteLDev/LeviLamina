@@ -34,39 +34,39 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve&&);
+    MCNAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve&&);
 #endif
 
-    MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
+    MCNAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleCurve const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleCurve const&) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ~ParticleCurve();
+    MCNAPI ~ParticleCurve();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve&&);
 #endif
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

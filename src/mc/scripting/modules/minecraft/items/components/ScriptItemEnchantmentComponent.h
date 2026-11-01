@@ -37,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemEnchantmentComponent(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+    MCNAPI ScriptItemEnchantmentComponent(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
 
-    MCAPI ScriptItemEnchantmentComponent(
+    MCNAPI ScriptItemEnchantmentComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
@@ -48,15 +48,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );

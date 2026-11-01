@@ -46,7 +46,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
+    MCNAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
 
 
     // NOLINTEND

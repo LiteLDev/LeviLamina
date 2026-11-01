@@ -35,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkWorldData();
+    MCNAPI NetworkWorldData();
 
-    MCAPI ~NetworkWorldData();
+    MCNAPI ~NetworkWorldData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OreUI::NetworkWorldData fromExternalServerWorld(::NetworkWorldInfo const& networkWorldInfo);
+    MCNAPI static ::OreUI::NetworkWorldData fromExternalServerWorld(::NetworkWorldInfo const& networkWorldInfo);
 
-    MCAPI static ::OreUI::NetworkWorldData fromThirdPartyWorld(
+    MCNAPI static ::OreUI::NetworkWorldData fromThirdPartyWorld(
         ::NetworkWorldInfo const&                                  networkWorldInfo,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -54,13 +54,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

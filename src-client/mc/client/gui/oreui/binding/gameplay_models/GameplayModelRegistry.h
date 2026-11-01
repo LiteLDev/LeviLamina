@@ -55,9 +55,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _tryInstantiateGameplayModels();
+    MCNAPI void _tryInstantiateGameplayModels();
 
-    MCAPI void registerGameplayModelTemplate(
+    MCNAPI void registerGameplayModelTemplate(
         ::std::function<::std::unique_ptr<::OreUI::Experimental::Detail::IGameplayModel>()> constructor
     );
     // NOLINTEND
@@ -65,19 +65,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onReadyForBindings();
+    MCNAPI void $onReadyForBindings();
 
-    MCAPI void $onSuspend();
+    MCNAPI void $onSuspend();
 
-    MCAPI void $onBindingsReleased();
+    MCNAPI void $onBindingsReleased();
 
-    MCAPI void $update(double time);
+    MCNAPI void $update(double time);
     // NOLINTEND
 
 public:

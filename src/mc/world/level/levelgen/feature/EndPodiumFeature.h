@@ -28,13 +28,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockPos const& END_PODIUM_LOCATION();
+    MCNAPI static ::BlockPos const& END_PODIUM_LOCATION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
     // NOLINTEND

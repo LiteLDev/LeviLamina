@@ -22,13 +22,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry);
+    MCNAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

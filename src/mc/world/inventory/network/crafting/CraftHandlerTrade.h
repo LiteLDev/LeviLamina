@@ -54,21 +54,21 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar const numCrafts);
 
-    MCAPI ::ItemStackNetResult _initTrade2Consumes();
+    MCNAPI ::ItemStackNetResult _initTrade2Consumes();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult $handleConsumedItem(
+    MCNAPI ::ItemStackNetResult $handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
         uchar const                slot,
         ::ItemStack const&         consumedItem
     );
 
-    MCAPI void $_postCraftRequest(bool const wasSuccess);
+    MCNAPI void $_postCraftRequest(bool const wasSuccess);
 
 
     // NOLINTEND

@@ -72,36 +72,36 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCFOLD int $getAttackDamage() const;
+    MCNAPI int $getAttackDamage() const;
 
-    MCFOLD bool $isHandEquipped() const;
+    MCNAPI bool $isHandEquipped() const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
-    MCAPI bool $canDestroySpecial(::Block const& block) const;
+    MCNAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCAPI bool $isValidRepairItem(
+    MCNAPI bool $isValidRepairItem(
         ::ItemStackBase const&,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCFOLD int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCFOLD bool $canDestroyInCreative() const;
+    MCNAPI bool $canDestroyInCreative() const;
 
 
     // NOLINTEND
@@ -109,6 +109,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

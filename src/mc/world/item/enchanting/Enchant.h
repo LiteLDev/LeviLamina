@@ -160,7 +160,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Enchant(
+    MCNAPI Enchant(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
         ::std::string_view const   stringId,
@@ -171,21 +171,21 @@ public:
         int                        secondarySlots
     );
 
-    MCAPI ::std::string getDescriptionId() const;
+    MCNAPI ::std::string getDescriptionId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::EnchantSlot enchantSlotFromString(::std::string_view str);
+    MCNAPI static ::SharedTypes::EnchantSlot enchantSlotFromString(::std::string_view str);
 
-    MCAPI static ::Enchant const* getEnchantFromName(::HashedString const& name);
+    MCNAPI static ::Enchant const* getEnchantFromName(::HashedString const& name);
 
-    MCAPI static ::Enchant::Type getEnchantTypeFromName(::HashedString const& name);
+    MCNAPI static ::Enchant::Type getEnchantTypeFromName(::HashedString const& name);
 
-    MCAPI static void initEnchants(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCNAPI static void initEnchants(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
-    MCAPI static ::std::string stringFromEnchantSlot(::SharedTypes::EnchantSlot const& enchantSlot);
+    MCNAPI static ::std::string stringFromEnchantSlot(::SharedTypes::EnchantSlot const& enchantSlot);
     // NOLINTEND
 
 public:
@@ -193,14 +193,14 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::HashedString, ::Enchant::Type>& mEnchantNameToType();
 
-    MCAPI static ::std::unordered_map<
+    MCNAPI static ::std::unordered_map<
         ::SharedTypes::EnchantSlot,
         ::std::string,
         ::EnchantSlotEnumHasher,
         ::std::equal_to<::SharedTypes::EnchantSlot>>&
     mEnchantSlotTypeEnumToStringMap();
 
-    MCAPI static ::std::unordered_map<::std::string, ::SharedTypes::EnchantSlot>& mEnchantSlotTypeNameToEnumMap();
+    MCNAPI static ::std::unordered_map<::std::string, ::SharedTypes::EnchantSlot>& mEnchantSlotTypeNameToEnumMap();
 
     MCAPI static ::std::vector<::std::unique_ptr<::Enchant>>& mEnchants();
     // NOLINTEND
@@ -208,7 +208,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
         ::std::string_view const   stringId,
@@ -223,39 +223,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
+    MCNAPI bool $isCompatibleWith(::Enchant::Type type) const;
 
-    MCAPI int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCFOLD int $getMinLevel() const;
+    MCNAPI int $getMinLevel() const;
 
-    MCFOLD int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
-    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+    MCNAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
+    MCNAPI float $getAfterBreachArmorFraction(int, float) const;
 
-    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCNAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+    MCNAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCFOLD void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
+    MCNAPI void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
 
-    MCFOLD void $doPostItemHurtActor(::Actor& attacker, ::Actor& victim, int enchantLevel) const;
+    MCNAPI void $doPostItemHurtActor(::Actor& attacker, ::Actor& victim, int enchantLevel) const;
 
-    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+    MCNAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
-    MCFOLD bool $isMeleeDamageEnchant() const;
+    MCNAPI bool $isMeleeDamageEnchant() const;
 
-    MCFOLD bool $isProtectionEnchant() const;
+    MCNAPI bool $isProtectionEnchant() const;
 
-    MCFOLD bool $isTreasureOnly() const;
+    MCNAPI bool $isTreasureOnly() const;
 
-    MCFOLD bool $isDiscoverable() const;
+    MCNAPI bool $isDiscoverable() const;
 
-    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
 
     // NOLINTEND

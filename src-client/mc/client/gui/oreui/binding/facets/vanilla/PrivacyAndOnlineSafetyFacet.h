@@ -30,25 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void doPermissionCheck();
+    MCNAPI void doPermissionCheck();
 
-    MCAPI bool getAllowCapturesResult() const;
+    MCNAPI bool getAllowCapturesResult() const;
 
-    MCAPI bool getClubCheckResult() const;
+    MCNAPI bool getClubCheckResult() const;
 
-    MCAPI bool getMultiplayerCheckResult() const;
+    MCNAPI bool getMultiplayerCheckResult() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

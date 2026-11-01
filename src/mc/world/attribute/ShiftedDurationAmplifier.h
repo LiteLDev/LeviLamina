@@ -25,9 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldBuff(int remainingDuration, int amplification) const;
+    MCNAPI bool $shouldBuff(int remainingDuration, int amplification) const;
 
-    MCAPI int $getTickInterval(int amplification) const;
+    MCNAPI int $getTickInterval(int amplification) const;
 
 
     // NOLINTEND

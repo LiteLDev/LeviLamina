@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest
+    MCNAPI ::ui::ViewRequest
     handleImagesExport(::std::vector<::Core::PathBuffer<::Core::BasicStackString<char, 1024>>> const& toExport);
     // NOLINTEND
 

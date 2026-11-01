@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const*
+    MCNAPI ::Block const*
     applyBlockRules(::BlockSource& region, ::BlockPos& pos, ::Block const* blockToPlace, ::BlockPos const& refPos);
     // NOLINTEND
 };

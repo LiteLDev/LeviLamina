@@ -54,15 +54,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void clear();
+        MCNAPI void clear();
 
-        MCAPI ~FrameScratch();
+        MCNAPI ~FrameScratch();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,17 +82,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
+    MCNAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
 
-    MCAPI bool
+    MCNAPI bool
     tryAddActor(::Actor& actor, ::std::shared_ptr<::ActorRenderer> const& renderer, ::ShadowContext shadowContext);
 
-    MCAPI ~DataDrivenRendererV2();
+    MCNAPI ~DataDrivenRendererV2();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

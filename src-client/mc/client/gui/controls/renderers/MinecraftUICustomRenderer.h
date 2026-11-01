@@ -39,15 +39,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $frameUpdate(::UIFrameUpdateContext& frameUpdateContext, ::UIControl& owner);
+    MCNAPI void $frameUpdate(::UIFrameUpdateContext& frameUpdateContext, ::UIControl& owner);
 
-    MCFOLD void $frameUpdate(::MinecraftUIFrameUpdateContext&, ::UIControl&);
+    MCNAPI void $frameUpdate(::MinecraftUIFrameUpdateContext&, ::UIControl&);
 
-    MCAPI void $render(::UIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
+    MCNAPI void $render(::UIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
-    MCAPI void $preRenderSetup(::UIRenderContext& renderContext);
+    MCNAPI void $preRenderSetup(::UIRenderContext& renderContext);
 
-    MCFOLD void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
+    MCNAPI void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
     // NOLINTEND
 
 public:

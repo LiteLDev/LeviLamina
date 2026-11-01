@@ -34,26 +34,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerListInfo(::PlayerListInfo&&);
+    MCNAPI PlayerListInfo(::PlayerListInfo&&);
 
-    MCAPI PlayerListInfo(::PlayerListInfo const&);
+    MCNAPI PlayerListInfo(::PlayerListInfo const&);
 
-    MCAPI ::PlayerListInfo& operator=(::PlayerListInfo&&);
+    MCNAPI ::PlayerListInfo& operator=(::PlayerListInfo&&);
 
-    MCAPI ~PlayerListInfo();
+    MCNAPI ~PlayerListInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerListInfo&&);
+    MCNAPI void* $ctor(::PlayerListInfo&&);
 
-    MCAPI void* $ctor(::PlayerListInfo const&);
+    MCNAPI void* $ctor(::PlayerListInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

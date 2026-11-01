@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setSpringType(::std::string const& type);
+    MCNAPI void setSpringType(::std::string const& type);
     // NOLINTEND
 };

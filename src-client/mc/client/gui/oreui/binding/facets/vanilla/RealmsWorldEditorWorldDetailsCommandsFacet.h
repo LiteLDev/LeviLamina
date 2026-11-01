@@ -31,37 +31,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void saveRealmDetails(::std::string const& realmId) const;
+    MCNAPI void saveRealmDetails(::std::string const& realmId) const;
 
-    MCAPI void setRealmCheatsEnabled(bool cheatsEnabled) const;
+    MCNAPI void setRealmCheatsEnabled(bool cheatsEnabled) const;
 
-    MCAPI void setRealmDaylightCycle(int daylightCycle) const;
+    MCNAPI void setRealmDaylightCycle(int daylightCycle) const;
 
-    MCAPI void setRealmWorldDifficulty(int difficulty) const;
+    MCNAPI void setRealmWorldDifficulty(int difficulty) const;
 
-    MCAPI void setRealmWorldGameType(int gameType) const;
+    MCNAPI void setRealmWorldGameType(int gameType) const;
 
-    MCAPI void setRealmWorldIsHardcore(bool isHardcore) const;
+    MCNAPI void setRealmWorldIsHardcore(bool isHardcore) const;
 
-    MCAPI void setRealmWorldName(::std::string const& name) const;
+    MCNAPI void setRealmWorldName(::std::string const& name) const;
 
-    MCAPI void setRealmsAreTexturePacksRequired(bool areTexturesRequired) const;
+    MCNAPI void setRealmsAreTexturePacksRequired(bool areTexturesRequired) const;
 
-    MCAPI void setRealmsDescription(::std::string const& description) const;
+    MCNAPI void setRealmsDescription(::std::string const& description) const;
 
-    MCAPI void setRealmsName(::std::string const& name) const;
+    MCNAPI void setRealmsName(::std::string const& name) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

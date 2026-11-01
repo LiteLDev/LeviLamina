@@ -56,25 +56,25 @@ public:
     // NOLINTBEGIN
     MCAPI bool checkMobSpawn(::Level& level, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& getFlattenedBlock(::Block const& block, ::BlockActor const& actor);
+    MCNAPI static ::Block const& getFlattenedBlock(::Block const& block, ::BlockActor const& actor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -82,7 +82,7 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
 
     // NOLINTEND
@@ -90,6 +90,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

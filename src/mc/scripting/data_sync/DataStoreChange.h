@@ -25,29 +25,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataStoreChange(::Bedrock::DDUI::DataStoreChange&&);
+    MCNAPI DataStoreChange(::Bedrock::DDUI::DataStoreChange&&);
 
-    MCAPI DataStoreChange(::Bedrock::DDUI::DataStoreChange const&);
+    MCNAPI DataStoreChange(::Bedrock::DDUI::DataStoreChange const&);
 
-    MCAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange&&);
+    MCNAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange&&);
 
-    MCAPI bool operator==(::Bedrock::DDUI::DataStoreChange const& rhs) const;
+    MCNAPI bool operator==(::Bedrock::DDUI::DataStoreChange const& rhs) const;
 
-    MCAPI ~DataStoreChange();
+    MCNAPI ~DataStoreChange();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::DDUI::DataStoreChange&&);
+    MCNAPI void* $ctor(::Bedrock::DDUI::DataStoreChange&&);
 
-    MCAPI void* $ctor(::Bedrock::DDUI::DataStoreChange const&);
+    MCNAPI void* $ctor(::Bedrock::DDUI::DataStoreChange const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

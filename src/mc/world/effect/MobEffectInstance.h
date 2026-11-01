@@ -45,17 +45,17 @@ public:
 
     MCAPI ::std::string getDisplayName() const;
 
-    MCAPI ::MobEffectInstance& operator=(::MobEffectInstance&&);
+    MCNAPI ::MobEffectInstance& operator=(::MobEffectInstance&&);
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCAPI bool tick();
+    MCNAPI bool tick();
 
-    MCAPI void update(::MobEffectInstance const& takeOver);
+    MCNAPI void update(::MobEffectInstance const& takeOver);
 
-    MCAPI void updateEffects(::Actor& mob) const;
+    MCNAPI void updateEffects(::Actor& mob) const;
 
-    MCAPI ~MobEffectInstance();
+    MCNAPI ~MobEffectInstance();
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MobEffectInstance const& NO_EFFECT();
+    MCNAPI static ::MobEffectInstance const& NO_EFFECT();
 
     MCAPI static float& splashDurationMultiplier();
     // NOLINTEND
@@ -83,6 +83,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

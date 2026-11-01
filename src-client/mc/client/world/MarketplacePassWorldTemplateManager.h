@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MarketplacePassWorldTemplateManager(
+    MCNAPI MarketplacePassWorldTemplateManager(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
@@ -60,29 +60,29 @@ public:
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
 
-    MCAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
+    MCNAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
 
-    MCAPI void _onOfferPurchased(::std::string const& productId);
+    MCNAPI void _onOfferPurchased(::std::string const& productId);
 
-    MCAPI void _prepareOffers();
+    MCNAPI void _prepareOffers();
 
-    MCAPI void isTemplateOwnedThroughPassOnly(::std::string const& templateId, ::std::function<void(bool)> callback);
+    MCNAPI void isTemplateOwnedThroughPassOnly(::std::string const& templateId, ::std::function<void(bool)> callback);
 
-    MCAPI void update(double);
+    MCNAPI void update(double);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> MARKETPLACE_PASS_TEMPLATES_TITLE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> MARKETPLACE_PASS_TEMPLATES_TITLE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> REALMS_PLUS_QUERY_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> REALMS_PLUS_QUERY_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
@@ -97,7 +97,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
+    MCNAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 };
 

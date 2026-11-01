@@ -30,9 +30,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
-    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random&, ::LootTableContext& context);
+    MCNAPI void $applyPreVersion(::ItemStackBase& item, ::Random&, ::LootTableContext& context);
 
 
     // NOLINTEND

@@ -378,223 +378,223 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onChat(::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData>& eventData);
+    MCNAPI void $onChat(::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData>& eventData);
 
-    MCFOLD void $onGameRuleChange(
+    MCNAPI void $onGameRuleChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onPackSettingChange(
+    MCNAPI void $onPackSettingChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPackSettingChangeIntermediateData>& packSettingChangeEvent
     );
 
-    MCFOLD void
+    MCNAPI void
     $onServerMessage(::std::shared_ptr<::ScriptModuleMinecraft::ScriptServerMessageIntermediateData>& eventData);
 
-    MCFOLD void $onSoundCompleted(
+    MCNAPI void $onSoundCompleted(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptSoundCompletedAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onActorAddEffect(
+    MCNAPI void $onActorAddEffect(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onActorContainerClosed(
+    MCNAPI void $onActorContainerClosed(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onActorContainerOpened(
+    MCNAPI void $onActorContainerOpened(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void
+    MCNAPI void
     $onActorDie(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData>& eventData);
 
-    MCFOLD void
+    MCNAPI void
     $onActorHeal(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>& eventData);
 
-    MCFOLD void $onActorHealthChanged(
+    MCNAPI void $onActorHealthChanged(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onActorItemDrop(
+    MCNAPI void $onActorItemDrop(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onActorItemPickup(
+    MCNAPI void $onActorItemPickup(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void
+    MCNAPI void
     $onActorLoad(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSpawnAfterEventIntermediateData>& eventData);
 
-    MCFOLD void
+    MCNAPI void
     $onActorSpawn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSpawnAfterEventIntermediateData>& eventData);
 
-    MCFOLD void $onActorStartSneaking(
+    MCNAPI void $onActorStartSneaking(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSneakingStateAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onActorStopSneaking(
+    MCNAPI void $onActorStopSneaking(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSneakingStateAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void
+    MCNAPI void
     $onActorTamed(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorTamedAfterEventIntermediateData>& eventData);
 
-    MCFOLD void $onActorUpgrade(
+    MCNAPI void $onActorUpgrade(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorUpgradeAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerButtonInput(
+    MCNAPI void $onPlayerButtonInput(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerButtonInputIntermediateData>& inputEvent
     );
 
-    MCFOLD void $onPlayerDimensionChange(
+    MCNAPI void $onPlayerDimensionChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeIntermediateData>& eventData
     );
 
-    MCFOLD void
+    MCNAPI void
     $onPlayerEmote(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerEmoteIntermediateData>& emoteEvent);
 
-    MCFOLD void $onPlayerGameModeChange(
+    MCNAPI void $onPlayerGameModeChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerHotbarSelectedSlotChange(
+    MCNAPI void $onPlayerHotbarSelectedSlotChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeIntermediateData>& hotbarEvent
     );
 
-    MCFOLD void $onPlayerInputModeChange(
+    MCNAPI void $onPlayerInputModeChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInputModeChangeIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerInputPermissionCategoryChange(
+    MCNAPI void $onPlayerInputPermissionCategoryChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerInteractWithBlock(
+    MCNAPI void $onPlayerInteractWithBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerInteractWithEntity(
+    MCNAPI void $onPlayerInteractWithEntity(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerInventoryItemChange(
+    MCNAPI void $onPlayerInventoryItemChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData>& inventoryEvent
     );
 
-    MCFOLD void $onPlayerCursorItemGrab(
+    MCNAPI void $onPlayerCursorItemGrab(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerCursorItemRelease(
+    MCNAPI void $onPlayerCursorItemRelease(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerCraftRecipe(
+    MCNAPI void $onPlayerCraftRecipe(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCraftRecipeIntermediateData>& eventData
     );
 
-    MCFOLD void
+    MCNAPI void
     $onPlayerSpawn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerSpawnIntermediateData>& eventData);
 
-    MCFOLD void $onPlayerSwingStart(
+    MCNAPI void $onPlayerSwingStart(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerSwingStartIntermediateData>& playerSwingStartEvent
     );
 
-    MCFOLD void $onPlayerUseNameTag(
+    MCNAPI void $onPlayerUseNameTag(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerUseNameTagIntermediateData>& useNameTagEvent
     );
 
-    MCFOLD void $onActivateLever(
+    MCNAPI void $onActivateLever(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptLeverActionAfterEventIntermediateData>& leverEvent
     );
 
-    MCFOLD void $onActivatePiston(
+    MCNAPI void $onActivatePiston(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPistonActionAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onBlockContainerClosed(
+    MCNAPI void $onBlockContainerClosed(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onBlockContainerOpened(
+    MCNAPI void $onBlockContainerOpened(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onExplodeBlock(
+    MCNAPI void $onExplodeBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onExplosion(
+    MCNAPI void $onExplosion(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onHitTargetBlock(
+    MCNAPI void $onHitTargetBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerBreakBlock(
+    MCNAPI void $onPlayerBreakBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerCancelBreakingBlock(
+    MCNAPI void $onPlayerCancelBreakingBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakingBlockAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerPlaceBlock(
+    MCNAPI void $onPlayerPlaceBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onPlayerStartBreakingBlock(
+    MCNAPI void $onPlayerStartBreakingBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakingBlockAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onPopPressurePlate(
+    MCNAPI void $onPopPressurePlate(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void
+    MCNAPI void
     $onPushButton(::std::shared_ptr<::ScriptModuleMinecraft::ScriptButtonPushAfterEventIntermediateData>& eventData);
 
-    MCFOLD void $onPushPressurePlate(
+    MCNAPI void $onPushPressurePlate(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void $onTripTripWire(
+    MCNAPI void $onTripTripWire(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData>& eventData
     );
 
-    MCFOLD void
+    MCNAPI void
     $onItemStartUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStartUseOnIntermediateData>& eventData);
 
-    MCFOLD void
+    MCNAPI void
     $onItemStopUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseOnIntermediateData>& eventData);
 
-    MCFOLD void $onItemUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseIntermediateData>& eventData);
+    MCNAPI void $onItemUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseIntermediateData>& eventData);
 
-    MCFOLD void
+    MCNAPI void
     $onProjectileHitBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData>& eventData);
 
-    MCFOLD void
+    MCNAPI void
     $onProjectileHitEntity(::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData>& eventData);
 
-    MCFOLD void $onWorldClockTimeModified(
+    MCNAPI void $onWorldClockTimeModified(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeModifiedAfterEventIntermediateData>&
             clockTimeModifiedEvent
     );
 
-    MCFOLD void $onWorldClockPaused(
+    MCNAPI void $onWorldClockPaused(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockPausedAfterEventIntermediateData>& clockPausedEvent
     );
 
-    MCFOLD void $onWorldClockResumed(
+    MCNAPI void $onWorldClockResumed(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockResumedAfterEventIntermediateData>& clockResumedEvent
     );
 
-    MCFOLD void $onWorldClockTimeMarker(
+    MCNAPI void $onWorldClockTimeMarker(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerAfterEventIntermediateData>&
             clockTimeMarkerEvent
     );

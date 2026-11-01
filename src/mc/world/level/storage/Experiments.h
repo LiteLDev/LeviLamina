@@ -18,29 +18,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Experiments();
+    MCNAPI Experiments();
 
 #ifdef LL_PLAT_C
-    MCAPI bool _shouldShowAsExperimentalLevel(
+    MCNAPI bool _shouldShowAsExperimentalLevel(
         ::std::vector<bool> const&       experimentData,
         ::gsl::span<::std::string const> toggleNames
     ) const;
 #endif
 
-    MCAPI ::std::string getExperimentsActiveAsJSONList() const;
+    MCNAPI ::std::string getExperimentsActiveAsJSONList() const;
 
-    MCAPI void getTagData(::CompoundTag const& tag);
+    MCNAPI void getTagData(::CompoundTag const& tag);
 
-    MCAPI void setTagData(::CompoundTag& tag) const;
+    MCNAPI void setTagData(::CompoundTag& tag) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool shouldShowAsExperimentalLevel() const;
+    MCNAPI bool shouldShowAsExperimentalLevel() const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

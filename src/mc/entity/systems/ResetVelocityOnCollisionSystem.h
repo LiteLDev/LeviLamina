@@ -11,7 +11,7 @@ struct EntitySystemTickingMode;
 namespace ResetVelocityOnCollisionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& tickingMode);
+MCNAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& tickingMode);
 // NOLINTEND
 
 } // namespace ResetVelocityOnCollisionSystem

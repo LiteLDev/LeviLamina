@@ -48,28 +48,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
+    MCNAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
 
-    MCAPI ::ItemInstance* _initSingleCraftResult(::ItemInstance const& itemInstance);
+    MCNAPI ::ItemInstance* _initSingleCraftResult(::ItemInstance const& itemInstance);
 
-    MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
+    MCNAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
 
-    MCAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
+    MCNAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
 
     MCAPI ::ItemStackNetResult handleConsume(::ItemStackRequestActionConsume const& requestAction);
 
-    MCAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult
+    MCNAPI ::ItemStackNetResult
     handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
 
-    MCAPI bool isCraftRequest() const;
+    MCNAPI bool isCraftRequest() const;
 
-    MCAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCNAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
-    MCAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
+    MCNAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
 
-    MCAPI void sendPlayerCraftRecipe();
+    MCNAPI void sendPlayerCraftRecipe();
     // NOLINTEND
 
 public:

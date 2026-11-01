@@ -221,7 +221,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,
@@ -260,7 +260,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,

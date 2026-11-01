@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Push1(uint64 time, uint64 value1);
+    MCNAPI void Push1(uint64 time, uint64 value1);
     // NOLINTEND
 };
 

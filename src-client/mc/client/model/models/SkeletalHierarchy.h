@@ -28,12 +28,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SkeletalHierarchyIndex getSkeletalHierarchyIndex(::DataDrivenGeometry const& dataDrivenGeometry);
+    MCNAPI static ::SkeletalHierarchyIndex getSkeletalHierarchyIndex(::DataDrivenGeometry const& dataDrivenGeometry);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::unique_ptr<::SkeletalHierarchy>>& _globalSkeletalHierarchies();
+    MCNAPI static ::std::vector<::std::unique_ptr<::SkeletalHierarchy>>& _globalSkeletalHierarchies();
     // NOLINTEND
 };

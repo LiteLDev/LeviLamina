@@ -27,8 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 };

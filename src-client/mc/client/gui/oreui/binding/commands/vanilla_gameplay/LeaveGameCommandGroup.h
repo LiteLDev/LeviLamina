@@ -33,17 +33,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeaveGameCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+    MCNAPI LeaveGameCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
 
-    MCAPI void leaveGame();
+    MCNAPI void leaveGame();
 
-    MCAPI void leaveGameThenJoinFriendsWorld(::std::string const& serverId);
+    MCNAPI void leaveGameThenJoinFriendsWorld(::std::string const& serverId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

@@ -15,14 +15,14 @@ namespace EntityAttack { struct ValidationSettings; }
 namespace EntityAttack {
 // functions
 // NOLINTBEGIN
-MCAPI ::EntityAttack::TargetedActorRangeValidation evaluateTargetedActorRange(
+MCNAPI ::EntityAttack::TargetedActorRangeValidation evaluateTargetedActorRange(
     ::EntityAttack::TargetedActorPolicy const& policy,
     ::Vec3 const&                              authoritativeCameraPosition,
     ::AABB const&                              authoritativeTargetBounds,
     float                                      serverDistanceTolerance
 );
 
-MCAPI ::EntityAttack::ValidationSettings const& getValidationSettings(::ILevel const& level);
+MCNAPI ::EntityAttack::ValidationSettings const& getValidationSettings(::ILevel const& level);
 // NOLINTEND
 
 } // namespace EntityAttack

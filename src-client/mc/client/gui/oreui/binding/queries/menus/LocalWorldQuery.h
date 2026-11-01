@@ -93,33 +93,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LocalWorldQuery(::OreUI::GameDependencies const& game, ::std::string worldId);
+    MCNAPI LocalWorldQuery(::OreUI::GameDependencies const& game, ::std::string worldId);
 
-    MCAPI void _refreshAllContentOwned();
+    MCNAPI void _refreshAllContentOwned();
 
-    MCAPI void _refreshFromSummary(::LevelSummary const& summary);
+    MCNAPI void _refreshFromSummary(::LevelSummary const& summary);
 
-    MCAPI void _refreshFromSummaryIfMatching(::std::string const& levelId);
+    MCNAPI void _refreshFromSummaryIfMatching(::std::string const& levelId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string worldId);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string worldId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
+    MCNAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
-    MCAPI void $onLevelUpdated(::std::string const& levelId);
+    MCNAPI void $onLevelUpdated(::std::string const& levelId);
 
-    MCAPI void $onLevelDeleted(::std::string const& levelId);
+    MCNAPI void $onLevelDeleted(::std::string const& levelId);
 
-    MCAPI void $onSummaryUpdated(::std::string const& levelId);
+    MCNAPI void $onSummaryUpdated(::std::string const& levelId);
 
-    MCAPI void $onStorageChanged();
+    MCNAPI void $onStorageChanged();
     // NOLINTEND
 };
 

@@ -23,49 +23,49 @@ struct DimensionType;
 namespace LegacyTelemetryEvent {
 // functions
 // NOLINTBEGIN
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForAchievement(::Player const* player, ::MinecraftEventing::AchievementIds achievementId, bool usePlayerID);
 
-MCAPI ::LegacyTelemetryEventPacket packetForActorDefinition(::Player const& player, ::std::string const& eventName);
+MCNAPI ::LegacyTelemetryEventPacket packetForActorDefinition(::Player const& player, ::std::string const& eventName);
 
-MCAPI ::LegacyTelemetryEventPacket packetForAgentCreated(::Player const& player);
+MCNAPI ::LegacyTelemetryEventPacket packetForAgentCreated(::Player const& player);
 
-MCAPI ::LegacyTelemetryEventPacket packetForBellUsed(::Player const& player, short itemId);
+MCNAPI ::LegacyTelemetryEventPacket packetForBellUsed(::Player const& player, short itemId);
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForBossKilled(::Player const& player, int partySize, ::gsl::not_null<::Actor const*> entity);
 
-MCAPI ::LegacyTelemetryEventPacket packetForCarefulRestoration(::Player const& player);
+MCNAPI ::LegacyTelemetryEventPacket packetForCarefulRestoration(::Player const& player);
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForCauldronUsed(::Player const& player, short contentsType, uint contentsColor, short fillLevel);
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForCodeBuilderRuntimeAction(::Player const& player, ::std::string const& runtimeAction);
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForCodeBuilderScoreboard(::Player const& player, ::std::string const& objective, int score);
 
-MCAPI ::LegacyTelemetryEventPacket packetForComposterUsed(
+MCNAPI ::LegacyTelemetryEventPacket packetForComposterUsed(
     ::Player const&                              player,
     short                                        itemId,
     ::MinecraftEventing::POIBlockInteractionType interactionType
 );
 
-MCAPI ::LegacyTelemetryEventPacket packetForHoneyHarvested(::Player const& player);
+MCNAPI ::LegacyTelemetryEventPacket packetForHoneyHarvested(::Player const& player);
 
-MCAPI ::LegacyTelemetryEventPacket packetForInteraction(
+MCNAPI ::LegacyTelemetryEventPacket packetForInteraction(
     ::Player const&                      player,
     ::gsl::not_null<::Actor const*>      interactedEntity,
     ::MinecraftEventing::InteractionType interactionType
 );
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForItemUsed(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useMethod, int useCount);
 
-MCAPI ::LegacyTelemetryEventPacket packetForMobBorn(::Player const& player, ::gsl::not_null<::Mob const*> baby);
+MCNAPI ::LegacyTelemetryEventPacket packetForMobBorn(::Player const& player, ::gsl::not_null<::Mob const*> baby);
 
-MCAPI ::LegacyTelemetryEventPacket packetForMobKilled(
+MCNAPI ::LegacyTelemetryEventPacket packetForMobKilled(
     ::Player const&                         player,
     ::Actor const*                          killerEntity,
     ::ActorUniqueID const&                  killedMobID,
@@ -75,16 +75,16 @@ MCAPI ::LegacyTelemetryEventPacket packetForMobKilled(
     ::ActorType                             damageChildType
 );
 
-MCAPI ::LegacyTelemetryEventPacket packetForPOICauldronUsed(
+MCNAPI ::LegacyTelemetryEventPacket packetForPOICauldronUsed(
     ::Player const&                              player,
     short                                        itemId,
     ::MinecraftEventing::POIBlockInteractionType interactionType
 );
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForPiglinBarter(::Player const& player, short itemId, bool wasTargetingBarteringPlayer);
 
-MCAPI ::LegacyTelemetryEventPacket packetForPlayerDied(
+MCNAPI ::LegacyTelemetryEventPacket packetForPlayerDied(
     ::Player const&                         player,
     int                                     killerId,
     int                                     killerVariant,
@@ -92,17 +92,17 @@ MCAPI ::LegacyTelemetryEventPacket packetForPlayerDied(
     bool                                    inRaid
 );
 
-MCAPI ::LegacyTelemetryEventPacket packetForPlayerWaxedOrUnwaxedCopper(::Player const& player, int blockID);
+MCNAPI ::LegacyTelemetryEventPacket packetForPlayerWaxedOrUnwaxedCopper(::Player const& player, int blockID);
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForPortalCreated(::Player const& player, ::DimensionType portalBuiltInDimension);
 
-MCAPI ::LegacyTelemetryEventPacket
+MCNAPI ::LegacyTelemetryEventPacket
 packetForPortalUsed(::Player const& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-MCAPI ::LegacyTelemetryEventPacket packetForRaidUpdate(::Player const& player, ::Raid const& raid, bool success);
+MCNAPI ::LegacyTelemetryEventPacket packetForRaidUpdate(::Player const& player, ::Raid const& raid, bool success);
 
-MCAPI ::LegacyTelemetryEventPacket packetForSlashCommand(
+MCNAPI ::LegacyTelemetryEventPacket packetForSlashCommand(
     ::Player const&      player,
     ::std::string const& commandName,
     int                  successCount,
@@ -110,11 +110,11 @@ MCAPI ::LegacyTelemetryEventPacket packetForSlashCommand(
     ::std::string const& errorList
 );
 
-MCAPI ::LegacyTelemetryEventPacket packetForSneakCloseToSculkSensor(::Player const& player);
+MCNAPI ::LegacyTelemetryEventPacket packetForSneakCloseToSculkSensor(::Player const& player);
 
-MCAPI ::LegacyTelemetryEventPacket packetForStriderRiddenInLavaInOverworld(::Player const& player);
+MCNAPI ::LegacyTelemetryEventPacket packetForStriderRiddenInLavaInOverworld(::Player const& player);
 
-MCAPI ::LegacyTelemetryEventPacket packetForTargetBlockHit(::Player const& player, int redstoneLevel);
+MCNAPI ::LegacyTelemetryEventPacket packetForTargetBlockHit(::Player const& player, int redstoneLevel);
 // NOLINTEND
 
 } // namespace LegacyTelemetryEvent

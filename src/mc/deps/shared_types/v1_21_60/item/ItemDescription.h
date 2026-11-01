@@ -29,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_60::ItemDescription& operator=(::SharedTypes::v1_21_60::ItemDescription const&);
+    MCNAPI ::SharedTypes::v1_21_60::ItemDescription& operator=(::SharedTypes::v1_21_60::ItemDescription const&);
 
-    MCAPI ~ItemDescription();
+    MCNAPI ~ItemDescription();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

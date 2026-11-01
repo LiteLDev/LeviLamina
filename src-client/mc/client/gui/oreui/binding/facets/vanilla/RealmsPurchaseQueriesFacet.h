@@ -42,34 +42,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsPurchaseQueriesFacet(
+    MCNAPI RealmsPurchaseQueriesFacet(
         ::std::shared_ptr<::Realms::LegacyRealmsPurchase> realmsPurchase,
         int                                               expectedStoreVersion
     );
 
-    MCFOLD ::Realms::LegacyRealmsPurchaseFailureReason getFailureReason() const;
+    MCNAPI ::Realms::LegacyRealmsPurchaseFailureReason getFailureReason() const;
 
-    MCAPI ::Realms::LegacyRealmsPurchaseState getState() const;
+    MCNAPI ::Realms::LegacyRealmsPurchaseState getState() const;
 
-    MCAPI bool isPurchaseDisabledDueToStoreVersion() const;
+    MCNAPI bool isPurchaseDisabledDueToStoreVersion() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::LegacyRealmsPurchase> realmsPurchase, int expectedStoreVersion);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::LegacyRealmsPurchase> realmsPurchase, int expectedStoreVersion);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

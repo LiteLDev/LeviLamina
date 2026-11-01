@@ -51,27 +51,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToBlockGoalDefinition(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&&);
+    MCNAPI MoveToBlockGoalDefinition(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&&);
 
-    MCAPI ~MoveToBlockGoalDefinition();
+    MCNAPI ~MoveToBlockGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::MoveToBlockGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

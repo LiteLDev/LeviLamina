@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GesturePolicy(
+    MCNAPI GesturePolicy(
         ::OreUI::ITouchSystem&                                touchSystem,
         ::OreUI::GestureParameters const&                     gestureParameters,
         float                                                 pixelsPerCm,
@@ -65,13 +65,13 @@ public:
         bool                                                  isTTSEnabled
     );
 
-    MCAPI void onTouchesUpdate(::std::vector<::OreUI::TouchEventData> const& events);
+    MCNAPI void onTouchesUpdate(::std::vector<::OreUI::TouchEventData> const& events);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::ITouchSystem&                                touchSystem,
         ::OreUI::GestureParameters const&                     gestureParameters,
         float                                                 pixelsPerCm,
@@ -83,14 +83,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPanRecognized(::Vec2 const& gestureBeginPos, ::Vec2 const& currentPos, ::Vec2 const& delta);
+    MCNAPI void $onPanRecognized(::Vec2 const& gestureBeginPos, ::Vec2 const& currentPos, ::Vec2 const& delta);
 
-    MCAPI void $onPanCompleted(::Vec2 const& endPos);
+    MCNAPI void $onPanCompleted(::Vec2 const& endPos);
 
-    MCAPI void
+    MCNAPI void
     $onFlingCompleted(::Vec2 const& endPos, ::Vec2 const& flingStart, ::std::chrono::milliseconds flingDuration);
 
-    MCAPI void $onTapRecognized(::Vec2 const& position);
+    MCNAPI void $onTapRecognized(::Vec2 const& position);
     // NOLINTEND
 };
 

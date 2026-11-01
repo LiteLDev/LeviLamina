@@ -26,19 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptInvalidRecipeError(::std::string_view recipeId);
+    MCNAPI explicit ScriptInvalidRecipeError(::std::string_view recipeId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view recipeId);
+    MCNAPI void* $ctor(::std::string_view recipeId);
     // NOLINTEND
 };
 

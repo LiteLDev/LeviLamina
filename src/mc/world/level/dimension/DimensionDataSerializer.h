@@ -19,15 +19,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _createLevelStorageID(
+    MCNAPI ::std::string _createLevelStorageID(
         ::std::string const& savePrefix,
         ::std::string const& dimensionPrefix,
         ::std::string const& saveId
     );
 
-    MCAPI ::std::string createSaveID(::std::string const& savePrefix, ::std::string const& dimensionPrefix);
+    MCNAPI ::std::string createSaveID(::std::string const& savePrefix, ::std::string const& dimensionPrefix);
 
-    MCAPI void forEachKeyWithDimensionPrefix(
+    MCNAPI void forEachKeyWithDimensionPrefix(
         ::std::string const&                                                     savePrefix,
         ::std::string const&                                                     dimensionPrefix,
         ::DimensionType                                                          type,

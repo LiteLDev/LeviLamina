@@ -39,27 +39,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncBooleanDataProvider(::std::unique_ptr<::Settings::IBooleanDataProvider> delegateProvider);
+    MCNAPI explicit AsyncBooleanDataProvider(::std::unique_ptr<::Settings::IBooleanDataProvider> delegateProvider);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::Settings::IBooleanDataProvider> delegateProvider);
+    MCNAPI void* $ctor(::std::unique_ptr<::Settings::IBooleanDataProvider> delegateProvider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setChangeListener(::std::function<void()> callback);
+    MCNAPI void $setChangeListener(::std::function<void()> callback);
 
-    MCFOLD bool $canModify() const;
+    MCNAPI bool $canModify() const;
 
-    MCAPI bool $getValue() const;
+    MCNAPI bool $getValue() const;
 
-    MCAPI void $setValue(bool value);
+    MCNAPI void $setValue(bool value);
 
-    MCAPI bool $flush();
+    MCNAPI bool $flush();
     // NOLINTEND
 
 public:

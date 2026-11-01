@@ -57,80 +57,80 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const& getAuthor(::ItemStackBase const& book);
+    MCNAPI static ::std::string const& getAuthor(::ItemStackBase const& book);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::std::string> getFilteredAuthor(::ItemStack const& book);
+    MCNAPI static ::std::optional<::std::string> getFilteredAuthor(::ItemStack const& book);
 
-    MCAPI static ::std::optional<::std::string> getFilteredTitle(::ItemStack const& book);
+    MCNAPI static ::std::optional<::std::string> getFilteredTitle(::ItemStack const& book);
 #endif
 
-    MCAPI static ::PageContent getPage(::ItemStackBase const& book, int index);
+    MCNAPI static ::PageContent getPage(::ItemStackBase const& book, int index);
 
-    MCAPI static int getPageCount(::ItemStackBase const& book);
+    MCNAPI static int getPageCount(::ItemStackBase const& book);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::vector<int> getPageCountByType(::ItemStack const& book);
+    MCNAPI static ::std::vector<int> getPageCountByType(::ItemStack const& book);
 #endif
 
-    MCAPI static ::std::vector<::PageContent> getPages(::ItemStackBase const& book);
+    MCNAPI static ::std::vector<::PageContent> getPages(::ItemStackBase const& book);
 
-    MCAPI static ::std::string const& getTitle(::ItemStackBase const& book);
+    MCNAPI static ::std::string const& getTitle(::ItemStackBase const& book);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TAG_AUTHOR();
+    MCNAPI static ::std::string_view const& TAG_AUTHOR();
 
-    MCAPI static ::std::string_view const& TAG_FILTERED_AUTHOR();
+    MCNAPI static ::std::string_view const& TAG_FILTERED_AUTHOR();
 
-    MCAPI static ::std::string_view const& TAG_FILTERED_TITLE();
+    MCNAPI static ::std::string_view const& TAG_FILTERED_TITLE();
 
-    MCAPI static ::std::string_view const& TAG_GENERATION();
+    MCNAPI static ::std::string_view const& TAG_GENERATION();
 
-    MCAPI static ::std::string_view const& TAG_PAGES();
+    MCNAPI static ::std::string_view const& TAG_PAGES();
 
-    MCAPI static ::std::string_view const& TAG_PAGE_FILTERED_PHOTO_NAME();
+    MCNAPI static ::std::string_view const& TAG_PAGE_FILTERED_PHOTO_NAME();
 
-    MCAPI static ::std::string_view const& TAG_PAGE_FILTERED_TEXT();
+    MCNAPI static ::std::string_view const& TAG_PAGE_FILTERED_TEXT();
 
-    MCAPI static ::std::string_view const& TAG_PAGE_PHOTO_NAME();
+    MCNAPI static ::std::string_view const& TAG_PAGE_PHOTO_NAME();
 
-    MCAPI static ::std::string_view const& TAG_PAGE_TEXT();
+    MCNAPI static ::std::string_view const& TAG_PAGE_TEXT();
 
-    MCAPI static ::std::string_view const& TAG_TITLE();
+    MCNAPI static ::std::string_view const& TAG_TITLE();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string_view const& TAG_XUID();
+    MCNAPI static ::std::string_view const& TAG_XUID();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $requiresInteract() const;
+    MCNAPI bool $requiresInteract() const;
 
-    MCAPI ::std::string $getInteractText(::Player const& player) const;
+    MCNAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI ::Bedrock::Safety::RedactableString $getRedactedCustomName(::ItemStackBase const& stack) const;
+    MCNAPI ::Bedrock::Safety::RedactableString $getRedactedCustomName(::ItemStackBase const& stack) const;
 
-    MCAPI bool $hasCustomHoverName(::ItemStackBase const& stack) const;
+    MCNAPI bool $hasCustomHoverName(::ItemStackBase const& stack) const;
 
-    MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
+    MCNAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
 
-    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
 
 
     // NOLINTEND

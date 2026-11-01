@@ -56,11 +56,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uint64 $doMaxInputLength() const;
+    MCNAPI uint64 $doMaxInputLength() const;
 
-    MCFOLD uint64 $doMinInputLength() const;
+    MCNAPI uint64 $doMinInputLength() const;
 
-    MCFOLD ::cereal::Constraint const* $subConstraint(uint64 index) const;
+    MCNAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
 
 
     // NOLINTEND

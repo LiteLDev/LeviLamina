@@ -28,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
+    MCNAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
     // NOLINTEND
 };

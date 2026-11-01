@@ -61,20 +61,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isLiquidClipItem() const;
+    MCNAPI bool $isLiquidClipItem() const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
+    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD bool $isStackedByData() const;
+    MCNAPI bool $isStackedByData() const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  item,
         ::Actor&      spawningActor,
         ::BlockPos    pos,
@@ -83,7 +83,7 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCFOLD ::ActorType $_getActorType() const;
+    MCNAPI ::ActorType $_getActorType() const;
 
 
     // NOLINTEND
@@ -91,6 +91,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

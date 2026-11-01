@@ -42,26 +42,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OwnedWorldTemplateListFacet(
+    MCNAPI OwnedWorldTemplateListFacet(
         ::World::OwnedWorldTemplateManager&                        ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI void _refresh();
+    MCNAPI void _refresh();
 
-    MCFOLD ::std::vector<::OreUI::OwnedWorldTemplateDataBindings> const& getOwnedTemplateWorldsList();
+    MCNAPI ::std::vector<::OreUI::OwnedWorldTemplateDataBindings> const& getOwnedTemplateWorldsList();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::OwnedWorldTemplateManager&                        ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -70,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

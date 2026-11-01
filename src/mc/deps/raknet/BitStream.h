@@ -19,29 +19,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AddBitsAndReallocate(uint numberOfBitsToWrite);
+    MCNAPI bool AddBitsAndReallocate(uint numberOfBitsToWrite);
 
-    MCAPI bool Read(char* outByteArray, uint numberOfBytes);
+    MCNAPI bool Read(char* outByteArray, uint numberOfBytes);
 
-    MCAPI bool ReadAlignedBytes(uchar* inOutByteArray, uint numberOfBytesToRead);
+    MCNAPI bool ReadAlignedBytes(uchar* inOutByteArray, uint numberOfBytesToRead);
 
-    MCAPI bool ReadAlignedVar16(char* inOutByteArray);
+    MCNAPI bool ReadAlignedVar16(char* inOutByteArray);
 
-    MCAPI bool ReadAlignedVar32(char* inOutByteArray);
+    MCNAPI bool ReadAlignedVar32(char* inOutByteArray);
 
-    MCAPI bool ReadBits(uchar* inOutByteArray, uint numberOfBitsToRead, bool alignBitsToRight);
+    MCNAPI bool ReadBits(uchar* inOutByteArray, uint numberOfBitsToRead, bool alignBitsToRight);
 
-    MCAPI void Write(::RakNet::BitStream* bitStream, uint numberOfBits);
+    MCNAPI void Write(::RakNet::BitStream* bitStream, uint numberOfBits);
 
-    MCAPI void Write(char const* inputByteArray, uint numberOfBytes);
+    MCNAPI void Write(char const* inputByteArray, uint numberOfBytes);
 
-    MCAPI void WriteAlignedBytes(uchar const* inByteArray, uint numberOfBytesToWrite);
+    MCNAPI void WriteAlignedBytes(uchar const* inByteArray, uint numberOfBytesToWrite);
 
-    MCAPI void WriteAlignedVar16(char const* inByteArray);
+    MCNAPI void WriteAlignedVar16(char const* inByteArray);
 
-    MCAPI void WriteAlignedVar32(char const* inByteArray);
+    MCNAPI void WriteAlignedVar32(char const* inByteArray);
 
-    MCAPI void WriteBits(uchar const* inByteArray, uint numberOfBitsToWrite, bool rightAlignedBits);
+    MCNAPI void WriteBits(uchar const* inByteArray, uint numberOfBitsToWrite, bool rightAlignedBits);
     // NOLINTEND
 };
 

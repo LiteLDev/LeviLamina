@@ -24,33 +24,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::IPAddress AsIPv6Address() const;
+    MCNAPI ::webrtc::IPAddress AsIPv6Address() const;
 
-    MCFOLD bool IsNil() const;
+    MCNAPI bool IsNil() const;
 
-    MCAPI ::std::string ToSensitiveString() const;
+    MCNAPI ::std::string ToSensitiveString() const;
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::in_addr ipv4_address() const;
+    MCNAPI ::in_addr ipv4_address() const;
 
-    MCAPI ::in6_addr ipv6_address() const;
+    MCNAPI ::in6_addr ipv6_address() const;
 
-    MCAPI bool operator!=(::webrtc::IPAddress const& other) const;
+    MCNAPI bool operator!=(::webrtc::IPAddress const& other) const;
 
-    MCAPI bool operator<(::webrtc::IPAddress const& other) const;
+    MCNAPI bool operator<(::webrtc::IPAddress const& other) const;
 
-    MCAPI bool operator==(::webrtc::IPAddress const& other) const;
+    MCNAPI bool operator==(::webrtc::IPAddress const& other) const;
 
-    MCAPI int overhead() const;
+    MCNAPI int overhead() const;
 
-    MCAPI uint v4AddressAsHostOrderInteger() const;
+    MCNAPI uint v4AddressAsHostOrderInteger() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

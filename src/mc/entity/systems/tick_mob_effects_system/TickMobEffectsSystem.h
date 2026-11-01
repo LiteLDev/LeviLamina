@@ -13,13 +13,13 @@ namespace TickMobEffectsSystem { struct RemoveMobEffectsRequestComponent; }
 namespace TickMobEffectsSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _removeMobEffects(
+MCNAPI void _removeMobEffects(
     ::TickMobEffectsSystem::RemoveMobEffectsRequestComponent const& removeMobEffectsRequest,
     ::AttributesComponent&                                          attributesComponent,
     ::MobEffectsComponent&                                          mobEffectsComponent
 );
 
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace TickMobEffectsSystem

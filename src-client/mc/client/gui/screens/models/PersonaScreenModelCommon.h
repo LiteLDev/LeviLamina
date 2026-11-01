@@ -67,25 +67,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PersonaScreenModelCommon(
+    MCNAPI PersonaScreenModelCommon(
         ::IMinecraftGame&                                       minecraft,
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client
     );
 
-    MCAPI ::std::function<void(bool)> _getNormalPersonaChangedCallback(
+    MCNAPI ::std::function<void(bool)> _getNormalPersonaChangedCallback(
         ::persona::PersonaCharacterHandle const& handle,
         ::std::function<void(bool)>              finalCallback
     );
 
-    MCAPI void attemptCopyValidActiveAppearanceToCurrentCharacter(::std::function<void(bool)> callback);
+    MCNAPI void attemptCopyValidActiveAppearanceToCurrentCharacter(::std::function<void(bool)> callback);
 
-    MCAPI void changePersonaArmSize(
+    MCNAPI void changePersonaArmSize(
         ::persona::PersonaCharacterHandle const&   handle,
         ::SharedTypes::persona::ArmSizeType const& armSize,
         ::std::function<void(bool)>                callback
     );
 
-    MCAPI void changePersonaEmote(
+    MCNAPI void changePersonaEmote(
         ::persona::PersonaCharacterHandle const& handle,
         ::std::string const&                     pieceId,
         ::persona::FreeItemState const&          freeItemState,
@@ -93,13 +93,13 @@ public:
         ::std::function<void(bool)>              callback
     );
 
-    MCAPI void changePersonaHeight(
+    MCNAPI void changePersonaHeight(
         ::persona::PersonaCharacterHandle const&    handle,
         ::SharedTypes::persona::BodySizeType const& bodyType,
         ::std::function<void(bool)>                 callback
     );
 
-    MCAPI void changePersonaPiece(
+    MCNAPI void changePersonaPiece(
         ::persona::PersonaCharacterHandle const& handle,
         ::SharedTypes::persona::PieceType        pieceType,
         ::mce::UUID const&                       pieceId,
@@ -109,7 +109,7 @@ public:
         ::SharedTypes::persona::PieceSide        side
     );
 
-    MCAPI void changePersonaTintColor(
+    MCNAPI void changePersonaTintColor(
         ::persona::PersonaCharacterHandle const& handle,
         ::SharedTypes::persona::PieceType        pieceType,
         ::mce::Color const&                      color,
@@ -117,63 +117,63 @@ public:
         ::std::function<void(bool)>              callback
     );
 
-    MCAPI void changePersonaTintColors(
+    MCNAPI void changePersonaTintColors(
         ::persona::PersonaCharacterHandle const&          handle,
         ::SharedTypes::persona::PieceType                 pieceType,
         ::std::vector<::persona::color::ColorInfo> const& tintColors,
         ::std::function<void(bool)>                       callback
     );
 
-    MCAPI bool createActivePersonaFromCurrentCharacter(::std::function<void(bool)> callback);
+    MCNAPI bool createActivePersonaFromCurrentCharacter(::std::function<void(bool)> callback);
 
-    MCAPI void fireEventPersonaAvatarUpdated(::PersonaAppearance const& oldAppearance, bool isBeingDeleted);
+    MCNAPI void fireEventPersonaAvatarUpdated(::PersonaAppearance const& oldAppearance, bool isBeingDeleted);
 
-    MCAPI ::persona::PieceOfferWrapper
+    MCNAPI ::persona::PieceOfferWrapper
     getEmotePieceOfferFromAppearance(::persona::PersonaCharacterHandle const& handle, int emoteIndex);
 
-    MCAPI ::SkinHandle getPersonaClassicSkinHandle(::persona::PersonaCharacterHandle const& handle);
+    MCNAPI ::SkinHandle getPersonaClassicSkinHandle(::persona::PersonaCharacterHandle const& handle);
 
-    MCAPI ::SkinHandle getPersonaSkinHandle(::persona::PersonaCharacterHandle const& handle);
+    MCNAPI ::SkinHandle getPersonaSkinHandle(::persona::PersonaCharacterHandle const& handle);
 
-    MCAPI ::mce::Color
+    MCNAPI ::mce::Color
     getTintColor(::persona::PersonaCharacterHandle const& handle, ::SharedTypes::persona::PieceType type, int channel);
 
-    MCAPI bool isEmoteSlotSetOnCurrentAppearance(int emoteWheelSlot);
+    MCNAPI bool isEmoteSlotSetOnCurrentAppearance(int emoteWheelSlot);
 
-    MCAPI void removePieceByType(
+    MCNAPI void removePieceByType(
         ::persona::PersonaCharacterHandle const& handle,
         ::SharedTypes::persona::PieceType const& pieceTypeToRemove,
         ::std::function<void(bool)>              callback,
         ::SharedTypes::persona::PieceSide        side
     );
 
-    MCAPI void
+    MCNAPI void
     revertPersona(::persona::PersonaCharacterHandle const& characterHandle, ::std::function<void(bool)> callback);
 
-    MCAPI void saveCurrentCharacterPersona();
+    MCNAPI void saveCurrentCharacterPersona();
 
-    MCAPI void savePersona(::persona::PersonaCharacterHandle const& characterHandle);
+    MCNAPI void savePersona(::persona::PersonaCharacterHandle const& characterHandle);
 
-    MCAPI void updatePreviewedItem(::PreviewedItemEventInformation previewedItemEventInfo);
+    MCNAPI void updatePreviewedItem(::PreviewedItemEventInformation previewedItemEventInfo);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::mce::UUID> const& mBuiltInSkinPackIds();
+    MCNAPI static ::std::vector<::mce::UUID> const& mBuiltInSkinPackIds();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraft, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI void* $ctor(::IMinecraftGame& minecraft, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
+    MCNAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
-    MCAPI void $updateSkin(::persona::PersonaCharacterHandle const& characterHandle, ::SkinHandle handle);
+    MCNAPI void $updateSkin(::persona::PersonaCharacterHandle const& characterHandle, ::SkinHandle handle);
     // NOLINTEND
 };

@@ -31,18 +31,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_26_30::SurfaceBuilder::NoiseGradientSurfaceSettings&
+    MCNAPI ::SharedTypes::v1_26_30::SurfaceBuilder::NoiseGradientSurfaceSettings&
     operator=(::SharedTypes::v1_26_30::SurfaceBuilder::NoiseGradientSurfaceSettings const&);
 
-    MCAPI bool validateGradientBlockRanges() const;
+    MCNAPI bool validateGradientBlockRanges() const;
 
-    MCAPI ~NoiseGradientSurfaceSettings();
+    MCNAPI ~NoiseGradientSurfaceSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

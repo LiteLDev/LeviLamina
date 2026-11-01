@@ -33,28 +33,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addPackIconPathToAllowList(
+    MCNAPI void _addPackIconPathToAllowList(
         ::World::PackCollection&                                   packCollection,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getActiveBehaviorPacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getActiveBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getActiveTexturePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getActiveTexturePacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getAvailableBehaviorPacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getAvailableBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getAvailableTexturePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getAvailableTexturePacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getGlobalTexturePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getGlobalTexturePacks() const;
 
-    MCAPI ::std::vector<::World::PackDetails> const& getRealmsTexturePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getRealmsTexturePacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getUnownedTexturePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getUnownedTexturePacks() const;
 
-    MCAPI bool isRealmsPlusSubscriptionActive();
+    MCNAPI bool isRealmsPlusSubscriptionActive();
 
-    MCAPI bool isRealmsPlusSupported() const;
+    MCNAPI bool isRealmsPlusSupported() const;
     // NOLINTEND
 };
 

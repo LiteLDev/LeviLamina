@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VexCopyOwnerTargetGoal(
+    MCNAPI VexCopyOwnerTargetGoal(
         ::Mob&                                mob,
         ::std::string                         name,
         ::GoalId const&                       goalId,
@@ -41,18 +41,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::std::vector<::MobDescriptor> const& targetTypes);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
 
     // NOLINTEND

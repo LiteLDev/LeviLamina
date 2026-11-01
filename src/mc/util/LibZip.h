@@ -10,7 +10,7 @@ namespace Core { class PathView; }
 namespace Core::ZipUtils::LibZip {
 // functions
 // NOLINTBEGIN
-MCAPI void* openArchiveReadOnly(::Core::PathView path);
+MCNAPI void* openArchiveReadOnly(::Core::PathView path);
 // NOLINTEND
 
 } // namespace Core::ZipUtils::LibZip

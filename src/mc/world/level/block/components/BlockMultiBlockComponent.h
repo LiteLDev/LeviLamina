@@ -34,42 +34,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _forEachPart(::Block const& part, ::brstd::function_ref<bool(::BlockPart const&, uchar)> callback) const;
+    MCNAPI bool
+    _forEachPart(::Block const& part, ::brstd::function_ref<bool(::BlockPart const&, uchar)> callback) const;
 
-    MCAPI uchar _getDirectionOverride(::Block const& part) const;
+    MCNAPI uchar _getDirectionOverride(::Block const& part) const;
 
-    MCAPI bool canSurvive(::BlockSource const& region, ::Block const& block, ::BlockPos const& pos) const;
+    MCNAPI bool canSurvive(::BlockSource const& region, ::Block const& block, ::BlockPos const& pos) const;
 
-    MCAPI bool forEachPartInWorldSpace(
+    MCNAPI bool forEachPartInWorldSpace(
         ::Block const&                                  part,
         ::BlockPos const&                               partPos,
         ::brstd::function_ref<bool(::BlockPart const&)> callback
     ) const;
 
-    MCAPI ::BlockPos getDistanceToMultiBlockEnd(::Block const& part) const;
+    MCNAPI ::BlockPos getDistanceToMultiBlockEnd(::Block const& part) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::BlockPos getDistanceToMultiBlockStart(::Block const& part) const;
+    MCNAPI ::BlockPos getDistanceToMultiBlockStart(::Block const& part) const;
 
-    MCAPI ::AABB getOutlineShape(::Block const& part, ::BlockPos const& partWorldPos) const;
+    MCNAPI ::AABB getOutlineShape(::Block const& part, ::BlockPos const& partWorldPos) const;
 #endif
 
-    MCAPI bool isMultiBlockStart(::Block const& part) const;
+    MCNAPI bool isMultiBlockStart(::Block const& part) const;
 
-    MCAPI bool isSnowLoggable(::Block const& part) const;
+    MCNAPI bool isSnowLoggable(::Block const& part) const;
 
-    MCAPI void onEvent(::BlockEvents::BlockBreakEvent& event) const;
+    MCNAPI void onEvent(::BlockEvents::BlockBreakEvent& event) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::v1_26_20::MultiBlockPart getMultiBlockPartId(::Block const& part);
+    MCNAPI static ::SharedTypes::v1_26_20::MultiBlockPart getMultiBlockPartId(::Block const& part);
 
-    MCAPI static ::BlockPos
+    MCNAPI static ::BlockPos
     getSnowLoggablePosition(::Block const& part, ::BlockSource const& region, ::BlockPos const& snowLayerPosition);
 
-    MCAPI static void onPlace(
+    MCNAPI static void onPlace(
         ::BlockSource&              region,
         ::Block const&              placementBlock,
         ::Block const&              oldBlock,
@@ -77,9 +78,9 @@ public:
         ::BlockChangeContext const& changeSourceContext
     );
 
-    MCAPI static void setSnowLoggablePart(::Block& part);
+    MCNAPI static void setSnowLoggablePart(::Block& part);
 
-    MCAPI static void
+    MCNAPI static void
     setupRedstoneConsumerComponent(::Block const& block, ::BlockPos const& pos, ::CircuitSystem& circuitSystem);
     // NOLINTEND
 };

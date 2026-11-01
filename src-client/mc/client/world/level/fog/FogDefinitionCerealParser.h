@@ -340,13 +340,13 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::SemVersionConstant const& VERSION();
+        MCNAPI static ::SemVersionConstant const& VERSION();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindParameters(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindParameters(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

@@ -71,74 +71,74 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PersonaScreenModel(::MinecraftScreenModelContext context);
+    MCNAPI explicit PersonaScreenModel(::MinecraftScreenModelContext context);
 
-    MCAPI void _initializeSkinPackCollectors();
+    MCNAPI void _initializeSkinPackCollectors();
 
-    MCAPI bool _playerHasContentSubscription() const;
+    MCNAPI bool _playerHasContentSubscription() const;
 
-    MCAPI bool checkPersonaServiceSavedToCacheFlag();
+    MCNAPI bool checkPersonaServiceSavedToCacheFlag();
 
-    MCAPI void clearPersonaServiceSavedToCacheFlag();
+    MCNAPI void clearPersonaServiceSavedToCacheFlag();
 
-    MCAPI bool collectPersonaOffer(
+    MCNAPI bool collectPersonaOffer(
         ::persona::PieceOfferWrapper const& pieceOffer,
         ::std::function<void(bool)>         onOfferCollectedCallback,
         bool                                exclusiveDownload
     );
 
-    MCAPI void
+    MCNAPI void
     cycleCurrentPieceSide(::IStoreCatalogItem const& pieceOffer, ::SharedTypes::persona::PieceSide direction);
 
-    MCAPI ::std::string getAchievementOfferLockStateTexture(::persona::PieceOfferWrapper const& pieceOffer) const;
+    MCNAPI ::std::string getAchievementOfferLockStateTexture(::persona::PieceOfferWrapper const& pieceOffer) const;
 
-    MCAPI ::AchievementData const& getOfferAchievement(::persona::PieceOfferWrapper const& offer) const;
+    MCNAPI ::AchievementData const& getOfferAchievement(::persona::PieceOfferWrapper const& offer) const;
 
-    MCAPI ::std::shared_ptr<::persona::Profile> getPersonaProfileForActiveClient(::persona::ProfileType type);
+    MCNAPI ::std::shared_ptr<::persona::Profile> getPersonaProfileForActiveClient(::persona::ProfileType type);
 
-    MCAPI ::std::string const getPrimaryUserTitleAccountPlayFabId();
+    MCNAPI ::std::string const getPrimaryUserTitleAccountPlayFabId();
 
-    MCAPI bool isArmOrLegTypeAndEquipped(::persona::PieceOfferWrapper const& activeOffer) const;
+    MCNAPI bool isArmOrLegTypeAndEquipped(::persona::PieceOfferWrapper const& activeOffer) const;
 
-    MCAPI bool isCustomSkin(::SkinHandle const& handle) const;
+    MCNAPI bool isCustomSkin(::SkinHandle const& handle) const;
 
-    MCAPI bool isOfferAchievementUnlocked(::persona::PieceOfferWrapper const& offer) const;
+    MCNAPI bool isOfferAchievementUnlocked(::persona::PieceOfferWrapper const& offer) const;
 
-    MCAPI bool
+    MCNAPI bool
     isPersonaEquipButtonVisible(::persona::PieceOfferWrapper const& activeOffer, bool isCoinPurchasVisible) const;
 
-    MCAPI bool isPieceEquipped(::std::string const& pieceId) const;
+    MCNAPI bool isPieceEquipped(::std::string const& pieceId) const;
 
-    MCAPI bool isRealmsRedeemButtonVisible(::persona::PieceOfferWrapper const& activeOffer) const;
+    MCNAPI bool isRealmsRedeemButtonVisible(::persona::PieceOfferWrapper const& activeOffer) const;
 
-    MCAPI bool isRealmsSubscriptionButtonVisible(::persona::PieceOfferWrapper const& activeOffer) const;
+    MCNAPI bool isRealmsSubscriptionButtonVisible(::persona::PieceOfferWrapper const& activeOffer) const;
 
-    MCAPI bool isSkinOwned(::SkinPackModel const& skinPack, ::SkinHandle const& handle) const;
+    MCNAPI bool isSkinOwned(::SkinPackModel const& skinPack, ::SkinHandle const& handle) const;
 
-    MCAPI void newCharacter(::LinksToStyle const& linkTo, uint defaultAppearanceIndex);
+    MCNAPI void newCharacter(::LinksToStyle const& linkTo, uint defaultAppearanceIndex);
 
-    MCAPI void sendCurrentPersonaSkinIfNeeded(::PersonaAppearance const& initialAppearance, bool inGame);
+    MCNAPI void sendCurrentPersonaSkinIfNeeded(::PersonaAppearance const& initialAppearance, bool inGame);
 
-    MCAPI void setSelectedSkinHandle(::SkinHandle newSelectedSkinHandle);
+    MCNAPI void setSelectedSkinHandle(::SkinHandle newSelectedSkinHandle);
 
-    MCAPI bool setUseClassicSkinOnPersona(::persona::PersonaCharacterHandle const& handle, bool usage);
+    MCNAPI bool setUseClassicSkinOnPersona(::persona::PersonaCharacterHandle const& handle, bool usage);
 
-    MCAPI void showProfileSettingsScreen();
+    MCNAPI void showProfileSettingsScreen();
 
-    MCAPI void syncSelectedSkinHandle();
+    MCNAPI void syncSelectedSkinHandle();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModelContext context);
+    MCNAPI void* $ctor(::MinecraftScreenModelContext context);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
+    MCNAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
-    MCAPI ::SkinHandle const& $getSelectedSkinHandle() const;
+    MCNAPI ::SkinHandle const& $getSelectedSkinHandle() const;
     // NOLINTEND
 };

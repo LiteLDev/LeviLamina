@@ -47,45 +47,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeleeAttackBaseGoalDefinition(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&&);
+    MCNAPI MeleeAttackBaseGoalDefinition(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&&);
 
-    MCAPI MeleeAttackBaseGoalDefinition(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);
+    MCNAPI MeleeAttackBaseGoalDefinition(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);
 
-    MCAPI ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&
+    MCNAPI ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&
     operator=(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&
+    MCNAPI ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&
     operator=(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&) const;
 
-    MCAPI ~MeleeAttackBaseGoalDefinition();
+    MCNAPI ~MeleeAttackBaseGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -18,7 +18,7 @@ class IClientInstance;
 namespace VanillaCamera {
 // functions
 // NOLINTBEGIN
-MCAPI void addGlobalComponents(
+MCNAPI void addGlobalComponents(
     ::EntityRegistry&               registry,
     ::IClientInstance&              client,
     ::WeakRef<::EcsEventDispatcher> dispatcher,
@@ -26,9 +26,9 @@ MCAPI void addGlobalComponents(
     ::Experiments const&
 );
 
-MCAPI void registerCameraEventListeners(::EntitySystems& entitySystems);
+MCNAPI void registerCameraEventListeners(::EntitySystems& entitySystems);
 
-MCAPI void registerCameraSystems(::IClientInstance& clientInstance, ::EntitySystems& cameraSystems);
+MCNAPI void registerCameraSystems(::IClientInstance& clientInstance, ::EntitySystems& cameraSystems);
 // NOLINTEND
 
 } // namespace VanillaCamera

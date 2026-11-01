@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addObjective(::std::string const& objective);
+    MCNAPI void addObjective(::std::string const& objective);
     // NOLINTEND
 };

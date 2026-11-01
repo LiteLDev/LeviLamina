@@ -28,31 +28,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsPDPFacet(
+    MCNAPI RealmsPDPFacet(
         ::std::function<void()> updateRealmsTrialAvailable,
         ::std::function<bool()> checkRealmsTrialAvailable
     );
 
-    MCAPI bool isRealmsTrialAvailable() const;
+    MCNAPI bool isRealmsTrialAvailable() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::function<void()> updateRealmsTrialAvailable, ::std::function<bool()> checkRealmsTrialAvailable);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

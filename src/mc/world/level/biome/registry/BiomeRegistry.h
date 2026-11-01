@@ -99,33 +99,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeRegistry();
+    MCNAPI BiomeRegistry();
 
-    MCAPI ::Biome& _register(::std::string_view name, ::BiomeIdType id);
+    MCNAPI ::Biome& _register(::std::string_view name, ::BiomeIdType id);
 
-    MCAPI void _save(::LevelStorage& levelStorage) const;
+    MCNAPI void _save(::LevelStorage& levelStorage) const;
 
 #ifdef LL_PLAT_C
-    MCAPI
+    MCNAPI
     uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
 #endif
 
-    MCAPI ::std::vector<::std::string> const biomeGetTags(::Biome const& biome) const;
+    MCNAPI ::std::vector<::std::string> const biomeGetTags(::Biome const& biome) const;
 
     MCAPI bool biomeHasTag(::Biome const& biome, ::HashedString const& id) const;
 
-    MCAPI bool biomeHasTag(::Biome const& biome, uint64 tagHash) const;
+    MCNAPI bool biomeHasTag(::Biome const& biome, uint64 tagHash) const;
 
-    MCFOLD bool biomeHasTag(::Biome const& biome, ::IDType<::BiomeTagIDType> const& tagID) const;
+    MCNAPI bool biomeHasTag(::Biome const& biome, ::IDType<::BiomeTagIDType> const& tagID) const;
 
-    MCFOLD bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
+    MCNAPI bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
 
-    MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
+    MCNAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
 
-    MCAPI void
+    MCNAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI void loadAllBiomeDocuments(
+    MCNAPI void loadAllBiomeDocuments(
         ::ResourcePackManager const&                       loader,
         ::cereal::ReflectionCtx&                           ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
@@ -137,17 +137,17 @@ public:
         ::IMinecraftEventing& eventing
     );
 
-    MCAPI void loadBiomeData(::LevelStorage const& levelStorage);
+    MCNAPI void loadBiomeData(::LevelStorage const& levelStorage);
 
-    MCAPI void loadBiomeTable(::LevelStorage const& levelStorage);
+    MCNAPI void loadBiomeTable(::LevelStorage const& levelStorage);
 
-    MCFOLD ::Biome const* lookupByHashId(::BiomeHashType id) const;
+    MCNAPI ::Biome const* lookupByHashId(::BiomeHashType id) const;
 
-    MCFOLD ::Biome* lookupByHashId(::BiomeHashType id);
+    MCNAPI ::Biome* lookupByHashId(::BiomeHashType id);
 
-    MCAPI ::Biome* lookupById(::BiomeIdType id);
+    MCNAPI ::Biome* lookupById(::BiomeIdType id);
 
-    MCFOLD ::Biome const* lookupByName(::std::string const& name) const;
+    MCNAPI ::Biome const* lookupByName(::std::string const& name) const;
 
     MCFOLD ::Biome* lookupByName(::std::string const& name);
     // NOLINTEND
@@ -155,7 +155,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

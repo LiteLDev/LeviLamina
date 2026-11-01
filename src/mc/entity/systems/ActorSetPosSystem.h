@@ -159,7 +159,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Views(
+        MCNAPI explicit Views(
             ::StrictExecutionContext<
                 ::Filter<
                     ::ActorAddedFlagComponent,
@@ -190,7 +190,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::StrictExecutionContext<
                 ::Filter<
                     ::ActorAddedFlagComponent,
@@ -315,19 +315,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void actorUpdateOwnerChunk(::EntityContext& entity);
+    MCNAPI static void actorUpdateOwnerChunk(::EntityContext& entity);
 
-    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+    MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
+    MCNAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
 
-    MCAPI static void setPosition(::EntityContext& entity, ::Vec3 const& position, bool isClientSide);
+    MCNAPI static void setPosition(::EntityContext& entity, ::Vec3 const& position, bool isClientSide);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorAddedFlagComponent,
@@ -354,7 +354,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorAddedFlagComponent,

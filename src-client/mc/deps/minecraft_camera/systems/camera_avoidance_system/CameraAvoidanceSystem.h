@@ -12,9 +12,9 @@ struct TickingSystemWithInfo;
 namespace CameraAvoidanceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem(bool activeCamerasOnly);
+MCNAPI ::TickingSystemWithInfo createSystem(bool activeCamerasOnly);
 
-MCAPI void startAvoidance(::EntityRegistry&, ::CameraActivationEvent const& event);
+MCNAPI void startAvoidance(::EntityRegistry&, ::CameraActivationEvent const& event);
 // NOLINTEND
 
 } // namespace CameraAvoidanceSystem

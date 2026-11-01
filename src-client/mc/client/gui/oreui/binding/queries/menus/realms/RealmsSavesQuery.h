@@ -41,23 +41,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsSavesQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit RealmsSavesQuery(::OreUI::GameDependencies const& game);
 
-    MCAPI void _updateActiveWorldSizeProperty();
+    MCNAPI void _updateActiveWorldSizeProperty();
 
-    MCAPI void _updateBackupListProperties();
+    MCNAPI void _updateBackupListProperties();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

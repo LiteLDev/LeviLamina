@@ -22,19 +22,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[28]> ComponentId();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[28]> ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

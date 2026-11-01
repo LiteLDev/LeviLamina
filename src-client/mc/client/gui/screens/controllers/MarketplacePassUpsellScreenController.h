@@ -24,19 +24,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MarketplacePassUpsellScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI explicit MarketplacePassUpsellScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI bool _isMarketplacePassTrialAvailableAndReady() const;
+    MCNAPI bool _isMarketplacePassTrialAvailableAndReady() const;
 
-    MCAPI bool _isPlanPickerTryFreeTreatmentEnabled() const;
+    MCNAPI bool _isPlanPickerTryFreeTreatmentEnabled() const;
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:

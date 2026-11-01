@@ -34,13 +34,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[34]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[34]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

@@ -50,31 +50,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HudDashRenderer(::UIResolvedDef const& def);
+    MCNAPI explicit HudDashRenderer(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
+    MCNAPI static bool
     canRender(::IClientInstance const& client, ::LocalPlayer const& player, bool isReplacedWhileInactive);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def);
+    MCNAPI void* $ctor(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void
+    MCNAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 
 public:

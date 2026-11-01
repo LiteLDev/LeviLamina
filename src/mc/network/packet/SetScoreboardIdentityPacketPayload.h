@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SetScoreboardIdentityPacketPayload();
+    MCNAPI ~SetScoreboardIdentityPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

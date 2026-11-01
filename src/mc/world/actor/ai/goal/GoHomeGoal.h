@@ -52,27 +52,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos _getHomePos() const;
+    MCNAPI ::BlockPos _getHomePos() const;
 
-    MCAPI bool _hasRequiredComponents() const;
+    MCNAPI bool _hasRequiredComponents() const;
 
-    MCAPI bool _isInHomeDimension() const;
+    MCNAPI bool _isInHomeDimension() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

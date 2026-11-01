@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddPlayerPacketPayload(::AddPlayerPacketPayload&&);
+    MCNAPI AddPlayerPacketPayload(::AddPlayerPacketPayload&&);
 
     MCAPI explicit AddPlayerPacketPayload(::Player& p);
 
@@ -63,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AddPlayerPacketPayload&&);
+    MCNAPI void* $ctor(::AddPlayerPacketPayload&&);
 
     MCAPI void* $ctor(::Player& p);
     // NOLINTEND

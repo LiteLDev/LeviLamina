@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CartographyScreenController(
+    MCNAPI CartographyScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -69,12 +69,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_handleTakeHalf(::std::string const& collectionName, int index);
+    MCNAPI void $_handleTakeHalf(::std::string const& collectionName, int index);
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

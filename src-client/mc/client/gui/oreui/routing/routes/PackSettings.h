@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::PackContentItem> _findPackFromId(
+    MCNAPI ::std::shared_ptr<::PackContentItem> _findPackFromId(
         ::std::string_view                                     contentId,
         ::std::string_view                                     levelId,
         ::std::vector<::std::shared_ptr<::ContentItem>> const& contentItems
@@ -68,21 +68,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

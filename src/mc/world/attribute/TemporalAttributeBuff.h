@@ -40,21 +40,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldBuff() const;
+    MCNAPI bool $shouldBuff() const;
 
-    MCAPI bool $isComplete() const;
+    MCNAPI bool $isComplete() const;
 
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
 
-    MCAPI bool $isSerializable() const;
+    MCNAPI bool $isSerializable() const;
 
-    MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCNAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
 
     // NOLINTEND
@@ -62,6 +62,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

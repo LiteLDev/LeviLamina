@@ -22,13 +22,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~InitializeCallbackPayload();
+    MCNAPI ~InitializeCallbackPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

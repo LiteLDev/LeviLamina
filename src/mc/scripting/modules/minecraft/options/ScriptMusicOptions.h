@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::PropertyOutOfBoundsError> validate() const;
+    MCNAPI ::std::optional<::Scripting::PropertyOutOfBoundsError> validate() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
 
-    MCAPI static ::Scripting::InterfaceBinding bindV1();
+    MCNAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
 };
 

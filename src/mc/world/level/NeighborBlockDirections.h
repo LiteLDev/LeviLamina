@@ -21,7 +21,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NeighborBlockDirections
+    MCNAPI static ::NeighborBlockDirections
     createFromRelativePosition(::BlockPos const& pos, ::BlockPos const& neighborPos);
     // NOLINTEND
 };

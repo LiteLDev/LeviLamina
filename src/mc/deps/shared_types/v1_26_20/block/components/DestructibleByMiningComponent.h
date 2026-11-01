@@ -57,21 +57,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DestroySpeedId();
+    MCNAPI static ::std::string_view const& DestroySpeedId();
 
-    MCAPI static ::std::string_view const& ItemId();
+    MCNAPI static ::std::string_view const& ItemId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
 
-    MCAPI static ::std::string_view const& SecondsToDestroyId();
+    MCNAPI static ::std::string_view const& SecondsToDestroyId();
 
-    MCAPI static ::std::string_view const& SpecificSpeedsId();
+    MCNAPI static ::std::string_view const& SpecificSpeedsId();
     // NOLINTEND
 };
 

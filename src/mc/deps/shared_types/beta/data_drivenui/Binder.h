@@ -13,7 +13,7 @@ struct Binder {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindDataDrivenUITypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindDataDrivenUITypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

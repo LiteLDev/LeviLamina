@@ -36,9 +36,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ChatEvent const& chatEvent);
+    MCNAPI ::EventResult $onEvent(::ChatEvent const& chatEvent);
 
-    MCAPI ::EventResult $onMessage(::MessageEvent const& messageEvent);
+    MCNAPI ::EventResult $onMessage(::MessageEvent const& messageEvent);
 
 
     // NOLINTEND

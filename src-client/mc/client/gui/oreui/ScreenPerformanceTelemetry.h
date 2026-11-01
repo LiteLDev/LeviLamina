@@ -26,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::OreUI::DataTracker> completeProfilingScope();
+    MCNAPI ::std::optional<::OreUI::DataTracker> completeProfilingScope();
 
-    MCAPI void startProfilingScope(
+    MCNAPI void startProfilingScope(
         ::std::string const&                    telemetryIdPreviousScreen,
         ::std::string const&                    telemetryIdNewScreen,
         ::std::chrono::steady_clock::time_point currentTime
     );
 
-    MCAPI void
+    MCNAPI void
     tick(::std::chrono::nanoseconds previousGameUpdateDuration, ::std::vector<::std::string> const& syncedFacets);
     // NOLINTEND
 };

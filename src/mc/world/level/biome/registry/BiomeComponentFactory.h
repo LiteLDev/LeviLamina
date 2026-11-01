@@ -75,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void registerBiomeDefinitionSerializers(
+    MCNAPI void registerBiomeDefinitionSerializers(
         ::std::function<void(
             ::Biome const&,
             ::BiomeDefinitionData&,

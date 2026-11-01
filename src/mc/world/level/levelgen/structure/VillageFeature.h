@@ -105,7 +105,7 @@ public:
 
     MCFOLD bool $shouldPostProcessMobs() const;
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,

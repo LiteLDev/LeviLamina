@@ -32,21 +32,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addPlayerMarker(::ItemStackBase& map);
+    MCNAPI static void addPlayerMarker(::ItemStackBase& map);
 
-    MCAPI static bool isLocatorMap(::ItemStackBase const& map);
+    MCNAPI static bool isLocatorMap(::ItemStackBase const& map);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $requiresInteract() const;
+    MCNAPI bool $requiresInteract() const;
 
-    MCAPI ::std::string $getInteractText(::Player const& player) const;
+    MCNAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
 
     // NOLINTEND
@@ -54,6 +54,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

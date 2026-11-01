@@ -15,7 +15,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $createAIGoals();
+    MCNAPI bool $createAIGoals();
 
 
     // NOLINTEND
@@ -23,6 +23,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

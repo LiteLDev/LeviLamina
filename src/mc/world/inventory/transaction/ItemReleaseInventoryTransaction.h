@@ -54,27 +54,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemReleaseInventoryTransaction& operator=(::ItemReleaseInventoryTransaction const&);
+    MCNAPI ::ItemReleaseInventoryTransaction& operator=(::ItemReleaseInventoryTransaction const&);
 
-    MCAPI bool operator==(::ItemReleaseInventoryTransaction const& rhs) const;
+    MCNAPI bool operator==(::ItemReleaseInventoryTransaction const& rhs) const;
 
-    MCAPI ::ItemReleaseInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    MCNAPI ::ItemReleaseInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
 
     // NOLINTEND
@@ -82,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

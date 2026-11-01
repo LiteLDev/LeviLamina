@@ -57,26 +57,26 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::std::vector<::std::thread::id> getThreadIds() const;
+    MCNAPI ::std::vector<::std::thread::id> getThreadIds() const;
 
-    MCAPI void kick(uint64 count);
+    MCNAPI void kick(uint64 count);
 #endif
 
-    MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+    MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _registerPool(::WorkerPool& pool);
+    MCNAPI static void _registerPool(::WorkerPool& pool);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
+    MCNAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
     sAllPools();
 
-    MCAPI static ::std::mutex& sAllPoolsMutex();
+    MCNAPI static ::std::mutex& sAllPoolsMutex();
     // NOLINTEND
 };

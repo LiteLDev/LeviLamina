@@ -40,25 +40,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefendTrustedTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI DefendTrustedTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
+    MCNAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

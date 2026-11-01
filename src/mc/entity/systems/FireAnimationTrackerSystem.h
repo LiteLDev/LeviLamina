@@ -27,14 +27,14 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void _tickFireAnimationTrackerComponent(
+    MCNAPI static void _tickFireAnimationTrackerComponent(
         ::EntityContext&                    entity,
         ::ActorOwnerComponent&              actorOwnerComponent,
         ::FireAnimationTrackerComponent&    fireAnimationTrackerComponent,
         ::Optional<::OnFireComponent const> onFireComponent
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
 #endif
     // NOLINTEND
 
@@ -42,7 +42,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

@@ -40,17 +40,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(
+    MCNAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
 
-    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
+    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
 
 
     // NOLINTEND

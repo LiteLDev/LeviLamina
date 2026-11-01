@@ -45,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
+    MCNAPI ::Puv::LoadResultAny $doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
 
 
     // NOLINTEND

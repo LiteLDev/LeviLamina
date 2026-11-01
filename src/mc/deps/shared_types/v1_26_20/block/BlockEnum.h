@@ -16,31 +16,31 @@ struct BlockEnum {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindBlockRenderLayer(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindBlockRenderLayer(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindDirection(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindDirection(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindEnum(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindEnum(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindMaterialType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindMaterialType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindMovementType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindMovementType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindPrecipitationBehavior(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindPrecipitationBehavior(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindStickyType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindStickyType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindSupportShape(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindSupportShape(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindTintMethod(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindTintMethod(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::SharedTypes::v1_26_20::MaterialType stringToMaterialType(::std::string const& type);
+    MCNAPI static ::SharedTypes::v1_26_20::MaterialType stringToMaterialType(::std::string const& type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<char const*, 26> const& MaterialTypeToString();
+    MCNAPI static ::std::array<char const*, 26> const& MaterialTypeToString();
     // NOLINTEND
 };
 

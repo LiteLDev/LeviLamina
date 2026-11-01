@@ -45,18 +45,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChestRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI explicit ChestRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

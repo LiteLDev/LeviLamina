@@ -5,7 +5,7 @@
 namespace VibrationListenerComponentSaveData {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& VIBRATION_LISTENER_TAG();
+MCNAPI ::std::string const& VIBRATION_LISTENER_TAG();
 // NOLINTEND
 
 } // namespace VibrationListenerComponentSaveData

@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VanillaSceneFactory(
+    MCNAPI VanillaSceneFactory(
         ::std::unique_ptr<::ISceneFactoryImpl> impl,
         ::IMinecraftGame&                      minecraft,
         ::ILayoutServiceProvider&              layoutServiceProvider,
@@ -64,7 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ISceneFactoryImpl> impl,
         ::IMinecraftGame&                      minecraft,
         ::ILayoutServiceProvider&              layoutServiceProvider,
@@ -78,8 +78,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Json::Value $createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const;
+    MCNAPI ::Json::Value $createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const;
 
-    MCAPI ::std::shared_ptr<::AbstractScene> $createDevConsole();
+    MCNAPI ::std::shared_ptr<::AbstractScene> $createDevConsole();
     // NOLINTEND
 };

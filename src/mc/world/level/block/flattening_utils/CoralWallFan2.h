@@ -14,13 +14,13 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::CoralWallFan2 {
 // functions
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::Instance get();
+MCNAPI ::FlatteningUtils::Instance get();
 
-MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
+MCNAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 
-MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(bool hangType);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(bool hangType);
 
-MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getHangTypeSplitStates(bool dead);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getHangTypeSplitStates(bool dead);
 // NOLINTEND
 
 } // namespace FlatteningUtils::CoralWallFan2

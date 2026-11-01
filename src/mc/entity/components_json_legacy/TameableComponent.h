@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
     MCAPI void tame(::Actor& owner, ::Player& player);
     // NOLINTEND

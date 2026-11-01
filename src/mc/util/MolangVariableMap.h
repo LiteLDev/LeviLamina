@@ -61,37 +61,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::MolangVariable* _getMolangVariable(
+    MCNAPI ::MolangVariable* _getMolangVariable(
         ::MolangVariableIndex                        molangVariableIndex,
         ::MolangVariableMap::MissingVariableHandling errorHandling
     ) const;
 
-    MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
+    MCNAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
-    MCAPI ::MolangVariableMap& clear();
+    MCNAPI ::MolangVariableMap& clear();
 
 #ifdef LL_PLAT_C
-    MCAPI ::MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
+    MCNAPI ::MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
 #endif
 
-    MCAPI ::MolangVariableMap& operator=(::MolangVariableMap&& rhs);
+    MCNAPI ::MolangVariableMap& operator=(::MolangVariableMap&& rhs);
 
-    MCAPI ::MolangVariableMap& operator=(::MolangVariableMap const& rhs);
+    MCNAPI ::MolangVariableMap& operator=(::MolangVariableMap const& rhs);
 
-    MCAPI bool operator==(::MolangVariableMap const& rhs) const;
+    MCNAPI bool operator==(::MolangVariableMap const& rhs) const;
 
-    MCAPI void setMolangStructMember(
+    MCNAPI void setMolangStructMember(
         ::MolangVariableIndex    molangVariableIndex,
         ::HashedString const&    memberNameDepth0,
         ::MolangScriptArg const& value
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void setMolangVariable(::HashedString const& variableName, float value);
+    MCNAPI void setMolangVariable(::HashedString const& variableName, float value);
 
     MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
 
-    MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, float value);
+    MCNAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, float value);
 #endif
 
     MCAPI ~MolangVariableMap();

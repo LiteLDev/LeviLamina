@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecentlyPlayedPendingTargetData(::World::RecentlyPlayedPendingTargetData const&);
+    MCNAPI RecentlyPlayedPendingTargetData(::World::RecentlyPlayedPendingTargetData const&);
 
-    MCAPI ~RecentlyPlayedPendingTargetData();
+    MCNAPI ~RecentlyPlayedPendingTargetData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::RecentlyPlayedPendingTargetData const&);
+    MCNAPI void* $ctor(::World::RecentlyPlayedPendingTargetData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

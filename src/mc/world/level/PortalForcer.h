@@ -60,46 +60,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PortalForcer(::Level& level);
+    MCNAPI explicit PortalForcer(::Level& level);
 
-    MCAPI ::std::optional<::PortalRecord> _findPortal(
+    MCNAPI ::std::optional<::PortalRecord> _findPortal(
         ::DimensionType   dimensionId,
         ::BlockPos const& centerBlockPos,
         int               radius,
         ::BlockPos&       targetBlockPos
     ) const;
 
-    MCAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
+    MCNAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
 
-    MCAPI void removeMisalignedPortalRecords(
+    MCNAPI void removeMisalignedPortalRecords(
         ::BlockSource&        region,
         ::PortalShape const&  referenceShape,
         ::PortalRecord const& referenceRecord
     );
 
-    MCAPI void removePortalRecord(::BlockSource& source, ::BlockPos const& pos);
+    MCNAPI void removePortalRecord(::BlockSource& source, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
+    MCNAPI static ::BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
 
-    MCAPI static ::std::string const& PORTAL_FILE_ID();
+    MCNAPI static ::std::string const& PORTAL_FILE_ID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
+    MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $deserialize(::CompoundTag const& tag);
+    MCNAPI void $deserialize(::CompoundTag const& tag);
 
-    MCAPI void $serialize(::CompoundTag& tag) const;
+    MCNAPI void $serialize(::CompoundTag& tag) const;
 
 
     // NOLINTEND

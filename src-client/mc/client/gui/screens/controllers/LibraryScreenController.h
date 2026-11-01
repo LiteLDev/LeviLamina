@@ -82,13 +82,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LibraryScreenController(
+    MCNAPI LibraryScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>   model,
         ::std::shared_ptr<::LibraryCollection>     collection,
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
 
-    MCAPI LibraryScreenController(
+    MCNAPI LibraryScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>   model,
         ::std::shared_ptr<::LibraryCollection>     collection,
         ::std::string const&                       title,
@@ -97,7 +97,7 @@ public:
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
 
-    MCAPI LibraryScreenController(
+    MCNAPI LibraryScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>   model,
         ::std::shared_ptr<::LibraryCollection>     collection,
         ::std::string const&                       title,
@@ -107,23 +107,23 @@ public:
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
 
-    MCAPI ::LibraryItem* _getItem(::UIPropertyBag& bag) const;
+    MCNAPI ::LibraryItem* _getItem(::UIPropertyBag& bag) const;
 
-    MCAPI void _initialize();
+    MCNAPI void _initialize();
 
-    MCAPI void _initializeLibraryCollection(::std::shared_ptr<::LibraryCollection> libraryCollection);
+    MCNAPI void _initializeLibraryCollection(::std::shared_ptr<::LibraryCollection> libraryCollection);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>   model,
         ::std::shared_ptr<::LibraryCollection>     collection,
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>   model,
         ::std::shared_ptr<::LibraryCollection>     collection,
         ::std::string const&                       title,
@@ -132,7 +132,7 @@ public:
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>   model,
         ::std::shared_ptr<::LibraryCollection>     collection,
         ::std::string const&                       title,
@@ -146,12 +146,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

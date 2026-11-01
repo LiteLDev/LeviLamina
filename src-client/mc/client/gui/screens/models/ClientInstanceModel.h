@@ -93,63 +93,63 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $hasCommandsEnabled() const;
+    MCNAPI bool $hasCommandsEnabled() const;
 
-    MCAPI ::std::string $getFormattedHoverText(::ItemStackBase const& item, bool const showCategory);
+    MCNAPI ::std::string $getFormattedHoverText(::ItemStackBase const& item, bool const showCategory);
 
-    MCAPI ::std::string $getFilteredItemName(::ItemStackBase const& item);
+    MCNAPI ::std::string $getFilteredItemName(::ItemStackBase const& item);
 
-    MCAPI bool $achievementsWillBeDisabledOnLoad();
+    MCNAPI bool $achievementsWillBeDisabledOnLoad();
 
-    MCAPI bool $hasAchievementsDisabled();
+    MCNAPI bool $hasAchievementsDisabled();
 
-    MCAPI ::std::string $getLevelName();
+    MCNAPI ::std::string $getLevelName();
 
-    MCAPI int $getGameDifficulty();
+    MCNAPI int $getGameDifficulty();
 
-    MCAPI int $getGameType();
+    MCNAPI int $getGameType();
 
-    MCAPI void $setGameType(::GameType gameType);
+    MCNAPI void $setGameType(::GameType gameType);
 
-    MCAPI int $getGenerator();
+    MCNAPI int $getGenerator();
 
-    MCAPI bool $getStartWithMap();
+    MCNAPI bool $getStartWithMap();
 
-    MCAPI bool $isAlwaysDay();
+    MCNAPI bool $isAlwaysDay();
 
-    MCAPI bool $isGameRule(::GameRuleId gameRule);
+    MCNAPI bool $isGameRule(::GameRuleId gameRule);
 
-    MCAPI bool $isImmutableWorld();
+    MCNAPI bool $isImmutableWorld();
 
-    MCAPI ::std::unique_ptr<::PlayerCommandOrigin> $makePlayerCommandOrigin();
+    MCNAPI ::std::unique_ptr<::PlayerCommandOrigin> $makePlayerCommandOrigin();
 
-    MCAPI void $setCommandsEnabled(bool val);
+    MCNAPI void $setCommandsEnabled(bool val);
 
-    MCAPI void $disableAchievements();
+    MCNAPI void $disableAchievements();
 
-    MCAPI float $getGuiScale() const;
+    MCNAPI float $getGuiScale() const;
 
-    MCAPI ::Vec2 $getScreenSize() const;
+    MCNAPI ::Vec2 $getScreenSize() const;
 
-    MCAPI ::RectangleArea $getSafeScreenZoneArea() const;
+    MCNAPI ::RectangleArea $getSafeScreenZoneArea() const;
 
-    MCAPI ::RectangleArea $getWYSIWYGSafeScreenZoneArea() const;
+    MCNAPI ::RectangleArea $getWYSIWYGSafeScreenZoneArea() const;
 
-    MCAPI ::RectangleArea $getLayoutCustomizationSubPanelRectangle() const;
+    MCNAPI ::RectangleArea $getLayoutCustomizationSubPanelRectangle() const;
 
-    MCAPI ::RectangleArea $getLayoutCustomizationMainPanelRectangle() const;
+    MCNAPI ::RectangleArea $getLayoutCustomizationMainPanelRectangle() const;
 
-    MCAPI ::RectangleArea $getWYSIWYGBottomHudReservedArea() const;
+    MCNAPI ::RectangleArea $getWYSIWYGBottomHudReservedArea() const;
 
-    MCAPI ::RectangleArea const& $getHUDHotbarRectangle() const;
+    MCNAPI ::RectangleArea const& $getHUDHotbarRectangle() const;
 
-    MCAPI ::Option const& $getGuiScaleOption() const;
+    MCNAPI ::Option const& $getGuiScaleOption() const;
 
-    MCAPI void $setGuiScaleOffset(int guiScale);
+    MCNAPI void $setGuiScaleOffset(int guiScale);
 
-    MCAPI ::FontHandle $getFontHandle() const;
+    MCNAPI ::FontHandle $getFontHandle() const;
 
-    MCAPI void $notifyForLeaveGame();
+    MCNAPI void $notifyForLeaveGame();
     // NOLINTEND
 
 public:

@@ -71,21 +71,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperienceOrb(
+    MCNAPI ExperienceOrb(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void postNormalTick();
+    MCNAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
+    MCNAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
 
-    MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
+    MCNAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
     MCAPI static void spawnOrbs(
         ::BlockSource&            region,
@@ -99,7 +99,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -109,21 +109,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $playerTouch(::Player& player);
+    MCNAPI void $playerTouch(::Player& player);
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
+    MCNAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
 
-    MCFOLD void $doWaterSplashEffect();
+    MCNAPI void $doWaterSplashEffect();
 
 
     // NOLINTEND

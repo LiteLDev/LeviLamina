@@ -18,10 +18,10 @@ namespace SharedTypes::Beta::DataDrivenUI::Styling { struct Style; }
 namespace OreUI::Styling {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string
+MCNAPI ::std::string
 generateStyles(::IDataDrivenUIRepository& dataDrivenUIRepository, ::OreUI::Styling::CssParsingOptions const& options);
 
-MCAPI ::std::vector<::std::variant<
+MCNAPI ::std::vector<::std::variant<
     ::OreUI::Styling::CssBackgroundTextureProperty,
     ::OreUI::Styling::CssBoxSizeProperty,
     ::OreUI::Styling::CssColorProperty,

@@ -44,15 +44,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD bool $isValid();
+    MCNAPI bool $isValid();
 
-    MCFOLD ::ContainerWeakRef $getContainerWeakRef() const;
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCFOLD ::Container* $_getContainer() const;
+    MCNAPI ::Container* $_getContainer() const;
 
-    MCAPI void $_init();
+    MCNAPI void $_init();
 
 
     // NOLINTEND

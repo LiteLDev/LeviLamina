@@ -11,7 +11,7 @@ struct DynamicJumpControlComponentDefinition : public ::SharedTypes::v1_26_40::J
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

@@ -11,7 +11,7 @@ namespace ui { class ScreenTechStackSelector; }
 namespace ui::ScreenTechStackSelectorInitializer {
 // functions
 // NOLINTBEGIN
-MCAPI void initialize(
+MCNAPI void initialize(
     ::ui::ScreenTechStackSelector& screenTechStackSelector,
     ::IOptionRegistry&             options,
     bool                           isEditorEnabled,

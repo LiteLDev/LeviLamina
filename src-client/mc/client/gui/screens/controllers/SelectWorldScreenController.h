@@ -47,22 +47,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SelectWorldScreenController(
+    MCNAPI SelectWorldScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<
             void(::SelectWorldResult, ::optional_ref<::LevelSummary const>, ::optional_ref<::Realms::World const>)>
             callback
     );
 
-    MCAPI void _displayCopyFailedModal(::std::function<void(::ModalScreenButtonId)> callback);
+    MCNAPI void _displayCopyFailedModal(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _exit(::SelectWorldResult result);
+    MCNAPI void _exit(::SelectWorldResult result);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<
             void(::SelectWorldResult, ::optional_ref<::LevelSummary const>, ::optional_ref<::Realms::World const>)>
@@ -73,8 +73,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

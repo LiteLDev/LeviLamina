@@ -24,19 +24,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptWorldClockEventFilter();
+    MCNAPI ~ScriptWorldClockEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

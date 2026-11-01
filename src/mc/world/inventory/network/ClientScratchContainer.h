@@ -27,9 +27,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged

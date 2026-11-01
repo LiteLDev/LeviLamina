@@ -50,31 +50,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameControllerHandler();
+    MCNAPI GameControllerHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $refresh(bool isInGame);
+    MCNAPI void $refresh(bool isInGame);
 
-    MCFOLD void $shutdown();
+    MCNAPI void $shutdown();
 
-    MCFOLD ::GameControllerErrorType $checkPlatformSpecificControllerError();
+    MCNAPI ::GameControllerErrorType $checkPlatformSpecificControllerError();
 
-    MCFOLD float $normalizeAxis(float raw, float deadzone);
+    MCNAPI float $normalizeAxis(float raw, float deadzone);
     // NOLINTEND
 
 public:

@@ -33,24 +33,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ARGUMENTS_ID();
+    MCNAPI static ::std::string_view const& ARGUMENTS_ID();
 
-    MCAPI static ::std::string_view const& BLOCK_POS_ID();
+    MCNAPI static ::std::string_view const& BLOCK_POS_ID();
 
-    MCAPI static ::std::string_view const& EMOTE_ID();
+    MCNAPI static ::std::string_view const& EMOTE_ID();
 
-    MCAPI static ::std::string_view const& OFFSET_ID();
+    MCNAPI static ::std::string_view const& OFFSET_ID();
 
-    MCAPI static ::std::string_view const& ROTATION_ID();
+    MCNAPI static ::std::string_view const& ROTATION_ID();
 
-    MCAPI static ::std::string_view const& ROTATION_LIMIT_ID();
+    MCNAPI static ::std::string_view const& ROTATION_LIMIT_ID();
     // NOLINTEND
 };

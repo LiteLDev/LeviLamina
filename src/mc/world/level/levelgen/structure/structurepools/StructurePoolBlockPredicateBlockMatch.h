@@ -41,25 +41,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(::Block const& block);
+    MCNAPI explicit StructurePoolBlockPredicateBlockMatch(::Block const& block);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block);
+    MCNAPI void* $ctor(::Block const& block);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::IRandom&) const;
+    MCNAPI bool $test(::Block const& block, ::IRandom&) const;
 
-    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
+    MCNAPI bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
 
-    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
+    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

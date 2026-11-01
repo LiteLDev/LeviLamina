@@ -32,23 +32,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
+    MCNAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 
 
     // NOLINTEND

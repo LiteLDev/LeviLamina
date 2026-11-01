@@ -25,33 +25,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocument();
+    MCNAPI ActorDocument();
 
-    MCAPI ActorDocument(::SharedTypes::Beta::ActorDocument const&);
+    MCNAPI ActorDocument(::SharedTypes::Beta::ActorDocument const&);
 
-    MCAPI ::SharedTypes::Beta::ActorDocument& operator=(::SharedTypes::Beta::ActorDocument const&);
+    MCNAPI ::SharedTypes::Beta::ActorDocument& operator=(::SharedTypes::Beta::ActorDocument const&);
 
-    MCAPI ~ActorDocument();
+    MCNAPI ~ActorDocument();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::Beta::ActorDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::Beta::ActorDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

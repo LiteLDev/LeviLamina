@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIControlFactory(
+    MCNAPI UIControlFactory(
         ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> uiDefRepo,
         ::Json::Value const&                                    globalVars,
         ::UISoundPlayer const&                                  soundPlayer,
@@ -51,16 +51,16 @@ public:
         bool                                                    isLowMemory
     );
 
-    MCAPI ::UIAnim* _addAnimToComponent(::std::string_view name, ::UIResolvedDef& def, ::UIControl& ownerControl);
+    MCNAPI ::UIAnim* _addAnimToComponent(::std::string_view name, ::UIResolvedDef& def, ::UIControl& ownerControl);
 
-    MCAPI ::std::shared_ptr<::UIControl> _createControlTree(
+    MCNAPI ::std::shared_ptr<::UIControl> _createControlTree(
         ::UIControlFactoryContext const&,
         ::UIControl const&        templateControl,
         ::UIControl*              parent,
         ::ui::ChildInsertPosition childInsertPosition
     );
 
-    MCAPI ::std::shared_ptr<::UIControl> _createControlTree(
+    MCNAPI ::std::shared_ptr<::UIControl> _createControlTree(
         ::UIControlFactoryContext const& context,
         ::std::string_view               name,
         ::ControlScreenAction&           controlScreenAction,
@@ -70,7 +70,7 @@ public:
         bool                             isTemplateControl
     );
 
-    MCAPI ::std::shared_ptr<::UIControl> _createControlTreeFromResolvedDef(
+    MCNAPI ::std::shared_ptr<::UIControl> _createControlTreeFromResolvedDef(
         ::UIControlFactoryContext const& context,
         ::UIResolvedDef const&           resolvedDef,
         ::UIControl*                     parentControl,
@@ -79,13 +79,13 @@ public:
         bool                             isTemplateControl
     );
 
-    MCAPI ::std::shared_ptr<::UIControl> _createControlTreeRootOnly(
+    MCNAPI ::std::shared_ptr<::UIControl> _createControlTreeRootOnly(
         ::UIControlFactoryContext const& context,
         ::std::string_view               name,
         ::ControlScreenAction&           controlScreenAction
     );
 
-    MCAPI ::std::shared_ptr<::UIControl> _createFromResolvedDef(
+    MCNAPI ::std::shared_ptr<::UIControl> _createFromResolvedDef(
         ::UIControlFactoryContext const& context,
         ::UIResolvedDef const&           resolvedDef,
         ::UIControl*                     parentControl,
@@ -94,57 +94,57 @@ public:
         bool                             isTemplateControl
     );
 
-    MCAPI void _populateControl(::UIResolvedDef const& def, ::UIControl& control);
+    MCNAPI void _populateControl(::UIResolvedDef const& def, ::UIControl& control);
 
-    MCAPI void _populateDataBindingComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI void _populateDataBindingComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI void _populateFocusComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI void _populateFocusComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI void _populateGridComponent(
+    MCNAPI void _populateGridComponent(
         ::UIControlFactoryContext const& context,
         ::UIResolvedDef const&           def,
         ::UIControl&                     ownerControl
     );
 
-    MCAPI void _populateInputComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI void _populateInputComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI void _populateLayoutComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI void _populateLayoutComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI void _populateSoundComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, bool alwaysCreate);
+    MCNAPI void _populateSoundComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, bool alwaysCreate);
 
-    MCAPI void _populateSpriteComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI void _populateSpriteComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI void _populateTextComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI void _populateTextComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI ~UIControlFactory();
+    MCNAPI ~UIControlFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _createGradientRenderer(::CustomRenderComponent& customRenderComponent, ::UIResolvedDef const& def);
 
-    MCAPI static void _populateButtonComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI static void _populateButtonComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI static void _populateCollectionComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI static void _populateCollectionComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI static void _populateDebugRendererComponent(::UIResolvedDef const& def, ::UIControl& control);
+    MCNAPI static void _populateDebugRendererComponent(::UIResolvedDef const& def, ::UIControl& control);
 
-    MCAPI static void _populateGestureComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI static void _populateGestureComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI static void _populatePageIndicatorManagerComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI static void _populatePageIndicatorManagerComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
-    MCAPI static void
+    MCNAPI static void
     _populateTextToSpeechComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, int controlPriorityDefault);
 
-    MCAPI static void _populateToggleComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+    MCNAPI static void _populateToggleComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> uiDefRepo,
         ::Json::Value const&                                    globalVars,
         ::UISoundPlayer const&                                  soundPlayer,
@@ -156,6 +156,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

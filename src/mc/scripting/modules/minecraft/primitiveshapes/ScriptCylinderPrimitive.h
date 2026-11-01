@@ -34,15 +34,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $populatePacketData(::PrimitiveShapeDataPayload& packetShapeData) const;
+    MCNAPI void $populatePacketData(::PrimitiveShapeDataPayload& packetShapeData) const;
 
-    MCAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& existing);
+    MCNAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& existing);
 
 
     // NOLINTEND

@@ -83,47 +83,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine, ::CompoundTag const* tag);
 
-    MCAPI void move(::Vec3 const& delta);
+    MCNAPI void move(::Vec3 const& delta);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initStaticResources(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI static void initStaticResources(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::TexturePtr& FLAME_ATLAS();
+    MCNAPI static ::mce::TexturePtr& FLAME_ATLAS();
 
-    MCAPI static ::mce::TexturePtr& FORCEFIELD_ATLAS();
+    MCNAPI static ::mce::TexturePtr& FORCEFIELD_ATLAS();
 
-    MCAPI static ::mce::TexturePtr& ITEMS_ATLAS();
+    MCNAPI static ::mce::TexturePtr& ITEMS_ATLAS();
 
-    MCAPI static ::mce::TexturePtr& PARTICLE_ATLAS();
+    MCNAPI static ::mce::TexturePtr& PARTICLE_ATLAS();
 
-    MCAPI static ::mce::TexturePtr& TERRAIN_ATLAS();
+    MCNAPI static ::mce::TexturePtr& TERRAIN_ATLAS();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $addTagData(::CompoundTag const& tag);
+    MCNAPI void $addTagData(::CompoundTag const& tag);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $tessellate(::ParticleRenderContext const& renderContext);
+    MCNAPI void $tessellate(::ParticleRenderContext const& renderContext);
 
-    MCAPI ::mce::TexturePtr const& $getParticleTexture() const;
+    MCNAPI ::mce::TexturePtr const& $getParticleTexture() const;
 
-    MCFOLD void $setEmittingEntity(::Actor& entity);
+    MCNAPI void $setEmittingEntity(::Actor& entity);
 
-    MCAPI bool $_shouldUpdateVertexData(float sqDist);
+    MCNAPI bool $_shouldUpdateVertexData(float sqDist);
 
-    MCAPI void $_calculateAmbientLight(float a);
+    MCNAPI void $_calculateAmbientLight(float a);
     // NOLINTEND
 };

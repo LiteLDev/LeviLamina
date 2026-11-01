@@ -82,28 +82,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FunctionManager(
+    MCNAPI FunctionManager(
         ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
         ::std::unique_ptr<::CommandOrigin>      tickOrigin,
         ::GameRule const*                       gameRule
     );
 
-    MCAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
+    MCNAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
 
-    MCAPI int
+    MCNAPI int
     _processCommandStack(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
-    MCAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
+    MCNAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
 
-    MCAPI ::FunctionEntry* getFunction(::std::string const& functionName);
+    MCNAPI ::FunctionEntry* getFunction(::std::string const& functionName);
 
-    MCAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
+    MCNAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
         ::std::unique_ptr<::CommandOrigin>      tickOrigin,
         ::GameRule const*                       gameRule

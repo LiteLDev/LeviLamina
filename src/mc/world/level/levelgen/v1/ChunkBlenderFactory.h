@@ -78,6 +78,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
+    MCNAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
     // NOLINTEND
 };

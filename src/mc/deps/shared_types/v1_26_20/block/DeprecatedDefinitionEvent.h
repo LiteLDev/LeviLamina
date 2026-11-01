@@ -33,27 +33,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeprecatedDefinitionEvent(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const&);
+    MCNAPI DeprecatedDefinitionEvent(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const&);
 
-    MCAPI ~DeprecatedDefinitionEvent();
+    MCNAPI ~DeprecatedDefinitionEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

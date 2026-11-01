@@ -34,11 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _destroy();
+    MCNAPI void _destroy();
 
-    MCAPI ::Scripting::ScriptContext& operator=(::Scripting::ScriptContext&& rhs);
+    MCNAPI ::Scripting::ScriptContext& operator=(::Scripting::ScriptContext&& rhs);
 
-    MCAPI ::Scripting::ResultAny run(::Scripting::IPayload& payload, ::std::optional<::Scripting::Privilege> privilege);
+    MCNAPI ::Scripting::ResultAny
+    run(::Scripting::IPayload& payload, ::std::optional<::Scripting::Privilege> privilege);
     // NOLINTEND
 };
 

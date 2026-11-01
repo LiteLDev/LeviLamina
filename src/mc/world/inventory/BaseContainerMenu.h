@@ -94,36 +94,36 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isSlotDirty(int slot);
+    MCNAPI bool $isSlotDirty(int slot);
 
-    MCFOLD bool $isResultSlot(int slot);
+    MCNAPI bool $isResultSlot(int slot);
 
-    MCFOLD void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD void $setData(int, int);
+    MCNAPI void $setData(int, int);
 
-    MCFOLD void $setSelectedRecipeIndex(int, bool);
+    MCNAPI void $setSelectedRecipeIndex(int, bool);
 
-    MCFOLD ::std::optional<int> $getSelectedRecipeIndex() const;
+    MCNAPI ::std::optional<int> $getSelectedRecipeIndex() const;
 
-    MCFOLD ::ContainerID $getContainerId() const;
+    MCNAPI ::ContainerID $getContainerId() const;
 
-    MCAPI void $setContainerId(::ContainerID id);
+    MCNAPI void $setContainerId(::ContainerID id);
 
-    MCAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCNAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
-    MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
+    MCNAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
 
     // NOLINTEND

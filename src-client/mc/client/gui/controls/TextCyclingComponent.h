@@ -33,10 +33,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $_postCreate();
+    MCNAPI void $_postCreate();
 
-    MCAPI void $_updateSubPage();
+    MCNAPI void $_updateSubPage();
     // NOLINTEND
 };

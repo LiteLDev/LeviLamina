@@ -46,44 +46,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FocusContainerComponent(::UIControl& owner);
+    MCNAPI explicit FocusContainerComponent(::UIControl& owner);
 
-    MCAPI ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::std::weak_ptr<::UIControl const>>>>
+    MCNAPI ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::std::weak_ptr<::UIControl const>>>>
     _findSubFocusContainer(::std::shared_ptr<::UIControl const> focusContainerControl) const;
 
-    MCAPI ::FocusContainerComponent* _getParentFocusContainer();
+    MCNAPI ::FocusContainerComponent* _getParentFocusContainer();
 
-    MCAPI void addRecentFocusControl(::std::weak_ptr<::UIControl> weakControl);
+    MCNAPI void addRecentFocusControl(::std::weak_ptr<::UIControl> weakControl);
 
-    MCAPI ::std::string getFocusNavigationModeName(::ui::CardinalDirection dir) const;
+    MCNAPI ::std::string getFocusNavigationModeName(::ui::CardinalDirection dir) const;
 
-    MCAPI ::std::shared_ptr<::UIControl> getLastFocusedControl();
+    MCNAPI ::std::shared_ptr<::UIControl> getLastFocusedControl();
 
-    MCAPI ::std::string getLastFocusedControlName() const;
+    MCNAPI ::std::string getLastFocusedControlName() const;
 
-    MCAPI void initialize();
+    MCNAPI void initialize();
 
-    MCAPI bool isAncestorFocusContainer(::FocusContainerComponent& focusContainerComp) const;
+    MCNAPI bool isAncestorFocusContainer(::FocusContainerComponent& focusContainerComp) const;
 
-    MCAPI void loseFocus(::std::weak_ptr<::UIControl> lastControl);
+    MCNAPI void loseFocus(::std::weak_ptr<::UIControl> lastControl);
 
-    MCAPI void setFocusNavigationModeOverride(::ui::CardinalDirection dir, ::std::string const& str);
+    MCNAPI void setFocusNavigationModeOverride(::ui::CardinalDirection dir, ::std::string const& str);
 
-    MCAPI void setLastFocusedControl(::std::weak_ptr<::UIControl> control);
+    MCNAPI void setLastFocusedControl(::std::weak_ptr<::UIControl> control);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCNAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 
 public:

@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ImageObject(::std::string const& name, ::OreUI::Detail::IPropertyObject* parent, ::std::string url);
+    MCNAPI ImageObject(::std::string const& name, ::OreUI::Detail::IPropertyObject* parent, ::std::string url);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::OreUI::Detail::IPropertyObject* parent, ::std::string url);
+    MCNAPI void* $ctor(::std::string const& name, ::OreUI::Detail::IPropertyObject* parent, ::std::string url);
     // NOLINTEND
 };
 

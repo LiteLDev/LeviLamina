@@ -49,9 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GuiMessage(::GuiMessage const&);
+    MCNAPI GuiMessage(::GuiMessage const&);
 
-    MCAPI GuiMessage(
+    MCNAPI GuiMessage(
         ::GuiMessage::MessageType            type,
         ::std::string const&                 username,
         ::std::string const&                 message,
@@ -63,15 +63,15 @@ public:
         bool                                 ttsRequired
     );
 
-    MCAPI ~GuiMessage();
+    MCNAPI ~GuiMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GuiMessage const&);
+    MCNAPI void* $ctor(::GuiMessage const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::GuiMessage::MessageType            type,
         ::std::string const&                 username,
         ::std::string const&                 message,
@@ -87,6 +87,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

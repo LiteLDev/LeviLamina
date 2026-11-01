@@ -50,19 +50,19 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $postInit();
+    MCNAPI void $postInit();
 
-    MCAPI void $releaseResources();
+    MCNAPI void $releaseResources();
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD bool $isValid();
+    MCNAPI bool $isValid();
 
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCAPI ::Container* $_getContainer() const;
+    MCNAPI ::Container* $_getContainer() const;
 
-    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 #endif
 
 

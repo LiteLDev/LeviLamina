@@ -23,13 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator()(::std::optional<::ScriptModuleMinecraft::ScriptActorData> const& actorData) const;
+    MCNAPI bool operator()(::std::optional<::ScriptModuleMinecraft::ScriptActorData> const& actorData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

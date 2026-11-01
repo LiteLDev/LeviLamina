@@ -10,7 +10,7 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::RedFlower {
 // functions
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::Instance get();
+MCNAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
 } // namespace FlatteningUtils::RedFlower

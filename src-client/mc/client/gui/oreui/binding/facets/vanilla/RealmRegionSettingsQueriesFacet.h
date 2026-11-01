@@ -48,39 +48,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmRegionSettingsQueriesFacet(
+    MCNAPI explicit RealmRegionSettingsQueriesFacet(
         ::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings
     );
 
-    MCAPI bool getDoNotShowPingWarning() const;
+    MCNAPI bool getDoNotShowPingWarning() const;
 
-    MCFOLD bool getLowPingWarning() const;
+    MCNAPI bool getLowPingWarning() const;
 
-    MCFOLD ::Realms::RealmsRegionSettingsState getRealmRegionSettingsState() const;
+    MCNAPI ::Realms::RealmsRegionSettingsState getRealmRegionSettingsState() const;
 
-    MCFOLD int getRegionSelectedIndex() const;
+    MCNAPI int getRegionSelectedIndex() const;
 
-    MCFOLD ::std::vector<::Realms::ServerRegion> const& getRegions() const;
+    MCNAPI ::std::vector<::Realms::ServerRegion> const& getRegions() const;
 
-    MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
+    MCNAPI ::Realms::RealmsWorldEditorStateStatus getStatus() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings);
+    MCNAPI void* $ctor(::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

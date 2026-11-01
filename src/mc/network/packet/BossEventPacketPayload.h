@@ -24,16 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BossEventPacketPayload();
+    MCNAPI BossEventPacketPayload();
 
-    MCAPI ::std::string getRedactedName() const;
+    MCNAPI ::std::string getRedactedName() const;
 
-    MCFOLD ::std::string getUnredactedName() const;
+    MCNAPI ::std::string getUnredactedName() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

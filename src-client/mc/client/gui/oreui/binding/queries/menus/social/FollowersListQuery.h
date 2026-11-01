@@ -39,15 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FollowersListQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit FollowersListQuery(::OreUI::GameDependencies const& game);
 
-    MCAPI void _fetchData();
+    MCNAPI void _fetchData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

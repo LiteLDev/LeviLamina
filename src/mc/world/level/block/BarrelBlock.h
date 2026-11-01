@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -51,21 +51,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isContainerBlock() const;
+    MCNAPI bool $isContainerBlock() const;
 
-    MCFOLD bool $isSignalSource() const;
+    MCNAPI bool $isSignalSource() const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCFOLD int
+    MCNAPI int
     $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
 
@@ -74,6 +74,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

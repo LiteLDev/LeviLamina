@@ -31,15 +31,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> getCopy() const;
+    MCNAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> getCopy() const;
 
-    MCAPI ~BlockSchematic();
+    MCNAPI ~BlockSchematic();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

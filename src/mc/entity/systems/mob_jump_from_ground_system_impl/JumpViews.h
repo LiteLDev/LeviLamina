@@ -131,7 +131,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JumpViews(
+    MCNAPI explicit JumpViews(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,
@@ -177,7 +177,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,

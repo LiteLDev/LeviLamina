@@ -14,13 +14,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PipelineError();
+    MCNAPI ~PipelineError();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

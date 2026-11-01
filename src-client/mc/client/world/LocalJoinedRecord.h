@@ -33,9 +33,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::World::WorldJoinedRecordType $getWorldJoinedRecordType() const;
+    MCNAPI ::World::WorldJoinedRecordType $getWorldJoinedRecordType() const;
 
-    MCAPI void $serializeExtended(::Json::Value& outJsonValue) const;
+    MCNAPI void $serializeExtended(::Json::Value& outJsonValue) const;
     // NOLINTEND
 };
 

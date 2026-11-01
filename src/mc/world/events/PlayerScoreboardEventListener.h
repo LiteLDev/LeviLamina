@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
+    MCNAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
+    MCNAPI ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
 
 
     // NOLINTEND

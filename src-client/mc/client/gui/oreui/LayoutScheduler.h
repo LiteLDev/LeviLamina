@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void waitUntilLayoutIsCompleted();
+    MCNAPI void waitUntilLayoutIsCompleted();
     // NOLINTEND
 };
 

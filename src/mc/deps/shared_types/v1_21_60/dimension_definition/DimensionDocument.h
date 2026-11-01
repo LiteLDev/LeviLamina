@@ -29,28 +29,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument&
+    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument const&);
 
-    MCAPI ~DimensionDocument();
+    MCNAPI ~DimensionDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

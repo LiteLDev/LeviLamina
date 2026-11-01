@@ -46,33 +46,33 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
+    MCNAPI ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
 #endif
 
-    MCAPI void
+    MCNAPI void
     sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
+    MCNAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
+    MCNAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
-    MCFOLD void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
+    MCNAPI void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
 
 
     // NOLINTEND

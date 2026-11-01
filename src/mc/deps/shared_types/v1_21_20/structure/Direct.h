@@ -23,13 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Direct(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
+    MCNAPI Direct(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
     // NOLINTEND
 };
 

@@ -33,22 +33,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeItem(::TradeItem&& item);
+    MCNAPI TradeItem(::TradeItem&& item);
 
-    MCAPI ::TradeItem& operator=(::TradeItem&& item);
+    MCNAPI ::TradeItem& operator=(::TradeItem&& item);
 
-    MCAPI ~TradeItem();
+    MCNAPI ~TradeItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TradeItem&& item);
+    MCNAPI void* $ctor(::TradeItem&& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

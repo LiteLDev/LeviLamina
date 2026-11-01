@@ -39,15 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AccountQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
+    MCNAPI AccountQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
 
-    MCAPI void _updateData();
+    MCNAPI void _updateData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
     // NOLINTEND
 };
 

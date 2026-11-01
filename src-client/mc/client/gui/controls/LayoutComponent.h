@@ -77,58 +77,58 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::LayoutVariables> _getLayoutVariables();
+    MCNAPI ::std::shared_ptr<::LayoutVariables> _getLayoutVariables();
 
-    MCAPI bool _isVariableIsSupported(::LayoutVariableType type) const;
+    MCNAPI bool _isVariableIsSupported(::LayoutVariableType type) const;
 
-    MCAPI int _recursiveInitialize(
+    MCNAPI int _recursiveInitialize(
         ::std::shared_ptr<::LayoutVariables>& layoutVariables,
         bool                                  initializeInactive,
         bool                                  initializeTemplate
     );
 
-    MCAPI ::LayoutVariable* getVariable(::LayoutVariableType type);
+    MCNAPI ::LayoutVariable* getVariable(::LayoutVariableType type);
 
-    MCAPI void layout(::std::initializer_list<::LayoutVariableType> invalidateVariableTypes, bool forceInvalidation);
+    MCNAPI void layout(::std::initializer_list<::LayoutVariableType> invalidateVariableTypes, bool forceInvalidation);
 
-    MCAPI int recursiveInitialize(::std::shared_ptr<::LayoutVariables>& layoutVariables, bool initializeInactive);
+    MCNAPI int recursiveInitialize(::std::shared_ptr<::LayoutVariables>& layoutVariables, bool initializeInactive);
 
-    MCAPI void reinitialize(::std::initializer_list<::LayoutVariableType> variableTypes);
+    MCNAPI void reinitialize(::std::initializer_list<::LayoutVariableType> variableTypes);
 
-    MCAPI void removeDeadDependencies();
+    MCNAPI void removeDeadDependencies();
 
-    MCAPI void removeDependencies();
+    MCNAPI void removeDependencies();
 
-    MCAPI void setMaxSize(::ui::LayoutOffset const& size);
+    MCNAPI void setMaxSize(::ui::LayoutOffset const& size);
 
-    MCAPI void setMinSize(::ui::LayoutOffset const& size);
+    MCNAPI void setMinSize(::ui::LayoutOffset const& size);
 
-    MCAPI void setOffset(::ui::LayoutOffset const& offset);
+    MCNAPI void setOffset(::ui::LayoutOffset const& offset);
 
-    MCAPI void setOffsetDelta(::glm::vec2 const& offsetDelta, ::UIControl const* const primaryControl);
+    MCNAPI void setOffsetDelta(::glm::vec2 const& offsetDelta, ::UIControl const* const primaryControl);
 
-    MCAPI void setSize(::ui::LayoutOffset const& size);
+    MCNAPI void setSize(::ui::LayoutOffset const& size);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCAPI void $onNotifyChildAdded();
+    MCNAPI void $onNotifyChildAdded();
 
-    MCAPI void $onAdded();
+    MCNAPI void $onAdded();
 
-    MCAPI void $onRemoved();
+    MCNAPI void $onRemoved();
     // NOLINTEND
 
 public:

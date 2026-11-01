@@ -11,7 +11,7 @@ namespace PickUpdater { struct PickUpdateResults; }
 namespace PickUpdater {
 // functions
 // NOLINTBEGIN
-MCAPI ::PickUpdater::PickUpdateResults updatePickDirection(::PickUpdater::PickUpdateArguments& args);
+MCNAPI ::PickUpdater::PickUpdateResults updatePickDirection(::PickUpdater::PickUpdateArguments& args);
 // NOLINTEND
 
 } // namespace PickUpdater

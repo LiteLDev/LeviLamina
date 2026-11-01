@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StompBlockGoal(
+    MCNAPI StompBlockGoal(
         ::Block const*  block,
         ::Mob&          mob,
         ::std::string   name,
@@ -78,7 +78,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Block const*  block,
         ::Mob&          mob,
         ::std::string   name,
@@ -94,33 +94,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $findTargetBlock();
+    MCNAPI bool $findTargetBlock();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $_moveToBlock();
+    MCNAPI void $_moveToBlock();
 
-    MCAPI bool $_canReach(::BlockPos const& pos);
+    MCNAPI bool $_canReach(::BlockPos const& pos);
 
-    MCFOLD void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCFOLD void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCFOLD void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCFOLD void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
 
     // NOLINTEND

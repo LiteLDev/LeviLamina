@@ -99,64 +99,64 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorStructureFacet(::Editor::ServiceProviderCollection* services);
+    MCNAPI explicit EditorStructureFacet(::Editor::ServiceProviderCollection* services);
 
-    MCAPI void _handleSelectionVolumeChange(::Editor::Network::SelectionVolumeUpdate::Action const& evt);
+    MCNAPI void _handleSelectionVolumeChange(::Editor::Network::SelectionVolumeUpdate::Action const& evt);
 
-    MCAPI void _handleStructureEvent(
+    MCNAPI void _handleStructureEvent(
         ::std::variant<
             ::Editor::EditorStructureDataUpdated,
             ::Editor::EditorStructureDataRemoved,
             ::Editor::EditorStructureEventListUpdated> const& evt
     );
 
-    MCAPI void copyToClipboard(::std::string const& structureId);
+    MCNAPI void copyToClipboard(::std::string const& structureId);
 
-    MCAPI void createStructureFromClipboard(::std::string const& id, ::std::optional<::std::string> const& fullName);
+    MCNAPI void createStructureFromClipboard(::std::string const& id, ::std::optional<::std::string> const& fullName);
 
-    MCAPI void createStructureFromSelection(::std::string const& id);
+    MCNAPI void createStructureFromSelection(::std::string const& id);
 
-    MCAPI void deleteStructures(::std::vector<::HashedString> const& idList);
+    MCNAPI void deleteStructures(::std::vector<::HashedString> const& idList);
 
-    MCAPI void duplicateStructure(::HashedString const& idToDuplicate, ::HashedString const& newId);
+    MCNAPI void duplicateStructure(::HashedString const& idToDuplicate, ::HashedString const& newId);
 
-    MCAPI ::HashedString generateStructureId();
+    MCNAPI ::HashedString generateStructureId();
 
-    MCFOLD ::std::unordered_map<::HashedString, ::OreUI::EditorStructureFacet::StructureData> const&
+    MCNAPI ::std::unordered_map<::HashedString, ::OreUI::EditorStructureFacet::StructureData> const&
     getStructureDataMap() const;
 
-    MCFOLD ::std::vector<::OreUI::EditorStructureFacet::StructureDescription> const& getStructureList() const;
+    MCNAPI ::std::vector<::OreUI::EditorStructureFacet::StructureDescription> const& getStructureList() const;
 
-    MCFOLD bool hasClipboardItemForStructureCreation() const;
+    MCNAPI bool hasClipboardItemForStructureCreation() const;
 
-    MCFOLD bool hasSelectionForStructureCreation() const;
+    MCNAPI bool hasSelectionForStructureCreation() const;
 
-    MCAPI void queryStructures(bool shouldFetchList, ::std::vector<::std::string> const& requestdStructureIds);
+    MCNAPI void queryStructures(bool shouldFetchList, ::std::vector<::std::string> const& requestdStructureIds);
 
-    MCAPI void updateFromClipboard(::std::string const& structureId) const;
+    MCNAPI void updateFromClipboard(::std::string const& structureId) const;
 
-    MCAPI void
+    MCNAPI void
     updateStructure(::HashedString const& id, ::OreUI::EditorStructureFacet::StructureUpdatePayload const& payload);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
 
-    MCAPI static ::std::map<::Editor::StructureSource, ::std::string> const& SOURCE_STRING();
+    MCNAPI static ::std::map<::Editor::StructureSource, ::std::string> const& SOURCE_STRING();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection* services);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

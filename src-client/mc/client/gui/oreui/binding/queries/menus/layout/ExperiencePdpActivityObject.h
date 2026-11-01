@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperiencePdpActivityObject(
+    MCNAPI ExperiencePdpActivityObject(
         ::std::string const&                                             name,
         ::Bedrock::Services::layout::model::ExperiencePdpActivity const& src
     );
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::Bedrock::Services::layout::model::ExperiencePdpActivity const& src);
+    MCNAPI void* $ctor(::std::string const& name, ::Bedrock::Services::layout::model::ExperiencePdpActivity const& src);
     // NOLINTEND
 };
 

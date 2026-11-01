@@ -176,31 +176,31 @@ public:
         bool                                      usesErrorPopupInfo
     );
 
-    MCAPI void _attemptAddFriends(::std::function<void()> callback);
+    MCNAPI void _attemptAddFriends(::std::function<void()> callback);
 
-    MCAPI void _attemptConnect(::std::function<void(::Social::UserPlatformConnectionResult)> callback);
+    MCNAPI void _attemptConnect(::std::function<void(::Social::UserPlatformConnectionResult)> callback);
 
-    MCAPI bool _attemptSignIn(
+    MCNAPI bool _attemptSignIn(
         ::Social::IdentitySignInTrigger                            signInTrigger,
         ::std::string const&                                       signInSource,
         ::std::function<void(::Social::MultiIdentitySigninResult)> callback
     );
 
-    MCAPI bool _checkRealmCreatePermissions();
+    MCNAPI bool _checkRealmCreatePermissions();
 
-    MCAPI void _closeModalDialog();
+    MCNAPI void _closeModalDialog();
 
-    MCAPI void
+    MCNAPI void
     _displayCustomModalPopup(::ModalScreenData const& modalData, ::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _displayJsonDefinedControlPopup(
+    MCNAPI void _displayJsonDefinedControlPopup(
         ::UIPropertyBag const& popupBag,
         ::std::string const&   factory,
         ::std::string const&   ttsTitle,
         ::std::string const&   ttsContent
     );
 
-    MCAPI void _displayJsonDefinedControlPopup(
+    MCNAPI void _displayJsonDefinedControlPopup(
         ::std::string const& controlId,
         ::std::string const& factory,
         ::std::string const& name,
@@ -208,15 +208,15 @@ public:
         ::std::string const& ttsContent
     );
 
-    MCAPI void _displayPrivilegesBlockedModalPopup(
+    MCNAPI void _displayPrivilegesBlockedModalPopup(
         ::std::string const& messageString,
         ::std::string const& closeButtonTitle,
         bool                 showOpenAccountSettingButton
     );
 
-    MCAPI void _displaySignOutFailedModalPopup(::std::string const& error);
+    MCNAPI void _displaySignOutFailedModalPopup(::std::string const& error);
 
-    MCAPI void _displayStandardModalPopup(
+    MCNAPI void _displayStandardModalPopup(
         ::std::string const&        title,
         ::std::string const&        message,
         ::ModalScreenButtonMode     buttonNumber,
@@ -224,62 +224,62 @@ public:
         ::std::string const&        telemetryOverride
     );
 
-    MCAPI void _gateRealmsWhenCrossPlatformIsDisabled(::std::function<void()> callback);
+    MCNAPI void _gateRealmsWhenCrossPlatformIsDisabled(::std::function<void()> callback);
 
-    MCAPI int
+    MCNAPI int
     _getStepSliderValue(::std::function<int()> getValue, ::std::string const& valueBindingName, bool continuousUpdate);
 
-    MCAPI void _handleSignInFailure(
+    MCNAPI void _handleSignInFailure(
         ::Social::MultiIdentitySigninResult const&                 signInResult,
         ::std::function<void(::Social::MultiIdentitySigninResult)> callback,
         bool                                                       isAutoSignIn
     );
 
-    MCAPI bool _isApprovedLink(::std::string const& hyperlink) const;
+    MCNAPI bool _isApprovedLink(::std::string const& hyperlink) const;
 
-    MCAPI ::ui::ViewRequest _onModalEventReceived(::ModalScreenButtonId modalResult, bool buttonClosesModal);
+    MCNAPI ::ui::ViewRequest _onModalEventReceived(::ModalScreenButtonId modalResult, bool buttonClosesModal);
 
-    MCAPI void
+    MCNAPI void
     _promptEduSwitchAccounts(bool showModal, ::std::string const& buttonName, ::LastClickedSource lastClickedSource);
 
-    MCAPI bool _resolveSafeZoneVisibility(::SafeZoneBuffer buffer) const;
+    MCNAPI bool _resolveSafeZoneVisibility(::SafeZoneBuffer buffer) const;
 
-    MCAPI ::std::string const
+    MCNAPI ::std::string const
     _retrieveBindingValueFromPropertyBag(::std::string const& bindingName, ::UIPropertyBag& propertyBag) const;
 
-    MCAPI void _showLiveMultiplayerModal();
+    MCNAPI void _showLiveMultiplayerModal();
 
-    MCAPI void _showMobileDataBlockedModal();
+    MCNAPI void _showMobileDataBlockedModal();
 
-    MCAPI void _showNoWifiModal();
+    MCNAPI void _showNoWifiModal();
 
-    MCAPI void _showServerCapacityFullModal();
+    MCNAPI void _showServerCapacityFullModal();
 
-    MCAPI bool _tryNavigateToXblUpsellScreen();
+    MCNAPI bool _tryNavigateToXblUpsellScreen();
 
-    MCAPI bool _tryShowSuspendWarningModal(::std::function<void()> onConfirm);
+    MCNAPI bool _tryShowSuspendWarningModal(::std::function<void()> onConfirm);
 
-    MCAPI void displayJsonDefinedControlPopup(
+    MCNAPI void displayJsonDefinedControlPopup(
         ::std::string const& controlId,
         ::std::string const& factory,
         ::std::string const& name
     );
 
-    MCAPI void
+    MCNAPI void
     exportPDF(::PDFOptions options, ::std::string const& defaultOutName, ::std::function<void(bool)> onComplete);
 
-    MCAPI void
+    MCNAPI void
     exportWorld(::std::string const& levelId, ::std::string const& levelName, ::FileArchiver::ExportType type);
 
-    MCAPI void gateOnPlatformSignInForStoreAccess(::std::function<void()> callback);
+    MCNAPI void gateOnPlatformSignInForStoreAccess(::std::function<void()> callback);
 
-    MCAPI ::ui::ViewRequest promptSignIn(
+    MCNAPI ::ui::ViewRequest promptSignIn(
         ::Social::IdentitySignInTrigger                            signInTrigger,
         ::std::string const&                                       signInSource,
         ::std::function<void(::Social::MultiIdentitySigninResult)> signInCallback
     );
 
-    MCAPI ::std::shared_ptr<::DropdownScreenController> setUpCallbacksForCollectionDropdownOption(
+    MCNAPI ::std::shared_ptr<::DropdownScreenController> setUpCallbacksForCollectionDropdownOption(
         ::std::string const&                            collectionName,
         int const&                                      collectionSize,
         ::std::string const&                            dropdownName,
@@ -292,14 +292,14 @@ public:
         ::std::function<void(int, int)>                 setValue
     );
 
-    MCAPI void setUpCallbacksForDropdownOption(
+    MCNAPI void setUpCallbacksForDropdownOption(
         ::OptionID                                      optionID,
         ::std::string const&                            dropdownName,
         ::std::unordered_map<::std::string, int> const& nameValuePairs,
         ::std::unordered_map<int, ::std::string> const& valueLabelPairs
     );
 
-    MCAPI void setUpCallbacksForDropdownOption(
+    MCNAPI void setUpCallbacksForDropdownOption(
         ::std::string const&                            dropdownName,
         ::std::string const&                            dropdownToggleLabelBindingName,
         ::std::unordered_map<::std::string, int> const& nameValuePairs,
@@ -308,7 +308,7 @@ public:
         ::std::function<void(int)>                      setValue
     );
 
-    MCAPI void setUpCallbacksForDropdownOption(
+    MCNAPI void setUpCallbacksForDropdownOption(
         ::std::string const&                            dropdownName,
         ::std::string const&                            dropdownToggleLabelBindingName,
         ::std::unordered_map<::std::string, int> const& nameValuePairs,
@@ -319,7 +319,7 @@ public:
         ::std::function<void(int)>                      setValue
     );
 
-    MCAPI void setUpCallbacksForFloatOption(
+    MCNAPI void setUpCallbacksForFloatOption(
         ::OptionID                                                        optionID,
         ::std::string const&                                              sliderName,
         ::std::string const&                                              optionFormat,
@@ -327,7 +327,7 @@ public:
         ::UpdateSliderProgressMode                                        updateProgressMode
     );
 
-    MCAPI void setUpCallbacksForFloatOption(
+    MCNAPI void setUpCallbacksForFloatOption(
         ::std::string const&                                              sliderName,
         ::std::string const&                                              valueBindingName,
         ::std::string const&                                              enabledBindingName,
@@ -344,7 +344,7 @@ public:
         ::UpdateSliderProgressMode                                        updateProgressMode
     );
 
-    MCAPI void setUpCallbacksForNestedButtonInCollection(
+    MCNAPI void setUpCallbacksForNestedButtonInCollection(
         ::std::string const&                         nestedBaseButtonId,
         ::std::string const&                         nestedControlEnabledBinding,
         ::std::string                                firstControlName,
@@ -353,21 +353,21 @@ public:
         ::std::vector<uint>                          ignoredControls
     );
 
-    MCAPI void setUpCallbacksForStackPanelGrid(
+    MCNAPI void setUpCallbacksForStackPanelGrid(
         ::std::string const&   gridCollectionPrefix,
         ::std::function<int()> widthCallback,
         ::std::function<int()> heightCallback,
         ::std::function<int()> itemCountCallback
     );
 
-    MCAPI void setUpCallbacksForStepOption(
+    MCNAPI void setUpCallbacksForStepOption(
         ::OptionID                          optionID,
         ::std::string const&                sliderName,
         ::std::function<::std::string(int)> valueLabeller,
         bool                                continuousUpdate
     );
 
-    MCAPI void setUpCallbacksForStepOption(
+    MCNAPI void setUpCallbacksForStepOption(
         ::std::string const&                  sliderName,
         ::std::string const&                  valueBindingName,
         ::std::string const&                  enabledBindingName,
@@ -384,28 +384,28 @@ public:
         ::OptionID                            sliderOptionID
     );
 
-    MCAPI void showRemoteStorageErrorModal(::Core::Path const& storageDirectory);
+    MCNAPI void showRemoteStorageErrorModal(::Core::Path const& storageDirectory);
 
-    MCAPI ::ui::ViewRequest showSignIn();
+    MCNAPI ::ui::ViewRequest showSignIn();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ModalScreenData getProfanityModalData();
+    MCNAPI static ::ModalScreenData getProfanityModalData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& defaultOptionFormat();
+    MCNAPI static ::std::string const& defaultOptionFormat();
 
-    MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>&
+    MCNAPI static ::std::function<::std::string(::std::string const&, float, bool)>&
     defaultProgressSliderOptionLabeller();
 
-    MCAPI static ::OptionID& mSliderOptionID();
+    MCNAPI static ::OptionID& mSliderOptionID();
 
-    MCAPI static ::std::string& mSliderOptionTitle();
+    MCNAPI static ::std::string& mSliderOptionTitle();
     // NOLINTEND
 
 public:
@@ -418,31 +418,31 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $tryExit();
+    MCNAPI ::ui::ViewRequest $tryExit();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI uint $getSceneId() const;
+    MCNAPI uint $getSceneId() const;
 
-    MCAPI void $setSuspendInput(bool suspendInput);
+    MCNAPI void $setSuspendInput(bool suspendInput);
 
-    MCAPI void $setSuspendDirectionalInput(bool suspendDirectionalInput);
+    MCNAPI void $setSuspendDirectionalInput(bool suspendDirectionalInput);
 
-    MCAPI void $leaveScreen(::std::string const& expectedScreenName);
+    MCNAPI void $leaveScreen(::std::string const& expectedScreenName);
 
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI void $onDelete();
+    MCNAPI void $onDelete();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI bool $bind(
+    MCNAPI bool $bind(
         ::std::string const& collectionName,
         uint                 collectionNameHash,
         int                  collectionIndex,
@@ -452,42 +452,42 @@ public:
         ::UIPropertyBag&     bag
     );
 
-    MCAPI bool $bind(
+    MCNAPI bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,
         ::UIPropertyBag&     bag
     );
 
-    MCAPI bool $_doesScreenHaveExitBehavior() const;
+    MCNAPI bool $_doesScreenHaveExitBehavior() const;
 
-    MCFOLD bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI bool $_getGamepadHelperVisible() const;
+    MCNAPI bool $_getGamepadHelperVisible() const;
 
-    MCAPI bool $_getMixedHelperVisible() const;
+    MCNAPI bool $_getMixedHelperVisible() const;
 
-    MCAPI bool $_getKeyboardHelperVisible() const;
+    MCNAPI bool $_getKeyboardHelperVisible() const;
 
-    MCAPI bool $_getGestureControlEnabled() const;
+    MCNAPI bool $_getGestureControlEnabled() const;
 
-    MCAPI ::std::string $_getButtonStartDescription();
+    MCNAPI ::std::string $_getButtonStartDescription();
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI ::std::string $_getButtonBDescription();
+    MCNAPI ::std::string $_getButtonBDescription();
 
-    MCFOLD ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
 
-    MCAPI ::std::string $_getButtonYDescription();
+    MCNAPI ::std::string $_getButtonYDescription();
 
-    MCFOLD ::std::string $_getButtonKeyboardDescription();
+    MCNAPI ::std::string $_getButtonKeyboardDescription();
 
-    MCAPI ::std::string $_getScreenName() const;
+    MCNAPI ::std::string $_getScreenName() const;
 
-    MCAPI ::ui::ViewRequest
+    MCNAPI ::ui::ViewRequest
     $promptConnect(bool signInOnSuccess, ::std::function<void(::Social::UserPlatformConnectionResult)> signInCallback);
 
-    MCFOLD void $_onInputModeChanged();
+    MCNAPI void $_onInputModeChanged();
     // NOLINTEND
 };

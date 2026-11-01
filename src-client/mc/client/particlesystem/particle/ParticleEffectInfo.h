@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> getEffectPtr();
+    MCNAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> getEffectPtr();
     // NOLINTEND
 };

@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setMaxDelayTicks(float const& seconds);
+    MCNAPI void setMaxDelayTicks(float const& seconds);
 
-    MCAPI void setMinDelayTicks(float const& seconds);
+    MCNAPI void setMinDelayTicks(float const& seconds);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SchedulerDefinition>>& root
     );
     // NOLINTEND

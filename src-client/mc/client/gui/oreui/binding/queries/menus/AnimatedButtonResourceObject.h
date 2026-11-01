@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     set(::std::string unfocusedBackgroundUrl,
         ::std::string focusedBackgroundUrl,
         ::std::string unfocusedForegroundUrl,

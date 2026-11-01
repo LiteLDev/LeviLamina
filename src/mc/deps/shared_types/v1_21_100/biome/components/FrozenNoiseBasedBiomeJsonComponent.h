@@ -16,13 +16,13 @@ struct FrozenNoiseBasedBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBio
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:

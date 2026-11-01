@@ -13,13 +13,13 @@ struct TickingSystemWithInfo;
 namespace LavaTravelSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void copyLavaSpeedToMobTravel(
+MCNAPI void copyLavaSpeedToMobTravel(
     ::StrictEntityContext&,
     ::MovementAttributesComponent const& attributesComponent,
     ::MobTravelComponent&                mobTravelComponent
 );
 
-MCAPI ::TickingSystemWithInfo createLavaTravelSystem();
+MCNAPI ::TickingSystemWithInfo createLavaTravelSystem();
 // NOLINTEND
 
 } // namespace LavaTravelSystem

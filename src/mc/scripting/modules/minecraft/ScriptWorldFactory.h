@@ -21,10 +21,10 @@ class ScriptWorldFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld>>
     findHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld> getHandle(
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld> getHandle(
         ::Scripting::WeakLifetimeScope&   scope,
         ::ServerLevel&                    level,
         ::Scripting::DependencyLocator&   locator,

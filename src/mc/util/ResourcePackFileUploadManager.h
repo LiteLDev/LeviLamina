@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackFileUploadManager(
+    MCNAPI ResourcePackFileUploadManager(
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
         ::TaskGroup&                                               taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
@@ -72,7 +72,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ResourcePackFileUploadManager(
+    MCNAPI ResourcePackFileUploadManager(
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
         ::TaskGroup&                                               taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
@@ -83,9 +83,9 @@ public:
     );
 #endif
 
-    MCAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
+    MCNAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
 
-    MCAPI ::Bedrock::Threading::Async<void> uploadResourcePack(
+    MCNAPI ::Bedrock::Threading::Async<void> uploadResourcePack(
         ::std::string const&                     resourcePackName,
         ::ResourceLocation const&                resourceLocation,
         bool                                     isZipped,
@@ -98,7 +98,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
         ::TaskGroup&                                               taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
@@ -108,7 +108,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
         ::TaskGroup&                                               taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
@@ -123,14 +123,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $archiveAndUploadFileToRealmStorage(
+    MCNAPI void $archiveAndUploadFileToRealmStorage(
         ::std::string const& uploadId,
         ::Core::Path const&  path,
         int const            slotIndex,
         ::std::string const& realmsGuid
     );
 
-    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+    MCNAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
 
 
     // NOLINTEND

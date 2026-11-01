@@ -68,7 +68,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ActorAnimationControllerStatePlayer(
+    MCNAPI ActorAnimationControllerStatePlayer(
         ::HashedString const&                                      friendlyName,
         ::ActorAnimationControllerPlayer&                          owner,
         ::std::shared_ptr<::ActorAnimationControllerState>         animationControllerState,
@@ -83,7 +83,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                                      friendlyName,
         ::ActorAnimationControllerPlayer&                          owner,
         ::std::shared_ptr<::ActorAnimationControllerState>         animationControllerState,
@@ -97,28 +97,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyToPose(
+    MCNAPI void $applyToPose(
         ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight
     );
 
-    MCAPI void $resetAnimation();
+    MCNAPI void $resetAnimation();
 
-    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+    MCNAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
 
-    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+    MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
 
-    MCAPI bool $hasAnimationFinished() const;
+    MCNAPI bool $hasAnimationFinished() const;
 
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
+    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
 
-    MCFOLD ::ActorAnimationType $getAnimationType() const;
+    MCNAPI ::ActorAnimationType $getAnimationType() const;
 
-    MCFOLD ::HashedString const& $getRawName() const;
+    MCNAPI ::HashedString const& $getRawName() const;
 
-    MCAPI void $visit(::AnimationVisitor&& dispatcher);
+    MCNAPI void $visit(::AnimationVisitor&& dispatcher);
 
 
     // NOLINTEND

@@ -29,8 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void acquireDiscardedChunk(::std::unique_ptr<::LevelChunk> discarded);
+    MCNAPI void acquireDiscardedChunk(::std::unique_ptr<::LevelChunk> discarded);
 
-    MCAPI void flush();
+    MCNAPI void flush();
     // NOLINTEND
 };

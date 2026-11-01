@@ -25,31 +25,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
+    MCNAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
 
-    MCAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
+    MCNAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
 
-    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
 
-    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
 
-    MCAPI ~CappedSurfaceSettings();
+    MCNAPI ~CappedSurfaceSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

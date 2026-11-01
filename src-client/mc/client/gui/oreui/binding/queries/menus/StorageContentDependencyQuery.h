@@ -43,13 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageContentDependencyQuery(::OreUI::GameDependencies const& game, ::std::string const& type);
+    MCNAPI StorageContentDependencyQuery(::OreUI::GameDependencies const& game, ::std::string const& type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& type);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& type);
     // NOLINTEND
 };
 

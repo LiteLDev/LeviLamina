@@ -129,7 +129,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::UIItemRenderInfo getItemRenderInfo(::ItemStack const& item);
+    MCNAPI static ::UIItemRenderInfo getItemRenderInfo(::ItemStack const& item);
 
     MCAPI static ::ItemRenderChunkType getRenderTypeFromItem(::ItemStack const& item);
     // NOLINTEND
@@ -137,28 +137,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
+    MCNAPI void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
-    MCAPI void
+    MCNAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
-    MCAPI ::UIBatchType $getBatchType() const;
+    MCNAPI ::UIBatchType $getBatchType() const;
 
-    MCFOLD int $getCustomId() const;
+    MCNAPI int $getCustomId() const;
 
-    MCAPI int $getNumRenderPasses() const;
+    MCNAPI int $getNumRenderPasses() const;
 
-    MCAPI ::UIMaterialType $getUIMaterialType(int pass) const;
+    MCNAPI ::UIMaterialType $getUIMaterialType(int pass) const;
 
-    MCAPI ::ResourceLocation $getResourceLocation(int textureSlot, int pass) const;
+    MCNAPI ::ResourceLocation $getResourceLocation(int textureSlot, int pass) const;
 
-    MCFOLD bool $getRequiresPreRenderSetup(int pass) const;
+    MCNAPI bool $getRequiresPreRenderSetup(int pass) const;
 
-    MCAPI ::UIItemRenderInfo $getItemRenderInfo() const;
+    MCNAPI ::UIItemRenderInfo $getItemRenderInfo() const;
     // NOLINTEND
 
 public:

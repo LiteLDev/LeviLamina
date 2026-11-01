@@ -49,23 +49,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Path> _findNewTarget() const;
+    MCNAPI ::std::unique_ptr<::Path> _findNewTarget() const;
 
-    MCAPI void _moveToTarget();
+    MCNAPI void _moveToTarget();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

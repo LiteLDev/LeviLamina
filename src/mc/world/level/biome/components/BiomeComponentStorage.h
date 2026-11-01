@@ -26,7 +26,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI ~BiomeComponentStorage();
+    MCNAPI ~BiomeComponentStorage();
 #endif
     // NOLINTEND
 
@@ -34,7 +34,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

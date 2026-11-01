@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecordItem(
+    MCNAPI RecordItem(
         ::std::string const&                   name,
         int                                    id,
         ::cereal::ReflectionCtx&               ctx,
@@ -49,7 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                   name,
         int                                    id,
         ::cereal::ReflectionCtx&               ctx,
@@ -60,15 +60,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCFOLD ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::RecordItem& $setDescriptionId(::std::string const& descriptionId);
+    MCNAPI ::RecordItem& $setDescriptionId(::std::string const& descriptionId);
 
 
     // NOLINTEND

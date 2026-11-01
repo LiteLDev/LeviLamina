@@ -14,12 +14,12 @@ class ShapedChemistryRecipe : public ::ShapedRecipe {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& ID();
+    MCNAPI static ::mce::UUID const& ID();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

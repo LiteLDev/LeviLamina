@@ -36,39 +36,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     EmoteWheelCommonModel(::MinecraftScreenController& screen, ::std::shared_ptr<::PersonaScreenModel> personaModel);
 
-    MCAPI EmoteWheelCommonModel(
+    MCNAPI EmoteWheelCommonModel(
         ::MinecraftScreenController&                  screen,
         ::std::shared_ptr<::PersonaScreenModelCommon> personaModel,
         ::std::shared_ptr<::MinecraftScreenModel>     screenModel
     );
 
-    MCAPI ::std::string _constructHoveredButtonMessage(
+    MCNAPI ::std::string _constructHoveredButtonMessage(
         bool                 slotSet,
         int                  slotIndex,
         int                  screenButtonCount,
         ::std::string const& emoteName
     ) const;
 
-    MCAPI void _fetchEmoteCatalogOffers();
+    MCNAPI void _fetchEmoteCatalogOffers();
 
-    MCAPI void _registerBindings(::MinecraftScreenController& mScreen);
+    MCNAPI void _registerBindings(::MinecraftScreenController& mScreen);
 
-    MCAPI void _setHoverIndex(int hoverIndex);
+    MCNAPI void _setHoverIndex(int hoverIndex);
 
-    MCAPI void setOnEmoteSlotSelected(::std::function<void(int)> callback);
+    MCNAPI void setOnEmoteSlotSelected(::std::function<void(int)> callback);
 
-    MCAPI ~EmoteWheelCommonModel();
+    MCNAPI ~EmoteWheelCommonModel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenController& screen, ::std::shared_ptr<::PersonaScreenModel> personaModel);
+    MCNAPI void* $ctor(::MinecraftScreenController& screen, ::std::shared_ptr<::PersonaScreenModel> personaModel);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::MinecraftScreenController&                  screen,
         ::std::shared_ptr<::PersonaScreenModelCommon> personaModel,
         ::std::shared_ptr<::MinecraftScreenModel>     screenModel
@@ -78,6 +78,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

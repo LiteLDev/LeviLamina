@@ -40,24 +40,24 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& COOLDOWN_CATEGORY();
+    MCNAPI static ::HashedString const& COOLDOWN_CATEGORY();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
-    MCAPI ::Actor*
+    MCNAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::HashedString const& $getCooldownCategory() const;
+    MCNAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownDuration() const;
+    MCNAPI int $getCooldownDuration() const;
 
 
     // NOLINTEND
@@ -65,6 +65,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

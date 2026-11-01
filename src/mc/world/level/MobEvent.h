@@ -19,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
+    MCNAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name, ::std::string localizableName, bool val);
+    MCNAPI void* $ctor(::std::string name, ::std::string localizableName, bool val);
     // NOLINTEND
 };

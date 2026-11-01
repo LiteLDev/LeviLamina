@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI POIInstance(
+    MCNAPI POIInstance(
         ::BlockPos const& pos,
         bool              useBoundingBox,
         ::std::string     name,
@@ -54,15 +54,15 @@ public:
         ::std::string     endEvent
     );
 
-    MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
+    MCNAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
-    MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
+    MCNAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockPos const& pos,
         bool              useBoundingBox,
         ::std::string     name,

@@ -38,17 +38,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBroadcastTargetByName(::std::string const& name);
+    MCNAPI void addBroadcastTargetByName(::std::string const& name);
 
-    MCAPI void initialize(::EntityContext& entity, ::AngryComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::AngryComponent& component) const;
 
-    MCAPI void uninitialize(::EntityContext& entity, ::AngryComponent&) const;
+    MCNAPI void uninitialize(::EntityContext& entity, ::AngryComponent&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AngryDefinition>>& root);
     // NOLINTEND
 };

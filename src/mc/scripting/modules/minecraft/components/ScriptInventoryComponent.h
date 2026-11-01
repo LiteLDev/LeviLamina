@@ -34,41 +34,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>
     getOrCreateContainerV1();
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getOrCreateContainerV2();
 
-    MCAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

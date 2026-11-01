@@ -118,11 +118,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UIDefRepository(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager);
+    MCNAPI explicit UIDefRepository(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager);
 
-    MCAPI void _applyGlobalColorFormat();
+    MCNAPI void _applyGlobalColorFormat();
 
-    MCAPI void _collectAllDefEntries(
+    MCNAPI void _collectAllDefEntries(
         ::ResourceLoadType                                                      loadType,
         ::ResourceLocation const&                                               defsListFile,
         ::ResourcePackLoader const&                                             packLoader,
@@ -130,7 +130,7 @@ public:
         ::std::shared_ptr<::std::unordered_map<::PackInstanceId, ::PackReport>> packReports
     ) const;
 
-    MCAPI void _forEachControl(
+    MCNAPI void _forEachControl(
         ::Json::Value const&                                              value,
         ::std::string const&                                              namePath,
         ::std::function<void(::Json::Value const&, ::std::string const&)> callback
@@ -140,46 +140,46 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadDefsList(
+    MCNAPI void $loadDefsList(
         ::ResourceLocation const&                                                                      defsListFile,
         ::ResourcePackLoader const&                                                                    packLoader,
         ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     );
 
-    MCAPI void $validateDefEntries(
+    MCNAPI void $validateDefEntries(
         ::ResourceLocation const&                                                                      defsListFile,
         ::ResourcePackLoader const&                                                                    packLoader,
         ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     ) const;
 
-    MCAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;
+    MCNAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;
 
-    MCAPI ::Bedrock::Threading::SharedLock<::std::shared_mutex> $acquireSharedLock() const;
+    MCNAPI ::Bedrock::Threading::SharedLock<::std::shared_mutex> $acquireSharedLock() const;
 
-    MCAPI void $syncUILoad();
+    MCNAPI void $syncUILoad();
 
-    MCAPI void $syncUILoadDefinitions();
+    MCNAPI void $syncUILoadDefinitions();
 
-    MCAPI void $syncUILoadDefinitionReferences();
+    MCNAPI void $syncUILoadDefinitionReferences();
 
-    MCAPI void $cancelUIValidation();
+    MCNAPI void $cancelUIValidation();
 
-    MCAPI bool $isLoadingDone() const;
+    MCNAPI bool $isLoadingDone() const;
 
-    MCAPI bool $isUILoadingDone() const;
+    MCNAPI bool $isUILoadingDone() const;
 
-    MCAPI bool $isUIValidationDone() const;
+    MCNAPI bool $isUIValidationDone() const;
 
-    MCAPI void $forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback);
+    MCNAPI void $forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback);
 
-    MCFOLD ::Json::Value const& $getGlobalVariables() const;
+    MCNAPI ::Json::Value const& $getGlobalVariables() const;
 
-    MCAPI void $translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry);
+    MCNAPI void $translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry);
     // NOLINTEND
 };

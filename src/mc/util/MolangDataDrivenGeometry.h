@@ -29,7 +29,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI MolangDataDrivenGeometry(::std::shared_ptr<::DataDrivenGeometry> geometry, ::HashedString const& name);
+    MCNAPI MolangDataDrivenGeometry(::std::shared_ptr<::DataDrivenGeometry> geometry, ::HashedString const& name);
 #endif
     // NOLINTEND
 
@@ -37,7 +37,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenGeometry> geometry, ::HashedString const& name);
+    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenGeometry> geometry, ::HashedString const& name);
 #endif
     // NOLINTEND
 };

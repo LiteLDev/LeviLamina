@@ -57,76 +57,76 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcComponent(::NpcComponent&& rhs);
+    MCNAPI NpcComponent(::NpcComponent&& rhs);
 
-    MCAPI void _deserializeData(::Json::Value const& npcData);
+    MCNAPI void _deserializeData(::Json::Value const& npcData);
 
-    MCAPI void _loadData(::Actor& owner);
+    MCNAPI void _loadData(::Actor& owner);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
-    MCAPI ::std::vector<int> getCommandCounts() const;
+    MCNAPI ::std::vector<int> getCommandCounts() const;
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string const& getInteractiveRawText(::Actor const& owner) const;
+    MCNAPI ::std::string const& getInteractiveRawText(::Actor const& owner) const;
 #endif
 
-    MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
+    MCNAPI ::std::string const& getInteractiveText(::Actor& owner) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string const& getName(::Actor const& owner) const;
+    MCNAPI ::std::string const& getName(::Actor const& owner) const;
 
-    MCAPI ::std::string const& getNameRawText(::Actor const& owner) const;
+    MCNAPI ::std::string const& getNameRawText(::Actor const& owner) const;
 #endif
 
-    MCAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
+    MCNAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
 
-    MCAPI void initClientOnlyData(::Actor& owner);
+    MCNAPI void initClientOnlyData(::Actor& owner);
 
-    MCAPI void initFromDefinition(::Actor& owner);
+    MCNAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI void loadActions(::Actor& owner);
+    MCNAPI void loadActions(::Actor& owner);
 
-    MCAPI void loadInteractiveRawText(::Actor& owner);
+    MCNAPI void loadInteractiveRawText(::Actor& owner);
 
-    MCAPI void loadNameRawText(::Actor& owner);
+    MCNAPI void loadNameRawText(::Actor& owner);
 
-    MCAPI ::NpcComponent& operator=(::NpcComponent&& rhs);
+    MCNAPI ::NpcComponent& operator=(::NpcComponent&& rhs);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::std::string sanitizeRawText(::std::string const& rawText) const;
+    MCNAPI ::std::string sanitizeRawText(::std::string const& rawText) const;
 
-    MCAPI void setDefaultSceneId(::std::string sceneId);
+    MCNAPI void setDefaultSceneId(::std::string sceneId);
 
-    MCAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
+    MCNAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
 
-    MCAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
+    MCNAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
 
 #ifdef LL_PLAT_C
-    MCAPI void
+    MCNAPI void
     setInteractiveTextFilter(::std::function<::std::string(::std::string const&)> filter, bool shouldRunFilter);
 #endif
 
-    MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
+    MCNAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
 
-    MCAPI void setSceneStateForPlayer(::Actor& owner, ::ActorUniqueID const& playerID, ::std::string const& sceneName);
+    MCNAPI void setSceneStateForPlayer(::Actor& owner, ::ActorUniqueID const& playerID, ::std::string const& sceneName);
 
-    MCAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
+    MCNAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
 
-    MCAPI void syncActionsWithClient(::Actor& owner);
+    MCNAPI void syncActionsWithClient(::Actor& owner);
 
 #ifdef LL_PLAT_C
-    MCAPI void syncActionsWithServer(::Actor& owner) const;
+    MCNAPI void syncActionsWithServer(::Actor& owner) const;
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
+    MCNAPI static void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
 
     MCAPI static void
     executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
@@ -135,31 +135,31 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ACTIONS_TAG();
+    MCNAPI static ::std::string const& ACTIONS_TAG();
 
-    MCAPI static ::std::string const& INTERACTIVE_TAG();
+    MCNAPI static ::std::string const& INTERACTIVE_TAG();
 
-    MCAPI static ::std::string const& NAME_RAW_TEXT_TAG();
+    MCNAPI static ::std::string const& NAME_RAW_TEXT_TAG();
 
-    MCAPI static ::std::string const& PLAYER_ID_TAG();
+    MCNAPI static ::std::string const& PLAYER_ID_TAG();
 
-    MCAPI static ::std::string const& PLAYER_SCENE_MAPPING_TAG();
+    MCNAPI static ::std::string const& PLAYER_SCENE_MAPPING_TAG();
 
-    MCAPI static ::std::string const& SCENE_NAME_TAG();
+    MCNAPI static ::std::string const& SCENE_NAME_TAG();
 
-    MCAPI static ::std::string const& URL_TAG();
+    MCNAPI static ::std::string const& URL_TAG();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NpcComponent&& rhs);
+    MCNAPI void* $ctor(::NpcComponent&& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

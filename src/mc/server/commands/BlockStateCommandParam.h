@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _createCompoundTag(::CompoundTag& tag, ::CommandOutput& output) const;
+    MCNAPI bool _createCompoundTag(::CompoundTag& tag, ::CommandOutput& output) const;
 
-    MCAPI ::BlockState const* getBlockState(::Block const& block) const;
+    MCNAPI ::BlockState const* getBlockState(::Block const& block) const;
     // NOLINTEND
 };
 

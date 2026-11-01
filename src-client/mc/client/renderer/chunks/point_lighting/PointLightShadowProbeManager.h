@@ -123,39 +123,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _allocateProbeTile(
+    MCNAPI void _allocateProbeTile(
         ::PointLighting::PointLightShadowProbe& probe,
         ::dragon::rendering::TextureCubeFace    face,
         ushort                                  dimension
     );
 
-    MCAPI void _freeProbeTiles(::PointLighting::PointLightShadowProbe& probe);
+    MCNAPI void _freeProbeTiles(::PointLighting::PointLightShadowProbe& probe);
 
-    MCAPI void
+    MCNAPI void
     _invalidateProbeTile(::PointLighting::PointLightShadowProbe& probe, ::dragon::rendering::TextureCubeFace face);
 
-    MCAPI bool _isProbeRendered(::PointLighting::PointLightShadowProbe const& probe) const;
+    MCNAPI bool _isProbeRendered(::PointLighting::PointLightShadowProbe const& probe) const;
 
-    MCAPI void _processProbes(
+    MCNAPI void _processProbes(
         ::mce::framebuilder::PointLightShadowParameters const& pointLightParameters,
         ::glm::vec3 const&                                     worldOrigin,
         ::FrustumCuller const&                                 frustumCuller,
         ::glm::vec3 const&                                     cameraForward
     );
 
-    MCAPI void _reconfigureAtlasIfNeeded(::mce::framebuilder::PointLightShadowParameters const& pointLightParameters);
+    MCNAPI void _reconfigureAtlasIfNeeded(::mce::framebuilder::PointLightShadowParameters const& pointLightParameters);
 
-    MCAPI bool _resizeProbeFace(
+    MCNAPI bool _resizeProbeFace(
         ::PointLighting::PointLightShadowProbe& probe,
         ::dragon::rendering::TextureCubeFace    face,
         ushort                                  targetDim,
         uint64                                  nowMs
     );
 
-    MCAPI ::mce::framebuilder::ShadowAtlasFrameDescription
+    MCNAPI ::mce::framebuilder::ShadowAtlasFrameDescription
     getShadowFrameData(::mce::framebuilder::PointLightShadowParameters const& pointLightParameters);
 
-    MCAPI void onBlockChanged(
+    MCNAPI void onBlockChanged(
         ::BlockSource&                                         source,
         ::BlockPos const&                                      blockPos,
         ::Block const&                                         block,
@@ -163,7 +163,7 @@ public:
         ::mce::framebuilder::PointLightShadowParameters const& pointLightParameters
     );
 
-    MCAPI ::std::vector<::mce::framebuilder::ActiveShadowTileInfo> prepareActiveTiles(::glm::vec3 const& worldOrigin);
+    MCNAPI ::std::vector<::mce::framebuilder::ActiveShadowTileInfo> prepareActiveTiles(::glm::vec3 const& worldOrigin);
     // NOLINTEND
 };
 

@@ -16,11 +16,11 @@ namespace BlockTrait { class IConnectionUpdateCallback; }
 namespace BlockTrait::CornerBehavior {
 // functions
 // NOLINTBEGIN
-MCAPI ::Direction::Type getDirection(::Block const& block);
+MCNAPI ::Direction::Type getDirection(::Block const& block);
 
-MCAPI ::BlockTrait::CornerBehavior::UpsideDown getIsUpsideDown(::Block const& block);
+MCNAPI ::BlockTrait::CornerBehavior::UpsideDown getIsUpsideDown(::Block const& block);
 
-MCAPI ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback>
+MCNAPI ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback>
 makeCornerConnectionCallback(::std::function<::std::vector<::BlockDescriptor>()> blocksToCornerWithFactory);
 // NOLINTEND
 

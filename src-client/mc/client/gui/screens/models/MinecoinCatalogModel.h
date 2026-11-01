@@ -69,29 +69,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fetchKeyArtForActiveOfferModel(::MinecoinCatalogModel::ActiveModelImageTracker& modelFetchImageInfo);
+    MCNAPI void _fetchKeyArtForActiveOfferModel(::MinecoinCatalogModel::ActiveModelImageTracker& modelFetchImageInfo);
 
-    MCAPI ::MinecoinCatalogModel::ActiveModelImageTracker*
+    MCNAPI ::MinecoinCatalogModel::ActiveModelImageTracker*
     _findActiveModelImageTrackerByProductId(::std::string const& activeModelProductId);
 
-    MCAPI void _handleOfferSearchResults(::std::weak_ptr<bool> weakExistence, ::MinecoinSearchResults const& results);
+    MCNAPI void _handleOfferSearchResults(::std::weak_ptr<bool> weakExistence, ::MinecoinSearchResults const& results);
 
-    MCAPI void _onFetchKeyArtForActiveOfferModelFinished(
+    MCNAPI void _onFetchKeyArtForActiveOfferModelFinished(
         ::std::weak_ptr<bool>         weakExistence,
         ::std::string const&          activeModelProductId,
         ::Bedrock::Http::Status const status,
         ::Core::Path const&           fullpath
     );
 
-    MCAPI void
+    MCNAPI void
     _onTreatmentTagsReceived(::std::weak_ptr<bool> weakExistence, ::std::vector<::std::string> const& treatments);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OfferCatalogStatus $update();
+    MCNAPI ::OfferCatalogStatus $update();
 
-    MCAPI void $fetchAllCoinOffers();
+    MCNAPI void $fetchAllCoinOffers();
     // NOLINTEND
 };

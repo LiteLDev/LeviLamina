@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
 
-    MCAPI void animate(
+    MCNAPI void animate(
         ::RenderParams&     renderParams,
         ::BoneOrientation&  destBoneOrientation,
         float               scale,
@@ -43,6 +43,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI void* $ctor(::ExpressionNode const& expression, int axisIndex);
     // NOLINTEND
 };

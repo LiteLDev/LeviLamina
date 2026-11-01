@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Structure(::br::worldgen::Structure const&);
+    MCNAPI Structure(::br::worldgen::Structure const&);
 
     MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     generate(::br::worldgen::GenerationContext& context) const;
@@ -62,13 +62,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::Structure const&);
+    MCNAPI void* $ctor(::br::worldgen::Structure const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

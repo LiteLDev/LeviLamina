@@ -64,21 +64,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD ::std::string const& $getRequestId() const;
+    MCNAPI ::std::string const& $getRequestId() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCFOLD ::CommandOriginType $getOriginType() const;
+    MCNAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI ::CommandOriginData $toCommandOriginData() const;
+    MCNAPI ::CommandOriginData $toCommandOriginData() const;
 
-    MCFOLD ::NetworkIdentifier const& $getSourceId() const;
+    MCNAPI ::NetworkIdentifier const& $getSourceId() const;
 
-    MCFOLD ::CompoundTag $serialize() const;
+    MCNAPI ::CompoundTag $serialize() const;
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
 
     // NOLINTEND

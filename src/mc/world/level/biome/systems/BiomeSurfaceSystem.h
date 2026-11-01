@@ -20,7 +20,7 @@ namespace BiomeSurfaceSystem { struct SurfaceBuilderParamsResult; }
 namespace BiomeSurfaceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void buildChunkSurface(
+MCNAPI void buildChunkSurface(
     ::LevelChunk const&                                     levelChunk,
     ::BlockVolume&                                          blocks,
     ::SurfaceLevelCache const&                              surfaceLevelCache,
@@ -30,10 +30,10 @@ MCAPI void buildChunkSurface(
     ::BiomeSurfaceSystem::SurfaceBuilderParamsResult const& surfaceBuilderParamsResult
 );
 
-MCAPI ::BiomeSurfaceSystem::SurfaceBuilderParamsResult findBiomesAndPrepareChunkParams(::LevelChunk const& levelChunk);
+MCNAPI ::BiomeSurfaceSystem::SurfaceBuilderParamsResult findBiomesAndPrepareChunkParams(::LevelChunk const& levelChunk);
 
 #ifdef LL_PLAT_C
-MCAPI void resolveBuilderImplementation(
+MCNAPI void resolveBuilderImplementation(
     ::BiomeRegistry&                biomeRegistry,
     ::SurfaceBuilderRegistry const& surfaceBuilderRegistry,
     ::LevelSeed64                   levelSeed

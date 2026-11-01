@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setColorChoice(int const& colorChoice);
+    MCNAPI void setColorChoice(int const& colorChoice);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ColorDefinition>>& root);
     // NOLINTEND
 };

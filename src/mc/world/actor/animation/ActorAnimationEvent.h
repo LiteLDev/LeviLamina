@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationEvent(
+    MCNAPI ActorAnimationEvent(
         float                     time,
         ::std::string const&      event,
         ::CurrentCmdVersion const commandVersion,
         ::MolangVersion const     molangVersion
     );
 
-    MCAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
+    MCNAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         float                     time,
         ::std::string const&      event,
         ::CurrentCmdVersion const commandVersion,

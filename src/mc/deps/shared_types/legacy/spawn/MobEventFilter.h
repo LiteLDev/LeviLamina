@@ -14,7 +14,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool operator==(::SharedTypes::Legacy::Spawn::MobEventFilter const&) const;
+    MCNAPI bool operator==(::SharedTypes::Legacy::Spawn::MobEventFilter const&) const;
     // NOLINTEND
 };
 

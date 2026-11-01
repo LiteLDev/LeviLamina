@@ -61,28 +61,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EnchantingBookModel(bool isOnLectern);
+    MCNAPI explicit EnchantingBookModel(bool isOnLectern);
 
-    MCAPI void
+    MCNAPI void
     render(::ScreenContext& screenContext, float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool isOnLectern);
+    MCNAPI void* $ctor(bool isOnLectern);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
         ::Actor&         e,
         float            time,
@@ -93,7 +93,7 @@ public:
         float            scale
     );
 
-    MCAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
+    MCNAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 
 public:

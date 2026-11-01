@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsPlusPurchaseWarningScreenController(
+    MCNAPI RealmsPlusPurchaseWarningScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<void()>                  callback
     );
@@ -40,6 +40,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::function<void()> callback);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::function<void()> callback);
     // NOLINTEND
 };

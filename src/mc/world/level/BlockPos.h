@@ -24,27 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos east() const;
+    MCNAPI ::BlockPos east() const;
 
-    MCAPI ::BlockPos north() const;
+    MCNAPI ::BlockPos north() const;
 
-    MCAPI ::BlockPos south() const;
+    MCNAPI ::BlockPos south() const;
 
     MCAPI ::std::string toString() const;
 
-    MCAPI ::BlockPos west() const;
+    MCNAPI ::BlockPos west() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockPos const& MAX();
+    MCNAPI static ::BlockPos const& MAX();
 
     MCAPI static ::BlockPos const& MIN();
 

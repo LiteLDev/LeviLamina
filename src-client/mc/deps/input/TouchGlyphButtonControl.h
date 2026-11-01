@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchGlyphButtonControl(
+    MCNAPI TouchGlyphButtonControl(
         ::std::function<::RectangleArea()> area,
         ::std::function<bool()>            condition,
         ::std::function<float()>           opacity,
@@ -94,7 +94,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::RectangleArea()> area,
         ::std::function<bool()>            condition,
         ::std::function<float()>           opacity,
@@ -118,16 +118,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uint $getHoldButtonId() const;
+    MCNAPI uint $getHoldButtonId() const;
 
-    MCAPI int $getActivePointerId() const;
+    MCNAPI int $getActivePointerId() const;
 
-    MCAPI bool $releaseOnClear() const;
+    MCNAPI bool $releaseOnClear() const;
 
-    MCAPI void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
 
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCNAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
-    MCAPI void $release(::InputEventQueue& eventQueue);
+    MCNAPI void $release(::InputEventQueue& eventQueue);
     // NOLINTEND
 };

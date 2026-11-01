@@ -11,7 +11,7 @@ struct StructureTemplateRegistrationContext;
 namespace VanillaTrialChambersJigsawStructureBlockRules {
 // functions
 // NOLINTBEGIN
-MCAPI void initialize(::StructureTemplateRegistrationContext&, ::JigsawStructureRegistry& registry);
+MCNAPI void initialize(::StructureTemplateRegistrationContext&, ::JigsawStructureRegistry& registry);
 // NOLINTEND
 
 } // namespace VanillaTrialChambersJigsawStructureBlockRules

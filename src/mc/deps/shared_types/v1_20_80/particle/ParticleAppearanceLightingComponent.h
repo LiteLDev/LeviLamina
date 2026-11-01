@@ -22,13 +22,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NameID();
+    MCNAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
+    MCNAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

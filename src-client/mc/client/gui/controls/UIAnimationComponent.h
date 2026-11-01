@@ -76,39 +76,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addNextAnimation(
+    MCNAPI void _addNextAnimation(
         ::UIAnim&                                               anim,
         ::std::map<::std::string, ::std::shared_ptr<::UIAnim>>& animationNames,
         ::std::shared_ptr<::UIAnim> const&                      firstAnim,
         ::UIControlFactory&                                     factory
     );
 
-    MCAPI ::ui::AnimationStatus _animationTick(::mce::TimeStep const& timeStep);
+    MCNAPI ::ui::AnimationStatus _animationTick(::mce::TimeStep const& timeStep);
 
-    MCAPI ::std::shared_ptr<::UIAnim> _createAnimation(::UIResolvedDef& def, ::UIControlFactory& factory);
+    MCNAPI ::std::shared_ptr<::UIAnim> _createAnimation(::UIResolvedDef& def, ::UIControlFactory& factory);
 
-    MCAPI void _resetAnimations();
+    MCNAPI void _resetAnimations();
 
-    MCAPI ::AnimationTickResult
+    MCNAPI ::AnimationTickResult
     _tickUIAnim(::UIAnim* anim, ::std::vector<::UIAnimationComponent::NewAnimation>& newAnimsToAdd, float deltaTime);
 
-    MCAPI ::UIAnim* addAnimation(::std::string const& name, ::UIResolvedDef& def, ::UIControlFactory& factory);
+    MCNAPI ::UIAnim* addAnimation(::std::string const& name, ::UIResolvedDef& def, ::UIControlFactory& factory);
 
-    MCAPI void handleScreenEvent(::UIAnimationController& animationController, ::ScreenEvent const& screenEvent);
+    MCNAPI void handleScreenEvent(::UIAnimationController& animationController, ::ScreenEvent const& screenEvent);
 
-    MCAPI bool hasAnimationWithEndEventId(uint id) const;
+    MCNAPI bool hasAnimationWithEndEventId(uint id) const;
 
-    MCAPI bool hasAnimationWithPlayAndEndEventIds(uint playEventId, uint endEventId) const;
+    MCNAPI bool hasAnimationWithPlayAndEndEventIds(uint playEventId, uint endEventId) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,

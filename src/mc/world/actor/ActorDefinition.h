@@ -153,9 +153,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorDefinition(::std::string const& id);
+    MCNAPI explicit ActorDefinition(::std::string const& id);
 
-    MCAPI ::ActorDefinitionParseStatus parse(
+    MCNAPI ::ActorDefinitionParseStatus parse(
         ::ActorDocumentDataParams    deserializeDataParams,
         ::ActorDefinitionDescriptor& desc,
         ::ActorFactory&              actorFactory,
@@ -163,7 +163,7 @@ public:
         ::LogArea                    logArea
     );
 
-    MCAPI bool parseEntityDescription(
+    MCNAPI bool parseEntityDescription(
         ::cereal::DynamicValue const& description,
         ::SemVersion const&           formatVersion,
         ::PackLoadContext const&      packLoadContext
@@ -173,7 +173,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void parseEvents(
+    MCNAPI static void parseEvents(
         ::std::unordered_map<::std::string, ::ActorDefinitionEvent>& eventHandlers,
         ::cereal::DynamicValue const&                                root,
         ::MinEngineVersion const&                                    minEngineVersion,
@@ -186,6 +186,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& id);
+    MCNAPI void* $ctor(::std::string const& id);
     // NOLINTEND
 };

@@ -8,15 +8,9 @@ class Status {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd7cbd1;
-    ::ll::UntypedStorage<8, 16> mUnk6c71ee;
+    ::ll::TypedStorage<4, 4, uint>               mValue;
+    ::ll::TypedStorage<8, 16, ::std::error_code> mError;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Status& operator=(Status const&);
-    Status(Status const&);
-    Status();
 };
 
 } // namespace Bedrock::Http

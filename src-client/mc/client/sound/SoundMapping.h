@@ -118,29 +118,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Sound const& _getBlockSound(
+    MCNAPI ::Sound const& _getBlockSound(
         ::std::unordered_map<::std::string, ::SoundMapping::BlockSounds> const& blockSounds,
         ::SharedTypes::Legacy::LevelSoundEvent                                  eventType,
         ::std::string const&                                                    blockType
     ) const;
 
-    MCAPI void _loadSounds(::Json::Value const& json, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI void _loadSounds(::Json::Value const& json, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
-    MCAPI bool canPlayEntitySound(
+    MCNAPI bool canPlayEntitySound(
         ::SharedTypes::Legacy::LevelSoundEvent eventType,
         ::ActorDefinitionIdentifier const&     identifier
     ) const;
 
-    MCAPI ::Sound const& getEntitySound(
+    MCNAPI ::Sound const& getEntitySound(
         ::SharedTypes::Legacy::LevelSoundEvent eventType,
         ::ActorSoundIdentifier const&          actorSoundIdentifier
     ) const;
 
-    MCAPI ::Sound const& getEventSound(::SharedTypes::Legacy::LevelSoundEvent eventType) const;
+    MCNAPI ::Sound const& getEventSound(::SharedTypes::Legacy::LevelSoundEvent eventType) const;
 
-    MCAPI ::Sound const& getNamedSound(::HashedString const& name) const;
+    MCNAPI ::Sound const& getNamedSound(::HashedString const& name) const;
 
-    MCAPI ::Sound getSound(
+    MCNAPI ::Sound getSound(
         ::SharedTypes::Legacy::LevelSoundEvent eventType,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
         ::std::string const&                   blockType,
@@ -151,18 +151,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _loadBlockSounds(
+    MCNAPI static void _loadBlockSounds(
         ::Json::Value const&                                              root,
         ::std::unordered_map<::std::string, ::SoundMapping::BlockSounds>& blockSoundList
     );
 
-    MCAPI static void _loadEntityInteractiveSounds(
+    MCNAPI static void _loadEntityInteractiveSounds(
         ::Json::Value const&                                                  root,
         ::std::unordered_map<::std::string, ::SoundMapping::BlockSounds>&     blockSounds,
         ::std::unordered_map<::std::string, ::SoundMapping::EntitySoundList>& entitySoundLists
     );
 
-    MCAPI static void _loadEventSounds(
+    MCNAPI static void _loadEventSounds(
         ::Json::Value const&                                                   root,
         ::std::unordered_map<::SharedTypes::Legacy::LevelSoundEvent, ::Sound>& eventSoundMap,
         bool                                                                   allowEmpty

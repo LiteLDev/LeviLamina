@@ -69,7 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::MeasureResult _measureText(
+    MCNAPI ::MeasureResult _measureText(
         ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> const& fontHandle,
         ::std::string const&                                     text,
         int                                                      maxWidth,
@@ -82,13 +82,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MeasureResult $measureText(
+    MCNAPI ::MeasureResult $measureText(
         ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> const& font,
         ::std::string const&                                     text,
         int                                                      maxWidth,
@@ -97,7 +97,7 @@ public:
         ::CaretMeasureData const&                                caretData
     ) const;
 
-    MCAPI ::MeasureResult $measureTextHeight(
+    MCNAPI ::MeasureResult $measureTextHeight(
         ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> const& font,
         ::std::string const&                                     text,
         int                                                      maxWidth,
@@ -105,18 +105,18 @@ public:
         ::CaretMeasureData const&                                caretData
     ) const;
 
-    MCAPI ::MeasureResult $measureTextWidth(
+    MCNAPI ::MeasureResult $measureTextWidth(
         ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> const& font,
         ::std::string const&                                     text,
         ::TextMeasureData const&                                 textData,
         ::CaretMeasureData const&                                caretData
     ) const;
 
-    MCAPI ::std::string $filterProfanityFromText(::std::string const& text, bool const allowFilterOverride) const;
+    MCNAPI ::std::string $filterProfanityFromText(::std::string const& text, bool const allowFilterOverride) const;
 
-    MCAPI bool $isProfanityFilterActive() const;
+    MCNAPI bool $isProfanityFilterActive() const;
 
-    MCAPI uint64 $getCaretIndexFromPixelCoords(
+    MCNAPI uint64 $getCaretIndexFromPixelCoords(
         ::std::string const&           text,
         ::glm::vec2 const&             xyPosition,
         ::glm::vec2 const&             ownerSize,

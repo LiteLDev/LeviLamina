@@ -44,12 +44,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load();
+    MCNAPI void $load();
 
-    MCAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
+    MCNAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
 
-    MCAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
+    MCNAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
 
-    MCAPI void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
+    MCNAPI void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
     // NOLINTEND
 };

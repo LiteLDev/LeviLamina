@@ -49,31 +49,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JigsawBlockActor(::BlockPos const& pos);
+    MCNAPI explicit JigsawBlockActor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
+    MCNAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
 
-    MCFOLD void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    MCNAPI void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

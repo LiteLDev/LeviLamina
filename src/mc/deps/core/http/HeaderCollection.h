@@ -8,14 +8,8 @@ class HeaderCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk689353;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HeaderCollection& operator=(HeaderCollection const&);
-    HeaderCollection(HeaderCollection const&);
-    HeaderCollection();
 
 public:
     // member functions

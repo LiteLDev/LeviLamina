@@ -22,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPermutationDescription(::BlockPermutationDescription const&);
+    MCNAPI BlockPermutationDescription(::BlockPermutationDescription const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPermutationDescription const&);
+    MCNAPI void* $ctor(::BlockPermutationDescription const&);
     // NOLINTEND
 };

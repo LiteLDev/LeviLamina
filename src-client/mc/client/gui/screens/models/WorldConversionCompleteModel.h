@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void startImportedWorld();
+    MCNAPI void startImportedWorld();
     // NOLINTEND
 
 public:

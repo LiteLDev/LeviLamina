@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Silverfish(
+    MCNAPI Silverfish(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -46,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -56,15 +56,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
-    MCFOLD bool $isDarkEnoughToSpawn() const;
+    MCNAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI void $spawnAnim();
+    MCNAPI void $spawnAnim();
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCNAPI bool $checkSpawnRules(bool fromSpawner);
 
 
     // NOLINTEND
@@ -72,6 +72,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -31,8 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getPickPhotoName(int index);
+    MCNAPI ::std::string getPickPhotoName(int index);
 
-    MCAPI void getPickPics();
+    MCNAPI void getPickPics();
     // NOLINTEND
 };

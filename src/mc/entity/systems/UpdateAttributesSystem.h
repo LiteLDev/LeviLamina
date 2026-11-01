@@ -13,9 +13,9 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::AttributesComponent copyMovementAttributes(::AttributesComponent const& attributes);
+    MCNAPI static ::AttributesComponent copyMovementAttributes(::AttributesComponent const& attributes);
 #endif
 
-    MCAPI static ::TickingSystemWithInfo createProcessRequestSystem();
+    MCNAPI static ::TickingSystemWithInfo createProcessRequestSystem();
     // NOLINTEND
 };

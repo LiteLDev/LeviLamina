@@ -59,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Settings(
+    MCNAPI Settings(
         ::std::function<::ILevelListCache&()> getLevelListCache,
         ::std::function<::ServerInstance*()>  getServerInstance,
         ::std::function<bool()>               isInGame,
@@ -69,7 +69,7 @@ public:
         ::ui::ScreenTechStackSelector&        screenTechStackSelector
     );
 
-    MCAPI void _navigateToScreen(
+    MCNAPI void _navigateToScreen(
         ::SettingsTabIndex                                  tabIndex,
         ::std::string const&                                path,
         ::SceneFactory&                                     sceneFactory,
@@ -84,30 +84,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::string> composeRoute(::SettingsTabIndex tabIndex, ::OreUI::RouteType routeType);
+    MCNAPI static ::std::optional<::std::string>
+    composeRoute(::SettingsTabIndex tabIndex, ::OreUI::RouteType routeType);
 
-    MCAPI static ::std::string defaultRoute();
+    MCNAPI static ::std::string defaultRoute();
 
-    MCAPI static ::std::optional<::std::string>
+    MCNAPI static ::std::optional<::std::string>
     getRouteFromTabAndModal(::SettingsTabIndex tabIndex, ::SettingsModalType modalType);
 
-    MCAPI static ::std::optional<::SettingsTabIndex> getTabFromPath(::std::string const& path);
+    MCNAPI static ::std::optional<::SettingsTabIndex> getTabFromPath(::std::string const& path);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> OREUI_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> OREUI_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> STORAGE_LEGACY_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> STORAGE_LEGACY_ROUTE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::ILevelListCache&()> getLevelListCache,
         ::std::function<::ServerInstance*()>  getServerInstance,
         ::std::function<bool()>               isInGame,
@@ -121,9 +122,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

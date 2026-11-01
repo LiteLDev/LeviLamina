@@ -71,9 +71,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+    MCNAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
 
-    MCAPI void _populateBiomeSamples(
+    MCNAPI void _populateBiomeSamples(
         ::BiomeChunkVolume::BiomeSamplesContainer& biomeSamples,
         ::ChunkLocalNoiseCache const&              chunkLocalNoiseCache
     ) const;
@@ -82,37 +82,37 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+    MCNAPI void* $ctor(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ChunkVolume::VolumeOf<::Biome> $getBiomeVolumeToFill(
+    MCNAPI ::ChunkVolume::VolumeOf<::Biome> $getBiomeVolumeToFill(
         short                         chunkHeight,
         ::BlockPos                    chunkMin,
         uint                          levelSeed,
         ::ChunkLocalNoiseCache const* chunkLocalNoiseCache
     ) const;
 
-    MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
+    MCNAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
 
-    MCFOLD ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;
 
-    MCAPI ::BiomeArea
+    MCNAPI ::BiomeArea
     $getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
-    MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
+    MCNAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
 
-    MCAPI bool $collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const;
+    MCNAPI bool $collectBiomesInColumn(int x, int z, int minY, int maxY, ::std::vector<::BiomeIdType>& out) const;
 
-    MCAPI bool $hasBiomeById(::BiomeIdType id) const;
+    MCNAPI bool $hasBiomeById(::BiomeIdType id) const;
 
-    MCAPI bool $hasBiomeByNameHash(::BiomeHashType hash) const;
+    MCNAPI bool $hasBiomeByNameHash(::BiomeHashType hash) const;
 
-    MCFOLD ::BiomeSourceType const $getType() const;
+    MCNAPI ::BiomeSourceType const $getType() const;
 
-    MCAPI ::Biome const* $_getBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    MCNAPI ::Biome const* $_getBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
 
     // NOLINTEND

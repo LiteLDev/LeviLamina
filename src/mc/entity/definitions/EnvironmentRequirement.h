@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
+    MCNAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
     // NOLINTEND
 };

@@ -71,46 +71,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _collectHandleCountStats(::DebuggerStat& pluginStats, uint64, uint64, uint64);
+    MCNAPI void _collectHandleCountStats(::DebuggerStat& pluginStats, uint64, uint64, uint64);
 
-    MCAPI void _collectMemoryStats(::DebuggerStat& javaScriptStats);
+    MCNAPI void _collectMemoryStats(::DebuggerStat& javaScriptStats);
 
-    MCAPI void _collectQuickJsStats(::DebuggerStat& javaScriptStats);
+    MCNAPI void _collectQuickJsStats(::DebuggerStat& javaScriptStats);
 
-    MCAPI void
+    MCNAPI void
     _collectScriptingStats(::std::reference_wrapper<::ServerLevel> serverLevel, ::DebuggerStat& allScriptingStats);
 
-    MCAPI void _collectSubscriberCountStats(
+    MCNAPI void _collectSubscriberCountStats(
         ::Bedrock::NotNullNonOwnerPtr<::ServerLevel>     serverLevel,
         ::gsl::not_null<::Scripting::DependencyLocator*> locator,
         ::DebuggerStat&                                  subscriberStats
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+    MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 #endif
 
 #ifdef LL_PLAT_S
     MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 #endif
 
-    MCAPI void _disableHandleCounter();
+    MCNAPI void _disableHandleCounter();
 
-    MCAPI void _enableHandleCounter();
+    MCNAPI void _enableHandleCounter();
 
-    MCAPI void _reloadHandleCounter(bool publisherEnabled);
-
-#ifdef LL_PLAT_C
-    MCAPI void _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
-#endif
-
-    MCAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
+    MCNAPI void _reloadHandleCounter(bool publisherEnabled);
 
 #ifdef LL_PLAT_C
-    MCAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
+    MCNAPI void
+    _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
 #endif
 
-    MCAPI ::ScriptPluginManagerResult discoverPlugins(
+    MCNAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
+#endif
+
+    MCNAPI ::ScriptPluginManagerResult discoverPlugins(
         ::ResourceInformation::ResourceType moduleType,
         ::IScriptPluginSourceEnumerator&    pluginEnumerator,
         ::std::vector<::std::function<::ScriptModuleFilters::FilterResult(
@@ -124,20 +125,20 @@ public:
             pluginExecutionGroupSelector
     );
 
-    MCAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
+    MCNAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
 
-    MCAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
+    MCNAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
+    MCNAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
 #endif
 
-    MCAPI ~ScriptPluginManager();
+    MCNAPI ~ScriptPluginManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
