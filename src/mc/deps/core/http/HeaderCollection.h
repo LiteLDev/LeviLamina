@@ -8,41 +8,35 @@ class HeaderCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk689353;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HeaderCollection& operator=(HeaderCollection const&);
-    HeaderCollection(HeaderCollection const&);
-    HeaderCollection();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addHeader(::std::string const& headerName, ::std::string const& headerValue, bool setValue);
+    MCAPI void _addHeader(::std::string const& headerName, ::std::string const& headerValue, bool setValue);
 
-    MCNAPI void add(::std::string const& headerName, ::std::string const& headerValue);
+    MCAPI void add(::std::string const& headerName, ::std::string const& headerValue);
 
-    MCNAPI ::std::string const& get(::std::string const& headerName) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI void merge(::Bedrock::Http::HeaderCollection rhs);
-#endif
-
-    MCNAPI void set(::std::string const& headerName, ::std::string const& headerValue);
+    MCAPI ::std::string const& get(::std::string const& headerName) const;
 
 #ifdef LL_PLAT_C
-    MCNAPI void setNoSafetyChecks(::std::string const& headerName, ::std::string const& headerValue);
+    MCAPI void merge(::Bedrock::Http::HeaderCollection rhs);
 #endif
 
-    MCNAPI ~HeaderCollection();
+    MCAPI void set(::std::string const& headerName, ::std::string const& headerValue);
+
+#ifdef LL_PLAT_C
+    MCAPI void setNoSafetyChecks(::std::string const& headerName, ::std::string const& headerValue);
+#endif
+
+    MCAPI ~HeaderCollection();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

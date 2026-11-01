@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 
+#include <string>
 #include <tuple>
 #include <type_traits>
 
@@ -31,6 +32,9 @@ struct MemberFunctionTraitsCheck {
     static_assert(std::is_same_v<typename traits::args_tuple, std::tuple<int>>);
     static_assert(std::is_same_v<typename traits::class_type, TraitsProbe>);
     static_assert(std::is_same_v<typename traits::object_pointer, ObjectPointer>);
+    static_assert(std::is_same_v<typename traits::function_type, int(int)>);
+    static_assert(std::is_same_v<typename traits::function_type_noexcept, int(int) noexcept(IsNoexcept)>);
+    static_assert(std::is_same_v<typename traits::member_function_type, MemberFunction>);
     static_assert(std::is_same_v<typename traits::function_pointer, int (*)(ObjectPointer, int)>);
     static_assert(traits::is_const == IsConst);
     static_assert(traits::is_volatile == IsVolatile);
@@ -96,6 +100,7 @@ static_assert(std::is_same_v<ll::traits::function_traits<int(int, double)>::arg<
 static_assert(ll::traits::function_traits<int(int)>::arity == 1);
 static_assert(!ll::traits::function_traits<int(int)>::is_member_function);
 static_assert(!ll::traits::function_traits<int(int)>::is_noexcept);
+static_assert(std::is_same_v<ll::traits::function_traits<int(int)>::free_function_pointer, int (*)(int)>);
 static_assert(std::is_same_v<ll::traits::function_traits<int(int)>::function_pointer, int (*)(int)>);
 static_assert(std::is_same_v<ll::traits::function_traits<int (*)(int)>::function_pointer, int (*)(int)>);
 static_assert(std::is_same_v<ll::traits::function_traits<int (&)(int)>::function_pointer, int (*)(int)>);
@@ -114,6 +119,12 @@ struct CallableProbe {
 
     int add(int value) const { return offset + value; }
     int addMutable(int value) { return offset + value + 1; }
+};
+
+struct NontrivialReturnProbe {
+    std::string value;
+
+    std::string get() const { return value; }
 };
 
 } // namespace
@@ -135,4 +146,17 @@ TEST(TypeTraitsTest, ProjectsMemberFunctionsOntoCallableFunctionPointers) {
 
     EXPECT_EQ(constCall(&constProbe, 2), 42);
     EXPECT_EQ(mutableCall(&probe, 1), 42);
+}
+
+TEST(TypeTraitsTest, PreservesMemberFunctionPointerForNontrivialReturn) {
+    using Traits          = ll::traits::function_traits<decltype(&NontrivialReturnProbe::get)>;
+    using FunctionPointer = Traits::function_pointer;
+    static_assert(std::is_same_v<typename Traits::function_type, std::string()>);
+    static_assert(
+        std::is_same_v<typename Traits::member_function_type, std::string (NontrivialReturnProbe::*)() const>
+    );
+    static_assert(std::is_same_v<FunctionPointer, std::string (NontrivialReturnProbe::*)() const>);
+
+    NontrivialReturnProbe probe{"hello"};
+    EXPECT_EQ(std::invoke(&NontrivialReturnProbe::get, probe), "hello");
 }

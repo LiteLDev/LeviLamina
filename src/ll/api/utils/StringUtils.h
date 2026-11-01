@@ -174,6 +174,7 @@ LLNDAPI bool isu8str(std::string_view str) noexcept;
 LLNDAPI std::string tou8str(std::string_view str);
 
 LLNDAPI std::string toSnakeCase(std::string_view str);
+LLNDAPI std::string toSnakeCaseWithoutM(std::string_view str);
 
 LLNDAPI std::string toLowerCase(std::string_view str);
 

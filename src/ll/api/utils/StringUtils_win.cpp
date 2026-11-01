@@ -344,6 +344,35 @@ std::string toSnakeCase(std::string_view str) {
     return res;
 }
 
+std::string toSnakeCaseWithoutM(std::string_view str) {
+    if (str.empty()) return std::string{str};
+
+    if (str.front() == 'm' && str.size() >= 2 && std::isupper(static_cast<uint8>(str[1]))) {
+        str.remove_prefix(1);
+    }
+
+    std::string result;
+    result.reserve(str.size() * 2);
+
+    for (size_t i = 0; i < str.size(); ++i) {
+        auto c = static_cast<uint8>(str[i]);
+        if (std::isupper(c)) {
+            if (i != 0) {
+                auto prev = static_cast<uint8>(str[i - 1]);
+                if (std::islower(prev) || std::isdigit(prev)) {
+                    result += '_';
+                } else if (std::isupper(prev) && i + 1 < str.size() && std::islower(static_cast<uint8>(str[i + 1]))) {
+                    result += '_';
+                }
+            }
+            result += static_cast<int8>(std::tolower(c));
+        } else {
+            result += static_cast<int8>(c);
+        }
+    }
+    return result;
+}
+
 std::string toLowerCase(std::string_view str) {
     std::string res{str};
     std::transform(res.begin(), res.end(), res.begin(), [](char c) { return (char)std::tolower(c); });

@@ -330,3 +330,74 @@ public:
 };
 
 } // namespace mce
+
+#include <ll/api/reflection/Deserialization.h>
+#include <ll/api/reflection/Serializer.h>
+
+template <>
+struct ll::reflection::Serializer<mce::Color> {
+    using Type = mce::Color;
+
+    static std::string to_string(Type const& color) {
+        return fmt::format(
+            "#{:02X}{:02X}{:02X}{:02X}",
+            component(color.r),
+            component(color.g),
+            component(color.b),
+            component(color.a)
+        );
+    }
+
+    static ll::Expected<Type> from_string(std::string_view str) {
+        if (str.starts_with('#')) str.remove_prefix(1);
+
+        switch (str.size()) {
+        case 3:
+        case 4:
+        case 6:
+        case 8:
+            break;
+        default:
+            return ll::makeErrorCodeError(std::errc::invalid_argument);
+        }
+
+        for (char const c : str) {
+            if (ll::string_utils::digitFromChar(c) == 255) {
+                return ll::makeErrorCodeError(std::errc::invalid_argument);
+            }
+        }
+
+        return Type{str};
+    }
+
+    template <typename J>
+    static Expected<J> serialize(Type const& color) noexcept {
+        J result    = J::object();
+        result["r"] = component(color.r);
+        result["g"] = component(color.g);
+        result["b"] = component(color.b);
+        result["a"] = component(color.a);
+        return result;
+    }
+
+    template <typename J>
+    static Expected<Type> deserialize(J const& json) noexcept {
+        if (!json.is_object()) return makeDeserObjectTypeError();
+
+        Type result;
+
+        if (auto error = member<&Type::r>(); !error) return forwardError(error.error());
+        if (auto error = member<&Type::g>(); !error) return forwardError(error.error());
+        if (auto error = member<&Type::b>(); !error) return forwardError(error.error());
+        if (auto error = member<&Type::a>(); !error) return forwardError(error.error());
+
+        Type::forEachComponent([&]<typename axis_type, size_t iter> { result.get<axis_type, iter>() / 255.0f; });
+
+        return result;
+    }
+
+private:
+    static constexpr int component(float value) noexcept {
+        return static_cast<int>(std::lround(std::clamp(value, 0.0f, 1.0f) * 255.0f));
+    }
+};
