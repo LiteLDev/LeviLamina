@@ -19,14 +19,6 @@ public:
         NonSolid = 2,
     };
 
-    class Builder {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 2, ::Material> mMaterial;
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,4 +37,12 @@ public:
 public:
     // Falls back to index 1 when `type` is out of range rather than reading past the end of the material table.
     LLNDAPI static ::Material const& getMaterial(::SharedTypes::v1_26_20::MaterialType type);
+};
+
+class Material::Builder {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 2, ::Material> mMaterial;
+    // NOLINTEND
 };
