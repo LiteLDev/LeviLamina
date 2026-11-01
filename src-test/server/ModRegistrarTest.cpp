@@ -381,6 +381,51 @@ TEST_F(ModRegistrarLifecycleTest, RescansNewManagerBeforeLoadingCrossTypeDepende
     );
 }
 
+TEST_F(ModRegistrarLifecycleTest, RescansDirectoryForNewlyRegisteredManagerType) {
+    writeManifest(DynamicLoader);
+    writeManifestTo(getModsRoot(), DynamicProvider, ScriptTestModType);
+
+    auto&                           registry = ModManagerRegistry::getInstance();
+    std::shared_ptr<TestModManager> scriptManager;
+    manager->setLoadCallback([&](std::string_view name) {
+        if (name == DynamicLoader) {
+            scriptManager = std::make_shared<TestModManager>(ScriptTestModType, getModsRoot());
+            return registry.addManager(scriptManager);
+        }
+        return true;
+    });
+
+    ModRegistrar::getInstance().loadAllMods();
+    manager->setLoadCallback({});
+
+    ASSERT_TRUE(registry.hasMod(DynamicLoader));
+    ASSERT_TRUE(registry.hasMod(DynamicProvider));
+    EXPECT_EQ(registry.getMod(DynamicProvider)->getModDir(), packagePath(getModsRoot(), DynamicProvider));
+}
+
+TEST_F(ModRegistrarLifecycleTest, IgnoresManifestsFromMismatchedManagerDirectories) {
+    auto& registry      = ModManagerRegistry::getInstance();
+    auto  scriptManager = std::make_shared<TestModManager>(ScriptTestModType, scriptModsRoot());
+    ASSERT_TRUE(registry.addManager(scriptManager));
+    writeManifestTo(scriptModsRoot(), DynamicProvider, TestModType);
+
+    ModRegistrar::getInstance().loadAllMods();
+
+    EXPECT_FALSE(registry.hasMod(DynamicProvider));
+}
+
+TEST_F(ModRegistrarLifecycleTest, RejectsDuplicateModNamesAcrossManagerDirectories) {
+    auto& registry      = ModManagerRegistry::getInstance();
+    auto  scriptManager = std::make_shared<TestModManager>(ScriptTestModType, scriptModsRoot());
+    ASSERT_TRUE(registry.addManager(scriptManager));
+    writeManifest(DynamicProvider);
+    writeManifestTo(scriptModsRoot(), DynamicProvider, ScriptTestModType);
+
+    ModRegistrar::getInstance().loadAllMods();
+
+    EXPECT_FALSE(registry.hasMod(DynamicProvider));
+}
+
 TEST_F(ModRegistrarLifecycleTest, CascadeLoadsDependentsWithSharedDependencies) {
     writeManifest(CascadeProvider);
     writeManifest(

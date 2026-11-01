@@ -41,6 +41,9 @@ namespace ll::mod {
 
 namespace {
 
+using ManagerTypes              = SmallDenseSet<std::string>;
+using ScannedManagerDirectories = DenseMap<std::filesystem::path, ManagerTypes>;
+
 std::vector<std::string> sortedKeys(auto const& map) {
     std::vector<std::string> result;
     result.reserve(map.size());
@@ -126,6 +129,9 @@ void logLoadIssue(std::string const& name, ModLoadIssue const& issue) {
     case ModLoadIssueKind::Conflict:
         getLogger().error("{0} will not be loaded because it conflicts with {1}"_tr(name, issue.related));
         break;
+    case ModLoadIssueKind::DuplicateMod:
+        getLogger().error("{0} will not be loaded because its name is duplicated at {1}"_tr(name, issue.related));
+        break;
     case ModLoadIssueKind::DependencyUnavailable:
         getLogger().error("{0} will not be loaded because dependency {1} cannot be loaded"_tr(name, issue.related));
         break;
@@ -159,29 +165,58 @@ Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     });
 }
 
-coro::Generator<std::pair<std::filesystem::path, std::string_view>> getModLoadSources(ModManagerRegistry const& registry) {
-    for (auto& manager : registry.managers()) {
-        co_yield {manager.getLoadDirectory(), manager.getType()};
-    }
-}
-
 Expected<Manifest> loadManifestFromRegisteredDirectories(ModManagerRegistry const& registry, std::string_view name) {
-    for (auto const& source : getModLoadSources(registry)) {
-        auto result = loadManifest(source.first / string_utils::sv2u8sv(name));
-        if (result && result->type != source.second) {
+    std::optional<Manifest>         manifest;
+    DenseSet<std::filesystem::path> searchedDirectories;
+    for (auto const& manager : registry.managers()) {
+        auto& directory = manager.getLoadDirectory();
+        if (!searchedDirectories.emplace(directory).second) {
             continue;
         }
-        if (result || result.error()) {
+        auto result = loadManifest(directory / string_utils::sv2u8sv(name));
+        if (result) {
+            auto manager = registry.getManager(result->type);
+            if (!manager || manager->getLoadDirectory() != directory) {
+                continue;
+            }
+            if (manifest) {
+                auto path = directory / string_utils::sv2u8sv(name);
+                return makeI18nStringError<"{0} will not be loaded because its name is duplicated at {1}">(
+                    name,
+                    string_utils::u8str2str(path.u8string())
+                );
+            }
+            manifest = std::move(*result);
+        } else if (result.error()) {
             return result;
         }
+    }
+    if (manifest) {
+        return std::move(*manifest);
     }
     return makeSuccessed();
 }
 
-void scanRegisteredManifests(ModManagerRegistry const& registry, DenseMap<std::string, Manifest>& manifests) {
-    for (auto const& source : getModLoadSources(registry)) {
+void scanRegisteredManifests(
+    ModManagerRegistry const&        registry,
+    DenseMap<std::string, Manifest>& manifests,
+    DenseSet<std::string>&           duplicateMods,
+    ScannedManagerDirectories&       scannedManagerDirectories
+) {
+    DenseMap<std::filesystem::path, ManagerTypes> pendingManagers;
+    for (auto& manager : registry.managers()) {
+        auto& scannedTypes = scannedManagerDirectories[manager.getLoadDirectory()];
+        if (!scannedTypes.contains(manager.getType())) {
+            pendingManagers[manager.getLoadDirectory()].emplace(manager.getType());
+        }
+    }
+
+    for (auto const& [directory, pendingTypes] : pendingManagers) {
+        auto& scannedTypes = scannedManagerDirectories[directory];
+        scannedTypes.insert(pendingTypes.begin(), pendingTypes.end());
+
         std::error_code                     ec;
-        std::filesystem::directory_iterator files(source.first, ec);
+        std::filesystem::directory_iterator files(directory, ec);
         if (ec) {
             continue;
         }
@@ -191,10 +226,27 @@ void scanRegisteredManifests(ModManagerRegistry const& registry, DenseMap<std::s
             }
             auto result = loadManifest(file.path());
             if (result) {
-                if (result->type != source.second) {
+                auto manager = registry.getManager(result->type);
+                if (!manager || manager->getLoadDirectory() != directory || !pendingTypes.contains(result->type)
+                    || duplicateMods.contains(result->name)) {
                     continue;
                 }
-                manifests.try_emplace(result->name, std::move(*result));
+                std::string name          = result->name;
+                auto [manifest, inserted] = manifests.try_emplace(name, std::move(*result));
+                if (!inserted) {
+                    logLoadIssue(
+                        name,
+                        ModLoadIssue{
+                            ModLoadIssueKind::DuplicateMod,
+                            string_utils::u8str2str(file.path().u8string()),
+                            {},
+                            {},
+                            {}
+                        }
+                    );
+                    manifests.erase(manifest);
+                    duplicateMods.emplace(std::move(name));
+                }
             } else if (result.error()) {
                 getLogger().error(
                     "Failed to load manifest for {0}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
@@ -267,38 +319,12 @@ void ModRegistrar::loadAllMods() noexcept try {
 
     DenseMap<std::string, Manifest> manifests;
     DenseSet<std::string>           failedMods;
-    DenseSet<std::filesystem::path> scannedManagerDirectorys;
+    DenseSet<std::string>           duplicateMods;
+    ScannedManagerDirectories       scannedManagerDirectories;
     size_t                          loadedCount{};
 
     while (true) {
-        auto manifestCount = manifests.size();
-        for (auto const& source : getModLoadSources(registry)) {
-            if (!scannedManagerDirectorys.emplace(source.first).second) {
-                continue;
-            }
-            std::error_code                     ec;
-            std::filesystem::directory_iterator files(source.first, ec);
-            if (ec) {
-                continue;
-            }
-            for (auto const& file : files) {
-                if (!file.is_directory(ec)) {
-                    continue;
-                }
-                auto result = loadManifest(file.path());
-                if (result) {
-                    if (manifests.contains(result->name)) {
-                        continue;
-                    }
-                    manifests.try_emplace(result->name, std::move(*result));
-                } else if (result.error()) {
-                    getLogger().error(
-                        "Failed to load manifest for {0}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
-                    );
-                    result.error().log(getLogger());
-                }
-            }
-        }
+        scanRegisteredManifests(registry, manifests, duplicateMods, scannedManagerDirectories);
 
         auto plan = ModLoadPlanner::resolve(manifests, isClient());
 
@@ -330,7 +356,7 @@ void ModRegistrar::loadAllMods() noexcept try {
             }
         }
 
-        if (!configurationChanged && !loadedAny && manifests.size() == manifestCount) {
+        if (!configurationChanged && !loadedAny) {
             for (auto const& name : sortedKeys(plan.rejected)) {
                 logLoadIssue(name, plan.rejected.at(name));
             }
@@ -508,8 +534,11 @@ Expected<> ModRegistrar::loadMod(std::string_view name, bool loadDependents) noe
         manifests.try_emplace(mod.getName(), mod.getManifest());
     }
 
+    DenseSet<std::string>     duplicateMods;
+    ScannedManagerDirectories scannedManagerDirectories;
     while (true) {
-        scanRegisteredManifests(registry, manifests);
+        scanRegisteredManifests(registry, manifests, duplicateMods, scannedManagerDirectories);
+
         if (auto root = registry.getMod(rootName)) {
             manifests.insert_or_assign(rootName, root->getManifest());
         } else {
